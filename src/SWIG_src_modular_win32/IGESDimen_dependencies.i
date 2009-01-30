@@ -1,0 +1,220 @@
+/*
+##Copyright 2008-2009 Thomas Paviot
+##
+##thomas.paviot@free.fr
+##
+##pythonOCC is a computer program whose purpose is to provide a complete set
+##of python bindings for OpenCascade library.
+##
+##This software is governed by the CeCILL license under French law and
+##abiding by the rules of distribution of free software.  You can  use, 
+##modify and/ or redistribute the software under the terms of the CeCILL
+##license as circulated by CEA, CNRS and INRIA at the following URL
+##"http://www.cecill.info". 
+##
+##As a counterpart to the access to the source code and  rights to copy,
+##modify and redistribute granted by the license, users are provided only
+##with a limited warranty  and the software's author,  the holder of the
+##economic rights,  and the successive licensors  have only  limited
+##liability. 
+##
+##In this respect, the user's attention is drawn to the risks associated
+##with loading,  using,  modifying and/or developing or reproducing the
+##software by the user in light of its specific status of free software,
+##that may mean  that it is complicated to manipulate,  and  that  also
+##therefore means  that it is reserved for developers  and  experienced
+##professionals having in-depth computer knowledge. Users are therefore
+##encouraged to load and test the software's suitability as regards their
+##requirements in conditions enabling the security of their systems and/or 
+##data to be ensured and,  more generally, to use and operate it in the 
+##same conditions as regards security. 
+##
+##The fact that you are presently reading this means that you have had
+##knowledge of the CeCILL license and that you accept its terms.
+*/
+%{
+#include <IGESData_Array1OfDirPart.hxx>
+#include <IGESData_Array1OfIGESEntity.hxx>
+#include <IGESData_BasicEditor.hxx>
+#include <IGESData_ColorEntity.hxx>
+#include <IGESData_DefaultGeneral.hxx>
+#include <IGESData_DefaultSpecific.hxx>
+#include <IGESData_DefList.hxx>
+#include <IGESData_DefSwitch.hxx>
+#include <IGESData_DefType.hxx>
+#include <IGESData_DirChecker.hxx>
+#include <IGESData_DirPart.hxx>
+#include <IGESData_Dump.hxx>
+#include <IGESData_FileProtocol.hxx>
+#include <IGESData_FileRecognizer.hxx>
+#include <IGESData_FreeFormatEntity.hxx>
+#include <IGESData_GeneralModule.hxx>
+#include <IGESData_GlobalNodeOfSpecificLib.hxx>
+#include <IGESData_GlobalNodeOfWriterLib.hxx>
+#include <IGESData_GlobalSection.hxx>
+#include <IGESData_HArray1OfIGESEntity.hxx>
+#include <IGESData_IGESDumper.hxx>
+#include <IGESData_IGESEntity.hxx>
+#include <IGESData_IGESModel.hxx>
+#include <IGESData_IGESReaderData.hxx>
+#include <IGESData_IGESReaderTool.hxx>
+#include <IGESData_IGESType.hxx>
+#include <IGESData_IGESWriter.hxx>
+#include <IGESData_LabelDisplayEntity.hxx>
+#include <IGESData_LevelListEntity.hxx>
+#include <IGESData_LineFontEntity.hxx>
+#include <IGESData_NameEntity.hxx>
+#include <IGESData_NodeOfSpecificLib.hxx>
+#include <IGESData_NodeOfWriterLib.hxx>
+#include <IGESData_ParamCursor.hxx>
+#include <IGESData_ParamReader.hxx>
+#include <IGESData_Protocol.hxx>
+#include <IGESData_ReadStage.hxx>
+#include <IGESData_ReadWriteModule.hxx>
+#include <IGESData_SingleParentEntity.hxx>
+#include <IGESData_SpecificLib.hxx>
+#include <IGESData_SpecificModule.hxx>
+#include <IGESData_Status.hxx>
+#include <IGESData_ToolLocation.hxx>
+#include <IGESData_TransfEntity.hxx>
+#include <IGESData_UndefinedEntity.hxx>
+#include <IGESData_ViewKindEntity.hxx>
+#include <IGESData_WriterLib.hxx>
+#include <Handle_IGESData_ColorEntity.hxx>
+#include <Handle_IGESData_DefaultGeneral.hxx>
+#include <Handle_IGESData_DefaultSpecific.hxx>
+#include <Handle_IGESData_FileProtocol.hxx>
+#include <Handle_IGESData_FileRecognizer.hxx>
+#include <Handle_IGESData_FreeFormatEntity.hxx>
+#include <Handle_IGESData_GeneralModule.hxx>
+#include <Handle_IGESData_GlobalNodeOfSpecificLib.hxx>
+#include <Handle_IGESData_GlobalNodeOfWriterLib.hxx>
+#include <Handle_IGESData_HArray1OfIGESEntity.hxx>
+#include <Handle_IGESData_IGESEntity.hxx>
+#include <Handle_IGESData_IGESModel.hxx>
+#include <Handle_IGESData_IGESReaderData.hxx>
+#include <Handle_IGESData_LabelDisplayEntity.hxx>
+#include <Handle_IGESData_LevelListEntity.hxx>
+#include <Handle_IGESData_LineFontEntity.hxx>
+#include <Handle_IGESData_NameEntity.hxx>
+#include <Handle_IGESData_NodeOfSpecificLib.hxx>
+#include <Handle_IGESData_NodeOfWriterLib.hxx>
+#include <Handle_IGESData_Protocol.hxx>
+#include <Handle_IGESData_ReadWriteModule.hxx>
+#include <Handle_IGESData_SingleParentEntity.hxx>
+#include <Handle_IGESData_SpecificModule.hxx>
+#include <Handle_IGESData_ToolLocation.hxx>
+#include <Handle_IGESData_TransfEntity.hxx>
+#include <Handle_IGESData_UndefinedEntity.hxx>
+#include <Handle_IGESData_ViewKindEntity.hxx>
+#include <MMgt_StackManager.hxx>
+#include <MMgt_TShared.hxx>
+#include <Handle_MMgt_TShared.hxx>
+#include <Standard_AbortiveTransaction.hxx>
+#include <Standard_Address.hxx>
+#include <Standard_AncestorIterator.hxx>
+#include <Standard_Boolean.hxx>
+#include <Standard_Byte.hxx>
+#include <Standard_Character.hxx>
+#include <Standard_ConstructionError.hxx>
+#include <Standard_CString.hxx>
+#include <Standard_ctype.hxx>
+#include <Standard_DefineHandle.hxx>
+#include <Standard_DimensionError.hxx>
+#include <Standard_DimensionMismatch.hxx>
+#include <Standard_DivideByZero.hxx>
+#include <Standard_DomainError.hxx>
+#include <Standard_ErrorHandler.hxx>
+#include <Standard_ErrorHandlerCallback.hxx>
+#include <Standard_ExtCharacter.hxx>
+#include <Standard_ExtString.hxx>
+#include <Standard_Failure.hxx>
+#include <Standard_GUID.hxx>
+#include <Standard_HandlerStatus.hxx>
+#include <Standard_ImmutableObject.hxx>
+#include <Standard_Integer.hxx>
+#include <Standard_InternalType.hxx>
+#include <Standard_IStream.hxx>
+#include <Standard_JmpBuf.hxx>
+#include <Standard_KindOfType.hxx>
+#include <Standard_LicenseError.hxx>
+#include <Standard_LicenseNotFound.hxx>
+#include <Standard_Macro.hxx>
+#include <Standard_math.hxx>
+#include <Standard_MMgrOpt.hxx>
+#include <Standard_MMgrRaw.hxx>
+#include <Standard_MMgrRoot.hxx>
+#include <Standard_MultiplyDefined.hxx>
+#include <Standard_Mutex.hxx>
+#include <Standard_NegativeValue.hxx>
+#include <Standard_NoMoreObject.hxx>
+#include <Standard_NoSuchObject.hxx>
+#include <Standard_NotImplemented.hxx>
+#include <Standard_NullObject.hxx>
+#include <Standard_NullValue.hxx>
+#include <Standard_NumericError.hxx>
+#include <Standard_OId.hxx>
+#include <Standard_OStream.hxx>
+#include <Standard_OutOfMemory.hxx>
+#include <Standard_OutOfRange.hxx>
+#include <Standard_Overflow.hxx>
+#include <Standard_PCharacter.hxx>
+#include <Standard_PErrorHandler.hxx>
+#include <Standard_Persistent.hxx>
+#include <Standard_Persistent_proto.hxx>
+#include <Standard_PExtCharacter.hxx>
+#include <Standard_PrimitiveTypes.hxx>
+#include <Standard_ProgramError.hxx>
+#include <Standard_RangeError.hxx>
+#include <Standard_Real.hxx>
+#include <Standard_ShortReal.hxx>
+#include <Standard_Size.hxx>
+#include <Standard_SStream.hxx>
+#include <Standard_Static.hxx>
+#include <Standard_Storable.hxx>
+#include <Standard_Stream.hxx>
+#include <Standard_String.hxx>
+#include <Standard_ThreadId.hxx>
+#include <Standard_TooManyUsers.hxx>
+#include <Standard_Transient.hxx>
+#include <Standard_Type.hxx>
+#include <Standard_TypeDef.hxx>
+#include <Standard_TypeMismatch.hxx>
+#include <Standard_Underflow.hxx>
+#include <Standard_UUID.hxx>
+#include <Standard_Version.hxx>
+#include <Standard_WayOfLife.hxx>
+#include <Handle_Standard_AbortiveTransaction.hxx>
+#include <Handle_Standard_ConstructionError.hxx>
+#include <Handle_Standard_DimensionError.hxx>
+#include <Handle_Standard_DimensionMismatch.hxx>
+#include <Handle_Standard_DivideByZero.hxx>
+#include <Handle_Standard_DomainError.hxx>
+#include <Handle_Standard_Failure.hxx>
+#include <Handle_Standard_ImmutableObject.hxx>
+#include <Handle_Standard_LicenseError.hxx>
+#include <Handle_Standard_LicenseNotFound.hxx>
+#include <Handle_Standard_MultiplyDefined.hxx>
+#include <Handle_Standard_NegativeValue.hxx>
+#include <Handle_Standard_NoMoreObject.hxx>
+#include <Handle_Standard_NoSuchObject.hxx>
+#include <Handle_Standard_NotImplemented.hxx>
+#include <Handle_Standard_NullObject.hxx>
+#include <Handle_Standard_NullValue.hxx>
+#include <Handle_Standard_NumericError.hxx>
+#include <Handle_Standard_OutOfMemory.hxx>
+#include <Handle_Standard_OutOfRange.hxx>
+#include <Handle_Standard_Overflow.hxx>
+#include <Handle_Standard_Persistent.hxx>
+#include <Handle_Standard_ProgramError.hxx>
+#include <Handle_Standard_RangeError.hxx>
+#include <Handle_Standard_TooManyUsers.hxx>
+#include <Handle_Standard_Transient.hxx>
+#include <Handle_Standard_Type.hxx>
+#include <Handle_Standard_TypeMismatch.hxx>
+#include <Handle_Standard_Underflow.hxx>
+%};
+
+%import IGESData.i
+%import MMgt.i
+%import Standard.i
