@@ -37,11 +37,16 @@ import os
 import sys
 import wx
 import OCCViewer
-import wx.glcanvas
 
-class wxViewer3d(wx.Panel):
+if sys.platform=='darwin':
+    BaseClass = wx.Panel
+else:
+    import wx.glcanvas
+    BaseClass = wx.glcanvas.GLCanvas
+    
+class wxViewer3d(BaseClass):
     def __init__(self, parent):
-        wx.Panel.__init__(self, parent)
+        BaseClass.__init__(self, parent)
  
         self.Bind( wx.EVT_SIZE , self.OnSize)
         self.Bind( wx.EVT_IDLE , self.OnIdle)
