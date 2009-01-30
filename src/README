@@ -11,7 +11,7 @@ or generate your own wrapper (case B).
 * Case A: build wrapper from SWIG files included in the distribution
 
 Requirements:
-- Visual Studio 2003 or higher ((Windows only)
+- Visual Studio 2003 or higher (Windows only)
 - Swig 1.3.36 or higher (for Windwos users, the swig.exe file must be added to the PATH environment
 variable).
 - OpenCascade. Release 6.3.0 was used to generate the binaries. Older release may work as well,

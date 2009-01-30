@@ -1,4 +1,6 @@
 2009/01/30:
+	- code refactoring
+	- deprecated Monolithic build
 	- bugfixes in OCCViewer
 	- moved back from glcanvas to Panel (in wxDisplay.py) for portability reason.
 2009/01/28:

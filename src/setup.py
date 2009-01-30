@@ -42,16 +42,6 @@ import time
 init_time = time.time()
 
 # Check whether generate swig .i files
-if '-monolithic' in sys.argv:
-    MONOLITHIC = True
-    sys.argv.remove('-monolithic')
-else:
-    MONOLITHIC = False
-if '-modular' in sys.argv:
-    MODULAR = True
-    sys.argv.remove('-modular')
-else:
-    MODULAR = False
 if '-generate_swig' in sys.argv:
     GENERATE_SWIG = True
     sys.argv.remove('-generate_swig')
@@ -99,11 +89,49 @@ import SWIG_generator
 if GENERATE_SWIG and not SWIG_generator.HAVE_PYGCCXML:
     print "pygccxml/py++ 1.0 have to be installed. Please check http://www.language-binding.net/pyplusplus/pyplusplus.html"
     sys.exit(0)
+if GENERATE_SWIG:#a small things to do before building
+    #
+    # Under WNT, modify Standard_Real.hxx so that it can be parsed by GCCXML without issue
+    #
+    if sys.platform == 'win32':
+        standard_real_header = os.path.join(OCC_INC,"Standard_Real.hxx")
+        if not os.path.isfile(standard_real_header):
+            print "%s not found."%standard_file_header
+            sys.exit(0)
+        else:
+            fp = open(standard_real_header,"r")
+            file_content = fp.read()
+            fp.close()
+            if not '__SWIG_GENERATION__' in file_content:#need rewriting
+                key = raw_input("Original Standard_Real.hxx header file needs to be modified. Original file will be available with the name Standard_Real_Original.hxx.\nEnter 'y' or 'Y' if you whish to continue.'n' otherwise:")# first mode Standard_Real.hxx to Standard_Real_Original.hxx
+                if key.lower()=='y':
+                    shutil.copy(standard_real_header, os.path.join(OCC_INC,"Standard_Real_Original.hxx"))
+                    #replacing string
+                    file_content = file_content.replace("#if defined(WNT)","#if defined(WNT) && !defined(__SWIG_GENERATION__)")
+                    fp = open(standard_real_header,"w")
+                    fp.write(file_content)
+                    fp.close()
+                else:
+                    sys.exit(0)
+            else:
+                print "Found modified Standard_Real.hxx header file."
+    #
+    # Create paths
+    #
+    if not os.path.isdir(SWIG_FILES_PATH_MODULAR):
+        os.mkdir(SWIG_FILES_PATH_MODULAR)
+    #
+    # OCC header file TopOpeBRepDS_tools.hxx maybe missing, causing a gccxml error.
+    #
+    if not os.path.isfile(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx')):
+        f = open(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx'),'w')
+        f.close()
+        print "TopOpeBRepDS_tools.hxx created in %s"%OCC_INC
 #
 # List of modules to export
 #
 PACKAGE = "OCC"
-# (string module_name, list additional headers, list classes_to_exclude)
+# (string module_name, list additional headers, list classes_to_exclude, dict member_functions to exclude)
 MODULES = [
            ('Standard',[],['Standard_SStream'],{'Handle_Standard_Persistent':['ShallowDump']}),
            ('MMgt',[],[]),
@@ -311,7 +339,9 @@ MODULES = [
            ('BndLib',[],[]), 
            ('MFT',['Aspect'],[]),
            ('OSD',['Quantity_Date'],['OSD_Semaphore','OSD_MailBox','OSD_Process'],{'OSD_Path':['LocateExecFile'],'OSD':['ControlBreak']}),
-#    SHAPE
+##################################
+######## Shape ##################
+##################################
             ('Message',[],[]),
             ('ShapeAlgo',['TopoDS'],['ShapeAlgo']),
             ('ShapeBuild',['TopoDS','TopTools','TCollection','Geom','Message','Handle_Message_Algorithm'],[]),
@@ -465,67 +495,50 @@ else: #under Linux or MacOSX, names are libTKFillet*
 #
 # Setup
 #
-if MONOLITHIC:
-    print "Build monolithic pythonOCC"
-    builder = SWIG_generator.Builder(MODULES, GENERATE_DOC)
-    extension=[Extension("OCC._OCC",
-                        sources = [os.path.join(SWIG_FILES_PATH,"OCC.i"),
-                                   './Visualization/Display3d.cpp',
-                                   ],
-                        include_dirs=[OCC_INC,'./Visualization'],
-                        library_dirs=[OCC_LIB],
-                        define_macros= DEFINE_MACROS,
-                        swig_opts = SWIG_OPTS,
-                        libraries = LIBS,
-                        extra_compile_args = ECA,
-                        )]
-    data=('OCC',['./AUTHORS','./Licence_CeCILL_V2-en.txt','./__init__.py'])
-
-elif MODULAR:
-    print "Build modular pythonOCC"
-    Create__init__()
-    extension = []
-    for module in MODULES:
-        if GENERATE_SWIG:
-            builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
-        module_extension = Extension("OCC._%s"%module[0],
-                        sources = [os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])],
-                        include_dirs=[OCC_INC],
-                        library_dirs=[OCC_LIB],
-                        define_macros= DEFINE_MACROS,
-                        swig_opts = SWIG_OPTS,
-                        libraries = LIBS,
-                        extra_compile_args = ECA,
-                        )
-        extension.append(module_extension)
-    # Add Visualization
-    extension.append(Extension("OCC._Visualization",
-                        sources = [os.path.join(os.getcwd(),'Visualization','Visualization_modular.i'),
-                                   './Visualization/Display3d.cpp',
-                                   ],
-                        include_dirs=[OCC_INC,os.path.join(os.getcwd(),'Visualization')],
-                        library_dirs=[OCC_LIB],
-                        define_macros= DEFINE_MACROS,
-                        swig_opts = SWIG_OPTS,
-                        libraries = LIBS,
-                        extra_compile_args = ECA,
-                        ))
-    # Add Misc
-    extension.append(Extension("OCC._Misc",
-                        sources = [os.path.join(os.getcwd(),'Misc','Misc.i')],
-                        include_dirs=[OCC_INC],
-                        library_dirs=[OCC_LIB],
-                        define_macros= DEFINE_MACROS,
-                        swig_opts = SWIG_OPTS,
-                        libraries = LIBS,
-                        extra_compile_args = ECA,
-                        ))
-    data = (os.path.join(sys.prefix,'Lib','site-packages','OCC'),[os.path.join(os.getcwd(),'AUTHORS'),\
-                    os.path.join(os.getcwd(),'Licence_CeCILL_V2-en.txt'),\
-                    #os.path.join(os.getcwd(),'__init__.py'),\
-                    os.path.join(os.getcwd(),'Visualization','Visualization.py'),\
-                    os.path.join(os.getcwd(),'Misc','Misc.py')]+\
-                    glob.glob(os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,'*.py')))
+print "Building pythonOCC"
+Create__init__()
+extension = []
+for module in MODULES:
+    if GENERATE_SWIG:
+        builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
+    module_extension = Extension("OCC._%s"%module[0],
+                    sources = [os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])],
+                    include_dirs=[OCC_INC],
+                    library_dirs=[OCC_LIB],
+                    define_macros= DEFINE_MACROS,
+                    swig_opts = SWIG_OPTS,
+                    libraries = LIBS,
+                    extra_compile_args = ECA,
+                    )
+    extension.append(module_extension)
+# Add Visualization
+extension.append(Extension("OCC._Visualization",
+                    sources = [os.path.join(os.getcwd(),'Visualization','Visualization_modular.i'),
+                               './Visualization/Display3d.cpp',
+                               ],
+                    include_dirs=[OCC_INC,os.path.join(os.getcwd(),'Visualization')],
+                    library_dirs=[OCC_LIB],
+                    define_macros= DEFINE_MACROS,
+                    swig_opts = SWIG_OPTS,
+                    libraries = LIBS,
+                    extra_compile_args = ECA,
+                    ))
+# Add Misc
+extension.append(Extension("OCC._Misc",
+                    sources = [os.path.join(os.getcwd(),'Misc','Misc.i')],
+                    include_dirs=[OCC_INC],
+                    library_dirs=[OCC_LIB],
+                    define_macros= DEFINE_MACROS,
+                    swig_opts = SWIG_OPTS,
+                    libraries = LIBS,
+                    extra_compile_args = ECA,
+                    ))
+data = (os.path.join(sys.prefix,'Lib','site-packages','OCC'),[os.path.join(os.getcwd(),'AUTHORS'),\
+                os.path.join(os.getcwd(),'Licence_CeCILL_V2-en.txt'),\
+                #os.path.join(os.getcwd(),'__init__.py'),\
+                os.path.join(os.getcwd(),'Visualization','Visualization.py'),\
+                os.path.join(os.getcwd(),'Misc','Misc.py')]+\
+                glob.glob(os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,'*.py')))
     
 KARGS = {"ext_modules":extension}
 #
@@ -550,26 +563,22 @@ This version is built against OpenCascade 6.3.0""",
       **KARGS
       )
 
-if MONOLITHIC:
-    #
-    # Copy and rename OCC.py to __init__.py
-    #
-    shutil.copyfile(os.path.join(os.getcwd(),'SWIG_src','OCC.py'),os.path.join(OCC_BUILD_PATH,'__init__.py'))
-elif MODULAR:
-    # Copy *.py from SWIG_src_modular to OCC_BUILD_PATH
-    for module_tuple in MODULES:
-        module_name = module_tuple[0]
-        orig_file = os.path.join(environment.SWIG_FILES_PATH_MODULAR,'%s.py'%module_name)
-        dest_file = os.path.join(OCC_BUILD_PATH,'%s.py'%module_name)
-        shutil.copyfile(orig_file,dest_file)
-    # Copy Visualization.py
-    orig_file = os.path.join(os.getcwd(),'Visualization','Visualization.py')
-    dest_file = os.path.join(OCC_BUILD_PATH,'Visualization.py')
+#
+# Copy *.py from SWIG_src_modular to OCC_BUILD_PATH
+#
+for module_tuple in MODULES:
+    module_name = module_tuple[0]
+    orig_file = os.path.join(environment.SWIG_FILES_PATH_MODULAR,'%s.py'%module_name)
+    dest_file = os.path.join(OCC_BUILD_PATH,'%s.py'%module_name)
     shutil.copyfile(orig_file,dest_file)
-    # Copy Misc.py
-    orig_file = os.path.join(os.getcwd(),'Misc','Misc.py')
-    dest_file = os.path.join(OCC_BUILD_PATH,'Misc.py')
-    shutil.copyfile(orig_file,dest_file)
+# Copy Visualization.py
+orig_file = os.path.join(os.getcwd(),'Visualization','Visualization.py')
+dest_file = os.path.join(OCC_BUILD_PATH,'Visualization.py')
+shutil.copyfile(orig_file,dest_file)
+# Copy Misc.py
+orig_file = os.path.join(os.getcwd(),'Misc','Misc.py')
+dest_file = os.path.join(OCC_BUILD_PATH,'Misc.py')
+shutil.copyfile(orig_file,dest_file)
     
 if GENERATE_SWIG:
     print "%i exported classes"%SWIG_generator.nb_exported_classes
