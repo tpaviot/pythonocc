@@ -1,0 +1,131 @@
+2009/01/30:
+	- bugfixes in OCCViewer
+	- moved back from glcanvas to Panel (in wxDisplay.py) for portability reason.
+2009/01/28:
+	- implemented cache system for gccxml
+	- better handle of enums dependencies
+	- added DISPLAY en vcheck in OCCViewer.py
+2009/01/27:
+	- bugfixes in OCCViewer.py and wxDisplay.py
+	- moved Viewer to Display (conflict)
+2009/01/26:
+	- moved relative to absolute paths
+	- bugfix in lib* search for MacOsX
+	- code cleanup and refactoring
+2009/01/24:
+	- SWIG generated files are in different folders
+2009/01/21:
+	- added '-generate_swig' and '-with-doc' options
+	- bug fix in -with_doc
+	- added '-h' option
+	- 'modular' and 'monolithic' moved to '-modular' and '-monolithic'
+	- bugfix in StepData module
+	- bugfix in OSD typedefs
+2009/01/20:
+	- switched 'generate_swig_modular' to 'modular'
+	- better modularization (each class is now in its package).
+	- MacOSX env settings
+2009/01/12:
+	- bugfix in monolithic build under Linux and MacOsX (excluding WNT* headers)
+	- bugfix in StepAP203 typesetting
+	- bugfix in WriteModuleEnums (BRepBndLib pygccxml exception)
+2008/12/14:
+	- More member functions in OCCViewer class
+	- Module dependencies
+2008/12/09:
+	- added TShort package
+	- big efforts on modular build
+2008/12/07:
+	- added environment variable to tell distutils to use g++ rather than gcc
+2008/12/05:
+	- Modular build of pythonOCC
+	- added space optimization for MSVC (/O1)
+2008/12/04:
+	- Added Graphic3d_Group to Graphic3d set of classes
+	- Display3d.cpp moved from C++ to Python
+2008/12/03:
+	- Added GetHandle() and GetObject() methods for Handle_* mechanism management
+2008/12/01:
+	- new package hierarchy
+	- included Utils contribution from Jelle Feringa
+	- added '-modern' SWIG directive
+	- proper handle of Standard_Real & function prototype (SWIG typemaps)
+	- new modules: TNaming_*, TDF_*, TFunction_*
+	- new Display3d method to draw a TopoDS_Shape with a Prs3d_Drawer
+2008/26/11:
+	- Linux compilation successfull
+2008/11/25:
+	- pythonOCC handles OCC exceptions
+2008/11/22:
+	- added SetQuality method in Display3d class
+	- Bugfix: window creation under Linux
+2008/11/21:
+	- New modules: LProp and LProp3d
+2008/11/20:
+	- Fixes for Linux compilation (thanks Björn Hein) (type setting)
+2008/11/19:
+	- New modules: Prs, PrsMgr
+	- Added Draw3DText in Display3d.cpp
+2008/11/18:
+	- InteractiveViewer: open python scripts
+	- InteractiveViewer: save/load layout
+	- bugfix: wrapping of Graphic3d* classes
+2008/11/16:
+	- bugfix in SWIG_GENERATOR (WriteLicenseHeader replacement)
+2008/11/14: ##################### RELEASE 1.0pre2 #######################
+2008/11/13:
+	- Added HLRBRep
+	- Bugfixes in InteractiveViewer
+2008/11/12:
+	- Triedron in right bottom corner
+2008/11/9:
+	- Merges Andy Haywoord's contrib
+	- Added triedron in Display3d class
+2008/11/7:
+	- Added Andy Haywood contrib in the class Display3d
+2008/11/5:
+	- Added XDEDRAW
+2008/11/2:
+	- __VERSION__ moved to VERSION
+2008/10/31:
+	- added OSD, Law, Alien_Image, IGESAppli, IGESDefs, IGESDimen, IGESGeom, IGESGraph,
+	IGESSolid, TColGeom, TColGeom2d, TColQuantity, TopoDSToStep, Voxel, Units
+	- Added SetBackground to Display3d class
+2008/10/29:
+	- generate docstrings feature
+	- removed /Ob1 optimization flag (keep default /Ox from distutils)
+	- added GeomProjLib, Geom2dAdaptor, Geom2dConvert, Geom2dHatch, Geom2dGcc, Geom2dInt, Vrml,
+	VrmlConverter, 
+	- added Shape*
+2008/10/27:
+    - 'generate_swig' flag has to be passed to command line
+2008/10/24:
+	- added BREP file format in CADViewer
+    - code cleanup
+    - auto config of environment.py from environment analysis
+2008/10/16: R0.99
+	- added IGESCAFControl, STEPCAFControl, Materials, TopTools, ChFi2d, ChFi3d, ChFiDS,
+	HLRAlgo, 
+	- added version number as __VERSION__ constant
+	- new Display3d class 
+2008/10/15:
+	- added timestamp in generated .i files
+	- added wxDisplay and CADViewer scripts
+	- MEMBER_FUNCTION_TO_EXLUDE added
+2008/10/12: R0.98
+	- bugfix in parsing function prototypes with parameters passed by reference
+	- Added math, StlMesh, Standard_Type
+2008/10/7: R0.97
+	- added  
+2008/10/6: Release 0.96
+	- new Module: IFSelect*
+	- pythonOCC is nouw built as "monolithic"
+2008/10/5:
+	- bugfix when parsing handle_* and classes
+2008/10/2:
+	- Added Handle* in each module
+	- New API documentation generated with epydoc
+	- math module renamed to mathOCC (to avoid conflic with python math module)
+	- New modules: CPnts, BRepAlgoAPI
+
+2008/10/1: Release 0.95
