@@ -4,7 +4,7 @@
 ##thomas.paviot@free.fr
 ##
 ##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
+##of python bindings for OpenCasacde library.
 ##
 ##This software is governed by the CeCILL license under French law and
 ##abiding by the rules of distribution of free software.  You can  use, 
@@ -42,6 +42,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -158,6 +159,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>

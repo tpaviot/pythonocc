@@ -4,7 +4,7 @@
 ##thomas.paviot@free.fr
 ##
 ##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
+##of python bindings for OpenCasacde library.
 ##
 ##This software is governed by the CeCILL license under French law and
 ##abiding by the rules of distribution of free software.  You can  use, 
@@ -2703,6 +2703,31 @@ class Interface_SignType : public MoniTool_SignText {
 	}
 };
 
+%nodefaultctor Interface_NodeOfReaderLib;
+class Interface_NodeOfReaderLib : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Interface_NodeOfReaderLib();
+		%feature("autodoc", "1");
+		void AddNode(const Handle_Interface_GlobalNodeOfReaderLib &anode);
+		%feature("autodoc", "1");
+		const Handle_Interface_ReaderModule & Module() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Protocol & Protocol() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_NodeOfReaderLib & Next() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Interface_NodeOfReaderLib();
+
+};
+%extend Interface_NodeOfReaderLib {
+	Handle_Interface_NodeOfReaderLib GetHandle() {
+	return *(Handle_Interface_NodeOfReaderLib*) &$self;
+	}
+};
+
 %nodefaultctor Interface_IndexedMapOfAsciiString;
 class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 	public:
@@ -2788,29 +2813,66 @@ class Interface_CheckFailure : public Interface_InterfaceError {
 	}
 };
 
-%nodefaultctor Interface_NodeOfReaderLib;
-class Interface_NodeOfReaderLib : public MMgt_TShared {
+%nodefaultctor Interface_CheckIterator;
+class Interface_CheckIterator {
 	public:
 		%feature("autodoc", "1");
-		Interface_NodeOfReaderLib();
+		Interface_CheckIterator();
 		%feature("autodoc", "1");
-		void AddNode(const Handle_Interface_GlobalNodeOfReaderLib &anode);
+		Interface_CheckIterator(const char * name);
 		%feature("autodoc", "1");
-		const Handle_Interface_ReaderModule & Module() const;
+		void SetName(const char * name);
 		%feature("autodoc", "1");
-		const Handle_Interface_Protocol & Protocol() const;
+		Standard_CString Name() const;
 		%feature("autodoc", "1");
-		const Handle_Interface_NodeOfReaderLib & Next() const;
+		void SetModel(const Handle_Interface_InterfaceModel &model);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_Interface_InterfaceModel Model() const;
 		%feature("autodoc", "1");
-		virtual		~Interface_NodeOfReaderLib();
+		void Clear();
+		%feature("autodoc", "1");
+		void Merge(Interface_CheckIterator & other);
+		%feature("autodoc", "1");
+		void Add(const Handle_Interface_Check &ach, const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Check(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Check(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check & CCheck(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Handle_Interface_Check & CCheck(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty(const Standard_Boolean failsonly) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Complies(const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Interface_CheckIterator Extract(const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Interface_CheckIterator Extract(const char * mess, const Standard_Integer incl, const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const char * mess, const Standard_Integer incl, const Interface_CheckStatus status);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient Checkeds(const Standard_Boolean failsonly, const Standard_Boolean global) const;
+		%feature("autodoc", "1");
+		void Start() const;
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Value() const;
+		%feature("autodoc", "1");
+		Standard_Integer Number() const;
+		%feature("autodoc", "1");
+		void Print(const Handle_Message_Messenger &S, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
+		%feature("autodoc", "1");
+		void Print(const Handle_Message_Messenger &S, const Handle_Interface_InterfaceModel &model, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~Interface_CheckIterator();
 
-};
-%extend Interface_NodeOfReaderLib {
-	Handle_Interface_NodeOfReaderLib GetHandle() {
-	return *(Handle_Interface_NodeOfReaderLib*) &$self;
-	}
 };
 
 %nodefaultctor Interface_LineBuffer;
