@@ -80,7 +80,7 @@ except:
 import distutils
 from distutils.core import setup, Extension
 import environment
-from environment import OCC_INC,OCC_LIB, VERSION, SWIG_FILES_PATH,\
+from environment import OCC_INC,OCC_LIB, VERSION,\
 ECA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, OCC_BUILD_PATH,SWIG_FILES_PATH_MODULAR
 #
 # Prompt
@@ -427,7 +427,7 @@ if sys.platform=='win32':
 else:
     MODULES.extend([
                     ('Xw',['OSD','TCollection'],[]),
-                    ('Graphic2d',[],[],{'Graphic2d':['TransientManager']}),
+                    ('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
                     ('Graphic3d',['OSD','MFT','gp'],[],{'Graphic3d_Group':['SetGroupPrimitivesAspect']}),
                     ('Prs3d',['OSD','MFT','Xw','Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),
                     ('PrsMgr',['OSD','MFT','Xw','Graphic3d','gp','Aspect','Handle_TCollection'],[]),
