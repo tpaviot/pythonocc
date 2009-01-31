@@ -245,9 +245,12 @@ class ModularBuilder(object):
         """
         Fill in the enum_list with all enums defined in this module
         """
-        for enum in self._mb.enumerations():
-            enum_name = enum.name
-            self._enum_list.append(enum_name)
+        try:#eeror with BRepBndLib on Linux
+            for enum in self._mb.enumerations():
+                enum_name = enum.name
+                self._enum_list.append(enum_name)
+        except:
+            pass
         
     def GenerateSWIGSourceFile(self):
         """
