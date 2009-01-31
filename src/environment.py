@@ -42,11 +42,7 @@ import shutil
 #
 # Define pythonOCC version
 #
-VERSION = '20090126'#'1.0pre2'
-#
-# Define build parameters
-#
-SWIG_FILES_PATH = os.path.join(os.getcwd(),'SWIG_src')
+VERSION = '1.0pre3'
 #
 # Define paths
 #

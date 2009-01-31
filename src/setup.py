@@ -40,7 +40,7 @@ import shutil
 import time
 
 init_time = time.time()
-
+print "Building pythonOCC"
 # Check whether generate swig .i files
 if '-generate_swig' in sys.argv:
     GENERATE_SWIG = True
@@ -163,7 +163,6 @@ MODULES = [
            ('Transfer',['MoniTool','IFSelect'],[],{'Transfer_Finder':['GetStringAttribute']}),
            ('XSAlgo',['Standard'],['XSAlgo_AlgoContainer']),
            ('XSControl',['TopoDS','TCollection','Interface','MoniTool','IFSelect'],['XSControl_Vars']),
-
 ############################################
 ############# Stl ##########################
 ############################################
@@ -225,7 +224,7 @@ MODULES = [
 ###########################
            ('Intf',[],[]),
            ('IntRes2d',[],[]),
-           ('IntCurveSurface',[],['IntCurveSurface_ThePolyhedronOfHInter']),############################
+           ('IntCurveSurface',[],['IntCurveSurface_ThePolyhedronOfHInter']),
            ('IntSurf',[],[]),
            ('IntImp',[],[]),
 ####################################
@@ -468,13 +467,6 @@ def Create__init__():
         init_fp.write("'%s',\n"%module_name)
     init_fp.write("'Visualization',\n'Misc'\n")
     init_fp.write(']\n')
-#    for module_tuple in MODULES:
-#        module_name = module_tuple[0]
-#        #init_fp.write("'%s',\n"%module_name)
-#        init_fp.write('from %s import *\n'%module_name)
-#
-#    init_fp.write('from Visualization import *\n')
-#    init_fp.write('from Misc import *\n')
     init_fp.close()        
 #
 # Building libraries list
@@ -495,7 +487,6 @@ else: #under Linux or MacOSX, names are libTKFillet*
 #
 # Setup
 #
-print "Building pythonOCC"
 Create__init__()
 extension = []
 for module in MODULES:
@@ -556,9 +547,9 @@ OpenCascade library. It contains python functions and classes
 that will allow you to fully utilitize the OpenCascade library.
 This version is built against OpenCascade 6.3.0""",
       package_dir = {#'OCC':os.path.join(os.getcwd(),'OCC'),\
-                     'OCC.Utils':os.path.join(os.getcwd(),'Utils'),\
+                     #'OCC.Utils':os.path.join(os.getcwd(),'Utils'),\
                      'OCC.Display':os.path.join(os.getcwd(),'Display')},
-      packages = ['OCC','OCC.Utils','OCC.Display'],
+      packages = ['OCC','OCC.Display'],
       data_files = [data],
       **KARGS
       )

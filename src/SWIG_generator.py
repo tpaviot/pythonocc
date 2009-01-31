@@ -675,12 +675,12 @@ class ModularBuilder(object):
                           'TopOpeBRepBuild_SplitEdge.hxx',
                           'Message_Algorithm.hxx',
                           'Message_ExecStatus.hxx',
-                          'Interface_CheckIterator.hxx'
                           ]
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('TNaming_IteratorOnShapesSet.hxx') #error with gccxml under Linux
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
             HXX_TO_EXCLUDE.append('Interface_STAT.hxx')
+            HXX_TO_EXCLUDE.append('Interface_CheckIterator.hxx')
         # Under Linux, remove all *WNT* classes
         if sys.platform != 'win32':
             for hxx_file in HXX_FILES:
@@ -747,7 +747,7 @@ class ModularBuilder(object):
         Including enums that match module name
         """
         if self.MODULE_NAME== 'OSD':
-            return # Problem with a typedef in OSD module
+            return # TODO: Problem with a typedef in OSD module
         typedefs = self._mb.global_ns.typedefs()
         for elem in typedefs:
             if (elem.name.startswith(self.MODULE_NAME)) and (not '::' in '%s'%elem.type):
@@ -762,7 +762,7 @@ class ModularBuilder(object):
                 files=[self._wrapper_filename],
                 gccxml_path=environment.GCC_XML_PATH,
                 define_symbols=environment.PYGCCXML_DEFINES,
-                cache = os.path.join(os.getcwd(),'gccxml_cache','%s.xml'%self.MODULE_NAME),
+                #cache = os.path.join(os.getcwd(),'gccxml_cache','%s.xml'%self.MODULE_NAME),
                 include_paths=[environment.OCC_INC])
         # Excluding member functions that cause compilation fail
         if self.MODULE_NAME == 'ShapeSchema':
