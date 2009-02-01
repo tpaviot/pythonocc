@@ -565,6 +565,8 @@ class AppFrame(wx.Frame):
         else:
             return True
         self.canva._3dDisplay.DisplayShape(shape)
+        wx.SafeYield()
+        self.canva._3dDisplay.Tumble(314)
         end_time = time.time()
         self.SetTitle("CAD Viewer %s:%s"%(VERSION,filename))
         duration = end_time-start_time
