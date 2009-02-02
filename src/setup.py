@@ -443,7 +443,10 @@ def Create__init__():
     Create the __init__.py file for OCC package.
     just create domething like: __all__ = ['gp,'gce']
     """
-    init_fp = open(os.path.join(os.getcwd(),'OCC','__init__.py'),'w')
+    init_directory = os.path.join(os.getcwd(),'OCC')
+    if not os.isdir(init_directory):
+        os.mkdir(init_directory)
+    init_fp = open(init_directory,'__init__.py'),'w')
     #
     # First set important OpenCascade env var
     # These settings are taken from OCC message forum:
