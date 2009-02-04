@@ -120,17 +120,21 @@ if GENERATE_SWIG:#a small things to do before building
     #
     if not os.path.isdir(SWIG_FILES_PATH_MODULAR):
         os.mkdir(SWIG_FILES_PATH_MODULAR)
-    #
-    # OCC header file TopOpeBRepDS_tools.hxx maybe missing, causing a gccxml error.
-    #
-    if not os.path.isfile(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx')):
+#
+# OCC header file TopOpeBRepDS_tools.hxx maybe missing, causing a gccxml error.
+#
+if not os.path.isfile(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx')):
+    try:
         f = open(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx'),'w')
         f.close()
         print "TopOpeBRepDS_tools.hxx created in %s"%OCC_INC
+    except:
+        print "You don't have write acces to %s directory. Please use 'sudo python setup.py build'."%OCC_INC
+        sys.exit(0)
 #
 # List of modules to export
 #
-PACKAGE = "OCC"
+PACKAGE = 'OCC'
 # (string module_name, list additional headers, list classes_to_exclude, dict member_functions to exclude)
 MODULES = [
            ('Standard',[],['Standard_SStream'],{'Handle_Standard_Persistent':['ShallowDump']}),
@@ -175,7 +179,6 @@ MODULES = [
            ('Vrml',[],[]),
            ('VrmlAPI',[],[]),
            ('VrmlConverter',['TCollection'],[]),
-
            ('TopAbs',[],[]),
            ('Adaptor2d',[],[]),
            ('Adaptor3d',['Handle_TCollection'],[]),
@@ -443,10 +446,11 @@ def Create__init__():
     Create the __init__.py file for OCC package.
     just create domething like: __all__ = ['gp,'gce']
     """
+    print "Creating __init__.py script."
     init_directory = os.path.join(os.getcwd(),'OCC')
-    if not os.isdir(init_directory):
+    if not os.path.isdir(init_directory):
         os.mkdir(init_directory)
-    init_fp = open(init_directory,'__init__.py'),'w')
+    init_fp = open(os.path.join(init_directory,'__init__.py'),'w')
     #
     # First set important OpenCascade env var
     # These settings are taken from OCC message forum:
@@ -462,6 +466,10 @@ def Create__init__():
     init_fp.write("os.environ['MMGT_OPT']='1'\n")
     init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
     #
+    # Include Version number
+    #
+    init_fp.write("VERSION='%s'\n"%VERSION)
+    #
     #
     #
     init_fp.write('__all__=[')
@@ -470,7 +478,8 @@ def Create__init__():
         init_fp.write("'%s',\n"%module_name)
     init_fp.write("'Visualization',\n'Misc'\n")
     init_fp.write(']\n')
-    init_fp.close()        
+    init_fp.close()
+    print "__init__.py script created."      
 #
 # Building libraries list
 #
