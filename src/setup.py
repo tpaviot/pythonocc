@@ -81,7 +81,7 @@ import distutils
 from distutils.core import setup, Extension
 import environment
 from environment import OCC_INC,OCC_LIB, VERSION,\
-ECA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, OCC_BUILD_PATH,SWIG_FILES_PATH_MODULAR
+ECA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, SWIG_FILES_PATH_MODULAR
 #
 # Prompt
 #
@@ -461,10 +461,11 @@ def Create__init__():
     #MMGT_CLEAR=1 //this is important , at least in my case.Many problems could rise if i did not set this variable.Sets all bits of new allocated memory to NULL.
     #MMGT_REENTRANT=0 //My application is not multi threaded , so i do not need this.
     init_fp.write('import os\n')
-    init_fp.write('#Specify OpenCascade memory management settings\n')
+    init_fp.write('#\n#Define OpenCascade behaviour settings\n#\n')
     init_fp.write("os.environ['MMGT_CLEAR']='1'\n")
     init_fp.write("os.environ['MMGT_OPT']='1'\n")
     init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
+    init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
     #
     # Include Version number
     #
@@ -560,8 +561,17 @@ that will allow you to fully utilitize the OpenCascade library.
 This version is built against OpenCascade 6.3.0""",
       package_dir = {#'OCC':os.path.join(os.getcwd(),'OCC'),\
                      #'OCC.Utils':os.path.join(os.getcwd(),'Utils'),\
-                     'OCC.Display':os.path.join(os.getcwd(),'Display')},
-      packages = ['OCC','OCC.Display'],
+                     'OCC.Display':os.path.join(os.getcwd(),'Display'),\
+                     'OCC.Tools':os.path.join(os.getcwd(),'..','Tools'),\
+                     'OCC.Tools.CADViewer':os.path.join(os.getcwd(),'..','Tools','CADViewer'),
+                     'OCC.Tools.InteractiveViewer':os.path.join(os.getcwd(),'..','Tools','InteractiveViewer'),
+                     'OCC.data':os.path.join(os.getcwd(),'..','data'),
+                     'OCC.data':os.path.join(os.getcwd(),'..','_3dmodes'),
+                     'OCC.data':os.path.join(os.getcwd(),'..','images'),
+                     },
+      packages = ['OCC','OCC.Display',\
+                  'OCC.Tools.CADViewer','OCC.Tools.InteractiveViewer',\
+                  'OCC.data','OCC.data.3dmodels','OCC.data.images'],
       data_files = [data],
       **KARGS
       )
@@ -569,19 +579,19 @@ This version is built against OpenCascade 6.3.0""",
 #
 # Copy *.py from SWIG_src_modular to OCC_BUILD_PATH
 #
-for module_tuple in MODULES:
-    module_name = module_tuple[0]
-    orig_file = os.path.join(environment.SWIG_FILES_PATH_MODULAR,'%s.py'%module_name)
-    dest_file = os.path.join(OCC_BUILD_PATH,'%s.py'%module_name)
-    shutil.copyfile(orig_file,dest_file)
+#for module_tuple in MODULES:
+#    module_name = module_tuple[0]
+#    orig_file = os.path.join(environment.SWIG_FILES_PATH_MODULAR,'%s.py'%module_name)
+#    dest_file = os.path.join(OCC_BUILD_PATH,'%s.py'%module_name)
+#    shutil.copyfile(orig_file,dest_file)
 # Copy Visualization.py
-orig_file = os.path.join(os.getcwd(),'Visualization','Visualization.py')
-dest_file = os.path.join(OCC_BUILD_PATH,'Visualization.py')
-shutil.copyfile(orig_file,dest_file)
+#orig_file = os.path.join(os.getcwd(),'Visualization','Visualization.py')
+#dest_file = os.path.join(OCC_BUILD_PATH,'Visualization.py')
+#shutil.copyfile(orig_file,dest_file)
 # Copy Misc.py
-orig_file = os.path.join(os.getcwd(),'Misc','Misc.py')
-dest_file = os.path.join(OCC_BUILD_PATH,'Misc.py')
-shutil.copyfile(orig_file,dest_file)
+#orig_file = os.path.join(os.getcwd(),'Misc','Misc.py')
+#dest_file = os.path.join(OCC_BUILD_PATH,'Misc.py')
+#shutil.copyfile(orig_file,dest_file)
     
 if GENERATE_SWIG:
     print "%i exported classes"%SWIG_generator.nb_exported_classes

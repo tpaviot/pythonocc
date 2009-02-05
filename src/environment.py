@@ -42,15 +42,15 @@ import shutil
 #
 # Define pythonOCC version
 #
-VERSION = '1.0pre3'
+VERSION = 'md0.1'
 #
 # Define paths
 #
 version_info = sys.version_info
-if sys.platform == 'win32':
-    OCC_BUILD_PATH = os.path.join(os.getcwd(),'build','lib.win32-%i.%i'%(version_info[0],version_info[1]),'OCC')
-elif sys.platform == 'linux2':
-    OCC_BUILD_PATH = os.path.join(os.getcwd(),'build','lib.linux-i686-%i.%i'%(version_info[0],version_info[1]),'OCC')
+#if sys.platform == 'win32':
+#    OCC_BUILD_PATH = os.path.join(os.getcwd(),'build','lib.win32-%i.%i'%(version_info[0],version_info[1]),'OCC')
+#elif sys.platform == 'linux2':
+#    OCC_BUILD_PATH = os.path.join(os.getcwd(),'build','lib.linux-i686-%i.%i'%(version_info[0],version_info[1]),'OCC')
     
 try:
     OCC_ROOT = os.environ['CASROOT']
@@ -100,4 +100,4 @@ elif sys.platform=='darwin':
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB','-DOCC_CONVERT_SIGNALS']
     ECA = ['-O0']
 else:
-    raise "Unknown platform"
+    raise "Unsupported platform"

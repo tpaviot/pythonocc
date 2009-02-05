@@ -1,3 +1,6 @@
+2009/02/05:
+	- added CADViewer to /Tools directory
+	- improved portability (removed OCC_BUILD_PATH)
 2009/02/02:
 	- added VERSION
 	- bugfixes in setup.py
