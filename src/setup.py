@@ -518,7 +518,7 @@ for module in MODULES:
 # Add Visualization
 extension.append(Extension("OCC._Visualization",
                     sources = [os.path.join(os.getcwd(),'Visualization','Visualization_modular.i'),
-                               './Visualization/Display3d.cpp',
+                               os.path.join(os.getcwd(),'Visualization','Display3d.cpp'),
                                ],
                     include_dirs=[OCC_INC,os.path.join(os.getcwd(),'Visualization')],
                     library_dirs=[OCC_LIB],
@@ -566,33 +566,18 @@ This version is built against OpenCascade 6.3.0""",
                      'OCC.Tools.CADViewer':os.path.join(os.getcwd(),'..','Tools','CADViewer'),
                      'OCC.Tools.InteractiveViewer':os.path.join(os.getcwd(),'..','Tools','InteractiveViewer'),
                      'OCC.data':os.path.join(os.getcwd(),'..','data'),
-                     'OCC.data':os.path.join(os.getcwd(),'..','_3dmodes'),
-                     'OCC.data':os.path.join(os.getcwd(),'..','images'),
+                     'OCC.data._3dmodels':os.path.join(os.getcwd(),'..','data','_3dmodels'),
+                     'OCC.data.images':os.path.join(os.getcwd(),'..','data','images'),
+                     'OCC.tests':os.path.join(os.getcwd(),'..','tests'),
                      },
       packages = ['OCC','OCC.Display',\
                   'OCC.Tools.CADViewer','OCC.Tools.InteractiveViewer',\
-                  'OCC.data','OCC.data.3dmodels','OCC.data.images'],
+                  'OCC.data','OCC.data._3dmodels','OCC.data.images',\
+                  'OCC.tests'],
       data_files = [data],
       **KARGS
       )
-
-#
-# Copy *.py from SWIG_src_modular to OCC_BUILD_PATH
-#
-#for module_tuple in MODULES:
-#    module_name = module_tuple[0]
-#    orig_file = os.path.join(environment.SWIG_FILES_PATH_MODULAR,'%s.py'%module_name)
-#    dest_file = os.path.join(OCC_BUILD_PATH,'%s.py'%module_name)
-#    shutil.copyfile(orig_file,dest_file)
-# Copy Visualization.py
-#orig_file = os.path.join(os.getcwd(),'Visualization','Visualization.py')
-#dest_file = os.path.join(OCC_BUILD_PATH,'Visualization.py')
-#shutil.copyfile(orig_file,dest_file)
-# Copy Misc.py
-#orig_file = os.path.join(os.getcwd(),'Misc','Misc.py')
-#dest_file = os.path.join(OCC_BUILD_PATH,'Misc.py')
-#shutil.copyfile(orig_file,dest_file)
-    
+   
 if GENERATE_SWIG:
     print "%i exported classes"%SWIG_generator.nb_exported_classes
 final_time = time.time()

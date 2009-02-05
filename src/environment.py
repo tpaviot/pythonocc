@@ -46,12 +46,6 @@ VERSION = 'md0.1'
 #
 # Define paths
 #
-version_info = sys.version_info
-#if sys.platform == 'win32':
-#    OCC_BUILD_PATH = os.path.join(os.getcwd(),'build','lib.win32-%i.%i'%(version_info[0],version_info[1]),'OCC')
-#elif sys.platform == 'linux2':
-#    OCC_BUILD_PATH = os.path.join(os.getcwd(),'build','lib.linux-i686-%i.%i'%(version_info[0],version_info[1]),'OCC')
-    
 try:
     OCC_ROOT = os.environ['CASROOT']
 except KeyError:
@@ -73,7 +67,7 @@ if sys.platform=='win32':
     #ECA = ['/D"WNT"','/D"WIN32"','/D"_WINDOWS"','/D"CSFDB"','/link /MACHINE:X86 /SUBSYSTEM:WINDOWS']
     ECA = ['/link','/MACHINE:X86','/SUBSYSTEM:CONSOLE']#,'/Os'] #space optimization
     #SWIG_OPTS = ['-modern','-small','-fastdispatch','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS']
-    SWIG_OPTS = ['-O','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS']
+    SWIG_OPTS = ['-O','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
 elif sys.platform=='linux2':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     os.environ['CC'] = 'g++'
@@ -83,7 +77,9 @@ elif sys.platform=='linux2':
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None),('LIN',None),('LININTEL',None),('_GNU_SOURCE','1')]
-    SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1']
+    SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+                 '-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
+                 '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
@@ -97,7 +93,9 @@ elif sys.platform=='darwin':
     GCC_XML_PATH = '/usr/bin' 
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]
-    SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB','-DOCC_CONVERT_SIGNALS']
+    SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+                 '-DOCC_CONVERT_SIGNALS',\
+                 '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
 else:
     raise "Unsupported platform"
