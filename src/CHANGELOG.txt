@@ -1,3 +1,5 @@
+2009/02/07:
+	- Linux patch from Doug Du Boulay
 2009/02/05:
 	- packaging improvements (platform independant)
 	- added CADViewer to /Tools directory

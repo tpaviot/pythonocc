@@ -541,8 +541,10 @@ extension.append(Extension("OCC._Misc",
                     extra_compile_args = ECA,
                     extra_link_args = ELA,
                     ))
-data = (os.path.join(sysconfig.get_python_lib(),'OCC'),[os.path.join(os.getcwd(),'AUTHORS'),\
-                os.path.join(os.getcwd(),'Licence_CeCILL_V2-en.txt')])
+install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
+data = (install_dir,\
+        [os.path.join(os.getcwd(),'AUTHORS'),
+         os.path.join(os.getcwd(),'Licence_CeCILL_V2-en.txt')])
     
 KARGS = {"ext_modules":extension}
 #
@@ -559,21 +561,8 @@ setup(name = "pythonOCC",
 OpenCascade library. It contains python functions and classes
 that will allow you to fully utilitize the OpenCascade library.
 This version is built against OpenCascade 6.3.0""",
-      package_dir = {#'OCC':os.path.join(os.getcwd(),'OCC'),\
-                     #'OCC.Utils':os.path.join(os.getcwd(),'Utils'),\
-                     'OCC.Display':os.path.join(os.getcwd(),'Display'),\
-                     'OCC.Tools':os.path.join(os.getcwd(),'..','Tools'),\
-                     'OCC.Tools.CADViewer':os.path.join(os.getcwd(),'..','Tools','CADViewer'),
-                     'OCC.Tools.InteractiveViewer':os.path.join(os.getcwd(),'..','Tools','InteractiveViewer'),
-                     'OCC.data':os.path.join(os.getcwd(),'..','data'),
-                     'OCC.data._3dmodels':os.path.join(os.getcwd(),'..','data','_3dmodels'),
-                     'OCC.data.images':os.path.join(os.getcwd(),'..','data','images'),
-                     'OCC.tests':os.path.join(os.getcwd(),'..','tests'),
-                     },
-      packages = ['OCC','OCC.Display',\
-                  'OCC.Tools.CADViewer','OCC.Tools.InteractiveViewer',\
-                  'OCC.data','OCC.data._3dmodels','OCC.data.images',\
-                  'OCC.tests'],
+      package_dir = {'OCC.Display':os.path.join(os.getcwd(),'Display')},
+      packages = ['OCC','OCC.Display'],
       data_files = [data],
       **KARGS
       )

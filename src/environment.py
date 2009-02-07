@@ -82,7 +82,7 @@ elif sys.platform=='linux2':
                  '-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
-    ELA = ['-lpython2.5', '-Wl,--no-undefined']
+    ELA = ['-Wl,--no-undefined']
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     #

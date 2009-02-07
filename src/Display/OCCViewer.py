@@ -203,7 +203,7 @@ class Viewer3d(OCC.Visualization.Display3d):
         self.V3dView.SetAntialiasingOff()
         self.Repaint()
     
-    def RemoveAll(self):
+    def EraseAll(self):
         self._objects_displayed = []
         self.AISContext.EraseAll()
         
