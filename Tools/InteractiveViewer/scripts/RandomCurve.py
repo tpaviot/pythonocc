@@ -16,6 +16,15 @@ __date__ = "14 November 2007"
 import os
 import os.path
 import random
+
+from OCC.TColgp import *
+from OCC.GeomAPI import *
+from OCC.Geom import *
+from OCC.BRepBuilderAPI import *
+from OCC.TopoDS import *
+from OCC.BRep import *
+from OCC.gp import *
+
 random.seed()
 # --------------------------------------------------
 
@@ -59,9 +68,6 @@ MakeCurve(coords)
 
 for c in coords:
     MakePoint(*c)
-# --------------------------------------------------
 
 display.View_Iso()
-display.Zoom_FitAll()
-
-# --------------------------------------------------
+display.FitAll()

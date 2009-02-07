@@ -35,16 +35,16 @@
 
 import os
 import math
-import OCC
+from OCC import BRepPrimAPI
 #
 # Make the 1st cylinder
 #
-cyl1 = OCC.BRepPrimAPI_MakeCylinder(50,200)
+cyl1 = BRepPrimAPI.BRepPrimAPI_MakeCylinder(50,200)
 cyl1_shape = cyl1.Shape()
 #
 # Make the 2nd cylinder
 #
-cyl2 = OCC.BRepPrimAPI_MakeCylinder(OCC.gp_Ax2(OCC.gp_Pnt(200,200,0),OCC.gp_Dir(0,0,1)),40,110,210*math.pi/180)
+cyl2 = BRepPrimAPI.BRepPrimAPI_MakeCylinder(OCC.gp_Ax2(OCC.gp_Pnt(200,200,0),OCC.gp_Dir(0,0,1)),40,110,210*math.pi/180)
 cyl2_shape = cyl2.Shape()
 #
 # Export result to IGES file

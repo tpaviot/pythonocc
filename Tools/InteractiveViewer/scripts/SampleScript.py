@@ -17,11 +17,19 @@ __date__ = "13 November 2007"
 import os
 import os.path
 import math
-# --------------------------------------------------
+
+from OCC.gp import *
+from OCC.BRepPrimAPI import *
+from OCC.TopExp import *
+from OCC.TopAbs import *
+from OCC.BRepAlgo import *
+from OCC.BRepOffsetAPI import *
+from OCC.TColgp import *
+from OCC.GeomAPI import *
+from OCC.BRepBuilderAPI import *
+from OCC.Geom import *
 
 display.EraseAll()
-
-# --------------------------------------------------
 
 def GetFacesOnShape(s):
     te = TopExp_Explorer()
@@ -212,7 +220,7 @@ p = os.path.dirname(os.path.abspath(__file__))
 # --------------------------------------------------
 
 display.View_Iso()
-display.Zoom_FitAll()
+display.FitAll()
 
 # --------------------------------------------------
 
