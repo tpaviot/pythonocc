@@ -79,9 +79,10 @@ except:
     print "psyco not found. This module can speed up pythonOCC compilation time by about 10%."
 import distutils
 from distutils.core import setup, Extension
+from distutils import sysconfig
 import environment
 from environment import OCC_INC,OCC_LIB, VERSION,\
-ECA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, SWIG_FILES_PATH_MODULAR
+ECA, ELA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, SWIG_FILES_PATH_MODULAR
 #
 # Prompt
 #
@@ -513,6 +514,7 @@ for module in MODULES:
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
                     extra_compile_args = ECA,
+                    extra_link_args = ELA,
                     )
     extension.append(module_extension)
 # Add Visualization
@@ -526,6 +528,7 @@ extension.append(Extension("OCC._Visualization",
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
                     extra_compile_args = ECA,
+                    extra_link_args = ELA,
                     ))
 # Add Misc
 extension.append(Extension("OCC._Misc",
@@ -536,13 +539,10 @@ extension.append(Extension("OCC._Misc",
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
                     extra_compile_args = ECA,
+                    extra_link_args = ELA,
                     ))
-data = (os.path.join(sys.prefix,'Lib','site-packages','OCC'),[os.path.join(os.getcwd(),'AUTHORS'),\
-                os.path.join(os.getcwd(),'Licence_CeCILL_V2-en.txt'),\
-                #os.path.join(os.getcwd(),'__init__.py'),\
-                os.path.join(os.getcwd(),'Visualization','Visualization.py'),\
-                os.path.join(os.getcwd(),'Misc','Misc.py')]+\
-                glob.glob(os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,'*.py')))
+data = (os.path.join(sysconfig.get_python_lib(),'OCC'),[os.path.join(os.getcwd(),'AUTHORS'),\
+                os.path.join(os.getcwd(),'Licence_CeCILL_V2-en.txt')])
     
 KARGS = {"ext_modules":extension}
 #

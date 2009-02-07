@@ -68,6 +68,7 @@ if sys.platform=='win32':
     ECA = ['/link','/MACHINE:X86','/SUBSYSTEM:CONSOLE']#,'/Os'] #space optimization
     #SWIG_OPTS = ['-modern','-small','-fastdispatch','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS']
     SWIG_OPTS = ['-O','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+    ELA = []
 elif sys.platform=='linux2':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     os.environ['CC'] = 'g++'
@@ -81,6 +82,7 @@ elif sys.platform=='linux2':
                  '-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
+    ELA = ['-lpython2.5', '-Wl,--no-undefined']
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     #
@@ -97,5 +99,6 @@ elif sys.platform=='darwin':
                  '-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
+    ELA = []
 else:
     raise "Unsupported platform"
