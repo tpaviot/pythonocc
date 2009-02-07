@@ -57,6 +57,5 @@ if DOC_SYSTEM == "pydoc":
             pydoc.writedoc(md)
 
 elif DOC_SYSTEM == "epydoc":
-    os.system('C:/Developpement/Python24/Scripts/epydoc.py C:/Developpement/Minerva/pythonOCC_SWIG/build/lib.win32-2.4/OCC -o ./APIREF0.96 --html --no-sourcecode  --name="pythonOCC 0.96 API reference"')# --exclude="_*"')
-    
-    
+    os.system('epydoc.py OCC -o ./APIREF --html --no-sourcecode  --graph all -v --name="pythonOCC %s API reference"'%VERSION)
+
