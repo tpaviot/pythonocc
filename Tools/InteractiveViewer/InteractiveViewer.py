@@ -424,11 +424,12 @@ class AppFrame(wx.Frame):
         self.notebook.AddPage(b, "Help", True, help_icon)
         
     def _createpythonshell(self):
-        intronote = "Interactive Python Shell."
+        intronote = "Interactive Python Shell for pythonOCC."
         py = wx.py.shell.Shell(self.notebook, -1, introText=intronote)
         py.interp.locals["self"] = self
         py.interp.locals["canvas"] = self.canva
-        py.interp.locals["display"] = self.canva._3dDisplay
+        if sys.platform=='win32':
+            py.interp.locals["display"] = self.canva._3dDisplay
         py_icon = CreateMaskedBitmap(os.path.join(THISPATH, 'icons', 'py.png'), 16, 16)
         self.notebook.AddPage(py, "Python", True, py_icon)
         self.pyshell = py
@@ -597,6 +598,7 @@ if __name__=="__main__":
     else:
         frame.Show(True)
         wx.SafeYield()
-        frame.canva.Init3dViewer()        
+        frame.canva.Init3dViewer()
+        frame.pyshell.pyshell.interp.locals["display"] = frame.canva._3dDisplay        
     app.SetTopWindow(frame)
     app.MainLoop()            
