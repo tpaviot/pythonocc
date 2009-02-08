@@ -561,8 +561,9 @@ setup(name = "pythonOCC",
 OpenCascade library. It contains python functions and classes
 that will allow you to fully utilitize the OpenCascade library.
 This version is built against OpenCascade 6.3.0""",
-      package_dir = {'OCC.Display':os.path.join(os.getcwd(),'Display')},
-      packages = ['OCC','OCC.Display'],
+      package_dir = {'OCC.Display':os.path.join(os.getcwd(),'Display'),
+                     'OCC.Utils':os.path.join(os.getcwd(),'..','Utils')},
+      packages = ['OCC','OCC.Display','OCC.Utils'],
       data_files = [data],
       **KARGS
       )
