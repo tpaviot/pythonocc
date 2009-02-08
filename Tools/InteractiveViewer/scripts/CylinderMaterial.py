@@ -13,6 +13,10 @@ basic geometry creation in the InteractiveViewer
 __author__ = "Thomas Paviot"
 __date__ = "2 December 2008"
 
+from OCC.Graphic3d import *
+from OCC.BRepPrimAPI import *
+from OCC.gp import *
+
 display.EraseAll()
 
 #
@@ -30,6 +34,6 @@ display.DisplayShape(s.Shape())
 
 
 display.View_Iso()
-display.Zoom_FitAll()
+display.FitAll()
 
 
