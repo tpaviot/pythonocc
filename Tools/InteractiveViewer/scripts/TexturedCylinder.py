@@ -5,11 +5,6 @@
 ## Released into the Public Domain
 ##
 
-'''
-Simple script that can be used to show some 
-basic geometry creation in the InteractiveViewer
-'''
-
 __author__ = "Thomas Paviot"
 __date__ = "2 December 2008"
 
@@ -25,8 +20,7 @@ display.EraseAll()
 #
 # First create texture and a material
 #
-texture_filename = os.path.join(os.getcwd(),'scripts','lichen.jpg')
-print texture_filename
+texture_filename = os.path.join(os.getcwd(),'scripts','ground.bmp')
 t = Texture(texture_filename)
 m = Graphic3d_MaterialAspect(Graphic3d_NOM_SILVER)
 #

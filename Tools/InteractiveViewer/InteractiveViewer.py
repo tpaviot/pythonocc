@@ -431,7 +431,7 @@ class AppFrame(wx.Frame):
         if sys.platform=='win32':
             py.interp.locals["display"] = self.canva._3dDisplay
         py_icon = CreateMaskedBitmap(os.path.join(THISPATH, 'icons', 'py.png'), 16, 16)
-        self.notebook.AddPage(py, "Python", True, py_icon)
+        self.notebook.AddPage(py, "Python shell", True, py_icon)
         self.pyshell = py
         
     def View_Top(self, event):
