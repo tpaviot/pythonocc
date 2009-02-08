@@ -569,7 +569,7 @@ class AppFrame(wx.Frame):
         wx.SafeYield()
         self.canva._3dDisplay.Tumble(314)
         end_time = time.time()
-        self.SetTitle("CAD Viewer %s:%s"%(VERSION,filename))
+        self.SetTitle("pythonOCC Interactive Console %s:%s"%(VERSION,filename))
         duration = end_time-start_time
         print "%s STEP file loaded and displayed in %f seconds."%(filename,duration)
         
