@@ -33,6 +33,9 @@
 ##The fact that you are presently reading this means that you have had
 ##knowledge of the CeCILL license and that you accept its terms.
 
+import os
+import os.path
+
 class Texture(object):
     """
     This class encapsulates the necessary texture properties:
