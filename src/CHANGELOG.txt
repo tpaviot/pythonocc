@@ -1,3 +1,6 @@
+2009/02/08:
+	- Layout modifs for Interactive Console
+	- Added Utils to pythonOCC distro
 2009/02/07:
 	- Linux patch from Doug Du Boulay
 2009/02/05:
