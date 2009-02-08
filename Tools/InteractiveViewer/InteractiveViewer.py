@@ -599,6 +599,6 @@ if __name__=="__main__":
         frame.Show(True)
         wx.SafeYield()
         frame.canva.Init3dViewer()
-        frame.pyshell.pyshell.interp.locals["display"] = frame.canva._3dDisplay        
+        frame.pyshell.interp.locals["display"] = frame.canva._3dDisplay        
     app.SetTopWindow(frame)
     app.MainLoop()            
