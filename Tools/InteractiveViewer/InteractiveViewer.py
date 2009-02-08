@@ -136,7 +136,7 @@ def YesNo(parent, question, caption='Yes or no?'):
     
 class AppFrame(wx.Frame):
     def __init__(self, parent):
-        wx.Frame.__init__(self, parent, -1, "pythonOCC interactive console %s"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
+        wx.Frame.__init__(self, parent, -1, "pythonOCC Interactive Console %s"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (1024,768))
         
         self._mgr = wx.aui.AuiManager()
         self._mgr.SetManagedWindow(self) 
@@ -152,7 +152,7 @@ class AppFrame(wx.Frame):
         nb.SetSelection(0)
 
         start_help_height = self.GetSize()[1]/3
-        self._mgr.AddPane(nb, wx.aui.AuiPaneInfo().Name("Help").BestSize(wx.Size(500,500)).MinSize(wx.Size(-1, start_help_height)).Bottom())
+        self._mgr.AddPane(nb, wx.aui.AuiPaneInfo().Name("Help").BestSize(wx.Size(500,500)).MinSize(wx.Size(400, start_help_height)).Right())
 
         self.tb = self.CreateRightToolbar()        
         self._mgr.AddPane(self.tb, wx.aui.AuiPaneInfo().Name("View").Caption("View").ToolbarPane().Top().TopDockable(True).BottomDockable(True))
