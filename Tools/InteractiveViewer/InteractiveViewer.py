@@ -589,6 +589,8 @@ class AppFrame(wx.Frame):
         self.canva._3dDisplay.DisplayShape(shape)
         wx.SafeYield()
         self.canva._3dDisplay.Tumble(314)
+        self.canva._3dDisplay.View_Iso()
+        self.canva._3dDisplay.FitAll()
         end_time = time.time()
         self.SetTitle("pythonOCC Interactive Console %s:%s"%(VERSION,filename))
         duration = end_time-start_time
