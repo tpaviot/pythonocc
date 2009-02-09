@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2008 Thomas Paviot
+##Copyright 2008-2009 Andy Haywood
 ##
 ##thomas.paviot@free.fr
 ##
@@ -57,7 +57,7 @@ from wxDisplay import GraphicsCanva3D
 import time
 from OCC import STEPControl, StlAPI, IGESControl, TopoDS, BRep, BRepTools
 
-VERSION = "1.0pre3"
+VERSION = "md0.1"
 
 def CreateMaskedBitmap(fname, h=16, w=16):
     '''Ceate a masked bitmap where the mask colour is pink.'''
@@ -278,6 +278,13 @@ class AppFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnAntialiasingOff, id=d_aon)
         menuBar.Append(displaymode_menu, "&Display mode")
         
+        # About menu
+        about_menu = wx.Menu()
+        a_id = wx.NewId()
+        about_menu.Append(a_id, "&About", "")
+        self.Bind(wx.EVT_MENU, self.OnAbout, id=a_id)
+        menuBar.Append(about_menu, "&Help")
+        
         self.SetMenuBar(menuBar)
         self.Bind(wx.EVT_CLOSE, self.OnClose)
         self._refreshui()
@@ -353,6 +360,20 @@ class AppFrame(wx.Frame):
             dlg.Destroy() 
             msg = "Unable to execute script [%s]"%(fullpathname)
         wx.EndBusyCursor()
+    
+    def OnAbout(self, event):
+        info = wx.AboutDialogInfo()    
+        info.Name = "pythonOCC Interactive Console"
+        info.Version = VERSION
+        info.Copyright = "(C) 2008-2009 Andy Haywood"
+        info.Description = "PythonOCC Interactive Console is part of pythonOCC, an free set of Python bindings to OpenCascade library."
+        info.WebSite = ("http://www.pythonocc.org", "pythonOCC home page")
+        info.Developers = [ "Andy Haywood","Thomas Paviot"]
+        info.License = """This software is governed by the CeCILL license under French law and
+        abiding by the rules of distribution of free software.  You can  use, modify and/ or
+        redistribute the software under the terms of the CeCILL license as circulated by CEA, CNRS
+        and INRIA at the following URL "http://www.cecill.info"."""
+        wx.AboutBox(info)
         
     def OnRestoreDefaultPerspective(self, event):
         """Restore the UI to the default layout."""
