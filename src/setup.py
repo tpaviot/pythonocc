@@ -65,9 +65,8 @@ usage: python setup.py build [options]
 With [options]:
     -generate_swig: process swig files generation (if .i files already exist, you should skip this option)
     -modular: build modular
-    -monolithic: build monolithic
     -with_doc: add docstrings to pythonOCC classes
-    -ccompiler: compiler can be either gcc, mingw32 or msvc
+    -ccompiler: compiler can be either 'gcc', 'mingw32' or 'msvc'
     """
     print help_str
     sys.exit(0)
