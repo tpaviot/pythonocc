@@ -43,7 +43,7 @@ from distutils import sysconfig
 #
 # Define pythonOCC version
 #
-VERSION = 'md0.1'
+VERSION = '2009/02/23'
 #
 # Define paths
 #
