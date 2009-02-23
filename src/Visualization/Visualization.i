@@ -57,3 +57,22 @@ class Display3d {
 	void Test();
 
 };
+
+class Display2d {
+ public:
+	%feature("autodoc", "1");
+	Display2d();
+	%feature("autodoc", "1");
+	~Display2d();
+	%feature("autodoc", "1");
+	void Init(const int handle);
+	%feature("autodoc", "1");
+	Handle_V2d_View& GetV2dView();
+	%feature("autodoc", "1");
+	Handle_V2d_Viewer& GetV2dViewer();
+	%feature("autodoc", "1");
+	Handle_AIS2D_InteractiveContext GetContext();
+	%feature("autodoc", "1");
+	void Test();
+
+};

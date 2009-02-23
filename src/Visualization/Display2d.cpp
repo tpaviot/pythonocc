@@ -35,59 +35,47 @@
 
 #include "Visualization.h"
 
-#if !defined(WNT)
-   #error WNT precompiler directive is mandatory for CasCade 
-#endif
-
-#pragma warning(  disable : 4244 )        // Issue warning 4244
-#include "Standard_ShortReal.hxx"
-#pragma warning(  default : 4244 )        // Issue warning 4244
-
-#include <WNT_WDriver.hxx>
-#include <Standard.hxx>
-#include <Graphic3d_WNTGraphicDevice.hxx>
-#include <V3d_Viewer.hxx>
-#include <V3d_View.hxx>
-#include <WNT_Window.hxx>
-#include <Quantity_Color.hxx>
-#include <Quantity_NameOfColor.hxx>
-#include <AIS_DisplayMode.hxx>
-
 Display2d::Display2d()
 {
 }
 
 Display2d::~Display2d()
 {
-  //Handle(V3d_Viewer) aViewer = myV3dView->Viewer();
-  //aViewer->RemoveView(myV3dView);  
 }
 
 void Display2d::Init(int window_handle)
 {
-	gd = new WNT_GraphicDevice();
+	printf("Display2d class initialization starting ...\n");
 	short hi = static_cast<short>(window_handle >> 16);
 	short lo = static_cast<short>(window_handle);
-	//myWNTWindow = new WNT_Window( gd ,myHandle , Quantity_NOC_MATRAGRAY );
+	// Create Graphic Device and Window
+	#ifdef WNT
+	gd = new WNT_GraphicDevice();
+	printf("WNT Graphic device created.\n");
+	myWindow = new WNT_Window( gd ,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo));
+	printf("WNT window created.\n");
+	myDriver = new WNT_WDriver(myWindow);
+	printf("Driver created.\n");
+	#else
+	gd = new Xw_GraphicDevice(std::getenv("DISPLAY"),Xw_TOM_READONLY);
+	printf("Graphic device created.\n");
+	myWindow =new Xw_Window(gd,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo),Xw_WQ_SAMEQUALITY);
+	printf("Xw_Window created.\n");
+	myDriver = new Xw_Driver(W);
+	#endif
 	// Create WNT_Window
-	myWNTWindow = new WNT_Window( gd ,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo));
-	if (!myWNTWindow->IsMapped())
-		myWNTWindow->Map();
-	myWNTWindow->SetFlags(WDF_NOERASEBKGRND);
-	myWNTWindow->SetBackground(Quantity_NOC_MIDNIGHTBLUE);
-	// Create V3dViewer and V3d_View
-        myV2dViewer = new V2d_Viewer( gd , (short* const)"viewer" );
-	//myV3dViewer->SetDefaultLights();
-	//myV3dViewer->SetLightOn();
-        //myV3dView = myV3dViewer->CreateView();
-        //myV3dView->SetWindow(myWNTWindow);
-	myV3dView->SetBackgroundColor(Quantity_NOC_MIDNIGHTBLUE);
-	// Create AISInteractiveViewer
-	myAISContext = new AIS_InteractiveContext(myV3dViewer);
+	if (!myWindow->IsMapped())
+		myWindow->Map();
+	myWindow->SetFlags(WDF_NOERASEBKGRND);
+    myV2dViewer = new V2d_Viewer( gd , (short* const)"" );
+	myAIS2DContext = new AIS2D_InteractiveContext(myV2dViewer);
+	myV2dView = new V2d_View(myDriver, myV2dViewer);
+	myV2dViewer->AddView(myV2dView);
 }
 
 void Display2d::Test()
 {
+/*
       BRepPrimAPI_MakeSphere S(gp_Pnt(200.,300.,200.), 100.);
       Handle(AIS_Shape) anAISShape = new AIS_Shape(S.Shape());
       myAISContext->SetColor(anAISShape,Quantity_NOC_AZURE);
@@ -95,41 +83,6 @@ void Display2d::Test()
       myAISContext->SetDisplayMode(anAISShape,1);
       myAISContext->Display(anAISShape);
       myV3dView->ZFitAll();
+*/
 }
 
-void Display2d::Repaint()
-{
-	myV2dViewer->Redraw();
-}
-
-void Display3d::SetBackground()
-{
-}
-
-void Display3d::Rotation(const Standard_Integer X, const Standard_Integer Y)
-{
-	myV3dView->Rotation(X,Y);
-}
-
-void Display3d::DynamicZoom(const Standard_Integer X1, const Standard_Integer Y1, const Standard_Integer X2, const Standard_Integer Y2)
-{
-	myV3dView->Zoom(X1,Y1,X2,Y2);
-}
-
-void Display3d::Zoom(const Standard_Integer X, const Standard_Integer Y)
-{
-	myV3dView->Zoom(X,Y);
-}
-
-void Display3d::StartRotation(const Standard_Integer X, const Standard_Integer Y)
-{
-	myV3dView->StartRotation(X,Y);
-}	
-
-
-void Display3d::DisplayShape(const TopoDS_Shape& shape)
-{
-    Handle(AIS_Shape) anAISShape = new AIS_Shape(shape);
-    myAISContext->Display(anAISShape);
-    myV3dView->ZFitAll();
-}

@@ -38,17 +38,24 @@
 
 #ifdef WNT
 #include <WNT_Window.hxx>
+#include <WNT_WDriver.hxx>
 #include <Graphic3d_WNTGraphicDevice.hxx>
+#include <WNT_GraphicDevice.hxx>
 #else
 #include <Xw_Window.hxx>
+#include <Xw_Driver.hxx>
 #include <Graphic3d_GraphicDevice.hxx>
+#include <Xw_GraphicDevice.hxx>
 #endif
 
 #include <AIS_InteractiveContext.hxx>
+#include <AIS2D_InteractiveContext.hxx>
 #include <BRepPrimAPI_MakeBox.hxx>
 #include <Graphic3d_MaterialAspect.hxx>
 #include <V3d_Viewer.hxx>
 #include <V3d_View.hxx>
+#include <V2d_Viewer.hxx>
+#include <V2d_View.hxx>
 #include <AIS_Shape.hxx>
 #include <AIS_TexturedShape.hxx>
 #include <Graphic3d_TextureEnv.hxx>
@@ -80,6 +87,35 @@ protected:
    #else
    Handle_Xw_Window myWindow;
    Handle_Graphic3d_GraphicDevice gd;
+   #endif
+   TopoDS_Shape mySelectedShape;
+
+};
+
+
+class Display2d 
+{	
+public:
+	Standard_EXPORT Display2d();
+	Standard_EXPORT virtual ~Display2d();
+	Standard_EXPORT void Init(int window_handle);
+	Standard_EXPORT Handle_V2d_View& GetV2dView() {return myV2dView;};
+	Standard_EXPORT Handle_V2d_Viewer& GetV2dViewer() {return myV2dViewer;};
+	Standard_EXPORT Handle_AIS2D_InteractiveContext GetContext() {return myAIS2DContext;};
+	Standard_EXPORT void Test();
+    
+protected:
+   Handle_AIS2D_InteractiveContext myAIS2DContext;
+   Handle_V2d_Viewer myV2dViewer;
+   Handle_V2d_View myV2dView;
+   #ifdef WNT
+   Handle_WNT_Window myWindow;
+   Handle_WNT_GraphicDevice gd;
+   Handle_WNT_WDriver myDriver;
+   #else
+   Handle_Xw_Window myWindow;
+   Handle_Graphic3d_GraphicDevice gd;
+   Handle_Xw_Driver myDriver;
    #endif
    TopoDS_Shape mySelectedShape;
 
