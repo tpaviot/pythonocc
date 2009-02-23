@@ -522,7 +522,7 @@ for module in MODULES:
     extension.append(module_extension)
 # Add Visualization
 extension.append(Extension("OCC._Visualization",
-                    sources = [os.path.join(os.getcwd(),'Visualization','Visualization_modular.i'),
+                    sources = [os.path.join(os.getcwd(),'Visualization','Visualization.i'),
                                os.path.join(os.getcwd(),'Visualization','Display3d.cpp'),
                                os.path.join(os.getcwd(),'Visualization','Display2d.cpp'),
                                ],
