@@ -39,6 +39,7 @@
 import sys
 import os, os.path
 import shutil
+from distutils import sysconfig
 #
 # Define pythonOCC version
 #
@@ -82,7 +83,8 @@ elif sys.platform=='linux2':
                  '-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
-    ELA = ['-Wl,--no-undefined']
+    lib_python = sysconfig.get_config_var('BLDLIBRARY')
+    ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     #
