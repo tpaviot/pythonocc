@@ -375,6 +375,7 @@ MODULES = [
             ('V3d',['Handle_TCollection','Aspect','Quantity'],[]),
             ('Dynamic',['TCollection'],[]),
             ('Materials',['TCollection_AsciiString'],[]),
+            ('AIS2D',[],[]),
 #############################
 #    Print stuff         ######
 #############################
@@ -523,6 +524,7 @@ for module in MODULES:
 extension.append(Extension("OCC._Visualization",
                     sources = [os.path.join(os.getcwd(),'Visualization','Visualization_modular.i'),
                                os.path.join(os.getcwd(),'Visualization','Display3d.cpp'),
+                               os.path.join(os.getcwd(),'Visualization','Display2d.cpp'),
                                ],
                     include_dirs=[OCC_INC,os.path.join(os.getcwd(),'Visualization')],
                     library_dirs=[OCC_LIB],
