@@ -32,12 +32,11 @@
 ##The fact that you are presently reading this means that you have had
 ##knowledge of the CeCILL license and that you accept its terms.
 */
+%module Visualization;
 
 %{
 #include <Visualization.h>
 %}
-
-%nodefaultctor Display3d;
 
 class Display3d {
  public:
@@ -48,14 +47,13 @@ class Display3d {
 	%feature("autodoc", "1");
 	void Init(const int handle);
 	%feature("autodoc", "1");
-	Handle_V3d_View& GetV3dView();
+	Handle_V3d_View& GetView();
 	%feature("autodoc", "1");
-	Handle_V3d_Viewer& GetV3dViewer();
+	Handle_V3d_Viewer& GetViewer();
 	%feature("autodoc", "1");
 	Handle_AIS_InteractiveContext GetContext();
 	%feature("autodoc", "1");
 	void Test();
-
 };
 
 class Display2d {
@@ -67,12 +65,11 @@ class Display2d {
 	%feature("autodoc", "1");
 	void Init(const int handle);
 	%feature("autodoc", "1");
-	Handle_V2d_View& GetV2dView();
+	Handle_V2d_View& GetView();
 	%feature("autodoc", "1");
-	Handle_V2d_Viewer& GetV2dViewer();
+	Handle_V2d_Viewer& GetViewer();
 	%feature("autodoc", "1");
 	Handle_AIS2D_InteractiveContext GetContext();
 	%feature("autodoc", "1");
 	void Test();
-
 };

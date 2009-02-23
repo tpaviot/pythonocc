@@ -43,11 +43,10 @@ if sys.platform=='darwin':
 else:
     import wx.glcanvas
     BaseClass = wx.glcanvas.GLCanvas
-    
-class wxViewer3d(BaseClass):
+
+class wxBaseViewer(BaseClass):
     def __init__(self, parent):
-        BaseClass.__init__(self, parent)
- 
+        BaseClass.__init__(self,parent)
         self.Bind( wx.EVT_SIZE , self.OnSize)
         self.Bind( wx.EVT_IDLE , self.OnIdle)
         self.Bind( wx.EVT_MOVE , self.OnMove)
@@ -63,116 +62,174 @@ class wxViewer3d(BaseClass):
         self.Bind( wx.EVT_MIDDLE_UP , self.OnMiddleUp)
         self.Bind( wx.EVT_MOTION , self.OnMotion)
         self.Bind( wx.EVT_KEY_DOWN ,self.OnKeyDown)
+        self._display = None
+        self._inited = False
+        
+    def OnSize(self, event):
+        if self._inited:
+            self._display.OnResize()
 
+    def OnIdle(self,event):
+        pass
+    def OnMove(self,event):
+        print "move"
+    def OnFocus(self,event):
+        pass
+    def OnLostFocus(self,event):
+        pass
+    def OnMaximize(self,event):
+        pass
+    def OnLeftDown(self,event):
+        pass
+    def OnRightDown(self,event):
+        pass
+    def OnMiddleDown(self,event):
+        pass
+    def OnLeftUp(self,event):
+        pass
+    def OnRightUp(self,event):
+        pass
+    def OnMiddleUp(self,event):
+        print "Middle up"
+
+    def OnKeyDown(self,event):
+        pass
+        
+class wxViewer2d(wxBaseViewer):
+     def __init__(self, parent):
+        wxBaseViewer.__init__(self, parent)
+        print "wxViewer2d inited"
+        
+     def InitDriver(self):
+        """
+        This method is called after __init__ in the wxBaseViewer class
+        """
+        try:
+            os.environ["CSF_GraphicShr"]
+        except KeyError:
+            raise "Please set the CSF_GraphicShr environment variable."
+        self._display = OCCViewer.Viewer2d(self.GetHandle())
+        self._display.Create()
+        self._inited = True
+    
+     def OnMotion(self, evt):
+        print "Motion!!"
+        pt = evt.GetPosition()
+        print pt.x, pt.y
+        self._display.MoveTo(pt.x,pt.y)
+
+    
+    
+        
+class wxViewer3d(wxBaseViewer):
+    def __init__(self, parent):
+        wxBaseViewer.__init__(self, parent)
+ 
         self._drawbox = False
         self._zoom_area = False
         self._select_area = False
         
-        self._3dDisplay = None
+        #self._3dDisplay = None
         self._inited = False
         self._leftisdown = False
         self._middleisdown = False
         self._rightisdown = False
         self._selection = None
-        if sys.platform=='win32':
-            self.InitViewer3d()
 
-    def InitViewer3d(self):
+    def InitDriver(self):
         try:
             os.environ["CSF_GraphicShr"]
         except KeyError:
             raise "Please set the CSF_GraphicShr environment variable."
-        self._3dDisplay = OCCViewer.Viewer3d(self.GetHandle())
-        self._3dDisplay.Create()
-        self._3dDisplay.DisplayTriedron()
-        self._3dDisplay.SetModeShaded()
+        self._display = OCCViewer.Viewer3d(self.GetHandle())
+        self._display.Create()
+        self._display.DisplayTriedron()
+        self._display.SetModeShaded()
         self._inited = True
-       
+        print "Inited!!"
+        #print dir(self._3dDisplay)
+
+
     def OnKeyDown(self,evt):
         key_code = evt.GetKeyCode()
         print key_code
         if key_code==87:#"W"
-            self._3dDisplay.SetModeWireFrame()
+            self._display.SetModeWireFrame()
         elif key_code==83:#"S"
-            self._3dDisplay.DisableAntiAliasing()
-            self._3dDisplay.SetModeShaded()
+            self._display.DisableAntiAliasing()
+            self._display.SetModeShaded()
         elif key_code==65:#"A"
-            self._3dDisplay.EnableAntiAliasing()
+            self._display.EnableAntiAliasing()
         elif key_code==66:#"B"
-            self._3dDisplay.DisableAntiAliasing()
+            self._display.DisableAntiAliasing()
         elif key_code==81:#"Q"
-            self._3dDisplay.SetModeQuickHLR()
+            self._display.SetModeQuickHLR()
         elif key_code==69:#"E"
-            self._3dDisplay.SetModeExactHLR()
+            self._display.SetModeExactHLR()
         elif key_code == 70:#"F"
-            self._3dDisplay.ExportToImage("essai.BMP")
+            self._display.ExportToImage("essai.BMP")
         elif key_code == 71:#"G"
-            self._3dDisplay.SetBackgroundImage("carrelage1.gif")
+            self._display.SetBackgroundImage("carrelage1.gif")
         elif key_code == 72:#"G"
-            self._3dDisplay.SetSelectionModeVertex()
+            self._display.SetSelectionModeVertex()
             
-              
-    def OnSize(self, event):
-        if self._inited:
-            self._3dDisplay.OnResize()
-
     def OnMaximize(self, event):
         if self._inited:
-            self._3dDisplay.Repaint()
+            self._display.Repaint()
         
     def OnMove(self, event):
         if self._inited:
-            self._3dDisplay.Repaint()
+            self._display.Repaint()
             
     def OnIdle(self, event):
         if self._drawbox:
             pass
         elif self._inited:
-            self._3dDisplay.Repaint()
+            self._display.Repaint()
 
     def Test(self):
         if self._inited:
-            self._3dDisplay.Test()
+            self._display.Test()
         
     def OnFocus(self, event):
         if self._inited:
-            self._3dDisplay.Repaint()
+            self._display.Repaint()
         
     def OnLostFocus(self, event):
         if self._inited:
-            self._3dDisplay.Repaint()
+            self._display.Repaint()
 
     def OnPaint(self, event):
         if self._inited:
-            self._3dDisplay.Repaint()
+            self._display.Repaint()
             
     def ZoomAll(self, evt):
-        self._3dDisplay.Zoom_FitAll()
+        self._display.Zoom_FitAll()
 
     def Repaint(self, evt):
        if self._inited:
-            self._3dDisplay.Repaint()
+            self._display.Repaint()
             
     def OnLeftDown(self, evt):
         self.SetFocus()
         self.dragStartPos = evt.GetPosition()
-        self._3dDisplay.StartRotation(self.dragStartPos.x,self.dragStartPos.y) 
+        self._display.StartRotation(self.dragStartPos.x,self.dragStartPos.y) 
 
     def OnLeftUp(self,evt):
         pt = evt.GetPosition()
         if self._select_area:
             [Xmin, Ymin, dx, dy] = self._drawbox
-            selected_shapes = self._3dDisplay.Select(Xmin,Ymin,Xmin+dx,Ymin+dy)
+            selected_shapes = self._display.Select(Xmin,Ymin,Xmin+dx,Ymin+dy)
             self._select_area = False 
         else:
-            if self._3dDisplay.Select(pt.x,pt.y):
-                selected_shape = self._3dDisplay.GetSelectedShape()
+            if self._display.Select(pt.x,pt.y):
+                selected_shape = self._display.GetSelectedShape()
                 print selected_shape,selected_shape.ShapeType()
         
     def OnRightUp(self,evt):
         if self._zoom_area:
             [Xmin, Ymin, dx, dy] = self._drawbox
-            self._3dDisplay.ZoomArea(Xmin, Ymin, Xmin+dx, Ymin+dy)
+            self._display.ZoomArea(Xmin, Ymin, Xmin+dx, Ymin+dy)
             self._zoom_area = False
            
     def OnMiddleUp(self,evt):
@@ -180,11 +237,11 @@ class wxViewer3d(BaseClass):
         
     def OnRightDown(self, evt):
         self.dragStartPos = evt.GetPosition()
-        self._3dDisplay.StartRotation(self.dragStartPos.x,self.dragStartPos.y)
+        self._display.StartRotation(self.dragStartPos.x,self.dragStartPos.y)
               
     def OnMiddleDown(self, evt):
         self.dragStartPos = evt.GetPosition()
-        self._3dDisplay.StartRotation(self.dragStartPos.x,self.dragStartPos.y) 
+        self._display.StartRotation(self.dragStartPos.x,self.dragStartPos.y) 
         
     def DrawBox(self, event):
         tolerance = 2
@@ -213,12 +270,12 @@ class wxViewer3d(BaseClass):
         if (evt.LeftIsDown() and not evt.ShiftDown()):
             dx = pt.x - self.dragStartPos.x
             dy = pt.y - self.dragStartPos.y
-            self._3dDisplay.Rotation(pt.x,pt.y)
+            self._display.Rotation(pt.x,pt.y)
             self._drawbox = False
         # DYNAMIC ZOOM
         elif (evt.RightIsDown() and not evt.ShiftDown()):
-            self._3dDisplay.Repaint()
-            self._3dDisplay.DynamicZoom(abs(self.dragStartPos.x), abs(self.dragStartPos.y), abs(pt.x), abs(pt.y))
+            self._display.Repaint()
+            self._display.DynamicZoom(abs(self.dragStartPos.x), abs(self.dragStartPos.y), abs(pt.x), abs(pt.y))
             self.dragStartPos.x = pt.x 
             self.dragStartPos.y = pt.y
             self._drawbox = False
@@ -228,7 +285,7 @@ class wxViewer3d(BaseClass):
             dy = pt.y - self.dragStartPos.y
             self.dragStartPos.x = pt.x 
             self.dragStartPos.y = pt.y
-            self._3dDisplay.Pan(dx,-dy)
+            self._display.Pan(dx,-dy)
             self._drawbox = False
         # DRAW BOX
         elif (evt.RightIsDown() and evt.ShiftDown()): # ZOOM WINDOW
@@ -239,27 +296,45 @@ class wxViewer3d(BaseClass):
             self.DrawBox(evt) 
         else:
             self._drawbox = False
-            self._3dDisplay.MoveTo(pt.x,pt.y)
+            self._display.MoveTo(pt.x,pt.y)
 
-if __name__=="__main__":
+def Test3d():
     class AppFrame(wx.Frame):
         def __init__(self, parent):
             wx.Frame.__init__(self, parent, -1, "wxDisplay3d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
-            #self.runTests()
             self.canva = wxViewer3d(self)
             
         def runTests(self):
-            self.canva._3dDisplay.Test()
+            self.canva._display.Test()
             
     app = wx.PySimpleApp()
     wx.InitAllImageHandlers()
     frame = AppFrame(None)
-    if sys.platform=='win32':
-        frame.Show(True)
-    else:
-        frame.Show(True)
-        wx.SafeYield() #under Linux, frame must be shown before Display3D is initialized
-        frame.canva.InitViewer3d()
+    frame.Show(True)
+    wx.SafeYield()
+    frame.canva.InitDriver()
     frame.runTests()
     app.SetTopWindow(frame)
     app.MainLoop()            
+
+def Test2d():
+    class AppFrame(wx.Frame):
+        def __init__(self, parent):
+            wx.Frame.__init__(self, parent, -1, "wxDisplay2d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
+            self.canva = wxViewer2d(self)
+            
+        def runTests(self):
+            self.canva._display.Test()
+            
+    app = wx.PySimpleApp()
+    wx.InitAllImageHandlers()
+    frame = AppFrame(None)
+    frame.Show(True)
+    wx.SafeYield() #under Linux, frame must be shown before Display3D is initialized
+    frame.canva.InitDriver()
+    frame.runTests()
+    app.SetTopWindow(frame)
+    app.MainLoop()            
+
+if __name__=="__main__":
+    Test2d()

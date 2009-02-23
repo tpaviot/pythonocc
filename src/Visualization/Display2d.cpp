@@ -68,21 +68,31 @@ void Display2d::Init(int window_handle)
 		myWindow->Map();
 	myWindow->SetFlags(WDF_NOERASEBKGRND);
     myV2dViewer = new V2d_Viewer( gd , (short* const)"" );
+    printf("V2d_Viewer created.\n");
 	myAIS2DContext = new AIS2D_InteractiveContext(myV2dViewer);
+	printf("AIS2D_InteractiveContext created.\n");
 	myV2dView = new V2d_View(myDriver, myV2dViewer);
+	printf("V2d_View created.\n");
 	myV2dViewer->AddView(myV2dView);
+	printf("V2d_View add to V2d_Viewer.\n");
 }
+
+#include <Graphic2d_Marker.hxx>
+#include <AIS2D_InteractiveObject.hxx>
 
 void Display2d::Test()
 {
-/*
-      BRepPrimAPI_MakeSphere S(gp_Pnt(200.,300.,200.), 100.);
-      Handle(AIS_Shape) anAISShape = new AIS_Shape(S.Shape());
-      myAISContext->SetColor(anAISShape,Quantity_NOC_AZURE);
-      myAISContext->SetMaterial(anAISShape,Graphic3d_NOM_PLASTIC);
-      myAISContext->SetDisplayMode(anAISShape,1);
-      myAISContext->Display(anAISShape);
-      myV3dView->ZFitAll();
-*/
+    Handle(AIS2D_InteractiveObject) gr_obj=new AIS2D_InteractiveObject();
+    Handle(Graphic2d_Marker) aPoint=new Graphic2d_Marker(gr_obj,1,0.,0.,2,2);//Graphic2d_Vertex aPoint(0.,0.);
+    //Handle(AIS2D_InteractiveObject)obj = new AIS2D_InteractiveObject(aPoint);
+    //BRepPrimAPI_MakeSphere S(gp_Pnt(200.,300.,200.), 100.);
+    //Handle(AIS2D_Shape) anAISShape = new AIS2D_Shape(aPoint);
+    //myAISContext->SetColor(anAISShape,Quantity_NOC_AZURE);
+    //myAISContext->SetMaterial(anAISShape,Graphic3d_NOM_PLASTIC);
+    //myAISContext->SetDisplayMode(anAISShape,1);
+    myAIS2DContext->Display(gr_obj);
+    //gr_obj->Display();
+    //myV2dView->FitAll();
+
 }
 

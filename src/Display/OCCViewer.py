@@ -37,24 +37,34 @@ import os, os.path
 
 import OCC.Visualization
 import OCC.V3d
+import OCC.V2d
 import OCC.AIS
-import OCC.TopoDS
+import OCC.AIS2D
 
 import sys
-     
-class Viewer3d(OCC.Visualization.Display3d):
-    def __init__(self, window_handle ):
-        OCC.Visualization.Display3d.__init__(self)
+
+class BaseDriver(object):
+    """
+    The base driver class for both Driver2d and Driver3d classes
+    """
+    def __init__(self, window_handle):
         self._window_handle = window_handle
         self._inited = False
         self._local_context_opened = False
-        self.AISContext_handle = None
-        self.V3dViewer_handle = None
-        self.V3dView_handle = None
-        self.AISContext = None
-        self.V3dViewer = None
-        self.V3dView = None
+        self.Context_handle = None
+        self.Viewer_handle = None
+        self.View_handle = None
+        self.Context = None
+        self.Viewer = None
+        self.View = None
         self._objects_displayed = []#list to save in memory displayed objects
+    
+    def MoveTo(self,X,Y):
+        self.Context.MoveTo(X,Y,self.View_handle)
+      
+    def FitAll(self):
+        self.View.ZFitAll()
+        self.View.FitAll()
         
     def Create(self):
         try:
@@ -67,80 +77,26 @@ class Viewer3d(OCC.Visualization.Display3d):
             except KeyError:
                 raise "Please set the DISPLAY environment variable."
         self.Init(self._window_handle)
-        self.AISContext_handle = self.GetContext()
-        self.V3dViewer_handle = self.GetV3dViewer()
-        self.V3dView_handle = self.GetV3dView()
-        self.AISContext = self.AISContext_handle.GetObject()
-        self.V3dViewer = self.V3dViewer_handle.GetObject()
-        self.V3dView = self.V3dView_handle.GetObject()
+        self.Context_handle = self.GetContext()
+        self.Viewer_handle = self.GetViewer()
+        self.View_handle = self.GetView()
+        self.Context = self.Context_handle.GetObject()
+        self.Viewer = self.Viewer_handle.GetObject()
+        self.View = self.View_handle.GetObject()
         self._inited = True
     
-    def MoveTo(self,X,Y):
-        self.AISContext.MoveTo(X,Y,self.V3dView_handle)
         
+class Viewer2d(BaseDriver, OCC.Visualization.Display2d):   
+    def __init__(self, window_handle ):
+        BaseDriver.__init__(self,window_handle)
+        OCC.Visualization.Display2d.__init__(self)        
+    
     def OnResize(self):
-        self.V3dView.MustBeResized()
-
-    def ResetView(self):
-        self.V3dView.Reset()
-        
-    def FitAll(self):
-        self.V3dView.ZFitAll()
-        self.V3dView.FitAll()
+        self.View.MustBeResized(OCC.V2d.V2d_TOWRE_ENLARGE_SPACE)
     
-    def Repaint(self):
-        self.V3dViewer.Redraw()
-        
-    def SetModeWireFrame(self):
-        self.V3dView.SetComputedMode(False)
-        self.AISContext.SetDisplayMode(OCC.AIS.AIS_WireFrame)
-
-    def SetModeShaded(self):
-        self.V3dView.SetComputedMode(False)
-        self.V3dView.SetAntialiasingOff()
-        self.AISContext.SetDisplayMode(OCC.AIS.AIS_Shaded)
-     
-    def SetModeQuickHLR(self):
-        self.V3dView.SetComputedMode(True)
-        self.AISContext.SetDisplayMode(OCC.AIS.AIS_QuickHLR)
-    
-    def SetModeExactHLR(self):
-        self.V3dView.SetComputedMode(True)
-        self.AISContext.SetDisplayMode(OCC.AIS.AIS_ExactHLR)
-    
-    def View_Top(self):
-        self.V3dView.SetProj(OCC.V3d.V3d_Zpos) 
-
-    def View_Bottom(self):
-        self.V3dView.SetProj(OCC.V3d.V3d_Zneg)
-        
-    def View_Left(self):
-        self.V3dView.SetProj(OCC.V3d.V3d_Xneg)
-
-    def View_Right(self):
-        self.V3dView.SetProj(OCC.V3d.V3d_Xpos)
-
-    def View_Front(self):
-        self.V3dView.SetProj(OCC.V3d.V3d_Yneg)
-
-    def View_Rear(self):
-        self.V3dView.SetProj(OCC.V3d.V3d_Ypos)
-
-    def View_Iso(self):
-        self.V3dView.SetProj(OCC.V3d.V3d_XposYnegZpos)
-        
-    def ExportToImage(self,Filename):
-        self.V3dView.Dump(Filename)
-
-    def SetBackgroundImage(self, Filename, Stretch = True):
-        if (Stretch):
-            self.V3dView.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_STRETCH, True)
-        else:
-            self.V3dView.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_NONE, True )
-
     def DisplayShape(self,shape,material=None,texture=None):
         if material:#careful: != operator segfaults
-            self.V3dView.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
+            self.View.SetSurfaceDetail(OCC._TEX_ALL)
             shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
             shape_to_display.SetMaterial(material)
             if texture:
@@ -154,145 +110,166 @@ class Viewer3d(OCC.Visualization.Display3d):
         else:
             shape_to_display = OCC.AIS.AIS_Shape(shape)
         self._objects_displayed.append(shape_to_display)
-        self.AISContext.Display(shape_to_display.GetHandle())
+        self.Context.Display(shape_to_display.GetHandle())
+        self.FitAll()
+        
+class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
+    def __init__(self, window_handle ):
+        BaseDriver.__init__(self,window_handle)
+        OCC.Visualization.Display3d.__init__(self)
+          
+    def OnResize(self):
+        self.View.MustBeResized()
+
+    def ResetView(self):
+        self.View.Reset()
+    
+    def Repaint(self):
+        self.Viewer.Redraw()
+        
+    def SetModeWireFrame(self):
+        self.View.SetComputedMode(False)
+        self.Context.SetDisplayMode(OCC.AIS.AIS_WireFrame)
+
+    def SetModeShaded(self):
+        self.View.SetComputedMode(False)
+        self.View.SetAntialiasingOff()
+        self.Context.SetDisplayMode(OCC.AIS.AIS_Shaded)
+     
+    def SetModeQuickHLR(self):
+        self.View.SetComputedMode(True)
+        self.Context.SetDisplayMode(OCC.AIS.AIS_QuickHLR)
+    
+    def SetModeExactHLR(self):
+        self.View.SetComputedMode(True)
+        self.Context.SetDisplayMode(OCC.AIS.AIS_ExactHLR)
+    
+    def View_Top(self):
+        self.View.SetProj(OCC._Zpos) 
+
+    def View_Bottom(self):
+        self.View.SetProj(OCC._Zneg)
+        
+    def View_Left(self):
+        self.View.SetProj(OCC._Xneg)
+
+    def View_Right(self):
+        self.View.SetProj(OCC._Xpos)
+
+    def View_Front(self):
+        self.View.SetProj(OCC._Yneg)
+
+    def View_Rear(self):
+        self.View.SetProj(OCC._Ypos)
+
+    def View_Iso(self):
+        self.View.SetProj(OCC._XposYnegZpos)
+        
+    def ExportToImage(self,Filename):
+        self.View.Dump(Filename)
+
+    def SetBackgroundImage(self, Filename, Stretch = True):
+        if (Stretch):
+            self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_STRETCH, True)
+        else:
+            self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_NONE, True )
+
+    def DisplayShape(self,shape,material=None,texture=None):
+        if material:#careful: != operator segfaults
+            self.View.SetSurfaceDetail(OCC._TEX_ALL)
+            shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
+            shape_to_display.SetMaterial(material)
+            if texture:
+                filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
+                shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
+                shape_to_display.SetTextureMapOn()
+                shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
+                shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
+                shape_to_display.SetTextureOrigin(True, originU, originV)
+                shape_to_display.SetDisplayMode(3);
+        else:
+            shape_to_display = OCC.AIS.AIS_Shape(shape)
+        self._objects_displayed.append(shape_to_display)
+        self.Context.Display(shape_to_display.GetHandle())
         self.FitAll()
     
     def DisplayTriedron(self):
-        self.V3dView.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_WHITE, 0.08,  OCC.V3d.V3d_WIREFRAME)
+        self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_WHITE, 0.08,  OCC.V3d.V3d_WIREFRAME)
         self.Repaint()
     
     def EnableAntiAliasing(self):
-        self.V3dView.SetAntialiasingOn()
+        self.View.SetAntialiasingOn()
         self.Repaint()
 
     def DisableAntiAliasing(self):
-        self.V3dView.SetAntialiasingOff()
+        self.View.SetAntialiasingOff()
         self.Repaint()
     
     def EraseAll(self):
         self._objects_displayed = []
-        self.AISContext.EraseAll()
+        self.Context.EraseAll()
         
     def Tumble(self,NumImages,Animation = True):
-        self.V3dView.Tumble(NumImages, Animation)
+        self.View.Tumble(NumImages, Animation)
         
     def Pan(self,Dx,Dy):
-        self.V3dView.Pan(Dx,Dy)
+        self.View.Pan(Dx,Dy)
     
     def SetSelectionMode(self,mode = OCC.TopAbs.TopAbs_FACE):
-        self.AISContext.CloseAllContexts()
-        self.AISContext.OpenLocalContext()
-        self.AISContext.ActivateStandardMode(mode)
+        self.Context.CloseAllContexts()
+        self.Context.OpenLocalContext()
+        self.Context.ActivateStandardMode(mode)
     
     def OpenLocalContext(self):
         if not self._local_context_opened:
-            self.AISContext.OpenLocalContext()
+            self.Context.OpenLocalContext()
             self._local_context_opened = True
         
     def SetSelectionModeVertex(self):
-        #self.AISContext.CloseAllContexts()
-        #self.AISContext.OpenLocalContext()
         self.OpenLocalContext()
-        self.AISContext.ActivateStandardMode(OCC.TopAbs.TopAbs_VERTEX)
+        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_VERTEX)
         
     def SetSelectionModeEdge(self):
-        #self.AISContext.CloseAllContexts()
-        #self.AISContext.OpenLocalContext()
         self.OpenLocalContext()
-        self.AISContext.ActivateStandardMode(OCC.TopAbs.TopAbs_EDGE)
+        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_EDGE)
         
     def SetSelectionModeFace(self):
-        #self.AISContext.CloseAllContexts()
-        #self.AISContext.OpenLocalContext()
         self.OpenLocalContext()
-        self.AISContext.ActivateStandardMode(OCC.TopAbs.TopAbs_FACE)        
+        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_FACE)        
         
     def SetSelectionModeShape(self):
-        self.AISContext.CloseAllContexts()
-        self.AISContext.OpenLocalContext()
-        self.AISContext.ActivateStandardMode(OCC.TopAbs.TopAbs_SHAPE)        
+        self.Context.CloseAllContexts()
+        self.Context.OpenLocalContext()
+        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_SHAPE)        
     
     def SetSelectionModeNeutral(self):
-        self.AISContext.CloseAllContexts()
+        self.Context.CloseAllContexts()
         
     def Select(self,X,Y):
-        self.AISContext.Select()
-        self.AISContext.InitSelected()
-        print self.AISContext.MoreSelected()
-        if self.AISContext.MoreSelected():
-            if self.AISContext.HasSelectedShape():
+        self.Context.Select()
+        self.Context.InitSelected()
+        print self.Context.MoreSelected()
+        if self.Context.MoreSelected():
+            if self.Context.HasSelectedShape():
                 print "Something selected"
-                selected_shape = self.AISContext.SelectedShape()
+                selected_shape = self.Context.SelectedShape()
                 print selected_shape
         else:
             print "Nothing selected"
             selected_shape = None
         
     def Rotation(self,X,Y):
-        self.V3dView.Rotation(X,Y)
+        self.View.Rotation(X,Y)
     
     def DynamicZoom(self,X1,Y1,X2,Y2):
-        self.V3dView.Zoom(X1,Y1,X2,Y2)
+        self.View.Zoom(X1,Y1,X2,Y2)
     
     def ZoomArea(self,X1,Y1,X2,Y2):
-        self.V3dView.WindowFit(X1,Y1,X2,Y2)
+        self.View.WindowFit(X1,Y1,X2,Y2)
     
     def Zoom(self,X,Y):
-        self.V3dView.Zoom(X,Y)
+        self.View.Zoom(X,Y)
     
     def StartRotation(self,X,Y):
-        self.V3dView.StartRotation(X,Y)
-
-if __name__=="__main__":
-    import wx
-    class AppFrame(wx.Frame):
-        def __init__(self, parent):
-            wx.Frame.__init__(self, parent, -1, "wxDisplay3d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
-            self.viewer3d = Viewer3d(self.GetHandle())
-            menuBar = wx.MenuBar()
-            menu = wx.Menu()
-            menu.Append(101,"Test 1")
-            self.Bind(wx.EVT_MENU,self.RunTest1,id = 101)
-            menu.Append(102,"Test 2")
-            self.Bind(wx.EVT_MENU,self.RunTest2,id = 102)
-            menu.Append(103,"Test 3")
-            self.Bind(wx.EVT_MENU,self.RunTest3,id = 103)
-            menu.Append(104,"Test 4")
-            self.Bind(wx.EVT_MENU,self.RunTest4,id = 104)
-            menuBar.Append(menu, "&Tests")
-            self.SetMenuBar(menuBar)
-            
-        def RunTest1(self, event):
-            box = OCC.BRepPrimAPI.BRepPrimAPI_MakeBox(10,20,30)
-            box_shape = box.Shape()
-            self.viewer3d.DisplayShape(box_shape)
-            
-        def RunTest2(self, event):
-            c = self.viewer3d.AISContext.NbCurrents()        
-            print "NbCurrents:%i"%c
-            
-        def RunTest3(self, event):
-            pass
-        
-        def RunTest4(self, event):
-            pass
-        
-        def testTexure(self):
-            material = OCC.Graphic3d_MaterialAspect(OCC.Graphic3d.Graphic3d_NOM_GOLD)
-            #
-            # Creating Texture
-            #
-            texture = Texture("carrelage1.gif")
-            box = OCC.BRepPrimAPI.BRepPrimAPI_MakeBox(10,20,30).Shape()
-            self.viewer3d.DisplayShape(box_shape,material,texture)
-    
-    app = wx.PySimpleApp()
-    wx.InitAllImageHandlers()
-    frame = AppFrame(None)
-    frame.Show(True)
-    wx.SafeYield()
-    frame.viewer3d.Create()
-    frame.viewer3d.SetSelectionMode()
-    app.SetTopWindow(frame)
-    app.MainLoop()          
+        self.View.StartRotation(X,Y)
     

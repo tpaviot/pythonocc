@@ -72,8 +72,8 @@ public:
 	Standard_EXPORT Display3d();
 	Standard_EXPORT virtual ~Display3d();
 	Standard_EXPORT void Init(int window_handle);
-	Standard_EXPORT Handle_V3d_View& GetV3dView() {return myV3dView;};
-	Standard_EXPORT Handle_V3d_Viewer& GetV3dViewer() {return myV3dViewer;};
+	Standard_EXPORT Handle_V3d_View& GetView() {return myV3dView;};
+	Standard_EXPORT Handle_V3d_Viewer& GetViewer() {return myV3dViewer;};
 	Standard_EXPORT Handle_AIS_InteractiveContext GetContext() {return myAISContext;};
 	Standard_EXPORT void Test();
     
@@ -88,8 +88,6 @@ protected:
    Handle_Xw_Window myWindow;
    Handle_Graphic3d_GraphicDevice gd;
    #endif
-   TopoDS_Shape mySelectedShape;
-
 };
 
 
@@ -99,8 +97,8 @@ public:
 	Standard_EXPORT Display2d();
 	Standard_EXPORT virtual ~Display2d();
 	Standard_EXPORT void Init(int window_handle);
-	Standard_EXPORT Handle_V2d_View& GetV2dView() {return myV2dView;};
-	Standard_EXPORT Handle_V2d_Viewer& GetV2dViewer() {return myV2dViewer;};
+	Standard_EXPORT Handle_V2d_View& GetView() {return myV2dView;};
+	Standard_EXPORT Handle_V2d_Viewer& GetViewer() {return myV2dViewer;};
 	Standard_EXPORT Handle_AIS2D_InteractiveContext GetContext() {return myAIS2DContext;};
 	Standard_EXPORT void Test();
     
@@ -118,7 +116,6 @@ protected:
    Handle_Xw_Driver myDriver;
    #endif
    TopoDS_Shape mySelectedShape;
-
 };
 
 #endif
