@@ -101,6 +101,7 @@ elif sys.platform=='darwin':
                  '-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
-    ELA = []
+    lib_python = sysconfig.get_config_var('BLDLIBRARY')
+    ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
 else:
     raise "Unsupported platform"
