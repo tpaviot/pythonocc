@@ -284,7 +284,8 @@ MODULES = [
 #########################
 ###### BRep #############
 #########################
-           ('BRep',[],[]),    
+           ('BRep',[],[]),
+           ('BRepAdaptor',['math'],[]),
            ('BRepPrimAPI',[],[]),    
            ('BRepMesh',[],['BRepMesh_DiscretFactory'],{'BRepMesh_SurfaceGrid':['SetTrianglesOnPlane']}),
            ('BRepBlend',['math','Contap','Convert','AppParCurves'],[]),
@@ -298,6 +299,7 @@ MODULES = [
            ('BRepAlgo',[],[],{"BRepAlgo_DSAccess":["IsDeleted"]}),
            ('BRepAlgoAPI',[],[]),
            ('BRepLib',[],[]),
+           ('BRepLProp',[],[]),
            ('MAT',[],[]),
            ('BRepMAT2d',['gp','Bisector'],[]),
            ('Draft',['TopTools'],[]),
@@ -503,10 +505,11 @@ else: #under Linux or MacOSX, names are libTKFillet*
 Create__init__()
 extension = []
 for module in MODULES:
-    if GENERATE_SWIG:
+    SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
+    if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
         builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
     module_extension = Extension("OCC._%s"%module[0],
-                    sources = [os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])],
+                    sources = [SWIG_source_file],
                     include_dirs=[OCC_INC],
                     library_dirs=[OCC_LIB],
                     define_macros= DEFINE_MACROS,
