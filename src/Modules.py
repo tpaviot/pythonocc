@@ -369,7 +369,7 @@ def PythonOCCStats():
     for module in MODULES:
         wrapped_packages.append(module[0])
     # Outputs a file [X] gp
-    f = open('res.txt', 'w')
+    f = open('pythonOCCstats.txt', 'w')
     f.write('pythonOCC %s stats.\n'%environment.VERSION)
     f.write('Number of OpenCascade packages (without WOK): %i\n'%len(available_occ_packages))
     f.write('Number of pythonOCC modules: %i\n'%len(wrapped_packages))

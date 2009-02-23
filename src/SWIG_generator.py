@@ -216,22 +216,7 @@ class ModularBuilder(object):
             if len(derived)>0:
                 for der in derived:
                     self.DERIVED[der.related_class.name]=class_name
-    
-    def GetAvailableOCCPackages(self):
-        """
-        This function takes all *.hxx headers and returns a list of available packages:
-        ['gp','Standard','Geom', etc.]. OpenCascade 6.3.0 is composed of 416 such packages.
-        """
-        if self._available_occ_packages == []:
-            headers = glob.glob(os.path.join(environment.OCC_INC,'*.hxx'))
-            for header in headers:
-                package_name = os.path.basename(header).split("_")[0]
-                if (not package_name in self._available_occ_packages)\
-                 and (package_name!='Handle')\
-                 and ('.hxx' not in package_name):
-                    self._available_occ_packages.append(package_name)
-        return self._available_occ_packages
-    
+       
     def BuildTypedefList(self):
         """
         Fill in the typedef_list with all typedef defined in this module
@@ -771,4 +756,4 @@ class ModularBuilder(object):
         if self.MODULE_NAME == 'ShapeSchema':
             member_functions = self._mb.member_functions(lambda decl : decl.name.startswith('SAdd'))
             member_functions.exclude()
-        
+    
