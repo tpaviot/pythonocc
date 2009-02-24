@@ -89,6 +89,7 @@ MODULES = [
            ('ChFi2d',[],[]),
            ('ChFi3d',['Adaptor3d'],[]),
            ('ChFiDS',['math'],[]),
+           ##('ChFiKPart',[],[]),#DON'T WORK
            ('Contap',[],['Contap_TheIWalkingOfContour']),
            ('HLRAlgo',['gp_Lin'],[]),  
 #############################################
@@ -119,6 +120,17 @@ MODULES = [
             ('Approx',[],[]),
             ('ApproxInt',[],[]),
             ('AppBlend',[],[]),
+            ('AppCont',[],[]), #LINUX TEST
+            ('AppDef',['TCollection'],[],{'AppDef_TheResol':['Error'],\
+                                          'AppDef_ResConstraintOfTheGradient':['Error'],\
+                                          'AppDef_ResConstraintOfMyGradientOfCompute':['Error'],\
+                                          'AppDef_ResConstraintOfMyGradientbisOfBSplineCompute':['Error'],\
+                                          'AppDef_MultiLine':['SetParameter']}), #LINUX TEST
+            ('CDM',[],['CDM_Document']),#LINUX TEST
+            ('CDF',['TCollection'],[]), #LINUX TEST
+            ('TDocStd',[],[]), #LINUX TEST
+            ('AppStd',['TCollection','CDM','CDF','TDF'],[]), #LINUX TEST
+            ('AppStdL',['TCollection','CDM','CDF','TDF'],[]), #LINUX TEST
 ###################################
 ######### Mesh ####################
 ###################################
@@ -131,9 +143,20 @@ MODULES = [
 ###########################
            ('Intf',[],[]),
            ('IntRes2d',[],[]),
+           ('IntCurve',[],[]), #LINUX TEST
+           ('IntCurvesFace',[],[]), #LINUX TEST
            ('IntCurveSurface',[],['IntCurveSurface_ThePolyhedronOfHInter']),
            ('IntSurf',[],[]),
            ('IntImp',[],[]),
+           ('IntWalk',[],[]),
+           ##('IntPatch',[],[]),DON'T WORK
+           ('IntPolyh',[],['IntPolyh_MaillageAffinage','IntPolyh_Triangle']),
+           ('IntPoly',[],[]),
+           ('IntAna',[],[]),
+           ('IntAna2d',[],[]),
+           ('Intrv',[],[]),
+           ('IntStart',[],[]), 
+           ('IntTools',['math'],[],{'IntTools_PntOnFace':['IsValid']}),
 ####################################
 ########### LProp ##################
 ####################################
@@ -169,6 +192,7 @@ MODULES = [
            ('GeomLib',[],[]),
            ('GeomLProp',[],[]),
            ('AdvApp2Var',['gp'],['AdvApp2Var_Iso','AdvApp2Var_SysBase','AdvApp2Var_ApproxF2var','AdvApp2Var_MathBase']),
+           ('AdvApprox',[],[]), #LINUX TEST
            ('Geom',['BRepFill','gp'],[]),
            ('GeomPlate',['gp'],[]),
            ('GeomProjLib',[],[]),
@@ -214,6 +238,7 @@ MODULES = [
            ('BRepProj',[],[]),
            ('BRepSweep',[],[]),
            ('BRepToIGES',['gp'],[]),
+           ('BRepToIGESBRep',[],[]),#LINUX TEST
            ('BRepTools',['TopoDS'],[]),
            ('BRepTopAdaptor',['math','ChFiDS'],[]),
            ('BRepFilletAPI',[],[]),
@@ -224,7 +249,11 @@ MODULES = [
            ('HLRBRep',[],['HLRBRep_ThePolyhedronOfInterCSurf'],{\
                                                                  'HLRBRep_Surface':['UIntervalContinuity','VIntervalContinuity'],\
                                                                  'HLRBRep_BSurfaceTool':['Axis'],
-                                                                 'HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter':['Locate']}),
+                                                               'HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter':['Locate']}),
+            ('HLRTopoBRep',[],[])                                                               ,
+            ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
+                               'BRepFeat_MakeLinearForm':['TransformShapeFU']}), #LINUX TEST
+            ('BRepIntCurveSurface',[],[]),
 ##################################
 ######## TopOpe ##################
 ##################################
@@ -286,6 +315,11 @@ MODULES = [
             ('PS',['Aspect','TCollection','MFT','OSD'],[]),
             ('PlotMgt',['OSD'],[],{'PlotMgt_Plotter':['SetPaperFormat']}),
             ('PS_Driver',['OSD','Handle_TCollection'],[]),
+###########################
+####### Misc ##############
+###########################
+            ('GraphDS',[],[]),#LINUX TEST,
+            ('GraphTools',[],[]),
            ]
 #####################################
 # Visualization part is OS specific #
@@ -317,6 +351,8 @@ if sys.platform=='win32':
                ('IGESSolid',['IGESData','Interface','MoniTool','TCollection'],['IGESSolid_Protocol']),
                ('IGESData',['IGESData','Interface','MoniTool','TCollection'],['IGESData_Protocol']),
                ('IGESCAFControl',['IGESData','Interface','MoniTool','TCollection'],[]),
+               ##('IGESDraw',[],[]), DON'T WORK
+               ('IGESFile',[],[]),
                ('XDEDRAW',[],[]),
                ########################################
                ############## STEP ####################
