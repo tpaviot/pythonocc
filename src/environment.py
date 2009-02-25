@@ -83,7 +83,7 @@ elif sys.platform=='linux2':
                  '-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
-    lib_python = sysconfig.get_config_var('BLDLIBRARY')
+    lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
@@ -101,7 +101,7 @@ elif sys.platform=='darwin':
                  '-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
-    lib_python = sysconfig.get_config_var('BLDLIBRARY')
+    lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
 else:
     raise "Unsupported platform"
