@@ -65,9 +65,11 @@ MODULES = [
            ('TopLoc',[],['TopLoc_SListNodeOfSListOfItemLocation']),
            ('TopExp',[],[]),
            ('TopTools',[],[]),
+           ('TopTrans',[],[]),
            ('MoniTool',[],[],{'MoniTool_CaseData':['Msg','Text'],'MoniTool_AttrList':['GetStringAttribute']}),
            ('Interface',[],[],{'Interface_Graph':['Status'],'Interface_CheckIterator':['Status'],'Interface_Check':['Status']}),
            ('IFSelect',['MoniTool'],[],{"IFSelect_ContextModif":["Search"],"IFSelect_EditForm":["NbTouched"],"IFSelect_IntParam":["StaticName"]}),
+           ('IFGraph',['TCollection','MoniTool'],[]),
            ('Transfer',['MoniTool','IFSelect'],[],{'Transfer_Finder':['GetStringAttribute']}),
            ('XSAlgo',['Standard'],['XSAlgo_AlgoContainer']),
            ('XSControl',['TopoDS','TCollection','Interface','MoniTool','IFSelect'],['XSControl_Vars']),
@@ -84,6 +86,9 @@ MODULES = [
            ('VrmlAPI',[],[]),
            ('VrmlConverter',['TCollection'],[]),
            ('TopAbs',[],[]),
+           ('TopBas',[],[]),
+           ('TopClass',[],[]),
+           ('TopCnx',[],[]),
            ('Adaptor2d',[],[]),
            ('Adaptor3d',['Handle_TCollection'],[]),
            ('ChFi2d',[],[]),
@@ -96,7 +101,14 @@ MODULES = [
 ########### Topological naming###############
 ############################################# 
            ('TNaming',['Standard_GUID'],['TNaming_Identifier']),
+           ('DBC',[],[]),
+           ('PDF',[],[]),
+           ('PStandard',[],[]),
+           ('MNaming',['TCollection'],[]),
+           ('PNaming',[],[]),
+           ('DNaming',[],[]),
            ('TFunction',[],[]),
+           ('PFunction',['DBC'],[]),
            ('TDF',[],['TDF_LabelNode']),
 #############################################
 ########### Gcc #############################
@@ -112,6 +124,9 @@ MODULES = [
            ('BOP',['BooleanOperations'],[]), 
            ('BOPTools',[],[]),
            ('BOPTColStd',[],[]),
+           #('Draw',[],[]), DON'T WORK
+           #('DBRep',[],[]), NEED DRAW
+           #('BOPTest',[],[]), NEED DBRep
            ('Extrema',['Adaptor2d'],[]),
 ##################################
 ######## Approx ####################
@@ -127,6 +142,7 @@ MODULES = [
                                           'AppDef_ResConstraintOfMyGradientbisOfBSplineCompute':['Error'],\
                                           'AppDef_MultiLine':['SetParameter']}), #LINUX TEST
             ('CDM',[],['CDM_Document']),#LINUX TEST
+            ('CGM',['Standard','Quantity','TCollection','OSD','MFT','Aspect'],['CGM_Driver']),
             ('CDF',['TCollection'],[]), #LINUX TEST
             ('TDocStd',[],[]), #LINUX TEST
             ('AppStd',['TCollection','CDM','CDF','TDF'],[]), #LINUX TEST
@@ -138,6 +154,10 @@ MODULES = [
            ('MeshDS',[],[]), 
            ('MeshShape',[],['MeshShape_Edge','MeshShape_Vertex','MeshShape_Triangle']),
            #('MeshVS',[],[]),
+###################################
+######### FemTool ####################
+            ('FEmTool',[],[]),
+###################################
 ###########################
 ######## Int #############
 ###########################
@@ -149,6 +169,7 @@ MODULES = [
            ('IntSurf',[],[]),
            ('IntImp',[],[]),
            ('IntWalk',[],[]),
+           ('IntImpParGen',[],['IntImpParGen_ImpTool']),
            ##('IntPatch',[],[]),DON'T WORK
            ('IntPolyh',[],['IntPolyh_MaillageAffinage','IntPolyh_Triangle']),
            ('IntPoly',[],[]),
@@ -229,6 +250,7 @@ MODULES = [
            ('BRepLib',[],[]),
            ('BRepLProp',[],[]),
            ('MAT',[],[]),
+           ('MAT2d',[],['MAT2d_SketchExplorer','MAT2d_CutCurve']),
            ('BRepMAT2d',['gp','Bisector'],[]),
            ('Draft',['TopTools'],[]),
            ('BRepOffsetAPI',['TopTools','BRepTools'],['BRepOffsetAPI_FindContigousEdges']),
@@ -254,6 +276,8 @@ MODULES = [
             ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
                                'BRepFeat_MakeLinearForm':['TransformShapeFU']}), #LINUX TEST
             ('BRepIntCurveSurface',[],[]),
+            ('MgtTopoDS',['Standard'],[]),
+            ('MgtBRep',['Standard'],[]),
 ##################################
 ######## TopOpe ##################
 ##################################
@@ -275,6 +299,8 @@ MODULES = [
            ('Bnd',['math'],[]),
            ('BndLib',[],[]), 
            ('MFT',['Aspect'],[]),
+           ('MDF',[],[]),
+           ('MFunction',['TCollection'],[]),
            ('OSD',['Quantity_Date'],['OSD_Semaphore','OSD_MailBox','OSD_Process'],{'OSD_Path':['LocateExecFile'],'OSD':['ControlBreak']}),
 ##################################
 ######## Shape ##################
@@ -290,14 +316,32 @@ MODULES = [
             ('ShapeExtend',['BRepFill','gp','TopoDS'],[]),
             ('ShapeFix',['TopoDS_Solid','Geom','TCollection','Message','Handle_Message_Algorithm'],['ShapeFix_WireSegment']),
             ('ShapeProcess',['Geom','TCollection','Message','Handle_Message_Algorithm'],[]),
+            ('ShapeProcessAPI',['Geom','TCollection','Message','Handle_Message_Algorithm'],[]),            
             ('ShapeUpgrade',['Geom','TCollection','Message','Handle_Message_Algorithm'],[]),
             ('ShapeAnalysis',['Geom','TCollection','Message','Handle_Message_Algorithm'],['Selector','ShapeAnalysis_BoxBndTreeSelector']),
+            #('ShapeSchema',['Geom','TCollection','Message','Handle_Message_Algorithm'],[]), Many linking errors
 ################################
 ############ Images ############
 ################################
             #('Image',[],[]), #bug on Windows
             #('AlienImage',['Quantity','TCollection'],[]),
             ('Units',[],['Units_Quantity','Units_Dimensions']),
+################################
+############ Bin ############
+################################
+            ('BinLDrivers',['TCollection','Storage'],[]),
+            ('BinDrivers',['Standard','TCollection','Storage','PCDM'],[]),
+            ('BinObjMgt',[],[]),
+            ('BinMDF',[],[]),
+            ('BinMDataStd',['TCollection'],[]),
+            ('BinMDocStd',['TCollection'],[]),
+            ('BinMFunction',['TCollection'],[]),
+            ('BinMNaming',['TCollection'],[]),
+            ('BinMPrsStd',['TCollection'],[]),
+            ('BinTObjDrivers',['Standard','TCollection','Storage','PCDM'],[]),
+            ('BinTools',[],[],{'BinTools_Curve2dSet':['Dump']}),
+            ('BinXCAFDrivers',['Standard','TCollection','Storage','PCDM'],[]),
+            ('BinMXCAFDoc',['TCollection'],[]),
 ############################
 ## VISUALIZATION STUFF ######
 #############################
@@ -320,6 +364,45 @@ MODULES = [
 ###########################
             ('GraphDS',[],[]),#LINUX TEST,
             ('GraphTools',[],[]),
+            ('FairCurve',[],[]),
+            #('FSD',[],[]), DONT WORK
+            ('ExprIntrp',[],[]),
+            #('Expr',[],[]), DONT WORK
+            ('GGraphic2d',['Quantity'],[]),
+            ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
+            ('LocalAnalysis',[],[]),
+            ('LDOMParser',[],[],{'LDOMParser':['parse']}),
+            ('Storage',[],['Storage_BucketIterator','Storage_BucketOfPersistent','Storage_Bucket']),
+            ('PCDM',[],['PCDM_StorageDriver','PCDM_DOMHeaderParser'],{'PCDM':['StorageDriver']}),
+            ('MDocStd',['Storage'],[]),
+            ('TDataStd',[],[]),
+            ('MDataStd',['TCollection','TDF'],[]),
+            ('Bisector',['TCollection'],[]),
+            ('BiTgte',['math'],[]),
+            ('BSplCLib',[],[],{'BSplCLib':['DN']}),
+            ('BSplSLib',[],[],{'BSplCLib':['DN']}),
+            ('CSLib',[],[]),
+            #('DBRep',[],[]), NEED Draw.I dont work
+            # ('DDataStd',[],[]), idem
+            # ('DDF',[],[]),idem
+            # ('DDocStd',[],[]), Need DDF DON'T WORK
+            ('Dico',[],[]),
+            ('EDL',[],[]),
+            ('PMMgt',[],[]),
+            ('ObjMgt',[],[]),
+            #('NCollection',[],[]), don't work
+            ('PColStd',[],[]),
+            ('PColgp',[],[]),
+            ('PCollection',[],[]),
+            ('PColPGeom2d',[],[]),
+            ('PColPGeom',[],[]),
+            ('PGeom',[],[]),
+            ('PGeom2d',[],[]),
+            ('Plate',[],[]),
+            #('PLib',[],[]), don't work
+            ('PShort',[],[]),
+            ('Sweep',[],[]),
+            ('ProjLib',[],[],{'ProjLib_ProjectOnSurface':['Load'],'ProjLib_ProjectedCurve':['Load']}),
            ]
 #####################################
 # Visualization part is OS specific #
@@ -352,6 +435,7 @@ if sys.platform=='win32':
                ('IGESData',['IGESData','Interface','MoniTool','TCollection'],['IGESData_Protocol']),
                ('IGESCAFControl',['IGESData','Interface','MoniTool','TCollection'],[]),
                ##('IGESDraw',[],[]), DON'T WORK
+               ('IGESConvGeom',[],[]),
                ('IGESFile',[],[]),
                ('XDEDRAW',[],[]),
                ########################################

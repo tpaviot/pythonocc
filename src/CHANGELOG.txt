@@ -1,3 +1,22 @@
+2009/02/25:
+	- Added Bin*, Bisector, BiTgte, BSplSLib, BSplSLib, CSLib, Dico, EDL, PMMgt, ObjMgt,
+	PColStd, PColgp, PCollection, PColGeom, PColGeom2d, PGeom, PGeom2d, Plate, PShort,
+	Sweep, TopBas, TopClass, TopCnx, TopTrans, ProjLib, ShapeProcessAPI,
+2009/02/24:
+	- Added MDF, MFunction, Mat2d, DBC, PDF, PStandard, PNaming, CGM, IGESConvGeom,
+	IntImpParGen,FEmTool, IFGraph, MgtTopoDS, MgtBRep, MNaming, PFunction, DNaming,
+	FairCurve, ExprIntr, GGraphic2d, HeaderSection, LocalAnalysis, LDOMParser, MDocStd,
+	PCDM, Storage, TDataStd, MDataStd
+	- Added AppCont, Appdef, AdvApprox, CDF, CDM, AppStd,
+	TDocStd, AppStdL, BRepFeat, BRepIntCurveSurface, BRepToIGESBRep,
+	GraphDS, GraphTools, HLRTopoBRep, IGESFile, Int*
+2009/02/23:
+	- PythonOCCStats function added
+	- setup.py splitted in Modules.py
+	- Added Display2d class and modified OCCViewer.py
+	- Added BRepAdaptor, BRepLProp, AIS2D
+	- modified setup.py so that it's possible to easier add new modules
+== pythonOCC-md0.1 released ==
 2009/02/08:
 	- Layout modifs for Interactive Console
 	- Added Utils to pythonOCC distro

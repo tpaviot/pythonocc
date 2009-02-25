@@ -1,0 +1,461 @@
+/*
+##Copyright 2008-2009 Thomas Paviot
+##
+##thomas.paviot@free.fr
+##
+##pythonOCC is a computer program whose purpose is to provide a complete set
+##of python bindings for OpenCascade library.
+##
+##This software is governed by the CeCILL license under French law and
+##abiding by the rules of distribution of free software.  You can  use, 
+##modify and/ or redistribute the software under the terms of the CeCILL
+##license as circulated by CEA, CNRS and INRIA at the following URL
+##"http://www.cecill.info". 
+##
+##As a counterpart to the access to the source code and  rights to copy,
+##modify and redistribute granted by the license, users are provided only
+##with a limited warranty  and the software's author,  the holder of the
+##economic rights,  and the successive licensors  have only  limited
+##liability. 
+##
+##In this respect, the user's attention is drawn to the risks associated
+##with loading,  using,  modifying and/or developing or reproducing the
+##software by the user in light of its specific status of free software,
+##that may mean  that it is complicated to manipulate,  and  that  also
+##therefore means  that it is reserved for developers  and  experienced
+##professionals having in-depth computer knowledge. Users are therefore
+##encouraged to load and test the software's suitability as regards their
+##requirements in conditions enabling the security of their systems and/or 
+##data to be ensured and,  more generally, to use and operate it in the 
+##same conditions as regards security. 
+##
+##The fact that you are presently reading this means that you have had
+##knowledge of the CeCILL license and that you accept its terms.
+*/
+%module PNaming
+
+%include typemaps.i
+%include cmalloc.i
+%include cpointer.i
+%include carrays.i
+%include exception.i
+
+#ifndef _Standard_TypeDef_HeaderFile
+#define _Standard_TypeDef_HeaderFile
+#define Standard_False (Standard_Boolean) 0
+#define Standard_True  (Standard_Boolean) 1
+#endif
+
+/*
+Exception handling
+*/
+%{#include <Standard_Failure.hxx>%}
+%exception
+{
+    try
+    {
+        $action
+    } 
+    catch(Standard_Failure)
+    {
+        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
+    }
+}
+
+/*
+Standard_Real & function transformation
+*/
+%typemap(argout) Standard_Real &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyFloat_FromDouble(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
+    $1 = &temp;
+}
+
+
+%include PNaming_dependencies.i
+
+
+%include PNaming_headers.i
+
+
+
+
+%nodefaultctor Handle_PNaming_Name;
+class Handle_PNaming_Name : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PNaming_Name();
+		%feature("autodoc", "1");
+		Handle_PNaming_Name();
+		%feature("autodoc", "1");
+		Handle_PNaming_Name(const Handle_PNaming_Name &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name(const PNaming_Name *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PNaming_Name {
+	PNaming_Name* GetObject() {
+	return (PNaming_Name*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
+class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape();
+		%feature("autodoc", "1");
+		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape();
+		%feature("autodoc", "1");
+		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape* GetObject() {
+	return (PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_PNaming_HArray1OfNamedShape;
+class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PNaming_HArray1OfNamedShape();
+		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape();
+		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape(const Handle_PNaming_HArray1OfNamedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape(const PNaming_HArray1OfNamedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PNaming_HArray1OfNamedShape {
+	PNaming_HArray1OfNamedShape* GetObject() {
+	return (PNaming_HArray1OfNamedShape*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_PNaming_NamedShape;
+class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PNaming_NamedShape();
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape();
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape(const Handle_PNaming_NamedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape(const PNaming_NamedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PNaming_NamedShape {
+	PNaming_NamedShape* GetObject() {
+	return (PNaming_NamedShape*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_PNaming_Naming;
+class Handle_PNaming_Naming : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PNaming_Naming();
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming();
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming(const Handle_PNaming_Naming &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming(const PNaming_Naming *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PNaming_Naming {
+	PNaming_Naming* GetObject() {
+	return (PNaming_Naming*)$self->Access();
+	}
+};
+
+%nodefaultctor PNaming_FieldOfHArray1OfNamedShape;
+class PNaming_FieldOfHArray1OfNamedShape : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PNaming_FieldOfHArray1OfNamedShape();
+		%feature("autodoc", "1");
+		PNaming_FieldOfHArray1OfNamedShape(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PNaming_FieldOfHArray1OfNamedShape(const PNaming_FieldOfHArray1OfNamedShape &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PNaming_FieldOfHArray1OfNamedShape &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_PNaming_NamedShape &Value);
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		virtual		~PNaming_FieldOfHArray1OfNamedShape();
+
+};
+
+%nodefaultctor PNaming_Naming;
+class PNaming_Naming : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PNaming_Naming();
+		%feature("autodoc", "1");
+		void SetName(const Handle_PNaming_Name &aName);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name GetName() const;
+		%feature("autodoc", "1");
+		PNaming_Naming(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name _CSFDB_GetPNaming_NamingmyName() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamingmyName(const Handle_PNaming_Name &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PNaming_Naming();
+
+};
+%extend PNaming_Naming {
+	Handle_PNaming_Naming GetHandle() {
+	return *(Handle_PNaming_Naming*) &$self;
+	}
+};
+
+%nodefaultctor PNaming_NamedShape;
+class PNaming_NamedShape : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PNaming_NamedShape();
+		%feature("autodoc", "1");
+		Standard_Integer NbShapes() const;
+		%feature("autodoc", "1");
+		void OldShapes(const Handle_PTopoDS_HArray1OfShape1 &theShapes);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_HArray1OfShape1 OldShapes() const;
+		%feature("autodoc", "1");
+		void NewShapes(const Handle_PTopoDS_HArray1OfShape1 &theShapes);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_HArray1OfShape1 NewShapes() const;
+		%feature("autodoc", "1");
+		void ShapeStatus(const Standard_Integer theShapeStatus);
+		%feature("autodoc", "1");
+		Standard_Integer ShapeStatus() const;
+		%feature("autodoc", "1");
+		void Version(const Standard_Integer theVersion);
+		%feature("autodoc", "1");
+		Standard_Integer Version() const;
+		%feature("autodoc", "1");
+		PNaming_NamedShape(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_HArray1OfShape1 _CSFDB_GetPNaming_NamedShapemyOldShapes() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamedShapemyOldShapes(const Handle_PTopoDS_HArray1OfShape1 &p);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_HArray1OfShape1 _CSFDB_GetPNaming_NamedShapemyNewShapes() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamedShapemyNewShapes(const Handle_PTopoDS_HArray1OfShape1 &p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_NamedShapemyShapeStatus() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamedShapemyShapeStatus(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_NamedShapemyVersion() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamedShapemyVersion(const Standard_Integer p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PNaming_NamedShape();
+
+};
+%extend PNaming_NamedShape {
+	Handle_PNaming_NamedShape GetHandle() {
+	return *(Handle_PNaming_NamedShape*) &$self;
+	}
+};
+
+%nodefaultctor PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape;
+class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
+	public:
+		%feature("autodoc", "1");
+		~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape();
+		%feature("autodoc", "1");
+		PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape();
+		%feature("autodoc", "1");
+		PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape(const Handle_PNaming_NamedShape &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PNaming_NamedShape &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+
+%nodefaultctor PNaming_HArray1OfNamedShape;
+class PNaming_HArray1OfNamedShape : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PNaming_HArray1OfNamedShape(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		PNaming_HArray1OfNamedShape(const Standard_Integer Low, const Standard_Integer Up, const Handle_PNaming_NamedShape &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_PNaming_NamedShape &Value);
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		void ShallowDump(Standard_OStream & s) const;
+		%feature("autodoc", "1");
+		PNaming_HArray1OfNamedShape();
+		%feature("autodoc", "1");
+		PNaming_HArray1OfNamedShape(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_HArray1OfNamedShapeLowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_HArray1OfNamedShapeLowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_HArray1OfNamedShapeUpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_HArray1OfNamedShapeUpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PNaming_FieldOfHArray1OfNamedShape & _CSFDB_GetPNaming_HArray1OfNamedShapeData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PNaming_HArray1OfNamedShape();
+
+};
+%extend PNaming_HArray1OfNamedShape {
+	Handle_PNaming_HArray1OfNamedShape GetHandle() {
+	return *(Handle_PNaming_HArray1OfNamedShape*) &$self;
+	}
+};
+
+%nodefaultctor PNaming_Name;
+class PNaming_Name : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PNaming_Name();
+		%feature("autodoc", "1");
+		void Type(const Standard_Integer T);
+		%feature("autodoc", "1");
+		void ShapeType(const Standard_Integer T);
+		%feature("autodoc", "1");
+		void Arguments(const Handle_PNaming_HArray1OfNamedShape &Args);
+		%feature("autodoc", "1");
+		void StopNamedShape(const Handle_PNaming_NamedShape &NS);
+		%feature("autodoc", "1");
+		Standard_Integer Type() const;
+		%feature("autodoc", "1");
+		Standard_Integer ShapeType() const;
+		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape Arguments() const;
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape StopNamedShape() const;
+		%feature("autodoc", "1");
+		void Index(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		PNaming_Name(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_NamemyType() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamemyType(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_NamemyShapeType() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamemyShapeType(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape _CSFDB_GetPNaming_NamemyArgs() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamemyArgs(const Handle_PNaming_HArray1OfNamedShape &p);
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape _CSFDB_GetPNaming_NamemyStop() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamemyStop(const Handle_PNaming_NamedShape &p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_NamemyIndex() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamemyIndex(const Standard_Integer p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PNaming_Name();
+
+};
+%extend PNaming_Name {
+	Handle_PNaming_Name GetHandle() {
+	return *(Handle_PNaming_Name*) &$self;
+	}
+};
+
+%nodefaultctor PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
+class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape();
+		%feature("autodoc", "1");
+		PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const Handle_PNaming_NamedShape &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PNaming_NamedShape &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape _CSFDB_GetPNaming_VArrayNodeOfFieldOfHArray1OfNamedShapemyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_VArrayNodeOfFieldOfHArray1OfNamedShapemyValue(const Handle_PNaming_NamedShape &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape();
+
+};
+%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape GetHandle() {
+	return *(Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape*) &$self;
+	}
+};
