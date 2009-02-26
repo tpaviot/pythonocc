@@ -1,0 +1,770 @@
+/*
+##Copyright 2008-2009 Thomas Paviot
+##
+##thomas.paviot@free.fr
+##
+##pythonOCC is a computer program whose purpose is to provide a complete set
+##of python bindings for OpenCascade library.
+##
+##This software is governed by the CeCILL license under French law and
+##abiding by the rules of distribution of free software.  You can  use, 
+##modify and/ or redistribute the software under the terms of the CeCILL
+##license as circulated by CEA, CNRS and INRIA at the following URL
+##"http://www.cecill.info". 
+##
+##As a counterpart to the access to the source code and  rights to copy,
+##modify and redistribute granted by the license, users are provided only
+##with a limited warranty  and the software's author,  the holder of the
+##economic rights,  and the successive licensors  have only  limited
+##liability. 
+##
+##In this respect, the user's attention is drawn to the risks associated
+##with loading,  using,  modifying and/or developing or reproducing the
+##software by the user in light of its specific status of free software,
+##that may mean  that it is complicated to manipulate,  and  that  also
+##therefore means  that it is reserved for developers  and  experienced
+##professionals having in-depth computer knowledge. Users are therefore
+##encouraged to load and test the software's suitability as regards their
+##requirements in conditions enabling the security of their systems and/or 
+##data to be ensured and,  more generally, to use and operate it in the 
+##same conditions as regards security. 
+##
+##The fact that you are presently reading this means that you have had
+##knowledge of the CeCILL license and that you accept its terms.
+*/
+%module StepToTopoDS
+
+%include typemaps.i
+%include cmalloc.i
+%include cpointer.i
+%include carrays.i
+%include exception.i
+
+#ifndef _Standard_TypeDef_HeaderFile
+#define _Standard_TypeDef_HeaderFile
+#define Standard_False (Standard_Boolean) 0
+#define Standard_True  (Standard_Boolean) 1
+#endif
+
+/*
+Exception handling
+*/
+%{#include <Standard_Failure.hxx>%}
+%exception
+{
+    try
+    {
+        $action
+    } 
+    catch(Standard_Failure)
+    {
+        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
+    }
+}
+
+/*
+Standard_Real & function transformation
+*/
+%typemap(argout) Standard_Real &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyFloat_FromDouble(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
+    $1 = &temp;
+}
+
+
+%include StepToTopoDS_dependencies.i
+
+
+%include StepToTopoDS_headers.i
+
+
+enum StepToTopoDS_TranslateEdgeError {
+	StepToTopoDS_TranslateEdgeDone,
+	StepToTopoDS_TranslateEdgeOther,
+	};
+
+enum StepToTopoDS_BuilderError {
+	StepToTopoDS_BuilderDone,
+	StepToTopoDS_BuilderOther,
+	};
+
+enum StepToTopoDS_GeometricToolError {
+	StepToTopoDS_GeometricToolDone,
+	StepToTopoDS_GeometricToolIsDegenerated,
+	StepToTopoDS_GeometricToolHasNoPCurve,
+	StepToTopoDS_GeometricToolWrong3dParameters,
+	StepToTopoDS_GeometricToolNoProjectiOnCurve,
+	StepToTopoDS_GeometricToolOther,
+	};
+
+enum StepToTopoDS_TranslateVertexError {
+	StepToTopoDS_TranslateVertexDone,
+	StepToTopoDS_TranslateVertexOther,
+	};
+
+enum StepToTopoDS_TranslateFaceError {
+	StepToTopoDS_TranslateFaceDone,
+	StepToTopoDS_TranslateFaceOther,
+	};
+
+enum StepToTopoDS_TranslateEdgeLoopError {
+	StepToTopoDS_TranslateEdgeLoopDone,
+	StepToTopoDS_TranslateEdgeLoopOther,
+	};
+
+enum StepToTopoDS_TranslatePolyLoopError {
+	StepToTopoDS_TranslatePolyLoopDone,
+	StepToTopoDS_TranslatePolyLoopOther,
+	};
+
+enum StepToTopoDS_TranslateVertexLoopError {
+	StepToTopoDS_TranslateVertexLoopDone,
+	StepToTopoDS_TranslateVertexLoopOther,
+	};
+
+enum StepToTopoDS_TranslateShellError {
+	StepToTopoDS_TranslateShellDone,
+	StepToTopoDS_TranslateShellOther,
+	};
+
+
+
+%nodefaultctor Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI;
+class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI();
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI();
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI(const Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI(const StepToTopoDS_DataMapNodeOfDataMapOfTRI *anItem);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	StepToTopoDS_DataMapNodeOfDataMapOfTRI* GetObject() {
+	return (StepToTopoDS_DataMapNodeOfDataMapOfTRI*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointVertexMap;
+class Handle_StepToTopoDS_DataMapNodeOfPointVertexMap : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepToTopoDS_DataMapNodeOfPointVertexMap();
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap();
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap(const Handle_StepToTopoDS_DataMapNodeOfPointVertexMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap(const StepToTopoDS_DataMapNodeOfPointVertexMap *anItem);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepToTopoDS_DataMapNodeOfPointVertexMap {
+	StepToTopoDS_DataMapNodeOfPointVertexMap* GetObject() {
+	return (StepToTopoDS_DataMapNodeOfPointVertexMap*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap;
+class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap();
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap();
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap(const Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap(const StepToTopoDS_DataMapNodeOfPointEdgeMap *anItem);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	StepToTopoDS_DataMapNodeOfPointEdgeMap* GetObject() {
+	return (StepToTopoDS_DataMapNodeOfPointEdgeMap*)$self->Access();
+	}
+};
+
+%nodefaultctor StepToTopoDS_DataMapIteratorOfPointEdgeMap;
+class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_DataMapIteratorOfPointEdgeMap();
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfPointEdgeMap();
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfPointEdgeMap(const StepToTopoDS_PointEdgeMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const StepToTopoDS_PointEdgeMap &aMap);
+		%feature("autodoc", "1");
+		const StepToTopoDS_PointPair & Key() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Value() const;
+
+};
+
+%nodefaultctor StepToTopoDS_Tool;
+class StepToTopoDS_Tool {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_Tool();
+		%feature("autodoc", "1");
+		StepToTopoDS_Tool();
+		%feature("autodoc", "1");
+		StepToTopoDS_Tool(const StepToTopoDS_DataMapOfTRI &Map, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		void Init(const StepToTopoDS_DataMapOfTRI &Map, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_StepShape_TopologicalRepresentationItem &TRI);
+		%feature("autodoc", "1");
+		void Bind(const Handle_StepShape_TopologicalRepresentationItem &TRI, const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Find(const Handle_StepShape_TopologicalRepresentationItem &TRI);
+		%feature("autodoc", "1");
+		void ClearEdgeMap();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEdgeBound(const StepToTopoDS_PointPair &PP);
+		%feature("autodoc", "1");
+		void BindEdge(const StepToTopoDS_PointPair &PP, const TopoDS_Edge &E);
+		%feature("autodoc", "1");
+		const TopoDS_Edge & FindEdge(const StepToTopoDS_PointPair &PP);
+		%feature("autodoc", "1");
+		void ClearVertexMap();
+		%feature("autodoc", "1");
+		Standard_Boolean IsVertexBound(const Handle_StepGeom_CartesianPoint &PG);
+		%feature("autodoc", "1");
+		void BindVertex(const Handle_StepGeom_CartesianPoint &P, const TopoDS_Vertex &V);
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & FindVertex(const Handle_StepGeom_CartesianPoint &P);
+		%feature("autodoc", "1");
+		void ComputePCurve(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean ComputePCurve() const;
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientProcess TransientProcess() const;
+		%feature("autodoc", "1");
+		void AddContinuity(const Handle_Geom_Surface &GeomSurf);
+		%feature("autodoc", "1");
+		void AddContinuity(const Handle_Geom_Curve &GeomCurve);
+		%feature("autodoc", "1");
+		void AddContinuity(const Handle_Geom2d_Curve &GeomCur2d);
+		%feature("autodoc", "1");
+		Standard_Integer C0Surf() const;
+		%feature("autodoc", "1");
+		Standard_Integer C1Surf() const;
+		%feature("autodoc", "1");
+		Standard_Integer C2Surf() const;
+		%feature("autodoc", "1");
+		Standard_Integer C0Cur2() const;
+		%feature("autodoc", "1");
+		Standard_Integer C1Cur2() const;
+		%feature("autodoc", "1");
+		Standard_Integer C2Cur2() const;
+		%feature("autodoc", "1");
+		Standard_Integer C0Cur3() const;
+		%feature("autodoc", "1");
+		Standard_Integer C1Cur3() const;
+		%feature("autodoc", "1");
+		Standard_Integer C2Cur3() const;
+
+};
+
+%nodefaultctor StepToTopoDS_Root;
+class StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_Root();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Precision() const;
+		%feature("autodoc", "1");
+		void SetPrecision(const Standard_Real preci);
+		%feature("autodoc", "1");
+		Standard_Real MaxTol() const;
+		%feature("autodoc", "1");
+		void SetMaxTol(const Standard_Real maxpreci);
+
+};
+
+%nodefaultctor StepToTopoDS_TranslateEdge;
+class StepToTopoDS_TranslateEdge : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslateEdge();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdge();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdge(const Handle_StepShape_Edge &E, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_Edge &E, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void MakeFromCurve3D(const Handle_StepGeom_Curve &C3D, const Handle_StepShape_EdgeCurve &EC, const Handle_StepShape_Vertex &Vend, const Standard_Real preci, TopoDS_Edge & E, TopoDS_Vertex & V1, TopoDS_Vertex & V2, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve MakePCurve(const Handle_StepGeom_Pcurve &PCU, const Handle_Geom_Surface &ConvSurf) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeError Error() const;
+
+};
+
+%nodefaultctor StepToTopoDS_TranslateShell;
+class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslateShell();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateShell();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateShell(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateShellError Error() const;
+
+};
+
+%nodefaultctor StepToTopoDS_DataMapIteratorOfPointVertexMap;
+class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_DataMapIteratorOfPointVertexMap();
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfPointVertexMap();
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfPointVertexMap(const StepToTopoDS_PointVertexMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const StepToTopoDS_PointVertexMap &aMap);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_CartesianPoint & Key() const;
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & Value() const;
+
+};
+
+%nodefaultctor StepToTopoDS_CartesianPointHasher;
+class StepToTopoDS_CartesianPointHasher {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_CartesianPointHasher();
+		%feature("autodoc", "1");
+		StepToTopoDS_CartesianPointHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const Handle_StepGeom_CartesianPoint &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Handle_StepGeom_CartesianPoint &K1, const Handle_StepGeom_CartesianPoint &K2);
+
+};
+
+%nodefaultctor StepToTopoDS_DataMapIteratorOfDataMapOfTRI;
+class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_DataMapIteratorOfDataMapOfTRI();
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfDataMapOfTRI();
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfDataMapOfTRI(const StepToTopoDS_DataMapOfTRI &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const StepToTopoDS_DataMapOfTRI &aMap);
+		%feature("autodoc", "1");
+		const Handle_StepShape_TopologicalRepresentationItem & Key() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+
+};
+
+%nodefaultctor StepToTopoDS_PointPairHasher;
+class StepToTopoDS_PointPairHasher {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_PointPairHasher();
+		%feature("autodoc", "1");
+		StepToTopoDS_PointPairHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const StepToTopoDS_PointPair &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const StepToTopoDS_PointPair &K1, const StepToTopoDS_PointPair &K2);
+
+};
+
+%nodefaultctor StepToTopoDS_DataMapNodeOfPointVertexMap;
+class StepToTopoDS_DataMapNodeOfPointVertexMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapNodeOfPointVertexMap(const Handle_StepGeom_CartesianPoint &K, const TopoDS_Vertex &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CartesianPoint & Key() const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepToTopoDS_DataMapNodeOfPointVertexMap();
+
+};
+%extend StepToTopoDS_DataMapNodeOfPointVertexMap {
+	Handle_StepToTopoDS_DataMapNodeOfPointVertexMap GetHandle() {
+	return *(Handle_StepToTopoDS_DataMapNodeOfPointVertexMap*) &$self;
+	}
+};
+
+%nodefaultctor StepToTopoDS_DataMapOfTRI;
+class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapOfTRI(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapOfTRI & Assign(const StepToTopoDS_DataMapOfTRI &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~StepToTopoDS_DataMapOfTRI();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Handle_StepShape_TopologicalRepresentationItem &K, const TopoDS_Shape &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_StepShape_TopologicalRepresentationItem &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_StepShape_TopologicalRepresentationItem &K);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Find(const Handle_StepShape_TopologicalRepresentationItem &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & operator()(const Handle_StepShape_TopologicalRepresentationItem &K) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & ChangeFind(const Handle_StepShape_TopologicalRepresentationItem &K);
+		%feature("autodoc", "1");
+		TopoDS_Shape & operator()(const Handle_StepShape_TopologicalRepresentationItem &K);
+
+};
+
+%nodefaultctor StepToTopoDS_TranslateFace;
+class StepToTopoDS_TranslateFace : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslateFace();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateFace();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateFace(const Handle_StepShape_FaceSurface &FS, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_FaceSurface &FS, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateFaceError Error() const;
+
+};
+
+%nodefaultctor StepToTopoDS_TranslatePolyLoop;
+class StepToTopoDS_TranslatePolyLoop : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslatePolyLoop();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslatePolyLoop();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslatePolyLoop(const Handle_StepShape_PolyLoop &PL, StepToTopoDS_Tool & T, const Handle_Geom_Surface &S, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_PolyLoop &PL, StepToTopoDS_Tool & T, const Handle_Geom_Surface &S, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslatePolyLoopError Error() const;
+
+};
+
+%nodefaultctor StepToTopoDS_TranslateCompositeCurve;
+class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslateCompositeCurve();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateCompositeCurve();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateCompositeCurve(const Handle_StepGeom_CompositeCurve &CC, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateCompositeCurve(const Handle_StepGeom_CompositeCurve &CC, const Handle_Transfer_TransientProcess &TP, const Handle_StepGeom_Surface &S, const Handle_Geom_Surface &Surf);
+		%feature("autodoc", "1");
+		Standard_Boolean Init(const Handle_StepGeom_CompositeCurve &CC, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		Standard_Boolean Init(const Handle_StepGeom_CompositeCurve &CC, const Handle_Transfer_TransientProcess &TP, const Handle_StepGeom_Surface &S, const Handle_Geom_Surface &Surf);
+		%feature("autodoc", "1");
+		const TopoDS_Wire & Value() const;
+
+};
+
+%nodefaultctor StepToTopoDS_PointVertexMap;
+class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_PointVertexMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		StepToTopoDS_PointVertexMap & Assign(const StepToTopoDS_PointVertexMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~StepToTopoDS_PointVertexMap();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Handle_StepGeom_CartesianPoint &K, const TopoDS_Vertex &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_StepGeom_CartesianPoint &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_StepGeom_CartesianPoint &K);
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & Find(const Handle_StepGeom_CartesianPoint &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & operator()(const Handle_StepGeom_CartesianPoint &K) const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex & ChangeFind(const Handle_StepGeom_CartesianPoint &K);
+		%feature("autodoc", "1");
+		TopoDS_Vertex & operator()(const Handle_StepGeom_CartesianPoint &K);
+
+};
+
+%nodefaultctor StepToTopoDS_PointPair;
+class StepToTopoDS_PointPair {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_PointPair();
+		%feature("autodoc", "1");
+		StepToTopoDS_PointPair(const Handle_StepGeom_CartesianPoint &P1, const Handle_StepGeom_CartesianPoint &P2);
+
+};
+
+%nodefaultctor StepToTopoDS_PointEdgeMap;
+class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_PointEdgeMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		StepToTopoDS_PointEdgeMap & Assign(const StepToTopoDS_PointEdgeMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~StepToTopoDS_PointEdgeMap();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const StepToTopoDS_PointPair &K, const TopoDS_Edge &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const StepToTopoDS_PointPair &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const StepToTopoDS_PointPair &K);
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Find(const StepToTopoDS_PointPair &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge & operator()(const StepToTopoDS_PointPair &K) const;
+		%feature("autodoc", "1");
+		TopoDS_Edge & ChangeFind(const StepToTopoDS_PointPair &K);
+		%feature("autodoc", "1");
+		TopoDS_Edge & operator()(const StepToTopoDS_PointPair &K);
+
+};
+
+%nodefaultctor StepToTopoDS_MakeTransformed;
+class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_MakeTransformed();
+		%feature("autodoc", "1");
+		StepToTopoDS_MakeTransformed();
+		%feature("autodoc", "1");
+		Standard_Boolean Compute(const Handle_StepGeom_Axis2Placement3d &Origin, const Handle_StepGeom_Axis2Placement3d &Target);
+		%feature("autodoc", "1");
+		Standard_Boolean Compute(const Handle_StepGeom_CartesianTransformationOperator3d &Operator);
+		%feature("autodoc", "1");
+		const gp_Trsf & Transformation() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Transform(TopoDS_Shape & shape) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape TranslateMappedItem(const Handle_StepRepr_MappedItem &mapit, const Handle_Transfer_TransientProcess &TP);
+
+};
+
+%nodefaultctor StepToTopoDS_TranslateCurveBoundedSurface;
+class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslateCurveBoundedSurface();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateCurveBoundedSurface();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateCurveBoundedSurface(const Handle_StepGeom_CurveBoundedSurface &CBS, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		Standard_Boolean Init(const Handle_StepGeom_CurveBoundedSurface &CBS, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		const TopoDS_Face & Value() const;
+
+};
+
+%nodefaultctor StepToTopoDS_GeometricTool;
+class StepToTopoDS_GeometricTool {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_GeometricTool();
+		%feature("autodoc", "1");
+		StepToTopoDS_GeometricTool();
+		%feature("autodoc", "1");
+		Standard_Integer PCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, Handle_StepGeom_Pcurve & PC, const Standard_Integer last=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSeamCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
+		%feature("autodoc", "1");
+		Standard_Boolean IsLikeSeam(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
+		%feature("autodoc", "1");
+		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
+
+};
+
+%nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfTRI;
+class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapNodeOfDataMapOfTRI(const Handle_StepShape_TopologicalRepresentationItem &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_StepShape_TopologicalRepresentationItem & Key() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepToTopoDS_DataMapNodeOfDataMapOfTRI();
+
+};
+%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI GetHandle() {
+	return *(Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI*) &$self;
+	}
+};
+
+%nodefaultctor StepToTopoDS;
+class StepToTopoDS {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS();
+		%feature("autodoc", "1");
+		StepToTopoDS();
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString DecodeBuilderError(const StepToTopoDS_BuilderError Error);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString DecodeShellError(const StepToTopoDS_TranslateShellError Error);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString DecodeFaceError(const StepToTopoDS_TranslateFaceError Error);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString DecodeEdgeError(const StepToTopoDS_TranslateEdgeError Error);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString DecodeVertexError(const StepToTopoDS_TranslateVertexError Error);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString DecodeVertexLoopError(const StepToTopoDS_TranslateVertexLoopError Error);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString DecodePolyLoopError(const StepToTopoDS_TranslatePolyLoopError Error);
+		%feature("autodoc", "1");
+		char * DecodeGeometricToolError(const StepToTopoDS_GeometricToolError Error);
+
+};
+
+%nodefaultctor StepToTopoDS_TranslateVertex;
+class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslateVertex();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateVertex();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateVertex(const Handle_StepShape_Vertex &V, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_Vertex &V, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateVertexError Error() const;
+
+};
+
+%nodefaultctor StepToTopoDS_TranslateEdgeLoop;
+class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslateEdgeLoop();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoop();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoop(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoopError Error() const;
+
+};
+
+%nodefaultctor StepToTopoDS_DataMapNodeOfPointEdgeMap;
+class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapNodeOfPointEdgeMap(const StepToTopoDS_PointPair &K, const TopoDS_Edge &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		StepToTopoDS_PointPair & Key() const;
+		%feature("autodoc", "1");
+		TopoDS_Edge & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepToTopoDS_DataMapNodeOfPointEdgeMap();
+
+};
+%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap GetHandle() {
+	return *(Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap*) &$self;
+	}
+};
+
+%nodefaultctor StepToTopoDS_TranslateVertexLoop;
+class StepToTopoDS_TranslateVertexLoop : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslateVertexLoop();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateVertexLoop();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateVertexLoop(const Handle_StepShape_VertexLoop &VL, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_VertexLoop &VL, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateVertexLoopError Error() const;
+
+};

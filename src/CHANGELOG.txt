@@ -1,3 +1,9 @@
+2009/02/26:
+	- Added NIS, NLPlate, Resource, Select2D, Select3D, SortTools, StdDrivers, StdFail, 
+	StdLDrivers, StdSelect, StepDimTol, STEPEdit, StepFEA, StepFile, StepSelect,
+	StepSelections, StepToGeom, StepToTopoDS, UnitsAPI, Visual3d, TransferBRep, 
+	APIHeaderSection, PCDMShape, PTopoDS, PBrep, Prs2d, PPoly, PTopLoc, PTColStd,
+	PPrStd, RWStep*, TPrsStd, 
 2009/02/25:
 	- Added Bin*, Bisector, BiTgte, BSplSLib, BSplSLib, CSLib, Dico, EDL, PMMgt, ObjMgt,
 	PColStd, PColgp, PCollection, PColGeom, PColGeom2d, PGeom, PGeom2d, Plate, PShort,

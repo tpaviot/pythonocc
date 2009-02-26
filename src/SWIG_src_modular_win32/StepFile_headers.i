@@ -36,68 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<StepAP203_ApprovedItem.hxx>
-#include<StepAP203_Array1OfApprovedItem.hxx>
-#include<StepAP203_Array1OfCertifiedItem.hxx>
-#include<StepAP203_Array1OfChangeRequestItem.hxx>
-#include<StepAP203_Array1OfClassifiedItem.hxx>
-#include<StepAP203_Array1OfContractedItem.hxx>
-#include<StepAP203_Array1OfDateTimeItem.hxx>
-#include<StepAP203_Array1OfPersonOrganizationItem.hxx>
-#include<StepAP203_Array1OfSpecifiedItem.hxx>
-#include<StepAP203_Array1OfStartRequestItem.hxx>
-#include<StepAP203_Array1OfWorkItem.hxx>
-#include<StepAP203_CcDesignApproval.hxx>
-#include<StepAP203_CcDesignCertification.hxx>
-#include<StepAP203_CcDesignContract.hxx>
-#include<StepAP203_CcDesignDateAndTimeAssignment.hxx>
-#include<StepAP203_CcDesignPersonAndOrganizationAssignment.hxx>
-#include<StepAP203_CcDesignSecurityClassification.hxx>
-#include<StepAP203_CcDesignSpecificationReference.hxx>
-#include<StepAP203_CertifiedItem.hxx>
-#include<StepAP203_Change.hxx>
-#include<StepAP203_ChangeRequest.hxx>
-#include<StepAP203_ChangeRequestItem.hxx>
-#include<StepAP203_ClassifiedItem.hxx>
-#include<StepAP203_ContractedItem.hxx>
-#include<StepAP203_DateTimeItem.hxx>
-#include<StepAP203_HArray1OfApprovedItem.hxx>
-#include<StepAP203_HArray1OfCertifiedItem.hxx>
-#include<StepAP203_HArray1OfChangeRequestItem.hxx>
-#include<StepAP203_HArray1OfClassifiedItem.hxx>
-#include<StepAP203_HArray1OfContractedItem.hxx>
-#include<StepAP203_HArray1OfDateTimeItem.hxx>
-#include<StepAP203_HArray1OfPersonOrganizationItem.hxx>
-#include<StepAP203_HArray1OfSpecifiedItem.hxx>
-#include<StepAP203_HArray1OfStartRequestItem.hxx>
-#include<StepAP203_HArray1OfWorkItem.hxx>
-#include<StepAP203_PersonOrganizationItem.hxx>
-#include<StepAP203_SpecifiedItem.hxx>
-#include<StepAP203_StartRequest.hxx>
-#include<StepAP203_StartRequestItem.hxx>
-#include<StepAP203_StartWork.hxx>
-#include<StepAP203_WorkItem.hxx>
-#include<Handle_StepAP203_CcDesignApproval.hxx>
-#include<Handle_StepAP203_CcDesignCertification.hxx>
-#include<Handle_StepAP203_CcDesignContract.hxx>
-#include<Handle_StepAP203_CcDesignDateAndTimeAssignment.hxx>
-#include<Handle_StepAP203_CcDesignPersonAndOrganizationAssignment.hxx>
-#include<Handle_StepAP203_CcDesignSecurityClassification.hxx>
-#include<Handle_StepAP203_CcDesignSpecificationReference.hxx>
-#include<Handle_StepAP203_Change.hxx>
-#include<Handle_StepAP203_ChangeRequest.hxx>
-#include<Handle_StepAP203_HArray1OfApprovedItem.hxx>
-#include<Handle_StepAP203_HArray1OfCertifiedItem.hxx>
-#include<Handle_StepAP203_HArray1OfChangeRequestItem.hxx>
-#include<Handle_StepAP203_HArray1OfClassifiedItem.hxx>
-#include<Handle_StepAP203_HArray1OfContractedItem.hxx>
-#include<Handle_StepAP203_HArray1OfDateTimeItem.hxx>
-#include<Handle_StepAP203_HArray1OfPersonOrganizationItem.hxx>
-#include<Handle_StepAP203_HArray1OfSpecifiedItem.hxx>
-#include<Handle_StepAP203_HArray1OfStartRequestItem.hxx>
-#include<Handle_StepAP203_HArray1OfWorkItem.hxx>
-#include<Handle_StepAP203_StartRequest.hxx>
-#include<Handle_StepAP203_StartWork.hxx>
+#include<StepFile_CallFailure.hxx>
+#include<StepFile_Read.hxx>
+#include<StepFile_Transfer.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -402,26 +343,7 @@
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
-#include<Handle_StepBasic_VersionedActionRequest.hxx>
-#include<Handle_StepBasic_SecurityClassification.hxx>
-#include<Handle_StepBasic_DateAndTime.hxx>
-#include<Handle_StepBasic_DateTimeRole.hxx>
-#include<Handle_StepBasic_Contract.hxx>
-#include<Handle_StepBasic_ProductDefinition.hxx>
-#include<Handle_StepRepr_ShapeAspect.hxx>
-#include<Handle_StepBasic_ProductDefinitionFormation.hxx>
-#include<Handle_StepRepr_ConfigurationItem.hxx>
-#include<Handle_StepBasic_Product.hxx>
-#include<Handle_StepRepr_SuppliedPartRelationship.hxx>
-#include<Handle_StepBasic_Action.hxx>
-#include<Handle_StepBasic_PersonAndOrganization.hxx>
-#include<Handle_StepBasic_PersonAndOrganizationRole.hxx>
-#include<Handle_StepBasic_ApprovalPersonOrganization.hxx>
-#include<Handle_StepBasic_Certification.hxx>
-#include<Handle_StepRepr_ConfigurationEffectivity.hxx>
-#include<Handle_StepBasic_Approval.hxx>
-#include<Handle_StepBasic_Document.hxx>
-#include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_StepRepr_AssemblyComponentUsage.hxx>
+#include<StepFile_CallFailure.hxx>
+#include<StepFile_Read.hxx>
+#include<StepFile_Transfer.hxx>
 %}

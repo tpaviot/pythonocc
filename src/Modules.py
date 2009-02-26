@@ -71,6 +71,8 @@ MODULES = [
            ('IFSelect',['MoniTool'],[],{"IFSelect_ContextModif":["Search"],"IFSelect_EditForm":["NbTouched"],"IFSelect_IntParam":["StaticName"]}),
            ('IFGraph',['TCollection','MoniTool'],[]),
            ('Transfer',['MoniTool','IFSelect'],[],{'Transfer_Finder':['GetStringAttribute']}),
+           ('TransferBRep',['MoniTool','Interface'],['TransferBRep_ShapeMapper'],\
+            {'TransferBRep':['BRepCheck']}),
            ('XSAlgo',['Standard'],['XSAlgo_AlgoContainer']),
            ('XSControl',['TopoDS','TCollection','Interface','MoniTool','IFSelect'],['XSControl_Vars']),
 ############################################
@@ -326,6 +328,7 @@ MODULES = [
             #('Image',[],[]), #bug on Windows
             #('AlienImage',['Quantity','TCollection'],[]),
             ('Units',[],['Units_Quantity','Units_Dimensions']),
+            ('UnitsAPI',[],[]),
 ################################
 ############ Bin ############
 ################################
@@ -370,10 +373,12 @@ MODULES = [
             #('Expr',[],[]), DONT WORK
             ('GGraphic2d',['Quantity'],[]),
             ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
+            ('APIHeaderSection',['Interface','MoniTool','TCollection'],[]),
             ('LocalAnalysis',[],[]),
             ('LDOMParser',[],[],{'LDOMParser':['parse']}),
             ('Storage',[],['Storage_BucketIterator','Storage_BucketOfPersistent','Storage_Bucket']),
             ('PCDM',[],['PCDM_StorageDriver','PCDM_DOMHeaderParser'],{'PCDM':['StorageDriver']}),
+            ('PCDMShape',[],[]),
             ('MDocStd',['Storage'],[]),
             ('TDataStd',[],[]),
             ('MDataStd',['TCollection','TDF'],[]),
@@ -403,6 +408,25 @@ MODULES = [
             ('PShort',[],[]),
             ('Sweep',[],[]),
             ('ProjLib',[],[],{'ProjLib_ProjectOnSurface':['Load'],'ProjLib_ProjectedCurve':['Load']}),
+            ('NLPlate',[],[]),
+            ('Resource',[],[]),
+            ('Select2D',['TCollection'],[]),
+            ('Select3D',[],[],{'Select3D_SensitiveTriangulation':['DetectedTriangle']}),
+            ('SortTools',[],[]),
+            ('StdDrivers',['Standard','TCollection','PCDM','MDF','Storage'],[]),
+            ('StdFail',[],[]),
+            ('StdLDrivers',['Standard','TCollection','PCDM','MDF','Storage'],[]),
+            #('StdLSchema',['TCollection'],[]), MANY LINKAGE ERRORS
+            #('StdPrs',[],[]), MSVC Fail
+            #('TObj',[],[]), DONT WORK NEED NCOLLECTION
+            ('PTopoDS',[],['PTopoDS_TShape','PTopoDS_TShape1']),
+            ('PBRep',['DBC','PMMgt','ObjMgt'],[]),
+            ('PPoly',[],[]),
+            ('PTopLoc',[],[]),
+            ('PTColStd',[],[]),
+            ('PPrsStd',['DBC'],[]),
+            ('TPrsStd',['Aspect',],[]),
+
            ]
 #####################################
 # Visualization part is OS specific #
@@ -412,13 +436,19 @@ if sys.platform=='win32':
              ('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
              ('Graphic3d',['gp'],['Graphic3d_GraphicDevice','Handle_Graphic3d_GraphicDevice'],\
              {'Graphic3d_Group':['SetGroupPrimitivesAspect'],'Handle_Graphic3d_GraphicDevice':['DownCast']}),
+             ('Prs2d',['Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),             
              ('Prs3d',['Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),
              ('PrsMgr',['Graphic3d','gp','Aspect','Handle_TCollection'],[]),
              ('SelectMgr',['TCollection','Prs3d','Graphic3d','Aspect','Quantity'],[]),
+             ('StdSelect',['TCollection','Prs3d','Graphic3d','Aspect','Quantity','SelectBasics'],[],\
+             {'StdSelect_Shape':['Shape'],'StdSelect_BRepOwner':['Set']}),
              ('DsgPrs',[],[],{'DsgPrs_RadiusPresentation':['Add']}),
              ('AIS',['Graphic3d','TopoDS_Vertex','Aspect','SelectBasics','PrsMgr',],[],{"AIS_LocalContext":["Reactivate"]}),
+             ('NIS',['TCollection','Quantity','Viewer','TColStd','Aspect'],[],{'NIS_InteractiveObject':['SetAttribute'],\
+                                             'NIS_Triangulated':['Polygon','tri_line_intersect','seg_line_intersect']}),
              ('Voxel',['Quantity','gp','Graphic3d','Aspect',\
                       'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics'],[]),
+             ('Visual3d',[],[]),
              ])
     MODULES.extend([
                 ###########################################
@@ -443,14 +473,36 @@ if sys.platform=='win32':
                ########################################
                ('StepData',['Interface','MoniTool','TCollection','IGESGraph','IGESGeom'],['StepData_Protocol'],{'StepData_FreeFormEntity':['StepData_FreeFormEntity'],'StepData_UndefinedEntity':['Super']}),#,'StepData_UndefinedEntity']),
                ('StepBasic',['Interface','MoniTool','TCollection'],[]),
+               #('StepConstruct',[],[]), #GCCXML ERROR
+               ('StepDimTol',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('STEPEdit',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('StepFEA',['MoniTool','Interface','StepBasic','TCollection'],['StepFEA_SymmetricTensor43d']),
+               ('StepFile',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('STEPSelections',['MoniTool','Interface','StepBasic','TCollection'],[],\
+                {'STEPSelections_Counter':['POP','POP2']}),
+               ('StepSelect',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('StepToGeom',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('StepToTopoDS',['MoniTool','Interface','StepBasic','TCollection'],['StepToTopoDS_Builder']),
                ('StepElement',['StepBasic','Interface','MoniTool','TCollection'],[]), 
                ('STEPCAFControl',['IFSelect','XSControl','Transfer','IGESData','Interface','MoniTool','TCollection'],[]),
                ('StepRepr',['Interface','MoniTool'],[]),
                ('StepShape',['MoniTool','Interface','StepBasic','TCollection'],[]),
                ('StepGeom',['StepShape','StepBasic','Interface','MoniTool','TCollection'],[]),
                ('StepAP203',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               #('StepAP209',['MoniTool','Interface','StepBasic','TCollection'],[]), GCCXML ERROR
                ('StepVisual',['MoniTool','Interface','StepBasic','TCollection'],[]),
                ('StepAP214',['StepGeom','StepRepr','MoniTool','Interface','StepBasic','TCollection'],['StepAP214_Protocol']),
+               ('RWHeaderSection',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepAP203',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepAP214',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepBasic',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepDimTol',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepElement',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepFEA',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepGeom',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepRepr',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepShape',['MoniTool','Interface','StepBasic','TCollection'],[]),
+               ('RWStepVisual',['MoniTool','Interface','StepBasic','TCollection'],[]),
                ('TopOpeBRepBuild',['TopOpeBRepDS'],[],{'TopOpeBRepBuild_Builder1':['GFillSplitsPVS']}),
                ('LocOpe',['TopOpeBRepDS','TopOpeBRepTool'],['LocOpe_Revol','LocOpe_RevolutionForm']),
                ])
@@ -482,7 +534,9 @@ def PythonOCCStats():
         if (not package_name in available_occ_packages)\
          and (package_name!='Handle')\
          and ('.hxx' not in package_name)\
-         and ('WOK' not in package_name):
+         and ('WOK' not in package_name)\
+         and ('Test' not in package_name)\
+         and ('cdl' not in package_name):
             available_occ_packages.append(package_name)
     # Then a list of wrapped packages
     wrapped_packages = []
