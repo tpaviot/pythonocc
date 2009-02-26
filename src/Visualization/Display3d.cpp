@@ -67,6 +67,7 @@ void Display3d::Init(int window_handle)
 	// Create V3dViewer and V3d_View
     myV3dViewer = new V3d_Viewer( gd , (short* const)"viewer" );
   	printf("Viewer created.\n");
+  	myV3dViewer->Init();
 	myV3dViewer->SetDefaultLights();
 	myV3dViewer->SetLightOn();
     myV3dView = myV3dViewer->CreateView();	

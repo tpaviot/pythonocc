@@ -56,6 +56,24 @@ class Display3d {
 	void Test();
 };
 
+class NISDisplay3d {
+ public:
+	%feature("autodoc", "1");
+	NISDisplay3d();
+	%feature("autodoc", "1");
+	~NISDisplay3d();
+	%feature("autodoc", "1");
+	void Init(const int handle);
+	%feature("autodoc", "1");
+	Handle_NIS_View& GetView();
+	%feature("autodoc", "1");
+	Handle_V3d_Viewer& GetViewer();
+	%feature("autodoc", "1");
+	Handle_NIS_InteractiveContext GetContext();
+	%feature("autodoc", "1");
+	void Test();
+};
+
 class Display2d {
  public:
 	%feature("autodoc", "1");

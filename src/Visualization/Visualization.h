@@ -49,6 +49,8 @@
 #endif
 
 #include <AIS_InteractiveContext.hxx>
+#include <NIS_InteractiveContext.hxx>
+#include <NIS_View.hxx>
 #include <AIS2D_InteractiveContext.hxx>
 #include <BRepPrimAPI_MakeBox.hxx>
 #include <Graphic3d_MaterialAspect.hxx>
@@ -81,6 +83,30 @@ protected:
    Handle_AIS_InteractiveContext myAISContext;
    Handle_V3d_Viewer myV3dViewer;
    Handle_V3d_View myV3dView;
+   #ifdef WNT
+   Handle_WNT_Window myWindow;
+   Handle_Graphic3d_WNTGraphicDevice gd;
+   #else
+   Handle_Xw_Window myWindow;
+   Handle_Graphic3d_GraphicDevice gd;
+   #endif
+};
+
+class NISDisplay3d 
+{	
+public:
+	Standard_EXPORT NISDisplay3d();
+	Standard_EXPORT virtual ~NISDisplay3d();
+	Standard_EXPORT void Init(int window_handle);
+	Standard_EXPORT Handle_NIS_View& GetView() {return myNISView;};
+	Standard_EXPORT Handle_V3d_Viewer& GetViewer() {return myV3dViewer;};
+	Standard_EXPORT Handle_NIS_InteractiveContext GetContext() {return myNISContext;};
+	Standard_EXPORT void Test();
+    
+protected:
+   Handle_NIS_InteractiveContext myNISContext;
+   Handle_V3d_Viewer myV3dViewer;
+   Handle_NIS_View myNISView;
    #ifdef WNT
    Handle_WNT_Window myWindow;
    Handle_Graphic3d_WNTGraphicDevice gd;

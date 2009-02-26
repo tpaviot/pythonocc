@@ -43,9 +43,9 @@ if sys.platform=='darwin':
 else:
     import wx.glcanvas
     BaseClass = wx.glcanvas.GLCanvas
-
+BaseClass = wx.Panel
 class wxBaseViewer(BaseClass):
-    def __init__(self, parent):
+    def __init__(self, parent = None):
         BaseClass.__init__(self,parent)
         self.Bind( wx.EVT_SIZE , self.OnSize)
         self.Bind( wx.EVT_IDLE , self.OnIdle)
@@ -53,7 +53,6 @@ class wxBaseViewer(BaseClass):
         self.Bind( wx.EVT_SET_FOCUS , self.OnFocus)
         self.Bind( wx.EVT_KILL_FOCUS , self.OnLostFocus)
         self.Bind( wx.EVT_MAXIMIZE , self.OnMaximize)
-
         self.Bind( wx.EVT_LEFT_DOWN , self.OnLeftDown)
         self.Bind( wx.EVT_RIGHT_DOWN , self.OnRightDown)
         self.Bind( wx.EVT_MIDDLE_DOWN , self.OnMiddleDown)
@@ -91,13 +90,14 @@ class wxBaseViewer(BaseClass):
         pass
     def OnMiddleUp(self,event):
         print "Middle up"
-
+    def OnMotion(self,event):
+        pass
     def OnKeyDown(self,event):
         pass
         
 class wxViewer2d(wxBaseViewer):
-     def __init__(self, parent):
-        wxBaseViewer.__init__(self, parent)
+     def __init__(self, *kargs):
+        wxBaseViewer.__init__(self, *kargs)
         print "wxViewer2d inited"
         
      def InitDriver(self):
@@ -119,11 +119,37 @@ class wxViewer2d(wxBaseViewer):
         self._display.MoveTo(pt.x,pt.y)
 
     
-    
+class wxNISViewer3d(wxBaseViewer):
+    def __init__(self, *kargs):
+        wxBaseViewer.__init__(self, *kargs)
+ 
+        self._drawbox = False
+        self._zoom_area = False
+        self._select_area = False
+        
+        #self._3dDisplay = None
+        self._inited = False
+        self._leftisdown = False
+        self._middleisdown = False
+        self._rightisdown = False
+        self._selection = None
+
+    def InitDriver(self):
+        try:
+            os.environ["CSF_GraphicShr"]
+        except KeyError:
+            raise "Please set the CSF_GraphicShr environment variable."
+        self._display = OCCViewer.NISViewer3d(self.GetHandle())
+        self._display.Create()
+        #self._display.DisplayTriedron()
+        #self._display.SetModeShaded()
+        self._inited = True
+        print "Inited!!"
+        #print dir(self._3dDisplay)  
         
 class wxViewer3d(wxBaseViewer):
-    def __init__(self, parent):
-        wxBaseViewer.__init__(self, parent)
+    def __init__(self, *kargs):
+        wxBaseViewer.__init__(self, *kargs)
  
         self._drawbox = False
         self._zoom_area = False
@@ -317,6 +343,43 @@ def Test3d():
     app.SetTopWindow(frame)
     app.MainLoop()            
 
+def TestNIS3d():
+    class AppFrame(wx.Frame):
+        def __init__(self, parent):
+            wx.Frame.__init__(self, parent, -1, "wxDisplay3d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
+            menuBar = wx.MenuBar()
+            DemoMenu = wx.Menu()
+            demo_id = wx.NewId()
+            DemoMenu.Append(demo_id, "Run DoIt")
+            self.Bind(wx.EVT_MENU, self.doit, id=demo_id)
+            menuBar.Append(DemoMenu, "&Emmenthaler")
+            self.SetMenuBar(menuBar)
+        
+        def doit(self,event=None):
+            display = OCCViewer.NISViewer3d(self.GetHandle())
+            display.Create()
+            print "oui"
+            
+        def runTests(self):
+            self.canva._display.Test()
+            
+    #display = OCCViewer.NISViewer3d(0)
+    app = wx.PySimpleApp()
+    wx.InitAllImageHandlers()
+    frame = AppFrame(None)
+    frame.Show(True)
+    #wx.SafeYield()
+    #h = frame.GetHandle()
+    #display.SetWindow(h)
+    #display.Create()
+    #frame.canva.InitDriver()
+    #frame.Show(True)
+    #wx.SafeYield()
+
+    #frame.runTests()
+    app.SetTopWindow(frame)
+    app.MainLoop()     
+    
 def Test2d():
     class AppFrame(wx.Frame):
         def __init__(self, parent):
@@ -337,4 +400,5 @@ def Test2d():
     app.MainLoop()            
 
 if __name__=="__main__":
-    Test2d()
+    TestNIS3d()
+    #Test3d()

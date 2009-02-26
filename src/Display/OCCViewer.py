@@ -38,6 +38,7 @@ import os, os.path
 import OCC.Visualization
 import OCC.V3d
 import OCC.V2d
+import OCC.NIS
 import OCC.AIS
 import OCC.AIS2D
 
@@ -65,6 +66,9 @@ class BaseDriver(object):
     def FitAll(self):
         self.View.ZFitAll()
         self.View.FitAll()
+    
+    def SetWindow(self,window_handle):
+        self._window_handle = window_handle
         
     def Create(self):
         try:
@@ -112,6 +116,14 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
         self._objects_displayed.append(shape_to_display)
         self.Context.Display(shape_to_display.GetHandle())
         self.FitAll()
+
+class NISViewer3d(BaseDriver, OCC.Visualization.NISDisplay3d):
+    def __init__(self, window_handle ):
+        BaseDriver.__init__(self,window_handle)
+        OCC.Visualization.NISDisplay3d.__init__(self)
+          
+    def OnResize(self):
+        self.View.MustBeResized()
         
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
