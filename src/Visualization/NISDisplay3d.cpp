@@ -39,8 +39,13 @@
 
 NISDisplay3d::NISDisplay3d()
 {
+	#ifdef WNT
 	gd = new Graphic3d_WNTGraphicDevice();
 	printf("WNT Graphic device created.\n");
+	#else
+	gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
+	printf("Graphic device created.\n");
+	#endif
 	// Create V3dViewer
     myV3dViewer = new V3d_Viewer( gd , (short* const)"viewer" );
   	printf("Viewer created.\n");
@@ -67,8 +72,6 @@ void NISDisplay3d::Init(int window_handle)
 	myWindow = new WNT_Window( gd ,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo));
 	printf("WNT window created.\n");
 	#else
-	gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
-	printf("Graphic device created.\n");
 	myWindow =new Xw_Window(gd,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo),Xw_WQ_SAMEQUALITY);
 	printf("Xw_Window created.\n");
 	#endif
