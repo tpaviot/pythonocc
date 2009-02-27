@@ -467,6 +467,7 @@ if sys.platform=='win32':
              ('Voxel',['Quantity','gp','Graphic3d','Aspect',\
                       'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics'],[]),
              ('Visual3d',[],[]),
+             #('WNT',[],[]), gccxml error
              ])
     MODULES.extend([
                 ###########################################
