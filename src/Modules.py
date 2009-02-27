@@ -87,6 +87,7 @@ MODULES = [
            ('Vrml',[],[]),
            ('VrmlAPI',[],[]),
            ('VrmlConverter',['TCollection'],[]),
+           #('VrmlData',[],[]), NEED NCOllection
            ('TopAbs',[],[]),
            ('TopBas',[],[]),
            ('TopClass',[],[]),
@@ -362,6 +363,21 @@ MODULES = [
             ('PS',['Aspect','TCollection','MFT','OSD'],[]),
             ('PlotMgt',['OSD'],[],{'PlotMgt_Plotter':['SetPaperFormat']}),
             ('PS_Driver',['OSD','Handle_TCollection'],[]),
+#############################
+########   Xml         ######
+#############################
+            ('XmlDrivers',['Standard','PCDM','TCollection','Storage'],[]),
+            ('XmlLDrivers',['Standard','PCDM','TCollection','Storage'],[]),
+            ('XmlMDataStd',['TCollection'],[]),
+            ('XmlMDF',[],[]),
+            ('XmlMDocStd',['TCollection'],[]),
+            ('XmlMFunction',['TCollection'],[]),
+            ('XmlMNaming',['TCollection'],[]),
+            ('XmlMPrsStd',['TCollection'],[]),
+            ('XmlMXCAFDoc',['TCollection'],[]),
+            ('XmlObjMgt',['TCollection'],[]),
+            ('XmlTObjDrivers',['TCollection','PCDM','Storage'],[]),
+            ('XmlXCAFDrivers',['Standard','TCollection','PCDM','Storage'],[]),
 ###########################
 ####### Misc ##############
 ###########################
@@ -395,7 +411,7 @@ MODULES = [
             ('EDL',[],[]),
             ('PMMgt',[],[]),
             ('ObjMgt',[],[]),
-            #('NCollection',[],[]), don't work
+            #('NCollection',[],[]),# don't work
             ('PColStd',[],[]),
             ('PColgp',[],[]),
             ('PCollection',[],[]),
@@ -426,7 +442,9 @@ MODULES = [
             ('PTColStd',[],[]),
             ('PPrsStd',['DBC'],[]),
             ('TPrsStd',['Aspect',],[]),
-
+            ('Plugin',[],[]),
+            ('PXCAFDoc',['DBC'],[]),
+            #('MS',[],[]), GCCXMLERROR
            ]
 #####################################
 # Visualization part is OS specific #

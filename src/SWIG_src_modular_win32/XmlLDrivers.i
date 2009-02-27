@@ -1,0 +1,317 @@
+/*
+##Copyright 2008-2009 Thomas Paviot
+##
+##thomas.paviot@free.fr
+##
+##pythonOCC is a computer program whose purpose is to provide a complete set
+##of python bindings for OpenCascade library.
+##
+##This software is governed by the CeCILL license under French law and
+##abiding by the rules of distribution of free software.  You can  use, 
+##modify and/ or redistribute the software under the terms of the CeCILL
+##license as circulated by CEA, CNRS and INRIA at the following URL
+##"http://www.cecill.info". 
+##
+##As a counterpart to the access to the source code and  rights to copy,
+##modify and redistribute granted by the license, users are provided only
+##with a limited warranty  and the software's author,  the holder of the
+##economic rights,  and the successive licensors  have only  limited
+##liability. 
+##
+##In this respect, the user's attention is drawn to the risks associated
+##with loading,  using,  modifying and/or developing or reproducing the
+##software by the user in light of its specific status of free software,
+##that may mean  that it is complicated to manipulate,  and  that  also
+##therefore means  that it is reserved for developers  and  experienced
+##professionals having in-depth computer knowledge. Users are therefore
+##encouraged to load and test the software's suitability as regards their
+##requirements in conditions enabling the security of their systems and/or 
+##data to be ensured and,  more generally, to use and operate it in the 
+##same conditions as regards security. 
+##
+##The fact that you are presently reading this means that you have had
+##knowledge of the CeCILL license and that you accept its terms.
+*/
+%module XmlLDrivers
+
+%include typemaps.i
+%include cmalloc.i
+%include cpointer.i
+%include carrays.i
+%include exception.i
+
+#ifndef _Standard_TypeDef_HeaderFile
+#define _Standard_TypeDef_HeaderFile
+#define Standard_False (Standard_Boolean) 0
+#define Standard_True  (Standard_Boolean) 1
+#endif
+
+/*
+Exception handling
+*/
+%{#include <Standard_Failure.hxx>%}
+%exception
+{
+    try
+    {
+        $action
+    } 
+    catch(Standard_Failure)
+    {
+        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
+    }
+}
+
+/*
+Standard_Real & function transformation
+*/
+%typemap(argout) Standard_Real &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyFloat_FromDouble(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
+    $1 = &temp;
+}
+
+
+%include XmlLDrivers_dependencies.i
+
+
+%include XmlLDrivers_headers.i
+
+
+
+
+%nodefaultctor Handle_XmlLDrivers_DocumentStorageDriver;
+class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
+	public:
+		%feature("autodoc", "1");
+		~Handle_XmlLDrivers_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentStorageDriver(const Handle_XmlLDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentStorageDriver(const XmlLDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlLDrivers_DocumentStorageDriver {
+	XmlLDrivers_DocumentStorageDriver* GetObject() {
+	return (XmlLDrivers_DocumentStorageDriver*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
+class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef(const Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef(const XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
+	XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef* GetObject() {
+	return (XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_XmlLDrivers_DocumentRetrievalDriver;
+class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
+	public:
+		%feature("autodoc", "1");
+		~Handle_XmlLDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentRetrievalDriver(const Handle_XmlLDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentRetrievalDriver(const XmlLDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlLDrivers_DocumentRetrievalDriver {
+	XmlLDrivers_DocumentRetrievalDriver* GetObject() {
+	return (XmlLDrivers_DocumentRetrievalDriver*)$self->Access();
+	}
+};
+
+%nodefaultctor XmlLDrivers_DocumentRetrievalDriver;
+class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
+	public:
+		%feature("autodoc", "1");
+		XmlLDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		virtual		TCollection_ExtendedString SchemaName() const;
+		%feature("autodoc", "1");
+		virtual		void Make(const Handle_PCDM_Document &PD, const Handle_CDM_Document &TD);
+		%feature("autodoc", "1");
+		virtual		Handle_CDM_Document CreateDocument();
+		%feature("autodoc", "1");
+		virtual		void Read(const TCollection_ExtendedString &theFileName, const Handle_CDM_Document &theNewDocument, const Handle_CDM_Application &theApplication);
+		%feature("autodoc", "1");
+		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~XmlLDrivers_DocumentRetrievalDriver();
+
+};
+%extend XmlLDrivers_DocumentRetrievalDriver {
+	Handle_XmlLDrivers_DocumentRetrievalDriver GetHandle() {
+	return *(Handle_XmlLDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+
+%nodefaultctor XmlLDrivers_DocumentStorageDriver;
+class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
+	public:
+		%feature("autodoc", "1");
+		XmlLDrivers_DocumentStorageDriver(const TCollection_ExtendedString &theCopyright);
+		%feature("autodoc", "1");
+		virtual		TCollection_ExtendedString SchemaName() const;
+		%feature("autodoc", "1");
+		virtual		void Write(const Handle_CDM_Document &theDocument, const TCollection_ExtendedString &theFileName);
+		%feature("autodoc", "1");
+		Standard_Boolean IsError() const;
+		%feature("autodoc", "1");
+		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~XmlLDrivers_DocumentStorageDriver();
+
+};
+%extend XmlLDrivers_DocumentStorageDriver {
+	Handle_XmlLDrivers_DocumentStorageDriver GetHandle() {
+	return *(Handle_XmlLDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+
+%nodefaultctor XmlLDrivers_SequenceOfNamespaceDef;
+class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		XmlLDrivers_SequenceOfNamespaceDef();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~XmlLDrivers_SequenceOfNamespaceDef();
+		%feature("autodoc", "1");
+		const XmlLDrivers_SequenceOfNamespaceDef & Assign(const XmlLDrivers_SequenceOfNamespaceDef &Other);
+		%feature("autodoc", "1");
+		void Append(const XmlLDrivers_NamespaceDef &T);
+		%feature("autodoc", "1");
+		void Append(XmlLDrivers_SequenceOfNamespaceDef & S);
+		%feature("autodoc", "1");
+		void Prepend(const XmlLDrivers_NamespaceDef &T);
+		%feature("autodoc", "1");
+		void Prepend(XmlLDrivers_SequenceOfNamespaceDef & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const XmlLDrivers_NamespaceDef &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, XmlLDrivers_SequenceOfNamespaceDef & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const XmlLDrivers_NamespaceDef &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, XmlLDrivers_SequenceOfNamespaceDef & S);
+		%feature("autodoc", "1");
+		const XmlLDrivers_NamespaceDef & First() const;
+		%feature("autodoc", "1");
+		const XmlLDrivers_NamespaceDef & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, XmlLDrivers_SequenceOfNamespaceDef & S);
+		%feature("autodoc", "1");
+		const XmlLDrivers_NamespaceDef & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const XmlLDrivers_NamespaceDef & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const XmlLDrivers_NamespaceDef &I);
+		%feature("autodoc", "1");
+		XmlLDrivers_NamespaceDef & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		XmlLDrivers_NamespaceDef & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+
+%nodefaultctor XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
+class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef(const XmlLDrivers_NamespaceDef &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		XmlLDrivers_NamespaceDef & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
+
+};
+%extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
+	Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef GetHandle() {
+	return *(Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef*) &$self;
+	}
+};
+
+%nodefaultctor XmlLDrivers;
+class XmlLDrivers {
+	public:
+		%feature("autodoc", "1");
+		~XmlLDrivers();
+		%feature("autodoc", "1");
+		XmlLDrivers();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		%feature("autodoc", "1");
+		TCollection_AsciiString CreationDate();
+		%feature("autodoc", "1");
+		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		TCollection_AsciiString StorageVersion();
+
+};
+
+%nodefaultctor XmlLDrivers_NamespaceDef;
+class XmlLDrivers_NamespaceDef {
+	public:
+		%feature("autodoc", "1");
+		~XmlLDrivers_NamespaceDef();
+		%feature("autodoc", "1");
+		XmlLDrivers_NamespaceDef();
+		%feature("autodoc", "1");
+		XmlLDrivers_NamespaceDef(const TCollection_AsciiString &thePrefix, const TCollection_AsciiString &theURI);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Prefix() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & URI() const;
+
+};

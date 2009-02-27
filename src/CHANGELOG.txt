@@ -1,3 +1,5 @@
+2009/2/27:
+	- Plugin, PXCAFDoc, Xml*
 2009/02/26:
 	- Added NIS, NLPlate, Resource, Select2D, Select3D, SortTools, StdDrivers, StdFail, 
 	StdLDrivers, StdSelect, StepDimTol, STEPEdit, StepFEA, StepFile, StepSelect,
@@ -22,7 +24,9 @@
 	- Added Display2d class and modified OCCViewer.py
 	- Added BRepAdaptor, BRepLProp, AIS2D
 	- modified setup.py so that it's possible to easier add new modules
+
 == pythonOCC-md0.1 released ==
+
 2009/02/08:
 	- Layout modifs for Interactive Console
 	- Added Utils to pythonOCC distro
