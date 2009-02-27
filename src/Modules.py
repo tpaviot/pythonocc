@@ -71,8 +71,6 @@ MODULES = [
            ('IFSelect',['MoniTool'],[],{"IFSelect_ContextModif":["Search"],"IFSelect_EditForm":["NbTouched"],"IFSelect_IntParam":["StaticName"]}),
            ('IFGraph',['TCollection','MoniTool'],[]),
            ('Transfer',['MoniTool','IFSelect'],[],{'Transfer_Finder':['GetStringAttribute']}),
-           ('TransferBRep',['MoniTool','Interface'],['TransferBRep_ShapeMapper'],\
-            {'TransferBRep':['BRepCheck']}),
            ('XSAlgo',['Standard'],['XSAlgo_AlgoContainer']),
            ('XSControl',['TopoDS','TCollection','Interface','MoniTool','IFSelect'],['XSControl_Vars']),
 ############################################
@@ -109,7 +107,6 @@ MODULES = [
            ('PStandard',[],[]),
            ('MNaming',['TCollection'],[]),
            ('PNaming',[],[]),
-           ('DNaming',[],[]),
            ('TFunction',[],[]),
            ('PFunction',['DBC'],[]),
            ('TDF',[],['TDF_LabelNode']),
@@ -276,8 +273,6 @@ MODULES = [
                                                                  'HLRBRep_BSurfaceTool':['Axis'],
                                                                'HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter':['Locate']}),
             ('HLRTopoBRep',[],[])                                                               ,
-            ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
-                               'BRepFeat_MakeLinearForm':['TransformShapeFU']}), #LINUX TEST
             ('BRepIntCurveSurface',[],[]),
             ('MgtTopoDS',['Standard'],[]),
             ('MgtBRep',['Standard'],[]),
@@ -356,7 +351,7 @@ MODULES = [
             ('V3d',['Handle_TCollection','Aspect','Quantity'],[]),
             ('Dynamic',['TCollection'],[]),
             ('Materials',['TCollection_AsciiString'],[]),
-            ('AIS2D',[],[]),
+            ('AIS2D',[],[],{'AIS2D_ProjShape':['Projector']}),
 #############################
 #    Print stuff         ######
 #############################
@@ -375,7 +370,6 @@ MODULES = [
             ('XmlMNaming',['TCollection'],[]),
             ('XmlMPrsStd',['TCollection'],[]),
             ('XmlMXCAFDoc',['TCollection'],[]),
-            ('XmlObjMgt',['TCollection'],[]),
             ('XmlTObjDrivers',['TCollection','PCDM','Storage'],[]),
             ('XmlXCAFDrivers',['Standard','TCollection','PCDM','Storage'],[]),
 ###########################
@@ -388,8 +382,6 @@ MODULES = [
             ('ExprIntrp',[],[]),
             #('Expr',[],[]), DONT WORK
             ('GGraphic2d',['Quantity'],[]),
-            ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
-            ('APIHeaderSection',['Interface','MoniTool','TCollection'],[]),
             ('LocalAnalysis',[],[]),
             ('LDOMParser',[],[],{'LDOMParser':['parse']}),
             ('Storage',[],['Storage_BucketIterator','Storage_BucketOfPersistent','Storage_Bucket']),
@@ -408,7 +400,6 @@ MODULES = [
             # ('DDF',[],[]),idem
             # ('DDocStd',[],[]), Need DDF DON'T WORK
             ('Dico',[],[]),
-            ('EDL',[],[]),
             ('PMMgt',[],[]),
             ('ObjMgt',[],[]),
             #('NCollection',[],[]),# don't work
@@ -441,7 +432,6 @@ MODULES = [
             ('PTopLoc',[],[]),
             ('PTColStd',[],[]),
             ('PPrsStd',['DBC'],[]),
-            ('TPrsStd',['Aspect',],[]),
             ('Plugin',[],[]),
             ('PXCAFDoc',['DBC'],[]),
             #('MS',[],[]), GCCXMLERROR
@@ -524,6 +514,16 @@ if sys.platform=='win32':
                ('RWStepVisual',['MoniTool','Interface','StepBasic','TCollection'],[]),
                ('TopOpeBRepBuild',['TopOpeBRepDS'],[],{'TopOpeBRepBuild_Builder1':['GFillSplitsPVS']}),
                ('LocOpe',['TopOpeBRepDS','TopOpeBRepTool'],['LocOpe_Revol','LocOpe_RevolutionForm']),
+               ('TPrsStd',['Aspect',],[]),
+               ('EDL',[],[]),
+               ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
+               ('APIHeaderSection',['Interface','MoniTool','TCollection'],[]),
+               ('XmlObjMgt',['TCollection'],[]),
+               ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
+                                  'BRepFeat_MakeLinearForm':['TransformShapeFU']}), #LINUX TEST
+               ('DNaming',[],[]),
+               ('TransferBRep',['MoniTool','Interface'],['TransferBRep_ShapeMapper'],\
+                {'TransferBRep':['BRepCheck']}),
                ])
 else:
     MODULES.extend([
