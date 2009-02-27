@@ -57,7 +57,7 @@ void Display2d::Init(int window_handle)
 	myDriver = new WNT_WDriver(myWindow);
 	printf("Driver created.\n");
 	#else
-	gd = new Xw_GraphicDevice(std::getenv("DISPLAY"),Xw_TOM_READONLY);
+	gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"),Xw_TOM_READONLY);
 	printf("Graphic device created.\n");
 	myWindow =new Xw_Window(gd,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo),Xw_WQ_SAMEQUALITY);
 	printf("Xw_Window created.\n");
