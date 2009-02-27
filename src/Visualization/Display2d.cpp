@@ -61,7 +61,7 @@ void Display2d::Init(int window_handle)
 	printf("Graphic device created.\n");
 	myWindow =new Xw_Window(gd,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo),Xw_WQ_SAMEQUALITY);
 	printf("Xw_Window created.\n");
-	myDriver = new Xw_Driver(W);
+	myDriver = new Xw_Driver(myWindow);
 	#endif
 	// Create WNT_Window
 	if (!myWindow->IsMapped())
