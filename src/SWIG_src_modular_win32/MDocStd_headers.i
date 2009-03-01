@@ -114,6 +114,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<MDocStd.hxx>
 #include<Handle_MDF_ASDriverHSequence.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_MDF_ARDriverHSequence.hxx>

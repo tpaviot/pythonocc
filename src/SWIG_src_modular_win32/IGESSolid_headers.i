@@ -195,6 +195,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -340,6 +341,7 @@
 #include<Handle_IGESGeom_TransformationMatrix.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColgp_HArray1OfXYZ.hxx>
+#include<IGESSolid.hxx>
 #include<Handle_IGESBasic_HArray1OfHArray1OfInteger.hxx>
 #include<Handle_IGESBasic_HArray1OfHArray1OfIGESEntity.hxx>
 %}

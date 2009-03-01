@@ -180,6 +180,7 @@
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<Handle_Geom2d_Line.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
+#include<ShapeCustom.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_BRepTools_Modification.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>

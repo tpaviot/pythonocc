@@ -44,6 +44,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<BRepBndLib.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Bnd_Box.hxx>
 %}

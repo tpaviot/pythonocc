@@ -106,6 +106,7 @@
 #include<gp_Pnt.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TColStd_ListOfTransient.hxx>
+#include<MeshShape.hxx>
 #include<gp_XY.hxx>
 #include<gp_XYZ.hxx>
 %}

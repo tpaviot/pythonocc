@@ -124,6 +124,7 @@
 #include<gp_Pnt.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<TColgp_SequenceOfPnt2d.hxx>
+#include<BRepTools.hxx>
 #include<TopoDS_Wire.hxx>
 #include<Bnd_Box2d.hxx>
 #include<TopoDS_Shell.hxx>

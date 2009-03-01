@@ -54,6 +54,7 @@
 // Needed headers necessary for compilation.
 
 #include<gp_Pnt.hxx>
+#include<BRepGProp.hxx>
 #include<TopoDS_Shape.hxx>
 #include<GProp_GProps.hxx>
 #include<gp_Pln.hxx>

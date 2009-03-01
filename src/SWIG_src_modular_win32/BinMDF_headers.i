@@ -87,4 +87,5 @@
 #include<TCollection_ExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
+#include<BinMDF.hxx>
 %}

@@ -50,20 +50,32 @@
 
 // Additional headers necessary for compilation.
 
-#include<XmlObjMgt.hxx>
-#include<XmlObjMgt_DataMapIteratorOfRRelocationTable.hxx>
-#include<XmlObjMgt_DataMapNodeOfRRelocationTable.hxx>
-#include<XmlObjMgt_Document.hxx>
-#include<XmlObjMgt_DOMString.hxx>
-#include<XmlObjMgt_Element.hxx>
-#include<XmlObjMgt_GP.hxx>
-#include<XmlObjMgt_Persistent.hxx>
-#include<XmlObjMgt_RRelocationTable.hxx>
-#include<XmlObjMgt_SRelocationTable.hxx>
+#include<TCollection.hxx>
+#include<TCollection_Array1Descriptor.hxx>
+#include<TCollection_Array2Descriptor.hxx>
+#include<TCollection_AsciiString.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
+#include<TCollection_BaseSequence.hxx>
+#include<TCollection_BasicMap.hxx>
+#include<TCollection_BasicMapIterator.hxx>
+#include<TCollection_CompareOfInteger.hxx>
+#include<TCollection_CompareOfReal.hxx>
+#include<TCollection_ExtendedString.hxx>
+#include<TCollection_HAsciiString.hxx>
+#include<TCollection_HExtendedString.hxx>
+#include<TCollection_MapNode.hxx>
+#include<TCollection_MapNodePtr.hxx>
+#include<TCollection_PrivCompareOfInteger.hxx>
+#include<TCollection_PrivCompareOfReal.hxx>
+#include<TCollection_SeqNode.hxx>
+#include<TCollection_SeqNodePtr.hxx>
+#include<TCollection_Side.hxx>
 
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<XmlObjMgt.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<gp_Trsf.hxx>

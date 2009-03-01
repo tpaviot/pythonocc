@@ -195,6 +195,7 @@
 #include<TopoDS_Solid.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Compound.hxx>
+#include<TransferBRep.hxx>
 #include<Handle_Transfer_Binder.hxx>
 #include<Handle_Transfer_FinderProcess.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>

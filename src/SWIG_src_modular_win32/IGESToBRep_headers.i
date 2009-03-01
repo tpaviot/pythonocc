@@ -117,6 +117,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -261,6 +262,7 @@
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_Transfer_Binder.hxx>
+#include<IGESToBRep.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<TopoDS_Edge.hxx>
 #include<Handle_ShapeExtend_WireData.hxx>

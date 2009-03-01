@@ -51,7 +51,4 @@
 // Needed headers necessary for compilation.
 
 #include<TopAbs.hxx>
-#include<TopAbs_Orientation.hxx>
-#include<TopAbs_ShapeEnum.hxx>
-#include<TopAbs_State.hxx>
 %}

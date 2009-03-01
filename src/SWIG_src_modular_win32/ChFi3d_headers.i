@@ -82,6 +82,7 @@
 #include<Handle_Law_Function.hxx>
 #include<gp_XY.hxx>
 #include<Handle_ChFiDS_SecHArray1.hxx>
+#include<ChFi3d.hxx>
 #include<BRepAdaptor_Surface.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Face.hxx>

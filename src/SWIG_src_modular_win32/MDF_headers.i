@@ -140,6 +140,7 @@
 #include<Handle_TDF_Attribute.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
+#include<MDF.hxx>
 #include<Handle_TDF_Data.hxx>
 #include<Handle_PDF_Data.hxx>
 #include<Handle_Standard_Persistent.hxx>

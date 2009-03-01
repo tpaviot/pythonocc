@@ -90,5 +90,6 @@
 #include<BinObjMgt_Persistent.hxx>
 #include<BinObjMgt_RRelocationTable.hxx>
 #include<TopLoc_Location.hxx>
+#include<BinMXCAFDoc.hxx>
 #include<Handle_BinMDF_ADriverTable.hxx>
 %}

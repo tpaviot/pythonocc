@@ -59,5 +59,6 @@
 #include<Handle_Standard_Transient.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Standard_SStream.hxx>
+#include<Plugin.hxx>
 #include<Standard_GUID.hxx>
 %}

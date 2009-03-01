@@ -151,6 +151,7 @@
 #include<XmlObjMgt_Persistent.hxx>
 #include<XmlObjMgt_RRelocationTable.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
+#include<XmlTObjDrivers.hxx>
 #include<Standard_GUID.hxx>
 #include<TCollection_ExtendedString.hxx>
 %}

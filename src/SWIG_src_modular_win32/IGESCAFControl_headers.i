@@ -104,6 +104,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -227,6 +228,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<IGESCAFControl.hxx>
 #include<Quantity_Color.hxx>
 #include<Handle_XSControl_WorkSession.hxx>
 #include<Handle_TDocStd_Document.hxx>

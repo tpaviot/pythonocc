@@ -123,6 +123,7 @@
 #include<TopTools_ListOfShape.hxx>
 #include<TDF_IDFilter.hxx>
 #include<TDF_AttributeIndexedMap.hxx>
+#include<TNaming.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<gp_Trsf.hxx>
 #include<TDF_IDList.hxx>

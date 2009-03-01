@@ -456,6 +456,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<ShapeConstruct.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>

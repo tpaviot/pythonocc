@@ -259,7 +259,7 @@ class ModularBuilder(object):
         except RuntimeError:
             print "No handles defined."
         try:
-            classes_to_expose = self._mb.classes(lambda decl: (decl.name.lower().startswith(("%s"%self.MODULE_NAME).lower())))
+            classes_to_expose = self._mb.classes(lambda decl: (decl.name.lower().startswith(("%s_"%self.MODULE_NAME).lower())) or decl.name==self.MODULE_NAME)
             for class_declaration in classes_to_expose:
                 if not class_declaration.name in self.CLASSES_TO_EXCLUDE:
                     self.process_class(class_declaration)
@@ -338,8 +338,8 @@ class ModularBuilder(object):
                     t = t.split('_')[1]
                 self.AddDependency(t)#print "Dependency with module %s"%t
         else:#it's not a type def
-            if (not return_type.startswith(self.MODULE_NAME)) and \
-            (not return_type.startswith('Handle_%s'%self.MODULE_NAME)) and \
+            if (not return_type.startswith('%s_'%self.MODULE_NAME)) and \
+            (not return_type.startswith('Handle_%s_'%self.MODULE_NAME)) and \
             (not return_type in ['void','int']) and (not '::' in return_type):#external dependency. Add header
                 header_to_add = '%s.hxx'%return_type
                 if not (header_to_add in self.NEEDED_HXX):
@@ -374,8 +374,8 @@ class ModularBuilder(object):
                         t = t.split('_')[1]
                     self.AddDependency(t)#print "Dependency with module %s"%t
             else:#it's not a type def
-                if (not return_type.startswith(self.MODULE_NAME)) and \
-                (not return_type.startswith('Handle_%s'%self.MODULE_NAME)) and \
+                if (not return_type.startswith('%s_'%self.MODULE_NAME)) and \
+                (not return_type.startswith('Handle_%s_'%self.MODULE_NAME)) and \
                 (not return_type in ['void','int']) and (not '::' in return_type):#external dependency. Add header
                     header_to_add = '%s.hxx'%return_type
                     if not (header_to_add in self.NEEDED_HXX):
@@ -447,8 +447,8 @@ class ModularBuilder(object):
                     #self.dependencies_fp.write("%%import %s.i"%t)
                     #sys.exit(0)
             else:#it's not a type def
-                if (not argument_type_name.startswith(self.MODULE_NAME)) and \
-                (not argument_type_name.startswith('Handle_%s'%self.MODULE_NAME)) and\
+                if (not argument_type_name.startswith('%s_'%self.MODULE_NAME)) and \
+                (not argument_type_name.startswith('Handle_%s_'%self.MODULE_NAME)) and\
                 (not '::' in argument_type_name) and \
                 (not argument_type in ['int']):#external dependency. Add header
                     header_to_add = '%s.hxx'%argument_type_name
@@ -720,7 +720,7 @@ class ModularBuilder(object):
         """
         try: #BRepBndLib raises a pygccxml exception.
             for enum in self._mb.enumerations():       
-                if self.MODULE_NAME in enum.name:
+                if enum.name.startswith('%s_'%self.MODULE_NAME):#self.MODULE_NAME in enum.name:
                     enum_name = enum.name
                     enum_values = enum.values
                     self.fp.write("enum %s {\n"%enum_name)
@@ -738,7 +738,7 @@ class ModularBuilder(object):
             return # TODO: Problem with a typedef in OSD module
         typedefs = self._mb.global_ns.typedefs()
         for elem in typedefs:
-            if (elem.name.startswith(self.MODULE_NAME)) and (not '::' in '%s'%elem.type):
+            if (elem.name.startswith('%s_'%self.MODULE_NAME)) and (not '::' in '%s'%elem.type):
                 self.fp.write('typedef %s %s;\n'%(elem.type,elem.name))
         self.fp.write('\n')
         

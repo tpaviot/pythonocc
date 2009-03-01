@@ -124,6 +124,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -357,6 +358,7 @@
 #include<Interface_CopyTool.hxx>
 #include<TColStd_SequenceOfAsciiString.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
+#include<StepData.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Interface_CheckIterator.hxx>
 #include<Handle_Interface_FileReaderData.hxx>

@@ -392,6 +392,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -685,6 +686,7 @@
 #include<Handle_StepVisual_TemplateInstance.hxx>
 #include<Handle_StepBasic_ApprovalPersonOrganization.hxx>
 #include<Handle_StepBasic_Effectivity.hxx>
+#include<StepAP214.hxx>
 #include<Handle_StepBasic_HArray1OfApproval.hxx>
 #include<Handle_StepBasic_DocumentRelationship.hxx>
 #include<Handle_StepRepr_MappedItem.hxx>

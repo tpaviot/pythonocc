@@ -95,7 +95,6 @@ Standard_Real & function transformation
 
 %include BOP_headers.i
 
-typedef BOPTools_DSFiller * BOPTools_PDSFiller;
 typedef BOP_Builder * BOP_PBuilder;
 typedef BRepClass3d_SolidClassifier * BOP_PSoClassif;
 typedef BOP_ShellFaceSet * BOP_PShellFaceSet;

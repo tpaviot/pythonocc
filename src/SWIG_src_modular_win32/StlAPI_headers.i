@@ -48,5 +48,6 @@
 
 // Needed headers necessary for compilation.
 
+#include<StlAPI.hxx>
 #include<TopoDS_Shape.hxx>
 %}

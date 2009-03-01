@@ -332,6 +332,7 @@
 #include<Handle_Aspect_Grid.hxx>
 #include<Handle_PlotMgt_PlotterDriver.hxx>
 #include<Handle_Aspect_PixMap.hxx>
+#include<V3d.hxx>
 #include<Graphic3d_Vector.hxx>
 #include<Handle_Graphic3d_Group.hxx>
 #include<Handle_Aspect_GraphicDevice.hxx>

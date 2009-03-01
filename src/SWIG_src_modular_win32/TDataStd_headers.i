@@ -280,6 +280,7 @@
 #include<gp_Trsf.hxx>
 #include<Handle_TColStd_HArray1OfExtendedString.hxx>
 #include<Handle_TDF_DeltaOnModification.hxx>
+#include<TDataStd.hxx>
 #include<TDF_IDList.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Standard_GUID.hxx>

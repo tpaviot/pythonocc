@@ -102,5 +102,6 @@
 #include<Handle_TColStd_HArray2OfInteger.hxx>
 #include<math_Matrix.hxx>
 #include<math_Vector.hxx>
+#include<AppParCurves.hxx>
 #include<math_IntegerVector.hxx>
 %}

@@ -131,4 +131,5 @@
 #include<Handle_Standard_Transient.hxx>
 #include<Standard_SStream.hxx>
 #include<TColStd_Array1OfReal.hxx>
+#include<gp.hxx>
 %}

@@ -236,6 +236,7 @@
 #include<gp_Dir2d.hxx>
 #include<Handle_HLRTopoBRep_OutLiner.hxx>
 #include<Handle_MMgt_TShared.hxx>
+#include<HLRBRep.hxx>
 #include<Handle_HLRAlgo_EdgesBlock.hxx>
 #include<TopoDS_Face.hxx>
 #include<gp_Vec2d.hxx>

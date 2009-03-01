@@ -176,6 +176,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -307,6 +308,7 @@
 #include<gp_GTrsf.hxx>
 #include<Interface_EntityIterator.hxx>
 #include<Handle_Standard_Type.hxx>
+#include<IGESData.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_Interface_UndefinedContent.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>

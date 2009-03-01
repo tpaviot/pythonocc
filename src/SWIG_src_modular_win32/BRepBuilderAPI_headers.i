@@ -143,6 +143,7 @@
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
 #include<gp_Trsf.hxx>
+#include<BRepBuilderAPI.hxx>
 #include<gp_GTrsf.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Shell.hxx>

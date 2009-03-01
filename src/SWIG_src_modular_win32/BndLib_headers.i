@@ -53,6 +53,7 @@
 #include<Adaptor3d_Surface.hxx>
 #include<Bnd_Box.hxx>
 #include<Adaptor3d_Curve.hxx>
+#include<BndLib.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Lin2d.hxx>
 #include<Bnd_Box2d.hxx>

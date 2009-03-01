@@ -127,4 +127,5 @@
 #include<Handle_Geom2d_Curve.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
+#include<BRepAlgo.hxx>
 %}

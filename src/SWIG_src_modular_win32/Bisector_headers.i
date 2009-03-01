@@ -87,4 +87,5 @@
 #include<gp_Vec2d.hxx>
 #include<Handle_Geom2d_Point.hxx>
 #include<Handle_Geom2d_TrimmedCurve.hxx>
+#include<Bisector.hxx>
 %}

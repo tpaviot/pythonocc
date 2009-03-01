@@ -194,6 +194,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -431,6 +432,7 @@
 #include<IGESData_IGESWriter.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<IFSelect_SessionFile.hxx>
+#include<IGESSelect.hxx>
 #include<Handle_IGESData_IGESEntity.hxx>
 #include<Handle_IFSelect_SessionPilot.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>

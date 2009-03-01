@@ -81,6 +81,7 @@
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<AdvApprox_ApproxAFunction.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
+#include<GeomLib.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<Adaptor3d_CurveOnSurface.hxx>

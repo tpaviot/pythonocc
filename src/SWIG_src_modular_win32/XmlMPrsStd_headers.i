@@ -69,6 +69,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<XmlMPrsStd.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_TDF_Attribute.hxx>

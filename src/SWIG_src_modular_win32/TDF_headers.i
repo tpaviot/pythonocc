@@ -255,5 +255,6 @@
 #include<Standard_GUID.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<TDF.hxx>
 #include<TColStd_ListOfInteger.hxx>
 %}

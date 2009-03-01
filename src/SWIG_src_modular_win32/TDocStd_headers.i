@@ -110,6 +110,7 @@
 #include<Handle_CDM_Document.hxx>
 #include<Handle_TDF_Reference.hxx>
 #include<Handle_TDF_AttributeDelta.hxx>
+#include<TDocStd.hxx>
 #include<TDF_IDList.hxx>
 #include<Handle_Resource_Manager.hxx>
 #include<TColStd_SequenceOfExtendedString.hxx>

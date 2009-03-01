@@ -66,6 +66,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<V2d.hxx>
 #include<Handle_Graphic2d_GraphicObject.hxx>
 #include<Handle_Graphic2d_View.hxx>
 #include<Handle_Aspect_WindowDriver.hxx>

@@ -96,6 +96,7 @@
 #include<gp_Elips2d.hxx>
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
+#include<BRepLib.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Solid.hxx>

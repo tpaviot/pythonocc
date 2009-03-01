@@ -67,6 +67,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<BinMDocStd.hxx>
 #include<Handle_BinMDF_ADriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_TDF_Attribute.hxx>

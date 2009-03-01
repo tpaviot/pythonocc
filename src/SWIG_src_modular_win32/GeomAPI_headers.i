@@ -76,6 +76,7 @@
 #include<gp_Vec.hxx>
 #include<TColgp_Array1OfVec.hxx>
 #include<Handle_TColStd_HArray1OfBoolean.hxx>
+#include<GeomAPI.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<gp_Pln.hxx>
 %}

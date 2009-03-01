@@ -66,6 +66,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<MeshAlgo.hxx>
 #include<gp_XY.hxx>
 #include<gp_Circ2d.hxx>
 %}

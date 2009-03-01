@@ -99,4 +99,5 @@
 #include<gp_Lin.hxx>
 #include<Handle_TColStd_HArray1OfTransient.hxx>
 #include<Handle_TColgp_HArray1OfXYZ.hxx>
+#include<HLRAlgo.hxx>
 %}

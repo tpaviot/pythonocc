@@ -353,6 +353,7 @@
 #include<Handle_Graphic3d_DataStructureManager.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<Handle_Geom_Transformation.hxx>
+#include<Prs3d.hxx>
 #include<Graphic3d_MaterialAspect.hxx>
 #include<Handle_Graphic3d_AspectFillArea3d.hxx>
 #include<Handle_Graphic3d_HArray1OfBytes.hxx>

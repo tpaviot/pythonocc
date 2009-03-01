@@ -1273,8 +1273,6 @@ class AIS2D_ProjShape : public AIS2D_InteractiveObject {
 		%feature("autodoc", "1");
 		void SetProjector(const HLRAlgo_Projector &aProjector);
 		%feature("autodoc", "1");
-		HLRAlgo_Projector Projector() const;
-		%feature("autodoc", "1");
 		void SetNbIsos(const Standard_Integer aNbIsos);
 		%feature("autodoc", "1");
 		void SetPolyAlgo(const Standard_Boolean aIsPoly=0);

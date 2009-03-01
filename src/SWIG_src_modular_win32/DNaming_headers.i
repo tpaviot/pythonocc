@@ -52,6 +52,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<DNaming.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_TDF_Data.hxx>
 #include<TopTools_ListOfShape.hxx>

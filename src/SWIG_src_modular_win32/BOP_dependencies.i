@@ -282,26 +282,6 @@
 #include <BooleanOperations_StateOfShape.hxx>
 #include <Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
 #include <Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger.hxx>
-#include <BOPTColStd_CArray1OfInteger.hxx>
-#include <BOPTColStd_CArray1OfPnt2d.hxx>
-#include <BOPTColStd_CArray1OfShape.hxx>
-#include <BOPTColStd_Dump.hxx>
-#include <BOPTColStd_Failure.hxx>
-#include <BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger.hxx>
-#include <BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger.hxx>
-#include <BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger.hxx>
-#include <BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger.hxx>
-#include <BOPTColStd_IndexedDataMapOfIntegerInteger.hxx>
-#include <BOPTColStd_IndexedDataMapOfSWRInteger.hxx>
-#include <BOPTColStd_ListIteratorOfListOfListOfShape.hxx>
-#include <BOPTColStd_ListNodeOfListOfListOfShape.hxx>
-#include <BOPTColStd_ListOfListOfShape.hxx>
-#include <BOPTColStd_ShapeWithRank.hxx>
-#include <BOPTColStd_ShapeWithRankHasher.hxx>
-#include <Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger.hxx>
-#include <Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger.hxx>
-#include <Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger.hxx>
-#include <Handle_BOPTColStd_ListNodeOfListOfListOfShape.hxx>
 %};
 
 %import TCollection.i
@@ -310,4 +290,3 @@
 %import BOPTools.i
 %import TopAbs.i
 %import BooleanOperations.i
-%import BOPTColStd.i

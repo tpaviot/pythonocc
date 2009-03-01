@@ -109,6 +109,7 @@
 #include<gp_Cylinder.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
+#include<ProjLib.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Cone.hxx>

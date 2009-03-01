@@ -131,6 +131,7 @@
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Compound.hxx>
 #include<TopTools_MapOfShape.hxx>
+#include<BRepOffset.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_BRepAlgo_AsDes.hxx>
 #include<BRepAlgo_Image.hxx>

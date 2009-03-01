@@ -271,6 +271,7 @@
 #include<TopoDS_Edge.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<LocOpe.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Vec.hxx>
 #include<TColGeom_SequenceOfCurve.hxx>

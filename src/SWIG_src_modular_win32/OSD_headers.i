@@ -148,4 +148,5 @@
 #include<TCollection_AsciiString.hxx>
 #include<Standard_SStream.hxx>
 #include<Quantity_Date.hxx>
+#include<OSD.hxx>
 %}

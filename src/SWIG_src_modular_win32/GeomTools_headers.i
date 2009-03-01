@@ -58,4 +58,5 @@
 #include<Handle_Message_ProgressIndicator.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<GeomTools.hxx>
 %}

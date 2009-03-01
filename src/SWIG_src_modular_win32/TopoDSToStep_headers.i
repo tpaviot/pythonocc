@@ -97,6 +97,7 @@
 #include<TopoDS_Solid.hxx>
 #include<TopoDS_Wire.hxx>
 #include<Handle_StepShape_TopologicalRepresentationItem.hxx>
+#include<TopoDSToStep.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_Standard_Transient.hxx>
 %}

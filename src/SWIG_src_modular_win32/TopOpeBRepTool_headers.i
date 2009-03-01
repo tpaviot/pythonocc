@@ -218,6 +218,7 @@
 #include<TopTools_DataMapOfIntegerListOfShape.hxx>
 #include<TopTools_DataMapOfIntegerShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
+#include<TopOpeBRepTool.hxx>
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<TopTools_IndexedMapOfOrientedShape.hxx>
 %}

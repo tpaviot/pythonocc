@@ -55,4 +55,5 @@
 // Needed headers necessary for compilation.
 
 #include<Draw_Interpretor.hxx>
+#include<XDEDRAW.hxx>
 %}

@@ -137,5 +137,6 @@
 #include<Handle_TDF_Attribute.hxx>
 #include<BinObjMgt_Persistent.hxx>
 #include<BinObjMgt_RRelocationTable.hxx>
+#include<BinMDataStd.hxx>
 #include<Handle_BinMDF_ADriverTable.hxx>
 %}

@@ -294,6 +294,7 @@
 #include<TopoDS_Edge.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Shape.hxx>
+#include<TopOpeBRepDS.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<TopOpeBRepTool_GeomTool.hxx>
 #include<Handle_Geom_Curve.hxx>

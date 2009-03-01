@@ -55,6 +55,7 @@
 // Needed headers necessary for compilation.
 
 #include<TopLoc_Location.hxx>
+#include<BinTools.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Surface.hxx>

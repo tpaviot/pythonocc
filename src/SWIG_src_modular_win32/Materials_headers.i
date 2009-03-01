@@ -60,6 +60,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Materials.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Dynamic_FuzzyClass.hxx>
 #include<Handle_Dynamic_Parameter.hxx>

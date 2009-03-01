@@ -129,4 +129,5 @@
 #include<PTColStd_TransientPersistentMap.hxx>
 #include<PTColStd_PersistentTransientMap.hxx>
 #include<Handle_PTopoDS_HShape.hxx>
+#include<MgtBRep.hxx>
 %}

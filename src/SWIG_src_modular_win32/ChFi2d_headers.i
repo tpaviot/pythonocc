@@ -48,6 +48,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<ChFi2d.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Vertex.hxx>

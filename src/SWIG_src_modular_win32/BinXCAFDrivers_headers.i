@@ -218,6 +218,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<BinXCAFDrivers.hxx>
 #include<Standard_GUID.hxx>
 #include<Handle_BinMDF_ADriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>

@@ -93,5 +93,6 @@
 #include<TCollection_ExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Standard_Type.hxx>
+#include<Message.hxx>
 #include<Handle_TCollection_HExtendedString.hxx>
 %}

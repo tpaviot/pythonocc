@@ -46,5 +46,6 @@
 
 // Needed headers necessary for compilation.
 
+#include<UnitsAPI.hxx>
 #include<Handle_Units_Dimensions.hxx>
 %}

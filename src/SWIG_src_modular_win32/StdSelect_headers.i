@@ -480,6 +480,7 @@
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_SelectBasics_EntityOwner.hxx>
 #include<Handle_SelectMgr_EntityOwner.hxx>
+#include<StdSelect.hxx>
 #include<Select3D_Projector.hxx>
 #include<Handle_V3d_View.hxx>
 #include<Handle_SelectMgr_Selection.hxx>

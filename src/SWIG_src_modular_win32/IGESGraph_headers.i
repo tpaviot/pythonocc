@@ -161,6 +161,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -300,6 +301,7 @@
 #include<IGESData_IGESDumper.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_IGESBasic_SubfigureDef.hxx>
+#include<IGESGraph.hxx>
 #include<Handle_IGESData_IGESEntity.hxx>
 #include<gp_XYZ.hxx>
 #include<gp_Pnt.hxx>

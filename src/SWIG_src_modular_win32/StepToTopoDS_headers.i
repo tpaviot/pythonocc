@@ -406,6 +406,7 @@
 #include<Handle_StepGeom_CurveBoundedSurface.hxx>
 #include<Handle_StepGeom_SurfaceCurve.hxx>
 #include<Handle_StepShape_EdgeLoop.hxx>
+#include<StepToTopoDS.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_StepShape_FaceBound.hxx>
 #include<Handle_StepShape_VertexLoop.hxx>

@@ -44,6 +44,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<RWStl.hxx>
 #include<Handle_StlMesh_Mesh.hxx>
 #include<OSD_Path.hxx>
 %}

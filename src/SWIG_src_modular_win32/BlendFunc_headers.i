@@ -48,6 +48,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<BlendFunc.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>

@@ -56,5 +56,6 @@
 #include<gp_Dir.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<gp_Pnt.hxx>
+#include<GeomLProp.hxx>
 #include<gp_Vec.hxx>
 %}

@@ -48,6 +48,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<IntImpParGen.hxx>
 #include<gp_Vec2d.hxx>
 #include<IntRes2d_Transition.hxx>
 #include<IntRes2d_Domain.hxx>

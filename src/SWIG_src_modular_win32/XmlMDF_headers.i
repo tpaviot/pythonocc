@@ -71,6 +71,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<XmlMDF.hxx>
 #include<Handle_TDF_Data.hxx>
 #include<XmlObjMgt_RRelocationTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>

@@ -100,6 +100,7 @@
 #include<Handle_Storage_Schema.hxx>
 #include<TColStd_SequenceOfExtendedString.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
+#include<PCDM.hxx>
 #include<Handle_CDM_MetaData.hxx>
 #include<Standard_SStream.hxx>
 #include<TCollection_AsciiString.hxx>

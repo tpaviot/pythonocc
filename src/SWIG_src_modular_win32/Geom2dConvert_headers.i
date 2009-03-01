@@ -52,6 +52,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<Geom2dConvert.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<TColGeom2d_Array1OfBSplineCurve.hxx>

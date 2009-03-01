@@ -159,6 +159,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -316,6 +317,7 @@
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<gp_XYZ.hxx>
 #include<Handle_IGESData_LineFontEntity.hxx>
+#include<IGESBasic.hxx>
 #include<Handle_Interface_HArray1OfHAsciiString.hxx>
 #include<Handle_TColgp_HArray1OfXY.hxx>
 %}

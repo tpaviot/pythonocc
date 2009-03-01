@@ -84,5 +84,6 @@
 #include<Bnd_Box.hxx>
 #include<gp_Hypr.hxx>
 #include<gp_Parab.hxx>
+#include<Intf.hxx>
 #include<gp_XYZ.hxx>
 %}

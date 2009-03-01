@@ -53,5 +53,6 @@
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<GeomLProp_SLProps.hxx>
+#include<LocalAnalysis.hxx>
 #include<Handle_Geom_Curve.hxx>
 %}

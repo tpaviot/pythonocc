@@ -243,6 +243,7 @@
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
 #include<gp_Dir.hxx>
+#include<GeomFill.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Adaptor3d_CurveOnSurface.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>

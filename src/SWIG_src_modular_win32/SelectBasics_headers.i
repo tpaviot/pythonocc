@@ -84,4 +84,5 @@
 #include<TopLoc_Location.hxx>
 #include<gp_Pnt2d.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
+#include<SelectBasics.hxx>
 %}

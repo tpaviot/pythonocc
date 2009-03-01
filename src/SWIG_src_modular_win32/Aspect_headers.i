@@ -343,6 +343,7 @@
 #include<TShort_Array1OfShortReal.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TColQuantity_Array1OfLength.hxx>
+#include<Aspect.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfBoolean.hxx>

@@ -253,6 +253,7 @@
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
+#include<IFSelect.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>

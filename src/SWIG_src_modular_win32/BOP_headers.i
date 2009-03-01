@@ -156,11 +156,14 @@
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
+#include<BOPTools_DSFiller.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopTools_IndexedMapOfOrientedShape.hxx>
 #include<TColStd_IndexedMapOfInteger.hxx>
+#include<BOPTools_CArray1OfSSInterference.hxx>
+#include<BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger.hxx>
 #include<TopoDS_Solid.hxx>
 #include<TopoDS_Shell.hxx>
 #include<gp_Pnt.hxx>
@@ -168,4 +171,5 @@
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Dir.hxx>
+#include<BOPTools_IndexedDataMapOfIntegerState.hxx>
 %}

@@ -159,5 +159,6 @@
 #include<Handle_Aspect_WidthMap.hxx>
 #include<Handle_Aspect_TypeMap.hxx>
 #include<Handle_Aspect_FontMap.hxx>
+#include<PlotMgt.hxx>
 #include<OSD_File.hxx>
 %}

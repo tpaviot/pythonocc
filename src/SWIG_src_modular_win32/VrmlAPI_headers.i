@@ -48,6 +48,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<VrmlAPI.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_VrmlConverter_Drawer.hxx>
 #include<Handle_Vrml_Material.hxx>

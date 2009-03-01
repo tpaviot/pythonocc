@@ -228,6 +228,7 @@
 #include<Handle_CDM_Application.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
+#include<XmlLDrivers.hxx>
 #include<Standard_GUID.hxx>
 #include<TCollection_AsciiString.hxx>
 %}

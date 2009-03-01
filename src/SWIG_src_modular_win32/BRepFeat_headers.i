@@ -80,6 +80,7 @@
 #include<gp_Ax1.hxx>
 #include<TColGeom_SequenceOfCurve.hxx>
 #include<Handle_Geom_Curve.hxx>
+#include<BRepFeat.hxx>
 #include<TColgp_SequenceOfPnt.hxx>
 #include<gp_Pnt.hxx>
 #include<TopoDS_Face.hxx>

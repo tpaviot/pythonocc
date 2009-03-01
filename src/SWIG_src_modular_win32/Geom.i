@@ -96,29 +96,6 @@ Standard_Real & function transformation
 %include Geom_headers.i
 
 
-enum GeomAbs_BSplKnotDistribution {
-	GeomAbs_NonUniform,
-	GeomAbs_Uniform,
-	GeomAbs_QuasiUniform,
-	GeomAbs_PiecewiseBezier,
-	};
-
-enum GeomAbs_Shape {
-	GeomAbs_C0,
-	GeomAbs_G1,
-	GeomAbs_C1,
-	GeomAbs_G2,
-	GeomAbs_C2,
-	GeomAbs_C3,
-	GeomAbs_CN,
-	};
-
-enum GeomAbs_IsoType {
-	GeomAbs_IsoU,
-	GeomAbs_IsoV,
-	GeomAbs_NoneIso,
-	};
-
 
 
 %nodefaultctor Handle_Geom_UndefinedValue;

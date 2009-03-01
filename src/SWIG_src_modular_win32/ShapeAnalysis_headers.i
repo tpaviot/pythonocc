@@ -506,6 +506,7 @@
 #include<gp_Pnt2d.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<gp_Vec2d.hxx>
+#include<ShapeAnalysis.hxx>
 #include<TopoDS_Wire.hxx>
 #include<Handle_ShapeExtend_WireData.hxx>
 #include<TColStd_ListOfReal.hxx>

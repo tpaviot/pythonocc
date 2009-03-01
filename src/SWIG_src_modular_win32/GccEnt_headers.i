@@ -56,6 +56,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<GccEnt.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
 #include<Standard_SStream.hxx>

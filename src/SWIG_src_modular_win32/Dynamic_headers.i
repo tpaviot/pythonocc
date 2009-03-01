@@ -139,4 +139,5 @@
 
 #include<Handle_Standard_Transient.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<Dynamic.hxx>
 %}

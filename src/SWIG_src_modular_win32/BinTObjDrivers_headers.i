@@ -226,5 +226,6 @@
 #include<BinObjMgt_Persistent.hxx>
 #include<BinObjMgt_RRelocationTable.hxx>
 #include<Handle_BinMDF_ADriverTable.hxx>
+#include<BinTObjDrivers.hxx>
 #include<Standard_GUID.hxx>
 %}

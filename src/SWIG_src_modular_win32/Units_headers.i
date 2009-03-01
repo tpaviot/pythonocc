@@ -132,4 +132,5 @@
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
+#include<Units.hxx>
 %}

@@ -204,4 +204,5 @@
 #include<TopoDS_Wire.hxx>
 #include<gp_Dir.hxx>
 #include<IntSurf_ListOfPntOn2S.hxx>
+#include<IntTools.hxx>
 %}

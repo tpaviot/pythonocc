@@ -72,4 +72,5 @@
 
 #include<Handle_Standard_Transient.hxx>
 #include<gp_XYZ.hxx>
+#include<StlMesh.hxx>
 %}

@@ -125,4 +125,5 @@
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<Draft.hxx>
 %}

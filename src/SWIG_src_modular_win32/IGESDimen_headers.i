@@ -185,6 +185,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -335,4 +336,5 @@
 #include<Handle_TColgp_HArray1OfXYZ.hxx>
 #include<Handle_IGESGraph_HArray1OfTextFontDef.hxx>
 #include<Handle_IGESGraph_TextFontDef.hxx>
+#include<IGESDimen.hxx>
 %}

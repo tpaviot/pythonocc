@@ -396,6 +396,7 @@
 #include<Handle_StepAP214_AppliedPresentedItem.hxx>
 #include<Handle_StepAP214_AutoDesignGroupAssignment.hxx>
 #include<Handle_StepAP214_AutoDesignPresentedItem.hxx>
+#include<RWStepAP214.hxx>
 #include<Handle_StepAP214_RepItemGroup.hxx>
 #include<Handle_StepAP214_AutoDesignActualDateAssignment.hxx>
 #include<Handle_StepAP214_AutoDesignActualDateAndTimeAssignment.hxx>

@@ -501,6 +501,7 @@
 #include<Handle_ShapeAnalysis_TransferParameters.hxx>
 #include<TopoDS_Edge.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<ShapeFix.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_ShapeAnalysis_Surface.hxx>
 #include<TopoDS_Wire.hxx>

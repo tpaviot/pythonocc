@@ -44,6 +44,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<GeomProjLib.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom_Surface.hxx>

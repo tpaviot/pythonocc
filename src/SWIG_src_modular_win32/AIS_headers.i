@@ -522,6 +522,7 @@
 #include<SelectMgr_IndexedMapOfOwner.hxx>
 #include<Handle_SelectMgr_Filter.hxx>
 #include<Handle_StdSelect_ViewerSelector3d.hxx>
+#include<AIS.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Face.hxx>

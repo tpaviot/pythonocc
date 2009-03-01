@@ -98,27 +98,10 @@ Standard_Real & function transformation
 typedef TopOpeBRep_FacesFiller * TopOpeBRep_PFacesFiller;
 typedef IntPatch_ThePointOfIntersection * TopOpeBRep_PThePointOfIntersection;
 typedef IntRes2d_IntersectionPoint * TopOpeBRep_PIntRes2d_IntersectionPoint;
-typedef TopOpeBRepDS_DataStructure * TopOpeBRepDS_PDataStructure;
 typedef TopOpeBRep_EdgesIntersector * TopOpeBRep_PEdgesIntersector;
 typedef TopOpeBRep_FacesIntersector * TopOpeBRep_PFacesIntersector;
 typedef IntSurf_PntOn2S * TopOpeBRep_PPntOn2S;
 typedef TopOpeBRep_LineInter * TopOpeBRep_PLineInter;
-typedef TopOpeBRepTool_ShapeClassifier * TopOpeBRepTool_PShapeClassifier;
-
-enum TopOpeBRepDS_Kind {
-	TopOpeBRepDS_POINT,
-	TopOpeBRepDS_CURVE,
-	TopOpeBRepDS_SURFACE,
-	TopOpeBRepDS_VERTEX,
-	TopOpeBRepDS_EDGE,
-	TopOpeBRepDS_WIRE,
-	TopOpeBRepDS_FACE,
-	TopOpeBRepDS_SHELL,
-	TopOpeBRepDS_SOLID,
-	TopOpeBRepDS_COMPSOLID,
-	TopOpeBRepDS_COMPOUND,
-	TopOpeBRepDS_UNKNOWN,
-	};
 
 enum TopOpeBRep_P2Dstatus {
 	TopOpeBRep_P2DUNK,
@@ -138,12 +121,6 @@ enum TopOpeBRep_TypeLineCurve {
 	TopOpeBRep_PARABOLA,
 	TopOpeBRep_HYPERBOLA,
 	TopOpeBRep_OTHERTYPE,
-	};
-
-enum TopOpeBRepDS_Config {
-	TopOpeBRepDS_UNSHGEOMETRY,
-	TopOpeBRepDS_SAMEORIENTED,
-	TopOpeBRepDS_DIFFORIENTED,
 	};
 
 

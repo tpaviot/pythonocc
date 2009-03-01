@@ -183,6 +183,7 @@
 #include<Handle_Standard_Transient.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Standard_Persistent.hxx>
+#include<Storage.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
 #include<Standard_SStream.hxx>

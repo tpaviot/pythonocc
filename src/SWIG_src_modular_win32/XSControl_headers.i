@@ -146,6 +146,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -371,5 +372,6 @@
 #include<Interface_EntityIterator.hxx>
 #include<Handle_Interface_HGraph.hxx>
 #include<Handle_Transfer_ResultFromModel.hxx>
+#include<XSControl.hxx>
 #include<Handle_IFSelect_SessionPilot.hxx>
 %}

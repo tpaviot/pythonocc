@@ -88,6 +88,7 @@
 #include<Interface_Category.hxx>
 #include<Interface_Check.hxx>
 #include<Interface_CheckFailure.hxx>
+#include<Interface_CheckIterator.hxx>
 #include<Interface_CheckStatus.hxx>
 #include<Interface_CheckTool.hxx>
 #include<Interface_CopyControl.hxx>
@@ -273,6 +274,7 @@
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_IGESBasic_HArray1OfHArray1OfInteger.hxx>
+#include<IGESDefs.hxx>
 #include<Handle_TColStd_HArray2OfTransient.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_TColStd_HArray1OfTransient.hxx>

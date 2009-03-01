@@ -566,5 +566,6 @@
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Shape.hxx>
 #include<gp_Pnt.hxx>
+#include<ShapeBuild.hxx>
 #include<Handle_Geom_Plane.hxx>
 %}

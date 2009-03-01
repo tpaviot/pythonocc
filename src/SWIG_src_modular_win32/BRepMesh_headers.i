@@ -231,6 +231,7 @@
 #include<gp_Pnt.hxx>
 #include<gp_Dir.hxx>
 #include<TColStd_Array1OfInteger.hxx>
+#include<BRepMesh.hxx>
 #include<BRepAdaptor_Curve.hxx>
 #include<Handle_Poly_Triangulation.hxx>
 #include<MeshShape_Couple.hxx>

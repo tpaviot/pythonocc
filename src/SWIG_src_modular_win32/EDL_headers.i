@@ -114,4 +114,5 @@
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<EDL.hxx>
 %}

@@ -151,5 +151,6 @@
 #include<HLRAlgo_Projector.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_Graphic2d_Line.hxx>
+#include<AIS2D.hxx>
 #include<TColStd_MapOfTransient.hxx>
 %}

@@ -1,3 +1,5 @@
+2009/3/1:
+	- bugfix in SWIG_generator: enums and typedef were added in wrong modules (GeomAbs enum in Geom etc.)
 2009/2/27:
 	- Plugin, PXCAFDoc, Xml*
 2009/02/26:

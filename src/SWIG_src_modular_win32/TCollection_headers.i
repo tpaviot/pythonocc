@@ -90,4 +90,5 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TCollection.hxx>
 %}

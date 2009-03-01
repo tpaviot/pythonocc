@@ -84,4 +84,5 @@
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<gp_XYZ.hxx>
+#include<Poly.hxx>
 %}

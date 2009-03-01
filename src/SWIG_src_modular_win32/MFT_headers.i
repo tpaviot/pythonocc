@@ -192,4 +192,5 @@
 #include<TCollection_AsciiString.hxx>
 #include<Standard_SStream.hxx>
 #include<Aspect_FontStyle.hxx>
+#include<MFT.hxx>
 %}

@@ -50,6 +50,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<BSplCLib.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<TColgp_Array1OfPnt.hxx>

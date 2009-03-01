@@ -52,6 +52,7 @@
 
 // Needed headers necessary for compilation.
 
+#include<CSLib.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Dir.hxx>
 #include<TColgp_Array2OfVec.hxx>

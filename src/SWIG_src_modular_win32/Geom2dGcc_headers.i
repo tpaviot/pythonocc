@@ -135,4 +135,5 @@
 #include<GccEnt_QualifiedLin.hxx>
 #include<GccAna_Circ2d2TanRad.hxx>
 #include<GccAna_Circ2dTanOnRad.hxx>
+#include<Geom2dGcc.hxx>
 %}

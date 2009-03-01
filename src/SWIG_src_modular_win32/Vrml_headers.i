@@ -215,6 +215,7 @@
 #include<Handle_TColgp_HArray1OfVec.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
+#include<Vrml.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_Quantity_HArray1OfColor.hxx>
 #include<Handle_TColgp_HArray1OfVec2d.hxx>

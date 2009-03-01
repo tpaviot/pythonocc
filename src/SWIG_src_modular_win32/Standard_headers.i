@@ -221,5 +221,6 @@
 
 // Needed headers necessary for compilation.
 
+#include<Standard.hxx>
 #include<Storage_stCONSTclCOM.hxx>
 %}

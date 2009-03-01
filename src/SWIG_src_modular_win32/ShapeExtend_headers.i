@@ -238,6 +238,7 @@
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_TopTools_HSequenceOfShape.hxx>
+#include<ShapeExtend.hxx>
 #include<Message_ListOfMsg.hxx>
 #include<Message_Msg.hxx>
 #include<Handle_TColGeom_HArray2OfSurface.hxx>

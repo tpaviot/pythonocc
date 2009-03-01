@@ -607,6 +607,7 @@
 #include<gp_Ax3.hxx>
 #include<Handle_GeomFill_SectionLaw.hxx>
 #include<TColStd_SequenceOfReal.hxx>
+#include<BRepFill.hxx>
 #include<TopoDS_Shell.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_Adaptor3d_HCurveOnSurface.hxx>

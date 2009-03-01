@@ -65,6 +65,7 @@
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<TColStd_Array1OfInteger.hxx>
+#include<GeomConvert.hxx>
 #include<TColGeom_Array1OfBSplineCurve.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_TColGeom_HArray1OfBSplineCurve.hxx>

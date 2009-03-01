@@ -53,6 +53,7 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Geom2dAdaptor.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Adaptor2d_Curve2d.hxx>
 #include<TColStd_Array1OfReal.hxx>

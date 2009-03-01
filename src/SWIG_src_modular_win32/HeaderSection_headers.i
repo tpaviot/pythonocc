@@ -191,4 +191,5 @@
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Interface_HArray1OfHAsciiString.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
+#include<HeaderSection.hxx>
 %}
