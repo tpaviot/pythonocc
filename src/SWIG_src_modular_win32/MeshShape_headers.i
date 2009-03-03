@@ -36,6 +36,13 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt.hxx>
+#include<Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY.hxx>
+#include<Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient.hxx>
+#include<Handle_MeshShape_ListNodeOfListOfSurfacePoint.hxx>
+#include<Handle_MeshShape_ListNodeOfPolygon.hxx>
+#include<Handle_MeshShape_StdMapNodeOfMapOfCouple.hxx>
+#include<MeshShape.hxx>
 #include<MeshShape_Couple.hxx>
 #include<MeshShape_CoupleHasher.hxx>
 #include<MeshShape_CurvatureType.hxx>
@@ -62,13 +69,6 @@
 #include<MeshShape_SurfacePoint.hxx>
 #include<MeshShape_Triangle.hxx>
 #include<MeshShape_Vertex.hxx>
-#include<MeshShape.hxx>
-#include<Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt.hxx>
-#include<Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY.hxx>
-#include<Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient.hxx>
-#include<Handle_MeshShape_ListNodeOfListOfSurfacePoint.hxx>
-#include<Handle_MeshShape_ListNodeOfPolygon.hxx>
-#include<Handle_MeshShape_StdMapNodeOfMapOfCouple.hxx>
 
 // Additional headers necessary for compilation.
 

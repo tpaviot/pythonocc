@@ -311,6 +311,27 @@ class Handle_Prs2d_Axis : public Handle_Graphic2d_Line {
 	}
 };
 
+%nodefaultctor Handle_Prs2d_Radius;
+class Handle_Prs2d_Radius : public Handle_Prs2d_Dimension {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Prs2d_Radius();
+		%feature("autodoc", "1");
+		Handle_Prs2d_Radius();
+		%feature("autodoc", "1");
+		Handle_Prs2d_Radius(const Handle_Prs2d_Radius &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Radius(const Prs2d_Radius *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Radius const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs2d_Radius {
+	Prs2d_Radius* GetObject() {
+	return (Prs2d_Radius*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_Prs2d_AspectRoot;
 class Handle_Prs2d_AspectRoot : public Handle_MMgt_TShared {
 	public:
@@ -350,6 +371,48 @@ class Handle_Prs2d_AspectFramedText : public Handle_Prs2d_AspectRoot {
 %extend Handle_Prs2d_AspectFramedText {
 	Prs2d_AspectFramedText* GetObject() {
 	return (Prs2d_AspectFramedText*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Prs2d_DrawSymbol;
+class Handle_Prs2d_DrawSymbol : public Handle_Graphic2d_Line {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Prs2d_DrawSymbol();
+		%feature("autodoc", "1");
+		Handle_Prs2d_DrawSymbol();
+		%feature("autodoc", "1");
+		Handle_Prs2d_DrawSymbol(const Handle_Prs2d_DrawSymbol &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_DrawSymbol(const Prs2d_DrawSymbol *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_DrawSymbol const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs2d_DrawSymbol {
+	Prs2d_DrawSymbol* GetObject() {
+	return (Prs2d_DrawSymbol*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Prs2d_Cylindric;
+class Handle_Prs2d_Cylindric : public Handle_Prs2d_Tolerance {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Prs2d_Cylindric();
+		%feature("autodoc", "1");
+		Handle_Prs2d_Cylindric();
+		%feature("autodoc", "1");
+		Handle_Prs2d_Cylindric(const Handle_Prs2d_Cylindric &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Cylindric(const Prs2d_Cylindric *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Cylindric const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs2d_Cylindric {
+	Prs2d_Cylindric* GetObject() {
+	return (Prs2d_Cylindric*)$self->Access();
 	}
 };
 
@@ -455,27 +518,6 @@ class Handle_Prs2d_Taper : public Handle_Prs2d_Tolerance {
 %extend Handle_Prs2d_Taper {
 	Prs2d_Taper* GetObject() {
 	return (Prs2d_Taper*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Prs2d_AspectLine;
-class Handle_Prs2d_AspectLine : public Handle_Prs2d_AspectRoot {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_AspectLine();
-		%feature("autodoc", "1");
-		Handle_Prs2d_AspectLine();
-		%feature("autodoc", "1");
-		Handle_Prs2d_AspectLine(const Handle_Prs2d_AspectLine &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs2d_AspectLine(const Prs2d_AspectLine *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs2d_AspectLine const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs2d_AspectLine {
-	Prs2d_AspectLine* GetObject() {
-	return (Prs2d_AspectLine*)$self->Access();
 	}
 };
 
@@ -752,27 +794,6 @@ class Handle_Prs2d_Straightness : public Handle_Prs2d_Tolerance {
 	}
 };
 
-%nodefaultctor Handle_Prs2d_Radius;
-class Handle_Prs2d_Radius : public Handle_Prs2d_Dimension {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Radius();
-		%feature("autodoc", "1");
-		Handle_Prs2d_Radius();
-		%feature("autodoc", "1");
-		Handle_Prs2d_Radius(const Handle_Prs2d_Radius &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs2d_Radius(const Prs2d_Radius *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs2d_Radius const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs2d_Radius {
-	Prs2d_Radius* GetObject() {
-	return (Prs2d_Radius*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Prs2d_SymbolDefinitionError;
 class Handle_Prs2d_SymbolDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -812,27 +833,6 @@ class Handle_Prs2d_AspectHidingPoly : public Handle_Prs2d_AspectRoot {
 %extend Handle_Prs2d_AspectHidingPoly {
 	Prs2d_AspectHidingPoly* GetObject() {
 	return (Prs2d_AspectHidingPoly*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Prs2d_DrawSymbol;
-class Handle_Prs2d_DrawSymbol : public Handle_Graphic2d_Line {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_DrawSymbol();
-		%feature("autodoc", "1");
-		Handle_Prs2d_DrawSymbol();
-		%feature("autodoc", "1");
-		Handle_Prs2d_DrawSymbol(const Handle_Prs2d_DrawSymbol &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs2d_DrawSymbol(const Prs2d_DrawSymbol *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs2d_DrawSymbol const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs2d_DrawSymbol {
-	Prs2d_DrawSymbol* GetObject() {
-	return (Prs2d_DrawSymbol*)$self->Access();
 	}
 };
 
@@ -899,27 +899,6 @@ class Handle_Prs2d_Parallelism : public Handle_Prs2d_Tolerance {
 	}
 };
 
-%nodefaultctor Handle_Prs2d_Cylindric;
-class Handle_Prs2d_Cylindric : public Handle_Prs2d_Tolerance {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Cylindric();
-		%feature("autodoc", "1");
-		Handle_Prs2d_Cylindric();
-		%feature("autodoc", "1");
-		Handle_Prs2d_Cylindric(const Handle_Prs2d_Cylindric &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs2d_Cylindric(const Prs2d_Cylindric *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs2d_Cylindric const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs2d_Cylindric {
-	Prs2d_Cylindric* GetObject() {
-	return (Prs2d_Cylindric*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Prs2d_SymTotal;
 class Handle_Prs2d_SymTotal : public Handle_Prs2d_Tolerance {
 	public:
@@ -962,6 +941,27 @@ class Handle_Prs2d_Angle : public Handle_Prs2d_Dimension {
 	}
 };
 
+%nodefaultctor Handle_Prs2d_AspectLine;
+class Handle_Prs2d_AspectLine : public Handle_Prs2d_AspectRoot {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Prs2d_AspectLine();
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectLine();
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectLine(const Handle_Prs2d_AspectLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectLine(const Prs2d_AspectLine *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectLine const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs2d_AspectLine {
+	Prs2d_AspectLine* GetObject() {
+	return (Prs2d_AspectLine*)$self->Access();
+	}
+};
+
 %nodefaultctor Prs2d_Tolerance;
 class Prs2d_Tolerance : public Graphic2d_Line {
 	public:
@@ -979,23 +979,6 @@ class Prs2d_Tolerance : public Graphic2d_Line {
 	}
 };
 
-%nodefaultctor Prs2d_SymCircular;
-class Prs2d_SymCircular : public Prs2d_Tolerance {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_SymCircular(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
-		%feature("autodoc", "1");
-		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_SymCircular();
-
-};
-%extend Prs2d_SymCircular {
-	Handle_Prs2d_SymCircular GetHandle() {
-	return *(Handle_Prs2d_SymCircular*) &$self;
-	}
-};
-
 %nodefaultctor Prs2d_LineProfile;
 class Prs2d_LineProfile : public Prs2d_Tolerance {
 	public:
@@ -1003,8 +986,6 @@ class Prs2d_LineProfile : public Prs2d_Tolerance {
 		Prs2d_LineProfile(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~Prs2d_LineProfile();
 
@@ -1115,163 +1096,6 @@ class Prs2d_DataMapIteratorOfDataMapOfAspectRoot : public TCollection_BasicMapIt
 
 };
 
-%nodefaultctor Prs2d_Concentric;
-class Prs2d_Concentric : public Prs2d_Tolerance {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_Concentric(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
-		%feature("autodoc", "1");
-		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Concentric();
-
-};
-%extend Prs2d_Concentric {
-	Handle_Prs2d_Concentric GetHandle() {
-	return *(Handle_Prs2d_Concentric*) &$self;
-	}
-};
-
-%nodefaultctor Prs2d_Parallelism;
-class Prs2d_Parallelism : public Prs2d_Tolerance {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_Parallelism(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
-		%feature("autodoc", "1");
-		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Parallelism();
-
-};
-%extend Prs2d_Parallelism {
-	Handle_Prs2d_Parallelism GetHandle() {
-	return *(Handle_Prs2d_Parallelism*) &$self;
-	}
-};
-
-%nodefaultctor Prs2d_Straightness;
-class Prs2d_Straightness : public Prs2d_Tolerance {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_Straightness(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
-		%feature("autodoc", "1");
-		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Straightness();
-
-};
-%extend Prs2d_Straightness {
-	Handle_Prs2d_Straightness GetHandle() {
-	return *(Handle_Prs2d_Straightness*) &$self;
-	}
-};
-
-%nodefaultctor Prs2d_Angularity;
-class Prs2d_Angularity : public Prs2d_Tolerance {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_Angularity(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
-		%feature("autodoc", "1");
-		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Angularity();
-
-};
-%extend Prs2d_Angularity {
-	Handle_Prs2d_Angularity GetHandle() {
-	return *(Handle_Prs2d_Angularity*) &$self;
-	}
-};
-
-%nodefaultctor Prs2d_Axis;
-class Prs2d_Axis : public Graphic2d_Line {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax22d &anAx, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
-		%feature("autodoc", "1");
-		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax2d &anAx, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
-		%feature("autodoc", "1");
-		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Lin2d &aLine, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
-		%feature("autodoc", "1");
-		Prs2d_TypeOfArrow TypeOfArrow() const;
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d const ArrayOfPnt2d() const;
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d const ArrayOfXArrowPnt2d() const;
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d const ArrayOfYArrowPnt2d() const;
-		%feature("autodoc", "1");
-		Standard_Real TextScale() const;
-		%feature("autodoc", "1");
-		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Axis();
-
-};
-%extend Prs2d_Axis {
-	Handle_Prs2d_Axis GetHandle() {
-	return *(Handle_Prs2d_Axis*) &$self;
-	}
-};
-
-%nodefaultctor Prs2d_Point;
-class Prs2d_Point : public Graphic2d_Line {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_Point(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d &aPnt, const Aspect_TypeOfMarker aTOM, const Quantity_Length aWSize=2.0e+0, const Quantity_Length aHSize=2.0e+0, const Quantity_PlaneAngle anAngle=0.0);
-		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt2d &aPnt);
-		%feature("autodoc", "1");
-		void SetMarker(const Aspect_TypeOfMarker aTOM);
-		%feature("autodoc", "1");
-		void SetIndex(const Standard_Integer anInd);
-		%feature("autodoc", "1");
-		gp_Pnt2d Point() const;
-		%feature("autodoc", "1");
-		Aspect_TypeOfMarker Marker() const;
-		%feature("autodoc", "1");
-		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Point();
-
-};
-%extend Prs2d_Point {
-	Handle_Prs2d_Point GetHandle() {
-	return *(Handle_Prs2d_Point*) &$self;
-	}
-};
-
-%nodefaultctor Prs2d_Circularity;
-class Prs2d_Circularity : public Prs2d_Tolerance {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_Circularity(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
-		%feature("autodoc", "1");
-		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Circularity();
-
-};
-%extend Prs2d_Circularity {
-	Handle_Prs2d_Circularity GetHandle() {
-	return *(Handle_Prs2d_Circularity*) &$self;
-	}
-};
-
 %nodefaultctor Prs2d_Dimension;
 class Prs2d_Dimension : public Graphic2d_Line {
 	public:
@@ -1366,6 +1190,152 @@ class Prs2d_Radius : public Prs2d_Dimension {
 	}
 };
 
+%nodefaultctor Prs2d_Concentric;
+class Prs2d_Concentric : public Prs2d_Tolerance {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_Concentric(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
+		%feature("autodoc", "1");
+		virtual		void Save(Aspect_FStream & aFStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_Concentric();
+
+};
+%extend Prs2d_Concentric {
+	Handle_Prs2d_Concentric GetHandle() {
+	return *(Handle_Prs2d_Concentric*) &$self;
+	}
+};
+
+%nodefaultctor Prs2d_SymCircular;
+class Prs2d_SymCircular : public Prs2d_Tolerance {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_SymCircular(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
+		%feature("autodoc", "1");
+		virtual		void Save(Aspect_FStream & aFStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_SymCircular();
+
+};
+%extend Prs2d_SymCircular {
+	Handle_Prs2d_SymCircular GetHandle() {
+	return *(Handle_Prs2d_SymCircular*) &$self;
+	}
+};
+
+%nodefaultctor Prs2d_Angularity;
+class Prs2d_Angularity : public Prs2d_Tolerance {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_Angularity(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
+		%feature("autodoc", "1");
+		virtual		void Save(Aspect_FStream & aFStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_Angularity();
+
+};
+%extend Prs2d_Angularity {
+	Handle_Prs2d_Angularity GetHandle() {
+	return *(Handle_Prs2d_Angularity*) &$self;
+	}
+};
+
+%nodefaultctor Prs2d_Axis;
+class Prs2d_Axis : public Graphic2d_Line {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax22d &anAx, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
+		%feature("autodoc", "1");
+		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax2d &anAx, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
+		%feature("autodoc", "1");
+		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Lin2d &aLine, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
+		%feature("autodoc", "1");
+		Prs2d_TypeOfArrow TypeOfArrow() const;
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfPnt2d const ArrayOfPnt2d() const;
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfPnt2d const ArrayOfXArrowPnt2d() const;
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfPnt2d const ArrayOfYArrowPnt2d() const;
+		%feature("autodoc", "1");
+		Standard_Real TextScale() const;
+		%feature("autodoc", "1");
+		virtual		void Save(Aspect_FStream & aFStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_Axis();
+
+};
+%extend Prs2d_Axis {
+	Handle_Prs2d_Axis GetHandle() {
+	return *(Handle_Prs2d_Axis*) &$self;
+	}
+};
+
+%nodefaultctor Prs2d_Point;
+class Prs2d_Point : public Graphic2d_Line {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_Point(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d &aPnt, const Aspect_TypeOfMarker aTOM, const Quantity_Length aWSize=2.0e+0, const Quantity_Length aHSize=2.0e+0, const Quantity_PlaneAngle anAngle=0.0);
+		%feature("autodoc", "1");
+		void SetPoint(const gp_Pnt2d &aPnt);
+		%feature("autodoc", "1");
+		void SetMarker(const Aspect_TypeOfMarker aTOM);
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer anInd);
+		%feature("autodoc", "1");
+		gp_Pnt2d Point() const;
+		%feature("autodoc", "1");
+		Aspect_TypeOfMarker Marker() const;
+		%feature("autodoc", "1");
+		virtual		void Save(Aspect_FStream & aFStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_Point();
+
+};
+%extend Prs2d_Point {
+	Handle_Prs2d_Point GetHandle() {
+	return *(Handle_Prs2d_Point*) &$self;
+	}
+};
+
+%nodefaultctor Prs2d_AspectHidingPoly;
+class Prs2d_AspectHidingPoly : public Prs2d_AspectRoot {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_AspectHidingPoly(const Quantity_NameOfColor HidingColorInd, const Quantity_NameOfColor FrameColorInd, const Aspect_TypeOfLine FrameTypeInd, const Aspect_WidthOfLine FrameWidthInd);
+		%feature("autodoc", "1");
+		void SetHidingColor(const Quantity_NameOfColor aColorInd);
+		%feature("autodoc", "1");
+		void SetFrameColor(const Quantity_NameOfColor aFrameColorInd);
+		%feature("autodoc", "1");
+		void SetFrameType(const Aspect_TypeOfLine aFrameTypeInd);
+		%feature("autodoc", "1");
+		void SetFrameWidth(const Aspect_WidthOfLine aFrameWidthInd);
+		%feature("autodoc", "1");
+		void Values(Quantity_NameOfColor & HidingColorInd, Quantity_NameOfColor & FrameColorInd, Aspect_TypeOfLine & FrameTypeInd, Aspect_WidthOfLine & FrameWidthInd) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_AspectHidingPoly();
+
+};
+%extend Prs2d_AspectHidingPoly {
+	Handle_Prs2d_AspectHidingPoly GetHandle() {
+	return *(Handle_Prs2d_AspectHidingPoly*) &$self;
+	}
+};
+
 %nodefaultctor Prs2d_Cylindric;
 class Prs2d_Cylindric : public Prs2d_Tolerance {
 	public:
@@ -1382,6 +1352,44 @@ class Prs2d_Cylindric : public Prs2d_Tolerance {
 %extend Prs2d_Cylindric {
 	Handle_Prs2d_Cylindric GetHandle() {
 	return *(Handle_Prs2d_Cylindric*) &$self;
+	}
+};
+
+%nodefaultctor Prs2d_Straightness;
+class Prs2d_Straightness : public Prs2d_Tolerance {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_Straightness(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
+		%feature("autodoc", "1");
+		virtual		void Save(Aspect_FStream & aFStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_Straightness();
+
+};
+%extend Prs2d_Straightness {
+	Handle_Prs2d_Straightness GetHandle() {
+	return *(Handle_Prs2d_Straightness*) &$self;
+	}
+};
+
+%nodefaultctor Prs2d_Position;
+class Prs2d_Position : public Prs2d_Tolerance {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_Position(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
+		%feature("autodoc", "1");
+		virtual		void Save(Aspect_FStream & aFStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_Position();
+
+};
+%extend Prs2d_Position {
+	Handle_Prs2d_Position GetHandle() {
+	return *(Handle_Prs2d_Position*) &$self;
 	}
 };
 
@@ -1466,22 +1474,41 @@ class Prs2d_Flatness : public Prs2d_Tolerance {
 	}
 };
 
-%nodefaultctor Prs2d_Taper;
-class Prs2d_Taper : public Prs2d_Tolerance {
+%nodefaultctor Prs2d_Circularity;
+class Prs2d_Circularity : public Prs2d_Tolerance {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Taper(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
+		Prs2d_Circularity(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		virtual		~Prs2d_Taper();
+		virtual		~Prs2d_Circularity();
 
 };
-%extend Prs2d_Taper {
-	Handle_Prs2d_Taper GetHandle() {
-	return *(Handle_Prs2d_Taper*) &$self;
+%extend Prs2d_Circularity {
+	Handle_Prs2d_Circularity GetHandle() {
+	return *(Handle_Prs2d_Circularity*) &$self;
+	}
+};
+
+%nodefaultctor Prs2d_Parallelism;
+class Prs2d_Parallelism : public Prs2d_Tolerance {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_Parallelism(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
+		%feature("autodoc", "1");
+		virtual		void Save(Aspect_FStream & aFStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_Parallelism();
+
+};
+%extend Prs2d_Parallelism {
+	Handle_Prs2d_Parallelism GetHandle() {
+	return *(Handle_Prs2d_Parallelism*) &$self;
 	}
 };
 
@@ -1501,45 +1528,6 @@ class Prs2d_DrawSymbol : public Graphic2d_Line {
 %extend Prs2d_DrawSymbol {
 	Handle_Prs2d_DrawSymbol GetHandle() {
 	return *(Handle_Prs2d_DrawSymbol*) &$self;
-	}
-};
-
-%nodefaultctor Prs2d_ToleranceFrame;
-class Prs2d_ToleranceFrame : public Graphic2d_Line {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_ToleranceFrame(const Handle_Graphic2d_GraphicObject &aGO, const Quantity_Length aX, const Quantity_Length aY, const Quantity_Length aHeight, const Prs2d_TypeOfTolerance aTolType=Prs2d_TOT_NONE, const char * aTolTxt="", const char * aTxt1="", const char * aTxt2="", const Standard_Real anAngle=0.0, const Standard_Real aScale=1.0e+0);
-		%feature("autodoc", "1");
-		void SetHeight(const Standard_Real aHSize);
-		%feature("autodoc", "1");
-		Standard_Real Height() const;
-		%feature("autodoc", "1");
-		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d const ArrayOfPnt2d() const;
-		%feature("autodoc", "1");
-		void SetTolText(const char * aText);
-		%feature("autodoc", "1");
-		void SetText1(const char * aText);
-		%feature("autodoc", "1");
-		void SetText2(const char * aText);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString TolText() const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString Text1() const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString Text2() const;
-		%feature("autodoc", "1");
-		Standard_Real TextScale() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_ToleranceFrame();
-
-};
-%extend Prs2d_ToleranceFrame {
-	Handle_Prs2d_ToleranceFrame GetHandle() {
-	return *(Handle_Prs2d_ToleranceFrame*) &$self;
 	}
 };
 
@@ -1604,33 +1592,6 @@ class Prs2d_Symmetry : public Prs2d_Tolerance {
 %extend Prs2d_Symmetry {
 	Handle_Prs2d_Symmetry GetHandle() {
 	return *(Handle_Prs2d_Symmetry*) &$self;
-	}
-};
-
-%nodefaultctor Prs2d_AspectHidingPoly;
-class Prs2d_AspectHidingPoly : public Prs2d_AspectRoot {
-	public:
-		%feature("autodoc", "1");
-		Prs2d_AspectHidingPoly(const Quantity_NameOfColor HidingColorInd, const Quantity_NameOfColor FrameColorInd, const Aspect_TypeOfLine FrameTypeInd, const Aspect_WidthOfLine FrameWidthInd);
-		%feature("autodoc", "1");
-		void SetHidingColor(const Quantity_NameOfColor aColorInd);
-		%feature("autodoc", "1");
-		void SetFrameColor(const Quantity_NameOfColor aFrameColorInd);
-		%feature("autodoc", "1");
-		void SetFrameType(const Aspect_TypeOfLine aFrameTypeInd);
-		%feature("autodoc", "1");
-		void SetFrameWidth(const Aspect_WidthOfLine aFrameWidthInd);
-		%feature("autodoc", "1");
-		void Values(Quantity_NameOfColor & HidingColorInd, Quantity_NameOfColor & FrameColorInd, Aspect_TypeOfLine & FrameTypeInd, Aspect_WidthOfLine & FrameWidthInd) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_AspectHidingPoly();
-
-};
-%extend Prs2d_AspectHidingPoly {
-	Handle_Prs2d_AspectHidingPoly GetHandle() {
-	return *(Handle_Prs2d_AspectHidingPoly*) &$self;
 	}
 };
 
@@ -1733,6 +1694,45 @@ class Prs2d_Repere : public Prs2d_Dimension {
 	}
 };
 
+%nodefaultctor Prs2d_ToleranceFrame;
+class Prs2d_ToleranceFrame : public Graphic2d_Line {
+	public:
+		%feature("autodoc", "1");
+		Prs2d_ToleranceFrame(const Handle_Graphic2d_GraphicObject &aGO, const Quantity_Length aX, const Quantity_Length aY, const Quantity_Length aHeight, const Prs2d_TypeOfTolerance aTolType=Prs2d_TOT_NONE, const char * aTolTxt="", const char * aTxt1="", const char * aTxt2="", const Standard_Real anAngle=0.0, const Standard_Real aScale=1.0e+0);
+		%feature("autodoc", "1");
+		void SetHeight(const Standard_Real aHSize);
+		%feature("autodoc", "1");
+		Standard_Real Height() const;
+		%feature("autodoc", "1");
+		virtual		void Save(Aspect_FStream & aFStream) const;
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfPnt2d const ArrayOfPnt2d() const;
+		%feature("autodoc", "1");
+		void SetTolText(const char * aText);
+		%feature("autodoc", "1");
+		void SetText1(const char * aText);
+		%feature("autodoc", "1");
+		void SetText2(const char * aText);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString TolText() const;
+		%feature("autodoc", "1");
+		TCollection_ExtendedString Text1() const;
+		%feature("autodoc", "1");
+		TCollection_ExtendedString Text2() const;
+		%feature("autodoc", "1");
+		Standard_Real TextScale() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs2d_ToleranceFrame();
+
+};
+%extend Prs2d_ToleranceFrame {
+	Handle_Prs2d_ToleranceFrame GetHandle() {
+	return *(Handle_Prs2d_ToleranceFrame*) &$self;
+	}
+};
+
 %nodefaultctor Prs2d_Arrow;
 class Prs2d_Arrow : public Graphic2d_Line {
 	public:
@@ -1756,22 +1756,22 @@ class Prs2d_Arrow : public Graphic2d_Line {
 	}
 };
 
-%nodefaultctor Prs2d_Position;
-class Prs2d_Position : public Prs2d_Tolerance {
+%nodefaultctor Prs2d_Taper;
+class Prs2d_Taper : public Prs2d_Tolerance {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Position(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
+		Prs2d_Taper(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		virtual		~Prs2d_Position();
+		virtual		~Prs2d_Taper();
 
 };
-%extend Prs2d_Position {
-	Handle_Prs2d_Position GetHandle() {
-	return *(Handle_Prs2d_Position*) &$self;
+%extend Prs2d_Taper {
+	Handle_Prs2d_Taper GetHandle() {
+	return *(Handle_Prs2d_Taper*) &$self;
 	}
 };
 

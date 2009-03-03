@@ -67,7 +67,7 @@ MODULES = [
            ('TopTools',[],[]),
            ('TopTrans',[],[]),
            ('MoniTool',[],[],{'MoniTool_CaseData':['Msg','Text'],'MoniTool_AttrList':['GetStringAttribute']}),
-           ('Interface',[],[],{'Interface_Graph':['Status'],'Interface_CheckIterator':['Status'],'Interface_Check':['Status']}),
+           ('Interface',[],['Interface_STAT'],{'Interface_Graph':['Status'],'Interface_CheckIterator':['Status'],'Interface_Check':['Status']}),
            ('IFSelect',['MoniTool'],[],{"IFSelect_ContextModif":["Search"],"IFSelect_EditForm":["NbTouched"],"IFSelect_IntParam":["StaticName"]}),
            ('IFGraph',['TCollection','MoniTool'],[]),
            ('Transfer',['MoniTool','IFSelect'],[],{'Transfer_Finder':['GetStringAttribute']}),
@@ -170,7 +170,7 @@ MODULES = [
            ('IntImp',[],[]),
            ('IntWalk',[],[]),
            ('IntImpParGen',[],['IntImpParGen_ImpTool']),
-           ##('IntPatch',[],[]),DON'T WORK
+           ##('IntPatch',[],[]),DON'T WORK WORK ON LINUX
            ('IntPolyh',[],['IntPolyh_MaillageAffinage','IntPolyh_Triangle']),
            ('IntPoly',[],[]),
            ('IntAna',[],[]),
@@ -274,6 +274,8 @@ MODULES = [
                                                                'HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter':['Locate']}),
             ('HLRTopoBRep',[],[])                                                               ,
             ('BRepIntCurveSurface',[],[]),
+            ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
+                                'BRepFeat_MakeLinearForm':['TransformShapeFU']}),
             ('MgtTopoDS',['Standard'],[]),
             ('MgtBRep',['Standard'],[]),
 ##################################
@@ -435,6 +437,7 @@ MODULES = [
             ('Plugin',[],[]),
             ('PXCAFDoc',['DBC'],[]),
             #('MS',[],[]), GCCXMLERROR
+            ('XmlObjMgt',['TCollection'],[],{'XmlObjMgt':['GetInteger']}),
            ]
 #####################################
 # Visualization part is OS specific #
@@ -498,7 +501,7 @@ if sys.platform=='win32':
                ('StepShape',['MoniTool','Interface','StepBasic','TCollection'],[]),
                ('StepGeom',['StepShape','StepBasic','Interface','MoniTool','TCollection'],[]),
                ('StepAP203',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               #('StepAP209',['MoniTool','Interface','StepBasic','TCollection'],[]), GCCXML ERROR
+               #('StepAP209',['XSControl','TCollection','MoniTool','Interface','StepBasic'],[]),# GCCXML ERROR
                ('StepVisual',['MoniTool','Interface','StepBasic','TCollection'],[]),
                ('StepAP214',['StepGeom','StepRepr','MoniTool','Interface','StepBasic','TCollection'],['StepAP214_Protocol']),
                ('RWHeaderSection',['MoniTool','Interface','StepBasic','TCollection'],[]),
@@ -518,9 +521,8 @@ if sys.platform=='win32':
                ('EDL',[],[]),
                ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
                ('APIHeaderSection',['Interface','MoniTool','TCollection'],[]),
-               ('XmlObjMgt',['TCollection'],[]),
-               ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
-                                  'BRepFeat_MakeLinearForm':['TransformShapeFU']}), #LINUX TEST
+               
+             
                ('DNaming',[],[]),
                ('TransferBRep',['MoniTool','Interface'],['TransferBRep_ShapeMapper'],\
                 {'TransferBRep':['BRepCheck']}),
@@ -538,6 +540,10 @@ else:
                     ('Voxel',['OSD','MFT','Xw','Quantity','gp','Graphic3d','Aspect',\
                               'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics'],[]),
                     ])
+    MODULES.extend([
+                    ('Image',[],[]), #bug on Windows
+                    ('AlienImage',['Quantity','TCollection'],[]),
+                   ])
 
 def PythonOCCStats():
     """

@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepBuilderAPI.hxx>
 #include<BRepBuilderAPI_Collect.hxx>
 #include<BRepBuilderAPI_Command.hxx>
 #include<BRepBuilderAPI_Copy.hxx>
@@ -61,7 +62,6 @@
 #include<BRepBuilderAPI_Transform.hxx>
 #include<BRepBuilderAPI_TransitionMode.hxx>
 #include<BRepBuilderAPI_WireError.hxx>
-#include<BRepBuilderAPI.hxx>
 #include<Handle_BRepBuilderAPI_Sewing.hxx>
 
 // Additional headers necessary for compilation.
@@ -91,8 +91,8 @@
 #include<TopoDSToStep_WireframeBuilder.hxx>
 #include<TopoDS_Builder.hxx>
 #include<TopoDS_Builder3D.hxx>
-#include<TopoDS_Compound.hxx>
 #include<TopoDS_CompSolid.hxx>
+#include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_FrozenShape.hxx>
@@ -104,8 +104,8 @@
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Shell.hxx>
 #include<TopoDS_Solid.hxx>
-#include<TopoDS_TCompound.hxx>
 #include<TopoDS_TCompSolid.hxx>
+#include<TopoDS_TCompound.hxx>
 #include<TopoDS_TEdge.hxx>
 #include<TopoDS_TFace.hxx>
 #include<TopoDS_TShape.hxx>

@@ -98,6 +98,27 @@ Standard_Real & function transformation
 
 
 
+%nodefaultctor Handle_MDocStd_DocumentStorageDriver;
+class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
+	public:
+		%feature("autodoc", "1");
+		~Handle_MDocStd_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDocStd_DocumentStorageDriver {
+	MDocStd_DocumentStorageDriver* GetObject() {
+	return (MDocStd_DocumentStorageDriver*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_MDocStd_DocumentRetrievalDriver;
 class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
 	public:
@@ -201,45 +222,6 @@ class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNo
 	MDocStd_StdMapNodeOfPersistentMap* GetObject() {
 	return (MDocStd_StdMapNodeOfPersistentMap*)$self->Access();
 	}
-};
-
-%nodefaultctor Handle_MDocStd_DocumentStorageDriver;
-class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MDocStd_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDocStd_DocumentStorageDriver {
-	MDocStd_DocumentStorageDriver* GetObject() {
-	return (MDocStd_DocumentStorageDriver*)$self->Access();
-	}
-};
-
-%nodefaultctor MDocStd;
-class MDocStd {
-	public:
-		%feature("autodoc", "1");
-		~MDocStd();
-		%feature("autodoc", "1");
-		MDocStd();
-		%feature("autodoc", "1");
-		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		void WeightWatcher(const Handle_TDF_Data &aSource, const Handle_MDF_SRelocationTable &aReloc, const MDocStd_DocEntryList &aEntry);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
-
 };
 
 %nodefaultctor MDocStd_StdMapNodeOfPersistentMap;
@@ -485,5 +467,23 @@ class MDocStd_PersistentMap : public TCollection_BasicMap {
 		Standard_Boolean Contains(const Handle_Standard_Persistent &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_Standard_Persistent &aKey);
+
+};
+
+%nodefaultctor MDocStd;
+class MDocStd {
+	public:
+		%feature("autodoc", "1");
+		~MDocStd();
+		%feature("autodoc", "1");
+		MDocStd();
+		%feature("autodoc", "1");
+		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		void WeightWatcher(const Handle_TDF_Data &aSource, const Handle_MDF_SRelocationTable &aReloc, const MDocStd_DocEntryList &aEntry);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
 };

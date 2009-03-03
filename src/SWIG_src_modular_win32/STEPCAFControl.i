@@ -98,6 +98,27 @@ Standard_Real & function transformation
 
 
 
+%nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD;
+class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD();
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD();
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD(const STEPCAFControl_DataMapNodeOfDataMapOfShapePD *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
+	STEPCAFControl_DataMapNodeOfDataMapOfShapePD* GetObject() {
+	return (STEPCAFControl_DataMapNodeOfDataMapOfShapePD*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public Handle_TCollection_MapNode {
 	public:
@@ -179,27 +200,6 @@ class Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile : public Handle_MM
 %extend Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile {
 	STEPCAFControl_StackItemOfDictionaryOfExternFile* GetObject() {
 	return (STEPCAFControl_StackItemOfDictionaryOfExternFile*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD;
-class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD();
-		%feature("autodoc", "1");
-		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD();
-		%feature("autodoc", "1");
-		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD(const STEPCAFControl_DataMapNodeOfDataMapOfShapePD *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
-	STEPCAFControl_DataMapNodeOfDataMapOfShapePD* GetObject() {
-	return (STEPCAFControl_DataMapNodeOfDataMapOfShapePD*)$self->Access();
 	}
 };
 
@@ -1076,6 +1076,27 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient : public TCollecti
 
 };
 
+%nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
+class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		STEPCAFControl_DataMapNodeOfDataMapOfLabelShape(const TDF_Label &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TDF_Label & Key() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfLabelShape();
+
+};
+%extend STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
+	Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape GetHandle() {
+	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape*) &$self;
+	}
+};
+
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile;
 class STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public TCollection_MapNode {
 	public:
@@ -1193,27 +1214,6 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile : public TCollection
 		%feature("autodoc", "1");
 		const Handle_STEPCAFControl_ExternFile & Value() const;
 
-};
-
-%nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
-class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		STEPCAFControl_DataMapNodeOfDataMapOfLabelShape(const TDF_Label &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TDF_Label & Key() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfLabelShape();
-
-};
-%extend STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
-	Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape GetHandle() {
-	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape*) &$self;
-	}
 };
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR;

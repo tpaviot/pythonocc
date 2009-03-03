@@ -36,6 +36,27 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Units_Dimensions.hxx>
+#include<Handle_Units_Lexicon.hxx>
+#include<Handle_Units_NoSuchType.hxx>
+#include<Handle_Units_NoSuchUnit.hxx>
+#include<Handle_Units_QuantitiesSequence.hxx>
+#include<Handle_Units_Quantity.hxx>
+#include<Handle_Units_SequenceNodeOfQtsSequence.hxx>
+#include<Handle_Units_SequenceNodeOfStrgSequence.hxx>
+#include<Handle_Units_SequenceNodeOfTksSequence.hxx>
+#include<Handle_Units_SequenceNodeOfUtsSequence.hxx>
+#include<Handle_Units_ShiftedToken.hxx>
+#include<Handle_Units_ShiftedUnit.hxx>
+#include<Handle_Units_StringsSequence.hxx>
+#include<Handle_Units_Token.hxx>
+#include<Handle_Units_TokensSequence.hxx>
+#include<Handle_Units_Unit.hxx>
+#include<Handle_Units_UnitsDictionary.hxx>
+#include<Handle_Units_UnitsLexicon.hxx>
+#include<Handle_Units_UnitsSequence.hxx>
+#include<Handle_Units_UnitsSystem.hxx>
+#include<Units.hxx>
 #include<Units_Dimensions.hxx>
 #include<Units_Explorer.hxx>
 #include<Units_Lexicon.hxx>
@@ -60,33 +81,12 @@
 #include<Units_Token.hxx>
 #include<Units_TokensSequence.hxx>
 #include<Units_Unit.hxx>
-#include<Units_UnitsDictionary.hxx>
 #include<Units_UnitSentence.hxx>
+#include<Units_UnitsDictionary.hxx>
 #include<Units_UnitsLexicon.hxx>
 #include<Units_UnitsSequence.hxx>
 #include<Units_UnitsSystem.hxx>
 #include<Units_UtsSequence.hxx>
-#include<Units.hxx>
-#include<Handle_Units_Dimensions.hxx>
-#include<Handle_Units_Lexicon.hxx>
-#include<Handle_Units_NoSuchType.hxx>
-#include<Handle_Units_NoSuchUnit.hxx>
-#include<Handle_Units_QuantitiesSequence.hxx>
-#include<Handle_Units_Quantity.hxx>
-#include<Handle_Units_SequenceNodeOfQtsSequence.hxx>
-#include<Handle_Units_SequenceNodeOfStrgSequence.hxx>
-#include<Handle_Units_SequenceNodeOfTksSequence.hxx>
-#include<Handle_Units_SequenceNodeOfUtsSequence.hxx>
-#include<Handle_Units_ShiftedToken.hxx>
-#include<Handle_Units_ShiftedUnit.hxx>
-#include<Handle_Units_StringsSequence.hxx>
-#include<Handle_Units_Token.hxx>
-#include<Handle_Units_TokensSequence.hxx>
-#include<Handle_Units_Unit.hxx>
-#include<Handle_Units_UnitsDictionary.hxx>
-#include<Handle_Units_UnitsLexicon.hxx>
-#include<Handle_Units_UnitsSequence.hxx>
-#include<Handle_Units_UnitsSystem.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -118,8 +118,8 @@
 #include<Units_Token.hxx>
 #include<Units_TokensSequence.hxx>
 #include<Units_Unit.hxx>
-#include<Units_UnitsDictionary.hxx>
 #include<Units_UnitSentence.hxx>
+#include<Units_UnitsDictionary.hxx>
 #include<Units_UnitsLexicon.hxx>
 #include<Units_UnitsSequence.hxx>
 #include<Units_UnitsSystem.hxx>

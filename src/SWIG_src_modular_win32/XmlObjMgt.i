@@ -169,8 +169,6 @@ class XmlObjMgt {
 		%feature("autodoc", "1");
 		XmlObjMgt_Element FindChildByName(const XmlObjMgt_Element &theSource, const XmlObjMgt_DOMString &theName);
 		%feature("autodoc", "1");
-		Standard_Boolean GetInteger(char * & theString, Standard_Integer & theValue);
-		%feature("autodoc", "1");
 		Standard_Boolean GetReal(char * & theString, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean GetReal(const XmlObjMgt_DOMString &theString, Standard_Real &OutValue);

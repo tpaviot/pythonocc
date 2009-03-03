@@ -36,28 +36,6 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<PBRep_Curve3D.hxx>
-#include<PBRep_CurveOn2Surfaces.hxx>
-#include<PBRep_CurveOnClosedSurface.hxx>
-#include<PBRep_CurveOnSurface.hxx>
-#include<PBRep_CurveRepresentation.hxx>
-#include<PBRep_GCurve.hxx>
-#include<PBRep_PointOnCurve.hxx>
-#include<PBRep_PointOnCurveOnSurface.hxx>
-#include<PBRep_PointOnSurface.hxx>
-#include<PBRep_PointRepresentation.hxx>
-#include<PBRep_PointsOnSurface.hxx>
-#include<PBRep_Polygon3D.hxx>
-#include<PBRep_PolygonOnClosedSurface.hxx>
-#include<PBRep_PolygonOnClosedTriangulation.hxx>
-#include<PBRep_PolygonOnSurface.hxx>
-#include<PBRep_PolygonOnTriangulation.hxx>
-#include<PBRep_TEdge.hxx>
-#include<PBRep_TEdge1.hxx>
-#include<PBRep_TFace.hxx>
-#include<PBRep_TFace1.hxx>
-#include<PBRep_TVertex.hxx>
-#include<PBRep_TVertex1.hxx>
 #include<Handle_PBRep_Curve3D.hxx>
 #include<Handle_PBRep_CurveOn2Surfaces.hxx>
 #include<Handle_PBRep_CurveOnClosedSurface.hxx>
@@ -80,6 +58,28 @@
 #include<Handle_PBRep_TFace1.hxx>
 #include<Handle_PBRep_TVertex.hxx>
 #include<Handle_PBRep_TVertex1.hxx>
+#include<PBRep_Curve3D.hxx>
+#include<PBRep_CurveOn2Surfaces.hxx>
+#include<PBRep_CurveOnClosedSurface.hxx>
+#include<PBRep_CurveOnSurface.hxx>
+#include<PBRep_CurveRepresentation.hxx>
+#include<PBRep_GCurve.hxx>
+#include<PBRep_PointOnCurve.hxx>
+#include<PBRep_PointOnCurveOnSurface.hxx>
+#include<PBRep_PointOnSurface.hxx>
+#include<PBRep_PointRepresentation.hxx>
+#include<PBRep_PointsOnSurface.hxx>
+#include<PBRep_Polygon3D.hxx>
+#include<PBRep_PolygonOnClosedSurface.hxx>
+#include<PBRep_PolygonOnClosedTriangulation.hxx>
+#include<PBRep_PolygonOnSurface.hxx>
+#include<PBRep_PolygonOnTriangulation.hxx>
+#include<PBRep_TEdge.hxx>
+#include<PBRep_TEdge1.hxx>
+#include<PBRep_TFace.hxx>
+#include<PBRep_TFace1.hxx>
+#include<PBRep_TVertex.hxx>
+#include<PBRep_TVertex1.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -98,12 +98,12 @@
 #include<DBC_VArrayTNodeOfVArrayOfExtCharacter.hxx>
 #include<DBC_VArrayTNodeOfVArrayOfInteger.hxx>
 #include<DBC_VArrayTNodeOfVArrayOfReal.hxx>
-#include<PMMgt_PManaged.hxx>
 #include<ObjMgt_ExternRef.hxx>
 #include<ObjMgt_ExternShareable.hxx>
 #include<ObjMgt_PSeqOfExtRef.hxx>
 #include<ObjMgt_SeqExplorerOfPSeqOfExtRef.hxx>
 #include<ObjMgt_SeqNodeOfPSeqOfExtRef.hxx>
+#include<PMMgt_PManaged.hxx>
 
 // Needed headers necessary for compilation.
 

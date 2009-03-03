@@ -140,27 +140,6 @@ class Handle_IGESDefs_GeneralModule : public Handle_IGESData_GeneralModule {
 	}
 };
 
-%nodefaultctor Handle_IGESDefs_HArray1OfTabularData;
-class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDefs_HArray1OfTabularData();
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfTabularData();
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfTabularData(const Handle_IGESDefs_HArray1OfTabularData &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfTabularData(const IGESDefs_HArray1OfTabularData *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfTabularData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDefs_HArray1OfTabularData {
-	IGESDefs_HArray1OfTabularData* GetObject() {
-	return (IGESDefs_HArray1OfTabularData*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_IGESDefs_AttributeTable;
 class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
 	public:
@@ -242,6 +221,27 @@ class Handle_IGESDefs_SpecificModule : public Handle_IGESData_SpecificModule {
 %extend Handle_IGESDefs_SpecificModule {
 	IGESDefs_SpecificModule* GetObject() {
 	return (IGESDefs_SpecificModule*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_IGESDefs_HArray1OfTabularData;
+class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESDefs_HArray1OfTabularData();
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfTabularData();
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfTabularData(const Handle_IGESDefs_HArray1OfTabularData &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfTabularData(const IGESDefs_HArray1OfTabularData *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfTabularData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDefs_HArray1OfTabularData {
+	IGESDefs_HArray1OfTabularData* GetObject() {
+	return (IGESDefs_HArray1OfTabularData*)$self->Access();
 	}
 };
 
@@ -467,30 +467,6 @@ class IGESDefs_ToolAssociativityDef {
 
 };
 
-%nodefaultctor IGESDefs_ToolUnitsData;
-class IGESDefs_ToolUnitsData {
-	public:
-		%feature("autodoc", "1");
-		~IGESDefs_ToolUnitsData();
-		%feature("autodoc", "1");
-		IGESDefs_ToolUnitsData();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDefs_UnitsData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDefs_UnitsData &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDefs_UnitsData &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDefs_UnitsData &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDefs_UnitsData &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDefs_UnitsData &entfrom, const Handle_IGESDefs_UnitsData &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDefs_UnitsData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-
 %nodefaultctor IGESDefs_ReadWriteModule;
 class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
 	public:
@@ -604,6 +580,30 @@ class IGESDefs_AttributeTable : public IGESData_IGESEntity {
 	Handle_IGESDefs_AttributeTable GetHandle() {
 	return *(Handle_IGESDefs_AttributeTable*) &$self;
 	}
+};
+
+%nodefaultctor IGESDefs_ToolUnitsData;
+class IGESDefs_ToolUnitsData {
+	public:
+		%feature("autodoc", "1");
+		~IGESDefs_ToolUnitsData();
+		%feature("autodoc", "1");
+		IGESDefs_ToolUnitsData();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDefs_UnitsData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDefs_UnitsData &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDefs_UnitsData &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDefs_UnitsData &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDefs_UnitsData &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDefs_UnitsData &entfrom, const Handle_IGESDefs_UnitsData &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDefs_UnitsData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
 };
 
 %nodefaultctor IGESDefs_ToolGenericData;

@@ -36,12 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_XSAlgo_AlgoContainer.hxx>
+#include<Handle_XSAlgo_ToolContainer.hxx>
+#include<XSAlgo.hxx>
 #include<XSAlgo_AlgoContainer.hxx>
 #include<XSAlgo_Caller.hxx>
 #include<XSAlgo_ToolContainer.hxx>
-#include<XSAlgo.hxx>
-#include<Handle_XSAlgo_AlgoContainer.hxx>
-#include<Handle_XSAlgo_ToolContainer.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -51,10 +51,9 @@
 #include<Standard_AncestorIterator.hxx>
 #include<Standard_Boolean.hxx>
 #include<Standard_Byte.hxx>
+#include<Standard_CString.hxx>
 #include<Standard_Character.hxx>
 #include<Standard_ConstructionError.hxx>
-#include<Standard_CString.hxx>
-#include<Standard_ctype.hxx>
 #include<Standard_DefineHandle.hxx>
 #include<Standard_DimensionError.hxx>
 #include<Standard_DimensionMismatch.hxx>
@@ -67,19 +66,18 @@
 #include<Standard_Failure.hxx>
 #include<Standard_GUID.hxx>
 #include<Standard_HandlerStatus.hxx>
+#include<Standard_IStream.hxx>
 #include<Standard_ImmutableObject.hxx>
 #include<Standard_Integer.hxx>
 #include<Standard_InternalType.hxx>
-#include<Standard_IStream.hxx>
 #include<Standard_JmpBuf.hxx>
 #include<Standard_KindOfType.hxx>
 #include<Standard_LicenseError.hxx>
 #include<Standard_LicenseNotFound.hxx>
-#include<Standard_Macro.hxx>
-#include<Standard_math.hxx>
 #include<Standard_MMgrOpt.hxx>
 #include<Standard_MMgrRaw.hxx>
 #include<Standard_MMgrRoot.hxx>
+#include<Standard_Macro.hxx>
 #include<Standard_MultiplyDefined.hxx>
 #include<Standard_Mutex.hxx>
 #include<Standard_NegativeValue.hxx>
@@ -96,16 +94,16 @@
 #include<Standard_Overflow.hxx>
 #include<Standard_PCharacter.hxx>
 #include<Standard_PErrorHandler.hxx>
+#include<Standard_PExtCharacter.hxx>
 #include<Standard_Persistent.hxx>
 #include<Standard_Persistent_proto.hxx>
-#include<Standard_PExtCharacter.hxx>
 #include<Standard_PrimitiveTypes.hxx>
 #include<Standard_ProgramError.hxx>
 #include<Standard_RangeError.hxx>
 #include<Standard_Real.hxx>
+#include<Standard_SStream.hxx>
 #include<Standard_ShortReal.hxx>
 #include<Standard_Size.hxx>
-#include<Standard_SStream.hxx>
 #include<Standard_Static.hxx>
 #include<Standard_Storable.hxx>
 #include<Standard_Stream.hxx>
@@ -116,10 +114,12 @@
 #include<Standard_Type.hxx>
 #include<Standard_TypeDef.hxx>
 #include<Standard_TypeMismatch.hxx>
-#include<Standard_Underflow.hxx>
 #include<Standard_UUID.hxx>
+#include<Standard_Underflow.hxx>
 #include<Standard_Version.hxx>
 #include<Standard_WayOfLife.hxx>
+#include<Standard_ctype.hxx>
+#include<Standard_math.hxx>
 
 // Needed headers necessary for compilation.
 

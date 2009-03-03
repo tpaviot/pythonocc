@@ -36,10 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<DNaming.hxx>
 #include<DNaming_DataMapIteratorOfDataMapOfShapeOfName.hxx>
 #include<DNaming_DataMapNodeOfDataMapOfShapeOfName.hxx>
 #include<DNaming_DataMapOfShapeOfName.hxx>
-#include<DNaming.hxx>
 #include<Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName.hxx>
 
 // Additional headers necessary for compilation.

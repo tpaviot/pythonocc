@@ -36,16 +36,16 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<StdFail_InfiniteSolutions.hxx>
-#include<StdFail_NotDone.hxx>
-#include<StdFail_Undefined.hxx>
-#include<StdFail_UndefinedDerivative.hxx>
-#include<StdFail_UndefinedValue.hxx>
 #include<Handle_StdFail_InfiniteSolutions.hxx>
 #include<Handle_StdFail_NotDone.hxx>
 #include<Handle_StdFail_Undefined.hxx>
 #include<Handle_StdFail_UndefinedDerivative.hxx>
 #include<Handle_StdFail_UndefinedValue.hxx>
+#include<StdFail_InfiniteSolutions.hxx>
+#include<StdFail_NotDone.hxx>
+#include<StdFail_Undefined.hxx>
+#include<StdFail_UndefinedDerivative.hxx>
+#include<StdFail_UndefinedValue.hxx>
 
 // Additional headers necessary for compilation.
 

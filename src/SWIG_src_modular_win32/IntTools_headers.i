@@ -36,6 +36,22 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox.hxx>
+#include<Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox.hxx>
+#include<Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress.hxx>
+#include<Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress.hxx>
+#include<Handle_IntTools_ListNodeOfListOfBox.hxx>
+#include<Handle_IntTools_ListNodeOfListOfCurveRangeSample.hxx>
+#include<Handle_IntTools_ListNodeOfListOfSurfaceRangeSample.hxx>
+#include<Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts.hxx>
+#include<Handle_IntTools_SequenceNodeOfSequenceOfCurves.hxx>
+#include<Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces.hxx>
+#include<Handle_IntTools_SequenceNodeOfSequenceOfRanges.hxx>
+#include<Handle_IntTools_SequenceNodeOfSequenceOfRoots.hxx>
+#include<Handle_IntTools_StdMapNodeOfMapOfCurveSample.hxx>
+#include<Handle_IntTools_StdMapNodeOfMapOfSurfaceSample.hxx>
+#include<Handle_IntTools_TopolTool.hxx>
+#include<IntTools.hxx>
 #include<IntTools_Array1OfRange.hxx>
 #include<IntTools_Array1OfRoots.hxx>
 #include<IntTools_BaseRangeSample.hxx>
@@ -59,8 +75,8 @@
 #include<IntTools_DataMapOfSurfaceSampleBox.hxx>
 #include<IntTools_EdgeEdge.hxx>
 #include<IntTools_EdgeFace.hxx>
-#include<IntTools_FaceFace.hxx>
 #include<IntTools_FClass2d.hxx>
+#include<IntTools_FaceFace.hxx>
 #include<IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress.hxx>
 #include<IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress.hxx>
 #include<IntTools_IndexedDataMapOfShapeAddress.hxx>
@@ -105,22 +121,6 @@
 #include<IntTools_SurfaceRangeSampleMapHasher.hxx>
 #include<IntTools_Tools.hxx>
 #include<IntTools_TopolTool.hxx>
-#include<IntTools.hxx>
-#include<Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox.hxx>
-#include<Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox.hxx>
-#include<Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress.hxx>
-#include<Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress.hxx>
-#include<Handle_IntTools_ListNodeOfListOfBox.hxx>
-#include<Handle_IntTools_ListNodeOfListOfCurveRangeSample.hxx>
-#include<Handle_IntTools_ListNodeOfListOfSurfaceRangeSample.hxx>
-#include<Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts.hxx>
-#include<Handle_IntTools_SequenceNodeOfSequenceOfCurves.hxx>
-#include<Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces.hxx>
-#include<Handle_IntTools_SequenceNodeOfSequenceOfRanges.hxx>
-#include<Handle_IntTools_SequenceNodeOfSequenceOfRoots.hxx>
-#include<Handle_IntTools_StdMapNodeOfMapOfCurveSample.hxx>
-#include<Handle_IntTools_StdMapNodeOfMapOfSurfaceSample.hxx>
-#include<Handle_IntTools_TopolTool.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -128,8 +128,8 @@
 #include<math_Array1OfValueAndWeight.hxx>
 #include<math_BFGS.hxx>
 #include<math_BissecNewton.hxx>
-#include<math_BracketedRoot.hxx>
 #include<math_BracketMinimum.hxx>
+#include<math_BracketedRoot.hxx>
 #include<math_BrentMinimum.hxx>
 #include<math_CompareOfValueAndWeight.hxx>
 #include<math_ComputeGaussPointsAndWeights.hxx>
@@ -172,11 +172,11 @@
 #include<math_QuickSortOfValueAndWeight.hxx>
 #include<math_RealRandom.hxx>
 #include<math_Recipes.hxx>
+#include<math_SVD.hxx>
 #include<math_SingleTabOfInteger.hxx>
 #include<math_SingleTabOfReal.hxx>
 #include<math_SingularMatrix.hxx>
 #include<math_Status.hxx>
-#include<math_SVD.hxx>
 #include<math_TrigonometricFunctionRoots.hxx>
 #include<math_Uzawa.hxx>
 #include<math_ValueAndWeight.hxx>
@@ -185,24 +185,24 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Geom_Curve.hxx>
-#include<Handle_Geom2d_Curve.hxx>
-#include<gp_Pnt.hxx>
 #include<TopoDS_Face.hxx>
 #include<gp_Pnt2d.hxx>
 #include<TopoDS_Edge.hxx>
-#include<TopoDS_Shape.hxx>
+#include<gp_Pnt.hxx>
 #include<Bnd_Box.hxx>
 #include<BRepAdaptor_Curve.hxx>
 #include<BRepAdaptor_Surface.hxx>
+#include<TopoDS_Shape.hxx>
 #include<Handle_Adaptor3d_TopolTool.hxx>
 #include<Handle_GeomAdaptor_HSurface.hxx>
 #include<Handle_IntPatch_Line.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
+#include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Solid.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Wire.hxx>
 #include<gp_Dir.hxx>
 #include<IntSurf_ListOfPntOn2S.hxx>
+#include<Handle_Geom2d_Curve.hxx>
 #include<IntTools.hxx>
 %}

@@ -233,27 +233,6 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 	}
 };
 
-%nodefaultctor Handle_Standard_MultiplyDefined;
-class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_MultiplyDefined();
-		%feature("autodoc", "1");
-		Handle_Standard_MultiplyDefined();
-		%feature("autodoc", "1");
-		Handle_Standard_MultiplyDefined(const Handle_Standard_MultiplyDefined &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_MultiplyDefined(const Standard_MultiplyDefined *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_MultiplyDefined const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_MultiplyDefined {
-	Standard_MultiplyDefined* GetObject() {
-	return (Standard_MultiplyDefined*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Standard_RangeError;
 class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 	public:
@@ -359,27 +338,6 @@ class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 	}
 };
 
-%nodefaultctor Handle_Standard_ProgramError;
-class Handle_Standard_ProgramError : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_ProgramError();
-		%feature("autodoc", "1");
-		Handle_Standard_ProgramError();
-		%feature("autodoc", "1");
-		Handle_Standard_ProgramError(const Handle_Standard_ProgramError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_ProgramError(const Standard_ProgramError *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_ProgramError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_ProgramError {
-	Standard_ProgramError* GetObject() {
-	return (Standard_ProgramError*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Standard_NullValue;
 class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 	public:
@@ -401,6 +359,48 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 	}
 };
 
+%nodefaultctor Handle_Standard_ProgramError;
+class Handle_Standard_ProgramError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Standard_ProgramError();
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError();
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError(const Handle_Standard_ProgramError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError(const Standard_ProgramError *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_ProgramError {
+	Standard_ProgramError* GetObject() {
+	return (Standard_ProgramError*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Standard_OutOfMemory;
+class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Standard_OutOfMemory();
+		%feature("autodoc", "1");
+		Handle_Standard_OutOfMemory();
+		%feature("autodoc", "1");
+		Handle_Standard_OutOfMemory(const Handle_Standard_OutOfMemory &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_OutOfMemory(const Standard_OutOfMemory *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_OutOfMemory const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_OutOfMemory {
+	Standard_OutOfMemory* GetObject() {
+	return (Standard_OutOfMemory*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_Standard_NumericError;
 class Handle_Standard_NumericError : public Handle_Standard_Failure {
 	public:
@@ -419,27 +419,6 @@ class Handle_Standard_NumericError : public Handle_Standard_Failure {
 %extend Handle_Standard_NumericError {
 	Standard_NumericError* GetObject() {
 	return (Standard_NumericError*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Standard_Overflow;
-class Handle_Standard_Overflow : public Handle_Standard_NumericError {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_Overflow();
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow();
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow(const Handle_Standard_Overflow &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow(const Standard_Overflow *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_Overflow {
-	Standard_Overflow* GetObject() {
-	return (Standard_Overflow*)$self->Access();
 	}
 };
 
@@ -506,27 +485,6 @@ class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
 	}
 };
 
-%nodefaultctor Handle_Standard_OutOfMemory;
-class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_OutOfMemory();
-		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory();
-		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory(const Handle_Standard_OutOfMemory &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory(const Standard_OutOfMemory *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_OutOfMemory {
-	Standard_OutOfMemory* GetObject() {
-	return (Standard_OutOfMemory*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Standard_NegativeValue;
 class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
 	public:
@@ -566,6 +524,27 @@ class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 %extend Handle_Standard_Underflow {
 	Standard_Underflow* GetObject() {
 	return (Standard_Underflow*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Standard_MultiplyDefined;
+class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Standard_MultiplyDefined();
+		%feature("autodoc", "1");
+		Handle_Standard_MultiplyDefined();
+		%feature("autodoc", "1");
+		Handle_Standard_MultiplyDefined(const Handle_Standard_MultiplyDefined &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_MultiplyDefined(const Standard_MultiplyDefined *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_MultiplyDefined const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_MultiplyDefined {
+	Standard_MultiplyDefined* GetObject() {
+	return (Standard_MultiplyDefined*)$self->Access();
 	}
 };
 
@@ -686,6 +665,27 @@ class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 	}
 };
 
+%nodefaultctor Handle_Standard_Overflow;
+class Handle_Standard_Overflow : public Handle_Standard_NumericError {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Standard_Overflow();
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow();
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow(const Handle_Standard_Overflow &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow(const Standard_Overflow *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_Overflow {
+	Standard_Overflow* GetObject() {
+	return (Standard_Overflow*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_Standard_DimensionMismatch;
 class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError {
 	public:
@@ -728,27 +728,6 @@ class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
 	}
 };
 
-%nodefaultctor Handle_Standard_ImmutableObject;
-class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_ImmutableObject();
-		%feature("autodoc", "1");
-		Handle_Standard_ImmutableObject();
-		%feature("autodoc", "1");
-		Handle_Standard_ImmutableObject(const Handle_Standard_ImmutableObject &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_ImmutableObject(const Standard_ImmutableObject *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_ImmutableObject const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_ImmutableObject {
-	Standard_ImmutableObject* GetObject() {
-	return (Standard_ImmutableObject*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Standard_NoSuchObject;
 class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 	public:
@@ -767,6 +746,27 @@ class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 %extend Handle_Standard_NoSuchObject {
 	Standard_NoSuchObject* GetObject() {
 	return (Standard_NoSuchObject*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Standard_ImmutableObject;
+class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Standard_ImmutableObject();
+		%feature("autodoc", "1");
+		Handle_Standard_ImmutableObject();
+		%feature("autodoc", "1");
+		Handle_Standard_ImmutableObject(const Handle_Standard_ImmutableObject &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_ImmutableObject(const Standard_ImmutableObject *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_ImmutableObject const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_ImmutableObject {
+	Standard_ImmutableObject* GetObject() {
+	return (Standard_ImmutableObject*)$self->Access();
 	}
 };
 
@@ -937,6 +937,31 @@ class Standard_DivideByZero : public Standard_NumericError {
 	}
 };
 
+%nodefaultctor Standard_ProgramError;
+class Standard_ProgramError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Standard_ProgramError();
+		%feature("autodoc", "1");
+		Standard_ProgramError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Standard_ProgramError();
+
+};
+%extend Standard_ProgramError {
+	Handle_Standard_ProgramError GetHandle() {
+	return *(Handle_Standard_ProgramError*) &$self;
+	}
+};
+
 %nodefaultctor Standard;
 class Standard {
 	public:
@@ -1028,31 +1053,6 @@ class Standard_RangeError : public Standard_DomainError {
 	}
 };
 
-%nodefaultctor Standard_ProgramError;
-class Standard_ProgramError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Standard_ProgramError();
-		%feature("autodoc", "1");
-		Standard_ProgramError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Standard_ProgramError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_ProgramError();
-
-};
-%extend Standard_ProgramError {
-	Handle_Standard_ProgramError GetHandle() {
-	return *(Handle_Standard_ProgramError*) &$self;
-	}
-};
-
 %nodefaultctor Standard_NotImplemented;
 class Standard_NotImplemented : public Standard_ProgramError {
 	public:
@@ -1061,7 +1061,13 @@ class Standard_NotImplemented : public Standard_ProgramError {
 		%feature("autodoc", "1");
 		Standard_NotImplemented(const char * AString);
 		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
 		Handle_Standard_NotImplemented NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~Standard_NotImplemented();
 
@@ -1331,6 +1337,50 @@ class Standard_TypeMismatch : public Standard_DomainError {
 	}
 };
 
+%nodefaultctor Standard_LicenseError;
+class Standard_LicenseError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Standard_LicenseError();
+		%feature("autodoc", "1");
+		Standard_LicenseError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Standard_LicenseError();
+
+};
+%extend Standard_LicenseError {
+	Handle_Standard_LicenseError GetHandle() {
+	return *(Handle_Standard_LicenseError*) &$self;
+	}
+};
+
+%nodefaultctor Standard_LicenseNotFound;
+class Standard_LicenseNotFound : public Standard_LicenseError {
+	public:
+		%feature("autodoc", "1");
+		Standard_LicenseNotFound();
+		%feature("autodoc", "1");
+		Standard_LicenseNotFound(const char * AString);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseNotFound NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		~Standard_LicenseNotFound();
+
+};
+%extend Standard_LicenseNotFound {
+	Handle_Standard_LicenseNotFound GetHandle() {
+	return *(Handle_Standard_LicenseNotFound*) &$self;
+	}
+};
+
 %nodefaultctor Standard_Storable;
 class Standard_Storable {
 	public:
@@ -1373,50 +1423,6 @@ class Standard_ImmutableObject : public Standard_DomainError {
 %extend Standard_ImmutableObject {
 	Handle_Standard_ImmutableObject GetHandle() {
 	return *(Handle_Standard_ImmutableObject*) &$self;
-	}
-};
-
-%nodefaultctor Standard_LicenseError;
-class Standard_LicenseError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Standard_LicenseError();
-		%feature("autodoc", "1");
-		Standard_LicenseError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Standard_LicenseError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_LicenseError();
-
-};
-%extend Standard_LicenseError {
-	Handle_Standard_LicenseError GetHandle() {
-	return *(Handle_Standard_LicenseError*) &$self;
-	}
-};
-
-%nodefaultctor Standard_LicenseNotFound;
-class Standard_LicenseNotFound : public Standard_LicenseError {
-	public:
-		%feature("autodoc", "1");
-		Standard_LicenseNotFound();
-		%feature("autodoc", "1");
-		Standard_LicenseNotFound(const char * AString);
-		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~Standard_LicenseNotFound();
-
-};
-%extend Standard_LicenseNotFound {
-	Handle_Standard_LicenseNotFound GetHandle() {
-	return *(Handle_Standard_LicenseNotFound*) &$self;
 	}
 };
 

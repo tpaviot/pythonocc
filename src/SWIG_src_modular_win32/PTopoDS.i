@@ -140,6 +140,27 @@ class Handle_PTopoDS_TShell : public Handle_PTopoDS_TShape {
 	}
 };
 
+%nodefaultctor Handle_PTopoDS_TCompound;
+class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PTopoDS_TCompound();
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound();
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound(const Handle_PTopoDS_TCompound &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound(const PTopoDS_TCompound *anItem);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PTopoDS_TCompound {
+	PTopoDS_TCompound* GetObject() {
+	return (PTopoDS_TCompound*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape;
 class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public Handle_PStandard_ArrayNode {
 	public:
@@ -725,27 +746,6 @@ class Handle_PTopoDS_TFace : public Handle_PTopoDS_TShape {
 %extend Handle_PTopoDS_TFace {
 	PTopoDS_TFace* GetObject() {
 	return (PTopoDS_TFace*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_PTopoDS_TCompound;
-class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
-	public:
-		%feature("autodoc", "1");
-		~Handle_PTopoDS_TCompound();
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound();
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound(const Handle_PTopoDS_TCompound &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound(const PTopoDS_TCompound *anItem);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PTopoDS_TCompound {
-	PTopoDS_TCompound* GetObject() {
-	return (PTopoDS_TCompound*)$self->Access();
 	}
 };
 

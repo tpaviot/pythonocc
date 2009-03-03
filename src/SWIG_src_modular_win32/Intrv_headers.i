@@ -36,12 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Intrv_SequenceNodeOfSequenceOfInterval.hxx>
 #include<Intrv_Interval.hxx>
 #include<Intrv_Intervals.hxx>
 #include<Intrv_Position.hxx>
 #include<Intrv_SequenceNodeOfSequenceOfInterval.hxx>
 #include<Intrv_SequenceOfInterval.hxx>
-#include<Handle_Intrv_SequenceNodeOfSequenceOfInterval.hxx>
 
 // Additional headers necessary for compilation.
 

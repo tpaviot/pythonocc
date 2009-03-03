@@ -119,27 +119,6 @@ class Handle_PColStd_HSingleListOfReal : public Handle_PMMgt_PManaged {
 	}
 };
 
-%nodefaultctor Handle_PColStd_HDoubleListOfInteger;
-class Handle_PColStd_HDoubleListOfInteger : public Handle_PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		~Handle_PColStd_HDoubleListOfInteger();
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfInteger();
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfInteger(const Handle_PColStd_HDoubleListOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfInteger(const PColStd_HDoubleListOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColStd_HDoubleListOfInteger {
-	PColStd_HDoubleListOfInteger* GetObject() {
-	return (PColStd_HDoubleListOfInteger*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_PColStd_HArray1OfExtendedString;
 class Handle_PColStd_HArray1OfExtendedString : public Handle_Standard_Persistent {
 	public:
@@ -158,6 +137,27 @@ class Handle_PColStd_HArray1OfExtendedString : public Handle_Standard_Persistent
 %extend Handle_PColStd_HArray1OfExtendedString {
 	PColStd_HArray1OfExtendedString* GetObject() {
 	return (PColStd_HArray1OfExtendedString*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_PColStd_HDoubleListOfInteger;
+class Handle_PColStd_HDoubleListOfInteger : public Handle_PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PColStd_HDoubleListOfInteger();
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfInteger();
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfInteger(const Handle_PColStd_HDoubleListOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfInteger(const PColStd_HDoubleListOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColStd_HDoubleListOfInteger {
+	PColStd_HDoubleListOfInteger* GetObject() {
+	return (PColStd_HDoubleListOfInteger*)$self->Access();
 	}
 };
 
@@ -728,6 +728,35 @@ class Handle_PColStd_SeqNodeOfHSequenceOfReal : public Handle_PMMgt_PManaged {
 	}
 };
 
+%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
+class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString();
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString(const Handle_PCollection_HExtendedString &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PCollection_HExtendedString &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray1OfExtendedStringmyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray1OfExtendedStringmyValue(const Handle_PCollection_HExtendedString &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString();
+
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
+	Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString GetHandle() {
+	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString*) &$self;
+	}
+};
+
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfReal;
 class PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
 	public:
@@ -829,35 +858,6 @@ class PColStd_HOfExtendedString {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HExtendedString &One, const Handle_PCollection_HExtendedString &Two) const;
 
-};
-
-%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
-class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString();
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString(const Handle_PCollection_HExtendedString &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PCollection_HExtendedString &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray1OfExtendedStringmyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray1OfExtendedStringmyValue(const Handle_PCollection_HExtendedString &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString();
-
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
-	Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString GetHandle() {
-	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString*) &$self;
-	}
 };
 
 %nodefaultctor PColStd_FieldOfHArray2OfInteger;
@@ -2284,55 +2284,6 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
 
 };
 
-%nodefaultctor PColStd_SeqNodeOfHSequenceOfPersistent;
-class PColStd_SeqNodeOfHSequenceOfPersistent : public PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		PColStd_SeqNodeOfHSequenceOfPersistent(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &TheLast, const Handle_Standard_Persistent &TheItem);
-		%feature("autodoc", "1");
-		PColStd_SeqNodeOfHSequenceOfPersistent(const Handle_Standard_Persistent &TheItem, const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &TheFirst);
-		%feature("autodoc", "1");
-		PColStd_SeqNodeOfHSequenceOfPersistent(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &ThePrevious, const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &TheNext, const Handle_Standard_Persistent &TheItem);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent Value() const;
-		%feature("autodoc", "1");
-		Handle_PColStd_SeqNodeOfHSequenceOfPersistent Next() const;
-		%feature("autodoc", "1");
-		Handle_PColStd_SeqNodeOfHSequenceOfPersistent Previous() const;
-		%feature("autodoc", "1");
-		void SetValue(const Handle_Standard_Persistent &AnItem);
-		%feature("autodoc", "1");
-		void SetNext(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &ANode);
-		%feature("autodoc", "1");
-		void SetPrevious(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &ANode);
-		%feature("autodoc", "1");
-		PColStd_SeqNodeOfHSequenceOfPersistent();
-		%feature("autodoc", "1");
-		PColStd_SeqNodeOfHSequenceOfPersistent(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PColStd_SeqNodeOfHSequenceOfPersistent _CSFDB_GetPColStd_SeqNodeOfHSequenceOfPersistentMyPrevious() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_SeqNodeOfHSequenceOfPersistentMyPrevious(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &p);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent _CSFDB_GetPColStd_SeqNodeOfHSequenceOfPersistentMyItem() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_SeqNodeOfHSequenceOfPersistentMyItem(const Handle_Standard_Persistent &p);
-		%feature("autodoc", "1");
-		Handle_PColStd_SeqNodeOfHSequenceOfPersistent _CSFDB_GetPColStd_SeqNodeOfHSequenceOfPersistentMyNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_SeqNodeOfHSequenceOfPersistentMyNext(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColStd_SeqNodeOfHSequenceOfPersistent();
-
-};
-%extend PColStd_SeqNodeOfHSequenceOfPersistent {
-	Handle_PColStd_SeqNodeOfHSequenceOfPersistent GetHandle() {
-	return *(Handle_PColStd_SeqNodeOfHSequenceOfPersistent*) &$self;
-	}
-};
-
 %nodefaultctor PColStd_HArray1OfPersistent;
 class PColStd_HArray1OfPersistent : public Standard_Persistent {
 	public:
@@ -2687,6 +2638,55 @@ class PColStd_HashExtendedString : public PColStd_HOfExtendedString {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HExtendedString &One, const Handle_PCollection_HExtendedString &Two) const;
 
+};
+
+%nodefaultctor PColStd_SeqNodeOfHSequenceOfPersistent;
+class PColStd_SeqNodeOfHSequenceOfPersistent : public PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		PColStd_SeqNodeOfHSequenceOfPersistent(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &TheLast, const Handle_Standard_Persistent &TheItem);
+		%feature("autodoc", "1");
+		PColStd_SeqNodeOfHSequenceOfPersistent(const Handle_Standard_Persistent &TheItem, const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &TheFirst);
+		%feature("autodoc", "1");
+		PColStd_SeqNodeOfHSequenceOfPersistent(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &ThePrevious, const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &TheNext, const Handle_Standard_Persistent &TheItem);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent Value() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_SeqNodeOfHSequenceOfPersistent Next() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_SeqNodeOfHSequenceOfPersistent Previous() const;
+		%feature("autodoc", "1");
+		void SetValue(const Handle_Standard_Persistent &AnItem);
+		%feature("autodoc", "1");
+		void SetNext(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &ANode);
+		%feature("autodoc", "1");
+		void SetPrevious(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &ANode);
+		%feature("autodoc", "1");
+		PColStd_SeqNodeOfHSequenceOfPersistent();
+		%feature("autodoc", "1");
+		PColStd_SeqNodeOfHSequenceOfPersistent(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PColStd_SeqNodeOfHSequenceOfPersistent _CSFDB_GetPColStd_SeqNodeOfHSequenceOfPersistentMyPrevious() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_SeqNodeOfHSequenceOfPersistentMyPrevious(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &p);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent _CSFDB_GetPColStd_SeqNodeOfHSequenceOfPersistentMyItem() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_SeqNodeOfHSequenceOfPersistentMyItem(const Handle_Standard_Persistent &p);
+		%feature("autodoc", "1");
+		Handle_PColStd_SeqNodeOfHSequenceOfPersistent _CSFDB_GetPColStd_SeqNodeOfHSequenceOfPersistentMyNext() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_SeqNodeOfHSequenceOfPersistentMyNext(const Handle_PColStd_SeqNodeOfHSequenceOfPersistent &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PColStd_SeqNodeOfHSequenceOfPersistent();
+
+};
+%extend PColStd_SeqNodeOfHSequenceOfPersistent {
+	Handle_PColStd_SeqNodeOfHSequenceOfPersistent GetHandle() {
+	return *(Handle_PColStd_SeqNodeOfHSequenceOfPersistent*) &$self;
+	}
 };
 
 %nodefaultctor PColStd_HArray1OfExtendedString;

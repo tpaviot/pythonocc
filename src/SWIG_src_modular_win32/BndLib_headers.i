@@ -36,10 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BndLib.hxx>
 #include<BndLib_Add2dCurve.hxx>
 #include<BndLib_Add3dCurve.hxx>
 #include<BndLib_AddSurface.hxx>
-#include<BndLib.hxx>
 
 // Additional headers necessary for compilation.
 

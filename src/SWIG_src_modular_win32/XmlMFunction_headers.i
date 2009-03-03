@@ -36,22 +36,22 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<XmlMFunction_FunctionDriver.hxx>
-#include<XmlMFunction_GraphNodeDriver.hxx>
-#include<XmlMFunction_ScopeDriver.hxx>
-#include<XmlMFunction.hxx>
 #include<Handle_XmlMFunction_FunctionDriver.hxx>
 #include<Handle_XmlMFunction_GraphNodeDriver.hxx>
 #include<Handle_XmlMFunction_ScopeDriver.hxx>
+#include<XmlMFunction.hxx>
+#include<XmlMFunction_FunctionDriver.hxx>
+#include<XmlMFunction_GraphNodeDriver.hxx>
+#include<XmlMFunction_ScopeDriver.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

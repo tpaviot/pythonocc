@@ -210,6 +210,90 @@ class Handle_StepGeom_SurfaceCurve : public Handle_StepGeom_Curve {
 	}
 };
 
+%nodefaultctor Handle_StepGeom_Surface;
+class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepGeom_Surface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface(const Handle_StepGeom_Surface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface(const StepGeom_Surface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_Surface {
+	StepGeom_Surface* GetObject() {
+	return (StepGeom_Surface*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepGeom_BoundedSurface;
+class Handle_StepGeom_BoundedSurface : public Handle_StepGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepGeom_BoundedSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_BoundedSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_BoundedSurface(const Handle_StepGeom_BoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BoundedSurface(const StepGeom_BoundedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_BoundedSurface {
+	StepGeom_BoundedSurface* GetObject() {
+	return (StepGeom_BoundedSurface*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepGeom_BSplineSurface;
+class Handle_StepGeom_BSplineSurface : public Handle_StepGeom_BoundedSurface {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepGeom_BSplineSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurface(const Handle_StepGeom_BSplineSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurface(const StepGeom_BSplineSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_BSplineSurface {
+	StepGeom_BSplineSurface* GetObject() {
+	return (StepGeom_BSplineSurface*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepGeom_BSplineSurfaceWithKnots;
+class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSurface {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepGeom_BSplineSurfaceWithKnots();
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurfaceWithKnots();
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurfaceWithKnots(const Handle_StepGeom_BSplineSurfaceWithKnots &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurfaceWithKnots(const StepGeom_BSplineSurfaceWithKnots *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurfaceWithKnots const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_BSplineSurfaceWithKnots {
+	StepGeom_BSplineSurfaceWithKnots* GetObject() {
+	return (StepGeom_BSplineSurfaceWithKnots*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepGeom_BoundedCurve;
 class Handle_StepGeom_BoundedCurve : public Handle_StepGeom_Curve {
 	public:
@@ -441,69 +525,6 @@ class Handle_StepGeom_HArray2OfCartesianPoint : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_StepGeom_Surface;
-class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Surface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface(const Handle_StepGeom_Surface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface(const StepGeom_Surface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_Surface {
-	StepGeom_Surface* GetObject() {
-	return (StepGeom_Surface*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepGeom_BoundedSurface;
-class Handle_StepGeom_BoundedSurface : public Handle_StepGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BoundedSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_BoundedSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_BoundedSurface(const Handle_StepGeom_BoundedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BoundedSurface(const StepGeom_BoundedSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_BoundedSurface {
-	StepGeom_BoundedSurface* GetObject() {
-	return (StepGeom_BoundedSurface*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepGeom_BSplineSurface;
-class Handle_StepGeom_BSplineSurface : public Handle_StepGeom_BoundedSurface {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BSplineSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurface(const Handle_StepGeom_BSplineSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurface(const StepGeom_BSplineSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_BSplineSurface {
-	StepGeom_BSplineSurface* GetObject() {
-	return (StepGeom_BSplineSurface*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepGeom_BezierSurface;
 class Handle_StepGeom_BezierSurface : public Handle_StepGeom_BSplineSurface {
 	public:
@@ -606,27 +627,6 @@ class Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationC
 %extend Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
 	StepGeom_GeometricRepresentationContextAndParametricRepresentationContext* GetObject() {
 	return (StepGeom_GeometricRepresentationContextAndParametricRepresentationContext*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepGeom_OffsetSurface;
-class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_OffsetSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetSurface(const Handle_StepGeom_OffsetSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetSurface(const StepGeom_OffsetSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_OffsetSurface {
-	StepGeom_OffsetSurface* GetObject() {
-	return (StepGeom_OffsetSurface*)$self->Access();
 	}
 };
 
@@ -945,27 +945,6 @@ class Handle_StepGeom_BSplineCurveWithKnots : public Handle_StepGeom_BSplineCurv
 	}
 };
 
-%nodefaultctor Handle_StepGeom_BSplineSurfaceWithKnots;
-class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSurface {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BSplineSurfaceWithKnots();
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurfaceWithKnots();
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurfaceWithKnots(const Handle_StepGeom_BSplineSurfaceWithKnots &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurfaceWithKnots(const StepGeom_BSplineSurfaceWithKnots *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurfaceWithKnots const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_BSplineSurfaceWithKnots {
-	StepGeom_BSplineSurfaceWithKnots* GetObject() {
-	return (StepGeom_BSplineSurfaceWithKnots*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
 class Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public Handle_StepRepr_RepresentationContext {
 	public:
@@ -1113,6 +1092,27 @@ class Handle_StepGeom_OrientedSurface : public Handle_StepGeom_Surface {
 	}
 };
 
+%nodefaultctor Handle_StepGeom_OffsetSurface;
+class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepGeom_OffsetSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetSurface(const Handle_StepGeom_OffsetSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetSurface(const StepGeom_OffsetSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_OffsetSurface {
+	StepGeom_OffsetSurface* GetObject() {
+	return (StepGeom_OffsetSurface*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepGeom_CurveBoundedSurface;
 class Handle_StepGeom_CurveBoundedSurface : public Handle_StepGeom_BoundedSurface {
 	public:
@@ -1194,6 +1194,27 @@ class Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public Handle_S
 %extend Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
 	StepGeom_QuasiUniformCurveAndRationalBSplineCurve* GetObject() {
 	return (StepGeom_QuasiUniformCurveAndRationalBSplineCurve*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepGeom_CurveReplica;
+class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepGeom_CurveReplica();
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica();
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica(const Handle_StepGeom_CurveReplica &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica(const StepGeom_CurveReplica *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_CurveReplica {
+	StepGeom_CurveReplica* GetObject() {
+	return (StepGeom_CurveReplica*)$self->Access();
 	}
 };
 
@@ -1362,27 +1383,6 @@ class Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface : public Handle_Ste
 %extend Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface {
 	StepGeom_BezierSurfaceAndRationalBSplineSurface* GetObject() {
 	return (StepGeom_BezierSurfaceAndRationalBSplineSurface*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepGeom_RationalBSplineCurve;
-class Handle_StepGeom_RationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_RationalBSplineCurve();
-		%feature("autodoc", "1");
-		Handle_StepGeom_RationalBSplineCurve();
-		%feature("autodoc", "1");
-		Handle_StepGeom_RationalBSplineCurve(const Handle_StepGeom_RationalBSplineCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_RationalBSplineCurve(const StepGeom_RationalBSplineCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_RationalBSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_RationalBSplineCurve {
-	StepGeom_RationalBSplineCurve* GetObject() {
-	return (StepGeom_RationalBSplineCurve*)$self->Access();
 	}
 };
 
@@ -1575,24 +1575,24 @@ class Handle_StepGeom_TrimmingMember : public Handle_StepData_SelectReal {
 	}
 };
 
-%nodefaultctor Handle_StepGeom_BezierCurve;
-class Handle_StepGeom_BezierCurve : public Handle_StepGeom_BSplineCurve {
+%nodefaultctor Handle_StepGeom_SurfaceOfRevolution;
+class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepGeom_BezierCurve();
+		~Handle_StepGeom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
-		Handle_StepGeom_BezierCurve();
+		Handle_StepGeom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
-		Handle_StepGeom_BezierCurve(const Handle_StepGeom_BezierCurve &aHandle);
+		Handle_StepGeom_SurfaceOfRevolution(const Handle_StepGeom_SurfaceOfRevolution &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepGeom_BezierCurve(const StepGeom_BezierCurve *anItem);
+		Handle_StepGeom_SurfaceOfRevolution(const StepGeom_SurfaceOfRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_StepGeom_BezierCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepGeom_SurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepGeom_BezierCurve {
-	StepGeom_BezierCurve* GetObject() {
-	return (StepGeom_BezierCurve*)$self->Access();
+%extend Handle_StepGeom_SurfaceOfRevolution {
+	StepGeom_SurfaceOfRevolution* GetObject() {
+	return (StepGeom_SurfaceOfRevolution*)$self->Access();
 	}
 };
 
@@ -1635,6 +1635,27 @@ class Handle_StepGeom_HArray1OfSurfaceBoundary : public Handle_MMgt_TShared {
 %extend Handle_StepGeom_HArray1OfSurfaceBoundary {
 	StepGeom_HArray1OfSurfaceBoundary* GetObject() {
 	return (StepGeom_HArray1OfSurfaceBoundary*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepGeom_RationalBSplineCurve;
+class Handle_StepGeom_RationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepGeom_RationalBSplineCurve();
+		%feature("autodoc", "1");
+		Handle_StepGeom_RationalBSplineCurve();
+		%feature("autodoc", "1");
+		Handle_StepGeom_RationalBSplineCurve(const Handle_StepGeom_RationalBSplineCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_RationalBSplineCurve(const StepGeom_RationalBSplineCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_RationalBSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_RationalBSplineCurve {
+	StepGeom_RationalBSplineCurve* GetObject() {
+	return (StepGeom_RationalBSplineCurve*)$self->Access();
 	}
 };
 
@@ -1848,24 +1869,24 @@ class Handle_StepGeom_RationalBSplineSurface : public Handle_StepGeom_BSplineSur
 	}
 };
 
-%nodefaultctor Handle_StepGeom_SurfaceOfRevolution;
-class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface {
+%nodefaultctor Handle_StepGeom_BezierCurve;
+class Handle_StepGeom_BezierCurve : public Handle_StepGeom_BSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepGeom_SurfaceOfRevolution();
+		~Handle_StepGeom_BezierCurve();
 		%feature("autodoc", "1");
-		Handle_StepGeom_SurfaceOfRevolution();
+		Handle_StepGeom_BezierCurve();
 		%feature("autodoc", "1");
-		Handle_StepGeom_SurfaceOfRevolution(const Handle_StepGeom_SurfaceOfRevolution &aHandle);
+		Handle_StepGeom_BezierCurve(const Handle_StepGeom_BezierCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepGeom_SurfaceOfRevolution(const StepGeom_SurfaceOfRevolution *anItem);
+		Handle_StepGeom_BezierCurve(const StepGeom_BezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_StepGeom_SurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepGeom_BezierCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepGeom_SurfaceOfRevolution {
-	StepGeom_SurfaceOfRevolution* GetObject() {
-	return (StepGeom_SurfaceOfRevolution*)$self->Access();
+%extend Handle_StepGeom_BezierCurve {
+	StepGeom_BezierCurve* GetObject() {
+	return (StepGeom_BezierCurve*)$self->Access();
 	}
 };
 
@@ -1992,27 +2013,6 @@ class Handle_StepGeom_Pcurve : public Handle_StepGeom_Curve {
 %extend Handle_StepGeom_Pcurve {
 	StepGeom_Pcurve* GetObject() {
 	return (StepGeom_Pcurve*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepGeom_CurveReplica;
-class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CurveReplica();
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica();
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica(const Handle_StepGeom_CurveReplica &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica(const StepGeom_CurveReplica *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_CurveReplica {
-	StepGeom_CurveReplica* GetObject() {
-	return (StepGeom_CurveReplica*)$self->Access();
 	}
 };
 
@@ -2190,6 +2190,48 @@ class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem 
 	}
 };
 
+%nodefaultctor StepGeom_Point;
+class StepGeom_Point : public StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_Point();
+		%feature("autodoc", "1");
+		virtual		~StepGeom_Point();
+
+};
+%extend StepGeom_Point {
+	Handle_StepGeom_Point GetHandle() {
+	return *(Handle_StepGeom_Point*) &$self;
+	}
+};
+
+%nodefaultctor StepGeom_PointOnCurve;
+class StepGeom_PointOnCurve : public StepGeom_Point {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_PointOnCurve();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Curve &aBasisCurve, const Standard_Real aPointParameter);
+		%feature("autodoc", "1");
+		void SetBasisCurve(const Handle_StepGeom_Curve &aBasisCurve);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Curve BasisCurve() const;
+		%feature("autodoc", "1");
+		void SetPointParameter(const Standard_Real aPointParameter);
+		%feature("autodoc", "1");
+		Standard_Real PointParameter() const;
+		%feature("autodoc", "1");
+		virtual		~StepGeom_PointOnCurve();
+
+};
+%extend StepGeom_PointOnCurve {
+	Handle_StepGeom_PointOnCurve GetHandle() {
+	return *(Handle_StepGeom_PointOnCurve*) &$self;
+	}
+};
+
 %nodefaultctor StepGeom_Placement;
 class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -2203,6 +2245,8 @@ class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 		void SetLocation(const Handle_StepGeom_CartesianPoint &aLocation);
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianPoint Location() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~StepGeom_Placement();
 
@@ -2251,23 +2295,6 @@ class StepGeom_OrientedSurface : public StepGeom_Surface {
 	}
 };
 
-%nodefaultctor StepGeom_Point;
-class StepGeom_Point : public StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_Point();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Point();
-
-};
-%extend StepGeom_Point {
-	Handle_StepGeom_Point GetHandle() {
-	return *(Handle_StepGeom_Point*) &$self;
-	}
-};
-
 %nodefaultctor StepGeom_CartesianPoint;
 class StepGeom_CartesianPoint : public StepGeom_Point {
 	public:
@@ -2289,6 +2316,8 @@ class StepGeom_CartesianPoint : public StepGeom_Point {
 		Standard_Real CoordinatesValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbCoordinates() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~StepGeom_CartesianPoint();
 
@@ -2384,41 +2413,44 @@ class StepGeom_UniformSurface : public StepGeom_BSplineSurface {
 	}
 };
 
-%nodefaultctor StepGeom_HArray1OfBoundaryCurve;
-class StepGeom_HArray1OfBoundaryCurve : public MMgt_TShared {
+%nodefaultctor StepGeom_Array2OfSurfacePatch;
+class StepGeom_Array2OfSurfacePatch {
 	public:
 		%feature("autodoc", "1");
-		StepGeom_HArray1OfBoundaryCurve(const Standard_Integer Low, const Standard_Integer Up);
+		StepGeom_Array2OfSurfacePatch(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		StepGeom_HArray1OfBoundaryCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepGeom_BoundaryCurve &V);
+		StepGeom_Array2OfSurfacePatch(const Handle_StepGeom_SurfacePatch &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		void Init(const Handle_StepGeom_BoundaryCurve &V);
+		void Init(const Handle_StepGeom_SurfacePatch &V);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void Destroy();
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		~StepGeom_Array2OfSurfacePatch();
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		const StepGeom_Array2OfSurfacePatch & Assign(const StepGeom_Array2OfSurfacePatch &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepGeom_BoundaryCurve &Value);
+		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
-		const Handle_StepGeom_BoundaryCurve & Value(const Standard_Integer Index) const;
+		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		Handle_StepGeom_BoundaryCurve & ChangeValue(const Standard_Integer Index);
+		Standard_Integer LowerCol() const;
 		%feature("autodoc", "1");
-		const StepGeom_Array1OfBoundaryCurve & Array1() const;
+		Standard_Integer LowerRow() const;
 		%feature("autodoc", "1");
-		StepGeom_Array1OfBoundaryCurve & ChangeArray1();
+		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray1OfBoundaryCurve();
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepGeom_SurfacePatch &Value);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_SurfacePatch & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfacePatch & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
-};
-%extend StepGeom_HArray1OfBoundaryCurve {
-	Handle_StepGeom_HArray1OfBoundaryCurve GetHandle() {
-	return *(Handle_StepGeom_HArray1OfBoundaryCurve*) &$self;
-	}
 };
 
 %nodefaultctor StepGeom_PointReplica;
@@ -2584,52 +2616,6 @@ class StepGeom_GeometricRepresentationContextAndParametricRepresentationContext 
 %extend StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
 	Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext GetHandle() {
 	return *(Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext*) &$self;
-	}
-};
-
-%nodefaultctor StepGeom_ElementarySurface;
-class StepGeom_ElementarySurface : public StepGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_ElementarySurface();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition);
-		%feature("autodoc", "1");
-		void SetPosition(const Handle_StepGeom_Axis2Placement3d &aPosition);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Axis2Placement3d Position() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_ElementarySurface();
-
-};
-%extend StepGeom_ElementarySurface {
-	Handle_StepGeom_ElementarySurface GetHandle() {
-	return *(Handle_StepGeom_ElementarySurface*) &$self;
-	}
-};
-
-%nodefaultctor StepGeom_CylindricalSurface;
-class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_CylindricalSurface();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition, const Standard_Real aRadius);
-		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real aRadius);
-		%feature("autodoc", "1");
-		Standard_Real Radius() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CylindricalSurface();
-
-};
-%extend StepGeom_CylindricalSurface {
-	Handle_StepGeom_CylindricalSurface GetHandle() {
-	return *(Handle_StepGeom_CylindricalSurface*) &$self;
 	}
 };
 
@@ -2949,21 +2935,42 @@ class StepGeom_PcurveOrSurface : public StepData_SelectType {
 
 };
 
+%nodefaultctor StepGeom_ElementarySurface;
+class StepGeom_ElementarySurface : public StepGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_ElementarySurface();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition);
+		%feature("autodoc", "1");
+		void SetPosition(const Handle_StepGeom_Axis2Placement3d &aPosition);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Axis2Placement3d Position() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepGeom_ElementarySurface();
+
+};
+%extend StepGeom_ElementarySurface {
+	Handle_StepGeom_ElementarySurface GetHandle() {
+	return *(Handle_StepGeom_ElementarySurface*) &$self;
+	}
+};
+
 %nodefaultctor StepGeom_SphericalSurface;
 class StepGeom_SphericalSurface : public StepGeom_ElementarySurface {
 	public:
 		%feature("autodoc", "1");
 		StepGeom_SphericalSurface();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition);
-		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition, const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~StepGeom_SphericalSurface();
 
@@ -3251,58 +3258,6 @@ class StepGeom_SurfaceOfLinearExtrusion : public StepGeom_SweptSurface {
 	}
 };
 
-%nodefaultctor StepGeom_SurfaceCurve;
-class StepGeom_SurfaceCurve : public StepGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_SurfaceCurve();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Curve &aCurve3d, const Handle_StepGeom_HArray1OfPcurveOrSurface &aAssociatedGeometry, const StepGeom_PreferredSurfaceCurveRepresentation aMasterRepresentation);
-		%feature("autodoc", "1");
-		void SetCurve3d(const Handle_StepGeom_Curve &aCurve3d);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Curve Curve3d() const;
-		%feature("autodoc", "1");
-		void SetAssociatedGeometry(const Handle_StepGeom_HArray1OfPcurveOrSurface &aAssociatedGeometry);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray1OfPcurveOrSurface AssociatedGeometry() const;
-		%feature("autodoc", "1");
-		StepGeom_PcurveOrSurface AssociatedGeometryValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbAssociatedGeometry() const;
-		%feature("autodoc", "1");
-		void SetMasterRepresentation(const StepGeom_PreferredSurfaceCurveRepresentation aMasterRepresentation);
-		%feature("autodoc", "1");
-		StepGeom_PreferredSurfaceCurveRepresentation MasterRepresentation() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SurfaceCurve();
-
-};
-%extend StepGeom_SurfaceCurve {
-	Handle_StepGeom_SurfaceCurve GetHandle() {
-	return *(Handle_StepGeom_SurfaceCurve*) &$self;
-	}
-};
-
-%nodefaultctor StepGeom_IntersectionCurve;
-class StepGeom_IntersectionCurve : public StepGeom_SurfaceCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_IntersectionCurve();
-		%feature("autodoc", "1");
-		virtual		~StepGeom_IntersectionCurve();
-
-};
-%extend StepGeom_IntersectionCurve {
-	Handle_StepGeom_IntersectionCurve GetHandle() {
-	return *(Handle_StepGeom_IntersectionCurve*) &$self;
-	}
-};
-
 %nodefaultctor StepGeom_CurveBoundedSurface;
 class StepGeom_CurveBoundedSurface : public StepGeom_BoundedSurface {
 	public:
@@ -3391,6 +3346,43 @@ class StepGeom_BSplineSurfaceWithKnots : public StepGeom_BSplineSurface {
 	}
 };
 
+%nodefaultctor StepGeom_SurfaceCurve;
+class StepGeom_SurfaceCurve : public StepGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_SurfaceCurve();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Curve &aCurve3d, const Handle_StepGeom_HArray1OfPcurveOrSurface &aAssociatedGeometry, const StepGeom_PreferredSurfaceCurveRepresentation aMasterRepresentation);
+		%feature("autodoc", "1");
+		void SetCurve3d(const Handle_StepGeom_Curve &aCurve3d);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Curve Curve3d() const;
+		%feature("autodoc", "1");
+		void SetAssociatedGeometry(const Handle_StepGeom_HArray1OfPcurveOrSurface &aAssociatedGeometry);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray1OfPcurveOrSurface AssociatedGeometry() const;
+		%feature("autodoc", "1");
+		StepGeom_PcurveOrSurface AssociatedGeometryValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbAssociatedGeometry() const;
+		%feature("autodoc", "1");
+		void SetMasterRepresentation(const StepGeom_PreferredSurfaceCurveRepresentation aMasterRepresentation);
+		%feature("autodoc", "1");
+		StepGeom_PreferredSurfaceCurveRepresentation MasterRepresentation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepGeom_SurfaceCurve();
+
+};
+%extend StepGeom_SurfaceCurve {
+	Handle_StepGeom_SurfaceCurve GetHandle() {
+	return *(Handle_StepGeom_SurfaceCurve*) &$self;
+	}
+};
+
 %nodefaultctor StepGeom_SurfaceCurveAndBoundedCurve;
 class StepGeom_SurfaceCurveAndBoundedCurve : public StepGeom_SurfaceCurve {
 	public:
@@ -3398,8 +3390,6 @@ class StepGeom_SurfaceCurveAndBoundedCurve : public StepGeom_SurfaceCurve {
 		StepGeom_SurfaceCurveAndBoundedCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BoundedCurve & BoundedCurve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~StepGeom_SurfaceCurveAndBoundedCurve();
 
@@ -3708,46 +3698,6 @@ class StepGeom_Array2OfCartesianPoint {
 
 };
 
-%nodefaultctor StepGeom_Array2OfSurfacePatch;
-class StepGeom_Array2OfSurfacePatch {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_Array2OfSurfacePatch(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		StepGeom_Array2OfSurfacePatch(const Handle_StepGeom_SurfacePatch &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepGeom_SurfacePatch &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~StepGeom_Array2OfSurfacePatch();
-		%feature("autodoc", "1");
-		const StepGeom_Array2OfSurfacePatch & Assign(const StepGeom_Array2OfSurfacePatch &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepGeom_SurfacePatch &Value);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_SurfacePatch & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfacePatch & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-
 %nodefaultctor StepGeom_SurfacePatch;
 class StepGeom_SurfacePatch : public MMgt_TShared {
 	public:
@@ -3920,45 +3870,6 @@ class StepGeom_SeamCurve : public StepGeom_SurfaceCurve {
 %extend StepGeom_SeamCurve {
 	Handle_StepGeom_SeamCurve GetHandle() {
 	return *(Handle_StepGeom_SeamCurve*) &$self;
-	}
-};
-
-%nodefaultctor StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
-class StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_QuasiUniformCurveAndRationalBSplineCurve();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_StepGeom_QuasiUniformCurve &aQuasiUniformCurve, const Handle_StepGeom_RationalBSplineCurve &aRationalBSplineCurve);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_TColStd_HArray1OfReal &aWeightsData);
-		%feature("autodoc", "1");
-		void SetQuasiUniformCurve(const Handle_StepGeom_QuasiUniformCurve &aQuasiUniformCurve);
-		%feature("autodoc", "1");
-		Handle_StepGeom_QuasiUniformCurve QuasiUniformCurve() const;
-		%feature("autodoc", "1");
-		void SetRationalBSplineCurve(const Handle_StepGeom_RationalBSplineCurve &aRationalBSplineCurve);
-		%feature("autodoc", "1");
-		Handle_StepGeom_RationalBSplineCurve RationalBSplineCurve() const;
-		%feature("autodoc", "1");
-		void SetWeightsData(const Handle_TColStd_HArray1OfReal &aWeightsData);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal WeightsData() const;
-		%feature("autodoc", "1");
-		Standard_Real WeightsDataValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbWeightsData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_QuasiUniformCurveAndRationalBSplineCurve();
-
-};
-%extend StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
-	Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve GetHandle() {
-	return *(Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve*) &$self;
 	}
 };
 
@@ -4291,6 +4202,45 @@ class StepGeom_TrimmingSelect : public StepData_SelectType {
 
 };
 
+%nodefaultctor StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
+class StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_QuasiUniformCurveAndRationalBSplineCurve();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_StepGeom_QuasiUniformCurve &aQuasiUniformCurve, const Handle_StepGeom_RationalBSplineCurve &aRationalBSplineCurve);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_TColStd_HArray1OfReal &aWeightsData);
+		%feature("autodoc", "1");
+		void SetQuasiUniformCurve(const Handle_StepGeom_QuasiUniformCurve &aQuasiUniformCurve);
+		%feature("autodoc", "1");
+		Handle_StepGeom_QuasiUniformCurve QuasiUniformCurve() const;
+		%feature("autodoc", "1");
+		void SetRationalBSplineCurve(const Handle_StepGeom_RationalBSplineCurve &aRationalBSplineCurve);
+		%feature("autodoc", "1");
+		Handle_StepGeom_RationalBSplineCurve RationalBSplineCurve() const;
+		%feature("autodoc", "1");
+		void SetWeightsData(const Handle_TColStd_HArray1OfReal &aWeightsData);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal WeightsData() const;
+		%feature("autodoc", "1");
+		Standard_Real WeightsDataValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbWeightsData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepGeom_QuasiUniformCurveAndRationalBSplineCurve();
+
+};
+%extend StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
+	Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve GetHandle() {
+	return *(Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve*) &$self;
+	}
+};
+
 %nodefaultctor StepGeom_QuasiUniformSurface;
 class StepGeom_QuasiUniformSurface : public StepGeom_BSplineSurface {
 	public:
@@ -4453,6 +4403,31 @@ class StepGeom_QuasiUniformCurve : public StepGeom_BSplineCurve {
 %extend StepGeom_QuasiUniformCurve {
 	Handle_StepGeom_QuasiUniformCurve GetHandle() {
 	return *(Handle_StepGeom_QuasiUniformCurve*) &$self;
+	}
+};
+
+%nodefaultctor StepGeom_CylindricalSurface;
+class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_CylindricalSurface();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition, const Standard_Real aRadius);
+		%feature("autodoc", "1");
+		void SetRadius(const Standard_Real aRadius);
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepGeom_CylindricalSurface();
+
+};
+%extend StepGeom_CylindricalSurface {
+	Handle_StepGeom_CylindricalSurface GetHandle() {
+	return *(Handle_StepGeom_CylindricalSurface*) &$self;
 	}
 };
 
@@ -4877,6 +4852,43 @@ class StepGeom_Hyperbola : public StepGeom_Conic {
 	}
 };
 
+%nodefaultctor StepGeom_HArray1OfBoundaryCurve;
+class StepGeom_HArray1OfBoundaryCurve : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_HArray1OfBoundaryCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepGeom_HArray1OfBoundaryCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepGeom_BoundaryCurve &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepGeom_BoundaryCurve &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepGeom_BoundaryCurve &Value);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_BoundaryCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_BoundaryCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepGeom_Array1OfBoundaryCurve & Array1() const;
+		%feature("autodoc", "1");
+		StepGeom_Array1OfBoundaryCurve & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepGeom_HArray1OfBoundaryCurve();
+
+};
+%extend StepGeom_HArray1OfBoundaryCurve {
+	Handle_StepGeom_HArray1OfBoundaryCurve GetHandle() {
+	return *(Handle_StepGeom_HArray1OfBoundaryCurve*) &$self;
+	}
+};
+
 %nodefaultctor StepGeom_Polyline;
 class StepGeom_Polyline : public StepGeom_BoundedCurve {
 	public:
@@ -4903,35 +4915,6 @@ class StepGeom_Polyline : public StepGeom_BoundedCurve {
 %extend StepGeom_Polyline {
 	Handle_StepGeom_Polyline GetHandle() {
 	return *(Handle_StepGeom_Polyline*) &$self;
-	}
-};
-
-%nodefaultctor StepGeom_PointOnCurve;
-class StepGeom_PointOnCurve : public StepGeom_Point {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_PointOnCurve();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Curve &aBasisCurve, const Standard_Real aPointParameter);
-		%feature("autodoc", "1");
-		void SetBasisCurve(const Handle_StepGeom_Curve &aBasisCurve);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Curve BasisCurve() const;
-		%feature("autodoc", "1");
-		void SetPointParameter(const Standard_Real aPointParameter);
-		%feature("autodoc", "1");
-		Standard_Real PointParameter() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_PointOnCurve();
-
-};
-%extend StepGeom_PointOnCurve {
-	Handle_StepGeom_PointOnCurve GetHandle() {
-	return *(Handle_StepGeom_PointOnCurve*) &$self;
 	}
 };
 
@@ -4978,6 +4961,23 @@ class StepGeom_Line : public StepGeom_Curve {
 %extend StepGeom_Line {
 	Handle_StepGeom_Line GetHandle() {
 	return *(Handle_StepGeom_Line*) &$self;
+	}
+};
+
+%nodefaultctor StepGeom_IntersectionCurve;
+class StepGeom_IntersectionCurve : public StepGeom_SurfaceCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_IntersectionCurve();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepGeom_IntersectionCurve();
+
+};
+%extend StepGeom_IntersectionCurve {
+	Handle_StepGeom_IntersectionCurve GetHandle() {
+	return *(Handle_StepGeom_IntersectionCurve*) &$self;
 	}
 };
 

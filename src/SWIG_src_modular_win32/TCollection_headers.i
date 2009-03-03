@@ -36,11 +36,17 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TCollection_AVLBaseNode.hxx>
+#include<Handle_TCollection_HAsciiString.hxx>
+#include<Handle_TCollection_HExtendedString.hxx>
+#include<Handle_TCollection_MapNode.hxx>
+#include<Handle_TCollection_SeqNode.hxx>
+#include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>
@@ -56,21 +62,15 @@
 #include<TCollection_SeqNode.hxx>
 #include<TCollection_SeqNodePtr.hxx>
 #include<TCollection_Side.hxx>
-#include<TCollection.hxx>
-#include<Handle_TCollection_AVLBaseNode.hxx>
-#include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_TCollection_HExtendedString.hxx>
-#include<Handle_TCollection_MapNode.hxx>
-#include<Handle_TCollection_SeqNode.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

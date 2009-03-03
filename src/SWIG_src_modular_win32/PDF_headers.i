@@ -36,6 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_PDF_Attribute.hxx>
+#include<Handle_PDF_Data.hxx>
+#include<Handle_PDF_HAttributeArray1.hxx>
+#include<Handle_PDF_Reference.hxx>
+#include<Handle_PDF_TagSource.hxx>
+#include<Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1.hxx>
 #include<PDF_Attribute.hxx>
 #include<PDF_Data.hxx>
 #include<PDF_FieldOfHAttributeArray1.hxx>
@@ -44,12 +50,6 @@
 #include<PDF_TagSource.hxx>
 #include<PDF_VArrayNodeOfFieldOfHAttributeArray1.hxx>
 #include<PDF_VArrayTNodeOfFieldOfHAttributeArray1.hxx>
-#include<Handle_PDF_Attribute.hxx>
-#include<Handle_PDF_Data.hxx>
-#include<Handle_PDF_HAttributeArray1.hxx>
-#include<Handle_PDF_Reference.hxx>
-#include<Handle_PDF_TagSource.hxx>
-#include<Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -148,6 +148,27 @@ class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_TFunction_Scope;
+class Handle_TFunction_Scope : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TFunction_Scope();
+		%feature("autodoc", "1");
+		Handle_TFunction_Scope();
+		%feature("autodoc", "1");
+		Handle_TFunction_Scope(const Handle_TFunction_Scope &aHandle);
+		%feature("autodoc", "1");
+		Handle_TFunction_Scope(const TFunction_Scope *anItem);
+		%feature("autodoc", "1");
+		Handle_TFunction_Scope const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TFunction_Scope {
+	TFunction_Scope* GetObject() {
+	return (TFunction_Scope*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
 class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TCollection_MapNode {
 	public:
@@ -211,48 +232,6 @@ class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TC
 	}
 };
 
-%nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver;
-class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver();
-		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver();
-		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver(const Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver(const TFunction_DataMapNodeOfDataMapOfGUIDDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver {
-	TFunction_DataMapNodeOfDataMapOfGUIDDriver* GetObject() {
-	return (TFunction_DataMapNodeOfDataMapOfGUIDDriver*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TFunction_Scope;
-class Handle_TFunction_Scope : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_Scope();
-		%feature("autodoc", "1");
-		Handle_TFunction_Scope();
-		%feature("autodoc", "1");
-		Handle_TFunction_Scope(const Handle_TFunction_Scope &aHandle);
-		%feature("autodoc", "1");
-		Handle_TFunction_Scope(const TFunction_Scope *anItem);
-		%feature("autodoc", "1");
-		Handle_TFunction_Scope const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TFunction_Scope {
-	TFunction_Scope* GetObject() {
-	return (TFunction_Scope*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_TFunction_HArray1OfDataMapOfGUIDDriver;
 class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared {
 	public:
@@ -271,6 +250,27 @@ class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared
 %extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
 	TFunction_HArray1OfDataMapOfGUIDDriver* GetObject() {
 	return (TFunction_HArray1OfDataMapOfGUIDDriver*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver;
+class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver();
+		%feature("autodoc", "1");
+		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver();
+		%feature("autodoc", "1");
+		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver(const Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver(const TFunction_DataMapNodeOfDataMapOfGUIDDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver {
+	TFunction_DataMapNodeOfDataMapOfGUIDDriver* GetObject() {
+	return (TFunction_DataMapNodeOfDataMapOfGUIDDriver*)$self->Access();
 	}
 };
 
@@ -597,29 +597,6 @@ class TFunction_Function : public TDF_Attribute {
 	}
 };
 
-%nodefaultctor TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
-class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Standard_Integer &K1, const TDF_Label &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		TDF_Label & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
-
-};
-%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel GetHandle() {
-	return *(Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*) &$self;
-	}
-};
-
 %nodefaultctor TFunction_Iterator;
 class TFunction_Iterator {
 	public:
@@ -767,6 +744,29 @@ class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 %extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
 	Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver GetHandle() {
 	return *(Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver*) &$self;
+	}
+};
+
+%nodefaultctor TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
+class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Standard_Integer &K1, const TDF_Label &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		Standard_Integer & Key1() const;
+		%feature("autodoc", "1");
+		TDF_Label & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
+
+};
+%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel GetHandle() {
+	return *(Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*) &$self;
 	}
 };
 

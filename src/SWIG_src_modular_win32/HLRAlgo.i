@@ -583,6 +583,32 @@ class HLRAlgo_Projector {
 
 };
 
+%nodefaultctor HLRAlgo_EdgeIterator;
+class HLRAlgo_EdgeIterator {
+	public:
+		%feature("autodoc", "1");
+		~HLRAlgo_EdgeIterator();
+		%feature("autodoc", "1");
+		HLRAlgo_EdgeIterator();
+		%feature("autodoc", "1");
+		void InitHidden(const HLRAlgo_EdgeStatus &status);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreHidden() const;
+		%feature("autodoc", "1");
+		void NextHidden();
+		%feature("autodoc", "1");
+		void Hidden(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
+		%feature("autodoc", "1");
+		void InitVisible(const HLRAlgo_EdgeStatus &status);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreVisible() const;
+		%feature("autodoc", "1");
+		void NextVisible();
+		%feature("autodoc", "1");
+		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
+
+};
+
 %nodefaultctor HLRAlgo_BiPoint;
 class HLRAlgo_BiPoint {
 	public:
@@ -641,25 +667,6 @@ class HLRAlgo_PolyInternalSegment {
 
 };
 
-%nodefaultctor HLRAlgo_ListNodeOfListOfBPoint;
-class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_ListNodeOfListOfBPoint(const HLRAlgo_BiPoint &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		HLRAlgo_BiPoint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_ListNodeOfListOfBPoint();
-
-};
-%extend HLRAlgo_ListNodeOfListOfBPoint {
-	Handle_HLRAlgo_ListNodeOfListOfBPoint GetHandle() {
-	return *(Handle_HLRAlgo_ListNodeOfListOfBPoint*) &$self;
-	}
-};
-
 %nodefaultctor HLRAlgo_EdgesBlock;
 class HLRAlgo_EdgesBlock : public MMgt_TShared {
 	public:
@@ -704,6 +711,25 @@ class HLRAlgo_EdgesBlock : public MMgt_TShared {
 %extend HLRAlgo_EdgesBlock {
 	Handle_HLRAlgo_EdgesBlock GetHandle() {
 	return *(Handle_HLRAlgo_EdgesBlock*) &$self;
+	}
+};
+
+%nodefaultctor HLRAlgo_ListNodeOfListOfBPoint;
+class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_ListNodeOfListOfBPoint(const HLRAlgo_BiPoint &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		HLRAlgo_BiPoint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~HLRAlgo_ListNodeOfListOfBPoint();
+
+};
+%extend HLRAlgo_ListNodeOfListOfBPoint {
+	Handle_HLRAlgo_ListNodeOfListOfBPoint GetHandle() {
+	return *(Handle_HLRAlgo_ListNodeOfListOfBPoint*) &$self;
 	}
 };
 
@@ -1284,32 +1310,6 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 	Handle_HLRAlgo_HArray1OfTData GetHandle() {
 	return *(Handle_HLRAlgo_HArray1OfTData*) &$self;
 	}
-};
-
-%nodefaultctor HLRAlgo_EdgeIterator;
-class HLRAlgo_EdgeIterator {
-	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_EdgeIterator();
-		%feature("autodoc", "1");
-		HLRAlgo_EdgeIterator();
-		%feature("autodoc", "1");
-		void InitHidden(const HLRAlgo_EdgeStatus &status);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreHidden() const;
-		%feature("autodoc", "1");
-		void NextHidden();
-		%feature("autodoc", "1");
-		void Hidden(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
-		%feature("autodoc", "1");
-		void InitVisible(const HLRAlgo_EdgeStatus &status);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreVisible() const;
-		%feature("autodoc", "1");
-		void NextVisible();
-		%feature("autodoc", "1");
-		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
-
 };
 
 %nodefaultctor HLRAlgo_EdgeStatus;

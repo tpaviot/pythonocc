@@ -33,30 +33,6 @@
 ##knowledge of the CeCILL license and that you accept its terms.
 */
 %{
-#include <PrsMgr_KindOfPrs.hxx>
-#include <PrsMgr_ModedPresentation.hxx>
-#include <PrsMgr_PresentableObject.hxx>
-#include <PrsMgr_PresentableObjectPointer.hxx>
-#include <PrsMgr_Presentation.hxx>
-#include <PrsMgr_Presentation2d.hxx>
-#include <PrsMgr_Presentation3d.hxx>
-#include <PrsMgr_Presentation3dPointer.hxx>
-#include <PrsMgr_PresentationManager.hxx>
-#include <PrsMgr_PresentationManager2d.hxx>
-#include <PrsMgr_PresentationManager3d.hxx>
-#include <PrsMgr_Presentations.hxx>
-#include <PrsMgr_Prs.hxx>
-#include <PrsMgr_SequenceNodeOfPresentations.hxx>
-#include <PrsMgr_TypeOfPresentation3d.hxx>
-#include <Handle_PrsMgr_PresentableObject.hxx>
-#include <Handle_PrsMgr_Presentation.hxx>
-#include <Handle_PrsMgr_Presentation2d.hxx>
-#include <Handle_PrsMgr_Presentation3d.hxx>
-#include <Handle_PrsMgr_PresentationManager.hxx>
-#include <Handle_PrsMgr_PresentationManager2d.hxx>
-#include <Handle_PrsMgr_PresentationManager3d.hxx>
-#include <Handle_PrsMgr_Prs.hxx>
-#include <Handle_PrsMgr_SequenceNodeOfPresentations.hxx>
 #include <Select2D_Projector.hxx>
 #include <Select2D_SensitiveArc.hxx>
 #include <Select2D_SensitiveBox.hxx>
@@ -135,6 +111,30 @@
 #include <Handle_TCollection_HExtendedString.hxx>
 #include <Handle_TCollection_MapNode.hxx>
 #include <Handle_TCollection_SeqNode.hxx>
+#include <PrsMgr_KindOfPrs.hxx>
+#include <PrsMgr_ModedPresentation.hxx>
+#include <PrsMgr_PresentableObject.hxx>
+#include <PrsMgr_PresentableObjectPointer.hxx>
+#include <PrsMgr_Presentation.hxx>
+#include <PrsMgr_Presentation2d.hxx>
+#include <PrsMgr_Presentation3d.hxx>
+#include <PrsMgr_Presentation3dPointer.hxx>
+#include <PrsMgr_PresentationManager.hxx>
+#include <PrsMgr_PresentationManager2d.hxx>
+#include <PrsMgr_PresentationManager3d.hxx>
+#include <PrsMgr_Presentations.hxx>
+#include <PrsMgr_Prs.hxx>
+#include <PrsMgr_SequenceNodeOfPresentations.hxx>
+#include <PrsMgr_TypeOfPresentation3d.hxx>
+#include <Handle_PrsMgr_PresentableObject.hxx>
+#include <Handle_PrsMgr_Presentation.hxx>
+#include <Handle_PrsMgr_Presentation2d.hxx>
+#include <Handle_PrsMgr_Presentation3d.hxx>
+#include <Handle_PrsMgr_PresentationManager.hxx>
+#include <Handle_PrsMgr_PresentationManager2d.hxx>
+#include <Handle_PrsMgr_PresentationManager3d.hxx>
+#include <Handle_PrsMgr_Prs.hxx>
+#include <Handle_PrsMgr_SequenceNodeOfPresentations.hxx>
 #include <Prs3d_AngleAspect.hxx>
 #include <Prs3d_AnglePresentation.hxx>
 #include <Prs3d_Arrow.hxx>
@@ -386,10 +386,10 @@
 #include <Handle_Quantity_PeriodDefinitionError.hxx>
 %};
 
-%import PrsMgr.i
 %import Select2D.i
 %import SelectMgr.i
 %import TCollection.i
+%import PrsMgr.i
 %import Prs3d.i
 %import Standard.i
 %import TopAbs.i

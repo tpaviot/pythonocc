@@ -36,6 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Plate_HArray1OfPinpointConstraint.hxx>
+#include<Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint.hxx>
+#include<Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint.hxx>
+#include<Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint.hxx>
 #include<Plate_Array1OfPinpointConstraint.hxx>
 #include<Plate_D1.hxx>
 #include<Plate_D2.hxx>
@@ -44,9 +48,9 @@
 #include<Plate_GlobalTranslationConstraint.hxx>
 #include<Plate_GtoCConstraint.hxx>
 #include<Plate_HArray1OfPinpointConstraint.hxx>
+#include<Plate_LineConstraint.hxx>
 #include<Plate_LinearScalarConstraint.hxx>
 #include<Plate_LinearXYZConstraint.hxx>
-#include<Plate_LineConstraint.hxx>
 #include<Plate_PinpointConstraint.hxx>
 #include<Plate_PlaneConstraint.hxx>
 #include<Plate_Plate.hxx>
@@ -57,10 +61,6 @@
 #include<Plate_SequenceOfLinearScalarConstraint.hxx>
 #include<Plate_SequenceOfLinearXYZConstraint.hxx>
 #include<Plate_SequenceOfPinpointConstraint.hxx>
-#include<Handle_Plate_HArray1OfPinpointConstraint.hxx>
-#include<Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint.hxx>
-#include<Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint.hxx>
-#include<Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -72,9 +72,9 @@
 #include<Plate_GlobalTranslationConstraint.hxx>
 #include<Plate_GtoCConstraint.hxx>
 #include<Plate_HArray1OfPinpointConstraint.hxx>
+#include<Plate_LineConstraint.hxx>
 #include<Plate_LinearScalarConstraint.hxx>
 #include<Plate_LinearXYZConstraint.hxx>
-#include<Plate_LineConstraint.hxx>
 #include<Plate_PinpointConstraint.hxx>
 #include<Plate_PlaneConstraint.hxx>
 #include<Plate_Plate.hxx>

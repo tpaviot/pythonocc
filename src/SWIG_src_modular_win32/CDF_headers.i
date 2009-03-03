@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<CDF.hxx>
 #include<CDF_Application.hxx>
 #include<CDF_Directory.hxx>
 #include<CDF_DirectoryIterator.hxx>
@@ -52,7 +53,6 @@
 #include<CDF_Timer.hxx>
 #include<CDF_TryStoreStatus.hxx>
 #include<CDF_TypeOfActivation.hxx>
-#include<CDF.hxx>
 #include<Handle_CDF_Application.hxx>
 #include<Handle_CDF_Directory.hxx>
 #include<Handle_CDF_MetaDataDriver.hxx>
@@ -64,11 +64,11 @@
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

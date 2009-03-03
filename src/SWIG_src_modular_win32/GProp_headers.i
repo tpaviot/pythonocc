@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<GProp.hxx>
 #include<GProp_CelGProps.hxx>
 #include<GProp_EquaType.hxx>
 #include<GProp_GProps.hxx>
@@ -46,7 +47,6 @@
 #include<GProp_UndefinedAxis.hxx>
 #include<GProp_ValueType.hxx>
 #include<GProp_VelGProps.hxx>
-#include<GProp.hxx>
 #include<Handle_GProp_UndefinedAxis.hxx>
 
 // Additional headers necessary for compilation.

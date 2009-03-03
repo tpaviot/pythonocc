@@ -250,6 +250,37 @@ class Poly_Connect {
 
 };
 
+%nodefaultctor Poly_PolygonOnTriangulation;
+class Poly_PolygonOnTriangulation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger &Nodes);
+		%feature("autodoc", "1");
+		Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger &Nodes, const TColStd_Array1OfReal &Parameters);
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		void Deflection(const Standard_Real D);
+		%feature("autodoc", "1");
+		Standard_Integer NbNodes() const;
+		%feature("autodoc", "1");
+		const TColStd_Array1OfInteger & Nodes() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasParameters() const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal Parameters() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Poly_PolygonOnTriangulation();
+
+};
+%extend Poly_PolygonOnTriangulation {
+	Handle_Poly_PolygonOnTriangulation GetHandle() {
+	return *(Handle_Poly_PolygonOnTriangulation*) &$self;
+	}
+};
+
 %nodefaultctor Poly_Array1OfTriangle;
 class Poly_Array1OfTriangle {
 	public:
@@ -336,37 +367,6 @@ class Poly_Triangulation : public MMgt_TShared {
 %extend Poly_Triangulation {
 	Handle_Poly_Triangulation GetHandle() {
 	return *(Handle_Poly_Triangulation*) &$self;
-	}
-};
-
-%nodefaultctor Poly_PolygonOnTriangulation;
-class Poly_PolygonOnTriangulation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger &Nodes);
-		%feature("autodoc", "1");
-		Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger &Nodes, const TColStd_Array1OfReal &Parameters);
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		void Deflection(const Standard_Real D);
-		%feature("autodoc", "1");
-		Standard_Integer NbNodes() const;
-		%feature("autodoc", "1");
-		const TColStd_Array1OfInteger & Nodes() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasParameters() const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal Parameters() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_PolygonOnTriangulation();
-
-};
-%extend Poly_PolygonOnTriangulation {
-	Handle_Poly_PolygonOnTriangulation GetHandle() {
-	return *(Handle_Poly_PolygonOnTriangulation*) &$self;
 	}
 };
 

@@ -36,8 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<UnitsAPI_SystemUnits.hxx>
 #include<UnitsAPI.hxx>
+#include<UnitsAPI_SystemUnits.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -39,18 +39,18 @@
 #include<GccInt_BCirc.hxx>
 #include<GccInt_BElips.hxx>
 #include<GccInt_BHyper.hxx>
-#include<GccInt_Bisec.hxx>
 #include<GccInt_BLine.hxx>
 #include<GccInt_BParab.hxx>
 #include<GccInt_BPoint.hxx>
+#include<GccInt_Bisec.hxx>
 #include<GccInt_IType.hxx>
 #include<Handle_GccInt_BCirc.hxx>
 #include<Handle_GccInt_BElips.hxx>
 #include<Handle_GccInt_BHyper.hxx>
-#include<Handle_GccInt_Bisec.hxx>
 #include<Handle_GccInt_BLine.hxx>
 #include<Handle_GccInt_BParab.hxx>
 #include<Handle_GccInt_BPoint.hxx>
+#include<Handle_GccInt_Bisec.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -140,9 +140,9 @@
 #include<Quantity_Mass.hxx>
 #include<Quantity_MassFlow.hxx>
 #include<Quantity_MolarConcentration.hxx>
-#include<Quantity_Molarity.hxx>
 #include<Quantity_MolarMass.hxx>
 #include<Quantity_MolarVolume.hxx>
+#include<Quantity_Molarity.hxx>
 #include<Quantity_MomentOfAForce.hxx>
 #include<Quantity_MomentOfInertia.hxx>
 #include<Quantity_Momentum.hxx>

@@ -287,6 +287,27 @@ class Handle_IGESGeom_HArray1OfCurveOnSurface : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_IGESGeom_Flash;
+class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESGeom_Flash();
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash();
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash(const Handle_IGESGeom_Flash &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash(const IGESGeom_Flash *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGeom_Flash {
+	IGESGeom_Flash* GetObject() {
+	return (IGESGeom_Flash*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_IGESGeom_Line;
 class Handle_IGESGeom_Line : public Handle_IGESData_IGESEntity {
 	public:
@@ -368,27 +389,6 @@ class Handle_IGESGeom_Plane : public Handle_IGESData_IGESEntity {
 %extend Handle_IGESGeom_Plane {
 	IGESGeom_Plane* GetObject() {
 	return (IGESGeom_Plane*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IGESGeom_Flash;
-class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_Flash();
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Flash();
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Flash(const Handle_IGESGeom_Flash &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Flash(const IGESGeom_Flash *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Flash const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGeom_Flash {
-	IGESGeom_Flash* GetObject() {
-	return (IGESGeom_Flash*)$self->Access();
 	}
 };
 
@@ -623,6 +623,27 @@ class Handle_IGESGeom_Point : public Handle_IGESData_IGESEntity {
 	}
 };
 
+%nodefaultctor Handle_IGESGeom_SplineSurface;
+class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESGeom_SplineSurface();
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SplineSurface();
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SplineSurface(const Handle_IGESGeom_SplineSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SplineSurface(const IGESGeom_SplineSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGeom_SplineSurface {
+	IGESGeom_SplineSurface* GetObject() {
+	return (IGESGeom_SplineSurface*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_IGESGeom_CopiousData;
 class Handle_IGESGeom_CopiousData : public Handle_IGESData_IGESEntity {
 	public:
@@ -707,24 +728,26 @@ class Handle_IGESGeom_GeneralModule : public Handle_IGESData_GeneralModule {
 	}
 };
 
-%nodefaultctor Handle_IGESGeom_SplineSurface;
-class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
+%nodefaultctor IGESGeom_ReadWriteModule;
+class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESGeom_SplineSurface();
+		IGESGeom_ReadWriteModule();
 		%feature("autodoc", "1");
-		Handle_IGESGeom_SplineSurface();
+		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
 		%feature("autodoc", "1");
-		Handle_IGESGeom_SplineSurface(const Handle_IGESGeom_SplineSurface &aHandle);
+		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		Handle_IGESGeom_SplineSurface(const IGESGeom_SplineSurface *anItem);
+		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		Handle_IGESGeom_SplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESGeom_ReadWriteModule();
 
 };
-%extend Handle_IGESGeom_SplineSurface {
-	IGESGeom_SplineSurface* GetObject() {
-	return (IGESGeom_SplineSurface*)$self->Access();
+%extend IGESGeom_ReadWriteModule {
+	Handle_IGESGeom_ReadWriteModule GetHandle() {
+	return *(Handle_IGESGeom_ReadWriteModule*) &$self;
 	}
 };
 
@@ -776,6 +799,31 @@ class IGESGeom_SurfaceOfRevolution : public IGESData_IGESEntity {
 	}
 };
 
+%nodefaultctor IGESGeom_TabulatedCylinder;
+class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_TabulatedCylinder();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESData_IGESEntity &aDirectrix, const gp_XYZ &anEnd);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity Directrix() const;
+		%feature("autodoc", "1");
+		gp_Pnt EndPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedEndPoint() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESGeom_TabulatedCylinder();
+
+};
+%extend IGESGeom_TabulatedCylinder {
+	Handle_IGESGeom_TabulatedCylinder GetHandle() {
+	return *(Handle_IGESGeom_TabulatedCylinder*) &$self;
+	}
+};
+
 %nodefaultctor IGESGeom_Boundary;
 class IGESGeom_Boundary : public IGESData_IGESEntity {
 	public:
@@ -810,6 +858,84 @@ class IGESGeom_Boundary : public IGESData_IGESEntity {
 %extend IGESGeom_Boundary {
 	Handle_IGESGeom_Boundary GetHandle() {
 	return *(Handle_IGESGeom_Boundary*) &$self;
+	}
+};
+
+%nodefaultctor IGESGeom_Direction;
+class IGESGeom_Direction : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_Direction();
+		%feature("autodoc", "1");
+		void Init(const gp_XYZ &aDirection);
+		%feature("autodoc", "1");
+		gp_Vec Value() const;
+		%feature("autodoc", "1");
+		gp_Vec TransformedValue() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESGeom_Direction();
+
+};
+%extend IGESGeom_Direction {
+	Handle_IGESGeom_Direction GetHandle() {
+	return *(Handle_IGESGeom_Direction*) &$self;
+	}
+};
+
+%nodefaultctor IGESGeom_ToolOffsetSurface;
+class IGESGeom_ToolOffsetSurface {
+	public:
+		%feature("autodoc", "1");
+		~IGESGeom_ToolOffsetSurface();
+		%feature("autodoc", "1");
+		IGESGeom_ToolOffsetSurface();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_OffsetSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_OffsetSurface &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_OffsetSurface &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_OffsetSurface &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_OffsetSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_OffsetSurface &entfrom, const Handle_IGESGeom_OffsetSurface &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_OffsetSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+
+%nodefaultctor IGESGeom_Line;
+class IGESGeom_Line : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_Line();
+		%feature("autodoc", "1");
+		void Init(const gp_XYZ &aStart, const gp_XYZ &anEnd);
+		%feature("autodoc", "1");
+		Standard_Integer Infinite() const;
+		%feature("autodoc", "1");
+		void SetInfinite(const Standard_Integer status);
+		%feature("autodoc", "1");
+		gp_Pnt StartPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedStartPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt EndPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedEndPoint() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESGeom_Line();
+
+};
+%extend IGESGeom_Line {
+	Handle_IGESGeom_Line GetHandle() {
+	return *(Handle_IGESGeom_Line*) &$self;
 	}
 };
 
@@ -923,6 +1049,37 @@ class IGESGeom_ToolSplineCurve {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_SplineCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+
+%nodefaultctor IGESGeom_RuledSurface;
+class IGESGeom_RuledSurface : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_RuledSurface();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESData_IGESEntity &aCurve, const Handle_IGESData_IGESEntity &anotherCurve, const Standard_Integer aDirFlag, const Standard_Integer aDevFlag);
+		%feature("autodoc", "1");
+		void SetRuledByParameter(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean IsRuledByParameter() const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity FirstCurve() const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity SecondCurve() const;
+		%feature("autodoc", "1");
+		Standard_Integer DirectionFlag() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDevelopable() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESGeom_RuledSurface();
+
+};
+%extend IGESGeom_RuledSurface {
+	Handle_IGESGeom_RuledSurface GetHandle() {
+	return *(Handle_IGESGeom_RuledSurface*) &$self;
+	}
 };
 
 %nodefaultctor IGESGeom_ToolFlash;
@@ -1054,45 +1211,6 @@ class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 	}
 };
 
-%nodefaultctor IGESGeom_SplineSurface;
-class IGESGeom_SplineSurface : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_SplineSurface();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer aBoundaryType, const Standard_Integer aPatchType, const Handle_TColStd_HArray1OfReal &allUBreakpoints, const Handle_TColStd_HArray1OfReal &allVBreakpoints, const Handle_IGESBasic_HArray2OfHArray1OfReal &allXCoeffs, const Handle_IGESBasic_HArray2OfHArray1OfReal &allYCoeffs, const Handle_IGESBasic_HArray2OfHArray1OfReal &allZCoeffs);
-		%feature("autodoc", "1");
-		Standard_Integer NbUSegments() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbVSegments() const;
-		%feature("autodoc", "1");
-		Standard_Integer BoundaryType() const;
-		%feature("autodoc", "1");
-		Standard_Integer PatchType() const;
-		%feature("autodoc", "1");
-		Standard_Real UBreakPoint(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Standard_Real VBreakPoint(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal XPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal YPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal ZPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
-		%feature("autodoc", "1");
-		void Polynomials(Handle_IGESBasic_HArray2OfHArray1OfReal & XCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & YCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & ZCoef) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_SplineSurface();
-
-};
-%extend IGESGeom_SplineSurface {
-	Handle_IGESGeom_SplineSurface GetHandle() {
-	return *(Handle_IGESGeom_SplineSurface*) &$self;
-	}
-};
-
 %nodefaultctor IGESGeom_Array1OfCurveOnSurface;
 class IGESGeom_Array1OfCurveOnSurface {
 	public:
@@ -1192,29 +1310,6 @@ class IGESGeom_ToolSplineSurface {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_SplineSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
-};
-
-%nodefaultctor IGESGeom_ReadWriteModule;
-class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_ReadWriteModule();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
-		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_ReadWriteModule();
-
-};
-%extend IGESGeom_ReadWriteModule {
-	Handle_IGESGeom_ReadWriteModule GetHandle() {
-	return *(Handle_IGESGeom_ReadWriteModule*) &$self;
-	}
 };
 
 %nodefaultctor IGESGeom_HArray1OfBoundary;
@@ -1396,29 +1491,6 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 	}
 };
 
-%nodefaultctor IGESGeom_Direction;
-class IGESGeom_Direction : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_Direction();
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aDirection);
-		%feature("autodoc", "1");
-		gp_Vec Value() const;
-		%feature("autodoc", "1");
-		gp_Vec TransformedValue() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_Direction();
-
-};
-%extend IGESGeom_Direction {
-	Handle_IGESGeom_Direction GetHandle() {
-	return *(Handle_IGESGeom_Direction*) &$self;
-	}
-};
-
 %nodefaultctor IGESGeom_ToolOffsetCurve;
 class IGESGeom_ToolOffsetCurve {
 	public:
@@ -1496,28 +1568,43 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 	}
 };
 
-%nodefaultctor IGESGeom_ToolDirection;
-class IGESGeom_ToolDirection {
+%nodefaultctor IGESGeom_SplineSurface;
+class IGESGeom_SplineSurface : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolDirection();
+		IGESGeom_SplineSurface();
 		%feature("autodoc", "1");
-		IGESGeom_ToolDirection();
+		void Init(const Standard_Integer aBoundaryType, const Standard_Integer aPatchType, const Handle_TColStd_HArray1OfReal &allUBreakpoints, const Handle_TColStd_HArray1OfReal &allVBreakpoints, const Handle_IGESBasic_HArray2OfHArray1OfReal &allXCoeffs, const Handle_IGESBasic_HArray2OfHArray1OfReal &allYCoeffs, const Handle_IGESBasic_HArray2OfHArray1OfReal &allZCoeffs);
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_Direction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		Standard_Integer NbUSegments() const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_Direction &ent, IGESData_IGESWriter & IW) const;
+		Standard_Integer NbVSegments() const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_Direction &ent, Interface_EntityIterator & iter) const;
+		Standard_Integer BoundaryType() const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Direction &ent) const;
+		Standard_Integer PatchType() const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_Direction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		Standard_Real UBreakPoint(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_Direction &entfrom, const Handle_IGESGeom_Direction &entto, Interface_CopyTool & TC) const;
+		Standard_Real VBreakPoint(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_Direction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		Handle_TColStd_HArray1OfReal XPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal YPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal ZPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
+		%feature("autodoc", "1");
+		void Polynomials(Handle_IGESBasic_HArray2OfHArray1OfReal & XCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & YCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & ZCoef) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESGeom_SplineSurface();
 
+};
+%extend IGESGeom_SplineSurface {
+	Handle_IGESGeom_SplineSurface GetHandle() {
+	return *(Handle_IGESGeom_SplineSurface*) &$self;
+	}
 };
 
 %nodefaultctor IGESGeom_ToolPlane;
@@ -1625,62 +1712,6 @@ class IGESGeom_ToolLine {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_Line &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
-};
-
-%nodefaultctor IGESGeom_Line;
-class IGESGeom_Line : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_Line();
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aStart, const gp_XYZ &anEnd);
-		%feature("autodoc", "1");
-		Standard_Integer Infinite() const;
-		%feature("autodoc", "1");
-		void SetInfinite(const Standard_Integer status);
-		%feature("autodoc", "1");
-		gp_Pnt StartPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedStartPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt EndPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedEndPoint() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_Line();
-
-};
-%extend IGESGeom_Line {
-	Handle_IGESGeom_Line GetHandle() {
-	return *(Handle_IGESGeom_Line*) &$self;
-	}
-};
-
-%nodefaultctor IGESGeom_TabulatedCylinder;
-class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_TabulatedCylinder();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &aDirectrix, const gp_XYZ &anEnd);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Directrix() const;
-		%feature("autodoc", "1");
-		gp_Pnt EndPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedEndPoint() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_TabulatedCylinder();
-
-};
-%extend IGESGeom_TabulatedCylinder {
-	Handle_IGESGeom_TabulatedCylinder GetHandle() {
-	return *(Handle_IGESGeom_TabulatedCylinder*) &$self;
-	}
 };
 
 %nodefaultctor IGESGeom_BSplineSurface;
@@ -1830,6 +1861,30 @@ class IGESGeom_TrimmedSurface : public IGESData_IGESEntity {
 	Handle_IGESGeom_TrimmedSurface GetHandle() {
 	return *(Handle_IGESGeom_TrimmedSurface*) &$self;
 	}
+};
+
+%nodefaultctor IGESGeom_ToolDirection;
+class IGESGeom_ToolDirection {
+	public:
+		%feature("autodoc", "1");
+		~IGESGeom_ToolDirection();
+		%feature("autodoc", "1");
+		IGESGeom_ToolDirection();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_Direction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_Direction &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_Direction &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Direction &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_Direction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_Direction &entfrom, const Handle_IGESGeom_Direction &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_Direction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
 };
 
 %nodefaultctor IGESGeom_TransformationMatrix;
@@ -1987,30 +2042,6 @@ class IGESGeom_ToolBoundedSurface {
 
 };
 
-%nodefaultctor IGESGeom_ToolCompositeCurve;
-class IGESGeom_ToolCompositeCurve {
-	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolCompositeCurve();
-		%feature("autodoc", "1");
-		IGESGeom_ToolCompositeCurve();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_CompositeCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_CompositeCurve &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_CompositeCurve &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_CompositeCurve &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_CompositeCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_CompositeCurve &entfrom, const Handle_IGESGeom_CompositeCurve &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_CompositeCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-
 %nodefaultctor IGESGeom_Point;
 class IGESGeom_Point : public IGESData_IGESEntity {
 	public:
@@ -2077,6 +2108,30 @@ class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 	Handle_IGESGeom_SplineCurve GetHandle() {
 	return *(Handle_IGESGeom_SplineCurve*) &$self;
 	}
+};
+
+%nodefaultctor IGESGeom_ToolCompositeCurve;
+class IGESGeom_ToolCompositeCurve {
+	public:
+		%feature("autodoc", "1");
+		~IGESGeom_ToolCompositeCurve();
+		%feature("autodoc", "1");
+		IGESGeom_ToolCompositeCurve();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_CompositeCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_CompositeCurve &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_CompositeCurve &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_CompositeCurve &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_CompositeCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_CompositeCurve &entfrom, const Handle_IGESGeom_CompositeCurve &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_CompositeCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
 };
 
 %nodefaultctor IGESGeom_HArray1OfTransformationMatrix;
@@ -2219,30 +2274,6 @@ class IGESGeom_Array1OfTransformationMatrix {
 
 };
 
-%nodefaultctor IGESGeom_ToolOffsetSurface;
-class IGESGeom_ToolOffsetSurface {
-	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolOffsetSurface();
-		%feature("autodoc", "1");
-		IGESGeom_ToolOffsetSurface();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_OffsetSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_OffsetSurface &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_OffsetSurface &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_OffsetSurface &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_OffsetSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_OffsetSurface &entfrom, const Handle_IGESGeom_OffsetSurface &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_OffsetSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-
 %nodefaultctor IGESGeom_ToolBSplineSurface;
 class IGESGeom_ToolBSplineSurface {
 	public:
@@ -2265,37 +2296,6 @@ class IGESGeom_ToolBSplineSurface {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_BSplineSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
-};
-
-%nodefaultctor IGESGeom_RuledSurface;
-class IGESGeom_RuledSurface : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_RuledSurface();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &aCurve, const Handle_IGESData_IGESEntity &anotherCurve, const Standard_Integer aDirFlag, const Standard_Integer aDevFlag);
-		%feature("autodoc", "1");
-		void SetRuledByParameter(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean IsRuledByParameter() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity FirstCurve() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity SecondCurve() const;
-		%feature("autodoc", "1");
-		Standard_Integer DirectionFlag() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDevelopable() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_RuledSurface();
-
-};
-%extend IGESGeom_RuledSurface {
-	Handle_IGESGeom_RuledSurface GetHandle() {
-	return *(Handle_IGESGeom_RuledSurface*) &$self;
-	}
 };
 
 %nodefaultctor IGESGeom_ToolTrimmedSurface;

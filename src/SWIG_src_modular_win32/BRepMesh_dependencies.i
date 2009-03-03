@@ -41,6 +41,15 @@
 #include <MMgt_StackManager.hxx>
 #include <MMgt_TShared.hxx>
 #include <Handle_MMgt_TShared.hxx>
+#include <MeshDS_BaseAllocator.hxx>
+#include <MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger.hxx>
+#include <MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
+#include <MeshDS_DataMapOfInteger.hxx>
+#include <MeshDS_DataMapOfIntegerMapOfInteger.hxx>
+#include <MeshDS_DegreeOfFreedom.hxx>
+#include <MeshDS_ListOfInteger.hxx>
+#include <MeshDS_MapOfInteger.hxx>
+#include <Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -144,15 +153,6 @@
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
-#include <MeshDS_BaseAllocator.hxx>
-#include <MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger.hxx>
-#include <MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
-#include <MeshDS_DataMapOfInteger.hxx>
-#include <MeshDS_DataMapOfIntegerMapOfInteger.hxx>
-#include <MeshDS_DegreeOfFreedom.hxx>
-#include <MeshDS_ListOfInteger.hxx>
-#include <MeshDS_MapOfInteger.hxx>
-#include <Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
 #include <TopAbs_Orientation.hxx>
 #include <TopAbs_ShapeEnum.hxx>
 #include <TopAbs_State.hxx>
@@ -201,8 +201,8 @@
 
 %import TCollection.i
 %import MMgt.i
-%import Standard.i
 %import MeshDS.i
+%import Standard.i
 %import TopAbs.i
 %import GeomAbs.i
 %import MeshShape.i

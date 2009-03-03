@@ -608,29 +608,6 @@ class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 	}
 };
 
-%nodefaultctor SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
-class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_IndexedMapNodeOfIndexedMapOfOwner(const Handle_SelectMgr_EntityOwner &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_IndexedMapNodeOfIndexedMapOfOwner();
-
-};
-%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
-	Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner GetHandle() {
-	return *(Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner*) &$self;
-	}
-};
-
 %nodefaultctor SelectMgr_ListIteratorOfListOfFilter;
 class SelectMgr_ListIteratorOfListOfFilter {
 	public:
@@ -1537,6 +1514,29 @@ class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Handle_SelectMgr_Selection &K);
 
+};
+
+%nodefaultctor SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
+class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_IndexedMapNodeOfIndexedMapOfOwner(const Handle_SelectMgr_EntityOwner &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_EntityOwner & Key1() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~SelectMgr_IndexedMapNodeOfIndexedMapOfOwner();
+
+};
+%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
+	Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner GetHandle() {
+	return *(Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner*) &$self;
+	}
 };
 
 %nodefaultctor SelectMgr_DataMapOfIntegerSensitive;

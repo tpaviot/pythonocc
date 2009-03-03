@@ -699,43 +699,6 @@ class ShapeUpgrade_Tool : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor ShapeUpgrade_FaceDivide;
-class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivide();
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivide(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SplitSurface();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SplitCurves();
-		%feature("autodoc", "1");
-		TopoDS_Shape Result() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc", "1");
-		void SetSplitSurfaceTool(const Handle_ShapeUpgrade_SplitSurface &splitSurfaceTool);
-		%feature("autodoc", "1");
-		void SetWireDivideTool(const Handle_ShapeUpgrade_WireDivide &wireDivideTool);
-		%feature("autodoc", "1");
-		virtual		Handle_ShapeUpgrade_WireDivide GetWireDivideTool() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_FaceDivide();
-
-};
-%extend ShapeUpgrade_FaceDivide {
-	Handle_ShapeUpgrade_FaceDivide GetHandle() {
-	return *(Handle_ShapeUpgrade_FaceDivide*) &$self;
-	}
-};
-
 %nodefaultctor ShapeUpgrade_RemoveInternalWires;
 class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 	public:
@@ -761,8 +724,6 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 		const TopTools_SequenceOfShape & RemovedWires() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status theStatus) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~ShapeUpgrade_RemoveInternalWires();
 
@@ -945,18 +906,6 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 	}
 };
 
-%nodefaultctor ShapeUpgrade_ShapeDivideClosedEdges;
-class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideClosedEdges(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void SetNbSplitPoints(const Standard_Integer num);
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideClosedEdges();
-
-};
-
 %nodefaultctor ShapeUpgrade_EdgeDivide;
 class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 	public:
@@ -1039,6 +988,45 @@ class ShapeUpgrade_ShellSewing {
 
 };
 
+%nodefaultctor ShapeUpgrade_FaceDivide;
+class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_FaceDivide();
+		%feature("autodoc", "1");
+		ShapeUpgrade_FaceDivide(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Perform();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SplitSurface();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SplitCurves();
+		%feature("autodoc", "1");
+		TopoDS_Shape Result() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		void SetSplitSurfaceTool(const Handle_ShapeUpgrade_SplitSurface &splitSurfaceTool);
+		%feature("autodoc", "1");
+		void SetWireDivideTool(const Handle_ShapeUpgrade_WireDivide &wireDivideTool);
+		%feature("autodoc", "1");
+		virtual		Handle_ShapeUpgrade_WireDivide GetWireDivideTool() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~ShapeUpgrade_FaceDivide();
+
+};
+%extend ShapeUpgrade_FaceDivide {
+	Handle_ShapeUpgrade_FaceDivide GetHandle() {
+	return *(Handle_ShapeUpgrade_FaceDivide*) &$self;
+	}
+};
+
 %nodefaultctor ShapeUpgrade_FaceDivideArea;
 class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 	public:
@@ -1047,11 +1035,7 @@ class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 		%feature("autodoc", "1");
 		ShapeUpgrade_FaceDivideArea(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform();
-		%feature("autodoc", "1");
 		Standard_Real & MaxArea();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~ShapeUpgrade_FaceDivideArea();
 
@@ -1059,45 +1043,6 @@ class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 %extend ShapeUpgrade_FaceDivideArea {
 	Handle_ShapeUpgrade_FaceDivideArea GetHandle() {
 	return *(Handle_ShapeUpgrade_FaceDivideArea*) &$self;
-	}
-};
-
-%nodefaultctor ShapeUpgrade_ConvertSurfaceToBezierBasis;
-class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_ConvertSurfaceToBezierBasis();
-		%feature("autodoc", "1");
-		virtual		void Build(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface Segments() const;
-		%feature("autodoc", "1");
-		void SetPlaneMode(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean GetPlaneMode() const;
-		%feature("autodoc", "1");
-		void SetRevolutionMode(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean GetRevolutionMode() const;
-		%feature("autodoc", "1");
-		void SetExtrusionMode(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean GetExtrusionMode() const;
-		%feature("autodoc", "1");
-		void SetBSplineMode(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean GetBSplineMode() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ConvertSurfaceToBezierBasis();
-
-};
-%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
-	Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis GetHandle() {
-	return *(Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis*) &$self;
 	}
 };
 
@@ -1118,6 +1063,18 @@ class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 	Handle_ShapeUpgrade_FixSmallBezierCurves GetHandle() {
 	return *(Handle_ShapeUpgrade_FixSmallBezierCurves*) &$self;
 	}
+};
+
+%nodefaultctor ShapeUpgrade_ShapeDivideClosedEdges;
+class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_ShapeDivideClosedEdges(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void SetNbSplitPoints(const Standard_Integer num);
+		%feature("autodoc", "1");
+		virtual		~ShapeUpgrade_ShapeDivideClosedEdges();
+
 };
 
 %nodefaultctor ShapeUpgrade_SplitSurfaceArea;
@@ -1380,6 +1337,45 @@ class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
 %extend ShapeUpgrade_SplitCurve2dContinuity {
 	Handle_ShapeUpgrade_SplitCurve2dContinuity GetHandle() {
 	return *(Handle_ShapeUpgrade_SplitCurve2dContinuity*) &$self;
+	}
+};
+
+%nodefaultctor ShapeUpgrade_ConvertSurfaceToBezierBasis;
+class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_ConvertSurfaceToBezierBasis();
+		%feature("autodoc", "1");
+		virtual		void Build(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_CompositeSurface Segments() const;
+		%feature("autodoc", "1");
+		void SetPlaneMode(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean GetPlaneMode() const;
+		%feature("autodoc", "1");
+		void SetRevolutionMode(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean GetRevolutionMode() const;
+		%feature("autodoc", "1");
+		void SetExtrusionMode(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean GetExtrusionMode() const;
+		%feature("autodoc", "1");
+		void SetBSplineMode(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean GetBSplineMode() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~ShapeUpgrade_ConvertSurfaceToBezierBasis();
+
+};
+%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
+	Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis GetHandle() {
+	return *(Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis*) &$self;
 	}
 };
 

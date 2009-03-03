@@ -36,6 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_PShort_HArray1OfShortReal.hxx>
+#include<Handle_PShort_HArray2OfShortReal.hxx>
+#include<Handle_PShort_HSequenceOfShortReal.hxx>
+#include<Handle_PShort_SeqNodeOfHSequenceOfShortReal.hxx>
+#include<Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal.hxx>
+#include<Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal.hxx>
 #include<PShort_FieldOfHArray1OfShortReal.hxx>
 #include<PShort_FieldOfHArray2OfShortReal.hxx>
 #include<PShort_HArray1OfShortReal.hxx>
@@ -47,12 +53,6 @@
 #include<PShort_VArrayNodeOfFieldOfHArray2OfShortReal.hxx>
 #include<PShort_VArrayTNodeOfFieldOfHArray1OfShortReal.hxx>
 #include<PShort_VArrayTNodeOfFieldOfHArray2OfShortReal.hxx>
-#include<Handle_PShort_HArray1OfShortReal.hxx>
-#include<Handle_PShort_HArray2OfShortReal.hxx>
-#include<Handle_PShort_HSequenceOfShortReal.hxx>
-#include<Handle_PShort_SeqNodeOfHSequenceOfShortReal.hxx>
-#include<Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal.hxx>
-#include<Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal.hxx>
 
 // Additional headers necessary for compilation.
 

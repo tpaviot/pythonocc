@@ -141,6 +141,27 @@ class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 	}
 };
 
+%nodefaultctor Handle_TDocStd_Owner;
+class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDocStd_Owner();
+		%feature("autodoc", "1");
+		Handle_TDocStd_Owner();
+		%feature("autodoc", "1");
+		Handle_TDocStd_Owner(const Handle_TDocStd_Owner &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Owner(const TDocStd_Owner *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Owner const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDocStd_Owner {
+	TDocStd_Owner* GetObject() {
+	return (TDocStd_Owner*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
 class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TCollection_SeqNode {
 	public:
@@ -159,27 +180,6 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TC
 %extend Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
 	TDocStd_SequenceNodeOfSequenceOfApplicationDelta* GetObject() {
 	return (TDocStd_SequenceNodeOfSequenceOfApplicationDelta*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TDocStd_Modified;
-class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_Modified();
-		%feature("autodoc", "1");
-		Handle_TDocStd_Modified();
-		%feature("autodoc", "1");
-		Handle_TDocStd_Modified(const Handle_TDocStd_Modified &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Modified(const TDocStd_Modified *anItem);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Modified const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDocStd_Modified {
-	TDocStd_Modified* GetObject() {
-	return (TDocStd_Modified*)$self->Access();
 	}
 };
 
@@ -246,6 +246,27 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollectio
 	}
 };
 
+%nodefaultctor Handle_TDocStd_Modified;
+class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDocStd_Modified();
+		%feature("autodoc", "1");
+		Handle_TDocStd_Modified();
+		%feature("autodoc", "1");
+		Handle_TDocStd_Modified(const Handle_TDocStd_Modified &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Modified(const TDocStd_Modified *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Modified const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDocStd_Modified {
+	TDocStd_Modified* GetObject() {
+	return (TDocStd_Modified*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TDocStd_XLink;
 class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 	public:
@@ -264,27 +285,6 @@ class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 %extend Handle_TDocStd_XLink {
 	TDocStd_XLink* GetObject() {
 	return (TDocStd_XLink*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TDocStd_Owner;
-class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_Owner();
-		%feature("autodoc", "1");
-		Handle_TDocStd_Owner();
-		%feature("autodoc", "1");
-		Handle_TDocStd_Owner(const Handle_TDocStd_Owner &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Owner(const TDocStd_Owner *anItem);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Owner const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDocStd_Owner {
-	TDocStd_Owner* GetObject() {
-	return (TDocStd_Owner*)$self->Access();
 	}
 };
 
@@ -499,67 +499,6 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 %extend TDocStd_XLinkRoot {
 	Handle_TDocStd_XLinkRoot GetHandle() {
 	return *(Handle_TDocStd_XLinkRoot*) &$self;
-	}
-};
-
-%nodefaultctor TDocStd_MultiTransactionManager;
-class TDocStd_MultiTransactionManager : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_MultiTransactionManager();
-		%feature("autodoc", "1");
-		void SetUndoLimit(const Standard_Integer theLimit);
-		%feature("autodoc", "1");
-		Standard_Integer GetUndoLimit() const;
-		%feature("autodoc", "1");
-		void Undo();
-		%feature("autodoc", "1");
-		void Redo();
-		%feature("autodoc", "1");
-		const TDocStd_SequenceOfApplicationDelta & GetAvailableUndos() const;
-		%feature("autodoc", "1");
-		const TDocStd_SequenceOfApplicationDelta & GetAvailableRedos() const;
-		%feature("autodoc", "1");
-		void OpenCommand();
-		%feature("autodoc", "1");
-		void AbortCommand();
-		%feature("autodoc", "1");
-		Standard_Boolean CommitCommand();
-		%feature("autodoc", "1");
-		Standard_Boolean CommitCommand(const TCollection_ExtendedString &theName);
-		%feature("autodoc", "1");
-		Standard_Boolean HasOpenCommand() const;
-		%feature("autodoc", "1");
-		void RemoveLastUndo();
-		%feature("autodoc", "1");
-		void DumpTransaction(Standard_OStream & theOS) const;
-		%feature("autodoc", "1");
-		void AddDocument(const Handle_TDocStd_Document &theDoc);
-		%feature("autodoc", "1");
-		void RemoveDocument(const Handle_TDocStd_Document &theDoc);
-		%feature("autodoc", "1");
-		const TDocStd_SequenceOfDocument & Documents() const;
-		%feature("autodoc", "1");
-		void SetNestedTransactionMode(const Standard_Boolean isAllowed=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsNestedTransactionMode() const;
-		%feature("autodoc", "1");
-		void SetModificationMode(const Standard_Boolean theTransactionOnly);
-		%feature("autodoc", "1");
-		Standard_Boolean ModificationMode() const;
-		%feature("autodoc", "1");
-		void ClearUndos();
-		%feature("autodoc", "1");
-		void ClearRedos();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_MultiTransactionManager();
-
-};
-%extend TDocStd_MultiTransactionManager {
-	Handle_TDocStd_MultiTransactionManager GetHandle() {
-	return *(Handle_TDocStd_MultiTransactionManager*) &$self;
 	}
 };
 
@@ -806,6 +745,18 @@ class TDocStd_XLinkIterator {
 
 };
 
+%nodefaultctor TDocStd;
+class TDocStd {
+	public:
+		%feature("autodoc", "1");
+		~TDocStd();
+		%feature("autodoc", "1");
+		TDocStd();
+		%feature("autodoc", "1");
+		void IDList(TDF_IDList & anIDList);
+
+};
+
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
 class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 	public:
@@ -929,16 +880,65 @@ class TDocStd_XLink : public TDF_Attribute {
 	}
 };
 
-%nodefaultctor TDocStd;
-class TDocStd {
+%nodefaultctor TDocStd_MultiTransactionManager;
+class TDocStd_MultiTransactionManager : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~TDocStd();
+		TDocStd_MultiTransactionManager();
 		%feature("autodoc", "1");
-		TDocStd();
+		void SetUndoLimit(const Standard_Integer theLimit);
 		%feature("autodoc", "1");
-		void IDList(TDF_IDList & anIDList);
+		Standard_Integer GetUndoLimit() const;
+		%feature("autodoc", "1");
+		void Undo();
+		%feature("autodoc", "1");
+		void Redo();
+		%feature("autodoc", "1");
+		const TDocStd_SequenceOfApplicationDelta & GetAvailableUndos() const;
+		%feature("autodoc", "1");
+		const TDocStd_SequenceOfApplicationDelta & GetAvailableRedos() const;
+		%feature("autodoc", "1");
+		void OpenCommand();
+		%feature("autodoc", "1");
+		void AbortCommand();
+		%feature("autodoc", "1");
+		Standard_Boolean CommitCommand();
+		%feature("autodoc", "1");
+		Standard_Boolean CommitCommand(const TCollection_ExtendedString &theName);
+		%feature("autodoc", "1");
+		Standard_Boolean HasOpenCommand() const;
+		%feature("autodoc", "1");
+		void RemoveLastUndo();
+		%feature("autodoc", "1");
+		void DumpTransaction(Standard_OStream & theOS) const;
+		%feature("autodoc", "1");
+		void AddDocument(const Handle_TDocStd_Document &theDoc);
+		%feature("autodoc", "1");
+		void RemoveDocument(const Handle_TDocStd_Document &theDoc);
+		%feature("autodoc", "1");
+		const TDocStd_SequenceOfDocument & Documents() const;
+		%feature("autodoc", "1");
+		void SetNestedTransactionMode(const Standard_Boolean isAllowed=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsNestedTransactionMode() const;
+		%feature("autodoc", "1");
+		void SetModificationMode(const Standard_Boolean theTransactionOnly);
+		%feature("autodoc", "1");
+		Standard_Boolean ModificationMode() const;
+		%feature("autodoc", "1");
+		void ClearUndos();
+		%feature("autodoc", "1");
+		void ClearRedos();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TDocStd_MultiTransactionManager();
 
+};
+%extend TDocStd_MultiTransactionManager {
+	Handle_TDocStd_MultiTransactionManager GetHandle() {
+	return *(Handle_TDocStd_MultiTransactionManager*) &$self;
+	}
 };
 
 %nodefaultctor TDocStd_Application;

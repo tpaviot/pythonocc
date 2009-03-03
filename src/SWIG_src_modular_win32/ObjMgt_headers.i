@@ -36,15 +36,15 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_ObjMgt_ExternRef.hxx>
+#include<Handle_ObjMgt_ExternShareable.hxx>
+#include<Handle_ObjMgt_PSeqOfExtRef.hxx>
+#include<Handle_ObjMgt_SeqNodeOfPSeqOfExtRef.hxx>
 #include<ObjMgt_ExternRef.hxx>
 #include<ObjMgt_ExternShareable.hxx>
 #include<ObjMgt_PSeqOfExtRef.hxx>
 #include<ObjMgt_SeqExplorerOfPSeqOfExtRef.hxx>
 #include<ObjMgt_SeqNodeOfPSeqOfExtRef.hxx>
-#include<Handle_ObjMgt_ExternRef.hxx>
-#include<Handle_ObjMgt_ExternShareable.hxx>
-#include<Handle_ObjMgt_PSeqOfExtRef.hxx>
-#include<Handle_ObjMgt_SeqNodeOfPSeqOfExtRef.hxx>
 
 // Additional headers necessary for compilation.
 

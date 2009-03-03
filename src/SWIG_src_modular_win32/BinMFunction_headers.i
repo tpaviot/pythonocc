@@ -36,10 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BinMFunction.hxx>
 #include<BinMFunction_FunctionDriver.hxx>
 #include<BinMFunction_GraphNodeDriver.hxx>
 #include<BinMFunction_ScopeDriver.hxx>
-#include<BinMFunction.hxx>
 #include<Handle_BinMFunction_FunctionDriver.hxx>
 #include<Handle_BinMFunction_GraphNodeDriver.hxx>
 #include<Handle_BinMFunction_ScopeDriver.hxx>
@@ -47,11 +47,11 @@
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

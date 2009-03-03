@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepMesh.hxx>
 #include<BRepMesh_Array1OfBiPoint.hxx>
 #include<BRepMesh_Array1OfVertexOfDelaun.hxx>
 #include<BRepMesh_BiPoint.hxx>
@@ -111,7 +112,6 @@
 #include<BRepMesh_Triangle.hxx>
 #include<BRepMesh_Vertex.hxx>
 #include<BRepMesh_VertexHasher.hxx>
-#include<BRepMesh.hxx>
 #include<Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt.hxx>
 #include<Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace.hxx>
 #include<Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY.hxx>
@@ -216,27 +216,27 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Bnd_Box.hxx>
-#include<TopoDS_Shape.hxx>
-#include<TopoDS_Face.hxx>
-#include<TopoDS_Edge.hxx>
-#include<Handle_Geom2d_Curve.hxx>
-#include<Handle_BRepAdaptor_HSurface.hxx>
 #include<TColStd_ListOfInteger.hxx>
-#include<MeshShape_SurfacePoint.hxx>
-#include<MeshShape_ListOfSurfacePoint.hxx>
+#include<TColStd_Array1OfInteger.hxx>
 #include<gp_XY.hxx>
+#include<BRepMesh.hxx>
+#include<TopoDS_Shape.hxx>
+#include<TopoDS_Edge.hxx>
+#include<TCollection_AsciiString.hxx>
+#include<TopoDS_Face.hxx>
+#include<Bnd_Box.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<gp_Pnt2d.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Dir.hxx>
-#include<TColStd_Array1OfInteger.hxx>
-#include<BRepMesh.hxx>
 #include<BRepAdaptor_Curve.hxx>
+#include<gp_Pnt.hxx>
 #include<Handle_Poly_Triangulation.hxx>
 #include<MeshShape_Couple.hxx>
-#include<TCollection_AsciiString.hxx>
 #include<MeshShape_DataMapOfShapeListOfTransient.hxx>
 #include<TColStd_IndexedMapOfInteger.hxx>
+#include<Handle_Geom2d_Curve.hxx>
+#include<Handle_BRepAdaptor_HSurface.hxx>
+#include<MeshShape_SurfacePoint.hxx>
+#include<MeshShape_ListOfSurfacePoint.hxx>
+#include<gp_Dir.hxx>
 #include<Bnd_Box2d.hxx>
 %}

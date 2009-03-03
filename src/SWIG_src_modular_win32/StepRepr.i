@@ -728,27 +728,6 @@ class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspect
 	}
 };
 
-%nodefaultctor Handle_StepRepr_SpecifiedHigherUsageOccurrence;
-class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_SpecifiedHigherUsageOccurrence();
-		%feature("autodoc", "1");
-		Handle_StepRepr_SpecifiedHigherUsageOccurrence();
-		%feature("autodoc", "1");
-		Handle_StepRepr_SpecifiedHigherUsageOccurrence(const Handle_StepRepr_SpecifiedHigherUsageOccurrence &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_SpecifiedHigherUsageOccurrence(const StepRepr_SpecifiedHigherUsageOccurrence *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_SpecifiedHigherUsageOccurrence const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_SpecifiedHigherUsageOccurrence {
-	StepRepr_SpecifiedHigherUsageOccurrence* GetObject() {
-	return (StepRepr_SpecifiedHigherUsageOccurrence*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepRepr_ItemDefinedTransformation;
 class Handle_StepRepr_ItemDefinedTransformation : public Handle_MMgt_TShared {
 	public:
@@ -1040,6 +1019,27 @@ class Handle_StepRepr_StructuralResponseProperty : public Handle_StepRepr_Proper
 %extend Handle_StepRepr_StructuralResponseProperty {
 	StepRepr_StructuralResponseProperty* GetObject() {
 	return (StepRepr_StructuralResponseProperty*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepRepr_SpecifiedHigherUsageOccurrence;
+class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepRepr_SpecifiedHigherUsageOccurrence();
+		%feature("autodoc", "1");
+		Handle_StepRepr_SpecifiedHigherUsageOccurrence();
+		%feature("autodoc", "1");
+		Handle_StepRepr_SpecifiedHigherUsageOccurrence(const Handle_StepRepr_SpecifiedHigherUsageOccurrence &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_SpecifiedHigherUsageOccurrence(const StepRepr_SpecifiedHigherUsageOccurrence *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_SpecifiedHigherUsageOccurrence const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_SpecifiedHigherUsageOccurrence {
+	StepRepr_SpecifiedHigherUsageOccurrence* GetObject() {
+	return (StepRepr_SpecifiedHigherUsageOccurrence*)$self->Access();
 	}
 };
 

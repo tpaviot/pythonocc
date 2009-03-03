@@ -36,20 +36,20 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<XmlMPrsStd_AISPresentationDriver.hxx>
-#include<XmlMPrsStd_PositionDriver.hxx>
-#include<XmlMPrsStd.hxx>
 #include<Handle_XmlMPrsStd_AISPresentationDriver.hxx>
 #include<Handle_XmlMPrsStd_PositionDriver.hxx>
+#include<XmlMPrsStd.hxx>
+#include<XmlMPrsStd_AISPresentationDriver.hxx>
+#include<XmlMPrsStd_PositionDriver.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

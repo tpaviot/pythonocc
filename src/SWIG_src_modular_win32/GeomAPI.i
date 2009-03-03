@@ -132,23 +132,53 @@ class GeomAPI_ExtremaSurfaceSurface {
 
 };
 
-%nodefaultctor GeomAPI_IntSS;
-class GeomAPI_IntSS {
+%nodefaultctor GeomAPI_IntCS;
+class GeomAPI_IntCS {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_IntSS();
+		~GeomAPI_IntCS();
 		%feature("autodoc", "1");
-		GeomAPI_IntSS();
+		GeomAPI_IntCS();
 		%feature("autodoc", "1");
-		GeomAPI_IntSS(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Standard_Real Tol);
+		GeomAPI_IntCS(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Standard_Real Tol);
+		void Perform(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbLines() const;
+		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Line(const Standard_Integer I) const;
+		const gp_Pnt & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Parameters(const Standard_Integer Index, Quantity_Parameter & U, Quantity_Parameter & V, Quantity_Parameter & W) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve Segment(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Parameters(const Standard_Integer Index, Quantity_Parameter & U1, Quantity_Parameter & V1, Quantity_Parameter & U2, Quantity_Parameter & V2) const;
+
+};
+
+%nodefaultctor GeomAPI_Interpolate;
+class GeomAPI_Interpolate {
+	public:
+		%feature("autodoc", "1");
+		~GeomAPI_Interpolate();
+		%feature("autodoc", "1");
+		GeomAPI_Interpolate(const Handle_TColgp_HArray1OfPnt &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		GeomAPI_Interpolate(const Handle_TColgp_HArray1OfPnt &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Load(const gp_Vec &InitialTangent, const gp_Vec &FinalTangent, const Standard_Boolean Scale=1);
+		%feature("autodoc", "1");
+		void Load(const TColgp_Array1OfVec &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags, const Standard_Boolean Scale=1);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const Handle_Geom_BSplineCurve & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
 
 };
 
@@ -189,6 +219,80 @@ class GeomAPI_ExtremaCurveCurve {
 		Standard_Boolean TotalLowerDistanceParameters(Quantity_Parameter & U1, Quantity_Parameter & U2);
 		%feature("autodoc", "1");
 		Quantity_Length TotalLowerDistance();
+
+};
+
+%nodefaultctor GeomAPI_ExtremaCurveSurface;
+class GeomAPI_ExtremaCurveSurface {
+	public:
+		%feature("autodoc", "1");
+		~GeomAPI_ExtremaCurveSurface();
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaCurveSurface();
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface, const Quantity_Parameter Wmin, const Quantity_Parameter Wmax, const Quantity_Parameter Umin, const Quantity_Parameter Umax, const Quantity_Parameter Vmin, const Quantity_Parameter Vmax);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface, const Quantity_Parameter Wmin, const Quantity_Parameter Wmax, const Quantity_Parameter Umin, const Quantity_Parameter Umax, const Quantity_Parameter Vmin, const Quantity_Parameter Vmax);
+		%feature("autodoc", "1");
+		Standard_Integer NbExtrema() const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc", "1");
+		void Parameters(const Standard_Integer Index, Quantity_Parameter & W, Quantity_Parameter & U, Quantity_Parameter & V) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void NearestPoints(gp_Pnt & PC, gp_Pnt & PS) const;
+		%feature("autodoc", "1");
+		void LowerDistanceParameters(Quantity_Parameter & W, Quantity_Parameter & U, Quantity_Parameter & V) const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtCS & Extrema() const;
+
+};
+
+%nodefaultctor GeomAPI_ProjectPointOnCurve;
+class GeomAPI_ProjectPointOnCurve {
+	public:
+		%feature("autodoc", "1");
+		~GeomAPI_ProjectPointOnCurve();
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnCurve();
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnCurve(const gp_Pnt &P, const Handle_Geom_Curve &Curve);
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnCurve(const gp_Pnt &P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt &P, const Handle_Geom_Curve &Curve);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt &P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		gp_Pnt Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Parameter(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Parameter(const Standard_Integer Index, Quantity_Parameter & U) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Pnt NearestPoint() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter LowerDistanceParameter() const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtPC & Extrema() const;
 
 };
 
@@ -286,102 +390,6 @@ class GeomAPI_PointsToBSplineSurface {
 
 };
 
-%nodefaultctor GeomAPI_Interpolate;
-class GeomAPI_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		~GeomAPI_Interpolate();
-		%feature("autodoc", "1");
-		GeomAPI_Interpolate(const Handle_TColgp_HArray1OfPnt &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		GeomAPI_Interpolate(const Handle_TColgp_HArray1OfPnt &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Load(const gp_Vec &InitialTangent, const gp_Vec &FinalTangent, const Standard_Boolean Scale=1);
-		%feature("autodoc", "1");
-		void Load(const TColgp_Array1OfVec &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags, const Standard_Boolean Scale=1);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const Handle_Geom_BSplineCurve & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-
-%nodefaultctor GeomAPI_ProjectPointOnCurve;
-class GeomAPI_ProjectPointOnCurve {
-	public:
-		%feature("autodoc", "1");
-		~GeomAPI_ProjectPointOnCurve();
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve();
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve(const gp_Pnt &P, const Handle_Geom_Curve &Curve);
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve(const gp_Pnt &P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt &P, const Handle_Geom_Curve &Curve);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt &P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		gp_Pnt Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Parameter(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Parameter(const Standard_Integer Index, Quantity_Parameter & U) const;
-		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Pnt NearestPoint() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter LowerDistanceParameter() const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtPC & Extrema() const;
-
-};
-
-%nodefaultctor GeomAPI_ExtremaCurveSurface;
-class GeomAPI_ExtremaCurveSurface {
-	public:
-		%feature("autodoc", "1");
-		~GeomAPI_ExtremaCurveSurface();
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaCurveSurface();
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface, const Quantity_Parameter Wmin, const Quantity_Parameter Wmax, const Quantity_Parameter Umin, const Quantity_Parameter Umax, const Quantity_Parameter Vmin, const Quantity_Parameter Vmax);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface, const Quantity_Parameter Wmin, const Quantity_Parameter Wmax, const Quantity_Parameter Umin, const Quantity_Parameter Umax, const Quantity_Parameter Vmin, const Quantity_Parameter Vmax);
-		%feature("autodoc", "1");
-		Standard_Integer NbExtrema() const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
-		%feature("autodoc", "1");
-		void Parameters(const Standard_Integer Index, Quantity_Parameter & W, Quantity_Parameter & U, Quantity_Parameter & V) const;
-		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt & PC, gp_Pnt & PS) const;
-		%feature("autodoc", "1");
-		void LowerDistanceParameters(Quantity_Parameter & W, Quantity_Parameter & U, Quantity_Parameter & V) const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtCS & Extrema() const;
-
-};
-
 %nodefaultctor GeomAPI;
 class GeomAPI {
 	public:
@@ -396,30 +404,22 @@ class GeomAPI {
 
 };
 
-%nodefaultctor GeomAPI_IntCS;
-class GeomAPI_IntCS {
+%nodefaultctor GeomAPI_IntSS;
+class GeomAPI_IntSS {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_IntCS();
+		~GeomAPI_IntSS();
 		%feature("autodoc", "1");
-		GeomAPI_IntCS();
+		GeomAPI_IntSS();
 		%feature("autodoc", "1");
-		GeomAPI_IntCS(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
+		GeomAPI_IntSS(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
+		void Perform(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
+		Standard_Integer NbLines() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Parameters(const Standard_Integer Index, Quantity_Parameter & U, Quantity_Parameter & V, Quantity_Parameter & W) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve Segment(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Parameters(const Standard_Integer Index, Quantity_Parameter & U1, Quantity_Parameter & V1, Quantity_Parameter & U2, Quantity_Parameter & V2) const;
+		const Handle_Geom_Curve & Line(const Standard_Integer I) const;
 
 };

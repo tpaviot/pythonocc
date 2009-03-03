@@ -36,6 +36,15 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver.hxx>
+#include<Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel.hxx>
+#include<Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel.hxx>
+#include<Handle_TFunction_Driver.hxx>
+#include<Handle_TFunction_DriverTable.hxx>
+#include<Handle_TFunction_Function.hxx>
+#include<Handle_TFunction_GraphNode.hxx>
+#include<Handle_TFunction_HArray1OfDataMapOfGUIDDriver.hxx>
+#include<Handle_TFunction_Scope.hxx>
 #include<TFunction_Array1OfDataMapOfGUIDDriver.hxx>
 #include<TFunction_DataMapIteratorOfDataMapOfGUIDDriver.hxx>
 #include<TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel.hxx>
@@ -56,15 +65,6 @@
 #include<TFunction_Iterator.hxx>
 #include<TFunction_Logbook.hxx>
 #include<TFunction_Scope.hxx>
-#include<Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver.hxx>
-#include<Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel.hxx>
-#include<Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel.hxx>
-#include<Handle_TFunction_Driver.hxx>
-#include<Handle_TFunction_DriverTable.hxx>
-#include<Handle_TFunction_Function.hxx>
-#include<Handle_TFunction_GraphNode.hxx>
-#include<Handle_TFunction_HArray1OfDataMapOfGUIDDriver.hxx>
-#include<Handle_TFunction_Scope.hxx>
 
 // Additional headers necessary for compilation.
 

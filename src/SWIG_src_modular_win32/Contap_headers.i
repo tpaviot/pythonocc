@@ -53,8 +53,8 @@
 #include<Contap_TFunction.hxx>
 #include<Contap_TheArcFunctionOfContour.hxx>
 #include<Contap_TheHSequenceOfPointOfContour.hxx>
-#include<Contap_TheIWalkingOfContour.hxx>
 #include<Contap_TheIWLineOfTheIWalkingOfContour.hxx>
+#include<Contap_TheIWalkingOfContour.hxx>
 #include<Contap_TheLineOfContour.hxx>
 #include<Contap_ThePathPointOfTheSearchOfContour.hxx>
 #include<Contap_ThePointOfContour.hxx>
@@ -92,8 +92,8 @@
 #include<Contap_TFunction.hxx>
 #include<Contap_TheArcFunctionOfContour.hxx>
 #include<Contap_TheHSequenceOfPointOfContour.hxx>
-#include<Contap_TheIWalkingOfContour.hxx>
 #include<Contap_TheIWLineOfTheIWalkingOfContour.hxx>
+#include<Contap_TheIWalkingOfContour.hxx>
 #include<Contap_TheLineOfContour.hxx>
 #include<Contap_ThePathPointOfTheSearchOfContour.hxx>
 #include<Contap_ThePointOfContour.hxx>

@@ -91,11 +91,11 @@
 #include<BOP_PWireEdgeSet.hxx>
 #include<BOP_Refiner.hxx>
 #include<BOP_SDFWESFiller.hxx>
+#include<BOP_SFSCorrector.hxx>
 #include<BOP_Section.hxx>
 #include<BOP_SectionHistoryCollector.hxx>
 #include<BOP_SeqOfSeqOfShape.hxx>
 #include<BOP_SequenceNodeOfSeqOfSeqOfShape.hxx>
-#include<BOP_SFSCorrector.hxx>
 #include<BOP_ShapeSet.hxx>
 #include<BOP_ShellFaceClassifier.hxx>
 #include<BOP_ShellFaceSet.hxx>

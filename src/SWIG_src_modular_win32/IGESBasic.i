@@ -98,6 +98,27 @@ Standard_Real & function transformation
 
 
 
+%nodefaultctor Handle_IGESBasic_Group;
+class Handle_IGESBasic_Group : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESBasic_Group();
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Group();
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Group(const Handle_IGESBasic_Group &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Group(const IGESBasic_Group *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Group const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESBasic_Group {
+	IGESBasic_Group* GetObject() {
+	return (IGESBasic_Group*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_IGESBasic_ReadWriteModule;
 class Handle_IGESBasic_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
@@ -389,27 +410,6 @@ class Handle_IGESBasic_GeneralModule : public Handle_IGESData_GeneralModule {
 %extend Handle_IGESBasic_GeneralModule {
 	IGESBasic_GeneralModule* GetObject() {
 	return (IGESBasic_GeneralModule*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IGESBasic_Group;
-class Handle_IGESBasic_Group : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_Group();
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Group();
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Group(const Handle_IGESBasic_Group &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Group(const IGESBasic_Group *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Group const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESBasic_Group {
-	IGESBasic_Group* GetObject() {
-	return (IGESBasic_Group*)$self->Access();
 	}
 };
 
@@ -1327,20 +1327,6 @@ class IGESBasic_Array1OfLineFontEntity {
 
 };
 
-%nodefaultctor IGESBasic;
-class IGESBasic {
-	public:
-		%feature("autodoc", "1");
-		~IGESBasic();
-		%feature("autodoc", "1");
-		IGESBasic();
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Protocol Protocol();
-
-};
-
 %nodefaultctor IGESBasic_ToolExternalRefLibName;
 class IGESBasic_ToolExternalRefLibName {
 	public:
@@ -1549,6 +1535,20 @@ class IGESBasic_ExternalReferenceFile : public IGESData_IGESEntity {
 	Handle_IGESBasic_ExternalReferenceFile GetHandle() {
 	return *(Handle_IGESBasic_ExternalReferenceFile*) &$self;
 	}
+};
+
+%nodefaultctor IGESBasic;
+class IGESBasic {
+	public:
+		%feature("autodoc", "1");
+		~IGESBasic();
+		%feature("autodoc", "1");
+		IGESBasic();
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Protocol Protocol();
+
 };
 
 %nodefaultctor IGESBasic_ExternalRefFileIndex;

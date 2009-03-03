@@ -36,20 +36,20 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<MFunction_FunctionRetrievalDriver.hxx>
-#include<MFunction_FunctionStorageDriver.hxx>
-#include<MFunction.hxx>
 #include<Handle_MFunction_FunctionRetrievalDriver.hxx>
 #include<Handle_MFunction_FunctionStorageDriver.hxx>
+#include<MFunction.hxx>
+#include<MFunction_FunctionRetrievalDriver.hxx>
+#include<MFunction_FunctionStorageDriver.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

@@ -36,6 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt.hxx>
+#include<Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg.hxx>
 #include<IntCurveSurface_HInter.hxx>
 #include<IntCurveSurface_Intersection.hxx>
 #include<IntCurveSurface_IntersectionPoint.hxx>
@@ -56,8 +58,6 @@
 #include<IntCurveSurface_TheQuadCurvExactHInter.hxx>
 #include<IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter.hxx>
 #include<IntCurveSurface_TransitionOnCurve.hxx>
-#include<Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt.hxx>
-#include<Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg.hxx>
 
 // Additional headers necessary for compilation.
 

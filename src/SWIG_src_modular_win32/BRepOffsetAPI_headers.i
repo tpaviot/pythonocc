@@ -62,6 +62,20 @@
 
 // Additional headers necessary for compilation.
 
+#include<BRepTools.hxx>
+#include<BRepTools_DataMapIteratorOfMapOfVertexPnt2d.hxx>
+#include<BRepTools_DataMapNodeOfMapOfVertexPnt2d.hxx>
+#include<BRepTools_GTrsfModification.hxx>
+#include<BRepTools_MapOfVertexPnt2d.hxx>
+#include<BRepTools_Modification.hxx>
+#include<BRepTools_Modifier.hxx>
+#include<BRepTools_NurbsConvertModification.hxx>
+#include<BRepTools_Quilt.hxx>
+#include<BRepTools_ReShape.hxx>
+#include<BRepTools_ShapeSet.hxx>
+#include<BRepTools_Substitution.hxx>
+#include<BRepTools_TrsfModification.hxx>
+#include<BRepTools_WireExplorer.hxx>
 #include<TopTools.hxx>
 #include<TopTools_Array1OfListOfShape.hxx>
 #include<TopTools_Array1OfShape.hxx>
@@ -114,20 +128,6 @@
 #include<TopTools_ShapeSet.hxx>
 #include<TopTools_StdMapNodeOfMapOfOrientedShape.hxx>
 #include<TopTools_StdMapNodeOfMapOfShape.hxx>
-#include<BRepTools.hxx>
-#include<BRepTools_DataMapIteratorOfMapOfVertexPnt2d.hxx>
-#include<BRepTools_DataMapNodeOfMapOfVertexPnt2d.hxx>
-#include<BRepTools_GTrsfModification.hxx>
-#include<BRepTools_MapOfVertexPnt2d.hxx>
-#include<BRepTools_Modification.hxx>
-#include<BRepTools_Modifier.hxx>
-#include<BRepTools_NurbsConvertModification.hxx>
-#include<BRepTools_Quilt.hxx>
-#include<BRepTools_ReShape.hxx>
-#include<BRepTools_ShapeSet.hxx>
-#include<BRepTools_Substitution.hxx>
-#include<BRepTools_TrsfModification.hxx>
-#include<BRepTools_WireExplorer.hxx>
 
 // Needed headers necessary for compilation.
 

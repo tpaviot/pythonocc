@@ -36,11 +36,11 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<GeomTools.hxx>
 #include<GeomTools_Curve2dSet.hxx>
 #include<GeomTools_CurveSet.hxx>
 #include<GeomTools_SurfaceSet.hxx>
 #include<GeomTools_UndefinedTypeHandler.hxx>
-#include<GeomTools.hxx>
 #include<Handle_GeomTools_UndefinedTypeHandler.hxx>
 
 // Additional headers necessary for compilation.

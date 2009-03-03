@@ -53,7 +53,17 @@
 
 // Additional headers necessary for compilation.
 
-#include<gp.hxx>
+#include<Bisector.hxx>
+#include<Bisector_Bisec.hxx>
+#include<Bisector_BisecAna.hxx>
+#include<Bisector_BisecCC.hxx>
+#include<Bisector_BisecPC.hxx>
+#include<Bisector_Curve.hxx>
+#include<Bisector_FunctionH.hxx>
+#include<Bisector_FunctionInter.hxx>
+#include<Bisector_Inter.hxx>
+#include<Bisector_PointOnBis.hxx>
+#include<Bisector_PolyBis.hxx>
 #include<GProp.hxx>
 #include<GProp_CelGProps.hxx>
 #include<GProp_EquaType.hxx>
@@ -65,6 +75,7 @@
 #include<GProp_UndefinedAxis.hxx>
 #include<GProp_ValueType.hxx>
 #include<GProp_VelGProps.hxx>
+#include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>
@@ -101,17 +112,6 @@
 #include<gp_VectorWithNullMagnitude.hxx>
 #include<gp_XY.hxx>
 #include<gp_XYZ.hxx>
-#include<Bisector.hxx>
-#include<Bisector_Bisec.hxx>
-#include<Bisector_BisecAna.hxx>
-#include<Bisector_BisecCC.hxx>
-#include<Bisector_BisecPC.hxx>
-#include<Bisector_Curve.hxx>
-#include<Bisector_FunctionH.hxx>
-#include<Bisector_FunctionInter.hxx>
-#include<Bisector_Inter.hxx>
-#include<Bisector_PointOnBis.hxx>
-#include<Bisector_PolyBis.hxx>
 
 // Needed headers necessary for compilation.
 

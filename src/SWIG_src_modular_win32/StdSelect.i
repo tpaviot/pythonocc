@@ -125,27 +125,6 @@ enum StdSelect_TypeOfFace {
 
 
 
-%nodefaultctor Handle_StdSelect_Shape;
-class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_Shape();
-		%feature("autodoc", "1");
-		Handle_StdSelect_Shape();
-		%feature("autodoc", "1");
-		Handle_StdSelect_Shape(const Handle_StdSelect_Shape &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_Shape(const StdSelect_Shape *anItem);
-		%feature("autodoc", "1");
-		Handle_StdSelect_Shape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StdSelect_Shape {
-	StdSelect_Shape* GetObject() {
-	return (StdSelect_Shape*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StdSelect_SensitiveText2d;
 class Handle_StdSelect_SensitiveText2d : public Handle_Select2D_SensitiveEntity {
 	public:
@@ -188,6 +167,27 @@ class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
 	}
 };
 
+%nodefaultctor Handle_StdSelect_EdgeFilter;
+class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StdSelect_EdgeFilter();
+		%feature("autodoc", "1");
+		Handle_StdSelect_EdgeFilter();
+		%feature("autodoc", "1");
+		Handle_StdSelect_EdgeFilter(const Handle_StdSelect_EdgeFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_EdgeFilter(const StdSelect_EdgeFilter *anItem);
+		%feature("autodoc", "1");
+		Handle_StdSelect_EdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StdSelect_EdgeFilter {
+	StdSelect_EdgeFilter* GetObject() {
+	return (StdSelect_EdgeFilter*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StdSelect_BRepOwner;
 class Handle_StdSelect_BRepOwner : public Handle_SelectMgr_EntityOwner {
 	public:
@@ -227,6 +227,27 @@ class Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Han
 %extend Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs* GetObject() {
 	return (StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StdSelect_Shape;
+class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StdSelect_Shape();
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape();
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape(const Handle_StdSelect_Shape &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape(const StdSelect_Shape *anItem);
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StdSelect_Shape {
+	StdSelect_Shape* GetObject() {
+	return (StdSelect_Shape*)$self->Access();
 	}
 };
 
@@ -311,27 +332,6 @@ class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 %extend Handle_StdSelect_ShapeTypeFilter {
 	StdSelect_ShapeTypeFilter* GetObject() {
 	return (StdSelect_ShapeTypeFilter*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StdSelect_EdgeFilter;
-class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_EdgeFilter();
-		%feature("autodoc", "1");
-		Handle_StdSelect_EdgeFilter();
-		%feature("autodoc", "1");
-		Handle_StdSelect_EdgeFilter(const Handle_StdSelect_EdgeFilter &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_EdgeFilter(const StdSelect_EdgeFilter *anItem);
-		%feature("autodoc", "1");
-		Handle_StdSelect_EdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StdSelect_EdgeFilter {
-	StdSelect_EdgeFilter* GetObject() {
-	return (StdSelect_EdgeFilter*)$self->Access();
 	}
 };
 

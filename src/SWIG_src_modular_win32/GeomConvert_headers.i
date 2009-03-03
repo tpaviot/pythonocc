@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<GeomConvert.hxx>
 #include<GeomConvert_ApproxCurve.hxx>
 #include<GeomConvert_ApproxSurface.hxx>
 #include<GeomConvert_BSplineCurveKnotSplitting.hxx>
@@ -44,7 +45,6 @@
 #include<GeomConvert_BSplineSurfaceToBezierSurface.hxx>
 #include<GeomConvert_CompBezierSurfacesToBSplineSurface.hxx>
 #include<GeomConvert_CompCurveToBSplineCurve.hxx>
-#include<GeomConvert.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -1213,6 +1213,31 @@ class Quantity_Date {
 
 };
 
+%nodefaultctor Quantity_DateDefinitionError;
+class Quantity_DateDefinitionError : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Quantity_DateDefinitionError();
+		%feature("autodoc", "1");
+		Quantity_DateDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Quantity_DateDefinitionError();
+
+};
+%extend Quantity_DateDefinitionError {
+	Handle_Quantity_DateDefinitionError GetHandle() {
+	return *(Handle_Quantity_DateDefinitionError*) &$self;
+	}
+};
+
 %nodefaultctor Quantity_HArray1OfColor;
 class Quantity_HArray1OfColor : public MMgt_TShared {
 	public:
@@ -1247,31 +1272,6 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 %extend Quantity_HArray1OfColor {
 	Handle_Quantity_HArray1OfColor GetHandle() {
 	return *(Handle_Quantity_HArray1OfColor*) &$self;
-	}
-};
-
-%nodefaultctor Quantity_DateDefinitionError;
-class Quantity_DateDefinitionError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Quantity_DateDefinitionError();
-		%feature("autodoc", "1");
-		Quantity_DateDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_DateDefinitionError();
-
-};
-%extend Quantity_DateDefinitionError {
-	Handle_Quantity_DateDefinitionError GetHandle() {
-	return *(Handle_Quantity_DateDefinitionError*) &$self;
 	}
 };
 

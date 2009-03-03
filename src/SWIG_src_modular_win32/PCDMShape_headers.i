@@ -36,8 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<PCDMShape_Document.hxx>
 #include<Handle_PCDMShape_Document.hxx>
+#include<PCDMShape_Document.hxx>
 
 // Additional headers necessary for compilation.
 

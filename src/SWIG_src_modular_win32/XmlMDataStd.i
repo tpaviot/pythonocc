@@ -434,27 +434,6 @@ class Handle_XmlMDataStd_PatternStdDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
-%nodefaultctor Handle_XmlMDataStd_ShapeDriver;
-class Handle_XmlMDataStd_ShapeDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMDataStd_ShapeDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ShapeDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ShapeDriver(const Handle_XmlMDataStd_ShapeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ShapeDriver(const XmlMDataStd_ShapeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_ShapeDriver {
-	XmlMDataStd_ShapeDriver* GetObject() {
-	return (XmlMDataStd_ShapeDriver*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_XmlMDataStd_RealDriver;
 class Handle_XmlMDataStd_RealDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -578,6 +557,27 @@ class Handle_XmlMDataStd_IntegerDriver : public Handle_XmlMDF_ADriver {
 %extend Handle_XmlMDataStd_IntegerDriver {
 	XmlMDataStd_IntegerDriver* GetObject() {
 	return (XmlMDataStd_IntegerDriver*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_XmlMDataStd_TickDriver;
+class Handle_XmlMDataStd_TickDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		~Handle_XmlMDataStd_TickDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_TickDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_TickDriver(const Handle_XmlMDataStd_TickDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_TickDriver(const XmlMDataStd_TickDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_TickDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_TickDriver {
+	XmlMDataStd_TickDriver* GetObject() {
+	return (XmlMDataStd_TickDriver*)$self->Access();
 	}
 };
 
@@ -707,24 +707,24 @@ class Handle_XmlMDataStd_ExpressionDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
-%nodefaultctor Handle_XmlMDataStd_TickDriver;
-class Handle_XmlMDataStd_TickDriver : public Handle_XmlMDF_ADriver {
+%nodefaultctor Handle_XmlMDataStd_ShapeDriver;
+class Handle_XmlMDataStd_ShapeDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlMDataStd_TickDriver();
+		~Handle_XmlMDataStd_ShapeDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_TickDriver();
+		Handle_XmlMDataStd_ShapeDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_TickDriver(const Handle_XmlMDataStd_TickDriver &aHandle);
+		Handle_XmlMDataStd_ShapeDriver(const Handle_XmlMDataStd_ShapeDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_TickDriver(const XmlMDataStd_TickDriver *anItem);
+		Handle_XmlMDataStd_ShapeDriver(const XmlMDataStd_ShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_TickDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlMDataStd_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlMDataStd_TickDriver {
-	XmlMDataStd_TickDriver* GetObject() {
-	return (XmlMDataStd_TickDriver*)$self->Access();
+%extend Handle_XmlMDataStd_ShapeDriver {
+	XmlMDataStd_ShapeDriver* GetObject() {
+	return (XmlMDataStd_ShapeDriver*)$self->Access();
 	}
 };
 
@@ -1334,29 +1334,6 @@ class XmlMDataStd {
 
 };
 
-%nodefaultctor XmlMDataStd_NoteBookDriver;
-class XmlMDataStd_NoteBookDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_NoteBookDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMDataStd_NoteBookDriver();
-
-};
-%extend XmlMDataStd_NoteBookDriver {
-	Handle_XmlMDataStd_NoteBookDriver GetHandle() {
-	return *(Handle_XmlMDataStd_NoteBookDriver*) &$self;
-	}
-};
-
 %nodefaultctor XmlMDataStd_ReferenceListDriver;
 class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
 	public:
@@ -1538,6 +1515,29 @@ class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
 %extend XmlMDataStd_NameDriver {
 	Handle_XmlMDataStd_NameDriver GetHandle() {
 	return *(Handle_XmlMDataStd_NameDriver*) &$self;
+	}
+};
+
+%nodefaultctor XmlMDataStd_NoteBookDriver;
+class XmlMDataStd_NoteBookDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_NoteBookDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~XmlMDataStd_NoteBookDriver();
+
+};
+%extend XmlMDataStd_NoteBookDriver {
+	Handle_XmlMDataStd_NoteBookDriver GetHandle() {
+	return *(Handle_XmlMDataStd_NoteBookDriver*) &$self;
 	}
 };
 

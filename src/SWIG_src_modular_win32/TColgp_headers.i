@@ -36,6 +36,43 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d.hxx>
+#include<Handle_TColgp_HArray1OfCirc2d.hxx>
+#include<Handle_TColgp_HArray1OfDir.hxx>
+#include<Handle_TColgp_HArray1OfDir2d.hxx>
+#include<Handle_TColgp_HArray1OfLin2d.hxx>
+#include<Handle_TColgp_HArray1OfPnt.hxx>
+#include<Handle_TColgp_HArray1OfPnt2d.hxx>
+#include<Handle_TColgp_HArray1OfVec.hxx>
+#include<Handle_TColgp_HArray1OfVec2d.hxx>
+#include<Handle_TColgp_HArray1OfXY.hxx>
+#include<Handle_TColgp_HArray1OfXYZ.hxx>
+#include<Handle_TColgp_HArray2OfCirc2d.hxx>
+#include<Handle_TColgp_HArray2OfDir.hxx>
+#include<Handle_TColgp_HArray2OfDir2d.hxx>
+#include<Handle_TColgp_HArray2OfLin2d.hxx>
+#include<Handle_TColgp_HArray2OfPnt.hxx>
+#include<Handle_TColgp_HArray2OfPnt2d.hxx>
+#include<Handle_TColgp_HArray2OfVec.hxx>
+#include<Handle_TColgp_HArray2OfVec2d.hxx>
+#include<Handle_TColgp_HArray2OfXY.hxx>
+#include<Handle_TColgp_HArray2OfXYZ.hxx>
+#include<Handle_TColgp_HSequenceOfDir.hxx>
+#include<Handle_TColgp_HSequenceOfDir2d.hxx>
+#include<Handle_TColgp_HSequenceOfPnt.hxx>
+#include<Handle_TColgp_HSequenceOfPnt2d.hxx>
+#include<Handle_TColgp_HSequenceOfVec.hxx>
+#include<Handle_TColgp_HSequenceOfVec2d.hxx>
+#include<Handle_TColgp_HSequenceOfXY.hxx>
+#include<Handle_TColgp_HSequenceOfXYZ.hxx>
+#include<Handle_TColgp_SequenceNodeOfSequenceOfDir.hxx>
+#include<Handle_TColgp_SequenceNodeOfSequenceOfDir2d.hxx>
+#include<Handle_TColgp_SequenceNodeOfSequenceOfPnt.hxx>
+#include<Handle_TColgp_SequenceNodeOfSequenceOfPnt2d.hxx>
+#include<Handle_TColgp_SequenceNodeOfSequenceOfVec.hxx>
+#include<Handle_TColgp_SequenceNodeOfSequenceOfVec2d.hxx>
+#include<Handle_TColgp_SequenceNodeOfSequenceOfXY.hxx>
+#include<Handle_TColgp_SequenceNodeOfSequenceOfXYZ.hxx>
 #include<TColgp_Array1OfCirc2d.hxx>
 #include<TColgp_Array1OfDir.hxx>
 #include<TColgp_Array1OfDir2d.hxx>
@@ -103,43 +140,6 @@
 #include<TColgp_SequenceOfVec2d.hxx>
 #include<TColgp_SequenceOfXY.hxx>
 #include<TColgp_SequenceOfXYZ.hxx>
-#include<Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d.hxx>
-#include<Handle_TColgp_HArray1OfCirc2d.hxx>
-#include<Handle_TColgp_HArray1OfDir.hxx>
-#include<Handle_TColgp_HArray1OfDir2d.hxx>
-#include<Handle_TColgp_HArray1OfLin2d.hxx>
-#include<Handle_TColgp_HArray1OfPnt.hxx>
-#include<Handle_TColgp_HArray1OfPnt2d.hxx>
-#include<Handle_TColgp_HArray1OfVec.hxx>
-#include<Handle_TColgp_HArray1OfVec2d.hxx>
-#include<Handle_TColgp_HArray1OfXY.hxx>
-#include<Handle_TColgp_HArray1OfXYZ.hxx>
-#include<Handle_TColgp_HArray2OfCirc2d.hxx>
-#include<Handle_TColgp_HArray2OfDir.hxx>
-#include<Handle_TColgp_HArray2OfDir2d.hxx>
-#include<Handle_TColgp_HArray2OfLin2d.hxx>
-#include<Handle_TColgp_HArray2OfPnt.hxx>
-#include<Handle_TColgp_HArray2OfPnt2d.hxx>
-#include<Handle_TColgp_HArray2OfVec.hxx>
-#include<Handle_TColgp_HArray2OfVec2d.hxx>
-#include<Handle_TColgp_HArray2OfXY.hxx>
-#include<Handle_TColgp_HArray2OfXYZ.hxx>
-#include<Handle_TColgp_HSequenceOfDir.hxx>
-#include<Handle_TColgp_HSequenceOfDir2d.hxx>
-#include<Handle_TColgp_HSequenceOfPnt.hxx>
-#include<Handle_TColgp_HSequenceOfPnt2d.hxx>
-#include<Handle_TColgp_HSequenceOfVec.hxx>
-#include<Handle_TColgp_HSequenceOfVec2d.hxx>
-#include<Handle_TColgp_HSequenceOfXY.hxx>
-#include<Handle_TColgp_HSequenceOfXYZ.hxx>
-#include<Handle_TColgp_SequenceNodeOfSequenceOfDir.hxx>
-#include<Handle_TColgp_SequenceNodeOfSequenceOfDir2d.hxx>
-#include<Handle_TColgp_SequenceNodeOfSequenceOfPnt.hxx>
-#include<Handle_TColgp_SequenceNodeOfSequenceOfPnt2d.hxx>
-#include<Handle_TColgp_SequenceNodeOfSequenceOfVec.hxx>
-#include<Handle_TColgp_SequenceNodeOfSequenceOfVec2d.hxx>
-#include<Handle_TColgp_SequenceNodeOfSequenceOfXY.hxx>
-#include<Handle_TColgp_SequenceNodeOfSequenceOfXYZ.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -215,7 +215,6 @@
 
 #include<Handle_Standard_Transient.hxx>
 #include<gp_XYZ.hxx>
-#include<gp_Vec2d.hxx>
 #include<gp_Dir2d.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Dir.hxx>
@@ -223,5 +222,6 @@
 #include<gp_Pnt.hxx>
 #include<gp_XY.hxx>
 #include<gp_Lin2d.hxx>
+#include<gp_Vec2d.hxx>
 #include<gp_Circ2d.hxx>
 %}

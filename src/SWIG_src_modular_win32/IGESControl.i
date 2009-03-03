@@ -225,27 +225,6 @@ class IGESControl_Reader : public XSControl_Reader {
 
 };
 
-%nodefaultctor IGESControl_IGESBoundary;
-class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
-	public:
-		%feature("autodoc", "1");
-		IGESControl_IGESBoundary();
-		%feature("autodoc", "1");
-		IGESControl_IGESBoundary(const IGESToBRep_CurveAndSurface &CS);
-		%feature("autodoc", "1");
-		virtual		void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESControl_IGESBoundary();
-
-};
-%extend IGESControl_IGESBoundary {
-	Handle_IGESControl_IGESBoundary GetHandle() {
-	return *(Handle_IGESControl_IGESBoundary*) &$self;
-	}
-};
-
 %nodefaultctor IGESControl_ToolContainer;
 class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 	public:
@@ -306,6 +285,27 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 %extend IGESControl_AlgoContainer {
 	Handle_IGESControl_AlgoContainer GetHandle() {
 	return *(Handle_IGESControl_AlgoContainer*) &$self;
+	}
+};
+
+%nodefaultctor IGESControl_IGESBoundary;
+class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
+	public:
+		%feature("autodoc", "1");
+		IGESControl_IGESBoundary();
+		%feature("autodoc", "1");
+		IGESControl_IGESBoundary(const IGESToBRep_CurveAndSurface &CS);
+		%feature("autodoc", "1");
+		virtual		void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESControl_IGESBoundary();
+
+};
+%extend IGESControl_IGESBoundary {
+	Handle_IGESControl_IGESBoundary GetHandle() {
+	return *(Handle_IGESControl_IGESBoundary*) &$self;
 	}
 };
 

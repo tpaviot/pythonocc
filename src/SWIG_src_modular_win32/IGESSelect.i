@@ -245,27 +245,6 @@ class Handle_IGESSelect_SelectFromSingleView : public Handle_IFSelect_SelectDedu
 	}
 };
 
-%nodefaultctor Handle_IGESSelect_ViewSorter;
-class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_ViewSorter();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ViewSorter();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ViewSorter(const Handle_IGESSelect_ViewSorter &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ViewSorter(const IGESSelect_ViewSorter *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ViewSorter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_ViewSorter {
-	IGESSelect_ViewSorter* GetObject() {
-	return (IGESSelect_ViewSorter*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_IGESSelect_RemoveCurves;
 class Handle_IGESSelect_RemoveCurves : public Handle_IGESSelect_ModelModifier {
 	public:
@@ -767,6 +746,27 @@ class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
 %extend Handle_IGESSelect_Dumper {
 	IGESSelect_Dumper* GetObject() {
 	return (IGESSelect_Dumper*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_IGESSelect_ViewSorter;
+class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESSelect_ViewSorter();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ViewSorter();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ViewSorter(const Handle_IGESSelect_ViewSorter &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ViewSorter(const IGESSelect_ViewSorter *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ViewSorter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_ViewSorter {
+	IGESSelect_ViewSorter* GetObject() {
+	return (IGESSelect_ViewSorter*)$self->Access();
 	}
 };
 
@@ -1929,6 +1929,31 @@ class IGESSelect_SelectBypassSubfigure : public IFSelect_SelectExplore {
 	}
 };
 
+%nodefaultctor IGESSelect_SplineToBSpline;
+class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect_SplineToBSpline(const Standard_Boolean tryC2);
+		%feature("autodoc", "1");
+		Standard_Boolean OptionTryC2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Perform(const Interface_Graph &G, const Handle_Interface_Protocol &protocol, Interface_CheckIterator & checks, Handle_Interface_InterfaceModel & newmod);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Updated(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESSelect_SplineToBSpline();
+
+};
+%extend IGESSelect_SplineToBSpline {
+	Handle_IGESSelect_SplineToBSpline GetHandle() {
+	return *(Handle_IGESSelect_SplineToBSpline*) &$self;
+	}
+};
+
 %nodefaultctor IGESSelect_ChangeLevelList;
 class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
 	public:
@@ -2080,31 +2105,6 @@ class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
 %extend IGESSelect_DispPerDrawing {
 	Handle_IGESSelect_DispPerDrawing GetHandle() {
 	return *(Handle_IGESSelect_DispPerDrawing*) &$self;
-	}
-};
-
-%nodefaultctor IGESSelect_SplineToBSpline;
-class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
-	public:
-		%feature("autodoc", "1");
-		IGESSelect_SplineToBSpline(const Standard_Boolean tryC2);
-		%feature("autodoc", "1");
-		Standard_Boolean OptionTryC2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform(const Interface_Graph &G, const Handle_Interface_Protocol &protocol, Interface_CheckIterator & checks, Handle_Interface_InterfaceModel & newmod);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Updated(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SplineToBSpline();
-
-};
-%extend IGESSelect_SplineToBSpline {
-	Handle_IGESSelect_SplineToBSpline GetHandle() {
-	return *(Handle_IGESSelect_SplineToBSpline*) &$self;
 	}
 };
 

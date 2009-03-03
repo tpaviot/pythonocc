@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_IntAna_ListNodeOfListOfCurve.hxx>
 #include<IntAna_Curve.hxx>
 #include<IntAna_Int3Pln.hxx>
 #include<IntAna_IntConicQuad.hxx>
@@ -47,7 +48,6 @@
 #include<IntAna_QuadQuadGeo.hxx>
 #include<IntAna_Quadric.hxx>
 #include<IntAna_ResultType.hxx>
-#include<Handle_IntAna_ListNodeOfListOfCurve.hxx>
 
 // Additional headers necessary for compilation.
 

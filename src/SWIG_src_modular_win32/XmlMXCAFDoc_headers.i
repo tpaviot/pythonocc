@@ -36,17 +36,6 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<XmlMXCAFDoc_AreaDriver.hxx>
-#include<XmlMXCAFDoc_CentroidDriver.hxx>
-#include<XmlMXCAFDoc_ColorDriver.hxx>
-#include<XmlMXCAFDoc_ColorToolDriver.hxx>
-#include<XmlMXCAFDoc_DocumentToolDriver.hxx>
-#include<XmlMXCAFDoc_GraphNodeDriver.hxx>
-#include<XmlMXCAFDoc_LayerToolDriver.hxx>
-#include<XmlMXCAFDoc_LocationDriver.hxx>
-#include<XmlMXCAFDoc_ShapeToolDriver.hxx>
-#include<XmlMXCAFDoc_VolumeDriver.hxx>
-#include<XmlMXCAFDoc.hxx>
 #include<Handle_XmlMXCAFDoc_AreaDriver.hxx>
 #include<Handle_XmlMXCAFDoc_CentroidDriver.hxx>
 #include<Handle_XmlMXCAFDoc_ColorDriver.hxx>
@@ -57,15 +46,26 @@
 #include<Handle_XmlMXCAFDoc_LocationDriver.hxx>
 #include<Handle_XmlMXCAFDoc_ShapeToolDriver.hxx>
 #include<Handle_XmlMXCAFDoc_VolumeDriver.hxx>
+#include<XmlMXCAFDoc.hxx>
+#include<XmlMXCAFDoc_AreaDriver.hxx>
+#include<XmlMXCAFDoc_CentroidDriver.hxx>
+#include<XmlMXCAFDoc_ColorDriver.hxx>
+#include<XmlMXCAFDoc_ColorToolDriver.hxx>
+#include<XmlMXCAFDoc_DocumentToolDriver.hxx>
+#include<XmlMXCAFDoc_GraphNodeDriver.hxx>
+#include<XmlMXCAFDoc_LayerToolDriver.hxx>
+#include<XmlMXCAFDoc_LocationDriver.hxx>
+#include<XmlMXCAFDoc_ShapeToolDriver.hxx>
+#include<XmlMXCAFDoc_VolumeDriver.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

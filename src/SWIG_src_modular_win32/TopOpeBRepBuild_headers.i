@@ -36,6 +36,17 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger.hxx>
+#include<Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape.hxx>
+#include<Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal.hxx>
+#include<Handle_TopOpeBRepBuild_HBuilder.hxx>
+#include<Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo.hxx>
+#include<Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop.hxx>
+#include<Handle_TopOpeBRepBuild_ListNodeOfListOfLoop.hxx>
+#include<Handle_TopOpeBRepBuild_ListNodeOfListOfPave.hxx>
+#include<Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape.hxx>
+#include<Handle_TopOpeBRepBuild_Loop.hxx>
+#include<Handle_TopOpeBRepBuild_Pave.hxx>
 #include<TopOpeBRepBuild_Area1dBuilder.hxx>
 #include<TopOpeBRepBuild_Area2dBuilder.hxx>
 #include<TopOpeBRepBuild_Area3dBuilder.hxx>
@@ -55,7 +66,6 @@
 #include<TopOpeBRepBuild_DataMapOfShapeInteger.hxx>
 #include<TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape.hxx>
 #include<TopOpeBRepBuild_DataMapOfShapeReal.hxx>
-#include<TopOpeBRepBuild_define.hxx>
 #include<TopOpeBRepBuild_EdgeBuilder.hxx>
 #include<TopOpeBRepBuild_FaceAreaBuilder.hxx>
 #include<TopOpeBRepBuild_FaceBuilder.hxx>
@@ -66,7 +76,6 @@
 #include<TopOpeBRepBuild_HBuilder.hxx>
 #include<TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo.hxx>
 #include<TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo.hxx>
-#include<TopOpeBRepBuild_kpresu.hxx>
 #include<TopOpeBRepBuild_ListIteratorOfListOfListOfLoop.hxx>
 #include<TopOpeBRepBuild_ListIteratorOfListOfLoop.hxx>
 #include<TopOpeBRepBuild_ListIteratorOfListOfPave.hxx>
@@ -83,12 +92,12 @@
 #include<TopOpeBRepBuild_LoopClassifier.hxx>
 #include<TopOpeBRepBuild_LoopEnum.hxx>
 #include<TopOpeBRepBuild_LoopSet.hxx>
-#include<TopOpeBRepBuild_Pave.hxx>
-#include<TopOpeBRepBuild_PaveClassifier.hxx>
-#include<TopOpeBRepBuild_PaveSet.hxx>
 #include<TopOpeBRepBuild_PBuilder.hxx>
 #include<TopOpeBRepBuild_PGTopo.hxx>
 #include<TopOpeBRepBuild_PWireEdgeSet.hxx>
+#include<TopOpeBRepBuild_Pave.hxx>
+#include<TopOpeBRepBuild_PaveClassifier.hxx>
+#include<TopOpeBRepBuild_PaveSet.hxx>
 #include<TopOpeBRepBuild_ShapeListOfShape.hxx>
 #include<TopOpeBRepBuild_ShapeSet.hxx>
 #include<TopOpeBRepBuild_ShellFaceClassifier.hxx>
@@ -103,17 +112,8 @@
 #include<TopOpeBRepBuild_WireEdgeClassifier.hxx>
 #include<TopOpeBRepBuild_WireEdgeSet.hxx>
 #include<TopOpeBRepBuild_WireToFace.hxx>
-#include<Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger.hxx>
-#include<Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape.hxx>
-#include<Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal.hxx>
-#include<Handle_TopOpeBRepBuild_HBuilder.hxx>
-#include<Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo.hxx>
-#include<Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop.hxx>
-#include<Handle_TopOpeBRepBuild_ListNodeOfListOfLoop.hxx>
-#include<Handle_TopOpeBRepBuild_ListNodeOfListOfPave.hxx>
-#include<Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape.hxx>
-#include<Handle_TopOpeBRepBuild_Loop.hxx>
-#include<Handle_TopOpeBRepBuild_Pave.hxx>
+#include<TopOpeBRepBuild_define.hxx>
+#include<TopOpeBRepBuild_kpresu.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -124,12 +124,14 @@
 #include<TopOpeBRepDS_Check.hxx>
 #include<TopOpeBRepDS_CheckStatus.hxx>
 #include<TopOpeBRepDS_Config.hxx>
-#include<TopOpeBRepDS_connex.hxx>
 #include<TopOpeBRepDS_Curve.hxx>
 #include<TopOpeBRepDS_CurveData.hxx>
 #include<TopOpeBRepDS_CurveExplorer.hxx>
 #include<TopOpeBRepDS_CurveIterator.hxx>
 #include<TopOpeBRepDS_CurvePointInterference.hxx>
+#include<TopOpeBRepDS_DRAW.hxx>
+#include<TopOpeBRepDS_DSS.hxx>
+#include<TopOpeBRepDS_DSX.hxx>
 #include<TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus.hxx>
 #include<TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference.hxx>
 #include<TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference.hxx>
@@ -159,24 +161,20 @@
 #include<TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State.hxx>
 #include<TopOpeBRepDS_DataMapOfShapeState.hxx>
 #include<TopOpeBRepDS_DataStructure.hxx>
-#include<TopOpeBRepDS_define.hxx>
 #include<TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape.hxx>
 #include<TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape.hxx>
 #include<TopOpeBRepDS_DoubleMapOfIntegerShape.hxx>
-#include<TopOpeBRepDS_DRAW.hxx>
-#include<TopOpeBRepDS_DSS.hxx>
-#include<TopOpeBRepDS_DSX.hxx>
 #include<TopOpeBRepDS_Dumper.hxx>
+#include<TopOpeBRepDS_EIR.hxx>
+#include<TopOpeBRepDS_EXPORT.hxx>
 #include<TopOpeBRepDS_Edge3dInterferenceTool.hxx>
 #include<TopOpeBRepDS_EdgeInterferenceTool.hxx>
 #include<TopOpeBRepDS_EdgeVertexInterference.hxx>
-#include<TopOpeBRepDS_EIR.hxx>
 #include<TopOpeBRepDS_Explorer.hxx>
-#include<TopOpeBRepDS_EXPORT.hxx>
+#include<TopOpeBRepDS_FIR.hxx>
 #include<TopOpeBRepDS_FaceEdgeInterference.hxx>
 #include<TopOpeBRepDS_FaceInterferenceTool.hxx>
 #include<TopOpeBRepDS_Filter.hxx>
-#include<TopOpeBRepDS_FIR.hxx>
 #include<TopOpeBRepDS_GapFiller.hxx>
 #include<TopOpeBRepDS_GapTool.hxx>
 #include<TopOpeBRepDS_GeometryData.hxx>
@@ -207,10 +205,7 @@
 #include<TopOpeBRepDS_PointExplorer.hxx>
 #include<TopOpeBRepDS_PointIterator.hxx>
 #include<TopOpeBRepDS_ProcessInterferencesTool.hxx>
-#include<TopOpeBRepDS_reDEB.hxx>
 #include<TopOpeBRepDS_Reducer.hxx>
-#include<TopOpeBRepDS_repvg.hxx>
-#include<TopOpeBRepDS_samdom.hxx>
 #include<TopOpeBRepDS_ShapeData.hxx>
 #include<TopOpeBRepDS_ShapeShapeInterference.hxx>
 #include<TopOpeBRepDS_ShapeSurface.hxx>
@@ -223,9 +218,14 @@
 #include<TopOpeBRepDS_SurfaceIterator.hxx>
 #include<TopOpeBRepDS_TKI.hxx>
 #include<TopOpeBRepDS_TOOL.hxx>
+#include<TopOpeBRepDS_Transition.hxx>
+#include<TopOpeBRepDS_connex.hxx>
+#include<TopOpeBRepDS_define.hxx>
+#include<TopOpeBRepDS_reDEB.hxx>
+#include<TopOpeBRepDS_repvg.hxx>
+#include<TopOpeBRepDS_samdom.hxx>
 #include<TopOpeBRepDS_tools.hxx>
 #include<TopOpeBRepDS_traceDSX.hxx>
-#include<TopOpeBRepDS_Transition.hxx>
 
 // Needed headers necessary for compilation.
 
@@ -237,12 +237,12 @@
 #include<TopoDS_Edge.hxx>
 #include<gp_Pnt2d.hxx>
 #include<TopTools_ListOfShape.hxx>
-#include<TopOpeBRepDS_BuildTool.hxx>
-#include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Shell.hxx>
 #include<TopoDS_Solid.hxx>
+#include<TopOpeBRepDS_BuildTool.hxx>
+#include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<TopTools_MapOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<TopOpeBRepDS_SurfaceIterator.hxx>

@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BinMDF.hxx>
 #include<BinMDF_ADriver.hxx>
 #include<BinMDF_ADriverTable.hxx>
 #include<BinMDF_DataMapIteratorOfStringIdMap.hxx>
@@ -49,7 +50,6 @@
 #include<BinMDF_TagSourceDriver.hxx>
 #include<BinMDF_TypeADriverMap.hxx>
 #include<BinMDF_TypeIdMap.hxx>
-#include<BinMDF.hxx>
 #include<Handle_BinMDF_ADriver.hxx>
 #include<Handle_BinMDF_ADriverTable.hxx>
 #include<Handle_BinMDF_DataMapNodeOfStringIdMap.hxx>

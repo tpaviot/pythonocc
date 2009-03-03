@@ -426,6 +426,42 @@ class TColGeom2d_HSequenceOfBoundedCurve : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor TColGeom2d_Array1OfBezierCurve;
+class TColGeom2d_Array1OfBezierCurve {
+	public:
+		%feature("autodoc", "1");
+		TColGeom2d_Array1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColGeom2d_Array1OfBezierCurve(const Handle_Geom2d_BezierCurve &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom2d_BezierCurve &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~TColGeom2d_Array1OfBezierCurve();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TColGeom2d_Array1OfBezierCurve & Assign(const TColGeom2d_Array1OfBezierCurve &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom2d_BezierCurve &Value);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BezierCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BezierCurve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BezierCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BezierCurve & operator()(const Standard_Integer Index);
+
+};
+
 %nodefaultctor TColGeom2d_SequenceOfCurve;
 class TColGeom2d_SequenceOfCurve : public TCollection_BaseSequence {
 	public:
@@ -1046,40 +1082,4 @@ class TColGeom2d_HArray1OfBoundedCurve : public MMgt_TShared {
 	Handle_TColGeom2d_HArray1OfBoundedCurve GetHandle() {
 	return *(Handle_TColGeom2d_HArray1OfBoundedCurve*) &$self;
 	}
-};
-
-%nodefaultctor TColGeom2d_Array1OfBezierCurve;
-class TColGeom2d_Array1OfBezierCurve {
-	public:
-		%feature("autodoc", "1");
-		TColGeom2d_Array1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColGeom2d_Array1OfBezierCurve(const Handle_Geom2d_BezierCurve &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_BezierCurve &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom2d_Array1OfBezierCurve();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const TColGeom2d_Array1OfBezierCurve & Assign(const TColGeom2d_Array1OfBezierCurve &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom2d_BezierCurve &Value);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BezierCurve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BezierCurve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve & operator()(const Standard_Integer Index);
-
 };

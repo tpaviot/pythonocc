@@ -182,27 +182,6 @@ class Handle_TColgp_HArray2OfDir2d : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_TColgp_HArray2OfCirc2d;
-class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfCirc2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d(const Handle_TColgp_HArray2OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d(const TColgp_HArray2OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray2OfCirc2d {
-	TColgp_HArray2OfCirc2d* GetObject() {
-	return (TColgp_HArray2OfCirc2d*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_TColgp_HArray2OfLin2d;
 class Handle_TColgp_HArray2OfLin2d : public Handle_MMgt_TShared {
 	public:
@@ -413,6 +392,27 @@ class Handle_TColgp_SequenceNodeOfSequenceOfDir : public Handle_TCollection_SeqN
 	}
 };
 
+%nodefaultctor Handle_TColgp_HArray2OfCirc2d;
+class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TColgp_HArray2OfCirc2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfCirc2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfCirc2d(const Handle_TColgp_HArray2OfCirc2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfCirc2d(const TColgp_HArray2OfCirc2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray2OfCirc2d {
+	TColgp_HArray2OfCirc2d* GetObject() {
+	return (TColgp_HArray2OfCirc2d*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TColgp_HArray1OfVec;
 class Handle_TColgp_HArray1OfVec : public Handle_MMgt_TShared {
 	public:
@@ -518,27 +518,6 @@ class Handle_TColgp_HArray2OfXY : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfPnt2d;
-class Handle_TColgp_SequenceNodeOfSequenceOfPnt2d : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_SequenceNodeOfSequenceOfPnt2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d(const Handle_TColgp_SequenceNodeOfSequenceOfPnt2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d(const TColgp_SequenceNodeOfSequenceOfPnt2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfPnt2d {
-	TColgp_SequenceNodeOfSequenceOfPnt2d* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfPnt2d*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXY;
 class Handle_TColgp_SequenceNodeOfSequenceOfXY : public Handle_TCollection_SeqNode {
 	public:
@@ -599,6 +578,27 @@ class Handle_TColgp_HArray2OfDir : public Handle_MMgt_TShared {
 %extend Handle_TColgp_HArray2OfDir {
 	TColgp_HArray2OfDir* GetObject() {
 	return (TColgp_HArray2OfDir*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfPnt2d;
+class Handle_TColgp_SequenceNodeOfSequenceOfPnt2d : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TColgp_SequenceNodeOfSequenceOfPnt2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d(const Handle_TColgp_SequenceNodeOfSequenceOfPnt2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d(const TColgp_SequenceNodeOfSequenceOfPnt2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfPnt2d {
+	TColgp_SequenceNodeOfSequenceOfPnt2d* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfPnt2d*)$self->Access();
 	}
 };
 
@@ -770,6 +770,27 @@ class Handle_TColgp_HArray2OfVec2d : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_TColgp_HSequenceOfDir;
+class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TColgp_HSequenceOfDir();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir(const Handle_TColgp_HSequenceOfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir(const TColgp_HSequenceOfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HSequenceOfDir {
+	TColgp_HSequenceOfDir* GetObject() {
+	return (TColgp_HSequenceOfDir*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TColgp_HSequenceOfVec2d;
 class Handle_TColgp_HSequenceOfVec2d : public Handle_MMgt_TShared {
 	public:
@@ -830,27 +851,6 @@ class Handle_TColgp_HSequenceOfPnt2d : public Handle_MMgt_TShared {
 %extend Handle_TColgp_HSequenceOfPnt2d {
 	TColgp_HSequenceOfPnt2d* GetObject() {
 	return (TColgp_HSequenceOfPnt2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HSequenceOfDir;
-class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HSequenceOfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir(const Handle_TColgp_HSequenceOfDir &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir(const TColgp_HSequenceOfDir *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HSequenceOfDir {
-	TColgp_HSequenceOfDir* GetObject() {
-	return (TColgp_HSequenceOfDir*)$self->Access();
 	}
 };
 
@@ -933,43 +933,6 @@ class TColgp_HSequenceOfXYZ : public MMgt_TShared {
 %extend TColgp_HSequenceOfXYZ {
 	Handle_TColgp_HSequenceOfXYZ GetHandle() {
 	return *(Handle_TColgp_HSequenceOfXYZ*) &$self;
-	}
-};
-
-%nodefaultctor TColgp_HArray1OfVec2d;
-class TColgp_HArray1OfVec2d : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec2d &V);
-		%feature("autodoc", "1");
-		void Init(const gp_Vec2d &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec2d &Value);
-		%feature("autodoc", "1");
-		const gp_Vec2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Vec2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TColgp_Array1OfVec2d & Array1() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfVec2d & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfVec2d();
-
-};
-%extend TColgp_HArray1OfVec2d {
-	Handle_TColgp_HArray1OfVec2d GetHandle() {
-	return *(Handle_TColgp_HArray1OfVec2d*) &$self;
 	}
 };
 
@@ -1325,6 +1288,25 @@ class TColgp_SequenceOfVec : public TCollection_BaseSequence {
 
 };
 
+%nodefaultctor TColgp_SequenceNodeOfSequenceOfVec;
+class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TColgp_SequenceNodeOfSequenceOfVec(const gp_Vec &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		gp_Vec & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TColgp_SequenceNodeOfSequenceOfVec();
+
+};
+%extend TColgp_SequenceNodeOfSequenceOfVec {
+	Handle_TColgp_SequenceNodeOfSequenceOfVec GetHandle() {
+	return *(Handle_TColgp_SequenceNodeOfSequenceOfVec*) &$self;
+	}
+};
+
 %nodefaultctor TColgp_HArray2OfLin2d;
 class TColgp_HArray2OfLin2d : public MMgt_TShared {
 	public:
@@ -1445,6 +1427,25 @@ class TColgp_Array1OfLin2d {
 		%feature("autodoc", "1");
 		gp_Lin2d & operator()(const Standard_Integer Index);
 
+};
+
+%nodefaultctor TColgp_SequenceNodeOfSequenceOfXY;
+class TColgp_SequenceNodeOfSequenceOfXY : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TColgp_SequenceNodeOfSequenceOfXY(const gp_XY &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		gp_XY & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TColgp_SequenceNodeOfSequenceOfXY();
+
+};
+%extend TColgp_SequenceNodeOfSequenceOfXY {
+	Handle_TColgp_SequenceNodeOfSequenceOfXY GetHandle() {
+	return *(Handle_TColgp_SequenceNodeOfSequenceOfXY*) &$self;
+	}
 };
 
 %nodefaultctor TColgp_Array2OfXY;
@@ -2157,22 +2158,40 @@ class TColgp_SequenceOfXYZ : public TCollection_BaseSequence {
 
 };
 
-%nodefaultctor TColgp_SequenceNodeOfSequenceOfVec;
-class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
+%nodefaultctor TColgp_HArray1OfVec2d;
+class TColgp_HArray1OfVec2d : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColgp_SequenceNodeOfSequenceOfVec(const gp_Vec &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		TColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		gp_Vec & Value() const;
+		TColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec2d &V);
+		%feature("autodoc", "1");
+		void Init(const gp_Vec2d &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Vec2d &Value);
+		%feature("autodoc", "1");
+		const gp_Vec2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Vec2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TColgp_Array1OfVec2d & Array1() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfVec2d & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfVec();
+		virtual		~TColgp_HArray1OfVec2d();
 
 };
-%extend TColgp_SequenceNodeOfSequenceOfVec {
-	Handle_TColgp_SequenceNodeOfSequenceOfVec GetHandle() {
-	return *(Handle_TColgp_SequenceNodeOfSequenceOfVec*) &$self;
+%extend TColgp_HArray1OfVec2d {
+	Handle_TColgp_HArray1OfVec2d GetHandle() {
+	return *(Handle_TColgp_HArray1OfVec2d*) &$self;
 	}
 };
 
@@ -2286,15 +2305,21 @@ class TColgp_Array1OfPnt2d {
 
 };
 
-%nodefaultctor TColgp_HArray2OfXY;
-class TColgp_HArray2OfXY : public MMgt_TShared {
+%nodefaultctor TColgp_Array2OfDir;
+class TColgp_Array2OfDir {
 	public:
 		%feature("autodoc", "1");
-		TColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColgp_Array2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		TColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_XY &V);
+		TColgp_Array2OfDir(const gp_Dir &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		void Init(const gp_XY &V);
+		void Init(const gp_Dir &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~TColgp_Array2OfDir();
+		%feature("autodoc", "1");
+		const TColgp_Array2OfDir & Assign(const TColgp_Array2OfDir &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -2308,25 +2333,16 @@ class TColgp_HArray2OfXY : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XY &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir &Value);
 		%feature("autodoc", "1");
-		const gp_XY & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		const gp_Dir & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		gp_XY & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		const gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		const TColgp_Array2OfXY & Array2() const;
+		gp_Dir & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
-		TColgp_Array2OfXY & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfXY();
+		gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
-};
-%extend TColgp_HArray2OfXY {
-	Handle_TColgp_HArray2OfXY GetHandle() {
-	return *(Handle_TColgp_HArray2OfXY*) &$self;
-	}
 };
 
 %nodefaultctor TColgp_HSequenceOfVec;
@@ -2696,25 +2712,6 @@ class TColgp_Array1OfPnt {
 		%feature("autodoc", "1");
 		gp_Pnt & operator()(const Standard_Integer Index);
 
-};
-
-%nodefaultctor TColgp_SequenceNodeOfSequenceOfXY;
-class TColgp_SequenceNodeOfSequenceOfXY : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TColgp_SequenceNodeOfSequenceOfXY(const gp_XY &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		gp_XY & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfXY();
-
-};
-%extend TColgp_SequenceNodeOfSequenceOfXY {
-	Handle_TColgp_SequenceNodeOfSequenceOfXY GetHandle() {
-	return *(Handle_TColgp_SequenceNodeOfSequenceOfXY*) &$self;
-	}
 };
 
 %nodefaultctor TColgp_Array1OfVec;
@@ -3504,21 +3501,15 @@ class TColgp_Array2OfVec2d {
 
 };
 
-%nodefaultctor TColgp_Array2OfDir;
-class TColgp_Array2OfDir {
+%nodefaultctor TColgp_HArray2OfXY;
+class TColgp_HArray2OfXY : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColgp_Array2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		TColgp_Array2OfDir(const gp_Dir &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_XY &V);
 		%feature("autodoc", "1");
-		void Init(const gp_Dir &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~TColgp_Array2OfDir();
-		%feature("autodoc", "1");
-		const TColgp_Array2OfDir & Assign(const TColgp_Array2OfDir &Other);
+		void Init(const gp_XY &V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -3532,14 +3523,23 @@ class TColgp_Array2OfDir {
 		%feature("autodoc", "1");
 		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XY &Value);
 		%feature("autodoc", "1");
-		const gp_Dir & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		const gp_XY & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		const gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		gp_XY & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
-		gp_Dir & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		const TColgp_Array2OfXY & Array2() const;
 		%feature("autodoc", "1");
-		gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		TColgp_Array2OfXY & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TColgp_HArray2OfXY();
 
+};
+%extend TColgp_HArray2OfXY {
+	Handle_TColgp_HArray2OfXY GetHandle() {
+	return *(Handle_TColgp_HArray2OfXY*) &$self;
+	}
 };

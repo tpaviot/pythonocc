@@ -36,8 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<BRepExtrema_DistanceSS.hxx>
 #include<BRepExtrema_DistShapeShape.hxx>
+#include<BRepExtrema_DistanceSS.hxx>
 #include<BRepExtrema_ExtCC.hxx>
 #include<BRepExtrema_ExtCF.hxx>
 #include<BRepExtrema_ExtFF.hxx>
@@ -54,8 +54,8 @@
 
 // Additional headers necessary for compilation.
 
-#include<BRepExtrema_DistanceSS.hxx>
 #include<BRepExtrema_DistShapeShape.hxx>
+#include<BRepExtrema_DistanceSS.hxx>
 #include<BRepExtrema_ExtCC.hxx>
 #include<BRepExtrema_ExtCF.hxx>
 #include<BRepExtrema_ExtFF.hxx>

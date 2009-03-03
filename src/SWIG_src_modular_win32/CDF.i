@@ -406,6 +406,35 @@ class CDF_Timer {
 
 };
 
+%nodefaultctor CDF_StoreList;
+class CDF_StoreList : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		CDF_StoreList(const Handle_CDM_Document &aDocument);
+		%feature("autodoc", "1");
+		Standard_Boolean IsConsistent() const;
+		%feature("autodoc", "1");
+		CDF_StoreStatus Store(Handle_CDM_MetaData & aMetaData, TCollection_ExtendedString & aStatusAssociatedText);
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_CDM_Document Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~CDF_StoreList();
+
+};
+%extend CDF_StoreList {
+	Handle_CDF_StoreList GetHandle() {
+	return *(Handle_CDF_StoreList*) &$self;
+	}
+};
+
 %nodefaultctor CDF_MetaDataDriver;
 class CDF_MetaDataDriver : public Standard_Transient {
 	public:
@@ -451,35 +480,6 @@ class CDF_MetaDataDriver : public Standard_Transient {
 	}
 };
 
-%nodefaultctor CDF_StoreList;
-class CDF_StoreList : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		CDF_StoreList(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		Standard_Boolean IsConsistent() const;
-		%feature("autodoc", "1");
-		CDF_StoreStatus Store(Handle_CDM_MetaData & aMetaData, TCollection_ExtendedString & aStatusAssociatedText);
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_CDM_Document Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDF_StoreList();
-
-};
-%extend CDF_StoreList {
-	Handle_CDF_StoreList GetHandle() {
-	return *(Handle_CDF_StoreList*) &$self;
-	}
-};
-
 %nodefaultctor CDF_MetaDataDriverFactory;
 class CDF_MetaDataDriverFactory : public Standard_Transient {
 	public:
@@ -492,6 +492,35 @@ class CDF_MetaDataDriverFactory : public Standard_Transient {
 %extend CDF_MetaDataDriverFactory {
 	Handle_CDF_MetaDataDriverFactory GetHandle() {
 	return *(Handle_CDF_MetaDataDriverFactory*) &$self;
+	}
+};
+
+%nodefaultctor CDF_Directory;
+class CDF_Directory : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		CDF_Directory();
+		%feature("autodoc", "1");
+		void Add(const Handle_CDM_Document &aDocument);
+		%feature("autodoc", "1");
+		void Remove(const Handle_CDM_Document &aDocument);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_CDM_Document &aDocument) const;
+		%feature("autodoc", "1");
+		Handle_CDM_Document Last();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~CDF_Directory();
+
+};
+%extend CDF_Directory {
+	Handle_CDF_Directory GetHandle() {
+	return *(Handle_CDF_Directory*) &$self;
 	}
 };
 
@@ -527,35 +556,6 @@ class CDF_Session : public Standard_Transient {
 %extend CDF_Session {
 	Handle_CDF_Session GetHandle() {
 	return *(Handle_CDF_Session*) &$self;
-	}
-};
-
-%nodefaultctor CDF_Directory;
-class CDF_Directory : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		CDF_Directory();
-		%feature("autodoc", "1");
-		void Add(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		void Remove(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_CDM_Document &aDocument) const;
-		%feature("autodoc", "1");
-		Handle_CDM_Document Last();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDF_Directory();
-
-};
-%extend CDF_Directory {
-	Handle_CDF_Directory GetHandle() {
-	return *(Handle_CDF_Directory*) &$self;
 	}
 };
 

@@ -157,38 +157,6 @@ class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
 
 };
 
-%nodefaultctor BRepFeat_MakeCylindricalHole;
-class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
-	public:
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole();
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S, const gp_Ax1 &Axis);
-		%feature("autodoc", "1");
-		void Init(const gp_Ax1 &Axis);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, const gp_Ax1 &Axis);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Radius);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Radius, const Standard_Real PFrom, const Standard_Real PTo, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void PerformThruNext(const Standard_Real Radius, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void PerformUntilEnd(const Standard_Real Radius, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void PerformBlind(const Standard_Real Radius, const Standard_Real Length, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		BRepFeat_Status Status() const;
-		%feature("autodoc", "1");
-		virtual		void Build();
-		%feature("autodoc", "1");
-		virtual		~BRepFeat_MakeCylindricalHole();
-
-};
-
 %nodefaultctor BRepFeat_Form;
 class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
 	public:
@@ -355,6 +323,34 @@ class BRepFeat_MakeDPrism : public BRepFeat_Form {
 
 };
 
+%nodefaultctor BRepFeat_LocalOperation;
+class BRepFeat_LocalOperation : public BRepFeat_Builder {
+	public:
+		%feature("autodoc", "1");
+		BRepFeat_LocalOperation();
+		%feature("autodoc", "1");
+		BRepFeat_LocalOperation(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		BRepFeat_LocalOperation(const TopoDS_Shape &S, const TopoDS_Shape &T);
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Shape &T, const TopTools_ListOfShape &L, const Standard_Boolean Fuse);
+		%feature("autodoc", "1");
+		void Perform(const TopTools_ListOfShape &LS, const TopTools_ListOfShape &LT, const Standard_Boolean Fuse);
+		%feature("autodoc", "1");
+		void BuildPartsOfTool();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & PartsOfTool() const;
+		%feature("autodoc", "1");
+		void RemovePart(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void ActivatePart(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		virtual		void Build();
+		%feature("autodoc", "1");
+		virtual		~BRepFeat_LocalOperation();
+
+};
+
 %nodefaultctor BRepFeat_Gluer;
 class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 	public:
@@ -485,31 +481,35 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 
 };
 
-%nodefaultctor BRepFeat_LocalOperation;
-class BRepFeat_LocalOperation : public BRepFeat_Builder {
+%nodefaultctor BRepFeat_MakeCylindricalHole;
+class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 	public:
 		%feature("autodoc", "1");
-		BRepFeat_LocalOperation();
+		BRepFeat_MakeCylindricalHole();
 		%feature("autodoc", "1");
-		BRepFeat_LocalOperation(const TopoDS_Shape &S);
+		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		BRepFeat_LocalOperation(const TopoDS_Shape &S, const TopoDS_Shape &T);
+		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S, const gp_Ax1 &Axis);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &T, const TopTools_ListOfShape &L, const Standard_Boolean Fuse);
+		void Init(const gp_Ax1 &Axis);
 		%feature("autodoc", "1");
-		void Perform(const TopTools_ListOfShape &LS, const TopTools_ListOfShape &LT, const Standard_Boolean Fuse);
+		void Init(const TopoDS_Shape &S, const gp_Ax1 &Axis);
 		%feature("autodoc", "1");
-		void BuildPartsOfTool();
+		void Perform(const Standard_Real Radius);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & PartsOfTool() const;
+		void Perform(const Standard_Real Radius, const Standard_Real PFrom, const Standard_Real PTo, const Standard_Boolean WithControl=1);
 		%feature("autodoc", "1");
-		void RemovePart(const TopoDS_Shape &S);
+		void PerformThruNext(const Standard_Real Radius, const Standard_Boolean WithControl=1);
 		%feature("autodoc", "1");
-		void ActivatePart(const TopoDS_Shape &S);
+		void PerformUntilEnd(const Standard_Real Radius, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void PerformBlind(const Standard_Real Radius, const Standard_Real Length, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		BRepFeat_Status Status() const;
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		virtual		~BRepFeat_LocalOperation();
+		virtual		~BRepFeat_MakeCylindricalHole();
 
 };
 

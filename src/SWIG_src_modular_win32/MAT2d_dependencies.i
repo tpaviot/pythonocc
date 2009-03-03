@@ -33,14 +33,14 @@
 ##knowledge of the CeCILL license and that you accept its terms.
 */
 %{
-#include <MMgt_StackManager.hxx>
-#include <MMgt_TShared.hxx>
-#include <Handle_MMgt_TShared.hxx>
 #include <Handle_TCollection_AVLBaseNode.hxx>
 #include <Handle_TCollection_HAsciiString.hxx>
 #include <Handle_TCollection_HExtendedString.hxx>
 #include <Handle_TCollection_MapNode.hxx>
 #include <Handle_TCollection_SeqNode.hxx>
+#include <MMgt_StackManager.hxx>
+#include <MMgt_TShared.hxx>
+#include <Handle_MMgt_TShared.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -191,7 +191,7 @@
 #include <Handle_MAT_Zone.hxx>
 %};
 
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import Standard.i
 %import MAT.i

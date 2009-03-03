@@ -36,11 +36,11 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_PTopLoc_Datum3D.hxx>
+#include<Handle_PTopLoc_ItemLocation.hxx>
 #include<PTopLoc_Datum3D.hxx>
 #include<PTopLoc_ItemLocation.hxx>
 #include<PTopLoc_Location.hxx>
-#include<Handle_PTopLoc_Datum3D.hxx>
-#include<Handle_PTopLoc_ItemLocation.hxx>
 
 // Additional headers necessary for compilation.
 

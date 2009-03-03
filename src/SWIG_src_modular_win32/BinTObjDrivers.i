@@ -98,27 +98,6 @@ Standard_Real & function transformation
 
 
 
-%nodefaultctor Handle_BinTObjDrivers_ReferenceDriver;
-class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		~Handle_BinTObjDrivers_ReferenceDriver();
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_ReferenceDriver();
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_ReferenceDriver(const Handle_BinTObjDrivers_ReferenceDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_ReferenceDriver(const BinTObjDrivers_ReferenceDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_ReferenceDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinTObjDrivers_ReferenceDriver {
-	BinTObjDrivers_ReferenceDriver* GetObject() {
-	return (BinTObjDrivers_ReferenceDriver*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_BinTObjDrivers_ModelDriver;
 class Handle_BinTObjDrivers_ModelDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -200,6 +179,27 @@ class Handle_BinTObjDrivers_IntSparseArrayDriver : public Handle_BinMDF_ADriver 
 %extend Handle_BinTObjDrivers_IntSparseArrayDriver {
 	BinTObjDrivers_IntSparseArrayDriver* GetObject() {
 	return (BinTObjDrivers_IntSparseArrayDriver*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_BinTObjDrivers_ReferenceDriver;
+class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		~Handle_BinTObjDrivers_ReferenceDriver();
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ReferenceDriver();
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ReferenceDriver(const Handle_BinTObjDrivers_ReferenceDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ReferenceDriver(const BinTObjDrivers_ReferenceDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ReferenceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinTObjDrivers_ReferenceDriver {
+	BinTObjDrivers_ReferenceDriver* GetObject() {
+	return (BinTObjDrivers_ReferenceDriver*)$self->Access();
 	}
 };
 
@@ -288,29 +288,6 @@ class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
 %extend BinTObjDrivers_ReferenceDriver {
 	Handle_BinTObjDrivers_ReferenceDriver GetHandle() {
 	return *(Handle_BinTObjDrivers_ReferenceDriver*) &$self;
-	}
-};
-
-%nodefaultctor BinTObjDrivers_ModelDriver;
-class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinTObjDrivers_ModelDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinTObjDrivers_ModelDriver();
-
-};
-%extend BinTObjDrivers_ModelDriver {
-	Handle_BinTObjDrivers_ModelDriver GetHandle() {
-	return *(Handle_BinTObjDrivers_ModelDriver*) &$self;
 	}
 };
 
@@ -409,5 +386,28 @@ class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
 %extend BinTObjDrivers_IntSparseArrayDriver {
 	Handle_BinTObjDrivers_IntSparseArrayDriver GetHandle() {
 	return *(Handle_BinTObjDrivers_IntSparseArrayDriver*) &$self;
+	}
+};
+
+%nodefaultctor BinTObjDrivers_ModelDriver;
+class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinTObjDrivers_ModelDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~BinTObjDrivers_ModelDriver();
+
+};
+%extend BinTObjDrivers_ModelDriver {
+	Handle_BinTObjDrivers_ModelDriver GetHandle() {
+	return *(Handle_BinTObjDrivers_ModelDriver*) &$self;
 	}
 };

@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<AIS2D.hxx>
 #include<AIS2D_ClearMode.hxx>
 #include<AIS2D_DataMapIteratorOfDataMapOfIOStatus.hxx>
 #include<AIS2D_DataMapIteratorOfDataMapOfLC.hxx>
@@ -63,9 +64,9 @@
 #include<AIS2D_ListOfIO.hxx>
 #include<AIS2D_LocalContext.hxx>
 #include<AIS2D_LocalStatus.hxx>
+#include<AIS2D_PToListOfInt.hxx>
 #include<AIS2D_PrimitiveArchit.hxx>
 #include<AIS2D_ProjShape.hxx>
-#include<AIS2D_PToListOfInt.hxx>
 #include<AIS2D_SelectStatus.hxx>
 #include<AIS2D_SequenceNodeOfSequenceOfIO.hxx>
 #include<AIS2D_SequenceNodeOfSequenceOfPrimArchit.hxx>
@@ -75,7 +76,6 @@
 #include<AIS2D_StatusOfPick.hxx>
 #include<AIS2D_TypeOfAxis.hxx>
 #include<AIS2D_TypeOfDetection.hxx>
-#include<AIS2D.hxx>
 #include<Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus.hxx>
 #include<Handle_AIS2D_DataMapNodeOfDataMapOfLC.hxx>
 #include<Handle_AIS2D_DataMapNodeOfDataMapOfLocStat.hxx>
@@ -123,9 +123,9 @@
 #include<AIS2D_ListOfIO.hxx>
 #include<AIS2D_LocalContext.hxx>
 #include<AIS2D_LocalStatus.hxx>
+#include<AIS2D_PToListOfInt.hxx>
 #include<AIS2D_PrimitiveArchit.hxx>
 #include<AIS2D_ProjShape.hxx>
-#include<AIS2D_PToListOfInt.hxx>
 #include<AIS2D_SelectStatus.hxx>
 #include<AIS2D_SequenceNodeOfSequenceOfIO.hxx>
 #include<AIS2D_SequenceNodeOfSequenceOfPrimArchit.hxx>

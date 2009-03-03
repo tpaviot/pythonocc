@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepFeat.hxx>
 #include<BRepFeat_Builder.hxx>
 #include<BRepFeat_Form.hxx>
 #include<BRepFeat_Gluer.hxx>
@@ -52,7 +53,6 @@
 #include<BRepFeat_SplitShape.hxx>
 #include<BRepFeat_Status.hxx>
 #include<BRepFeat_StatusError.hxx>
-#include<BRepFeat.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -77,7 +77,6 @@
 // Needed headers necessary for compilation.
 
 #include<TopoDS_Shape.hxx>
-#include<gp_Ax1.hxx>
 #include<TColGeom_SequenceOfCurve.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<BRepFeat.hxx>
@@ -91,4 +90,5 @@
 #include<TopTools_ListOfShape.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<gp_Vec.hxx>
+#include<gp_Ax1.hxx>
 %}

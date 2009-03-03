@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepLib.hxx>
 #include<BRepLib_Command.hxx>
 #include<BRepLib_EdgeError.hxx>
 #include<BRepLib_FaceError.hxx>
@@ -53,7 +54,6 @@
 #include<BRepLib_ShapeModification.hxx>
 #include<BRepLib_ShellError.hxx>
 #include<BRepLib_WireError.hxx>
-#include<BRepLib.hxx>
 
 // Additional headers necessary for compilation.
 

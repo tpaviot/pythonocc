@@ -36,6 +36,14 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_MFT_FontManager.hxx>
+#include<Handle_MFT_FontManagerDefinitionError.hxx>
+#include<Handle_MFT_FontManagerError.hxx>
+#include<Handle_MFT_SequenceNodeOfListOfFontHandle.hxx>
+#include<Handle_MFT_SequenceNodeOfListOfFontName.hxx>
+#include<Handle_MFT_SequenceNodeOfListOfFontReference.hxx>
+#include<Handle_MFT_TextManager.hxx>
+#include<MFT.hxx>
 #include<MFT_CommandDescriptor.hxx>
 #include<MFT_FileHandle.hxx>
 #include<MFT_FilePosition.hxx>
@@ -52,14 +60,6 @@
 #include<MFT_TextManager.hxx>
 #include<MFT_TypeOfCommand.hxx>
 #include<MFT_TypeOfValue.hxx>
-#include<MFT.hxx>
-#include<Handle_MFT_FontManager.hxx>
-#include<Handle_MFT_FontManagerDefinitionError.hxx>
-#include<Handle_MFT_FontManagerError.hxx>
-#include<Handle_MFT_SequenceNodeOfListOfFontHandle.hxx>
-#include<Handle_MFT_SequenceNodeOfListOfFontName.hxx>
-#include<Handle_MFT_SequenceNodeOfListOfFontReference.hxx>
-#include<Handle_MFT_TextManager.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -73,9 +73,9 @@
 #include<Aspect_AspectMarkerDefinitionError.hxx>
 #include<Aspect_Background.hxx>
 #include<Aspect_BadAccess.hxx>
+#include<Aspect_CLayer2d.hxx>
 #include<Aspect_CardinalPoints.hxx>
 #include<Aspect_CircularGrid.hxx>
-#include<Aspect_CLayer2d.hxx>
 #include<Aspect_ColorCubeColorMap.hxx>
 #include<Aspect_ColorMap.hxx>
 #include<Aspect_ColorMapDefinitionError.hxx>
@@ -91,6 +91,7 @@
 #include<Aspect_DriverPtr.hxx>
 #include<Aspect_Edge.hxx>
 #include<Aspect_EdgeDefinitionError.hxx>
+#include<Aspect_FStream.hxx>
 #include<Aspect_FillMethod.hxx>
 #include<Aspect_FontMap.hxx>
 #include<Aspect_FontMapDefinitionError.hxx>
@@ -98,9 +99,8 @@
 #include<Aspect_FontStyle.hxx>
 #include<Aspect_FontStyleDefinitionError.hxx>
 #include<Aspect_FormatOfSheetPaper.hxx>
-#include<Aspect_FStream.hxx>
-#include<Aspect_GenericColorMap.hxx>
 #include<Aspect_GenId.hxx>
+#include<Aspect_GenericColorMap.hxx>
 #include<Aspect_GraphicCallbackProc.hxx>
 #include<Aspect_GraphicDevice.hxx>
 #include<Aspect_GraphicDeviceDefinitionError.hxx>
@@ -110,30 +110,30 @@
 #include<Aspect_GridType.hxx>
 #include<Aspect_Handle.hxx>
 #include<Aspect_HatchStyle.hxx>
-#include<Aspect_IdentDefinitionError.hxx>
 #include<Aspect_IFStream.hxx>
+#include<Aspect_IdentDefinitionError.hxx>
 #include<Aspect_IndexPixel.hxx>
 #include<Aspect_InteriorStyle.hxx>
 #include<Aspect_LineStyle.hxx>
 #include<Aspect_LineStyleDefinitionError.hxx>
 #include<Aspect_LineWidthDefinitionError.hxx>
 #include<Aspect_ListingType.hxx>
-#include<Aspect_MarkerStyle.hxx>
-#include<Aspect_MarkerStyleDefinitionError.hxx>
 #include<Aspect_MarkMap.hxx>
 #include<Aspect_MarkMapDefinitionError.hxx>
 #include<Aspect_MarkMapEntry.hxx>
-#include<Aspect_Pixel.hxx>
+#include<Aspect_MarkerStyle.hxx>
+#include<Aspect_MarkerStyleDefinitionError.hxx>
 #include<Aspect_PixMap.hxx>
+#include<Aspect_Pixel.hxx>
 #include<Aspect_PixmapDefinitionError.hxx>
 #include<Aspect_PixmapError.hxx>
 #include<Aspect_PlotMode.hxx>
 #include<Aspect_PlotterOrigin.hxx>
-#include<Aspect_PolygonOffsetMode.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
+#include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
-#include<Aspect_RGBPixel.hxx>
 #include<Aspect_SequenceNodeOfSequenceOfColor.hxx>
 #include<Aspect_SequenceNodeOfSequenceOfColorMapEntry.hxx>
 #include<Aspect_SequenceNodeOfSequenceOfFontMapEntry.hxx>

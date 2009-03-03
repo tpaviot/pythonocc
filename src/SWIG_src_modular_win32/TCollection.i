@@ -148,27 +148,6 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_TCollection_HAsciiString;
-class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_HAsciiString();
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString();
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString(const Handle_TCollection_HAsciiString &aHandle);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString(const TCollection_HAsciiString *anItem);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TCollection_HAsciiString {
-	TCollection_HAsciiString* GetObject() {
-	return (TCollection_HAsciiString*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_TCollection_AVLBaseNode;
 class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 	public:
@@ -187,6 +166,27 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 %extend Handle_TCollection_AVLBaseNode {
 	TCollection_AVLBaseNode* GetObject() {
 	return (TCollection_AVLBaseNode*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_TCollection_HAsciiString;
+class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TCollection_HAsciiString();
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString();
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString(const Handle_TCollection_HAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString(const TCollection_HAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TCollection_HAsciiString {
+	TCollection_HAsciiString* GetObject() {
+	return (TCollection_HAsciiString*)$self->Access();
 	}
 };
 

@@ -36,6 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString.hxx>
+#include<Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString.hxx>
+#include<Handle_Resource_Manager.hxx>
+#include<Handle_Resource_NoSuchResource.hxx>
 #include<Resource_Array1OfAsciiString.hxx>
 #include<Resource_ConvertUnicode.hxx>
 #include<Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString.hxx>
@@ -50,10 +54,6 @@
 #include<Resource_NoSuchResource.hxx>
 #include<Resource_QuickSortOfArray1.hxx>
 #include<Resource_Unicode.hxx>
-#include<Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString.hxx>
-#include<Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString.hxx>
-#include<Handle_Resource_Manager.hxx>
-#include<Handle_Resource_NoSuchResource.hxx>
 
 // Additional headers necessary for compilation.
 

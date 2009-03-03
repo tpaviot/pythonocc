@@ -36,6 +36,11 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_ProjLib_HCompProjectedCurve.hxx>
+#include<Handle_ProjLib_HProjectedCurve.hxx>
+#include<Handle_ProjLib_HSequenceOfHSequenceOfPnt.hxx>
+#include<Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt.hxx>
+#include<ProjLib.hxx>
 #include<ProjLib_CompProjectedCurve.hxx>
 #include<ProjLib_ComputeApprox.hxx>
 #include<ProjLib_ComputeApproxOnPolarSurface.hxx>
@@ -47,19 +52,14 @@
 #include<ProjLib_Plane.hxx>
 #include<ProjLib_PrjFunc.hxx>
 #include<ProjLib_PrjResolve.hxx>
-#include<ProjLib_ProjectedCurve.hxx>
 #include<ProjLib_ProjectOnPlane.hxx>
 #include<ProjLib_ProjectOnSurface.hxx>
+#include<ProjLib_ProjectedCurve.hxx>
 #include<ProjLib_Projector.hxx>
 #include<ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt.hxx>
 #include<ProjLib_SequenceOfHSequenceOfPnt.hxx>
 #include<ProjLib_Sphere.hxx>
 #include<ProjLib_Torus.hxx>
-#include<ProjLib.hxx>
-#include<Handle_ProjLib_HCompProjectedCurve.hxx>
-#include<Handle_ProjLib_HProjectedCurve.hxx>
-#include<Handle_ProjLib_HSequenceOfHSequenceOfPnt.hxx>
-#include<Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -75,9 +75,9 @@
 #include<ProjLib_Plane.hxx>
 #include<ProjLib_PrjFunc.hxx>
 #include<ProjLib_PrjResolve.hxx>
-#include<ProjLib_ProjectedCurve.hxx>
 #include<ProjLib_ProjectOnPlane.hxx>
 #include<ProjLib_ProjectOnSurface.hxx>
+#include<ProjLib_ProjectedCurve.hxx>
 #include<ProjLib_Projector.hxx>
 #include<ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt.hxx>
 #include<ProjLib_SequenceOfHSequenceOfPnt.hxx>

@@ -36,6 +36,18 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_PXCAFDoc_Area.hxx>
+#include<Handle_PXCAFDoc_Centroid.hxx>
+#include<Handle_PXCAFDoc_Color.hxx>
+#include<Handle_PXCAFDoc_ColorTool.hxx>
+#include<Handle_PXCAFDoc_DocumentTool.hxx>
+#include<Handle_PXCAFDoc_GraphNode.hxx>
+#include<Handle_PXCAFDoc_GraphNodeSequence.hxx>
+#include<Handle_PXCAFDoc_LayerTool.hxx>
+#include<Handle_PXCAFDoc_Location.hxx>
+#include<Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence.hxx>
+#include<Handle_PXCAFDoc_ShapeTool.hxx>
+#include<Handle_PXCAFDoc_Volume.hxx>
 #include<PXCAFDoc_Area.hxx>
 #include<PXCAFDoc_Centroid.hxx>
 #include<PXCAFDoc_Color.hxx>
@@ -49,18 +61,6 @@
 #include<PXCAFDoc_SeqNodeOfGraphNodeSequence.hxx>
 #include<PXCAFDoc_ShapeTool.hxx>
 #include<PXCAFDoc_Volume.hxx>
-#include<Handle_PXCAFDoc_Area.hxx>
-#include<Handle_PXCAFDoc_Centroid.hxx>
-#include<Handle_PXCAFDoc_Color.hxx>
-#include<Handle_PXCAFDoc_ColorTool.hxx>
-#include<Handle_PXCAFDoc_DocumentTool.hxx>
-#include<Handle_PXCAFDoc_GraphNode.hxx>
-#include<Handle_PXCAFDoc_GraphNodeSequence.hxx>
-#include<Handle_PXCAFDoc_LayerTool.hxx>
-#include<Handle_PXCAFDoc_Location.hxx>
-#include<Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence.hxx>
-#include<Handle_PXCAFDoc_ShapeTool.hxx>
-#include<Handle_PXCAFDoc_Volume.hxx>
 
 // Additional headers necessary for compilation.
 

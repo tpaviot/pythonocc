@@ -36,9 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<VrmlAPI.hxx>
 #include<VrmlAPI_RepresentationOfShape.hxx>
 #include<VrmlAPI_Writer.hxx>
-#include<VrmlAPI.hxx>
 
 // Additional headers necessary for compilation.
 

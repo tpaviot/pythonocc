@@ -36,6 +36,14 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Materials_Color.hxx>
+#include<Handle_Materials_FuzzyInstance.hxx>
+#include<Handle_Materials_Material.hxx>
+#include<Handle_Materials_MaterialDefinition.hxx>
+#include<Handle_Materials_MaterialsDictionary.hxx>
+#include<Handle_Materials_MaterialsSequence.hxx>
+#include<Handle_Materials_SequenceNodeOfMtsSequence.hxx>
+#include<Materials.hxx>
 #include<Materials_Color.hxx>
 #include<Materials_FuzzyInstance.hxx>
 #include<Materials_Material.hxx>
@@ -44,14 +52,6 @@
 #include<Materials_MaterialsSequence.hxx>
 #include<Materials_MtsSequence.hxx>
 #include<Materials_SequenceNodeOfMtsSequence.hxx>
-#include<Materials.hxx>
-#include<Handle_Materials_Color.hxx>
-#include<Handle_Materials_FuzzyInstance.hxx>
-#include<Handle_Materials_Material.hxx>
-#include<Handle_Materials_MaterialDefinition.hxx>
-#include<Handle_Materials_MaterialsDictionary.hxx>
-#include<Handle_Materials_MaterialsSequence.hxx>
-#include<Handle_Materials_SequenceNodeOfMtsSequence.hxx>
 
 // Additional headers necessary for compilation.
 

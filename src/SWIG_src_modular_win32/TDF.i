@@ -121,27 +121,6 @@ class Handle_TDF_DoubleMapNodeOfGUIDProgIDMap : public Handle_TCollection_MapNod
 	}
 };
 
-%nodefaultctor Handle_TDF_StdMapNodeOfIDMap;
-class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_StdMapNodeOfIDMap();
-		%feature("autodoc", "1");
-		Handle_TDF_StdMapNodeOfIDMap();
-		%feature("autodoc", "1");
-		Handle_TDF_StdMapNodeOfIDMap(const Handle_TDF_StdMapNodeOfIDMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_StdMapNodeOfIDMap(const TDF_StdMapNodeOfIDMap *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_StdMapNodeOfIDMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_StdMapNodeOfIDMap {
-	TDF_StdMapNodeOfIDMap* GetObject() {
-	return (TDF_StdMapNodeOfIDMap*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_TDF_AttributeDelta;
 class Handle_TDF_AttributeDelta : public Handle_MMgt_TShared {
 	public:
@@ -247,6 +226,27 @@ class Handle_TDF_ListNodeOfAttributeDeltaList : public Handle_TCollection_MapNod
 	}
 };
 
+%nodefaultctor Handle_TDF_ListNodeOfIDList;
+class Handle_TDF_ListNodeOfIDList : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDF_ListNodeOfIDList();
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfIDList();
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfIDList(const Handle_TDF_ListNodeOfIDList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfIDList(const TDF_ListNodeOfIDList *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfIDList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_ListNodeOfIDList {
+	TDF_ListNodeOfIDList* GetObject() {
+	return (TDF_ListNodeOfIDList*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TDF_Attribute;
 class Handle_TDF_Attribute : public Handle_MMgt_TShared {
 	public:
@@ -310,6 +310,27 @@ class Handle_TDF_RelocationTable : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_TDF_Reference;
+class Handle_TDF_Reference : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDF_Reference();
+		%feature("autodoc", "1");
+		Handle_TDF_Reference();
+		%feature("autodoc", "1");
+		Handle_TDF_Reference(const Handle_TDF_Reference &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_Reference(const TDF_Reference *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_Reference const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_Reference {
+	TDF_Reference* GetObject() {
+	return (TDF_Reference*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TDF_SequenceNodeOfAttributeSequence;
 class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_SeqNode {
 	public:
@@ -370,27 +391,6 @@ class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNo
 %extend Handle_TDF_DoubleMapNodeOfLabelDoubleMap {
 	TDF_DoubleMapNodeOfLabelDoubleMap* GetObject() {
 	return (TDF_DoubleMapNodeOfLabelDoubleMap*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TDF_ListNodeOfDeltaList;
-class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_ListNodeOfDeltaList();
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfDeltaList();
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfDeltaList(const Handle_TDF_ListNodeOfDeltaList &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfDeltaList(const TDF_ListNodeOfDeltaList *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfDeltaList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_ListNodeOfDeltaList {
-	TDF_ListNodeOfDeltaList* GetObject() {
-	return (TDF_ListNodeOfDeltaList*)$self->Access();
 	}
 };
 
@@ -478,6 +478,27 @@ class Handle_TDF_TagSource : public Handle_TDF_Attribute {
 	}
 };
 
+%nodefaultctor Handle_TDF_ListNodeOfDeltaList;
+class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDF_ListNodeOfDeltaList();
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfDeltaList();
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfDeltaList(const Handle_TDF_ListNodeOfDeltaList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfDeltaList(const TDF_ListNodeOfDeltaList *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfDeltaList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_ListNodeOfDeltaList {
+	TDF_ListNodeOfDeltaList* GetObject() {
+	return (TDF_ListNodeOfDeltaList*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TDF_ListNodeOfAttributeList;
 class Handle_TDF_ListNodeOfAttributeList : public Handle_TCollection_MapNode {
 	public:
@@ -562,27 +583,6 @@ class Handle_TDF_DeltaOnAddition : public Handle_TDF_AttributeDelta {
 	}
 };
 
-%nodefaultctor Handle_TDF_IndexedMapNodeOfLabelIndexedMap;
-class Handle_TDF_IndexedMapNodeOfLabelIndexedMap : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_IndexedMapNodeOfLabelIndexedMap();
-		%feature("autodoc", "1");
-		Handle_TDF_IndexedMapNodeOfLabelIndexedMap();
-		%feature("autodoc", "1");
-		Handle_TDF_IndexedMapNodeOfLabelIndexedMap(const Handle_TDF_IndexedMapNodeOfLabelIndexedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_IndexedMapNodeOfLabelIndexedMap(const TDF_IndexedMapNodeOfLabelIndexedMap *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_IndexedMapNodeOfLabelIndexedMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_IndexedMapNodeOfLabelIndexedMap {
-	TDF_IndexedMapNodeOfLabelIndexedMap* GetObject() {
-	return (TDF_IndexedMapNodeOfLabelIndexedMap*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_TDF_ListNodeOfLabelList;
 class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
 	public:
@@ -646,27 +646,6 @@ class Handle_TDF_DeltaOnModification : public Handle_TDF_AttributeDelta {
 	}
 };
 
-%nodefaultctor Handle_TDF_ListNodeOfIDList;
-class Handle_TDF_ListNodeOfIDList : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_ListNodeOfIDList();
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfIDList();
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfIDList(const Handle_TDF_ListNodeOfIDList &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfIDList(const TDF_ListNodeOfIDList *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfIDList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_ListNodeOfIDList {
-	TDF_ListNodeOfIDList* GetObject() {
-	return (TDF_ListNodeOfIDList*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelDataMap;
 class Handle_TDF_DataMapNodeOfLabelDataMap : public Handle_TCollection_MapNode {
 	public:
@@ -706,27 +685,6 @@ class Handle_TDF_DefaultDeltaOnModification : public Handle_TDF_DeltaOnModificat
 %extend Handle_TDF_DefaultDeltaOnModification {
 	TDF_DefaultDeltaOnModification* GetObject() {
 	return (TDF_DefaultDeltaOnModification*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TDF_Reference;
-class Handle_TDF_Reference : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_Reference();
-		%feature("autodoc", "1");
-		Handle_TDF_Reference();
-		%feature("autodoc", "1");
-		Handle_TDF_Reference(const Handle_TDF_Reference &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_Reference(const TDF_Reference *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_Reference const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_Reference {
-	TDF_Reference* GetObject() {
-	return (TDF_Reference*)$self->Access();
 	}
 };
 
@@ -790,6 +748,48 @@ class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
 %extend Handle_TDF_DeltaOnResume {
 	TDF_DeltaOnResume* GetObject() {
 	return (TDF_DeltaOnResume*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_TDF_StdMapNodeOfIDMap;
+class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDF_StdMapNodeOfIDMap();
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfIDMap();
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfIDMap(const Handle_TDF_StdMapNodeOfIDMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfIDMap(const TDF_StdMapNodeOfIDMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfIDMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_StdMapNodeOfIDMap {
+	TDF_StdMapNodeOfIDMap* GetObject() {
+	return (TDF_StdMapNodeOfIDMap*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_TDF_IndexedMapNodeOfLabelIndexedMap;
+class Handle_TDF_IndexedMapNodeOfLabelIndexedMap : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDF_IndexedMapNodeOfLabelIndexedMap();
+		%feature("autodoc", "1");
+		Handle_TDF_IndexedMapNodeOfLabelIndexedMap();
+		%feature("autodoc", "1");
+		Handle_TDF_IndexedMapNodeOfLabelIndexedMap(const Handle_TDF_IndexedMapNodeOfLabelIndexedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_IndexedMapNodeOfLabelIndexedMap(const TDF_IndexedMapNodeOfLabelIndexedMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_IndexedMapNodeOfLabelIndexedMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_IndexedMapNodeOfLabelIndexedMap {
+	TDF_IndexedMapNodeOfLabelIndexedMap* GetObject() {
+	return (TDF_IndexedMapNodeOfLabelIndexedMap*)$self->Access();
 	}
 };
 
@@ -882,6 +882,26 @@ class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 		const TDF_Label & Key() const;
 		%feature("autodoc", "1");
 		const TDF_Label & Value() const;
+
+};
+
+%nodefaultctor TDF_ComparisonTool;
+class TDF_ComparisonTool {
+	public:
+		%feature("autodoc", "1");
+		~TDF_ComparisonTool();
+		%feature("autodoc", "1");
+		TDF_ComparisonTool();
+		%feature("autodoc", "1");
+		void Compare(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_DataSet &aTargetDataSet, const TDF_IDFilter &aFilter, const Handle_TDF_RelocationTable &aRelocationTable);
+		%feature("autodoc", "1");
+		Standard_Boolean SourceUnbound(const Handle_TDF_DataSet &aRefDataSet, const Handle_TDF_RelocationTable &aRelocationTable, const TDF_IDFilter &aFilter, const Handle_TDF_DataSet &aDiffDataSet, const Standard_Integer anOption=2);
+		%feature("autodoc", "1");
+		Standard_Boolean TargetUnbound(const Handle_TDF_DataSet &aRefDataSet, const Handle_TDF_RelocationTable &aRelocationTable, const TDF_IDFilter &aFilter, const Handle_TDF_DataSet &aDiffDataSet, const Standard_Integer anOption=2);
+		%feature("autodoc", "1");
+		void Cut(const Handle_TDF_DataSet &aDataSet);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSelfContained(const TDF_Label &aLabel, const Handle_TDF_DataSet &aDataSet);
 
 };
 
@@ -1062,23 +1082,33 @@ class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
 	}
 };
 
-%nodefaultctor TDF_ListIteratorOfDeltaList;
-class TDF_ListIteratorOfDeltaList {
+%nodefaultctor TDF_LabelDataMap;
+class TDF_LabelDataMap : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ListIteratorOfDeltaList();
+		TDF_LabelDataMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		TDF_ListIteratorOfDeltaList();
+		TDF_LabelDataMap & Assign(const TDF_LabelDataMap &Other);
 		%feature("autodoc", "1");
-		TDF_ListIteratorOfDeltaList(const TDF_DeltaList &L);
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		void Initialize(const TDF_DeltaList &L);
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		~TDF_LabelDataMap();
 		%feature("autodoc", "1");
-		void Next();
+		Standard_Boolean Bind(const TDF_Label &K, const TDF_Label &I);
 		%feature("autodoc", "1");
-		Handle_TDF_Delta & Value() const;
+		Standard_Boolean IsBound(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TDF_Label &K);
+		%feature("autodoc", "1");
+		const TDF_Label & Find(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		const TDF_Label & operator()(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		TDF_Label & ChangeFind(const TDF_Label &K);
+		%feature("autodoc", "1");
+		TDF_Label & operator()(const TDF_Label &K);
 
 };
 
@@ -1196,6 +1226,26 @@ class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
 	}
 };
 
+%nodefaultctor TDF_ListIteratorOfDeltaList;
+class TDF_ListIteratorOfDeltaList {
+	public:
+		%feature("autodoc", "1");
+		~TDF_ListIteratorOfDeltaList();
+		%feature("autodoc", "1");
+		TDF_ListIteratorOfDeltaList();
+		%feature("autodoc", "1");
+		TDF_ListIteratorOfDeltaList(const TDF_DeltaList &L);
+		%feature("autodoc", "1");
+		void Initialize(const TDF_DeltaList &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_TDF_Delta & Value() const;
+
+};
+
 %nodefaultctor TDF_ListNodeOfAttributeDeltaList;
 class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
 	public:
@@ -1233,25 +1283,6 @@ class TDF_DataMapIteratorOfAttributeDataMap : public TCollection_BasicMapIterato
 
 };
 
-%nodefaultctor TDF_StdMapNodeOfLabelMap;
-class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDF_StdMapNodeOfLabelMap(const TDF_Label &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TDF_Label & Key() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_StdMapNodeOfLabelMap();
-
-};
-%extend TDF_StdMapNodeOfLabelMap {
-	Handle_TDF_StdMapNodeOfLabelMap GetHandle() {
-	return *(Handle_TDF_StdMapNodeOfLabelMap*) &$self;
-	}
-};
-
 %nodefaultctor TDF_LabelDoubleMap;
 class TDF_LabelDoubleMap : public TCollection_BasicMap {
 	public:
@@ -1284,6 +1315,27 @@ class TDF_LabelDoubleMap : public TCollection_BasicMap {
 
 };
 
+%nodefaultctor TDF_DataMapNodeOfLabelDataMap;
+class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDF_DataMapNodeOfLabelDataMap(const TDF_Label &K, const TDF_Label &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TDF_Label & Key() const;
+		%feature("autodoc", "1");
+		TDF_Label & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TDF_DataMapNodeOfLabelDataMap();
+
+};
+%extend TDF_DataMapNodeOfLabelDataMap {
+	Handle_TDF_DataMapNodeOfLabelDataMap GetHandle() {
+	return *(Handle_TDF_DataMapNodeOfLabelDataMap*) &$self;
+	}
+};
+
 %nodefaultctor TDF_DataMapNodeOfLabelIntegerMap;
 class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 	public:
@@ -1303,6 +1355,26 @@ class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 	Handle_TDF_DataMapNodeOfLabelIntegerMap GetHandle() {
 	return *(Handle_TDF_DataMapNodeOfLabelIntegerMap*) &$self;
 	}
+};
+
+%nodefaultctor TDF_ListIteratorOfAttributeDeltaList;
+class TDF_ListIteratorOfAttributeDeltaList {
+	public:
+		%feature("autodoc", "1");
+		~TDF_ListIteratorOfAttributeDeltaList();
+		%feature("autodoc", "1");
+		TDF_ListIteratorOfAttributeDeltaList();
+		%feature("autodoc", "1");
+		TDF_ListIteratorOfAttributeDeltaList(const TDF_AttributeDeltaList &L);
+		%feature("autodoc", "1");
+		void Initialize(const TDF_AttributeDeltaList &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_TDF_AttributeDelta & Value() const;
+
 };
 
 %nodefaultctor TDF_DoubleMapIteratorOfAttributeDoubleMap;
@@ -1339,27 +1411,6 @@ class TDF_ListNodeOfLabelList : public TCollection_MapNode {
 %extend TDF_ListNodeOfLabelList {
 	Handle_TDF_ListNodeOfLabelList GetHandle() {
 	return *(Handle_TDF_ListNodeOfLabelList*) &$self;
-	}
-};
-
-%nodefaultctor TDF_DataMapNodeOfLabelDataMap;
-class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDF_DataMapNodeOfLabelDataMap(const TDF_Label &K, const TDF_Label &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TDF_Label & Key() const;
-		%feature("autodoc", "1");
-		TDF_Label & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DataMapNodeOfLabelDataMap();
-
-};
-%extend TDF_DataMapNodeOfLabelDataMap {
-	Handle_TDF_DataMapNodeOfLabelDataMap GetHandle() {
-	return *(Handle_TDF_DataMapNodeOfLabelDataMap*) &$self;
 	}
 };
 
@@ -1693,6 +1744,24 @@ class TDF_RelocationTable : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor TDF_DoubleMapIteratorOfGUIDProgIDMap;
+class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~TDF_DoubleMapIteratorOfGUIDProgIDMap();
+		%feature("autodoc", "1");
+		TDF_DoubleMapIteratorOfGUIDProgIDMap();
+		%feature("autodoc", "1");
+		TDF_DoubleMapIteratorOfGUIDProgIDMap(const TDF_GUIDProgIDMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TDF_GUIDProgIDMap &aMap);
+		%feature("autodoc", "1");
+		const Standard_GUID & Key1() const;
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Key2() const;
+
+};
+
 %nodefaultctor TDF_LabelLabelMap;
 class TDF_LabelLabelMap : public TCollection_BasicMap {
 	public:
@@ -1773,6 +1842,25 @@ class TDF_Transaction {
 
 };
 
+%nodefaultctor TDF_ListNodeOfIDList;
+class TDF_ListNodeOfIDList : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDF_ListNodeOfIDList(const Standard_GUID &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Standard_GUID & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TDF_ListNodeOfIDList();
+
+};
+%extend TDF_ListNodeOfIDList {
+	Handle_TDF_ListNodeOfIDList GetHandle() {
+	return *(Handle_TDF_ListNodeOfIDList*) &$self;
+	}
+};
+
 %nodefaultctor TDF_DataMapNodeOfAttributeDataMap;
 class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 	public:
@@ -1792,26 +1880,6 @@ class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 	Handle_TDF_DataMapNodeOfAttributeDataMap GetHandle() {
 	return *(Handle_TDF_DataMapNodeOfAttributeDataMap*) &$self;
 	}
-};
-
-%nodefaultctor TDF_ListIteratorOfAttributeDeltaList;
-class TDF_ListIteratorOfAttributeDeltaList {
-	public:
-		%feature("autodoc", "1");
-		~TDF_ListIteratorOfAttributeDeltaList();
-		%feature("autodoc", "1");
-		TDF_ListIteratorOfAttributeDeltaList();
-		%feature("autodoc", "1");
-		TDF_ListIteratorOfAttributeDeltaList(const TDF_AttributeDeltaList &L);
-		%feature("autodoc", "1");
-		void Initialize(const TDF_AttributeDeltaList &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_TDF_AttributeDelta & Value() const;
-
 };
 
 %nodefaultctor TDF_DataMapNodeOfLabelLabelMap;
@@ -1929,43 +1997,6 @@ class TDF_AttributeDataMap : public TCollection_BasicMap {
 
 };
 
-%nodefaultctor TDF_Reference;
-class TDF_Reference : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		Handle_TDF_Reference Set(const TDF_Label &I, const TDF_Label &Origin);
-		%feature("autodoc", "1");
-		void Set(const TDF_Label &Origin);
-		%feature("autodoc", "1");
-		TDF_Label Get() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
-		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
-		%feature("autodoc", "1");
-		TDF_Reference();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_Reference();
-
-};
-%extend TDF_Reference {
-	Handle_TDF_Reference GetHandle() {
-	return *(Handle_TDF_Reference*) &$self;
-	}
-};
-
 %nodefaultctor TDF_DeltaList;
 class TDF_DeltaList {
 	public:
@@ -2010,6 +2041,43 @@ class TDF_DeltaList {
 		%feature("autodoc", "1");
 		void InsertAfter(TDF_DeltaList & Other, TDF_ListIteratorOfDeltaList & It);
 
+};
+
+%nodefaultctor TDF_Reference;
+class TDF_Reference : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		Handle_TDF_Reference Set(const TDF_Label &I, const TDF_Label &Origin);
+		%feature("autodoc", "1");
+		void Set(const TDF_Label &Origin);
+		%feature("autodoc", "1");
+		TDF_Label Get() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		%feature("autodoc", "1");
+		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%feature("autodoc", "1");
+		TDF_Reference();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TDF_Reference();
+
+};
+%extend TDF_Reference {
+	Handle_TDF_Reference GetHandle() {
+	return *(Handle_TDF_Reference*) &$self;
+	}
 };
 
 %nodefaultctor TDF_LabelSequence;
@@ -2082,74 +2150,6 @@ class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
 %extend TDF_DoubleMapNodeOfAttributeDoubleMap {
 	Handle_TDF_DoubleMapNodeOfAttributeDoubleMap GetHandle() {
 	return *(Handle_TDF_DoubleMapNodeOfAttributeDoubleMap*) &$self;
-	}
-};
-
-%nodefaultctor TDF_ListNodeOfIDList;
-class TDF_ListNodeOfIDList : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDF_ListNodeOfIDList(const Standard_GUID &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_GUID & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_ListNodeOfIDList();
-
-};
-%extend TDF_ListNodeOfIDList {
-	Handle_TDF_ListNodeOfIDList GetHandle() {
-	return *(Handle_TDF_ListNodeOfIDList*) &$self;
-	}
-};
-
-%nodefaultctor TDF_LabelDataMap;
-class TDF_LabelDataMap : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TDF_LabelDataMap(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDF_LabelDataMap & Assign(const TDF_LabelDataMap &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelDataMap();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TDF_Label &K, const TDF_Label &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TDF_Label &K);
-		%feature("autodoc", "1");
-		const TDF_Label & Find(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		const TDF_Label & operator()(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		TDF_Label & ChangeFind(const TDF_Label &K);
-		%feature("autodoc", "1");
-		TDF_Label & operator()(const TDF_Label &K);
-
-};
-
-%nodefaultctor TDF_ListNodeOfAttributeList;
-class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDF_ListNodeOfAttributeList(const Handle_TDF_Attribute &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_TDF_Attribute & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_ListNodeOfAttributeList();
-
-};
-%extend TDF_ListNodeOfAttributeList {
-	Handle_TDF_ListNodeOfAttributeList GetHandle() {
-	return *(Handle_TDF_ListNodeOfAttributeList*) &$self;
 	}
 };
 
@@ -2285,26 +2285,22 @@ class TDF_AttributeSequence : public TCollection_BaseSequence {
 
 };
 
-%nodefaultctor TDF_DoubleMapNodeOfLabelDoubleMap;
-class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
+%nodefaultctor TDF_ListNodeOfAttributeList;
+class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TDF_DoubleMapNodeOfLabelDoubleMap(const TDF_Label &K1, const TDF_Label &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		TDF_ListNodeOfAttributeList(const Handle_TDF_Attribute &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TDF_Label & Key1() const;
-		%feature("autodoc", "1");
-		TDF_Label & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
+		Handle_TDF_Attribute & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		virtual		~TDF_DoubleMapNodeOfLabelDoubleMap();
+		virtual		~TDF_ListNodeOfAttributeList();
 
 };
-%extend TDF_DoubleMapNodeOfLabelDoubleMap {
-	Handle_TDF_DoubleMapNodeOfLabelDoubleMap GetHandle() {
-	return *(Handle_TDF_DoubleMapNodeOfLabelDoubleMap*) &$self;
+%extend TDF_ListNodeOfAttributeList {
+	Handle_TDF_ListNodeOfAttributeList GetHandle() {
+	return *(Handle_TDF_ListNodeOfAttributeList*) &$self;
 	}
 };
 
@@ -2605,24 +2601,6 @@ class TDF {
 
 };
 
-%nodefaultctor TDF_DoubleMapIteratorOfGUIDProgIDMap;
-class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~TDF_DoubleMapIteratorOfGUIDProgIDMap();
-		%feature("autodoc", "1");
-		TDF_DoubleMapIteratorOfGUIDProgIDMap();
-		%feature("autodoc", "1");
-		TDF_DoubleMapIteratorOfGUIDProgIDMap(const TDF_GUIDProgIDMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TDF_GUIDProgIDMap &aMap);
-		%feature("autodoc", "1");
-		const Standard_GUID & Key1() const;
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Key2() const;
-
-};
-
 %nodefaultctor TDF_DeltaOnAddition;
 class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 	public:
@@ -2639,6 +2617,29 @@ class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 %extend TDF_DeltaOnAddition {
 	Handle_TDF_DeltaOnAddition GetHandle() {
 	return *(Handle_TDF_DeltaOnAddition*) &$self;
+	}
+};
+
+%nodefaultctor TDF_DoubleMapNodeOfLabelDoubleMap;
+class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDF_DoubleMapNodeOfLabelDoubleMap(const TDF_Label &K1, const TDF_Label &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TDF_Label & Key1() const;
+		%feature("autodoc", "1");
+		TDF_Label & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TDF_DoubleMapNodeOfLabelDoubleMap();
+
+};
+%extend TDF_DoubleMapNodeOfLabelDoubleMap {
+	Handle_TDF_DoubleMapNodeOfLabelDoubleMap GetHandle() {
+	return *(Handle_TDF_DoubleMapNodeOfLabelDoubleMap*) &$self;
 	}
 };
 
@@ -2661,60 +2662,6 @@ class TDF_AttributeIterator {
 		void Next();
 		%feature("autodoc", "1");
 		TDF_Attribute * Value() const;
-
-};
-
-%nodefaultctor TDF_Tool;
-class TDF_Tool {
-	public:
-		%feature("autodoc", "1");
-		~TDF_Tool();
-		%feature("autodoc", "1");
-		TDF_Tool();
-		%feature("autodoc", "1");
-		Standard_Integer NbLabels(const TDF_Label &aLabel);
-		%feature("autodoc", "1");
-		Standard_Integer NbAttributes(const TDF_Label &aLabel);
-		%feature("autodoc", "1");
-		Standard_Integer NbAttributes(const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSelfContained(const TDF_Label &aLabel);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSelfContained(const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
-		%feature("autodoc", "1");
-		void OutReferers(const TDF_Label &theLabel, TDF_AttributeMap & theAtts);
-		%feature("autodoc", "1");
-		void OutReferers(const TDF_Label &aLabel, const TDF_IDFilter &aFilterForReferers, const TDF_IDFilter &aFilterForReferences, TDF_AttributeMap & atts);
-		%feature("autodoc", "1");
-		void OutReferences(const TDF_Label &aLabel, TDF_AttributeMap & atts);
-		%feature("autodoc", "1");
-		void OutReferences(const TDF_Label &aLabel, const TDF_IDFilter &aFilterForReferers, const TDF_IDFilter &aFilterForReferences, TDF_AttributeMap & atts);
-		%feature("autodoc", "1");
-		void RelocateLabel(const TDF_Label &aSourceLabel, const TDF_Label &fromRoot, const TDF_Label &toRoot, TDF_Label & aTargetLabel, const Standard_Boolean create=0);
-		%feature("autodoc", "1");
-		void Entry(const TDF_Label &aLabel, TCollection_AsciiString & anEntry);
-		%feature("autodoc", "1");
-		void TagList(const TDF_Label &aLabel, TColStd_ListOfInteger & aTagList);
-		%feature("autodoc", "1");
-		void TagList(const TCollection_AsciiString &anEntry, TColStd_ListOfInteger & aTagList);
-		%feature("autodoc", "1");
-		void Label(const Handle_TDF_Data &aDF, const TCollection_AsciiString &anEntry, TDF_Label & aLabel, const Standard_Boolean create=0);
-		%feature("autodoc", "1");
-		void Label(const Handle_TDF_Data &aDF, const char * anEntry, TDF_Label & aLabel, const Standard_Boolean create=0);
-		%feature("autodoc", "1");
-		void Label(const Handle_TDF_Data &aDF, const TColStd_ListOfInteger &aTagList, TDF_Label & aLabel, const Standard_Boolean create=0);
-		%feature("autodoc", "1");
-		void CountLabels(TDF_LabelList & aLabelList, TDF_LabelIntegerMap & aLabelMap);
-		%feature("autodoc", "1");
-		void DeductLabels(TDF_LabelList & aLabelList, TDF_LabelIntegerMap & aLabelMap);
-		%feature("autodoc", "1");
-		void DeepDump(Standard_OStream & anOS, const Handle_TDF_Data &aDF);
-		%feature("autodoc", "1");
-		void ExtendedDeepDump(Standard_OStream & anOS, const Handle_TDF_Data &aDF, const TDF_IDFilter &aFilter);
-		%feature("autodoc", "1");
-		void DeepDump(Standard_OStream & anOS, const TDF_Label &aLabel);
-		%feature("autodoc", "1");
-		void ExtendedDeepDump(Standard_OStream & anOS, const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
 
 };
 
@@ -2809,24 +2756,23 @@ class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 
 };
 
-%nodefaultctor TDF_ComparisonTool;
-class TDF_ComparisonTool {
+%nodefaultctor TDF_StdMapNodeOfLabelMap;
+class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ComparisonTool();
+		TDF_StdMapNodeOfLabelMap(const TDF_Label &K, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TDF_ComparisonTool();
+		TDF_Label & Key() const;
 		%feature("autodoc", "1");
-		void Compare(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_DataSet &aTargetDataSet, const TDF_IDFilter &aFilter, const Handle_TDF_RelocationTable &aRelocationTable);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		Standard_Boolean SourceUnbound(const Handle_TDF_DataSet &aRefDataSet, const Handle_TDF_RelocationTable &aRelocationTable, const TDF_IDFilter &aFilter, const Handle_TDF_DataSet &aDiffDataSet, const Standard_Integer anOption=2);
-		%feature("autodoc", "1");
-		Standard_Boolean TargetUnbound(const Handle_TDF_DataSet &aRefDataSet, const Handle_TDF_RelocationTable &aRelocationTable, const TDF_IDFilter &aFilter, const Handle_TDF_DataSet &aDiffDataSet, const Standard_Integer anOption=2);
-		%feature("autodoc", "1");
-		void Cut(const Handle_TDF_DataSet &aDataSet);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSelfContained(const TDF_Label &aLabel, const Handle_TDF_DataSet &aDataSet);
+		virtual		~TDF_StdMapNodeOfLabelMap();
 
+};
+%extend TDF_StdMapNodeOfLabelMap {
+	Handle_TDF_StdMapNodeOfLabelMap GetHandle() {
+	return *(Handle_TDF_StdMapNodeOfLabelMap*) &$self;
+	}
 };
 
 %nodefaultctor TDF_MapIteratorOfIDMap;
@@ -2950,6 +2896,60 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 	Handle_TDF_IndexedMapNodeOfLabelIndexedMap GetHandle() {
 	return *(Handle_TDF_IndexedMapNodeOfLabelIndexedMap*) &$self;
 	}
+};
+
+%nodefaultctor TDF_Tool;
+class TDF_Tool {
+	public:
+		%feature("autodoc", "1");
+		~TDF_Tool();
+		%feature("autodoc", "1");
+		TDF_Tool();
+		%feature("autodoc", "1");
+		Standard_Integer NbLabels(const TDF_Label &aLabel);
+		%feature("autodoc", "1");
+		Standard_Integer NbAttributes(const TDF_Label &aLabel);
+		%feature("autodoc", "1");
+		Standard_Integer NbAttributes(const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSelfContained(const TDF_Label &aLabel);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSelfContained(const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
+		%feature("autodoc", "1");
+		void OutReferers(const TDF_Label &theLabel, TDF_AttributeMap & theAtts);
+		%feature("autodoc", "1");
+		void OutReferers(const TDF_Label &aLabel, const TDF_IDFilter &aFilterForReferers, const TDF_IDFilter &aFilterForReferences, TDF_AttributeMap & atts);
+		%feature("autodoc", "1");
+		void OutReferences(const TDF_Label &aLabel, TDF_AttributeMap & atts);
+		%feature("autodoc", "1");
+		void OutReferences(const TDF_Label &aLabel, const TDF_IDFilter &aFilterForReferers, const TDF_IDFilter &aFilterForReferences, TDF_AttributeMap & atts);
+		%feature("autodoc", "1");
+		void RelocateLabel(const TDF_Label &aSourceLabel, const TDF_Label &fromRoot, const TDF_Label &toRoot, TDF_Label & aTargetLabel, const Standard_Boolean create=0);
+		%feature("autodoc", "1");
+		void Entry(const TDF_Label &aLabel, TCollection_AsciiString & anEntry);
+		%feature("autodoc", "1");
+		void TagList(const TDF_Label &aLabel, TColStd_ListOfInteger & aTagList);
+		%feature("autodoc", "1");
+		void TagList(const TCollection_AsciiString &anEntry, TColStd_ListOfInteger & aTagList);
+		%feature("autodoc", "1");
+		void Label(const Handle_TDF_Data &aDF, const TCollection_AsciiString &anEntry, TDF_Label & aLabel, const Standard_Boolean create=0);
+		%feature("autodoc", "1");
+		void Label(const Handle_TDF_Data &aDF, const char * anEntry, TDF_Label & aLabel, const Standard_Boolean create=0);
+		%feature("autodoc", "1");
+		void Label(const Handle_TDF_Data &aDF, const TColStd_ListOfInteger &aTagList, TDF_Label & aLabel, const Standard_Boolean create=0);
+		%feature("autodoc", "1");
+		void CountLabels(TDF_LabelList & aLabelList, TDF_LabelIntegerMap & aLabelMap);
+		%feature("autodoc", "1");
+		void DeductLabels(TDF_LabelList & aLabelList, TDF_LabelIntegerMap & aLabelMap);
+		%feature("autodoc", "1");
+		void DeepDump(Standard_OStream & anOS, const Handle_TDF_Data &aDF);
+		%feature("autodoc", "1");
+		void ExtendedDeepDump(Standard_OStream & anOS, const Handle_TDF_Data &aDF, const TDF_IDFilter &aFilter);
+		%feature("autodoc", "1");
+		void DeepDump(Standard_OStream & anOS, const TDF_Label &aLabel);
+		%feature("autodoc", "1");
+		void ExtendedDeepDump(Standard_OStream & anOS, const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
+
 };
 
 %nodefaultctor TDF_DataMapIteratorOfLabelIntegerMap;

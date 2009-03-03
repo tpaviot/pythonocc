@@ -36,8 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<PMMgt_PManaged.hxx>
 #include<Handle_PMMgt_PManaged.hxx>
+#include<PMMgt_PManaged.hxx>
 
 // Additional headers necessary for compilation.
 

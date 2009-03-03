@@ -36,8 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<PStandard_ArrayNode.hxx>
 #include<Handle_PStandard_ArrayNode.hxx>
+#include<PStandard_ArrayNode.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -315,55 +315,6 @@ class PrsMgr_ModedPresentation {
 
 };
 
-%nodefaultctor PrsMgr_PresentationManager;
-class PrsMgr_PresentationManager : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Is3D() const;
-		%feature("autodoc", "1");
-		void Display(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Erase(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void Clear(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Highlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Unhighlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void SetDisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode, const Standard_Integer aNewPrior) const;
-		%feature("autodoc", "1");
-		Standard_Integer DisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHighlighted(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		void Update(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		virtual		void BeginDraw();
-		%feature("autodoc", "1");
-		void Add(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Remove(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void EndDraw(const Handle_Viewer_View &aView, const Standard_Boolean DoubleBuffer=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsImmediateModeOn() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation Presentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PrsMgr_PresentationManager {
-	Handle_PrsMgr_PresentationManager GetHandle() {
-	return *(Handle_PrsMgr_PresentationManager*) &$self;
-	}
-};
-
 %nodefaultctor PrsMgr_Presentation;
 class PrsMgr_Presentation : public MMgt_TShared {
 	public:
@@ -382,52 +333,6 @@ class PrsMgr_Presentation : public MMgt_TShared {
 %extend PrsMgr_Presentation {
 	Handle_PrsMgr_Presentation GetHandle() {
 	return *(Handle_PrsMgr_Presentation*) &$self;
-	}
-};
-
-%nodefaultctor PrsMgr_Presentation2d;
-class PrsMgr_Presentation2d : public PrsMgr_Presentation {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Clear();
-		%feature("autodoc", "1");
-		void SetOffset(const Standard_Integer anOffset);
-		%feature("autodoc", "1");
-		Standard_Integer Offset() const;
-		%feature("autodoc", "1");
-		Handle_Graphic2d_GraphicObject Presentation() const;
-		%feature("autodoc", "1");
-		virtual		~PrsMgr_Presentation2d();
-
-};
-%extend PrsMgr_Presentation2d {
-	Handle_PrsMgr_Presentation2d GetHandle() {
-	return *(Handle_PrsMgr_Presentation2d*) &$self;
-	}
-};
-
-%nodefaultctor PrsMgr_Prs;
-class PrsMgr_Prs : public Prs3d_Presentation {
-	public:
-		%feature("autodoc", "1");
-		PrsMgr_Prs(const Handle_Graphic3d_StructureManager &aStructureManager, const PrsMgr_Presentation3dPointer &aPresentation, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation3d);
-		%feature("autodoc", "1");
-		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector);
-		%feature("autodoc", "1");
-		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, Handle_Graphic3d_Structure & ComputedStruct);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix, Handle_Graphic3d_Structure & aStructure);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PrsMgr_Prs();
-
-};
-%extend PrsMgr_Prs {
-	Handle_PrsMgr_Prs GetHandle() {
-	return *(Handle_PrsMgr_Prs*) &$self;
 	}
 };
 
@@ -542,6 +447,105 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 %extend PrsMgr_PresentableObject {
 	Handle_PrsMgr_PresentableObject GetHandle() {
 	return *(Handle_PrsMgr_PresentableObject*) &$self;
+	}
+};
+
+%nodefaultctor PrsMgr_Presentation2d;
+class PrsMgr_Presentation2d : public PrsMgr_Presentation {
+	public:
+		%feature("autodoc", "1");
+		virtual		PrsMgr_KindOfPrs KindOfPresentation() const;
+		%feature("autodoc", "1");
+		virtual		void Clear();
+		%feature("autodoc", "1");
+		void SetOffset(const Standard_Integer anOffset);
+		%feature("autodoc", "1");
+		Standard_Integer Offset() const;
+		%feature("autodoc", "1");
+		Handle_Graphic2d_GraphicObject Presentation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PrsMgr_Presentation2d();
+
+};
+%extend PrsMgr_Presentation2d {
+	Handle_PrsMgr_Presentation2d GetHandle() {
+	return *(Handle_PrsMgr_Presentation2d*) &$self;
+	}
+};
+
+%nodefaultctor PrsMgr_Prs;
+class PrsMgr_Prs : public Prs3d_Presentation {
+	public:
+		%feature("autodoc", "1");
+		PrsMgr_Prs(const Handle_Graphic3d_StructureManager &aStructureManager, const PrsMgr_Presentation3dPointer &aPresentation, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation3d);
+		%feature("autodoc", "1");
+		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector);
+		%feature("autodoc", "1");
+		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, Handle_Graphic3d_Structure & ComputedStruct);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix, Handle_Graphic3d_Structure & aStructure);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PrsMgr_Prs();
+
+};
+%extend PrsMgr_Prs {
+	Handle_PrsMgr_Prs GetHandle() {
+	return *(Handle_PrsMgr_Prs*) &$self;
+	}
+};
+
+%nodefaultctor PrsMgr_PresentationManager;
+class PrsMgr_PresentationManager : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Is3D() const;
+		%feature("autodoc", "1");
+		void Display(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Erase(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void Clear(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Highlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Unhighlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void SetDisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode, const Standard_Integer aNewPrior) const;
+		%feature("autodoc", "1");
+		Standard_Integer DisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDisplayed(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHighlighted(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		void Update(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		virtual		void BeginDraw();
+		%feature("autodoc", "1");
+		void Add(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Remove(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void EndDraw(const Handle_Viewer_View &aView, const Standard_Boolean DoubleBuffer=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsImmediateModeOn() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation Presentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PrsMgr_PresentationManager {
+	Handle_PrsMgr_PresentationManager GetHandle() {
+	return *(Handle_PrsMgr_PresentationManager*) &$self;
 	}
 };
 

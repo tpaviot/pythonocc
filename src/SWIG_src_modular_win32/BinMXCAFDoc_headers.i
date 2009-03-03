@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BinMXCAFDoc.hxx>
 #include<BinMXCAFDoc_AreaDriver.hxx>
 #include<BinMXCAFDoc_CentroidDriver.hxx>
 #include<BinMXCAFDoc_ColorDriver.hxx>
@@ -46,7 +47,6 @@
 #include<BinMXCAFDoc_LocationDriver.hxx>
 #include<BinMXCAFDoc_ShapeToolDriver.hxx>
 #include<BinMXCAFDoc_VolumeDriver.hxx>
-#include<BinMXCAFDoc.hxx>
 #include<Handle_BinMXCAFDoc_AreaDriver.hxx>
 #include<Handle_BinMXCAFDoc_CentroidDriver.hxx>
 #include<Handle_BinMXCAFDoc_ColorDriver.hxx>
@@ -61,11 +61,11 @@
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

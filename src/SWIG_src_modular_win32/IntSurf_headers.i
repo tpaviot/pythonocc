@@ -36,6 +36,13 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_IntSurf_LineOn2S.hxx>
+#include<Handle_IntSurf_ListNodeOfListOfPntOn2S.hxx>
+#include<Handle_IntSurf_SequenceNodeOfSequenceOfCouple.hxx>
+#include<Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint.hxx>
+#include<Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint.hxx>
+#include<Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S.hxx>
+#include<IntSurf.hxx>
 #include<IntSurf_Couple.hxx>
 #include<IntSurf_InteriorPoint.hxx>
 #include<IntSurf_InteriorPointTool.hxx>
@@ -59,13 +66,6 @@
 #include<IntSurf_Situation.hxx>
 #include<IntSurf_Transition.hxx>
 #include<IntSurf_TypeTrans.hxx>
-#include<IntSurf.hxx>
-#include<Handle_IntSurf_LineOn2S.hxx>
-#include<Handle_IntSurf_ListNodeOfListOfPntOn2S.hxx>
-#include<Handle_IntSurf_SequenceNodeOfSequenceOfCouple.hxx>
-#include<Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint.hxx>
-#include<Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint.hxx>
-#include<Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -97,14 +97,14 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Vec.hxx>
-#include<gp_Vec2d.hxx>
 #include<IntSurf.hxx>
+#include<gp_Vec.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Cone.hxx>
+#include<gp_Pnt.hxx>
 #include<gp_Dir2d.hxx>
+#include<gp_Vec2d.hxx>
 %}

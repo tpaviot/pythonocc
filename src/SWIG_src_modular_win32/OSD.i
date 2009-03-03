@@ -323,27 +323,6 @@ class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
 	}
 };
 
-%nodefaultctor Handle_OSD_SIGQUIT;
-class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
-	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGQUIT();
-		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT();
-		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT(const Handle_OSD_SIGQUIT &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT(const OSD_SIGQUIT *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_SIGQUIT {
-	OSD_SIGQUIT* GetObject() {
-	return (OSD_SIGQUIT*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_OSD_Exception_ILLEGAL_INSTRUCTION;
 class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 	public:
@@ -488,6 +467,27 @@ class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 %extend Handle_OSD_Exception_ACCESS_VIOLATION {
 	OSD_Exception_ACCESS_VIOLATION* GetObject() {
 	return (OSD_Exception_ACCESS_VIOLATION*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_OSD_SIGQUIT;
+class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
+	public:
+		%feature("autodoc", "1");
+		~Handle_OSD_SIGQUIT();
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT();
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT(const Handle_OSD_SIGQUIT &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT(const OSD_SIGQUIT *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_SIGQUIT {
+	OSD_SIGQUIT* GetObject() {
+	return (OSD_SIGQUIT*)$self->Access();
 	}
 };
 
@@ -764,27 +764,6 @@ class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 	}
 };
 
-%nodefaultctor Handle_OSD_SIGSYS;
-class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
-	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGSYS();
-		%feature("autodoc", "1");
-		Handle_OSD_SIGSYS();
-		%feature("autodoc", "1");
-		Handle_OSD_SIGSYS(const Handle_OSD_SIGSYS &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGSYS(const OSD_SIGSYS *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGSYS const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_SIGSYS {
-	OSD_SIGSYS* GetObject() {
-	return (OSD_SIGSYS*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO;
 class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	public:
@@ -803,6 +782,27 @@ class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 %extend Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO {
 	OSD_Exception_FLT_DIVIDE_BY_ZERO* GetObject() {
 	return (OSD_Exception_FLT_DIVIDE_BY_ZERO*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_OSD_SIGSYS;
+class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
+	public:
+		%feature("autodoc", "1");
+		~Handle_OSD_SIGSYS();
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSYS();
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSYS(const Handle_OSD_SIGSYS &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSYS(const OSD_SIGSYS *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSYS const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_SIGSYS {
+	OSD_SIGSYS* GetObject() {
+	return (OSD_SIGSYS*)$self->Access();
 	}
 };
 
@@ -1188,6 +1188,31 @@ class OSD_EnvironmentIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Error() const;
 
+};
+
+%nodefaultctor OSD_SIGSYS;
+class OSD_SIGSYS : public OSD_Signal {
+	public:
+		%feature("autodoc", "1");
+		OSD_SIGSYS();
+		%feature("autodoc", "1");
+		OSD_SIGSYS(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSYS NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~OSD_SIGSYS();
+
+};
+%extend OSD_SIGSYS {
+	Handle_OSD_SIGSYS GetHandle() {
+	return *(Handle_OSD_SIGSYS*) &$self;
+	}
 };
 
 %nodefaultctor OSD_Exception_FLT_UNDERFLOW;
@@ -1987,31 +2012,6 @@ class OSD_Timer : public OSD_Chronometer {
 		%feature("autodoc", "1");
 		virtual		void Start();
 
-};
-
-%nodefaultctor OSD_SIGSYS;
-class OSD_SIGSYS : public OSD_Signal {
-	public:
-		%feature("autodoc", "1");
-		OSD_SIGSYS();
-		%feature("autodoc", "1");
-		OSD_SIGSYS(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGSYS NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_SIGSYS();
-
-};
-%extend OSD_SIGSYS {
-	Handle_OSD_SIGSYS GetHandle() {
-	return *(Handle_OSD_SIGSYS*) &$self;
-	}
 };
 
 %nodefaultctor OSD_Exception_STATUS_NO_MEMORY;

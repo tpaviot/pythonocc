@@ -36,6 +36,19 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TDocStd_Application.hxx>
+#include<Handle_TDocStd_ApplicationDelta.hxx>
+#include<Handle_TDocStd_CompoundDelta.hxx>
+#include<Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap.hxx>
+#include<Handle_TDocStd_Document.hxx>
+#include<Handle_TDocStd_Modified.hxx>
+#include<Handle_TDocStd_MultiTransactionManager.hxx>
+#include<Handle_TDocStd_Owner.hxx>
+#include<Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta.hxx>
+#include<Handle_TDocStd_SequenceNodeOfSequenceOfDocument.hxx>
+#include<Handle_TDocStd_XLink.hxx>
+#include<Handle_TDocStd_XLinkRoot.hxx>
+#include<TDocStd.hxx>
 #include<TDocStd_Application.hxx>
 #include<TDocStd_ApplicationDelta.hxx>
 #include<TDocStd_CompoundDelta.hxx>
@@ -57,19 +70,6 @@
 #include<TDocStd_XLinkPtr.hxx>
 #include<TDocStd_XLinkRoot.hxx>
 #include<TDocStd_XLinkTool.hxx>
-#include<TDocStd.hxx>
-#include<Handle_TDocStd_Application.hxx>
-#include<Handle_TDocStd_ApplicationDelta.hxx>
-#include<Handle_TDocStd_CompoundDelta.hxx>
-#include<Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap.hxx>
-#include<Handle_TDocStd_Document.hxx>
-#include<Handle_TDocStd_Modified.hxx>
-#include<Handle_TDocStd_MultiTransactionManager.hxx>
-#include<Handle_TDocStd_Owner.hxx>
-#include<Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta.hxx>
-#include<Handle_TDocStd_SequenceNodeOfSequenceOfDocument.hxx>
-#include<Handle_TDocStd_XLink.hxx>
-#include<Handle_TDocStd_XLinkRoot.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -108,10 +108,10 @@
 #include<Handle_TDF_DataSet.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_CDM_Document.hxx>
-#include<Handle_TDF_Reference.hxx>
-#include<Handle_TDF_AttributeDelta.hxx>
 #include<TDocStd.hxx>
 #include<TDF_IDList.hxx>
+#include<Handle_TDF_Reference.hxx>
+#include<Handle_TDF_AttributeDelta.hxx>
 #include<Handle_Resource_Manager.hxx>
 #include<TColStd_SequenceOfExtendedString.hxx>
 %}

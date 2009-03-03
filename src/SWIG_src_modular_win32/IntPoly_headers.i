@@ -36,6 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt.hxx>
+#include<Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d.hxx>
+#include<Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt.hxx>
+#include<Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d.hxx>
 #include<IntPoly_IndexedMapNodeOfIndexedMapOfPnt.hxx>
 #include<IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d.hxx>
 #include<IntPoly_IndexedMapOfPnt.hxx>
@@ -48,13 +52,21 @@
 #include<IntPoly_SequenceOfSequenceOfPnt.hxx>
 #include<IntPoly_SequenceOfSequenceOfPnt2d.hxx>
 #include<IntPoly_ShapeSection.hxx>
-#include<Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt.hxx>
-#include<Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d.hxx>
-#include<Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt.hxx>
-#include<Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d.hxx>
 
 // Additional headers necessary for compilation.
 
+#include<IntPoly_IndexedMapNodeOfIndexedMapOfPnt.hxx>
+#include<IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d.hxx>
+#include<IntPoly_IndexedMapOfPnt.hxx>
+#include<IntPoly_IndexedMapOfPnt2d.hxx>
+#include<IntPoly_PlaneSection.hxx>
+#include<IntPoly_Pnt2dHasher.hxx>
+#include<IntPoly_PntHasher.hxx>
+#include<IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt.hxx>
+#include<IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d.hxx>
+#include<IntPoly_SequenceOfSequenceOfPnt.hxx>
+#include<IntPoly_SequenceOfSequenceOfPnt2d.hxx>
+#include<IntPoly_ShapeSection.hxx>
 #include<IntPolyh_ArrayOfCouples.hxx>
 #include<IntPolyh_ArrayOfEdges.hxx>
 #include<IntPolyh_ArrayOfPoints.hxx>
@@ -73,18 +85,6 @@
 #include<IntPolyh_SequenceNodeOfSeqOfStartPoints.hxx>
 #include<IntPolyh_StartPoint.hxx>
 #include<IntPolyh_Triangle.hxx>
-#include<IntPoly_IndexedMapNodeOfIndexedMapOfPnt.hxx>
-#include<IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d.hxx>
-#include<IntPoly_IndexedMapOfPnt.hxx>
-#include<IntPoly_IndexedMapOfPnt2d.hxx>
-#include<IntPoly_PlaneSection.hxx>
-#include<IntPoly_Pnt2dHasher.hxx>
-#include<IntPoly_PntHasher.hxx>
-#include<IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt.hxx>
-#include<IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d.hxx>
-#include<IntPoly_SequenceOfSequenceOfPnt.hxx>
-#include<IntPoly_SequenceOfSequenceOfPnt2d.hxx>
-#include<IntPoly_ShapeSection.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -164,6 +164,34 @@ class math_GaussLeastSquare {
 
 };
 
+%nodefaultctor math_DoubleTabOfReal;
+class math_DoubleTabOfReal {
+	public:
+		%feature("autodoc", "1");
+		math_DoubleTabOfReal(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		%feature("autodoc", "1");
+		math_DoubleTabOfReal(const Standard_Real &Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		%feature("autodoc", "1");
+		void Init(const Standard_Real &InitValue);
+		%feature("autodoc", "1");
+		math_DoubleTabOfReal(const math_DoubleTabOfReal &Other);
+		%feature("autodoc", "1");
+		void Copy(math_DoubleTabOfReal & Other) const;
+		%feature("autodoc", "1");
+		void SetLowerRow(const Standard_Integer LowerRow);
+		%feature("autodoc", "1");
+		void SetLowerCol(const Standard_Integer LowerCol);
+		%feature("autodoc", "1");
+		Standard_Real & Value(const Standard_Integer RowIndex, const Standard_Integer ColIndex) const;
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const Standard_Integer RowIndex, const Standard_Integer ColIndex) const;
+		%feature("autodoc", "1");
+		void Free();
+		%feature("autodoc", "1");
+		~math_DoubleTabOfReal();
+
+};
+
 %nodefaultctor math_SingularMatrix;
 class math_SingularMatrix : public Standard_Failure {
 	public:
@@ -187,38 +215,6 @@ class math_SingularMatrix : public Standard_Failure {
 	Handle_math_SingularMatrix GetHandle() {
 	return *(Handle_math_SingularMatrix*) &$self;
 	}
-};
-
-%nodefaultctor math_KronrodSingleIntegration;
-class math_KronrodSingleIntegration {
-	public:
-		%feature("autodoc", "1");
-		~math_KronrodSingleIntegration();
-		%feature("autodoc", "1");
-		math_KronrodSingleIntegration();
-		%feature("autodoc", "1");
-		math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
-		%feature("autodoc", "1");
-		math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
-		%feature("autodoc", "1");
-		void Perform(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
-		%feature("autodoc", "1");
-		void Perform(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Real ErrorReached() const;
-		%feature("autodoc", "1");
-		Standard_Real AbsolutError() const;
-		%feature("autodoc", "1");
-		Standard_Integer OrderReached() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterReached() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
-
 };
 
 %nodefaultctor math_TrigonometricFunctionRoots;
@@ -417,30 +413,6 @@ class math {
 
 };
 
-%nodefaultctor math_FunctionRoot;
-class math_FunctionRoot {
-	public:
-		%feature("autodoc", "1");
-		~math_FunctionRoot();
-		%feature("autodoc", "1");
-		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		Standard_Real Derivative() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
-
-};
-
 %nodefaultctor math_Powell;
 class math_Powell {
 	public:
@@ -464,6 +436,30 @@ class math_Powell {
 		void Location(math_Vector & Loc) const;
 		%feature("autodoc", "1");
 		Standard_Real Minimum() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		void Dump(Standard_OStream & o) const;
+
+};
+
+%nodefaultctor math_FunctionRoot;
+class math_FunctionRoot {
+	public:
+		%feature("autodoc", "1");
+		~math_FunctionRoot();
+		%feature("autodoc", "1");
+		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations=100);
+		%feature("autodoc", "1");
+		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Derivative() const;
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
@@ -582,28 +578,6 @@ class math_QuickSortOfValueAndWeight {
 		math_QuickSortOfValueAndWeight();
 		%feature("autodoc", "1");
 		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
-
-};
-
-%nodefaultctor math_Gauss;
-class math_Gauss {
-	public:
-		%feature("autodoc", "1");
-		~math_Gauss();
-		%feature("autodoc", "1");
-		math_Gauss(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void Solve(const math_Vector &B, math_Vector & X) const;
-		%feature("autodoc", "1");
-		void Solve(math_Vector & B) const;
-		%feature("autodoc", "1");
-		Standard_Real Determinant() const;
-		%feature("autodoc", "1");
-		void Invert(math_Matrix & Inv) const;
-		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
 
 };
 
@@ -795,31 +769,25 @@ class math_Matrix {
 
 };
 
-%nodefaultctor math_DoubleTabOfReal;
-class math_DoubleTabOfReal {
+%nodefaultctor math_Gauss;
+class math_Gauss {
 	public:
 		%feature("autodoc", "1");
-		math_DoubleTabOfReal(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		~math_Gauss();
 		%feature("autodoc", "1");
-		math_DoubleTabOfReal(const Standard_Real &Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		math_Gauss(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
 		%feature("autodoc", "1");
-		void Init(const Standard_Real &InitValue);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		math_DoubleTabOfReal(const math_DoubleTabOfReal &Other);
+		void Solve(const math_Vector &B, math_Vector & X) const;
 		%feature("autodoc", "1");
-		void Copy(math_DoubleTabOfReal & Other) const;
+		void Solve(math_Vector & B) const;
 		%feature("autodoc", "1");
-		void SetLowerRow(const Standard_Integer LowerRow);
+		Standard_Real Determinant() const;
 		%feature("autodoc", "1");
-		void SetLowerCol(const Standard_Integer LowerCol);
+		void Invert(math_Matrix & Inv) const;
 		%feature("autodoc", "1");
-		Standard_Real & Value(const Standard_Integer RowIndex, const Standard_Integer ColIndex) const;
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const Standard_Integer RowIndex, const Standard_Integer ColIndex) const;
-		%feature("autodoc", "1");
-		void Free();
-		%feature("autodoc", "1");
-		~math_DoubleTabOfReal();
+		void Dump(Standard_OStream & o) const;
 
 };
 
@@ -1351,6 +1319,38 @@ class math_FunctionRoots {
 		Standard_Integer StateNumber(const Standard_Integer Nieme) const;
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
+
+};
+
+%nodefaultctor math_KronrodSingleIntegration;
+class math_KronrodSingleIntegration {
+	public:
+		%feature("autodoc", "1");
+		~math_KronrodSingleIntegration();
+		%feature("autodoc", "1");
+		math_KronrodSingleIntegration();
+		%feature("autodoc", "1");
+		math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
+		%feature("autodoc", "1");
+		math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
+		%feature("autodoc", "1");
+		void Perform(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
+		%feature("autodoc", "1");
+		void Perform(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
+		%feature("autodoc", "1");
+		Standard_Real ErrorReached() const;
+		%feature("autodoc", "1");
+		Standard_Real AbsolutError() const;
+		%feature("autodoc", "1");
+		Standard_Integer OrderReached() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterReached() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 

@@ -496,6 +496,18 @@ class BinMXCAFDoc_ColorDriver : public BinMDF_ADriver {
 	}
 };
 
+%nodefaultctor BinMXCAFDoc;
+class BinMXCAFDoc {
+	public:
+		%feature("autodoc", "1");
+		~BinMXCAFDoc();
+		%feature("autodoc", "1");
+		BinMXCAFDoc();
+		%feature("autodoc", "1");
+		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMsgDrv);
+
+};
+
 %nodefaultctor BinMXCAFDoc_DocumentToolDriver;
 class BinMXCAFDoc_DocumentToolDriver : public BinMDF_ADriver {
 	public:
@@ -517,18 +529,6 @@ class BinMXCAFDoc_DocumentToolDriver : public BinMDF_ADriver {
 	Handle_BinMXCAFDoc_DocumentToolDriver GetHandle() {
 	return *(Handle_BinMXCAFDoc_DocumentToolDriver*) &$self;
 	}
-};
-
-%nodefaultctor BinMXCAFDoc;
-class BinMXCAFDoc {
-	public:
-		%feature("autodoc", "1");
-		~BinMXCAFDoc();
-		%feature("autodoc", "1");
-		BinMXCAFDoc();
-		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMsgDrv);
-
 };
 
 %nodefaultctor BinMXCAFDoc_AreaDriver;

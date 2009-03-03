@@ -36,6 +36,11 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_PNaming_HArray1OfNamedShape.hxx>
+#include<Handle_PNaming_Name.hxx>
+#include<Handle_PNaming_NamedShape.hxx>
+#include<Handle_PNaming_Naming.hxx>
+#include<Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape.hxx>
 #include<PNaming_FieldOfHArray1OfNamedShape.hxx>
 #include<PNaming_HArray1OfNamedShape.hxx>
 #include<PNaming_Name.hxx>
@@ -43,11 +48,6 @@
 #include<PNaming_Naming.hxx>
 #include<PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape.hxx>
 #include<PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape.hxx>
-#include<Handle_PNaming_HArray1OfNamedShape.hxx>
-#include<Handle_PNaming_Name.hxx>
-#include<Handle_PNaming_NamedShape.hxx>
-#include<Handle_PNaming_Naming.hxx>
-#include<Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape.hxx>
 
 // Additional headers necessary for compilation.
 

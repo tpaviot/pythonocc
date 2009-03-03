@@ -60,8 +60,8 @@
 #include<math_Array1OfValueAndWeight.hxx>
 #include<math_BFGS.hxx>
 #include<math_BissecNewton.hxx>
-#include<math_BracketedRoot.hxx>
 #include<math_BracketMinimum.hxx>
+#include<math_BracketedRoot.hxx>
 #include<math_BrentMinimum.hxx>
 #include<math_CompareOfValueAndWeight.hxx>
 #include<math_ComputeGaussPointsAndWeights.hxx>
@@ -104,11 +104,11 @@
 #include<math_QuickSortOfValueAndWeight.hxx>
 #include<math_RealRandom.hxx>
 #include<math_Recipes.hxx>
+#include<math_SVD.hxx>
 #include<math_SingleTabOfInteger.hxx>
 #include<math_SingleTabOfReal.hxx>
 #include<math_SingularMatrix.hxx>
 #include<math_Status.hxx>
-#include<math_SVD.hxx>
 #include<math_TrigonometricFunctionRoots.hxx>
 #include<math_Uzawa.hxx>
 #include<math_ValueAndWeight.hxx>

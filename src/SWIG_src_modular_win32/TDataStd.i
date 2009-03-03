@@ -187,6 +187,27 @@ class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 	}
 };
 
+%nodefaultctor Handle_TDataStd_DeltaOnModificationOfRealArray;
+class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOnModification {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDataStd_DeltaOnModificationOfRealArray();
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray();
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray(const Handle_TDataStd_DeltaOnModificationOfRealArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray(const TDataStd_DeltaOnModificationOfRealArray *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_DeltaOnModificationOfRealArray {
+	TDataStd_DeltaOnModificationOfRealArray* GetObject() {
+	return (TDataStd_DeltaOnModificationOfRealArray*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TDataStd_Pattern;
 class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 	public:
@@ -226,27 +247,6 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Hand
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
 	TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger* GetObject() {
 	return (TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TDataStd_Variable;
-class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Variable();
-		%feature("autodoc", "1");
-		Handle_TDataStd_Variable();
-		%feature("autodoc", "1");
-		Handle_TDataStd_Variable(const Handle_TDataStd_Variable &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Variable(const TDataStd_Variable *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Variable const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_Variable {
-	TDataStd_Variable* GetObject() {
-	return (TDataStd_Variable*)$self->Access();
 	}
 };
 
@@ -394,6 +394,27 @@ class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 %extend Handle_TDataStd_NoteBook {
 	TDataStd_NoteBook* GetObject() {
 	return (TDataStd_NoteBook*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_TDataStd_Variable;
+class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDataStd_Variable();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Variable();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Variable(const Handle_TDataStd_Variable &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Variable(const TDataStd_Variable *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Variable const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_Variable {
+	TDataStd_Variable* GetObject() {
+	return (TDataStd_Variable*)$self->Access();
 	}
 };
 
@@ -586,27 +607,6 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollec
 	}
 };
 
-%nodefaultctor Handle_TDataStd_DeltaOnModificationOfRealArray;
-class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOnModification {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DeltaOnModificationOfRealArray();
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray();
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray(const Handle_TDataStd_DeltaOnModificationOfRealArray &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray(const TDataStd_DeltaOnModificationOfRealArray *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_DeltaOnModificationOfRealArray {
-	TDataStd_DeltaOnModificationOfRealArray* GetObject() {
-	return (TDataStd_DeltaOnModificationOfRealArray*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_TDataStd_HDataMapOfStringHArray1OfInteger;
 class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TShared {
 	public:
@@ -691,6 +691,27 @@ class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_De
 	}
 };
 
+%nodefaultctor Handle_TDataStd_Expression;
+class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TDataStd_Expression();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression(const Handle_TDataStd_Expression &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression(const TDataStd_Expression *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_Expression {
+	TDataStd_Expression* GetObject() {
+	return (TDataStd_Expression*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TDataStd_Integer;
 class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 	public:
@@ -751,27 +772,6 @@ class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 %extend Handle_TDataStd_Real {
 	TDataStd_Real* GetObject() {
 	return (TDataStd_Real*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TDataStd_Expression;
-class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Expression();
-		%feature("autodoc", "1");
-		Handle_TDataStd_Expression();
-		%feature("autodoc", "1");
-		Handle_TDataStd_Expression(const Handle_TDataStd_Expression &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Expression(const TDataStd_Expression *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Expression const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_Expression {
-	TDataStd_Expression* GetObject() {
-	return (TDataStd_Expression*)$self->Access();
 	}
 };
 
@@ -2027,67 +2027,34 @@ class TDataStd_RealList : public TDF_Attribute {
 	}
 };
 
-%nodefaultctor TDataStd_Variable;
-class TDataStd_Variable : public TDF_Attribute {
+%nodefaultctor TDataStd_DataMapOfStringReal;
+class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		TDataStd_DataMapOfStringReal(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Variable Set(const TDF_Label &label);
+		TDataStd_DataMapOfStringReal & Assign(const TDataStd_DataMapOfStringReal &Other);
 		%feature("autodoc", "1");
-		TDataStd_Variable();
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		void Name(const TCollection_ExtendedString &string);
+		void Clear();
 		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Name() const;
+		~TDataStd_DataMapOfStringReal();
 		%feature("autodoc", "1");
-		void Set(const Standard_Real value, const TDataStd_RealEnum dimension=TDataStd_SCALAR) const;
+		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Real &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsValued() const;
+		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
 		%feature("autodoc", "1");
-		Standard_Real Get() const;
+		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Real Real() const;
+		const Standard_Real & Find(const TCollection_ExtendedString &K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAssigned() const;
+		const Standard_Real & operator()(const TCollection_ExtendedString &K) const;
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression Assign() const;
+		Standard_Real & ChangeFind(const TCollection_ExtendedString &K);
 		%feature("autodoc", "1");
-		void Desassign() const;
-		%feature("autodoc", "1");
-		Handle_TDataStd_Expression Expression() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCaptured() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		void Unit(const TCollection_AsciiString &unit);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Unit() const;
-		%feature("autodoc", "1");
-		void Constant(const Standard_Boolean status);
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
-		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Variable();
+		Standard_Real & operator()(const TCollection_ExtendedString &K);
 
-};
-%extend TDataStd_Variable {
-	Handle_TDataStd_Variable GetHandle() {
-	return *(Handle_TDataStd_Variable*) &$self;
-	}
 };
 
 %nodefaultctor TDataStd_TreeNode;
@@ -3271,34 +3238,67 @@ class TDataStd_HArray1OfTrsf : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor TDataStd_DataMapOfStringReal;
-class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
+%nodefaultctor TDataStd_Variable;
+class TDataStd_Variable : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringReal(const Standard_Integer NbBuckets=1);
+		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringReal & Assign(const TDataStd_DataMapOfStringReal &Other);
+		Handle_TDataStd_Variable Set(const TDF_Label &label);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		TDataStd_Variable();
 		%feature("autodoc", "1");
-		void Clear();
+		void Name(const TCollection_ExtendedString &string);
 		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringReal();
+		const TCollection_ExtendedString & Name() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Real &I);
+		void Set(const Standard_Real value, const TDataStd_RealEnum dimension=TDataStd_SCALAR) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
+		Standard_Boolean IsValued() const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
+		Standard_Real Get() const;
 		%feature("autodoc", "1");
-		const Standard_Real & Find(const TCollection_ExtendedString &K) const;
+		Handle_TDataStd_Real Real() const;
 		%feature("autodoc", "1");
-		const Standard_Real & operator()(const TCollection_ExtendedString &K) const;
+		Standard_Boolean IsAssigned() const;
 		%feature("autodoc", "1");
-		Standard_Real & ChangeFind(const TCollection_ExtendedString &K);
+		Handle_TDataStd_Expression Assign() const;
 		%feature("autodoc", "1");
-		Standard_Real & operator()(const TCollection_ExtendedString &K);
+		void Desassign() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression Expression() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCaptured() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		void Unit(const TCollection_AsciiString &unit);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Unit() const;
+		%feature("autodoc", "1");
+		void Constant(const Standard_Boolean status);
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		%feature("autodoc", "1");
+		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TDataStd_Variable();
 
+};
+%extend TDataStd_Variable {
+	Handle_TDataStd_Variable GetHandle() {
+	return *(Handle_TDataStd_Variable*) &$self;
+	}
 };
 
 %nodefaultctor TDataStd_Comment;

@@ -98,6 +98,27 @@ Standard_Real & function transformation
 
 
 
+%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion;
+class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion();
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion();
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerConnexion *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
+	MAT2d_DataMapNodeOfDataMapOfIntegerConnexion* GetObject() {
+	return (MAT2d_DataMapNodeOfDataMapOfIntegerConnexion*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_MAT2d_Connexion;
 class Handle_MAT2d_Connexion : public Handle_MMgt_TShared {
 	public:
@@ -284,27 +305,6 @@ class Handle_MAT2d_Circuit : public Handle_MMgt_TShared {
 %extend Handle_MAT2d_Circuit {
 	MAT2d_Circuit* GetObject() {
 	return (MAT2d_Circuit*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion;
-class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerConnexion *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
-	MAT2d_DataMapNodeOfDataMapOfIntegerConnexion* GetObject() {
-	return (MAT2d_DataMapNodeOfDataMapOfIntegerConnexion*)$self->Access();
 	}
 };
 

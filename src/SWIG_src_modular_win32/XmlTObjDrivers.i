@@ -119,27 +119,6 @@ class Handle_XmlTObjDrivers_XYZDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
-%nodefaultctor Handle_XmlTObjDrivers_DocumentStorageDriver;
-class Handle_XmlTObjDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_DocumentStorageDriver {
-	public:
-		%feature("autodoc", "1");
-		~Handle_XmlTObjDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentStorageDriver(const Handle_XmlTObjDrivers_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentStorageDriver(const XmlTObjDrivers_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlTObjDrivers_DocumentStorageDriver {
-	XmlTObjDrivers_DocumentStorageDriver* GetObject() {
-	return (XmlTObjDrivers_DocumentStorageDriver*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_XmlTObjDrivers_DocumentRetrievalDriver;
 class Handle_XmlTObjDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_DocumentRetrievalDriver {
 	public:
@@ -182,24 +161,24 @@ class Handle_XmlTObjDrivers_ModelDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
-%nodefaultctor Handle_XmlTObjDrivers_ObjectDriver;
-class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
+%nodefaultctor Handle_XmlTObjDrivers_DocumentStorageDriver;
+class Handle_XmlTObjDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_DocumentStorageDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlTObjDrivers_ObjectDriver();
+		~Handle_XmlTObjDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_ObjectDriver();
+		Handle_XmlTObjDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_ObjectDriver(const Handle_XmlTObjDrivers_ObjectDriver &aHandle);
+		Handle_XmlTObjDrivers_DocumentStorageDriver(const Handle_XmlTObjDrivers_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_ObjectDriver(const XmlTObjDrivers_ObjectDriver *anItem);
+		Handle_XmlTObjDrivers_DocumentStorageDriver(const XmlTObjDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_ObjectDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlTObjDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlTObjDrivers_ObjectDriver {
-	XmlTObjDrivers_ObjectDriver* GetObject() {
-	return (XmlTObjDrivers_ObjectDriver*)$self->Access();
+%extend Handle_XmlTObjDrivers_DocumentStorageDriver {
+	XmlTObjDrivers_DocumentStorageDriver* GetObject() {
+	return (XmlTObjDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
 
@@ -221,6 +200,27 @@ class Handle_XmlTObjDrivers_IntSparseArrayDriver : public Handle_XmlMDF_ADriver 
 %extend Handle_XmlTObjDrivers_IntSparseArrayDriver {
 	XmlTObjDrivers_IntSparseArrayDriver* GetObject() {
 	return (XmlTObjDrivers_IntSparseArrayDriver*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_XmlTObjDrivers_ObjectDriver;
+class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		~Handle_XmlTObjDrivers_ObjectDriver();
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_ObjectDriver();
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_ObjectDriver(const Handle_XmlTObjDrivers_ObjectDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_ObjectDriver(const XmlTObjDrivers_ObjectDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_ObjectDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlTObjDrivers_ObjectDriver {
+	XmlTObjDrivers_ObjectDriver* GetObject() {
+	return (XmlTObjDrivers_ObjectDriver*)$self->Access();
 	}
 };
 
@@ -347,6 +347,25 @@ class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 	}
 };
 
+%nodefaultctor XmlTObjDrivers_DocumentStorageDriver;
+class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDriver {
+	public:
+		%feature("autodoc", "1");
+		XmlTObjDrivers_DocumentStorageDriver(const TCollection_ExtendedString &theCopyright);
+		%feature("autodoc", "1");
+		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~XmlTObjDrivers_DocumentStorageDriver();
+
+};
+%extend XmlTObjDrivers_DocumentStorageDriver {
+	Handle_XmlTObjDrivers_DocumentStorageDriver GetHandle() {
+	return *(Handle_XmlTObjDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+
 %nodefaultctor XmlTObjDrivers_ObjectDriver;
 class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 	public:
@@ -367,25 +386,6 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 %extend XmlTObjDrivers_ObjectDriver {
 	Handle_XmlTObjDrivers_ObjectDriver GetHandle() {
 	return *(Handle_XmlTObjDrivers_ObjectDriver*) &$self;
-	}
-};
-
-%nodefaultctor XmlTObjDrivers_DocumentStorageDriver;
-class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDriver {
-	public:
-		%feature("autodoc", "1");
-		XmlTObjDrivers_DocumentStorageDriver(const TCollection_ExtendedString &theCopyright);
-		%feature("autodoc", "1");
-		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlTObjDrivers_DocumentStorageDriver();
-
-};
-%extend XmlTObjDrivers_DocumentStorageDriver {
-	Handle_XmlTObjDrivers_DocumentStorageDriver GetHandle() {
-	return *(Handle_XmlTObjDrivers_DocumentStorageDriver*) &$self;
 	}
 };
 

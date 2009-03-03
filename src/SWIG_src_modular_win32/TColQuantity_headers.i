@@ -36,12 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TColQuantity_HArray1OfLength.hxx>
+#include<Handle_TColQuantity_HArray2OfLength.hxx>
 #include<TColQuantity_Array1OfLength.hxx>
 #include<TColQuantity_Array2OfLength.hxx>
 #include<TColQuantity_HArray1OfLength.hxx>
 #include<TColQuantity_HArray2OfLength.hxx>
-#include<Handle_TColQuantity_HArray1OfLength.hxx>
-#include<Handle_TColQuantity_HArray2OfLength.hxx>
 
 // Additional headers necessary for compilation.
 

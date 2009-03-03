@@ -36,8 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<IGESConvGeom_GeomBuilder.hxx>
 #include<IGESConvGeom.hxx>
+#include<IGESConvGeom_GeomBuilder.hxx>
 
 // Additional headers necessary for compilation.
 

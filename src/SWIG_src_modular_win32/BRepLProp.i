@@ -98,6 +98,28 @@ Standard_Real & function transformation
 
 
 
+%nodefaultctor BRepLProp_SurfaceTool;
+class BRepLProp_SurfaceTool {
+	public:
+		%feature("autodoc", "1");
+		~BRepLProp_SurfaceTool();
+		%feature("autodoc", "1");
+		BRepLProp_SurfaceTool();
+		%feature("autodoc", "1");
+		void Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
+		%feature("autodoc", "1");
+		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
+		%feature("autodoc", "1");
+		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
+		%feature("autodoc", "1");
+		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
+		%feature("autodoc", "1");
+		Standard_Integer Continuity(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+
 %nodefaultctor BRepLProp_SLProps;
 class BRepLProp_SLProps {
 	public:
@@ -211,28 +233,6 @@ class BRepLProp_CLProps {
 		void Normal(gp_Dir & N);
 		%feature("autodoc", "1");
 		void CentreOfCurvature(gp_Pnt & P);
-
-};
-
-%nodefaultctor BRepLProp_SurfaceTool;
-class BRepLProp_SurfaceTool {
-	public:
-		%feature("autodoc", "1");
-		~BRepLProp_SurfaceTool();
-		%feature("autodoc", "1");
-		BRepLProp_SurfaceTool();
-		%feature("autodoc", "1");
-		void Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
-		%feature("autodoc", "1");
-		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
-		%feature("autodoc", "1");
-		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
-		%feature("autodoc", "1");
-		Standard_Integer Continuity(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 

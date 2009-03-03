@@ -274,27 +274,6 @@ class Handle_Prs3d_Projector : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_Prs3d_RadiusAspect;
-class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_RadiusAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect(const Handle_Prs3d_RadiusAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect(const Prs3d_RadiusAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_RadiusAspect {
-	Prs3d_RadiusAspect* GetObject() {
-	return (Prs3d_RadiusAspect*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Prs3d_AngleAspect;
 class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
 	public:
@@ -421,6 +400,27 @@ class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
 	}
 };
 
+%nodefaultctor Handle_Prs3d_RadiusAspect;
+class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Prs3d_RadiusAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect(const Handle_Prs3d_RadiusAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect(const Prs3d_RadiusAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_RadiusAspect {
+	Prs3d_RadiusAspect* GetObject() {
+	return (Prs3d_RadiusAspect*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_Prs3d_Presentation;
 class Handle_Prs3d_Presentation : public Handle_Graphic3d_Structure {
 	public:
@@ -510,6 +510,65 @@ class Prs3d_Text : public Prs3d_Root {
 		%feature("autodoc", "1");
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
 
+};
+
+%nodefaultctor Prs3d_Presentation;
+class Prs3d_Presentation : public Graphic3d_Structure {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_Presentation(const Handle_Graphic3d_StructureManager &aStructureManager, const Standard_Boolean Init=1);
+		%feature("autodoc", "1");
+		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector);
+		%feature("autodoc", "1");
+		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, Handle_Graphic3d_Structure & aStructure);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix, Handle_Graphic3d_Structure & aStructure);
+		%feature("autodoc", "1");
+		void Highlight();
+		%feature("autodoc", "1");
+		void Color(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		void BoundBox();
+		%feature("autodoc", "1");
+		virtual		void Display();
+		%feature("autodoc", "1");
+		void SetShadingAspect(const Handle_Prs3d_ShadingAspect &aShadingAspect);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPickable() const;
+		%feature("autodoc", "1");
+		void Transform(const Handle_Geom_Transformation &aTransformation);
+		%feature("autodoc", "1");
+		void Place(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
+		%feature("autodoc", "1");
+		void Multiply(const Handle_Geom_Transformation &aTransformation);
+		%feature("autodoc", "1");
+		void Move(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
+		%feature("autodoc", "1");
+		Handle_Geom_Transformation Transformation() const;
+		%feature("autodoc", "1");
+		virtual		void Clear(const Standard_Boolean WithDestruction=1);
+		%feature("autodoc", "1");
+		void Connect(const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		void Remove(const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		void RemoveAll();
+		%feature("autodoc", "1");
+		void SetPickable();
+		%feature("autodoc", "1");
+		void SetUnPickable();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs3d_Presentation();
+
+};
+%extend Prs3d_Presentation {
+	Handle_Prs3d_Presentation GetHandle() {
+	return *(Handle_Prs3d_Presentation*) &$self;
+	}
 };
 
 %nodefaultctor Prs3d_AnglePresentation;
@@ -652,65 +711,6 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 %extend Prs3d_DatumAspect {
 	Handle_Prs3d_DatumAspect GetHandle() {
 	return *(Handle_Prs3d_DatumAspect*) &$self;
-	}
-};
-
-%nodefaultctor Prs3d_Presentation;
-class Prs3d_Presentation : public Graphic3d_Structure {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_Presentation(const Handle_Graphic3d_StructureManager &aStructureManager, const Standard_Boolean Init=1);
-		%feature("autodoc", "1");
-		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector);
-		%feature("autodoc", "1");
-		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, Handle_Graphic3d_Structure & aStructure);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix, Handle_Graphic3d_Structure & aStructure);
-		%feature("autodoc", "1");
-		void Highlight();
-		%feature("autodoc", "1");
-		void Color(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		void BoundBox();
-		%feature("autodoc", "1");
-		virtual		void Display();
-		%feature("autodoc", "1");
-		void SetShadingAspect(const Handle_Prs3d_ShadingAspect &aShadingAspect);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPickable() const;
-		%feature("autodoc", "1");
-		void Transform(const Handle_Geom_Transformation &aTransformation);
-		%feature("autodoc", "1");
-		void Place(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
-		%feature("autodoc", "1");
-		void Multiply(const Handle_Geom_Transformation &aTransformation);
-		%feature("autodoc", "1");
-		void Move(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
-		%feature("autodoc", "1");
-		Handle_Geom_Transformation Transformation() const;
-		%feature("autodoc", "1");
-		virtual		void Clear(const Standard_Boolean WithDestruction=1);
-		%feature("autodoc", "1");
-		void Connect(const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		void Remove(const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		void RemoveAll();
-		%feature("autodoc", "1");
-		void SetPickable();
-		%feature("autodoc", "1");
-		void SetUnPickable();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_Presentation();
-
-};
-%extend Prs3d_Presentation {
-	Handle_Prs3d_Presentation GetHandle() {
-	return *(Handle_Prs3d_Presentation*) &$self;
 	}
 };
 
@@ -863,6 +863,27 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 %extend Prs3d_ArrowAspect {
 	Handle_Prs3d_ArrowAspect GetHandle() {
 	return *(Handle_Prs3d_ArrowAspect*) &$self;
+	}
+};
+
+%nodefaultctor Prs3d_Projector;
+class Prs3d_Projector : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_Projector(const HLRAlgo_Projector &Pr);
+		%feature("autodoc", "1");
+		Prs3d_Projector(const Standard_Boolean Pers, const Quantity_Length Focus, const Quantity_Length DX, const Quantity_Length DY, const Quantity_Length DZ, const Quantity_Length XAt, const Quantity_Length YAt, const Quantity_Length ZAt, const Quantity_Length XUp, const Quantity_Length YUp, const Quantity_Length ZUp);
+		%feature("autodoc", "1");
+		HLRAlgo_Projector Projector() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Prs3d_Projector();
+
+};
+%extend Prs3d_Projector {
+	Handle_Prs3d_Projector GetHandle() {
+	return *(Handle_Prs3d_Projector*) &$self;
 	}
 };
 
@@ -1023,6 +1044,60 @@ class Prs3d_Drawer : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor Prs3d_ShapeTool;
+class Prs3d_ShapeTool {
+	public:
+		%feature("autodoc", "1");
+		~Prs3d_ShapeTool();
+		%feature("autodoc", "1");
+		Prs3d_ShapeTool(const TopoDS_Shape &TheShape);
+		%feature("autodoc", "1");
+		void InitFace();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreFace() const;
+		%feature("autodoc", "1");
+		void NextFace();
+		%feature("autodoc", "1");
+		const TopoDS_Face & GetFace() const;
+		%feature("autodoc", "1");
+		Bnd_Box FaceBound() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPlanarFace() const;
+		%feature("autodoc", "1");
+		void InitCurve();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreCurve() const;
+		%feature("autodoc", "1");
+		void NextCurve();
+		%feature("autodoc", "1");
+		const TopoDS_Edge & GetCurve() const;
+		%feature("autodoc", "1");
+		Bnd_Box CurveBound() const;
+		%feature("autodoc", "1");
+		Standard_Integer Neighbours() const;
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape FacesOfEdge() const;
+		%feature("autodoc", "1");
+		void InitVertex();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreVertex() const;
+		%feature("autodoc", "1");
+		void NextVertex();
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & GetVertex() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasSurface() const;
+		%feature("autodoc", "1");
+		Handle_Poly_Triangulation CurrentTriangulation(TopLoc_Location & l) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasCurve() const;
+		%feature("autodoc", "1");
+		void PolygonOnTriangulation(Handle_Poly_PolygonOnTriangulation & Indices, Handle_Poly_Triangulation & T, TopLoc_Location & l) const;
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D Polygon3D(TopLoc_Location & l) const;
+
+};
+
 %nodefaultctor Prs3d_TextAspect;
 class Prs3d_TextAspect : public Prs3d_BasicAspect {
 	public:
@@ -1097,81 +1172,6 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 	Handle_Prs3d_IsoAspect GetHandle() {
 	return *(Handle_Prs3d_IsoAspect*) &$self;
 	}
-};
-
-%nodefaultctor Prs3d_Projector;
-class Prs3d_Projector : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_Projector(const HLRAlgo_Projector &Pr);
-		%feature("autodoc", "1");
-		Prs3d_Projector(const Standard_Boolean Pers, const Quantity_Length Focus, const Quantity_Length DX, const Quantity_Length DY, const Quantity_Length DZ, const Quantity_Length XAt, const Quantity_Length YAt, const Quantity_Length ZAt, const Quantity_Length XUp, const Quantity_Length YUp, const Quantity_Length ZUp);
-		%feature("autodoc", "1");
-		HLRAlgo_Projector Projector() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_Projector();
-
-};
-%extend Prs3d_Projector {
-	Handle_Prs3d_Projector GetHandle() {
-	return *(Handle_Prs3d_Projector*) &$self;
-	}
-};
-
-%nodefaultctor Prs3d_ShapeTool;
-class Prs3d_ShapeTool {
-	public:
-		%feature("autodoc", "1");
-		~Prs3d_ShapeTool();
-		%feature("autodoc", "1");
-		Prs3d_ShapeTool(const TopoDS_Shape &TheShape);
-		%feature("autodoc", "1");
-		void InitFace();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreFace() const;
-		%feature("autodoc", "1");
-		void NextFace();
-		%feature("autodoc", "1");
-		const TopoDS_Face & GetFace() const;
-		%feature("autodoc", "1");
-		Bnd_Box FaceBound() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPlanarFace() const;
-		%feature("autodoc", "1");
-		void InitCurve();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreCurve() const;
-		%feature("autodoc", "1");
-		void NextCurve();
-		%feature("autodoc", "1");
-		const TopoDS_Edge & GetCurve() const;
-		%feature("autodoc", "1");
-		Bnd_Box CurveBound() const;
-		%feature("autodoc", "1");
-		Standard_Integer Neighbours() const;
-		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape FacesOfEdge() const;
-		%feature("autodoc", "1");
-		void InitVertex();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreVertex() const;
-		%feature("autodoc", "1");
-		void NextVertex();
-		%feature("autodoc", "1");
-		const TopoDS_Vertex & GetVertex() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasSurface() const;
-		%feature("autodoc", "1");
-		Handle_Poly_Triangulation CurrentTriangulation(TopLoc_Location & l) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasCurve() const;
-		%feature("autodoc", "1");
-		void PolygonOnTriangulation(Handle_Poly_PolygonOnTriangulation & Indices, Handle_Poly_Triangulation & T, TopLoc_Location & l) const;
-		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D Polygon3D(TopLoc_Location & l) const;
-
 };
 
 %nodefaultctor Prs3d_InvalidAngle;

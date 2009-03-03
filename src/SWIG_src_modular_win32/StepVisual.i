@@ -1596,6 +1596,27 @@ class Handle_StepVisual_SurfaceStyleBoundary : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_StepVisual_HArray1OfLayeredItem;
+class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepVisual_HArray1OfLayeredItem();
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfLayeredItem();
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfLayeredItem(const Handle_StepVisual_HArray1OfLayeredItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfLayeredItem(const StepVisual_HArray1OfLayeredItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfLayeredItem const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_HArray1OfLayeredItem {
+	StepVisual_HArray1OfLayeredItem* GetObject() {
+	return (StepVisual_HArray1OfLayeredItem*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepVisual_PresentationLayerUsage;
 class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
 	public:
@@ -1719,27 +1740,6 @@ class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
 %extend Handle_StepVisual_BackgroundColour {
 	StepVisual_BackgroundColour* GetObject() {
 	return (StepVisual_BackgroundColour*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepVisual_HArray1OfLayeredItem;
-class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfLayeredItem();
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem();
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem(const Handle_StepVisual_HArray1OfLayeredItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem(const StepVisual_HArray1OfLayeredItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_HArray1OfLayeredItem {
-	StepVisual_HArray1OfLayeredItem* GetObject() {
-	return (StepVisual_HArray1OfLayeredItem*)$self->Access();
 	}
 };
 
@@ -2734,6 +2734,58 @@ class StepVisual_MarkerMember : public StepData_SelectInt {
 	}
 };
 
+%nodefaultctor StepVisual_TextStyle;
+class StepVisual_TextStyle : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_TextStyle();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetCharacterAppearance(const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleForDefinedFont CharacterAppearance() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepVisual_TextStyle();
+
+};
+%extend StepVisual_TextStyle {
+	Handle_StepVisual_TextStyle GetHandle() {
+	return *(Handle_StepVisual_TextStyle*) &$self;
+	}
+};
+
+%nodefaultctor StepVisual_TextStyleWithBoxCharacteristics;
+class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_TextStyleWithBoxCharacteristics();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance, const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aCharacteristics);
+		%feature("autodoc", "1");
+		void SetCharacteristics(const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aCharacteristics);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfBoxCharacteristicSelect Characteristics() const;
+		%feature("autodoc", "1");
+		StepVisual_BoxCharacteristicSelect CharacteristicsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbCharacteristics() const;
+		%feature("autodoc", "1");
+		virtual		~StepVisual_TextStyleWithBoxCharacteristics();
+
+};
+%extend StepVisual_TextStyleWithBoxCharacteristics {
+	Handle_StepVisual_TextStyleWithBoxCharacteristics GetHandle() {
+	return *(Handle_StepVisual_TextStyleWithBoxCharacteristics*) &$self;
+	}
+};
+
 %nodefaultctor StepVisual_MarkerSelect;
 class StepVisual_MarkerSelect : public StepData_SelectType {
 	public:
@@ -2749,42 +2801,6 @@ class StepVisual_MarkerSelect : public StepData_SelectType {
 		Handle_StepVisual_MarkerMember MarkerMember() const;
 		%feature("autodoc", "1");
 		virtual		~StepVisual_MarkerSelect();
-
-};
-
-%nodefaultctor StepVisual_Array1OfFillStyleSelect;
-class StepVisual_Array1OfFillStyleSelect {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_Array1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepVisual_Array1OfFillStyleSelect(const StepVisual_FillStyleSelect &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepVisual_FillStyleSelect &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~StepVisual_Array1OfFillStyleSelect();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepVisual_Array1OfFillStyleSelect & Assign(const StepVisual_Array1OfFillStyleSelect &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepVisual_FillStyleSelect &Value);
-		%feature("autodoc", "1");
-		const StepVisual_FillStyleSelect & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepVisual_FillStyleSelect & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepVisual_FillStyleSelect & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepVisual_FillStyleSelect & operator()(const Standard_Integer Index);
 
 };
 
@@ -3075,6 +3091,33 @@ class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor StepVisual_FillAreaStyleColour;
+class StepVisual_FillAreaStyleColour : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_FillAreaStyleColour();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_Colour &aFillColour);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetFillColour(const Handle_StepVisual_Colour &aFillColour);
+		%feature("autodoc", "1");
+		Handle_StepVisual_Colour FillColour() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepVisual_FillAreaStyleColour();
+
+};
+%extend StepVisual_FillAreaStyleColour {
+	Handle_StepVisual_FillAreaStyleColour GetHandle() {
+	return *(Handle_StepVisual_FillAreaStyleColour*) &$self;
+	}
+};
+
 %nodefaultctor StepVisual_InvisibleItem;
 class StepVisual_InvisibleItem : public StepData_SelectType {
 	public:
@@ -3107,6 +3150,33 @@ class StepVisual_PresentationView : public StepVisual_PresentationRepresentation
 %extend StepVisual_PresentationView {
 	Handle_StepVisual_PresentationView GetHandle() {
 	return *(Handle_StepVisual_PresentationView*) &$self;
+	}
+};
+
+%nodefaultctor StepVisual_PresentationLayerUsage;
+class StepVisual_PresentationLayerUsage : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PresentationLayerUsage();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepVisual_PresentationLayerAssignment &aAssignment, const Handle_StepVisual_PresentationRepresentation &aPresentation);
+		%feature("autodoc", "1");
+		void SetAssignment(const Handle_StepVisual_PresentationLayerAssignment &aAssignment);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerAssignment Assignment() const;
+		%feature("autodoc", "1");
+		void SetPresentation(const Handle_StepVisual_PresentationRepresentation &aPresentation);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationRepresentation Presentation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepVisual_PresentationLayerUsage();
+
+};
+%extend StepVisual_PresentationLayerUsage {
+	Handle_StepVisual_PresentationLayerUsage GetHandle() {
+	return *(Handle_StepVisual_PresentationLayerUsage*) &$self;
 	}
 };
 
@@ -3176,6 +3246,42 @@ class StepVisual_PresentationSize : public MMgt_TShared {
 	Handle_StepVisual_PresentationSize GetHandle() {
 	return *(Handle_StepVisual_PresentationSize*) &$self;
 	}
+};
+
+%nodefaultctor StepVisual_Array1OfFillStyleSelect;
+class StepVisual_Array1OfFillStyleSelect {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_Array1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepVisual_Array1OfFillStyleSelect(const StepVisual_FillStyleSelect &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepVisual_FillStyleSelect &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~StepVisual_Array1OfFillStyleSelect();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfFillStyleSelect & Assign(const StepVisual_Array1OfFillStyleSelect &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepVisual_FillStyleSelect &Value);
+		%feature("autodoc", "1");
+		const StepVisual_FillStyleSelect & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepVisual_FillStyleSelect & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepVisual_FillStyleSelect & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepVisual_FillStyleSelect & operator()(const Standard_Integer Index);
+
 };
 
 %nodefaultctor StepVisual_TextStyleForDefinedFont;
@@ -3543,33 +3649,6 @@ class StepVisual_CameraImage2dWithScale : public StepVisual_CameraImage {
 	}
 };
 
-%nodefaultctor StepVisual_PresentationLayerUsage;
-class StepVisual_PresentationLayerUsage : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationLayerUsage();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepVisual_PresentationLayerAssignment &aAssignment, const Handle_StepVisual_PresentationRepresentation &aPresentation);
-		%feature("autodoc", "1");
-		void SetAssignment(const Handle_StepVisual_PresentationLayerAssignment &aAssignment);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerAssignment Assignment() const;
-		%feature("autodoc", "1");
-		void SetPresentation(const Handle_StepVisual_PresentationRepresentation &aPresentation);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationRepresentation Presentation() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationLayerUsage();
-
-};
-%extend StepVisual_PresentationLayerUsage {
-	Handle_StepVisual_PresentationLayerUsage GetHandle() {
-	return *(Handle_StepVisual_PresentationLayerUsage*) &$self;
-	}
-};
-
 %nodefaultctor StepVisual_CurveStyleFontSelect;
 class StepVisual_CurveStyleFontSelect : public StepData_SelectType {
 	public:
@@ -3730,33 +3809,6 @@ class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
 	}
 };
 
-%nodefaultctor StepVisual_FillAreaStyleColour;
-class StepVisual_FillAreaStyleColour : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_FillAreaStyleColour();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_Colour &aFillColour);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetFillColour(const Handle_StepVisual_Colour &aFillColour);
-		%feature("autodoc", "1");
-		Handle_StepVisual_Colour FillColour() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_FillAreaStyleColour();
-
-};
-%extend StepVisual_FillAreaStyleColour {
-	Handle_StepVisual_FillAreaStyleColour GetHandle() {
-	return *(Handle_StepVisual_FillAreaStyleColour*) &$self;
-	}
-};
-
 %nodefaultctor StepVisual_SurfaceStyleBoundary;
 class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
 	public:
@@ -3830,33 +3882,6 @@ class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public St
 %extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
 	Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation GetHandle() {
 	return *(Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation*) &$self;
-	}
-};
-
-%nodefaultctor StepVisual_TextStyle;
-class StepVisual_TextStyle : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_TextStyle();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetCharacterAppearance(const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
-		%feature("autodoc", "1");
-		Handle_StepVisual_TextStyleForDefinedFont CharacterAppearance() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_TextStyle();
-
-};
-%extend StepVisual_TextStyle {
-	Handle_StepVisual_TextStyle GetHandle() {
-	return *(Handle_StepVisual_TextStyle*) &$self;
 	}
 };
 
@@ -4378,35 +4403,6 @@ class StepVisual_DraughtingModel : public StepRepr_Representation {
 %extend StepVisual_DraughtingModel {
 	Handle_StepVisual_DraughtingModel GetHandle() {
 	return *(Handle_StepVisual_DraughtingModel*) &$self;
-	}
-};
-
-%nodefaultctor StepVisual_TextStyleWithBoxCharacteristics;
-class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_TextStyleWithBoxCharacteristics();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance, const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aCharacteristics);
-		%feature("autodoc", "1");
-		void SetCharacteristics(const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aCharacteristics);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfBoxCharacteristicSelect Characteristics() const;
-		%feature("autodoc", "1");
-		StepVisual_BoxCharacteristicSelect CharacteristicsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbCharacteristics() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_TextStyleWithBoxCharacteristics();
-
-};
-%extend StepVisual_TextStyleWithBoxCharacteristics {
-	Handle_StepVisual_TextStyleWithBoxCharacteristics GetHandle() {
-	return *(Handle_StepVisual_TextStyleWithBoxCharacteristics*) &$self;
 	}
 };
 

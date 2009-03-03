@@ -37,8 +37,8 @@
 // Headers necessary to define wrapped classes.
 
 #include<Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter.hxx>
-#include<Geom2dInt_Geom2dCurveTool.hxx>
 #include<Geom2dInt_GInter.hxx>
+#include<Geom2dInt_Geom2dCurveTool.hxx>
 #include<Geom2dInt_IntConicCurveOfGInter.hxx>
 #include<Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter.hxx>
@@ -48,8 +48,8 @@
 #include<Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_TheIntConicCurveOfGInter.hxx>
-#include<Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_TheIntPCurvePCurveOfGInter.hxx>
+#include<Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter.hxx>

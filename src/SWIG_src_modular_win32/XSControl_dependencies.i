@@ -33,9 +33,6 @@
 ##knowledge of the CeCILL license and that you accept its terms.
 */
 %{
-#include <MMgt_StackManager.hxx>
-#include <MMgt_TShared.hxx>
-#include <Handle_MMgt_TShared.hxx>
 #include <IFSelect_Act.hxx>
 #include <IFSelect_ActFunc.hxx>
 #include <IFSelect_Activator.hxx>
@@ -207,6 +204,9 @@
 #include <Handle_IFSelect_TransformStandard.hxx>
 #include <Handle_IFSelect_WorkLibrary.hxx>
 #include <Handle_IFSelect_WorkSession.hxx>
+#include <MMgt_StackManager.hxx>
+#include <MMgt_TShared.hxx>
+#include <Handle_MMgt_TShared.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -421,8 +421,8 @@
 #include <Handle_Interface_UndefinedContent.hxx>
 %};
 
-%import MMgt.i
 %import IFSelect.i
+%import MMgt.i
 %import Standard.i
 %import TopAbs.i
 %import Interface.i

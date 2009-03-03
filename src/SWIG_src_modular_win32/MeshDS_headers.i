@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
 #include<MeshDS_BaseAllocator.hxx>
 #include<MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger.hxx>
 #include<MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
@@ -44,7 +45,6 @@
 #include<MeshDS_DegreeOfFreedom.hxx>
 #include<MeshDS_ListOfInteger.hxx>
 #include<MeshDS_MapOfInteger.hxx>
-#include<Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
 
 // Additional headers necessary for compilation.
 

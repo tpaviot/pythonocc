@@ -36,6 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_PTColStd_DataMapNodeOfPersistentTransientMap.hxx>
+#include<Handle_PTColStd_DataMapNodeOfTransientPersistentMap.hxx>
+#include<Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent.hxx>
 #include<PTColStd_DataMapIteratorOfPersistentTransientMap.hxx>
 #include<PTColStd_DataMapIteratorOfTransientPersistentMap.hxx>
 #include<PTColStd_DataMapNodeOfPersistentTransientMap.hxx>
@@ -46,9 +49,6 @@
 #include<PTColStd_MapPersistentHasher.hxx>
 #include<PTColStd_PersistentTransientMap.hxx>
 #include<PTColStd_TransientPersistentMap.hxx>
-#include<Handle_PTColStd_DataMapNodeOfPersistentTransientMap.hxx>
-#include<Handle_PTColStd_DataMapNodeOfTransientPersistentMap.hxx>
-#include<Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent.hxx>
 
 // Additional headers necessary for compilation.
 

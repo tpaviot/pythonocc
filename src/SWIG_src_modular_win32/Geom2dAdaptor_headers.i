@@ -36,10 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Geom2dAdaptor.hxx>
 #include<Geom2dAdaptor_Curve.hxx>
 #include<Geom2dAdaptor_GHCurve.hxx>
 #include<Geom2dAdaptor_HCurve.hxx>
-#include<Geom2dAdaptor.hxx>
 #include<Handle_Geom2dAdaptor_GHCurve.hxx>
 #include<Handle_Geom2dAdaptor_HCurve.hxx>
 

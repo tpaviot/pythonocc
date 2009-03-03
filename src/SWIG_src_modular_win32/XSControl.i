@@ -98,6 +98,27 @@ Standard_Real & function transformation
 
 
 
+%nodefaultctor Handle_XSControl_SelectForTransfer;
+class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		~Handle_XSControl_SelectForTransfer();
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer();
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer(const Handle_XSControl_SelectForTransfer &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer(const XSControl_SelectForTransfer *anItem);
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XSControl_SelectForTransfer {
+	XSControl_SelectForTransfer* GetObject() {
+	return (XSControl_SelectForTransfer*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_XSControl_TransferWriter;
 class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 	public:
@@ -179,27 +200,6 @@ class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 %extend Handle_XSControl_Controller {
 	XSControl_Controller* GetObject() {
 	return (XSControl_Controller*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_XSControl_SelectForTransfer;
-class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_XSControl_SelectForTransfer();
-		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer();
-		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer(const Handle_XSControl_SelectForTransfer &aHandle);
-		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer(const XSControl_SelectForTransfer *anItem);
-		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XSControl_SelectForTransfer {
-	XSControl_SelectForTransfer* GetObject() {
-	return (XSControl_SelectForTransfer*)$self->Access();
 	}
 };
 
@@ -501,19 +501,61 @@ class XSControl_Functions {
 
 };
 
-%nodefaultctor XSControl_FuncShape;
-class XSControl_FuncShape {
+%nodefaultctor XSControl_Reader;
+class XSControl_Reader {
 	public:
 		%feature("autodoc", "1");
-		~XSControl_FuncShape();
+		XSControl_Reader();
 		%feature("autodoc", "1");
-		XSControl_FuncShape();
+		XSControl_Reader(const char * norm);
 		%feature("autodoc", "1");
-		void Init();
+		XSControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
 		%feature("autodoc", "1");
-		Standard_Integer MoreShapes(const Handle_XSControl_WorkSession &session, Handle_TopTools_HSequenceOfShape & list, const char * name);
+		virtual		~XSControl_Reader();
 		%feature("autodoc", "1");
-		Standard_Boolean FileAndVar(const Handle_XSControl_WorkSession &session, const char * file, const char * var, const char * def, TCollection_AsciiString & resfile, TCollection_AsciiString & resvar);
+		Standard_Boolean SetNorm(const char * norm);
+		%feature("autodoc", "1");
+		void SetWS(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		%feature("autodoc", "1");
+		Handle_XSControl_WorkSession WS() const;
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus ReadFile(const char * filename);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient GiveList(const char * first="", const char * second="");
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient GiveList(const char * first, const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbRootsForTransfer();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient RootForTransfer(const Standard_Integer num=1);
+		%feature("autodoc", "1");
+		Standard_Boolean TransferOneRoot(const Standard_Integer num=1);
+		%feature("autodoc", "1");
+		Standard_Boolean TransferOne(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean TransferEntity(const Handle_Standard_Transient &start);
+		%feature("autodoc", "1");
+		Standard_Integer TransferList(const Handle_TColStd_HSequenceOfTransient &list);
+		%feature("autodoc", "1");
+		Standard_Integer TransferRoots();
+		%feature("autodoc", "1");
+		void ClearShapes();
+		%feature("autodoc", "1");
+		Standard_Integer NbShapes() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape Shape(const Standard_Integer num=1) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape OneShape() const;
+		%feature("autodoc", "1");
+		void PrintCheckLoad(const Standard_Boolean failsonly, const IFSelect_PrintCount mode) const;
+		%feature("autodoc", "1");
+		void PrintCheckTransfer(const Standard_Boolean failsonly, const IFSelect_PrintCount mode) const;
+		%feature("autodoc", "1");
+		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
+		%feature("autodoc", "1");
+		void GetStatsTransfer(const Handle_TColStd_HSequenceOfTransient &list, Standard_Integer & nbMapped, Standard_Integer & nbWithResult, Standard_Integer & nbWithFail) const;
 
 };
 
@@ -716,64 +758,6 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 	}
 };
 
-%nodefaultctor XSControl_Reader;
-class XSControl_Reader {
-	public:
-		%feature("autodoc", "1");
-		XSControl_Reader();
-		%feature("autodoc", "1");
-		XSControl_Reader(const char * norm);
-		%feature("autodoc", "1");
-		XSControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
-		%feature("autodoc", "1");
-		virtual		~XSControl_Reader();
-		%feature("autodoc", "1");
-		Standard_Boolean SetNorm(const char * norm);
-		%feature("autodoc", "1");
-		void SetWS(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
-		%feature("autodoc", "1");
-		Handle_XSControl_WorkSession WS() const;
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus ReadFile(const char * filename);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient GiveList(const char * first="", const char * second="");
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient GiveList(const char * first, const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbRootsForTransfer();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient RootForTransfer(const Standard_Integer num=1);
-		%feature("autodoc", "1");
-		Standard_Boolean TransferOneRoot(const Standard_Integer num=1);
-		%feature("autodoc", "1");
-		Standard_Boolean TransferOne(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean TransferEntity(const Handle_Standard_Transient &start);
-		%feature("autodoc", "1");
-		Standard_Integer TransferList(const Handle_TColStd_HSequenceOfTransient &list);
-		%feature("autodoc", "1");
-		Standard_Integer TransferRoots();
-		%feature("autodoc", "1");
-		void ClearShapes();
-		%feature("autodoc", "1");
-		Standard_Integer NbShapes() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape Shape(const Standard_Integer num=1) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape OneShape() const;
-		%feature("autodoc", "1");
-		void PrintCheckLoad(const Standard_Boolean failsonly, const IFSelect_PrintCount mode) const;
-		%feature("autodoc", "1");
-		void PrintCheckTransfer(const Standard_Boolean failsonly, const IFSelect_PrintCount mode) const;
-		%feature("autodoc", "1");
-		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
-		%feature("autodoc", "1");
-		void GetStatsTransfer(const Handle_TColStd_HSequenceOfTransient &list, Standard_Integer & nbMapped, Standard_Integer & nbWithResult, Standard_Integer & nbWithFail) const;
-
-};
-
 %nodefaultctor XSControl_TransferReader;
 class XSControl_TransferReader : public MMgt_TShared {
 	public:
@@ -894,5 +878,21 @@ class XSControl {
 		Handle_XSControl_WorkSession Session(const Handle_IFSelect_SessionPilot &pilot);
 		%feature("autodoc", "1");
 		Handle_XSControl_Vars Vars(const Handle_IFSelect_SessionPilot &pilot);
+
+};
+
+%nodefaultctor XSControl_FuncShape;
+class XSControl_FuncShape {
+	public:
+		%feature("autodoc", "1");
+		~XSControl_FuncShape();
+		%feature("autodoc", "1");
+		XSControl_FuncShape();
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		Standard_Integer MoreShapes(const Handle_XSControl_WorkSession &session, Handle_TopTools_HSequenceOfShape & list, const char * name);
+		%feature("autodoc", "1");
+		Standard_Boolean FileAndVar(const Handle_XSControl_WorkSession &session, const char * file, const char * var, const char * def, TCollection_AsciiString & resfile, TCollection_AsciiString & resvar);
 
 };

@@ -36,18 +36,18 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<BinMDocStd_XLinkDriver.hxx>
 #include<BinMDocStd.hxx>
+#include<BinMDocStd_XLinkDriver.hxx>
 #include<Handle_BinMDocStd_XLinkDriver.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

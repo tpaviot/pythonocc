@@ -36,13 +36,13 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<ChFi3d.hxx>
 #include<ChFi3d_Builder.hxx>
 #include<ChFi3d_Builder_0.hxx>
 #include<ChFi3d_ChBuilder.hxx>
 #include<ChFi3d_FilBuilder.hxx>
 #include<ChFi3d_FilletShape.hxx>
 #include<ChFi3d_SearchSing.hxx>
-#include<ChFi3d.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -69,6 +69,8 @@
 
 // Needed headers necessary for compilation.
 
+#include<ChFi3d.hxx>
+#include<BRepAdaptor_Surface.hxx>
 #include<TopoDS_Edge.hxx>
 #include<Handle_ChFiDS_Spine.hxx>
 #include<TopoDS_Vertex.hxx>
@@ -79,15 +81,13 @@
 #include<ChFiDS_SequenceOfSurfData.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<Handle_Adaptor3d_TopolTool.hxx>
-#include<Handle_Law_Function.hxx>
-#include<gp_XY.hxx>
-#include<Handle_ChFiDS_SecHArray1.hxx>
-#include<ChFi3d.hxx>
-#include<BRepAdaptor_Surface.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Face.hxx>
+#include<Handle_ChFiDS_SecHArray1.hxx>
 #include<Handle_ChFiDS_HElSpine.hxx>
 #include<Handle_BRepAdaptor_HSurface.hxx>
 #include<Handle_BRepAdaptor_HCurve2d.hxx>
 #include<math_Vector.hxx>
+#include<Handle_Law_Function.hxx>
+#include<gp_XY.hxx>
 %}

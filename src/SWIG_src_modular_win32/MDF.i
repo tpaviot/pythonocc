@@ -161,6 +161,27 @@ class Handle_MDF_ListNodeOfDriverListOfARDriverTable : public Handle_TCollection
 	}
 };
 
+%nodefaultctor Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable;
+class Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable();
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable();
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable(const Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable(const MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
+	MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable* GetObject() {
+	return (MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_MDF_ASDriver;
 class Handle_MDF_ASDriver : public Handle_MMgt_TShared {
 	public:
@@ -326,27 +347,6 @@ class Handle_MDF_ListNodeOfDriverListOfASDriverTable : public Handle_TCollection
 %extend Handle_MDF_ListNodeOfDriverListOfASDriverTable {
 	MDF_ListNodeOfDriverListOfASDriverTable* GetObject() {
 	return (MDF_ListNodeOfDriverListOfASDriverTable*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable;
-class Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable();
-		%feature("autodoc", "1");
-		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable();
-		%feature("autodoc", "1");
-		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable(const Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable(const MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable *anItem);
-		%feature("autodoc", "1");
-		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
-	MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable* GetObject() {
-	return (MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable*)$self->Access();
 	}
 };
 
@@ -616,26 +616,6 @@ class MDF_ListNodeOfDriverListOfARDriverTable : public TCollection_MapNode {
 	}
 };
 
-%nodefaultctor MDF_ListIteratorOfDriverListOfARDriverTable;
-class MDF_ListIteratorOfDriverListOfARDriverTable {
-	public:
-		%feature("autodoc", "1");
-		~MDF_ListIteratorOfDriverListOfARDriverTable();
-		%feature("autodoc", "1");
-		MDF_ListIteratorOfDriverListOfARDriverTable();
-		%feature("autodoc", "1");
-		MDF_ListIteratorOfDriverListOfARDriverTable(const MDF_DriverListOfARDriverTable &L);
-		%feature("autodoc", "1");
-		void Initialize(const MDF_DriverListOfARDriverTable &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_MDF_ARDriver & Value() const;
-
-};
-
 %nodefaultctor MDF_DriverListOfARDriverTable;
 class MDF_DriverListOfARDriverTable {
 	public:
@@ -737,24 +717,6 @@ class MDF_DataMapNodeOfTypeASDriverMap : public TCollection_MapNode {
 	Handle_MDF_DataMapNodeOfTypeASDriverMap GetHandle() {
 	return *(Handle_MDF_DataMapNodeOfTypeASDriverMap*) &$self;
 	}
-};
-
-%nodefaultctor MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable;
-class MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable();
-		%feature("autodoc", "1");
-		MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable();
-		%feature("autodoc", "1");
-		MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable(const MDF_TypeDriverListMapOfARDriverTable &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const MDF_TypeDriverListMapOfARDriverTable &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Type & Key() const;
-		%feature("autodoc", "1");
-		const MDF_DriverListOfARDriverTable & Value() const;
-
 };
 
 %nodefaultctor MDF_TypeARDriverMap;
@@ -964,27 +926,6 @@ class MDF_DriverListOfASDriverTable {
 
 };
 
-%nodefaultctor MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable;
-class MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable(const Handle_Standard_Type &K, const MDF_DriverListOfASDriverTable &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Standard_Type & Key() const;
-		%feature("autodoc", "1");
-		MDF_DriverListOfASDriverTable & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable();
-
-};
-%extend MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
-	Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable GetHandle() {
-	return *(Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable*) &$self;
-	}
-};
-
 %nodefaultctor MDF_ListNodeOfDriverListOfASDriverTable;
 class MDF_ListNodeOfDriverListOfASDriverTable : public TCollection_MapNode {
 	public:
@@ -1027,6 +968,24 @@ class MDF_ReferenceStorageDriver : public MDF_ASDriver {
 	Handle_MDF_ReferenceStorageDriver GetHandle() {
 	return *(Handle_MDF_ReferenceStorageDriver*) &$self;
 	}
+};
+
+%nodefaultctor MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable;
+class MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable();
+		%feature("autodoc", "1");
+		MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable();
+		%feature("autodoc", "1");
+		MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable(const MDF_TypeDriverListMapOfARDriverTable &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const MDF_TypeDriverListMapOfARDriverTable &aMap);
+		%feature("autodoc", "1");
+		const Handle_Standard_Type & Key() const;
+		%feature("autodoc", "1");
+		const MDF_DriverListOfARDriverTable & Value() const;
+
 };
 
 %nodefaultctor MDF_SRelocationTable;
@@ -1092,6 +1051,26 @@ class MDF_TypeDriverListMapOfARDriverTable : public TCollection_BasicMap {
 
 };
 
+%nodefaultctor MDF_ListIteratorOfDriverListOfARDriverTable;
+class MDF_ListIteratorOfDriverListOfARDriverTable {
+	public:
+		%feature("autodoc", "1");
+		~MDF_ListIteratorOfDriverListOfARDriverTable();
+		%feature("autodoc", "1");
+		MDF_ListIteratorOfDriverListOfARDriverTable();
+		%feature("autodoc", "1");
+		MDF_ListIteratorOfDriverListOfARDriverTable(const MDF_DriverListOfARDriverTable &L);
+		%feature("autodoc", "1");
+		void Initialize(const MDF_DriverListOfARDriverTable &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_MDF_ARDriver & Value() const;
+
+};
+
 %nodefaultctor MDF_SequenceNodeOfARDriverSequence;
 class MDF_SequenceNodeOfARDriverSequence : public TCollection_SeqNode {
 	public:
@@ -1108,6 +1087,27 @@ class MDF_SequenceNodeOfARDriverSequence : public TCollection_SeqNode {
 %extend MDF_SequenceNodeOfARDriverSequence {
 	Handle_MDF_SequenceNodeOfARDriverSequence GetHandle() {
 	return *(Handle_MDF_SequenceNodeOfARDriverSequence*) &$self;
+	}
+};
+
+%nodefaultctor MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable;
+class MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable(const Handle_Standard_Type &K, const MDF_DriverListOfASDriverTable &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Standard_Type & Key() const;
+		%feature("autodoc", "1");
+		MDF_DriverListOfASDriverTable & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable();
+
+};
+%extend MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
+	Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable GetHandle() {
+	return *(Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable*) &$self;
 	}
 };
 

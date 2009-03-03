@@ -36,6 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Intf_SequenceNodeOfSeqOfSectionLine.hxx>
+#include<Handle_Intf_SequenceNodeOfSeqOfSectionPoint.hxx>
+#include<Handle_Intf_SequenceNodeOfSeqOfTangentZone.hxx>
+#include<Intf.hxx>
 #include<Intf_Array1OfLin.hxx>
 #include<Intf_Interference.hxx>
 #include<Intf_PIType.hxx>
@@ -49,10 +53,6 @@
 #include<Intf_SequenceNodeOfSeqOfTangentZone.hxx>
 #include<Intf_TangentZone.hxx>
 #include<Intf_Tool.hxx>
-#include<Intf.hxx>
-#include<Handle_Intf_SequenceNodeOfSeqOfSectionLine.hxx>
-#include<Handle_Intf_SequenceNodeOfSeqOfSectionPoint.hxx>
-#include<Handle_Intf_SequenceNodeOfSeqOfTangentZone.hxx>
 
 // Additional headers necessary for compilation.
 

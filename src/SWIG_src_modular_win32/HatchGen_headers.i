@@ -36,6 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_HatchGen_SequenceNodeOfDomains.hxx>
+#include<Handle_HatchGen_SequenceNodeOfPointsOnElement.hxx>
+#include<Handle_HatchGen_SequenceNodeOfPointsOnHatching.hxx>
 #include<HatchGen_Domain.hxx>
 #include<HatchGen_Domains.hxx>
 #include<HatchGen_ErrorStatus.hxx>
@@ -48,9 +51,6 @@
 #include<HatchGen_SequenceNodeOfDomains.hxx>
 #include<HatchGen_SequenceNodeOfPointsOnElement.hxx>
 #include<HatchGen_SequenceNodeOfPointsOnHatching.hxx>
-#include<Handle_HatchGen_SequenceNodeOfDomains.hxx>
-#include<Handle_HatchGen_SequenceNodeOfPointsOnElement.hxx>
-#include<Handle_HatchGen_SequenceNodeOfPointsOnHatching.hxx>
 
 // Additional headers necessary for compilation.
 

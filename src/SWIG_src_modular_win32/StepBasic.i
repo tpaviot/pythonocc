@@ -475,6 +475,27 @@ class Handle_StepBasic_ObjectRole : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_StepBasic_ProductDefinitionRelationship;
+class Handle_StepBasic_ProductDefinitionRelationship : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepBasic_ProductDefinitionRelationship();
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionRelationship();
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionRelationship(const Handle_StepBasic_ProductDefinitionRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionRelationship(const StepBasic_ProductDefinitionRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_ProductDefinitionRelationship {
+	StepBasic_ProductDefinitionRelationship* GetObject() {
+	return (StepBasic_ProductDefinitionRelationship*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepBasic_Approval;
 class Handle_StepBasic_Approval : public Handle_MMgt_TShared {
 	public:
@@ -682,27 +703,6 @@ class Handle_StepBasic_MeasureWithUnit : public Handle_MMgt_TShared {
 %extend Handle_StepBasic_MeasureWithUnit {
 	StepBasic_MeasureWithUnit* GetObject() {
 	return (StepBasic_MeasureWithUnit*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepBasic_TimeMeasureWithUnit;
-class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_TimeMeasureWithUnit();
-		%feature("autodoc", "1");
-		Handle_StepBasic_TimeMeasureWithUnit();
-		%feature("autodoc", "1");
-		Handle_StepBasic_TimeMeasureWithUnit(const Handle_StepBasic_TimeMeasureWithUnit &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_TimeMeasureWithUnit(const StepBasic_TimeMeasureWithUnit *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_TimeMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_TimeMeasureWithUnit {
-	StepBasic_TimeMeasureWithUnit* GetObject() {
-	return (StepBasic_TimeMeasureWithUnit*)$self->Access();
 	}
 };
 
@@ -1693,6 +1693,27 @@ class Handle_StepBasic_PersonalAddress : public Handle_StepBasic_Address {
 	}
 };
 
+%nodefaultctor Handle_StepBasic_DocumentRelationship;
+class Handle_StepBasic_DocumentRelationship : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepBasic_DocumentRelationship();
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentRelationship();
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentRelationship(const Handle_StepBasic_DocumentRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentRelationship(const StepBasic_DocumentRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_DocumentRelationship {
+	StepBasic_DocumentRelationship* GetObject() {
+	return (StepBasic_DocumentRelationship*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepBasic_DerivedUnitElement;
 class Handle_StepBasic_DerivedUnitElement : public Handle_MMgt_TShared {
 	public:
@@ -1882,27 +1903,6 @@ class Handle_StepBasic_DateAssignment : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_StepBasic_DocumentRelationship;
-class Handle_StepBasic_DocumentRelationship : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DocumentRelationship();
-		%feature("autodoc", "1");
-		Handle_StepBasic_DocumentRelationship();
-		%feature("autodoc", "1");
-		Handle_StepBasic_DocumentRelationship(const Handle_StepBasic_DocumentRelationship &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_DocumentRelationship(const StepBasic_DocumentRelationship *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_DocumentRelationship const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_DocumentRelationship {
-	StepBasic_DocumentRelationship* GetObject() {
-	return (StepBasic_DocumentRelationship*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepBasic_Product;
 class Handle_StepBasic_Product : public Handle_MMgt_TShared {
 	public:
@@ -1945,6 +1945,27 @@ class Handle_StepBasic_ActionMethod : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_StepBasic_GroupRelationship;
+class Handle_StepBasic_GroupRelationship : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepBasic_GroupRelationship();
+		%feature("autodoc", "1");
+		Handle_StepBasic_GroupRelationship();
+		%feature("autodoc", "1");
+		Handle_StepBasic_GroupRelationship(const Handle_StepBasic_GroupRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_GroupRelationship(const StepBasic_GroupRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_GroupRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_GroupRelationship {
+	StepBasic_GroupRelationship* GetObject() {
+	return (StepBasic_GroupRelationship*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepBasic_ActionRequestAssignment;
 class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
 	public:
@@ -1984,6 +2005,27 @@ class Handle_StepBasic_PlaneAngleMeasureWithUnit : public Handle_StepBasic_Measu
 %extend Handle_StepBasic_PlaneAngleMeasureWithUnit {
 	StepBasic_PlaneAngleMeasureWithUnit* GetObject() {
 	return (StepBasic_PlaneAngleMeasureWithUnit*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepBasic_MechanicalContext;
+class Handle_StepBasic_MechanicalContext : public Handle_StepBasic_ProductContext {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepBasic_MechanicalContext();
+		%feature("autodoc", "1");
+		Handle_StepBasic_MechanicalContext();
+		%feature("autodoc", "1");
+		Handle_StepBasic_MechanicalContext(const Handle_StepBasic_MechanicalContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MechanicalContext(const StepBasic_MechanicalContext *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MechanicalContext const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_MechanicalContext {
+	StepBasic_MechanicalContext* GetObject() {
+	return (StepBasic_MechanicalContext*)$self->Access();
 	}
 };
 
@@ -2260,27 +2302,6 @@ class Handle_StepBasic_AreaUnit : public Handle_StepBasic_NamedUnit {
 	}
 };
 
-%nodefaultctor Handle_StepBasic_MechanicalContext;
-class Handle_StepBasic_MechanicalContext : public Handle_StepBasic_ProductContext {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_MechanicalContext();
-		%feature("autodoc", "1");
-		Handle_StepBasic_MechanicalContext();
-		%feature("autodoc", "1");
-		Handle_StepBasic_MechanicalContext(const Handle_StepBasic_MechanicalContext &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MechanicalContext(const StepBasic_MechanicalContext *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MechanicalContext const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_MechanicalContext {
-	StepBasic_MechanicalContext* GetObject() {
-	return (StepBasic_MechanicalContext*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepBasic_HArray1OfProductDefinition;
 class Handle_StepBasic_HArray1OfProductDefinition : public Handle_MMgt_TShared {
 	public:
@@ -2320,27 +2341,6 @@ class Handle_StepBasic_VolumeUnit : public Handle_StepBasic_NamedUnit {
 %extend Handle_StepBasic_VolumeUnit {
 	StepBasic_VolumeUnit* GetObject() {
 	return (StepBasic_VolumeUnit*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepBasic_ProductDefinitionRelationship;
-class Handle_StepBasic_ProductDefinitionRelationship : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductDefinitionRelationship();
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionRelationship();
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionRelationship(const Handle_StepBasic_ProductDefinitionRelationship &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionRelationship(const StepBasic_ProductDefinitionRelationship *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionRelationship const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_ProductDefinitionRelationship {
-	StepBasic_ProductDefinitionRelationship* GetObject() {
-	return (StepBasic_ProductDefinitionRelationship*)$self->Access();
 	}
 };
 
@@ -2764,27 +2764,6 @@ class Handle_StepBasic_CoordinatedUniversalTimeOffset : public Handle_MMgt_TShar
 	}
 };
 
-%nodefaultctor Handle_StepBasic_GroupRelationship;
-class Handle_StepBasic_GroupRelationship : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_GroupRelationship();
-		%feature("autodoc", "1");
-		Handle_StepBasic_GroupRelationship();
-		%feature("autodoc", "1");
-		Handle_StepBasic_GroupRelationship(const Handle_StepBasic_GroupRelationship &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_GroupRelationship(const StepBasic_GroupRelationship *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_GroupRelationship const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_GroupRelationship {
-	StepBasic_GroupRelationship* GetObject() {
-	return (StepBasic_GroupRelationship*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepBasic_SizeMember;
 class Handle_StepBasic_SizeMember : public Handle_StepData_SelectReal {
 	public:
@@ -3034,6 +3013,27 @@ class Handle_StepBasic_Organization : public Handle_MMgt_TShared {
 %extend Handle_StepBasic_Organization {
 	StepBasic_Organization* GetObject() {
 	return (StepBasic_Organization*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepBasic_TimeMeasureWithUnit;
+class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepBasic_TimeMeasureWithUnit();
+		%feature("autodoc", "1");
+		Handle_StepBasic_TimeMeasureWithUnit();
+		%feature("autodoc", "1");
+		Handle_StepBasic_TimeMeasureWithUnit(const Handle_StepBasic_TimeMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_TimeMeasureWithUnit(const StepBasic_TimeMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_TimeMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_TimeMeasureWithUnit {
+	StepBasic_TimeMeasureWithUnit* GetObject() {
+	return (StepBasic_TimeMeasureWithUnit*)$self->Access();
 	}
 };
 
@@ -3309,33 +3309,6 @@ class StepBasic_ConversionBasedUnitAndAreaUnit : public StepBasic_ConversionBase
 	}
 };
 
-%nodefaultctor StepBasic_PersonAndOrganization;
-class StepBasic_PersonAndOrganization : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_PersonAndOrganization();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_Person &aThePerson, const Handle_StepBasic_Organization &aTheOrganization);
-		%feature("autodoc", "1");
-		void SetThePerson(const Handle_StepBasic_Person &aThePerson);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Person ThePerson() const;
-		%feature("autodoc", "1");
-		void SetTheOrganization(const Handle_StepBasic_Organization &aTheOrganization);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Organization TheOrganization() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PersonAndOrganization();
-
-};
-%extend StepBasic_PersonAndOrganization {
-	Handle_StepBasic_PersonAndOrganization GetHandle() {
-	return *(Handle_StepBasic_PersonAndOrganization*) &$self;
-	}
-};
-
 %nodefaultctor StepBasic_SiUnit;
 class StepBasic_SiUnit : public StepBasic_NamedUnit {
 	public:
@@ -3426,23 +3399,6 @@ class StepBasic_Array1OfProduct {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Product & operator()(const Standard_Integer Index);
 
-};
-
-%nodefaultctor StepBasic_TimeMeasureWithUnit;
-class StepBasic_TimeMeasureWithUnit : public StepBasic_MeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_TimeMeasureWithUnit();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_TimeMeasureWithUnit();
-
-};
-%extend StepBasic_TimeMeasureWithUnit {
-	Handle_StepBasic_TimeMeasureWithUnit GetHandle() {
-	return *(Handle_StepBasic_TimeMeasureWithUnit*) &$self;
-	}
 };
 
 %nodefaultctor StepBasic_ProductCategory;
@@ -3767,6 +3723,41 @@ class StepBasic_DesignContext : public StepBasic_ProductDefinitionContext {
 	}
 };
 
+%nodefaultctor StepBasic_Organization;
+class StepBasic_Organization : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_Organization();
+		%feature("autodoc", "1");
+		virtual		void Init(const Standard_Boolean hasAid, const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		void SetId(const Handle_TCollection_HAsciiString &aId);
+		%feature("autodoc", "1");
+		void UnSetId();
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Id() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasId() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepBasic_Organization();
+
+};
+%extend StepBasic_Organization {
+	Handle_StepBasic_Organization GetHandle() {
+	return *(Handle_StepBasic_Organization*) &$self;
+	}
+};
+
 %nodefaultctor StepBasic_ActionRequestSolution;
 class StepBasic_ActionRequestSolution : public MMgt_TShared {
 	public:
@@ -3816,6 +3807,23 @@ class StepBasic_SiUnitAndPlaneAngleUnit : public StepBasic_SiUnit {
 %extend StepBasic_SiUnitAndPlaneAngleUnit {
 	Handle_StepBasic_SiUnitAndPlaneAngleUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndPlaneAngleUnit*) &$self;
+	}
+};
+
+%nodefaultctor StepBasic_TimeMeasureWithUnit;
+class StepBasic_TimeMeasureWithUnit : public StepBasic_MeasureWithUnit {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_TimeMeasureWithUnit();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepBasic_TimeMeasureWithUnit();
+
+};
+%extend StepBasic_TimeMeasureWithUnit {
+	Handle_StepBasic_TimeMeasureWithUnit GetHandle() {
+	return *(Handle_StepBasic_TimeMeasureWithUnit*) &$self;
 	}
 };
 
@@ -4229,6 +4237,29 @@ class StepBasic_Array1OfApproval {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Approval & operator()(const Standard_Integer Index);
 
+};
+
+%nodefaultctor StepBasic_MeasureValueMember;
+class StepBasic_MeasureValueMember : public StepData_SelectReal {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_MeasureValueMember();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasName() const;
+		%feature("autodoc", "1");
+		virtual		Standard_CString Name() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetName(const char * name);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepBasic_MeasureValueMember();
+
+};
+%extend StepBasic_MeasureValueMember {
+	Handle_StepBasic_MeasureValueMember GetHandle() {
+	return *(Handle_StepBasic_MeasureValueMember*) &$self;
+	}
 };
 
 %nodefaultctor StepBasic_PersonAndOrganizationAssignment;
@@ -4702,6 +4733,43 @@ class StepBasic_ProductContext : public StepBasic_ApplicationContextElement {
 	}
 };
 
+%nodefaultctor StepBasic_DocumentProductAssociation;
+class StepBasic_DocumentProductAssociation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_DocumentProductAssociation();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_Document &aRelatingDocument, const StepBasic_ProductOrFormationOrDefinition &aRelatedProduct);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &Name);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Standard_Boolean HasDescription() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document RelatingDocument() const;
+		%feature("autodoc", "1");
+		void SetRelatingDocument(const Handle_StepBasic_Document &RelatingDocument);
+		%feature("autodoc", "1");
+		StepBasic_ProductOrFormationOrDefinition RelatedProduct() const;
+		%feature("autodoc", "1");
+		void SetRelatedProduct(const StepBasic_ProductOrFormationOrDefinition &RelatedProduct);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepBasic_DocumentProductAssociation();
+
+};
+%extend StepBasic_DocumentProductAssociation {
+	Handle_StepBasic_DocumentProductAssociation GetHandle() {
+	return *(Handle_StepBasic_DocumentProductAssociation*) &$self;
+	}
+};
+
 %nodefaultctor StepBasic_DocumentRepresentationType;
 class StepBasic_DocumentRepresentationType : public MMgt_TShared {
 	public:
@@ -5029,23 +5097,6 @@ class StepBasic_MechanicalContext : public StepBasic_ProductContext {
 %extend StepBasic_MechanicalContext {
 	Handle_StepBasic_MechanicalContext GetHandle() {
 	return *(Handle_StepBasic_MechanicalContext*) &$self;
-	}
-};
-
-%nodefaultctor StepBasic_PhysicallyModeledProductDefinition;
-class StepBasic_PhysicallyModeledProductDefinition : public StepBasic_ProductDefinition {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_PhysicallyModeledProductDefinition();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PhysicallyModeledProductDefinition();
-
-};
-%extend StepBasic_PhysicallyModeledProductDefinition {
-	Handle_StepBasic_PhysicallyModeledProductDefinition GetHandle() {
-	return *(Handle_StepBasic_PhysicallyModeledProductDefinition*) &$self;
 	}
 };
 
@@ -5501,29 +5552,6 @@ class StepBasic_Action : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor StepBasic_MeasureValueMember;
-class StepBasic_MeasureValueMember : public StepData_SelectReal {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_MeasureValueMember();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasName() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetName(const char * name);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_MeasureValueMember();
-
-};
-%extend StepBasic_MeasureValueMember {
-	Handle_StepBasic_MeasureValueMember GetHandle() {
-	return *(Handle_StepBasic_MeasureValueMember*) &$self;
-	}
-};
-
 %nodefaultctor StepBasic_SolidAngleUnit;
 class StepBasic_SolidAngleUnit : public StepBasic_NamedUnit {
 	public:
@@ -5581,41 +5609,6 @@ class StepBasic_ConversionBasedUnitAndSolidAngleUnit : public StepBasic_Conversi
 %extend StepBasic_ConversionBasedUnitAndSolidAngleUnit {
 	Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit*) &$self;
-	}
-};
-
-%nodefaultctor StepBasic_Organization;
-class StepBasic_Organization : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_Organization();
-		%feature("autodoc", "1");
-		virtual		void Init(const Standard_Boolean hasAid, const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		void SetId(const Handle_TCollection_HAsciiString &aId);
-		%feature("autodoc", "1");
-		void UnSetId();
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Id() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasId() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Organization();
-
-};
-%extend StepBasic_Organization {
-	Handle_StepBasic_Organization GetHandle() {
-	return *(Handle_StepBasic_Organization*) &$self;
 	}
 };
 
@@ -6260,6 +6253,33 @@ class StepBasic_SiUnitAndVolumeUnit : public StepBasic_SiUnit {
 	}
 };
 
+%nodefaultctor StepBasic_PersonAndOrganization;
+class StepBasic_PersonAndOrganization : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_PersonAndOrganization();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_Person &aThePerson, const Handle_StepBasic_Organization &aTheOrganization);
+		%feature("autodoc", "1");
+		void SetThePerson(const Handle_StepBasic_Person &aThePerson);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Person ThePerson() const;
+		%feature("autodoc", "1");
+		void SetTheOrganization(const Handle_StepBasic_Organization &aTheOrganization);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Organization TheOrganization() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepBasic_PersonAndOrganization();
+
+};
+%extend StepBasic_PersonAndOrganization {
+	Handle_StepBasic_PersonAndOrganization GetHandle() {
+	return *(Handle_StepBasic_PersonAndOrganization*) &$self;
+	}
+};
+
 %nodefaultctor StepBasic_SiUnitAndRatioUnit;
 class StepBasic_SiUnitAndRatioUnit : public StepBasic_SiUnit {
 	public:
@@ -6397,33 +6417,6 @@ class StepBasic_PersonAndOrganizationRole : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor StepBasic_IdentificationAssignment;
-class StepBasic_IdentificationAssignment : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_IdentificationAssignment();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aAssignedId, const Handle_StepBasic_IdentificationRole &aRole);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString AssignedId() const;
-		%feature("autodoc", "1");
-		void SetAssignedId(const Handle_TCollection_HAsciiString &AssignedId);
-		%feature("autodoc", "1");
-		Handle_StepBasic_IdentificationRole Role() const;
-		%feature("autodoc", "1");
-		void SetRole(const Handle_StepBasic_IdentificationRole &Role);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_IdentificationAssignment();
-
-};
-%extend StepBasic_IdentificationAssignment {
-	Handle_StepBasic_IdentificationAssignment GetHandle() {
-	return *(Handle_StepBasic_IdentificationAssignment*) &$self;
-	}
-};
-
 %nodefaultctor StepBasic_VolumeUnit;
 class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 	public:
@@ -6438,43 +6431,6 @@ class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 %extend StepBasic_VolumeUnit {
 	Handle_StepBasic_VolumeUnit GetHandle() {
 	return *(Handle_StepBasic_VolumeUnit*) &$self;
-	}
-};
-
-%nodefaultctor StepBasic_DocumentProductAssociation;
-class StepBasic_DocumentProductAssociation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_DocumentProductAssociation();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_Document &aRelatingDocument, const StepBasic_ProductOrFormationOrDefinition &aRelatedProduct);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Standard_Boolean HasDescription() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document RelatingDocument() const;
-		%feature("autodoc", "1");
-		void SetRelatingDocument(const Handle_StepBasic_Document &RelatingDocument);
-		%feature("autodoc", "1");
-		StepBasic_ProductOrFormationOrDefinition RelatedProduct() const;
-		%feature("autodoc", "1");
-		void SetRelatedProduct(const StepBasic_ProductOrFormationOrDefinition &RelatedProduct);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DocumentProductAssociation();
-
-};
-%extend StepBasic_DocumentProductAssociation {
-	Handle_StepBasic_DocumentProductAssociation GetHandle() {
-	return *(Handle_StepBasic_DocumentProductAssociation*) &$self;
 	}
 };
 
@@ -6530,6 +6486,33 @@ class StepBasic_ProductCategoryRelationship : public MMgt_TShared {
 %extend StepBasic_ProductCategoryRelationship {
 	Handle_StepBasic_ProductCategoryRelationship GetHandle() {
 	return *(Handle_StepBasic_ProductCategoryRelationship*) &$self;
+	}
+};
+
+%nodefaultctor StepBasic_IdentificationAssignment;
+class StepBasic_IdentificationAssignment : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_IdentificationAssignment();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aAssignedId, const Handle_StepBasic_IdentificationRole &aRole);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString AssignedId() const;
+		%feature("autodoc", "1");
+		void SetAssignedId(const Handle_TCollection_HAsciiString &AssignedId);
+		%feature("autodoc", "1");
+		Handle_StepBasic_IdentificationRole Role() const;
+		%feature("autodoc", "1");
+		void SetRole(const Handle_StepBasic_IdentificationRole &Role);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepBasic_IdentificationAssignment();
+
+};
+%extend StepBasic_IdentificationAssignment {
+	Handle_StepBasic_IdentificationAssignment GetHandle() {
+	return *(Handle_StepBasic_IdentificationAssignment*) &$self;
 	}
 };
 
@@ -7119,6 +7102,23 @@ class StepBasic_SizeMember : public StepData_SelectReal {
 %extend StepBasic_SizeMember {
 	Handle_StepBasic_SizeMember GetHandle() {
 	return *(Handle_StepBasic_SizeMember*) &$self;
+	}
+};
+
+%nodefaultctor StepBasic_PhysicallyModeledProductDefinition;
+class StepBasic_PhysicallyModeledProductDefinition : public StepBasic_ProductDefinition {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_PhysicallyModeledProductDefinition();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepBasic_PhysicallyModeledProductDefinition();
+
+};
+%extend StepBasic_PhysicallyModeledProductDefinition {
+	Handle_StepBasic_PhysicallyModeledProductDefinition GetHandle() {
+	return *(Handle_StepBasic_PhysicallyModeledProductDefinition*) &$self;
 	}
 };
 

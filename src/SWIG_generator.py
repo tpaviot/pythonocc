@@ -665,10 +665,10 @@ class ModularBuilder(object):
                           'Message_ExecStatus.hxx',
                           ]
         if sys.platform!='win32':
-            HXX_TO_EXCLUDE.append('TNaming_IteratorOnShapesSet.hxx') #error with gccxml under Linux
+            #HXX_TO_EXCLUDE.append('TNaming_IteratorOnShapesSet.hxx') #error with gccxml under Linux
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
-            HXX_TO_EXCLUDE.append('Interface_STAT.hxx')
-            HXX_TO_EXCLUDE.append('Interface_CheckIterator.hxx')
+            #HXX_TO_EXCLUDE.append('Interface_STAT.hxx')
+            #HXX_TO_EXCLUDE.append('Interface_CheckIterator.hxx')
         # Under Linux, remove all *WNT* classes
         if sys.platform != 'win32':
             for hxx_file in HXX_FILES:
@@ -701,6 +701,9 @@ class ModularBuilder(object):
         for additional_header in self.ADDITIONAL_HEADERS:
             self.ADDITIONAL_HXX += glob.glob(os.path.join(environment.OCC_INC,'%s*.hxx'%additional_header))       
         self.ADDITIONAL_HXX = self.OSFilterHeaders(self.ADDITIONAL_HXX)
+        # Sorting headers
+        self.HXX_FILES.sort()
+        self.ADDITIONAL_HXX.sort()
         
     def GenerateWrapper(self):
         """

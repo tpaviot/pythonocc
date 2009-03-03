@@ -36,9 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<ChFi2d.hxx>
 #include<ChFi2d_Builder.hxx>
 #include<ChFi2d_ConstructionError.hxx>
-#include<ChFi2d.hxx>
 
 // Additional headers necessary for compilation.
 

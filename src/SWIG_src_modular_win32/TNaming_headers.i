@@ -36,6 +36,19 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape.hxx>
+#include<Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet.hxx>
+#include<Handle_TNaming_DeltaOnModification.hxx>
+#include<Handle_TNaming_DeltaOnRemoval.hxx>
+#include<Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape.hxx>
+#include<Handle_TNaming_ListNodeOfListOfMapOfShape.hxx>
+#include<Handle_TNaming_ListNodeOfListOfNamedShape.hxx>
+#include<Handle_TNaming_NamedShape.hxx>
+#include<Handle_TNaming_Naming.hxx>
+#include<Handle_TNaming_StdMapNodeOfMapOfNamedShape.hxx>
+#include<Handle_TNaming_TranslateTool.hxx>
+#include<Handle_TNaming_UsedShapes.hxx>
+#include<TNaming.hxx>
 #include<TNaming_Builder.hxx>
 #include<TNaming_CopyShape.hxx>
 #include<TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape.hxx>
@@ -63,9 +76,9 @@
 #include<TNaming_MapIteratorOfMapOfNamedShape.hxx>
 #include<TNaming_MapOfNamedShape.hxx>
 #include<TNaming_Name.hxx>
+#include<TNaming_NameType.hxx>
 #include<TNaming_NamedShape.hxx>
 #include<TNaming_NamedShapeHasher.hxx>
-#include<TNaming_NameType.hxx>
 #include<TNaming_Naming.hxx>
 #include<TNaming_NamingTool.hxx>
 #include<TNaming_NewShapeIterator.hxx>
@@ -84,19 +97,6 @@
 #include<TNaming_TranslateTool.hxx>
 #include<TNaming_Translator.hxx>
 #include<TNaming_UsedShapes.hxx>
-#include<TNaming.hxx>
-#include<Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape.hxx>
-#include<Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet.hxx>
-#include<Handle_TNaming_DeltaOnModification.hxx>
-#include<Handle_TNaming_DeltaOnRemoval.hxx>
-#include<Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape.hxx>
-#include<Handle_TNaming_ListNodeOfListOfMapOfShape.hxx>
-#include<Handle_TNaming_ListNodeOfListOfNamedShape.hxx>
-#include<Handle_TNaming_NamedShape.hxx>
-#include<Handle_TNaming_Naming.hxx>
-#include<Handle_TNaming_StdMapNodeOfMapOfNamedShape.hxx>
-#include<Handle_TNaming_TranslateTool.hxx>
-#include<Handle_TNaming_UsedShapes.hxx>
 
 // Additional headers necessary for compilation.
 

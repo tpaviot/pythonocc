@@ -347,6 +347,47 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 	}
 };
 
+%nodefaultctor ShapeCustom_RestrictionParameters;
+class ShapeCustom_RestrictionParameters : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeCustom_RestrictionParameters();
+		%feature("autodoc", "1");
+		Standard_Integer & GMaxDegree();
+		%feature("autodoc", "1");
+		Standard_Integer & GMaxSeg();
+		%feature("autodoc", "1");
+		Standard_Boolean & ConvertPlane();
+		%feature("autodoc", "1");
+		Standard_Boolean & ConvertBezierSurf();
+		%feature("autodoc", "1");
+		Standard_Boolean & ConvertRevolutionSurf();
+		%feature("autodoc", "1");
+		Standard_Boolean & ConvertExtrusionSurf();
+		%feature("autodoc", "1");
+		Standard_Boolean & ConvertOffsetSurf();
+		%feature("autodoc", "1");
+		Standard_Boolean & SegmentSurfaceMode();
+		%feature("autodoc", "1");
+		Standard_Boolean & ConvertCurve3d();
+		%feature("autodoc", "1");
+		Standard_Boolean & ConvertOffsetCurv3d();
+		%feature("autodoc", "1");
+		Standard_Boolean & ConvertCurve2d();
+		%feature("autodoc", "1");
+		Standard_Boolean & ConvertOffsetCurv2d();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~ShapeCustom_RestrictionParameters();
+
+};
+%extend ShapeCustom_RestrictionParameters {
+	Handle_ShapeCustom_RestrictionParameters GetHandle() {
+	return *(Handle_ShapeCustom_RestrictionParameters*) &$self;
+	}
+};
+
 %nodefaultctor ShapeCustom_SweptToElementary;
 class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 	public:
@@ -390,47 +431,6 @@ class ShapeCustom_Curve2d {
 		%feature("autodoc", "1");
 		Standard_Boolean SimplifyBSpline2d(Handle_Geom2d_BSplineCurve & theBSpline2d, const Standard_Real theTolerance);
 
-};
-
-%nodefaultctor ShapeCustom_RestrictionParameters;
-class ShapeCustom_RestrictionParameters : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeCustom_RestrictionParameters();
-		%feature("autodoc", "1");
-		Standard_Integer & GMaxDegree();
-		%feature("autodoc", "1");
-		Standard_Integer & GMaxSeg();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertPlane();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertBezierSurf();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertRevolutionSurf();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertExtrusionSurf();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertOffsetSurf();
-		%feature("autodoc", "1");
-		Standard_Boolean & SegmentSurfaceMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertCurve3d();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertOffsetCurv3d();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertCurve2d();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertOffsetCurv2d();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeCustom_RestrictionParameters();
-
-};
-%extend ShapeCustom_RestrictionParameters {
-	Handle_ShapeCustom_RestrictionParameters GetHandle() {
-	return *(Handle_ShapeCustom_RestrictionParameters*) &$self;
-	}
 };
 
 %nodefaultctor ShapeCustom_Curve;

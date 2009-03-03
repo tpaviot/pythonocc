@@ -36,11 +36,11 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepLProp.hxx>
 #include<BRepLProp_CLProps.hxx>
 #include<BRepLProp_CurveTool.hxx>
 #include<BRepLProp_SLProps.hxx>
 #include<BRepLProp_SurfaceTool.hxx>
-#include<BRepLProp.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -53,9 +53,9 @@
 // Needed headers necessary for compilation.
 
 #include<BRepAdaptor_Surface.hxx>
-#include<gp_Dir.hxx>
-#include<BRepAdaptor_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
+#include<gp_Dir.hxx>
+#include<BRepAdaptor_Curve.hxx>
 #include<BRepLProp.hxx>
 %}

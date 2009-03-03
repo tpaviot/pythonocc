@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepCheck.hxx>
 #include<BRepCheck_Analyzer.hxx>
 #include<BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus.hxx>
 #include<BRepCheck_DataMapIteratorOfDataMapOfShapeResult.hxx>
@@ -53,7 +54,6 @@
 #include<BRepCheck_Status.hxx>
 #include<BRepCheck_Vertex.hxx>
 #include<BRepCheck_Wire.hxx>
-#include<BRepCheck.hxx>
 #include<Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus.hxx>
 #include<Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult.hxx>
 #include<Handle_BRepCheck_Edge.hxx>

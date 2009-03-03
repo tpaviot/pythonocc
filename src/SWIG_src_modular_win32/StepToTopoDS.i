@@ -647,6 +647,24 @@ class StepToTopoDS_GeometricTool {
 
 };
 
+%nodefaultctor StepToTopoDS_TranslateVertex;
+class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		~StepToTopoDS_TranslateVertex();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateVertex();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateVertex(const Handle_StepShape_Vertex &V, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_Vertex &V, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateVertexError Error() const;
+
+};
+
 %nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfTRI;
 class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
 	public:
@@ -691,24 +709,6 @@ class StepToTopoDS {
 		Handle_TCollection_HAsciiString DecodePolyLoopError(const StepToTopoDS_TranslatePolyLoopError Error);
 		%feature("autodoc", "1");
 		char * DecodeGeometricToolError(const StepToTopoDS_GeometricToolError Error);
-
-};
-
-%nodefaultctor StepToTopoDS_TranslateVertex;
-class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
-	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateVertex();
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateVertex();
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateVertex(const Handle_StepShape_Vertex &V, StepToTopoDS_Tool & T);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepShape_Vertex &V, StepToTopoDS_Tool & T);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateVertexError Error() const;
 
 };
 

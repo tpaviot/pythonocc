@@ -117,6 +117,13 @@ if GENERATE_SWIG:#a small things to do before building
             else:
                 print "Found modified Standard_Real.hxx header file."
     #
+    # Remove all files from OCC folder
+    #
+    files_to_remove = glob.glob(os.path.join(os.getcwd(),'OCC','*'))
+    for file_to_remove in files_to_remove:
+        os.remove(file_to_remove)
+                                
+    #
     # Create paths
     #
     if not os.path.isdir(SWIG_FILES_PATH_MODULAR):
@@ -180,19 +187,41 @@ def Create__init__():
 #
 # Building libraries list
 #
-if sys.platform == 'win32': # names are TKFillet.lib
-    LIBFILES = glob.glob(os.path.join(OCC_LIB,'*.lib'))
-    LIBS = []
-    for LIBFILE in LIBFILES:
-        libname = os.path.basename(LIBFILE).split(".")[0]
-        LIBS.append(libname)
-else: #under Linux or MacOSX, names are libTKFillet*
-    LIBFILES = glob.glob(os.path.join(OCC_LIB,'lib*TK*'))
-    LIBS = []
-    for LIBFILE in LIBFILES:
-        libname = os.path.basename(LIBFILE).split(".")[0]
-        if not (libname in LIBS):
-            LIBS.append(libname[3:])                        
+libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
+             'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
+             'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', 'TKCDLFront', 'TKCPPClient', 'TKCPPExt',\
+             'TKCPPIntExt', 'TKCPPJini', 'TKCSFDBSchema', 'TKDCAF', 'TKDraw', 'TKernel',\
+             'TKFeat', 'TKFillet', 'TKG2d', 'TKG3d', 'TKGeomAlgo', 'TKGeomBase', 'TKHLR', 'TKIDLFront',\
+             'TKIGES', 'TKjcas','TKLCAF', 'TKMath', 'TKMesh', 'TKMeshVS', 'TKNIS', 'TKOffset',\
+             'TKOpenGl', 'TKPCAF', 'TKPLCAF', 'TKPrim', 'TKPShape', 'TKService', 'TKShapeSchema',\
+             'TKShHealing', 'TKStdLSchema', 'TKStdSchema', 'TKSTEP', 'TKSTEP209', 'TKSTEPAttr',\
+             'TKSTEPBase', 'TKSTL', 'TKTCPPExt', 'TKTObj', 'TKTObjDRAW', 'TKTopAlgo', 'TKTopTest',\
+             'TKV2d', 'TKV3d', 'TKViewerTest', 'TKVRML', 'TKWOK', 'TKWOKTcl', 'TKXCAF', 'TKXCAFSchema',\
+             'TKXDEDRAW', 'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
+             'TKXmlXCAF', 'TKXSBase', 'TKXSDRAW', 'wokcmd', 'wokdeliverysteps', 'wokdfltsteps',\
+             'wokobjssteps', 'wokorbixsteps', 'woksteps', 'woktoolscmd', 'wokutilscmd', 'XCAFPlugin',\
+             'XmlLPlugin', 'XmlPlugin', 'XmlXCAFPlugin']
+# Find the lib in OCC_LIB path and add it to the LIBS list
+LIBS = []
+for library in libraries:
+    found = glob.glob(os.path.join(OCC_LIB,'*%s*'%library))
+    if len(found)>0:
+        LIBS.append(library)
+        #print len(found)
+#if sys.platform == 'win32': # names are TKFillet.lib
+#    LIBFILES = glob.glob(os.path.join(OCC_LIB,'*.lib'))
+#    LIBS = []
+#    for LIBFILE in LIBFILES:
+#        libname = os.path.basename(LIBFILE).split(".")[0]
+#        LIBS.append(libname)
+#        #print LIBS
+#else: #under Linux or MacOSX, names are libTKFillet*
+#    LIBFILES = glob.glob(os.path.join(OCC_LIB,'lib*TK*'))
+#    LIBS = []
+#    for LIBFILE in LIBFILES:
+#        libname = os.path.basename(LIBFILE).split(".")[0]
+#        if not (libname in LIBS):
+#            LIBS.append(libname[3:])                        
 #
 # Setup
 #
@@ -260,8 +289,13 @@ OpenCascade library. It contains python functions and classes
 that will allow you to fully utilitize the OpenCascade library.
 This version is built against OpenCascade 6.3.0""",
       package_dir = {'OCC.Display':os.path.join(os.getcwd(),'Display'),
-                     'OCC.Utils':os.path.join(os.getcwd(),'..','Utils')},
-      packages = ['OCC','OCC.Display','OCC.Utils'],
+                     'OCC.Utils':os.path.join(os.getcwd(),'..','Utils'),
+                     'OCC.Toolkits':os.path.join(os.getcwd(),'..','Toolkits'),
+                     'OCC.Toolkits.FoundationClasses':os.path.join(os.getcwd(),'..','Toolkits','FoundationClasses'),
+                     'OCC.Toolkits.ModelingData':os.path.join(os.getcwd(),'..','Toolkits','ModelingData'),},
+      packages = ['OCC','OCC.Display','OCC.Utils','OCC.Toolkits',\
+                  'OCC.Toolkits.FoundationClasses',\
+                  'OCC.Toolkits.ModelingData'],
       data_files = [data],
       **KARGS
       )

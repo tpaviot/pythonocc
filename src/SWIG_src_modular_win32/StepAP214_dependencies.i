@@ -338,9 +338,6 @@
 #include <Handle_StepBasic_VersionedActionRequest.hxx>
 #include <Handle_StepBasic_VolumeUnit.hxx>
 #include <Handle_StepBasic_WeekOfYearAndDayDate.hxx>
-#include <MMgt_StackManager.hxx>
-#include <MMgt_TShared.hxx>
-#include <Handle_MMgt_TShared.hxx>
 #include <StepVisual_AnnotationOccurrence.hxx>
 #include <StepVisual_AnnotationText.hxx>
 #include <StepVisual_AnnotationTextOccurrence.hxx>
@@ -532,6 +529,9 @@
 #include <Handle_StepVisual_TextStyleForDefinedFont.hxx>
 #include <Handle_StepVisual_TextStyleWithBoxCharacteristics.hxx>
 #include <Handle_StepVisual_ViewVolume.hxx>
+#include <MMgt_StackManager.hxx>
+#include <MMgt_TShared.hxx>
+#include <Handle_MMgt_TShared.hxx>
 #include <StepData_Array1OfField.hxx>
 #include <StepData_DefaultGeneral.hxx>
 #include <StepData_DescrGeneral.hxx>
@@ -708,7 +708,7 @@
 %};
 
 %import StepBasic.i
-%import MMgt.i
 %import StepVisual.i
+%import MMgt.i
 %import StepData.i
 %import Standard.i

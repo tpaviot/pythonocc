@@ -36,10 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BSplCLib.hxx>
 #include<BSplCLib_EvaluatorFunction.hxx>
 #include<BSplCLib_KnotDistribution.hxx>
 #include<BSplCLib_MultDistribution.hxx>
-#include<BSplCLib.hxx>
 
 // Additional headers necessary for compilation.
 

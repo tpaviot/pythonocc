@@ -256,32 +256,6 @@ class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
 	}
 };
 
-%nodefaultctor IntSurf_InteriorPoint;
-class IntSurf_InteriorPoint {
-	public:
-		%feature("autodoc", "1");
-		~IntSurf_InteriorPoint();
-		%feature("autodoc", "1");
-		IntSurf_InteriorPoint();
-		%feature("autodoc", "1");
-		IntSurf_InteriorPoint(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const gp_Vec &Direc, const gp_Vec2d &Direc2d);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const gp_Vec &Direc, const gp_Vec2d &Direc2d);
-		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
-		%feature("autodoc", "1");
-		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real UParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real VParameter() const;
-		%feature("autodoc", "1");
-		const gp_Vec & Direction() const;
-		%feature("autodoc", "1");
-		const gp_Vec2d & Direction2d() const;
-
-};
-
 %nodefaultctor IntSurf;
 class IntSurf {
 	public:
@@ -635,6 +609,32 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 	Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint GetHandle() {
 	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint*) &$self;
 	}
+};
+
+%nodefaultctor IntSurf_InteriorPoint;
+class IntSurf_InteriorPoint {
+	public:
+		%feature("autodoc", "1");
+		~IntSurf_InteriorPoint();
+		%feature("autodoc", "1");
+		IntSurf_InteriorPoint();
+		%feature("autodoc", "1");
+		IntSurf_InteriorPoint(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const gp_Vec &Direc, const gp_Vec2d &Direc2d);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const gp_Vec &Direc, const gp_Vec2d &Direc2d);
+		%feature("autodoc", "1");
+		const gp_Pnt & Value() const;
+		%feature("autodoc", "1");
+		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real UParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real VParameter() const;
+		%feature("autodoc", "1");
+		const gp_Vec & Direction() const;
+		%feature("autodoc", "1");
+		const gp_Vec2d & Direction2d() const;
+
 };
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfInteriorPoint;

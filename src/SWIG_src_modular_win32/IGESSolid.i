@@ -98,6 +98,27 @@ Standard_Real & function transformation
 
 
 
+%nodefaultctor Handle_IGESSolid_ManifoldSolid;
+class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESSolid_ManifoldSolid();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ManifoldSolid();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ManifoldSolid(const Handle_IGESSolid_ManifoldSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ManifoldSolid(const IGESSolid_ManifoldSolid *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ManifoldSolid const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_ManifoldSolid {
+	IGESSolid_ManifoldSolid* GetObject() {
+	return (IGESSolid_ManifoldSolid*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_IGESSolid_SpecificModule;
 class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
@@ -329,27 +350,6 @@ class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 	}
 };
 
-%nodefaultctor Handle_IGESSolid_ManifoldSolid;
-class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_ManifoldSolid();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid(const Handle_IGESSolid_ManifoldSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid(const IGESSolid_ManifoldSolid *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_ManifoldSolid {
-	IGESSolid_ManifoldSolid* GetObject() {
-	return (IGESSolid_ManifoldSolid*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_IGESSolid_Protocol;
 class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
 	public:
@@ -455,6 +455,27 @@ class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_IGESSolid_SphericalSurface;
+class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESSolid_SphericalSurface();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SphericalSurface();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SphericalSurface(const Handle_IGESSolid_SphericalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SphericalSurface(const IGESSolid_SphericalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SphericalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_SphericalSurface {
+	IGESSolid_SphericalSurface* GetObject() {
+	return (IGESSolid_SphericalSurface*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_IGESSolid_Cylinder;
 class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
 	public:
@@ -515,6 +536,27 @@ class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 %extend Handle_IGESSolid_Block {
 	IGESSolid_Block* GetObject() {
 	return (IGESSolid_Block*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_IGESSolid_Loop;
+class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESSolid_Loop();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop(const Handle_IGESSolid_Loop &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop(const IGESSolid_Loop *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_Loop {
+	IGESSolid_Loop* GetObject() {
+	return (IGESSolid_Loop*)$self->Access();
 	}
 };
 
@@ -644,27 +686,6 @@ class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
 	}
 };
 
-%nodefaultctor Handle_IGESSolid_Loop;
-class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Loop();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop(const Handle_IGESSolid_Loop &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop(const IGESSolid_Loop *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_Loop {
-	IGESSolid_Loop* GetObject() {
-	return (IGESSolid_Loop*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_IGESSolid_PlaneSurface;
 class Handle_IGESSolid_PlaneSurface : public Handle_IGESData_IGESEntity {
 	public:
@@ -749,24 +770,34 @@ class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntit
 	}
 };
 
-%nodefaultctor Handle_IGESSolid_SphericalSurface;
-class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
+%nodefaultctor IGESSolid_SphericalSurface;
+class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESSolid_SphericalSurface();
+		IGESSolid_SphericalSurface();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SphericalSurface();
+		void Init(const Handle_IGESGeom_Point &aCenter, const Standard_Real aRadius, const Handle_IGESGeom_Direction &anAxis, const Handle_IGESGeom_Direction &aRefdir);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SphericalSurface(const Handle_IGESSolid_SphericalSurface &aHandle);
+		Handle_IGESGeom_Point Center() const;
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SphericalSurface(const IGESSolid_SphericalSurface *anItem);
+		gp_Pnt TransformedCenter() const;
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SphericalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction Axis() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction ReferenceDir() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParametrised() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESSolid_SphericalSurface();
 
 };
-%extend Handle_IGESSolid_SphericalSurface {
-	IGESSolid_SphericalSurface* GetObject() {
-	return (IGESSolid_SphericalSurface*)$self->Access();
+%extend IGESSolid_SphericalSurface {
+	Handle_IGESSolid_SphericalSurface GetHandle() {
+	return *(Handle_IGESSolid_SphericalSurface*) &$self;
 	}
 };
 
@@ -842,37 +873,6 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor IGESSolid_ConicalSurface;
-class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ConicalSurface();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESGeom_Point &aLocation, const Handle_IGESGeom_Direction &anAxis, const Standard_Real aRadius, const Standard_Real anAngle, const Handle_IGESGeom_Direction &aRefdir);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Point LocationPoint() const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Axis() const;
-		%feature("autodoc", "1");
-		Standard_Real Radius() const;
-		%feature("autodoc", "1");
-		Standard_Real SemiAngle() const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction ReferenceDir() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParametrised() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_ConicalSurface();
-
-};
-%extend IGESSolid_ConicalSurface {
-	Handle_IGESSolid_ConicalSurface GetHandle() {
-	return *(Handle_IGESSolid_ConicalSurface*) &$self;
-	}
-};
-
 %nodefaultctor IGESSolid_ToolToroidalSurface;
 class IGESSolid_ToolToroidalSurface {
 	public:
@@ -927,33 +927,6 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 %extend IGESSolid_ConeFrustum {
 	Handle_IGESSolid_ConeFrustum GetHandle() {
 	return *(Handle_IGESSolid_ConeFrustum*) &$self;
-	}
-};
-
-%nodefaultctor IGESSolid_SolidOfLinearExtrusion;
-class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_SolidOfLinearExtrusion();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &aCurve, const Standard_Real aLength, const gp_XYZ &aDirection);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Curve() const;
-		%feature("autodoc", "1");
-		Standard_Real ExtrusionLength() const;
-		%feature("autodoc", "1");
-		gp_Dir ExtrusionDirection() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedExtrusionDirection() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_SolidOfLinearExtrusion();
-
-};
-%extend IGESSolid_SolidOfLinearExtrusion {
-	Handle_IGESSolid_SolidOfLinearExtrusion GetHandle() {
-	return *(Handle_IGESSolid_SolidOfLinearExtrusion*) &$self;
 	}
 };
 
@@ -1046,30 +1019,6 @@ class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 	}
 };
 
-%nodefaultctor IGESSolid_ToolLoop;
-class IGESSolid_ToolLoop {
-	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolLoop();
-		%feature("autodoc", "1");
-		IGESSolid_ToolLoop();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Loop &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Loop &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Loop &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Loop &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Loop &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Loop &entfrom, const Handle_IGESSolid_Loop &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Loop &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-
 %nodefaultctor IGESSolid_CylindricalSurface;
 class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 	public:
@@ -1097,30 +1046,6 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 	Handle_IGESSolid_CylindricalSurface GetHandle() {
 	return *(Handle_IGESSolid_CylindricalSurface*) &$self;
 	}
-};
-
-%nodefaultctor IGESSolid_ToolEllipsoid;
-class IGESSolid_ToolEllipsoid {
-	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolEllipsoid();
-		%feature("autodoc", "1");
-		IGESSolid_ToolEllipsoid();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Ellipsoid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Ellipsoid &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Ellipsoid &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Ellipsoid &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Ellipsoid &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Ellipsoid &entfrom, const Handle_IGESSolid_Ellipsoid &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Ellipsoid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
 };
 
 %nodefaultctor IGESSolid_SelectedComponent;
@@ -1173,6 +1098,30 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 	Handle_IGESSolid_BooleanTree GetHandle() {
 	return *(Handle_IGESSolid_BooleanTree*) &$self;
 	}
+};
+
+%nodefaultctor IGESSolid_ToolTorus;
+class IGESSolid_ToolTorus {
+	public:
+		%feature("autodoc", "1");
+		~IGESSolid_ToolTorus();
+		%feature("autodoc", "1");
+		IGESSolid_ToolTorus();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Torus &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Torus &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Torus &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Torus &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Torus &entfrom, const Handle_IGESSolid_Torus &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
 };
 
 %nodefaultctor IGESSolid_ToolConeFrustum;
@@ -1272,6 +1221,33 @@ class IGESSolid_Array1OfLoop {
 
 };
 
+%nodefaultctor IGESSolid_SolidOfLinearExtrusion;
+class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_SolidOfLinearExtrusion();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESData_IGESEntity &aCurve, const Standard_Real aLength, const gp_XYZ &aDirection);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity Curve() const;
+		%feature("autodoc", "1");
+		Standard_Real ExtrusionLength() const;
+		%feature("autodoc", "1");
+		gp_Dir ExtrusionDirection() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedExtrusionDirection() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESSolid_SolidOfLinearExtrusion();
+
+};
+%extend IGESSolid_SolidOfLinearExtrusion {
+	Handle_IGESSolid_SolidOfLinearExtrusion GetHandle() {
+	return *(Handle_IGESSolid_SolidOfLinearExtrusion*) &$self;
+	}
+};
+
 %nodefaultctor IGESSolid_Shell;
 class IGESSolid_Shell : public IGESData_IGESEntity {
 	public:
@@ -1326,6 +1302,30 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 	}
 };
 
+%nodefaultctor IGESSolid_ToolSelectedComponent;
+class IGESSolid_ToolSelectedComponent {
+	public:
+		%feature("autodoc", "1");
+		~IGESSolid_ToolSelectedComponent();
+		%feature("autodoc", "1");
+		IGESSolid_ToolSelectedComponent();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_SelectedComponent &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_SelectedComponent &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_SelectedComponent &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SelectedComponent &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_SelectedComponent &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_SelectedComponent &entfrom, const Handle_IGESSolid_SelectedComponent &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_SelectedComponent &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+
 %nodefaultctor IGESSolid_ToolFace;
 class IGESSolid_ToolFace {
 	public:
@@ -1350,35 +1350,52 @@ class IGESSolid_ToolFace {
 
 };
 
-%nodefaultctor IGESSolid_SphericalSurface;
-class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
+%nodefaultctor IGESSolid_ToolLoop;
+class IGESSolid_ToolLoop {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_SphericalSurface();
+		~IGESSolid_ToolLoop();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGeom_Point &aCenter, const Standard_Real aRadius, const Handle_IGESGeom_Direction &anAxis, const Handle_IGESGeom_Direction &aRefdir);
+		IGESSolid_ToolLoop();
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Point Center() const;
+		void ReadOwnParams(const Handle_IGESSolid_Loop &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
+		void WriteOwnParams(const Handle_IGESSolid_Loop &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		Standard_Real Radius() const;
+		void OwnShared(const Handle_IGESSolid_Loop &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Axis() const;
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Loop &ent) const;
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction ReferenceDir() const;
+		void OwnCheck(const Handle_IGESSolid_Loop &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsParametrised() const;
+		void OwnCopy(const Handle_IGESSolid_Loop &entfrom, const Handle_IGESSolid_Loop &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_SphericalSurface();
+		void OwnDump(const Handle_IGESSolid_Loop &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESSolid_SphericalSurface {
-	Handle_IGESSolid_SphericalSurface GetHandle() {
-	return *(Handle_IGESSolid_SphericalSurface*) &$self;
-	}
+
+%nodefaultctor IGESSolid_ToolEllipsoid;
+class IGESSolid_ToolEllipsoid {
+	public:
+		%feature("autodoc", "1");
+		~IGESSolid_ToolEllipsoid();
+		%feature("autodoc", "1");
+		IGESSolid_ToolEllipsoid();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Ellipsoid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Ellipsoid &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Ellipsoid &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Ellipsoid &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Ellipsoid &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Ellipsoid &entfrom, const Handle_IGESSolid_Ellipsoid &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Ellipsoid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
 };
 
 %nodefaultctor IGESSolid_ToolEdgeList;
@@ -1506,30 +1523,6 @@ class IGESSolid_ToolSphericalSurface {
 		void OwnCopy(const Handle_IGESSolid_SphericalSurface &entfrom, const Handle_IGESSolid_SphericalSurface &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_SphericalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-
-%nodefaultctor IGESSolid_ToolTorus;
-class IGESSolid_ToolTorus {
-	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolTorus();
-		%feature("autodoc", "1");
-		IGESSolid_ToolTorus();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Torus &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Torus &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Torus &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Torus &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Torus &entfrom, const Handle_IGESSolid_Torus &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
 
@@ -2152,6 +2145,37 @@ class IGESSolid_ToolCylindricalSurface {
 
 };
 
+%nodefaultctor IGESSolid_ConicalSurface;
+class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ConicalSurface();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESGeom_Point &aLocation, const Handle_IGESGeom_Direction &anAxis, const Standard_Real aRadius, const Standard_Real anAngle, const Handle_IGESGeom_Direction &aRefdir);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Point LocationPoint() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction Axis() const;
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		Standard_Real SemiAngle() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction ReferenceDir() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParametrised() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESSolid_ConicalSurface();
+
+};
+%extend IGESSolid_ConicalSurface {
+	Handle_IGESSolid_ConicalSurface GetHandle() {
+	return *(Handle_IGESSolid_ConicalSurface*) &$self;
+	}
+};
+
 %nodefaultctor IGESSolid_ToolSolidInstance;
 class IGESSolid_ToolSolidInstance {
 	public:
@@ -2203,30 +2227,6 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 	Handle_IGESSolid_ManifoldSolid GetHandle() {
 	return *(Handle_IGESSolid_ManifoldSolid*) &$self;
 	}
-};
-
-%nodefaultctor IGESSolid_ToolSelectedComponent;
-class IGESSolid_ToolSelectedComponent {
-	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolSelectedComponent();
-		%feature("autodoc", "1");
-		IGESSolid_ToolSelectedComponent();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_SelectedComponent &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_SelectedComponent &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_SelectedComponent &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SelectedComponent &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_SelectedComponent &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_SelectedComponent &entfrom, const Handle_IGESSolid_SelectedComponent &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_SelectedComponent &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
 };
 
 %nodefaultctor IGESSolid_SpecificModule;

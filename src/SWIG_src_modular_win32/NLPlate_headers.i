@@ -36,6 +36,16 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_NLPlate_HGPPConstraint.hxx>
+#include<Handle_NLPlate_HPG0Constraint.hxx>
+#include<Handle_NLPlate_HPG0G1Constraint.hxx>
+#include<Handle_NLPlate_HPG0G2Constraint.hxx>
+#include<Handle_NLPlate_HPG0G3Constraint.hxx>
+#include<Handle_NLPlate_HPG1Constraint.hxx>
+#include<Handle_NLPlate_HPG2Constraint.hxx>
+#include<Handle_NLPlate_HPG3Constraint.hxx>
+#include<Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint.hxx>
+#include<Handle_NLPlate_StackNodeOfStackOfPlate.hxx>
 #include<NLPlate_HGPPConstraint.hxx>
 #include<NLPlate_HPG0Constraint.hxx>
 #include<NLPlate_HPG0G1Constraint.hxx>
@@ -50,16 +60,6 @@
 #include<NLPlate_StackIteratorOfStackOfPlate.hxx>
 #include<NLPlate_StackNodeOfStackOfPlate.hxx>
 #include<NLPlate_StackOfPlate.hxx>
-#include<Handle_NLPlate_HGPPConstraint.hxx>
-#include<Handle_NLPlate_HPG0Constraint.hxx>
-#include<Handle_NLPlate_HPG0G1Constraint.hxx>
-#include<Handle_NLPlate_HPG0G2Constraint.hxx>
-#include<Handle_NLPlate_HPG0G3Constraint.hxx>
-#include<Handle_NLPlate_HPG1Constraint.hxx>
-#include<Handle_NLPlate_HPG2Constraint.hxx>
-#include<Handle_NLPlate_HPG3Constraint.hxx>
-#include<Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint.hxx>
-#include<Handle_NLPlate_StackNodeOfStackOfPlate.hxx>
 
 // Additional headers necessary for compilation.
 

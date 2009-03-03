@@ -36,11 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<ExprIntrp.hxx>
 #include<ExprIntrp_Analysis.hxx>
-#include<ExprIntrp_Generator.hxx>
 #include<ExprIntrp_GenExp.hxx>
 #include<ExprIntrp_GenFct.hxx>
 #include<ExprIntrp_GenRel.hxx>
+#include<ExprIntrp_Generator.hxx>
 #include<ExprIntrp_SequenceNodeOfSequenceOfNamedExpression.hxx>
 #include<ExprIntrp_SequenceNodeOfSequenceOfNamedFunction.hxx>
 #include<ExprIntrp_SequenceOfNamedExpression.hxx>
@@ -60,11 +61,10 @@
 #include<ExprIntrp_SyntaxError.hxx>
 #include<ExprIntrp_yaccanal.hxx>
 #include<ExprIntrp_yaccintrf.hxx>
-#include<ExprIntrp.hxx>
-#include<Handle_ExprIntrp_Generator.hxx>
 #include<Handle_ExprIntrp_GenExp.hxx>
 #include<Handle_ExprIntrp_GenFct.hxx>
 #include<Handle_ExprIntrp_GenRel.hxx>
+#include<Handle_ExprIntrp_Generator.hxx>
 #include<Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression.hxx>
 #include<Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction.hxx>
 #include<Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression.hxx>
@@ -77,10 +77,10 @@
 
 #include<ExprIntrp.hxx>
 #include<ExprIntrp_Analysis.hxx>
-#include<ExprIntrp_Generator.hxx>
 #include<ExprIntrp_GenExp.hxx>
 #include<ExprIntrp_GenFct.hxx>
 #include<ExprIntrp_GenRel.hxx>
+#include<ExprIntrp_Generator.hxx>
 #include<ExprIntrp_SequenceNodeOfSequenceOfNamedExpression.hxx>
 #include<ExprIntrp_SequenceNodeOfSequenceOfNamedFunction.hxx>
 #include<ExprIntrp_SequenceOfNamedExpression.hxx>

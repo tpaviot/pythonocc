@@ -182,6 +182,27 @@ class Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public Ha
 	}
 };
 
+%nodefaultctor Handle_TransferBRep_ShapeListBinder;
+class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TransferBRep_ShapeListBinder();
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeListBinder();
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeListBinder(const Handle_TransferBRep_ShapeListBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeListBinder(const TransferBRep_ShapeListBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeListBinder const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TransferBRep_ShapeListBinder {
+	TransferBRep_ShapeListBinder* GetObject() {
+	return (TransferBRep_ShapeListBinder*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TransferBRep_ShapeMapper;
 class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
 	public:
@@ -221,27 +242,6 @@ class Handle_TransferBRep_TransferResultInfo : public Handle_MMgt_TShared {
 %extend Handle_TransferBRep_TransferResultInfo {
 	TransferBRep_TransferResultInfo* GetObject() {
 	return (TransferBRep_TransferResultInfo*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TransferBRep_ShapeListBinder;
-class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TransferBRep_ShapeListBinder();
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeListBinder();
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeListBinder(const Handle_TransferBRep_ShapeListBinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeListBinder(const TransferBRep_ShapeListBinder *anItem);
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeListBinder const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TransferBRep_ShapeListBinder {
-	TransferBRep_ShapeListBinder* GetObject() {
-	return (TransferBRep_ShapeListBinder*)$self->Access();
 	}
 };
 

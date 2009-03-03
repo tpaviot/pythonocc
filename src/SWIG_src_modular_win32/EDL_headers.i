@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<EDL.hxx>
 #include<EDL_API.hxx>
 #include<EDL_DataMapIteratorOfMapOfFile.hxx>
 #include<EDL_DataMapIteratorOfMapOfLibrary.hxx>
@@ -64,7 +65,6 @@
 #include<EDL_StackOfBoolean.hxx>
 #include<EDL_Template.hxx>
 #include<EDL_Variable.hxx>
-#include<EDL.hxx>
 #include<Handle_EDL_API.hxx>
 #include<Handle_EDL_DataMapNodeOfMapOfFile.hxx>
 #include<Handle_EDL_DataMapNodeOfMapOfLibrary.hxx>

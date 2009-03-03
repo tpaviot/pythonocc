@@ -70,7 +70,6 @@
 
 // Additional headers necessary for compilation.
 
-#include<gp.hxx>
 #include<GProp.hxx>
 #include<GProp_CelGProps.hxx>
 #include<GProp_EquaType.hxx>
@@ -82,6 +81,7 @@
 #include<GProp_UndefinedAxis.hxx>
 #include<GProp_ValueType.hxx>
 #include<GProp_VelGProps.hxx>
+#include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>

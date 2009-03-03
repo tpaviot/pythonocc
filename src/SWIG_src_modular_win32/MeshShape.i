@@ -251,6 +251,26 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
 	}
 };
 
+%nodefaultctor MeshShape_ListIteratorOfPolygon;
+class MeshShape_ListIteratorOfPolygon {
+	public:
+		%feature("autodoc", "1");
+		~MeshShape_ListIteratorOfPolygon();
+		%feature("autodoc", "1");
+		MeshShape_ListIteratorOfPolygon();
+		%feature("autodoc", "1");
+		MeshShape_ListIteratorOfPolygon(const MeshShape_Polygon &L);
+		%feature("autodoc", "1");
+		void Initialize(const MeshShape_Polygon &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		MeshShape_PolygonPoint & Value() const;
+
+};
+
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient;
 class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_MapNode {
 	public:
@@ -363,26 +383,6 @@ class MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient : public TCollect
 		const TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
 		const TColStd_ListOfTransient & Value() const;
-
-};
-
-%nodefaultctor MeshShape_ListIteratorOfPolygon;
-class MeshShape_ListIteratorOfPolygon {
-	public:
-		%feature("autodoc", "1");
-		~MeshShape_ListIteratorOfPolygon();
-		%feature("autodoc", "1");
-		MeshShape_ListIteratorOfPolygon();
-		%feature("autodoc", "1");
-		MeshShape_ListIteratorOfPolygon(const MeshShape_Polygon &L);
-		%feature("autodoc", "1");
-		void Initialize(const MeshShape_Polygon &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		MeshShape_PolygonPoint & Value() const;
 
 };
 

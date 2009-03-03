@@ -36,6 +36,11 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_PCollection_HAsciiString.hxx>
+#include<Handle_PCollection_HExtendedString.hxx>
+#include<Handle_PCollection_IsContained.hxx>
+#include<Handle_PCollection_IsNotRoot.hxx>
+#include<Handle_PCollection_IsNullTree.hxx>
 #include<PCollection_AccessMode.hxx>
 #include<PCollection_CompareOfInteger.hxx>
 #include<PCollection_CompareOfReal.hxx>
@@ -47,11 +52,6 @@
 #include<PCollection_PrivCompareOfInteger.hxx>
 #include<PCollection_PrivCompareOfReal.hxx>
 #include<PCollection_Side.hxx>
-#include<Handle_PCollection_HAsciiString.hxx>
-#include<Handle_PCollection_HExtendedString.hxx>
-#include<Handle_PCollection_IsContained.hxx>
-#include<Handle_PCollection_IsNotRoot.hxx>
-#include<Handle_PCollection_IsNullTree.hxx>
 
 // Additional headers necessary for compilation.
 

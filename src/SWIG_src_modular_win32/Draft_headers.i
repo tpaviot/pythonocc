@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Draft.hxx>
 #include<Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo.hxx>
 #include<Draft_DataMapIteratorOfDataMapOfFaceFaceInfo.hxx>
 #include<Draft_DataMapIteratorOfDataMapOfVertexVertexInfo.hxx>
@@ -50,7 +51,6 @@
 #include<Draft_FaceInfo.hxx>
 #include<Draft_Modification.hxx>
 #include<Draft_VertexInfo.hxx>
-#include<Draft.hxx>
 #include<Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo.hxx>
 #include<Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo.hxx>
 #include<Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo.hxx>

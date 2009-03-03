@@ -168,24 +168,24 @@ class Handle_Visual3d_SequenceNodeOfSequenceOfPickPath : public Handle_TCollecti
 	}
 };
 
-%nodefaultctor Handle_Visual3d_ViewManagerDefinitionError;
-class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfRange {
+%nodefaultctor Handle_Visual3d_PickError;
+class Handle_Visual3d_PickError : public Handle_Standard_OutOfRange {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Visual3d_ViewManagerDefinitionError();
+		~Handle_Visual3d_PickError();
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError();
+		Handle_Visual3d_PickError();
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError(const Handle_Visual3d_ViewManagerDefinitionError &aHandle);
+		Handle_Visual3d_PickError(const Handle_Visual3d_PickError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError(const Visual3d_ViewManagerDefinitionError *anItem);
+		Handle_Visual3d_PickError(const Visual3d_PickError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Visual3d_PickError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Visual3d_ViewManagerDefinitionError {
-	Visual3d_ViewManagerDefinitionError* GetObject() {
-	return (Visual3d_ViewManagerDefinitionError*)$self->Access();
+%extend Handle_Visual3d_PickError {
+	Visual3d_PickError* GetObject() {
+	return (Visual3d_PickError*)$self->Access();
 	}
 };
 
@@ -462,27 +462,6 @@ class Handle_Visual3d_ClipDefinitionError : public Handle_Standard_OutOfRange {
 	}
 };
 
-%nodefaultctor Handle_Visual3d_PickError;
-class Handle_Visual3d_PickError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_PickError();
-		%feature("autodoc", "1");
-		Handle_Visual3d_PickError();
-		%feature("autodoc", "1");
-		Handle_Visual3d_PickError(const Handle_Visual3d_PickError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_PickError(const Visual3d_PickError *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_PickError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_PickError {
-	Visual3d_PickError* GetObject() {
-	return (Visual3d_PickError*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Visual3d_HSetOfLight;
 class Handle_Visual3d_HSetOfLight : public Handle_MMgt_TShared {
 	public:
@@ -564,6 +543,27 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfView : public Handle_TCollection_M
 %extend Handle_Visual3d_ListNodeOfSetListOfSetOfView {
 	Visual3d_ListNodeOfSetListOfSetOfView* GetObject() {
 	return (Visual3d_ListNodeOfSetListOfSetOfView*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Visual3d_ViewManagerDefinitionError;
+class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Visual3d_ViewManagerDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManagerDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManagerDefinitionError(const Handle_Visual3d_ViewManagerDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManagerDefinitionError(const Visual3d_ViewManagerDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManagerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_ViewManagerDefinitionError {
+	Visual3d_ViewManagerDefinitionError* GetObject() {
+	return (Visual3d_ViewManagerDefinitionError*)$self->Access();
 	}
 };
 
@@ -802,6 +802,31 @@ class Visual3d_SetListOfSetOfView {
 		%feature("autodoc", "1");
 		void InsertAfter(Visual3d_SetListOfSetOfView & Other, Visual3d_ListIteratorOfSetListOfSetOfView & It);
 
+};
+
+%nodefaultctor Visual3d_TransformError;
+class Visual3d_TransformError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_TransformError();
+		%feature("autodoc", "1");
+		Visual3d_TransformError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Visual3d_TransformError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Visual3d_TransformError();
+
+};
+%extend Visual3d_TransformError {
+	Handle_Visual3d_TransformError GetHandle() {
+	return *(Handle_Visual3d_TransformError*) &$self;
+	}
 };
 
 %nodefaultctor Visual3d_PickPath;
@@ -1206,67 +1231,6 @@ class Visual3d_ListNodeOfSetListOfSetOfView : public TCollection_MapNode {
 	}
 };
 
-%nodefaultctor Visual3d_HSequenceOfPickPath;
-class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_HSequenceOfPickPath();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Visual3d_PickPath &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Visual3d_HSequenceOfPickPath &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Visual3d_PickPath &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Visual3d_HSequenceOfPickPath &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Visual3d_PickPath &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Visual3d_HSequenceOfPickPath &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Visual3d_PickPath &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Visual3d_HSequenceOfPickPath &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSequenceOfPickPath Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Visual3d_PickPath &anItem);
-		%feature("autodoc", "1");
-		const Visual3d_PickPath & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Visual3d_PickPath & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Visual3d_SequenceOfPickPath & Sequence() const;
-		%feature("autodoc", "1");
-		Visual3d_SequenceOfPickPath & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSequenceOfPickPath ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_HSequenceOfPickPath();
-
-};
-%extend Visual3d_HSequenceOfPickPath {
-	Handle_Visual3d_HSequenceOfPickPath GetHandle() {
-	return *(Handle_Visual3d_HSequenceOfPickPath*) &$self;
-	}
-};
-
 %nodefaultctor Visual3d_SetListOfSetOfClipPlane;
 class Visual3d_SetListOfSetOfClipPlane {
 	public:
@@ -1376,31 +1340,6 @@ class Visual3d_SetIteratorOfSetOfClipPlane {
 		%feature("autodoc", "1");
 		const Handle_Visual3d_ClipPlane & Value() const;
 
-};
-
-%nodefaultctor Visual3d_ViewMappingDefinitionError;
-class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ViewMappingDefinitionError();
-		%feature("autodoc", "1");
-		Visual3d_ViewMappingDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewMappingDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ViewMappingDefinitionError();
-
-};
-%extend Visual3d_ViewMappingDefinitionError {
-	Handle_Visual3d_ViewMappingDefinitionError GetHandle() {
-	return *(Handle_Visual3d_ViewMappingDefinitionError*) &$self;
-	}
 };
 
 %nodefaultctor Visual3d_ViewManager;
@@ -1907,31 +1846,6 @@ class Visual3d_HSetOfClipPlane : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor Visual3d_TransformError;
-class Visual3d_TransformError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_TransformError();
-		%feature("autodoc", "1");
-		Visual3d_TransformError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Visual3d_TransformError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_TransformError();
-
-};
-%extend Visual3d_TransformError {
-	Handle_Visual3d_TransformError GetHandle() {
-	return *(Handle_Visual3d_TransformError*) &$self;
-	}
-};
-
 %nodefaultctor Visual3d_SetOfLight;
 class Visual3d_SetOfLight {
 	public:
@@ -2326,6 +2240,31 @@ class Visual3d_SequenceOfPickPath : public TCollection_BaseSequence {
 
 };
 
+%nodefaultctor Visual3d_ViewMappingDefinitionError;
+class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_ViewMappingDefinitionError();
+		%feature("autodoc", "1");
+		Visual3d_ViewMappingDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewMappingDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Visual3d_ViewMappingDefinitionError();
+
+};
+%extend Visual3d_ViewMappingDefinitionError {
+	Handle_Visual3d_ViewMappingDefinitionError GetHandle() {
+	return *(Handle_Visual3d_ViewMappingDefinitionError*) &$self;
+	}
+};
+
 %nodefaultctor Visual3d_SetOfClipPlane;
 class Visual3d_SetOfClipPlane {
 	public:
@@ -2380,6 +2319,67 @@ class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 %extend Visual3d_ContextPickDefinitionError {
 	Handle_Visual3d_ContextPickDefinitionError GetHandle() {
 	return *(Handle_Visual3d_ContextPickDefinitionError*) &$self;
+	}
+};
+
+%nodefaultctor Visual3d_HSequenceOfPickPath;
+class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_HSequenceOfPickPath();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Visual3d_PickPath &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Visual3d_HSequenceOfPickPath &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Visual3d_PickPath &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Visual3d_HSequenceOfPickPath &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Visual3d_PickPath &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Visual3d_HSequenceOfPickPath &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Visual3d_PickPath &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Visual3d_HSequenceOfPickPath &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSequenceOfPickPath Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Visual3d_PickPath &anItem);
+		%feature("autodoc", "1");
+		const Visual3d_PickPath & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Visual3d_PickPath & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Visual3d_SequenceOfPickPath & Sequence() const;
+		%feature("autodoc", "1");
+		Visual3d_SequenceOfPickPath & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSequenceOfPickPath ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Visual3d_HSequenceOfPickPath();
+
+};
+%extend Visual3d_HSequenceOfPickPath {
+	Handle_Visual3d_HSequenceOfPickPath GetHandle() {
+	return *(Handle_Visual3d_HSequenceOfPickPath*) &$self;
 	}
 };
 

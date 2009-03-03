@@ -154,12 +154,6 @@
 #include <Handle_Graphic2d_VectorialMarker.hxx>
 #include <Handle_Graphic2d_View.hxx>
 #include <Handle_Graphic2d_ViewMapping.hxx>
-#include <Viewer_BadValue.hxx>
-#include <Viewer_View.hxx>
-#include <Viewer_Viewer.hxx>
-#include <Handle_Viewer_BadValue.hxx>
-#include <Handle_Viewer_View.hxx>
-#include <Handle_Viewer_Viewer.hxx>
 #include <Aspect_Array1OfEdge.hxx>
 #include <Aspect_AspectFillArea.hxx>
 #include <Aspect_AspectFillAreaDefinitionError.hxx>
@@ -332,6 +326,12 @@
 #include <Handle_Aspect_WindowDefinitionError.hxx>
 #include <Handle_Aspect_WindowDriver.hxx>
 #include <Handle_Aspect_WindowError.hxx>
+#include <Viewer_BadValue.hxx>
+#include <Viewer_View.hxx>
+#include <Viewer_Viewer.hxx>
+#include <Handle_Viewer_BadValue.hxx>
+#include <Handle_Viewer_View.hxx>
+#include <Handle_Viewer_Viewer.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -536,7 +536,7 @@
 %};
 
 %import Graphic2d.i
-%import Viewer.i
 %import Aspect.i
+%import Viewer.i
 %import Standard.i
 %import Quantity.i

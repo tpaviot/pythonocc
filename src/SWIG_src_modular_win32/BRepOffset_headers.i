@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepOffset.hxx>
 #include<BRepOffset_Analyse.hxx>
 #include<BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval.hxx>
 #include<BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape.hxx>
@@ -63,7 +64,6 @@
 #include<BRepOffset_Status.hxx>
 #include<BRepOffset_Tool.hxx>
 #include<BRepOffset_Type.hxx>
-#include<BRepOffset.hxx>
 #include<Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval.hxx>
 #include<Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include<Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset.hxx>
@@ -125,12 +125,12 @@
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
+#include<TopTools_MapOfShape.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Compound.hxx>
-#include<TopTools_MapOfShape.hxx>
 #include<BRepOffset.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_BRepAlgo_AsDes.hxx>

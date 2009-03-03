@@ -455,48 +455,6 @@ class Handle_PGeom_BSplineCurve : public Handle_PGeom_BoundedCurve {
 	}
 };
 
-%nodefaultctor Handle_PGeom_ElementarySurface;
-class Handle_PGeom_ElementarySurface : public Handle_PGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_ElementarySurface();
-		%feature("autodoc", "1");
-		Handle_PGeom_ElementarySurface();
-		%feature("autodoc", "1");
-		Handle_PGeom_ElementarySurface(const Handle_PGeom_ElementarySurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_ElementarySurface(const PGeom_ElementarySurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_ElementarySurface const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_ElementarySurface {
-	PGeom_ElementarySurface* GetObject() {
-	return (PGeom_ElementarySurface*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_PGeom_CylindricalSurface;
-class Handle_PGeom_CylindricalSurface : public Handle_PGeom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_CylindricalSurface();
-		%feature("autodoc", "1");
-		Handle_PGeom_CylindricalSurface();
-		%feature("autodoc", "1");
-		Handle_PGeom_CylindricalSurface(const Handle_PGeom_CylindricalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_CylindricalSurface(const PGeom_CylindricalSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_CylindricalSurface const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_CylindricalSurface {
-	PGeom_CylindricalSurface* GetObject() {
-	return (PGeom_CylindricalSurface*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_PGeom_Line;
 class Handle_PGeom_Line : public Handle_PGeom_Curve {
 	public:
@@ -515,6 +473,27 @@ class Handle_PGeom_Line : public Handle_PGeom_Curve {
 %extend Handle_PGeom_Line {
 	PGeom_Line* GetObject() {
 	return (PGeom_Line*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_PGeom_ElementarySurface;
+class Handle_PGeom_ElementarySurface : public Handle_PGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PGeom_ElementarySurface();
+		%feature("autodoc", "1");
+		Handle_PGeom_ElementarySurface();
+		%feature("autodoc", "1");
+		Handle_PGeom_ElementarySurface(const Handle_PGeom_ElementarySurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_ElementarySurface(const PGeom_ElementarySurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_ElementarySurface const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_ElementarySurface {
+	PGeom_ElementarySurface* GetObject() {
+	return (PGeom_ElementarySurface*)$self->Access();
 	}
 };
 
@@ -749,6 +728,27 @@ class Handle_PGeom_Ellipse : public Handle_PGeom_Conic {
 	}
 };
 
+%nodefaultctor Handle_PGeom_CylindricalSurface;
+class Handle_PGeom_CylindricalSurface : public Handle_PGeom_ElementarySurface {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PGeom_CylindricalSurface();
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface();
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface(const Handle_PGeom_CylindricalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface(const PGeom_CylindricalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_CylindricalSurface {
+	PGeom_CylindricalSurface* GetObject() {
+	return (PGeom_CylindricalSurface*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_PGeom_SphericalSurface;
 class Handle_PGeom_SphericalSurface : public Handle_PGeom_ElementarySurface {
 	public:
@@ -911,6 +911,31 @@ class PGeom_Curve : public PGeom_Geometry {
 	}
 };
 
+%nodefaultctor PGeom_Line;
+class PGeom_Line : public PGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Line();
+		%feature("autodoc", "1");
+		PGeom_Line(const gp_Ax1 &aPosition);
+		%feature("autodoc", "1");
+		void Position(const gp_Ax1 &aPosition);
+		%feature("autodoc", "1");
+		gp_Ax1 Position() const;
+		%feature("autodoc", "1");
+		PGeom_Line(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Ax1 & _CSFDB_GetPGeom_Lineposition() const;
+		%feature("autodoc", "1");
+		virtual		~PGeom_Line();
+
+};
+%extend PGeom_Line {
+	Handle_PGeom_Line GetHandle() {
+	return *(Handle_PGeom_Line*) &$self;
+	}
+};
+
 %nodefaultctor PGeom_OffsetCurve;
 class PGeom_OffsetCurve : public PGeom_Curve {
 	public:
@@ -943,39 +968,14 @@ class PGeom_OffsetCurve : public PGeom_Curve {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_OffsetCurveoffsetValue(const Standard_Real p);
 		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
 		virtual		~PGeom_OffsetCurve();
 
 };
 %extend PGeom_OffsetCurve {
 	Handle_PGeom_OffsetCurve GetHandle() {
 	return *(Handle_PGeom_OffsetCurve*) &$self;
-	}
-};
-
-%nodefaultctor PGeom_Line;
-class PGeom_Line : public PGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		PGeom_Line();
-		%feature("autodoc", "1");
-		PGeom_Line(const gp_Ax1 &aPosition);
-		%feature("autodoc", "1");
-		void Position(const gp_Ax1 &aPosition);
-		%feature("autodoc", "1");
-		gp_Ax1 Position() const;
-		%feature("autodoc", "1");
-		PGeom_Line(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Ax1 & _CSFDB_GetPGeom_Lineposition() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Line();
-
-};
-%extend PGeom_Line {
-	Handle_PGeom_Line GetHandle() {
-	return *(Handle_PGeom_Line*) &$self;
 	}
 };
 
@@ -1415,6 +1415,43 @@ class PGeom_Circle : public PGeom_Conic {
 %extend PGeom_Circle {
 	Handle_PGeom_Circle GetHandle() {
 	return *(Handle_PGeom_Circle*) &$self;
+	}
+};
+
+%nodefaultctor PGeom_Ellipse;
+class PGeom_Ellipse : public PGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Ellipse();
+		%feature("autodoc", "1");
+		PGeom_Ellipse(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		void MajorRadius(const Standard_Real aMajorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		void MinorRadius(const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		PGeom_Ellipse(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_EllipsemajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_EllipsemajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_EllipseminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_EllipseminorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PGeom_Ellipse();
+
+};
+%extend PGeom_Ellipse {
+	Handle_PGeom_Ellipse GetHandle() {
+	return *(Handle_PGeom_Ellipse*) &$self;
 	}
 };
 
@@ -1893,43 +1930,6 @@ class PGeom_OffsetSurface : public PGeom_Surface {
 %extend PGeom_OffsetSurface {
 	Handle_PGeom_OffsetSurface GetHandle() {
 	return *(Handle_PGeom_OffsetSurface*) &$self;
-	}
-};
-
-%nodefaultctor PGeom_Ellipse;
-class PGeom_Ellipse : public PGeom_Conic {
-	public:
-		%feature("autodoc", "1");
-		PGeom_Ellipse();
-		%feature("autodoc", "1");
-		PGeom_Ellipse(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		void MajorRadius(const Standard_Real aMajorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		void MinorRadius(const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		PGeom_Ellipse(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_EllipsemajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_EllipsemajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_EllipseminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_EllipseminorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Ellipse();
-
-};
-%extend PGeom_Ellipse {
-	Handle_PGeom_Ellipse GetHandle() {
-	return *(Handle_PGeom_Ellipse*) &$self;
 	}
 };
 

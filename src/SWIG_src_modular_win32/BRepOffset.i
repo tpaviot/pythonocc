@@ -233,6 +233,36 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handl
 	}
 };
 
+%nodefaultctor BRepOffset_DataMapOfShapeMapOfShape;
+class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_DataMapOfShapeMapOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepOffset_DataMapOfShapeMapOfShape & Assign(const BRepOffset_DataMapOfShapeMapOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~BRepOffset_DataMapOfShapeMapOfShape();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape &K, const TopTools_MapOfShape &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		const TopTools_MapOfShape & Find(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const TopTools_MapOfShape & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		TopTools_MapOfShape & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		TopTools_MapOfShape & operator()(const TopoDS_Shape &K);
+
+};
+
 %nodefaultctor BRepOffset_Analyse;
 class BRepOffset_Analyse {
 	public:
@@ -271,6 +301,24 @@ class BRepOffset_Analyse {
 
 };
 
+%nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeReal;
+class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
+		%feature("autodoc", "1");
+		BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
+		%feature("autodoc", "1");
+		BRepOffset_DataMapIteratorOfDataMapOfShapeReal(const BRepOffset_DataMapOfShapeReal &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepOffset_DataMapOfShapeReal &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Real & Value() const;
+
+};
+
 %nodefaultctor BRepOffset_ListIteratorOfListOfInterval;
 class BRepOffset_ListIteratorOfListOfInterval {
 	public:
@@ -291,18 +339,6 @@ class BRepOffset_ListIteratorOfListOfInterval {
 
 };
 
-%nodefaultctor BRepOffset;
-class BRepOffset {
-	public:
-		%feature("autodoc", "1");
-		~BRepOffset();
-		%feature("autodoc", "1");
-		BRepOffset();
-		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
-
-};
-
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeOffset;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_BasicMapIterator {
 	public:
@@ -318,24 +354,6 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_Basi
 		const TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
 		const BRepOffset_Offset & Value() const;
-
-};
-
-%nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeReal;
-class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		BRepOffset_DataMapIteratorOfDataMapOfShapeReal(const BRepOffset_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepOffset_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Real & Value() const;
 
 };
 
@@ -450,6 +468,18 @@ class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
 		Standard_Real & ChangeFind(const TopoDS_Shape &K);
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TopoDS_Shape &K);
+
+};
+
+%nodefaultctor BRepOffset;
+class BRepOffset {
+	public:
+		%feature("autodoc", "1");
+		~BRepOffset();
+		%feature("autodoc", "1");
+		BRepOffset();
+		%feature("autodoc", "1");
+		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
 
 };
 
@@ -629,36 +659,6 @@ class BRepOffset_MakeLoops {
 		void BuildOnContext(const TopTools_ListOfShape &LContext, const BRepOffset_Analyse &Analyse, const Handle_BRepAlgo_AsDes &AsDes, BRepAlgo_Image & Image, const Standard_Boolean InSide);
 		%feature("autodoc", "1");
 		void BuildFaces(const TopTools_ListOfShape &LF, const Handle_BRepAlgo_AsDes &AsDes, BRepAlgo_Image & Image);
-
-};
-
-%nodefaultctor BRepOffset_DataMapOfShapeMapOfShape;
-class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_DataMapOfShapeMapOfShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepOffset_DataMapOfShapeMapOfShape & Assign(const BRepOffset_DataMapOfShapeMapOfShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~BRepOffset_DataMapOfShapeMapOfShape();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const TopTools_MapOfShape &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const TopTools_MapOfShape & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TopTools_MapOfShape & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		TopTools_MapOfShape & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		TopTools_MapOfShape & operator()(const TopoDS_Shape &K);
 
 };
 

@@ -36,6 +36,13 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Select2D_Projector.hxx>
+#include<Handle_Select2D_SensitiveArc.hxx>
+#include<Handle_Select2D_SensitiveBox.hxx>
+#include<Handle_Select2D_SensitiveCircle.hxx>
+#include<Handle_Select2D_SensitiveEntity.hxx>
+#include<Handle_Select2D_SensitivePoint.hxx>
+#include<Handle_Select2D_SensitiveSegment.hxx>
 #include<Select2D_Projector.hxx>
 #include<Select2D_SensitiveArc.hxx>
 #include<Select2D_SensitiveBox.hxx>
@@ -44,22 +51,15 @@
 #include<Select2D_SensitivePoint.hxx>
 #include<Select2D_SensitiveSegment.hxx>
 #include<Select2D_TypeOfSelection.hxx>
-#include<Handle_Select2D_Projector.hxx>
-#include<Handle_Select2D_SensitiveArc.hxx>
-#include<Handle_Select2D_SensitiveBox.hxx>
-#include<Handle_Select2D_SensitiveCircle.hxx>
-#include<Handle_Select2D_SensitiveEntity.hxx>
-#include<Handle_Select2D_SensitivePoint.hxx>
-#include<Handle_Select2D_SensitiveSegment.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

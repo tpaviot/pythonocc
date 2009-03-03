@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepTools.hxx>
 #include<BRepTools_DataMapIteratorOfMapOfVertexPnt2d.hxx>
 #include<BRepTools_DataMapNodeOfMapOfVertexPnt2d.hxx>
 #include<BRepTools_GTrsfModification.hxx>
@@ -49,7 +50,6 @@
 #include<BRepTools_Substitution.hxx>
 #include<BRepTools_TrsfModification.hxx>
 #include<BRepTools_WireExplorer.hxx>
-#include<BRepTools.hxx>
 #include<Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d.hxx>
 #include<Handle_BRepTools_GTrsfModification.hxx>
 #include<Handle_BRepTools_Modification.hxx>
@@ -84,8 +84,8 @@
 #include<TopoDSToStep_WireframeBuilder.hxx>
 #include<TopoDS_Builder.hxx>
 #include<TopoDS_Builder3D.hxx>
-#include<TopoDS_Compound.hxx>
 #include<TopoDS_CompSolid.hxx>
+#include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_FrozenShape.hxx>
@@ -97,8 +97,8 @@
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Shell.hxx>
 #include<TopoDS_Solid.hxx>
-#include<TopoDS_TCompound.hxx>
 #include<TopoDS_TCompSolid.hxx>
+#include<TopoDS_TCompound.hxx>
 #include<TopoDS_TEdge.hxx>
 #include<TopoDS_TFace.hxx>
 #include<TopoDS_TShape.hxx>
@@ -115,12 +115,12 @@
 #include<Handle_Standard_Transient.hxx>
 #include<BRep_Builder.hxx>
 #include<TopoDS_Shape.hxx>
+#include<TopoDS_Edge.hxx>
+#include<TopoDS_Vertex.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TopLoc_Location.hxx>
-#include<TopoDS_Edge.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<TopoDS_Vertex.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<TColgp_SequenceOfPnt2d.hxx>

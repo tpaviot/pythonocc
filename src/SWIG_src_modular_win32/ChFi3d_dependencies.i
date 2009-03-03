@@ -136,6 +136,9 @@
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
+#include <TopAbs_Orientation.hxx>
+#include <TopAbs_ShapeEnum.hxx>
+#include <TopAbs_State.hxx>
 #include <GeomAbs_BSplKnotDistribution.hxx>
 #include <GeomAbs_CurveForm.hxx>
 #include <GeomAbs_CurveType.hxx>
@@ -194,9 +197,6 @@
 #include <Handle_ChFiDS_Spine.hxx>
 #include <Handle_ChFiDS_Stripe.hxx>
 #include <Handle_ChFiDS_SurfData.hxx>
-#include <TopAbs_Orientation.hxx>
-#include <TopAbs_ShapeEnum.hxx>
-#include <TopAbs_State.hxx>
 #include <math_Array1OfValueAndWeight.hxx>
 #include <math_BFGS.hxx>
 #include <math_BissecNewton.hxx>
@@ -258,7 +258,7 @@
 %};
 
 %import Standard.i
+%import TopAbs.i
 %import GeomAbs.i
 %import ChFiDS.i
-%import TopAbs.i
 %import math.i

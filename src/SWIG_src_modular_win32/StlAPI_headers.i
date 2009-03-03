@@ -36,9 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<StlAPI.hxx>
 #include<StlAPI_Reader.hxx>
 #include<StlAPI_Writer.hxx>
-#include<StlAPI.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -36,6 +36,19 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_MAT2d_Circuit.hxx>
+#include<Handle_MAT2d_Connexion.hxx>
+#include<Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger.hxx>
+#include<Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger.hxx>
+#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec.hxx>
+#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion.hxx>
+#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d.hxx>
+#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion.hxx>
+#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d.hxx>
+#include<Handle_MAT2d_SequenceNodeOfSequenceOfBoolean.hxx>
+#include<Handle_MAT2d_SequenceNodeOfSequenceOfConnexion.hxx>
+#include<Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve.hxx>
+#include<Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry.hxx>
 #include<MAT2d_Array2OfConnexion.hxx>
 #include<MAT2d_BiInt.hxx>
 #include<MAT2d_Circuit.hxx>
@@ -75,19 +88,6 @@
 #include<MAT2d_SequenceOfSequenceOfGeometry.hxx>
 #include<MAT2d_SketchExplorer.hxx>
 #include<MAT2d_Tool2d.hxx>
-#include<Handle_MAT2d_Circuit.hxx>
-#include<Handle_MAT2d_Connexion.hxx>
-#include<Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger.hxx>
-#include<Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger.hxx>
-#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec.hxx>
-#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion.hxx>
-#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d.hxx>
-#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion.hxx>
-#include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d.hxx>
-#include<Handle_MAT2d_SequenceNodeOfSequenceOfBoolean.hxx>
-#include<Handle_MAT2d_SequenceNodeOfSequenceOfConnexion.hxx>
-#include<Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve.hxx>
-#include<Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry.hxx>
 
 // Additional headers necessary for compilation.
 

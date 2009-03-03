@@ -36,9 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<IntImpParGen.hxx>
 #include<IntImpParGen_ImpTool.hxx>
 #include<IntImpParGen_Tool.hxx>
-#include<IntImpParGen.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -104,27 +104,6 @@ enum LocOpe_Operation {
 
 
 
-%nodefaultctor Handle_LocOpe_GeneratedShape;
-class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_LocOpe_GeneratedShape();
-		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape();
-		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape(const Handle_LocOpe_GeneratedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape(const LocOpe_GeneratedShape *anItem);
-		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_LocOpe_GeneratedShape {
-	LocOpe_GeneratedShape* GetObject() {
-	return (LocOpe_GeneratedShape*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_LocOpe_ProjectedWires;
 class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
 	public:
@@ -206,6 +185,27 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_
 %extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
 	LocOpe_SequenceNodeOfSequenceOfPntFace* GetObject() {
 	return (LocOpe_SequenceNodeOfSequenceOfPntFace*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_LocOpe_GeneratedShape;
+class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_LocOpe_GeneratedShape();
+		%feature("autodoc", "1");
+		Handle_LocOpe_GeneratedShape();
+		%feature("autodoc", "1");
+		Handle_LocOpe_GeneratedShape(const Handle_LocOpe_GeneratedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_LocOpe_GeneratedShape(const LocOpe_GeneratedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_LocOpe_GeneratedShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_LocOpe_GeneratedShape {
+	LocOpe_GeneratedShape* GetObject() {
+	return (LocOpe_GeneratedShape*)$self->Access();
 	}
 };
 
@@ -530,6 +530,36 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 	}
 };
 
+%nodefaultctor LocOpe_DPrism;
+class LocOpe_DPrism {
+	public:
+		%feature("autodoc", "1");
+		~LocOpe_DPrism();
+		%feature("autodoc", "1");
+		LocOpe_DPrism(const TopoDS_Face &Spine, const Standard_Real Height1, const Standard_Real Height2, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		LocOpe_DPrism(const TopoDS_Face &Spine, const Standard_Real Height, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Spine() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Profile() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & FirstShape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & LastShape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Shapes(const TopoDS_Shape &S) const;
+		%feature("autodoc", "1");
+		void Curves(TColGeom_SequenceOfCurve & SCurves) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve BarycCurve() const;
+
+};
+
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfCirc;
 class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 	public:
@@ -565,25 +595,6 @@ class LocOpe {
 		%feature("autodoc", "1");
 		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
 
-};
-
-%nodefaultctor LocOpe_SequenceNodeOfSequenceOfLin;
-class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_SequenceNodeOfSequenceOfLin(const gp_Lin &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		gp_Lin & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LocOpe_SequenceNodeOfSequenceOfLin();
-
-};
-%extend LocOpe_SequenceNodeOfSequenceOfLin {
-	Handle_LocOpe_SequenceNodeOfSequenceOfLin GetHandle() {
-	return *(Handle_LocOpe_SequenceNodeOfSequenceOfLin*) &$self;
-	}
 };
 
 %nodefaultctor LocOpe_GluedShape;
@@ -666,6 +677,25 @@ class LocOpe_Prism {
 		%feature("autodoc", "1");
 		Handle_Geom_Curve BarycCurve() const;
 
+};
+
+%nodefaultctor LocOpe_SequenceNodeOfSequenceOfLin;
+class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_SequenceNodeOfSequenceOfLin(const gp_Lin &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		gp_Lin & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~LocOpe_SequenceNodeOfSequenceOfLin();
+
+};
+%extend LocOpe_SequenceNodeOfSequenceOfLin {
+	Handle_LocOpe_SequenceNodeOfSequenceOfLin GetHandle() {
+	return *(Handle_LocOpe_SequenceNodeOfSequenceOfLin*) &$self;
+	}
 };
 
 %nodefaultctor LocOpe_HBuilder;
@@ -796,36 +826,6 @@ class LocOpe_CurveShapeIntersector {
 		Standard_Boolean LocalizeAfter(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer & IndFrom, Standard_Integer & IndTo) const;
 		%feature("autodoc", "1");
 		Standard_Boolean LocalizeBefore(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer & IndFrom, Standard_Integer & IndTo) const;
-
-};
-
-%nodefaultctor LocOpe_DPrism;
-class LocOpe_DPrism {
-	public:
-		%feature("autodoc", "1");
-		~LocOpe_DPrism();
-		%feature("autodoc", "1");
-		LocOpe_DPrism(const TopoDS_Face &Spine, const Standard_Real Height1, const Standard_Real Height2, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		LocOpe_DPrism(const TopoDS_Face &Spine, const Standard_Real Height, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Spine() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Profile() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & FirstShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & LastShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Shapes(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
-		void Curves(TColGeom_SequenceOfCurve & SCurves) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve BarycCurve() const;
 
 };
 

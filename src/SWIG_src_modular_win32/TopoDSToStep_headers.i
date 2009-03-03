@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<TopoDSToStep.hxx>
 #include<TopoDSToStep_Builder.hxx>
 #include<TopoDSToStep_BuilderError.hxx>
 #include<TopoDSToStep_FacetedError.hxx>
@@ -57,7 +58,6 @@
 #include<TopoDSToStep_Root.hxx>
 #include<TopoDSToStep_Tool.hxx>
 #include<TopoDSToStep_WireframeBuilder.hxx>
-#include<TopoDSToStep.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -36,6 +36,16 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Vrml_AsciiText.hxx>
+#include<Handle_Vrml_Coordinate3.hxx>
+#include<Handle_Vrml_IndexedFaceSet.hxx>
+#include<Handle_Vrml_IndexedLineSet.hxx>
+#include<Handle_Vrml_LOD.hxx>
+#include<Handle_Vrml_Material.hxx>
+#include<Handle_Vrml_Normal.hxx>
+#include<Handle_Vrml_SFImage.hxx>
+#include<Handle_Vrml_TextureCoordinate2.hxx>
+#include<Vrml.hxx>
 #include<Vrml_AsciiText.hxx>
 #include<Vrml_AsciiTextJustification.hxx>
 #include<Vrml_Cone.hxx>
@@ -66,12 +76,12 @@
 #include<Vrml_PointLight.hxx>
 #include<Vrml_PointSet.hxx>
 #include<Vrml_Rotation.hxx>
-#include<Vrml_Scale.hxx>
-#include<Vrml_Separator.hxx>
-#include<Vrml_SeparatorRenderCulling.hxx>
 #include<Vrml_SFImage.hxx>
 #include<Vrml_SFImageNumber.hxx>
 #include<Vrml_SFRotation.hxx>
+#include<Vrml_Scale.hxx>
+#include<Vrml_Separator.hxx>
+#include<Vrml_SeparatorRenderCulling.hxx>
 #include<Vrml_ShapeHints.hxx>
 #include<Vrml_ShapeType.hxx>
 #include<Vrml_Sphere.hxx>
@@ -88,16 +98,6 @@
 #include<Vrml_WWWAnchor.hxx>
 #include<Vrml_WWWAnchorMap.hxx>
 #include<Vrml_WWWInline.hxx>
-#include<Vrml.hxx>
-#include<Handle_Vrml_AsciiText.hxx>
-#include<Handle_Vrml_Coordinate3.hxx>
-#include<Handle_Vrml_IndexedFaceSet.hxx>
-#include<Handle_Vrml_IndexedLineSet.hxx>
-#include<Handle_Vrml_LOD.hxx>
-#include<Handle_Vrml_Material.hxx>
-#include<Handle_Vrml_Normal.hxx>
-#include<Handle_Vrml_SFImage.hxx>
-#include<Handle_Vrml_TextureCoordinate2.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -181,12 +181,12 @@
 #include<Vrml_PointLight.hxx>
 #include<Vrml_PointSet.hxx>
 #include<Vrml_Rotation.hxx>
-#include<Vrml_Scale.hxx>
-#include<Vrml_Separator.hxx>
-#include<Vrml_SeparatorRenderCulling.hxx>
 #include<Vrml_SFImage.hxx>
 #include<Vrml_SFImageNumber.hxx>
 #include<Vrml_SFRotation.hxx>
+#include<Vrml_Scale.hxx>
+#include<Vrml_Separator.hxx>
+#include<Vrml_SeparatorRenderCulling.hxx>
 #include<Vrml_ShapeHints.hxx>
 #include<Vrml_ShapeType.hxx>
 #include<Vrml_Sphere.hxx>
@@ -207,9 +207,9 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Quantity_Color.hxx>
-#include<gp_Vec.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<gp_Vec.hxx>
+#include<Quantity_Color.hxx>
 #include<Handle_TColStd_HArray1OfAsciiString.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColgp_HArray1OfVec.hxx>

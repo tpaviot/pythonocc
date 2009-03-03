@@ -256,27 +256,6 @@ class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 	}
 };
 
-%nodefaultctor Handle_Storage_TypeData;
-class Handle_Storage_TypeData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_TypeData();
-		%feature("autodoc", "1");
-		Handle_Storage_TypeData();
-		%feature("autodoc", "1");
-		Handle_Storage_TypeData(const Handle_Storage_TypeData &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_TypeData(const Storage_TypeData *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_TypeData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_TypeData {
-	Storage_TypeData* GetObject() {
-	return (Storage_TypeData*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Storage_DataMapNodeOfMapOfPers;
 class Handle_Storage_DataMapNodeOfMapOfPers : public Handle_TCollection_MapNode {
 	public:
@@ -631,6 +610,27 @@ class Handle_Storage_SequenceNodeOfSeqOfRoot : public Handle_TCollection_SeqNode
 %extend Handle_Storage_SequenceNodeOfSeqOfRoot {
 	Storage_SequenceNodeOfSeqOfRoot* GetObject() {
 	return (Storage_SequenceNodeOfSeqOfRoot*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Storage_TypeData;
+class Handle_Storage_TypeData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Storage_TypeData();
+		%feature("autodoc", "1");
+		Handle_Storage_TypeData();
+		%feature("autodoc", "1");
+		Handle_Storage_TypeData(const Handle_Storage_TypeData &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_TypeData(const Storage_TypeData *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_TypeData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_TypeData {
+	Storage_TypeData* GetObject() {
+	return (Storage_TypeData*)$self->Access();
 	}
 };
 
@@ -1465,24 +1465,6 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 
 };
 
-%nodefaultctor Storage_DataMapIteratorOfMapOfPers;
-class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~Storage_DataMapIteratorOfMapOfPers();
-		%feature("autodoc", "1");
-		Storage_DataMapIteratorOfMapOfPers();
-		%feature("autodoc", "1");
-		Storage_DataMapIteratorOfMapOfPers(const Storage_MapOfPers &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const Storage_MapOfPers &aMap);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		const Handle_Storage_Root & Value() const;
-
-};
-
 %nodefaultctor Storage_Schema;
 class Storage_Schema : public MMgt_TShared {
 	public:
@@ -1686,6 +1668,24 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+
+%nodefaultctor Storage_DataMapIteratorOfMapOfPers;
+class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~Storage_DataMapIteratorOfMapOfPers();
+		%feature("autodoc", "1");
+		Storage_DataMapIteratorOfMapOfPers();
+		%feature("autodoc", "1");
+		Storage_DataMapIteratorOfMapOfPers(const Storage_MapOfPers &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const Storage_MapOfPers &aMap);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		const Handle_Storage_Root & Value() const;
 
 };
 

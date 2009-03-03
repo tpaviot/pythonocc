@@ -36,10 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<LocalAnalysis.hxx>
 #include<LocalAnalysis_CurveContinuity.hxx>
 #include<LocalAnalysis_StatusErrorType.hxx>
 #include<LocalAnalysis_SurfaceContinuity.hxx>
-#include<LocalAnalysis.hxx>
 
 // Additional headers necessary for compilation.
 

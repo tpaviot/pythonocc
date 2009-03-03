@@ -36,6 +36,16 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Law_BSpFunc.hxx>
+#include<Handle_Law_BSpline.hxx>
+#include<Handle_Law_Composite.hxx>
+#include<Handle_Law_Constant.hxx>
+#include<Handle_Law_Function.hxx>
+#include<Handle_Law_Interpol.hxx>
+#include<Handle_Law_Linear.hxx>
+#include<Handle_Law_ListNodeOfLaws.hxx>
+#include<Handle_Law_S.hxx>
+#include<Law.hxx>
 #include<Law_BSpFunc.hxx>
 #include<Law_BSpline.hxx>
 #include<Law_BSplineKnotSplitting.hxx>
@@ -49,16 +59,6 @@
 #include<Law_ListIteratorOfLaws.hxx>
 #include<Law_ListNodeOfLaws.hxx>
 #include<Law_S.hxx>
-#include<Law.hxx>
-#include<Handle_Law_BSpFunc.hxx>
-#include<Handle_Law_BSpline.hxx>
-#include<Handle_Law_Composite.hxx>
-#include<Handle_Law_Constant.hxx>
-#include<Handle_Law_Function.hxx>
-#include<Handle_Law_Interpol.hxx>
-#include<Handle_Law_Linear.hxx>
-#include<Handle_Law_ListNodeOfLaws.hxx>
-#include<Handle_Law_S.hxx>
 
 // Additional headers necessary for compilation.
 

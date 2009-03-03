@@ -98,27 +98,6 @@ Standard_Real & function transformation
 
 
 
-%nodefaultctor Handle_PBRep_TFace;
-class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
-	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_TFace();
-		%feature("autodoc", "1");
-		Handle_PBRep_TFace();
-		%feature("autodoc", "1");
-		Handle_PBRep_TFace(const Handle_PBRep_TFace &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_TFace(const PBRep_TFace *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_TFace const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PBRep_TFace {
-	PBRep_TFace* GetObject() {
-	return (PBRep_TFace*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_PBRep_TFace1;
 class Handle_PBRep_TFace1 : public Handle_PTopoDS_TFace1 {
 	public:
@@ -242,6 +221,27 @@ class Handle_PBRep_CurveOnSurface : public Handle_PBRep_GCurve {
 %extend Handle_PBRep_CurveOnSurface {
 	PBRep_CurveOnSurface* GetObject() {
 	return (PBRep_CurveOnSurface*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_PBRep_TFace;
+class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PBRep_TFace();
+		%feature("autodoc", "1");
+		Handle_PBRep_TFace();
+		%feature("autodoc", "1");
+		Handle_PBRep_TFace(const Handle_PBRep_TFace &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_TFace(const PBRep_TFace *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_TFace const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PBRep_TFace {
+	PBRep_TFace* GetObject() {
+	return (PBRep_TFace*)$self->Access();
 	}
 };
 
@@ -434,6 +434,27 @@ class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
 	}
 };
 
+%nodefaultctor Handle_PBRep_TEdge;
+class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PBRep_TEdge();
+		%feature("autodoc", "1");
+		Handle_PBRep_TEdge();
+		%feature("autodoc", "1");
+		Handle_PBRep_TEdge(const Handle_PBRep_TEdge &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_TEdge(const PBRep_TEdge *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_TEdge const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PBRep_TEdge {
+	PBRep_TEdge* GetObject() {
+	return (PBRep_TEdge*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_PBRep_CurveOnClosedSurface;
 class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 	public:
@@ -515,27 +536,6 @@ class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 %extend Handle_PBRep_PointOnCurve {
 	PBRep_PointOnCurve* GetObject() {
 	return (PBRep_PointOnCurve*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_PBRep_TEdge;
-class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
-	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_TEdge();
-		%feature("autodoc", "1");
-		Handle_PBRep_TEdge();
-		%feature("autodoc", "1");
-		Handle_PBRep_TEdge(const Handle_PBRep_TEdge &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_TEdge(const PBRep_TEdge *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_TEdge const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PBRep_TEdge {
-	PBRep_TEdge* GetObject() {
-	return (PBRep_TEdge*)$self->Access();
 	}
 };
 
@@ -1032,6 +1032,35 @@ class PBRep_Curve3D : public PBRep_GCurve {
 	}
 };
 
+%nodefaultctor PBRep_PointOnCurveOnSurface;
+class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
+	public:
+		%feature("autodoc", "1");
+		PBRep_PointOnCurveOnSurface(const Standard_Real P, const Handle_PGeom2d_Curve &C, const Handle_PGeom_Surface &S, const PTopLoc_Location &L);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Curve PCurve() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
+		%feature("autodoc", "1");
+		PBRep_PointOnCurveOnSurface();
+		%feature("autodoc", "1");
+		PBRep_PointOnCurveOnSurface(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Curve _CSFDB_GetPBRep_PointOnCurveOnSurfacemyPCurve() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_PointOnCurveOnSurfacemyPCurve(const Handle_PGeom2d_Curve &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PBRep_PointOnCurveOnSurface();
+
+};
+%extend PBRep_PointOnCurveOnSurface {
+	Handle_PBRep_PointOnCurveOnSurface GetHandle() {
+	return *(Handle_PBRep_PointOnCurveOnSurface*) &$self;
+	}
+};
+
 %nodefaultctor PBRep_TVertex;
 class PBRep_TVertex : public PTopoDS_TVertex {
 	public:
@@ -1070,35 +1099,6 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 %extend PBRep_TVertex {
 	Handle_PBRep_TVertex GetHandle() {
 	return *(Handle_PBRep_TVertex*) &$self;
-	}
-};
-
-%nodefaultctor PBRep_PointOnCurveOnSurface;
-class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
-	public:
-		%feature("autodoc", "1");
-		PBRep_PointOnCurveOnSurface(const Standard_Real P, const Handle_PGeom2d_Curve &C, const Handle_PGeom_Surface &S, const PTopLoc_Location &L);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Curve PCurve() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
-		%feature("autodoc", "1");
-		PBRep_PointOnCurveOnSurface();
-		%feature("autodoc", "1");
-		PBRep_PointOnCurveOnSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Curve _CSFDB_GetPBRep_PointOnCurveOnSurfacemyPCurve() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_PointOnCurveOnSurfacemyPCurve(const Handle_PGeom2d_Curve &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_PointOnCurveOnSurface();
-
-};
-%extend PBRep_PointOnCurveOnSurface {
-	Handle_PBRep_PointOnCurveOnSurface GetHandle() {
-	return *(Handle_PBRep_PointOnCurveOnSurface*) &$self;
 	}
 };
 

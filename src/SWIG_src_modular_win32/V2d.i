@@ -146,27 +146,6 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 	}
 };
 
-%nodefaultctor Handle_V2d_Viewer;
-class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
-	public:
-		%feature("autodoc", "1");
-		~Handle_V2d_Viewer();
-		%feature("autodoc", "1");
-		Handle_V2d_Viewer();
-		%feature("autodoc", "1");
-		Handle_V2d_Viewer(const Handle_V2d_Viewer &aHandle);
-		%feature("autodoc", "1");
-		Handle_V2d_Viewer(const V2d_Viewer *anItem);
-		%feature("autodoc", "1");
-		Handle_V2d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V2d_Viewer {
-	V2d_Viewer* GetObject() {
-	return (V2d_Viewer*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_V2d_RectangularGrid;
 class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	public:
@@ -248,6 +227,52 @@ class Handle_V2d_View : public Handle_Viewer_View {
 %extend Handle_V2d_View {
 	V2d_View* GetObject() {
 	return (V2d_View*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_V2d_Viewer;
+class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
+	public:
+		%feature("autodoc", "1");
+		~Handle_V2d_Viewer();
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer();
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer(const Handle_V2d_Viewer &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer(const V2d_Viewer *anItem);
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V2d_Viewer {
+	V2d_Viewer* GetObject() {
+	return (V2d_Viewer*)$self->Access();
+	}
+};
+
+%nodefaultctor V2d_RectangularGrid;
+class V2d_RectangularGrid : public Aspect_RectangularGrid {
+	public:
+		%feature("autodoc", "1");
+		V2d_RectangularGrid(const V2d_ViewerPointer &aViewer, const Standard_Integer aColorIndex1, const Standard_Integer aColorIndex2);
+		%feature("autodoc", "1");
+		void SetColorIndices(const Standard_Integer aColorIndex1, const Standard_Integer aColorIndex2);
+		%feature("autodoc", "1");
+		virtual		void Display();
+		%feature("autodoc", "1");
+		virtual		void Erase() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDisplayed() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~V2d_RectangularGrid();
+
+};
+%extend V2d_RectangularGrid {
+	Handle_V2d_RectangularGrid GetHandle() {
+	return *(Handle_V2d_RectangularGrid*) &$self;
 	}
 };
 
@@ -584,30 +609,5 @@ class V2d_Viewer : public Viewer_Viewer {
 %extend V2d_Viewer {
 	Handle_V2d_Viewer GetHandle() {
 	return *(Handle_V2d_Viewer*) &$self;
-	}
-};
-
-%nodefaultctor V2d_RectangularGrid;
-class V2d_RectangularGrid : public Aspect_RectangularGrid {
-	public:
-		%feature("autodoc", "1");
-		V2d_RectangularGrid(const V2d_ViewerPointer &aViewer, const Standard_Integer aColorIndex1, const Standard_Integer aColorIndex2);
-		%feature("autodoc", "1");
-		void SetColorIndices(const Standard_Integer aColorIndex1, const Standard_Integer aColorIndex2);
-		%feature("autodoc", "1");
-		virtual		void Display();
-		%feature("autodoc", "1");
-		virtual		void Erase() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~V2d_RectangularGrid();
-
-};
-%extend V2d_RectangularGrid {
-	Handle_V2d_RectangularGrid GetHandle() {
-	return *(Handle_V2d_RectangularGrid*) &$self;
 	}
 };

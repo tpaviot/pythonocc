@@ -134,6 +134,28 @@ class Geom2dGcc_Circ2d2TanOn {
 
 };
 
+%nodefaultctor Geom2dGcc_MyL2dTanObl;
+class Geom2dGcc_MyL2dTanObl {
+	public:
+		%feature("autodoc", "1");
+		~Geom2dGcc_MyL2dTanObl();
+		%feature("autodoc", "1");
+		Geom2dGcc_MyL2dTanObl(const Geom2dGcc_MyQCurve &Qualified1, const gp_Lin2d &TheLin, const Standard_Real Param1, const Standard_Real TolAng, const Standard_Real Angle=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		gp_Lin2d ThisSolution() const;
+		%feature("autodoc", "1");
+		void WhichQualifier(GccEnt_Position & Qualif1) const;
+		%feature("autodoc", "1");
+		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		void Intersection2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParallel2() const;
+
+};
+
 %nodefaultctor Geom2dGcc_FuncTOblOfMyL2dTanObl;
 class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 	public:
@@ -147,44 +169,6 @@ class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		~Geom2dGcc_FuncTOblOfMyL2dTanObl();
-
-};
-
-%nodefaultctor Geom2dGcc_Circ2d3Tan;
-class Geom2dGcc_Circ2d3Tan {
-	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_Circ2d3Tan();
-		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Geom2dGcc_QualifiedCurve &Qualified3, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3);
-		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Handle_Geom2d_Point &Point, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2);
-		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Handle_Geom2d_Point &Point1, const Handle_Geom2d_Point &Point2, const Standard_Real Tolerance, const Standard_Real Param1);
-		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d3Tan(const Handle_Geom2d_Point &Point1, const Handle_Geom2d_Point &Point2, const Handle_Geom2d_Point &Point3, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Results(const GccAna_Circ2d3Tan &Circ, const Standard_Integer Rank1, const Standard_Integer Rank2, const Standard_Integer Rank3);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSolutions() const;
-		%feature("autodoc", "1");
-		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2, GccEnt_Position & Qualif3) const;
-		%feature("autodoc", "1");
-		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		void Tangency3(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTheSame3(const Standard_Integer Index) const;
 
 };
 
@@ -312,6 +296,44 @@ class Geom2dGcc_MyQCurve {
 
 };
 
+%nodefaultctor Geom2dGcc_Circ2d3Tan;
+class Geom2dGcc_Circ2d3Tan {
+	public:
+		%feature("autodoc", "1");
+		~Geom2dGcc_Circ2d3Tan();
+		%feature("autodoc", "1");
+		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Geom2dGcc_QualifiedCurve &Qualified3, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3);
+		%feature("autodoc", "1");
+		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Handle_Geom2d_Point &Point, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2);
+		%feature("autodoc", "1");
+		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Handle_Geom2d_Point &Point1, const Handle_Geom2d_Point &Point2, const Standard_Real Tolerance, const Standard_Real Param1);
+		%feature("autodoc", "1");
+		Geom2dGcc_Circ2d3Tan(const Handle_Geom2d_Point &Point1, const Handle_Geom2d_Point &Point2, const Handle_Geom2d_Point &Point3, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Results(const GccAna_Circ2d3Tan &Circ, const Standard_Integer Rank1, const Standard_Integer Rank2, const Standard_Integer Rank3);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSolutions() const;
+		%feature("autodoc", "1");
+		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2, GccEnt_Position & Qualif3) const;
+		%feature("autodoc", "1");
+		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		void Tangency3(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTheSame3(const Standard_Integer Index) const;
+
+};
+
 %nodefaultctor Geom2dGcc_FuncTCuPtOfMyL2d2Tan;
 class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 	public:
@@ -369,28 +391,6 @@ class Geom2dGcc_MyCurveTool {
 		void GetInterval(const Adaptor3d_OffsetCurve &C, const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void SetCurrentInterval(Adaptor3d_OffsetCurve & C, const Standard_Integer Index);
-
-};
-
-%nodefaultctor Geom2dGcc_MyL2dTanObl;
-class Geom2dGcc_MyL2dTanObl {
-	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyL2dTanObl();
-		%feature("autodoc", "1");
-		Geom2dGcc_MyL2dTanObl(const Geom2dGcc_MyQCurve &Qualified1, const gp_Lin2d &TheLin, const Standard_Real Param1, const Standard_Real TolAng, const Standard_Real Angle=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		gp_Lin2d ThisSolution() const;
-		%feature("autodoc", "1");
-		void WhichQualifier(GccEnt_Position & Qualif1) const;
-		%feature("autodoc", "1");
-		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		void Intersection2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParallel2() const;
 
 };
 
@@ -538,6 +538,52 @@ class Geom2dGcc_FuncTCuCuOfMyL2d2Tan : public math_FunctionSetWithDerivatives {
 
 };
 
+%nodefaultctor Geom2dGcc_MyC2d3Tan;
+class Geom2dGcc_MyC2d3Tan {
+	public:
+		%feature("autodoc", "1");
+		~Geom2dGcc_MyC2d3Tan();
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const gp_Pnt2d &Point3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedLin &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedLin &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const gp_Pnt2d &Point3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const Geom2dGcc_MyQCurve &Qualified1, const gp_Pnt2d &Point1, const gp_Pnt2d &Point2, const Standard_Real Param1, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const Geom2dGcc_MyQCurve &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const gp_Pnt2d &Point2, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dGcc_MyC2d3Tan(const Geom2dGcc_MyQCurve &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		gp_Circ2d ThisSolution() const;
+		%feature("autodoc", "1");
+		void WhichQualifier(GccEnt_Position & Qualif1, GccEnt_Position & Qualif2, GccEnt_Position & Qualif3) const;
+		%feature("autodoc", "1");
+		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		void Tangency2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		void Tangency3(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTheSame1() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTheSame2() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTheSame3() const;
+
+};
+
 %nodefaultctor Geom2dGcc_MyC2d2TanOn;
 class Geom2dGcc_MyC2d2TanOn {
 	public:
@@ -583,52 +629,6 @@ class Geom2dGcc_MyC2d2TanOn {
 		Standard_Boolean IsTheSame1() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame2() const;
-
-};
-
-%nodefaultctor Geom2dGcc_MyC2d3Tan;
-class Geom2dGcc_MyC2d3Tan {
-	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyC2d3Tan();
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const gp_Pnt2d &Point3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedLin &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedLin &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const gp_Pnt2d &Point3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const Geom2dGcc_MyQCurve &Qualified1, const gp_Pnt2d &Point1, const gp_Pnt2d &Point2, const Standard_Real Param1, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const Geom2dGcc_MyQCurve &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const gp_Pnt2d &Point2, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dGcc_MyC2d3Tan(const Geom2dGcc_MyQCurve &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		gp_Circ2d ThisSolution() const;
-		%feature("autodoc", "1");
-		void WhichQualifier(GccEnt_Position & Qualif1, GccEnt_Position & Qualif2, GccEnt_Position & Qualif3) const;
-		%feature("autodoc", "1");
-		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		void Tangency2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		void Tangency3(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTheSame1() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTheSame2() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTheSame3() const;
 
 };
 

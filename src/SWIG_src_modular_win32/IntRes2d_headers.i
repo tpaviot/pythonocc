@@ -36,6 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint.hxx>
+#include<Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment.hxx>
 #include<IntRes2d_Domain.hxx>
 #include<IntRes2d_Intersection.hxx>
 #include<IntRes2d_IntersectionPoint.hxx>
@@ -48,8 +50,6 @@
 #include<IntRes2d_Situation.hxx>
 #include<IntRes2d_Transition.hxx>
 #include<IntRes2d_TypeTrans.hxx>
-#include<Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint.hxx>
-#include<Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment.hxx>
 
 // Additional headers necessary for compilation.
 

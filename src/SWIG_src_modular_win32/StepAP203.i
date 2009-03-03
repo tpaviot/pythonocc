@@ -203,27 +203,6 @@ class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_
 	}
 };
 
-%nodefaultctor Handle_StepAP203_HArray1OfApprovedItem;
-class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfApprovedItem();
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfApprovedItem();
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfApprovedItem(const Handle_StepAP203_HArray1OfApprovedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfApprovedItem(const StepAP203_HArray1OfApprovedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfApprovedItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP203_HArray1OfApprovedItem {
-	StepAP203_HArray1OfApprovedItem* GetObject() {
-	return (StepAP203_HArray1OfApprovedItem*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepAP203_HArray1OfPersonOrganizationItem;
 class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TShared {
 	public:
@@ -389,6 +368,27 @@ class Handle_StepAP203_CcDesignSecurityClassification : public Handle_StepBasic_
 %extend Handle_StepAP203_CcDesignSecurityClassification {
 	StepAP203_CcDesignSecurityClassification* GetObject() {
 	return (StepAP203_CcDesignSecurityClassification*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepAP203_HArray1OfApprovedItem;
+class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepAP203_HArray1OfApprovedItem();
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfApprovedItem();
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfApprovedItem(const Handle_StepAP203_HArray1OfApprovedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfApprovedItem(const StepAP203_HArray1OfApprovedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfApprovedItem const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP203_HArray1OfApprovedItem {
+	StepAP203_HArray1OfApprovedItem* GetObject() {
+	return (StepAP203_HArray1OfApprovedItem*)$self->Access();
 	}
 };
 

@@ -159,18 +159,6 @@ class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetriev
 	}
 };
 
-%nodefaultctor XmlXCAFDrivers;
-class XmlXCAFDrivers {
-	public:
-		%feature("autodoc", "1");
-		~XmlXCAFDrivers();
-		%feature("autodoc", "1");
-		XmlXCAFDrivers();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
-
-};
-
 %nodefaultctor XmlXCAFDrivers_DocumentStorageDriver;
 class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDriver {
 	public:
@@ -188,4 +176,16 @@ class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDr
 	Handle_XmlXCAFDrivers_DocumentStorageDriver GetHandle() {
 	return *(Handle_XmlXCAFDrivers_DocumentStorageDriver*) &$self;
 	}
+};
+
+%nodefaultctor XmlXCAFDrivers;
+class XmlXCAFDrivers {
+	public:
+		%feature("autodoc", "1");
+		~XmlXCAFDrivers();
+		%feature("autodoc", "1");
+		XmlXCAFDrivers();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
+
 };

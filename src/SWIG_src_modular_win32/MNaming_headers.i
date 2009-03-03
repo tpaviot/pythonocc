@@ -36,24 +36,24 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<MNaming_NamedShapeRetrievalDriver.hxx>
-#include<MNaming_NamedShapeStorageDriver.hxx>
-#include<MNaming_NamingRetrievalDriver.hxx>
-#include<MNaming_NamingStorageDriver.hxx>
-#include<MNaming.hxx>
 #include<Handle_MNaming_NamedShapeRetrievalDriver.hxx>
 #include<Handle_MNaming_NamedShapeStorageDriver.hxx>
 #include<Handle_MNaming_NamingRetrievalDriver.hxx>
 #include<Handle_MNaming_NamingStorageDriver.hxx>
+#include<MNaming.hxx>
+#include<MNaming_NamedShapeRetrievalDriver.hxx>
+#include<MNaming_NamedShapeStorageDriver.hxx>
+#include<MNaming_NamingRetrievalDriver.hxx>
+#include<MNaming_NamingStorageDriver.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

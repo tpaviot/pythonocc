@@ -182,6 +182,27 @@ class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 	}
 };
 
+%nodefaultctor Handle_ShapeFix_SplitCommonVertex;
+class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
+	public:
+		%feature("autodoc", "1");
+		~Handle_ShapeFix_SplitCommonVertex();
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SplitCommonVertex();
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SplitCommonVertex(const Handle_ShapeFix_SplitCommonVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SplitCommonVertex(const ShapeFix_SplitCommonVertex *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SplitCommonVertex const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeFix_SplitCommonVertex {
+	ShapeFix_SplitCommonVertex* GetObject() {
+	return (ShapeFix_SplitCommonVertex*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_ShapeFix_Edge;
 class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 	public:
@@ -224,6 +245,27 @@ class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
 	}
 };
 
+%nodefaultctor Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
+class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
+	ShapeFix_DataMapNodeOfDataMapOfShapeBox2d* GetObject() {
+	return (ShapeFix_DataMapNodeOfDataMapOfShapeBox2d*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_ShapeFix_Wire;
 class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 	public:
@@ -245,45 +287,24 @@ class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 	}
 };
 
-%nodefaultctor Handle_ShapeFix_SplitCommonVertex;
-class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
+%nodefaultctor Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
+class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ShapeFix_SplitCommonVertex();
+		~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex();
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex(const Handle_ShapeFix_SplitCommonVertex &aHandle);
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex(const ShapeFix_SplitCommonVertex *anItem);
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ShapeFix_SplitCommonVertex {
-	ShapeFix_SplitCommonVertex* GetObject() {
-	return (ShapeFix_SplitCommonVertex*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
-class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
-		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
-		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
-	ShapeFix_DataMapNodeOfDataMapOfShapeBox2d* GetObject() {
-	return (ShapeFix_DataMapNodeOfDataMapOfShapeBox2d*)$self->Access();
+%extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
+	ShapeFix_SequenceNodeOfSequenceOfWireSegment* GetObject() {
+	return (ShapeFix_SequenceNodeOfSequenceOfWireSegment*)$self->Access();
 	}
 };
 
@@ -326,27 +347,6 @@ class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 %extend Handle_ShapeFix_Shape {
 	ShapeFix_Shape* GetObject() {
 	return (ShapeFix_Shape*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
-class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment();
-		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment();
-		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
-	ShapeFix_SequenceNodeOfSequenceOfWireSegment* GetObject() {
-	return (ShapeFix_SequenceNodeOfSequenceOfWireSegment*)$self->Access();
 	}
 };
 
@@ -511,24 +511,6 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 	Handle_ShapeFix_EdgeProjAux GetHandle() {
 	return *(Handle_ShapeFix_EdgeProjAux*) &$self;
 	}
-};
-
-%nodefaultctor ShapeFix;
-class ShapeFix {
-	public:
-		%feature("autodoc", "1");
-		~ShapeFix();
-		%feature("autodoc", "1");
-		ShapeFix();
-		%feature("autodoc", "1");
-		Standard_Boolean SameParameter(const TopoDS_Shape &shape, const Standard_Boolean enforce, const Standard_Real preci=0.0);
-		%feature("autodoc", "1");
-		void EncodeRegularity(const TopoDS_Shape &shape, const Standard_Real tolang=1.0000000000000000364321973154977415791655470656e-10);
-		%feature("autodoc", "1");
-		TopoDS_Shape RemoveSmallEdges(TopoDS_Shape & shape, const Standard_Real Tolerance, Handle_ShapeBuild_ReShape & context);
-		%feature("autodoc", "1");
-		Standard_Boolean FixVertexPosition(TopoDS_Shape & theshape, const Standard_Real theTolerance, const Handle_ShapeBuild_ReShape &thecontext);
-
 };
 
 %nodefaultctor ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d;
@@ -876,6 +858,25 @@ class ShapeFix_Solid : public ShapeFix_Root {
 	}
 };
 
+%nodefaultctor ShapeFix_SequenceNodeOfSequenceOfWireSegment;
+class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		ShapeFix_SequenceNodeOfSequenceOfWireSegment(const ShapeFix_WireSegment &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		ShapeFix_WireSegment & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~ShapeFix_SequenceNodeOfSequenceOfWireSegment();
+
+};
+%extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
+	Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment GetHandle() {
+	return *(Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment*) &$self;
+	}
+};
+
 %nodefaultctor ShapeFix_SequenceOfWireSegment;
 class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 	public:
@@ -1024,25 +1025,6 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 	}
 };
 
-%nodefaultctor ShapeFix_SequenceNodeOfSequenceOfWireSegment;
-class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		ShapeFix_SequenceNodeOfSequenceOfWireSegment(const ShapeFix_WireSegment &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		ShapeFix_WireSegment & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_SequenceNodeOfSequenceOfWireSegment();
-
-};
-%extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
-	Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment GetHandle() {
-	return *(Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment*) &$self;
-	}
-};
-
 %nodefaultctor ShapeFix_Wireframe;
 class ShapeFix_Wireframe : public ShapeFix_Root {
 	public:
@@ -1086,6 +1068,24 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 	}
 };
 
+%nodefaultctor ShapeFix;
+class ShapeFix {
+	public:
+		%feature("autodoc", "1");
+		~ShapeFix();
+		%feature("autodoc", "1");
+		ShapeFix();
+		%feature("autodoc", "1");
+		Standard_Boolean SameParameter(const TopoDS_Shape &shape, const Standard_Boolean enforce, const Standard_Real preci=0.0);
+		%feature("autodoc", "1");
+		void EncodeRegularity(const TopoDS_Shape &shape, const Standard_Real tolang=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		TopoDS_Shape RemoveSmallEdges(TopoDS_Shape & shape, const Standard_Real Tolerance, Handle_ShapeBuild_ReShape & context);
+		%feature("autodoc", "1");
+		Standard_Boolean FixVertexPosition(TopoDS_Shape & theshape, const Standard_Real theTolerance, const Handle_ShapeBuild_ReShape &thecontext);
+
+};
+
 %nodefaultctor ShapeFix_IntersectionTool;
 class ShapeFix_IntersectionTool {
 	public:
@@ -1103,32 +1103,6 @@ class ShapeFix_IntersectionTool {
 		Standard_Boolean FixSelfIntersectWire(Handle_ShapeExtend_WireData & sewd, const TopoDS_Face &face, Standard_Integer & NbSplit, Standard_Integer & NbCut, Standard_Integer & NbRemoved) const;
 		%feature("autodoc", "1");
 		Standard_Boolean FixIntersectingWires(TopoDS_Face & face) const;
-
-};
-
-%nodefaultctor ShapeFix_WireVertex;
-class ShapeFix_WireVertex {
-	public:
-		%feature("autodoc", "1");
-		~ShapeFix_WireVertex();
-		%feature("autodoc", "1");
-		ShapeFix_WireVertex();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &wire, const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Init(const Handle_ShapeExtend_WireData &sbwd, const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Init(const ShapeAnalysis_WireVertex &sawv);
-		%feature("autodoc", "1");
-		const ShapeAnalysis_WireVertex & Analyzer() const;
-		%feature("autodoc", "1");
-		const Handle_ShapeExtend_WireData & WireData() const;
-		%feature("autodoc", "1");
-		TopoDS_Wire Wire() const;
-		%feature("autodoc", "1");
-		Standard_Integer FixSame();
-		%feature("autodoc", "1");
-		Standard_Integer Fix();
 
 };
 
@@ -1230,6 +1204,32 @@ class ShapeFix_SplitTool {
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
 		%feature("autodoc", "1");
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer & aNum, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
+
+};
+
+%nodefaultctor ShapeFix_WireVertex;
+class ShapeFix_WireVertex {
+	public:
+		%feature("autodoc", "1");
+		~ShapeFix_WireVertex();
+		%feature("autodoc", "1");
+		ShapeFix_WireVertex();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire &wire, const Standard_Real preci);
+		%feature("autodoc", "1");
+		void Init(const Handle_ShapeExtend_WireData &sbwd, const Standard_Real preci);
+		%feature("autodoc", "1");
+		void Init(const ShapeAnalysis_WireVertex &sawv);
+		%feature("autodoc", "1");
+		const ShapeAnalysis_WireVertex & Analyzer() const;
+		%feature("autodoc", "1");
+		const Handle_ShapeExtend_WireData & WireData() const;
+		%feature("autodoc", "1");
+		TopoDS_Wire Wire() const;
+		%feature("autodoc", "1");
+		Standard_Integer FixSame();
+		%feature("autodoc", "1");
+		Standard_Integer Fix();
 
 };
 

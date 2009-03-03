@@ -823,40 +823,6 @@ class GeomFill_TgtField : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor GeomFill_SectionPlacement;
-class GeomFill_SectionPlacement {
-	public:
-		%feature("autodoc", "1");
-		~GeomFill_SectionPlacement();
-		%feature("autodoc", "1");
-		GeomFill_SectionPlacement(const Handle_GeomFill_LocationLaw &L, const Handle_Geom_Geometry &Section);
-		%feature("autodoc", "1");
-		void SetLocation(const Handle_GeomFill_LocationLaw &L);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Path, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real ParamOnPath, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnPath() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnSection() const;
-		%feature("autodoc", "1");
-		Standard_Real Distance() const;
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		gp_Trsf Transformation(const Standard_Boolean WithTranslation, const Standard_Boolean WithCorrection=0) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve Section(const Standard_Boolean WithTranslation) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve ModifiedSection(const Standard_Boolean WithTranslation) const;
-
-};
-
 %nodefaultctor GeomFill_TgtOnCoons;
 class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 	public:
@@ -980,6 +946,40 @@ class GeomFill_Generator : public GeomFill_Profiler {
 
 };
 
+%nodefaultctor GeomFill_SectionPlacement;
+class GeomFill_SectionPlacement {
+	public:
+		%feature("autodoc", "1");
+		~GeomFill_SectionPlacement();
+		%feature("autodoc", "1");
+		GeomFill_SectionPlacement(const Handle_GeomFill_LocationLaw &L, const Handle_Geom_Geometry &Section);
+		%feature("autodoc", "1");
+		void SetLocation(const Handle_GeomFill_LocationLaw &L);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Adaptor3d_HCurve &Path, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real ParamOnPath, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real ParameterOnPath() const;
+		%feature("autodoc", "1");
+		Standard_Real ParameterOnSection() const;
+		%feature("autodoc", "1");
+		Standard_Real Distance() const;
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		gp_Trsf Transformation(const Standard_Boolean WithTranslation, const Standard_Boolean WithCorrection=0) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve Section(const Standard_Boolean WithTranslation) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve ModifiedSection(const Standard_Boolean WithTranslation) const;
+
+};
+
 %nodefaultctor GeomFill_Boundary;
 class GeomFill_Boundary : public MMgt_TShared {
 	public:
@@ -1032,36 +1032,6 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 	Handle_GeomFill_DegeneratedBound GetHandle() {
 	return *(Handle_GeomFill_DegeneratedBound*) &$self;
 	}
-};
-
-%nodefaultctor GeomFill_CornerState;
-class GeomFill_CornerState {
-	public:
-		%feature("autodoc", "1");
-		~GeomFill_CornerState();
-		%feature("autodoc", "1");
-		GeomFill_CornerState();
-		%feature("autodoc", "1");
-		Standard_Real Gap() const;
-		%feature("autodoc", "1");
-		void Gap(const Standard_Real G);
-		%feature("autodoc", "1");
-		Standard_Real TgtAng() const;
-		%feature("autodoc", "1");
-		void TgtAng(const Standard_Real Ang);
-		%feature("autodoc", "1");
-		Standard_Boolean HasConstraint() const;
-		%feature("autodoc", "1");
-		void Constraint();
-		%feature("autodoc", "1");
-		Standard_Real NorAng() const;
-		%feature("autodoc", "1");
-		void NorAng(const Standard_Real Ang);
-		%feature("autodoc", "1");
-		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void DoKill(const Standard_Real Scal);
-
 };
 
 %nodefaultctor GeomFill_Darboux;
@@ -1248,136 +1218,6 @@ class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 
 };
 
-%nodefaultctor GeomFill_Filling;
-class GeomFill_Filling {
-	public:
-		%feature("autodoc", "1");
-		~GeomFill_Filling();
-		%feature("autodoc", "1");
-		GeomFill_Filling();
-		%feature("autodoc", "1");
-		Standard_Integer NbUPoles() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbVPoles() const;
-		%feature("autodoc", "1");
-		void Poles(TColgp_Array2OfPnt & Poles) const;
-		%feature("autodoc", "1");
-		Standard_Boolean isRational() const;
-		%feature("autodoc", "1");
-		void Weights(TColStd_Array2OfReal & Weights) const;
-
-};
-
-%nodefaultctor GeomFill_Curved;
-class GeomFill_Curved : public GeomFill_Filling {
-	public:
-		%feature("autodoc", "1");
-		~GeomFill_Curved();
-		%feature("autodoc", "1");
-		GeomFill_Curved();
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
-
-};
-
-%nodefaultctor GeomFill_SectionLaw;
-class GeomFill_SectionLaw : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
-		%feature("autodoc", "1");
-		virtual		void SectionShape(Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree) const;
-		%feature("autodoc", "1");
-		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
-		%feature("autodoc", "1");
-		virtual		void Mults(TColStd_Array1OfInteger & TMults) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsUPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsVPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
-		%feature("autodoc", "1");
-		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		virtual		gp_Pnt BarycentreOfSurf() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real MaximalSection() const;
-		%feature("autodoc", "1");
-		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Curve ConstantSection() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConicalLaw(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Curve CirclSection(const Standard_Real Param) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_SectionLaw {
-	Handle_GeomFill_SectionLaw GetHandle() {
-	return *(Handle_GeomFill_SectionLaw*) &$self;
-	}
-};
-
-%nodefaultctor GeomFill_EvolvedSection;
-class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_EvolvedSection(const Handle_Geom_Curve &C, const Handle_Law_Function &L);
-		%feature("autodoc", "1");
-		virtual		~GeomFill_EvolvedSection();
-
-};
-%extend GeomFill_EvolvedSection {
-	Handle_GeomFill_EvolvedSection GetHandle() {
-	return *(Handle_GeomFill_EvolvedSection*) &$self;
-	}
-};
-
 %nodefaultctor GeomFill_LocationLaw;
 class GeomFill_LocationLaw : public MMgt_TShared {
 	public:
@@ -1462,6 +1302,26 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 	Handle_GeomFill_LocationDraft GetHandle() {
 	return *(Handle_GeomFill_LocationDraft*) &$self;
 	}
+};
+
+%nodefaultctor GeomFill_Filling;
+class GeomFill_Filling {
+	public:
+		%feature("autodoc", "1");
+		~GeomFill_Filling();
+		%feature("autodoc", "1");
+		GeomFill_Filling();
+		%feature("autodoc", "1");
+		Standard_Integer NbUPoles() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVPoles() const;
+		%feature("autodoc", "1");
+		void Poles(TColgp_Array2OfPnt & Poles) const;
+		%feature("autodoc", "1");
+		Standard_Boolean isRational() const;
+		%feature("autodoc", "1");
+		void Weights(TColStd_Array2OfReal & Weights) const;
+
 };
 
 %nodefaultctor GeomFill_TrihedronWithGuide;
@@ -1556,6 +1416,26 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 
 };
 
+%nodefaultctor GeomFill_PolynomialConvertor;
+class GeomFill_PolynomialConvertor {
+	public:
+		%feature("autodoc", "1");
+		~GeomFill_PolynomialConvertor();
+		%feature("autodoc", "1");
+		GeomFill_PolynomialConvertor();
+		%feature("autodoc", "1");
+		Standard_Boolean Initialized() const;
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		void Section(const gp_Pnt &FirstPnt, const gp_Pnt &Center, const gp_Vec &Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles) const;
+		%feature("autodoc", "1");
+		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &Dir, const gp_Vec &DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles) const;
+		%feature("autodoc", "1");
+		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles) const;
+
+};
+
 %nodefaultctor GeomFill_CircularBlendFunc;
 class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 	public:
@@ -1602,6 +1482,67 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 %extend GeomFill_CircularBlendFunc {
 	Handle_GeomFill_CircularBlendFunc GetHandle() {
 	return *(Handle_GeomFill_CircularBlendFunc*) &$self;
+	}
+};
+
+%nodefaultctor GeomFill_SectionLaw;
+class GeomFill_SectionLaw : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
+		%feature("autodoc", "1");
+		virtual		void SectionShape(Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree) const;
+		%feature("autodoc", "1");
+		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
+		%feature("autodoc", "1");
+		virtual		void Mults(TColStd_Array1OfInteger & TMults) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsUPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsVPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
+		%feature("autodoc", "1");
+		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
+		%feature("autodoc", "1");
+		virtual		gp_Pnt BarycentreOfSurf() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real MaximalSection() const;
+		%feature("autodoc", "1");
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Curve ConstantSection() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConicalLaw(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Curve CirclSection(const Standard_Real Param) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_SectionLaw {
+	Handle_GeomFill_SectionLaw GetHandle() {
+	return *(Handle_GeomFill_SectionLaw*) &$self;
 	}
 };
 
@@ -1668,43 +1609,6 @@ class GeomFill {
 		%feature("autodoc", "1");
 		Standard_Real GetTolerance(const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real Radius, const Standard_Real AngularTol, const Standard_Real SpatialTol);
 
-};
-
-%nodefaultctor GeomFill_HArray1OfSectionLaw;
-class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_HArray1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		GeomFill_HArray1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up, const Handle_GeomFill_SectionLaw &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_GeomFill_SectionLaw &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_GeomFill_SectionLaw &Value);
-		%feature("autodoc", "1");
-		const Handle_GeomFill_SectionLaw & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_GeomFill_SectionLaw & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const GeomFill_Array1OfSectionLaw & Array1() const;
-		%feature("autodoc", "1");
-		GeomFill_Array1OfSectionLaw & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_HArray1OfSectionLaw();
-
-};
-%extend GeomFill_HArray1OfSectionLaw {
-	Handle_GeomFill_HArray1OfSectionLaw GetHandle() {
-	return *(Handle_GeomFill_HArray1OfSectionLaw*) &$self;
-	}
 };
 
 %nodefaultctor GeomFill_CurveAndTrihedron;
@@ -2281,6 +2185,36 @@ class GeomFill_BSplineCurves {
 
 };
 
+%nodefaultctor GeomFill_CornerState;
+class GeomFill_CornerState {
+	public:
+		%feature("autodoc", "1");
+		~GeomFill_CornerState();
+		%feature("autodoc", "1");
+		GeomFill_CornerState();
+		%feature("autodoc", "1");
+		Standard_Real Gap() const;
+		%feature("autodoc", "1");
+		void Gap(const Standard_Real G);
+		%feature("autodoc", "1");
+		Standard_Real TgtAng() const;
+		%feature("autodoc", "1");
+		void TgtAng(const Standard_Real Ang);
+		%feature("autodoc", "1");
+		Standard_Boolean HasConstraint() const;
+		%feature("autodoc", "1");
+		void Constraint();
+		%feature("autodoc", "1");
+		Standard_Real NorAng() const;
+		%feature("autodoc", "1");
+		void NorAng(const Standard_Real Ang);
+		%feature("autodoc", "1");
+		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void DoKill(const Standard_Real Scal);
+
+};
+
 %nodefaultctor GeomFill_QuasiAngularConvertor;
 class GeomFill_QuasiAngularConvertor {
 	public:
@@ -2376,6 +2310,43 @@ class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 	}
 };
 
+%nodefaultctor GeomFill_HArray1OfSectionLaw;
+class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_HArray1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		GeomFill_HArray1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up, const Handle_GeomFill_SectionLaw &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_GeomFill_SectionLaw &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_GeomFill_SectionLaw &Value);
+		%feature("autodoc", "1");
+		const Handle_GeomFill_SectionLaw & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_GeomFill_SectionLaw & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const GeomFill_Array1OfSectionLaw & Array1() const;
+		%feature("autodoc", "1");
+		GeomFill_Array1OfSectionLaw & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~GeomFill_HArray1OfSectionLaw();
+
+};
+%extend GeomFill_HArray1OfSectionLaw {
+	Handle_GeomFill_HArray1OfSectionLaw GetHandle() {
+	return *(Handle_GeomFill_HArray1OfSectionLaw*) &$self;
+	}
+};
+
 %nodefaultctor GeomFill_AppSweep;
 class GeomFill_AppSweep : public AppBlend_Approx {
 	public:
@@ -2432,6 +2403,65 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		~GeomFill_AppSweep();
 
+};
+
+%nodefaultctor GeomFill_EvolvedSection;
+class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_EvolvedSection(const Handle_Geom_Curve &C, const Handle_Law_Function &L);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
+		%feature("autodoc", "1");
+		virtual		void SectionShape(Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree) const;
+		%feature("autodoc", "1");
+		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
+		%feature("autodoc", "1");
+		virtual		void Mults(TColStd_Array1OfInteger & TMults) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsUPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsVPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
+		%feature("autodoc", "1");
+		virtual		gp_Pnt BarycentreOfSurf() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real MaximalSection() const;
+		%feature("autodoc", "1");
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Curve ConstantSection() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~GeomFill_EvolvedSection();
+
+};
+%extend GeomFill_EvolvedSection {
+	Handle_GeomFill_EvolvedSection GetHandle() {
+	return *(Handle_GeomFill_EvolvedSection*) &$self;
+	}
 };
 
 %nodefaultctor GeomFill_DraftTrihedron;
@@ -2534,26 +2564,6 @@ class GeomFill_Line : public MMgt_TShared {
 	Handle_GeomFill_Line GetHandle() {
 	return *(Handle_GeomFill_Line*) &$self;
 	}
-};
-
-%nodefaultctor GeomFill_PolynomialConvertor;
-class GeomFill_PolynomialConvertor {
-	public:
-		%feature("autodoc", "1");
-		~GeomFill_PolynomialConvertor();
-		%feature("autodoc", "1");
-		GeomFill_PolynomialConvertor();
-		%feature("autodoc", "1");
-		Standard_Boolean Initialized() const;
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Pnt &Center, const gp_Vec &Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles) const;
-		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &Dir, const gp_Vec &DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles) const;
-		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles) const;
-
 };
 
 %nodefaultctor GeomFill_Fixed;
@@ -2684,6 +2694,40 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 	Handle_GeomFill_CorrectedFrenet GetHandle() {
 	return *(Handle_GeomFill_CorrectedFrenet*) &$self;
 	}
+};
+
+%nodefaultctor GeomFill_Curved;
+class GeomFill_Curved : public GeomFill_Filling {
+	public:
+		%feature("autodoc", "1");
+		~GeomFill_Curved();
+		%feature("autodoc", "1");
+		GeomFill_Curved();
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
+
 };
 
 %nodefaultctor GeomFill_Array1OfLocationLaw;

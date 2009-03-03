@@ -359,6 +359,32 @@ class ShapeAnalysis_FreeBounds {
 
 };
 
+%nodefaultctor ShapeAnalysis;
+class ShapeAnalysis {
+	public:
+		%feature("autodoc", "1");
+		~ShapeAnalysis();
+		%feature("autodoc", "1");
+		ShapeAnalysis();
+		%feature("autodoc", "1");
+		TopoDS_Wire OuterWire(const TopoDS_Face &face);
+		%feature("autodoc", "1");
+		Standard_Real TotCross2D(const Handle_ShapeExtend_WireData &sewd, const TopoDS_Face &aFace);
+		%feature("autodoc", "1");
+		Standard_Real ContourArea(const TopoDS_Wire &theWire);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOuterBound(const TopoDS_Face &face);
+		%feature("autodoc", "1");
+		Standard_Real AdjustByPeriod(const Standard_Real Val, const Standard_Real ToVal, const Standard_Real Period);
+		%feature("autodoc", "1");
+		Standard_Real AdjustToPeriod(const Standard_Real Val, const Standard_Real ValMin, const Standard_Real ValMax);
+		%feature("autodoc", "1");
+		void FindBounds(const TopoDS_Shape &shape, TopoDS_Vertex & V1, TopoDS_Vertex & V2);
+		%feature("autodoc", "1");
+		void GetFaceUVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+
 %nodefaultctor ShapeAnalysis_TransferParameters;
 class ShapeAnalysis_TransferParameters : public MMgt_TShared {
 	public:
@@ -598,24 +624,6 @@ class ShapeAnalysis_Edge {
 
 };
 
-%nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal;
-class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal(const ShapeAnalysis_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const ShapeAnalysis_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Real & Value() const;
-
-};
-
 %nodefaultctor ShapeAnalysis_DataMapOfShapeReal;
 class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
 	public:
@@ -646,32 +654,6 @@ class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
 
 };
 
-%nodefaultctor ShapeAnalysis;
-class ShapeAnalysis {
-	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis();
-		%feature("autodoc", "1");
-		ShapeAnalysis();
-		%feature("autodoc", "1");
-		TopoDS_Wire OuterWire(const TopoDS_Face &face);
-		%feature("autodoc", "1");
-		Standard_Real TotCross2D(const Handle_ShapeExtend_WireData &sewd, const TopoDS_Face &aFace);
-		%feature("autodoc", "1");
-		Standard_Real ContourArea(const TopoDS_Wire &theWire);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOuterBound(const TopoDS_Face &face);
-		%feature("autodoc", "1");
-		Standard_Real AdjustByPeriod(const Standard_Real Val, const Standard_Real ToVal, const Standard_Real Period);
-		%feature("autodoc", "1");
-		Standard_Real AdjustToPeriod(const Standard_Real Val, const Standard_Real ValMin, const Standard_Real ValMax);
-		%feature("autodoc", "1");
-		void FindBounds(const TopoDS_Shape &shape, TopoDS_Vertex & V1, TopoDS_Vertex & V2);
-		%feature("autodoc", "1");
-		void GetFaceUVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-
 %nodefaultctor ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal;
 class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_MapNode {
 	public:
@@ -691,6 +673,24 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_M
 	Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal GetHandle() {
 	return *(Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal*) &$self;
 	}
+};
+
+%nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal;
+class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal();
+		%feature("autodoc", "1");
+		ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal();
+		%feature("autodoc", "1");
+		ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal(const ShapeAnalysis_DataMapOfShapeReal &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const ShapeAnalysis_DataMapOfShapeReal &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Real & Value() const;
+
 };
 
 %nodefaultctor ShapeAnalysis_FreeBoundData;
@@ -910,64 +910,6 @@ class ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public TCollection_SeqN
 	}
 };
 
-%nodefaultctor ShapeAnalysis_WireVertex;
-class ShapeAnalysis_WireVertex {
-	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis_WireVertex();
-		%feature("autodoc", "1");
-		ShapeAnalysis_WireVertex();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &wire, const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Init(const Handle_ShapeExtend_WireData &swbd, const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Wire &wire);
-		%feature("autodoc", "1");
-		void Load(const Handle_ShapeExtend_WireData &sbwd);
-		%feature("autodoc", "1");
-		void SetPrecision(const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Analyze();
-		%feature("autodoc", "1");
-		void SetSameVertex(const Standard_Integer num);
-		%feature("autodoc", "1");
-		void SetSameCoords(const Standard_Integer num);
-		%feature("autodoc", "1");
-		void SetClose(const Standard_Integer num);
-		%feature("autodoc", "1");
-		void SetEnd(const Standard_Integer num, const gp_XYZ &pos, const Standard_Real ufol);
-		%feature("autodoc", "1");
-		void SetStart(const Standard_Integer num, const gp_XYZ &pos, const Standard_Real upre);
-		%feature("autodoc", "1");
-		void SetInters(const Standard_Integer num, const gp_XYZ &pos, const Standard_Real upre, const Standard_Real ufol);
-		%feature("autodoc", "1");
-		void SetDisjoined(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Precision() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbEdges() const;
-		%feature("autodoc", "1");
-		const Handle_ShapeExtend_WireData & WireData() const;
-		%feature("autodoc", "1");
-		Standard_Integer Status(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		gp_XYZ Position(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Real UPrevious(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Real UFollowing(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer Data(const Standard_Integer num, gp_XYZ & pos, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer NextStatus(const Standard_Integer stat, const Standard_Integer num=0) const;
-		%feature("autodoc", "1");
-		Standard_Integer NextCriter(const Standard_Integer crit, const Standard_Integer num=0) const;
-
-};
-
 %nodefaultctor ShapeAnalysis_SequenceOfFreeBounds;
 class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
 	public:
@@ -1068,6 +1010,41 @@ class ShapeAnalysis_WireOrder {
 		%feature("autodoc", "1");
 		void Couple(const Standard_Integer num, Standard_Integer & n1, Standard_Integer & n2) const;
 
+};
+
+%nodefaultctor ShapeAnalysis_TransferParametersProj;
+class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParameters {
+	public:
+		%feature("autodoc", "1");
+		ShapeAnalysis_TransferParametersProj();
+		%feature("autodoc", "1");
+		ShapeAnalysis_TransferParametersProj(const TopoDS_Edge &E, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		virtual		void Init(const TopoDS_Edge &E, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		virtual		Handle_TColStd_HSequenceOfReal Perform(const Handle_TColStd_HSequenceOfReal &Papams, const Standard_Boolean To2d);
+		%feature("autodoc", "1");
+		virtual		Standard_Real Perform(const Standard_Real Param, const Standard_Boolean To2d);
+		%feature("autodoc", "1");
+		Standard_Boolean & ForceProjection();
+		%feature("autodoc", "1");
+		virtual		void TransferRange(TopoDS_Edge & newEdge, const Standard_Real prevPar, const Standard_Real currPar, const Standard_Boolean Is2d);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSameRange() const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex CopyNMVertex(const TopoDS_Vertex &theVert, const TopoDS_Edge &toedge, const TopoDS_Edge &fromedge);
+		%feature("autodoc", "1");
+		TopoDS_Vertex CopyNMVertex(const TopoDS_Vertex &theVert, const TopoDS_Face &toFace, const TopoDS_Face &fromFace);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~ShapeAnalysis_TransferParametersProj();
+
+};
+%extend ShapeAnalysis_TransferParametersProj {
+	Handle_ShapeAnalysis_TransferParametersProj GetHandle() {
+	return *(Handle_ShapeAnalysis_TransferParametersProj*) &$self;
+	}
 };
 
 %nodefaultctor ShapeAnalysis_Wire;
@@ -1229,6 +1206,64 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor ShapeAnalysis_WireVertex;
+class ShapeAnalysis_WireVertex {
+	public:
+		%feature("autodoc", "1");
+		~ShapeAnalysis_WireVertex();
+		%feature("autodoc", "1");
+		ShapeAnalysis_WireVertex();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire &wire, const Standard_Real preci);
+		%feature("autodoc", "1");
+		void Init(const Handle_ShapeExtend_WireData &swbd, const Standard_Real preci);
+		%feature("autodoc", "1");
+		void Load(const TopoDS_Wire &wire);
+		%feature("autodoc", "1");
+		void Load(const Handle_ShapeExtend_WireData &sbwd);
+		%feature("autodoc", "1");
+		void SetPrecision(const Standard_Real preci);
+		%feature("autodoc", "1");
+		void Analyze();
+		%feature("autodoc", "1");
+		void SetSameVertex(const Standard_Integer num);
+		%feature("autodoc", "1");
+		void SetSameCoords(const Standard_Integer num);
+		%feature("autodoc", "1");
+		void SetClose(const Standard_Integer num);
+		%feature("autodoc", "1");
+		void SetEnd(const Standard_Integer num, const gp_XYZ &pos, const Standard_Real ufol);
+		%feature("autodoc", "1");
+		void SetStart(const Standard_Integer num, const gp_XYZ &pos, const Standard_Real upre);
+		%feature("autodoc", "1");
+		void SetInters(const Standard_Integer num, const gp_XYZ &pos, const Standard_Real upre, const Standard_Real ufol);
+		%feature("autodoc", "1");
+		void SetDisjoined(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Precision() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbEdges() const;
+		%feature("autodoc", "1");
+		const Handle_ShapeExtend_WireData & WireData() const;
+		%feature("autodoc", "1");
+		Standard_Integer Status(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		gp_XYZ Position(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Real UPrevious(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Real UFollowing(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer Data(const Standard_Integer num, gp_XYZ & pos, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer NextStatus(const Standard_Integer stat, const Standard_Integer num=0) const;
+		%feature("autodoc", "1");
+		Standard_Integer NextCriter(const Standard_Integer crit, const Standard_Integer num=0) const;
+
+};
+
 %nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal;
 class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollection_BasicMapIterator {
 	public:
@@ -1372,41 +1407,6 @@ class ShapeAnalysis_Shell {
 		%feature("autodoc", "1");
 		Standard_Boolean HasConnectedEdges() const;
 
-};
-
-%nodefaultctor ShapeAnalysis_TransferParametersProj;
-class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParameters {
-	public:
-		%feature("autodoc", "1");
-		ShapeAnalysis_TransferParametersProj();
-		%feature("autodoc", "1");
-		ShapeAnalysis_TransferParametersProj(const TopoDS_Edge &E, const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Edge &E, const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		virtual		Handle_TColStd_HSequenceOfReal Perform(const Handle_TColStd_HSequenceOfReal &Papams, const Standard_Boolean To2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Perform(const Standard_Real Param, const Standard_Boolean To2d);
-		%feature("autodoc", "1");
-		Standard_Boolean & ForceProjection();
-		%feature("autodoc", "1");
-		virtual		void TransferRange(TopoDS_Edge & newEdge, const Standard_Real prevPar, const Standard_Real currPar, const Standard_Boolean Is2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSameRange() const;
-		%feature("autodoc", "1");
-		TopoDS_Vertex CopyNMVertex(const TopoDS_Vertex &theVert, const TopoDS_Edge &toedge, const TopoDS_Edge &fromedge);
-		%feature("autodoc", "1");
-		TopoDS_Vertex CopyNMVertex(const TopoDS_Vertex &theVert, const TopoDS_Face &toFace, const TopoDS_Face &fromFace);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_TransferParametersProj();
-
-};
-%extend ShapeAnalysis_TransferParametersProj {
-	Handle_ShapeAnalysis_TransferParametersProj GetHandle() {
-	return *(Handle_ShapeAnalysis_TransferParametersProj*) &$self;
-	}
 };
 
 %nodefaultctor ShapeAnalysis_FreeBoundsProperties;

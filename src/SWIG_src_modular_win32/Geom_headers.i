@@ -39,12 +39,12 @@
 #include<Geom_Axis1Placement.hxx>
 #include<Geom_Axis2Placement.hxx>
 #include<Geom_AxisPlacement.hxx>
+#include<Geom_BSplineCurve.hxx>
+#include<Geom_BSplineSurface.hxx>
 #include<Geom_BezierCurve.hxx>
 #include<Geom_BezierSurface.hxx>
 #include<Geom_BoundedCurve.hxx>
 #include<Geom_BoundedSurface.hxx>
-#include<Geom_BSplineCurve.hxx>
-#include<Geom_BSplineSurface.hxx>
 #include<Geom_CartesianPoint.hxx>
 #include<Geom_Circle.hxx>
 #include<Geom_Conic.hxx>
@@ -85,12 +85,12 @@
 #include<Handle_Geom_Axis1Placement.hxx>
 #include<Handle_Geom_Axis2Placement.hxx>
 #include<Handle_Geom_AxisPlacement.hxx>
+#include<Handle_Geom_BSplineCurve.hxx>
+#include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Geom_BezierCurve.hxx>
 #include<Handle_Geom_BezierSurface.hxx>
 #include<Handle_Geom_BoundedCurve.hxx>
 #include<Handle_Geom_BoundedSurface.hxx>
-#include<Handle_Geom_BSplineCurve.hxx>
-#include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Geom_CartesianPoint.hxx>
 #include<Handle_Geom_Circle.hxx>
 #include<Handle_Geom_Conic.hxx>
@@ -129,10 +129,6 @@
 // Additional headers necessary for compilation.
 
 #include<BRepFill.hxx>
-#include<BRepFilletAPI_LocalOperation.hxx>
-#include<BRepFilletAPI_MakeChamfer.hxx>
-#include<BRepFilletAPI_MakeFillet.hxx>
-#include<BRepFilletAPI_MakeFillet2d.hxx>
 #include<BRepFill_ACRLaw.hxx>
 #include<BRepFill_ApproxSeewing.hxx>
 #include<BRepFill_CompatibleWires.hxx>
@@ -195,7 +191,10 @@
 #include<BRepFill_TrimEdgeTool.hxx>
 #include<BRepFill_TrimShellCorner.hxx>
 #include<BRepFill_TrimSurfaceTool.hxx>
-#include<gp.hxx>
+#include<BRepFilletAPI_LocalOperation.hxx>
+#include<BRepFilletAPI_MakeChamfer.hxx>
+#include<BRepFilletAPI_MakeFillet.hxx>
+#include<BRepFilletAPI_MakeFillet2d.hxx>
 #include<GProp.hxx>
 #include<GProp_CelGProps.hxx>
 #include<GProp_EquaType.hxx>
@@ -207,6 +206,7 @@
 #include<GProp_UndefinedAxis.hxx>
 #include<GProp_ValueType.hxx>
 #include<GProp_VelGProps.hxx>
+#include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>

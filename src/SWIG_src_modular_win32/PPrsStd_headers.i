@@ -36,10 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<PPrsStd_AISPresentation.hxx>
-#include<PPrsStd_AISPresentation_1.hxx>
 #include<Handle_PPrsStd_AISPresentation.hxx>
 #include<Handle_PPrsStd_AISPresentation_1.hxx>
+#include<PPrsStd_AISPresentation.hxx>
+#include<PPrsStd_AISPresentation_1.hxx>
 
 // Additional headers necessary for compilation.
 

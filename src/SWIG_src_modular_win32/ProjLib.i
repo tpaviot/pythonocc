@@ -119,6 +119,27 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	}
 };
 
+%nodefaultctor Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
+class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
+	ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt* GetObject() {
+	return (ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_ProjLib_HCompProjectedCurve;
 class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	public:
@@ -158,27 +179,6 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 %extend Handle_ProjLib_HSequenceOfHSequenceOfPnt {
 	ProjLib_HSequenceOfHSequenceOfPnt* GetObject() {
 	return (ProjLib_HSequenceOfHSequenceOfPnt*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
-class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
-	ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt* GetObject() {
-	return (ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt*)$self->Access();
 	}
 };
 
@@ -870,22 +870,6 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 
 };
 
-%nodefaultctor ProjLib_ComputeApprox;
-class ProjLib_ComputeApprox {
-	public:
-		%feature("autodoc", "1");
-		~ProjLib_ComputeApprox();
-		%feature("autodoc", "1");
-		ProjLib_ComputeApprox(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve Bezier() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-
-};
-
 %nodefaultctor ProjLib_Cone;
 class ProjLib_Cone : public ProjLib_Projector {
 	public:
@@ -911,5 +895,21 @@ class ProjLib_Cone : public ProjLib_Projector {
 		virtual		void Project(const gp_Hypr &H);
 		%feature("autodoc", "1");
 		virtual		~ProjLib_Cone();
+
+};
+
+%nodefaultctor ProjLib_ComputeApprox;
+class ProjLib_ComputeApprox {
+	public:
+		%feature("autodoc", "1");
+		~ProjLib_ComputeApprox();
+		%feature("autodoc", "1");
+		ProjLib_ComputeApprox(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve BSpline() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BezierCurve Bezier() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
 
 };

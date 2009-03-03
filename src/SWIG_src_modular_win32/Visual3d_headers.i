@@ -36,6 +36,33 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Visual3d_ClipDefinitionError.hxx>
+#include<Handle_Visual3d_ClipPlane.hxx>
+#include<Handle_Visual3d_ContextPickDefinitionError.hxx>
+#include<Handle_Visual3d_DepthCueingDefinitionError.hxx>
+#include<Handle_Visual3d_HSequenceOfPickPath.hxx>
+#include<Handle_Visual3d_HSetOfClipPlane.hxx>
+#include<Handle_Visual3d_HSetOfLight.hxx>
+#include<Handle_Visual3d_HSetOfView.hxx>
+#include<Handle_Visual3d_Layer.hxx>
+#include<Handle_Visual3d_LayerDefinitionError.hxx>
+#include<Handle_Visual3d_Light.hxx>
+#include<Handle_Visual3d_LightDefinitionError.hxx>
+#include<Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane.hxx>
+#include<Handle_Visual3d_ListNodeOfSetListOfSetOfLight.hxx>
+#include<Handle_Visual3d_ListNodeOfSetListOfSetOfView.hxx>
+#include<Handle_Visual3d_PickError.hxx>
+#include<Handle_Visual3d_SequenceNodeOfSequenceOfPickPath.hxx>
+#include<Handle_Visual3d_TransformError.hxx>
+#include<Handle_Visual3d_TransientDefinitionError.hxx>
+#include<Handle_Visual3d_TransientManager.hxx>
+#include<Handle_Visual3d_View.hxx>
+#include<Handle_Visual3d_ViewDefinitionError.hxx>
+#include<Handle_Visual3d_ViewManager.hxx>
+#include<Handle_Visual3d_ViewManagerDefinitionError.hxx>
+#include<Handle_Visual3d_ViewMappingDefinitionError.hxx>
+#include<Handle_Visual3d_ViewOrientationDefinitionError.hxx>
+#include<Handle_Visual3d_ZClippingDefinitionError.hxx>
 #include<Visual3d_ClipDefinitionError.hxx>
 #include<Visual3d_ClipPlane.hxx>
 #include<Visual3d_ContextPick.hxx>
@@ -92,33 +119,6 @@
 #include<Visual3d_ViewOrientationDefinitionError.hxx>
 #include<Visual3d_ViewPtr.hxx>
 #include<Visual3d_ZClippingDefinitionError.hxx>
-#include<Handle_Visual3d_ClipDefinitionError.hxx>
-#include<Handle_Visual3d_ClipPlane.hxx>
-#include<Handle_Visual3d_ContextPickDefinitionError.hxx>
-#include<Handle_Visual3d_DepthCueingDefinitionError.hxx>
-#include<Handle_Visual3d_HSequenceOfPickPath.hxx>
-#include<Handle_Visual3d_HSetOfClipPlane.hxx>
-#include<Handle_Visual3d_HSetOfLight.hxx>
-#include<Handle_Visual3d_HSetOfView.hxx>
-#include<Handle_Visual3d_Layer.hxx>
-#include<Handle_Visual3d_LayerDefinitionError.hxx>
-#include<Handle_Visual3d_Light.hxx>
-#include<Handle_Visual3d_LightDefinitionError.hxx>
-#include<Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane.hxx>
-#include<Handle_Visual3d_ListNodeOfSetListOfSetOfLight.hxx>
-#include<Handle_Visual3d_ListNodeOfSetListOfSetOfView.hxx>
-#include<Handle_Visual3d_PickError.hxx>
-#include<Handle_Visual3d_SequenceNodeOfSequenceOfPickPath.hxx>
-#include<Handle_Visual3d_TransformError.hxx>
-#include<Handle_Visual3d_TransientDefinitionError.hxx>
-#include<Handle_Visual3d_TransientManager.hxx>
-#include<Handle_Visual3d_View.hxx>
-#include<Handle_Visual3d_ViewDefinitionError.hxx>
-#include<Handle_Visual3d_ViewManager.hxx>
-#include<Handle_Visual3d_ViewManagerDefinitionError.hxx>
-#include<Handle_Visual3d_ViewMappingDefinitionError.hxx>
-#include<Handle_Visual3d_ViewOrientationDefinitionError.hxx>
-#include<Handle_Visual3d_ZClippingDefinitionError.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -182,8 +182,8 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Graphic3d_Structure.hxx>
 #include<Standard_SStream.hxx>
+#include<Handle_Graphic3d_Structure.hxx>
 #include<Graphic3d_Vertex.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
 #include<Handle_Graphic3d_TextureEnv.hxx>

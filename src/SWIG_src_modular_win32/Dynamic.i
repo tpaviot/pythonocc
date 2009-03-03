@@ -211,6 +211,27 @@ class Handle_Dynamic_DynamicClass : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_Dynamic_FuzzyDefinitionsDictionary;
+class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Dynamic_FuzzyDefinitionsDictionary();
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary();
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary(const Dynamic_FuzzyDefinitionsDictionary *anItem);
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
+	Dynamic_FuzzyDefinitionsDictionary* GetObject() {
+	return (Dynamic_FuzzyDefinitionsDictionary*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions;
 class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TCollection_SeqNode {
 	public:
@@ -544,27 +565,6 @@ class Handle_Dynamic_SequenceOfFuzzyDefinitions : public Handle_MMgt_TShared {
 %extend Handle_Dynamic_SequenceOfFuzzyDefinitions {
 	Dynamic_SequenceOfFuzzyDefinitions* GetObject() {
 	return (Dynamic_SequenceOfFuzzyDefinitions*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Dynamic_FuzzyDefinitionsDictionary;
-class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_FuzzyDefinitionsDictionary();
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary();
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary(const Dynamic_FuzzyDefinitionsDictionary *anItem);
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
-	Dynamic_FuzzyDefinitionsDictionary* GetObject() {
-	return (Dynamic_FuzzyDefinitionsDictionary*)$self->Access();
 	}
 };
 
@@ -1108,6 +1108,31 @@ class Dynamic_SequenceNodeOfSeqOfClasses : public TCollection_SeqNode {
 	}
 };
 
+%nodefaultctor Dynamic_InstanceParameter;
+class Dynamic_InstanceParameter : public Dynamic_Parameter {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_InstanceParameter(const char * aparameter);
+		%feature("autodoc", "1");
+		Dynamic_InstanceParameter(const char * aparameter, const Handle_Dynamic_DynamicInstance &avalue);
+		%feature("autodoc", "1");
+		Handle_Dynamic_DynamicInstance Value() const;
+		%feature("autodoc", "1");
+		void Value(const Handle_Dynamic_DynamicInstance &avalue);
+		%feature("autodoc", "1");
+		virtual		void Dump(Standard_OStream & astream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Dynamic_InstanceParameter();
+
+};
+%extend Dynamic_InstanceParameter {
+	Handle_Dynamic_InstanceParameter GetHandle() {
+	return *(Handle_Dynamic_InstanceParameter*) &$self;
+	}
+};
+
 %nodefaultctor Dynamic_VariableNode;
 class Dynamic_VariableNode : public MMgt_TShared {
 	public:
@@ -1132,48 +1157,6 @@ class Dynamic_VariableNode : public MMgt_TShared {
 %extend Dynamic_VariableNode {
 	Handle_Dynamic_VariableNode GetHandle() {
 	return *(Handle_Dynamic_VariableNode*) &$self;
-	}
-};
-
-%nodefaultctor Dynamic_Variable;
-class Dynamic_Variable : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_Variable();
-		%feature("autodoc", "1");
-		void Parameter(const Handle_Dynamic_Parameter &aparameter);
-		%feature("autodoc", "1");
-		Handle_Dynamic_Parameter Parameter() const;
-		%feature("autodoc", "1");
-		void Mode(const Dynamic_ModeEnum amode);
-		%feature("autodoc", "1");
-		Dynamic_ModeEnum Mode() const;
-		%feature("autodoc", "1");
-		void Dump(Standard_OStream & astream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_Variable();
-
-};
-%extend Dynamic_Variable {
-	Handle_Dynamic_Variable GetHandle() {
-	return *(Handle_Dynamic_Variable*) &$self;
-	}
-};
-
-%nodefaultctor Dynamic_VariableGroup;
-class Dynamic_VariableGroup : public Dynamic_Variable {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_VariableGroup();
-		%feature("autodoc", "1");
-		virtual		~Dynamic_VariableGroup();
-
-};
-%extend Dynamic_VariableGroup {
-	Handle_Dynamic_VariableGroup GetHandle() {
-	return *(Handle_Dynamic_VariableGroup*) &$self;
 	}
 };
 
@@ -1626,6 +1609,48 @@ class Dynamic_SequenceOfClasses : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor Dynamic_Variable;
+class Dynamic_Variable : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_Variable();
+		%feature("autodoc", "1");
+		void Parameter(const Handle_Dynamic_Parameter &aparameter);
+		%feature("autodoc", "1");
+		Handle_Dynamic_Parameter Parameter() const;
+		%feature("autodoc", "1");
+		void Mode(const Dynamic_ModeEnum amode);
+		%feature("autodoc", "1");
+		Dynamic_ModeEnum Mode() const;
+		%feature("autodoc", "1");
+		void Dump(Standard_OStream & astream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Dynamic_Variable();
+
+};
+%extend Dynamic_Variable {
+	Handle_Dynamic_Variable GetHandle() {
+	return *(Handle_Dynamic_Variable*) &$self;
+	}
+};
+
+%nodefaultctor Dynamic_VariableGroup;
+class Dynamic_VariableGroup : public Dynamic_Variable {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_VariableGroup();
+		%feature("autodoc", "1");
+		virtual		~Dynamic_VariableGroup();
+
+};
+%extend Dynamic_VariableGroup {
+	Handle_Dynamic_VariableGroup GetHandle() {
+	return *(Handle_Dynamic_VariableGroup*) &$self;
+	}
+};
+
 %nodefaultctor Dynamic_CompositMethod;
 class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 	public:
@@ -1964,30 +1989,5 @@ class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance
 %extend Dynamic_CompositVariableInstance {
 	Handle_Dynamic_CompositVariableInstance GetHandle() {
 	return *(Handle_Dynamic_CompositVariableInstance*) &$self;
-	}
-};
-
-%nodefaultctor Dynamic_InstanceParameter;
-class Dynamic_InstanceParameter : public Dynamic_Parameter {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_InstanceParameter(const char * aparameter);
-		%feature("autodoc", "1");
-		Dynamic_InstanceParameter(const char * aparameter, const Handle_Dynamic_DynamicInstance &avalue);
-		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicInstance Value() const;
-		%feature("autodoc", "1");
-		void Value(const Handle_Dynamic_DynamicInstance &avalue);
-		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_InstanceParameter();
-
-};
-%extend Dynamic_InstanceParameter {
-	Handle_Dynamic_InstanceParameter GetHandle() {
-	return *(Handle_Dynamic_InstanceParameter*) &$self;
 	}
 };

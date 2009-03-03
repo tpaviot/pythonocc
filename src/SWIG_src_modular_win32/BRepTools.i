@@ -274,6 +274,28 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 
 };
 
+%nodefaultctor BRepTools_Quilt;
+class BRepTools_Quilt {
+	public:
+		%feature("autodoc", "1");
+		~BRepTools_Quilt();
+		%feature("autodoc", "1");
+		BRepTools_Quilt();
+		%feature("autodoc", "1");
+		void Bind(const TopoDS_Edge &Eold, const TopoDS_Edge &Enew);
+		%feature("autodoc", "1");
+		void Bind(const TopoDS_Vertex &Vold, const TopoDS_Vertex &Vnew);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsCopied(const TopoDS_Shape &S) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Copy(const TopoDS_Shape &S) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape Shells() const;
+
+};
+
 %nodefaultctor BRepTools_Modification;
 class BRepTools_Modification : public MMgt_TShared {
 	public:
@@ -296,35 +318,6 @@ class BRepTools_Modification : public MMgt_TShared {
 %extend BRepTools_Modification {
 	Handle_BRepTools_Modification GetHandle() {
 	return *(Handle_BRepTools_Modification*) &$self;
-	}
-};
-
-%nodefaultctor BRepTools_NurbsConvertModification;
-class BRepTools_NurbsConvertModification : public BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		BRepTools_NurbsConvertModification();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_NurbsConvertModification();
-
-};
-%extend BRepTools_NurbsConvertModification {
-	Handle_BRepTools_NurbsConvertModification GetHandle() {
-	return *(Handle_BRepTools_NurbsConvertModification*) &$self;
 	}
 };
 
@@ -577,6 +570,35 @@ class BRepTools_ReShape : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor BRepTools_NurbsConvertModification;
+class BRepTools_NurbsConvertModification : public BRepTools_Modification {
+	public:
+		%feature("autodoc", "1");
+		BRepTools_NurbsConvertModification();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~BRepTools_NurbsConvertModification();
+
+};
+%extend BRepTools_NurbsConvertModification {
+	Handle_BRepTools_NurbsConvertModification GetHandle() {
+	return *(Handle_BRepTools_NurbsConvertModification*) &$self;
+	}
+};
+
 %nodefaultctor BRepTools_DataMapIteratorOfMapOfVertexPnt2d;
 class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapIterator {
 	public:
@@ -592,28 +614,6 @@ class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapI
 		const TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
 		const TColgp_SequenceOfPnt2d & Value() const;
-
-};
-
-%nodefaultctor BRepTools_Quilt;
-class BRepTools_Quilt {
-	public:
-		%feature("autodoc", "1");
-		~BRepTools_Quilt();
-		%feature("autodoc", "1");
-		BRepTools_Quilt();
-		%feature("autodoc", "1");
-		void Bind(const TopoDS_Edge &Eold, const TopoDS_Edge &Enew);
-		%feature("autodoc", "1");
-		void Bind(const TopoDS_Vertex &Vold, const TopoDS_Vertex &Vnew);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsCopied(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Copy(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape Shells() const;
 
 };
 

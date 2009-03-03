@@ -36,13 +36,13 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<HLRTopoBRep_DSFiller.hxx>
 #include<HLRTopoBRep_Data.hxx>
 #include<HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData.hxx>
 #include<HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData.hxx>
 #include<HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData.hxx>
 #include<HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData.hxx>
 #include<HLRTopoBRep_DataMapOfShapeFaceData.hxx>
-#include<HLRTopoBRep_DSFiller.hxx>
 #include<HLRTopoBRep_FaceData.hxx>
 #include<HLRTopoBRep_FaceIsoLiner.hxx>
 #include<HLRTopoBRep_ListIteratorOfListOfVData.hxx>
@@ -58,13 +58,13 @@
 
 // Additional headers necessary for compilation.
 
+#include<HLRTopoBRep_DSFiller.hxx>
 #include<HLRTopoBRep_Data.hxx>
 #include<HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData.hxx>
 #include<HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData.hxx>
 #include<HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData.hxx>
 #include<HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData.hxx>
 #include<HLRTopoBRep_DataMapOfShapeFaceData.hxx>
-#include<HLRTopoBRep_DSFiller.hxx>
 #include<HLRTopoBRep_FaceData.hxx>
 #include<HLRTopoBRep_FaceIsoLiner.hxx>
 #include<HLRTopoBRep_ListIteratorOfListOfVData.hxx>

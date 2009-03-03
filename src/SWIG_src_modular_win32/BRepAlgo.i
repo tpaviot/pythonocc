@@ -676,6 +676,32 @@ class BRepAlgo_Image {
 
 };
 
+%nodefaultctor BRepAlgo_FaceRestrictor;
+class BRepAlgo_FaceRestrictor {
+	public:
+		%feature("autodoc", "1");
+		~BRepAlgo_FaceRestrictor();
+		%feature("autodoc", "1");
+		BRepAlgo_FaceRestrictor();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face &F, const Standard_Boolean Proj=0, const Standard_Boolean ControlOrientation=0);
+		%feature("autodoc", "1");
+		void Add(TopoDS_Wire & W);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TopoDS_Face Current() const;
+
+};
+
 %nodefaultctor BRepAlgo_BooleanOperations;
 class BRepAlgo_BooleanOperations {
 	public:
@@ -766,29 +792,43 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 
 };
 
-%nodefaultctor BRepAlgo_FaceRestrictor;
-class BRepAlgo_FaceRestrictor {
+%nodefaultctor BRepAlgo_Common;
+class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		~BRepAlgo_FaceRestrictor();
+		BRepAlgo_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 		%feature("autodoc", "1");
-		BRepAlgo_FaceRestrictor();
+		virtual		~BRepAlgo_Common();
+
+};
+
+%nodefaultctor BRepAlgo_DataMapOfShapeInterference;
+class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
+	public:
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F, const Standard_Boolean Proj=0, const Standard_Boolean ControlOrientation=0);
+		BRepAlgo_DataMapOfShapeInterference(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		void Add(TopoDS_Wire & W);
+		BRepAlgo_DataMapOfShapeInterference & Assign(const BRepAlgo_DataMapOfShapeInterference &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Perform();
+		~BRepAlgo_DataMapOfShapeInterference();
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_TopOpeBRepDS_Interference &I);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
-		void Next();
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
 		%feature("autodoc", "1");
-		TopoDS_Face Current() const;
+		const Handle_TopOpeBRepDS_Interference & Find(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Interference & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape &K);
 
 };
 
@@ -842,36 +882,6 @@ class BRepAlgo_SequenceOfSequenceOfInteger : public TCollection_BaseSequence {
 
 };
 
-%nodefaultctor BRepAlgo_DataMapOfShapeInterference;
-class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeInterference(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeInterference & Assign(const BRepAlgo_DataMapOfShapeInterference &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~BRepAlgo_DataMapOfShapeInterference();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_TopOpeBRepDS_Interference &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const Handle_TopOpeBRepDS_Interference & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Interference & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape &K);
-
-};
-
 %nodefaultctor BRepAlgo_DataMapOfShapeListOfInteger;
 class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 	public:
@@ -920,16 +930,6 @@ class BRepAlgo {
 
 };
 
-%nodefaultctor BRepAlgo_Common;
-class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
-		%feature("autodoc", "1");
-		virtual		~BRepAlgo_Common();
-
-};
-
 %nodefaultctor BRepAlgo_Cut;
 class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 	public:
@@ -937,24 +937,6 @@ class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 		BRepAlgo_Cut(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 		%feature("autodoc", "1");
 		virtual		~BRepAlgo_Cut();
-
-};
-
-%nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger;
-class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger();
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger();
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger(const BRepAlgo_DataMapOfShapeListOfInteger &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepAlgo_DataMapOfShapeListOfInteger &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Value() const;
 
 };
 
@@ -973,6 +955,24 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_Basic
 		const TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
 		const Standard_Boolean & Value() const;
+
+};
+
+%nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger;
+class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger();
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger();
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger(const BRepAlgo_DataMapOfShapeListOfInteger &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepAlgo_DataMapOfShapeListOfInteger &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Value() const;
 
 };
 

@@ -36,6 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc.hxx>
+#include<MeshAlgo.hxx>
 #include<MeshAlgo_CellFilter.hxx>
 #include<MeshAlgo_Circ.hxx>
 #include<MeshAlgo_CircleInspector.hxx>
@@ -46,8 +48,6 @@
 #include<MeshAlgo_Edge.hxx>
 #include<MeshAlgo_Triangle.hxx>
 #include<MeshAlgo_Vertex.hxx>
-#include<MeshAlgo.hxx>
-#include<Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc.hxx>
 
 // Additional headers necessary for compilation.
 

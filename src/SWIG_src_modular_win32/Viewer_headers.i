@@ -36,12 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<Viewer_BadValue.hxx>
-#include<Viewer_View.hxx>
-#include<Viewer_Viewer.hxx>
 #include<Handle_Viewer_BadValue.hxx>
 #include<Handle_Viewer_View.hxx>
 #include<Handle_Viewer_Viewer.hxx>
+#include<Viewer_BadValue.hxx>
+#include<Viewer_View.hxx>
+#include<Viewer_Viewer.hxx>
 
 // Additional headers necessary for compilation.
 

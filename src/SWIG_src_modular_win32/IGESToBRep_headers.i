@@ -36,22 +36,22 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_IGESToBRep_Actor.hxx>
+#include<Handle_IGESToBRep_AlgoContainer.hxx>
+#include<Handle_IGESToBRep_IGESBoundary.hxx>
+#include<Handle_IGESToBRep_ToolContainer.hxx>
+#include<IGESToBRep.hxx>
 #include<IGESToBRep_Actor.hxx>
 #include<IGESToBRep_AlgoContainer.hxx>
+#include<IGESToBRep_BRepEntity.hxx>
 #include<IGESToBRep_BasicCurve.hxx>
 #include<IGESToBRep_BasicSurface.hxx>
-#include<IGESToBRep_BRepEntity.hxx>
 #include<IGESToBRep_CurveAndSurface.hxx>
 #include<IGESToBRep_IGESBoundary.hxx>
 #include<IGESToBRep_Reader.hxx>
 #include<IGESToBRep_ToolContainer.hxx>
 #include<IGESToBRep_TopoCurve.hxx>
 #include<IGESToBRep_TopoSurface.hxx>
-#include<IGESToBRep.hxx>
-#include<Handle_IGESToBRep_Actor.hxx>
-#include<Handle_IGESToBRep_AlgoContainer.hxx>
-#include<Handle_IGESToBRep_IGESBoundary.hxx>
-#include<Handle_IGESToBRep_ToolContainer.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -60,11 +60,11 @@
 #include<IGESData_Array1OfIGESEntity.hxx>
 #include<IGESData_BasicEditor.hxx>
 #include<IGESData_ColorEntity.hxx>
-#include<IGESData_DefaultGeneral.hxx>
-#include<IGESData_DefaultSpecific.hxx>
 #include<IGESData_DefList.hxx>
 #include<IGESData_DefSwitch.hxx>
 #include<IGESData_DefType.hxx>
+#include<IGESData_DefaultGeneral.hxx>
+#include<IGESData_DefaultSpecific.hxx>
 #include<IGESData_DirChecker.hxx>
 #include<IGESData_DirPart.hxx>
 #include<IGESData_Dump.hxx>
@@ -137,27 +137,27 @@
 #include<Interface_FileReaderData.hxx>
 #include<Interface_FileReaderTool.hxx>
 #include<Interface_FloatWriter.hxx>
+#include<Interface_GTool.hxx>
 #include<Interface_GeneralLib.hxx>
 #include<Interface_GeneralModule.hxx>
 #include<Interface_GlobalNodeOfGeneralLib.hxx>
 #include<Interface_GlobalNodeOfReaderLib.hxx>
 #include<Interface_Graph.hxx>
 #include<Interface_GraphContent.hxx>
-#include<Interface_GTool.hxx>
 #include<Interface_HArray1OfHAsciiString.hxx>
 #include<Interface_HGraph.hxx>
 #include<Interface_HSequenceOfCheck.hxx>
 #include<Interface_IndexedMapNodeOfIndexedMapOfAsciiString.hxx>
 #include<Interface_IndexedMapOfAsciiString.hxx>
+#include<Interface_IntList.hxx>
+#include<Interface_IntVal.hxx>
 #include<Interface_InterfaceError.hxx>
 #include<Interface_InterfaceMismatch.hxx>
 #include<Interface_InterfaceModel.hxx>
-#include<Interface_IntList.hxx>
-#include<Interface_IntVal.hxx>
 #include<Interface_LineBuffer.hxx>
+#include<Interface_MSG.hxx>
 #include<Interface_Macros.hxx>
 #include<Interface_MapAsciiStringHasher.hxx>
-#include<Interface_MSG.hxx>
 #include<Interface_NodeOfGeneralLib.hxx>
 #include<Interface_NodeOfReaderLib.hxx>
 #include<Interface_ParamList.hxx>
@@ -167,16 +167,16 @@
 #include<Interface_ReaderLib.hxx>
 #include<Interface_ReaderModule.hxx>
 #include<Interface_ReportEntity.hxx>
+#include<Interface_STAT.hxx>
 #include<Interface_SequenceNodeOfSequenceOfCheck.hxx>
 #include<Interface_SequenceOfCheck.hxx>
 #include<Interface_ShareFlags.hxx>
 #include<Interface_ShareTool.hxx>
 #include<Interface_SignLabel.hxx>
 #include<Interface_SignType.hxx>
-#include<Interface_STAT.hxx>
 #include<Interface_Static.hxx>
-#include<Interface_Statics.hxx>
 #include<Interface_StaticSatisfies.hxx>
+#include<Interface_Statics.hxx>
 #include<Interface_Translates.hxx>
 #include<Interface_TypedValue.hxx>
 #include<Interface_UndefinedContent.hxx>
@@ -193,16 +193,16 @@
 #include<MoniTool_DataMapNodeOfDataMapOfTimer.hxx>
 #include<MoniTool_DataMapOfShapeTransient.hxx>
 #include<MoniTool_DataMapOfTimer.hxx>
-#include<MoniTool_Element.hxx>
 #include<MoniTool_ElemHasher.hxx>
+#include<MoniTool_Element.hxx>
 #include<MoniTool_HSequenceOfElement.hxx>
 #include<MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient.hxx>
 #include<MoniTool_IndexedDataMapOfShapeTransient.hxx>
 #include<MoniTool_IntVal.hxx>
-#include<MoniTool_Macros.hxx>
 #include<MoniTool_MTHasher.hxx>
-#include<MoniTool_Option.hxx>
+#include<MoniTool_Macros.hxx>
 #include<MoniTool_OptValue.hxx>
+#include<MoniTool_Option.hxx>
 #include<MoniTool_Profile.hxx>
 #include<MoniTool_RealVal.hxx>
 #include<MoniTool_SequenceNodeOfSequenceOfElement.hxx>
@@ -218,11 +218,11 @@
 #include<MoniTool_ValueSatisfies.hxx>
 #include<MoniTool_ValueType.hxx>
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

@@ -96,6 +96,11 @@ Standard_Real & function transformation
 %include EDL_headers.i
 
 
+enum EDL_ParameterMode {
+	EDL_VARIABLE,
+	EDL_STRING,
+	};
+
 enum EDL_Error {
 	EDL_NORMAL,
 	EDL_SYNTAXERROR,
@@ -109,11 +114,6 @@ enum EDL_Error {
 	EDL_FILENOTOPENED,
 	EDL_FILENOTFOUND,
 	EDL_TOOMANYINCLUDELEVEL,
-	};
-
-enum EDL_ParameterMode {
-	EDL_VARIABLE,
-	EDL_STRING,
 	};
 
 

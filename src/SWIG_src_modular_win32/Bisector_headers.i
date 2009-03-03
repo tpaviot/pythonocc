@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Bisector.hxx>
 #include<Bisector_Bisec.hxx>
 #include<Bisector_BisecAna.hxx>
 #include<Bisector_BisecCC.hxx>
@@ -46,7 +47,6 @@
 #include<Bisector_Inter.hxx>
 #include<Bisector_PointOnBis.hxx>
 #include<Bisector_PolyBis.hxx>
-#include<Bisector.hxx>
 #include<Handle_Bisector_BisecAna.hxx>
 #include<Handle_Bisector_BisecCC.hxx>
 #include<Handle_Bisector_BisecPC.hxx>
@@ -55,11 +55,11 @@
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

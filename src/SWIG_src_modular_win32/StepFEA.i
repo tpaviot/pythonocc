@@ -840,27 +840,6 @@ class Handle_StepFEA_Curve3dElementRepresentation : public Handle_StepFEA_Elemen
 	}
 };
 
-%nodefaultctor Handle_StepFEA_FeaShellBendingStiffness;
-class Handle_StepFEA_FeaShellBendingStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepFEA_FeaShellBendingStiffness();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellBendingStiffness();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellBendingStiffness(const Handle_StepFEA_FeaShellBendingStiffness &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellBendingStiffness(const StepFEA_FeaShellBendingStiffness *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellBendingStiffness const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_FeaShellBendingStiffness {
-	StepFEA_FeaShellBendingStiffness* GetObject() {
-	return (StepFEA_FeaShellBendingStiffness*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepFEA_FeaMassDensity;
 class Handle_StepFEA_FeaMassDensity : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -900,6 +879,48 @@ class Handle_StepFEA_HSequenceOfElementRepresentation : public Handle_MMgt_TShar
 %extend Handle_StepFEA_HSequenceOfElementRepresentation {
 	StepFEA_HSequenceOfElementRepresentation* GetObject() {
 	return (StepFEA_HSequenceOfElementRepresentation*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepFEA_FeaModelDefinition;
+class Handle_StepFEA_FeaModelDefinition : public Handle_StepRepr_ShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepFEA_FeaModelDefinition();
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModelDefinition();
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModelDefinition(const Handle_StepFEA_FeaModelDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModelDefinition(const StepFEA_FeaModelDefinition *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModelDefinition const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_FeaModelDefinition {
+	StepFEA_FeaModelDefinition* GetObject() {
+	return (StepFEA_FeaModelDefinition*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepFEA_NodeSet;
+class Handle_StepFEA_NodeSet : public Handle_StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepFEA_NodeSet();
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeSet();
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeSet(const Handle_StepFEA_NodeSet &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeSet(const StepFEA_NodeSet *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeSet const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_NodeSet {
+	StepFEA_NodeSet* GetObject() {
+	return (StepFEA_NodeSet*)$self->Access();
 	}
 };
 
@@ -1113,6 +1134,27 @@ class Handle_StepFEA_HSequenceOfCurve3dElementProperty : public Handle_MMgt_TSha
 	}
 };
 
+%nodefaultctor Handle_StepFEA_FeaShellBendingStiffness;
+class Handle_StepFEA_FeaShellBendingStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepFEA_FeaShellBendingStiffness();
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellBendingStiffness();
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellBendingStiffness(const Handle_StepFEA_FeaShellBendingStiffness &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellBendingStiffness(const StepFEA_FeaShellBendingStiffness *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellBendingStiffness const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_FeaShellBendingStiffness {
+	StepFEA_FeaShellBendingStiffness* GetObject() {
+	return (StepFEA_FeaShellBendingStiffness*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepFEA_ParametricCurve3dElementCoordinateSystem;
 class Handle_StepFEA_ParametricCurve3dElementCoordinateSystem : public Handle_StepFEA_FeaRepresentationItem {
 	public:
@@ -1239,27 +1281,6 @@ class Handle_StepFEA_Curve3dElementProperty : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_StepFEA_FeaModelDefinition;
-class Handle_StepFEA_FeaModelDefinition : public Handle_StepRepr_ShapeAspect {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepFEA_FeaModelDefinition();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModelDefinition();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModelDefinition(const Handle_StepFEA_FeaModelDefinition &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModelDefinition(const StepFEA_FeaModelDefinition *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModelDefinition const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_FeaModelDefinition {
-	StepFEA_FeaModelDefinition* GetObject() {
-	return (StepFEA_FeaModelDefinition*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepFEA_FeaAxis2Placement3d;
 class Handle_StepFEA_FeaAxis2Placement3d : public Handle_StepGeom_Axis2Placement3d {
 	public:
@@ -1383,27 +1404,6 @@ class Handle_StepFEA_ParametricCurve3dElementCoordinateDirection : public Handle
 %extend Handle_StepFEA_ParametricCurve3dElementCoordinateDirection {
 	StepFEA_ParametricCurve3dElementCoordinateDirection* GetObject() {
 	return (StepFEA_ParametricCurve3dElementCoordinateDirection*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepFEA_NodeSet;
-class Handle_StepFEA_NodeSet : public Handle_StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepFEA_NodeSet();
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeSet();
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeSet(const Handle_StepFEA_NodeSet &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeSet(const StepFEA_NodeSet *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeSet const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_NodeSet {
-	StepFEA_NodeSet* GetObject() {
-	return (StepFEA_NodeSet*)$self->Access();
 	}
 };
 
@@ -1714,6 +1714,33 @@ class StepFEA_ElementGeometricRelationship : public MMgt_TShared {
 %extend StepFEA_ElementGeometricRelationship {
 	Handle_StepFEA_ElementGeometricRelationship GetHandle() {
 	return *(Handle_StepFEA_ElementGeometricRelationship*) &$self;
+	}
+};
+
+%nodefaultctor StepFEA_FeaSurfaceSectionGeometricRelationship;
+class StepFEA_FeaSurfaceSectionGeometricRelationship : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaSurfaceSectionGeometricRelationship();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepElement_SurfaceSection &aSectionRef, const Handle_StepElement_AnalysisItemWithinRepresentation &aItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceSection SectionRef() const;
+		%feature("autodoc", "1");
+		void SetSectionRef(const Handle_StepElement_SurfaceSection &SectionRef);
+		%feature("autodoc", "1");
+		Handle_StepElement_AnalysisItemWithinRepresentation Item() const;
+		%feature("autodoc", "1");
+		void SetItem(const Handle_StepElement_AnalysisItemWithinRepresentation &Item);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepFEA_FeaSurfaceSectionGeometricRelationship();
+
+};
+%extend StepFEA_FeaSurfaceSectionGeometricRelationship {
+	Handle_StepFEA_FeaSurfaceSectionGeometricRelationship GetHandle() {
+	return *(Handle_StepFEA_FeaSurfaceSectionGeometricRelationship*) &$self;
 	}
 };
 
@@ -2031,6 +2058,43 @@ class StepFEA_SequenceOfNodeRepresentation : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+
+%nodefaultctor StepFEA_HArray1OfCurveElementInterval;
+class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_CurveElementInterval &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_CurveElementInterval &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_CurveElementInterval &Value);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_CurveElementInterval & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementInterval & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfCurveElementInterval & Array1() const;
+		%feature("autodoc", "1");
+		StepFEA_Array1OfCurveElementInterval & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepFEA_HArray1OfCurveElementInterval();
+
+};
+%extend StepFEA_HArray1OfCurveElementInterval {
+	Handle_StepFEA_HArray1OfCurveElementInterval GetHandle() {
+	return *(Handle_StepFEA_HArray1OfCurveElementInterval*) &$self;
+	}
 };
 
 %nodefaultctor StepFEA_SequenceOfElementRepresentation;
@@ -2567,50 +2631,6 @@ class StepFEA_Array1OfCurveElementEndRelease {
 
 };
 
-%nodefaultctor StepFEA_FeaGroup;
-class StepFEA_FeaGroup : public StepBasic_Group {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaGroup();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Handle_TCollection_HAsciiString &aGroup_Description, const Handle_StepFEA_FeaModel &aModelRef);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel ModelRef() const;
-		%feature("autodoc", "1");
-		void SetModelRef(const Handle_StepFEA_FeaModel &ModelRef);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_FeaGroup();
-
-};
-%extend StepFEA_FeaGroup {
-	Handle_StepFEA_FeaGroup GetHandle() {
-	return *(Handle_StepFEA_FeaGroup*) &$self;
-	}
-};
-
-%nodefaultctor StepFEA_NodeGroup;
-class StepFEA_NodeGroup : public StepFEA_FeaGroup {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_NodeGroup();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Handle_TCollection_HAsciiString &aGroup_Description, const Handle_StepFEA_FeaModel &aFeaGroup_ModelRef, const Handle_StepFEA_HArray1OfNodeRepresentation &aNodes);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfNodeRepresentation Nodes() const;
-		%feature("autodoc", "1");
-		void SetNodes(const Handle_StepFEA_HArray1OfNodeRepresentation &Nodes);
-		%feature("autodoc", "1");
-		virtual		~StepFEA_NodeGroup();
-
-};
-%extend StepFEA_NodeGroup {
-	Handle_StepFEA_NodeGroup GetHandle() {
-	return *(Handle_StepFEA_NodeGroup*) &$self;
-	}
-};
-
 %nodefaultctor StepFEA_SymmetricTensor43dMember;
 class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
 	public:
@@ -2707,43 +2727,6 @@ class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentat
 	}
 };
 
-%nodefaultctor StepFEA_HArray1OfCurveElementInterval;
-class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_CurveElementInterval &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_CurveElementInterval &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_CurveElementInterval &Value);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_CurveElementInterval & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementInterval & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfCurveElementInterval & Array1() const;
-		%feature("autodoc", "1");
-		StepFEA_Array1OfCurveElementInterval & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_HArray1OfCurveElementInterval();
-
-};
-%extend StepFEA_HArray1OfCurveElementInterval {
-	Handle_StepFEA_HArray1OfCurveElementInterval GetHandle() {
-	return *(Handle_StepFEA_HArray1OfCurveElementInterval*) &$self;
-	}
-};
-
 %nodefaultctor StepFEA_ElementOrElementGroup;
 class StepFEA_ElementOrElementGroup : public StepData_SelectType {
 	public:
@@ -2758,6 +2741,45 @@ class StepFEA_ElementOrElementGroup : public StepData_SelectType {
 		%feature("autodoc", "1");
 		virtual		~StepFEA_ElementOrElementGroup();
 
+};
+
+%nodefaultctor StepFEA_Curve3dElementProperty;
+class StepFEA_Curve3dElementProperty : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_Curve3dElementProperty();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aPropertyId, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepFEA_HArray1OfCurveElementInterval &aIntervalDefinitions, const Handle_StepFEA_HArray1OfCurveElementEndOffset &aEndOffsets, const Handle_StepFEA_HArray1OfCurveElementEndRelease &aEndReleases);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString PropertyId() const;
+		%feature("autodoc", "1");
+		void SetPropertyId(const Handle_TCollection_HAsciiString &PropertyId);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfCurveElementInterval IntervalDefinitions() const;
+		%feature("autodoc", "1");
+		void SetIntervalDefinitions(const Handle_StepFEA_HArray1OfCurveElementInterval &IntervalDefinitions);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfCurveElementEndOffset EndOffsets() const;
+		%feature("autodoc", "1");
+		void SetEndOffsets(const Handle_StepFEA_HArray1OfCurveElementEndOffset &EndOffsets);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfCurveElementEndRelease EndReleases() const;
+		%feature("autodoc", "1");
+		void SetEndReleases(const Handle_StepFEA_HArray1OfCurveElementEndRelease &EndReleases);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepFEA_Curve3dElementProperty();
+
+};
+%extend StepFEA_Curve3dElementProperty {
+	Handle_StepFEA_Curve3dElementProperty GetHandle() {
+	return *(Handle_StepFEA_Curve3dElementProperty*) &$self;
+	}
 };
 
 %nodefaultctor StepFEA_FeaShellMembraneStiffness;
@@ -2840,23 +2862,6 @@ class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRe
 	}
 };
 
-%nodefaultctor StepFEA_DummyNode;
-class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_DummyNode();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_DummyNode();
-
-};
-%extend StepFEA_DummyNode {
-	Handle_StepFEA_DummyNode GetHandle() {
-	return *(Handle_StepFEA_DummyNode*) &$self;
-	}
-};
-
 %nodefaultctor StepFEA_Array1OfCurveElementInterval;
 class StepFEA_Array1OfCurveElementInterval {
 	public:
@@ -2891,6 +2896,29 @@ class StepFEA_Array1OfCurveElementInterval {
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementInterval & operator()(const Standard_Integer Index);
 
+};
+
+%nodefaultctor StepFEA_FeaGroup;
+class StepFEA_FeaGroup : public StepBasic_Group {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaGroup();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Handle_TCollection_HAsciiString &aGroup_Description, const Handle_StepFEA_FeaModel &aModelRef);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModel ModelRef() const;
+		%feature("autodoc", "1");
+		void SetModelRef(const Handle_StepFEA_FeaModel &ModelRef);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepFEA_FeaGroup();
+
+};
+%extend StepFEA_FeaGroup {
+	Handle_StepFEA_FeaGroup GetHandle() {
+	return *(Handle_StepFEA_FeaGroup*) &$self;
+	}
 };
 
 %nodefaultctor StepFEA_CurveElementEndCoordinateSystem;
@@ -3076,33 +3104,6 @@ class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepre
 %extend StepFEA_ParametricCurve3dElementCoordinateSystem {
 	Handle_StepFEA_ParametricCurve3dElementCoordinateSystem GetHandle() {
 	return *(Handle_StepFEA_ParametricCurve3dElementCoordinateSystem*) &$self;
-	}
-};
-
-%nodefaultctor StepFEA_FeaSurfaceSectionGeometricRelationship;
-class StepFEA_FeaSurfaceSectionGeometricRelationship : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaSurfaceSectionGeometricRelationship();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepElement_SurfaceSection &aSectionRef, const Handle_StepElement_AnalysisItemWithinRepresentation &aItem);
-		%feature("autodoc", "1");
-		Handle_StepElement_SurfaceSection SectionRef() const;
-		%feature("autodoc", "1");
-		void SetSectionRef(const Handle_StepElement_SurfaceSection &SectionRef);
-		%feature("autodoc", "1");
-		Handle_StepElement_AnalysisItemWithinRepresentation Item() const;
-		%feature("autodoc", "1");
-		void SetItem(const Handle_StepElement_AnalysisItemWithinRepresentation &Item);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_FeaSurfaceSectionGeometricRelationship();
-
-};
-%extend StepFEA_FeaSurfaceSectionGeometricRelationship {
-	Handle_StepFEA_FeaSurfaceSectionGeometricRelationship GetHandle() {
-	return *(Handle_StepFEA_FeaSurfaceSectionGeometricRelationship*) &$self;
 	}
 };
 
@@ -3397,6 +3398,29 @@ class StepFEA_GeometricNode : public StepFEA_NodeRepresentation {
 	}
 };
 
+%nodefaultctor StepFEA_NodeGroup;
+class StepFEA_NodeGroup : public StepFEA_FeaGroup {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_NodeGroup();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Handle_TCollection_HAsciiString &aGroup_Description, const Handle_StepFEA_FeaModel &aFeaGroup_ModelRef, const Handle_StepFEA_HArray1OfNodeRepresentation &aNodes);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfNodeRepresentation Nodes() const;
+		%feature("autodoc", "1");
+		void SetNodes(const Handle_StepFEA_HArray1OfNodeRepresentation &Nodes);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepFEA_NodeGroup();
+
+};
+%extend StepFEA_NodeGroup {
+	Handle_StepFEA_NodeGroup GetHandle() {
+	return *(Handle_StepFEA_NodeGroup*) &$self;
+	}
+};
+
 %nodefaultctor StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
 class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -3529,45 +3553,6 @@ class StepFEA_HSequenceOfElementGeometricRelationship : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor StepFEA_Curve3dElementProperty;
-class StepFEA_Curve3dElementProperty : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_Curve3dElementProperty();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aPropertyId, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepFEA_HArray1OfCurveElementInterval &aIntervalDefinitions, const Handle_StepFEA_HArray1OfCurveElementEndOffset &aEndOffsets, const Handle_StepFEA_HArray1OfCurveElementEndRelease &aEndReleases);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString PropertyId() const;
-		%feature("autodoc", "1");
-		void SetPropertyId(const Handle_TCollection_HAsciiString &PropertyId);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfCurveElementInterval IntervalDefinitions() const;
-		%feature("autodoc", "1");
-		void SetIntervalDefinitions(const Handle_StepFEA_HArray1OfCurveElementInterval &IntervalDefinitions);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfCurveElementEndOffset EndOffsets() const;
-		%feature("autodoc", "1");
-		void SetEndOffsets(const Handle_StepFEA_HArray1OfCurveElementEndOffset &EndOffsets);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfCurveElementEndRelease EndReleases() const;
-		%feature("autodoc", "1");
-		void SetEndReleases(const Handle_StepFEA_HArray1OfCurveElementEndRelease &EndReleases);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_Curve3dElementProperty();
-
-};
-%extend StepFEA_Curve3dElementProperty {
-	Handle_StepFEA_Curve3dElementProperty GetHandle() {
-	return *(Handle_StepFEA_Curve3dElementProperty*) &$self;
-	}
-};
-
 %nodefaultctor StepFEA_SymmetricTensor22d;
 class StepFEA_SymmetricTensor22d : public StepData_SelectType {
 	public:
@@ -3580,6 +3565,23 @@ class StepFEA_SymmetricTensor22d : public StepData_SelectType {
 		%feature("autodoc", "1");
 		virtual		~StepFEA_SymmetricTensor22d();
 
+};
+
+%nodefaultctor StepFEA_DummyNode;
+class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_DummyNode();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepFEA_DummyNode();
+
+};
+%extend StepFEA_DummyNode {
+	Handle_StepFEA_DummyNode GetHandle() {
+	return *(Handle_StepFEA_DummyNode*) &$self;
+	}
 };
 
 %nodefaultctor StepFEA_FeaModel;

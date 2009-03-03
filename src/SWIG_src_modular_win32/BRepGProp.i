@@ -214,6 +214,46 @@ class BRepGProp_Vinert : public GProp_GProps {
 
 };
 
+%nodefaultctor BRepGProp_EdgeTool;
+class BRepGProp_EdgeTool {
+	public:
+		%feature("autodoc", "1");
+		~BRepGProp_EdgeTool();
+		%feature("autodoc", "1");
+		BRepGProp_EdgeTool();
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Integer IntegrationOrder(const BRepAdaptor_Curve &C);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const BRepAdaptor_Curve &C, const Standard_Real U);
+		%feature("autodoc", "1");
+		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const BRepAdaptor_Curve &C, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		void Intervals(const BRepAdaptor_Curve &C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
+
+};
+
+%nodefaultctor BRepGProp_UFunctionOfVinertGK;
+class BRepGProp_UFunctionOfVinertGK : public math_Function {
+	public:
+		%feature("autodoc", "1");
+		~BRepGProp_UFunctionOfVinertGK();
+		%feature("autodoc", "1");
+		BRepGProp_UFunctionOfVinertGK(const BRepGProp_Face &theSurface, const gp_Pnt &theVertex, const Standard_Boolean IsByPoint, const Standard_Address theCoeffs);
+		%feature("autodoc", "1");
+		void SetValueType(const GProp_ValueType theType);
+		%feature("autodoc", "1");
+		void SetVParam(const Standard_Real theVParam);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+
+};
+
 %nodefaultctor BRepGProp_Cinert;
 class BRepGProp_Cinert : public GProp_GProps {
 	public:
@@ -333,45 +373,5 @@ class BRepGProp_Face {
 		void GetUKnots(const Standard_Real theUMin, const Standard_Real theUMax, Handle_TColStd_HArray1OfReal & theUKnots) const;
 		%feature("autodoc", "1");
 		void GetTKnots(const Standard_Real theTMin, const Standard_Real theTMax, Handle_TColStd_HArray1OfReal & theTKnots) const;
-
-};
-
-%nodefaultctor BRepGProp_EdgeTool;
-class BRepGProp_EdgeTool {
-	public:
-		%feature("autodoc", "1");
-		~BRepGProp_EdgeTool();
-		%feature("autodoc", "1");
-		BRepGProp_EdgeTool();
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Integer IntegrationOrder(const BRepAdaptor_Curve &C);
-		%feature("autodoc", "1");
-		gp_Pnt Value(const BRepAdaptor_Curve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const BRepAdaptor_Curve &C, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		void Intervals(const BRepAdaptor_Curve &C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
-
-};
-
-%nodefaultctor BRepGProp_UFunctionOfVinertGK;
-class BRepGProp_UFunctionOfVinertGK : public math_Function {
-	public:
-		%feature("autodoc", "1");
-		~BRepGProp_UFunctionOfVinertGK();
-		%feature("autodoc", "1");
-		BRepGProp_UFunctionOfVinertGK(const BRepGProp_Face &theSurface, const gp_Pnt &theVertex, const Standard_Boolean IsByPoint, const Standard_Address theCoeffs);
-		%feature("autodoc", "1");
-		void SetValueType(const GProp_ValueType theType);
-		%feature("autodoc", "1");
-		void SetVParam(const Standard_Real theVParam);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
 };

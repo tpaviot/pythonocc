@@ -170,6 +170,9 @@
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
+#include <TopAbs_Orientation.hxx>
+#include <TopAbs_ShapeEnum.hxx>
+#include <TopAbs_State.hxx>
 #include <GeomAbs_BSplKnotDistribution.hxx>
 #include <GeomAbs_CurveForm.hxx>
 #include <GeomAbs_CurveType.hxx>
@@ -179,13 +182,10 @@
 #include <GeomAbs_SurfaceForm.hxx>
 #include <GeomAbs_SurfaceType.hxx>
 #include <GeomAbs_UVSense.hxx>
-#include <TopAbs_Orientation.hxx>
-#include <TopAbs_ShapeEnum.hxx>
-#include <TopAbs_State.hxx>
 %};
 
 %import TCollection.i
 %import Adaptor3d.i
 %import Standard.i
-%import GeomAbs.i
 %import TopAbs.i
+%import GeomAbs.i

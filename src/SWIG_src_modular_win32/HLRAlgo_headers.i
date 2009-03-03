@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<HLRAlgo.hxx>
 #include<HLRAlgo_Array1OfPHDat.hxx>
 #include<HLRAlgo_Array1OfPINod.hxx>
 #include<HLRAlgo_Array1OfPISeg.hxx>
@@ -43,8 +44,8 @@
 #include<HLRAlgo_BiPoint.hxx>
 #include<HLRAlgo_Coincidence.hxx>
 #include<HLRAlgo_EdgeIterator.hxx>
-#include<HLRAlgo_EdgesBlock.hxx>
 #include<HLRAlgo_EdgeStatus.hxx>
+#include<HLRAlgo_EdgesBlock.hxx>
 #include<HLRAlgo_HArray1OfPHDat.hxx>
 #include<HLRAlgo_HArray1OfPINod.hxx>
 #include<HLRAlgo_HArray1OfPISeg.hxx>
@@ -67,7 +68,6 @@
 #include<HLRAlgo_Projector.hxx>
 #include<HLRAlgo_TriangleData.hxx>
 #include<HLRAlgo_WiresBlock.hxx>
-#include<HLRAlgo.hxx>
 #include<Handle_HLRAlgo_EdgesBlock.hxx>
 #include<Handle_HLRAlgo_HArray1OfPHDat.hxx>
 #include<Handle_HLRAlgo_HArray1OfPINod.hxx>

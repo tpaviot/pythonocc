@@ -2656,31 +2656,6 @@ class MDataStd_IntPackedMapRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
-%nodefaultctor MDataStd_ExtStringListStorageDriver;
-class MDataStd_ExtStringListStorageDriver : public MDF_ASDriver {
-	public:
-		%feature("autodoc", "1");
-		MDataStd_ExtStringListStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VersionNumber() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type SourceType() const;
-		%feature("autodoc", "1");
-		virtual		Handle_PDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ExtStringListStorageDriver();
-
-};
-%extend MDataStd_ExtStringListStorageDriver {
-	Handle_MDataStd_ExtStringListStorageDriver GetHandle() {
-	return *(Handle_MDataStd_ExtStringListStorageDriver*) &$self;
-	}
-};
-
 %nodefaultctor MDataStd_NamedDataStorageDriver;
 class MDataStd_NamedDataStorageDriver : public MDF_ASDriver {
 	public:
@@ -2978,6 +2953,31 @@ class MDataStd_RealListStorageDriver : public MDF_ASDriver {
 %extend MDataStd_RealListStorageDriver {
 	Handle_MDataStd_RealListStorageDriver GetHandle() {
 	return *(Handle_MDataStd_RealListStorageDriver*) &$self;
+	}
+};
+
+%nodefaultctor MDataStd_ExtStringListStorageDriver;
+class MDataStd_ExtStringListStorageDriver : public MDF_ASDriver {
+	public:
+		%feature("autodoc", "1");
+		MDataStd_ExtStringListStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer VersionNumber() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type SourceType() const;
+		%feature("autodoc", "1");
+		virtual		Handle_PDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~MDataStd_ExtStringListStorageDriver();
+
+};
+%extend MDataStd_ExtStringListStorageDriver {
+	Handle_MDataStd_ExtStringListStorageDriver GetHandle() {
+	return *(Handle_MDataStd_ExtStringListStorageDriver*) &$self;
 	}
 };
 

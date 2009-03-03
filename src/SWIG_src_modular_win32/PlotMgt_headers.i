@@ -36,7 +36,18 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<PlotMgt_fill.hxx>
+#include<Handle_PlotMgt_HListOfMFTFonts.hxx>
+#include<Handle_PlotMgt_HListOfMFTSizes.hxx>
+#include<Handle_PlotMgt_HListOfPlotterParameter.hxx>
+#include<Handle_PlotMgt_ImageDriver.hxx>
+#include<Handle_PlotMgt_Plotter.hxx>
+#include<Handle_PlotMgt_PlotterAccessError.hxx>
+#include<Handle_PlotMgt_PlotterDefinitionError.hxx>
+#include<Handle_PlotMgt_PlotterDriver.hxx>
+#include<Handle_PlotMgt_PlotterParameter.hxx>
+#include<Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter.hxx>
+#include<Handle_PlotMgt_TextManager.hxx>
+#include<PlotMgt.hxx>
 #include<PlotMgt_HListOfMFTFonts.hxx>
 #include<PlotMgt_HListOfMFTSizes.hxx>
 #include<PlotMgt_HListOfPlotterParameter.hxx>
@@ -59,18 +70,7 @@
 #include<PlotMgt_TypeOfOrigin.hxx>
 #include<PlotMgt_TypeOfPlotterParameter.hxx>
 #include<PlotMgt_TypeOfQuality.hxx>
-#include<PlotMgt.hxx>
-#include<Handle_PlotMgt_HListOfMFTFonts.hxx>
-#include<Handle_PlotMgt_HListOfMFTSizes.hxx>
-#include<Handle_PlotMgt_HListOfPlotterParameter.hxx>
-#include<Handle_PlotMgt_ImageDriver.hxx>
-#include<Handle_PlotMgt_Plotter.hxx>
-#include<Handle_PlotMgt_PlotterAccessError.hxx>
-#include<Handle_PlotMgt_PlotterDefinitionError.hxx>
-#include<Handle_PlotMgt_PlotterDriver.hxx>
-#include<Handle_PlotMgt_PlotterParameter.hxx>
-#include<Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter.hxx>
-#include<Handle_PlotMgt_TextManager.hxx>
+#include<PlotMgt_fill.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -114,36 +114,36 @@
 #include<OSD_LockType.hxx>
 #include<OSD_MailBox.hxx>
 #include<OSD_OEMType.hxx>
-#include<OSD_OpenMode.hxx>
 #include<OSD_OSDError.hxx>
+#include<OSD_OpenMode.hxx>
+#include<OSD_PThread.hxx>
 #include<OSD_Path.hxx>
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
-#include<OSD_PThread.hxx>
 #include<OSD_Real2String.hxx>
-#include<OSD_Semaphore.hxx>
-#include<OSD_SharedLibrary.hxx>
-#include<OSD_SharedMemory.hxx>
 #include<OSD_SIGBUS.hxx>
 #include<OSD_SIGHUP.hxx>
 #include<OSD_SIGILL.hxx>
 #include<OSD_SIGINT.hxx>
 #include<OSD_SIGKILL.hxx>
-#include<OSD_Signal.hxx>
-#include<OSD_Signals.hxx>
 #include<OSD_SIGQUIT.hxx>
 #include<OSD_SIGSEGV.hxx>
 #include<OSD_SIGSYS.hxx>
+#include<OSD_Semaphore.hxx>
+#include<OSD_SharedLibrary.hxx>
+#include<OSD_SharedMemory.hxx>
+#include<OSD_Signal.hxx>
+#include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
-#include<OSD_WhoAmI.hxx>
 #include<OSD_WNT.hxx>
 #include<OSD_WNT_1.hxx>
 #include<OSD_WNT_BREAK.hxx>
+#include<OSD_WhoAmI.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -36,6 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TopLoc_Datum3D.hxx>
+#include<Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation.hxx>
+#include<Handle_TopLoc_SListNodeOfSListOfItemLocation.hxx>
+#include<Handle_TopLoc_StdMapNodeOfMapOfLocation.hxx>
 #include<TopLoc_Datum3D.hxx>
 #include<TopLoc_IndexedMapNodeOfIndexedMapOfLocation.hxx>
 #include<TopLoc_IndexedMapOfLocation.hxx>
@@ -48,10 +52,6 @@
 #include<TopLoc_SListOfItemLocation.hxx>
 #include<TopLoc_StdMapNodeOfMapOfLocation.hxx>
 #include<TopLoc_TrsfPtr.hxx>
-#include<Handle_TopLoc_Datum3D.hxx>
-#include<Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation.hxx>
-#include<Handle_TopLoc_SListNodeOfSListOfItemLocation.hxx>
-#include<Handle_TopLoc_StdMapNodeOfMapOfLocation.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -40,14 +40,14 @@
 #include <Adaptor2d_Line2d.hxx>
 #include <Handle_Adaptor2d_HCurve2d.hxx>
 #include <Handle_Adaptor2d_HLine2d.hxx>
-#include <MMgt_StackManager.hxx>
-#include <MMgt_TShared.hxx>
-#include <Handle_MMgt_TShared.hxx>
 #include <Handle_TCollection_AVLBaseNode.hxx>
 #include <Handle_TCollection_HAsciiString.hxx>
 #include <Handle_TCollection_HExtendedString.hxx>
 #include <Handle_TCollection_MapNode.hxx>
 #include <Handle_TCollection_SeqNode.hxx>
+#include <MMgt_StackManager.hxx>
+#include <MMgt_TShared.hxx>
+#include <Handle_MMgt_TShared.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -250,8 +250,8 @@
 %};
 
 %import Adaptor2d.i
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import Standard.i
 %import GeomAbs.i
 %import Adaptor3d.i

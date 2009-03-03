@@ -36,20 +36,20 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BinMNaming.hxx>
 #include<BinMNaming_NamedShapeDriver.hxx>
 #include<BinMNaming_NamingDriver.hxx>
-#include<BinMNaming.hxx>
 #include<Handle_BinMNaming_NamedShapeDriver.hxx>
 #include<Handle_BinMNaming_NamingDriver.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

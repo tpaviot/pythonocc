@@ -147,6 +147,15 @@
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
+#include <GeomAbs_BSplKnotDistribution.hxx>
+#include <GeomAbs_CurveForm.hxx>
+#include <GeomAbs_CurveType.hxx>
+#include <GeomAbs_IsoType.hxx>
+#include <GeomAbs_JoinType.hxx>
+#include <GeomAbs_Shape.hxx>
+#include <GeomAbs_SurfaceForm.hxx>
+#include <GeomAbs_SurfaceType.hxx>
+#include <GeomAbs_UVSense.hxx>
 #include <math_Array1OfValueAndWeight.hxx>
 #include <math_BFGS.hxx>
 #include <math_BissecNewton.hxx>
@@ -205,18 +214,9 @@
 #include <math_Vector.hxx>
 #include <Handle_math_NotSquare.hxx>
 #include <Handle_math_SingularMatrix.hxx>
-#include <GeomAbs_BSplKnotDistribution.hxx>
-#include <GeomAbs_CurveForm.hxx>
-#include <GeomAbs_CurveType.hxx>
-#include <GeomAbs_IsoType.hxx>
-#include <GeomAbs_JoinType.hxx>
-#include <GeomAbs_Shape.hxx>
-#include <GeomAbs_SurfaceForm.hxx>
-#include <GeomAbs_SurfaceType.hxx>
-#include <GeomAbs_UVSense.hxx>
 %};
 
 %import GProp.i
 %import Standard.i
-%import math.i
 %import GeomAbs.i
+%import math.i

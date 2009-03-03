@@ -125,48 +125,6 @@ class Handle_Select3D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 	}
 };
 
-%nodefaultctor Handle_Select3D_SensitiveTriangulation;
-class Handle_Select3D_SensitiveTriangulation : public Handle_Select3D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveTriangulation();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveTriangulation();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveTriangulation(const Handle_Select3D_SensitiveTriangulation &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveTriangulation(const Select3D_SensitiveTriangulation *anItem);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Select3D_SensitiveTriangulation {
-	Select3D_SensitiveTriangulation* GetObject() {
-	return (Select3D_SensitiveTriangulation*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Select3D_SensitiveBox;
-class Handle_Select3D_SensitiveBox : public Handle_Select3D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveBox();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveBox();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveBox(const Handle_Select3D_SensitiveBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveBox(const Select3D_SensitiveBox *anItem);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveBox const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Select3D_SensitiveBox {
-	Select3D_SensitiveBox* GetObject() {
-	return (Select3D_SensitiveBox*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Select3D_SensitivePoly;
 class Handle_Select3D_SensitivePoly : public Handle_Select3D_SensitiveEntity {
 	public:
@@ -206,6 +164,48 @@ class Handle_Select3D_SensitiveCurve : public Handle_Select3D_SensitivePoly {
 %extend Handle_Select3D_SensitiveCurve {
 	Select3D_SensitiveCurve* GetObject() {
 	return (Select3D_SensitiveCurve*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Select3D_SensitiveCircle;
+class Handle_Select3D_SensitiveCircle : public Handle_Select3D_SensitivePoly {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Select3D_SensitiveCircle();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveCircle();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveCircle(const Handle_Select3D_SensitiveCircle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveCircle(const Select3D_SensitiveCircle *anItem);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveCircle const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Select3D_SensitiveCircle {
+	Select3D_SensitiveCircle* GetObject() {
+	return (Select3D_SensitiveCircle*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Select3D_SensitiveBox;
+class Handle_Select3D_SensitiveBox : public Handle_Select3D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Select3D_SensitiveBox();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveBox();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveBox(const Handle_Select3D_SensitiveBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveBox(const Select3D_SensitiveBox *anItem);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveBox const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Select3D_SensitiveBox {
+	Select3D_SensitiveBox* GetObject() {
+	return (Select3D_SensitiveBox*)$self->Access();
 	}
 };
 
@@ -314,66 +314,24 @@ class Handle_Select3D_ListNodeOfListOfSensitive : public Handle_TCollection_MapN
 	}
 };
 
-%nodefaultctor Handle_Select3D_SensitiveGroup;
-class Handle_Select3D_SensitiveGroup : public Handle_Select3D_SensitiveEntity {
+%nodefaultctor Handle_Select3D_SensitiveTriangulation;
+class Handle_Select3D_SensitiveTriangulation : public Handle_Select3D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveGroup();
+		~Handle_Select3D_SensitiveTriangulation();
 		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveGroup();
+		Handle_Select3D_SensitiveTriangulation();
 		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveGroup(const Handle_Select3D_SensitiveGroup &aHandle);
+		Handle_Select3D_SensitiveTriangulation(const Handle_Select3D_SensitiveTriangulation &aHandle);
 		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveGroup(const Select3D_SensitiveGroup *anItem);
+		Handle_Select3D_SensitiveTriangulation(const Select3D_SensitiveTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveGroup const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Select3D_SensitiveTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Select3D_SensitiveGroup {
-	Select3D_SensitiveGroup* GetObject() {
-	return (Select3D_SensitiveGroup*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Select3D_SensitiveCircle;
-class Handle_Select3D_SensitiveCircle : public Handle_Select3D_SensitivePoly {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveCircle();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveCircle();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveCircle(const Handle_Select3D_SensitiveCircle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveCircle(const Select3D_SensitiveCircle *anItem);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveCircle const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Select3D_SensitiveCircle {
-	Select3D_SensitiveCircle* GetObject() {
-	return (Select3D_SensitiveCircle*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Select3D_SensitiveSegment;
-class Handle_Select3D_SensitiveSegment : public Handle_Select3D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveSegment();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveSegment();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveSegment(const Handle_Select3D_SensitiveSegment &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveSegment(const Select3D_SensitiveSegment *anItem);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveSegment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Select3D_SensitiveSegment {
-	Select3D_SensitiveSegment* GetObject() {
-	return (Select3D_SensitiveSegment*)$self->Access();
+%extend Handle_Select3D_SensitiveTriangulation {
+	Select3D_SensitiveTriangulation* GetObject() {
+	return (Select3D_SensitiveTriangulation*)$self->Access();
 	}
 };
 
@@ -395,6 +353,48 @@ class Handle_Select3D_SensitiveFace : public Handle_Select3D_SensitivePoly {
 %extend Handle_Select3D_SensitiveFace {
 	Select3D_SensitiveFace* GetObject() {
 	return (Select3D_SensitiveFace*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Select3D_SensitiveGroup;
+class Handle_Select3D_SensitiveGroup : public Handle_Select3D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Select3D_SensitiveGroup();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveGroup();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveGroup(const Handle_Select3D_SensitiveGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveGroup(const Select3D_SensitiveGroup *anItem);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveGroup const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Select3D_SensitiveGroup {
+	Select3D_SensitiveGroup* GetObject() {
+	return (Select3D_SensitiveGroup*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Select3D_SensitiveSegment;
+class Handle_Select3D_SensitiveSegment : public Handle_Select3D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Select3D_SensitiveSegment();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveSegment();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveSegment(const Handle_Select3D_SensitiveSegment &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveSegment(const Select3D_SensitiveSegment *anItem);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveSegment const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Select3D_SensitiveSegment {
+	Select3D_SensitiveSegment* GetObject() {
+	return (Select3D_SensitiveSegment*)$self->Access();
 	}
 };
 
@@ -488,6 +488,41 @@ class Select3D_SensitiveBox : public Select3D_SensitiveEntity {
 %extend Select3D_SensitiveBox {
 	Handle_Select3D_SensitiveBox GetHandle() {
 	return *(Handle_Select3D_SensitiveBox*) &$self;
+	}
+};
+
+%nodefaultctor Select3D_SensitivePoint;
+class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		Select3D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &Point);
+		%feature("autodoc", "1");
+		virtual		void Project(const Select3D_Projector &aProjector);
+		%feature("autodoc", "1");
+		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
+		%feature("autodoc", "1");
+		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		%feature("autodoc", "1");
+		gp_Pnt Point() const;
+		%feature("autodoc", "1");
+		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Select3D_SensitivePoint();
+
+};
+%extend Select3D_SensitivePoint {
+	Handle_Select3D_SensitivePoint GetHandle() {
+	return *(Handle_Select3D_SensitivePoint*) &$self;
 	}
 };
 
@@ -821,6 +856,26 @@ class Select3D_ListOfSensitive {
 
 };
 
+%nodefaultctor Select3D_ListIteratorOfListOfSensitiveTriangle;
+class Select3D_ListIteratorOfListOfSensitiveTriangle {
+	public:
+		%feature("autodoc", "1");
+		~Select3D_ListIteratorOfListOfSensitiveTriangle();
+		%feature("autodoc", "1");
+		Select3D_ListIteratorOfListOfSensitiveTriangle();
+		%feature("autodoc", "1");
+		Select3D_ListIteratorOfListOfSensitiveTriangle(const Select3D_ListOfSensitiveTriangle &L);
+		%feature("autodoc", "1");
+		void Initialize(const Select3D_ListOfSensitiveTriangle &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitiveTriangle & Value() const;
+
+};
+
 %nodefaultctor Select3D_Pnt2d;
 class Select3D_Pnt2d {
 	public:
@@ -1120,61 +1175,6 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 	Handle_Select3D_SensitiveCurve GetHandle() {
 	return *(Handle_Select3D_SensitiveCurve*) &$self;
 	}
-};
-
-%nodefaultctor Select3D_SensitivePoint;
-class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Select3D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &Point);
-		%feature("autodoc", "1");
-		virtual		void Project(const Select3D_Projector &aProjector);
-		%feature("autodoc", "1");
-		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
-		%feature("autodoc", "1");
-		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
-		%feature("autodoc", "1");
-		gp_Pnt Point() const;
-		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitivePoint();
-
-};
-%extend Select3D_SensitivePoint {
-	Handle_Select3D_SensitivePoint GetHandle() {
-	return *(Handle_Select3D_SensitivePoint*) &$self;
-	}
-};
-
-%nodefaultctor Select3D_ListIteratorOfListOfSensitiveTriangle;
-class Select3D_ListIteratorOfListOfSensitiveTriangle {
-	public:
-		%feature("autodoc", "1");
-		~Select3D_ListIteratorOfListOfSensitiveTriangle();
-		%feature("autodoc", "1");
-		Select3D_ListIteratorOfListOfSensitiveTriangle();
-		%feature("autodoc", "1");
-		Select3D_ListIteratorOfListOfSensitiveTriangle(const Select3D_ListOfSensitiveTriangle &L);
-		%feature("autodoc", "1");
-		void Initialize(const Select3D_ListOfSensitiveTriangle &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitiveTriangle & Value() const;
-
 };
 
 %nodefaultctor Select3D_ListNodeOfListOfSensitive;

@@ -203,27 +203,6 @@ class Handle_HLRBRep_PolyAlgo : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_HLRBRep_ListNodeOfListOfBPoint;
-class Handle_HLRBRep_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_HLRBRep_ListNodeOfListOfBPoint();
-		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPoint();
-		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPoint(const Handle_HLRBRep_ListNodeOfListOfBPoint &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPoint(const HLRBRep_ListNodeOfListOfBPoint *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPoint const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRBRep_ListNodeOfListOfBPoint {
-	HLRBRep_ListNodeOfListOfBPoint* GetObject() {
-	return (HLRBRep_ListNodeOfListOfBPoint*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
 class Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public Handle_TCollection_SeqNode {
 	public:
@@ -242,6 +221,27 @@ class Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfC
 %extend Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
 	HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter* GetObject() {
 	return (HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_HLRBRep_ListNodeOfListOfBPoint;
+class Handle_HLRBRep_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_HLRBRep_ListNodeOfListOfBPoint();
+		%feature("autodoc", "1");
+		Handle_HLRBRep_ListNodeOfListOfBPoint();
+		%feature("autodoc", "1");
+		Handle_HLRBRep_ListNodeOfListOfBPoint(const Handle_HLRBRep_ListNodeOfListOfBPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRBRep_ListNodeOfListOfBPoint(const HLRBRep_ListNodeOfListOfBPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRBRep_ListNodeOfListOfBPoint const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRBRep_ListNodeOfListOfBPoint {
+	HLRBRep_ListNodeOfListOfBPoint* GetObject() {
+	return (HLRBRep_ListNodeOfListOfBPoint*)$self->Access();
 	}
 };
 
@@ -357,17 +357,59 @@ class HLRBRep_BCurveTool {
 
 };
 
-%nodefaultctor HLRBRep_TheIntPCurvePCurveOfCInter;
-class HLRBRep_TheIntPCurvePCurveOfCInter : public IntRes2d_Intersection {
+%nodefaultctor HLRBRep_CInter;
+class HLRBRep_CInter : public IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_TheIntPCurvePCurveOfCInter();
+		~HLRBRep_CInter();
 		%feature("autodoc", "1");
-		HLRBRep_TheIntPCurvePCurveOfCInter();
+		HLRBRep_CInter();
 		%feature("autodoc", "1");
-		void Perform(const Standard_Address &Curve1, const IntRes2d_Domain &Domain1, const Standard_Address &Curve2, const IntRes2d_Domain &Domain2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_CInter(const Standard_Address &C, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const Standard_Address &Curve1, const IntRes2d_Domain &Domain1, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_CInter(const Standard_Address &C, const IntRes2d_Domain &D, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		HLRBRep_CInter(const Standard_Address &C1, const Standard_Address &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		HLRBRep_CInter(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Address &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		HLRBRep_CInter(const Standard_Address &C1, const Standard_Address &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		HLRBRep_CInter(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Address &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Address &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Address &C1, const Standard_Address &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Address &C1, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Address &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Address &C1, const Standard_Address &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntRes2d_Domain ComputeDomain(const Standard_Address &C1, const Standard_Real TolDomain) const;
+
+};
+
+%nodefaultctor HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter;
+class HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter : public Intf_Interference {
+	public:
+		%feature("autodoc", "1");
+		~HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter();
+		%feature("autodoc", "1");
+		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter();
+		%feature("autodoc", "1");
+		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje2);
+		%feature("autodoc", "1");
+		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje);
+		%feature("autodoc", "1");
+		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje2);
+		%feature("autodoc", "1");
+		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje);
+		%feature("autodoc", "1");
+		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
 
 };
 
@@ -473,64 +515,17 @@ class HLRBRep_SLProps {
 
 };
 
-%nodefaultctor HLRBRep_SequenceNodeOfSeqOfShapeBounds;
-class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
+%nodefaultctor HLRBRep_TheIntPCurvePCurveOfCInter;
+class HLRBRep_TheIntPCurvePCurveOfCInter : public IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_SequenceNodeOfSeqOfShapeBounds(const HLRBRep_ShapeBounds &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		~HLRBRep_TheIntPCurvePCurveOfCInter();
 		%feature("autodoc", "1");
-		HLRBRep_ShapeBounds & Value() const;
+		HLRBRep_TheIntPCurvePCurveOfCInter();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Perform(const Standard_Address &Curve1, const IntRes2d_Domain &Domain1, const Standard_Address &Curve2, const IntRes2d_Domain &Domain2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		virtual		~HLRBRep_SequenceNodeOfSeqOfShapeBounds();
-
-};
-%extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
-	Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds GetHandle() {
-	return *(Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds*) &$self;
-	}
-};
-
-%nodefaultctor HLRBRep_EdgeIList;
-class HLRBRep_EdgeIList {
-	public:
-		%feature("autodoc", "1");
-		~HLRBRep_EdgeIList();
-		%feature("autodoc", "1");
-		HLRBRep_EdgeIList();
-		%feature("autodoc", "1");
-		void AddInterference(HLRAlgo_InterferenceList & IL, const HLRAlgo_Interference &I, const HLRBRep_EdgeInterferenceTool &T);
-		%feature("autodoc", "1");
-		void ProcessComplex(HLRAlgo_InterferenceList & IL, const HLRBRep_EdgeInterferenceTool &T);
-
-};
-
-%nodefaultctor HLRBRep_VertexList;
-class HLRBRep_VertexList {
-	public:
-		%feature("autodoc", "1");
-		~HLRBRep_VertexList();
-		%feature("autodoc", "1");
-		HLRBRep_VertexList(const HLRBRep_EdgeInterferenceTool &T, const HLRAlgo_ListIteratorOfInterferenceList &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const HLRAlgo_Intersection & Current() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBoundary() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInterference() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Transition() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation BoundaryTransition() const;
+		void Perform(const Standard_Address &Curve1, const IntRes2d_Domain &Domain1, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
 
@@ -611,6 +606,129 @@ class HLRBRep_AreaLimit : public MMgt_TShared {
 	Handle_HLRBRep_AreaLimit GetHandle() {
 	return *(Handle_HLRBRep_AreaLimit*) &$self;
 	}
+};
+
+%nodefaultctor HLRBRep_PolyAlgo;
+class HLRBRep_PolyAlgo : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_PolyAlgo();
+		%feature("autodoc", "1");
+		HLRBRep_PolyAlgo(const Handle_HLRBRep_PolyAlgo &A);
+		%feature("autodoc", "1");
+		HLRBRep_PolyAlgo(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		Standard_Integer NbShapes() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & Shape(const Standard_Integer I);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer Index(const TopoDS_Shape &S) const;
+		%feature("autodoc", "1");
+		void Load(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyAlgo Algo() const;
+		%feature("autodoc", "1");
+		const HLRAlgo_Projector & Projector() const;
+		%feature("autodoc", "1");
+		void Projector(const HLRAlgo_Projector &P);
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		void Angle(const Standard_Real Ang);
+		%feature("autodoc", "1");
+		Standard_Real TolAngular() const;
+		%feature("autodoc", "1");
+		void TolAngular(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Real TolCoef() const;
+		%feature("autodoc", "1");
+		void TolCoef(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Update();
+		%feature("autodoc", "1");
+		void InitHide();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreHide() const;
+		%feature("autodoc", "1");
+		void NextHide();
+		%feature("autodoc", "1");
+		void Hide(Standard_Address & Coordinates, HLRAlgo_EdgeStatus & status, TopoDS_Shape & S, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
+		%feature("autodoc", "1");
+		void InitShow();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreShow() const;
+		%feature("autodoc", "1");
+		void NextShow();
+		%feature("autodoc", "1");
+		void Show(Standard_Address & Coordinates, TopoDS_Shape & S, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
+		%feature("autodoc", "1");
+		TopoDS_Shape OutLinedShape(const TopoDS_Shape &S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Debug() const;
+		%feature("autodoc", "1");
+		void Debug(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~HLRBRep_PolyAlgo();
+
+};
+%extend HLRBRep_PolyAlgo {
+	Handle_HLRBRep_PolyAlgo GetHandle() {
+	return *(Handle_HLRBRep_PolyAlgo*) &$self;
+	}
+};
+
+%nodefaultctor HLRBRep_SeqOfShapeBounds;
+class HLRBRep_SeqOfShapeBounds : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_SeqOfShapeBounds();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~HLRBRep_SeqOfShapeBounds();
+		%feature("autodoc", "1");
+		const HLRBRep_SeqOfShapeBounds & Assign(const HLRBRep_SeqOfShapeBounds &Other);
+		%feature("autodoc", "1");
+		void Append(const HLRBRep_ShapeBounds &T);
+		%feature("autodoc", "1");
+		void Append(HLRBRep_SeqOfShapeBounds & S);
+		%feature("autodoc", "1");
+		void Prepend(const HLRBRep_ShapeBounds &T);
+		%feature("autodoc", "1");
+		void Prepend(HLRBRep_SeqOfShapeBounds & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const HLRBRep_ShapeBounds &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, HLRBRep_SeqOfShapeBounds & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const HLRBRep_ShapeBounds &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, HLRBRep_SeqOfShapeBounds & S);
+		%feature("autodoc", "1");
+		const HLRBRep_ShapeBounds & First() const;
+		%feature("autodoc", "1");
+		const HLRBRep_ShapeBounds & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, HLRBRep_SeqOfShapeBounds & S);
+		%feature("autodoc", "1");
+		const HLRBRep_ShapeBounds & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const HLRBRep_ShapeBounds & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const HLRBRep_ShapeBounds &I);
+		%feature("autodoc", "1");
+		HLRBRep_ShapeBounds & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		HLRBRep_ShapeBounds & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
 };
 
 %nodefaultctor HLRBRep_TheProjPCurOfCInter;
@@ -733,115 +851,6 @@ class HLRBRep_BSurfaceTool {
 		%feature("autodoc", "1");
 		Standard_Integer NbSamplesV(const BRepAdaptor_Surface &S, const Standard_Real v1, const Standard_Real v2);
 
-};
-
-%nodefaultctor HLRBRep_CInter;
-class HLRBRep_CInter : public IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		~HLRBRep_CInter();
-		%feature("autodoc", "1");
-		HLRBRep_CInter();
-		%feature("autodoc", "1");
-		HLRBRep_CInter(const Standard_Address &C, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		HLRBRep_CInter(const Standard_Address &C, const IntRes2d_Domain &D, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		HLRBRep_CInter(const Standard_Address &C1, const Standard_Address &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		HLRBRep_CInter(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Address &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		HLRBRep_CInter(const Standard_Address &C1, const Standard_Address &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		HLRBRep_CInter(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Address &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Address &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Address &C1, const Standard_Address &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Address &C1, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Address &C1, const IntRes2d_Domain &D1, const Standard_Address &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Address &C1, const Standard_Address &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntRes2d_Domain ComputeDomain(const Standard_Address &C1, const Standard_Real TolDomain) const;
-
-};
-
-%nodefaultctor HLRBRep_PolyAlgo;
-class HLRBRep_PolyAlgo : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_PolyAlgo();
-		%feature("autodoc", "1");
-		HLRBRep_PolyAlgo(const Handle_HLRBRep_PolyAlgo &A);
-		%feature("autodoc", "1");
-		HLRBRep_PolyAlgo(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		Standard_Integer NbShapes() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & Shape(const Standard_Integer I);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer Index(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyAlgo Algo() const;
-		%feature("autodoc", "1");
-		const HLRAlgo_Projector & Projector() const;
-		%feature("autodoc", "1");
-		void Projector(const HLRAlgo_Projector &P);
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		void Angle(const Standard_Real Ang);
-		%feature("autodoc", "1");
-		Standard_Real TolAngular() const;
-		%feature("autodoc", "1");
-		void TolAngular(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Real TolCoef() const;
-		%feature("autodoc", "1");
-		void TolCoef(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Update();
-		%feature("autodoc", "1");
-		void InitHide();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreHide() const;
-		%feature("autodoc", "1");
-		void NextHide();
-		%feature("autodoc", "1");
-		void Hide(Standard_Address & Coordinates, HLRAlgo_EdgeStatus & status, TopoDS_Shape & S, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
-		%feature("autodoc", "1");
-		void InitShow();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreShow() const;
-		%feature("autodoc", "1");
-		void NextShow();
-		%feature("autodoc", "1");
-		void Show(Standard_Address & Coordinates, TopoDS_Shape & S, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
-		%feature("autodoc", "1");
-		TopoDS_Shape OutLinedShape(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Debug() const;
-		%feature("autodoc", "1");
-		void Debug(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_PolyAlgo();
-
-};
-%extend HLRBRep_PolyAlgo {
-	Handle_HLRBRep_PolyAlgo GetHandle() {
-	return *(Handle_HLRBRep_PolyAlgo*) &$self;
-	}
 };
 
 %nodefaultctor HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter;
@@ -1069,53 +1078,23 @@ class HLRBRep_InternalAlgo : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
-class HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public TCollection_BaseSequence {
+%nodefaultctor HLRBRep_InterCSurf;
+class HLRBRep_InterCSurf : public IntCurveSurface_Intersection {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
+		~HLRBRep_InterCSurf();
 		%feature("autodoc", "1");
-		void Clear();
+		HLRBRep_InterCSurf();
 		%feature("autodoc", "1");
-		~HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
+		void Perform(const gp_Lin &Curve, const Standard_Address &Surface);
 		%feature("autodoc", "1");
-		const HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & Assign(const HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter &Other);
+		void Perform(const gp_Lin &Curve, const HLRBRep_ThePolygonOfInterCSurf &Polygon, const Standard_Address &Surface);
 		%feature("autodoc", "1");
-		void Append(const Extrema_POnCurv2d &T);
+		void Perform(const gp_Lin &Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
 		%feature("autodoc", "1");
-		void Append(HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
+		void Perform(const gp_Lin &Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron, Bnd_BoundSortBox & BndBSB);
 		%feature("autodoc", "1");
-		void Prepend(const Extrema_POnCurv2d &T);
-		%feature("autodoc", "1");
-		void Prepend(HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv2d &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv2d &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & First() const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Extrema_POnCurv2d &I);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		void Perform(const gp_Lin &Curve, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
 
 };
 
@@ -1152,6 +1131,58 @@ class HLRBRep_EdgeInterferenceTool {
 		Standard_Boolean SameVertexAndInterference(const HLRAlgo_Interference &I) const;
 		%feature("autodoc", "1");
 		void InterferenceBoundaryGeometry(const HLRAlgo_Interference &I, gp_Dir & Tang, gp_Dir & Norm, Standard_Real &OutValue) const;
+
+};
+
+%nodefaultctor HLRBRep_LineTool;
+class HLRBRep_LineTool {
+	public:
+		%feature("autodoc", "1");
+		~HLRBRep_LineTool();
+		%feature("autodoc", "1");
+		HLRBRep_LineTool();
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const gp_Lin &arg0, const GeomAbs_Shape arg1);
+		%feature("autodoc", "1");
+		void Intervals(const gp_Lin &arg0, TColStd_Array1OfReal & arg1, const GeomAbs_Shape arg2);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const gp_Lin &C, const Standard_Real U);
+		%feature("autodoc", "1");
+		void D0(const gp_Lin &C, const Standard_Real U, gp_Pnt & P);
+		%feature("autodoc", "1");
+		void D1(const gp_Lin &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V);
+		%feature("autodoc", "1");
+		void D2(const gp_Lin &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
+		%feature("autodoc", "1");
+		void D3(const gp_Lin &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		%feature("autodoc", "1");
+		gp_Vec DN(const gp_Lin &C, const Standard_Real U, const Standard_Integer N);
+		%feature("autodoc", "1");
+		Standard_Real Resolution(const gp_Lin &arg0, const Standard_Real R3D);
+		%feature("autodoc", "1");
+		gp_Lin Line(const gp_Lin &C);
+		%feature("autodoc", "1");
+		void Poles(const gp_Lin &arg0, TColgp_Array1OfPnt & arg1);
+		%feature("autodoc", "1");
+		void PolesAndWeights(const gp_Lin &arg0, TColgp_Array1OfPnt & arg1, TColStd_Array1OfReal & arg2);
+		%feature("autodoc", "1");
+		void KnotsAndMultiplicities(const gp_Lin &arg0, TColStd_Array1OfReal & arg1, TColStd_Array1OfInteger & arg2);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples(const gp_Lin &arg0, const Standard_Real arg1, const Standard_Real arg2);
+		%feature("autodoc", "1");
+		void SamplePars(const gp_Lin &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
+
+};
+
+%nodefaultctor HLRBRep_ShapeToHLR;
+class HLRBRep_ShapeToHLR {
+	public:
+		%feature("autodoc", "1");
+		~HLRBRep_ShapeToHLR();
+		%feature("autodoc", "1");
+		HLRBRep_ShapeToHLR();
+		%feature("autodoc", "1");
+		Handle_HLRBRep_Data Load(const Handle_HLRTopoBRep_OutLiner &S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
 
 };
 
@@ -1248,6 +1279,28 @@ class HLRBRep_ThePolygonToolOfInterCSurf {
 
 };
 
+%nodefaultctor HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter;
+class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
+	public:
+		%feature("autodoc", "1");
+		~HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter();
+		%feature("autodoc", "1");
+		HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter();
+		%feature("autodoc", "1");
+		const Bnd_Box2d & Bounding(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
+		%feature("autodoc", "1");
+		Standard_Real DeflectionOverEstimation(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
+		%feature("autodoc", "1");
+		Standard_Boolean Closed(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
+		%feature("autodoc", "1");
+		const gp_Pnt2d & BeginOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const gp_Pnt2d & EndOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
+
+};
+
 %nodefaultctor HLRBRep_ListIteratorOfListOfBPoint;
 class HLRBRep_ListIteratorOfListOfBPoint {
 	public:
@@ -1301,138 +1354,6 @@ class HLRBRep_BiPnt2D {
 		Standard_Boolean IntLine() const;
 		%feature("autodoc", "1");
 		void IntLine(const Standard_Boolean B);
-
-};
-
-%nodefaultctor HLRBRep_FaceData;
-class HLRBRep_FaceData {
-	public:
-		%feature("autodoc", "1");
-		~HLRBRep_FaceData();
-		%feature("autodoc", "1");
-		HLRBRep_FaceData();
-		%feature("autodoc", "1");
-		void Set(const TopoDS_Face &FG, const TopAbs_Orientation Or, const Standard_Boolean Cl, const Standard_Integer NW);
-		%feature("autodoc", "1");
-		void SetWire(const Standard_Integer WI, const Standard_Integer NE);
-		%feature("autodoc", "1");
-		void SetWEdge(const Standard_Integer WI, const Standard_Integer EWI, const Standard_Integer EI, const TopAbs_Orientation Or, const Standard_Boolean OutL, const Standard_Boolean Inte, const Standard_Boolean Dble, const Standard_Boolean IsoL);
-		%feature("autodoc", "1");
-		Standard_Boolean Selected() const;
-		%feature("autodoc", "1");
-		void Selected(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Back() const;
-		%feature("autodoc", "1");
-		void Back(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Side() const;
-		%feature("autodoc", "1");
-		void Side(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Closed() const;
-		%feature("autodoc", "1");
-		void Closed(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Hiding() const;
-		%feature("autodoc", "1");
-		void Hiding(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Simple() const;
-		%feature("autodoc", "1");
-		void Simple(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Cut() const;
-		%feature("autodoc", "1");
-		void Cut(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean WithOutL() const;
-		%feature("autodoc", "1");
-		void WithOutL(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Plane() const;
-		%feature("autodoc", "1");
-		void Plane(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Cylinder() const;
-		%feature("autodoc", "1");
-		void Cylinder(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Cone() const;
-		%feature("autodoc", "1");
-		void Cone(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Sphere() const;
-		%feature("autodoc", "1");
-		void Sphere(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Torus() const;
-		%feature("autodoc", "1");
-		void Torus(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Real Size() const;
-		%feature("autodoc", "1");
-		void Size(const Standard_Real S);
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-		%feature("autodoc", "1");
-		void Orientation(const TopAbs_Orientation O);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_WiresBlock & Wires();
-		%feature("autodoc", "1");
-		HLRBRep_Surface & Geometry();
-		%feature("autodoc", "1");
-		Standard_ShortReal Tolerance() const;
-
-};
-
-%nodefaultctor HLRBRep_SeqOfShapeBounds;
-class HLRBRep_SeqOfShapeBounds : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_SeqOfShapeBounds();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~HLRBRep_SeqOfShapeBounds();
-		%feature("autodoc", "1");
-		const HLRBRep_SeqOfShapeBounds & Assign(const HLRBRep_SeqOfShapeBounds &Other);
-		%feature("autodoc", "1");
-		void Append(const HLRBRep_ShapeBounds &T);
-		%feature("autodoc", "1");
-		void Append(HLRBRep_SeqOfShapeBounds & S);
-		%feature("autodoc", "1");
-		void Prepend(const HLRBRep_ShapeBounds &T);
-		%feature("autodoc", "1");
-		void Prepend(HLRBRep_SeqOfShapeBounds & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const HLRBRep_ShapeBounds &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, HLRBRep_SeqOfShapeBounds & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const HLRBRep_ShapeBounds &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, HLRBRep_SeqOfShapeBounds & S);
-		%feature("autodoc", "1");
-		const HLRBRep_ShapeBounds & First() const;
-		%feature("autodoc", "1");
-		const HLRBRep_ShapeBounds & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, HLRBRep_SeqOfShapeBounds & S);
-		%feature("autodoc", "1");
-		const HLRBRep_ShapeBounds & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const HLRBRep_ShapeBounds & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HLRBRep_ShapeBounds &I);
-		%feature("autodoc", "1");
-		HLRBRep_ShapeBounds & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		HLRBRep_ShapeBounds & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
 
@@ -1564,22 +1485,6 @@ class HLRBRep_Intersector {
 
 };
 
-%nodefaultctor HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter;
-class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool &IT, const Standard_Address &PC);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter();
-
-};
-
 %nodefaultctor HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf;
 class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_FunctionWithDerivative {
 	public:
@@ -1596,57 +1501,23 @@ class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_Function
 
 };
 
-%nodefaultctor HLRBRep_Hider;
-class HLRBRep_Hider {
+%nodefaultctor HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
+class HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter : public IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_Hider();
+		~HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter();
 		%feature("autodoc", "1");
-		HLRBRep_Hider(const Handle_HLRBRep_Data &DS);
+		HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter();
 		%feature("autodoc", "1");
-		void OwnHiding(const Standard_Integer FI);
+		HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool &ITool, const IntRes2d_Domain &Dom1, const Standard_Address &PCurve, const IntRes2d_Domain &Dom2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Hide(const Standard_Integer FI, BRepTopAdaptor_MapOfShapeTool & MST);
-
-};
-
-%nodefaultctor HLRBRep_LineTool;
-class HLRBRep_LineTool {
-	public:
+		void Perform(const IntCurve_IConicTool &ITool, const IntRes2d_Domain &Dom1, const Standard_Address &PCurve, const IntRes2d_Domain &Dom2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		~HLRBRep_LineTool();
+		Standard_Real FindU(const Standard_Real parameter, gp_Pnt2d & point, const Standard_Address &TheParCurev, const IntCurve_IConicTool &IntCurve_IConicTool) const;
 		%feature("autodoc", "1");
-		HLRBRep_LineTool();
+		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &ParCurve, const IntRes2d_Domain &TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const gp_Lin &arg0, const GeomAbs_Shape arg1);
-		%feature("autodoc", "1");
-		void Intervals(const gp_Lin &arg0, TColStd_Array1OfReal & arg1, const GeomAbs_Shape arg2);
-		%feature("autodoc", "1");
-		gp_Pnt Value(const gp_Lin &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		void D0(const gp_Lin &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc", "1");
-		void D1(const gp_Lin &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V);
-		%feature("autodoc", "1");
-		void D2(const gp_Lin &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
-		%feature("autodoc", "1");
-		void D3(const gp_Lin &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
-		%feature("autodoc", "1");
-		gp_Vec DN(const gp_Lin &C, const Standard_Real U, const Standard_Integer N);
-		%feature("autodoc", "1");
-		Standard_Real Resolution(const gp_Lin &arg0, const Standard_Real R3D);
-		%feature("autodoc", "1");
-		gp_Lin Line(const gp_Lin &C);
-		%feature("autodoc", "1");
-		void Poles(const gp_Lin &arg0, TColgp_Array1OfPnt & arg1);
-		%feature("autodoc", "1");
-		void PolesAndWeights(const gp_Lin &arg0, TColgp_Array1OfPnt & arg1, TColStd_Array1OfReal & arg2);
-		%feature("autodoc", "1");
-		void KnotsAndMultiplicities(const gp_Lin &arg0, TColStd_Array1OfReal & arg1, TColStd_Array1OfInteger & arg2);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const gp_Lin &arg0, const Standard_Real arg1, const Standard_Real arg2);
-		%feature("autodoc", "1");
-		void SamplePars(const gp_Lin &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
+		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer & NbResultats, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };
 
@@ -1716,26 +1587,6 @@ class HLRBRep_IntConicCurveOfCInter : public IntRes2d_Intersection {
 
 };
 
-%nodefaultctor HLRBRep_InterCSurf;
-class HLRBRep_InterCSurf : public IntCurveSurface_Intersection {
-	public:
-		%feature("autodoc", "1");
-		~HLRBRep_InterCSurf();
-		%feature("autodoc", "1");
-		HLRBRep_InterCSurf();
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const Standard_Address &Surface);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const HLRBRep_ThePolygonOfInterCSurf &Polygon, const Standard_Address &Surface);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron, Bnd_BoundSortBox & BndBSB);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
-
-};
-
 %nodefaultctor HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
 class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
 	public:
@@ -1778,6 +1629,56 @@ class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
 
 };
 
+%nodefaultctor HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
+class HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
+		%feature("autodoc", "1");
+		const HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & Assign(const HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter &Other);
+		%feature("autodoc", "1");
+		void Append(const Extrema_POnCurv2d &T);
+		%feature("autodoc", "1");
+		void Append(HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
+		%feature("autodoc", "1");
+		void Prepend(const Extrema_POnCurv2d &T);
+		%feature("autodoc", "1");
+		void Prepend(HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv2d &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv2d &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & First() const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Extrema_POnCurv2d &I);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+
 %nodefaultctor HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter;
 class HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
 	public:
@@ -1785,6 +1686,54 @@ class HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
 		~HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter();
 		%feature("autodoc", "1");
 		HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter();
+
+};
+
+%nodefaultctor HLRBRep_PolyHLRToShape;
+class HLRBRep_PolyHLRToShape {
+	public:
+		%feature("autodoc", "1");
+		~HLRBRep_PolyHLRToShape();
+		%feature("autodoc", "1");
+		HLRBRep_PolyHLRToShape();
+		%feature("autodoc", "1");
+		void Update(const Handle_HLRBRep_PolyAlgo &A);
+		%feature("autodoc", "1");
+		void Show();
+		%feature("autodoc", "1");
+		void Hide();
+		%feature("autodoc", "1");
+		TopoDS_Shape VCompound();
+		%feature("autodoc", "1");
+		TopoDS_Shape VCompound(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Shape Rg1LineVCompound();
+		%feature("autodoc", "1");
+		TopoDS_Shape Rg1LineVCompound(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Shape RgNLineVCompound();
+		%feature("autodoc", "1");
+		TopoDS_Shape RgNLineVCompound(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Shape OutLineVCompound();
+		%feature("autodoc", "1");
+		TopoDS_Shape OutLineVCompound(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Shape HCompound();
+		%feature("autodoc", "1");
+		TopoDS_Shape HCompound(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Shape Rg1LineHCompound();
+		%feature("autodoc", "1");
+		TopoDS_Shape Rg1LineHCompound(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Shape RgNLineHCompound();
+		%feature("autodoc", "1");
+		TopoDS_Shape RgNLineHCompound(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Shape OutLineHCompound();
+		%feature("autodoc", "1");
+		TopoDS_Shape OutLineHCompound(const TopoDS_Shape &S);
 
 };
 
@@ -1834,6 +1783,26 @@ class HLRBRep_ListOfBPnt2D {
 
 };
 
+%nodefaultctor HLRBRep_ListIteratorOfListOfBPnt2D;
+class HLRBRep_ListIteratorOfListOfBPnt2D {
+	public:
+		%feature("autodoc", "1");
+		~HLRBRep_ListIteratorOfListOfBPnt2D();
+		%feature("autodoc", "1");
+		HLRBRep_ListIteratorOfListOfBPnt2D();
+		%feature("autodoc", "1");
+		HLRBRep_ListIteratorOfListOfBPnt2D(const HLRBRep_ListOfBPnt2D &L);
+		%feature("autodoc", "1");
+		void Initialize(const HLRBRep_ListOfBPnt2D &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		HLRBRep_BiPnt2D & Value() const;
+
+};
+
 %nodefaultctor HLRBRep_Array1OfEData;
 class HLRBRep_Array1OfEData {
 	public:
@@ -1870,23 +1839,27 @@ class HLRBRep_Array1OfEData {
 
 };
 
-%nodefaultctor HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter;
-class HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter : public math_FunctionSetWithDerivatives {
+%nodefaultctor HLRBRep_CLPropsATool;
+class HLRBRep_CLPropsATool {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter(const Standard_Address &curve1, const Standard_Address &curve2);
+		~HLRBRep_CLPropsATool();
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
+		HLRBRep_CLPropsATool();
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
+		void Value(const Standard_Address A, const Standard_Real U, gp_Pnt2d & P);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		void D1(const Standard_Address A, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		void D2(const Standard_Address A, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		void D3(const Standard_Address A, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
 		%feature("autodoc", "1");
-		virtual		~HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter();
+		Standard_Integer Continuity(const Standard_Address arg0);
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const Standard_Address A);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const Standard_Address A);
 
 };
 
@@ -2039,48 +2012,6 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 	}
 };
 
-%nodefaultctor HLRBRep_SLPropsATool;
-class HLRBRep_SLPropsATool {
-	public:
-		%feature("autodoc", "1");
-		~HLRBRep_SLPropsATool();
-		%feature("autodoc", "1");
-		HLRBRep_SLPropsATool();
-		%feature("autodoc", "1");
-		void Value(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		void D1(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
-		%feature("autodoc", "1");
-		void D2(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
-		%feature("autodoc", "1");
-		gp_Vec DN(const Standard_Address A, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-		%feature("autodoc", "1");
-		Standard_Integer Continuity(const Standard_Address arg0);
-		%feature("autodoc", "1");
-		void Bounds(const Standard_Address arg0, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-
-%nodefaultctor HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter;
-class HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter : public Intf_Interference {
-	public:
-		%feature("autodoc", "1");
-		~HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter();
-		%feature("autodoc", "1");
-		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter();
-		%feature("autodoc", "1");
-		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje2);
-		%feature("autodoc", "1");
-		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje);
-		%feature("autodoc", "1");
-		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje2);
-		%feature("autodoc", "1");
-		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje);
-		%feature("autodoc", "1");
-		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
-
-};
-
 %nodefaultctor HLRBRep_TheExactInterCSurf;
 class HLRBRep_TheExactInterCSurf {
 	public:
@@ -2156,51 +2087,25 @@ class HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter :
 	}
 };
 
-%nodefaultctor HLRBRep_PolyHLRToShape;
-class HLRBRep_PolyHLRToShape {
+%nodefaultctor HLRBRep_SLPropsATool;
+class HLRBRep_SLPropsATool {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_PolyHLRToShape();
+		~HLRBRep_SLPropsATool();
 		%feature("autodoc", "1");
-		HLRBRep_PolyHLRToShape();
+		HLRBRep_SLPropsATool();
 		%feature("autodoc", "1");
-		void Update(const Handle_HLRBRep_PolyAlgo &A);
+		void Value(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
 		%feature("autodoc", "1");
-		void Show();
+		void D1(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
 		%feature("autodoc", "1");
-		void Hide();
+		void D2(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
 		%feature("autodoc", "1");
-		TopoDS_Shape VCompound();
+		gp_Vec DN(const Standard_Address A, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
 		%feature("autodoc", "1");
-		TopoDS_Shape VCompound(const TopoDS_Shape &S);
+		Standard_Integer Continuity(const Standard_Address arg0);
 		%feature("autodoc", "1");
-		TopoDS_Shape Rg1LineVCompound();
-		%feature("autodoc", "1");
-		TopoDS_Shape Rg1LineVCompound(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Shape RgNLineVCompound();
-		%feature("autodoc", "1");
-		TopoDS_Shape RgNLineVCompound(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Shape OutLineVCompound();
-		%feature("autodoc", "1");
-		TopoDS_Shape OutLineVCompound(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Shape HCompound();
-		%feature("autodoc", "1");
-		TopoDS_Shape HCompound(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Shape Rg1LineHCompound();
-		%feature("autodoc", "1");
-		TopoDS_Shape Rg1LineHCompound(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Shape RgNLineHCompound();
-		%feature("autodoc", "1");
-		TopoDS_Shape RgNLineHCompound(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Shape OutLineHCompound();
-		%feature("autodoc", "1");
-		TopoDS_Shape OutLineHCompound(const TopoDS_Shape &S);
+		void Bounds(const Standard_Address arg0, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 
@@ -2257,6 +2162,53 @@ class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
 	Handle_HLRBRep_ListNodeOfListOfBPnt2D GetHandle() {
 	return *(Handle_HLRBRep_ListNodeOfListOfBPnt2D*) &$self;
 	}
+};
+
+%nodefaultctor HLRBRep_SequenceNodeOfSeqOfShapeBounds;
+class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_SequenceNodeOfSeqOfShapeBounds(const HLRBRep_ShapeBounds &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		HLRBRep_ShapeBounds & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~HLRBRep_SequenceNodeOfSeqOfShapeBounds();
+
+};
+%extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
+	Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds GetHandle() {
+	return *(Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds*) &$self;
+	}
+};
+
+%nodefaultctor HLRBRep_VertexList;
+class HLRBRep_VertexList {
+	public:
+		%feature("autodoc", "1");
+		~HLRBRep_VertexList();
+		%feature("autodoc", "1");
+		HLRBRep_VertexList(const HLRBRep_EdgeInterferenceTool &T, const HLRAlgo_ListIteratorOfInterferenceList &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const HLRAlgo_Intersection & Current() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsBoundary() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsInterference() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Transition() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation BoundaryTransition() const;
+
 };
 
 %nodefaultctor HLRBRep_TheQuadCurvExactInterCSurf;
@@ -2345,26 +2297,6 @@ class HLRBRep_CurveTool {
 
 };
 
-%nodefaultctor HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
-class HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter : public IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		~HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter();
-		%feature("autodoc", "1");
-		HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter();
-		%feature("autodoc", "1");
-		HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool &ITool, const IntRes2d_Domain &Dom1, const Standard_Address &PCurve, const IntRes2d_Domain &Dom2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const IntCurve_IConicTool &ITool, const IntRes2d_Domain &Dom1, const Standard_Address &PCurve, const IntRes2d_Domain &Dom2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Real FindU(const Standard_Real parameter, gp_Pnt2d & point, const Standard_Address &TheParCurev, const IntCurve_IConicTool &IntCurve_IConicTool) const;
-		%feature("autodoc", "1");
-		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &ParCurve, const IntRes2d_Domain &TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance) const;
-		%feature("autodoc", "1");
-		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer & NbResultats, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
-
-};
-
 %nodefaultctor HLRBRep_TheCSFunctionOfInterCSurf;
 class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives {
 	public:
@@ -2431,6 +2363,40 @@ class HLRBRep_TheInterferenceOfInterCSurf : public Intf_Interference {
 
 };
 
+%nodefaultctor HLRBRep_Hider;
+class HLRBRep_Hider {
+	public:
+		%feature("autodoc", "1");
+		~HLRBRep_Hider();
+		%feature("autodoc", "1");
+		HLRBRep_Hider(const Handle_HLRBRep_Data &DS);
+		%feature("autodoc", "1");
+		void OwnHiding(const Standard_Integer FI);
+		%feature("autodoc", "1");
+		void Hide(const Standard_Integer FI, BRepTopAdaptor_MapOfShapeTool & MST);
+
+};
+
+%nodefaultctor HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter;
+class HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter(const Standard_Address &curve1, const Standard_Address &curve2);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		~HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter();
+
+};
+
 %nodefaultctor HLRBRep_BiPoint;
 class HLRBRep_BiPoint {
 	public:
@@ -2467,39 +2433,101 @@ class HLRBRep_BiPoint {
 
 };
 
-%nodefaultctor HLRBRep_CLPropsATool;
-class HLRBRep_CLPropsATool {
+%nodefaultctor HLRBRep_FaceData;
+class HLRBRep_FaceData {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_CLPropsATool();
+		~HLRBRep_FaceData();
 		%feature("autodoc", "1");
-		HLRBRep_CLPropsATool();
+		HLRBRep_FaceData();
 		%feature("autodoc", "1");
-		void Value(const Standard_Address A, const Standard_Real U, gp_Pnt2d & P);
+		void Set(const TopoDS_Face &FG, const TopAbs_Orientation Or, const Standard_Boolean Cl, const Standard_Integer NW);
 		%feature("autodoc", "1");
-		void D1(const Standard_Address A, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1);
+		void SetWire(const Standard_Integer WI, const Standard_Integer NE);
 		%feature("autodoc", "1");
-		void D2(const Standard_Address A, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
+		void SetWEdge(const Standard_Integer WI, const Standard_Integer EWI, const Standard_Integer EI, const TopAbs_Orientation Or, const Standard_Boolean OutL, const Standard_Boolean Inte, const Standard_Boolean Dble, const Standard_Boolean IsoL);
 		%feature("autodoc", "1");
-		void D3(const Standard_Address A, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
+		Standard_Boolean Selected() const;
 		%feature("autodoc", "1");
-		Standard_Integer Continuity(const Standard_Address arg0);
+		void Selected(const Standard_Boolean B);
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Standard_Address A);
+		Standard_Boolean Back() const;
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Standard_Address A);
+		void Back(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Side() const;
+		%feature("autodoc", "1");
+		void Side(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Closed() const;
+		%feature("autodoc", "1");
+		void Closed(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Hiding() const;
+		%feature("autodoc", "1");
+		void Hiding(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Simple() const;
+		%feature("autodoc", "1");
+		void Simple(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Cut() const;
+		%feature("autodoc", "1");
+		void Cut(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean WithOutL() const;
+		%feature("autodoc", "1");
+		void WithOutL(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Plane() const;
+		%feature("autodoc", "1");
+		void Plane(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Cylinder() const;
+		%feature("autodoc", "1");
+		void Cylinder(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Cone() const;
+		%feature("autodoc", "1");
+		void Cone(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Sphere() const;
+		%feature("autodoc", "1");
+		void Sphere(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Torus() const;
+		%feature("autodoc", "1");
+		void Torus(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Real Size() const;
+		%feature("autodoc", "1");
+		void Size(const Standard_Real S);
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		void Orientation(const TopAbs_Orientation O);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_WiresBlock & Wires();
+		%feature("autodoc", "1");
+		HLRBRep_Surface & Geometry();
+		%feature("autodoc", "1");
+		Standard_ShortReal Tolerance() const;
 
 };
 
-%nodefaultctor HLRBRep_ShapeToHLR;
-class HLRBRep_ShapeToHLR {
+%nodefaultctor HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter;
+class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_ShapeToHLR();
+		HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool &IT, const Standard_Address &PC);
 		%feature("autodoc", "1");
-		HLRBRep_ShapeToHLR();
+		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_Data Load(const Handle_HLRTopoBRep_OutLiner &S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
+		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		~HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter();
 
 };
 
@@ -2681,23 +2709,17 @@ class HLRBRep_SurfaceTool {
 
 };
 
-%nodefaultctor HLRBRep_ListIteratorOfListOfBPnt2D;
-class HLRBRep_ListIteratorOfListOfBPnt2D {
+%nodefaultctor HLRBRep_EdgeIList;
+class HLRBRep_EdgeIList {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_ListIteratorOfListOfBPnt2D();
+		~HLRBRep_EdgeIList();
 		%feature("autodoc", "1");
-		HLRBRep_ListIteratorOfListOfBPnt2D();
+		HLRBRep_EdgeIList();
 		%feature("autodoc", "1");
-		HLRBRep_ListIteratorOfListOfBPnt2D(const HLRBRep_ListOfBPnt2D &L);
+		void AddInterference(HLRAlgo_InterferenceList & IL, const HLRAlgo_Interference &I, const HLRBRep_EdgeInterferenceTool &T);
 		%feature("autodoc", "1");
-		void Initialize(const HLRBRep_ListOfBPnt2D &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		HLRBRep_BiPnt2D & Value() const;
+		void ProcessComplex(HLRAlgo_InterferenceList & IL, const HLRBRep_EdgeInterferenceTool &T);
 
 };
 
@@ -2828,28 +2850,6 @@ class HLRBRep_Data : public MMgt_TShared {
 	Handle_HLRBRep_Data GetHandle() {
 	return *(Handle_HLRBRep_Data*) &$self;
 	}
-};
-
-%nodefaultctor HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter;
-class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
-	public:
-		%feature("autodoc", "1");
-		~HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter();
-		%feature("autodoc", "1");
-		HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter();
-		%feature("autodoc", "1");
-		const Bnd_Box2d & Bounding(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		Standard_Real DeflectionOverEstimation(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		Standard_Boolean Closed(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		const gp_Pnt2d & BeginOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const gp_Pnt2d & EndOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
-
 };
 
 %nodefaultctor HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;

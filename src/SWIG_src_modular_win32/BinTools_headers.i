@@ -36,12 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BinTools.hxx>
 #include<BinTools_Curve2dSet.hxx>
 #include<BinTools_CurveSet.hxx>
 #include<BinTools_LocationSet.hxx>
 #include<BinTools_ShapeSet.hxx>
 #include<BinTools_SurfaceSet.hxx>
-#include<BinTools.hxx>
 
 // Additional headers necessary for compilation.
 

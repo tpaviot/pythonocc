@@ -140,48 +140,6 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 	}
 };
 
-%nodefaultctor Handle_TPrsStd_DriverTable;
-class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_DriverTable();
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable();
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable(const Handle_TPrsStd_DriverTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable(const TPrsStd_DriverTable *anItem);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TPrsStd_DriverTable {
-	TPrsStd_DriverTable* GetObject() {
-	return (TPrsStd_DriverTable*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TPrsStd_PlaneDriver;
-class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_PlaneDriver();
-		%feature("autodoc", "1");
-		Handle_TPrsStd_PlaneDriver();
-		%feature("autodoc", "1");
-		Handle_TPrsStd_PlaneDriver(const Handle_TPrsStd_PlaneDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_PlaneDriver(const TPrsStd_PlaneDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TPrsStd_PlaneDriver {
-	TPrsStd_PlaneDriver* GetObject() {
-	return (TPrsStd_PlaneDriver*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_TPrsStd_ConstraintDriver;
 class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -245,6 +203,27 @@ class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 	}
 };
 
+%nodefaultctor Handle_TPrsStd_DriverTable;
+class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TPrsStd_DriverTable();
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable();
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable(const Handle_TPrsStd_DriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable(const TPrsStd_DriverTable *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TPrsStd_DriverTable {
+	TPrsStd_DriverTable* GetObject() {
+	return (TPrsStd_DriverTable*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_TPrsStd_AxisDriver;
 class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -284,6 +263,27 @@ class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
 %extend Handle_TPrsStd_AISViewer {
 	TPrsStd_AISViewer* GetObject() {
 	return (TPrsStd_AISViewer*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_TPrsStd_PlaneDriver;
+class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		~Handle_TPrsStd_PlaneDriver();
+		%feature("autodoc", "1");
+		Handle_TPrsStd_PlaneDriver();
+		%feature("autodoc", "1");
+		Handle_TPrsStd_PlaneDriver(const Handle_TPrsStd_PlaneDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_PlaneDriver(const TPrsStd_PlaneDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TPrsStd_PlaneDriver {
+	TPrsStd_PlaneDriver* GetObject() {
+	return (TPrsStd_PlaneDriver*)$self->Access();
 	}
 };
 
@@ -614,25 +614,6 @@ class TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMap
 
 };
 
-%nodefaultctor TPrsStd_AxisDriver;
-class TPrsStd_AxisDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_AxisDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_AxisDriver();
-
-};
-%extend TPrsStd_AxisDriver {
-	Handle_TPrsStd_AxisDriver GetHandle() {
-	return *(Handle_TPrsStd_AxisDriver*) &$self;
-	}
-};
-
 %nodefaultctor TPrsStd_PointDriver;
 class TPrsStd_PointDriver : public TPrsStd_Driver {
 	public:
@@ -649,6 +630,25 @@ class TPrsStd_PointDriver : public TPrsStd_Driver {
 %extend TPrsStd_PointDriver {
 	Handle_TPrsStd_PointDriver GetHandle() {
 	return *(Handle_TPrsStd_PointDriver*) &$self;
+	}
+};
+
+%nodefaultctor TPrsStd_AxisDriver;
+class TPrsStd_AxisDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_AxisDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TPrsStd_AxisDriver();
+
+};
+%extend TPrsStd_AxisDriver {
+	Handle_TPrsStd_AxisDriver GetHandle() {
+	return *(Handle_TPrsStd_AxisDriver*) &$self;
 	}
 };
 

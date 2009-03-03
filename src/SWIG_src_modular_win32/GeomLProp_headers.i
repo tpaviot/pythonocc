@@ -36,11 +36,11 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<GeomLProp.hxx>
 #include<GeomLProp_CLProps.hxx>
 #include<GeomLProp_CurveTool.hxx>
 #include<GeomLProp_SLProps.hxx>
 #include<GeomLProp_SurfaceTool.hxx>
-#include<GeomLProp.hxx>
 
 // Additional headers necessary for compilation.
 

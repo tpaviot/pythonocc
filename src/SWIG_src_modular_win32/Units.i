@@ -735,6 +735,35 @@ class Units_Unit : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor Units_ShiftedUnit;
+class Units_ShiftedUnit : public Units_Unit {
+	public:
+		%feature("autodoc", "1");
+		Units_ShiftedUnit(const char * aname, const char * asymbol, const Standard_Real avalue, const Standard_Real amove, const Handle_Units_Quantity &aquantity);
+		%feature("autodoc", "1");
+		Units_ShiftedUnit(const char * aname, const char * asymbol);
+		%feature("autodoc", "1");
+		Units_ShiftedUnit(const char * aname);
+		%feature("autodoc", "1");
+		void Move(const Standard_Real amove);
+		%feature("autodoc", "1");
+		Standard_Real Move() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Units_Token Token() const;
+		%feature("autodoc", "1");
+		virtual		void Dump(const Standard_Integer ashift, const Standard_Integer alevel) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Units_ShiftedUnit();
+
+};
+%extend Units_ShiftedUnit {
+	Handle_Units_ShiftedUnit GetHandle() {
+	return *(Handle_Units_ShiftedUnit*) &$self;
+	}
+};
+
 %nodefaultctor Units_UnitsSequence;
 class Units_UnitsSequence : public MMgt_TShared {
 	public:
@@ -1517,35 +1546,6 @@ class Units_SequenceNodeOfStrgSequence : public TCollection_SeqNode {
 %extend Units_SequenceNodeOfStrgSequence {
 	Handle_Units_SequenceNodeOfStrgSequence GetHandle() {
 	return *(Handle_Units_SequenceNodeOfStrgSequence*) &$self;
-	}
-};
-
-%nodefaultctor Units_ShiftedUnit;
-class Units_ShiftedUnit : public Units_Unit {
-	public:
-		%feature("autodoc", "1");
-		Units_ShiftedUnit(const char * aname, const char * asymbol, const Standard_Real avalue, const Standard_Real amove, const Handle_Units_Quantity &aquantity);
-		%feature("autodoc", "1");
-		Units_ShiftedUnit(const char * aname, const char * asymbol);
-		%feature("autodoc", "1");
-		Units_ShiftedUnit(const char * aname);
-		%feature("autodoc", "1");
-		void Move(const Standard_Real amove);
-		%feature("autodoc", "1");
-		Standard_Real Move() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Units_Token Token() const;
-		%feature("autodoc", "1");
-		virtual		void Dump(const Standard_Integer ashift, const Standard_Integer alevel) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_ShiftedUnit();
-
-};
-%extend Units_ShiftedUnit {
-	Handle_Units_ShiftedUnit GetHandle() {
-	return *(Handle_Units_ShiftedUnit*) &$self;
 	}
 };
 

@@ -245,27 +245,6 @@ class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
 	}
 };
 
-%nodefaultctor Handle_PXCAFDoc_DocumentTool;
-class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_DocumentTool();
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool();
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool(const Handle_PXCAFDoc_DocumentTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool(const PXCAFDoc_DocumentTool *anItem);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PXCAFDoc_DocumentTool {
-	PXCAFDoc_DocumentTool* GetObject() {
-	return (PXCAFDoc_DocumentTool*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_PXCAFDoc_Centroid;
 class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 	public:
@@ -329,6 +308,27 @@ class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
 	}
 };
 
+%nodefaultctor Handle_PXCAFDoc_DocumentTool;
+class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		~Handle_PXCAFDoc_DocumentTool();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DocumentTool();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DocumentTool(const Handle_PXCAFDoc_DocumentTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DocumentTool(const PXCAFDoc_DocumentTool *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DocumentTool const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_DocumentTool {
+	PXCAFDoc_DocumentTool* GetObject() {
+	return (PXCAFDoc_DocumentTool*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_PXCAFDoc_ColorTool;
 class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 	public:
@@ -376,6 +376,55 @@ class PXCAFDoc_Volume : public PDF_Attribute {
 %extend PXCAFDoc_Volume {
 	Handle_PXCAFDoc_Volume GetHandle() {
 	return *(Handle_PXCAFDoc_Volume*) &$self;
+	}
+};
+
+%nodefaultctor PXCAFDoc_SeqNodeOfGraphNodeSequence;
+class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_SeqNodeOfGraphNodeSequence(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &TheLast, const Handle_PXCAFDoc_GraphNode &TheItem);
+		%feature("autodoc", "1");
+		PXCAFDoc_SeqNodeOfGraphNodeSequence(const Handle_PXCAFDoc_GraphNode &TheItem, const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &TheFirst);
+		%feature("autodoc", "1");
+		PXCAFDoc_SeqNodeOfGraphNodeSequence(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &ThePrevious, const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &TheNext, const Handle_PXCAFDoc_GraphNode &TheItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_GraphNode Value() const;
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence Next() const;
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence Previous() const;
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PXCAFDoc_GraphNode &AnItem);
+		%feature("autodoc", "1");
+		void SetNext(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &ANode);
+		%feature("autodoc", "1");
+		void SetPrevious(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &ANode);
+		%feature("autodoc", "1");
+		PXCAFDoc_SeqNodeOfGraphNodeSequence();
+		%feature("autodoc", "1");
+		PXCAFDoc_SeqNodeOfGraphNodeSequence(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence _CSFDB_GetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyPrevious() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyPrevious(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &p);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_GraphNode _CSFDB_GetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyItem() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyItem(const Handle_PXCAFDoc_GraphNode &p);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence _CSFDB_GetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyNext() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyNext(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~PXCAFDoc_SeqNodeOfGraphNodeSequence();
+
+};
+%extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
+	Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence GetHandle() {
+	return *(Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence*) &$self;
 	}
 };
 
@@ -488,55 +537,6 @@ class PXCAFDoc_Location : public PDF_Attribute {
 %extend PXCAFDoc_Location {
 	Handle_PXCAFDoc_Location GetHandle() {
 	return *(Handle_PXCAFDoc_Location*) &$self;
-	}
-};
-
-%nodefaultctor PXCAFDoc_SeqNodeOfGraphNodeSequence;
-class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		PXCAFDoc_SeqNodeOfGraphNodeSequence(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &TheLast, const Handle_PXCAFDoc_GraphNode &TheItem);
-		%feature("autodoc", "1");
-		PXCAFDoc_SeqNodeOfGraphNodeSequence(const Handle_PXCAFDoc_GraphNode &TheItem, const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &TheFirst);
-		%feature("autodoc", "1");
-		PXCAFDoc_SeqNodeOfGraphNodeSequence(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &ThePrevious, const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &TheNext, const Handle_PXCAFDoc_GraphNode &TheItem);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_GraphNode Value() const;
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence Next() const;
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence Previous() const;
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PXCAFDoc_GraphNode &AnItem);
-		%feature("autodoc", "1");
-		void SetNext(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &ANode);
-		%feature("autodoc", "1");
-		void SetPrevious(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &ANode);
-		%feature("autodoc", "1");
-		PXCAFDoc_SeqNodeOfGraphNodeSequence();
-		%feature("autodoc", "1");
-		PXCAFDoc_SeqNodeOfGraphNodeSequence(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence _CSFDB_GetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyPrevious() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyPrevious(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &p);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_GraphNode _CSFDB_GetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyItem() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyItem(const Handle_PXCAFDoc_GraphNode &p);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence _CSFDB_GetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyNext(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_SeqNodeOfGraphNodeSequence();
-
-};
-%extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
-	Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence GetHandle() {
-	return *(Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence*) &$self;
 	}
 };
 

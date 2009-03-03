@@ -545,27 +545,6 @@ class Handle_StepDimTol_CylindricityTolerance : public Handle_StepDimTol_Geometr
 	}
 };
 
-%nodefaultctor Handle_StepDimTol_ModifiedGeometricTolerance;
-class Handle_StepDimTol_ModifiedGeometricTolerance : public Handle_StepDimTol_GeometricTolerance {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_ModifiedGeometricTolerance();
-		%feature("autodoc", "1");
-		Handle_StepDimTol_ModifiedGeometricTolerance();
-		%feature("autodoc", "1");
-		Handle_StepDimTol_ModifiedGeometricTolerance(const Handle_StepDimTol_ModifiedGeometricTolerance &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_ModifiedGeometricTolerance(const StepDimTol_ModifiedGeometricTolerance *anItem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_ModifiedGeometricTolerance const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepDimTol_ModifiedGeometricTolerance {
-	StepDimTol_ModifiedGeometricTolerance* GetObject() {
-	return (StepDimTol_ModifiedGeometricTolerance*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepDimTol_SymmetryTolerance;
 class Handle_StepDimTol_SymmetryTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -605,6 +584,27 @@ class Handle_StepDimTol_SurfaceProfileTolerance : public Handle_StepDimTol_Geome
 %extend Handle_StepDimTol_SurfaceProfileTolerance {
 	StepDimTol_SurfaceProfileTolerance* GetObject() {
 	return (StepDimTol_SurfaceProfileTolerance*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepDimTol_ModifiedGeometricTolerance;
+class Handle_StepDimTol_ModifiedGeometricTolerance : public Handle_StepDimTol_GeometricTolerance {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepDimTol_ModifiedGeometricTolerance();
+		%feature("autodoc", "1");
+		Handle_StepDimTol_ModifiedGeometricTolerance();
+		%feature("autodoc", "1");
+		Handle_StepDimTol_ModifiedGeometricTolerance(const Handle_StepDimTol_ModifiedGeometricTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_ModifiedGeometricTolerance(const StepDimTol_ModifiedGeometricTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_ModifiedGeometricTolerance const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepDimTol_ModifiedGeometricTolerance {
+	StepDimTol_ModifiedGeometricTolerance* GetObject() {
+	return (StepDimTol_ModifiedGeometricTolerance*)$self->Access();
 	}
 };
 
@@ -706,49 +706,11 @@ class StepDimTol_GeometricTolerance : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor StepDimTol_GeometricToleranceWithDatumReference;
-class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_GeometricTolerance {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_GeometricToleranceWithDatumReference();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aGeometricTolerance_Name, const Handle_TCollection_HAsciiString &aGeometricTolerance_Description, const Handle_StepBasic_MeasureWithUnit &aGeometricTolerance_Magnitude, const Handle_StepRepr_ShapeAspect &aGeometricTolerance_TolerancedShapeAspect, const Handle_StepDimTol_HArray1OfDatumReference &aDatumSystem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_HArray1OfDatumReference DatumSystem() const;
-		%feature("autodoc", "1");
-		void SetDatumSystem(const Handle_StepDimTol_HArray1OfDatumReference &DatumSystem);
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_GeometricToleranceWithDatumReference();
-
-};
-%extend StepDimTol_GeometricToleranceWithDatumReference {
-	Handle_StepDimTol_GeometricToleranceWithDatumReference GetHandle() {
-	return *(Handle_StepDimTol_GeometricToleranceWithDatumReference*) &$self;
-	}
-};
-
-%nodefaultctor StepDimTol_ParallelismTolerance;
-class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_ParallelismTolerance();
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_ParallelismTolerance();
-
-};
-%extend StepDimTol_ParallelismTolerance {
-	Handle_StepDimTol_ParallelismTolerance GetHandle() {
-	return *(Handle_StepDimTol_ParallelismTolerance*) &$self;
-	}
-};
-
 %nodefaultctor StepDimTol_StraightnessTolerance;
 class StepDimTol_StraightnessTolerance : public StepDimTol_GeometricTolerance {
 	public:
 		%feature("autodoc", "1");
 		StepDimTol_StraightnessTolerance();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~StepDimTol_StraightnessTolerance();
 
@@ -886,13 +848,34 @@ class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
 	}
 };
 
+%nodefaultctor StepDimTol_GeometricToleranceWithDatumReference;
+class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_GeometricTolerance {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_GeometricToleranceWithDatumReference();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aGeometricTolerance_Name, const Handle_TCollection_HAsciiString &aGeometricTolerance_Description, const Handle_StepBasic_MeasureWithUnit &aGeometricTolerance_Magnitude, const Handle_StepRepr_ShapeAspect &aGeometricTolerance_TolerancedShapeAspect, const Handle_StepDimTol_HArray1OfDatumReference &aDatumSystem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_HArray1OfDatumReference DatumSystem() const;
+		%feature("autodoc", "1");
+		void SetDatumSystem(const Handle_StepDimTol_HArray1OfDatumReference &DatumSystem);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepDimTol_GeometricToleranceWithDatumReference();
+
+};
+%extend StepDimTol_GeometricToleranceWithDatumReference {
+	Handle_StepDimTol_GeometricToleranceWithDatumReference GetHandle() {
+	return *(Handle_StepDimTol_GeometricToleranceWithDatumReference*) &$self;
+	}
+};
+
 %nodefaultctor StepDimTol_AngularityTolerance;
 class StepDimTol_AngularityTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
 	public:
 		%feature("autodoc", "1");
 		StepDimTol_AngularityTolerance();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~StepDimTol_AngularityTolerance();
 
@@ -951,6 +934,23 @@ class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWith
 %extend StepDimTol_TotalRunoutTolerance {
 	Handle_StepDimTol_TotalRunoutTolerance GetHandle() {
 	return *(Handle_StepDimTol_TotalRunoutTolerance*) &$self;
+	}
+};
+
+%nodefaultctor StepDimTol_ParallelismTolerance;
+class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_ParallelismTolerance();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepDimTol_ParallelismTolerance();
+
+};
+%extend StepDimTol_ParallelismTolerance {
+	Handle_StepDimTol_ParallelismTolerance GetHandle() {
+	return *(Handle_StepDimTol_ParallelismTolerance*) &$self;
 	}
 };
 

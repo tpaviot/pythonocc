@@ -52,12 +52,12 @@
 #include<Graphic3d_ArrayOfPolygons.hxx>
 #include<Graphic3d_ArrayOfPolylines.hxx>
 #include<Graphic3d_ArrayOfPrimitives.hxx>
-#include<Graphic3d_ArrayOfQuadrangles.hxx>
 #include<Graphic3d_ArrayOfQuadrangleStrips.hxx>
+#include<Graphic3d_ArrayOfQuadrangles.hxx>
 #include<Graphic3d_ArrayOfSegments.hxx>
 #include<Graphic3d_ArrayOfTriangleFans.hxx>
-#include<Graphic3d_ArrayOfTriangles.hxx>
 #include<Graphic3d_ArrayOfTriangleStrips.hxx>
+#include<Graphic3d_ArrayOfTriangles.hxx>
 #include<Graphic3d_AspectFillArea3d.hxx>
 #include<Graphic3d_AspectLine3d.hxx>
 #include<Graphic3d_AspectMarker3d.hxx>
@@ -86,10 +86,10 @@
 #include<Graphic3d_Group.hxx>
 #include<Graphic3d_GroupDefinitionError.hxx>
 #include<Graphic3d_HArray1OfBytes.hxx>
-#include<Graphic3d_HorizontalTextAlignment.hxx>
 #include<Graphic3d_HSequenceOfGroup.hxx>
 #include<Graphic3d_HSequenceOfStructure.hxx>
 #include<Graphic3d_HSetOfGroup.hxx>
+#include<Graphic3d_HorizontalTextAlignment.hxx>
 #include<Graphic3d_InitialisationError.hxx>
 #include<Graphic3d_ListIteratorOfListOfPArray.hxx>
 #include<Graphic3d_ListIteratorOfListOfShortReal.hxx>
@@ -140,8 +140,8 @@
 #include<Graphic3d_TextureEnv.hxx>
 #include<Graphic3d_TextureMap.hxx>
 #include<Graphic3d_TextureRoot.hxx>
-#include<Graphic3d_TransformError.hxx>
 #include<Graphic3d_TransModeFlags.hxx>
+#include<Graphic3d_TransformError.hxx>
 #include<Graphic3d_TypeOfComposition.hxx>
 #include<Graphic3d_TypeOfConnection.hxx>
 #include<Graphic3d_TypeOfMaterial.hxx>
@@ -165,12 +165,12 @@
 #include<Handle_Graphic3d_ArrayOfPolygons.hxx>
 #include<Handle_Graphic3d_ArrayOfPolylines.hxx>
 #include<Handle_Graphic3d_ArrayOfPrimitives.hxx>
-#include<Handle_Graphic3d_ArrayOfQuadrangles.hxx>
 #include<Handle_Graphic3d_ArrayOfQuadrangleStrips.hxx>
+#include<Handle_Graphic3d_ArrayOfQuadrangles.hxx>
 #include<Handle_Graphic3d_ArrayOfSegments.hxx>
 #include<Handle_Graphic3d_ArrayOfTriangleFans.hxx>
-#include<Handle_Graphic3d_ArrayOfTriangles.hxx>
 #include<Handle_Graphic3d_ArrayOfTriangleStrips.hxx>
+#include<Handle_Graphic3d_ArrayOfTriangles.hxx>
 #include<Handle_Graphic3d_AspectFillArea3d.hxx>
 #include<Handle_Graphic3d_AspectLine3d.hxx>
 #include<Handle_Graphic3d_AspectMarker3d.hxx>
@@ -217,7 +217,6 @@
 
 // Additional headers necessary for compilation.
 
-#include<gp.hxx>
 #include<GProp.hxx>
 #include<GProp_CelGProps.hxx>
 #include<GProp_EquaType.hxx>
@@ -229,6 +228,7 @@
 #include<GProp_UndefinedAxis.hxx>
 #include<GProp_ValueType.hxx>
 #include<GProp_VelGProps.hxx>
+#include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>

@@ -563,6 +563,25 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape : public
 
 };
 
+%nodefaultctor BRepFill_CurveConstraint;
+class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_CurveConstraint(const Handle_Adaptor3d_HCurveOnSurface &Boundary, const Standard_Integer Order, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		%feature("autodoc", "1");
+		BRepFill_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~BRepFill_CurveConstraint();
+
+};
+%extend BRepFill_CurveConstraint {
+	Handle_BRepFill_CurveConstraint GetHandle() {
+	return *(Handle_BRepFill_CurveConstraint*) &$self;
+	}
+};
+
 %nodefaultctor BRepFill_DataMapOfNodeDataMapOfShapeShape;
 class BRepFill_DataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMap {
 	public:
@@ -611,25 +630,21 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal : public TCollectio
 
 };
 
-%nodefaultctor BRepFill_ApproxSeewing;
-class BRepFill_ApproxSeewing {
+%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape;
+class BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepFill_ApproxSeewing();
+		~BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape();
 		%feature("autodoc", "1");
-		BRepFill_ApproxSeewing();
+		BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape();
 		%feature("autodoc", "1");
-		BRepFill_ApproxSeewing(const BRepFill_MultiLine &ML);
+		BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape(const BRepFill_DataMapOfOrientedShapeListOfShape &aMap);
 		%feature("autodoc", "1");
-		void Perform(const BRepFill_MultiLine &ML);
+		void Initialize(const BRepFill_DataMapOfOrientedShapeListOfShape &aMap);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		const TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Curve() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & CurveOnF1() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & CurveOnF2() const;
+		const TopTools_ListOfShape & Value() const;
 
 };
 
@@ -709,6 +724,140 @@ class BRepFill_OffsetWire {
 
 };
 
+%nodefaultctor BRepFill_SectionLaw;
+class BRepFill_SectionLaw : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer NbLaw() const;
+		%feature("autodoc", "1");
+		const Handle_GeomFill_SectionLaw & Law(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsUClosed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsVClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsVertex() const;
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_SectionLaw ConcatenedLaw() const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity(const Standard_Integer Index, const Standard_Real TolAngular) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real VertexTol(const Standard_Integer Index, const Standard_Real Param) const;
+		%feature("autodoc", "1");
+		virtual		TopoDS_Vertex Vertex(const Standard_Integer Index, const Standard_Real Param) const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire &W);
+		%feature("autodoc", "1");
+		TopoDS_Edge CurrentEdge();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepFill_SectionLaw {
+	Handle_BRepFill_SectionLaw GetHandle() {
+	return *(Handle_BRepFill_SectionLaw*) &$self;
+	}
+};
+
+%nodefaultctor BRepFill_NSections;
+class BRepFill_NSections : public BRepFill_SectionLaw {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_NSections(const TopTools_SequenceOfShape &S, const Standard_Boolean Build=1);
+		%feature("autodoc", "1");
+		BRepFill_NSections(const TopTools_SequenceOfShape &S, const TColStd_SequenceOfReal &P, const Standard_Real VF, const Standard_Real VL, const Standard_Boolean Build=1);
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real Param, TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		virtual		~BRepFill_NSections();
+
+};
+%extend BRepFill_NSections {
+	Handle_BRepFill_NSections GetHandle() {
+	return *(Handle_BRepFill_NSections*) &$self;
+	}
+};
+
+%nodefaultctor BRepFill_Sweep;
+class BRepFill_Sweep {
+	public:
+		%feature("autodoc", "1");
+		~BRepFill_Sweep();
+		%feature("autodoc", "1");
+		BRepFill_Sweep(const Handle_BRepFill_SectionLaw &Section, const Handle_BRepFill_LocationLaw &Location, const Standard_Boolean WithKPart);
+		%feature("autodoc", "1");
+		void SetBounds(const TopoDS_Wire &FirstShape, const TopoDS_Wire &LastShape);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol3d, const Standard_Real BoundTol=1.0e+0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real TolAngular=1.0000000000000000208166817117216851329430937767e-2);
+		%feature("autodoc", "1");
+		void SetAngularControl(const Standard_Real AngleMin=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real AngleMax=6.0e+0);
+		%feature("autodoc", "1");
+		void Build(const BRepFill_TransitionStyle Transition=BRepFill_Modified, const GeomFill_ApproxStyle Approx=GeomFill_Location, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Integer Degmax=10, const Standard_Integer Segmax=30);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape Shape() const;
+		%feature("autodoc", "1");
+		Standard_Real ErrorOnSurface() const;
+		%feature("autodoc", "1");
+		Handle_TopTools_HArray2OfShape SubShape() const;
+		%feature("autodoc", "1");
+		Handle_TopTools_HArray2OfShape InterFaces() const;
+		%feature("autodoc", "1");
+		Handle_TopTools_HArray2OfShape Sections() const;
+
+};
+
+%nodefaultctor BRepFill_Filling;
+class BRepFill_Filling {
+	public:
+		%feature("autodoc", "1");
+		~BRepFill_Filling();
+		%feature("autodoc", "1");
+		BRepFill_Filling(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer MaxDeg=8, const Standard_Integer MaxSegments=9);
+		%feature("autodoc", "1");
+		void SetConstrParam(const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		%feature("autodoc", "1");
+		void SetResolParam(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0);
+		%feature("autodoc", "1");
+		void SetApproxParam(const Standard_Integer MaxDeg=8, const Standard_Integer MaxSegments=9);
+		%feature("autodoc", "1");
+		void LoadInitSurface(const TopoDS_Face &aFace);
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Edge &anEdge, const GeomAbs_Shape Order, const Standard_Boolean IsBound=1);
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Edge &anEdge, const TopoDS_Face &Support, const GeomAbs_Shape Order, const Standard_Boolean IsBound=1);
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Face &Support, const GeomAbs_Shape Order);
+		%feature("autodoc", "1");
+		Standard_Integer Add(const gp_Pnt &Point);
+		%feature("autodoc", "1");
+		Standard_Integer Add(const Standard_Real U, const Standard_Real V, const TopoDS_Face &Support, const GeomAbs_Shape Order);
+		%feature("autodoc", "1");
+		void Build();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		TopoDS_Face Face() const;
+		%feature("autodoc", "1");
+		Standard_Real G0Error() const;
+		%feature("autodoc", "1");
+		Standard_Real G1Error() const;
+		%feature("autodoc", "1");
+		Standard_Real G2Error() const;
+		%feature("autodoc", "1");
+		Standard_Real G0Error(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Real G1Error(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Real G2Error(const Standard_Integer Index);
+
+};
+
 %nodefaultctor BRepFill_Section;
 class BRepFill_Section {
 	public:
@@ -770,6 +919,27 @@ class BRepFill_DataMapIteratorOfDataMapOfNodeShape : public TCollection_BasicMap
 
 };
 
+%nodefaultctor BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape;
+class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape(const TopoDS_Shape &K, const TopTools_ListOfShape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape();
+
+};
+%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
+	Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape GetHandle() {
+	return *(Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape*) &$self;
+	}
+};
+
 %nodefaultctor BRepFill_OffsetAncestors;
 class BRepFill_OffsetAncestors {
 	public:
@@ -820,6 +990,32 @@ class BRepFill_DataMapOfShapeDataMapOfShapeListOfShape : public TCollection_Basi
 
 };
 
+%nodefaultctor BRepFill_TrimShellCorner;
+class BRepFill_TrimShellCorner {
+	public:
+		%feature("autodoc", "1");
+		~BRepFill_TrimShellCorner();
+		%feature("autodoc", "1");
+		BRepFill_TrimShellCorner(const Handle_TopTools_HArray2OfShape &theFaces, const gp_Ax2 &theAxeOfBisPlane, const TopoDS_Face &theSecPlane);
+		%feature("autodoc", "1");
+		BRepFill_TrimShellCorner(const Handle_TopTools_HArray2OfShape &theFaces, const gp_Ax2 &theAxeOfBisPlane, const TopoDS_Wire &theSpine, const TopoDS_Face &theSecPlane);
+		%feature("autodoc", "1");
+		void SetSpine(const TopoDS_Wire &theSpine);
+		%feature("autodoc", "1");
+		void AddBounds(const Handle_TopTools_HArray2OfShape &Bounds);
+		%feature("autodoc", "1");
+		void AddUEdges(const Handle_TopTools_HArray2OfShape &theUEdges);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasSection() const;
+		%feature("autodoc", "1");
+		void Modified(const TopoDS_Shape &S, TopTools_ListOfShape & theModified);
+
+};
+
 %nodefaultctor BRepFill_TrimSurfaceTool;
 class BRepFill_TrimSurfaceTool {
 	public:
@@ -835,6 +1031,36 @@ class BRepFill_TrimSurfaceTool {
 		Standard_Real ProjOn(const gp_Pnt2d &Point, const TopoDS_Edge &Edge) const;
 		%feature("autodoc", "1");
 		void Project(const Standard_Real U1, const Standard_Real U2, Handle_Geom_Curve & Curve, Handle_Geom2d_Curve & PCurve1, Handle_Geom2d_Curve & PCurve2, GeomAbs_Shape & myCont) const;
+
+};
+
+%nodefaultctor BRepFill_DataMapOfShapeSequenceOfReal;
+class BRepFill_DataMapOfShapeSequenceOfReal : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfShapeSequenceOfReal(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfShapeSequenceOfReal & Assign(const BRepFill_DataMapOfShapeSequenceOfReal &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~BRepFill_DataMapOfShapeSequenceOfReal();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape &K, const TColStd_SequenceOfReal &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfReal & Find(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfReal & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		TColStd_SequenceOfReal & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		TColStd_SequenceOfReal & operator()(const TopoDS_Shape &K);
 
 };
 
@@ -999,105 +1225,6 @@ class BRepFill_SequenceOfFaceAndOrder : public TCollection_BaseSequence {
 
 };
 
-%nodefaultctor BRepFill_ListIteratorOfListOfOffsetWire;
-class BRepFill_ListIteratorOfListOfOffsetWire {
-	public:
-		%feature("autodoc", "1");
-		~BRepFill_ListIteratorOfListOfOffsetWire();
-		%feature("autodoc", "1");
-		BRepFill_ListIteratorOfListOfOffsetWire();
-		%feature("autodoc", "1");
-		BRepFill_ListIteratorOfListOfOffsetWire(const BRepFill_ListOfOffsetWire &L);
-		%feature("autodoc", "1");
-		void Initialize(const BRepFill_ListOfOffsetWire &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BRepFill_OffsetWire & Value() const;
-
-};
-
-%nodefaultctor BRepFill_SequenceOfEdgeFaceAndOrder;
-class BRepFill_SequenceOfEdgeFaceAndOrder : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_SequenceOfEdgeFaceAndOrder();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~BRepFill_SequenceOfEdgeFaceAndOrder();
-		%feature("autodoc", "1");
-		const BRepFill_SequenceOfEdgeFaceAndOrder & Assign(const BRepFill_SequenceOfEdgeFaceAndOrder &Other);
-		%feature("autodoc", "1");
-		void Append(const BRepFill_EdgeFaceAndOrder &T);
-		%feature("autodoc", "1");
-		void Append(BRepFill_SequenceOfEdgeFaceAndOrder & S);
-		%feature("autodoc", "1");
-		void Prepend(const BRepFill_EdgeFaceAndOrder &T);
-		%feature("autodoc", "1");
-		void Prepend(BRepFill_SequenceOfEdgeFaceAndOrder & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const BRepFill_EdgeFaceAndOrder &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BRepFill_SequenceOfEdgeFaceAndOrder & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const BRepFill_EdgeFaceAndOrder &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BRepFill_SequenceOfEdgeFaceAndOrder & S);
-		%feature("autodoc", "1");
-		const BRepFill_EdgeFaceAndOrder & First() const;
-		%feature("autodoc", "1");
-		const BRepFill_EdgeFaceAndOrder & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BRepFill_SequenceOfEdgeFaceAndOrder & S);
-		%feature("autodoc", "1");
-		const BRepFill_EdgeFaceAndOrder & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BRepFill_EdgeFaceAndOrder & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const BRepFill_EdgeFaceAndOrder &I);
-		%feature("autodoc", "1");
-		BRepFill_EdgeFaceAndOrder & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BRepFill_EdgeFaceAndOrder & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-
-%nodefaultctor BRepFill_EdgeFaceAndOrder;
-class BRepFill_EdgeFaceAndOrder {
-	public:
-		%feature("autodoc", "1");
-		~BRepFill_EdgeFaceAndOrder();
-		%feature("autodoc", "1");
-		BRepFill_EdgeFaceAndOrder();
-		%feature("autodoc", "1");
-		BRepFill_EdgeFaceAndOrder(const TopoDS_Edge &anEdge, const TopoDS_Face &aFace, const GeomAbs_Shape anOrder);
-
-};
-
-%nodefaultctor BRepFill_ACRLaw;
-class BRepFill_ACRLaw : public BRepFill_LocationLaw {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_ACRLaw(const TopoDS_Wire &Path, const Handle_GeomFill_LocationGuide &Law);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_ACRLaw();
-
-};
-%extend BRepFill_ACRLaw {
-	Handle_BRepFill_ACRLaw GetHandle() {
-	return *(Handle_BRepFill_ACRLaw*) &$self;
-	}
-};
-
 %nodefaultctor BRepFill_SequenceOfSection;
 class BRepFill_SequenceOfSection : public TCollection_BaseSequence {
 	public:
@@ -1148,151 +1275,6 @@ class BRepFill_SequenceOfSection : public TCollection_BaseSequence {
 
 };
 
-%nodefaultctor BRepFill_Evolved;
-class BRepFill_Evolved {
-	public:
-		%feature("autodoc", "1");
-		~BRepFill_Evolved();
-		%feature("autodoc", "1");
-		BRepFill_Evolved();
-		%feature("autodoc", "1");
-		BRepFill_Evolved(const TopoDS_Wire &Spine, const TopoDS_Wire &Profile, const gp_Ax3 &AxeProf, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean Solid=0);
-		%feature("autodoc", "1");
-		BRepFill_Evolved(const TopoDS_Face &Spine, const TopoDS_Wire &Profile, const gp_Ax3 &AxeProf, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean Solid=0);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Wire &Spine, const TopoDS_Wire &Profile, const gp_Ax3 &AxeProf, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean Solid=0);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Face &Spine, const TopoDS_Wire &Profile, const gp_Ax3 &AxeProf, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean Solid=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GeneratedShapes(const TopoDS_Shape &SpineShape, const TopoDS_Shape &ProfShape) const;
-		%feature("autodoc", "1");
-		GeomAbs_JoinType JoinType() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Top() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Bottom() const;
-
-};
-
-%nodefaultctor BRepFill_SectionLaw;
-class BRepFill_SectionLaw : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer NbLaw() const;
-		%feature("autodoc", "1");
-		const Handle_GeomFill_SectionLaw & Law(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsUClosed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsVClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsVertex() const;
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_SectionLaw ConcatenedLaw() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity(const Standard_Integer Index, const Standard_Real TolAngular) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real VertexTol(const Standard_Integer Index, const Standard_Real Param) const;
-		%feature("autodoc", "1");
-		virtual		TopoDS_Vertex Vertex(const Standard_Integer Index, const Standard_Real Param) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &W);
-		%feature("autodoc", "1");
-		TopoDS_Edge CurrentEdge();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepFill_SectionLaw {
-	Handle_BRepFill_SectionLaw GetHandle() {
-	return *(Handle_BRepFill_SectionLaw*) &$self;
-	}
-};
-
-%nodefaultctor BRepFill_NSections;
-class BRepFill_NSections : public BRepFill_SectionLaw {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_NSections(const TopTools_SequenceOfShape &S, const Standard_Boolean Build=1);
-		%feature("autodoc", "1");
-		BRepFill_NSections(const TopTools_SequenceOfShape &S, const TColStd_SequenceOfReal &P, const Standard_Real VF, const Standard_Real VL, const Standard_Boolean Build=1);
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real Param, TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		virtual		~BRepFill_NSections();
-
-};
-%extend BRepFill_NSections {
-	Handle_BRepFill_NSections GetHandle() {
-	return *(Handle_BRepFill_NSections*) &$self;
-	}
-};
-
-%nodefaultctor BRepFill;
-class BRepFill {
-	public:
-		%feature("autodoc", "1");
-		~BRepFill();
-		%feature("autodoc", "1");
-		BRepFill();
-		%feature("autodoc", "1");
-		TopoDS_Face Face(const TopoDS_Edge &Edge1, const TopoDS_Edge &Edge2);
-		%feature("autodoc", "1");
-		TopoDS_Shell Shell(const TopoDS_Wire &Wire1, const TopoDS_Wire &Wire2);
-		%feature("autodoc", "1");
-		void Axe(const TopoDS_Shape &Spine, const TopoDS_Wire &Profile, gp_Ax3 & AxeProf, Standard_Boolean & ProfOnSpine, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void ComputeACR(const TopoDS_Wire &wire, TColStd_Array1OfReal & ACR);
-		%feature("autodoc", "1");
-		TopoDS_Wire InsertACR(const TopoDS_Wire &wire, const TColStd_Array1OfReal &ACRcuts, const Standard_Real prec);
-
-};
-
-%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt;
-class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt();
-		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt();
-		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt(const BRepFill_DataMapOfShapeSequenceOfPnt &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepFill_DataMapOfShapeSequenceOfPnt &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfPnt & Value() const;
-
-};
-
-%nodefaultctor BRepFill_CurveConstraint;
-class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_CurveConstraint(const Handle_Adaptor3d_HCurveOnSurface &Boundary, const Standard_Integer Order, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
-		%feature("autodoc", "1");
-		BRepFill_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_CurveConstraint();
-
-};
-%extend BRepFill_CurveConstraint {
-	Handle_BRepFill_CurveConstraint GetHandle() {
-	return *(Handle_BRepFill_CurveConstraint*) &$self;
-	}
-};
-
 %nodefaultctor BRepFill_Pipe;
 class BRepFill_Pipe {
 	public:
@@ -1323,6 +1305,132 @@ class BRepFill_Pipe {
 		%feature("autodoc", "1");
 		TopoDS_Wire PipeLine(const gp_Pnt &Point) const;
 
+};
+
+%nodefaultctor BRepFill_ListIteratorOfListOfOffsetWire;
+class BRepFill_ListIteratorOfListOfOffsetWire {
+	public:
+		%feature("autodoc", "1");
+		~BRepFill_ListIteratorOfListOfOffsetWire();
+		%feature("autodoc", "1");
+		BRepFill_ListIteratorOfListOfOffsetWire();
+		%feature("autodoc", "1");
+		BRepFill_ListIteratorOfListOfOffsetWire(const BRepFill_ListOfOffsetWire &L);
+		%feature("autodoc", "1");
+		void Initialize(const BRepFill_ListOfOffsetWire &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BRepFill_OffsetWire & Value() const;
+
+};
+
+%nodefaultctor BRepFill_ListNodeOfListOfOffsetWire;
+class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_ListNodeOfListOfOffsetWire(const BRepFill_OffsetWire &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BRepFill_OffsetWire & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~BRepFill_ListNodeOfListOfOffsetWire();
+
+};
+%extend BRepFill_ListNodeOfListOfOffsetWire {
+	Handle_BRepFill_ListNodeOfListOfOffsetWire GetHandle() {
+	return *(Handle_BRepFill_ListNodeOfListOfOffsetWire*) &$self;
+	}
+};
+
+%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt;
+class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt();
+		%feature("autodoc", "1");
+		BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt();
+		%feature("autodoc", "1");
+		BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt(const BRepFill_DataMapOfShapeSequenceOfPnt &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepFill_DataMapOfShapeSequenceOfPnt &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfPnt & Value() const;
+
+};
+
+%nodefaultctor BRepFill_EdgeFaceAndOrder;
+class BRepFill_EdgeFaceAndOrder {
+	public:
+		%feature("autodoc", "1");
+		~BRepFill_EdgeFaceAndOrder();
+		%feature("autodoc", "1");
+		BRepFill_EdgeFaceAndOrder();
+		%feature("autodoc", "1");
+		BRepFill_EdgeFaceAndOrder(const TopoDS_Edge &anEdge, const TopoDS_Face &aFace, const GeomAbs_Shape anOrder);
+
+};
+
+%nodefaultctor BRepFill_ACRLaw;
+class BRepFill_ACRLaw : public BRepFill_LocationLaw {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_ACRLaw(const TopoDS_Wire &Path, const Handle_GeomFill_LocationGuide &Law);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~BRepFill_ACRLaw();
+
+};
+%extend BRepFill_ACRLaw {
+	Handle_BRepFill_ACRLaw GetHandle() {
+	return *(Handle_BRepFill_ACRLaw*) &$self;
+	}
+};
+
+%nodefaultctor BRepFill_EdgeOnSurfLaw;
+class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_EdgeOnSurfLaw(const TopoDS_Wire &Path, const TopoDS_Shape &Surf);
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~BRepFill_EdgeOnSurfLaw();
+
+};
+%extend BRepFill_EdgeOnSurfLaw {
+	Handle_BRepFill_EdgeOnSurfLaw GetHandle() {
+	return *(Handle_BRepFill_EdgeOnSurfLaw*) &$self;
+	}
+};
+
+%nodefaultctor BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape;
+class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape(const Handle_MAT_Node &K, const TopTools_DataMapOfShapeShape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_MAT_Node & Key() const;
+		%feature("autodoc", "1");
+		TopTools_DataMapOfShapeShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape();
+
+};
+%extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
+	Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape GetHandle() {
+	return *(Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape*) &$self;
+	}
 };
 
 %nodefaultctor BRepFill_PipeShell;
@@ -1404,32 +1512,6 @@ class BRepFill_Generator {
 
 };
 
-%nodefaultctor BRepFill_TrimShellCorner;
-class BRepFill_TrimShellCorner {
-	public:
-		%feature("autodoc", "1");
-		~BRepFill_TrimShellCorner();
-		%feature("autodoc", "1");
-		BRepFill_TrimShellCorner(const Handle_TopTools_HArray2OfShape &theFaces, const gp_Ax2 &theAxeOfBisPlane, const TopoDS_Face &theSecPlane);
-		%feature("autodoc", "1");
-		BRepFill_TrimShellCorner(const Handle_TopTools_HArray2OfShape &theFaces, const gp_Ax2 &theAxeOfBisPlane, const TopoDS_Wire &theSpine, const TopoDS_Face &theSecPlane);
-		%feature("autodoc", "1");
-		void SetSpine(const TopoDS_Wire &theSpine);
-		%feature("autodoc", "1");
-		void AddBounds(const Handle_TopTools_HArray2OfShape &Bounds);
-		%feature("autodoc", "1");
-		void AddUEdges(const Handle_TopTools_HArray2OfShape &theUEdges);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasSection() const;
-		%feature("autodoc", "1");
-		void Modified(const TopoDS_Shape &S, TopTools_ListOfShape & theModified);
-
-};
-
 %nodefaultctor BRepFill_ShapeLaw;
 class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
 	public:
@@ -1467,25 +1549,34 @@ class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
 	}
 };
 
-%nodefaultctor BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape;
-class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollection_MapNode {
+%nodefaultctor BRepFill_DataMapOfNodeShape;
+class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape(const Handle_MAT_Node &K, const TopTools_DataMapOfShapeShape &I, const TCollection_MapNodePtr &n);
+		BRepFill_DataMapOfNodeShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		Handle_MAT_Node & Key() const;
+		BRepFill_DataMapOfNodeShape & Assign(const BRepFill_DataMapOfNodeShape &Other);
 		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeShape & Value() const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		~BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape();
+		~BRepFill_DataMapOfNodeShape();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Handle_MAT_Node &K, const TopoDS_Shape &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_MAT_Node &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_MAT_Node &K);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Find(const Handle_MAT_Node &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & operator()(const Handle_MAT_Node &K) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & ChangeFind(const Handle_MAT_Node &K);
+		%feature("autodoc", "1");
+		TopoDS_Shape & operator()(const Handle_MAT_Node &K);
 
-};
-%extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
-	Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape GetHandle() {
-	return *(Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape*) &$self;
-	}
 };
 
 %nodefaultctor BRepFill_SectionPlacement;
@@ -1532,52 +1623,6 @@ class BRepFill_Draft {
 
 };
 
-%nodefaultctor BRepFill_Filling;
-class BRepFill_Filling {
-	public:
-		%feature("autodoc", "1");
-		~BRepFill_Filling();
-		%feature("autodoc", "1");
-		BRepFill_Filling(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer MaxDeg=8, const Standard_Integer MaxSegments=9);
-		%feature("autodoc", "1");
-		void SetConstrParam(const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
-		%feature("autodoc", "1");
-		void SetResolParam(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0);
-		%feature("autodoc", "1");
-		void SetApproxParam(const Standard_Integer MaxDeg=8, const Standard_Integer MaxSegments=9);
-		%feature("autodoc", "1");
-		void LoadInitSurface(const TopoDS_Face &aFace);
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Edge &anEdge, const GeomAbs_Shape Order, const Standard_Boolean IsBound=1);
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Edge &anEdge, const TopoDS_Face &Support, const GeomAbs_Shape Order, const Standard_Boolean IsBound=1);
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Face &Support, const GeomAbs_Shape Order);
-		%feature("autodoc", "1");
-		Standard_Integer Add(const gp_Pnt &Point);
-		%feature("autodoc", "1");
-		Standard_Integer Add(const Standard_Real U, const Standard_Real V, const TopoDS_Face &Support, const GeomAbs_Shape Order);
-		%feature("autodoc", "1");
-		void Build();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		TopoDS_Face Face() const;
-		%feature("autodoc", "1");
-		Standard_Real G0Error() const;
-		%feature("autodoc", "1");
-		Standard_Real G1Error() const;
-		%feature("autodoc", "1");
-		Standard_Real G2Error() const;
-		%feature("autodoc", "1");
-		Standard_Real G0Error(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Real G1Error(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Real G2Error(const Standard_Integer Index);
-
-};
-
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape;
 class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCollection_MapNode {
 	public:
@@ -1599,33 +1644,33 @@ class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCo
 	}
 };
 
-%nodefaultctor BRepFill_Sweep;
-class BRepFill_Sweep {
+%nodefaultctor BRepFill_Evolved;
+class BRepFill_Evolved {
 	public:
 		%feature("autodoc", "1");
-		~BRepFill_Sweep();
+		~BRepFill_Evolved();
 		%feature("autodoc", "1");
-		BRepFill_Sweep(const Handle_BRepFill_SectionLaw &Section, const Handle_BRepFill_LocationLaw &Location, const Standard_Boolean WithKPart);
+		BRepFill_Evolved();
 		%feature("autodoc", "1");
-		void SetBounds(const TopoDS_Wire &FirstShape, const TopoDS_Wire &LastShape);
+		BRepFill_Evolved(const TopoDS_Wire &Spine, const TopoDS_Wire &Profile, const gp_Ax3 &AxeProf, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean Solid=0);
 		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol3d, const Standard_Real BoundTol=1.0e+0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real TolAngular=1.0000000000000000208166817117216851329430937767e-2);
+		BRepFill_Evolved(const TopoDS_Face &Spine, const TopoDS_Wire &Profile, const gp_Ax3 &AxeProf, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean Solid=0);
 		%feature("autodoc", "1");
-		void SetAngularControl(const Standard_Real AngleMin=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real AngleMax=6.0e+0);
+		void Perform(const TopoDS_Wire &Spine, const TopoDS_Wire &Profile, const gp_Ax3 &AxeProf, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean Solid=0);
 		%feature("autodoc", "1");
-		void Build(const BRepFill_TransitionStyle Transition=BRepFill_Modified, const GeomFill_ApproxStyle Approx=GeomFill_Location, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Integer Degmax=10, const Standard_Integer Segmax=30);
+		void Perform(const TopoDS_Face &Spine, const TopoDS_Wire &Profile, const gp_Ax3 &AxeProf, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean Solid=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape Shape() const;
+		const TopoDS_Shape & Shape() const;
 		%feature("autodoc", "1");
-		Standard_Real ErrorOnSurface() const;
+		const TopTools_ListOfShape & GeneratedShapes(const TopoDS_Shape &SpineShape, const TopoDS_Shape &ProfShape) const;
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray2OfShape SubShape() const;
+		GeomAbs_JoinType JoinType() const;
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray2OfShape InterFaces() const;
+		const TopoDS_Shape & Top() const;
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray2OfShape Sections() const;
+		const TopoDS_Shape & Bottom() const;
 
 };
 
@@ -1689,38 +1734,6 @@ class BRepFill_DataMapOfOrientedShapeListOfShape : public TCollection_BasicMap {
 
 };
 
-%nodefaultctor BRepFill_ComputeCLine;
-class BRepFill_ComputeCLine {
-	public:
-		%feature("autodoc", "1");
-		~BRepFill_ComputeCLine();
-		%feature("autodoc", "1");
-		BRepFill_ComputeCLine(const BRepFill_MultiLine &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
-		%feature("autodoc", "1");
-		BRepFill_ComputeCLine(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
-		%feature("autodoc", "1");
-		void Perform(const BRepFill_MultiLine &Line);
-		%feature("autodoc", "1");
-		void SetDegrees(const Standard_Integer degreemin, const Standard_Integer degreemax);
-		%feature("autodoc", "1");
-		void SetTolerances(const Standard_Real Tolerance3d, const Standard_Real Tolerance2d);
-		%feature("autodoc", "1");
-		void SetConstraints(const AppParCurves_Constraint FirstC, const AppParCurves_Constraint LastC);
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllApproximated() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc", "1");
-		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbMultiCurves() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve Value(const Standard_Integer Index=1) const;
-		%feature("autodoc", "1");
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfNodeShape;
 class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 	public:
@@ -1742,21 +1755,53 @@ class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 	}
 };
 
-%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
-class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMapIterator {
+%nodefaultctor BRepFill_SequenceOfEdgeFaceAndOrder;
+class BRepFill_SequenceOfEdgeFaceAndOrder : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		~BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape();
+		BRepFill_SequenceOfEdgeFaceAndOrder();
 		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape();
+		void Clear();
 		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
+		~BRepFill_SequenceOfEdgeFaceAndOrder();
 		%feature("autodoc", "1");
-		void Initialize(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
+		const BRepFill_SequenceOfEdgeFaceAndOrder & Assign(const BRepFill_SequenceOfEdgeFaceAndOrder &Other);
 		%feature("autodoc", "1");
-		const Handle_MAT_Node & Key() const;
+		void Append(const BRepFill_EdgeFaceAndOrder &T);
 		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeShape & Value() const;
+		void Append(BRepFill_SequenceOfEdgeFaceAndOrder & S);
+		%feature("autodoc", "1");
+		void Prepend(const BRepFill_EdgeFaceAndOrder &T);
+		%feature("autodoc", "1");
+		void Prepend(BRepFill_SequenceOfEdgeFaceAndOrder & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const BRepFill_EdgeFaceAndOrder &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, BRepFill_SequenceOfEdgeFaceAndOrder & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const BRepFill_EdgeFaceAndOrder &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, BRepFill_SequenceOfEdgeFaceAndOrder & S);
+		%feature("autodoc", "1");
+		const BRepFill_EdgeFaceAndOrder & First() const;
+		%feature("autodoc", "1");
+		const BRepFill_EdgeFaceAndOrder & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, BRepFill_SequenceOfEdgeFaceAndOrder & S);
+		%feature("autodoc", "1");
+		const BRepFill_EdgeFaceAndOrder & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BRepFill_EdgeFaceAndOrder & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const BRepFill_EdgeFaceAndOrder &I);
+		%feature("autodoc", "1");
+		BRepFill_EdgeFaceAndOrder & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BRepFill_EdgeFaceAndOrder & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
 
@@ -1818,6 +1863,26 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_Map
 	}
 };
 
+%nodefaultctor BRepFill;
+class BRepFill {
+	public:
+		%feature("autodoc", "1");
+		~BRepFill();
+		%feature("autodoc", "1");
+		BRepFill();
+		%feature("autodoc", "1");
+		TopoDS_Face Face(const TopoDS_Edge &Edge1, const TopoDS_Edge &Edge2);
+		%feature("autodoc", "1");
+		TopoDS_Shell Shell(const TopoDS_Wire &Wire1, const TopoDS_Wire &Wire2);
+		%feature("autodoc", "1");
+		void Axe(const TopoDS_Shape &Spine, const TopoDS_Wire &Profile, gp_Ax3 & AxeProf, Standard_Boolean & ProfOnSpine, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void ComputeACR(const TopoDS_Wire &wire, TColStd_Array1OfReal & ACR);
+		%feature("autodoc", "1");
+		TopoDS_Wire InsertACR(const TopoDS_Wire &wire, const TColStd_Array1OfReal &ACRcuts, const Standard_Real prec);
+
+};
+
 %nodefaultctor BRepFill_FaceAndOrder;
 class BRepFill_FaceAndOrder {
 	public:
@@ -1860,41 +1925,26 @@ class BRepFill_MultiLineTool {
 
 };
 
-%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape;
-class BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape : public TCollection_BasicMapIterator {
+%nodefaultctor BRepFill_ApproxSeewing;
+class BRepFill_ApproxSeewing {
 	public:
 		%feature("autodoc", "1");
-		~BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape();
+		~BRepFill_ApproxSeewing();
 		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape();
+		BRepFill_ApproxSeewing();
 		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape(const BRepFill_DataMapOfOrientedShapeListOfShape &aMap);
+		BRepFill_ApproxSeewing(const BRepFill_MultiLine &ML);
 		%feature("autodoc", "1");
-		void Initialize(const BRepFill_DataMapOfOrientedShapeListOfShape &aMap);
+		void Perform(const BRepFill_MultiLine &ML);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Value() const;
+		const Handle_Geom_Curve & Curve() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & CurveOnF1() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & CurveOnF2() const;
 
-};
-
-%nodefaultctor BRepFill_EdgeOnSurfLaw;
-class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_EdgeOnSurfLaw(const TopoDS_Wire &Path, const TopoDS_Shape &Surf);
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_EdgeOnSurfLaw();
-
-};
-%extend BRepFill_EdgeOnSurfLaw {
-	Handle_BRepFill_EdgeOnSurfLaw GetHandle() {
-	return *(Handle_BRepFill_EdgeOnSurfLaw*) &$self;
-	}
 };
 
 %nodefaultctor BRepFill_SequenceNodeOfSequenceOfSection;
@@ -1962,36 +2012,6 @@ class BRepFill_ListOfOffsetWire {
 
 };
 
-%nodefaultctor BRepFill_DataMapOfShapeSequenceOfReal;
-class BRepFill_DataMapOfShapeSequenceOfReal : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_DataMapOfShapeSequenceOfReal(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepFill_DataMapOfShapeSequenceOfReal & Assign(const BRepFill_DataMapOfShapeSequenceOfReal &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~BRepFill_DataMapOfShapeSequenceOfReal();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const TColStd_SequenceOfReal &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfReal & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfReal & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		TColStd_SequenceOfReal & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		TColStd_SequenceOfReal & operator()(const TopoDS_Shape &K);
-
-};
-
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal;
 class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_MapNode {
 	public:
@@ -2013,52 +2033,53 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_Ma
 	}
 };
 
-%nodefaultctor BRepFill_ListNodeOfListOfOffsetWire;
-class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
+%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
+class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_ListNodeOfListOfOffsetWire(const BRepFill_OffsetWire &I, const TCollection_MapNodePtr &n);
+		~BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape();
 		%feature("autodoc", "1");
-		BRepFill_OffsetWire & Value() const;
+		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
 		%feature("autodoc", "1");
-		virtual		~BRepFill_ListNodeOfListOfOffsetWire();
+		void Initialize(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
+		%feature("autodoc", "1");
+		const Handle_MAT_Node & Key() const;
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeShape & Value() const;
 
 };
-%extend BRepFill_ListNodeOfListOfOffsetWire {
-	Handle_BRepFill_ListNodeOfListOfOffsetWire GetHandle() {
-	return *(Handle_BRepFill_ListNodeOfListOfOffsetWire*) &$self;
-	}
-};
 
-%nodefaultctor BRepFill_DataMapOfNodeShape;
-class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
+%nodefaultctor BRepFill_ComputeCLine;
+class BRepFill_ComputeCLine {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_DataMapOfNodeShape(const Standard_Integer NbBuckets=1);
+		~BRepFill_ComputeCLine();
 		%feature("autodoc", "1");
-		BRepFill_DataMapOfNodeShape & Assign(const BRepFill_DataMapOfNodeShape &Other);
+		BRepFill_ComputeCLine(const BRepFill_MultiLine &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		BRepFill_ComputeCLine(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
-		void Clear();
+		void Perform(const BRepFill_MultiLine &Line);
 		%feature("autodoc", "1");
-		~BRepFill_DataMapOfNodeShape();
+		void SetDegrees(const Standard_Integer degreemin, const Standard_Integer degreemax);
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_MAT_Node &K, const TopoDS_Shape &I);
+		void SetTolerances(const Standard_Real Tolerance3d, const Standard_Real Tolerance2d);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_MAT_Node &K) const;
+		void SetConstraints(const AppParCurves_Constraint FirstC, const AppParCurves_Constraint LastC);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_MAT_Node &K);
+		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Find(const Handle_MAT_Node &K) const;
+		Standard_Boolean IsToleranceReached() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const Handle_MAT_Node &K) const;
+		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFind(const Handle_MAT_Node &K);
+		Standard_Integer NbMultiCurves() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const Handle_MAT_Node &K);
+		AppParCurves_MultiCurve Value(const Standard_Integer Index=1) const;
+		%feature("autodoc", "1");
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
 
@@ -2090,27 +2111,6 @@ class BRepFill_DataMapOfShapeSequenceOfPnt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TColgp_SequenceOfPnt & operator()(const TopoDS_Shape &K);
 
-};
-
-%nodefaultctor BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape;
-class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape(const TopoDS_Shape &K, const TopTools_ListOfShape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape();
-
-};
-%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
-	Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape GetHandle() {
-	return *(Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape*) &$self;
-	}
 };
 
 %nodefaultctor BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;

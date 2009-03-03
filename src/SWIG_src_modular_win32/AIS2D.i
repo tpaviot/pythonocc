@@ -1518,6 +1518,39 @@ class AIS2D_DataMapOfPrimAspects : public TCollection_BasicMap {
 
 };
 
+%nodefaultctor AIS2D;
+class AIS2D {
+	public:
+		%feature("autodoc", "1");
+		~AIS2D();
+		%feature("autodoc", "1");
+		AIS2D();
+		%feature("autodoc", "1");
+		Standard_Boolean Save(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
+		%feature("autodoc", "1");
+		Handle_AIS2D_InteractiveObject Retrieve(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
+
+};
+
+%nodefaultctor AIS2D_SequenceNodeOfSequenceOfPrimArchit;
+class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		AIS2D_SequenceNodeOfSequenceOfPrimArchit(const Handle_AIS2D_PrimitiveArchit &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_AIS2D_PrimitiveArchit & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~AIS2D_SequenceNodeOfSequenceOfPrimArchit();
+
+};
+%extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
+	Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit GetHandle() {
+	return *(Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit*) &$self;
+	}
+};
+
 %nodefaultctor AIS2D_HSequenceOfPrimArchit;
 class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 	public:
@@ -1576,39 +1609,6 @@ class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 %extend AIS2D_HSequenceOfPrimArchit {
 	Handle_AIS2D_HSequenceOfPrimArchit GetHandle() {
 	return *(Handle_AIS2D_HSequenceOfPrimArchit*) &$self;
-	}
-};
-
-%nodefaultctor AIS2D;
-class AIS2D {
-	public:
-		%feature("autodoc", "1");
-		~AIS2D();
-		%feature("autodoc", "1");
-		AIS2D();
-		%feature("autodoc", "1");
-		Standard_Boolean Save(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
-		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveObject Retrieve(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
-
-};
-
-%nodefaultctor AIS2D_SequenceNodeOfSequenceOfPrimArchit;
-class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		AIS2D_SequenceNodeOfSequenceOfPrimArchit(const Handle_AIS2D_PrimitiveArchit &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_AIS2D_PrimitiveArchit & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_SequenceNodeOfSequenceOfPrimArchit();
-
-};
-%extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
-	Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit GetHandle() {
-	return *(Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit*) &$self;
 	}
 };
 

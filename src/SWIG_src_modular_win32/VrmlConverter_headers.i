@@ -36,6 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_VrmlConverter_Drawer.hxx>
+#include<Handle_VrmlConverter_IsoAspect.hxx>
+#include<Handle_VrmlConverter_LineAspect.hxx>
+#include<Handle_VrmlConverter_PointAspect.hxx>
+#include<Handle_VrmlConverter_Projector.hxx>
+#include<Handle_VrmlConverter_ShadingAspect.hxx>
 #include<VrmlConverter_Curve.hxx>
 #include<VrmlConverter_DeflectionCurve.hxx>
 #include<VrmlConverter_Drawer.hxx>
@@ -52,21 +58,15 @@
 #include<VrmlConverter_WFDeflectionShape.hxx>
 #include<VrmlConverter_WFRestrictedFace.hxx>
 #include<VrmlConverter_WFShape.hxx>
-#include<Handle_VrmlConverter_Drawer.hxx>
-#include<Handle_VrmlConverter_IsoAspect.hxx>
-#include<Handle_VrmlConverter_LineAspect.hxx>
-#include<Handle_VrmlConverter_PointAspect.hxx>
-#include<Handle_VrmlConverter_Projector.hxx>
-#include<Handle_VrmlConverter_ShadingAspect.hxx>
 
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

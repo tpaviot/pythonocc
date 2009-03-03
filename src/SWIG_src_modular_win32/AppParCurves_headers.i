@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<AppParCurves.hxx>
 #include<AppParCurves_Array1OfConstraintCouple.hxx>
 #include<AppParCurves_Array1OfMultiBSpCurve.hxx>
 #include<AppParCurves_Array1OfMultiCurve.hxx>
@@ -54,7 +55,6 @@
 #include<AppParCurves_SequenceOfMultiBSpCurve.hxx>
 #include<AppParCurves_SequenceOfMultiCurve.hxx>
 #include<AppParCurves_SmoothCriterion.hxx>
-#include<AppParCurves.hxx>
 #include<Handle_AppParCurves_HArray1OfConstraintCouple.hxx>
 #include<Handle_AppParCurves_HArray1OfMultiBSpCurve.hxx>
 #include<Handle_AppParCurves_HArray1OfMultiCurve.hxx>

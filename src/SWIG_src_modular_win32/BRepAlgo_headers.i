@@ -36,12 +36,14 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepAlgo.hxx>
 #include<BRepAlgo_AsDes.hxx>
 #include<BRepAlgo_BooleanOperation.hxx>
 #include<BRepAlgo_BooleanOperations.hxx>
 #include<BRepAlgo_CheckStatus.hxx>
 #include<BRepAlgo_Common.hxx>
 #include<BRepAlgo_Cut.hxx>
+#include<BRepAlgo_DSAccess.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
@@ -51,7 +53,6 @@
 #include<BRepAlgo_DataMapOfShapeBoolean.hxx>
 #include<BRepAlgo_DataMapOfShapeInterference.hxx>
 #include<BRepAlgo_DataMapOfShapeListOfInteger.hxx>
-#include<BRepAlgo_DSAccess.hxx>
 #include<BRepAlgo_EdgeConnector.hxx>
 #include<BRepAlgo_FaceRestrictor.hxx>
 #include<BRepAlgo_Fuse.hxx>
@@ -63,7 +64,6 @@
 #include<BRepAlgo_SequenceOfSequenceOfInteger.hxx>
 #include<BRepAlgo_Tool.hxx>
 #include<BRepAlgo_TopOpe.hxx>
-#include<BRepAlgo.hxx>
 #include<Handle_BRepAlgo_AsDes.hxx>
 #include<Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean.hxx>
 #include<Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference.hxx>
@@ -85,6 +85,7 @@
 #include<BRepAlgo_CheckStatus.hxx>
 #include<BRepAlgo_Common.hxx>
 #include<BRepAlgo_Cut.hxx>
+#include<BRepAlgo_DSAccess.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
@@ -94,7 +95,6 @@
 #include<BRepAlgo_DataMapOfShapeBoolean.hxx>
 #include<BRepAlgo_DataMapOfShapeInterference.hxx>
 #include<BRepAlgo_DataMapOfShapeListOfInteger.hxx>
-#include<BRepAlgo_DSAccess.hxx>
 #include<BRepAlgo_EdgeConnector.hxx>
 #include<BRepAlgo_FaceRestrictor.hxx>
 #include<BRepAlgo_Fuse.hxx>
@@ -121,11 +121,11 @@
 #include<Handle_TopOpeBRepDS_Interference.hxx>
 #include<Handle_TopOpeBRepBuild_HBuilder.hxx>
 #include<Adaptor3d_Curve.hxx>
+#include<TopoDS_Wire.hxx>
 #include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<gp_Pln.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom2d_Curve.hxx>
-#include<TopoDS_Wire.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
 #include<BRepAlgo.hxx>
 %}

@@ -104,48 +104,6 @@ enum StepData_Logical {
 
 
 
-%nodefaultctor Handle_StepData_SelectMember;
-class Handle_StepData_SelectMember : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_SelectMember();
-		%feature("autodoc", "1");
-		Handle_StepData_SelectMember();
-		%feature("autodoc", "1");
-		Handle_StepData_SelectMember(const Handle_StepData_SelectMember &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepData_SelectMember(const StepData_SelectMember *anItem);
-		%feature("autodoc", "1");
-		Handle_StepData_SelectMember const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepData_SelectMember {
-	StepData_SelectMember* GetObject() {
-	return (StepData_SelectMember*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepData_SelectReal;
-class Handle_StepData_SelectReal : public Handle_StepData_SelectMember {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_SelectReal();
-		%feature("autodoc", "1");
-		Handle_StepData_SelectReal();
-		%feature("autodoc", "1");
-		Handle_StepData_SelectReal(const Handle_StepData_SelectReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepData_SelectReal(const StepData_SelectReal *anItem);
-		%feature("autodoc", "1");
-		Handle_StepData_SelectReal const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepData_SelectReal {
-	StepData_SelectReal* GetObject() {
-	return (StepData_SelectReal*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepData_EDescr;
 class Handle_StepData_EDescr : public Handle_MMgt_TShared {
 	public:
@@ -251,6 +209,27 @@ class Handle_StepData_Plex : public Handle_StepData_Described {
 	}
 };
 
+%nodefaultctor Handle_StepData_SelectMember;
+class Handle_StepData_SelectMember : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepData_SelectMember();
+		%feature("autodoc", "1");
+		Handle_StepData_SelectMember();
+		%feature("autodoc", "1");
+		Handle_StepData_SelectMember(const Handle_StepData_SelectMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectMember(const StepData_SelectMember *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectMember const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepData_SelectMember {
+	StepData_SelectMember* GetObject() {
+	return (StepData_SelectMember*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepData_SelectNamed;
 class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
 	public:
@@ -332,6 +311,27 @@ class Handle_StepData_PDescr : public Handle_MMgt_TShared {
 %extend Handle_StepData_PDescr {
 	StepData_PDescr* GetObject() {
 	return (StepData_PDescr*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepData_SelectReal;
+class Handle_StepData_SelectReal : public Handle_StepData_SelectMember {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepData_SelectReal();
+		%feature("autodoc", "1");
+		Handle_StepData_SelectReal();
+		%feature("autodoc", "1");
+		Handle_StepData_SelectReal(const Handle_StepData_SelectReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectReal(const StepData_SelectReal *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectReal const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepData_SelectReal {
+	StepData_SelectReal* GetObject() {
+	return (StepData_SelectReal*)$self->Access();
 	}
 };
 
@@ -714,6 +714,45 @@ class StepData_NodeOfWriterLib : public MMgt_TShared {
 %extend StepData_NodeOfWriterLib {
 	Handle_StepData_NodeOfWriterLib GetHandle() {
 	return *(Handle_StepData_NodeOfWriterLib*) &$self;
+	}
+};
+
+%nodefaultctor StepData_FreeFormEntity;
+class StepData_FreeFormEntity : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		void SetStepType(const char * typenam);
+		%feature("autodoc", "1");
+		Standard_CString StepType() const;
+		%feature("autodoc", "1");
+		void SetNext(const Handle_StepData_FreeFormEntity &next, const Standard_Boolean last=1);
+		%feature("autodoc", "1");
+		Handle_StepData_FreeFormEntity Next() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsComplex() const;
+		%feature("autodoc", "1");
+		Handle_StepData_FreeFormEntity Typed(const char * typenam) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString TypeList() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Reorder(Handle_StepData_FreeFormEntity & ent);
+		%feature("autodoc", "1");
+		void SetNbFields(const Standard_Integer nb);
+		%feature("autodoc", "1");
+		Standard_Integer NbFields() const;
+		%feature("autodoc", "1");
+		const StepData_Field & Field(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		StepData_Field & CField(const Standard_Integer num);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepData_FreeFormEntity();
+
+};
+%extend StepData_FreeFormEntity {
+	Handle_StepData_FreeFormEntity GetHandle() {
+	return *(Handle_StepData_FreeFormEntity*) &$self;
 	}
 };
 
@@ -1152,6 +1191,54 @@ class StepData_PDescr : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor StepData_ReadWriteModule;
+class StepData_ReadWriteModule : public Interface_ReaderModule {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Interface_FileReaderData &data, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseStep(const TCollection_AsciiString &atype) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseStep(const TColStd_SequenceOfAsciiString &types) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsComplex(const Standard_Integer CN) const;
+		%feature("autodoc", "1");
+		virtual		const TCollection_AsciiString & StepType(const Standard_Integer CN) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ShortType(const Standard_Integer CN) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean ComplexType(const Standard_Integer CN, TColStd_SequenceOfAsciiString & types) const;
+		%feature("autodoc", "1");
+		virtual		void Read(const Standard_Integer CN, const Handle_Interface_FileReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		void ReadStep(const Standard_Integer CN, const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepData_ReadWriteModule {
+	Handle_StepData_ReadWriteModule GetHandle() {
+	return *(Handle_StepData_ReadWriteModule*) &$self;
+	}
+};
+
+%nodefaultctor StepData_DescrReadWrite;
+class StepData_DescrReadWrite : public StepData_ReadWriteModule {
+	public:
+		%feature("autodoc", "1");
+		StepData_DescrReadWrite(const Handle_StepData_Protocol &proto);
+		%feature("autodoc", "1");
+		virtual		~StepData_DescrReadWrite();
+
+};
+%extend StepData_DescrReadWrite {
+	Handle_StepData_DescrReadWrite GetHandle() {
+	return *(Handle_StepData_DescrReadWrite*) &$self;
+	}
+};
+
 %nodefaultctor StepData_GlobalNodeOfWriterLib;
 class StepData_GlobalNodeOfWriterLib : public Standard_Transient {
 	public:
@@ -1376,45 +1463,6 @@ class StepData_FieldListN : public StepData_FieldList {
 		%feature("autodoc", "1");
 		virtual		~StepData_FieldListN();
 
-};
-
-%nodefaultctor StepData_FreeFormEntity;
-class StepData_FreeFormEntity : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		void SetStepType(const char * typenam);
-		%feature("autodoc", "1");
-		Standard_CString StepType() const;
-		%feature("autodoc", "1");
-		void SetNext(const Handle_StepData_FreeFormEntity &next, const Standard_Boolean last=1);
-		%feature("autodoc", "1");
-		Handle_StepData_FreeFormEntity Next() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsComplex() const;
-		%feature("autodoc", "1");
-		Handle_StepData_FreeFormEntity Typed(const char * typenam) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString TypeList() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Reorder(Handle_StepData_FreeFormEntity & ent);
-		%feature("autodoc", "1");
-		void SetNbFields(const Standard_Integer nb);
-		%feature("autodoc", "1");
-		Standard_Integer NbFields() const;
-		%feature("autodoc", "1");
-		const StepData_Field & Field(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		StepData_Field & CField(const Standard_Integer num);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_FreeFormEntity();
-
-};
-%extend StepData_FreeFormEntity {
-	Handle_StepData_FreeFormEntity GetHandle() {
-	return *(Handle_StepData_FreeFormEntity*) &$self;
-	}
 };
 
 %nodefaultctor StepData_SelectNamed;
@@ -1758,29 +1806,6 @@ class StepData_WriterLib {
 
 };
 
-%nodefaultctor StepData_SelectReal;
-class StepData_SelectReal : public StepData_SelectMember {
-	public:
-		%feature("autodoc", "1");
-		StepData_SelectReal();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Kind() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Real() const;
-		%feature("autodoc", "1");
-		virtual		void SetReal(const Standard_Real val);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_SelectReal();
-
-};
-%extend StepData_SelectReal {
-	Handle_StepData_SelectReal GetHandle() {
-	return *(Handle_StepData_SelectReal*) &$self;
-	}
-};
-
 %nodefaultctor StepData_StepWriter;
 class StepData_StepWriter {
 	public:
@@ -1930,54 +1955,6 @@ class StepData_Plex : public StepData_Described {
 	}
 };
 
-%nodefaultctor StepData_ReadWriteModule;
-class StepData_ReadWriteModule : public Interface_ReaderModule {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Interface_FileReaderData &data, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseStep(const TCollection_AsciiString &atype) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseStep(const TColStd_SequenceOfAsciiString &types) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsComplex(const Standard_Integer CN) const;
-		%feature("autodoc", "1");
-		virtual		const TCollection_AsciiString & StepType(const Standard_Integer CN) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ShortType(const Standard_Integer CN) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean ComplexType(const Standard_Integer CN, TColStd_SequenceOfAsciiString & types) const;
-		%feature("autodoc", "1");
-		virtual		void Read(const Standard_Integer CN, const Handle_Interface_FileReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		void ReadStep(const Standard_Integer CN, const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepData_ReadWriteModule {
-	Handle_StepData_ReadWriteModule GetHandle() {
-	return *(Handle_StepData_ReadWriteModule*) &$self;
-	}
-};
-
-%nodefaultctor StepData_DescrReadWrite;
-class StepData_DescrReadWrite : public StepData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		StepData_DescrReadWrite(const Handle_StepData_Protocol &proto);
-		%feature("autodoc", "1");
-		virtual		~StepData_DescrReadWrite();
-
-};
-%extend StepData_DescrReadWrite {
-	Handle_StepData_DescrReadWrite GetHandle() {
-	return *(Handle_StepData_DescrReadWrite*) &$self;
-	}
-};
-
 %nodefaultctor StepData_ECDescr;
 class StepData_ECDescr : public StepData_EDescr {
 	public:
@@ -2006,6 +1983,29 @@ class StepData_ECDescr : public StepData_EDescr {
 %extend StepData_ECDescr {
 	Handle_StepData_ECDescr GetHandle() {
 	return *(Handle_StepData_ECDescr*) &$self;
+	}
+};
+
+%nodefaultctor StepData_SelectReal;
+class StepData_SelectReal : public StepData_SelectMember {
+	public:
+		%feature("autodoc", "1");
+		StepData_SelectReal();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Kind() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Real() const;
+		%feature("autodoc", "1");
+		virtual		void SetReal(const Standard_Real val);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepData_SelectReal();
+
+};
+%extend StepData_SelectReal {
+	Handle_StepData_SelectReal GetHandle() {
+	return *(Handle_StepData_SelectReal*) &$self;
 	}
 };
 

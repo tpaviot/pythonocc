@@ -61,8 +61,8 @@
 #include<BRep_PolygonOnTriangulation.hxx>
 #include<BRep_TEdge.hxx>
 #include<BRep_TFace.hxx>
-#include<BRep_Tool.hxx>
 #include<BRep_TVertex.hxx>
+#include<BRep_Tool.hxx>
 #include<Handle_BRep_Curve3D.hxx>
 #include<Handle_BRep_CurveOn2Surfaces.hxx>
 #include<Handle_BRep_CurveOnClosedSurface.hxx>
@@ -109,6 +109,7 @@
 #include<BRepAlgo_CheckStatus.hxx>
 #include<BRepAlgo_Common.hxx>
 #include<BRepAlgo_Cut.hxx>
+#include<BRepAlgo_DSAccess.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
@@ -118,7 +119,6 @@
 #include<BRepAlgo_DataMapOfShapeBoolean.hxx>
 #include<BRepAlgo_DataMapOfShapeInterference.hxx>
 #include<BRepAlgo_DataMapOfShapeListOfInteger.hxx>
-#include<BRepAlgo_DSAccess.hxx>
 #include<BRepAlgo_EdgeConnector.hxx>
 #include<BRepAlgo_FaceRestrictor.hxx>
 #include<BRepAlgo_Fuse.hxx>
@@ -135,17 +135,17 @@
 #include<BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox.hxx>
-#include<BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox.hxx>
+#include<BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_MyBSplGradientOfTheComputeLineOfApprox.hxx>
-#include<BRepApprox_MyGradientbisOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_MyGradientOfTheComputeLineBezierOfApprox.hxx>
-#include<BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox.hxx>
+#include<BRepApprox_MyGradientbisOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox.hxx>
-#include<BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox.hxx>
+#include<BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox.hxx>
-#include<BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox.hxx>
+#include<BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox.hxx>
+#include<BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_SurfaceTool.hxx>
 #include<BRepApprox_TheComputeLineBezierOfApprox.hxx>
 #include<BRepApprox_TheComputeLineOfApprox.hxx>
@@ -163,16 +163,16 @@
 #include<BRepBlend_AppSurf.hxx>
 #include<BRepBlend_AppSurface.hxx>
 #include<BRepBlend_BlendTool.hxx>
-#include<BRepBlend_Chamfer.hxx>
-#include<BRepBlend_ChamfInv.hxx>
-#include<BRepBlend_ChAsym.hxx>
-#include<BRepBlend_ChAsymInv.hxx>
-#include<BRepBlend_ConstRad.hxx>
-#include<BRepBlend_ConstRadInv.hxx>
-#include<BRepBlend_Corde.hxx>
 #include<BRepBlend_CSCircular.hxx>
 #include<BRepBlend_CSConstRad.hxx>
 #include<BRepBlend_CSWalking.hxx>
+#include<BRepBlend_ChAsym.hxx>
+#include<BRepBlend_ChAsymInv.hxx>
+#include<BRepBlend_ChamfInv.hxx>
+#include<BRepBlend_Chamfer.hxx>
+#include<BRepBlend_ConstRad.hxx>
+#include<BRepBlend_ConstRadInv.hxx>
+#include<BRepBlend_Corde.hxx>
 #include<BRepBlend_CurvPointRadInv.hxx>
 #include<BRepBlend_EvolRad.hxx>
 #include<BRepBlend_EvolRadInv.hxx>
@@ -253,14 +253,14 @@
 #include<BRepClass3d_SolidExplorer.hxx>
 #include<BRepClass3d_SolidPassiveClassifier.hxx>
 #include<BRepClass_Edge.hxx>
+#include<BRepClass_FClass2dOfFClassifier.hxx>
+#include<BRepClass_FClassifier.hxx>
 #include<BRepClass_FaceClassifier.hxx>
 #include<BRepClass_FaceExplorer.hxx>
 #include<BRepClass_FacePassiveClassifier.hxx>
-#include<BRepClass_FClass2dOfFClassifier.hxx>
-#include<BRepClass_FClassifier.hxx>
 #include<BRepClass_Intersector.hxx>
-#include<BRepExtrema_DistanceSS.hxx>
 #include<BRepExtrema_DistShapeShape.hxx>
+#include<BRepExtrema_DistanceSS.hxx>
 #include<BRepExtrema_ExtCC.hxx>
 #include<BRepExtrema_ExtCF.hxx>
 #include<BRepExtrema_ExtFF.hxx>
@@ -290,10 +290,6 @@
 #include<BRepFeat_Status.hxx>
 #include<BRepFeat_StatusError.hxx>
 #include<BRepFill.hxx>
-#include<BRepFilletAPI_LocalOperation.hxx>
-#include<BRepFilletAPI_MakeChamfer.hxx>
-#include<BRepFilletAPI_MakeFillet.hxx>
-#include<BRepFilletAPI_MakeFillet2d.hxx>
 #include<BRepFill_ACRLaw.hxx>
 #include<BRepFill_ApproxSeewing.hxx>
 #include<BRepFill_CompatibleWires.hxx>
@@ -356,6 +352,10 @@
 #include<BRepFill_TrimEdgeTool.hxx>
 #include<BRepFill_TrimShellCorner.hxx>
 #include<BRepFill_TrimSurfaceTool.hxx>
+#include<BRepFilletAPI_LocalOperation.hxx>
+#include<BRepFilletAPI_MakeChamfer.hxx>
+#include<BRepFilletAPI_MakeFillet.hxx>
+#include<BRepFilletAPI_MakeFillet2d.hxx>
 #include<BRepGProp.hxx>
 #include<BRepGProp_Cinert.hxx>
 #include<BRepGProp_Domain.hxx>
@@ -367,6 +367,11 @@
 #include<BRepGProp_Vinert.hxx>
 #include<BRepGProp_VinertGK.hxx>
 #include<BRepIntCurveSurface_Inter.hxx>
+#include<BRepLProp.hxx>
+#include<BRepLProp_CLProps.hxx>
+#include<BRepLProp_CurveTool.hxx>
+#include<BRepLProp_SLProps.hxx>
+#include<BRepLProp_SurfaceTool.hxx>
 #include<BRepLib.hxx>
 #include<BRepLib_Command.hxx>
 #include<BRepLib_EdgeError.hxx>
@@ -385,11 +390,6 @@
 #include<BRepLib_ShapeModification.hxx>
 #include<BRepLib_ShellError.hxx>
 #include<BRepLib_WireError.hxx>
-#include<BRepLProp.hxx>
-#include<BRepLProp_CLProps.hxx>
-#include<BRepLProp_CurveTool.hxx>
-#include<BRepLProp_SLProps.hxx>
-#include<BRepLProp_SurfaceTool.hxx>
 #include<BRepMAT2d_BisectingLocus.hxx>
 #include<BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape.hxx>
 #include<BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt.hxx>
@@ -614,8 +614,8 @@
 #include<BRep_PolygonOnTriangulation.hxx>
 #include<BRep_TEdge.hxx>
 #include<BRep_TFace.hxx>
-#include<BRep_Tool.hxx>
 #include<BRep_TVertex.hxx>
+#include<BRep_Tool.hxx>
 
 // Needed headers necessary for compilation.
 

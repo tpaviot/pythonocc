@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepGProp.hxx>
 #include<BRepGProp_Cinert.hxx>
 #include<BRepGProp_Domain.hxx>
 #include<BRepGProp_EdgeTool.hxx>
@@ -45,7 +46,6 @@
 #include<BRepGProp_UFunctionOfVinertGK.hxx>
 #include<BRepGProp_Vinert.hxx>
 #include<BRepGProp_VinertGK.hxx>
-#include<BRepGProp.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -59,10 +59,10 @@
 #include<GProp_GProps.hxx>
 #include<gp_Pln.hxx>
 #include<BRepAdaptor_Curve.hxx>
+#include<gp_Vec.hxx>
+#include<TColStd_Array1OfReal.hxx>
 #include<TopoDS_Face.hxx>
 #include<gp_Pnt2d.hxx>
-#include<TColStd_Array1OfReal.hxx>
-#include<gp_Vec.hxx>
 #include<TopoDS_Edge.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>

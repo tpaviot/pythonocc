@@ -36,8 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<IntStart_SITopolTool.hxx>
 #include<Handle_IntStart_SITopolTool.hxx>
+#include<IntStart_SITopolTool.hxx>
 
 // Additional headers necessary for compilation.
 

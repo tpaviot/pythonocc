@@ -308,27 +308,6 @@ class Handle_Message_Messenger : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_Message_Algorithm;
-class Handle_Message_Algorithm : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Message_Algorithm();
-		%feature("autodoc", "1");
-		Handle_Message_Algorithm();
-		%feature("autodoc", "1");
-		Handle_Message_Algorithm(const Handle_Message_Algorithm &aHandle);
-		%feature("autodoc", "1");
-		Handle_Message_Algorithm(const Message_Algorithm *anItem);
-		%feature("autodoc", "1");
-		Handle_Message_Algorithm const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Message_Algorithm {
-	Message_Algorithm* GetObject() {
-	return (Message_Algorithm*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Message_SequenceNodeOfSequenceOfPrinters;
 class Handle_Message_SequenceNodeOfSequenceOfPrinters : public Handle_TCollection_SeqNode {
 	public:
@@ -410,6 +389,27 @@ class Handle_Message_SequenceNodeOfSequenceOfProgressScale : public Handle_TColl
 %extend Handle_Message_SequenceNodeOfSequenceOfProgressScale {
 	Message_SequenceNodeOfSequenceOfProgressScale* GetObject() {
 	return (Message_SequenceNodeOfSequenceOfProgressScale*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Message_Algorithm;
+class Handle_Message_Algorithm : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Message_Algorithm();
+		%feature("autodoc", "1");
+		Handle_Message_Algorithm();
+		%feature("autodoc", "1");
+		Handle_Message_Algorithm(const Handle_Message_Algorithm &aHandle);
+		%feature("autodoc", "1");
+		Handle_Message_Algorithm(const Message_Algorithm *anItem);
+		%feature("autodoc", "1");
+		Handle_Message_Algorithm const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Message_Algorithm {
+	Message_Algorithm* GetObject() {
+	return (Message_Algorithm*)$self->Access();
 	}
 };
 

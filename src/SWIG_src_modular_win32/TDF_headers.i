@@ -36,6 +36,42 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TDF_Attribute.hxx>
+#include<Handle_TDF_AttributeDelta.hxx>
+#include<Handle_TDF_Data.hxx>
+#include<Handle_TDF_DataMapNodeOfAttributeDataMap.hxx>
+#include<Handle_TDF_DataMapNodeOfLabelDataMap.hxx>
+#include<Handle_TDF_DataMapNodeOfLabelIntegerMap.hxx>
+#include<Handle_TDF_DataMapNodeOfLabelLabelMap.hxx>
+#include<Handle_TDF_DataSet.hxx>
+#include<Handle_TDF_DefaultDeltaOnModification.hxx>
+#include<Handle_TDF_DefaultDeltaOnRemoval.hxx>
+#include<Handle_TDF_Delta.hxx>
+#include<Handle_TDF_DeltaOnAddition.hxx>
+#include<Handle_TDF_DeltaOnForget.hxx>
+#include<Handle_TDF_DeltaOnModification.hxx>
+#include<Handle_TDF_DeltaOnRemoval.hxx>
+#include<Handle_TDF_DeltaOnResume.hxx>
+#include<Handle_TDF_DoubleMapNodeOfAttributeDoubleMap.hxx>
+#include<Handle_TDF_DoubleMapNodeOfGUIDProgIDMap.hxx>
+#include<Handle_TDF_DoubleMapNodeOfLabelDoubleMap.hxx>
+#include<Handle_TDF_HAttributeArray1.hxx>
+#include<Handle_TDF_IndexedMapNodeOfAttributeIndexedMap.hxx>
+#include<Handle_TDF_IndexedMapNodeOfLabelIndexedMap.hxx>
+#include<Handle_TDF_ListNodeOfAttributeDeltaList.hxx>
+#include<Handle_TDF_ListNodeOfAttributeList.hxx>
+#include<Handle_TDF_ListNodeOfDeltaList.hxx>
+#include<Handle_TDF_ListNodeOfIDList.hxx>
+#include<Handle_TDF_ListNodeOfLabelList.hxx>
+#include<Handle_TDF_Reference.hxx>
+#include<Handle_TDF_RelocationTable.hxx>
+#include<Handle_TDF_SequenceNodeOfAttributeSequence.hxx>
+#include<Handle_TDF_SequenceNodeOfLabelSequence.hxx>
+#include<Handle_TDF_StdMapNodeOfAttributeMap.hxx>
+#include<Handle_TDF_StdMapNodeOfIDMap.hxx>
+#include<Handle_TDF_StdMapNodeOfLabelMap.hxx>
+#include<Handle_TDF_TagSource.hxx>
+#include<TDF.hxx>
 #include<TDF_Attribute.hxx>
 #include<TDF_AttributeArray1.hxx>
 #include<TDF_AttributeDataMap.hxx>
@@ -122,42 +158,6 @@
 #include<TDF_TagSource.hxx>
 #include<TDF_Tool.hxx>
 #include<TDF_Transaction.hxx>
-#include<TDF.hxx>
-#include<Handle_TDF_Attribute.hxx>
-#include<Handle_TDF_AttributeDelta.hxx>
-#include<Handle_TDF_Data.hxx>
-#include<Handle_TDF_DataMapNodeOfAttributeDataMap.hxx>
-#include<Handle_TDF_DataMapNodeOfLabelDataMap.hxx>
-#include<Handle_TDF_DataMapNodeOfLabelIntegerMap.hxx>
-#include<Handle_TDF_DataMapNodeOfLabelLabelMap.hxx>
-#include<Handle_TDF_DataSet.hxx>
-#include<Handle_TDF_DefaultDeltaOnModification.hxx>
-#include<Handle_TDF_DefaultDeltaOnRemoval.hxx>
-#include<Handle_TDF_Delta.hxx>
-#include<Handle_TDF_DeltaOnAddition.hxx>
-#include<Handle_TDF_DeltaOnForget.hxx>
-#include<Handle_TDF_DeltaOnModification.hxx>
-#include<Handle_TDF_DeltaOnRemoval.hxx>
-#include<Handle_TDF_DeltaOnResume.hxx>
-#include<Handle_TDF_DoubleMapNodeOfAttributeDoubleMap.hxx>
-#include<Handle_TDF_DoubleMapNodeOfGUIDProgIDMap.hxx>
-#include<Handle_TDF_DoubleMapNodeOfLabelDoubleMap.hxx>
-#include<Handle_TDF_HAttributeArray1.hxx>
-#include<Handle_TDF_IndexedMapNodeOfAttributeIndexedMap.hxx>
-#include<Handle_TDF_IndexedMapNodeOfLabelIndexedMap.hxx>
-#include<Handle_TDF_ListNodeOfAttributeDeltaList.hxx>
-#include<Handle_TDF_ListNodeOfAttributeList.hxx>
-#include<Handle_TDF_ListNodeOfDeltaList.hxx>
-#include<Handle_TDF_ListNodeOfIDList.hxx>
-#include<Handle_TDF_ListNodeOfLabelList.hxx>
-#include<Handle_TDF_Reference.hxx>
-#include<Handle_TDF_RelocationTable.hxx>
-#include<Handle_TDF_SequenceNodeOfAttributeSequence.hxx>
-#include<Handle_TDF_SequenceNodeOfLabelSequence.hxx>
-#include<Handle_TDF_StdMapNodeOfAttributeMap.hxx>
-#include<Handle_TDF_StdMapNodeOfIDMap.hxx>
-#include<Handle_TDF_StdMapNodeOfLabelMap.hxx>
-#include<Handle_TDF_TagSource.hxx>
 
 // Additional headers necessary for compilation.
 

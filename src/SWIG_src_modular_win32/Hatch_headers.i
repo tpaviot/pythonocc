@@ -36,6 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Hatch_SequenceNodeOfSequenceOfLine.hxx>
+#include<Handle_Hatch_SequenceNodeOfSequenceOfParameter.hxx>
 #include<Hatch_Hatcher.hxx>
 #include<Hatch_Line.hxx>
 #include<Hatch_LineForm.hxx>
@@ -44,8 +46,6 @@
 #include<Hatch_SequenceNodeOfSequenceOfParameter.hxx>
 #include<Hatch_SequenceOfLine.hxx>
 #include<Hatch_SequenceOfParameter.hxx>
-#include<Handle_Hatch_SequenceNodeOfSequenceOfLine.hxx>
-#include<Handle_Hatch_SequenceNodeOfSequenceOfParameter.hxx>
 
 // Additional headers necessary for compilation.
 

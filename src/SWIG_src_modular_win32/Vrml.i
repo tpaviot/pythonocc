@@ -222,27 +222,6 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_Vrml_Material;
-class Handle_Vrml_Material : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_Material();
-		%feature("autodoc", "1");
-		Handle_Vrml_Material();
-		%feature("autodoc", "1");
-		Handle_Vrml_Material(const Handle_Vrml_Material &aHandle);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material(const Vrml_Material *anItem);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Vrml_Material {
-	Vrml_Material* GetObject() {
-	return (Vrml_Material*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Vrml_Coordinate3;
 class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 	public:
@@ -303,6 +282,27 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 %extend Handle_Vrml_Normal {
 	Vrml_Normal* GetObject() {
 	return (Vrml_Normal*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Vrml_Material;
+class Handle_Vrml_Material : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Vrml_Material();
+		%feature("autodoc", "1");
+		Handle_Vrml_Material();
+		%feature("autodoc", "1");
+		Handle_Vrml_Material(const Handle_Vrml_Material &aHandle);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material(const Vrml_Material *anItem);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Vrml_Material {
+	Vrml_Material* GetObject() {
+	return (Vrml_Material*)$self->Access();
 	}
 };
 
@@ -369,6 +369,32 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Vrml_WWWInline;
+class Vrml_WWWInline {
+	public:
+		%feature("autodoc", "1");
+		~Vrml_WWWInline();
+		%feature("autodoc", "1");
+		Vrml_WWWInline();
+		%feature("autodoc", "1");
+		Vrml_WWWInline(const TCollection_AsciiString &aName, const gp_Vec &aBboxSize, const gp_Vec &aBboxCenter);
+		%feature("autodoc", "1");
+		void SetName(const TCollection_AsciiString &aName);
+		%feature("autodoc", "1");
+		TCollection_AsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetBboxSize(const gp_Vec &aBboxSize);
+		%feature("autodoc", "1");
+		gp_Vec BboxSize() const;
+		%feature("autodoc", "1");
+		void SetBboxCenter(const gp_Vec &aBboxCenter);
+		%feature("autodoc", "1");
+		gp_Vec BboxCenter() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
+
+};
+
 %nodefaultctor Vrml_Switch;
 class Vrml_Switch {
 	public:
@@ -400,6 +426,18 @@ class Vrml_MaterialBinding {
 		Vrml_MaterialBindingAndNormalBinding Value() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
+
+};
+
+%nodefaultctor Vrml_TransformSeparator;
+class Vrml_TransformSeparator {
+	public:
+		%feature("autodoc", "1");
+		~Vrml_TransformSeparator();
+		%feature("autodoc", "1");
+		Vrml_TransformSeparator();
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream);
 
 };
 
@@ -670,24 +708,6 @@ class Vrml_SFImage : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor Vrml_Separator;
-class Vrml_Separator {
-	public:
-		%feature("autodoc", "1");
-		~Vrml_Separator();
-		%feature("autodoc", "1");
-		Vrml_Separator(const Vrml_SeparatorRenderCulling aRenderCulling);
-		%feature("autodoc", "1");
-		Vrml_Separator();
-		%feature("autodoc", "1");
-		void SetRenderCulling(const Vrml_SeparatorRenderCulling aRenderCulling);
-		%feature("autodoc", "1");
-		Vrml_SeparatorRenderCulling RenderCulling() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream);
-
-};
-
 %nodefaultctor Vrml_PerspectiveCamera;
 class Vrml_PerspectiveCamera {
 	public:
@@ -718,6 +738,24 @@ class Vrml_PerspectiveCamera {
 
 };
 
+%nodefaultctor Vrml_Rotation;
+class Vrml_Rotation {
+	public:
+		%feature("autodoc", "1");
+		~Vrml_Rotation();
+		%feature("autodoc", "1");
+		Vrml_Rotation();
+		%feature("autodoc", "1");
+		Vrml_Rotation(const Vrml_SFRotation &aRotation);
+		%feature("autodoc", "1");
+		void SetRotation(const Vrml_SFRotation &aRotation);
+		%feature("autodoc", "1");
+		Vrml_SFRotation Rotation() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
+
+};
+
 %nodefaultctor Vrml_NormalBinding;
 class Vrml_NormalBinding {
 	public:
@@ -731,32 +769,6 @@ class Vrml_NormalBinding {
 		void SetValue(const Vrml_MaterialBindingAndNormalBinding aValue);
 		%feature("autodoc", "1");
 		Vrml_MaterialBindingAndNormalBinding Value() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
-
-};
-
-%nodefaultctor Vrml_WWWInline;
-class Vrml_WWWInline {
-	public:
-		%feature("autodoc", "1");
-		~Vrml_WWWInline();
-		%feature("autodoc", "1");
-		Vrml_WWWInline();
-		%feature("autodoc", "1");
-		Vrml_WWWInline(const TCollection_AsciiString &aName, const gp_Vec &aBboxSize, const gp_Vec &aBboxCenter);
-		%feature("autodoc", "1");
-		void SetName(const TCollection_AsciiString &aName);
-		%feature("autodoc", "1");
-		TCollection_AsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetBboxSize(const gp_Vec &aBboxSize);
-		%feature("autodoc", "1");
-		gp_Vec BboxSize() const;
-		%feature("autodoc", "1");
-		void SetBboxCenter(const gp_Vec &aBboxCenter);
-		%feature("autodoc", "1");
-		gp_Vec BboxCenter() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
@@ -1013,24 +1025,6 @@ class Vrml_Info {
 
 };
 
-%nodefaultctor Vrml_Rotation;
-class Vrml_Rotation {
-	public:
-		%feature("autodoc", "1");
-		~Vrml_Rotation();
-		%feature("autodoc", "1");
-		Vrml_Rotation();
-		%feature("autodoc", "1");
-		Vrml_Rotation(const Vrml_SFRotation &aRotation);
-		%feature("autodoc", "1");
-		void SetRotation(const Vrml_SFRotation &aRotation);
-		%feature("autodoc", "1");
-		Vrml_SFRotation Rotation() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
-
-};
-
 %nodefaultctor Vrml_Cube;
 class Vrml_Cube {
 	public:
@@ -1052,18 +1046,6 @@ class Vrml_Cube {
 		Standard_Real Depth() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
-
-};
-
-%nodefaultctor Vrml_TransformSeparator;
-class Vrml_TransformSeparator {
-	public:
-		%feature("autodoc", "1");
-		~Vrml_TransformSeparator();
-		%feature("autodoc", "1");
-		Vrml_TransformSeparator();
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream);
 
 };
 
@@ -1247,6 +1229,24 @@ class Vrml_PointSet {
 		Standard_Integer NumPoints() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
+
+};
+
+%nodefaultctor Vrml_Separator;
+class Vrml_Separator {
+	public:
+		%feature("autodoc", "1");
+		~Vrml_Separator();
+		%feature("autodoc", "1");
+		Vrml_Separator(const Vrml_SeparatorRenderCulling aRenderCulling);
+		%feature("autodoc", "1");
+		Vrml_Separator();
+		%feature("autodoc", "1");
+		void SetRenderCulling(const Vrml_SeparatorRenderCulling aRenderCulling);
+		%feature("autodoc", "1");
+		Vrml_SeparatorRenderCulling RenderCulling() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream);
 
 };
 

@@ -38,29 +38,29 @@
 
 #include<AppDef_Array1OfMultiPointConstraint.hxx>
 #include<AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute.hxx>
-#include<AppDef_BSplineCompute.hxx>
 #include<AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute.hxx>
 #include<AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute.hxx>
+#include<AppDef_BSplineCompute.hxx>
 #include<AppDef_Compute.hxx>
-#include<AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_Gradient_BFGSOfMyGradientOfCompute.hxx>
+#include<AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_Gradient_BFGSOfTheGradient.hxx>
 #include<AppDef_HArray1OfMultiPointConstraint.hxx>
 #include<AppDef_MultiLine.hxx>
 #include<AppDef_MultiPointConstraint.hxx>
 #include<AppDef_MyBSplGradientOfBSplineCompute.hxx>
 #include<AppDef_MyCriterionOfTheVariational.hxx>
-#include<AppDef_MyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_MyGradientOfCompute.hxx>
+#include<AppDef_MyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_MyLineTool.hxx>
-#include<AppDef_ParFunctionOfMyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_ParFunctionOfMyGradientOfCompute.hxx>
+#include<AppDef_ParFunctionOfMyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_ParFunctionOfTheGradient.hxx>
-#include<AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_ParLeastSquareOfMyGradientOfCompute.hxx>
+#include<AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_ParLeastSquareOfTheGradient.hxx>
-#include<AppDef_ResConstraintOfMyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_ResConstraintOfMyGradientOfCompute.hxx>
+#include<AppDef_ResConstraintOfMyGradientbisOfBSplineCompute.hxx>
 #include<AppDef_ResConstraintOfTheGradient.hxx>
 #include<AppDef_TheFunction.hxx>
 #include<AppDef_TheGradient.hxx>
@@ -73,11 +73,11 @@
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

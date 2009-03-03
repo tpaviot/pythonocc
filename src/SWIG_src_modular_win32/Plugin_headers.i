@@ -36,14 +36,14 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Plugin_DataMapNodeOfMapOfFunctions.hxx>
+#include<Handle_Plugin_Failure.hxx>
+#include<Plugin.hxx>
 #include<Plugin_DataMapIteratorOfMapOfFunctions.hxx>
 #include<Plugin_DataMapNodeOfMapOfFunctions.hxx>
 #include<Plugin_Failure.hxx>
 #include<Plugin_Macro.hxx>
 #include<Plugin_MapOfFunctions.hxx>
-#include<Plugin.hxx>
-#include<Handle_Plugin_DataMapNodeOfMapOfFunctions.hxx>
-#include<Handle_Plugin_Failure.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -36,12 +36,19 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Poly_CoherentTriangulation.hxx>
+#include<Handle_Poly_HArray1OfTriangle.hxx>
+#include<Handle_Poly_Polygon2D.hxx>
+#include<Handle_Poly_Polygon3D.hxx>
+#include<Handle_Poly_PolygonOnTriangulation.hxx>
+#include<Handle_Poly_Triangulation.hxx>
+#include<Poly.hxx>
 #include<Poly_Array1OfTriangle.hxx>
 #include<Poly_CoherentLink.hxx>
 #include<Poly_CoherentNode.hxx>
+#include<Poly_CoherentTriPtr.hxx>
 #include<Poly_CoherentTriangle.hxx>
 #include<Poly_CoherentTriangulation.hxx>
-#include<Poly_CoherentTriPtr.hxx>
 #include<Poly_Connect.hxx>
 #include<Poly_HArray1OfTriangle.hxx>
 #include<Poly_Polygon2D.hxx>
@@ -49,13 +56,6 @@
 #include<Poly_PolygonOnTriangulation.hxx>
 #include<Poly_Triangle.hxx>
 #include<Poly_Triangulation.hxx>
-#include<Poly.hxx>
-#include<Handle_Poly_CoherentTriangulation.hxx>
-#include<Handle_Poly_HArray1OfTriangle.hxx>
-#include<Handle_Poly_Polygon2D.hxx>
-#include<Handle_Poly_Polygon3D.hxx>
-#include<Handle_Poly_PolygonOnTriangulation.hxx>
-#include<Handle_Poly_Triangulation.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -63,9 +63,9 @@
 #include<Poly_Array1OfTriangle.hxx>
 #include<Poly_CoherentLink.hxx>
 #include<Poly_CoherentNode.hxx>
+#include<Poly_CoherentTriPtr.hxx>
 #include<Poly_CoherentTriangle.hxx>
 #include<Poly_CoherentTriangulation.hxx>
-#include<Poly_CoherentTriPtr.hxx>
 #include<Poly_Connect.hxx>
 #include<Poly_HArray1OfTriangle.hxx>
 #include<Poly_Polygon2D.hxx>
@@ -77,12 +77,12 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TColgp_Array1OfPnt.hxx>
-#include<TColgp_Array1OfPnt2d.hxx>
-#include<Handle_TShort_HArray1OfShortReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
+#include<TColgp_Array1OfPnt.hxx>
+#include<TColgp_Array1OfPnt2d.hxx>
+#include<Handle_TShort_HArray1OfShortReal.hxx>
 #include<gp_XYZ.hxx>
 #include<Poly.hxx>
 %}

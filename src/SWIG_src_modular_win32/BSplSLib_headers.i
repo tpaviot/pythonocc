@@ -36,8 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<BSplSLib_EvaluatorFunction.hxx>
 #include<BSplSLib.hxx>
+#include<BSplSLib_EvaluatorFunction.hxx>
 
 // Additional headers necessary for compilation.
 

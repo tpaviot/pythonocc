@@ -136,27 +136,6 @@ enum MFT_TypeOfCommand {
 
 
 
-%nodefaultctor Handle_MFT_SequenceNodeOfListOfFontReference;
-class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MFT_SequenceNodeOfListOfFontReference();
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontReference();
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontReference(const Handle_MFT_SequenceNodeOfListOfFontReference &aHandle);
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontReference(const MFT_SequenceNodeOfListOfFontReference *anItem);
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontReference const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MFT_SequenceNodeOfListOfFontReference {
-	MFT_SequenceNodeOfListOfFontReference* GetObject() {
-	return (MFT_SequenceNodeOfListOfFontReference*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontName;
 class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNode {
 	public:
@@ -259,6 +238,27 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 %extend Handle_MFT_SequenceNodeOfListOfFontHandle {
 	MFT_SequenceNodeOfListOfFontHandle* GetObject() {
 	return (MFT_SequenceNodeOfListOfFontHandle*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_MFT_SequenceNodeOfListOfFontReference;
+class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_MFT_SequenceNodeOfListOfFontReference();
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontReference();
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontReference(const Handle_MFT_SequenceNodeOfListOfFontReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontReference(const MFT_SequenceNodeOfListOfFontReference *anItem);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontReference const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MFT_SequenceNodeOfListOfFontReference {
+	MFT_SequenceNodeOfListOfFontReference* GetObject() {
+	return (MFT_SequenceNodeOfListOfFontReference*)$self->Access();
 	}
 };
 
@@ -452,31 +452,6 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 
 };
 
-%nodefaultctor MFT_FontManagerDefinitionError;
-class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
-	public:
-		%feature("autodoc", "1");
-		MFT_FontManagerDefinitionError();
-		%feature("autodoc", "1");
-		MFT_FontManagerDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_MFT_FontManagerDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MFT_FontManagerDefinitionError();
-
-};
-%extend MFT_FontManagerDefinitionError {
-	Handle_MFT_FontManagerDefinitionError GetHandle() {
-	return *(Handle_MFT_FontManagerDefinitionError*) &$self;
-	}
-};
-
 %nodefaultctor MFT_SequenceNodeOfListOfFontName;
 class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 	public:
@@ -549,6 +524,31 @@ class MFT_TextManager : public MMgt_TShared {
 %extend MFT_TextManager {
 	Handle_MFT_TextManager GetHandle() {
 	return *(Handle_MFT_TextManager*) &$self;
+	}
+};
+
+%nodefaultctor MFT_FontManagerDefinitionError;
+class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
+	public:
+		%feature("autodoc", "1");
+		MFT_FontManagerDefinitionError();
+		%feature("autodoc", "1");
+		MFT_FontManagerDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManagerDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~MFT_FontManagerDefinitionError();
+
+};
+%extend MFT_FontManagerDefinitionError {
+	Handle_MFT_FontManagerDefinitionError GetHandle() {
+	return *(Handle_MFT_FontManagerDefinitionError*) &$self;
 	}
 };
 

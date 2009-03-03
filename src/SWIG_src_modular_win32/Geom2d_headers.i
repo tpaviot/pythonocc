@@ -37,9 +37,9 @@
 // Headers necessary to define wrapped classes.
 
 #include<Geom2d_AxisPlacement.hxx>
+#include<Geom2d_BSplineCurve.hxx>
 #include<Geom2d_BezierCurve.hxx>
 #include<Geom2d_BoundedCurve.hxx>
-#include<Geom2d_BSplineCurve.hxx>
 #include<Geom2d_CartesianPoint.hxx>
 #include<Geom2d_Circle.hxx>
 #include<Geom2d_Conic.hxx>
@@ -59,9 +59,9 @@
 #include<Geom2d_Vector.hxx>
 #include<Geom2d_VectorWithMagnitude.hxx>
 #include<Handle_Geom2d_AxisPlacement.hxx>
+#include<Handle_Geom2d_BSplineCurve.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_BoundedCurve.hxx>
-#include<Handle_Geom2d_BSplineCurve.hxx>
 #include<Handle_Geom2d_CartesianPoint.hxx>
 #include<Handle_Geom2d_Circle.hxx>
 #include<Handle_Geom2d_Conic.hxx>
@@ -83,7 +83,6 @@
 
 // Additional headers necessary for compilation.
 
-#include<gp.hxx>
 #include<GProp.hxx>
 #include<GProp_CelGProps.hxx>
 #include<GProp_EquaType.hxx>
@@ -95,6 +94,7 @@
 #include<GProp_UndefinedAxis.hxx>
 #include<GProp_ValueType.hxx>
 #include<GProp_VelGProps.hxx>
+#include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>

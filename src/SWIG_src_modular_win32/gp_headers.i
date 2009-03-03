@@ -36,6 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_gp_VectorWithNullMagnitude.hxx>
+#include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>
@@ -72,12 +74,9 @@
 #include<gp_VectorWithNullMagnitude.hxx>
 #include<gp_XY.hxx>
 #include<gp_XYZ.hxx>
-#include<gp.hxx>
-#include<Handle_gp_VectorWithNullMagnitude.hxx>
 
 // Additional headers necessary for compilation.
 
-#include<gp.hxx>
 #include<GProp.hxx>
 #include<GProp_CelGProps.hxx>
 #include<GProp_EquaType.hxx>
@@ -89,6 +88,7 @@
 #include<GProp_UndefinedAxis.hxx>
 #include<GProp_ValueType.hxx>
 #include<GProp_VelGProps.hxx>
+#include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>

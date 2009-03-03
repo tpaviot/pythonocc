@@ -36,12 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<GccEnt.hxx>
 #include<GccEnt_Array1OfPosition.hxx>
 #include<GccEnt_BadQualifier.hxx>
 #include<GccEnt_Position.hxx>
 #include<GccEnt_QualifiedCirc.hxx>
 #include<GccEnt_QualifiedLin.hxx>
-#include<GccEnt.hxx>
 #include<Handle_GccEnt_BadQualifier.hxx>
 
 // Additional headers necessary for compilation.

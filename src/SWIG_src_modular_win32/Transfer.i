@@ -224,27 +224,6 @@ class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_Transfer_MapContainer;
-class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_MapContainer();
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer();
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer(const Handle_Transfer_MapContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer(const Transfer_MapContainer *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_MapContainer {
-	Transfer_MapContainer* GetObject() {
-	return (Transfer_MapContainer*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Transfer_ResultFromTransient;
 class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
 	public:
@@ -581,27 +560,6 @@ class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProce
 	}
 };
 
-%nodefaultctor Handle_Transfer_MultipleBinder;
-class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_MultipleBinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_MultipleBinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_MultipleBinder(const Handle_Transfer_MultipleBinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_MultipleBinder(const Transfer_MultipleBinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_MultipleBinder const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_MultipleBinder {
-	Transfer_MultipleBinder* GetObject() {
-	return (Transfer_MultipleBinder*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Transfer_ActorDispatch;
 class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientProcess {
 	public:
@@ -686,6 +644,27 @@ class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
 	}
 };
 
+%nodefaultctor Handle_Transfer_MultipleBinder;
+class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Transfer_MultipleBinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_MultipleBinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_MultipleBinder(const Handle_Transfer_MultipleBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_MultipleBinder(const Transfer_MultipleBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_MultipleBinder const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_MultipleBinder {
+	Transfer_MultipleBinder* GetObject() {
+	return (Transfer_MultipleBinder*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_Transfer_ResultFromModel;
 class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 	public:
@@ -704,6 +683,27 @@ class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 %extend Handle_Transfer_ResultFromModel {
 	Transfer_ResultFromModel* GetObject() {
 	return (Transfer_ResultFromModel*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_Transfer_MapContainer;
+class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Transfer_MapContainer();
+		%feature("autodoc", "1");
+		Handle_Transfer_MapContainer();
+		%feature("autodoc", "1");
+		Handle_Transfer_MapContainer(const Handle_Transfer_MapContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_MapContainer(const Transfer_MapContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_MapContainer const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_MapContainer {
+	Transfer_MapContainer* GetObject() {
+	return (Transfer_MapContainer*)$self->Access();
 	}
 };
 
@@ -882,76 +882,6 @@ class Transfer_ResultFromTransient : public MMgt_TShared {
 %extend Transfer_ResultFromTransient {
 	Handle_Transfer_ResultFromTransient GetHandle() {
 	return *(Handle_Transfer_ResultFromTransient*) &$self;
-	}
-};
-
-%nodefaultctor Transfer_Binder;
-class Transfer_Binder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		void Merge(const Handle_Transfer_Binder &other);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMultiple() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
-		%feature("autodoc", "1");
-		void AddResult(const Handle_Transfer_Binder &next);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder NextResult() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		void SetAlreadyUsed();
-		%feature("autodoc", "1");
-		Transfer_StatusResult Status() const;
-		%feature("autodoc", "1");
-		Transfer_StatusExec StatusExec() const;
-		%feature("autodoc", "1");
-		void SetStatusExec(const Transfer_StatusExec stat);
-		%feature("autodoc", "1");
-		void AddFail(const char * mess, const char * orig="");
-		%feature("autodoc", "1");
-		void AddWarning(const char * mess, const char * orig="");
-		%feature("autodoc", "1");
-		Handle_Interface_Check const Check() const;
-		%feature("autodoc", "1");
-		Handle_Interface_Check CCheck();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_Binder {
-	Handle_Transfer_Binder GetHandle() {
-	return *(Handle_Transfer_Binder*) &$self;
-	}
-};
-
-%nodefaultctor Transfer_TransientListBinder;
-class Transfer_TransientListBinder : public Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		Transfer_TransientListBinder();
-		%feature("autodoc", "1");
-		Transfer_TransientListBinder(const Handle_TColStd_HSequenceOfTransient &list);
-		%feature("autodoc", "1");
-		void AddResult(const Handle_Standard_Transient &res);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient Result() const;
-		%feature("autodoc", "1");
-		void SetResult(const Standard_Integer num, const Handle_Standard_Transient &res);
-		%feature("autodoc", "1");
-		Standard_Integer NbTransients() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Transient(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_TransientListBinder();
-
-};
-%extend Transfer_TransientListBinder {
-	Handle_Transfer_TransientListBinder GetHandle() {
-	return *(Handle_Transfer_TransientListBinder*) &$self;
 	}
 };
 
@@ -1713,24 +1643,46 @@ class Transfer_ProcessForTransient : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor Transfer_MapContainer;
-class Transfer_MapContainer : public MMgt_TShared {
+%nodefaultctor Transfer_Binder;
+class Transfer_Binder : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Transfer_MapContainer();
+		void Merge(const Handle_Transfer_Binder &other);
 		%feature("autodoc", "1");
-		void SetMapObjects(Transfer_DataMapOfTransientTransient & theMapObjects);
+		virtual		Standard_Boolean IsMultiple() const;
 		%feature("autodoc", "1");
-		Transfer_DataMapOfTransientTransient & GetMapObjects();
+		virtual		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		virtual		Standard_CString ResultTypeName() const;
+		%feature("autodoc", "1");
+		void AddResult(const Handle_Transfer_Binder &next);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder NextResult() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		void SetAlreadyUsed();
+		%feature("autodoc", "1");
+		Transfer_StatusResult Status() const;
+		%feature("autodoc", "1");
+		Transfer_StatusExec StatusExec() const;
+		%feature("autodoc", "1");
+		void SetStatusExec(const Transfer_StatusExec stat);
+		%feature("autodoc", "1");
+		void AddFail(const char * mess, const char * orig="");
+		%feature("autodoc", "1");
+		void AddWarning(const char * mess, const char * orig="");
+		%feature("autodoc", "1");
+		Handle_Interface_Check const Check() const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check CCheck();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_MapContainer();
 
 };
-%extend Transfer_MapContainer {
-	Handle_Transfer_MapContainer GetHandle() {
-	return *(Handle_Transfer_MapContainer*) &$self;
+%extend Transfer_Binder {
+	Handle_Transfer_Binder GetHandle() {
+	return *(Handle_Transfer_Binder*) &$self;
 	}
 };
 
@@ -1739,12 +1691,6 @@ class Transfer_VoidBinder : public Transfer_Binder {
 	public:
 		%feature("autodoc", "1");
 		Transfer_VoidBinder();
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~Transfer_VoidBinder();
 
@@ -2058,6 +2004,41 @@ class Transfer_TransferOutput {
 
 };
 
+%nodefaultctor Transfer_TransientListBinder;
+class Transfer_TransientListBinder : public Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		Transfer_TransientListBinder();
+		%feature("autodoc", "1");
+		Transfer_TransientListBinder(const Handle_TColStd_HSequenceOfTransient &list);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMultiple() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		virtual		Standard_CString ResultTypeName() const;
+		%feature("autodoc", "1");
+		void AddResult(const Handle_Standard_Transient &res);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient Result() const;
+		%feature("autodoc", "1");
+		void SetResult(const Standard_Integer num, const Handle_Standard_Transient &res);
+		%feature("autodoc", "1");
+		Standard_Integer NbTransients() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Transient(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Transfer_TransientListBinder();
+
+};
+%extend Transfer_TransientListBinder {
+	Handle_Transfer_TransientListBinder GetHandle() {
+	return *(Handle_Transfer_TransientListBinder*) &$self;
+	}
+};
+
 %nodefaultctor Transfer_BinderOfTransientInteger;
 class Transfer_BinderOfTransientInteger : public Transfer_SimpleBinderOfTransient {
 	public:
@@ -2283,6 +2264,27 @@ class Transfer_TransientProcess : public Transfer_ProcessForTransient {
 %extend Transfer_TransientProcess {
 	Handle_Transfer_TransientProcess GetHandle() {
 	return *(Handle_Transfer_TransientProcess*) &$self;
+	}
+};
+
+%nodefaultctor Transfer_MapContainer;
+class Transfer_MapContainer : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Transfer_MapContainer();
+		%feature("autodoc", "1");
+		void SetMapObjects(Transfer_DataMapOfTransientTransient & theMapObjects);
+		%feature("autodoc", "1");
+		Transfer_DataMapOfTransientTransient & GetMapObjects();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Transfer_MapContainer();
+
+};
+%extend Transfer_MapContainer {
+	Handle_Transfer_MapContainer GetHandle() {
+	return *(Handle_Transfer_MapContainer*) &$self;
 	}
 };
 

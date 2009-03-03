@@ -36,6 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Quantity_ColorDefinitionError.hxx>
+#include<Handle_Quantity_DateDefinitionError.hxx>
+#include<Handle_Quantity_HArray1OfColor.hxx>
+#include<Handle_Quantity_PeriodDefinitionError.hxx>
 #include<Quantity_AbsorbedDose.hxx>
 #include<Quantity_Acceleration.hxx>
 #include<Quantity_AcousticIntensity.hxx>
@@ -93,9 +97,9 @@
 #include<Quantity_Mass.hxx>
 #include<Quantity_MassFlow.hxx>
 #include<Quantity_MolarConcentration.hxx>
-#include<Quantity_Molarity.hxx>
 #include<Quantity_MolarMass.hxx>
 #include<Quantity_MolarVolume.hxx>
+#include<Quantity_Molarity.hxx>
 #include<Quantity_MomentOfAForce.hxx>
 #include<Quantity_MomentOfInertia.hxx>
 #include<Quantity_Momentum.hxx>
@@ -130,10 +134,6 @@
 #include<Quantity_VolumeFlow.hxx>
 #include<Quantity_Weight.hxx>
 #include<Quantity_Work.hxx>
-#include<Handle_Quantity_ColorDefinitionError.hxx>
-#include<Handle_Quantity_DateDefinitionError.hxx>
-#include<Handle_Quantity_HArray1OfColor.hxx>
-#include<Handle_Quantity_PeriodDefinitionError.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -194,9 +194,9 @@
 #include<Quantity_Mass.hxx>
 #include<Quantity_MassFlow.hxx>
 #include<Quantity_MolarConcentration.hxx>
-#include<Quantity_Molarity.hxx>
 #include<Quantity_MolarMass.hxx>
 #include<Quantity_MolarVolume.hxx>
+#include<Quantity_Molarity.hxx>
 #include<Quantity_MomentOfAForce.hxx>
 #include<Quantity_MomentOfInertia.hxx>
 #include<Quantity_Momentum.hxx>

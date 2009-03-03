@@ -106,18 +106,6 @@ enum GeomLib_InterpolationErrors {
 
 
 
-%nodefaultctor GeomLib_DenominatorMultiplier;
-class GeomLib_DenominatorMultiplier {
-	public:
-		%feature("autodoc", "1");
-		~GeomLib_DenominatorMultiplier();
-		%feature("autodoc", "1");
-		GeomLib_DenominatorMultiplier(const Handle_Geom_BSplineSurface &Surface, const TColStd_Array1OfReal &KnotVector);
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Real UParameter, const Standard_Real VParameter) const;
-
-};
-
 %nodefaultctor GeomLib_LogSample;
 class GeomLib_LogSample : public math_FunctionSample {
 	public:
@@ -127,6 +115,18 @@ class GeomLib_LogSample : public math_FunctionSample {
 		GeomLib_LogSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
+
+};
+
+%nodefaultctor GeomLib_DenominatorMultiplier;
+class GeomLib_DenominatorMultiplier {
+	public:
+		%feature("autodoc", "1");
+		~GeomLib_DenominatorMultiplier();
+		%feature("autodoc", "1");
+		GeomLib_DenominatorMultiplier(const Handle_Geom_BSplineSurface &Surface, const TColStd_Array1OfReal &KnotVector);
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Real UParameter, const Standard_Real VParameter) const;
 
 };
 

@@ -36,9 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<BlendFunc.hxx>
 #include<BlendFunc_SectionShape.hxx>
 #include<BlendFunc_Tensor.hxx>
-#include<BlendFunc.hxx>
 
 // Additional headers necessary for compilation.
 

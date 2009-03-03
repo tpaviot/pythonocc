@@ -36,9 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_MMgt_TShared.hxx>
 #include<MMgt_StackManager.hxx>
 #include<MMgt_TShared.hxx>
-#include<Handle_MMgt_TShared.hxx>
 
 // Additional headers necessary for compilation.
 

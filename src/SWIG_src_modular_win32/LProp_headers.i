@@ -36,6 +36,9 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_LProp_BadContinuity.hxx>
+#include<Handle_LProp_NotDefined.hxx>
+#include<Handle_LProp_SequenceNodeOfSequenceOfCIType.hxx>
 #include<LProp_AnalyticCurInf.hxx>
 #include<LProp_BadContinuity.hxx>
 #include<LProp_CIType.hxx>
@@ -44,9 +47,6 @@
 #include<LProp_SequenceNodeOfSequenceOfCIType.hxx>
 #include<LProp_SequenceOfCIType.hxx>
 #include<LProp_Status.hxx>
-#include<Handle_LProp_BadContinuity.hxx>
-#include<Handle_LProp_NotDefined.hxx>
-#include<Handle_LProp_SequenceNodeOfSequenceOfCIType.hxx>
 
 // Additional headers necessary for compilation.
 

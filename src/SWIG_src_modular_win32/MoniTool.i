@@ -616,6 +616,71 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 	}
 };
 
+%nodefaultctor MoniTool_Profile;
+class MoniTool_Profile : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_Profile();
+		%feature("autodoc", "1");
+		void AddOption(const Handle_MoniTool_Option &option, const char * name="");
+		%feature("autodoc", "1");
+		Handle_MoniTool_Option Option(const char * name) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString OptionList() const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString TypedValueList() const;
+		%feature("autodoc", "1");
+		void NewConf(const char * confname);
+		%feature("autodoc", "1");
+		void AddConf(const char * confname);
+		%feature("autodoc", "1");
+		Standard_Boolean HasConf(const char * confname) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString ConfList() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ClearConf(const char * confname);
+		%feature("autodoc", "1");
+		Standard_Boolean AddFromOtherConf(const char * confname, const char * otherconf);
+		%feature("autodoc", "1");
+		Standard_Boolean SetFromCurrent(const char * confname);
+		%feature("autodoc", "1");
+		Standard_Boolean AddSwitch(const char * confname, const char * optname, const char * casename="");
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveSwitch(const char * confname, const char * optname);
+		%feature("autodoc", "1");
+		void SwitchList(const char * confname, Handle_TColStd_HSequenceOfAsciiString & optlist, Handle_TColStd_HSequenceOfAsciiString & caselist) const;
+		%feature("autodoc", "1");
+		Standard_Boolean SetCurrent(const char * confname);
+		%feature("autodoc", "1");
+		void RecordCurrent();
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Current() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString CaseName(const char * optname, const Standard_Boolean proper=0) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient CaseValue(const char * optname) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Value(const char * optname, Handle_Standard_Transient & val) const;
+		%feature("autodoc", "1");
+		void SetTypedValues(const Standard_Boolean proper=0, const char * name="") const;
+		%feature("autodoc", "1");
+		void SetFast(const char * confname="");
+		%feature("autodoc", "1");
+		void ClearFast();
+		%feature("autodoc", "1");
+		Standard_Boolean FastValue(const char * optname, Handle_Standard_Transient & val) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~MoniTool_Profile();
+
+};
+%extend MoniTool_Profile {
+	Handle_MoniTool_Profile GetHandle() {
+	return *(Handle_MoniTool_Profile*) &$self;
+	}
+};
+
 %nodefaultctor MoniTool_DataMapOfShapeTransient;
 class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 	public:
@@ -934,6 +999,121 @@ class MoniTool_TransientElem : public MoniTool_Element {
 	}
 };
 
+%nodefaultctor MoniTool_TypedValue;
+class MoniTool_TypedValue : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_TypedValue(const char * name, const MoniTool_ValueType type=MoniTool_ValueText, const char * init="");
+		%feature("autodoc", "1");
+		MoniTool_TypedValue(const Handle_MoniTool_TypedValue &other);
+		%feature("autodoc", "1");
+		Standard_CString Name() const;
+		%feature("autodoc", "1");
+		MoniTool_ValueType ValueType() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString Definition() const;
+		%feature("autodoc", "1");
+		void SetDefinition(const char * deftext);
+		%feature("autodoc", "1");
+		virtual		void Print(const Handle_Message_Messenger &S) const;
+		%feature("autodoc", "1");
+		void PrintValue(const Handle_Message_Messenger &S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean AddDef(const char * initext);
+		%feature("autodoc", "1");
+		void SetLabel(const char * label);
+		%feature("autodoc", "1");
+		Standard_CString Label() const;
+		%feature("autodoc", "1");
+		void SetMaxLength(const Standard_Integer max);
+		%feature("autodoc", "1");
+		Standard_Integer MaxLength() const;
+		%feature("autodoc", "1");
+		void SetIntegerLimit(const Standard_Boolean max, const Standard_Integer val);
+		%feature("autodoc", "1");
+		Standard_Boolean IntegerLimit(const Standard_Boolean max, Standard_Integer & val) const;
+		%feature("autodoc", "1");
+		void SetRealLimit(const Standard_Boolean max, const Standard_Real val);
+		%feature("autodoc", "1");
+		Standard_Boolean RealLimit(const Standard_Boolean max, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetUnitDef(const char * def);
+		%feature("autodoc", "1");
+		Standard_CString UnitDef() const;
+		%feature("autodoc", "1");
+		void StartEnum(const Standard_Integer start=0, const Standard_Boolean match=1);
+		%feature("autodoc", "1");
+		void AddEnum(const char * v1="", const char * v2="", const char * v3="", const char * v4="", const char * v5="", const char * v6="", const char * v7="", const char * v8="", const char * v9="", const char * v10="");
+		%feature("autodoc", "1");
+		void AddEnumValue(const char * val, const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean EnumDef(Standard_Integer & startcase, Standard_Integer & endcase, Standard_Boolean & match) const;
+		%feature("autodoc", "1");
+		char * EnumVal(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer EnumCase(const char * val) const;
+		%feature("autodoc", "1");
+		void SetObjectType(const Handle_Standard_Type &typ);
+		%feature("autodoc", "1");
+		Handle_Standard_Type ObjectType() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasInterpret() const;
+		%feature("autodoc", "1");
+		Standard_CString SatisfiesName() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSetValue() const;
+		%feature("autodoc", "1");
+		Standard_CString CStringValue() const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString HStringValue() const;
+		%feature("autodoc", "1");
+		virtual		Handle_TCollection_HAsciiString Interpret(const Handle_TCollection_HAsciiString &hval, const Standard_Boolean native) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Satisfies(const Handle_TCollection_HAsciiString &hval) const;
+		%feature("autodoc", "1");
+		void ClearValue();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetCStringValue(const char * val);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetHStringValue(const Handle_TCollection_HAsciiString &hval);
+		%feature("autodoc", "1");
+		Standard_Integer IntegerValue() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetIntegerValue(const Standard_Integer ival);
+		%feature("autodoc", "1");
+		Standard_Real RealValue() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetRealValue(const Standard_Real rval);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient ObjectValue() const;
+		%feature("autodoc", "1");
+		void GetObjectValue(Handle_Standard_Transient & val) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetObjectValue(const Handle_Standard_Transient &obj);
+		%feature("autodoc", "1");
+		Standard_CString ObjectTypeName() const;
+		%feature("autodoc", "1");
+		Standard_Boolean AddLib(const Handle_MoniTool_TypedValue &tv, const char * def="");
+		%feature("autodoc", "1");
+		Handle_MoniTool_TypedValue Lib(const char * def);
+		%feature("autodoc", "1");
+		Handle_MoniTool_TypedValue FromLib(const char * def);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString LibList();
+		%feature("autodoc", "1");
+		Handle_MoniTool_TypedValue StaticValue(const char * name);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~MoniTool_TypedValue();
+
+};
+%extend MoniTool_TypedValue {
+	Handle_MoniTool_TypedValue GetHandle() {
+	return *(Handle_MoniTool_TypedValue*) &$self;
+	}
+};
+
 %nodefaultctor MoniTool_SignText;
 class MoniTool_SignText : public MMgt_TShared {
 	public:
@@ -1083,121 +1263,6 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 
 };
 
-%nodefaultctor MoniTool_TypedValue;
-class MoniTool_TypedValue : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_TypedValue(const char * name, const MoniTool_ValueType type=MoniTool_ValueText, const char * init="");
-		%feature("autodoc", "1");
-		MoniTool_TypedValue(const Handle_MoniTool_TypedValue &other);
-		%feature("autodoc", "1");
-		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		MoniTool_ValueType ValueType() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString Definition() const;
-		%feature("autodoc", "1");
-		void SetDefinition(const char * deftext);
-		%feature("autodoc", "1");
-		virtual		void Print(const Handle_Message_Messenger &S) const;
-		%feature("autodoc", "1");
-		void PrintValue(const Handle_Message_Messenger &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean AddDef(const char * initext);
-		%feature("autodoc", "1");
-		void SetLabel(const char * label);
-		%feature("autodoc", "1");
-		Standard_CString Label() const;
-		%feature("autodoc", "1");
-		void SetMaxLength(const Standard_Integer max);
-		%feature("autodoc", "1");
-		Standard_Integer MaxLength() const;
-		%feature("autodoc", "1");
-		void SetIntegerLimit(const Standard_Boolean max, const Standard_Integer val);
-		%feature("autodoc", "1");
-		Standard_Boolean IntegerLimit(const Standard_Boolean max, Standard_Integer & val) const;
-		%feature("autodoc", "1");
-		void SetRealLimit(const Standard_Boolean max, const Standard_Real val);
-		%feature("autodoc", "1");
-		Standard_Boolean RealLimit(const Standard_Boolean max, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetUnitDef(const char * def);
-		%feature("autodoc", "1");
-		Standard_CString UnitDef() const;
-		%feature("autodoc", "1");
-		void StartEnum(const Standard_Integer start=0, const Standard_Boolean match=1);
-		%feature("autodoc", "1");
-		void AddEnum(const char * v1="", const char * v2="", const char * v3="", const char * v4="", const char * v5="", const char * v6="", const char * v7="", const char * v8="", const char * v9="", const char * v10="");
-		%feature("autodoc", "1");
-		void AddEnumValue(const char * val, const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean EnumDef(Standard_Integer & startcase, Standard_Integer & endcase, Standard_Boolean & match) const;
-		%feature("autodoc", "1");
-		char * EnumVal(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer EnumCase(const char * val) const;
-		%feature("autodoc", "1");
-		void SetObjectType(const Handle_Standard_Type &typ);
-		%feature("autodoc", "1");
-		Handle_Standard_Type ObjectType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasInterpret() const;
-		%feature("autodoc", "1");
-		Standard_CString SatisfiesName() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSetValue() const;
-		%feature("autodoc", "1");
-		Standard_CString CStringValue() const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString HStringValue() const;
-		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString Interpret(const Handle_TCollection_HAsciiString &hval, const Standard_Boolean native) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Satisfies(const Handle_TCollection_HAsciiString &hval) const;
-		%feature("autodoc", "1");
-		void ClearValue();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetCStringValue(const char * val);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetHStringValue(const Handle_TCollection_HAsciiString &hval);
-		%feature("autodoc", "1");
-		Standard_Integer IntegerValue() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetIntegerValue(const Standard_Integer ival);
-		%feature("autodoc", "1");
-		Standard_Real RealValue() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetRealValue(const Standard_Real rval);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient ObjectValue() const;
-		%feature("autodoc", "1");
-		void GetObjectValue(Handle_Standard_Transient & val) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetObjectValue(const Handle_Standard_Transient &obj);
-		%feature("autodoc", "1");
-		Standard_CString ObjectTypeName() const;
-		%feature("autodoc", "1");
-		Standard_Boolean AddLib(const Handle_MoniTool_TypedValue &tv, const char * def="");
-		%feature("autodoc", "1");
-		Handle_MoniTool_TypedValue Lib(const char * def);
-		%feature("autodoc", "1");
-		Handle_MoniTool_TypedValue FromLib(const char * def);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString LibList();
-		%feature("autodoc", "1");
-		Handle_MoniTool_TypedValue StaticValue(const char * name);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_TypedValue();
-
-};
-%extend MoniTool_TypedValue {
-	Handle_MoniTool_TypedValue GetHandle() {
-	return *(Handle_MoniTool_TypedValue*) &$self;
-	}
-};
-
 %nodefaultctor MoniTool_AttrList;
 class MoniTool_AttrList {
 	public:
@@ -1240,71 +1305,6 @@ class MoniTool_AttrList {
 		%feature("autodoc", "1");
 		void GetAttributes(const MoniTool_AttrList &other, const char * fromname="", const Standard_Boolean copied=1);
 
-};
-
-%nodefaultctor MoniTool_Profile;
-class MoniTool_Profile : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_Profile();
-		%feature("autodoc", "1");
-		void AddOption(const Handle_MoniTool_Option &option, const char * name="");
-		%feature("autodoc", "1");
-		Handle_MoniTool_Option Option(const char * name) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString OptionList() const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString TypedValueList() const;
-		%feature("autodoc", "1");
-		void NewConf(const char * confname);
-		%feature("autodoc", "1");
-		void AddConf(const char * confname);
-		%feature("autodoc", "1");
-		Standard_Boolean HasConf(const char * confname) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString ConfList() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ClearConf(const char * confname);
-		%feature("autodoc", "1");
-		Standard_Boolean AddFromOtherConf(const char * confname, const char * otherconf);
-		%feature("autodoc", "1");
-		Standard_Boolean SetFromCurrent(const char * confname);
-		%feature("autodoc", "1");
-		Standard_Boolean AddSwitch(const char * confname, const char * optname, const char * casename="");
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveSwitch(const char * confname, const char * optname);
-		%feature("autodoc", "1");
-		void SwitchList(const char * confname, Handle_TColStd_HSequenceOfAsciiString & optlist, Handle_TColStd_HSequenceOfAsciiString & caselist) const;
-		%feature("autodoc", "1");
-		Standard_Boolean SetCurrent(const char * confname);
-		%feature("autodoc", "1");
-		void RecordCurrent();
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Current() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString CaseName(const char * optname, const Standard_Boolean proper=0) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient CaseValue(const char * optname) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Value(const char * optname, Handle_Standard_Transient & val) const;
-		%feature("autodoc", "1");
-		void SetTypedValues(const Standard_Boolean proper=0, const char * name="") const;
-		%feature("autodoc", "1");
-		void SetFast(const char * confname="");
-		%feature("autodoc", "1");
-		void ClearFast();
-		%feature("autodoc", "1");
-		Standard_Boolean FastValue(const char * optname, Handle_Standard_Transient & val) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_Profile();
-
-};
-%extend MoniTool_Profile {
-	Handle_MoniTool_Profile GetHandle() {
-	return *(Handle_MoniTool_Profile*) &$self;
-	}
 };
 
 %nodefaultctor MoniTool_SequenceOfElement;

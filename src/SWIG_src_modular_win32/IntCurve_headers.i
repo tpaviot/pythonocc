@@ -48,8 +48,6 @@
 
 // Additional headers necessary for compilation.
 
-#include<IntCurvesFace_Intersector.hxx>
-#include<IntCurvesFace_ShapeIntersector.hxx>
 #include<IntCurveSurface_HInter.hxx>
 #include<IntCurveSurface_Intersection.hxx>
 #include<IntCurveSurface_IntersectionPoint.hxx>
@@ -79,6 +77,8 @@
 #include<IntCurve_PConic.hxx>
 #include<IntCurve_PConicTool.hxx>
 #include<IntCurve_ProjectOnPConicTool.hxx>
+#include<IntCurvesFace_Intersector.hxx>
+#include<IntCurvesFace_ShapeIntersector.hxx>
 
 // Needed headers necessary for compilation.
 

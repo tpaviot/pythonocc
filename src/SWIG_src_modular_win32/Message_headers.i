@@ -36,6 +36,15 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_Message_Algorithm.hxx>
+#include<Handle_Message_ListNodeOfListOfMsg.hxx>
+#include<Handle_Message_Messenger.hxx>
+#include<Handle_Message_Printer.hxx>
+#include<Handle_Message_PrinterOStream.hxx>
+#include<Handle_Message_ProgressIndicator.hxx>
+#include<Handle_Message_SequenceNodeOfSequenceOfPrinters.hxx>
+#include<Handle_Message_SequenceNodeOfSequenceOfProgressScale.hxx>
+#include<Message.hxx>
 #include<Message_Gravity.hxx>
 #include<Message_ListIteratorOfListOfMsg.hxx>
 #include<Message_ListNodeOfListOfMsg.hxx>
@@ -54,15 +63,6 @@
 #include<Message_SequenceOfProgressScale.hxx>
 #include<Message_Status.hxx>
 #include<Message_StatusType.hxx>
-#include<Message.hxx>
-#include<Handle_Message_Algorithm.hxx>
-#include<Handle_Message_ListNodeOfListOfMsg.hxx>
-#include<Handle_Message_Messenger.hxx>
-#include<Handle_Message_Printer.hxx>
-#include<Handle_Message_PrinterOStream.hxx>
-#include<Handle_Message_ProgressIndicator.hxx>
-#include<Handle_Message_SequenceNodeOfSequenceOfPrinters.hxx>
-#include<Handle_Message_SequenceNodeOfSequenceOfProgressScale.hxx>
 
 // Additional headers necessary for compilation.
 

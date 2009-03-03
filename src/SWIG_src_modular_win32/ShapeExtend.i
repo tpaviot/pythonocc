@@ -147,27 +147,6 @@ class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
-class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
-	ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg* GetObject() {
-	return (ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
 class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TCollection_MapNode {
 	public:
@@ -249,6 +228,27 @@ class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 %extend Handle_ShapeExtend_CompositeSurface {
 	ShapeExtend_CompositeSurface* GetObject() {
 	return (ShapeExtend_CompositeSurface*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
+class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg* GetObject() {
+	return (ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*)$self->Access();
 	}
 };
 
@@ -587,6 +587,31 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 	}
 };
 
+%nodefaultctor ShapeExtend_MsgRegistrator;
+class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
+	public:
+		%feature("autodoc", "1");
+		ShapeExtend_MsgRegistrator();
+		%feature("autodoc", "1");
+		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
+		%feature("autodoc", "1");
+		virtual		void Send(const TopoDS_Shape &shape, const Message_Msg &message, const Message_Gravity gravity);
+		%feature("autodoc", "1");
+		const ShapeExtend_DataMapOfTransientListOfMsg & MapTransient() const;
+		%feature("autodoc", "1");
+		const ShapeExtend_DataMapOfShapeListOfMsg & MapShape() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~ShapeExtend_MsgRegistrator();
+
+};
+%extend ShapeExtend_MsgRegistrator {
+	Handle_ShapeExtend_MsgRegistrator GetHandle() {
+	return *(Handle_ShapeExtend_MsgRegistrator*) &$self;
+	}
+};
+
 %nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
 class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_MapNode {
 	public:
@@ -642,31 +667,6 @@ class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_
 		%feature("autodoc", "1");
 		const Message_ListOfMsg & Value() const;
 
-};
-
-%nodefaultctor ShapeExtend_MsgRegistrator;
-class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
-	public:
-		%feature("autodoc", "1");
-		ShapeExtend_MsgRegistrator();
-		%feature("autodoc", "1");
-		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
-		%feature("autodoc", "1");
-		virtual		void Send(const TopoDS_Shape &shape, const Message_Msg &message, const Message_Gravity gravity);
-		%feature("autodoc", "1");
-		const ShapeExtend_DataMapOfTransientListOfMsg & MapTransient() const;
-		%feature("autodoc", "1");
-		const ShapeExtend_DataMapOfShapeListOfMsg & MapShape() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeExtend_MsgRegistrator();
-
-};
-%extend ShapeExtend_MsgRegistrator {
-	Handle_ShapeExtend_MsgRegistrator GetHandle() {
-	return *(Handle_ShapeExtend_MsgRegistrator*) &$self;
-	}
 };
 
 %nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;

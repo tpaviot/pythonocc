@@ -1786,6 +1786,31 @@ class StepElement_MeasureOrUnspecifiedValue : public StepData_SelectType {
 
 };
 
+%nodefaultctor StepElement_CurveElementPurposeMember;
+class StepElement_CurveElementPurposeMember : public StepData_SelectNamed {
+	public:
+		%feature("autodoc", "1");
+		StepElement_CurveElementPurposeMember();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasName() const;
+		%feature("autodoc", "1");
+		virtual		Standard_CString Name() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetName(const char * name);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const char * name) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepElement_CurveElementPurposeMember();
+
+};
+%extend StepElement_CurveElementPurposeMember {
+	Handle_StepElement_CurveElementPurposeMember GetHandle() {
+	return *(Handle_StepElement_CurveElementPurposeMember*) &$self;
+	}
+};
+
 %nodefaultctor StepElement_CurveElementFreedom;
 class StepElement_CurveElementFreedom : public StepData_SelectType {
 	public:
@@ -2154,31 +2179,6 @@ class StepElement_Array1OfSurfaceSection {
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSection & operator()(const Standard_Integer Index);
 
-};
-
-%nodefaultctor StepElement_CurveElementPurposeMember;
-class StepElement_CurveElementPurposeMember : public StepData_SelectNamed {
-	public:
-		%feature("autodoc", "1");
-		StepElement_CurveElementPurposeMember();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasName() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetName(const char * name);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const char * name) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_CurveElementPurposeMember();
-
-};
-%extend StepElement_CurveElementPurposeMember {
-	Handle_StepElement_CurveElementPurposeMember GetHandle() {
-	return *(Handle_StepElement_CurveElementPurposeMember*) &$self;
-	}
 };
 
 %nodefaultctor StepElement_SurfaceElementPurpose;

@@ -36,6 +36,13 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_SelectBasics_EntityOwner.hxx>
+#include<Handle_SelectBasics_ListNodeOfListOfBox2d.hxx>
+#include<Handle_SelectBasics_ListNodeOfListOfSensitive.hxx>
+#include<Handle_SelectBasics_SensitiveEntity.hxx>
+#include<Handle_SelectBasics_SequenceNodeOfSequenceOfAddress.hxx>
+#include<Handle_SelectBasics_SequenceNodeOfSequenceOfOwner.hxx>
+#include<SelectBasics.hxx>
 #include<SelectBasics_BasicTool.hxx>
 #include<SelectBasics_EntityOwner.hxx>
 #include<SelectBasics_ListIteratorOfListOfBox2d.hxx>
@@ -50,13 +57,6 @@
 #include<SelectBasics_SequenceOfAddress.hxx>
 #include<SelectBasics_SequenceOfOwner.hxx>
 #include<SelectBasics_SortAlgo.hxx>
-#include<SelectBasics.hxx>
-#include<Handle_SelectBasics_EntityOwner.hxx>
-#include<Handle_SelectBasics_ListNodeOfListOfBox2d.hxx>
-#include<Handle_SelectBasics_ListNodeOfListOfSensitive.hxx>
-#include<Handle_SelectBasics_SensitiveEntity.hxx>
-#include<Handle_SelectBasics_SequenceNodeOfSequenceOfAddress.hxx>
-#include<Handle_SelectBasics_SequenceNodeOfSequenceOfOwner.hxx>
 
 // Additional headers necessary for compilation.
 

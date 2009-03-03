@@ -36,6 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TShort_HArray1OfShortReal.hxx>
+#include<Handle_TShort_HArray2OfShortReal.hxx>
+#include<Handle_TShort_HSequenceOfShortReal.hxx>
+#include<Handle_TShort_SequenceNodeOfSequenceOfShortReal.hxx>
 #include<TShort_Array1OfShortReal.hxx>
 #include<TShort_Array2OfShortReal.hxx>
 #include<TShort_HArray1OfShortReal.hxx>
@@ -43,10 +47,6 @@
 #include<TShort_HSequenceOfShortReal.hxx>
 #include<TShort_SequenceNodeOfSequenceOfShortReal.hxx>
 #include<TShort_SequenceOfShortReal.hxx>
-#include<Handle_TShort_HArray1OfShortReal.hxx>
-#include<Handle_TShort_HArray2OfShortReal.hxx>
-#include<Handle_TShort_HSequenceOfShortReal.hxx>
-#include<Handle_TShort_SequenceNodeOfSequenceOfShortReal.hxx>
 
 // Additional headers necessary for compilation.
 

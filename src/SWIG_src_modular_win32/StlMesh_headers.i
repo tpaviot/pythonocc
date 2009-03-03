@@ -36,6 +36,13 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_StlMesh_Mesh.hxx>
+#include<Handle_StlMesh_MeshDomain.hxx>
+#include<Handle_StlMesh_MeshTriangle.hxx>
+#include<Handle_StlMesh_SequenceNodeOfSequenceOfMesh.hxx>
+#include<Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain.hxx>
+#include<Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle.hxx>
+#include<StlMesh.hxx>
 #include<StlMesh_Mesh.hxx>
 #include<StlMesh_MeshDomain.hxx>
 #include<StlMesh_MeshExplorer.hxx>
@@ -46,13 +53,6 @@
 #include<StlMesh_SequenceOfMesh.hxx>
 #include<StlMesh_SequenceOfMeshDomain.hxx>
 #include<StlMesh_SequenceOfMeshTriangle.hxx>
-#include<StlMesh.hxx>
-#include<Handle_StlMesh_Mesh.hxx>
-#include<Handle_StlMesh_MeshDomain.hxx>
-#include<Handle_StlMesh_MeshTriangle.hxx>
-#include<Handle_StlMesh_SequenceNodeOfSequenceOfMesh.hxx>
-#include<Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain.hxx>
-#include<Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle.hxx>
 
 // Additional headers necessary for compilation.
 

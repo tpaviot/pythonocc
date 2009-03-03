@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<GeomLib.hxx>
 #include<GeomLib_Array1OfMat.hxx>
 #include<GeomLib_Check2dBSplineCurve.hxx>
 #include<GeomLib_CheckBSplineCurve.hxx>
@@ -48,7 +49,6 @@
 #include<GeomLib_MakeCurvefromApprox.hxx>
 #include<GeomLib_PolyFunc.hxx>
 #include<GeomLib_Tool.hxx>
-#include<GeomLib.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -37,8 +37,8 @@
 // Headers necessary to define wrapped classes.
 
 #include<CDM_Application.hxx>
-#include<CDM_CanCloseStatus.hxx>
 #include<CDM_COutMessageDriver.hxx>
+#include<CDM_CanCloseStatus.hxx>
 #include<CDM_DataMapIteratorOfMetaDataLookUpTable.hxx>
 #include<CDM_DataMapIteratorOfNamesDirectory.hxx>
 #include<CDM_DataMapIteratorOfPresentationDirectory.hxx>
@@ -86,8 +86,8 @@
 // Additional headers necessary for compilation.
 
 #include<CDM_Application.hxx>
-#include<CDM_CanCloseStatus.hxx>
 #include<CDM_COutMessageDriver.hxx>
+#include<CDM_CanCloseStatus.hxx>
 #include<CDM_DataMapIteratorOfMetaDataLookUpTable.hxx>
 #include<CDM_DataMapIteratorOfNamesDirectory.hxx>
 #include<CDM_DataMapIteratorOfPresentationDirectory.hxx>

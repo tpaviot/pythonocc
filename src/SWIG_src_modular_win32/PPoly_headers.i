@@ -36,6 +36,12 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_PPoly_HArray1OfTriangle.hxx>
+#include<Handle_PPoly_Polygon2D.hxx>
+#include<Handle_PPoly_Polygon3D.hxx>
+#include<Handle_PPoly_PolygonOnTriangulation.hxx>
+#include<Handle_PPoly_Triangulation.hxx>
+#include<Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle.hxx>
 #include<PPoly_FieldOfHArray1OfTriangle.hxx>
 #include<PPoly_HArray1OfTriangle.hxx>
 #include<PPoly_Polygon2D.hxx>
@@ -45,12 +51,6 @@
 #include<PPoly_Triangulation.hxx>
 #include<PPoly_VArrayNodeOfFieldOfHArray1OfTriangle.hxx>
 #include<PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle.hxx>
-#include<Handle_PPoly_HArray1OfTriangle.hxx>
-#include<Handle_PPoly_Polygon2D.hxx>
-#include<Handle_PPoly_Polygon3D.hxx>
-#include<Handle_PPoly_PolygonOnTriangulation.hxx>
-#include<Handle_PPoly_Triangulation.hxx>
-#include<Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle.hxx>
 
 // Additional headers necessary for compilation.
 

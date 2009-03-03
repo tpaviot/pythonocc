@@ -40,6 +40,11 @@
 
 // Additional headers necessary for compilation.
 
+#include<Handle_TCollection_AVLBaseNode.hxx>
+#include<Handle_TCollection_HAsciiString.hxx>
+#include<Handle_TCollection_HExtendedString.hxx>
+#include<Handle_TCollection_MapNode.hxx>
+#include<Handle_TCollection_SeqNode.hxx>
 #include<OSD.hxx>
 #include<OSD_Chronometer.hxx>
 #include<OSD_Directory.hxx>
@@ -80,41 +85,36 @@
 #include<OSD_LockType.hxx>
 #include<OSD_MailBox.hxx>
 #include<OSD_OEMType.hxx>
-#include<OSD_OpenMode.hxx>
 #include<OSD_OSDError.hxx>
+#include<OSD_OpenMode.hxx>
+#include<OSD_PThread.hxx>
 #include<OSD_Path.hxx>
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
-#include<OSD_PThread.hxx>
 #include<OSD_Real2String.hxx>
-#include<OSD_Semaphore.hxx>
-#include<OSD_SharedLibrary.hxx>
-#include<OSD_SharedMemory.hxx>
 #include<OSD_SIGBUS.hxx>
 #include<OSD_SIGHUP.hxx>
 #include<OSD_SIGILL.hxx>
 #include<OSD_SIGINT.hxx>
 #include<OSD_SIGKILL.hxx>
-#include<OSD_Signal.hxx>
-#include<OSD_Signals.hxx>
 #include<OSD_SIGQUIT.hxx>
 #include<OSD_SIGSEGV.hxx>
 #include<OSD_SIGSYS.hxx>
+#include<OSD_Semaphore.hxx>
+#include<OSD_SharedLibrary.hxx>
+#include<OSD_SharedMemory.hxx>
+#include<OSD_Signal.hxx>
+#include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
-#include<OSD_WhoAmI.hxx>
 #include<OSD_WNT.hxx>
 #include<OSD_WNT_1.hxx>
 #include<OSD_WNT_BREAK.hxx>
-#include<Handle_TCollection_AVLBaseNode.hxx>
-#include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_TCollection_HExtendedString.hxx>
-#include<Handle_TCollection_MapNode.hxx>
-#include<Handle_TCollection_SeqNode.hxx>
+#include<OSD_WhoAmI.hxx>
 
 // Needed headers necessary for compilation.
 

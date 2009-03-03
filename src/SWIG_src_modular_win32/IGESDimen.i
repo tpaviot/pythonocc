@@ -308,6 +308,27 @@ class Handle_IGESDimen_WitnessLine : public Handle_IGESData_IGESEntity {
 	}
 };
 
+%nodefaultctor Handle_IGESDimen_CurveDimension;
+class Handle_IGESDimen_CurveDimension : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESDimen_CurveDimension();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CurveDimension();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CurveDimension(const Handle_IGESDimen_CurveDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CurveDimension(const IGESDimen_CurveDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CurveDimension const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_CurveDimension {
+	IGESDimen_CurveDimension* GetObject() {
+	return (IGESDimen_CurveDimension*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_IGESDimen_GeneralModule;
 class Handle_IGESDimen_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
@@ -539,27 +560,6 @@ class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
 	}
 };
 
-%nodefaultctor Handle_IGESDimen_NewGeneralNote;
-class Handle_IGESDimen_NewGeneralNote : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_NewGeneralNote();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_NewGeneralNote();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_NewGeneralNote(const Handle_IGESDimen_NewGeneralNote &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_NewGeneralNote(const IGESDimen_NewGeneralNote *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_NewGeneralNote const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_NewGeneralNote {
-	IGESDimen_NewGeneralNote* GetObject() {
-	return (IGESDimen_NewGeneralNote*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_IGESDimen_DimensionedGeometry;
 class Handle_IGESDimen_DimensionedGeometry : public Handle_IGESData_IGESEntity {
 	public:
@@ -599,6 +599,27 @@ class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
 %extend Handle_IGESDimen_PointDimension {
 	IGESDimen_PointDimension* GetObject() {
 	return (IGESDimen_PointDimension*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_IGESDimen_NewGeneralNote;
+class Handle_IGESDimen_NewGeneralNote : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESDimen_NewGeneralNote();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_NewGeneralNote();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_NewGeneralNote(const Handle_IGESDimen_NewGeneralNote &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_NewGeneralNote(const IGESDimen_NewGeneralNote *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_NewGeneralNote const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_NewGeneralNote {
+	IGESDimen_NewGeneralNote* GetObject() {
+	return (IGESDimen_NewGeneralNote*)$self->Access();
 	}
 };
 
@@ -662,27 +683,6 @@ class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 %extend Handle_IGESDimen_SpecificModule {
 	IGESDimen_SpecificModule* GetObject() {
 	return (IGESDimen_SpecificModule*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IGESDimen_CurveDimension;
-class Handle_IGESDimen_CurveDimension : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_CurveDimension();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CurveDimension();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CurveDimension(const Handle_IGESDimen_CurveDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CurveDimension(const IGESDimen_CurveDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CurveDimension const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_CurveDimension {
-	IGESDimen_CurveDimension* GetObject() {
-	return (IGESDimen_CurveDimension*)$self->Access();
 	}
 };
 
@@ -840,6 +840,29 @@ class IGESDimen_LeaderArrow : public IGESData_IGESEntity {
 	}
 };
 
+%nodefaultctor IGESDimen_ReadWriteModule;
+class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ReadWriteModule();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
+		%feature("autodoc", "1");
+		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESDimen_ReadWriteModule();
+
+};
+%extend IGESDimen_ReadWriteModule {
+	Handle_IGESDimen_ReadWriteModule GetHandle() {
+	return *(Handle_IGESDimen_ReadWriteModule*) &$self;
+	}
+};
+
 %nodefaultctor IGESDimen_GeneralSymbol;
 class IGESDimen_GeneralSymbol : public IGESData_IGESEntity {
 	public:
@@ -900,27 +923,30 @@ class IGESDimen_DimensionedGeometry : public IGESData_IGESEntity {
 	}
 };
 
-%nodefaultctor IGESDimen_ReadWriteModule;
-class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
+%nodefaultctor IGESDimen_ToolSection;
+class IGESDimen_ToolSection {
 	public:
 		%feature("autodoc", "1");
-		IGESDimen_ReadWriteModule();
+		~IGESDimen_ToolSection();
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
+		IGESDimen_ToolSection();
 		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const Handle_IGESDimen_Section &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const Handle_IGESDimen_Section &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void OwnShared(const Handle_IGESDimen_Section &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		~IGESDimen_ReadWriteModule();
+		Standard_Boolean OwnCorrect(const Handle_IGESDimen_Section &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_Section &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_Section &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_Section &entfrom, const Handle_IGESDimen_Section &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_Section &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
-};
-%extend IGESDimen_ReadWriteModule {
-	Handle_IGESDimen_ReadWriteModule GetHandle() {
-	return *(Handle_IGESDimen_ReadWriteModule*) &$self;
-	}
 };
 
 %nodefaultctor IGESDimen_WitnessLine;
@@ -1338,43 +1364,6 @@ class IGESDimen_ToolGeneralLabel {
 
 };
 
-%nodefaultctor IGESDimen_DimensionTolerance;
-class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_DimensionTolerance();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbPropVal, const Standard_Integer aSecTolFlag, const Standard_Integer aTolType, const Standard_Integer aTolPlaceFlag, const Standard_Real anUpperTol, const Standard_Real aLowerTol, const Standard_Boolean aSignFlag, const Standard_Integer aFracFlag, const Standard_Integer aPrecision);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondaryToleranceFlag() const;
-		%feature("autodoc", "1");
-		Standard_Integer ToleranceType() const;
-		%feature("autodoc", "1");
-		Standard_Integer TolerancePlacementFlag() const;
-		%feature("autodoc", "1");
-		Standard_Real UpperTolerance() const;
-		%feature("autodoc", "1");
-		Standard_Real LowerTolerance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SignSuppressionFlag() const;
-		%feature("autodoc", "1");
-		Standard_Integer FractionFlag() const;
-		%feature("autodoc", "1");
-		Standard_Integer Precision() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_DimensionTolerance();
-
-};
-%extend IGESDimen_DimensionTolerance {
-	Handle_IGESDimen_DimensionTolerance GetHandle() {
-	return *(Handle_IGESDimen_DimensionTolerance*) &$self;
-	}
-};
-
 %nodefaultctor IGESDimen_FlagNote;
 class IGESDimen_FlagNote : public IGESData_IGESEntity {
 	public:
@@ -1537,39 +1526,6 @@ class IGESDimen_Section : public IGESData_IGESEntity {
 %extend IGESDimen_Section {
 	Handle_IGESDimen_Section GetHandle() {
 	return *(Handle_IGESDimen_Section*) &$self;
-	}
-};
-
-%nodefaultctor IGESDimen_RadiusDimension;
-class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_RadiusDimension();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &anArrow, const gp_XY &arcCenter, const Handle_IGESDimen_LeaderArrow &anotherArrow);
-		%feature("autodoc", "1");
-		void InitForm(const Standard_Integer form);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralNote Note() const;
-		%feature("autodoc", "1");
-		Handle_IGESDimen_LeaderArrow Leader() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Center() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasLeader2() const;
-		%feature("autodoc", "1");
-		Handle_IGESDimen_LeaderArrow Leader2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_RadiusDimension();
-
-};
-%extend IGESDimen_RadiusDimension {
-	Handle_IGESDimen_RadiusDimension GetHandle() {
-	return *(Handle_IGESDimen_RadiusDimension*) &$self;
 	}
 };
 
@@ -1819,32 +1775,6 @@ class IGESDimen_CurveDimension : public IGESData_IGESEntity {
 	Handle_IGESDimen_CurveDimension GetHandle() {
 	return *(Handle_IGESDimen_CurveDimension*) &$self;
 	}
-};
-
-%nodefaultctor IGESDimen_ToolSection;
-class IGESDimen_ToolSection {
-	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolSection();
-		%feature("autodoc", "1");
-		IGESDimen_ToolSection();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_Section &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_Section &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_Section &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESDimen_Section &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_Section &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_Section &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_Section &entfrom, const Handle_IGESDimen_Section &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_Section &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
 };
 
 %nodefaultctor IGESDimen_ToolFlagNote;
@@ -2205,6 +2135,43 @@ class IGESDimen_ToolLeaderArrow {
 
 };
 
+%nodefaultctor IGESDimen_DimensionTolerance;
+class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_DimensionTolerance();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbPropVal, const Standard_Integer aSecTolFlag, const Standard_Integer aTolType, const Standard_Integer aTolPlaceFlag, const Standard_Real anUpperTol, const Standard_Real aLowerTol, const Standard_Boolean aSignFlag, const Standard_Integer aFracFlag, const Standard_Integer aPrecision);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		Standard_Integer SecondaryToleranceFlag() const;
+		%feature("autodoc", "1");
+		Standard_Integer ToleranceType() const;
+		%feature("autodoc", "1");
+		Standard_Integer TolerancePlacementFlag() const;
+		%feature("autodoc", "1");
+		Standard_Real UpperTolerance() const;
+		%feature("autodoc", "1");
+		Standard_Real LowerTolerance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SignSuppressionFlag() const;
+		%feature("autodoc", "1");
+		Standard_Integer FractionFlag() const;
+		%feature("autodoc", "1");
+		Standard_Integer Precision() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESDimen_DimensionTolerance();
+
+};
+%extend IGESDimen_DimensionTolerance {
+	Handle_IGESDimen_DimensionTolerance GetHandle() {
+	return *(Handle_IGESDimen_DimensionTolerance*) &$self;
+	}
+};
+
 %nodefaultctor IGESDimen_ToolGeneralSymbol;
 class IGESDimen_ToolGeneralSymbol {
 	public:
@@ -2334,6 +2301,39 @@ class IGESDimen_ToolDimensionDisplayData {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_DimensionDisplayData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+
+%nodefaultctor IGESDimen_RadiusDimension;
+class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_RadiusDimension();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &anArrow, const gp_XY &arcCenter, const Handle_IGESDimen_LeaderArrow &anotherArrow);
+		%feature("autodoc", "1");
+		void InitForm(const Standard_Integer form);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote Note() const;
+		%feature("autodoc", "1");
+		Handle_IGESDimen_LeaderArrow Leader() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Center() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedCenter() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasLeader2() const;
+		%feature("autodoc", "1");
+		Handle_IGESDimen_LeaderArrow Leader2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESDimen_RadiusDimension();
+
+};
+%extend IGESDimen_RadiusDimension {
+	Handle_IGESDimen_RadiusDimension GetHandle() {
+	return *(Handle_IGESDimen_RadiusDimension*) &$self;
+	}
 };
 
 %nodefaultctor IGESDimen_NewDimensionedGeometry;

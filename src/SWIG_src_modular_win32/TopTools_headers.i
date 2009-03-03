@@ -36,6 +36,26 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape.hxx>
+#include<Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape.hxx>
+#include<Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger.hxx>
+#include<Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger.hxx>
+#include<Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
+#include<Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape.hxx>
+#include<Handle_TopTools_DataMapNodeOfDataMapOfShapeShape.hxx>
+#include<Handle_TopTools_HArray1OfListOfShape.hxx>
+#include<Handle_TopTools_HArray1OfShape.hxx>
+#include<Handle_TopTools_HArray2OfShape.hxx>
+#include<Handle_TopTools_HSequenceOfShape.hxx>
+#include<Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape.hxx>
+#include<Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape.hxx>
+#include<Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape.hxx>
+#include<Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape.hxx>
+#include<Handle_TopTools_ListNodeOfListOfShape.hxx>
+#include<Handle_TopTools_SequenceNodeOfSequenceOfShape.hxx>
+#include<Handle_TopTools_StdMapNodeOfMapOfOrientedShape.hxx>
+#include<Handle_TopTools_StdMapNodeOfMapOfShape.hxx>
+#include<TopTools.hxx>
 #include<TopTools_Array1OfListOfShape.hxx>
 #include<TopTools_Array1OfShape.hxx>
 #include<TopTools_Array2OfShape.hxx>
@@ -87,26 +107,6 @@
 #include<TopTools_ShapeSet.hxx>
 #include<TopTools_StdMapNodeOfMapOfOrientedShape.hxx>
 #include<TopTools_StdMapNodeOfMapOfShape.hxx>
-#include<TopTools.hxx>
-#include<Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape.hxx>
-#include<Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape.hxx>
-#include<Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger.hxx>
-#include<Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger.hxx>
-#include<Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
-#include<Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape.hxx>
-#include<Handle_TopTools_DataMapNodeOfDataMapOfShapeShape.hxx>
-#include<Handle_TopTools_HArray1OfListOfShape.hxx>
-#include<Handle_TopTools_HArray1OfShape.hxx>
-#include<Handle_TopTools_HArray2OfShape.hxx>
-#include<Handle_TopTools_HSequenceOfShape.hxx>
-#include<Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape.hxx>
-#include<Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape.hxx>
-#include<Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape.hxx>
-#include<Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape.hxx>
-#include<Handle_TopTools_ListNodeOfListOfShape.hxx>
-#include<Handle_TopTools_SequenceNodeOfSequenceOfShape.hxx>
-#include<Handle_TopTools_StdMapNodeOfMapOfOrientedShape.hxx>
-#include<Handle_TopTools_StdMapNodeOfMapOfShape.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -166,10 +166,10 @@
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TopoDS_Shape.hxx>
 #include<TopLoc_Location.hxx>
 #include<Handle_Message_ProgressIndicator.hxx>
 #include<TopTools.hxx>
-#include<TopoDS_Shape.hxx>
 #include<TColStd_ListOfInteger.hxx>
 #include<TCollection_AsciiString.hxx>
 %}

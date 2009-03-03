@@ -159,30 +159,6 @@ enum Aspect_TypeOfDrawMode {
 	Aspect_TODM_XORLIGHT,
 	};
 
-enum Aspect_FormatOfSheetPaper {
-	Aspect_FOSP_A0,
-	Aspect_FOSP_A1,
-	Aspect_FOSP_A2,
-	Aspect_FOSP_A3,
-	Aspect_FOSP_A4,
-	Aspect_FOSP_A5,
-	Aspect_FOSP_K_LONG,
-	Aspect_FOSP_K_SHORT,
-	Aspect_FOSP_J_LONG,
-	Aspect_FOSP_J_SHORT,
-	Aspect_FOSP_H_LONG,
-	Aspect_FOSP_H_SHORT,
-	Aspect_FOSP_G_LONG,
-	Aspect_FOSP_G_SHORT,
-	Aspect_FOSP_F,
-	Aspect_FOSP_E,
-	Aspect_FOSP_D,
-	Aspect_FOSP_C,
-	Aspect_FOSP_B,
-	Aspect_FOSP_A,
-	Aspect_FOSP_UNKNOWN,
-	};
-
 enum Aspect_PlotMode {
 	Aspect_PM_DPLOTTER,
 	Aspect_PM_FILEONLY,
@@ -300,6 +276,30 @@ enum Aspect_TypeOfLine {
 	Aspect_TOL_DOT,
 	Aspect_TOL_DOTDASH,
 	Aspect_TOL_USERDEFINED,
+	};
+
+enum Aspect_FormatOfSheetPaper {
+	Aspect_FOSP_A0,
+	Aspect_FOSP_A1,
+	Aspect_FOSP_A2,
+	Aspect_FOSP_A3,
+	Aspect_FOSP_A4,
+	Aspect_FOSP_A5,
+	Aspect_FOSP_K_LONG,
+	Aspect_FOSP_K_SHORT,
+	Aspect_FOSP_J_LONG,
+	Aspect_FOSP_J_SHORT,
+	Aspect_FOSP_H_LONG,
+	Aspect_FOSP_H_SHORT,
+	Aspect_FOSP_G_LONG,
+	Aspect_FOSP_G_SHORT,
+	Aspect_FOSP_F,
+	Aspect_FOSP_E,
+	Aspect_FOSP_D,
+	Aspect_FOSP_C,
+	Aspect_FOSP_B,
+	Aspect_FOSP_A,
+	Aspect_FOSP_UNKNOWN,
 	};
 
 enum Aspect_TypeOfTriedronPosition {
@@ -888,27 +888,6 @@ class Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public Handle_TCollec
 	}
 };
 
-%nodefaultctor Handle_Aspect_EdgeDefinitionError;
-class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_EdgeDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Aspect_EdgeDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Aspect_EdgeDefinitionError(const Handle_Aspect_EdgeDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_EdgeDefinitionError(const Aspect_EdgeDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Aspect_EdgeDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Aspect_EdgeDefinitionError {
-	Aspect_EdgeDefinitionError* GetObject() {
-	return (Aspect_EdgeDefinitionError*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Aspect_ColorMap;
 class Handle_Aspect_ColorMap : public Handle_MMgt_TShared {
 	public:
@@ -1476,6 +1455,27 @@ class Handle_Aspect_PolyStyleDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+%nodefaultctor Handle_Aspect_EdgeDefinitionError;
+class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		~Handle_Aspect_EdgeDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Aspect_EdgeDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Aspect_EdgeDefinitionError(const Handle_Aspect_EdgeDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Aspect_EdgeDefinitionError(const Aspect_EdgeDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Aspect_EdgeDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Aspect_EdgeDefinitionError {
+	Aspect_EdgeDefinitionError* GetObject() {
+	return (Aspect_EdgeDefinitionError*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry : public Handle_TCollection_SeqNode {
 	public:
@@ -1788,6 +1788,56 @@ class Aspect_AspectMarker : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor Aspect_ColorMap;
+class Aspect_ColorMap : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Aspect_TypeOfColorMap Type() const;
+		%feature("autodoc", "1");
+		Standard_Integer Size() const;
+		%feature("autodoc", "1");
+		Standard_Integer Index(const Standard_Integer aColormapIndex) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		const Aspect_ColorMapEntry & Entry(const Standard_Integer AColorMapIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer FindColorMapIndex(const Standard_Integer AColorMapEntryIndex) const;
+		%feature("autodoc", "1");
+		virtual		const Aspect_ColorMapEntry & FindEntry(const Standard_Integer AColorMapEntryIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NearestColorMapIndex(const Quantity_Color &aColor) const;
+		%feature("autodoc", "1");
+		virtual		const Aspect_ColorMapEntry & NearestEntry(const Quantity_Color &aColor) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer AddEntry(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Aspect_ColorMap {
+	Handle_Aspect_ColorMap GetHandle() {
+	return *(Handle_Aspect_ColorMap*) &$self;
+	}
+};
+
+%nodefaultctor Aspect_ColorCubeColorMap;
+class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
+	public:
+		%feature("autodoc", "1");
+		Aspect_ColorCubeColorMap(const Standard_Integer base_pixel, const Standard_Integer redmax, const Standard_Integer redmult, const Standard_Integer greenmax, const Standard_Integer greenmult, const Standard_Integer bluemax, const Standard_Integer bluemult);
+		%feature("autodoc", "1");
+		void ColorCubeDefinition(Standard_Integer & base_pixel, Standard_Integer & redmax, Standard_Integer & redmult, Standard_Integer & greenmax, Standard_Integer & greenmult, Standard_Integer & bluemax, Standard_Integer & bluemult) const;
+		%feature("autodoc", "1");
+		virtual		~Aspect_ColorCubeColorMap();
+
+};
+%extend Aspect_ColorCubeColorMap {
+	Handle_Aspect_ColorCubeColorMap GetHandle() {
+	return *(Handle_Aspect_ColorCubeColorMap*) &$self;
+	}
+};
+
 %nodefaultctor Aspect_IndexPixel;
 class Aspect_IndexPixel : public Aspect_Pixel {
 	public:
@@ -1823,6 +1873,56 @@ class Aspect_RGBPixel {
 	public:
 		%feature("autodoc", "1");
 		Aspect_RGBPixel();
+
+};
+
+%nodefaultctor Aspect_SequenceOfMarkMapEntry;
+class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Aspect_SequenceOfMarkMapEntry();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~Aspect_SequenceOfMarkMapEntry();
+		%feature("autodoc", "1");
+		const Aspect_SequenceOfMarkMapEntry & Assign(const Aspect_SequenceOfMarkMapEntry &Other);
+		%feature("autodoc", "1");
+		void Append(const Aspect_MarkMapEntry &T);
+		%feature("autodoc", "1");
+		void Append(Aspect_SequenceOfMarkMapEntry & S);
+		%feature("autodoc", "1");
+		void Prepend(const Aspect_MarkMapEntry &T);
+		%feature("autodoc", "1");
+		void Prepend(Aspect_SequenceOfMarkMapEntry & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Aspect_MarkMapEntry &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Aspect_SequenceOfMarkMapEntry & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Aspect_MarkMapEntry &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Aspect_SequenceOfMarkMapEntry & S);
+		%feature("autodoc", "1");
+		const Aspect_MarkMapEntry & First() const;
+		%feature("autodoc", "1");
+		const Aspect_MarkMapEntry & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Aspect_SequenceOfMarkMapEntry & S);
+		%feature("autodoc", "1");
+		const Aspect_MarkMapEntry & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Aspect_MarkMapEntry & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Aspect_MarkMapEntry &I);
+		%feature("autodoc", "1");
+		Aspect_MarkMapEntry & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Aspect_MarkMapEntry & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
 
@@ -2069,39 +2169,6 @@ class Aspect_Driver : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor Aspect_ColorMap;
-class Aspect_ColorMap : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Aspect_TypeOfColorMap Type() const;
-		%feature("autodoc", "1");
-		Standard_Integer Size() const;
-		%feature("autodoc", "1");
-		Standard_Integer Index(const Standard_Integer aColormapIndex) const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		const Aspect_ColorMapEntry & Entry(const Standard_Integer AColorMapIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer FindColorMapIndex(const Standard_Integer AColorMapEntryIndex) const;
-		%feature("autodoc", "1");
-		virtual		const Aspect_ColorMapEntry & FindEntry(const Standard_Integer AColorMapEntryIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NearestColorMapIndex(const Quantity_Color &aColor) const;
-		%feature("autodoc", "1");
-		virtual		const Aspect_ColorMapEntry & NearestEntry(const Quantity_Color &aColor) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer AddEntry(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_ColorMap {
-	Handle_Aspect_ColorMap GetHandle() {
-	return *(Handle_Aspect_ColorMap*) &$self;
-	}
-};
-
 %nodefaultctor Aspect_ColorRampColorMap;
 class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 	public:
@@ -2114,41 +2181,22 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer FindColorMapIndex(const Standard_Integer ColorMapEntryIndex) const;
 		%feature("autodoc", "1");
+		virtual		const Aspect_ColorMapEntry & FindEntry(const Standard_Integer AColorMapEntryIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NearestColorMapIndex(const Quantity_Color &aColor) const;
+		%feature("autodoc", "1");
+		virtual		const Aspect_ColorMapEntry & NearestEntry(const Quantity_Color &aColor) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer AddEntry(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
 		virtual		~Aspect_ColorRampColorMap();
 
 };
 %extend Aspect_ColorRampColorMap {
 	Handle_Aspect_ColorRampColorMap GetHandle() {
 	return *(Handle_Aspect_ColorRampColorMap*) &$self;
-	}
-};
-
-%nodefaultctor Aspect_FontMap;
-class Aspect_FontMap : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Aspect_FontMap();
-		%feature("autodoc", "1");
-		void AddEntry(const Aspect_FontMapEntry &AnEntry);
-		%feature("autodoc", "1");
-		Standard_Integer AddEntry(const Aspect_FontStyle &aStyle);
-		%feature("autodoc", "1");
-		Standard_Integer Size() const;
-		%feature("autodoc", "1");
-		Standard_Integer Index(const Standard_Integer aFontmapIndex) const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		Aspect_FontMapEntry Entry(const Standard_Integer AnIndex) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_FontMap();
-
-};
-%extend Aspect_FontMap {
-	Handle_Aspect_FontMap GetHandle() {
-	return *(Handle_Aspect_FontMap*) &$self;
 	}
 };
 
@@ -2181,38 +2229,6 @@ class Aspect_GenericColorMap : public Aspect_ColorMap {
 	Handle_Aspect_GenericColorMap GetHandle() {
 	return *(Handle_Aspect_GenericColorMap*) &$self;
 	}
-};
-
-%nodefaultctor Aspect_LineStyle;
-class Aspect_LineStyle {
-	public:
-		%feature("autodoc", "1");
-		~Aspect_LineStyle();
-		%feature("autodoc", "1");
-		Aspect_LineStyle();
-		%feature("autodoc", "1");
-		Aspect_LineStyle(const Aspect_TypeOfLine Type);
-		%feature("autodoc", "1");
-		Aspect_LineStyle(const TColQuantity_Array1OfLength &Style);
-		%feature("autodoc", "1");
-		Aspect_LineStyle & Assign(const Aspect_LineStyle &Other);
-		%feature("autodoc", "1");
-		void SetValues(const Aspect_TypeOfLine Type);
-		%feature("autodoc", "1");
-		void SetValues(const TColQuantity_Array1OfLength &Style);
-		%feature("autodoc", "1");
-		Aspect_TypeOfLine Style() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		const TColQuantity_Array1OfLength & Values() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Aspect_LineStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNotEqual(const Aspect_LineStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Aspect_LineStyle &Other) const;
-
 };
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfMarkMapEntry;
@@ -2318,6 +2334,25 @@ class Aspect_FontMapEntry {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+
+%nodefaultctor Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
+class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Aspect_SequenceNodeOfSequenceOfTypeMapEntry(const Aspect_TypeMapEntry &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Aspect_TypeMapEntry & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Aspect_SequenceNodeOfSequenceOfTypeMapEntry();
+
+};
+%extend Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
+	Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry GetHandle() {
+	return *(Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry*) &$self;
+	}
 };
 
 %nodefaultctor Aspect_SequenceOfColor;
@@ -2652,35 +2687,6 @@ class Aspect_MarkMapEntry {
 
 };
 
-%nodefaultctor Aspect_ColorCubeColorMap;
-class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
-	public:
-		%feature("autodoc", "1");
-		Aspect_ColorCubeColorMap(const Standard_Integer base_pixel, const Standard_Integer redmax, const Standard_Integer redmult, const Standard_Integer greenmax, const Standard_Integer greenmult, const Standard_Integer bluemax, const Standard_Integer bluemult);
-		%feature("autodoc", "1");
-		void ColorCubeDefinition(Standard_Integer & base_pixel, Standard_Integer & redmax, Standard_Integer & redmult, Standard_Integer & greenmax, Standard_Integer & greenmult, Standard_Integer & bluemax, Standard_Integer & bluemult) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer FindColorMapIndex(const Standard_Integer AColorMapEntryIndex) const;
-		%feature("autodoc", "1");
-		virtual		const Aspect_ColorMapEntry & FindEntry(const Standard_Integer AColorMapEntryIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NearestColorMapIndex(const Quantity_Color &aColor) const;
-		%feature("autodoc", "1");
-		virtual		const Aspect_ColorMapEntry & NearestEntry(const Quantity_Color &aColor) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer AddEntry(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_ColorCubeColorMap();
-
-};
-%extend Aspect_ColorCubeColorMap {
-	Handle_Aspect_ColorCubeColorMap GetHandle() {
-	return *(Handle_Aspect_ColorCubeColorMap*) &$self;
-	}
-};
-
 %nodefaultctor Aspect_TypeMapDefinitionError;
 class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2703,62 +2709,6 @@ class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 %extend Aspect_TypeMapDefinitionError {
 	Handle_Aspect_TypeMapDefinitionError GetHandle() {
 	return *(Handle_Aspect_TypeMapDefinitionError*) &$self;
-	}
-};
-
-%nodefaultctor Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
-class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Aspect_SequenceNodeOfSequenceOfTypeMapEntry(const Aspect_TypeMapEntry &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Aspect_TypeMapEntry & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_SequenceNodeOfSequenceOfTypeMapEntry();
-
-};
-%extend Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
-	Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry GetHandle() {
-	return *(Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry*) &$self;
-	}
-};
-
-%nodefaultctor Aspect_RectangularGrid;
-class Aspect_RectangularGrid : public Aspect_Grid {
-	public:
-		%feature("autodoc", "1");
-		Aspect_RectangularGrid(const Quantity_Length aXStep, const Quantity_Length aYStep, const Quantity_Length anXOrigin=0, const Quantity_Length anYOrigin=0, const Quantity_PlaneAngle aFirstAngle=0, const Quantity_PlaneAngle aSecondAngle=0, const Quantity_PlaneAngle aRotationAngle=0);
-		%feature("autodoc", "1");
-		void SetXStep(const Quantity_Length aStep);
-		%feature("autodoc", "1");
-		void SetYStep(const Quantity_Length aStep);
-		%feature("autodoc", "1");
-		void SetAngle(const Quantity_PlaneAngle anAngle1, const Quantity_PlaneAngle anAngle2);
-		%feature("autodoc", "1");
-		void SetGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Quantity_Length & gridX, Quantity_Length & gridY) const;
-		%feature("autodoc", "1");
-		Quantity_Length XStep() const;
-		%feature("autodoc", "1");
-		Quantity_Length YStep() const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle FirstAngle() const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle SecondAngle() const;
-		%feature("autodoc", "1");
-		virtual		void Init();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_RectangularGrid();
-
-};
-%extend Aspect_RectangularGrid {
-	Handle_Aspect_RectangularGrid GetHandle() {
-	return *(Handle_Aspect_RectangularGrid*) &$self;
 	}
 };
 
@@ -2851,53 +2801,27 @@ class Aspect_Window : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor Aspect_SequenceOfMarkMapEntry;
-class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
+%nodefaultctor Aspect_GenId;
+class Aspect_GenId {
 	public:
 		%feature("autodoc", "1");
-		Aspect_SequenceOfMarkMapEntry();
+		~Aspect_GenId();
 		%feature("autodoc", "1");
-		void Clear();
+		Aspect_GenId();
 		%feature("autodoc", "1");
-		~Aspect_SequenceOfMarkMapEntry();
+		Aspect_GenId(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		const Aspect_SequenceOfMarkMapEntry & Assign(const Aspect_SequenceOfMarkMapEntry &Other);
+		void Free();
 		%feature("autodoc", "1");
-		void Append(const Aspect_MarkMapEntry &T);
+		void Free(const Standard_Integer Id);
 		%feature("autodoc", "1");
-		void Append(Aspect_SequenceOfMarkMapEntry & S);
+		Standard_Integer Available() const;
 		%feature("autodoc", "1");
-		void Prepend(const Aspect_MarkMapEntry &T);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void Prepend(Aspect_SequenceOfMarkMapEntry & S);
+		Standard_Integer Next();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Aspect_MarkMapEntry &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Aspect_SequenceOfMarkMapEntry & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Aspect_MarkMapEntry &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Aspect_SequenceOfMarkMapEntry & S);
-		%feature("autodoc", "1");
-		const Aspect_MarkMapEntry & First() const;
-		%feature("autodoc", "1");
-		const Aspect_MarkMapEntry & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Aspect_SequenceOfMarkMapEntry & S);
-		%feature("autodoc", "1");
-		const Aspect_MarkMapEntry & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Aspect_MarkMapEntry & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Aspect_MarkMapEntry &I);
-		%feature("autodoc", "1");
-		Aspect_MarkMapEntry & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Aspect_MarkMapEntry & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Standard_Integer Upper() const;
 
 };
 
@@ -3014,6 +2938,118 @@ class Aspect_DriverError : public Standard_OutOfRange {
 %extend Aspect_DriverError {
 	Handle_Aspect_DriverError GetHandle() {
 	return *(Handle_Aspect_DriverError*) &$self;
+	}
+};
+
+%nodefaultctor Aspect_RectangularGrid;
+class Aspect_RectangularGrid : public Aspect_Grid {
+	public:
+		%feature("autodoc", "1");
+		Aspect_RectangularGrid(const Quantity_Length aXStep, const Quantity_Length aYStep, const Quantity_Length anXOrigin=0, const Quantity_Length anYOrigin=0, const Quantity_PlaneAngle aFirstAngle=0, const Quantity_PlaneAngle aSecondAngle=0, const Quantity_PlaneAngle aRotationAngle=0);
+		%feature("autodoc", "1");
+		void SetXStep(const Quantity_Length aStep);
+		%feature("autodoc", "1");
+		void SetYStep(const Quantity_Length aStep);
+		%feature("autodoc", "1");
+		void SetAngle(const Quantity_PlaneAngle anAngle1, const Quantity_PlaneAngle anAngle2);
+		%feature("autodoc", "1");
+		void SetGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Quantity_Length & gridX, Quantity_Length & gridY) const;
+		%feature("autodoc", "1");
+		Quantity_Length XStep() const;
+		%feature("autodoc", "1");
+		Quantity_Length YStep() const;
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle FirstAngle() const;
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle SecondAngle() const;
+		%feature("autodoc", "1");
+		virtual		void Init();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Aspect_RectangularGrid();
+
+};
+%extend Aspect_RectangularGrid {
+	Handle_Aspect_RectangularGrid GetHandle() {
+	return *(Handle_Aspect_RectangularGrid*) &$self;
+	}
+};
+
+%nodefaultctor Aspect_WindowDriver;
+class Aspect_WindowDriver : public Aspect_Driver {
+	public:
+		%feature("autodoc", "1");
+		virtual		void BeginDraw(const Standard_Boolean DoubleBuffer=1, const Standard_Integer aRetainBuffer=0);
+		%feature("autodoc", "1");
+		virtual		Aspect_TypeOfResize ResizeSpace();
+		%feature("autodoc", "1");
+		Handle_Aspect_Window Window() const;
+		%feature("autodoc", "1");
+		virtual		void SetDrawMode(const Aspect_TypeOfDrawMode aMode);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean OpenBuffer(const Standard_Integer aRetainBuffer, const Standard_ShortReal aPivotX=0.0, const Standard_ShortReal aPivotY=0.0, const Standard_Integer aWidthIndex=0, const Standard_Integer aColorIndex=0, const Standard_Integer aFontIndex=0, const Aspect_TypeOfDrawMode aDrawMode=Aspect_TODM_REPLACE);
+		%feature("autodoc", "1");
+		virtual		void CloseBuffer(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void ClearBuffer(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void DrawBuffer(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void EraseBuffer(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void MoveBuffer(const Standard_Integer aRetainBuffer, const Standard_ShortReal aPivotX=0.0, const Standard_ShortReal aPivotY=0.0) const;
+		%feature("autodoc", "1");
+		virtual		void ScaleBuffer(const Standard_Integer aRetainBuffer, const Quantity_Factor aScaleX=1.0e+0, const Quantity_Factor aScaleY=1.0e+0) const;
+		%feature("autodoc", "1");
+		virtual		void RotateBuffer(const Standard_Integer aRetainBuffer, const Quantity_PlaneAngle anAngle=0.0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean BufferIsOpen(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean BufferIsEmpty(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean BufferIsDrawn(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void AngleOfBuffer(const Standard_Integer aRetainBuffer, Quantity_PlaneAngle & anAngle) const;
+		%feature("autodoc", "1");
+		virtual		void ScaleOfBuffer(const Standard_Integer aRetainBuffer, Quantity_Factor & aScaleX, Quantity_Factor & aScaleY) const;
+		%feature("autodoc", "1");
+		virtual		void PositionOfBuffer(const Standard_Integer aRetainBuffer, Standard_ShortReal & aPivotX, Standard_ShortReal & aPivotY) const;
+		%feature("autodoc", "1");
+		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x000000001) const;
+		%feature("autodoc", "1");
+		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x000000001) const;
+		%feature("autodoc", "1");
+		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x000000001) const;
+		%feature("autodoc", "1");
+		virtual		void ColorBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalColorIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		void FontBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalFontIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		void TypeBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalTypeIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		void WidthBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalWidthIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		void MarkBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalMarkIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Aspect_WindowDriver {
+	Handle_Aspect_WindowDriver GetHandle() {
+	return *(Handle_Aspect_WindowDriver*) &$self;
 	}
 };
 
@@ -3234,79 +3270,65 @@ class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
 
 };
 
-%nodefaultctor Aspect_WindowDriver;
-class Aspect_WindowDriver : public Aspect_Driver {
+%nodefaultctor Aspect_FontMap;
+class Aspect_FontMap : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		void BeginDraw(const Standard_Boolean DoubleBuffer=1, const Standard_Integer aRetainBuffer=0);
+		Aspect_FontMap();
 		%feature("autodoc", "1");
-		virtual		Aspect_TypeOfResize ResizeSpace();
+		void AddEntry(const Aspect_FontMapEntry &AnEntry);
 		%feature("autodoc", "1");
-		Handle_Aspect_Window Window() const;
+		Standard_Integer AddEntry(const Aspect_FontStyle &aStyle);
 		%feature("autodoc", "1");
-		virtual		void SetDrawMode(const Aspect_TypeOfDrawMode aMode);
+		Standard_Integer Size() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean OpenBuffer(const Standard_Integer aRetainBuffer, const Standard_ShortReal aPivotX=0.0, const Standard_ShortReal aPivotY=0.0, const Standard_Integer aWidthIndex=0, const Standard_Integer aColorIndex=0, const Standard_Integer aFontIndex=0, const Aspect_TypeOfDrawMode aDrawMode=Aspect_TODM_REPLACE);
+		Standard_Integer Index(const Standard_Integer aFontmapIndex) const;
 		%feature("autodoc", "1");
-		virtual		void CloseBuffer(const Standard_Integer aRetainBuffer) const;
+		void Dump() const;
 		%feature("autodoc", "1");
-		virtual		void ClearBuffer(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		void DrawBuffer(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		void EraseBuffer(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		void MoveBuffer(const Standard_Integer aRetainBuffer, const Standard_ShortReal aPivotX=0.0, const Standard_ShortReal aPivotY=0.0) const;
-		%feature("autodoc", "1");
-		virtual		void ScaleBuffer(const Standard_Integer aRetainBuffer, const Quantity_Factor aScaleX=1.0e+0, const Quantity_Factor aScaleY=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		void RotateBuffer(const Standard_Integer aRetainBuffer, const Quantity_PlaneAngle anAngle=0.0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BufferIsOpen(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BufferIsEmpty(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BufferIsDrawn(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		void AngleOfBuffer(const Standard_Integer aRetainBuffer, Quantity_PlaneAngle & anAngle) const;
-		%feature("autodoc", "1");
-		virtual		void ScaleOfBuffer(const Standard_Integer aRetainBuffer, Quantity_Factor & aScaleX, Quantity_Factor & aScaleY) const;
-		%feature("autodoc", "1");
-		virtual		void PositionOfBuffer(const Standard_Integer aRetainBuffer, Standard_ShortReal & aPivotX, Standard_ShortReal & aPivotY) const;
-		%feature("autodoc", "1");
-		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x000000001) const;
-		%feature("autodoc", "1");
-		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x000000001) const;
-		%feature("autodoc", "1");
-		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x000000001) const;
-		%feature("autodoc", "1");
-		virtual		void ColorBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalColorIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		virtual		void FontBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalFontIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		virtual		void TypeBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalTypeIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		virtual		void WidthBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalWidthIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		virtual		void MarkBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalMarkIndex(const Standard_Integer anIndex) const;
+		Aspect_FontMapEntry Entry(const Standard_Integer AnIndex) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Aspect_FontMap();
 
 };
-%extend Aspect_WindowDriver {
-	Handle_Aspect_WindowDriver GetHandle() {
-	return *(Handle_Aspect_WindowDriver*) &$self;
+%extend Aspect_FontMap {
+	Handle_Aspect_FontMap GetHandle() {
+	return *(Handle_Aspect_FontMap*) &$self;
 	}
+};
+
+%nodefaultctor Aspect_LineStyle;
+class Aspect_LineStyle {
+	public:
+		%feature("autodoc", "1");
+		~Aspect_LineStyle();
+		%feature("autodoc", "1");
+		Aspect_LineStyle();
+		%feature("autodoc", "1");
+		Aspect_LineStyle(const Aspect_TypeOfLine Type);
+		%feature("autodoc", "1");
+		Aspect_LineStyle(const TColQuantity_Array1OfLength &Style);
+		%feature("autodoc", "1");
+		Aspect_LineStyle & Assign(const Aspect_LineStyle &Other);
+		%feature("autodoc", "1");
+		void SetValues(const Aspect_TypeOfLine Type);
+		%feature("autodoc", "1");
+		void SetValues(const TColQuantity_Array1OfLength &Style);
+		%feature("autodoc", "1");
+		Aspect_TypeOfLine Style() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		const TColQuantity_Array1OfLength & Values() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Aspect_LineStyle &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsNotEqual(const Aspect_LineStyle &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator!=(const Aspect_LineStyle &Other) const;
+
 };
 
 %nodefaultctor Aspect_MarkerStyle;
@@ -3689,46 +3711,6 @@ class Aspect_WidthMapDefinitionError : public Standard_OutOfRange {
 	}
 };
 
-%nodefaultctor Aspect_GraphicDevice;
-class Aspect_GraphicDevice : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Handle_Aspect_GraphicDriver GraphicDriver() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_GraphicDevice {
-	Handle_Aspect_GraphicDevice GetHandle() {
-	return *(Handle_Aspect_GraphicDevice*) &$self;
-	}
-};
-
-%nodefaultctor Aspect_WindowError;
-class Aspect_WindowError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Aspect_WindowError();
-		%feature("autodoc", "1");
-		Aspect_WindowError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Aspect_WindowError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_WindowError();
-
-};
-%extend Aspect_WindowError {
-	Handle_Aspect_WindowError GetHandle() {
-	return *(Handle_Aspect_WindowError*) &$self;
-	}
-};
-
 %nodefaultctor Aspect_ColorScale;
 class Aspect_ColorScale : public MMgt_TShared {
 	public:
@@ -3848,6 +3830,46 @@ class Aspect_ColorScale : public MMgt_TShared {
 	}
 };
 
+%nodefaultctor Aspect_GraphicDevice;
+class Aspect_GraphicDevice : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Handle_Aspect_GraphicDriver GraphicDriver() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Aspect_GraphicDevice {
+	Handle_Aspect_GraphicDevice GetHandle() {
+	return *(Handle_Aspect_GraphicDevice*) &$self;
+	}
+};
+
+%nodefaultctor Aspect_WindowError;
+class Aspect_WindowError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Aspect_WindowError();
+		%feature("autodoc", "1");
+		Aspect_WindowError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Aspect_WindowError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Aspect_WindowError();
+
+};
+%extend Aspect_WindowError {
+	Handle_Aspect_WindowError GetHandle() {
+	return *(Handle_Aspect_WindowError*) &$self;
+	}
+};
+
 %nodefaultctor Aspect_FontMapDefinitionError;
 class Aspect_FontMapDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3890,28 +3912,4 @@ class Aspect_SequenceNodeOfSequenceOfColor : public TCollection_SeqNode {
 	Handle_Aspect_SequenceNodeOfSequenceOfColor GetHandle() {
 	return *(Handle_Aspect_SequenceNodeOfSequenceOfColor*) &$self;
 	}
-};
-
-%nodefaultctor Aspect_GenId;
-class Aspect_GenId {
-	public:
-		%feature("autodoc", "1");
-		~Aspect_GenId();
-		%feature("autodoc", "1");
-		Aspect_GenId();
-		%feature("autodoc", "1");
-		Aspect_GenId(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Free();
-		%feature("autodoc", "1");
-		void Free(const Standard_Integer Id);
-		%feature("autodoc", "1");
-		Standard_Integer Available() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Next();
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-
 };

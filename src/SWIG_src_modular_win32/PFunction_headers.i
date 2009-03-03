@@ -36,8 +36,8 @@
 
 // Headers necessary to define wrapped classes.
 
-#include<PFunction_Function.hxx>
 #include<Handle_PFunction_Function.hxx>
+#include<PFunction_Function.hxx>
 
 // Additional headers necessary for compilation.
 

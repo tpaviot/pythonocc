@@ -152,48 +152,6 @@ class Handle_StepShape_DimensionalLocationWithPath : public Handle_StepShape_Dim
 	}
 };
 
-%nodefaultctor Handle_StepShape_TopologicalRepresentationItem;
-class Handle_StepShape_TopologicalRepresentationItem : public Handle_StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_TopologicalRepresentationItem();
-		%feature("autodoc", "1");
-		Handle_StepShape_TopologicalRepresentationItem();
-		%feature("autodoc", "1");
-		Handle_StepShape_TopologicalRepresentationItem(const Handle_StepShape_TopologicalRepresentationItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_TopologicalRepresentationItem(const StepShape_TopologicalRepresentationItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_TopologicalRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_TopologicalRepresentationItem {
-	StepShape_TopologicalRepresentationItem* GetObject() {
-	return (StepShape_TopologicalRepresentationItem*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepShape_ConnectedEdgeSet;
-class Handle_StepShape_ConnectedEdgeSet : public Handle_StepShape_TopologicalRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_ConnectedEdgeSet();
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet();
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet(const Handle_StepShape_ConnectedEdgeSet &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet(const StepShape_ConnectedEdgeSet *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_ConnectedEdgeSet {
-	StepShape_ConnectedEdgeSet* GetObject() {
-	return (StepShape_ConnectedEdgeSet*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepShape_HArray1OfConnectedEdgeSet;
 class Handle_StepShape_HArray1OfConnectedEdgeSet : public Handle_MMgt_TShared {
 	public:
@@ -254,6 +212,27 @@ class Handle_StepShape_RightCircularCone : public Handle_StepGeom_GeometricRepre
 %extend Handle_StepShape_RightCircularCone {
 	StepShape_RightCircularCone* GetObject() {
 	return (StepShape_RightCircularCone*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepShape_TopologicalRepresentationItem;
+class Handle_StepShape_TopologicalRepresentationItem : public Handle_StepRepr_RepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_TopologicalRepresentationItem();
+		%feature("autodoc", "1");
+		Handle_StepShape_TopologicalRepresentationItem();
+		%feature("autodoc", "1");
+		Handle_StepShape_TopologicalRepresentationItem(const Handle_StepShape_TopologicalRepresentationItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_TopologicalRepresentationItem(const StepShape_TopologicalRepresentationItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_TopologicalRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_TopologicalRepresentationItem {
+	StepShape_TopologicalRepresentationItem* GetObject() {
+	return (StepShape_TopologicalRepresentationItem*)$self->Access();
 	}
 };
 
@@ -320,6 +299,69 @@ class Handle_StepShape_SeamEdge : public Handle_StepShape_OrientedEdge {
 	}
 };
 
+%nodefaultctor Handle_StepShape_SolidModel;
+class Handle_StepShape_SolidModel : public Handle_StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_SolidModel();
+		%feature("autodoc", "1");
+		Handle_StepShape_SolidModel();
+		%feature("autodoc", "1");
+		Handle_StepShape_SolidModel(const Handle_StepShape_SolidModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_SolidModel(const StepShape_SolidModel *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_SolidModel const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_SolidModel {
+	StepShape_SolidModel* GetObject() {
+	return (StepShape_SolidModel*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepShape_SweptAreaSolid;
+class Handle_StepShape_SweptAreaSolid : public Handle_StepShape_SolidModel {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_SweptAreaSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_SweptAreaSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_SweptAreaSolid(const Handle_StepShape_SweptAreaSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_SweptAreaSolid(const StepShape_SweptAreaSolid *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_SweptAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_SweptAreaSolid {
+	StepShape_SweptAreaSolid* GetObject() {
+	return (StepShape_SweptAreaSolid*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepShape_RevolvedAreaSolid;
+class Handle_StepShape_RevolvedAreaSolid : public Handle_StepShape_SweptAreaSolid {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_RevolvedAreaSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_RevolvedAreaSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_RevolvedAreaSolid(const Handle_StepShape_RevolvedAreaSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_RevolvedAreaSolid(const StepShape_RevolvedAreaSolid *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_RevolvedAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_RevolvedAreaSolid {
+	StepShape_RevolvedAreaSolid* GetObject() {
+	return (StepShape_RevolvedAreaSolid*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepShape_ShapeRepresentation;
 class Handle_StepShape_ShapeRepresentation : public Handle_StepRepr_Representation {
 	public:
@@ -380,6 +422,48 @@ class Handle_StepShape_HArray1OfFaceBound : public Handle_MMgt_TShared {
 %extend Handle_StepShape_HArray1OfFaceBound {
 	StepShape_HArray1OfFaceBound* GetObject() {
 	return (StepShape_HArray1OfFaceBound*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepShape_SweptFaceSolid;
+class Handle_StepShape_SweptFaceSolid : public Handle_StepShape_SolidModel {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_SweptFaceSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_SweptFaceSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_SweptFaceSolid(const Handle_StepShape_SweptFaceSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_SweptFaceSolid(const StepShape_SweptFaceSolid *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_SweptFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_SweptFaceSolid {
+	StepShape_SweptFaceSolid* GetObject() {
+	return (StepShape_SweptFaceSolid*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepShape_ExtrudedFaceSolid;
+class Handle_StepShape_ExtrudedFaceSolid : public Handle_StepShape_SweptFaceSolid {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_ExtrudedFaceSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_ExtrudedFaceSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_ExtrudedFaceSolid(const Handle_StepShape_ExtrudedFaceSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_ExtrudedFaceSolid(const StepShape_ExtrudedFaceSolid *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_ExtrudedFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_ExtrudedFaceSolid {
+	StepShape_ExtrudedFaceSolid* GetObject() {
+	return (StepShape_ExtrudedFaceSolid*)$self->Access();
 	}
 };
 
@@ -548,27 +632,6 @@ class Handle_StepShape_HArray1OfGeometricSetSelect : public Handle_MMgt_TShared 
 %extend Handle_StepShape_HArray1OfGeometricSetSelect {
 	StepShape_HArray1OfGeometricSetSelect* GetObject() {
 	return (StepShape_HArray1OfGeometricSetSelect*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepShape_SolidModel;
-class Handle_StepShape_SolidModel : public Handle_StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_SolidModel();
-		%feature("autodoc", "1");
-		Handle_StepShape_SolidModel();
-		%feature("autodoc", "1");
-		Handle_StepShape_SolidModel(const Handle_StepShape_SolidModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_SolidModel(const StepShape_SolidModel *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_SolidModel const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_SolidModel {
-	StepShape_SolidModel* GetObject() {
-	return (StepShape_SolidModel*)$self->Access();
 	}
 };
 
@@ -803,27 +866,6 @@ class Handle_StepShape_FaceOuterBound : public Handle_StepShape_FaceBound {
 	}
 };
 
-%nodefaultctor Handle_StepShape_EdgeBasedWireframeModel;
-class Handle_StepShape_EdgeBasedWireframeModel : public Handle_StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_EdgeBasedWireframeModel();
-		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel();
-		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel(const Handle_StepShape_EdgeBasedWireframeModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel(const StepShape_EdgeBasedWireframeModel *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_EdgeBasedWireframeModel {
-	StepShape_EdgeBasedWireframeModel* GetObject() {
-	return (StepShape_EdgeBasedWireframeModel*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepShape_ConnectedFaceSet;
 class Handle_StepShape_ConnectedFaceSet : public Handle_StepShape_TopologicalRepresentationItem {
 	public:
@@ -884,27 +926,6 @@ class Handle_StepShape_EdgeBasedWireframeShapeRepresentation : public Handle_Ste
 %extend Handle_StepShape_EdgeBasedWireframeShapeRepresentation {
 	StepShape_EdgeBasedWireframeShapeRepresentation* GetObject() {
 	return (StepShape_EdgeBasedWireframeShapeRepresentation*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepShape_ContextDependentShapeRepresentation;
-class Handle_StepShape_ContextDependentShapeRepresentation : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_ContextDependentShapeRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepShape_ContextDependentShapeRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepShape_ContextDependentShapeRepresentation(const Handle_StepShape_ContextDependentShapeRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ContextDependentShapeRepresentation(const StepShape_ContextDependentShapeRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_ContextDependentShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_ContextDependentShapeRepresentation {
-	StepShape_ContextDependentShapeRepresentation* GetObject() {
-	return (StepShape_ContextDependentShapeRepresentation*)$self->Access();
 	}
 };
 
@@ -971,48 +992,6 @@ class Handle_StepShape_DimensionalCharacteristicRepresentation : public Handle_M
 	}
 };
 
-%nodefaultctor Handle_StepShape_SweptFaceSolid;
-class Handle_StepShape_SweptFaceSolid : public Handle_StepShape_SolidModel {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_SweptFaceSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid(const Handle_StepShape_SweptFaceSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid(const StepShape_SweptFaceSolid *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_SweptFaceSolid {
-	StepShape_SweptFaceSolid* GetObject() {
-	return (StepShape_SweptFaceSolid*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepShape_ExtrudedFaceSolid;
-class Handle_StepShape_ExtrudedFaceSolid : public Handle_StepShape_SweptFaceSolid {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_ExtrudedFaceSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid(const Handle_StepShape_ExtrudedFaceSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid(const StepShape_ExtrudedFaceSolid *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_ExtrudedFaceSolid {
-	StepShape_ExtrudedFaceSolid* GetObject() {
-	return (StepShape_ExtrudedFaceSolid*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_StepShape_FaceSurface;
 class Handle_StepShape_FaceSurface : public Handle_StepShape_Face {
 	public:
@@ -1073,48 +1052,6 @@ class Handle_StepShape_FaceBasedSurfaceModel : public Handle_StepGeom_GeometricR
 %extend Handle_StepShape_FaceBasedSurfaceModel {
 	StepShape_FaceBasedSurfaceModel* GetObject() {
 	return (StepShape_FaceBasedSurfaceModel*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepShape_SweptAreaSolid;
-class Handle_StepShape_SweptAreaSolid : public Handle_StepShape_SolidModel {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_SweptAreaSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_SweptAreaSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_SweptAreaSolid(const Handle_StepShape_SweptAreaSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_SweptAreaSolid(const StepShape_SweptAreaSolid *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_SweptAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_SweptAreaSolid {
-	StepShape_SweptAreaSolid* GetObject() {
-	return (StepShape_SweptAreaSolid*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepShape_RevolvedAreaSolid;
-class Handle_StepShape_RevolvedAreaSolid : public Handle_StepShape_SweptAreaSolid {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_RevolvedAreaSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedAreaSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedAreaSolid(const Handle_StepShape_RevolvedAreaSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedAreaSolid(const StepShape_RevolvedAreaSolid *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_RevolvedAreaSolid {
-	StepShape_RevolvedAreaSolid* GetObject() {
-	return (StepShape_RevolvedAreaSolid*)$self->Access();
 	}
 };
 
@@ -1349,6 +1286,27 @@ class Handle_StepShape_ExtrudedAreaSolid : public Handle_StepShape_SweptAreaSoli
 	}
 };
 
+%nodefaultctor Handle_StepShape_ConnectedEdgeSet;
+class Handle_StepShape_ConnectedEdgeSet : public Handle_StepShape_TopologicalRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_ConnectedEdgeSet();
+		%feature("autodoc", "1");
+		Handle_StepShape_ConnectedEdgeSet();
+		%feature("autodoc", "1");
+		Handle_StepShape_ConnectedEdgeSet(const Handle_StepShape_ConnectedEdgeSet &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_ConnectedEdgeSet(const StepShape_ConnectedEdgeSet *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_ConnectedEdgeSet const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_ConnectedEdgeSet {
+	StepShape_ConnectedEdgeSet* GetObject() {
+	return (StepShape_ConnectedEdgeSet*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepShape_PrecisionQualifier;
 class Handle_StepShape_PrecisionQualifier : public Handle_MMgt_TShared {
 	public:
@@ -1388,6 +1346,27 @@ class Handle_StepShape_ToleranceValue : public Handle_MMgt_TShared {
 %extend Handle_StepShape_ToleranceValue {
 	StepShape_ToleranceValue* GetObject() {
 	return (StepShape_ToleranceValue*)$self->Access();
+	}
+};
+
+%nodefaultctor Handle_StepShape_EdgeBasedWireframeModel;
+class Handle_StepShape_EdgeBasedWireframeModel : public Handle_StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_EdgeBasedWireframeModel();
+		%feature("autodoc", "1");
+		Handle_StepShape_EdgeBasedWireframeModel();
+		%feature("autodoc", "1");
+		Handle_StepShape_EdgeBasedWireframeModel(const Handle_StepShape_EdgeBasedWireframeModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_EdgeBasedWireframeModel(const StepShape_EdgeBasedWireframeModel *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_EdgeBasedWireframeModel const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_EdgeBasedWireframeModel {
+	StepShape_EdgeBasedWireframeModel* GetObject() {
+	return (StepShape_EdgeBasedWireframeModel*)$self->Access();
 	}
 };
 
@@ -1748,6 +1727,27 @@ class Handle_StepShape_CompoundShapeRepresentation : public Handle_StepShape_Sha
 	}
 };
 
+%nodefaultctor Handle_StepShape_Subedge;
+class Handle_StepShape_Subedge : public Handle_StepShape_Edge {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_Subedge();
+		%feature("autodoc", "1");
+		Handle_StepShape_Subedge();
+		%feature("autodoc", "1");
+		Handle_StepShape_Subedge(const Handle_StepShape_Subedge &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_Subedge(const StepShape_Subedge *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_Subedge const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_Subedge {
+	StepShape_Subedge* GetObject() {
+	return (StepShape_Subedge*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_StepShape_FacetedBrepShapeRepresentation;
 class Handle_StepShape_FacetedBrepShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
 	public:
@@ -1850,27 +1850,6 @@ class Handle_StepShape_HArray1OfShell : public Handle_MMgt_TShared {
 %extend Handle_StepShape_HArray1OfShell {
 	StepShape_HArray1OfShell* GetObject() {
 	return (StepShape_HArray1OfShell*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_StepShape_Subedge;
-class Handle_StepShape_Subedge : public Handle_StepShape_Edge {
-	public:
-		%feature("autodoc", "1");
-		~Handle_StepShape_Subedge();
-		%feature("autodoc", "1");
-		Handle_StepShape_Subedge();
-		%feature("autodoc", "1");
-		Handle_StepShape_Subedge(const Handle_StepShape_Subedge &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_Subedge(const StepShape_Subedge *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_Subedge const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_Subedge {
-	StepShape_Subedge* GetObject() {
-	return (StepShape_Subedge*)$self->Access();
 	}
 };
 
@@ -2231,6 +2210,27 @@ class Handle_StepShape_QualifiedRepresentationItem : public Handle_StepRepr_Repr
 	}
 };
 
+%nodefaultctor Handle_StepShape_ContextDependentShapeRepresentation;
+class Handle_StepShape_ContextDependentShapeRepresentation : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		~Handle_StepShape_ContextDependentShapeRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepShape_ContextDependentShapeRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepShape_ContextDependentShapeRepresentation(const Handle_StepShape_ContextDependentShapeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_ContextDependentShapeRepresentation(const StepShape_ContextDependentShapeRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_ContextDependentShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_ContextDependentShapeRepresentation {
+	StepShape_ContextDependentShapeRepresentation* GetObject() {
+	return (StepShape_ContextDependentShapeRepresentation*)$self->Access();
+	}
+};
+
 %nodefaultctor StepShape_BooleanOperand;
 class StepShape_BooleanOperand {
 	public:
@@ -2554,6 +2554,35 @@ class StepShape_TransitionalShapeRepresentation : public StepShape_ShapeRepresen
 	}
 };
 
+%nodefaultctor StepShape_SolidReplica;
+class StepShape_SolidReplica : public StepShape_SolidModel {
+	public:
+		%feature("autodoc", "1");
+		StepShape_SolidReplica();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_SolidModel &aParentSolid, const Handle_StepGeom_CartesianTransformationOperator3d &aTransformation);
+		%feature("autodoc", "1");
+		void SetParentSolid(const Handle_StepShape_SolidModel &aParentSolid);
+		%feature("autodoc", "1");
+		Handle_StepShape_SolidModel ParentSolid() const;
+		%feature("autodoc", "1");
+		void SetTransformation(const Handle_StepGeom_CartesianTransformationOperator3d &aTransformation);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CartesianTransformationOperator3d Transformation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepShape_SolidReplica();
+
+};
+%extend StepShape_SolidReplica {
+	Handle_StepShape_SolidReplica GetHandle() {
+	return *(Handle_StepShape_SolidReplica*) &$self;
+	}
+};
+
 %nodefaultctor StepShape_ExtrudedFaceSolid;
 class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 	public:
@@ -2697,31 +2726,6 @@ class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentat
 	}
 };
 
-%nodefaultctor StepShape_SweptAreaSolid;
-class StepShape_SweptAreaSolid : public StepShape_SolidModel {
-	public:
-		%feature("autodoc", "1");
-		StepShape_SweptAreaSolid();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_CurveBoundedSurface &aSweptArea);
-		%feature("autodoc", "1");
-		void SetSweptArea(const Handle_StepGeom_CurveBoundedSurface &aSweptArea);
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveBoundedSurface SweptArea() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_SweptAreaSolid();
-
-};
-%extend StepShape_SweptAreaSolid {
-	Handle_StepShape_SweptAreaSolid GetHandle() {
-	return *(Handle_StepShape_SweptAreaSolid*) &$self;
-	}
-};
-
 %nodefaultctor StepShape_ManifoldSolidBrep;
 class StepShape_ManifoldSolidBrep : public StepShape_SolidModel {
 	public:
@@ -2784,33 +2788,6 @@ class StepShape_Block : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
-%nodefaultctor StepShape_PlusMinusTolerance;
-class StepShape_PlusMinusTolerance : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepShape_PlusMinusTolerance();
-		%feature("autodoc", "1");
-		void Init(const StepShape_ToleranceMethodDefinition &range, const StepShape_DimensionalCharacteristic &toleranced_dimension);
-		%feature("autodoc", "1");
-		StepShape_ToleranceMethodDefinition Range() const;
-		%feature("autodoc", "1");
-		void SetRange(const StepShape_ToleranceMethodDefinition &range);
-		%feature("autodoc", "1");
-		StepShape_DimensionalCharacteristic TolerancedDimension() const;
-		%feature("autodoc", "1");
-		void SetTolerancedDimension(const StepShape_DimensionalCharacteristic &toleranced_dimension);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_PlusMinusTolerance();
-
-};
-%extend StepShape_PlusMinusTolerance {
-	Handle_StepShape_PlusMinusTolerance GetHandle() {
-	return *(Handle_StepShape_PlusMinusTolerance*) &$self;
-	}
-};
-
 %nodefaultctor StepShape_NonManifoldSurfaceShapeRepresentation;
 class StepShape_NonManifoldSurfaceShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -2854,56 +2831,6 @@ class StepShape_HalfSpaceSolid : public StepGeom_GeometricRepresentationItem {
 %extend StepShape_HalfSpaceSolid {
 	Handle_StepShape_HalfSpaceSolid GetHandle() {
 	return *(Handle_StepShape_HalfSpaceSolid*) &$self;
-	}
-};
-
-%nodefaultctor StepShape_Face;
-class StepShape_Face : public StepShape_TopologicalRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepShape_Face();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds);
-		%feature("autodoc", "1");
-		virtual		void SetBounds(const Handle_StepShape_HArray1OfFaceBound &aBounds);
-		%feature("autodoc", "1");
-		virtual		Handle_StepShape_HArray1OfFaceBound Bounds() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepShape_FaceBound BoundsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbBounds() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_Face();
-
-};
-%extend StepShape_Face {
-	Handle_StepShape_Face GetHandle() {
-	return *(Handle_StepShape_Face*) &$self;
-	}
-};
-
-%nodefaultctor StepShape_Subface;
-class StepShape_Subface : public StepShape_Face {
-	public:
-		%feature("autodoc", "1");
-		StepShape_Subface();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepShape_HArray1OfFaceBound &aFace_Bounds, const Handle_StepShape_Face &aParentFace);
-		%feature("autodoc", "1");
-		Handle_StepShape_Face ParentFace() const;
-		%feature("autodoc", "1");
-		void SetParentFace(const Handle_StepShape_Face &ParentFace);
-		%feature("autodoc", "1");
-		virtual		~StepShape_Subface();
-
-};
-%extend StepShape_Subface {
-	Handle_StepShape_Subface GetHandle() {
-	return *(Handle_StepShape_Subface*) &$self;
 	}
 };
 
@@ -3136,6 +3063,33 @@ class StepShape_ClosedShell : public StepShape_ConnectedFaceSet {
 	}
 };
 
+%nodefaultctor StepShape_PlusMinusTolerance;
+class StepShape_PlusMinusTolerance : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepShape_PlusMinusTolerance();
+		%feature("autodoc", "1");
+		void Init(const StepShape_ToleranceMethodDefinition &range, const StepShape_DimensionalCharacteristic &toleranced_dimension);
+		%feature("autodoc", "1");
+		StepShape_ToleranceMethodDefinition Range() const;
+		%feature("autodoc", "1");
+		void SetRange(const StepShape_ToleranceMethodDefinition &range);
+		%feature("autodoc", "1");
+		StepShape_DimensionalCharacteristic TolerancedDimension() const;
+		%feature("autodoc", "1");
+		void SetTolerancedDimension(const StepShape_DimensionalCharacteristic &toleranced_dimension);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepShape_PlusMinusTolerance();
+
+};
+%extend StepShape_PlusMinusTolerance {
+	Handle_StepShape_PlusMinusTolerance GetHandle() {
+	return *(Handle_StepShape_PlusMinusTolerance*) &$self;
+	}
+};
+
 %nodefaultctor StepShape_DimensionalCharacteristicRepresentation;
 class StepShape_DimensionalCharacteristicRepresentation : public MMgt_TShared {
 	public:
@@ -3199,13 +3153,40 @@ class StepShape_Array1OfValueQualifier {
 
 };
 
+%nodefaultctor StepShape_Face;
+class StepShape_Face : public StepShape_TopologicalRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepShape_Face();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds);
+		%feature("autodoc", "1");
+		virtual		void SetBounds(const Handle_StepShape_HArray1OfFaceBound &aBounds);
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_HArray1OfFaceBound Bounds() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_FaceBound BoundsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbBounds() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepShape_Face();
+
+};
+%extend StepShape_Face {
+	Handle_StepShape_Face GetHandle() {
+	return *(Handle_StepShape_Face*) &$self;
+	}
+};
+
 %nodefaultctor StepShape_FaceSurface;
 class StepShape_FaceSurface : public StepShape_Face {
 	public:
 		%feature("autodoc", "1");
 		StepShape_FaceSurface();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds);
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds, const Handle_StepGeom_Surface &aFaceGeometry, const Standard_Boolean aSameSense);
 		%feature("autodoc", "1");
@@ -3216,8 +3197,6 @@ class StepShape_FaceSurface : public StepShape_Face {
 		void SetSameSense(const Standard_Boolean aSameSense);
 		%feature("autodoc", "1");
 		Standard_Boolean SameSense() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~StepShape_FaceSurface();
 
@@ -3306,6 +3285,43 @@ class StepShape_CompoundShapeRepresentation : public StepShape_ShapeRepresentati
 	}
 };
 
+%nodefaultctor StepShape_OrientedFace;
+class StepShape_OrientedFace : public StepShape_Face {
+	public:
+		%feature("autodoc", "1");
+		StepShape_OrientedFace();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_Face &aFaceElement, const Standard_Boolean aOrientation);
+		%feature("autodoc", "1");
+		void SetFaceElement(const Handle_StepShape_Face &aFaceElement);
+		%feature("autodoc", "1");
+		Handle_StepShape_Face FaceElement() const;
+		%feature("autodoc", "1");
+		void SetOrientation(const Standard_Boolean aOrientation);
+		%feature("autodoc", "1");
+		Standard_Boolean Orientation() const;
+		%feature("autodoc", "1");
+		virtual		void SetBounds(const Handle_StepShape_HArray1OfFaceBound &aBounds);
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_HArray1OfFaceBound Bounds() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_FaceBound BoundsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbBounds() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepShape_OrientedFace();
+
+};
+%extend StepShape_OrientedFace {
+	Handle_StepShape_OrientedFace GetHandle() {
+	return *(Handle_StepShape_OrientedFace*) &$self;
+	}
+};
+
 %nodefaultctor StepShape_HArray1OfConnectedEdgeSet;
 class StepShape_HArray1OfConnectedEdgeSet : public MMgt_TShared {
 	public:
@@ -3343,40 +3359,42 @@ class StepShape_HArray1OfConnectedEdgeSet : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor StepShape_RightCircularCone;
-class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem {
+%nodefaultctor StepShape_LoopAndPath;
+class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepShape_RightCircularCone();
+		StepShape_LoopAndPath();
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis1Placement &aPosition, const Standard_Real aHeight, const Standard_Real aRadius, const Standard_Real aSemiAngle);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_Loop &aLoop, const Handle_StepShape_Path &aPath);
 		%feature("autodoc", "1");
-		void SetPosition(const Handle_StepGeom_Axis1Placement &aPosition);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfOrientedEdge &aEdgeList);
 		%feature("autodoc", "1");
-		Handle_StepGeom_Axis1Placement Position() const;
+		void SetLoop(const Handle_StepShape_Loop &aLoop);
 		%feature("autodoc", "1");
-		void SetHeight(const Standard_Real aHeight);
+		Handle_StepShape_Loop Loop() const;
 		%feature("autodoc", "1");
-		Standard_Real Height() const;
+		void SetPath(const Handle_StepShape_Path &aPath);
 		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real aRadius);
+		Handle_StepShape_Path Path() const;
 		%feature("autodoc", "1");
-		Standard_Real Radius() const;
+		void SetEdgeList(const Handle_StepShape_HArray1OfOrientedEdge &aEdgeList);
 		%feature("autodoc", "1");
-		void SetSemiAngle(const Standard_Real aSemiAngle);
+		Handle_StepShape_HArray1OfOrientedEdge EdgeList() const;
 		%feature("autodoc", "1");
-		Standard_Real SemiAngle() const;
+		Handle_StepShape_OrientedEdge EdgeListValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbEdgeList() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		virtual		~StepShape_RightCircularCone();
+		virtual		~StepShape_LoopAndPath();
 
 };
-%extend StepShape_RightCircularCone {
-	Handle_StepShape_RightCircularCone GetHandle() {
-	return *(Handle_StepShape_RightCircularCone*) &$self;
+%extend StepShape_LoopAndPath {
+	Handle_StepShape_LoopAndPath GetHandle() {
+	return *(Handle_StepShape_LoopAndPath*) &$self;
 	}
 };
 
@@ -3403,13 +3421,36 @@ class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationIte
 	}
 };
 
+%nodefaultctor StepShape_SweptAreaSolid;
+class StepShape_SweptAreaSolid : public StepShape_SolidModel {
+	public:
+		%feature("autodoc", "1");
+		StepShape_SweptAreaSolid();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_CurveBoundedSurface &aSweptArea);
+		%feature("autodoc", "1");
+		void SetSweptArea(const Handle_StepGeom_CurveBoundedSurface &aSweptArea);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveBoundedSurface SweptArea() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepShape_SweptAreaSolid();
+
+};
+%extend StepShape_SweptAreaSolid {
+	Handle_StepShape_SweptAreaSolid GetHandle() {
+	return *(Handle_StepShape_SweptAreaSolid*) &$self;
+	}
+};
+
 %nodefaultctor StepShape_RevolvedAreaSolid;
 class StepShape_RevolvedAreaSolid : public StepShape_SweptAreaSolid {
 	public:
 		%feature("autodoc", "1");
 		StepShape_RevolvedAreaSolid();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_CurveBoundedSurface &aSweptArea);
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_CurveBoundedSurface &aSweptArea, const Handle_StepGeom_Axis1Placement &aAxis, const Standard_Real aAngle);
 		%feature("autodoc", "1");
@@ -3420,8 +3461,6 @@ class StepShape_RevolvedAreaSolid : public StepShape_SweptAreaSolid {
 		void SetAngle(const Standard_Real aAngle);
 		%feature("autodoc", "1");
 		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		virtual		~StepShape_RevolvedAreaSolid();
 
@@ -3495,6 +3534,23 @@ class StepShape_DirectedDimensionalLocation : public StepShape_DimensionalLocati
 %extend StepShape_DirectedDimensionalLocation {
 	Handle_StepShape_DirectedDimensionalLocation GetHandle() {
 	return *(Handle_StepShape_DirectedDimensionalLocation*) &$self;
+	}
+};
+
+%nodefaultctor StepShape_Vertex;
+class StepShape_Vertex : public StepShape_TopologicalRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepShape_Vertex();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepShape_Vertex();
+
+};
+%extend StepShape_Vertex {
+	Handle_StepShape_Vertex GetHandle() {
+	return *(Handle_StepShape_Vertex*) &$self;
 	}
 };
 
@@ -3968,35 +4024,6 @@ class StepShape_DimensionalSize : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor StepShape_SolidReplica;
-class StepShape_SolidReplica : public StepShape_SolidModel {
-	public:
-		%feature("autodoc", "1");
-		StepShape_SolidReplica();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_SolidModel &aParentSolid, const Handle_StepGeom_CartesianTransformationOperator3d &aTransformation);
-		%feature("autodoc", "1");
-		void SetParentSolid(const Handle_StepShape_SolidModel &aParentSolid);
-		%feature("autodoc", "1");
-		Handle_StepShape_SolidModel ParentSolid() const;
-		%feature("autodoc", "1");
-		void SetTransformation(const Handle_StepGeom_CartesianTransformationOperator3d &aTransformation);
-		%feature("autodoc", "1");
-		Handle_StepGeom_CartesianTransformationOperator3d Transformation() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_SolidReplica();
-
-};
-%extend StepShape_SolidReplica {
-	Handle_StepShape_SolidReplica GetHandle() {
-	return *(Handle_StepShape_SolidReplica*) &$self;
-	}
-};
-
 %nodefaultctor StepShape_GeometricSet;
 class StepShape_GeometricSet : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -4023,21 +4050,6 @@ class StepShape_GeometricSet : public StepGeom_GeometricRepresentationItem {
 %extend StepShape_GeometricSet {
 	Handle_StepShape_GeometricSet GetHandle() {
 	return *(Handle_StepShape_GeometricSet*) &$self;
-	}
-};
-
-%nodefaultctor StepShape_GeometricCurveSet;
-class StepShape_GeometricCurveSet : public StepShape_GeometricSet {
-	public:
-		%feature("autodoc", "1");
-		StepShape_GeometricCurveSet();
-		%feature("autodoc", "1");
-		virtual		~StepShape_GeometricCurveSet();
-
-};
-%extend StepShape_GeometricCurveSet {
-	Handle_StepShape_GeometricCurveSet GetHandle() {
-	return *(Handle_StepShape_GeometricCurveSet*) &$self;
 	}
 };
 
@@ -4214,23 +4226,6 @@ class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationI
 	}
 };
 
-%nodefaultctor StepShape_Vertex;
-class StepShape_Vertex : public StepShape_TopologicalRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepShape_Vertex();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_Vertex();
-
-};
-%extend StepShape_Vertex {
-	Handle_StepShape_Vertex GetHandle() {
-	return *(Handle_StepShape_Vertex*) &$self;
-	}
-};
-
 %nodefaultctor StepShape_BoxedHalfSpace;
 class StepShape_BoxedHalfSpace : public StepShape_HalfSpaceSolid {
 	public:
@@ -4309,42 +4304,40 @@ class StepShape_QualifiedRepresentationItem : public StepRepr_RepresentationItem
 	}
 };
 
-%nodefaultctor StepShape_LoopAndPath;
-class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
+%nodefaultctor StepShape_RightCircularCone;
+class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepShape_LoopAndPath();
+		StepShape_RightCircularCone();
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_Loop &aLoop, const Handle_StepShape_Path &aPath);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis1Placement &aPosition, const Standard_Real aHeight, const Standard_Real aRadius, const Standard_Real aSemiAngle);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfOrientedEdge &aEdgeList);
+		void SetPosition(const Handle_StepGeom_Axis1Placement &aPosition);
 		%feature("autodoc", "1");
-		void SetLoop(const Handle_StepShape_Loop &aLoop);
+		Handle_StepGeom_Axis1Placement Position() const;
 		%feature("autodoc", "1");
-		Handle_StepShape_Loop Loop() const;
+		void SetHeight(const Standard_Real aHeight);
 		%feature("autodoc", "1");
-		void SetPath(const Handle_StepShape_Path &aPath);
+		Standard_Real Height() const;
 		%feature("autodoc", "1");
-		Handle_StepShape_Path Path() const;
+		void SetRadius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
-		void SetEdgeList(const Handle_StepShape_HArray1OfOrientedEdge &aEdgeList);
+		Standard_Real Radius() const;
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedEdge EdgeList() const;
+		void SetSemiAngle(const Standard_Real aSemiAngle);
 		%feature("autodoc", "1");
-		Handle_StepShape_OrientedEdge EdgeListValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbEdgeList() const;
+		Standard_Real SemiAngle() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		virtual		~StepShape_LoopAndPath();
+		virtual		~StepShape_RightCircularCone();
 
 };
-%extend StepShape_LoopAndPath {
-	Handle_StepShape_LoopAndPath GetHandle() {
-	return *(Handle_StepShape_LoopAndPath*) &$self;
+%extend StepShape_RightCircularCone {
+	Handle_StepShape_RightCircularCone GetHandle() {
+	return *(Handle_StepShape_RightCircularCone*) &$self;
 	}
 };
 
@@ -4374,6 +4367,29 @@ class StepShape_EdgeLoop : public StepShape_Loop {
 %extend StepShape_EdgeLoop {
 	Handle_StepShape_EdgeLoop GetHandle() {
 	return *(Handle_StepShape_EdgeLoop*) &$self;
+	}
+};
+
+%nodefaultctor StepShape_Subface;
+class StepShape_Subface : public StepShape_Face {
+	public:
+		%feature("autodoc", "1");
+		StepShape_Subface();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepShape_HArray1OfFaceBound &aFace_Bounds, const Handle_StepShape_Face &aParentFace);
+		%feature("autodoc", "1");
+		Handle_StepShape_Face ParentFace() const;
+		%feature("autodoc", "1");
+		void SetParentFace(const Handle_StepShape_Face &ParentFace);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepShape_Subface();
+
+};
+%extend StepShape_Subface {
+	Handle_StepShape_Subface GetHandle() {
+	return *(Handle_StepShape_Subface*) &$self;
 	}
 };
 
@@ -4451,6 +4467,23 @@ class StepShape_CsgSelect {
 		%feature("autodoc", "1");
 		void SetCsgPrimitive(const StepShape_CsgPrimitive &aCsgPrimitive);
 
+};
+
+%nodefaultctor StepShape_GeometricCurveSet;
+class StepShape_GeometricCurveSet : public StepShape_GeometricSet {
+	public:
+		%feature("autodoc", "1");
+		StepShape_GeometricCurveSet();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepShape_GeometricCurveSet();
+
+};
+%extend StepShape_GeometricCurveSet {
+	Handle_StepShape_GeometricCurveSet GetHandle() {
+	return *(Handle_StepShape_GeometricCurveSet*) &$self;
+	}
 };
 
 %nodefaultctor StepShape_AngularSize;
@@ -4683,43 +4716,6 @@ class StepShape_HArray1OfShell : public MMgt_TShared {
 	}
 };
 
-%nodefaultctor StepShape_OrientedFace;
-class StepShape_OrientedFace : public StepShape_Face {
-	public:
-		%feature("autodoc", "1");
-		StepShape_OrientedFace();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_Face &aFaceElement, const Standard_Boolean aOrientation);
-		%feature("autodoc", "1");
-		void SetFaceElement(const Handle_StepShape_Face &aFaceElement);
-		%feature("autodoc", "1");
-		Handle_StepShape_Face FaceElement() const;
-		%feature("autodoc", "1");
-		void SetOrientation(const Standard_Boolean aOrientation);
-		%feature("autodoc", "1");
-		Standard_Boolean Orientation() const;
-		%feature("autodoc", "1");
-		virtual		void SetBounds(const Handle_StepShape_HArray1OfFaceBound &aBounds);
-		%feature("autodoc", "1");
-		virtual		Handle_StepShape_HArray1OfFaceBound Bounds() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepShape_FaceBound BoundsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbBounds() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_OrientedFace();
-
-};
-%extend StepShape_OrientedFace {
-	Handle_StepShape_OrientedFace GetHandle() {
-	return *(Handle_StepShape_OrientedFace*) &$self;
-	}
-};
-
 %nodefaultctor StepShape_EdgeBasedWireframeShapeRepresentation;
 class StepShape_EdgeBasedWireframeShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -4849,29 +4845,6 @@ class StepShape_ManifoldSurfaceShapeRepresentation : public StepShape_ShapeRepre
 %extend StepShape_ManifoldSurfaceShapeRepresentation {
 	Handle_StepShape_ManifoldSurfaceShapeRepresentation GetHandle() {
 	return *(Handle_StepShape_ManifoldSurfaceShapeRepresentation*) &$self;
-	}
-};
-
-%nodefaultctor StepShape_DimensionalLocationWithPath;
-class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocation {
-	public:
-		%feature("autodoc", "1");
-		StepShape_DimensionalLocationWithPath();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aShapeAspectRelationship_Name, const Standard_Boolean hasShapeAspectRelationship_Description, const Handle_TCollection_HAsciiString &aShapeAspectRelationship_Description, const Handle_StepRepr_ShapeAspect &aShapeAspectRelationship_RelatingShapeAspect, const Handle_StepRepr_ShapeAspect &aShapeAspectRelationship_RelatedShapeAspect, const Handle_StepRepr_ShapeAspect &aPath);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect Path() const;
-		%feature("autodoc", "1");
-		void SetPath(const Handle_StepRepr_ShapeAspect &Path);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_DimensionalLocationWithPath();
-
-};
-%extend StepShape_DimensionalLocationWithPath {
-	Handle_StepShape_DimensionalLocationWithPath GetHandle() {
-	return *(Handle_StepShape_DimensionalLocationWithPath*) &$self;
 	}
 };
 
@@ -5280,6 +5253,29 @@ class StepShape_TypeQualifier : public MMgt_TShared {
 %extend StepShape_TypeQualifier {
 	Handle_StepShape_TypeQualifier GetHandle() {
 	return *(Handle_StepShape_TypeQualifier*) &$self;
+	}
+};
+
+%nodefaultctor StepShape_DimensionalLocationWithPath;
+class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocation {
+	public:
+		%feature("autodoc", "1");
+		StepShape_DimensionalLocationWithPath();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aShapeAspectRelationship_Name, const Standard_Boolean hasShapeAspectRelationship_Description, const Handle_TCollection_HAsciiString &aShapeAspectRelationship_Description, const Handle_StepRepr_ShapeAspect &aShapeAspectRelationship_RelatingShapeAspect, const Handle_StepRepr_ShapeAspect &aShapeAspectRelationship_RelatedShapeAspect, const Handle_StepRepr_ShapeAspect &aPath);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspect Path() const;
+		%feature("autodoc", "1");
+		void SetPath(const Handle_StepRepr_ShapeAspect &Path);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~StepShape_DimensionalLocationWithPath();
+
+};
+%extend StepShape_DimensionalLocationWithPath {
+	Handle_StepShape_DimensionalLocationWithPath GetHandle() {
+	return *(Handle_StepShape_DimensionalLocationWithPath*) &$self;
 	}
 };
 

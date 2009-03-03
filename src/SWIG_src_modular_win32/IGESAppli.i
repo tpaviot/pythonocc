@@ -140,27 +140,6 @@ class Handle_IGESAppli_NodalConstraint : public Handle_IGESData_IGESEntity {
 	}
 };
 
-%nodefaultctor Handle_IGESAppli_GeneralModule;
-class Handle_IGESAppli_GeneralModule : public Handle_IGESData_GeneralModule {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_GeneralModule();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_GeneralModule();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_GeneralModule(const Handle_IGESAppli_GeneralModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_GeneralModule(const IGESAppli_GeneralModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_GeneralModule {
-	IGESAppli_GeneralModule* GetObject() {
-	return (IGESAppli_GeneralModule*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_IGESAppli_FiniteElement;
 class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
 	public:
@@ -182,24 +161,24 @@ class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
 	}
 };
 
-%nodefaultctor Handle_IGESAppli_RegionRestriction;
-class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESAppli_HArray1OfNode;
+class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESAppli_RegionRestriction();
+		~Handle_IGESAppli_HArray1OfNode();
 		%feature("autodoc", "1");
-		Handle_IGESAppli_RegionRestriction();
+		Handle_IGESAppli_HArray1OfNode();
 		%feature("autodoc", "1");
-		Handle_IGESAppli_RegionRestriction(const Handle_IGESAppli_RegionRestriction &aHandle);
+		Handle_IGESAppli_HArray1OfNode(const Handle_IGESAppli_HArray1OfNode &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESAppli_RegionRestriction(const IGESAppli_RegionRestriction *anItem);
+		Handle_IGESAppli_HArray1OfNode(const IGESAppli_HArray1OfNode *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESAppli_RegionRestriction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESAppli_HArray1OfNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESAppli_RegionRestriction {
-	IGESAppli_RegionRestriction* GetObject() {
-	return (IGESAppli_RegionRestriction*)$self->Access();
+%extend Handle_IGESAppli_HArray1OfNode {
+	IGESAppli_HArray1OfNode* GetObject() {
+	return (IGESAppli_HArray1OfNode*)$self->Access();
 	}
 };
 
@@ -329,6 +308,27 @@ class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
 	}
 };
 
+%nodefaultctor Handle_IGESAppli_PWBDrilledHole;
+class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESAppli_PWBDrilledHole();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole(const Handle_IGESAppli_PWBDrilledHole &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole(const IGESAppli_PWBDrilledHole *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_PWBDrilledHole {
+	IGESAppli_PWBDrilledHole* GetObject() {
+	return (IGESAppli_PWBDrilledHole*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_IGESAppli_DrilledHole;
 class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
 	public:
@@ -392,6 +392,27 @@ class Handle_IGESAppli_FlowLineSpec : public Handle_IGESData_IGESEntity {
 	}
 };
 
+%nodefaultctor Handle_IGESAppli_RegionRestriction;
+class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESAppli_RegionRestriction();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_RegionRestriction();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_RegionRestriction(const Handle_IGESAppli_RegionRestriction &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_RegionRestriction(const IGESAppli_RegionRestriction *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_RegionRestriction const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_RegionRestriction {
+	IGESAppli_RegionRestriction* GetObject() {
+	return (IGESAppli_RegionRestriction*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_IGESAppli_HArray1OfFlow;
 class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 	public:
@@ -452,27 +473,6 @@ class Handle_IGESAppli_Node : public Handle_IGESData_IGESEntity {
 %extend Handle_IGESAppli_Node {
 	IGESAppli_Node* GetObject() {
 	return (IGESAppli_Node*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IGESAppli_PWBDrilledHole;
-class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_PWBDrilledHole();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PWBDrilledHole();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PWBDrilledHole(const Handle_IGESAppli_PWBDrilledHole &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PWBDrilledHole(const IGESAppli_PWBDrilledHole *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PWBDrilledHole const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_PWBDrilledHole {
-	IGESAppli_PWBDrilledHole* GetObject() {
-	return (IGESAppli_PWBDrilledHole*)$self->Access();
 	}
 };
 
@@ -560,6 +560,27 @@ class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 	}
 };
 
+%nodefaultctor Handle_IGESAppli_GeneralModule;
+class Handle_IGESAppli_GeneralModule : public Handle_IGESData_GeneralModule {
+	public:
+		%feature("autodoc", "1");
+		~Handle_IGESAppli_GeneralModule();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_GeneralModule();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_GeneralModule(const Handle_IGESAppli_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_GeneralModule(const IGESAppli_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_GeneralModule {
+	IGESAppli_GeneralModule* GetObject() {
+	return (IGESAppli_GeneralModule*)$self->Access();
+	}
+};
+
 %nodefaultctor Handle_IGESAppli_NodalResults;
 class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 	public:
@@ -599,27 +620,6 @@ class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
 %extend Handle_IGESAppli_PartNumber {
 	IGESAppli_PartNumber* GetObject() {
 	return (IGESAppli_PartNumber*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IGESAppli_HArray1OfNode;
-class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_HArray1OfNode();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_HArray1OfNode();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_HArray1OfNode(const Handle_IGESAppli_HArray1OfNode &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_HArray1OfNode(const IGESAppli_HArray1OfNode *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_HArray1OfNode const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_HArray1OfNode {
-	IGESAppli_HArray1OfNode* GetObject() {
-	return (IGESAppli_HArray1OfNode*)$self->Access();
 	}
 };
 
@@ -705,33 +705,6 @@ class IGESAppli_FiniteElement : public IGESData_IGESEntity {
 %extend IGESAppli_FiniteElement {
 	Handle_IGESAppli_FiniteElement GetHandle() {
 	return *(Handle_IGESAppli_FiniteElement*) &$self;
-	}
-};
-
-%nodefaultctor IGESAppli_RegionRestriction;
-class IGESAppli_RegionRestriction : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESAppli_RegionRestriction();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbPropVal, const Standard_Integer aViasRest, const Standard_Integer aCompoRest, const Standard_Integer aCktRest);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		Standard_Integer ElectricalViasRestriction() const;
-		%feature("autodoc", "1");
-		Standard_Integer ElectricalComponentRestriction() const;
-		%feature("autodoc", "1");
-		Standard_Integer ElectricalCktRestriction() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_RegionRestriction();
-
-};
-%extend IGESAppli_RegionRestriction {
-	Handle_IGESAppli_RegionRestriction GetHandle() {
-	return *(Handle_IGESAppli_RegionRestriction*) &$self;
 	}
 };
 
@@ -870,27 +843,6 @@ class IGESAppli_ToolNodalConstraint {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_NodalConstraint &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
-};
-
-%nodefaultctor IGESAppli_SpecificModule;
-class IGESAppli_SpecificModule : public IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		IGESAppli_SpecificModule();
-		%feature("autodoc", "1");
-		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_SpecificModule();
-
-};
-%extend IGESAppli_SpecificModule {
-	Handle_IGESAppli_SpecificModule GetHandle() {
-	return *(Handle_IGESAppli_SpecificModule*) &$self;
-	}
 };
 
 %nodefaultctor IGESAppli_LevelToPWBLayerMap;
@@ -1166,6 +1118,27 @@ class IGESAppli_ElementResults : public IGESData_IGESEntity {
 	}
 };
 
+%nodefaultctor IGESAppli_SpecificModule;
+class IGESAppli_SpecificModule : public IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		IGESAppli_SpecificModule();
+		%feature("autodoc", "1");
+		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESAppli_SpecificModule();
+
+};
+%extend IGESAppli_SpecificModule {
+	Handle_IGESAppli_SpecificModule GetHandle() {
+	return *(Handle_IGESAppli_SpecificModule*) &$self;
+	}
+};
+
 %nodefaultctor IGESAppli_ReferenceDesignator;
 class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
 	public:
@@ -1187,6 +1160,32 @@ class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
 	Handle_IGESAppli_ReferenceDesignator GetHandle() {
 	return *(Handle_IGESAppli_ReferenceDesignator*) &$self;
 	}
+};
+
+%nodefaultctor IGESAppli_ToolRegionRestriction;
+class IGESAppli_ToolRegionRestriction {
+	public:
+		%feature("autodoc", "1");
+		~IGESAppli_ToolRegionRestriction();
+		%feature("autodoc", "1");
+		IGESAppli_ToolRegionRestriction();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESAppli_RegionRestriction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESAppli_RegionRestriction &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESAppli_RegionRestriction &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESAppli_RegionRestriction &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESAppli_RegionRestriction &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESAppli_RegionRestriction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESAppli_RegionRestriction &entfrom, const Handle_IGESAppli_RegionRestriction &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESAppli_RegionRestriction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
 };
 
 %nodefaultctor IGESAppli_DrilledHole;
@@ -1266,6 +1265,33 @@ class IGESAppli_LevelFunction : public IGESData_IGESEntity {
 %extend IGESAppli_LevelFunction {
 	Handle_IGESAppli_LevelFunction GetHandle() {
 	return *(Handle_IGESAppli_LevelFunction*) &$self;
+	}
+};
+
+%nodefaultctor IGESAppli_RegionRestriction;
+class IGESAppli_RegionRestriction : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESAppli_RegionRestriction();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbPropVal, const Standard_Integer aViasRest, const Standard_Integer aCompoRest, const Standard_Integer aCktRest);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		Standard_Integer ElectricalViasRestriction() const;
+		%feature("autodoc", "1");
+		Standard_Integer ElectricalComponentRestriction() const;
+		%feature("autodoc", "1");
+		Standard_Integer ElectricalCktRestriction() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~IGESAppli_RegionRestriction();
+
+};
+%extend IGESAppli_RegionRestriction {
+	Handle_IGESAppli_RegionRestriction GetHandle() {
+	return *(Handle_IGESAppli_RegionRestriction*) &$self;
 	}
 };
 
@@ -1476,32 +1502,6 @@ class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
 	Handle_IGESAppli_NodalConstraint GetHandle() {
 	return *(Handle_IGESAppli_NodalConstraint*) &$self;
 	}
-};
-
-%nodefaultctor IGESAppli_ToolRegionRestriction;
-class IGESAppli_ToolRegionRestriction {
-	public:
-		%feature("autodoc", "1");
-		~IGESAppli_ToolRegionRestriction();
-		%feature("autodoc", "1");
-		IGESAppli_ToolRegionRestriction();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESAppli_RegionRestriction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESAppli_RegionRestriction &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESAppli_RegionRestriction &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESAppli_RegionRestriction &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESAppli_RegionRestriction &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESAppli_RegionRestriction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESAppli_RegionRestriction &entfrom, const Handle_IGESAppli_RegionRestriction &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESAppli_RegionRestriction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
 };
 
 %nodefaultctor IGESAppli_PWBArtworkStackup;

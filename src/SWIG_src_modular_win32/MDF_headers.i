@@ -36,6 +36,27 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_MDF_ARDriver.hxx>
+#include<Handle_MDF_ARDriverHSequence.hxx>
+#include<Handle_MDF_ARDriverTable.hxx>
+#include<Handle_MDF_ASDriver.hxx>
+#include<Handle_MDF_ASDriverHSequence.hxx>
+#include<Handle_MDF_ASDriverTable.hxx>
+#include<Handle_MDF_DataMapNodeOfTypeARDriverMap.hxx>
+#include<Handle_MDF_DataMapNodeOfTypeASDriverMap.hxx>
+#include<Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable.hxx>
+#include<Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable.hxx>
+#include<Handle_MDF_ListNodeOfDriverListOfARDriverTable.hxx>
+#include<Handle_MDF_ListNodeOfDriverListOfASDriverTable.hxx>
+#include<Handle_MDF_RRelocationTable.hxx>
+#include<Handle_MDF_ReferenceRetrievalDriver.hxx>
+#include<Handle_MDF_ReferenceStorageDriver.hxx>
+#include<Handle_MDF_SRelocationTable.hxx>
+#include<Handle_MDF_SequenceNodeOfARDriverSequence.hxx>
+#include<Handle_MDF_SequenceNodeOfASDriverSequence.hxx>
+#include<Handle_MDF_TagSourceRetrievalDriver.hxx>
+#include<Handle_MDF_TagSourceStorageDriver.hxx>
+#include<MDF.hxx>
 #include<MDF_ARDriver.hxx>
 #include<MDF_ARDriverHSequence.hxx>
 #include<MDF_ARDriverSequence.hxx>
@@ -58,12 +79,12 @@
 #include<MDF_ListIteratorOfDriverListOfASDriverTable.hxx>
 #include<MDF_ListNodeOfDriverListOfARDriverTable.hxx>
 #include<MDF_ListNodeOfDriverListOfASDriverTable.hxx>
+#include<MDF_RRelocationTable.hxx>
 #include<MDF_ReferenceRetrievalDriver.hxx>
 #include<MDF_ReferenceStorageDriver.hxx>
-#include<MDF_RRelocationTable.hxx>
+#include<MDF_SRelocationTable.hxx>
 #include<MDF_SequenceNodeOfARDriverSequence.hxx>
 #include<MDF_SequenceNodeOfASDriverSequence.hxx>
-#include<MDF_SRelocationTable.hxx>
 #include<MDF_TagSourceRetrievalDriver.hxx>
 #include<MDF_TagSourceStorageDriver.hxx>
 #include<MDF_Tool.hxx>
@@ -71,27 +92,6 @@
 #include<MDF_TypeASDriverMap.hxx>
 #include<MDF_TypeDriverListMapOfARDriverTable.hxx>
 #include<MDF_TypeDriverListMapOfASDriverTable.hxx>
-#include<MDF.hxx>
-#include<Handle_MDF_ARDriver.hxx>
-#include<Handle_MDF_ARDriverHSequence.hxx>
-#include<Handle_MDF_ARDriverTable.hxx>
-#include<Handle_MDF_ASDriver.hxx>
-#include<Handle_MDF_ASDriverHSequence.hxx>
-#include<Handle_MDF_ASDriverTable.hxx>
-#include<Handle_MDF_DataMapNodeOfTypeARDriverMap.hxx>
-#include<Handle_MDF_DataMapNodeOfTypeASDriverMap.hxx>
-#include<Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable.hxx>
-#include<Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable.hxx>
-#include<Handle_MDF_ListNodeOfDriverListOfARDriverTable.hxx>
-#include<Handle_MDF_ListNodeOfDriverListOfASDriverTable.hxx>
-#include<Handle_MDF_ReferenceRetrievalDriver.hxx>
-#include<Handle_MDF_ReferenceStorageDriver.hxx>
-#include<Handle_MDF_RRelocationTable.hxx>
-#include<Handle_MDF_SequenceNodeOfARDriverSequence.hxx>
-#include<Handle_MDF_SequenceNodeOfASDriverSequence.hxx>
-#include<Handle_MDF_SRelocationTable.hxx>
-#include<Handle_MDF_TagSourceRetrievalDriver.hxx>
-#include<Handle_MDF_TagSourceStorageDriver.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -118,12 +118,12 @@
 #include<MDF_ListIteratorOfDriverListOfASDriverTable.hxx>
 #include<MDF_ListNodeOfDriverListOfARDriverTable.hxx>
 #include<MDF_ListNodeOfDriverListOfASDriverTable.hxx>
+#include<MDF_RRelocationTable.hxx>
 #include<MDF_ReferenceRetrievalDriver.hxx>
 #include<MDF_ReferenceStorageDriver.hxx>
-#include<MDF_RRelocationTable.hxx>
+#include<MDF_SRelocationTable.hxx>
 #include<MDF_SequenceNodeOfARDriverSequence.hxx>
 #include<MDF_SequenceNodeOfASDriverSequence.hxx>
-#include<MDF_SRelocationTable.hxx>
 #include<MDF_TagSourceRetrievalDriver.hxx>
 #include<MDF_TagSourceStorageDriver.hxx>
 #include<MDF_Tool.hxx>

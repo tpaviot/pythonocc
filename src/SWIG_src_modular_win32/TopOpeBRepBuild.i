@@ -820,89 +820,6 @@ class TopOpeBRepBuild_GTool {
 
 };
 
-%nodefaultctor TopOpeBRepBuild_HBuilder;
-class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_HBuilder(const TopOpeBRepDS_BuildTool &BT);
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_BuildTool & BuildTool() const;
-		%feature("autodoc", "1");
-		void Perform(const Handle_TopOpeBRepDS_HDataStructure &HDS);
-		%feature("autodoc", "1");
-		void Perform(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopoDS_Shape &S1, const TopoDS_Shape &S2);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure DataStructure() const;
-		%feature("autodoc", "1");
-		TopOpeBRepDS_BuildTool & ChangeBuildTool();
-		%feature("autodoc", "1");
-		void MergeShapes(const TopoDS_Shape &S1, const TopAbs_State TB1, const TopoDS_Shape &S2, const TopAbs_State TB2);
-		%feature("autodoc", "1");
-		void MergeSolids(const TopoDS_Shape &S1, const TopAbs_State TB1, const TopoDS_Shape &S2, const TopAbs_State TB2);
-		%feature("autodoc", "1");
-		void MergeSolid(const TopoDS_Shape &S, const TopAbs_State TB);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSplit(const TopoDS_Shape &S, const TopAbs_State ToBuild) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Splits(const TopoDS_Shape &S, const TopAbs_State ToBuild) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMerged(const TopoDS_Shape &S, const TopAbs_State ToBuild) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Merged(const TopoDS_Shape &S, const TopAbs_State ToBuild) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & NewVertex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewEdges(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & ChangeNewEdges(const Standard_Integer I);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewFaces(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Section();
-		%feature("autodoc", "1");
-		void InitExtendedSectionDS(const Standard_Integer k=3);
-		%feature("autodoc", "1");
-		void InitSection(const Standard_Integer k=3);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreSection() const;
-		%feature("autodoc", "1");
-		void NextSection();
-		%feature("autodoc", "1");
-		const TopoDS_Shape & CurrentSection() const;
-		%feature("autodoc", "1");
-		Standard_Integer GetDSEdgeFromSectEdge(const TopoDS_Shape &E, const Standard_Integer rank);
-		%feature("autodoc", "1");
-		TColStd_ListOfInteger & GetDSFaceFromDSEdge(const Standard_Integer indexEdg, const Standard_Integer rank);
-		%feature("autodoc", "1");
-		Standard_Integer GetDSCurveFromSectEdge(const TopoDS_Shape &SectEdge);
-		%feature("autodoc", "1");
-		Standard_Integer GetDSFaceFromDSCurve(const Standard_Integer indexCur, const Standard_Integer rank);
-		%feature("autodoc", "1");
-		Standard_Integer GetDSPointFromNewVertex(const TopoDS_Shape &NewVert);
-		%feature("autodoc", "1");
-		Standard_Boolean EdgeCurveAncestors(const TopoDS_Shape &E, TopoDS_Shape & F1, TopoDS_Shape & F2, Standard_Integer & IC);
-		%feature("autodoc", "1");
-		Standard_Boolean EdgeSectionAncestors(const TopoDS_Shape &E, TopTools_ListOfShape & LF1, TopTools_ListOfShape & LF2, TopTools_ListOfShape & LE1, TopTools_ListOfShape & LE2);
-		%feature("autodoc", "1");
-		Standard_Integer IsKPart();
-		%feature("autodoc", "1");
-		void MergeKPart(const TopAbs_State TB1, const TopAbs_State TB2);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_Builder & ChangeBuilder();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_HBuilder();
-
-};
-%extend TopOpeBRepBuild_HBuilder {
-	Handle_TopOpeBRepBuild_HBuilder GetHandle() {
-	return *(Handle_TopOpeBRepBuild_HBuilder*) &$self;
-	}
-};
-
 %nodefaultctor TopOpeBRepBuild_Area2dBuilder;
 class TopOpeBRepBuild_Area2dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	public:
@@ -994,52 +911,6 @@ class TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 	}
 };
 
-%nodefaultctor TopOpeBRepBuild_VertexInfo;
-class TopOpeBRepBuild_VertexInfo {
-	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_VertexInfo();
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_VertexInfo();
-		%feature("autodoc", "1");
-		void SetVertex(const TopoDS_Vertex &aV);
-		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex() const;
-		%feature("autodoc", "1");
-		void SetSmart(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		Standard_Boolean Smart() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbCases() const;
-		%feature("autodoc", "1");
-		Standard_Integer FoundOut() const;
-		%feature("autodoc", "1");
-		void AddIn(const TopoDS_Edge &anE);
-		%feature("autodoc", "1");
-		void AddOut(const TopoDS_Edge &anE);
-		%feature("autodoc", "1");
-		void SetCurrentIn(const TopoDS_Edge &anE);
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfOrientedShape & EdgesIn() const;
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfOrientedShape & EdgesOut() const;
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfOrientedShape & ChangeEdgesOut();
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge & CurrentOut();
-		%feature("autodoc", "1");
-		void AppendPassed(const TopoDS_Edge &anE);
-		%feature("autodoc", "1");
-		void RemovePassed();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & ListPassed() const;
-		%feature("autodoc", "1");
-		void Prepare(const TopTools_ListOfShape &aL);
-
-};
-
 %nodefaultctor TopOpeBRepBuild_Area1dBuilder;
 class TopOpeBRepBuild_Area1dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	public:
@@ -1099,6 +970,52 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape : pu
 		const TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
 		const TopOpeBRepBuild_ListOfShapeListOfShape & Value() const;
+
+};
+
+%nodefaultctor TopOpeBRepBuild_VertexInfo;
+class TopOpeBRepBuild_VertexInfo {
+	public:
+		%feature("autodoc", "1");
+		~TopOpeBRepBuild_VertexInfo();
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_VertexInfo();
+		%feature("autodoc", "1");
+		void SetVertex(const TopoDS_Vertex &aV);
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & Vertex() const;
+		%feature("autodoc", "1");
+		void SetSmart(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		Standard_Boolean Smart() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbCases() const;
+		%feature("autodoc", "1");
+		Standard_Integer FoundOut() const;
+		%feature("autodoc", "1");
+		void AddIn(const TopoDS_Edge &anE);
+		%feature("autodoc", "1");
+		void AddOut(const TopoDS_Edge &anE);
+		%feature("autodoc", "1");
+		void SetCurrentIn(const TopoDS_Edge &anE);
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfOrientedShape & EdgesIn() const;
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfOrientedShape & EdgesOut() const;
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfOrientedShape & ChangeEdgesOut();
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge & CurrentOut();
+		%feature("autodoc", "1");
+		void AppendPassed(const TopoDS_Edge &anE);
+		%feature("autodoc", "1");
+		void RemovePassed();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & ListPassed() const;
+		%feature("autodoc", "1");
+		void Prepare(const TopTools_ListOfShape &aL);
 
 };
 
@@ -1661,6 +1578,89 @@ class TopOpeBRepBuild_GTopo {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GTopo CopyPermuted() const;
 
+};
+
+%nodefaultctor TopOpeBRepBuild_HBuilder;
+class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_HBuilder(const TopOpeBRepDS_BuildTool &BT);
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_BuildTool & BuildTool() const;
+		%feature("autodoc", "1");
+		void Perform(const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		%feature("autodoc", "1");
+		void Perform(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure DataStructure() const;
+		%feature("autodoc", "1");
+		TopOpeBRepDS_BuildTool & ChangeBuildTool();
+		%feature("autodoc", "1");
+		void MergeShapes(const TopoDS_Shape &S1, const TopAbs_State TB1, const TopoDS_Shape &S2, const TopAbs_State TB2);
+		%feature("autodoc", "1");
+		void MergeSolids(const TopoDS_Shape &S1, const TopAbs_State TB1, const TopoDS_Shape &S2, const TopAbs_State TB2);
+		%feature("autodoc", "1");
+		void MergeSolid(const TopoDS_Shape &S, const TopAbs_State TB);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSplit(const TopoDS_Shape &S, const TopAbs_State ToBuild) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Splits(const TopoDS_Shape &S, const TopAbs_State ToBuild) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMerged(const TopoDS_Shape &S, const TopAbs_State ToBuild) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Merged(const TopoDS_Shape &S, const TopAbs_State ToBuild) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & NewVertex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewEdges(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & ChangeNewEdges(const Standard_Integer I);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewFaces(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Section();
+		%feature("autodoc", "1");
+		void InitExtendedSectionDS(const Standard_Integer k=3);
+		%feature("autodoc", "1");
+		void InitSection(const Standard_Integer k=3);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreSection() const;
+		%feature("autodoc", "1");
+		void NextSection();
+		%feature("autodoc", "1");
+		const TopoDS_Shape & CurrentSection() const;
+		%feature("autodoc", "1");
+		Standard_Integer GetDSEdgeFromSectEdge(const TopoDS_Shape &E, const Standard_Integer rank);
+		%feature("autodoc", "1");
+		TColStd_ListOfInteger & GetDSFaceFromDSEdge(const Standard_Integer indexEdg, const Standard_Integer rank);
+		%feature("autodoc", "1");
+		Standard_Integer GetDSCurveFromSectEdge(const TopoDS_Shape &SectEdge);
+		%feature("autodoc", "1");
+		Standard_Integer GetDSFaceFromDSCurve(const Standard_Integer indexCur, const Standard_Integer rank);
+		%feature("autodoc", "1");
+		Standard_Integer GetDSPointFromNewVertex(const TopoDS_Shape &NewVert);
+		%feature("autodoc", "1");
+		Standard_Boolean EdgeCurveAncestors(const TopoDS_Shape &E, TopoDS_Shape & F1, TopoDS_Shape & F2, Standard_Integer & IC);
+		%feature("autodoc", "1");
+		Standard_Boolean EdgeSectionAncestors(const TopoDS_Shape &E, TopTools_ListOfShape & LF1, TopTools_ListOfShape & LF2, TopTools_ListOfShape & LE1, TopTools_ListOfShape & LE2);
+		%feature("autodoc", "1");
+		Standard_Integer IsKPart();
+		%feature("autodoc", "1");
+		void MergeKPart(const TopAbs_State TB1, const TopAbs_State TB2);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_Builder & ChangeBuilder();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~TopOpeBRepBuild_HBuilder();
+
+};
+%extend TopOpeBRepBuild_HBuilder {
+	Handle_TopOpeBRepBuild_HBuilder GetHandle() {
+	return *(Handle_TopOpeBRepBuild_HBuilder*) &$self;
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_PaveSet;

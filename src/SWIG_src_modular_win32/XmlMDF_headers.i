@@ -36,6 +36,13 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_XmlMDF_ADriver.hxx>
+#include<Handle_XmlMDF_ADriverTable.hxx>
+#include<Handle_XmlMDF_DataMapNodeOfMapOfDriver.hxx>
+#include<Handle_XmlMDF_DataMapNodeOfTypeADriverMap.hxx>
+#include<Handle_XmlMDF_ReferenceDriver.hxx>
+#include<Handle_XmlMDF_TagSourceDriver.hxx>
+#include<XmlMDF.hxx>
 #include<XmlMDF_ADriver.hxx>
 #include<XmlMDF_ADriverTable.hxx>
 #include<XmlMDF_DataMapIteratorOfMapOfDriver.hxx>
@@ -46,13 +53,6 @@
 #include<XmlMDF_ReferenceDriver.hxx>
 #include<XmlMDF_TagSourceDriver.hxx>
 #include<XmlMDF_TypeADriverMap.hxx>
-#include<XmlMDF.hxx>
-#include<Handle_XmlMDF_ADriver.hxx>
-#include<Handle_XmlMDF_ADriverTable.hxx>
-#include<Handle_XmlMDF_DataMapNodeOfMapOfDriver.hxx>
-#include<Handle_XmlMDF_DataMapNodeOfTypeADriverMap.hxx>
-#include<Handle_XmlMDF_ReferenceDriver.hxx>
-#include<Handle_XmlMDF_TagSourceDriver.hxx>
 
 // Additional headers necessary for compilation.
 

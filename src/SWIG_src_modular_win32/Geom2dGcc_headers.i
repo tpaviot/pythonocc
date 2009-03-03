@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Geom2dGcc.hxx>
 #include<Geom2dGcc_Circ2d2TanOn.hxx>
 #include<Geom2dGcc_Circ2d2TanRad.hxx>
 #include<Geom2dGcc_Circ2d3Tan.hxx>
@@ -61,11 +62,9 @@
 #include<Geom2dGcc_MyL2dTanObl.hxx>
 #include<Geom2dGcc_MyQCurve.hxx>
 #include<Geom2dGcc_QualifiedCurve.hxx>
-#include<Geom2dGcc.hxx>
 
 // Additional headers necessary for compilation.
 
-#include<gp.hxx>
 #include<GProp.hxx>
 #include<GProp_CelGProps.hxx>
 #include<GProp_EquaType.hxx>
@@ -77,6 +76,7 @@
 #include<GProp_UndefinedAxis.hxx>
 #include<GProp_ValueType.hxx>
 #include<GProp_VelGProps.hxx>
+#include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>
@@ -121,12 +121,12 @@
 #include<GccAna_Circ2d2TanOn.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Pnt2d.hxx>
-#include<gp_Dir2d.hxx>
-#include<GccAna_Circ2d3Tan.hxx>
 #include<gp_Lin2d.hxx>
+#include<gp_Dir2d.hxx>
 #include<math_Vector.hxx>
 #include<gp_Vec2d.hxx>
 #include<math_Matrix.hxx>
+#include<GccAna_Circ2d3Tan.hxx>
 #include<Adaptor3d_OffsetCurve.hxx>
 #include<gp_Elips2d.hxx>
 #include<gp_Parab2d.hxx>

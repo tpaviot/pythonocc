@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Dynamic.hxx>
 #include<Dynamic_AbstractVariableInstance.hxx>
 #include<Dynamic_BooleanParameter.hxx>
 #include<Dynamic_CompiledMethod.hxx>
@@ -75,7 +76,6 @@
 #include<Dynamic_VariableGroup.hxx>
 #include<Dynamic_VariableInstance.hxx>
 #include<Dynamic_VariableNode.hxx>
-#include<Dynamic.hxx>
 #include<Handle_Dynamic_AbstractVariableInstance.hxx>
 #include<Handle_Dynamic_BooleanParameter.hxx>
 #include<Handle_Dynamic_CompiledMethod.hxx>
@@ -114,11 +114,11 @@
 // Additional headers necessary for compilation.
 
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>

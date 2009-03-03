@@ -172,22 +172,6 @@ class RWStepAP214_RWAppliedDateAssignment {
 
 };
 
-%nodefaultctor RWStepAP214_RWAppliedApprovalAssignment;
-class RWStepAP214_RWAppliedApprovalAssignment {
-	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedApprovalAssignment();
-		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedApprovalAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedApprovalAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedApprovalAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedApprovalAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-
 %nodefaultctor RWStepAP214_RWAutoDesignDateAndPersonAssignment;
 class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 	public:
@@ -422,6 +406,22 @@ class RWStepAP214_RWAutoDesignGroupAssignment {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignGroupAssignment &ent) const;
 		%feature("autodoc", "1");
 		void Share(const Handle_StepAP214_AutoDesignGroupAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+
+%nodefaultctor RWStepAP214_RWAppliedApprovalAssignment;
+class RWStepAP214_RWAppliedApprovalAssignment {
+	public:
+		%feature("autodoc", "1");
+		~RWStepAP214_RWAppliedApprovalAssignment();
+		%feature("autodoc", "1");
+		RWStepAP214_RWAppliedApprovalAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedApprovalAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedApprovalAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AppliedApprovalAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
 

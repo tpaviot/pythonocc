@@ -36,6 +36,7 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<DsgPrs.hxx>
 #include<DsgPrs_AnglePresentation.hxx>
 #include<DsgPrs_ArrowSide.hxx>
 #include<DsgPrs_Chamf2dPresentation.hxx>
@@ -62,7 +63,6 @@
 #include<DsgPrs_TangentPresentation.hxx>
 #include<DsgPrs_XYZAxisPresentation.hxx>
 #include<DsgPrs_XYZPlanePresentation.hxx>
-#include<DsgPrs.hxx>
 
 // Additional headers necessary for compilation.
 

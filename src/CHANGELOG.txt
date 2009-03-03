@@ -1,3 +1,8 @@
+2008/3/4:
+	- Better portability for lib finding
+2009/3/2:
+	- Added OCC.Toolkits...
+	- Before building .i files, OCC folder is cleared
 2009/3/1:
 	- bugfix in SWIG_generator: enums and typedef were added in wrong modules (GeomAbs enum in Geom etc.)
 2009/2/27:

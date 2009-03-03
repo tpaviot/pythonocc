@@ -139,6 +139,12 @@
 #include <MMgt_StackManager.hxx>
 #include <MMgt_TShared.hxx>
 #include <Handle_MMgt_TShared.hxx>
+#include <Viewer_BadValue.hxx>
+#include <Viewer_View.hxx>
+#include <Viewer_Viewer.hxx>
+#include <Handle_Viewer_BadValue.hxx>
+#include <Handle_Viewer_View.hxx>
+#include <Handle_Viewer_Viewer.hxx>
 #include <Aspect_Array1OfEdge.hxx>
 #include <Aspect_AspectFillArea.hxx>
 #include <Aspect_AspectFillAreaDefinitionError.hxx>
@@ -311,12 +317,6 @@
 #include <Handle_Aspect_WindowDefinitionError.hxx>
 #include <Handle_Aspect_WindowDriver.hxx>
 #include <Handle_Aspect_WindowError.hxx>
-#include <Viewer_BadValue.hxx>
-#include <Viewer_View.hxx>
-#include <Viewer_Viewer.hxx>
-#include <Handle_Viewer_BadValue.hxx>
-#include <Handle_Viewer_View.hxx>
-#include <Handle_Viewer_Viewer.hxx>
 #include <Quantity_AbsorbedDose.hxx>
 #include <Quantity_Acceleration.hxx>
 #include <Quantity_AcousticIntensity.hxx>
@@ -593,7 +593,7 @@
 
 %import Standard.i
 %import MMgt.i
-%import Aspect.i
 %import Viewer.i
+%import Aspect.i
 %import Quantity.i
 %import TColStd.i

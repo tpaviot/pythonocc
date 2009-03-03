@@ -36,14 +36,25 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TColGeom2d_HArray1OfBSplineCurve.hxx>
+#include<Handle_TColGeom2d_HArray1OfBezierCurve.hxx>
+#include<Handle_TColGeom2d_HArray1OfBoundedCurve.hxx>
+#include<Handle_TColGeom2d_HArray1OfCurve.hxx>
+#include<Handle_TColGeom2d_HArray1OfGeometry.hxx>
+#include<Handle_TColGeom2d_HSequenceOfBoundedCurve.hxx>
+#include<Handle_TColGeom2d_HSequenceOfCurve.hxx>
+#include<Handle_TColGeom2d_HSequenceOfGeometry.hxx>
+#include<Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve.hxx>
+#include<Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve.hxx>
+#include<Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry.hxx>
+#include<TColGeom2d_Array1OfBSplineCurve.hxx>
 #include<TColGeom2d_Array1OfBezierCurve.hxx>
 #include<TColGeom2d_Array1OfBoundedCurve.hxx>
-#include<TColGeom2d_Array1OfBSplineCurve.hxx>
 #include<TColGeom2d_Array1OfCurve.hxx>
 #include<TColGeom2d_Array1OfGeometry.hxx>
+#include<TColGeom2d_HArray1OfBSplineCurve.hxx>
 #include<TColGeom2d_HArray1OfBezierCurve.hxx>
 #include<TColGeom2d_HArray1OfBoundedCurve.hxx>
-#include<TColGeom2d_HArray1OfBSplineCurve.hxx>
 #include<TColGeom2d_HArray1OfCurve.hxx>
 #include<TColGeom2d_HArray1OfGeometry.hxx>
 #include<TColGeom2d_HSequenceOfBoundedCurve.hxx>
@@ -55,28 +66,17 @@
 #include<TColGeom2d_SequenceOfBoundedCurve.hxx>
 #include<TColGeom2d_SequenceOfCurve.hxx>
 #include<TColGeom2d_SequenceOfGeometry.hxx>
-#include<Handle_TColGeom2d_HArray1OfBezierCurve.hxx>
-#include<Handle_TColGeom2d_HArray1OfBoundedCurve.hxx>
-#include<Handle_TColGeom2d_HArray1OfBSplineCurve.hxx>
-#include<Handle_TColGeom2d_HArray1OfCurve.hxx>
-#include<Handle_TColGeom2d_HArray1OfGeometry.hxx>
-#include<Handle_TColGeom2d_HSequenceOfBoundedCurve.hxx>
-#include<Handle_TColGeom2d_HSequenceOfCurve.hxx>
-#include<Handle_TColGeom2d_HSequenceOfGeometry.hxx>
-#include<Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve.hxx>
-#include<Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve.hxx>
-#include<Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry.hxx>
 
 // Additional headers necessary for compilation.
 
+#include<TColGeom2d_Array1OfBSplineCurve.hxx>
 #include<TColGeom2d_Array1OfBezierCurve.hxx>
 #include<TColGeom2d_Array1OfBoundedCurve.hxx>
-#include<TColGeom2d_Array1OfBSplineCurve.hxx>
 #include<TColGeom2d_Array1OfCurve.hxx>
 #include<TColGeom2d_Array1OfGeometry.hxx>
+#include<TColGeom2d_HArray1OfBSplineCurve.hxx>
 #include<TColGeom2d_HArray1OfBezierCurve.hxx>
 #include<TColGeom2d_HArray1OfBoundedCurve.hxx>
-#include<TColGeom2d_HArray1OfBSplineCurve.hxx>
 #include<TColGeom2d_HArray1OfCurve.hxx>
 #include<TColGeom2d_HArray1OfGeometry.hxx>
 #include<TColGeom2d_HSequenceOfBoundedCurve.hxx>
@@ -93,8 +93,8 @@
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Geom2d_BoundedCurve.hxx>
+#include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom2d_Geometry.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
-#include<Handle_Geom2d_BezierCurve.hxx>
 %}

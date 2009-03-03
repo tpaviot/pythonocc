@@ -36,10 +36,24 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_TopoDS_FrozenShape.hxx>
+#include<Handle_TopoDS_HShape.hxx>
+#include<Handle_TopoDS_ListNodeOfListOfShape.hxx>
+#include<Handle_TopoDS_TCompSolid.hxx>
+#include<Handle_TopoDS_TCompound.hxx>
+#include<Handle_TopoDS_TEdge.hxx>
+#include<Handle_TopoDS_TFace.hxx>
+#include<Handle_TopoDS_TShape.hxx>
+#include<Handle_TopoDS_TShell.hxx>
+#include<Handle_TopoDS_TSolid.hxx>
+#include<Handle_TopoDS_TVertex.hxx>
+#include<Handle_TopoDS_TWire.hxx>
+#include<Handle_TopoDS_UnCompatibleShapes.hxx>
+#include<TopoDS.hxx>
 #include<TopoDS_Builder.hxx>
 #include<TopoDS_Builder3D.hxx>
-#include<TopoDS_Compound.hxx>
 #include<TopoDS_CompSolid.hxx>
+#include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_FrozenShape.hxx>
@@ -51,8 +65,8 @@
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Shell.hxx>
 #include<TopoDS_Solid.hxx>
-#include<TopoDS_TCompound.hxx>
 #include<TopoDS_TCompSolid.hxx>
+#include<TopoDS_TCompound.hxx>
 #include<TopoDS_TEdge.hxx>
 #include<TopoDS_TFace.hxx>
 #include<TopoDS_TShape.hxx>
@@ -63,20 +77,6 @@
 #include<TopoDS_UnCompatibleShapes.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Wire.hxx>
-#include<TopoDS.hxx>
-#include<Handle_TopoDS_FrozenShape.hxx>
-#include<Handle_TopoDS_HShape.hxx>
-#include<Handle_TopoDS_ListNodeOfListOfShape.hxx>
-#include<Handle_TopoDS_TCompound.hxx>
-#include<Handle_TopoDS_TCompSolid.hxx>
-#include<Handle_TopoDS_TEdge.hxx>
-#include<Handle_TopoDS_TFace.hxx>
-#include<Handle_TopoDS_TShape.hxx>
-#include<Handle_TopoDS_TShell.hxx>
-#include<Handle_TopoDS_TSolid.hxx>
-#include<Handle_TopoDS_TVertex.hxx>
-#include<Handle_TopoDS_TWire.hxx>
-#include<Handle_TopoDS_UnCompatibleShapes.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -105,8 +105,8 @@
 #include<TopoDSToStep_WireframeBuilder.hxx>
 #include<TopoDS_Builder.hxx>
 #include<TopoDS_Builder3D.hxx>
-#include<TopoDS_Compound.hxx>
 #include<TopoDS_CompSolid.hxx>
+#include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_FrozenShape.hxx>
@@ -118,8 +118,8 @@
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Shell.hxx>
 #include<TopoDS_Solid.hxx>
-#include<TopoDS_TCompound.hxx>
 #include<TopoDS_TCompSolid.hxx>
+#include<TopoDS_TCompound.hxx>
 #include<TopoDS_TEdge.hxx>
 #include<TopoDS_TFace.hxx>
 #include<TopoDS_TShape.hxx>

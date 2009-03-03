@@ -36,15 +36,15 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_STEPControl_ActorRead.hxx>
+#include<Handle_STEPControl_ActorWrite.hxx>
+#include<Handle_STEPControl_Controller.hxx>
 #include<STEPControl_ActorRead.hxx>
 #include<STEPControl_ActorWrite.hxx>
 #include<STEPControl_Controller.hxx>
 #include<STEPControl_Reader.hxx>
 #include<STEPControl_StepModelType.hxx>
 #include<STEPControl_Writer.hxx>
-#include<Handle_STEPControl_ActorRead.hxx>
-#include<Handle_STEPControl_ActorWrite.hxx>
-#include<Handle_STEPControl_Controller.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -57,15 +57,15 @@
 #include<IFSelect_CheckCounter.hxx>
 #include<IFSelect_ContextModif.hxx>
 #include<IFSelect_ContextWrite.hxx>
-#include<IFSelect_Dispatch.hxx>
 #include<IFSelect_DispGlobal.hxx>
 #include<IFSelect_DispPerCount.hxx>
 #include<IFSelect_DispPerFiles.hxx>
 #include<IFSelect_DispPerOne.hxx>
 #include<IFSelect_DispPerSignature.hxx>
+#include<IFSelect_Dispatch.hxx>
 #include<IFSelect_EditForm.hxx>
-#include<IFSelect_Editor.hxx>
 #include<IFSelect_EditValue.hxx>
+#include<IFSelect_Editor.hxx>
 #include<IFSelect_Functions.hxx>
 #include<IFSelect_GeneralModifier.hxx>
 #include<IFSelect_GraphCounter.hxx>
@@ -74,8 +74,8 @@
 #include<IFSelect_ListEditor.hxx>
 #include<IFSelect_ModelCopier.hxx>
 #include<IFSelect_ModifEditForm.hxx>
-#include<IFSelect_Modifier.hxx>
 #include<IFSelect_ModifReorder.hxx>
+#include<IFSelect_Modifier.hxx>
 #include<IFSelect_Option.hxx>
 #include<IFSelect_PacketList.hxx>
 #include<IFSelect_ParamEditor.hxx>
@@ -96,11 +96,9 @@
 #include<IFSelect_SelectExplore.hxx>
 #include<IFSelect_SelectExtract.hxx>
 #include<IFSelect_SelectFlag.hxx>
-#include<IFSelect_SelectIncorrectEntities.hxx>
 #include<IFSelect_SelectInList.hxx>
+#include<IFSelect_SelectIncorrectEntities.hxx>
 #include<IFSelect_SelectIntersection.hxx>
-#include<IFSelect_Selection.hxx>
-#include<IFSelect_SelectionIterator.hxx>
 #include<IFSelect_SelectModelEntities.hxx>
 #include<IFSelect_SelectModelRoots.hxx>
 #include<IFSelect_SelectPointed.hxx>
@@ -117,6 +115,8 @@
 #include<IFSelect_SelectType.hxx>
 #include<IFSelect_SelectUnion.hxx>
 #include<IFSelect_SelectUnknownEntities.hxx>
+#include<IFSelect_Selection.hxx>
+#include<IFSelect_SelectionIterator.hxx>
 #include<IFSelect_SequenceNodeOfSequenceOfAppliedModifiers.hxx>
 #include<IFSelect_SequenceNodeOfSequenceOfGeneralModifier.hxx>
 #include<IFSelect_SequenceNodeOfSequenceOfInterfaceModel.hxx>
@@ -131,20 +131,19 @@
 #include<IFSelect_ShareOut.hxx>
 #include<IFSelect_ShareOutResult.hxx>
 #include<IFSelect_SignAncestor.hxx>
-#include<IFSelect_Signature.hxx>
-#include<IFSelect_SignatureList.hxx>
 #include<IFSelect_SignCategory.hxx>
 #include<IFSelect_SignCounter.hxx>
 #include<IFSelect_SignMultiple.hxx>
 #include<IFSelect_SignType.hxx>
 #include<IFSelect_SignValidity.hxx>
-#include<IFSelect_Transformer.hxx>
-#include<IFSelect_TransformStandard.hxx>
+#include<IFSelect_Signature.hxx>
+#include<IFSelect_SignatureList.hxx>
 #include<IFSelect_TSeqOfDispatch.hxx>
 #include<IFSelect_TSeqOfSelection.hxx>
+#include<IFSelect_TransformStandard.hxx>
+#include<IFSelect_Transformer.hxx>
 #include<IFSelect_WorkLibrary.hxx>
 #include<IFSelect_WorkSession.hxx>
-#include<TopoDS_Shape.hxx>
 #include<InterfaceGraphic_Aspect.hxx>
 #include<InterfaceGraphic_Cextern.hxx>
 #include<InterfaceGraphic_Graphic3d.hxx>
@@ -179,27 +178,27 @@
 #include<Interface_FileReaderData.hxx>
 #include<Interface_FileReaderTool.hxx>
 #include<Interface_FloatWriter.hxx>
+#include<Interface_GTool.hxx>
 #include<Interface_GeneralLib.hxx>
 #include<Interface_GeneralModule.hxx>
 #include<Interface_GlobalNodeOfGeneralLib.hxx>
 #include<Interface_GlobalNodeOfReaderLib.hxx>
 #include<Interface_Graph.hxx>
 #include<Interface_GraphContent.hxx>
-#include<Interface_GTool.hxx>
 #include<Interface_HArray1OfHAsciiString.hxx>
 #include<Interface_HGraph.hxx>
 #include<Interface_HSequenceOfCheck.hxx>
 #include<Interface_IndexedMapNodeOfIndexedMapOfAsciiString.hxx>
 #include<Interface_IndexedMapOfAsciiString.hxx>
+#include<Interface_IntList.hxx>
+#include<Interface_IntVal.hxx>
 #include<Interface_InterfaceError.hxx>
 #include<Interface_InterfaceMismatch.hxx>
 #include<Interface_InterfaceModel.hxx>
-#include<Interface_IntList.hxx>
-#include<Interface_IntVal.hxx>
 #include<Interface_LineBuffer.hxx>
+#include<Interface_MSG.hxx>
 #include<Interface_Macros.hxx>
 #include<Interface_MapAsciiStringHasher.hxx>
-#include<Interface_MSG.hxx>
 #include<Interface_NodeOfGeneralLib.hxx>
 #include<Interface_NodeOfReaderLib.hxx>
 #include<Interface_ParamList.hxx>
@@ -209,16 +208,16 @@
 #include<Interface_ReaderLib.hxx>
 #include<Interface_ReaderModule.hxx>
 #include<Interface_ReportEntity.hxx>
+#include<Interface_STAT.hxx>
 #include<Interface_SequenceNodeOfSequenceOfCheck.hxx>
 #include<Interface_SequenceOfCheck.hxx>
 #include<Interface_ShareFlags.hxx>
 #include<Interface_ShareTool.hxx>
 #include<Interface_SignLabel.hxx>
 #include<Interface_SignType.hxx>
-#include<Interface_STAT.hxx>
 #include<Interface_Static.hxx>
-#include<Interface_Statics.hxx>
 #include<Interface_StaticSatisfies.hxx>
+#include<Interface_Statics.hxx>
 #include<Interface_Translates.hxx>
 #include<Interface_TypedValue.hxx>
 #include<Interface_UndefinedContent.hxx>
@@ -235,16 +234,16 @@
 #include<MoniTool_DataMapNodeOfDataMapOfTimer.hxx>
 #include<MoniTool_DataMapOfShapeTransient.hxx>
 #include<MoniTool_DataMapOfTimer.hxx>
-#include<MoniTool_Element.hxx>
 #include<MoniTool_ElemHasher.hxx>
+#include<MoniTool_Element.hxx>
 #include<MoniTool_HSequenceOfElement.hxx>
 #include<MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient.hxx>
 #include<MoniTool_IndexedDataMapOfShapeTransient.hxx>
 #include<MoniTool_IntVal.hxx>
-#include<MoniTool_Macros.hxx>
 #include<MoniTool_MTHasher.hxx>
-#include<MoniTool_Option.hxx>
+#include<MoniTool_Macros.hxx>
 #include<MoniTool_OptValue.hxx>
+#include<MoniTool_Option.hxx>
 #include<MoniTool_Profile.hxx>
 #include<MoniTool_RealVal.hxx>
 #include<MoniTool_SequenceNodeOfSequenceOfElement.hxx>
@@ -260,11 +259,11 @@
 #include<MoniTool_ValueSatisfies.hxx>
 #include<MoniTool_ValueType.hxx>
 #include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_Array1Descriptor.hxx>
 #include<TCollection_Array2Descriptor.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<TCollection_AVLBaseNode.hxx>
-#include<TCollection_AVLBaseNodePtr.hxx>
 #include<TCollection_BaseSequence.hxx>
 #include<TCollection_BasicMap.hxx>
 #include<TCollection_BasicMapIterator.hxx>
@@ -280,6 +279,7 @@
 #include<TCollection_SeqNode.hxx>
 #include<TCollection_SeqNodePtr.hxx>
 #include<TCollection_Side.hxx>
+#include<TopoDS_Shape.hxx>
 
 // Needed headers necessary for compilation.
 

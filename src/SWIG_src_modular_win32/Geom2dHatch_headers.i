@@ -71,8 +71,8 @@
 #include<Contap_TFunction.hxx>
 #include<Contap_TheArcFunctionOfContour.hxx>
 #include<Contap_TheHSequenceOfPointOfContour.hxx>
-#include<Contap_TheIWalkingOfContour.hxx>
 #include<Contap_TheIWLineOfTheIWalkingOfContour.hxx>
+#include<Contap_TheIWalkingOfContour.hxx>
 #include<Contap_TheLineOfContour.hxx>
 #include<Contap_ThePathPointOfTheSearchOfContour.hxx>
 #include<Contap_ThePointOfContour.hxx>
@@ -87,8 +87,8 @@
 #include<math_Array1OfValueAndWeight.hxx>
 #include<math_BFGS.hxx>
 #include<math_BissecNewton.hxx>
-#include<math_BracketedRoot.hxx>
 #include<math_BracketMinimum.hxx>
+#include<math_BracketedRoot.hxx>
 #include<math_BrentMinimum.hxx>
 #include<math_CompareOfValueAndWeight.hxx>
 #include<math_ComputeGaussPointsAndWeights.hxx>
@@ -131,11 +131,11 @@
 #include<math_QuickSortOfValueAndWeight.hxx>
 #include<math_RealRandom.hxx>
 #include<math_Recipes.hxx>
+#include<math_SVD.hxx>
 #include<math_SingleTabOfInteger.hxx>
 #include<math_SingleTabOfReal.hxx>
 #include<math_SingularMatrix.hxx>
 #include<math_Status.hxx>
-#include<math_SVD.hxx>
 #include<math_TrigonometricFunctionRoots.hxx>
 #include<math_Uzawa.hxx>
 #include<math_ValueAndWeight.hxx>

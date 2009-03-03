@@ -36,10 +36,10 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<TopAbs.hxx>
 #include<TopAbs_Orientation.hxx>
 #include<TopAbs_ShapeEnum.hxx>
 #include<TopAbs_State.hxx>
-#include<TopAbs.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -36,6 +36,14 @@
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_V2d_BackgroundGraphicObject.hxx>
+#include<Handle_V2d_CircularGraphicGrid.hxx>
+#include<Handle_V2d_CircularGrid.hxx>
+#include<Handle_V2d_RectangularGraphicGrid.hxx>
+#include<Handle_V2d_RectangularGrid.hxx>
+#include<Handle_V2d_View.hxx>
+#include<Handle_V2d_Viewer.hxx>
+#include<V2d.hxx>
 #include<V2d_BackgroundGraphicObject.hxx>
 #include<V2d_CircularGraphicGrid.hxx>
 #include<V2d_CircularGrid.hxx>
@@ -46,14 +54,6 @@
 #include<V2d_View.hxx>
 #include<V2d_Viewer.hxx>
 #include<V2d_ViewerPointer.hxx>
-#include<V2d.hxx>
-#include<Handle_V2d_BackgroundGraphicObject.hxx>
-#include<Handle_V2d_CircularGraphicGrid.hxx>
-#include<Handle_V2d_CircularGrid.hxx>
-#include<Handle_V2d_RectangularGraphicGrid.hxx>
-#include<Handle_V2d_RectangularGrid.hxx>
-#include<Handle_V2d_View.hxx>
-#include<Handle_V2d_Viewer.hxx>
 
 // Additional headers necessary for compilation.
 
