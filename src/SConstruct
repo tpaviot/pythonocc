@@ -106,7 +106,7 @@ print OCC_INC
 #
 # Build environment
 #
-env = Environment()
+env = Environment(ENV = {'PATH':os.environ['PATH']})
 #
 # Build Options
 #
@@ -122,10 +122,12 @@ print 'Build pythonOCC %s for platform: %s'%(VERSION,env['PLATFORM'])
 # Set right path to compiler
 #
 if env['PLATFORM']=='win32':
-	mymsvc = msvccompiler.MSVCCompiler()
-	mymsvc.initialize()
-	env['CC'] = '"%s"'%mymsvc.cc
+	pass
+	#mymsvc = msvccompiler.MSVCCompiler()
+	#mymsvc.initialize()
+	#env['CC'] = '"%s"'%mymsvc.cc
 else: #Linux
+	architecture='i686'
 	env.Append(CXXFLAGS=Split('-O3 -ffast-math -march=%s'%architecture))
 env.Append(CXXFLAGS=ECA)
 env.Append(CPPDEFINES=DEFINE_MACROS)	
@@ -141,6 +143,7 @@ print 'C++ compiler: %s'%env['CC']
 #
 PYTHON_INC = sysconfig.get_python_inc() #Platform independant statement
 env.Append( CPPPATH= [PYTHON_INC,OCC_INC])
+#env.Append( CCFLAGS = '-I%s'%OCC_INC)
 env.Append( LIBPATH = [OCC_LIB] )
 if env['PLATFORM']!='win32':
     env.Append( CPPPATH= [CONFIG_H_PATH])
@@ -148,6 +151,15 @@ if env['PLATFORM']!='win32':
 # Check configuration
 #
 dirs = ['/usr/src']
+
+def CheckSwig(context):
+	context.Message('Checking for swig ...')
+	if env.Detect('swig') == None:
+		context.Result(False)
+		Exit(1)
+	else:
+		context.Result(True)
+		return True
 
 def CheckCXX(context):
 	context.Message('Checking whether c++ compiler "%s" works...'%env['CC'])
@@ -169,17 +181,44 @@ def CheckOCC(context):
 			return ret
 	return False	
 
-conf = env.Configure(custom_tests={'CheckCXX':CheckCXX,'CheckOCC':CheckOCC},)
+conf = env.Configure(custom_tests={'CheckCXX':CheckCXX,'CheckSwig':CheckSwig,'CheckOCC':CheckOCC},)
+
 conf.CheckCXX()
+conf.CheckSwig()
 conf.CheckOCC()
 conf.CheckCXXHeader('stdlib.h','<>')
 conf.CheckCXXHeader('string.h','<>')
 conf.CheckCXXHeader('Python.h','<>')
 conf.CheckCXXHeader('stdexcept','<>')
 
+#
+# Check OpenCascade libs
+#
+libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
+             'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
+             'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', 'TKCDLFront', 'TKCPPClient', 'TKCPPExt',\
+             'TKCPPIntExt', 'TKCPPJini', 'TKCSFDBSchema', 'TKDCAF', 'TKDraw', 'TKernel',\
+             'TKFeat', 'TKFillet', 'TKG2d', 'TKG3d', 'TKGeomAlgo', 'TKGeomBase', 'TKHLR', 'TKIDLFront',\
+             'TKIGES', 'TKjcas','TKLCAF', 'TKMath', 'TKMesh', 'TKMeshVS', 'TKNIS', 'TKOffset',\
+             'TKOpenGl', 'TKPCAF', 'TKPLCAF', 'TKPrim', 'TKPShape', 'TKService', 'TKShapeSchema',\
+             'TKShHealing', 'TKStdLSchema', 'TKStdSchema', 'TKSTEP', 'TKSTEP209', 'TKSTEPAttr',\
+             'TKSTEPBase', 'TKSTL', 'TKTCPPExt', 'TKTObj', 'TKTObjDRAW', 'TKTopAlgo', 'TKTopTest',\
+             'TKV2d', 'TKV3d', 'TKViewerTest', 'TKVRML', 'TKWOK', 'TKWOKTcl', 'TKXCAF', 'TKXCAFSchema',\
+             'TKXDEDRAW', 'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
+             'TKXmlXCAF', 'TKXSBase', 'TKXSDRAW','XCAFPlugin', 'XmlLPlugin', 'XmlPlugin',\
+             'XmlXCAFPlugin']
+for lib in libraries:
+	if not conf.CheckLib(lib, language = "C++"):
+		Exit(1)
+#
+# End Configuration check
+#
 env = conf.Finish()
-
+#
+# SWIG stuff
+#
+env['SWIGFLAGS'] = '-c++ -python'
 #
 # Build
 #
-env.Program(target='bar', source=['test_wrap.cpp'])
+env.SharedLibrary('_test', ['test.i'])
