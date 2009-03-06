@@ -185,7 +185,7 @@ conf = env.Configure(custom_tests={'CheckCXX':CheckCXX,'CheckSwig':CheckSwig,'Ch
 
 conf.CheckCXX()
 conf.CheckSwig()
-conf.CheckOCC()
+#conf.CheckOCC() don't work
 conf.CheckCXXHeader('stdlib.h','<>')
 conf.CheckCXXHeader('string.h','<>')
 conf.CheckCXXHeader('Python.h','<>')
@@ -217,8 +217,19 @@ env = conf.Finish()
 #
 # SWIG stuff
 #
-env['SWIGFLAGS'] = '-c++ -python'
+swig_flags = '-c++ -python'
+for opt in SWIG_OPTS:
+	swig_flags += ' '+opt 
+env['SWIGFLAGS'] = swig_flags
+env['SWIGPATH']  = [OCC_INC]
 #
 # Build
 #
-env.SharedLibrary('_test', ['test.i'])
+from Modules import MODULES
+import SWIG_generator
+for module in MODULES:
+	module_name = module[0]
+	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
+	if not (os.path.isfile(SWIG_source_file)): #if no .i file, build it
+		builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
+	env.SharedLibrary('_%s'%module_name, [SWIG_source_file])
