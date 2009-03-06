@@ -60,7 +60,7 @@ if sys.platform=='win32':
         OCC_INC = os.path.join(OCC_ROOT,'inc')
         OCC_LIB = os.path.join(OCC_ROOT,'win32','lib')
     else:
-        OCC_INT='C:/OCC/ros/inc'
+        OCC_INC='C:/OCC/ros/inc'
         OCC_LIB='C:/OCC/ros/win32/lib'
     GCC_XML_PATH = os.path.join(os.getcwd(),'pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
