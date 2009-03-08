@@ -259,4 +259,5 @@ env['SWIGPATH']  = [OCC_INC]
 #
 for module in MODULES:
 	module_name = module[0]
-	env.SharedLibrary('_%s'%module_name, [SWIG_source_file])
+	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
+	env.SharedLibrary('%s'%module_name, [SWIG_source_file],SHLIBPREFIX = '_')
