@@ -38,6 +38,7 @@ from distutils import sysconfig, msvccompiler
 import os
 import sys
 import commands
+import SCons
 
 ##########################################################################################
 ########## PROXY TO NEWER SCONS (DOWNLOADED IF NEEDED) ###################################
