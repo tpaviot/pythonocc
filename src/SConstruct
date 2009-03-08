@@ -42,6 +42,17 @@ import commands
 ##########################################################################################
 ########## PROXY TO NEWER SCONS (DOWNLOADED IF NEEDED) ###################################
 ##########################################################################################
+# SCons version numbers are needed a few times
+ver=[str(x) for x in SCons.__version__.split('.')]
+for i in range(0,len(ver)):
+	def any2num(x):
+		if x in ('0123456789'): return x
+		else: return '0'
+	ver[i]="".join([any2num(x) for x in ver[i]])
+	if len(ver[i])>2: ver[i]=ver[i][0:2]+"."+ver[i][2:]
+sconsVersion=10000*float(ver[0])
+if len(ver)>1: sconsVersion+=100*float(ver[1])
+if len(ver)>2: sconsVersion+=float(ver[2])
 
 if sconsVersion<9806.0 and not os.environ.has_key('NO_SCONS_GET_RECENT'):
 	tgzParams=("http://heanet.dl.sourceforge.net/sourceforge/scons/scons-local-1.0.0.tar.gz","/scons-local-1.0.0")
