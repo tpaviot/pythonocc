@@ -214,6 +214,19 @@ for lib in libraries:
 # End Configuration check
 #
 env = conf.Finish()
+##############################
+#### pythonOCC build #########
+##############################
+#
+# First generate the SWIG .i files if they're not in the SWIG_* path
+#
+from Modules import MODULES
+import SWIG_generator
+for module in MODULES:
+	module_name = module[0]
+	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
+	if not (os.path.isfile(SWIG_source_file)): #if no .i file, build it
+		builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
 #
 # SWIG stuff
 #
@@ -225,11 +238,6 @@ env['SWIGPATH']  = [OCC_INC]
 #
 # Build
 #
-from Modules import MODULES
-import SWIG_generator
 for module in MODULES:
 	module_name = module[0]
-	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
-	if not (os.path.isfile(SWIG_source_file)): #if no .i file, build it
-		builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
 	env.SharedLibrary('_%s'%module_name, [SWIG_source_file])
