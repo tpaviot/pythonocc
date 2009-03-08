@@ -39,20 +39,41 @@ import os
 import sys
 import commands
 
+##########################################################################################
+########## PROXY TO NEWER SCONS (DOWNLOADED IF NEEDED) ###################################
+##########################################################################################
+
+if sconsVersion<9806.0 and not os.environ.has_key('NO_SCONS_GET_RECENT'):
+	tgzParams=("http://heanet.dl.sourceforge.net/sourceforge/scons/scons-local-1.0.0.tar.gz","/scons-local-1.0.0")
+	newPrefix="./scons-local";
+	newUrl,newDir=tgzParams[0],newPrefix+"/"+tgzParams[1]
+	if not os.path.exists(newDir):
+		print "Scons version too old, downloading new version. All subsequent calls will be proxied to the new version transparently."
+		import urllib,tarfile
+		(filename,headers)=urllib.urlretrieve(newUrl)
+		print filename,"\n",headers
+		tar=tarfile.open(filename, "r:gz")
+		for tarinfo in tar: tar.extract(tarinfo,newPrefix)
+		print "Done extracting scons to",newDir
+		assert(os.path.exists(newDir))
+	if os.path.exists(newDir):
+		Exit(os.execv(newPrefix+"/scons.py",[newPrefix+'/scons.py']+sys.argv[1:]))
+
+
 #
 # First define platform specific settings
 #
 #
 # Define pythonOCC version
 #
-VERSION = '2009/02/23'
+VERSION = '0.2-wo'
 #
 # Define paths
 #
 try:
     OCC_ROOT = os.environ['CASROOT']
 except KeyError:
-    print "OopenCascade CAS_ROOT environment variable not set."
+    print "OpenCascade CAS_ROOT environment variable not set."
     OCC_ROOT = None
 
 if sys.platform=='win32':
@@ -116,19 +137,8 @@ opts.AddVariables(
 )
 opts.Update(env)
 
-
 print 'Build pythonOCC %s for platform: %s'%(VERSION,env['PLATFORM'])
-#
-# Set right path to compiler
-#
-if env['PLATFORM']=='win32':
-	pass
-	#mymsvc = msvccompiler.MSVCCompiler()
-	#mymsvc.initialize()
-	#env['CC'] = '"%s"'%mymsvc.cc
-else: #Linux
-	architecture='i686'
-	env.Append(CXXFLAGS=Split('-O3 -ffast-math -march=%s'%architecture))
+
 env.Append(CXXFLAGS=ECA)
 env.Append(CPPDEFINES=DEFINE_MACROS)	
 	
@@ -143,15 +153,12 @@ print 'C++ compiler: %s'%env['CC']
 #
 PYTHON_INC = sysconfig.get_python_inc() #Platform independant statement
 env.Append( CPPPATH= [PYTHON_INC,OCC_INC])
-#env.Append( CCFLAGS = '-I%s'%OCC_INC)
 env.Append( LIBPATH = [OCC_LIB] )
 if env['PLATFORM']!='win32':
     env.Append( CPPPATH= [CONFIG_H_PATH])
 #
 # Check configuration
 #
-dirs = ['/usr/src']
-
 def CheckSwig(context):
 	context.Message('Checking for swig ...')
 	if env.Detect('swig') == None:
