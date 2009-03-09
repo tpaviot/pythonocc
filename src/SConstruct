@@ -255,7 +255,7 @@ for lib in ALL_OCC_LIBRARIES:
 AVAILABLE_EXTRA_LIBS = []
 for extra_lib in EXTRA_LIBS:
 	if conf.CheckLib(extra_lib, language = "C++"):
-		AVAILABLE_EXTRA_LIBS = extra_lib
+		AVAILABLE_EXTRA_LIBS.append(extra_lib)
 #
 # End Configuration check
 #
@@ -263,10 +263,10 @@ env = conf.Finish()
 #
 # SConscript
 #
-buildDir=os.path.join(os.getcwd(),'build_scons')
+#buildDir=os.path.join(os.getcwd(),'build_scons')
 #env.SConscript(dirs=['.'],build_dir=buildDir,duplicate=0)
-SConscript('SConscript', build_dir=buildDir, duplicate=0, exports={'MODE':'release'})
-
+#SConscript('SConscript', build_dir=buildDir, duplicate=0, exports={'MODE':'release'})
+BuildDir('essai_OCC', '.', duplicate=0)
 ##############################
 #### pythonOCC build #########
 ##############################
