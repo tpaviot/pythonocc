@@ -251,8 +251,10 @@ for lib in ALL_OCC_LIBRARIES:
 #
 # Check extra libs
 #
+AVAILABLE_EXTRA_LIBS = []
 for extra_lib in EXTRA_LIBS:
-	conf.CheckLib(extra_lib, language = "C++")
+	if conf.CheckLib(extra_lib, language = "C++"):
+		AVAILABLE_EXTRA_LIBS = extra_lib
 #
 # End Configuration check
 #
@@ -286,7 +288,7 @@ for opt in SWIG_OPTS:
 env['SWIGFLAGS'] = swig_flags
 env['SWIGPATH']  = [OCC_INC]
 env['LIBS']=AVAILABLE_OCC_LIBS
-env['LIBS']=EXTRA_LIBS
+env['LIBS']=AVAILABLE_EXTRA_LIBS
 #
 # Build
 #
