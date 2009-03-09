@@ -288,8 +288,7 @@ for opt in SWIG_OPTS:
 	swig_flags += ' '+opt 
 env['SWIGFLAGS'] = swig_flags
 env['SWIGPATH']  = [OCC_INC]
-env['LIBS']=AVAILABLE_OCC_LIBS
-env['LIBS']=AVAILABLE_EXTRA_LIBS
+env['LIBS']=AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
 #
 # Build
 #
