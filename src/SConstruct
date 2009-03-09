@@ -74,7 +74,8 @@ if sconsVersion<9806.0 and not os.environ.has_key('NO_SCONS_GET_RECENT'):
 # Create environment
 #
 env = Environment()
-BuildDir(os.path.join(os.getcwd(),'essai_OCC'), '.', duplicate=0)
+BUILD_DIR = os.path.join(os.getcwd(),'..','build','OCC')
+BuildDir(BUILD_DIR,'.',duplicate = 0)
 #
 # First define platform specific settings
 #
@@ -104,7 +105,7 @@ if sys.platform=='win32':
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = ['WNT','WIN32','_WINDOWS','CSFDB','NDEBUG']
     ECA = ['/Ox','/MD','/W3','/GX','/link']
-    SWIG_OPTS = ['-O','-python','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+    SWIG_OPTS = ['-O','-python','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir',BUILD_DIR]
     ELA = []
     EXTRA_LIBS = []    
 elif sys.platform=='linux2':
@@ -118,7 +119,7 @@ elif sys.platform=='linux2':
     DEFINE_MACROS = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL',('_GNU_SOURCE','1')]
     SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
-                 '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+                 '-outdir',BUILD_DIR]
     ECA = ['-O0']
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined']
@@ -133,7 +134,7 @@ elif sys.platform=='darwin':
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]
     SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-DOCC_CONVERT_SIGNALS',\
-                 '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+                 '-outdir',BUILD_DIR]
     ECA = ['-O0']
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined']
@@ -292,5 +293,5 @@ env['LIBS']=AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
 for module in MODULES:
 	module_name = module[0]
 	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
-	SHARED_Library_pathname = os.path.join(os.getcwd(),'build','%s'%module_name)
+	SHARED_Library_pathname = os.path.join(BUILD_DIR,'%s'%module_name)
 	env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
