@@ -139,7 +139,15 @@ print OCC_INC
 #
 # Build environment
 #
-env = Environment(ENV = {'PATH':os.environ['PATH']})
+env = Environment()
+if env['PLATFORM']=='win32':
+	env['ENV']['PATH']=os.environ['PATH'].split(';')
+	includes = os.environ['INCLUDE'].split(';')
+	print includes
+	env.Append(CPPPATH=os.environ['INCLUDE'].split(';'))
+	env.Append(LIBPATH=os.environ['LIB'].split(';'))
+	env['ENV']['TMP'] = os.environ['TMP']
+print dir(env)
 #
 # Build Options
 #
@@ -154,7 +162,7 @@ print 'Build pythonOCC %s for platform: %s'%(VERSION,env['PLATFORM'])
 env.Append(CXXFLAGS=ECA)
 env.Append(CPPDEFINES=DEFINE_MACROS)	
 	
-print 'C++ compiler: %s'%env['CC']
+print 'C++ compiler: %s'%env['CXX']
 #C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\bin\cl.exe /c /nologo /Ox /MD /W3 /GX /DNDEBUG -DWNT -D
 #WIN32 -D_WINDOWS -DCSFDB -IC:\Developpement\OpenCASCADE_6_3_0\ros\inc -IC:\Developpement\Python25\include -IC:
 #Developpement\Python25\PC /TpC:\DEVELO~1\PYTHON~2\src\SWIG_src_modular_win32\TColGeom2d_wrap.cpp /Fobuild\tem
@@ -171,6 +179,16 @@ if env['PLATFORM']!='win32':
 #
 # Check configuration
 #
+def CheckPygccxml(context):
+	context.Message('Checking for pygccxml ...')
+	if env.Detect('gccxml') == None:
+		context.Result(False)
+		GCCXML = False
+	else:
+		context.Result(True)
+		GCCXML = False
+		return True
+		
 def CheckSwig(context):
 	context.Message('Checking for swig ...')
 	if env.Detect('swig') == None:
@@ -228,7 +246,7 @@ libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 
              'XmlXCAFPlugin']
 for lib in libraries:
 	if not conf.CheckLib(lib, language = "C++"):
-		Exit(1)
+		pass#Exit(1)
 #
 # End Configuration check
 #
@@ -254,10 +272,13 @@ for opt in SWIG_OPTS:
 	swig_flags += ' '+opt 
 env['SWIGFLAGS'] = swig_flags
 env['SWIGPATH']  = [OCC_INC]
+env['LIBS']=libraries
+# Test
+#env.SharedLibrary('test', ['test.i'],SHLIBPREFIX = '_',SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 #
 # Build
 #
 for module in MODULES:
 	module_name = module[0]
 	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
-	env.SharedLibrary('%s'%module_name, [SWIG_source_file],SHLIBPREFIX = '_')
+	env.SharedLibrary('%s'%module_name, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
