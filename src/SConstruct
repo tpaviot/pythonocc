@@ -172,8 +172,10 @@ print 'C++ compiler: %s'%env['CXX']
 # Setting paths
 #
 PYTHON_INC = sysconfig.get_python_inc() #Platform independant statement
+PYTHON_LIB = sysconfig.get_python_lib()
 env.Append( CPPPATH= [PYTHON_INC,OCC_INC])
 env.Append( LIBPATH = [OCC_LIB] )
+env.Append( LIBPATH = PYHON_LIB)
 if env['PLATFORM']!='win32':
     env.Append( CPPPATH= [CONFIG_H_PATH])
 #
