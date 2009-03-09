@@ -78,7 +78,7 @@ if sconsVersion<9806.0 and not os.environ.has_key('NO_SCONS_GET_RECENT'):
 #
 # Define pythonOCC version
 #
-VERSION = '0.2-wo'
+VERSION = 'wo0.2'
 #
 # Define paths
 #
@@ -108,7 +108,7 @@ elif sys.platform=='linux2':
     architecture = commands.getoutput('apt-cache').split(" ")[3] #returns i386, i686 etc.
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     OCC_INC = '/usr/local/inc' # Ubuntu 8.04 Hardy default installation path for headers
-    CONFIG_H_PATH = 'complete'
+    CONFIG_H_PATH = '/usr/local/inc'
     OCC_LIB = '/usr/local/lib' # Ubuntu 8.04 Hardy default installation path for libraries
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
@@ -231,7 +231,7 @@ conf.CheckCXXHeader('stdexcept','<>')
 #
 # Check OpenCascade libs
 #
-libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
+ALL_OCC_LIBRAIRIES = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
              'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
              'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', 'TKCDLFront', 'TKCPPClient', 'TKCPPExt',\
              'TKCPPIntExt', 'TKCPPJini', 'TKCSFDBSchema', 'TKDCAF', 'TKDraw', 'TKernel',\
@@ -244,9 +244,10 @@ libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 
              'TKXDEDRAW', 'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
              'TKXmlXCAF', 'TKXSBase', 'TKXSDRAW','XCAFPlugin', 'XmlLPlugin', 'XmlPlugin',\
              'XmlXCAFPlugin']
-for lib in libraries:
-	if not conf.CheckLib(lib, language = "C++"):
-		pass#Exit(1)
+AVAILABLE_OCC_LIBS = []
+for lib in ALL_OCC_LIBRAIRIES:
+	if conf.CheckLib(lib, language = "C++"):
+		AVAILABLE_OCC_LIBS.append(lib)
 #
 # End Configuration check
 #
@@ -272,7 +273,7 @@ for opt in SWIG_OPTS:
 	swig_flags += ' '+opt 
 env['SWIGFLAGS'] = swig_flags
 env['SWIGPATH']  = [OCC_INC]
-env['LIBS']=libraries
+env['LIBS']=AVAILABLE_OCC_LIBS
 # Test
 #env.SharedLibrary('test', ['test.i'],SHLIBPREFIX = '_',SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 #
