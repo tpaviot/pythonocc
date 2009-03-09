@@ -160,7 +160,8 @@ print 'Build pythonOCC %s for platform: %s'%(VERSION,env['PLATFORM'])
 
 env.Append(CXXFLAGS=ECA)
 env.Append(CPPDEFINES=DEFINE_MACROS)	
-	
+env.Append(LINKFLAGS=ELA)
+
 print 'C++ compiler: %s'%env['CXX']
 #C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\bin\cl.exe /c /nologo /Ox /MD /W3 /GX /DNDEBUG -DWNT -D
 #WIN32 -D_WINDOWS -DCSFDB -IC:\Developpement\OpenCASCADE_6_3_0\ros\inc -IC:\Developpement\Python25\include -IC:
