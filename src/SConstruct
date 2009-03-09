@@ -103,7 +103,7 @@ if sys.platform=='win32':
     ECA = ['/Ox','/MD','/W3','/GX','/link']
     SWIG_OPTS = ['-O','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ELA = []
-    
+    EXTRA_LIBS = []    
 elif sys.platform=='linux2':
     architecture = commands.getoutput('apt-cache').split(" ")[3] #returns i386, i686 etc.
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
@@ -118,7 +118,8 @@ elif sys.platform=='linux2':
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
-    ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
+    ELA = ['-Wl,--no-undefined']
+    EXTRA_LIBS = ['m','stc++',lib_python]
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     architecture = commands.getoutput('apt-cache').split(" ")[3] #returns i386, i686 etc.
@@ -132,10 +133,10 @@ elif sys.platform=='darwin':
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
-    ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
+    ELA = ['-Wl,--no-undefined']
+    EXTRA_LIBS = ['m','stc++',lib_python]
 else:
     raise "Unsupported platform"
-print OCC_INC
 #
 # Build environment
 #
@@ -143,11 +144,9 @@ env = Environment()
 if env['PLATFORM']=='win32':
 	env['ENV']['PATH']=os.environ['PATH'].split(';')
 	includes = os.environ['INCLUDE'].split(';')
-	print includes
 	env.Append(CPPPATH=os.environ['INCLUDE'].split(';'))
 	env.Append(LIBPATH=os.environ['LIB'].split(';'))
 	env['ENV']['TMP'] = os.environ['TMP']
-print dir(env)
 #
 # Build Options
 #
@@ -227,11 +226,12 @@ conf.CheckCXXHeader('stdlib.h','<>')
 conf.CheckCXXHeader('string.h','<>')
 conf.CheckCXXHeader('Python.h','<>')
 conf.CheckCXXHeader('stdexcept','<>')
-
 #
-# Check OpenCascade libs
+# Check available OpenCascade libs on dest machine
+# The ALL_ACC_LIBRARIES list is generated from the Windows distribution
+# of OpenCascade6.3.0
 #
-ALL_OCC_LIBRAIRIES = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
+ALL_OCC_LIBRARIES = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
              'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
              'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', 'TKCDLFront', 'TKCPPClient', 'TKCPPExt',\
              'TKCPPIntExt', 'TKCPPJini', 'TKCSFDBSchema', 'TKDCAF', 'TKDraw', 'TKernel',\
@@ -245,13 +245,25 @@ ALL_OCC_LIBRAIRIES = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 
              'TKXmlXCAF', 'TKXSBase', 'TKXSDRAW','XCAFPlugin', 'XmlLPlugin', 'XmlPlugin',\
              'XmlXCAFPlugin']
 AVAILABLE_OCC_LIBS = []
-for lib in ALL_OCC_LIBRAIRIES:
+for lib in ALL_OCC_LIBRARIES:
 	if conf.CheckLib(lib, language = "C++"):
 		AVAILABLE_OCC_LIBS.append(lib)
+#
+# Check extra libs
+#
+for extra_lib in EXTRA_LIBS:
+	conf.CheckLib(extra_lib, language = "C++")
 #
 # End Configuration check
 #
 env = conf.Finish()
+#
+# SConscript
+#
+buildDir=os.path.join(os.getcwd(),'build_scons')
+#env.SConscript(dirs=['.'],build_dir=buildDir,duplicate=0)
+SConscript('SConscript', build_dir=buildDir, duplicate=0, exports={'MODE':'release'})
+
 ##############################
 #### pythonOCC build #########
 ##############################
@@ -274,8 +286,7 @@ for opt in SWIG_OPTS:
 env['SWIGFLAGS'] = swig_flags
 env['SWIGPATH']  = [OCC_INC]
 env['LIBS']=AVAILABLE_OCC_LIBS
-# Test
-#env.SharedLibrary('test', ['test.i'],SHLIBPREFIX = '_',SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+env['LIBS']=EXTRA_LIBS
 #
 # Build
 #
