@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepClass3d_DataMapNodeOfMapOfInter();
-		%feature("autodoc", "1");
 		Handle_BRepClass3d_DataMapNodeOfMapOfInter();
 		%feature("autodoc", "1");
 		Handle_BRepClass3d_DataMapNodeOfMapOfInter(const Handle_BRepClass3d_DataMapNodeOfMapOfInter &aHandle);
@@ -116,6 +114,11 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 %extend Handle_BRepClass3d_DataMapNodeOfMapOfInter {
 	BRepClass3d_DataMapNodeOfMapOfInter* GetObject() {
 	return (BRepClass3d_DataMapNodeOfMapOfInter*)$self->Access();
+	}
+};
+%extend Handle_BRepClass3d_DataMapNodeOfMapOfInter {
+	~Handle_BRepClass3d_DataMapNodeOfMapOfInter() {
+	printf("Call custom destructor for instance of Handle_BRepClass3d_DataMapNodeOfMapOfInter\n");
 	}
 };
 
@@ -314,13 +317,16 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 		Standard_Address & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepClass3d_DataMapNodeOfMapOfInter();
 
 };
 %extend BRepClass3d_DataMapNodeOfMapOfInter {
 	Handle_BRepClass3d_DataMapNodeOfMapOfInter GetHandle() {
 	return *(Handle_BRepClass3d_DataMapNodeOfMapOfInter*) &$self;
+	}
+};
+%extend BRepClass3d_DataMapNodeOfMapOfInter {
+	~BRepClass3d_DataMapNodeOfMapOfInter() {
+	printf("Call custom destructor for instance of BRepClass3d_DataMapNodeOfMapOfInter\n");
 	}
 };
 

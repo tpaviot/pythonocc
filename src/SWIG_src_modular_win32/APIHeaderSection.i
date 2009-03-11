@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_APIHeaderSection_EditHeader : public Handle_IFSelect_Editor {
 	public:
 		%feature("autodoc", "1");
-		~Handle_APIHeaderSection_EditHeader();
-		%feature("autodoc", "1");
 		Handle_APIHeaderSection_EditHeader();
 		%feature("autodoc", "1");
 		Handle_APIHeaderSection_EditHeader(const Handle_APIHeaderSection_EditHeader &aHandle);
@@ -116,6 +114,11 @@ class Handle_APIHeaderSection_EditHeader : public Handle_IFSelect_Editor {
 %extend Handle_APIHeaderSection_EditHeader {
 	APIHeaderSection_EditHeader* GetObject() {
 	return (APIHeaderSection_EditHeader*)$self->Access();
+	}
+};
+%extend Handle_APIHeaderSection_EditHeader {
+	~Handle_APIHeaderSection_EditHeader() {
+	printf("Call custom destructor for instance of Handle_APIHeaderSection_EditHeader\n");
 	}
 };
 
@@ -136,13 +139,16 @@ class APIHeaderSection_EditHeader : public IFSelect_Editor {
 		virtual		Standard_Boolean Load(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~APIHeaderSection_EditHeader();
 
 };
 %extend APIHeaderSection_EditHeader {
 	Handle_APIHeaderSection_EditHeader GetHandle() {
 	return *(Handle_APIHeaderSection_EditHeader*) &$self;
+	}
+};
+%extend APIHeaderSection_EditHeader {
+	~APIHeaderSection_EditHeader() {
+	printf("Call custom destructor for instance of APIHeaderSection_EditHeader\n");
 	}
 };
 

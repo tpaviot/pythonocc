@@ -108,8 +108,6 @@ enum StepDimTol_LimitCondition {
 class Handle_StepDimTol_DatumTarget : public Handle_StepRepr_ShapeAspect {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepDimTol_DatumTarget();
-		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumTarget();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumTarget(const Handle_StepDimTol_DatumTarget &aHandle);
@@ -124,12 +122,15 @@ class Handle_StepDimTol_DatumTarget : public Handle_StepRepr_ShapeAspect {
 	return (StepDimTol_DatumTarget*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_DatumTarget {
+	~Handle_StepDimTol_DatumTarget() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_DatumTarget\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_PlacedDatumTargetFeature;
 class Handle_StepDimTol_PlacedDatumTargetFeature : public Handle_StepDimTol_DatumTarget {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_PlacedDatumTargetFeature();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_PlacedDatumTargetFeature();
 		%feature("autodoc", "1");
@@ -145,12 +146,15 @@ class Handle_StepDimTol_PlacedDatumTargetFeature : public Handle_StepDimTol_Datu
 	return (StepDimTol_PlacedDatumTargetFeature*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_PlacedDatumTargetFeature {
+	~Handle_StepDimTol_PlacedDatumTargetFeature() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_PlacedDatumTargetFeature\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_HArray1OfDatumReference;
 class Handle_StepDimTol_HArray1OfDatumReference : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_HArray1OfDatumReference();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_HArray1OfDatumReference();
 		%feature("autodoc", "1");
@@ -166,12 +170,15 @@ class Handle_StepDimTol_HArray1OfDatumReference : public Handle_MMgt_TShared {
 	return (StepDimTol_HArray1OfDatumReference*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_HArray1OfDatumReference {
+	~Handle_StepDimTol_HArray1OfDatumReference() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_HArray1OfDatumReference\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_GeometricTolerance;
 class Handle_StepDimTol_GeometricTolerance : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_GeometricTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeometricTolerance();
 		%feature("autodoc", "1");
@@ -187,12 +194,15 @@ class Handle_StepDimTol_GeometricTolerance : public Handle_MMgt_TShared {
 	return (StepDimTol_GeometricTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_GeometricTolerance {
+	~Handle_StepDimTol_GeometricTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_GeometricTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_GeometricToleranceWithDatumReference;
 class Handle_StepDimTol_GeometricToleranceWithDatumReference : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_GeometricToleranceWithDatumReference();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeometricToleranceWithDatumReference();
 		%feature("autodoc", "1");
@@ -208,12 +218,15 @@ class Handle_StepDimTol_GeometricToleranceWithDatumReference : public Handle_Ste
 	return (StepDimTol_GeometricToleranceWithDatumReference*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_GeometricToleranceWithDatumReference {
+	~Handle_StepDimTol_GeometricToleranceWithDatumReference() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_GeometricToleranceWithDatumReference\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_CoaxialityTolerance;
 class Handle_StepDimTol_CoaxialityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_CoaxialityTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CoaxialityTolerance();
 		%feature("autodoc", "1");
@@ -229,12 +242,15 @@ class Handle_StepDimTol_CoaxialityTolerance : public Handle_StepDimTol_Geometric
 	return (StepDimTol_CoaxialityTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_CoaxialityTolerance {
+	~Handle_StepDimTol_CoaxialityTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_CoaxialityTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_Datum;
 class Handle_StepDimTol_Datum : public Handle_StepRepr_ShapeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_Datum();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_Datum();
 		%feature("autodoc", "1");
@@ -250,12 +266,15 @@ class Handle_StepDimTol_Datum : public Handle_StepRepr_ShapeAspect {
 	return (StepDimTol_Datum*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_Datum {
+	~Handle_StepDimTol_Datum() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_Datum\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_LineProfileTolerance;
 class Handle_StepDimTol_LineProfileTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_LineProfileTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_LineProfileTolerance();
 		%feature("autodoc", "1");
@@ -271,12 +290,15 @@ class Handle_StepDimTol_LineProfileTolerance : public Handle_StepDimTol_Geometri
 	return (StepDimTol_LineProfileTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_LineProfileTolerance {
+	~Handle_StepDimTol_LineProfileTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_LineProfileTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_AngularityTolerance;
 class Handle_StepDimTol_AngularityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_AngularityTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_AngularityTolerance();
 		%feature("autodoc", "1");
@@ -292,12 +314,15 @@ class Handle_StepDimTol_AngularityTolerance : public Handle_StepDimTol_Geometric
 	return (StepDimTol_AngularityTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_AngularityTolerance {
+	~Handle_StepDimTol_AngularityTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_AngularityTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_CircularRunoutTolerance;
 class Handle_StepDimTol_CircularRunoutTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_CircularRunoutTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CircularRunoutTolerance();
 		%feature("autodoc", "1");
@@ -313,12 +338,15 @@ class Handle_StepDimTol_CircularRunoutTolerance : public Handle_StepDimTol_Geome
 	return (StepDimTol_CircularRunoutTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_CircularRunoutTolerance {
+	~Handle_StepDimTol_CircularRunoutTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_CircularRunoutTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_TotalRunoutTolerance;
 class Handle_StepDimTol_TotalRunoutTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_TotalRunoutTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_TotalRunoutTolerance();
 		%feature("autodoc", "1");
@@ -334,12 +362,15 @@ class Handle_StepDimTol_TotalRunoutTolerance : public Handle_StepDimTol_Geometri
 	return (StepDimTol_TotalRunoutTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_TotalRunoutTolerance {
+	~Handle_StepDimTol_TotalRunoutTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_TotalRunoutTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_PositionTolerance;
 class Handle_StepDimTol_PositionTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_PositionTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_PositionTolerance();
 		%feature("autodoc", "1");
@@ -355,12 +386,15 @@ class Handle_StepDimTol_PositionTolerance : public Handle_StepDimTol_GeometricTo
 	return (StepDimTol_PositionTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_PositionTolerance {
+	~Handle_StepDimTol_PositionTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_PositionTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_GeometricToleranceRelationship;
 class Handle_StepDimTol_GeometricToleranceRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_GeometricToleranceRelationship();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeometricToleranceRelationship();
 		%feature("autodoc", "1");
@@ -376,12 +410,15 @@ class Handle_StepDimTol_GeometricToleranceRelationship : public Handle_MMgt_TSha
 	return (StepDimTol_GeometricToleranceRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_GeometricToleranceRelationship {
+	~Handle_StepDimTol_GeometricToleranceRelationship() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_GeometricToleranceRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_ConcentricityTolerance;
 class Handle_StepDimTol_ConcentricityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_ConcentricityTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_ConcentricityTolerance();
 		%feature("autodoc", "1");
@@ -397,12 +434,15 @@ class Handle_StepDimTol_ConcentricityTolerance : public Handle_StepDimTol_Geomet
 	return (StepDimTol_ConcentricityTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_ConcentricityTolerance {
+	~Handle_StepDimTol_ConcentricityTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_ConcentricityTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_ParallelismTolerance;
 class Handle_StepDimTol_ParallelismTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_ParallelismTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_ParallelismTolerance();
 		%feature("autodoc", "1");
@@ -418,12 +458,15 @@ class Handle_StepDimTol_ParallelismTolerance : public Handle_StepDimTol_Geometri
 	return (StepDimTol_ParallelismTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_ParallelismTolerance {
+	~Handle_StepDimTol_ParallelismTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_ParallelismTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_PerpendicularityTolerance;
 class Handle_StepDimTol_PerpendicularityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_PerpendicularityTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_PerpendicularityTolerance();
 		%feature("autodoc", "1");
@@ -439,12 +482,15 @@ class Handle_StepDimTol_PerpendicularityTolerance : public Handle_StepDimTol_Geo
 	return (StepDimTol_PerpendicularityTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_PerpendicularityTolerance {
+	~Handle_StepDimTol_PerpendicularityTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_PerpendicularityTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_StraightnessTolerance;
 class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_StraightnessTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_StraightnessTolerance();
 		%feature("autodoc", "1");
@@ -460,12 +506,15 @@ class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_Geometr
 	return (StepDimTol_StraightnessTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_StraightnessTolerance {
+	~Handle_StepDimTol_StraightnessTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_StraightnessTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_FlatnessTolerance;
 class Handle_StepDimTol_FlatnessTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_FlatnessTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_FlatnessTolerance();
 		%feature("autodoc", "1");
@@ -481,12 +530,15 @@ class Handle_StepDimTol_FlatnessTolerance : public Handle_StepDimTol_GeometricTo
 	return (StepDimTol_FlatnessTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_FlatnessTolerance {
+	~Handle_StepDimTol_FlatnessTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_FlatnessTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_DatumReference;
 class Handle_StepDimTol_DatumReference : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_DatumReference();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumReference();
 		%feature("autodoc", "1");
@@ -502,12 +554,15 @@ class Handle_StepDimTol_DatumReference : public Handle_MMgt_TShared {
 	return (StepDimTol_DatumReference*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_DatumReference {
+	~Handle_StepDimTol_DatumReference() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_DatumReference\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_DatumFeature;
 class Handle_StepDimTol_DatumFeature : public Handle_StepRepr_ShapeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_DatumFeature();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumFeature();
 		%feature("autodoc", "1");
@@ -523,12 +578,15 @@ class Handle_StepDimTol_DatumFeature : public Handle_StepRepr_ShapeAspect {
 	return (StepDimTol_DatumFeature*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_DatumFeature {
+	~Handle_StepDimTol_DatumFeature() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_DatumFeature\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_CylindricityTolerance;
 class Handle_StepDimTol_CylindricityTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_CylindricityTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CylindricityTolerance();
 		%feature("autodoc", "1");
@@ -544,12 +602,15 @@ class Handle_StepDimTol_CylindricityTolerance : public Handle_StepDimTol_Geometr
 	return (StepDimTol_CylindricityTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_CylindricityTolerance {
+	~Handle_StepDimTol_CylindricityTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_CylindricityTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_SymmetryTolerance;
 class Handle_StepDimTol_SymmetryTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_SymmetryTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_SymmetryTolerance();
 		%feature("autodoc", "1");
@@ -565,12 +626,15 @@ class Handle_StepDimTol_SymmetryTolerance : public Handle_StepDimTol_GeometricTo
 	return (StepDimTol_SymmetryTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_SymmetryTolerance {
+	~Handle_StepDimTol_SymmetryTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_SymmetryTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_SurfaceProfileTolerance;
 class Handle_StepDimTol_SurfaceProfileTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_SurfaceProfileTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_SurfaceProfileTolerance();
 		%feature("autodoc", "1");
@@ -586,12 +650,15 @@ class Handle_StepDimTol_SurfaceProfileTolerance : public Handle_StepDimTol_Geome
 	return (StepDimTol_SurfaceProfileTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_SurfaceProfileTolerance {
+	~Handle_StepDimTol_SurfaceProfileTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_SurfaceProfileTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_ModifiedGeometricTolerance;
 class Handle_StepDimTol_ModifiedGeometricTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_ModifiedGeometricTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_ModifiedGeometricTolerance();
 		%feature("autodoc", "1");
@@ -607,12 +674,15 @@ class Handle_StepDimTol_ModifiedGeometricTolerance : public Handle_StepDimTol_Ge
 	return (StepDimTol_ModifiedGeometricTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_ModifiedGeometricTolerance {
+	~Handle_StepDimTol_ModifiedGeometricTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_ModifiedGeometricTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_CommonDatum;
 class Handle_StepDimTol_CommonDatum : public Handle_StepRepr_CompositeShapeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_CommonDatum();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CommonDatum();
 		%feature("autodoc", "1");
@@ -628,12 +698,15 @@ class Handle_StepDimTol_CommonDatum : public Handle_StepRepr_CompositeShapeAspec
 	return (StepDimTol_CommonDatum*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_CommonDatum {
+	~Handle_StepDimTol_CommonDatum() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_CommonDatum\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_RoundnessTolerance;
 class Handle_StepDimTol_RoundnessTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_RoundnessTolerance();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_RoundnessTolerance();
 		%feature("autodoc", "1");
@@ -649,12 +722,15 @@ class Handle_StepDimTol_RoundnessTolerance : public Handle_StepDimTol_GeometricT
 	return (StepDimTol_RoundnessTolerance*)$self->Access();
 	}
 };
+%extend Handle_StepDimTol_RoundnessTolerance {
+	~Handle_StepDimTol_RoundnessTolerance() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_RoundnessTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
 class Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public Handle_StepDimTol_GeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
 		%feature("autodoc", "1");
@@ -668,6 +744,11 @@ class Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public H
 %extend Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol* GetObject() {
 	return (StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol*)$self->Access();
+	}
+};
+%extend Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
+	~Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol() {
+	printf("Call custom destructor for instance of Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol\n");
 	}
 };
 
@@ -696,13 +777,16 @@ class StepDimTol_GeometricTolerance : public MMgt_TShared {
 		void SetTolerancedShapeAspect(const Handle_StepRepr_ShapeAspect &TolerancedShapeAspect);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_GeometricTolerance();
 
 };
 %extend StepDimTol_GeometricTolerance {
 	Handle_StepDimTol_GeometricTolerance GetHandle() {
 	return *(Handle_StepDimTol_GeometricTolerance*) &$self;
+	}
+};
+%extend StepDimTol_GeometricTolerance {
+	~StepDimTol_GeometricTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_GeometricTolerance\n");
 	}
 };
 
@@ -711,13 +795,16 @@ class StepDimTol_StraightnessTolerance : public StepDimTol_GeometricTolerance {
 	public:
 		%feature("autodoc", "1");
 		StepDimTol_StraightnessTolerance();
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_StraightnessTolerance();
 
 };
 %extend StepDimTol_StraightnessTolerance {
 	Handle_StepDimTol_StraightnessTolerance GetHandle() {
 	return *(Handle_StepDimTol_StraightnessTolerance*) &$self;
+	}
+};
+%extend StepDimTol_StraightnessTolerance {
+	~StepDimTol_StraightnessTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_StraightnessTolerance\n");
 	}
 };
 
@@ -728,13 +815,16 @@ class StepDimTol_LineProfileTolerance : public StepDimTol_GeometricTolerance {
 		StepDimTol_LineProfileTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_LineProfileTolerance();
 
 };
 %extend StepDimTol_LineProfileTolerance {
 	Handle_StepDimTol_LineProfileTolerance GetHandle() {
 	return *(Handle_StepDimTol_LineProfileTolerance*) &$self;
+	}
+};
+%extend StepDimTol_LineProfileTolerance {
+	~StepDimTol_LineProfileTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_LineProfileTolerance\n");
 	}
 };
 
@@ -745,13 +835,16 @@ class StepDimTol_SurfaceProfileTolerance : public StepDimTol_GeometricTolerance 
 		StepDimTol_SurfaceProfileTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_SurfaceProfileTolerance();
 
 };
 %extend StepDimTol_SurfaceProfileTolerance {
 	Handle_StepDimTol_SurfaceProfileTolerance GetHandle() {
 	return *(Handle_StepDimTol_SurfaceProfileTolerance*) &$self;
+	}
+};
+%extend StepDimTol_SurfaceProfileTolerance {
+	~StepDimTol_SurfaceProfileTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_SurfaceProfileTolerance\n");
 	}
 };
 
@@ -762,13 +855,16 @@ class StepDimTol_CylindricityTolerance : public StepDimTol_GeometricTolerance {
 		StepDimTol_CylindricityTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_CylindricityTolerance();
 
 };
 %extend StepDimTol_CylindricityTolerance {
 	Handle_StepDimTol_CylindricityTolerance GetHandle() {
 	return *(Handle_StepDimTol_CylindricityTolerance*) &$self;
+	}
+};
+%extend StepDimTol_CylindricityTolerance {
+	~StepDimTol_CylindricityTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_CylindricityTolerance\n");
 	}
 };
 
@@ -779,13 +875,16 @@ class StepDimTol_RoundnessTolerance : public StepDimTol_GeometricTolerance {
 		StepDimTol_RoundnessTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_RoundnessTolerance();
 
 };
 %extend StepDimTol_RoundnessTolerance {
 	Handle_StepDimTol_RoundnessTolerance GetHandle() {
 	return *(Handle_StepDimTol_RoundnessTolerance*) &$self;
+	}
+};
+%extend StepDimTol_RoundnessTolerance {
+	~StepDimTol_RoundnessTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_RoundnessTolerance\n");
 	}
 };
 
@@ -838,13 +937,16 @@ class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
 		void SetTargetId(const Handle_TCollection_HAsciiString &TargetId);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_DatumTarget();
 
 };
 %extend StepDimTol_DatumTarget {
 	Handle_StepDimTol_DatumTarget GetHandle() {
 	return *(Handle_StepDimTol_DatumTarget*) &$self;
+	}
+};
+%extend StepDimTol_DatumTarget {
+	~StepDimTol_DatumTarget() {
+	printf("Call custom destructor for instance of StepDimTol_DatumTarget\n");
 	}
 };
 
@@ -861,13 +963,16 @@ class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_Geomet
 		void SetDatumSystem(const Handle_StepDimTol_HArray1OfDatumReference &DatumSystem);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_GeometricToleranceWithDatumReference();
 
 };
 %extend StepDimTol_GeometricToleranceWithDatumReference {
 	Handle_StepDimTol_GeometricToleranceWithDatumReference GetHandle() {
 	return *(Handle_StepDimTol_GeometricToleranceWithDatumReference*) &$self;
+	}
+};
+%extend StepDimTol_GeometricToleranceWithDatumReference {
+	~StepDimTol_GeometricToleranceWithDatumReference() {
+	printf("Call custom destructor for instance of StepDimTol_GeometricToleranceWithDatumReference\n");
 	}
 };
 
@@ -876,13 +981,16 @@ class StepDimTol_AngularityTolerance : public StepDimTol_GeometricToleranceWithD
 	public:
 		%feature("autodoc", "1");
 		StepDimTol_AngularityTolerance();
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_AngularityTolerance();
 
 };
 %extend StepDimTol_AngularityTolerance {
 	Handle_StepDimTol_AngularityTolerance GetHandle() {
 	return *(Handle_StepDimTol_AngularityTolerance*) &$self;
+	}
+};
+%extend StepDimTol_AngularityTolerance {
+	~StepDimTol_AngularityTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_AngularityTolerance\n");
 	}
 };
 
@@ -893,13 +1001,16 @@ class StepDimTol_ConcentricityTolerance : public StepDimTol_GeometricToleranceWi
 		StepDimTol_ConcentricityTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_ConcentricityTolerance();
 
 };
 %extend StepDimTol_ConcentricityTolerance {
 	Handle_StepDimTol_ConcentricityTolerance GetHandle() {
 	return *(Handle_StepDimTol_ConcentricityTolerance*) &$self;
+	}
+};
+%extend StepDimTol_ConcentricityTolerance {
+	~StepDimTol_ConcentricityTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_ConcentricityTolerance\n");
 	}
 };
 
@@ -910,13 +1021,16 @@ class StepDimTol_PlacedDatumTargetFeature : public StepDimTol_DatumTarget {
 		StepDimTol_PlacedDatumTargetFeature();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_PlacedDatumTargetFeature();
 
 };
 %extend StepDimTol_PlacedDatumTargetFeature {
 	Handle_StepDimTol_PlacedDatumTargetFeature GetHandle() {
 	return *(Handle_StepDimTol_PlacedDatumTargetFeature*) &$self;
+	}
+};
+%extend StepDimTol_PlacedDatumTargetFeature {
+	~StepDimTol_PlacedDatumTargetFeature() {
+	printf("Call custom destructor for instance of StepDimTol_PlacedDatumTargetFeature\n");
 	}
 };
 
@@ -927,13 +1041,16 @@ class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWith
 		StepDimTol_TotalRunoutTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_TotalRunoutTolerance();
 
 };
 %extend StepDimTol_TotalRunoutTolerance {
 	Handle_StepDimTol_TotalRunoutTolerance GetHandle() {
 	return *(Handle_StepDimTol_TotalRunoutTolerance*) &$self;
+	}
+};
+%extend StepDimTol_TotalRunoutTolerance {
+	~StepDimTol_TotalRunoutTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_TotalRunoutTolerance\n");
 	}
 };
 
@@ -944,13 +1061,16 @@ class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWith
 		StepDimTol_ParallelismTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_ParallelismTolerance();
 
 };
 %extend StepDimTol_ParallelismTolerance {
 	Handle_StepDimTol_ParallelismTolerance GetHandle() {
 	return *(Handle_StepDimTol_ParallelismTolerance*) &$self;
+	}
+};
+%extend StepDimTol_ParallelismTolerance {
+	~StepDimTol_ParallelismTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_ParallelismTolerance\n");
 	}
 };
 
@@ -961,13 +1081,16 @@ class StepDimTol_PerpendicularityTolerance : public StepDimTol_GeometricToleranc
 		StepDimTol_PerpendicularityTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_PerpendicularityTolerance();
 
 };
 %extend StepDimTol_PerpendicularityTolerance {
 	Handle_StepDimTol_PerpendicularityTolerance GetHandle() {
 	return *(Handle_StepDimTol_PerpendicularityTolerance*) &$self;
+	}
+};
+%extend StepDimTol_PerpendicularityTolerance {
+	~StepDimTol_PerpendicularityTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_PerpendicularityTolerance\n");
 	}
 };
 
@@ -992,13 +1115,16 @@ class StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public StepDimT
 		Handle_StepDimTol_PositionTolerance GetPositionTolerance() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
 
 };
 %extend StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol GetHandle() {
 	return *(Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol*) &$self;
+	}
+};
+%extend StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
+	~StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol() {
+	printf("Call custom destructor for instance of StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol\n");
 	}
 };
 
@@ -1015,13 +1141,16 @@ class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
 		void SetDatum(const Handle_StepDimTol_Datum &Datum);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_CommonDatum();
 
 };
 %extend StepDimTol_CommonDatum {
 	Handle_StepDimTol_CommonDatum GetHandle() {
 	return *(Handle_StepDimTol_CommonDatum*) &$self;
+	}
+};
+%extend StepDimTol_CommonDatum {
+	~StepDimTol_CommonDatum() {
+	printf("Call custom destructor for instance of StepDimTol_CommonDatum\n");
 	}
 };
 
@@ -1038,13 +1167,16 @@ class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricToleran
 		void SetModifier(const StepDimTol_LimitCondition Modifier);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_ModifiedGeometricTolerance();
 
 };
 %extend StepDimTol_ModifiedGeometricTolerance {
 	Handle_StepDimTol_ModifiedGeometricTolerance GetHandle() {
 	return *(Handle_StepDimTol_ModifiedGeometricTolerance*) &$self;
+	}
+};
+%extend StepDimTol_ModifiedGeometricTolerance {
+	~StepDimTol_ModifiedGeometricTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_ModifiedGeometricTolerance\n");
 	}
 };
 
@@ -1055,13 +1187,16 @@ class StepDimTol_CircularRunoutTolerance : public StepDimTol_GeometricToleranceW
 		StepDimTol_CircularRunoutTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_CircularRunoutTolerance();
 
 };
 %extend StepDimTol_CircularRunoutTolerance {
 	Handle_StepDimTol_CircularRunoutTolerance GetHandle() {
 	return *(Handle_StepDimTol_CircularRunoutTolerance*) &$self;
+	}
+};
+%extend StepDimTol_CircularRunoutTolerance {
+	~StepDimTol_CircularRunoutTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_CircularRunoutTolerance\n");
 	}
 };
 
@@ -1072,13 +1207,16 @@ class StepDimTol_CoaxialityTolerance : public StepDimTol_GeometricToleranceWithD
 		StepDimTol_CoaxialityTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_CoaxialityTolerance();
 
 };
 %extend StepDimTol_CoaxialityTolerance {
 	Handle_StepDimTol_CoaxialityTolerance GetHandle() {
 	return *(Handle_StepDimTol_CoaxialityTolerance*) &$self;
+	}
+};
+%extend StepDimTol_CoaxialityTolerance {
+	~StepDimTol_CoaxialityTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_CoaxialityTolerance\n");
 	}
 };
 
@@ -1089,13 +1227,16 @@ class StepDimTol_FlatnessTolerance : public StepDimTol_GeometricTolerance {
 		StepDimTol_FlatnessTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_FlatnessTolerance();
 
 };
 %extend StepDimTol_FlatnessTolerance {
 	Handle_StepDimTol_FlatnessTolerance GetHandle() {
 	return *(Handle_StepDimTol_FlatnessTolerance*) &$self;
+	}
+};
+%extend StepDimTol_FlatnessTolerance {
+	~StepDimTol_FlatnessTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_FlatnessTolerance\n");
 	}
 };
 
@@ -1122,13 +1263,16 @@ class StepDimTol_DatumFeature : public StepRepr_ShapeAspect {
 		StepDimTol_DatumFeature();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_DatumFeature();
 
 };
 %extend StepDimTol_DatumFeature {
 	Handle_StepDimTol_DatumFeature GetHandle() {
 	return *(Handle_StepDimTol_DatumFeature*) &$self;
+	}
+};
+%extend StepDimTol_DatumFeature {
+	~StepDimTol_DatumFeature() {
+	printf("Call custom destructor for instance of StepDimTol_DatumFeature\n");
 	}
 };
 
@@ -1139,13 +1283,16 @@ class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDat
 		StepDimTol_SymmetryTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_SymmetryTolerance();
 
 };
 %extend StepDimTol_SymmetryTolerance {
 	Handle_StepDimTol_SymmetryTolerance GetHandle() {
 	return *(Handle_StepDimTol_SymmetryTolerance*) &$self;
+	}
+};
+%extend StepDimTol_SymmetryTolerance {
+	~StepDimTol_SymmetryTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_SymmetryTolerance\n");
 	}
 };
 
@@ -1166,13 +1313,16 @@ class StepDimTol_DatumReference : public MMgt_TShared {
 		void SetReferencedDatum(const Handle_StepDimTol_Datum &ReferencedDatum);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_DatumReference();
 
 };
 %extend StepDimTol_DatumReference {
 	Handle_StepDimTol_DatumReference GetHandle() {
 	return *(Handle_StepDimTol_DatumReference*) &$self;
+	}
+};
+%extend StepDimTol_DatumReference {
+	~StepDimTol_DatumReference() {
+	printf("Call custom destructor for instance of StepDimTol_DatumReference\n");
 	}
 };
 
@@ -1189,13 +1339,16 @@ class StepDimTol_Datum : public StepRepr_ShapeAspect {
 		void SetIdentification(const Handle_TCollection_HAsciiString &Identification);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_Datum();
 
 };
 %extend StepDimTol_Datum {
 	Handle_StepDimTol_Datum GetHandle() {
 	return *(Handle_StepDimTol_Datum*) &$self;
+	}
+};
+%extend StepDimTol_Datum {
+	~StepDimTol_Datum() {
+	printf("Call custom destructor for instance of StepDimTol_Datum\n");
 	}
 };
 
@@ -1206,13 +1359,16 @@ class StepDimTol_PositionTolerance : public StepDimTol_GeometricTolerance {
 		StepDimTol_PositionTolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_PositionTolerance();
 
 };
 %extend StepDimTol_PositionTolerance {
 	Handle_StepDimTol_PositionTolerance GetHandle() {
 	return *(Handle_StepDimTol_PositionTolerance*) &$self;
+	}
+};
+%extend StepDimTol_PositionTolerance {
+	~StepDimTol_PositionTolerance() {
+	printf("Call custom destructor for instance of StepDimTol_PositionTolerance\n");
 	}
 };
 
@@ -1241,13 +1397,16 @@ class StepDimTol_GeometricToleranceRelationship : public MMgt_TShared {
 		void SetRelatedGeometricTolerance(const Handle_StepDimTol_GeometricTolerance &RelatedGeometricTolerance);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_GeometricToleranceRelationship();
 
 };
 %extend StepDimTol_GeometricToleranceRelationship {
 	Handle_StepDimTol_GeometricToleranceRelationship GetHandle() {
 	return *(Handle_StepDimTol_GeometricToleranceRelationship*) &$self;
+	}
+};
+%extend StepDimTol_GeometricToleranceRelationship {
+	~StepDimTol_GeometricToleranceRelationship() {
+	printf("Call custom destructor for instance of StepDimTol_GeometricToleranceRelationship\n");
 	}
 };
 
@@ -1278,12 +1437,15 @@ class StepDimTol_HArray1OfDatumReference : public MMgt_TShared {
 		StepDimTol_Array1OfDatumReference & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepDimTol_HArray1OfDatumReference();
 
 };
 %extend StepDimTol_HArray1OfDatumReference {
 	Handle_StepDimTol_HArray1OfDatumReference GetHandle() {
 	return *(Handle_StepDimTol_HArray1OfDatumReference*) &$self;
+	}
+};
+%extend StepDimTol_HArray1OfDatumReference {
+	~StepDimTol_HArray1OfDatumReference() {
+	printf("Call custom destructor for instance of StepDimTol_HArray1OfDatumReference\n");
 	}
 };

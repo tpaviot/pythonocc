@@ -777,8 +777,6 @@ enum Quantity_NameOfColor {
 class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Quantity_ColorDefinitionError();
-		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError(const Handle_Quantity_ColorDefinitionError &aHandle);
@@ -793,12 +791,15 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 	return (Quantity_ColorDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Quantity_ColorDefinitionError {
+	~Handle_Quantity_ColorDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Quantity_ColorDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Quantity_PeriodDefinitionError;
 class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Quantity_PeriodDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError();
 		%feature("autodoc", "1");
@@ -814,12 +815,15 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 	return (Quantity_PeriodDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Quantity_PeriodDefinitionError {
+	~Handle_Quantity_PeriodDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Quantity_PeriodDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Quantity_HArray1OfColor;
 class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Quantity_HArray1OfColor();
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor();
 		%feature("autodoc", "1");
@@ -835,12 +839,15 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	return (Quantity_HArray1OfColor*)$self->Access();
 	}
 };
+%extend Handle_Quantity_HArray1OfColor {
+	~Handle_Quantity_HArray1OfColor() {
+	printf("Call custom destructor for instance of Handle_Quantity_HArray1OfColor\n");
+	}
+};
 
 %nodefaultctor Handle_Quantity_DateDefinitionError;
 class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Quantity_DateDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError();
 		%feature("autodoc", "1");
@@ -854,6 +861,11 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 %extend Handle_Quantity_DateDefinitionError {
 	Quantity_DateDefinitionError* GetObject() {
 	return (Quantity_DateDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_Quantity_DateDefinitionError {
+	~Handle_Quantity_DateDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Quantity_DateDefinitionError\n");
 	}
 };
 
@@ -1000,13 +1012,16 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_ColorDefinitionError();
 
 };
 %extend Quantity_ColorDefinitionError {
 	Handle_Quantity_ColorDefinitionError GetHandle() {
 	return *(Handle_Quantity_ColorDefinitionError*) &$self;
+	}
+};
+%extend Quantity_ColorDefinitionError {
+	~Quantity_ColorDefinitionError() {
+	printf("Call custom destructor for instance of Quantity_ColorDefinitionError\n");
 	}
 };
 
@@ -1025,13 +1040,16 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_PeriodDefinitionError();
 
 };
 %extend Quantity_PeriodDefinitionError {
 	Handle_Quantity_PeriodDefinitionError GetHandle() {
 	return *(Handle_Quantity_PeriodDefinitionError*) &$self;
+	}
+};
+%extend Quantity_PeriodDefinitionError {
+	~Quantity_PeriodDefinitionError() {
+	printf("Call custom destructor for instance of Quantity_PeriodDefinitionError\n");
 	}
 };
 
@@ -1228,13 +1246,16 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_DateDefinitionError();
 
 };
 %extend Quantity_DateDefinitionError {
 	Handle_Quantity_DateDefinitionError GetHandle() {
 	return *(Handle_Quantity_DateDefinitionError*) &$self;
+	}
+};
+%extend Quantity_DateDefinitionError {
+	~Quantity_DateDefinitionError() {
+	printf("Call custom destructor for instance of Quantity_DateDefinitionError\n");
 	}
 };
 
@@ -1265,13 +1286,16 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 		Quantity_Array1OfColor & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_HArray1OfColor();
 
 };
 %extend Quantity_HArray1OfColor {
 	Handle_Quantity_HArray1OfColor GetHandle() {
 	return *(Handle_Quantity_HArray1OfColor*) &$self;
+	}
+};
+%extend Quantity_HArray1OfColor {
+	~Quantity_HArray1OfColor() {
+	printf("Call custom destructor for instance of Quantity_HArray1OfColor\n");
 	}
 };
 

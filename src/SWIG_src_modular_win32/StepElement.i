@@ -165,8 +165,6 @@ enum StepElement_Element2dShape {
 class Handle_StepElement_SurfaceElementPurposeMember : public Handle_StepData_SelectNamed {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepElement_SurfaceElementPurposeMember();
-		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceElementPurposeMember(const Handle_StepElement_SurfaceElementPurposeMember &aHandle);
@@ -181,12 +179,15 @@ class Handle_StepElement_SurfaceElementPurposeMember : public Handle_StepData_Se
 	return (StepElement_SurfaceElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SurfaceElementPurposeMember {
+	~Handle_StepElement_SurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_SurfaceElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_ElementDescriptor;
 class Handle_StepElement_ElementDescriptor : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_ElementDescriptor();
 		%feature("autodoc", "1");
 		Handle_StepElement_ElementDescriptor();
 		%feature("autodoc", "1");
@@ -202,12 +203,15 @@ class Handle_StepElement_ElementDescriptor : public Handle_MMgt_TShared {
 	return (StepElement_ElementDescriptor*)$self->Access();
 	}
 };
+%extend Handle_StepElement_ElementDescriptor {
+	~Handle_StepElement_ElementDescriptor() {
+	printf("Call custom destructor for instance of Handle_StepElement_ElementDescriptor\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_Surface3dElementDescriptor;
 class Handle_StepElement_Surface3dElementDescriptor : public Handle_StepElement_ElementDescriptor {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_Surface3dElementDescriptor();
 		%feature("autodoc", "1");
 		Handle_StepElement_Surface3dElementDescriptor();
 		%feature("autodoc", "1");
@@ -223,12 +227,15 @@ class Handle_StepElement_Surface3dElementDescriptor : public Handle_StepElement_
 	return (StepElement_Surface3dElementDescriptor*)$self->Access();
 	}
 };
+%extend Handle_StepElement_Surface3dElementDescriptor {
+	~Handle_StepElement_Surface3dElementDescriptor() {
+	printf("Call custom destructor for instance of Handle_StepElement_Surface3dElementDescriptor\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_SurfaceSection;
 class Handle_StepElement_SurfaceSection : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_SurfaceSection();
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSection();
 		%feature("autodoc", "1");
@@ -244,12 +251,15 @@ class Handle_StepElement_SurfaceSection : public Handle_MMgt_TShared {
 	return (StepElement_SurfaceSection*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SurfaceSection {
+	~Handle_StepElement_SurfaceSection() {
+	printf("Call custom destructor for instance of Handle_StepElement_SurfaceSection\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember;
 class Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
@@ -265,12 +275,15 @@ class Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : publi
 	return (StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember {
+	~Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_CurveElementSectionDefinition;
 class Handle_StepElement_CurveElementSectionDefinition : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_CurveElementSectionDefinition();
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementSectionDefinition();
 		%feature("autodoc", "1");
@@ -286,12 +299,15 @@ class Handle_StepElement_CurveElementSectionDefinition : public Handle_MMgt_TSha
 	return (StepElement_CurveElementSectionDefinition*)$self->Access();
 	}
 };
+%extend Handle_StepElement_CurveElementSectionDefinition {
+	~Handle_StepElement_CurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of Handle_StepElement_CurveElementSectionDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial;
 class Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial();
 		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial();
 		%feature("autodoc", "1");
@@ -307,12 +323,15 @@ class Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial : public Handle
 	return (StepElement_SequenceNodeOfSequenceOfElementMaterial*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial {
+	~Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial() {
+	printf("Call custom destructor for instance of Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember;
 class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember();
 		%feature("autodoc", "1");
@@ -328,12 +347,15 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : pub
 	return (StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember {
+	~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember;
 class Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember();
 		%feature("autodoc", "1");
@@ -349,12 +371,15 @@ class Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public 
 	return (StepElement_HArray1OfHSequenceOfCurveElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember {
+	~Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_CurveElementSectionDerivedDefinitions;
 class Handle_StepElement_CurveElementSectionDerivedDefinitions : public Handle_StepElement_CurveElementSectionDefinition {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_CurveElementSectionDerivedDefinitions();
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementSectionDerivedDefinitions();
 		%feature("autodoc", "1");
@@ -370,12 +395,15 @@ class Handle_StepElement_CurveElementSectionDerivedDefinitions : public Handle_S
 	return (StepElement_CurveElementSectionDerivedDefinitions*)$self->Access();
 	}
 };
+%extend Handle_StepElement_CurveElementSectionDerivedDefinitions {
+	~Handle_StepElement_CurveElementSectionDerivedDefinitions() {
+	printf("Call custom destructor for instance of Handle_StepElement_CurveElementSectionDerivedDefinitions\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurpose;
 class Handle_StepElement_HArray2OfSurfaceElementPurpose : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray2OfSurfaceElementPurpose();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray2OfSurfaceElementPurpose();
 		%feature("autodoc", "1");
@@ -391,12 +419,15 @@ class Handle_StepElement_HArray2OfSurfaceElementPurpose : public Handle_MMgt_TSh
 	return (StepElement_HArray2OfSurfaceElementPurpose*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray2OfSurfaceElementPurpose {
+	~Handle_StepElement_HArray2OfSurfaceElementPurpose() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray2OfSurfaceElementPurpose\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HSequenceOfElementMaterial;
 class Handle_StepElement_HSequenceOfElementMaterial : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HSequenceOfElementMaterial();
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfElementMaterial();
 		%feature("autodoc", "1");
@@ -412,12 +443,15 @@ class Handle_StepElement_HSequenceOfElementMaterial : public Handle_MMgt_TShared
 	return (StepElement_HSequenceOfElementMaterial*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HSequenceOfElementMaterial {
+	~Handle_StepElement_HSequenceOfElementMaterial() {
+	printf("Call custom destructor for instance of Handle_StepElement_HSequenceOfElementMaterial\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurposeMember;
 class Handle_StepElement_HArray2OfSurfaceElementPurposeMember : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray2OfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray2OfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
@@ -433,12 +467,15 @@ class Handle_StepElement_HArray2OfSurfaceElementPurposeMember : public Handle_MM
 	return (StepElement_HArray2OfSurfaceElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray2OfSurfaceElementPurposeMember {
+	~Handle_StepElement_HArray2OfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray2OfSurfaceElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue;
 class Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue();
 		%feature("autodoc", "1");
@@ -454,12 +491,15 @@ class Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue : public Handle_MMgt
 	return (StepElement_HArray1OfMeasureOrUnspecifiedValue*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue {
+	~Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_CurveElementFreedomMember;
 class Handle_StepElement_CurveElementFreedomMember : public Handle_StepData_SelectNamed {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_CurveElementFreedomMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementFreedomMember();
 		%feature("autodoc", "1");
@@ -475,12 +515,15 @@ class Handle_StepElement_CurveElementFreedomMember : public Handle_StepData_Sele
 	return (StepElement_CurveElementFreedomMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_CurveElementFreedomMember {
+	~Handle_StepElement_CurveElementFreedomMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_CurveElementFreedomMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_CurveElementEndReleasePacket;
 class Handle_StepElement_CurveElementEndReleasePacket : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_CurveElementEndReleasePacket();
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementEndReleasePacket();
 		%feature("autodoc", "1");
@@ -496,12 +539,15 @@ class Handle_StepElement_CurveElementEndReleasePacket : public Handle_MMgt_TShar
 	return (StepElement_CurveElementEndReleasePacket*)$self->Access();
 	}
 };
+%extend Handle_StepElement_CurveElementEndReleasePacket {
+	~Handle_StepElement_CurveElementEndReleasePacket() {
+	printf("Call custom destructor for instance of Handle_StepElement_CurveElementEndReleasePacket\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember;
 class Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
@@ -517,12 +563,15 @@ class Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : p
 	return (StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember {
+	~Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_SurfaceElementProperty;
 class Handle_StepElement_SurfaceElementProperty : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_SurfaceElementProperty();
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceElementProperty();
 		%feature("autodoc", "1");
@@ -538,12 +587,15 @@ class Handle_StepElement_SurfaceElementProperty : public Handle_MMgt_TShared {
 	return (StepElement_SurfaceElementProperty*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SurfaceElementProperty {
+	~Handle_StepElement_SurfaceElementProperty() {
+	printf("Call custom destructor for instance of Handle_StepElement_SurfaceElementProperty\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray2OfCurveElementPurposeMember;
 class Handle_StepElement_HArray2OfCurveElementPurposeMember : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray2OfCurveElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray2OfCurveElementPurposeMember();
 		%feature("autodoc", "1");
@@ -559,12 +611,15 @@ class Handle_StepElement_HArray2OfCurveElementPurposeMember : public Handle_MMgt
 	return (StepElement_HArray2OfCurveElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray2OfCurveElementPurposeMember {
+	~Handle_StepElement_HArray2OfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray2OfCurveElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_SurfaceSectionField;
 class Handle_StepElement_SurfaceSectionField : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_SurfaceSectionField();
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSectionField();
 		%feature("autodoc", "1");
@@ -580,12 +635,15 @@ class Handle_StepElement_SurfaceSectionField : public Handle_MMgt_TShared {
 	return (StepElement_SurfaceSectionField*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SurfaceSectionField {
+	~Handle_StepElement_SurfaceSectionField() {
+	printf("Call custom destructor for instance of Handle_StepElement_SurfaceSectionField\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HSequenceOfCurveElementPurposeMember;
 class Handle_StepElement_HSequenceOfCurveElementPurposeMember : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HSequenceOfCurveElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfCurveElementPurposeMember();
 		%feature("autodoc", "1");
@@ -601,12 +659,15 @@ class Handle_StepElement_HSequenceOfCurveElementPurposeMember : public Handle_MM
 	return (StepElement_HSequenceOfCurveElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HSequenceOfCurveElementPurposeMember {
+	~Handle_StepElement_HSequenceOfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_HSequenceOfCurveElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray1OfCurveElementEndReleasePacket;
 class Handle_StepElement_HArray1OfCurveElementEndReleasePacket : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray1OfCurveElementEndReleasePacket();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfCurveElementEndReleasePacket();
 		%feature("autodoc", "1");
@@ -622,12 +683,15 @@ class Handle_StepElement_HArray1OfCurveElementEndReleasePacket : public Handle_M
 	return (StepElement_HArray1OfCurveElementEndReleasePacket*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray1OfCurveElementEndReleasePacket {
+	~Handle_StepElement_HArray1OfCurveElementEndReleasePacket() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray1OfCurveElementEndReleasePacket\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_Curve3dElementDescriptor;
 class Handle_StepElement_Curve3dElementDescriptor : public Handle_StepElement_ElementDescriptor {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_Curve3dElementDescriptor();
 		%feature("autodoc", "1");
 		Handle_StepElement_Curve3dElementDescriptor();
 		%feature("autodoc", "1");
@@ -643,12 +707,15 @@ class Handle_StepElement_Curve3dElementDescriptor : public Handle_StepElement_El
 	return (StepElement_Curve3dElementDescriptor*)$self->Access();
 	}
 };
+%extend Handle_StepElement_Curve3dElementDescriptor {
+	~Handle_StepElement_Curve3dElementDescriptor() {
+	printf("Call custom destructor for instance of Handle_StepElement_Curve3dElementDescriptor\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_VolumeElementPurposeMember;
 class Handle_StepElement_VolumeElementPurposeMember : public Handle_StepData_SelectNamed {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_VolumeElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_VolumeElementPurposeMember();
 		%feature("autodoc", "1");
@@ -664,12 +731,15 @@ class Handle_StepElement_VolumeElementPurposeMember : public Handle_StepData_Sel
 	return (StepElement_VolumeElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_VolumeElementPurposeMember {
+	~Handle_StepElement_VolumeElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_VolumeElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_MeasureOrUnspecifiedValueMember;
 class Handle_StepElement_MeasureOrUnspecifiedValueMember : public Handle_StepData_SelectNamed {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_MeasureOrUnspecifiedValueMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_MeasureOrUnspecifiedValueMember();
 		%feature("autodoc", "1");
@@ -685,12 +755,15 @@ class Handle_StepElement_MeasureOrUnspecifiedValueMember : public Handle_StepDat
 	return (StepElement_MeasureOrUnspecifiedValueMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_MeasureOrUnspecifiedValueMember {
+	~Handle_StepElement_MeasureOrUnspecifiedValueMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_MeasureOrUnspecifiedValueMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HSequenceOfCurveElementSectionDefinition;
 class Handle_StepElement_HSequenceOfCurveElementSectionDefinition : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HSequenceOfCurveElementSectionDefinition();
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfCurveElementSectionDefinition();
 		%feature("autodoc", "1");
@@ -706,12 +779,15 @@ class Handle_StepElement_HSequenceOfCurveElementSectionDefinition : public Handl
 	return (StepElement_HSequenceOfCurveElementSectionDefinition*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HSequenceOfCurveElementSectionDefinition {
+	~Handle_StepElement_HSequenceOfCurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of Handle_StepElement_HSequenceOfCurveElementSectionDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HSequenceOfSurfaceElementPurposeMember;
 class Handle_StepElement_HSequenceOfSurfaceElementPurposeMember : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HSequenceOfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
@@ -727,12 +803,15 @@ class Handle_StepElement_HSequenceOfSurfaceElementPurposeMember : public Handle_
 	return (StepElement_HSequenceOfSurfaceElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HSequenceOfSurfaceElementPurposeMember {
+	~Handle_StepElement_HSequenceOfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_HSequenceOfSurfaceElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray1OfSurfaceSection;
 class Handle_StepElement_HArray1OfSurfaceSection : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray1OfSurfaceSection();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfSurfaceSection();
 		%feature("autodoc", "1");
@@ -748,12 +827,15 @@ class Handle_StepElement_HArray1OfSurfaceSection : public Handle_MMgt_TShared {
 	return (StepElement_HArray1OfSurfaceSection*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray1OfSurfaceSection {
+	~Handle_StepElement_HArray1OfSurfaceSection() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray1OfSurfaceSection\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_CurveElementPurposeMember;
 class Handle_StepElement_CurveElementPurposeMember : public Handle_StepData_SelectNamed {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_CurveElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementPurposeMember();
 		%feature("autodoc", "1");
@@ -769,12 +851,15 @@ class Handle_StepElement_CurveElementPurposeMember : public Handle_StepData_Sele
 	return (StepElement_CurveElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_CurveElementPurposeMember {
+	~Handle_StepElement_CurveElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_CurveElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_ElementAspectMember;
 class Handle_StepElement_ElementAspectMember : public Handle_StepData_SelectNamed {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_ElementAspectMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_ElementAspectMember();
 		%feature("autodoc", "1");
@@ -790,12 +875,15 @@ class Handle_StepElement_ElementAspectMember : public Handle_StepData_SelectName
 	return (StepElement_ElementAspectMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_ElementAspectMember {
+	~Handle_StepElement_ElementAspectMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_ElementAspectMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_Volume3dElementDescriptor;
 class Handle_StepElement_Volume3dElementDescriptor : public Handle_StepElement_ElementDescriptor {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_Volume3dElementDescriptor();
 		%feature("autodoc", "1");
 		Handle_StepElement_Volume3dElementDescriptor();
 		%feature("autodoc", "1");
@@ -811,12 +899,15 @@ class Handle_StepElement_Volume3dElementDescriptor : public Handle_StepElement_E
 	return (StepElement_Volume3dElementDescriptor*)$self->Access();
 	}
 };
+%extend Handle_StepElement_Volume3dElementDescriptor {
+	~Handle_StepElement_Volume3dElementDescriptor() {
+	printf("Call custom destructor for instance of Handle_StepElement_Volume3dElementDescriptor\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_SurfaceSectionFieldVarying;
 class Handle_StepElement_SurfaceSectionFieldVarying : public Handle_StepElement_SurfaceSectionField {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_SurfaceSectionFieldVarying();
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSectionFieldVarying();
 		%feature("autodoc", "1");
@@ -832,12 +923,15 @@ class Handle_StepElement_SurfaceSectionFieldVarying : public Handle_StepElement_
 	return (StepElement_SurfaceSectionFieldVarying*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SurfaceSectionFieldVarying {
+	~Handle_StepElement_SurfaceSectionFieldVarying() {
+	printf("Call custom destructor for instance of Handle_StepElement_SurfaceSectionFieldVarying\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray1OfCurveElementSectionDefinition;
 class Handle_StepElement_HArray1OfCurveElementSectionDefinition : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray1OfCurveElementSectionDefinition();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfCurveElementSectionDefinition();
 		%feature("autodoc", "1");
@@ -853,12 +947,15 @@ class Handle_StepElement_HArray1OfCurveElementSectionDefinition : public Handle_
 	return (StepElement_HArray1OfCurveElementSectionDefinition*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray1OfCurveElementSectionDefinition {
+	~Handle_StepElement_HArray1OfCurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray1OfCurveElementSectionDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_UniformSurfaceSection;
 class Handle_StepElement_UniformSurfaceSection : public Handle_StepElement_SurfaceSection {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_UniformSurfaceSection();
 		%feature("autodoc", "1");
 		Handle_StepElement_UniformSurfaceSection();
 		%feature("autodoc", "1");
@@ -874,12 +971,15 @@ class Handle_StepElement_UniformSurfaceSection : public Handle_StepElement_Surfa
 	return (StepElement_UniformSurfaceSection*)$self->Access();
 	}
 };
+%extend Handle_StepElement_UniformSurfaceSection {
+	~Handle_StepElement_UniformSurfaceSection() {
+	printf("Call custom destructor for instance of Handle_StepElement_UniformSurfaceSection\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition;
 class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition();
 		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition();
 		%feature("autodoc", "1");
@@ -895,12 +995,15 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition :
 	return (StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition {
+	~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_AnalysisItemWithinRepresentation;
 class Handle_StepElement_AnalysisItemWithinRepresentation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_AnalysisItemWithinRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepElement_AnalysisItemWithinRepresentation();
 		%feature("autodoc", "1");
@@ -916,12 +1019,15 @@ class Handle_StepElement_AnalysisItemWithinRepresentation : public Handle_MMgt_T
 	return (StepElement_AnalysisItemWithinRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepElement_AnalysisItemWithinRepresentation {
+	~Handle_StepElement_AnalysisItemWithinRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepElement_AnalysisItemWithinRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray1OfVolumeElementPurposeMember;
 class Handle_StepElement_HArray1OfVolumeElementPurposeMember : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray1OfVolumeElementPurposeMember();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfVolumeElementPurposeMember();
 		%feature("autodoc", "1");
@@ -937,12 +1043,15 @@ class Handle_StepElement_HArray1OfVolumeElementPurposeMember : public Handle_MMg
 	return (StepElement_HArray1OfVolumeElementPurposeMember*)$self->Access();
 	}
 };
+%extend Handle_StepElement_HArray1OfVolumeElementPurposeMember {
+	~Handle_StepElement_HArray1OfVolumeElementPurposeMember() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray1OfVolumeElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_ElementMaterial;
 class Handle_StepElement_ElementMaterial : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_ElementMaterial();
 		%feature("autodoc", "1");
 		Handle_StepElement_ElementMaterial();
 		%feature("autodoc", "1");
@@ -958,12 +1067,15 @@ class Handle_StepElement_ElementMaterial : public Handle_MMgt_TShared {
 	return (StepElement_ElementMaterial*)$self->Access();
 	}
 };
+%extend Handle_StepElement_ElementMaterial {
+	~Handle_StepElement_ElementMaterial() {
+	printf("Call custom destructor for instance of Handle_StepElement_ElementMaterial\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_SurfaceSectionFieldConstant;
 class Handle_StepElement_SurfaceSectionFieldConstant : public Handle_StepElement_SurfaceSectionField {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_SurfaceSectionFieldConstant();
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSectionFieldConstant();
 		%feature("autodoc", "1");
@@ -979,12 +1091,15 @@ class Handle_StepElement_SurfaceSectionFieldConstant : public Handle_StepElement
 	return (StepElement_SurfaceSectionFieldConstant*)$self->Access();
 	}
 };
+%extend Handle_StepElement_SurfaceSectionFieldConstant {
+	~Handle_StepElement_SurfaceSectionFieldConstant() {
+	printf("Call custom destructor for instance of Handle_StepElement_SurfaceSectionFieldConstant\n");
+	}
+};
 
 %nodefaultctor Handle_StepElement_HArray1OfVolumeElementPurpose;
 class Handle_StepElement_HArray1OfVolumeElementPurpose : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepElement_HArray1OfVolumeElementPurpose();
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfVolumeElementPurpose();
 		%feature("autodoc", "1");
@@ -998,6 +1113,11 @@ class Handle_StepElement_HArray1OfVolumeElementPurpose : public Handle_MMgt_TSha
 %extend Handle_StepElement_HArray1OfVolumeElementPurpose {
 	StepElement_HArray1OfVolumeElementPurpose* GetObject() {
 	return (StepElement_HArray1OfVolumeElementPurpose*)$self->Access();
+	}
+};
+%extend Handle_StepElement_HArray1OfVolumeElementPurpose {
+	~Handle_StepElement_HArray1OfVolumeElementPurpose() {
+	printf("Call custom destructor for instance of Handle_StepElement_HArray1OfVolumeElementPurpose\n");
 	}
 };
 
@@ -1028,13 +1148,16 @@ class StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : public MMgt_
 		StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember();
 
 };
 %extend StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember {
 	Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember {
+	~StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember\n");
 	}
 };
 
@@ -1097,13 +1220,16 @@ class StepElement_SequenceNodeOfSequenceOfElementMaterial : public TCollection_S
 		Handle_StepElement_ElementMaterial & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SequenceNodeOfSequenceOfElementMaterial();
 
 };
 %extend StepElement_SequenceNodeOfSequenceOfElementMaterial {
 	Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial GetHandle() {
 	return *(Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial*) &$self;
+	}
+};
+%extend StepElement_SequenceNodeOfSequenceOfElementMaterial {
+	~StepElement_SequenceNodeOfSequenceOfElementMaterial() {
+	printf("Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfElementMaterial\n");
 	}
 };
 
@@ -1116,13 +1242,16 @@ class StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : public T
 		Handle_StepElement_SurfaceElementPurposeMember & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember();
 
 };
 %extend StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember {
 	Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember {
+	~StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember\n");
 	}
 };
 
@@ -1197,13 +1326,16 @@ class StepElement_SurfaceSection : public MMgt_TShared {
 		void SetNonStructuralMassOffset(const StepElement_MeasureOrUnspecifiedValue &NonStructuralMassOffset);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SurfaceSection();
 
 };
 %extend StepElement_SurfaceSection {
 	Handle_StepElement_SurfaceSection GetHandle() {
 	return *(Handle_StepElement_SurfaceSection*) &$self;
+	}
+};
+%extend StepElement_SurfaceSection {
+	~StepElement_SurfaceSection() {
+	printf("Call custom destructor for instance of StepElement_SurfaceSection\n");
 	}
 };
 
@@ -1226,13 +1358,16 @@ class StepElement_UniformSurfaceSection : public StepElement_SurfaceSection {
 		StepElement_MeasureOrUnspecifiedValue ShearThickness() const;
 		%feature("autodoc", "1");
 		void SetShearThickness(const StepElement_MeasureOrUnspecifiedValue &ShearThickness);
-		%feature("autodoc", "1");
-		virtual		~StepElement_UniformSurfaceSection();
 
 };
 %extend StepElement_UniformSurfaceSection {
 	Handle_StepElement_UniformSurfaceSection GetHandle() {
 	return *(Handle_StepElement_UniformSurfaceSection*) &$self;
+	}
+};
+%extend StepElement_UniformSurfaceSection {
+	~StepElement_UniformSurfaceSection() {
+	printf("Call custom destructor for instance of StepElement_UniformSurfaceSection\n");
 	}
 };
 
@@ -1263,13 +1398,16 @@ class StepElement_HArray1OfVolumeElementPurposeMember : public MMgt_TShared {
 		StepElement_Array1OfVolumeElementPurposeMember & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray1OfVolumeElementPurposeMember();
 
 };
 %extend StepElement_HArray1OfVolumeElementPurposeMember {
 	Handle_StepElement_HArray1OfVolumeElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_HArray1OfVolumeElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_HArray1OfVolumeElementPurposeMember {
+	~StepElement_HArray1OfVolumeElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_HArray1OfVolumeElementPurposeMember\n");
 	}
 };
 
@@ -1378,13 +1516,16 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : public TCo
 		Handle_StepElement_CurveElementPurposeMember & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember();
 
 };
 %extend StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember {
 	Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember {
+	~StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember\n");
 	}
 };
 
@@ -1405,13 +1546,16 @@ class StepElement_ElementDescriptor : public MMgt_TShared {
 		void SetDescription(const Handle_TCollection_HAsciiString &Description);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_ElementDescriptor();
 
 };
 %extend StepElement_ElementDescriptor {
 	Handle_StepElement_ElementDescriptor GetHandle() {
 	return *(Handle_StepElement_ElementDescriptor*) &$self;
+	}
+};
+%extend StepElement_ElementDescriptor {
+	~StepElement_ElementDescriptor() {
+	printf("Call custom destructor for instance of StepElement_ElementDescriptor\n");
 	}
 };
 
@@ -1430,13 +1574,16 @@ class StepElement_Surface3dElementDescriptor : public StepElement_ElementDescrip
 		StepElement_Element2dShape Shape() const;
 		%feature("autodoc", "1");
 		void SetShape(const StepElement_Element2dShape Shape);
-		%feature("autodoc", "1");
-		virtual		~StepElement_Surface3dElementDescriptor();
 
 };
 %extend StepElement_Surface3dElementDescriptor {
 	Handle_StepElement_Surface3dElementDescriptor GetHandle() {
 	return *(Handle_StepElement_Surface3dElementDescriptor*) &$self;
+	}
+};
+%extend StepElement_Surface3dElementDescriptor {
+	~StepElement_Surface3dElementDescriptor() {
+	printf("Call custom destructor for instance of StepElement_Surface3dElementDescriptor\n");
 	}
 };
 
@@ -1461,13 +1608,16 @@ class StepElement_ElementMaterial : public MMgt_TShared {
 		void SetProperties(const Handle_StepRepr_HArray1OfMaterialPropertyRepresentation &Properties);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_ElementMaterial();
 
 };
 %extend StepElement_ElementMaterial {
 	Handle_StepElement_ElementMaterial GetHandle() {
 	return *(Handle_StepElement_ElementMaterial*) &$self;
+	}
+};
+%extend StepElement_ElementMaterial {
+	~StepElement_ElementMaterial() {
+	printf("Call custom destructor for instance of StepElement_ElementMaterial\n");
 	}
 };
 
@@ -1492,13 +1642,16 @@ class StepElement_SurfaceElementProperty : public MMgt_TShared {
 		void SetSection(const Handle_StepElement_SurfaceSectionField &Section);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SurfaceElementProperty();
 
 };
 %extend StepElement_SurfaceElementProperty {
 	Handle_StepElement_SurfaceElementProperty GetHandle() {
 	return *(Handle_StepElement_SurfaceElementProperty*) &$self;
+	}
+};
+%extend StepElement_SurfaceElementProperty {
+	~StepElement_SurfaceElementProperty() {
+	printf("Call custom destructor for instance of StepElement_SurfaceElementProperty\n");
 	}
 };
 
@@ -1555,13 +1708,16 @@ class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescript
 		void SetShape(const StepElement_Volume3dElementShape Shape);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_Volume3dElementDescriptor();
 
 };
 %extend StepElement_Volume3dElementDescriptor {
 	Handle_StepElement_Volume3dElementDescriptor GetHandle() {
 	return *(Handle_StepElement_Volume3dElementDescriptor*) &$self;
+	}
+};
+%extend StepElement_Volume3dElementDescriptor {
+	~StepElement_Volume3dElementDescriptor() {
+	printf("Call custom destructor for instance of StepElement_Volume3dElementDescriptor\n");
 	}
 };
 
@@ -1580,13 +1736,16 @@ class StepElement_ElementAspectMember : public StepData_SelectNamed {
 		virtual		Standard_Boolean Matches(const char * name) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_ElementAspectMember();
 
 };
 %extend StepElement_ElementAspectMember {
 	Handle_StepElement_ElementAspectMember GetHandle() {
 	return *(Handle_StepElement_ElementAspectMember*) &$self;
+	}
+};
+%extend StepElement_ElementAspectMember {
+	~StepElement_ElementAspectMember() {
+	printf("Call custom destructor for instance of StepElement_ElementAspectMember\n");
 	}
 };
 
@@ -1641,13 +1800,16 @@ class StepElement_HSequenceOfCurveElementPurposeMember : public MMgt_TShared {
 		Handle_StepElement_HSequenceOfCurveElementPurposeMember ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HSequenceOfCurveElementPurposeMember();
 
 };
 %extend StepElement_HSequenceOfCurveElementPurposeMember {
 	Handle_StepElement_HSequenceOfCurveElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_HSequenceOfCurveElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_HSequenceOfCurveElementPurposeMember {
+	~StepElement_HSequenceOfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_HSequenceOfCurveElementPurposeMember\n");
 	}
 };
 
@@ -1678,13 +1840,16 @@ class StepElement_HArray1OfVolumeElementPurpose : public MMgt_TShared {
 		StepElement_Array1OfVolumeElementPurpose & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray1OfVolumeElementPurpose();
 
 };
 %extend StepElement_HArray1OfVolumeElementPurpose {
 	Handle_StepElement_HArray1OfVolumeElementPurpose GetHandle() {
 	return *(Handle_StepElement_HArray1OfVolumeElementPurpose*) &$self;
+	}
+};
+%extend StepElement_HArray1OfVolumeElementPurpose {
+	~StepElement_HArray1OfVolumeElementPurpose() {
+	printf("Call custom destructor for instance of StepElement_HArray1OfVolumeElementPurpose\n");
 	}
 };
 
@@ -1715,13 +1880,16 @@ class StepElement_HArray1OfCurveElementEndReleasePacket : public MMgt_TShared {
 		StepElement_Array1OfCurveElementEndReleasePacket & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray1OfCurveElementEndReleasePacket();
 
 };
 %extend StepElement_HArray1OfCurveElementEndReleasePacket {
 	Handle_StepElement_HArray1OfCurveElementEndReleasePacket GetHandle() {
 	return *(Handle_StepElement_HArray1OfCurveElementEndReleasePacket*) &$self;
+	}
+};
+%extend StepElement_HArray1OfCurveElementEndReleasePacket {
+	~StepElement_HArray1OfCurveElementEndReleasePacket() {
+	printf("Call custom destructor for instance of StepElement_HArray1OfCurveElementEndReleasePacket\n");
 	}
 };
 
@@ -1752,13 +1920,16 @@ class StepElement_HArray1OfSurfaceSection : public MMgt_TShared {
 		StepElement_Array1OfSurfaceSection & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray1OfSurfaceSection();
 
 };
 %extend StepElement_HArray1OfSurfaceSection {
 	Handle_StepElement_HArray1OfSurfaceSection GetHandle() {
 	return *(Handle_StepElement_HArray1OfSurfaceSection*) &$self;
+	}
+};
+%extend StepElement_HArray1OfSurfaceSection {
+	~StepElement_HArray1OfSurfaceSection() {
+	printf("Call custom destructor for instance of StepElement_HArray1OfSurfaceSection\n");
 	}
 };
 
@@ -1801,13 +1972,16 @@ class StepElement_CurveElementPurposeMember : public StepData_SelectNamed {
 		virtual		Standard_Boolean Matches(const char * name) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_CurveElementPurposeMember();
 
 };
 %extend StepElement_CurveElementPurposeMember {
 	Handle_StepElement_CurveElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_CurveElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_CurveElementPurposeMember {
+	~StepElement_CurveElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_CurveElementPurposeMember\n");
 	}
 };
 
@@ -1886,13 +2060,16 @@ class StepElement_HSequenceOfCurveElementSectionDefinition : public MMgt_TShared
 		Handle_StepElement_HSequenceOfCurveElementSectionDefinition ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HSequenceOfCurveElementSectionDefinition();
 
 };
 %extend StepElement_HSequenceOfCurveElementSectionDefinition {
 	Handle_StepElement_HSequenceOfCurveElementSectionDefinition GetHandle() {
 	return *(Handle_StepElement_HSequenceOfCurveElementSectionDefinition*) &$self;
+	}
+};
+%extend StepElement_HSequenceOfCurveElementSectionDefinition {
+	~StepElement_HSequenceOfCurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of StepElement_HSequenceOfCurveElementSectionDefinition\n");
 	}
 };
 
@@ -1911,13 +2088,16 @@ class StepElement_MeasureOrUnspecifiedValueMember : public StepData_SelectNamed 
 		virtual		Standard_Boolean Matches(const char * name) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_MeasureOrUnspecifiedValueMember();
 
 };
 %extend StepElement_MeasureOrUnspecifiedValueMember {
 	Handle_StepElement_MeasureOrUnspecifiedValueMember GetHandle() {
 	return *(Handle_StepElement_MeasureOrUnspecifiedValueMember*) &$self;
+	}
+};
+%extend StepElement_MeasureOrUnspecifiedValueMember {
+	~StepElement_MeasureOrUnspecifiedValueMember() {
+	printf("Call custom destructor for instance of StepElement_MeasureOrUnspecifiedValueMember\n");
 	}
 };
 
@@ -1938,13 +2118,16 @@ class StepElement_CurveElementSectionDefinition : public MMgt_TShared {
 		void SetSectionAngle(const Standard_Real SectionAngle);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_CurveElementSectionDefinition();
 
 };
 %extend StepElement_CurveElementSectionDefinition {
 	Handle_StepElement_CurveElementSectionDefinition GetHandle() {
 	return *(Handle_StepElement_CurveElementSectionDefinition*) &$self;
+	}
+};
+%extend StepElement_CurveElementSectionDefinition {
+	~StepElement_CurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of StepElement_CurveElementSectionDefinition\n");
 	}
 };
 
@@ -1999,13 +2182,16 @@ class StepElement_HSequenceOfSurfaceElementPurposeMember : public MMgt_TShared {
 		Handle_StepElement_HSequenceOfSurfaceElementPurposeMember ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HSequenceOfSurfaceElementPurposeMember();
 
 };
 %extend StepElement_HSequenceOfSurfaceElementPurposeMember {
 	Handle_StepElement_HSequenceOfSurfaceElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_HSequenceOfSurfaceElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_HSequenceOfSurfaceElementPurposeMember {
+	~StepElement_HSequenceOfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_HSequenceOfSurfaceElementPurposeMember\n");
 	}
 };
 
@@ -2060,13 +2246,16 @@ class StepElement_HSequenceOfElementMaterial : public MMgt_TShared {
 		Handle_StepElement_HSequenceOfElementMaterial ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HSequenceOfElementMaterial();
 
 };
 %extend StepElement_HSequenceOfElementMaterial {
 	Handle_StepElement_HSequenceOfElementMaterial GetHandle() {
 	return *(Handle_StepElement_HSequenceOfElementMaterial*) &$self;
+	}
+};
+%extend StepElement_HSequenceOfElementMaterial {
+	~StepElement_HSequenceOfElementMaterial() {
+	printf("Call custom destructor for instance of StepElement_HSequenceOfElementMaterial\n");
 	}
 };
 
@@ -2077,13 +2266,16 @@ class StepElement_SurfaceSectionField : public MMgt_TShared {
 		StepElement_SurfaceSectionField();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SurfaceSectionField();
 
 };
 %extend StepElement_SurfaceSectionField {
 	Handle_StepElement_SurfaceSectionField GetHandle() {
 	return *(Handle_StepElement_SurfaceSectionField*) &$self;
+	}
+};
+%extend StepElement_SurfaceSectionField {
+	~StepElement_SurfaceSectionField() {
+	printf("Call custom destructor for instance of StepElement_SurfaceSectionField\n");
 	}
 };
 
@@ -2112,13 +2304,16 @@ class StepElement_AnalysisItemWithinRepresentation : public MMgt_TShared {
 		void SetRep(const Handle_StepRepr_Representation &Rep);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_AnalysisItemWithinRepresentation();
 
 };
 %extend StepElement_AnalysisItemWithinRepresentation {
 	Handle_StepElement_AnalysisItemWithinRepresentation GetHandle() {
 	return *(Handle_StepElement_AnalysisItemWithinRepresentation*) &$self;
+	}
+};
+%extend StepElement_AnalysisItemWithinRepresentation {
+	~StepElement_AnalysisItemWithinRepresentation() {
+	printf("Call custom destructor for instance of StepElement_AnalysisItemWithinRepresentation\n");
 	}
 };
 
@@ -2135,13 +2330,16 @@ class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescripto
 		void SetPurpose(const Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember &Purpose);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_Curve3dElementDescriptor();
 
 };
 %extend StepElement_Curve3dElementDescriptor {
 	Handle_StepElement_Curve3dElementDescriptor GetHandle() {
 	return *(Handle_StepElement_Curve3dElementDescriptor*) &$self;
+	}
+};
+%extend StepElement_Curve3dElementDescriptor {
+	~StepElement_Curve3dElementDescriptor() {
+	printf("Call custom destructor for instance of StepElement_Curve3dElementDescriptor\n");
 	}
 };
 
@@ -2256,13 +2454,16 @@ class StepElement_VolumeElementPurposeMember : public StepData_SelectNamed {
 		virtual		Standard_Boolean Matches(const char * name) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_VolumeElementPurposeMember();
 
 };
 %extend StepElement_VolumeElementPurposeMember {
 	Handle_StepElement_VolumeElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_VolumeElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_VolumeElementPurposeMember {
+	~StepElement_VolumeElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_VolumeElementPurposeMember\n");
 	}
 };
 
@@ -2305,13 +2506,16 @@ class StepElement_SurfaceElementPurposeMember : public StepData_SelectNamed {
 		virtual		Standard_Boolean Matches(const char * name) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SurfaceElementPurposeMember();
 
 };
 %extend StepElement_SurfaceElementPurposeMember {
 	Handle_StepElement_SurfaceElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_SurfaceElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_SurfaceElementPurposeMember {
+	~StepElement_SurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_SurfaceElementPurposeMember\n");
 	}
 };
 
@@ -2400,13 +2604,16 @@ class StepElement_CurveElementSectionDerivedDefinitions : public StepElement_Cur
 		void SetPolarMoment(const StepElement_MeasureOrUnspecifiedValue &PolarMoment);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_CurveElementSectionDerivedDefinitions();
 
 };
 %extend StepElement_CurveElementSectionDerivedDefinitions {
 	Handle_StepElement_CurveElementSectionDerivedDefinitions GetHandle() {
 	return *(Handle_StepElement_CurveElementSectionDerivedDefinitions*) &$self;
+	}
+};
+%extend StepElement_CurveElementSectionDerivedDefinitions {
+	~StepElement_CurveElementSectionDerivedDefinitions() {
+	printf("Call custom destructor for instance of StepElement_CurveElementSectionDerivedDefinitions\n");
 	}
 };
 
@@ -2515,13 +2722,16 @@ class StepElement_HArray2OfSurfaceElementPurposeMember : public MMgt_TShared {
 		StepElement_Array2OfSurfaceElementPurposeMember & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray2OfSurfaceElementPurposeMember();
 
 };
 %extend StepElement_HArray2OfSurfaceElementPurposeMember {
 	Handle_StepElement_HArray2OfSurfaceElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_HArray2OfSurfaceElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_HArray2OfSurfaceElementPurposeMember {
+	~StepElement_HArray2OfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_HArray2OfSurfaceElementPurposeMember\n");
 	}
 };
 
@@ -2602,13 +2812,16 @@ class StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public MMgt_TS
 		StepElement_Array1OfHSequenceOfCurveElementPurposeMember & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray1OfHSequenceOfCurveElementPurposeMember();
 
 };
 %extend StepElement_HArray1OfHSequenceOfCurveElementPurposeMember {
 	Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_HArray1OfHSequenceOfCurveElementPurposeMember {
+	~StepElement_HArray1OfHSequenceOfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_HArray1OfHSequenceOfCurveElementPurposeMember\n");
 	}
 };
 
@@ -2793,13 +3006,16 @@ class StepElement_CurveElementFreedomMember : public StepData_SelectNamed {
 		virtual		Standard_Boolean Matches(const char * name) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_CurveElementFreedomMember();
 
 };
 %extend StepElement_CurveElementFreedomMember {
 	Handle_StepElement_CurveElementFreedomMember GetHandle() {
 	return *(Handle_StepElement_CurveElementFreedomMember*) &$self;
+	}
+};
+%extend StepElement_CurveElementFreedomMember {
+	~StepElement_CurveElementFreedomMember() {
+	printf("Call custom destructor for instance of StepElement_CurveElementFreedomMember\n");
 	}
 };
 
@@ -2836,13 +3052,16 @@ class StepElement_HArray2OfSurfaceElementPurpose : public MMgt_TShared {
 		StepElement_Array2OfSurfaceElementPurpose & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray2OfSurfaceElementPurpose();
 
 };
 %extend StepElement_HArray2OfSurfaceElementPurpose {
 	Handle_StepElement_HArray2OfSurfaceElementPurpose GetHandle() {
 	return *(Handle_StepElement_HArray2OfSurfaceElementPurpose*) &$self;
+	}
+};
+%extend StepElement_HArray2OfSurfaceElementPurpose {
+	~StepElement_HArray2OfSurfaceElementPurpose() {
+	printf("Call custom destructor for instance of StepElement_HArray2OfSurfaceElementPurpose\n");
 	}
 };
 
@@ -2863,13 +3082,16 @@ class StepElement_SurfaceSectionFieldVarying : public StepElement_SurfaceSection
 		void SetAdditionalNodeValues(const Standard_Boolean AdditionalNodeValues);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SurfaceSectionFieldVarying();
 
 };
 %extend StepElement_SurfaceSectionFieldVarying {
 	Handle_StepElement_SurfaceSectionFieldVarying GetHandle() {
 	return *(Handle_StepElement_SurfaceSectionFieldVarying*) &$self;
+	}
+};
+%extend StepElement_SurfaceSectionFieldVarying {
+	~StepElement_SurfaceSectionFieldVarying() {
+	printf("Call custom destructor for instance of StepElement_SurfaceSectionFieldVarying\n");
 	}
 };
 
@@ -2906,13 +3128,16 @@ class StepElement_HArray2OfCurveElementPurposeMember : public MMgt_TShared {
 		StepElement_Array2OfCurveElementPurposeMember & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray2OfCurveElementPurposeMember();
 
 };
 %extend StepElement_HArray2OfCurveElementPurposeMember {
 	Handle_StepElement_HArray2OfCurveElementPurposeMember GetHandle() {
 	return *(Handle_StepElement_HArray2OfCurveElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_HArray2OfCurveElementPurposeMember {
+	~StepElement_HArray2OfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_HArray2OfCurveElementPurposeMember\n");
 	}
 };
 
@@ -2929,13 +3154,16 @@ class StepElement_SurfaceSectionFieldConstant : public StepElement_SurfaceSectio
 		void SetDefinition(const Handle_StepElement_SurfaceSection &Definition);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SurfaceSectionFieldConstant();
 
 };
 %extend StepElement_SurfaceSectionFieldConstant {
 	Handle_StepElement_SurfaceSectionFieldConstant GetHandle() {
 	return *(Handle_StepElement_SurfaceSectionFieldConstant*) &$self;
+	}
+};
+%extend StepElement_SurfaceSectionFieldConstant {
+	~StepElement_SurfaceSectionFieldConstant() {
+	printf("Call custom destructor for instance of StepElement_SurfaceSectionFieldConstant\n");
 	}
 };
 
@@ -2948,13 +3176,16 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public
 		Handle_StepElement_CurveElementSectionDefinition & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition();
 
 };
 %extend StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition {
 	Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition GetHandle() {
 	return *(Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition*) &$self;
+	}
+};
+%extend StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition {
+	~StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition\n");
 	}
 };
 
@@ -3009,13 +3240,16 @@ class StepElement_HArray1OfCurveElementSectionDefinition : public MMgt_TShared {
 		StepElement_Array1OfCurveElementSectionDefinition & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray1OfCurveElementSectionDefinition();
 
 };
 %extend StepElement_HArray1OfCurveElementSectionDefinition {
 	Handle_StepElement_HArray1OfCurveElementSectionDefinition GetHandle() {
 	return *(Handle_StepElement_HArray1OfCurveElementSectionDefinition*) &$self;
+	}
+};
+%extend StepElement_HArray1OfCurveElementSectionDefinition {
+	~StepElement_HArray1OfCurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of StepElement_HArray1OfCurveElementSectionDefinition\n");
 	}
 };
 
@@ -3072,13 +3306,16 @@ class StepElement_CurveElementEndReleasePacket : public MMgt_TShared {
 		void SetReleaseStiffness(const Standard_Real ReleaseStiffness);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_CurveElementEndReleasePacket();
 
 };
 %extend StepElement_CurveElementEndReleasePacket {
 	Handle_StepElement_CurveElementEndReleasePacket GetHandle() {
 	return *(Handle_StepElement_CurveElementEndReleasePacket*) &$self;
+	}
+};
+%extend StepElement_CurveElementEndReleasePacket {
+	~StepElement_CurveElementEndReleasePacket() {
+	printf("Call custom destructor for instance of StepElement_CurveElementEndReleasePacket\n");
 	}
 };
 
@@ -3109,12 +3346,15 @@ class StepElement_HArray1OfMeasureOrUnspecifiedValue : public MMgt_TShared {
 		StepElement_Array1OfMeasureOrUnspecifiedValue & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_HArray1OfMeasureOrUnspecifiedValue();
 
 };
 %extend StepElement_HArray1OfMeasureOrUnspecifiedValue {
 	Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue GetHandle() {
 	return *(Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue*) &$self;
+	}
+};
+%extend StepElement_HArray1OfMeasureOrUnspecifiedValue {
+	~StepElement_HArray1OfMeasureOrUnspecifiedValue() {
+	printf("Call custom destructor for instance of StepElement_HArray1OfMeasureOrUnspecifiedValue\n");
 	}
 };

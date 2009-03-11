@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_XmlTObjDrivers_XYZDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlTObjDrivers_XYZDriver();
-		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_XYZDriver();
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_XYZDriver(const Handle_XmlTObjDrivers_XYZDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_XmlTObjDrivers_XYZDriver : public Handle_XmlMDF_ADriver {
 	return (XmlTObjDrivers_XYZDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlTObjDrivers_XYZDriver {
+	~Handle_XmlTObjDrivers_XYZDriver() {
+	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_XYZDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlTObjDrivers_DocumentRetrievalDriver;
 class Handle_XmlTObjDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_DocumentRetrievalDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlTObjDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_XmlTObjDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_
 	return (XmlTObjDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlTObjDrivers_DocumentRetrievalDriver {
+	~Handle_XmlTObjDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlTObjDrivers_ModelDriver;
 class Handle_XmlTObjDrivers_ModelDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlTObjDrivers_ModelDriver();
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_ModelDriver();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_XmlTObjDrivers_ModelDriver : public Handle_XmlMDF_ADriver {
 	return (XmlTObjDrivers_ModelDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlTObjDrivers_ModelDriver {
+	~Handle_XmlTObjDrivers_ModelDriver() {
+	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_ModelDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlTObjDrivers_DocumentStorageDriver;
 class Handle_XmlTObjDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_DocumentStorageDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlTObjDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_XmlTObjDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Do
 	return (XmlTObjDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlTObjDrivers_DocumentStorageDriver {
+	~Handle_XmlTObjDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlTObjDrivers_IntSparseArrayDriver;
 class Handle_XmlTObjDrivers_IntSparseArrayDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlTObjDrivers_IntSparseArrayDriver();
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_IntSparseArrayDriver();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_XmlTObjDrivers_IntSparseArrayDriver : public Handle_XmlMDF_ADriver 
 	return (XmlTObjDrivers_IntSparseArrayDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlTObjDrivers_IntSparseArrayDriver {
+	~Handle_XmlTObjDrivers_IntSparseArrayDriver() {
+	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_IntSparseArrayDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlTObjDrivers_ObjectDriver;
 class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlTObjDrivers_ObjectDriver();
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_ObjectDriver();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
 	return (XmlTObjDrivers_ObjectDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlTObjDrivers_ObjectDriver {
+	~Handle_XmlTObjDrivers_ObjectDriver() {
+	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_ObjectDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlTObjDrivers_ReferenceDriver;
 class Handle_XmlTObjDrivers_ReferenceDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlTObjDrivers_ReferenceDriver();
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_ReferenceDriver();
 		%feature("autodoc", "1");
@@ -242,6 +258,11 @@ class Handle_XmlTObjDrivers_ReferenceDriver : public Handle_XmlMDF_ADriver {
 %extend Handle_XmlTObjDrivers_ReferenceDriver {
 	XmlTObjDrivers_ReferenceDriver* GetObject() {
 	return (XmlTObjDrivers_ReferenceDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlTObjDrivers_ReferenceDriver {
+	~Handle_XmlTObjDrivers_ReferenceDriver() {
+	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_ReferenceDriver\n");
 	}
 };
 
@@ -258,13 +279,16 @@ class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlTObjDrivers_ReferenceDriver();
 
 };
 %extend XmlTObjDrivers_ReferenceDriver {
 	Handle_XmlTObjDrivers_ReferenceDriver GetHandle() {
 	return *(Handle_XmlTObjDrivers_ReferenceDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_ReferenceDriver {
+	~XmlTObjDrivers_ReferenceDriver() {
+	printf("Call custom destructor for instance of XmlTObjDrivers_ReferenceDriver\n");
 	}
 };
 
@@ -277,13 +301,16 @@ class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrie
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlTObjDrivers_DocumentRetrievalDriver();
 
 };
 %extend XmlTObjDrivers_DocumentRetrievalDriver {
 	Handle_XmlTObjDrivers_DocumentRetrievalDriver GetHandle() {
 	return *(Handle_XmlTObjDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_DocumentRetrievalDriver {
+	~XmlTObjDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of XmlTObjDrivers_DocumentRetrievalDriver\n");
 	}
 };
 
@@ -314,13 +341,16 @@ class XmlTObjDrivers_ModelDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlTObjDrivers_ModelDriver();
 
 };
 %extend XmlTObjDrivers_ModelDriver {
 	Handle_XmlTObjDrivers_ModelDriver GetHandle() {
 	return *(Handle_XmlTObjDrivers_ModelDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_ModelDriver {
+	~XmlTObjDrivers_ModelDriver() {
+	printf("Call custom destructor for instance of XmlTObjDrivers_ModelDriver\n");
 	}
 };
 
@@ -337,13 +367,16 @@ class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlTObjDrivers_IntSparseArrayDriver();
 
 };
 %extend XmlTObjDrivers_IntSparseArrayDriver {
 	Handle_XmlTObjDrivers_IntSparseArrayDriver GetHandle() {
 	return *(Handle_XmlTObjDrivers_IntSparseArrayDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_IntSparseArrayDriver {
+	~XmlTObjDrivers_IntSparseArrayDriver() {
+	printf("Call custom destructor for instance of XmlTObjDrivers_IntSparseArrayDriver\n");
 	}
 };
 
@@ -356,13 +389,16 @@ class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageD
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlTObjDrivers_DocumentStorageDriver();
 
 };
 %extend XmlTObjDrivers_DocumentStorageDriver {
 	Handle_XmlTObjDrivers_DocumentStorageDriver GetHandle() {
 	return *(Handle_XmlTObjDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_DocumentStorageDriver {
+	~XmlTObjDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of XmlTObjDrivers_DocumentStorageDriver\n");
 	}
 };
 
@@ -379,13 +415,16 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlTObjDrivers_ObjectDriver();
 
 };
 %extend XmlTObjDrivers_ObjectDriver {
 	Handle_XmlTObjDrivers_ObjectDriver GetHandle() {
 	return *(Handle_XmlTObjDrivers_ObjectDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_ObjectDriver {
+	~XmlTObjDrivers_ObjectDriver() {
+	printf("Call custom destructor for instance of XmlTObjDrivers_ObjectDriver\n");
 	}
 };
 
@@ -402,12 +441,15 @@ class XmlTObjDrivers_XYZDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlTObjDrivers_XYZDriver();
 
 };
 %extend XmlTObjDrivers_XYZDriver {
 	Handle_XmlTObjDrivers_XYZDriver GetHandle() {
 	return *(Handle_XmlTObjDrivers_XYZDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_XYZDriver {
+	~XmlTObjDrivers_XYZDriver() {
+	printf("Call custom destructor for instance of XmlTObjDrivers_XYZDriver\n");
 	}
 };

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Plugin_DataMapNodeOfMapOfFunctions : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Plugin_DataMapNodeOfMapOfFunctions();
-		%feature("autodoc", "1");
 		Handle_Plugin_DataMapNodeOfMapOfFunctions();
 		%feature("autodoc", "1");
 		Handle_Plugin_DataMapNodeOfMapOfFunctions(const Handle_Plugin_DataMapNodeOfMapOfFunctions &aHandle);
@@ -118,12 +116,15 @@ class Handle_Plugin_DataMapNodeOfMapOfFunctions : public Handle_TCollection_MapN
 	return (Plugin_DataMapNodeOfMapOfFunctions*)$self->Access();
 	}
 };
+%extend Handle_Plugin_DataMapNodeOfMapOfFunctions {
+	~Handle_Plugin_DataMapNodeOfMapOfFunctions() {
+	printf("Call custom destructor for instance of Handle_Plugin_DataMapNodeOfMapOfFunctions\n");
+	}
+};
 
 %nodefaultctor Handle_Plugin_Failure;
 class Handle_Plugin_Failure : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Plugin_Failure();
 		%feature("autodoc", "1");
 		Handle_Plugin_Failure();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 %extend Handle_Plugin_Failure {
 	Plugin_Failure* GetObject() {
 	return (Plugin_Failure*)$self->Access();
+	}
+};
+%extend Handle_Plugin_Failure {
+	~Handle_Plugin_Failure() {
+	printf("Call custom destructor for instance of Handle_Plugin_Failure\n");
 	}
 };
 
@@ -165,13 +171,16 @@ class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
 		TCollection_AsciiString & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Plugin_DataMapNodeOfMapOfFunctions();
 
 };
 %extend Plugin_DataMapNodeOfMapOfFunctions {
 	Handle_Plugin_DataMapNodeOfMapOfFunctions GetHandle() {
 	return *(Handle_Plugin_DataMapNodeOfMapOfFunctions*) &$self;
+	}
+};
+%extend Plugin_DataMapNodeOfMapOfFunctions {
+	~Plugin_DataMapNodeOfMapOfFunctions() {
+	printf("Call custom destructor for instance of Plugin_DataMapNodeOfMapOfFunctions\n");
 	}
 };
 
@@ -190,13 +199,16 @@ class Plugin_Failure : public Standard_Failure {
 		Handle_Plugin_Failure NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Plugin_Failure();
 
 };
 %extend Plugin_Failure {
 	Handle_Plugin_Failure GetHandle() {
 	return *(Handle_Plugin_Failure*) &$self;
+	}
+};
+%extend Plugin_Failure {
+	~Plugin_Failure() {
+	printf("Call custom destructor for instance of Plugin_Failure\n");
 	}
 };
 

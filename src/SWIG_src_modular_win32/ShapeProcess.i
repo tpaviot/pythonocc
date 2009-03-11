@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ShapeProcess_StackItemOfDictionaryOfOperator();
-		%feature("autodoc", "1");
 		Handle_ShapeProcess_StackItemOfDictionaryOfOperator();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_StackItemOfDictionaryOfOperator(const Handle_ShapeProcess_StackItemOfDictionaryOfOperator &aHandle);
@@ -118,12 +116,15 @@ class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_T
 	return (ShapeProcess_StackItemOfDictionaryOfOperator*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
+	~Handle_ShapeProcess_StackItemOfDictionaryOfOperator() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_StackItemOfDictionaryOfOperator\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_Operator;
 class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_Operator();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Operator();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 	return (ShapeProcess_Operator*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_Operator {
+	~Handle_ShapeProcess_Operator() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_Operator\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_UOperator;
 class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_UOperator();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_UOperator();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 	return (ShapeProcess_UOperator*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_UOperator {
+	~Handle_ShapeProcess_UOperator() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_UOperator\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_Context;
 class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_Context();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Context();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 	return (ShapeProcess_Context*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_Context {
+	~Handle_ShapeProcess_Context() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_Context\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_DictionaryOfOperator;
 class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_DictionaryOfOperator();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_DictionaryOfOperator();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 	return (ShapeProcess_DictionaryOfOperator*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_DictionaryOfOperator {
+	~Handle_ShapeProcess_DictionaryOfOperator() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_DictionaryOfOperator\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_ShapeContext;
 class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_ShapeContext();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_ShapeContext();
 		%feature("autodoc", "1");
@@ -221,6 +234,11 @@ class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 %extend Handle_ShapeProcess_ShapeContext {
 	ShapeProcess_ShapeContext* GetObject() {
 	return (ShapeProcess_ShapeContext*)$self->Access();
+	}
+};
+%extend Handle_ShapeProcess_ShapeContext {
+	~Handle_ShapeProcess_ShapeContext() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_ShapeContext\n");
 	}
 };
 
@@ -238,19 +256,27 @@ class ShapeProcess_Operator : public MMgt_TShared {
 	return *(Handle_ShapeProcess_Operator*) &$self;
 	}
 };
+%extend ShapeProcess_Operator {
+	~ShapeProcess_Operator() {
+	printf("Call custom destructor for instance of ShapeProcess_Operator\n");
+	}
+};
 
 %nodefaultctor ShapeProcess_UOperator;
 class ShapeProcess_UOperator : public ShapeProcess_Operator {
 	public:
 		%feature("autodoc", "1");
 		ShapeProcess_UOperator(const ShapeProcess_OperFunc func);
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_UOperator();
 
 };
 %extend ShapeProcess_UOperator {
 	Handle_ShapeProcess_UOperator GetHandle() {
 	return *(Handle_ShapeProcess_UOperator*) &$self;
+	}
+};
+%extend ShapeProcess_UOperator {
+	~ShapeProcess_UOperator() {
+	printf("Call custom destructor for instance of ShapeProcess_UOperator\n");
 	}
 };
 
@@ -325,13 +351,16 @@ class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
 		Standard_Boolean Complete(Handle_ShapeProcess_DictionaryOfOperator & acell) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_DictionaryOfOperator();
 
 };
 %extend ShapeProcess_DictionaryOfOperator {
 	Handle_ShapeProcess_DictionaryOfOperator GetHandle() {
 	return *(Handle_ShapeProcess_DictionaryOfOperator*) &$self;
+	}
+};
+%extend ShapeProcess_DictionaryOfOperator {
+	~ShapeProcess_DictionaryOfOperator() {
+	printf("Call custom destructor for instance of ShapeProcess_DictionaryOfOperator\n");
 	}
 };
 
@@ -350,13 +379,16 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 		void SetValue(const Handle_ShapeProcess_DictionaryOfOperator &cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_StackItemOfDictionaryOfOperator();
 
 };
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
 	Handle_ShapeProcess_StackItemOfDictionaryOfOperator GetHandle() {
 	return *(Handle_ShapeProcess_StackItemOfDictionaryOfOperator*) &$self;
+	}
+};
+%extend ShapeProcess_StackItemOfDictionaryOfOperator {
+	~ShapeProcess_StackItemOfDictionaryOfOperator() {
+	printf("Call custom destructor for instance of ShapeProcess_StackItemOfDictionaryOfOperator\n");
 	}
 };
 
@@ -429,13 +461,16 @@ class ShapeProcess_Context : public MMgt_TShared {
 		Standard_Integer TraceLevel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_Context();
 
 };
 %extend ShapeProcess_Context {
 	Handle_ShapeProcess_Context GetHandle() {
 	return *(Handle_ShapeProcess_Context*) &$self;
+	}
+};
+%extend ShapeProcess_Context {
+	~ShapeProcess_Context() {
+	printf("Call custom destructor for instance of ShapeProcess_Context\n");
 	}
 };
 
@@ -480,12 +515,15 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		GeomAbs_Shape ContinuityVal(const char * param, const GeomAbs_Shape def) const;
 		%feature("autodoc", "1");
 		void PrintStatistics() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_ShapeContext();
 
 };
 %extend ShapeProcess_ShapeContext {
 	Handle_ShapeProcess_ShapeContext GetHandle() {
 	return *(Handle_ShapeProcess_ShapeContext*) &$self;
+	}
+};
+%extend ShapeProcess_ShapeContext {
+	~ShapeProcess_ShapeContext() {
+	printf("Call custom destructor for instance of ShapeProcess_ShapeContext\n");
 	}
 };

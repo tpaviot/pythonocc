@@ -130,8 +130,6 @@ enum StepVisual_CentralOrParallel {
 class Handle_StepVisual_PresentationRepresentation : public Handle_StepRepr_Representation {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentationRepresentation();
-		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationRepresentation(const Handle_StepVisual_PresentationRepresentation &aHandle);
@@ -146,12 +144,15 @@ class Handle_StepVisual_PresentationRepresentation : public Handle_StepRepr_Repr
 	return (StepVisual_PresentationRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentationRepresentation {
+	~Handle_StepVisual_PresentationRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentationRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation;
 class Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation : public Handle_StepVisual_PresentationRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation();
 		%feature("autodoc", "1");
@@ -167,12 +168,15 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation : pu
 	return (StepVisual_MechanicalDesignGeometricPresentationRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation {
+	~Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CompositeText;
 class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CompositeText();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CompositeText();
 		%feature("autodoc", "1");
@@ -188,12 +192,15 @@ class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresen
 	return (StepVisual_CompositeText*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CompositeText {
+	~Handle_StepVisual_CompositeText() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CompositeText\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_Invisibility;
 class Handle_StepVisual_Invisibility : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_Invisibility();
 		%feature("autodoc", "1");
 		Handle_StepVisual_Invisibility();
 		%feature("autodoc", "1");
@@ -209,12 +216,15 @@ class Handle_StepVisual_Invisibility : public Handle_MMgt_TShared {
 	return (StepVisual_Invisibility*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_Invisibility {
+	~Handle_StepVisual_Invisibility() {
+	printf("Call custom destructor for instance of Handle_StepVisual_Invisibility\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CameraModel;
 class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CameraModel();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraModel();
 		%feature("autodoc", "1");
@@ -230,12 +240,15 @@ class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresenta
 	return (StepVisual_CameraModel*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CameraModel {
+	~Handle_StepVisual_CameraModel() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CameraModel\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleSegmentationCurve;
 class Handle_StepVisual_SurfaceStyleSegmentationCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_SurfaceStyleSegmentationCurve();
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleSegmentationCurve();
 		%feature("autodoc", "1");
@@ -251,12 +264,15 @@ class Handle_StepVisual_SurfaceStyleSegmentationCurve : public Handle_MMgt_TShar
 	return (StepVisual_SurfaceStyleSegmentationCurve*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_SurfaceStyleSegmentationCurve {
+	~Handle_StepVisual_SurfaceStyleSegmentationCurve() {
+	printf("Call custom destructor for instance of Handle_StepVisual_SurfaceStyleSegmentationCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_Colour;
 class Handle_StepVisual_Colour : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_Colour();
 		%feature("autodoc", "1");
 		Handle_StepVisual_Colour();
 		%feature("autodoc", "1");
@@ -272,12 +288,15 @@ class Handle_StepVisual_Colour : public Handle_MMgt_TShared {
 	return (StepVisual_Colour*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_Colour {
+	~Handle_StepVisual_Colour() {
+	printf("Call custom destructor for instance of Handle_StepVisual_Colour\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PreDefinedColour;
 class Handle_StepVisual_PreDefinedColour : public Handle_StepVisual_Colour {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PreDefinedColour();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedColour();
 		%feature("autodoc", "1");
@@ -293,12 +312,15 @@ class Handle_StepVisual_PreDefinedColour : public Handle_StepVisual_Colour {
 	return (StepVisual_PreDefinedColour*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PreDefinedColour {
+	~Handle_StepVisual_PreDefinedColour() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PreDefinedColour\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CameraUsage;
 class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CameraUsage();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraUsage();
 		%feature("autodoc", "1");
@@ -314,12 +336,15 @@ class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
 	return (StepVisual_CameraUsage*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CameraUsage {
+	~Handle_StepVisual_CameraUsage() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CameraUsage\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_AnnotationText;
 class Handle_StepVisual_AnnotationText : public Handle_StepRepr_MappedItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_AnnotationText();
 		%feature("autodoc", "1");
 		Handle_StepVisual_AnnotationText();
 		%feature("autodoc", "1");
@@ -335,12 +360,15 @@ class Handle_StepVisual_AnnotationText : public Handle_StepRepr_MappedItem {
 	return (StepVisual_AnnotationText*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_AnnotationText {
+	~Handle_StepVisual_AnnotationText() {
+	printf("Call custom destructor for instance of Handle_StepVisual_AnnotationText\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_ContextDependentInvisibility;
 class Handle_StepVisual_ContextDependentInvisibility : public Handle_StepVisual_Invisibility {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_ContextDependentInvisibility();
 		%feature("autodoc", "1");
 		Handle_StepVisual_ContextDependentInvisibility();
 		%feature("autodoc", "1");
@@ -356,12 +384,15 @@ class Handle_StepVisual_ContextDependentInvisibility : public Handle_StepVisual_
 	return (StepVisual_ContextDependentInvisibility*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_ContextDependentInvisibility {
+	~Handle_StepVisual_ContextDependentInvisibility() {
+	printf("Call custom destructor for instance of Handle_StepVisual_ContextDependentInvisibility\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_ExternallyDefinedCurveFont;
 class Handle_StepVisual_ExternallyDefinedCurveFont : public Handle_StepBasic_ExternallyDefinedItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_ExternallyDefinedCurveFont();
 		%feature("autodoc", "1");
 		Handle_StepVisual_ExternallyDefinedCurveFont();
 		%feature("autodoc", "1");
@@ -377,12 +408,15 @@ class Handle_StepVisual_ExternallyDefinedCurveFont : public Handle_StepBasic_Ext
 	return (StepVisual_ExternallyDefinedCurveFont*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_ExternallyDefinedCurveFont {
+	~Handle_StepVisual_ExternallyDefinedCurveFont() {
+	printf("Call custom destructor for instance of Handle_StepVisual_ExternallyDefinedCurveFont\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_MarkerMember;
 class Handle_StepVisual_MarkerMember : public Handle_StepData_SelectInt {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_MarkerMember();
 		%feature("autodoc", "1");
 		Handle_StepVisual_MarkerMember();
 		%feature("autodoc", "1");
@@ -398,12 +432,15 @@ class Handle_StepVisual_MarkerMember : public Handle_StepData_SelectInt {
 	return (StepVisual_MarkerMember*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_MarkerMember {
+	~Handle_StepVisual_MarkerMember() {
+	printf("Call custom destructor for instance of Handle_StepVisual_MarkerMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentationView;
 class Handle_StepVisual_PresentationView : public Handle_StepVisual_PresentationRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentationView();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationView();
 		%feature("autodoc", "1");
@@ -419,12 +456,15 @@ class Handle_StepVisual_PresentationView : public Handle_StepVisual_Presentation
 	return (StepVisual_PresentationView*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentationView {
+	~Handle_StepVisual_PresentationView() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentationView\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_StyledItem;
 class Handle_StepVisual_StyledItem : public Handle_StepRepr_RepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_StyledItem();
 		%feature("autodoc", "1");
 		Handle_StepVisual_StyledItem();
 		%feature("autodoc", "1");
@@ -440,12 +480,15 @@ class Handle_StepVisual_StyledItem : public Handle_StepRepr_RepresentationItem {
 	return (StepVisual_StyledItem*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_StyledItem {
+	~Handle_StepVisual_StyledItem() {
+	printf("Call custom destructor for instance of Handle_StepVisual_StyledItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_OverRidingStyledItem;
 class Handle_StepVisual_OverRidingStyledItem : public Handle_StepVisual_StyledItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_OverRidingStyledItem();
 		%feature("autodoc", "1");
 		Handle_StepVisual_OverRidingStyledItem();
 		%feature("autodoc", "1");
@@ -461,12 +504,15 @@ class Handle_StepVisual_OverRidingStyledItem : public Handle_StepVisual_StyledIt
 	return (StepVisual_OverRidingStyledItem*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_OverRidingStyledItem {
+	~Handle_StepVisual_OverRidingStyledItem() {
+	printf("Call custom destructor for instance of Handle_StepVisual_OverRidingStyledItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_ContextDependentOverRidingStyledItem;
 class Handle_StepVisual_ContextDependentOverRidingStyledItem : public Handle_StepVisual_OverRidingStyledItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_ContextDependentOverRidingStyledItem();
 		%feature("autodoc", "1");
 		Handle_StepVisual_ContextDependentOverRidingStyledItem();
 		%feature("autodoc", "1");
@@ -482,12 +528,15 @@ class Handle_StepVisual_ContextDependentOverRidingStyledItem : public Handle_Ste
 	return (StepVisual_ContextDependentOverRidingStyledItem*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_ContextDependentOverRidingStyledItem {
+	~Handle_StepVisual_ContextDependentOverRidingStyledItem() {
+	printf("Call custom destructor for instance of Handle_StepVisual_ContextDependentOverRidingStyledItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentationSize;
 class Handle_StepVisual_PresentationSize : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentationSize();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationSize();
 		%feature("autodoc", "1");
@@ -503,12 +552,15 @@ class Handle_StepVisual_PresentationSize : public Handle_MMgt_TShared {
 	return (StepVisual_PresentationSize*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentationSize {
+	~Handle_StepVisual_PresentationSize() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentationSize\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_DraughtingPreDefinedColour;
 class Handle_StepVisual_DraughtingPreDefinedColour : public Handle_StepVisual_PreDefinedColour {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_DraughtingPreDefinedColour();
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingPreDefinedColour();
 		%feature("autodoc", "1");
@@ -524,12 +576,15 @@ class Handle_StepVisual_DraughtingPreDefinedColour : public Handle_StepVisual_Pr
 	return (StepVisual_DraughtingPreDefinedColour*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_DraughtingPreDefinedColour {
+	~Handle_StepVisual_DraughtingPreDefinedColour() {
+	printf("Call custom destructor for instance of Handle_StepVisual_DraughtingPreDefinedColour\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfTextOrCharacter;
 class Handle_StepVisual_HArray1OfTextOrCharacter : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfTextOrCharacter();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfTextOrCharacter();
 		%feature("autodoc", "1");
@@ -545,12 +600,15 @@ class Handle_StepVisual_HArray1OfTextOrCharacter : public Handle_MMgt_TShared {
 	return (StepVisual_HArray1OfTextOrCharacter*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfTextOrCharacter {
+	~Handle_StepVisual_HArray1OfTextOrCharacter() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfTextOrCharacter\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CameraModelD2;
 class Handle_StepVisual_CameraModelD2 : public Handle_StepVisual_CameraModel {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CameraModelD2();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraModelD2();
 		%feature("autodoc", "1");
@@ -566,12 +624,15 @@ class Handle_StepVisual_CameraModelD2 : public Handle_StepVisual_CameraModel {
 	return (StepVisual_CameraModelD2*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CameraModelD2 {
+	~Handle_StepVisual_CameraModelD2() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CameraModelD2\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CameraModelD3;
 class Handle_StepVisual_CameraModelD3 : public Handle_StepVisual_CameraModel {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CameraModelD3();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraModelD3();
 		%feature("autodoc", "1");
@@ -587,12 +648,15 @@ class Handle_StepVisual_CameraModelD3 : public Handle_StepVisual_CameraModel {
 	return (StepVisual_CameraModelD3*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CameraModelD3 {
+	~Handle_StepVisual_CameraModelD3() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CameraModelD3\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CameraImage;
 class Handle_StepVisual_CameraImage : public Handle_StepRepr_MappedItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CameraImage();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraImage();
 		%feature("autodoc", "1");
@@ -608,12 +672,15 @@ class Handle_StepVisual_CameraImage : public Handle_StepRepr_MappedItem {
 	return (StepVisual_CameraImage*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CameraImage {
+	~Handle_StepVisual_CameraImage() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CameraImage\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleParameterLine;
 class Handle_StepVisual_SurfaceStyleParameterLine : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_SurfaceStyleParameterLine();
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleParameterLine();
 		%feature("autodoc", "1");
@@ -629,12 +696,15 @@ class Handle_StepVisual_SurfaceStyleParameterLine : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleParameterLine*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_SurfaceStyleParameterLine {
+	~Handle_StepVisual_SurfaceStyleParameterLine() {
+	printf("Call custom destructor for instance of Handle_StepVisual_SurfaceStyleParameterLine\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_AnnotationOccurrence;
 class Handle_StepVisual_AnnotationOccurrence : public Handle_StepVisual_StyledItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_AnnotationOccurrence();
 		%feature("autodoc", "1");
 		Handle_StepVisual_AnnotationOccurrence();
 		%feature("autodoc", "1");
@@ -650,12 +720,15 @@ class Handle_StepVisual_AnnotationOccurrence : public Handle_StepVisual_StyledIt
 	return (StepVisual_AnnotationOccurrence*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_AnnotationOccurrence {
+	~Handle_StepVisual_AnnotationOccurrence() {
+	printf("Call custom destructor for instance of Handle_StepVisual_AnnotationOccurrence\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CameraImage2dWithScale;
 class Handle_StepVisual_CameraImage2dWithScale : public Handle_StepVisual_CameraImage {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CameraImage2dWithScale();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraImage2dWithScale();
 		%feature("autodoc", "1");
@@ -671,12 +744,15 @@ class Handle_StepVisual_CameraImage2dWithScale : public Handle_StepVisual_Camera
 	return (StepVisual_CameraImage2dWithScale*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CameraImage2dWithScale {
+	~Handle_StepVisual_CameraImage2dWithScale() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CameraImage2dWithScale\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleAssignment;
 class Handle_StepVisual_HArray1OfPresentationStyleAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfPresentationStyleAssignment();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfPresentationStyleAssignment();
 		%feature("autodoc", "1");
@@ -692,12 +768,15 @@ class Handle_StepVisual_HArray1OfPresentationStyleAssignment : public Handle_MMg
 	return (StepVisual_HArray1OfPresentationStyleAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfPresentationStyleAssignment {
+	~Handle_StepVisual_HArray1OfPresentationStyleAssignment() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfPresentationStyleAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentationLayerAssignment;
 class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentationLayerAssignment();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationLayerAssignment();
 		%feature("autodoc", "1");
@@ -713,12 +792,15 @@ class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared
 	return (StepVisual_PresentationLayerAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentationLayerAssignment {
+	~Handle_StepVisual_PresentationLayerAssignment() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentationLayerAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentationArea;
 class Handle_StepVisual_PresentationArea : public Handle_StepVisual_PresentationRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentationArea();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationArea();
 		%feature("autodoc", "1");
@@ -734,12 +816,15 @@ class Handle_StepVisual_PresentationArea : public Handle_StepVisual_Presentation
 	return (StepVisual_PresentationArea*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentationArea {
+	~Handle_StepVisual_PresentationArea() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentationArea\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_MechanicalDesignGeometricPresentationArea;
 class Handle_StepVisual_MechanicalDesignGeometricPresentationArea : public Handle_StepVisual_PresentationArea {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_MechanicalDesignGeometricPresentationArea();
 		%feature("autodoc", "1");
 		Handle_StepVisual_MechanicalDesignGeometricPresentationArea();
 		%feature("autodoc", "1");
@@ -755,12 +840,15 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationArea : public Handl
 	return (StepVisual_MechanicalDesignGeometricPresentationArea*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_MechanicalDesignGeometricPresentationArea {
+	~Handle_StepVisual_MechanicalDesignGeometricPresentationArea() {
+	printf("Call custom destructor for instance of Handle_StepVisual_MechanicalDesignGeometricPresentationArea\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentationStyleAssignment;
 class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentationStyleAssignment();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationStyleAssignment();
 		%feature("autodoc", "1");
@@ -776,12 +864,15 @@ class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared
 	return (StepVisual_PresentationStyleAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentationStyleAssignment {
+	~Handle_StepVisual_PresentationStyleAssignment() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentationStyleAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentationStyleByContext;
 class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_PresentationStyleAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentationStyleByContext();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationStyleByContext();
 		%feature("autodoc", "1");
@@ -797,12 +888,15 @@ class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_Pr
 	return (StepVisual_PresentationStyleByContext*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentationStyleByContext {
+	~Handle_StepVisual_PresentationStyleByContext() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentationStyleByContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_ViewVolume;
 class Handle_StepVisual_ViewVolume : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_ViewVolume();
 		%feature("autodoc", "1");
 		Handle_StepVisual_ViewVolume();
 		%feature("autodoc", "1");
@@ -818,12 +912,15 @@ class Handle_StepVisual_ViewVolume : public Handle_MMgt_TShared {
 	return (StepVisual_ViewVolume*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_ViewVolume {
+	~Handle_StepVisual_ViewVolume() {
+	printf("Call custom destructor for instance of Handle_StepVisual_ViewVolume\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_TextStyle;
 class Handle_StepVisual_TextStyle : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_TextStyle();
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextStyle();
 		%feature("autodoc", "1");
@@ -839,12 +936,15 @@ class Handle_StepVisual_TextStyle : public Handle_MMgt_TShared {
 	return (StepVisual_TextStyle*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_TextStyle {
+	~Handle_StepVisual_TextStyle() {
+	printf("Call custom destructor for instance of Handle_StepVisual_TextStyle\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_TextStyleWithBoxCharacteristics;
 class Handle_StepVisual_TextStyleWithBoxCharacteristics : public Handle_StepVisual_TextStyle {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_TextStyleWithBoxCharacteristics();
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextStyleWithBoxCharacteristics();
 		%feature("autodoc", "1");
@@ -860,12 +960,15 @@ class Handle_StepVisual_TextStyleWithBoxCharacteristics : public Handle_StepVisu
 	return (StepVisual_TextStyleWithBoxCharacteristics*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_TextStyleWithBoxCharacteristics {
+	~Handle_StepVisual_TextStyleWithBoxCharacteristics() {
+	printf("Call custom destructor for instance of Handle_StepVisual_TextStyleWithBoxCharacteristics\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_SurfaceSideStyle;
 class Handle_StepVisual_SurfaceSideStyle : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_SurfaceSideStyle();
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceSideStyle();
 		%feature("autodoc", "1");
@@ -881,12 +984,15 @@ class Handle_StepVisual_SurfaceSideStyle : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceSideStyle*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_SurfaceSideStyle {
+	~Handle_StepVisual_SurfaceSideStyle() {
+	printf("Call custom destructor for instance of Handle_StepVisual_SurfaceSideStyle\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PointStyle;
 class Handle_StepVisual_PointStyle : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PointStyle();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PointStyle();
 		%feature("autodoc", "1");
@@ -902,12 +1008,15 @@ class Handle_StepVisual_PointStyle : public Handle_MMgt_TShared {
 	return (StepVisual_PointStyle*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PointStyle {
+	~Handle_StepVisual_PointStyle() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PointStyle\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfDirectionCountSelect;
 class Handle_StepVisual_HArray1OfDirectionCountSelect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfDirectionCountSelect();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfDirectionCountSelect();
 		%feature("autodoc", "1");
@@ -923,12 +1032,15 @@ class Handle_StepVisual_HArray1OfDirectionCountSelect : public Handle_MMgt_TShar
 	return (StepVisual_HArray1OfDirectionCountSelect*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfDirectionCountSelect {
+	~Handle_StepVisual_HArray1OfDirectionCountSelect() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfDirectionCountSelect\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_FillAreaStyle;
 class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_FillAreaStyle();
 		%feature("autodoc", "1");
 		Handle_StepVisual_FillAreaStyle();
 		%feature("autodoc", "1");
@@ -944,12 +1056,15 @@ class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
 	return (StepVisual_FillAreaStyle*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_FillAreaStyle {
+	~Handle_StepVisual_FillAreaStyle() {
+	printf("Call custom destructor for instance of Handle_StepVisual_FillAreaStyle\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_ColourSpecification;
 class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_ColourSpecification();
 		%feature("autodoc", "1");
 		Handle_StepVisual_ColourSpecification();
 		%feature("autodoc", "1");
@@ -965,12 +1080,15 @@ class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
 	return (StepVisual_ColourSpecification*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_ColourSpecification {
+	~Handle_StepVisual_ColourSpecification() {
+	printf("Call custom destructor for instance of Handle_StepVisual_ColourSpecification\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_ColourRgb;
 class Handle_StepVisual_ColourRgb : public Handle_StepVisual_ColourSpecification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_ColourRgb();
 		%feature("autodoc", "1");
 		Handle_StepVisual_ColourRgb();
 		%feature("autodoc", "1");
@@ -986,12 +1104,15 @@ class Handle_StepVisual_ColourRgb : public Handle_StepVisual_ColourSpecification
 	return (StepVisual_ColourRgb*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_ColourRgb {
+	~Handle_StepVisual_ColourRgb() {
+	printf("Call custom destructor for instance of Handle_StepVisual_ColourRgb\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentationSet;
 class Handle_StepVisual_PresentationSet : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentationSet();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationSet();
 		%feature("autodoc", "1");
@@ -1007,12 +1128,15 @@ class Handle_StepVisual_PresentationSet : public Handle_MMgt_TShared {
 	return (StepVisual_PresentationSet*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentationSet {
+	~Handle_StepVisual_PresentationSet() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentationSet\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CurveStyle;
 class Handle_StepVisual_CurveStyle : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CurveStyle();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyle();
 		%feature("autodoc", "1");
@@ -1028,12 +1152,15 @@ class Handle_StepVisual_CurveStyle : public Handle_MMgt_TShared {
 	return (StepVisual_CurveStyle*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CurveStyle {
+	~Handle_StepVisual_CurveStyle() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CurveStyle\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_ExternallyDefinedTextFont;
 class Handle_StepVisual_ExternallyDefinedTextFont : public Handle_StepBasic_ExternallyDefinedItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_ExternallyDefinedTextFont();
 		%feature("autodoc", "1");
 		Handle_StepVisual_ExternallyDefinedTextFont();
 		%feature("autodoc", "1");
@@ -1049,12 +1176,15 @@ class Handle_StepVisual_ExternallyDefinedTextFont : public Handle_StepBasic_Exte
 	return (StepVisual_ExternallyDefinedTextFont*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_ExternallyDefinedTextFont {
+	~Handle_StepVisual_ExternallyDefinedTextFont() {
+	printf("Call custom destructor for instance of Handle_StepVisual_ExternallyDefinedTextFont\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_TemplateInstance;
 class Handle_StepVisual_TemplateInstance : public Handle_StepRepr_MappedItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_TemplateInstance();
 		%feature("autodoc", "1");
 		Handle_StepVisual_TemplateInstance();
 		%feature("autodoc", "1");
@@ -1070,12 +1200,15 @@ class Handle_StepVisual_TemplateInstance : public Handle_StepRepr_MappedItem {
 	return (StepVisual_TemplateInstance*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_TemplateInstance {
+	~Handle_StepVisual_TemplateInstance() {
+	printf("Call custom destructor for instance of Handle_StepVisual_TemplateInstance\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfFillStyleSelect;
 class Handle_StepVisual_HArray1OfFillStyleSelect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfFillStyleSelect();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfFillStyleSelect();
 		%feature("autodoc", "1");
@@ -1091,12 +1224,15 @@ class Handle_StepVisual_HArray1OfFillStyleSelect : public Handle_MMgt_TShared {
 	return (StepVisual_HArray1OfFillStyleSelect*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfFillStyleSelect {
+	~Handle_StepVisual_HArray1OfFillStyleSelect() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfFillStyleSelect\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_FillAreaStyleColour;
 class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_FillAreaStyleColour();
 		%feature("autodoc", "1");
 		Handle_StepVisual_FillAreaStyleColour();
 		%feature("autodoc", "1");
@@ -1112,12 +1248,15 @@ class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
 	return (StepVisual_FillAreaStyleColour*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_FillAreaStyleColour {
+	~Handle_StepVisual_FillAreaStyleColour() {
+	printf("Call custom destructor for instance of Handle_StepVisual_FillAreaStyleColour\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfSurfaceStyleElementSelect;
 class Handle_StepVisual_HArray1OfSurfaceStyleElementSelect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfSurfaceStyleElementSelect();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfSurfaceStyleElementSelect();
 		%feature("autodoc", "1");
@@ -1133,12 +1272,15 @@ class Handle_StepVisual_HArray1OfSurfaceStyleElementSelect : public Handle_MMgt_
 	return (StepVisual_HArray1OfSurfaceStyleElementSelect*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfSurfaceStyleElementSelect {
+	~Handle_StepVisual_HArray1OfSurfaceStyleElementSelect() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfSurfaceStyleElementSelect\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleFillArea;
 class Handle_StepVisual_SurfaceStyleFillArea : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_SurfaceStyleFillArea();
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleFillArea();
 		%feature("autodoc", "1");
@@ -1154,12 +1296,15 @@ class Handle_StepVisual_SurfaceStyleFillArea : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleFillArea*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_SurfaceStyleFillArea {
+	~Handle_StepVisual_SurfaceStyleFillArea() {
+	printf("Call custom destructor for instance of Handle_StepVisual_SurfaceStyleFillArea\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentedItem;
 class Handle_StepVisual_PresentedItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentedItem();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentedItem();
 		%feature("autodoc", "1");
@@ -1175,12 +1320,15 @@ class Handle_StepVisual_PresentedItem : public Handle_MMgt_TShared {
 	return (StepVisual_PresentedItem*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentedItem {
+	~Handle_StepVisual_PresentedItem() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentedItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_Template;
 class Handle_StepVisual_Template : public Handle_StepRepr_Representation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_Template();
 		%feature("autodoc", "1");
 		Handle_StepVisual_Template();
 		%feature("autodoc", "1");
@@ -1196,12 +1344,15 @@ class Handle_StepVisual_Template : public Handle_StepRepr_Representation {
 	return (StepVisual_Template*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_Template {
+	~Handle_StepVisual_Template() {
+	printf("Call custom destructor for instance of Handle_StepVisual_Template\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_AreaInSet;
 class Handle_StepVisual_AreaInSet : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_AreaInSet();
 		%feature("autodoc", "1");
 		Handle_StepVisual_AreaInSet();
 		%feature("autodoc", "1");
@@ -1217,12 +1368,15 @@ class Handle_StepVisual_AreaInSet : public Handle_MMgt_TShared {
 	return (StepVisual_AreaInSet*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_AreaInSet {
+	~Handle_StepVisual_AreaInSet() {
+	printf("Call custom destructor for instance of Handle_StepVisual_AreaInSet\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_TextStyleForDefinedFont;
 class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_TextStyleForDefinedFont();
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextStyleForDefinedFont();
 		%feature("autodoc", "1");
@@ -1238,12 +1392,15 @@ class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
 	return (StepVisual_TextStyleForDefinedFont*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_TextStyleForDefinedFont {
+	~Handle_StepVisual_TextStyleForDefinedFont() {
+	printf("Call custom destructor for instance of Handle_StepVisual_TextStyleForDefinedFont\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PreDefinedItem;
 class Handle_StepVisual_PreDefinedItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PreDefinedItem();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedItem();
 		%feature("autodoc", "1");
@@ -1259,12 +1416,15 @@ class Handle_StepVisual_PreDefinedItem : public Handle_MMgt_TShared {
 	return (StepVisual_PreDefinedItem*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PreDefinedItem {
+	~Handle_StepVisual_PreDefinedItem() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PreDefinedItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PreDefinedCurveFont;
 class Handle_StepVisual_PreDefinedCurveFont : public Handle_StepVisual_PreDefinedItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PreDefinedCurveFont();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedCurveFont();
 		%feature("autodoc", "1");
@@ -1280,12 +1440,15 @@ class Handle_StepVisual_PreDefinedCurveFont : public Handle_StepVisual_PreDefine
 	return (StepVisual_PreDefinedCurveFont*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PreDefinedCurveFont {
+	~Handle_StepVisual_PreDefinedCurveFont() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PreDefinedCurveFont\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfBoxCharacteristicSelect;
 class Handle_StepVisual_HArray1OfBoxCharacteristicSelect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfBoxCharacteristicSelect();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfBoxCharacteristicSelect();
 		%feature("autodoc", "1");
@@ -1301,12 +1464,15 @@ class Handle_StepVisual_HArray1OfBoxCharacteristicSelect : public Handle_MMgt_TS
 	return (StepVisual_HArray1OfBoxCharacteristicSelect*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfBoxCharacteristicSelect {
+	~Handle_StepVisual_HArray1OfBoxCharacteristicSelect() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfBoxCharacteristicSelect\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PreDefinedTextFont;
 class Handle_StepVisual_PreDefinedTextFont : public Handle_StepVisual_PreDefinedItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PreDefinedTextFont();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedTextFont();
 		%feature("autodoc", "1");
@@ -1322,12 +1488,15 @@ class Handle_StepVisual_PreDefinedTextFont : public Handle_StepVisual_PreDefined
 	return (StepVisual_PreDefinedTextFont*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PreDefinedTextFont {
+	~Handle_StepVisual_PreDefinedTextFont() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PreDefinedTextFont\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CurveStyleFontPattern;
 class Handle_StepVisual_CurveStyleFontPattern : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CurveStyleFontPattern();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyleFontPattern();
 		%feature("autodoc", "1");
@@ -1343,12 +1512,15 @@ class Handle_StepVisual_CurveStyleFontPattern : public Handle_MMgt_TShared {
 	return (StepVisual_CurveStyleFontPattern*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CurveStyleFontPattern {
+	~Handle_StepVisual_CurveStyleFontPattern() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CurveStyleFontPattern\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleUsage;
 class Handle_StepVisual_SurfaceStyleUsage : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_SurfaceStyleUsage();
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleUsage();
 		%feature("autodoc", "1");
@@ -1364,12 +1536,15 @@ class Handle_StepVisual_SurfaceStyleUsage : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleUsage*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_SurfaceStyleUsage {
+	~Handle_StepVisual_SurfaceStyleUsage() {
+	printf("Call custom destructor for instance of Handle_StepVisual_SurfaceStyleUsage\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PlanarExtent;
 class Handle_StepVisual_PlanarExtent : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PlanarExtent();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PlanarExtent();
 		%feature("autodoc", "1");
@@ -1385,12 +1560,15 @@ class Handle_StepVisual_PlanarExtent : public Handle_StepGeom_GeometricRepresent
 	return (StepVisual_PlanarExtent*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PlanarExtent {
+	~Handle_StepVisual_PlanarExtent() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PlanarExtent\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PlanarBox;
 class Handle_StepVisual_PlanarBox : public Handle_StepVisual_PlanarExtent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PlanarBox();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PlanarBox();
 		%feature("autodoc", "1");
@@ -1406,12 +1584,15 @@ class Handle_StepVisual_PlanarBox : public Handle_StepVisual_PlanarExtent {
 	return (StepVisual_PlanarBox*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PlanarBox {
+	~Handle_StepVisual_PlanarBox() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PlanarBox\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_DraughtingAnnotationOccurrence;
 class Handle_StepVisual_DraughtingAnnotationOccurrence : public Handle_StepVisual_AnnotationOccurrence {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_DraughtingAnnotationOccurrence();
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingAnnotationOccurrence();
 		%feature("autodoc", "1");
@@ -1427,12 +1608,15 @@ class Handle_StepVisual_DraughtingAnnotationOccurrence : public Handle_StepVisua
 	return (StepVisual_DraughtingAnnotationOccurrence*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_DraughtingAnnotationOccurrence {
+	~Handle_StepVisual_DraughtingAnnotationOccurrence() {
+	printf("Call custom destructor for instance of Handle_StepVisual_DraughtingAnnotationOccurrence\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfCurveStyleFontPattern;
 class Handle_StepVisual_HArray1OfCurveStyleFontPattern : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfCurveStyleFontPattern();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfCurveStyleFontPattern();
 		%feature("autodoc", "1");
@@ -1448,12 +1632,15 @@ class Handle_StepVisual_HArray1OfCurveStyleFontPattern : public Handle_MMgt_TSha
 	return (StepVisual_HArray1OfCurveStyleFontPattern*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfCurveStyleFontPattern {
+	~Handle_StepVisual_HArray1OfCurveStyleFontPattern() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfCurveStyleFontPattern\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleSelect;
 class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfPresentationStyleSelect();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfPresentationStyleSelect();
 		%feature("autodoc", "1");
@@ -1469,12 +1656,15 @@ class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TS
 	return (StepVisual_HArray1OfPresentationStyleSelect*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
+	~Handle_StepVisual_HArray1OfPresentationStyleSelect() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfPresentationStyleSelect\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_AnnotationTextOccurrence;
 class Handle_StepVisual_AnnotationTextOccurrence : public Handle_StepVisual_AnnotationOccurrence {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_AnnotationTextOccurrence();
 		%feature("autodoc", "1");
 		Handle_StepVisual_AnnotationTextOccurrence();
 		%feature("autodoc", "1");
@@ -1490,12 +1680,15 @@ class Handle_StepVisual_AnnotationTextOccurrence : public Handle_StepVisual_Anno
 	return (StepVisual_AnnotationTextOccurrence*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_AnnotationTextOccurrence {
+	~Handle_StepVisual_AnnotationTextOccurrence() {
+	printf("Call custom destructor for instance of Handle_StepVisual_AnnotationTextOccurrence\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_DraughtingPreDefinedCurveFont;
 class Handle_StepVisual_DraughtingPreDefinedCurveFont : public Handle_StepVisual_PreDefinedCurveFont {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_DraughtingPreDefinedCurveFont();
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingPreDefinedCurveFont();
 		%feature("autodoc", "1");
@@ -1511,12 +1704,15 @@ class Handle_StepVisual_DraughtingPreDefinedCurveFont : public Handle_StepVisual
 	return (StepVisual_DraughtingPreDefinedCurveFont*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_DraughtingPreDefinedCurveFont {
+	~Handle_StepVisual_DraughtingPreDefinedCurveFont() {
+	printf("Call custom destructor for instance of Handle_StepVisual_DraughtingPreDefinedCurveFont\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_TextLiteral;
 class Handle_StepVisual_TextLiteral : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_TextLiteral();
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextLiteral();
 		%feature("autodoc", "1");
@@ -1532,12 +1728,15 @@ class Handle_StepVisual_TextLiteral : public Handle_StepGeom_GeometricRepresenta
 	return (StepVisual_TextLiteral*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_TextLiteral {
+	~Handle_StepVisual_TextLiteral() {
+	printf("Call custom destructor for instance of Handle_StepVisual_TextLiteral\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CompositeTextWithExtent;
 class Handle_StepVisual_CompositeTextWithExtent : public Handle_StepVisual_CompositeText {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CompositeTextWithExtent();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CompositeTextWithExtent();
 		%feature("autodoc", "1");
@@ -1553,12 +1752,15 @@ class Handle_StepVisual_CompositeTextWithExtent : public Handle_StepVisual_Compo
 	return (StepVisual_CompositeTextWithExtent*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CompositeTextWithExtent {
+	~Handle_StepVisual_CompositeTextWithExtent() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CompositeTextWithExtent\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_DraughtingModel;
 class Handle_StepVisual_DraughtingModel : public Handle_StepRepr_Representation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_DraughtingModel();
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingModel();
 		%feature("autodoc", "1");
@@ -1574,12 +1776,15 @@ class Handle_StepVisual_DraughtingModel : public Handle_StepRepr_Representation 
 	return (StepVisual_DraughtingModel*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_DraughtingModel {
+	~Handle_StepVisual_DraughtingModel() {
+	printf("Call custom destructor for instance of Handle_StepVisual_DraughtingModel\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleBoundary;
 class Handle_StepVisual_SurfaceStyleBoundary : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_SurfaceStyleBoundary();
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleBoundary();
 		%feature("autodoc", "1");
@@ -1595,12 +1800,15 @@ class Handle_StepVisual_SurfaceStyleBoundary : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleBoundary*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_SurfaceStyleBoundary {
+	~Handle_StepVisual_SurfaceStyleBoundary() {
+	printf("Call custom destructor for instance of Handle_StepVisual_SurfaceStyleBoundary\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfLayeredItem;
 class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfLayeredItem();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfLayeredItem();
 		%feature("autodoc", "1");
@@ -1616,12 +1824,15 @@ class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
 	return (StepVisual_HArray1OfLayeredItem*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfLayeredItem {
+	~Handle_StepVisual_HArray1OfLayeredItem() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfLayeredItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentationLayerUsage;
 class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentationLayerUsage();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationLayerUsage();
 		%feature("autodoc", "1");
@@ -1637,12 +1848,15 @@ class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
 	return (StepVisual_PresentationLayerUsage*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentationLayerUsage {
+	~Handle_StepVisual_PresentationLayerUsage() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentationLayerUsage\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfStyleContextSelect;
 class Handle_StepVisual_HArray1OfStyleContextSelect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfStyleContextSelect();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfStyleContextSelect();
 		%feature("autodoc", "1");
@@ -1658,12 +1872,15 @@ class Handle_StepVisual_HArray1OfStyleContextSelect : public Handle_MMgt_TShared
 	return (StepVisual_HArray1OfStyleContextSelect*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfStyleContextSelect {
+	~Handle_StepVisual_HArray1OfStyleContextSelect() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfStyleContextSelect\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_PresentedItemRepresentation;
 class Handle_StepVisual_PresentedItemRepresentation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_PresentedItemRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentedItemRepresentation();
 		%feature("autodoc", "1");
@@ -1679,12 +1896,15 @@ class Handle_StepVisual_PresentedItemRepresentation : public Handle_MMgt_TShared
 	return (StepVisual_PresentedItemRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_PresentedItemRepresentation {
+	~Handle_StepVisual_PresentedItemRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepVisual_PresentedItemRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_HArray1OfInvisibleItem;
 class Handle_StepVisual_HArray1OfInvisibleItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_HArray1OfInvisibleItem();
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfInvisibleItem();
 		%feature("autodoc", "1");
@@ -1700,12 +1920,15 @@ class Handle_StepVisual_HArray1OfInvisibleItem : public Handle_MMgt_TShared {
 	return (StepVisual_HArray1OfInvisibleItem*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_HArray1OfInvisibleItem {
+	~Handle_StepVisual_HArray1OfInvisibleItem() {
+	printf("Call custom destructor for instance of Handle_StepVisual_HArray1OfInvisibleItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleSilhouette;
 class Handle_StepVisual_SurfaceStyleSilhouette : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_SurfaceStyleSilhouette();
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleSilhouette();
 		%feature("autodoc", "1");
@@ -1721,12 +1944,15 @@ class Handle_StepVisual_SurfaceStyleSilhouette : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleSilhouette*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_SurfaceStyleSilhouette {
+	~Handle_StepVisual_SurfaceStyleSilhouette() {
+	printf("Call custom destructor for instance of Handle_StepVisual_SurfaceStyleSilhouette\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_BackgroundColour;
 class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_BackgroundColour();
 		%feature("autodoc", "1");
 		Handle_StepVisual_BackgroundColour();
 		%feature("autodoc", "1");
@@ -1742,12 +1968,15 @@ class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
 	return (StepVisual_BackgroundColour*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_BackgroundColour {
+	~Handle_StepVisual_BackgroundColour() {
+	printf("Call custom destructor for instance of Handle_StepVisual_BackgroundColour\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CameraImage3dWithScale;
 class Handle_StepVisual_CameraImage3dWithScale : public Handle_StepVisual_CameraImage {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CameraImage3dWithScale();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraImage3dWithScale();
 		%feature("autodoc", "1");
@@ -1763,12 +1992,15 @@ class Handle_StepVisual_CameraImage3dWithScale : public Handle_StepVisual_Camera
 	return (StepVisual_CameraImage3dWithScale*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CameraImage3dWithScale {
+	~Handle_StepVisual_CameraImage3dWithScale() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CameraImage3dWithScale\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_CurveStyleFont;
 class Handle_StepVisual_CurveStyleFont : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_CurveStyleFont();
 		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyleFont();
 		%feature("autodoc", "1");
@@ -1784,12 +2016,15 @@ class Handle_StepVisual_CurveStyleFont : public Handle_MMgt_TShared {
 	return (StepVisual_CurveStyleFont*)$self->Access();
 	}
 };
+%extend Handle_StepVisual_CurveStyleFont {
+	~Handle_StepVisual_CurveStyleFont() {
+	printf("Call custom destructor for instance of Handle_StepVisual_CurveStyleFont\n");
+	}
+};
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleControlGrid;
 class Handle_StepVisual_SurfaceStyleControlGrid : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepVisual_SurfaceStyleControlGrid();
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleControlGrid();
 		%feature("autodoc", "1");
@@ -1803,6 +2038,11 @@ class Handle_StepVisual_SurfaceStyleControlGrid : public Handle_MMgt_TShared {
 %extend Handle_StepVisual_SurfaceStyleControlGrid {
 	StepVisual_SurfaceStyleControlGrid* GetObject() {
 	return (StepVisual_SurfaceStyleControlGrid*)$self->Access();
+	}
+};
+%extend Handle_StepVisual_SurfaceStyleControlGrid {
+	~Handle_StepVisual_SurfaceStyleControlGrid() {
+	printf("Call custom destructor for instance of Handle_StepVisual_SurfaceStyleControlGrid\n");
 	}
 };
 
@@ -1823,13 +2063,16 @@ class StepVisual_CurveStyleFontPattern : public MMgt_TShared {
 		Standard_Real InvisibleSegmentLength() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CurveStyleFontPattern();
 
 };
 %extend StepVisual_CurveStyleFontPattern {
 	Handle_StepVisual_CurveStyleFontPattern GetHandle() {
 	return *(Handle_StepVisual_CurveStyleFontPattern*) &$self;
+	}
+};
+%extend StepVisual_CurveStyleFontPattern {
+	~StepVisual_CurveStyleFontPattern() {
+	printf("Call custom destructor for instance of StepVisual_CurveStyleFontPattern\n");
 	}
 };
 
@@ -1850,13 +2093,16 @@ class StepVisual_Invisibility : public MMgt_TShared {
 		Standard_Integer NbInvisibleItems() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_Invisibility();
 
 };
 %extend StepVisual_Invisibility {
 	Handle_StepVisual_Invisibility GetHandle() {
 	return *(Handle_StepVisual_Invisibility*) &$self;
+	}
+};
+%extend StepVisual_Invisibility {
+	~StepVisual_Invisibility() {
+	printf("Call custom destructor for instance of StepVisual_Invisibility\n");
 	}
 };
 
@@ -1871,13 +2117,16 @@ class StepVisual_ContextDependentInvisibility : public StepVisual_Invisibility {
 		void SetPresentationContext(const StepVisual_InvisibilityContext &aPresentationContext);
 		%feature("autodoc", "1");
 		StepVisual_InvisibilityContext PresentationContext() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_ContextDependentInvisibility();
 
 };
 %extend StepVisual_ContextDependentInvisibility {
 	Handle_StepVisual_ContextDependentInvisibility GetHandle() {
 	return *(Handle_StepVisual_ContextDependentInvisibility*) &$self;
+	}
+};
+%extend StepVisual_ContextDependentInvisibility {
+	~StepVisual_ContextDependentInvisibility() {
+	printf("Call custom destructor for instance of StepVisual_ContextDependentInvisibility\n");
 	}
 };
 
@@ -1906,13 +2155,16 @@ class StepVisual_CameraUsage : public StepRepr_RepresentationMap {
 		StepVisual_CameraUsage();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CameraUsage();
 
 };
 %extend StepVisual_CameraUsage {
 	Handle_StepVisual_CameraUsage GetHandle() {
 	return *(Handle_StepVisual_CameraUsage*) &$self;
+	}
+};
+%extend StepVisual_CameraUsage {
+	~StepVisual_CameraUsage() {
+	printf("Call custom destructor for instance of StepVisual_CameraUsage\n");
 	}
 };
 
@@ -1943,13 +2195,16 @@ class StepVisual_HArray1OfDirectionCountSelect : public MMgt_TShared {
 		StepVisual_Array1OfDirectionCountSelect & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfDirectionCountSelect();
 
 };
 %extend StepVisual_HArray1OfDirectionCountSelect {
 	Handle_StepVisual_HArray1OfDirectionCountSelect GetHandle() {
 	return *(Handle_StepVisual_HArray1OfDirectionCountSelect*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfDirectionCountSelect {
+	~StepVisual_HArray1OfDirectionCountSelect() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfDirectionCountSelect\n");
 	}
 };
 
@@ -2052,13 +2307,16 @@ class StepVisual_HArray1OfCurveStyleFontPattern : public MMgt_TShared {
 		StepVisual_Array1OfCurveStyleFontPattern & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfCurveStyleFontPattern();
 
 };
 %extend StepVisual_HArray1OfCurveStyleFontPattern {
 	Handle_StepVisual_HArray1OfCurveStyleFontPattern GetHandle() {
 	return *(Handle_StepVisual_HArray1OfCurveStyleFontPattern*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfCurveStyleFontPattern {
+	~StepVisual_HArray1OfCurveStyleFontPattern() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfCurveStyleFontPattern\n");
 	}
 };
 
@@ -2079,13 +2337,16 @@ class StepVisual_PresentedItemRepresentation : public MMgt_TShared {
 		Handle_StepVisual_PresentedItem Item() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentedItemRepresentation();
 
 };
 %extend StepVisual_PresentedItemRepresentation {
 	Handle_StepVisual_PresentedItemRepresentation GetHandle() {
 	return *(Handle_StepVisual_PresentedItemRepresentation*) &$self;
+	}
+};
+%extend StepVisual_PresentedItemRepresentation {
+	~StepVisual_PresentedItemRepresentation() {
+	printf("Call custom destructor for instance of StepVisual_PresentedItemRepresentation\n");
 	}
 };
 
@@ -2132,13 +2393,16 @@ class StepVisual_HArray1OfStyleContextSelect : public MMgt_TShared {
 		StepVisual_Array1OfStyleContextSelect & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfStyleContextSelect();
 
 };
 %extend StepVisual_HArray1OfStyleContextSelect {
 	Handle_StepVisual_HArray1OfStyleContextSelect GetHandle() {
 	return *(Handle_StepVisual_HArray1OfStyleContextSelect*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfStyleContextSelect {
+	~StepVisual_HArray1OfStyleContextSelect() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfStyleContextSelect\n");
 	}
 };
 
@@ -2187,13 +2451,16 @@ class StepVisual_HArray1OfPresentationStyleSelect : public MMgt_TShared {
 		StepVisual_Array1OfPresentationStyleSelect & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfPresentationStyleSelect();
 
 };
 %extend StepVisual_HArray1OfPresentationStyleSelect {
 	Handle_StepVisual_HArray1OfPresentationStyleSelect GetHandle() {
 	return *(Handle_StepVisual_HArray1OfPresentationStyleSelect*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfPresentationStyleSelect {
+	~StepVisual_HArray1OfPresentationStyleSelect() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfPresentationStyleSelect\n");
 	}
 };
 
@@ -2214,13 +2481,16 @@ class StepVisual_PresentationStyleAssignment : public MMgt_TShared {
 		Standard_Integer NbStyles() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationStyleAssignment();
 
 };
 %extend StepVisual_PresentationStyleAssignment {
 	Handle_StepVisual_PresentationStyleAssignment GetHandle() {
 	return *(Handle_StepVisual_PresentationStyleAssignment*) &$self;
+	}
+};
+%extend StepVisual_PresentationStyleAssignment {
+	~StepVisual_PresentationStyleAssignment() {
+	printf("Call custom destructor for instance of StepVisual_PresentationStyleAssignment\n");
 	}
 };
 
@@ -2235,13 +2505,16 @@ class StepVisual_PresentationStyleByContext : public StepVisual_PresentationStyl
 		void SetStyleContext(const StepVisual_StyleContextSelect &aStyleContext);
 		%feature("autodoc", "1");
 		StepVisual_StyleContextSelect StyleContext() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationStyleByContext();
 
 };
 %extend StepVisual_PresentationStyleByContext {
 	Handle_StepVisual_PresentationStyleByContext GetHandle() {
 	return *(Handle_StepVisual_PresentationStyleByContext*) &$self;
+	}
+};
+%extend StepVisual_PresentationStyleByContext {
+	~StepVisual_PresentationStyleByContext() {
+	printf("Call custom destructor for instance of StepVisual_PresentationStyleByContext\n");
 	}
 };
 
@@ -2270,13 +2543,16 @@ class StepVisual_CurveStyle : public MMgt_TShared {
 		Handle_StepVisual_Colour CurveColour() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CurveStyle();
 
 };
 %extend StepVisual_CurveStyle {
 	Handle_StepVisual_CurveStyle GetHandle() {
 	return *(Handle_StepVisual_CurveStyle*) &$self;
+	}
+};
+%extend StepVisual_CurveStyle {
+	~StepVisual_CurveStyle() {
+	printf("Call custom destructor for instance of StepVisual_CurveStyle\n");
 	}
 };
 
@@ -2293,13 +2569,16 @@ class StepVisual_SurfaceStyleSilhouette : public MMgt_TShared {
 		Handle_StepVisual_CurveStyle StyleOfSilhouette() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_SurfaceStyleSilhouette();
 
 };
 %extend StepVisual_SurfaceStyleSilhouette {
 	Handle_StepVisual_SurfaceStyleSilhouette GetHandle() {
 	return *(Handle_StepVisual_SurfaceStyleSilhouette*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleSilhouette {
+	~StepVisual_SurfaceStyleSilhouette() {
+	printf("Call custom destructor for instance of StepVisual_SurfaceStyleSilhouette\n");
 	}
 };
 
@@ -2310,13 +2589,16 @@ class StepVisual_Colour : public MMgt_TShared {
 		StepVisual_Colour();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_Colour();
 
 };
 %extend StepVisual_Colour {
 	Handle_StepVisual_Colour GetHandle() {
 	return *(Handle_StepVisual_Colour*) &$self;
+	}
+};
+%extend StepVisual_Colour {
+	~StepVisual_Colour() {
+	printf("Call custom destructor for instance of StepVisual_Colour\n");
 	}
 };
 
@@ -2331,13 +2613,16 @@ class StepVisual_BackgroundColour : public StepVisual_Colour {
 		void SetPresentation(const StepVisual_AreaOrView &aPresentation);
 		%feature("autodoc", "1");
 		StepVisual_AreaOrView Presentation() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_BackgroundColour();
 
 };
 %extend StepVisual_BackgroundColour {
 	Handle_StepVisual_BackgroundColour GetHandle() {
 	return *(Handle_StepVisual_BackgroundColour*) &$self;
+	}
+};
+%extend StepVisual_BackgroundColour {
+	~StepVisual_BackgroundColour() {
+	printf("Call custom destructor for instance of StepVisual_BackgroundColour\n");
 	}
 };
 
@@ -2354,13 +2639,16 @@ class StepVisual_PreDefinedItem : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PreDefinedItem();
 
 };
 %extend StepVisual_PreDefinedItem {
 	Handle_StepVisual_PreDefinedItem GetHandle() {
 	return *(Handle_StepVisual_PreDefinedItem*) &$self;
+	}
+};
+%extend StepVisual_PreDefinedItem {
+	~StepVisual_PreDefinedItem() {
+	printf("Call custom destructor for instance of StepVisual_PreDefinedItem\n");
 	}
 };
 
@@ -2369,13 +2657,16 @@ class StepVisual_PreDefinedCurveFont : public StepVisual_PreDefinedItem {
 	public:
 		%feature("autodoc", "1");
 		StepVisual_PreDefinedCurveFont();
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PreDefinedCurveFont();
 
 };
 %extend StepVisual_PreDefinedCurveFont {
 	Handle_StepVisual_PreDefinedCurveFont GetHandle() {
 	return *(Handle_StepVisual_PreDefinedCurveFont*) &$self;
+	}
+};
+%extend StepVisual_PreDefinedCurveFont {
+	~StepVisual_PreDefinedCurveFont() {
+	printf("Call custom destructor for instance of StepVisual_PreDefinedCurveFont\n");
 	}
 };
 
@@ -2384,13 +2675,16 @@ class StepVisual_DraughtingPreDefinedCurveFont : public StepVisual_PreDefinedCur
 	public:
 		%feature("autodoc", "1");
 		StepVisual_DraughtingPreDefinedCurveFont();
-		%feature("autodoc", "1");
-		virtual		~StepVisual_DraughtingPreDefinedCurveFont();
 
 };
 %extend StepVisual_DraughtingPreDefinedCurveFont {
 	Handle_StepVisual_DraughtingPreDefinedCurveFont GetHandle() {
 	return *(Handle_StepVisual_DraughtingPreDefinedCurveFont*) &$self;
+	}
+};
+%extend StepVisual_DraughtingPreDefinedCurveFont {
+	~StepVisual_DraughtingPreDefinedCurveFont() {
+	printf("Call custom destructor for instance of StepVisual_DraughtingPreDefinedCurveFont\n");
 	}
 };
 
@@ -2439,13 +2733,16 @@ class StepVisual_ViewVolume : public MMgt_TShared {
 		Handle_StepVisual_PlanarBox ViewWindow() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_ViewVolume();
 
 };
 %extend StepVisual_ViewVolume {
 	Handle_StepVisual_ViewVolume GetHandle() {
 	return *(Handle_StepVisual_ViewVolume*) &$self;
+	}
+};
+%extend StepVisual_ViewVolume {
+	~StepVisual_ViewVolume() {
+	printf("Call custom destructor for instance of StepVisual_ViewVolume\n");
 	}
 };
 
@@ -2460,13 +2757,16 @@ class StepVisual_PreDefinedColour : public StepVisual_Colour {
 		const Handle_StepVisual_PreDefinedItem & GetPreDefinedItem() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PreDefinedColour();
 
 };
 %extend StepVisual_PreDefinedColour {
 	Handle_StepVisual_PreDefinedColour GetHandle() {
 	return *(Handle_StepVisual_PreDefinedColour*) &$self;
+	}
+};
+%extend StepVisual_PreDefinedColour {
+	~StepVisual_PreDefinedColour() {
+	printf("Call custom destructor for instance of StepVisual_PreDefinedColour\n");
 	}
 };
 
@@ -2493,13 +2793,16 @@ class StepVisual_StyledItem : public StepRepr_RepresentationItem {
 		Handle_StepRepr_RepresentationItem Item() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_StyledItem();
 
 };
 %extend StepVisual_StyledItem {
 	Handle_StepVisual_StyledItem GetHandle() {
 	return *(Handle_StepVisual_StyledItem*) &$self;
+	}
+};
+%extend StepVisual_StyledItem {
+	~StepVisual_StyledItem() {
+	printf("Call custom destructor for instance of StepVisual_StyledItem\n");
 	}
 };
 
@@ -2522,13 +2825,16 @@ class StepVisual_PlanarExtent : public StepGeom_GeometricRepresentationItem {
 		Standard_Real SizeInY() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PlanarExtent();
 
 };
 %extend StepVisual_PlanarExtent {
 	Handle_StepVisual_PlanarExtent GetHandle() {
 	return *(Handle_StepVisual_PlanarExtent*) &$self;
+	}
+};
+%extend StepVisual_PlanarExtent {
+	~StepVisual_PlanarExtent() {
+	printf("Call custom destructor for instance of StepVisual_PlanarExtent\n");
 	}
 };
 
@@ -2543,13 +2849,16 @@ class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
 		void SetPlacement(const StepGeom_Axis2Placement &aPlacement);
 		%feature("autodoc", "1");
 		StepGeom_Axis2Placement Placement() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PlanarBox();
 
 };
 %extend StepVisual_PlanarBox {
 	Handle_StepVisual_PlanarBox GetHandle() {
 	return *(Handle_StepVisual_PlanarBox*) &$self;
+	}
+};
+%extend StepVisual_PlanarBox {
+	~StepVisual_PlanarBox() {
+	printf("Call custom destructor for instance of StepVisual_PlanarBox\n");
 	}
 };
 
@@ -2568,13 +2877,16 @@ class StepVisual_OverRidingStyledItem : public StepVisual_StyledItem {
 		Handle_StepVisual_StyledItem OverRiddenStyle() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_OverRidingStyledItem();
 
 };
 %extend StepVisual_OverRidingStyledItem {
 	Handle_StepVisual_OverRidingStyledItem GetHandle() {
 	return *(Handle_StepVisual_OverRidingStyledItem*) &$self;
+	}
+};
+%extend StepVisual_OverRidingStyledItem {
+	~StepVisual_OverRidingStyledItem() {
+	printf("Call custom destructor for instance of StepVisual_OverRidingStyledItem\n");
 	}
 };
 
@@ -2593,13 +2905,16 @@ class StepVisual_ContextDependentOverRidingStyledItem : public StepVisual_OverRi
 		StepVisual_StyleContextSelect StyleContextValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbStyleContext() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_ContextDependentOverRidingStyledItem();
 
 };
 %extend StepVisual_ContextDependentOverRidingStyledItem {
 	Handle_StepVisual_ContextDependentOverRidingStyledItem GetHandle() {
 	return *(Handle_StepVisual_ContextDependentOverRidingStyledItem*) &$self;
+	}
+};
+%extend StepVisual_ContextDependentOverRidingStyledItem {
+	~StepVisual_ContextDependentOverRidingStyledItem() {
+	printf("Call custom destructor for instance of StepVisual_ContextDependentOverRidingStyledItem\n");
 	}
 };
 
@@ -2610,13 +2925,16 @@ class StepVisual_PresentationRepresentation : public StepRepr_Representation {
 		StepVisual_PresentationRepresentation();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationRepresentation();
 
 };
 %extend StepVisual_PresentationRepresentation {
 	Handle_StepVisual_PresentationRepresentation GetHandle() {
 	return *(Handle_StepVisual_PresentationRepresentation*) &$self;
+	}
+};
+%extend StepVisual_PresentationRepresentation {
+	~StepVisual_PresentationRepresentation() {
+	printf("Call custom destructor for instance of StepVisual_PresentationRepresentation\n");
 	}
 };
 
@@ -2625,13 +2943,16 @@ class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation
 	public:
 		%feature("autodoc", "1");
 		StepVisual_PresentationArea();
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationArea();
 
 };
 %extend StepVisual_PresentationArea {
 	Handle_StepVisual_PresentationArea GetHandle() {
 	return *(Handle_StepVisual_PresentationArea*) &$self;
+	}
+};
+%extend StepVisual_PresentationArea {
+	~StepVisual_PresentationArea() {
+	printf("Call custom destructor for instance of StepVisual_PresentationArea\n");
 	}
 };
 
@@ -2640,13 +2961,16 @@ class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_P
 	public:
 		%feature("autodoc", "1");
 		StepVisual_MechanicalDesignGeometricPresentationArea();
-		%feature("autodoc", "1");
-		virtual		~StepVisual_MechanicalDesignGeometricPresentationArea();
 
 };
 %extend StepVisual_MechanicalDesignGeometricPresentationArea {
 	Handle_StepVisual_MechanicalDesignGeometricPresentationArea GetHandle() {
 	return *(Handle_StepVisual_MechanicalDesignGeometricPresentationArea*) &$self;
+	}
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationArea {
+	~StepVisual_MechanicalDesignGeometricPresentationArea() {
+	printf("Call custom destructor for instance of StepVisual_MechanicalDesignGeometricPresentationArea\n");
 	}
 };
 
@@ -2693,13 +3017,16 @@ class StepVisual_PointStyle : public MMgt_TShared {
 		Handle_StepVisual_Colour MarkerColour() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PointStyle();
 
 };
 %extend StepVisual_PointStyle {
 	Handle_StepVisual_PointStyle GetHandle() {
 	return *(Handle_StepVisual_PointStyle*) &$self;
+	}
+};
+%extend StepVisual_PointStyle {
+	~StepVisual_PointStyle() {
+	printf("Call custom destructor for instance of StepVisual_PointStyle\n");
 	}
 };
 
@@ -2724,13 +3051,16 @@ class StepVisual_MarkerMember : public StepData_SelectInt {
 		StepVisual_MarkerType Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_MarkerMember();
 
 };
 %extend StepVisual_MarkerMember {
 	Handle_StepVisual_MarkerMember GetHandle() {
 	return *(Handle_StepVisual_MarkerMember*) &$self;
+	}
+};
+%extend StepVisual_MarkerMember {
+	~StepVisual_MarkerMember() {
+	printf("Call custom destructor for instance of StepVisual_MarkerMember\n");
 	}
 };
 
@@ -2751,13 +3081,16 @@ class StepVisual_TextStyle : public MMgt_TShared {
 		Handle_StepVisual_TextStyleForDefinedFont CharacterAppearance() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_TextStyle();
 
 };
 %extend StepVisual_TextStyle {
 	Handle_StepVisual_TextStyle GetHandle() {
 	return *(Handle_StepVisual_TextStyle*) &$self;
+	}
+};
+%extend StepVisual_TextStyle {
+	~StepVisual_TextStyle() {
+	printf("Call custom destructor for instance of StepVisual_TextStyle\n");
 	}
 };
 
@@ -2776,13 +3109,16 @@ class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
 		StepVisual_BoxCharacteristicSelect CharacteristicsValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbCharacteristics() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_TextStyleWithBoxCharacteristics();
 
 };
 %extend StepVisual_TextStyleWithBoxCharacteristics {
 	Handle_StepVisual_TextStyleWithBoxCharacteristics GetHandle() {
 	return *(Handle_StepVisual_TextStyleWithBoxCharacteristics*) &$self;
+	}
+};
+%extend StepVisual_TextStyleWithBoxCharacteristics {
+	~StepVisual_TextStyleWithBoxCharacteristics() {
+	printf("Call custom destructor for instance of StepVisual_TextStyleWithBoxCharacteristics\n");
 	}
 };
 
@@ -2825,13 +3161,16 @@ class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
 		Standard_Integer NbDirectionCounts() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_SurfaceStyleParameterLine();
 
 };
 %extend StepVisual_SurfaceStyleParameterLine {
 	Handle_StepVisual_SurfaceStyleParameterLine GetHandle() {
 	return *(Handle_StepVisual_SurfaceStyleParameterLine*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleParameterLine {
+	~StepVisual_SurfaceStyleParameterLine() {
+	printf("Call custom destructor for instance of StepVisual_SurfaceStyleParameterLine\n");
 	}
 };
 
@@ -2842,13 +3181,16 @@ class StepVisual_CameraImage : public StepRepr_MappedItem {
 		StepVisual_CameraImage();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CameraImage();
 
 };
 %extend StepVisual_CameraImage {
 	Handle_StepVisual_CameraImage GetHandle() {
 	return *(Handle_StepVisual_CameraImage*) &$self;
+	}
+};
+%extend StepVisual_CameraImage {
+	~StepVisual_CameraImage() {
+	printf("Call custom destructor for instance of StepVisual_CameraImage\n");
 	}
 };
 
@@ -2857,13 +3199,16 @@ class StepVisual_CameraImage3dWithScale : public StepVisual_CameraImage {
 	public:
 		%feature("autodoc", "1");
 		StepVisual_CameraImage3dWithScale();
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CameraImage3dWithScale();
 
 };
 %extend StepVisual_CameraImage3dWithScale {
 	Handle_StepVisual_CameraImage3dWithScale GetHandle() {
 	return *(Handle_StepVisual_CameraImage3dWithScale*) &$self;
+	}
+};
+%extend StepVisual_CameraImage3dWithScale {
+	~StepVisual_CameraImage3dWithScale() {
+	printf("Call custom destructor for instance of StepVisual_CameraImage3dWithScale\n");
 	}
 };
 
@@ -2886,13 +3231,16 @@ class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
 		Standard_Integer NbCollectedText() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CompositeText();
 
 };
 %extend StepVisual_CompositeText {
 	Handle_StepVisual_CompositeText GetHandle() {
 	return *(Handle_StepVisual_CompositeText*) &$self;
+	}
+};
+%extend StepVisual_CompositeText {
+	~StepVisual_CompositeText() {
+	printf("Call custom destructor for instance of StepVisual_CompositeText\n");
 	}
 };
 
@@ -2921,13 +3269,16 @@ class StepVisual_ExternallyDefinedCurveFont : public StepBasic_ExternallyDefined
 		StepVisual_ExternallyDefinedCurveFont();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_ExternallyDefinedCurveFont();
 
 };
 %extend StepVisual_ExternallyDefinedCurveFont {
 	Handle_StepVisual_ExternallyDefinedCurveFont GetHandle() {
 	return *(Handle_StepVisual_ExternallyDefinedCurveFont*) &$self;
+	}
+};
+%extend StepVisual_ExternallyDefinedCurveFont {
+	~StepVisual_ExternallyDefinedCurveFont() {
+	printf("Call custom destructor for instance of StepVisual_ExternallyDefinedCurveFont\n");
 	}
 };
 
@@ -2958,13 +3309,16 @@ class StepVisual_HArray1OfLayeredItem : public MMgt_TShared {
 		StepVisual_Array1OfLayeredItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfLayeredItem();
 
 };
 %extend StepVisual_HArray1OfLayeredItem {
 	Handle_StepVisual_HArray1OfLayeredItem GetHandle() {
 	return *(Handle_StepVisual_HArray1OfLayeredItem*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfLayeredItem {
+	~StepVisual_HArray1OfLayeredItem() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfLayeredItem\n");
 	}
 };
 
@@ -2981,13 +3335,16 @@ class StepVisual_ColourSpecification : public StepVisual_Colour {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_ColourSpecification();
 
 };
 %extend StepVisual_ColourSpecification {
 	Handle_StepVisual_ColourSpecification GetHandle() {
 	return *(Handle_StepVisual_ColourSpecification*) &$self;
+	}
+};
+%extend StepVisual_ColourSpecification {
+	~StepVisual_ColourSpecification() {
+	printf("Call custom destructor for instance of StepVisual_ColourSpecification\n");
 	}
 };
 
@@ -3010,13 +3367,16 @@ class StepVisual_ColourRgb : public StepVisual_ColourSpecification {
 		void SetBlue(const Standard_Real aBlue);
 		%feature("autodoc", "1");
 		Standard_Real Blue() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_ColourRgb();
 
 };
 %extend StepVisual_ColourRgb {
 	Handle_StepVisual_ColourRgb GetHandle() {
 	return *(Handle_StepVisual_ColourRgb*) &$self;
+	}
+};
+%extend StepVisual_ColourRgb {
+	~StepVisual_ColourRgb() {
+	printf("Call custom destructor for instance of StepVisual_ColourRgb\n");
 	}
 };
 
@@ -3081,13 +3441,16 @@ class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
 		Standard_Integer NbAssignedItems() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationLayerAssignment();
 
 };
 %extend StepVisual_PresentationLayerAssignment {
 	Handle_StepVisual_PresentationLayerAssignment GetHandle() {
 	return *(Handle_StepVisual_PresentationLayerAssignment*) &$self;
+	}
+};
+%extend StepVisual_PresentationLayerAssignment {
+	~StepVisual_PresentationLayerAssignment() {
+	printf("Call custom destructor for instance of StepVisual_PresentationLayerAssignment\n");
 	}
 };
 
@@ -3108,13 +3471,16 @@ class StepVisual_FillAreaStyleColour : public MMgt_TShared {
 		Handle_StepVisual_Colour FillColour() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_FillAreaStyleColour();
 
 };
 %extend StepVisual_FillAreaStyleColour {
 	Handle_StepVisual_FillAreaStyleColour GetHandle() {
 	return *(Handle_StepVisual_FillAreaStyleColour*) &$self;
+	}
+};
+%extend StepVisual_FillAreaStyleColour {
+	~StepVisual_FillAreaStyleColour() {
+	printf("Call custom destructor for instance of StepVisual_FillAreaStyleColour\n");
 	}
 };
 
@@ -3143,13 +3509,16 @@ class StepVisual_PresentationView : public StepVisual_PresentationRepresentation
 		StepVisual_PresentationView();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationView();
 
 };
 %extend StepVisual_PresentationView {
 	Handle_StepVisual_PresentationView GetHandle() {
 	return *(Handle_StepVisual_PresentationView*) &$self;
+	}
+};
+%extend StepVisual_PresentationView {
+	~StepVisual_PresentationView() {
+	printf("Call custom destructor for instance of StepVisual_PresentationView\n");
 	}
 };
 
@@ -3170,13 +3539,16 @@ class StepVisual_PresentationLayerUsage : public MMgt_TShared {
 		Handle_StepVisual_PresentationRepresentation Presentation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationLayerUsage();
 
 };
 %extend StepVisual_PresentationLayerUsage {
 	Handle_StepVisual_PresentationLayerUsage GetHandle() {
 	return *(Handle_StepVisual_PresentationLayerUsage*) &$self;
+	}
+};
+%extend StepVisual_PresentationLayerUsage {
+	~StepVisual_PresentationLayerUsage() {
+	printf("Call custom destructor for instance of StepVisual_PresentationLayerUsage\n");
 	}
 };
 
@@ -3211,13 +3583,16 @@ class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
 		StepVisual_FontSelect Font() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_TextLiteral();
 
 };
 %extend StepVisual_TextLiteral {
 	Handle_StepVisual_TextLiteral GetHandle() {
 	return *(Handle_StepVisual_TextLiteral*) &$self;
+	}
+};
+%extend StepVisual_TextLiteral {
+	~StepVisual_TextLiteral() {
+	printf("Call custom destructor for instance of StepVisual_TextLiteral\n");
 	}
 };
 
@@ -3238,13 +3613,16 @@ class StepVisual_PresentationSize : public MMgt_TShared {
 		Handle_StepVisual_PlanarBox Size() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationSize();
 
 };
 %extend StepVisual_PresentationSize {
 	Handle_StepVisual_PresentationSize GetHandle() {
 	return *(Handle_StepVisual_PresentationSize*) &$self;
+	}
+};
+%extend StepVisual_PresentationSize {
+	~StepVisual_PresentationSize() {
+	printf("Call custom destructor for instance of StepVisual_PresentationSize\n");
 	}
 };
 
@@ -3297,13 +3675,16 @@ class StepVisual_TextStyleForDefinedFont : public MMgt_TShared {
 		Handle_StepVisual_Colour TextColour() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_TextStyleForDefinedFont();
 
 };
 %extend StepVisual_TextStyleForDefinedFont {
 	Handle_StepVisual_TextStyleForDefinedFont GetHandle() {
 	return *(Handle_StepVisual_TextStyleForDefinedFont*) &$self;
+	}
+};
+%extend StepVisual_TextStyleForDefinedFont {
+	~StepVisual_TextStyleForDefinedFont() {
+	printf("Call custom destructor for instance of StepVisual_TextStyleForDefinedFont\n");
 	}
 };
 
@@ -3314,13 +3695,16 @@ class StepVisual_CameraModel : public StepGeom_GeometricRepresentationItem {
 		StepVisual_CameraModel();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CameraModel();
 
 };
 %extend StepVisual_CameraModel {
 	Handle_StepVisual_CameraModel GetHandle() {
 	return *(Handle_StepVisual_CameraModel*) &$self;
+	}
+};
+%extend StepVisual_CameraModel {
+	~StepVisual_CameraModel() {
+	printf("Call custom destructor for instance of StepVisual_CameraModel\n");
 	}
 };
 
@@ -3341,13 +3725,16 @@ class StepVisual_CameraModelD2 : public StepVisual_CameraModel {
 		void SetViewWindowClipping(const Standard_Boolean aViewWindowClipping);
 		%feature("autodoc", "1");
 		Standard_Boolean ViewWindowClipping() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CameraModelD2();
 
 };
 %extend StepVisual_CameraModelD2 {
 	Handle_StepVisual_CameraModelD2 GetHandle() {
 	return *(Handle_StepVisual_CameraModelD2*) &$self;
+	}
+};
+%extend StepVisual_CameraModelD2 {
+	~StepVisual_CameraModelD2() {
+	printf("Call custom destructor for instance of StepVisual_CameraModelD2\n");
 	}
 };
 
@@ -3372,13 +3759,16 @@ class StepVisual_CurveStyleFont : public MMgt_TShared {
 		Standard_Integer NbPatternList() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CurveStyleFont();
 
 };
 %extend StepVisual_CurveStyleFont {
 	Handle_StepVisual_CurveStyleFont GetHandle() {
 	return *(Handle_StepVisual_CurveStyleFont*) &$self;
+	}
+};
+%extend StepVisual_CurveStyleFont {
+	~StepVisual_CurveStyleFont() {
+	printf("Call custom destructor for instance of StepVisual_CurveStyleFont\n");
 	}
 };
 
@@ -3395,13 +3785,16 @@ class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
 		Handle_StepVisual_FillAreaStyle FillArea() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_SurfaceStyleFillArea();
 
 };
 %extend StepVisual_SurfaceStyleFillArea {
 	Handle_StepVisual_SurfaceStyleFillArea GetHandle() {
 	return *(Handle_StepVisual_SurfaceStyleFillArea*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleFillArea {
+	~StepVisual_SurfaceStyleFillArea() {
+	printf("Call custom destructor for instance of StepVisual_SurfaceStyleFillArea\n");
 	}
 };
 
@@ -3412,13 +3805,16 @@ class StepVisual_PresentationSet : public MMgt_TShared {
 		StepVisual_PresentationSet();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationSet();
 
 };
 %extend StepVisual_PresentationSet {
 	Handle_StepVisual_PresentationSet GetHandle() {
 	return *(Handle_StepVisual_PresentationSet*) &$self;
+	}
+};
+%extend StepVisual_PresentationSet {
+	~StepVisual_PresentationSet() {
+	printf("Call custom destructor for instance of StepVisual_PresentationSet\n");
 	}
 };
 
@@ -3429,13 +3825,16 @@ class StepVisual_ExternallyDefinedTextFont : public StepBasic_ExternallyDefinedI
 		StepVisual_ExternallyDefinedTextFont();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_ExternallyDefinedTextFont();
 
 };
 %extend StepVisual_ExternallyDefinedTextFont {
 	Handle_StepVisual_ExternallyDefinedTextFont GetHandle() {
 	return *(Handle_StepVisual_ExternallyDefinedTextFont*) &$self;
+	}
+};
+%extend StepVisual_ExternallyDefinedTextFont {
+	~StepVisual_ExternallyDefinedTextFont() {
+	printf("Call custom destructor for instance of StepVisual_ExternallyDefinedTextFont\n");
 	}
 };
 
@@ -3460,13 +3859,16 @@ class StepVisual_SurfaceSideStyle : public MMgt_TShared {
 		Standard_Integer NbStyles() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_SurfaceSideStyle();
 
 };
 %extend StepVisual_SurfaceSideStyle {
 	Handle_StepVisual_SurfaceSideStyle GetHandle() {
 	return *(Handle_StepVisual_SurfaceSideStyle*) &$self;
+	}
+};
+%extend StepVisual_SurfaceSideStyle {
+	~StepVisual_SurfaceSideStyle() {
+	printf("Call custom destructor for instance of StepVisual_SurfaceSideStyle\n");
 	}
 };
 
@@ -3487,13 +3889,16 @@ class StepVisual_SurfaceStyleUsage : public MMgt_TShared {
 		Handle_StepVisual_SurfaceSideStyle Style() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_SurfaceStyleUsage();
 
 };
 %extend StepVisual_SurfaceStyleUsage {
 	Handle_StepVisual_SurfaceStyleUsage GetHandle() {
 	return *(Handle_StepVisual_SurfaceStyleUsage*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleUsage {
+	~StepVisual_SurfaceStyleUsage() {
+	printf("Call custom destructor for instance of StepVisual_SurfaceStyleUsage\n");
 	}
 };
 
@@ -3504,13 +3909,16 @@ class StepVisual_AnnotationText : public StepRepr_MappedItem {
 		StepVisual_AnnotationText();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_AnnotationText();
 
 };
 %extend StepVisual_AnnotationText {
 	Handle_StepVisual_AnnotationText GetHandle() {
 	return *(Handle_StepVisual_AnnotationText*) &$self;
+	}
+};
+%extend StepVisual_AnnotationText {
+	~StepVisual_AnnotationText() {
+	printf("Call custom destructor for instance of StepVisual_AnnotationText\n");
 	}
 };
 
@@ -3541,13 +3949,16 @@ class StepVisual_HArray1OfSurfaceStyleElementSelect : public MMgt_TShared {
 		StepVisual_Array1OfSurfaceStyleElementSelect & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfSurfaceStyleElementSelect();
 
 };
 %extend StepVisual_HArray1OfSurfaceStyleElementSelect {
 	Handle_StepVisual_HArray1OfSurfaceStyleElementSelect GetHandle() {
 	return *(Handle_StepVisual_HArray1OfSurfaceStyleElementSelect*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfSurfaceStyleElementSelect {
+	~StepVisual_HArray1OfSurfaceStyleElementSelect() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfSurfaceStyleElementSelect\n");
 	}
 };
 
@@ -3622,13 +4033,16 @@ class StepVisual_AreaInSet : public MMgt_TShared {
 		Handle_StepVisual_PresentationSet InSet() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_AreaInSet();
 
 };
 %extend StepVisual_AreaInSet {
 	Handle_StepVisual_AreaInSet GetHandle() {
 	return *(Handle_StepVisual_AreaInSet*) &$self;
+	}
+};
+%extend StepVisual_AreaInSet {
+	~StepVisual_AreaInSet() {
+	printf("Call custom destructor for instance of StepVisual_AreaInSet\n");
 	}
 };
 
@@ -3639,13 +4053,16 @@ class StepVisual_CameraImage2dWithScale : public StepVisual_CameraImage {
 		StepVisual_CameraImage2dWithScale();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CameraImage2dWithScale();
 
 };
 %extend StepVisual_CameraImage2dWithScale {
 	Handle_StepVisual_CameraImage2dWithScale GetHandle() {
 	return *(Handle_StepVisual_CameraImage2dWithScale*) &$self;
+	}
+};
+%extend StepVisual_CameraImage2dWithScale {
+	~StepVisual_CameraImage2dWithScale() {
+	printf("Call custom destructor for instance of StepVisual_CameraImage2dWithScale\n");
 	}
 };
 
@@ -3674,13 +4091,16 @@ class StepVisual_Template : public StepRepr_Representation {
 		StepVisual_Template();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_Template();
 
 };
 %extend StepVisual_Template {
 	Handle_StepVisual_Template GetHandle() {
 	return *(Handle_StepVisual_Template*) &$self;
+	}
+};
+%extend StepVisual_Template {
+	~StepVisual_Template() {
+	printf("Call custom destructor for instance of StepVisual_Template\n");
 	}
 };
 
@@ -3757,13 +4177,16 @@ class StepVisual_FillAreaStyle : public MMgt_TShared {
 		Standard_Integer NbFillStyles() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_FillAreaStyle();
 
 };
 %extend StepVisual_FillAreaStyle {
 	Handle_StepVisual_FillAreaStyle GetHandle() {
 	return *(Handle_StepVisual_FillAreaStyle*) &$self;
+	}
+};
+%extend StepVisual_FillAreaStyle {
+	~StepVisual_FillAreaStyle() {
+	printf("Call custom destructor for instance of StepVisual_FillAreaStyle\n");
 	}
 };
 
@@ -3774,13 +4197,16 @@ class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
 		StepVisual_AnnotationOccurrence();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_AnnotationOccurrence();
 
 };
 %extend StepVisual_AnnotationOccurrence {
 	Handle_StepVisual_AnnotationOccurrence GetHandle() {
 	return *(Handle_StepVisual_AnnotationOccurrence*) &$self;
+	}
+};
+%extend StepVisual_AnnotationOccurrence {
+	~StepVisual_AnnotationOccurrence() {
+	printf("Call custom destructor for instance of StepVisual_AnnotationOccurrence\n");
 	}
 };
 
@@ -3799,13 +4225,16 @@ class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
 		Handle_StepVisual_PlanarExtent Extent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CompositeTextWithExtent();
 
 };
 %extend StepVisual_CompositeTextWithExtent {
 	Handle_StepVisual_CompositeTextWithExtent GetHandle() {
 	return *(Handle_StepVisual_CompositeTextWithExtent*) &$self;
+	}
+};
+%extend StepVisual_CompositeTextWithExtent {
+	~StepVisual_CompositeTextWithExtent() {
+	printf("Call custom destructor for instance of StepVisual_CompositeTextWithExtent\n");
 	}
 };
 
@@ -3822,13 +4251,16 @@ class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
 		Handle_StepVisual_CurveStyle StyleOfBoundary() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_SurfaceStyleBoundary();
 
 };
 %extend StepVisual_SurfaceStyleBoundary {
 	Handle_StepVisual_SurfaceStyleBoundary GetHandle() {
 	return *(Handle_StepVisual_SurfaceStyleBoundary*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleBoundary {
+	~StepVisual_SurfaceStyleBoundary() {
+	printf("Call custom destructor for instance of StepVisual_SurfaceStyleBoundary\n");
 	}
 };
 
@@ -3875,13 +4307,16 @@ class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public St
 		StepVisual_MechanicalDesignGeometricPresentationRepresentation();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_MechanicalDesignGeometricPresentationRepresentation();
 
 };
 %extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
 	Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation GetHandle() {
 	return *(Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation*) &$self;
+	}
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
+	~StepVisual_MechanicalDesignGeometricPresentationRepresentation() {
+	printf("Call custom destructor for instance of StepVisual_MechanicalDesignGeometricPresentationRepresentation\n");
 	}
 };
 
@@ -3892,13 +4327,16 @@ class StepVisual_DraughtingPreDefinedColour : public StepVisual_PreDefinedColour
 		StepVisual_DraughtingPreDefinedColour();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_DraughtingPreDefinedColour();
 
 };
 %extend StepVisual_DraughtingPreDefinedColour {
 	Handle_StepVisual_DraughtingPreDefinedColour GetHandle() {
 	return *(Handle_StepVisual_DraughtingPreDefinedColour*) &$self;
+	}
+};
+%extend StepVisual_DraughtingPreDefinedColour {
+	~StepVisual_DraughtingPreDefinedColour() {
+	printf("Call custom destructor for instance of StepVisual_DraughtingPreDefinedColour\n");
 	}
 };
 
@@ -3931,13 +4369,16 @@ class StepVisual_TemplateInstance : public StepRepr_MappedItem {
 		StepVisual_TemplateInstance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_TemplateInstance();
 
 };
 %extend StepVisual_TemplateInstance {
 	Handle_StepVisual_TemplateInstance GetHandle() {
 	return *(Handle_StepVisual_TemplateInstance*) &$self;
+	}
+};
+%extend StepVisual_TemplateInstance {
+	~StepVisual_TemplateInstance() {
+	printf("Call custom destructor for instance of StepVisual_TemplateInstance\n");
 	}
 };
 
@@ -3968,13 +4409,16 @@ class StepVisual_HArray1OfTextOrCharacter : public MMgt_TShared {
 		StepVisual_Array1OfTextOrCharacter & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfTextOrCharacter();
 
 };
 %extend StepVisual_HArray1OfTextOrCharacter {
 	Handle_StepVisual_HArray1OfTextOrCharacter GetHandle() {
 	return *(Handle_StepVisual_HArray1OfTextOrCharacter*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfTextOrCharacter {
+	~StepVisual_HArray1OfTextOrCharacter() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfTextOrCharacter\n");
 	}
 };
 
@@ -3991,13 +4435,16 @@ class StepVisual_SurfaceStyleSegmentationCurve : public MMgt_TShared {
 		Handle_StepVisual_CurveStyle StyleOfSegmentationCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_SurfaceStyleSegmentationCurve();
 
 };
 %extend StepVisual_SurfaceStyleSegmentationCurve {
 	Handle_StepVisual_SurfaceStyleSegmentationCurve GetHandle() {
 	return *(Handle_StepVisual_SurfaceStyleSegmentationCurve*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleSegmentationCurve {
+	~StepVisual_SurfaceStyleSegmentationCurve() {
+	printf("Call custom destructor for instance of StepVisual_SurfaceStyleSegmentationCurve\n");
 	}
 };
 
@@ -4080,13 +4527,16 @@ class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
 		StepVisual_Array1OfInvisibleItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfInvisibleItem();
 
 };
 %extend StepVisual_HArray1OfInvisibleItem {
 	Handle_StepVisual_HArray1OfInvisibleItem GetHandle() {
 	return *(Handle_StepVisual_HArray1OfInvisibleItem*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfInvisibleItem {
+	~StepVisual_HArray1OfInvisibleItem() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfInvisibleItem\n");
 	}
 };
 
@@ -4097,13 +4547,16 @@ class StepVisual_PresentedItem : public MMgt_TShared {
 		StepVisual_PresentedItem();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentedItem();
 
 };
 %extend StepVisual_PresentedItem {
 	Handle_StepVisual_PresentedItem GetHandle() {
 	return *(Handle_StepVisual_PresentedItem*) &$self;
+	}
+};
+%extend StepVisual_PresentedItem {
+	~StepVisual_PresentedItem() {
+	printf("Call custom destructor for instance of StepVisual_PresentedItem\n");
 	}
 };
 
@@ -4186,13 +4639,16 @@ class StepVisual_AnnotationTextOccurrence : public StepVisual_AnnotationOccurren
 		StepVisual_AnnotationTextOccurrence();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_AnnotationTextOccurrence();
 
 };
 %extend StepVisual_AnnotationTextOccurrence {
 	Handle_StepVisual_AnnotationTextOccurrence GetHandle() {
 	return *(Handle_StepVisual_AnnotationTextOccurrence*) &$self;
+	}
+};
+%extend StepVisual_AnnotationTextOccurrence {
+	~StepVisual_AnnotationTextOccurrence() {
+	printf("Call custom destructor for instance of StepVisual_AnnotationTextOccurrence\n");
 	}
 };
 
@@ -4203,13 +4659,16 @@ class StepVisual_PreDefinedTextFont : public StepVisual_PreDefinedItem {
 		StepVisual_PreDefinedTextFont();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PreDefinedTextFont();
 
 };
 %extend StepVisual_PreDefinedTextFont {
 	Handle_StepVisual_PreDefinedTextFont GetHandle() {
 	return *(Handle_StepVisual_PreDefinedTextFont*) &$self;
+	}
+};
+%extend StepVisual_PreDefinedTextFont {
+	~StepVisual_PreDefinedTextFont() {
+	printf("Call custom destructor for instance of StepVisual_PreDefinedTextFont\n");
 	}
 };
 
@@ -4232,13 +4691,16 @@ class StepVisual_CameraModelD3 : public StepVisual_CameraModel {
 		Handle_StepVisual_ViewVolume PerspectiveOfVolume() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CameraModelD3();
 
 };
 %extend StepVisual_CameraModelD3 {
 	Handle_StepVisual_CameraModelD3 GetHandle() {
 	return *(Handle_StepVisual_CameraModelD3*) &$self;
+	}
+};
+%extend StepVisual_CameraModelD3 {
+	~StepVisual_CameraModelD3() {
+	printf("Call custom destructor for instance of StepVisual_CameraModelD3\n");
 	}
 };
 
@@ -4291,13 +4753,16 @@ class StepVisual_SurfaceStyleControlGrid : public MMgt_TShared {
 		Handle_StepVisual_CurveStyle StyleOfControlGrid() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_SurfaceStyleControlGrid();
 
 };
 %extend StepVisual_SurfaceStyleControlGrid {
 	Handle_StepVisual_SurfaceStyleControlGrid GetHandle() {
 	return *(Handle_StepVisual_SurfaceStyleControlGrid*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleControlGrid {
+	~StepVisual_SurfaceStyleControlGrid() {
+	printf("Call custom destructor for instance of StepVisual_SurfaceStyleControlGrid\n");
 	}
 };
 
@@ -4328,13 +4793,16 @@ class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
 		StepVisual_Array1OfFillStyleSelect & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfFillStyleSelect();
 
 };
 %extend StepVisual_HArray1OfFillStyleSelect {
 	Handle_StepVisual_HArray1OfFillStyleSelect GetHandle() {
 	return *(Handle_StepVisual_HArray1OfFillStyleSelect*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfFillStyleSelect {
+	~StepVisual_HArray1OfFillStyleSelect() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfFillStyleSelect\n");
 	}
 };
 
@@ -4365,13 +4833,16 @@ class StepVisual_HArray1OfPresentationStyleAssignment : public MMgt_TShared {
 		StepVisual_Array1OfPresentationStyleAssignment & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfPresentationStyleAssignment();
 
 };
 %extend StepVisual_HArray1OfPresentationStyleAssignment {
 	Handle_StepVisual_HArray1OfPresentationStyleAssignment GetHandle() {
 	return *(Handle_StepVisual_HArray1OfPresentationStyleAssignment*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfPresentationStyleAssignment {
+	~StepVisual_HArray1OfPresentationStyleAssignment() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfPresentationStyleAssignment\n");
 	}
 };
 
@@ -4396,13 +4867,16 @@ class StepVisual_DraughtingModel : public StepRepr_Representation {
 		StepVisual_DraughtingModel();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_DraughtingModel();
 
 };
 %extend StepVisual_DraughtingModel {
 	Handle_StepVisual_DraughtingModel GetHandle() {
 	return *(Handle_StepVisual_DraughtingModel*) &$self;
+	}
+};
+%extend StepVisual_DraughtingModel {
+	~StepVisual_DraughtingModel() {
+	printf("Call custom destructor for instance of StepVisual_DraughtingModel\n");
 	}
 };
 
@@ -4429,13 +4903,16 @@ class StepVisual_DraughtingAnnotationOccurrence : public StepVisual_AnnotationOc
 		StepVisual_DraughtingAnnotationOccurrence();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_DraughtingAnnotationOccurrence();
 
 };
 %extend StepVisual_DraughtingAnnotationOccurrence {
 	Handle_StepVisual_DraughtingAnnotationOccurrence GetHandle() {
 	return *(Handle_StepVisual_DraughtingAnnotationOccurrence*) &$self;
+	}
+};
+%extend StepVisual_DraughtingAnnotationOccurrence {
+	~StepVisual_DraughtingAnnotationOccurrence() {
+	printf("Call custom destructor for instance of StepVisual_DraughtingAnnotationOccurrence\n");
 	}
 };
 
@@ -4500,12 +4977,15 @@ class StepVisual_HArray1OfBoxCharacteristicSelect : public MMgt_TShared {
 		StepVisual_Array1OfBoxCharacteristicSelect & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_HArray1OfBoxCharacteristicSelect();
 
 };
 %extend StepVisual_HArray1OfBoxCharacteristicSelect {
 	Handle_StepVisual_HArray1OfBoxCharacteristicSelect GetHandle() {
 	return *(Handle_StepVisual_HArray1OfBoxCharacteristicSelect*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfBoxCharacteristicSelect {
+	~StepVisual_HArray1OfBoxCharacteristicSelect() {
+	printf("Call custom destructor for instance of StepVisual_HArray1OfBoxCharacteristicSelect\n");
 	}
 };

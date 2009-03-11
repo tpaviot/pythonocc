@@ -151,8 +151,6 @@ enum Visual3d_TypeOfVisualization {
 class Handle_Visual3d_SequenceNodeOfSequenceOfPickPath : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Visual3d_SequenceNodeOfSequenceOfPickPath();
-		%feature("autodoc", "1");
 		Handle_Visual3d_SequenceNodeOfSequenceOfPickPath();
 		%feature("autodoc", "1");
 		Handle_Visual3d_SequenceNodeOfSequenceOfPickPath(const Handle_Visual3d_SequenceNodeOfSequenceOfPickPath &aHandle);
@@ -167,12 +165,15 @@ class Handle_Visual3d_SequenceNodeOfSequenceOfPickPath : public Handle_TCollecti
 	return (Visual3d_SequenceNodeOfSequenceOfPickPath*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_SequenceNodeOfSequenceOfPickPath {
+	~Handle_Visual3d_SequenceNodeOfSequenceOfPickPath() {
+	printf("Call custom destructor for instance of Handle_Visual3d_SequenceNodeOfSequenceOfPickPath\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_PickError;
 class Handle_Visual3d_PickError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_PickError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_PickError();
 		%feature("autodoc", "1");
@@ -188,12 +189,15 @@ class Handle_Visual3d_PickError : public Handle_Standard_OutOfRange {
 	return (Visual3d_PickError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_PickError {
+	~Handle_Visual3d_PickError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_PickError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane;
 class Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane();
 		%feature("autodoc", "1");
@@ -209,12 +213,15 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane : public Handle_TCollect
 	return (Visual3d_ListNodeOfSetListOfSetOfClipPlane*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane {
+	~Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ZClippingDefinitionError;
 class Handle_Visual3d_ZClippingDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ZClippingDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ZClippingDefinitionError();
 		%feature("autodoc", "1");
@@ -230,12 +237,15 @@ class Handle_Visual3d_ZClippingDefinitionError : public Handle_Standard_OutOfRan
 	return (Visual3d_ZClippingDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ZClippingDefinitionError {
+	~Handle_Visual3d_ZClippingDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ZClippingDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_TransformError;
 class Handle_Visual3d_TransformError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_TransformError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_TransformError();
 		%feature("autodoc", "1");
@@ -251,12 +261,15 @@ class Handle_Visual3d_TransformError : public Handle_Standard_OutOfRange {
 	return (Visual3d_TransformError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_TransformError {
+	~Handle_Visual3d_TransformError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_TransformError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_LightDefinitionError;
 class Handle_Visual3d_LightDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_LightDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_LightDefinitionError();
 		%feature("autodoc", "1");
@@ -272,12 +285,15 @@ class Handle_Visual3d_LightDefinitionError : public Handle_Standard_OutOfRange {
 	return (Visual3d_LightDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_LightDefinitionError {
+	~Handle_Visual3d_LightDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_LightDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_TransientManager;
 class Handle_Visual3d_TransientManager : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_TransientManager();
 		%feature("autodoc", "1");
 		Handle_Visual3d_TransientManager();
 		%feature("autodoc", "1");
@@ -293,12 +309,15 @@ class Handle_Visual3d_TransientManager : public Handle_MMgt_TShared {
 	return (Visual3d_TransientManager*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_TransientManager {
+	~Handle_Visual3d_TransientManager() {
+	printf("Call custom destructor for instance of Handle_Visual3d_TransientManager\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_View;
 class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_View();
 		%feature("autodoc", "1");
 		Handle_Visual3d_View();
 		%feature("autodoc", "1");
@@ -314,12 +333,15 @@ class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
 	return (Visual3d_View*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_View {
+	~Handle_Visual3d_View() {
+	printf("Call custom destructor for instance of Handle_Visual3d_View\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ViewManager;
 class Handle_Visual3d_ViewManager : public Handle_Graphic3d_StructureManager {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ViewManager();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewManager();
 		%feature("autodoc", "1");
@@ -335,12 +357,15 @@ class Handle_Visual3d_ViewManager : public Handle_Graphic3d_StructureManager {
 	return (Visual3d_ViewManager*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ViewManager {
+	~Handle_Visual3d_ViewManager() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ViewManager\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_LayerDefinitionError;
 class Handle_Visual3d_LayerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_LayerDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_LayerDefinitionError();
 		%feature("autodoc", "1");
@@ -356,12 +381,15 @@ class Handle_Visual3d_LayerDefinitionError : public Handle_Standard_OutOfRange {
 	return (Visual3d_LayerDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_LayerDefinitionError {
+	~Handle_Visual3d_LayerDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_LayerDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_HSetOfClipPlane;
 class Handle_Visual3d_HSetOfClipPlane : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_HSetOfClipPlane();
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSetOfClipPlane();
 		%feature("autodoc", "1");
@@ -377,12 +405,15 @@ class Handle_Visual3d_HSetOfClipPlane : public Handle_MMgt_TShared {
 	return (Visual3d_HSetOfClipPlane*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_HSetOfClipPlane {
+	~Handle_Visual3d_HSetOfClipPlane() {
+	printf("Call custom destructor for instance of Handle_Visual3d_HSetOfClipPlane\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ListNodeOfSetListOfSetOfLight;
 class Handle_Visual3d_ListNodeOfSetListOfSetOfLight : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ListNodeOfSetListOfSetOfLight();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ListNodeOfSetListOfSetOfLight();
 		%feature("autodoc", "1");
@@ -398,12 +429,15 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfLight : public Handle_TCollection_
 	return (Visual3d_ListNodeOfSetListOfSetOfLight*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ListNodeOfSetListOfSetOfLight {
+	~Handle_Visual3d_ListNodeOfSetListOfSetOfLight() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ListNodeOfSetListOfSetOfLight\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_Light;
 class Handle_Visual3d_Light : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_Light();
 		%feature("autodoc", "1");
 		Handle_Visual3d_Light();
 		%feature("autodoc", "1");
@@ -419,12 +453,15 @@ class Handle_Visual3d_Light : public Handle_MMgt_TShared {
 	return (Visual3d_Light*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_Light {
+	~Handle_Visual3d_Light() {
+	printf("Call custom destructor for instance of Handle_Visual3d_Light\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_Layer;
 class Handle_Visual3d_Layer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_Layer();
 		%feature("autodoc", "1");
 		Handle_Visual3d_Layer();
 		%feature("autodoc", "1");
@@ -440,12 +477,15 @@ class Handle_Visual3d_Layer : public Handle_MMgt_TShared {
 	return (Visual3d_Layer*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_Layer {
+	~Handle_Visual3d_Layer() {
+	printf("Call custom destructor for instance of Handle_Visual3d_Layer\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ClipDefinitionError;
 class Handle_Visual3d_ClipDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ClipDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ClipDefinitionError();
 		%feature("autodoc", "1");
@@ -461,12 +501,15 @@ class Handle_Visual3d_ClipDefinitionError : public Handle_Standard_OutOfRange {
 	return (Visual3d_ClipDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ClipDefinitionError {
+	~Handle_Visual3d_ClipDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ClipDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_HSetOfLight;
 class Handle_Visual3d_HSetOfLight : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_HSetOfLight();
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSetOfLight();
 		%feature("autodoc", "1");
@@ -482,12 +525,15 @@ class Handle_Visual3d_HSetOfLight : public Handle_MMgt_TShared {
 	return (Visual3d_HSetOfLight*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_HSetOfLight {
+	~Handle_Visual3d_HSetOfLight() {
+	printf("Call custom destructor for instance of Handle_Visual3d_HSetOfLight\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_DepthCueingDefinitionError;
 class Handle_Visual3d_DepthCueingDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_DepthCueingDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_DepthCueingDefinitionError();
 		%feature("autodoc", "1");
@@ -503,12 +549,15 @@ class Handle_Visual3d_DepthCueingDefinitionError : public Handle_Standard_OutOfR
 	return (Visual3d_DepthCueingDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_DepthCueingDefinitionError {
+	~Handle_Visual3d_DepthCueingDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_DepthCueingDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ClipPlane;
 class Handle_Visual3d_ClipPlane : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ClipPlane();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ClipPlane();
 		%feature("autodoc", "1");
@@ -524,12 +573,15 @@ class Handle_Visual3d_ClipPlane : public Handle_MMgt_TShared {
 	return (Visual3d_ClipPlane*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ClipPlane {
+	~Handle_Visual3d_ClipPlane() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ClipPlane\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ListNodeOfSetListOfSetOfView;
 class Handle_Visual3d_ListNodeOfSetListOfSetOfView : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ListNodeOfSetListOfSetOfView();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ListNodeOfSetListOfSetOfView();
 		%feature("autodoc", "1");
@@ -545,12 +597,15 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfView : public Handle_TCollection_M
 	return (Visual3d_ListNodeOfSetListOfSetOfView*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ListNodeOfSetListOfSetOfView {
+	~Handle_Visual3d_ListNodeOfSetListOfSetOfView() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ListNodeOfSetListOfSetOfView\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ViewManagerDefinitionError;
 class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ViewManagerDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewManagerDefinitionError();
 		%feature("autodoc", "1");
@@ -566,12 +621,15 @@ class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfR
 	return (Visual3d_ViewManagerDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ViewManagerDefinitionError {
+	~Handle_Visual3d_ViewManagerDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ViewManagerDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_HSetOfView;
 class Handle_Visual3d_HSetOfView : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_HSetOfView();
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSetOfView();
 		%feature("autodoc", "1");
@@ -587,12 +645,15 @@ class Handle_Visual3d_HSetOfView : public Handle_MMgt_TShared {
 	return (Visual3d_HSetOfView*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_HSetOfView {
+	~Handle_Visual3d_HSetOfView() {
+	printf("Call custom destructor for instance of Handle_Visual3d_HSetOfView\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ViewMappingDefinitionError;
 class Handle_Visual3d_ViewMappingDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ViewMappingDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewMappingDefinitionError();
 		%feature("autodoc", "1");
@@ -608,12 +669,15 @@ class Handle_Visual3d_ViewMappingDefinitionError : public Handle_Standard_OutOfR
 	return (Visual3d_ViewMappingDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ViewMappingDefinitionError {
+	~Handle_Visual3d_ViewMappingDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ViewMappingDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_TransientDefinitionError;
 class Handle_Visual3d_TransientDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_TransientDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_TransientDefinitionError();
 		%feature("autodoc", "1");
@@ -629,12 +693,15 @@ class Handle_Visual3d_TransientDefinitionError : public Handle_Standard_OutOfRan
 	return (Visual3d_TransientDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_TransientDefinitionError {
+	~Handle_Visual3d_TransientDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_TransientDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_HSequenceOfPickPath;
 class Handle_Visual3d_HSequenceOfPickPath : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_HSequenceOfPickPath();
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSequenceOfPickPath();
 		%feature("autodoc", "1");
@@ -650,12 +717,15 @@ class Handle_Visual3d_HSequenceOfPickPath : public Handle_MMgt_TShared {
 	return (Visual3d_HSequenceOfPickPath*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_HSequenceOfPickPath {
+	~Handle_Visual3d_HSequenceOfPickPath() {
+	printf("Call custom destructor for instance of Handle_Visual3d_HSequenceOfPickPath\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ViewOrientationDefinitionError;
 class Handle_Visual3d_ViewOrientationDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ViewOrientationDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewOrientationDefinitionError();
 		%feature("autodoc", "1");
@@ -671,12 +741,15 @@ class Handle_Visual3d_ViewOrientationDefinitionError : public Handle_Standard_Ou
 	return (Visual3d_ViewOrientationDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ViewOrientationDefinitionError {
+	~Handle_Visual3d_ViewOrientationDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ViewOrientationDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ViewDefinitionError;
 class Handle_Visual3d_ViewDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ViewDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewDefinitionError();
 		%feature("autodoc", "1");
@@ -692,12 +765,15 @@ class Handle_Visual3d_ViewDefinitionError : public Handle_Standard_OutOfRange {
 	return (Visual3d_ViewDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Visual3d_ViewDefinitionError {
+	~Handle_Visual3d_ViewDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ViewDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Visual3d_ContextPickDefinitionError;
 class Handle_Visual3d_ContextPickDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Visual3d_ContextPickDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Visual3d_ContextPickDefinitionError();
 		%feature("autodoc", "1");
@@ -711,6 +787,11 @@ class Handle_Visual3d_ContextPickDefinitionError : public Handle_Standard_OutOfR
 %extend Handle_Visual3d_ContextPickDefinitionError {
 	Visual3d_ContextPickDefinitionError* GetObject() {
 	return (Visual3d_ContextPickDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_Visual3d_ContextPickDefinitionError {
+	~Handle_Visual3d_ContextPickDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Visual3d_ContextPickDefinitionError\n");
 	}
 };
 
@@ -819,13 +900,16 @@ class Visual3d_TransformError : public Standard_OutOfRange {
 		Handle_Visual3d_TransformError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_TransformError();
 
 };
 %extend Visual3d_TransformError {
 	Handle_Visual3d_TransformError GetHandle() {
 	return *(Handle_Visual3d_TransformError*) &$self;
+	}
+};
+%extend Visual3d_TransformError {
+	~Visual3d_TransformError() {
+	printf("Call custom destructor for instance of Visual3d_TransformError\n");
 	}
 };
 
@@ -868,13 +952,16 @@ class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_LayerDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_LayerDefinitionError();
 
 };
 %extend Visual3d_LayerDefinitionError {
 	Handle_Visual3d_LayerDefinitionError GetHandle() {
 	return *(Handle_Visual3d_LayerDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_LayerDefinitionError {
+	~Visual3d_LayerDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_LayerDefinitionError\n");
 	}
 };
 
@@ -893,13 +980,16 @@ class Visual3d_DepthCueingDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_DepthCueingDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_DepthCueingDefinitionError();
 
 };
 %extend Visual3d_DepthCueingDefinitionError {
 	Handle_Visual3d_DepthCueingDefinitionError GetHandle() {
 	return *(Handle_Visual3d_DepthCueingDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_DepthCueingDefinitionError {
+	~Visual3d_DepthCueingDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_DepthCueingDefinitionError\n");
 	}
 };
 
@@ -958,13 +1048,16 @@ class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_TransientDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_TransientDefinitionError();
 
 };
 %extend Visual3d_TransientDefinitionError {
 	Handle_Visual3d_TransientDefinitionError GetHandle() {
 	return *(Handle_Visual3d_TransientDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_TransientDefinitionError {
+	~Visual3d_TransientDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_TransientDefinitionError\n");
 	}
 };
 
@@ -1067,13 +1160,16 @@ class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
 		Handle_Visual3d_ClipPlane & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ListNodeOfSetListOfSetOfClipPlane();
 
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
 	Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane GetHandle() {
 	return *(Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane*) &$self;
+	}
+};
+%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
+	~Visual3d_ListNodeOfSetListOfSetOfClipPlane() {
+	printf("Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfClipPlane\n");
 	}
 };
 
@@ -1106,13 +1202,16 @@ class Visual3d_ListNodeOfSetListOfSetOfLight : public TCollection_MapNode {
 		Handle_Visual3d_Light & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ListNodeOfSetListOfSetOfLight();
 
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfLight {
 	Handle_Visual3d_ListNodeOfSetListOfSetOfLight GetHandle() {
 	return *(Handle_Visual3d_ListNodeOfSetListOfSetOfLight*) &$self;
+	}
+};
+%extend Visual3d_ListNodeOfSetListOfSetOfLight {
+	~Visual3d_ListNodeOfSetListOfSetOfLight() {
+	printf("Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfLight\n");
 	}
 };
 
@@ -1131,13 +1230,16 @@ class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_ViewOrientationDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ViewOrientationDefinitionError();
 
 };
 %extend Visual3d_ViewOrientationDefinitionError {
 	Handle_Visual3d_ViewOrientationDefinitionError GetHandle() {
 	return *(Handle_Visual3d_ViewOrientationDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ViewOrientationDefinitionError {
+	~Visual3d_ViewOrientationDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_ViewOrientationDefinitionError\n");
 	}
 };
 
@@ -1156,13 +1258,16 @@ class Visual3d_ViewManagerDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_ViewManagerDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ViewManagerDefinitionError();
 
 };
 %extend Visual3d_ViewManagerDefinitionError {
 	Handle_Visual3d_ViewManagerDefinitionError GetHandle() {
 	return *(Handle_Visual3d_ViewManagerDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ViewManagerDefinitionError {
+	~Visual3d_ViewManagerDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_ViewManagerDefinitionError\n");
 	}
 };
 
@@ -1221,13 +1326,16 @@ class Visual3d_ListNodeOfSetListOfSetOfView : public TCollection_MapNode {
 		Handle_Visual3d_View & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ListNodeOfSetListOfSetOfView();
 
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfView {
 	Handle_Visual3d_ListNodeOfSetListOfSetOfView GetHandle() {
 	return *(Handle_Visual3d_ListNodeOfSetListOfSetOfView*) &$self;
+	}
+};
+%extend Visual3d_ListNodeOfSetListOfSetOfView {
+	~Visual3d_ListNodeOfSetListOfSetOfView() {
+	printf("Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfView\n");
 	}
 };
 
@@ -1312,13 +1420,16 @@ class Visual3d_HSetOfView : public MMgt_TShared {
 		Visual3d_SetOfView & ChangeSet();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_HSetOfView();
 
 };
 %extend Visual3d_HSetOfView {
 	Handle_Visual3d_HSetOfView GetHandle() {
 	return *(Handle_Visual3d_HSetOfView*) &$self;
+	}
+};
+%extend Visual3d_HSetOfView {
+	~Visual3d_HSetOfView() {
+	printf("Call custom destructor for instance of Visual3d_HSetOfView\n");
 	}
 };
 
@@ -1353,8 +1464,6 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 		void Deactivate();
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ViewManager();
 		%feature("autodoc", "1");
 		void Erase();
 		%feature("autodoc", "1");
@@ -1430,6 +1539,11 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 	return *(Handle_Visual3d_ViewManager*) &$self;
 	}
 };
+%extend Visual3d_ViewManager {
+	~Visual3d_ViewManager() {
+	printf("Call custom destructor for instance of Visual3d_ViewManager\n");
+	}
+};
 
 %nodefaultctor Visual3d_SequenceNodeOfSequenceOfPickPath;
 class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
@@ -1440,13 +1554,16 @@ class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
 		Visual3d_PickPath & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_SequenceNodeOfSequenceOfPickPath();
 
 };
 %extend Visual3d_SequenceNodeOfSequenceOfPickPath {
 	Handle_Visual3d_SequenceNodeOfSequenceOfPickPath GetHandle() {
 	return *(Handle_Visual3d_SequenceNodeOfSequenceOfPickPath*) &$self;
+	}
+};
+%extend Visual3d_SequenceNodeOfSequenceOfPickPath {
+	~Visual3d_SequenceNodeOfSequenceOfPickPath() {
+	printf("Call custom destructor for instance of Visual3d_SequenceNodeOfSequenceOfPickPath\n");
 	}
 };
 
@@ -1463,13 +1580,16 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 		void Plane(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ClipPlane();
 
 };
 %extend Visual3d_ClipPlane {
 	Handle_Visual3d_ClipPlane GetHandle() {
 	return *(Handle_Visual3d_ClipPlane*) &$self;
+	}
+};
+%extend Visual3d_ClipPlane {
+	~Visual3d_ClipPlane() {
+	printf("Call custom destructor for instance of Visual3d_ClipPlane\n");
 	}
 };
 
@@ -1512,13 +1632,16 @@ class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_ClipDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ClipDefinitionError();
 
 };
 %extend Visual3d_ClipDefinitionError {
 	Handle_Visual3d_ClipDefinitionError GetHandle() {
 	return *(Handle_Visual3d_ClipDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ClipDefinitionError {
+	~Visual3d_ClipDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_ClipDefinitionError\n");
 	}
 };
 
@@ -1537,13 +1660,16 @@ class Visual3d_LightDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_LightDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_LightDefinitionError();
 
 };
 %extend Visual3d_LightDefinitionError {
 	Handle_Visual3d_LightDefinitionError GetHandle() {
 	return *(Handle_Visual3d_LightDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_LightDefinitionError {
+	~Visual3d_LightDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_LightDefinitionError\n");
 	}
 };
 
@@ -1586,8 +1712,6 @@ class Visual3d_Layer : public MMgt_TShared {
 		Visual3d_Layer(const Handle_Visual3d_ViewManager &AViewer, const Aspect_TypeOfLayer AType=Aspect_TOL_OVERLAY, const Standard_Boolean AFlag=0);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Visual3d_Layer();
 		%feature("autodoc", "1");
 		void Begin();
 		%feature("autodoc", "1");
@@ -1635,6 +1759,11 @@ class Visual3d_Layer : public MMgt_TShared {
 	return *(Handle_Visual3d_Layer*) &$self;
 	}
 };
+%extend Visual3d_Layer {
+	~Visual3d_Layer() {
+	printf("Call custom destructor for instance of Visual3d_Layer\n");
+	}
+};
 
 %nodefaultctor Visual3d_ZClippingDefinitionError;
 class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
@@ -1651,13 +1780,16 @@ class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_ZClippingDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ZClippingDefinitionError();
 
 };
 %extend Visual3d_ZClippingDefinitionError {
 	Handle_Visual3d_ZClippingDefinitionError GetHandle() {
 	return *(Handle_Visual3d_ZClippingDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ZClippingDefinitionError {
+	~Visual3d_ZClippingDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_ZClippingDefinitionError\n");
 	}
 };
 
@@ -1706,13 +1838,16 @@ class Visual3d_Light : public MMgt_TShared {
 		Standard_Integer Limit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_Light();
 
 };
 %extend Visual3d_Light {
 	Handle_Visual3d_Light GetHandle() {
 	return *(Handle_Visual3d_Light*) &$self;
+	}
+};
+%extend Visual3d_Light {
+	~Visual3d_Light() {
+	printf("Call custom destructor for instance of Visual3d_Light\n");
 	}
 };
 
@@ -1791,13 +1926,16 @@ class Visual3d_HSetOfLight : public MMgt_TShared {
 		Visual3d_SetOfLight & ChangeSet();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_HSetOfLight();
 
 };
 %extend Visual3d_HSetOfLight {
 	Handle_Visual3d_HSetOfLight GetHandle() {
 	return *(Handle_Visual3d_HSetOfLight*) &$self;
+	}
+};
+%extend Visual3d_HSetOfLight {
+	~Visual3d_HSetOfLight() {
+	printf("Call custom destructor for instance of Visual3d_HSetOfLight\n");
 	}
 };
 
@@ -1836,13 +1974,16 @@ class Visual3d_HSetOfClipPlane : public MMgt_TShared {
 		Visual3d_SetOfClipPlane & ChangeSet();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_HSetOfClipPlane();
 
 };
 %extend Visual3d_HSetOfClipPlane {
 	Handle_Visual3d_HSetOfClipPlane GetHandle() {
 	return *(Handle_Visual3d_HSetOfClipPlane*) &$self;
+	}
+};
+%extend Visual3d_HSetOfClipPlane {
+	~Visual3d_HSetOfClipPlane() {
+	printf("Call custom destructor for instance of Visual3d_HSetOfClipPlane\n");
 	}
 };
 
@@ -1911,8 +2052,6 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		void Deactivate();
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Visual3d_View();
 		%feature("autodoc", "1");
 		void Redraw();
 		%feature("autodoc", "1");
@@ -2074,6 +2213,11 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 	return *(Handle_Visual3d_View*) &$self;
 	}
 };
+%extend Visual3d_View {
+	~Visual3d_View() {
+	printf("Call custom destructor for instance of Visual3d_View\n");
+	}
+};
 
 %nodefaultctor Visual3d_ViewDefinitionError;
 class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
@@ -2090,13 +2234,16 @@ class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_ViewDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ViewDefinitionError();
 
 };
 %extend Visual3d_ViewDefinitionError {
 	Handle_Visual3d_ViewDefinitionError GetHandle() {
 	return *(Handle_Visual3d_ViewDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ViewDefinitionError {
+	~Visual3d_ViewDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_ViewDefinitionError\n");
 	}
 };
 
@@ -2107,8 +2254,6 @@ class Visual3d_TransientManager : public MMgt_TShared {
 		Visual3d_TransientManager();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Visual3d_TransientManager();
 		%feature("autodoc", "1");
 		Standard_Boolean BeginDraw(const Handle_Visual3d_View &aView, const Standard_Boolean DoubleBuffer=0, const Standard_Boolean RetainMode=0);
 		%feature("autodoc", "1");
@@ -2164,6 +2309,11 @@ class Visual3d_TransientManager : public MMgt_TShared {
 	return *(Handle_Visual3d_TransientManager*) &$self;
 	}
 };
+%extend Visual3d_TransientManager {
+	~Visual3d_TransientManager() {
+	printf("Call custom destructor for instance of Visual3d_TransientManager\n");
+	}
+};
 
 %nodefaultctor Visual3d_PickError;
 class Visual3d_PickError : public Standard_OutOfRange {
@@ -2180,13 +2330,16 @@ class Visual3d_PickError : public Standard_OutOfRange {
 		Handle_Visual3d_PickError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_PickError();
 
 };
 %extend Visual3d_PickError {
 	Handle_Visual3d_PickError GetHandle() {
 	return *(Handle_Visual3d_PickError*) &$self;
+	}
+};
+%extend Visual3d_PickError {
+	~Visual3d_PickError() {
+	printf("Call custom destructor for instance of Visual3d_PickError\n");
 	}
 };
 
@@ -2255,13 +2408,16 @@ class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_ViewMappingDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ViewMappingDefinitionError();
 
 };
 %extend Visual3d_ViewMappingDefinitionError {
 	Handle_Visual3d_ViewMappingDefinitionError GetHandle() {
 	return *(Handle_Visual3d_ViewMappingDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ViewMappingDefinitionError {
+	~Visual3d_ViewMappingDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_ViewMappingDefinitionError\n");
 	}
 };
 
@@ -2312,13 +2468,16 @@ class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 		Handle_Visual3d_ContextPickDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_ContextPickDefinitionError();
 
 };
 %extend Visual3d_ContextPickDefinitionError {
 	Handle_Visual3d_ContextPickDefinitionError GetHandle() {
 	return *(Handle_Visual3d_ContextPickDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ContextPickDefinitionError {
+	~Visual3d_ContextPickDefinitionError() {
+	printf("Call custom destructor for instance of Visual3d_ContextPickDefinitionError\n");
 	}
 };
 
@@ -2373,13 +2532,16 @@ class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
 		Handle_Visual3d_HSequenceOfPickPath ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Visual3d_HSequenceOfPickPath();
 
 };
 %extend Visual3d_HSequenceOfPickPath {
 	Handle_Visual3d_HSequenceOfPickPath GetHandle() {
 	return *(Handle_Visual3d_HSequenceOfPickPath*) &$self;
+	}
+};
+%extend Visual3d_HSequenceOfPickPath {
+	~Visual3d_HSequenceOfPickPath() {
+	printf("Call custom destructor for instance of Visual3d_HSequenceOfPickPath\n");
 	}
 };
 

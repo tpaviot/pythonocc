@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Bnd_SequenceNodeOfSeqOfBox();
-		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox();
 		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
@@ -118,12 +116,15 @@ class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 	return (Bnd_SequenceNodeOfSeqOfBox*)$self->Access();
 	}
 };
+%extend Handle_Bnd_SequenceNodeOfSeqOfBox {
+	~Handle_Bnd_SequenceNodeOfSeqOfBox() {
+	printf("Call custom destructor for instance of Handle_Bnd_SequenceNodeOfSeqOfBox\n");
+	}
+};
 
 %nodefaultctor Handle_Bnd_HArray1OfBox2d;
 class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Bnd_HArray1OfBox2d();
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox2d();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 	return (Bnd_HArray1OfBox2d*)$self->Access();
 	}
 };
+%extend Handle_Bnd_HArray1OfBox2d {
+	~Handle_Bnd_HArray1OfBox2d() {
+	printf("Call custom destructor for instance of Handle_Bnd_HArray1OfBox2d\n");
+	}
+};
 
 %nodefaultctor Handle_Bnd_HArray1OfBox;
 class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Bnd_HArray1OfBox();
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox();
 		%feature("autodoc", "1");
@@ -158,6 +162,11 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 %extend Handle_Bnd_HArray1OfBox {
 	Bnd_HArray1OfBox* GetObject() {
 	return (Bnd_HArray1OfBox*)$self->Access();
+	}
+};
+%extend Handle_Bnd_HArray1OfBox {
+	~Handle_Bnd_HArray1OfBox() {
+	printf("Call custom destructor for instance of Handle_Bnd_HArray1OfBox\n");
 	}
 };
 
@@ -278,13 +287,16 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 		Bnd_Box & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Bnd_SequenceNodeOfSeqOfBox();
 
 };
 %extend Bnd_SequenceNodeOfSeqOfBox {
 	Handle_Bnd_SequenceNodeOfSeqOfBox GetHandle() {
 	return *(Handle_Bnd_SequenceNodeOfSeqOfBox*) &$self;
+	}
+};
+%extend Bnd_SequenceNodeOfSeqOfBox {
+	~Bnd_SequenceNodeOfSeqOfBox() {
+	printf("Call custom destructor for instance of Bnd_SequenceNodeOfSeqOfBox\n");
 	}
 };
 
@@ -591,13 +603,16 @@ class Bnd_HArray1OfBox2d : public MMgt_TShared {
 		Bnd_Array1OfBox2d & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Bnd_HArray1OfBox2d();
 
 };
 %extend Bnd_HArray1OfBox2d {
 	Handle_Bnd_HArray1OfBox2d GetHandle() {
 	return *(Handle_Bnd_HArray1OfBox2d*) &$self;
+	}
+};
+%extend Bnd_HArray1OfBox2d {
+	~Bnd_HArray1OfBox2d() {
+	printf("Call custom destructor for instance of Bnd_HArray1OfBox2d\n");
 	}
 };
 
@@ -628,13 +643,16 @@ class Bnd_HArray1OfBox : public MMgt_TShared {
 		Bnd_Array1OfBox & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Bnd_HArray1OfBox();
 
 };
 %extend Bnd_HArray1OfBox {
 	Handle_Bnd_HArray1OfBox GetHandle() {
 	return *(Handle_Bnd_HArray1OfBox*) &$self;
+	}
+};
+%extend Bnd_HArray1OfBox {
+	~Bnd_HArray1OfBox() {
+	printf("Call custom destructor for instance of Bnd_HArray1OfBox\n");
 	}
 };
 

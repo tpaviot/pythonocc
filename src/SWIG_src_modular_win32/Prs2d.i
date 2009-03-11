@@ -189,8 +189,6 @@ enum Prs2d_ArrowSide {
 class Handle_Prs2d_Tolerance : public Handle_Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Prs2d_Tolerance();
-		%feature("autodoc", "1");
 		Handle_Prs2d_Tolerance();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Tolerance(const Handle_Prs2d_Tolerance &aHandle);
@@ -205,12 +203,15 @@ class Handle_Prs2d_Tolerance : public Handle_Graphic2d_Line {
 	return (Prs2d_Tolerance*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Tolerance {
+	~Handle_Prs2d_Tolerance() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Tolerance\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Flatness;
 class Handle_Prs2d_Flatness : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Flatness();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Flatness();
 		%feature("autodoc", "1");
@@ -226,12 +227,15 @@ class Handle_Prs2d_Flatness : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Flatness*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Flatness {
+	~Handle_Prs2d_Flatness() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Flatness\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_SurfProfile;
 class Handle_Prs2d_SurfProfile : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_SurfProfile();
 		%feature("autodoc", "1");
 		Handle_Prs2d_SurfProfile();
 		%feature("autodoc", "1");
@@ -247,12 +251,15 @@ class Handle_Prs2d_SurfProfile : public Handle_Prs2d_Tolerance {
 	return (Prs2d_SurfProfile*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_SurfProfile {
+	~Handle_Prs2d_SurfProfile() {
+	printf("Call custom destructor for instance of Handle_Prs2d_SurfProfile\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Dimension;
 class Handle_Prs2d_Dimension : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Dimension();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Dimension();
 		%feature("autodoc", "1");
@@ -268,12 +275,15 @@ class Handle_Prs2d_Dimension : public Handle_Graphic2d_Line {
 	return (Prs2d_Dimension*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Dimension {
+	~Handle_Prs2d_Dimension() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Dimension\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Repere;
 class Handle_Prs2d_Repere : public Handle_Prs2d_Dimension {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Repere();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Repere();
 		%feature("autodoc", "1");
@@ -289,12 +299,15 @@ class Handle_Prs2d_Repere : public Handle_Prs2d_Dimension {
 	return (Prs2d_Repere*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Repere {
+	~Handle_Prs2d_Repere() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Repere\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Axis;
 class Handle_Prs2d_Axis : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Axis();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Axis();
 		%feature("autodoc", "1");
@@ -310,12 +323,15 @@ class Handle_Prs2d_Axis : public Handle_Graphic2d_Line {
 	return (Prs2d_Axis*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Axis {
+	~Handle_Prs2d_Axis() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Axis\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Radius;
 class Handle_Prs2d_Radius : public Handle_Prs2d_Dimension {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Radius();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Radius();
 		%feature("autodoc", "1");
@@ -331,12 +347,15 @@ class Handle_Prs2d_Radius : public Handle_Prs2d_Dimension {
 	return (Prs2d_Radius*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Radius {
+	~Handle_Prs2d_Radius() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Radius\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_AspectRoot;
 class Handle_Prs2d_AspectRoot : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_AspectRoot();
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectRoot();
 		%feature("autodoc", "1");
@@ -352,12 +371,15 @@ class Handle_Prs2d_AspectRoot : public Handle_MMgt_TShared {
 	return (Prs2d_AspectRoot*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_AspectRoot {
+	~Handle_Prs2d_AspectRoot() {
+	printf("Call custom destructor for instance of Handle_Prs2d_AspectRoot\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_AspectFramedText;
 class Handle_Prs2d_AspectFramedText : public Handle_Prs2d_AspectRoot {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_AspectFramedText();
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectFramedText();
 		%feature("autodoc", "1");
@@ -373,12 +395,15 @@ class Handle_Prs2d_AspectFramedText : public Handle_Prs2d_AspectRoot {
 	return (Prs2d_AspectFramedText*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_AspectFramedText {
+	~Handle_Prs2d_AspectFramedText() {
+	printf("Call custom destructor for instance of Handle_Prs2d_AspectFramedText\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_DrawSymbol;
 class Handle_Prs2d_DrawSymbol : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_DrawSymbol();
 		%feature("autodoc", "1");
 		Handle_Prs2d_DrawSymbol();
 		%feature("autodoc", "1");
@@ -394,12 +419,15 @@ class Handle_Prs2d_DrawSymbol : public Handle_Graphic2d_Line {
 	return (Prs2d_DrawSymbol*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_DrawSymbol {
+	~Handle_Prs2d_DrawSymbol() {
+	printf("Call custom destructor for instance of Handle_Prs2d_DrawSymbol\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Cylindric;
 class Handle_Prs2d_Cylindric : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Cylindric();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Cylindric();
 		%feature("autodoc", "1");
@@ -415,12 +443,15 @@ class Handle_Prs2d_Cylindric : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Cylindric*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Cylindric {
+	~Handle_Prs2d_Cylindric() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Cylindric\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot;
 class Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot();
 		%feature("autodoc", "1");
 		Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot();
 		%feature("autodoc", "1");
@@ -436,12 +467,15 @@ class Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot : public Handle_TCollection_
 	return (Prs2d_DataMapNodeOfDataMapOfAspectRoot*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot {
+	~Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot() {
+	printf("Call custom destructor for instance of Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Diameter;
 class Handle_Prs2d_Diameter : public Handle_Prs2d_Dimension {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Diameter();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Diameter();
 		%feature("autodoc", "1");
@@ -457,12 +491,15 @@ class Handle_Prs2d_Diameter : public Handle_Prs2d_Dimension {
 	return (Prs2d_Diameter*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Diameter {
+	~Handle_Prs2d_Diameter() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Diameter\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Drawer;
 class Handle_Prs2d_Drawer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Drawer();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Drawer();
 		%feature("autodoc", "1");
@@ -478,12 +515,15 @@ class Handle_Prs2d_Drawer : public Handle_MMgt_TShared {
 	return (Prs2d_Drawer*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Drawer {
+	~Handle_Prs2d_Drawer() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Drawer\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Length;
 class Handle_Prs2d_Length : public Handle_Prs2d_Dimension {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Length();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Length();
 		%feature("autodoc", "1");
@@ -499,12 +539,15 @@ class Handle_Prs2d_Length : public Handle_Prs2d_Dimension {
 	return (Prs2d_Length*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Length {
+	~Handle_Prs2d_Length() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Length\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Taper;
 class Handle_Prs2d_Taper : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Taper();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Taper();
 		%feature("autodoc", "1");
@@ -520,12 +563,15 @@ class Handle_Prs2d_Taper : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Taper*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Taper {
+	~Handle_Prs2d_Taper() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Taper\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Arrow;
 class Handle_Prs2d_Arrow : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Arrow();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Arrow();
 		%feature("autodoc", "1");
@@ -541,12 +587,15 @@ class Handle_Prs2d_Arrow : public Handle_Graphic2d_Line {
 	return (Prs2d_Arrow*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Arrow {
+	~Handle_Prs2d_Arrow() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Arrow\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_ToleranceFrame;
 class Handle_Prs2d_ToleranceFrame : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_ToleranceFrame();
 		%feature("autodoc", "1");
 		Handle_Prs2d_ToleranceFrame();
 		%feature("autodoc", "1");
@@ -562,12 +611,15 @@ class Handle_Prs2d_ToleranceFrame : public Handle_Graphic2d_Line {
 	return (Prs2d_ToleranceFrame*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_ToleranceFrame {
+	~Handle_Prs2d_ToleranceFrame() {
+	printf("Call custom destructor for instance of Handle_Prs2d_ToleranceFrame\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_SymCircular;
 class Handle_Prs2d_SymCircular : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_SymCircular();
 		%feature("autodoc", "1");
 		Handle_Prs2d_SymCircular();
 		%feature("autodoc", "1");
@@ -583,12 +635,15 @@ class Handle_Prs2d_SymCircular : public Handle_Prs2d_Tolerance {
 	return (Prs2d_SymCircular*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_SymCircular {
+	~Handle_Prs2d_SymCircular() {
+	printf("Call custom destructor for instance of Handle_Prs2d_SymCircular\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Position;
 class Handle_Prs2d_Position : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Position();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Position();
 		%feature("autodoc", "1");
@@ -604,12 +659,15 @@ class Handle_Prs2d_Position : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Position*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Position {
+	~Handle_Prs2d_Position() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Position\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Concentric;
 class Handle_Prs2d_Concentric : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Concentric();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Concentric();
 		%feature("autodoc", "1");
@@ -625,12 +683,15 @@ class Handle_Prs2d_Concentric : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Concentric*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Concentric {
+	~Handle_Prs2d_Concentric() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Concentric\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Perpendicular;
 class Handle_Prs2d_Perpendicular : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Perpendicular();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Perpendicular();
 		%feature("autodoc", "1");
@@ -646,12 +707,15 @@ class Handle_Prs2d_Perpendicular : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Perpendicular*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Perpendicular {
+	~Handle_Prs2d_Perpendicular() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Perpendicular\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_LineProfile;
 class Handle_Prs2d_LineProfile : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_LineProfile();
 		%feature("autodoc", "1");
 		Handle_Prs2d_LineProfile();
 		%feature("autodoc", "1");
@@ -667,12 +731,15 @@ class Handle_Prs2d_LineProfile : public Handle_Prs2d_Tolerance {
 	return (Prs2d_LineProfile*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_LineProfile {
+	~Handle_Prs2d_LineProfile() {
+	printf("Call custom destructor for instance of Handle_Prs2d_LineProfile\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_AspectHidingText;
 class Handle_Prs2d_AspectHidingText : public Handle_Prs2d_AspectRoot {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_AspectHidingText();
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectHidingText();
 		%feature("autodoc", "1");
@@ -688,12 +755,15 @@ class Handle_Prs2d_AspectHidingText : public Handle_Prs2d_AspectRoot {
 	return (Prs2d_AspectHidingText*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_AspectHidingText {
+	~Handle_Prs2d_AspectHidingText() {
+	printf("Call custom destructor for instance of Handle_Prs2d_AspectHidingText\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_RadiusIndep;
 class Handle_Prs2d_RadiusIndep : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_RadiusIndep();
 		%feature("autodoc", "1");
 		Handle_Prs2d_RadiusIndep();
 		%feature("autodoc", "1");
@@ -709,12 +779,15 @@ class Handle_Prs2d_RadiusIndep : public Handle_Graphic2d_Line {
 	return (Prs2d_RadiusIndep*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_RadiusIndep {
+	~Handle_Prs2d_RadiusIndep() {
+	printf("Call custom destructor for instance of Handle_Prs2d_RadiusIndep\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Angularity;
 class Handle_Prs2d_Angularity : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Angularity();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Angularity();
 		%feature("autodoc", "1");
@@ -730,12 +803,15 @@ class Handle_Prs2d_Angularity : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Angularity*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Angularity {
+	~Handle_Prs2d_Angularity() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Angularity\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Symmetry;
 class Handle_Prs2d_Symmetry : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Symmetry();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Symmetry();
 		%feature("autodoc", "1");
@@ -751,12 +827,15 @@ class Handle_Prs2d_Symmetry : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Symmetry*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Symmetry {
+	~Handle_Prs2d_Symmetry() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Symmetry\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Circularity;
 class Handle_Prs2d_Circularity : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Circularity();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Circularity();
 		%feature("autodoc", "1");
@@ -772,12 +851,15 @@ class Handle_Prs2d_Circularity : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Circularity*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Circularity {
+	~Handle_Prs2d_Circularity() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Circularity\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Straightness;
 class Handle_Prs2d_Straightness : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Straightness();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Straightness();
 		%feature("autodoc", "1");
@@ -793,12 +875,15 @@ class Handle_Prs2d_Straightness : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Straightness*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Straightness {
+	~Handle_Prs2d_Straightness() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Straightness\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_SymbolDefinitionError;
 class Handle_Prs2d_SymbolDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_SymbolDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Prs2d_SymbolDefinitionError();
 		%feature("autodoc", "1");
@@ -814,12 +899,15 @@ class Handle_Prs2d_SymbolDefinitionError : public Handle_Standard_OutOfRange {
 	return (Prs2d_SymbolDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_SymbolDefinitionError {
+	~Handle_Prs2d_SymbolDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Prs2d_SymbolDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_AspectHidingPoly;
 class Handle_Prs2d_AspectHidingPoly : public Handle_Prs2d_AspectRoot {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_AspectHidingPoly();
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectHidingPoly();
 		%feature("autodoc", "1");
@@ -835,12 +923,15 @@ class Handle_Prs2d_AspectHidingPoly : public Handle_Prs2d_AspectRoot {
 	return (Prs2d_AspectHidingPoly*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_AspectHidingPoly {
+	~Handle_Prs2d_AspectHidingPoly() {
+	printf("Call custom destructor for instance of Handle_Prs2d_AspectHidingPoly\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Point;
 class Handle_Prs2d_Point : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Point();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Point();
 		%feature("autodoc", "1");
@@ -856,12 +947,15 @@ class Handle_Prs2d_Point : public Handle_Graphic2d_Line {
 	return (Prs2d_Point*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Point {
+	~Handle_Prs2d_Point() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Point\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_AspectText;
 class Handle_Prs2d_AspectText : public Handle_Prs2d_AspectRoot {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_AspectText();
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectText();
 		%feature("autodoc", "1");
@@ -877,12 +971,15 @@ class Handle_Prs2d_AspectText : public Handle_Prs2d_AspectRoot {
 	return (Prs2d_AspectText*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_AspectText {
+	~Handle_Prs2d_AspectText() {
+	printf("Call custom destructor for instance of Handle_Prs2d_AspectText\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Parallelism;
 class Handle_Prs2d_Parallelism : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Parallelism();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Parallelism();
 		%feature("autodoc", "1");
@@ -898,12 +995,15 @@ class Handle_Prs2d_Parallelism : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Parallelism*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Parallelism {
+	~Handle_Prs2d_Parallelism() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Parallelism\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_SymTotal;
 class Handle_Prs2d_SymTotal : public Handle_Prs2d_Tolerance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_SymTotal();
 		%feature("autodoc", "1");
 		Handle_Prs2d_SymTotal();
 		%feature("autodoc", "1");
@@ -919,12 +1019,15 @@ class Handle_Prs2d_SymTotal : public Handle_Prs2d_Tolerance {
 	return (Prs2d_SymTotal*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_SymTotal {
+	~Handle_Prs2d_SymTotal() {
+	printf("Call custom destructor for instance of Handle_Prs2d_SymTotal\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_Angle;
 class Handle_Prs2d_Angle : public Handle_Prs2d_Dimension {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_Angle();
 		%feature("autodoc", "1");
 		Handle_Prs2d_Angle();
 		%feature("autodoc", "1");
@@ -940,12 +1043,15 @@ class Handle_Prs2d_Angle : public Handle_Prs2d_Dimension {
 	return (Prs2d_Angle*)$self->Access();
 	}
 };
+%extend Handle_Prs2d_Angle {
+	~Handle_Prs2d_Angle() {
+	printf("Call custom destructor for instance of Handle_Prs2d_Angle\n");
+	}
+};
 
 %nodefaultctor Handle_Prs2d_AspectLine;
 class Handle_Prs2d_AspectLine : public Handle_Prs2d_AspectRoot {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs2d_AspectLine();
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectLine();
 		%feature("autodoc", "1");
@@ -959,6 +1065,11 @@ class Handle_Prs2d_AspectLine : public Handle_Prs2d_AspectRoot {
 %extend Handle_Prs2d_AspectLine {
 	Prs2d_AspectLine* GetObject() {
 	return (Prs2d_AspectLine*)$self->Access();
+	}
+};
+%extend Handle_Prs2d_AspectLine {
+	~Handle_Prs2d_AspectLine() {
+	printf("Call custom destructor for instance of Handle_Prs2d_AspectLine\n");
 	}
 };
 
@@ -978,6 +1089,11 @@ class Prs2d_Tolerance : public Graphic2d_Line {
 	return *(Handle_Prs2d_Tolerance*) &$self;
 	}
 };
+%extend Prs2d_Tolerance {
+	~Prs2d_Tolerance() {
+	printf("Call custom destructor for instance of Prs2d_Tolerance\n");
+	}
+};
 
 %nodefaultctor Prs2d_LineProfile;
 class Prs2d_LineProfile : public Prs2d_Tolerance {
@@ -986,13 +1102,16 @@ class Prs2d_LineProfile : public Prs2d_Tolerance {
 		Prs2d_LineProfile(const Handle_Graphic2d_GraphicObject &aGO, const Standard_Real aX, const Standard_Real aY, const Standard_Real aLength=3.0e+0, const Standard_Real anAngle=0.0);
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_LineProfile();
 
 };
 %extend Prs2d_LineProfile {
 	Handle_Prs2d_LineProfile GetHandle() {
 	return *(Handle_Prs2d_LineProfile*) &$self;
+	}
+};
+%extend Prs2d_LineProfile {
+	~Prs2d_LineProfile() {
+	printf("Call custom destructor for instance of Prs2d_LineProfile\n");
 	}
 };
 
@@ -1003,13 +1122,16 @@ class Prs2d_AspectRoot : public MMgt_TShared {
 		Prs2d_AspectName GetAspectName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_AspectRoot();
 
 };
 %extend Prs2d_AspectRoot {
 	Handle_Prs2d_AspectRoot GetHandle() {
 	return *(Handle_Prs2d_AspectRoot*) &$self;
+	}
+};
+%extend Prs2d_AspectRoot {
+	~Prs2d_AspectRoot() {
+	printf("Call custom destructor for instance of Prs2d_AspectRoot\n");
 	}
 };
 
@@ -1038,13 +1160,16 @@ class Prs2d_AspectHidingText : public Prs2d_AspectRoot {
 		void SetUnderlined(const Standard_Boolean anIsUnderline);
 		%feature("autodoc", "1");
 		void Values(Quantity_NameOfColor & ColorInd, Quantity_NameOfColor & HidingColorInd, Quantity_NameOfColor & FrameColorInd, Aspect_WidthOfLine & FrameWidthInd, Aspect_TypeOfFont & FontInd, Standard_ShortReal & aSlantInd, Standard_ShortReal & aHScaleInd, Standard_ShortReal & aWScaleInd, Standard_Boolean & isUnderlined) const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_AspectHidingText();
 
 };
 %extend Prs2d_AspectHidingText {
 	Handle_Prs2d_AspectHidingText GetHandle() {
 	return *(Handle_Prs2d_AspectHidingText*) &$self;
+	}
+};
+%extend Prs2d_AspectHidingText {
+	~Prs2d_AspectHidingText() {
+	printf("Call custom destructor for instance of Prs2d_AspectHidingText\n");
 	}
 };
 
@@ -1170,6 +1295,11 @@ class Prs2d_Dimension : public Graphic2d_Line {
 	return *(Handle_Prs2d_Dimension*) &$self;
 	}
 };
+%extend Prs2d_Dimension {
+	~Prs2d_Dimension() {
+	printf("Call custom destructor for instance of Prs2d_Dimension\n");
+	}
+};
 
 %nodefaultctor Prs2d_Radius;
 class Prs2d_Radius : public Prs2d_Dimension {
@@ -1180,13 +1310,16 @@ class Prs2d_Radius : public Prs2d_Dimension {
 		void Values(gp_Pnt2d & anAttPnt, gp_Circ2d & aCirc) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Radius();
 
 };
 %extend Prs2d_Radius {
 	Handle_Prs2d_Radius GetHandle() {
 	return *(Handle_Prs2d_Radius*) &$self;
+	}
+};
+%extend Prs2d_Radius {
+	~Prs2d_Radius() {
+	printf("Call custom destructor for instance of Prs2d_Radius\n");
 	}
 };
 
@@ -1199,13 +1332,16 @@ class Prs2d_Concentric : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Concentric();
 
 };
 %extend Prs2d_Concentric {
 	Handle_Prs2d_Concentric GetHandle() {
 	return *(Handle_Prs2d_Concentric*) &$self;
+	}
+};
+%extend Prs2d_Concentric {
+	~Prs2d_Concentric() {
+	printf("Call custom destructor for instance of Prs2d_Concentric\n");
 	}
 };
 
@@ -1218,13 +1354,16 @@ class Prs2d_SymCircular : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_SymCircular();
 
 };
 %extend Prs2d_SymCircular {
 	Handle_Prs2d_SymCircular GetHandle() {
 	return *(Handle_Prs2d_SymCircular*) &$self;
+	}
+};
+%extend Prs2d_SymCircular {
+	~Prs2d_SymCircular() {
+	printf("Call custom destructor for instance of Prs2d_SymCircular\n");
 	}
 };
 
@@ -1237,13 +1376,16 @@ class Prs2d_Angularity : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Angularity();
 
 };
 %extend Prs2d_Angularity {
 	Handle_Prs2d_Angularity GetHandle() {
 	return *(Handle_Prs2d_Angularity*) &$self;
+	}
+};
+%extend Prs2d_Angularity {
+	~Prs2d_Angularity() {
+	printf("Call custom destructor for instance of Prs2d_Angularity\n");
 	}
 };
 
@@ -1270,13 +1412,16 @@ class Prs2d_Axis : public Graphic2d_Line {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Axis();
 
 };
 %extend Prs2d_Axis {
 	Handle_Prs2d_Axis GetHandle() {
 	return *(Handle_Prs2d_Axis*) &$self;
+	}
+};
+%extend Prs2d_Axis {
+	~Prs2d_Axis() {
+	printf("Call custom destructor for instance of Prs2d_Axis\n");
 	}
 };
 
@@ -1299,13 +1444,16 @@ class Prs2d_Point : public Graphic2d_Line {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Point();
 
 };
 %extend Prs2d_Point {
 	Handle_Prs2d_Point GetHandle() {
 	return *(Handle_Prs2d_Point*) &$self;
+	}
+};
+%extend Prs2d_Point {
+	~Prs2d_Point() {
+	printf("Call custom destructor for instance of Prs2d_Point\n");
 	}
 };
 
@@ -1326,13 +1474,16 @@ class Prs2d_AspectHidingPoly : public Prs2d_AspectRoot {
 		void Values(Quantity_NameOfColor & HidingColorInd, Quantity_NameOfColor & FrameColorInd, Aspect_TypeOfLine & FrameTypeInd, Aspect_WidthOfLine & FrameWidthInd) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_AspectHidingPoly();
 
 };
 %extend Prs2d_AspectHidingPoly {
 	Handle_Prs2d_AspectHidingPoly GetHandle() {
 	return *(Handle_Prs2d_AspectHidingPoly*) &$self;
+	}
+};
+%extend Prs2d_AspectHidingPoly {
+	~Prs2d_AspectHidingPoly() {
+	printf("Call custom destructor for instance of Prs2d_AspectHidingPoly\n");
 	}
 };
 
@@ -1345,13 +1496,16 @@ class Prs2d_Cylindric : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Cylindric();
 
 };
 %extend Prs2d_Cylindric {
 	Handle_Prs2d_Cylindric GetHandle() {
 	return *(Handle_Prs2d_Cylindric*) &$self;
+	}
+};
+%extend Prs2d_Cylindric {
+	~Prs2d_Cylindric() {
+	printf("Call custom destructor for instance of Prs2d_Cylindric\n");
 	}
 };
 
@@ -1364,13 +1518,16 @@ class Prs2d_Straightness : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Straightness();
 
 };
 %extend Prs2d_Straightness {
 	Handle_Prs2d_Straightness GetHandle() {
 	return *(Handle_Prs2d_Straightness*) &$self;
+	}
+};
+%extend Prs2d_Straightness {
+	~Prs2d_Straightness() {
+	printf("Call custom destructor for instance of Prs2d_Straightness\n");
 	}
 };
 
@@ -1383,13 +1540,16 @@ class Prs2d_Position : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Position();
 
 };
 %extend Prs2d_Position {
 	Handle_Prs2d_Position GetHandle() {
 	return *(Handle_Prs2d_Position*) &$self;
+	}
+};
+%extend Prs2d_Position {
+	~Prs2d_Position() {
+	printf("Call custom destructor for instance of Prs2d_Position\n");
 	}
 };
 
@@ -1404,13 +1564,16 @@ class Prs2d_DataMapNodeOfDataMapOfAspectRoot : public TCollection_MapNode {
 		Handle_Prs2d_AspectRoot & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_DataMapNodeOfDataMapOfAspectRoot();
 
 };
 %extend Prs2d_DataMapNodeOfDataMapOfAspectRoot {
 	Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot GetHandle() {
 	return *(Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot*) &$self;
+	}
+};
+%extend Prs2d_DataMapNodeOfDataMapOfAspectRoot {
+	~Prs2d_DataMapNodeOfDataMapOfAspectRoot() {
+	printf("Call custom destructor for instance of Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");
 	}
 };
 
@@ -1445,13 +1608,16 @@ class Prs2d_RadiusIndep : public Graphic2d_Line {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_RadiusIndep();
 
 };
 %extend Prs2d_RadiusIndep {
 	Handle_Prs2d_RadiusIndep GetHandle() {
 	return *(Handle_Prs2d_RadiusIndep*) &$self;
+	}
+};
+%extend Prs2d_RadiusIndep {
+	~Prs2d_RadiusIndep() {
+	printf("Call custom destructor for instance of Prs2d_RadiusIndep\n");
 	}
 };
 
@@ -1464,13 +1630,16 @@ class Prs2d_Flatness : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Flatness();
 
 };
 %extend Prs2d_Flatness {
 	Handle_Prs2d_Flatness GetHandle() {
 	return *(Handle_Prs2d_Flatness*) &$self;
+	}
+};
+%extend Prs2d_Flatness {
+	~Prs2d_Flatness() {
+	printf("Call custom destructor for instance of Prs2d_Flatness\n");
 	}
 };
 
@@ -1483,13 +1652,16 @@ class Prs2d_Circularity : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Circularity();
 
 };
 %extend Prs2d_Circularity {
 	Handle_Prs2d_Circularity GetHandle() {
 	return *(Handle_Prs2d_Circularity*) &$self;
+	}
+};
+%extend Prs2d_Circularity {
+	~Prs2d_Circularity() {
+	printf("Call custom destructor for instance of Prs2d_Circularity\n");
 	}
 };
 
@@ -1502,13 +1674,16 @@ class Prs2d_Parallelism : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Parallelism();
 
 };
 %extend Prs2d_Parallelism {
 	Handle_Prs2d_Parallelism GetHandle() {
 	return *(Handle_Prs2d_Parallelism*) &$self;
+	}
+};
+%extend Prs2d_Parallelism {
+	~Prs2d_Parallelism() {
+	printf("Call custom destructor for instance of Prs2d_Parallelism\n");
 	}
 };
 
@@ -1521,13 +1696,16 @@ class Prs2d_DrawSymbol : public Graphic2d_Line {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_DrawSymbol();
 
 };
 %extend Prs2d_DrawSymbol {
 	Handle_Prs2d_DrawSymbol GetHandle() {
 	return *(Handle_Prs2d_DrawSymbol*) &$self;
+	}
+};
+%extend Prs2d_DrawSymbol {
+	~Prs2d_DrawSymbol() {
+	printf("Call custom destructor for instance of Prs2d_DrawSymbol\n");
 	}
 };
 
@@ -1566,13 +1744,16 @@ class Prs2d_AspectText : public Prs2d_AspectRoot {
 		void SetColorIndex(const Standard_Integer anInd);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_AspectText();
 
 };
 %extend Prs2d_AspectText {
 	Handle_Prs2d_AspectText GetHandle() {
 	return *(Handle_Prs2d_AspectText*) &$self;
+	}
+};
+%extend Prs2d_AspectText {
+	~Prs2d_AspectText() {
+	printf("Call custom destructor for instance of Prs2d_AspectText\n");
 	}
 };
 
@@ -1585,13 +1766,16 @@ class Prs2d_Symmetry : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Symmetry();
 
 };
 %extend Prs2d_Symmetry {
 	Handle_Prs2d_Symmetry GetHandle() {
 	return *(Handle_Prs2d_Symmetry*) &$self;
+	}
+};
+%extend Prs2d_Symmetry {
+	~Prs2d_Symmetry() {
+	printf("Call custom destructor for instance of Prs2d_Symmetry\n");
 	}
 };
 
@@ -1644,13 +1828,16 @@ class Prs2d_AspectLine : public Prs2d_AspectRoot {
 		void SetIntColorInd(const Standard_Integer anInd);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_AspectLine();
 
 };
 %extend Prs2d_AspectLine {
 	Handle_Prs2d_AspectLine GetHandle() {
 	return *(Handle_Prs2d_AspectLine*) &$self;
+	}
+};
+%extend Prs2d_AspectLine {
+	~Prs2d_AspectLine() {
+	printf("Call custom destructor for instance of Prs2d_AspectLine\n");
 	}
 };
 
@@ -1665,13 +1852,16 @@ class Prs2d_Angle : public Prs2d_Dimension {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Angle();
 
 };
 %extend Prs2d_Angle {
 	Handle_Prs2d_Angle GetHandle() {
 	return *(Handle_Prs2d_Angle*) &$self;
+	}
+};
+%extend Prs2d_Angle {
+	~Prs2d_Angle() {
+	printf("Call custom destructor for instance of Prs2d_Angle\n");
 	}
 };
 
@@ -1684,13 +1874,16 @@ class Prs2d_Repere : public Prs2d_Dimension {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Repere();
 
 };
 %extend Prs2d_Repere {
 	Handle_Prs2d_Repere GetHandle() {
 	return *(Handle_Prs2d_Repere*) &$self;
+	}
+};
+%extend Prs2d_Repere {
+	~Prs2d_Repere() {
+	printf("Call custom destructor for instance of Prs2d_Repere\n");
 	}
 };
 
@@ -1723,13 +1916,16 @@ class Prs2d_ToleranceFrame : public Graphic2d_Line {
 		Standard_Real TextScale() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_ToleranceFrame();
 
 };
 %extend Prs2d_ToleranceFrame {
 	Handle_Prs2d_ToleranceFrame GetHandle() {
 	return *(Handle_Prs2d_ToleranceFrame*) &$self;
+	}
+};
+%extend Prs2d_ToleranceFrame {
+	~Prs2d_ToleranceFrame() {
+	printf("Call custom destructor for instance of Prs2d_ToleranceFrame\n");
 	}
 };
 
@@ -1746,13 +1942,16 @@ class Prs2d_Arrow : public Graphic2d_Line {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Arrow();
 
 };
 %extend Prs2d_Arrow {
 	Handle_Prs2d_Arrow GetHandle() {
 	return *(Handle_Prs2d_Arrow*) &$self;
+	}
+};
+%extend Prs2d_Arrow {
+	~Prs2d_Arrow() {
+	printf("Call custom destructor for instance of Prs2d_Arrow\n");
 	}
 };
 
@@ -1765,13 +1964,16 @@ class Prs2d_Taper : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Taper();
 
 };
 %extend Prs2d_Taper {
 	Handle_Prs2d_Taper GetHandle() {
 	return *(Handle_Prs2d_Taper*) &$self;
+	}
+};
+%extend Prs2d_Taper {
+	~Prs2d_Taper() {
+	printf("Call custom destructor for instance of Prs2d_Taper\n");
 	}
 };
 
@@ -1790,13 +1992,16 @@ class Prs2d_Drawer : public MMgt_TShared {
 		virtual		Standard_Real MaxParameterValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Drawer();
 
 };
 %extend Prs2d_Drawer {
 	Handle_Prs2d_Drawer GetHandle() {
 	return *(Handle_Prs2d_Drawer*) &$self;
+	}
+};
+%extend Prs2d_Drawer {
+	~Prs2d_Drawer() {
+	printf("Call custom destructor for instance of Prs2d_Drawer\n");
 	}
 };
 
@@ -1825,13 +2030,16 @@ class Prs2d_AspectFramedText : public Prs2d_AspectRoot {
 		void Values(Quantity_NameOfColor & aColorInd, Quantity_NameOfColor & aFrameColorInd, Aspect_WidthOfLine & aFrameWidthInd, Aspect_TypeOfFont & aFontInd, Standard_ShortReal & aSlant, Standard_ShortReal & aHScale, Standard_ShortReal & aWScale, Standard_Boolean & isUnderlined) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_AspectFramedText();
 
 };
 %extend Prs2d_AspectFramedText {
 	Handle_Prs2d_AspectFramedText GetHandle() {
 	return *(Handle_Prs2d_AspectFramedText*) &$self;
+	}
+};
+%extend Prs2d_AspectFramedText {
+	~Prs2d_AspectFramedText() {
+	printf("Call custom destructor for instance of Prs2d_AspectFramedText\n");
 	}
 };
 
@@ -1844,13 +2052,16 @@ class Prs2d_SurfProfile : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_SurfProfile();
 
 };
 %extend Prs2d_SurfProfile {
 	Handle_Prs2d_SurfProfile GetHandle() {
 	return *(Handle_Prs2d_SurfProfile*) &$self;
+	}
+};
+%extend Prs2d_SurfProfile {
+	~Prs2d_SurfProfile() {
+	printf("Call custom destructor for instance of Prs2d_SurfProfile\n");
 	}
 };
 
@@ -1863,13 +2074,16 @@ class Prs2d_SymTotal : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_SymTotal();
 
 };
 %extend Prs2d_SymTotal {
 	Handle_Prs2d_SymTotal GetHandle() {
 	return *(Handle_Prs2d_SymTotal*) &$self;
+	}
+};
+%extend Prs2d_SymTotal {
+	~Prs2d_SymTotal() {
+	printf("Call custom destructor for instance of Prs2d_SymTotal\n");
 	}
 };
 
@@ -1894,13 +2108,16 @@ class Prs2d_Length : public Prs2d_Dimension {
 		Prs2d_TypeOfDist TypeOfDist() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Length();
 
 };
 %extend Prs2d_Length {
 	Handle_Prs2d_Length GetHandle() {
 	return *(Handle_Prs2d_Length*) &$self;
+	}
+};
+%extend Prs2d_Length {
+	~Prs2d_Length() {
+	printf("Call custom destructor for instance of Prs2d_Length\n");
 	}
 };
 
@@ -1919,13 +2136,16 @@ class Prs2d_SymbolDefinitionError : public Standard_OutOfRange {
 		Handle_Prs2d_SymbolDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_SymbolDefinitionError();
 
 };
 %extend Prs2d_SymbolDefinitionError {
 	Handle_Prs2d_SymbolDefinitionError GetHandle() {
 	return *(Handle_Prs2d_SymbolDefinitionError*) &$self;
+	}
+};
+%extend Prs2d_SymbolDefinitionError {
+	~Prs2d_SymbolDefinitionError() {
+	printf("Call custom destructor for instance of Prs2d_SymbolDefinitionError\n");
 	}
 };
 
@@ -1938,13 +2158,16 @@ class Prs2d_Perpendicular : public Prs2d_Tolerance {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Perpendicular();
 
 };
 %extend Prs2d_Perpendicular {
 	Handle_Prs2d_Perpendicular GetHandle() {
 	return *(Handle_Prs2d_Perpendicular*) &$self;
+	}
+};
+%extend Prs2d_Perpendicular {
+	~Prs2d_Perpendicular() {
+	printf("Call custom destructor for instance of Prs2d_Perpendicular\n");
 	}
 };
 
@@ -1959,12 +2182,15 @@ class Prs2d_Diameter : public Prs2d_Dimension {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs2d_Diameter();
 
 };
 %extend Prs2d_Diameter {
 	Handle_Prs2d_Diameter GetHandle() {
 	return *(Handle_Prs2d_Diameter*) &$self;
+	}
+};
+%extend Prs2d_Diameter {
+	~Prs2d_Diameter() {
+	printf("Call custom destructor for instance of Prs2d_Diameter\n");
 	}
 };

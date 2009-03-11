@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MDocStd_DocumentStorageDriver();
-		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	return (MDocStd_DocumentStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDocStd_DocumentStorageDriver {
+	~Handle_MDocStd_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDocStd_DocumentStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDocStd_DocumentRetrievalDriver;
 class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDocStd_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDrive
 	return (MDocStd_DocumentRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDocStd_DocumentRetrievalDriver {
+	~Handle_MDocStd_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDocStd_DocumentRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDocStd_XLinkRetrievalDriver;
 class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDocStd_XLinkRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkRetrievalDriver();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDocStd_XLinkRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDocStd_XLinkRetrievalDriver {
+	~Handle_MDocStd_XLinkRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDocStd_XLinkRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDocStd_XLinkStorageDriver;
 class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDocStd_XLinkStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkStorageDriver();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 	return (MDocStd_XLinkStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDocStd_XLinkStorageDriver {
+	~Handle_MDocStd_XLinkStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDocStd_XLinkStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDocStd_ListNodeOfDocEntryList;
 class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDocStd_ListNodeOfDocEntryList();
 		%feature("autodoc", "1");
 		Handle_MDocStd_ListNodeOfDocEntryList();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode 
 	return (MDocStd_ListNodeOfDocEntryList*)$self->Access();
 	}
 };
+%extend Handle_MDocStd_ListNodeOfDocEntryList {
+	~Handle_MDocStd_ListNodeOfDocEntryList() {
+	printf("Call custom destructor for instance of Handle_MDocStd_ListNodeOfDocEntryList\n");
+	}
+};
 
 %nodefaultctor Handle_MDocStd_StdMapNodeOfPersistentMap;
 class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDocStd_StdMapNodeOfPersistentMap();
 		%feature("autodoc", "1");
 		Handle_MDocStd_StdMapNodeOfPersistentMap();
 		%feature("autodoc", "1");
@@ -223,6 +236,11 @@ class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNo
 	return (MDocStd_StdMapNodeOfPersistentMap*)$self->Access();
 	}
 };
+%extend Handle_MDocStd_StdMapNodeOfPersistentMap {
+	~Handle_MDocStd_StdMapNodeOfPersistentMap() {
+	printf("Call custom destructor for instance of Handle_MDocStd_StdMapNodeOfPersistentMap\n");
+	}
+};
 
 %nodefaultctor MDocStd_StdMapNodeOfPersistentMap;
 class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
@@ -233,13 +251,16 @@ class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
 		Handle_Standard_Persistent & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDocStd_StdMapNodeOfPersistentMap();
 
 };
 %extend MDocStd_StdMapNodeOfPersistentMap {
 	Handle_MDocStd_StdMapNodeOfPersistentMap GetHandle() {
 	return *(Handle_MDocStd_StdMapNodeOfPersistentMap*) &$self;
+	}
+};
+%extend MDocStd_StdMapNodeOfPersistentMap {
+	~MDocStd_StdMapNodeOfPersistentMap() {
+	printf("Call custom destructor for instance of MDocStd_StdMapNodeOfPersistentMap\n");
 	}
 };
 
@@ -260,13 +281,16 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 		virtual		Handle_MDF_ARDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDocStd_DocumentRetrievalDriver();
 
 };
 %extend MDocStd_DocumentRetrievalDriver {
 	Handle_MDocStd_DocumentRetrievalDriver GetHandle() {
 	return *(Handle_MDocStd_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend MDocStd_DocumentRetrievalDriver {
+	~MDocStd_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of MDocStd_DocumentRetrievalDriver\n");
 	}
 };
 
@@ -285,13 +309,16 @@ class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &aSource, const Handle_TDF_Attribute &aTarget, const Handle_MDF_RRelocationTable &aRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDocStd_XLinkRetrievalDriver();
 
 };
 %extend MDocStd_XLinkRetrievalDriver {
 	Handle_MDocStd_XLinkRetrievalDriver GetHandle() {
 	return *(Handle_MDocStd_XLinkRetrievalDriver*) &$self;
+	}
+};
+%extend MDocStd_XLinkRetrievalDriver {
+	~MDocStd_XLinkRetrievalDriver() {
+	printf("Call custom destructor for instance of MDocStd_XLinkRetrievalDriver\n");
 	}
 };
 
@@ -304,13 +331,16 @@ class MDocStd_ListNodeOfDocEntryList : public TCollection_MapNode {
 		TCollection_AsciiString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDocStd_ListNodeOfDocEntryList();
 
 };
 %extend MDocStd_ListNodeOfDocEntryList {
 	Handle_MDocStd_ListNodeOfDocEntryList GetHandle() {
 	return *(Handle_MDocStd_ListNodeOfDocEntryList*) &$self;
+	}
+};
+%extend MDocStd_ListNodeOfDocEntryList {
+	~MDocStd_ListNodeOfDocEntryList() {
+	printf("Call custom destructor for instance of MDocStd_ListNodeOfDocEntryList\n");
 	}
 };
 
@@ -331,13 +361,16 @@ class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDocStd_DocumentStorageDriver();
 
 };
 %extend MDocStd_DocumentStorageDriver {
 	Handle_MDocStd_DocumentStorageDriver GetHandle() {
 	return *(Handle_MDocStd_DocumentStorageDriver*) &$self;
+	}
+};
+%extend MDocStd_DocumentStorageDriver {
+	~MDocStd_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of MDocStd_DocumentStorageDriver\n");
 	}
 };
 
@@ -438,13 +471,16 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &aSource, const Handle_PDF_Attribute &aTarget, const Handle_MDF_SRelocationTable &aRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDocStd_XLinkStorageDriver();
 
 };
 %extend MDocStd_XLinkStorageDriver {
 	Handle_MDocStd_XLinkStorageDriver GetHandle() {
 	return *(Handle_MDocStd_XLinkStorageDriver*) &$self;
+	}
+};
+%extend MDocStd_XLinkStorageDriver {
+	~MDocStd_XLinkStorageDriver() {
+	printf("Call custom destructor for instance of MDocStd_XLinkStorageDriver\n");
 	}
 };
 

@@ -128,8 +128,6 @@ enum PCDM_TypeOfFileDriver {
 class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PCDM_SequenceNodeOfSequenceOfReference();
-		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfReference();
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfReference(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
@@ -144,12 +142,15 @@ class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_
 	return (PCDM_SequenceNodeOfSequenceOfReference*)$self->Access();
 	}
 };
+%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
+	~Handle_PCDM_SequenceNodeOfSequenceOfReference() {
+	printf("Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfReference\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_Document;
 class Handle_PCDM_Document : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_Document();
 		%feature("autodoc", "1");
 		Handle_PCDM_Document();
 		%feature("autodoc", "1");
@@ -165,12 +166,15 @@ class Handle_PCDM_Document : public Handle_Standard_Persistent {
 	return (PCDM_Document*)$self->Access();
 	}
 };
+%extend Handle_PCDM_Document {
+	~Handle_PCDM_Document() {
+	printf("Call custom destructor for instance of Handle_PCDM_Document\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfDocument;
 class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_SequenceNodeOfSequenceOfDocument();
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfDocument();
 		%feature("autodoc", "1");
@@ -186,12 +190,15 @@ class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_S
 	return (PCDM_SequenceNodeOfSequenceOfDocument*)$self->Access();
 	}
 };
+%extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
+	~Handle_PCDM_SequenceNodeOfSequenceOfDocument() {
+	printf("Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfDocument\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_ReadWriter;
 class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_ReadWriter();
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter();
 		%feature("autodoc", "1");
@@ -207,12 +214,15 @@ class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 	return (PCDM_ReadWriter*)$self->Access();
 	}
 };
+%extend Handle_PCDM_ReadWriter {
+	~Handle_PCDM_ReadWriter() {
+	printf("Call custom destructor for instance of Handle_PCDM_ReadWriter\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_ReadWriter_1;
 class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_ReadWriter_1();
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter_1();
 		%feature("autodoc", "1");
@@ -228,12 +238,15 @@ class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 	return (PCDM_ReadWriter_1*)$self->Access();
 	}
 };
+%extend Handle_PCDM_ReadWriter_1 {
+	~Handle_PCDM_ReadWriter_1() {
+	printf("Call custom destructor for instance of Handle_PCDM_ReadWriter_1\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_Reader;
 class Handle_PCDM_Reader : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_Reader();
 		%feature("autodoc", "1");
 		Handle_PCDM_Reader();
 		%feature("autodoc", "1");
@@ -249,12 +262,15 @@ class Handle_PCDM_Reader : public Handle_Standard_Transient {
 	return (PCDM_Reader*)$self->Access();
 	}
 };
+%extend Handle_PCDM_Reader {
+	~Handle_PCDM_Reader() {
+	printf("Call custom destructor for instance of Handle_PCDM_Reader\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_RetrievalDriver;
 class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_RetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_PCDM_RetrievalDriver();
 		%feature("autodoc", "1");
@@ -270,12 +286,15 @@ class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 	return (PCDM_RetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_PCDM_RetrievalDriver {
+	~Handle_PCDM_RetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_PCDM_RetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_Writer;
 class Handle_PCDM_Writer : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_Writer();
 		%feature("autodoc", "1");
 		Handle_PCDM_Writer();
 		%feature("autodoc", "1");
@@ -291,12 +310,15 @@ class Handle_PCDM_Writer : public Handle_Standard_Transient {
 	return (PCDM_Writer*)$self->Access();
 	}
 };
+%extend Handle_PCDM_Writer {
+	~Handle_PCDM_Writer() {
+	printf("Call custom destructor for instance of Handle_PCDM_Writer\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_ReferenceIterator;
 class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_ReferenceIterator();
 		%feature("autodoc", "1");
 		Handle_PCDM_ReferenceIterator();
 		%feature("autodoc", "1");
@@ -312,12 +334,15 @@ class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 	return (PCDM_ReferenceIterator*)$self->Access();
 	}
 };
+%extend Handle_PCDM_ReferenceIterator {
+	~Handle_PCDM_ReferenceIterator() {
+	printf("Call custom destructor for instance of Handle_PCDM_ReferenceIterator\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_StorageDriver;
 class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_StorageDriver();
 		%feature("autodoc", "1");
 		Handle_PCDM_StorageDriver();
 		%feature("autodoc", "1");
@@ -333,12 +358,15 @@ class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
 	return (PCDM_StorageDriver*)$self->Access();
 	}
 };
+%extend Handle_PCDM_StorageDriver {
+	~Handle_PCDM_StorageDriver() {
+	printf("Call custom destructor for instance of Handle_PCDM_StorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_PCDM_DriverError;
 class Handle_PCDM_DriverError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCDM_DriverError();
 		%feature("autodoc", "1");
 		Handle_PCDM_DriverError();
 		%feature("autodoc", "1");
@@ -352,6 +380,11 @@ class Handle_PCDM_DriverError : public Handle_Standard_Failure {
 %extend Handle_PCDM_DriverError {
 	PCDM_DriverError* GetObject() {
 	return (PCDM_DriverError*)$self->Access();
+	}
+};
+%extend Handle_PCDM_DriverError {
+	~Handle_PCDM_DriverError() {
+	printf("Call custom destructor for instance of Handle_PCDM_DriverError\n");
 	}
 };
 
@@ -371,6 +404,11 @@ class PCDM_Reader : public Standard_Transient {
 %extend PCDM_Reader {
 	Handle_PCDM_Reader GetHandle() {
 	return *(Handle_PCDM_Reader*) &$self;
+	}
+};
+%extend PCDM_Reader {
+	~PCDM_Reader() {
+	printf("Call custom destructor for instance of PCDM_Reader\n");
 	}
 };
 
@@ -400,6 +438,11 @@ class PCDM_RetrievalDriver : public PCDM_Reader {
 	return *(Handle_PCDM_RetrievalDriver*) &$self;
 	}
 };
+%extend PCDM_RetrievalDriver {
+	~PCDM_RetrievalDriver() {
+	printf("Call custom destructor for instance of PCDM_RetrievalDriver\n");
+	}
+};
 
 %nodefaultctor PCDM_Writer;
 class PCDM_Writer : public Standard_Transient {
@@ -415,6 +458,11 @@ class PCDM_Writer : public Standard_Transient {
 	return *(Handle_PCDM_Writer*) &$self;
 	}
 };
+%extend PCDM_Writer {
+	~PCDM_Writer() {
+	printf("Call custom destructor for instance of PCDM_Writer\n");
+	}
+};
 
 %nodefaultctor PCDM_SequenceNodeOfSequenceOfReference;
 class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
@@ -425,13 +473,16 @@ class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
 		PCDM_Reference & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCDM_SequenceNodeOfSequenceOfReference();
 
 };
 %extend PCDM_SequenceNodeOfSequenceOfReference {
 	Handle_PCDM_SequenceNodeOfSequenceOfReference GetHandle() {
 	return *(Handle_PCDM_SequenceNodeOfSequenceOfReference*) &$self;
+	}
+};
+%extend PCDM_SequenceNodeOfSequenceOfReference {
+	~PCDM_SequenceNodeOfSequenceOfReference() {
+	printf("Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfReference\n");
 	}
 };
 
@@ -578,13 +629,16 @@ class PCDM_ReferenceIterator : public Standard_Transient {
 		virtual		void Init(const Handle_CDM_MetaData &aMetaData);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCDM_ReferenceIterator();
 
 };
 %extend PCDM_ReferenceIterator {
 	Handle_PCDM_ReferenceIterator GetHandle() {
 	return *(Handle_PCDM_ReferenceIterator*) &$self;
+	}
+};
+%extend PCDM_ReferenceIterator {
+	~PCDM_ReferenceIterator() {
+	printf("Call custom destructor for instance of PCDM_ReferenceIterator\n");
 	}
 };
 
@@ -603,13 +657,16 @@ class PCDM_DriverError : public Standard_Failure {
 		Handle_PCDM_DriverError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCDM_DriverError();
 
 };
 %extend PCDM_DriverError {
 	Handle_PCDM_DriverError GetHandle() {
 	return *(Handle_PCDM_DriverError*) &$self;
+	}
+};
+%extend PCDM_DriverError {
+	~PCDM_DriverError() {
+	printf("Call custom destructor for instance of PCDM_DriverError\n");
 	}
 };
 
@@ -653,6 +710,11 @@ class PCDM_ReadWriter : public Standard_Transient {
 	return *(Handle_PCDM_ReadWriter*) &$self;
 	}
 };
+%extend PCDM_ReadWriter {
+	~PCDM_ReadWriter() {
+	printf("Call custom destructor for instance of PCDM_ReadWriter\n");
+	}
+};
 
 %nodefaultctor PCDM_SequenceNodeOfSequenceOfDocument;
 class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
@@ -663,13 +725,16 @@ class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 		Handle_PCDM_Document & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCDM_SequenceNodeOfSequenceOfDocument();
 
 };
 %extend PCDM_SequenceNodeOfSequenceOfDocument {
 	Handle_PCDM_SequenceNodeOfSequenceOfDocument GetHandle() {
 	return *(Handle_PCDM_SequenceNodeOfSequenceOfDocument*) &$self;
+	}
+};
+%extend PCDM_SequenceNodeOfSequenceOfDocument {
+	~PCDM_SequenceNodeOfSequenceOfDocument() {
+	printf("Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfDocument\n");
 	}
 };
 
@@ -698,13 +763,16 @@ class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 		virtual		Standard_Integer ReadDocumentVersion(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCDM_ReadWriter_1();
 
 };
 %extend PCDM_ReadWriter_1 {
 	Handle_PCDM_ReadWriter_1 GetHandle() {
 	return *(Handle_PCDM_ReadWriter_1*) &$self;
+	}
+};
+%extend PCDM_ReadWriter_1 {
+	~PCDM_ReadWriter_1() {
+	printf("Call custom destructor for instance of PCDM_ReadWriter_1\n");
 	}
 };
 
@@ -717,12 +785,15 @@ class PCDM_Document : public Standard_Persistent {
 		PCDM_Document();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCDM_Document();
 
 };
 %extend PCDM_Document {
 	Handle_PCDM_Document GetHandle() {
 	return *(Handle_PCDM_Document*) &$self;
+	}
+};
+%extend PCDM_Document {
+	~PCDM_Document() {
+	printf("Call custom destructor for instance of PCDM_Document\n");
 	}
 };

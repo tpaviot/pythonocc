@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PPoly_Polygon2D();
-		%feature("autodoc", "1");
 		Handle_PPoly_Polygon2D();
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon2D(const Handle_PPoly_Polygon2D &aHandle);
@@ -118,12 +116,15 @@ class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 	return (PPoly_Polygon2D*)$self->Access();
 	}
 };
+%extend Handle_PPoly_Polygon2D {
+	~Handle_PPoly_Polygon2D() {
+	printf("Call custom destructor for instance of Handle_PPoly_Polygon2D\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_HArray1OfTriangle;
 class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_HArray1OfTriangle();
 		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 	return (PPoly_HArray1OfTriangle*)$self->Access();
 	}
 };
+%extend Handle_PPoly_HArray1OfTriangle {
+	~Handle_PPoly_HArray1OfTriangle() {
+	printf("Call custom destructor for instance of Handle_PPoly_HArray1OfTriangle\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_Polygon3D;
 class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_Polygon3D();
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon3D();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 	return (PPoly_Polygon3D*)$self->Access();
 	}
 };
+%extend Handle_PPoly_Polygon3D {
+	~Handle_PPoly_Polygon3D() {
+	printf("Call custom destructor for instance of Handle_PPoly_Polygon3D\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_Triangulation;
 class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_Triangulation();
 		%feature("autodoc", "1");
 		Handle_PPoly_Triangulation();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 	return (PPoly_Triangulation*)$self->Access();
 	}
 };
+%extend Handle_PPoly_Triangulation {
+	~Handle_PPoly_Triangulation() {
+	printf("Call custom destructor for instance of Handle_PPoly_Triangulation\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;
 class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle();
 		%feature("autodoc", "1");
 		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandar
 	return (PPoly_VArrayNodeOfFieldOfHArray1OfTriangle*)$self->Access();
 	}
 };
+%extend Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
+	~Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
+	printf("Call custom destructor for instance of Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_PolygonOnTriangulation;
 class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
 		Handle_PPoly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
@@ -221,6 +234,11 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 %extend Handle_PPoly_PolygonOnTriangulation {
 	PPoly_PolygonOnTriangulation* GetObject() {
 	return (PPoly_PolygonOnTriangulation*)$self->Access();
+	}
+};
+%extend Handle_PPoly_PolygonOnTriangulation {
+	~Handle_PPoly_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of Handle_PPoly_PolygonOnTriangulation\n");
 	}
 };
 
@@ -281,13 +299,16 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 		void _CSFDB_SetPPoly_PolygonOnTriangulationmyParameters(const Handle_PColStd_HArray1OfReal &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_PolygonOnTriangulation();
 
 };
 %extend PPoly_PolygonOnTriangulation {
 	Handle_PPoly_PolygonOnTriangulation GetHandle() {
 	return *(Handle_PPoly_PolygonOnTriangulation*) &$self;
+	}
+};
+%extend PPoly_PolygonOnTriangulation {
+	~PPoly_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of PPoly_PolygonOnTriangulation\n");
 	}
 };
 
@@ -328,13 +349,16 @@ class PPoly_HArray1OfTriangle : public Standard_Persistent {
 		const PPoly_FieldOfHArray1OfTriangle & _CSFDB_GetPPoly_HArray1OfTriangleData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_HArray1OfTriangle();
 
 };
 %extend PPoly_HArray1OfTriangle {
 	Handle_PPoly_HArray1OfTriangle GetHandle() {
 	return *(Handle_PPoly_HArray1OfTriangle*) &$self;
+	}
+};
+%extend PPoly_HArray1OfTriangle {
+	~PPoly_HArray1OfTriangle() {
+	printf("Call custom destructor for instance of PPoly_HArray1OfTriangle\n");
 	}
 };
 
@@ -383,13 +407,16 @@ class PPoly_Triangulation : public Standard_Persistent {
 		void _CSFDB_SetPPoly_TriangulationmyTriangles(const Handle_PPoly_HArray1OfTriangle &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_Triangulation();
 
 };
 %extend PPoly_Triangulation {
 	Handle_PPoly_Triangulation GetHandle() {
 	return *(Handle_PPoly_Triangulation*) &$self;
+	}
+};
+%extend PPoly_Triangulation {
+	~PPoly_Triangulation() {
+	printf("Call custom destructor for instance of PPoly_Triangulation\n");
 	}
 };
 
@@ -422,13 +449,16 @@ class PPoly_Polygon2D : public Standard_Persistent {
 		void _CSFDB_SetPPoly_Polygon2DmyNodes(const Handle_PColgp_HArray1OfPnt2d &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_Polygon2D();
 
 };
 %extend PPoly_Polygon2D {
 	Handle_PPoly_Polygon2D GetHandle() {
 	return *(Handle_PPoly_Polygon2D*) &$self;
+	}
+};
+%extend PPoly_Polygon2D {
+	~PPoly_Polygon2D() {
+	printf("Call custom destructor for instance of PPoly_Polygon2D\n");
 	}
 };
 
@@ -473,13 +503,16 @@ class PPoly_Polygon3D : public Standard_Persistent {
 		void _CSFDB_SetPPoly_Polygon3DmyParameters(const Handle_PColStd_HArray1OfReal &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_Polygon3D();
 
 };
 %extend PPoly_Polygon3D {
 	Handle_PPoly_Polygon3D GetHandle() {
 	return *(Handle_PPoly_Polygon3D*) &$self;
+	}
+};
+%extend PPoly_Polygon3D {
+	~PPoly_Polygon3D() {
+	printf("Call custom destructor for instance of PPoly_Polygon3D\n");
 	}
 };
 
@@ -526,13 +559,16 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 		const PPoly_Triangle & _CSFDB_GetPPoly_VArrayNodeOfFieldOfHArray1OfTrianglemyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle();
 
 };
 %extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
 	Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle GetHandle() {
 	return *(Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle*) &$self;
+	}
+};
+%extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
+	~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
+	printf("Call custom destructor for instance of PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");
 	}
 };
 

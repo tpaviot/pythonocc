@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PFunction_Function : public Handle_PDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PFunction_Function();
-		%feature("autodoc", "1");
 		Handle_PFunction_Function();
 		%feature("autodoc", "1");
 		Handle_PFunction_Function(const Handle_PFunction_Function &aHandle);
@@ -116,6 +114,11 @@ class Handle_PFunction_Function : public Handle_PDF_Attribute {
 %extend Handle_PFunction_Function {
 	PFunction_Function* GetObject() {
 	return (PFunction_Function*)$self->Access();
+	}
+};
+%extend Handle_PFunction_Function {
+	~Handle_PFunction_Function() {
+	printf("Call custom destructor for instance of Handle_PFunction_Function\n");
 	}
 };
 
@@ -142,12 +145,15 @@ class PFunction_Function : public PDF_Attribute {
 		void _CSFDB_SetPFunction_FunctionmyFailure(const Standard_Integer p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PFunction_Function();
 
 };
 %extend PFunction_Function {
 	Handle_PFunction_Function GetHandle() {
 	return *(Handle_PFunction_Function*) &$self;
+	}
+};
+%extend PFunction_Function {
+	~PFunction_Function() {
+	printf("Call custom destructor for instance of PFunction_Function\n");
 	}
 };

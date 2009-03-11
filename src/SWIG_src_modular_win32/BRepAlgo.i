@@ -107,8 +107,6 @@ enum BRepAlgo_CheckStatus {
 class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean();
-		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean();
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean &aHandle);
@@ -123,12 +121,15 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public Handle_TCollec
 	return (BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean*)$self->Access();
 	}
 };
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
+	~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean() {
+	printf("Call custom destructor for instance of Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAlgo_AsDes;
 class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAlgo_AsDes();
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_AsDes();
 		%feature("autodoc", "1");
@@ -144,12 +145,15 @@ class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 	return (BRepAlgo_AsDes*)$self->Access();
 	}
 };
+%extend Handle_BRepAlgo_AsDes {
+	~Handle_BRepAlgo_AsDes() {
+	printf("Call custom destructor for instance of Handle_BRepAlgo_AsDes\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
 class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger();
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger();
 		%feature("autodoc", "1");
@@ -165,12 +169,15 @@ class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_
 	return (BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger*)$self->Access();
 	}
 };
+%extend Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+	~Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference;
 class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference();
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference();
 		%feature("autodoc", "1");
@@ -186,12 +193,15 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TC
 	return (BRepAlgo_DataMapNodeOfDataMapOfShapeInterference*)$self->Access();
 	}
 };
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
+	~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference() {
+	printf("Call custom destructor for instance of Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAlgo_EdgeConnector;
 class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAlgo_EdgeConnector();
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_EdgeConnector();
 		%feature("autodoc", "1");
@@ -207,12 +217,15 @@ class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
 	return (BRepAlgo_EdgeConnector*)$self->Access();
 	}
 };
+%extend Handle_BRepAlgo_EdgeConnector {
+	~Handle_BRepAlgo_EdgeConnector() {
+	printf("Call custom destructor for instance of Handle_BRepAlgo_EdgeConnector\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger;
 class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger();
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger();
 		%feature("autodoc", "1");
@@ -226,6 +239,11 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 %extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
 	BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger* GetObject() {
 	return (BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger*)$self->Access();
+	}
+};
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
+	~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger() {
+	printf("Call custom destructor for instance of Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger\n");
 	}
 };
 
@@ -252,13 +270,16 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 		TColStd_ListOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger();
 
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
 	Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger GetHandle() {
 	return *(Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger*) &$self;
+	}
+};
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
+	~BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger() {
+	printf("Call custom destructor for instance of BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger\n");
 	}
 };
 
@@ -383,13 +404,16 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public TCollection_MapN
 		Handle_TopOpeBRepDS_Interference & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAlgo_DataMapNodeOfDataMapOfShapeInterference();
 
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
 	Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference GetHandle() {
 	return *(Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference*) &$self;
+	}
+};
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
+	~BRepAlgo_DataMapNodeOfDataMapOfShapeInterference() {
+	printf("Call custom destructor for instance of BRepAlgo_DataMapNodeOfDataMapOfShapeInterference\n");
 	}
 };
 
@@ -528,13 +552,16 @@ class BRepAlgo_AsDes : public MMgt_TShared {
 		Standard_Boolean HasCommonDescendant(const TopoDS_Shape &S1, const TopoDS_Shape &S2, TopTools_ListOfShape & LC) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAlgo_AsDes();
 
 };
 %extend BRepAlgo_AsDes {
 	Handle_BRepAlgo_AsDes GetHandle() {
 	return *(Handle_BRepAlgo_AsDes*) &$self;
+	}
+};
+%extend BRepAlgo_AsDes {
+	~BRepAlgo_AsDes() {
+	printf("Call custom destructor for instance of BRepAlgo_AsDes\n");
 	}
 };
 
@@ -563,13 +590,16 @@ class BRepAlgo_EdgeConnector : public MMgt_TShared {
 		Standard_Boolean IsWire(const TopoDS_Shape &W);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAlgo_EdgeConnector();
 
 };
 %extend BRepAlgo_EdgeConnector {
 	Handle_BRepAlgo_EdgeConnector GetHandle() {
 	return *(Handle_BRepAlgo_EdgeConnector*) &$self;
+	}
+};
+%extend BRepAlgo_EdgeConnector {
+	~BRepAlgo_EdgeConnector() {
+	printf("Call custom destructor for instance of BRepAlgo_EdgeConnector\n");
 	}
 };
 
@@ -584,13 +614,16 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
 		Standard_Boolean & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean();
 
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
 	Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean GetHandle() {
 	return *(Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean*) &$self;
+	}
+};
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
+	~BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean() {
+	printf("Call custom destructor for instance of BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean\n");
 	}
 };
 
@@ -985,12 +1018,15 @@ class BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public TCollection_Se
 		TColStd_SequenceOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger();
 
 };
 %extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
 	Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger GetHandle() {
 	return *(Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger*) &$self;
+	}
+};
+%extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+	~BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger\n");
 	}
 };

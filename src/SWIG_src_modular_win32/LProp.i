@@ -115,8 +115,6 @@ enum LProp_Status {
 class Handle_LProp_SequenceNodeOfSequenceOfCIType : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_LProp_SequenceNodeOfSequenceOfCIType();
-		%feature("autodoc", "1");
 		Handle_LProp_SequenceNodeOfSequenceOfCIType();
 		%feature("autodoc", "1");
 		Handle_LProp_SequenceNodeOfSequenceOfCIType(const Handle_LProp_SequenceNodeOfSequenceOfCIType &aHandle);
@@ -131,12 +129,15 @@ class Handle_LProp_SequenceNodeOfSequenceOfCIType : public Handle_TCollection_Se
 	return (LProp_SequenceNodeOfSequenceOfCIType*)$self->Access();
 	}
 };
+%extend Handle_LProp_SequenceNodeOfSequenceOfCIType {
+	~Handle_LProp_SequenceNodeOfSequenceOfCIType() {
+	printf("Call custom destructor for instance of Handle_LProp_SequenceNodeOfSequenceOfCIType\n");
+	}
+};
 
 %nodefaultctor Handle_LProp_BadContinuity;
 class Handle_LProp_BadContinuity : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LProp_BadContinuity();
 		%feature("autodoc", "1");
 		Handle_LProp_BadContinuity();
 		%feature("autodoc", "1");
@@ -152,12 +153,15 @@ class Handle_LProp_BadContinuity : public Handle_Standard_Failure {
 	return (LProp_BadContinuity*)$self->Access();
 	}
 };
+%extend Handle_LProp_BadContinuity {
+	~Handle_LProp_BadContinuity() {
+	printf("Call custom destructor for instance of Handle_LProp_BadContinuity\n");
+	}
+};
 
 %nodefaultctor Handle_LProp_NotDefined;
 class Handle_LProp_NotDefined : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LProp_NotDefined();
 		%feature("autodoc", "1");
 		Handle_LProp_NotDefined();
 		%feature("autodoc", "1");
@@ -173,6 +177,11 @@ class Handle_LProp_NotDefined : public Handle_Standard_Failure {
 	return (LProp_NotDefined*)$self->Access();
 	}
 };
+%extend Handle_LProp_NotDefined {
+	~Handle_LProp_NotDefined() {
+	printf("Call custom destructor for instance of Handle_LProp_NotDefined\n");
+	}
+};
 
 %nodefaultctor LProp_SequenceNodeOfSequenceOfCIType;
 class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
@@ -183,13 +192,16 @@ class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
 		LProp_CIType & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LProp_SequenceNodeOfSequenceOfCIType();
 
 };
 %extend LProp_SequenceNodeOfSequenceOfCIType {
 	Handle_LProp_SequenceNodeOfSequenceOfCIType GetHandle() {
 	return *(Handle_LProp_SequenceNodeOfSequenceOfCIType*) &$self;
+	}
+};
+%extend LProp_SequenceNodeOfSequenceOfCIType {
+	~LProp_SequenceNodeOfSequenceOfCIType() {
+	printf("Call custom destructor for instance of LProp_SequenceNodeOfSequenceOfCIType\n");
 	}
 };
 
@@ -294,13 +306,16 @@ class LProp_NotDefined : public Standard_Failure {
 		Handle_LProp_NotDefined NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LProp_NotDefined();
 
 };
 %extend LProp_NotDefined {
 	Handle_LProp_NotDefined GetHandle() {
 	return *(Handle_LProp_NotDefined*) &$self;
+	}
+};
+%extend LProp_NotDefined {
+	~LProp_NotDefined() {
+	printf("Call custom destructor for instance of LProp_NotDefined\n");
 	}
 };
 
@@ -319,12 +334,15 @@ class LProp_BadContinuity : public Standard_Failure {
 		Handle_LProp_BadContinuity NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LProp_BadContinuity();
 
 };
 %extend LProp_BadContinuity {
 	Handle_LProp_BadContinuity GetHandle() {
 	return *(Handle_LProp_BadContinuity*) &$self;
+	}
+};
+%extend LProp_BadContinuity {
+	~LProp_BadContinuity() {
+	printf("Call custom destructor for instance of LProp_BadContinuity\n");
 	}
 };

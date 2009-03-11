@@ -121,8 +121,6 @@ enum IntRes2d_Position {
 class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment();
-		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment();
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment &aHandle);
@@ -137,12 +135,15 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handl
 	return (IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment*)$self->Access();
 	}
 };
+%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
+	~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment() {
+	printf("Call custom destructor for instance of Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");
+	}
+};
 
 %nodefaultctor Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
 class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint();
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint();
 		%feature("autodoc", "1");
@@ -156,6 +157,11 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 %extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
 	IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint* GetObject() {
 	return (IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint*)$self->Access();
+	}
+};
+%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint() {
+	printf("Call custom destructor for instance of Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");
 	}
 };
 
@@ -402,13 +408,16 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 		IntRes2d_IntersectionSegment & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment();
 
 };
 %extend IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
 	Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment GetHandle() {
 	return *(Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment*) &$self;
+	}
+};
+%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
+	~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment() {
+	printf("Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");
 	}
 };
 
@@ -485,12 +494,15 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public TCollection_Se
 		IntRes2d_IntersectionPoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint();
 
 };
 %extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
 	Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint GetHandle() {
 	return *(Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint*) &$self;
+	}
+};
+%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint() {
+	printf("Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");
 	}
 };

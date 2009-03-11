@@ -107,8 +107,6 @@ enum Select2D_TypeOfSelection {
 class Handle_Select2D_Projector : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Select2D_Projector();
-		%feature("autodoc", "1");
 		Handle_Select2D_Projector();
 		%feature("autodoc", "1");
 		Handle_Select2D_Projector(const Handle_Select2D_Projector &aHandle);
@@ -123,12 +121,15 @@ class Handle_Select2D_Projector : public Handle_MMgt_TShared {
 	return (Select2D_Projector*)$self->Access();
 	}
 };
+%extend Handle_Select2D_Projector {
+	~Handle_Select2D_Projector() {
+	printf("Call custom destructor for instance of Handle_Select2D_Projector\n");
+	}
+};
 
 %nodefaultctor Handle_Select2D_SensitiveEntity;
 class Handle_Select2D_SensitiveEntity : public Handle_SelectBasics_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select2D_SensitiveEntity();
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveEntity();
 		%feature("autodoc", "1");
@@ -144,12 +145,15 @@ class Handle_Select2D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 	return (Select2D_SensitiveEntity*)$self->Access();
 	}
 };
+%extend Handle_Select2D_SensitiveEntity {
+	~Handle_Select2D_SensitiveEntity() {
+	printf("Call custom destructor for instance of Handle_Select2D_SensitiveEntity\n");
+	}
+};
 
 %nodefaultctor Handle_Select2D_SensitivePoint;
 class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select2D_SensitivePoint();
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitivePoint();
 		%feature("autodoc", "1");
@@ -165,12 +169,15 @@ class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
 	return (Select2D_SensitivePoint*)$self->Access();
 	}
 };
+%extend Handle_Select2D_SensitivePoint {
+	~Handle_Select2D_SensitivePoint() {
+	printf("Call custom destructor for instance of Handle_Select2D_SensitivePoint\n");
+	}
+};
 
 %nodefaultctor Handle_Select2D_SensitiveArc;
 class Handle_Select2D_SensitiveArc : public Handle_Select2D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select2D_SensitiveArc();
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveArc();
 		%feature("autodoc", "1");
@@ -186,12 +193,15 @@ class Handle_Select2D_SensitiveArc : public Handle_Select2D_SensitiveEntity {
 	return (Select2D_SensitiveArc*)$self->Access();
 	}
 };
+%extend Handle_Select2D_SensitiveArc {
+	~Handle_Select2D_SensitiveArc() {
+	printf("Call custom destructor for instance of Handle_Select2D_SensitiveArc\n");
+	}
+};
 
 %nodefaultctor Handle_Select2D_SensitiveSegment;
 class Handle_Select2D_SensitiveSegment : public Handle_Select2D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select2D_SensitiveSegment();
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveSegment();
 		%feature("autodoc", "1");
@@ -207,12 +217,15 @@ class Handle_Select2D_SensitiveSegment : public Handle_Select2D_SensitiveEntity 
 	return (Select2D_SensitiveSegment*)$self->Access();
 	}
 };
+%extend Handle_Select2D_SensitiveSegment {
+	~Handle_Select2D_SensitiveSegment() {
+	printf("Call custom destructor for instance of Handle_Select2D_SensitiveSegment\n");
+	}
+};
 
 %nodefaultctor Handle_Select2D_SensitiveCircle;
 class Handle_Select2D_SensitiveCircle : public Handle_Select2D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select2D_SensitiveCircle();
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveCircle();
 		%feature("autodoc", "1");
@@ -228,12 +241,15 @@ class Handle_Select2D_SensitiveCircle : public Handle_Select2D_SensitiveEntity {
 	return (Select2D_SensitiveCircle*)$self->Access();
 	}
 };
+%extend Handle_Select2D_SensitiveCircle {
+	~Handle_Select2D_SensitiveCircle() {
+	printf("Call custom destructor for instance of Handle_Select2D_SensitiveCircle\n");
+	}
+};
 
 %nodefaultctor Handle_Select2D_SensitiveBox;
 class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select2D_SensitiveBox();
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveBox();
 		%feature("autodoc", "1");
@@ -247,6 +263,11 @@ class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
 %extend Handle_Select2D_SensitiveBox {
 	Select2D_SensitiveBox* GetObject() {
 	return (Select2D_SensitiveBox*)$self->Access();
+	}
+};
+%extend Handle_Select2D_SensitiveBox {
+	~Handle_Select2D_SensitiveBox() {
+	printf("Call custom destructor for instance of Handle_Select2D_SensitiveBox\n");
 	}
 };
 
@@ -280,6 +301,11 @@ class Select2D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 	return *(Handle_Select2D_SensitiveEntity*) &$self;
 	}
 };
+%extend Select2D_SensitiveEntity {
+	~Select2D_SensitiveEntity() {
+	printf("Call custom destructor for instance of Select2D_SensitiveEntity\n");
+	}
+};
 
 %nodefaultctor Select2D_SensitiveCircle;
 class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
@@ -298,13 +324,16 @@ class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 		void SetTypeOfSelection(const Select2D_TypeOfSelection theType);
 		%feature("autodoc", "1");
 		Select2D_TypeOfSelection Selection();
-		%feature("autodoc", "1");
-		virtual		~Select2D_SensitiveCircle();
 
 };
 %extend Select2D_SensitiveCircle {
 	Handle_Select2D_SensitiveCircle GetHandle() {
 	return *(Handle_Select2D_SensitiveCircle*) &$self;
+	}
+};
+%extend Select2D_SensitiveCircle {
+	~Select2D_SensitiveCircle() {
+	printf("Call custom destructor for instance of Select2D_SensitiveCircle\n");
 	}
 };
 
@@ -333,13 +362,16 @@ class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 		virtual		Standard_Integer MaxBoxes() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select2D_SensitiveSegment();
 
 };
 %extend Select2D_SensitiveSegment {
 	Handle_Select2D_SensitiveSegment GetHandle() {
 	return *(Handle_Select2D_SensitiveSegment*) &$self;
+	}
+};
+%extend Select2D_SensitiveSegment {
+	~Select2D_SensitiveSegment() {
+	printf("Call custom destructor for instance of Select2D_SensitiveSegment\n");
 	}
 };
 
@@ -360,13 +392,16 @@ class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select2D_SensitivePoint();
 
 };
 %extend Select2D_SensitivePoint {
 	Handle_Select2D_SensitivePoint GetHandle() {
 	return *(Handle_Select2D_SensitivePoint*) &$self;
+	}
+};
+%extend Select2D_SensitivePoint {
+	~Select2D_SensitivePoint() {
+	printf("Call custom destructor for instance of Select2D_SensitivePoint\n");
 	}
 };
 
@@ -383,13 +418,16 @@ class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select2D_SensitiveArc();
 
 };
 %extend Select2D_SensitiveArc {
 	Handle_Select2D_SensitiveArc GetHandle() {
 	return *(Handle_Select2D_SensitiveArc*) &$self;
+	}
+};
+%extend Select2D_SensitiveArc {
+	~Select2D_SensitiveArc() {
+	printf("Call custom destructor for instance of Select2D_SensitiveArc\n");
 	}
 };
 
@@ -408,13 +446,16 @@ class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select2D_SensitiveBox();
 
 };
 %extend Select2D_SensitiveBox {
 	Handle_Select2D_SensitiveBox GetHandle() {
 	return *(Handle_Select2D_SensitiveBox*) &$self;
+	}
+};
+%extend Select2D_SensitiveBox {
+	~Select2D_SensitiveBox() {
+	printf("Call custom destructor for instance of Select2D_SensitiveBox\n");
 	}
 };
 
@@ -430,5 +471,10 @@ class Select2D_Projector : public MMgt_TShared {
 %extend Select2D_Projector {
 	Handle_Select2D_Projector GetHandle() {
 	return *(Handle_Select2D_Projector*) &$self;
+	}
+};
+%extend Select2D_Projector {
+	~Select2D_Projector() {
+	printf("Call custom destructor for instance of Select2D_Projector\n");
 	}
 };

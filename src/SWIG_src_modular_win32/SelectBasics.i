@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner();
-		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner();
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
@@ -118,12 +116,15 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollect
 	return (SelectBasics_SequenceNodeOfSequenceOfOwner*)$self->Access();
 	}
 };
+%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
+	~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner() {
+	printf("Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfOwner\n");
+	}
+};
 
 %nodefaultctor Handle_SelectBasics_ListNodeOfListOfBox2d;
 class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectBasics_ListNodeOfListOfBox2d();
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfBox2d();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 	return (SelectBasics_ListNodeOfListOfBox2d*)$self->Access();
 	}
 };
+%extend Handle_SelectBasics_ListNodeOfListOfBox2d {
+	~Handle_SelectBasics_ListNodeOfListOfBox2d() {
+	printf("Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfBox2d\n");
+	}
+};
 
 %nodefaultctor Handle_SelectBasics_SequenceNodeOfSequenceOfAddress;
 class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectBasics_SequenceNodeOfSequenceOfAddress();
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TColle
 	return (SelectBasics_SequenceNodeOfSequenceOfAddress*)$self->Access();
 	}
 };
+%extend Handle_SelectBasics_SequenceNodeOfSequenceOfAddress {
+	~Handle_SelectBasics_SequenceNodeOfSequenceOfAddress() {
+	printf("Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfAddress\n");
+	}
+};
 
 %nodefaultctor Handle_SelectBasics_SensitiveEntity;
 class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectBasics_SensitiveEntity();
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 	return (SelectBasics_SensitiveEntity*)$self->Access();
 	}
 };
+%extend Handle_SelectBasics_SensitiveEntity {
+	~Handle_SelectBasics_SensitiveEntity() {
+	printf("Call custom destructor for instance of Handle_SelectBasics_SensitiveEntity\n");
+	}
+};
 
 %nodefaultctor Handle_SelectBasics_ListNodeOfListOfSensitive;
 class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectBasics_ListNodeOfListOfSensitive();
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfSensitive();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 	return (SelectBasics_ListNodeOfListOfSensitive*)$self->Access();
 	}
 };
+%extend Handle_SelectBasics_ListNodeOfListOfSensitive {
+	~Handle_SelectBasics_ListNodeOfListOfSensitive() {
+	printf("Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfSensitive\n");
+	}
+};
 
 %nodefaultctor Handle_SelectBasics_EntityOwner;
 class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectBasics_EntityOwner();
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner();
 		%feature("autodoc", "1");
@@ -221,6 +234,11 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 %extend Handle_SelectBasics_EntityOwner {
 	SelectBasics_EntityOwner* GetObject() {
 	return (SelectBasics_EntityOwner*)$self->Access();
+	}
+};
+%extend Handle_SelectBasics_EntityOwner {
+	~Handle_SelectBasics_EntityOwner() {
+	printf("Call custom destructor for instance of Handle_SelectBasics_EntityOwner\n");
 	}
 };
 
@@ -292,6 +310,11 @@ class SelectBasics_EntityOwner : public MMgt_TShared {
 	return *(Handle_SelectBasics_EntityOwner*) &$self;
 	}
 };
+%extend SelectBasics_EntityOwner {
+	~SelectBasics_EntityOwner() {
+	printf("Call custom destructor for instance of SelectBasics_EntityOwner\n");
+	}
+};
 
 %nodefaultctor SelectBasics_ListNodeOfListOfBox2d;
 class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
@@ -302,13 +325,16 @@ class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 		Bnd_Box2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectBasics_ListNodeOfListOfBox2d();
 
 };
 %extend SelectBasics_ListNodeOfListOfBox2d {
 	Handle_SelectBasics_ListNodeOfListOfBox2d GetHandle() {
 	return *(Handle_SelectBasics_ListNodeOfListOfBox2d*) &$self;
+	}
+};
+%extend SelectBasics_ListNodeOfListOfBox2d {
+	~SelectBasics_ListNodeOfListOfBox2d() {
+	printf("Call custom destructor for instance of SelectBasics_ListNodeOfListOfBox2d\n");
 	}
 };
 
@@ -321,13 +347,16 @@ class SelectBasics_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode 
 		Standard_Address & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectBasics_SequenceNodeOfSequenceOfAddress();
 
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfAddress {
 	Handle_SelectBasics_SequenceNodeOfSequenceOfAddress GetHandle() {
 	return *(Handle_SelectBasics_SequenceNodeOfSequenceOfAddress*) &$self;
+	}
+};
+%extend SelectBasics_SequenceNodeOfSequenceOfAddress {
+	~SelectBasics_SequenceNodeOfSequenceOfAddress() {
+	printf("Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfAddress\n");
 	}
 };
 
@@ -436,13 +465,16 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 		Handle_SelectBasics_EntityOwner & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectBasics_SequenceNodeOfSequenceOfOwner();
 
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfOwner {
 	Handle_SelectBasics_SequenceNodeOfSequenceOfOwner GetHandle() {
 	return *(Handle_SelectBasics_SequenceNodeOfSequenceOfOwner*) &$self;
+	}
+};
+%extend SelectBasics_SequenceNodeOfSequenceOfOwner {
+	~SelectBasics_SequenceNodeOfSequenceOfOwner() {
+	printf("Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfOwner\n");
 	}
 };
 
@@ -578,6 +610,11 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 	return *(Handle_SelectBasics_SensitiveEntity*) &$self;
 	}
 };
+%extend SelectBasics_SensitiveEntity {
+	~SelectBasics_SensitiveEntity() {
+	printf("Call custom destructor for instance of SelectBasics_SensitiveEntity\n");
+	}
+};
 
 %nodefaultctor SelectBasics_SequenceOfOwner;
 class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
@@ -638,12 +675,15 @@ class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 		Handle_SelectBasics_SensitiveEntity & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectBasics_ListNodeOfListOfSensitive();
 
 };
 %extend SelectBasics_ListNodeOfListOfSensitive {
 	Handle_SelectBasics_ListNodeOfListOfSensitive GetHandle() {
 	return *(Handle_SelectBasics_ListNodeOfListOfSensitive*) &$self;
+	}
+};
+%extend SelectBasics_ListNodeOfListOfSensitive {
+	~SelectBasics_ListNodeOfListOfSensitive() {
+	printf("Call custom destructor for instance of SelectBasics_ListNodeOfListOfSensitive\n");
 	}
 };

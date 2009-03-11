@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PS_Driver : public Handle_PlotMgt_PlotterDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PS_Driver();
-		%feature("autodoc", "1");
 		Handle_PS_Driver();
 		%feature("autodoc", "1");
 		Handle_PS_Driver(const Handle_PS_Driver &aHandle);
@@ -116,6 +114,11 @@ class Handle_PS_Driver : public Handle_PlotMgt_PlotterDriver {
 %extend Handle_PS_Driver {
 	PS_Driver* GetObject() {
 	return (PS_Driver*)$self->Access();
+	}
+};
+%extend Handle_PS_Driver {
+	~Handle_PS_Driver() {
+	printf("Call custom destructor for instance of Handle_PS_Driver\n");
 	}
 };
 
@@ -138,12 +141,15 @@ class PS_Driver : public PlotMgt_PlotterDriver {
 		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer & aWidth, Standard_Integer & aHeight) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PS_Driver();
 
 };
 %extend PS_Driver {
 	Handle_PS_Driver GetHandle() {
 	return *(Handle_PS_Driver*) &$self;
+	}
+};
+%extend PS_Driver {
+	~PS_Driver() {
+	printf("Call custom destructor for instance of PS_Driver\n");
 	}
 };

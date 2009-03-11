@@ -105,8 +105,6 @@ typedef Adaptor3d_Surface * Adaptor3d_SurfacePtr;
 class Handle_Adaptor3d_HCurve : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Adaptor3d_HCurve();
-		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurve();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurve(const Handle_Adaptor3d_HCurve &aHandle);
@@ -121,12 +119,15 @@ class Handle_Adaptor3d_HCurve : public Handle_MMgt_TShared {
 	return (Adaptor3d_HCurve*)$self->Access();
 	}
 };
+%extend Handle_Adaptor3d_HCurve {
+	~Handle_Adaptor3d_HCurve() {
+	printf("Call custom destructor for instance of Handle_Adaptor3d_HCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Adaptor3d_HIsoCurve;
 class Handle_Adaptor3d_HIsoCurve : public Handle_Adaptor3d_HCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Adaptor3d_HIsoCurve();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HIsoCurve();
 		%feature("autodoc", "1");
@@ -142,12 +143,15 @@ class Handle_Adaptor3d_HIsoCurve : public Handle_Adaptor3d_HCurve {
 	return (Adaptor3d_HIsoCurve*)$self->Access();
 	}
 };
+%extend Handle_Adaptor3d_HIsoCurve {
+	~Handle_Adaptor3d_HIsoCurve() {
+	printf("Call custom destructor for instance of Handle_Adaptor3d_HIsoCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Adaptor3d_HSurface;
 class Handle_Adaptor3d_HSurface : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Adaptor3d_HSurface();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurface();
 		%feature("autodoc", "1");
@@ -163,12 +167,15 @@ class Handle_Adaptor3d_HSurface : public Handle_MMgt_TShared {
 	return (Adaptor3d_HSurface*)$self->Access();
 	}
 };
+%extend Handle_Adaptor3d_HSurface {
+	~Handle_Adaptor3d_HSurface() {
+	printf("Call custom destructor for instance of Handle_Adaptor3d_HSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Adaptor3d_HSurfaceOfRevolution;
 class Handle_Adaptor3d_HSurfaceOfRevolution : public Handle_Adaptor3d_HSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Adaptor3d_HSurfaceOfRevolution();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfRevolution();
 		%feature("autodoc", "1");
@@ -184,12 +191,15 @@ class Handle_Adaptor3d_HSurfaceOfRevolution : public Handle_Adaptor3d_HSurface {
 	return (Adaptor3d_HSurfaceOfRevolution*)$self->Access();
 	}
 };
+%extend Handle_Adaptor3d_HSurfaceOfRevolution {
+	~Handle_Adaptor3d_HSurfaceOfRevolution() {
+	printf("Call custom destructor for instance of Handle_Adaptor3d_HSurfaceOfRevolution\n");
+	}
+};
 
 %nodefaultctor Handle_Adaptor3d_HOffsetCurve;
 class Handle_Adaptor3d_HOffsetCurve : public Handle_Adaptor2d_HCurve2d {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Adaptor3d_HOffsetCurve();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HOffsetCurve();
 		%feature("autodoc", "1");
@@ -205,12 +215,15 @@ class Handle_Adaptor3d_HOffsetCurve : public Handle_Adaptor2d_HCurve2d {
 	return (Adaptor3d_HOffsetCurve*)$self->Access();
 	}
 };
+%extend Handle_Adaptor3d_HOffsetCurve {
+	~Handle_Adaptor3d_HOffsetCurve() {
+	printf("Call custom destructor for instance of Handle_Adaptor3d_HOffsetCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Adaptor3d_TopolTool;
 class Handle_Adaptor3d_TopolTool : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Adaptor3d_TopolTool();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_TopolTool();
 		%feature("autodoc", "1");
@@ -226,12 +239,15 @@ class Handle_Adaptor3d_TopolTool : public Handle_MMgt_TShared {
 	return (Adaptor3d_TopolTool*)$self->Access();
 	}
 };
+%extend Handle_Adaptor3d_TopolTool {
+	~Handle_Adaptor3d_TopolTool() {
+	printf("Call custom destructor for instance of Handle_Adaptor3d_TopolTool\n");
+	}
+};
 
 %nodefaultctor Handle_Adaptor3d_HVertex;
 class Handle_Adaptor3d_HVertex : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Adaptor3d_HVertex();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HVertex();
 		%feature("autodoc", "1");
@@ -247,12 +263,15 @@ class Handle_Adaptor3d_HVertex : public Handle_MMgt_TShared {
 	return (Adaptor3d_HVertex*)$self->Access();
 	}
 };
+%extend Handle_Adaptor3d_HVertex {
+	~Handle_Adaptor3d_HVertex() {
+	printf("Call custom destructor for instance of Handle_Adaptor3d_HVertex\n");
+	}
+};
 
 %nodefaultctor Handle_Adaptor3d_HCurveOnSurface;
 class Handle_Adaptor3d_HCurveOnSurface : public Handle_Adaptor3d_HCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Adaptor3d_HCurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurveOnSurface();
 		%feature("autodoc", "1");
@@ -268,12 +287,15 @@ class Handle_Adaptor3d_HCurveOnSurface : public Handle_Adaptor3d_HCurve {
 	return (Adaptor3d_HCurveOnSurface*)$self->Access();
 	}
 };
+%extend Handle_Adaptor3d_HCurveOnSurface {
+	~Handle_Adaptor3d_HCurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_Adaptor3d_HCurveOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Adaptor3d_HSurfaceOfLinearExtrusion;
 class Handle_Adaptor3d_HSurfaceOfLinearExtrusion : public Handle_Adaptor3d_HSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Adaptor3d_HSurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
@@ -287,6 +309,11 @@ class Handle_Adaptor3d_HSurfaceOfLinearExtrusion : public Handle_Adaptor3d_HSurf
 %extend Handle_Adaptor3d_HSurfaceOfLinearExtrusion {
 	Adaptor3d_HSurfaceOfLinearExtrusion* GetObject() {
 	return (Adaptor3d_HSurfaceOfLinearExtrusion*)$self->Access();
+	}
+};
+%extend Handle_Adaptor3d_HSurfaceOfLinearExtrusion {
+	~Handle_Adaptor3d_HSurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of Handle_Adaptor3d_HSurfaceOfLinearExtrusion\n");
 	}
 };
 
@@ -398,6 +425,11 @@ class Adaptor3d_HSurface : public MMgt_TShared {
 	return *(Handle_Adaptor3d_HSurface*) &$self;
 	}
 };
+%extend Adaptor3d_HSurface {
+	~Adaptor3d_HSurface() {
+	printf("Call custom destructor for instance of Adaptor3d_HSurface\n");
+	}
+};
 
 %nodefaultctor Adaptor3d_HSurfaceOfLinearExtrusion;
 class Adaptor3d_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
@@ -410,13 +442,16 @@ class Adaptor3d_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 		void Set(const Adaptor3d_SurfaceOfLinearExtrusion &S);
 		%feature("autodoc", "1");
 		Adaptor3d_SurfaceOfLinearExtrusion & ChangeSurface();
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_HSurfaceOfLinearExtrusion();
 
 };
 %extend Adaptor3d_HSurfaceOfLinearExtrusion {
 	Handle_Adaptor3d_HSurfaceOfLinearExtrusion GetHandle() {
 	return *(Handle_Adaptor3d_HSurfaceOfLinearExtrusion*) &$self;
+	}
+};
+%extend Adaptor3d_HSurfaceOfLinearExtrusion {
+	~Adaptor3d_HSurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of Adaptor3d_HSurfaceOfLinearExtrusion\n");
 	}
 };
 
@@ -493,13 +528,16 @@ class Adaptor3d_TopolTool : public MMgt_TShared {
 		virtual		Standard_Boolean IsUniformSampling() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_TopolTool();
 
 };
 %extend Adaptor3d_TopolTool {
 	Handle_Adaptor3d_TopolTool GetHandle() {
 	return *(Handle_Adaptor3d_TopolTool*) &$self;
+	}
+};
+%extend Adaptor3d_TopolTool {
+	~Adaptor3d_TopolTool() {
+	printf("Call custom destructor for instance of Adaptor3d_TopolTool\n");
 	}
 };
 
@@ -575,6 +613,11 @@ class Adaptor3d_HCurve : public MMgt_TShared {
 	return *(Handle_Adaptor3d_HCurve*) &$self;
 	}
 };
+%extend Adaptor3d_HCurve {
+	~Adaptor3d_HCurve() {
+	printf("Call custom destructor for instance of Adaptor3d_HCurve\n");
+	}
+};
 
 %nodefaultctor Adaptor3d_HIsoCurve;
 class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
@@ -587,13 +630,16 @@ class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
 		void Set(const Adaptor3d_IsoCurve &C);
 		%feature("autodoc", "1");
 		Adaptor3d_IsoCurve & ChangeCurve();
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_HIsoCurve();
 
 };
 %extend Adaptor3d_HIsoCurve {
 	Handle_Adaptor3d_HIsoCurve GetHandle() {
 	return *(Handle_Adaptor3d_HIsoCurve*) &$self;
+	}
+};
+%extend Adaptor3d_HIsoCurve {
+	~Adaptor3d_HIsoCurve() {
+	printf("Call custom destructor for instance of Adaptor3d_HIsoCurve\n");
 	}
 };
 
@@ -758,13 +804,16 @@ class Adaptor3d_HVertex : public MMgt_TShared {
 		virtual		Standard_Boolean IsSame(const Handle_Adaptor3d_HVertex &Other);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_HVertex();
 
 };
 %extend Adaptor3d_HVertex {
 	Handle_Adaptor3d_HVertex GetHandle() {
 	return *(Handle_Adaptor3d_HVertex*) &$self;
+	}
+};
+%extend Adaptor3d_HVertex {
+	~Adaptor3d_HVertex() {
+	printf("Call custom destructor for instance of Adaptor3d_HVertex\n");
 	}
 };
 
@@ -877,13 +926,16 @@ class Adaptor3d_HOffsetCurve : public Adaptor2d_HCurve2d {
 		Adaptor3d_OffsetCurve & ChangeCurve2d();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_HOffsetCurve();
 
 };
 %extend Adaptor3d_HOffsetCurve {
 	Handle_Adaptor3d_HOffsetCurve GetHandle() {
 	return *(Handle_Adaptor3d_HOffsetCurve*) &$self;
+	}
+};
+%extend Adaptor3d_HOffsetCurve {
+	~Adaptor3d_HOffsetCurve() {
+	printf("Call custom destructor for instance of Adaptor3d_HOffsetCurve\n");
 	}
 };
 
@@ -1012,13 +1064,16 @@ class Adaptor3d_HCurveOnSurface : public Adaptor3d_HCurve {
 		Adaptor3d_CurveOnSurface & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_HCurveOnSurface();
 
 };
 %extend Adaptor3d_HCurveOnSurface {
 	Handle_Adaptor3d_HCurveOnSurface GetHandle() {
 	return *(Handle_Adaptor3d_HCurveOnSurface*) &$self;
+	}
+};
+%extend Adaptor3d_HCurveOnSurface {
+	~Adaptor3d_HCurveOnSurface() {
+	printf("Call custom destructor for instance of Adaptor3d_HCurveOnSurface\n");
 	}
 };
 
@@ -1203,12 +1258,15 @@ class Adaptor3d_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 		Adaptor3d_SurfaceOfRevolution & ChangeSurface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_HSurfaceOfRevolution();
 
 };
 %extend Adaptor3d_HSurfaceOfRevolution {
 	Handle_Adaptor3d_HSurfaceOfRevolution GetHandle() {
 	return *(Handle_Adaptor3d_HSurfaceOfRevolution*) &$self;
+	}
+};
+%extend Adaptor3d_HSurfaceOfRevolution {
+	~Adaptor3d_HSurfaceOfRevolution() {
+	printf("Call custom destructor for instance of Adaptor3d_HSurfaceOfRevolution\n");
 	}
 };

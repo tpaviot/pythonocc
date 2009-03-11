@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IGESAppli_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESAppli_ReadWriteModule();
-		%feature("autodoc", "1");
 		Handle_IGESAppli_ReadWriteModule();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_ReadWriteModule(const Handle_IGESAppli_ReadWriteModule &aHandle);
@@ -118,12 +116,15 @@ class Handle_IGESAppli_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESAppli_ReadWriteModule*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_ReadWriteModule {
+	~Handle_IGESAppli_ReadWriteModule() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_NodalConstraint;
 class Handle_IGESAppli_NodalConstraint : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_NodalConstraint();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_NodalConstraint();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_IGESAppli_NodalConstraint : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_NodalConstraint*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_NodalConstraint {
+	~Handle_IGESAppli_NodalConstraint() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_NodalConstraint\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_FiniteElement;
 class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_FiniteElement();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_FiniteElement();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_FiniteElement*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_FiniteElement {
+	~Handle_IGESAppli_FiniteElement() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_FiniteElement\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_HArray1OfNode;
 class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_HArray1OfNode();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_HArray1OfNode();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 	return (IGESAppli_HArray1OfNode*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_HArray1OfNode {
+	~Handle_IGESAppli_HArray1OfNode() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_HArray1OfNode\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_PinNumber;
 class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_PinNumber();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PinNumber();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PinNumber*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_PinNumber {
+	~Handle_IGESAppli_PinNumber() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_PinNumber\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_PWBArtworkStackup;
 class Handle_IGESAppli_PWBArtworkStackup : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_PWBArtworkStackup();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PWBArtworkStackup();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_IGESAppli_PWBArtworkStackup : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PWBArtworkStackup*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_PWBArtworkStackup {
+	~Handle_IGESAppli_PWBArtworkStackup() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_PWBArtworkStackup\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_LevelToPWBLayerMap;
 class Handle_IGESAppli_LevelToPWBLayerMap : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_LevelToPWBLayerMap();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_LevelToPWBLayerMap();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_IGESAppli_LevelToPWBLayerMap : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_LevelToPWBLayerMap*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_LevelToPWBLayerMap {
+	~Handle_IGESAppli_LevelToPWBLayerMap() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_LevelToPWBLayerMap\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_ReferenceDesignator;
 class Handle_IGESAppli_ReferenceDesignator : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_ReferenceDesignator();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_ReferenceDesignator();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_IGESAppli_ReferenceDesignator : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_ReferenceDesignator*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_ReferenceDesignator {
+	~Handle_IGESAppli_ReferenceDesignator() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_ReferenceDesignator\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_ElementResults;
 class Handle_IGESAppli_ElementResults : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_ElementResults();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_ElementResults();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_IGESAppli_ElementResults : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_ElementResults*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_ElementResults {
+	~Handle_IGESAppli_ElementResults() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_ElementResults\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_NodalDisplAndRot;
 class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_NodalDisplAndRot();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_NodalDisplAndRot();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_NodalDisplAndRot*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_NodalDisplAndRot {
+	~Handle_IGESAppli_NodalDisplAndRot() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_NodalDisplAndRot\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_PWBDrilledHole;
 class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_PWBDrilledHole();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PWBDrilledHole();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PWBDrilledHole*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_PWBDrilledHole {
+	~Handle_IGESAppli_PWBDrilledHole() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_PWBDrilledHole\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_DrilledHole;
 class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_DrilledHole();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_DrilledHole();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_DrilledHole*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_DrilledHole {
+	~Handle_IGESAppli_DrilledHole() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_DrilledHole\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_SpecificModule;
 class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_SpecificModule();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_SpecificModule();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESAppli_SpecificModule*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_SpecificModule {
+	~Handle_IGESAppli_SpecificModule() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_SpecificModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_FlowLineSpec;
 class Handle_IGESAppli_FlowLineSpec : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_FlowLineSpec();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_FlowLineSpec();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_IGESAppli_FlowLineSpec : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_FlowLineSpec*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_FlowLineSpec {
+	~Handle_IGESAppli_FlowLineSpec() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_FlowLineSpec\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_RegionRestriction;
 class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_RegionRestriction();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_RegionRestriction();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_RegionRestriction*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_RegionRestriction {
+	~Handle_IGESAppli_RegionRestriction() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_RegionRestriction\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_HArray1OfFlow;
 class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_HArray1OfFlow();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_HArray1OfFlow();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 	return (IGESAppli_HArray1OfFlow*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_HArray1OfFlow {
+	~Handle_IGESAppli_HArray1OfFlow() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_HArray1OfFlow\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_HArray1OfFiniteElement;
 class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_HArray1OfFiniteElement();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_HArray1OfFiniteElement();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
 	return (IGESAppli_HArray1OfFiniteElement*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_HArray1OfFiniteElement {
+	~Handle_IGESAppli_HArray1OfFiniteElement() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_HArray1OfFiniteElement\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_Node;
 class Handle_IGESAppli_Node : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_Node();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_Node();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_IGESAppli_Node : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_Node*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_Node {
+	~Handle_IGESAppli_Node() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_Node\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_Flow;
 class Handle_IGESAppli_Flow : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_Flow();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_Flow();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_IGESAppli_Flow : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_Flow*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_Flow {
+	~Handle_IGESAppli_Flow() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_Flow\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_LineWidening;
 class Handle_IGESAppli_LineWidening : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_LineWidening();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_LineWidening();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_IGESAppli_LineWidening : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_LineWidening*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_LineWidening {
+	~Handle_IGESAppli_LineWidening() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_LineWidening\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_PipingFlow;
 class Handle_IGESAppli_PipingFlow : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_PipingFlow();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PipingFlow();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_IGESAppli_PipingFlow : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PipingFlow*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_PipingFlow {
+	~Handle_IGESAppli_PipingFlow() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_PipingFlow\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_Protocol;
 class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_Protocol();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_Protocol();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 	return (IGESAppli_Protocol*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_Protocol {
+	~Handle_IGESAppli_Protocol() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_Protocol\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_GeneralModule;
 class Handle_IGESAppli_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_GeneralModule();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_GeneralModule();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_IGESAppli_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESAppli_GeneralModule*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_GeneralModule {
+	~Handle_IGESAppli_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_GeneralModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_NodalResults;
 class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_NodalResults();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_NodalResults();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_NodalResults*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_NodalResults {
+	~Handle_IGESAppli_NodalResults() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_NodalResults\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_PartNumber;
 class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_PartNumber();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PartNumber();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PartNumber*)$self->Access();
 	}
 };
+%extend Handle_IGESAppli_PartNumber {
+	~Handle_IGESAppli_PartNumber() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_PartNumber\n");
+	}
+};
 
 %nodefaultctor Handle_IGESAppli_LevelFunction;
 class Handle_IGESAppli_LevelFunction : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESAppli_LevelFunction();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_LevelFunction();
 		%feature("autodoc", "1");
@@ -641,6 +714,11 @@ class Handle_IGESAppli_LevelFunction : public Handle_IGESData_IGESEntity {
 %extend Handle_IGESAppli_LevelFunction {
 	IGESAppli_LevelFunction* GetObject() {
 	return (IGESAppli_LevelFunction*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_LevelFunction {
+	~Handle_IGESAppli_LevelFunction() {
+	printf("Call custom destructor for instance of Handle_IGESAppli_LevelFunction\n");
 	}
 };
 
@@ -671,13 +749,16 @@ class IGESAppli_HArray1OfFiniteElement : public MMgt_TShared {
 		IGESAppli_Array1OfFiniteElement & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_HArray1OfFiniteElement();
 
 };
 %extend IGESAppli_HArray1OfFiniteElement {
 	Handle_IGESAppli_HArray1OfFiniteElement GetHandle() {
 	return *(Handle_IGESAppli_HArray1OfFiniteElement*) &$self;
+	}
+};
+%extend IGESAppli_HArray1OfFiniteElement {
+	~IGESAppli_HArray1OfFiniteElement() {
+	printf("Call custom destructor for instance of IGESAppli_HArray1OfFiniteElement\n");
 	}
 };
 
@@ -698,13 +779,16 @@ class IGESAppli_FiniteElement : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_FiniteElement();
 
 };
 %extend IGESAppli_FiniteElement {
 	Handle_IGESAppli_FiniteElement GetHandle() {
 	return *(Handle_IGESAppli_FiniteElement*) &$self;
+	}
+};
+%extend IGESAppli_FiniteElement {
+	~IGESAppli_FiniteElement() {
+	printf("Call custom destructor for instance of IGESAppli_FiniteElement\n");
 	}
 };
 
@@ -749,13 +833,16 @@ class IGESAppli_Flow : public IGESData_IGESEntity {
 		Handle_IGESData_IGESEntity ContFlowAssociativity(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_Flow();
 
 };
 %extend IGESAppli_Flow {
 	Handle_IGESAppli_Flow GetHandle() {
 	return *(Handle_IGESAppli_Flow*) &$self;
+	}
+};
+%extend IGESAppli_Flow {
+	~IGESAppli_Flow() {
+	printf("Call custom destructor for instance of IGESAppli_Flow\n");
 	}
 };
 
@@ -786,13 +873,16 @@ class IGESAppli_NodalResults : public IGESData_IGESEntity {
 		Standard_Real Data(const Standard_Integer NodeNum, const Standard_Integer DataNum) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_NodalResults();
 
 };
 %extend IGESAppli_NodalResults {
 	Handle_IGESAppli_NodalResults GetHandle() {
 	return *(Handle_IGESAppli_NodalResults*) &$self;
+	}
+};
+%extend IGESAppli_NodalResults {
+	~IGESAppli_NodalResults() {
+	printf("Call custom destructor for instance of IGESAppli_NodalResults\n");
 	}
 };
 
@@ -811,13 +901,16 @@ class IGESAppli_FlowLineSpec : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString Modifier(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_FlowLineSpec();
 
 };
 %extend IGESAppli_FlowLineSpec {
 	Handle_IGESAppli_FlowLineSpec GetHandle() {
 	return *(Handle_IGESAppli_FlowLineSpec*) &$self;
+	}
+};
+%extend IGESAppli_FlowLineSpec {
+	~IGESAppli_FlowLineSpec() {
+	printf("Call custom destructor for instance of IGESAppli_FlowLineSpec\n");
 	}
 };
 
@@ -866,13 +959,16 @@ class IGESAppli_LevelToPWBLayerMap : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString ExchangeFileLevelIdent(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_LevelToPWBLayerMap();
 
 };
 %extend IGESAppli_LevelToPWBLayerMap {
 	Handle_IGESAppli_LevelToPWBLayerMap GetHandle() {
 	return *(Handle_IGESAppli_LevelToPWBLayerMap*) &$self;
+	}
+};
+%extend IGESAppli_LevelToPWBLayerMap {
+	~IGESAppli_LevelToPWBLayerMap() {
+	printf("Call custom destructor for instance of IGESAppli_LevelToPWBLayerMap\n");
 	}
 };
 
@@ -963,13 +1059,16 @@ class IGESAppli_HArray1OfNode : public MMgt_TShared {
 		IGESAppli_Array1OfNode & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_HArray1OfNode();
 
 };
 %extend IGESAppli_HArray1OfNode {
 	Handle_IGESAppli_HArray1OfNode GetHandle() {
 	return *(Handle_IGESAppli_HArray1OfNode*) &$self;
+	}
+};
+%extend IGESAppli_HArray1OfNode {
+	~IGESAppli_HArray1OfNode() {
+	printf("Call custom destructor for instance of IGESAppli_HArray1OfNode\n");
 	}
 };
 
@@ -1108,13 +1207,16 @@ class IGESAppli_ElementResults : public IGESData_IGESEntity {
 		Handle_TColStd_HArray1OfReal ResultList(const Standard_Integer NElem) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_ElementResults();
 
 };
 %extend IGESAppli_ElementResults {
 	Handle_IGESAppli_ElementResults GetHandle() {
 	return *(Handle_IGESAppli_ElementResults*) &$self;
+	}
+};
+%extend IGESAppli_ElementResults {
+	~IGESAppli_ElementResults() {
+	printf("Call custom destructor for instance of IGESAppli_ElementResults\n");
 	}
 };
 
@@ -1129,13 +1231,16 @@ class IGESAppli_SpecificModule : public IGESData_SpecificModule {
 		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_SpecificModule();
 
 };
 %extend IGESAppli_SpecificModule {
 	Handle_IGESAppli_SpecificModule GetHandle() {
 	return *(Handle_IGESAppli_SpecificModule*) &$self;
+	}
+};
+%extend IGESAppli_SpecificModule {
+	~IGESAppli_SpecificModule() {
+	printf("Call custom destructor for instance of IGESAppli_SpecificModule\n");
 	}
 };
 
@@ -1152,13 +1257,16 @@ class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString RefDesignatorText() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_ReferenceDesignator();
 
 };
 %extend IGESAppli_ReferenceDesignator {
 	Handle_IGESAppli_ReferenceDesignator GetHandle() {
 	return *(Handle_IGESAppli_ReferenceDesignator*) &$self;
+	}
+};
+%extend IGESAppli_ReferenceDesignator {
+	~IGESAppli_ReferenceDesignator() {
+	printf("Call custom destructor for instance of IGESAppli_ReferenceDesignator\n");
 	}
 };
 
@@ -1209,13 +1317,16 @@ class IGESAppli_DrilledHole : public IGESData_IGESEntity {
 		Standard_Integer NbHigherLayer() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_DrilledHole();
 
 };
 %extend IGESAppli_DrilledHole {
 	Handle_IGESAppli_DrilledHole GetHandle() {
 	return *(Handle_IGESAppli_DrilledHole*) &$self;
+	}
+};
+%extend IGESAppli_DrilledHole {
+	~IGESAppli_DrilledHole() {
+	printf("Call custom destructor for instance of IGESAppli_DrilledHole\n");
 	}
 };
 
@@ -1258,13 +1369,16 @@ class IGESAppli_LevelFunction : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString FuncDescription() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_LevelFunction();
 
 };
 %extend IGESAppli_LevelFunction {
 	Handle_IGESAppli_LevelFunction GetHandle() {
 	return *(Handle_IGESAppli_LevelFunction*) &$self;
+	}
+};
+%extend IGESAppli_LevelFunction {
+	~IGESAppli_LevelFunction() {
+	printf("Call custom destructor for instance of IGESAppli_LevelFunction\n");
 	}
 };
 
@@ -1285,13 +1399,16 @@ class IGESAppli_RegionRestriction : public IGESData_IGESEntity {
 		Standard_Integer ElectricalCktRestriction() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_RegionRestriction();
 
 };
 %extend IGESAppli_RegionRestriction {
 	Handle_IGESAppli_RegionRestriction GetHandle() {
 	return *(Handle_IGESAppli_RegionRestriction*) &$self;
+	}
+};
+%extend IGESAppli_RegionRestriction {
+	~IGESAppli_RegionRestriction() {
+	printf("Call custom destructor for instance of IGESAppli_RegionRestriction\n");
 	}
 };
 
@@ -1334,13 +1451,16 @@ class IGESAppli_PipingFlow : public IGESData_IGESEntity {
 		Handle_IGESData_IGESEntity ContFlowAssociativity(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_PipingFlow();
 
 };
 %extend IGESAppli_PipingFlow {
 	Handle_IGESAppli_PipingFlow GetHandle() {
 	return *(Handle_IGESAppli_PipingFlow*) &$self;
+	}
+};
+%extend IGESAppli_PipingFlow {
+	~IGESAppli_PipingFlow() {
+	printf("Call custom destructor for instance of IGESAppli_PipingFlow\n");
 	}
 };
 
@@ -1441,13 +1561,16 @@ class IGESAppli_ReadWriteModule : public IGESData_ReadWriteModule {
 		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_ReadWriteModule();
 
 };
 %extend IGESAppli_ReadWriteModule {
 	Handle_IGESAppli_ReadWriteModule GetHandle() {
 	return *(Handle_IGESAppli_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESAppli_ReadWriteModule {
+	~IGESAppli_ReadWriteModule() {
+	printf("Call custom destructor for instance of IGESAppli_ReadWriteModule\n");
 	}
 };
 
@@ -1494,13 +1617,16 @@ class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
 		Handle_IGESDefs_TabularData TabularData(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_NodalConstraint();
 
 };
 %extend IGESAppli_NodalConstraint {
 	Handle_IGESAppli_NodalConstraint GetHandle() {
 	return *(Handle_IGESAppli_NodalConstraint*) &$self;
+	}
+};
+%extend IGESAppli_NodalConstraint {
+	~IGESAppli_NodalConstraint() {
+	printf("Call custom destructor for instance of IGESAppli_NodalConstraint\n");
 	}
 };
 
@@ -1521,13 +1647,16 @@ class IGESAppli_PWBArtworkStackup : public IGESData_IGESEntity {
 		Standard_Integer LevelNumber(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_PWBArtworkStackup();
 
 };
 %extend IGESAppli_PWBArtworkStackup {
 	Handle_IGESAppli_PWBArtworkStackup GetHandle() {
 	return *(Handle_IGESAppli_PWBArtworkStackup*) &$self;
+	}
+};
+%extend IGESAppli_PWBArtworkStackup {
+	~IGESAppli_PWBArtworkStackup() {
+	printf("Call custom destructor for instance of IGESAppli_PWBArtworkStackup\n");
 	}
 };
 
@@ -1554,13 +1683,16 @@ class IGESAppli_NodalDisplAndRot : public IGESData_IGESEntity {
 		gp_XYZ RotationalParameter(const Standard_Integer NodeNum, const Standard_Integer CaseNum) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_NodalDisplAndRot();
 
 };
 %extend IGESAppli_NodalDisplAndRot {
 	Handle_IGESAppli_NodalDisplAndRot GetHandle() {
 	return *(Handle_IGESAppli_NodalDisplAndRot*) &$self;
+	}
+};
+%extend IGESAppli_NodalDisplAndRot {
+	~IGESAppli_NodalDisplAndRot() {
+	printf("Call custom destructor for instance of IGESAppli_NodalDisplAndRot\n");
 	}
 };
 
@@ -1601,13 +1733,16 @@ class IGESAppli_PinNumber : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString PinNumberVal() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_PinNumber();
 
 };
 %extend IGESAppli_PinNumber {
 	Handle_IGESAppli_PinNumber GetHandle() {
 	return *(Handle_IGESAppli_PinNumber*) &$self;
+	}
+};
+%extend IGESAppli_PinNumber {
+	~IGESAppli_PinNumber() {
+	printf("Call custom destructor for instance of IGESAppli_PinNumber\n");
 	}
 };
 
@@ -1698,13 +1833,16 @@ class IGESAppli_HArray1OfFlow : public MMgt_TShared {
 		IGESAppli_Array1OfFlow & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_HArray1OfFlow();
 
 };
 %extend IGESAppli_HArray1OfFlow {
 	Handle_IGESAppli_HArray1OfFlow GetHandle() {
 	return *(Handle_IGESAppli_HArray1OfFlow*) &$self;
+	}
+};
+%extend IGESAppli_HArray1OfFlow {
+	~IGESAppli_HArray1OfFlow() {
+	printf("Call custom destructor for instance of IGESAppli_HArray1OfFlow\n");
 	}
 };
 
@@ -1729,13 +1867,16 @@ class IGESAppli_LineWidening : public IGESData_IGESEntity {
 		Standard_Real ExtensionValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_LineWidening();
 
 };
 %extend IGESAppli_LineWidening {
 	Handle_IGESAppli_LineWidening GetHandle() {
 	return *(Handle_IGESAppli_LineWidening*) &$self;
+	}
+};
+%extend IGESAppli_LineWidening {
+	~IGESAppli_LineWidening() {
+	printf("Call custom destructor for instance of IGESAppli_LineWidening\n");
 	}
 };
 
@@ -1808,13 +1949,16 @@ class IGESAppli_PWBDrilledHole : public IGESData_IGESEntity {
 		Standard_Integer FunctionCode() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_PWBDrilledHole();
 
 };
 %extend IGESAppli_PWBDrilledHole {
 	Handle_IGESAppli_PWBDrilledHole GetHandle() {
 	return *(Handle_IGESAppli_PWBDrilledHole*) &$self;
+	}
+};
+%extend IGESAppli_PWBDrilledHole {
+	~IGESAppli_PWBDrilledHole() {
+	printf("Call custom destructor for instance of IGESAppli_PWBDrilledHole\n");
 	}
 };
 
@@ -1837,13 +1981,16 @@ class IGESAppli_GeneralModule : public IGESData_GeneralModule {
 		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_GeneralModule();
 
 };
 %extend IGESAppli_GeneralModule {
 	Handle_IGESAppli_GeneralModule GetHandle() {
 	return *(Handle_IGESAppli_GeneralModule*) &$self;
+	}
+};
+%extend IGESAppli_GeneralModule {
+	~IGESAppli_GeneralModule() {
+	printf("Call custom destructor for instance of IGESAppli_GeneralModule\n");
 	}
 };
 
@@ -1942,13 +2089,16 @@ class IGESAppli_Node : public IGESData_IGESEntity {
 		gp_Pnt TransformedNodalCoord() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_Node();
 
 };
 %extend IGESAppli_Node {
 	Handle_IGESAppli_Node GetHandle() {
 	return *(Handle_IGESAppli_Node*) &$self;
+	}
+};
+%extend IGESAppli_Node {
+	~IGESAppli_Node() {
+	printf("Call custom destructor for instance of IGESAppli_Node\n");
 	}
 };
 
@@ -1971,13 +2121,16 @@ class IGESAppli_PartNumber : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString InternalNumber() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESAppli_PartNumber();
 
 };
 %extend IGESAppli_PartNumber {
 	Handle_IGESAppli_PartNumber GetHandle() {
 	return *(Handle_IGESAppli_PartNumber*) &$self;
+	}
+};
+%extend IGESAppli_PartNumber {
+	~IGESAppli_PartNumber() {
+	printf("Call custom destructor for instance of IGESAppli_PartNumber\n");
 	}
 };
 

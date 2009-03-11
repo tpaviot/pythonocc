@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape();
-		%feature("autodoc", "1");
 		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape(const Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape &aHandle);
@@ -118,12 +116,15 @@ class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public Ha
 	return (TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
+	~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_ListNodeOfListOfShape;
 class Handle_TopTools_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_ListNodeOfListOfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_ListNodeOfListOfShape();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_TopTools_ListNodeOfListOfShape : public Handle_TCollection_MapNode 
 	return (TopTools_ListNodeOfListOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_ListNodeOfListOfShape {
+	~Handle_TopTools_ListNodeOfListOfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_ListNodeOfListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger;
 class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger();
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 	return (TopTools_DataMapNodeOfDataMapOfShapeListOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
+	~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger() {
+	printf("Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_StdMapNodeOfMapOfShape;
 class Handle_TopTools_StdMapNodeOfMapOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_StdMapNodeOfMapOfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_StdMapNodeOfMapOfShape();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_TopTools_StdMapNodeOfMapOfShape : public Handle_TCollection_MapNode
 	return (TopTools_StdMapNodeOfMapOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_StdMapNodeOfMapOfShape {
+	~Handle_TopTools_StdMapNodeOfMapOfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_StdMapNodeOfMapOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape;
 class Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape : public Handle_TCollec
 	return (TopTools_DataMapNodeOfDataMapOfIntegerShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape {
+	~Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_HSequenceOfShape;
 class Handle_TopTools_HSequenceOfShape : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_HSequenceOfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_TopTools_HSequenceOfShape : public Handle_MMgt_TShared {
 	return (TopTools_HSequenceOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_HSequenceOfShape {
+	~Handle_TopTools_HSequenceOfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_HSequenceOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape;
 class Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape : public Handle_TCollect
 	return (TopTools_IndexedMapNodeOfIndexedMapOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape {
+	~Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape;
 class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public Handle_TCo
 	return (TopTools_DataMapNodeOfDataMapOfShapeListOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
+	~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger;
 class Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger();
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollec
 	return (TopTools_DataMapNodeOfDataMapOfShapeInteger*)$self->Access();
 	}
 };
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger {
+	~Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_HArray2OfShape;
 class Handle_TopTools_HArray2OfShape : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_HArray2OfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_HArray2OfShape();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_TopTools_HArray2OfShape : public Handle_MMgt_TShared {
 	return (TopTools_HArray2OfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_HArray2OfShape {
+	~Handle_TopTools_HArray2OfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_HArray2OfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_HArray1OfListOfShape;
 class Handle_TopTools_HArray1OfListOfShape : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_HArray1OfListOfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_HArray1OfListOfShape();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_TopTools_HArray1OfListOfShape : public Handle_MMgt_TShared {
 	return (TopTools_HArray1OfListOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_HArray1OfListOfShape {
+	~Handle_TopTools_HArray1OfListOfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_HArray1OfListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeShape;
 class Handle_TopTools_DataMapNodeOfDataMapOfShapeShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_DataMapNodeOfDataMapOfShapeShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfShapeShape();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeShape : public Handle_TCollecti
 	return (TopTools_DataMapNodeOfDataMapOfShapeShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeShape {
+	~Handle_TopTools_DataMapNodeOfDataMapOfShapeShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape;
 class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : pub
 	return (TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
+	~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_HArray1OfShape;
 class Handle_TopTools_HArray1OfShape : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_HArray1OfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_HArray1OfShape();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_TopTools_HArray1OfShape : public Handle_MMgt_TShared {
 	return (TopTools_HArray1OfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_HArray1OfShape {
+	~Handle_TopTools_HArray1OfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_HArray1OfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape;
 class Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public Handle_T
 	return (TopTools_DataMapNodeOfDataMapOfIntegerListOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape {
+	~Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape;
 class Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public Handle_
 	return (TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
+	~Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
 class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_SequenceNodeOfSequenceOfShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_SequenceNodeOfSequenceOfShape();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_
 	return (TopTools_SequenceNodeOfSequenceOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
+	~Handle_TopTools_SequenceNodeOfSequenceOfShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_SequenceNodeOfSequenceOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_StdMapNodeOfMapOfOrientedShape;
 class Handle_TopTools_StdMapNodeOfMapOfOrientedShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_StdMapNodeOfMapOfOrientedShape();
 		%feature("autodoc", "1");
 		Handle_TopTools_StdMapNodeOfMapOfOrientedShape();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_TopTools_StdMapNodeOfMapOfOrientedShape : public Handle_TCollection
 	return (TopTools_StdMapNodeOfMapOfOrientedShape*)$self->Access();
 	}
 };
+%extend Handle_TopTools_StdMapNodeOfMapOfOrientedShape {
+	~Handle_TopTools_StdMapNodeOfMapOfOrientedShape() {
+	printf("Call custom destructor for instance of Handle_TopTools_StdMapNodeOfMapOfOrientedShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger;
 class Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger();
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger();
 		%feature("autodoc", "1");
@@ -494,6 +546,11 @@ class Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public Handle
 %extend Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
 	TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger* GetObject() {
 	return (TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger*)$self->Access();
+	}
+};
+%extend Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
+	~Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger() {
+	printf("Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger\n");
 	}
 };
 
@@ -596,13 +653,16 @@ class TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 		TColStd_ListOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_DataMapNodeOfDataMapOfShapeListOfInteger();
 
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
 	Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger GetHandle() {
 	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
+	~TopTools_DataMapNodeOfDataMapOfShapeListOfInteger() {
+	printf("Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeListOfInteger\n");
 	}
 };
 
@@ -617,13 +677,16 @@ class TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public TCollection_Map
 		TopTools_ListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_DataMapNodeOfDataMapOfIntegerListOfShape();
 
 };
 %extend TopTools_DataMapNodeOfDataMapOfIntegerListOfShape {
 	Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape GetHandle() {
 	return *(Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfIntegerListOfShape {
+	~TopTools_DataMapNodeOfDataMapOfIntegerListOfShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfIntegerListOfShape\n");
 	}
 };
 
@@ -696,13 +759,16 @@ class TopTools_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_DataMapNodeOfDataMapOfShapeInteger();
 
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeInteger {
 	Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger GetHandle() {
 	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfShapeInteger {
+	~TopTools_DataMapNodeOfDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeInteger\n");
 	}
 };
 
@@ -719,13 +785,16 @@ class TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public TCollection_Ma
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape();
 
 };
 %extend TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
 	Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape GetHandle() {
 	return *(Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape*) &$self;
+	}
+};
+%extend TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
+	~TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape() {
+	printf("Call custom destructor for instance of TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape\n");
 	}
 };
 
@@ -762,13 +831,16 @@ class TopTools_HArray2OfShape : public MMgt_TShared {
 		TopTools_Array2OfShape & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_HArray2OfShape();
 
 };
 %extend TopTools_HArray2OfShape {
 	Handle_TopTools_HArray2OfShape GetHandle() {
 	return *(Handle_TopTools_HArray2OfShape*) &$self;
+	}
+};
+%extend TopTools_HArray2OfShape {
+	~TopTools_HArray2OfShape() {
+	printf("Call custom destructor for instance of TopTools_HArray2OfShape\n");
 	}
 };
 
@@ -785,13 +857,16 @@ class TopTools_IndexedMapNodeOfIndexedMapOfShape : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_IndexedMapNodeOfIndexedMapOfShape();
 
 };
 %extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
 	Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape GetHandle() {
 	return *(Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape*) &$self;
+	}
+};
+%extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
+	~TopTools_IndexedMapNodeOfIndexedMapOfShape() {
+	printf("Call custom destructor for instance of TopTools_IndexedMapNodeOfIndexedMapOfShape\n");
 	}
 };
 
@@ -996,13 +1071,16 @@ class TopTools_HArray1OfShape : public MMgt_TShared {
 		TopTools_Array1OfShape & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_HArray1OfShape();
 
 };
 %extend TopTools_HArray1OfShape {
 	Handle_TopTools_HArray1OfShape GetHandle() {
 	return *(Handle_TopTools_HArray1OfShape*) &$self;
+	}
+};
+%extend TopTools_HArray1OfShape {
+	~TopTools_HArray1OfShape() {
+	printf("Call custom destructor for instance of TopTools_HArray1OfShape\n");
 	}
 };
 
@@ -1085,13 +1163,16 @@ class TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public TCollection_M
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger();
 
 };
 %extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
 	Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger GetHandle() {
 	return *(Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
+	~TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger() {
+	printf("Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger\n");
 	}
 };
 
@@ -1126,13 +1207,16 @@ class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public TCollecti
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape();
 
 };
 %extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
 	Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape GetHandle() {
 	return *(Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape*) &$self;
+	}
+};
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
+	~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape() {
+	printf("Call custom destructor for instance of TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape\n");
 	}
 };
 
@@ -1229,13 +1313,16 @@ class TopTools_HArray1OfListOfShape : public MMgt_TShared {
 		TopTools_Array1OfListOfShape & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_HArray1OfListOfShape();
 
 };
 %extend TopTools_HArray1OfListOfShape {
 	Handle_TopTools_HArray1OfListOfShape GetHandle() {
 	return *(Handle_TopTools_HArray1OfListOfShape*) &$self;
+	}
+};
+%extend TopTools_HArray1OfListOfShape {
+	~TopTools_HArray1OfListOfShape() {
+	printf("Call custom destructor for instance of TopTools_HArray1OfListOfShape\n");
 	}
 };
 
@@ -1248,13 +1335,16 @@ class TopTools_StdMapNodeOfMapOfOrientedShape : public TCollection_MapNode {
 		TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_StdMapNodeOfMapOfOrientedShape();
 
 };
 %extend TopTools_StdMapNodeOfMapOfOrientedShape {
 	Handle_TopTools_StdMapNodeOfMapOfOrientedShape GetHandle() {
 	return *(Handle_TopTools_StdMapNodeOfMapOfOrientedShape*) &$self;
+	}
+};
+%extend TopTools_StdMapNodeOfMapOfOrientedShape {
+	~TopTools_StdMapNodeOfMapOfOrientedShape() {
+	printf("Call custom destructor for instance of TopTools_StdMapNodeOfMapOfOrientedShape\n");
 	}
 };
 
@@ -1269,13 +1359,16 @@ class TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public TCollection_MapNo
 		TopTools_ListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_DataMapNodeOfDataMapOfShapeListOfShape();
 
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
 	Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape GetHandle() {
 	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
+	~TopTools_DataMapNodeOfDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeListOfShape\n");
 	}
 };
 
@@ -1320,13 +1413,16 @@ class TopTools_DataMapNodeOfDataMapOfIntegerShape : public TCollection_MapNode {
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_DataMapNodeOfDataMapOfIntegerShape();
 
 };
 %extend TopTools_DataMapNodeOfDataMapOfIntegerShape {
 	Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape GetHandle() {
 	return *(Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfIntegerShape {
+	~TopTools_DataMapNodeOfDataMapOfIntegerShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfIntegerShape\n");
 	}
 };
 
@@ -1501,13 +1597,16 @@ class TopTools_HSequenceOfShape : public MMgt_TShared {
 		Handle_TopTools_HSequenceOfShape ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_HSequenceOfShape();
 
 };
 %extend TopTools_HSequenceOfShape {
 	Handle_TopTools_HSequenceOfShape GetHandle() {
 	return *(Handle_TopTools_HSequenceOfShape*) &$self;
+	}
+};
+%extend TopTools_HSequenceOfShape {
+	~TopTools_HSequenceOfShape() {
+	printf("Call custom destructor for instance of TopTools_HSequenceOfShape\n");
 	}
 };
 
@@ -1568,13 +1667,16 @@ class TopTools_DataMapNodeOfDataMapOfShapeShape : public TCollection_MapNode {
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_DataMapNodeOfDataMapOfShapeShape();
 
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeShape {
 	Handle_TopTools_DataMapNodeOfDataMapOfShapeShape GetHandle() {
 	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeShape*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfShapeShape {
+	~TopTools_DataMapNodeOfDataMapOfShapeShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeShape\n");
 	}
 };
 
@@ -1701,13 +1803,16 @@ class TopTools_ListNodeOfListOfShape : public TCollection_MapNode {
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_ListNodeOfListOfShape();
 
 };
 %extend TopTools_ListNodeOfListOfShape {
 	Handle_TopTools_ListNodeOfListOfShape GetHandle() {
 	return *(Handle_TopTools_ListNodeOfListOfShape*) &$self;
+	}
+};
+%extend TopTools_ListNodeOfListOfShape {
+	~TopTools_ListNodeOfListOfShape() {
+	printf("Call custom destructor for instance of TopTools_ListNodeOfListOfShape\n");
 	}
 };
 
@@ -1744,13 +1849,16 @@ class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : public TCo
 		TopTools_ListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape();
 
 };
 %extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
 	Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape GetHandle() {
 	return *(Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape*) &$self;
+	}
+};
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
+	~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape\n");
 	}
 };
 
@@ -1793,13 +1901,16 @@ class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_SequenceNodeOfSequenceOfShape();
 
 };
 %extend TopTools_SequenceNodeOfSequenceOfShape {
 	Handle_TopTools_SequenceNodeOfSequenceOfShape GetHandle() {
 	return *(Handle_TopTools_SequenceNodeOfSequenceOfShape*) &$self;
+	}
+};
+%extend TopTools_SequenceNodeOfSequenceOfShape {
+	~TopTools_SequenceNodeOfSequenceOfShape() {
+	printf("Call custom destructor for instance of TopTools_SequenceNodeOfSequenceOfShape\n");
 	}
 };
 
@@ -1902,12 +2013,15 @@ class TopTools_StdMapNodeOfMapOfShape : public TCollection_MapNode {
 		TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopTools_StdMapNodeOfMapOfShape();
 
 };
 %extend TopTools_StdMapNodeOfMapOfShape {
 	Handle_TopTools_StdMapNodeOfMapOfShape GetHandle() {
 	return *(Handle_TopTools_StdMapNodeOfMapOfShape*) &$self;
+	}
+};
+%extend TopTools_StdMapNodeOfMapOfShape {
+	~TopTools_StdMapNodeOfMapOfShape() {
+	printf("Call custom destructor for instance of TopTools_StdMapNodeOfMapOfShape\n");
 	}
 };

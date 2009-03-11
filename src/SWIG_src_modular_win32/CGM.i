@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_CGM_Driver : public Handle_PlotMgt_PlotterDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_CGM_Driver();
-		%feature("autodoc", "1");
 		Handle_CGM_Driver();
 		%feature("autodoc", "1");
 		Handle_CGM_Driver(const Handle_CGM_Driver &aHandle);
@@ -116,5 +114,10 @@ class Handle_CGM_Driver : public Handle_PlotMgt_PlotterDriver {
 %extend Handle_CGM_Driver {
 	CGM_Driver* GetObject() {
 	return (CGM_Driver*)$self->Access();
+	}
+};
+%extend Handle_CGM_Driver {
+	~Handle_CGM_Driver() {
+	printf("Call custom destructor for instance of Handle_CGM_Driver\n");
 	}
 };

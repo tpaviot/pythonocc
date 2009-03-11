@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt();
-		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt();
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
@@ -118,12 +116,15 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TColl
 	return (IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt*)$self->Access();
 	}
 };
+%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
+	~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt() {
+	printf("Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");
+	}
+};
 
 %nodefaultctor Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
 class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d();
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollecti
 	return (IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d*)$self->Access();
 	}
 };
+%extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+	~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d() {
+	printf("Call custom destructor for instance of Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d\n");
+	}
+};
 
 %nodefaultctor Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
 class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d();
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCo
 	return (IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d*)$self->Access();
 	}
 };
+%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
+	~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d() {
+	printf("Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");
+	}
+};
 
 %nodefaultctor Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt;
 class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt();
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt();
 		%feature("autodoc", "1");
@@ -179,6 +186,11 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
 	IntPoly_IndexedMapNodeOfIndexedMapOfPnt* GetObject() {
 	return (IntPoly_IndexedMapNodeOfIndexedMapOfPnt*)$self->Access();
+	}
+};
+%extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
+	~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt() {
+	printf("Call custom destructor for instance of Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");
 	}
 };
 
@@ -323,13 +335,16 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNo
 		TColgp_SequenceOfPnt2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d();
 
 };
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
 	Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d GetHandle() {
 	return *(Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d*) &$self;
+	}
+};
+%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
+	~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d() {
+	printf("Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");
 	}
 };
 
@@ -426,13 +441,16 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d();
 
 };
 %extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
 	Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d GetHandle() {
 	return *(Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d*) &$self;
+	}
+};
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+	~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d() {
+	printf("Call custom destructor for instance of IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d\n");
 	}
 };
 
@@ -445,13 +463,16 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public TCollection_SeqNode
 		TColgp_SequenceOfPnt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt();
 
 };
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
 	Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt GetHandle() {
 	return *(Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt*) &$self;
+	}
+};
+%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
+	~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt() {
+	printf("Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");
 	}
 };
 
@@ -498,13 +519,16 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntPoly_IndexedMapNodeOfIndexedMapOfPnt();
 
 };
 %extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
 	Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt GetHandle() {
 	return *(Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt*) &$self;
+	}
+};
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
+	~IntPoly_IndexedMapNodeOfIndexedMapOfPnt() {
+	printf("Call custom destructor for instance of IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");
 	}
 };
 

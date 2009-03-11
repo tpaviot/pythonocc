@@ -114,8 +114,6 @@ enum GraphDS_EntityRole {
 class Handle_GraphDS_DataMapNodeOfEntityRoleMap : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GraphDS_DataMapNodeOfEntityRoleMap();
-		%feature("autodoc", "1");
 		Handle_GraphDS_DataMapNodeOfEntityRoleMap();
 		%feature("autodoc", "1");
 		Handle_GraphDS_DataMapNodeOfEntityRoleMap(const Handle_GraphDS_DataMapNodeOfEntityRoleMap &aHandle);
@@ -128,6 +126,11 @@ class Handle_GraphDS_DataMapNodeOfEntityRoleMap : public Handle_TCollection_MapN
 %extend Handle_GraphDS_DataMapNodeOfEntityRoleMap {
 	GraphDS_DataMapNodeOfEntityRoleMap* GetObject() {
 	return (GraphDS_DataMapNodeOfEntityRoleMap*)$self->Access();
+	}
+};
+%extend Handle_GraphDS_DataMapNodeOfEntityRoleMap {
+	~Handle_GraphDS_DataMapNodeOfEntityRoleMap() {
+	printf("Call custom destructor for instance of Handle_GraphDS_DataMapNodeOfEntityRoleMap\n");
 	}
 };
 
@@ -172,13 +175,16 @@ class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
 		GraphDS_EntityRole & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GraphDS_DataMapNodeOfEntityRoleMap();
 
 };
 %extend GraphDS_DataMapNodeOfEntityRoleMap {
 	Handle_GraphDS_DataMapNodeOfEntityRoleMap GetHandle() {
 	return *(Handle_GraphDS_DataMapNodeOfEntityRoleMap*) &$self;
+	}
+};
+%extend GraphDS_DataMapNodeOfEntityRoleMap {
+	~GraphDS_DataMapNodeOfEntityRoleMap() {
+	printf("Call custom destructor for instance of GraphDS_DataMapNodeOfEntityRoleMap\n");
 	}
 };
 

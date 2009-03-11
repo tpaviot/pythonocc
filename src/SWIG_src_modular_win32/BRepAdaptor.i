@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BRepAdaptor_HCompCurve : public Handle_Adaptor3d_HCurve {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HCompCurve();
-		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCompCurve();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCompCurve(const Handle_BRepAdaptor_HCompCurve &aHandle);
@@ -118,12 +116,15 @@ class Handle_BRepAdaptor_HCompCurve : public Handle_Adaptor3d_HCurve {
 	return (BRepAdaptor_HCompCurve*)$self->Access();
 	}
 };
+%extend Handle_BRepAdaptor_HCompCurve {
+	~Handle_BRepAdaptor_HCompCurve() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HCompCurve\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAdaptor_HSurface;
 class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HSurface();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HSurface();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 	return (BRepAdaptor_HSurface*)$self->Access();
 	}
 };
+%extend Handle_BRepAdaptor_HSurface {
+	~Handle_BRepAdaptor_HSurface() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HSurface\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAdaptor_HCurve2d;
 class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HCurve2d();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve2d();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 	return (BRepAdaptor_HCurve2d*)$self->Access();
 	}
 };
+%extend Handle_BRepAdaptor_HCurve2d {
+	~Handle_BRepAdaptor_HCurve2d() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HCurve2d\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAdaptor_HCurve;
 class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HCurve();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
 	return (BRepAdaptor_HCurve*)$self->Access();
 	}
 };
+%extend Handle_BRepAdaptor_HCurve {
+	~Handle_BRepAdaptor_HCurve() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HCurve\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAdaptor_HArray1OfCurve;
 class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HArray1OfCurve();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HArray1OfCurve();
 		%feature("autodoc", "1");
@@ -200,6 +210,11 @@ class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 %extend Handle_BRepAdaptor_HArray1OfCurve {
 	BRepAdaptor_HArray1OfCurve* GetObject() {
 	return (BRepAdaptor_HArray1OfCurve*)$self->Access();
+	}
+};
+%extend Handle_BRepAdaptor_HArray1OfCurve {
+	~Handle_BRepAdaptor_HArray1OfCurve() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HArray1OfCurve\n");
 	}
 };
 
@@ -230,13 +245,16 @@ class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 		BRepAdaptor_Array1OfCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HArray1OfCurve();
 
 };
 %extend BRepAdaptor_HArray1OfCurve {
 	Handle_BRepAdaptor_HArray1OfCurve GetHandle() {
 	return *(Handle_BRepAdaptor_HArray1OfCurve*) &$self;
+	}
+};
+%extend BRepAdaptor_HArray1OfCurve {
+	~BRepAdaptor_HArray1OfCurve() {
+	printf("Call custom destructor for instance of BRepAdaptor_HArray1OfCurve\n");
 	}
 };
 
@@ -257,13 +275,16 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 		BRepAdaptor_CompCurve & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HCompCurve();
 
 };
 %extend BRepAdaptor_HCompCurve {
 	Handle_BRepAdaptor_HCompCurve GetHandle() {
 	return *(Handle_BRepAdaptor_HCompCurve*) &$self;
+	}
+};
+%extend BRepAdaptor_HCompCurve {
+	~BRepAdaptor_HCompCurve() {
+	printf("Call custom destructor for instance of BRepAdaptor_HCompCurve\n");
 	}
 };
 
@@ -456,13 +477,16 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 		BRepAdaptor_Curve & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HCurve();
 
 };
 %extend BRepAdaptor_HCurve {
 	Handle_BRepAdaptor_HCurve GetHandle() {
 	return *(Handle_BRepAdaptor_HCurve*) &$self;
+	}
+};
+%extend BRepAdaptor_HCurve {
+	~BRepAdaptor_HCurve() {
+	printf("Call custom destructor for instance of BRepAdaptor_HCurve\n");
 	}
 };
 
@@ -481,13 +505,16 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 		BRepAdaptor_Curve2d & ChangeCurve2d();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HCurve2d();
 
 };
 %extend BRepAdaptor_HCurve2d {
 	Handle_BRepAdaptor_HCurve2d GetHandle() {
 	return *(Handle_BRepAdaptor_HCurve2d*) &$self;
+	}
+};
+%extend BRepAdaptor_HCurve2d {
+	~BRepAdaptor_HCurve2d() {
+	printf("Call custom destructor for instance of BRepAdaptor_HCurve2d\n");
 	}
 };
 
@@ -674,12 +701,15 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 		BRepAdaptor_Surface & ChangeSurface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HSurface();
 
 };
 %extend BRepAdaptor_HSurface {
 	Handle_BRepAdaptor_HSurface GetHandle() {
 	return *(Handle_BRepAdaptor_HSurface*) &$self;
+	}
+};
+%extend BRepAdaptor_HSurface {
+	~BRepAdaptor_HSurface() {
+	printf("Call custom destructor for instance of BRepAdaptor_HSurface\n");
 	}
 };

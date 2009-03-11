@@ -111,8 +111,6 @@ enum TopOpeBRepBuild_LoopEnum {
 class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape();
-		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape &aHandle);
@@ -127,12 +125,15 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape :
 	return (TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape {
+	~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_Loop;
 class Handle_TopOpeBRepBuild_Loop : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_Loop();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Loop();
 		%feature("autodoc", "1");
@@ -148,12 +149,15 @@ class Handle_TopOpeBRepBuild_Loop : public Handle_MMgt_TShared {
 	return (TopOpeBRepBuild_Loop*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_Loop {
+	~Handle_TopOpeBRepBuild_Loop() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_Loop\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_Pave;
 class Handle_TopOpeBRepBuild_Pave : public Handle_TopOpeBRepBuild_Loop {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_Pave();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Pave();
 		%feature("autodoc", "1");
@@ -169,12 +173,15 @@ class Handle_TopOpeBRepBuild_Pave : public Handle_TopOpeBRepBuild_Loop {
 	return (TopOpeBRepBuild_Pave*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_Pave {
+	~Handle_TopOpeBRepBuild_Pave() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_Pave\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape();
 		%feature("autodoc", "1");
@@ -190,12 +197,15 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public Handle_TC
 	return (TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
+	~Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo;
 class Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo();
 		%feature("autodoc", "1");
@@ -211,12 +221,15 @@ class Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo
 	return (TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
+	~Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfLoop;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_ListNodeOfListOfLoop();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop();
 		%feature("autodoc", "1");
@@ -232,12 +245,15 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfLoop : public Handle_TCollection_Ma
 	return (TopOpeBRepBuild_ListNodeOfListOfLoop*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_ListNodeOfListOfLoop {
+	~Handle_TopOpeBRepBuild_ListNodeOfListOfLoop() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_ListNodeOfListOfLoop\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfPave;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfPave : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_ListNodeOfListOfPave();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfPave();
 		%feature("autodoc", "1");
@@ -253,12 +269,15 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfPave : public Handle_TCollection_Ma
 	return (TopOpeBRepBuild_ListNodeOfListOfPave*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_ListNodeOfListOfPave {
+	~Handle_TopOpeBRepBuild_ListNodeOfListOfPave() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_ListNodeOfListOfPave\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger;
 class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger();
 		%feature("autodoc", "1");
@@ -274,12 +293,15 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public Handle_
 	return (TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
+	~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_HBuilder;
 class Handle_TopOpeBRepBuild_HBuilder : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_HBuilder();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_HBuilder();
 		%feature("autodoc", "1");
@@ -295,12 +317,15 @@ class Handle_TopOpeBRepBuild_HBuilder : public Handle_MMgt_TShared {
 	return (TopOpeBRepBuild_HBuilder*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_HBuilder {
+	~Handle_TopOpeBRepBuild_HBuilder() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_HBuilder\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal;
 class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
@@ -316,12 +341,15 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public Handle_TCo
 	return (TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
+	~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop();
 		%feature("autodoc", "1");
@@ -335,6 +363,11 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public Handle_TCollect
 %extend Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
 	TopOpeBRepBuild_ListNodeOfListOfListOfLoop* GetObject() {
 	return (TopOpeBRepBuild_ListNodeOfListOfListOfLoop*)$self->Access();
+	}
+};
+%extend Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
+	~Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop\n");
 	}
 };
 
@@ -467,13 +500,16 @@ class TopOpeBRepBuild_Loop : public MMgt_TShared {
 		virtual		void Dump() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_Loop();
 
 };
 %extend TopOpeBRepBuild_Loop {
 	Handle_TopOpeBRepBuild_Loop GetHandle() {
 	return *(Handle_TopOpeBRepBuild_Loop*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_Loop {
+	~TopOpeBRepBuild_Loop() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_Loop\n");
 	}
 };
 
@@ -500,13 +536,16 @@ class TopOpeBRepBuild_Pave : public TopOpeBRepBuild_Loop {
 		void Parameter(const Standard_Real Par);
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Kind & InterferenceType();
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_Pave();
 
 };
 %extend TopOpeBRepBuild_Pave {
 	Handle_TopOpeBRepBuild_Pave GetHandle() {
 	return *(Handle_TopOpeBRepBuild_Pave*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_Pave {
+	~TopOpeBRepBuild_Pave() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_Pave\n");
 	}
 };
 
@@ -901,13 +940,16 @@ class TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 		TopOpeBRepBuild_ListOfLoop & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_ListNodeOfListOfListOfLoop();
 
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
 	Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop GetHandle() {
 	return *(Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
+	~TopOpeBRepBuild_ListNodeOfListOfListOfLoop() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ListNodeOfListOfListOfLoop\n");
 	}
 };
 
@@ -1060,13 +1102,16 @@ class TopOpeBRepBuild_ListNodeOfListOfPave : public TCollection_MapNode {
 		Handle_TopOpeBRepBuild_Pave & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_ListNodeOfListOfPave();
 
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfPave {
 	Handle_TopOpeBRepBuild_ListNodeOfListOfPave GetHandle() {
 	return *(Handle_TopOpeBRepBuild_ListNodeOfListOfPave*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_ListNodeOfListOfPave {
+	~TopOpeBRepBuild_ListNodeOfListOfPave() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ListNodeOfListOfPave\n");
 	}
 };
 
@@ -1653,13 +1698,16 @@ class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
 		TopOpeBRepBuild_Builder & ChangeBuilder();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_HBuilder();
 
 };
 %extend TopOpeBRepBuild_HBuilder {
 	Handle_TopOpeBRepBuild_HBuilder GetHandle() {
 	return *(Handle_TopOpeBRepBuild_HBuilder*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_HBuilder {
+	~TopOpeBRepBuild_HBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_HBuilder\n");
 	}
 };
 
@@ -1802,13 +1850,16 @@ class TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : publ
 		TopOpeBRepBuild_VertexInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo();
 
 };
 %extend TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
 	Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo GetHandle() {
 	return *(Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
+	~TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo\n");
 	}
 };
 
@@ -1821,13 +1872,16 @@ class TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public TCollection_MapN
 		TopOpeBRepBuild_ShapeListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape();
 
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
 	Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape GetHandle() {
 	return *(Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
+	~TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape\n");
 	}
 };
 
@@ -1950,13 +2004,16 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape : public
 		TopOpeBRepBuild_ListOfShapeListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape();
 
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape {
 	Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape GetHandle() {
 	return *(Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape {
+	~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape\n");
 	}
 };
 
@@ -1995,13 +2052,16 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNo
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal();
 
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
 	Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal GetHandle() {
 	return *(Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
+	~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal\n");
 	}
 };
 
@@ -2346,13 +2406,16 @@ class TopOpeBRepBuild_ListNodeOfListOfLoop : public TCollection_MapNode {
 		Handle_TopOpeBRepBuild_Loop & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_ListNodeOfListOfLoop();
 
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfLoop {
 	Handle_TopOpeBRepBuild_ListNodeOfListOfLoop GetHandle() {
 	return *(Handle_TopOpeBRepBuild_ListNodeOfListOfLoop*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_ListNodeOfListOfLoop {
+	~TopOpeBRepBuild_ListNodeOfListOfLoop() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ListNodeOfListOfLoop\n");
 	}
 };
 
@@ -2453,13 +2516,16 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public TCollection_Ma
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger();
 
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
 	Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger GetHandle() {
 	return *(Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger*) &$self;
+	}
+};
+%extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
+	~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger\n");
 	}
 };
 

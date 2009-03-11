@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IGESGeom_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESGeom_SpecificModule();
-		%feature("autodoc", "1");
 		Handle_IGESGeom_SpecificModule();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SpecificModule(const Handle_IGESGeom_SpecificModule &aHandle);
@@ -118,12 +116,15 @@ class Handle_IGESGeom_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESGeom_SpecificModule*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_SpecificModule {
+	~Handle_IGESGeom_SpecificModule() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_SpecificModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_CircularArc;
 class Handle_IGESGeom_CircularArc : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_CircularArc();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_CircularArc();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_IGESGeom_CircularArc : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_CircularArc*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_CircularArc {
+	~Handle_IGESGeom_CircularArc() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_CircularArc\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_SurfaceOfRevolution;
 class Handle_IGESGeom_SurfaceOfRevolution : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_IGESGeom_SurfaceOfRevolution : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_SurfaceOfRevolution*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_SurfaceOfRevolution {
+	~Handle_IGESGeom_SurfaceOfRevolution() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_SurfaceOfRevolution\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_Boundary;
 class Handle_IGESGeom_Boundary : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_Boundary();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Boundary();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_IGESGeom_Boundary : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_Boundary*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_Boundary {
+	~Handle_IGESGeom_Boundary() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_Boundary\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_HArray1OfTransformationMatrix;
 class Handle_IGESGeom_HArray1OfTransformationMatrix : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_HArray1OfTransformationMatrix();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_HArray1OfTransformationMatrix();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_IGESGeom_HArray1OfTransformationMatrix : public Handle_MMgt_TShared
 	return (IGESGeom_HArray1OfTransformationMatrix*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_HArray1OfTransformationMatrix {
+	~Handle_IGESGeom_HArray1OfTransformationMatrix() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_HArray1OfTransformationMatrix\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_CurveOnSurface;
 class Handle_IGESGeom_CurveOnSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_CurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_CurveOnSurface();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_IGESGeom_CurveOnSurface : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_CurveOnSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_CurveOnSurface {
+	~Handle_IGESGeom_CurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_CurveOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_HArray1OfBoundary;
 class Handle_IGESGeom_HArray1OfBoundary : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_HArray1OfBoundary();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_HArray1OfBoundary();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_IGESGeom_HArray1OfBoundary : public Handle_MMgt_TShared {
 	return (IGESGeom_HArray1OfBoundary*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_HArray1OfBoundary {
+	~Handle_IGESGeom_HArray1OfBoundary() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_HArray1OfBoundary\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_CompositeCurve;
 class Handle_IGESGeom_CompositeCurve : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_CompositeCurve();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_CompositeCurve();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_IGESGeom_CompositeCurve : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_CompositeCurve*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_CompositeCurve {
+	~Handle_IGESGeom_CompositeCurve() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_CompositeCurve\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_HArray1OfCurveOnSurface;
 class Handle_IGESGeom_HArray1OfCurveOnSurface : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_HArray1OfCurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_HArray1OfCurveOnSurface();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_IGESGeom_HArray1OfCurveOnSurface : public Handle_MMgt_TShared {
 	return (IGESGeom_HArray1OfCurveOnSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_HArray1OfCurveOnSurface {
+	~Handle_IGESGeom_HArray1OfCurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_HArray1OfCurveOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_Flash;
 class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_Flash();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Flash();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_Flash*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_Flash {
+	~Handle_IGESGeom_Flash() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_Flash\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_Line;
 class Handle_IGESGeom_Line : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_Line();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Line();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_IGESGeom_Line : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_Line*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_Line {
+	~Handle_IGESGeom_Line() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_Line\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_TransformationMatrix;
 class Handle_IGESGeom_TransformationMatrix : public Handle_IGESData_TransfEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_TransformationMatrix();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TransformationMatrix();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_IGESGeom_TransformationMatrix : public Handle_IGESData_TransfEntity
 	return (IGESGeom_TransformationMatrix*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_TransformationMatrix {
+	~Handle_IGESGeom_TransformationMatrix() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_TransformationMatrix\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_RuledSurface;
 class Handle_IGESGeom_RuledSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_RuledSurface();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_RuledSurface();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_IGESGeom_RuledSurface : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_RuledSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_RuledSurface {
+	~Handle_IGESGeom_RuledSurface() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_RuledSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_Plane;
 class Handle_IGESGeom_Plane : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_Plane();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Plane();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_IGESGeom_Plane : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_Plane*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_Plane {
+	~Handle_IGESGeom_Plane() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_Plane\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_BSplineCurve;
 class Handle_IGESGeom_BSplineCurve : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_BSplineCurve();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_BSplineCurve();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_IGESGeom_BSplineCurve : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_BSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_BSplineCurve {
+	~Handle_IGESGeom_BSplineCurve() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_BSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_BoundedSurface;
 class Handle_IGESGeom_BoundedSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_BoundedSurface();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_BoundedSurface();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_IGESGeom_BoundedSurface : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_BoundedSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_BoundedSurface {
+	~Handle_IGESGeom_BoundedSurface() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_BoundedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_Protocol;
 class Handle_IGESGeom_Protocol : public Handle_IGESData_Protocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_Protocol();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Protocol();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_IGESGeom_Protocol : public Handle_IGESData_Protocol {
 	return (IGESGeom_Protocol*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_Protocol {
+	~Handle_IGESGeom_Protocol() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_Protocol\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_BSplineSurface;
 class Handle_IGESGeom_BSplineSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_BSplineSurface();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_BSplineSurface();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_IGESGeom_BSplineSurface : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_BSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_BSplineSurface {
+	~Handle_IGESGeom_BSplineSurface() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_BSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_ConicArc;
 class Handle_IGESGeom_ConicArc : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_ConicArc();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_ConicArc();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_IGESGeom_ConicArc : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_ConicArc*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_ConicArc {
+	~Handle_IGESGeom_ConicArc() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_ConicArc\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_OffsetSurface;
 class Handle_IGESGeom_OffsetSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_OffsetSurface();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_OffsetSurface();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_IGESGeom_OffsetSurface : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_OffsetSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_OffsetSurface {
+	~Handle_IGESGeom_OffsetSurface() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_OffsetSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_TrimmedSurface;
 class Handle_IGESGeom_TrimmedSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_TrimmedSurface();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TrimmedSurface();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_IGESGeom_TrimmedSurface : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_TrimmedSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_TrimmedSurface {
+	~Handle_IGESGeom_TrimmedSurface() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_TrimmedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_SplineCurve;
 class Handle_IGESGeom_SplineCurve : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_SplineCurve();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SplineCurve();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_IGESGeom_SplineCurve : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_SplineCurve*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_SplineCurve {
+	~Handle_IGESGeom_SplineCurve() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_SplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_ReadWriteModule;
 class Handle_IGESGeom_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_ReadWriteModule();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_ReadWriteModule();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_IGESGeom_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	return (IGESGeom_ReadWriteModule*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_ReadWriteModule {
+	~Handle_IGESGeom_ReadWriteModule() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_Direction;
 class Handle_IGESGeom_Direction : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_Direction();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Direction();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_IGESGeom_Direction : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_Direction*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_Direction {
+	~Handle_IGESGeom_Direction() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_Direction\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_Point;
 class Handle_IGESGeom_Point : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_Point();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Point();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_IGESGeom_Point : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_Point*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_Point {
+	~Handle_IGESGeom_Point() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_Point\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_SplineSurface;
 class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_SplineSurface();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SplineSurface();
 		%feature("autodoc", "1");
@@ -643,12 +716,15 @@ class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_SplineSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_SplineSurface {
+	~Handle_IGESGeom_SplineSurface() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_SplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_CopiousData;
 class Handle_IGESGeom_CopiousData : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_CopiousData();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_CopiousData();
 		%feature("autodoc", "1");
@@ -664,12 +740,15 @@ class Handle_IGESGeom_CopiousData : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_CopiousData*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_CopiousData {
+	~Handle_IGESGeom_CopiousData() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_CopiousData\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_TabulatedCylinder;
 class Handle_IGESGeom_TabulatedCylinder : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_TabulatedCylinder();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TabulatedCylinder();
 		%feature("autodoc", "1");
@@ -685,12 +764,15 @@ class Handle_IGESGeom_TabulatedCylinder : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_TabulatedCylinder*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_TabulatedCylinder {
+	~Handle_IGESGeom_TabulatedCylinder() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_TabulatedCylinder\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_OffsetCurve;
 class Handle_IGESGeom_OffsetCurve : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_OffsetCurve();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_OffsetCurve();
 		%feature("autodoc", "1");
@@ -706,12 +788,15 @@ class Handle_IGESGeom_OffsetCurve : public Handle_IGESData_IGESEntity {
 	return (IGESGeom_OffsetCurve*)$self->Access();
 	}
 };
+%extend Handle_IGESGeom_OffsetCurve {
+	~Handle_IGESGeom_OffsetCurve() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_OffsetCurve\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGeom_GeneralModule;
 class Handle_IGESGeom_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGeom_GeneralModule();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_GeneralModule();
 		%feature("autodoc", "1");
@@ -725,6 +810,11 @@ class Handle_IGESGeom_GeneralModule : public Handle_IGESData_GeneralModule {
 %extend Handle_IGESGeom_GeneralModule {
 	IGESGeom_GeneralModule* GetObject() {
 	return (IGESGeom_GeneralModule*)$self->Access();
+	}
+};
+%extend Handle_IGESGeom_GeneralModule {
+	~Handle_IGESGeom_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_IGESGeom_GeneralModule\n");
 	}
 };
 
@@ -741,13 +831,16 @@ class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
 		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_ReadWriteModule();
 
 };
 %extend IGESGeom_ReadWriteModule {
 	Handle_IGESGeom_ReadWriteModule GetHandle() {
 	return *(Handle_IGESGeom_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESGeom_ReadWriteModule {
+	~IGESGeom_ReadWriteModule() {
+	printf("Call custom destructor for instance of IGESGeom_ReadWriteModule\n");
 	}
 };
 
@@ -762,13 +855,16 @@ class IGESGeom_SpecificModule : public IGESData_SpecificModule {
 		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_SpecificModule();
 
 };
 %extend IGESGeom_SpecificModule {
 	Handle_IGESGeom_SpecificModule GetHandle() {
 	return *(Handle_IGESGeom_SpecificModule*) &$self;
+	}
+};
+%extend IGESGeom_SpecificModule {
+	~IGESGeom_SpecificModule() {
+	printf("Call custom destructor for instance of IGESGeom_SpecificModule\n");
 	}
 };
 
@@ -789,13 +885,16 @@ class IGESGeom_SurfaceOfRevolution : public IGESData_IGESEntity {
 		Standard_Real EndAngle() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_SurfaceOfRevolution();
 
 };
 %extend IGESGeom_SurfaceOfRevolution {
 	Handle_IGESGeom_SurfaceOfRevolution GetHandle() {
 	return *(Handle_IGESGeom_SurfaceOfRevolution*) &$self;
+	}
+};
+%extend IGESGeom_SurfaceOfRevolution {
+	~IGESGeom_SurfaceOfRevolution() {
+	printf("Call custom destructor for instance of IGESGeom_SurfaceOfRevolution\n");
 	}
 };
 
@@ -814,13 +913,16 @@ class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
 		gp_Pnt TransformedEndPoint() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_TabulatedCylinder();
 
 };
 %extend IGESGeom_TabulatedCylinder {
 	Handle_IGESGeom_TabulatedCylinder GetHandle() {
 	return *(Handle_IGESGeom_TabulatedCylinder*) &$self;
+	}
+};
+%extend IGESGeom_TabulatedCylinder {
+	~IGESGeom_TabulatedCylinder() {
+	printf("Call custom destructor for instance of IGESGeom_TabulatedCylinder\n");
 	}
 };
 
@@ -851,13 +953,16 @@ class IGESGeom_Boundary : public IGESData_IGESEntity {
 		Handle_IGESData_IGESEntity ParameterCurve(const Standard_Integer Index, const Standard_Integer Num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_Boundary();
 
 };
 %extend IGESGeom_Boundary {
 	Handle_IGESGeom_Boundary GetHandle() {
 	return *(Handle_IGESGeom_Boundary*) &$self;
+	}
+};
+%extend IGESGeom_Boundary {
+	~IGESGeom_Boundary() {
+	printf("Call custom destructor for instance of IGESGeom_Boundary\n");
 	}
 };
 
@@ -874,13 +979,16 @@ class IGESGeom_Direction : public IGESData_IGESEntity {
 		gp_Vec TransformedValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_Direction();
 
 };
 %extend IGESGeom_Direction {
 	Handle_IGESGeom_Direction GetHandle() {
 	return *(Handle_IGESGeom_Direction*) &$self;
+	}
+};
+%extend IGESGeom_Direction {
+	~IGESGeom_Direction() {
+	printf("Call custom destructor for instance of IGESGeom_Direction\n");
 	}
 };
 
@@ -929,13 +1037,16 @@ class IGESGeom_Line : public IGESData_IGESEntity {
 		gp_Pnt TransformedEndPoint() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_Line();
 
 };
 %extend IGESGeom_Line {
 	Handle_IGESGeom_Line GetHandle() {
 	return *(Handle_IGESGeom_Line*) &$self;
+	}
+};
+%extend IGESGeom_Line {
+	~IGESGeom_Line() {
+	printf("Call custom destructor for instance of IGESGeom_Line\n");
 	}
 };
 
@@ -964,13 +1075,16 @@ class IGESGeom_Flash : public IGESData_IGESEntity {
 		Standard_Boolean HasReferenceEntity() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_Flash();
 
 };
 %extend IGESGeom_Flash {
 	Handle_IGESGeom_Flash GetHandle() {
 	return *(Handle_IGESGeom_Flash*) &$self;
+	}
+};
+%extend IGESGeom_Flash {
+	~IGESGeom_Flash() {
+	printf("Call custom destructor for instance of IGESGeom_Flash\n");
 	}
 };
 
@@ -1017,13 +1131,16 @@ class IGESGeom_CurveOnSurface : public IGESData_IGESEntity {
 		Standard_Integer PreferenceMode() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_CurveOnSurface();
 
 };
 %extend IGESGeom_CurveOnSurface {
 	Handle_IGESGeom_CurveOnSurface GetHandle() {
 	return *(Handle_IGESGeom_CurveOnSurface*) &$self;
+	}
+};
+%extend IGESGeom_CurveOnSurface {
+	~IGESGeom_CurveOnSurface() {
+	printf("Call custom destructor for instance of IGESGeom_CurveOnSurface\n");
 	}
 };
 
@@ -1072,13 +1189,16 @@ class IGESGeom_RuledSurface : public IGESData_IGESEntity {
 		Standard_Boolean IsDevelopable() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_RuledSurface();
 
 };
 %extend IGESGeom_RuledSurface {
 	Handle_IGESGeom_RuledSurface GetHandle() {
 	return *(Handle_IGESGeom_RuledSurface*) &$self;
+	}
+};
+%extend IGESGeom_RuledSurface {
+	~IGESGeom_RuledSurface() {
+	printf("Call custom destructor for instance of IGESGeom_RuledSurface\n");
 	}
 };
 
@@ -1201,13 +1321,16 @@ class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 		Handle_IGESData_IGESEntity Surface() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_OffsetSurface();
 
 };
 %extend IGESGeom_OffsetSurface {
 	Handle_IGESGeom_OffsetSurface GetHandle() {
 	return *(Handle_IGESGeom_OffsetSurface*) &$self;
+	}
+};
+%extend IGESGeom_OffsetSurface {
+	~IGESGeom_OffsetSurface() {
+	printf("Call custom destructor for instance of IGESGeom_OffsetSurface\n");
 	}
 };
 
@@ -1264,13 +1387,16 @@ class IGESGeom_BoundedSurface : public IGESData_IGESEntity {
 		Handle_IGESGeom_Boundary Boundary(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_BoundedSurface();
 
 };
 %extend IGESGeom_BoundedSurface {
 	Handle_IGESGeom_BoundedSurface GetHandle() {
 	return *(Handle_IGESGeom_BoundedSurface*) &$self;
+	}
+};
+%extend IGESGeom_BoundedSurface {
+	~IGESGeom_BoundedSurface() {
+	printf("Call custom destructor for instance of IGESGeom_BoundedSurface\n");
 	}
 };
 
@@ -1339,13 +1465,16 @@ class IGESGeom_HArray1OfBoundary : public MMgt_TShared {
 		IGESGeom_Array1OfBoundary & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_HArray1OfBoundary();
 
 };
 %extend IGESGeom_HArray1OfBoundary {
 	Handle_IGESGeom_HArray1OfBoundary GetHandle() {
 	return *(Handle_IGESGeom_HArray1OfBoundary*) &$self;
+	}
+};
+%extend IGESGeom_HArray1OfBoundary {
+	~IGESGeom_HArray1OfBoundary() {
+	printf("Call custom destructor for instance of IGESGeom_HArray1OfBoundary\n");
 	}
 };
 
@@ -1442,13 +1571,16 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 		void ComputedDefinition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_ConicArc();
 
 };
 %extend IGESGeom_ConicArc {
 	Handle_IGESGeom_ConicArc GetHandle() {
 	return *(Handle_IGESGeom_ConicArc*) &$self;
+	}
+};
+%extend IGESGeom_ConicArc {
+	~IGESGeom_ConicArc() {
+	printf("Call custom destructor for instance of IGESGeom_ConicArc\n");
 	}
 };
 
@@ -1481,13 +1613,16 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 		Standard_Real SymbolSize() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_Plane();
 
 };
 %extend IGESGeom_Plane {
 	Handle_IGESGeom_Plane GetHandle() {
 	return *(Handle_IGESGeom_Plane*) &$self;
+	}
+};
+%extend IGESGeom_Plane {
+	~IGESGeom_Plane() {
+	printf("Call custom destructor for instance of IGESGeom_Plane\n");
 	}
 };
 
@@ -1558,13 +1693,16 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 		gp_XYZ Normal() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_BSplineCurve();
 
 };
 %extend IGESGeom_BSplineCurve {
 	Handle_IGESGeom_BSplineCurve GetHandle() {
 	return *(Handle_IGESGeom_BSplineCurve*) &$self;
+	}
+};
+%extend IGESGeom_BSplineCurve {
+	~IGESGeom_BSplineCurve() {
+	printf("Call custom destructor for instance of IGESGeom_BSplineCurve\n");
 	}
 };
 
@@ -1597,13 +1735,16 @@ class IGESGeom_SplineSurface : public IGESData_IGESEntity {
 		void Polynomials(Handle_IGESBasic_HArray2OfHArray1OfReal & XCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & YCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & ZCoef) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_SplineSurface();
 
 };
 %extend IGESGeom_SplineSurface {
 	Handle_IGESGeom_SplineSurface GetHandle() {
 	return *(Handle_IGESGeom_SplineSurface*) &$self;
+	}
+};
+%extend IGESGeom_SplineSurface {
+	~IGESGeom_SplineSurface() {
+	printf("Call custom destructor for instance of IGESGeom_SplineSurface\n");
 	}
 };
 
@@ -1644,13 +1785,16 @@ class IGESGeom_CompositeCurve : public IGESData_IGESEntity {
 		Handle_IGESData_IGESEntity Curve(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_CompositeCurve();
 
 };
 %extend IGESGeom_CompositeCurve {
 	Handle_IGESGeom_CompositeCurve GetHandle() {
 	return *(Handle_IGESGeom_CompositeCurve*) &$self;
+	}
+};
+%extend IGESGeom_CompositeCurve {
+	~IGESGeom_CompositeCurve() {
+	printf("Call custom destructor for instance of IGESGeom_CompositeCurve\n");
 	}
 };
 
@@ -1769,13 +1913,16 @@ class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
 		Standard_Real VMax() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_BSplineSurface();
 
 };
 %extend IGESGeom_BSplineSurface {
 	Handle_IGESGeom_BSplineSurface GetHandle() {
 	return *(Handle_IGESGeom_BSplineSurface*) &$self;
+	}
+};
+%extend IGESGeom_BSplineSurface {
+	~IGESGeom_BSplineSurface() {
+	printf("Call custom destructor for instance of IGESGeom_BSplineSurface\n");
 	}
 };
 
@@ -1822,13 +1969,16 @@ class IGESGeom_GeneralModule : public IGESData_GeneralModule {
 		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_GeneralModule();
 
 };
 %extend IGESGeom_GeneralModule {
 	Handle_IGESGeom_GeneralModule GetHandle() {
 	return *(Handle_IGESGeom_GeneralModule*) &$self;
+	}
+};
+%extend IGESGeom_GeneralModule {
+	~IGESGeom_GeneralModule() {
+	printf("Call custom destructor for instance of IGESGeom_GeneralModule\n");
 	}
 };
 
@@ -1853,13 +2003,16 @@ class IGESGeom_TrimmedSurface : public IGESData_IGESEntity {
 		Handle_IGESGeom_CurveOnSurface InnerContour(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_TrimmedSurface();
 
 };
 %extend IGESGeom_TrimmedSurface {
 	Handle_IGESGeom_TrimmedSurface GetHandle() {
 	return *(Handle_IGESGeom_TrimmedSurface*) &$self;
+	}
+};
+%extend IGESGeom_TrimmedSurface {
+	~IGESGeom_TrimmedSurface() {
+	printf("Call custom destructor for instance of IGESGeom_TrimmedSurface\n");
 	}
 };
 
@@ -1902,13 +2055,16 @@ class IGESGeom_TransformationMatrix : public IGESData_TransfEntity {
 		virtual		gp_GTrsf Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_TransformationMatrix();
 
 };
 %extend IGESGeom_TransformationMatrix {
 	Handle_IGESGeom_TransformationMatrix GetHandle() {
 	return *(Handle_IGESGeom_TransformationMatrix*) &$self;
+	}
+};
+%extend IGESGeom_TransformationMatrix {
+	~IGESGeom_TransformationMatrix() {
+	printf("Call custom destructor for instance of IGESGeom_TransformationMatrix\n");
 	}
 };
 
@@ -1939,13 +2095,16 @@ class IGESGeom_HArray1OfCurveOnSurface : public MMgt_TShared {
 		IGESGeom_Array1OfCurveOnSurface & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_HArray1OfCurveOnSurface();
 
 };
 %extend IGESGeom_HArray1OfCurveOnSurface {
 	Handle_IGESGeom_HArray1OfCurveOnSurface GetHandle() {
 	return *(Handle_IGESGeom_HArray1OfCurveOnSurface*) &$self;
+	}
+};
+%extend IGESGeom_HArray1OfCurveOnSurface {
+	~IGESGeom_HArray1OfCurveOnSurface() {
+	printf("Call custom destructor for instance of IGESGeom_HArray1OfCurveOnSurface\n");
 	}
 };
 
@@ -1984,13 +2143,16 @@ class IGESGeom_CopiousData : public IGESData_IGESEntity {
 		gp_Vec TransformedVector(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_CopiousData();
 
 };
 %extend IGESGeom_CopiousData {
 	Handle_IGESGeom_CopiousData GetHandle() {
 	return *(Handle_IGESGeom_CopiousData*) &$self;
+	}
+};
+%extend IGESGeom_CopiousData {
+	~IGESGeom_CopiousData() {
+	printf("Call custom destructor for instance of IGESGeom_CopiousData\n");
 	}
 };
 
@@ -2059,13 +2221,16 @@ class IGESGeom_Point : public IGESData_IGESEntity {
 		Handle_IGESBasic_SubfigureDef DisplaySymbol() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_Point();
 
 };
 %extend IGESGeom_Point {
 	Handle_IGESGeom_Point GetHandle() {
 	return *(Handle_IGESGeom_Point*) &$self;
+	}
+};
+%extend IGESGeom_Point {
+	~IGESGeom_Point() {
+	printf("Call custom destructor for instance of IGESGeom_Point\n");
 	}
 };
 
@@ -2100,13 +2265,16 @@ class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 		void ZValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_SplineCurve();
 
 };
 %extend IGESGeom_SplineCurve {
 	Handle_IGESGeom_SplineCurve GetHandle() {
 	return *(Handle_IGESGeom_SplineCurve*) &$self;
+	}
+};
+%extend IGESGeom_SplineCurve {
+	~IGESGeom_SplineCurve() {
+	printf("Call custom destructor for instance of IGESGeom_SplineCurve\n");
 	}
 };
 
@@ -2161,13 +2329,16 @@ class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
 		IGESGeom_Array1OfTransformationMatrix & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_HArray1OfTransformationMatrix();
 
 };
 %extend IGESGeom_HArray1OfTransformationMatrix {
 	Handle_IGESGeom_HArray1OfTransformationMatrix GetHandle() {
 	return *(Handle_IGESGeom_HArray1OfTransformationMatrix*) &$self;
+	}
+};
+%extend IGESGeom_HArray1OfTransformationMatrix {
+	~IGESGeom_HArray1OfTransformationMatrix() {
+	printf("Call custom destructor for instance of IGESGeom_HArray1OfTransformationMatrix\n");
 	}
 };
 
@@ -2228,13 +2399,16 @@ class IGESGeom_CircularArc : public IGESData_IGESEntity {
 		Standard_Boolean IsClosed() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_CircularArc();
 
 };
 %extend IGESGeom_CircularArc {
 	Handle_IGESGeom_CircularArc GetHandle() {
 	return *(Handle_IGESGeom_CircularArc*) &$self;
+	}
+};
+%extend IGESGeom_CircularArc {
+	~IGESGeom_CircularArc() {
+	printf("Call custom destructor for instance of IGESGeom_CircularArc\n");
 	}
 };
 
@@ -2411,12 +2585,15 @@ class IGESGeom_OffsetCurve : public IGESData_IGESEntity {
 		Standard_Real EndParameter() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGeom_OffsetCurve();
 
 };
 %extend IGESGeom_OffsetCurve {
 	Handle_IGESGeom_OffsetCurve GetHandle() {
 	return *(Handle_IGESGeom_OffsetCurve*) &$self;
+	}
+};
+%extend IGESGeom_OffsetCurve {
+	~IGESGeom_OffsetCurve() {
+	printf("Call custom destructor for instance of IGESGeom_OffsetCurve\n");
 	}
 };

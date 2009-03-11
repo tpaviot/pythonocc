@@ -114,8 +114,6 @@ enum Approx_Status {
 class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Approx_CurvlinFunc();
-		%feature("autodoc", "1");
 		Handle_Approx_CurvlinFunc();
 		%feature("autodoc", "1");
 		Handle_Approx_CurvlinFunc(const Handle_Approx_CurvlinFunc &aHandle);
@@ -130,12 +128,15 @@ class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 	return (Approx_CurvlinFunc*)$self->Access();
 	}
 };
+%extend Handle_Approx_CurvlinFunc {
+	~Handle_Approx_CurvlinFunc() {
+	printf("Call custom destructor for instance of Handle_Approx_CurvlinFunc\n");
+	}
+};
 
 %nodefaultctor Handle_Approx_HArray1OfAdHSurface;
 class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Approx_HArray1OfAdHSurface();
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfAdHSurface();
 		%feature("autodoc", "1");
@@ -151,12 +152,15 @@ class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 	return (Approx_HArray1OfAdHSurface*)$self->Access();
 	}
 };
+%extend Handle_Approx_HArray1OfAdHSurface {
+	~Handle_Approx_HArray1OfAdHSurface() {
+	printf("Call custom destructor for instance of Handle_Approx_HArray1OfAdHSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Approx_SweepFunction;
 class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Approx_SweepFunction();
 		%feature("autodoc", "1");
 		Handle_Approx_SweepFunction();
 		%feature("autodoc", "1");
@@ -172,12 +176,15 @@ class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
 	return (Approx_SweepFunction*)$self->Access();
 	}
 };
+%extend Handle_Approx_SweepFunction {
+	~Handle_Approx_SweepFunction() {
+	printf("Call custom destructor for instance of Handle_Approx_SweepFunction\n");
+	}
+};
 
 %nodefaultctor Handle_Approx_HArray1OfGTrsf2d;
 class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Approx_HArray1OfGTrsf2d();
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfGTrsf2d();
 		%feature("autodoc", "1");
@@ -193,12 +200,15 @@ class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 	return (Approx_HArray1OfGTrsf2d*)$self->Access();
 	}
 };
+%extend Handle_Approx_HArray1OfGTrsf2d {
+	~Handle_Approx_HArray1OfGTrsf2d() {
+	printf("Call custom destructor for instance of Handle_Approx_HArray1OfGTrsf2d\n");
+	}
+};
 
 %nodefaultctor Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d;
 class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d();
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d();
 		%feature("autodoc", "1");
@@ -214,12 +224,15 @@ class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TColle
 	return (Approx_SequenceNodeOfSequenceOfArray1OfPnt2d*)$self->Access();
 	}
 };
+%extend Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
+	~Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d() {
+	printf("Call custom destructor for instance of Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d\n");
+	}
+};
 
 %nodefaultctor Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal;
 class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal();
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal();
 		%feature("autodoc", "1");
@@ -233,6 +246,11 @@ class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TColle
 %extend Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal {
 	Approx_SequenceNodeOfSequenceOfHArray1OfReal* GetObject() {
 	return (Approx_SequenceNodeOfSequenceOfHArray1OfReal*)$self->Access();
+	}
+};
+%extend Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal {
+	~Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal() {
+	printf("Call custom destructor for instance of Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");
 	}
 };
 
@@ -383,13 +401,16 @@ class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode 
 		Handle_TColgp_HArray1OfPnt2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Approx_SequenceNodeOfSequenceOfArray1OfPnt2d();
 
 };
 %extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
 	Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d GetHandle() {
 	return *(Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d*) &$self;
+	}
+};
+%extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
+	~Approx_SequenceNodeOfSequenceOfArray1OfPnt2d() {
+	printf("Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfArray1OfPnt2d\n");
 	}
 };
 
@@ -478,13 +499,16 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 		Approx_Array1OfAdHSurface & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Approx_HArray1OfAdHSurface();
 
 };
 %extend Approx_HArray1OfAdHSurface {
 	Handle_Approx_HArray1OfAdHSurface GetHandle() {
 	return *(Handle_Approx_HArray1OfAdHSurface*) &$self;
+	}
+};
+%extend Approx_HArray1OfAdHSurface {
+	~Approx_HArray1OfAdHSurface() {
+	printf("Call custom destructor for instance of Approx_HArray1OfAdHSurface\n");
 	}
 };
 
@@ -532,6 +556,11 @@ class Approx_SweepFunction : public MMgt_TShared {
 %extend Approx_SweepFunction {
 	Handle_Approx_SweepFunction GetHandle() {
 	return *(Handle_Approx_SweepFunction*) &$self;
+	}
+};
+%extend Approx_SweepFunction {
+	~Approx_SweepFunction() {
+	printf("Call custom destructor for instance of Approx_SweepFunction\n");
 	}
 };
 
@@ -594,13 +623,16 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 		Approx_Array1OfGTrsf2d & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Approx_HArray1OfGTrsf2d();
 
 };
 %extend Approx_HArray1OfGTrsf2d {
 	Handle_Approx_HArray1OfGTrsf2d GetHandle() {
 	return *(Handle_Approx_HArray1OfGTrsf2d*) &$self;
+	}
+};
+%extend Approx_HArray1OfGTrsf2d {
+	~Approx_HArray1OfGTrsf2d() {
+	printf("Call custom destructor for instance of Approx_HArray1OfGTrsf2d\n");
 	}
 };
 
@@ -635,13 +667,16 @@ class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode 
 		Handle_TColStd_HArray1OfReal & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Approx_SequenceNodeOfSequenceOfHArray1OfReal();
 
 };
 %extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
 	Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal GetHandle() {
 	return *(Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal*) &$self;
+	}
+};
+%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
+	~Approx_SequenceNodeOfSequenceOfHArray1OfReal() {
+	printf("Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");
 	}
 };
 
@@ -740,13 +775,16 @@ class Approx_CurvlinFunc : public MMgt_TShared {
 		Standard_Boolean EvalCase3(const Standard_Real S, const Standard_Integer Order, TColStd_Array1OfReal & Result);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Approx_CurvlinFunc();
 
 };
 %extend Approx_CurvlinFunc {
 	Handle_Approx_CurvlinFunc GetHandle() {
 	return *(Handle_Approx_CurvlinFunc*) &$self;
+	}
+};
+%extend Approx_CurvlinFunc {
+	~Approx_CurvlinFunc() {
+	printf("Call custom destructor for instance of Approx_CurvlinFunc\n");
 	}
 };
 

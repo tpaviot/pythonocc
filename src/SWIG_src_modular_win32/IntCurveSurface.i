@@ -108,8 +108,6 @@ enum IntCurveSurface_TransitionOnCurve {
 class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg();
-		%feature("autodoc", "1");
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg();
 		%feature("autodoc", "1");
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg &aHandle);
@@ -124,12 +122,15 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollec
 	return (IntCurveSurface_SequenceNodeOfSequenceOfSeg*)$self->Access();
 	}
 };
+%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg {
+	~Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg() {
+	printf("Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg\n");
+	}
+};
 
 %nodefaultctor Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt;
 class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt();
 		%feature("autodoc", "1");
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt();
 		%feature("autodoc", "1");
@@ -143,6 +144,11 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollec
 %extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
 	IntCurveSurface_SequenceNodeOfSequenceOfPnt* GetObject() {
 	return (IntCurveSurface_SequenceNodeOfSequenceOfPnt*)$self->Access();
+	}
+};
+%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	~Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt() {
+	printf("Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");
 	}
 };
 
@@ -605,13 +611,16 @@ class IntCurveSurface_SequenceNodeOfSequenceOfSeg : public TCollection_SeqNode {
 		IntCurveSurface_IntersectionSegment & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntCurveSurface_SequenceNodeOfSequenceOfSeg();
 
 };
 %extend IntCurveSurface_SequenceNodeOfSequenceOfSeg {
 	Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg GetHandle() {
 	return *(Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg*) &$self;
+	}
+};
+%extend IntCurveSurface_SequenceNodeOfSequenceOfSeg {
+	~IntCurveSurface_SequenceNodeOfSequenceOfSeg() {
+	printf("Call custom destructor for instance of IntCurveSurface_SequenceNodeOfSequenceOfSeg\n");
 	}
 };
 
@@ -740,12 +749,15 @@ class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 		IntCurveSurface_IntersectionPoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntCurveSurface_SequenceNodeOfSequenceOfPnt();
 
 };
 %extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
 	Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt GetHandle() {
 	return *(Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt*) &$self;
+	}
+};
+%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	~IntCurveSurface_SequenceNodeOfSequenceOfPnt() {
+	printf("Call custom destructor for instance of IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");
 	}
 };

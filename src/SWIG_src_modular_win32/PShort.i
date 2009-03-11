@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PShort_HArray2OfShortReal : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PShort_HArray2OfShortReal();
-		%feature("autodoc", "1");
 		Handle_PShort_HArray2OfShortReal();
 		%feature("autodoc", "1");
 		Handle_PShort_HArray2OfShortReal(const Handle_PShort_HArray2OfShortReal &aHandle);
@@ -118,12 +116,15 @@ class Handle_PShort_HArray2OfShortReal : public Handle_Standard_Persistent {
 	return (PShort_HArray2OfShortReal*)$self->Access();
 	}
 };
+%extend Handle_PShort_HArray2OfShortReal {
+	~Handle_PShort_HArray2OfShortReal() {
+	printf("Call custom destructor for instance of Handle_PShort_HArray2OfShortReal\n");
+	}
+};
 
 %nodefaultctor Handle_PShort_HSequenceOfShortReal;
 class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PShort_HSequenceOfShortReal();
 		%feature("autodoc", "1");
 		Handle_PShort_HSequenceOfShortReal();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
 	return (PShort_HSequenceOfShortReal*)$self->Access();
 	}
 };
+%extend Handle_PShort_HSequenceOfShortReal {
+	~Handle_PShort_HSequenceOfShortReal() {
+	printf("Call custom destructor for instance of Handle_PShort_HSequenceOfShortReal\n");
+	}
+};
 
 %nodefaultctor Handle_PShort_SeqNodeOfHSequenceOfShortReal;
 class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PShort_SeqNodeOfHSequenceOfShortReal();
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged
 	return (PShort_SeqNodeOfHSequenceOfShortReal*)$self->Access();
 	}
 };
+%extend Handle_PShort_SeqNodeOfHSequenceOfShortReal {
+	~Handle_PShort_SeqNodeOfHSequenceOfShortReal() {
+	printf("Call custom destructor for instance of Handle_PShort_SeqNodeOfHSequenceOfShortReal\n");
+	}
+};
 
 %nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal;
 class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal();
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStand
 	return (PShort_VArrayNodeOfFieldOfHArray2OfShortReal*)$self->Access();
 	}
 };
+%extend Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
+	~Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal() {
+	printf("Call custom destructor for instance of Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal\n");
+	}
+};
 
 %nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal;
 class Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal();
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public Handle_PStand
 	return (PShort_VArrayNodeOfFieldOfHArray1OfShortReal*)$self->Access();
 	}
 };
+%extend Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
+	~Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal() {
+	printf("Call custom destructor for instance of Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal\n");
+	}
+};
 
 %nodefaultctor Handle_PShort_HArray1OfShortReal;
 class Handle_PShort_HArray1OfShortReal : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PShort_HArray1OfShortReal();
 		%feature("autodoc", "1");
 		Handle_PShort_HArray1OfShortReal();
 		%feature("autodoc", "1");
@@ -221,6 +234,11 @@ class Handle_PShort_HArray1OfShortReal : public Handle_Standard_Persistent {
 %extend Handle_PShort_HArray1OfShortReal {
 	PShort_HArray1OfShortReal* GetObject() {
 	return (PShort_HArray1OfShortReal*)$self->Access();
+	}
+};
+%extend Handle_PShort_HArray1OfShortReal {
+	~Handle_PShort_HArray1OfShortReal() {
+	printf("Call custom destructor for instance of Handle_PShort_HArray1OfShortReal\n");
 	}
 };
 
@@ -285,13 +303,16 @@ class PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public PStandard_ArrayNode 
 		void _CSFDB_SetPShort_VArrayNodeOfFieldOfHArray1OfShortRealmyValue(const Standard_ShortReal p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PShort_VArrayNodeOfFieldOfHArray1OfShortReal();
 
 };
 %extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
 	Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal GetHandle() {
 	return *(Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal*) &$self;
+	}
+};
+%extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
+	~PShort_VArrayNodeOfFieldOfHArray1OfShortReal() {
+	printf("Call custom destructor for instance of PShort_VArrayNodeOfFieldOfHArray1OfShortReal\n");
 	}
 };
 
@@ -355,8 +376,6 @@ class PShort_HSequenceOfShortReal : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~PShort_HSequenceOfShortReal();
-		%feature("autodoc", "1");
 		PShort_HSequenceOfShortReal(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_HSequenceOfShortRealFirstItem() const;
@@ -377,6 +396,11 @@ class PShort_HSequenceOfShortReal : public Standard_Persistent {
 %extend PShort_HSequenceOfShortReal {
 	Handle_PShort_HSequenceOfShortReal GetHandle() {
 	return *(Handle_PShort_HSequenceOfShortReal*) &$self;
+	}
+};
+%extend PShort_HSequenceOfShortReal {
+	~PShort_HSequenceOfShortReal() {
+	printf("Call custom destructor for instance of PShort_HSequenceOfShortReal\n");
 	}
 };
 
@@ -425,13 +449,16 @@ class PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public PStandard_ArrayNode 
 		void _CSFDB_SetPShort_VArrayNodeOfFieldOfHArray2OfShortRealmyValue(const Standard_ShortReal p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PShort_VArrayNodeOfFieldOfHArray2OfShortReal();
 
 };
 %extend PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
 	Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal GetHandle() {
 	return *(Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal*) &$self;
+	}
+};
+%extend PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
+	~PShort_VArrayNodeOfFieldOfHArray2OfShortReal() {
+	printf("Call custom destructor for instance of PShort_VArrayNodeOfFieldOfHArray2OfShortReal\n");
 	}
 };
 
@@ -504,13 +531,16 @@ class PShort_HArray2OfShortReal : public Standard_Persistent {
 		const PShort_FieldOfHArray2OfShortReal & _CSFDB_GetPShort_HArray2OfShortRealData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PShort_HArray2OfShortReal();
 
 };
 %extend PShort_HArray2OfShortReal {
 	Handle_PShort_HArray2OfShortReal GetHandle() {
 	return *(Handle_PShort_HArray2OfShortReal*) &$self;
+	}
+};
+%extend PShort_HArray2OfShortReal {
+	~PShort_HArray2OfShortReal() {
+	printf("Call custom destructor for instance of PShort_HArray2OfShortReal\n");
 	}
 };
 
@@ -569,13 +599,16 @@ class PShort_SeqNodeOfHSequenceOfShortReal : public PMMgt_PManaged {
 		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyNext(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PShort_SeqNodeOfHSequenceOfShortReal();
 
 };
 %extend PShort_SeqNodeOfHSequenceOfShortReal {
 	Handle_PShort_SeqNodeOfHSequenceOfShortReal GetHandle() {
 	return *(Handle_PShort_SeqNodeOfHSequenceOfShortReal*) &$self;
+	}
+};
+%extend PShort_SeqNodeOfHSequenceOfShortReal {
+	~PShort_SeqNodeOfHSequenceOfShortReal() {
+	printf("Call custom destructor for instance of PShort_SeqNodeOfHSequenceOfShortReal\n");
 	}
 };
 
@@ -616,12 +649,15 @@ class PShort_HArray1OfShortReal : public Standard_Persistent {
 		const PShort_FieldOfHArray1OfShortReal & _CSFDB_GetPShort_HArray1OfShortRealData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PShort_HArray1OfShortReal();
 
 };
 %extend PShort_HArray1OfShortReal {
 	Handle_PShort_HArray1OfShortReal GetHandle() {
 	return *(Handle_PShort_HArray1OfShortReal*) &$self;
+	}
+};
+%extend PShort_HArray1OfShortReal {
+	~PShort_HArray1OfShortReal() {
+	printf("Call custom destructor for instance of PShort_HArray1OfShortReal\n");
 	}
 };

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Law_Function : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Law_Function();
-		%feature("autodoc", "1");
 		Handle_Law_Function();
 		%feature("autodoc", "1");
 		Handle_Law_Function(const Handle_Law_Function &aHandle);
@@ -118,12 +116,15 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 	return (Law_Function*)$self->Access();
 	}
 };
+%extend Handle_Law_Function {
+	~Handle_Law_Function() {
+	printf("Call custom destructor for instance of Handle_Law_Function\n");
+	}
+};
 
 %nodefaultctor Handle_Law_Linear;
 class Handle_Law_Linear : public Handle_Law_Function {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_Linear();
 		%feature("autodoc", "1");
 		Handle_Law_Linear();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_Law_Linear : public Handle_Law_Function {
 	return (Law_Linear*)$self->Access();
 	}
 };
+%extend Handle_Law_Linear {
+	~Handle_Law_Linear() {
+	printf("Call custom destructor for instance of Handle_Law_Linear\n");
+	}
+};
 
 %nodefaultctor Handle_Law_Constant;
 class Handle_Law_Constant : public Handle_Law_Function {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_Constant();
 		%feature("autodoc", "1");
 		Handle_Law_Constant();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_Law_Constant : public Handle_Law_Function {
 	return (Law_Constant*)$self->Access();
 	}
 };
+%extend Handle_Law_Constant {
+	~Handle_Law_Constant() {
+	printf("Call custom destructor for instance of Handle_Law_Constant\n");
+	}
+};
 
 %nodefaultctor Handle_Law_ListNodeOfLaws;
 class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_ListNodeOfLaws();
 		%feature("autodoc", "1");
 		Handle_Law_ListNodeOfLaws();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	return (Law_ListNodeOfLaws*)$self->Access();
 	}
 };
+%extend Handle_Law_ListNodeOfLaws {
+	~Handle_Law_ListNodeOfLaws() {
+	printf("Call custom destructor for instance of Handle_Law_ListNodeOfLaws\n");
+	}
+};
 
 %nodefaultctor Handle_Law_BSpFunc;
 class Handle_Law_BSpFunc : public Handle_Law_Function {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_BSpFunc();
 		%feature("autodoc", "1");
 		Handle_Law_BSpFunc();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 	return (Law_BSpFunc*)$self->Access();
 	}
 };
+%extend Handle_Law_BSpFunc {
+	~Handle_Law_BSpFunc() {
+	printf("Call custom destructor for instance of Handle_Law_BSpFunc\n");
+	}
+};
 
 %nodefaultctor Handle_Law_Composite;
 class Handle_Law_Composite : public Handle_Law_Function {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_Composite();
 		%feature("autodoc", "1");
 		Handle_Law_Composite();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_Law_Composite : public Handle_Law_Function {
 	return (Law_Composite*)$self->Access();
 	}
 };
+%extend Handle_Law_Composite {
+	~Handle_Law_Composite() {
+	printf("Call custom destructor for instance of Handle_Law_Composite\n");
+	}
+};
 
 %nodefaultctor Handle_Law_Interpol;
 class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_Interpol();
 		%feature("autodoc", "1");
 		Handle_Law_Interpol();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 	return (Law_Interpol*)$self->Access();
 	}
 };
+%extend Handle_Law_Interpol {
+	~Handle_Law_Interpol() {
+	printf("Call custom destructor for instance of Handle_Law_Interpol\n");
+	}
+};
 
 %nodefaultctor Handle_Law_BSpline;
 class Handle_Law_BSpline : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_BSpline();
 		%feature("autodoc", "1");
 		Handle_Law_BSpline();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 	return (Law_BSpline*)$self->Access();
 	}
 };
+%extend Handle_Law_BSpline {
+	~Handle_Law_BSpline() {
+	printf("Call custom destructor for instance of Handle_Law_BSpline\n");
+	}
+};
 
 %nodefaultctor Handle_Law_S;
 class Handle_Law_S : public Handle_Law_BSpFunc {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_S();
 		%feature("autodoc", "1");
 		Handle_Law_S();
 		%feature("autodoc", "1");
@@ -284,6 +306,11 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 %extend Handle_Law_S {
 	Law_S* GetObject() {
 	return (Law_S*)$self->Access();
+	}
+};
+%extend Handle_Law_S {
+	~Handle_Law_S() {
+	printf("Call custom destructor for instance of Handle_Law_S\n");
 	}
 };
 
@@ -315,6 +342,11 @@ class Law_Function : public MMgt_TShared {
 	return *(Handle_Law_Function*) &$self;
 	}
 };
+%extend Law_Function {
+	~Law_Function() {
+	printf("Call custom destructor for instance of Law_Function\n");
+	}
+};
 
 %nodefaultctor Law_BSpFunc;
 class Law_BSpFunc : public Law_Function {
@@ -327,13 +359,16 @@ class Law_BSpFunc : public Law_Function {
 		Handle_Law_BSpline Curve() const;
 		%feature("autodoc", "1");
 		void SetCurve(const Handle_Law_BSpline &C);
-		%feature("autodoc", "1");
-		virtual		~Law_BSpFunc();
 
 };
 %extend Law_BSpFunc {
 	Handle_Law_BSpFunc GetHandle() {
 	return *(Handle_Law_BSpFunc*) &$self;
+	}
+};
+%extend Law_BSpFunc {
+	~Law_BSpFunc() {
+	printf("Call custom destructor for instance of Law_BSpFunc\n");
 	}
 };
 
@@ -346,13 +381,16 @@ class Law_ListNodeOfLaws : public TCollection_MapNode {
 		Handle_Law_Function & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_ListNodeOfLaws();
 
 };
 %extend Law_ListNodeOfLaws {
 	Handle_Law_ListNodeOfLaws GetHandle() {
 	return *(Handle_Law_ListNodeOfLaws*) &$self;
+	}
+};
+%extend Law_ListNodeOfLaws {
+	~Law_ListNodeOfLaws() {
+	printf("Call custom destructor for instance of Law_ListNodeOfLaws\n");
 	}
 };
 
@@ -381,13 +419,16 @@ class Law_Constant : public Law_Function {
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_Constant();
 
 };
 %extend Law_Constant {
 	Handle_Law_Constant GetHandle() {
 	return *(Handle_Law_Constant*) &$self;
+	}
+};
+%extend Law_Constant {
+	~Law_Constant() {
+	printf("Call custom destructor for instance of Law_Constant\n");
 	}
 };
 
@@ -406,13 +447,16 @@ class Law_Interpol : public Law_BSpFunc {
 		void SetInRelative(const TColgp_Array1OfPnt2d &ParAndRad, const Standard_Real Ud, const Standard_Real Uf, const Standard_Real Dd, const Standard_Real Df, const Standard_Boolean Periodic=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_Interpol();
 
 };
 %extend Law_Interpol {
 	Handle_Law_Interpol GetHandle() {
 	return *(Handle_Law_Interpol*) &$self;
+	}
+};
+%extend Law_Interpol {
+	~Law_Interpol() {
+	printf("Call custom destructor for instance of Law_Interpol\n");
 	}
 };
 
@@ -515,13 +559,16 @@ class Law_Composite : public Law_Function {
 		void SetPeriodic();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_Composite();
 
 };
 %extend Law_Composite {
 	Handle_Law_Composite GetHandle() {
 	return *(Handle_Law_Composite*) &$self;
+	}
+};
+%extend Law_Composite {
+	~Law_Composite() {
+	printf("Call custom destructor for instance of Law_Composite\n");
 	}
 };
 
@@ -552,13 +599,16 @@ class Law_S : public Law_BSpFunc {
 		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Ddeb, const Standard_Real Pfin, const Standard_Real Valfin, const Standard_Real Dfin);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_S();
 
 };
 %extend Law_S {
 	Handle_Law_S GetHandle() {
 	return *(Handle_Law_S*) &$self;
+	}
+};
+%extend Law_S {
+	~Law_S() {
+	printf("Call custom destructor for instance of Law_S\n");
 	}
 };
 
@@ -609,13 +659,16 @@ class Law_Linear : public Law_Function {
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_Linear();
 
 };
 %extend Law_Linear {
 	Handle_Law_Linear GetHandle() {
 	return *(Handle_Law_Linear*) &$self;
+	}
+};
+%extend Law_Linear {
+	~Law_Linear() {
+	printf("Call custom destructor for instance of Law_Linear\n");
 	}
 };
 
@@ -772,12 +825,15 @@ class Law_BSpline : public MMgt_TShared {
 		Handle_Law_BSpline Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_BSpline();
 
 };
 %extend Law_BSpline {
 	Handle_Law_BSpline GetHandle() {
 	return *(Handle_Law_BSpline*) &$self;
+	}
+};
+%extend Law_BSpline {
+	~Law_BSpline() {
+	printf("Call custom destructor for instance of Law_BSpline\n");
 	}
 };

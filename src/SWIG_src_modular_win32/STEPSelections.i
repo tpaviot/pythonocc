@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_STEPSelections_SelectForTransfer : public Handle_XSControl_SelectForTransfer {
 	public:
 		%feature("autodoc", "1");
-		~Handle_STEPSelections_SelectForTransfer();
-		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectForTransfer();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectForTransfer(const Handle_STEPSelections_SelectForTransfer &aHandle);
@@ -118,12 +116,15 @@ class Handle_STEPSelections_SelectForTransfer : public Handle_XSControl_SelectFo
 	return (STEPSelections_SelectForTransfer*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_SelectForTransfer {
+	~Handle_STEPSelections_SelectForTransfer() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_SelectForTransfer\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_AssemblyLink;
 class Handle_STEPSelections_AssemblyLink : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_AssemblyLink();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyLink();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_STEPSelections_AssemblyLink : public Handle_MMgt_TShared {
 	return (STEPSelections_AssemblyLink*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_AssemblyLink {
+	~Handle_STEPSelections_AssemblyLink() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_AssemblyLink\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_SelectGSCurves;
 class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_SelectGSCurves();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectGSCurves();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplor
 	return (STEPSelections_SelectGSCurves*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_SelectGSCurves {
+	~Handle_STEPSelections_SelectGSCurves() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_SelectGSCurves\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_HSequenceOfAssemblyLink;
 class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_HSequenceOfAssemblyLink();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_HSequenceOfAssemblyLink();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared
 	return (STEPSelections_HSequenceOfAssemblyLink*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
+	~Handle_STEPSelections_HSequenceOfAssemblyLink() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_HSequenceOfAssemblyLink\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
 class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public H
 	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_SelectDerived;
 class Handle_STEPSelections_SelectDerived : public Handle_StepSelect_StepType {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_SelectDerived();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectDerived();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_STEPSelections_SelectDerived : public Handle_StepSelect_StepType {
 	return (STEPSelections_SelectDerived*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_SelectDerived {
+	~Handle_STEPSelections_SelectDerived() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_SelectDerived\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_SelectInstances;
 class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_SelectInstances();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectInstances();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplo
 	return (STEPSelections_SelectInstances*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_SelectInstances {
+	~Handle_STEPSelections_SelectInstances() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_SelectInstances\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_SelectAssembly;
 class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_SelectAssembly();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectAssembly();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplor
 	return (STEPSelections_SelectAssembly*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_SelectAssembly {
+	~Handle_STEPSelections_SelectAssembly() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_SelectAssembly\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_AssemblyComponent;
 class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_AssemblyComponent();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyComponent();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
 	return (STEPSelections_AssemblyComponent*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_AssemblyComponent {
+	~Handle_STEPSelections_AssemblyComponent() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_AssemblyComponent\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_SelectFaces;
 class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_SelectFaces();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectFaces();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 	return (STEPSelections_SelectFaces*)$self->Access();
 	}
 };
+%extend Handle_STEPSelections_SelectFaces {
+	~Handle_STEPSelections_SelectFaces() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_SelectFaces\n");
+	}
+};
 
 %nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
 class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink();
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink();
 		%feature("autodoc", "1");
@@ -326,6 +354,11 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle
 %extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
 	STEPSelections_SequenceNodeOfSequenceOfAssemblyLink* GetObject() {
 	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyLink*)$self->Access();
+	}
+};
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink() {
+	printf("Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");
 	}
 };
 
@@ -370,13 +403,16 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 		void SetList(const Handle_STEPSelections_HSequenceOfAssemblyLink &list);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_AssemblyComponent();
 
 };
 %extend STEPSelections_AssemblyComponent {
 	Handle_STEPSelections_AssemblyComponent GetHandle() {
 	return *(Handle_STEPSelections_AssemblyComponent*) &$self;
+	}
+};
+%extend STEPSelections_AssemblyComponent {
+	~STEPSelections_AssemblyComponent() {
+	printf("Call custom destructor for instance of STEPSelections_AssemblyComponent\n");
 	}
 };
 
@@ -431,13 +467,16 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 		Handle_STEPSelections_HSequenceOfAssemblyLink ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_HSequenceOfAssemblyLink();
 
 };
 %extend STEPSelections_HSequenceOfAssemblyLink {
 	Handle_STEPSelections_HSequenceOfAssemblyLink GetHandle() {
 	return *(Handle_STEPSelections_HSequenceOfAssemblyLink*) &$self;
+	}
+};
+%extend STEPSelections_HSequenceOfAssemblyLink {
+	~STEPSelections_HSequenceOfAssemblyLink() {
+	printf("Call custom destructor for instance of STEPSelections_HSequenceOfAssemblyLink\n");
 	}
 };
 
@@ -452,13 +491,16 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_SelectForTransfer();
 
 };
 %extend STEPSelections_SelectForTransfer {
 	Handle_STEPSelections_SelectForTransfer GetHandle() {
 	return *(Handle_STEPSelections_SelectForTransfer*) &$self;
+	}
+};
+%extend STEPSelections_SelectForTransfer {
+	~STEPSelections_SelectForTransfer() {
+	printf("Call custom destructor for instance of STEPSelections_SelectForTransfer\n");
 	}
 };
 
@@ -471,13 +513,16 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollect
 		Handle_STEPSelections_AssemblyComponent & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent();
 
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
 	Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent GetHandle() {
 	return *(Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*) &$self;
+	}
+};
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
+	printf("Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");
 	}
 };
 
@@ -490,13 +535,16 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 		Handle_STEPSelections_AssemblyLink & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink();
 
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
 	Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink GetHandle() {
 	return *(Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink*) &$self;
+	}
+};
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink() {
+	printf("Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");
 	}
 };
 
@@ -543,13 +591,16 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_SelectDerived();
 
 };
 %extend STEPSelections_SelectDerived {
 	Handle_STEPSelections_SelectDerived GetHandle() {
 	return *(Handle_STEPSelections_SelectDerived*) &$self;
+	}
+};
+%extend STEPSelections_SelectDerived {
+	~STEPSelections_SelectDerived() {
+	printf("Call custom destructor for instance of STEPSelections_SelectDerived\n");
 	}
 };
 
@@ -564,13 +615,16 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_SelectGSCurves();
 
 };
 %extend STEPSelections_SelectGSCurves {
 	Handle_STEPSelections_SelectGSCurves GetHandle() {
 	return *(Handle_STEPSelections_SelectGSCurves*) &$self;
+	}
+};
+%extend STEPSelections_SelectGSCurves {
+	~STEPSelections_SelectGSCurves() {
+	printf("Call custom destructor for instance of STEPSelections_SelectGSCurves\n");
 	}
 };
 
@@ -687,13 +741,16 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_SelectInstances();
 
 };
 %extend STEPSelections_SelectInstances {
 	Handle_STEPSelections_SelectInstances GetHandle() {
 	return *(Handle_STEPSelections_SelectInstances*) &$self;
+	}
+};
+%extend STEPSelections_SelectInstances {
+	~STEPSelections_SelectInstances() {
+	printf("Call custom destructor for instance of STEPSelections_SelectInstances\n");
 	}
 };
 
@@ -708,13 +765,16 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_SelectAssembly();
 
 };
 %extend STEPSelections_SelectAssembly {
 	Handle_STEPSelections_SelectAssembly GetHandle() {
 	return *(Handle_STEPSelections_SelectAssembly*) &$self;
+	}
+};
+%extend STEPSelections_SelectAssembly {
+	~STEPSelections_SelectAssembly() {
+	printf("Call custom destructor for instance of STEPSelections_SelectAssembly\n");
 	}
 };
 
@@ -739,13 +799,16 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 		void SetComponent(const Handle_STEPSelections_AssemblyComponent &part);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_AssemblyLink();
 
 };
 %extend STEPSelections_AssemblyLink {
 	Handle_STEPSelections_AssemblyLink GetHandle() {
 	return *(Handle_STEPSelections_AssemblyLink*) &$self;
+	}
+};
+%extend STEPSelections_AssemblyLink {
+	~STEPSelections_AssemblyLink() {
+	printf("Call custom destructor for instance of STEPSelections_AssemblyLink\n");
 	}
 };
 
@@ -760,12 +823,15 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPSelections_SelectFaces();
 
 };
 %extend STEPSelections_SelectFaces {
 	Handle_STEPSelections_SelectFaces GetHandle() {
 	return *(Handle_STEPSelections_SelectFaces*) &$self;
+	}
+};
+%extend STEPSelections_SelectFaces {
+	~STEPSelections_SelectFaces() {
+	printf("Call custom destructor for instance of STEPSelections_SelectFaces\n");
 	}
 };

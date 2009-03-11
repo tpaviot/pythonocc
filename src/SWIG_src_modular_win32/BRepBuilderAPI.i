@@ -156,8 +156,6 @@ enum BRepBuilderAPI_EdgeError {
 class Handle_BRepBuilderAPI_Sewing : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepBuilderAPI_Sewing();
-		%feature("autodoc", "1");
 		Handle_BRepBuilderAPI_Sewing();
 		%feature("autodoc", "1");
 		Handle_BRepBuilderAPI_Sewing(const Handle_BRepBuilderAPI_Sewing &aHandle);
@@ -170,6 +168,11 @@ class Handle_BRepBuilderAPI_Sewing : public Handle_MMgt_TShared {
 %extend Handle_BRepBuilderAPI_Sewing {
 	BRepBuilderAPI_Sewing* GetObject() {
 	return (BRepBuilderAPI_Sewing*)$self->Access();
+	}
+};
+%extend Handle_BRepBuilderAPI_Sewing {
+	~Handle_BRepBuilderAPI_Sewing() {
+	printf("Call custom destructor for instance of Handle_BRepBuilderAPI_Sewing\n");
 	}
 };
 
@@ -522,13 +525,16 @@ class BRepBuilderAPI_Sewing : public MMgt_TShared {
 		Standard_Boolean NonManifoldMode() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_Sewing();
 
 };
 %extend BRepBuilderAPI_Sewing {
 	Handle_BRepBuilderAPI_Sewing GetHandle() {
 	return *(Handle_BRepBuilderAPI_Sewing*) &$self;
+	}
+};
+%extend BRepBuilderAPI_Sewing {
+	~BRepBuilderAPI_Sewing() {
+	printf("Call custom destructor for instance of BRepBuilderAPI_Sewing\n");
 	}
 };
 

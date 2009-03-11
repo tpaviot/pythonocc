@@ -109,8 +109,6 @@ enum Intf_PIType {
 class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Intf_SequenceNodeOfSeqOfTangentZone();
-		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfTangentZone();
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Handle_Intf_SequenceNodeOfSeqOfTangentZone &aHandle);
@@ -125,12 +123,15 @@ class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_Seq
 	return (Intf_SequenceNodeOfSeqOfTangentZone*)$self->Access();
 	}
 };
+%extend Handle_Intf_SequenceNodeOfSeqOfTangentZone {
+	~Handle_Intf_SequenceNodeOfSeqOfTangentZone() {
+	printf("Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfTangentZone\n");
+	}
+};
 
 %nodefaultctor Handle_Intf_SequenceNodeOfSeqOfSectionLine;
 class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Intf_SequenceNodeOfSeqOfSectionLine();
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionLine();
 		%feature("autodoc", "1");
@@ -146,12 +147,15 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_Seq
 	return (Intf_SequenceNodeOfSeqOfSectionLine*)$self->Access();
 	}
 };
+%extend Handle_Intf_SequenceNodeOfSeqOfSectionLine {
+	~Handle_Intf_SequenceNodeOfSeqOfSectionLine() {
+	printf("Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfSectionLine\n");
+	}
+};
 
 %nodefaultctor Handle_Intf_SequenceNodeOfSeqOfSectionPoint;
 class Handle_Intf_SequenceNodeOfSeqOfSectionPoint : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Intf_SequenceNodeOfSeqOfSectionPoint();
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionPoint();
 		%feature("autodoc", "1");
@@ -167,6 +171,11 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionPoint : public Handle_TCollection_Se
 	return (Intf_SequenceNodeOfSeqOfSectionPoint*)$self->Access();
 	}
 };
+%extend Handle_Intf_SequenceNodeOfSeqOfSectionPoint {
+	~Handle_Intf_SequenceNodeOfSeqOfSectionPoint() {
+	printf("Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfSectionPoint\n");
+	}
+};
 
 %nodefaultctor Intf_SequenceNodeOfSeqOfSectionPoint;
 class Intf_SequenceNodeOfSeqOfSectionPoint : public TCollection_SeqNode {
@@ -177,13 +186,16 @@ class Intf_SequenceNodeOfSeqOfSectionPoint : public TCollection_SeqNode {
 		Intf_SectionPoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Intf_SequenceNodeOfSeqOfSectionPoint();
 
 };
 %extend Intf_SequenceNodeOfSeqOfSectionPoint {
 	Handle_Intf_SequenceNodeOfSeqOfSectionPoint GetHandle() {
 	return *(Handle_Intf_SequenceNodeOfSeqOfSectionPoint*) &$self;
+	}
+};
+%extend Intf_SequenceNodeOfSeqOfSectionPoint {
+	~Intf_SequenceNodeOfSeqOfSectionPoint() {
+	printf("Call custom destructor for instance of Intf_SequenceNodeOfSeqOfSectionPoint\n");
 	}
 };
 
@@ -196,13 +208,16 @@ class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 		Intf_SectionLine & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Intf_SequenceNodeOfSeqOfSectionLine();
 
 };
 %extend Intf_SequenceNodeOfSeqOfSectionLine {
 	Handle_Intf_SequenceNodeOfSeqOfSectionLine GetHandle() {
 	return *(Handle_Intf_SequenceNodeOfSeqOfSectionLine*) &$self;
+	}
+};
+%extend Intf_SequenceNodeOfSeqOfSectionLine {
+	~Intf_SequenceNodeOfSeqOfSectionLine() {
+	printf("Call custom destructor for instance of Intf_SequenceNodeOfSeqOfSectionLine\n");
 	}
 };
 
@@ -387,13 +402,16 @@ class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
 		Intf_TangentZone & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Intf_SequenceNodeOfSeqOfTangentZone();
 
 };
 %extend Intf_SequenceNodeOfSeqOfTangentZone {
 	Handle_Intf_SequenceNodeOfSeqOfTangentZone GetHandle() {
 	return *(Handle_Intf_SequenceNodeOfSeqOfTangentZone*) &$self;
+	}
+};
+%extend Intf_SequenceNodeOfSeqOfTangentZone {
+	~Intf_SequenceNodeOfSeqOfTangentZone() {
+	printf("Call custom destructor for instance of Intf_SequenceNodeOfSeqOfTangentZone\n");
 	}
 };
 

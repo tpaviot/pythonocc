@@ -110,8 +110,6 @@ enum math_Status {
 class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_math_NotSquare();
-		%feature("autodoc", "1");
 		Handle_math_NotSquare();
 		%feature("autodoc", "1");
 		Handle_math_NotSquare(const Handle_math_NotSquare &aHandle);
@@ -126,12 +124,15 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 	return (math_NotSquare*)$self->Access();
 	}
 };
+%extend Handle_math_NotSquare {
+	~Handle_math_NotSquare() {
+	printf("Call custom destructor for instance of Handle_math_NotSquare\n");
+	}
+};
 
 %nodefaultctor Handle_math_SingularMatrix;
 class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_math_SingularMatrix();
 		%feature("autodoc", "1");
 		Handle_math_SingularMatrix();
 		%feature("autodoc", "1");
@@ -145,6 +146,11 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 %extend Handle_math_SingularMatrix {
 	math_SingularMatrix* GetObject() {
 	return (math_SingularMatrix*)$self->Access();
+	}
+};
+%extend Handle_math_SingularMatrix {
+	~Handle_math_SingularMatrix() {
+	printf("Call custom destructor for instance of Handle_math_SingularMatrix\n");
 	}
 };
 
@@ -207,13 +213,16 @@ class math_SingularMatrix : public Standard_Failure {
 		Handle_math_SingularMatrix NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~math_SingularMatrix();
 
 };
 %extend math_SingularMatrix {
 	Handle_math_SingularMatrix GetHandle() {
 	return *(Handle_math_SingularMatrix*) &$self;
+	}
+};
+%extend math_SingularMatrix {
+	~math_SingularMatrix() {
+	printf("Call custom destructor for instance of math_SingularMatrix\n");
 	}
 };
 
@@ -1020,13 +1029,16 @@ class math_NotSquare : public Standard_DimensionError {
 		Handle_math_NotSquare NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~math_NotSquare();
 
 };
 %extend math_NotSquare {
 	Handle_math_NotSquare GetHandle() {
 	return *(Handle_math_NotSquare*) &$self;
+	}
+};
+%extend math_NotSquare {
+	~math_NotSquare() {
+	printf("Call custom destructor for instance of math_NotSquare\n");
 	}
 };
 

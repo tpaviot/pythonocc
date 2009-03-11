@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESToBRep_Actor();
-		%feature("autodoc", "1");
 		Handle_IGESToBRep_Actor();
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_Actor(const Handle_IGESToBRep_Actor &aHandle);
@@ -118,12 +116,15 @@ class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 	return (IGESToBRep_Actor*)$self->Access();
 	}
 };
+%extend Handle_IGESToBRep_Actor {
+	~Handle_IGESToBRep_Actor() {
+	printf("Call custom destructor for instance of Handle_IGESToBRep_Actor\n");
+	}
+};
 
 %nodefaultctor Handle_IGESToBRep_AlgoContainer;
 class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESToBRep_AlgoContainer();
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_AlgoContainer();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 	return (IGESToBRep_AlgoContainer*)$self->Access();
 	}
 };
+%extend Handle_IGESToBRep_AlgoContainer {
+	~Handle_IGESToBRep_AlgoContainer() {
+	printf("Call custom destructor for instance of Handle_IGESToBRep_AlgoContainer\n");
+	}
+};
 
 %nodefaultctor Handle_IGESToBRep_IGESBoundary;
 class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESToBRep_IGESBoundary();
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_IGESBoundary();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 	return (IGESToBRep_IGESBoundary*)$self->Access();
 	}
 };
+%extend Handle_IGESToBRep_IGESBoundary {
+	~Handle_IGESToBRep_IGESBoundary() {
+	printf("Call custom destructor for instance of Handle_IGESToBRep_IGESBoundary\n");
+	}
+};
 
 %nodefaultctor Handle_IGESToBRep_ToolContainer;
 class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESToBRep_ToolContainer();
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_ToolContainer();
 		%feature("autodoc", "1");
@@ -179,6 +186,11 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 %extend Handle_IGESToBRep_ToolContainer {
 	IGESToBRep_ToolContainer* GetObject() {
 	return (IGESToBRep_ToolContainer*)$self->Access();
+	}
+};
+%extend Handle_IGESToBRep_ToolContainer {
+	~Handle_IGESToBRep_ToolContainer() {
+	printf("Call custom destructor for instance of Handle_IGESToBRep_ToolContainer\n");
 	}
 };
 
@@ -347,13 +359,16 @@ class IGESToBRep_ToolContainer : public MMgt_TShared {
 		virtual		Handle_IGESToBRep_IGESBoundary IGESBoundary() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESToBRep_ToolContainer();
 
 };
 %extend IGESToBRep_ToolContainer {
 	Handle_IGESToBRep_ToolContainer GetHandle() {
 	return *(Handle_IGESToBRep_ToolContainer*) &$self;
+	}
+};
+%extend IGESToBRep_ToolContainer {
+	~IGESToBRep_ToolContainer() {
+	printf("Call custom destructor for instance of IGESToBRep_ToolContainer\n");
 	}
 };
 
@@ -376,13 +391,16 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 		Standard_Real UsedTolerance() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESToBRep_Actor();
 
 };
 %extend IGESToBRep_Actor {
 	Handle_IGESToBRep_Actor GetHandle() {
 	return *(Handle_IGESToBRep_Actor*) &$self;
+	}
+};
+%extend IGESToBRep_Actor {
+	~IGESToBRep_Actor() {
+	printf("Call custom destructor for instance of IGESToBRep_Actor\n");
 	}
 };
 
@@ -483,13 +501,16 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 		virtual		void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESToBRep_IGESBoundary();
 
 };
 %extend IGESToBRep_IGESBoundary {
 	Handle_IGESToBRep_IGESBoundary GetHandle() {
 	return *(Handle_IGESToBRep_IGESBoundary*) &$self;
+	}
+};
+%extend IGESToBRep_IGESBoundary {
+	~IGESToBRep_IGESBoundary() {
+	printf("Call custom destructor for instance of IGESToBRep_IGESBoundary\n");
 	}
 };
 

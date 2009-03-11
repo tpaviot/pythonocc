@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData();
-		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData();
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData(const Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData &aHandle);
@@ -118,12 +116,15 @@ class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCo
 	return (HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData*)$self->Access();
 	}
 };
+%extend Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
+	~Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData() {
+	printf("Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");
+	}
+};
 
 %nodefaultctor Handle_HLRTopoBRep_OutLiner;
 class Handle_HLRTopoBRep_OutLiner : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRTopoBRep_OutLiner();
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_OutLiner();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_HLRTopoBRep_OutLiner : public Handle_MMgt_TShared {
 	return (HLRTopoBRep_OutLiner*)$self->Access();
 	}
 };
+%extend Handle_HLRTopoBRep_OutLiner {
+	~Handle_HLRTopoBRep_OutLiner() {
+	printf("Call custom destructor for instance of Handle_HLRTopoBRep_OutLiner\n");
+	}
+};
 
 %nodefaultctor Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData;
 class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData();
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCol
 	return (HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData*)$self->Access();
 	}
 };
+%extend Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
+	~Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
+	printf("Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");
+	}
+};
 
 %nodefaultctor Handle_HLRTopoBRep_ListNodeOfListOfVData;
 class Handle_HLRTopoBRep_ListNodeOfListOfVData : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRTopoBRep_ListNodeOfListOfVData();
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_ListNodeOfListOfVData();
 		%feature("autodoc", "1");
@@ -181,6 +188,11 @@ class Handle_HLRTopoBRep_ListNodeOfListOfVData : public Handle_TCollection_MapNo
 	return (HLRTopoBRep_ListNodeOfListOfVData*)$self->Access();
 	}
 };
+%extend Handle_HLRTopoBRep_ListNodeOfListOfVData {
+	~Handle_HLRTopoBRep_ListNodeOfListOfVData() {
+	printf("Call custom destructor for instance of Handle_HLRTopoBRep_ListNodeOfListOfVData\n");
+	}
+};
 
 %nodefaultctor HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData;
 class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNode {
@@ -193,13 +205,16 @@ class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNo
 		HLRTopoBRep_FaceData & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData();
 
 };
 %extend HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
 	Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData GetHandle() {
 	return *(Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData*) &$self;
+	}
+};
+%extend HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
+	~HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");
 	}
 };
 
@@ -442,13 +457,16 @@ class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
 		HLRTopoBRep_VData & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRTopoBRep_ListNodeOfListOfVData();
 
 };
 %extend HLRTopoBRep_ListNodeOfListOfVData {
 	Handle_HLRTopoBRep_ListNodeOfListOfVData GetHandle() {
 	return *(Handle_HLRTopoBRep_ListNodeOfListOfVData*) &$self;
+	}
+};
+%extend HLRTopoBRep_ListNodeOfListOfVData {
+	~HLRTopoBRep_ListNodeOfListOfVData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_ListNodeOfListOfVData\n");
 	}
 };
 
@@ -511,13 +529,16 @@ class HLRTopoBRep_OutLiner : public MMgt_TShared {
 		void Fill(const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRTopoBRep_OutLiner();
 
 };
 %extend HLRTopoBRep_OutLiner {
 	Handle_HLRTopoBRep_OutLiner GetHandle() {
 	return *(Handle_HLRTopoBRep_OutLiner*) &$self;
+	}
+};
+%extend HLRTopoBRep_OutLiner {
+	~HLRTopoBRep_OutLiner() {
+	printf("Call custom destructor for instance of HLRTopoBRep_OutLiner\n");
 	}
 };
 
@@ -562,13 +583,16 @@ class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNod
 		HLRTopoBRep_ListOfVData & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData();
 
 };
 %extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
 	Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData GetHandle() {
 	return *(Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData*) &$self;
+	}
+};
+%extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
+	~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");
 	}
 };
 

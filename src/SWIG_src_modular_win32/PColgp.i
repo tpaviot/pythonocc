@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PColgp_HArray1OfCirc2d : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfCirc2d();
-		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfCirc2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfCirc2d(const Handle_PColgp_HArray1OfCirc2d &aHandle);
@@ -118,12 +116,15 @@ class Handle_PColgp_HArray1OfCirc2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray1OfCirc2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray1OfCirc2d {
+	~Handle_PColgp_HArray1OfCirc2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfCirc2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfXY;
 class Handle_PColgp_HArray2OfXY : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfXY();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfXY();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_PColgp_HArray2OfXY : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfXY*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfXY {
+	~Handle_PColgp_HArray2OfXY() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfXY\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY : public Handle_PStandard_Arr
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfXY*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public Handle_PStandard_
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfLin2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir : public Handle_PStandard_Ar
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfDir*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec : public Handle_PStandard_Ar
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfVec*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray1OfXYZ;
 class Handle_PColgp_HArray1OfXYZ : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfXYZ();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfXYZ();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_PColgp_HArray1OfXYZ : public Handle_Standard_Persistent {
 	return (PColgp_HArray1OfXYZ*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray1OfXYZ {
+	~Handle_PColgp_HArray1OfXYZ() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfXYZ\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray1OfXY;
 class Handle_PColgp_HArray1OfXY : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfXY();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfXY();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_PColgp_HArray1OfXY : public Handle_Standard_Persistent {
 	return (PColgp_HArray1OfXY*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray1OfXY {
+	~Handle_PColgp_HArray1OfXY() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfXY\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfVec2d;
 class Handle_PColgp_HArray2OfVec2d : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfVec2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfVec2d();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_PColgp_HArray2OfVec2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfVec2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfVec2d {
+	~Handle_PColgp_HArray2OfVec2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfVec2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray1OfDir2d;
 class Handle_PColgp_HArray1OfDir2d : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfDir2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfDir2d();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_PColgp_HArray1OfDir2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray1OfDir2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray1OfDir2d {
+	~Handle_PColgp_HArray1OfDir2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfDir2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir : public Handle_PStandard_Ar
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfDir*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfXYZ;
 class Handle_PColgp_HArray2OfXYZ : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfXYZ();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfXYZ();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_PColgp_HArray2OfXYZ : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfXYZ*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfXYZ {
+	~Handle_PColgp_HArray2OfXYZ() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfXYZ\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public Handle_PStandard_
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfVec;
 class Handle_PColgp_SeqNodeOfHSequenceOfVec : public Handle_PMMgt_PManaged {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_SeqNodeOfHSequenceOfVec();
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfVec();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_PColgp_SeqNodeOfHSequenceOfVec : public Handle_PMMgt_PManaged {
 	return (PColgp_SeqNodeOfHSequenceOfVec*)$self->Access();
 	}
 };
+%extend Handle_PColgp_SeqNodeOfHSequenceOfVec {
+	~Handle_PColgp_SeqNodeOfHSequenceOfVec() {
+	printf("Call custom destructor for instance of Handle_PColgp_SeqNodeOfHSequenceOfVec\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfLin2d;
 class Handle_PColgp_HArray2OfLin2d : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfLin2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfLin2d();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_PColgp_HArray2OfLin2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfLin2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfLin2d {
+	~Handle_PColgp_HArray2OfLin2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfLin2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfVec;
 class Handle_PColgp_HArray2OfVec : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfVec();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfVec();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_PColgp_HArray2OfVec : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfVec*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfVec {
+	~Handle_PColgp_HArray2OfVec() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfVec\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray1OfVec2d;
 class Handle_PColgp_HArray1OfVec2d : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfVec2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfVec2d();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_PColgp_HArray1OfVec2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray1OfVec2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray1OfVec2d {
+	~Handle_PColgp_HArray1OfVec2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfVec2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfDir;
 class Handle_PColgp_SeqNodeOfHSequenceOfDir : public Handle_PMMgt_PManaged {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_SeqNodeOfHSequenceOfDir();
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfDir();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_PColgp_SeqNodeOfHSequenceOfDir : public Handle_PMMgt_PManaged {
 	return (PColgp_SeqNodeOfHSequenceOfDir*)$self->Access();
 	}
 };
+%extend Handle_PColgp_SeqNodeOfHSequenceOfDir {
+	~Handle_PColgp_SeqNodeOfHSequenceOfDir() {
+	printf("Call custom destructor for instance of Handle_PColgp_SeqNodeOfHSequenceOfDir\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray1OfDir;
 class Handle_PColgp_HArray1OfDir : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfDir();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfDir();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_PColgp_HArray1OfDir : public Handle_Standard_Persistent {
 	return (PColgp_HArray1OfDir*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray1OfDir {
+	~Handle_PColgp_HArray1OfDir() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfDir\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfDir2d;
 class Handle_PColgp_HArray2OfDir2d : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfDir2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfDir2d();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_PColgp_HArray2OfDir2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfDir2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfDir2d {
+	~Handle_PColgp_HArray2OfDir2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfDir2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HSequenceOfVec;
 class Handle_PColgp_HSequenceOfVec : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HSequenceOfVec();
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfVec();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_PColgp_HSequenceOfVec : public Handle_Standard_Persistent {
 	return (PColgp_HSequenceOfVec*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HSequenceOfVec {
+	~Handle_PColgp_HSequenceOfVec() {
+	printf("Call custom destructor for instance of Handle_PColgp_HSequenceOfVec\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public Handle_PStandard_Ar
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfPnt*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray1OfLin2d;
 class Handle_PColgp_HArray1OfLin2d : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfLin2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfLin2d();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_PColgp_HArray1OfLin2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray1OfLin2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray1OfLin2d {
+	~Handle_PColgp_HArray1OfLin2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfLin2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public Handle_PStandard_Ar
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfXYZ*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HSequenceOfDir;
 class Handle_PColgp_HSequenceOfDir : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HSequenceOfDir();
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfDir();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_PColgp_HSequenceOfDir : public Handle_Standard_Persistent {
 	return (PColgp_HSequenceOfDir*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HSequenceOfDir {
+	~Handle_PColgp_HSequenceOfDir() {
+	printf("Call custom destructor for instance of Handle_PColgp_HSequenceOfDir\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d();
 		%feature("autodoc", "1");
@@ -643,12 +716,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public Handle_PStandard_
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfDir2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ();
 		%feature("autodoc", "1");
@@ -664,12 +740,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public Handle_PStandard_Ar
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfXYZ*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfPnt2d;
 class Handle_PColgp_HArray2OfPnt2d : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfPnt2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfPnt2d();
 		%feature("autodoc", "1");
@@ -685,12 +764,15 @@ class Handle_PColgp_HArray2OfPnt2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfPnt2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfPnt2d {
+	~Handle_PColgp_HArray2OfPnt2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfPnt2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray1OfVec;
 class Handle_PColgp_HArray1OfVec : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfVec();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfVec();
 		%feature("autodoc", "1");
@@ -706,12 +788,15 @@ class Handle_PColgp_HArray1OfVec : public Handle_Standard_Persistent {
 	return (PColgp_HArray1OfVec*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray1OfVec {
+	~Handle_PColgp_HArray1OfVec() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfVec\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray1OfPnt2d;
 class Handle_PColgp_HArray1OfPnt2d : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfPnt2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt2d();
 		%feature("autodoc", "1");
@@ -727,12 +812,15 @@ class Handle_PColgp_HArray1OfPnt2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray1OfPnt2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray1OfPnt2d {
+	~Handle_PColgp_HArray1OfPnt2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfPnt2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d();
 		%feature("autodoc", "1");
@@ -748,12 +836,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public Handle_PStandard_
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfPnt;
 class Handle_PColgp_SeqNodeOfHSequenceOfPnt : public Handle_PMMgt_PManaged {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_SeqNodeOfHSequenceOfPnt();
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfPnt();
 		%feature("autodoc", "1");
@@ -769,12 +860,15 @@ class Handle_PColgp_SeqNodeOfHSequenceOfPnt : public Handle_PMMgt_PManaged {
 	return (PColgp_SeqNodeOfHSequenceOfPnt*)$self->Access();
 	}
 };
+%extend Handle_PColgp_SeqNodeOfHSequenceOfPnt {
+	~Handle_PColgp_SeqNodeOfHSequenceOfPnt() {
+	printf("Call custom destructor for instance of Handle_PColgp_SeqNodeOfHSequenceOfPnt\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfPnt;
 class Handle_PColgp_HArray2OfPnt : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfPnt();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfPnt();
 		%feature("autodoc", "1");
@@ -790,12 +884,15 @@ class Handle_PColgp_HArray2OfPnt : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfPnt*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfPnt {
+	~Handle_PColgp_HArray2OfPnt() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfPnt\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt();
 		%feature("autodoc", "1");
@@ -811,12 +908,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public Handle_PStandard_Ar
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfPnt*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d();
 		%feature("autodoc", "1");
@@ -832,12 +932,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public Handle_PStandard_
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfVec2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfXYZ;
 class Handle_PColgp_SeqNodeOfHSequenceOfXYZ : public Handle_PMMgt_PManaged {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_SeqNodeOfHSequenceOfXYZ();
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfXYZ();
 		%feature("autodoc", "1");
@@ -853,12 +956,15 @@ class Handle_PColgp_SeqNodeOfHSequenceOfXYZ : public Handle_PMMgt_PManaged {
 	return (PColgp_SeqNodeOfHSequenceOfXYZ*)$self->Access();
 	}
 };
+%extend Handle_PColgp_SeqNodeOfHSequenceOfXYZ {
+	~Handle_PColgp_SeqNodeOfHSequenceOfXYZ() {
+	printf("Call custom destructor for instance of Handle_PColgp_SeqNodeOfHSequenceOfXYZ\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d();
 		%feature("autodoc", "1");
@@ -874,12 +980,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public Handle_PStandard_
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfDir2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfCirc2d;
 class Handle_PColgp_HArray2OfCirc2d : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfCirc2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfCirc2d();
 		%feature("autodoc", "1");
@@ -895,12 +1004,15 @@ class Handle_PColgp_HArray2OfCirc2d : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfCirc2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfCirc2d {
+	~Handle_PColgp_HArray2OfCirc2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfCirc2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray2OfDir;
 class Handle_PColgp_HArray2OfDir : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray2OfDir();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfDir();
 		%feature("autodoc", "1");
@@ -916,12 +1028,15 @@ class Handle_PColgp_HArray2OfDir : public Handle_Standard_Persistent {
 	return (PColgp_HArray2OfDir*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HArray2OfDir {
+	~Handle_PColgp_HArray2OfDir() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray2OfDir\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HSequenceOfPnt;
 class Handle_PColgp_HSequenceOfPnt : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HSequenceOfPnt();
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfPnt();
 		%feature("autodoc", "1");
@@ -937,12 +1052,15 @@ class Handle_PColgp_HSequenceOfPnt : public Handle_Standard_Persistent {
 	return (PColgp_HSequenceOfPnt*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HSequenceOfPnt {
+	~Handle_PColgp_HSequenceOfPnt() {
+	printf("Call custom destructor for instance of Handle_PColgp_HSequenceOfPnt\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d();
 		%feature("autodoc", "1");
@@ -958,12 +1076,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public Handle_PStandard
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d();
 		%feature("autodoc", "1");
@@ -979,12 +1100,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public Handle_PStandard_
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfLin2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d();
 		%feature("autodoc", "1");
@@ -1000,12 +1124,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public Handle_PStandard
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d();
 		%feature("autodoc", "1");
@@ -1021,12 +1148,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public Handle_PStandard_
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfVec2d*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HSequenceOfXYZ;
 class Handle_PColgp_HSequenceOfXYZ : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HSequenceOfXYZ();
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfXYZ();
 		%feature("autodoc", "1");
@@ -1042,12 +1172,15 @@ class Handle_PColgp_HSequenceOfXYZ : public Handle_Standard_Persistent {
 	return (PColgp_HSequenceOfXYZ*)$self->Access();
 	}
 };
+%extend Handle_PColgp_HSequenceOfXYZ {
+	~Handle_PColgp_HSequenceOfXYZ() {
+	printf("Call custom destructor for instance of Handle_PColgp_HSequenceOfXYZ\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec();
 		%feature("autodoc", "1");
@@ -1063,12 +1196,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec : public Handle_PStandard_Ar
 	return (PColgp_VArrayNodeOfFieldOfHArray1OfVec*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY();
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY();
 		%feature("autodoc", "1");
@@ -1084,12 +1220,15 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY : public Handle_PStandard_Arr
 	return (PColgp_VArrayNodeOfFieldOfHArray2OfXY*)$self->Access();
 	}
 };
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY() {
+	printf("Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY\n");
+	}
+};
 
 %nodefaultctor Handle_PColgp_HArray1OfPnt;
 class Handle_PColgp_HArray1OfPnt : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColgp_HArray1OfPnt();
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt();
 		%feature("autodoc", "1");
@@ -1103,6 +1242,11 @@ class Handle_PColgp_HArray1OfPnt : public Handle_Standard_Persistent {
 %extend Handle_PColgp_HArray1OfPnt {
 	PColgp_HArray1OfPnt* GetObject() {
 	return (PColgp_HArray1OfPnt*)$self->Access();
+	}
+};
+%extend Handle_PColgp_HArray1OfPnt {
+	~Handle_PColgp_HArray1OfPnt() {
+	printf("Call custom destructor for instance of Handle_PColgp_HArray1OfPnt\n");
 	}
 };
 
@@ -1211,13 +1355,16 @@ class PColgp_HArray1OfVec : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfVec & _CSFDB_GetPColgp_HArray1OfVecData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfVec();
 
 };
 %extend PColgp_HArray1OfVec {
 	Handle_PColgp_HArray1OfVec GetHandle() {
 	return *(Handle_PColgp_HArray1OfVec*) &$self;
+	}
+};
+%extend PColgp_HArray1OfVec {
+	~PColgp_HArray1OfVec() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfVec\n");
 	}
 };
 
@@ -1274,13 +1421,16 @@ class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
 		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfDirMyNext(const Handle_PColgp_SeqNodeOfHSequenceOfDir &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_SeqNodeOfHSequenceOfDir();
 
 };
 %extend PColgp_SeqNodeOfHSequenceOfDir {
 	Handle_PColgp_SeqNodeOfHSequenceOfDir GetHandle() {
 	return *(Handle_PColgp_SeqNodeOfHSequenceOfDir*) &$self;
+	}
+};
+%extend PColgp_SeqNodeOfHSequenceOfDir {
+	~PColgp_SeqNodeOfHSequenceOfDir() {
+	printf("Call custom destructor for instance of PColgp_SeqNodeOfHSequenceOfDir\n");
 	}
 };
 
@@ -1367,13 +1517,16 @@ class PColgp_HArray2OfVec2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfVec2d & _CSFDB_GetPColgp_HArray2OfVec2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfVec2d();
 
 };
 %extend PColgp_HArray2OfVec2d {
 	Handle_PColgp_HArray2OfVec2d GetHandle() {
 	return *(Handle_PColgp_HArray2OfVec2d*) &$self;
+	}
+};
+%extend PColgp_HArray2OfVec2d {
+	~PColgp_HArray2OfVec2d() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfVec2d\n");
 	}
 };
 
@@ -1414,13 +1567,16 @@ class PColgp_HArray1OfDir2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfDir2d & _CSFDB_GetPColgp_HArray1OfDir2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfDir2d();
 
 };
 %extend PColgp_HArray1OfDir2d {
 	Handle_PColgp_HArray1OfDir2d GetHandle() {
 	return *(Handle_PColgp_HArray1OfDir2d*) &$self;
+	}
+};
+%extend PColgp_HArray1OfDir2d {
+	~PColgp_HArray1OfDir2d() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfDir2d\n");
 	}
 };
 
@@ -1441,13 +1597,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public PStandard_ArrayNode {
 		const gp_Lin2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfLin2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfLin2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfLin2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfLin2d\n");
 	}
 };
 
@@ -1468,13 +1627,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec : public PStandard_ArrayNode {
 		const gp_Vec & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfVecmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfVec();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfVec {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfVec {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfVec() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfVec\n");
 	}
 };
 
@@ -1515,13 +1677,16 @@ class PColgp_HArray1OfDir : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfDir & _CSFDB_GetPColgp_HArray1OfDirData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfDir();
 
 };
 %extend PColgp_HArray1OfDir {
 	Handle_PColgp_HArray1OfDir GetHandle() {
 	return *(Handle_PColgp_HArray1OfDir*) &$self;
+	}
+};
+%extend PColgp_HArray1OfDir {
+	~PColgp_HArray1OfDir() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfDir\n");
 	}
 };
 
@@ -1702,13 +1867,16 @@ class PColgp_HArray2OfDir : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfDir & _CSFDB_GetPColgp_HArray2OfDirData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfDir();
 
 };
 %extend PColgp_HArray2OfDir {
 	Handle_PColgp_HArray2OfDir GetHandle() {
 	return *(Handle_PColgp_HArray2OfDir*) &$self;
+	}
+};
+%extend PColgp_HArray2OfDir {
+	~PColgp_HArray2OfDir() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfDir\n");
 	}
 };
 
@@ -1755,13 +1923,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir : public PStandard_ArrayNode {
 		const gp_Dir & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfDirmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfDir();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfDir {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfDir() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfDir\n");
 	}
 };
 
@@ -1816,13 +1987,16 @@ class PColgp_HArray2OfLin2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfLin2d & _CSFDB_GetPColgp_HArray2OfLin2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfLin2d();
 
 };
 %extend PColgp_HArray2OfLin2d {
 	Handle_PColgp_HArray2OfLin2d GetHandle() {
 	return *(Handle_PColgp_HArray2OfLin2d*) &$self;
+	}
+};
+%extend PColgp_HArray2OfLin2d {
+	~PColgp_HArray2OfLin2d() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfLin2d\n");
 	}
 };
 
@@ -1843,13 +2017,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec : public PStandard_ArrayNode {
 		const gp_Vec & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfVecmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfVec();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfVec() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfVec\n");
 	}
 };
 
@@ -1886,13 +2063,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public PStandard_ArrayNode {
 		const gp_Dir2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfDir2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfDir2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfDir2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfDir2d {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfDir2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfDir2d\n");
 	}
 };
 
@@ -1971,13 +2151,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir : public PStandard_ArrayNode {
 		const gp_Dir & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfDirmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfDir();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfDir {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfDir {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfDir() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfDir\n");
 	}
 };
 
@@ -2018,13 +2201,16 @@ class PColgp_SeqNodeOfHSequenceOfPnt : public PMMgt_PManaged {
 		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfPntMyNext(const Handle_PColgp_SeqNodeOfHSequenceOfPnt &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_SeqNodeOfHSequenceOfPnt();
 
 };
 %extend PColgp_SeqNodeOfHSequenceOfPnt {
 	Handle_PColgp_SeqNodeOfHSequenceOfPnt GetHandle() {
 	return *(Handle_PColgp_SeqNodeOfHSequenceOfPnt*) &$self;
+	}
+};
+%extend PColgp_SeqNodeOfHSequenceOfPnt {
+	~PColgp_SeqNodeOfHSequenceOfPnt() {
+	printf("Call custom destructor for instance of PColgp_SeqNodeOfHSequenceOfPnt\n");
 	}
 };
 
@@ -2079,13 +2265,16 @@ class PColgp_HArray2OfPnt2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfPnt2d & _CSFDB_GetPColgp_HArray2OfPnt2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfPnt2d();
 
 };
 %extend PColgp_HArray2OfPnt2d {
 	Handle_PColgp_HArray2OfPnt2d GetHandle() {
 	return *(Handle_PColgp_HArray2OfPnt2d*) &$self;
+	}
+};
+%extend PColgp_HArray2OfPnt2d {
+	~PColgp_HArray2OfPnt2d() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfPnt2d\n");
 	}
 };
 
@@ -2149,8 +2338,6 @@ class PColgp_HSequenceOfVec : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~PColgp_HSequenceOfVec();
-		%feature("autodoc", "1");
 		PColgp_HSequenceOfVec(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfVec _CSFDB_GetPColgp_HSequenceOfVecFirstItem() const;
@@ -2171,6 +2358,11 @@ class PColgp_HSequenceOfVec : public Standard_Persistent {
 %extend PColgp_HSequenceOfVec {
 	Handle_PColgp_HSequenceOfVec GetHandle() {
 	return *(Handle_PColgp_HSequenceOfVec*) &$self;
+	}
+};
+%extend PColgp_HSequenceOfVec {
+	~PColgp_HSequenceOfVec() {
+	printf("Call custom destructor for instance of PColgp_HSequenceOfVec\n");
 	}
 };
 
@@ -2211,13 +2403,16 @@ class PColgp_HArray1OfVec2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfVec2d & _CSFDB_GetPColgp_HArray1OfVec2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfVec2d();
 
 };
 %extend PColgp_HArray1OfVec2d {
 	Handle_PColgp_HArray1OfVec2d GetHandle() {
 	return *(Handle_PColgp_HArray1OfVec2d*) &$self;
+	}
+};
+%extend PColgp_HArray1OfVec2d {
+	~PColgp_HArray1OfVec2d() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfVec2d\n");
 	}
 };
 
@@ -2258,13 +2453,16 @@ class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
 		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfVecMyNext(const Handle_PColgp_SeqNodeOfHSequenceOfVec &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_SeqNodeOfHSequenceOfVec();
 
 };
 %extend PColgp_SeqNodeOfHSequenceOfVec {
 	Handle_PColgp_SeqNodeOfHSequenceOfVec GetHandle() {
 	return *(Handle_PColgp_SeqNodeOfHSequenceOfVec*) &$self;
+	}
+};
+%extend PColgp_SeqNodeOfHSequenceOfVec {
+	~PColgp_SeqNodeOfHSequenceOfVec() {
+	printf("Call custom destructor for instance of PColgp_SeqNodeOfHSequenceOfVec\n");
 	}
 };
 
@@ -2305,13 +2503,16 @@ class PColgp_HArray1OfLin2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfLin2d & _CSFDB_GetPColgp_HArray1OfLin2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfLin2d();
 
 };
 %extend PColgp_HArray1OfLin2d {
 	Handle_PColgp_HArray1OfLin2d GetHandle() {
 	return *(Handle_PColgp_HArray1OfLin2d*) &$self;
+	}
+};
+%extend PColgp_HArray1OfLin2d {
+	~PColgp_HArray1OfLin2d() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfLin2d\n");
 	}
 };
 
@@ -2352,13 +2553,16 @@ class PColgp_HArray1OfPnt : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfPnt & _CSFDB_GetPColgp_HArray1OfPntData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfPnt();
 
 };
 %extend PColgp_HArray1OfPnt {
 	Handle_PColgp_HArray1OfPnt GetHandle() {
 	return *(Handle_PColgp_HArray1OfPnt*) &$self;
+	}
+};
+%extend PColgp_HArray1OfPnt {
+	~PColgp_HArray1OfPnt() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfPnt\n");
 	}
 };
 
@@ -2422,8 +2626,6 @@ class PColgp_HSequenceOfDir : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~PColgp_HSequenceOfDir();
-		%feature("autodoc", "1");
 		PColgp_HSequenceOfDir(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfDir _CSFDB_GetPColgp_HSequenceOfDirFirstItem() const;
@@ -2446,6 +2648,11 @@ class PColgp_HSequenceOfDir : public Standard_Persistent {
 	return *(Handle_PColgp_HSequenceOfDir*) &$self;
 	}
 };
+%extend PColgp_HSequenceOfDir {
+	~PColgp_HSequenceOfDir() {
+	printf("Call custom destructor for instance of PColgp_HSequenceOfDir\n");
+	}
+};
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfVec2d;
 class PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public PStandard_ArrayNode {
@@ -2464,13 +2671,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public PStandard_ArrayNode {
 		const gp_Vec2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfVec2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfVec2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfVec2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfVec2d\n");
 	}
 };
 
@@ -2529,13 +2739,16 @@ class PColgp_SeqNodeOfHSequenceOfXYZ : public PMMgt_PManaged {
 		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfXYZMyNext(const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_SeqNodeOfHSequenceOfXYZ();
 
 };
 %extend PColgp_SeqNodeOfHSequenceOfXYZ {
 	Handle_PColgp_SeqNodeOfHSequenceOfXYZ GetHandle() {
 	return *(Handle_PColgp_SeqNodeOfHSequenceOfXYZ*) &$self;
+	}
+};
+%extend PColgp_SeqNodeOfHSequenceOfXYZ {
+	~PColgp_SeqNodeOfHSequenceOfXYZ() {
+	printf("Call custom destructor for instance of PColgp_SeqNodeOfHSequenceOfXYZ\n");
 	}
 };
 
@@ -2556,13 +2769,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public PStandard_ArrayNode {
 		const gp_Dir2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfDir2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfDir2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfDir2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfDir2d\n");
 	}
 };
 
@@ -2625,13 +2841,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public PStandard_ArrayNode {
 		const gp_Circ2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfCirc2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d\n");
 	}
 };
 
@@ -2686,13 +2905,16 @@ class PColgp_HArray2OfPnt : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfPnt & _CSFDB_GetPColgp_HArray2OfPntData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfPnt();
 
 };
 %extend PColgp_HArray2OfPnt {
 	Handle_PColgp_HArray2OfPnt GetHandle() {
 	return *(Handle_PColgp_HArray2OfPnt*) &$self;
+	}
+};
+%extend PColgp_HArray2OfPnt {
+	~PColgp_HArray2OfPnt() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfPnt\n");
 	}
 };
 
@@ -2713,13 +2935,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public PStandard_ArrayNode {
 		const gp_XYZ & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfXYZmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfXYZ();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfXYZ() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfXYZ\n");
 	}
 };
 
@@ -2766,13 +2991,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public PStandard_ArrayNode {
 		const gp_Pnt & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfPntmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfPnt();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfPnt() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfPnt\n");
 	}
 };
 
@@ -2839,13 +3067,16 @@ class PColgp_HArray1OfPnt2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfPnt2d & _CSFDB_GetPColgp_HArray1OfPnt2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfPnt2d();
 
 };
 %extend PColgp_HArray1OfPnt2d {
 	Handle_PColgp_HArray1OfPnt2d GetHandle() {
 	return *(Handle_PColgp_HArray1OfPnt2d*) &$self;
+	}
+};
+%extend PColgp_HArray1OfPnt2d {
+	~PColgp_HArray1OfPnt2d() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfPnt2d\n");
 	}
 };
 
@@ -2902,13 +3133,16 @@ class PColgp_HArray1OfXYZ : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfXYZ & _CSFDB_GetPColgp_HArray1OfXYZData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfXYZ();
 
 };
 %extend PColgp_HArray1OfXYZ {
 	Handle_PColgp_HArray1OfXYZ GetHandle() {
 	return *(Handle_PColgp_HArray1OfXYZ*) &$self;
+	}
+};
+%extend PColgp_HArray1OfXYZ {
+	~PColgp_HArray1OfXYZ() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfXYZ\n");
 	}
 };
 
@@ -2963,13 +3197,16 @@ class PColgp_HArray2OfVec : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfVec & _CSFDB_GetPColgp_HArray2OfVecData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfVec();
 
 };
 %extend PColgp_HArray2OfVec {
 	Handle_PColgp_HArray2OfVec GetHandle() {
 	return *(Handle_PColgp_HArray2OfVec*) &$self;
+	}
+};
+%extend PColgp_HArray2OfVec {
+	~PColgp_HArray2OfVec() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfVec\n");
 	}
 };
 
@@ -3016,13 +3253,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public PStandard_ArrayNode {
 		const gp_Vec2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfVec2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfVec2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfVec2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfVec2d {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfVec2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfVec2d\n");
 	}
 };
 
@@ -3077,13 +3317,16 @@ class PColgp_HArray2OfXYZ : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfXYZ & _CSFDB_GetPColgp_HArray2OfXYZData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfXYZ();
 
 };
 %extend PColgp_HArray2OfXYZ {
 	Handle_PColgp_HArray2OfXYZ GetHandle() {
 	return *(Handle_PColgp_HArray2OfXYZ*) &$self;
+	}
+};
+%extend PColgp_HArray2OfXYZ {
+	~PColgp_HArray2OfXYZ() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfXYZ\n");
 	}
 };
 
@@ -3104,13 +3347,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public PStandard_ArrayNode {
 		const gp_Pnt & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfPntmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfPnt();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfPnt {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfPnt {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfPnt() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfPnt\n");
 	}
 };
 
@@ -3207,13 +3453,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXY : public PStandard_ArrayNode {
 		const gp_XY & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfXYmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfXY();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfXY {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfXY {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfXY() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfXY\n");
 	}
 };
 
@@ -3280,13 +3529,16 @@ class PColgp_HArray1OfCirc2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfCirc2d & _CSFDB_GetPColgp_HArray1OfCirc2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfCirc2d();
 
 };
 %extend PColgp_HArray1OfCirc2d {
 	Handle_PColgp_HArray1OfCirc2d GetHandle() {
 	return *(Handle_PColgp_HArray1OfCirc2d*) &$self;
+	}
+};
+%extend PColgp_HArray1OfCirc2d {
+	~PColgp_HArray1OfCirc2d() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfCirc2d\n");
 	}
 };
 
@@ -3341,13 +3593,16 @@ class PColgp_HArray2OfXY : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfXY & _CSFDB_GetPColgp_HArray2OfXYData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfXY();
 
 };
 %extend PColgp_HArray2OfXY {
 	Handle_PColgp_HArray2OfXY GetHandle() {
 	return *(Handle_PColgp_HArray2OfXY*) &$self;
+	}
+};
+%extend PColgp_HArray2OfXY {
+	~PColgp_HArray2OfXY() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfXY\n");
 	}
 };
 
@@ -3478,13 +3733,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public PStandard_ArrayNode {
 		const gp_XYZ & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYZmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfXYZ();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfXYZ() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfXYZ\n");
 	}
 };
 
@@ -3566,8 +3824,6 @@ class PColgp_HSequenceOfPnt : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~PColgp_HSequenceOfPnt();
-		%feature("autodoc", "1");
 		PColgp_HSequenceOfPnt(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfPnt _CSFDB_GetPColgp_HSequenceOfPntFirstItem() const;
@@ -3590,6 +3846,11 @@ class PColgp_HSequenceOfPnt : public Standard_Persistent {
 	return *(Handle_PColgp_HSequenceOfPnt*) &$self;
 	}
 };
+%extend PColgp_HSequenceOfPnt {
+	~PColgp_HSequenceOfPnt() {
+	printf("Call custom destructor for instance of PColgp_HSequenceOfPnt\n");
+	}
+};
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d;
 class PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public PStandard_ArrayNode {
@@ -3608,13 +3869,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public PStandard_ArrayNode {
 		const gp_Pnt2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfPnt2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d\n");
 	}
 };
 
@@ -3669,13 +3933,16 @@ class PColgp_HArray2OfCirc2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfCirc2d & _CSFDB_GetPColgp_HArray2OfCirc2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfCirc2d();
 
 };
 %extend PColgp_HArray2OfCirc2d {
 	Handle_PColgp_HArray2OfCirc2d GetHandle() {
 	return *(Handle_PColgp_HArray2OfCirc2d*) &$self;
+	}
+};
+%extend PColgp_HArray2OfCirc2d {
+	~PColgp_HArray2OfCirc2d() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfCirc2d\n");
 	}
 };
 
@@ -3738,13 +4005,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public PStandard_ArrayNode {
 		const gp_Lin2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfLin2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfLin2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfLin2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfLin2d\n");
 	}
 };
 
@@ -3791,13 +4061,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXY : public PStandard_ArrayNode {
 		const gp_XY & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfXY();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfXY() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfXY\n");
 	}
 };
 
@@ -3887,8 +4160,6 @@ class PColgp_HSequenceOfXYZ : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~PColgp_HSequenceOfXYZ();
-		%feature("autodoc", "1");
 		PColgp_HSequenceOfXYZ(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfXYZ _CSFDB_GetPColgp_HSequenceOfXYZFirstItem() const;
@@ -3909,6 +4180,11 @@ class PColgp_HSequenceOfXYZ : public Standard_Persistent {
 %extend PColgp_HSequenceOfXYZ {
 	Handle_PColgp_HSequenceOfXYZ GetHandle() {
 	return *(Handle_PColgp_HSequenceOfXYZ*) &$self;
+	}
+};
+%extend PColgp_HSequenceOfXYZ {
+	~PColgp_HSequenceOfXYZ() {
+	printf("Call custom destructor for instance of PColgp_HSequenceOfXYZ\n");
 	}
 };
 
@@ -3991,13 +4267,16 @@ class PColgp_HArray1OfXY : public Standard_Persistent {
 		const PColgp_FieldOfHArray1OfXY & _CSFDB_GetPColgp_HArray1OfXYData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray1OfXY();
 
 };
 %extend PColgp_HArray1OfXY {
 	Handle_PColgp_HArray1OfXY GetHandle() {
 	return *(Handle_PColgp_HArray1OfXY*) &$self;
+	}
+};
+%extend PColgp_HArray1OfXY {
+	~PColgp_HArray1OfXY() {
+	printf("Call custom destructor for instance of PColgp_HArray1OfXY\n");
 	}
 };
 
@@ -4068,13 +4347,16 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 		const PColgp_FieldOfHArray2OfDir2d & _CSFDB_GetPColgp_HArray2OfDir2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_HArray2OfDir2d();
 
 };
 %extend PColgp_HArray2OfDir2d {
 	Handle_PColgp_HArray2OfDir2d GetHandle() {
 	return *(Handle_PColgp_HArray2OfDir2d*) &$self;
+	}
+};
+%extend PColgp_HArray2OfDir2d {
+	~PColgp_HArray2OfDir2d() {
+	printf("Call custom destructor for instance of PColgp_HArray2OfDir2d\n");
 	}
 };
 
@@ -4095,13 +4377,16 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public PStandard_ArrayNode {
 		const gp_Pnt2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfPnt2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d\n");
 	}
 };
 
@@ -4140,13 +4425,16 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public PStandard_ArrayNode {
 		const gp_Circ2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfCirc2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d();
 
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
 	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d GetHandle() {
 	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d\n");
 	}
 };
 

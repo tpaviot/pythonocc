@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PTColStd_DataMapNodeOfTransientPersistentMap();
-		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap();
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap(const Handle_PTColStd_DataMapNodeOfTransientPersistentMap &aHandle);
@@ -118,12 +116,15 @@ class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TColle
 	return (PTColStd_DataMapNodeOfTransientPersistentMap*)$self->Access();
 	}
 };
+%extend Handle_PTColStd_DataMapNodeOfTransientPersistentMap {
+	~Handle_PTColStd_DataMapNodeOfTransientPersistentMap() {
+	printf("Call custom destructor for instance of Handle_PTColStd_DataMapNodeOfTransientPersistentMap\n");
+	}
+};
 
 %nodefaultctor Handle_PTColStd_DataMapNodeOfPersistentTransientMap;
 class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PTColStd_DataMapNodeOfPersistentTransientMap();
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfPersistentTransientMap();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TColle
 	return (PTColStd_DataMapNodeOfPersistentTransientMap*)$self->Access();
 	}
 };
+%extend Handle_PTColStd_DataMapNodeOfPersistentTransientMap {
+	~Handle_PTColStd_DataMapNodeOfPersistentTransientMap() {
+	printf("Call custom destructor for instance of Handle_PTColStd_DataMapNodeOfPersistentTransientMap\n");
+	}
+};
 
 %nodefaultctor Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent;
 class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent();
 		%feature("autodoc", "1");
 		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent();
 		%feature("autodoc", "1");
@@ -158,6 +162,11 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 %extend Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
 	PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent* GetObject() {
 	return (PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent*)$self->Access();
+	}
+};
+%extend Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
+	~Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent() {
+	printf("Call custom destructor for instance of Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent\n");
 	}
 };
 
@@ -190,13 +199,16 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PTColStd_DataMapNodeOfPersistentTransientMap();
 
 };
 %extend PTColStd_DataMapNodeOfPersistentTransientMap {
 	Handle_PTColStd_DataMapNodeOfPersistentTransientMap GetHandle() {
 	return *(Handle_PTColStd_DataMapNodeOfPersistentTransientMap*) &$self;
+	}
+};
+%extend PTColStd_DataMapNodeOfPersistentTransientMap {
+	~PTColStd_DataMapNodeOfPersistentTransientMap() {
+	printf("Call custom destructor for instance of PTColStd_DataMapNodeOfPersistentTransientMap\n");
 	}
 };
 
@@ -305,13 +317,16 @@ class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollectio
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent();
 
 };
 %extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
 	Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent GetHandle() {
 	return *(Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent*) &$self;
+	}
+};
+%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
+	~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent() {
+	printf("Call custom destructor for instance of PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent\n");
 	}
 };
 
@@ -344,13 +359,16 @@ class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode 
 		Handle_Standard_Persistent & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PTColStd_DataMapNodeOfTransientPersistentMap();
 
 };
 %extend PTColStd_DataMapNodeOfTransientPersistentMap {
 	Handle_PTColStd_DataMapNodeOfTransientPersistentMap GetHandle() {
 	return *(Handle_PTColStd_DataMapNodeOfTransientPersistentMap*) &$self;
+	}
+};
+%extend PTColStd_DataMapNodeOfTransientPersistentMap {
+	~PTColStd_DataMapNodeOfTransientPersistentMap() {
+	printf("Call custom destructor for instance of PTColStd_DataMapNodeOfTransientPersistentMap\n");
 	}
 };
 

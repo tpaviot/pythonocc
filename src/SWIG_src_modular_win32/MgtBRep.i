@@ -107,8 +107,6 @@ enum MgtBRep_TriangleMode {
 class Handle_MgtBRep_TranslateTool1 : public Handle_MgtTopoDS_TranslateTool1 {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MgtBRep_TranslateTool1();
-		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool1();
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool1(const Handle_MgtBRep_TranslateTool1 &aHandle);
@@ -123,12 +121,15 @@ class Handle_MgtBRep_TranslateTool1 : public Handle_MgtTopoDS_TranslateTool1 {
 	return (MgtBRep_TranslateTool1*)$self->Access();
 	}
 };
+%extend Handle_MgtBRep_TranslateTool1 {
+	~Handle_MgtBRep_TranslateTool1() {
+	printf("Call custom destructor for instance of Handle_MgtBRep_TranslateTool1\n");
+	}
+};
 
 %nodefaultctor Handle_MgtBRep_TranslateTool;
 class Handle_MgtBRep_TranslateTool : public Handle_MgtTopoDS_TranslateTool {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MgtBRep_TranslateTool();
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool();
 		%feature("autodoc", "1");
@@ -142,6 +143,11 @@ class Handle_MgtBRep_TranslateTool : public Handle_MgtTopoDS_TranslateTool {
 %extend Handle_MgtBRep_TranslateTool {
 	MgtBRep_TranslateTool* GetObject() {
 	return (MgtBRep_TranslateTool*)$self->Access();
+	}
+};
+%extend Handle_MgtBRep_TranslateTool {
+	~Handle_MgtBRep_TranslateTool() {
+	printf("Call custom destructor for instance of Handle_MgtBRep_TranslateTool\n");
 	}
 };
 
@@ -198,13 +204,16 @@ class MgtBRep_TranslateTool1 : public MgtTopoDS_TranslateTool1 {
 		virtual		void UpdateFace(const PTopoDS_Shape1 &S1, TopoDS_Shape & S2, PTColStd_PersistentTransientMap & M) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MgtBRep_TranslateTool1();
 
 };
 %extend MgtBRep_TranslateTool1 {
 	Handle_MgtBRep_TranslateTool1 GetHandle() {
 	return *(Handle_MgtBRep_TranslateTool1*) &$self;
+	}
+};
+%extend MgtBRep_TranslateTool1 {
+	~MgtBRep_TranslateTool1() {
+	printf("Call custom destructor for instance of MgtBRep_TranslateTool1\n");
 	}
 };
 
@@ -261,13 +270,16 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 		virtual		void UpdateFace(const Handle_PTopoDS_HShape &S1, TopoDS_Shape & S2, PTColStd_PersistentTransientMap & M) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MgtBRep_TranslateTool();
 
 };
 %extend MgtBRep_TranslateTool {
 	Handle_MgtBRep_TranslateTool GetHandle() {
 	return *(Handle_MgtBRep_TranslateTool*) &$self;
+	}
+};
+%extend MgtBRep_TranslateTool {
+	~MgtBRep_TranslateTool() {
+	printf("Call custom destructor for instance of MgtBRep_TranslateTool\n");
 	}
 };
 

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GraphTools_SC();
-		%feature("autodoc", "1");
 		Handle_GraphTools_SC();
 		%feature("autodoc", "1");
 		Handle_GraphTools_SC(const Handle_GraphTools_SC &aHandle);
@@ -118,12 +116,15 @@ class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 	return (GraphTools_SC*)$self->Access();
 	}
 };
+%extend Handle_GraphTools_SC {
+	~Handle_GraphTools_SC() {
+	printf("Call custom destructor for instance of Handle_GraphTools_SC\n");
+	}
+};
 
 %nodefaultctor Handle_GraphTools_ListNodeOfListOfSequenceOfInteger;
 class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GraphTools_ListNodeOfListOfSequenceOfInteger();
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TColle
 	return (GraphTools_ListNodeOfListOfSequenceOfInteger*)$self->Access();
 	}
 };
+%extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
+	~Handle_GraphTools_ListNodeOfListOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of Handle_GraphTools_ListNodeOfListOfSequenceOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_GraphTools_ListNodeOfSCList;
 class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GraphTools_ListNodeOfSCList();
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfSCList();
 		%feature("autodoc", "1");
@@ -158,6 +162,11 @@ class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 %extend Handle_GraphTools_ListNodeOfSCList {
 	GraphTools_ListNodeOfSCList* GetObject() {
 	return (GraphTools_ListNodeOfSCList*)$self->Access();
+	}
+};
+%extend Handle_GraphTools_ListNodeOfSCList {
+	~Handle_GraphTools_ListNodeOfSCList() {
+	printf("Call custom destructor for instance of Handle_GraphTools_ListNodeOfSCList\n");
 	}
 };
 
@@ -332,13 +341,16 @@ class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 		Handle_GraphTools_SC & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GraphTools_ListNodeOfSCList();
 
 };
 %extend GraphTools_ListNodeOfSCList {
 	Handle_GraphTools_ListNodeOfSCList GetHandle() {
 	return *(Handle_GraphTools_ListNodeOfSCList*) &$self;
+	}
+};
+%extend GraphTools_ListNodeOfSCList {
+	~GraphTools_ListNodeOfSCList() {
+	printf("Call custom destructor for instance of GraphTools_ListNodeOfSCList\n");
 	}
 };
 
@@ -385,13 +397,16 @@ class GraphTools_SC : public MMgt_TShared {
 		const GraphTools_SCList & GetBackSC() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GraphTools_SC();
 
 };
 %extend GraphTools_SC {
 	Handle_GraphTools_SC GetHandle() {
 	return *(Handle_GraphTools_SC*) &$self;
+	}
+};
+%extend GraphTools_SC {
+	~GraphTools_SC() {
+	printf("Call custom destructor for instance of GraphTools_SC\n");
 	}
 };
 
@@ -404,12 +419,15 @@ class GraphTools_ListNodeOfListOfSequenceOfInteger : public TCollection_MapNode 
 		TColStd_SequenceOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GraphTools_ListNodeOfListOfSequenceOfInteger();
 
 };
 %extend GraphTools_ListNodeOfListOfSequenceOfInteger {
 	Handle_GraphTools_ListNodeOfListOfSequenceOfInteger GetHandle() {
 	return *(Handle_GraphTools_ListNodeOfListOfSequenceOfInteger*) &$self;
+	}
+};
+%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
+	~GraphTools_ListNodeOfListOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of GraphTools_ListNodeOfListOfSequenceOfInteger\n");
 	}
 };

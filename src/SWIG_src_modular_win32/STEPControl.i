@@ -113,8 +113,6 @@ enum STEPControl_StepModelType {
 class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProcess {
 	public:
 		%feature("autodoc", "1");
-		~Handle_STEPControl_ActorRead();
-		%feature("autodoc", "1");
 		Handle_STEPControl_ActorRead();
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorRead(const Handle_STEPControl_ActorRead &aHandle);
@@ -129,12 +127,15 @@ class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProc
 	return (STEPControl_ActorRead*)$self->Access();
 	}
 };
+%extend Handle_STEPControl_ActorRead {
+	~Handle_STEPControl_ActorRead() {
+	printf("Call custom destructor for instance of Handle_STEPControl_ActorRead\n");
+	}
+};
 
 %nodefaultctor Handle_STEPControl_ActorWrite;
 class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProcess {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPControl_ActorWrite();
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorWrite();
 		%feature("autodoc", "1");
@@ -150,12 +151,15 @@ class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 	return (STEPControl_ActorWrite*)$self->Access();
 	}
 };
+%extend Handle_STEPControl_ActorWrite {
+	~Handle_STEPControl_ActorWrite() {
+	printf("Call custom destructor for instance of Handle_STEPControl_ActorWrite\n");
+	}
+};
 
 %nodefaultctor Handle_STEPControl_Controller;
 class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPControl_Controller();
 		%feature("autodoc", "1");
 		Handle_STEPControl_Controller();
 		%feature("autodoc", "1");
@@ -169,6 +173,11 @@ class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 %extend Handle_STEPControl_Controller {
 	STEPControl_Controller* GetObject() {
 	return (STEPControl_Controller*)$self->Access();
+	}
+};
+%extend Handle_STEPControl_Controller {
+	~Handle_STEPControl_Controller() {
+	printf("Call custom destructor for instance of Handle_STEPControl_Controller\n");
 	}
 };
 
@@ -211,13 +220,16 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 		Standard_Boolean ComputeSRRWT(const Handle_StepRepr_RepresentationRelationship &SRR, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPControl_ActorRead();
 
 };
 %extend STEPControl_ActorRead {
 	Handle_STEPControl_ActorRead GetHandle() {
 	return *(Handle_STEPControl_ActorRead*) &$self;
+	}
+};
+%extend STEPControl_ActorRead {
+	~STEPControl_ActorRead() {
+	printf("Call custom destructor for instance of STEPControl_ActorRead\n");
 	}
 };
 
@@ -250,13 +262,16 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 		virtual		Standard_Boolean IsAssembly(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPControl_ActorWrite();
 
 };
 %extend STEPControl_ActorWrite {
 	Handle_STEPControl_ActorWrite GetHandle() {
 	return *(Handle_STEPControl_ActorWrite*) &$self;
+	}
+};
+%extend STEPControl_ActorWrite {
+	~STEPControl_ActorWrite() {
+	printf("Call custom destructor for instance of STEPControl_ActorWrite\n");
 	}
 };
 
@@ -277,13 +292,16 @@ class STEPControl_Controller : public XSControl_Controller {
 		Standard_Boolean Init();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPControl_Controller();
 
 };
 %extend STEPControl_Controller {
 	Handle_STEPControl_Controller GetHandle() {
 	return *(Handle_STEPControl_Controller*) &$self;
+	}
+};
+%extend STEPControl_Controller {
+	~STEPControl_Controller() {
+	printf("Call custom destructor for instance of STEPControl_Controller\n");
 	}
 };
 

@@ -103,8 +103,6 @@ typedef NCollection_CellFilter<MeshAlgo_CircleInspector> MeshAlgo_CellFilter;
 class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc();
-		%feature("autodoc", "1");
 		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc();
 		%feature("autodoc", "1");
 		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc(const Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc &aHandle);
@@ -117,6 +115,11 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 %extend Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
 	MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc* GetObject() {
 	return (MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc*)$self->Access();
+	}
+};
+%extend Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
+	~Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc() {
+	printf("Call custom destructor for instance of Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc\n");
 	}
 };
 
@@ -245,12 +248,15 @@ class MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public TCollection_MapNode {
 		MeshAlgo_Circ & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc();
 
 };
 %extend MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
 	Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc GetHandle() {
 	return *(Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc*) &$self;
+	}
+};
+%extend MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
+	~MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc() {
+	printf("Call custom destructor for instance of MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc\n");
 	}
 };

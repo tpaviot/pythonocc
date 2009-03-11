@@ -111,8 +111,6 @@ enum TopOpeBRepTool_OutCurveType {
 class Handle_TopOpeBRepTool_HBoxTool : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_HBoxTool();
-		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_HBoxTool();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_HBoxTool(const Handle_TopOpeBRepTool_HBoxTool &aHandle);
@@ -127,12 +125,15 @@ class Handle_TopOpeBRepTool_HBoxTool : public Handle_MMgt_TShared {
 	return (TopOpeBRepTool_HBoxTool*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_HBoxTool {
+	~Handle_TopOpeBRepTool_HBoxTool() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_HBoxTool\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity();
 		%feature("autodoc", "1");
@@ -148,12 +149,15 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity :
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity {
+	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress();
 		%feature("autodoc", "1");
@@ -169,12 +173,15 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : p
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
+	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF;
 class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF();
 		%feature("autodoc", "1");
@@ -190,12 +197,15 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public Handl
 	return (TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF {
+	~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal;
 class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
@@ -211,12 +221,15 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public Handle_TCol
 	return (TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal {
+	~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF;
 class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF();
 		%feature("autodoc", "1");
@@ -232,12 +245,15 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public Han
 	return (TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF {
+	~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface;
 class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface();
 		%feature("autodoc", "1");
@@ -253,12 +269,15 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public Handle_TCol
 	return (TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface {
+	~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_ListNodeOfListOfC2DF;
 class Handle_TopOpeBRepTool_ListNodeOfListOfC2DF : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_ListNodeOfListOfC2DF();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF();
 		%feature("autodoc", "1");
@@ -274,12 +293,15 @@ class Handle_TopOpeBRepTool_ListNodeOfListOfC2DF : public Handle_TCollection_Map
 	return (TopOpeBRepTool_ListNodeOfListOfC2DF*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_ListNodeOfListOfC2DF {
+	~Handle_TopOpeBRepTool_ListNodeOfListOfC2DF() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_ListNodeOfListOfC2DF\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier();
 		%feature("autodoc", "1");
@@ -295,12 +317,15 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier 
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d();
 		%feature("autodoc", "1");
@@ -316,12 +341,15 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : pub
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d*)$self->Access();
 	}
 };
+%extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d {
+	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d\n");
+	}
+};
 
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox();
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox();
 		%feature("autodoc", "1");
@@ -335,6 +363,11 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : publi
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
 	TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox* GetObject() {
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*)$self->Access();
+	}
+};
+%extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
+	printf("Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");
 	}
 };
 
@@ -433,13 +466,16 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public TCo
 		Bnd_Box2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d();
 
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d {
 	Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d GetHandle() {
 	return *(Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d*) &$self;
+	}
+};
+%extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d {
+	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d\n");
 	}
 };
 
@@ -458,13 +494,16 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public T
 		Standard_Address & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress();
 
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
 	Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress GetHandle() {
 	return *(Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*) &$self;
+	}
+};
+%extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
+	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");
 	}
 };
 
@@ -535,13 +574,16 @@ class TopOpeBRepTool_ListNodeOfListOfC2DF : public TCollection_MapNode {
 		TopOpeBRepTool_C2DF & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_ListNodeOfListOfC2DF();
 
 };
 %extend TopOpeBRepTool_ListNodeOfListOfC2DF {
 	Handle_TopOpeBRepTool_ListNodeOfListOfC2DF GetHandle() {
 	return *(Handle_TopOpeBRepTool_ListNodeOfListOfC2DF*) &$self;
+	}
+};
+%extend TopOpeBRepTool_ListNodeOfListOfC2DF {
+	~TopOpeBRepTool_ListNodeOfListOfC2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_ListNodeOfListOfC2DF\n");
 	}
 };
 
@@ -626,13 +668,16 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public
 		TopOpeBRepTool_connexity & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity();
 
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity {
 	Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity GetHandle() {
 	return *(Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity*) &$self;
+	}
+};
+%extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity {
+	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity\n");
 	}
 };
 
@@ -885,13 +930,16 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNod
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal();
 
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal {
 	Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal GetHandle() {
 	return *(Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal*) &$self;
+	}
+};
+%extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal {
+	~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal\n");
 	}
 };
 
@@ -980,13 +1028,16 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public TCollection_MapNod
 		TopOpeBRepTool_face & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface();
 
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface {
 	Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface GetHandle() {
 	return *(Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface*) &$self;
+	}
+};
+%extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface {
+	~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface\n");
 	}
 };
 
@@ -1099,13 +1150,16 @@ class TopOpeBRepTool_HBoxTool : public MMgt_TShared {
 		const TopOpeBRepTool_IndexedDataMapOfShapeBox & IMS() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_HBoxTool();
 
 };
 %extend TopOpeBRepTool_HBoxTool {
 	Handle_TopOpeBRepTool_HBoxTool GetHandle() {
 	return *(Handle_TopOpeBRepTool_HBoxTool*) &$self;
+	}
+};
+%extend TopOpeBRepTool_HBoxTool {
+	~TopOpeBRepTool_HBoxTool() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_HBoxTool\n");
 	}
 };
 
@@ -1558,13 +1612,16 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TColl
 		Bnd_Box & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox();
 
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
 	Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox GetHandle() {
 	return *(Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*) &$self;
+	}
+};
+%extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");
 	}
 };
 
@@ -1703,13 +1760,16 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : publi
 		BRepClass3d_SolidClassifier & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier();
 
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
 	Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier GetHandle() {
 	return *(Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*) &$self;
+	}
+};
+%extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");
 	}
 };
 
@@ -1724,13 +1784,16 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public TCollection_
 		TopOpeBRepTool_ListOfC2DF & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF();
 
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF {
 	Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF GetHandle() {
 	return *(Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF*) &$self;
+	}
+};
+%extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF {
+	~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF\n");
 	}
 };
 
@@ -1803,12 +1866,15 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public TCollectio
 		TopOpeBRepTool_C2DF & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF();
 
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF {
 	Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF GetHandle() {
 	return *(Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF*) &$self;
+	}
+};
+%extend TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF {
+	~TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF\n");
 	}
 };

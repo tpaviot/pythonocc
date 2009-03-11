@@ -151,8 +151,6 @@ enum StepGeom_BSplineSurfaceForm {
 class Handle_StepGeom_GeometricRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepGeom_GeometricRepresentationItem();
-		%feature("autodoc", "1");
 		Handle_StepGeom_GeometricRepresentationItem();
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeometricRepresentationItem(const Handle_StepGeom_GeometricRepresentationItem &aHandle);
@@ -167,12 +165,15 @@ class Handle_StepGeom_GeometricRepresentationItem : public Handle_StepRepr_Repre
 	return (StepGeom_GeometricRepresentationItem*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_GeometricRepresentationItem {
+	~Handle_StepGeom_GeometricRepresentationItem() {
+	printf("Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Curve;
 class Handle_StepGeom_Curve : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Curve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Curve();
 		%feature("autodoc", "1");
@@ -188,12 +189,15 @@ class Handle_StepGeom_Curve : public Handle_StepGeom_GeometricRepresentationItem
 	return (StepGeom_Curve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Curve {
+	~Handle_StepGeom_Curve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Curve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_SurfaceCurve;
 class Handle_StepGeom_SurfaceCurve : public Handle_StepGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_SurfaceCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceCurve();
 		%feature("autodoc", "1");
@@ -209,12 +213,15 @@ class Handle_StepGeom_SurfaceCurve : public Handle_StepGeom_Curve {
 	return (StepGeom_SurfaceCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_SurfaceCurve {
+	~Handle_StepGeom_SurfaceCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_SurfaceCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Surface;
 class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Surface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Surface();
 		%feature("autodoc", "1");
@@ -230,12 +237,15 @@ class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationIt
 	return (StepGeom_Surface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Surface {
+	~Handle_StepGeom_Surface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Surface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BoundedSurface;
 class Handle_StepGeom_BoundedSurface : public Handle_StepGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BoundedSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BoundedSurface();
 		%feature("autodoc", "1");
@@ -251,12 +261,15 @@ class Handle_StepGeom_BoundedSurface : public Handle_StepGeom_Surface {
 	return (StepGeom_BoundedSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BoundedSurface {
+	~Handle_StepGeom_BoundedSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BoundedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BSplineSurface;
 class Handle_StepGeom_BSplineSurface : public Handle_StepGeom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BSplineSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineSurface();
 		%feature("autodoc", "1");
@@ -272,12 +285,15 @@ class Handle_StepGeom_BSplineSurface : public Handle_StepGeom_BoundedSurface {
 	return (StepGeom_BSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BSplineSurface {
+	~Handle_StepGeom_BSplineSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BSplineSurfaceWithKnots;
 class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BSplineSurfaceWithKnots();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineSurfaceWithKnots();
 		%feature("autodoc", "1");
@@ -293,12 +309,15 @@ class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSu
 	return (StepGeom_BSplineSurfaceWithKnots*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BSplineSurfaceWithKnots {
+	~Handle_StepGeom_BSplineSurfaceWithKnots() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnots\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BoundedCurve;
 class Handle_StepGeom_BoundedCurve : public Handle_StepGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BoundedCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BoundedCurve();
 		%feature("autodoc", "1");
@@ -314,12 +333,15 @@ class Handle_StepGeom_BoundedCurve : public Handle_StepGeom_Curve {
 	return (StepGeom_BoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BoundedCurve {
+	~Handle_StepGeom_BoundedCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CompositeCurve;
 class Handle_StepGeom_CompositeCurve : public Handle_StepGeom_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CompositeCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CompositeCurve();
 		%feature("autodoc", "1");
@@ -335,12 +357,15 @@ class Handle_StepGeom_CompositeCurve : public Handle_StepGeom_BoundedCurve {
 	return (StepGeom_CompositeCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CompositeCurve {
+	~Handle_StepGeom_CompositeCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CompositeCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CompositeCurveOnSurface;
 class Handle_StepGeom_CompositeCurveOnSurface : public Handle_StepGeom_CompositeCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CompositeCurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CompositeCurveOnSurface();
 		%feature("autodoc", "1");
@@ -356,12 +381,15 @@ class Handle_StepGeom_CompositeCurveOnSurface : public Handle_StepGeom_Composite
 	return (StepGeom_CompositeCurveOnSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CompositeCurveOnSurface {
+	~Handle_StepGeom_CompositeCurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CompositeCurveOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BoundaryCurve;
 class Handle_StepGeom_BoundaryCurve : public Handle_StepGeom_CompositeCurveOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BoundaryCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BoundaryCurve();
 		%feature("autodoc", "1");
@@ -377,12 +405,15 @@ class Handle_StepGeom_BoundaryCurve : public Handle_StepGeom_CompositeCurveOnSur
 	return (StepGeom_BoundaryCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BoundaryCurve {
+	~Handle_StepGeom_BoundaryCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BoundaryCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_OuterBoundaryCurve;
 class Handle_StepGeom_OuterBoundaryCurve : public Handle_StepGeom_BoundaryCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_OuterBoundaryCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_OuterBoundaryCurve();
 		%feature("autodoc", "1");
@@ -398,12 +429,15 @@ class Handle_StepGeom_OuterBoundaryCurve : public Handle_StepGeom_BoundaryCurve 
 	return (StepGeom_OuterBoundaryCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_OuterBoundaryCurve {
+	~Handle_StepGeom_OuterBoundaryCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_OuterBoundaryCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Point;
 class Handle_StepGeom_Point : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Point();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Point();
 		%feature("autodoc", "1");
@@ -419,12 +453,15 @@ class Handle_StepGeom_Point : public Handle_StepGeom_GeometricRepresentationItem
 	return (StepGeom_Point*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Point {
+	~Handle_StepGeom_Point() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Point\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_DegeneratePcurve;
 class Handle_StepGeom_DegeneratePcurve : public Handle_StepGeom_Point {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_DegeneratePcurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_DegeneratePcurve();
 		%feature("autodoc", "1");
@@ -440,12 +477,15 @@ class Handle_StepGeom_DegeneratePcurve : public Handle_StepGeom_Point {
 	return (StepGeom_DegeneratePcurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_DegeneratePcurve {
+	~Handle_StepGeom_DegeneratePcurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_DegeneratePcurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_EvaluatedDegeneratePcurve;
 class Handle_StepGeom_EvaluatedDegeneratePcurve : public Handle_StepGeom_DegeneratePcurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_EvaluatedDegeneratePcurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_EvaluatedDegeneratePcurve();
 		%feature("autodoc", "1");
@@ -461,12 +501,15 @@ class Handle_StepGeom_EvaluatedDegeneratePcurve : public Handle_StepGeom_Degener
 	return (StepGeom_EvaluatedDegeneratePcurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_EvaluatedDegeneratePcurve {
+	~Handle_StepGeom_EvaluatedDegeneratePcurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_EvaluatedDegeneratePcurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BSplineCurve;
 class Handle_StepGeom_BSplineCurve : public Handle_StepGeom_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BSplineCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineCurve();
 		%feature("autodoc", "1");
@@ -482,12 +525,15 @@ class Handle_StepGeom_BSplineCurve : public Handle_StepGeom_BoundedCurve {
 	return (StepGeom_BSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BSplineCurve {
+	~Handle_StepGeom_BSplineCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_QuasiUniformCurve;
 class Handle_StepGeom_QuasiUniformCurve : public Handle_StepGeom_BSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_QuasiUniformCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_QuasiUniformCurve();
 		%feature("autodoc", "1");
@@ -503,12 +549,15 @@ class Handle_StepGeom_QuasiUniformCurve : public Handle_StepGeom_BSplineCurve {
 	return (StepGeom_QuasiUniformCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_QuasiUniformCurve {
+	~Handle_StepGeom_QuasiUniformCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_QuasiUniformCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_HArray2OfCartesianPoint;
 class Handle_StepGeom_HArray2OfCartesianPoint : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_HArray2OfCartesianPoint();
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray2OfCartesianPoint();
 		%feature("autodoc", "1");
@@ -524,12 +573,15 @@ class Handle_StepGeom_HArray2OfCartesianPoint : public Handle_MMgt_TShared {
 	return (StepGeom_HArray2OfCartesianPoint*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_HArray2OfCartesianPoint {
+	~Handle_StepGeom_HArray2OfCartesianPoint() {
+	printf("Call custom destructor for instance of Handle_StepGeom_HArray2OfCartesianPoint\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BezierSurface;
 class Handle_StepGeom_BezierSurface : public Handle_StepGeom_BSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BezierSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BezierSurface();
 		%feature("autodoc", "1");
@@ -545,12 +597,15 @@ class Handle_StepGeom_BezierSurface : public Handle_StepGeom_BSplineSurface {
 	return (StepGeom_BezierSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BezierSurface {
+	~Handle_StepGeom_BezierSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BezierSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_PointOnSurface;
 class Handle_StepGeom_PointOnSurface : public Handle_StepGeom_Point {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_PointOnSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_PointOnSurface();
 		%feature("autodoc", "1");
@@ -566,12 +621,15 @@ class Handle_StepGeom_PointOnSurface : public Handle_StepGeom_Point {
 	return (StepGeom_PointOnSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_PointOnSurface {
+	~Handle_StepGeom_PointOnSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_PointOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BezierCurveAndRationalBSplineCurve;
 class Handle_StepGeom_BezierCurveAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BezierCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BezierCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
@@ -587,12 +645,15 @@ class Handle_StepGeom_BezierCurveAndRationalBSplineCurve : public Handle_StepGeo
 	return (StepGeom_BezierCurveAndRationalBSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BezierCurveAndRationalBSplineCurve {
+	~Handle_StepGeom_BezierCurveAndRationalBSplineCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BezierCurveAndRationalBSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_HArray1OfCompositeCurveSegment;
 class Handle_StepGeom_HArray1OfCompositeCurveSegment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_HArray1OfCompositeCurveSegment();
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfCompositeCurveSegment();
 		%feature("autodoc", "1");
@@ -608,12 +669,15 @@ class Handle_StepGeom_HArray1OfCompositeCurveSegment : public Handle_MMgt_TShare
 	return (StepGeom_HArray1OfCompositeCurveSegment*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_HArray1OfCompositeCurveSegment {
+	~Handle_StepGeom_HArray1OfCompositeCurveSegment() {
+	printf("Call custom destructor for instance of Handle_StepGeom_HArray1OfCompositeCurveSegment\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext;
 class Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext : public Handle_StepRepr_RepresentationContext {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext();
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext();
 		%feature("autodoc", "1");
@@ -629,12 +693,15 @@ class Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationC
 	return (StepGeom_GeometricRepresentationContextAndParametricRepresentationContext*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
+	~Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext() {
+	printf("Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext;
 class Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext : public Handle_StepRepr_RepresentationContext {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext();
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext();
 		%feature("autodoc", "1");
@@ -650,12 +717,15 @@ class Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext
 	return (StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext {
+	~Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext() {
+	printf("Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Conic;
 class Handle_StepGeom_Conic : public Handle_StepGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Conic();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Conic();
 		%feature("autodoc", "1");
@@ -671,12 +741,15 @@ class Handle_StepGeom_Conic : public Handle_StepGeom_Curve {
 	return (StepGeom_Conic*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Conic {
+	~Handle_StepGeom_Conic() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Conic\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Hyperbola;
 class Handle_StepGeom_Hyperbola : public Handle_StepGeom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Hyperbola();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Hyperbola();
 		%feature("autodoc", "1");
@@ -692,12 +765,15 @@ class Handle_StepGeom_Hyperbola : public Handle_StepGeom_Conic {
 	return (StepGeom_Hyperbola*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Hyperbola {
+	~Handle_StepGeom_Hyperbola() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Hyperbola\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_SurfaceCurveAndBoundedCurve;
 class Handle_StepGeom_SurfaceCurveAndBoundedCurve : public Handle_StepGeom_SurfaceCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_SurfaceCurveAndBoundedCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceCurveAndBoundedCurve();
 		%feature("autodoc", "1");
@@ -713,12 +789,15 @@ class Handle_StepGeom_SurfaceCurveAndBoundedCurve : public Handle_StepGeom_Surfa
 	return (StepGeom_SurfaceCurveAndBoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_SurfaceCurveAndBoundedCurve {
+	~Handle_StepGeom_SurfaceCurveAndBoundedCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_SurfaceCurveAndBoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Direction;
 class Handle_StepGeom_Direction : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Direction();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Direction();
 		%feature("autodoc", "1");
@@ -734,12 +813,15 @@ class Handle_StepGeom_Direction : public Handle_StepGeom_GeometricRepresentation
 	return (StepGeom_Direction*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Direction {
+	~Handle_StepGeom_Direction() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Direction\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_HArray1OfCurve;
 class Handle_StepGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_HArray1OfCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfCurve();
 		%feature("autodoc", "1");
@@ -755,12 +837,15 @@ class Handle_StepGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 	return (StepGeom_HArray1OfCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_HArray1OfCurve {
+	~Handle_StepGeom_HArray1OfCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_HArray1OfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Placement;
 class Handle_StepGeom_Placement : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Placement();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Placement();
 		%feature("autodoc", "1");
@@ -776,12 +861,15 @@ class Handle_StepGeom_Placement : public Handle_StepGeom_GeometricRepresentation
 	return (StepGeom_Placement*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Placement {
+	~Handle_StepGeom_Placement() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Placement\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Axis2Placement2d;
 class Handle_StepGeom_Axis2Placement2d : public Handle_StepGeom_Placement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Axis2Placement2d();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Axis2Placement2d();
 		%feature("autodoc", "1");
@@ -797,12 +885,15 @@ class Handle_StepGeom_Axis2Placement2d : public Handle_StepGeom_Placement {
 	return (StepGeom_Axis2Placement2d*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Axis2Placement2d {
+	~Handle_StepGeom_Axis2Placement2d() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Axis2Placement2d\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_ElementarySurface;
 class Handle_StepGeom_ElementarySurface : public Handle_StepGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_ElementarySurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_ElementarySurface();
 		%feature("autodoc", "1");
@@ -818,12 +909,15 @@ class Handle_StepGeom_ElementarySurface : public Handle_StepGeom_Surface {
 	return (StepGeom_ElementarySurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_ElementarySurface {
+	~Handle_StepGeom_ElementarySurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_ElementarySurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_SphericalSurface;
 class Handle_StepGeom_SphericalSurface : public Handle_StepGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_SphericalSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_SphericalSurface();
 		%feature("autodoc", "1");
@@ -839,12 +933,15 @@ class Handle_StepGeom_SphericalSurface : public Handle_StepGeom_ElementarySurfac
 	return (StepGeom_SphericalSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_SphericalSurface {
+	~Handle_StepGeom_SphericalSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_SphericalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Axis2Placement3d;
 class Handle_StepGeom_Axis2Placement3d : public Handle_StepGeom_Placement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Axis2Placement3d();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Axis2Placement3d();
 		%feature("autodoc", "1");
@@ -860,12 +957,15 @@ class Handle_StepGeom_Axis2Placement3d : public Handle_StepGeom_Placement {
 	return (StepGeom_Axis2Placement3d*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Axis2Placement3d {
+	~Handle_StepGeom_Axis2Placement3d() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Axis2Placement3d\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_SurfaceReplica;
 class Handle_StepGeom_SurfaceReplica : public Handle_StepGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_SurfaceReplica();
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceReplica();
 		%feature("autodoc", "1");
@@ -881,12 +981,15 @@ class Handle_StepGeom_SurfaceReplica : public Handle_StepGeom_Surface {
 	return (StepGeom_SurfaceReplica*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_SurfaceReplica {
+	~Handle_StepGeom_SurfaceReplica() {
+	printf("Call custom destructor for instance of Handle_StepGeom_SurfaceReplica\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_HArray1OfTrimmingSelect;
 class Handle_StepGeom_HArray1OfTrimmingSelect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_HArray1OfTrimmingSelect();
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfTrimmingSelect();
 		%feature("autodoc", "1");
@@ -902,12 +1005,15 @@ class Handle_StepGeom_HArray1OfTrimmingSelect : public Handle_MMgt_TShared {
 	return (StepGeom_HArray1OfTrimmingSelect*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_HArray1OfTrimmingSelect {
+	~Handle_StepGeom_HArray1OfTrimmingSelect() {
+	printf("Call custom destructor for instance of Handle_StepGeom_HArray1OfTrimmingSelect\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_RectangularCompositeSurface;
 class Handle_StepGeom_RectangularCompositeSurface : public Handle_StepGeom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_RectangularCompositeSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_RectangularCompositeSurface();
 		%feature("autodoc", "1");
@@ -923,12 +1029,15 @@ class Handle_StepGeom_RectangularCompositeSurface : public Handle_StepGeom_Bound
 	return (StepGeom_RectangularCompositeSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_RectangularCompositeSurface {
+	~Handle_StepGeom_RectangularCompositeSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_RectangularCompositeSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BSplineCurveWithKnots;
 class Handle_StepGeom_BSplineCurveWithKnots : public Handle_StepGeom_BSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BSplineCurveWithKnots();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineCurveWithKnots();
 		%feature("autodoc", "1");
@@ -944,12 +1053,15 @@ class Handle_StepGeom_BSplineCurveWithKnots : public Handle_StepGeom_BSplineCurv
 	return (StepGeom_BSplineCurveWithKnots*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BSplineCurveWithKnots {
+	~Handle_StepGeom_BSplineCurveWithKnots() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BSplineCurveWithKnots\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
 class Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public Handle_StepRepr_RepresentationContext {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
 		%feature("autodoc", "1");
@@ -965,12 +1077,15 @@ class Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : 
 	return (StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
+	~Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx() {
+	printf("Call custom destructor for instance of Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_HArray2OfSurfacePatch;
 class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_HArray2OfSurfacePatch();
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray2OfSurfacePatch();
 		%feature("autodoc", "1");
@@ -986,12 +1101,15 @@ class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
 	return (StepGeom_HArray2OfSurfacePatch*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_HArray2OfSurfacePatch {
+	~Handle_StepGeom_HArray2OfSurfacePatch() {
+	printf("Call custom destructor for instance of Handle_StepGeom_HArray2OfSurfacePatch\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CartesianTransformationOperator;
 class Handle_StepGeom_CartesianTransformationOperator : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CartesianTransformationOperator();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianTransformationOperator();
 		%feature("autodoc", "1");
@@ -1007,12 +1125,15 @@ class Handle_StepGeom_CartesianTransformationOperator : public Handle_StepGeom_G
 	return (StepGeom_CartesianTransformationOperator*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CartesianTransformationOperator {
+	~Handle_StepGeom_CartesianTransformationOperator() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CartesianTransformationOperator3d;
 class Handle_StepGeom_CartesianTransformationOperator3d : public Handle_StepGeom_CartesianTransformationOperator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CartesianTransformationOperator3d();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianTransformationOperator3d();
 		%feature("autodoc", "1");
@@ -1028,12 +1149,15 @@ class Handle_StepGeom_CartesianTransformationOperator3d : public Handle_StepGeom
 	return (StepGeom_CartesianTransformationOperator3d*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CartesianTransformationOperator3d {
+	~Handle_StepGeom_CartesianTransformationOperator3d() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator3d\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_HArray1OfCartesianPoint;
 class Handle_StepGeom_HArray1OfCartesianPoint : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_HArray1OfCartesianPoint();
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfCartesianPoint();
 		%feature("autodoc", "1");
@@ -1049,12 +1173,15 @@ class Handle_StepGeom_HArray1OfCartesianPoint : public Handle_MMgt_TShared {
 	return (StepGeom_HArray1OfCartesianPoint*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_HArray1OfCartesianPoint {
+	~Handle_StepGeom_HArray1OfCartesianPoint() {
+	printf("Call custom destructor for instance of Handle_StepGeom_HArray1OfCartesianPoint\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_TrimmedCurve;
 class Handle_StepGeom_TrimmedCurve : public Handle_StepGeom_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_TrimmedCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_TrimmedCurve();
 		%feature("autodoc", "1");
@@ -1070,12 +1197,15 @@ class Handle_StepGeom_TrimmedCurve : public Handle_StepGeom_BoundedCurve {
 	return (StepGeom_TrimmedCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_TrimmedCurve {
+	~Handle_StepGeom_TrimmedCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_TrimmedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_OrientedSurface;
 class Handle_StepGeom_OrientedSurface : public Handle_StepGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_OrientedSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_OrientedSurface();
 		%feature("autodoc", "1");
@@ -1091,12 +1221,15 @@ class Handle_StepGeom_OrientedSurface : public Handle_StepGeom_Surface {
 	return (StepGeom_OrientedSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_OrientedSurface {
+	~Handle_StepGeom_OrientedSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_OrientedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_OffsetSurface;
 class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_OffsetSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_OffsetSurface();
 		%feature("autodoc", "1");
@@ -1112,12 +1245,15 @@ class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
 	return (StepGeom_OffsetSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_OffsetSurface {
+	~Handle_StepGeom_OffsetSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_OffsetSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CurveBoundedSurface;
 class Handle_StepGeom_CurveBoundedSurface : public Handle_StepGeom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CurveBoundedSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CurveBoundedSurface();
 		%feature("autodoc", "1");
@@ -1133,12 +1269,15 @@ class Handle_StepGeom_CurveBoundedSurface : public Handle_StepGeom_BoundedSurfac
 	return (StepGeom_CurveBoundedSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CurveBoundedSurface {
+	~Handle_StepGeom_CurveBoundedSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CurveBoundedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface;
 class Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -1154,12 +1293,15 @@ class Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface : public Handle_St
 	return (StepGeom_UniformSurfaceAndRationalBSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface {
+	~Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Axis1Placement;
 class Handle_StepGeom_Axis1Placement : public Handle_StepGeom_Placement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Axis1Placement();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Axis1Placement();
 		%feature("autodoc", "1");
@@ -1175,12 +1317,15 @@ class Handle_StepGeom_Axis1Placement : public Handle_StepGeom_Placement {
 	return (StepGeom_Axis1Placement*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Axis1Placement {
+	~Handle_StepGeom_Axis1Placement() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Axis1Placement\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
 class Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
@@ -1196,12 +1341,15 @@ class Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public Handle_S
 	return (StepGeom_QuasiUniformCurveAndRationalBSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
+	~Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CurveReplica;
 class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CurveReplica();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CurveReplica();
 		%feature("autodoc", "1");
@@ -1217,12 +1365,15 @@ class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
 	return (StepGeom_CurveReplica*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CurveReplica {
+	~Handle_StepGeom_CurveReplica() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CurveReplica\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CylindricalSurface;
 class Handle_StepGeom_CylindricalSurface : public Handle_StepGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CylindricalSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CylindricalSurface();
 		%feature("autodoc", "1");
@@ -1238,12 +1389,15 @@ class Handle_StepGeom_CylindricalSurface : public Handle_StepGeom_ElementarySurf
 	return (StepGeom_CylindricalSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CylindricalSurface {
+	~Handle_StepGeom_CylindricalSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CylindricalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_SweptSurface;
 class Handle_StepGeom_SweptSurface : public Handle_StepGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_SweptSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_SweptSurface();
 		%feature("autodoc", "1");
@@ -1259,12 +1413,15 @@ class Handle_StepGeom_SweptSurface : public Handle_StepGeom_Surface {
 	return (StepGeom_SweptSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_SweptSurface {
+	~Handle_StepGeom_SweptSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_SweptSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve;
 class Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve();
 		%feature("autodoc", "1");
@@ -1280,12 +1437,15 @@ class Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public Hand
 	return (StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
+	~Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_HArray1OfPcurveOrSurface;
 class Handle_StepGeom_HArray1OfPcurveOrSurface : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_HArray1OfPcurveOrSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfPcurveOrSurface();
 		%feature("autodoc", "1");
@@ -1301,12 +1461,15 @@ class Handle_StepGeom_HArray1OfPcurveOrSurface : public Handle_MMgt_TShared {
 	return (StepGeom_HArray1OfPcurveOrSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_HArray1OfPcurveOrSurface {
+	~Handle_StepGeom_HArray1OfPcurveOrSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_HArray1OfPcurveOrSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Ellipse;
 class Handle_StepGeom_Ellipse : public Handle_StepGeom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Ellipse();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Ellipse();
 		%feature("autodoc", "1");
@@ -1322,12 +1485,15 @@ class Handle_StepGeom_Ellipse : public Handle_StepGeom_Conic {
 	return (StepGeom_Ellipse*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Ellipse {
+	~Handle_StepGeom_Ellipse() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Ellipse\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CompositeCurveSegment;
 class Handle_StepGeom_CompositeCurveSegment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CompositeCurveSegment();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CompositeCurveSegment();
 		%feature("autodoc", "1");
@@ -1343,12 +1509,15 @@ class Handle_StepGeom_CompositeCurveSegment : public Handle_MMgt_TShared {
 	return (StepGeom_CompositeCurveSegment*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CompositeCurveSegment {
+	~Handle_StepGeom_CompositeCurveSegment() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CompositeCurveSegment\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_UniformCurve;
 class Handle_StepGeom_UniformCurve : public Handle_StepGeom_BSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_UniformCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_UniformCurve();
 		%feature("autodoc", "1");
@@ -1364,12 +1533,15 @@ class Handle_StepGeom_UniformCurve : public Handle_StepGeom_BSplineCurve {
 	return (StepGeom_UniformCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_UniformCurve {
+	~Handle_StepGeom_UniformCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_UniformCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface;
 class Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -1385,12 +1557,15 @@ class Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface : public Handle_Ste
 	return (StepGeom_BezierSurfaceAndRationalBSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface {
+	~Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_ToroidalSurface;
 class Handle_StepGeom_ToroidalSurface : public Handle_StepGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_ToroidalSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_ToroidalSurface();
 		%feature("autodoc", "1");
@@ -1406,12 +1581,15 @@ class Handle_StepGeom_ToroidalSurface : public Handle_StepGeom_ElementarySurface
 	return (StepGeom_ToroidalSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_ToroidalSurface {
+	~Handle_StepGeom_ToroidalSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_ToroidalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_PointOnCurve;
 class Handle_StepGeom_PointOnCurve : public Handle_StepGeom_Point {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_PointOnCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_PointOnCurve();
 		%feature("autodoc", "1");
@@ -1427,12 +1605,15 @@ class Handle_StepGeom_PointOnCurve : public Handle_StepGeom_Point {
 	return (StepGeom_PointOnCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_PointOnCurve {
+	~Handle_StepGeom_PointOnCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_PointOnCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface;
 class Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -1448,12 +1629,15 @@ class Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public 
 	return (StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface {
+	~Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CartesianPoint;
 class Handle_StepGeom_CartesianPoint : public Handle_StepGeom_Point {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CartesianPoint();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianPoint();
 		%feature("autodoc", "1");
@@ -1469,12 +1653,15 @@ class Handle_StepGeom_CartesianPoint : public Handle_StepGeom_Point {
 	return (StepGeom_CartesianPoint*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CartesianPoint {
+	~Handle_StepGeom_CartesianPoint() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CartesianPoint\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Vector;
 class Handle_StepGeom_Vector : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Vector();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Vector();
 		%feature("autodoc", "1");
@@ -1490,12 +1677,15 @@ class Handle_StepGeom_Vector : public Handle_StepGeom_GeometricRepresentationIte
 	return (StepGeom_Vector*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Vector {
+	~Handle_StepGeom_Vector() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Vector\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_ConicalSurface;
 class Handle_StepGeom_ConicalSurface : public Handle_StepGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_ConicalSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_ConicalSurface();
 		%feature("autodoc", "1");
@@ -1511,12 +1701,15 @@ class Handle_StepGeom_ConicalSurface : public Handle_StepGeom_ElementarySurface 
 	return (StepGeom_ConicalSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_ConicalSurface {
+	~Handle_StepGeom_ConicalSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_ConicalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_CartesianTransformationOperator2d;
 class Handle_StepGeom_CartesianTransformationOperator2d : public Handle_StepGeom_CartesianTransformationOperator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_CartesianTransformationOperator2d();
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianTransformationOperator2d();
 		%feature("autodoc", "1");
@@ -1532,12 +1725,15 @@ class Handle_StepGeom_CartesianTransformationOperator2d : public Handle_StepGeom
 	return (StepGeom_CartesianTransformationOperator2d*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_CartesianTransformationOperator2d {
+	~Handle_StepGeom_CartesianTransformationOperator2d() {
+	printf("Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator2d\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_ReparametrisedCompositeCurveSegment;
 class Handle_StepGeom_ReparametrisedCompositeCurveSegment : public Handle_StepGeom_CompositeCurveSegment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_ReparametrisedCompositeCurveSegment();
 		%feature("autodoc", "1");
 		Handle_StepGeom_ReparametrisedCompositeCurveSegment();
 		%feature("autodoc", "1");
@@ -1553,12 +1749,15 @@ class Handle_StepGeom_ReparametrisedCompositeCurveSegment : public Handle_StepGe
 	return (StepGeom_ReparametrisedCompositeCurveSegment*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_ReparametrisedCompositeCurveSegment {
+	~Handle_StepGeom_ReparametrisedCompositeCurveSegment() {
+	printf("Call custom destructor for instance of Handle_StepGeom_ReparametrisedCompositeCurveSegment\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_TrimmingMember;
 class Handle_StepGeom_TrimmingMember : public Handle_StepData_SelectReal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_TrimmingMember();
 		%feature("autodoc", "1");
 		Handle_StepGeom_TrimmingMember();
 		%feature("autodoc", "1");
@@ -1574,12 +1773,15 @@ class Handle_StepGeom_TrimmingMember : public Handle_StepData_SelectReal {
 	return (StepGeom_TrimmingMember*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_TrimmingMember {
+	~Handle_StepGeom_TrimmingMember() {
+	printf("Call custom destructor for instance of Handle_StepGeom_TrimmingMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_SurfaceOfRevolution;
 class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
@@ -1595,12 +1797,15 @@ class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface 
 	return (StepGeom_SurfaceOfRevolution*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_SurfaceOfRevolution {
+	~Handle_StepGeom_SurfaceOfRevolution() {
+	printf("Call custom destructor for instance of Handle_StepGeom_SurfaceOfRevolution\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_SeamCurve;
 class Handle_StepGeom_SeamCurve : public Handle_StepGeom_SurfaceCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_SeamCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_SeamCurve();
 		%feature("autodoc", "1");
@@ -1616,12 +1821,15 @@ class Handle_StepGeom_SeamCurve : public Handle_StepGeom_SurfaceCurve {
 	return (StepGeom_SeamCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_SeamCurve {
+	~Handle_StepGeom_SeamCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_SeamCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_HArray1OfSurfaceBoundary;
 class Handle_StepGeom_HArray1OfSurfaceBoundary : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_HArray1OfSurfaceBoundary();
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfSurfaceBoundary();
 		%feature("autodoc", "1");
@@ -1637,12 +1845,15 @@ class Handle_StepGeom_HArray1OfSurfaceBoundary : public Handle_MMgt_TShared {
 	return (StepGeom_HArray1OfSurfaceBoundary*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_HArray1OfSurfaceBoundary {
+	~Handle_StepGeom_HArray1OfSurfaceBoundary() {
+	printf("Call custom destructor for instance of Handle_StepGeom_HArray1OfSurfaceBoundary\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_RationalBSplineCurve;
 class Handle_StepGeom_RationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_RationalBSplineCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_RationalBSplineCurve();
 		%feature("autodoc", "1");
@@ -1658,12 +1869,15 @@ class Handle_StepGeom_RationalBSplineCurve : public Handle_StepGeom_BSplineCurve
 	return (StepGeom_RationalBSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_RationalBSplineCurve {
+	~Handle_StepGeom_RationalBSplineCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_RationalBSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Parabola;
 class Handle_StepGeom_Parabola : public Handle_StepGeom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Parabola();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Parabola();
 		%feature("autodoc", "1");
@@ -1679,12 +1893,15 @@ class Handle_StepGeom_Parabola : public Handle_StepGeom_Conic {
 	return (StepGeom_Parabola*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Parabola {
+	~Handle_StepGeom_Parabola() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Parabola\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_QuasiUniformSurface;
 class Handle_StepGeom_QuasiUniformSurface : public Handle_StepGeom_BSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_QuasiUniformSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_QuasiUniformSurface();
 		%feature("autodoc", "1");
@@ -1700,12 +1917,15 @@ class Handle_StepGeom_QuasiUniformSurface : public Handle_StepGeom_BSplineSurfac
 	return (StepGeom_QuasiUniformSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_QuasiUniformSurface {
+	~Handle_StepGeom_QuasiUniformSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_QuasiUniformSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Circle;
 class Handle_StepGeom_Circle : public Handle_StepGeom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Circle();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Circle();
 		%feature("autodoc", "1");
@@ -1721,12 +1941,15 @@ class Handle_StepGeom_Circle : public Handle_StepGeom_Conic {
 	return (StepGeom_Circle*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Circle {
+	~Handle_StepGeom_Circle() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Circle\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_UniformSurface;
 class Handle_StepGeom_UniformSurface : public Handle_StepGeom_BSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_UniformSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_UniformSurface();
 		%feature("autodoc", "1");
@@ -1742,12 +1965,15 @@ class Handle_StepGeom_UniformSurface : public Handle_StepGeom_BSplineSurface {
 	return (StepGeom_UniformSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_UniformSurface {
+	~Handle_StepGeom_UniformSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_UniformSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_RectangularTrimmedSurface;
 class Handle_StepGeom_RectangularTrimmedSurface : public Handle_StepGeom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_RectangularTrimmedSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_RectangularTrimmedSurface();
 		%feature("autodoc", "1");
@@ -1763,12 +1989,15 @@ class Handle_StepGeom_RectangularTrimmedSurface : public Handle_StepGeom_Bounded
 	return (StepGeom_RectangularTrimmedSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_RectangularTrimmedSurface {
+	~Handle_StepGeom_RectangularTrimmedSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_RectangularTrimmedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_DegenerateToroidalSurface;
 class Handle_StepGeom_DegenerateToroidalSurface : public Handle_StepGeom_ToroidalSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_DegenerateToroidalSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_DegenerateToroidalSurface();
 		%feature("autodoc", "1");
@@ -1784,12 +2013,15 @@ class Handle_StepGeom_DegenerateToroidalSurface : public Handle_StepGeom_Toroida
 	return (StepGeom_DegenerateToroidalSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_DegenerateToroidalSurface {
+	~Handle_StepGeom_DegenerateToroidalSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_DegenerateToroidalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_SurfaceOfLinearExtrusion;
 class Handle_StepGeom_SurfaceOfLinearExtrusion : public Handle_StepGeom_SweptSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_SurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
@@ -1805,12 +2037,15 @@ class Handle_StepGeom_SurfaceOfLinearExtrusion : public Handle_StepGeom_SweptSur
 	return (StepGeom_SurfaceOfLinearExtrusion*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_SurfaceOfLinearExtrusion {
+	~Handle_StepGeom_SurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of Handle_StepGeom_SurfaceOfLinearExtrusion\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Plane;
 class Handle_StepGeom_Plane : public Handle_StepGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Plane();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Plane();
 		%feature("autodoc", "1");
@@ -1826,12 +2061,15 @@ class Handle_StepGeom_Plane : public Handle_StepGeom_ElementarySurface {
 	return (StepGeom_Plane*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Plane {
+	~Handle_StepGeom_Plane() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Plane\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_PointReplica;
 class Handle_StepGeom_PointReplica : public Handle_StepGeom_Point {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_PointReplica();
 		%feature("autodoc", "1");
 		Handle_StepGeom_PointReplica();
 		%feature("autodoc", "1");
@@ -1847,12 +2085,15 @@ class Handle_StepGeom_PointReplica : public Handle_StepGeom_Point {
 	return (StepGeom_PointReplica*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_PointReplica {
+	~Handle_StepGeom_PointReplica() {
+	printf("Call custom destructor for instance of Handle_StepGeom_PointReplica\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_RationalBSplineSurface;
 class Handle_StepGeom_RationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_RationalBSplineSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_RationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -1868,12 +2109,15 @@ class Handle_StepGeom_RationalBSplineSurface : public Handle_StepGeom_BSplineSur
 	return (StepGeom_RationalBSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_RationalBSplineSurface {
+	~Handle_StepGeom_RationalBSplineSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_RationalBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_BezierCurve;
 class Handle_StepGeom_BezierCurve : public Handle_StepGeom_BSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_BezierCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BezierCurve();
 		%feature("autodoc", "1");
@@ -1889,12 +2133,15 @@ class Handle_StepGeom_BezierCurve : public Handle_StepGeom_BSplineCurve {
 	return (StepGeom_BezierCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_BezierCurve {
+	~Handle_StepGeom_BezierCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_BezierCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_OffsetCurve3d;
 class Handle_StepGeom_OffsetCurve3d : public Handle_StepGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_OffsetCurve3d();
 		%feature("autodoc", "1");
 		Handle_StepGeom_OffsetCurve3d();
 		%feature("autodoc", "1");
@@ -1910,12 +2157,15 @@ class Handle_StepGeom_OffsetCurve3d : public Handle_StepGeom_Curve {
 	return (StepGeom_OffsetCurve3d*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_OffsetCurve3d {
+	~Handle_StepGeom_OffsetCurve3d() {
+	printf("Call custom destructor for instance of Handle_StepGeom_OffsetCurve3d\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_IntersectionCurve;
 class Handle_StepGeom_IntersectionCurve : public Handle_StepGeom_SurfaceCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_IntersectionCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_IntersectionCurve();
 		%feature("autodoc", "1");
@@ -1931,12 +2181,15 @@ class Handle_StepGeom_IntersectionCurve : public Handle_StepGeom_SurfaceCurve {
 	return (StepGeom_IntersectionCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_IntersectionCurve {
+	~Handle_StepGeom_IntersectionCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_IntersectionCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_HArray1OfBoundaryCurve;
 class Handle_StepGeom_HArray1OfBoundaryCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_HArray1OfBoundaryCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfBoundaryCurve();
 		%feature("autodoc", "1");
@@ -1952,12 +2205,15 @@ class Handle_StepGeom_HArray1OfBoundaryCurve : public Handle_MMgt_TShared {
 	return (StepGeom_HArray1OfBoundaryCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_HArray1OfBoundaryCurve {
+	~Handle_StepGeom_HArray1OfBoundaryCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_HArray1OfBoundaryCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Polyline;
 class Handle_StepGeom_Polyline : public Handle_StepGeom_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Polyline();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Polyline();
 		%feature("autodoc", "1");
@@ -1973,12 +2229,15 @@ class Handle_StepGeom_Polyline : public Handle_StepGeom_BoundedCurve {
 	return (StepGeom_Polyline*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Polyline {
+	~Handle_StepGeom_Polyline() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Polyline\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_SurfacePatch;
 class Handle_StepGeom_SurfacePatch : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_SurfacePatch();
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfacePatch();
 		%feature("autodoc", "1");
@@ -1994,12 +2253,15 @@ class Handle_StepGeom_SurfacePatch : public Handle_MMgt_TShared {
 	return (StepGeom_SurfacePatch*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_SurfacePatch {
+	~Handle_StepGeom_SurfacePatch() {
+	printf("Call custom destructor for instance of Handle_StepGeom_SurfacePatch\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Pcurve;
 class Handle_StepGeom_Pcurve : public Handle_StepGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Pcurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Pcurve();
 		%feature("autodoc", "1");
@@ -2015,12 +2277,15 @@ class Handle_StepGeom_Pcurve : public Handle_StepGeom_Curve {
 	return (StepGeom_Pcurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_Pcurve {
+	~Handle_StepGeom_Pcurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Pcurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_UniformCurveAndRationalBSplineCurve;
 class Handle_StepGeom_UniformCurveAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_UniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_UniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
@@ -2036,12 +2301,15 @@ class Handle_StepGeom_UniformCurveAndRationalBSplineCurve : public Handle_StepGe
 	return (StepGeom_UniformCurveAndRationalBSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_UniformCurveAndRationalBSplineCurve {
+	~Handle_StepGeom_UniformCurveAndRationalBSplineCurve() {
+	printf("Call custom destructor for instance of Handle_StepGeom_UniformCurveAndRationalBSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface;
 class Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
 		Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -2057,12 +2325,15 @@ class Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public Hand
 	return (StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface {
+	~Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface() {
+	printf("Call custom destructor for instance of Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_GeometricRepresentationContext;
 class Handle_StepGeom_GeometricRepresentationContext : public Handle_StepRepr_RepresentationContext {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_GeometricRepresentationContext();
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeometricRepresentationContext();
 		%feature("autodoc", "1");
@@ -2078,12 +2349,15 @@ class Handle_StepGeom_GeometricRepresentationContext : public Handle_StepRepr_Re
 	return (StepGeom_GeometricRepresentationContext*)$self->Access();
 	}
 };
+%extend Handle_StepGeom_GeometricRepresentationContext {
+	~Handle_StepGeom_GeometricRepresentationContext() {
+	printf("Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepGeom_Line;
 class Handle_StepGeom_Line : public Handle_StepGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepGeom_Line();
 		%feature("autodoc", "1");
 		Handle_StepGeom_Line();
 		%feature("autodoc", "1");
@@ -2097,6 +2371,11 @@ class Handle_StepGeom_Line : public Handle_StepGeom_Curve {
 %extend Handle_StepGeom_Line {
 	StepGeom_Line* GetObject() {
 	return (StepGeom_Line*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_Line {
+	~Handle_StepGeom_Line() {
+	printf("Call custom destructor for instance of Handle_StepGeom_Line\n");
 	}
 };
 
@@ -2127,13 +2406,16 @@ class StepGeom_HArray1OfCompositeCurveSegment : public MMgt_TShared {
 		StepGeom_Array1OfCompositeCurveSegment & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray1OfCompositeCurveSegment();
 
 };
 %extend StepGeom_HArray1OfCompositeCurveSegment {
 	Handle_StepGeom_HArray1OfCompositeCurveSegment GetHandle() {
 	return *(Handle_StepGeom_HArray1OfCompositeCurveSegment*) &$self;
+	}
+};
+%extend StepGeom_HArray1OfCompositeCurveSegment {
+	~StepGeom_HArray1OfCompositeCurveSegment() {
+	printf("Call custom destructor for instance of StepGeom_HArray1OfCompositeCurveSegment\n");
 	}
 };
 
@@ -2180,13 +2462,16 @@ class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem 
 		StepGeom_GeometricRepresentationItem();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_GeometricRepresentationItem();
 
 };
 %extend StepGeom_GeometricRepresentationItem {
 	Handle_StepGeom_GeometricRepresentationItem GetHandle() {
 	return *(Handle_StepGeom_GeometricRepresentationItem*) &$self;
+	}
+};
+%extend StepGeom_GeometricRepresentationItem {
+	~StepGeom_GeometricRepresentationItem() {
+	printf("Call custom destructor for instance of StepGeom_GeometricRepresentationItem\n");
 	}
 };
 
@@ -2195,13 +2480,16 @@ class StepGeom_Point : public StepGeom_GeometricRepresentationItem {
 	public:
 		%feature("autodoc", "1");
 		StepGeom_Point();
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Point();
 
 };
 %extend StepGeom_Point {
 	Handle_StepGeom_Point GetHandle() {
 	return *(Handle_StepGeom_Point*) &$self;
+	}
+};
+%extend StepGeom_Point {
+	~StepGeom_Point() {
+	printf("Call custom destructor for instance of StepGeom_Point\n");
 	}
 };
 
@@ -2222,13 +2510,16 @@ class StepGeom_PointOnCurve : public StepGeom_Point {
 		void SetPointParameter(const Standard_Real aPointParameter);
 		%feature("autodoc", "1");
 		Standard_Real PointParameter() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_PointOnCurve();
 
 };
 %extend StepGeom_PointOnCurve {
 	Handle_StepGeom_PointOnCurve GetHandle() {
 	return *(Handle_StepGeom_PointOnCurve*) &$self;
+	}
+};
+%extend StepGeom_PointOnCurve {
+	~StepGeom_PointOnCurve() {
+	printf("Call custom destructor for instance of StepGeom_PointOnCurve\n");
 	}
 };
 
@@ -2247,13 +2538,16 @@ class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 		Handle_StepGeom_CartesianPoint Location() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Placement();
 
 };
 %extend StepGeom_Placement {
 	Handle_StepGeom_Placement GetHandle() {
 	return *(Handle_StepGeom_Placement*) &$self;
+	}
+};
+%extend StepGeom_Placement {
+	~StepGeom_Placement() {
+	printf("Call custom destructor for instance of StepGeom_Placement\n");
 	}
 };
 
@@ -2264,13 +2558,16 @@ class StepGeom_Surface : public StepGeom_GeometricRepresentationItem {
 		StepGeom_Surface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Surface();
 
 };
 %extend StepGeom_Surface {
 	Handle_StepGeom_Surface GetHandle() {
 	return *(Handle_StepGeom_Surface*) &$self;
+	}
+};
+%extend StepGeom_Surface {
+	~StepGeom_Surface() {
+	printf("Call custom destructor for instance of StepGeom_Surface\n");
 	}
 };
 
@@ -2285,13 +2582,16 @@ class StepGeom_OrientedSurface : public StepGeom_Surface {
 		Standard_Boolean Orientation() const;
 		%feature("autodoc", "1");
 		void SetOrientation(const Standard_Boolean Orientation);
-		%feature("autodoc", "1");
-		virtual		~StepGeom_OrientedSurface();
 
 };
 %extend StepGeom_OrientedSurface {
 	Handle_StepGeom_OrientedSurface GetHandle() {
 	return *(Handle_StepGeom_OrientedSurface*) &$self;
+	}
+};
+%extend StepGeom_OrientedSurface {
+	~StepGeom_OrientedSurface() {
+	printf("Call custom destructor for instance of StepGeom_OrientedSurface\n");
 	}
 };
 
@@ -2318,13 +2618,16 @@ class StepGeom_CartesianPoint : public StepGeom_Point {
 		Standard_Integer NbCoordinates() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CartesianPoint();
 
 };
 %extend StepGeom_CartesianPoint {
 	Handle_StepGeom_CartesianPoint GetHandle() {
 	return *(Handle_StepGeom_CartesianPoint*) &$self;
+	}
+};
+%extend StepGeom_CartesianPoint {
+	~StepGeom_CartesianPoint() {
+	printf("Call custom destructor for instance of StepGeom_CartesianPoint\n");
 	}
 };
 
@@ -2335,13 +2638,16 @@ class StepGeom_BoundedSurface : public StepGeom_Surface {
 		StepGeom_BoundedSurface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BoundedSurface();
 
 };
 %extend StepGeom_BoundedSurface {
 	Handle_StepGeom_BoundedSurface GetHandle() {
 	return *(Handle_StepGeom_BoundedSurface*) &$self;
+	}
+};
+%extend StepGeom_BoundedSurface {
+	~StepGeom_BoundedSurface() {
+	printf("Call custom destructor for instance of StepGeom_BoundedSurface\n");
 	}
 };
 
@@ -2388,13 +2694,16 @@ class StepGeom_BSplineSurface : public StepGeom_BoundedSurface {
 		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
 		%feature("autodoc", "1");
 		StepData_Logical SelfIntersect() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BSplineSurface();
 
 };
 %extend StepGeom_BSplineSurface {
 	Handle_StepGeom_BSplineSurface GetHandle() {
 	return *(Handle_StepGeom_BSplineSurface*) &$self;
+	}
+};
+%extend StepGeom_BSplineSurface {
+	~StepGeom_BSplineSurface() {
+	printf("Call custom destructor for instance of StepGeom_BSplineSurface\n");
 	}
 };
 
@@ -2403,13 +2712,16 @@ class StepGeom_UniformSurface : public StepGeom_BSplineSurface {
 	public:
 		%feature("autodoc", "1");
 		StepGeom_UniformSurface();
-		%feature("autodoc", "1");
-		virtual		~StepGeom_UniformSurface();
 
 };
 %extend StepGeom_UniformSurface {
 	Handle_StepGeom_UniformSurface GetHandle() {
 	return *(Handle_StepGeom_UniformSurface*) &$self;
+	}
+};
+%extend StepGeom_UniformSurface {
+	~StepGeom_UniformSurface() {
+	printf("Call custom destructor for instance of StepGeom_UniformSurface\n");
 	}
 };
 
@@ -2472,13 +2784,16 @@ class StepGeom_PointReplica : public StepGeom_Point {
 		Handle_StepGeom_CartesianTransformationOperator Transformation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_PointReplica();
 
 };
 %extend StepGeom_PointReplica {
 	Handle_StepGeom_PointReplica GetHandle() {
 	return *(Handle_StepGeom_PointReplica*) &$self;
+	}
+};
+%extend StepGeom_PointReplica {
+	~StepGeom_PointReplica() {
+	printf("Call custom destructor for instance of StepGeom_PointReplica\n");
 	}
 };
 
@@ -2489,13 +2804,16 @@ class StepGeom_Curve : public StepGeom_GeometricRepresentationItem {
 		StepGeom_Curve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Curve();
 
 };
 %extend StepGeom_Curve {
 	Handle_StepGeom_Curve GetHandle() {
 	return *(Handle_StepGeom_Curve*) &$self;
+	}
+};
+%extend StepGeom_Curve {
+	~StepGeom_Curve() {
+	printf("Call custom destructor for instance of StepGeom_Curve\n");
 	}
 };
 
@@ -2512,13 +2830,16 @@ class StepGeom_Conic : public StepGeom_Curve {
 		void SetPosition(const StepGeom_Axis2Placement &aPosition);
 		%feature("autodoc", "1");
 		StepGeom_Axis2Placement Position() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Conic();
 
 };
 %extend StepGeom_Conic {
 	Handle_StepGeom_Conic GetHandle() {
 	return *(Handle_StepGeom_Conic*) &$self;
+	}
+};
+%extend StepGeom_Conic {
+	~StepGeom_Conic() {
+	printf("Call custom destructor for instance of StepGeom_Conic\n");
 	}
 };
 
@@ -2537,13 +2858,16 @@ class StepGeom_Ellipse : public StepGeom_Conic {
 		void SetSemiAxis2(const Standard_Real aSemiAxis2);
 		%feature("autodoc", "1");
 		Standard_Real SemiAxis2() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Ellipse();
 
 };
 %extend StepGeom_Ellipse {
 	Handle_StepGeom_Ellipse GetHandle() {
 	return *(Handle_StepGeom_Ellipse*) &$self;
+	}
+};
+%extend StepGeom_Ellipse {
+	~StepGeom_Ellipse() {
+	printf("Call custom destructor for instance of StepGeom_Ellipse\n");
 	}
 };
 
@@ -2574,13 +2898,16 @@ class StepGeom_HArray1OfSurfaceBoundary : public MMgt_TShared {
 		StepGeom_Array1OfSurfaceBoundary & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray1OfSurfaceBoundary();
 
 };
 %extend StepGeom_HArray1OfSurfaceBoundary {
 	Handle_StepGeom_HArray1OfSurfaceBoundary GetHandle() {
 	return *(Handle_StepGeom_HArray1OfSurfaceBoundary*) &$self;
+	}
+};
+%extend StepGeom_HArray1OfSurfaceBoundary {
+	~StepGeom_HArray1OfSurfaceBoundary() {
+	printf("Call custom destructor for instance of StepGeom_HArray1OfSurfaceBoundary\n");
 	}
 };
 
@@ -2609,13 +2936,16 @@ class StepGeom_GeometricRepresentationContextAndParametricRepresentationContext 
 		Standard_Integer CoordinateSpaceDimension() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_GeometricRepresentationContextAndParametricRepresentationContext();
 
 };
 %extend StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
 	Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext GetHandle() {
 	return *(Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext*) &$self;
+	}
+};
+%extend StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
+	~StepGeom_GeometricRepresentationContextAndParametricRepresentationContext() {
+	printf("Call custom destructor for instance of StepGeom_GeometricRepresentationContextAndParametricRepresentationContext\n");
 	}
 };
 
@@ -2626,13 +2956,16 @@ class StepGeom_BoundedCurve : public StepGeom_Curve {
 		StepGeom_BoundedCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BoundedCurve();
 
 };
 %extend StepGeom_BoundedCurve {
 	Handle_StepGeom_BoundedCurve GetHandle() {
 	return *(Handle_StepGeom_BoundedCurve*) &$self;
+	}
+};
+%extend StepGeom_BoundedCurve {
+	~StepGeom_BoundedCurve() {
+	printf("Call custom destructor for instance of StepGeom_BoundedCurve\n");
 	}
 };
 
@@ -2657,13 +2990,16 @@ class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
 		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
 		%feature("autodoc", "1");
 		StepData_Logical SelfIntersect() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CompositeCurve();
 
 };
 %extend StepGeom_CompositeCurve {
 	Handle_StepGeom_CompositeCurve GetHandle() {
 	return *(Handle_StepGeom_CompositeCurve*) &$self;
+	}
+};
+%extend StepGeom_CompositeCurve {
+	~StepGeom_CompositeCurve() {
+	printf("Call custom destructor for instance of StepGeom_CompositeCurve\n");
 	}
 };
 
@@ -2672,13 +3008,16 @@ class StepGeom_CompositeCurveOnSurface : public StepGeom_CompositeCurve {
 	public:
 		%feature("autodoc", "1");
 		StepGeom_CompositeCurveOnSurface();
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CompositeCurveOnSurface();
 
 };
 %extend StepGeom_CompositeCurveOnSurface {
 	Handle_StepGeom_CompositeCurveOnSurface GetHandle() {
 	return *(Handle_StepGeom_CompositeCurveOnSurface*) &$self;
+	}
+};
+%extend StepGeom_CompositeCurveOnSurface {
+	~StepGeom_CompositeCurveOnSurface() {
+	printf("Call custom destructor for instance of StepGeom_CompositeCurveOnSurface\n");
 	}
 };
 
@@ -2687,13 +3026,16 @@ class StepGeom_BoundaryCurve : public StepGeom_CompositeCurveOnSurface {
 	public:
 		%feature("autodoc", "1");
 		StepGeom_BoundaryCurve();
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BoundaryCurve();
 
 };
 %extend StepGeom_BoundaryCurve {
 	Handle_StepGeom_BoundaryCurve GetHandle() {
 	return *(Handle_StepGeom_BoundaryCurve*) &$self;
+	}
+};
+%extend StepGeom_BoundaryCurve {
+	~StepGeom_BoundaryCurve() {
+	printf("Call custom destructor for instance of StepGeom_BoundaryCurve\n");
 	}
 };
 
@@ -2736,13 +3078,16 @@ class StepGeom_TrimmedCurve : public StepGeom_BoundedCurve {
 		StepGeom_TrimmingPreference MasterRepresentation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_TrimmedCurve();
 
 };
 %extend StepGeom_TrimmedCurve {
 	Handle_StepGeom_TrimmedCurve GetHandle() {
 	return *(Handle_StepGeom_TrimmedCurve*) &$self;
+	}
+};
+%extend StepGeom_TrimmedCurve {
+	~StepGeom_TrimmedCurve() {
+	printf("Call custom destructor for instance of StepGeom_TrimmedCurve\n");
 	}
 };
 
@@ -2765,13 +3110,16 @@ class StepGeom_SurfaceReplica : public StepGeom_Surface {
 		Handle_StepGeom_CartesianTransformationOperator3d Transformation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SurfaceReplica();
 
 };
 %extend StepGeom_SurfaceReplica {
 	Handle_StepGeom_SurfaceReplica GetHandle() {
 	return *(Handle_StepGeom_SurfaceReplica*) &$self;
+	}
+};
+%extend StepGeom_SurfaceReplica {
+	~StepGeom_SurfaceReplica() {
+	printf("Call custom destructor for instance of StepGeom_SurfaceReplica\n");
 	}
 };
 
@@ -2842,13 +3190,16 @@ class StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public StepGeo
 		Standard_Integer NbWeightsDataJ() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface();
 
 };
 %extend StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface {
 	Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface GetHandle() {
 	return *(Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface*) &$self;
+	}
+};
+%extend StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface {
+	~StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface() {
+	printf("Call custom destructor for instance of StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface\n");
 	}
 };
 
@@ -2873,13 +3224,16 @@ class StepGeom_CompositeCurveSegment : public MMgt_TShared {
 		Handle_StepGeom_Curve ParentCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CompositeCurveSegment();
 
 };
 %extend StepGeom_CompositeCurveSegment {
 	Handle_StepGeom_CompositeCurveSegment GetHandle() {
 	return *(Handle_StepGeom_CompositeCurveSegment*) &$self;
+	}
+};
+%extend StepGeom_CompositeCurveSegment {
+	~StepGeom_CompositeCurveSegment() {
+	printf("Call custom destructor for instance of StepGeom_CompositeCurveSegment\n");
 	}
 };
 
@@ -2950,13 +3304,16 @@ class StepGeom_ElementarySurface : public StepGeom_Surface {
 		Handle_StepGeom_Axis2Placement3d Position() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_ElementarySurface();
 
 };
 %extend StepGeom_ElementarySurface {
 	Handle_StepGeom_ElementarySurface GetHandle() {
 	return *(Handle_StepGeom_ElementarySurface*) &$self;
+	}
+};
+%extend StepGeom_ElementarySurface {
+	~StepGeom_ElementarySurface() {
+	printf("Call custom destructor for instance of StepGeom_ElementarySurface\n");
 	}
 };
 
@@ -2971,13 +3328,16 @@ class StepGeom_SphericalSurface : public StepGeom_ElementarySurface {
 		void SetRadius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SphericalSurface();
 
 };
 %extend StepGeom_SphericalSurface {
 	Handle_StepGeom_SphericalSurface GetHandle() {
 	return *(Handle_StepGeom_SphericalSurface*) &$self;
+	}
+};
+%extend StepGeom_SphericalSurface {
+	~StepGeom_SphericalSurface() {
+	printf("Call custom destructor for instance of StepGeom_SphericalSurface\n");
 	}
 };
 
@@ -3016,13 +3376,16 @@ class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
 		StepData_Logical SelfIntersect() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BSplineCurve();
 
 };
 %extend StepGeom_BSplineCurve {
 	Handle_StepGeom_BSplineCurve GetHandle() {
 	return *(Handle_StepGeom_BSplineCurve*) &$self;
+	}
+};
+%extend StepGeom_BSplineCurve {
+	~StepGeom_BSplineCurve() {
+	printf("Call custom destructor for instance of StepGeom_BSplineCurve\n");
 	}
 };
 
@@ -3071,13 +3434,16 @@ class StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public StepGeom_BS
 		Standard_Real WeightsDataValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbWeightsData() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve();
 
 };
 %extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
 	Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve GetHandle() {
 	return *(Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve*) &$self;
+	}
+};
+%extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
+	~StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve() {
+	printf("Call custom destructor for instance of StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve\n");
 	}
 };
 
@@ -3120,13 +3486,16 @@ class StepGeom_CartesianTransformationOperator : public StepGeom_GeometricRepres
 		Standard_Boolean HasScale() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CartesianTransformationOperator();
 
 };
 %extend StepGeom_CartesianTransformationOperator {
 	Handle_StepGeom_CartesianTransformationOperator GetHandle() {
 	return *(Handle_StepGeom_CartesianTransformationOperator*) &$self;
+	}
+};
+%extend StepGeom_CartesianTransformationOperator {
+	~StepGeom_CartesianTransformationOperator() {
+	printf("Call custom destructor for instance of StepGeom_CartesianTransformationOperator\n");
 	}
 };
 
@@ -3149,13 +3518,16 @@ class StepGeom_Pcurve : public StepGeom_Curve {
 		Handle_StepRepr_DefinitionalRepresentation ReferenceToCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Pcurve();
 
 };
 %extend StepGeom_Pcurve {
 	Handle_StepGeom_Pcurve GetHandle() {
 	return *(Handle_StepGeom_Pcurve*) &$self;
+	}
+};
+%extend StepGeom_Pcurve {
+	~StepGeom_Pcurve() {
+	printf("Call custom destructor for instance of StepGeom_Pcurve\n");
 	}
 };
 
@@ -3186,13 +3558,16 @@ class StepGeom_HArray1OfCartesianPoint : public MMgt_TShared {
 		StepGeom_Array1OfCartesianPoint & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray1OfCartesianPoint();
 
 };
 %extend StepGeom_HArray1OfCartesianPoint {
 	Handle_StepGeom_HArray1OfCartesianPoint GetHandle() {
 	return *(Handle_StepGeom_HArray1OfCartesianPoint*) &$self;
+	}
+};
+%extend StepGeom_HArray1OfCartesianPoint {
+	~StepGeom_HArray1OfCartesianPoint() {
+	printf("Call custom destructor for instance of StepGeom_HArray1OfCartesianPoint\n");
 	}
 };
 
@@ -3227,13 +3602,16 @@ class StepGeom_SweptSurface : public StepGeom_Surface {
 		Handle_StepGeom_Curve SweptCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SweptSurface();
 
 };
 %extend StepGeom_SweptSurface {
 	Handle_StepGeom_SweptSurface GetHandle() {
 	return *(Handle_StepGeom_SweptSurface*) &$self;
+	}
+};
+%extend StepGeom_SweptSurface {
+	~StepGeom_SweptSurface() {
+	printf("Call custom destructor for instance of StepGeom_SweptSurface\n");
 	}
 };
 
@@ -3248,13 +3626,16 @@ class StepGeom_SurfaceOfLinearExtrusion : public StepGeom_SweptSurface {
 		void SetExtrusionAxis(const Handle_StepGeom_Vector &aExtrusionAxis);
 		%feature("autodoc", "1");
 		Handle_StepGeom_Vector ExtrusionAxis() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SurfaceOfLinearExtrusion();
 
 };
 %extend StepGeom_SurfaceOfLinearExtrusion {
 	Handle_StepGeom_SurfaceOfLinearExtrusion GetHandle() {
 	return *(Handle_StepGeom_SurfaceOfLinearExtrusion*) &$self;
+	}
+};
+%extend StepGeom_SurfaceOfLinearExtrusion {
+	~StepGeom_SurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of StepGeom_SurfaceOfLinearExtrusion\n");
 	}
 };
 
@@ -3279,13 +3660,16 @@ class StepGeom_CurveBoundedSurface : public StepGeom_BoundedSurface {
 		void SetImplicitOuter(const Standard_Boolean ImplicitOuter);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CurveBoundedSurface();
 
 };
 %extend StepGeom_CurveBoundedSurface {
 	Handle_StepGeom_CurveBoundedSurface GetHandle() {
 	return *(Handle_StepGeom_CurveBoundedSurface*) &$self;
+	}
+};
+%extend StepGeom_CurveBoundedSurface {
+	~StepGeom_CurveBoundedSurface() {
+	printf("Call custom destructor for instance of StepGeom_CurveBoundedSurface\n");
 	}
 };
 
@@ -3336,13 +3720,16 @@ class StepGeom_BSplineSurfaceWithKnots : public StepGeom_BSplineSurface {
 		StepGeom_KnotType KnotSpec() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BSplineSurfaceWithKnots();
 
 };
 %extend StepGeom_BSplineSurfaceWithKnots {
 	Handle_StepGeom_BSplineSurfaceWithKnots GetHandle() {
 	return *(Handle_StepGeom_BSplineSurfaceWithKnots*) &$self;
+	}
+};
+%extend StepGeom_BSplineSurfaceWithKnots {
+	~StepGeom_BSplineSurfaceWithKnots() {
+	printf("Call custom destructor for instance of StepGeom_BSplineSurfaceWithKnots\n");
 	}
 };
 
@@ -3373,13 +3760,16 @@ class StepGeom_SurfaceCurve : public StepGeom_Curve {
 		StepGeom_PreferredSurfaceCurveRepresentation MasterRepresentation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SurfaceCurve();
 
 };
 %extend StepGeom_SurfaceCurve {
 	Handle_StepGeom_SurfaceCurve GetHandle() {
 	return *(Handle_StepGeom_SurfaceCurve*) &$self;
+	}
+};
+%extend StepGeom_SurfaceCurve {
+	~StepGeom_SurfaceCurve() {
+	printf("Call custom destructor for instance of StepGeom_SurfaceCurve\n");
 	}
 };
 
@@ -3390,13 +3780,16 @@ class StepGeom_SurfaceCurveAndBoundedCurve : public StepGeom_SurfaceCurve {
 		StepGeom_SurfaceCurveAndBoundedCurve();
 		%feature("autodoc", "1");
 		Handle_StepGeom_BoundedCurve & BoundedCurve();
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SurfaceCurveAndBoundedCurve();
 
 };
 %extend StepGeom_SurfaceCurveAndBoundedCurve {
 	Handle_StepGeom_SurfaceCurveAndBoundedCurve GetHandle() {
 	return *(Handle_StepGeom_SurfaceCurveAndBoundedCurve*) &$self;
+	}
+};
+%extend StepGeom_SurfaceCurveAndBoundedCurve {
+	~StepGeom_SurfaceCurveAndBoundedCurve() {
+	printf("Call custom destructor for instance of StepGeom_SurfaceCurveAndBoundedCurve\n");
 	}
 };
 
@@ -3423,13 +3816,16 @@ class StepGeom_PointOnSurface : public StepGeom_Point {
 		Standard_Real PointParameterV() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_PointOnSurface();
 
 };
 %extend StepGeom_PointOnSurface {
 	Handle_StepGeom_PointOnSurface GetHandle() {
 	return *(Handle_StepGeom_PointOnSurface*) &$self;
+	}
+};
+%extend StepGeom_PointOnSurface {
+	~StepGeom_PointOnSurface() {
+	printf("Call custom destructor for instance of StepGeom_PointOnSurface\n");
 	}
 };
 
@@ -3464,13 +3860,16 @@ class StepGeom_Circle : public StepGeom_Conic {
 		Standard_Real Radius() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Circle();
 
 };
 %extend StepGeom_Circle {
 	Handle_StepGeom_Circle GetHandle() {
 	return *(Handle_StepGeom_Circle*) &$self;
+	}
+};
+%extend StepGeom_Circle {
+	~StepGeom_Circle() {
+	printf("Call custom destructor for instance of StepGeom_Circle\n");
 	}
 };
 
@@ -3525,13 +3924,16 @@ class StepGeom_ReparametrisedCompositeCurveSegment : public StepGeom_CompositeCu
 		Standard_Real ParamLength() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_ReparametrisedCompositeCurveSegment();
 
 };
 %extend StepGeom_ReparametrisedCompositeCurveSegment {
 	Handle_StepGeom_ReparametrisedCompositeCurveSegment GetHandle() {
 	return *(Handle_StepGeom_ReparametrisedCompositeCurveSegment*) &$self;
+	}
+};
+%extend StepGeom_ReparametrisedCompositeCurveSegment {
+	~StepGeom_ReparametrisedCompositeCurveSegment() {
+	printf("Call custom destructor for instance of StepGeom_ReparametrisedCompositeCurveSegment\n");
 	}
 };
 
@@ -3556,13 +3958,16 @@ class StepGeom_RectangularCompositeSurface : public StepGeom_BoundedSurface {
 		Standard_Integer NbSegmentsJ() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_RectangularCompositeSurface();
 
 };
 %extend StepGeom_RectangularCompositeSurface {
 	Handle_StepGeom_RectangularCompositeSurface GetHandle() {
 	return *(Handle_StepGeom_RectangularCompositeSurface*) &$self;
+	}
+};
+%extend StepGeom_RectangularCompositeSurface {
+	~StepGeom_RectangularCompositeSurface() {
+	printf("Call custom destructor for instance of StepGeom_RectangularCompositeSurface\n");
 	}
 };
 
@@ -3573,13 +3978,16 @@ class StepGeom_OuterBoundaryCurve : public StepGeom_BoundaryCurve {
 		StepGeom_OuterBoundaryCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_OuterBoundaryCurve();
 
 };
 %extend StepGeom_OuterBoundaryCurve {
 	Handle_StepGeom_OuterBoundaryCurve GetHandle() {
 	return *(Handle_StepGeom_OuterBoundaryCurve*) &$self;
+	}
+};
+%extend StepGeom_OuterBoundaryCurve {
+	~StepGeom_OuterBoundaryCurve() {
+	printf("Call custom destructor for instance of StepGeom_OuterBoundaryCurve\n");
 	}
 };
 
@@ -3612,13 +4020,16 @@ class StepGeom_BezierCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve
 		Standard_Integer NbWeightsData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BezierCurveAndRationalBSplineCurve();
 
 };
 %extend StepGeom_BezierCurveAndRationalBSplineCurve {
 	Handle_StepGeom_BezierCurveAndRationalBSplineCurve GetHandle() {
 	return *(Handle_StepGeom_BezierCurveAndRationalBSplineCurve*) &$self;
+	}
+};
+%extend StepGeom_BezierCurveAndRationalBSplineCurve {
+	~StepGeom_BezierCurveAndRationalBSplineCurve() {
+	printf("Call custom destructor for instance of StepGeom_BezierCurveAndRationalBSplineCurve\n");
 	}
 };
 
@@ -3727,13 +4138,16 @@ class StepGeom_SurfacePatch : public MMgt_TShared {
 		Standard_Boolean VSense() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SurfacePatch();
 
 };
 %extend StepGeom_SurfacePatch {
 	Handle_StepGeom_SurfacePatch GetHandle() {
 	return *(Handle_StepGeom_SurfacePatch*) &$self;
+	}
+};
+%extend StepGeom_SurfacePatch {
+	~StepGeom_SurfacePatch() {
+	printf("Call custom destructor for instance of StepGeom_SurfacePatch\n");
 	}
 };
 
@@ -3756,13 +4170,16 @@ class StepGeom_Axis1Placement : public StepGeom_Placement {
 		Standard_Boolean HasAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Axis1Placement();
 
 };
 %extend StepGeom_Axis1Placement {
 	Handle_StepGeom_Axis1Placement GetHandle() {
 	return *(Handle_StepGeom_Axis1Placement*) &$self;
+	}
+};
+%extend StepGeom_Axis1Placement {
+	~StepGeom_Axis1Placement() {
+	printf("Call custom destructor for instance of StepGeom_Axis1Placement\n");
 	}
 };
 
@@ -3863,13 +4280,16 @@ class StepGeom_SeamCurve : public StepGeom_SurfaceCurve {
 		StepGeom_SeamCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SeamCurve();
 
 };
 %extend StepGeom_SeamCurve {
 	Handle_StepGeom_SeamCurve GetHandle() {
 	return *(Handle_StepGeom_SeamCurve*) &$self;
+	}
+};
+%extend StepGeom_SeamCurve {
+	~StepGeom_SeamCurve() {
+	printf("Call custom destructor for instance of StepGeom_SeamCurve\n");
 	}
 };
 
@@ -3892,13 +4312,16 @@ class StepGeom_DegeneratePcurve : public StepGeom_Point {
 		Handle_StepRepr_DefinitionalRepresentation ReferenceToCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_DegeneratePcurve();
 
 };
 %extend StepGeom_DegeneratePcurve {
 	Handle_StepGeom_DegeneratePcurve GetHandle() {
 	return *(Handle_StepGeom_DegeneratePcurve*) &$self;
+	}
+};
+%extend StepGeom_DegeneratePcurve {
+	~StepGeom_DegeneratePcurve() {
+	printf("Call custom destructor for instance of StepGeom_DegeneratePcurve\n");
 	}
 };
 
@@ -3913,13 +4336,16 @@ class StepGeom_EvaluatedDegeneratePcurve : public StepGeom_DegeneratePcurve {
 		void SetEquivalentPoint(const Handle_StepGeom_CartesianPoint &aEquivalentPoint);
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianPoint EquivalentPoint() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_EvaluatedDegeneratePcurve();
 
 };
 %extend StepGeom_EvaluatedDegeneratePcurve {
 	Handle_StepGeom_EvaluatedDegeneratePcurve GetHandle() {
 	return *(Handle_StepGeom_EvaluatedDegeneratePcurve*) &$self;
+	}
+};
+%extend StepGeom_EvaluatedDegeneratePcurve {
+	~StepGeom_EvaluatedDegeneratePcurve() {
+	printf("Call custom destructor for instance of StepGeom_EvaluatedDegeneratePcurve\n");
 	}
 };
 
@@ -3950,13 +4376,16 @@ class StepGeom_HArray1OfTrimmingSelect : public MMgt_TShared {
 		StepGeom_Array1OfTrimmingSelect & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray1OfTrimmingSelect();
 
 };
 %extend StepGeom_HArray1OfTrimmingSelect {
 	Handle_StepGeom_HArray1OfTrimmingSelect GetHandle() {
 	return *(Handle_StepGeom_HArray1OfTrimmingSelect*) &$self;
+	}
+};
+%extend StepGeom_HArray1OfTrimmingSelect {
+	~StepGeom_HArray1OfTrimmingSelect() {
+	printf("Call custom destructor for instance of StepGeom_HArray1OfTrimmingSelect\n");
 	}
 };
 
@@ -3979,13 +4408,16 @@ class StepGeom_ConicalSurface : public StepGeom_ElementarySurface {
 		Standard_Real SemiAngle() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_ConicalSurface();
 
 };
 %extend StepGeom_ConicalSurface {
 	Handle_StepGeom_ConicalSurface GetHandle() {
 	return *(Handle_StepGeom_ConicalSurface*) &$self;
+	}
+};
+%extend StepGeom_ConicalSurface {
+	~StepGeom_ConicalSurface() {
+	printf("Call custom destructor for instance of StepGeom_ConicalSurface\n");
 	}
 };
 
@@ -4004,13 +4436,16 @@ class StepGeom_SurfaceOfRevolution : public StepGeom_SweptSurface {
 		Handle_StepGeom_Axis1Placement AxisPosition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SurfaceOfRevolution();
 
 };
 %extend StepGeom_SurfaceOfRevolution {
 	Handle_StepGeom_SurfaceOfRevolution GetHandle() {
 	return *(Handle_StepGeom_SurfaceOfRevolution*) &$self;
+	}
+};
+%extend StepGeom_SurfaceOfRevolution {
+	~StepGeom_SurfaceOfRevolution() {
+	printf("Call custom destructor for instance of StepGeom_SurfaceOfRevolution\n");
 	}
 };
 
@@ -4029,13 +4464,16 @@ class StepGeom_Parabola : public StepGeom_Conic {
 		Standard_Real FocalDist() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Parabola();
 
 };
 %extend StepGeom_Parabola {
 	Handle_StepGeom_Parabola GetHandle() {
 	return *(Handle_StepGeom_Parabola*) &$self;
+	}
+};
+%extend StepGeom_Parabola {
+	~StepGeom_Parabola() {
+	printf("Call custom destructor for instance of StepGeom_Parabola\n");
 	}
 };
 
@@ -4058,13 +4496,16 @@ class StepGeom_CurveReplica : public StepGeom_Curve {
 		Handle_StepGeom_CartesianTransformationOperator Transformation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CurveReplica();
 
 };
 %extend StepGeom_CurveReplica {
 	Handle_StepGeom_CurveReplica GetHandle() {
 	return *(Handle_StepGeom_CurveReplica*) &$self;
+	}
+};
+%extend StepGeom_CurveReplica {
+	~StepGeom_CurveReplica() {
+	printf("Call custom destructor for instance of StepGeom_CurveReplica\n");
 	}
 };
 
@@ -4081,13 +4522,16 @@ class StepGeom_TrimmingMember : public StepData_SelectReal {
 		virtual		Standard_Boolean SetName(const char * name);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_TrimmingMember();
 
 };
 %extend StepGeom_TrimmingMember {
 	Handle_StepGeom_TrimmingMember GetHandle() {
 	return *(Handle_StepGeom_TrimmingMember*) &$self;
+	}
+};
+%extend StepGeom_TrimmingMember {
+	~StepGeom_TrimmingMember() {
+	printf("Call custom destructor for instance of StepGeom_TrimmingMember\n");
 	}
 };
 
@@ -4098,13 +4542,16 @@ class StepGeom_CartesianTransformationOperator2d : public StepGeom_CartesianTran
 		StepGeom_CartesianTransformationOperator2d();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CartesianTransformationOperator2d();
 
 };
 %extend StepGeom_CartesianTransformationOperator2d {
 	Handle_StepGeom_CartesianTransformationOperator2d GetHandle() {
 	return *(Handle_StepGeom_CartesianTransformationOperator2d*) &$self;
+	}
+};
+%extend StepGeom_CartesianTransformationOperator2d {
+	~StepGeom_CartesianTransformationOperator2d() {
+	printf("Call custom destructor for instance of StepGeom_CartesianTransformationOperator2d\n");
 	}
 };
 
@@ -4127,13 +4574,16 @@ class StepGeom_CartesianTransformationOperator3d : public StepGeom_CartesianTran
 		Standard_Boolean HasAxis3() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CartesianTransformationOperator3d();
 
 };
 %extend StepGeom_CartesianTransformationOperator3d {
 	Handle_StepGeom_CartesianTransformationOperator3d GetHandle() {
 	return *(Handle_StepGeom_CartesianTransformationOperator3d*) &$self;
+	}
+};
+%extend StepGeom_CartesianTransformationOperator3d {
+	~StepGeom_CartesianTransformationOperator3d() {
+	printf("Call custom destructor for instance of StepGeom_CartesianTransformationOperator3d\n");
 	}
 };
 
@@ -4170,13 +4620,16 @@ class StepGeom_HArray2OfSurfacePatch : public MMgt_TShared {
 		StepGeom_Array2OfSurfacePatch & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray2OfSurfacePatch();
 
 };
 %extend StepGeom_HArray2OfSurfacePatch {
 	Handle_StepGeom_HArray2OfSurfacePatch GetHandle() {
 	return *(Handle_StepGeom_HArray2OfSurfacePatch*) &$self;
+	}
+};
+%extend StepGeom_HArray2OfSurfacePatch {
+	~StepGeom_HArray2OfSurfacePatch() {
+	printf("Call custom destructor for instance of StepGeom_HArray2OfSurfacePatch\n");
 	}
 };
 
@@ -4231,13 +4684,16 @@ class StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public StepGeom_BSplin
 		Standard_Integer NbWeightsData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_QuasiUniformCurveAndRationalBSplineCurve();
 
 };
 %extend StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
 	Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve GetHandle() {
 	return *(Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve*) &$self;
+	}
+};
+%extend StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
+	~StepGeom_QuasiUniformCurveAndRationalBSplineCurve() {
+	printf("Call custom destructor for instance of StepGeom_QuasiUniformCurveAndRationalBSplineCurve\n");
 	}
 };
 
@@ -4248,13 +4704,16 @@ class StepGeom_QuasiUniformSurface : public StepGeom_BSplineSurface {
 		StepGeom_QuasiUniformSurface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_QuasiUniformSurface();
 
 };
 %extend StepGeom_QuasiUniformSurface {
 	Handle_StepGeom_QuasiUniformSurface GetHandle() {
 	return *(Handle_StepGeom_QuasiUniformSurface*) &$self;
+	}
+};
+%extend StepGeom_QuasiUniformSurface {
+	~StepGeom_QuasiUniformSurface() {
+	printf("Call custom destructor for instance of StepGeom_QuasiUniformSurface\n");
 	}
 };
 
@@ -4297,13 +4756,16 @@ class StepGeom_RectangularTrimmedSurface : public StepGeom_BoundedSurface {
 		Standard_Boolean Vsense() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_RectangularTrimmedSurface();
 
 };
 %extend StepGeom_RectangularTrimmedSurface {
 	Handle_StepGeom_RectangularTrimmedSurface GetHandle() {
 	return *(Handle_StepGeom_RectangularTrimmedSurface*) &$self;
+	}
+};
+%extend StepGeom_RectangularTrimmedSurface {
+	~StepGeom_RectangularTrimmedSurface() {
+	printf("Call custom destructor for instance of StepGeom_RectangularTrimmedSurface\n");
 	}
 };
 
@@ -4336,13 +4798,16 @@ class StepGeom_UniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurv
 		Standard_Integer NbWeightsData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_UniformCurveAndRationalBSplineCurve();
 
 };
 %extend StepGeom_UniformCurveAndRationalBSplineCurve {
 	Handle_StepGeom_UniformCurveAndRationalBSplineCurve GetHandle() {
 	return *(Handle_StepGeom_UniformCurveAndRationalBSplineCurve*) &$self;
+	}
+};
+%extend StepGeom_UniformCurveAndRationalBSplineCurve {
+	~StepGeom_UniformCurveAndRationalBSplineCurve() {
+	printf("Call custom destructor for instance of StepGeom_UniformCurveAndRationalBSplineCurve\n");
 	}
 };
 
@@ -4379,13 +4844,16 @@ class StepGeom_HArray2OfCartesianPoint : public MMgt_TShared {
 		StepGeom_Array2OfCartesianPoint & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray2OfCartesianPoint();
 
 };
 %extend StepGeom_HArray2OfCartesianPoint {
 	Handle_StepGeom_HArray2OfCartesianPoint GetHandle() {
 	return *(Handle_StepGeom_HArray2OfCartesianPoint*) &$self;
+	}
+};
+%extend StepGeom_HArray2OfCartesianPoint {
+	~StepGeom_HArray2OfCartesianPoint() {
+	printf("Call custom destructor for instance of StepGeom_HArray2OfCartesianPoint\n");
 	}
 };
 
@@ -4396,13 +4864,16 @@ class StepGeom_QuasiUniformCurve : public StepGeom_BSplineCurve {
 		StepGeom_QuasiUniformCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_QuasiUniformCurve();
 
 };
 %extend StepGeom_QuasiUniformCurve {
 	Handle_StepGeom_QuasiUniformCurve GetHandle() {
 	return *(Handle_StepGeom_QuasiUniformCurve*) &$self;
+	}
+};
+%extend StepGeom_QuasiUniformCurve {
+	~StepGeom_QuasiUniformCurve() {
+	printf("Call custom destructor for instance of StepGeom_QuasiUniformCurve\n");
 	}
 };
 
@@ -4421,13 +4892,16 @@ class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
 		Standard_Real Radius() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CylindricalSurface();
 
 };
 %extend StepGeom_CylindricalSurface {
 	Handle_StepGeom_CylindricalSurface GetHandle() {
 	return *(Handle_StepGeom_CylindricalSurface*) &$self;
+	}
+};
+%extend StepGeom_CylindricalSurface {
+	~StepGeom_CylindricalSurface() {
+	printf("Call custom destructor for instance of StepGeom_CylindricalSurface\n");
 	}
 };
 
@@ -4450,13 +4924,16 @@ class StepGeom_ToroidalSurface : public StepGeom_ElementarySurface {
 		Standard_Real MinorRadius() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_ToroidalSurface();
 
 };
 %extend StepGeom_ToroidalSurface {
 	Handle_StepGeom_ToroidalSurface GetHandle() {
 	return *(Handle_StepGeom_ToroidalSurface*) &$self;
+	}
+};
+%extend StepGeom_ToroidalSurface {
+	~StepGeom_ToroidalSurface() {
+	printf("Call custom destructor for instance of StepGeom_ToroidalSurface\n");
 	}
 };
 
@@ -4471,13 +4948,16 @@ class StepGeom_DegenerateToroidalSurface : public StepGeom_ToroidalSurface {
 		void SetSelectOuter(const Standard_Boolean aSelectOuter);
 		%feature("autodoc", "1");
 		Standard_Boolean SelectOuter() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_DegenerateToroidalSurface();
 
 };
 %extend StepGeom_DegenerateToroidalSurface {
 	Handle_StepGeom_DegenerateToroidalSurface GetHandle() {
 	return *(Handle_StepGeom_DegenerateToroidalSurface*) &$self;
+	}
+};
+%extend StepGeom_DegenerateToroidalSurface {
+	~StepGeom_DegenerateToroidalSurface() {
+	printf("Call custom destructor for instance of StepGeom_DegenerateToroidalSurface\n");
 	}
 };
 
@@ -4508,13 +4988,16 @@ class StepGeom_HArray1OfCurve : public MMgt_TShared {
 		StepGeom_Array1OfCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray1OfCurve();
 
 };
 %extend StepGeom_HArray1OfCurve {
 	Handle_StepGeom_HArray1OfCurve GetHandle() {
 	return *(Handle_StepGeom_HArray1OfCurve*) &$self;
+	}
+};
+%extend StepGeom_HArray1OfCurve {
+	~StepGeom_HArray1OfCurve() {
+	printf("Call custom destructor for instance of StepGeom_HArray1OfCurve\n");
 	}
 };
 
@@ -4537,13 +5020,16 @@ class StepGeom_Vector : public StepGeom_GeometricRepresentationItem {
 		Standard_Real Magnitude() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Vector();
 
 };
 %extend StepGeom_Vector {
 	Handle_StepGeom_Vector GetHandle() {
 	return *(Handle_StepGeom_Vector*) &$self;
+	}
+};
+%extend StepGeom_Vector {
+	~StepGeom_Vector() {
+	printf("Call custom destructor for instance of StepGeom_Vector\n");
 	}
 };
 
@@ -4566,13 +5052,16 @@ class StepGeom_Axis2Placement2d : public StepGeom_Placement {
 		Standard_Boolean HasRefDirection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Axis2Placement2d();
 
 };
 %extend StepGeom_Axis2Placement2d {
 	Handle_StepGeom_Axis2Placement2d GetHandle() {
 	return *(Handle_StepGeom_Axis2Placement2d*) &$self;
+	}
+};
+%extend StepGeom_Axis2Placement2d {
+	~StepGeom_Axis2Placement2d() {
+	printf("Call custom destructor for instance of StepGeom_Axis2Placement2d\n");
 	}
 };
 
@@ -4583,13 +5072,16 @@ class StepGeom_BezierSurface : public StepGeom_BSplineSurface {
 		StepGeom_BezierSurface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BezierSurface();
 
 };
 %extend StepGeom_BezierSurface {
 	Handle_StepGeom_BezierSurface GetHandle() {
 	return *(Handle_StepGeom_BezierSurface*) &$self;
+	}
+};
+%extend StepGeom_BezierSurface {
+	~StepGeom_BezierSurface() {
+	printf("Call custom destructor for instance of StepGeom_BezierSurface\n");
 	}
 };
 
@@ -4620,13 +5112,16 @@ class StepGeom_Axis2Placement3d : public StepGeom_Placement {
 		Standard_Boolean HasRefDirection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Axis2Placement3d();
 
 };
 %extend StepGeom_Axis2Placement3d {
 	Handle_StepGeom_Axis2Placement3d GetHandle() {
 	return *(Handle_StepGeom_Axis2Placement3d*) &$self;
+	}
+};
+%extend StepGeom_Axis2Placement3d {
+	~StepGeom_Axis2Placement3d() {
+	printf("Call custom destructor for instance of StepGeom_Axis2Placement3d\n");
 	}
 };
 
@@ -4661,13 +5156,16 @@ class StepGeom_BezierSurfaceAndRationalBSplineSurface : public StepGeom_BSplineS
 		Standard_Integer NbWeightsDataJ() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BezierSurfaceAndRationalBSplineSurface();
 
 };
 %extend StepGeom_BezierSurfaceAndRationalBSplineSurface {
 	Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface GetHandle() {
 	return *(Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface*) &$self;
+	}
+};
+%extend StepGeom_BezierSurfaceAndRationalBSplineSurface {
+	~StepGeom_BezierSurfaceAndRationalBSplineSurface() {
+	printf("Call custom destructor for instance of StepGeom_BezierSurfaceAndRationalBSplineSurface\n");
 	}
 };
 
@@ -4702,13 +5200,16 @@ class StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public StepGeom_BS
 		Standard_Integer NbWeightsDataJ() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface();
 
 };
 %extend StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface {
 	Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface GetHandle() {
 	return *(Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface*) &$self;
+	}
+};
+%extend StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface {
+	~StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface() {
+	printf("Call custom destructor for instance of StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface\n");
 	}
 };
 
@@ -4733,13 +5234,16 @@ class StepGeom_RationalBSplineSurface : public StepGeom_BSplineSurface {
 		Standard_Integer NbWeightsDataJ() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_RationalBSplineSurface();
 
 };
 %extend StepGeom_RationalBSplineSurface {
 	Handle_StepGeom_RationalBSplineSurface GetHandle() {
 	return *(Handle_StepGeom_RationalBSplineSurface*) &$self;
+	}
+};
+%extend StepGeom_RationalBSplineSurface {
+	~StepGeom_RationalBSplineSurface() {
+	printf("Call custom destructor for instance of StepGeom_RationalBSplineSurface\n");
 	}
 };
 
@@ -4770,13 +5274,16 @@ class StepGeom_OffsetCurve3d : public StepGeom_Curve {
 		Handle_StepGeom_Direction RefDirection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_OffsetCurve3d();
 
 };
 %extend StepGeom_OffsetCurve3d {
 	Handle_StepGeom_OffsetCurve3d GetHandle() {
 	return *(Handle_StepGeom_OffsetCurve3d*) &$self;
+	}
+};
+%extend StepGeom_OffsetCurve3d {
+	~StepGeom_OffsetCurve3d() {
+	printf("Call custom destructor for instance of StepGeom_OffsetCurve3d\n");
 	}
 };
 
@@ -4813,13 +5320,16 @@ class StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext : publ
 		Standard_Integer NbUnits() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext();
 
 };
 %extend StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext {
 	Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext GetHandle() {
 	return *(Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext*) &$self;
+	}
+};
+%extend StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext {
+	~StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext() {
+	printf("Call custom destructor for instance of StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext\n");
 	}
 };
 
@@ -4842,13 +5352,16 @@ class StepGeom_Hyperbola : public StepGeom_Conic {
 		Standard_Real SemiImagAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Hyperbola();
 
 };
 %extend StepGeom_Hyperbola {
 	Handle_StepGeom_Hyperbola GetHandle() {
 	return *(Handle_StepGeom_Hyperbola*) &$self;
+	}
+};
+%extend StepGeom_Hyperbola {
+	~StepGeom_Hyperbola() {
+	printf("Call custom destructor for instance of StepGeom_Hyperbola\n");
 	}
 };
 
@@ -4879,13 +5392,16 @@ class StepGeom_HArray1OfBoundaryCurve : public MMgt_TShared {
 		StepGeom_Array1OfBoundaryCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray1OfBoundaryCurve();
 
 };
 %extend StepGeom_HArray1OfBoundaryCurve {
 	Handle_StepGeom_HArray1OfBoundaryCurve GetHandle() {
 	return *(Handle_StepGeom_HArray1OfBoundaryCurve*) &$self;
+	}
+};
+%extend StepGeom_HArray1OfBoundaryCurve {
+	~StepGeom_HArray1OfBoundaryCurve() {
+	printf("Call custom destructor for instance of StepGeom_HArray1OfBoundaryCurve\n");
 	}
 };
 
@@ -4908,13 +5424,16 @@ class StepGeom_Polyline : public StepGeom_BoundedCurve {
 		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Polyline();
 
 };
 %extend StepGeom_Polyline {
 	Handle_StepGeom_Polyline GetHandle() {
 	return *(Handle_StepGeom_Polyline*) &$self;
+	}
+};
+%extend StepGeom_Polyline {
+	~StepGeom_Polyline() {
+	printf("Call custom destructor for instance of StepGeom_Polyline\n");
 	}
 };
 
@@ -4925,13 +5444,16 @@ class StepGeom_Plane : public StepGeom_ElementarySurface {
 		StepGeom_Plane();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Plane();
 
 };
 %extend StepGeom_Plane {
 	Handle_StepGeom_Plane GetHandle() {
 	return *(Handle_StepGeom_Plane*) &$self;
+	}
+};
+%extend StepGeom_Plane {
+	~StepGeom_Plane() {
+	printf("Call custom destructor for instance of StepGeom_Plane\n");
 	}
 };
 
@@ -4954,13 +5476,16 @@ class StepGeom_Line : public StepGeom_Curve {
 		Handle_StepGeom_Vector Dir() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Line();
 
 };
 %extend StepGeom_Line {
 	Handle_StepGeom_Line GetHandle() {
 	return *(Handle_StepGeom_Line*) &$self;
+	}
+};
+%extend StepGeom_Line {
+	~StepGeom_Line() {
+	printf("Call custom destructor for instance of StepGeom_Line\n");
 	}
 };
 
@@ -4971,13 +5496,16 @@ class StepGeom_IntersectionCurve : public StepGeom_SurfaceCurve {
 		StepGeom_IntersectionCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_IntersectionCurve();
 
 };
 %extend StepGeom_IntersectionCurve {
 	Handle_StepGeom_IntersectionCurve GetHandle() {
 	return *(Handle_StepGeom_IntersectionCurve*) &$self;
+	}
+};
+%extend StepGeom_IntersectionCurve {
+	~StepGeom_IntersectionCurve() {
+	printf("Call custom destructor for instance of StepGeom_IntersectionCurve\n");
 	}
 };
 
@@ -5012,13 +5540,16 @@ class StepGeom_UniformSurfaceAndRationalBSplineSurface : public StepGeom_BSpline
 		Standard_Integer NbWeightsDataJ() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_UniformSurfaceAndRationalBSplineSurface();
 
 };
 %extend StepGeom_UniformSurfaceAndRationalBSplineSurface {
 	Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface GetHandle() {
 	return *(Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface*) &$self;
+	}
+};
+%extend StepGeom_UniformSurfaceAndRationalBSplineSurface {
+	~StepGeom_UniformSurfaceAndRationalBSplineSurface() {
+	printf("Call custom destructor for instance of StepGeom_UniformSurfaceAndRationalBSplineSurface\n");
 	}
 };
 
@@ -5041,13 +5572,16 @@ class StepGeom_RationalBSplineCurve : public StepGeom_BSplineCurve {
 		Standard_Integer NbWeightsData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_RationalBSplineCurve();
 
 };
 %extend StepGeom_RationalBSplineCurve {
 	Handle_StepGeom_RationalBSplineCurve GetHandle() {
 	return *(Handle_StepGeom_RationalBSplineCurve*) &$self;
+	}
+};
+%extend StepGeom_RationalBSplineCurve {
+	~StepGeom_RationalBSplineCurve() {
+	printf("Call custom destructor for instance of StepGeom_RationalBSplineCurve\n");
 	}
 };
 
@@ -5058,13 +5592,16 @@ class StepGeom_UniformCurve : public StepGeom_BSplineCurve {
 		StepGeom_UniformCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_UniformCurve();
 
 };
 %extend StepGeom_UniformCurve {
 	Handle_StepGeom_UniformCurve GetHandle() {
 	return *(Handle_StepGeom_UniformCurve*) &$self;
+	}
+};
+%extend StepGeom_UniformCurve {
+	~StepGeom_UniformCurve() {
+	printf("Call custom destructor for instance of StepGeom_UniformCurve\n");
 	}
 };
 
@@ -5095,13 +5632,16 @@ class StepGeom_HArray1OfPcurveOrSurface : public MMgt_TShared {
 		StepGeom_Array1OfPcurveOrSurface & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_HArray1OfPcurveOrSurface();
 
 };
 %extend StepGeom_HArray1OfPcurveOrSurface {
 	Handle_StepGeom_HArray1OfPcurveOrSurface GetHandle() {
 	return *(Handle_StepGeom_HArray1OfPcurveOrSurface*) &$self;
+	}
+};
+%extend StepGeom_HArray1OfPcurveOrSurface {
+	~StepGeom_HArray1OfPcurveOrSurface() {
+	printf("Call custom destructor for instance of StepGeom_HArray1OfPcurveOrSurface\n");
 	}
 };
 
@@ -5124,13 +5664,16 @@ class StepGeom_Direction : public StepGeom_GeometricRepresentationItem {
 		Standard_Integer NbDirectionRatios() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Direction();
 
 };
 %extend StepGeom_Direction {
 	Handle_StepGeom_Direction GetHandle() {
 	return *(Handle_StepGeom_Direction*) &$self;
+	}
+};
+%extend StepGeom_Direction {
+	~StepGeom_Direction() {
+	printf("Call custom destructor for instance of StepGeom_Direction\n");
 	}
 };
 
@@ -5149,13 +5692,16 @@ class StepGeom_GeometricRepresentationContext : public StepRepr_RepresentationCo
 		Standard_Integer CoordinateSpaceDimension() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_GeometricRepresentationContext();
 
 };
 %extend StepGeom_GeometricRepresentationContext {
 	Handle_StepGeom_GeometricRepresentationContext GetHandle() {
 	return *(Handle_StepGeom_GeometricRepresentationContext*) &$self;
+	}
+};
+%extend StepGeom_GeometricRepresentationContext {
+	~StepGeom_GeometricRepresentationContext() {
+	printf("Call custom destructor for instance of StepGeom_GeometricRepresentationContext\n");
 	}
 };
 
@@ -5166,13 +5712,16 @@ class StepGeom_BezierCurve : public StepGeom_BSplineCurve {
 		StepGeom_BezierCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BezierCurve();
 
 };
 %extend StepGeom_BezierCurve {
 	Handle_StepGeom_BezierCurve GetHandle() {
 	return *(Handle_StepGeom_BezierCurve*) &$self;
+	}
+};
+%extend StepGeom_BezierCurve {
+	~StepGeom_BezierCurve() {
+	printf("Call custom destructor for instance of StepGeom_BezierCurve\n");
 	}
 };
 
@@ -5207,13 +5756,16 @@ class StepGeom_BSplineCurveWithKnots : public StepGeom_BSplineCurve {
 		StepGeom_KnotType KnotSpec() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_BSplineCurveWithKnots();
 
 };
 %extend StepGeom_BSplineCurveWithKnots {
 	Handle_StepGeom_BSplineCurveWithKnots GetHandle() {
 	return *(Handle_StepGeom_BSplineCurveWithKnots*) &$self;
+	}
+};
+%extend StepGeom_BSplineCurveWithKnots {
+	~StepGeom_BSplineCurveWithKnots() {
+	printf("Call custom destructor for instance of StepGeom_BSplineCurveWithKnots\n");
 	}
 };
 
@@ -5278,13 +5830,16 @@ class StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public 
 		Standard_Integer NbUncertainty() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
 
 };
 %extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
 	Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx GetHandle() {
 	return *(Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx*) &$self;
+	}
+};
+%extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
+	~StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx() {
+	printf("Call custom destructor for instance of StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx\n");
 	}
 };
 
@@ -5347,12 +5902,15 @@ class StepGeom_OffsetSurface : public StepGeom_Surface {
 		StepData_Logical SelfIntersect() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_OffsetSurface();
 
 };
 %extend StepGeom_OffsetSurface {
 	Handle_StepGeom_OffsetSurface GetHandle() {
 	return *(Handle_StepGeom_OffsetSurface*) &$self;
+	}
+};
+%extend StepGeom_OffsetSurface {
+	~StepGeom_OffsetSurface() {
+	printf("Call custom destructor for instance of StepGeom_OffsetSurface\n");
 	}
 };

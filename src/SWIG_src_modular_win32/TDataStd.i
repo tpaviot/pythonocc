@@ -149,8 +149,6 @@ enum TDataStd_ConstraintEnum {
 class Handle_TDataStd_ReferenceArray : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TDataStd_ReferenceArray();
-		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceArray(const Handle_TDataStd_ReferenceArray &aHandle);
@@ -165,12 +163,15 @@ class Handle_TDataStd_ReferenceArray : public Handle_TDF_Attribute {
 	return (TDataStd_ReferenceArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_ReferenceArray {
+	~Handle_TDataStd_ReferenceArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_ReferenceArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_TreeNode;
 class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_TreeNode();
 		%feature("autodoc", "1");
 		Handle_TDataStd_TreeNode();
 		%feature("autodoc", "1");
@@ -186,12 +187,15 @@ class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 	return (TDataStd_TreeNode*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_TreeNode {
+	~Handle_TDataStd_TreeNode() {
+	printf("Call custom destructor for instance of Handle_TDataStd_TreeNode\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfRealArray;
 class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOnModification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DeltaOnModificationOfRealArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfRealArray();
 		%feature("autodoc", "1");
@@ -207,12 +211,15 @@ class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOn
 	return (TDataStd_DeltaOnModificationOfRealArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DeltaOnModificationOfRealArray {
+	~Handle_TDataStd_DeltaOnModificationOfRealArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfRealArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Pattern;
 class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Pattern();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Pattern();
 		%feature("autodoc", "1");
@@ -228,12 +235,15 @@ class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 	return (TDataStd_Pattern*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Pattern {
+	~Handle_TDataStd_Pattern() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Pattern\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger();
 		%feature("autodoc", "1");
@@ -249,12 +259,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Hand
 	return (TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
+	~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Placement;
 class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Placement();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Placement();
 		%feature("autodoc", "1");
@@ -270,12 +283,15 @@ class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 	return (TDataStd_Placement*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Placement {
+	~Handle_TDataStd_Placement() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Placement\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Constraint;
 class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Constraint();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Constraint();
 		%feature("autodoc", "1");
@@ -291,12 +307,15 @@ class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
 	return (TDataStd_Constraint*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Constraint {
+	~Handle_TDataStd_Constraint() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Constraint\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_IntegerList;
 class Handle_TDataStd_IntegerList : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_IntegerList();
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerList();
 		%feature("autodoc", "1");
@@ -312,12 +331,15 @@ class Handle_TDataStd_IntegerList : public Handle_TDF_Attribute {
 	return (TDataStd_IntegerList*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_IntegerList {
+	~Handle_TDataStd_IntegerList() {
+	printf("Call custom destructor for instance of Handle_TDataStd_IntegerList\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntPackedMap;
 class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_DeltaOnModification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DeltaOnModificationOfIntPackedMap();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntPackedMap();
 		%feature("autodoc", "1");
@@ -333,12 +355,15 @@ class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_Delt
 	return (TDataStd_DeltaOnModificationOfIntPackedMap*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DeltaOnModificationOfIntPackedMap {
+	~Handle_TDataStd_DeltaOnModificationOfIntPackedMap() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfIntPackedMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Shape;
 class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Shape();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Shape();
 		%feature("autodoc", "1");
@@ -354,12 +379,15 @@ class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 	return (TDataStd_Shape*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Shape {
+	~Handle_TDataStd_Shape() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Shape\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_RealArray;
 class Handle_TDataStd_RealArray : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_RealArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealArray();
 		%feature("autodoc", "1");
@@ -375,12 +403,15 @@ class Handle_TDataStd_RealArray : public Handle_TDF_Attribute {
 	return (TDataStd_RealArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_RealArray {
+	~Handle_TDataStd_RealArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_RealArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_NoteBook;
 class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_NoteBook();
 		%feature("autodoc", "1");
 		Handle_TDataStd_NoteBook();
 		%feature("autodoc", "1");
@@ -396,12 +427,15 @@ class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 	return (TDataStd_NoteBook*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_NoteBook {
+	~Handle_TDataStd_NoteBook() {
+	printf("Call custom destructor for instance of Handle_TDataStd_NoteBook\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Variable;
 class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Variable();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Variable();
 		%feature("autodoc", "1");
@@ -417,12 +451,15 @@ class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
 	return (TDataStd_Variable*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Variable {
+	~Handle_TDataStd_Variable() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Variable\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Relation;
 class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Relation();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Relation();
 		%feature("autodoc", "1");
@@ -438,12 +475,15 @@ class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 	return (TDataStd_Relation*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Relation {
+	~Handle_TDataStd_Relation() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Relation\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Geometry;
 class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Geometry();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Geometry();
 		%feature("autodoc", "1");
@@ -459,12 +499,15 @@ class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
 	return (TDataStd_Geometry*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Geometry {
+	~Handle_TDataStd_Geometry() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Geometry\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_AsciiString;
 class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_AsciiString();
 		%feature("autodoc", "1");
 		Handle_TDataStd_AsciiString();
 		%feature("autodoc", "1");
@@ -480,12 +523,15 @@ class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 	return (TDataStd_AsciiString*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_AsciiString {
+	~Handle_TDataStd_AsciiString() {
+	printf("Call custom destructor for instance of Handle_TDataStd_AsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_IntegerArray;
 class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_IntegerArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerArray();
 		%feature("autodoc", "1");
@@ -501,12 +547,15 @@ class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 	return (TDataStd_IntegerArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_IntegerArray {
+	~Handle_TDataStd_IntegerArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_IntegerArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfByteArray;
 class Handle_TDataStd_DeltaOnModificationOfByteArray : public Handle_TDF_DeltaOnModification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DeltaOnModificationOfByteArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfByteArray();
 		%feature("autodoc", "1");
@@ -522,12 +571,15 @@ class Handle_TDataStd_DeltaOnModificationOfByteArray : public Handle_TDF_DeltaOn
 	return (TDataStd_DeltaOnModificationOfByteArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DeltaOnModificationOfByteArray {
+	~Handle_TDataStd_DeltaOnModificationOfByteArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfByteArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_ExtStringArray;
 class Handle_TDataStd_ExtStringArray : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_ExtStringArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringArray();
 		%feature("autodoc", "1");
@@ -543,12 +595,15 @@ class Handle_TDataStd_ExtStringArray : public Handle_TDF_Attribute {
 	return (TDataStd_ExtStringArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_ExtStringArray {
+	~Handle_TDataStd_ExtStringArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_ExtStringArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Plane;
 class Handle_TDataStd_Plane : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Plane();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Plane();
 		%feature("autodoc", "1");
@@ -564,12 +619,15 @@ class Handle_TDataStd_Plane : public Handle_TDF_Attribute {
 	return (TDataStd_Plane*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Plane {
+	~Handle_TDataStd_Plane() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Plane\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_ReferenceList;
 class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_ReferenceList();
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceList();
 		%feature("autodoc", "1");
@@ -585,12 +643,15 @@ class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
 	return (TDataStd_ReferenceList*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_ReferenceList {
+	~Handle_TDataStd_ReferenceList() {
+	printf("Call custom destructor for instance of Handle_TDataStd_ReferenceList\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringString;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DataMapNodeOfDataMapOfStringString();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringString();
 		%feature("autodoc", "1");
@@ -606,12 +667,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollec
 	return (TDataStd_DataMapNodeOfDataMapOfStringString*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringString {
+	~Handle_TDataStd_DataMapNodeOfDataMapOfStringString() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringString\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringHArray1OfInteger;
 class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_HDataMapOfStringHArray1OfInteger();
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfInteger();
 		%feature("autodoc", "1");
@@ -627,12 +691,15 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TSha
 	return (TDataStd_HDataMapOfStringHArray1OfInteger*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_HDataMapOfStringHArray1OfInteger {
+	~Handle_TDataStd_HDataMapOfStringHArray1OfInteger() {
+	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringHArray1OfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_BooleanArray;
 class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_BooleanArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanArray();
 		%feature("autodoc", "1");
@@ -648,12 +715,15 @@ class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
 	return (TDataStd_BooleanArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_BooleanArray {
+	~Handle_TDataStd_BooleanArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_BooleanArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_PatternStd;
 class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_PatternStd();
 		%feature("autodoc", "1");
 		Handle_TDataStd_PatternStd();
 		%feature("autodoc", "1");
@@ -669,12 +739,15 @@ class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
 	return (TDataStd_PatternStd*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_PatternStd {
+	~Handle_TDataStd_PatternStd() {
+	printf("Call custom destructor for instance of Handle_TDataStd_PatternStd\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfExtStringArray;
 class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_DeltaOnModification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DeltaOnModificationOfExtStringArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfExtStringArray();
 		%feature("autodoc", "1");
@@ -690,12 +763,15 @@ class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_De
 	return (TDataStd_DeltaOnModificationOfExtStringArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DeltaOnModificationOfExtStringArray {
+	~Handle_TDataStd_DeltaOnModificationOfExtStringArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfExtStringArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Expression;
 class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Expression();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Expression();
 		%feature("autodoc", "1");
@@ -711,12 +787,15 @@ class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 	return (TDataStd_Expression*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Expression {
+	~Handle_TDataStd_Expression() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Expression\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Integer;
 class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Integer();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Integer();
 		%feature("autodoc", "1");
@@ -732,12 +811,15 @@ class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 	return (TDataStd_Integer*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Integer {
+	~Handle_TDataStd_Integer() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Integer\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_ByteArray;
 class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_ByteArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_ByteArray();
 		%feature("autodoc", "1");
@@ -753,12 +835,15 @@ class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
 	return (TDataStd_ByteArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_ByteArray {
+	~Handle_TDataStd_ByteArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_ByteArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Real;
 class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Real();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Real();
 		%feature("autodoc", "1");
@@ -774,12 +859,15 @@ class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 	return (TDataStd_Real*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Real {
+	~Handle_TDataStd_Real() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Real\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringByte;
 class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_HDataMapOfStringByte();
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringByte();
 		%feature("autodoc", "1");
@@ -795,12 +883,15 @@ class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
 	return (TDataStd_HDataMapOfStringByte*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_HDataMapOfStringByte {
+	~Handle_TDataStd_HDataMapOfStringByte() {
+	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringByte\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringByte;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringByte : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DataMapNodeOfDataMapOfStringByte();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte();
 		%feature("autodoc", "1");
@@ -816,12 +907,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringByte : public Handle_TCollecti
 	return (TDataStd_DataMapNodeOfDataMapOfStringByte*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringByte {
+	~Handle_TDataStd_DataMapNodeOfDataMapOfStringByte() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringByte\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_BooleanList;
 class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_BooleanList();
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanList();
 		%feature("autodoc", "1");
@@ -837,12 +931,15 @@ class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 	return (TDataStd_BooleanList*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_BooleanList {
+	~Handle_TDataStd_BooleanList() {
+	printf("Call custom destructor for instance of Handle_TDataStd_BooleanList\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_UAttribute;
 class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_UAttribute();
 		%feature("autodoc", "1");
 		Handle_TDataStd_UAttribute();
 		%feature("autodoc", "1");
@@ -858,12 +955,15 @@ class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 	return (TDataStd_UAttribute*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_UAttribute {
+	~Handle_TDataStd_UAttribute() {
+	printf("Call custom destructor for instance of Handle_TDataStd_UAttribute\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringReal;
 class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_HDataMapOfStringReal();
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringReal();
 		%feature("autodoc", "1");
@@ -879,12 +979,15 @@ class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
 	return (TDataStd_HDataMapOfStringReal*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_HDataMapOfStringReal {
+	~Handle_TDataStd_HDataMapOfStringReal() {
+	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringReal\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringReal;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DataMapNodeOfDataMapOfStringReal();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal();
 		%feature("autodoc", "1");
@@ -900,12 +1003,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollecti
 	return (TDataStd_DataMapNodeOfDataMapOfStringReal*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringReal {
+	~Handle_TDataStd_DataMapNodeOfDataMapOfStringReal() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringReal\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_ListNodeOfListOfExtendedString;
 class Handle_TDataStd_ListNodeOfListOfExtendedString : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_ListNodeOfListOfExtendedString();
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfExtendedString();
 		%feature("autodoc", "1");
@@ -921,12 +1027,15 @@ class Handle_TDataStd_ListNodeOfListOfExtendedString : public Handle_TCollection
 	return (TDataStd_ListNodeOfListOfExtendedString*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_ListNodeOfListOfExtendedString {
+	~Handle_TDataStd_ListNodeOfListOfExtendedString() {
+	printf("Call custom destructor for instance of Handle_TDataStd_ListNodeOfListOfExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringString;
 class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_HDataMapOfStringString();
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringString();
 		%feature("autodoc", "1");
@@ -942,12 +1051,15 @@ class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 	return (TDataStd_HDataMapOfStringString*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_HDataMapOfStringString {
+	~Handle_TDataStd_HDataMapOfStringString() {
+	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringString\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Point;
 class Handle_TDataStd_Point : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Point();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Point();
 		%feature("autodoc", "1");
@@ -963,12 +1075,15 @@ class Handle_TDataStd_Point : public Handle_TDF_Attribute {
 	return (TDataStd_Point*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Point {
+	~Handle_TDataStd_Point() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Point\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_HLabelArray1;
 class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_HLabelArray1();
 		%feature("autodoc", "1");
 		Handle_TDataStd_HLabelArray1();
 		%feature("autodoc", "1");
@@ -984,12 +1099,15 @@ class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 	return (TDataStd_HLabelArray1*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_HLabelArray1 {
+	~Handle_TDataStd_HLabelArray1() {
+	printf("Call custom destructor for instance of Handle_TDataStd_HLabelArray1\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Position;
 class Handle_TDataStd_Position : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Position();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Position();
 		%feature("autodoc", "1");
@@ -1005,12 +1123,15 @@ class Handle_TDataStd_Position : public Handle_TDF_Attribute {
 	return (TDataStd_Position*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Position {
+	~Handle_TDataStd_Position() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Position\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringHArray1OfReal;
 class Handle_TDataStd_HDataMapOfStringHArray1OfReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_HDataMapOfStringHArray1OfReal();
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfReal();
 		%feature("autodoc", "1");
@@ -1026,12 +1147,15 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfReal : public Handle_MMgt_TShared
 	return (TDataStd_HDataMapOfStringHArray1OfReal*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_HDataMapOfStringHArray1OfReal {
+	~Handle_TDataStd_HDataMapOfStringHArray1OfReal() {
+	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringHArray1OfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Directory;
 class Handle_TDataStd_Directory : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Directory();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Directory();
 		%feature("autodoc", "1");
@@ -1047,12 +1171,15 @@ class Handle_TDataStd_Directory : public Handle_TDF_Attribute {
 	return (TDataStd_Directory*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Directory {
+	~Handle_TDataStd_Directory() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Directory\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Comment;
 class Handle_TDataStd_Comment : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Comment();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Comment();
 		%feature("autodoc", "1");
@@ -1068,12 +1195,15 @@ class Handle_TDataStd_Comment : public Handle_TDF_Attribute {
 	return (TDataStd_Comment*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Comment {
+	~Handle_TDataStd_Comment() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Comment\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Current;
 class Handle_TDataStd_Current : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Current();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Current();
 		%feature("autodoc", "1");
@@ -1089,12 +1219,15 @@ class Handle_TDataStd_Current : public Handle_TDF_Attribute {
 	return (TDataStd_Current*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Current {
+	~Handle_TDataStd_Current() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Current\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Axis;
 class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Axis();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Axis();
 		%feature("autodoc", "1");
@@ -1110,12 +1243,15 @@ class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 	return (TDataStd_Axis*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Axis {
+	~Handle_TDataStd_Axis() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Axis\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_HArray1OfByte;
 class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_HArray1OfByte();
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfByte();
 		%feature("autodoc", "1");
@@ -1131,12 +1267,15 @@ class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
 	return (TDataStd_HArray1OfByte*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_HArray1OfByte {
+	~Handle_TDataStd_HArray1OfByte() {
+	printf("Call custom destructor for instance of Handle_TDataStd_HArray1OfByte\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_NamedData;
 class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_NamedData();
 		%feature("autodoc", "1");
 		Handle_TDataStd_NamedData();
 		%feature("autodoc", "1");
@@ -1152,12 +1291,15 @@ class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 	return (TDataStd_NamedData*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_NamedData {
+	~Handle_TDataStd_NamedData() {
+	printf("Call custom destructor for instance of Handle_TDataStd_NamedData\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntArray;
 class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnModification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DeltaOnModificationOfIntArray();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntArray();
 		%feature("autodoc", "1");
@@ -1173,12 +1315,15 @@ class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnM
 	return (TDataStd_DeltaOnModificationOfIntArray*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DeltaOnModificationOfIntArray {
+	~Handle_TDataStd_DeltaOnModificationOfIntArray() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfIntArray\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_IntPackedMap;
 class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_IntPackedMap();
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntPackedMap();
 		%feature("autodoc", "1");
@@ -1194,12 +1339,15 @@ class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 	return (TDataStd_IntPackedMap*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_IntPackedMap {
+	~Handle_TDataStd_IntPackedMap() {
+	printf("Call custom destructor for instance of Handle_TDataStd_IntPackedMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringInteger;
 class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_HDataMapOfStringInteger();
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringInteger();
 		%feature("autodoc", "1");
@@ -1215,12 +1363,15 @@ class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
 	return (TDataStd_HDataMapOfStringInteger*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_HDataMapOfStringInteger {
+	~Handle_TDataStd_HDataMapOfStringInteger() {
+	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger();
 		%feature("autodoc", "1");
@@ -1236,12 +1387,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger : public Handle_TColle
 	return (TDataStd_DataMapNodeOfDataMapOfStringInteger*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger {
+	~Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Name;
 class Handle_TDataStd_Name : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Name();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Name();
 		%feature("autodoc", "1");
@@ -1257,12 +1411,15 @@ class Handle_TDataStd_Name : public Handle_TDF_Attribute {
 	return (TDataStd_Name*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Name {
+	~Handle_TDataStd_Name() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Name\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_ExtStringList;
 class Handle_TDataStd_ExtStringList : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_ExtStringList();
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringList();
 		%feature("autodoc", "1");
@@ -1278,12 +1435,15 @@ class Handle_TDataStd_ExtStringList : public Handle_TDF_Attribute {
 	return (TDataStd_ExtStringList*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_ExtStringList {
+	~Handle_TDataStd_ExtStringList() {
+	printf("Call custom destructor for instance of Handle_TDataStd_ExtStringList\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_ListNodeOfListOfByte;
 class Handle_TDataStd_ListNodeOfListOfByte : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_ListNodeOfListOfByte();
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfByte();
 		%feature("autodoc", "1");
@@ -1299,12 +1459,15 @@ class Handle_TDataStd_ListNodeOfListOfByte : public Handle_TCollection_MapNode {
 	return (TDataStd_ListNodeOfListOfByte*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_ListNodeOfListOfByte {
+	~Handle_TDataStd_ListNodeOfListOfByte() {
+	printf("Call custom destructor for instance of Handle_TDataStd_ListNodeOfListOfByte\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_Tick;
 class Handle_TDataStd_Tick : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_Tick();
 		%feature("autodoc", "1");
 		Handle_TDataStd_Tick();
 		%feature("autodoc", "1");
@@ -1320,12 +1483,15 @@ class Handle_TDataStd_Tick : public Handle_TDF_Attribute {
 	return (TDataStd_Tick*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_Tick {
+	~Handle_TDataStd_Tick() {
+	printf("Call custom destructor for instance of Handle_TDataStd_Tick\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_HArray1OfTrsf;
 class Handle_TDataStd_HArray1OfTrsf : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_HArray1OfTrsf();
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfTrsf();
 		%feature("autodoc", "1");
@@ -1341,12 +1507,15 @@ class Handle_TDataStd_HArray1OfTrsf : public Handle_MMgt_TShared {
 	return (TDataStd_HArray1OfTrsf*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_HArray1OfTrsf {
+	~Handle_TDataStd_HArray1OfTrsf() {
+	printf("Call custom destructor for instance of Handle_TDataStd_HArray1OfTrsf\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_RealList;
 class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_RealList();
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealList();
 		%feature("autodoc", "1");
@@ -1362,12 +1531,15 @@ class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
 	return (TDataStd_RealList*)$self->Access();
 	}
 };
+%extend Handle_TDataStd_RealList {
+	~Handle_TDataStd_RealList() {
+	printf("Call custom destructor for instance of Handle_TDataStd_RealList\n");
+	}
+};
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal();
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal();
 		%feature("autodoc", "1");
@@ -1381,6 +1553,11 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public Handle_
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
 	TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal* GetObject() {
 	return (TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal*)$self->Access();
+	}
+};
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
+	~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal() {
+	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");
 	}
 };
 
@@ -1429,13 +1606,16 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_ReferenceList();
 
 };
 %extend TDataStd_ReferenceList {
 	Handle_TDataStd_ReferenceList GetHandle() {
 	return *(Handle_TDataStd_ReferenceList*) &$self;
+	}
+};
+%extend TDataStd_ReferenceList {
+	~TDataStd_ReferenceList() {
+	printf("Call custom destructor for instance of TDataStd_ReferenceList\n");
 	}
 };
 
@@ -1450,13 +1630,16 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection
 		Handle_TColStd_HArray1OfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger();
 
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
 	Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger GetHandle() {
 	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger*) &$self;
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
+	~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger() {
+	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger\n");
 	}
 };
 
@@ -1543,13 +1726,16 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_BooleanList();
 
 };
 %extend TDataStd_BooleanList {
 	Handle_TDataStd_BooleanList GetHandle() {
 	return *(Handle_TDataStd_BooleanList*) &$self;
+	}
+};
+%extend TDataStd_BooleanList {
+	~TDataStd_BooleanList() {
+	printf("Call custom destructor for instance of TDataStd_BooleanList\n");
 	}
 };
 
@@ -1562,13 +1748,16 @@ class TDataStd_ListNodeOfListOfExtendedString : public TCollection_MapNode {
 		TCollection_ExtendedString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_ListNodeOfListOfExtendedString();
 
 };
 %extend TDataStd_ListNodeOfListOfExtendedString {
 	Handle_TDataStd_ListNodeOfListOfExtendedString GetHandle() {
 	return *(Handle_TDataStd_ListNodeOfListOfExtendedString*) &$self;
+	}
+};
+%extend TDataStd_ListNodeOfListOfExtendedString {
+	~TDataStd_ListNodeOfListOfExtendedString() {
+	printf("Call custom destructor for instance of TDataStd_ListNodeOfListOfExtendedString\n");
 	}
 };
 
@@ -1585,13 +1774,16 @@ class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
 		TDataStd_DataMapOfStringByte & ChangeMap();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_HDataMapOfStringByte();
 
 };
 %extend TDataStd_HDataMapOfStringByte {
 	Handle_TDataStd_HDataMapOfStringByte GetHandle() {
 	return *(Handle_TDataStd_HDataMapOfStringByte*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringByte {
+	~TDataStd_HDataMapOfStringByte() {
+	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringByte\n");
 	}
 };
 
@@ -1622,13 +1814,16 @@ class TDataStd_Position : public TDF_Attribute {
 		void SetPosition(const gp_Pnt &aPos);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Position();
 
 };
 %extend TDataStd_Position {
 	Handle_TDataStd_Position GetHandle() {
 	return *(Handle_TDataStd_Position*) &$self;
+	}
+};
+%extend TDataStd_Position {
+	~TDataStd_Position() {
+	printf("Call custom destructor for instance of TDataStd_Position\n");
 	}
 };
 
@@ -1713,13 +1908,16 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_ExtStringArray();
 
 };
 %extend TDataStd_ExtStringArray {
 	Handle_TDataStd_ExtStringArray GetHandle() {
 	return *(Handle_TDataStd_ExtStringArray*) &$self;
+	}
+};
+%extend TDataStd_ExtStringArray {
+	~TDataStd_ExtStringArray() {
+	printf("Call custom destructor for instance of TDataStd_ExtStringArray\n");
 	}
 };
 
@@ -1786,13 +1984,16 @@ class TDataStd_NoteBook : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_NoteBook();
 
 };
 %extend TDataStd_NoteBook {
 	Handle_TDataStd_NoteBook GetHandle() {
 	return *(Handle_TDataStd_NoteBook*) &$self;
+	}
+};
+%extend TDataStd_NoteBook {
+	~TDataStd_NoteBook() {
+	printf("Call custom destructor for instance of TDataStd_NoteBook\n");
 	}
 };
 
@@ -1809,13 +2010,16 @@ class TDataStd_HDataMapOfStringReal : public MMgt_TShared {
 		TDataStd_DataMapOfStringReal & ChangeMap();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_HDataMapOfStringReal();
 
 };
 %extend TDataStd_HDataMapOfStringReal {
 	Handle_TDataStd_HDataMapOfStringReal GetHandle() {
 	return *(Handle_TDataStd_HDataMapOfStringReal*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringReal {
+	~TDataStd_HDataMapOfStringReal() {
+	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringReal\n");
 	}
 };
 
@@ -1828,13 +2032,16 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DeltaOnModificationOfIntArray();
 
 };
 %extend TDataStd_DeltaOnModificationOfIntArray {
 	Handle_TDataStd_DeltaOnModificationOfIntArray GetHandle() {
 	return *(Handle_TDataStd_DeltaOnModificationOfIntArray*) &$self;
+	}
+};
+%extend TDataStd_DeltaOnModificationOfIntArray {
+	~TDataStd_DeltaOnModificationOfIntArray() {
+	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntArray\n");
 	}
 };
 
@@ -1858,6 +2065,11 @@ class TDataStd_Pattern : public TDF_Attribute {
 %extend TDataStd_Pattern {
 	Handle_TDataStd_Pattern GetHandle() {
 	return *(Handle_TDataStd_Pattern*) &$self;
+	}
+};
+%extend TDataStd_Pattern {
+	~TDataStd_Pattern() {
+	printf("Call custom destructor for instance of TDataStd_Pattern\n");
 	}
 };
 
@@ -1888,13 +2100,16 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 		TDataStd_LabelArray1 & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_HLabelArray1();
 
 };
 %extend TDataStd_HLabelArray1 {
 	Handle_TDataStd_HLabelArray1 GetHandle() {
 	return *(Handle_TDataStd_HLabelArray1*) &$self;
+	}
+};
+%extend TDataStd_HLabelArray1 {
+	~TDataStd_HLabelArray1() {
+	printf("Call custom destructor for instance of TDataStd_HLabelArray1\n");
 	}
 };
 
@@ -1945,13 +2160,16 @@ class TDataStd_Directory : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Directory();
 
 };
 %extend TDataStd_Directory {
 	Handle_TDataStd_Directory GetHandle() {
 	return *(Handle_TDataStd_Directory*) &$self;
+	}
+};
+%extend TDataStd_Directory {
+	~TDataStd_Directory() {
+	printf("Call custom destructor for instance of TDataStd_Directory\n");
 	}
 };
 
@@ -1964,13 +2182,16 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DeltaOnModificationOfRealArray();
 
 };
 %extend TDataStd_DeltaOnModificationOfRealArray {
 	Handle_TDataStd_DeltaOnModificationOfRealArray GetHandle() {
 	return *(Handle_TDataStd_DeltaOnModificationOfRealArray*) &$self;
+	}
+};
+%extend TDataStd_DeltaOnModificationOfRealArray {
+	~TDataStd_DeltaOnModificationOfRealArray() {
+	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfRealArray\n");
 	}
 };
 
@@ -2017,13 +2238,16 @@ class TDataStd_RealList : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_RealList();
 
 };
 %extend TDataStd_RealList {
 	Handle_TDataStd_RealList GetHandle() {
 	return *(Handle_TDataStd_RealList*) &$self;
+	}
+};
+%extend TDataStd_RealList {
+	~TDataStd_RealList() {
+	printf("Call custom destructor for instance of TDataStd_RealList\n");
 	}
 };
 
@@ -2150,13 +2374,16 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_TreeNode();
 
 };
 %extend TDataStd_TreeNode {
 	Handle_TDataStd_TreeNode GetHandle() {
 	return *(Handle_TDataStd_TreeNode*) &$self;
+	}
+};
+%extend TDataStd_TreeNode {
+	~TDataStd_TreeNode() {
+	printf("Call custom destructor for instance of TDataStd_TreeNode\n");
 	}
 };
 
@@ -2173,13 +2400,16 @@ class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
 		TDataStd_DataMapOfStringHArray1OfInteger & ChangeMap();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_HDataMapOfStringHArray1OfInteger();
 
 };
 %extend TDataStd_HDataMapOfStringHArray1OfInteger {
 	Handle_TDataStd_HDataMapOfStringHArray1OfInteger GetHandle() {
 	return *(Handle_TDataStd_HDataMapOfStringHArray1OfInteger*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringHArray1OfInteger {
+	~TDataStd_HDataMapOfStringHArray1OfInteger() {
+	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfInteger\n");
 	}
 };
 
@@ -2276,13 +2506,16 @@ class TDataStd_NamedData : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_NamedData();
 
 };
 %extend TDataStd_NamedData {
 	Handle_TDataStd_NamedData GetHandle() {
 	return *(Handle_TDataStd_NamedData*) &$self;
+	}
+};
+%extend TDataStd_NamedData {
+	~TDataStd_NamedData() {
+	printf("Call custom destructor for instance of TDataStd_NamedData\n");
 	}
 };
 
@@ -2353,13 +2586,16 @@ class TDataStd_PatternStd : public TDataStd_Pattern {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_PatternStd();
 
 };
 %extend TDataStd_PatternStd {
 	Handle_TDataStd_PatternStd GetHandle() {
 	return *(Handle_TDataStd_PatternStd*) &$self;
+	}
+};
+%extend TDataStd_PatternStd {
+	~TDataStd_PatternStd() {
+	printf("Call custom destructor for instance of TDataStd_PatternStd\n");
 	}
 };
 
@@ -2392,13 +2628,16 @@ class TDataStd_Expression : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Expression();
 
 };
 %extend TDataStd_Expression {
 	Handle_TDataStd_Expression GetHandle() {
 	return *(Handle_TDataStd_Expression*) &$self;
+	}
+};
+%extend TDataStd_Expression {
+	~TDataStd_Expression() {
+	printf("Call custom destructor for instance of TDataStd_Expression\n");
 	}
 };
 
@@ -2411,13 +2650,16 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DeltaOnModificationOfExtStringArray();
 
 };
 %extend TDataStd_DeltaOnModificationOfExtStringArray {
 	Handle_TDataStd_DeltaOnModificationOfExtStringArray GetHandle() {
 	return *(Handle_TDataStd_DeltaOnModificationOfExtStringArray*) &$self;
+	}
+};
+%extend TDataStd_DeltaOnModificationOfExtStringArray {
+	~TDataStd_DeltaOnModificationOfExtStringArray() {
+	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfExtStringArray\n");
 	}
 };
 
@@ -2466,13 +2708,16 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_IntPackedMap();
 
 };
 %extend TDataStd_IntPackedMap {
 	Handle_TDataStd_IntPackedMap GetHandle() {
 	return *(Handle_TDataStd_IntPackedMap*) &$self;
+	}
+};
+%extend TDataStd_IntPackedMap {
+	~TDataStd_IntPackedMap() {
+	printf("Call custom destructor for instance of TDataStd_IntPackedMap\n");
 	}
 };
 
@@ -2535,13 +2780,16 @@ class TDataStd_DataMapNodeOfDataMapOfStringByte : public TCollection_MapNode {
 		Standard_Byte & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DataMapNodeOfDataMapOfStringByte();
 
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringByte {
 	Handle_TDataStd_DataMapNodeOfDataMapOfStringByte GetHandle() {
 	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringByte*) &$self;
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringByte {
+	~TDataStd_DataMapNodeOfDataMapOfStringByte() {
+	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringByte\n");
 	}
 };
 
@@ -2556,13 +2804,16 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_Ma
 		Handle_TColStd_HArray1OfReal & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal();
 
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
 	Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal GetHandle() {
 	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal*) &$self;
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
+	~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal() {
+	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");
 	}
 };
 
@@ -2623,13 +2874,16 @@ class TDataStd_Integer : public TDF_Attribute {
 		TDataStd_Integer();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Integer();
 
 };
 %extend TDataStd_Integer {
 	Handle_TDataStd_Integer GetHandle() {
 	return *(Handle_TDataStd_Integer*) &$self;
+	}
+};
+%extend TDataStd_Integer {
+	~TDataStd_Integer() {
+	printf("Call custom destructor for instance of TDataStd_Integer\n");
 	}
 };
 
@@ -2642,13 +2896,16 @@ class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModificatio
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DeltaOnModificationOfIntPackedMap();
 
 };
 %extend TDataStd_DeltaOnModificationOfIntPackedMap {
 	Handle_TDataStd_DeltaOnModificationOfIntPackedMap GetHandle() {
 	return *(Handle_TDataStd_DeltaOnModificationOfIntPackedMap*) &$self;
+	}
+};
+%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+	~TDataStd_DeltaOnModificationOfIntPackedMap() {
+	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntPackedMap\n");
 	}
 };
 
@@ -2663,13 +2920,16 @@ class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DataMapNodeOfDataMapOfStringReal();
 
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringReal {
 	Handle_TDataStd_DataMapNodeOfDataMapOfStringReal GetHandle() {
 	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringReal*) &$self;
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
+	~TDataStd_DataMapNodeOfDataMapOfStringReal() {
+	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringReal\n");
 	}
 };
 
@@ -2696,13 +2956,16 @@ class TDataStd_UAttribute : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_UAttribute();
 
 };
 %extend TDataStd_UAttribute {
 	Handle_TDataStd_UAttribute GetHandle() {
 	return *(Handle_TDataStd_UAttribute*) &$self;
+	}
+};
+%extend TDataStd_UAttribute {
+	~TDataStd_UAttribute() {
+	printf("Call custom destructor for instance of TDataStd_UAttribute\n");
 	}
 };
 
@@ -2747,13 +3010,16 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_ReferenceArray();
 
 };
 %extend TDataStd_ReferenceArray {
 	Handle_TDataStd_ReferenceArray GetHandle() {
 	return *(Handle_TDataStd_ReferenceArray*) &$self;
+	}
+};
+%extend TDataStd_ReferenceArray {
+	~TDataStd_ReferenceArray() {
+	printf("Call custom destructor for instance of TDataStd_ReferenceArray\n");
 	}
 };
 
@@ -2780,13 +3046,16 @@ class TDataStd_Point : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Point();
 
 };
 %extend TDataStd_Point {
 	Handle_TDataStd_Point GetHandle() {
 	return *(Handle_TDataStd_Point*) &$self;
+	}
+};
+%extend TDataStd_Point {
+	~TDataStd_Point() {
+	printf("Call custom destructor for instance of TDataStd_Point\n");
 	}
 };
 
@@ -2821,13 +3090,16 @@ class TDataStd_Real : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Real();
 
 };
 %extend TDataStd_Real {
 	Handle_TDataStd_Real GetHandle() {
 	return *(Handle_TDataStd_Real*) &$self;
+	}
+};
+%extend TDataStd_Real {
+	~TDataStd_Real() {
+	printf("Call custom destructor for instance of TDataStd_Real\n");
 	}
 };
 
@@ -2882,13 +3154,16 @@ class TDataStd_Relation : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Relation();
 
 };
 %extend TDataStd_Relation {
 	Handle_TDataStd_Relation GetHandle() {
 	return *(Handle_TDataStd_Relation*) &$self;
+	}
+};
+%extend TDataStd_Relation {
+	~TDataStd_Relation() {
+	printf("Call custom destructor for instance of TDataStd_Relation\n");
 	}
 };
 
@@ -2919,13 +3194,16 @@ class TDataStd_HArray1OfByte : public MMgt_TShared {
 		TDataStd_Array1OfByte & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_HArray1OfByte();
 
 };
 %extend TDataStd_HArray1OfByte {
 	Handle_TDataStd_HArray1OfByte GetHandle() {
 	return *(Handle_TDataStd_HArray1OfByte*) &$self;
+	}
+};
+%extend TDataStd_HArray1OfByte {
+	~TDataStd_HArray1OfByte() {
+	printf("Call custom destructor for instance of TDataStd_HArray1OfByte\n");
 	}
 };
 
@@ -2986,13 +3264,16 @@ class TDataStd_Geometry : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Geometry();
 
 };
 %extend TDataStd_Geometry {
 	Handle_TDataStd_Geometry GetHandle() {
 	return *(Handle_TDataStd_Geometry*) &$self;
+	}
+};
+%extend TDataStd_Geometry {
+	~TDataStd_Geometry() {
+	printf("Call custom destructor for instance of TDataStd_Geometry\n");
 	}
 };
 
@@ -3005,13 +3286,16 @@ class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 		Standard_Byte & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_ListNodeOfListOfByte();
 
 };
 %extend TDataStd_ListNodeOfListOfByte {
 	Handle_TDataStd_ListNodeOfListOfByte GetHandle() {
 	return *(Handle_TDataStd_ListNodeOfListOfByte*) &$self;
+	}
+};
+%extend TDataStd_ListNodeOfListOfByte {
+	~TDataStd_ListNodeOfListOfByte() {
+	printf("Call custom destructor for instance of TDataStd_ListNodeOfListOfByte\n");
 	}
 };
 
@@ -3036,13 +3320,16 @@ class TDataStd_Placement : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Placement();
 
 };
 %extend TDataStd_Placement {
 	Handle_TDataStd_Placement GetHandle() {
 	return *(Handle_TDataStd_Placement*) &$self;
+	}
+};
+%extend TDataStd_Placement {
+	~TDataStd_Placement() {
+	printf("Call custom destructor for instance of TDataStd_Placement\n");
 	}
 };
 
@@ -3057,13 +3344,16 @@ class TDataStd_DataMapNodeOfDataMapOfStringInteger : public TCollection_MapNode 
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DataMapNodeOfDataMapOfStringInteger();
 
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringInteger {
 	Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger GetHandle() {
 	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger*) &$self;
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringInteger {
+	~TDataStd_DataMapNodeOfDataMapOfStringInteger() {
+	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringInteger\n");
 	}
 };
 
@@ -3078,13 +3368,16 @@ class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 		TCollection_ExtendedString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DataMapNodeOfDataMapOfStringString();
 
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringString {
 	Handle_TDataStd_DataMapNodeOfDataMapOfStringString GetHandle() {
 	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringString*) &$self;
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringString {
+	~TDataStd_DataMapNodeOfDataMapOfStringString() {
+	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringString\n");
 	}
 };
 
@@ -3161,13 +3454,16 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_ExtStringList();
 
 };
 %extend TDataStd_ExtStringList {
 	Handle_TDataStd_ExtStringList GetHandle() {
 	return *(Handle_TDataStd_ExtStringList*) &$self;
+	}
+};
+%extend TDataStd_ExtStringList {
+	~TDataStd_ExtStringList() {
+	printf("Call custom destructor for instance of TDataStd_ExtStringList\n");
 	}
 };
 
@@ -3228,13 +3524,16 @@ class TDataStd_HArray1OfTrsf : public MMgt_TShared {
 		TDataStd_Array1OfTrsf & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_HArray1OfTrsf();
 
 };
 %extend TDataStd_HArray1OfTrsf {
 	Handle_TDataStd_HArray1OfTrsf GetHandle() {
 	return *(Handle_TDataStd_HArray1OfTrsf*) &$self;
+	}
+};
+%extend TDataStd_HArray1OfTrsf {
+	~TDataStd_HArray1OfTrsf() {
+	printf("Call custom destructor for instance of TDataStd_HArray1OfTrsf\n");
 	}
 };
 
@@ -3291,13 +3590,16 @@ class TDataStd_Variable : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Variable();
 
 };
 %extend TDataStd_Variable {
 	Handle_TDataStd_Variable GetHandle() {
 	return *(Handle_TDataStd_Variable*) &$self;
+	}
+};
+%extend TDataStd_Variable {
+	~TDataStd_Variable() {
+	printf("Call custom destructor for instance of TDataStd_Variable\n");
 	}
 };
 
@@ -3330,13 +3632,16 @@ class TDataStd_Comment : public TDF_Attribute {
 		virtual		Standard_Boolean AfterRetrieval(const Standard_Boolean forceIt=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Comment();
 
 };
 %extend TDataStd_Comment {
 	Handle_TDataStd_Comment GetHandle() {
 	return *(Handle_TDataStd_Comment*) &$self;
+	}
+};
+%extend TDataStd_Comment {
+	~TDataStd_Comment() {
+	printf("Call custom destructor for instance of TDataStd_Comment\n");
 	}
 };
 
@@ -3369,13 +3674,16 @@ class TDataStd_Current : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Current();
 
 };
 %extend TDataStd_Current {
 	Handle_TDataStd_Current GetHandle() {
 	return *(Handle_TDataStd_Current*) &$self;
+	}
+};
+%extend TDataStd_Current {
+	~TDataStd_Current() {
+	printf("Call custom destructor for instance of TDataStd_Current\n");
 	}
 };
 
@@ -3408,13 +3716,16 @@ class TDataStd_Shape : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Shape();
 
 };
 %extend TDataStd_Shape {
 	Handle_TDataStd_Shape GetHandle() {
 	return *(Handle_TDataStd_Shape*) &$self;
+	}
+};
+%extend TDataStd_Shape {
+	~TDataStd_Shape() {
+	printf("Call custom destructor for instance of TDataStd_Shape\n");
 	}
 };
 
@@ -3463,13 +3774,16 @@ class TDataStd_RealArray : public TDF_Attribute {
 		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_RealArray();
 
 };
 %extend TDataStd_RealArray {
 	Handle_TDataStd_RealArray GetHandle() {
 	return *(Handle_TDataStd_RealArray*) &$self;
+	}
+};
+%extend TDataStd_RealArray {
+	~TDataStd_RealArray() {
+	printf("Call custom destructor for instance of TDataStd_RealArray\n");
 	}
 };
 
@@ -3496,13 +3810,16 @@ class TDataStd_Axis : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Axis();
 
 };
 %extend TDataStd_Axis {
 	Handle_TDataStd_Axis GetHandle() {
 	return *(Handle_TDataStd_Axis*) &$self;
+	}
+};
+%extend TDataStd_Axis {
+	~TDataStd_Axis() {
+	printf("Call custom destructor for instance of TDataStd_Axis\n");
 	}
 };
 
@@ -3619,13 +3936,16 @@ class TDataStd_AsciiString : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_AsciiString();
 
 };
 %extend TDataStd_AsciiString {
 	Handle_TDataStd_AsciiString GetHandle() {
 	return *(Handle_TDataStd_AsciiString*) &$self;
+	}
+};
+%extend TDataStd_AsciiString {
+	~TDataStd_AsciiString() {
+	printf("Call custom destructor for instance of TDataStd_AsciiString\n");
 	}
 };
 
@@ -3674,13 +3994,16 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_IntegerArray();
 
 };
 %extend TDataStd_IntegerArray {
 	Handle_TDataStd_IntegerArray GetHandle() {
 	return *(Handle_TDataStd_IntegerArray*) &$self;
+	}
+};
+%extend TDataStd_IntegerArray {
+	~TDataStd_IntegerArray() {
+	printf("Call custom destructor for instance of TDataStd_IntegerArray\n");
 	}
 };
 
@@ -3773,13 +4096,16 @@ class TDataStd_Name : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Name();
 
 };
 %extend TDataStd_Name {
 	Handle_TDataStd_Name GetHandle() {
 	return *(Handle_TDataStd_Name*) &$self;
+	}
+};
+%extend TDataStd_Name {
+	~TDataStd_Name() {
+	printf("Call custom destructor for instance of TDataStd_Name\n");
 	}
 };
 
@@ -3792,13 +4118,16 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_DeltaOnModificationOfByteArray();
 
 };
 %extend TDataStd_DeltaOnModificationOfByteArray {
 	Handle_TDataStd_DeltaOnModificationOfByteArray GetHandle() {
 	return *(Handle_TDataStd_DeltaOnModificationOfByteArray*) &$self;
+	}
+};
+%extend TDataStd_DeltaOnModificationOfByteArray {
+	~TDataStd_DeltaOnModificationOfByteArray() {
+	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfByteArray\n");
 	}
 };
 
@@ -3815,13 +4144,16 @@ class TDataStd_HDataMapOfStringString : public MMgt_TShared {
 		TDataStd_DataMapOfStringString & ChangeMap();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_HDataMapOfStringString();
 
 };
 %extend TDataStd_HDataMapOfStringString {
 	Handle_TDataStd_HDataMapOfStringString GetHandle() {
 	return *(Handle_TDataStd_HDataMapOfStringString*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringString {
+	~TDataStd_HDataMapOfStringString() {
+	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringString\n");
 	}
 };
 
@@ -3864,13 +4196,16 @@ class TDataStd_Tick : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Tick();
 
 };
 %extend TDataStd_Tick {
 	Handle_TDataStd_Tick GetHandle() {
 	return *(Handle_TDataStd_Tick*) &$self;
+	}
+};
+%extend TDataStd_Tick {
+	~TDataStd_Tick() {
+	printf("Call custom destructor for instance of TDataStd_Tick\n");
 	}
 };
 
@@ -3913,13 +4248,16 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & OS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_BooleanArray();
 
 };
 %extend TDataStd_BooleanArray {
 	Handle_TDataStd_BooleanArray GetHandle() {
 	return *(Handle_TDataStd_BooleanArray*) &$self;
+	}
+};
+%extend TDataStd_BooleanArray {
+	~TDataStd_BooleanArray() {
+	printf("Call custom destructor for instance of TDataStd_BooleanArray\n");
 	}
 };
 
@@ -3936,13 +4274,16 @@ class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
 		TDataStd_DataMapOfStringInteger & ChangeMap();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_HDataMapOfStringInteger();
 
 };
 %extend TDataStd_HDataMapOfStringInteger {
 	Handle_TDataStd_HDataMapOfStringInteger GetHandle() {
 	return *(Handle_TDataStd_HDataMapOfStringInteger*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringInteger {
+	~TDataStd_HDataMapOfStringInteger() {
+	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringInteger\n");
 	}
 };
 
@@ -3991,13 +4332,16 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_ByteArray();
 
 };
 %extend TDataStd_ByteArray {
 	Handle_TDataStd_ByteArray GetHandle() {
 	return *(Handle_TDataStd_ByteArray*) &$self;
+	}
+};
+%extend TDataStd_ByteArray {
+	~TDataStd_ByteArray() {
+	printf("Call custom destructor for instance of TDataStd_ByteArray\n");
 	}
 };
 
@@ -4070,13 +4414,16 @@ class TDataStd_Constraint : public TDF_Attribute {
 		virtual		void References(const Handle_TDF_DataSet &DS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Constraint();
 
 };
 %extend TDataStd_Constraint {
 	Handle_TDataStd_Constraint GetHandle() {
 	return *(Handle_TDataStd_Constraint*) &$self;
+	}
+};
+%extend TDataStd_Constraint {
+	~TDataStd_Constraint() {
+	printf("Call custom destructor for instance of TDataStd_Constraint\n");
 	}
 };
 
@@ -4121,13 +4468,16 @@ class TDataStd_Plane : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_Plane();
 
 };
 %extend TDataStd_Plane {
 	Handle_TDataStd_Plane GetHandle() {
 	return *(Handle_TDataStd_Plane*) &$self;
+	}
+};
+%extend TDataStd_Plane {
+	~TDataStd_Plane() {
+	printf("Call custom destructor for instance of TDataStd_Plane\n");
 	}
 };
 
@@ -4200,13 +4550,16 @@ class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
 		TDataStd_DataMapOfStringHArray1OfReal & ChangeMap();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_HDataMapOfStringHArray1OfReal();
 
 };
 %extend TDataStd_HDataMapOfStringHArray1OfReal {
 	Handle_TDataStd_HDataMapOfStringHArray1OfReal GetHandle() {
 	return *(Handle_TDataStd_HDataMapOfStringHArray1OfReal*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringHArray1OfReal {
+	~TDataStd_HDataMapOfStringHArray1OfReal() {
+	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfReal\n");
 	}
 };
 
@@ -4253,12 +4606,15 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDataStd_IntegerList();
 
 };
 %extend TDataStd_IntegerList {
 	Handle_TDataStd_IntegerList GetHandle() {
 	return *(Handle_TDataStd_IntegerList*) &$self;
+	}
+};
+%extend TDataStd_IntegerList {
+	~TDataStd_IntegerList() {
+	printf("Call custom destructor for instance of TDataStd_IntegerList\n");
 	}
 };

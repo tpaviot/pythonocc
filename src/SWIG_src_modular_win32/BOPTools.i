@@ -128,8 +128,6 @@ enum BOPTools_CheckStatus {
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState();
-		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState();
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState(const Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState &aHandle);
@@ -144,12 +142,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public 
 	return (BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
+	~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState() {
+	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock;
 class Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock();
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock();
 		%feature("autodoc", "1");
@@ -165,12 +166,15 @@ class Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public Handle_TCollectio
 	return (BOPTools_IndexedMapNodeOfIMapOfPaveBlock*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
+	~Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock() {
+	printf("Call custom destructor for instance of Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger;
 class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger();
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger();
 		%feature("autodoc", "1");
@@ -186,12 +190,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public
 	return (BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
+	~Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger() {
+	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfCommonBlock;
 class Handle_BOPTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_ListNodeOfListOfCommonBlock();
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCommonBlock();
 		%feature("autodoc", "1");
@@ -207,12 +214,15 @@ class Handle_BOPTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 	return (BOPTools_ListNodeOfListOfCommonBlock*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_ListNodeOfListOfCommonBlock {
+	~Handle_BOPTools_ListNodeOfListOfCommonBlock() {
+	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCommonBlock\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfCheckResults;
 class Handle_BOPTools_ListNodeOfListOfCheckResults : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_ListNodeOfListOfCheckResults();
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCheckResults();
 		%feature("autodoc", "1");
@@ -228,12 +238,15 @@ class Handle_BOPTools_ListNodeOfListOfCheckResults : public Handle_TCollection_M
 	return (BOPTools_ListNodeOfListOfCheckResults*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_ListNodeOfListOfCheckResults {
+	~Handle_BOPTools_ListNodeOfListOfCheckResults() {
+	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCheckResults\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet();
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet();
 		%feature("autodoc", "1");
@@ -249,12 +262,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : publi
 	return (BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
+	~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet() {
+	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfInterference;
 class Handle_BOPTools_ListNodeOfListOfInterference : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_ListNodeOfListOfInterference();
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfInterference();
 		%feature("autodoc", "1");
@@ -270,12 +286,15 @@ class Handle_BOPTools_ListNodeOfListOfInterference : public Handle_TCollection_M
 	return (BOPTools_ListNodeOfListOfInterference*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_ListNodeOfListOfInterference {
+	~Handle_BOPTools_ListNodeOfListOfInterference() {
+	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfInterference\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock;
 class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock();
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock();
 		%feature("autodoc", "1");
@@ -291,12 +310,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : publ
 	return (BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
+	~Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock() {
+	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_SequenceNodeOfSequenceOfCurves;
 class Handle_BOPTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_SequenceNodeOfSequenceOfCurves();
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfCurves();
 		%feature("autodoc", "1");
@@ -312,12 +334,15 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 	return (BOPTools_SequenceNodeOfSequenceOfCurves*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_SequenceNodeOfSequenceOfCurves {
+	~Handle_BOPTools_SequenceNodeOfSequenceOfCurves() {
+	printf("Call custom destructor for instance of Handle_BOPTools_SequenceNodeOfSequenceOfCurves\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo();
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo();
 		%feature("autodoc", "1");
@@ -333,12 +358,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public
 	return (BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
+	~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo() {
+	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_HArray2OfIntersectionStatus;
 class Handle_BOPTools_HArray2OfIntersectionStatus : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_HArray2OfIntersectionStatus();
 		%feature("autodoc", "1");
 		Handle_BOPTools_HArray2OfIntersectionStatus();
 		%feature("autodoc", "1");
@@ -354,12 +382,15 @@ class Handle_BOPTools_HArray2OfIntersectionStatus : public Handle_MMgt_TShared {
 	return (BOPTools_HArray2OfIntersectionStatus*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_HArray2OfIntersectionStatus {
+	~Handle_BOPTools_HArray2OfIntersectionStatus() {
+	printf("Call custom destructor for instance of Handle_BOPTools_HArray2OfIntersectionStatus\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfPaveBlock;
 class Handle_BOPTools_ListNodeOfListOfPaveBlock : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_ListNodeOfListOfPaveBlock();
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPaveBlock();
 		%feature("autodoc", "1");
@@ -375,12 +406,15 @@ class Handle_BOPTools_ListNodeOfListOfPaveBlock : public Handle_TCollection_MapN
 	return (BOPTools_ListNodeOfListOfPaveBlock*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_ListNodeOfListOfPaveBlock {
+	~Handle_BOPTools_ListNodeOfListOfPaveBlock() {
+	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfPaveBlock\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfShapeEnum;
 class Handle_BOPTools_ListNodeOfListOfShapeEnum : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_ListNodeOfListOfShapeEnum();
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfShapeEnum();
 		%feature("autodoc", "1");
@@ -396,12 +430,15 @@ class Handle_BOPTools_ListNodeOfListOfShapeEnum : public Handle_TCollection_MapN
 	return (BOPTools_ListNodeOfListOfShapeEnum*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_ListNodeOfListOfShapeEnum {
+	~Handle_BOPTools_ListNodeOfListOfShapeEnum() {
+	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfShapeEnum\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger;
 class Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger();
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger();
 		%feature("autodoc", "1");
@@ -417,12 +454,15 @@ class Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public Handl
 	return (BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
+	~Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger() {
+	printf("Call custom destructor for instance of Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfCoupleOfInteger;
 class Handle_BOPTools_ListNodeOfListOfCoupleOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_ListNodeOfListOfCoupleOfInteger();
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger();
 		%feature("autodoc", "1");
@@ -438,12 +478,15 @@ class Handle_BOPTools_ListNodeOfListOfCoupleOfInteger : public Handle_TCollectio
 	return (BOPTools_ListNodeOfListOfCoupleOfInteger*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_ListNodeOfListOfCoupleOfInteger {
+	~Handle_BOPTools_ListNodeOfListOfCoupleOfInteger() {
+	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCoupleOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock;
 class Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock();
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock();
 		%feature("autodoc", "1");
@@ -459,12 +502,15 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock : public Handle_TCollect
 	return (BOPTools_SequenceNodeOfSequenceOfPaveBlock*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock {
+	~Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock() {
+	printf("Call custom destructor for instance of Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState();
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState();
 		%feature("autodoc", "1");
@@ -480,12 +526,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : publi
 	return (BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState*)$self->Access();
 	}
 };
+%extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
+	~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
+	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfPave;
 class Handle_BOPTools_ListNodeOfListOfPave : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTools_ListNodeOfListOfPave();
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPave();
 		%feature("autodoc", "1");
@@ -499,6 +548,11 @@ class Handle_BOPTools_ListNodeOfListOfPave : public Handle_TCollection_MapNode {
 %extend Handle_BOPTools_ListNodeOfListOfPave {
 	BOPTools_ListNodeOfListOfPave* GetObject() {
 	return (BOPTools_ListNodeOfListOfPave*)$self->Access();
+	}
+};
+%extend Handle_BOPTools_ListNodeOfListOfPave {
+	~Handle_BOPTools_ListNodeOfListOfPave() {
+	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfPave\n");
 	}
 };
 
@@ -615,13 +669,16 @@ class BOPTools_SequenceNodeOfSequenceOfPaveBlock : public TCollection_SeqNode {
 		BOPTools_PaveBlock & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_SequenceNodeOfSequenceOfPaveBlock();
 
 };
 %extend BOPTools_SequenceNodeOfSequenceOfPaveBlock {
 	Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock GetHandle() {
 	return *(Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock*) &$self;
+	}
+};
+%extend BOPTools_SequenceNodeOfSequenceOfPaveBlock {
+	~BOPTools_SequenceNodeOfSequenceOfPaveBlock() {
+	printf("Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfPaveBlock\n");
 	}
 };
 
@@ -820,13 +877,16 @@ class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
 		BOPTools_Pave & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_ListNodeOfListOfPave();
 
 };
 %extend BOPTools_ListNodeOfListOfPave {
 	Handle_BOPTools_ListNodeOfListOfPave GetHandle() {
 	return *(Handle_BOPTools_ListNodeOfListOfPave*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfPave {
+	~BOPTools_ListNodeOfListOfPave() {
+	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfPave\n");
 	}
 };
 
@@ -1059,13 +1119,16 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public TColl
 		BOPTools_PaveSet & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet();
 
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
 	Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet GetHandle() {
 	return *(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet*) &$self;
+	}
+};
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
+	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet() {
+	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet\n");
 	}
 };
 
@@ -1140,13 +1203,16 @@ class BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public TCollection_
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger();
 
 };
 %extend BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
 	Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger GetHandle() {
 	return *(Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger*) &$self;
+	}
+};
+%extend BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
+	~BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger() {
+	printf("Call custom destructor for instance of BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");
 	}
 };
 
@@ -1165,13 +1231,16 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public TCollec
 		BooleanOperations_StateOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState();
 
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
 	Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState GetHandle() {
 	return *(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState*) &$self;
+	}
+};
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
+	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState() {
+	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState\n");
 	}
 };
 
@@ -1316,13 +1385,16 @@ class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 		BOPTools_Curve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_SequenceNodeOfSequenceOfCurves();
 
 };
 %extend BOPTools_SequenceNodeOfSequenceOfCurves {
 	Handle_BOPTools_SequenceNodeOfSequenceOfCurves GetHandle() {
 	return *(Handle_BOPTools_SequenceNodeOfSequenceOfCurves*) &$self;
+	}
+};
+%extend BOPTools_SequenceNodeOfSequenceOfCurves {
+	~BOPTools_SequenceNodeOfSequenceOfCurves() {
+	printf("Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfCurves\n");
 	}
 };
 
@@ -1341,13 +1413,16 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public TColle
 		TColStd_IndexedMapOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger();
 
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
 	Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger GetHandle() {
 	return *(Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger*) &$self;
+	}
+};
+%extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
+	~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger() {
+	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger\n");
 	}
 };
 
@@ -1360,13 +1435,16 @@ class BOPTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 		BOPTools_CommonBlock & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_ListNodeOfListOfCommonBlock();
 
 };
 %extend BOPTools_ListNodeOfListOfCommonBlock {
 	Handle_BOPTools_ListNodeOfListOfCommonBlock GetHandle() {
 	return *(Handle_BOPTools_ListNodeOfListOfCommonBlock*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfCommonBlock {
+	~BOPTools_ListNodeOfListOfCommonBlock() {
+	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfCommonBlock\n");
 	}
 };
 
@@ -1459,13 +1537,16 @@ class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
 		BOPTools_Interference & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_ListNodeOfListOfInterference();
 
 };
 %extend BOPTools_ListNodeOfListOfInterference {
 	Handle_BOPTools_ListNodeOfListOfInterference GetHandle() {
 	return *(Handle_BOPTools_ListNodeOfListOfInterference*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfInterference {
+	~BOPTools_ListNodeOfListOfInterference() {
+	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfInterference\n");
 	}
 };
 
@@ -1478,13 +1559,16 @@ class BOPTools_ListNodeOfListOfCoupleOfInteger : public TCollection_MapNode {
 		BOPTools_CoupleOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_ListNodeOfListOfCoupleOfInteger();
 
 };
 %extend BOPTools_ListNodeOfListOfCoupleOfInteger {
 	Handle_BOPTools_ListNodeOfListOfCoupleOfInteger GetHandle() {
 	return *(Handle_BOPTools_ListNodeOfListOfCoupleOfInteger*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfCoupleOfInteger {
+	~BOPTools_ListNodeOfListOfCoupleOfInteger() {
+	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfCoupleOfInteger\n");
 	}
 };
 
@@ -2037,13 +2121,16 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public TColle
 		BOPTools_DEInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo();
 
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
 	Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo GetHandle() {
 	return *(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo*) &$self;
+	}
+};
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
+	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo() {
+	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo\n");
 	}
 };
 
@@ -2224,13 +2311,16 @@ class BOPTools_HArray2OfIntersectionStatus : public MMgt_TShared {
 		BOPTools_Array2OfIntersectionStatus & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_HArray2OfIntersectionStatus();
 
 };
 %extend BOPTools_HArray2OfIntersectionStatus {
 	Handle_BOPTools_HArray2OfIntersectionStatus GetHandle() {
 	return *(Handle_BOPTools_HArray2OfIntersectionStatus*) &$self;
+	}
+};
+%extend BOPTools_HArray2OfIntersectionStatus {
+	~BOPTools_HArray2OfIntersectionStatus() {
+	printf("Call custom destructor for instance of BOPTools_HArray2OfIntersectionStatus\n");
 	}
 };
 
@@ -2343,13 +2433,16 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TColl
 		BooleanOperations_StateOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState();
 
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
 	Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState GetHandle() {
 	return *(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState*) &$self;
+	}
+};
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
+	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
+	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");
 	}
 };
 
@@ -2416,13 +2509,16 @@ class BOPTools_ListNodeOfListOfPaveBlock : public TCollection_MapNode {
 		BOPTools_PaveBlock & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_ListNodeOfListOfPaveBlock();
 
 };
 %extend BOPTools_ListNodeOfListOfPaveBlock {
 	Handle_BOPTools_ListNodeOfListOfPaveBlock GetHandle() {
 	return *(Handle_BOPTools_ListNodeOfListOfPaveBlock*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfPaveBlock {
+	~BOPTools_ListNodeOfListOfPaveBlock() {
+	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfPaveBlock\n");
 	}
 };
 
@@ -2563,13 +2659,16 @@ class BOPTools_ListNodeOfListOfCheckResults : public TCollection_MapNode {
 		BOPTools_CheckResult & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_ListNodeOfListOfCheckResults();
 
 };
 %extend BOPTools_ListNodeOfListOfCheckResults {
 	Handle_BOPTools_ListNodeOfListOfCheckResults GetHandle() {
 	return *(Handle_BOPTools_ListNodeOfListOfCheckResults*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfCheckResults {
+	~BOPTools_ListNodeOfListOfCheckResults() {
+	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfCheckResults\n");
 	}
 };
 
@@ -2852,13 +2951,16 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : public TCol
 		BOPTools_IMapOfPaveBlock & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock();
 
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
 	Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock GetHandle() {
 	return *(Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock*) &$self;
+	}
+};
+%extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
+	~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock() {
+	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock\n");
 	}
 };
 
@@ -3109,13 +3211,16 @@ class BOPTools_ListNodeOfListOfShapeEnum : public TCollection_MapNode {
 		TopAbs_ShapeEnum & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_ListNodeOfListOfShapeEnum();
 
 };
 %extend BOPTools_ListNodeOfListOfShapeEnum {
 	Handle_BOPTools_ListNodeOfListOfShapeEnum GetHandle() {
 	return *(Handle_BOPTools_ListNodeOfListOfShapeEnum*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfShapeEnum {
+	~BOPTools_ListNodeOfListOfShapeEnum() {
+	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfShapeEnum\n");
 	}
 };
 
@@ -3322,12 +3427,15 @@ class BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTools_IndexedMapNodeOfIMapOfPaveBlock();
 
 };
 %extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
 	Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock GetHandle() {
 	return *(Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock*) &$self;
+	}
+};
+%extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
+	~BOPTools_IndexedMapNodeOfIMapOfPaveBlock() {
+	printf("Call custom destructor for instance of BOPTools_IndexedMapNodeOfIMapOfPaveBlock\n");
 	}
 };

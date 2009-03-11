@@ -108,8 +108,6 @@ enum V2d_TypeOfWindowResizingEffect {
 class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject {
 	public:
 		%feature("autodoc", "1");
-		~Handle_V2d_BackgroundGraphicObject();
-		%feature("autodoc", "1");
 		Handle_V2d_BackgroundGraphicObject();
 		%feature("autodoc", "1");
 		Handle_V2d_BackgroundGraphicObject(const Handle_V2d_BackgroundGraphicObject &aHandle);
@@ -124,12 +122,15 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 	return (V2d_BackgroundGraphicObject*)$self->Access();
 	}
 };
+%extend Handle_V2d_BackgroundGraphicObject {
+	~Handle_V2d_BackgroundGraphicObject() {
+	printf("Call custom destructor for instance of Handle_V2d_BackgroundGraphicObject\n");
+	}
+};
 
 %nodefaultctor Handle_V2d_RectangularGraphicGrid;
 class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 	public:
-		%feature("autodoc", "1");
-		~Handle_V2d_RectangularGraphicGrid();
 		%feature("autodoc", "1");
 		Handle_V2d_RectangularGraphicGrid();
 		%feature("autodoc", "1");
@@ -145,12 +146,15 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 	return (V2d_RectangularGraphicGrid*)$self->Access();
 	}
 };
+%extend Handle_V2d_RectangularGraphicGrid {
+	~Handle_V2d_RectangularGraphicGrid() {
+	printf("Call custom destructor for instance of Handle_V2d_RectangularGraphicGrid\n");
+	}
+};
 
 %nodefaultctor Handle_V2d_RectangularGrid;
 class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	public:
-		%feature("autodoc", "1");
-		~Handle_V2d_RectangularGrid();
 		%feature("autodoc", "1");
 		Handle_V2d_RectangularGrid();
 		%feature("autodoc", "1");
@@ -166,12 +170,15 @@ class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	return (V2d_RectangularGrid*)$self->Access();
 	}
 };
+%extend Handle_V2d_RectangularGrid {
+	~Handle_V2d_RectangularGrid() {
+	printf("Call custom destructor for instance of Handle_V2d_RectangularGrid\n");
+	}
+};
 
 %nodefaultctor Handle_V2d_CircularGraphicGrid;
 class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 	public:
-		%feature("autodoc", "1");
-		~Handle_V2d_CircularGraphicGrid();
 		%feature("autodoc", "1");
 		Handle_V2d_CircularGraphicGrid();
 		%feature("autodoc", "1");
@@ -187,12 +194,15 @@ class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 	return (V2d_CircularGraphicGrid*)$self->Access();
 	}
 };
+%extend Handle_V2d_CircularGraphicGrid {
+	~Handle_V2d_CircularGraphicGrid() {
+	printf("Call custom destructor for instance of Handle_V2d_CircularGraphicGrid\n");
+	}
+};
 
 %nodefaultctor Handle_V2d_CircularGrid;
 class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 	public:
-		%feature("autodoc", "1");
-		~Handle_V2d_CircularGrid();
 		%feature("autodoc", "1");
 		Handle_V2d_CircularGrid();
 		%feature("autodoc", "1");
@@ -208,12 +218,15 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 	return (V2d_CircularGrid*)$self->Access();
 	}
 };
+%extend Handle_V2d_CircularGrid {
+	~Handle_V2d_CircularGrid() {
+	printf("Call custom destructor for instance of Handle_V2d_CircularGrid\n");
+	}
+};
 
 %nodefaultctor Handle_V2d_View;
 class Handle_V2d_View : public Handle_Viewer_View {
 	public:
-		%feature("autodoc", "1");
-		~Handle_V2d_View();
 		%feature("autodoc", "1");
 		Handle_V2d_View();
 		%feature("autodoc", "1");
@@ -229,12 +242,15 @@ class Handle_V2d_View : public Handle_Viewer_View {
 	return (V2d_View*)$self->Access();
 	}
 };
+%extend Handle_V2d_View {
+	~Handle_V2d_View() {
+	printf("Call custom destructor for instance of Handle_V2d_View\n");
+	}
+};
 
 %nodefaultctor Handle_V2d_Viewer;
 class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 	public:
-		%feature("autodoc", "1");
-		~Handle_V2d_Viewer();
 		%feature("autodoc", "1");
 		Handle_V2d_Viewer();
 		%feature("autodoc", "1");
@@ -248,6 +264,11 @@ class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 %extend Handle_V2d_Viewer {
 	V2d_Viewer* GetObject() {
 	return (V2d_Viewer*)$self->Access();
+	}
+};
+%extend Handle_V2d_Viewer {
+	~Handle_V2d_Viewer() {
+	printf("Call custom destructor for instance of Handle_V2d_Viewer\n");
 	}
 };
 
@@ -266,13 +287,16 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 		virtual		Standard_Boolean IsDisplayed() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~V2d_RectangularGrid();
 
 };
 %extend V2d_RectangularGrid {
 	Handle_V2d_RectangularGrid GetHandle() {
 	return *(Handle_V2d_RectangularGrid*) &$self;
+	}
+};
+%extend V2d_RectangularGrid {
+	~V2d_RectangularGrid() {
+	printf("Call custom destructor for instance of V2d_RectangularGrid\n");
 	}
 };
 
@@ -303,13 +327,16 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 		virtual		Standard_Boolean IsDisplayed() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~V2d_CircularGrid();
 
 };
 %extend V2d_CircularGrid {
 	Handle_V2d_CircularGrid GetHandle() {
 	return *(Handle_V2d_CircularGrid*) &$self;
+	}
+};
+%extend V2d_CircularGrid {
+	~V2d_CircularGrid() {
+	printf("Call custom destructor for instance of V2d_CircularGrid\n");
 	}
 };
 
@@ -324,13 +351,16 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~V2d_RectangularGraphicGrid();
 
 };
 %extend V2d_RectangularGraphicGrid {
 	Handle_V2d_RectangularGraphicGrid GetHandle() {
 	return *(Handle_V2d_RectangularGraphicGrid*) &$self;
+	}
+};
+%extend V2d_RectangularGraphicGrid {
+	~V2d_RectangularGraphicGrid() {
+	printf("Call custom destructor for instance of V2d_RectangularGraphicGrid\n");
 	}
 };
 
@@ -345,13 +375,16 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~V2d_CircularGraphicGrid();
 
 };
 %extend V2d_CircularGraphicGrid {
 	Handle_V2d_CircularGraphicGrid GetHandle() {
 	return *(Handle_V2d_CircularGraphicGrid*) &$self;
+	}
+};
+%extend V2d_CircularGraphicGrid {
+	~V2d_CircularGraphicGrid() {
+	printf("Call custom destructor for instance of V2d_CircularGraphicGrid\n");
 	}
 };
 
@@ -364,13 +397,16 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 		virtual		Standard_Integer MaxPriority() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~V2d_BackgroundGraphicObject();
 
 };
 %extend V2d_BackgroundGraphicObject {
 	Handle_V2d_BackgroundGraphicObject GetHandle() {
 	return *(Handle_V2d_BackgroundGraphicObject*) &$self;
+	}
+};
+%extend V2d_BackgroundGraphicObject {
+	~V2d_BackgroundGraphicObject() {
+	printf("Call custom destructor for instance of V2d_BackgroundGraphicObject\n");
 	}
 };
 
@@ -499,13 +535,16 @@ class V2d_View : public Viewer_View {
 		Standard_Boolean SetBackground(const char * aNameFile, const Aspect_FillMethod aMethod=Aspect_FM_CENTERED);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~V2d_View();
 
 };
 %extend V2d_View {
 	Handle_V2d_View GetHandle() {
 	return *(Handle_V2d_View*) &$self;
+	}
+};
+%extend V2d_View {
+	~V2d_View() {
+	printf("Call custom destructor for instance of V2d_View\n");
 	}
 };
 
@@ -602,12 +641,15 @@ class V2d_Viewer : public Viewer_Viewer {
 		void SetGridColor(const Quantity_Color &color1, const Quantity_Color &color2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~V2d_Viewer();
 
 };
 %extend V2d_Viewer {
 	Handle_V2d_Viewer GetHandle() {
 	return *(Handle_V2d_Viewer*) &$self;
+	}
+};
+%extend V2d_Viewer {
+	~V2d_Viewer() {
+	printf("Call custom destructor for instance of V2d_Viewer\n");
 	}
 };

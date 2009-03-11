@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_GeomAdaptor_GHCurve : public Handle_Adaptor3d_HCurve {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GeomAdaptor_GHCurve();
-		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve();
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve(const Handle_GeomAdaptor_GHCurve &aHandle);
@@ -118,12 +116,15 @@ class Handle_GeomAdaptor_GHCurve : public Handle_Adaptor3d_HCurve {
 	return (GeomAdaptor_GHCurve*)$self->Access();
 	}
 };
+%extend Handle_GeomAdaptor_GHCurve {
+	~Handle_GeomAdaptor_GHCurve() {
+	printf("Call custom destructor for instance of Handle_GeomAdaptor_GHCurve\n");
+	}
+};
 
 %nodefaultctor Handle_GeomAdaptor_HCurve;
 class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomAdaptor_HCurve();
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HCurve();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 	return (GeomAdaptor_HCurve*)$self->Access();
 	}
 };
+%extend Handle_GeomAdaptor_HCurve {
+	~Handle_GeomAdaptor_HCurve() {
+	printf("Call custom destructor for instance of Handle_GeomAdaptor_HCurve\n");
+	}
+};
 
 %nodefaultctor Handle_GeomAdaptor_GHSurface;
 class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomAdaptor_GHSurface();
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHSurface();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
 	return (GeomAdaptor_GHSurface*)$self->Access();
 	}
 };
+%extend Handle_GeomAdaptor_GHSurface {
+	~Handle_GeomAdaptor_GHSurface() {
+	printf("Call custom destructor for instance of Handle_GeomAdaptor_GHSurface\n");
+	}
+};
 
 %nodefaultctor Handle_GeomAdaptor_HSurface;
 class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomAdaptor_HSurface();
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HSurface();
 		%feature("autodoc", "1");
@@ -179,6 +186,11 @@ class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 %extend Handle_GeomAdaptor_HSurface {
 	GeomAdaptor_HSurface* GetObject() {
 	return (GeomAdaptor_HSurface*)$self->Access();
+	}
+};
+%extend Handle_GeomAdaptor_HSurface {
+	~Handle_GeomAdaptor_HSurface() {
+	printf("Call custom destructor for instance of Handle_GeomAdaptor_HSurface\n");
 	}
 };
 
@@ -199,13 +211,16 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 		GeomAdaptor_Curve & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_GHCurve();
 
 };
 %extend GeomAdaptor_GHCurve {
 	Handle_GeomAdaptor_GHCurve GetHandle() {
 	return *(Handle_GeomAdaptor_GHCurve*) &$self;
+	}
+};
+%extend GeomAdaptor_GHCurve {
+	~GeomAdaptor_GHCurve() {
+	printf("Call custom destructor for instance of GeomAdaptor_GHCurve\n");
 	}
 };
 
@@ -220,13 +235,16 @@ class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 		GeomAdaptor_HCurve(const Handle_Geom_Curve &S);
 		%feature("autodoc", "1");
 		GeomAdaptor_HCurve(const Handle_Geom_Curve &S, const Standard_Real UFirst, const Standard_Real ULast);
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_HCurve();
 
 };
 %extend GeomAdaptor_HCurve {
 	Handle_GeomAdaptor_HCurve GetHandle() {
 	return *(Handle_GeomAdaptor_HCurve*) &$self;
+	}
+};
+%extend GeomAdaptor_HCurve {
+	~GeomAdaptor_HCurve() {
+	printf("Call custom destructor for instance of GeomAdaptor_HCurve\n");
 	}
 };
 
@@ -245,13 +263,16 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 		GeomAdaptor_Surface & ChangeSurface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_GHSurface();
 
 };
 %extend GeomAdaptor_GHSurface {
 	Handle_GeomAdaptor_GHSurface GetHandle() {
 	return *(Handle_GeomAdaptor_GHSurface*) &$self;
+	}
+};
+%extend GeomAdaptor_GHSurface {
+	~GeomAdaptor_GHSurface() {
+	printf("Call custom destructor for instance of GeomAdaptor_GHSurface\n");
 	}
 };
 
@@ -266,13 +287,16 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 		GeomAdaptor_HSurface(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		GeomAdaptor_HSurface(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_HSurface();
 
 };
 %extend GeomAdaptor_HSurface {
 	Handle_GeomAdaptor_HSurface GetHandle() {
 	return *(Handle_GeomAdaptor_HSurface*) &$self;
+	}
+};
+%extend GeomAdaptor_HSurface {
+	~GeomAdaptor_HSurface() {
+	printf("Call custom destructor for instance of GeomAdaptor_HSurface\n");
 	}
 };
 

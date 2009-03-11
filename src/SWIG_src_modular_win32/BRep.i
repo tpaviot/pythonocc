@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BRep_ListNodeOfListOfCurveRepresentation : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRep_ListNodeOfListOfCurveRepresentation();
-		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfCurveRepresentation();
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfCurveRepresentation(const Handle_BRep_ListNodeOfListOfCurveRepresentation &aHandle);
@@ -118,12 +116,15 @@ class Handle_BRep_ListNodeOfListOfCurveRepresentation : public Handle_TCollectio
 	return (BRep_ListNodeOfListOfCurveRepresentation*)$self->Access();
 	}
 };
+%extend Handle_BRep_ListNodeOfListOfCurveRepresentation {
+	~Handle_BRep_ListNodeOfListOfCurveRepresentation() {
+	printf("Call custom destructor for instance of Handle_BRep_ListNodeOfListOfCurveRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_CurveRepresentation;
 class Handle_BRep_CurveRepresentation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_CurveRepresentation();
 		%feature("autodoc", "1");
 		Handle_BRep_CurveRepresentation();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_BRep_CurveRepresentation : public Handle_MMgt_TShared {
 	return (BRep_CurveRepresentation*)$self->Access();
 	}
 };
+%extend Handle_BRep_CurveRepresentation {
+	~Handle_BRep_CurveRepresentation() {
+	printf("Call custom destructor for instance of Handle_BRep_CurveRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_GCurve;
 class Handle_BRep_GCurve : public Handle_BRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_GCurve();
 		%feature("autodoc", "1");
 		Handle_BRep_GCurve();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_BRep_GCurve : public Handle_BRep_CurveRepresentation {
 	return (BRep_GCurve*)$self->Access();
 	}
 };
+%extend Handle_BRep_GCurve {
+	~Handle_BRep_GCurve() {
+	printf("Call custom destructor for instance of Handle_BRep_GCurve\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_Curve3D;
 class Handle_BRep_Curve3D : public Handle_BRep_GCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_Curve3D();
 		%feature("autodoc", "1");
 		Handle_BRep_Curve3D();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_BRep_Curve3D : public Handle_BRep_GCurve {
 	return (BRep_Curve3D*)$self->Access();
 	}
 };
+%extend Handle_BRep_Curve3D {
+	~Handle_BRep_Curve3D() {
+	printf("Call custom destructor for instance of Handle_BRep_Curve3D\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_TVertex;
 class Handle_BRep_TVertex : public Handle_TopoDS_TVertex {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_TVertex();
 		%feature("autodoc", "1");
 		Handle_BRep_TVertex();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_BRep_TVertex : public Handle_TopoDS_TVertex {
 	return (BRep_TVertex*)$self->Access();
 	}
 };
+%extend Handle_BRep_TVertex {
+	~Handle_BRep_TVertex() {
+	printf("Call custom destructor for instance of Handle_BRep_TVertex\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_PointRepresentation;
 class Handle_BRep_PointRepresentation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_PointRepresentation();
 		%feature("autodoc", "1");
 		Handle_BRep_PointRepresentation();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_BRep_PointRepresentation : public Handle_MMgt_TShared {
 	return (BRep_PointRepresentation*)$self->Access();
 	}
 };
+%extend Handle_BRep_PointRepresentation {
+	~Handle_BRep_PointRepresentation() {
+	printf("Call custom destructor for instance of Handle_BRep_PointRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_PointsOnSurface;
 class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_PointsOnSurface();
 		%feature("autodoc", "1");
 		Handle_BRep_PointsOnSurface();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
 	return (BRep_PointsOnSurface*)$self->Access();
 	}
 };
+%extend Handle_BRep_PointsOnSurface {
+	~Handle_BRep_PointsOnSurface() {
+	printf("Call custom destructor for instance of Handle_BRep_PointsOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_PointOnSurface;
 class Handle_BRep_PointOnSurface : public Handle_BRep_PointsOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_PointOnSurface();
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnSurface();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_BRep_PointOnSurface : public Handle_BRep_PointsOnSurface {
 	return (BRep_PointOnSurface*)$self->Access();
 	}
 };
+%extend Handle_BRep_PointOnSurface {
+	~Handle_BRep_PointOnSurface() {
+	printf("Call custom destructor for instance of Handle_BRep_PointOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_ListNodeOfListOfPointRepresentation;
 class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_ListNodeOfListOfPointRepresentation();
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfPointRepresentation();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollectio
 	return (BRep_ListNodeOfListOfPointRepresentation*)$self->Access();
 	}
 };
+%extend Handle_BRep_ListNodeOfListOfPointRepresentation {
+	~Handle_BRep_ListNodeOfListOfPointRepresentation() {
+	printf("Call custom destructor for instance of Handle_BRep_ListNodeOfListOfPointRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_PointOnCurve;
 class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_PointOnCurve();
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurve();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
 	return (BRep_PointOnCurve*)$self->Access();
 	}
 };
+%extend Handle_BRep_PointOnCurve {
+	~Handle_BRep_PointOnCurve() {
+	printf("Call custom destructor for instance of Handle_BRep_PointOnCurve\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_PolygonOnSurface;
 class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_PolygonOnSurface();
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnSurface();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
 	return (BRep_PolygonOnSurface*)$self->Access();
 	}
 };
+%extend Handle_BRep_PolygonOnSurface {
+	~Handle_BRep_PolygonOnSurface() {
+	printf("Call custom destructor for instance of Handle_BRep_PolygonOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_PolygonOnClosedSurface;
 class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_PolygonOnClosedSurface();
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedSurface();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
 	return (BRep_PolygonOnClosedSurface*)$self->Access();
 	}
 };
+%extend Handle_BRep_PolygonOnClosedSurface {
+	~Handle_BRep_PolygonOnClosedSurface() {
+	printf("Call custom destructor for instance of Handle_BRep_PolygonOnClosedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_TEdge;
 class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_TEdge();
 		%feature("autodoc", "1");
 		Handle_BRep_TEdge();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
 	return (BRep_TEdge*)$self->Access();
 	}
 };
+%extend Handle_BRep_TEdge {
+	~Handle_BRep_TEdge() {
+	printf("Call custom destructor for instance of Handle_BRep_TEdge\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_PointOnCurveOnSurface;
 class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_PointOnCurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurveOnSurface();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
 	return (BRep_PointOnCurveOnSurface*)$self->Access();
 	}
 };
+%extend Handle_BRep_PointOnCurveOnSurface {
+	~Handle_BRep_PointOnCurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_BRep_PointOnCurveOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_CurveOnSurface;
 class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_CurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnSurface();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
 	return (BRep_CurveOnSurface*)$self->Access();
 	}
 };
+%extend Handle_BRep_CurveOnSurface {
+	~Handle_BRep_CurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_BRep_CurveOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_CurveOn2Surfaces;
 class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_CurveOn2Surfaces();
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOn2Surfaces();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
 	return (BRep_CurveOn2Surfaces*)$self->Access();
 	}
 };
+%extend Handle_BRep_CurveOn2Surfaces {
+	~Handle_BRep_CurveOn2Surfaces() {
+	printf("Call custom destructor for instance of Handle_BRep_CurveOn2Surfaces\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_CurveOnClosedSurface;
 class Handle_BRep_CurveOnClosedSurface : public Handle_BRep_CurveOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_CurveOnClosedSurface();
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnClosedSurface();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_BRep_CurveOnClosedSurface : public Handle_BRep_CurveOnSurface {
 	return (BRep_CurveOnClosedSurface*)$self->Access();
 	}
 };
+%extend Handle_BRep_CurveOnClosedSurface {
+	~Handle_BRep_CurveOnClosedSurface() {
+	printf("Call custom destructor for instance of Handle_BRep_CurveOnClosedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_PolygonOnTriangulation;
 class Handle_BRep_PolygonOnTriangulation : public Handle_BRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_PolygonOnTriangulation();
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnTriangulation();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_BRep_PolygonOnTriangulation : public Handle_BRep_CurveRepresentatio
 	return (BRep_PolygonOnTriangulation*)$self->Access();
 	}
 };
+%extend Handle_BRep_PolygonOnTriangulation {
+	~Handle_BRep_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of Handle_BRep_PolygonOnTriangulation\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_PolygonOnClosedTriangulation;
 class Handle_BRep_PolygonOnClosedTriangulation : public Handle_BRep_PolygonOnTriangulation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_PolygonOnClosedTriangulation();
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedTriangulation();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_BRep_PolygonOnClosedTriangulation : public Handle_BRep_PolygonOnTri
 	return (BRep_PolygonOnClosedTriangulation*)$self->Access();
 	}
 };
+%extend Handle_BRep_PolygonOnClosedTriangulation {
+	~Handle_BRep_PolygonOnClosedTriangulation() {
+	printf("Call custom destructor for instance of Handle_BRep_PolygonOnClosedTriangulation\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_TFace;
 class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_TFace();
 		%feature("autodoc", "1");
 		Handle_BRep_TFace();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 	return (BRep_TFace*)$self->Access();
 	}
 };
+%extend Handle_BRep_TFace {
+	~Handle_BRep_TFace() {
+	printf("Call custom destructor for instance of Handle_BRep_TFace\n");
+	}
+};
 
 %nodefaultctor Handle_BRep_Polygon3D;
 class Handle_BRep_Polygon3D : public Handle_BRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRep_Polygon3D();
 		%feature("autodoc", "1");
 		Handle_BRep_Polygon3D();
 		%feature("autodoc", "1");
@@ -536,6 +594,11 @@ class Handle_BRep_Polygon3D : public Handle_BRep_CurveRepresentation {
 %extend Handle_BRep_Polygon3D {
 	BRep_Polygon3D* GetObject() {
 	return (BRep_Polygon3D*)$self->Access();
+	}
+};
+%extend Handle_BRep_Polygon3D {
+	~Handle_BRep_Polygon3D() {
+	printf("Call custom destructor for instance of Handle_BRep_Polygon3D\n");
 	}
 };
 
@@ -580,13 +643,16 @@ class BRep_PointRepresentation : public MMgt_TShared {
 		virtual		void Surface(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_PointRepresentation();
 
 };
 %extend BRep_PointRepresentation {
 	Handle_BRep_PointRepresentation GetHandle() {
 	return *(Handle_BRep_PointRepresentation*) &$self;
+	}
+};
+%extend BRep_PointRepresentation {
+	~BRep_PointRepresentation() {
+	printf("Call custom destructor for instance of BRep_PointRepresentation\n");
 	}
 };
 
@@ -678,6 +744,11 @@ class BRep_CurveRepresentation : public MMgt_TShared {
 	return *(Handle_BRep_CurveRepresentation*) &$self;
 	}
 };
+%extend BRep_CurveRepresentation {
+	~BRep_CurveRepresentation() {
+	printf("Call custom destructor for instance of BRep_CurveRepresentation\n");
+	}
+};
 
 %nodefaultctor BRep_GCurve;
 class BRep_GCurve : public BRep_CurveRepresentation {
@@ -705,6 +776,11 @@ class BRep_GCurve : public BRep_CurveRepresentation {
 	return *(Handle_BRep_GCurve*) &$self;
 	}
 };
+%extend BRep_GCurve {
+	~BRep_GCurve() {
+	printf("Call custom destructor for instance of BRep_GCurve\n");
+	}
+};
 
 %nodefaultctor BRep_CurveOnSurface;
 class BRep_CurveOnSurface : public BRep_GCurve {
@@ -719,13 +795,16 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 		const Bnd_Box2d & Box() const;
 		%feature("autodoc", "1");
 		Bnd_Box2d & ChangeBox();
-		%feature("autodoc", "1");
-		virtual		~BRep_CurveOnSurface();
 
 };
 %extend BRep_CurveOnSurface {
 	Handle_BRep_CurveOnSurface GetHandle() {
 	return *(Handle_BRep_CurveOnSurface*) &$self;
+	}
+};
+%extend BRep_CurveOnSurface {
+	~BRep_CurveOnSurface() {
+	printf("Call custom destructor for instance of BRep_CurveOnSurface\n");
 	}
 };
 
@@ -742,13 +821,16 @@ class BRep_CurveOnClosedSurface : public BRep_CurveOnSurface {
 		const Bnd_Box2d & Box2() const;
 		%feature("autodoc", "1");
 		Bnd_Box2d & ChangeBox2();
-		%feature("autodoc", "1");
-		virtual		~BRep_CurveOnClosedSurface();
 
 };
 %extend BRep_CurveOnClosedSurface {
 	Handle_BRep_CurveOnClosedSurface GetHandle() {
 	return *(Handle_BRep_CurveOnClosedSurface*) &$self;
+	}
+};
+%extend BRep_CurveOnClosedSurface {
+	~BRep_CurveOnClosedSurface() {
+	printf("Call custom destructor for instance of BRep_CurveOnClosedSurface\n");
 	}
 };
 
@@ -761,13 +843,16 @@ class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
 		Handle_BRep_PointRepresentation & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_ListNodeOfListOfPointRepresentation();
 
 };
 %extend BRep_ListNodeOfListOfPointRepresentation {
 	Handle_BRep_ListNodeOfListOfPointRepresentation GetHandle() {
 	return *(Handle_BRep_ListNodeOfListOfPointRepresentation*) &$self;
+	}
+};
+%extend BRep_ListNodeOfListOfPointRepresentation {
+	~BRep_ListNodeOfListOfPointRepresentation() {
+	printf("Call custom destructor for instance of BRep_ListNodeOfListOfPointRepresentation\n");
 	}
 };
 
@@ -780,13 +865,16 @@ class BRep_PointsOnSurface : public BRep_PointRepresentation {
 		virtual		void Surface(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_PointsOnSurface();
 
 };
 %extend BRep_PointsOnSurface {
 	Handle_BRep_PointsOnSurface GetHandle() {
 	return *(Handle_BRep_PointsOnSurface*) &$self;
+	}
+};
+%extend BRep_PointsOnSurface {
+	~BRep_PointsOnSurface() {
+	printf("Call custom destructor for instance of BRep_PointsOnSurface\n");
 	}
 };
 
@@ -803,13 +891,16 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 		virtual		const Handle_Geom2d_Curve & PCurve() const;
 		%feature("autodoc", "1");
 		virtual		void PCurve(const Handle_Geom2d_Curve &C);
-		%feature("autodoc", "1");
-		virtual		~BRep_PointOnCurveOnSurface();
 
 };
 %extend BRep_PointOnCurveOnSurface {
 	Handle_BRep_PointOnCurveOnSurface GetHandle() {
 	return *(Handle_BRep_PointOnCurveOnSurface*) &$self;
+	}
+};
+%extend BRep_PointOnCurveOnSurface {
+	~BRep_PointOnCurveOnSurface() {
+	printf("Call custom destructor for instance of BRep_PointOnCurveOnSurface\n");
 	}
 };
 
@@ -1006,13 +1097,16 @@ class BRep_PolygonOnTriangulation : public BRep_CurveRepresentation {
 		virtual		Handle_BRep_CurveRepresentation Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_PolygonOnTriangulation();
 
 };
 %extend BRep_PolygonOnTriangulation {
 	Handle_BRep_PolygonOnTriangulation GetHandle() {
 	return *(Handle_BRep_PolygonOnTriangulation*) &$self;
+	}
+};
+%extend BRep_PolygonOnTriangulation {
+	~BRep_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of BRep_PolygonOnTriangulation\n");
 	}
 };
 
@@ -1027,13 +1121,16 @@ class BRep_PolygonOnClosedTriangulation : public BRep_PolygonOnTriangulation {
 		virtual		void PolygonOnTriangulation2(const Handle_Poly_PolygonOnTriangulation &P2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Poly_PolygonOnTriangulation & PolygonOnTriangulation2() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_PolygonOnClosedTriangulation();
 
 };
 %extend BRep_PolygonOnClosedTriangulation {
 	Handle_BRep_PolygonOnClosedTriangulation GetHandle() {
 	return *(Handle_BRep_PolygonOnClosedTriangulation*) &$self;
+	}
+};
+%extend BRep_PolygonOnClosedTriangulation {
+	~BRep_PolygonOnClosedTriangulation() {
+	printf("Call custom destructor for instance of BRep_PolygonOnClosedTriangulation\n");
 	}
 };
 
@@ -1164,13 +1261,16 @@ class BRep_PointOnCurve : public BRep_PointRepresentation {
 		virtual		void Curve(const Handle_Geom_Curve &C);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_PointOnCurve();
 
 };
 %extend BRep_PointOnCurve {
 	Handle_BRep_PointOnCurve GetHandle() {
 	return *(Handle_BRep_PointOnCurve*) &$self;
+	}
+};
+%extend BRep_PointOnCurve {
+	~BRep_PointOnCurve() {
+	printf("Call custom destructor for instance of BRep_PointOnCurve\n");
 	}
 };
 
@@ -1199,13 +1299,16 @@ class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
 		virtual		Handle_BRep_CurveRepresentation Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_CurveOn2Surfaces();
 
 };
 %extend BRep_CurveOn2Surfaces {
 	Handle_BRep_CurveOn2Surfaces GetHandle() {
 	return *(Handle_BRep_CurveOn2Surfaces*) &$self;
+	}
+};
+%extend BRep_CurveOn2Surfaces {
+	~BRep_CurveOn2Surfaces() {
+	printf("Call custom destructor for instance of BRep_CurveOn2Surfaces\n");
 	}
 };
 
@@ -1238,13 +1341,16 @@ class BRep_TFace : public TopoDS_TFace {
 		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_TFace();
 
 };
 %extend BRep_TFace {
 	Handle_BRep_TFace GetHandle() {
 	return *(Handle_BRep_TFace*) &$self;
+	}
+};
+%extend BRep_TFace {
+	~BRep_TFace() {
+	printf("Call custom destructor for instance of BRep_TFace\n");
 	}
 };
 
@@ -1285,13 +1391,16 @@ class BRep_Curve3D : public BRep_GCurve {
 		virtual		Handle_BRep_CurveRepresentation Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_Curve3D();
 
 };
 %extend BRep_Curve3D {
 	Handle_BRep_Curve3D GetHandle() {
 	return *(Handle_BRep_Curve3D*) &$self;
+	}
+};
+%extend BRep_Curve3D {
+	~BRep_Curve3D() {
+	printf("Call custom destructor for instance of BRep_Curve3D\n");
 	}
 };
 
@@ -1314,13 +1423,16 @@ class BRep_PolygonOnSurface : public BRep_CurveRepresentation {
 		virtual		Handle_BRep_CurveRepresentation Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_PolygonOnSurface();
 
 };
 %extend BRep_PolygonOnSurface {
 	Handle_BRep_PolygonOnSurface GetHandle() {
 	return *(Handle_BRep_PolygonOnSurface*) &$self;
+	}
+};
+%extend BRep_PolygonOnSurface {
+	~BRep_PolygonOnSurface() {
+	printf("Call custom destructor for instance of BRep_PolygonOnSurface\n");
 	}
 };
 
@@ -1347,13 +1459,16 @@ class BRep_TVertex : public TopoDS_TVertex {
 		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_TVertex();
 
 };
 %extend BRep_TVertex {
 	Handle_BRep_TVertex GetHandle() {
 	return *(Handle_BRep_TVertex*) &$self;
+	}
+};
+%extend BRep_TVertex {
+	~BRep_TVertex() {
+	printf("Call custom destructor for instance of BRep_TVertex\n");
 	}
 };
 
@@ -1372,13 +1487,16 @@ class BRep_PointOnSurface : public BRep_PointsOnSurface {
 		virtual		void Parameter2(const Standard_Real P);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_PointOnSurface();
 
 };
 %extend BRep_PointOnSurface {
 	Handle_BRep_PointOnSurface GetHandle() {
 	return *(Handle_BRep_PointOnSurface*) &$self;
+	}
+};
+%extend BRep_PointOnSurface {
+	~BRep_PointOnSurface() {
+	printf("Call custom destructor for instance of BRep_PointOnSurface\n");
 	}
 };
 
@@ -1413,13 +1531,16 @@ class BRep_TEdge : public TopoDS_TEdge {
 		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_TEdge();
 
 };
 %extend BRep_TEdge {
 	Handle_BRep_TEdge GetHandle() {
 	return *(Handle_BRep_TEdge*) &$self;
+	}
+};
+%extend BRep_TEdge {
+	~BRep_TEdge() {
+	printf("Call custom destructor for instance of BRep_TEdge\n");
 	}
 };
 
@@ -1484,13 +1605,16 @@ class BRep_PolygonOnClosedSurface : public BRep_PolygonOnSurface {
 		virtual		Handle_BRep_CurveRepresentation Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_PolygonOnClosedSurface();
 
 };
 %extend BRep_PolygonOnClosedSurface {
 	Handle_BRep_PolygonOnClosedSurface GetHandle() {
 	return *(Handle_BRep_PolygonOnClosedSurface*) &$self;
+	}
+};
+%extend BRep_PolygonOnClosedSurface {
+	~BRep_PolygonOnClosedSurface() {
+	printf("Call custom destructor for instance of BRep_PolygonOnClosedSurface\n");
 	}
 };
 
@@ -1509,13 +1633,16 @@ class BRep_Polygon3D : public BRep_CurveRepresentation {
 		virtual		Handle_BRep_CurveRepresentation Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_Polygon3D();
 
 };
 %extend BRep_Polygon3D {
 	Handle_BRep_Polygon3D GetHandle() {
 	return *(Handle_BRep_Polygon3D*) &$self;
+	}
+};
+%extend BRep_Polygon3D {
+	~BRep_Polygon3D() {
+	printf("Call custom destructor for instance of BRep_Polygon3D\n");
 	}
 };
 
@@ -1528,12 +1655,15 @@ class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
 		Handle_BRep_CurveRepresentation & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRep_ListNodeOfListOfCurveRepresentation();
 
 };
 %extend BRep_ListNodeOfListOfCurveRepresentation {
 	Handle_BRep_ListNodeOfListOfCurveRepresentation GetHandle() {
 	return *(Handle_BRep_ListNodeOfListOfCurveRepresentation*) &$self;
+	}
+};
+%extend BRep_ListNodeOfListOfCurveRepresentation {
+	~BRep_ListNodeOfListOfCurveRepresentation() {
+	printf("Call custom destructor for instance of BRep_ListNodeOfListOfCurveRepresentation\n");
 	}
 };

@@ -110,8 +110,6 @@ enum GccEnt_Position {
 class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GccEnt_BadQualifier();
-		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier();
 		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier(const Handle_GccEnt_BadQualifier &aHandle);
@@ -124,6 +122,11 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 %extend Handle_GccEnt_BadQualifier {
 	GccEnt_BadQualifier* GetObject() {
 	return (GccEnt_BadQualifier*)$self->Access();
+	}
+};
+%extend Handle_GccEnt_BadQualifier {
+	~Handle_GccEnt_BadQualifier() {
+	printf("Call custom destructor for instance of Handle_GccEnt_BadQualifier\n");
 	}
 };
 
@@ -230,13 +233,16 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 		Handle_GccEnt_BadQualifier NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GccEnt_BadQualifier();
 
 };
 %extend GccEnt_BadQualifier {
 	Handle_GccEnt_BadQualifier GetHandle() {
 	return *(Handle_GccEnt_BadQualifier*) &$self;
+	}
+};
+%extend GccEnt_BadQualifier {
+	~GccEnt_BadQualifier() {
+	printf("Call custom destructor for instance of GccEnt_BadQualifier\n");
 	}
 };
 

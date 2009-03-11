@@ -117,8 +117,6 @@ enum HatchGen_ErrorStatus {
 class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_HatchGen_SequenceNodeOfDomains();
-		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfDomains();
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfDomains(const Handle_HatchGen_SequenceNodeOfDomains &aHandle);
@@ -133,12 +131,15 @@ class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode 
 	return (HatchGen_SequenceNodeOfDomains*)$self->Access();
 	}
 };
+%extend Handle_HatchGen_SequenceNodeOfDomains {
+	~Handle_HatchGen_SequenceNodeOfDomains() {
+	printf("Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfDomains\n");
+	}
+};
 
 %nodefaultctor Handle_HatchGen_SequenceNodeOfPointsOnElement;
 class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HatchGen_SequenceNodeOfPointsOnElement();
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnElement();
 		%feature("autodoc", "1");
@@ -154,12 +155,15 @@ class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_
 	return (HatchGen_SequenceNodeOfPointsOnElement*)$self->Access();
 	}
 };
+%extend Handle_HatchGen_SequenceNodeOfPointsOnElement {
+	~Handle_HatchGen_SequenceNodeOfPointsOnElement() {
+	printf("Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnElement\n");
+	}
+};
 
 %nodefaultctor Handle_HatchGen_SequenceNodeOfPointsOnHatching;
 class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HatchGen_SequenceNodeOfPointsOnHatching();
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnHatching();
 		%feature("autodoc", "1");
@@ -173,6 +177,11 @@ class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection
 %extend Handle_HatchGen_SequenceNodeOfPointsOnHatching {
 	HatchGen_SequenceNodeOfPointsOnHatching* GetObject() {
 	return (HatchGen_SequenceNodeOfPointsOnHatching*)$self->Access();
+	}
+};
+%extend Handle_HatchGen_SequenceNodeOfPointsOnHatching {
+	~Handle_HatchGen_SequenceNodeOfPointsOnHatching() {
+	printf("Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnHatching\n");
 	}
 };
 
@@ -377,13 +386,16 @@ class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
 		HatchGen_PointOnElement & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HatchGen_SequenceNodeOfPointsOnElement();
 
 };
 %extend HatchGen_SequenceNodeOfPointsOnElement {
 	Handle_HatchGen_SequenceNodeOfPointsOnElement GetHandle() {
 	return *(Handle_HatchGen_SequenceNodeOfPointsOnElement*) &$self;
+	}
+};
+%extend HatchGen_SequenceNodeOfPointsOnElement {
+	~HatchGen_SequenceNodeOfPointsOnElement() {
+	printf("Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnElement\n");
 	}
 };
 
@@ -446,13 +458,16 @@ class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 		HatchGen_Domain & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HatchGen_SequenceNodeOfDomains();
 
 };
 %extend HatchGen_SequenceNodeOfDomains {
 	Handle_HatchGen_SequenceNodeOfDomains GetHandle() {
 	return *(Handle_HatchGen_SequenceNodeOfDomains*) &$self;
+	}
+};
+%extend HatchGen_SequenceNodeOfDomains {
+	~HatchGen_SequenceNodeOfDomains() {
+	printf("Call custom destructor for instance of HatchGen_SequenceNodeOfDomains\n");
 	}
 };
 
@@ -501,12 +516,15 @@ class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
 		HatchGen_PointOnHatching & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HatchGen_SequenceNodeOfPointsOnHatching();
 
 };
 %extend HatchGen_SequenceNodeOfPointsOnHatching {
 	Handle_HatchGen_SequenceNodeOfPointsOnHatching GetHandle() {
 	return *(Handle_HatchGen_SequenceNodeOfPointsOnHatching*) &$self;
+	}
+};
+%extend HatchGen_SequenceNodeOfPointsOnHatching {
+	~HatchGen_SequenceNodeOfPointsOnHatching() {
+	printf("Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnHatching\n");
 	}
 };

@@ -110,8 +110,6 @@ enum TFunction_ExecutionStatus {
 class Handle_TFunction_GraphNode : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TFunction_GraphNode();
-		%feature("autodoc", "1");
 		Handle_TFunction_GraphNode();
 		%feature("autodoc", "1");
 		Handle_TFunction_GraphNode(const Handle_TFunction_GraphNode &aHandle);
@@ -126,12 +124,15 @@ class Handle_TFunction_GraphNode : public Handle_TDF_Attribute {
 	return (TFunction_GraphNode*)$self->Access();
 	}
 };
+%extend Handle_TFunction_GraphNode {
+	~Handle_TFunction_GraphNode() {
+	printf("Call custom destructor for instance of Handle_TFunction_GraphNode\n");
+	}
+};
 
 %nodefaultctor Handle_TFunction_DriverTable;
 class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_DriverTable();
 		%feature("autodoc", "1");
 		Handle_TFunction_DriverTable();
 		%feature("autodoc", "1");
@@ -147,12 +148,15 @@ class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 	return (TFunction_DriverTable*)$self->Access();
 	}
 };
+%extend Handle_TFunction_DriverTable {
+	~Handle_TFunction_DriverTable() {
+	printf("Call custom destructor for instance of Handle_TFunction_DriverTable\n");
+	}
+};
 
 %nodefaultctor Handle_TFunction_Scope;
 class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_Scope();
 		%feature("autodoc", "1");
 		Handle_TFunction_Scope();
 		%feature("autodoc", "1");
@@ -168,12 +172,15 @@ class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 	return (TFunction_Scope*)$self->Access();
 	}
 };
+%extend Handle_TFunction_Scope {
+	~Handle_TFunction_Scope() {
+	printf("Call custom destructor for instance of Handle_TFunction_Scope\n");
+	}
+};
 
 %nodefaultctor Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
 class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
 		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
@@ -189,12 +196,15 @@ class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TC
 	return (TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*)$self->Access();
 	}
 };
+%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	~Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel() {
+	printf("Call custom destructor for instance of Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");
+	}
+};
 
 %nodefaultctor Handle_TFunction_Function;
 class Handle_TFunction_Function : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_Function();
 		%feature("autodoc", "1");
 		Handle_TFunction_Function();
 		%feature("autodoc", "1");
@@ -210,12 +220,15 @@ class Handle_TFunction_Function : public Handle_TDF_Attribute {
 	return (TFunction_Function*)$self->Access();
 	}
 };
+%extend Handle_TFunction_Function {
+	~Handle_TFunction_Function() {
+	printf("Call custom destructor for instance of Handle_TFunction_Function\n");
+	}
+};
 
 %nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
 class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel();
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel();
 		%feature("autodoc", "1");
@@ -231,12 +244,15 @@ class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TC
 	return (TFunction_DataMapNodeOfDataMapOfLabelListOfLabel*)$self->Access();
 	}
 };
+%extend Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
+	~Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel() {
+	printf("Call custom destructor for instance of Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");
+	}
+};
 
 %nodefaultctor Handle_TFunction_HArray1OfDataMapOfGUIDDriver;
 class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_HArray1OfDataMapOfGUIDDriver();
 		%feature("autodoc", "1");
 		Handle_TFunction_HArray1OfDataMapOfGUIDDriver();
 		%feature("autodoc", "1");
@@ -252,12 +268,15 @@ class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared
 	return (TFunction_HArray1OfDataMapOfGUIDDriver*)$self->Access();
 	}
 };
+%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
+	~Handle_TFunction_HArray1OfDataMapOfGUIDDriver() {
+	printf("Call custom destructor for instance of Handle_TFunction_HArray1OfDataMapOfGUIDDriver\n");
+	}
+};
 
 %nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver;
 class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver();
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver();
 		%feature("autodoc", "1");
@@ -273,12 +292,15 @@ class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollect
 	return (TFunction_DataMapNodeOfDataMapOfGUIDDriver*)$self->Access();
 	}
 };
+%extend Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver {
+	~Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver() {
+	printf("Call custom destructor for instance of Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver\n");
+	}
+};
 
 %nodefaultctor Handle_TFunction_Driver;
 class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TFunction_Driver();
 		%feature("autodoc", "1");
 		Handle_TFunction_Driver();
 		%feature("autodoc", "1");
@@ -292,6 +314,11 @@ class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 %extend Handle_TFunction_Driver {
 	TFunction_Driver* GetObject() {
 	return (TFunction_Driver*)$self->Access();
+	}
+};
+%extend Handle_TFunction_Driver {
+	~Handle_TFunction_Driver() {
+	printf("Call custom destructor for instance of Handle_TFunction_Driver\n");
 	}
 };
 
@@ -322,13 +349,16 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 		TFunction_Array1OfDataMapOfGUIDDriver & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TFunction_HArray1OfDataMapOfGUIDDriver();
 
 };
 %extend TFunction_HArray1OfDataMapOfGUIDDriver {
 	Handle_TFunction_HArray1OfDataMapOfGUIDDriver GetHandle() {
 	return *(Handle_TFunction_HArray1OfDataMapOfGUIDDriver*) &$self;
+	}
+};
+%extend TFunction_HArray1OfDataMapOfGUIDDriver {
+	~TFunction_HArray1OfDataMapOfGUIDDriver() {
+	printf("Call custom destructor for instance of TFunction_HArray1OfDataMapOfGUIDDriver\n");
 	}
 };
 
@@ -343,13 +373,16 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 		TDF_LabelList & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TFunction_DataMapNodeOfDataMapOfLabelListOfLabel();
 
 };
 %extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
 	Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel GetHandle() {
 	return *(Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel*) &$self;
+	}
+};
+%extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
+	~TFunction_DataMapNodeOfDataMapOfLabelListOfLabel() {
+	printf("Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");
 	}
 };
 
@@ -432,13 +465,16 @@ class TFunction_Scope : public TDF_Attribute {
 		Standard_Integer GetFreeID() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TFunction_Scope();
 
 };
 %extend TFunction_Scope {
 	Handle_TFunction_Scope GetHandle() {
 	return *(Handle_TFunction_Scope*) &$self;
+	}
+};
+%extend TFunction_Scope {
+	~TFunction_Scope() {
+	printf("Call custom destructor for instance of TFunction_Scope\n");
 	}
 };
 
@@ -587,13 +623,16 @@ class TFunction_Function : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TFunction_Function();
 
 };
 %extend TFunction_Function {
 	Handle_TFunction_Function GetHandle() {
 	return *(Handle_TFunction_Function*) &$self;
+	}
+};
+%extend TFunction_Function {
+	~TFunction_Function() {
+	printf("Call custom destructor for instance of TFunction_Function\n");
 	}
 };
 
@@ -698,13 +737,16 @@ class TFunction_DriverTable : public MMgt_TShared {
 		void Clear();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TFunction_DriverTable();
 
 };
 %extend TFunction_DriverTable {
 	Handle_TFunction_DriverTable GetHandle() {
 	return *(Handle_TFunction_DriverTable*) &$self;
+	}
+};
+%extend TFunction_DriverTable {
+	~TFunction_DriverTable() {
+	printf("Call custom destructor for instance of TFunction_DriverTable\n");
 	}
 };
 
@@ -737,13 +779,16 @@ class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 		Handle_TFunction_Driver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TFunction_DataMapNodeOfDataMapOfGUIDDriver();
 
 };
 %extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
 	Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver GetHandle() {
 	return *(Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver*) &$self;
+	}
+};
+%extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
+	~TFunction_DataMapNodeOfDataMapOfGUIDDriver() {
+	printf("Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfGUIDDriver\n");
 	}
 };
 
@@ -760,13 +805,16 @@ class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapN
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
 
 };
 %extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
 	Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel GetHandle() {
 	return *(Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*) &$self;
+	}
+};
+%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel() {
+	printf("Call custom destructor for instance of TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");
 	}
 };
 
@@ -821,13 +869,16 @@ class TFunction_GraphNode : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TFunction_GraphNode();
 
 };
 %extend TFunction_GraphNode {
 	Handle_TFunction_GraphNode GetHandle() {
 	return *(Handle_TFunction_GraphNode*) &$self;
+	}
+};
+%extend TFunction_GraphNode {
+	~TFunction_GraphNode() {
+	printf("Call custom destructor for instance of TFunction_GraphNode\n");
 	}
 };
 
@@ -855,6 +906,11 @@ class TFunction_Driver : public MMgt_TShared {
 %extend TFunction_Driver {
 	Handle_TFunction_Driver GetHandle() {
 	return *(Handle_TFunction_Driver*) &$self;
+	}
+};
+%extend TFunction_Driver {
+	~TFunction_Driver() {
+	printf("Call custom destructor for instance of TFunction_Driver\n");
 	}
 };
 

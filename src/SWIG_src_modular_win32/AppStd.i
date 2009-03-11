@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_AppStd_Application : public Handle_TDocStd_Application {
 	public:
 		%feature("autodoc", "1");
-		~Handle_AppStd_Application();
-		%feature("autodoc", "1");
 		Handle_AppStd_Application();
 		%feature("autodoc", "1");
 		Handle_AppStd_Application(const Handle_AppStd_Application &aHandle);
@@ -116,6 +114,11 @@ class Handle_AppStd_Application : public Handle_TDocStd_Application {
 %extend Handle_AppStd_Application {
 	AppStd_Application* GetObject() {
 	return (AppStd_Application*)$self->Access();
+	}
+};
+%extend Handle_AppStd_Application {
+	~Handle_AppStd_Application() {
+	printf("Call custom destructor for instance of Handle_AppStd_Application\n");
 	}
 };
 
@@ -132,12 +135,15 @@ class AppStd_Application : public TDocStd_Application {
 		virtual		Standard_CString ResourcesName();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppStd_Application();
 
 };
 %extend AppStd_Application {
 	Handle_AppStd_Application GetHandle() {
 	return *(Handle_AppStd_Application*) &$self;
+	}
+};
+%extend AppStd_Application {
+	~AppStd_Application() {
+	printf("Call custom destructor for instance of AppStd_Application\n");
 	}
 };

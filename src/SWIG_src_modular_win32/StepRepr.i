@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_StepRepr_RepresentationContext : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepRepr_RepresentationContext();
-		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationContext();
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationContext(const Handle_StepRepr_RepresentationContext &aHandle);
@@ -118,12 +116,15 @@ class Handle_StepRepr_RepresentationContext : public Handle_MMgt_TShared {
 	return (StepRepr_RepresentationContext*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_RepresentationContext {
+	~Handle_StepRepr_RepresentationContext() {
+	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_GlobalUncertaintyAssignedContext;
 class Handle_StepRepr_GlobalUncertaintyAssignedContext : public Handle_StepRepr_RepresentationContext {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_GlobalUncertaintyAssignedContext();
 		%feature("autodoc", "1");
 		Handle_StepRepr_GlobalUncertaintyAssignedContext();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_StepRepr_GlobalUncertaintyAssignedContext : public Handle_StepRepr_
 	return (StepRepr_GlobalUncertaintyAssignedContext*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_GlobalUncertaintyAssignedContext {
+	~Handle_StepRepr_GlobalUncertaintyAssignedContext() {
+	printf("Call custom destructor for instance of Handle_StepRepr_GlobalUncertaintyAssignedContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ParametricRepresentationContext;
 class Handle_StepRepr_ParametricRepresentationContext : public Handle_StepRepr_RepresentationContext {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ParametricRepresentationContext();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ParametricRepresentationContext();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_StepRepr_ParametricRepresentationContext : public Handle_StepRepr_R
 	return (StepRepr_ParametricRepresentationContext*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ParametricRepresentationContext {
+	~Handle_StepRepr_ParametricRepresentationContext() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ParametricRepresentationContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ShapeAspectRelationship;
 class Handle_StepRepr_ShapeAspectRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ShapeAspectRelationship();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspectRelationship();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_StepRepr_ShapeAspectRelationship : public Handle_MMgt_TShared {
 	return (StepRepr_ShapeAspectRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ShapeAspectRelationship {
+	~Handle_StepRepr_ShapeAspectRelationship() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ShapeAspectRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_HArray1OfMaterialPropertyRepresentation;
 class Handle_StepRepr_HArray1OfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_HArray1OfMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_StepRepr_HArray1OfMaterialPropertyRepresentation : public Handle_MM
 	return (StepRepr_HArray1OfMaterialPropertyRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_HArray1OfMaterialPropertyRepresentation {
+	~Handle_StepRepr_HArray1OfMaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_HArray1OfMaterialPropertyRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ProductDefinitionUsage;
 class Handle_StepRepr_ProductDefinitionUsage : public Handle_StepBasic_ProductDefinitionRelationship {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ProductDefinitionUsage();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ProductDefinitionUsage();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_StepRepr_ProductDefinitionUsage : public Handle_StepBasic_ProductDe
 	return (StepRepr_ProductDefinitionUsage*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ProductDefinitionUsage {
+	~Handle_StepRepr_ProductDefinitionUsage() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ProductDefinitionUsage\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_MakeFromUsageOption;
 class Handle_StepRepr_MakeFromUsageOption : public Handle_StepRepr_ProductDefinitionUsage {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_MakeFromUsageOption();
 		%feature("autodoc", "1");
 		Handle_StepRepr_MakeFromUsageOption();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_StepRepr_MakeFromUsageOption : public Handle_StepRepr_ProductDefini
 	return (StepRepr_MakeFromUsageOption*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_MakeFromUsageOption {
+	~Handle_StepRepr_MakeFromUsageOption() {
+	printf("Call custom destructor for instance of Handle_StepRepr_MakeFromUsageOption\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_RepresentationRelationship;
 class Handle_StepRepr_RepresentationRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_RepresentationRelationship();
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationRelationship();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_StepRepr_RepresentationRelationship : public Handle_MMgt_TShared {
 	return (StepRepr_RepresentationRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_RepresentationRelationship {
+	~Handle_StepRepr_RepresentationRelationship() {
+	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ShapeRepresentationRelationship;
 class Handle_StepRepr_ShapeRepresentationRelationship : public Handle_StepRepr_RepresentationRelationship {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ShapeRepresentationRelationship();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeRepresentationRelationship();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_StepRepr_ShapeRepresentationRelationship : public Handle_StepRepr_R
 	return (StepRepr_ShapeRepresentationRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ShapeRepresentationRelationship {
+	~Handle_StepRepr_ShapeRepresentationRelationship() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ShapeRepresentationRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_RepresentationRelationshipWithTransformation;
 class Handle_StepRepr_RepresentationRelationshipWithTransformation : public Handle_StepRepr_ShapeRepresentationRelationship {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_RepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_StepRepr_RepresentationRelationshipWithTransformation : public Hand
 	return (StepRepr_RepresentationRelationshipWithTransformation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_RepresentationRelationshipWithTransformation {
+	~Handle_StepRepr_RepresentationRelationshipWithTransformation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationRelationshipWithTransformation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_Representation;
 class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_Representation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_Representation();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
 	return (StepRepr_Representation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_Representation {
+	~Handle_StepRepr_Representation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_Representation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ProductConcept;
 class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ProductConcept();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ProductConcept();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
 	return (StepRepr_ProductConcept*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ProductConcept {
+	~Handle_StepRepr_ProductConcept() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ProductConcept\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_PropertyDefinitionRelationship;
 class Handle_StepRepr_PropertyDefinitionRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_PropertyDefinitionRelationship();
 		%feature("autodoc", "1");
 		Handle_StepRepr_PropertyDefinitionRelationship();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_StepRepr_PropertyDefinitionRelationship : public Handle_MMgt_TShare
 	return (StepRepr_PropertyDefinitionRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_PropertyDefinitionRelationship {
+	~Handle_StepRepr_PropertyDefinitionRelationship() {
+	printf("Call custom destructor for instance of Handle_StepRepr_PropertyDefinitionRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation;
 class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_
 	return (StepRepr_HSequenceOfMaterialPropertyRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
+	~Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_AssemblyComponentUsage;
 class Handle_StepRepr_AssemblyComponentUsage : public Handle_StepRepr_ProductDefinitionUsage {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_AssemblyComponentUsage();
 		%feature("autodoc", "1");
 		Handle_StepRepr_AssemblyComponentUsage();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_StepRepr_AssemblyComponentUsage : public Handle_StepRepr_ProductDef
 	return (StepRepr_AssemblyComponentUsage*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_AssemblyComponentUsage {
+	~Handle_StepRepr_AssemblyComponentUsage() {
+	printf("Call custom destructor for instance of Handle_StepRepr_AssemblyComponentUsage\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation;
 class Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : p
 	return (StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
+	~Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_PropertyDefinition;
 class Handle_StepRepr_PropertyDefinition : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_PropertyDefinition();
 		%feature("autodoc", "1");
 		Handle_StepRepr_PropertyDefinition();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_StepRepr_PropertyDefinition : public Handle_MMgt_TShared {
 	return (StepRepr_PropertyDefinition*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_PropertyDefinition {
+	~Handle_StepRepr_PropertyDefinition() {
+	printf("Call custom destructor for instance of Handle_StepRepr_PropertyDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ShapeAspect;
 class Handle_StepRepr_ShapeAspect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ShapeAspect();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspect();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_StepRepr_ShapeAspect : public Handle_MMgt_TShared {
 	return (StepRepr_ShapeAspect*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ShapeAspect {
+	~Handle_StepRepr_ShapeAspect() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ShapeAspect\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_CompositeShapeAspect;
 class Handle_StepRepr_CompositeShapeAspect : public Handle_StepRepr_ShapeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_CompositeShapeAspect();
 		%feature("autodoc", "1");
 		Handle_StepRepr_CompositeShapeAspect();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_StepRepr_CompositeShapeAspect : public Handle_StepRepr_ShapeAspect 
 	return (StepRepr_CompositeShapeAspect*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_CompositeShapeAspect {
+	~Handle_StepRepr_CompositeShapeAspect() {
+	printf("Call custom destructor for instance of Handle_StepRepr_CompositeShapeAspect\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_RepresentationItem;
 class Handle_StepRepr_RepresentationItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_RepresentationItem();
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationItem();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_StepRepr_RepresentationItem : public Handle_MMgt_TShared {
 	return (StepRepr_RepresentationItem*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_RepresentationItem {
+	~Handle_StepRepr_RepresentationItem() {
+	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_CompoundRepresentationItem;
 class Handle_StepRepr_CompoundRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_CompoundRepresentationItem();
 		%feature("autodoc", "1");
 		Handle_StepRepr_CompoundRepresentationItem();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_StepRepr_CompoundRepresentationItem : public Handle_StepRepr_Repres
 	return (StepRepr_CompoundRepresentationItem*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_CompoundRepresentationItem {
+	~Handle_StepRepr_CompoundRepresentationItem() {
+	printf("Call custom destructor for instance of Handle_StepRepr_CompoundRepresentationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_HSequenceOfRepresentationItem;
 class Handle_StepRepr_HSequenceOfRepresentationItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_HSequenceOfRepresentationItem();
 		%feature("autodoc", "1");
 		Handle_StepRepr_HSequenceOfRepresentationItem();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_StepRepr_HSequenceOfRepresentationItem : public Handle_MMgt_TShared
 	return (StepRepr_HSequenceOfRepresentationItem*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_HSequenceOfRepresentationItem {
+	~Handle_StepRepr_HSequenceOfRepresentationItem() {
+	printf("Call custom destructor for instance of Handle_StepRepr_HSequenceOfRepresentationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_FunctionallyDefinedTransformation;
 class Handle_StepRepr_FunctionallyDefinedTransformation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_FunctionallyDefinedTransformation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_FunctionallyDefinedTransformation();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_StepRepr_FunctionallyDefinedTransformation : public Handle_MMgt_TSh
 	return (StepRepr_FunctionallyDefinedTransformation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_FunctionallyDefinedTransformation {
+	~Handle_StepRepr_FunctionallyDefinedTransformation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_FunctionallyDefinedTransformation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_MaterialProperty;
 class Handle_StepRepr_MaterialProperty : public Handle_StepRepr_PropertyDefinition {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_MaterialProperty();
 		%feature("autodoc", "1");
 		Handle_StepRepr_MaterialProperty();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_StepRepr_MaterialProperty : public Handle_StepRepr_PropertyDefiniti
 	return (StepRepr_MaterialProperty*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_MaterialProperty {
+	~Handle_StepRepr_MaterialProperty() {
+	printf("Call custom destructor for instance of Handle_StepRepr_MaterialProperty\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_AssemblyComponentUsageSubstitute;
 class Handle_StepRepr_AssemblyComponentUsageSubstitute : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_AssemblyComponentUsageSubstitute();
 		%feature("autodoc", "1");
 		Handle_StepRepr_AssemblyComponentUsageSubstitute();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_StepRepr_AssemblyComponentUsageSubstitute : public Handle_MMgt_TSha
 	return (StepRepr_AssemblyComponentUsageSubstitute*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_AssemblyComponentUsageSubstitute {
+	~Handle_StepRepr_AssemblyComponentUsageSubstitute() {
+	printf("Call custom destructor for instance of Handle_StepRepr_AssemblyComponentUsageSubstitute\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_MappedItem;
 class Handle_StepRepr_MappedItem : public Handle_StepRepr_RepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_MappedItem();
 		%feature("autodoc", "1");
 		Handle_StepRepr_MappedItem();
 		%feature("autodoc", "1");
@@ -643,12 +716,15 @@ class Handle_StepRepr_MappedItem : public Handle_StepRepr_RepresentationItem {
 	return (StepRepr_MappedItem*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_MappedItem {
+	~Handle_StepRepr_MappedItem() {
+	printf("Call custom destructor for instance of Handle_StepRepr_MappedItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_QuantifiedAssemblyComponentUsage;
 class Handle_StepRepr_QuantifiedAssemblyComponentUsage : public Handle_StepRepr_AssemblyComponentUsage {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_QuantifiedAssemblyComponentUsage();
 		%feature("autodoc", "1");
 		Handle_StepRepr_QuantifiedAssemblyComponentUsage();
 		%feature("autodoc", "1");
@@ -664,12 +740,15 @@ class Handle_StepRepr_QuantifiedAssemblyComponentUsage : public Handle_StepRepr_
 	return (StepRepr_QuantifiedAssemblyComponentUsage*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_QuantifiedAssemblyComponentUsage {
+	~Handle_StepRepr_QuantifiedAssemblyComponentUsage() {
+	printf("Call custom destructor for instance of Handle_StepRepr_QuantifiedAssemblyComponentUsage\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_RepresentationMap;
 class Handle_StepRepr_RepresentationMap : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_RepresentationMap();
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationMap();
 		%feature("autodoc", "1");
@@ -685,12 +764,15 @@ class Handle_StepRepr_RepresentationMap : public Handle_MMgt_TShared {
 	return (StepRepr_RepresentationMap*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_RepresentationMap {
+	~Handle_StepRepr_RepresentationMap() {
+	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationMap\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_MaterialDesignation;
 class Handle_StepRepr_MaterialDesignation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_MaterialDesignation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_MaterialDesignation();
 		%feature("autodoc", "1");
@@ -706,12 +788,15 @@ class Handle_StepRepr_MaterialDesignation : public Handle_MMgt_TShared {
 	return (StepRepr_MaterialDesignation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_MaterialDesignation {
+	~Handle_StepRepr_MaterialDesignation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_MaterialDesignation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ShapeAspectTransition;
 class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspectRelationship {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ShapeAspectTransition();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspectTransition();
 		%feature("autodoc", "1");
@@ -727,12 +812,15 @@ class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspect
 	return (StepRepr_ShapeAspectTransition*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ShapeAspectTransition {
+	~Handle_StepRepr_ShapeAspectTransition() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ShapeAspectTransition\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ItemDefinedTransformation;
 class Handle_StepRepr_ItemDefinedTransformation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ItemDefinedTransformation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ItemDefinedTransformation();
 		%feature("autodoc", "1");
@@ -748,12 +836,15 @@ class Handle_StepRepr_ItemDefinedTransformation : public Handle_MMgt_TShared {
 	return (StepRepr_ItemDefinedTransformation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ItemDefinedTransformation {
+	~Handle_StepRepr_ItemDefinedTransformation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ItemDefinedTransformation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_NextAssemblyUsageOccurrence;
 class Handle_StepRepr_NextAssemblyUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_NextAssemblyUsageOccurrence();
 		%feature("autodoc", "1");
 		Handle_StepRepr_NextAssemblyUsageOccurrence();
 		%feature("autodoc", "1");
@@ -769,12 +860,15 @@ class Handle_StepRepr_NextAssemblyUsageOccurrence : public Handle_StepRepr_Assem
 	return (StepRepr_NextAssemblyUsageOccurrence*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_NextAssemblyUsageOccurrence {
+	~Handle_StepRepr_NextAssemblyUsageOccurrence() {
+	printf("Call custom destructor for instance of Handle_StepRepr_NextAssemblyUsageOccurrence\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_DataEnvironment;
 class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_DataEnvironment();
 		%feature("autodoc", "1");
 		Handle_StepRepr_DataEnvironment();
 		%feature("autodoc", "1");
@@ -790,12 +884,15 @@ class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
 	return (StepRepr_DataEnvironment*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_DataEnvironment {
+	~Handle_StepRepr_DataEnvironment() {
+	printf("Call custom destructor for instance of Handle_StepRepr_DataEnvironment\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_DerivedShapeAspect;
 class Handle_StepRepr_DerivedShapeAspect : public Handle_StepRepr_ShapeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_DerivedShapeAspect();
 		%feature("autodoc", "1");
 		Handle_StepRepr_DerivedShapeAspect();
 		%feature("autodoc", "1");
@@ -811,12 +908,15 @@ class Handle_StepRepr_DerivedShapeAspect : public Handle_StepRepr_ShapeAspect {
 	return (StepRepr_DerivedShapeAspect*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_DerivedShapeAspect {
+	~Handle_StepRepr_DerivedShapeAspect() {
+	printf("Call custom destructor for instance of Handle_StepRepr_DerivedShapeAspect\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_Extension;
 class Handle_StepRepr_Extension : public Handle_StepRepr_DerivedShapeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_Extension();
 		%feature("autodoc", "1");
 		Handle_StepRepr_Extension();
 		%feature("autodoc", "1");
@@ -832,12 +932,15 @@ class Handle_StepRepr_Extension : public Handle_StepRepr_DerivedShapeAspect {
 	return (StepRepr_Extension*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_Extension {
+	~Handle_StepRepr_Extension() {
+	printf("Call custom destructor for instance of Handle_StepRepr_Extension\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ReprItemAndLengthMeasureWithUnit;
 class Handle_StepRepr_ReprItemAndLengthMeasureWithUnit : public Handle_StepRepr_RepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ReprItemAndLengthMeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ReprItemAndLengthMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -853,12 +956,15 @@ class Handle_StepRepr_ReprItemAndLengthMeasureWithUnit : public Handle_StepRepr_
 	return (StepRepr_ReprItemAndLengthMeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ReprItemAndLengthMeasureWithUnit {
+	~Handle_StepRepr_ReprItemAndLengthMeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ReprItemAndLengthMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_PropertyDefinitionRepresentation;
 class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_PropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_PropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
@@ -874,12 +980,15 @@ class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TSha
 	return (StepRepr_PropertyDefinitionRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_PropertyDefinitionRepresentation {
+	~Handle_StepRepr_PropertyDefinitionRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_PropertyDefinitionRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_MaterialPropertyRepresentation;
 class Handle_StepRepr_MaterialPropertyRepresentation : public Handle_StepRepr_PropertyDefinitionRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_MaterialPropertyRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_MaterialPropertyRepresentation();
 		%feature("autodoc", "1");
@@ -895,12 +1004,15 @@ class Handle_StepRepr_MaterialPropertyRepresentation : public Handle_StepRepr_Pr
 	return (StepRepr_MaterialPropertyRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_MaterialPropertyRepresentation {
+	~Handle_StepRepr_MaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_MaterialPropertyRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ProductDefinitionShape;
 class Handle_StepRepr_ProductDefinitionShape : public Handle_StepRepr_PropertyDefinition {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ProductDefinitionShape();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ProductDefinitionShape();
 		%feature("autodoc", "1");
@@ -916,12 +1028,15 @@ class Handle_StepRepr_ProductDefinitionShape : public Handle_StepRepr_PropertyDe
 	return (StepRepr_ProductDefinitionShape*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ProductDefinitionShape {
+	~Handle_StepRepr_ProductDefinitionShape() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ProductDefinitionShape\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_HArray1OfRepresentationItem;
 class Handle_StepRepr_HArray1OfRepresentationItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_HArray1OfRepresentationItem();
 		%feature("autodoc", "1");
 		Handle_StepRepr_HArray1OfRepresentationItem();
 		%feature("autodoc", "1");
@@ -937,12 +1052,15 @@ class Handle_StepRepr_HArray1OfRepresentationItem : public Handle_MMgt_TShared {
 	return (StepRepr_HArray1OfRepresentationItem*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_HArray1OfRepresentationItem {
+	~Handle_StepRepr_HArray1OfRepresentationItem() {
+	printf("Call custom destructor for instance of Handle_StepRepr_HArray1OfRepresentationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation;
 class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : public Handle_StepRepr_PropertyDefinitionRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
@@ -958,12 +1076,15 @@ class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : publi
 	return (StepRepr_StructuralResponsePropertyDefinitionRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
+	~Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_DescriptiveRepresentationItem;
 class Handle_StepRepr_DescriptiveRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_DescriptiveRepresentationItem();
 		%feature("autodoc", "1");
 		Handle_StepRepr_DescriptiveRepresentationItem();
 		%feature("autodoc", "1");
@@ -979,12 +1100,15 @@ class Handle_StepRepr_DescriptiveRepresentationItem : public Handle_StepRepr_Rep
 	return (StepRepr_DescriptiveRepresentationItem*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_DescriptiveRepresentationItem {
+	~Handle_StepRepr_DescriptiveRepresentationItem() {
+	printf("Call custom destructor for instance of Handle_StepRepr_DescriptiveRepresentationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem;
 class Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem();
 		%feature("autodoc", "1");
 		Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem();
 		%feature("autodoc", "1");
@@ -1000,12 +1124,15 @@ class Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public Handle
 	return (StepRepr_SequenceNodeOfSequenceOfRepresentationItem*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
+	~Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem() {
+	printf("Call custom destructor for instance of Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_StructuralResponseProperty;
 class Handle_StepRepr_StructuralResponseProperty : public Handle_StepRepr_PropertyDefinition {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_StructuralResponseProperty();
 		%feature("autodoc", "1");
 		Handle_StepRepr_StructuralResponseProperty();
 		%feature("autodoc", "1");
@@ -1021,12 +1148,15 @@ class Handle_StepRepr_StructuralResponseProperty : public Handle_StepRepr_Proper
 	return (StepRepr_StructuralResponseProperty*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_StructuralResponseProperty {
+	~Handle_StepRepr_StructuralResponseProperty() {
+	printf("Call custom destructor for instance of Handle_StepRepr_StructuralResponseProperty\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_SpecifiedHigherUsageOccurrence;
 class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_SpecifiedHigherUsageOccurrence();
 		%feature("autodoc", "1");
 		Handle_StepRepr_SpecifiedHigherUsageOccurrence();
 		%feature("autodoc", "1");
@@ -1042,12 +1172,15 @@ class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_As
 	return (StepRepr_SpecifiedHigherUsageOccurrence*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_SpecifiedHigherUsageOccurrence {
+	~Handle_StepRepr_SpecifiedHigherUsageOccurrence() {
+	printf("Call custom destructor for instance of Handle_StepRepr_SpecifiedHigherUsageOccurrence\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_GlobalUnitAssignedContext;
 class Handle_StepRepr_GlobalUnitAssignedContext : public Handle_StepRepr_RepresentationContext {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_GlobalUnitAssignedContext();
 		%feature("autodoc", "1");
 		Handle_StepRepr_GlobalUnitAssignedContext();
 		%feature("autodoc", "1");
@@ -1063,12 +1196,15 @@ class Handle_StepRepr_GlobalUnitAssignedContext : public Handle_StepRepr_Represe
 	return (StepRepr_GlobalUnitAssignedContext*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_GlobalUnitAssignedContext {
+	~Handle_StepRepr_GlobalUnitAssignedContext() {
+	printf("Call custom destructor for instance of Handle_StepRepr_GlobalUnitAssignedContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ValueRange;
 class Handle_StepRepr_ValueRange : public Handle_StepRepr_CompoundRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ValueRange();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ValueRange();
 		%feature("autodoc", "1");
@@ -1084,12 +1220,15 @@ class Handle_StepRepr_ValueRange : public Handle_StepRepr_CompoundRepresentation
 	return (StepRepr_ValueRange*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ValueRange {
+	~Handle_StepRepr_ValueRange() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ValueRange\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ShapeAspectDerivingRelationship;
 class Handle_StepRepr_ShapeAspectDerivingRelationship : public Handle_StepRepr_ShapeAspectRelationship {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ShapeAspectDerivingRelationship();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspectDerivingRelationship();
 		%feature("autodoc", "1");
@@ -1105,12 +1244,15 @@ class Handle_StepRepr_ShapeAspectDerivingRelationship : public Handle_StepRepr_S
 	return (StepRepr_ShapeAspectDerivingRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ShapeAspectDerivingRelationship {
+	~Handle_StepRepr_ShapeAspectDerivingRelationship() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ShapeAspectDerivingRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_DefinitionalRepresentation;
 class Handle_StepRepr_DefinitionalRepresentation : public Handle_StepRepr_Representation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_DefinitionalRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_DefinitionalRepresentation();
 		%feature("autodoc", "1");
@@ -1126,12 +1268,15 @@ class Handle_StepRepr_DefinitionalRepresentation : public Handle_StepRepr_Repres
 	return (StepRepr_DefinitionalRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_DefinitionalRepresentation {
+	~Handle_StepRepr_DefinitionalRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_DefinitionalRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation;
 class Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
@@ -1147,12 +1292,15 @@ class Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation : public Handle_
 	return (StepRepr_HArray1OfPropertyDefinitionRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation {
+	~Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ConfigurationItem;
 class Handle_StepRepr_ConfigurationItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ConfigurationItem();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ConfigurationItem();
 		%feature("autodoc", "1");
@@ -1168,12 +1316,15 @@ class Handle_StepRepr_ConfigurationItem : public Handle_MMgt_TShared {
 	return (StepRepr_ConfigurationItem*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ConfigurationItem {
+	~Handle_StepRepr_ConfigurationItem() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ConfigurationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ExternallyDefinedRepresentation;
 class Handle_StepRepr_ExternallyDefinedRepresentation : public Handle_StepRepr_Representation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ExternallyDefinedRepresentation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ExternallyDefinedRepresentation();
 		%feature("autodoc", "1");
@@ -1189,12 +1340,15 @@ class Handle_StepRepr_ExternallyDefinedRepresentation : public Handle_StepRepr_R
 	return (StepRepr_ExternallyDefinedRepresentation*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ExternallyDefinedRepresentation {
+	~Handle_StepRepr_ExternallyDefinedRepresentation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ExternallyDefinedRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ConfigurationEffectivity;
 class Handle_StepRepr_ConfigurationEffectivity : public Handle_StepBasic_ProductDefinitionEffectivity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ConfigurationEffectivity();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ConfigurationEffectivity();
 		%feature("autodoc", "1");
@@ -1210,12 +1364,15 @@ class Handle_StepRepr_ConfigurationEffectivity : public Handle_StepBasic_Product
 	return (StepRepr_ConfigurationEffectivity*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ConfigurationEffectivity {
+	~Handle_StepRepr_ConfigurationEffectivity() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ConfigurationEffectivity\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_MeasureRepresentationItem;
 class Handle_StepRepr_MeasureRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_MeasureRepresentationItem();
 		%feature("autodoc", "1");
 		Handle_StepRepr_MeasureRepresentationItem();
 		%feature("autodoc", "1");
@@ -1231,12 +1388,15 @@ class Handle_StepRepr_MeasureRepresentationItem : public Handle_StepRepr_Represe
 	return (StepRepr_MeasureRepresentationItem*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_MeasureRepresentationItem {
+	~Handle_StepRepr_MeasureRepresentationItem() {
+	printf("Call custom destructor for instance of Handle_StepRepr_MeasureRepresentationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ConfigurationDesign;
 class Handle_StepRepr_ConfigurationDesign : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ConfigurationDesign();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ConfigurationDesign();
 		%feature("autodoc", "1");
@@ -1252,12 +1412,15 @@ class Handle_StepRepr_ConfigurationDesign : public Handle_MMgt_TShared {
 	return (StepRepr_ConfigurationDesign*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_ConfigurationDesign {
+	~Handle_StepRepr_ConfigurationDesign() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ConfigurationDesign\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_PromissoryUsageOccurrence;
 class Handle_StepRepr_PromissoryUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_PromissoryUsageOccurrence();
 		%feature("autodoc", "1");
 		Handle_StepRepr_PromissoryUsageOccurrence();
 		%feature("autodoc", "1");
@@ -1273,12 +1436,15 @@ class Handle_StepRepr_PromissoryUsageOccurrence : public Handle_StepRepr_Assembl
 	return (StepRepr_PromissoryUsageOccurrence*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_PromissoryUsageOccurrence {
+	~Handle_StepRepr_PromissoryUsageOccurrence() {
+	printf("Call custom destructor for instance of Handle_StepRepr_PromissoryUsageOccurrence\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_SuppliedPartRelationship;
 class Handle_StepRepr_SuppliedPartRelationship : public Handle_StepBasic_ProductDefinitionRelationship {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_SuppliedPartRelationship();
 		%feature("autodoc", "1");
 		Handle_StepRepr_SuppliedPartRelationship();
 		%feature("autodoc", "1");
@@ -1294,12 +1460,15 @@ class Handle_StepRepr_SuppliedPartRelationship : public Handle_StepBasic_Product
 	return (StepRepr_SuppliedPartRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepRepr_SuppliedPartRelationship {
+	~Handle_StepRepr_SuppliedPartRelationship() {
+	printf("Call custom destructor for instance of Handle_StepRepr_SuppliedPartRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation;
 class Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation : public Handle_StepRepr_RepresentationRelationshipWithTransformation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
@@ -1313,6 +1482,11 @@ class Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation : public
 %extend Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation {
 	StepRepr_ShapeRepresentationRelationshipWithTransformation* GetObject() {
 	return (StepRepr_ShapeRepresentationRelationshipWithTransformation*)$self->Access();
+	}
+};
+%extend Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation {
+	~Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation() {
+	printf("Call custom destructor for instance of Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation\n");
 	}
 };
 
@@ -1405,13 +1579,16 @@ class StepRepr_ShapeAspectRelationship : public MMgt_TShared {
 		void SetRelatedShapeAspect(const Handle_StepRepr_ShapeAspect &RelatedShapeAspect);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ShapeAspectRelationship();
 
 };
 %extend StepRepr_ShapeAspectRelationship {
 	Handle_StepRepr_ShapeAspectRelationship GetHandle() {
 	return *(Handle_StepRepr_ShapeAspectRelationship*) &$self;
+	}
+};
+%extend StepRepr_ShapeAspectRelationship {
+	~StepRepr_ShapeAspectRelationship() {
+	printf("Call custom destructor for instance of StepRepr_ShapeAspectRelationship\n");
 	}
 };
 
@@ -1420,13 +1597,16 @@ class StepRepr_ShapeAspectTransition : public StepRepr_ShapeAspectRelationship {
 	public:
 		%feature("autodoc", "1");
 		StepRepr_ShapeAspectTransition();
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ShapeAspectTransition();
 
 };
 %extend StepRepr_ShapeAspectTransition {
 	Handle_StepRepr_ShapeAspectTransition GetHandle() {
 	return *(Handle_StepRepr_ShapeAspectTransition*) &$self;
+	}
+};
+%extend StepRepr_ShapeAspectTransition {
+	~StepRepr_ShapeAspectTransition() {
+	printf("Call custom destructor for instance of StepRepr_ShapeAspectTransition\n");
 	}
 };
 
@@ -1447,13 +1627,16 @@ class StepRepr_ConfigurationDesign : public MMgt_TShared {
 		void SetDesign(const StepRepr_ConfigurationDesignItem &Design);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ConfigurationDesign();
 
 };
 %extend StepRepr_ConfigurationDesign {
 	Handle_StepRepr_ConfigurationDesign GetHandle() {
 	return *(Handle_StepRepr_ConfigurationDesign*) &$self;
+	}
+};
+%extend StepRepr_ConfigurationDesign {
+	~StepRepr_ConfigurationDesign() {
+	printf("Call custom destructor for instance of StepRepr_ConfigurationDesign\n");
 	}
 };
 
@@ -1482,13 +1665,16 @@ class StepRepr_RepresentationRelationship : public MMgt_TShared {
 		Handle_StepRepr_Representation Rep2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_RepresentationRelationship();
 
 };
 %extend StepRepr_RepresentationRelationship {
 	Handle_StepRepr_RepresentationRelationship GetHandle() {
 	return *(Handle_StepRepr_RepresentationRelationship*) &$self;
+	}
+};
+%extend StepRepr_RepresentationRelationship {
+	~StepRepr_RepresentationRelationship() {
+	printf("Call custom destructor for instance of StepRepr_RepresentationRelationship\n");
 	}
 };
 
@@ -1497,13 +1683,16 @@ class StepRepr_ShapeRepresentationRelationship : public StepRepr_RepresentationR
 	public:
 		%feature("autodoc", "1");
 		StepRepr_ShapeRepresentationRelationship();
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ShapeRepresentationRelationship();
 
 };
 %extend StepRepr_ShapeRepresentationRelationship {
 	Handle_StepRepr_ShapeRepresentationRelationship GetHandle() {
 	return *(Handle_StepRepr_ShapeRepresentationRelationship*) &$self;
+	}
+};
+%extend StepRepr_ShapeRepresentationRelationship {
+	~StepRepr_ShapeRepresentationRelationship() {
+	printf("Call custom destructor for instance of StepRepr_ShapeRepresentationRelationship\n");
 	}
 };
 
@@ -1518,13 +1707,16 @@ class StepRepr_RepresentationRelationshipWithTransformation : public StepRepr_Sh
 		StepRepr_Transformation TransformationOperator() const;
 		%feature("autodoc", "1");
 		void SetTransformationOperator(const StepRepr_Transformation &aTrans);
-		%feature("autodoc", "1");
-		virtual		~StepRepr_RepresentationRelationshipWithTransformation();
 
 };
 %extend StepRepr_RepresentationRelationshipWithTransformation {
 	Handle_StepRepr_RepresentationRelationshipWithTransformation GetHandle() {
 	return *(Handle_StepRepr_RepresentationRelationshipWithTransformation*) &$self;
+	}
+};
+%extend StepRepr_RepresentationRelationshipWithTransformation {
+	~StepRepr_RepresentationRelationshipWithTransformation() {
+	printf("Call custom destructor for instance of StepRepr_RepresentationRelationshipWithTransformation\n");
 	}
 };
 
@@ -1579,13 +1771,16 @@ class StepRepr_HSequenceOfRepresentationItem : public MMgt_TShared {
 		Handle_StepRepr_HSequenceOfRepresentationItem ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_HSequenceOfRepresentationItem();
 
 };
 %extend StepRepr_HSequenceOfRepresentationItem {
 	Handle_StepRepr_HSequenceOfRepresentationItem GetHandle() {
 	return *(Handle_StepRepr_HSequenceOfRepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_HSequenceOfRepresentationItem {
+	~StepRepr_HSequenceOfRepresentationItem() {
+	printf("Call custom destructor for instance of StepRepr_HSequenceOfRepresentationItem\n");
 	}
 };
 
@@ -1614,13 +1809,16 @@ class StepRepr_Representation : public MMgt_TShared {
 		Handle_StepRepr_RepresentationContext ContextOfItems() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_Representation();
 
 };
 %extend StepRepr_Representation {
 	Handle_StepRepr_Representation GetHandle() {
 	return *(Handle_StepRepr_Representation*) &$self;
+	}
+};
+%extend StepRepr_Representation {
+	~StepRepr_Representation() {
+	printf("Call custom destructor for instance of StepRepr_Representation\n");
 	}
 };
 
@@ -1649,13 +1847,16 @@ class StepRepr_PropertyDefinitionRelationship : public MMgt_TShared {
 		void SetRelatedPropertyDefinition(const Handle_StepRepr_PropertyDefinition &RelatedPropertyDefinition);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_PropertyDefinitionRelationship();
 
 };
 %extend StepRepr_PropertyDefinitionRelationship {
 	Handle_StepRepr_PropertyDefinitionRelationship GetHandle() {
 	return *(Handle_StepRepr_PropertyDefinitionRelationship*) &$self;
+	}
+};
+%extend StepRepr_PropertyDefinitionRelationship {
+	~StepRepr_PropertyDefinitionRelationship() {
+	printf("Call custom destructor for instance of StepRepr_PropertyDefinitionRelationship\n");
 	}
 };
 
@@ -1686,13 +1887,16 @@ class StepRepr_HArray1OfMaterialPropertyRepresentation : public MMgt_TShared {
 		StepRepr_Array1OfMaterialPropertyRepresentation & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_HArray1OfMaterialPropertyRepresentation();
 
 };
 %extend StepRepr_HArray1OfMaterialPropertyRepresentation {
 	Handle_StepRepr_HArray1OfMaterialPropertyRepresentation GetHandle() {
 	return *(Handle_StepRepr_HArray1OfMaterialPropertyRepresentation*) &$self;
+	}
+};
+%extend StepRepr_HArray1OfMaterialPropertyRepresentation {
+	~StepRepr_HArray1OfMaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_HArray1OfMaterialPropertyRepresentation\n");
 	}
 };
 
@@ -1723,13 +1927,16 @@ class StepRepr_ProductConcept : public MMgt_TShared {
 		void SetMarketContext(const Handle_StepBasic_ProductConceptContext &MarketContext);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ProductConcept();
 
 };
 %extend StepRepr_ProductConcept {
 	Handle_StepRepr_ProductConcept GetHandle() {
 	return *(Handle_StepRepr_ProductConcept*) &$self;
+	}
+};
+%extend StepRepr_ProductConcept {
+	~StepRepr_ProductConcept() {
+	printf("Call custom destructor for instance of StepRepr_ProductConcept\n");
 	}
 };
 
@@ -1762,13 +1969,16 @@ class StepRepr_SuppliedPartRelationship : public StepBasic_ProductDefinitionRela
 		StepRepr_SuppliedPartRelationship();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_SuppliedPartRelationship();
 
 };
 %extend StepRepr_SuppliedPartRelationship {
 	Handle_StepRepr_SuppliedPartRelationship GetHandle() {
 	return *(Handle_StepRepr_SuppliedPartRelationship*) &$self;
+	}
+};
+%extend StepRepr_SuppliedPartRelationship {
+	~StepRepr_SuppliedPartRelationship() {
+	printf("Call custom destructor for instance of StepRepr_SuppliedPartRelationship\n");
 	}
 };
 
@@ -1797,13 +2007,16 @@ class StepRepr_ShapeAspect : public MMgt_TShared {
 		StepData_Logical ProductDefinitional() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ShapeAspect();
 
 };
 %extend StepRepr_ShapeAspect {
 	Handle_StepRepr_ShapeAspect GetHandle() {
 	return *(Handle_StepRepr_ShapeAspect*) &$self;
+	}
+};
+%extend StepRepr_ShapeAspect {
+	~StepRepr_ShapeAspect() {
+	printf("Call custom destructor for instance of StepRepr_ShapeAspect\n");
 	}
 };
 
@@ -1812,13 +2025,16 @@ class StepRepr_DerivedShapeAspect : public StepRepr_ShapeAspect {
 	public:
 		%feature("autodoc", "1");
 		StepRepr_DerivedShapeAspect();
-		%feature("autodoc", "1");
-		virtual		~StepRepr_DerivedShapeAspect();
 
 };
 %extend StepRepr_DerivedShapeAspect {
 	Handle_StepRepr_DerivedShapeAspect GetHandle() {
 	return *(Handle_StepRepr_DerivedShapeAspect*) &$self;
+	}
+};
+%extend StepRepr_DerivedShapeAspect {
+	~StepRepr_DerivedShapeAspect() {
+	printf("Call custom destructor for instance of StepRepr_DerivedShapeAspect\n");
 	}
 };
 
@@ -1827,13 +2043,16 @@ class StepRepr_Extension : public StepRepr_DerivedShapeAspect {
 	public:
 		%feature("autodoc", "1");
 		StepRepr_Extension();
-		%feature("autodoc", "1");
-		virtual		~StepRepr_Extension();
 
 };
 %extend StepRepr_Extension {
 	Handle_StepRepr_Extension GetHandle() {
 	return *(Handle_StepRepr_Extension*) &$self;
+	}
+};
+%extend StepRepr_Extension {
+	~StepRepr_Extension() {
+	printf("Call custom destructor for instance of StepRepr_Extension\n");
 	}
 };
 
@@ -1846,13 +2065,16 @@ class StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public TCollection_S
 		Handle_StepRepr_RepresentationItem & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_SequenceNodeOfSequenceOfRepresentationItem();
 
 };
 %extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
 	Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem GetHandle() {
 	return *(Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
+	~StepRepr_SequenceNodeOfSequenceOfRepresentationItem() {
+	printf("Call custom destructor for instance of StepRepr_SequenceNodeOfSequenceOfRepresentationItem\n");
 	}
 };
 
@@ -1863,13 +2085,16 @@ class StepRepr_ProductDefinitionUsage : public StepBasic_ProductDefinitionRelati
 		StepRepr_ProductDefinitionUsage();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ProductDefinitionUsage();
 
 };
 %extend StepRepr_ProductDefinitionUsage {
 	Handle_StepRepr_ProductDefinitionUsage GetHandle() {
 	return *(Handle_StepRepr_ProductDefinitionUsage*) &$self;
+	}
+};
+%extend StepRepr_ProductDefinitionUsage {
+	~StepRepr_ProductDefinitionUsage() {
+	printf("Call custom destructor for instance of StepRepr_ProductDefinitionUsage\n");
 	}
 };
 
@@ -1890,13 +2115,16 @@ class StepRepr_RepresentationContext : public MMgt_TShared {
 		Handle_TCollection_HAsciiString ContextType() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_RepresentationContext();
 
 };
 %extend StepRepr_RepresentationContext {
 	Handle_StepRepr_RepresentationContext GetHandle() {
 	return *(Handle_StepRepr_RepresentationContext*) &$self;
+	}
+};
+%extend StepRepr_RepresentationContext {
+	~StepRepr_RepresentationContext() {
+	printf("Call custom destructor for instance of StepRepr_RepresentationContext\n");
 	}
 };
 
@@ -1905,13 +2133,16 @@ class StepRepr_ParametricRepresentationContext : public StepRepr_RepresentationC
 	public:
 		%feature("autodoc", "1");
 		StepRepr_ParametricRepresentationContext();
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ParametricRepresentationContext();
 
 };
 %extend StepRepr_ParametricRepresentationContext {
 	Handle_StepRepr_ParametricRepresentationContext GetHandle() {
 	return *(Handle_StepRepr_ParametricRepresentationContext*) &$self;
+	}
+};
+%extend StepRepr_ParametricRepresentationContext {
+	~StepRepr_ParametricRepresentationContext() {
+	printf("Call custom destructor for instance of StepRepr_ParametricRepresentationContext\n");
 	}
 };
 
@@ -1922,13 +2153,16 @@ class StepRepr_ShapeRepresentationRelationshipWithTransformation : public StepRe
 		StepRepr_ShapeRepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ShapeRepresentationRelationshipWithTransformation();
 
 };
 %extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
 	Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation GetHandle() {
 	return *(Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation*) &$self;
+	}
+};
+%extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
+	~StepRepr_ShapeRepresentationRelationshipWithTransformation() {
+	printf("Call custom destructor for instance of StepRepr_ShapeRepresentationRelationshipWithTransformation\n");
 	}
 };
 
@@ -1959,13 +2193,16 @@ class StepRepr_HArray1OfRepresentationItem : public MMgt_TShared {
 		StepRepr_Array1OfRepresentationItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_HArray1OfRepresentationItem();
 
 };
 %extend StepRepr_HArray1OfRepresentationItem {
 	Handle_StepRepr_HArray1OfRepresentationItem GetHandle() {
 	return *(Handle_StepRepr_HArray1OfRepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_HArray1OfRepresentationItem {
+	~StepRepr_HArray1OfRepresentationItem() {
+	printf("Call custom destructor for instance of StepRepr_HArray1OfRepresentationItem\n");
 	}
 };
 
@@ -1986,13 +2223,16 @@ class StepRepr_MaterialDesignation : public MMgt_TShared {
 		StepRepr_CharacterizedDefinition OfDefinition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_MaterialDesignation();
 
 };
 %extend StepRepr_MaterialDesignation {
 	Handle_StepRepr_MaterialDesignation GetHandle() {
 	return *(Handle_StepRepr_MaterialDesignation*) &$self;
+	}
+};
+%extend StepRepr_MaterialDesignation {
+	~StepRepr_MaterialDesignation() {
+	printf("Call custom destructor for instance of StepRepr_MaterialDesignation\n");
 	}
 };
 
@@ -2013,13 +2253,16 @@ class StepRepr_FunctionallyDefinedTransformation : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Description() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_FunctionallyDefinedTransformation();
 
 };
 %extend StepRepr_FunctionallyDefinedTransformation {
 	Handle_StepRepr_FunctionallyDefinedTransformation GetHandle() {
 	return *(Handle_StepRepr_FunctionallyDefinedTransformation*) &$self;
+	}
+};
+%extend StepRepr_FunctionallyDefinedTransformation {
+	~StepRepr_FunctionallyDefinedTransformation() {
+	printf("Call custom destructor for instance of StepRepr_FunctionallyDefinedTransformation\n");
 	}
 };
 
@@ -2030,13 +2273,16 @@ class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
 		StepRepr_CompositeShapeAspect();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_CompositeShapeAspect();
 
 };
 %extend StepRepr_CompositeShapeAspect {
 	Handle_StepRepr_CompositeShapeAspect GetHandle() {
 	return *(Handle_StepRepr_CompositeShapeAspect*) &$self;
+	}
+};
+%extend StepRepr_CompositeShapeAspect {
+	~StepRepr_CompositeShapeAspect() {
+	printf("Call custom destructor for instance of StepRepr_CompositeShapeAspect\n");
 	}
 };
 
@@ -2055,13 +2301,16 @@ class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
 		Standard_Boolean HasReferenceDesignator() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_AssemblyComponentUsage();
 
 };
 %extend StepRepr_AssemblyComponentUsage {
 	Handle_StepRepr_AssemblyComponentUsage GetHandle() {
 	return *(Handle_StepRepr_AssemblyComponentUsage*) &$self;
+	}
+};
+%extend StepRepr_AssemblyComponentUsage {
+	~StepRepr_AssemblyComponentUsage() {
+	printf("Call custom destructor for instance of StepRepr_AssemblyComponentUsage\n");
 	}
 };
 
@@ -2092,13 +2341,16 @@ class StepRepr_HArray1OfPropertyDefinitionRepresentation : public MMgt_TShared {
 		StepRepr_Array1OfPropertyDefinitionRepresentation & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_HArray1OfPropertyDefinitionRepresentation();
 
 };
 %extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
 	Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation GetHandle() {
 	return *(Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation*) &$self;
+	}
+};
+%extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
+	~StepRepr_HArray1OfPropertyDefinitionRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_HArray1OfPropertyDefinitionRepresentation\n");
 	}
 };
 
@@ -2115,13 +2367,16 @@ class StepRepr_ConfigurationEffectivity : public StepBasic_ProductDefinitionEffe
 		void SetConfiguration(const Handle_StepRepr_ConfigurationDesign &Configuration);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ConfigurationEffectivity();
 
 };
 %extend StepRepr_ConfigurationEffectivity {
 	Handle_StepRepr_ConfigurationEffectivity GetHandle() {
 	return *(Handle_StepRepr_ConfigurationEffectivity*) &$self;
+	}
+};
+%extend StepRepr_ConfigurationEffectivity {
+	~StepRepr_ConfigurationEffectivity() {
+	printf("Call custom destructor for instance of StepRepr_ConfigurationEffectivity\n");
 	}
 };
 
@@ -2144,13 +2399,16 @@ class StepRepr_GlobalUncertaintyAssignedContext : public StepRepr_Representation
 		Standard_Integer NbUncertainty() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_GlobalUncertaintyAssignedContext();
 
 };
 %extend StepRepr_GlobalUncertaintyAssignedContext {
 	Handle_StepRepr_GlobalUncertaintyAssignedContext GetHandle() {
 	return *(Handle_StepRepr_GlobalUncertaintyAssignedContext*) &$self;
+	}
+};
+%extend StepRepr_GlobalUncertaintyAssignedContext {
+	~StepRepr_GlobalUncertaintyAssignedContext() {
+	printf("Call custom destructor for instance of StepRepr_GlobalUncertaintyAssignedContext\n");
 	}
 };
 
@@ -2171,13 +2429,16 @@ class StepRepr_PropertyDefinitionRepresentation : public MMgt_TShared {
 		void SetUsedRepresentation(const Handle_StepRepr_Representation &UsedRepresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_PropertyDefinitionRepresentation();
 
 };
 %extend StepRepr_PropertyDefinitionRepresentation {
 	Handle_StepRepr_PropertyDefinitionRepresentation GetHandle() {
 	return *(Handle_StepRepr_PropertyDefinitionRepresentation*) &$self;
+	}
+};
+%extend StepRepr_PropertyDefinitionRepresentation {
+	~StepRepr_PropertyDefinitionRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_PropertyDefinitionRepresentation\n");
 	}
 };
 
@@ -2192,13 +2453,16 @@ class StepRepr_MaterialPropertyRepresentation : public StepRepr_PropertyDefiniti
 		Handle_StepRepr_DataEnvironment DependentEnvironment() const;
 		%feature("autodoc", "1");
 		void SetDependentEnvironment(const Handle_StepRepr_DataEnvironment &DependentEnvironment);
-		%feature("autodoc", "1");
-		virtual		~StepRepr_MaterialPropertyRepresentation();
 
 };
 %extend StepRepr_MaterialPropertyRepresentation {
 	Handle_StepRepr_MaterialPropertyRepresentation GetHandle() {
 	return *(Handle_StepRepr_MaterialPropertyRepresentation*) &$self;
+	}
+};
+%extend StepRepr_MaterialPropertyRepresentation {
+	~StepRepr_MaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_MaterialPropertyRepresentation\n");
 	}
 };
 
@@ -2219,13 +2483,16 @@ class StepRepr_SpecifiedHigherUsageOccurrence : public StepRepr_AssemblyComponen
 		void SetNextUsage(const Handle_StepRepr_NextAssemblyUsageOccurrence &NextUsage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_SpecifiedHigherUsageOccurrence();
 
 };
 %extend StepRepr_SpecifiedHigherUsageOccurrence {
 	Handle_StepRepr_SpecifiedHigherUsageOccurrence GetHandle() {
 	return *(Handle_StepRepr_SpecifiedHigherUsageOccurrence*) &$self;
+	}
+};
+%extend StepRepr_SpecifiedHigherUsageOccurrence {
+	~StepRepr_SpecifiedHigherUsageOccurrence() {
+	printf("Call custom destructor for instance of StepRepr_SpecifiedHigherUsageOccurrence\n");
 	}
 };
 
@@ -2242,13 +2509,16 @@ class StepRepr_RepresentationItem : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_RepresentationItem();
 
 };
 %extend StepRepr_RepresentationItem {
 	Handle_StepRepr_RepresentationItem GetHandle() {
 	return *(Handle_StepRepr_RepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_RepresentationItem {
+	~StepRepr_RepresentationItem() {
+	printf("Call custom destructor for instance of StepRepr_RepresentationItem\n");
 	}
 };
 
@@ -2267,13 +2537,16 @@ class StepRepr_MappedItem : public StepRepr_RepresentationItem {
 		void SetMappingTarget(const Handle_StepRepr_RepresentationItem &aMappingTarget);
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationItem MappingTarget() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_MappedItem();
 
 };
 %extend StepRepr_MappedItem {
 	Handle_StepRepr_MappedItem GetHandle() {
 	return *(Handle_StepRepr_MappedItem*) &$self;
+	}
+};
+%extend StepRepr_MappedItem {
+	~StepRepr_MappedItem() {
+	printf("Call custom destructor for instance of StepRepr_MappedItem\n");
 	}
 };
 
@@ -2284,13 +2557,16 @@ class StepRepr_StructuralResponsePropertyDefinitionRepresentation : public StepR
 		StepRepr_StructuralResponsePropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_StructuralResponsePropertyDefinitionRepresentation();
 
 };
 %extend StepRepr_StructuralResponsePropertyDefinitionRepresentation {
 	Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation GetHandle() {
 	return *(Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation*) &$self;
+	}
+};
+%extend StepRepr_StructuralResponsePropertyDefinitionRepresentation {
+	~StepRepr_StructuralResponsePropertyDefinitionRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");
 	}
 };
 
@@ -2315,13 +2591,16 @@ class StepRepr_ReprItemAndLengthMeasureWithUnit : public StepRepr_Representation
 		Handle_StepRepr_RepresentationItem GetRepresentationItem() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ReprItemAndLengthMeasureWithUnit();
 
 };
 %extend StepRepr_ReprItemAndLengthMeasureWithUnit {
 	Handle_StepRepr_ReprItemAndLengthMeasureWithUnit GetHandle() {
 	return *(Handle_StepRepr_ReprItemAndLengthMeasureWithUnit*) &$self;
+	}
+};
+%extend StepRepr_ReprItemAndLengthMeasureWithUnit {
+	~StepRepr_ReprItemAndLengthMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepRepr_ReprItemAndLengthMeasureWithUnit\n");
 	}
 };
 
@@ -2382,13 +2661,16 @@ class StepRepr_ShapeAspectDerivingRelationship : public StepRepr_ShapeAspectRela
 		StepRepr_ShapeAspectDerivingRelationship();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ShapeAspectDerivingRelationship();
 
 };
 %extend StepRepr_ShapeAspectDerivingRelationship {
 	Handle_StepRepr_ShapeAspectDerivingRelationship GetHandle() {
 	return *(Handle_StepRepr_ShapeAspectDerivingRelationship*) &$self;
+	}
+};
+%extend StepRepr_ShapeAspectDerivingRelationship {
+	~StepRepr_ShapeAspectDerivingRelationship() {
+	printf("Call custom destructor for instance of StepRepr_ShapeAspectDerivingRelationship\n");
 	}
 };
 
@@ -2425,13 +2707,16 @@ class StepRepr_RepresentationMap : public MMgt_TShared {
 		Handle_StepRepr_Representation MappedRepresentation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_RepresentationMap();
 
 };
 %extend StepRepr_RepresentationMap {
 	Handle_StepRepr_RepresentationMap GetHandle() {
 	return *(Handle_StepRepr_RepresentationMap*) &$self;
+	}
+};
+%extend StepRepr_RepresentationMap {
+	~StepRepr_RepresentationMap() {
+	printf("Call custom destructor for instance of StepRepr_RepresentationMap\n");
 	}
 };
 
@@ -2494,13 +2779,16 @@ class StepRepr_PropertyDefinition : public MMgt_TShared {
 		void SetDefinition(const StepRepr_CharacterizedDefinition &Definition);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_PropertyDefinition();
 
 };
 %extend StepRepr_PropertyDefinition {
 	Handle_StepRepr_PropertyDefinition GetHandle() {
 	return *(Handle_StepRepr_PropertyDefinition*) &$self;
+	}
+};
+%extend StepRepr_PropertyDefinition {
+	~StepRepr_PropertyDefinition() {
+	printf("Call custom destructor for instance of StepRepr_PropertyDefinition\n");
 	}
 };
 
@@ -2509,13 +2797,16 @@ class StepRepr_ProductDefinitionShape : public StepRepr_PropertyDefinition {
 	public:
 		%feature("autodoc", "1");
 		StepRepr_ProductDefinitionShape();
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ProductDefinitionShape();
 
 };
 %extend StepRepr_ProductDefinitionShape {
 	Handle_StepRepr_ProductDefinitionShape GetHandle() {
 	return *(Handle_StepRepr_ProductDefinitionShape*) &$self;
+	}
+};
+%extend StepRepr_ProductDefinitionShape {
+	~StepRepr_ProductDefinitionShape() {
+	printf("Call custom destructor for instance of StepRepr_ProductDefinitionShape\n");
 	}
 };
 
@@ -2538,13 +2829,16 @@ class StepRepr_CompoundRepresentationItem : public StepRepr_RepresentationItem {
 		void SetItemElementValue(const Standard_Integer num, const Handle_StepRepr_RepresentationItem &anelement);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_CompoundRepresentationItem();
 
 };
 %extend StepRepr_CompoundRepresentationItem {
 	Handle_StepRepr_CompoundRepresentationItem GetHandle() {
 	return *(Handle_StepRepr_CompoundRepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_CompoundRepresentationItem {
+	~StepRepr_CompoundRepresentationItem() {
+	printf("Call custom destructor for instance of StepRepr_CompoundRepresentationItem\n");
 	}
 };
 
@@ -2555,13 +2849,16 @@ class StepRepr_NextAssemblyUsageOccurrence : public StepRepr_AssemblyComponentUs
 		StepRepr_NextAssemblyUsageOccurrence();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_NextAssemblyUsageOccurrence();
 
 };
 %extend StepRepr_NextAssemblyUsageOccurrence {
 	Handle_StepRepr_NextAssemblyUsageOccurrence GetHandle() {
 	return *(Handle_StepRepr_NextAssemblyUsageOccurrence*) &$self;
+	}
+};
+%extend StepRepr_NextAssemblyUsageOccurrence {
+	~StepRepr_NextAssemblyUsageOccurrence() {
+	printf("Call custom destructor for instance of StepRepr_NextAssemblyUsageOccurrence\n");
 	}
 };
 
@@ -2584,13 +2881,16 @@ class StepRepr_GlobalUnitAssignedContext : public StepRepr_RepresentationContext
 		Standard_Integer NbUnits() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_GlobalUnitAssignedContext();
 
 };
 %extend StepRepr_GlobalUnitAssignedContext {
 	Handle_StepRepr_GlobalUnitAssignedContext GetHandle() {
 	return *(Handle_StepRepr_GlobalUnitAssignedContext*) &$self;
+	}
+};
+%extend StepRepr_GlobalUnitAssignedContext {
+	~StepRepr_GlobalUnitAssignedContext() {
+	printf("Call custom destructor for instance of StepRepr_GlobalUnitAssignedContext\n");
 	}
 };
 
@@ -2603,13 +2903,16 @@ class StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public T
 		Handle_StepRepr_MaterialPropertyRepresentation & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation();
 
 };
 %extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
 	Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation GetHandle() {
 	return *(Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation*) &$self;
+	}
+};
+%extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
+	~StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation\n");
 	}
 };
 
@@ -2620,13 +2923,16 @@ class StepRepr_ValueRange : public StepRepr_CompoundRepresentationItem {
 		StepRepr_ValueRange();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ValueRange();
 
 };
 %extend StepRepr_ValueRange {
 	Handle_StepRepr_ValueRange GetHandle() {
 	return *(Handle_StepRepr_ValueRange*) &$self;
+	}
+};
+%extend StepRepr_ValueRange {
+	~StepRepr_ValueRange() {
+	printf("Call custom destructor for instance of StepRepr_ValueRange\n");
 	}
 };
 
@@ -2687,13 +2993,16 @@ class StepRepr_ExternallyDefinedRepresentation : public StepRepr_Representation 
 		StepRepr_ExternallyDefinedRepresentation();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ExternallyDefinedRepresentation();
 
 };
 %extend StepRepr_ExternallyDefinedRepresentation {
 	Handle_StepRepr_ExternallyDefinedRepresentation GetHandle() {
 	return *(Handle_StepRepr_ExternallyDefinedRepresentation*) &$self;
+	}
+};
+%extend StepRepr_ExternallyDefinedRepresentation {
+	~StepRepr_ExternallyDefinedRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_ExternallyDefinedRepresentation\n");
 	}
 };
 
@@ -2704,13 +3013,16 @@ class StepRepr_DefinitionalRepresentation : public StepRepr_Representation {
 		StepRepr_DefinitionalRepresentation();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_DefinitionalRepresentation();
 
 };
 %extend StepRepr_DefinitionalRepresentation {
 	Handle_StepRepr_DefinitionalRepresentation GetHandle() {
 	return *(Handle_StepRepr_DefinitionalRepresentation*) &$self;
+	}
+};
+%extend StepRepr_DefinitionalRepresentation {
+	~StepRepr_DefinitionalRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_DefinitionalRepresentation\n");
 	}
 };
 
@@ -2739,13 +3051,16 @@ class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
 		void SetSubstitute(const Handle_StepRepr_AssemblyComponentUsage &aSubstitute);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_AssemblyComponentUsageSubstitute();
 
 };
 %extend StepRepr_AssemblyComponentUsageSubstitute {
 	Handle_StepRepr_AssemblyComponentUsageSubstitute GetHandle() {
 	return *(Handle_StepRepr_AssemblyComponentUsageSubstitute*) &$self;
+	}
+};
+%extend StepRepr_AssemblyComponentUsageSubstitute {
+	~StepRepr_AssemblyComponentUsageSubstitute() {
+	printf("Call custom destructor for instance of StepRepr_AssemblyComponentUsageSubstitute\n");
 	}
 };
 
@@ -2762,13 +3077,16 @@ class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyCompon
 		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_QuantifiedAssemblyComponentUsage();
 
 };
 %extend StepRepr_QuantifiedAssemblyComponentUsage {
 	Handle_StepRepr_QuantifiedAssemblyComponentUsage GetHandle() {
 	return *(Handle_StepRepr_QuantifiedAssemblyComponentUsage*) &$self;
+	}
+};
+%extend StepRepr_QuantifiedAssemblyComponentUsage {
+	~StepRepr_QuantifiedAssemblyComponentUsage() {
+	printf("Call custom destructor for instance of StepRepr_QuantifiedAssemblyComponentUsage\n");
 	}
 };
 
@@ -2805,13 +3123,16 @@ class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationIte
 		Handle_TCollection_HAsciiString Description() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_DescriptiveRepresentationItem();
 
 };
 %extend StepRepr_DescriptiveRepresentationItem {
 	Handle_StepRepr_DescriptiveRepresentationItem GetHandle() {
 	return *(Handle_StepRepr_DescriptiveRepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_DescriptiveRepresentationItem {
+	~StepRepr_DescriptiveRepresentationItem() {
+	printf("Call custom destructor for instance of StepRepr_DescriptiveRepresentationItem\n");
 	}
 };
 
@@ -2866,13 +3187,16 @@ class StepRepr_HSequenceOfMaterialPropertyRepresentation : public MMgt_TShared {
 		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_HSequenceOfMaterialPropertyRepresentation();
 
 };
 %extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
 	Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation GetHandle() {
 	return *(Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation*) &$self;
+	}
+};
+%extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
+	~StepRepr_HSequenceOfMaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_HSequenceOfMaterialPropertyRepresentation\n");
 	}
 };
 
@@ -2897,13 +3221,16 @@ class StepRepr_DataEnvironment : public MMgt_TShared {
 		void SetElements(const Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation &Elements);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_DataEnvironment();
 
 };
 %extend StepRepr_DataEnvironment {
 	Handle_StepRepr_DataEnvironment GetHandle() {
 	return *(Handle_StepRepr_DataEnvironment*) &$self;
+	}
+};
+%extend StepRepr_DataEnvironment {
+	~StepRepr_DataEnvironment() {
+	printf("Call custom destructor for instance of StepRepr_DataEnvironment\n");
 	}
 };
 
@@ -2972,13 +3299,16 @@ class StepRepr_MeasureRepresentationItem : public StepRepr_RepresentationItem {
 		Handle_StepBasic_MeasureWithUnit Measure() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_MeasureRepresentationItem();
 
 };
 %extend StepRepr_MeasureRepresentationItem {
 	Handle_StepRepr_MeasureRepresentationItem GetHandle() {
 	return *(Handle_StepRepr_MeasureRepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_MeasureRepresentationItem {
+	~StepRepr_MeasureRepresentationItem() {
+	printf("Call custom destructor for instance of StepRepr_MeasureRepresentationItem\n");
 	}
 };
 
@@ -2989,13 +3319,16 @@ class StepRepr_MaterialProperty : public StepRepr_PropertyDefinition {
 		StepRepr_MaterialProperty();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_MaterialProperty();
 
 };
 %extend StepRepr_MaterialProperty {
 	Handle_StepRepr_MaterialProperty GetHandle() {
 	return *(Handle_StepRepr_MaterialProperty*) &$self;
+	}
+};
+%extend StepRepr_MaterialProperty {
+	~StepRepr_MaterialProperty() {
+	printf("Call custom destructor for instance of StepRepr_MaterialProperty\n");
 	}
 };
 
@@ -3024,13 +3357,16 @@ class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
 		Handle_StepRepr_RepresentationItem TransformItem2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ItemDefinedTransformation();
 
 };
 %extend StepRepr_ItemDefinedTransformation {
 	Handle_StepRepr_ItemDefinedTransformation GetHandle() {
 	return *(Handle_StepRepr_ItemDefinedTransformation*) &$self;
+	}
+};
+%extend StepRepr_ItemDefinedTransformation {
+	~StepRepr_ItemDefinedTransformation() {
+	printf("Call custom destructor for instance of StepRepr_ItemDefinedTransformation\n");
 	}
 };
 
@@ -3041,13 +3377,16 @@ class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsag
 		StepRepr_PromissoryUsageOccurrence();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_PromissoryUsageOccurrence();
 
 };
 %extend StepRepr_PromissoryUsageOccurrence {
 	Handle_StepRepr_PromissoryUsageOccurrence GetHandle() {
 	return *(Handle_StepRepr_PromissoryUsageOccurrence*) &$self;
+	}
+};
+%extend StepRepr_PromissoryUsageOccurrence {
+	~StepRepr_PromissoryUsageOccurrence() {
+	printf("Call custom destructor for instance of StepRepr_PromissoryUsageOccurrence\n");
 	}
 };
 
@@ -3058,13 +3397,16 @@ class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
 		StepRepr_StructuralResponseProperty();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_StructuralResponseProperty();
 
 };
 %extend StepRepr_StructuralResponseProperty {
 	Handle_StepRepr_StructuralResponseProperty GetHandle() {
 	return *(Handle_StepRepr_StructuralResponseProperty*) &$self;
+	}
+};
+%extend StepRepr_StructuralResponseProperty {
+	~StepRepr_StructuralResponseProperty() {
+	printf("Call custom destructor for instance of StepRepr_StructuralResponseProperty\n");
 	}
 };
 
@@ -3089,13 +3431,16 @@ class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
 		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_MakeFromUsageOption();
 
 };
 %extend StepRepr_MakeFromUsageOption {
 	Handle_StepRepr_MakeFromUsageOption GetHandle() {
 	return *(Handle_StepRepr_MakeFromUsageOption*) &$self;
+	}
+};
+%extend StepRepr_MakeFromUsageOption {
+	~StepRepr_MakeFromUsageOption() {
+	printf("Call custom destructor for instance of StepRepr_MakeFromUsageOption\n");
 	}
 };
 
@@ -3132,12 +3477,15 @@ class StepRepr_ConfigurationItem : public MMgt_TShared {
 		Standard_Boolean HasPurpose() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ConfigurationItem();
 
 };
 %extend StepRepr_ConfigurationItem {
 	Handle_StepRepr_ConfigurationItem GetHandle() {
 	return *(Handle_StepRepr_ConfigurationItem*) &$self;
+	}
+};
+%extend StepRepr_ConfigurationItem {
+	~StepRepr_ConfigurationItem() {
+	printf("Call custom destructor for instance of StepRepr_ConfigurationItem\n");
 	}
 };

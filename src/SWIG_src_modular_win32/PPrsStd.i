@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PPrsStd_AISPresentation();
-		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation();
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation(const Handle_PPrsStd_AISPresentation &aHandle);
@@ -118,12 +116,15 @@ class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 	return (PPrsStd_AISPresentation*)$self->Access();
 	}
 };
+%extend Handle_PPrsStd_AISPresentation {
+	~Handle_PPrsStd_AISPresentation() {
+	printf("Call custom destructor for instance of Handle_PPrsStd_AISPresentation\n");
+	}
+};
 
 %nodefaultctor Handle_PPrsStd_AISPresentation_1;
 class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPrsStd_AISPresentation_1();
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation_1();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 %extend Handle_PPrsStd_AISPresentation_1 {
 	PPrsStd_AISPresentation_1* GetObject() {
 	return (PPrsStd_AISPresentation_1*)$self->Access();
+	}
+};
+%extend Handle_PPrsStd_AISPresentation_1 {
+	~Handle_PPrsStd_AISPresentation_1() {
+	printf("Call custom destructor for instance of Handle_PPrsStd_AISPresentation_1\n");
 	}
 };
 
@@ -205,13 +211,16 @@ class PPrsStd_AISPresentation_1 : public PDF_Attribute {
 		void _CSFDB_SetPPrsStd_AISPresentation_1myMode(const Standard_Integer p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPrsStd_AISPresentation_1();
 
 };
 %extend PPrsStd_AISPresentation_1 {
 	Handle_PPrsStd_AISPresentation_1 GetHandle() {
 	return *(Handle_PPrsStd_AISPresentation_1*) &$self;
+	}
+};
+%extend PPrsStd_AISPresentation_1 {
+	~PPrsStd_AISPresentation_1() {
+	printf("Call custom destructor for instance of PPrsStd_AISPresentation_1\n");
 	}
 };
 
@@ -272,12 +281,15 @@ class PPrsStd_AISPresentation : public PDF_Attribute {
 		void _CSFDB_SetPPrsStd_AISPresentationmyWidth(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPrsStd_AISPresentation();
 
 };
 %extend PPrsStd_AISPresentation {
 	Handle_PPrsStd_AISPresentation GetHandle() {
 	return *(Handle_PPrsStd_AISPresentation*) &$self;
+	}
+};
+%extend PPrsStd_AISPresentation {
+	~PPrsStd_AISPresentation() {
+	printf("Call custom destructor for instance of PPrsStd_AISPresentation\n");
 	}
 };

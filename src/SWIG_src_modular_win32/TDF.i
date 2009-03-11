@@ -104,8 +104,6 @@ typedef TDF_LabelNode * TDF_LabelNodePtr;
 class Handle_TDF_DoubleMapNodeOfGUIDProgIDMap : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TDF_DoubleMapNodeOfGUIDProgIDMap();
-		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfGUIDProgIDMap();
 		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfGUIDProgIDMap(const Handle_TDF_DoubleMapNodeOfGUIDProgIDMap &aHandle);
@@ -120,12 +118,15 @@ class Handle_TDF_DoubleMapNodeOfGUIDProgIDMap : public Handle_TCollection_MapNod
 	return (TDF_DoubleMapNodeOfGUIDProgIDMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_DoubleMapNodeOfGUIDProgIDMap {
+	~Handle_TDF_DoubleMapNodeOfGUIDProgIDMap() {
+	printf("Call custom destructor for instance of Handle_TDF_DoubleMapNodeOfGUIDProgIDMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_AttributeDelta;
 class Handle_TDF_AttributeDelta : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_AttributeDelta();
 		%feature("autodoc", "1");
 		Handle_TDF_AttributeDelta();
 		%feature("autodoc", "1");
@@ -141,12 +142,15 @@ class Handle_TDF_AttributeDelta : public Handle_MMgt_TShared {
 	return (TDF_AttributeDelta*)$self->Access();
 	}
 };
+%extend Handle_TDF_AttributeDelta {
+	~Handle_TDF_AttributeDelta() {
+	printf("Call custom destructor for instance of Handle_TDF_AttributeDelta\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DeltaOnForget;
 class Handle_TDF_DeltaOnForget : public Handle_TDF_AttributeDelta {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DeltaOnForget();
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnForget();
 		%feature("autodoc", "1");
@@ -162,12 +166,15 @@ class Handle_TDF_DeltaOnForget : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnForget*)$self->Access();
 	}
 };
+%extend Handle_TDF_DeltaOnForget {
+	~Handle_TDF_DeltaOnForget() {
+	printf("Call custom destructor for instance of Handle_TDF_DeltaOnForget\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_StdMapNodeOfLabelMap;
 class Handle_TDF_StdMapNodeOfLabelMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_StdMapNodeOfLabelMap();
 		%feature("autodoc", "1");
 		Handle_TDF_StdMapNodeOfLabelMap();
 		%feature("autodoc", "1");
@@ -183,12 +190,15 @@ class Handle_TDF_StdMapNodeOfLabelMap : public Handle_TCollection_MapNode {
 	return (TDF_StdMapNodeOfLabelMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_StdMapNodeOfLabelMap {
+	~Handle_TDF_StdMapNodeOfLabelMap() {
+	printf("Call custom destructor for instance of Handle_TDF_StdMapNodeOfLabelMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DeltaOnRemoval;
 class Handle_TDF_DeltaOnRemoval : public Handle_TDF_AttributeDelta {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DeltaOnRemoval();
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnRemoval();
 		%feature("autodoc", "1");
@@ -204,12 +214,15 @@ class Handle_TDF_DeltaOnRemoval : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnRemoval*)$self->Access();
 	}
 };
+%extend Handle_TDF_DeltaOnRemoval {
+	~Handle_TDF_DeltaOnRemoval() {
+	printf("Call custom destructor for instance of Handle_TDF_DeltaOnRemoval\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_ListNodeOfAttributeDeltaList;
 class Handle_TDF_ListNodeOfAttributeDeltaList : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_ListNodeOfAttributeDeltaList();
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfAttributeDeltaList();
 		%feature("autodoc", "1");
@@ -225,12 +238,15 @@ class Handle_TDF_ListNodeOfAttributeDeltaList : public Handle_TCollection_MapNod
 	return (TDF_ListNodeOfAttributeDeltaList*)$self->Access();
 	}
 };
+%extend Handle_TDF_ListNodeOfAttributeDeltaList {
+	~Handle_TDF_ListNodeOfAttributeDeltaList() {
+	printf("Call custom destructor for instance of Handle_TDF_ListNodeOfAttributeDeltaList\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_ListNodeOfIDList;
 class Handle_TDF_ListNodeOfIDList : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_ListNodeOfIDList();
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfIDList();
 		%feature("autodoc", "1");
@@ -246,12 +262,15 @@ class Handle_TDF_ListNodeOfIDList : public Handle_TCollection_MapNode {
 	return (TDF_ListNodeOfIDList*)$self->Access();
 	}
 };
+%extend Handle_TDF_ListNodeOfIDList {
+	~Handle_TDF_ListNodeOfIDList() {
+	printf("Call custom destructor for instance of Handle_TDF_ListNodeOfIDList\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_Attribute;
 class Handle_TDF_Attribute : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_Attribute();
 		%feature("autodoc", "1");
 		Handle_TDF_Attribute();
 		%feature("autodoc", "1");
@@ -267,12 +286,15 @@ class Handle_TDF_Attribute : public Handle_MMgt_TShared {
 	return (TDF_Attribute*)$self->Access();
 	}
 };
+%extend Handle_TDF_Attribute {
+	~Handle_TDF_Attribute() {
+	printf("Call custom destructor for instance of Handle_TDF_Attribute\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelIntegerMap;
 class Handle_TDF_DataMapNodeOfLabelIntegerMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DataMapNodeOfLabelIntegerMap();
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfLabelIntegerMap();
 		%feature("autodoc", "1");
@@ -288,12 +310,15 @@ class Handle_TDF_DataMapNodeOfLabelIntegerMap : public Handle_TCollection_MapNod
 	return (TDF_DataMapNodeOfLabelIntegerMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_DataMapNodeOfLabelIntegerMap {
+	~Handle_TDF_DataMapNodeOfLabelIntegerMap() {
+	printf("Call custom destructor for instance of Handle_TDF_DataMapNodeOfLabelIntegerMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_RelocationTable;
 class Handle_TDF_RelocationTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_RelocationTable();
 		%feature("autodoc", "1");
 		Handle_TDF_RelocationTable();
 		%feature("autodoc", "1");
@@ -309,12 +334,15 @@ class Handle_TDF_RelocationTable : public Handle_MMgt_TShared {
 	return (TDF_RelocationTable*)$self->Access();
 	}
 };
+%extend Handle_TDF_RelocationTable {
+	~Handle_TDF_RelocationTable() {
+	printf("Call custom destructor for instance of Handle_TDF_RelocationTable\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_Reference;
 class Handle_TDF_Reference : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_Reference();
 		%feature("autodoc", "1");
 		Handle_TDF_Reference();
 		%feature("autodoc", "1");
@@ -330,12 +358,15 @@ class Handle_TDF_Reference : public Handle_TDF_Attribute {
 	return (TDF_Reference*)$self->Access();
 	}
 };
+%extend Handle_TDF_Reference {
+	~Handle_TDF_Reference() {
+	printf("Call custom destructor for instance of Handle_TDF_Reference\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_SequenceNodeOfAttributeSequence;
 class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_SequenceNodeOfAttributeSequence();
 		%feature("autodoc", "1");
 		Handle_TDF_SequenceNodeOfAttributeSequence();
 		%feature("autodoc", "1");
@@ -351,12 +382,15 @@ class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_Seq
 	return (TDF_SequenceNodeOfAttributeSequence*)$self->Access();
 	}
 };
+%extend Handle_TDF_SequenceNodeOfAttributeSequence {
+	~Handle_TDF_SequenceNodeOfAttributeSequence() {
+	printf("Call custom destructor for instance of Handle_TDF_SequenceNodeOfAttributeSequence\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_Data;
 class Handle_TDF_Data : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_Data();
 		%feature("autodoc", "1");
 		Handle_TDF_Data();
 		%feature("autodoc", "1");
@@ -372,12 +406,15 @@ class Handle_TDF_Data : public Handle_MMgt_TShared {
 	return (TDF_Data*)$self->Access();
 	}
 };
+%extend Handle_TDF_Data {
+	~Handle_TDF_Data() {
+	printf("Call custom destructor for instance of Handle_TDF_Data\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DoubleMapNodeOfLabelDoubleMap;
 class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DoubleMapNodeOfLabelDoubleMap();
 		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfLabelDoubleMap();
 		%feature("autodoc", "1");
@@ -393,12 +430,15 @@ class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNo
 	return (TDF_DoubleMapNodeOfLabelDoubleMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_DoubleMapNodeOfLabelDoubleMap {
+	~Handle_TDF_DoubleMapNodeOfLabelDoubleMap() {
+	printf("Call custom destructor for instance of Handle_TDF_DoubleMapNodeOfLabelDoubleMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_IndexedMapNodeOfAttributeIndexedMap;
 class Handle_TDF_IndexedMapNodeOfAttributeIndexedMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_IndexedMapNodeOfAttributeIndexedMap();
 		%feature("autodoc", "1");
 		Handle_TDF_IndexedMapNodeOfAttributeIndexedMap();
 		%feature("autodoc", "1");
@@ -414,12 +454,15 @@ class Handle_TDF_IndexedMapNodeOfAttributeIndexedMap : public Handle_TCollection
 	return (TDF_IndexedMapNodeOfAttributeIndexedMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_IndexedMapNodeOfAttributeIndexedMap {
+	~Handle_TDF_IndexedMapNodeOfAttributeIndexedMap() {
+	printf("Call custom destructor for instance of Handle_TDF_IndexedMapNodeOfAttributeIndexedMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_HAttributeArray1;
 class Handle_TDF_HAttributeArray1 : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_HAttributeArray1();
 		%feature("autodoc", "1");
 		Handle_TDF_HAttributeArray1();
 		%feature("autodoc", "1");
@@ -435,12 +478,15 @@ class Handle_TDF_HAttributeArray1 : public Handle_MMgt_TShared {
 	return (TDF_HAttributeArray1*)$self->Access();
 	}
 };
+%extend Handle_TDF_HAttributeArray1 {
+	~Handle_TDF_HAttributeArray1() {
+	printf("Call custom destructor for instance of Handle_TDF_HAttributeArray1\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelLabelMap;
 class Handle_TDF_DataMapNodeOfLabelLabelMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DataMapNodeOfLabelLabelMap();
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfLabelLabelMap();
 		%feature("autodoc", "1");
@@ -456,12 +502,15 @@ class Handle_TDF_DataMapNodeOfLabelLabelMap : public Handle_TCollection_MapNode 
 	return (TDF_DataMapNodeOfLabelLabelMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_DataMapNodeOfLabelLabelMap {
+	~Handle_TDF_DataMapNodeOfLabelLabelMap() {
+	printf("Call custom destructor for instance of Handle_TDF_DataMapNodeOfLabelLabelMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_TagSource;
 class Handle_TDF_TagSource : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_TagSource();
 		%feature("autodoc", "1");
 		Handle_TDF_TagSource();
 		%feature("autodoc", "1");
@@ -477,12 +526,15 @@ class Handle_TDF_TagSource : public Handle_TDF_Attribute {
 	return (TDF_TagSource*)$self->Access();
 	}
 };
+%extend Handle_TDF_TagSource {
+	~Handle_TDF_TagSource() {
+	printf("Call custom destructor for instance of Handle_TDF_TagSource\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_ListNodeOfDeltaList;
 class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_ListNodeOfDeltaList();
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfDeltaList();
 		%feature("autodoc", "1");
@@ -498,12 +550,15 @@ class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
 	return (TDF_ListNodeOfDeltaList*)$self->Access();
 	}
 };
+%extend Handle_TDF_ListNodeOfDeltaList {
+	~Handle_TDF_ListNodeOfDeltaList() {
+	printf("Call custom destructor for instance of Handle_TDF_ListNodeOfDeltaList\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_ListNodeOfAttributeList;
 class Handle_TDF_ListNodeOfAttributeList : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_ListNodeOfAttributeList();
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfAttributeList();
 		%feature("autodoc", "1");
@@ -519,12 +574,15 @@ class Handle_TDF_ListNodeOfAttributeList : public Handle_TCollection_MapNode {
 	return (TDF_ListNodeOfAttributeList*)$self->Access();
 	}
 };
+%extend Handle_TDF_ListNodeOfAttributeList {
+	~Handle_TDF_ListNodeOfAttributeList() {
+	printf("Call custom destructor for instance of Handle_TDF_ListNodeOfAttributeList\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DoubleMapNodeOfAttributeDoubleMap;
 class Handle_TDF_DoubleMapNodeOfAttributeDoubleMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DoubleMapNodeOfAttributeDoubleMap();
 		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfAttributeDoubleMap();
 		%feature("autodoc", "1");
@@ -540,12 +598,15 @@ class Handle_TDF_DoubleMapNodeOfAttributeDoubleMap : public Handle_TCollection_M
 	return (TDF_DoubleMapNodeOfAttributeDoubleMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_DoubleMapNodeOfAttributeDoubleMap {
+	~Handle_TDF_DoubleMapNodeOfAttributeDoubleMap() {
+	printf("Call custom destructor for instance of Handle_TDF_DoubleMapNodeOfAttributeDoubleMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_StdMapNodeOfAttributeMap;
 class Handle_TDF_StdMapNodeOfAttributeMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_StdMapNodeOfAttributeMap();
 		%feature("autodoc", "1");
 		Handle_TDF_StdMapNodeOfAttributeMap();
 		%feature("autodoc", "1");
@@ -561,12 +622,15 @@ class Handle_TDF_StdMapNodeOfAttributeMap : public Handle_TCollection_MapNode {
 	return (TDF_StdMapNodeOfAttributeMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_StdMapNodeOfAttributeMap {
+	~Handle_TDF_StdMapNodeOfAttributeMap() {
+	printf("Call custom destructor for instance of Handle_TDF_StdMapNodeOfAttributeMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DeltaOnAddition;
 class Handle_TDF_DeltaOnAddition : public Handle_TDF_AttributeDelta {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DeltaOnAddition();
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnAddition();
 		%feature("autodoc", "1");
@@ -582,12 +646,15 @@ class Handle_TDF_DeltaOnAddition : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnAddition*)$self->Access();
 	}
 };
+%extend Handle_TDF_DeltaOnAddition {
+	~Handle_TDF_DeltaOnAddition() {
+	printf("Call custom destructor for instance of Handle_TDF_DeltaOnAddition\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_ListNodeOfLabelList;
 class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_ListNodeOfLabelList();
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfLabelList();
 		%feature("autodoc", "1");
@@ -603,12 +670,15 @@ class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
 	return (TDF_ListNodeOfLabelList*)$self->Access();
 	}
 };
+%extend Handle_TDF_ListNodeOfLabelList {
+	~Handle_TDF_ListNodeOfLabelList() {
+	printf("Call custom destructor for instance of Handle_TDF_ListNodeOfLabelList\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DataSet;
 class Handle_TDF_DataSet : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DataSet();
 		%feature("autodoc", "1");
 		Handle_TDF_DataSet();
 		%feature("autodoc", "1");
@@ -624,12 +694,15 @@ class Handle_TDF_DataSet : public Handle_MMgt_TShared {
 	return (TDF_DataSet*)$self->Access();
 	}
 };
+%extend Handle_TDF_DataSet {
+	~Handle_TDF_DataSet() {
+	printf("Call custom destructor for instance of Handle_TDF_DataSet\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DeltaOnModification;
 class Handle_TDF_DeltaOnModification : public Handle_TDF_AttributeDelta {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DeltaOnModification();
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnModification();
 		%feature("autodoc", "1");
@@ -645,12 +718,15 @@ class Handle_TDF_DeltaOnModification : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnModification*)$self->Access();
 	}
 };
+%extend Handle_TDF_DeltaOnModification {
+	~Handle_TDF_DeltaOnModification() {
+	printf("Call custom destructor for instance of Handle_TDF_DeltaOnModification\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelDataMap;
 class Handle_TDF_DataMapNodeOfLabelDataMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DataMapNodeOfLabelDataMap();
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfLabelDataMap();
 		%feature("autodoc", "1");
@@ -666,12 +742,15 @@ class Handle_TDF_DataMapNodeOfLabelDataMap : public Handle_TCollection_MapNode {
 	return (TDF_DataMapNodeOfLabelDataMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_DataMapNodeOfLabelDataMap {
+	~Handle_TDF_DataMapNodeOfLabelDataMap() {
+	printf("Call custom destructor for instance of Handle_TDF_DataMapNodeOfLabelDataMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DefaultDeltaOnModification;
 class Handle_TDF_DefaultDeltaOnModification : public Handle_TDF_DeltaOnModification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DefaultDeltaOnModification();
 		%feature("autodoc", "1");
 		Handle_TDF_DefaultDeltaOnModification();
 		%feature("autodoc", "1");
@@ -687,12 +766,15 @@ class Handle_TDF_DefaultDeltaOnModification : public Handle_TDF_DeltaOnModificat
 	return (TDF_DefaultDeltaOnModification*)$self->Access();
 	}
 };
+%extend Handle_TDF_DefaultDeltaOnModification {
+	~Handle_TDF_DefaultDeltaOnModification() {
+	printf("Call custom destructor for instance of Handle_TDF_DefaultDeltaOnModification\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DefaultDeltaOnRemoval;
 class Handle_TDF_DefaultDeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DefaultDeltaOnRemoval();
 		%feature("autodoc", "1");
 		Handle_TDF_DefaultDeltaOnRemoval();
 		%feature("autodoc", "1");
@@ -708,12 +790,15 @@ class Handle_TDF_DefaultDeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 	return (TDF_DefaultDeltaOnRemoval*)$self->Access();
 	}
 };
+%extend Handle_TDF_DefaultDeltaOnRemoval {
+	~Handle_TDF_DefaultDeltaOnRemoval() {
+	printf("Call custom destructor for instance of Handle_TDF_DefaultDeltaOnRemoval\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DataMapNodeOfAttributeDataMap;
 class Handle_TDF_DataMapNodeOfAttributeDataMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DataMapNodeOfAttributeDataMap();
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfAttributeDataMap();
 		%feature("autodoc", "1");
@@ -729,12 +814,15 @@ class Handle_TDF_DataMapNodeOfAttributeDataMap : public Handle_TCollection_MapNo
 	return (TDF_DataMapNodeOfAttributeDataMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_DataMapNodeOfAttributeDataMap {
+	~Handle_TDF_DataMapNodeOfAttributeDataMap() {
+	printf("Call custom destructor for instance of Handle_TDF_DataMapNodeOfAttributeDataMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_DeltaOnResume;
 class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_DeltaOnResume();
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnResume();
 		%feature("autodoc", "1");
@@ -750,12 +838,15 @@ class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnResume*)$self->Access();
 	}
 };
+%extend Handle_TDF_DeltaOnResume {
+	~Handle_TDF_DeltaOnResume() {
+	printf("Call custom destructor for instance of Handle_TDF_DeltaOnResume\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_StdMapNodeOfIDMap;
 class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_StdMapNodeOfIDMap();
 		%feature("autodoc", "1");
 		Handle_TDF_StdMapNodeOfIDMap();
 		%feature("autodoc", "1");
@@ -771,12 +862,15 @@ class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
 	return (TDF_StdMapNodeOfIDMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_StdMapNodeOfIDMap {
+	~Handle_TDF_StdMapNodeOfIDMap() {
+	printf("Call custom destructor for instance of Handle_TDF_StdMapNodeOfIDMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_IndexedMapNodeOfLabelIndexedMap;
 class Handle_TDF_IndexedMapNodeOfLabelIndexedMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_IndexedMapNodeOfLabelIndexedMap();
 		%feature("autodoc", "1");
 		Handle_TDF_IndexedMapNodeOfLabelIndexedMap();
 		%feature("autodoc", "1");
@@ -792,12 +886,15 @@ class Handle_TDF_IndexedMapNodeOfLabelIndexedMap : public Handle_TCollection_Map
 	return (TDF_IndexedMapNodeOfLabelIndexedMap*)$self->Access();
 	}
 };
+%extend Handle_TDF_IndexedMapNodeOfLabelIndexedMap {
+	~Handle_TDF_IndexedMapNodeOfLabelIndexedMap() {
+	printf("Call custom destructor for instance of Handle_TDF_IndexedMapNodeOfLabelIndexedMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_Delta;
 class Handle_TDF_Delta : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_Delta();
 		%feature("autodoc", "1");
 		Handle_TDF_Delta();
 		%feature("autodoc", "1");
@@ -813,12 +910,15 @@ class Handle_TDF_Delta : public Handle_MMgt_TShared {
 	return (TDF_Delta*)$self->Access();
 	}
 };
+%extend Handle_TDF_Delta {
+	~Handle_TDF_Delta() {
+	printf("Call custom destructor for instance of Handle_TDF_Delta\n");
+	}
+};
 
 %nodefaultctor Handle_TDF_SequenceNodeOfLabelSequence;
 class Handle_TDF_SequenceNodeOfLabelSequence : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDF_SequenceNodeOfLabelSequence();
 		%feature("autodoc", "1");
 		Handle_TDF_SequenceNodeOfLabelSequence();
 		%feature("autodoc", "1");
@@ -832,6 +932,11 @@ class Handle_TDF_SequenceNodeOfLabelSequence : public Handle_TCollection_SeqNode
 %extend Handle_TDF_SequenceNodeOfLabelSequence {
 	TDF_SequenceNodeOfLabelSequence* GetObject() {
 	return (TDF_SequenceNodeOfLabelSequence*)$self->Access();
+	}
+};
+%extend Handle_TDF_SequenceNodeOfLabelSequence {
+	~Handle_TDF_SequenceNodeOfLabelSequence() {
+	printf("Call custom destructor for instance of Handle_TDF_SequenceNodeOfLabelSequence\n");
 	}
 };
 
@@ -1025,6 +1130,11 @@ class TDF_Attribute : public MMgt_TShared {
 	return *(Handle_TDF_Attribute*) &$self;
 	}
 };
+%extend TDF_Attribute {
+	~TDF_Attribute() {
+	printf("Call custom destructor for instance of TDF_Attribute\n");
+	}
+};
 
 %nodefaultctor TDF_LabelMapHasher;
 class TDF_LabelMapHasher {
@@ -1049,13 +1159,16 @@ class TDF_ListNodeOfDeltaList : public TCollection_MapNode {
 		Handle_TDF_Delta & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_ListNodeOfDeltaList();
 
 };
 %extend TDF_ListNodeOfDeltaList {
 	Handle_TDF_ListNodeOfDeltaList GetHandle() {
 	return *(Handle_TDF_ListNodeOfDeltaList*) &$self;
+	}
+};
+%extend TDF_ListNodeOfDeltaList {
+	~TDF_ListNodeOfDeltaList() {
+	printf("Call custom destructor for instance of TDF_ListNodeOfDeltaList\n");
 	}
 };
 
@@ -1072,13 +1185,16 @@ class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DoubleMapNodeOfGUIDProgIDMap();
 
 };
 %extend TDF_DoubleMapNodeOfGUIDProgIDMap {
 	Handle_TDF_DoubleMapNodeOfGUIDProgIDMap GetHandle() {
 	return *(Handle_TDF_DoubleMapNodeOfGUIDProgIDMap*) &$self;
+	}
+};
+%extend TDF_DoubleMapNodeOfGUIDProgIDMap {
+	~TDF_DoubleMapNodeOfGUIDProgIDMap() {
+	printf("Call custom destructor for instance of TDF_DoubleMapNodeOfGUIDProgIDMap\n");
 	}
 };
 
@@ -1134,6 +1250,11 @@ class TDF_AttributeDelta : public MMgt_TShared {
 	return *(Handle_TDF_AttributeDelta*) &$self;
 	}
 };
+%extend TDF_AttributeDelta {
+	~TDF_AttributeDelta() {
+	printf("Call custom destructor for instance of TDF_AttributeDelta\n");
+	}
+};
 
 %nodefaultctor TDF_DeltaOnRemoval;
 class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
@@ -1145,19 +1266,27 @@ class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
 	return *(Handle_TDF_DeltaOnRemoval*) &$self;
 	}
 };
+%extend TDF_DeltaOnRemoval {
+	~TDF_DeltaOnRemoval() {
+	printf("Call custom destructor for instance of TDF_DeltaOnRemoval\n");
+	}
+};
 
 %nodefaultctor TDF_DefaultDeltaOnRemoval;
 class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
 	public:
 		%feature("autodoc", "1");
 		TDF_DefaultDeltaOnRemoval(const Handle_TDF_Attribute &anAttribute);
-		%feature("autodoc", "1");
-		virtual		~TDF_DefaultDeltaOnRemoval();
 
 };
 %extend TDF_DefaultDeltaOnRemoval {
 	Handle_TDF_DefaultDeltaOnRemoval GetHandle() {
 	return *(Handle_TDF_DefaultDeltaOnRemoval*) &$self;
+	}
+};
+%extend TDF_DefaultDeltaOnRemoval {
+	~TDF_DefaultDeltaOnRemoval() {
+	printf("Call custom destructor for instance of TDF_DefaultDeltaOnRemoval\n");
 	}
 };
 
@@ -1216,13 +1345,16 @@ class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
 		TDF_Label & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_SequenceNodeOfLabelSequence();
 
 };
 %extend TDF_SequenceNodeOfLabelSequence {
 	Handle_TDF_SequenceNodeOfLabelSequence GetHandle() {
 	return *(Handle_TDF_SequenceNodeOfLabelSequence*) &$self;
+	}
+};
+%extend TDF_SequenceNodeOfLabelSequence {
+	~TDF_SequenceNodeOfLabelSequence() {
+	printf("Call custom destructor for instance of TDF_SequenceNodeOfLabelSequence\n");
 	}
 };
 
@@ -1255,13 +1387,16 @@ class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
 		Handle_TDF_AttributeDelta & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_ListNodeOfAttributeDeltaList();
 
 };
 %extend TDF_ListNodeOfAttributeDeltaList {
 	Handle_TDF_ListNodeOfAttributeDeltaList GetHandle() {
 	return *(Handle_TDF_ListNodeOfAttributeDeltaList*) &$self;
+	}
+};
+%extend TDF_ListNodeOfAttributeDeltaList {
+	~TDF_ListNodeOfAttributeDeltaList() {
+	printf("Call custom destructor for instance of TDF_ListNodeOfAttributeDeltaList\n");
 	}
 };
 
@@ -1326,13 +1461,16 @@ class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
 		TDF_Label & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DataMapNodeOfLabelDataMap();
 
 };
 %extend TDF_DataMapNodeOfLabelDataMap {
 	Handle_TDF_DataMapNodeOfLabelDataMap GetHandle() {
 	return *(Handle_TDF_DataMapNodeOfLabelDataMap*) &$self;
+	}
+};
+%extend TDF_DataMapNodeOfLabelDataMap {
+	~TDF_DataMapNodeOfLabelDataMap() {
+	printf("Call custom destructor for instance of TDF_DataMapNodeOfLabelDataMap\n");
 	}
 };
 
@@ -1347,13 +1485,16 @@ class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DataMapNodeOfLabelIntegerMap();
 
 };
 %extend TDF_DataMapNodeOfLabelIntegerMap {
 	Handle_TDF_DataMapNodeOfLabelIntegerMap GetHandle() {
 	return *(Handle_TDF_DataMapNodeOfLabelIntegerMap*) &$self;
+	}
+};
+%extend TDF_DataMapNodeOfLabelIntegerMap {
+	~TDF_DataMapNodeOfLabelIntegerMap() {
+	printf("Call custom destructor for instance of TDF_DataMapNodeOfLabelIntegerMap\n");
 	}
 };
 
@@ -1404,13 +1545,16 @@ class TDF_ListNodeOfLabelList : public TCollection_MapNode {
 		TDF_Label & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_ListNodeOfLabelList();
 
 };
 %extend TDF_ListNodeOfLabelList {
 	Handle_TDF_ListNodeOfLabelList GetHandle() {
 	return *(Handle_TDF_ListNodeOfLabelList*) &$self;
+	}
+};
+%extend TDF_ListNodeOfLabelList {
+	~TDF_ListNodeOfLabelList() {
+	printf("Call custom destructor for instance of TDF_ListNodeOfLabelList\n");
 	}
 };
 
@@ -1423,13 +1567,16 @@ class TDF_SequenceNodeOfAttributeSequence : public TCollection_SeqNode {
 		Handle_TDF_Attribute & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_SequenceNodeOfAttributeSequence();
 
 };
 %extend TDF_SequenceNodeOfAttributeSequence {
 	Handle_TDF_SequenceNodeOfAttributeSequence GetHandle() {
 	return *(Handle_TDF_SequenceNodeOfAttributeSequence*) &$self;
+	}
+};
+%extend TDF_SequenceNodeOfAttributeSequence {
+	~TDF_SequenceNodeOfAttributeSequence() {
+	printf("Call custom destructor for instance of TDF_SequenceNodeOfAttributeSequence\n");
 	}
 };
 
@@ -1484,13 +1631,16 @@ class TDF_TagSource : public TDF_Attribute {
 		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_TagSource();
 
 };
 %extend TDF_TagSource {
 	Handle_TDF_TagSource GetHandle() {
 	return *(Handle_TDF_TagSource*) &$self;
+	}
+};
+%extend TDF_TagSource {
+	~TDF_TagSource() {
+	printf("Call custom destructor for instance of TDF_TagSource\n");
 	}
 };
 
@@ -1503,13 +1653,16 @@ class TDF_DeltaOnForget : public TDF_AttributeDelta {
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DeltaOnForget();
 
 };
 %extend TDF_DeltaOnForget {
 	Handle_TDF_DeltaOnForget GetHandle() {
 	return *(Handle_TDF_DeltaOnForget*) &$self;
+	}
+};
+%extend TDF_DeltaOnForget {
+	~TDF_DeltaOnForget() {
+	printf("Call custom destructor for instance of TDF_DeltaOnForget\n");
 	}
 };
 
@@ -1586,13 +1739,16 @@ class TDF_StdMapNodeOfAttributeMap : public TCollection_MapNode {
 		Handle_TDF_Attribute & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_StdMapNodeOfAttributeMap();
 
 };
 %extend TDF_StdMapNodeOfAttributeMap {
 	Handle_TDF_StdMapNodeOfAttributeMap GetHandle() {
 	return *(Handle_TDF_StdMapNodeOfAttributeMap*) &$self;
+	}
+};
+%extend TDF_StdMapNodeOfAttributeMap {
+	~TDF_StdMapNodeOfAttributeMap() {
+	printf("Call custom destructor for instance of TDF_StdMapNodeOfAttributeMap\n");
 	}
 };
 
@@ -1605,13 +1761,16 @@ class TDF_DeltaOnResume : public TDF_AttributeDelta {
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DeltaOnResume();
 
 };
 %extend TDF_DeltaOnResume {
 	Handle_TDF_DeltaOnResume GetHandle() {
 	return *(Handle_TDF_DeltaOnResume*) &$self;
+	}
+};
+%extend TDF_DeltaOnResume {
+	~TDF_DeltaOnResume() {
+	printf("Call custom destructor for instance of TDF_DeltaOnResume\n");
 	}
 };
 
@@ -1624,13 +1783,16 @@ class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 		Standard_GUID & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_StdMapNodeOfIDMap();
 
 };
 %extend TDF_StdMapNodeOfIDMap {
 	Handle_TDF_StdMapNodeOfIDMap GetHandle() {
 	return *(Handle_TDF_StdMapNodeOfIDMap*) &$self;
+	}
+};
+%extend TDF_StdMapNodeOfIDMap {
+	~TDF_StdMapNodeOfIDMap() {
+	printf("Call custom destructor for instance of TDF_StdMapNodeOfIDMap\n");
 	}
 };
 
@@ -1663,13 +1825,16 @@ class TDF_DeltaOnModification : public TDF_AttributeDelta {
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DeltaOnModification();
 
 };
 %extend TDF_DeltaOnModification {
 	Handle_TDF_DeltaOnModification GetHandle() {
 	return *(Handle_TDF_DeltaOnModification*) &$self;
+	}
+};
+%extend TDF_DeltaOnModification {
+	~TDF_DeltaOnModification() {
+	printf("Call custom destructor for instance of TDF_DeltaOnModification\n");
 	}
 };
 
@@ -1734,13 +1899,16 @@ class TDF_RelocationTable : public MMgt_TShared {
 		Standard_OStream & Dump(const Standard_Boolean dumpLabels, const Standard_Boolean dumpAttributes, const Standard_Boolean dumpTransients, Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_RelocationTable();
 
 };
 %extend TDF_RelocationTable {
 	Handle_TDF_RelocationTable GetHandle() {
 	return *(Handle_TDF_RelocationTable*) &$self;
+	}
+};
+%extend TDF_RelocationTable {
+	~TDF_RelocationTable() {
+	printf("Call custom destructor for instance of TDF_RelocationTable\n");
 	}
 };
 
@@ -1851,13 +2019,16 @@ class TDF_ListNodeOfIDList : public TCollection_MapNode {
 		Standard_GUID & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_ListNodeOfIDList();
 
 };
 %extend TDF_ListNodeOfIDList {
 	Handle_TDF_ListNodeOfIDList GetHandle() {
 	return *(Handle_TDF_ListNodeOfIDList*) &$self;
+	}
+};
+%extend TDF_ListNodeOfIDList {
+	~TDF_ListNodeOfIDList() {
+	printf("Call custom destructor for instance of TDF_ListNodeOfIDList\n");
 	}
 };
 
@@ -1872,13 +2043,16 @@ class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 		Handle_TDF_Attribute & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DataMapNodeOfAttributeDataMap();
 
 };
 %extend TDF_DataMapNodeOfAttributeDataMap {
 	Handle_TDF_DataMapNodeOfAttributeDataMap GetHandle() {
 	return *(Handle_TDF_DataMapNodeOfAttributeDataMap*) &$self;
+	}
+};
+%extend TDF_DataMapNodeOfAttributeDataMap {
+	~TDF_DataMapNodeOfAttributeDataMap() {
+	printf("Call custom destructor for instance of TDF_DataMapNodeOfAttributeDataMap\n");
 	}
 };
 
@@ -1893,13 +2067,16 @@ class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
 		TDF_Label & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DataMapNodeOfLabelLabelMap();
 
 };
 %extend TDF_DataMapNodeOfLabelLabelMap {
 	Handle_TDF_DataMapNodeOfLabelLabelMap GetHandle() {
 	return *(Handle_TDF_DataMapNodeOfLabelLabelMap*) &$self;
+	}
+};
+%extend TDF_DataMapNodeOfLabelLabelMap {
+	~TDF_DataMapNodeOfLabelLabelMap() {
+	printf("Call custom destructor for instance of TDF_DataMapNodeOfLabelLabelMap\n");
 	}
 };
 
@@ -2070,13 +2247,16 @@ class TDF_Reference : public TDF_Attribute {
 		TDF_Reference();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_Reference();
 
 };
 %extend TDF_Reference {
 	Handle_TDF_Reference GetHandle() {
 	return *(Handle_TDF_Reference*) &$self;
+	}
+};
+%extend TDF_Reference {
+	~TDF_Reference() {
+	printf("Call custom destructor for instance of TDF_Reference\n");
 	}
 };
 
@@ -2143,13 +2323,16 @@ class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DoubleMapNodeOfAttributeDoubleMap();
 
 };
 %extend TDF_DoubleMapNodeOfAttributeDoubleMap {
 	Handle_TDF_DoubleMapNodeOfAttributeDoubleMap GetHandle() {
 	return *(Handle_TDF_DoubleMapNodeOfAttributeDoubleMap*) &$self;
+	}
+};
+%extend TDF_DoubleMapNodeOfAttributeDoubleMap {
+	~TDF_DoubleMapNodeOfAttributeDoubleMap() {
+	printf("Call custom destructor for instance of TDF_DoubleMapNodeOfAttributeDoubleMap\n");
 	}
 };
 
@@ -2294,13 +2477,16 @@ class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
 		Handle_TDF_Attribute & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_ListNodeOfAttributeList();
 
 };
 %extend TDF_ListNodeOfAttributeList {
 	Handle_TDF_ListNodeOfAttributeList GetHandle() {
 	return *(Handle_TDF_ListNodeOfAttributeList*) &$self;
+	}
+};
+%extend TDF_ListNodeOfAttributeList {
+	~TDF_ListNodeOfAttributeList() {
+	printf("Call custom destructor for instance of TDF_ListNodeOfAttributeList\n");
 	}
 };
 
@@ -2338,8 +2524,6 @@ class TDF_Data : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~TDF_Data();
-		%feature("autodoc", "1");
 		Standard_Boolean NotUndoMode() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Dump(Standard_OStream & anOS) const;
@@ -2358,6 +2542,11 @@ class TDF_Data : public MMgt_TShared {
 	return *(Handle_TDF_Data*) &$self;
 	}
 };
+%extend TDF_Data {
+	~TDF_Data() {
+	printf("Call custom destructor for instance of TDF_Data\n");
+	}
+};
 
 %nodefaultctor TDF_IndexedMapNodeOfAttributeIndexedMap;
 class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
@@ -2372,13 +2561,16 @@ class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_IndexedMapNodeOfAttributeIndexedMap();
 
 };
 %extend TDF_IndexedMapNodeOfAttributeIndexedMap {
 	Handle_TDF_IndexedMapNodeOfAttributeIndexedMap GetHandle() {
 	return *(Handle_TDF_IndexedMapNodeOfAttributeIndexedMap*) &$self;
+	}
+};
+%extend TDF_IndexedMapNodeOfAttributeIndexedMap {
+	~TDF_IndexedMapNodeOfAttributeIndexedMap() {
+	printf("Call custom destructor for instance of TDF_IndexedMapNodeOfAttributeIndexedMap\n");
 	}
 };
 
@@ -2411,13 +2603,16 @@ class TDF_DataSet : public MMgt_TShared {
 		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DataSet();
 
 };
 %extend TDF_DataSet {
 	Handle_TDF_DataSet GetHandle() {
 	return *(Handle_TDF_DataSet*) &$self;
+	}
+};
+%extend TDF_DataSet {
+	~TDF_DataSet() {
+	printf("Call custom destructor for instance of TDF_DataSet\n");
 	}
 };
 
@@ -2610,13 +2805,16 @@ class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DeltaOnAddition();
 
 };
 %extend TDF_DeltaOnAddition {
 	Handle_TDF_DeltaOnAddition GetHandle() {
 	return *(Handle_TDF_DeltaOnAddition*) &$self;
+	}
+};
+%extend TDF_DeltaOnAddition {
+	~TDF_DeltaOnAddition() {
+	printf("Call custom destructor for instance of TDF_DeltaOnAddition\n");
 	}
 };
 
@@ -2633,13 +2831,16 @@ class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DoubleMapNodeOfLabelDoubleMap();
 
 };
 %extend TDF_DoubleMapNodeOfLabelDoubleMap {
 	Handle_TDF_DoubleMapNodeOfLabelDoubleMap GetHandle() {
 	return *(Handle_TDF_DoubleMapNodeOfLabelDoubleMap*) &$self;
+	}
+};
+%extend TDF_DoubleMapNodeOfLabelDoubleMap {
+	~TDF_DoubleMapNodeOfLabelDoubleMap() {
+	printf("Call custom destructor for instance of TDF_DoubleMapNodeOfLabelDoubleMap\n");
 	}
 };
 
@@ -2730,13 +2931,16 @@ class TDF_HAttributeArray1 : public MMgt_TShared {
 		TDF_AttributeArray1 & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_HAttributeArray1();
 
 };
 %extend TDF_HAttributeArray1 {
 	Handle_TDF_HAttributeArray1 GetHandle() {
 	return *(Handle_TDF_HAttributeArray1*) &$self;
+	}
+};
+%extend TDF_HAttributeArray1 {
+	~TDF_HAttributeArray1() {
+	printf("Call custom destructor for instance of TDF_HAttributeArray1\n");
 	}
 };
 
@@ -2765,13 +2969,16 @@ class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
 		TDF_Label & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_StdMapNodeOfLabelMap();
 
 };
 %extend TDF_StdMapNodeOfLabelMap {
 	Handle_TDF_StdMapNodeOfLabelMap GetHandle() {
 	return *(Handle_TDF_StdMapNodeOfLabelMap*) &$self;
+	}
+};
+%extend TDF_StdMapNodeOfLabelMap {
+	~TDF_StdMapNodeOfLabelMap() {
+	printf("Call custom destructor for instance of TDF_StdMapNodeOfLabelMap\n");
 	}
 };
 
@@ -2800,13 +3007,16 @@ class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
 		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_DefaultDeltaOnModification();
 
 };
 %extend TDF_DefaultDeltaOnModification {
 	Handle_TDF_DefaultDeltaOnModification GetHandle() {
 	return *(Handle_TDF_DefaultDeltaOnModification*) &$self;
+	}
+};
+%extend TDF_DefaultDeltaOnModification {
+	~TDF_DefaultDeltaOnModification() {
+	printf("Call custom destructor for instance of TDF_DefaultDeltaOnModification\n");
 	}
 };
 
@@ -2865,13 +3075,16 @@ class TDF_Delta : public MMgt_TShared {
 		void Dump(Standard_OStream & OS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_Delta();
 
 };
 %extend TDF_Delta {
 	Handle_TDF_Delta GetHandle() {
 	return *(Handle_TDF_Delta*) &$self;
+	}
+};
+%extend TDF_Delta {
+	~TDF_Delta() {
+	printf("Call custom destructor for instance of TDF_Delta\n");
 	}
 };
 
@@ -2888,13 +3101,16 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDF_IndexedMapNodeOfLabelIndexedMap();
 
 };
 %extend TDF_IndexedMapNodeOfLabelIndexedMap {
 	Handle_TDF_IndexedMapNodeOfLabelIndexedMap GetHandle() {
 	return *(Handle_TDF_IndexedMapNodeOfLabelIndexedMap*) &$self;
+	}
+};
+%extend TDF_IndexedMapNodeOfLabelIndexedMap {
+	~TDF_IndexedMapNodeOfLabelIndexedMap() {
+	printf("Call custom destructor for instance of TDF_IndexedMapNodeOfLabelIndexedMap\n");
 	}
 };
 

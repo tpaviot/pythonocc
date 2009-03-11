@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PColPGeom_HArray1OfSurface : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray1OfSurface();
-		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfSurface(const Handle_PColPGeom_HArray1OfSurface &aHandle);
@@ -118,12 +116,15 @@ class Handle_PColPGeom_HArray1OfSurface : public Handle_Standard_Persistent {
 	return (PColPGeom_HArray1OfSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray1OfSurface {
+	~Handle_PColPGeom_HArray1OfSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray1OfSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public Handle
 	return (PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public Handl
 	return (PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_HArray1OfBoundedSurface;
 class Handle_PColPGeom_HArray1OfBoundedSurface : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray1OfBoundedSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfBoundedSurface();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_PColPGeom_HArray1OfBoundedSurface : public Handle_Standard_Persiste
 	return (PColPGeom_HArray1OfBoundedSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray1OfBoundedSurface {
+	~Handle_PColPGeom_HArray1OfBoundedSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray1OfBoundedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_HArray2OfBoundedSurface;
 class Handle_PColPGeom_HArray2OfBoundedSurface : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray2OfBoundedSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray2OfBoundedSurface();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_PColPGeom_HArray2OfBoundedSurface : public Handle_Standard_Persiste
 	return (PColPGeom_HArray2OfBoundedSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray2OfBoundedSurface {
+	~Handle_PColPGeom_HArray2OfBoundedSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray2OfBoundedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public Handl
 	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStanda
 	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handle_
 	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_HArray2OfBezierSurface;
 class Handle_PColPGeom_HArray2OfBezierSurface : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray2OfBezierSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray2OfBezierSurface();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_PColPGeom_HArray2OfBezierSurface : public Handle_Standard_Persisten
 	return (PColPGeom_HArray2OfBezierSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray2OfBezierSurface {
+	~Handle_PColPGeom_HArray2OfBezierSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray2OfBezierSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_HArray1OfBezierCurve;
 class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray1OfBezierCurve();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfBezierCurve();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent 
 	return (PColPGeom_HArray1OfBezierCurve*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray1OfBezierCurve {
+	~Handle_PColPGeom_HArray1OfBezierCurve() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray1OfBezierCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_HArray2OfBSplineSurface;
 class Handle_PColPGeom_HArray2OfBSplineSurface : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray2OfBSplineSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray2OfBSplineSurface();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_PColPGeom_HArray2OfBSplineSurface : public Handle_Standard_Persiste
 	return (PColPGeom_HArray2OfBSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray2OfBSplineSurface {
+	~Handle_PColPGeom_HArray2OfBSplineSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray2OfBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_HArray1OfBSplineCurve;
 class Handle_PColPGeom_HArray1OfBSplineCurve : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray1OfBSplineCurve();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfBSplineCurve();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_PColPGeom_HArray1OfBSplineCurve : public Handle_Standard_Persistent
 	return (PColPGeom_HArray1OfBSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray1OfBSplineCurve {
+	~Handle_PColPGeom_HArray1OfBSplineCurve() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray1OfBSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public Handl
 	return (PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_HArray1OfCurve;
 class Handle_PColPGeom_HArray1OfCurve : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray1OfCurve();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfCurve();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_PColPGeom_HArray1OfCurve : public Handle_Standard_Persistent {
 	return (PColPGeom_HArray1OfCurve*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray1OfCurve {
+	~Handle_PColPGeom_HArray1OfCurve() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray1OfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public Handle_PStan
 	return (PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_HArray1OfBoundedCurve;
 class Handle_PColPGeom_HArray1OfBoundedCurve : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray1OfBoundedCurve();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfBoundedCurve();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_PColPGeom_HArray1OfBoundedCurve : public Handle_Standard_Persistent
 	return (PColPGeom_HArray1OfBoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray1OfBoundedCurve {
+	~Handle_PColPGeom_HArray1OfBoundedCurve() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray1OfBoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle_P
 	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_HArray2OfSurface;
 class Handle_PColPGeom_HArray2OfSurface : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_HArray2OfSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray2OfSurface();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_PColPGeom_HArray2OfSurface : public Handle_Standard_Persistent {
 	return (PColPGeom_HArray2OfSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_HArray2OfSurface {
+	~Handle_PColPGeom_HArray2OfSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_HArray2OfSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public Handle_PStan
 	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface*)$self->Access();
 	}
 };
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve();
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve();
 		%feature("autodoc", "1");
@@ -515,6 +570,11 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handle_
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
 	PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve* GetObject() {
 	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve*)$self->Access();
+	}
+};
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve() {
+	printf("Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve\n");
 	}
 };
 
@@ -537,13 +597,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public PStandard_ArrayNode
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray1OfSurfacemyValue(const Handle_PGeom_Surface &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface {
+	~PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface\n");
 	}
 };
 
@@ -616,13 +679,16 @@ class PColPGeom_HArray1OfBSplineCurve : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray1OfBSplineCurve & _CSFDB_GetPColPGeom_HArray1OfBSplineCurveData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray1OfBSplineCurve();
 
 };
 %extend PColPGeom_HArray1OfBSplineCurve {
 	Handle_PColPGeom_HArray1OfBSplineCurve GetHandle() {
 	return *(Handle_PColPGeom_HArray1OfBSplineCurve*) &$self;
+	}
+};
+%extend PColPGeom_HArray1OfBSplineCurve {
+	~PColPGeom_HArray1OfBSplineCurve() {
+	printf("Call custom destructor for instance of PColPGeom_HArray1OfBSplineCurve\n");
 	}
 };
 
@@ -663,13 +729,16 @@ class PColPGeom_HArray1OfBezierCurve : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray1OfBezierCurve & _CSFDB_GetPColPGeom_HArray1OfBezierCurveData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray1OfBezierCurve();
 
 };
 %extend PColPGeom_HArray1OfBezierCurve {
 	Handle_PColPGeom_HArray1OfBezierCurve GetHandle() {
 	return *(Handle_PColPGeom_HArray1OfBezierCurve*) &$self;
+	}
+};
+%extend PColPGeom_HArray1OfBezierCurve {
+	~PColPGeom_HArray1OfBezierCurve() {
+	printf("Call custom destructor for instance of PColPGeom_HArray1OfBezierCurve\n");
 	}
 };
 
@@ -710,13 +779,16 @@ class PColPGeom_HArray1OfCurve : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray1OfCurve & _CSFDB_GetPColPGeom_HArray1OfCurveData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray1OfCurve();
 
 };
 %extend PColPGeom_HArray1OfCurve {
 	Handle_PColPGeom_HArray1OfCurve GetHandle() {
 	return *(Handle_PColPGeom_HArray1OfCurve*) &$self;
+	}
+};
+%extend PColPGeom_HArray1OfCurve {
+	~PColPGeom_HArray1OfCurve() {
+	printf("Call custom destructor for instance of PColPGeom_HArray1OfCurve\n");
 	}
 };
 
@@ -799,13 +871,16 @@ class PColPGeom_HArray1OfSurface : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray1OfSurface & _CSFDB_GetPColPGeom_HArray1OfSurfaceData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray1OfSurface();
 
 };
 %extend PColPGeom_HArray1OfSurface {
 	Handle_PColPGeom_HArray1OfSurface GetHandle() {
 	return *(Handle_PColPGeom_HArray1OfSurface*) &$self;
+	}
+};
+%extend PColPGeom_HArray1OfSurface {
+	~PColPGeom_HArray1OfSurface() {
+	printf("Call custom destructor for instance of PColPGeom_HArray1OfSurface\n");
 	}
 };
 
@@ -828,13 +903,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public PStandard_Ar
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurfacemyValue(const Handle_PGeom_BSplineSurface &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface {
+	~PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface\n");
 	}
 };
 
@@ -873,13 +951,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode {
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray1OfCurvemyValue(const Handle_PGeom_Curve &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
+	~PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve\n");
 	}
 };
 
@@ -902,13 +983,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public PStandard_Ar
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurfacemyValue(const Handle_PGeom_BoundedSurface &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface {
+	~PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface\n");
 	}
 };
 
@@ -973,13 +1057,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Array
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurvemyValue(const Handle_PGeom_BezierCurve &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve {
+	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve\n");
 	}
 };
 
@@ -1002,13 +1089,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public PStandard_Ar
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurfacemyValue(const Handle_PGeom_BoundedSurface &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
+	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");
 	}
 };
 
@@ -1083,13 +1173,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Arra
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurvemyValue(const Handle_PGeom_BSplineCurve &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
+	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve\n");
 	}
 };
 
@@ -1156,13 +1249,16 @@ class PColPGeom_HArray1OfBoundedSurface : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray1OfBoundedSurface & _CSFDB_GetPColPGeom_HArray1OfBoundedSurfaceData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray1OfBoundedSurface();
 
 };
 %extend PColPGeom_HArray1OfBoundedSurface {
 	Handle_PColPGeom_HArray1OfBoundedSurface GetHandle() {
 	return *(Handle_PColPGeom_HArray1OfBoundedSurface*) &$self;
+	}
+};
+%extend PColPGeom_HArray1OfBoundedSurface {
+	~PColPGeom_HArray1OfBoundedSurface() {
+	printf("Call custom destructor for instance of PColPGeom_HArray1OfBoundedSurface\n");
 	}
 };
 
@@ -1217,13 +1313,16 @@ class PColPGeom_HArray2OfBoundedSurface : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray2OfBoundedSurface & _CSFDB_GetPColPGeom_HArray2OfBoundedSurfaceData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray2OfBoundedSurface();
 
 };
 %extend PColPGeom_HArray2OfBoundedSurface {
 	Handle_PColPGeom_HArray2OfBoundedSurface GetHandle() {
 	return *(Handle_PColPGeom_HArray2OfBoundedSurface*) &$self;
+	}
+};
+%extend PColPGeom_HArray2OfBoundedSurface {
+	~PColPGeom_HArray2OfBoundedSurface() {
+	printf("Call custom destructor for instance of PColPGeom_HArray2OfBoundedSurface\n");
 	}
 };
 
@@ -1280,13 +1379,16 @@ class PColPGeom_HArray1OfBoundedCurve : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray1OfBoundedCurve & _CSFDB_GetPColPGeom_HArray1OfBoundedCurveData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray1OfBoundedCurve();
 
 };
 %extend PColPGeom_HArray1OfBoundedCurve {
 	Handle_PColPGeom_HArray1OfBoundedCurve GetHandle() {
 	return *(Handle_PColPGeom_HArray1OfBoundedCurve*) &$self;
+	}
+};
+%extend PColPGeom_HArray1OfBoundedCurve {
+	~PColPGeom_HArray1OfBoundedCurve() {
+	printf("Call custom destructor for instance of PColPGeom_HArray1OfBoundedCurve\n");
 	}
 };
 
@@ -1341,13 +1443,16 @@ class PColPGeom_HArray2OfBezierSurface : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray2OfBezierSurface & _CSFDB_GetPColPGeom_HArray2OfBezierSurfaceData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray2OfBezierSurface();
 
 };
 %extend PColPGeom_HArray2OfBezierSurface {
 	Handle_PColPGeom_HArray2OfBezierSurface GetHandle() {
 	return *(Handle_PColPGeom_HArray2OfBezierSurface*) &$self;
+	}
+};
+%extend PColPGeom_HArray2OfBezierSurface {
+	~PColPGeom_HArray2OfBezierSurface() {
+	printf("Call custom destructor for instance of PColPGeom_HArray2OfBezierSurface\n");
 	}
 };
 
@@ -1464,13 +1569,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public PStandard_Arr
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurfacemyValue(const Handle_PGeom_BezierSurface &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
+	~PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");
 	}
 };
 
@@ -1525,13 +1633,16 @@ class PColPGeom_HArray2OfBSplineSurface : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray2OfBSplineSurface & _CSFDB_GetPColPGeom_HArray2OfBSplineSurfaceData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray2OfBSplineSurface();
 
 };
 %extend PColPGeom_HArray2OfBSplineSurface {
 	Handle_PColPGeom_HArray2OfBSplineSurface GetHandle() {
 	return *(Handle_PColPGeom_HArray2OfBSplineSurface*) &$self;
+	}
+};
+%extend PColPGeom_HArray2OfBSplineSurface {
+	~PColPGeom_HArray2OfBSplineSurface() {
+	printf("Call custom destructor for instance of PColPGeom_HArray2OfBSplineSurface\n");
 	}
 };
 
@@ -1602,13 +1713,16 @@ class PColPGeom_HArray2OfSurface : public Standard_Persistent {
 		const PColPGeom_FieldOfHArray2OfSurface & _CSFDB_GetPColPGeom_HArray2OfSurfaceData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_HArray2OfSurface();
 
 };
 %extend PColPGeom_HArray2OfSurface {
 	Handle_PColPGeom_HArray2OfSurface GetHandle() {
 	return *(Handle_PColPGeom_HArray2OfSurface*) &$self;
+	}
+};
+%extend PColPGeom_HArray2OfSurface {
+	~PColPGeom_HArray2OfSurface() {
+	printf("Call custom destructor for instance of PColPGeom_HArray2OfSurface\n");
 	}
 };
 
@@ -1657,13 +1771,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Arra
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurvemyValue(const Handle_PGeom_BoundedCurve &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
+	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve\n");
 	}
 };
 
@@ -1686,13 +1803,16 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public PStandard_ArrayNode
 		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray2OfSurfacemyValue(const Handle_PGeom_Surface &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface();
 
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface {
 	Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface GetHandle() {
 	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface {
+	~PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface\n");
 	}
 };
 

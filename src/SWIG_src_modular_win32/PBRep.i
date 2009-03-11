@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PBRep_TFace1 : public Handle_PTopoDS_TFace1 {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PBRep_TFace1();
-		%feature("autodoc", "1");
 		Handle_PBRep_TFace1();
 		%feature("autodoc", "1");
 		Handle_PBRep_TFace1(const Handle_PBRep_TFace1 &aHandle);
@@ -118,12 +116,15 @@ class Handle_PBRep_TFace1 : public Handle_PTopoDS_TFace1 {
 	return (PBRep_TFace1*)$self->Access();
 	}
 };
+%extend Handle_PBRep_TFace1 {
+	~Handle_PBRep_TFace1() {
+	printf("Call custom destructor for instance of Handle_PBRep_TFace1\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_PointRepresentation;
 class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_PointRepresentation();
 		%feature("autodoc", "1");
 		Handle_PBRep_PointRepresentation();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
 	return (PBRep_PointRepresentation*)$self->Access();
 	}
 };
+%extend Handle_PBRep_PointRepresentation {
+	~Handle_PBRep_PointRepresentation() {
+	printf("Call custom destructor for instance of Handle_PBRep_PointRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_TVertex1;
 class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_TVertex1();
 		%feature("autodoc", "1");
 		Handle_PBRep_TVertex1();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
 	return (PBRep_TVertex1*)$self->Access();
 	}
 };
+%extend Handle_PBRep_TVertex1 {
+	~Handle_PBRep_TVertex1() {
+	printf("Call custom destructor for instance of Handle_PBRep_TVertex1\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_CurveRepresentation;
 class Handle_PBRep_CurveRepresentation : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_CurveRepresentation();
 		%feature("autodoc", "1");
 		Handle_PBRep_CurveRepresentation();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_PBRep_CurveRepresentation : public Handle_Standard_Persistent {
 	return (PBRep_CurveRepresentation*)$self->Access();
 	}
 };
+%extend Handle_PBRep_CurveRepresentation {
+	~Handle_PBRep_CurveRepresentation() {
+	printf("Call custom destructor for instance of Handle_PBRep_CurveRepresentation\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_GCurve;
 class Handle_PBRep_GCurve : public Handle_PBRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_GCurve();
 		%feature("autodoc", "1");
 		Handle_PBRep_GCurve();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_PBRep_GCurve : public Handle_PBRep_CurveRepresentation {
 	return (PBRep_GCurve*)$self->Access();
 	}
 };
+%extend Handle_PBRep_GCurve {
+	~Handle_PBRep_GCurve() {
+	printf("Call custom destructor for instance of Handle_PBRep_GCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_CurveOnSurface;
 class Handle_PBRep_CurveOnSurface : public Handle_PBRep_GCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_CurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_PBRep_CurveOnSurface();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_PBRep_CurveOnSurface : public Handle_PBRep_GCurve {
 	return (PBRep_CurveOnSurface*)$self->Access();
 	}
 };
+%extend Handle_PBRep_CurveOnSurface {
+	~Handle_PBRep_CurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_PBRep_CurveOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_TFace;
 class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_TFace();
 		%feature("autodoc", "1");
 		Handle_PBRep_TFace();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
 	return (PBRep_TFace*)$self->Access();
 	}
 };
+%extend Handle_PBRep_TFace {
+	~Handle_PBRep_TFace() {
+	printf("Call custom destructor for instance of Handle_PBRep_TFace\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_PolygonOnTriangulation;
 class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_PolygonOnTriangulation();
 		%feature("autodoc", "1");
 		Handle_PBRep_PolygonOnTriangulation();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentat
 	return (PBRep_PolygonOnTriangulation*)$self->Access();
 	}
 };
+%extend Handle_PBRep_PolygonOnTriangulation {
+	~Handle_PBRep_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of Handle_PBRep_PolygonOnTriangulation\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_PointsOnSurface;
 class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_PointsOnSurface();
 		%feature("autodoc", "1");
 		Handle_PBRep_PointsOnSurface();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
 	return (PBRep_PointsOnSurface*)$self->Access();
 	}
 };
+%extend Handle_PBRep_PointsOnSurface {
+	~Handle_PBRep_PointsOnSurface() {
+	printf("Call custom destructor for instance of Handle_PBRep_PointsOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_CurveOn2Surfaces;
 class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_CurveOn2Surfaces();
 		%feature("autodoc", "1");
 		Handle_PBRep_CurveOn2Surfaces();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
 	return (PBRep_CurveOn2Surfaces*)$self->Access();
 	}
 };
+%extend Handle_PBRep_CurveOn2Surfaces {
+	~Handle_PBRep_CurveOn2Surfaces() {
+	printf("Call custom destructor for instance of Handle_PBRep_CurveOn2Surfaces\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_TEdge1;
 class Handle_PBRep_TEdge1 : public Handle_PTopoDS_TEdge1 {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_TEdge1();
 		%feature("autodoc", "1");
 		Handle_PBRep_TEdge1();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_PBRep_TEdge1 : public Handle_PTopoDS_TEdge1 {
 	return (PBRep_TEdge1*)$self->Access();
 	}
 };
+%extend Handle_PBRep_TEdge1 {
+	~Handle_PBRep_TEdge1() {
+	printf("Call custom destructor for instance of Handle_PBRep_TEdge1\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_PolygonOnSurface;
 class Handle_PBRep_PolygonOnSurface : public Handle_PBRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_PolygonOnSurface();
 		%feature("autodoc", "1");
 		Handle_PBRep_PolygonOnSurface();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_PBRep_PolygonOnSurface : public Handle_PBRep_CurveRepresentation {
 	return (PBRep_PolygonOnSurface*)$self->Access();
 	}
 };
+%extend Handle_PBRep_PolygonOnSurface {
+	~Handle_PBRep_PolygonOnSurface() {
+	printf("Call custom destructor for instance of Handle_PBRep_PolygonOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_PolygonOnClosedSurface;
 class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_PolygonOnClosedSurface();
 		%feature("autodoc", "1");
 		Handle_PBRep_PolygonOnClosedSurface();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface
 	return (PBRep_PolygonOnClosedSurface*)$self->Access();
 	}
 };
+%extend Handle_PBRep_PolygonOnClosedSurface {
+	~Handle_PBRep_PolygonOnClosedSurface() {
+	printf("Call custom destructor for instance of Handle_PBRep_PolygonOnClosedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_Polygon3D;
 class Handle_PBRep_Polygon3D : public Handle_PBRep_CurveRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_Polygon3D();
 		%feature("autodoc", "1");
 		Handle_PBRep_Polygon3D();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_PBRep_Polygon3D : public Handle_PBRep_CurveRepresentation {
 	return (PBRep_Polygon3D*)$self->Access();
 	}
 };
+%extend Handle_PBRep_Polygon3D {
+	~Handle_PBRep_Polygon3D() {
+	printf("Call custom destructor for instance of Handle_PBRep_Polygon3D\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_Curve3D;
 class Handle_PBRep_Curve3D : public Handle_PBRep_GCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_Curve3D();
 		%feature("autodoc", "1");
 		Handle_PBRep_Curve3D();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_PBRep_Curve3D : public Handle_PBRep_GCurve {
 	return (PBRep_Curve3D*)$self->Access();
 	}
 };
+%extend Handle_PBRep_Curve3D {
+	~Handle_PBRep_Curve3D() {
+	printf("Call custom destructor for instance of Handle_PBRep_Curve3D\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_PointOnSurface;
 class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_PointOnSurface();
 		%feature("autodoc", "1");
 		Handle_PBRep_PointOnSurface();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
 	return (PBRep_PointOnSurface*)$self->Access();
 	}
 };
+%extend Handle_PBRep_PointOnSurface {
+	~Handle_PBRep_PointOnSurface() {
+	printf("Call custom destructor for instance of Handle_PBRep_PointOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_TEdge;
 class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_TEdge();
 		%feature("autodoc", "1");
 		Handle_PBRep_TEdge();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
 	return (PBRep_TEdge*)$self->Access();
 	}
 };
+%extend Handle_PBRep_TEdge {
+	~Handle_PBRep_TEdge() {
+	printf("Call custom destructor for instance of Handle_PBRep_TEdge\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_CurveOnClosedSurface;
 class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_CurveOnClosedSurface();
 		%feature("autodoc", "1");
 		Handle_PBRep_CurveOnClosedSurface();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 	return (PBRep_CurveOnClosedSurface*)$self->Access();
 	}
 };
+%extend Handle_PBRep_CurveOnClosedSurface {
+	~Handle_PBRep_CurveOnClosedSurface() {
+	printf("Call custom destructor for instance of Handle_PBRep_CurveOnClosedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_PolygonOnClosedTriangulation;
 class Handle_PBRep_PolygonOnClosedTriangulation : public Handle_PBRep_PolygonOnTriangulation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_PolygonOnClosedTriangulation();
 		%feature("autodoc", "1");
 		Handle_PBRep_PolygonOnClosedTriangulation();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_PBRep_PolygonOnClosedTriangulation : public Handle_PBRep_PolygonOnT
 	return (PBRep_PolygonOnClosedTriangulation*)$self->Access();
 	}
 };
+%extend Handle_PBRep_PolygonOnClosedTriangulation {
+	~Handle_PBRep_PolygonOnClosedTriangulation() {
+	printf("Call custom destructor for instance of Handle_PBRep_PolygonOnClosedTriangulation\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_TVertex;
 class Handle_PBRep_TVertex : public Handle_PTopoDS_TVertex {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_TVertex();
 		%feature("autodoc", "1");
 		Handle_PBRep_TVertex();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_PBRep_TVertex : public Handle_PTopoDS_TVertex {
 	return (PBRep_TVertex*)$self->Access();
 	}
 };
+%extend Handle_PBRep_TVertex {
+	~Handle_PBRep_TVertex() {
+	printf("Call custom destructor for instance of Handle_PBRep_TVertex\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_PointOnCurve;
 class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_PointOnCurve();
 		%feature("autodoc", "1");
 		Handle_PBRep_PointOnCurve();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 	return (PBRep_PointOnCurve*)$self->Access();
 	}
 };
+%extend Handle_PBRep_PointOnCurve {
+	~Handle_PBRep_PointOnCurve() {
+	printf("Call custom destructor for instance of Handle_PBRep_PointOnCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PBRep_PointOnCurveOnSurface;
 class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PBRep_PointOnCurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_PBRep_PointOnCurveOnSurface();
 		%feature("autodoc", "1");
@@ -557,6 +618,11 @@ class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
 %extend Handle_PBRep_PointOnCurveOnSurface {
 	PBRep_PointOnCurveOnSurface* GetObject() {
 	return (PBRep_PointOnCurveOnSurface*)$self->Access();
+	}
+};
+%extend Handle_PBRep_PointOnCurveOnSurface {
+	~Handle_PBRep_PointOnCurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_PBRep_PointOnCurveOnSurface\n");
 	}
 };
 
@@ -601,13 +667,16 @@ class PBRep_CurveRepresentation : public Standard_Persistent {
 		void _CSFDB_SetPBRep_CurveRepresentationmyNext(const Handle_PBRep_CurveRepresentation &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_CurveRepresentation();
 
 };
 %extend PBRep_CurveRepresentation {
 	Handle_PBRep_CurveRepresentation GetHandle() {
 	return *(Handle_PBRep_CurveRepresentation*) &$self;
+	}
+};
+%extend PBRep_CurveRepresentation {
+	~PBRep_CurveRepresentation() {
+	printf("Call custom destructor for instance of PBRep_CurveRepresentation\n");
 	}
 };
 
@@ -632,13 +701,16 @@ class PBRep_PolygonOnTriangulation : public PBRep_CurveRepresentation {
 		Handle_PPoly_Triangulation _CSFDB_GetPBRep_PolygonOnTriangulationmyTriangulation() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPBRep_PolygonOnTriangulationmyTriangulation(const Handle_PPoly_Triangulation &p);
-		%feature("autodoc", "1");
-		virtual		~PBRep_PolygonOnTriangulation();
 
 };
 %extend PBRep_PolygonOnTriangulation {
 	Handle_PBRep_PolygonOnTriangulation GetHandle() {
 	return *(Handle_PBRep_PolygonOnTriangulation*) &$self;
+	}
+};
+%extend PBRep_PolygonOnTriangulation {
+	~PBRep_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of PBRep_PolygonOnTriangulation\n");
 	}
 };
 
@@ -657,13 +729,16 @@ class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
 		Handle_PPoly_PolygonOnTriangulation _CSFDB_GetPBRep_PolygonOnClosedTriangulationmyPolygon2() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPBRep_PolygonOnClosedTriangulationmyPolygon2(const Handle_PPoly_PolygonOnTriangulation &p);
-		%feature("autodoc", "1");
-		virtual		~PBRep_PolygonOnClosedTriangulation();
 
 };
 %extend PBRep_PolygonOnClosedTriangulation {
 	Handle_PBRep_PolygonOnClosedTriangulation GetHandle() {
 	return *(Handle_PBRep_PolygonOnClosedTriangulation*) &$self;
+	}
+};
+%extend PBRep_PolygonOnClosedTriangulation {
+	~PBRep_PolygonOnClosedTriangulation() {
+	printf("Call custom destructor for instance of PBRep_PolygonOnClosedTriangulation\n");
 	}
 };
 
@@ -698,13 +773,16 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 		void _CSFDB_SetPBRep_TVertex1myPoints(const Handle_PBRep_PointRepresentation &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_TVertex1();
 
 };
 %extend PBRep_TVertex1 {
 	Handle_PBRep_TVertex1 GetHandle() {
 	return *(Handle_PBRep_TVertex1*) &$self;
+	}
+};
+%extend PBRep_TVertex1 {
+	~PBRep_TVertex1() {
+	printf("Call custom destructor for instance of PBRep_TVertex1\n");
 	}
 };
 
@@ -749,13 +827,16 @@ class PBRep_TEdge1 : public PTopoDS_TEdge1 {
 		void _CSFDB_SetPBRep_TEdge1myCurves(const Handle_PBRep_CurveRepresentation &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_TEdge1();
 
 };
 %extend PBRep_TEdge1 {
 	Handle_PBRep_TEdge1 GetHandle() {
 	return *(Handle_PBRep_TEdge1*) &$self;
+	}
+};
+%extend PBRep_TEdge1 {
+	~PBRep_TEdge1() {
+	printf("Call custom destructor for instance of PBRep_TEdge1\n");
 	}
 };
 
@@ -786,13 +867,16 @@ class PBRep_GCurve : public PBRep_CurveRepresentation {
 		void _CSFDB_SetPBRep_GCurvemyLast(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_GCurve();
 
 };
 %extend PBRep_GCurve {
 	Handle_PBRep_GCurve GetHandle() {
 	return *(Handle_PBRep_GCurve*) &$self;
+	}
+};
+%extend PBRep_GCurve {
+	~PBRep_GCurve() {
+	printf("Call custom destructor for instance of PBRep_GCurve\n");
 	}
 };
 
@@ -829,13 +913,16 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 		const gp_Pnt2d & _CSFDB_GetPBRep_CurveOnSurfacemyUV1() const;
 		%feature("autodoc", "1");
 		const gp_Pnt2d & _CSFDB_GetPBRep_CurveOnSurfacemyUV2() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_CurveOnSurface();
 
 };
 %extend PBRep_CurveOnSurface {
 	Handle_PBRep_CurveOnSurface GetHandle() {
 	return *(Handle_PBRep_CurveOnSurface*) &$self;
+	}
+};
+%extend PBRep_CurveOnSurface {
+	~PBRep_CurveOnSurface() {
+	printf("Call custom destructor for instance of PBRep_CurveOnSurface\n");
 	}
 };
 
@@ -880,13 +967,16 @@ class PBRep_TEdge : public PTopoDS_TEdge {
 		void _CSFDB_SetPBRep_TEdgemyCurves(const Handle_PBRep_CurveRepresentation &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_TEdge();
 
 };
 %extend PBRep_TEdge {
 	Handle_PBRep_TEdge GetHandle() {
 	return *(Handle_PBRep_TEdge*) &$self;
+	}
+};
+%extend PBRep_TEdge {
+	~PBRep_TEdge() {
+	printf("Call custom destructor for instance of PBRep_TEdge\n");
 	}
 };
 
@@ -925,13 +1015,16 @@ class PBRep_PointRepresentation : public Standard_Persistent {
 		void _CSFDB_SetPBRep_PointRepresentationmyNext(const Handle_PBRep_PointRepresentation &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_PointRepresentation();
 
 };
 %extend PBRep_PointRepresentation {
 	Handle_PBRep_PointRepresentation GetHandle() {
 	return *(Handle_PBRep_PointRepresentation*) &$self;
+	}
+};
+%extend PBRep_PointRepresentation {
+	~PBRep_PointRepresentation() {
+	printf("Call custom destructor for instance of PBRep_PointRepresentation\n");
 	}
 };
 
@@ -948,13 +1041,16 @@ class PBRep_PointsOnSurface : public PBRep_PointRepresentation {
 		Handle_PGeom_Surface _CSFDB_GetPBRep_PointsOnSurfacemySurface() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPBRep_PointsOnSurfacemySurface(const Handle_PGeom_Surface &p);
-		%feature("autodoc", "1");
-		virtual		~PBRep_PointsOnSurface();
 
 };
 %extend PBRep_PointsOnSurface {
 	Handle_PBRep_PointsOnSurface GetHandle() {
 	return *(Handle_PBRep_PointsOnSurface*) &$self;
+	}
+};
+%extend PBRep_PointsOnSurface {
+	~PBRep_PointsOnSurface() {
+	printf("Call custom destructor for instance of PBRep_PointsOnSurface\n");
 	}
 };
 
@@ -993,13 +1089,16 @@ class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
 		void _CSFDB_SetPBRep_CurveOn2SurfacesmyContinuity(const GeomAbs_Shape p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_CurveOn2Surfaces();
 
 };
 %extend PBRep_CurveOn2Surfaces {
 	Handle_PBRep_CurveOn2Surfaces GetHandle() {
 	return *(Handle_PBRep_CurveOn2Surfaces*) &$self;
+	}
+};
+%extend PBRep_CurveOn2Surfaces {
+	~PBRep_CurveOn2Surfaces() {
+	printf("Call custom destructor for instance of PBRep_CurveOn2Surfaces\n");
 	}
 };
 
@@ -1022,13 +1121,16 @@ class PBRep_Curve3D : public PBRep_GCurve {
 		void _CSFDB_SetPBRep_Curve3DmyCurve3D(const Handle_PGeom_Curve &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_Curve3D();
 
 };
 %extend PBRep_Curve3D {
 	Handle_PBRep_Curve3D GetHandle() {
 	return *(Handle_PBRep_Curve3D*) &$self;
+	}
+};
+%extend PBRep_Curve3D {
+	~PBRep_Curve3D() {
+	printf("Call custom destructor for instance of PBRep_Curve3D\n");
 	}
 };
 
@@ -1051,13 +1153,16 @@ class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
 		void _CSFDB_SetPBRep_PointOnCurveOnSurfacemyPCurve(const Handle_PGeom2d_Curve &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_PointOnCurveOnSurface();
 
 };
 %extend PBRep_PointOnCurveOnSurface {
 	Handle_PBRep_PointOnCurveOnSurface GetHandle() {
 	return *(Handle_PBRep_PointOnCurveOnSurface*) &$self;
+	}
+};
+%extend PBRep_PointOnCurveOnSurface {
+	~PBRep_PointOnCurveOnSurface() {
+	printf("Call custom destructor for instance of PBRep_PointOnCurveOnSurface\n");
 	}
 };
 
@@ -1092,13 +1197,16 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 		void _CSFDB_SetPBRep_TVertexmyPoints(const Handle_PBRep_PointRepresentation &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_TVertex();
 
 };
 %extend PBRep_TVertex {
 	Handle_PBRep_TVertex GetHandle() {
 	return *(Handle_PBRep_TVertex*) &$self;
+	}
+};
+%extend PBRep_TVertex {
+	~PBRep_TVertex() {
+	printf("Call custom destructor for instance of PBRep_TVertex\n");
 	}
 };
 
@@ -1127,13 +1235,16 @@ class PBRep_PolygonOnSurface : public PBRep_CurveRepresentation {
 		void _CSFDB_SetPBRep_PolygonOnSurfacemySurface(const Handle_PGeom_Surface &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_PolygonOnSurface();
 
 };
 %extend PBRep_PolygonOnSurface {
 	Handle_PBRep_PolygonOnSurface GetHandle() {
 	return *(Handle_PBRep_PolygonOnSurface*) &$self;
+	}
+};
+%extend PBRep_PolygonOnSurface {
+	~PBRep_PolygonOnSurface() {
+	printf("Call custom destructor for instance of PBRep_PolygonOnSurface\n");
 	}
 };
 
@@ -1154,13 +1265,16 @@ class PBRep_PolygonOnClosedSurface : public PBRep_PolygonOnSurface {
 		Handle_PPoly_Polygon2D _CSFDB_GetPBRep_PolygonOnClosedSurfacemyPolygon2() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPBRep_PolygonOnClosedSurfacemyPolygon2(const Handle_PPoly_Polygon2D &p);
-		%feature("autodoc", "1");
-		virtual		~PBRep_PolygonOnClosedSurface();
 
 };
 %extend PBRep_PolygonOnClosedSurface {
 	Handle_PBRep_PolygonOnClosedSurface GetHandle() {
 	return *(Handle_PBRep_PolygonOnClosedSurface*) &$self;
+	}
+};
+%extend PBRep_PolygonOnClosedSurface {
+	~PBRep_PolygonOnClosedSurface() {
+	printf("Call custom destructor for instance of PBRep_PolygonOnClosedSurface\n");
 	}
 };
 
@@ -1183,13 +1297,16 @@ class PBRep_Polygon3D : public PBRep_CurveRepresentation {
 		void _CSFDB_SetPBRep_Polygon3DmyPolygon3D(const Handle_PPoly_Polygon3D &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_Polygon3D();
 
 };
 %extend PBRep_Polygon3D {
 	Handle_PBRep_Polygon3D GetHandle() {
 	return *(Handle_PBRep_Polygon3D*) &$self;
+	}
+};
+%extend PBRep_Polygon3D {
+	~PBRep_Polygon3D() {
+	printf("Call custom destructor for instance of PBRep_Polygon3D\n");
 	}
 };
 
@@ -1212,13 +1329,16 @@ class PBRep_PointOnSurface : public PBRep_PointsOnSurface {
 		void _CSFDB_SetPBRep_PointOnSurfacemyParameter2(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_PointOnSurface();
 
 };
 %extend PBRep_PointOnSurface {
 	Handle_PBRep_PointOnSurface GetHandle() {
 	return *(Handle_PBRep_PointOnSurface*) &$self;
+	}
+};
+%extend PBRep_PointOnSurface {
+	~PBRep_PointOnSurface() {
+	printf("Call custom destructor for instance of PBRep_PointOnSurface\n");
 	}
 };
 
@@ -1259,13 +1379,16 @@ class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
 		const gp_Pnt2d & _CSFDB_GetPBRep_CurveOnClosedSurfacemyUV22() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_CurveOnClosedSurface();
 
 };
 %extend PBRep_CurveOnClosedSurface {
 	Handle_PBRep_CurveOnClosedSurface GetHandle() {
 	return *(Handle_PBRep_CurveOnClosedSurface*) &$self;
+	}
+};
+%extend PBRep_CurveOnClosedSurface {
+	~PBRep_CurveOnClosedSurface() {
+	printf("Call custom destructor for instance of PBRep_CurveOnClosedSurface\n");
 	}
 };
 
@@ -1316,13 +1439,16 @@ class PBRep_TFace1 : public PTopoDS_TFace1 {
 		void _CSFDB_SetPBRep_TFace1myNaturalRestriction(const Standard_Boolean p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_TFace1();
 
 };
 %extend PBRep_TFace1 {
 	Handle_PBRep_TFace1 GetHandle() {
 	return *(Handle_PBRep_TFace1*) &$self;
+	}
+};
+%extend PBRep_TFace1 {
+	~PBRep_TFace1() {
+	printf("Call custom destructor for instance of PBRep_TFace1\n");
 	}
 };
 
@@ -1373,13 +1499,16 @@ class PBRep_TFace : public PTopoDS_TFace {
 		void _CSFDB_SetPBRep_TFacemyNaturalRestriction(const Standard_Boolean p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_TFace();
 
 };
 %extend PBRep_TFace {
 	Handle_PBRep_TFace GetHandle() {
 	return *(Handle_PBRep_TFace*) &$self;
+	}
+};
+%extend PBRep_TFace {
+	~PBRep_TFace() {
+	printf("Call custom destructor for instance of PBRep_TFace\n");
 	}
 };
 
@@ -1402,12 +1531,15 @@ class PBRep_PointOnCurve : public PBRep_PointRepresentation {
 		void _CSFDB_SetPBRep_PointOnCurvemyCurve(const Handle_PGeom_Curve &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PBRep_PointOnCurve();
 
 };
 %extend PBRep_PointOnCurve {
 	Handle_PBRep_PointOnCurve GetHandle() {
 	return *(Handle_PBRep_PointOnCurve*) &$self;
+	}
+};
+%extend PBRep_PointOnCurve {
+	~PBRep_PointOnCurve() {
+	printf("Call custom destructor for instance of PBRep_PointOnCurve\n");
 	}
 };

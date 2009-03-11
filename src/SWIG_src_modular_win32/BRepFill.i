@@ -108,8 +108,6 @@ enum BRepFill_TransitionStyle {
 class Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape();
-		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape();
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape(const Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape &aHandle);
@@ -124,12 +122,15 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public Ha
 	return (BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
+	~Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape() {
+	printf("Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfSection;
 class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_SequenceNodeOfSequenceOfSection();
 		%feature("autodoc", "1");
 		Handle_BRepFill_SequenceNodeOfSequenceOfSection();
 		%feature("autodoc", "1");
@@ -145,12 +146,15 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollectio
 	return (BRepFill_SequenceNodeOfSequenceOfSection*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfSection {
+	~Handle_BRepFill_SequenceNodeOfSequenceOfSection() {
+	printf("Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfSection\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_LocationLaw;
 class Handle_BRepFill_LocationLaw : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_LocationLaw();
 		%feature("autodoc", "1");
 		Handle_BRepFill_LocationLaw();
 		%feature("autodoc", "1");
@@ -166,12 +170,15 @@ class Handle_BRepFill_LocationLaw : public Handle_MMgt_TShared {
 	return (BRepFill_LocationLaw*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_LocationLaw {
+	~Handle_BRepFill_LocationLaw() {
+	printf("Call custom destructor for instance of Handle_BRepFill_LocationLaw\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_Edge3DLaw;
 class Handle_BRepFill_Edge3DLaw : public Handle_BRepFill_LocationLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_Edge3DLaw();
 		%feature("autodoc", "1");
 		Handle_BRepFill_Edge3DLaw();
 		%feature("autodoc", "1");
@@ -187,12 +194,15 @@ class Handle_BRepFill_Edge3DLaw : public Handle_BRepFill_LocationLaw {
 	return (BRepFill_Edge3DLaw*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_Edge3DLaw {
+	~Handle_BRepFill_Edge3DLaw() {
+	printf("Call custom destructor for instance of Handle_BRepFill_Edge3DLaw\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_CurveConstraint;
 class Handle_BRepFill_CurveConstraint : public Handle_GeomPlate_CurveConstraint {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_CurveConstraint();
 		%feature("autodoc", "1");
 		Handle_BRepFill_CurveConstraint();
 		%feature("autodoc", "1");
@@ -208,12 +218,15 @@ class Handle_BRepFill_CurveConstraint : public Handle_GeomPlate_CurveConstraint 
 	return (BRepFill_CurveConstraint*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_CurveConstraint {
+	~Handle_BRepFill_CurveConstraint() {
+	printf("Call custom destructor for instance of Handle_BRepFill_CurveConstraint\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape();
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape();
 		%feature("autodoc", "1");
@@ -229,12 +242,15 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public Han
 	return (BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
+	~Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape() {
+	printf("Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_PipeShell;
 class Handle_BRepFill_PipeShell : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_PipeShell();
 		%feature("autodoc", "1");
 		Handle_BRepFill_PipeShell();
 		%feature("autodoc", "1");
@@ -250,12 +266,15 @@ class Handle_BRepFill_PipeShell : public Handle_MMgt_TShared {
 	return (BRepFill_PipeShell*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_PipeShell {
+	~Handle_BRepFill_PipeShell() {
+	printf("Call custom destructor for instance of Handle_BRepFill_PipeShell\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal();
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal();
 		%feature("autodoc", "1");
@@ -271,12 +290,15 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public Handle_
 	return (BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
+	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal() {
+	printf("Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_ACRLaw;
 class Handle_BRepFill_ACRLaw : public Handle_BRepFill_LocationLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_ACRLaw();
 		%feature("autodoc", "1");
 		Handle_BRepFill_ACRLaw();
 		%feature("autodoc", "1");
@@ -292,12 +314,15 @@ class Handle_BRepFill_ACRLaw : public Handle_BRepFill_LocationLaw {
 	return (BRepFill_ACRLaw*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_ACRLaw {
+	~Handle_BRepFill_ACRLaw() {
+	printf("Call custom destructor for instance of Handle_BRepFill_ACRLaw\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt();
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt();
 		%feature("autodoc", "1");
@@ -313,12 +338,15 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public Handle_T
 	return (BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
+	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt() {
+	printf("Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
@@ -334,12 +362,15 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : pub
 	return (BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
+	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;
 class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder();
 		%feature("autodoc", "1");
 		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder();
 		%feature("autodoc", "1");
@@ -355,12 +386,15 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_T
 	return (BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
+	~Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder() {
+	printf("Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_SectionLaw;
 class Handle_BRepFill_SectionLaw : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_SectionLaw();
 		%feature("autodoc", "1");
 		Handle_BRepFill_SectionLaw();
 		%feature("autodoc", "1");
@@ -376,12 +410,15 @@ class Handle_BRepFill_SectionLaw : public Handle_MMgt_TShared {
 	return (BRepFill_SectionLaw*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_SectionLaw {
+	~Handle_BRepFill_SectionLaw() {
+	printf("Call custom destructor for instance of Handle_BRepFill_SectionLaw\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_ShapeLaw;
 class Handle_BRepFill_ShapeLaw : public Handle_BRepFill_SectionLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_ShapeLaw();
 		%feature("autodoc", "1");
 		Handle_BRepFill_ShapeLaw();
 		%feature("autodoc", "1");
@@ -397,12 +434,15 @@ class Handle_BRepFill_ShapeLaw : public Handle_BRepFill_SectionLaw {
 	return (BRepFill_ShapeLaw*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_ShapeLaw {
+	~Handle_BRepFill_ShapeLaw() {
+	printf("Call custom destructor for instance of Handle_BRepFill_ShapeLaw\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape();
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape();
 		%feature("autodoc", "1");
@@ -418,12 +458,15 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle
 	return (BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_DraftLaw;
 class Handle_BRepFill_DraftLaw : public Handle_BRepFill_Edge3DLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_DraftLaw();
 		%feature("autodoc", "1");
 		Handle_BRepFill_DraftLaw();
 		%feature("autodoc", "1");
@@ -439,12 +482,15 @@ class Handle_BRepFill_DraftLaw : public Handle_BRepFill_Edge3DLaw {
 	return (BRepFill_DraftLaw*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_DraftLaw {
+	~Handle_BRepFill_DraftLaw() {
+	printf("Call custom destructor for instance of Handle_BRepFill_DraftLaw\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_ListNodeOfListOfOffsetWire;
 class Handle_BRepFill_ListNodeOfListOfOffsetWire : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_ListNodeOfListOfOffsetWire();
 		%feature("autodoc", "1");
 		Handle_BRepFill_ListNodeOfListOfOffsetWire();
 		%feature("autodoc", "1");
@@ -460,12 +506,15 @@ class Handle_BRepFill_ListNodeOfListOfOffsetWire : public Handle_TCollection_Map
 	return (BRepFill_ListNodeOfListOfOffsetWire*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_ListNodeOfListOfOffsetWire {
+	~Handle_BRepFill_ListNodeOfListOfOffsetWire() {
+	printf("Call custom destructor for instance of Handle_BRepFill_ListNodeOfListOfOffsetWire\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape();
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape();
 		%feature("autodoc", "1");
@@ -481,12 +530,15 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape : public Handle_TCollectio
 	return (BRepFill_DataMapNodeOfDataMapOfNodeShape*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape {
+	~Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape() {
+	printf("Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_NSections;
 class Handle_BRepFill_NSections : public Handle_BRepFill_SectionLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_NSections();
 		%feature("autodoc", "1");
 		Handle_BRepFill_NSections();
 		%feature("autodoc", "1");
@@ -502,12 +554,15 @@ class Handle_BRepFill_NSections : public Handle_BRepFill_SectionLaw {
 	return (BRepFill_NSections*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_NSections {
+	~Handle_BRepFill_NSections() {
+	printf("Call custom destructor for instance of Handle_BRepFill_NSections\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_EdgeOnSurfLaw;
 class Handle_BRepFill_EdgeOnSurfLaw : public Handle_BRepFill_LocationLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_EdgeOnSurfLaw();
 		%feature("autodoc", "1");
 		Handle_BRepFill_EdgeOnSurfLaw();
 		%feature("autodoc", "1");
@@ -523,12 +578,15 @@ class Handle_BRepFill_EdgeOnSurfLaw : public Handle_BRepFill_LocationLaw {
 	return (BRepFill_EdgeOnSurfLaw*)$self->Access();
 	}
 };
+%extend Handle_BRepFill_EdgeOnSurfLaw {
+	~Handle_BRepFill_EdgeOnSurfLaw() {
+	printf("Call custom destructor for instance of Handle_BRepFill_EdgeOnSurfLaw\n");
+	}
+};
 
 %nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder;
 class Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder();
 		%feature("autodoc", "1");
 		Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder();
 		%feature("autodoc", "1");
@@ -542,6 +600,11 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public Handle_TColl
 %extend Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
 	BRepFill_SequenceNodeOfSequenceOfFaceAndOrder* GetObject() {
 	return (BRepFill_SequenceNodeOfSequenceOfFaceAndOrder*)$self->Access();
+	}
+};
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
+	~Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder() {
+	printf("Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder\n");
 	}
 };
 
@@ -572,13 +635,16 @@ class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
 		BRepFill_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_CurveConstraint();
 
 };
 %extend BRepFill_CurveConstraint {
 	Handle_BRepFill_CurveConstraint GetHandle() {
 	return *(Handle_BRepFill_CurveConstraint*) &$self;
+	}
+};
+%extend BRepFill_CurveConstraint {
+	~BRepFill_CurveConstraint() {
+	printf("Call custom destructor for instance of BRepFill_CurveConstraint\n");
 	}
 };
 
@@ -762,6 +828,11 @@ class BRepFill_SectionLaw : public MMgt_TShared {
 	return *(Handle_BRepFill_SectionLaw*) &$self;
 	}
 };
+%extend BRepFill_SectionLaw {
+	~BRepFill_SectionLaw() {
+	printf("Call custom destructor for instance of BRepFill_SectionLaw\n");
+	}
+};
 
 %nodefaultctor BRepFill_NSections;
 class BRepFill_NSections : public BRepFill_SectionLaw {
@@ -772,13 +843,16 @@ class BRepFill_NSections : public BRepFill_SectionLaw {
 		BRepFill_NSections(const TopTools_SequenceOfShape &S, const TColStd_SequenceOfReal &P, const Standard_Real VF, const Standard_Real VL, const Standard_Boolean Build=1);
 		%feature("autodoc", "1");
 		virtual		void D0(const Standard_Real Param, TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		virtual		~BRepFill_NSections();
 
 };
 %extend BRepFill_NSections {
 	Handle_BRepFill_NSections GetHandle() {
 	return *(Handle_BRepFill_NSections*) &$self;
+	}
+};
+%extend BRepFill_NSections {
+	~BRepFill_NSections() {
+	printf("Call custom destructor for instance of BRepFill_NSections\n");
 	}
 };
 
@@ -891,13 +965,16 @@ class BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public TCollection_SeqNode
 		BRepFill_FaceAndOrder & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_SequenceNodeOfSequenceOfFaceAndOrder();
 
 };
 %extend BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
 	Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder GetHandle() {
 	return *(Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder*) &$self;
+	}
+};
+%extend BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
+	~BRepFill_SequenceNodeOfSequenceOfFaceAndOrder() {
+	printf("Call custom destructor for instance of BRepFill_SequenceNodeOfSequenceOfFaceAndOrder\n");
 	}
 };
 
@@ -930,13 +1007,16 @@ class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollecti
 		TopTools_ListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape();
 
 };
 %extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
 	Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape GetHandle() {
 	return *(Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape*) &$self;
+	}
+};
+%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
+	~BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape() {
+	printf("Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape\n");
 	}
 };
 
@@ -1133,13 +1213,16 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 		Standard_Real Abscissa(const Standard_Integer Index, const Standard_Real Param);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_LocationLaw();
 
 };
 %extend BRepFill_LocationLaw {
 	Handle_BRepFill_LocationLaw GetHandle() {
 	return *(Handle_BRepFill_LocationLaw*) &$self;
+	}
+};
+%extend BRepFill_LocationLaw {
+	~BRepFill_LocationLaw() {
+	printf("Call custom destructor for instance of BRepFill_LocationLaw\n");
 	}
 };
 
@@ -1148,13 +1231,16 @@ class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
 	public:
 		%feature("autodoc", "1");
 		BRepFill_Edge3DLaw(const TopoDS_Wire &Path, const Handle_GeomFill_LocationLaw &Law);
-		%feature("autodoc", "1");
-		virtual		~BRepFill_Edge3DLaw();
 
 };
 %extend BRepFill_Edge3DLaw {
 	Handle_BRepFill_Edge3DLaw GetHandle() {
 	return *(Handle_BRepFill_Edge3DLaw*) &$self;
+	}
+};
+%extend BRepFill_Edge3DLaw {
+	~BRepFill_Edge3DLaw() {
+	printf("Call custom destructor for instance of BRepFill_Edge3DLaw\n");
 	}
 };
 
@@ -1165,13 +1251,16 @@ class BRepFill_DraftLaw : public BRepFill_Edge3DLaw {
 		BRepFill_DraftLaw(const TopoDS_Wire &Path, const Handle_GeomFill_LocationDraft &Law);
 		%feature("autodoc", "1");
 		void CleanLaw(const Standard_Real TolAngular);
-		%feature("autodoc", "1");
-		virtual		~BRepFill_DraftLaw();
 
 };
 %extend BRepFill_DraftLaw {
 	Handle_BRepFill_DraftLaw GetHandle() {
 	return *(Handle_BRepFill_DraftLaw*) &$self;
+	}
+};
+%extend BRepFill_DraftLaw {
+	~BRepFill_DraftLaw() {
+	printf("Call custom destructor for instance of BRepFill_DraftLaw\n");
 	}
 };
 
@@ -1336,13 +1425,16 @@ class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
 		BRepFill_OffsetWire & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_ListNodeOfListOfOffsetWire();
 
 };
 %extend BRepFill_ListNodeOfListOfOffsetWire {
 	Handle_BRepFill_ListNodeOfListOfOffsetWire GetHandle() {
 	return *(Handle_BRepFill_ListNodeOfListOfOffsetWire*) &$self;
+	}
+};
+%extend BRepFill_ListNodeOfListOfOffsetWire {
+	~BRepFill_ListNodeOfListOfOffsetWire() {
+	printf("Call custom destructor for instance of BRepFill_ListNodeOfListOfOffsetWire\n");
 	}
 };
 
@@ -1383,13 +1475,16 @@ class BRepFill_ACRLaw : public BRepFill_LocationLaw {
 		BRepFill_ACRLaw(const TopoDS_Wire &Path, const Handle_GeomFill_LocationGuide &Law);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_ACRLaw();
 
 };
 %extend BRepFill_ACRLaw {
 	Handle_BRepFill_ACRLaw GetHandle() {
 	return *(Handle_BRepFill_ACRLaw*) &$self;
+	}
+};
+%extend BRepFill_ACRLaw {
+	~BRepFill_ACRLaw() {
+	printf("Call custom destructor for instance of BRepFill_ACRLaw\n");
 	}
 };
 
@@ -1402,13 +1497,16 @@ class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
 		Standard_Boolean HasResult() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_EdgeOnSurfLaw();
 
 };
 %extend BRepFill_EdgeOnSurfLaw {
 	Handle_BRepFill_EdgeOnSurfLaw GetHandle() {
 	return *(Handle_BRepFill_EdgeOnSurfLaw*) &$self;
+	}
+};
+%extend BRepFill_EdgeOnSurfLaw {
+	~BRepFill_EdgeOnSurfLaw() {
+	printf("Call custom destructor for instance of BRepFill_EdgeOnSurfLaw\n");
 	}
 };
 
@@ -1423,13 +1521,16 @@ class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollectio
 		TopTools_DataMapOfShapeShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape();
 
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
 	Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape GetHandle() {
 	return *(Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape*) &$self;
+	}
+};
+%extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
+	~BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape() {
+	printf("Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape\n");
 	}
 };
 
@@ -1482,13 +1583,16 @@ class BRepFill_PipeShell : public MMgt_TShared {
 		void Generated(const TopoDS_Shape &S, TopTools_ListOfShape & L);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_PipeShell();
 
 };
 %extend BRepFill_PipeShell {
 	Handle_BRepFill_PipeShell GetHandle() {
 	return *(Handle_BRepFill_PipeShell*) &$self;
+	}
+};
+%extend BRepFill_PipeShell {
+	~BRepFill_PipeShell() {
+	printf("Call custom destructor for instance of BRepFill_PipeShell\n");
 	}
 };
 
@@ -1539,13 +1643,16 @@ class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
 		const TopoDS_Edge & Edge(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_ShapeLaw();
 
 };
 %extend BRepFill_ShapeLaw {
 	Handle_BRepFill_ShapeLaw GetHandle() {
 	return *(Handle_BRepFill_ShapeLaw*) &$self;
+	}
+};
+%extend BRepFill_ShapeLaw {
+	~BRepFill_ShapeLaw() {
+	printf("Call custom destructor for instance of BRepFill_ShapeLaw\n");
 	}
 };
 
@@ -1634,13 +1741,16 @@ class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCo
 		TopTools_DataMapOfShapeListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape();
 
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
 	Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape GetHandle() {
 	return *(Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape*) &$self;
+	}
+};
+%extend BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
+	~BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape\n");
 	}
 };
 
@@ -1745,13 +1855,16 @@ class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_DataMapNodeOfDataMapOfNodeShape();
 
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeShape {
 	Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape GetHandle() {
 	return *(Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape*) &$self;
+	}
+};
+%extend BRepFill_DataMapNodeOfDataMapOfNodeShape {
+	~BRepFill_DataMapNodeOfDataMapOfNodeShape() {
+	printf("Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfNodeShape\n");
 	}
 };
 
@@ -1832,13 +1945,16 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_M
 		TopTools_SequenceOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape();
 
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
 	Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape GetHandle() {
 	return *(Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape*) &$self;
+	}
+};
+%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");
 	}
 };
 
@@ -1853,13 +1969,16 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_Map
 		TColgp_SequenceOfPnt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt();
 
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
 	Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt GetHandle() {
 	return *(Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt*) &$self;
+	}
+};
+%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
+	~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt() {
+	printf("Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt\n");
 	}
 };
 
@@ -1956,13 +2075,16 @@ class BRepFill_SequenceNodeOfSequenceOfSection : public TCollection_SeqNode {
 		BRepFill_Section & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_SequenceNodeOfSequenceOfSection();
 
 };
 %extend BRepFill_SequenceNodeOfSequenceOfSection {
 	Handle_BRepFill_SequenceNodeOfSequenceOfSection GetHandle() {
 	return *(Handle_BRepFill_SequenceNodeOfSequenceOfSection*) &$self;
+	}
+};
+%extend BRepFill_SequenceNodeOfSequenceOfSection {
+	~BRepFill_SequenceNodeOfSequenceOfSection() {
+	printf("Call custom destructor for instance of BRepFill_SequenceNodeOfSequenceOfSection\n");
 	}
 };
 
@@ -2023,13 +2145,16 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_Ma
 		TColStd_SequenceOfReal & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal();
 
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
 	Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal GetHandle() {
 	return *(Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal*) &$self;
+	}
+};
+%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
+	~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal() {
+	printf("Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal\n");
 	}
 };
 
@@ -2122,13 +2247,16 @@ class BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public TCollection_Seq
 		BRepFill_EdgeFaceAndOrder & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder();
 
 };
 %extend BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
 	Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder GetHandle() {
 	return *(Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder*) &$self;
+	}
+};
+%extend BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
+	~BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder() {
+	printf("Call custom destructor for instance of BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder\n");
 	}
 };
 

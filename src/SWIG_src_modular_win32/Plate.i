@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint();
-		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint();
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint &aHandle);
@@ -118,12 +116,15 @@ class Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint : public Handle_TC
 	return (Plate_SequenceNodeOfSequenceOfPinpointConstraint*)$self->Access();
 	}
 };
+%extend Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint {
+	~Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint() {
+	printf("Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint\n");
+	}
+};
 
 %nodefaultctor Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
 class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint();
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_T
 	return (Plate_SequenceNodeOfSequenceOfLinearXYZConstraint*)$self->Access();
 	}
 };
+%extend Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	~Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint() {
+	printf("Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint\n");
+	}
+};
 
 %nodefaultctor Handle_Plate_HArray1OfPinpointConstraint;
 class Handle_Plate_HArray1OfPinpointConstraint : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Plate_HArray1OfPinpointConstraint();
 		%feature("autodoc", "1");
 		Handle_Plate_HArray1OfPinpointConstraint();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_Plate_HArray1OfPinpointConstraint : public Handle_MMgt_TShared {
 	return (Plate_HArray1OfPinpointConstraint*)$self->Access();
 	}
 };
+%extend Handle_Plate_HArray1OfPinpointConstraint {
+	~Handle_Plate_HArray1OfPinpointConstraint() {
+	printf("Call custom destructor for instance of Handle_Plate_HArray1OfPinpointConstraint\n");
+	}
+};
 
 %nodefaultctor Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint;
 class Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint();
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint();
 		%feature("autodoc", "1");
@@ -179,6 +186,11 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public Handl
 %extend Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
 	Plate_SequenceNodeOfSequenceOfLinearScalarConstraint* GetObject() {
 	return (Plate_SequenceNodeOfSequenceOfLinearScalarConstraint*)$self->Access();
+	}
+};
+%extend Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
+	~Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint() {
+	printf("Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");
 	}
 };
 
@@ -369,13 +381,16 @@ class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqN
 		Plate_PinpointConstraint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Plate_SequenceNodeOfSequenceOfPinpointConstraint();
 
 };
 %extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
 	Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint GetHandle() {
 	return *(Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint*) &$self;
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
+	~Plate_SequenceNodeOfSequenceOfPinpointConstraint() {
+	printf("Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfPinpointConstraint\n");
 	}
 };
 
@@ -528,13 +543,16 @@ class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_
 		Plate_LinearScalarConstraint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Plate_SequenceNodeOfSequenceOfLinearScalarConstraint();
 
 };
 %extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
 	Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint GetHandle() {
 	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint*) &$self;
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
+	~Plate_SequenceNodeOfSequenceOfLinearScalarConstraint() {
+	printf("Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");
 	}
 };
 
@@ -591,13 +609,16 @@ class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
 		Plate_Array1OfPinpointConstraint & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Plate_HArray1OfPinpointConstraint();
 
 };
 %extend Plate_HArray1OfPinpointConstraint {
 	Handle_Plate_HArray1OfPinpointConstraint GetHandle() {
 	return *(Handle_Plate_HArray1OfPinpointConstraint*) &$self;
+	}
+};
+%extend Plate_HArray1OfPinpointConstraint {
+	~Plate_HArray1OfPinpointConstraint() {
+	printf("Call custom destructor for instance of Plate_HArray1OfPinpointConstraint\n");
 	}
 };
 
@@ -630,13 +651,16 @@ class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_Seq
 		Plate_LinearXYZConstraint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Plate_SequenceNodeOfSequenceOfLinearXYZConstraint();
 
 };
 %extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
 	Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint GetHandle() {
 	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint*) &$self;
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	~Plate_SequenceNodeOfSequenceOfLinearXYZConstraint() {
+	printf("Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearXYZConstraint\n");
 	}
 };
 

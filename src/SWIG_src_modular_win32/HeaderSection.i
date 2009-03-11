@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_HeaderSection_HeaderRecognizer : public Handle_StepData_FileRecognizer {
 	public:
 		%feature("autodoc", "1");
-		~Handle_HeaderSection_HeaderRecognizer();
-		%feature("autodoc", "1");
 		Handle_HeaderSection_HeaderRecognizer();
 		%feature("autodoc", "1");
 		Handle_HeaderSection_HeaderRecognizer(const Handle_HeaderSection_HeaderRecognizer &aHandle);
@@ -118,12 +116,15 @@ class Handle_HeaderSection_HeaderRecognizer : public Handle_StepData_FileRecogni
 	return (HeaderSection_HeaderRecognizer*)$self->Access();
 	}
 };
+%extend Handle_HeaderSection_HeaderRecognizer {
+	~Handle_HeaderSection_HeaderRecognizer() {
+	printf("Call custom destructor for instance of Handle_HeaderSection_HeaderRecognizer\n");
+	}
+};
 
 %nodefaultctor Handle_HeaderSection_FileName;
 class Handle_HeaderSection_FileName : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HeaderSection_FileName();
 		%feature("autodoc", "1");
 		Handle_HeaderSection_FileName();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_HeaderSection_FileName : public Handle_MMgt_TShared {
 	return (HeaderSection_FileName*)$self->Access();
 	}
 };
+%extend Handle_HeaderSection_FileName {
+	~Handle_HeaderSection_FileName() {
+	printf("Call custom destructor for instance of Handle_HeaderSection_FileName\n");
+	}
+};
 
 %nodefaultctor Handle_HeaderSection_Protocol;
 class Handle_HeaderSection_Protocol : public Handle_StepData_Protocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HeaderSection_Protocol();
 		%feature("autodoc", "1");
 		Handle_HeaderSection_Protocol();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_HeaderSection_Protocol : public Handle_StepData_Protocol {
 	return (HeaderSection_Protocol*)$self->Access();
 	}
 };
+%extend Handle_HeaderSection_Protocol {
+	~Handle_HeaderSection_Protocol() {
+	printf("Call custom destructor for instance of Handle_HeaderSection_Protocol\n");
+	}
+};
 
 %nodefaultctor Handle_HeaderSection_FileDescription;
 class Handle_HeaderSection_FileDescription : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HeaderSection_FileDescription();
 		%feature("autodoc", "1");
 		Handle_HeaderSection_FileDescription();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_HeaderSection_FileDescription : public Handle_MMgt_TShared {
 	return (HeaderSection_FileDescription*)$self->Access();
 	}
 };
+%extend Handle_HeaderSection_FileDescription {
+	~Handle_HeaderSection_FileDescription() {
+	printf("Call custom destructor for instance of Handle_HeaderSection_FileDescription\n");
+	}
+};
 
 %nodefaultctor Handle_HeaderSection_FileSchema;
 class Handle_HeaderSection_FileSchema : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HeaderSection_FileSchema();
 		%feature("autodoc", "1");
 		Handle_HeaderSection_FileSchema();
 		%feature("autodoc", "1");
@@ -200,6 +210,11 @@ class Handle_HeaderSection_FileSchema : public Handle_MMgt_TShared {
 %extend Handle_HeaderSection_FileSchema {
 	HeaderSection_FileSchema* GetObject() {
 	return (HeaderSection_FileSchema*)$self->Access();
+	}
+};
+%extend Handle_HeaderSection_FileSchema {
+	~Handle_HeaderSection_FileSchema() {
+	printf("Call custom destructor for instance of Handle_HeaderSection_FileSchema\n");
 	}
 };
 
@@ -224,13 +239,16 @@ class HeaderSection_FileDescription : public MMgt_TShared {
 		Handle_TCollection_HAsciiString ImplementationLevel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HeaderSection_FileDescription();
 
 };
 %extend HeaderSection_FileDescription {
 	Handle_HeaderSection_FileDescription GetHandle() {
 	return *(Handle_HeaderSection_FileDescription*) &$self;
+	}
+};
+%extend HeaderSection_FileDescription {
+	~HeaderSection_FileDescription() {
+	printf("Call custom destructor for instance of HeaderSection_FileDescription\n");
 	}
 };
 
@@ -251,13 +269,16 @@ class HeaderSection_FileSchema : public MMgt_TShared {
 		Standard_Integer NbSchemaIdentifiers() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HeaderSection_FileSchema();
 
 };
 %extend HeaderSection_FileSchema {
 	Handle_HeaderSection_FileSchema GetHandle() {
 	return *(Handle_HeaderSection_FileSchema*) &$self;
+	}
+};
+%extend HeaderSection_FileSchema {
+	~HeaderSection_FileSchema() {
+	printf("Call custom destructor for instance of HeaderSection_FileSchema\n");
 	}
 };
 
@@ -306,13 +327,16 @@ class HeaderSection_FileName : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Authorisation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HeaderSection_FileName();
 
 };
 %extend HeaderSection_FileName {
 	Handle_HeaderSection_FileName GetHandle() {
 	return *(Handle_HeaderSection_FileName*) &$self;
+	}
+};
+%extend HeaderSection_FileName {
+	~HeaderSection_FileName() {
+	printf("Call custom destructor for instance of HeaderSection_FileName\n");
 	}
 };
 
@@ -335,12 +359,15 @@ class HeaderSection_HeaderRecognizer : public StepData_FileRecognizer {
 		HeaderSection_HeaderRecognizer();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HeaderSection_HeaderRecognizer();
 
 };
 %extend HeaderSection_HeaderRecognizer {
 	Handle_HeaderSection_HeaderRecognizer GetHandle() {
 	return *(Handle_HeaderSection_HeaderRecognizer*) &$self;
+	}
+};
+%extend HeaderSection_HeaderRecognizer {
+	~HeaderSection_HeaderRecognizer() {
+	printf("Call custom destructor for instance of HeaderSection_HeaderRecognizer\n");
 	}
 };

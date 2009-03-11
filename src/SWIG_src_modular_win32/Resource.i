@@ -109,8 +109,6 @@ enum Resource_FormatType {
 class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString();
-		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString();
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString(const Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString &aHandle);
@@ -125,12 +123,15 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 	return (Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString*)$self->Access();
 	}
 };
+%extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
+	printf("Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
 class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");
@@ -146,12 +147,15 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 	return (Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString*)$self->Access();
 	}
 };
+%extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString() {
+	printf("Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_Resource_Manager;
 class Handle_Resource_Manager : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Resource_Manager();
 		%feature("autodoc", "1");
 		Handle_Resource_Manager();
 		%feature("autodoc", "1");
@@ -167,12 +171,15 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 	return (Resource_Manager*)$self->Access();
 	}
 };
+%extend Handle_Resource_Manager {
+	~Handle_Resource_Manager() {
+	printf("Call custom destructor for instance of Handle_Resource_Manager\n");
+	}
+};
 
 %nodefaultctor Handle_Resource_NoSuchResource;
 class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Resource_NoSuchResource();
 		%feature("autodoc", "1");
 		Handle_Resource_NoSuchResource();
 		%feature("autodoc", "1");
@@ -186,6 +193,11 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 %extend Handle_Resource_NoSuchResource {
 	Resource_NoSuchResource* GetObject() {
 	return (Resource_NoSuchResource*)$self->Access();
+	}
+};
+%extend Handle_Resource_NoSuchResource {
+	~Handle_Resource_NoSuchResource() {
+	printf("Call custom destructor for instance of Handle_Resource_NoSuchResource\n");
 	}
 };
 
@@ -284,13 +296,16 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection
 		TCollection_AsciiString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString();
 
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
 	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString GetHandle() {
 	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString*) &$self;
+	}
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString() {
+	printf("Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");
 	}
 };
 
@@ -323,13 +338,16 @@ class Resource_Manager : public MMgt_TShared {
 		virtual		void SetResource(const char * aResourceName, const Standard_ExtString aValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Resource_Manager();
 
 };
 %extend Resource_Manager {
 	Handle_Resource_Manager GetHandle() {
 	return *(Handle_Resource_Manager*) &$self;
+	}
+};
+%extend Resource_Manager {
+	~Resource_Manager() {
+	printf("Call custom destructor for instance of Resource_Manager\n");
 	}
 };
 
@@ -372,13 +390,16 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 		Handle_Resource_NoSuchResource NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Resource_NoSuchResource();
 
 };
 %extend Resource_NoSuchResource {
 	Handle_Resource_NoSuchResource GetHandle() {
 	return *(Handle_Resource_NoSuchResource*) &$self;
+	}
+};
+%extend Resource_NoSuchResource {
+	~Resource_NoSuchResource() {
+	printf("Call custom destructor for instance of Resource_NoSuchResource\n");
 	}
 };
 
@@ -459,13 +480,16 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 		TCollection_ExtendedString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString();
 
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
 	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString GetHandle() {
 	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString*) &$self;
+	}
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
+	printf("Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");
 	}
 };
 

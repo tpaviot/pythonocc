@@ -109,8 +109,6 @@ enum Voxel_VoxelDisplayMode {
 class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Voxel_Prs();
-		%feature("autodoc", "1");
 		Handle_Voxel_Prs();
 		%feature("autodoc", "1");
 		Handle_Voxel_Prs(const Handle_Voxel_Prs &aHandle);
@@ -123,6 +121,11 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 %extend Handle_Voxel_Prs {
 	Voxel_Prs* GetObject() {
 	return (Voxel_Prs*)$self->Access();
+	}
+};
+%extend Handle_Voxel_Prs {
+	~Handle_Voxel_Prs() {
+	printf("Call custom destructor for instance of Handle_Voxel_Prs\n");
 	}
 };
 
@@ -258,8 +261,6 @@ class Voxel_Prs : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~Voxel_Prs();
-		%feature("autodoc", "1");
 		void SetDegenerateMode(const Standard_Boolean theDegenerate);
 		%feature("autodoc", "1");
 		void SetUsageOfGLlists(const Standard_Boolean theUsage);
@@ -276,6 +277,11 @@ class Voxel_Prs : public AIS_InteractiveObject {
 %extend Voxel_Prs {
 	Handle_Voxel_Prs GetHandle() {
 	return *(Handle_Voxel_Prs*) &$self;
+	}
+};
+%extend Voxel_Prs {
+	~Voxel_Prs() {
+	printf("Call custom destructor for instance of Voxel_Prs\n");
 	}
 };
 

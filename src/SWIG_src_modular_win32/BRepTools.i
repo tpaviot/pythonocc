@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepTools_Modification();
-		%feature("autodoc", "1");
 		Handle_BRepTools_Modification();
 		%feature("autodoc", "1");
 		Handle_BRepTools_Modification(const Handle_BRepTools_Modification &aHandle);
@@ -118,12 +116,15 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 	return (BRepTools_Modification*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_Modification {
+	~Handle_BRepTools_Modification() {
+	printf("Call custom destructor for instance of Handle_BRepTools_Modification\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_GTrsfModification;
 class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_GTrsfModification();
 		%feature("autodoc", "1");
 		Handle_BRepTools_GTrsfModification();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 	return (BRepTools_GTrsfModification*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_GTrsfModification {
+	~Handle_BRepTools_GTrsfModification() {
+	printf("Call custom destructor for instance of Handle_BRepTools_GTrsfModification\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_TrsfModification;
 class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_TrsfModification();
 		%feature("autodoc", "1");
 		Handle_BRepTools_TrsfModification();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 	return (BRepTools_TrsfModification*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_TrsfModification {
+	~Handle_BRepTools_TrsfModification() {
+	printf("Call custom destructor for instance of Handle_BRepTools_TrsfModification\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_ReShape;
 class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_ReShape();
 		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 	return (BRepTools_ReShape*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_ReShape {
+	~Handle_BRepTools_ReShape() {
+	printf("Call custom destructor for instance of Handle_BRepTools_ReShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_NurbsConvertModification;
 class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_NurbsConvertModification();
 		%feature("autodoc", "1");
 		Handle_BRepTools_NurbsConvertModification();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 	return (BRepTools_NurbsConvertModification*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_NurbsConvertModification {
+	~Handle_BRepTools_NurbsConvertModification() {
+	printf("Call custom destructor for instance of Handle_BRepTools_NurbsConvertModification\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d;
 class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d();
 		%feature("autodoc", "1");
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d();
 		%feature("autodoc", "1");
@@ -221,6 +234,11 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 %extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {
 	BRepTools_DataMapNodeOfMapOfVertexPnt2d* GetObject() {
 	return (BRepTools_DataMapNodeOfMapOfVertexPnt2d*)$self->Access();
+	}
+};
+%extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {
+	~Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d() {
+	printf("Call custom destructor for instance of Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");
 	}
 };
 
@@ -318,6 +336,11 @@ class BRepTools_Modification : public MMgt_TShared {
 %extend BRepTools_Modification {
 	Handle_BRepTools_Modification GetHandle() {
 	return *(Handle_BRepTools_Modification*) &$self;
+	}
+};
+%extend BRepTools_Modification {
+	~BRepTools_Modification() {
+	printf("Call custom destructor for instance of BRepTools_Modification\n");
 	}
 };
 
@@ -440,13 +463,16 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_GTrsfModification();
 
 };
 %extend BRepTools_GTrsfModification {
 	Handle_BRepTools_GTrsfModification GetHandle() {
 	return *(Handle_BRepTools_GTrsfModification*) &$self;
+	}
+};
+%extend BRepTools_GTrsfModification {
+	~BRepTools_GTrsfModification() {
+	printf("Call custom destructor for instance of BRepTools_GTrsfModification\n");
 	}
 };
 
@@ -493,13 +519,16 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_TrsfModification();
 
 };
 %extend BRepTools_TrsfModification {
 	Handle_BRepTools_TrsfModification GetHandle() {
 	return *(Handle_BRepTools_TrsfModification*) &$self;
+	}
+};
+%extend BRepTools_TrsfModification {
+	~BRepTools_TrsfModification() {
+	printf("Call custom destructor for instance of BRepTools_TrsfModification\n");
 	}
 };
 
@@ -560,13 +589,16 @@ class BRepTools_ReShape : public MMgt_TShared {
 		Standard_Boolean & ModeConsiderOrientation();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_ReShape();
 
 };
 %extend BRepTools_ReShape {
 	Handle_BRepTools_ReShape GetHandle() {
 	return *(Handle_BRepTools_ReShape*) &$self;
+	}
+};
+%extend BRepTools_ReShape {
+	~BRepTools_ReShape() {
+	printf("Call custom destructor for instance of BRepTools_ReShape\n");
 	}
 };
 
@@ -589,13 +621,16 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_NurbsConvertModification();
 
 };
 %extend BRepTools_NurbsConvertModification {
 	Handle_BRepTools_NurbsConvertModification GetHandle() {
 	return *(Handle_BRepTools_NurbsConvertModification*) &$self;
+	}
+};
+%extend BRepTools_NurbsConvertModification {
+	~BRepTools_NurbsConvertModification() {
+	printf("Call custom destructor for instance of BRepTools_NurbsConvertModification\n");
 	}
 };
 
@@ -648,12 +683,15 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 		TColgp_SequenceOfPnt2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_DataMapNodeOfMapOfVertexPnt2d();
 
 };
 %extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
 	Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d GetHandle() {
 	return *(Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d*) &$self;
+	}
+};
+%extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
+	~BRepTools_DataMapNodeOfMapOfVertexPnt2d() {
+	printf("Call custom destructor for instance of BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");
 	}
 };

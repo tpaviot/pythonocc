@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_RWStepAP214_ReadWriteModule : public Handle_StepData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		~Handle_RWStepAP214_ReadWriteModule();
-		%feature("autodoc", "1");
 		Handle_RWStepAP214_ReadWriteModule();
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_ReadWriteModule(const Handle_RWStepAP214_ReadWriteModule &aHandle);
@@ -118,12 +116,15 @@ class Handle_RWStepAP214_ReadWriteModule : public Handle_StepData_ReadWriteModul
 	return (RWStepAP214_ReadWriteModule*)$self->Access();
 	}
 };
+%extend Handle_RWStepAP214_ReadWriteModule {
+	~Handle_RWStepAP214_ReadWriteModule() {
+	printf("Call custom destructor for instance of Handle_RWStepAP214_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor Handle_RWStepAP214_GeneralModule;
 class Handle_RWStepAP214_GeneralModule : public Handle_StepData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_RWStepAP214_GeneralModule();
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_GeneralModule();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_RWStepAP214_GeneralModule : public Handle_StepData_GeneralModule {
 %extend Handle_RWStepAP214_GeneralModule {
 	RWStepAP214_GeneralModule* GetObject() {
 	return (RWStepAP214_GeneralModule*)$self->Access();
+	}
+};
+%extend Handle_RWStepAP214_GeneralModule {
+	~Handle_RWStepAP214_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_RWStepAP214_GeneralModule\n");
 	}
 };
 
@@ -335,13 +341,16 @@ class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 		virtual		Handle_TCollection_HAsciiString Name(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~RWStepAP214_GeneralModule();
 
 };
 %extend RWStepAP214_GeneralModule {
 	Handle_RWStepAP214_GeneralModule GetHandle() {
 	return *(Handle_RWStepAP214_GeneralModule*) &$self;
+	}
+};
+%extend RWStepAP214_GeneralModule {
+	~RWStepAP214_GeneralModule() {
+	printf("Call custom destructor for instance of RWStepAP214_GeneralModule\n");
 	}
 };
 
@@ -618,12 +627,15 @@ class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~RWStepAP214_ReadWriteModule();
 
 };
 %extend RWStepAP214_ReadWriteModule {
 	Handle_RWStepAP214_ReadWriteModule GetHandle() {
 	return *(Handle_RWStepAP214_ReadWriteModule*) &$self;
+	}
+};
+%extend RWStepAP214_ReadWriteModule {
+	~RWStepAP214_ReadWriteModule() {
+	printf("Call custom destructor for instance of RWStepAP214_ReadWriteModule\n");
 	}
 };

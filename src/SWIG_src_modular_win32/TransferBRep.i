@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_TransferBRep_BinderOfShape : public Handle_Transfer_Binder {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TransferBRep_BinderOfShape();
-		%feature("autodoc", "1");
 		Handle_TransferBRep_BinderOfShape();
 		%feature("autodoc", "1");
 		Handle_TransferBRep_BinderOfShape(const Handle_TransferBRep_BinderOfShape &aHandle);
@@ -118,12 +116,15 @@ class Handle_TransferBRep_BinderOfShape : public Handle_Transfer_Binder {
 	return (TransferBRep_BinderOfShape*)$self->Access();
 	}
 };
+%extend Handle_TransferBRep_BinderOfShape {
+	~Handle_TransferBRep_BinderOfShape() {
+	printf("Call custom destructor for instance of Handle_TransferBRep_BinderOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TransferBRep_ShapeBinder;
 class Handle_TransferBRep_ShapeBinder : public Handle_TransferBRep_BinderOfShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TransferBRep_ShapeBinder();
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeBinder();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_TransferBRep_ShapeBinder : public Handle_TransferBRep_BinderOfShape
 	return (TransferBRep_ShapeBinder*)$self->Access();
 	}
 };
+%extend Handle_TransferBRep_ShapeBinder {
+	~Handle_TransferBRep_ShapeBinder() {
+	printf("Call custom destructor for instance of Handle_TransferBRep_ShapeBinder\n");
+	}
+};
 
 %nodefaultctor Handle_TransferBRep_HSequenceOfTransferResultInfo;
 class Handle_TransferBRep_HSequenceOfTransferResultInfo : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TransferBRep_HSequenceOfTransferResultInfo();
 		%feature("autodoc", "1");
 		Handle_TransferBRep_HSequenceOfTransferResultInfo();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_TransferBRep_HSequenceOfTransferResultInfo : public Handle_MMgt_TSh
 	return (TransferBRep_HSequenceOfTransferResultInfo*)$self->Access();
 	}
 };
+%extend Handle_TransferBRep_HSequenceOfTransferResultInfo {
+	~Handle_TransferBRep_HSequenceOfTransferResultInfo() {
+	printf("Call custom destructor for instance of Handle_TransferBRep_HSequenceOfTransferResultInfo\n");
+	}
+};
 
 %nodefaultctor Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo;
 class Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo();
 		%feature("autodoc", "1");
 		Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public Ha
 	return (TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo*)$self->Access();
 	}
 };
+%extend Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
+	~Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo() {
+	printf("Call custom destructor for instance of Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo\n");
+	}
+};
 
 %nodefaultctor Handle_TransferBRep_ShapeListBinder;
 class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TransferBRep_ShapeListBinder();
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeListBinder();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
 	return (TransferBRep_ShapeListBinder*)$self->Access();
 	}
 };
+%extend Handle_TransferBRep_ShapeListBinder {
+	~Handle_TransferBRep_ShapeListBinder() {
+	printf("Call custom destructor for instance of Handle_TransferBRep_ShapeListBinder\n");
+	}
+};
 
 %nodefaultctor Handle_TransferBRep_ShapeMapper;
 class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TransferBRep_ShapeMapper();
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeMapper();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
 	return (TransferBRep_ShapeMapper*)$self->Access();
 	}
 };
+%extend Handle_TransferBRep_ShapeMapper {
+	~Handle_TransferBRep_ShapeMapper() {
+	printf("Call custom destructor for instance of Handle_TransferBRep_ShapeMapper\n");
+	}
+};
 
 %nodefaultctor Handle_TransferBRep_TransferResultInfo;
 class Handle_TransferBRep_TransferResultInfo : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TransferBRep_TransferResultInfo();
 		%feature("autodoc", "1");
 		Handle_TransferBRep_TransferResultInfo();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_TransferBRep_TransferResultInfo : public Handle_MMgt_TShared {
 	return (TransferBRep_TransferResultInfo*)$self->Access();
 	}
 };
+%extend Handle_TransferBRep_TransferResultInfo {
+	~Handle_TransferBRep_TransferResultInfo() {
+	printf("Call custom destructor for instance of Handle_TransferBRep_TransferResultInfo\n");
+	}
+};
 
 %nodefaultctor Handle_TransferBRep_OrientedShapeMapper;
 class Handle_TransferBRep_OrientedShapeMapper : public Handle_Transfer_Finder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TransferBRep_OrientedShapeMapper();
 		%feature("autodoc", "1");
 		Handle_TransferBRep_OrientedShapeMapper();
 		%feature("autodoc", "1");
@@ -263,6 +282,11 @@ class Handle_TransferBRep_OrientedShapeMapper : public Handle_Transfer_Finder {
 %extend Handle_TransferBRep_OrientedShapeMapper {
 	TransferBRep_OrientedShapeMapper* GetObject() {
 	return (TransferBRep_OrientedShapeMapper*)$self->Access();
+	}
+};
+%extend Handle_TransferBRep_OrientedShapeMapper {
+	~Handle_TransferBRep_OrientedShapeMapper() {
+	printf("Call custom destructor for instance of Handle_TransferBRep_OrientedShapeMapper\n");
 	}
 };
 
@@ -367,13 +391,16 @@ class TransferBRep_TransferResultInfo : public MMgt_TShared {
 		Standard_Integer & NoResultWarningFail();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TransferBRep_TransferResultInfo();
 
 };
 %extend TransferBRep_TransferResultInfo {
 	Handle_TransferBRep_TransferResultInfo GetHandle() {
 	return *(Handle_TransferBRep_TransferResultInfo*) &$self;
+	}
+};
+%extend TransferBRep_TransferResultInfo {
+	~TransferBRep_TransferResultInfo() {
+	printf("Call custom destructor for instance of TransferBRep_TransferResultInfo\n");
 	}
 };
 
@@ -392,13 +419,16 @@ class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 		virtual		Standard_CString ValueTypeName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TransferBRep_OrientedShapeMapper();
 
 };
 %extend TransferBRep_OrientedShapeMapper {
 	Handle_TransferBRep_OrientedShapeMapper GetHandle() {
 	return *(Handle_TransferBRep_OrientedShapeMapper*) &$self;
+	}
+};
+%extend TransferBRep_OrientedShapeMapper {
+	~TransferBRep_OrientedShapeMapper() {
+	printf("Call custom destructor for instance of TransferBRep_OrientedShapeMapper\n");
 	}
 };
 
@@ -421,13 +451,16 @@ class TransferBRep_BinderOfShape : public Transfer_Binder {
 		TopoDS_Shape & CResult();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TransferBRep_BinderOfShape();
 
 };
 %extend TransferBRep_BinderOfShape {
 	Handle_TransferBRep_BinderOfShape GetHandle() {
 	return *(Handle_TransferBRep_BinderOfShape*) &$self;
+	}
+};
+%extend TransferBRep_BinderOfShape {
+	~TransferBRep_BinderOfShape() {
+	printf("Call custom destructor for instance of TransferBRep_BinderOfShape\n");
 	}
 };
 
@@ -458,13 +491,16 @@ class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
 		TopoDS_Compound Compound() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TransferBRep_ShapeBinder();
 
 };
 %extend TransferBRep_ShapeBinder {
 	Handle_TransferBRep_ShapeBinder GetHandle() {
 	return *(Handle_TransferBRep_ShapeBinder*) &$self;
+	}
+};
+%extend TransferBRep_ShapeBinder {
+	~TransferBRep_ShapeBinder() {
+	printf("Call custom destructor for instance of TransferBRep_ShapeBinder\n");
 	}
 };
 
@@ -519,13 +555,16 @@ class TransferBRep_HSequenceOfTransferResultInfo : public MMgt_TShared {
 		Handle_TransferBRep_HSequenceOfTransferResultInfo ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TransferBRep_HSequenceOfTransferResultInfo();
 
 };
 %extend TransferBRep_HSequenceOfTransferResultInfo {
 	Handle_TransferBRep_HSequenceOfTransferResultInfo GetHandle() {
 	return *(Handle_TransferBRep_HSequenceOfTransferResultInfo*) &$self;
+	}
+};
+%extend TransferBRep_HSequenceOfTransferResultInfo {
+	~TransferBRep_HSequenceOfTransferResultInfo() {
+	printf("Call custom destructor for instance of TransferBRep_HSequenceOfTransferResultInfo\n");
 	}
 };
 
@@ -602,13 +641,16 @@ class TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public TCollecti
 		Handle_TransferBRep_TransferResultInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo();
 
 };
 %extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
 	Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo GetHandle() {
 	return *(Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo*) &$self;
+	}
+};
+%extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
+	~TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo() {
+	printf("Call custom destructor for instance of TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo\n");
 	}
 };
 
@@ -655,13 +697,16 @@ class TransferBRep_ShapeListBinder : public Transfer_Binder {
 		TopoDS_Compound Compound(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TransferBRep_ShapeListBinder();
 
 };
 %extend TransferBRep_ShapeListBinder {
 	Handle_TransferBRep_ShapeListBinder GetHandle() {
 	return *(Handle_TransferBRep_ShapeListBinder*) &$self;
+	}
+};
+%extend TransferBRep_ShapeListBinder {
+	~TransferBRep_ShapeListBinder() {
+	printf("Call custom destructor for instance of TransferBRep_ShapeListBinder\n");
 	}
 };
 

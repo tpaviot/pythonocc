@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlMPrsStd_PositionDriver();
-		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_PositionDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_PositionDriver(const Handle_XmlMPrsStd_PositionDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMPrsStd_PositionDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMPrsStd_PositionDriver {
+	~Handle_XmlMPrsStd_PositionDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMPrsStd_PositionDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMPrsStd_AISPresentationDriver;
 class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMPrsStd_AISPresentationDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_AISPresentationDriver();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
 %extend Handle_XmlMPrsStd_AISPresentationDriver {
 	XmlMPrsStd_AISPresentationDriver* GetObject() {
 	return (XmlMPrsStd_AISPresentationDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMPrsStd_AISPresentationDriver {
+	~Handle_XmlMPrsStd_AISPresentationDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMPrsStd_AISPresentationDriver\n");
 	}
 };
 
@@ -165,13 +171,16 @@ class XmlMPrsStd_AISPresentationDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMPrsStd_AISPresentationDriver();
 
 };
 %extend XmlMPrsStd_AISPresentationDriver {
 	Handle_XmlMPrsStd_AISPresentationDriver GetHandle() {
 	return *(Handle_XmlMPrsStd_AISPresentationDriver*) &$self;
+	}
+};
+%extend XmlMPrsStd_AISPresentationDriver {
+	~XmlMPrsStd_AISPresentationDriver() {
+	printf("Call custom destructor for instance of XmlMPrsStd_AISPresentationDriver\n");
 	}
 };
 
@@ -188,12 +197,15 @@ class XmlMPrsStd_PositionDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMPrsStd_PositionDriver();
 
 };
 %extend XmlMPrsStd_PositionDriver {
 	Handle_XmlMPrsStd_PositionDriver GetHandle() {
 	return *(Handle_XmlMPrsStd_PositionDriver*) &$self;
+	}
+};
+%extend XmlMPrsStd_PositionDriver {
+	~XmlMPrsStd_PositionDriver() {
+	printf("Call custom destructor for instance of XmlMPrsStd_PositionDriver\n");
 	}
 };

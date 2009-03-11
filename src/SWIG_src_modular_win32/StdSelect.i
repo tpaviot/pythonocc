@@ -129,8 +129,6 @@ enum StdSelect_TypeOfFace {
 class Handle_StdSelect_SensitiveText2d : public Handle_Select2D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StdSelect_SensitiveText2d();
-		%feature("autodoc", "1");
 		Handle_StdSelect_SensitiveText2d();
 		%feature("autodoc", "1");
 		Handle_StdSelect_SensitiveText2d(const Handle_StdSelect_SensitiveText2d &aHandle);
@@ -145,12 +143,15 @@ class Handle_StdSelect_SensitiveText2d : public Handle_Select2D_SensitiveEntity 
 	return (StdSelect_SensitiveText2d*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_SensitiveText2d {
+	~Handle_StdSelect_SensitiveText2d() {
+	printf("Call custom destructor for instance of Handle_StdSelect_SensitiveText2d\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_TextProjector2d;
 class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_TextProjector2d();
 		%feature("autodoc", "1");
 		Handle_StdSelect_TextProjector2d();
 		%feature("autodoc", "1");
@@ -166,12 +167,15 @@ class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
 	return (StdSelect_TextProjector2d*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_TextProjector2d {
+	~Handle_StdSelect_TextProjector2d() {
+	printf("Call custom destructor for instance of Handle_StdSelect_TextProjector2d\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_EdgeFilter;
 class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_EdgeFilter();
 		%feature("autodoc", "1");
 		Handle_StdSelect_EdgeFilter();
 		%feature("autodoc", "1");
@@ -187,12 +191,15 @@ class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
 	return (StdSelect_EdgeFilter*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_EdgeFilter {
+	~Handle_StdSelect_EdgeFilter() {
+	printf("Call custom destructor for instance of Handle_StdSelect_EdgeFilter\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_BRepOwner;
 class Handle_StdSelect_BRepOwner : public Handle_SelectMgr_EntityOwner {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_BRepOwner();
 		%feature("autodoc", "1");
 		Handle_StdSelect_BRepOwner();
 		%feature("autodoc", "1");
@@ -208,12 +215,15 @@ class Handle_StdSelect_BRepOwner : public Handle_SelectMgr_EntityOwner {
 	return (StdSelect_BRepOwner*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_BRepOwner {
+	~Handle_StdSelect_BRepOwner() {
+	printf("Call custom destructor for instance of Handle_StdSelect_BRepOwner\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs;
 class Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs();
 		%feature("autodoc", "1");
 		Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs();
 		%feature("autodoc", "1");
@@ -229,12 +239,15 @@ class Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Han
 	return (StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
+	~Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs() {
+	printf("Call custom destructor for instance of Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_Shape;
 class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_Shape();
 		%feature("autodoc", "1");
 		Handle_StdSelect_Shape();
 		%feature("autodoc", "1");
@@ -250,12 +263,15 @@ class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
 	return (StdSelect_Shape*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_Shape {
+	~Handle_StdSelect_Shape() {
+	printf("Call custom destructor for instance of Handle_StdSelect_Shape\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_FaceFilter;
 class Handle_StdSelect_FaceFilter : public Handle_SelectMgr_Filter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_FaceFilter();
 		%feature("autodoc", "1");
 		Handle_StdSelect_FaceFilter();
 		%feature("autodoc", "1");
@@ -271,12 +287,15 @@ class Handle_StdSelect_FaceFilter : public Handle_SelectMgr_Filter {
 	return (StdSelect_FaceFilter*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_FaceFilter {
+	~Handle_StdSelect_FaceFilter() {
+	printf("Call custom destructor for instance of Handle_StdSelect_FaceFilter\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_ViewerSelector2d;
 class Handle_StdSelect_ViewerSelector2d : public Handle_SelectMgr_ViewerSelector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_ViewerSelector2d();
 		%feature("autodoc", "1");
 		Handle_StdSelect_ViewerSelector2d();
 		%feature("autodoc", "1");
@@ -292,12 +311,15 @@ class Handle_StdSelect_ViewerSelector2d : public Handle_SelectMgr_ViewerSelector
 	return (StdSelect_ViewerSelector2d*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_ViewerSelector2d {
+	~Handle_StdSelect_ViewerSelector2d() {
+	printf("Call custom destructor for instance of Handle_StdSelect_ViewerSelector2d\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_ViewerSelector3d;
 class Handle_StdSelect_ViewerSelector3d : public Handle_SelectMgr_ViewerSelector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_ViewerSelector3d();
 		%feature("autodoc", "1");
 		Handle_StdSelect_ViewerSelector3d();
 		%feature("autodoc", "1");
@@ -313,12 +335,15 @@ class Handle_StdSelect_ViewerSelector3d : public Handle_SelectMgr_ViewerSelector
 	return (StdSelect_ViewerSelector3d*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_ViewerSelector3d {
+	~Handle_StdSelect_ViewerSelector3d() {
+	printf("Call custom destructor for instance of Handle_StdSelect_ViewerSelector3d\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_ShapeTypeFilter;
 class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_ShapeTypeFilter();
 		%feature("autodoc", "1");
 		Handle_StdSelect_ShapeTypeFilter();
 		%feature("autodoc", "1");
@@ -334,12 +359,15 @@ class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 	return (StdSelect_ShapeTypeFilter*)$self->Access();
 	}
 };
+%extend Handle_StdSelect_ShapeTypeFilter {
+	~Handle_StdSelect_ShapeTypeFilter() {
+	printf("Call custom destructor for instance of Handle_StdSelect_ShapeTypeFilter\n");
+	}
+};
 
 %nodefaultctor Handle_StdSelect_Prs;
 class Handle_StdSelect_Prs : public Handle_Prs3d_Presentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdSelect_Prs();
 		%feature("autodoc", "1");
 		Handle_StdSelect_Prs();
 		%feature("autodoc", "1");
@@ -353,6 +381,11 @@ class Handle_StdSelect_Prs : public Handle_Prs3d_Presentation {
 %extend Handle_StdSelect_Prs {
 	StdSelect_Prs* GetObject() {
 	return (StdSelect_Prs*)$self->Access();
+	}
+};
+%extend Handle_StdSelect_Prs {
+	~Handle_StdSelect_Prs() {
+	printf("Call custom destructor for instance of Handle_StdSelect_Prs\n");
 	}
 };
 
@@ -409,13 +442,16 @@ class StdSelect_ShapeTypeFilter : public SelectMgr_Filter {
 		virtual		Standard_Boolean ActsOn(const TopAbs_ShapeEnum aStandardMode) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_ShapeTypeFilter();
 
 };
 %extend StdSelect_ShapeTypeFilter {
 	Handle_StdSelect_ShapeTypeFilter GetHandle() {
 	return *(Handle_StdSelect_ShapeTypeFilter*) &$self;
+	}
+};
+%extend StdSelect_ShapeTypeFilter {
+	~StdSelect_ShapeTypeFilter() {
+	printf("Call custom destructor for instance of StdSelect_ShapeTypeFilter\n");
 	}
 };
 
@@ -468,13 +504,16 @@ class StdSelect_FaceFilter : public SelectMgr_Filter {
 		virtual		Standard_Boolean ActsOn(const TopAbs_ShapeEnum aStandardMode) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_FaceFilter();
 
 };
 %extend StdSelect_FaceFilter {
 	Handle_StdSelect_FaceFilter GetHandle() {
 	return *(Handle_StdSelect_FaceFilter*) &$self;
+	}
+};
+%extend StdSelect_FaceFilter {
+	~StdSelect_FaceFilter() {
+	printf("Call custom destructor for instance of StdSelect_FaceFilter\n");
 	}
 };
 
@@ -493,13 +532,16 @@ class StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollectio
 		Handle_StdSelect_Prs & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs();
 
 };
 %extend StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs GetHandle() {
 	return *(Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs*) &$self;
+	}
+};
+%extend StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
+	~StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs() {
+	printf("Call custom destructor for instance of StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");
 	}
 };
 
@@ -522,13 +564,16 @@ class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_SensitiveText2d();
 
 };
 %extend StdSelect_SensitiveText2d {
 	Handle_StdSelect_SensitiveText2d GetHandle() {
 	return *(Handle_StdSelect_SensitiveText2d*) &$self;
+	}
+};
+%extend StdSelect_SensitiveText2d {
+	~StdSelect_SensitiveText2d() {
+	printf("Call custom destructor for instance of StdSelect_SensitiveText2d\n");
 	}
 };
 
@@ -543,13 +588,16 @@ class StdSelect_Shape : public PrsMgr_PresentableObject {
 		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_Shape();
 
 };
 %extend StdSelect_Shape {
 	Handle_StdSelect_Shape GetHandle() {
 	return *(Handle_StdSelect_Shape*) &$self;
+	}
+};
+%extend StdSelect_Shape {
+	~StdSelect_Shape() {
+	printf("Call custom destructor for instance of StdSelect_Shape\n");
 	}
 };
 
@@ -562,13 +610,16 @@ class StdSelect_Prs : public Prs3d_Presentation {
 		const Handle_Graphic3d_StructureManager & Manager() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_Prs();
 
 };
 %extend StdSelect_Prs {
 	Handle_StdSelect_Prs GetHandle() {
 	return *(Handle_StdSelect_Prs*) &$self;
+	}
+};
+%extend StdSelect_Prs {
+	~StdSelect_Prs() {
+	printf("Call custom destructor for instance of StdSelect_Prs\n");
 	}
 };
 
@@ -587,13 +638,16 @@ class StdSelect_TextProjector2d : public Select2D_Projector {
 		virtual		void Convert(const TCollection_ExtendedString &aText, const Standard_Real XPos, const Standard_Real YPos, gp_Pnt2d & MinPoint, gp_Pnt2d & MaxPoint, const Standard_Integer afont=-0x000000001) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_TextProjector2d();
 
 };
 %extend StdSelect_TextProjector2d {
 	Handle_StdSelect_TextProjector2d GetHandle() {
 	return *(Handle_StdSelect_TextProjector2d*) &$self;
+	}
+};
+%extend StdSelect_TextProjector2d {
+	~StdSelect_TextProjector2d() {
+	printf("Call custom destructor for instance of StdSelect_TextProjector2d\n");
 	}
 };
 
@@ -622,13 +676,16 @@ class StdSelect_ViewerSelector2d : public SelectMgr_ViewerSelector {
 		void ClearAreas();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_ViewerSelector2d();
 
 };
 %extend StdSelect_ViewerSelector2d {
 	Handle_StdSelect_ViewerSelector2d GetHandle() {
 	return *(Handle_StdSelect_ViewerSelector2d*) &$self;
+	}
+};
+%extend StdSelect_ViewerSelector2d {
+	~StdSelect_ViewerSelector2d() {
+	printf("Call custom destructor for instance of StdSelect_ViewerSelector2d\n");
 	}
 };
 
@@ -671,13 +728,16 @@ class StdSelect_ViewerSelector3d : public SelectMgr_ViewerSelector {
 		void DisplayAreas(const Handle_SelectMgr_Selection &aSel, const Handle_V3d_View &aView, const Standard_Boolean ClearOthers=1);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_ViewerSelector3d();
 
 };
 %extend StdSelect_ViewerSelector3d {
 	Handle_StdSelect_ViewerSelector3d GetHandle() {
 	return *(Handle_StdSelect_ViewerSelector3d*) &$self;
+	}
+};
+%extend StdSelect_ViewerSelector3d {
+	~StdSelect_ViewerSelector3d() {
+	printf("Call custom destructor for instance of StdSelect_ViewerSelector3d\n");
 	}
 };
 
@@ -722,13 +782,16 @@ class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
 		virtual		void ResetLocation();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_BRepOwner();
 
 };
 %extend StdSelect_BRepOwner {
 	Handle_StdSelect_BRepOwner GetHandle() {
 	return *(Handle_StdSelect_BRepOwner*) &$self;
+	}
+};
+%extend StdSelect_BRepOwner {
+	~StdSelect_BRepOwner() {
+	printf("Call custom destructor for instance of StdSelect_BRepOwner\n");
 	}
 };
 
@@ -775,12 +838,15 @@ class StdSelect_EdgeFilter : public SelectMgr_Filter {
 		virtual		Standard_Boolean ActsOn(const TopAbs_ShapeEnum aStandardMode) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdSelect_EdgeFilter();
 
 };
 %extend StdSelect_EdgeFilter {
 	Handle_StdSelect_EdgeFilter GetHandle() {
 	return *(Handle_StdSelect_EdgeFilter*) &$self;
+	}
+};
+%extend StdSelect_EdgeFilter {
+	~StdSelect_EdgeFilter() {
+	printf("Call custom destructor for instance of StdSelect_EdgeFilter\n");
 	}
 };

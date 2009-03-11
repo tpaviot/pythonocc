@@ -166,8 +166,6 @@ class Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient(const Handle_Standard_Transient &aTid);
 		%feature("autodoc", "1");
-		~Handle_Standard_Transient();
-		%feature("autodoc", "1");
 		void Nullify();
 		%feature("autodoc", "1");
 		Standard_Boolean IsNull() const;
@@ -190,12 +188,15 @@ class Handle_Standard_Transient {
 	return (Standard_Transient*)$self->Access();
 	}
 };
+%extend Handle_Standard_Transient {
+	~Handle_Standard_Transient() {
+	printf("Call custom destructor for instance of Handle_Standard_Transient\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_Failure;
 class Handle_Standard_Failure : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_Failure();
 		%feature("autodoc", "1");
 		Handle_Standard_Failure();
 		%feature("autodoc", "1");
@@ -211,12 +212,15 @@ class Handle_Standard_Failure : public Handle_Standard_Transient {
 	return (Standard_Failure*)$self->Access();
 	}
 };
+%extend Handle_Standard_Failure {
+	~Handle_Standard_Failure() {
+	printf("Call custom destructor for instance of Handle_Standard_Failure\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_DomainError;
 class Handle_Standard_DomainError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_DomainError();
 		%feature("autodoc", "1");
 		Handle_Standard_DomainError();
 		%feature("autodoc", "1");
@@ -232,12 +236,15 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 	return (Standard_DomainError*)$self->Access();
 	}
 };
+%extend Handle_Standard_DomainError {
+	~Handle_Standard_DomainError() {
+	printf("Call custom destructor for instance of Handle_Standard_DomainError\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_RangeError;
 class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_RangeError();
 		%feature("autodoc", "1");
 		Handle_Standard_RangeError();
 		%feature("autodoc", "1");
@@ -253,12 +260,15 @@ class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 	return (Standard_RangeError*)$self->Access();
 	}
 };
+%extend Handle_Standard_RangeError {
+	~Handle_Standard_RangeError() {
+	printf("Call custom destructor for instance of Handle_Standard_RangeError\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_OutOfRange;
 class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_OutOfRange();
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfRange();
 		%feature("autodoc", "1");
@@ -274,12 +284,15 @@ class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 	return (Standard_OutOfRange*)$self->Access();
 	}
 };
+%extend Handle_Standard_OutOfRange {
+	~Handle_Standard_OutOfRange() {
+	printf("Call custom destructor for instance of Handle_Standard_OutOfRange\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_NoMoreObject;
 class Handle_Standard_NoMoreObject : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_NoMoreObject();
 		%feature("autodoc", "1");
 		Handle_Standard_NoMoreObject();
 		%feature("autodoc", "1");
@@ -295,12 +308,15 @@ class Handle_Standard_NoMoreObject : public Handle_Standard_DomainError {
 	return (Standard_NoMoreObject*)$self->Access();
 	}
 };
+%extend Handle_Standard_NoMoreObject {
+	~Handle_Standard_NoMoreObject() {
+	printf("Call custom destructor for instance of Handle_Standard_NoMoreObject\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_DimensionError;
 class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_DimensionError();
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionError();
 		%feature("autodoc", "1");
@@ -316,12 +332,15 @@ class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 	return (Standard_DimensionError*)$self->Access();
 	}
 };
+%extend Handle_Standard_DimensionError {
+	~Handle_Standard_DimensionError() {
+	printf("Call custom destructor for instance of Handle_Standard_DimensionError\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_TypeMismatch;
 class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_TypeMismatch();
 		%feature("autodoc", "1");
 		Handle_Standard_TypeMismatch();
 		%feature("autodoc", "1");
@@ -337,12 +356,15 @@ class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 	return (Standard_TypeMismatch*)$self->Access();
 	}
 };
+%extend Handle_Standard_TypeMismatch {
+	~Handle_Standard_TypeMismatch() {
+	printf("Call custom destructor for instance of Handle_Standard_TypeMismatch\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_NullValue;
 class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_NullValue();
 		%feature("autodoc", "1");
 		Handle_Standard_NullValue();
 		%feature("autodoc", "1");
@@ -358,12 +380,15 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 	return (Standard_NullValue*)$self->Access();
 	}
 };
+%extend Handle_Standard_NullValue {
+	~Handle_Standard_NullValue() {
+	printf("Call custom destructor for instance of Handle_Standard_NullValue\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_ProgramError;
 class Handle_Standard_ProgramError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_ProgramError();
 		%feature("autodoc", "1");
 		Handle_Standard_ProgramError();
 		%feature("autodoc", "1");
@@ -379,12 +404,15 @@ class Handle_Standard_ProgramError : public Handle_Standard_Failure {
 	return (Standard_ProgramError*)$self->Access();
 	}
 };
+%extend Handle_Standard_ProgramError {
+	~Handle_Standard_ProgramError() {
+	printf("Call custom destructor for instance of Handle_Standard_ProgramError\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_OutOfMemory;
 class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_OutOfMemory();
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfMemory();
 		%feature("autodoc", "1");
@@ -400,12 +428,15 @@ class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
 	return (Standard_OutOfMemory*)$self->Access();
 	}
 };
+%extend Handle_Standard_OutOfMemory {
+	~Handle_Standard_OutOfMemory() {
+	printf("Call custom destructor for instance of Handle_Standard_OutOfMemory\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_NumericError;
 class Handle_Standard_NumericError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_NumericError();
 		%feature("autodoc", "1");
 		Handle_Standard_NumericError();
 		%feature("autodoc", "1");
@@ -421,12 +452,15 @@ class Handle_Standard_NumericError : public Handle_Standard_Failure {
 	return (Standard_NumericError*)$self->Access();
 	}
 };
+%extend Handle_Standard_NumericError {
+	~Handle_Standard_NumericError() {
+	printf("Call custom destructor for instance of Handle_Standard_NumericError\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_DivideByZero;
 class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_DivideByZero();
 		%feature("autodoc", "1");
 		Handle_Standard_DivideByZero();
 		%feature("autodoc", "1");
@@ -442,12 +476,15 @@ class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 	return (Standard_DivideByZero*)$self->Access();
 	}
 };
+%extend Handle_Standard_DivideByZero {
+	~Handle_Standard_DivideByZero() {
+	printf("Call custom destructor for instance of Handle_Standard_DivideByZero\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_LicenseError;
 class Handle_Standard_LicenseError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_LicenseError();
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseError();
 		%feature("autodoc", "1");
@@ -463,12 +500,15 @@ class Handle_Standard_LicenseError : public Handle_Standard_Failure {
 	return (Standard_LicenseError*)$self->Access();
 	}
 };
+%extend Handle_Standard_LicenseError {
+	~Handle_Standard_LicenseError() {
+	printf("Call custom destructor for instance of Handle_Standard_LicenseError\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_TooManyUsers;
 class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_TooManyUsers();
 		%feature("autodoc", "1");
 		Handle_Standard_TooManyUsers();
 		%feature("autodoc", "1");
@@ -484,12 +524,15 @@ class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
 	return (Standard_TooManyUsers*)$self->Access();
 	}
 };
+%extend Handle_Standard_TooManyUsers {
+	~Handle_Standard_TooManyUsers() {
+	printf("Call custom destructor for instance of Handle_Standard_TooManyUsers\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_NegativeValue;
 class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_NegativeValue();
 		%feature("autodoc", "1");
 		Handle_Standard_NegativeValue();
 		%feature("autodoc", "1");
@@ -505,12 +548,15 @@ class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
 	return (Standard_NegativeValue*)$self->Access();
 	}
 };
+%extend Handle_Standard_NegativeValue {
+	~Handle_Standard_NegativeValue() {
+	printf("Call custom destructor for instance of Handle_Standard_NegativeValue\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_Underflow;
 class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_Underflow();
 		%feature("autodoc", "1");
 		Handle_Standard_Underflow();
 		%feature("autodoc", "1");
@@ -526,12 +572,15 @@ class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 	return (Standard_Underflow*)$self->Access();
 	}
 };
+%extend Handle_Standard_Underflow {
+	~Handle_Standard_Underflow() {
+	printf("Call custom destructor for instance of Handle_Standard_Underflow\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_MultiplyDefined;
 class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_MultiplyDefined();
 		%feature("autodoc", "1");
 		Handle_Standard_MultiplyDefined();
 		%feature("autodoc", "1");
@@ -547,12 +596,15 @@ class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 	return (Standard_MultiplyDefined*)$self->Access();
 	}
 };
+%extend Handle_Standard_MultiplyDefined {
+	~Handle_Standard_MultiplyDefined() {
+	printf("Call custom destructor for instance of Handle_Standard_MultiplyDefined\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_NotImplemented;
 class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_NotImplemented();
 		%feature("autodoc", "1");
 		Handle_Standard_NotImplemented();
 		%feature("autodoc", "1");
@@ -568,12 +620,15 @@ class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 	return (Standard_NotImplemented*)$self->Access();
 	}
 };
+%extend Handle_Standard_NotImplemented {
+	~Handle_Standard_NotImplemented() {
+	printf("Call custom destructor for instance of Handle_Standard_NotImplemented\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_NullObject;
 class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_NullObject();
 		%feature("autodoc", "1");
 		Handle_Standard_NullObject();
 		%feature("autodoc", "1");
@@ -589,6 +644,11 @@ class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 	return (Standard_NullObject*)$self->Access();
 	}
 };
+%extend Handle_Standard_NullObject {
+	~Handle_Standard_NullObject() {
+	printf("Call custom destructor for instance of Handle_Standard_NullObject\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_Persistent;
 class Handle_Standard_Persistent {
@@ -601,8 +661,6 @@ class Handle_Standard_Persistent {
 		Handle_Standard_Persistent(const Standard_Persistent *anItem);
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & out) const;
-		%feature("autodoc", "1");
-		~Handle_Standard_Persistent();
 		%feature("autodoc", "1");
 		int operator!=(const Handle_Standard_Persistent &right) const;
 		%feature("autodoc", "1");
@@ -622,12 +680,15 @@ class Handle_Standard_Persistent {
 	return (Standard_Persistent*)$self->Access();
 	}
 };
+%extend Handle_Standard_Persistent {
+	~Handle_Standard_Persistent() {
+	printf("Call custom destructor for instance of Handle_Standard_Persistent\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_AbortiveTransaction;
 class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_AbortiveTransaction();
 		%feature("autodoc", "1");
 		Handle_Standard_AbortiveTransaction();
 		%feature("autodoc", "1");
@@ -643,12 +704,15 @@ class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 	return (Standard_AbortiveTransaction*)$self->Access();
 	}
 };
+%extend Handle_Standard_AbortiveTransaction {
+	~Handle_Standard_AbortiveTransaction() {
+	printf("Call custom destructor for instance of Handle_Standard_AbortiveTransaction\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_ConstructionError;
 class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_ConstructionError();
 		%feature("autodoc", "1");
 		Handle_Standard_ConstructionError();
 		%feature("autodoc", "1");
@@ -664,12 +728,15 @@ class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 	return (Standard_ConstructionError*)$self->Access();
 	}
 };
+%extend Handle_Standard_ConstructionError {
+	~Handle_Standard_ConstructionError() {
+	printf("Call custom destructor for instance of Handle_Standard_ConstructionError\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_Overflow;
 class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_Overflow();
 		%feature("autodoc", "1");
 		Handle_Standard_Overflow();
 		%feature("autodoc", "1");
@@ -685,12 +752,15 @@ class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 	return (Standard_Overflow*)$self->Access();
 	}
 };
+%extend Handle_Standard_Overflow {
+	~Handle_Standard_Overflow() {
+	printf("Call custom destructor for instance of Handle_Standard_Overflow\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_DimensionMismatch;
 class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_DimensionMismatch();
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionMismatch();
 		%feature("autodoc", "1");
@@ -706,12 +776,15 @@ class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError 
 	return (Standard_DimensionMismatch*)$self->Access();
 	}
 };
+%extend Handle_Standard_DimensionMismatch {
+	~Handle_Standard_DimensionMismatch() {
+	printf("Call custom destructor for instance of Handle_Standard_DimensionMismatch\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_LicenseNotFound;
 class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_LicenseNotFound();
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseNotFound();
 		%feature("autodoc", "1");
@@ -727,12 +800,15 @@ class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
 	return (Standard_LicenseNotFound*)$self->Access();
 	}
 };
+%extend Handle_Standard_LicenseNotFound {
+	~Handle_Standard_LicenseNotFound() {
+	printf("Call custom destructor for instance of Handle_Standard_LicenseNotFound\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_NoSuchObject;
 class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_NoSuchObject();
 		%feature("autodoc", "1");
 		Handle_Standard_NoSuchObject();
 		%feature("autodoc", "1");
@@ -748,12 +824,15 @@ class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 	return (Standard_NoSuchObject*)$self->Access();
 	}
 };
+%extend Handle_Standard_NoSuchObject {
+	~Handle_Standard_NoSuchObject() {
+	printf("Call custom destructor for instance of Handle_Standard_NoSuchObject\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_ImmutableObject;
 class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_ImmutableObject();
 		%feature("autodoc", "1");
 		Handle_Standard_ImmutableObject();
 		%feature("autodoc", "1");
@@ -769,12 +848,15 @@ class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 	return (Standard_ImmutableObject*)$self->Access();
 	}
 };
+%extend Handle_Standard_ImmutableObject {
+	~Handle_Standard_ImmutableObject() {
+	printf("Call custom destructor for instance of Handle_Standard_ImmutableObject\n");
+	}
+};
 
 %nodefaultctor Handle_Standard_Type;
 class Handle_Standard_Type : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Standard_Type();
 		%feature("autodoc", "1");
 		Handle_Standard_Type();
 		%feature("autodoc", "1");
@@ -788,6 +870,11 @@ class Handle_Standard_Type : public Handle_Standard_Transient {
 %extend Handle_Standard_Type {
 	Standard_Type* GetObject() {
 	return (Standard_Type*)$self->Access();
+	}
+};
+%extend Handle_Standard_Type {
+	~Handle_Standard_Type() {
+	printf("Call custom destructor for instance of Handle_Standard_Type\n");
 	}
 };
 
@@ -829,8 +916,6 @@ class Standard_Transient {
 		%feature("autodoc", "1");
 		Standard_Transient();
 		%feature("autodoc", "1");
-		virtual		~Standard_Transient();
-		%feature("autodoc", "1");
 		virtual		void Delete() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
@@ -857,6 +942,11 @@ class Standard_Transient {
 	return *(Handle_Standard_Transient*) &$self;
 	}
 };
+%extend Standard_Transient {
+	~Standard_Transient() {
+	printf("Call custom destructor for instance of Standard_Transient\n");
+	}
+};
 
 %nodefaultctor Standard_Failure;
 class Standard_Failure : public Standard_Transient {
@@ -869,8 +959,6 @@ class Standard_Failure : public Standard_Transient {
 		Standard_Failure(const char * aString);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Standard_Failure();
 		%feature("autodoc", "1");
 		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
@@ -898,6 +986,11 @@ class Standard_Failure : public Standard_Transient {
 	return *(Handle_Standard_Failure*) &$self;
 	}
 };
+%extend Standard_Failure {
+	~Standard_Failure() {
+	printf("Call custom destructor for instance of Standard_Failure\n");
+	}
+};
 
 %nodefaultctor Standard_NumericError;
 class Standard_NumericError : public Standard_Failure {
@@ -908,13 +1001,16 @@ class Standard_NumericError : public Standard_Failure {
 		Standard_NumericError(const char * AString);
 		%feature("autodoc", "1");
 		Handle_Standard_NumericError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~Standard_NumericError();
 
 };
 %extend Standard_NumericError {
 	Handle_Standard_NumericError GetHandle() {
 	return *(Handle_Standard_NumericError*) &$self;
+	}
+};
+%extend Standard_NumericError {
+	~Standard_NumericError() {
+	printf("Call custom destructor for instance of Standard_NumericError\n");
 	}
 };
 
@@ -927,13 +1023,16 @@ class Standard_DivideByZero : public Standard_NumericError {
 		Standard_DivideByZero(const char * AString);
 		%feature("autodoc", "1");
 		Handle_Standard_DivideByZero NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~Standard_DivideByZero();
 
 };
 %extend Standard_DivideByZero {
 	Handle_Standard_DivideByZero GetHandle() {
 	return *(Handle_Standard_DivideByZero*) &$self;
+	}
+};
+%extend Standard_DivideByZero {
+	~Standard_DivideByZero() {
+	printf("Call custom destructor for instance of Standard_DivideByZero\n");
 	}
 };
 
@@ -952,13 +1051,16 @@ class Standard_ProgramError : public Standard_Failure {
 		Handle_Standard_ProgramError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_ProgramError();
 
 };
 %extend Standard_ProgramError {
 	Handle_Standard_ProgramError GetHandle() {
 	return *(Handle_Standard_ProgramError*) &$self;
+	}
+};
+%extend Standard_ProgramError {
+	~Standard_ProgramError() {
+	printf("Call custom destructor for instance of Standard_ProgramError\n");
 	}
 };
 
@@ -999,13 +1101,16 @@ class Standard_DomainError : public Standard_Failure {
 		Handle_Standard_DomainError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_DomainError();
 
 };
 %extend Standard_DomainError {
 	Handle_Standard_DomainError GetHandle() {
 	return *(Handle_Standard_DomainError*) &$self;
+	}
+};
+%extend Standard_DomainError {
+	~Standard_DomainError() {
+	printf("Call custom destructor for instance of Standard_DomainError\n");
 	}
 };
 
@@ -1018,13 +1123,16 @@ class Standard_NoSuchObject : public Standard_DomainError {
 		Standard_NoSuchObject(const char * AString);
 		%feature("autodoc", "1");
 		Handle_Standard_NoSuchObject NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~Standard_NoSuchObject();
 
 };
 %extend Standard_NoSuchObject {
 	Handle_Standard_NoSuchObject GetHandle() {
 	return *(Handle_Standard_NoSuchObject*) &$self;
+	}
+};
+%extend Standard_NoSuchObject {
+	~Standard_NoSuchObject() {
+	printf("Call custom destructor for instance of Standard_NoSuchObject\n");
 	}
 };
 
@@ -1043,13 +1151,16 @@ class Standard_RangeError : public Standard_DomainError {
 		Handle_Standard_RangeError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_RangeError();
 
 };
 %extend Standard_RangeError {
 	Handle_Standard_RangeError GetHandle() {
 	return *(Handle_Standard_RangeError*) &$self;
+	}
+};
+%extend Standard_RangeError {
+	~Standard_RangeError() {
+	printf("Call custom destructor for instance of Standard_RangeError\n");
 	}
 };
 
@@ -1068,13 +1179,16 @@ class Standard_NotImplemented : public Standard_ProgramError {
 		Handle_Standard_NotImplemented NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_NotImplemented();
 
 };
 %extend Standard_NotImplemented {
 	Handle_Standard_NotImplemented GetHandle() {
 	return *(Handle_Standard_NotImplemented*) &$self;
+	}
+};
+%extend Standard_NotImplemented {
+	~Standard_NotImplemented() {
+	printf("Call custom destructor for instance of Standard_NotImplemented\n");
 	}
 };
 
@@ -1093,13 +1207,16 @@ class Standard_AbortiveTransaction : public Standard_Failure {
 		Handle_Standard_AbortiveTransaction NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_AbortiveTransaction();
 
 };
 %extend Standard_AbortiveTransaction {
 	Handle_Standard_AbortiveTransaction GetHandle() {
 	return *(Handle_Standard_AbortiveTransaction*) &$self;
+	}
+};
+%extend Standard_AbortiveTransaction {
+	~Standard_AbortiveTransaction() {
+	printf("Call custom destructor for instance of Standard_AbortiveTransaction\n");
 	}
 };
 
@@ -1152,13 +1269,16 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 		Handle_Standard_MultiplyDefined NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_MultiplyDefined();
 
 };
 %extend Standard_MultiplyDefined {
 	Handle_Standard_MultiplyDefined GetHandle() {
 	return *(Handle_Standard_MultiplyDefined*) &$self;
+	}
+};
+%extend Standard_MultiplyDefined {
+	~Standard_MultiplyDefined() {
+	printf("Call custom destructor for instance of Standard_MultiplyDefined\n");
 	}
 };
 
@@ -1177,13 +1297,16 @@ class Standard_Overflow : public Standard_NumericError {
 		Handle_Standard_Overflow NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_Overflow();
 
 };
 %extend Standard_Overflow {
 	Handle_Standard_Overflow GetHandle() {
 	return *(Handle_Standard_Overflow*) &$self;
+	}
+};
+%extend Standard_Overflow {
+	~Standard_Overflow() {
+	printf("Call custom destructor for instance of Standard_Overflow\n");
 	}
 };
 
@@ -1196,8 +1319,6 @@ class Standard_Persistent {
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		void Delete() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_Persistent();
 		%feature("autodoc", "1");
 		Standard_Persistent();
 		%feature("autodoc", "1");
@@ -1217,6 +1338,11 @@ class Standard_Persistent {
 	return *(Handle_Standard_Persistent*) &$self;
 	}
 };
+%extend Standard_Persistent {
+	~Standard_Persistent() {
+	printf("Call custom destructor for instance of Standard_Persistent\n");
+	}
+};
 
 %nodefaultctor Standard_NullValue;
 class Standard_NullValue : public Standard_RangeError {
@@ -1233,13 +1359,16 @@ class Standard_NullValue : public Standard_RangeError {
 		Handle_Standard_NullValue NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_NullValue();
 
 };
 %extend Standard_NullValue {
 	Handle_Standard_NullValue GetHandle() {
 	return *(Handle_Standard_NullValue*) &$self;
+	}
+};
+%extend Standard_NullValue {
+	~Standard_NullValue() {
+	printf("Call custom destructor for instance of Standard_NullValue\n");
 	}
 };
 
@@ -1258,13 +1387,16 @@ class Standard_NoMoreObject : public Standard_DomainError {
 		Handle_Standard_NoMoreObject NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_NoMoreObject();
 
 };
 %extend Standard_NoMoreObject {
 	Handle_Standard_NoMoreObject GetHandle() {
 	return *(Handle_Standard_NoMoreObject*) &$self;
+	}
+};
+%extend Standard_NoMoreObject {
+	~Standard_NoMoreObject() {
+	printf("Call custom destructor for instance of Standard_NoMoreObject\n");
 	}
 };
 
@@ -1283,13 +1415,16 @@ class Standard_DimensionError : public Standard_DomainError {
 		Handle_Standard_DimensionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_DimensionError();
 
 };
 %extend Standard_DimensionError {
 	Handle_Standard_DimensionError GetHandle() {
 	return *(Handle_Standard_DimensionError*) &$self;
+	}
+};
+%extend Standard_DimensionError {
+	~Standard_DimensionError() {
+	printf("Call custom destructor for instance of Standard_DimensionError\n");
 	}
 };
 
@@ -1302,13 +1437,16 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 		Standard_DimensionMismatch(const char * AString);
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionMismatch NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~Standard_DimensionMismatch();
 
 };
 %extend Standard_DimensionMismatch {
 	Handle_Standard_DimensionMismatch GetHandle() {
 	return *(Handle_Standard_DimensionMismatch*) &$self;
+	}
+};
+%extend Standard_DimensionMismatch {
+	~Standard_DimensionMismatch() {
+	printf("Call custom destructor for instance of Standard_DimensionMismatch\n");
 	}
 };
 
@@ -1327,13 +1465,16 @@ class Standard_TypeMismatch : public Standard_DomainError {
 		Handle_Standard_TypeMismatch NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_TypeMismatch();
 
 };
 %extend Standard_TypeMismatch {
 	Handle_Standard_TypeMismatch GetHandle() {
 	return *(Handle_Standard_TypeMismatch*) &$self;
+	}
+};
+%extend Standard_TypeMismatch {
+	~Standard_TypeMismatch() {
+	printf("Call custom destructor for instance of Standard_TypeMismatch\n");
 	}
 };
 
@@ -1352,13 +1493,16 @@ class Standard_LicenseError : public Standard_Failure {
 		Handle_Standard_LicenseError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_LicenseError();
 
 };
 %extend Standard_LicenseError {
 	Handle_Standard_LicenseError GetHandle() {
 	return *(Handle_Standard_LicenseError*) &$self;
+	}
+};
+%extend Standard_LicenseError {
+	~Standard_LicenseError() {
+	printf("Call custom destructor for instance of Standard_LicenseError\n");
 	}
 };
 
@@ -1371,13 +1515,16 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 		Standard_LicenseNotFound(const char * AString);
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseNotFound NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~Standard_LicenseNotFound();
 
 };
 %extend Standard_LicenseNotFound {
 	Handle_Standard_LicenseNotFound GetHandle() {
 	return *(Handle_Standard_LicenseNotFound*) &$self;
+	}
+};
+%extend Standard_LicenseNotFound {
+	~Standard_LicenseNotFound() {
+	printf("Call custom destructor for instance of Standard_LicenseNotFound\n");
 	}
 };
 
@@ -1416,13 +1563,16 @@ class Standard_ImmutableObject : public Standard_DomainError {
 		Handle_Standard_ImmutableObject NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_ImmutableObject();
 
 };
 %extend Standard_ImmutableObject {
 	Handle_Standard_ImmutableObject GetHandle() {
 	return *(Handle_Standard_ImmutableObject*) &$self;
+	}
+};
+%extend Standard_ImmutableObject {
+	~Standard_ImmutableObject() {
+	printf("Call custom destructor for instance of Standard_ImmutableObject\n");
 	}
 };
 
@@ -1565,13 +1715,16 @@ class Standard_TooManyUsers : public Standard_LicenseError {
 		Handle_Standard_TooManyUsers NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_TooManyUsers();
 
 };
 %extend Standard_TooManyUsers {
 	Handle_Standard_TooManyUsers GetHandle() {
 	return *(Handle_Standard_TooManyUsers*) &$self;
+	}
+};
+%extend Standard_TooManyUsers {
+	~Standard_TooManyUsers() {
+	printf("Call custom destructor for instance of Standard_TooManyUsers\n");
 	}
 };
 
@@ -1590,13 +1743,16 @@ class Standard_NegativeValue : public Standard_RangeError {
 		Handle_Standard_NegativeValue NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_NegativeValue();
 
 };
 %extend Standard_NegativeValue {
 	Handle_Standard_NegativeValue GetHandle() {
 	return *(Handle_Standard_NegativeValue*) &$self;
+	}
+};
+%extend Standard_NegativeValue {
+	~Standard_NegativeValue() {
+	printf("Call custom destructor for instance of Standard_NegativeValue\n");
 	}
 };
 
@@ -1615,13 +1771,16 @@ class Standard_NullObject : public Standard_DomainError {
 		Handle_Standard_NullObject NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_NullObject();
 
 };
 %extend Standard_NullObject {
 	Handle_Standard_NullObject GetHandle() {
 	return *(Handle_Standard_NullObject*) &$self;
+	}
+};
+%extend Standard_NullObject {
+	~Standard_NullObject() {
+	printf("Call custom destructor for instance of Standard_NullObject\n");
 	}
 };
 
@@ -1664,13 +1823,16 @@ class Standard_Type : public Standard_Transient {
 		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_Type();
 
 };
 %extend Standard_Type {
 	Handle_Standard_Type GetHandle() {
 	return *(Handle_Standard_Type*) &$self;
+	}
+};
+%extend Standard_Type {
+	~Standard_Type() {
+	printf("Call custom destructor for instance of Standard_Type\n");
 	}
 };
 
@@ -1689,13 +1851,16 @@ class Standard_ConstructionError : public Standard_DomainError {
 		Handle_Standard_ConstructionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_ConstructionError();
 
 };
 %extend Standard_ConstructionError {
 	Handle_Standard_ConstructionError GetHandle() {
 	return *(Handle_Standard_ConstructionError*) &$self;
+	}
+};
+%extend Standard_ConstructionError {
+	~Standard_ConstructionError() {
+	printf("Call custom destructor for instance of Standard_ConstructionError\n");
 	}
 };
 
@@ -1714,13 +1879,16 @@ class Standard_OutOfRange : public Standard_RangeError {
 		Handle_Standard_OutOfRange NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_OutOfRange();
 
 };
 %extend Standard_OutOfRange {
 	Handle_Standard_OutOfRange GetHandle() {
 	return *(Handle_Standard_OutOfRange*) &$self;
+	}
+};
+%extend Standard_OutOfRange {
+	~Standard_OutOfRange() {
+	printf("Call custom destructor for instance of Standard_OutOfRange\n");
 	}
 };
 
@@ -1755,13 +1923,16 @@ class Standard_OutOfMemory : public Standard_ProgramError {
 		Handle_Standard_OutOfMemory NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_OutOfMemory();
 
 };
 %extend Standard_OutOfMemory {
 	Handle_Standard_OutOfMemory GetHandle() {
 	return *(Handle_Standard_OutOfMemory*) &$self;
+	}
+};
+%extend Standard_OutOfMemory {
+	~Standard_OutOfMemory() {
+	printf("Call custom destructor for instance of Standard_OutOfMemory\n");
 	}
 };
 
@@ -1780,12 +1951,15 @@ class Standard_Underflow : public Standard_NumericError {
 		Handle_Standard_Underflow NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Standard_Underflow();
 
 };
 %extend Standard_Underflow {
 	Handle_Standard_Underflow GetHandle() {
 	return *(Handle_Standard_Underflow*) &$self;
+	}
+};
+%extend Standard_Underflow {
+	~Standard_Underflow() {
+	printf("Call custom destructor for instance of Standard_Underflow\n");
 	}
 };

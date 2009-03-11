@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IntStart_SITopolTool : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IntStart_SITopolTool();
-		%feature("autodoc", "1");
 		Handle_IntStart_SITopolTool();
 		%feature("autodoc", "1");
 		Handle_IntStart_SITopolTool(const Handle_IntStart_SITopolTool &aHandle);
@@ -116,6 +114,11 @@ class Handle_IntStart_SITopolTool : public Handle_MMgt_TShared {
 %extend Handle_IntStart_SITopolTool {
 	IntStart_SITopolTool* GetObject() {
 	return (IntStart_SITopolTool*)$self->Access();
+	}
+};
+%extend Handle_IntStart_SITopolTool {
+	~Handle_IntStart_SITopolTool() {
+	printf("Call custom destructor for instance of Handle_IntStart_SITopolTool\n");
 	}
 };
 
@@ -131,5 +134,10 @@ class IntStart_SITopolTool : public MMgt_TShared {
 %extend IntStart_SITopolTool {
 	Handle_IntStart_SITopolTool GetHandle() {
 	return *(Handle_IntStart_SITopolTool*) &$self;
+	}
+};
+%extend IntStart_SITopolTool {
+	~IntStart_SITopolTool() {
+	printf("Call custom destructor for instance of IntStart_SITopolTool\n");
 	}
 };

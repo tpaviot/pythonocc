@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Units_NoSuchType : public Handle_Standard_NoSuchObject {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Units_NoSuchType();
-		%feature("autodoc", "1");
 		Handle_Units_NoSuchType();
 		%feature("autodoc", "1");
 		Handle_Units_NoSuchType(const Handle_Units_NoSuchType &aHandle);
@@ -118,12 +116,15 @@ class Handle_Units_NoSuchType : public Handle_Standard_NoSuchObject {
 	return (Units_NoSuchType*)$self->Access();
 	}
 };
+%extend Handle_Units_NoSuchType {
+	~Handle_Units_NoSuchType() {
+	printf("Call custom destructor for instance of Handle_Units_NoSuchType\n");
+	}
+};
 
 %nodefaultctor Handle_Units_QuantitiesSequence;
 class Handle_Units_QuantitiesSequence : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_QuantitiesSequence();
 		%feature("autodoc", "1");
 		Handle_Units_QuantitiesSequence();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_Units_QuantitiesSequence : public Handle_MMgt_TShared {
 	return (Units_QuantitiesSequence*)$self->Access();
 	}
 };
+%extend Handle_Units_QuantitiesSequence {
+	~Handle_Units_QuantitiesSequence() {
+	printf("Call custom destructor for instance of Handle_Units_QuantitiesSequence\n");
+	}
+};
 
 %nodefaultctor Handle_Units_SequenceNodeOfTksSequence;
 class Handle_Units_SequenceNodeOfTksSequence : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_SequenceNodeOfTksSequence();
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfTksSequence();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_Units_SequenceNodeOfTksSequence : public Handle_TCollection_SeqNode
 	return (Units_SequenceNodeOfTksSequence*)$self->Access();
 	}
 };
+%extend Handle_Units_SequenceNodeOfTksSequence {
+	~Handle_Units_SequenceNodeOfTksSequence() {
+	printf("Call custom destructor for instance of Handle_Units_SequenceNodeOfTksSequence\n");
+	}
+};
 
 %nodefaultctor Handle_Units_StringsSequence;
 class Handle_Units_StringsSequence : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_StringsSequence();
 		%feature("autodoc", "1");
 		Handle_Units_StringsSequence();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_Units_StringsSequence : public Handle_MMgt_TShared {
 	return (Units_StringsSequence*)$self->Access();
 	}
 };
+%extend Handle_Units_StringsSequence {
+	~Handle_Units_StringsSequence() {
+	printf("Call custom destructor for instance of Handle_Units_StringsSequence\n");
+	}
+};
 
 %nodefaultctor Handle_Units_Lexicon;
 class Handle_Units_Lexicon : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_Lexicon();
 		%feature("autodoc", "1");
 		Handle_Units_Lexicon();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_Units_Lexicon : public Handle_MMgt_TShared {
 	return (Units_Lexicon*)$self->Access();
 	}
 };
+%extend Handle_Units_Lexicon {
+	~Handle_Units_Lexicon() {
+	printf("Call custom destructor for instance of Handle_Units_Lexicon\n");
+	}
+};
 
 %nodefaultctor Handle_Units_UnitsLexicon;
 class Handle_Units_UnitsLexicon : public Handle_Units_Lexicon {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_UnitsLexicon();
 		%feature("autodoc", "1");
 		Handle_Units_UnitsLexicon();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_Units_UnitsLexicon : public Handle_Units_Lexicon {
 	return (Units_UnitsLexicon*)$self->Access();
 	}
 };
+%extend Handle_Units_UnitsLexicon {
+	~Handle_Units_UnitsLexicon() {
+	printf("Call custom destructor for instance of Handle_Units_UnitsLexicon\n");
+	}
+};
 
 %nodefaultctor Handle_Units_UnitsDictionary;
 class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_UnitsDictionary();
 		%feature("autodoc", "1");
 		Handle_Units_UnitsDictionary();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
 	return (Units_UnitsDictionary*)$self->Access();
 	}
 };
+%extend Handle_Units_UnitsDictionary {
+	~Handle_Units_UnitsDictionary() {
+	printf("Call custom destructor for instance of Handle_Units_UnitsDictionary\n");
+	}
+};
 
 %nodefaultctor Handle_Units_Unit;
 class Handle_Units_Unit : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_Unit();
 		%feature("autodoc", "1");
 		Handle_Units_Unit();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_Units_Unit : public Handle_MMgt_TShared {
 	return (Units_Unit*)$self->Access();
 	}
 };
+%extend Handle_Units_Unit {
+	~Handle_Units_Unit() {
+	printf("Call custom destructor for instance of Handle_Units_Unit\n");
+	}
+};
 
 %nodefaultctor Handle_Units_UnitsSystem;
 class Handle_Units_UnitsSystem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_UnitsSystem();
 		%feature("autodoc", "1");
 		Handle_Units_UnitsSystem();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_Units_UnitsSystem : public Handle_MMgt_TShared {
 	return (Units_UnitsSystem*)$self->Access();
 	}
 };
+%extend Handle_Units_UnitsSystem {
+	~Handle_Units_UnitsSystem() {
+	printf("Call custom destructor for instance of Handle_Units_UnitsSystem\n");
+	}
+};
 
 %nodefaultctor Handle_Units_Token;
 class Handle_Units_Token : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_Token();
 		%feature("autodoc", "1");
 		Handle_Units_Token();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_Units_Token : public Handle_MMgt_TShared {
 	return (Units_Token*)$self->Access();
 	}
 };
+%extend Handle_Units_Token {
+	~Handle_Units_Token() {
+	printf("Call custom destructor for instance of Handle_Units_Token\n");
+	}
+};
 
 %nodefaultctor Handle_Units_ShiftedToken;
 class Handle_Units_ShiftedToken : public Handle_Units_Token {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_ShiftedToken();
 		%feature("autodoc", "1");
 		Handle_Units_ShiftedToken();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_Units_ShiftedToken : public Handle_Units_Token {
 	return (Units_ShiftedToken*)$self->Access();
 	}
 };
+%extend Handle_Units_ShiftedToken {
+	~Handle_Units_ShiftedToken() {
+	printf("Call custom destructor for instance of Handle_Units_ShiftedToken\n");
+	}
+};
 
 %nodefaultctor Handle_Units_SequenceNodeOfQtsSequence;
 class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_SequenceNodeOfQtsSequence();
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfQtsSequence();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode
 	return (Units_SequenceNodeOfQtsSequence*)$self->Access();
 	}
 };
+%extend Handle_Units_SequenceNodeOfQtsSequence {
+	~Handle_Units_SequenceNodeOfQtsSequence() {
+	printf("Call custom destructor for instance of Handle_Units_SequenceNodeOfQtsSequence\n");
+	}
+};
 
 %nodefaultctor Handle_Units_SequenceNodeOfUtsSequence;
 class Handle_Units_SequenceNodeOfUtsSequence : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_SequenceNodeOfUtsSequence();
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfUtsSequence();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_Units_SequenceNodeOfUtsSequence : public Handle_TCollection_SeqNode
 	return (Units_SequenceNodeOfUtsSequence*)$self->Access();
 	}
 };
+%extend Handle_Units_SequenceNodeOfUtsSequence {
+	~Handle_Units_SequenceNodeOfUtsSequence() {
+	printf("Call custom destructor for instance of Handle_Units_SequenceNodeOfUtsSequence\n");
+	}
+};
 
 %nodefaultctor Handle_Units_TokensSequence;
 class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_TokensSequence();
 		%feature("autodoc", "1");
 		Handle_Units_TokensSequence();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
 	return (Units_TokensSequence*)$self->Access();
 	}
 };
+%extend Handle_Units_TokensSequence {
+	~Handle_Units_TokensSequence() {
+	printf("Call custom destructor for instance of Handle_Units_TokensSequence\n");
+	}
+};
 
 %nodefaultctor Handle_Units_UnitsSequence;
 class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_UnitsSequence();
 		%feature("autodoc", "1");
 		Handle_Units_UnitsSequence();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
 	return (Units_UnitsSequence*)$self->Access();
 	}
 };
+%extend Handle_Units_UnitsSequence {
+	~Handle_Units_UnitsSequence() {
+	printf("Call custom destructor for instance of Handle_Units_UnitsSequence\n");
+	}
+};
 
 %nodefaultctor Handle_Units_NoSuchUnit;
 class Handle_Units_NoSuchUnit : public Handle_Standard_NoSuchObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_NoSuchUnit();
 		%feature("autodoc", "1");
 		Handle_Units_NoSuchUnit();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_Units_NoSuchUnit : public Handle_Standard_NoSuchObject {
 	return (Units_NoSuchUnit*)$self->Access();
 	}
 };
+%extend Handle_Units_NoSuchUnit {
+	~Handle_Units_NoSuchUnit() {
+	printf("Call custom destructor for instance of Handle_Units_NoSuchUnit\n");
+	}
+};
 
 %nodefaultctor Handle_Units_ShiftedUnit;
 class Handle_Units_ShiftedUnit : public Handle_Units_Unit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_ShiftedUnit();
 		%feature("autodoc", "1");
 		Handle_Units_ShiftedUnit();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_Units_ShiftedUnit : public Handle_Units_Unit {
 	return (Units_ShiftedUnit*)$self->Access();
 	}
 };
+%extend Handle_Units_ShiftedUnit {
+	~Handle_Units_ShiftedUnit() {
+	printf("Call custom destructor for instance of Handle_Units_ShiftedUnit\n");
+	}
+};
 
 %nodefaultctor Handle_Units_Dimensions;
 class Handle_Units_Dimensions : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_Dimensions();
 		%feature("autodoc", "1");
 		Handle_Units_Dimensions();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_Units_Dimensions : public Handle_MMgt_TShared {
 	return (Units_Dimensions*)$self->Access();
 	}
 };
+%extend Handle_Units_Dimensions {
+	~Handle_Units_Dimensions() {
+	printf("Call custom destructor for instance of Handle_Units_Dimensions\n");
+	}
+};
 
 %nodefaultctor Handle_Units_SequenceNodeOfStrgSequence;
 class Handle_Units_SequenceNodeOfStrgSequence : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_SequenceNodeOfStrgSequence();
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfStrgSequence();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_Units_SequenceNodeOfStrgSequence : public Handle_TCollection_SeqNod
 	return (Units_SequenceNodeOfStrgSequence*)$self->Access();
 	}
 };
+%extend Handle_Units_SequenceNodeOfStrgSequence {
+	~Handle_Units_SequenceNodeOfStrgSequence() {
+	printf("Call custom destructor for instance of Handle_Units_SequenceNodeOfStrgSequence\n");
+	}
+};
 
 %nodefaultctor Handle_Units_Quantity;
 class Handle_Units_Quantity : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Units_Quantity();
 		%feature("autodoc", "1");
 		Handle_Units_Quantity();
 		%feature("autodoc", "1");
@@ -515,6 +570,11 @@ class Handle_Units_Quantity : public Handle_MMgt_TShared {
 %extend Handle_Units_Quantity {
 	Units_Quantity* GetObject() {
 	return (Units_Quantity*)$self->Access();
+	}
+};
+%extend Handle_Units_Quantity {
+	~Handle_Units_Quantity() {
+	printf("Call custom destructor for instance of Handle_Units_Quantity\n");
 	}
 };
 
@@ -533,13 +593,16 @@ class Units_NoSuchType : public Standard_NoSuchObject {
 		Handle_Units_NoSuchType NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_NoSuchType();
 
 };
 %extend Units_NoSuchType {
 	Handle_Units_NoSuchType GetHandle() {
 	return *(Handle_Units_NoSuchType*) &$self;
+	}
+};
+%extend Units_NoSuchType {
+	~Units_NoSuchType() {
+	printf("Call custom destructor for instance of Units_NoSuchType\n");
 	}
 };
 
@@ -552,13 +615,16 @@ class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
 		Handle_Units_Token & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_SequenceNodeOfTksSequence();
 
 };
 %extend Units_SequenceNodeOfTksSequence {
 	Handle_Units_SequenceNodeOfTksSequence GetHandle() {
 	return *(Handle_Units_SequenceNodeOfTksSequence*) &$self;
+	}
+};
+%extend Units_SequenceNodeOfTksSequence {
+	~Units_SequenceNodeOfTksSequence() {
+	printf("Call custom destructor for instance of Units_SequenceNodeOfTksSequence\n");
 	}
 };
 
@@ -725,13 +791,16 @@ class Units_Unit : public MMgt_TShared {
 		virtual		void Dump(const Standard_Integer ashift, const Standard_Integer alevel) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_Unit();
 
 };
 %extend Units_Unit {
 	Handle_Units_Unit GetHandle() {
 	return *(Handle_Units_Unit*) &$self;
+	}
+};
+%extend Units_Unit {
+	~Units_Unit() {
+	printf("Call custom destructor for instance of Units_Unit\n");
 	}
 };
 
@@ -754,13 +823,16 @@ class Units_ShiftedUnit : public Units_Unit {
 		virtual		void Dump(const Standard_Integer ashift, const Standard_Integer alevel) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_ShiftedUnit();
 
 };
 %extend Units_ShiftedUnit {
 	Handle_Units_ShiftedUnit GetHandle() {
 	return *(Handle_Units_ShiftedUnit*) &$self;
+	}
+};
+%extend Units_ShiftedUnit {
+	~Units_ShiftedUnit() {
+	printf("Call custom destructor for instance of Units_ShiftedUnit\n");
 	}
 };
 
@@ -815,13 +887,16 @@ class Units_UnitsSequence : public MMgt_TShared {
 		Handle_Units_UnitsSequence ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_UnitsSequence();
 
 };
 %extend Units_UnitsSequence {
 	Handle_Units_UnitsSequence GetHandle() {
 	return *(Handle_Units_UnitsSequence*) &$self;
+	}
+};
+%extend Units_UnitsSequence {
+	~Units_UnitsSequence() {
+	printf("Call custom destructor for instance of Units_UnitsSequence\n");
 	}
 };
 
@@ -953,8 +1028,6 @@ class Units_Token : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~Units_Token();
-		%feature("autodoc", "1");
 		virtual		void Dump(const Standard_Integer ashift, const Standard_Integer alevel) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -965,6 +1038,11 @@ class Units_Token : public MMgt_TShared {
 	return *(Handle_Units_Token*) &$self;
 	}
 };
+%extend Units_Token {
+	~Units_Token() {
+	printf("Call custom destructor for instance of Units_Token\n");
+	}
+};
 
 %nodefaultctor Units_ShiftedToken;
 class Units_ShiftedToken : public Units_Token {
@@ -973,13 +1051,16 @@ class Units_ShiftedToken : public Units_Token {
 		Units_ShiftedToken(const char * aword, const char * amean, const Standard_Real avalue, const Standard_Real amove, const Handle_Units_Dimensions &adimensions);
 		%feature("autodoc", "1");
 		Standard_Real Move() const;
-		%feature("autodoc", "1");
-		virtual		~Units_ShiftedToken();
 
 };
 %extend Units_ShiftedToken {
 	Handle_Units_ShiftedToken GetHandle() {
 	return *(Handle_Units_ShiftedToken*) &$self;
+	}
+};
+%extend Units_ShiftedToken {
+	~Units_ShiftedToken() {
+	printf("Call custom destructor for instance of Units_ShiftedToken\n");
 	}
 };
 
@@ -1002,13 +1083,16 @@ class Units_UnitsDictionary : public MMgt_TShared {
 		void Dump(const Handle_Units_Dimensions &adimensions) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_UnitsDictionary();
 
 };
 %extend Units_UnitsDictionary {
 	Handle_Units_UnitsDictionary GetHandle() {
 	return *(Handle_Units_UnitsDictionary*) &$self;
+	}
+};
+%extend Units_UnitsDictionary {
+	~Units_UnitsDictionary() {
+	printf("Call custom destructor for instance of Units_UnitsDictionary\n");
 	}
 };
 
@@ -1063,13 +1147,16 @@ class Units_QuantitiesSequence : public MMgt_TShared {
 		Handle_Units_QuantitiesSequence ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_QuantitiesSequence();
 
 };
 %extend Units_QuantitiesSequence {
 	Handle_Units_QuantitiesSequence GetHandle() {
 	return *(Handle_Units_QuantitiesSequence*) &$self;
+	}
+};
+%extend Units_QuantitiesSequence {
+	~Units_QuantitiesSequence() {
+	printf("Call custom destructor for instance of Units_QuantitiesSequence\n");
 	}
 };
 
@@ -1088,13 +1175,16 @@ class Units_NoSuchUnit : public Standard_NoSuchObject {
 		Handle_Units_NoSuchUnit NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_NoSuchUnit();
 
 };
 %extend Units_NoSuchUnit {
 	Handle_Units_NoSuchUnit GetHandle() {
 	return *(Handle_Units_NoSuchUnit*) &$self;
+	}
+};
+%extend Units_NoSuchUnit {
+	~Units_NoSuchUnit() {
+	printf("Call custom destructor for instance of Units_NoSuchUnit\n");
 	}
 };
 
@@ -1117,13 +1207,16 @@ class Units_Lexicon : public MMgt_TShared {
 		virtual		void Dump() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_Lexicon();
 
 };
 %extend Units_Lexicon {
 	Handle_Units_Lexicon GetHandle() {
 	return *(Handle_Units_Lexicon*) &$self;
+	}
+};
+%extend Units_Lexicon {
+	~Units_Lexicon() {
+	printf("Call custom destructor for instance of Units_Lexicon\n");
 	}
 };
 
@@ -1160,13 +1253,16 @@ class Units_UnitsSystem : public MMgt_TShared {
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_UnitsSystem();
 
 };
 %extend Units_UnitsSystem {
 	Handle_Units_UnitsSystem GetHandle() {
 	return *(Handle_Units_UnitsSystem*) &$self;
+	}
+};
+%extend Units_UnitsSystem {
+	~Units_UnitsSystem() {
+	printf("Call custom destructor for instance of Units_UnitsSystem\n");
 	}
 };
 
@@ -1185,13 +1281,16 @@ class Units_UnitsLexicon : public Units_Lexicon {
 		virtual		void Dump() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_UnitsLexicon();
 
 };
 %extend Units_UnitsLexicon {
 	Handle_Units_UnitsLexicon GetHandle() {
 	return *(Handle_Units_UnitsLexicon*) &$self;
+	}
+};
+%extend Units_UnitsLexicon {
+	~Units_UnitsLexicon() {
+	printf("Call custom destructor for instance of Units_UnitsLexicon\n");
 	}
 };
 
@@ -1246,13 +1345,16 @@ class Units_StringsSequence : public MMgt_TShared {
 		Handle_Units_StringsSequence ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_StringsSequence();
 
 };
 %extend Units_StringsSequence {
 	Handle_Units_StringsSequence GetHandle() {
 	return *(Handle_Units_StringsSequence*) &$self;
+	}
+};
+%extend Units_StringsSequence {
+	~Units_StringsSequence() {
+	printf("Call custom destructor for instance of Units_StringsSequence\n");
 	}
 };
 
@@ -1435,13 +1537,16 @@ class Units_TokensSequence : public MMgt_TShared {
 		Handle_Units_TokensSequence ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_TokensSequence();
 
 };
 %extend Units_TokensSequence {
 	Handle_Units_TokensSequence GetHandle() {
 	return *(Handle_Units_TokensSequence*) &$self;
+	}
+};
+%extend Units_TokensSequence {
+	~Units_TokensSequence() {
+	printf("Call custom destructor for instance of Units_TokensSequence\n");
 	}
 };
 
@@ -1520,13 +1625,16 @@ class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
 		Handle_Units_Unit & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_SequenceNodeOfUtsSequence();
 
 };
 %extend Units_SequenceNodeOfUtsSequence {
 	Handle_Units_SequenceNodeOfUtsSequence GetHandle() {
 	return *(Handle_Units_SequenceNodeOfUtsSequence*) &$self;
+	}
+};
+%extend Units_SequenceNodeOfUtsSequence {
+	~Units_SequenceNodeOfUtsSequence() {
+	printf("Call custom destructor for instance of Units_SequenceNodeOfUtsSequence\n");
 	}
 };
 
@@ -1539,13 +1647,16 @@ class Units_SequenceNodeOfStrgSequence : public TCollection_SeqNode {
 		Handle_TCollection_HAsciiString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_SequenceNodeOfStrgSequence();
 
 };
 %extend Units_SequenceNodeOfStrgSequence {
 	Handle_Units_SequenceNodeOfStrgSequence GetHandle() {
 	return *(Handle_Units_SequenceNodeOfStrgSequence*) &$self;
+	}
+};
+%extend Units_SequenceNodeOfStrgSequence {
+	~Units_SequenceNodeOfStrgSequence() {
+	printf("Call custom destructor for instance of Units_SequenceNodeOfStrgSequence\n");
 	}
 };
 
@@ -1558,12 +1669,15 @@ class Units_SequenceNodeOfQtsSequence : public TCollection_SeqNode {
 		Handle_Units_Quantity & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Units_SequenceNodeOfQtsSequence();
 
 };
 %extend Units_SequenceNodeOfQtsSequence {
 	Handle_Units_SequenceNodeOfQtsSequence GetHandle() {
 	return *(Handle_Units_SequenceNodeOfQtsSequence*) &$self;
+	}
+};
+%extend Units_SequenceNodeOfQtsSequence {
+	~Units_SequenceNodeOfQtsSequence() {
+	printf("Call custom destructor for instance of Units_SequenceNodeOfQtsSequence\n");
 	}
 };

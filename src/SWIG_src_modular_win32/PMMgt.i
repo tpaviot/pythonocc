@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PMMgt_PManaged : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PMMgt_PManaged();
-		%feature("autodoc", "1");
 		Handle_PMMgt_PManaged();
 		%feature("autodoc", "1");
 		Handle_PMMgt_PManaged(const Handle_PMMgt_PManaged &aHandle);
@@ -118,6 +116,11 @@ class Handle_PMMgt_PManaged : public Handle_Standard_Persistent {
 	return (PMMgt_PManaged*)$self->Access();
 	}
 };
+%extend Handle_PMMgt_PManaged {
+	~Handle_PMMgt_PManaged() {
+	printf("Call custom destructor for instance of Handle_PMMgt_PManaged\n");
+	}
+};
 
 %nodefaultctor PMMgt_PManaged;
 class PMMgt_PManaged : public Standard_Persistent {
@@ -126,12 +129,15 @@ class PMMgt_PManaged : public Standard_Persistent {
 		PMMgt_PManaged(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PMMgt_PManaged();
 
 };
 %extend PMMgt_PManaged {
 	Handle_PMMgt_PManaged GetHandle() {
 	return *(Handle_PMMgt_PManaged*) &$self;
+	}
+};
+%extend PMMgt_PManaged {
+	~PMMgt_PManaged() {
+	printf("Call custom destructor for instance of PMMgt_PManaged\n");
 	}
 };

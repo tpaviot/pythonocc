@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepSelect_WorkLibrary();
-		%feature("autodoc", "1");
 		Handle_StepSelect_WorkLibrary();
 		%feature("autodoc", "1");
 		Handle_StepSelect_WorkLibrary(const Handle_StepSelect_WorkLibrary &aHandle);
@@ -118,12 +116,15 @@ class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	return (StepSelect_WorkLibrary*)$self->Access();
 	}
 };
+%extend Handle_StepSelect_WorkLibrary {
+	~Handle_StepSelect_WorkLibrary() {
+	printf("Call custom destructor for instance of Handle_StepSelect_WorkLibrary\n");
+	}
+};
 
 %nodefaultctor Handle_StepSelect_FileModifier;
 class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepSelect_FileModifier();
 		%feature("autodoc", "1");
 		Handle_StepSelect_FileModifier();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	return (StepSelect_FileModifier*)$self->Access();
 	}
 };
+%extend Handle_StepSelect_FileModifier {
+	~Handle_StepSelect_FileModifier() {
+	printf("Call custom destructor for instance of Handle_StepSelect_FileModifier\n");
+	}
+};
 
 %nodefaultctor Handle_StepSelect_Activator;
 class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepSelect_Activator();
 		%feature("autodoc", "1");
 		Handle_StepSelect_Activator();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 	return (StepSelect_Activator*)$self->Access();
 	}
 };
+%extend Handle_StepSelect_Activator {
+	~Handle_StepSelect_Activator() {
+	printf("Call custom destructor for instance of Handle_StepSelect_Activator\n");
+	}
+};
 
 %nodefaultctor Handle_StepSelect_ModelModifier;
 class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepSelect_ModelModifier();
 		%feature("autodoc", "1");
 		Handle_StepSelect_ModelModifier();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	return (StepSelect_ModelModifier*)$self->Access();
 	}
 };
+%extend Handle_StepSelect_ModelModifier {
+	~Handle_StepSelect_ModelModifier() {
+	printf("Call custom destructor for instance of Handle_StepSelect_ModelModifier\n");
+	}
+};
 
 %nodefaultctor Handle_StepSelect_FloatFormat;
 class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepSelect_FloatFormat();
 		%feature("autodoc", "1");
 		Handle_StepSelect_FloatFormat();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 	return (StepSelect_FloatFormat*)$self->Access();
 	}
 };
+%extend Handle_StepSelect_FloatFormat {
+	~Handle_StepSelect_FloatFormat() {
+	printf("Call custom destructor for instance of Handle_StepSelect_FloatFormat\n");
+	}
+};
 
 %nodefaultctor Handle_StepSelect_StepType;
 class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepSelect_StepType();
 		%feature("autodoc", "1");
 		Handle_StepSelect_StepType();
 		%feature("autodoc", "1");
@@ -223,6 +236,11 @@ class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 	return (StepSelect_StepType*)$self->Access();
 	}
 };
+%extend Handle_StepSelect_StepType {
+	~Handle_StepSelect_StepType() {
+	printf("Call custom destructor for instance of Handle_StepSelect_StepType\n");
+	}
+};
 
 %nodefaultctor StepSelect_FileModifier;
 class StepSelect_FileModifier : public IFSelect_GeneralModifier {
@@ -236,6 +254,11 @@ class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 %extend StepSelect_FileModifier {
 	Handle_StepSelect_FileModifier GetHandle() {
 	return *(Handle_StepSelect_FileModifier*) &$self;
+	}
+};
+%extend StepSelect_FileModifier {
+	~StepSelect_FileModifier() {
+	printf("Call custom destructor for instance of StepSelect_FileModifier\n");
 	}
 };
 
@@ -256,13 +279,16 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 		virtual		void DumpEntity(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &protocol, const Handle_Standard_Transient &entity, const Handle_Message_Messenger &S, const Standard_Integer level) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepSelect_WorkLibrary();
 
 };
 %extend StepSelect_WorkLibrary {
 	Handle_StepSelect_WorkLibrary GetHandle() {
 	return *(Handle_StepSelect_WorkLibrary*) &$self;
+	}
+};
+%extend StepSelect_WorkLibrary {
+	~StepSelect_WorkLibrary() {
+	printf("Call custom destructor for instance of StepSelect_WorkLibrary\n");
 	}
 };
 
@@ -277,13 +303,16 @@ class StepSelect_StepType : public IFSelect_Signature {
 		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepSelect_StepType();
 
 };
 %extend StepSelect_StepType {
 	Handle_StepSelect_StepType GetHandle() {
 	return *(Handle_StepSelect_StepType*) &$self;
+	}
+};
+%extend StepSelect_StepType {
+	~StepSelect_StepType() {
+	printf("Call custom destructor for instance of StepSelect_StepType\n");
 	}
 };
 
@@ -308,13 +337,16 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepSelect_FloatFormat();
 
 };
 %extend StepSelect_FloatFormat {
 	Handle_StepSelect_FloatFormat GetHandle() {
 	return *(Handle_StepSelect_FloatFormat*) &$self;
+	}
+};
+%extend StepSelect_FloatFormat {
+	~StepSelect_FloatFormat() {
+	printf("Call custom destructor for instance of StepSelect_FloatFormat\n");
 	}
 };
 
@@ -336,6 +368,11 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 	return *(Handle_StepSelect_ModelModifier*) &$self;
 	}
 };
+%extend StepSelect_ModelModifier {
+	~StepSelect_ModelModifier() {
+	printf("Call custom destructor for instance of StepSelect_ModelModifier\n");
+	}
+};
 
 %nodefaultctor StepSelect_Activator;
 class StepSelect_Activator : public IFSelect_Activator {
@@ -348,12 +385,15 @@ class StepSelect_Activator : public IFSelect_Activator {
 		virtual		char * Help(const Standard_Integer number) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepSelect_Activator();
 
 };
 %extend StepSelect_Activator {
 	Handle_StepSelect_Activator GetHandle() {
 	return *(Handle_StepSelect_Activator*) &$self;
+	}
+};
+%extend StepSelect_Activator {
+	~StepSelect_Activator() {
+	printf("Call custom destructor for instance of StepSelect_Activator\n");
 	}
 };

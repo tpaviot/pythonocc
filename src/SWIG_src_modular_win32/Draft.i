@@ -109,8 +109,6 @@ enum Draft_ErrorStatus {
 class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo();
-		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo();
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo(const Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo &aHandle);
@@ -125,12 +123,15 @@ class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollectio
 	return (Draft_DataMapNodeOfDataMapOfFaceFaceInfo*)$self->Access();
 	}
 };
+%extend Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
+	~Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo() {
+	printf("Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo\n");
+	}
+};
 
 %nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo;
 class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo();
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo();
 		%feature("autodoc", "1");
@@ -146,12 +147,15 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 	return (Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo*)$self->Access();
 	}
 };
+%extend Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
+	~Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo() {
+	printf("Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");
+	}
+};
 
 %nodefaultctor Handle_Draft_Modification;
 class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Draft_Modification();
 		%feature("autodoc", "1");
 		Handle_Draft_Modification();
 		%feature("autodoc", "1");
@@ -167,12 +171,15 @@ class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 	return (Draft_Modification*)$self->Access();
 	}
 };
+%extend Handle_Draft_Modification {
+	~Handle_Draft_Modification() {
+	printf("Call custom destructor for instance of Handle_Draft_Modification\n");
+	}
+};
 
 %nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
 class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo();
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo();
 		%feature("autodoc", "1");
@@ -186,6 +193,11 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 %extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
 	Draft_DataMapNodeOfDataMapOfVertexVertexInfo* GetObject() {
 	return (Draft_DataMapNodeOfDataMapOfVertexVertexInfo*)$self->Access();
+	}
+};
+%extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
+	~Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo() {
+	printf("Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");
 	}
 };
 
@@ -354,13 +366,16 @@ class Draft_Modification : public BRepTools_Modification {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Draft_Modification();
 
 };
 %extend Draft_Modification {
 	Handle_Draft_Modification GetHandle() {
 	return *(Handle_Draft_Modification*) &$self;
+	}
+};
+%extend Draft_Modification {
+	~Draft_Modification() {
+	printf("Call custom destructor for instance of Draft_Modification\n");
 	}
 };
 
@@ -375,13 +390,16 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 		Draft_VertexInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Draft_DataMapNodeOfDataMapOfVertexVertexInfo();
 
 };
 %extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
 	Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo GetHandle() {
 	return *(Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo*) &$self;
+	}
+};
+%extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
+	~Draft_DataMapNodeOfDataMapOfVertexVertexInfo() {
+	printf("Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");
 	}
 };
 
@@ -432,13 +450,16 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 		Draft_EdgeInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo();
 
 };
 %extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
 	Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo GetHandle() {
 	return *(Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo*) &$self;
+	}
+};
+%extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
+	~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo() {
+	printf("Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");
 	}
 };
 
@@ -511,13 +532,16 @@ class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 		Draft_FaceInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Draft_DataMapNodeOfDataMapOfFaceFaceInfo();
 
 };
 %extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
 	Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo GetHandle() {
 	return *(Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo*) &$self;
+	}
+};
+%extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
+	~Draft_DataMapNodeOfDataMapOfFaceFaceInfo() {
+	printf("Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfFaceFaceInfo\n");
 	}
 };
 

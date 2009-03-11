@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
-		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
@@ -118,12 +116,15 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfI
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*)$self->Access();
 	}
 };
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
+	printf("Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger();
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger*)$self->Access();
 	}
 };
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger();
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public 
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*)$self->Access();
 	}
 };
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
+	printf("Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTColStd_ListNodeOfListOfListOfShape;
 class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTColStd_ListNodeOfListOfListOfShape();
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_ListNodeOfListOfListOfShape();
 		%feature("autodoc", "1");
@@ -179,6 +186,11 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 %extend Handle_BOPTColStd_ListNodeOfListOfListOfShape {
 	BOPTColStd_ListNodeOfListOfListOfShape* GetObject() {
 	return (BOPTColStd_ListNodeOfListOfListOfShape*)$self->Access();
+	}
+};
+%extend Handle_BOPTColStd_ListNodeOfListOfListOfShape {
+	~Handle_BOPTColStd_ListNodeOfListOfListOfShape() {
+	printf("Call custom destructor for instance of Handle_BOPTColStd_ListNodeOfListOfListOfShape\n");
 	}
 };
 
@@ -313,13 +325,16 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger();
 
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
 	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger GetHandle() {
 	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger*) &$self;
+	}
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");
 	}
 };
 
@@ -338,13 +353,16 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollec
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger();
 
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
 	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger GetHandle() {
 	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*) &$self;
+	}
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");
 	}
 };
 
@@ -535,13 +553,16 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 		TopTools_ListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTColStd_ListNodeOfListOfListOfShape();
 
 };
 %extend BOPTColStd_ListNodeOfListOfListOfShape {
 	Handle_BOPTColStd_ListNodeOfListOfListOfShape GetHandle() {
 	return *(Handle_BOPTColStd_ListNodeOfListOfListOfShape*) &$self;
+	}
+};
+%extend BOPTColStd_ListNodeOfListOfListOfShape {
+	~BOPTColStd_ListNodeOfListOfListOfShape() {
+	printf("Call custom destructor for instance of BOPTColStd_ListNodeOfListOfListOfShape\n");
 	}
 };
 
@@ -572,13 +593,16 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 		TColStd_IndexedMapOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
 
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
 	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger GetHandle() {
 	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*) &$self;
+	}
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");
 	}
 };
 

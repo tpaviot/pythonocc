@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PStandard_ArrayNode : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PStandard_ArrayNode();
-		%feature("autodoc", "1");
 		Handle_PStandard_ArrayNode();
 		%feature("autodoc", "1");
 		Handle_PStandard_ArrayNode(const Handle_PStandard_ArrayNode &aHandle);
@@ -118,6 +116,11 @@ class Handle_PStandard_ArrayNode : public Handle_Standard_Persistent {
 	return (PStandard_ArrayNode*)$self->Access();
 	}
 };
+%extend Handle_PStandard_ArrayNode {
+	~Handle_PStandard_ArrayNode() {
+	printf("Call custom destructor for instance of Handle_PStandard_ArrayNode\n");
+	}
+};
 
 %nodefaultctor PStandard_ArrayNode;
 class PStandard_ArrayNode : public Standard_Persistent {
@@ -128,12 +131,15 @@ class PStandard_ArrayNode : public Standard_Persistent {
 		PStandard_ArrayNode(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PStandard_ArrayNode();
 
 };
 %extend PStandard_ArrayNode {
 	Handle_PStandard_ArrayNode GetHandle() {
 	return *(Handle_PStandard_ArrayNode*) &$self;
+	}
+};
+%extend PStandard_ArrayNode {
+	~PStandard_ArrayNode() {
+	printf("Call custom destructor for instance of PStandard_ArrayNode\n");
 	}
 };

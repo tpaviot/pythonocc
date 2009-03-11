@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyShellData();
-		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyShellData();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyShellData(const Handle_HLRAlgo_PolyShellData &aHandle);
@@ -118,12 +116,15 @@ class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyShellData*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_PolyShellData {
+	~Handle_HLRAlgo_PolyShellData() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyShellData\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPINod;
 class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_HArray1OfPINod();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfPINod();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
 	return (HLRAlgo_HArray1OfPINod*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_HArray1OfPINod {
+	~Handle_HLRAlgo_HArray1OfPINod() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPINod\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_WiresBlock;
 class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_WiresBlock();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_WiresBlock();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 	return (HLRAlgo_WiresBlock*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_WiresBlock {
+	~Handle_HLRAlgo_WiresBlock() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_WiresBlock\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfTData;
 class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_HArray1OfTData();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfTData();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
 	return (HLRAlgo_HArray1OfTData*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_HArray1OfTData {
+	~Handle_HLRAlgo_HArray1OfTData() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_HArray1OfTData\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPISeg;
 class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_HArray1OfPISeg();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfPISeg();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
 	return (HLRAlgo_HArray1OfPISeg*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_HArray1OfPISeg {
+	~Handle_HLRAlgo_HArray1OfPISeg() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPISeg\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_ListNodeOfInterferenceList;
 class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_ListNodeOfInterferenceList();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_ListNodeOfInterferenceList();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapN
 	return (HLRAlgo_ListNodeOfInterferenceList*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
+	~Handle_HLRAlgo_ListNodeOfInterferenceList() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_ListNodeOfInterferenceList\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_EdgesBlock;
 class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_EdgesBlock();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_EdgesBlock();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 	return (HLRAlgo_EdgesBlock*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_EdgesBlock {
+	~Handle_HLRAlgo_EdgesBlock() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_EdgesBlock\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_PolyInternalData;
 class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyInternalData();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyInternalData();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyInternalData*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_PolyInternalData {
+	~Handle_HLRAlgo_PolyInternalData() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyInternalData\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_ListNodeOfListOfBPoint;
 class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_ListNodeOfListOfBPoint();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_ListNodeOfListOfBPoint();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode 
 	return (HLRAlgo_ListNodeOfListOfBPoint*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_ListNodeOfListOfBPoint {
+	~Handle_HLRAlgo_ListNodeOfListOfBPoint() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_ListNodeOfListOfBPoint\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_PolyData;
 class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyData();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyData();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyData*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_PolyData {
+	~Handle_HLRAlgo_PolyData() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyData\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_PolyAlgo;
 class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyAlgo();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyAlgo();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyAlgo*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_PolyAlgo {
+	~Handle_HLRAlgo_PolyAlgo() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyAlgo\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_PolyInternalNode;
 class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyInternalNode();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyInternalNode();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyInternalNode*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_PolyInternalNode {
+	~Handle_HLRAlgo_PolyInternalNode() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyInternalNode\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPHDat;
 class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_HArray1OfPHDat();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfPHDat();
 		%feature("autodoc", "1");
@@ -368,6 +402,11 @@ class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 %extend Handle_HLRAlgo_HArray1OfPHDat {
 	HLRAlgo_HArray1OfPHDat* GetObject() {
 	return (HLRAlgo_HArray1OfPHDat*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_HArray1OfPHDat {
+	~Handle_HLRAlgo_HArray1OfPHDat() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPHDat\n");
 	}
 };
 
@@ -454,13 +493,16 @@ class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 		HLRAlgo_Array1OfPISeg & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_HArray1OfPISeg();
 
 };
 %extend HLRAlgo_HArray1OfPISeg {
 	Handle_HLRAlgo_HArray1OfPISeg GetHandle() {
 	return *(Handle_HLRAlgo_HArray1OfPISeg*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfPISeg {
+	~HLRAlgo_HArray1OfPISeg() {
+	printf("Call custom destructor for instance of HLRAlgo_HArray1OfPISeg\n");
 	}
 };
 
@@ -475,13 +517,16 @@ class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 		Standard_Address RValues() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyInternalNode();
 
 };
 %extend HLRAlgo_PolyInternalNode {
 	Handle_HLRAlgo_PolyInternalNode GetHandle() {
 	return *(Handle_HLRAlgo_PolyInternalNode*) &$self;
+	}
+};
+%extend HLRAlgo_PolyInternalNode {
+	~HLRAlgo_PolyInternalNode() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyInternalNode\n");
 	}
 };
 
@@ -704,13 +749,16 @@ class HLRAlgo_EdgesBlock : public MMgt_TShared {
 		Standard_Address MinMax() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_EdgesBlock();
 
 };
 %extend HLRAlgo_EdgesBlock {
 	Handle_HLRAlgo_EdgesBlock GetHandle() {
 	return *(Handle_HLRAlgo_EdgesBlock*) &$self;
+	}
+};
+%extend HLRAlgo_EdgesBlock {
+	~HLRAlgo_EdgesBlock() {
+	printf("Call custom destructor for instance of HLRAlgo_EdgesBlock\n");
 	}
 };
 
@@ -723,13 +771,16 @@ class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 		HLRAlgo_BiPoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_ListNodeOfListOfBPoint();
 
 };
 %extend HLRAlgo_ListNodeOfListOfBPoint {
 	Handle_HLRAlgo_ListNodeOfListOfBPoint GetHandle() {
 	return *(Handle_HLRAlgo_ListNodeOfListOfBPoint*) &$self;
+	}
+};
+%extend HLRAlgo_ListNodeOfListOfBPoint {
+	~HLRAlgo_ListNodeOfListOfBPoint() {
+	printf("Call custom destructor for instance of HLRAlgo_ListNodeOfListOfBPoint\n");
 	}
 };
 
@@ -778,13 +829,16 @@ class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 		HLRAlgo_Interference & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_ListNodeOfInterferenceList();
 
 };
 %extend HLRAlgo_ListNodeOfInterferenceList {
 	Handle_HLRAlgo_ListNodeOfInterferenceList GetHandle() {
 	return *(Handle_HLRAlgo_ListNodeOfInterferenceList*) &$self;
+	}
+};
+%extend HLRAlgo_ListNodeOfInterferenceList {
+	~HLRAlgo_ListNodeOfInterferenceList() {
+	printf("Call custom destructor for instance of HLRAlgo_ListNodeOfInterferenceList\n");
 	}
 };
 
@@ -805,13 +859,16 @@ class HLRAlgo_WiresBlock : public MMgt_TShared {
 		Standard_Address MinMax() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_WiresBlock();
 
 };
 %extend HLRAlgo_WiresBlock {
 	Handle_HLRAlgo_WiresBlock GetHandle() {
 	return *(Handle_HLRAlgo_WiresBlock*) &$self;
+	}
+};
+%extend HLRAlgo_WiresBlock {
+	~HLRAlgo_WiresBlock() {
+	printf("Call custom destructor for instance of HLRAlgo_WiresBlock\n");
 	}
 };
 
@@ -846,13 +903,16 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 		void Show(Standard_Address & Coordinates, Standard_Integer & Index, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyAlgo();
 
 };
 %extend HLRAlgo_PolyAlgo {
 	Handle_HLRAlgo_PolyAlgo GetHandle() {
 	return *(Handle_HLRAlgo_PolyAlgo*) &$self;
+	}
+};
+%extend HLRAlgo_PolyAlgo {
+	~HLRAlgo_PolyAlgo() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyAlgo\n");
 	}
 };
 
@@ -877,13 +937,16 @@ class HLRAlgo_PolyShellData : public MMgt_TShared {
 		Standard_Address Indices();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyShellData();
 
 };
 %extend HLRAlgo_PolyShellData {
 	Handle_HLRAlgo_PolyShellData GetHandle() {
 	return *(Handle_HLRAlgo_PolyShellData*) &$self;
+	}
+};
+%extend HLRAlgo_PolyShellData {
+	~HLRAlgo_PolyShellData() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyShellData\n");
 	}
 };
 
@@ -954,13 +1017,16 @@ class HLRAlgo_PolyData : public MMgt_TShared {
 		Standard_Address Indices();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyData();
 
 };
 %extend HLRAlgo_PolyData {
 	Handle_HLRAlgo_PolyData GetHandle() {
 	return *(Handle_HLRAlgo_PolyData*) &$self;
+	}
+};
+%extend HLRAlgo_PolyData {
+	~HLRAlgo_PolyData() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyData\n");
 	}
 };
 
@@ -1047,13 +1113,16 @@ class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
 		HLRAlgo_Array1OfPHDat & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_HArray1OfPHDat();
 
 };
 %extend HLRAlgo_HArray1OfPHDat {
 	Handle_HLRAlgo_HArray1OfPHDat GetHandle() {
 	return *(Handle_HLRAlgo_HArray1OfPHDat*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfPHDat {
+	~HLRAlgo_HArray1OfPHDat() {
+	printf("Call custom destructor for instance of HLRAlgo_HArray1OfPHDat\n");
 	}
 };
 
@@ -1130,13 +1199,16 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 		HLRAlgo_Array1OfPINod & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_HArray1OfPINod();
 
 };
 %extend HLRAlgo_HArray1OfPINod {
 	Handle_HLRAlgo_HArray1OfPINod GetHandle() {
 	return *(Handle_HLRAlgo_HArray1OfPINod*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfPINod {
+	~HLRAlgo_HArray1OfPINod() {
+	printf("Call custom destructor for instance of HLRAlgo_HArray1OfPINod\n");
 	}
 };
 
@@ -1227,13 +1299,16 @@ class HLRAlgo_PolyInternalData : public MMgt_TShared {
 		HLRAlgo_Array1OfPINod & PINod() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyInternalData();
 
 };
 %extend HLRAlgo_PolyInternalData {
 	Handle_HLRAlgo_PolyInternalData GetHandle() {
 	return *(Handle_HLRAlgo_PolyInternalData*) &$self;
+	}
+};
+%extend HLRAlgo_PolyInternalData {
+	~HLRAlgo_PolyInternalData() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyInternalData\n");
 	}
 };
 
@@ -1302,13 +1377,16 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 		HLRAlgo_Array1OfTData & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_HArray1OfTData();
 
 };
 %extend HLRAlgo_HArray1OfTData {
 	Handle_HLRAlgo_HArray1OfTData GetHandle() {
 	return *(Handle_HLRAlgo_HArray1OfTData*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfTData {
+	~HLRAlgo_HArray1OfTData() {
+	printf("Call custom destructor for instance of HLRAlgo_HArray1OfTData\n");
 	}
 };
 

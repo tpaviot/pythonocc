@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName();
-		%feature("autodoc", "1");
 		Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName();
 		%feature("autodoc", "1");
 		Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName(const Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName &aHandle);
@@ -116,6 +114,11 @@ class Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName : public Handle_TCollecti
 %extend Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName {
 	DNaming_DataMapNodeOfDataMapOfShapeOfName* GetObject() {
 	return (DNaming_DataMapNodeOfDataMapOfShapeOfName*)$self->Access();
+	}
+};
+%extend Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName {
+	~Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName() {
+	printf("Call custom destructor for instance of Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName\n");
 	}
 };
 
@@ -176,13 +179,16 @@ class DNaming_DataMapNodeOfDataMapOfShapeOfName : public TCollection_MapNode {
 		TCollection_AsciiString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~DNaming_DataMapNodeOfDataMapOfShapeOfName();
 
 };
 %extend DNaming_DataMapNodeOfDataMapOfShapeOfName {
 	Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName GetHandle() {
 	return *(Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName*) &$self;
+	}
+};
+%extend DNaming_DataMapNodeOfDataMapOfShapeOfName {
+	~DNaming_DataMapNodeOfDataMapOfShapeOfName() {
+	printf("Call custom destructor for instance of DNaming_DataMapNodeOfDataMapOfShapeOfName\n");
 	}
 };
 

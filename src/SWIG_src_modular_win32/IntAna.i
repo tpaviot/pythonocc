@@ -115,8 +115,6 @@ enum IntAna_ResultType {
 class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IntAna_ListNodeOfListOfCurve();
-		%feature("autodoc", "1");
 		Handle_IntAna_ListNodeOfListOfCurve();
 		%feature("autodoc", "1");
 		Handle_IntAna_ListNodeOfListOfCurve(const Handle_IntAna_ListNodeOfListOfCurve &aHandle);
@@ -129,6 +127,11 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 %extend Handle_IntAna_ListNodeOfListOfCurve {
 	IntAna_ListNodeOfListOfCurve* GetObject() {
 	return (IntAna_ListNodeOfListOfCurve*)$self->Access();
+	}
+};
+%extend Handle_IntAna_ListNodeOfListOfCurve {
+	~Handle_IntAna_ListNodeOfListOfCurve() {
+	printf("Call custom destructor for instance of Handle_IntAna_ListNodeOfListOfCurve\n");
 	}
 };
 
@@ -243,13 +246,16 @@ class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 		IntAna_Curve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntAna_ListNodeOfListOfCurve();
 
 };
 %extend IntAna_ListNodeOfListOfCurve {
 	Handle_IntAna_ListNodeOfListOfCurve GetHandle() {
 	return *(Handle_IntAna_ListNodeOfListOfCurve*) &$self;
+	}
+};
+%extend IntAna_ListNodeOfListOfCurve {
+	~IntAna_ListNodeOfListOfCurve() {
+	printf("Call custom destructor for instance of IntAna_ListNodeOfListOfCurve\n");
 	}
 };
 

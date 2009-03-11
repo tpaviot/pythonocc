@@ -122,8 +122,6 @@ enum EDL_Error {
 class Handle_EDL_Interpretor : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_EDL_Interpretor();
-		%feature("autodoc", "1");
 		Handle_EDL_Interpretor();
 		%feature("autodoc", "1");
 		Handle_EDL_Interpretor(const Handle_EDL_Interpretor &aHandle);
@@ -138,12 +136,15 @@ class Handle_EDL_Interpretor : public Handle_MMgt_TShared {
 	return (EDL_Interpretor*)$self->Access();
 	}
 };
+%extend Handle_EDL_Interpretor {
+	~Handle_EDL_Interpretor() {
+	printf("Call custom destructor for instance of Handle_EDL_Interpretor\n");
+	}
+};
 
 %nodefaultctor Handle_EDL_SequenceNodeOfSequenceOfVariable;
 class Handle_EDL_SequenceNodeOfSequenceOfVariable : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_EDL_SequenceNodeOfSequenceOfVariable();
 		%feature("autodoc", "1");
 		Handle_EDL_SequenceNodeOfSequenceOfVariable();
 		%feature("autodoc", "1");
@@ -159,12 +160,15 @@ class Handle_EDL_SequenceNodeOfSequenceOfVariable : public Handle_TCollection_Se
 	return (EDL_SequenceNodeOfSequenceOfVariable*)$self->Access();
 	}
 };
+%extend Handle_EDL_SequenceNodeOfSequenceOfVariable {
+	~Handle_EDL_SequenceNodeOfSequenceOfVariable() {
+	printf("Call custom destructor for instance of Handle_EDL_SequenceNodeOfSequenceOfVariable\n");
+	}
+};
 
 %nodefaultctor Handle_EDL_DataMapNodeOfMapOfVariable;
 class Handle_EDL_DataMapNodeOfMapOfVariable : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_EDL_DataMapNodeOfMapOfVariable();
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfVariable();
 		%feature("autodoc", "1");
@@ -180,12 +184,15 @@ class Handle_EDL_DataMapNodeOfMapOfVariable : public Handle_TCollection_MapNode 
 	return (EDL_DataMapNodeOfMapOfVariable*)$self->Access();
 	}
 };
+%extend Handle_EDL_DataMapNodeOfMapOfVariable {
+	~Handle_EDL_DataMapNodeOfMapOfVariable() {
+	printf("Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfVariable\n");
+	}
+};
 
 %nodefaultctor Handle_EDL_DataMapNodeOfMapOfTemplate;
 class Handle_EDL_DataMapNodeOfMapOfTemplate : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_EDL_DataMapNodeOfMapOfTemplate();
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfTemplate();
 		%feature("autodoc", "1");
@@ -201,12 +208,15 @@ class Handle_EDL_DataMapNodeOfMapOfTemplate : public Handle_TCollection_MapNode 
 	return (EDL_DataMapNodeOfMapOfTemplate*)$self->Access();
 	}
 };
+%extend Handle_EDL_DataMapNodeOfMapOfTemplate {
+	~Handle_EDL_DataMapNodeOfMapOfTemplate() {
+	printf("Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfTemplate\n");
+	}
+};
 
 %nodefaultctor Handle_EDL_StackNodeOfStackOfBoolean;
 class Handle_EDL_StackNodeOfStackOfBoolean : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_EDL_StackNodeOfStackOfBoolean();
 		%feature("autodoc", "1");
 		Handle_EDL_StackNodeOfStackOfBoolean();
 		%feature("autodoc", "1");
@@ -222,12 +232,15 @@ class Handle_EDL_StackNodeOfStackOfBoolean : public Handle_TCollection_MapNode {
 	return (EDL_StackNodeOfStackOfBoolean*)$self->Access();
 	}
 };
+%extend Handle_EDL_StackNodeOfStackOfBoolean {
+	~Handle_EDL_StackNodeOfStackOfBoolean() {
+	printf("Call custom destructor for instance of Handle_EDL_StackNodeOfStackOfBoolean\n");
+	}
+};
 
 %nodefaultctor Handle_EDL_API;
 class Handle_EDL_API : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_EDL_API();
 		%feature("autodoc", "1");
 		Handle_EDL_API();
 		%feature("autodoc", "1");
@@ -243,12 +256,15 @@ class Handle_EDL_API : public Handle_MMgt_TShared {
 	return (EDL_API*)$self->Access();
 	}
 };
+%extend Handle_EDL_API {
+	~Handle_EDL_API() {
+	printf("Call custom destructor for instance of Handle_EDL_API\n");
+	}
+};
 
 %nodefaultctor Handle_EDL_HSequenceOfVariable;
 class Handle_EDL_HSequenceOfVariable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_EDL_HSequenceOfVariable();
 		%feature("autodoc", "1");
 		Handle_EDL_HSequenceOfVariable();
 		%feature("autodoc", "1");
@@ -264,12 +280,15 @@ class Handle_EDL_HSequenceOfVariable : public Handle_MMgt_TShared {
 	return (EDL_HSequenceOfVariable*)$self->Access();
 	}
 };
+%extend Handle_EDL_HSequenceOfVariable {
+	~Handle_EDL_HSequenceOfVariable() {
+	printf("Call custom destructor for instance of Handle_EDL_HSequenceOfVariable\n");
+	}
+};
 
 %nodefaultctor Handle_EDL_DataMapNodeOfMapOfFile;
 class Handle_EDL_DataMapNodeOfMapOfFile : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_EDL_DataMapNodeOfMapOfFile();
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfFile();
 		%feature("autodoc", "1");
@@ -285,12 +304,15 @@ class Handle_EDL_DataMapNodeOfMapOfFile : public Handle_TCollection_MapNode {
 	return (EDL_DataMapNodeOfMapOfFile*)$self->Access();
 	}
 };
+%extend Handle_EDL_DataMapNodeOfMapOfFile {
+	~Handle_EDL_DataMapNodeOfMapOfFile() {
+	printf("Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfFile\n");
+	}
+};
 
 %nodefaultctor Handle_EDL_DataMapNodeOfMapOfLibrary;
 class Handle_EDL_DataMapNodeOfMapOfLibrary : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_EDL_DataMapNodeOfMapOfLibrary();
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfLibrary();
 		%feature("autodoc", "1");
@@ -304,6 +326,11 @@ class Handle_EDL_DataMapNodeOfMapOfLibrary : public Handle_TCollection_MapNode {
 %extend Handle_EDL_DataMapNodeOfMapOfLibrary {
 	EDL_DataMapNodeOfMapOfLibrary* GetObject() {
 	return (EDL_DataMapNodeOfMapOfLibrary*)$self->Access();
+	}
+};
+%extend Handle_EDL_DataMapNodeOfMapOfLibrary {
+	~Handle_EDL_DataMapNodeOfMapOfLibrary() {
+	printf("Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfLibrary\n");
 	}
 };
 
@@ -376,13 +403,16 @@ class EDL_API : public MMgt_TShared {
 		EDL_Error Execute(const char * aFileName) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~EDL_API();
 
 };
 %extend EDL_API {
 	Handle_EDL_API GetHandle() {
 	return *(Handle_EDL_API*) &$self;
+	}
+};
+%extend EDL_API {
+	~EDL_API() {
+	printf("Call custom destructor for instance of EDL_API\n");
 	}
 };
 
@@ -397,13 +427,16 @@ class EDL_DataMapNodeOfMapOfFile : public TCollection_MapNode {
 		EDL_File & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~EDL_DataMapNodeOfMapOfFile();
 
 };
 %extend EDL_DataMapNodeOfMapOfFile {
 	Handle_EDL_DataMapNodeOfMapOfFile GetHandle() {
 	return *(Handle_EDL_DataMapNodeOfMapOfFile*) &$self;
+	}
+};
+%extend EDL_DataMapNodeOfMapOfFile {
+	~EDL_DataMapNodeOfMapOfFile() {
+	printf("Call custom destructor for instance of EDL_DataMapNodeOfMapOfFile\n");
 	}
 };
 
@@ -418,13 +451,16 @@ class EDL_DataMapNodeOfMapOfLibrary : public TCollection_MapNode {
 		EDL_Library & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~EDL_DataMapNodeOfMapOfLibrary();
 
 };
 %extend EDL_DataMapNodeOfMapOfLibrary {
 	Handle_EDL_DataMapNodeOfMapOfLibrary GetHandle() {
 	return *(Handle_EDL_DataMapNodeOfMapOfLibrary*) &$self;
+	}
+};
+%extend EDL_DataMapNodeOfMapOfLibrary {
+	~EDL_DataMapNodeOfMapOfLibrary() {
+	printf("Call custom destructor for instance of EDL_DataMapNodeOfMapOfLibrary\n");
 	}
 };
 
@@ -435,8 +471,6 @@ class EDL_Interpretor : public MMgt_TShared {
 		EDL_Interpretor();
 		%feature("autodoc", "1");
 		void ClearAll();
-		%feature("autodoc", "1");
-		virtual		~EDL_Interpretor();
 		%feature("autodoc", "1");
 		void ClearSymbolTable();
 		%feature("autodoc", "1");
@@ -532,6 +566,11 @@ class EDL_Interpretor : public MMgt_TShared {
 	return *(Handle_EDL_Interpretor*) &$self;
 	}
 };
+%extend EDL_Interpretor {
+	~EDL_Interpretor() {
+	printf("Call custom destructor for instance of EDL_Interpretor\n");
+	}
+};
 
 %nodefaultctor EDL_SequenceNodeOfSequenceOfVariable;
 class EDL_SequenceNodeOfSequenceOfVariable : public TCollection_SeqNode {
@@ -542,13 +581,16 @@ class EDL_SequenceNodeOfSequenceOfVariable : public TCollection_SeqNode {
 		EDL_Variable & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~EDL_SequenceNodeOfSequenceOfVariable();
 
 };
 %extend EDL_SequenceNodeOfSequenceOfVariable {
 	Handle_EDL_SequenceNodeOfSequenceOfVariable GetHandle() {
 	return *(Handle_EDL_SequenceNodeOfSequenceOfVariable*) &$self;
+	}
+};
+%extend EDL_SequenceNodeOfSequenceOfVariable {
+	~EDL_SequenceNodeOfSequenceOfVariable() {
+	printf("Call custom destructor for instance of EDL_SequenceNodeOfSequenceOfVariable\n");
 	}
 };
 
@@ -589,13 +631,16 @@ class EDL_DataMapNodeOfMapOfTemplate : public TCollection_MapNode {
 		EDL_Template & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~EDL_DataMapNodeOfMapOfTemplate();
 
 };
 %extend EDL_DataMapNodeOfMapOfTemplate {
 	Handle_EDL_DataMapNodeOfMapOfTemplate GetHandle() {
 	return *(Handle_EDL_DataMapNodeOfMapOfTemplate*) &$self;
+	}
+};
+%extend EDL_DataMapNodeOfMapOfTemplate {
+	~EDL_DataMapNodeOfMapOfTemplate() {
+	printf("Call custom destructor for instance of EDL_DataMapNodeOfMapOfTemplate\n");
 	}
 };
 
@@ -694,13 +739,16 @@ class EDL_StackNodeOfStackOfBoolean : public TCollection_MapNode {
 		Standard_Boolean & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~EDL_StackNodeOfStackOfBoolean();
 
 };
 %extend EDL_StackNodeOfStackOfBoolean {
 	Handle_EDL_StackNodeOfStackOfBoolean GetHandle() {
 	return *(Handle_EDL_StackNodeOfStackOfBoolean*) &$self;
+	}
+};
+%extend EDL_StackNodeOfStackOfBoolean {
+	~EDL_StackNodeOfStackOfBoolean() {
+	printf("Call custom destructor for instance of EDL_StackNodeOfStackOfBoolean\n");
 	}
 };
 
@@ -803,13 +851,16 @@ class EDL_HSequenceOfVariable : public MMgt_TShared {
 		Handle_EDL_HSequenceOfVariable ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~EDL_HSequenceOfVariable();
 
 };
 %extend EDL_HSequenceOfVariable {
 	Handle_EDL_HSequenceOfVariable GetHandle() {
 	return *(Handle_EDL_HSequenceOfVariable*) &$self;
+	}
+};
+%extend EDL_HSequenceOfVariable {
+	~EDL_HSequenceOfVariable() {
+	printf("Call custom destructor for instance of EDL_HSequenceOfVariable\n");
 	}
 };
 
@@ -1058,13 +1109,16 @@ class EDL_DataMapNodeOfMapOfVariable : public TCollection_MapNode {
 		EDL_Variable & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~EDL_DataMapNodeOfMapOfVariable();
 
 };
 %extend EDL_DataMapNodeOfMapOfVariable {
 	Handle_EDL_DataMapNodeOfMapOfVariable GetHandle() {
 	return *(Handle_EDL_DataMapNodeOfMapOfVariable*) &$self;
+	}
+};
+%extend EDL_DataMapNodeOfMapOfVariable {
+	~EDL_DataMapNodeOfMapOfVariable() {
+	printf("Call custom destructor for instance of EDL_DataMapNodeOfMapOfVariable\n");
 	}
 };
 

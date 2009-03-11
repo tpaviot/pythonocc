@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESSolid_ManifoldSolid();
-		%feature("autodoc", "1");
 		Handle_IGESSolid_ManifoldSolid();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ManifoldSolid(const Handle_IGESSolid_ManifoldSolid &aHandle);
@@ -118,12 +116,15 @@ class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_ManifoldSolid*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_ManifoldSolid {
+	~Handle_IGESSolid_ManifoldSolid() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_ManifoldSolid\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_SpecificModule;
 class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_SpecificModule();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SpecificModule();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESSolid_SpecificModule*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_SpecificModule {
+	~Handle_IGESSolid_SpecificModule() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_SpecificModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_EdgeList;
 class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_EdgeList();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_EdgeList();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_EdgeList*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_EdgeList {
+	~Handle_IGESSolid_EdgeList() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_EdgeList\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_ConeFrustum;
 class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_ConeFrustum();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ConeFrustum();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_ConeFrustum*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_ConeFrustum {
+	~Handle_IGESSolid_ConeFrustum() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_ConeFrustum\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_HArray1OfFace;
 class Handle_IGESSolid_HArray1OfFace : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_HArray1OfFace();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_HArray1OfFace();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_IGESSolid_HArray1OfFace : public Handle_MMgt_TShared {
 	return (IGESSolid_HArray1OfFace*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_HArray1OfFace {
+	~Handle_IGESSolid_HArray1OfFace() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_HArray1OfFace\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_RightAngularWedge;
 class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_RightAngularWedge();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_RightAngularWedge();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_RightAngularWedge*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_RightAngularWedge {
+	~Handle_IGESSolid_RightAngularWedge() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_RightAngularWedge\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_CylindricalSurface;
 class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_CylindricalSurface();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_CylindricalSurface();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_CylindricalSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_CylindricalSurface {
+	~Handle_IGESSolid_CylindricalSurface() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_CylindricalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_BooleanTree;
 class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_BooleanTree();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_BooleanTree();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_BooleanTree*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_BooleanTree {
+	~Handle_IGESSolid_BooleanTree() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_BooleanTree\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_Shell;
 class Handle_IGESSolid_Shell : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Shell();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Shell();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_IGESSolid_Shell : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Shell*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_Shell {
+	~Handle_IGESSolid_Shell() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_Shell\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_SolidInstance;
 class Handle_IGESSolid_SolidInstance : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_SolidInstance();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SolidInstance();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_IGESSolid_SolidInstance : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SolidInstance*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_SolidInstance {
+	~Handle_IGESSolid_SolidInstance() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_SolidInstance\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_SolidOfRevolution;
 class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_SolidOfRevolution();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SolidOfRevolution();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SolidOfRevolution*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_SolidOfRevolution {
+	~Handle_IGESSolid_SolidOfRevolution() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_SolidOfRevolution\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_ConicalSurface;
 class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_ConicalSurface();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ConicalSurface();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_ConicalSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_ConicalSurface {
+	~Handle_IGESSolid_ConicalSurface() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_ConicalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_Protocol;
 class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Protocol();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Protocol();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
 	return (IGESSolid_Protocol*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_Protocol {
+	~Handle_IGESSolid_Protocol() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_Protocol\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_VertexList;
 class Handle_IGESSolid_VertexList : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_VertexList();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_VertexList();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_IGESSolid_VertexList : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_VertexList*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_VertexList {
+	~Handle_IGESSolid_VertexList() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_VertexList\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_GeneralModule;
 class Handle_IGESSolid_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_GeneralModule();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_GeneralModule();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_IGESSolid_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESSolid_GeneralModule*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_GeneralModule {
+	~Handle_IGESSolid_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_GeneralModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_HArray1OfLoop;
 class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_HArray1OfLoop();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_HArray1OfLoop();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 	return (IGESSolid_HArray1OfLoop*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_HArray1OfLoop {
+	~Handle_IGESSolid_HArray1OfLoop() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_HArray1OfLoop\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_HArray1OfVertexList;
 class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_HArray1OfVertexList();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_HArray1OfVertexList();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 	return (IGESSolid_HArray1OfVertexList*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_HArray1OfVertexList {
+	~Handle_IGESSolid_HArray1OfVertexList() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_HArray1OfVertexList\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_SphericalSurface;
 class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_SphericalSurface();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SphericalSurface();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SphericalSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_SphericalSurface {
+	~Handle_IGESSolid_SphericalSurface() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_SphericalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_Cylinder;
 class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Cylinder();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Cylinder();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Cylinder*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_Cylinder {
+	~Handle_IGESSolid_Cylinder() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_Cylinder\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_SolidAssembly;
 class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_SolidAssembly();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SolidAssembly();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SolidAssembly*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_SolidAssembly {
+	~Handle_IGESSolid_SolidAssembly() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_SolidAssembly\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_Block;
 class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Block();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Block();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Block*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_Block {
+	~Handle_IGESSolid_Block() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_Block\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_Loop;
 class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Loop();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Loop();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Loop*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_Loop {
+	~Handle_IGESSolid_Loop() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_Loop\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_Sphere;
 class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Sphere();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Sphere();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Sphere*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_Sphere {
+	~Handle_IGESSolid_Sphere() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_Sphere\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_HArray1OfShell;
 class Handle_IGESSolid_HArray1OfShell : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_HArray1OfShell();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_HArray1OfShell();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_IGESSolid_HArray1OfShell : public Handle_MMgt_TShared {
 	return (IGESSolid_HArray1OfShell*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_HArray1OfShell {
+	~Handle_IGESSolid_HArray1OfShell() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_HArray1OfShell\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_ToroidalSurface;
 class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_ToroidalSurface();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ToroidalSurface();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_ToroidalSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_ToroidalSurface {
+	~Handle_IGESSolid_ToroidalSurface() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_ToroidalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_Torus;
 class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Torus();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Torus();
 		%feature("autodoc", "1");
@@ -643,12 +716,15 @@ class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Torus*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_Torus {
+	~Handle_IGESSolid_Torus() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_Torus\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_ReadWriteModule;
 class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_ReadWriteModule();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ReadWriteModule();
 		%feature("autodoc", "1");
@@ -664,12 +740,15 @@ class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESSolid_ReadWriteModule*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_ReadWriteModule {
+	~Handle_IGESSolid_ReadWriteModule() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_Face;
 class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Face();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Face();
 		%feature("autodoc", "1");
@@ -685,12 +764,15 @@ class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Face*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_Face {
+	~Handle_IGESSolid_Face() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_Face\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_PlaneSurface;
 class Handle_IGESSolid_PlaneSurface : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_PlaneSurface();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_PlaneSurface();
 		%feature("autodoc", "1");
@@ -706,12 +788,15 @@ class Handle_IGESSolid_PlaneSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_PlaneSurface*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_PlaneSurface {
+	~Handle_IGESSolid_PlaneSurface() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_PlaneSurface\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_Ellipsoid;
 class Handle_IGESSolid_Ellipsoid : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_Ellipsoid();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Ellipsoid();
 		%feature("autodoc", "1");
@@ -727,12 +812,15 @@ class Handle_IGESSolid_Ellipsoid : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Ellipsoid*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_Ellipsoid {
+	~Handle_IGESSolid_Ellipsoid() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_Ellipsoid\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_SelectedComponent;
 class Handle_IGESSolid_SelectedComponent : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_SelectedComponent();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SelectedComponent();
 		%feature("autodoc", "1");
@@ -748,12 +836,15 @@ class Handle_IGESSolid_SelectedComponent : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SelectedComponent*)$self->Access();
 	}
 };
+%extend Handle_IGESSolid_SelectedComponent {
+	~Handle_IGESSolid_SelectedComponent() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_SelectedComponent\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSolid_SolidOfLinearExtrusion;
 class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSolid_SolidOfLinearExtrusion();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SolidOfLinearExtrusion();
 		%feature("autodoc", "1");
@@ -767,6 +858,11 @@ class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntit
 %extend Handle_IGESSolid_SolidOfLinearExtrusion {
 	IGESSolid_SolidOfLinearExtrusion* GetObject() {
 	return (IGESSolid_SolidOfLinearExtrusion*)$self->Access();
+	}
+};
+%extend Handle_IGESSolid_SolidOfLinearExtrusion {
+	~Handle_IGESSolid_SolidOfLinearExtrusion() {
+	printf("Call custom destructor for instance of Handle_IGESSolid_SolidOfLinearExtrusion\n");
 	}
 };
 
@@ -791,13 +887,16 @@ class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
 		Standard_Boolean IsParametrised() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_SphericalSurface();
 
 };
 %extend IGESSolid_SphericalSurface {
 	Handle_IGESSolid_SphericalSurface GetHandle() {
 	return *(Handle_IGESSolid_SphericalSurface*) &$self;
+	}
+};
+%extend IGESSolid_SphericalSurface {
+	~IGESSolid_SphericalSurface() {
+	printf("Call custom destructor for instance of IGESSolid_SphericalSurface\n");
 	}
 };
 
@@ -826,13 +925,16 @@ class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 		gp_Dir TransformedAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_SolidOfRevolution();
 
 };
 %extend IGESSolid_SolidOfRevolution {
 	Handle_IGESSolid_SolidOfRevolution GetHandle() {
 	return *(Handle_IGESSolid_SolidOfRevolution*) &$self;
+	}
+};
+%extend IGESSolid_SolidOfRevolution {
+	~IGESSolid_SolidOfRevolution() {
+	printf("Call custom destructor for instance of IGESSolid_SolidOfRevolution\n");
 	}
 };
 
@@ -863,13 +965,16 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 		IGESSolid_Array1OfShell & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_HArray1OfShell();
 
 };
 %extend IGESSolid_HArray1OfShell {
 	Handle_IGESSolid_HArray1OfShell GetHandle() {
 	return *(Handle_IGESSolid_HArray1OfShell*) &$self;
+	}
+};
+%extend IGESSolid_HArray1OfShell {
+	~IGESSolid_HArray1OfShell() {
+	printf("Call custom destructor for instance of IGESSolid_HArray1OfShell\n");
 	}
 };
 
@@ -920,13 +1025,16 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 		gp_Dir TransformedAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_ConeFrustum();
 
 };
 %extend IGESSolid_ConeFrustum {
 	Handle_IGESSolid_ConeFrustum GetHandle() {
 	return *(Handle_IGESSolid_ConeFrustum*) &$self;
+	}
+};
+%extend IGESSolid_ConeFrustum {
+	~IGESSolid_ConeFrustum() {
+	printf("Call custom destructor for instance of IGESSolid_ConeFrustum\n");
 	}
 };
 
@@ -1009,13 +1117,16 @@ class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 		Handle_IGESGeom_TransformationMatrix TransfMatrix(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_SolidAssembly();
 
 };
 %extend IGESSolid_SolidAssembly {
 	Handle_IGESSolid_SolidAssembly GetHandle() {
 	return *(Handle_IGESSolid_SolidAssembly*) &$self;
+	}
+};
+%extend IGESSolid_SolidAssembly {
+	~IGESSolid_SolidAssembly() {
+	printf("Call custom destructor for instance of IGESSolid_SolidAssembly\n");
 	}
 };
 
@@ -1038,13 +1149,16 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 		Handle_IGESGeom_Direction ReferenceDir() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_CylindricalSurface();
 
 };
 %extend IGESSolid_CylindricalSurface {
 	Handle_IGESSolid_CylindricalSurface GetHandle() {
 	return *(Handle_IGESSolid_CylindricalSurface*) &$self;
+	}
+};
+%extend IGESSolid_CylindricalSurface {
+	~IGESSolid_CylindricalSurface() {
+	printf("Call custom destructor for instance of IGESSolid_CylindricalSurface\n");
 	}
 };
 
@@ -1063,13 +1177,16 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 		gp_Pnt TransformedSelectPoint() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_SelectedComponent();
 
 };
 %extend IGESSolid_SelectedComponent {
 	Handle_IGESSolid_SelectedComponent GetHandle() {
 	return *(Handle_IGESSolid_SelectedComponent*) &$self;
+	}
+};
+%extend IGESSolid_SelectedComponent {
+	~IGESSolid_SelectedComponent() {
+	printf("Call custom destructor for instance of IGESSolid_SelectedComponent\n");
 	}
 };
 
@@ -1090,13 +1207,16 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 		Standard_Integer Operation(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_BooleanTree();
 
 };
 %extend IGESSolid_BooleanTree {
 	Handle_IGESSolid_BooleanTree GetHandle() {
 	return *(Handle_IGESSolid_BooleanTree*) &$self;
+	}
+};
+%extend IGESSolid_BooleanTree {
+	~IGESSolid_BooleanTree() {
+	printf("Call custom destructor for instance of IGESSolid_BooleanTree\n");
 	}
 };
 
@@ -1175,13 +1295,16 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 		IGESSolid_Array1OfLoop & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_HArray1OfLoop();
 
 };
 %extend IGESSolid_HArray1OfLoop {
 	Handle_IGESSolid_HArray1OfLoop GetHandle() {
 	return *(Handle_IGESSolid_HArray1OfLoop*) &$self;
+	}
+};
+%extend IGESSolid_HArray1OfLoop {
+	~IGESSolid_HArray1OfLoop() {
+	printf("Call custom destructor for instance of IGESSolid_HArray1OfLoop\n");
 	}
 };
 
@@ -1238,13 +1361,16 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 		gp_Dir TransformedExtrusionDirection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_SolidOfLinearExtrusion();
 
 };
 %extend IGESSolid_SolidOfLinearExtrusion {
 	Handle_IGESSolid_SolidOfLinearExtrusion GetHandle() {
 	return *(Handle_IGESSolid_SolidOfLinearExtrusion*) &$self;
+	}
+};
+%extend IGESSolid_SolidOfLinearExtrusion {
+	~IGESSolid_SolidOfLinearExtrusion() {
+	printf("Call custom destructor for instance of IGESSolid_SolidOfLinearExtrusion\n");
 	}
 };
 
@@ -1267,13 +1393,16 @@ class IGESSolid_Shell : public IGESData_IGESEntity {
 		Standard_Boolean Orientation(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_Shell();
 
 };
 %extend IGESSolid_Shell {
 	Handle_IGESSolid_Shell GetHandle() {
 	return *(Handle_IGESSolid_Shell*) &$self;
+	}
+};
+%extend IGESSolid_Shell {
+	~IGESSolid_Shell() {
+	printf("Call custom destructor for instance of IGESSolid_Shell\n");
 	}
 };
 
@@ -1292,13 +1421,16 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 		Handle_IGESData_IGESEntity Entity() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_SolidInstance();
 
 };
 %extend IGESSolid_SolidInstance {
 	Handle_IGESSolid_SolidInstance GetHandle() {
 	return *(Handle_IGESSolid_SolidInstance*) &$self;
+	}
+};
+%extend IGESSolid_SolidInstance {
+	~IGESSolid_SolidInstance() {
+	printf("Call custom destructor for instance of IGESSolid_SolidInstance\n");
 	}
 };
 
@@ -1437,13 +1569,16 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 		gp_Pnt TransformedCenter() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_Sphere();
 
 };
 %extend IGESSolid_Sphere {
 	Handle_IGESSolid_Sphere GetHandle() {
 	return *(Handle_IGESSolid_Sphere*) &$self;
+	}
+};
+%extend IGESSolid_Sphere {
+	~IGESSolid_Sphere() {
+	printf("Call custom destructor for instance of IGESSolid_Sphere\n");
 	}
 };
 
@@ -1492,13 +1627,16 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 		gp_Dir TransformedAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_Cylinder();
 
 };
 %extend IGESSolid_Cylinder {
 	Handle_IGESSolid_Cylinder GetHandle() {
 	return *(Handle_IGESSolid_Cylinder*) &$self;
+	}
+};
+%extend IGESSolid_Cylinder {
+	~IGESSolid_Cylinder() {
+	printf("Call custom destructor for instance of IGESSolid_Cylinder\n");
 	}
 };
 
@@ -1609,13 +1747,16 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 		gp_Dir TransformedZAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_RightAngularWedge();
 
 };
 %extend IGESSolid_RightAngularWedge {
 	Handle_IGESSolid_RightAngularWedge GetHandle() {
 	return *(Handle_IGESSolid_RightAngularWedge*) &$self;
+	}
+};
+%extend IGESSolid_RightAngularWedge {
+	~IGESSolid_RightAngularWedge() {
+	printf("Call custom destructor for instance of IGESSolid_RightAngularWedge\n");
 	}
 };
 
@@ -1656,13 +1797,16 @@ class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
 		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_ReadWriteModule();
 
 };
 %extend IGESSolid_ReadWriteModule {
 	Handle_IGESSolid_ReadWriteModule GetHandle() {
 	return *(Handle_IGESSolid_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESSolid_ReadWriteModule {
+	~IGESSolid_ReadWriteModule() {
+	printf("Call custom destructor for instance of IGESSolid_ReadWriteModule\n");
 	}
 };
 
@@ -1679,13 +1823,16 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 		gp_Pnt Vertex(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_VertexList();
 
 };
 %extend IGESSolid_VertexList {
 	Handle_IGESSolid_VertexList GetHandle() {
 	return *(Handle_IGESSolid_VertexList*) &$self;
+	}
+};
+%extend IGESSolid_VertexList {
+	~IGESSolid_VertexList() {
+	printf("Call custom destructor for instance of IGESSolid_VertexList\n");
 	}
 };
 
@@ -1736,13 +1883,16 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 		Standard_Boolean IsParametrised() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_ToroidalSurface();
 
 };
 %extend IGESSolid_ToroidalSurface {
 	Handle_IGESSolid_ToroidalSurface GetHandle() {
 	return *(Handle_IGESSolid_ToroidalSurface*) &$self;
+	}
+};
+%extend IGESSolid_ToroidalSurface {
+	~IGESSolid_ToroidalSurface() {
+	printf("Call custom destructor for instance of IGESSolid_ToroidalSurface\n");
 	}
 };
 
@@ -1809,13 +1959,16 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 		IGESSolid_Array1OfFace & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_HArray1OfFace();
 
 };
 %extend IGESSolid_HArray1OfFace {
 	Handle_IGESSolid_HArray1OfFace GetHandle() {
 	return *(Handle_IGESSolid_HArray1OfFace*) &$self;
+	}
+};
+%extend IGESSolid_HArray1OfFace {
+	~IGESSolid_HArray1OfFace() {
+	printf("Call custom destructor for instance of IGESSolid_HArray1OfFace\n");
 	}
 };
 
@@ -1874,13 +2027,16 @@ class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
 		Standard_Boolean IsParametrised() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_PlaneSurface();
 
 };
 %extend IGESSolid_PlaneSurface {
 	Handle_IGESSolid_PlaneSurface GetHandle() {
 	return *(Handle_IGESSolid_PlaneSurface*) &$self;
+	}
+};
+%extend IGESSolid_PlaneSurface {
+	~IGESSolid_PlaneSurface() {
+	printf("Call custom destructor for instance of IGESSolid_PlaneSurface\n");
 	}
 };
 
@@ -1953,13 +2109,16 @@ class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
 		gp_Dir TransformedZAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_Ellipsoid();
 
 };
 %extend IGESSolid_Ellipsoid {
 	Handle_IGESSolid_Ellipsoid GetHandle() {
 	return *(Handle_IGESSolid_Ellipsoid*) &$self;
+	}
+};
+%extend IGESSolid_Ellipsoid {
+	~IGESSolid_Ellipsoid() {
+	printf("Call custom destructor for instance of IGESSolid_Ellipsoid\n");
 	}
 };
 
@@ -1984,13 +2143,16 @@ class IGESSolid_Torus : public IGESData_IGESEntity {
 		gp_Dir TransformedAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_Torus();
 
 };
 %extend IGESSolid_Torus {
 	Handle_IGESSolid_Torus GetHandle() {
 	return *(Handle_IGESSolid_Torus*) &$self;
+	}
+};
+%extend IGESSolid_Torus {
+	~IGESSolid_Torus() {
+	printf("Call custom destructor for instance of IGESSolid_Torus\n");
 	}
 };
 
@@ -2011,13 +2173,16 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 		Handle_IGESSolid_Loop Loop(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_Face();
 
 };
 %extend IGESSolid_Face {
 	Handle_IGESSolid_Face GetHandle() {
 	return *(Handle_IGESSolid_Face*) &$self;
+	}
+};
+%extend IGESSolid_Face {
+	~IGESSolid_Face() {
+	printf("Call custom destructor for instance of IGESSolid_Face\n");
 	}
 };
 
@@ -2072,13 +2237,16 @@ class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
 		IGESSolid_Array1OfVertexList & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_HArray1OfVertexList();
 
 };
 %extend IGESSolid_HArray1OfVertexList {
 	Handle_IGESSolid_HArray1OfVertexList GetHandle() {
 	return *(Handle_IGESSolid_HArray1OfVertexList*) &$self;
+	}
+};
+%extend IGESSolid_HArray1OfVertexList {
+	~IGESSolid_HArray1OfVertexList() {
+	printf("Call custom destructor for instance of IGESSolid_HArray1OfVertexList\n");
 	}
 };
 
@@ -2111,13 +2279,16 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 		Standard_Integer ListIndex(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_Loop();
 
 };
 %extend IGESSolid_Loop {
 	Handle_IGESSolid_Loop GetHandle() {
 	return *(Handle_IGESSolid_Loop*) &$self;
+	}
+};
+%extend IGESSolid_Loop {
+	~IGESSolid_Loop() {
+	printf("Call custom destructor for instance of IGESSolid_Loop\n");
 	}
 };
 
@@ -2166,13 +2337,16 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 		Standard_Boolean IsParametrised() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_ConicalSurface();
 
 };
 %extend IGESSolid_ConicalSurface {
 	Handle_IGESSolid_ConicalSurface GetHandle() {
 	return *(Handle_IGESSolid_ConicalSurface*) &$self;
+	}
+};
+%extend IGESSolid_ConicalSurface {
+	~IGESSolid_ConicalSurface() {
+	printf("Call custom destructor for instance of IGESSolid_ConicalSurface\n");
 	}
 };
 
@@ -2219,13 +2393,16 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 		Standard_Boolean VoidOrientationFlag(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_ManifoldSolid();
 
 };
 %extend IGESSolid_ManifoldSolid {
 	Handle_IGESSolid_ManifoldSolid GetHandle() {
 	return *(Handle_IGESSolid_ManifoldSolid*) &$self;
+	}
+};
+%extend IGESSolid_ManifoldSolid {
+	~IGESSolid_ManifoldSolid() {
+	printf("Call custom destructor for instance of IGESSolid_ManifoldSolid\n");
 	}
 };
 
@@ -2238,13 +2415,16 @@ class IGESSolid_SpecificModule : public IGESData_SpecificModule {
 		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_SpecificModule();
 
 };
 %extend IGESSolid_SpecificModule {
 	Handle_IGESSolid_SpecificModule GetHandle() {
 	return *(Handle_IGESSolid_SpecificModule*) &$self;
+	}
+};
+%extend IGESSolid_SpecificModule {
+	~IGESSolid_SpecificModule() {
+	printf("Call custom destructor for instance of IGESSolid_SpecificModule\n");
 	}
 };
 
@@ -2317,13 +2497,16 @@ class IGESSolid_EdgeList : public IGESData_IGESEntity {
 		Standard_Integer EndVertexIndex(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_EdgeList();
 
 };
 %extend IGESSolid_EdgeList {
 	Handle_IGESSolid_EdgeList GetHandle() {
 	return *(Handle_IGESSolid_EdgeList*) &$self;
+	}
+};
+%extend IGESSolid_EdgeList {
+	~IGESSolid_EdgeList() {
+	printf("Call custom destructor for instance of IGESSolid_EdgeList\n");
 	}
 };
 
@@ -2394,13 +2577,16 @@ class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_GeneralModule();
 
 };
 %extend IGESSolid_GeneralModule {
 	Handle_IGESSolid_GeneralModule GetHandle() {
 	return *(Handle_IGESSolid_GeneralModule*) &$self;
+	}
+};
+%extend IGESSolid_GeneralModule {
+	~IGESSolid_GeneralModule() {
+	printf("Call custom destructor for instance of IGESSolid_GeneralModule\n");
 	}
 };
 
@@ -2437,13 +2623,16 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 		gp_Dir TransformedZAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSolid_Block();
 
 };
 %extend IGESSolid_Block {
 	Handle_IGESSolid_Block GetHandle() {
 	return *(Handle_IGESSolid_Block*) &$self;
+	}
+};
+%extend IGESSolid_Block {
+	~IGESSolid_Block() {
+	printf("Call custom destructor for instance of IGESSolid_Block\n");
 	}
 };
 

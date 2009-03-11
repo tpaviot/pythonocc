@@ -112,8 +112,6 @@ enum AdvApp2Var_CriterionType {
 class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch();
-		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch();
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch &aHandle);
@@ -128,12 +126,15 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollectio
 	return (AdvApp2Var_SequenceNodeOfSequenceOfPatch*)$self->Access();
 	}
 };
+%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	~Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch() {
+	printf("Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch\n");
+	}
+};
 
 %nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip;
 class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip();
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip();
 		%feature("autodoc", "1");
@@ -149,12 +150,15 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollectio
 	return (AdvApp2Var_SequenceNodeOfSequenceOfStrip*)$self->Access();
 	}
 };
+%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip {
+	~Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip() {
+	printf("Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip\n");
+	}
+};
 
 %nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode;
 class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode();
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode();
 		%feature("autodoc", "1");
@@ -170,12 +174,15 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection
 	return (AdvApp2Var_SequenceNodeOfSequenceOfNode*)$self->Access();
 	}
 };
+%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode {
+	~Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode() {
+	printf("Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode\n");
+	}
+};
 
 %nodefaultctor Handle_AdvApp2Var_SequenceNodeOfStrip;
 class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AdvApp2Var_SequenceNodeOfStrip();
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfStrip();
 		%feature("autodoc", "1");
@@ -189,6 +196,11 @@ class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode 
 %extend Handle_AdvApp2Var_SequenceNodeOfStrip {
 	AdvApp2Var_SequenceNodeOfStrip* GetObject() {
 	return (AdvApp2Var_SequenceNodeOfStrip*)$self->Access();
+	}
+};
+%extend Handle_AdvApp2Var_SequenceNodeOfStrip {
+	~Handle_AdvApp2Var_SequenceNodeOfStrip() {
+	printf("Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfStrip\n");
 	}
 };
 
@@ -289,13 +301,16 @@ class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 		AdvApp2Var_Node & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AdvApp2Var_SequenceNodeOfSequenceOfNode();
 
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfNode {
 	Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode GetHandle() {
 	return *(Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode*) &$self;
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfNode {
+	~AdvApp2Var_SequenceNodeOfSequenceOfNode() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfNode\n");
 	}
 };
 
@@ -542,13 +557,16 @@ class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
 		AdvApp2Var_Iso & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AdvApp2Var_SequenceNodeOfStrip();
 
 };
 %extend AdvApp2Var_SequenceNodeOfStrip {
 	Handle_AdvApp2Var_SequenceNodeOfStrip GetHandle() {
 	return *(Handle_AdvApp2Var_SequenceNodeOfStrip*) &$self;
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfStrip {
+	~AdvApp2Var_SequenceNodeOfStrip() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceNodeOfStrip\n");
 	}
 };
 
@@ -611,13 +629,16 @@ class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
 		AdvApp2Var_Patch & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AdvApp2Var_SequenceNodeOfSequenceOfPatch();
 
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
 	Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch GetHandle() {
 	return *(Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch*) &$self;
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	~AdvApp2Var_SequenceNodeOfSequenceOfPatch() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfPatch\n");
 	}
 };
 
@@ -674,13 +695,16 @@ class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
 		AdvApp2Var_Strip & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AdvApp2Var_SequenceNodeOfSequenceOfStrip();
 
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
 	Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip GetHandle() {
 	return *(Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip*) &$self;
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
+	~AdvApp2Var_SequenceNodeOfSequenceOfStrip() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfStrip\n");
 	}
 };
 

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Geom2dAdaptor_GHCurve : public Handle_Adaptor2d_HCurve2d {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Geom2dAdaptor_GHCurve();
-		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_GHCurve();
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_GHCurve(const Handle_Geom2dAdaptor_GHCurve &aHandle);
@@ -118,12 +116,15 @@ class Handle_Geom2dAdaptor_GHCurve : public Handle_Adaptor2d_HCurve2d {
 	return (Geom2dAdaptor_GHCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom2dAdaptor_GHCurve {
+	~Handle_Geom2dAdaptor_GHCurve() {
+	printf("Call custom destructor for instance of Handle_Geom2dAdaptor_GHCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2dAdaptor_HCurve;
 class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2dAdaptor_HCurve();
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_HCurve();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 %extend Handle_Geom2dAdaptor_HCurve {
 	Geom2dAdaptor_HCurve* GetObject() {
 	return (Geom2dAdaptor_HCurve*)$self->Access();
+	}
+};
+%extend Handle_Geom2dAdaptor_HCurve {
+	~Handle_Geom2dAdaptor_HCurve() {
+	printf("Call custom destructor for instance of Handle_Geom2dAdaptor_HCurve\n");
 	}
 };
 
@@ -167,13 +173,16 @@ class Geom2dAdaptor_GHCurve : public Adaptor2d_HCurve2d {
 		Geom2dAdaptor_Curve & ChangeCurve2d();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2dAdaptor_GHCurve();
 
 };
 %extend Geom2dAdaptor_GHCurve {
 	Handle_Geom2dAdaptor_GHCurve GetHandle() {
 	return *(Handle_Geom2dAdaptor_GHCurve*) &$self;
+	}
+};
+%extend Geom2dAdaptor_GHCurve {
+	~Geom2dAdaptor_GHCurve() {
+	printf("Call custom destructor for instance of Geom2dAdaptor_GHCurve\n");
 	}
 };
 
@@ -188,13 +197,16 @@ class Geom2dAdaptor_HCurve : public Geom2dAdaptor_GHCurve {
 		Geom2dAdaptor_HCurve(const Handle_Geom2d_Curve &S);
 		%feature("autodoc", "1");
 		Geom2dAdaptor_HCurve(const Handle_Geom2d_Curve &S, const Standard_Real UFirst, const Standard_Real ULast);
-		%feature("autodoc", "1");
-		virtual		~Geom2dAdaptor_HCurve();
 
 };
 %extend Geom2dAdaptor_HCurve {
 	Handle_Geom2dAdaptor_HCurve GetHandle() {
 	return *(Handle_Geom2dAdaptor_HCurve*) &$self;
+	}
+};
+%extend Geom2dAdaptor_HCurve {
+	~Geom2dAdaptor_HCurve() {
+	printf("Call custom destructor for instance of Geom2dAdaptor_HCurve\n");
 	}
 };
 

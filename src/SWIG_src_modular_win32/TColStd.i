@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_TColStd_HSetOfInteger : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TColStd_HSetOfInteger();
-		%feature("autodoc", "1");
 		Handle_TColStd_HSetOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSetOfInteger(const Handle_TColStd_HSetOfInteger &aHandle);
@@ -118,12 +116,15 @@ class Handle_TColStd_HSetOfInteger : public Handle_MMgt_TShared {
 	return (TColStd_HSetOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSetOfInteger {
+	~Handle_TColStd_HSetOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSetOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HSequenceOfInteger;
 class Handle_TColStd_HSequenceOfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HSequenceOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfInteger();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_TColStd_HSequenceOfInteger : public Handle_MMgt_TShared {
 	return (TColStd_HSequenceOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSequenceOfInteger {
+	~Handle_TColStd_HSequenceOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSequenceOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray2OfBoolean;
 class Handle_TColStd_HArray2OfBoolean : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray2OfBoolean();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray2OfBoolean();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_TColStd_HArray2OfBoolean : public Handle_MMgt_TShared {
 	return (TColStd_HArray2OfBoolean*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray2OfBoolean {
+	~Handle_TColStd_HArray2OfBoolean() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray2OfBoolean\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString;
 class Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString();
 		%feature("autodoc", "1");
 		Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString : public Handle_TCo
 	return (TColStd_SequenceNodeOfSequenceOfHExtendedString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString {
+	~Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString() {
+	printf("Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient;
 class Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : pu
 	return (TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient {
+	~Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray2OfReal;
 class Handle_TColStd_HArray2OfReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray2OfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray2OfReal();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_TColStd_HArray2OfReal : public Handle_MMgt_TShared {
 	return (TColStd_HArray2OfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray2OfReal {
+	~Handle_TColStd_HArray2OfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray2OfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray1OfBoolean;
 class Handle_TColStd_HArray1OfBoolean : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray1OfBoolean();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfBoolean();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_TColStd_HArray1OfBoolean : public Handle_MMgt_TShared {
 	return (TColStd_HArray1OfBoolean*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray1OfBoolean {
+	~Handle_TColStd_HArray1OfBoolean() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray1OfBoolean\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString;
 class Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString();
 		%feature("autodoc", "1");
 		Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString : public Handle_TColle
 	return (TColStd_SequenceNodeOfSequenceOfHAsciiString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString {
+	~Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString() {
+	printf("Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfTransient;
 class Handle_TColStd_SequenceNodeOfSequenceOfTransient : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_SequenceNodeOfSequenceOfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_SequenceNodeOfSequenceOfTransient();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_TColStd_SequenceNodeOfSequenceOfTransient : public Handle_TCollecti
 	return (TColStd_SequenceNodeOfSequenceOfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_SequenceNodeOfSequenceOfTransient {
+	~Handle_TColStd_SequenceNodeOfSequenceOfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray1OfInteger;
 class Handle_TColStd_HArray1OfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray1OfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_TColStd_HArray1OfInteger : public Handle_MMgt_TShared {
 	return (TColStd_HArray1OfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray1OfInteger {
+	~Handle_TColStd_HArray1OfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray1OfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfInteger;
 class Handle_TColStd_ListNodeOfSetListOfSetOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_ListNodeOfSetListOfSetOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_ListNodeOfSetListOfSetOfInteger();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_TColStd_ListNodeOfSetListOfSetOfInteger : public Handle_TCollection
 	return (TColStd_ListNodeOfSetListOfSetOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_ListNodeOfSetListOfSetOfInteger {
+	~Handle_TColStd_ListNodeOfSetListOfSetOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_ListNodeOfSetListOfSetOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfAsciiString;
 class Handle_TColStd_SequenceNodeOfSequenceOfAsciiString : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_SequenceNodeOfSequenceOfAsciiString();
 		%feature("autodoc", "1");
 		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_TColStd_SequenceNodeOfSequenceOfAsciiString : public Handle_TCollec
 	return (TColStd_SequenceNodeOfSequenceOfAsciiString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_SequenceNodeOfSequenceOfAsciiString {
+	~Handle_TColStd_SequenceNodeOfSequenceOfAsciiString() {
+	printf("Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal;
 class Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal : public Handle_TCollecti
 	return (TColStd_DataMapNodeOfDataMapOfIntegerReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal {
+	~Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HSequenceOfReal;
 class Handle_TColStd_HSequenceOfReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HSequenceOfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfReal();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_TColStd_HSequenceOfReal : public Handle_MMgt_TShared {
 	return (TColStd_HSequenceOfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSequenceOfReal {
+	~Handle_TColStd_HSequenceOfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSequenceOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal;
 class Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal : public Handle_TCollectio
 	return (TColStd_IndexedMapNodeOfIndexedMapOfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal {
+	~Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray1OfAsciiString;
 class Handle_TColStd_HArray1OfAsciiString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray1OfAsciiString();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfAsciiString();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_TColStd_HArray1OfAsciiString : public Handle_MMgt_TShared {
 	return (TColStd_HArray1OfAsciiString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray1OfAsciiString {
+	~Handle_TColStd_HArray1OfAsciiString() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray1OfAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HSequenceOfTransient;
 class Handle_TColStd_HSequenceOfTransient : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HSequenceOfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_TColStd_HSequenceOfTransient : public Handle_MMgt_TShared {
 	return (TColStd_HSequenceOfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSequenceOfTransient {
+	~Handle_TColStd_HSequenceOfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSequenceOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger;
 class Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public Handle_
 	return (TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger {
+	~Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HSetOfReal;
 class Handle_TColStd_HSetOfReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HSetOfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSetOfReal();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_TColStd_HSetOfReal : public Handle_MMgt_TShared {
 	return (TColStd_HSetOfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSetOfReal {
+	~Handle_TColStd_HSetOfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSetOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray1OfCharacter;
 class Handle_TColStd_HArray1OfCharacter : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray1OfCharacter();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfCharacter();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_TColStd_HArray1OfCharacter : public Handle_MMgt_TShared {
 	return (TColStd_HArray1OfCharacter*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray1OfCharacter {
+	~Handle_TColStd_HArray1OfCharacter() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray1OfCharacter\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_StackNodeOfStackOfReal;
 class Handle_TColStd_StackNodeOfStackOfReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_StackNodeOfStackOfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_StackNodeOfStackOfReal();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_TColStd_StackNodeOfStackOfReal : public Handle_TCollection_MapNode 
 	return (TColStd_StackNodeOfStackOfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_StackNodeOfStackOfReal {
+	~Handle_TColStd_StackNodeOfStackOfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_StackNodeOfStackOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HSequenceOfHAsciiString;
 class Handle_TColStd_HSequenceOfHAsciiString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HSequenceOfHAsciiString();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfHAsciiString();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_TColStd_HSequenceOfHAsciiString : public Handle_MMgt_TShared {
 	return (TColStd_HSequenceOfHAsciiString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSequenceOfHAsciiString {
+	~Handle_TColStd_HSequenceOfHAsciiString() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSequenceOfHAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfInteger;
 class Handle_TColStd_SequenceNodeOfSequenceOfInteger : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_SequenceNodeOfSequenceOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_SequenceNodeOfSequenceOfInteger();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_TColStd_SequenceNodeOfSequenceOfInteger : public Handle_TCollection
 	return (TColStd_SequenceNodeOfSequenceOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_SequenceNodeOfSequenceOfInteger {
+	~Handle_TColStd_SequenceNodeOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HSequenceOfExtendedString;
 class Handle_TColStd_HSequenceOfExtendedString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HSequenceOfExtendedString();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfExtendedString();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_TColStd_HSequenceOfExtendedString : public Handle_MMgt_TShared {
 	return (TColStd_HSequenceOfExtendedString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSequenceOfExtendedString {
+	~Handle_TColStd_HSequenceOfExtendedString() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSequenceOfExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_QueueNodeOfQueueOfInteger;
 class Handle_TColStd_QueueNodeOfQueueOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_QueueNodeOfQueueOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_QueueNodeOfQueueOfInteger();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_TColStd_QueueNodeOfQueueOfInteger : public Handle_TCollection_MapNo
 	return (TColStd_QueueNodeOfQueueOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_QueueNodeOfQueueOfInteger {
+	~Handle_TColStd_QueueNodeOfQueueOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_QueueNodeOfQueueOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfReal;
 class Handle_TColStd_ListNodeOfSetListOfSetOfReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_ListNodeOfSetListOfSetOfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_ListNodeOfSetListOfSetOfReal();
 		%feature("autodoc", "1");
@@ -643,12 +716,15 @@ class Handle_TColStd_ListNodeOfSetListOfSetOfReal : public Handle_TCollection_Ma
 	return (TColStd_ListNodeOfSetListOfSetOfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_ListNodeOfSetListOfSetOfReal {
+	~Handle_TColStd_ListNodeOfSetListOfSetOfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_ListNodeOfSetListOfSetOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_ListNodeOfListOfTransient;
 class Handle_TColStd_ListNodeOfListOfTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_ListNodeOfListOfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_ListNodeOfListOfTransient();
 		%feature("autodoc", "1");
@@ -664,12 +740,15 @@ class Handle_TColStd_ListNodeOfListOfTransient : public Handle_TCollection_MapNo
 	return (TColStd_ListNodeOfListOfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_ListNodeOfListOfTransient {
+	~Handle_TColStd_ListNodeOfListOfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_ListNodeOfListOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_ListNodeOfListOfReal;
 class Handle_TColStd_ListNodeOfListOfReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_ListNodeOfListOfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_ListNodeOfListOfReal();
 		%feature("autodoc", "1");
@@ -685,12 +764,15 @@ class Handle_TColStd_ListNodeOfListOfReal : public Handle_TCollection_MapNode {
 	return (TColStd_ListNodeOfListOfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_ListNodeOfListOfReal {
+	~Handle_TColStd_ListNodeOfListOfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_ListNodeOfListOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HSequenceOfAsciiString;
 class Handle_TColStd_HSequenceOfAsciiString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HSequenceOfAsciiString();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfAsciiString();
 		%feature("autodoc", "1");
@@ -706,12 +788,15 @@ class Handle_TColStd_HSequenceOfAsciiString : public Handle_MMgt_TShared {
 	return (TColStd_HSequenceOfAsciiString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSequenceOfAsciiString {
+	~Handle_TColStd_HSequenceOfAsciiString() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSequenceOfAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfTransient;
 class Handle_TColStd_ListNodeOfSetListOfSetOfTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_ListNodeOfSetListOfSetOfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_ListNodeOfSetListOfSetOfTransient();
 		%feature("autodoc", "1");
@@ -727,12 +812,15 @@ class Handle_TColStd_ListNodeOfSetListOfSetOfTransient : public Handle_TCollecti
 	return (TColStd_ListNodeOfSetListOfSetOfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_ListNodeOfSetListOfSetOfTransient {
+	~Handle_TColStd_ListNodeOfSetListOfSetOfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_ListNodeOfSetListOfSetOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray1OfExtendedString;
 class Handle_TColStd_HArray1OfExtendedString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray1OfExtendedString();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfExtendedString();
 		%feature("autodoc", "1");
@@ -748,12 +836,15 @@ class Handle_TColStd_HArray1OfExtendedString : public Handle_MMgt_TShared {
 	return (TColStd_HArray1OfExtendedString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray1OfExtendedString {
+	~Handle_TColStd_HArray1OfExtendedString() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray1OfExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger;
 class Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger();
 		%feature("autodoc", "1");
@@ -769,12 +860,15 @@ class Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger : public Handle_TColle
 	return (TColStd_DataMapNodeOfDataMapOfIntegerInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger {
+	~Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_StackNodeOfStackOfTransient;
 class Handle_TColStd_StackNodeOfStackOfTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_StackNodeOfStackOfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_StackNodeOfStackOfTransient();
 		%feature("autodoc", "1");
@@ -790,12 +884,15 @@ class Handle_TColStd_StackNodeOfStackOfTransient : public Handle_TCollection_Map
 	return (TColStd_StackNodeOfStackOfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_StackNodeOfStackOfTransient {
+	~Handle_TColStd_StackNodeOfStackOfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_StackNodeOfStackOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray1OfReal;
 class Handle_TColStd_HArray1OfReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray1OfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal();
 		%feature("autodoc", "1");
@@ -811,12 +908,15 @@ class Handle_TColStd_HArray1OfReal : public Handle_MMgt_TShared {
 	return (TColStd_HArray1OfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray1OfReal {
+	~Handle_TColStd_HArray1OfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray1OfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray1OfListOfInteger;
 class Handle_TColStd_HArray1OfListOfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray1OfListOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfListOfInteger();
 		%feature("autodoc", "1");
@@ -832,12 +932,15 @@ class Handle_TColStd_HArray1OfListOfInteger : public Handle_MMgt_TShared {
 	return (TColStd_HArray1OfListOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray1OfListOfInteger {
+	~Handle_TColStd_HArray1OfListOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray1OfListOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HPackedMapOfInteger;
 class Handle_TColStd_HPackedMapOfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HPackedMapOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_HPackedMapOfInteger();
 		%feature("autodoc", "1");
@@ -853,12 +956,15 @@ class Handle_TColStd_HPackedMapOfInteger : public Handle_MMgt_TShared {
 	return (TColStd_HPackedMapOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HPackedMapOfInteger {
+	~Handle_TColStd_HPackedMapOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_HPackedMapOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_StdMapNodeOfMapOfInteger;
 class Handle_TColStd_StdMapNodeOfMapOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_StdMapNodeOfMapOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_StdMapNodeOfMapOfInteger();
 		%feature("autodoc", "1");
@@ -874,12 +980,15 @@ class Handle_TColStd_StdMapNodeOfMapOfInteger : public Handle_TCollection_MapNod
 	return (TColStd_StdMapNodeOfMapOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_StdMapNodeOfMapOfInteger {
+	~Handle_TColStd_StdMapNodeOfMapOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_StdMapNodeOfMapOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient;
 class Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient();
 		%feature("autodoc", "1");
@@ -895,12 +1004,15 @@ class Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient : public Handle_TColl
 	return (TColStd_IndexedMapNodeOfIndexedMapOfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient {
+	~Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_ListNodeOfListOfInteger;
 class Handle_TColStd_ListNodeOfListOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_ListNodeOfListOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_ListNodeOfListOfInteger();
 		%feature("autodoc", "1");
@@ -916,12 +1028,15 @@ class Handle_TColStd_ListNodeOfListOfInteger : public Handle_TCollection_MapNode
 	return (TColStd_ListNodeOfListOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_ListNodeOfListOfInteger {
+	~Handle_TColStd_ListNodeOfListOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_ListNodeOfListOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfExtendedString;
 class Handle_TColStd_SequenceNodeOfSequenceOfExtendedString : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_SequenceNodeOfSequenceOfExtendedString();
 		%feature("autodoc", "1");
 		Handle_TColStd_SequenceNodeOfSequenceOfExtendedString();
 		%feature("autodoc", "1");
@@ -937,12 +1052,15 @@ class Handle_TColStd_SequenceNodeOfSequenceOfExtendedString : public Handle_TCol
 	return (TColStd_SequenceNodeOfSequenceOfExtendedString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_SequenceNodeOfSequenceOfExtendedString {
+	~Handle_TColStd_SequenceNodeOfSequenceOfExtendedString() {
+	printf("Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray2OfInteger;
 class Handle_TColStd_HArray2OfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray2OfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray2OfInteger();
 		%feature("autodoc", "1");
@@ -958,12 +1076,15 @@ class Handle_TColStd_HArray2OfInteger : public Handle_MMgt_TShared {
 	return (TColStd_HArray2OfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray2OfInteger {
+	~Handle_TColStd_HArray2OfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray2OfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_QueueNodeOfQueueOfTransient;
 class Handle_TColStd_QueueNodeOfQueueOfTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_QueueNodeOfQueueOfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_QueueNodeOfQueueOfTransient();
 		%feature("autodoc", "1");
@@ -979,12 +1100,15 @@ class Handle_TColStd_QueueNodeOfQueueOfTransient : public Handle_TCollection_Map
 	return (TColStd_QueueNodeOfQueueOfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_QueueNodeOfQueueOfTransient {
+	~Handle_TColStd_QueueNodeOfQueueOfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_QueueNodeOfQueueOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_StackNodeOfStackOfInteger;
 class Handle_TColStd_StackNodeOfStackOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_StackNodeOfStackOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_StackNodeOfStackOfInteger();
 		%feature("autodoc", "1");
@@ -1000,12 +1124,15 @@ class Handle_TColStd_StackNodeOfStackOfInteger : public Handle_TCollection_MapNo
 	return (TColStd_StackNodeOfStackOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_StackNodeOfStackOfInteger {
+	~Handle_TColStd_StackNodeOfStackOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_StackNodeOfStackOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_QueueNodeOfQueueOfReal;
 class Handle_TColStd_QueueNodeOfQueueOfReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_QueueNodeOfQueueOfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_QueueNodeOfQueueOfReal();
 		%feature("autodoc", "1");
@@ -1021,12 +1148,15 @@ class Handle_TColStd_QueueNodeOfQueueOfReal : public Handle_TCollection_MapNode 
 	return (TColStd_QueueNodeOfQueueOfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_QueueNodeOfQueueOfReal {
+	~Handle_TColStd_QueueNodeOfQueueOfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_QueueNodeOfQueueOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HSequenceOfHExtendedString;
 class Handle_TColStd_HSequenceOfHExtendedString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HSequenceOfHExtendedString();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfHExtendedString();
 		%feature("autodoc", "1");
@@ -1042,12 +1172,15 @@ class Handle_TColStd_HSequenceOfHExtendedString : public Handle_MMgt_TShared {
 	return (TColStd_HSequenceOfHExtendedString*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSequenceOfHExtendedString {
+	~Handle_TColStd_HSequenceOfHExtendedString() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSequenceOfHExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray2OfTransient;
 class Handle_TColStd_HArray2OfTransient : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray2OfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray2OfTransient();
 		%feature("autodoc", "1");
@@ -1063,12 +1196,15 @@ class Handle_TColStd_HArray2OfTransient : public Handle_MMgt_TShared {
 	return (TColStd_HArray2OfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray2OfTransient {
+	~Handle_TColStd_HArray2OfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray2OfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfReal;
 class Handle_TColStd_SequenceNodeOfSequenceOfReal : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_SequenceNodeOfSequenceOfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_SequenceNodeOfSequenceOfReal();
 		%feature("autodoc", "1");
@@ -1084,12 +1220,15 @@ class Handle_TColStd_SequenceNodeOfSequenceOfReal : public Handle_TCollection_Se
 	return (TColStd_SequenceNodeOfSequenceOfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_SequenceNodeOfSequenceOfReal {
+	~Handle_TColStd_SequenceNodeOfSequenceOfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_StdMapNodeOfMapOfTransient;
 class Handle_TColStd_StdMapNodeOfMapOfTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_StdMapNodeOfMapOfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_StdMapNodeOfMapOfTransient();
 		%feature("autodoc", "1");
@@ -1105,12 +1244,15 @@ class Handle_TColStd_StdMapNodeOfMapOfTransient : public Handle_TCollection_MapN
 	return (TColStd_StdMapNodeOfMapOfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_StdMapNodeOfMapOfTransient {
+	~Handle_TColStd_StdMapNodeOfMapOfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_StdMapNodeOfMapOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray2OfCharacter;
 class Handle_TColStd_HArray2OfCharacter : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray2OfCharacter();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray2OfCharacter();
 		%feature("autodoc", "1");
@@ -1126,12 +1268,15 @@ class Handle_TColStd_HArray2OfCharacter : public Handle_MMgt_TShared {
 	return (TColStd_HArray2OfCharacter*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray2OfCharacter {
+	~Handle_TColStd_HArray2OfCharacter() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray2OfCharacter\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_StdMapNodeOfMapOfReal;
 class Handle_TColStd_StdMapNodeOfMapOfReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_StdMapNodeOfMapOfReal();
 		%feature("autodoc", "1");
 		Handle_TColStd_StdMapNodeOfMapOfReal();
 		%feature("autodoc", "1");
@@ -1147,12 +1292,15 @@ class Handle_TColStd_StdMapNodeOfMapOfReal : public Handle_TCollection_MapNode {
 	return (TColStd_StdMapNodeOfMapOfReal*)$self->Access();
 	}
 };
+%extend Handle_TColStd_StdMapNodeOfMapOfReal {
+	~Handle_TColStd_StdMapNodeOfMapOfReal() {
+	printf("Call custom destructor for instance of Handle_TColStd_StdMapNodeOfMapOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger;
 class Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger();
 		%feature("autodoc", "1");
 		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger();
 		%feature("autodoc", "1");
@@ -1168,12 +1316,15 @@ class Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger : public Handle_TCollec
 	return (TColStd_IndexedMapNodeOfIndexedMapOfInteger*)$self->Access();
 	}
 };
+%extend Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger {
+	~Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger() {
+	printf("Call custom destructor for instance of Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HSetOfTransient;
 class Handle_TColStd_HSetOfTransient : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HSetOfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSetOfTransient();
 		%feature("autodoc", "1");
@@ -1189,12 +1340,15 @@ class Handle_TColStd_HSetOfTransient : public Handle_MMgt_TShared {
 	return (TColStd_HSetOfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HSetOfTransient {
+	~Handle_TColStd_HSetOfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_HSetOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_TColStd_HArray1OfTransient;
 class Handle_TColStd_HArray1OfTransient : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColStd_HArray1OfTransient();
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfTransient();
 		%feature("autodoc", "1");
@@ -1210,6 +1364,11 @@ class Handle_TColStd_HArray1OfTransient : public Handle_MMgt_TShared {
 	return (TColStd_HArray1OfTransient*)$self->Access();
 	}
 };
+%extend Handle_TColStd_HArray1OfTransient {
+	~Handle_TColStd_HArray1OfTransient() {
+	printf("Call custom destructor for instance of Handle_TColStd_HArray1OfTransient\n");
+	}
+};
 
 %nodefaultctor TColStd_StdMapNodeOfMapOfInteger;
 class TColStd_StdMapNodeOfMapOfInteger : public TCollection_MapNode {
@@ -1220,13 +1379,16 @@ class TColStd_StdMapNodeOfMapOfInteger : public TCollection_MapNode {
 		Standard_Integer & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_StdMapNodeOfMapOfInteger();
 
 };
 %extend TColStd_StdMapNodeOfMapOfInteger {
 	Handle_TColStd_StdMapNodeOfMapOfInteger GetHandle() {
 	return *(Handle_TColStd_StdMapNodeOfMapOfInteger*) &$self;
+	}
+};
+%extend TColStd_StdMapNodeOfMapOfInteger {
+	~TColStd_StdMapNodeOfMapOfInteger() {
+	printf("Call custom destructor for instance of TColStd_StdMapNodeOfMapOfInteger\n");
 	}
 };
 
@@ -1365,13 +1527,16 @@ class TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : public TC
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient();
 
 };
 %extend TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient {
 	Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient GetHandle() {
 	return *(Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient*) &$self;
+	}
+};
+%extend TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient {
+	~TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient() {
+	printf("Call custom destructor for instance of TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient\n");
 	}
 };
 
@@ -1388,13 +1553,16 @@ class TColStd_HPackedMapOfInteger : public MMgt_TShared {
 		TColStd_PackedMapOfInteger & ChangeMap();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HPackedMapOfInteger();
 
 };
 %extend TColStd_HPackedMapOfInteger {
 	Handle_TColStd_HPackedMapOfInteger GetHandle() {
 	return *(Handle_TColStd_HPackedMapOfInteger*) &$self;
+	}
+};
+%extend TColStd_HPackedMapOfInteger {
+	~TColStd_HPackedMapOfInteger() {
+	printf("Call custom destructor for instance of TColStd_HPackedMapOfInteger\n");
 	}
 };
 
@@ -1407,13 +1575,16 @@ class TColStd_StackNodeOfStackOfTransient : public TCollection_MapNode {
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_StackNodeOfStackOfTransient();
 
 };
 %extend TColStd_StackNodeOfStackOfTransient {
 	Handle_TColStd_StackNodeOfStackOfTransient GetHandle() {
 	return *(Handle_TColStd_StackNodeOfStackOfTransient*) &$self;
+	}
+};
+%extend TColStd_StackNodeOfStackOfTransient {
+	~TColStd_StackNodeOfStackOfTransient() {
+	printf("Call custom destructor for instance of TColStd_StackNodeOfStackOfTransient\n");
 	}
 };
 
@@ -1426,13 +1597,16 @@ class TColStd_StackNodeOfStackOfReal : public TCollection_MapNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_StackNodeOfStackOfReal();
 
 };
 %extend TColStd_StackNodeOfStackOfReal {
 	Handle_TColStd_StackNodeOfStackOfReal GetHandle() {
 	return *(Handle_TColStd_StackNodeOfStackOfReal*) &$self;
+	}
+};
+%extend TColStd_StackNodeOfStackOfReal {
+	~TColStd_StackNodeOfStackOfReal() {
+	printf("Call custom destructor for instance of TColStd_StackNodeOfStackOfReal\n");
 	}
 };
 
@@ -1619,13 +1793,16 @@ class TColStd_HArray2OfReal : public MMgt_TShared {
 		TColStd_Array2OfReal & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray2OfReal();
 
 };
 %extend TColStd_HArray2OfReal {
 	Handle_TColStd_HArray2OfReal GetHandle() {
 	return *(Handle_TColStd_HArray2OfReal*) &$self;
+	}
+};
+%extend TColStd_HArray2OfReal {
+	~TColStd_HArray2OfReal() {
+	printf("Call custom destructor for instance of TColStd_HArray2OfReal\n");
 	}
 };
 
@@ -1664,13 +1841,16 @@ class TColStd_HSetOfReal : public MMgt_TShared {
 		TColStd_SetOfReal & ChangeSet();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSetOfReal();
 
 };
 %extend TColStd_HSetOfReal {
 	Handle_TColStd_HSetOfReal GetHandle() {
 	return *(Handle_TColStd_HSetOfReal*) &$self;
+	}
+};
+%extend TColStd_HSetOfReal {
+	~TColStd_HSetOfReal() {
+	printf("Call custom destructor for instance of TColStd_HSetOfReal\n");
 	}
 };
 
@@ -1685,13 +1865,16 @@ class TColStd_DataMapNodeOfDataMapOfIntegerReal : public TCollection_MapNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_DataMapNodeOfDataMapOfIntegerReal();
 
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
 	Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal GetHandle() {
 	return *(Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal*) &$self;
+	}
+};
+%extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
+	~TColStd_DataMapNodeOfDataMapOfIntegerReal() {
+	printf("Call custom destructor for instance of TColStd_DataMapNodeOfDataMapOfIntegerReal\n");
 	}
 };
 
@@ -1704,13 +1887,16 @@ class TColStd_StdMapNodeOfMapOfReal : public TCollection_MapNode {
 		Standard_Real & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_StdMapNodeOfMapOfReal();
 
 };
 %extend TColStd_StdMapNodeOfMapOfReal {
 	Handle_TColStd_StdMapNodeOfMapOfReal GetHandle() {
 	return *(Handle_TColStd_StdMapNodeOfMapOfReal*) &$self;
+	}
+};
+%extend TColStd_StdMapNodeOfMapOfReal {
+	~TColStd_StdMapNodeOfMapOfReal() {
+	printf("Call custom destructor for instance of TColStd_StdMapNodeOfMapOfReal\n");
 	}
 };
 
@@ -1765,13 +1951,16 @@ class TColStd_HSequenceOfInteger : public MMgt_TShared {
 		Handle_TColStd_HSequenceOfInteger ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSequenceOfInteger();
 
 };
 %extend TColStd_HSequenceOfInteger {
 	Handle_TColStd_HSequenceOfInteger GetHandle() {
 	return *(Handle_TColStd_HSequenceOfInteger*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfInteger {
+	~TColStd_HSequenceOfInteger() {
+	printf("Call custom destructor for instance of TColStd_HSequenceOfInteger\n");
 	}
 };
 
@@ -1784,13 +1973,16 @@ class TColStd_ListNodeOfSetListOfSetOfInteger : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_ListNodeOfSetListOfSetOfInteger();
 
 };
 %extend TColStd_ListNodeOfSetListOfSetOfInteger {
 	Handle_TColStd_ListNodeOfSetListOfSetOfInteger GetHandle() {
 	return *(Handle_TColStd_ListNodeOfSetListOfSetOfInteger*) &$self;
+	}
+};
+%extend TColStd_ListNodeOfSetListOfSetOfInteger {
+	~TColStd_ListNodeOfSetListOfSetOfInteger() {
+	printf("Call custom destructor for instance of TColStd_ListNodeOfSetListOfSetOfInteger\n");
 	}
 };
 
@@ -1885,13 +2077,16 @@ class TColStd_HArray1OfAsciiString : public MMgt_TShared {
 		TColStd_Array1OfAsciiString & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray1OfAsciiString();
 
 };
 %extend TColStd_HArray1OfAsciiString {
 	Handle_TColStd_HArray1OfAsciiString GetHandle() {
 	return *(Handle_TColStd_HArray1OfAsciiString*) &$self;
+	}
+};
+%extend TColStd_HArray1OfAsciiString {
+	~TColStd_HArray1OfAsciiString() {
+	printf("Call custom destructor for instance of TColStd_HArray1OfAsciiString\n");
 	}
 };
 
@@ -1976,13 +2171,16 @@ class TColStd_ListNodeOfSetListOfSetOfReal : public TCollection_MapNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_ListNodeOfSetListOfSetOfReal();
 
 };
 %extend TColStd_ListNodeOfSetListOfSetOfReal {
 	Handle_TColStd_ListNodeOfSetListOfSetOfReal GetHandle() {
 	return *(Handle_TColStd_ListNodeOfSetListOfSetOfReal*) &$self;
+	}
+};
+%extend TColStd_ListNodeOfSetListOfSetOfReal {
+	~TColStd_ListNodeOfSetListOfSetOfReal() {
+	printf("Call custom destructor for instance of TColStd_ListNodeOfSetListOfSetOfReal\n");
 	}
 };
 
@@ -2037,13 +2235,16 @@ class TColStd_HSequenceOfAsciiString : public MMgt_TShared {
 		Handle_TColStd_HSequenceOfAsciiString ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSequenceOfAsciiString();
 
 };
 %extend TColStd_HSequenceOfAsciiString {
 	Handle_TColStd_HSequenceOfAsciiString GetHandle() {
 	return *(Handle_TColStd_HSequenceOfAsciiString*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfAsciiString {
+	~TColStd_HSequenceOfAsciiString() {
+	printf("Call custom destructor for instance of TColStd_HSequenceOfAsciiString\n");
 	}
 };
 
@@ -2110,13 +2311,16 @@ class TColStd_HArray1OfBoolean : public MMgt_TShared {
 		TColStd_Array1OfBoolean & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray1OfBoolean();
 
 };
 %extend TColStd_HArray1OfBoolean {
 	Handle_TColStd_HArray1OfBoolean GetHandle() {
 	return *(Handle_TColStd_HArray1OfBoolean*) &$self;
+	}
+};
+%extend TColStd_HArray1OfBoolean {
+	~TColStd_HArray1OfBoolean() {
+	printf("Call custom destructor for instance of TColStd_HArray1OfBoolean\n");
 	}
 };
 
@@ -2129,13 +2333,16 @@ class TColStd_SequenceNodeOfSequenceOfHExtendedString : public TCollection_SeqNo
 		Handle_TCollection_HExtendedString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_SequenceNodeOfSequenceOfHExtendedString();
 
 };
 %extend TColStd_SequenceNodeOfSequenceOfHExtendedString {
 	Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString GetHandle() {
 	return *(Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString*) &$self;
+	}
+};
+%extend TColStd_SequenceNodeOfSequenceOfHExtendedString {
+	~TColStd_SequenceNodeOfSequenceOfHExtendedString() {
+	printf("Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfHExtendedString\n");
 	}
 };
 
@@ -2166,13 +2373,16 @@ class TColStd_HArray1OfListOfInteger : public MMgt_TShared {
 		TColStd_Array1OfListOfInteger & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray1OfListOfInteger();
 
 };
 %extend TColStd_HArray1OfListOfInteger {
 	Handle_TColStd_HArray1OfListOfInteger GetHandle() {
 	return *(Handle_TColStd_HArray1OfListOfInteger*) &$self;
+	}
+};
+%extend TColStd_HArray1OfListOfInteger {
+	~TColStd_HArray1OfListOfInteger() {
+	printf("Call custom destructor for instance of TColStd_HArray1OfListOfInteger\n");
 	}
 };
 
@@ -2353,13 +2563,16 @@ class TColStd_HSequenceOfReal : public MMgt_TShared {
 		Handle_TColStd_HSequenceOfReal ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSequenceOfReal();
 
 };
 %extend TColStd_HSequenceOfReal {
 	Handle_TColStd_HSequenceOfReal GetHandle() {
 	return *(Handle_TColStd_HSequenceOfReal*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfReal {
+	~TColStd_HSequenceOfReal() {
+	printf("Call custom destructor for instance of TColStd_HSequenceOfReal\n");
 	}
 };
 
@@ -2376,13 +2589,16 @@ class TColStd_IndexedMapNodeOfIndexedMapOfInteger : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_IndexedMapNodeOfIndexedMapOfInteger();
 
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
 	Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger GetHandle() {
 	return *(Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger*) &$self;
+	}
+};
+%extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
+	~TColStd_IndexedMapNodeOfIndexedMapOfInteger() {
+	printf("Call custom destructor for instance of TColStd_IndexedMapNodeOfIndexedMapOfInteger\n");
 	}
 };
 
@@ -2397,13 +2613,16 @@ class TColStd_DataMapNodeOfDataMapOfIntegerInteger : public TCollection_MapNode 
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_DataMapNodeOfDataMapOfIntegerInteger();
 
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerInteger {
 	Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger GetHandle() {
 	return *(Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger*) &$self;
+	}
+};
+%extend TColStd_DataMapNodeOfDataMapOfIntegerInteger {
+	~TColStd_DataMapNodeOfDataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of TColStd_DataMapNodeOfDataMapOfIntegerInteger\n");
 	}
 };
 
@@ -2526,13 +2745,16 @@ class TColStd_HArray2OfBoolean : public MMgt_TShared {
 		TColStd_Array2OfBoolean & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray2OfBoolean();
 
 };
 %extend TColStd_HArray2OfBoolean {
 	Handle_TColStd_HArray2OfBoolean GetHandle() {
 	return *(Handle_TColStd_HArray2OfBoolean*) &$self;
+	}
+};
+%extend TColStd_HArray2OfBoolean {
+	~TColStd_HArray2OfBoolean() {
+	printf("Call custom destructor for instance of TColStd_HArray2OfBoolean\n");
 	}
 };
 
@@ -2591,13 +2813,16 @@ class TColStd_StdMapNodeOfMapOfTransient : public TCollection_MapNode {
 		Handle_Standard_Transient & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_StdMapNodeOfMapOfTransient();
 
 };
 %extend TColStd_StdMapNodeOfMapOfTransient {
 	Handle_TColStd_StdMapNodeOfMapOfTransient GetHandle() {
 	return *(Handle_TColStd_StdMapNodeOfMapOfTransient*) &$self;
+	}
+};
+%extend TColStd_StdMapNodeOfMapOfTransient {
+	~TColStd_StdMapNodeOfMapOfTransient() {
+	printf("Call custom destructor for instance of TColStd_StdMapNodeOfMapOfTransient\n");
 	}
 };
 
@@ -2664,13 +2889,16 @@ class TColStd_IndexedMapNodeOfIndexedMapOfReal : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_IndexedMapNodeOfIndexedMapOfReal();
 
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfReal {
 	Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal GetHandle() {
 	return *(Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal*) &$self;
+	}
+};
+%extend TColStd_IndexedMapNodeOfIndexedMapOfReal {
+	~TColStd_IndexedMapNodeOfIndexedMapOfReal() {
+	printf("Call custom destructor for instance of TColStd_IndexedMapNodeOfIndexedMapOfReal\n");
 	}
 };
 
@@ -2709,13 +2937,16 @@ class TColStd_ListNodeOfListOfReal : public TCollection_MapNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_ListNodeOfListOfReal();
 
 };
 %extend TColStd_ListNodeOfListOfReal {
 	Handle_TColStd_ListNodeOfListOfReal GetHandle() {
 	return *(Handle_TColStd_ListNodeOfListOfReal*) &$self;
+	}
+};
+%extend TColStd_ListNodeOfListOfReal {
+	~TColStd_ListNodeOfListOfReal() {
+	printf("Call custom destructor for instance of TColStd_ListNodeOfListOfReal\n");
 	}
 };
 
@@ -2878,13 +3109,16 @@ class TColStd_HSequenceOfTransient : public MMgt_TShared {
 		Handle_TColStd_HSequenceOfTransient ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSequenceOfTransient();
 
 };
 %extend TColStd_HSequenceOfTransient {
 	Handle_TColStd_HSequenceOfTransient GetHandle() {
 	return *(Handle_TColStd_HSequenceOfTransient*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfTransient {
+	~TColStd_HSequenceOfTransient() {
+	printf("Call custom destructor for instance of TColStd_HSequenceOfTransient\n");
 	}
 };
 
@@ -3003,13 +3237,16 @@ class TColStd_HArray1OfExtendedString : public MMgt_TShared {
 		TColStd_Array1OfExtendedString & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray1OfExtendedString();
 
 };
 %extend TColStd_HArray1OfExtendedString {
 	Handle_TColStd_HArray1OfExtendedString GetHandle() {
 	return *(Handle_TColStd_HArray1OfExtendedString*) &$self;
+	}
+};
+%extend TColStd_HArray1OfExtendedString {
+	~TColStd_HArray1OfExtendedString() {
+	printf("Call custom destructor for instance of TColStd_HArray1OfExtendedString\n");
 	}
 };
 
@@ -3026,13 +3263,16 @@ class TColStd_IndexedMapNodeOfIndexedMapOfTransient : public TCollection_MapNode
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_IndexedMapNodeOfIndexedMapOfTransient();
 
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfTransient {
 	Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient GetHandle() {
 	return *(Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient*) &$self;
+	}
+};
+%extend TColStd_IndexedMapNodeOfIndexedMapOfTransient {
+	~TColStd_IndexedMapNodeOfIndexedMapOfTransient() {
+	printf("Call custom destructor for instance of TColStd_IndexedMapNodeOfIndexedMapOfTransient\n");
 	}
 };
 
@@ -3189,13 +3429,16 @@ class TColStd_HArray1OfCharacter : public MMgt_TShared {
 		TColStd_Array1OfCharacter & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray1OfCharacter();
 
 };
 %extend TColStd_HArray1OfCharacter {
 	Handle_TColStd_HArray1OfCharacter GetHandle() {
 	return *(Handle_TColStd_HArray1OfCharacter*) &$self;
+	}
+};
+%extend TColStd_HArray1OfCharacter {
+	~TColStd_HArray1OfCharacter() {
+	printf("Call custom destructor for instance of TColStd_HArray1OfCharacter\n");
 	}
 };
 
@@ -3280,13 +3523,16 @@ class TColStd_QueueNodeOfQueueOfReal : public TCollection_MapNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_QueueNodeOfQueueOfReal();
 
 };
 %extend TColStd_QueueNodeOfQueueOfReal {
 	Handle_TColStd_QueueNodeOfQueueOfReal GetHandle() {
 	return *(Handle_TColStd_QueueNodeOfQueueOfReal*) &$self;
+	}
+};
+%extend TColStd_QueueNodeOfQueueOfReal {
+	~TColStd_QueueNodeOfQueueOfReal() {
+	printf("Call custom destructor for instance of TColStd_QueueNodeOfQueueOfReal\n");
 	}
 };
 
@@ -3317,13 +3563,16 @@ class TColStd_HArray1OfInteger : public MMgt_TShared {
 		TColStd_Array1OfInteger & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray1OfInteger();
 
 };
 %extend TColStd_HArray1OfInteger {
 	Handle_TColStd_HArray1OfInteger GetHandle() {
 	return *(Handle_TColStd_HArray1OfInteger*) &$self;
+	}
+};
+%extend TColStd_HArray1OfInteger {
+	~TColStd_HArray1OfInteger() {
+	printf("Call custom destructor for instance of TColStd_HArray1OfInteger\n");
 	}
 };
 
@@ -3378,13 +3627,16 @@ class TColStd_HSequenceOfHExtendedString : public MMgt_TShared {
 		Handle_TColStd_HSequenceOfHExtendedString ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSequenceOfHExtendedString();
 
 };
 %extend TColStd_HSequenceOfHExtendedString {
 	Handle_TColStd_HSequenceOfHExtendedString GetHandle() {
 	return *(Handle_TColStd_HSequenceOfHExtendedString*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfHExtendedString {
+	~TColStd_HSequenceOfHExtendedString() {
+	printf("Call custom destructor for instance of TColStd_HSequenceOfHExtendedString\n");
 	}
 };
 
@@ -3525,13 +3777,16 @@ class TColStd_QueueNodeOfQueueOfInteger : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_QueueNodeOfQueueOfInteger();
 
 };
 %extend TColStd_QueueNodeOfQueueOfInteger {
 	Handle_TColStd_QueueNodeOfQueueOfInteger GetHandle() {
 	return *(Handle_TColStd_QueueNodeOfQueueOfInteger*) &$self;
+	}
+};
+%extend TColStd_QueueNodeOfQueueOfInteger {
+	~TColStd_QueueNodeOfQueueOfInteger() {
+	printf("Call custom destructor for instance of TColStd_QueueNodeOfQueueOfInteger\n");
 	}
 };
 
@@ -3674,13 +3929,16 @@ class TColStd_HArray1OfReal : public MMgt_TShared {
 		TColStd_Array1OfReal & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray1OfReal();
 
 };
 %extend TColStd_HArray1OfReal {
 	Handle_TColStd_HArray1OfReal GetHandle() {
 	return *(Handle_TColStd_HArray1OfReal*) &$self;
+	}
+};
+%extend TColStd_HArray1OfReal {
+	~TColStd_HArray1OfReal() {
+	printf("Call custom destructor for instance of TColStd_HArray1OfReal\n");
 	}
 };
 
@@ -3693,13 +3951,16 @@ class TColStd_ListNodeOfListOfInteger : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_ListNodeOfListOfInteger();
 
 };
 %extend TColStd_ListNodeOfListOfInteger {
 	Handle_TColStd_ListNodeOfListOfInteger GetHandle() {
 	return *(Handle_TColStd_ListNodeOfListOfInteger*) &$self;
+	}
+};
+%extend TColStd_ListNodeOfListOfInteger {
+	~TColStd_ListNodeOfListOfInteger() {
+	printf("Call custom destructor for instance of TColStd_ListNodeOfListOfInteger\n");
 	}
 };
 
@@ -3712,13 +3973,16 @@ class TColStd_ListNodeOfSetListOfSetOfTransient : public TCollection_MapNode {
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_ListNodeOfSetListOfSetOfTransient();
 
 };
 %extend TColStd_ListNodeOfSetListOfSetOfTransient {
 	Handle_TColStd_ListNodeOfSetListOfSetOfTransient GetHandle() {
 	return *(Handle_TColStd_ListNodeOfSetListOfSetOfTransient*) &$self;
+	}
+};
+%extend TColStd_ListNodeOfSetListOfSetOfTransient {
+	~TColStd_ListNodeOfSetListOfSetOfTransient() {
+	printf("Call custom destructor for instance of TColStd_ListNodeOfSetListOfSetOfTransient\n");
 	}
 };
 
@@ -3793,13 +4057,16 @@ class TColStd_HSequenceOfHAsciiString : public MMgt_TShared {
 		Handle_TColStd_HSequenceOfHAsciiString ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSequenceOfHAsciiString();
 
 };
 %extend TColStd_HSequenceOfHAsciiString {
 	Handle_TColStd_HSequenceOfHAsciiString GetHandle() {
 	return *(Handle_TColStd_HSequenceOfHAsciiString*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfHAsciiString {
+	~TColStd_HSequenceOfHAsciiString() {
+	printf("Call custom destructor for instance of TColStd_HSequenceOfHAsciiString\n");
 	}
 };
 
@@ -3862,13 +4129,16 @@ class TColStd_SequenceNodeOfSequenceOfAsciiString : public TCollection_SeqNode {
 		TCollection_AsciiString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_SequenceNodeOfSequenceOfAsciiString();
 
 };
 %extend TColStd_SequenceNodeOfSequenceOfAsciiString {
 	Handle_TColStd_SequenceNodeOfSequenceOfAsciiString GetHandle() {
 	return *(Handle_TColStd_SequenceNodeOfSequenceOfAsciiString*) &$self;
+	}
+};
+%extend TColStd_SequenceNodeOfSequenceOfAsciiString {
+	~TColStd_SequenceNodeOfSequenceOfAsciiString() {
+	printf("Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfAsciiString\n");
 	}
 };
 
@@ -3941,13 +4211,16 @@ class TColStd_QueueNodeOfQueueOfTransient : public TCollection_MapNode {
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_QueueNodeOfQueueOfTransient();
 
 };
 %extend TColStd_QueueNodeOfQueueOfTransient {
 	Handle_TColStd_QueueNodeOfQueueOfTransient GetHandle() {
 	return *(Handle_TColStd_QueueNodeOfQueueOfTransient*) &$self;
+	}
+};
+%extend TColStd_QueueNodeOfQueueOfTransient {
+	~TColStd_QueueNodeOfQueueOfTransient() {
+	printf("Call custom destructor for instance of TColStd_QueueNodeOfQueueOfTransient\n");
 	}
 };
 
@@ -3978,13 +4251,16 @@ class TColStd_HArray1OfTransient : public MMgt_TShared {
 		TColStd_Array1OfTransient & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray1OfTransient();
 
 };
 %extend TColStd_HArray1OfTransient {
 	Handle_TColStd_HArray1OfTransient GetHandle() {
 	return *(Handle_TColStd_HArray1OfTransient*) &$self;
+	}
+};
+%extend TColStd_HArray1OfTransient {
+	~TColStd_HArray1OfTransient() {
+	printf("Call custom destructor for instance of TColStd_HArray1OfTransient\n");
 	}
 };
 
@@ -3997,13 +4273,16 @@ class TColStd_StackNodeOfStackOfInteger : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_StackNodeOfStackOfInteger();
 
 };
 %extend TColStd_StackNodeOfStackOfInteger {
 	Handle_TColStd_StackNodeOfStackOfInteger GetHandle() {
 	return *(Handle_TColStd_StackNodeOfStackOfInteger*) &$self;
+	}
+};
+%extend TColStd_StackNodeOfStackOfInteger {
+	~TColStd_StackNodeOfStackOfInteger() {
+	printf("Call custom destructor for instance of TColStd_StackNodeOfStackOfInteger\n");
 	}
 };
 
@@ -4016,13 +4295,16 @@ class TColStd_SequenceNodeOfSequenceOfExtendedString : public TCollection_SeqNod
 		TCollection_ExtendedString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_SequenceNodeOfSequenceOfExtendedString();
 
 };
 %extend TColStd_SequenceNodeOfSequenceOfExtendedString {
 	Handle_TColStd_SequenceNodeOfSequenceOfExtendedString GetHandle() {
 	return *(Handle_TColStd_SequenceNodeOfSequenceOfExtendedString*) &$self;
+	}
+};
+%extend TColStd_SequenceNodeOfSequenceOfExtendedString {
+	~TColStd_SequenceNodeOfSequenceOfExtendedString() {
+	printf("Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfExtendedString\n");
 	}
 };
 
@@ -4053,13 +4335,16 @@ class TColStd_SequenceNodeOfSequenceOfTransient : public TCollection_SeqNode {
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_SequenceNodeOfSequenceOfTransient();
 
 };
 %extend TColStd_SequenceNodeOfSequenceOfTransient {
 	Handle_TColStd_SequenceNodeOfSequenceOfTransient GetHandle() {
 	return *(Handle_TColStd_SequenceNodeOfSequenceOfTransient*) &$self;
+	}
+};
+%extend TColStd_SequenceNodeOfSequenceOfTransient {
+	~TColStd_SequenceNodeOfSequenceOfTransient() {
+	printf("Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfTransient\n");
 	}
 };
 
@@ -4360,13 +4645,16 @@ class TColStd_HSequenceOfExtendedString : public MMgt_TShared {
 		Handle_TColStd_HSequenceOfExtendedString ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSequenceOfExtendedString();
 
 };
 %extend TColStd_HSequenceOfExtendedString {
 	Handle_TColStd_HSequenceOfExtendedString GetHandle() {
 	return *(Handle_TColStd_HSequenceOfExtendedString*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfExtendedString {
+	~TColStd_HSequenceOfExtendedString() {
+	printf("Call custom destructor for instance of TColStd_HSequenceOfExtendedString\n");
 	}
 };
 
@@ -4403,13 +4691,16 @@ class TColStd_HArray2OfCharacter : public MMgt_TShared {
 		TColStd_Array2OfCharacter & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray2OfCharacter();
 
 };
 %extend TColStd_HArray2OfCharacter {
 	Handle_TColStd_HArray2OfCharacter GetHandle() {
 	return *(Handle_TColStd_HArray2OfCharacter*) &$self;
+	}
+};
+%extend TColStd_HArray2OfCharacter {
+	~TColStd_HArray2OfCharacter() {
+	printf("Call custom destructor for instance of TColStd_HArray2OfCharacter\n");
 	}
 };
 
@@ -4458,13 +4749,16 @@ class TColStd_SequenceNodeOfSequenceOfReal : public TCollection_SeqNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_SequenceNodeOfSequenceOfReal();
 
 };
 %extend TColStd_SequenceNodeOfSequenceOfReal {
 	Handle_TColStd_SequenceNodeOfSequenceOfReal GetHandle() {
 	return *(Handle_TColStd_SequenceNodeOfSequenceOfReal*) &$self;
+	}
+};
+%extend TColStd_SequenceNodeOfSequenceOfReal {
+	~TColStd_SequenceNodeOfSequenceOfReal() {
+	printf("Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfReal\n");
 	}
 };
 
@@ -4515,13 +4809,16 @@ class TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public TCollection_Ma
 		TColStd_ListOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger();
 
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger {
 	Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger GetHandle() {
 	return *(Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger*) &$self;
+	}
+};
+%extend TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger {
+	~TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger() {
+	printf("Call custom destructor for instance of TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger\n");
 	}
 };
 
@@ -4564,13 +4861,16 @@ class TColStd_SequenceNodeOfSequenceOfInteger : public TCollection_SeqNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_SequenceNodeOfSequenceOfInteger();
 
 };
 %extend TColStd_SequenceNodeOfSequenceOfInteger {
 	Handle_TColStd_SequenceNodeOfSequenceOfInteger GetHandle() {
 	return *(Handle_TColStd_SequenceNodeOfSequenceOfInteger*) &$self;
+	}
+};
+%extend TColStd_SequenceNodeOfSequenceOfInteger {
+	~TColStd_SequenceNodeOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfInteger\n");
 	}
 };
 
@@ -4601,13 +4901,16 @@ class TColStd_SequenceNodeOfSequenceOfHAsciiString : public TCollection_SeqNode 
 		Handle_TCollection_HAsciiString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_SequenceNodeOfSequenceOfHAsciiString();
 
 };
 %extend TColStd_SequenceNodeOfSequenceOfHAsciiString {
 	Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString GetHandle() {
 	return *(Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString*) &$self;
+	}
+};
+%extend TColStd_SequenceNodeOfSequenceOfHAsciiString {
+	~TColStd_SequenceNodeOfSequenceOfHAsciiString() {
+	printf("Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfHAsciiString\n");
 	}
 };
 
@@ -4620,13 +4923,16 @@ class TColStd_ListNodeOfListOfTransient : public TCollection_MapNode {
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_ListNodeOfListOfTransient();
 
 };
 %extend TColStd_ListNodeOfListOfTransient {
 	Handle_TColStd_ListNodeOfListOfTransient GetHandle() {
 	return *(Handle_TColStd_ListNodeOfListOfTransient*) &$self;
+	}
+};
+%extend TColStd_ListNodeOfListOfTransient {
+	~TColStd_ListNodeOfListOfTransient() {
+	printf("Call custom destructor for instance of TColStd_ListNodeOfListOfTransient\n");
 	}
 };
 
@@ -4743,13 +5049,16 @@ class TColStd_HArray2OfInteger : public MMgt_TShared {
 		TColStd_Array2OfInteger & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray2OfInteger();
 
 };
 %extend TColStd_HArray2OfInteger {
 	Handle_TColStd_HArray2OfInteger GetHandle() {
 	return *(Handle_TColStd_HArray2OfInteger*) &$self;
+	}
+};
+%extend TColStd_HArray2OfInteger {
+	~TColStd_HArray2OfInteger() {
+	printf("Call custom destructor for instance of TColStd_HArray2OfInteger\n");
 	}
 };
 
@@ -4830,13 +5139,16 @@ class TColStd_HSetOfInteger : public MMgt_TShared {
 		TColStd_SetOfInteger & ChangeSet();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSetOfInteger();
 
 };
 %extend TColStd_HSetOfInteger {
 	Handle_TColStd_HSetOfInteger GetHandle() {
 	return *(Handle_TColStd_HSetOfInteger*) &$self;
+	}
+};
+%extend TColStd_HSetOfInteger {
+	~TColStd_HSetOfInteger() {
+	printf("Call custom destructor for instance of TColStd_HSetOfInteger\n");
 	}
 };
 
@@ -4875,13 +5187,16 @@ class TColStd_HSetOfTransient : public MMgt_TShared {
 		TColStd_SetOfTransient & ChangeSet();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HSetOfTransient();
 
 };
 %extend TColStd_HSetOfTransient {
 	Handle_TColStd_HSetOfTransient GetHandle() {
 	return *(Handle_TColStd_HSetOfTransient*) &$self;
+	}
+};
+%extend TColStd_HSetOfTransient {
+	~TColStd_HSetOfTransient() {
+	printf("Call custom destructor for instance of TColStd_HSetOfTransient\n");
 	}
 };
 
@@ -4980,12 +5295,15 @@ class TColStd_HArray2OfTransient : public MMgt_TShared {
 		TColStd_Array2OfTransient & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColStd_HArray2OfTransient();
 
 };
 %extend TColStd_HArray2OfTransient {
 	Handle_TColStd_HArray2OfTransient GetHandle() {
 	return *(Handle_TColStd_HArray2OfTransient*) &$self;
+	}
+};
+%extend TColStd_HArray2OfTransient {
+	~TColStd_HArray2OfTransient() {
+	printf("Call custom destructor for instance of TColStd_HArray2OfTransient\n");
 	}
 };

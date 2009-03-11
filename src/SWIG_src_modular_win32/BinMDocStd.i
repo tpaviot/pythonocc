@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BinMDocStd_XLinkDriver : public Handle_BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BinMDocStd_XLinkDriver();
-		%feature("autodoc", "1");
 		Handle_BinMDocStd_XLinkDriver();
 		%feature("autodoc", "1");
 		Handle_BinMDocStd_XLinkDriver(const Handle_BinMDocStd_XLinkDriver &aHandle);
@@ -116,6 +114,11 @@ class Handle_BinMDocStd_XLinkDriver : public Handle_BinMDF_ADriver {
 %extend Handle_BinMDocStd_XLinkDriver {
 	BinMDocStd_XLinkDriver* GetObject() {
 	return (BinMDocStd_XLinkDriver*)$self->Access();
+	}
+};
+%extend Handle_BinMDocStd_XLinkDriver {
+	~Handle_BinMDocStd_XLinkDriver() {
+	printf("Call custom destructor for instance of Handle_BinMDocStd_XLinkDriver\n");
 	}
 };
 
@@ -144,12 +147,15 @@ class BinMDocStd_XLinkDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMDocStd_XLinkDriver();
 
 };
 %extend BinMDocStd_XLinkDriver {
 	Handle_BinMDocStd_XLinkDriver GetHandle() {
 	return *(Handle_BinMDocStd_XLinkDriver*) &$self;
+	}
+};
+%extend BinMDocStd_XLinkDriver {
+	~BinMDocStd_XLinkDriver() {
+	printf("Call custom destructor for instance of BinMDocStd_XLinkDriver\n");
 	}
 };

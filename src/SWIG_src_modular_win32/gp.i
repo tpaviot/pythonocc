@@ -114,8 +114,6 @@ enum gp_TrsfForm {
 class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_gp_VectorWithNullMagnitude();
-		%feature("autodoc", "1");
 		Handle_gp_VectorWithNullMagnitude();
 		%feature("autodoc", "1");
 		Handle_gp_VectorWithNullMagnitude(const Handle_gp_VectorWithNullMagnitude &aHandle);
@@ -128,6 +126,11 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 %extend Handle_gp_VectorWithNullMagnitude {
 	gp_VectorWithNullMagnitude* GetObject() {
 	return (gp_VectorWithNullMagnitude*)$self->Access();
+	}
+};
+%extend Handle_gp_VectorWithNullMagnitude {
+	~Handle_gp_VectorWithNullMagnitude() {
+	printf("Call custom destructor for instance of Handle_gp_VectorWithNullMagnitude\n");
 	}
 };
 
@@ -604,13 +607,16 @@ class gp_VectorWithNullMagnitude : public Standard_DomainError {
 		Handle_gp_VectorWithNullMagnitude NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~gp_VectorWithNullMagnitude();
 
 };
 %extend gp_VectorWithNullMagnitude {
 	Handle_gp_VectorWithNullMagnitude GetHandle() {
 	return *(Handle_gp_VectorWithNullMagnitude*) &$self;
+	}
+};
+%extend gp_VectorWithNullMagnitude {
+	~gp_VectorWithNullMagnitude() {
+	printf("Call custom destructor for instance of gp_VectorWithNullMagnitude\n");
 	}
 };
 

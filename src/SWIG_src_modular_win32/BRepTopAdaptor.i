@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepTopAdaptor_TopolTool();
-		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool();
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool(const Handle_BRepTopAdaptor_TopolTool &aHandle);
@@ -118,12 +116,15 @@ class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 	return (BRepTopAdaptor_TopolTool*)$self->Access();
 	}
 };
+%extend Handle_BRepTopAdaptor_TopolTool {
+	~Handle_BRepTopAdaptor_TopolTool() {
+	printf("Call custom destructor for instance of Handle_BRepTopAdaptor_TopolTool\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTopAdaptor_HVertex;
 class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTopAdaptor_HVertex();
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_HVertex();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 	return (BRepTopAdaptor_HVertex*)$self->Access();
 	}
 };
+%extend Handle_BRepTopAdaptor_HVertex {
+	~Handle_BRepTopAdaptor_HVertex() {
+	printf("Call custom destructor for instance of Handle_BRepTopAdaptor_HVertex\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool;
 class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool();
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 	return (BRepTopAdaptor_DataMapNodeOfMapOfShapeTool*)$self->Access();
 	}
 };
+%extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
+	~Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
+	printf("Call custom destructor for instance of Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
 class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr();
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr();
 		%feature("autodoc", "1");
@@ -179,6 +186,11 @@ class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_S
 %extend Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
 	BRepTopAdaptor_SequenceNodeOfSeqOfPtr* GetObject() {
 	return (BRepTopAdaptor_SequenceNodeOfSeqOfPtr*)$self->Access();
+	}
+};
+%extend Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	~Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
+	printf("Call custom destructor for instance of Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");
 	}
 };
 
@@ -233,13 +245,16 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 		virtual		Standard_Boolean IsSame(const Handle_Adaptor3d_HVertex &Other);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTopAdaptor_HVertex();
 
 };
 %extend BRepTopAdaptor_HVertex {
 	Handle_BRepTopAdaptor_HVertex GetHandle() {
 	return *(Handle_BRepTopAdaptor_HVertex*) &$self;
+	}
+};
+%extend BRepTopAdaptor_HVertex {
+	~BRepTopAdaptor_HVertex() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_HVertex\n");
 	}
 };
 
@@ -323,8 +338,6 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BRepTopAdaptor_TopolTool();
-		%feature("autodoc", "1");
 		virtual		Standard_Boolean Has3d() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Tol3d(const Handle_Adaptor2d_HCurve2d &C) const;
@@ -351,6 +364,11 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 %extend BRepTopAdaptor_TopolTool {
 	Handle_BRepTopAdaptor_TopolTool GetHandle() {
 	return *(Handle_BRepTopAdaptor_TopolTool*) &$self;
+	}
+};
+%extend BRepTopAdaptor_TopolTool {
+	~BRepTopAdaptor_TopolTool() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_TopolTool\n");
 	}
 };
 
@@ -439,13 +457,16 @@ class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
 		Standard_Address & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTopAdaptor_SequenceNodeOfSeqOfPtr();
 
 };
 %extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
 	Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr GetHandle() {
 	return *(Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr*) &$self;
+	}
+};
+%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	~BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");
 	}
 };
 
@@ -460,12 +481,15 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 		BRepTopAdaptor_Tool & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool();
 
 };
 %extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
 	Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool GetHandle() {
 	return *(Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool*) &$self;
+	}
+};
+%extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
+	~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");
 	}
 };

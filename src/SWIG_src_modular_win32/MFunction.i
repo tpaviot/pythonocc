@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_MFunction_FunctionRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MFunction_FunctionRetrievalDriver();
-		%feature("autodoc", "1");
 		Handle_MFunction_FunctionRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionRetrievalDriver(const Handle_MFunction_FunctionRetrievalDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_MFunction_FunctionRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MFunction_FunctionRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MFunction_FunctionRetrievalDriver {
+	~Handle_MFunction_FunctionRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MFunction_FunctionRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MFunction_FunctionStorageDriver;
 class Handle_MFunction_FunctionStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MFunction_FunctionStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionStorageDriver();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_MFunction_FunctionStorageDriver : public Handle_MDF_ASDriver {
 %extend Handle_MFunction_FunctionStorageDriver {
 	MFunction_FunctionStorageDriver* GetObject() {
 	return (MFunction_FunctionStorageDriver*)$self->Access();
+	}
+};
+%extend Handle_MFunction_FunctionStorageDriver {
+	~Handle_MFunction_FunctionStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MFunction_FunctionStorageDriver\n");
 	}
 };
 
@@ -155,13 +161,16 @@ class MFunction_FunctionStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MFunction_FunctionStorageDriver();
 
 };
 %extend MFunction_FunctionStorageDriver {
 	Handle_MFunction_FunctionStorageDriver GetHandle() {
 	return *(Handle_MFunction_FunctionStorageDriver*) &$self;
+	}
+};
+%extend MFunction_FunctionStorageDriver {
+	~MFunction_FunctionStorageDriver() {
+	printf("Call custom destructor for instance of MFunction_FunctionStorageDriver\n");
 	}
 };
 
@@ -180,13 +189,16 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MFunction_FunctionRetrievalDriver();
 
 };
 %extend MFunction_FunctionRetrievalDriver {
 	Handle_MFunction_FunctionRetrievalDriver GetHandle() {
 	return *(Handle_MFunction_FunctionRetrievalDriver*) &$self;
+	}
+};
+%extend MFunction_FunctionRetrievalDriver {
+	~MFunction_FunctionRetrievalDriver() {
+	printf("Call custom destructor for instance of MFunction_FunctionRetrievalDriver\n");
 	}
 };
 

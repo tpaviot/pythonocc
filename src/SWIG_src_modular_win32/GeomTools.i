@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GeomTools_UndefinedTypeHandler();
-		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler();
 		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler(const Handle_GeomTools_UndefinedTypeHandler &aHandle);
@@ -116,6 +114,11 @@ class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 %extend Handle_GeomTools_UndefinedTypeHandler {
 	GeomTools_UndefinedTypeHandler* GetObject() {
 	return (GeomTools_UndefinedTypeHandler*)$self->Access();
+	}
+};
+%extend Handle_GeomTools_UndefinedTypeHandler {
+	~Handle_GeomTools_UndefinedTypeHandler() {
+	printf("Call custom destructor for instance of Handle_GeomTools_UndefinedTypeHandler\n");
 	}
 };
 
@@ -234,13 +237,16 @@ class GeomTools_UndefinedTypeHandler : public MMgt_TShared {
 		virtual		std::istream & ReadSurface(const Standard_Integer ctype, std::istream & IS, Handle_Geom_Surface & S) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomTools_UndefinedTypeHandler();
 
 };
 %extend GeomTools_UndefinedTypeHandler {
 	Handle_GeomTools_UndefinedTypeHandler GetHandle() {
 	return *(Handle_GeomTools_UndefinedTypeHandler*) &$self;
+	}
+};
+%extend GeomTools_UndefinedTypeHandler {
+	~GeomTools_UndefinedTypeHandler() {
+	printf("Call custom destructor for instance of GeomTools_UndefinedTypeHandler\n");
 	}
 };
 

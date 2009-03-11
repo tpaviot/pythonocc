@@ -124,8 +124,6 @@ enum GProp_EquaType {
 class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GProp_UndefinedAxis();
-		%feature("autodoc", "1");
 		Handle_GProp_UndefinedAxis();
 		%feature("autodoc", "1");
 		Handle_GProp_UndefinedAxis(const Handle_GProp_UndefinedAxis &aHandle);
@@ -138,6 +136,11 @@ class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 %extend Handle_GProp_UndefinedAxis {
 	GProp_UndefinedAxis* GetObject() {
 	return (GProp_UndefinedAxis*)$self->Access();
+	}
+};
+%extend Handle_GProp_UndefinedAxis {
+	~Handle_GProp_UndefinedAxis() {
+	printf("Call custom destructor for instance of Handle_GProp_UndefinedAxis\n");
 	}
 };
 
@@ -242,13 +245,16 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 		Handle_GProp_UndefinedAxis NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GProp_UndefinedAxis();
 
 };
 %extend GProp_UndefinedAxis {
 	Handle_GProp_UndefinedAxis GetHandle() {
 	return *(Handle_GProp_UndefinedAxis*) &$self;
+	}
+};
+%extend GProp_UndefinedAxis {
+	~GProp_UndefinedAxis() {
+	printf("Call custom destructor for instance of GProp_UndefinedAxis\n");
 	}
 };
 

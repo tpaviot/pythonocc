@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PCDMShape_Document : public Handle_PCDM_Document {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PCDMShape_Document();
-		%feature("autodoc", "1");
 		Handle_PCDMShape_Document();
 		%feature("autodoc", "1");
 		Handle_PCDMShape_Document(const Handle_PCDMShape_Document &aHandle);
@@ -116,6 +114,11 @@ class Handle_PCDMShape_Document : public Handle_PCDM_Document {
 %extend Handle_PCDMShape_Document {
 	PCDMShape_Document* GetObject() {
 	return (PCDMShape_Document*)$self->Access();
+	}
+};
+%extend Handle_PCDMShape_Document {
+	~Handle_PCDMShape_Document() {
+	printf("Call custom destructor for instance of Handle_PCDMShape_Document\n");
 	}
 };
 
@@ -136,12 +139,15 @@ class PCDMShape_Document : public PCDM_Document {
 		const PTopoDS_Shape1 & _CSFDB_GetPCDMShape_DocumentmyShape() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCDMShape_Document();
 
 };
 %extend PCDMShape_Document {
 	Handle_PCDMShape_Document GetHandle() {
 	return *(Handle_PCDMShape_Document*) &$self;
+	}
+};
+%extend PCDMShape_Document {
+	~PCDMShape_Document() {
+	printf("Call custom destructor for instance of PCDMShape_Document\n");
 	}
 };

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep();
-		%feature("autodoc", "1");
 		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep();
 		%feature("autodoc", "1");
 		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep(const Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep &aHandle);
@@ -116,6 +114,11 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 %extend Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
 	BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep* GetObject() {
 	return (BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep*)$self->Access();
+	}
+};
+%extend Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
+	~Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep() {
+	printf("Call custom destructor for instance of Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");
 	}
 };
 
@@ -374,13 +377,16 @@ class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public T
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep();
 
 };
 %extend BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
 	Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep GetHandle() {
 	return *(Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep*) &$self;
+	}
+};
+%extend BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
+	~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep() {
+	printf("Call custom destructor for instance of BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");
 	}
 };
 

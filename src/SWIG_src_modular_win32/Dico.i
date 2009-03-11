@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Dico_DictionaryOfTransient();
-		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient();
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient(const Handle_Dico_DictionaryOfTransient &aHandle);
@@ -118,12 +116,15 @@ class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 	return (Dico_DictionaryOfTransient*)$self->Access();
 	}
 };
+%extend Handle_Dico_DictionaryOfTransient {
+	~Handle_Dico_DictionaryOfTransient() {
+	printf("Call custom destructor for instance of Handle_Dico_DictionaryOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfTransient;
 class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dico_StackItemOfDictionaryOfTransient();
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared 
 	return (Dico_StackItemOfDictionaryOfTransient*)$self->Access();
 	}
 };
+%extend Handle_Dico_StackItemOfDictionaryOfTransient {
+	~Handle_Dico_StackItemOfDictionaryOfTransient() {
+	printf("Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Dico_DictionaryOfInteger;
 class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dico_DictionaryOfInteger();
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfInteger();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 	return (Dico_DictionaryOfInteger*)$self->Access();
 	}
 };
+%extend Handle_Dico_DictionaryOfInteger {
+	~Handle_Dico_DictionaryOfInteger() {
+	printf("Call custom destructor for instance of Handle_Dico_DictionaryOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfInteger;
 class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dico_StackItemOfDictionaryOfInteger();
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfInteger();
 		%feature("autodoc", "1");
@@ -179,6 +186,11 @@ class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 %extend Handle_Dico_StackItemOfDictionaryOfInteger {
 	Dico_StackItemOfDictionaryOfInteger* GetObject() {
 	return (Dico_StackItemOfDictionaryOfInteger*)$self->Access();
+	}
+};
+%extend Handle_Dico_StackItemOfDictionaryOfInteger {
+	~Handle_Dico_StackItemOfDictionaryOfInteger() {
+	printf("Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfInteger\n");
 	}
 };
 
@@ -223,13 +235,16 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 		Standard_Boolean Complete(Handle_Dico_DictionaryOfInteger & acell) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dico_DictionaryOfInteger();
 
 };
 %extend Dico_DictionaryOfInteger {
 	Handle_Dico_DictionaryOfInteger GetHandle() {
 	return *(Handle_Dico_DictionaryOfInteger*) &$self;
+	}
+};
+%extend Dico_DictionaryOfInteger {
+	~Dico_DictionaryOfInteger() {
+	printf("Call custom destructor for instance of Dico_DictionaryOfInteger\n");
 	}
 };
 
@@ -272,13 +287,16 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 		void SetValue(const Handle_Dico_DictionaryOfInteger &cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dico_StackItemOfDictionaryOfInteger();
 
 };
 %extend Dico_StackItemOfDictionaryOfInteger {
 	Handle_Dico_StackItemOfDictionaryOfInteger GetHandle() {
 	return *(Handle_Dico_StackItemOfDictionaryOfInteger*) &$self;
+	}
+};
+%extend Dico_StackItemOfDictionaryOfInteger {
+	~Dico_StackItemOfDictionaryOfInteger() {
+	printf("Call custom destructor for instance of Dico_StackItemOfDictionaryOfInteger\n");
 	}
 };
 
@@ -297,13 +315,16 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 		void SetValue(const Handle_Dico_DictionaryOfTransient &cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dico_StackItemOfDictionaryOfTransient();
 
 };
 %extend Dico_StackItemOfDictionaryOfTransient {
 	Handle_Dico_StackItemOfDictionaryOfTransient GetHandle() {
 	return *(Handle_Dico_StackItemOfDictionaryOfTransient*) &$self;
+	}
+};
+%extend Dico_StackItemOfDictionaryOfTransient {
+	~Dico_StackItemOfDictionaryOfTransient() {
+	printf("Call custom destructor for instance of Dico_StackItemOfDictionaryOfTransient\n");
 	}
 };
 
@@ -372,12 +393,15 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 		Standard_Boolean Complete(Handle_Dico_DictionaryOfTransient & acell) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dico_DictionaryOfTransient();
 
 };
 %extend Dico_DictionaryOfTransient {
 	Handle_Dico_DictionaryOfTransient GetHandle() {
 	return *(Handle_Dico_DictionaryOfTransient*) &$self;
+	}
+};
+%extend Dico_DictionaryOfTransient {
+	~Dico_DictionaryOfTransient() {
+	printf("Call custom destructor for instance of Dico_DictionaryOfTransient\n");
 	}
 };

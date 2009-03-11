@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StdFail_UndefinedValue();
-		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedValue();
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedValue(const Handle_StdFail_UndefinedValue &aHandle);
@@ -118,12 +116,15 @@ class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 	return (StdFail_UndefinedValue*)$self->Access();
 	}
 };
+%extend Handle_StdFail_UndefinedValue {
+	~Handle_StdFail_UndefinedValue() {
+	printf("Call custom destructor for instance of Handle_StdFail_UndefinedValue\n");
+	}
+};
 
 %nodefaultctor Handle_StdFail_NotDone;
 class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdFail_NotDone();
 		%feature("autodoc", "1");
 		Handle_StdFail_NotDone();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 	return (StdFail_NotDone*)$self->Access();
 	}
 };
+%extend Handle_StdFail_NotDone {
+	~Handle_StdFail_NotDone() {
+	printf("Call custom destructor for instance of Handle_StdFail_NotDone\n");
+	}
+};
 
 %nodefaultctor Handle_StdFail_InfiniteSolutions;
 class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdFail_InfiniteSolutions();
 		%feature("autodoc", "1");
 		Handle_StdFail_InfiniteSolutions();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 	return (StdFail_InfiniteSolutions*)$self->Access();
 	}
 };
+%extend Handle_StdFail_InfiniteSolutions {
+	~Handle_StdFail_InfiniteSolutions() {
+	printf("Call custom destructor for instance of Handle_StdFail_InfiniteSolutions\n");
+	}
+};
 
 %nodefaultctor Handle_StdFail_Undefined;
 class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdFail_Undefined();
 		%feature("autodoc", "1");
 		Handle_StdFail_Undefined();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 	return (StdFail_Undefined*)$self->Access();
 	}
 };
+%extend Handle_StdFail_Undefined {
+	~Handle_StdFail_Undefined() {
+	printf("Call custom destructor for instance of Handle_StdFail_Undefined\n");
+	}
+};
 
 %nodefaultctor Handle_StdFail_UndefinedDerivative;
 class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdFail_UndefinedDerivative();
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedDerivative();
 		%feature("autodoc", "1");
@@ -200,6 +210,11 @@ class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 %extend Handle_StdFail_UndefinedDerivative {
 	StdFail_UndefinedDerivative* GetObject() {
 	return (StdFail_UndefinedDerivative*)$self->Access();
+	}
+};
+%extend Handle_StdFail_UndefinedDerivative {
+	~Handle_StdFail_UndefinedDerivative() {
+	printf("Call custom destructor for instance of Handle_StdFail_UndefinedDerivative\n");
 	}
 };
 
@@ -218,13 +233,16 @@ class StdFail_Undefined : public Standard_Failure {
 		Handle_StdFail_Undefined NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_Undefined();
 
 };
 %extend StdFail_Undefined {
 	Handle_StdFail_Undefined GetHandle() {
 	return *(Handle_StdFail_Undefined*) &$self;
+	}
+};
+%extend StdFail_Undefined {
+	~StdFail_Undefined() {
+	printf("Call custom destructor for instance of StdFail_Undefined\n");
 	}
 };
 
@@ -243,13 +261,16 @@ class StdFail_UndefinedDerivative : public Standard_DomainError {
 		Handle_StdFail_UndefinedDerivative NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_UndefinedDerivative();
 
 };
 %extend StdFail_UndefinedDerivative {
 	Handle_StdFail_UndefinedDerivative GetHandle() {
 	return *(Handle_StdFail_UndefinedDerivative*) &$self;
+	}
+};
+%extend StdFail_UndefinedDerivative {
+	~StdFail_UndefinedDerivative() {
+	printf("Call custom destructor for instance of StdFail_UndefinedDerivative\n");
 	}
 };
 
@@ -268,13 +289,16 @@ class StdFail_InfiniteSolutions : public Standard_Failure {
 		Handle_StdFail_InfiniteSolutions NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_InfiniteSolutions();
 
 };
 %extend StdFail_InfiniteSolutions {
 	Handle_StdFail_InfiniteSolutions GetHandle() {
 	return *(Handle_StdFail_InfiniteSolutions*) &$self;
+	}
+};
+%extend StdFail_InfiniteSolutions {
+	~StdFail_InfiniteSolutions() {
+	printf("Call custom destructor for instance of StdFail_InfiniteSolutions\n");
 	}
 };
 
@@ -293,13 +317,16 @@ class StdFail_NotDone : public Standard_Failure {
 		Handle_StdFail_NotDone NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_NotDone();
 
 };
 %extend StdFail_NotDone {
 	Handle_StdFail_NotDone GetHandle() {
 	return *(Handle_StdFail_NotDone*) &$self;
+	}
+};
+%extend StdFail_NotDone {
+	~StdFail_NotDone() {
+	printf("Call custom destructor for instance of StdFail_NotDone\n");
 	}
 };
 
@@ -318,12 +345,15 @@ class StdFail_UndefinedValue : public Standard_DomainError {
 		Handle_StdFail_UndefinedValue NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_UndefinedValue();
 
 };
 %extend StdFail_UndefinedValue {
 	Handle_StdFail_UndefinedValue GetHandle() {
 	return *(Handle_StdFail_UndefinedValue*) &$self;
+	}
+};
+%extend StdFail_UndefinedValue {
+	~StdFail_UndefinedValue() {
+	printf("Call custom destructor for instance of StdFail_UndefinedValue\n");
 	}
 };

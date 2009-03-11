@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ProjLib_HProjectedCurve();
-		%feature("autodoc", "1");
 		Handle_ProjLib_HProjectedCurve();
 		%feature("autodoc", "1");
 		Handle_ProjLib_HProjectedCurve(const Handle_ProjLib_HProjectedCurve &aHandle);
@@ -118,12 +116,15 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	return (ProjLib_HProjectedCurve*)$self->Access();
 	}
 };
+%extend Handle_ProjLib_HProjectedCurve {
+	~Handle_ProjLib_HProjectedCurve() {
+	printf("Call custom destructor for instance of Handle_ProjLib_HProjectedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
 class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
 		%feature("autodoc", "1");
 		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCol
 	return (ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt*)$self->Access();
 	}
 };
+%extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
+	~Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt() {
+	printf("Call custom destructor for instance of Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt\n");
+	}
+};
 
 %nodefaultctor Handle_ProjLib_HCompProjectedCurve;
 class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ProjLib_HCompProjectedCurve();
 		%feature("autodoc", "1");
 		Handle_ProjLib_HCompProjectedCurve();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	return (ProjLib_HCompProjectedCurve*)$self->Access();
 	}
 };
+%extend Handle_ProjLib_HCompProjectedCurve {
+	~Handle_ProjLib_HCompProjectedCurve() {
+	printf("Call custom destructor for instance of Handle_ProjLib_HCompProjectedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_ProjLib_HSequenceOfHSequenceOfPnt;
 class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ProjLib_HSequenceOfHSequenceOfPnt();
 		%feature("autodoc", "1");
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt();
 		%feature("autodoc", "1");
@@ -179,6 +186,11 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 %extend Handle_ProjLib_HSequenceOfHSequenceOfPnt {
 	ProjLib_HSequenceOfHSequenceOfPnt* GetObject() {
 	return (ProjLib_HSequenceOfHSequenceOfPnt*)$self->Access();
+	}
+};
+%extend Handle_ProjLib_HSequenceOfHSequenceOfPnt {
+	~Handle_ProjLib_HSequenceOfHSequenceOfPnt() {
+	printf("Call custom destructor for instance of Handle_ProjLib_HSequenceOfHSequenceOfPnt\n");
 	}
 };
 
@@ -527,13 +539,16 @@ class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ProjLib_HSequenceOfHSequenceOfPnt();
 
 };
 %extend ProjLib_HSequenceOfHSequenceOfPnt {
 	Handle_ProjLib_HSequenceOfHSequenceOfPnt GetHandle() {
 	return *(Handle_ProjLib_HSequenceOfHSequenceOfPnt*) &$self;
+	}
+};
+%extend ProjLib_HSequenceOfHSequenceOfPnt {
+	~ProjLib_HSequenceOfHSequenceOfPnt() {
+	printf("Call custom destructor for instance of ProjLib_HSequenceOfHSequenceOfPnt\n");
 	}
 };
 
@@ -552,13 +567,16 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 		ProjLib_ProjectedCurve & ChangeCurve2d();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ProjLib_HProjectedCurve();
 
 };
 %extend ProjLib_HProjectedCurve {
 	Handle_ProjLib_HProjectedCurve GetHandle() {
 	return *(Handle_ProjLib_HProjectedCurve*) &$self;
+	}
+};
+%extend ProjLib_HProjectedCurve {
+	~ProjLib_HProjectedCurve() {
+	printf("Call custom destructor for instance of ProjLib_HProjectedCurve\n");
 	}
 };
 
@@ -597,13 +615,16 @@ class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNod
 		Handle_TColgp_HSequenceOfPnt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
 
 };
 %extend ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
 	Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt GetHandle() {
 	return *(Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt*) &$self;
+	}
+};
+%extend ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
+	~ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt() {
+	printf("Call custom destructor for instance of ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt\n");
 	}
 };
 
@@ -838,13 +859,16 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 		ProjLib_CompProjectedCurve & ChangeCurve2d();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ProjLib_HCompProjectedCurve();
 
 };
 %extend ProjLib_HCompProjectedCurve {
 	Handle_ProjLib_HCompProjectedCurve GetHandle() {
 	return *(Handle_ProjLib_HCompProjectedCurve*) &$self;
+	}
+};
+%extend ProjLib_HCompProjectedCurve {
+	~ProjLib_HCompProjectedCurve() {
+	printf("Call custom destructor for instance of ProjLib_HCompProjectedCurve\n");
 	}
 };
 

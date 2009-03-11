@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IGESBasic_Group : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESBasic_Group();
-		%feature("autodoc", "1");
 		Handle_IGESBasic_Group();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Group(const Handle_IGESBasic_Group &aHandle);
@@ -118,12 +116,15 @@ class Handle_IGESBasic_Group : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_Group*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_Group {
+	~Handle_IGESBasic_Group() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_Group\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_ReadWriteModule;
 class Handle_IGESBasic_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_ReadWriteModule();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ReadWriteModule();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_IGESBasic_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESBasic_ReadWriteModule*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_ReadWriteModule {
+	~Handle_IGESBasic_ReadWriteModule() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_SingleParent;
 class Handle_IGESBasic_SingleParent : public Handle_IGESData_SingleParentEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_SingleParent();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SingleParent();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_IGESBasic_SingleParent : public Handle_IGESData_SingleParentEntity 
 	return (IGESBasic_SingleParent*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_SingleParent {
+	~Handle_IGESBasic_SingleParent() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_SingleParent\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_ExternalRefLibName;
 class Handle_IGESBasic_ExternalRefLibName : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_ExternalRefLibName();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefLibName();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_IGESBasic_ExternalRefLibName : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_ExternalRefLibName*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_ExternalRefLibName {
+	~Handle_IGESBasic_ExternalRefLibName() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_ExternalRefLibName\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_Name;
 class Handle_IGESBasic_Name : public Handle_IGESData_NameEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_Name();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Name();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_IGESBasic_Name : public Handle_IGESData_NameEntity {
 	return (IGESBasic_Name*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_Name {
+	~Handle_IGESBasic_Name() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_Name\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfIGESEntity;
 class Handle_IGESBasic_HArray1OfHArray1OfIGESEntity : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_HArray1OfHArray1OfIGESEntity();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfIGESEntity();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_IGESBasic_HArray1OfHArray1OfIGESEntity : public Handle_MMgt_TShared
 	return (IGESBasic_HArray1OfHArray1OfIGESEntity*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_HArray1OfHArray1OfIGESEntity {
+	~Handle_IGESBasic_HArray1OfHArray1OfIGESEntity() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfIGESEntity\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfXY;
 class Handle_IGESBasic_HArray1OfHArray1OfXY : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_HArray1OfHArray1OfXY();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfXY();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_IGESBasic_HArray1OfHArray1OfXY : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfHArray1OfXY*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_HArray1OfHArray1OfXY {
+	~Handle_IGESBasic_HArray1OfHArray1OfXY() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfXY\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_Protocol;
 class Handle_IGESBasic_Protocol : public Handle_IGESData_Protocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_Protocol();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Protocol();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_IGESBasic_Protocol : public Handle_IGESData_Protocol {
 	return (IGESBasic_Protocol*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_Protocol {
+	~Handle_IGESBasic_Protocol() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_Protocol\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_Hierarchy;
 class Handle_IGESBasic_Hierarchy : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_Hierarchy();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Hierarchy();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_IGESBasic_Hierarchy : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_Hierarchy*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_Hierarchy {
+	~Handle_IGESBasic_Hierarchy() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_Hierarchy\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfInteger;
 class Handle_IGESBasic_HArray1OfHArray1OfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_HArray1OfHArray1OfInteger();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfInteger();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_IGESBasic_HArray1OfHArray1OfInteger : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfHArray1OfInteger*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_HArray1OfHArray1OfInteger {
+	~Handle_IGESBasic_HArray1OfHArray1OfInteger() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_SingularSubfigure;
 class Handle_IGESBasic_SingularSubfigure : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_SingularSubfigure();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SingularSubfigure();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_IGESBasic_SingularSubfigure : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_SingularSubfigure*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_SingularSubfigure {
+	~Handle_IGESBasic_SingularSubfigure() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_SingularSubfigure\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_HArray1OfLineFontEntity;
 class Handle_IGESBasic_HArray1OfLineFontEntity : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_HArray1OfLineFontEntity();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfLineFontEntity();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_IGESBasic_HArray1OfLineFontEntity : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfLineFontEntity*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_HArray1OfLineFontEntity {
+	~Handle_IGESBasic_HArray1OfLineFontEntity() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_HArray1OfLineFontEntity\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_ExternalRefFileName;
 class Handle_IGESBasic_ExternalRefFileName : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_ExternalRefFileName();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefFileName();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_IGESBasic_ExternalRefFileName : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_ExternalRefFileName*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_ExternalRefFileName {
+	~Handle_IGESBasic_ExternalRefFileName() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_ExternalRefFileName\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_HArray2OfHArray1OfReal;
 class Handle_IGESBasic_HArray2OfHArray1OfReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_HArray2OfHArray1OfReal();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray2OfHArray1OfReal();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_IGESBasic_HArray2OfHArray1OfReal : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray2OfHArray1OfReal*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_HArray2OfHArray1OfReal {
+	~Handle_IGESBasic_HArray2OfHArray1OfReal() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_HArray2OfHArray1OfReal\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_GeneralModule;
 class Handle_IGESBasic_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_GeneralModule();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_GeneralModule();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_IGESBasic_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESBasic_GeneralModule*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_GeneralModule {
+	~Handle_IGESBasic_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_GeneralModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_GroupWithoutBackP;
 class Handle_IGESBasic_GroupWithoutBackP : public Handle_IGESBasic_Group {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_GroupWithoutBackP();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_GroupWithoutBackP();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_IGESBasic_GroupWithoutBackP : public Handle_IGESBasic_Group {
 	return (IGESBasic_GroupWithoutBackP*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_GroupWithoutBackP {
+	~Handle_IGESBasic_GroupWithoutBackP() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_GroupWithoutBackP\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_AssocGroupType;
 class Handle_IGESBasic_AssocGroupType : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_AssocGroupType();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_AssocGroupType();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_IGESBasic_AssocGroupType : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_AssocGroupType*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_AssocGroupType {
+	~Handle_IGESBasic_AssocGroupType() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_AssocGroupType\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfXYZ;
 class Handle_IGESBasic_HArray1OfHArray1OfXYZ : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_HArray1OfHArray1OfXYZ();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfXYZ();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_IGESBasic_HArray1OfHArray1OfXYZ : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfHArray1OfXYZ*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_HArray1OfHArray1OfXYZ {
+	~Handle_IGESBasic_HArray1OfHArray1OfXYZ() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfXYZ\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_OrderedGroup;
 class Handle_IGESBasic_OrderedGroup : public Handle_IGESBasic_Group {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_OrderedGroup();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_OrderedGroup();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_IGESBasic_OrderedGroup : public Handle_IGESBasic_Group {
 	return (IGESBasic_OrderedGroup*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_OrderedGroup {
+	~Handle_IGESBasic_OrderedGroup() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_OrderedGroup\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_ExternalRefName;
 class Handle_IGESBasic_ExternalRefName : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_ExternalRefName();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefName();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_IGESBasic_ExternalRefName : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_ExternalRefName*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_ExternalRefName {
+	~Handle_IGESBasic_ExternalRefName() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_ExternalRefName\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_OrderedGroupWithoutBackP;
 class Handle_IGESBasic_OrderedGroupWithoutBackP : public Handle_IGESBasic_Group {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_OrderedGroupWithoutBackP();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_OrderedGroupWithoutBackP();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_IGESBasic_OrderedGroupWithoutBackP : public Handle_IGESBasic_Group 
 	return (IGESBasic_OrderedGroupWithoutBackP*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_OrderedGroupWithoutBackP {
+	~Handle_IGESBasic_OrderedGroupWithoutBackP() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_OrderedGroupWithoutBackP\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_SubfigureDef;
 class Handle_IGESBasic_SubfigureDef : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_SubfigureDef();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SubfigureDef();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_IGESBasic_SubfigureDef : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_SubfigureDef*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_SubfigureDef {
+	~Handle_IGESBasic_SubfigureDef() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_SubfigureDef\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_ExternalReferenceFile;
 class Handle_IGESBasic_ExternalReferenceFile : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_ExternalReferenceFile();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalReferenceFile();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_IGESBasic_ExternalReferenceFile : public Handle_IGESData_IGESEntity
 	return (IGESBasic_ExternalReferenceFile*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_ExternalReferenceFile {
+	~Handle_IGESBasic_ExternalReferenceFile() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_ExternalReferenceFile\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfReal;
 class Handle_IGESBasic_HArray1OfHArray1OfReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_HArray1OfHArray1OfReal();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfReal();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_IGESBasic_HArray1OfHArray1OfReal : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfHArray1OfReal*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_HArray1OfHArray1OfReal {
+	~Handle_IGESBasic_HArray1OfHArray1OfReal() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfReal\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_SpecificModule;
 class Handle_IGESBasic_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_SpecificModule();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SpecificModule();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_IGESBasic_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESBasic_SpecificModule*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_SpecificModule {
+	~Handle_IGESBasic_SpecificModule() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_SpecificModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_ExternalRefFileIndex;
 class Handle_IGESBasic_ExternalRefFileIndex : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_ExternalRefFileIndex();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefFileIndex();
 		%feature("autodoc", "1");
@@ -643,12 +716,15 @@ class Handle_IGESBasic_ExternalRefFileIndex : public Handle_IGESData_IGESEntity 
 	return (IGESBasic_ExternalRefFileIndex*)$self->Access();
 	}
 };
+%extend Handle_IGESBasic_ExternalRefFileIndex {
+	~Handle_IGESBasic_ExternalRefFileIndex() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_ExternalRefFileIndex\n");
+	}
+};
 
 %nodefaultctor Handle_IGESBasic_ExternalRefFile;
 class Handle_IGESBasic_ExternalRefFile : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESBasic_ExternalRefFile();
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefFile();
 		%feature("autodoc", "1");
@@ -662,6 +738,11 @@ class Handle_IGESBasic_ExternalRefFile : public Handle_IGESData_IGESEntity {
 %extend Handle_IGESBasic_ExternalRefFile {
 	IGESBasic_ExternalRefFile* GetObject() {
 	return (IGESBasic_ExternalRefFile*)$self->Access();
+	}
+};
+%extend Handle_IGESBasic_ExternalRefFile {
+	~Handle_IGESBasic_ExternalRefFile() {
+	printf("Call custom destructor for instance of Handle_IGESBasic_ExternalRefFile\n");
 	}
 };
 
@@ -702,13 +783,16 @@ class IGESBasic_ExternalRefName : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString ReferenceName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_ExternalRefName();
 
 };
 %extend IGESBasic_ExternalRefName {
 	Handle_IGESBasic_ExternalRefName GetHandle() {
 	return *(Handle_IGESBasic_ExternalRefName*) &$self;
+	}
+};
+%extend IGESBasic_ExternalRefName {
+	~IGESBasic_ExternalRefName() {
+	printf("Call custom destructor for instance of IGESBasic_ExternalRefName\n");
 	}
 };
 
@@ -769,13 +853,16 @@ class IGESBasic_HArray1OfHArray1OfReal : public MMgt_TShared {
 		Handle_TColStd_HArray1OfReal Value(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_HArray1OfHArray1OfReal();
 
 };
 %extend IGESBasic_HArray1OfHArray1OfReal {
 	Handle_IGESBasic_HArray1OfHArray1OfReal GetHandle() {
 	return *(Handle_IGESBasic_HArray1OfHArray1OfReal*) &$self;
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfReal {
+	~IGESBasic_HArray1OfHArray1OfReal() {
+	printf("Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfReal\n");
 	}
 };
 
@@ -810,13 +897,16 @@ class IGESBasic_Group : public IGESData_IGESEntity {
 		void SetValue(const Standard_Integer Index, const Handle_IGESData_IGESEntity &ent);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_Group();
 
 };
 %extend IGESBasic_Group {
 	Handle_IGESBasic_Group GetHandle() {
 	return *(Handle_IGESBasic_Group*) &$self;
+	}
+};
+%extend IGESBasic_Group {
+	~IGESBasic_Group() {
+	printf("Call custom destructor for instance of IGESBasic_Group\n");
 	}
 };
 
@@ -825,13 +915,16 @@ class IGESBasic_GroupWithoutBackP : public IGESBasic_Group {
 	public:
 		%feature("autodoc", "1");
 		IGESBasic_GroupWithoutBackP();
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_GroupWithoutBackP();
 
 };
 %extend IGESBasic_GroupWithoutBackP {
 	Handle_IGESBasic_GroupWithoutBackP GetHandle() {
 	return *(Handle_IGESBasic_GroupWithoutBackP*) &$self;
+	}
+};
+%extend IGESBasic_GroupWithoutBackP {
+	~IGESBasic_GroupWithoutBackP() {
+	printf("Call custom destructor for instance of IGESBasic_GroupWithoutBackP\n");
 	}
 };
 
@@ -846,13 +939,16 @@ class IGESBasic_SpecificModule : public IGESData_SpecificModule {
 		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_SpecificModule();
 
 };
 %extend IGESBasic_SpecificModule {
 	Handle_IGESBasic_SpecificModule GetHandle() {
 	return *(Handle_IGESBasic_SpecificModule*) &$self;
+	}
+};
+%extend IGESBasic_SpecificModule {
+	~IGESBasic_SpecificModule() {
+	printf("Call custom destructor for instance of IGESBasic_SpecificModule\n");
 	}
 };
 
@@ -897,13 +993,16 @@ class IGESBasic_HArray1OfHArray1OfXYZ : public MMgt_TShared {
 		Handle_TColgp_HArray1OfXYZ Value(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_HArray1OfHArray1OfXYZ();
 
 };
 %extend IGESBasic_HArray1OfHArray1OfXYZ {
 	Handle_IGESBasic_HArray1OfHArray1OfXYZ GetHandle() {
 	return *(Handle_IGESBasic_HArray1OfHArray1OfXYZ*) &$self;
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfXYZ {
+	~IGESBasic_HArray1OfHArray1OfXYZ() {
+	printf("Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfXYZ\n");
 	}
 };
 
@@ -924,13 +1023,16 @@ class IGESBasic_HArray1OfHArray1OfIGESEntity : public MMgt_TShared {
 		Handle_IGESData_HArray1OfIGESEntity Value(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_HArray1OfHArray1OfIGESEntity();
 
 };
 %extend IGESBasic_HArray1OfHArray1OfIGESEntity {
 	Handle_IGESBasic_HArray1OfHArray1OfIGESEntity GetHandle() {
 	return *(Handle_IGESBasic_HArray1OfHArray1OfIGESEntity*) &$self;
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfIGESEntity {
+	~IGESBasic_HArray1OfHArray1OfIGESEntity() {
+	printf("Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfIGESEntity\n");
 	}
 };
 
@@ -953,13 +1055,16 @@ class IGESBasic_GeneralModule : public IGESData_GeneralModule {
 		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_GeneralModule();
 
 };
 %extend IGESBasic_GeneralModule {
 	Handle_IGESBasic_GeneralModule GetHandle() {
 	return *(Handle_IGESBasic_GeneralModule*) &$self;
+	}
+};
+%extend IGESBasic_GeneralModule {
+	~IGESBasic_GeneralModule() {
+	printf("Call custom destructor for instance of IGESBasic_GeneralModule\n");
 	}
 };
 
@@ -970,13 +1075,16 @@ class IGESBasic_OrderedGroup : public IGESBasic_Group {
 		IGESBasic_OrderedGroup();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_OrderedGroup();
 
 };
 %extend IGESBasic_OrderedGroup {
 	Handle_IGESBasic_OrderedGroup GetHandle() {
 	return *(Handle_IGESBasic_OrderedGroup*) &$self;
+	}
+};
+%extend IGESBasic_OrderedGroup {
+	~IGESBasic_OrderedGroup() {
+	printf("Call custom destructor for instance of IGESBasic_OrderedGroup\n");
 	}
 };
 
@@ -995,13 +1103,16 @@ class IGESBasic_AssocGroupType : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_AssocGroupType();
 
 };
 %extend IGESBasic_AssocGroupType {
 	Handle_IGESBasic_AssocGroupType GetHandle() {
 	return *(Handle_IGESBasic_AssocGroupType*) &$self;
+	}
+};
+%extend IGESBasic_AssocGroupType {
+	~IGESBasic_AssocGroupType() {
+	printf("Call custom destructor for instance of IGESBasic_AssocGroupType\n");
 	}
 };
 
@@ -1018,13 +1129,16 @@ class IGESBasic_Name : public IGESData_NameEntity {
 		virtual		Handle_TCollection_HAsciiString Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_Name();
 
 };
 %extend IGESBasic_Name {
 	Handle_IGESBasic_Name GetHandle() {
 	return *(Handle_IGESBasic_Name*) &$self;
+	}
+};
+%extend IGESBasic_Name {
+	~IGESBasic_Name() {
+	printf("Call custom destructor for instance of IGESBasic_Name\n");
 	}
 };
 
@@ -1047,13 +1161,16 @@ class IGESBasic_SubfigureDef : public IGESData_IGESEntity {
 		Handle_Standard_Transient Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_SubfigureDef();
 
 };
 %extend IGESBasic_SubfigureDef {
 	Handle_IGESBasic_SubfigureDef GetHandle() {
 	return *(Handle_IGESBasic_SubfigureDef*) &$self;
+	}
+};
+%extend IGESBasic_SubfigureDef {
+	~IGESBasic_SubfigureDef() {
+	printf("Call custom destructor for instance of IGESBasic_SubfigureDef\n");
 	}
 };
 
@@ -1174,13 +1291,16 @@ class IGESBasic_HArray1OfHArray1OfInteger : public MMgt_TShared {
 		Handle_TColStd_HArray1OfInteger Value(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_HArray1OfHArray1OfInteger();
 
 };
 %extend IGESBasic_HArray1OfHArray1OfInteger {
 	Handle_IGESBasic_HArray1OfHArray1OfInteger GetHandle() {
 	return *(Handle_IGESBasic_HArray1OfHArray1OfInteger*) &$self;
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfInteger {
+	~IGESBasic_HArray1OfHArray1OfInteger() {
+	printf("Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfInteger\n");
 	}
 };
 
@@ -1281,13 +1401,16 @@ class IGESBasic_SingularSubfigure : public IGESData_IGESEntity {
 		gp_XYZ TransformedTranslation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_SingularSubfigure();
 
 };
 %extend IGESBasic_SingularSubfigure {
 	Handle_IGESBasic_SingularSubfigure GetHandle() {
 	return *(Handle_IGESBasic_SingularSubfigure*) &$self;
+	}
+};
+%extend IGESBasic_SingularSubfigure {
+	~IGESBasic_SingularSubfigure() {
+	printf("Call custom destructor for instance of IGESBasic_SingularSubfigure\n");
 	}
 };
 
@@ -1378,13 +1501,16 @@ class IGESBasic_HArray1OfLineFontEntity : public MMgt_TShared {
 		IGESBasic_Array1OfLineFontEntity & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_HArray1OfLineFontEntity();
 
 };
 %extend IGESBasic_HArray1OfLineFontEntity {
 	Handle_IGESBasic_HArray1OfLineFontEntity GetHandle() {
 	return *(Handle_IGESBasic_HArray1OfLineFontEntity*) &$self;
+	}
+};
+%extend IGESBasic_HArray1OfLineFontEntity {
+	~IGESBasic_HArray1OfLineFontEntity() {
+	printf("Call custom destructor for instance of IGESBasic_HArray1OfLineFontEntity\n");
 	}
 };
 
@@ -1401,13 +1527,16 @@ class IGESBasic_ReadWriteModule : public IGESData_ReadWriteModule {
 		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_ReadWriteModule();
 
 };
 %extend IGESBasic_ReadWriteModule {
 	Handle_IGESBasic_ReadWriteModule GetHandle() {
 	return *(Handle_IGESBasic_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESBasic_ReadWriteModule {
+	~IGESBasic_ReadWriteModule() {
+	printf("Call custom destructor for instance of IGESBasic_ReadWriteModule\n");
 	}
 };
 
@@ -1426,13 +1555,16 @@ class IGESBasic_ExternalRefFileName : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString ReferenceName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_ExternalRefFileName();
 
 };
 %extend IGESBasic_ExternalRefFileName {
 	Handle_IGESBasic_ExternalRefFileName GetHandle() {
 	return *(Handle_IGESBasic_ExternalRefFileName*) &$self;
+	}
+};
+%extend IGESBasic_ExternalRefFileName {
+	~IGESBasic_ExternalRefFileName() {
+	printf("Call custom destructor for instance of IGESBasic_ExternalRefFileName\n");
 	}
 };
 
@@ -1447,13 +1579,16 @@ class IGESBasic_ExternalRefFile : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString FileId() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_ExternalRefFile();
 
 };
 %extend IGESBasic_ExternalRefFile {
 	Handle_IGESBasic_ExternalRefFile GetHandle() {
 	return *(Handle_IGESBasic_ExternalRefFile*) &$self;
+	}
+};
+%extend IGESBasic_ExternalRefFile {
+	~IGESBasic_ExternalRefFile() {
+	printf("Call custom destructor for instance of IGESBasic_ExternalRefFile\n");
 	}
 };
 
@@ -1480,13 +1615,16 @@ class IGESBasic_Hierarchy : public IGESData_IGESEntity {
 		Standard_Integer NewColorNum() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_Hierarchy();
 
 };
 %extend IGESBasic_Hierarchy {
 	Handle_IGESBasic_Hierarchy GetHandle() {
 	return *(Handle_IGESBasic_Hierarchy*) &$self;
+	}
+};
+%extend IGESBasic_Hierarchy {
+	~IGESBasic_Hierarchy() {
+	printf("Call custom destructor for instance of IGESBasic_Hierarchy\n");
 	}
 };
 
@@ -1527,13 +1665,16 @@ class IGESBasic_ExternalReferenceFile : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString Name(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_ExternalReferenceFile();
 
 };
 %extend IGESBasic_ExternalReferenceFile {
 	Handle_IGESBasic_ExternalReferenceFile GetHandle() {
 	return *(Handle_IGESBasic_ExternalReferenceFile*) &$self;
+	}
+};
+%extend IGESBasic_ExternalReferenceFile {
+	~IGESBasic_ExternalReferenceFile() {
+	printf("Call custom destructor for instance of IGESBasic_ExternalReferenceFile\n");
 	}
 };
 
@@ -1566,13 +1707,16 @@ class IGESBasic_ExternalRefFileIndex : public IGESData_IGESEntity {
 		Handle_IGESData_IGESEntity Entity(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_ExternalRefFileIndex();
 
 };
 %extend IGESBasic_ExternalRefFileIndex {
 	Handle_IGESBasic_ExternalRefFileIndex GetHandle() {
 	return *(Handle_IGESBasic_ExternalRefFileIndex*) &$self;
+	}
+};
+%extend IGESBasic_ExternalRefFileIndex {
+	~IGESBasic_ExternalRefFileIndex() {
+	printf("Call custom destructor for instance of IGESBasic_ExternalRefFileIndex\n");
 	}
 };
 
@@ -1593,13 +1737,16 @@ class IGESBasic_SingleParent : public IGESData_SingleParentEntity {
 		virtual		Handle_IGESData_IGESEntity Child(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_SingleParent();
 
 };
 %extend IGESBasic_SingleParent {
 	Handle_IGESBasic_SingleParent GetHandle() {
 	return *(Handle_IGESBasic_SingleParent*) &$self;
+	}
+};
+%extend IGESBasic_SingleParent {
+	~IGESBasic_SingleParent() {
+	printf("Call custom destructor for instance of IGESBasic_SingleParent\n");
 	}
 };
 
@@ -1684,13 +1831,16 @@ class IGESBasic_HArray2OfHArray1OfReal : public MMgt_TShared {
 		IGESBasic_Array2OfHArray1OfReal & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_HArray2OfHArray1OfReal();
 
 };
 %extend IGESBasic_HArray2OfHArray1OfReal {
 	Handle_IGESBasic_HArray2OfHArray1OfReal GetHandle() {
 	return *(Handle_IGESBasic_HArray2OfHArray1OfReal*) &$self;
+	}
+};
+%extend IGESBasic_HArray2OfHArray1OfReal {
+	~IGESBasic_HArray2OfHArray1OfReal() {
+	printf("Call custom destructor for instance of IGESBasic_HArray2OfHArray1OfReal\n");
 	}
 };
 
@@ -1701,13 +1851,16 @@ class IGESBasic_OrderedGroupWithoutBackP : public IGESBasic_Group {
 		IGESBasic_OrderedGroupWithoutBackP();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_OrderedGroupWithoutBackP();
 
 };
 %extend IGESBasic_OrderedGroupWithoutBackP {
 	Handle_IGESBasic_OrderedGroupWithoutBackP GetHandle() {
 	return *(Handle_IGESBasic_OrderedGroupWithoutBackP*) &$self;
+	}
+};
+%extend IGESBasic_OrderedGroupWithoutBackP {
+	~IGESBasic_OrderedGroupWithoutBackP() {
+	printf("Call custom destructor for instance of IGESBasic_OrderedGroupWithoutBackP\n");
 	}
 };
 
@@ -1728,13 +1881,16 @@ class IGESBasic_HArray1OfHArray1OfXY : public MMgt_TShared {
 		Handle_TColgp_HArray1OfXY Value(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_HArray1OfHArray1OfXY();
 
 };
 %extend IGESBasic_HArray1OfHArray1OfXY {
 	Handle_IGESBasic_HArray1OfHArray1OfXY GetHandle() {
 	return *(Handle_IGESBasic_HArray1OfHArray1OfXY*) &$self;
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfXY {
+	~IGESBasic_HArray1OfHArray1OfXY() {
+	printf("Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfXY\n");
 	}
 };
 
@@ -1777,13 +1933,16 @@ class IGESBasic_ExternalRefLibName : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString ReferenceName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESBasic_ExternalRefLibName();
 
 };
 %extend IGESBasic_ExternalRefLibName {
 	Handle_IGESBasic_ExternalRefLibName GetHandle() {
 	return *(Handle_IGESBasic_ExternalRefLibName*) &$self;
+	}
+};
+%extend IGESBasic_ExternalRefLibName {
+	~IGESBasic_ExternalRefLibName() {
+	printf("Call custom destructor for instance of IGESBasic_ExternalRefLibName\n");
 	}
 };
 

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_MgtTopoDS_TranslateTool : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MgtTopoDS_TranslateTool();
-		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool();
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool(const Handle_MgtTopoDS_TranslateTool &aHandle);
@@ -118,12 +116,15 @@ class Handle_MgtTopoDS_TranslateTool : public Handle_MMgt_TShared {
 	return (MgtTopoDS_TranslateTool*)$self->Access();
 	}
 };
+%extend Handle_MgtTopoDS_TranslateTool {
+	~Handle_MgtTopoDS_TranslateTool() {
+	printf("Call custom destructor for instance of Handle_MgtTopoDS_TranslateTool\n");
+	}
+};
 
 %nodefaultctor Handle_MgtTopoDS_TranslateTool1;
 class Handle_MgtTopoDS_TranslateTool1 : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MgtTopoDS_TranslateTool1();
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool1();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_MgtTopoDS_TranslateTool1 : public Handle_MMgt_TShared {
 %extend Handle_MgtTopoDS_TranslateTool1 {
 	MgtTopoDS_TranslateTool1* GetObject() {
 	return (MgtTopoDS_TranslateTool1*)$self->Access();
+	}
+};
+%extend Handle_MgtTopoDS_TranslateTool1 {
+	~Handle_MgtTopoDS_TranslateTool1() {
+	printf("Call custom destructor for instance of Handle_MgtTopoDS_TranslateTool1\n");
 	}
 };
 
@@ -222,6 +228,11 @@ class MgtTopoDS_TranslateTool : public MMgt_TShared {
 	return *(Handle_MgtTopoDS_TranslateTool*) &$self;
 	}
 };
+%extend MgtTopoDS_TranslateTool {
+	~MgtTopoDS_TranslateTool() {
+	printf("Call custom destructor for instance of MgtTopoDS_TranslateTool\n");
+	}
+};
 
 %nodefaultctor MgtTopoDS_TranslateTool1;
 class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
@@ -303,6 +314,11 @@ class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
 %extend MgtTopoDS_TranslateTool1 {
 	Handle_MgtTopoDS_TranslateTool1 GetHandle() {
 	return *(Handle_MgtTopoDS_TranslateTool1*) &$self;
+	}
+};
+%extend MgtTopoDS_TranslateTool1 {
+	~MgtTopoDS_TranslateTool1() {
+	printf("Call custom destructor for instance of MgtTopoDS_TranslateTool1\n");
 	}
 };
 

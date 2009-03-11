@@ -161,8 +161,6 @@ enum Graphic2d_TypeOfFrame {
 class Handle_Graphic2d_Primitive : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Graphic2d_Primitive();
-		%feature("autodoc", "1");
 		Handle_Graphic2d_Primitive();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Primitive(const Handle_Graphic2d_Primitive &aHandle);
@@ -177,12 +175,15 @@ class Handle_Graphic2d_Primitive : public Handle_MMgt_TShared {
 	return (Graphic2d_Primitive*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Primitive {
+	~Handle_Graphic2d_Primitive() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Primitive\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Line;
 class Handle_Graphic2d_Line : public Handle_Graphic2d_Primitive {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Line();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Line();
 		%feature("autodoc", "1");
@@ -198,12 +199,15 @@ class Handle_Graphic2d_Line : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_Line*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Line {
+	~Handle_Graphic2d_Line() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Line\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Marker;
 class Handle_Graphic2d_Marker : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Marker();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Marker();
 		%feature("autodoc", "1");
@@ -219,12 +223,15 @@ class Handle_Graphic2d_Marker : public Handle_Graphic2d_Line {
 	return (Graphic2d_Marker*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Marker {
+	~Handle_Graphic2d_Marker() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Marker\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_SetOfMarkers;
 class Handle_Graphic2d_SetOfMarkers : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_SetOfMarkers();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SetOfMarkers();
 		%feature("autodoc", "1");
@@ -240,12 +247,15 @@ class Handle_Graphic2d_SetOfMarkers : public Handle_Graphic2d_Line {
 	return (Graphic2d_SetOfMarkers*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_SetOfMarkers {
+	~Handle_Graphic2d_SetOfMarkers() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_SetOfMarkers\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_EllipsDefinitionError;
 class Handle_Graphic2d_EllipsDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_EllipsDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_EllipsDefinitionError();
 		%feature("autodoc", "1");
@@ -261,12 +271,15 @@ class Handle_Graphic2d_EllipsDefinitionError : public Handle_Standard_OutOfRange
 	return (Graphic2d_EllipsDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_EllipsDefinitionError {
+	~Handle_Graphic2d_EllipsDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_EllipsDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Text;
 class Handle_Graphic2d_Text : public Handle_Graphic2d_Primitive {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Text();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Text();
 		%feature("autodoc", "1");
@@ -282,12 +295,15 @@ class Handle_Graphic2d_Text : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_Text*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Text {
+	~Handle_Graphic2d_Text() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Text\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_HidingText;
 class Handle_Graphic2d_HidingText : public Handle_Graphic2d_Text {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_HidingText();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HidingText();
 		%feature("autodoc", "1");
@@ -303,12 +319,15 @@ class Handle_Graphic2d_HidingText : public Handle_Graphic2d_Text {
 	return (Graphic2d_HidingText*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_HidingText {
+	~Handle_Graphic2d_HidingText() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_HidingText\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Drawer;
 class Handle_Graphic2d_Drawer : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Drawer();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Drawer();
 		%feature("autodoc", "1");
@@ -324,12 +343,15 @@ class Handle_Graphic2d_Drawer : public Handle_Standard_Transient {
 	return (Graphic2d_Drawer*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Drawer {
+	~Handle_Graphic2d_Drawer() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Drawer\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_TransientManager;
 class Handle_Graphic2d_TransientManager : public Handle_Graphic2d_Drawer {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_TransientManager();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_TransientManager();
 		%feature("autodoc", "1");
@@ -345,12 +367,15 @@ class Handle_Graphic2d_TransientManager : public Handle_Graphic2d_Drawer {
 	return (Graphic2d_TransientManager*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_TransientManager {
+	~Handle_Graphic2d_TransientManager() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_TransientManager\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_SetOfSegments;
 class Handle_Graphic2d_SetOfSegments : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_SetOfSegments();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SetOfSegments();
 		%feature("autodoc", "1");
@@ -366,12 +391,15 @@ class Handle_Graphic2d_SetOfSegments : public Handle_Graphic2d_Line {
 	return (Graphic2d_SetOfSegments*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_SetOfSegments {
+	~Handle_Graphic2d_SetOfSegments() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_SetOfSegments\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_HSequenceOfVertex;
 class Handle_Graphic2d_HSequenceOfVertex : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_HSequenceOfVertex();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HSequenceOfVertex();
 		%feature("autodoc", "1");
@@ -387,12 +415,15 @@ class Handle_Graphic2d_HSequenceOfVertex : public Handle_MMgt_TShared {
 	return (Graphic2d_HSequenceOfVertex*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_HSequenceOfVertex {
+	~Handle_Graphic2d_HSequenceOfVertex() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_HSequenceOfVertex\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_ViewMapping;
 class Handle_Graphic2d_ViewMapping : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_ViewMapping();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_ViewMapping();
 		%feature("autodoc", "1");
@@ -408,12 +439,15 @@ class Handle_Graphic2d_ViewMapping : public Handle_MMgt_TShared {
 	return (Graphic2d_ViewMapping*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_ViewMapping {
+	~Handle_Graphic2d_ViewMapping() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_ViewMapping\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_VectorialMarker;
 class Handle_Graphic2d_VectorialMarker : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_VectorialMarker();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_VectorialMarker();
 		%feature("autodoc", "1");
@@ -429,12 +463,15 @@ class Handle_Graphic2d_VectorialMarker : public Handle_Graphic2d_Line {
 	return (Graphic2d_VectorialMarker*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_VectorialMarker {
+	~Handle_Graphic2d_VectorialMarker() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_VectorialMarker\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_EllipsMarker;
 class Handle_Graphic2d_EllipsMarker : public Handle_Graphic2d_VectorialMarker {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_EllipsMarker();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_EllipsMarker();
 		%feature("autodoc", "1");
@@ -450,12 +487,15 @@ class Handle_Graphic2d_EllipsMarker : public Handle_Graphic2d_VectorialMarker {
 	return (Graphic2d_EllipsMarker*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_EllipsMarker {
+	~Handle_Graphic2d_EllipsMarker() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_EllipsMarker\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_PolylineDefinitionError;
 class Handle_Graphic2d_PolylineDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_PolylineDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_PolylineDefinitionError();
 		%feature("autodoc", "1");
@@ -471,12 +511,15 @@ class Handle_Graphic2d_PolylineDefinitionError : public Handle_Standard_OutOfRan
 	return (Graphic2d_PolylineDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_PolylineDefinitionError {
+	~Handle_Graphic2d_PolylineDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_PolylineDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Segment;
 class Handle_Graphic2d_Segment : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Segment();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Segment();
 		%feature("autodoc", "1");
@@ -492,12 +535,15 @@ class Handle_Graphic2d_Segment : public Handle_Graphic2d_Line {
 	return (Graphic2d_Segment*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Segment {
+	~Handle_Graphic2d_Segment() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Segment\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Circle;
 class Handle_Graphic2d_Circle : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Circle();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Circle();
 		%feature("autodoc", "1");
@@ -513,12 +559,15 @@ class Handle_Graphic2d_Circle : public Handle_Graphic2d_Line {
 	return (Graphic2d_Circle*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Circle {
+	~Handle_Graphic2d_Circle() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Circle\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_HArray1OfVertex;
 class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_HArray1OfVertex();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HArray1OfVertex();
 		%feature("autodoc", "1");
@@ -534,12 +583,15 @@ class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
 	return (Graphic2d_HArray1OfVertex*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_HArray1OfVertex {
+	~Handle_Graphic2d_HArray1OfVertex() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_HArray1OfVertex\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Polyline;
 class Handle_Graphic2d_Polyline : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Polyline();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Polyline();
 		%feature("autodoc", "1");
@@ -555,12 +607,15 @@ class Handle_Graphic2d_Polyline : public Handle_Graphic2d_Line {
 	return (Graphic2d_Polyline*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Polyline {
+	~Handle_Graphic2d_Polyline() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Polyline\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Paragraph;
 class Handle_Graphic2d_Paragraph : public Handle_Graphic2d_Primitive {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Paragraph();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Paragraph();
 		%feature("autodoc", "1");
@@ -576,12 +631,15 @@ class Handle_Graphic2d_Paragraph : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_Paragraph*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Paragraph {
+	~Handle_Graphic2d_Paragraph() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Paragraph\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_InfiniteLineDefinitionError;
 class Handle_Graphic2d_InfiniteLineDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_InfiniteLineDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_InfiniteLineDefinitionError();
 		%feature("autodoc", "1");
@@ -597,12 +655,15 @@ class Handle_Graphic2d_InfiniteLineDefinitionError : public Handle_Standard_OutO
 	return (Graphic2d_InfiniteLineDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_InfiniteLineDefinitionError {
+	~Handle_Graphic2d_InfiniteLineDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_InfiniteLineDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_PolylineMarker;
 class Handle_Graphic2d_PolylineMarker : public Handle_Graphic2d_VectorialMarker {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_PolylineMarker();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_PolylineMarker();
 		%feature("autodoc", "1");
@@ -618,12 +679,15 @@ class Handle_Graphic2d_PolylineMarker : public Handle_Graphic2d_VectorialMarker 
 	return (Graphic2d_PolylineMarker*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_PolylineMarker {
+	~Handle_Graphic2d_PolylineMarker() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_PolylineMarker\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_CircleDefinitionError;
 class Handle_Graphic2d_CircleDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_CircleDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_CircleDefinitionError();
 		%feature("autodoc", "1");
@@ -639,12 +703,15 @@ class Handle_Graphic2d_CircleDefinitionError : public Handle_Standard_OutOfRange
 	return (Graphic2d_CircleDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_CircleDefinitionError {
+	~Handle_Graphic2d_CircleDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_CircleDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline();
 		%feature("autodoc", "1");
@@ -660,12 +727,15 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline : public Handle_TCollect
 	return (Graphic2d_SequenceNodeOfSequenceOfPolyline*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline {
+	~Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_SetOfPolylines;
 class Handle_Graphic2d_SetOfPolylines : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_SetOfPolylines();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SetOfPolylines();
 		%feature("autodoc", "1");
@@ -681,12 +751,15 @@ class Handle_Graphic2d_SetOfPolylines : public Handle_Graphic2d_Line {
 	return (Graphic2d_SetOfPolylines*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_SetOfPolylines {
+	~Handle_Graphic2d_SetOfPolylines() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_SetOfPolylines\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_ImageDefinitionError;
 class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_ImageDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_ImageDefinitionError();
 		%feature("autodoc", "1");
@@ -702,12 +775,15 @@ class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange 
 	return (Graphic2d_ImageDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_ImageDefinitionError {
+	~Handle_Graphic2d_ImageDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_ImageDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_OverrideColorError;
 class Handle_Graphic2d_OverrideColorError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_OverrideColorError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_OverrideColorError();
 		%feature("autodoc", "1");
@@ -723,12 +799,15 @@ class Handle_Graphic2d_OverrideColorError : public Handle_Standard_OutOfRange {
 	return (Graphic2d_OverrideColorError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_OverrideColorError {
+	~Handle_Graphic2d_OverrideColorError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_OverrideColorError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_GraphicObject;
 class Handle_Graphic2d_GraphicObject : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_GraphicObject();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_GraphicObject();
 		%feature("autodoc", "1");
@@ -744,12 +823,15 @@ class Handle_Graphic2d_GraphicObject : public Handle_MMgt_TShared {
 	return (Graphic2d_GraphicObject*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_GraphicObject {
+	~Handle_Graphic2d_GraphicObject() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_GraphicObject\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_HidingGraphicObject;
 class Handle_Graphic2d_HidingGraphicObject : public Handle_Graphic2d_GraphicObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_HidingGraphicObject();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HidingGraphicObject();
 		%feature("autodoc", "1");
@@ -765,12 +847,15 @@ class Handle_Graphic2d_HidingGraphicObject : public Handle_Graphic2d_GraphicObje
 	return (Graphic2d_HidingGraphicObject*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_HidingGraphicObject {
+	~Handle_Graphic2d_HidingGraphicObject() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_HidingGraphicObject\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_DisplayList;
 class Handle_Graphic2d_DisplayList : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_DisplayList();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_DisplayList();
 		%feature("autodoc", "1");
@@ -786,12 +871,15 @@ class Handle_Graphic2d_DisplayList : public Handle_MMgt_TShared {
 	return (Graphic2d_DisplayList*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_DisplayList {
+	~Handle_Graphic2d_DisplayList() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_DisplayList\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_DetectionColorError;
 class Handle_Graphic2d_DetectionColorError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_DetectionColorError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_DetectionColorError();
 		%feature("autodoc", "1");
@@ -807,12 +895,15 @@ class Handle_Graphic2d_DetectionColorError : public Handle_Standard_OutOfRange {
 	return (Graphic2d_DetectionColorError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_DetectionColorError {
+	~Handle_Graphic2d_DetectionColorError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_DetectionColorError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_BufferList;
 class Handle_Graphic2d_BufferList : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_BufferList();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_BufferList();
 		%feature("autodoc", "1");
@@ -828,12 +919,15 @@ class Handle_Graphic2d_BufferList : public Handle_MMgt_TShared {
 	return (Graphic2d_BufferList*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_BufferList {
+	~Handle_Graphic2d_BufferList() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_BufferList\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_MarkerDefinitionError;
 class Handle_Graphic2d_MarkerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_MarkerDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_MarkerDefinitionError();
 		%feature("autodoc", "1");
@@ -849,12 +943,15 @@ class Handle_Graphic2d_MarkerDefinitionError : public Handle_Standard_OutOfRange
 	return (Graphic2d_MarkerDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_MarkerDefinitionError {
+	~Handle_Graphic2d_MarkerDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_MarkerDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Ellips;
 class Handle_Graphic2d_Ellips : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Ellips();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Ellips();
 		%feature("autodoc", "1");
@@ -870,12 +967,15 @@ class Handle_Graphic2d_Ellips : public Handle_Graphic2d_Line {
 	return (Graphic2d_Ellips*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Ellips {
+	~Handle_Graphic2d_Ellips() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Ellips\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_View;
 class Handle_Graphic2d_View : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_View();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_View();
 		%feature("autodoc", "1");
@@ -891,12 +991,15 @@ class Handle_Graphic2d_View : public Handle_MMgt_TShared {
 	return (Graphic2d_View*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_View {
+	~Handle_Graphic2d_View() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_View\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_TransientDefinitionError;
 class Handle_Graphic2d_TransientDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_TransientDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_TransientDefinitionError();
 		%feature("autodoc", "1");
@@ -912,12 +1015,15 @@ class Handle_Graphic2d_TransientDefinitionError : public Handle_Standard_OutOfRa
 	return (Graphic2d_TransientDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_TransientDefinitionError {
+	~Handle_Graphic2d_TransientDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_TransientDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_DrawerDefinitionError;
 class Handle_Graphic2d_DrawerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_DrawerDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_DrawerDefinitionError();
 		%feature("autodoc", "1");
@@ -933,12 +1039,15 @@ class Handle_Graphic2d_DrawerDefinitionError : public Handle_Standard_OutOfRange
 	return (Graphic2d_DrawerDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_DrawerDefinitionError {
+	~Handle_Graphic2d_DrawerDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_DrawerDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Buffer;
 class Handle_Graphic2d_Buffer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Buffer();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Buffer();
 		%feature("autodoc", "1");
@@ -954,12 +1063,15 @@ class Handle_Graphic2d_Buffer : public Handle_MMgt_TShared {
 	return (Graphic2d_Buffer*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Buffer {
+	~Handle_Graphic2d_Buffer() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Buffer\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_Image;
 class Handle_Graphic2d_Image : public Handle_Graphic2d_Primitive {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_Image();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Image();
 		%feature("autodoc", "1");
@@ -975,12 +1087,15 @@ class Handle_Graphic2d_Image : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_Image*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_Image {
+	~Handle_Graphic2d_Image() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_Image\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives();
 		%feature("autodoc", "1");
@@ -996,12 +1111,15 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives : public Handle_TColle
 	return (Graphic2d_SequenceNodeOfSequenceOfPrimitives*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives {
+	~Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfVertex;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfVertex : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_SequenceNodeOfSequenceOfVertex();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfVertex();
 		%feature("autodoc", "1");
@@ -1017,12 +1135,15 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfVertex : public Handle_TCollectio
 	return (Graphic2d_SequenceNodeOfSequenceOfVertex*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_SequenceNodeOfSequenceOfVertex {
+	~Handle_Graphic2d_SequenceNodeOfSequenceOfVertex() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfVertex\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer();
 		%feature("autodoc", "1");
@@ -1038,12 +1159,15 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer : public Handle_TCollectio
 	return (Graphic2d_SequenceNodeOfSequenceOfBuffer*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer {
+	~Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_SegmentDefinitionError;
 class Handle_Graphic2d_SegmentDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_SegmentDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SegmentDefinitionError();
 		%feature("autodoc", "1");
@@ -1059,12 +1183,15 @@ class Handle_Graphic2d_SegmentDefinitionError : public Handle_Standard_OutOfRang
 	return (Graphic2d_SegmentDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_SegmentDefinitionError {
+	~Handle_Graphic2d_SegmentDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_SegmentDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_FramedText;
 class Handle_Graphic2d_FramedText : public Handle_Graphic2d_Text {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_FramedText();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_FramedText();
 		%feature("autodoc", "1");
@@ -1080,12 +1207,15 @@ class Handle_Graphic2d_FramedText : public Handle_Graphic2d_Text {
 	return (Graphic2d_FramedText*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_FramedText {
+	~Handle_Graphic2d_FramedText() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_FramedText\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_InfiniteLine;
 class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_InfiniteLine();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_InfiniteLine();
 		%feature("autodoc", "1");
@@ -1101,12 +1231,15 @@ class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
 	return (Graphic2d_InfiniteLine*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_InfiniteLine {
+	~Handle_Graphic2d_InfiniteLine() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_InfiniteLine\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_HSequenceOfPrimitives;
 class Handle_Graphic2d_HSequenceOfPrimitives : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_HSequenceOfPrimitives();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HSequenceOfPrimitives();
 		%feature("autodoc", "1");
@@ -1122,12 +1255,15 @@ class Handle_Graphic2d_HSequenceOfPrimitives : public Handle_MMgt_TShared {
 	return (Graphic2d_HSequenceOfPrimitives*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_HSequenceOfPrimitives {
+	~Handle_Graphic2d_HSequenceOfPrimitives() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_HSequenceOfPrimitives\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_CircleMarker;
 class Handle_Graphic2d_CircleMarker : public Handle_Graphic2d_VectorialMarker {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_CircleMarker();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_CircleMarker();
 		%feature("autodoc", "1");
@@ -1143,12 +1279,15 @@ class Handle_Graphic2d_CircleMarker : public Handle_Graphic2d_VectorialMarker {
 	return (Graphic2d_CircleMarker*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_CircleMarker {
+	~Handle_Graphic2d_CircleMarker() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_CircleMarker\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject();
 		%feature("autodoc", "1");
@@ -1164,12 +1303,15 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public Handle_TCo
 	return (Graphic2d_SequenceNodeOfSequenceOfGraphicObject*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject {
+	~Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_ImageFile;
 class Handle_Graphic2d_ImageFile : public Handle_Graphic2d_Primitive {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_ImageFile();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_ImageFile();
 		%feature("autodoc", "1");
@@ -1185,12 +1327,15 @@ class Handle_Graphic2d_ImageFile : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_ImageFile*)$self->Access();
 	}
 };
+%extend Handle_Graphic2d_ImageFile {
+	~Handle_Graphic2d_ImageFile() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_ImageFile\n");
+	}
+};
 
 %nodefaultctor Handle_Graphic2d_TextDefinitionError;
 class Handle_Graphic2d_TextDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Graphic2d_TextDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Graphic2d_TextDefinitionError();
 		%feature("autodoc", "1");
@@ -1204,6 +1349,11 @@ class Handle_Graphic2d_TextDefinitionError : public Handle_Standard_OutOfRange {
 %extend Handle_Graphic2d_TextDefinitionError {
 	Graphic2d_TextDefinitionError* GetObject() {
 	return (Graphic2d_TextDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_Graphic2d_TextDefinitionError {
+	~Handle_Graphic2d_TextDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Graphic2d_TextDefinitionError\n");
 	}
 };
 
@@ -1257,6 +1407,11 @@ class Graphic2d_Primitive : public MMgt_TShared {
 	return *(Handle_Graphic2d_Primitive*) &$self;
 	}
 };
+%extend Graphic2d_Primitive {
+	~Graphic2d_Primitive() {
+	printf("Call custom destructor for instance of Graphic2d_Primitive\n");
+	}
+};
 
 %nodefaultctor Graphic2d_Image;
 class Graphic2d_Image : public Graphic2d_Primitive {
@@ -1285,13 +1440,16 @@ class Graphic2d_Image : public Graphic2d_Primitive {
 		Aspect_CardinalPoints Placement() const;
 		%feature("autodoc", "1");
 		Handle_Image_Image Image() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Image();
 
 };
 %extend Graphic2d_Image {
 	Handle_Graphic2d_Image GetHandle() {
 	return *(Handle_Graphic2d_Image*) &$self;
+	}
+};
+%extend Graphic2d_Image {
+	~Graphic2d_Image() {
+	printf("Call custom destructor for instance of Graphic2d_Image\n");
 	}
 };
 
@@ -1333,6 +1491,11 @@ class Graphic2d_Line : public Graphic2d_Primitive {
 	return *(Handle_Graphic2d_Line*) &$self;
 	}
 };
+%extend Graphic2d_Line {
+	~Graphic2d_Line() {
+	printf("Call custom destructor for instance of Graphic2d_Line\n");
+	}
+};
 
 %nodefaultctor Graphic2d_Polyline;
 class Graphic2d_Polyline : public Graphic2d_Line {
@@ -1347,13 +1510,16 @@ class Graphic2d_Polyline : public Graphic2d_Line {
 		void Values(const Standard_Integer aRank, Quantity_Length & X, Quantity_Length & Y) const;
 		%feature("autodoc", "1");
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Polyline();
 
 };
 %extend Graphic2d_Polyline {
 	Handle_Graphic2d_Polyline GetHandle() {
 	return *(Handle_Graphic2d_Polyline*) &$self;
+	}
+};
+%extend Graphic2d_Polyline {
+	~Graphic2d_Polyline() {
+	printf("Call custom destructor for instance of Graphic2d_Polyline\n");
 	}
 };
 
@@ -1382,13 +1548,16 @@ class Graphic2d_ViewMapping : public MMgt_TShared {
 		Quantity_Factor Zoom() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_ViewMapping();
 
 };
 %extend Graphic2d_ViewMapping {
 	Handle_Graphic2d_ViewMapping GetHandle() {
 	return *(Handle_Graphic2d_ViewMapping*) &$self;
+	}
+};
+%extend Graphic2d_ViewMapping {
+	~Graphic2d_ViewMapping() {
+	printf("Call custom destructor for instance of Graphic2d_ViewMapping\n");
 	}
 };
 
@@ -1401,13 +1570,16 @@ class Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public TCollection_SeqNo
 		Handle_Graphic2d_GraphicObject & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_SequenceNodeOfSequenceOfGraphicObject();
 
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfGraphicObject {
 	Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject GetHandle() {
 	return *(Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject*) &$self;
+	}
+};
+%extend Graphic2d_SequenceNodeOfSequenceOfGraphicObject {
+	~Graphic2d_SequenceNodeOfSequenceOfGraphicObject() {
+	printf("Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfGraphicObject\n");
 	}
 };
 
@@ -1429,6 +1601,11 @@ class Graphic2d_VectorialMarker : public Graphic2d_Line {
 	return *(Handle_Graphic2d_VectorialMarker*) &$self;
 	}
 };
+%extend Graphic2d_VectorialMarker {
+	~Graphic2d_VectorialMarker() {
+	printf("Call custom destructor for instance of Graphic2d_VectorialMarker\n");
+	}
+};
 
 %nodefaultctor Graphic2d_PolylineMarker;
 class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
@@ -1445,13 +1622,16 @@ class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_PolylineMarker();
 
 };
 %extend Graphic2d_PolylineMarker {
 	Handle_Graphic2d_PolylineMarker GetHandle() {
 	return *(Handle_Graphic2d_PolylineMarker*) &$self;
+	}
+};
+%extend Graphic2d_PolylineMarker {
+	~Graphic2d_PolylineMarker() {
+	printf("Call custom destructor for instance of Graphic2d_PolylineMarker\n");
 	}
 };
 
@@ -1470,13 +1650,16 @@ class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_TextDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_TextDefinitionError();
 
 };
 %extend Graphic2d_TextDefinitionError {
 	Handle_Graphic2d_TextDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_TextDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_TextDefinitionError {
+	~Graphic2d_TextDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_TextDefinitionError\n");
 	}
 };
 
@@ -1567,13 +1750,16 @@ class Graphic2d_GraphicObject : public MMgt_TShared {
 		Handle_TColStd_HSequenceOfInteger PickList() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_GraphicObject();
 
 };
 %extend Graphic2d_GraphicObject {
 	Handle_Graphic2d_GraphicObject GetHandle() {
 	return *(Handle_Graphic2d_GraphicObject*) &$self;
+	}
+};
+%extend Graphic2d_GraphicObject {
+	~Graphic2d_GraphicObject() {
+	printf("Call custom destructor for instance of Graphic2d_GraphicObject\n");
 	}
 };
 
@@ -1628,13 +1814,16 @@ class Graphic2d_Text : public Graphic2d_Primitive {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Text();
 
 };
 %extend Graphic2d_Text {
 	Handle_Graphic2d_Text GetHandle() {
 	return *(Handle_Graphic2d_Text*) &$self;
+	}
+};
+%extend Graphic2d_Text {
+	~Graphic2d_Text() {
+	printf("Call custom destructor for instance of Graphic2d_Text\n");
 	}
 };
 
@@ -1689,13 +1878,16 @@ class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_SegmentDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_SegmentDefinitionError();
 
 };
 %extend Graphic2d_SegmentDefinitionError {
 	Handle_Graphic2d_SegmentDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_SegmentDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_SegmentDefinitionError {
+	~Graphic2d_SegmentDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_SegmentDefinitionError\n");
 	}
 };
 
@@ -1738,13 +1930,16 @@ class Graphic2d_ImageFile : public Graphic2d_Primitive {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_ImageFile();
 
 };
 %extend Graphic2d_ImageFile {
 	Handle_Graphic2d_ImageFile GetHandle() {
 	return *(Handle_Graphic2d_ImageFile*) &$self;
+	}
+};
+%extend Graphic2d_ImageFile {
+	~Graphic2d_ImageFile() {
+	printf("Call custom destructor for instance of Graphic2d_ImageFile\n");
 	}
 };
 
@@ -1785,13 +1980,16 @@ class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
 		Standard_Integer FrameWidthIndex() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_HidingGraphicObject();
 
 };
 %extend Graphic2d_HidingGraphicObject {
 	Handle_Graphic2d_HidingGraphicObject GetHandle() {
 	return *(Handle_Graphic2d_HidingGraphicObject*) &$self;
+	}
+};
+%extend Graphic2d_HidingGraphicObject {
+	~Graphic2d_HidingGraphicObject() {
+	printf("Call custom destructor for instance of Graphic2d_HidingGraphicObject\n");
 	}
 };
 
@@ -1810,13 +2008,16 @@ class Graphic2d_InfiniteLine : public Graphic2d_Line {
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_InfiniteLine();
 
 };
 %extend Graphic2d_InfiniteLine {
 	Handle_Graphic2d_InfiniteLine GetHandle() {
 	return *(Handle_Graphic2d_InfiniteLine*) &$self;
+	}
+};
+%extend Graphic2d_InfiniteLine {
+	~Graphic2d_InfiniteLine() {
+	printf("Call custom destructor for instance of Graphic2d_InfiniteLine\n");
 	}
 };
 
@@ -1843,13 +2044,16 @@ class Graphic2d_SetOfSegments : public Graphic2d_Line {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_SetOfSegments();
 
 };
 %extend Graphic2d_SetOfSegments {
 	Handle_Graphic2d_SetOfSegments GetHandle() {
 	return *(Handle_Graphic2d_SetOfSegments*) &$self;
+	}
+};
+%extend Graphic2d_SetOfSegments {
+	~Graphic2d_SetOfSegments() {
+	printf("Call custom destructor for instance of Graphic2d_SetOfSegments\n");
 	}
 };
 
@@ -1884,13 +2088,16 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 		void SetScaledWidth(const Standard_ShortReal width);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_SetOfMarkers();
 
 };
 %extend Graphic2d_SetOfMarkers {
 	Handle_Graphic2d_SetOfMarkers GetHandle() {
 	return *(Handle_Graphic2d_SetOfMarkers*) &$self;
+	}
+};
+%extend Graphic2d_SetOfMarkers {
+	~Graphic2d_SetOfMarkers() {
+	printf("Call custom destructor for instance of Graphic2d_SetOfMarkers\n");
 	}
 };
 
@@ -1909,13 +2116,16 @@ class Graphic2d_CircleDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_CircleDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_CircleDefinitionError();
 
 };
 %extend Graphic2d_CircleDefinitionError {
 	Handle_Graphic2d_CircleDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_CircleDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_CircleDefinitionError {
+	~Graphic2d_CircleDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_CircleDefinitionError\n");
 	}
 };
 
@@ -1944,13 +2154,16 @@ class Graphic2d_FramedText : public Graphic2d_Text {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_FramedText();
 
 };
 %extend Graphic2d_FramedText {
 	Handle_Graphic2d_FramedText GetHandle() {
 	return *(Handle_Graphic2d_FramedText*) &$self;
+	}
+};
+%extend Graphic2d_FramedText {
+	~Graphic2d_FramedText() {
+	printf("Call custom destructor for instance of Graphic2d_FramedText\n");
 	}
 };
 
@@ -2005,13 +2218,16 @@ class Graphic2d_HSequenceOfPrimitives : public MMgt_TShared {
 		Handle_Graphic2d_HSequenceOfPrimitives ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_HSequenceOfPrimitives();
 
 };
 %extend Graphic2d_HSequenceOfPrimitives {
 	Handle_Graphic2d_HSequenceOfPrimitives GetHandle() {
 	return *(Handle_Graphic2d_HSequenceOfPrimitives*) &$self;
+	}
+};
+%extend Graphic2d_HSequenceOfPrimitives {
+	~Graphic2d_HSequenceOfPrimitives() {
+	printf("Call custom destructor for instance of Graphic2d_HSequenceOfPrimitives\n");
 	}
 };
 
@@ -2066,13 +2282,16 @@ class Graphic2d_HSequenceOfVertex : public MMgt_TShared {
 		Handle_Graphic2d_HSequenceOfVertex ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_HSequenceOfVertex();
 
 };
 %extend Graphic2d_HSequenceOfVertex {
 	Handle_Graphic2d_HSequenceOfVertex GetHandle() {
 	return *(Handle_Graphic2d_HSequenceOfVertex*) &$self;
+	}
+};
+%extend Graphic2d_HSequenceOfVertex {
+	~Graphic2d_HSequenceOfVertex() {
+	printf("Call custom destructor for instance of Graphic2d_HSequenceOfVertex\n");
 	}
 };
 
@@ -2145,13 +2364,16 @@ class Graphic2d_Ellips : public Graphic2d_Line {
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Ellips();
 
 };
 %extend Graphic2d_Ellips {
 	Handle_Graphic2d_Ellips GetHandle() {
 	return *(Handle_Graphic2d_Ellips*) &$self;
+	}
+};
+%extend Graphic2d_Ellips {
+	~Graphic2d_Ellips() {
+	printf("Call custom destructor for instance of Graphic2d_Ellips\n");
 	}
 };
 
@@ -2170,13 +2392,16 @@ class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 		Handle_Graphic2d_OverrideColorError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_OverrideColorError();
 
 };
 %extend Graphic2d_OverrideColorError {
 	Handle_Graphic2d_OverrideColorError GetHandle() {
 	return *(Handle_Graphic2d_OverrideColorError*) &$self;
+	}
+};
+%extend Graphic2d_OverrideColorError {
+	~Graphic2d_OverrideColorError() {
+	printf("Call custom destructor for instance of Graphic2d_OverrideColorError\n");
 	}
 };
 
@@ -2199,13 +2424,16 @@ class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_SetOfPolylines();
 
 };
 %extend Graphic2d_SetOfPolylines {
 	Handle_Graphic2d_SetOfPolylines GetHandle() {
 	return *(Handle_Graphic2d_SetOfPolylines*) &$self;
+	}
+};
+%extend Graphic2d_SetOfPolylines {
+	~Graphic2d_SetOfPolylines() {
+	printf("Call custom destructor for instance of Graphic2d_SetOfPolylines\n");
 	}
 };
 
@@ -2216,8 +2444,6 @@ class Graphic2d_Buffer : public MMgt_TShared {
 		Graphic2d_Buffer(const Handle_Graphic2d_View &aView, const Quantity_Length aPivotX, const Quantity_Length aPivotY, const Standard_Integer aWidthIndex=0, const Standard_Integer aColorIndex=0, const Standard_Integer aFontIndex=0, const Aspect_TypeOfDrawMode aDrawMode=Aspect_TODM_REPLACE);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Buffer();
 		%feature("autodoc", "1");
 		void Add(const Handle_Graphic2d_GraphicObject &anObject);
 		%feature("autodoc", "1");
@@ -2273,6 +2499,11 @@ class Graphic2d_Buffer : public MMgt_TShared {
 	return *(Handle_Graphic2d_Buffer*) &$self;
 	}
 };
+%extend Graphic2d_Buffer {
+	~Graphic2d_Buffer() {
+	printf("Call custom destructor for instance of Graphic2d_Buffer\n");
+	}
+};
 
 %nodefaultctor Graphic2d_DetectionColorError;
 class Graphic2d_DetectionColorError : public Standard_OutOfRange {
@@ -2289,13 +2520,16 @@ class Graphic2d_DetectionColorError : public Standard_OutOfRange {
 		Handle_Graphic2d_DetectionColorError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_DetectionColorError();
 
 };
 %extend Graphic2d_DetectionColorError {
 	Handle_Graphic2d_DetectionColorError GetHandle() {
 	return *(Handle_Graphic2d_DetectionColorError*) &$self;
+	}
+};
+%extend Graphic2d_DetectionColorError {
+	~Graphic2d_DetectionColorError() {
+	printf("Call custom destructor for instance of Graphic2d_DetectionColorError\n");
 	}
 };
 
@@ -2350,13 +2584,16 @@ class Graphic2d_DisplayList : public MMgt_TShared {
 		Handle_Graphic2d_DisplayList ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_DisplayList();
 
 };
 %extend Graphic2d_DisplayList {
 	Handle_Graphic2d_DisplayList GetHandle() {
 	return *(Handle_Graphic2d_DisplayList*) &$self;
+	}
+};
+%extend Graphic2d_DisplayList {
+	~Graphic2d_DisplayList() {
+	printf("Call custom destructor for instance of Graphic2d_DisplayList\n");
 	}
 };
 
@@ -2369,13 +2606,16 @@ class Graphic2d_SequenceNodeOfSequenceOfPolyline : public TCollection_SeqNode {
 		Handle_Graphic2d_HSequenceOfVertex & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_SequenceNodeOfSequenceOfPolyline();
 
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfPolyline {
 	Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline GetHandle() {
 	return *(Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline*) &$self;
+	}
+};
+%extend Graphic2d_SequenceNodeOfSequenceOfPolyline {
+	~Graphic2d_SequenceNodeOfSequenceOfPolyline() {
+	printf("Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfPolyline\n");
 	}
 };
 
@@ -2388,13 +2628,16 @@ class Graphic2d_SequenceNodeOfSequenceOfPrimitives : public TCollection_SeqNode 
 		Handle_Graphic2d_Primitive & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_SequenceNodeOfSequenceOfPrimitives();
 
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfPrimitives {
 	Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives GetHandle() {
 	return *(Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives*) &$self;
+	}
+};
+%extend Graphic2d_SequenceNodeOfSequenceOfPrimitives {
+	~Graphic2d_SequenceNodeOfSequenceOfPrimitives() {
+	printf("Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfPrimitives\n");
 	}
 };
 
@@ -2449,13 +2692,16 @@ class Graphic2d_BufferList : public MMgt_TShared {
 		Handle_Graphic2d_BufferList ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_BufferList();
 
 };
 %extend Graphic2d_BufferList {
 	Handle_Graphic2d_BufferList GetHandle() {
 	return *(Handle_Graphic2d_BufferList*) &$self;
+	}
+};
+%extend Graphic2d_BufferList {
+	~Graphic2d_BufferList() {
+	printf("Call custom destructor for instance of Graphic2d_BufferList\n");
 	}
 };
 
@@ -2468,13 +2714,16 @@ class Graphic2d_SequenceNodeOfSequenceOfBuffer : public TCollection_SeqNode {
 		Handle_Graphic2d_Buffer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_SequenceNodeOfSequenceOfBuffer();
 
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfBuffer {
 	Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer GetHandle() {
 	return *(Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer*) &$self;
+	}
+};
+%extend Graphic2d_SequenceNodeOfSequenceOfBuffer {
+	~Graphic2d_SequenceNodeOfSequenceOfBuffer() {
+	printf("Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfBuffer\n");
 	}
 };
 
@@ -2499,13 +2748,16 @@ class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_CircleMarker();
 
 };
 %extend Graphic2d_CircleMarker {
 	Handle_Graphic2d_CircleMarker GetHandle() {
 	return *(Handle_Graphic2d_CircleMarker*) &$self;
+	}
+};
+%extend Graphic2d_CircleMarker {
+	~Graphic2d_CircleMarker() {
+	printf("Call custom destructor for instance of Graphic2d_CircleMarker\n");
 	}
 };
 
@@ -2538,13 +2790,16 @@ class Graphic2d_HidingText : public Graphic2d_Text {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_HidingText();
 
 };
 %extend Graphic2d_HidingText {
 	Handle_Graphic2d_HidingText GetHandle() {
 	return *(Handle_Graphic2d_HidingText*) &$self;
+	}
+};
+%extend Graphic2d_HidingText {
+	~Graphic2d_HidingText() {
+	printf("Call custom destructor for instance of Graphic2d_HidingText\n");
 	}
 };
 
@@ -2613,13 +2868,16 @@ class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_TransientDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_TransientDefinitionError();
 
 };
 %extend Graphic2d_TransientDefinitionError {
 	Handle_Graphic2d_TransientDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_TransientDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_TransientDefinitionError {
+	~Graphic2d_TransientDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_TransientDefinitionError\n");
 	}
 };
 
@@ -2642,13 +2900,16 @@ class Graphic2d_Marker : public Graphic2d_Line {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Marker();
 
 };
 %extend Graphic2d_Marker {
 	Handle_Graphic2d_Marker GetHandle() {
 	return *(Handle_Graphic2d_Marker*) &$self;
+	}
+};
+%extend Graphic2d_Marker {
+	~Graphic2d_Marker() {
+	printf("Call custom destructor for instance of Graphic2d_Marker\n");
 	}
 };
 
@@ -2697,13 +2958,16 @@ class Graphic2d_DrawerDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_DrawerDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_DrawerDefinitionError();
 
 };
 %extend Graphic2d_DrawerDefinitionError {
 	Handle_Graphic2d_DrawerDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_DrawerDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_DrawerDefinitionError {
+	~Graphic2d_DrawerDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_DrawerDefinitionError\n");
 	}
 };
 
@@ -2722,13 +2986,16 @@ class Graphic2d_Segment : public Graphic2d_Line {
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Segment();
 
 };
 %extend Graphic2d_Segment {
 	Handle_Graphic2d_Segment GetHandle() {
 	return *(Handle_Graphic2d_Segment*) &$self;
+	}
+};
+%extend Graphic2d_Segment {
+	~Graphic2d_Segment() {
+	printf("Call custom destructor for instance of Graphic2d_Segment\n");
 	}
 };
 
@@ -2803,13 +3070,16 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Paragraph();
 
 };
 %extend Graphic2d_Paragraph {
 	Handle_Graphic2d_Paragraph GetHandle() {
 	return *(Handle_Graphic2d_Paragraph*) &$self;
+	}
+};
+%extend Graphic2d_Paragraph {
+	~Graphic2d_Paragraph() {
+	printf("Call custom destructor for instance of Graphic2d_Paragraph\n");
 	}
 };
 
@@ -2822,13 +3092,16 @@ class Graphic2d_SequenceNodeOfSequenceOfVertex : public TCollection_SeqNode {
 		Graphic2d_Vertex & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_SequenceNodeOfSequenceOfVertex();
 
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfVertex {
 	Handle_Graphic2d_SequenceNodeOfSequenceOfVertex GetHandle() {
 	return *(Handle_Graphic2d_SequenceNodeOfSequenceOfVertex*) &$self;
+	}
+};
+%extend Graphic2d_SequenceNodeOfSequenceOfVertex {
+	~Graphic2d_SequenceNodeOfSequenceOfVertex() {
+	printf("Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfVertex\n");
 	}
 };
 
@@ -2971,13 +3244,16 @@ class Graphic2d_Drawer : public Standard_Transient {
 		Standard_Boolean IsIn(const Standard_ShortReal aMinX, const Standard_ShortReal aMaxX, const Standard_ShortReal aMinY, const Standard_ShortReal aMaxY) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Drawer();
 
 };
 %extend Graphic2d_Drawer {
 	Handle_Graphic2d_Drawer GetHandle() {
 	return *(Handle_Graphic2d_Drawer*) &$self;
+	}
+};
+%extend Graphic2d_Drawer {
+	~Graphic2d_Drawer() {
+	printf("Call custom destructor for instance of Graphic2d_Drawer\n");
 	}
 };
 
@@ -2996,13 +3272,16 @@ class Graphic2d_PolylineDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_PolylineDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_PolylineDefinitionError();
 
 };
 %extend Graphic2d_PolylineDefinitionError {
 	Handle_Graphic2d_PolylineDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_PolylineDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_PolylineDefinitionError {
+	~Graphic2d_PolylineDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_PolylineDefinitionError\n");
 	}
 };
 
@@ -3025,13 +3304,16 @@ class Graphic2d_EllipsMarker : public Graphic2d_VectorialMarker {
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_EllipsMarker();
 
 };
 %extend Graphic2d_EllipsMarker {
 	Handle_Graphic2d_EllipsMarker GetHandle() {
 	return *(Handle_Graphic2d_EllipsMarker*) &$self;
+	}
+};
+%extend Graphic2d_EllipsMarker {
+	~Graphic2d_EllipsMarker() {
+	printf("Call custom destructor for instance of Graphic2d_EllipsMarker\n");
 	}
 };
 
@@ -3050,13 +3332,16 @@ class Graphic2d_InfiniteLineDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_InfiniteLineDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_InfiniteLineDefinitionError();
 
 };
 %extend Graphic2d_InfiniteLineDefinitionError {
 	Handle_Graphic2d_InfiniteLineDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_InfiniteLineDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_InfiniteLineDefinitionError {
+	~Graphic2d_InfiniteLineDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_InfiniteLineDefinitionError\n");
 	}
 };
 
@@ -3087,13 +3372,16 @@ class Graphic2d_HArray1OfVertex : public MMgt_TShared {
 		Graphic2d_Array1OfVertex & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_HArray1OfVertex();
 
 };
 %extend Graphic2d_HArray1OfVertex {
 	Handle_Graphic2d_HArray1OfVertex GetHandle() {
 	return *(Handle_Graphic2d_HArray1OfVertex*) &$self;
+	}
+};
+%extend Graphic2d_HArray1OfVertex {
+	~Graphic2d_HArray1OfVertex() {
+	printf("Call custom destructor for instance of Graphic2d_HArray1OfVertex\n");
 	}
 };
 
@@ -3112,13 +3400,16 @@ class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_ImageDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_ImageDefinitionError();
 
 };
 %extend Graphic2d_ImageDefinitionError {
 	Handle_Graphic2d_ImageDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_ImageDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_ImageDefinitionError {
+	~Graphic2d_ImageDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_ImageDefinitionError\n");
 	}
 };
 
@@ -3137,13 +3428,16 @@ class Graphic2d_EllipsDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_EllipsDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_EllipsDefinitionError();
 
 };
 %extend Graphic2d_EllipsDefinitionError {
 	Handle_Graphic2d_EllipsDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_EllipsDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_EllipsDefinitionError {
+	~Graphic2d_EllipsDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_EllipsDefinitionError\n");
 	}
 };
 
@@ -3274,13 +3568,16 @@ class Graphic2d_Circle : public Graphic2d_Line {
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_Circle();
 
 };
 %extend Graphic2d_Circle {
 	Handle_Graphic2d_Circle GetHandle() {
 	return *(Handle_Graphic2d_Circle*) &$self;
+	}
+};
+%extend Graphic2d_Circle {
+	~Graphic2d_Circle() {
+	printf("Call custom destructor for instance of Graphic2d_Circle\n");
 	}
 };
 
@@ -3295,8 +3592,6 @@ class Graphic2d_View : public MMgt_TShared {
 		void Erase();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_View();
 		%feature("autodoc", "1");
 		void Update(const Handle_Aspect_Driver &aDriver, const Handle_Graphic2d_ViewMapping &aViewMapping, const Standard_Real aXPosition, const Standard_Real aYPosition, const Standard_Real aScale, const Standard_Boolean ClearBefore=1);
 		%feature("autodoc", "1");
@@ -3360,6 +3655,11 @@ class Graphic2d_View : public MMgt_TShared {
 	return *(Handle_Graphic2d_View*) &$self;
 	}
 };
+%extend Graphic2d_View {
+	~Graphic2d_View() {
+	printf("Call custom destructor for instance of Graphic2d_View\n");
+	}
+};
 
 %nodefaultctor Graphic2d_TransientManager;
 class Graphic2d_TransientManager : public Graphic2d_Drawer {
@@ -3370,8 +3670,6 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 		Graphic2d_TransientManager(const Graphic2d_ViewPtr &aView);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_TransientManager();
 		%feature("autodoc", "1");
 		Standard_Boolean BeginDraw(const Handle_Aspect_WindowDriver &aDriver, const Standard_Boolean ClearBefore=1);
 		%feature("autodoc", "1");
@@ -3433,6 +3731,11 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 %extend Graphic2d_TransientManager {
 	Handle_Graphic2d_TransientManager GetHandle() {
 	return *(Handle_Graphic2d_TransientManager*) &$self;
+	}
+};
+%extend Graphic2d_TransientManager {
+	~Graphic2d_TransientManager() {
+	printf("Call custom destructor for instance of Graphic2d_TransientManager\n");
 	}
 };
 
@@ -3501,12 +3804,15 @@ class Graphic2d_MarkerDefinitionError : public Standard_OutOfRange {
 		Handle_Graphic2d_MarkerDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Graphic2d_MarkerDefinitionError();
 
 };
 %extend Graphic2d_MarkerDefinitionError {
 	Handle_Graphic2d_MarkerDefinitionError GetHandle() {
 	return *(Handle_Graphic2d_MarkerDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_MarkerDefinitionError {
+	~Graphic2d_MarkerDefinitionError() {
+	printf("Call custom destructor for instance of Graphic2d_MarkerDefinitionError\n");
 	}
 };

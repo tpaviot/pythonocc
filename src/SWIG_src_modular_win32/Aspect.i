@@ -430,8 +430,6 @@ enum Aspect_FillMethod {
 class Handle_Aspect_ColorScale : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Aspect_ColorScale();
-		%feature("autodoc", "1");
 		Handle_Aspect_ColorScale();
 		%feature("autodoc", "1");
 		Handle_Aspect_ColorScale(const Handle_Aspect_ColorScale &aHandle);
@@ -446,12 +444,15 @@ class Handle_Aspect_ColorScale : public Handle_MMgt_TShared {
 	return (Aspect_ColorScale*)$self->Access();
 	}
 };
+%extend Handle_Aspect_ColorScale {
+	~Handle_Aspect_ColorScale() {
+	printf("Call custom destructor for instance of Handle_Aspect_ColorScale\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_Grid;
 class Handle_Aspect_Grid : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_Grid();
 		%feature("autodoc", "1");
 		Handle_Aspect_Grid();
 		%feature("autodoc", "1");
@@ -467,12 +468,15 @@ class Handle_Aspect_Grid : public Handle_MMgt_TShared {
 	return (Aspect_Grid*)$self->Access();
 	}
 };
+%extend Handle_Aspect_Grid {
+	~Handle_Aspect_Grid() {
+	printf("Call custom destructor for instance of Handle_Aspect_Grid\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_RectangularGrid;
 class Handle_Aspect_RectangularGrid : public Handle_Aspect_Grid {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_RectangularGrid();
 		%feature("autodoc", "1");
 		Handle_Aspect_RectangularGrid();
 		%feature("autodoc", "1");
@@ -488,12 +492,15 @@ class Handle_Aspect_RectangularGrid : public Handle_Aspect_Grid {
 	return (Aspect_RectangularGrid*)$self->Access();
 	}
 };
+%extend Handle_Aspect_RectangularGrid {
+	~Handle_Aspect_RectangularGrid() {
+	printf("Call custom destructor for instance of Handle_Aspect_RectangularGrid\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_WindowError;
 class Handle_Aspect_WindowError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_WindowError();
 		%feature("autodoc", "1");
 		Handle_Aspect_WindowError();
 		%feature("autodoc", "1");
@@ -509,12 +516,15 @@ class Handle_Aspect_WindowError : public Handle_Standard_OutOfRange {
 	return (Aspect_WindowError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_WindowError {
+	~Handle_Aspect_WindowError() {
+	printf("Call custom destructor for instance of Handle_Aspect_WindowError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry();
 		%feature("autodoc", "1");
 		Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry();
 		%feature("autodoc", "1");
@@ -530,12 +540,15 @@ class Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public Handle_TColle
 	return (Aspect_SequenceNodeOfSequenceOfWidthMapEntry*)$self->Access();
 	}
 };
+%extend Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
+	~Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry() {
+	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_WindowDefinitionError;
 class Handle_Aspect_WindowDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_WindowDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_WindowDefinitionError();
 		%feature("autodoc", "1");
@@ -551,12 +564,15 @@ class Handle_Aspect_WindowDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_WindowDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_WindowDefinitionError {
+	~Handle_Aspect_WindowDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_WindowDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_MarkerStyleDefinitionError;
 class Handle_Aspect_MarkerStyleDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_MarkerStyleDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_MarkerStyleDefinitionError();
 		%feature("autodoc", "1");
@@ -572,12 +588,15 @@ class Handle_Aspect_MarkerStyleDefinitionError : public Handle_Standard_OutOfRan
 	return (Aspect_MarkerStyleDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_MarkerStyleDefinitionError {
+	~Handle_Aspect_MarkerStyleDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_MarkerStyleDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_AspectMarkerDefinitionError;
 class Handle_Aspect_AspectMarkerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_AspectMarkerDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_AspectMarkerDefinitionError();
 		%feature("autodoc", "1");
@@ -593,12 +612,15 @@ class Handle_Aspect_AspectMarkerDefinitionError : public Handle_Standard_OutOfRa
 	return (Aspect_AspectMarkerDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_AspectMarkerDefinitionError {
+	~Handle_Aspect_AspectMarkerDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_AspectMarkerDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_WidthMap;
 class Handle_Aspect_WidthMap : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_WidthMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_WidthMap();
 		%feature("autodoc", "1");
@@ -614,12 +636,15 @@ class Handle_Aspect_WidthMap : public Handle_MMgt_TShared {
 	return (Aspect_WidthMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_WidthMap {
+	~Handle_Aspect_WidthMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_WidthMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_PixMap;
 class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_PixMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_PixMap();
 		%feature("autodoc", "1");
@@ -635,12 +660,15 @@ class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
 	return (Aspect_PixMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_PixMap {
+	~Handle_Aspect_PixMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_PixMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_GraphicDeviceDefinitionError;
 class Handle_Aspect_GraphicDeviceDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_GraphicDeviceDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_GraphicDeviceDefinitionError();
 		%feature("autodoc", "1");
@@ -656,12 +684,15 @@ class Handle_Aspect_GraphicDeviceDefinitionError : public Handle_Standard_OutOfR
 	return (Aspect_GraphicDeviceDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_GraphicDeviceDefinitionError {
+	~Handle_Aspect_GraphicDeviceDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_GraphicDeviceDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_MarkMap;
 class Handle_Aspect_MarkMap : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_MarkMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_MarkMap();
 		%feature("autodoc", "1");
@@ -677,12 +708,15 @@ class Handle_Aspect_MarkMap : public Handle_MMgt_TShared {
 	return (Aspect_MarkMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_MarkMap {
+	~Handle_Aspect_MarkMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_MarkMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_WidthMapDefinitionError;
 class Handle_Aspect_WidthMapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_WidthMapDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_WidthMapDefinitionError();
 		%feature("autodoc", "1");
@@ -698,12 +732,15 @@ class Handle_Aspect_WidthMapDefinitionError : public Handle_Standard_OutOfRange 
 	return (Aspect_WidthMapDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_WidthMapDefinitionError {
+	~Handle_Aspect_WidthMapDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_WidthMapDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_AspectLineDefinitionError;
 class Handle_Aspect_AspectLineDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_AspectLineDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_AspectLineDefinitionError();
 		%feature("autodoc", "1");
@@ -719,12 +756,15 @@ class Handle_Aspect_AspectLineDefinitionError : public Handle_Standard_OutOfRang
 	return (Aspect_AspectLineDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_AspectLineDefinitionError {
+	~Handle_Aspect_AspectLineDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_AspectLineDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry();
 		%feature("autodoc", "1");
 		Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry();
 		%feature("autodoc", "1");
@@ -740,12 +780,15 @@ class Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public Handle_TCollec
 	return (Aspect_SequenceNodeOfSequenceOfMarkMapEntry*)$self->Access();
 	}
 };
+%extend Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
+	~Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry() {
+	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_PixmapError;
 class Handle_Aspect_PixmapError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_PixmapError();
 		%feature("autodoc", "1");
 		Handle_Aspect_PixmapError();
 		%feature("autodoc", "1");
@@ -761,12 +804,15 @@ class Handle_Aspect_PixmapError : public Handle_Standard_OutOfRange {
 	return (Aspect_PixmapError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_PixmapError {
+	~Handle_Aspect_PixmapError() {
+	printf("Call custom destructor for instance of Handle_Aspect_PixmapError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_Driver;
 class Handle_Aspect_Driver : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_Driver();
 		%feature("autodoc", "1");
 		Handle_Aspect_Driver();
 		%feature("autodoc", "1");
@@ -782,12 +828,15 @@ class Handle_Aspect_Driver : public Handle_MMgt_TShared {
 	return (Aspect_Driver*)$self->Access();
 	}
 };
+%extend Handle_Aspect_Driver {
+	~Handle_Aspect_Driver() {
+	printf("Call custom destructor for instance of Handle_Aspect_Driver\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_ColorMapDefinitionError;
 class Handle_Aspect_ColorMapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_ColorMapDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_ColorMapDefinitionError();
 		%feature("autodoc", "1");
@@ -803,12 +852,15 @@ class Handle_Aspect_ColorMapDefinitionError : public Handle_Standard_OutOfRange 
 	return (Aspect_ColorMapDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_ColorMapDefinitionError {
+	~Handle_Aspect_ColorMapDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_ColorMapDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_TypeMap;
 class Handle_Aspect_TypeMap : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_TypeMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_TypeMap();
 		%feature("autodoc", "1");
@@ -824,12 +876,15 @@ class Handle_Aspect_TypeMap : public Handle_MMgt_TShared {
 	return (Aspect_TypeMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_TypeMap {
+	~Handle_Aspect_TypeMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_TypeMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_AspectFillArea;
 class Handle_Aspect_AspectFillArea : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_AspectFillArea();
 		%feature("autodoc", "1");
 		Handle_Aspect_AspectFillArea();
 		%feature("autodoc", "1");
@@ -845,12 +900,15 @@ class Handle_Aspect_AspectFillArea : public Handle_MMgt_TShared {
 	return (Aspect_AspectFillArea*)$self->Access();
 	}
 };
+%extend Handle_Aspect_AspectFillArea {
+	~Handle_Aspect_AspectFillArea() {
+	printf("Call custom destructor for instance of Handle_Aspect_AspectFillArea\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_IdentDefinitionError;
 class Handle_Aspect_IdentDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_IdentDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_IdentDefinitionError();
 		%feature("autodoc", "1");
@@ -866,12 +924,15 @@ class Handle_Aspect_IdentDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_IdentDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_IdentDefinitionError {
+	~Handle_Aspect_IdentDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_IdentDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry();
 		%feature("autodoc", "1");
 		Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry();
 		%feature("autodoc", "1");
@@ -887,12 +948,15 @@ class Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public Handle_TCollec
 	return (Aspect_SequenceNodeOfSequenceOfTypeMapEntry*)$self->Access();
 	}
 };
+%extend Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
+	~Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry() {
+	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_ColorMap;
 class Handle_Aspect_ColorMap : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_ColorMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_ColorMap();
 		%feature("autodoc", "1");
@@ -908,12 +972,15 @@ class Handle_Aspect_ColorMap : public Handle_MMgt_TShared {
 	return (Aspect_ColorMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_ColorMap {
+	~Handle_Aspect_ColorMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_ColorMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_FontStyleDefinitionError;
 class Handle_Aspect_FontStyleDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_FontStyleDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_FontStyleDefinitionError();
 		%feature("autodoc", "1");
@@ -929,12 +996,15 @@ class Handle_Aspect_FontStyleDefinitionError : public Handle_Standard_OutOfRange
 	return (Aspect_FontStyleDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_FontStyleDefinitionError {
+	~Handle_Aspect_FontStyleDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_FontStyleDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_AspectMarker;
 class Handle_Aspect_AspectMarker : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_AspectMarker();
 		%feature("autodoc", "1");
 		Handle_Aspect_AspectMarker();
 		%feature("autodoc", "1");
@@ -950,12 +1020,15 @@ class Handle_Aspect_AspectMarker : public Handle_MMgt_TShared {
 	return (Aspect_AspectMarker*)$self->Access();
 	}
 };
+%extend Handle_Aspect_AspectMarker {
+	~Handle_Aspect_AspectMarker() {
+	printf("Call custom destructor for instance of Handle_Aspect_AspectMarker\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_LineStyleDefinitionError;
 class Handle_Aspect_LineStyleDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_LineStyleDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_LineStyleDefinitionError();
 		%feature("autodoc", "1");
@@ -971,12 +1044,15 @@ class Handle_Aspect_LineStyleDefinitionError : public Handle_Standard_OutOfRange
 	return (Aspect_LineStyleDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_LineStyleDefinitionError {
+	~Handle_Aspect_LineStyleDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_LineStyleDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_GenericColorMap;
 class Handle_Aspect_GenericColorMap : public Handle_Aspect_ColorMap {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_GenericColorMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_GenericColorMap();
 		%feature("autodoc", "1");
@@ -992,12 +1068,15 @@ class Handle_Aspect_GenericColorMap : public Handle_Aspect_ColorMap {
 	return (Aspect_GenericColorMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_GenericColorMap {
+	~Handle_Aspect_GenericColorMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_GenericColorMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_PixmapDefinitionError;
 class Handle_Aspect_PixmapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_PixmapDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_PixmapDefinitionError();
 		%feature("autodoc", "1");
@@ -1013,12 +1092,15 @@ class Handle_Aspect_PixmapDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_PixmapDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_PixmapDefinitionError {
+	~Handle_Aspect_PixmapDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_PixmapDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry();
 		%feature("autodoc", "1");
 		Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry();
 		%feature("autodoc", "1");
@@ -1034,12 +1116,15 @@ class Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry : public Handle_TCollec
 	return (Aspect_SequenceNodeOfSequenceOfFontMapEntry*)$self->Access();
 	}
 };
+%extend Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry {
+	~Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry() {
+	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_TypeMapDefinitionError;
 class Handle_Aspect_TypeMapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_TypeMapDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_TypeMapDefinitionError();
 		%feature("autodoc", "1");
@@ -1055,12 +1140,15 @@ class Handle_Aspect_TypeMapDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_TypeMapDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_TypeMapDefinitionError {
+	~Handle_Aspect_TypeMapDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_TypeMapDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_ColorRampColorMap;
 class Handle_Aspect_ColorRampColorMap : public Handle_Aspect_ColorMap {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_ColorRampColorMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_ColorRampColorMap();
 		%feature("autodoc", "1");
@@ -1076,12 +1164,15 @@ class Handle_Aspect_ColorRampColorMap : public Handle_Aspect_ColorMap {
 	return (Aspect_ColorRampColorMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_ColorRampColorMap {
+	~Handle_Aspect_ColorRampColorMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_ColorRampColorMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_Window;
 class Handle_Aspect_Window : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_Window();
 		%feature("autodoc", "1");
 		Handle_Aspect_Window();
 		%feature("autodoc", "1");
@@ -1097,12 +1188,15 @@ class Handle_Aspect_Window : public Handle_MMgt_TShared {
 	return (Aspect_Window*)$self->Access();
 	}
 };
+%extend Handle_Aspect_Window {
+	~Handle_Aspect_Window() {
+	printf("Call custom destructor for instance of Handle_Aspect_Window\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_BadAccess;
 class Handle_Aspect_BadAccess : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_BadAccess();
 		%feature("autodoc", "1");
 		Handle_Aspect_BadAccess();
 		%feature("autodoc", "1");
@@ -1118,12 +1212,15 @@ class Handle_Aspect_BadAccess : public Handle_Standard_DomainError {
 	return (Aspect_BadAccess*)$self->Access();
 	}
 };
+%extend Handle_Aspect_BadAccess {
+	~Handle_Aspect_BadAccess() {
+	printf("Call custom destructor for instance of Handle_Aspect_BadAccess\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_FontMap;
 class Handle_Aspect_FontMap : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_FontMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_FontMap();
 		%feature("autodoc", "1");
@@ -1139,12 +1236,15 @@ class Handle_Aspect_FontMap : public Handle_MMgt_TShared {
 	return (Aspect_FontMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_FontMap {
+	~Handle_Aspect_FontMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_FontMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_LineWidthDefinitionError;
 class Handle_Aspect_LineWidthDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_LineWidthDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_LineWidthDefinitionError();
 		%feature("autodoc", "1");
@@ -1160,12 +1260,15 @@ class Handle_Aspect_LineWidthDefinitionError : public Handle_Standard_OutOfRange
 	return (Aspect_LineWidthDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_LineWidthDefinitionError {
+	~Handle_Aspect_LineWidthDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_LineWidthDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_FontMapDefinitionError;
 class Handle_Aspect_FontMapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_FontMapDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_FontMapDefinitionError();
 		%feature("autodoc", "1");
@@ -1181,12 +1284,15 @@ class Handle_Aspect_FontMapDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_FontMapDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_FontMapDefinitionError {
+	~Handle_Aspect_FontMapDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_FontMapDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_AspectLine;
 class Handle_Aspect_AspectLine : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_AspectLine();
 		%feature("autodoc", "1");
 		Handle_Aspect_AspectLine();
 		%feature("autodoc", "1");
@@ -1202,12 +1308,15 @@ class Handle_Aspect_AspectLine : public Handle_MMgt_TShared {
 	return (Aspect_AspectLine*)$self->Access();
 	}
 };
+%extend Handle_Aspect_AspectLine {
+	~Handle_Aspect_AspectLine() {
+	printf("Call custom destructor for instance of Handle_Aspect_AspectLine\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_DriverError;
 class Handle_Aspect_DriverError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_DriverError();
 		%feature("autodoc", "1");
 		Handle_Aspect_DriverError();
 		%feature("autodoc", "1");
@@ -1223,12 +1332,15 @@ class Handle_Aspect_DriverError : public Handle_Standard_OutOfRange {
 	return (Aspect_DriverError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_DriverError {
+	~Handle_Aspect_DriverError() {
+	printf("Call custom destructor for instance of Handle_Aspect_DriverError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_ColorCubeColorMap;
 class Handle_Aspect_ColorCubeColorMap : public Handle_Aspect_ColorMap {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_ColorCubeColorMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_ColorCubeColorMap();
 		%feature("autodoc", "1");
@@ -1244,12 +1356,15 @@ class Handle_Aspect_ColorCubeColorMap : public Handle_Aspect_ColorMap {
 	return (Aspect_ColorCubeColorMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_ColorCubeColorMap {
+	~Handle_Aspect_ColorCubeColorMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_ColorCubeColorMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_WindowDriver;
 class Handle_Aspect_WindowDriver : public Handle_Aspect_Driver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_WindowDriver();
 		%feature("autodoc", "1");
 		Handle_Aspect_WindowDriver();
 		%feature("autodoc", "1");
@@ -1265,12 +1380,15 @@ class Handle_Aspect_WindowDriver : public Handle_Aspect_Driver {
 	return (Aspect_WindowDriver*)$self->Access();
 	}
 };
+%extend Handle_Aspect_WindowDriver {
+	~Handle_Aspect_WindowDriver() {
+	printf("Call custom destructor for instance of Handle_Aspect_WindowDriver\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_MarkMapDefinitionError;
 class Handle_Aspect_MarkMapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_MarkMapDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_MarkMapDefinitionError();
 		%feature("autodoc", "1");
@@ -1286,12 +1404,15 @@ class Handle_Aspect_MarkMapDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_MarkMapDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_MarkMapDefinitionError {
+	~Handle_Aspect_MarkMapDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_MarkMapDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_GraphicDriver;
 class Handle_Aspect_GraphicDriver : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_GraphicDriver();
 		%feature("autodoc", "1");
 		Handle_Aspect_GraphicDriver();
 		%feature("autodoc", "1");
@@ -1307,12 +1428,15 @@ class Handle_Aspect_GraphicDriver : public Handle_MMgt_TShared {
 	return (Aspect_GraphicDriver*)$self->Access();
 	}
 };
+%extend Handle_Aspect_GraphicDriver {
+	~Handle_Aspect_GraphicDriver() {
+	printf("Call custom destructor for instance of Handle_Aspect_GraphicDriver\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfColor;
 class Handle_Aspect_SequenceNodeOfSequenceOfColor : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_SequenceNodeOfSequenceOfColor();
 		%feature("autodoc", "1");
 		Handle_Aspect_SequenceNodeOfSequenceOfColor();
 		%feature("autodoc", "1");
@@ -1328,12 +1452,15 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColor : public Handle_TCollection_Se
 	return (Aspect_SequenceNodeOfSequenceOfColor*)$self->Access();
 	}
 };
+%extend Handle_Aspect_SequenceNodeOfSequenceOfColor {
+	~Handle_Aspect_SequenceNodeOfSequenceOfColor() {
+	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfColor\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_GraphicDevice;
 class Handle_Aspect_GraphicDevice : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_GraphicDevice();
 		%feature("autodoc", "1");
 		Handle_Aspect_GraphicDevice();
 		%feature("autodoc", "1");
@@ -1349,12 +1476,15 @@ class Handle_Aspect_GraphicDevice : public Handle_MMgt_TShared {
 	return (Aspect_GraphicDevice*)$self->Access();
 	}
 };
+%extend Handle_Aspect_GraphicDevice {
+	~Handle_Aspect_GraphicDevice() {
+	printf("Call custom destructor for instance of Handle_Aspect_GraphicDevice\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_CircularGrid;
 class Handle_Aspect_CircularGrid : public Handle_Aspect_Grid {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_CircularGrid();
 		%feature("autodoc", "1");
 		Handle_Aspect_CircularGrid();
 		%feature("autodoc", "1");
@@ -1370,12 +1500,15 @@ class Handle_Aspect_CircularGrid : public Handle_Aspect_Grid {
 	return (Aspect_CircularGrid*)$self->Access();
 	}
 };
+%extend Handle_Aspect_CircularGrid {
+	~Handle_Aspect_CircularGrid() {
+	printf("Call custom destructor for instance of Handle_Aspect_CircularGrid\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_UndefinedMap;
 class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_UndefinedMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_UndefinedMap();
 		%feature("autodoc", "1");
@@ -1391,12 +1524,15 @@ class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
 	return (Aspect_UndefinedMap*)$self->Access();
 	}
 };
+%extend Handle_Aspect_UndefinedMap {
+	~Handle_Aspect_UndefinedMap() {
+	printf("Call custom destructor for instance of Handle_Aspect_UndefinedMap\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_AspectFillAreaDefinitionError;
 class Handle_Aspect_AspectFillAreaDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_AspectFillAreaDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_AspectFillAreaDefinitionError();
 		%feature("autodoc", "1");
@@ -1412,12 +1548,15 @@ class Handle_Aspect_AspectFillAreaDefinitionError : public Handle_Standard_OutOf
 	return (Aspect_AspectFillAreaDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_AspectFillAreaDefinitionError {
+	~Handle_Aspect_AspectFillAreaDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_AspectFillAreaDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_DriverDefinitionError;
 class Handle_Aspect_DriverDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_DriverDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_DriverDefinitionError();
 		%feature("autodoc", "1");
@@ -1433,12 +1572,15 @@ class Handle_Aspect_DriverDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_DriverDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_DriverDefinitionError {
+	~Handle_Aspect_DriverDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_DriverDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_PolyStyleDefinitionError;
 class Handle_Aspect_PolyStyleDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_PolyStyleDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_PolyStyleDefinitionError();
 		%feature("autodoc", "1");
@@ -1454,12 +1596,15 @@ class Handle_Aspect_PolyStyleDefinitionError : public Handle_Standard_OutOfRange
 	return (Aspect_PolyStyleDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_PolyStyleDefinitionError {
+	~Handle_Aspect_PolyStyleDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_PolyStyleDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_EdgeDefinitionError;
 class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_EdgeDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Aspect_EdgeDefinitionError();
 		%feature("autodoc", "1");
@@ -1475,12 +1620,15 @@ class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_EdgeDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Aspect_EdgeDefinitionError {
+	~Handle_Aspect_EdgeDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Aspect_EdgeDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry();
 		%feature("autodoc", "1");
 		Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry();
 		%feature("autodoc", "1");
@@ -1496,6 +1644,11 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry : public Handle_TColle
 	return (Aspect_SequenceNodeOfSequenceOfColorMapEntry*)$self->Access();
 	}
 };
+%extend Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry {
+	~Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry() {
+	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfFontMapEntry;
 class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
@@ -1506,13 +1659,16 @@ class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
 		Aspect_FontMapEntry & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_SequenceNodeOfSequenceOfFontMapEntry();
 
 };
 %extend Aspect_SequenceNodeOfSequenceOfFontMapEntry {
 	Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry GetHandle() {
 	return *(Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry*) &$self;
+	}
+};
+%extend Aspect_SequenceNodeOfSequenceOfFontMapEntry {
+	~Aspect_SequenceNodeOfSequenceOfFontMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfFontMapEntry\n");
 	}
 };
 
@@ -1531,13 +1687,16 @@ class Aspect_MarkMapDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_MarkMapDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_MarkMapDefinitionError();
 
 };
 %extend Aspect_MarkMapDefinitionError {
 	Handle_Aspect_MarkMapDefinitionError GetHandle() {
 	return *(Handle_Aspect_MarkMapDefinitionError*) &$self;
+	}
+};
+%extend Aspect_MarkMapDefinitionError {
+	~Aspect_MarkMapDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_MarkMapDefinitionError\n");
 	}
 };
 
@@ -1560,13 +1719,16 @@ class Aspect_TypeMap : public MMgt_TShared {
 		const Aspect_TypeMapEntry & Entry(const Standard_Integer AnIndex) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_TypeMap();
 
 };
 %extend Aspect_TypeMap {
 	Handle_Aspect_TypeMap GetHandle() {
 	return *(Handle_Aspect_TypeMap*) &$self;
+	}
+};
+%extend Aspect_TypeMap {
+	~Aspect_TypeMap() {
+	printf("Call custom destructor for instance of Aspect_TypeMap\n");
 	}
 };
 
@@ -1593,13 +1755,16 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_AspectFillAreaDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_AspectFillAreaDefinitionError();
 
 };
 %extend Aspect_AspectFillAreaDefinitionError {
 	Handle_Aspect_AspectFillAreaDefinitionError GetHandle() {
 	return *(Handle_Aspect_AspectFillAreaDefinitionError*) &$self;
+	}
+};
+%extend Aspect_AspectFillAreaDefinitionError {
+	~Aspect_AspectFillAreaDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_AspectFillAreaDefinitionError\n");
 	}
 };
 
@@ -1691,6 +1856,11 @@ class Aspect_Grid : public MMgt_TShared {
 	return *(Handle_Aspect_Grid*) &$self;
 	}
 };
+%extend Aspect_Grid {
+	~Aspect_Grid() {
+	printf("Call custom destructor for instance of Aspect_Grid\n");
+	}
+};
 
 %nodefaultctor Aspect_CircularGrid;
 class Aspect_CircularGrid : public Aspect_Grid {
@@ -1707,13 +1877,16 @@ class Aspect_CircularGrid : public Aspect_Grid {
 		Quantity_Length RadiusStep() const;
 		%feature("autodoc", "1");
 		Standard_Integer DivisionNumber() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_CircularGrid();
 
 };
 %extend Aspect_CircularGrid {
 	Handle_Aspect_CircularGrid GetHandle() {
 	return *(Handle_Aspect_CircularGrid*) &$self;
+	}
+};
+%extend Aspect_CircularGrid {
+	~Aspect_CircularGrid() {
+	printf("Call custom destructor for instance of Aspect_CircularGrid\n");
 	}
 };
 
@@ -1732,13 +1905,16 @@ class Aspect_ColorMapDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_ColorMapDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_ColorMapDefinitionError();
 
 };
 %extend Aspect_ColorMapDefinitionError {
 	Handle_Aspect_ColorMapDefinitionError GetHandle() {
 	return *(Handle_Aspect_ColorMapDefinitionError*) &$self;
+	}
+};
+%extend Aspect_ColorMapDefinitionError {
+	~Aspect_ColorMapDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_ColorMapDefinitionError\n");
 	}
 };
 
@@ -1764,6 +1940,11 @@ class Aspect_PixMap : public MMgt_TShared {
 	return *(Handle_Aspect_PixMap*) &$self;
 	}
 };
+%extend Aspect_PixMap {
+	~Aspect_PixMap() {
+	printf("Call custom destructor for instance of Aspect_PixMap\n");
+	}
+};
 
 %nodefaultctor Aspect_AspectMarker;
 class Aspect_AspectMarker : public MMgt_TShared {
@@ -1778,13 +1959,16 @@ class Aspect_AspectMarker : public MMgt_TShared {
 		void Values(Quantity_Color & AColor, Aspect_TypeOfMarker & AType, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_AspectMarker();
 
 };
 %extend Aspect_AspectMarker {
 	Handle_Aspect_AspectMarker GetHandle() {
 	return *(Handle_Aspect_AspectMarker*) &$self;
+	}
+};
+%extend Aspect_AspectMarker {
+	~Aspect_AspectMarker() {
+	printf("Call custom destructor for instance of Aspect_AspectMarker\n");
 	}
 };
 
@@ -1820,6 +2004,11 @@ class Aspect_ColorMap : public MMgt_TShared {
 	return *(Handle_Aspect_ColorMap*) &$self;
 	}
 };
+%extend Aspect_ColorMap {
+	~Aspect_ColorMap() {
+	printf("Call custom destructor for instance of Aspect_ColorMap\n");
+	}
+};
 
 %nodefaultctor Aspect_ColorCubeColorMap;
 class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
@@ -1828,13 +2017,16 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 		Aspect_ColorCubeColorMap(const Standard_Integer base_pixel, const Standard_Integer redmax, const Standard_Integer redmult, const Standard_Integer greenmax, const Standard_Integer greenmult, const Standard_Integer bluemax, const Standard_Integer bluemult);
 		%feature("autodoc", "1");
 		void ColorCubeDefinition(Standard_Integer & base_pixel, Standard_Integer & redmax, Standard_Integer & redmult, Standard_Integer & greenmax, Standard_Integer & greenmult, Standard_Integer & bluemax, Standard_Integer & bluemult) const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_ColorCubeColorMap();
 
 };
 %extend Aspect_ColorCubeColorMap {
 	Handle_Aspect_ColorCubeColorMap GetHandle() {
 	return *(Handle_Aspect_ColorCubeColorMap*) &$self;
+	}
+};
+%extend Aspect_ColorCubeColorMap {
+	~Aspect_ColorCubeColorMap() {
+	printf("Call custom destructor for instance of Aspect_ColorCubeColorMap\n");
 	}
 };
 
@@ -1977,13 +2169,16 @@ class Aspect_PixmapError : public Standard_OutOfRange {
 		Handle_Aspect_PixmapError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_PixmapError();
 
 };
 %extend Aspect_PixmapError {
 	Handle_Aspect_PixmapError GetHandle() {
 	return *(Handle_Aspect_PixmapError*) &$self;
+	}
+};
+%extend Aspect_PixmapError {
+	~Aspect_PixmapError() {
+	printf("Call custom destructor for instance of Aspect_PixmapError\n");
 	}
 };
 
@@ -2052,13 +2247,16 @@ class Aspect_PixmapDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_PixmapDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_PixmapDefinitionError();
 
 };
 %extend Aspect_PixmapDefinitionError {
 	Handle_Aspect_PixmapDefinitionError GetHandle() {
 	return *(Handle_Aspect_PixmapDefinitionError*) &$self;
+	}
+};
+%extend Aspect_PixmapDefinitionError {
+	~Aspect_PixmapDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_PixmapDefinitionError\n");
 	}
 };
 
@@ -2168,6 +2366,11 @@ class Aspect_Driver : public MMgt_TShared {
 	return *(Handle_Aspect_Driver*) &$self;
 	}
 };
+%extend Aspect_Driver {
+	~Aspect_Driver() {
+	printf("Call custom destructor for instance of Aspect_Driver\n");
+	}
+};
 
 %nodefaultctor Aspect_ColorRampColorMap;
 class Aspect_ColorRampColorMap : public Aspect_ColorMap {
@@ -2190,13 +2393,16 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 		virtual		Standard_Integer AddEntry(const Quantity_Color &aColor);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_ColorRampColorMap();
 
 };
 %extend Aspect_ColorRampColorMap {
 	Handle_Aspect_ColorRampColorMap GetHandle() {
 	return *(Handle_Aspect_ColorRampColorMap*) &$self;
+	}
+};
+%extend Aspect_ColorRampColorMap {
+	~Aspect_ColorRampColorMap() {
+	printf("Call custom destructor for instance of Aspect_ColorRampColorMap\n");
 	}
 };
 
@@ -2221,13 +2427,16 @@ class Aspect_GenericColorMap : public Aspect_ColorMap {
 		virtual		const Aspect_ColorMapEntry & NearestEntry(const Quantity_Color &aColor) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_GenericColorMap();
 
 };
 %extend Aspect_GenericColorMap {
 	Handle_Aspect_GenericColorMap GetHandle() {
 	return *(Handle_Aspect_GenericColorMap*) &$self;
+	}
+};
+%extend Aspect_GenericColorMap {
+	~Aspect_GenericColorMap() {
+	printf("Call custom destructor for instance of Aspect_GenericColorMap\n");
 	}
 };
 
@@ -2240,13 +2449,16 @@ class Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public TCollection_SeqNode {
 		Aspect_MarkMapEntry & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_SequenceNodeOfSequenceOfMarkMapEntry();
 
 };
 %extend Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
 	Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry GetHandle() {
 	return *(Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry*) &$self;
+	}
+};
+%extend Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
+	~Aspect_SequenceNodeOfSequenceOfMarkMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfMarkMapEntry\n");
 	}
 };
 
@@ -2269,13 +2481,16 @@ class Aspect_MarkMap : public MMgt_TShared {
 		Aspect_MarkMapEntry Entry(const Standard_Integer AnIndex) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_MarkMap();
 
 };
 %extend Aspect_MarkMap {
 	Handle_Aspect_MarkMap GetHandle() {
 	return *(Handle_Aspect_MarkMap*) &$self;
+	}
+};
+%extend Aspect_MarkMap {
+	~Aspect_MarkMap() {
+	printf("Call custom destructor for instance of Aspect_MarkMap\n");
 	}
 };
 
@@ -2294,13 +2509,16 @@ class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_DriverDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_DriverDefinitionError();
 
 };
 %extend Aspect_DriverDefinitionError {
 	Handle_Aspect_DriverDefinitionError GetHandle() {
 	return *(Handle_Aspect_DriverDefinitionError*) &$self;
+	}
+};
+%extend Aspect_DriverDefinitionError {
+	~Aspect_DriverDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_DriverDefinitionError\n");
 	}
 };
 
@@ -2345,13 +2563,16 @@ class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
 		Aspect_TypeMapEntry & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_SequenceNodeOfSequenceOfTypeMapEntry();
 
 };
 %extend Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
 	Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry GetHandle() {
 	return *(Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry*) &$self;
+	}
+};
+%extend Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
+	~Aspect_SequenceNodeOfSequenceOfTypeMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");
 	}
 };
 
@@ -2426,13 +2647,16 @@ class Aspect_WidthMap : public MMgt_TShared {
 		void Dump() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_WidthMap();
 
 };
 %extend Aspect_WidthMap {
 	Handle_Aspect_WidthMap GetHandle() {
 	return *(Handle_Aspect_WidthMap*) &$self;
+	}
+};
+%extend Aspect_WidthMap {
+	~Aspect_WidthMap() {
+	printf("Call custom destructor for instance of Aspect_WidthMap\n");
 	}
 };
 
@@ -2451,13 +2675,16 @@ class Aspect_UndefinedMap : public Standard_OutOfRange {
 		Handle_Aspect_UndefinedMap NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_UndefinedMap();
 
 };
 %extend Aspect_UndefinedMap {
 	Handle_Aspect_UndefinedMap GetHandle() {
 	return *(Handle_Aspect_UndefinedMap*) &$self;
+	}
+};
+%extend Aspect_UndefinedMap {
+	~Aspect_UndefinedMap() {
+	printf("Call custom destructor for instance of Aspect_UndefinedMap\n");
 	}
 };
 
@@ -2476,13 +2703,16 @@ class Aspect_EdgeDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_EdgeDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_EdgeDefinitionError();
 
 };
 %extend Aspect_EdgeDefinitionError {
 	Handle_Aspect_EdgeDefinitionError GetHandle() {
 	return *(Handle_Aspect_EdgeDefinitionError*) &$self;
+	}
+};
+%extend Aspect_EdgeDefinitionError {
+	~Aspect_EdgeDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_EdgeDefinitionError\n");
 	}
 };
 
@@ -2501,13 +2731,16 @@ class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_LineWidthDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_LineWidthDefinitionError();
 
 };
 %extend Aspect_LineWidthDefinitionError {
 	Handle_Aspect_LineWidthDefinitionError GetHandle() {
 	return *(Handle_Aspect_LineWidthDefinitionError*) &$self;
+	}
+};
+%extend Aspect_LineWidthDefinitionError {
+	~Aspect_LineWidthDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_LineWidthDefinitionError\n");
 	}
 };
 
@@ -2536,13 +2769,16 @@ class Aspect_AspectFillArea : public MMgt_TShared {
 		void Values(Aspect_InteriorStyle & AStyle, Quantity_Color & AIntColor, Quantity_Color & BackIntColor, Quantity_Color & AEdgeColor, Aspect_TypeOfLine & AType, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_AspectFillArea();
 
 };
 %extend Aspect_AspectFillArea {
 	Handle_Aspect_AspectFillArea GetHandle() {
 	return *(Handle_Aspect_AspectFillArea*) &$self;
+	}
+};
+%extend Aspect_AspectFillArea {
+	~Aspect_AspectFillArea() {
+	printf("Call custom destructor for instance of Aspect_AspectFillArea\n");
 	}
 };
 
@@ -2561,13 +2797,16 @@ class Aspect_FontStyleDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_FontStyleDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_FontStyleDefinitionError();
 
 };
 %extend Aspect_FontStyleDefinitionError {
 	Handle_Aspect_FontStyleDefinitionError GetHandle() {
 	return *(Handle_Aspect_FontStyleDefinitionError*) &$self;
+	}
+};
+%extend Aspect_FontStyleDefinitionError {
+	~Aspect_FontStyleDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_FontStyleDefinitionError\n");
 	}
 };
 
@@ -2702,13 +2941,16 @@ class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_TypeMapDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_TypeMapDefinitionError();
 
 };
 %extend Aspect_TypeMapDefinitionError {
 	Handle_Aspect_TypeMapDefinitionError GetHandle() {
 	return *(Handle_Aspect_TypeMapDefinitionError*) &$self;
+	}
+};
+%extend Aspect_TypeMapDefinitionError {
+	~Aspect_TypeMapDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_TypeMapDefinitionError\n");
 	}
 };
 
@@ -2800,6 +3042,11 @@ class Aspect_Window : public MMgt_TShared {
 	return *(Handle_Aspect_Window*) &$self;
 	}
 };
+%extend Aspect_Window {
+	~Aspect_Window() {
+	printf("Call custom destructor for instance of Aspect_Window\n");
+	}
+};
 
 %nodefaultctor Aspect_GenId;
 class Aspect_GenId {
@@ -2840,13 +3087,16 @@ class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_PolyStyleDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_PolyStyleDefinitionError();
 
 };
 %extend Aspect_PolyStyleDefinitionError {
 	Handle_Aspect_PolyStyleDefinitionError GetHandle() {
 	return *(Handle_Aspect_PolyStyleDefinitionError*) &$self;
+	}
+};
+%extend Aspect_PolyStyleDefinitionError {
+	~Aspect_PolyStyleDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_PolyStyleDefinitionError\n");
 	}
 };
 
@@ -2881,13 +3131,16 @@ class Aspect_MarkerStyleDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_MarkerStyleDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_MarkerStyleDefinitionError();
 
 };
 %extend Aspect_MarkerStyleDefinitionError {
 	Handle_Aspect_MarkerStyleDefinitionError GetHandle() {
 	return *(Handle_Aspect_MarkerStyleDefinitionError*) &$self;
+	}
+};
+%extend Aspect_MarkerStyleDefinitionError {
+	~Aspect_MarkerStyleDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_MarkerStyleDefinitionError\n");
 	}
 };
 
@@ -2906,13 +3159,16 @@ class Aspect_GraphicDeviceDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_GraphicDeviceDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_GraphicDeviceDefinitionError();
 
 };
 %extend Aspect_GraphicDeviceDefinitionError {
 	Handle_Aspect_GraphicDeviceDefinitionError GetHandle() {
 	return *(Handle_Aspect_GraphicDeviceDefinitionError*) &$self;
+	}
+};
+%extend Aspect_GraphicDeviceDefinitionError {
+	~Aspect_GraphicDeviceDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_GraphicDeviceDefinitionError\n");
 	}
 };
 
@@ -2931,13 +3187,16 @@ class Aspect_DriverError : public Standard_OutOfRange {
 		Handle_Aspect_DriverError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_DriverError();
 
 };
 %extend Aspect_DriverError {
 	Handle_Aspect_DriverError GetHandle() {
 	return *(Handle_Aspect_DriverError*) &$self;
+	}
+};
+%extend Aspect_DriverError {
+	~Aspect_DriverError() {
+	printf("Call custom destructor for instance of Aspect_DriverError\n");
 	}
 };
 
@@ -2968,13 +3227,16 @@ class Aspect_RectangularGrid : public Aspect_Grid {
 		virtual		void Init();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_RectangularGrid();
 
 };
 %extend Aspect_RectangularGrid {
 	Handle_Aspect_RectangularGrid GetHandle() {
 	return *(Handle_Aspect_RectangularGrid*) &$self;
+	}
+};
+%extend Aspect_RectangularGrid {
+	~Aspect_RectangularGrid() {
+	printf("Call custom destructor for instance of Aspect_RectangularGrid\n");
 	}
 };
 
@@ -3052,6 +3314,11 @@ class Aspect_WindowDriver : public Aspect_Driver {
 	return *(Handle_Aspect_WindowDriver*) &$self;
 	}
 };
+%extend Aspect_WindowDriver {
+	~Aspect_WindowDriver() {
+	printf("Call custom destructor for instance of Aspect_WindowDriver\n");
+	}
+};
 
 %nodefaultctor Aspect_AspectMarkerDefinitionError;
 class Aspect_AspectMarkerDefinitionError : public Standard_OutOfRange {
@@ -3068,13 +3335,16 @@ class Aspect_AspectMarkerDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_AspectMarkerDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_AspectMarkerDefinitionError();
 
 };
 %extend Aspect_AspectMarkerDefinitionError {
 	Handle_Aspect_AspectMarkerDefinitionError GetHandle() {
 	return *(Handle_Aspect_AspectMarkerDefinitionError*) &$self;
+	}
+};
+%extend Aspect_AspectMarkerDefinitionError {
+	~Aspect_AspectMarkerDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_AspectMarkerDefinitionError\n");
 	}
 };
 
@@ -3087,13 +3357,16 @@ class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode 
 		Aspect_ColorMapEntry & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_SequenceNodeOfSequenceOfColorMapEntry();
 
 };
 %extend Aspect_SequenceNodeOfSequenceOfColorMapEntry {
 	Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry GetHandle() {
 	return *(Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry*) &$self;
+	}
+};
+%extend Aspect_SequenceNodeOfSequenceOfColorMapEntry {
+	~Aspect_SequenceNodeOfSequenceOfColorMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");
 	}
 };
 
@@ -3160,13 +3433,16 @@ class Aspect_AspectLine : public MMgt_TShared {
 		void Values(Quantity_Color & AColor, Aspect_TypeOfLine & AType, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_AspectLine();
 
 };
 %extend Aspect_AspectLine {
 	Handle_Aspect_AspectLine GetHandle() {
 	return *(Handle_Aspect_AspectLine*) &$self;
+	}
+};
+%extend Aspect_AspectLine {
+	~Aspect_AspectLine() {
+	printf("Call custom destructor for instance of Aspect_AspectLine\n");
 	}
 };
 
@@ -3185,13 +3461,16 @@ class Aspect_BadAccess : public Standard_DomainError {
 		Handle_Aspect_BadAccess NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_BadAccess();
 
 };
 %extend Aspect_BadAccess {
 	Handle_Aspect_BadAccess GetHandle() {
 	return *(Handle_Aspect_BadAccess*) &$self;
+	}
+};
+%extend Aspect_BadAccess {
+	~Aspect_BadAccess() {
+	printf("Call custom destructor for instance of Aspect_BadAccess\n");
 	}
 };
 
@@ -3210,13 +3489,16 @@ class Aspect_AspectLineDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_AspectLineDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_AspectLineDefinitionError();
 
 };
 %extend Aspect_AspectLineDefinitionError {
 	Handle_Aspect_AspectLineDefinitionError GetHandle() {
 	return *(Handle_Aspect_AspectLineDefinitionError*) &$self;
+	}
+};
+%extend Aspect_AspectLineDefinitionError {
+	~Aspect_AspectLineDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_AspectLineDefinitionError\n");
 	}
 };
 
@@ -3289,13 +3571,16 @@ class Aspect_FontMap : public MMgt_TShared {
 		Aspect_FontMapEntry Entry(const Standard_Integer AnIndex) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_FontMap();
 
 };
 %extend Aspect_FontMap {
 	Handle_Aspect_FontMap GetHandle() {
 	return *(Handle_Aspect_FontMap*) &$self;
+	}
+};
+%extend Aspect_FontMap {
+	~Aspect_FontMap() {
+	printf("Call custom destructor for instance of Aspect_FontMap\n");
 	}
 };
 
@@ -3382,13 +3667,16 @@ class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_LineStyleDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_LineStyleDefinitionError();
 
 };
 %extend Aspect_LineStyleDefinitionError {
 	Handle_Aspect_LineStyleDefinitionError GetHandle() {
 	return *(Handle_Aspect_LineStyleDefinitionError*) &$self;
+	}
+};
+%extend Aspect_LineStyleDefinitionError {
+	~Aspect_LineStyleDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_LineStyleDefinitionError\n");
 	}
 };
 
@@ -3407,13 +3695,16 @@ class Aspect_IdentDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_IdentDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_IdentDefinitionError();
 
 };
 %extend Aspect_IdentDefinitionError {
 	Handle_Aspect_IdentDefinitionError GetHandle() {
 	return *(Handle_Aspect_IdentDefinitionError*) &$self;
+	}
+};
+%extend Aspect_IdentDefinitionError {
+	~Aspect_IdentDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_IdentDefinitionError\n");
 	}
 };
 
@@ -3482,13 +3773,16 @@ class Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public TCollection_SeqNode 
 		Aspect_WidthMapEntry & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_SequenceNodeOfSequenceOfWidthMapEntry();
 
 };
 %extend Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
 	Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry GetHandle() {
 	return *(Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry*) &$self;
+	}
+};
+%extend Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
+	~Aspect_SequenceNodeOfSequenceOfWidthMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfWidthMapEntry\n");
 	}
 };
 
@@ -3529,13 +3823,16 @@ class Aspect_WindowDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_WindowDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_WindowDefinitionError();
 
 };
 %extend Aspect_WindowDefinitionError {
 	Handle_Aspect_WindowDefinitionError GetHandle() {
 	return *(Handle_Aspect_WindowDefinitionError*) &$self;
+	}
+};
+%extend Aspect_WindowDefinitionError {
+	~Aspect_WindowDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_WindowDefinitionError\n");
 	}
 };
 
@@ -3676,13 +3973,16 @@ class Aspect_GraphicDriver : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_GraphicDriver();
 
 };
 %extend Aspect_GraphicDriver {
 	Handle_Aspect_GraphicDriver GetHandle() {
 	return *(Handle_Aspect_GraphicDriver*) &$self;
+	}
+};
+%extend Aspect_GraphicDriver {
+	~Aspect_GraphicDriver() {
+	printf("Call custom destructor for instance of Aspect_GraphicDriver\n");
 	}
 };
 
@@ -3701,13 +4001,16 @@ class Aspect_WidthMapDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_WidthMapDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_WidthMapDefinitionError();
 
 };
 %extend Aspect_WidthMapDefinitionError {
 	Handle_Aspect_WidthMapDefinitionError GetHandle() {
 	return *(Handle_Aspect_WidthMapDefinitionError*) &$self;
+	}
+};
+%extend Aspect_WidthMapDefinitionError {
+	~Aspect_WidthMapDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_WidthMapDefinitionError\n");
 	}
 };
 
@@ -3829,6 +4132,11 @@ class Aspect_ColorScale : public MMgt_TShared {
 	return *(Handle_Aspect_ColorScale*) &$self;
 	}
 };
+%extend Aspect_ColorScale {
+	~Aspect_ColorScale() {
+	printf("Call custom destructor for instance of Aspect_ColorScale\n");
+	}
+};
 
 %nodefaultctor Aspect_GraphicDevice;
 class Aspect_GraphicDevice : public MMgt_TShared {
@@ -3842,6 +4150,11 @@ class Aspect_GraphicDevice : public MMgt_TShared {
 %extend Aspect_GraphicDevice {
 	Handle_Aspect_GraphicDevice GetHandle() {
 	return *(Handle_Aspect_GraphicDevice*) &$self;
+	}
+};
+%extend Aspect_GraphicDevice {
+	~Aspect_GraphicDevice() {
+	printf("Call custom destructor for instance of Aspect_GraphicDevice\n");
 	}
 };
 
@@ -3860,13 +4173,16 @@ class Aspect_WindowError : public Standard_OutOfRange {
 		Handle_Aspect_WindowError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_WindowError();
 
 };
 %extend Aspect_WindowError {
 	Handle_Aspect_WindowError GetHandle() {
 	return *(Handle_Aspect_WindowError*) &$self;
+	}
+};
+%extend Aspect_WindowError {
+	~Aspect_WindowError() {
+	printf("Call custom destructor for instance of Aspect_WindowError\n");
 	}
 };
 
@@ -3885,13 +4201,16 @@ class Aspect_FontMapDefinitionError : public Standard_OutOfRange {
 		Handle_Aspect_FontMapDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_FontMapDefinitionError();
 
 };
 %extend Aspect_FontMapDefinitionError {
 	Handle_Aspect_FontMapDefinitionError GetHandle() {
 	return *(Handle_Aspect_FontMapDefinitionError*) &$self;
+	}
+};
+%extend Aspect_FontMapDefinitionError {
+	~Aspect_FontMapDefinitionError() {
+	printf("Call custom destructor for instance of Aspect_FontMapDefinitionError\n");
 	}
 };
 
@@ -3904,12 +4223,15 @@ class Aspect_SequenceNodeOfSequenceOfColor : public TCollection_SeqNode {
 		Quantity_Color & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Aspect_SequenceNodeOfSequenceOfColor();
 
 };
 %extend Aspect_SequenceNodeOfSequenceOfColor {
 	Handle_Aspect_SequenceNodeOfSequenceOfColor GetHandle() {
 	return *(Handle_Aspect_SequenceNodeOfSequenceOfColor*) &$self;
+	}
+};
+%extend Aspect_SequenceNodeOfSequenceOfColor {
+	~Aspect_SequenceNodeOfSequenceOfColor() {
+	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfColor\n");
 	}
 };

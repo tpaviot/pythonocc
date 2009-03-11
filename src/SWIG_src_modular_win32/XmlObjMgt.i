@@ -106,8 +106,6 @@ typedef LDOM_Element XmlObjMgt_Element;
 class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlObjMgt_DataMapNodeOfRRelocationTable();
-		%feature("autodoc", "1");
 		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable();
 		%feature("autodoc", "1");
 		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable(const Handle_XmlObjMgt_DataMapNodeOfRRelocationTable &aHandle);
@@ -120,6 +118,11 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 %extend Handle_XmlObjMgt_DataMapNodeOfRRelocationTable {
 	XmlObjMgt_DataMapNodeOfRRelocationTable* GetObject() {
 	return (XmlObjMgt_DataMapNodeOfRRelocationTable*)$self->Access();
+	}
+};
+%extend Handle_XmlObjMgt_DataMapNodeOfRRelocationTable {
+	~Handle_XmlObjMgt_DataMapNodeOfRRelocationTable() {
+	printf("Call custom destructor for instance of Handle_XmlObjMgt_DataMapNodeOfRRelocationTable\n");
 	}
 };
 
@@ -186,13 +189,16 @@ class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlObjMgt_DataMapNodeOfRRelocationTable();
 
 };
 %extend XmlObjMgt_DataMapNodeOfRRelocationTable {
 	Handle_XmlObjMgt_DataMapNodeOfRRelocationTable GetHandle() {
 	return *(Handle_XmlObjMgt_DataMapNodeOfRRelocationTable*) &$self;
+	}
+};
+%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
+	~XmlObjMgt_DataMapNodeOfRRelocationTable() {
+	printf("Call custom destructor for instance of XmlObjMgt_DataMapNodeOfRRelocationTable\n");
 	}
 };
 

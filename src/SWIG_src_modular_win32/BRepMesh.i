@@ -118,8 +118,6 @@ enum BRepMesh_Status {
 class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY();
-		%feature("autodoc", "1");
 		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY(const Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY &aHandle);
@@ -134,12 +132,15 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public Handle_TCol
 	return (BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun;
 class Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
@@ -155,12 +156,15 @@ class Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : pub
 	return (BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun {
+	~Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_ListNodeOfListOfXY;
 class Handle_BRepMesh_ListNodeOfListOfXY : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_ListNodeOfListOfXY();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_ListNodeOfListOfXY();
 		%feature("autodoc", "1");
@@ -176,12 +180,15 @@ class Handle_BRepMesh_ListNodeOfListOfXY : public Handle_TCollection_MapNode {
 	return (BRepMesh_ListNodeOfListOfXY*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_ListNodeOfListOfXY {
+	~Handle_BRepMesh_ListNodeOfListOfXY() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_ListNodeOfListOfXY\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid();
 		%feature("autodoc", "1");
@@ -197,12 +204,15 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid : public Handle_TCo
 	return (BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun;
 class Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
@@ -218,12 +228,15 @@ class Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : p
 	return (BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
+	~Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger();
 		%feature("autodoc", "1");
@@ -239,12 +252,15 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public Handle_TC
 	return (BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_EdgeDiscret;
 class Handle_BRepMesh_EdgeDiscret : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_EdgeDiscret();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_EdgeDiscret();
 		%feature("autodoc", "1");
@@ -260,12 +276,15 @@ class Handle_BRepMesh_EdgeDiscret : public Handle_MMgt_TShared {
 	return (BRepMesh_EdgeDiscret*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_EdgeDiscret {
+	~Handle_BRepMesh_EdgeDiscret() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_EdgeDiscret\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_FastDiscret;
 class Handle_BRepMesh_FastDiscret : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_FastDiscret();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_FastDiscret();
 		%feature("autodoc", "1");
@@ -281,12 +300,15 @@ class Handle_BRepMesh_FastDiscret : public Handle_MMgt_TShared {
 	return (BRepMesh_FastDiscret*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_FastDiscret {
+	~Handle_BRepMesh_FastDiscret() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_FastDiscret\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger();
 		%feature("autodoc", "1");
@@ -302,12 +324,15 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public Handle_TColle
 	return (BRepMesh_DataMapNodeOfDataMapOfVertexInteger*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
@@ -323,12 +348,15 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollectio
 	return (BRepMesh_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_DataStructureOfDelaun;
 class Handle_BRepMesh_DataStructureOfDelaun : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_DataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_DataStructureOfDelaun();
 		%feature("autodoc", "1");
@@ -344,12 +372,15 @@ class Handle_BRepMesh_DataStructureOfDelaun : public Handle_MMgt_TShared {
 	return (BRepMesh_DataStructureOfDelaun*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_DataStructureOfDelaun {
+	~Handle_BRepMesh_DataStructureOfDelaun() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_DataStructureOfDelaun\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_ListNodeOfListOfSurfaceGrid;
 class Handle_BRepMesh_ListNodeOfListOfSurfaceGrid : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_ListNodeOfListOfSurfaceGrid();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_ListNodeOfListOfSurfaceGrid();
 		%feature("autodoc", "1");
@@ -365,12 +396,15 @@ class Handle_BRepMesh_ListNodeOfListOfSurfaceGrid : public Handle_TCollection_Ma
 	return (BRepMesh_ListNodeOfListOfSurfaceGrid*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_ListNodeOfListOfSurfaceGrid {
+	~Handle_BRepMesh_ListNodeOfListOfSurfaceGrid() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_ListNodeOfListOfSurfaceGrid\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_ListNodeOfListOfVertex;
 class Handle_BRepMesh_ListNodeOfListOfVertex : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_ListNodeOfListOfVertex();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_ListNodeOfListOfVertex();
 		%feature("autodoc", "1");
@@ -386,12 +420,15 @@ class Handle_BRepMesh_ListNodeOfListOfVertex : public Handle_TCollection_MapNode
 	return (BRepMesh_ListNodeOfListOfVertex*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_ListNodeOfListOfVertex {
+	~Handle_BRepMesh_ListNodeOfListOfVertex() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_ListNodeOfListOfVertex\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex;
 class Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex();
 		%feature("autodoc", "1");
@@ -407,12 +444,15 @@ class Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public Handle_TCollec
 	return (BRepMesh_IndexedMapNodeOfIndexedMapOfVertex*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
+	~Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_SurfaceGrid;
 class Handle_BRepMesh_SurfaceGrid : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_SurfaceGrid();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_SurfaceGrid();
 		%feature("autodoc", "1");
@@ -428,12 +468,15 @@ class Handle_BRepMesh_SurfaceGrid : public Handle_MMgt_TShared {
 	return (BRepMesh_SurfaceGrid*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_SurfaceGrid {
+	~Handle_BRepMesh_SurfaceGrid() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_SurfaceGrid\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace();
 		%feature("autodoc", "1");
@@ -449,12 +492,15 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public Handle_TCollect
 	return (BRepMesh_DataMapNodeOfDataMapOfIntegerFace*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_StdMapNodeOfMapOfAsciiString;
 class Handle_BRepMesh_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_StdMapNodeOfMapOfAsciiString();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_StdMapNodeOfMapOfAsciiString();
 		%feature("autodoc", "1");
@@ -470,12 +516,15 @@ class Handle_BRepMesh_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_M
 	return (BRepMesh_StdMapNodeOfMapOfAsciiString*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_StdMapNodeOfMapOfAsciiString {
+	~Handle_BRepMesh_StdMapNodeOfMapOfAsciiString() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_StdMapNodeOfMapOfAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret();
 		%feature("autodoc", "1");
@@ -491,12 +540,15 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public Handle_TCo
 	return (BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt();
 		%feature("autodoc", "1");
@@ -512,12 +564,15 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public Handle_TCollectio
 	return (BRepMesh_DataMapNodeOfDataMapOfCouplePnt*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_HArray1OfVertexOfDelaun;
 class Handle_BRepMesh_HArray1OfVertexOfDelaun : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_HArray1OfVertexOfDelaun();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_HArray1OfVertexOfDelaun();
 		%feature("autodoc", "1");
@@ -533,12 +588,15 @@ class Handle_BRepMesh_HArray1OfVertexOfDelaun : public Handle_MMgt_TShared {
 	return (BRepMesh_HArray1OfVertexOfDelaun*)$self->Access();
 	}
 };
+%extend Handle_BRepMesh_HArray1OfVertexOfDelaun {
+	~Handle_BRepMesh_HArray1OfVertexOfDelaun() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_HArray1OfVertexOfDelaun\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun;
 class Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
@@ -552,6 +610,11 @@ class Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : p
 %extend Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun {
 	BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun* GetObject() {
 	return (BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun*)$self->Access();
+	}
+};
+%extend Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun {
+	~Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun\n");
 	}
 };
 
@@ -628,13 +691,16 @@ class BRepMesh_DataStructureOfDelaun : public MMgt_TShared {
 		const MeshDS_BaseAllocator & Allocator() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_DataStructureOfDelaun();
 
 };
 %extend BRepMesh_DataStructureOfDelaun {
 	Handle_BRepMesh_DataStructureOfDelaun GetHandle() {
 	return *(Handle_BRepMesh_DataStructureOfDelaun*) &$self;
+	}
+};
+%extend BRepMesh_DataStructureOfDelaun {
+	~BRepMesh_DataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_DataStructureOfDelaun\n");
 	}
 };
 
@@ -759,13 +825,16 @@ class BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : public TCo
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun();
 
 };
 %extend BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun {
 	Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun GetHandle() {
 	return *(Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun*) &$self;
+	}
+};
+%extend BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun {
+	~BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun\n");
 	}
 };
 
@@ -842,13 +911,16 @@ class BRepMesh_HArray1OfVertexOfDelaun : public MMgt_TShared {
 		BRepMesh_Array1OfVertexOfDelaun & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_HArray1OfVertexOfDelaun();
 
 };
 %extend BRepMesh_HArray1OfVertexOfDelaun {
 	Handle_BRepMesh_HArray1OfVertexOfDelaun GetHandle() {
 	return *(Handle_BRepMesh_HArray1OfVertexOfDelaun*) &$self;
+	}
+};
+%extend BRepMesh_HArray1OfVertexOfDelaun {
+	~BRepMesh_HArray1OfVertexOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_HArray1OfVertexOfDelaun\n");
 	}
 };
 
@@ -1005,13 +1077,16 @@ class BRepMesh_EdgeDiscret : public MMgt_TShared {
 		const TColStd_SequenceOfReal & Parameters() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_EdgeDiscret();
 
 };
 %extend BRepMesh_EdgeDiscret {
 	Handle_BRepMesh_EdgeDiscret GetHandle() {
 	return *(Handle_BRepMesh_EdgeDiscret*) &$self;
+	}
+};
+%extend BRepMesh_EdgeDiscret {
+	~BRepMesh_EdgeDiscret() {
+	printf("Call custom destructor for instance of BRepMesh_EdgeDiscret\n");
 	}
 };
 
@@ -1026,13 +1101,16 @@ class BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public TCollection_MapNod
 		BRepMesh_ListOfXY & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY();
 
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
 	Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY GetHandle() {
 	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
+	~BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY\n");
 	}
 };
 
@@ -1045,13 +1123,16 @@ class BRepMesh_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 		TCollection_AsciiString & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_StdMapNodeOfMapOfAsciiString();
 
 };
 %extend BRepMesh_StdMapNodeOfMapOfAsciiString {
 	Handle_BRepMesh_StdMapNodeOfMapOfAsciiString GetHandle() {
 	return *(Handle_BRepMesh_StdMapNodeOfMapOfAsciiString*) &$self;
+	}
+};
+%extend BRepMesh_StdMapNodeOfMapOfAsciiString {
+	~BRepMesh_StdMapNodeOfMapOfAsciiString() {
+	printf("Call custom destructor for instance of BRepMesh_StdMapNodeOfMapOfAsciiString\n");
 	}
 };
 
@@ -1066,13 +1147,16 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid : public TCollection_MapNo
 		Handle_BRepMesh_SurfaceGrid & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid();
 
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
 	Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid GetHandle() {
 	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
+	~BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid\n");
 	}
 };
 
@@ -1145,13 +1229,16 @@ class BRepMesh_ListNodeOfListOfVertex : public TCollection_MapNode {
 		BRepMesh_Vertex & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_ListNodeOfListOfVertex();
 
 };
 %extend BRepMesh_ListNodeOfListOfVertex {
 	Handle_BRepMesh_ListNodeOfListOfVertex GetHandle() {
 	return *(Handle_BRepMesh_ListNodeOfListOfVertex*) &$self;
+	}
+};
+%extend BRepMesh_ListNodeOfListOfVertex {
+	~BRepMesh_ListNodeOfListOfVertex() {
+	printf("Call custom destructor for instance of BRepMesh_ListNodeOfListOfVertex\n");
 	}
 };
 
@@ -1206,13 +1293,16 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_DataMapNodeOfDataMapOfShapeReal();
 
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
 	Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal GetHandle() {
 	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
+	~BRepMesh_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfShapeReal\n");
 	}
 };
 
@@ -1373,13 +1463,16 @@ class BRepMesh_ListNodeOfListOfSurfaceGrid : public TCollection_MapNode {
 		Handle_BRepMesh_SurfaceGrid & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_ListNodeOfListOfSurfaceGrid();
 
 };
 %extend BRepMesh_ListNodeOfListOfSurfaceGrid {
 	Handle_BRepMesh_ListNodeOfListOfSurfaceGrid GetHandle() {
 	return *(Handle_BRepMesh_ListNodeOfListOfSurfaceGrid*) &$self;
+	}
+};
+%extend BRepMesh_ListNodeOfListOfSurfaceGrid {
+	~BRepMesh_ListNodeOfListOfSurfaceGrid() {
+	printf("Call custom destructor for instance of BRepMesh_ListNodeOfListOfSurfaceGrid\n");
 	}
 };
 
@@ -1458,13 +1551,16 @@ class BRepMesh_ListNodeOfListOfXY : public TCollection_MapNode {
 		gp_XY & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_ListNodeOfListOfXY();
 
 };
 %extend BRepMesh_ListNodeOfListOfXY {
 	Handle_BRepMesh_ListNodeOfListOfXY GetHandle() {
 	return *(Handle_BRepMesh_ListNodeOfListOfXY*) &$self;
+	}
+};
+%extend BRepMesh_ListNodeOfListOfXY {
+	~BRepMesh_ListNodeOfListOfXY() {
+	printf("Call custom destructor for instance of BRepMesh_ListNodeOfListOfXY\n");
 	}
 };
 
@@ -1481,13 +1577,16 @@ class BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_IndexedMapNodeOfIndexedMapOfVertex();
 
 };
 %extend BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
 	Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex GetHandle() {
 	return *(Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex*) &$self;
+	}
+};
+%extend BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
+	~BRepMesh_IndexedMapNodeOfIndexedMapOfVertex() {
+	printf("Call custom destructor for instance of BRepMesh_IndexedMapNodeOfIndexedMapOfVertex\n");
 	}
 };
 
@@ -1502,13 +1601,16 @@ class BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public TCollection_MapNode {
 		gp_Pnt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_DataMapNodeOfDataMapOfCouplePnt();
 
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
 	Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt GetHandle() {
 	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
+	~BRepMesh_DataMapNodeOfDataMapOfCouplePnt() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfCouplePnt\n");
 	}
 };
 
@@ -1545,13 +1647,16 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public T
 		MeshDS_ListOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun();
 
 };
 %extend BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
 	Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun GetHandle() {
 	return *(Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun*) &$self;
+	}
+};
+%extend BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
+	~BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun\n");
 	}
 };
 
@@ -1702,13 +1807,16 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		Standard_Real GetAngle() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_FastDiscret();
 
 };
 %extend BRepMesh_FastDiscret {
 	Handle_BRepMesh_FastDiscret GetHandle() {
 	return *(Handle_BRepMesh_FastDiscret*) &$self;
+	}
+};
+%extend BRepMesh_FastDiscret {
+	~BRepMesh_FastDiscret() {
+	printf("Call custom destructor for instance of BRepMesh_FastDiscret\n");
 	}
 };
 
@@ -1747,13 +1855,16 @@ class BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public TCollection_MapNode {
 		TopoDS_Face & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_DataMapNodeOfDataMapOfIntegerFace();
 
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
 	Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace GetHandle() {
 	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
+	~BRepMesh_DataMapNodeOfDataMapOfIntegerFace() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfIntegerFace\n");
 	}
 };
 
@@ -1908,13 +2019,16 @@ class BRepMesh_SurfaceGrid : public MMgt_TShared {
 		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_SurfaceGrid();
 
 };
 %extend BRepMesh_SurfaceGrid {
 	Handle_BRepMesh_SurfaceGrid GetHandle() {
 	return *(Handle_BRepMesh_SurfaceGrid*) &$self;
+	}
+};
+%extend BRepMesh_SurfaceGrid {
+	~BRepMesh_SurfaceGrid() {
+	printf("Call custom destructor for instance of BRepMesh_SurfaceGrid\n");
 	}
 };
 
@@ -2043,13 +2157,16 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public T
 		MeshDS_ListOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun();
 
 };
 %extend BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun {
 	Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun GetHandle() {
 	return *(Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun*) &$self;
+	}
+};
+%extend BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun {
+	~BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun\n");
 	}
 };
 
@@ -2192,13 +2309,16 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public TCollection_MapNo
 		Handle_BRepMesh_EdgeDiscret & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret();
 
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret {
 	Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret GetHandle() {
 	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret {
+	~BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret\n");
 	}
 };
 
@@ -2229,13 +2349,16 @@ class BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public TCollection_MapN
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger();
 
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
 	Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger GetHandle() {
 	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
+	~BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger\n");
 	}
 };
 
@@ -2336,13 +2459,16 @@ class BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public TCollection_MapNode 
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMesh_DataMapNodeOfDataMapOfVertexInteger();
 
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
 	Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger GetHandle() {
 	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
+	~BRepMesh_DataMapNodeOfDataMapOfVertexInteger() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfVertexInteger\n");
 	}
 };
 

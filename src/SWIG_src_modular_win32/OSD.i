@@ -222,8 +222,6 @@ enum OSD_OEMType {
 class Handle_OSD_Exception : public Handle_Standard_Failure {
 	public:
 		%feature("autodoc", "1");
-		~Handle_OSD_Exception();
-		%feature("autodoc", "1");
 		Handle_OSD_Exception();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception(const Handle_OSD_Exception &aHandle);
@@ -238,12 +236,15 @@ class Handle_OSD_Exception : public Handle_Standard_Failure {
 	return (OSD_Exception*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception {
+	~Handle_OSD_Exception() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_STACK_OVERFLOW;
 class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_STACK_OVERFLOW();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_STACK_OVERFLOW();
 		%feature("autodoc", "1");
@@ -259,12 +260,15 @@ class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 	return (OSD_Exception_STACK_OVERFLOW*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_STACK_OVERFLOW {
+	~Handle_OSD_Exception_STACK_OVERFLOW() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_STACK_OVERFLOW\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Signal;
 class Handle_OSD_Signal : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Signal();
 		%feature("autodoc", "1");
 		Handle_OSD_Signal();
 		%feature("autodoc", "1");
@@ -280,12 +284,15 @@ class Handle_OSD_Signal : public Handle_Standard_Failure {
 	return (OSD_Signal*)$self->Access();
 	}
 };
+%extend Handle_OSD_Signal {
+	~Handle_OSD_Signal() {
+	printf("Call custom destructor for instance of Handle_OSD_Signal\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_SIGILL;
 class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGILL();
 		%feature("autodoc", "1");
 		Handle_OSD_SIGILL();
 		%feature("autodoc", "1");
@@ -301,12 +308,15 @@ class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 	return (OSD_SIGILL*)$self->Access();
 	}
 };
+%extend Handle_OSD_SIGILL {
+	~Handle_OSD_SIGILL() {
+	printf("Call custom destructor for instance of Handle_OSD_SIGILL\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_SIGHUP;
 class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGHUP();
 		%feature("autodoc", "1");
 		Handle_OSD_SIGHUP();
 		%feature("autodoc", "1");
@@ -322,12 +332,15 @@ class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
 	return (OSD_SIGHUP*)$self->Access();
 	}
 };
+%extend Handle_OSD_SIGHUP {
+	~Handle_OSD_SIGHUP() {
+	printf("Call custom destructor for instance of Handle_OSD_SIGHUP\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_ILLEGAL_INSTRUCTION;
 class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_ILLEGAL_INSTRUCTION();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_ILLEGAL_INSTRUCTION();
 		%feature("autodoc", "1");
@@ -343,12 +356,15 @@ class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 	return (OSD_Exception_ILLEGAL_INSTRUCTION*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_ILLEGAL_INSTRUCTION {
+	~Handle_OSD_Exception_ILLEGAL_INSTRUCTION() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_ILLEGAL_INSTRUCTION\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_OSDError;
 class Handle_OSD_OSDError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_OSDError();
 		%feature("autodoc", "1");
 		Handle_OSD_OSDError();
 		%feature("autodoc", "1");
@@ -364,12 +380,15 @@ class Handle_OSD_OSDError : public Handle_Standard_Failure {
 	return (OSD_OSDError*)$self->Access();
 	}
 };
+%extend Handle_OSD_OSDError {
+	~Handle_OSD_OSDError() {
+	printf("Call custom destructor for instance of Handle_OSD_OSDError\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_CTRL_BREAK;
 class Handle_OSD_Exception_CTRL_BREAK : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_CTRL_BREAK();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_CTRL_BREAK();
 		%feature("autodoc", "1");
@@ -385,12 +404,15 @@ class Handle_OSD_Exception_CTRL_BREAK : public Handle_OSD_Exception {
 	return (OSD_Exception_CTRL_BREAK*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_CTRL_BREAK {
+	~Handle_OSD_Exception_CTRL_BREAK() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_CTRL_BREAK\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_SIGINT;
 class Handle_OSD_SIGINT : public Handle_OSD_Signal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGINT();
 		%feature("autodoc", "1");
 		Handle_OSD_SIGINT();
 		%feature("autodoc", "1");
@@ -406,12 +428,15 @@ class Handle_OSD_SIGINT : public Handle_OSD_Signal {
 	return (OSD_SIGINT*)$self->Access();
 	}
 };
+%extend Handle_OSD_SIGINT {
+	~Handle_OSD_SIGINT() {
+	printf("Call custom destructor for instance of Handle_OSD_SIGINT\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_PRIV_INSTRUCTION;
 class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_PRIV_INSTRUCTION();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_PRIV_INSTRUCTION();
 		%feature("autodoc", "1");
@@ -427,12 +452,15 @@ class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
 	return (OSD_Exception_PRIV_INSTRUCTION*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_PRIV_INSTRUCTION {
+	~Handle_OSD_Exception_PRIV_INSTRUCTION() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_PRIV_INSTRUCTION\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_SIGKILL;
 class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGKILL();
 		%feature("autodoc", "1");
 		Handle_OSD_SIGKILL();
 		%feature("autodoc", "1");
@@ -448,12 +476,15 @@ class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
 	return (OSD_SIGKILL*)$self->Access();
 	}
 };
+%extend Handle_OSD_SIGKILL {
+	~Handle_OSD_SIGKILL() {
+	printf("Call custom destructor for instance of Handle_OSD_SIGKILL\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_ACCESS_VIOLATION;
 class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_ACCESS_VIOLATION();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_ACCESS_VIOLATION();
 		%feature("autodoc", "1");
@@ -469,12 +500,15 @@ class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 	return (OSD_Exception_ACCESS_VIOLATION*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_ACCESS_VIOLATION {
+	~Handle_OSD_Exception_ACCESS_VIOLATION() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_ACCESS_VIOLATION\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_SIGQUIT;
 class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGQUIT();
 		%feature("autodoc", "1");
 		Handle_OSD_SIGQUIT();
 		%feature("autodoc", "1");
@@ -490,12 +524,15 @@ class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
 	return (OSD_SIGQUIT*)$self->Access();
 	}
 };
+%extend Handle_OSD_SIGQUIT {
+	~Handle_OSD_SIGQUIT() {
+	printf("Call custom destructor for instance of Handle_OSD_SIGQUIT\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_INVALID_DISPOSITION;
 class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_INVALID_DISPOSITION();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_INVALID_DISPOSITION();
 		%feature("autodoc", "1");
@@ -511,12 +548,15 @@ class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 	return (OSD_Exception_INVALID_DISPOSITION*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_INVALID_DISPOSITION {
+	~Handle_OSD_Exception_INVALID_DISPOSITION() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_INVALID_DISPOSITION\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_INT_DIVIDE_BY_ZERO;
 class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_INT_DIVIDE_BY_ZERO();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO();
 		%feature("autodoc", "1");
@@ -532,12 +572,15 @@ class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	return (OSD_Exception_INT_DIVIDE_BY_ZERO*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
+	~Handle_OSD_Exception_INT_DIVIDE_BY_ZERO() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_INT_DIVIDE_BY_ZERO\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_INT_OVERFLOW;
 class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_INT_OVERFLOW();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_INT_OVERFLOW();
 		%feature("autodoc", "1");
@@ -553,12 +596,15 @@ class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
 	return (OSD_Exception_INT_OVERFLOW*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_INT_OVERFLOW {
+	~Handle_OSD_Exception_INT_OVERFLOW() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_INT_OVERFLOW\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_FLT_STACK_CHECK;
 class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_FLT_STACK_CHECK();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_STACK_CHECK();
 		%feature("autodoc", "1");
@@ -574,12 +620,15 @@ class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_STACK_CHECK*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_FLT_STACK_CHECK {
+	~Handle_OSD_Exception_FLT_STACK_CHECK() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_STACK_CHECK\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_STATUS_NO_MEMORY;
 class Handle_OSD_Exception_STATUS_NO_MEMORY : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_STATUS_NO_MEMORY();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_STATUS_NO_MEMORY();
 		%feature("autodoc", "1");
@@ -595,12 +644,15 @@ class Handle_OSD_Exception_STATUS_NO_MEMORY : public Handle_OSD_Exception {
 	return (OSD_Exception_STATUS_NO_MEMORY*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_STATUS_NO_MEMORY {
+	~Handle_OSD_Exception_STATUS_NO_MEMORY() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_STATUS_NO_MEMORY\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_FLT_INVALID_OPERATION;
 class Handle_OSD_Exception_FLT_INVALID_OPERATION : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_FLT_INVALID_OPERATION();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_INVALID_OPERATION();
 		%feature("autodoc", "1");
@@ -616,12 +668,15 @@ class Handle_OSD_Exception_FLT_INVALID_OPERATION : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_INVALID_OPERATION*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_FLT_INVALID_OPERATION {
+	~Handle_OSD_Exception_FLT_INVALID_OPERATION() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_INVALID_OPERATION\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION;
 class Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION();
 		%feature("autodoc", "1");
@@ -637,12 +692,15 @@ class Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION : public Handle_OSD_Exceptio
 	return (OSD_Exception_NONCONTINUABLE_EXCEPTION*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION {
+	~Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_FLT_OVERFLOW;
 class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_FLT_OVERFLOW();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_OVERFLOW();
 		%feature("autodoc", "1");
@@ -658,12 +716,15 @@ class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_OVERFLOW*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_FLT_OVERFLOW {
+	~Handle_OSD_Exception_FLT_OVERFLOW() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_OVERFLOW\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
 class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED();
 		%feature("autodoc", "1");
@@ -679,12 +740,15 @@ class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 	return (OSD_Exception_ARRAY_BOUNDS_EXCEEDED*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+	~Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_SIGBUS;
 class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGBUS();
 		%feature("autodoc", "1");
 		Handle_OSD_SIGBUS();
 		%feature("autodoc", "1");
@@ -700,12 +764,15 @@ class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
 	return (OSD_SIGBUS*)$self->Access();
 	}
 };
+%extend Handle_OSD_SIGBUS {
+	~Handle_OSD_SIGBUS() {
+	printf("Call custom destructor for instance of Handle_OSD_SIGBUS\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_FLT_INEXACT_RESULT;
 class Handle_OSD_Exception_FLT_INEXACT_RESULT : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_FLT_INEXACT_RESULT();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_INEXACT_RESULT();
 		%feature("autodoc", "1");
@@ -721,12 +788,15 @@ class Handle_OSD_Exception_FLT_INEXACT_RESULT : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_INEXACT_RESULT*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_FLT_INEXACT_RESULT {
+	~Handle_OSD_Exception_FLT_INEXACT_RESULT() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_INEXACT_RESULT\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_FLT_DENORMAL_OPERAND;
 class Handle_OSD_Exception_FLT_DENORMAL_OPERAND : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_FLT_DENORMAL_OPERAND();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_DENORMAL_OPERAND();
 		%feature("autodoc", "1");
@@ -742,12 +812,15 @@ class Handle_OSD_Exception_FLT_DENORMAL_OPERAND : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_DENORMAL_OPERAND*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_FLT_DENORMAL_OPERAND {
+	~Handle_OSD_Exception_FLT_DENORMAL_OPERAND() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_DENORMAL_OPERAND\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_SIGSEGV;
 class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGSEGV();
 		%feature("autodoc", "1");
 		Handle_OSD_SIGSEGV();
 		%feature("autodoc", "1");
@@ -763,12 +836,15 @@ class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 	return (OSD_SIGSEGV*)$self->Access();
 	}
 };
+%extend Handle_OSD_SIGSEGV {
+	~Handle_OSD_SIGSEGV() {
+	printf("Call custom destructor for instance of Handle_OSD_SIGSEGV\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO;
 class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO();
 		%feature("autodoc", "1");
@@ -784,12 +860,15 @@ class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_DIVIDE_BY_ZERO*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO {
+	~Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_SIGSYS;
 class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_SIGSYS();
 		%feature("autodoc", "1");
 		Handle_OSD_SIGSYS();
 		%feature("autodoc", "1");
@@ -805,12 +884,15 @@ class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 	return (OSD_SIGSYS*)$self->Access();
 	}
 };
+%extend Handle_OSD_SIGSYS {
+	~Handle_OSD_SIGSYS() {
+	printf("Call custom destructor for instance of Handle_OSD_SIGSYS\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_FLT_UNDERFLOW;
 class Handle_OSD_Exception_FLT_UNDERFLOW : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_FLT_UNDERFLOW();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_UNDERFLOW();
 		%feature("autodoc", "1");
@@ -826,12 +908,15 @@ class Handle_OSD_Exception_FLT_UNDERFLOW : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_UNDERFLOW*)$self->Access();
 	}
 };
+%extend Handle_OSD_Exception_FLT_UNDERFLOW {
+	~Handle_OSD_Exception_FLT_UNDERFLOW() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_UNDERFLOW\n");
+	}
+};
 
 %nodefaultctor Handle_OSD_Exception_IN_PAGE_ERROR;
 class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 	public:
-		%feature("autodoc", "1");
-		~Handle_OSD_Exception_IN_PAGE_ERROR();
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_IN_PAGE_ERROR();
 		%feature("autodoc", "1");
@@ -845,6 +930,11 @@ class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 %extend Handle_OSD_Exception_IN_PAGE_ERROR {
 	OSD_Exception_IN_PAGE_ERROR* GetObject() {
 	return (OSD_Exception_IN_PAGE_ERROR*)$self->Access();
+	}
+};
+%extend Handle_OSD_Exception_IN_PAGE_ERROR {
+	~Handle_OSD_Exception_IN_PAGE_ERROR() {
+	printf("Call custom destructor for instance of Handle_OSD_Exception_IN_PAGE_ERROR\n");
 	}
 };
 
@@ -923,13 +1013,16 @@ class OSD_Exception : public Standard_Failure {
 		Handle_OSD_Exception NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception();
 
 };
 %extend OSD_Exception {
 	Handle_OSD_Exception GetHandle() {
 	return *(Handle_OSD_Exception*) &$self;
+	}
+};
+%extend OSD_Exception {
+	~OSD_Exception() {
+	printf("Call custom destructor for instance of OSD_Exception\n");
 	}
 };
 
@@ -942,13 +1035,16 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 		OSD_Exception_CTRL_BREAK(const char * AString);
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_CTRL_BREAK NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_CTRL_BREAK();
 
 };
 %extend OSD_Exception_CTRL_BREAK {
 	Handle_OSD_Exception_CTRL_BREAK GetHandle() {
 	return *(Handle_OSD_Exception_CTRL_BREAK*) &$self;
+	}
+};
+%extend OSD_Exception_CTRL_BREAK {
+	~OSD_Exception_CTRL_BREAK() {
+	printf("Call custom destructor for instance of OSD_Exception_CTRL_BREAK\n");
 	}
 };
 
@@ -981,13 +1077,16 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 		Handle_OSD_Exception_INVALID_DISPOSITION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_INVALID_DISPOSITION();
 
 };
 %extend OSD_Exception_INVALID_DISPOSITION {
 	Handle_OSD_Exception_INVALID_DISPOSITION GetHandle() {
 	return *(Handle_OSD_Exception_INVALID_DISPOSITION*) &$self;
+	}
+};
+%extend OSD_Exception_INVALID_DISPOSITION {
+	~OSD_Exception_INVALID_DISPOSITION() {
+	printf("Call custom destructor for instance of OSD_Exception_INVALID_DISPOSITION\n");
 	}
 };
 
@@ -1006,13 +1105,16 @@ class OSD_Signal : public Standard_Failure {
 		Handle_OSD_Signal NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Signal();
 
 };
 %extend OSD_Signal {
 	Handle_OSD_Signal GetHandle() {
 	return *(Handle_OSD_Signal*) &$self;
+	}
+};
+%extend OSD_Signal {
+	~OSD_Signal() {
+	printf("Call custom destructor for instance of OSD_Signal\n");
 	}
 };
 
@@ -1025,13 +1127,16 @@ class OSD_SIGKILL : public OSD_Signal {
 		OSD_SIGKILL(const char * AString);
 		%feature("autodoc", "1");
 		Handle_OSD_SIGKILL NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~OSD_SIGKILL();
 
 };
 %extend OSD_SIGKILL {
 	Handle_OSD_SIGKILL GetHandle() {
 	return *(Handle_OSD_SIGKILL*) &$self;
+	}
+};
+%extend OSD_SIGKILL {
+	~OSD_SIGKILL() {
+	printf("Call custom destructor for instance of OSD_SIGKILL\n");
 	}
 };
 
@@ -1082,13 +1187,16 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 		Handle_OSD_Exception_FLT_INEXACT_RESULT NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_FLT_INEXACT_RESULT();
 
 };
 %extend OSD_Exception_FLT_INEXACT_RESULT {
 	Handle_OSD_Exception_FLT_INEXACT_RESULT GetHandle() {
 	return *(Handle_OSD_Exception_FLT_INEXACT_RESULT*) &$self;
+	}
+};
+%extend OSD_Exception_FLT_INEXACT_RESULT {
+	~OSD_Exception_FLT_INEXACT_RESULT() {
+	printf("Call custom destructor for instance of OSD_Exception_FLT_INEXACT_RESULT\n");
 	}
 };
 
@@ -1107,13 +1215,16 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_INT_DIVIDE_BY_ZERO();
 
 };
 %extend OSD_Exception_INT_DIVIDE_BY_ZERO {
 	Handle_OSD_Exception_INT_DIVIDE_BY_ZERO GetHandle() {
 	return *(Handle_OSD_Exception_INT_DIVIDE_BY_ZERO*) &$self;
+	}
+};
+%extend OSD_Exception_INT_DIVIDE_BY_ZERO {
+	~OSD_Exception_INT_DIVIDE_BY_ZERO() {
+	printf("Call custom destructor for instance of OSD_Exception_INT_DIVIDE_BY_ZERO\n");
 	}
 };
 
@@ -1132,13 +1243,16 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 		Handle_OSD_Exception_FLT_STACK_CHECK NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_FLT_STACK_CHECK();
 
 };
 %extend OSD_Exception_FLT_STACK_CHECK {
 	Handle_OSD_Exception_FLT_STACK_CHECK GetHandle() {
 	return *(Handle_OSD_Exception_FLT_STACK_CHECK*) &$self;
+	}
+};
+%extend OSD_Exception_FLT_STACK_CHECK {
+	~OSD_Exception_FLT_STACK_CHECK() {
+	printf("Call custom destructor for instance of OSD_Exception_FLT_STACK_CHECK\n");
 	}
 };
 
@@ -1205,13 +1319,16 @@ class OSD_SIGSYS : public OSD_Signal {
 		Handle_OSD_SIGSYS NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_SIGSYS();
 
 };
 %extend OSD_SIGSYS {
 	Handle_OSD_SIGSYS GetHandle() {
 	return *(Handle_OSD_SIGSYS*) &$self;
+	}
+};
+%extend OSD_SIGSYS {
+	~OSD_SIGSYS() {
+	printf("Call custom destructor for instance of OSD_SIGSYS\n");
 	}
 };
 
@@ -1230,13 +1347,16 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 		Handle_OSD_Exception_FLT_UNDERFLOW NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_FLT_UNDERFLOW();
 
 };
 %extend OSD_Exception_FLT_UNDERFLOW {
 	Handle_OSD_Exception_FLT_UNDERFLOW GetHandle() {
 	return *(Handle_OSD_Exception_FLT_UNDERFLOW*) &$self;
+	}
+};
+%extend OSD_Exception_FLT_UNDERFLOW {
+	~OSD_Exception_FLT_UNDERFLOW() {
+	printf("Call custom destructor for instance of OSD_Exception_FLT_UNDERFLOW\n");
 	}
 };
 
@@ -1255,13 +1375,16 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 		Handle_OSD_Exception_IN_PAGE_ERROR NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_IN_PAGE_ERROR();
 
 };
 %extend OSD_Exception_IN_PAGE_ERROR {
 	Handle_OSD_Exception_IN_PAGE_ERROR GetHandle() {
 	return *(Handle_OSD_Exception_IN_PAGE_ERROR*) &$self;
+	}
+};
+%extend OSD_Exception_IN_PAGE_ERROR {
+	~OSD_Exception_IN_PAGE_ERROR() {
+	printf("Call custom destructor for instance of OSD_Exception_IN_PAGE_ERROR\n");
 	}
 };
 
@@ -1280,13 +1403,16 @@ class OSD_OSDError : public Standard_Failure {
 		Handle_OSD_OSDError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_OSDError();
 
 };
 %extend OSD_OSDError {
 	Handle_OSD_OSDError GetHandle() {
 	return *(Handle_OSD_OSDError*) &$self;
+	}
+};
+%extend OSD_OSDError {
+	~OSD_OSDError() {
+	printf("Call custom destructor for instance of OSD_OSDError\n");
 	}
 };
 
@@ -1391,13 +1517,16 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_ARRAY_BOUNDS_EXCEEDED();
 
 };
 %extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
 	Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED GetHandle() {
 	return *(Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED*) &$self;
+	}
+};
+%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+	~OSD_Exception_ARRAY_BOUNDS_EXCEEDED() {
+	printf("Call custom destructor for instance of OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");
 	}
 };
 
@@ -1448,13 +1577,16 @@ class OSD_SIGQUIT : public OSD_Signal {
 		Handle_OSD_SIGQUIT NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_SIGQUIT();
 
 };
 %extend OSD_SIGQUIT {
 	Handle_OSD_SIGQUIT GetHandle() {
 	return *(Handle_OSD_SIGQUIT*) &$self;
+	}
+};
+%extend OSD_SIGQUIT {
+	~OSD_SIGQUIT() {
+	printf("Call custom destructor for instance of OSD_SIGQUIT\n");
 	}
 };
 
@@ -1473,13 +1605,16 @@ class OSD_SIGBUS : public OSD_Signal {
 		Handle_OSD_SIGBUS NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_SIGBUS();
 
 };
 %extend OSD_SIGBUS {
 	Handle_OSD_SIGBUS GetHandle() {
 	return *(Handle_OSD_SIGBUS*) &$self;
+	}
+};
+%extend OSD_SIGBUS {
+	~OSD_SIGBUS() {
+	printf("Call custom destructor for instance of OSD_SIGBUS\n");
 	}
 };
 
@@ -1600,13 +1735,16 @@ class OSD_SIGSEGV : public OSD_Signal {
 		Handle_OSD_SIGSEGV NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_SIGSEGV();
 
 };
 %extend OSD_SIGSEGV {
 	Handle_OSD_SIGSEGV GetHandle() {
 	return *(Handle_OSD_SIGSEGV*) &$self;
+	}
+};
+%extend OSD_SIGSEGV {
+	~OSD_SIGSEGV() {
+	printf("Call custom destructor for instance of OSD_SIGSEGV\n");
 	}
 };
 
@@ -1625,13 +1763,16 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 		Handle_OSD_Exception_PRIV_INSTRUCTION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_PRIV_INSTRUCTION();
 
 };
 %extend OSD_Exception_PRIV_INSTRUCTION {
 	Handle_OSD_Exception_PRIV_INSTRUCTION GetHandle() {
 	return *(Handle_OSD_Exception_PRIV_INSTRUCTION*) &$self;
+	}
+};
+%extend OSD_Exception_PRIV_INSTRUCTION {
+	~OSD_Exception_PRIV_INSTRUCTION() {
+	printf("Call custom destructor for instance of OSD_Exception_PRIV_INSTRUCTION\n");
 	}
 };
 
@@ -1700,13 +1841,16 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 		Handle_OSD_Exception_ACCESS_VIOLATION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_ACCESS_VIOLATION();
 
 };
 %extend OSD_Exception_ACCESS_VIOLATION {
 	Handle_OSD_Exception_ACCESS_VIOLATION GetHandle() {
 	return *(Handle_OSD_Exception_ACCESS_VIOLATION*) &$self;
+	}
+};
+%extend OSD_Exception_ACCESS_VIOLATION {
+	~OSD_Exception_ACCESS_VIOLATION() {
+	printf("Call custom destructor for instance of OSD_Exception_ACCESS_VIOLATION\n");
 	}
 };
 
@@ -1759,13 +1903,16 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 		Handle_OSD_Exception_ILLEGAL_INSTRUCTION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_ILLEGAL_INSTRUCTION();
 
 };
 %extend OSD_Exception_ILLEGAL_INSTRUCTION {
 	Handle_OSD_Exception_ILLEGAL_INSTRUCTION GetHandle() {
 	return *(Handle_OSD_Exception_ILLEGAL_INSTRUCTION*) &$self;
+	}
+};
+%extend OSD_Exception_ILLEGAL_INSTRUCTION {
+	~OSD_Exception_ILLEGAL_INSTRUCTION() {
+	printf("Call custom destructor for instance of OSD_Exception_ILLEGAL_INSTRUCTION\n");
 	}
 };
 
@@ -1784,13 +1931,16 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 		Handle_OSD_Exception_FLT_INVALID_OPERATION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_FLT_INVALID_OPERATION();
 
 };
 %extend OSD_Exception_FLT_INVALID_OPERATION {
 	Handle_OSD_Exception_FLT_INVALID_OPERATION GetHandle() {
 	return *(Handle_OSD_Exception_FLT_INVALID_OPERATION*) &$self;
+	}
+};
+%extend OSD_Exception_FLT_INVALID_OPERATION {
+	~OSD_Exception_FLT_INVALID_OPERATION() {
+	printf("Call custom destructor for instance of OSD_Exception_FLT_INVALID_OPERATION\n");
 	}
 };
 
@@ -1809,13 +1959,16 @@ class OSD_SIGINT : public OSD_Signal {
 		Handle_OSD_SIGINT NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_SIGINT();
 
 };
 %extend OSD_SIGINT {
 	Handle_OSD_SIGINT GetHandle() {
 	return *(Handle_OSD_SIGINT*) &$self;
+	}
+};
+%extend OSD_SIGINT {
+	~OSD_SIGINT() {
+	printf("Call custom destructor for instance of OSD_SIGINT\n");
 	}
 };
 
@@ -1834,13 +1987,16 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 		Handle_OSD_Exception_STACK_OVERFLOW NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_STACK_OVERFLOW();
 
 };
 %extend OSD_Exception_STACK_OVERFLOW {
 	Handle_OSD_Exception_STACK_OVERFLOW GetHandle() {
 	return *(Handle_OSD_Exception_STACK_OVERFLOW*) &$self;
+	}
+};
+%extend OSD_Exception_STACK_OVERFLOW {
+	~OSD_Exception_STACK_OVERFLOW() {
+	printf("Call custom destructor for instance of OSD_Exception_STACK_OVERFLOW\n");
 	}
 };
 
@@ -1885,13 +2041,16 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 		Handle_OSD_Exception_INT_OVERFLOW NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_INT_OVERFLOW();
 
 };
 %extend OSD_Exception_INT_OVERFLOW {
 	Handle_OSD_Exception_INT_OVERFLOW GetHandle() {
 	return *(Handle_OSD_Exception_INT_OVERFLOW*) &$self;
+	}
+};
+%extend OSD_Exception_INT_OVERFLOW {
+	~OSD_Exception_INT_OVERFLOW() {
+	printf("Call custom destructor for instance of OSD_Exception_INT_OVERFLOW\n");
 	}
 };
 
@@ -1980,13 +2139,16 @@ class OSD_SIGHUP : public OSD_Signal {
 		Handle_OSD_SIGHUP NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_SIGHUP();
 
 };
 %extend OSD_SIGHUP {
 	Handle_OSD_SIGHUP GetHandle() {
 	return *(Handle_OSD_SIGHUP*) &$self;
+	}
+};
+%extend OSD_SIGHUP {
+	~OSD_SIGHUP() {
+	printf("Call custom destructor for instance of OSD_SIGHUP\n");
 	}
 };
 
@@ -2029,13 +2191,16 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 		Handle_OSD_Exception_STATUS_NO_MEMORY NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_STATUS_NO_MEMORY();
 
 };
 %extend OSD_Exception_STATUS_NO_MEMORY {
 	Handle_OSD_Exception_STATUS_NO_MEMORY GetHandle() {
 	return *(Handle_OSD_Exception_STATUS_NO_MEMORY*) &$self;
+	}
+};
+%extend OSD_Exception_STATUS_NO_MEMORY {
+	~OSD_Exception_STATUS_NO_MEMORY() {
+	printf("Call custom destructor for instance of OSD_Exception_STATUS_NO_MEMORY\n");
 	}
 };
 
@@ -2090,13 +2255,16 @@ class OSD_SIGILL : public OSD_Signal {
 		Handle_OSD_SIGILL NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_SIGILL();
 
 };
 %extend OSD_SIGILL {
 	Handle_OSD_SIGILL GetHandle() {
 	return *(Handle_OSD_SIGILL*) &$self;
+	}
+};
+%extend OSD_SIGILL {
+	~OSD_SIGILL() {
+	printf("Call custom destructor for instance of OSD_SIGILL\n");
 	}
 };
 
@@ -2139,13 +2307,16 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 		Handle_OSD_Exception_FLT_DENORMAL_OPERAND NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_FLT_DENORMAL_OPERAND();
 
 };
 %extend OSD_Exception_FLT_DENORMAL_OPERAND {
 	Handle_OSD_Exception_FLT_DENORMAL_OPERAND GetHandle() {
 	return *(Handle_OSD_Exception_FLT_DENORMAL_OPERAND*) &$self;
+	}
+};
+%extend OSD_Exception_FLT_DENORMAL_OPERAND {
+	~OSD_Exception_FLT_DENORMAL_OPERAND() {
+	printf("Call custom destructor for instance of OSD_Exception_FLT_DENORMAL_OPERAND\n");
 	}
 };
 
@@ -2164,13 +2335,16 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 		Handle_OSD_Exception_FLT_OVERFLOW NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_FLT_OVERFLOW();
 
 };
 %extend OSD_Exception_FLT_OVERFLOW {
 	Handle_OSD_Exception_FLT_OVERFLOW GetHandle() {
 	return *(Handle_OSD_Exception_FLT_OVERFLOW*) &$self;
+	}
+};
+%extend OSD_Exception_FLT_OVERFLOW {
+	~OSD_Exception_FLT_OVERFLOW() {
+	printf("Call custom destructor for instance of OSD_Exception_FLT_OVERFLOW\n");
 	}
 };
 
@@ -2189,13 +2363,16 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_FLT_DIVIDE_BY_ZERO();
 
 };
 %extend OSD_Exception_FLT_DIVIDE_BY_ZERO {
 	Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO GetHandle() {
 	return *(Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO*) &$self;
+	}
+};
+%extend OSD_Exception_FLT_DIVIDE_BY_ZERO {
+	~OSD_Exception_FLT_DIVIDE_BY_ZERO() {
+	printf("Call custom destructor for instance of OSD_Exception_FLT_DIVIDE_BY_ZERO\n");
 	}
 };
 
@@ -2214,12 +2391,15 @@ class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {
 		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~OSD_Exception_NONCONTINUABLE_EXCEPTION();
 
 };
 %extend OSD_Exception_NONCONTINUABLE_EXCEPTION {
 	Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION GetHandle() {
 	return *(Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION*) &$self;
+	}
+};
+%extend OSD_Exception_NONCONTINUABLE_EXCEPTION {
+	~OSD_Exception_NONCONTINUABLE_EXCEPTION() {
+	printf("Call custom destructor for instance of OSD_Exception_NONCONTINUABLE_EXCEPTION\n");
 	}
 };

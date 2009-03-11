@@ -114,8 +114,6 @@ enum PrsMgr_TypeOfPresentation3d {
 class Handle_PrsMgr_Prs : public Handle_Prs3d_Presentation {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PrsMgr_Prs();
-		%feature("autodoc", "1");
 		Handle_PrsMgr_Prs();
 		%feature("autodoc", "1");
 		Handle_PrsMgr_Prs(const Handle_PrsMgr_Prs &aHandle);
@@ -130,12 +128,15 @@ class Handle_PrsMgr_Prs : public Handle_Prs3d_Presentation {
 	return (PrsMgr_Prs*)$self->Access();
 	}
 };
+%extend Handle_PrsMgr_Prs {
+	~Handle_PrsMgr_Prs() {
+	printf("Call custom destructor for instance of Handle_PrsMgr_Prs\n");
+	}
+};
 
 %nodefaultctor Handle_PrsMgr_Presentation;
 class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PrsMgr_Presentation();
 		%feature("autodoc", "1");
 		Handle_PrsMgr_Presentation();
 		%feature("autodoc", "1");
@@ -151,12 +152,15 @@ class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
 	return (PrsMgr_Presentation*)$self->Access();
 	}
 };
+%extend Handle_PrsMgr_Presentation {
+	~Handle_PrsMgr_Presentation() {
+	printf("Call custom destructor for instance of Handle_PrsMgr_Presentation\n");
+	}
+};
 
 %nodefaultctor Handle_PrsMgr_Presentation2d;
 class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PrsMgr_Presentation2d();
 		%feature("autodoc", "1");
 		Handle_PrsMgr_Presentation2d();
 		%feature("autodoc", "1");
@@ -172,12 +176,15 @@ class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
 	return (PrsMgr_Presentation2d*)$self->Access();
 	}
 };
+%extend Handle_PrsMgr_Presentation2d {
+	~Handle_PrsMgr_Presentation2d() {
+	printf("Call custom destructor for instance of Handle_PrsMgr_Presentation2d\n");
+	}
+};
 
 %nodefaultctor Handle_PrsMgr_Presentation3d;
 class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PrsMgr_Presentation3d();
 		%feature("autodoc", "1");
 		Handle_PrsMgr_Presentation3d();
 		%feature("autodoc", "1");
@@ -193,12 +200,15 @@ class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
 	return (PrsMgr_Presentation3d*)$self->Access();
 	}
 };
+%extend Handle_PrsMgr_Presentation3d {
+	~Handle_PrsMgr_Presentation3d() {
+	printf("Call custom destructor for instance of Handle_PrsMgr_Presentation3d\n");
+	}
+};
 
 %nodefaultctor Handle_PrsMgr_PresentableObject;
 class Handle_PrsMgr_PresentableObject : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PrsMgr_PresentableObject();
 		%feature("autodoc", "1");
 		Handle_PrsMgr_PresentableObject();
 		%feature("autodoc", "1");
@@ -214,12 +224,15 @@ class Handle_PrsMgr_PresentableObject : public Handle_MMgt_TShared {
 	return (PrsMgr_PresentableObject*)$self->Access();
 	}
 };
+%extend Handle_PrsMgr_PresentableObject {
+	~Handle_PrsMgr_PresentableObject() {
+	printf("Call custom destructor for instance of Handle_PrsMgr_PresentableObject\n");
+	}
+};
 
 %nodefaultctor Handle_PrsMgr_PresentationManager;
 class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PrsMgr_PresentationManager();
 		%feature("autodoc", "1");
 		Handle_PrsMgr_PresentationManager();
 		%feature("autodoc", "1");
@@ -235,12 +248,15 @@ class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 	return (PrsMgr_PresentationManager*)$self->Access();
 	}
 };
+%extend Handle_PrsMgr_PresentationManager {
+	~Handle_PrsMgr_PresentationManager() {
+	printf("Call custom destructor for instance of Handle_PrsMgr_PresentationManager\n");
+	}
+};
 
 %nodefaultctor Handle_PrsMgr_PresentationManager2d;
 class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationManager {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PrsMgr_PresentationManager2d();
 		%feature("autodoc", "1");
 		Handle_PrsMgr_PresentationManager2d();
 		%feature("autodoc", "1");
@@ -256,12 +272,15 @@ class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationMan
 	return (PrsMgr_PresentationManager2d*)$self->Access();
 	}
 };
+%extend Handle_PrsMgr_PresentationManager2d {
+	~Handle_PrsMgr_PresentationManager2d() {
+	printf("Call custom destructor for instance of Handle_PrsMgr_PresentationManager2d\n");
+	}
+};
 
 %nodefaultctor Handle_PrsMgr_PresentationManager3d;
 class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationManager {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PrsMgr_PresentationManager3d();
 		%feature("autodoc", "1");
 		Handle_PrsMgr_PresentationManager3d();
 		%feature("autodoc", "1");
@@ -277,12 +296,15 @@ class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationMan
 	return (PrsMgr_PresentationManager3d*)$self->Access();
 	}
 };
+%extend Handle_PrsMgr_PresentationManager3d {
+	~Handle_PrsMgr_PresentationManager3d() {
+	printf("Call custom destructor for instance of Handle_PrsMgr_PresentationManager3d\n");
+	}
+};
 
 %nodefaultctor Handle_PrsMgr_SequenceNodeOfPresentations;
 class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PrsMgr_SequenceNodeOfPresentations();
 		%feature("autodoc", "1");
 		Handle_PrsMgr_SequenceNodeOfPresentations();
 		%feature("autodoc", "1");
@@ -296,6 +318,11 @@ class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqN
 %extend Handle_PrsMgr_SequenceNodeOfPresentations {
 	PrsMgr_SequenceNodeOfPresentations* GetObject() {
 	return (PrsMgr_SequenceNodeOfPresentations*)$self->Access();
+	}
+};
+%extend Handle_PrsMgr_SequenceNodeOfPresentations {
+	~Handle_PrsMgr_SequenceNodeOfPresentations() {
+	printf("Call custom destructor for instance of Handle_PrsMgr_SequenceNodeOfPresentations\n");
 	}
 };
 
@@ -333,6 +360,11 @@ class PrsMgr_Presentation : public MMgt_TShared {
 %extend PrsMgr_Presentation {
 	Handle_PrsMgr_Presentation GetHandle() {
 	return *(Handle_PrsMgr_Presentation*) &$self;
+	}
+};
+%extend PrsMgr_Presentation {
+	~PrsMgr_Presentation() {
+	printf("Call custom destructor for instance of PrsMgr_Presentation\n");
 	}
 };
 
@@ -395,13 +427,16 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 		PrsMgr_ModedPresentation & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PrsMgr_SequenceNodeOfPresentations();
 
 };
 %extend PrsMgr_SequenceNodeOfPresentations {
 	Handle_PrsMgr_SequenceNodeOfPresentations GetHandle() {
 	return *(Handle_PrsMgr_SequenceNodeOfPresentations*) &$self;
+	}
+};
+%extend PrsMgr_SequenceNodeOfPresentations {
+	~PrsMgr_SequenceNodeOfPresentations() {
+	printf("Call custom destructor for instance of PrsMgr_SequenceNodeOfPresentations\n");
 	}
 };
 
@@ -440,13 +475,16 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 		virtual		void UpdateLocation(const Handle_Prs3d_Presentation &P);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PrsMgr_PresentableObject();
 
 };
 %extend PrsMgr_PresentableObject {
 	Handle_PrsMgr_PresentableObject GetHandle() {
 	return *(Handle_PrsMgr_PresentableObject*) &$self;
+	}
+};
+%extend PrsMgr_PresentableObject {
+	~PrsMgr_PresentableObject() {
+	printf("Call custom destructor for instance of PrsMgr_PresentableObject\n");
 	}
 };
 
@@ -465,13 +503,16 @@ class PrsMgr_Presentation2d : public PrsMgr_Presentation {
 		Handle_Graphic2d_GraphicObject Presentation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PrsMgr_Presentation2d();
 
 };
 %extend PrsMgr_Presentation2d {
 	Handle_PrsMgr_Presentation2d GetHandle() {
 	return *(Handle_PrsMgr_Presentation2d*) &$self;
+	}
+};
+%extend PrsMgr_Presentation2d {
+	~PrsMgr_Presentation2d() {
+	printf("Call custom destructor for instance of PrsMgr_Presentation2d\n");
 	}
 };
 
@@ -490,13 +531,16 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix, Handle_Graphic3d_Structure & aStructure);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PrsMgr_Prs();
 
 };
 %extend PrsMgr_Prs {
 	Handle_PrsMgr_Prs GetHandle() {
 	return *(Handle_PrsMgr_Prs*) &$self;
+	}
+};
+%extend PrsMgr_Prs {
+	~PrsMgr_Prs() {
+	printf("Call custom destructor for instance of PrsMgr_Prs\n");
 	}
 };
 
@@ -548,6 +592,11 @@ class PrsMgr_PresentationManager : public MMgt_TShared {
 	return *(Handle_PrsMgr_PresentationManager*) &$self;
 	}
 };
+%extend PrsMgr_PresentationManager {
+	~PrsMgr_PresentationManager() {
+	printf("Call custom destructor for instance of PrsMgr_PresentationManager\n");
+	}
+};
 
 %nodefaultctor PrsMgr_PresentationManager2d;
 class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
@@ -592,13 +641,16 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 		virtual		Handle_PrsMgr_Presentation newPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PrsMgr_PresentationManager2d();
 
 };
 %extend PrsMgr_PresentationManager2d {
 	Handle_PrsMgr_PresentationManager2d GetHandle() {
 	return *(Handle_PrsMgr_PresentationManager2d*) &$self;
+	}
+};
+%extend PrsMgr_PresentationManager2d {
+	~PrsMgr_PresentationManager2d() {
+	printf("Call custom destructor for instance of PrsMgr_PresentationManager2d\n");
 	}
 };
 
@@ -639,13 +691,16 @@ class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {
 		Handle_PrsMgr_Presentation3d CastPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PrsMgr_PresentationManager3d();
 
 };
 %extend PrsMgr_PresentationManager3d {
 	Handle_PrsMgr_PresentationManager3d GetHandle() {
 	return *(Handle_PrsMgr_PresentationManager3d*) &$self;
+	}
+};
+%extend PrsMgr_PresentationManager3d {
+	~PrsMgr_PresentationManager3d() {
+	printf("Call custom destructor for instance of PrsMgr_PresentationManager3d\n");
 	}
 };
 
@@ -658,12 +713,15 @@ class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 		Handle_Prs3d_Presentation Presentation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PrsMgr_Presentation3d();
 
 };
 %extend PrsMgr_Presentation3d {
 	Handle_PrsMgr_Presentation3d GetHandle() {
 	return *(Handle_PrsMgr_Presentation3d*) &$self;
+	}
+};
+%extend PrsMgr_Presentation3d {
+	~PrsMgr_Presentation3d() {
+	printf("Call custom destructor for instance of PrsMgr_Presentation3d\n");
 	}
 };

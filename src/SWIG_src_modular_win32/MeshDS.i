@@ -116,8 +116,6 @@ enum MeshDS_DegreeOfFreedom {
 class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger();
-		%feature("autodoc", "1");
 		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger();
 		%feature("autodoc", "1");
 		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger &aHandle);
@@ -130,6 +128,11 @@ class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TC
 %extend Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
 	MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger* GetObject() {
 	return (MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger*)$self->Access();
+	}
+};
+%extend Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	~Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger() {
+	printf("Call custom destructor for instance of Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");
 	}
 };
 
@@ -162,13 +165,16 @@ class MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapN
 		TColStd_MapOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger();
 
 };
 %extend MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
 	Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger GetHandle() {
 	return *(Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger*) &$self;
+	}
+};
+%extend MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	~MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger() {
+	printf("Call custom destructor for instance of MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");
 	}
 };
 

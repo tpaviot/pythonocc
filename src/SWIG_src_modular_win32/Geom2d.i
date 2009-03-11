@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Geom2d_Geometry : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Geom2d_Geometry();
-		%feature("autodoc", "1");
 		Handle_Geom2d_Geometry();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Geometry(const Handle_Geom2d_Geometry &aHandle);
@@ -118,12 +116,15 @@ class Handle_Geom2d_Geometry : public Handle_MMgt_TShared {
 	return (Geom2d_Geometry*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Geometry {
+	~Handle_Geom2d_Geometry() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Geometry\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Curve;
 class Handle_Geom2d_Curve : public Handle_Geom2d_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Curve();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_Geom2d_Curve : public Handle_Geom2d_Geometry {
 	return (Geom2d_Curve*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Curve {
+	~Handle_Geom2d_Curve() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Curve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Conic;
 class Handle_Geom2d_Conic : public Handle_Geom2d_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Conic();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Conic();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_Geom2d_Conic : public Handle_Geom2d_Curve {
 	return (Geom2d_Conic*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Conic {
+	~Handle_Geom2d_Conic() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Conic\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Circle;
 class Handle_Geom2d_Circle : public Handle_Geom2d_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Circle();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Circle();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_Geom2d_Circle : public Handle_Geom2d_Conic {
 	return (Geom2d_Circle*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Circle {
+	~Handle_Geom2d_Circle() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Circle\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_BoundedCurve;
 class Handle_Geom2d_BoundedCurve : public Handle_Geom2d_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_BoundedCurve();
 		%feature("autodoc", "1");
 		Handle_Geom2d_BoundedCurve();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_Geom2d_BoundedCurve : public Handle_Geom2d_Curve {
 	return (Geom2d_BoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_BoundedCurve {
+	~Handle_Geom2d_BoundedCurve() {
+	printf("Call custom destructor for instance of Handle_Geom2d_BoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Transformation;
 class Handle_Geom2d_Transformation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Transformation();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Transformation();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_Geom2d_Transformation : public Handle_MMgt_TShared {
 	return (Geom2d_Transformation*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Transformation {
+	~Handle_Geom2d_Transformation() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Transformation\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_UndefinedDerivative;
 class Handle_Geom2d_UndefinedDerivative : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_UndefinedDerivative();
 		%feature("autodoc", "1");
 		Handle_Geom2d_UndefinedDerivative();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_Geom2d_UndefinedDerivative : public Handle_Standard_DomainError {
 	return (Geom2d_UndefinedDerivative*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_UndefinedDerivative {
+	~Handle_Geom2d_UndefinedDerivative() {
+	printf("Call custom destructor for instance of Handle_Geom2d_UndefinedDerivative\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Point;
 class Handle_Geom2d_Point : public Handle_Geom2d_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Point();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Point();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_Geom2d_Point : public Handle_Geom2d_Geometry {
 	return (Geom2d_Point*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Point {
+	~Handle_Geom2d_Point() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Point\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_CartesianPoint;
 class Handle_Geom2d_CartesianPoint : public Handle_Geom2d_Point {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_CartesianPoint();
 		%feature("autodoc", "1");
 		Handle_Geom2d_CartesianPoint();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_Geom2d_CartesianPoint : public Handle_Geom2d_Point {
 	return (Geom2d_CartesianPoint*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_CartesianPoint {
+	~Handle_Geom2d_CartesianPoint() {
+	printf("Call custom destructor for instance of Handle_Geom2d_CartesianPoint\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Vector;
 class Handle_Geom2d_Vector : public Handle_Geom2d_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Vector();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Vector();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_Geom2d_Vector : public Handle_Geom2d_Geometry {
 	return (Geom2d_Vector*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Vector {
+	~Handle_Geom2d_Vector() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Vector\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Direction;
 class Handle_Geom2d_Direction : public Handle_Geom2d_Vector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Direction();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Direction();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_Geom2d_Direction : public Handle_Geom2d_Vector {
 	return (Geom2d_Direction*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Direction {
+	~Handle_Geom2d_Direction() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Direction\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_TrimmedCurve;
 class Handle_Geom2d_TrimmedCurve : public Handle_Geom2d_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_TrimmedCurve();
 		%feature("autodoc", "1");
 		Handle_Geom2d_TrimmedCurve();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_Geom2d_TrimmedCurve : public Handle_Geom2d_BoundedCurve {
 	return (Geom2d_TrimmedCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_TrimmedCurve {
+	~Handle_Geom2d_TrimmedCurve() {
+	printf("Call custom destructor for instance of Handle_Geom2d_TrimmedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Hyperbola;
 class Handle_Geom2d_Hyperbola : public Handle_Geom2d_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Hyperbola();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Hyperbola();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_Geom2d_Hyperbola : public Handle_Geom2d_Conic {
 	return (Geom2d_Hyperbola*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Hyperbola {
+	~Handle_Geom2d_Hyperbola() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Hyperbola\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Ellipse;
 class Handle_Geom2d_Ellipse : public Handle_Geom2d_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Ellipse();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Ellipse();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_Geom2d_Ellipse : public Handle_Geom2d_Conic {
 	return (Geom2d_Ellipse*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Ellipse {
+	~Handle_Geom2d_Ellipse() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Ellipse\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_BezierCurve;
 class Handle_Geom2d_BezierCurve : public Handle_Geom2d_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_BezierCurve();
 		%feature("autodoc", "1");
 		Handle_Geom2d_BezierCurve();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_Geom2d_BezierCurve : public Handle_Geom2d_BoundedCurve {
 	return (Geom2d_BezierCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_BezierCurve {
+	~Handle_Geom2d_BezierCurve() {
+	printf("Call custom destructor for instance of Handle_Geom2d_BezierCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Line;
 class Handle_Geom2d_Line : public Handle_Geom2d_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Line();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Line();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_Geom2d_Line : public Handle_Geom2d_Curve {
 	return (Geom2d_Line*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_Line {
+	~Handle_Geom2d_Line() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Line\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_OffsetCurve;
 class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_OffsetCurve();
 		%feature("autodoc", "1");
 		Handle_Geom2d_OffsetCurve();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
 	return (Geom2d_OffsetCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_OffsetCurve {
+	~Handle_Geom2d_OffsetCurve() {
+	printf("Call custom destructor for instance of Handle_Geom2d_OffsetCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_AxisPlacement;
 class Handle_Geom2d_AxisPlacement : public Handle_Geom2d_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_AxisPlacement();
 		%feature("autodoc", "1");
 		Handle_Geom2d_AxisPlacement();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_Geom2d_AxisPlacement : public Handle_Geom2d_Geometry {
 	return (Geom2d_AxisPlacement*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_AxisPlacement {
+	~Handle_Geom2d_AxisPlacement() {
+	printf("Call custom destructor for instance of Handle_Geom2d_AxisPlacement\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_UndefinedValue;
 class Handle_Geom2d_UndefinedValue : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_UndefinedValue();
 		%feature("autodoc", "1");
 		Handle_Geom2d_UndefinedValue();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_Geom2d_UndefinedValue : public Handle_Standard_DomainError {
 	return (Geom2d_UndefinedValue*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_UndefinedValue {
+	~Handle_Geom2d_UndefinedValue() {
+	printf("Call custom destructor for instance of Handle_Geom2d_UndefinedValue\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_VectorWithMagnitude;
 class Handle_Geom2d_VectorWithMagnitude : public Handle_Geom2d_Vector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_VectorWithMagnitude();
 		%feature("autodoc", "1");
 		Handle_Geom2d_VectorWithMagnitude();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_Geom2d_VectorWithMagnitude : public Handle_Geom2d_Vector {
 	return (Geom2d_VectorWithMagnitude*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_VectorWithMagnitude {
+	~Handle_Geom2d_VectorWithMagnitude() {
+	printf("Call custom destructor for instance of Handle_Geom2d_VectorWithMagnitude\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_BSplineCurve;
 class Handle_Geom2d_BSplineCurve : public Handle_Geom2d_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_BSplineCurve();
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_Geom2d_BSplineCurve : public Handle_Geom2d_BoundedCurve {
 	return (Geom2d_BSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom2d_BSplineCurve {
+	~Handle_Geom2d_BSplineCurve() {
+	printf("Call custom destructor for instance of Handle_Geom2d_BSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2d_Parabola;
 class Handle_Geom2d_Parabola : public Handle_Geom2d_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2d_Parabola();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Parabola();
 		%feature("autodoc", "1");
@@ -557,6 +618,11 @@ class Handle_Geom2d_Parabola : public Handle_Geom2d_Conic {
 %extend Handle_Geom2d_Parabola {
 	Geom2d_Parabola* GetObject() {
 	return (Geom2d_Parabola*)$self->Access();
+	}
+};
+%extend Handle_Geom2d_Parabola {
+	~Handle_Geom2d_Parabola() {
+	printf("Call custom destructor for instance of Handle_Geom2d_Parabola\n");
 	}
 };
 
@@ -602,6 +668,11 @@ class Geom2d_Geometry : public MMgt_TShared {
 	return *(Handle_Geom2d_Geometry*) &$self;
 	}
 };
+%extend Geom2d_Geometry {
+	~Geom2d_Geometry() {
+	printf("Call custom destructor for instance of Geom2d_Geometry\n");
+	}
+};
 
 %nodefaultctor Geom2d_Vector;
 class Geom2d_Vector : public Geom2d_Geometry {
@@ -635,6 +706,11 @@ class Geom2d_Vector : public Geom2d_Geometry {
 	return *(Handle_Geom2d_Vector*) &$self;
 	}
 };
+%extend Geom2d_Vector {
+	~Geom2d_Vector() {
+	printf("Call custom destructor for instance of Geom2d_Vector\n");
+	}
+};
 
 %nodefaultctor Geom2d_Direction;
 class Geom2d_Direction : public Geom2d_Vector {
@@ -655,13 +731,16 @@ class Geom2d_Direction : public Geom2d_Vector {
 		gp_Dir2d Dir2d() const;
 		%feature("autodoc", "1");
 		Standard_Real operator^(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_Direction();
 
 };
 %extend Geom2d_Direction {
 	Handle_Geom2d_Direction GetHandle() {
 	return *(Handle_Geom2d_Direction*) &$self;
+	}
+};
+%extend Geom2d_Direction {
+	~Geom2d_Direction() {
+	printf("Call custom destructor for instance of Geom2d_Direction\n");
 	}
 };
 
@@ -713,6 +792,11 @@ class Geom2d_Curve : public Geom2d_Geometry {
 	return *(Handle_Geom2d_Curve*) &$self;
 	}
 };
+%extend Geom2d_Curve {
+	~Geom2d_Curve() {
+	printf("Call custom destructor for instance of Geom2d_Curve\n");
+	}
+};
 
 %nodefaultctor Geom2d_Conic;
 class Geom2d_Conic : public Geom2d_Curve {
@@ -742,6 +826,11 @@ class Geom2d_Conic : public Geom2d_Curve {
 	return *(Handle_Geom2d_Conic*) &$self;
 	}
 };
+%extend Geom2d_Conic {
+	~Geom2d_Conic() {
+	printf("Call custom destructor for instance of Geom2d_Conic\n");
+	}
+};
 
 %nodefaultctor Geom2d_Circle;
 class Geom2d_Circle : public Geom2d_Conic {
@@ -764,13 +853,16 @@ class Geom2d_Circle : public Geom2d_Conic {
 		virtual		void Transform(const gp_Trsf2d &T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_Circle();
 
 };
 %extend Geom2d_Circle {
 	Handle_Geom2d_Circle GetHandle() {
 	return *(Handle_Geom2d_Circle*) &$self;
+	}
+};
+%extend Geom2d_Circle {
+	~Geom2d_Circle() {
+	printf("Call custom destructor for instance of Geom2d_Circle\n");
 	}
 };
 
@@ -831,13 +923,16 @@ class Geom2d_Parabola : public Geom2d_Conic {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_Parabola();
 
 };
 %extend Geom2d_Parabola {
 	Handle_Geom2d_Parabola GetHandle() {
 	return *(Handle_Geom2d_Parabola*) &$self;
+	}
+};
+%extend Geom2d_Parabola {
+	~Geom2d_Parabola() {
+	printf("Call custom destructor for instance of Geom2d_Parabola\n");
 	}
 };
 
@@ -865,6 +960,11 @@ class Geom2d_Point : public Geom2d_Geometry {
 	return *(Handle_Geom2d_Point*) &$self;
 	}
 };
+%extend Geom2d_Point {
+	~Geom2d_Point() {
+	printf("Call custom destructor for instance of Geom2d_Point\n");
+	}
+};
 
 %nodefaultctor Geom2d_UndefinedDerivative;
 class Geom2d_UndefinedDerivative : public Standard_DomainError {
@@ -881,13 +981,16 @@ class Geom2d_UndefinedDerivative : public Standard_DomainError {
 		Handle_Geom2d_UndefinedDerivative NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_UndefinedDerivative();
 
 };
 %extend Geom2d_UndefinedDerivative {
 	Handle_Geom2d_UndefinedDerivative GetHandle() {
 	return *(Handle_Geom2d_UndefinedDerivative*) &$self;
+	}
+};
+%extend Geom2d_UndefinedDerivative {
+	~Geom2d_UndefinedDerivative() {
+	printf("Call custom destructor for instance of Geom2d_UndefinedDerivative\n");
 	}
 };
 
@@ -962,13 +1065,16 @@ class Geom2d_Hyperbola : public Geom2d_Conic {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_Hyperbola();
 
 };
 %extend Geom2d_Hyperbola {
 	Handle_Geom2d_Hyperbola GetHandle() {
 	return *(Handle_Geom2d_Hyperbola*) &$self;
+	}
+};
+%extend Geom2d_Hyperbola {
+	~Geom2d_Hyperbola() {
+	printf("Call custom destructor for instance of Geom2d_Hyperbola\n");
 	}
 };
 
@@ -1031,13 +1137,16 @@ class Geom2d_Transformation : public MMgt_TShared {
 		Handle_Geom2d_Transformation Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_Transformation();
 
 };
 %extend Geom2d_Transformation {
 	Handle_Geom2d_Transformation GetHandle() {
 	return *(Handle_Geom2d_Transformation*) &$self;
+	}
+};
+%extend Geom2d_Transformation {
+	~Geom2d_Transformation() {
+	printf("Call custom destructor for instance of Geom2d_Transformation\n");
 	}
 };
 
@@ -1070,13 +1179,16 @@ class Geom2d_CartesianPoint : public Geom2d_Point {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_CartesianPoint();
 
 };
 %extend Geom2d_CartesianPoint {
 	Handle_Geom2d_CartesianPoint GetHandle() {
 	return *(Handle_Geom2d_CartesianPoint*) &$self;
+	}
+};
+%extend Geom2d_CartesianPoint {
+	~Geom2d_CartesianPoint() {
+	printf("Call custom destructor for instance of Geom2d_CartesianPoint\n");
 	}
 };
 
@@ -1094,6 +1206,11 @@ class Geom2d_BoundedCurve : public Geom2d_Curve {
 %extend Geom2d_BoundedCurve {
 	Handle_Geom2d_BoundedCurve GetHandle() {
 	return *(Handle_Geom2d_BoundedCurve*) &$self;
+	}
+};
+%extend Geom2d_BoundedCurve {
+	~Geom2d_BoundedCurve() {
+	printf("Call custom destructor for instance of Geom2d_BoundedCurve\n");
 	}
 };
 
@@ -1230,13 +1347,16 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		void Resolution(const Standard_Real ToleranceUV, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_BSplineCurve();
 
 };
 %extend Geom2d_BSplineCurve {
 	Handle_Geom2d_BSplineCurve GetHandle() {
 	return *(Handle_Geom2d_BSplineCurve*) &$self;
+	}
+};
+%extend Geom2d_BSplineCurve {
+	~Geom2d_BSplineCurve() {
+	printf("Call custom destructor for instance of Geom2d_BSplineCurve\n");
 	}
 };
 
@@ -1305,13 +1425,16 @@ class Geom2d_VectorWithMagnitude : public Geom2d_Vector {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_VectorWithMagnitude();
 
 };
 %extend Geom2d_VectorWithMagnitude {
 	Handle_Geom2d_VectorWithMagnitude GetHandle() {
 	return *(Handle_Geom2d_VectorWithMagnitude*) &$self;
+	}
+};
+%extend Geom2d_VectorWithMagnitude {
+	~Geom2d_VectorWithMagnitude() {
+	printf("Call custom destructor for instance of Geom2d_VectorWithMagnitude\n");
 	}
 };
 
@@ -1378,13 +1501,16 @@ class Geom2d_Line : public Geom2d_Curve {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_Line();
 
 };
 %extend Geom2d_Line {
 	Handle_Geom2d_Line GetHandle() {
 	return *(Handle_Geom2d_Line*) &$self;
+	}
+};
+%extend Geom2d_Line {
+	~Geom2d_Line() {
+	printf("Call custom destructor for instance of Geom2d_Line\n");
 	}
 };
 
@@ -1465,13 +1591,16 @@ class Geom2d_BezierCurve : public Geom2d_BoundedCurve {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_BezierCurve();
 
 };
 %extend Geom2d_BezierCurve {
 	Handle_Geom2d_BezierCurve GetHandle() {
 	return *(Handle_Geom2d_BezierCurve*) &$self;
+	}
+};
+%extend Geom2d_BezierCurve {
+	~Geom2d_BezierCurve() {
+	printf("Call custom destructor for instance of Geom2d_BezierCurve\n");
 	}
 };
 
@@ -1536,13 +1665,16 @@ class Geom2d_Ellipse : public Geom2d_Conic {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_Ellipse();
 
 };
 %extend Geom2d_Ellipse {
 	Handle_Geom2d_Ellipse GetHandle() {
 	return *(Handle_Geom2d_Ellipse*) &$self;
+	}
+};
+%extend Geom2d_Ellipse {
+	~Geom2d_Ellipse() {
+	printf("Call custom destructor for instance of Geom2d_Ellipse\n");
 	}
 };
 
@@ -1597,13 +1729,16 @@ class Geom2d_TrimmedCurve : public Geom2d_BoundedCurve {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_TrimmedCurve();
 
 };
 %extend Geom2d_TrimmedCurve {
 	Handle_Geom2d_TrimmedCurve GetHandle() {
 	return *(Handle_Geom2d_TrimmedCurve*) &$self;
+	}
+};
+%extend Geom2d_TrimmedCurve {
+	~Geom2d_TrimmedCurve() {
+	printf("Call custom destructor for instance of Geom2d_TrimmedCurve\n");
 	}
 };
 
@@ -1638,13 +1773,16 @@ class Geom2d_AxisPlacement : public Geom2d_Geometry {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_AxisPlacement();
 
 };
 %extend Geom2d_AxisPlacement {
 	Handle_Geom2d_AxisPlacement GetHandle() {
 	return *(Handle_Geom2d_AxisPlacement*) &$self;
+	}
+};
+%extend Geom2d_AxisPlacement {
+	~Geom2d_AxisPlacement() {
+	printf("Call custom destructor for instance of Geom2d_AxisPlacement\n");
 	}
 };
 
@@ -1663,13 +1801,16 @@ class Geom2d_UndefinedValue : public Standard_DomainError {
 		Handle_Geom2d_UndefinedValue NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_UndefinedValue();
 
 };
 %extend Geom2d_UndefinedValue {
 	Handle_Geom2d_UndefinedValue GetHandle() {
 	return *(Handle_Geom2d_UndefinedValue*) &$self;
+	}
+};
+%extend Geom2d_UndefinedValue {
+	~Geom2d_UndefinedValue() {
+	printf("Call custom destructor for instance of Geom2d_UndefinedValue\n");
 	}
 };
 
@@ -1730,12 +1871,15 @@ class Geom2d_OffsetCurve : public Geom2d_Curve {
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2d_OffsetCurve();
 
 };
 %extend Geom2d_OffsetCurve {
 	Handle_Geom2d_OffsetCurve GetHandle() {
 	return *(Handle_Geom2d_OffsetCurve*) &$self;
+	}
+};
+%extend Geom2d_OffsetCurve {
+	~Geom2d_OffsetCurve() {
+	printf("Call custom destructor for instance of Geom2d_OffsetCurve\n");
 	}
 };

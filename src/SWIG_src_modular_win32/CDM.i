@@ -111,8 +111,6 @@ enum CDM_CanCloseStatus {
 class Handle_CDM_Reference : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		~Handle_CDM_Reference();
-		%feature("autodoc", "1");
 		Handle_CDM_Reference();
 		%feature("autodoc", "1");
 		Handle_CDM_Reference(const Handle_CDM_Reference &aHandle);
@@ -127,12 +125,15 @@ class Handle_CDM_Reference : public Handle_Standard_Transient {
 	return (CDM_Reference*)$self->Access();
 	}
 };
+%extend Handle_CDM_Reference {
+	~Handle_CDM_Reference() {
+	printf("Call custom destructor for instance of Handle_CDM_Reference\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_StackNodeOfStackOfDocument;
 class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_StackNodeOfStackOfDocument();
 		%feature("autodoc", "1");
 		Handle_CDM_StackNodeOfStackOfDocument();
 		%feature("autodoc", "1");
@@ -148,12 +149,15 @@ class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode 
 	return (CDM_StackNodeOfStackOfDocument*)$self->Access();
 	}
 };
+%extend Handle_CDM_StackNodeOfStackOfDocument {
+	~Handle_CDM_StackNodeOfStackOfDocument() {
+	printf("Call custom destructor for instance of Handle_CDM_StackNodeOfStackOfDocument\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_Application;
 class Handle_CDM_Application : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_Application();
 		%feature("autodoc", "1");
 		Handle_CDM_Application();
 		%feature("autodoc", "1");
@@ -169,12 +173,15 @@ class Handle_CDM_Application : public Handle_Standard_Transient {
 	return (CDM_Application*)$self->Access();
 	}
 };
+%extend Handle_CDM_Application {
+	~Handle_CDM_Application() {
+	printf("Call custom destructor for instance of Handle_CDM_Application\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_MessageDriver;
 class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_MessageDriver();
 		%feature("autodoc", "1");
 		Handle_CDM_MessageDriver();
 		%feature("autodoc", "1");
@@ -190,12 +197,15 @@ class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 	return (CDM_MessageDriver*)$self->Access();
 	}
 };
+%extend Handle_CDM_MessageDriver {
+	~Handle_CDM_MessageDriver() {
+	printf("Call custom destructor for instance of Handle_CDM_MessageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_COutMessageDriver;
 class Handle_CDM_COutMessageDriver : public Handle_CDM_MessageDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_COutMessageDriver();
 		%feature("autodoc", "1");
 		Handle_CDM_COutMessageDriver();
 		%feature("autodoc", "1");
@@ -211,12 +221,15 @@ class Handle_CDM_COutMessageDriver : public Handle_CDM_MessageDriver {
 	return (CDM_COutMessageDriver*)$self->Access();
 	}
 };
+%extend Handle_CDM_COutMessageDriver {
+	~Handle_CDM_COutMessageDriver() {
+	printf("Call custom destructor for instance of Handle_CDM_COutMessageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_DataMapNodeOfNamesDirectory;
 class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_DataMapNodeOfNamesDirectory();
 		%feature("autodoc", "1");
 		Handle_CDM_DataMapNodeOfNamesDirectory();
 		%feature("autodoc", "1");
@@ -232,12 +245,15 @@ class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode
 	return (CDM_DataMapNodeOfNamesDirectory*)$self->Access();
 	}
 };
+%extend Handle_CDM_DataMapNodeOfNamesDirectory {
+	~Handle_CDM_DataMapNodeOfNamesDirectory() {
+	printf("Call custom destructor for instance of Handle_CDM_DataMapNodeOfNamesDirectory\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_StdMapNodeOfMapOfDocument;
 class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_StdMapNodeOfMapOfDocument();
 		%feature("autodoc", "1");
 		Handle_CDM_StdMapNodeOfMapOfDocument();
 		%feature("autodoc", "1");
@@ -253,12 +269,15 @@ class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 	return (CDM_StdMapNodeOfMapOfDocument*)$self->Access();
 	}
 };
+%extend Handle_CDM_StdMapNodeOfMapOfDocument {
+	~Handle_CDM_StdMapNodeOfMapOfDocument() {
+	printf("Call custom destructor for instance of Handle_CDM_StdMapNodeOfMapOfDocument\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_DataMapNodeOfMetaDataLookUpTable;
 class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_DataMapNodeOfMetaDataLookUpTable();
 		%feature("autodoc", "1");
 		Handle_CDM_DataMapNodeOfMetaDataLookUpTable();
 		%feature("autodoc", "1");
@@ -274,12 +293,15 @@ class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_Ma
 	return (CDM_DataMapNodeOfMetaDataLookUpTable*)$self->Access();
 	}
 };
+%extend Handle_CDM_DataMapNodeOfMetaDataLookUpTable {
+	~Handle_CDM_DataMapNodeOfMetaDataLookUpTable() {
+	printf("Call custom destructor for instance of Handle_CDM_DataMapNodeOfMetaDataLookUpTable\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_Document;
 class Handle_CDM_Document : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_Document();
 		%feature("autodoc", "1");
 		Handle_CDM_Document();
 		%feature("autodoc", "1");
@@ -295,12 +317,15 @@ class Handle_CDM_Document : public Handle_Standard_Transient {
 	return (CDM_Document*)$self->Access();
 	}
 };
+%extend Handle_CDM_Document {
+	~Handle_CDM_Document() {
+	printf("Call custom destructor for instance of Handle_CDM_Document\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_MetaData;
 class Handle_CDM_MetaData : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_MetaData();
 		%feature("autodoc", "1");
 		Handle_CDM_MetaData();
 		%feature("autodoc", "1");
@@ -316,12 +341,15 @@ class Handle_CDM_MetaData : public Handle_Standard_Transient {
 	return (CDM_MetaData*)$self->Access();
 	}
 };
+%extend Handle_CDM_MetaData {
+	~Handle_CDM_MetaData() {
+	printf("Call custom destructor for instance of Handle_CDM_MetaData\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_NullMessageDriver;
 class Handle_CDM_NullMessageDriver : public Handle_CDM_MessageDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_NullMessageDriver();
 		%feature("autodoc", "1");
 		Handle_CDM_NullMessageDriver();
 		%feature("autodoc", "1");
@@ -337,12 +365,15 @@ class Handle_CDM_NullMessageDriver : public Handle_CDM_MessageDriver {
 	return (CDM_NullMessageDriver*)$self->Access();
 	}
 };
+%extend Handle_CDM_NullMessageDriver {
+	~Handle_CDM_NullMessageDriver() {
+	printf("Call custom destructor for instance of Handle_CDM_NullMessageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_DataMapNodeOfPresentationDirectory;
 class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_DataMapNodeOfPresentationDirectory();
 		%feature("autodoc", "1");
 		Handle_CDM_DataMapNodeOfPresentationDirectory();
 		%feature("autodoc", "1");
@@ -358,12 +389,15 @@ class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_
 	return (CDM_DataMapNodeOfPresentationDirectory*)$self->Access();
 	}
 };
+%extend Handle_CDM_DataMapNodeOfPresentationDirectory {
+	~Handle_CDM_DataMapNodeOfPresentationDirectory() {
+	printf("Call custom destructor for instance of Handle_CDM_DataMapNodeOfPresentationDirectory\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_ListNodeOfListOfDocument;
 class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_ListNodeOfListOfDocument();
 		%feature("autodoc", "1");
 		Handle_CDM_ListNodeOfListOfDocument();
 		%feature("autodoc", "1");
@@ -379,12 +413,15 @@ class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
 	return (CDM_ListNodeOfListOfDocument*)$self->Access();
 	}
 };
+%extend Handle_CDM_ListNodeOfListOfDocument {
+	~Handle_CDM_ListNodeOfListOfDocument() {
+	printf("Call custom destructor for instance of Handle_CDM_ListNodeOfListOfDocument\n");
+	}
+};
 
 %nodefaultctor Handle_CDM_ListNodeOfListOfReferences;
 class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDM_ListNodeOfListOfReferences();
 		%feature("autodoc", "1");
 		Handle_CDM_ListNodeOfListOfReferences();
 		%feature("autodoc", "1");
@@ -398,6 +435,11 @@ class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode 
 %extend Handle_CDM_ListNodeOfListOfReferences {
 	CDM_ListNodeOfListOfReferences* GetObject() {
 	return (CDM_ListNodeOfListOfReferences*)$self->Access();
+	}
+};
+%extend Handle_CDM_ListNodeOfListOfReferences {
+	~Handle_CDM_ListNodeOfListOfReferences() {
+	printf("Call custom destructor for instance of Handle_CDM_ListNodeOfListOfReferences\n");
 	}
 };
 
@@ -476,13 +518,16 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 		Handle_CDM_Reference & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_ListNodeOfListOfReferences();
 
 };
 %extend CDM_ListNodeOfListOfReferences {
 	Handle_CDM_ListNodeOfListOfReferences GetHandle() {
 	return *(Handle_CDM_ListNodeOfListOfReferences*) &$self;
+	}
+};
+%extend CDM_ListNodeOfListOfReferences {
+	~CDM_ListNodeOfListOfReferences() {
+	printf("Call custom destructor for instance of CDM_ListNodeOfListOfReferences\n");
 	}
 };
 
@@ -527,13 +572,16 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 		Handle_CDM_Document & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_DataMapNodeOfPresentationDirectory();
 
 };
 %extend CDM_DataMapNodeOfPresentationDirectory {
 	Handle_CDM_DataMapNodeOfPresentationDirectory GetHandle() {
 	return *(Handle_CDM_DataMapNodeOfPresentationDirectory*) &$self;
+	}
+};
+%extend CDM_DataMapNodeOfPresentationDirectory {
+	~CDM_DataMapNodeOfPresentationDirectory() {
+	printf("Call custom destructor for instance of CDM_DataMapNodeOfPresentationDirectory\n");
 	}
 };
 
@@ -546,13 +594,16 @@ class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 		Handle_CDM_Document & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_StdMapNodeOfMapOfDocument();
 
 };
 %extend CDM_StdMapNodeOfMapOfDocument {
 	Handle_CDM_StdMapNodeOfMapOfDocument GetHandle() {
 	return *(Handle_CDM_StdMapNodeOfMapOfDocument*) &$self;
+	}
+};
+%extend CDM_StdMapNodeOfMapOfDocument {
+	~CDM_StdMapNodeOfMapOfDocument() {
+	printf("Call custom destructor for instance of CDM_StdMapNodeOfMapOfDocument\n");
 	}
 };
 
@@ -617,13 +668,16 @@ class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
 		Handle_CDM_Document & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_StackNodeOfStackOfDocument();
 
 };
 %extend CDM_StackNodeOfStackOfDocument {
 	Handle_CDM_StackNodeOfStackOfDocument GetHandle() {
 	return *(Handle_CDM_StackNodeOfStackOfDocument*) &$self;
+	}
+};
+%extend CDM_StackNodeOfStackOfDocument {
+	~CDM_StackNodeOfStackOfDocument() {
+	printf("Call custom destructor for instance of CDM_StackNodeOfStackOfDocument\n");
 	}
 };
 
@@ -641,19 +695,27 @@ class CDM_MessageDriver : public Standard_Transient {
 	return *(Handle_CDM_MessageDriver*) &$self;
 	}
 };
+%extend CDM_MessageDriver {
+	~CDM_MessageDriver() {
+	printf("Call custom destructor for instance of CDM_MessageDriver\n");
+	}
+};
 
 %nodefaultctor CDM_NullMessageDriver;
 class CDM_NullMessageDriver : public CDM_MessageDriver {
 	public:
 		%feature("autodoc", "1");
 		CDM_NullMessageDriver();
-		%feature("autodoc", "1");
-		virtual		~CDM_NullMessageDriver();
 
 };
 %extend CDM_NullMessageDriver {
 	Handle_CDM_NullMessageDriver GetHandle() {
 	return *(Handle_CDM_NullMessageDriver*) &$self;
+	}
+};
+%extend CDM_NullMessageDriver {
+	~CDM_NullMessageDriver() {
+	printf("Call custom destructor for instance of CDM_NullMessageDriver\n");
 	}
 };
 
@@ -706,13 +768,16 @@ class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
 		Handle_CDM_MetaData & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_DataMapNodeOfMetaDataLookUpTable();
 
 };
 %extend CDM_DataMapNodeOfMetaDataLookUpTable {
 	Handle_CDM_DataMapNodeOfMetaDataLookUpTable GetHandle() {
 	return *(Handle_CDM_DataMapNodeOfMetaDataLookUpTable*) &$self;
+	}
+};
+%extend CDM_DataMapNodeOfMetaDataLookUpTable {
+	~CDM_DataMapNodeOfMetaDataLookUpTable() {
+	printf("Call custom destructor for instance of CDM_DataMapNodeOfMetaDataLookUpTable\n");
 	}
 };
 
@@ -736,6 +801,11 @@ class CDM_Application : public Standard_Transient {
 %extend CDM_Application {
 	Handle_CDM_Application GetHandle() {
 	return *(Handle_CDM_Application*) &$self;
+	}
+};
+%extend CDM_Application {
+	~CDM_Application() {
+	printf("Call custom destructor for instance of CDM_Application\n");
 	}
 };
 
@@ -798,13 +868,16 @@ class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
 		Handle_CDM_Document & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_ListNodeOfListOfDocument();
 
 };
 %extend CDM_ListNodeOfListOfDocument {
 	Handle_CDM_ListNodeOfListOfDocument GetHandle() {
 	return *(Handle_CDM_ListNodeOfListOfDocument*) &$self;
+	}
+};
+%extend CDM_ListNodeOfListOfDocument {
+	~CDM_ListNodeOfListOfDocument() {
+	printf("Call custom destructor for instance of CDM_ListNodeOfListOfDocument\n");
 	}
 };
 
@@ -865,13 +938,16 @@ class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_DataMapNodeOfNamesDirectory();
 
 };
 %extend CDM_DataMapNodeOfNamesDirectory {
 	Handle_CDM_DataMapNodeOfNamesDirectory GetHandle() {
 	return *(Handle_CDM_DataMapNodeOfNamesDirectory*) &$self;
+	}
+};
+%extend CDM_DataMapNodeOfNamesDirectory {
+	~CDM_DataMapNodeOfNamesDirectory() {
+	printf("Call custom destructor for instance of CDM_DataMapNodeOfNamesDirectory\n");
 	}
 };
 
@@ -934,13 +1010,16 @@ class CDM_COutMessageDriver : public CDM_MessageDriver {
 		virtual		void Write(const Standard_ExtString aString);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_COutMessageDriver();
 
 };
 %extend CDM_COutMessageDriver {
 	Handle_CDM_COutMessageDriver GetHandle() {
 	return *(Handle_CDM_COutMessageDriver*) &$self;
+	}
+};
+%extend CDM_COutMessageDriver {
+	~CDM_COutMessageDriver() {
+	printf("Call custom destructor for instance of CDM_COutMessageDriver\n");
 	}
 };
 
@@ -1041,13 +1120,16 @@ class CDM_MetaData : public Standard_Transient {
 		void UnsetIsReadOnly();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_MetaData();
 
 };
 %extend CDM_MetaData {
 	Handle_CDM_MetaData GetHandle() {
 	return *(Handle_CDM_MetaData*) &$self;
+	}
+};
+%extend CDM_MetaData {
+	~CDM_MetaData() {
+	printf("Call custom destructor for instance of CDM_MetaData\n");
 	}
 };
 
@@ -1066,12 +1148,15 @@ class CDM_Reference : public Standard_Transient {
 		Standard_Boolean IsReadOnly() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDM_Reference();
 
 };
 %extend CDM_Reference {
 	Handle_CDM_Reference GetHandle() {
 	return *(Handle_CDM_Reference*) &$self;
+	}
+};
+%extend CDM_Reference {
+	~CDM_Reference() {
+	printf("Call custom destructor for instance of CDM_Reference\n");
 	}
 };

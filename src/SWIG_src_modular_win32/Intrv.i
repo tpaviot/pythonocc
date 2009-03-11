@@ -118,8 +118,6 @@ enum Intrv_Position {
 class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Intrv_SequenceNodeOfSequenceOfInterval();
-		%feature("autodoc", "1");
 		Handle_Intrv_SequenceNodeOfSequenceOfInterval();
 		%feature("autodoc", "1");
 		Handle_Intrv_SequenceNodeOfSequenceOfInterval(const Handle_Intrv_SequenceNodeOfSequenceOfInterval &aHandle);
@@ -132,6 +130,11 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 %extend Handle_Intrv_SequenceNodeOfSequenceOfInterval {
 	Intrv_SequenceNodeOfSequenceOfInterval* GetObject() {
 	return (Intrv_SequenceNodeOfSequenceOfInterval*)$self->Access();
+	}
+};
+%extend Handle_Intrv_SequenceNodeOfSequenceOfInterval {
+	~Handle_Intrv_SequenceNodeOfSequenceOfInterval() {
+	printf("Call custom destructor for instance of Handle_Intrv_SequenceNodeOfSequenceOfInterval\n");
 	}
 };
 
@@ -294,12 +297,15 @@ class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {
 		Intrv_Interval & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Intrv_SequenceNodeOfSequenceOfInterval();
 
 };
 %extend Intrv_SequenceNodeOfSequenceOfInterval {
 	Handle_Intrv_SequenceNodeOfSequenceOfInterval GetHandle() {
 	return *(Handle_Intrv_SequenceNodeOfSequenceOfInterval*) &$self;
+	}
+};
+%extend Intrv_SequenceNodeOfSequenceOfInterval {
+	~Intrv_SequenceNodeOfSequenceOfInterval() {
+	printf("Call custom destructor for instance of Intrv_SequenceNodeOfSequenceOfInterval\n");
 	}
 };

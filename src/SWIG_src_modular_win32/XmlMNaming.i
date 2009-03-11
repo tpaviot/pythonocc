@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlMNaming_NamingDriver();
-		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamingDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamingDriver(const Handle_XmlMNaming_NamingDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMNaming_NamingDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMNaming_NamingDriver {
+	~Handle_XmlMNaming_NamingDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMNaming_NamingDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMNaming_NamedShapeDriver;
 class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMNaming_NamedShapeDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamedShapeDriver();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 %extend Handle_XmlMNaming_NamedShapeDriver {
 	XmlMNaming_NamedShapeDriver* GetObject() {
 	return (XmlMNaming_NamedShapeDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMNaming_NamedShapeDriver {
+	~Handle_XmlMNaming_NamedShapeDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMNaming_NamedShapeDriver\n");
 	}
 };
 
@@ -159,13 +165,16 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 		void Clear();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMNaming_NamedShapeDriver();
 
 };
 %extend XmlMNaming_NamedShapeDriver {
 	Handle_XmlMNaming_NamedShapeDriver GetHandle() {
 	return *(Handle_XmlMNaming_NamedShapeDriver*) &$self;
+	}
+};
+%extend XmlMNaming_NamedShapeDriver {
+	~XmlMNaming_NamedShapeDriver() {
+	printf("Call custom destructor for instance of XmlMNaming_NamedShapeDriver\n");
 	}
 };
 
@@ -252,13 +261,16 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMNaming_NamingDriver();
 
 };
 %extend XmlMNaming_NamingDriver {
 	Handle_XmlMNaming_NamingDriver GetHandle() {
 	return *(Handle_XmlMNaming_NamingDriver*) &$self;
+	}
+};
+%extend XmlMNaming_NamingDriver {
+	~XmlMNaming_NamingDriver() {
+	printf("Call custom destructor for instance of XmlMNaming_NamingDriver\n");
 	}
 };
 

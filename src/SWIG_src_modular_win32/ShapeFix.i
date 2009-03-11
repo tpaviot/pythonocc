@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_ShapeFix_EdgeProjAux : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ShapeFix_EdgeProjAux();
-		%feature("autodoc", "1");
 		Handle_ShapeFix_EdgeProjAux();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_EdgeProjAux(const Handle_ShapeFix_EdgeProjAux &aHandle);
@@ -118,12 +116,15 @@ class Handle_ShapeFix_EdgeProjAux : public Handle_MMgt_TShared {
 	return (ShapeFix_EdgeProjAux*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_EdgeProjAux {
+	~Handle_ShapeFix_EdgeProjAux() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_EdgeProjAux\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_Root;
 class Handle_ShapeFix_Root : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_Root();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Root();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_ShapeFix_Root : public Handle_MMgt_TShared {
 	return (ShapeFix_Root*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_Root {
+	~Handle_ShapeFix_Root() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_Root\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_Face;
 class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_Face();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Face();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
 	return (ShapeFix_Face*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_Face {
+	~Handle_ShapeFix_Face() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_Face\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_ComposeShell;
 class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_ComposeShell();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_ComposeShell();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 	return (ShapeFix_ComposeShell*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_ComposeShell {
+	~Handle_ShapeFix_ComposeShell() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_ComposeShell\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_SplitCommonVertex;
 class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_SplitCommonVertex();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SplitCommonVertex();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
 	return (ShapeFix_SplitCommonVertex*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_SplitCommonVertex {
+	~Handle_ShapeFix_SplitCommonVertex() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_SplitCommonVertex\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_Edge;
 class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_Edge();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Edge();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 	return (ShapeFix_Edge*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_Edge {
+	~Handle_ShapeFix_Edge() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_Edge\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_Solid;
 class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_Solid();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Solid();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
 	return (ShapeFix_Solid*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_Solid {
+	~Handle_ShapeFix_Solid() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_Solid\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
 class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollecti
 	return (ShapeFix_DataMapNodeOfDataMapOfShapeBox2d*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
+	~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_Wire;
 class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_Wire();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wire();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 	return (ShapeFix_Wire*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_Wire {
+	~Handle_ShapeFix_Wire() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_Wire\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
 class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TColle
 	return (ShapeFix_SequenceNodeOfSequenceOfWireSegment*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
+	~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_Wireframe;
 class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_Wireframe();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wireframe();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
 	return (ShapeFix_Wireframe*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_Wireframe {
+	~Handle_ShapeFix_Wireframe() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_Wireframe\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_Shape;
 class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_Shape();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shape();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 	return (ShapeFix_Shape*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_Shape {
+	~Handle_ShapeFix_Shape() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_Shape\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_FixSmallFace;
 class Handle_ShapeFix_FixSmallFace : public Handle_ShapeFix_Root {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_FixSmallFace();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_FixSmallFace();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_ShapeFix_FixSmallFace : public Handle_ShapeFix_Root {
 	return (ShapeFix_FixSmallFace*)$self->Access();
 	}
 };
+%extend Handle_ShapeFix_FixSmallFace {
+	~Handle_ShapeFix_FixSmallFace() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_FixSmallFace\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeFix_Shell;
 class Handle_ShapeFix_Shell : public Handle_ShapeFix_Root {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeFix_Shell();
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shell();
 		%feature("autodoc", "1");
@@ -389,6 +426,11 @@ class Handle_ShapeFix_Shell : public Handle_ShapeFix_Root {
 %extend Handle_ShapeFix_Shell {
 	ShapeFix_Shell* GetObject() {
 	return (ShapeFix_Shell*)$self->Access();
+	}
+};
+%extend Handle_ShapeFix_Shell {
+	~Handle_ShapeFix_Shell() {
+	printf("Call custom destructor for instance of Handle_ShapeFix_Shell\n");
 	}
 };
 
@@ -435,13 +477,16 @@ class ShapeFix_Root : public MMgt_TShared {
 		void SendFail(const Message_Msg &message) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_Root();
 
 };
 %extend ShapeFix_Root {
 	Handle_ShapeFix_Root GetHandle() {
 	return *(Handle_ShapeFix_Root*) &$self;
+	}
+};
+%extend ShapeFix_Root {
+	~ShapeFix_Root() {
+	printf("Call custom destructor for instance of ShapeFix_Root\n");
 	}
 };
 
@@ -470,13 +515,16 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 		Handle_ShapeAnalysis_TransferParameters GetTransferParamTool() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_ComposeShell();
 
 };
 %extend ShapeFix_ComposeShell {
 	Handle_ShapeFix_ComposeShell GetHandle() {
 	return *(Handle_ShapeFix_ComposeShell*) &$self;
+	}
+};
+%extend ShapeFix_ComposeShell {
+	~ShapeFix_ComposeShell() {
+	printf("Call custom destructor for instance of ShapeFix_ComposeShell\n");
 	}
 };
 
@@ -503,13 +551,16 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 		Standard_Boolean IsIso(const Handle_Geom2d_Curve &C);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_EdgeProjAux();
 
 };
 %extend ShapeFix_EdgeProjAux {
 	Handle_ShapeFix_EdgeProjAux GetHandle() {
 	return *(Handle_ShapeFix_EdgeProjAux*) &$self;
+	}
+};
+%extend ShapeFix_EdgeProjAux {
+	~ShapeFix_EdgeProjAux() {
+	printf("Call custom destructor for instance of ShapeFix_EdgeProjAux\n");
 	}
 };
 
@@ -622,13 +673,16 @@ class ShapeFix_Face : public ShapeFix_Root {
 		Handle_ShapeFix_Wire FixWireTool();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_Face();
 
 };
 %extend ShapeFix_Face {
 	Handle_ShapeFix_Face GetHandle() {
 	return *(Handle_ShapeFix_Face*) &$self;
+	}
+};
+%extend ShapeFix_Face {
+	~ShapeFix_Face() {
+	printf("Call custom destructor for instance of ShapeFix_Face\n");
 	}
 };
 
@@ -803,13 +857,16 @@ class ShapeFix_Wire : public ShapeFix_Root {
 		Handle_ShapeFix_Edge FixEdgeTool() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_Wire();
 
 };
 %extend ShapeFix_Wire {
 	Handle_ShapeFix_Wire GetHandle() {
 	return *(Handle_ShapeFix_Wire*) &$self;
+	}
+};
+%extend ShapeFix_Wire {
+	~ShapeFix_Wire() {
+	printf("Call custom destructor for instance of ShapeFix_Wire\n");
 	}
 };
 
@@ -848,13 +905,16 @@ class ShapeFix_Solid : public ShapeFix_Root {
 		TopoDS_Shape Shape();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_Solid();
 
 };
 %extend ShapeFix_Solid {
 	Handle_ShapeFix_Solid GetHandle() {
 	return *(Handle_ShapeFix_Solid*) &$self;
+	}
+};
+%extend ShapeFix_Solid {
+	~ShapeFix_Solid() {
+	printf("Call custom destructor for instance of ShapeFix_Solid\n");
 	}
 };
 
@@ -867,13 +927,16 @@ class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode 
 		ShapeFix_WireSegment & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_SequenceNodeOfSequenceOfWireSegment();
 
 };
 %extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
 	Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment GetHandle() {
 	return *(Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment*) &$self;
+	}
+};
+%extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
+	~ShapeFix_SequenceNodeOfSequenceOfWireSegment() {
+	printf("Call custom destructor for instance of ShapeFix_SequenceNodeOfSequenceOfWireSegment\n");
 	}
 };
 
@@ -964,13 +1027,16 @@ class ShapeFix_Edge : public MMgt_TShared {
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_Edge();
 
 };
 %extend ShapeFix_Edge {
 	Handle_ShapeFix_Edge GetHandle() {
 	return *(Handle_ShapeFix_Edge*) &$self;
+	}
+};
+%extend ShapeFix_Edge {
+	~ShapeFix_Edge() {
+	printf("Call custom destructor for instance of ShapeFix_Edge\n");
 	}
 };
 
@@ -1015,13 +1081,16 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 		Bnd_Box2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
 
 };
 %extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
 	Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d GetHandle() {
 	return *(Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d*) &$self;
+	}
+};
+%extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
+	~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d() {
+	printf("Call custom destructor for instance of ShapeFix_DataMapNodeOfDataMapOfShapeBox2d\n");
 	}
 };
 
@@ -1058,13 +1127,16 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 		Standard_Real LimitAngle() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_Wireframe();
 
 };
 %extend ShapeFix_Wireframe {
 	Handle_ShapeFix_Wireframe GetHandle() {
 	return *(Handle_ShapeFix_Wireframe*) &$self;
+	}
+};
+%extend ShapeFix_Wireframe {
+	~ShapeFix_Wireframe() {
+	printf("Call custom destructor for instance of ShapeFix_Wireframe\n");
 	}
 };
 
@@ -1165,13 +1237,16 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 		Standard_Boolean FixPinFace(TopoDS_Face & F);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_FixSmallFace();
 
 };
 %extend ShapeFix_FixSmallFace {
 	Handle_ShapeFix_FixSmallFace GetHandle() {
 	return *(Handle_ShapeFix_FixSmallFace*) &$self;
+	}
+};
+%extend ShapeFix_FixSmallFace {
+	~ShapeFix_FixSmallFace() {
+	printf("Call custom destructor for instance of ShapeFix_FixSmallFace\n");
 	}
 };
 
@@ -1272,13 +1347,16 @@ class ShapeFix_Shell : public ShapeFix_Root {
 		Standard_Integer & FixOrientationMode();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_Shell();
 
 };
 %extend ShapeFix_Shell {
 	Handle_ShapeFix_Shell GetHandle() {
 	return *(Handle_ShapeFix_Shell*) &$self;
+	}
+};
+%extend ShapeFix_Shell {
+	~ShapeFix_Shell() {
+	printf("Call custom destructor for instance of ShapeFix_Shell\n");
 	}
 };
 
@@ -1329,13 +1407,16 @@ class ShapeFix_Shape : public ShapeFix_Root {
 		Standard_Integer & FixVertexPositionMode();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_Shape();
 
 };
 %extend ShapeFix_Shape {
 	Handle_ShapeFix_Shape GetHandle() {
 	return *(Handle_ShapeFix_Shape*) &$self;
+	}
+};
+%extend ShapeFix_Shape {
+	~ShapeFix_Shape() {
+	printf("Call custom destructor for instance of ShapeFix_Shape\n");
 	}
 };
 
@@ -1368,12 +1449,15 @@ class ShapeFix_SplitCommonVertex : public ShapeFix_Root {
 		TopoDS_Shape Shape();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeFix_SplitCommonVertex();
 
 };
 %extend ShapeFix_SplitCommonVertex {
 	Handle_ShapeFix_SplitCommonVertex GetHandle() {
 	return *(Handle_ShapeFix_SplitCommonVertex*) &$self;
+	}
+};
+%extend ShapeFix_SplitCommonVertex {
+	~ShapeFix_SplitCommonVertex() {
+	printf("Call custom destructor for instance of ShapeFix_SplitCommonVertex\n");
 	}
 };

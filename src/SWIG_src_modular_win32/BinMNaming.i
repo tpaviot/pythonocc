@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BinMNaming_NamingDriver();
-		%feature("autodoc", "1");
 		Handle_BinMNaming_NamingDriver();
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamingDriver(const Handle_BinMNaming_NamingDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 	return (BinMNaming_NamingDriver*)$self->Access();
 	}
 };
+%extend Handle_BinMNaming_NamingDriver {
+	~Handle_BinMNaming_NamingDriver() {
+	printf("Call custom destructor for instance of Handle_BinMNaming_NamingDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinMNaming_NamedShapeDriver;
 class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinMNaming_NamedShapeDriver();
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamedShapeDriver();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 %extend Handle_BinMNaming_NamedShapeDriver {
 	BinMNaming_NamedShapeDriver* GetObject() {
 	return (BinMNaming_NamedShapeDriver*)$self->Access();
+	}
+};
+%extend Handle_BinMNaming_NamedShapeDriver {
+	~Handle_BinMNaming_NamedShapeDriver() {
+	printf("Call custom destructor for instance of Handle_BinMNaming_NamedShapeDriver\n");
 	}
 };
 
@@ -165,13 +171,16 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMNaming_NamingDriver();
 
 };
 %extend BinMNaming_NamingDriver {
 	Handle_BinMNaming_NamingDriver GetHandle() {
 	return *(Handle_BinMNaming_NamingDriver*) &$self;
+	}
+};
+%extend BinMNaming_NamingDriver {
+	~BinMNaming_NamingDriver() {
+	printf("Call custom destructor for instance of BinMNaming_NamingDriver\n");
 	}
 };
 
@@ -198,12 +207,15 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 		Standard_Integer GetFormatNb() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMNaming_NamedShapeDriver();
 
 };
 %extend BinMNaming_NamedShapeDriver {
 	Handle_BinMNaming_NamedShapeDriver GetHandle() {
 	return *(Handle_BinMNaming_NamedShapeDriver*) &$self;
+	}
+};
+%extend BinMNaming_NamedShapeDriver {
+	~BinMNaming_NamedShapeDriver() {
+	printf("Call custom destructor for instance of BinMNaming_NamedShapeDriver\n");
 	}
 };

@@ -108,8 +108,6 @@ enum XSAlgo_Caller {
 class Handle_XSAlgo_ToolContainer : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XSAlgo_ToolContainer();
-		%feature("autodoc", "1");
 		Handle_XSAlgo_ToolContainer();
 		%feature("autodoc", "1");
 		Handle_XSAlgo_ToolContainer(const Handle_XSAlgo_ToolContainer &aHandle);
@@ -124,12 +122,15 @@ class Handle_XSAlgo_ToolContainer : public Handle_MMgt_TShared {
 	return (XSAlgo_ToolContainer*)$self->Access();
 	}
 };
+%extend Handle_XSAlgo_ToolContainer {
+	~Handle_XSAlgo_ToolContainer() {
+	printf("Call custom destructor for instance of Handle_XSAlgo_ToolContainer\n");
+	}
+};
 
 %nodefaultctor Handle_XSAlgo_AlgoContainer;
 class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XSAlgo_AlgoContainer();
 		%feature("autodoc", "1");
 		Handle_XSAlgo_AlgoContainer();
 		%feature("autodoc", "1");
@@ -143,6 +144,11 @@ class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 %extend Handle_XSAlgo_AlgoContainer {
 	XSAlgo_AlgoContainer* GetObject() {
 	return (XSAlgo_AlgoContainer*)$self->Access();
+	}
+};
+%extend Handle_XSAlgo_AlgoContainer {
+	~Handle_XSAlgo_AlgoContainer() {
+	printf("Call custom destructor for instance of Handle_XSAlgo_AlgoContainer\n");
 	}
 };
 
@@ -169,12 +175,15 @@ class XSAlgo_ToolContainer : public MMgt_TShared {
 		XSAlgo_ToolContainer();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XSAlgo_ToolContainer();
 
 };
 %extend XSAlgo_ToolContainer {
 	Handle_XSAlgo_ToolContainer GetHandle() {
 	return *(Handle_XSAlgo_ToolContainer*) &$self;
+	}
+};
+%extend XSAlgo_ToolContainer {
+	~XSAlgo_ToolContainer() {
+	printf("Call custom destructor for instance of XSAlgo_ToolContainer\n");
 	}
 };

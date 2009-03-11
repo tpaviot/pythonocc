@@ -129,8 +129,6 @@ enum BooleanOperations_KindOfIntersection {
 class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger();
-		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger();
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger(const Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger &aHandle);
@@ -145,12 +143,15 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger 
 	return (BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger*)$self->Access();
 	}
 };
+%extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
+	~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors;
 class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors();
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors();
 		%feature("autodoc", "1");
@@ -164,6 +165,11 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestor
 %extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
 	BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors* GetObject() {
 	return (BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors*)$self->Access();
+	}
+};
+%extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
+	~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors() {
+	printf("Call custom destructor for instance of Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors\n");
 	}
 };
 
@@ -488,13 +494,16 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSucces
 		BooleanOperations_AncestorsSeqAndSuccessorsSeq & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors();
 
 };
 %extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
 	Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors GetHandle() {
 	return *(Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors*) &$self;
+	}
+};
+%extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
+	~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors() {
+	printf("Call custom destructor for instance of BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors\n");
 	}
 };
 
@@ -513,12 +522,15 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : publi
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger();
 
 };
 %extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
 	Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger GetHandle() {
 	return *(Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger*) &$self;
+	}
+};
+%extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
+	~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger\n");
 	}
 };

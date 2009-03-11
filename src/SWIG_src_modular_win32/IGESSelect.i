@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IGESSelect_SignLevelNumber : public Handle_IFSelect_Signature {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESSelect_SignLevelNumber();
-		%feature("autodoc", "1");
 		Handle_IGESSelect_SignLevelNumber();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SignLevelNumber(const Handle_IGESSelect_SignLevelNumber &aHandle);
@@ -118,12 +116,15 @@ class Handle_IGESSelect_SignLevelNumber : public Handle_IFSelect_Signature {
 	return (IGESSelect_SignLevelNumber*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SignLevelNumber {
+	~Handle_IGESSelect_SignLevelNumber() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SignLevelNumber\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_FileModifier;
 class Handle_IGESSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_FileModifier();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_FileModifier();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_IGESSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	return (IGESSelect_FileModifier*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_FileModifier {
+	~Handle_IGESSelect_FileModifier() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_FileModifier\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_FloatFormat;
 class Handle_IGESSelect_FloatFormat : public Handle_IGESSelect_FileModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_FloatFormat();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_FloatFormat();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_IGESSelect_FloatFormat : public Handle_IGESSelect_FileModifier {
 	return (IGESSelect_FloatFormat*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_FloatFormat {
+	~Handle_IGESSelect_FloatFormat() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_FloatFormat\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectPCurves;
 class Handle_IGESSelect_SelectPCurves : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectPCurves();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectPCurves();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_IGESSelect_SelectPCurves : public Handle_IFSelect_SelectExplore {
 	return (IGESSelect_SelectPCurves*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectPCurves {
+	~Handle_IGESSelect_SelectPCurves() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectPCurves\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_ModelModifier;
 class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_ModelModifier();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ModelModifier();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	return (IGESSelect_ModelModifier*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_ModelModifier {
+	~Handle_IGESSelect_ModelModifier() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_ModelModifier\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_UpdateCreationDate;
 class Handle_IGESSelect_UpdateCreationDate : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_UpdateCreationDate();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_UpdateCreationDate();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_IGESSelect_UpdateCreationDate : public Handle_IGESSelect_ModelModif
 	return (IGESSelect_UpdateCreationDate*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_UpdateCreationDate {
+	~Handle_IGESSelect_UpdateCreationDate() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_UpdateCreationDate\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectFromSingleView;
 class Handle_IGESSelect_SelectFromSingleView : public Handle_IFSelect_SelectDeduct {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectFromSingleView();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectFromSingleView();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_IGESSelect_SelectFromSingleView : public Handle_IFSelect_SelectDedu
 	return (IGESSelect_SelectFromSingleView*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectFromSingleView {
+	~Handle_IGESSelect_SelectFromSingleView() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectFromSingleView\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_RemoveCurves;
 class Handle_IGESSelect_RemoveCurves : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_RemoveCurves();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_RemoveCurves();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_IGESSelect_RemoveCurves : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_RemoveCurves*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_RemoveCurves {
+	~Handle_IGESSelect_RemoveCurves() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_RemoveCurves\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_IGESTypeForm;
 class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_IGESTypeForm();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_IGESTypeForm();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
 	return (IGESSelect_IGESTypeForm*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_IGESTypeForm {
+	~Handle_IGESSelect_IGESTypeForm() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_IGESTypeForm\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SetGlobalParameter;
 class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SetGlobalParameter();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SetGlobalParameter();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModif
 	return (IGESSelect_SetGlobalParameter*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SetGlobalParameter {
+	~Handle_IGESSelect_SetGlobalParameter() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SetGlobalParameter\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectName;
 class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectName();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectName();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
 	return (IGESSelect_SelectName*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectName {
+	~Handle_IGESSelect_SelectName() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectName\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_WorkLibrary;
 class Handle_IGESSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_WorkLibrary();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_WorkLibrary();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_IGESSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	return (IGESSelect_WorkLibrary*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_WorkLibrary {
+	~Handle_IGESSelect_WorkLibrary() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_WorkLibrary\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_RebuildGroups;
 class Handle_IGESSelect_RebuildGroups : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_RebuildGroups();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_RebuildGroups();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_IGESSelect_RebuildGroups : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_RebuildGroups*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_RebuildGroups {
+	~Handle_IGESSelect_RebuildGroups() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_RebuildGroups\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_DispPerDrawing;
 class Handle_IGESSelect_DispPerDrawing : public Handle_IFSelect_Dispatch {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_DispPerDrawing();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_DispPerDrawing();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_IGESSelect_DispPerDrawing : public Handle_IFSelect_Dispatch {
 	return (IGESSelect_DispPerDrawing*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_DispPerDrawing {
+	~Handle_IGESSelect_DispPerDrawing() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_DispPerDrawing\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectBypassGroup;
 class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectBypassGroup();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectBypassGroup();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore
 	return (IGESSelect_SelectBypassGroup*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectBypassGroup {
+	~Handle_IGESSelect_SelectBypassGroup() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectBypassGroup\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_ChangeLevelNumber;
 class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_ChangeLevelNumber();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ChangeLevelNumber();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifi
 	return (IGESSelect_ChangeLevelNumber*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_ChangeLevelNumber {
+	~Handle_IGESSelect_ChangeLevelNumber() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_ChangeLevelNumber\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectLevelNumber;
 class Handle_IGESSelect_SelectLevelNumber : public Handle_IFSelect_SelectExtract {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectLevelNumber();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectLevelNumber();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_IGESSelect_SelectLevelNumber : public Handle_IFSelect_SelectExtract
 	return (IGESSelect_SelectLevelNumber*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectLevelNumber {
+	~Handle_IGESSelect_SelectLevelNumber() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectLevelNumber\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectSingleViewFrom;
 class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDeduct {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectSingleViewFrom();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectSingleViewFrom();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDedu
 	return (IGESSelect_SelectSingleViewFrom*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectSingleViewFrom {
+	~Handle_IGESSelect_SelectSingleViewFrom() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectSingleViewFrom\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_EditHeader;
 class Handle_IGESSelect_EditHeader : public Handle_IFSelect_Editor {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_EditHeader();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_EditHeader();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_IGESSelect_EditHeader : public Handle_IFSelect_Editor {
 	return (IGESSelect_EditHeader*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_EditHeader {
+	~Handle_IGESSelect_EditHeader() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_EditHeader\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_AddFileComment;
 class Handle_IGESSelect_AddFileComment : public Handle_IGESSelect_FileModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_AddFileComment();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_AddFileComment();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_IGESSelect_AddFileComment : public Handle_IGESSelect_FileModifier {
 	return (IGESSelect_AddFileComment*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_AddFileComment {
+	~Handle_IGESSelect_AddFileComment() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_AddFileComment\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SetVersion5;
 class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SetVersion5();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SetVersion5();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_SetVersion5*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SetVersion5 {
+	~Handle_IGESSelect_SetVersion5() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SetVersion5\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_ComputeStatus;
 class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_ComputeStatus();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ComputeStatus();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_ComputeStatus*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_ComputeStatus {
+	~Handle_IGESSelect_ComputeStatus() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_ComputeStatus\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectFromDrawing;
 class Handle_IGESSelect_SelectFromDrawing : public Handle_IFSelect_SelectDeduct {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectFromDrawing();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectFromDrawing();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_IGESSelect_SelectFromDrawing : public Handle_IFSelect_SelectDeduct 
 	return (IGESSelect_SelectFromDrawing*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectFromDrawing {
+	~Handle_IGESSelect_SelectFromDrawing() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectFromDrawing\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_RebuildDrawings;
 class Handle_IGESSelect_RebuildDrawings : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_RebuildDrawings();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_RebuildDrawings();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_IGESSelect_RebuildDrawings : public Handle_IGESSelect_ModelModifier
 	return (IGESSelect_RebuildDrawings*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_RebuildDrawings {
+	~Handle_IGESSelect_RebuildDrawings() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_RebuildDrawings\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_ChangeLevelList;
 class Handle_IGESSelect_ChangeLevelList : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_ChangeLevelList();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ChangeLevelList();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_IGESSelect_ChangeLevelList : public Handle_IGESSelect_ModelModifier
 	return (IGESSelect_ChangeLevelList*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_ChangeLevelList {
+	~Handle_IGESSelect_ChangeLevelList() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_ChangeLevelList\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_CounterOfLevelNumber;
 class Handle_IGESSelect_CounterOfLevelNumber : public Handle_IFSelect_SignCounter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_CounterOfLevelNumber();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_CounterOfLevelNumber();
 		%feature("autodoc", "1");
@@ -643,12 +716,15 @@ class Handle_IGESSelect_CounterOfLevelNumber : public Handle_IFSelect_SignCounte
 	return (IGESSelect_CounterOfLevelNumber*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_CounterOfLevelNumber {
+	~Handle_IGESSelect_CounterOfLevelNumber() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_CounterOfLevelNumber\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SetLabel;
 class Handle_IGESSelect_SetLabel : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SetLabel();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SetLabel();
 		%feature("autodoc", "1");
@@ -664,12 +740,15 @@ class Handle_IGESSelect_SetLabel : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_SetLabel*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SetLabel {
+	~Handle_IGESSelect_SetLabel() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SetLabel\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SplineToBSpline;
 class Handle_IGESSelect_SplineToBSpline : public Handle_IFSelect_Transformer {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SplineToBSpline();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SplineToBSpline();
 		%feature("autodoc", "1");
@@ -685,12 +764,15 @@ class Handle_IGESSelect_SplineToBSpline : public Handle_IFSelect_Transformer {
 	return (IGESSelect_SplineToBSpline*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SplineToBSpline {
+	~Handle_IGESSelect_SplineToBSpline() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SplineToBSpline\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_IGESName;
 class Handle_IGESSelect_IGESName : public Handle_IFSelect_Signature {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_IGESName();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_IGESName();
 		%feature("autodoc", "1");
@@ -706,12 +788,15 @@ class Handle_IGESSelect_IGESName : public Handle_IFSelect_Signature {
 	return (IGESSelect_IGESName*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_IGESName {
+	~Handle_IGESSelect_IGESName() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_IGESName\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectBasicGeom;
 class Handle_IGESSelect_SelectBasicGeom : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectBasicGeom();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectBasicGeom();
 		%feature("autodoc", "1");
@@ -727,12 +812,15 @@ class Handle_IGESSelect_SelectBasicGeom : public Handle_IFSelect_SelectExplore {
 	return (IGESSelect_SelectBasicGeom*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectBasicGeom {
+	~Handle_IGESSelect_SelectBasicGeom() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectBasicGeom\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_Dumper;
 class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_Dumper();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_Dumper();
 		%feature("autodoc", "1");
@@ -748,12 +836,15 @@ class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
 	return (IGESSelect_Dumper*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_Dumper {
+	~Handle_IGESSelect_Dumper() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_Dumper\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_ViewSorter;
 class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_ViewSorter();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ViewSorter();
 		%feature("autodoc", "1");
@@ -769,12 +860,15 @@ class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
 	return (IGESSelect_ViewSorter*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_ViewSorter {
+	~Handle_IGESSelect_ViewSorter() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_ViewSorter\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectFaces;
 class Handle_IGESSelect_SelectFaces : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectFaces();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectFaces();
 		%feature("autodoc", "1");
@@ -790,12 +884,15 @@ class Handle_IGESSelect_SelectFaces : public Handle_IFSelect_SelectExplore {
 	return (IGESSelect_SelectFaces*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectFaces {
+	~Handle_IGESSelect_SelectFaces() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectFaces\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectSubordinate;
 class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectSubordinate();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectSubordinate();
 		%feature("autodoc", "1");
@@ -811,12 +908,15 @@ class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract
 	return (IGESSelect_SelectSubordinate*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectSubordinate {
+	~Handle_IGESSelect_SelectSubordinate() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectSubordinate\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_EditDirPart;
 class Handle_IGESSelect_EditDirPart : public Handle_IFSelect_Editor {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_EditDirPart();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_EditDirPart();
 		%feature("autodoc", "1");
@@ -832,12 +932,15 @@ class Handle_IGESSelect_EditDirPart : public Handle_IFSelect_Editor {
 	return (IGESSelect_EditDirPart*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_EditDirPart {
+	~Handle_IGESSelect_EditDirPart() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_EditDirPart\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_AddGroup;
 class Handle_IGESSelect_AddGroup : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_AddGroup();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_AddGroup();
 		%feature("autodoc", "1");
@@ -853,12 +956,15 @@ class Handle_IGESSelect_AddGroup : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_AddGroup*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_AddGroup {
+	~Handle_IGESSelect_AddGroup() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_AddGroup\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_DispPerSingleView;
 class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_DispPerSingleView();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_DispPerSingleView();
 		%feature("autodoc", "1");
@@ -874,12 +980,15 @@ class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
 	return (IGESSelect_DispPerSingleView*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_DispPerSingleView {
+	~Handle_IGESSelect_DispPerSingleView() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_DispPerSingleView\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_UpdateLastChange;
 class Handle_IGESSelect_UpdateLastChange : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_UpdateLastChange();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_UpdateLastChange();
 		%feature("autodoc", "1");
@@ -895,12 +1004,15 @@ class Handle_IGESSelect_UpdateLastChange : public Handle_IGESSelect_ModelModifie
 	return (IGESSelect_UpdateLastChange*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_UpdateLastChange {
+	~Handle_IGESSelect_UpdateLastChange() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_UpdateLastChange\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectBypassSubfigure;
 class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectBypassSubfigure();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectBypassSubfigure();
 		%feature("autodoc", "1");
@@ -916,12 +1028,15 @@ class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExp
 	return (IGESSelect_SelectBypassSubfigure*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectBypassSubfigure {
+	~Handle_IGESSelect_SelectBypassSubfigure() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectBypassSubfigure\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_AutoCorrect;
 class Handle_IGESSelect_AutoCorrect : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_AutoCorrect();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_AutoCorrect();
 		%feature("autodoc", "1");
@@ -937,12 +1052,15 @@ class Handle_IGESSelect_AutoCorrect : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_AutoCorrect*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_AutoCorrect {
+	~Handle_IGESSelect_AutoCorrect() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_AutoCorrect\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectVisibleStatus;
 class Handle_IGESSelect_SelectVisibleStatus : public Handle_IFSelect_SelectExtract {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectVisibleStatus();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectVisibleStatus();
 		%feature("autodoc", "1");
@@ -958,12 +1076,15 @@ class Handle_IGESSelect_SelectVisibleStatus : public Handle_IFSelect_SelectExtra
 	return (IGESSelect_SelectVisibleStatus*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SelectVisibleStatus {
+	~Handle_IGESSelect_SelectVisibleStatus() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectVisibleStatus\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_UpdateFileName;
 class Handle_IGESSelect_UpdateFileName : public Handle_IGESSelect_ModelModifier {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_UpdateFileName();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_UpdateFileName();
 		%feature("autodoc", "1");
@@ -979,12 +1100,15 @@ class Handle_IGESSelect_UpdateFileName : public Handle_IGESSelect_ModelModifier 
 	return (IGESSelect_UpdateFileName*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_UpdateFileName {
+	~Handle_IGESSelect_UpdateFileName() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_UpdateFileName\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SignColor;
 class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SignColor();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SignColor();
 		%feature("autodoc", "1");
@@ -1000,12 +1124,15 @@ class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
 	return (IGESSelect_SignColor*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SignColor {
+	~Handle_IGESSelect_SignColor() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SignColor\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SignStatus;
 class Handle_IGESSelect_SignStatus : public Handle_IFSelect_Signature {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SignStatus();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SignStatus();
 		%feature("autodoc", "1");
@@ -1021,12 +1148,15 @@ class Handle_IGESSelect_SignStatus : public Handle_IFSelect_Signature {
 	return (IGESSelect_SignStatus*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_SignStatus {
+	~Handle_IGESSelect_SignStatus() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SignStatus\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_Activator;
 class Handle_IGESSelect_Activator : public Handle_IFSelect_Activator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_Activator();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_Activator();
 		%feature("autodoc", "1");
@@ -1042,12 +1172,15 @@ class Handle_IGESSelect_Activator : public Handle_IFSelect_Activator {
 	return (IGESSelect_Activator*)$self->Access();
 	}
 };
+%extend Handle_IGESSelect_Activator {
+	~Handle_IGESSelect_Activator() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_Activator\n");
+	}
+};
 
 %nodefaultctor Handle_IGESSelect_SelectDrawingFrom;
 class Handle_IGESSelect_SelectDrawingFrom : public Handle_IFSelect_SelectDeduct {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESSelect_SelectDrawingFrom();
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectDrawingFrom();
 		%feature("autodoc", "1");
@@ -1061,6 +1194,11 @@ class Handle_IGESSelect_SelectDrawingFrom : public Handle_IFSelect_SelectDeduct 
 %extend Handle_IGESSelect_SelectDrawingFrom {
 	IGESSelect_SelectDrawingFrom* GetObject() {
 	return (IGESSelect_SelectDrawingFrom*)$self->Access();
+	}
+};
+%extend Handle_IGESSelect_SelectDrawingFrom {
+	~Handle_IGESSelect_SelectDrawingFrom() {
+	printf("Call custom destructor for instance of Handle_IGESSelect_SelectDrawingFrom\n");
 	}
 };
 
@@ -1082,6 +1220,11 @@ class IGESSelect_ModelModifier : public IFSelect_Modifier {
 	return *(Handle_IGESSelect_ModelModifier*) &$self;
 	}
 };
+%extend IGESSelect_ModelModifier {
+	~IGESSelect_ModelModifier() {
+	printf("Call custom destructor for instance of IGESSelect_ModelModifier\n");
+	}
+};
 
 %nodefaultctor IGESSelect_UpdateLastChange;
 class IGESSelect_UpdateLastChange : public IGESSelect_ModelModifier {
@@ -1090,13 +1233,16 @@ class IGESSelect_UpdateLastChange : public IGESSelect_ModelModifier {
 		IGESSelect_UpdateLastChange();
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_UpdateLastChange();
 
 };
 %extend IGESSelect_UpdateLastChange {
 	Handle_IGESSelect_UpdateLastChange GetHandle() {
 	return *(Handle_IGESSelect_UpdateLastChange*) &$self;
+	}
+};
+%extend IGESSelect_UpdateLastChange {
+	~IGESSelect_UpdateLastChange() {
+	printf("Call custom destructor for instance of IGESSelect_UpdateLastChange\n");
 	}
 };
 
@@ -1111,13 +1257,16 @@ class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_UpdateCreationDate();
 
 };
 %extend IGESSelect_UpdateCreationDate {
 	Handle_IGESSelect_UpdateCreationDate GetHandle() {
 	return *(Handle_IGESSelect_UpdateCreationDate*) &$self;
+	}
+};
+%extend IGESSelect_UpdateCreationDate {
+	~IGESSelect_UpdateCreationDate() {
+	printf("Call custom destructor for instance of IGESSelect_UpdateCreationDate\n");
 	}
 };
 
@@ -1132,13 +1281,16 @@ class IGESSelect_SelectDrawingFrom : public IFSelect_SelectDeduct {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectDrawingFrom();
 
 };
 %extend IGESSelect_SelectDrawingFrom {
 	Handle_IGESSelect_SelectDrawingFrom GetHandle() {
 	return *(Handle_IGESSelect_SelectDrawingFrom*) &$self;
+	}
+};
+%extend IGESSelect_SelectDrawingFrom {
+	~IGESSelect_SelectDrawingFrom() {
+	printf("Call custom destructor for instance of IGESSelect_SelectDrawingFrom\n");
 	}
 };
 
@@ -1157,13 +1309,16 @@ class IGESSelect_SelectName : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectName();
 
 };
 %extend IGESSelect_SelectName {
 	Handle_IGESSelect_SelectName GetHandle() {
 	return *(Handle_IGESSelect_SelectName*) &$self;
+	}
+};
+%extend IGESSelect_SelectName {
+	~IGESSelect_SelectName() {
+	printf("Call custom destructor for instance of IGESSelect_SelectName\n");
 	}
 };
 
@@ -1178,13 +1333,16 @@ class IGESSelect_IGESTypeForm : public IFSelect_Signature {
 		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_IGESTypeForm();
 
 };
 %extend IGESSelect_IGESTypeForm {
 	Handle_IGESSelect_IGESTypeForm GetHandle() {
 	return *(Handle_IGESSelect_IGESTypeForm*) &$self;
+	}
+};
+%extend IGESSelect_IGESTypeForm {
+	~IGESSelect_IGESTypeForm() {
+	printf("Call custom destructor for instance of IGESSelect_IGESTypeForm\n");
 	}
 };
 
@@ -1199,13 +1357,16 @@ class IGESSelect_SignStatus : public IFSelect_Signature {
 		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SignStatus();
 
 };
 %extend IGESSelect_SignStatus {
 	Handle_IGESSelect_SignStatus GetHandle() {
 	return *(Handle_IGESSelect_SignStatus*) &$self;
+	}
+};
+%extend IGESSelect_SignStatus {
+	~IGESSelect_SignStatus() {
+	printf("Call custom destructor for instance of IGESSelect_SignStatus\n");
 	}
 };
 
@@ -1226,13 +1387,16 @@ class IGESSelect_SetGlobalParameter : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SetGlobalParameter();
 
 };
 %extend IGESSelect_SetGlobalParameter {
 	Handle_IGESSelect_SetGlobalParameter GetHandle() {
 	return *(Handle_IGESSelect_SetGlobalParameter*) &$self;
+	}
+};
+%extend IGESSelect_SetGlobalParameter {
+	~IGESSelect_SetGlobalParameter() {
+	printf("Call custom destructor for instance of IGESSelect_SetGlobalParameter\n");
 	}
 };
 
@@ -1247,13 +1411,16 @@ class IGESSelect_RebuildGroups : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_RebuildGroups();
 
 };
 %extend IGESSelect_RebuildGroups {
 	Handle_IGESSelect_RebuildGroups GetHandle() {
 	return *(Handle_IGESSelect_RebuildGroups*) &$self;
+	}
+};
+%extend IGESSelect_RebuildGroups {
+	~IGESSelect_RebuildGroups() {
+	printf("Call custom destructor for instance of IGESSelect_RebuildGroups\n");
 	}
 };
 
@@ -1268,13 +1435,16 @@ class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_AddGroup();
 
 };
 %extend IGESSelect_AddGroup {
 	Handle_IGESSelect_AddGroup GetHandle() {
 	return *(Handle_IGESSelect_AddGroup*) &$self;
+	}
+};
+%extend IGESSelect_AddGroup {
+	~IGESSelect_AddGroup() {
+	printf("Call custom destructor for instance of IGESSelect_AddGroup\n");
 	}
 };
 
@@ -1289,13 +1459,16 @@ class IGESSelect_SelectSingleViewFrom : public IFSelect_SelectDeduct {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectSingleViewFrom();
 
 };
 %extend IGESSelect_SelectSingleViewFrom {
 	Handle_IGESSelect_SelectSingleViewFrom GetHandle() {
 	return *(Handle_IGESSelect_SelectSingleViewFrom*) &$self;
+	}
+};
+%extend IGESSelect_SelectSingleViewFrom {
+	~IGESSelect_SelectSingleViewFrom() {
+	printf("Call custom destructor for instance of IGESSelect_SelectSingleViewFrom\n");
 	}
 };
 
@@ -1310,13 +1483,16 @@ class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_ComputeStatus();
 
 };
 %extend IGESSelect_ComputeStatus {
 	Handle_IGESSelect_ComputeStatus GetHandle() {
 	return *(Handle_IGESSelect_ComputeStatus*) &$self;
+	}
+};
+%extend IGESSelect_ComputeStatus {
+	~IGESSelect_ComputeStatus() {
+	printf("Call custom destructor for instance of IGESSelect_ComputeStatus\n");
 	}
 };
 
@@ -1331,13 +1507,16 @@ class IGESSelect_RemoveCurves : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_RemoveCurves();
 
 };
 %extend IGESSelect_RemoveCurves {
 	Handle_IGESSelect_RemoveCurves GetHandle() {
 	return *(Handle_IGESSelect_RemoveCurves*) &$self;
+	}
+};
+%extend IGESSelect_RemoveCurves {
+	~IGESSelect_RemoveCurves() {
+	printf("Call custom destructor for instance of IGESSelect_RemoveCurves\n");
 	}
 };
 
@@ -1362,13 +1541,16 @@ class IGESSelect_ChangeLevelNumber : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_ChangeLevelNumber();
 
 };
 %extend IGESSelect_ChangeLevelNumber {
 	Handle_IGESSelect_ChangeLevelNumber GetHandle() {
 	return *(Handle_IGESSelect_ChangeLevelNumber*) &$self;
+	}
+};
+%extend IGESSelect_ChangeLevelNumber {
+	~IGESSelect_ChangeLevelNumber() {
+	printf("Call custom destructor for instance of IGESSelect_ChangeLevelNumber\n");
 	}
 };
 
@@ -1383,13 +1565,16 @@ class IGESSelect_SelectBypassGroup : public IFSelect_SelectExplore {
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectBypassGroup();
 
 };
 %extend IGESSelect_SelectBypassGroup {
 	Handle_IGESSelect_SelectBypassGroup GetHandle() {
 	return *(Handle_IGESSelect_SelectBypassGroup*) &$self;
+	}
+};
+%extend IGESSelect_SelectBypassGroup {
+	~IGESSelect_SelectBypassGroup() {
+	printf("Call custom destructor for instance of IGESSelect_SelectBypassGroup\n");
 	}
 };
 
@@ -1404,13 +1589,16 @@ class IGESSelect_SelectPCurves : public IFSelect_SelectExplore {
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectPCurves();
 
 };
 %extend IGESSelect_SelectPCurves {
 	Handle_IGESSelect_SelectPCurves GetHandle() {
 	return *(Handle_IGESSelect_SelectPCurves*) &$self;
+	}
+};
+%extend IGESSelect_SelectPCurves {
+	~IGESSelect_SelectPCurves() {
+	printf("Call custom destructor for instance of IGESSelect_SelectPCurves\n");
 	}
 };
 
@@ -1425,13 +1613,16 @@ class IGESSelect_SelectFromDrawing : public IFSelect_SelectDeduct {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectFromDrawing();
 
 };
 %extend IGESSelect_SelectFromDrawing {
 	Handle_IGESSelect_SelectFromDrawing GetHandle() {
 	return *(Handle_IGESSelect_SelectFromDrawing*) &$self;
+	}
+};
+%extend IGESSelect_SelectFromDrawing {
+	~IGESSelect_SelectFromDrawing() {
+	printf("Call custom destructor for instance of IGESSelect_SelectFromDrawing\n");
 	}
 };
 
@@ -1454,13 +1645,16 @@ class IGESSelect_EditHeader : public IFSelect_Editor {
 		virtual		Standard_Boolean Apply(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_EditHeader();
 
 };
 %extend IGESSelect_EditHeader {
 	Handle_IGESSelect_EditHeader GetHandle() {
 	return *(Handle_IGESSelect_EditHeader*) &$self;
+	}
+};
+%extend IGESSelect_EditHeader {
+	~IGESSelect_EditHeader() {
+	printf("Call custom destructor for instance of IGESSelect_EditHeader\n");
 	}
 };
 
@@ -1479,13 +1673,16 @@ class IGESSelect_WorkLibrary : public IFSelect_WorkLibrary {
 		virtual		void DumpEntity(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &protocol, const Handle_Standard_Transient &entity, const Handle_Message_Messenger &S, const Standard_Integer level) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_WorkLibrary();
 
 };
 %extend IGESSelect_WorkLibrary {
 	Handle_IGESSelect_WorkLibrary GetHandle() {
 	return *(Handle_IGESSelect_WorkLibrary*) &$self;
+	}
+};
+%extend IGESSelect_WorkLibrary {
+	~IGESSelect_WorkLibrary() {
+	printf("Call custom destructor for instance of IGESSelect_WorkLibrary\n");
 	}
 };
 
@@ -1501,6 +1698,11 @@ class IGESSelect_FileModifier : public IFSelect_GeneralModifier {
 %extend IGESSelect_FileModifier {
 	Handle_IGESSelect_FileModifier GetHandle() {
 	return *(Handle_IGESSelect_FileModifier*) &$self;
+	}
+};
+%extend IGESSelect_FileModifier {
+	~IGESSelect_FileModifier() {
+	printf("Call custom destructor for instance of IGESSelect_FileModifier\n");
 	}
 };
 
@@ -1527,13 +1729,16 @@ class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
 		virtual		void PrintCount(const Handle_Message_Messenger &S) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_CounterOfLevelNumber();
 
 };
 %extend IGESSelect_CounterOfLevelNumber {
 	Handle_IGESSelect_CounterOfLevelNumber GetHandle() {
 	return *(Handle_IGESSelect_CounterOfLevelNumber*) &$self;
+	}
+};
+%extend IGESSelect_CounterOfLevelNumber {
+	~IGESSelect_CounterOfLevelNumber() {
+	printf("Call custom destructor for instance of IGESSelect_CounterOfLevelNumber\n");
 	}
 };
 
@@ -1548,13 +1753,16 @@ class IGESSelect_SelectFaces : public IFSelect_SelectExplore {
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectFaces();
 
 };
 %extend IGESSelect_SelectFaces {
 	Handle_IGESSelect_SelectFaces GetHandle() {
 	return *(Handle_IGESSelect_SelectFaces*) &$self;
+	}
+};
+%extend IGESSelect_SelectFaces {
+	~IGESSelect_SelectFaces() {
+	printf("Call custom destructor for instance of IGESSelect_SelectFaces\n");
 	}
 };
 
@@ -1577,13 +1785,16 @@ class IGESSelect_EditDirPart : public IFSelect_Editor {
 		virtual		Standard_Boolean Apply(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_EditDirPart();
 
 };
 %extend IGESSelect_EditDirPart {
 	Handle_IGESSelect_EditDirPart GetHandle() {
 	return *(Handle_IGESSelect_EditDirPart*) &$self;
+	}
+};
+%extend IGESSelect_EditDirPart {
+	~IGESSelect_EditDirPart() {
+	printf("Call custom destructor for instance of IGESSelect_EditDirPart\n");
 	}
 };
 
@@ -1600,13 +1811,16 @@ class IGESSelect_SelectSubordinate : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectSubordinate();
 
 };
 %extend IGESSelect_SelectSubordinate {
 	Handle_IGESSelect_SelectSubordinate GetHandle() {
 	return *(Handle_IGESSelect_SelectSubordinate*) &$self;
+	}
+};
+%extend IGESSelect_SelectSubordinate {
+	~IGESSelect_SelectSubordinate() {
+	printf("Call custom destructor for instance of IGESSelect_SelectSubordinate\n");
 	}
 };
 
@@ -1619,13 +1833,16 @@ class IGESSelect_IGESName : public IFSelect_Signature {
 		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_IGESName();
 
 };
 %extend IGESSelect_IGESName {
 	Handle_IGESSelect_IGESName GetHandle() {
 	return *(Handle_IGESSelect_IGESName*) &$self;
+	}
+};
+%extend IGESSelect_IGESName {
+	~IGESSelect_IGESName() {
+	printf("Call custom destructor for instance of IGESSelect_IGESName\n");
 	}
 };
 
@@ -1640,13 +1857,16 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 		virtual		Standard_Boolean ReadOwn(IFSelect_SessionFile & file, const TCollection_AsciiString &type, Handle_Standard_Transient & item) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_Dumper();
 
 };
 %extend IGESSelect_Dumper {
 	Handle_IGESSelect_Dumper GetHandle() {
 	return *(Handle_IGESSelect_Dumper*) &$self;
+	}
+};
+%extend IGESSelect_Dumper {
+	~IGESSelect_Dumper() {
+	printf("Call custom destructor for instance of IGESSelect_Dumper\n");
 	}
 };
 
@@ -1675,13 +1895,16 @@ class IGESSelect_AutoCorrect : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_AutoCorrect();
 
 };
 %extend IGESSelect_AutoCorrect {
 	Handle_IGESSelect_AutoCorrect GetHandle() {
 	return *(Handle_IGESSelect_AutoCorrect*) &$self;
+	}
+};
+%extend IGESSelect_AutoCorrect {
+	~IGESSelect_AutoCorrect() {
+	printf("Call custom destructor for instance of IGESSelect_AutoCorrect\n");
 	}
 };
 
@@ -1696,13 +1919,16 @@ class IGESSelect_SelectVisibleStatus : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectVisibleStatus();
 
 };
 %extend IGESSelect_SelectVisibleStatus {
 	Handle_IGESSelect_SelectVisibleStatus GetHandle() {
 	return *(Handle_IGESSelect_SelectVisibleStatus*) &$self;
+	}
+};
+%extend IGESSelect_SelectVisibleStatus {
+	~IGESSelect_SelectVisibleStatus() {
+	printf("Call custom destructor for instance of IGESSelect_SelectVisibleStatus\n");
 	}
 };
 
@@ -1717,13 +1943,16 @@ class IGESSelect_Activator : public IFSelect_Activator {
 		virtual		char * Help(const Standard_Integer number) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_Activator();
 
 };
 %extend IGESSelect_Activator {
 	Handle_IGESSelect_Activator GetHandle() {
 	return *(Handle_IGESSelect_Activator*) &$self;
+	}
+};
+%extend IGESSelect_Activator {
+	~IGESSelect_Activator() {
+	printf("Call custom destructor for instance of IGESSelect_Activator\n");
 	}
 };
 
@@ -1738,13 +1967,16 @@ class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_UpdateFileName();
 
 };
 %extend IGESSelect_UpdateFileName {
 	Handle_IGESSelect_UpdateFileName GetHandle() {
 	return *(Handle_IGESSelect_UpdateFileName*) &$self;
+	}
+};
+%extend IGESSelect_UpdateFileName {
+	~IGESSelect_UpdateFileName() {
+	printf("Call custom destructor for instance of IGESSelect_UpdateFileName\n");
 	}
 };
 
@@ -1779,13 +2011,16 @@ class IGESSelect_ViewSorter : public MMgt_TShared {
 		Handle_IFSelect_PacketList Sets(const Standard_Boolean final) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_ViewSorter();
 
 };
 %extend IGESSelect_ViewSorter {
 	Handle_IGESSelect_ViewSorter GetHandle() {
 	return *(Handle_IGESSelect_ViewSorter*) &$self;
+	}
+};
+%extend IGESSelect_ViewSorter {
+	~IGESSelect_ViewSorter() {
+	printf("Call custom destructor for instance of IGESSelect_ViewSorter\n");
 	}
 };
 
@@ -1810,13 +2045,16 @@ class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_FloatFormat();
 
 };
 %extend IGESSelect_FloatFormat {
 	Handle_IGESSelect_FloatFormat GetHandle() {
 	return *(Handle_IGESSelect_FloatFormat*) &$self;
+	}
+};
+%extend IGESSelect_FloatFormat {
+	~IGESSelect_FloatFormat() {
+	printf("Call custom destructor for instance of IGESSelect_FloatFormat\n");
 	}
 };
 
@@ -1829,13 +2067,16 @@ class IGESSelect_SignLevelNumber : public IFSelect_Signature {
 		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SignLevelNumber();
 
 };
 %extend IGESSelect_SignLevelNumber {
 	Handle_IGESSelect_SignLevelNumber GetHandle() {
 	return *(Handle_IGESSelect_SignLevelNumber*) &$self;
+	}
+};
+%extend IGESSelect_SignLevelNumber {
+	~IGESSelect_SignLevelNumber() {
+	printf("Call custom destructor for instance of IGESSelect_SignLevelNumber\n");
 	}
 };
 
@@ -1854,13 +2095,16 @@ class IGESSelect_DispPerSingleView : public IFSelect_Dispatch {
 		virtual		Interface_EntityIterator Remainder(const Interface_Graph &G) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_DispPerSingleView();
 
 };
 %extend IGESSelect_DispPerSingleView {
 	Handle_IGESSelect_DispPerSingleView GetHandle() {
 	return *(Handle_IGESSelect_DispPerSingleView*) &$self;
+	}
+};
+%extend IGESSelect_DispPerSingleView {
+	~IGESSelect_DispPerSingleView() {
+	printf("Call custom destructor for instance of IGESSelect_DispPerSingleView\n");
 	}
 };
 
@@ -1877,13 +2121,16 @@ class IGESSelect_SelectBasicGeom : public IFSelect_SelectExplore {
 		Standard_Boolean SubCurves(const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & explored);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectBasicGeom();
 
 };
 %extend IGESSelect_SelectBasicGeom {
 	Handle_IGESSelect_SelectBasicGeom GetHandle() {
 	return *(Handle_IGESSelect_SelectBasicGeom*) &$self;
+	}
+};
+%extend IGESSelect_SelectBasicGeom {
+	~IGESSelect_SelectBasicGeom() {
+	printf("Call custom destructor for instance of IGESSelect_SelectBasicGeom\n");
 	}
 };
 
@@ -1898,13 +2145,16 @@ class IGESSelect_SetVersion5 : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SetVersion5();
 
 };
 %extend IGESSelect_SetVersion5 {
 	Handle_IGESSelect_SetVersion5 GetHandle() {
 	return *(Handle_IGESSelect_SetVersion5*) &$self;
+	}
+};
+%extend IGESSelect_SetVersion5 {
+	~IGESSelect_SetVersion5() {
+	printf("Call custom destructor for instance of IGESSelect_SetVersion5\n");
 	}
 };
 
@@ -1919,13 +2169,16 @@ class IGESSelect_SelectBypassSubfigure : public IFSelect_SelectExplore {
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectBypassSubfigure();
 
 };
 %extend IGESSelect_SelectBypassSubfigure {
 	Handle_IGESSelect_SelectBypassSubfigure GetHandle() {
 	return *(Handle_IGESSelect_SelectBypassSubfigure*) &$self;
+	}
+};
+%extend IGESSelect_SelectBypassSubfigure {
+	~IGESSelect_SelectBypassSubfigure() {
+	printf("Call custom destructor for instance of IGESSelect_SelectBypassSubfigure\n");
 	}
 };
 
@@ -1944,13 +2197,16 @@ class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SplineToBSpline();
 
 };
 %extend IGESSelect_SplineToBSpline {
 	Handle_IGESSelect_SplineToBSpline GetHandle() {
 	return *(Handle_IGESSelect_SplineToBSpline*) &$self;
+	}
+};
+%extend IGESSelect_SplineToBSpline {
+	~IGESSelect_SplineToBSpline() {
+	printf("Call custom destructor for instance of IGESSelect_SplineToBSpline\n");
 	}
 };
 
@@ -1977,13 +2233,16 @@ class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_ChangeLevelList();
 
 };
 %extend IGESSelect_ChangeLevelList {
 	Handle_IGESSelect_ChangeLevelList GetHandle() {
 	return *(Handle_IGESSelect_ChangeLevelList*) &$self;
+	}
+};
+%extend IGESSelect_ChangeLevelList {
+	~IGESSelect_ChangeLevelList() {
+	printf("Call custom destructor for instance of IGESSelect_ChangeLevelList\n");
 	}
 };
 
@@ -1998,13 +2257,16 @@ class IGESSelect_SelectFromSingleView : public IFSelect_SelectDeduct {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectFromSingleView();
 
 };
 %extend IGESSelect_SelectFromSingleView {
 	Handle_IGESSelect_SelectFromSingleView GetHandle() {
 	return *(Handle_IGESSelect_SelectFromSingleView*) &$self;
+	}
+};
+%extend IGESSelect_SelectFromSingleView {
+	~IGESSelect_SelectFromSingleView() {
+	printf("Call custom destructor for instance of IGESSelect_SelectFromSingleView\n");
 	}
 };
 
@@ -2019,13 +2281,16 @@ class IGESSelect_RebuildDrawings : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_RebuildDrawings();
 
 };
 %extend IGESSelect_RebuildDrawings {
 	Handle_IGESSelect_RebuildDrawings GetHandle() {
 	return *(Handle_IGESSelect_RebuildDrawings*) &$self;
+	}
+};
+%extend IGESSelect_RebuildDrawings {
+	~IGESSelect_RebuildDrawings() {
+	printf("Call custom destructor for instance of IGESSelect_RebuildDrawings\n");
 	}
 };
 
@@ -2040,13 +2305,16 @@ class IGESSelect_SetLabel : public IGESSelect_ModelModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SetLabel();
 
 };
 %extend IGESSelect_SetLabel {
 	Handle_IGESSelect_SetLabel GetHandle() {
 	return *(Handle_IGESSelect_SetLabel*) &$self;
+	}
+};
+%extend IGESSelect_SetLabel {
+	~IGESSelect_SetLabel() {
+	printf("Call custom destructor for instance of IGESSelect_SetLabel\n");
 	}
 };
 
@@ -2073,13 +2341,16 @@ class IGESSelect_AddFileComment : public IGESSelect_FileModifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_AddFileComment();
 
 };
 %extend IGESSelect_AddFileComment {
 	Handle_IGESSelect_AddFileComment GetHandle() {
 	return *(Handle_IGESSelect_AddFileComment*) &$self;
+	}
+};
+%extend IGESSelect_AddFileComment {
+	~IGESSelect_AddFileComment() {
+	printf("Call custom destructor for instance of IGESSelect_AddFileComment\n");
 	}
 };
 
@@ -2098,13 +2369,16 @@ class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
 		virtual		Interface_EntityIterator Remainder(const Interface_Graph &G) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_DispPerDrawing();
 
 };
 %extend IGESSelect_DispPerDrawing {
 	Handle_IGESSelect_DispPerDrawing GetHandle() {
 	return *(Handle_IGESSelect_DispPerDrawing*) &$self;
+	}
+};
+%extend IGESSelect_DispPerDrawing {
+	~IGESSelect_DispPerDrawing() {
+	printf("Call custom destructor for instance of IGESSelect_DispPerDrawing\n");
 	}
 };
 
@@ -2123,13 +2397,16 @@ class IGESSelect_SelectLevelNumber : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SelectLevelNumber();
 
 };
 %extend IGESSelect_SelectLevelNumber {
 	Handle_IGESSelect_SelectLevelNumber GetHandle() {
 	return *(Handle_IGESSelect_SelectLevelNumber*) &$self;
+	}
+};
+%extend IGESSelect_SelectLevelNumber {
+	~IGESSelect_SelectLevelNumber() {
+	printf("Call custom destructor for instance of IGESSelect_SelectLevelNumber\n");
 	}
 };
 
@@ -2142,12 +2419,15 @@ class IGESSelect_SignColor : public IFSelect_Signature {
 		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESSelect_SignColor();
 
 };
 %extend IGESSelect_SignColor {
 	Handle_IGESSelect_SignColor GetHandle() {
 	return *(Handle_IGESSelect_SignColor*) &$self;
+	}
+};
+%extend IGESSelect_SignColor {
+	~IGESSelect_SignColor() {
+	printf("Call custom destructor for instance of IGESSelect_SignColor\n");
 	}
 };

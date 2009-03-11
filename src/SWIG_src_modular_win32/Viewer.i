@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Viewer_BadValue : public Handle_Standard_OutOfRange {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Viewer_BadValue();
-		%feature("autodoc", "1");
 		Handle_Viewer_BadValue();
 		%feature("autodoc", "1");
 		Handle_Viewer_BadValue(const Handle_Viewer_BadValue &aHandle);
@@ -118,12 +116,15 @@ class Handle_Viewer_BadValue : public Handle_Standard_OutOfRange {
 	return (Viewer_BadValue*)$self->Access();
 	}
 };
+%extend Handle_Viewer_BadValue {
+	~Handle_Viewer_BadValue() {
+	printf("Call custom destructor for instance of Handle_Viewer_BadValue\n");
+	}
+};
 
 %nodefaultctor Handle_Viewer_Viewer;
 class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Viewer_Viewer();
 		%feature("autodoc", "1");
 		Handle_Viewer_Viewer();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 	return (Viewer_Viewer*)$self->Access();
 	}
 };
+%extend Handle_Viewer_Viewer {
+	~Handle_Viewer_Viewer() {
+	printf("Call custom destructor for instance of Handle_Viewer_Viewer\n");
+	}
+};
 
 %nodefaultctor Handle_Viewer_View;
 class Handle_Viewer_View : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Viewer_View();
 		%feature("autodoc", "1");
 		Handle_Viewer_View();
 		%feature("autodoc", "1");
@@ -158,6 +162,11 @@ class Handle_Viewer_View : public Handle_MMgt_TShared {
 %extend Handle_Viewer_View {
 	Viewer_View* GetObject() {
 	return (Viewer_View*)$self->Access();
+	}
+};
+%extend Handle_Viewer_View {
+	~Handle_Viewer_View() {
+	printf("Call custom destructor for instance of Handle_Viewer_View\n");
 	}
 };
 
@@ -181,6 +190,11 @@ class Viewer_View : public MMgt_TShared {
 	return *(Handle_Viewer_View*) &$self;
 	}
 };
+%extend Viewer_View {
+	~Viewer_View() {
+	printf("Call custom destructor for instance of Viewer_View\n");
+	}
+};
 
 %nodefaultctor Viewer_Viewer;
 class Viewer_Viewer : public MMgt_TShared {
@@ -202,6 +216,11 @@ class Viewer_Viewer : public MMgt_TShared {
 	return *(Handle_Viewer_Viewer*) &$self;
 	}
 };
+%extend Viewer_Viewer {
+	~Viewer_Viewer() {
+	printf("Call custom destructor for instance of Viewer_Viewer\n");
+	}
+};
 
 %nodefaultctor Viewer_BadValue;
 class Viewer_BadValue : public Standard_OutOfRange {
@@ -218,12 +237,15 @@ class Viewer_BadValue : public Standard_OutOfRange {
 		Handle_Viewer_BadValue NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Viewer_BadValue();
 
 };
 %extend Viewer_BadValue {
 	Handle_Viewer_BadValue GetHandle() {
 	return *(Handle_Viewer_BadValue*) &$self;
+	}
+};
+%extend Viewer_BadValue {
+	~Viewer_BadValue() {
+	printf("Call custom destructor for instance of Viewer_BadValue\n");
 	}
 };

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PGeom_Geometry : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PGeom_Geometry();
-		%feature("autodoc", "1");
 		Handle_PGeom_Geometry();
 		%feature("autodoc", "1");
 		Handle_PGeom_Geometry(const Handle_PGeom_Geometry &aHandle);
@@ -118,12 +116,15 @@ class Handle_PGeom_Geometry : public Handle_Standard_Persistent {
 	return (PGeom_Geometry*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Geometry {
+	~Handle_PGeom_Geometry() {
+	printf("Call custom destructor for instance of Handle_PGeom_Geometry\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Surface;
 class Handle_PGeom_Surface : public Handle_PGeom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Surface();
 		%feature("autodoc", "1");
 		Handle_PGeom_Surface();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_PGeom_Surface : public Handle_PGeom_Geometry {
 	return (PGeom_Surface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Surface {
+	~Handle_PGeom_Surface() {
+	printf("Call custom destructor for instance of Handle_PGeom_Surface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_BoundedSurface;
 class Handle_PGeom_BoundedSurface : public Handle_PGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_BoundedSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_BoundedSurface();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_PGeom_BoundedSurface : public Handle_PGeom_Surface {
 	return (PGeom_BoundedSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_BoundedSurface {
+	~Handle_PGeom_BoundedSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_BoundedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Curve;
 class Handle_PGeom_Curve : public Handle_PGeom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Curve();
 		%feature("autodoc", "1");
 		Handle_PGeom_Curve();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_PGeom_Curve : public Handle_PGeom_Geometry {
 	return (PGeom_Curve*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Curve {
+	~Handle_PGeom_Curve() {
+	printf("Call custom destructor for instance of Handle_PGeom_Curve\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_BoundedCurve;
 class Handle_PGeom_BoundedCurve : public Handle_PGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_BoundedCurve();
 		%feature("autodoc", "1");
 		Handle_PGeom_BoundedCurve();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_PGeom_BoundedCurve : public Handle_PGeom_Curve {
 	return (PGeom_BoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_PGeom_BoundedCurve {
+	~Handle_PGeom_BoundedCurve() {
+	printf("Call custom destructor for instance of Handle_PGeom_BoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_TrimmedCurve;
 class Handle_PGeom_TrimmedCurve : public Handle_PGeom_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_TrimmedCurve();
 		%feature("autodoc", "1");
 		Handle_PGeom_TrimmedCurve();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_PGeom_TrimmedCurve : public Handle_PGeom_BoundedCurve {
 	return (PGeom_TrimmedCurve*)$self->Access();
 	}
 };
+%extend Handle_PGeom_TrimmedCurve {
+	~Handle_PGeom_TrimmedCurve() {
+	printf("Call custom destructor for instance of Handle_PGeom_TrimmedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Transformation;
 class Handle_PGeom_Transformation : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Transformation();
 		%feature("autodoc", "1");
 		Handle_PGeom_Transformation();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_PGeom_Transformation : public Handle_Standard_Persistent {
 	return (PGeom_Transformation*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Transformation {
+	~Handle_PGeom_Transformation() {
+	printf("Call custom destructor for instance of Handle_PGeom_Transformation\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Point;
 class Handle_PGeom_Point : public Handle_PGeom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Point();
 		%feature("autodoc", "1");
 		Handle_PGeom_Point();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_PGeom_Point : public Handle_PGeom_Geometry {
 	return (PGeom_Point*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Point {
+	~Handle_PGeom_Point() {
+	printf("Call custom destructor for instance of Handle_PGeom_Point\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_CartesianPoint;
 class Handle_PGeom_CartesianPoint : public Handle_PGeom_Point {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_CartesianPoint();
 		%feature("autodoc", "1");
 		Handle_PGeom_CartesianPoint();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_PGeom_CartesianPoint : public Handle_PGeom_Point {
 	return (PGeom_CartesianPoint*)$self->Access();
 	}
 };
+%extend Handle_PGeom_CartesianPoint {
+	~Handle_PGeom_CartesianPoint() {
+	printf("Call custom destructor for instance of Handle_PGeom_CartesianPoint\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Conic;
 class Handle_PGeom_Conic : public Handle_PGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Conic();
 		%feature("autodoc", "1");
 		Handle_PGeom_Conic();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_PGeom_Conic : public Handle_PGeom_Curve {
 	return (PGeom_Conic*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Conic {
+	~Handle_PGeom_Conic() {
+	printf("Call custom destructor for instance of Handle_PGeom_Conic\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Parabola;
 class Handle_PGeom_Parabola : public Handle_PGeom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Parabola();
 		%feature("autodoc", "1");
 		Handle_PGeom_Parabola();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_PGeom_Parabola : public Handle_PGeom_Conic {
 	return (PGeom_Parabola*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Parabola {
+	~Handle_PGeom_Parabola() {
+	printf("Call custom destructor for instance of Handle_PGeom_Parabola\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_AxisPlacement;
 class Handle_PGeom_AxisPlacement : public Handle_PGeom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_AxisPlacement();
 		%feature("autodoc", "1");
 		Handle_PGeom_AxisPlacement();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_PGeom_AxisPlacement : public Handle_PGeom_Geometry {
 	return (PGeom_AxisPlacement*)$self->Access();
 	}
 };
+%extend Handle_PGeom_AxisPlacement {
+	~Handle_PGeom_AxisPlacement() {
+	printf("Call custom destructor for instance of Handle_PGeom_AxisPlacement\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_SweptSurface;
 class Handle_PGeom_SweptSurface : public Handle_PGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_SweptSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_SweptSurface();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_PGeom_SweptSurface : public Handle_PGeom_Surface {
 	return (PGeom_SweptSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_SweptSurface {
+	~Handle_PGeom_SweptSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_SweptSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_BSplineSurface;
 class Handle_PGeom_BSplineSurface : public Handle_PGeom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_BSplineSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_BSplineSurface();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_PGeom_BSplineSurface : public Handle_PGeom_BoundedSurface {
 	return (PGeom_BSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_BSplineSurface {
+	~Handle_PGeom_BSplineSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_BSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_BezierSurface;
 class Handle_PGeom_BezierSurface : public Handle_PGeom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_BezierSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_BezierSurface();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_PGeom_BezierSurface : public Handle_PGeom_BoundedSurface {
 	return (PGeom_BezierSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_BezierSurface {
+	~Handle_PGeom_BezierSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_BezierSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Circle;
 class Handle_PGeom_Circle : public Handle_PGeom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Circle();
 		%feature("autodoc", "1");
 		Handle_PGeom_Circle();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_PGeom_Circle : public Handle_PGeom_Conic {
 	return (PGeom_Circle*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Circle {
+	~Handle_PGeom_Circle() {
+	printf("Call custom destructor for instance of Handle_PGeom_Circle\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_BSplineCurve;
 class Handle_PGeom_BSplineCurve : public Handle_PGeom_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_BSplineCurve();
 		%feature("autodoc", "1");
 		Handle_PGeom_BSplineCurve();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_PGeom_BSplineCurve : public Handle_PGeom_BoundedCurve {
 	return (PGeom_BSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_PGeom_BSplineCurve {
+	~Handle_PGeom_BSplineCurve() {
+	printf("Call custom destructor for instance of Handle_PGeom_BSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Line;
 class Handle_PGeom_Line : public Handle_PGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Line();
 		%feature("autodoc", "1");
 		Handle_PGeom_Line();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_PGeom_Line : public Handle_PGeom_Curve {
 	return (PGeom_Line*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Line {
+	~Handle_PGeom_Line() {
+	printf("Call custom destructor for instance of Handle_PGeom_Line\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_ElementarySurface;
 class Handle_PGeom_ElementarySurface : public Handle_PGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_ElementarySurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_ElementarySurface();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_PGeom_ElementarySurface : public Handle_PGeom_Surface {
 	return (PGeom_ElementarySurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_ElementarySurface {
+	~Handle_PGeom_ElementarySurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_ElementarySurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Plane;
 class Handle_PGeom_Plane : public Handle_PGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Plane();
 		%feature("autodoc", "1");
 		Handle_PGeom_Plane();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_PGeom_Plane : public Handle_PGeom_ElementarySurface {
 	return (PGeom_Plane*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Plane {
+	~Handle_PGeom_Plane() {
+	printf("Call custom destructor for instance of Handle_PGeom_Plane\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Hyperbola;
 class Handle_PGeom_Hyperbola : public Handle_PGeom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Hyperbola();
 		%feature("autodoc", "1");
 		Handle_PGeom_Hyperbola();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_PGeom_Hyperbola : public Handle_PGeom_Conic {
 	return (PGeom_Hyperbola*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Hyperbola {
+	~Handle_PGeom_Hyperbola() {
+	printf("Call custom destructor for instance of Handle_PGeom_Hyperbola\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Vector;
 class Handle_PGeom_Vector : public Handle_PGeom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Vector();
 		%feature("autodoc", "1");
 		Handle_PGeom_Vector();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_PGeom_Vector : public Handle_PGeom_Geometry {
 	return (PGeom_Vector*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Vector {
+	~Handle_PGeom_Vector() {
+	printf("Call custom destructor for instance of Handle_PGeom_Vector\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Direction;
 class Handle_PGeom_Direction : public Handle_PGeom_Vector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Direction();
 		%feature("autodoc", "1");
 		Handle_PGeom_Direction();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_PGeom_Direction : public Handle_PGeom_Vector {
 	return (PGeom_Direction*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Direction {
+	~Handle_PGeom_Direction() {
+	printf("Call custom destructor for instance of Handle_PGeom_Direction\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_OffsetSurface;
 class Handle_PGeom_OffsetSurface : public Handle_PGeom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_OffsetSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_OffsetSurface();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_PGeom_OffsetSurface : public Handle_PGeom_Surface {
 	return (PGeom_OffsetSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_OffsetSurface {
+	~Handle_PGeom_OffsetSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_OffsetSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_SurfaceOfRevolution;
 class Handle_PGeom_SurfaceOfRevolution : public Handle_PGeom_SweptSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
 		Handle_PGeom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_PGeom_SurfaceOfRevolution : public Handle_PGeom_SweptSurface {
 	return (PGeom_SurfaceOfRevolution*)$self->Access();
 	}
 };
+%extend Handle_PGeom_SurfaceOfRevolution {
+	~Handle_PGeom_SurfaceOfRevolution() {
+	printf("Call custom destructor for instance of Handle_PGeom_SurfaceOfRevolution\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_ToroidalSurface;
 class Handle_PGeom_ToroidalSurface : public Handle_PGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_ToroidalSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_ToroidalSurface();
 		%feature("autodoc", "1");
@@ -643,12 +716,15 @@ class Handle_PGeom_ToroidalSurface : public Handle_PGeom_ElementarySurface {
 	return (PGeom_ToroidalSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_ToroidalSurface {
+	~Handle_PGeom_ToroidalSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_ToroidalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_VectorWithMagnitude;
 class Handle_PGeom_VectorWithMagnitude : public Handle_PGeom_Vector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_VectorWithMagnitude();
 		%feature("autodoc", "1");
 		Handle_PGeom_VectorWithMagnitude();
 		%feature("autodoc", "1");
@@ -664,12 +740,15 @@ class Handle_PGeom_VectorWithMagnitude : public Handle_PGeom_Vector {
 	return (PGeom_VectorWithMagnitude*)$self->Access();
 	}
 };
+%extend Handle_PGeom_VectorWithMagnitude {
+	~Handle_PGeom_VectorWithMagnitude() {
+	printf("Call custom destructor for instance of Handle_PGeom_VectorWithMagnitude\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_OffsetCurve;
 class Handle_PGeom_OffsetCurve : public Handle_PGeom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_OffsetCurve();
 		%feature("autodoc", "1");
 		Handle_PGeom_OffsetCurve();
 		%feature("autodoc", "1");
@@ -685,12 +764,15 @@ class Handle_PGeom_OffsetCurve : public Handle_PGeom_Curve {
 	return (PGeom_OffsetCurve*)$self->Access();
 	}
 };
+%extend Handle_PGeom_OffsetCurve {
+	~Handle_PGeom_OffsetCurve() {
+	printf("Call custom destructor for instance of Handle_PGeom_OffsetCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_SurfaceOfLinearExtrusion;
 class Handle_PGeom_SurfaceOfLinearExtrusion : public Handle_PGeom_SweptSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_SurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
 		Handle_PGeom_SurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
@@ -706,12 +788,15 @@ class Handle_PGeom_SurfaceOfLinearExtrusion : public Handle_PGeom_SweptSurface {
 	return (PGeom_SurfaceOfLinearExtrusion*)$self->Access();
 	}
 };
+%extend Handle_PGeom_SurfaceOfLinearExtrusion {
+	~Handle_PGeom_SurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of Handle_PGeom_SurfaceOfLinearExtrusion\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Ellipse;
 class Handle_PGeom_Ellipse : public Handle_PGeom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Ellipse();
 		%feature("autodoc", "1");
 		Handle_PGeom_Ellipse();
 		%feature("autodoc", "1");
@@ -727,12 +812,15 @@ class Handle_PGeom_Ellipse : public Handle_PGeom_Conic {
 	return (PGeom_Ellipse*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Ellipse {
+	~Handle_PGeom_Ellipse() {
+	printf("Call custom destructor for instance of Handle_PGeom_Ellipse\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_CylindricalSurface;
 class Handle_PGeom_CylindricalSurface : public Handle_PGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_CylindricalSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_CylindricalSurface();
 		%feature("autodoc", "1");
@@ -748,12 +836,15 @@ class Handle_PGeom_CylindricalSurface : public Handle_PGeom_ElementarySurface {
 	return (PGeom_CylindricalSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_CylindricalSurface {
+	~Handle_PGeom_CylindricalSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_CylindricalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_SphericalSurface;
 class Handle_PGeom_SphericalSurface : public Handle_PGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_SphericalSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_SphericalSurface();
 		%feature("autodoc", "1");
@@ -769,12 +860,15 @@ class Handle_PGeom_SphericalSurface : public Handle_PGeom_ElementarySurface {
 	return (PGeom_SphericalSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_SphericalSurface {
+	~Handle_PGeom_SphericalSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_SphericalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_RectangularTrimmedSurface;
 class Handle_PGeom_RectangularTrimmedSurface : public Handle_PGeom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_RectangularTrimmedSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_RectangularTrimmedSurface();
 		%feature("autodoc", "1");
@@ -790,12 +884,15 @@ class Handle_PGeom_RectangularTrimmedSurface : public Handle_PGeom_BoundedSurfac
 	return (PGeom_RectangularTrimmedSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_RectangularTrimmedSurface {
+	~Handle_PGeom_RectangularTrimmedSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_RectangularTrimmedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_BezierCurve;
 class Handle_PGeom_BezierCurve : public Handle_PGeom_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_BezierCurve();
 		%feature("autodoc", "1");
 		Handle_PGeom_BezierCurve();
 		%feature("autodoc", "1");
@@ -811,12 +908,15 @@ class Handle_PGeom_BezierCurve : public Handle_PGeom_BoundedCurve {
 	return (PGeom_BezierCurve*)$self->Access();
 	}
 };
+%extend Handle_PGeom_BezierCurve {
+	~Handle_PGeom_BezierCurve() {
+	printf("Call custom destructor for instance of Handle_PGeom_BezierCurve\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Axis1Placement;
 class Handle_PGeom_Axis1Placement : public Handle_PGeom_AxisPlacement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Axis1Placement();
 		%feature("autodoc", "1");
 		Handle_PGeom_Axis1Placement();
 		%feature("autodoc", "1");
@@ -832,12 +932,15 @@ class Handle_PGeom_Axis1Placement : public Handle_PGeom_AxisPlacement {
 	return (PGeom_Axis1Placement*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Axis1Placement {
+	~Handle_PGeom_Axis1Placement() {
+	printf("Call custom destructor for instance of Handle_PGeom_Axis1Placement\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_ConicalSurface;
 class Handle_PGeom_ConicalSurface : public Handle_PGeom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_ConicalSurface();
 		%feature("autodoc", "1");
 		Handle_PGeom_ConicalSurface();
 		%feature("autodoc", "1");
@@ -853,12 +956,15 @@ class Handle_PGeom_ConicalSurface : public Handle_PGeom_ElementarySurface {
 	return (PGeom_ConicalSurface*)$self->Access();
 	}
 };
+%extend Handle_PGeom_ConicalSurface {
+	~Handle_PGeom_ConicalSurface() {
+	printf("Call custom destructor for instance of Handle_PGeom_ConicalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_PGeom_Axis2Placement;
 class Handle_PGeom_Axis2Placement : public Handle_PGeom_AxisPlacement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PGeom_Axis2Placement();
 		%feature("autodoc", "1");
 		Handle_PGeom_Axis2Placement();
 		%feature("autodoc", "1");
@@ -874,6 +980,11 @@ class Handle_PGeom_Axis2Placement : public Handle_PGeom_AxisPlacement {
 	return (PGeom_Axis2Placement*)$self->Access();
 	}
 };
+%extend Handle_PGeom_Axis2Placement {
+	~Handle_PGeom_Axis2Placement() {
+	printf("Call custom destructor for instance of Handle_PGeom_Axis2Placement\n");
+	}
+};
 
 %nodefaultctor PGeom_Geometry;
 class PGeom_Geometry : public Standard_Persistent {
@@ -884,13 +995,16 @@ class PGeom_Geometry : public Standard_Persistent {
 		PGeom_Geometry();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Geometry();
 
 };
 %extend PGeom_Geometry {
 	Handle_PGeom_Geometry GetHandle() {
 	return *(Handle_PGeom_Geometry*) &$self;
+	}
+};
+%extend PGeom_Geometry {
+	~PGeom_Geometry() {
+	printf("Call custom destructor for instance of PGeom_Geometry\n");
 	}
 };
 
@@ -901,13 +1015,16 @@ class PGeom_Curve : public PGeom_Geometry {
 		PGeom_Curve(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		PGeom_Curve();
-		%feature("autodoc", "1");
-		virtual		~PGeom_Curve();
 
 };
 %extend PGeom_Curve {
 	Handle_PGeom_Curve GetHandle() {
 	return *(Handle_PGeom_Curve*) &$self;
+	}
+};
+%extend PGeom_Curve {
+	~PGeom_Curve() {
+	printf("Call custom destructor for instance of PGeom_Curve\n");
 	}
 };
 
@@ -926,13 +1043,16 @@ class PGeom_Line : public PGeom_Curve {
 		PGeom_Line(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		const gp_Ax1 & _CSFDB_GetPGeom_Lineposition() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Line();
 
 };
 %extend PGeom_Line {
 	Handle_PGeom_Line GetHandle() {
 	return *(Handle_PGeom_Line*) &$self;
+	}
+};
+%extend PGeom_Line {
+	~PGeom_Line() {
+	printf("Call custom destructor for instance of PGeom_Line\n");
 	}
 };
 
@@ -969,13 +1089,16 @@ class PGeom_OffsetCurve : public PGeom_Curve {
 		void _CSFDB_SetPGeom_OffsetCurveoffsetValue(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_OffsetCurve();
 
 };
 %extend PGeom_OffsetCurve {
 	Handle_PGeom_OffsetCurve GetHandle() {
 	return *(Handle_PGeom_OffsetCurve*) &$self;
+	}
+};
+%extend PGeom_OffsetCurve {
+	~PGeom_OffsetCurve() {
+	printf("Call custom destructor for instance of PGeom_OffsetCurve\n");
 	}
 };
 
@@ -988,13 +1111,16 @@ class PGeom_Surface : public PGeom_Geometry {
 		PGeom_Surface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Surface();
 
 };
 %extend PGeom_Surface {
 	Handle_PGeom_Surface GetHandle() {
 	return *(Handle_PGeom_Surface*) &$self;
+	}
+};
+%extend PGeom_Surface {
+	~PGeom_Surface() {
+	printf("Call custom destructor for instance of PGeom_Surface\n");
 	}
 };
 
@@ -1005,13 +1131,16 @@ class PGeom_BoundedSurface : public PGeom_Surface {
 		PGeom_BoundedSurface(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		PGeom_BoundedSurface();
-		%feature("autodoc", "1");
-		virtual		~PGeom_BoundedSurface();
 
 };
 %extend PGeom_BoundedSurface {
 	Handle_PGeom_BoundedSurface GetHandle() {
 	return *(Handle_PGeom_BoundedSurface*) &$self;
+	}
+};
+%extend PGeom_BoundedSurface {
+	~PGeom_BoundedSurface() {
+	printf("Call custom destructor for instance of PGeom_BoundedSurface\n");
 	}
 };
 
@@ -1032,13 +1161,16 @@ class PGeom_Transformation : public Standard_Persistent {
 		const gp_Trsf & _CSFDB_GetPGeom_Transformationtrsf() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Transformation();
 
 };
 %extend PGeom_Transformation {
 	Handle_PGeom_Transformation GetHandle() {
 	return *(Handle_PGeom_Transformation*) &$self;
+	}
+};
+%extend PGeom_Transformation {
+	~PGeom_Transformation() {
+	printf("Call custom destructor for instance of PGeom_Transformation\n");
 	}
 };
 
@@ -1051,13 +1183,16 @@ class PGeom_Point : public PGeom_Geometry {
 		PGeom_Point();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Point();
 
 };
 %extend PGeom_Point {
 	Handle_PGeom_Point GetHandle() {
 	return *(Handle_PGeom_Point*) &$self;
+	}
+};
+%extend PGeom_Point {
+	~PGeom_Point() {
+	printf("Call custom destructor for instance of PGeom_Point\n");
 	}
 };
 
@@ -1076,13 +1211,16 @@ class PGeom_CartesianPoint : public PGeom_Point {
 		PGeom_CartesianPoint(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		const gp_Pnt & _CSFDB_GetPGeom_CartesianPointpnt() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_CartesianPoint();
 
 };
 %extend PGeom_CartesianPoint {
 	Handle_PGeom_CartesianPoint GetHandle() {
 	return *(Handle_PGeom_CartesianPoint*) &$self;
+	}
+};
+%extend PGeom_CartesianPoint {
+	~PGeom_CartesianPoint() {
+	printf("Call custom destructor for instance of PGeom_CartesianPoint\n");
 	}
 };
 
@@ -1095,13 +1233,16 @@ class PGeom_BoundedCurve : public PGeom_Curve {
 		PGeom_BoundedCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_BoundedCurve();
 
 };
 %extend PGeom_BoundedCurve {
 	Handle_PGeom_BoundedCurve GetHandle() {
 	return *(Handle_PGeom_BoundedCurve*) &$self;
+	}
+};
+%extend PGeom_BoundedCurve {
+	~PGeom_BoundedCurve() {
+	printf("Call custom destructor for instance of PGeom_BoundedCurve\n");
 	}
 };
 
@@ -1170,13 +1311,16 @@ class PGeom_BSplineCurve : public PGeom_BoundedCurve {
 		Handle_PColStd_HArray1OfInteger _CSFDB_GetPGeom_BSplineCurvemultiplicities() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_BSplineCurvemultiplicities(const Handle_PColStd_HArray1OfInteger &p);
-		%feature("autodoc", "1");
-		virtual		~PGeom_BSplineCurve();
 
 };
 %extend PGeom_BSplineCurve {
 	Handle_PGeom_BSplineCurve GetHandle() {
 	return *(Handle_PGeom_BSplineCurve*) &$self;
+	}
+};
+%extend PGeom_BSplineCurve {
+	~PGeom_BSplineCurve() {
+	printf("Call custom destructor for instance of PGeom_BSplineCurve\n");
 	}
 };
 
@@ -1287,13 +1431,16 @@ class PGeom_BSplineSurface : public PGeom_BoundedSurface {
 		void _CSFDB_SetPGeom_BSplineSurfacevMultiplicities(const Handle_PColStd_HArray1OfInteger &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_BSplineSurface();
 
 };
 %extend PGeom_BSplineSurface {
 	Handle_PGeom_BSplineSurface GetHandle() {
 	return *(Handle_PGeom_BSplineSurface*) &$self;
+	}
+};
+%extend PGeom_BSplineSurface {
+	~PGeom_BSplineSurface() {
+	printf("Call custom destructor for instance of PGeom_BSplineSurface\n");
 	}
 };
 
@@ -1310,13 +1457,16 @@ class PGeom_Vector : public PGeom_Geometry {
 		const gp_Vec & _CSFDB_GetPGeom_Vectorvec() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Vector();
 
 };
 %extend PGeom_Vector {
 	Handle_PGeom_Vector GetHandle() {
 	return *(Handle_PGeom_Vector*) &$self;
+	}
+};
+%extend PGeom_Vector {
+	~PGeom_Vector() {
+	printf("Call custom destructor for instance of PGeom_Vector\n");
 	}
 };
 
@@ -1329,13 +1479,16 @@ class PGeom_Direction : public PGeom_Vector {
 		PGeom_Direction(const gp_Vec &aVec);
 		%feature("autodoc", "1");
 		PGeom_Direction(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		~PGeom_Direction();
 
 };
 %extend PGeom_Direction {
 	Handle_PGeom_Direction GetHandle() {
 	return *(Handle_PGeom_Direction*) &$self;
+	}
+};
+%extend PGeom_Direction {
+	~PGeom_Direction() {
+	printf("Call custom destructor for instance of PGeom_Direction\n");
 	}
 };
 
@@ -1352,13 +1505,16 @@ class PGeom_Conic : public PGeom_Curve {
 		const gp_Ax2 & _CSFDB_GetPGeom_Conicposition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Conic();
 
 };
 %extend PGeom_Conic {
 	Handle_PGeom_Conic GetHandle() {
 	return *(Handle_PGeom_Conic*) &$self;
+	}
+};
+%extend PGeom_Conic {
+	~PGeom_Conic() {
+	printf("Call custom destructor for instance of PGeom_Conic\n");
 	}
 };
 
@@ -1379,13 +1535,16 @@ class PGeom_Parabola : public PGeom_Conic {
 		Standard_Real _CSFDB_GetPGeom_ParabolafocalLength() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_ParabolafocalLength(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		~PGeom_Parabola();
 
 };
 %extend PGeom_Parabola {
 	Handle_PGeom_Parabola GetHandle() {
 	return *(Handle_PGeom_Parabola*) &$self;
+	}
+};
+%extend PGeom_Parabola {
+	~PGeom_Parabola() {
+	printf("Call custom destructor for instance of PGeom_Parabola\n");
 	}
 };
 
@@ -1408,13 +1567,16 @@ class PGeom_Circle : public PGeom_Conic {
 		void _CSFDB_SetPGeom_Circleradius(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Circle();
 
 };
 %extend PGeom_Circle {
 	Handle_PGeom_Circle GetHandle() {
 	return *(Handle_PGeom_Circle*) &$self;
+	}
+};
+%extend PGeom_Circle {
+	~PGeom_Circle() {
+	printf("Call custom destructor for instance of PGeom_Circle\n");
 	}
 };
 
@@ -1445,13 +1607,16 @@ class PGeom_Ellipse : public PGeom_Conic {
 		void _CSFDB_SetPGeom_EllipseminorRadius(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Ellipse();
 
 };
 %extend PGeom_Ellipse {
 	Handle_PGeom_Ellipse GetHandle() {
 	return *(Handle_PGeom_Ellipse*) &$self;
+	}
+};
+%extend PGeom_Ellipse {
+	~PGeom_Ellipse() {
+	printf("Call custom destructor for instance of PGeom_Ellipse\n");
 	}
 };
 
@@ -1468,13 +1633,16 @@ class PGeom_ElementarySurface : public PGeom_Surface {
 		const gp_Ax3 & _CSFDB_GetPGeom_ElementarySurfaceposition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_ElementarySurface();
 
 };
 %extend PGeom_ElementarySurface {
 	Handle_PGeom_ElementarySurface GetHandle() {
 	return *(Handle_PGeom_ElementarySurface*) &$self;
+	}
+};
+%extend PGeom_ElementarySurface {
+	~PGeom_ElementarySurface() {
+	printf("Call custom destructor for instance of PGeom_ElementarySurface\n");
 	}
 };
 
@@ -1503,13 +1671,16 @@ class PGeom_ToroidalSurface : public PGeom_ElementarySurface {
 		Standard_Real _CSFDB_GetPGeom_ToroidalSurfaceminorRadius() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_ToroidalSurfaceminorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		~PGeom_ToroidalSurface();
 
 };
 %extend PGeom_ToroidalSurface {
 	Handle_PGeom_ToroidalSurface GetHandle() {
 	return *(Handle_PGeom_ToroidalSurface*) &$self;
+	}
+};
+%extend PGeom_ToroidalSurface {
+	~PGeom_ToroidalSurface() {
+	printf("Call custom destructor for instance of PGeom_ToroidalSurface\n");
 	}
 };
 
@@ -1564,13 +1735,16 @@ class PGeom_RectangularTrimmedSurface : public PGeom_BoundedSurface {
 		void _CSFDB_SetPGeom_RectangularTrimmedSurfacelastV(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_RectangularTrimmedSurface();
 
 };
 %extend PGeom_RectangularTrimmedSurface {
 	Handle_PGeom_RectangularTrimmedSurface GetHandle() {
 	return *(Handle_PGeom_RectangularTrimmedSurface*) &$self;
+	}
+};
+%extend PGeom_RectangularTrimmedSurface {
+	~PGeom_RectangularTrimmedSurface() {
+	printf("Call custom destructor for instance of PGeom_RectangularTrimmedSurface\n");
 	}
 };
 
@@ -1587,13 +1761,16 @@ class PGeom_AxisPlacement : public PGeom_Geometry {
 		const gp_Ax1 & _CSFDB_GetPGeom_AxisPlacementaxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_AxisPlacement();
 
 };
 %extend PGeom_AxisPlacement {
 	Handle_PGeom_AxisPlacement GetHandle() {
 	return *(Handle_PGeom_AxisPlacement*) &$self;
+	}
+};
+%extend PGeom_AxisPlacement {
+	~PGeom_AxisPlacement() {
+	printf("Call custom destructor for instance of PGeom_AxisPlacement\n");
 	}
 };
 
@@ -1640,13 +1817,16 @@ class PGeom_BezierSurface : public PGeom_BoundedSurface {
 		void _CSFDB_SetPGeom_BezierSurfaceweights(const Handle_PColStd_HArray2OfReal &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_BezierSurface();
 
 };
 %extend PGeom_BezierSurface {
 	Handle_PGeom_BezierSurface GetHandle() {
 	return *(Handle_PGeom_BezierSurface*) &$self;
+	}
+};
+%extend PGeom_BezierSurface {
+	~PGeom_BezierSurface() {
+	printf("Call custom destructor for instance of PGeom_BezierSurface\n");
 	}
 };
 
@@ -1667,13 +1847,16 @@ class PGeom_Axis2Placement : public PGeom_AxisPlacement {
 		const gp_Dir & _CSFDB_GetPGeom_Axis2PlacementxDirection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Axis2Placement();
 
 };
 %extend PGeom_Axis2Placement {
 	Handle_PGeom_Axis2Placement GetHandle() {
 	return *(Handle_PGeom_Axis2Placement*) &$self;
+	}
+};
+%extend PGeom_Axis2Placement {
+	~PGeom_Axis2Placement() {
+	printf("Call custom destructor for instance of PGeom_Axis2Placement\n");
 	}
 };
 
@@ -1698,13 +1881,16 @@ class PGeom_SweptSurface : public PGeom_Surface {
 		const gp_Dir & _CSFDB_GetPGeom_SweptSurfacedirection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_SweptSurface();
 
 };
 %extend PGeom_SweptSurface {
 	Handle_PGeom_SweptSurface GetHandle() {
 	return *(Handle_PGeom_SweptSurface*) &$self;
+	}
+};
+%extend PGeom_SweptSurface {
+	~PGeom_SweptSurface() {
+	printf("Call custom destructor for instance of PGeom_SweptSurface\n");
 	}
 };
 
@@ -1717,13 +1903,16 @@ class PGeom_SurfaceOfLinearExtrusion : public PGeom_SweptSurface {
 		PGeom_SurfaceOfLinearExtrusion(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir &aDirection);
 		%feature("autodoc", "1");
 		PGeom_SurfaceOfLinearExtrusion(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		~PGeom_SurfaceOfLinearExtrusion();
 
 };
 %extend PGeom_SurfaceOfLinearExtrusion {
 	Handle_PGeom_SurfaceOfLinearExtrusion GetHandle() {
 	return *(Handle_PGeom_SurfaceOfLinearExtrusion*) &$self;
+	}
+};
+%extend PGeom_SurfaceOfLinearExtrusion {
+	~PGeom_SurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of PGeom_SurfaceOfLinearExtrusion\n");
 	}
 };
 
@@ -1746,13 +1935,16 @@ class PGeom_CylindricalSurface : public PGeom_ElementarySurface {
 		void _CSFDB_SetPGeom_CylindricalSurfaceradius(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_CylindricalSurface();
 
 };
 %extend PGeom_CylindricalSurface {
 	Handle_PGeom_CylindricalSurface GetHandle() {
 	return *(Handle_PGeom_CylindricalSurface*) &$self;
+	}
+};
+%extend PGeom_CylindricalSurface {
+	~PGeom_CylindricalSurface() {
+	printf("Call custom destructor for instance of PGeom_CylindricalSurface\n");
 	}
 };
 
@@ -1767,13 +1959,16 @@ class PGeom_Axis1Placement : public PGeom_AxisPlacement {
 		PGeom_Axis1Placement(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Axis1Placement();
 
 };
 %extend PGeom_Axis1Placement {
 	Handle_PGeom_Axis1Placement GetHandle() {
 	return *(Handle_PGeom_Axis1Placement*) &$self;
+	}
+};
+%extend PGeom_Axis1Placement {
+	~PGeom_Axis1Placement() {
+	printf("Call custom destructor for instance of PGeom_Axis1Placement\n");
 	}
 };
 
@@ -1796,13 +1991,16 @@ class PGeom_SphericalSurface : public PGeom_ElementarySurface {
 		void _CSFDB_SetPGeom_SphericalSurfaceradius(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_SphericalSurface();
 
 };
 %extend PGeom_SphericalSurface {
 	Handle_PGeom_SphericalSurface GetHandle() {
 	return *(Handle_PGeom_SphericalSurface*) &$self;
+	}
+};
+%extend PGeom_SphericalSurface {
+	~PGeom_SphericalSurface() {
+	printf("Call custom destructor for instance of PGeom_SphericalSurface\n");
 	}
 };
 
@@ -1841,13 +2039,16 @@ class PGeom_TrimmedCurve : public PGeom_BoundedCurve {
 		void _CSFDB_SetPGeom_TrimmedCurvelastU(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_TrimmedCurve();
 
 };
 %extend PGeom_TrimmedCurve {
 	Handle_PGeom_TrimmedCurve GetHandle() {
 	return *(Handle_PGeom_TrimmedCurve*) &$self;
+	}
+};
+%extend PGeom_TrimmedCurve {
+	~PGeom_TrimmedCurve() {
+	printf("Call custom destructor for instance of PGeom_TrimmedCurve\n");
 	}
 };
 
@@ -1886,13 +2087,16 @@ class PGeom_BezierCurve : public PGeom_BoundedCurve {
 		void _CSFDB_SetPGeom_BezierCurveweights(const Handle_PColStd_HArray1OfReal &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_BezierCurve();
 
 };
 %extend PGeom_BezierCurve {
 	Handle_PGeom_BezierCurve GetHandle() {
 	return *(Handle_PGeom_BezierCurve*) &$self;
+	}
+};
+%extend PGeom_BezierCurve {
+	~PGeom_BezierCurve() {
+	printf("Call custom destructor for instance of PGeom_BezierCurve\n");
 	}
 };
 
@@ -1923,13 +2127,16 @@ class PGeom_OffsetSurface : public PGeom_Surface {
 		void _CSFDB_SetPGeom_OffsetSurfaceoffsetValue(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_OffsetSurface();
 
 };
 %extend PGeom_OffsetSurface {
 	Handle_PGeom_OffsetSurface GetHandle() {
 	return *(Handle_PGeom_OffsetSurface*) &$self;
+	}
+};
+%extend PGeom_OffsetSurface {
+	~PGeom_OffsetSurface() {
+	printf("Call custom destructor for instance of PGeom_OffsetSurface\n");
 	}
 };
 
@@ -1960,13 +2167,16 @@ class PGeom_ConicalSurface : public PGeom_ElementarySurface {
 		void _CSFDB_SetPGeom_ConicalSurfacesemiAngle(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_ConicalSurface();
 
 };
 %extend PGeom_ConicalSurface {
 	Handle_PGeom_ConicalSurface GetHandle() {
 	return *(Handle_PGeom_ConicalSurface*) &$self;
+	}
+};
+%extend PGeom_ConicalSurface {
+	~PGeom_ConicalSurface() {
+	printf("Call custom destructor for instance of PGeom_ConicalSurface\n");
 	}
 };
 
@@ -1987,13 +2197,16 @@ class PGeom_SurfaceOfRevolution : public PGeom_SweptSurface {
 		const gp_Pnt & _CSFDB_GetPGeom_SurfaceOfRevolutionlocation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_SurfaceOfRevolution();
 
 };
 %extend PGeom_SurfaceOfRevolution {
 	Handle_PGeom_SurfaceOfRevolution GetHandle() {
 	return *(Handle_PGeom_SurfaceOfRevolution*) &$self;
+	}
+};
+%extend PGeom_SurfaceOfRevolution {
+	~PGeom_SurfaceOfRevolution() {
+	printf("Call custom destructor for instance of PGeom_SurfaceOfRevolution\n");
 	}
 };
 
@@ -2024,13 +2237,16 @@ class PGeom_Hyperbola : public PGeom_Conic {
 		void _CSFDB_SetPGeom_HyperbolaminorRadius(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Hyperbola();
 
 };
 %extend PGeom_Hyperbola {
 	Handle_PGeom_Hyperbola GetHandle() {
 	return *(Handle_PGeom_Hyperbola*) &$self;
+	}
+};
+%extend PGeom_Hyperbola {
+	~PGeom_Hyperbola() {
+	printf("Call custom destructor for instance of PGeom_Hyperbola\n");
 	}
 };
 
@@ -2045,13 +2261,16 @@ class PGeom_Plane : public PGeom_ElementarySurface {
 		PGeom_Plane(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_Plane();
 
 };
 %extend PGeom_Plane {
 	Handle_PGeom_Plane GetHandle() {
 	return *(Handle_PGeom_Plane*) &$self;
+	}
+};
+%extend PGeom_Plane {
+	~PGeom_Plane() {
+	printf("Call custom destructor for instance of PGeom_Plane\n");
 	}
 };
 
@@ -2066,12 +2285,15 @@ class PGeom_VectorWithMagnitude : public PGeom_Vector {
 		PGeom_VectorWithMagnitude(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PGeom_VectorWithMagnitude();
 
 };
 %extend PGeom_VectorWithMagnitude {
 	Handle_PGeom_VectorWithMagnitude GetHandle() {
 	return *(Handle_PGeom_VectorWithMagnitude*) &$self;
+	}
+};
+%extend PGeom_VectorWithMagnitude {
+	~PGeom_VectorWithMagnitude() {
+	printf("Call custom destructor for instance of PGeom_VectorWithMagnitude\n");
 	}
 };

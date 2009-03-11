@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modification {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ShapeCustom_BSplineRestriction();
-		%feature("autodoc", "1");
 		Handle_ShapeCustom_BSplineRestriction();
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_BSplineRestriction(const Handle_ShapeCustom_BSplineRestriction &aHandle);
@@ -118,12 +116,15 @@ class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modificati
 	return (ShapeCustom_BSplineRestriction*)$self->Access();
 	}
 };
+%extend Handle_ShapeCustom_BSplineRestriction {
+	~Handle_ShapeCustom_BSplineRestriction() {
+	printf("Call custom destructor for instance of Handle_ShapeCustom_BSplineRestriction\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeCustom_TrsfModification;
 class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeCustom_TrsfModification();
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_TrsfModification();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModifica
 	return (ShapeCustom_TrsfModification*)$self->Access();
 	}
 };
+%extend Handle_ShapeCustom_TrsfModification {
+	~Handle_ShapeCustom_TrsfModification() {
+	printf("Call custom destructor for instance of Handle_ShapeCustom_TrsfModification\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeCustom_SweptToElementary;
 class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeCustom_SweptToElementary();
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_SweptToElementary();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modificatio
 	return (ShapeCustom_SweptToElementary*)$self->Access();
 	}
 };
+%extend Handle_ShapeCustom_SweptToElementary {
+	~Handle_ShapeCustom_SweptToElementary() {
+	printf("Call custom destructor for instance of Handle_ShapeCustom_SweptToElementary\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeCustom_ConvertToBSpline;
 class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeCustom_ConvertToBSpline();
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToBSpline();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification
 	return (ShapeCustom_ConvertToBSpline*)$self->Access();
 	}
 };
+%extend Handle_ShapeCustom_ConvertToBSpline {
+	~Handle_ShapeCustom_ConvertToBSpline() {
+	printf("Call custom destructor for instance of Handle_ShapeCustom_ConvertToBSpline\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeCustom_ConvertToRevolution;
 class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeCustom_ConvertToRevolution();
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToRevolution();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modificat
 	return (ShapeCustom_ConvertToRevolution*)$self->Access();
 	}
 };
+%extend Handle_ShapeCustom_ConvertToRevolution {
+	~Handle_ShapeCustom_ConvertToRevolution() {
+	printf("Call custom destructor for instance of Handle_ShapeCustom_ConvertToRevolution\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeCustom_RestrictionParameters;
 class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeCustom_RestrictionParameters();
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_RestrictionParameters();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 	return (ShapeCustom_RestrictionParameters*)$self->Access();
 	}
 };
+%extend Handle_ShapeCustom_RestrictionParameters {
+	~Handle_ShapeCustom_RestrictionParameters() {
+	printf("Call custom destructor for instance of Handle_ShapeCustom_RestrictionParameters\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeCustom_DirectModification;
 class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeCustom_DirectModification();
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_DirectModification();
 		%feature("autodoc", "1");
@@ -242,6 +258,11 @@ class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modificati
 %extend Handle_ShapeCustom_DirectModification {
 	ShapeCustom_DirectModification* GetObject() {
 	return (ShapeCustom_DirectModification*)$self->Access();
+	}
+};
+%extend Handle_ShapeCustom_DirectModification {
+	~Handle_ShapeCustom_DirectModification() {
+	printf("Call custom destructor for instance of Handle_ShapeCustom_DirectModification\n");
 	}
 };
 
@@ -310,13 +331,16 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 		Standard_Integer NbOfSpan() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeCustom_BSplineRestriction();
 
 };
 %extend ShapeCustom_BSplineRestriction {
 	Handle_ShapeCustom_BSplineRestriction GetHandle() {
 	return *(Handle_ShapeCustom_BSplineRestriction*) &$self;
+	}
+};
+%extend ShapeCustom_BSplineRestriction {
+	~ShapeCustom_BSplineRestriction() {
+	printf("Call custom destructor for instance of ShapeCustom_BSplineRestriction\n");
 	}
 };
 
@@ -337,13 +361,16 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeCustom_TrsfModification();
 
 };
 %extend ShapeCustom_TrsfModification {
 	Handle_ShapeCustom_TrsfModification GetHandle() {
 	return *(Handle_ShapeCustom_TrsfModification*) &$self;
+	}
+};
+%extend ShapeCustom_TrsfModification {
+	~ShapeCustom_TrsfModification() {
+	printf("Call custom destructor for instance of ShapeCustom_TrsfModification\n");
 	}
 };
 
@@ -378,13 +405,16 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 		Standard_Boolean & ConvertOffsetCurv2d();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeCustom_RestrictionParameters();
 
 };
 %extend ShapeCustom_RestrictionParameters {
 	Handle_ShapeCustom_RestrictionParameters GetHandle() {
 	return *(Handle_ShapeCustom_RestrictionParameters*) &$self;
+	}
+};
+%extend ShapeCustom_RestrictionParameters {
+	~ShapeCustom_RestrictionParameters() {
+	printf("Call custom destructor for instance of ShapeCustom_RestrictionParameters\n");
 	}
 };
 
@@ -407,13 +437,16 @@ class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeCustom_SweptToElementary();
 
 };
 %extend ShapeCustom_SweptToElementary {
 	Handle_ShapeCustom_SweptToElementary GetHandle() {
 	return *(Handle_ShapeCustom_SweptToElementary*) &$self;
+	}
+};
+%extend ShapeCustom_SweptToElementary {
+	~ShapeCustom_SweptToElementary() {
+	printf("Call custom destructor for instance of ShapeCustom_SweptToElementary\n");
 	}
 };
 
@@ -488,13 +521,16 @@ class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeCustom_ConvertToRevolution();
 
 };
 %extend ShapeCustom_ConvertToRevolution {
 	Handle_ShapeCustom_ConvertToRevolution GetHandle() {
 	return *(Handle_ShapeCustom_ConvertToRevolution*) &$self;
+	}
+};
+%extend ShapeCustom_ConvertToRevolution {
+	~ShapeCustom_ConvertToRevolution() {
+	printf("Call custom destructor for instance of ShapeCustom_ConvertToRevolution\n");
 	}
 };
 
@@ -533,13 +569,16 @@ class ShapeCustom_DirectModification : public BRepTools_Modification {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeCustom_DirectModification();
 
 };
 %extend ShapeCustom_DirectModification {
 	Handle_ShapeCustom_DirectModification GetHandle() {
 	return *(Handle_ShapeCustom_DirectModification*) &$self;
+	}
+};
+%extend ShapeCustom_DirectModification {
+	~ShapeCustom_DirectModification() {
+	printf("Call custom destructor for instance of ShapeCustom_DirectModification\n");
 	}
 };
 
@@ -568,12 +607,15 @@ class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeCustom_ConvertToBSpline();
 
 };
 %extend ShapeCustom_ConvertToBSpline {
 	Handle_ShapeCustom_ConvertToBSpline GetHandle() {
 	return *(Handle_ShapeCustom_ConvertToBSpline*) &$self;
+	}
+};
+%extend ShapeCustom_ConvertToBSpline {
+	~ShapeCustom_ConvertToBSpline() {
+	printf("Call custom destructor for instance of ShapeCustom_ConvertToBSpline\n");
 	}
 };

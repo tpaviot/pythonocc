@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_HLRBRep_InternalAlgo : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_HLRBRep_InternalAlgo();
-		%feature("autodoc", "1");
 		Handle_HLRBRep_InternalAlgo();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_InternalAlgo(const Handle_HLRBRep_InternalAlgo &aHandle);
@@ -118,12 +116,15 @@ class Handle_HLRBRep_InternalAlgo : public Handle_MMgt_TShared {
 	return (HLRBRep_InternalAlgo*)$self->Access();
 	}
 };
+%extend Handle_HLRBRep_InternalAlgo {
+	~Handle_HLRBRep_InternalAlgo() {
+	printf("Call custom destructor for instance of Handle_HLRBRep_InternalAlgo\n");
+	}
+};
 
 %nodefaultctor Handle_HLRBRep_Algo;
 class Handle_HLRBRep_Algo : public Handle_HLRBRep_InternalAlgo {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRBRep_Algo();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_Algo();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_HLRBRep_Algo : public Handle_HLRBRep_InternalAlgo {
 	return (HLRBRep_Algo*)$self->Access();
 	}
 };
+%extend Handle_HLRBRep_Algo {
+	~Handle_HLRBRep_Algo() {
+	printf("Call custom destructor for instance of Handle_HLRBRep_Algo\n");
+	}
+};
 
 %nodefaultctor Handle_HLRBRep_AreaLimit;
 class Handle_HLRBRep_AreaLimit : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRBRep_AreaLimit();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_AreaLimit();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_HLRBRep_AreaLimit : public Handle_MMgt_TShared {
 	return (HLRBRep_AreaLimit*)$self->Access();
 	}
 };
+%extend Handle_HLRBRep_AreaLimit {
+	~Handle_HLRBRep_AreaLimit() {
+	printf("Call custom destructor for instance of Handle_HLRBRep_AreaLimit\n");
+	}
+};
 
 %nodefaultctor Handle_HLRBRep_Data;
 class Handle_HLRBRep_Data : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRBRep_Data();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_Data();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_HLRBRep_Data : public Handle_MMgt_TShared {
 	return (HLRBRep_Data*)$self->Access();
 	}
 };
+%extend Handle_HLRBRep_Data {
+	~Handle_HLRBRep_Data() {
+	printf("Call custom destructor for instance of Handle_HLRBRep_Data\n");
+	}
+};
 
 %nodefaultctor Handle_HLRBRep_PolyAlgo;
 class Handle_HLRBRep_PolyAlgo : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRBRep_PolyAlgo();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_PolyAlgo();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_HLRBRep_PolyAlgo : public Handle_MMgt_TShared {
 	return (HLRBRep_PolyAlgo*)$self->Access();
 	}
 };
+%extend Handle_HLRBRep_PolyAlgo {
+	~Handle_HLRBRep_PolyAlgo() {
+	printf("Call custom destructor for instance of Handle_HLRBRep_PolyAlgo\n");
+	}
+};
 
 %nodefaultctor Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
 class Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfC
 	return (HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter*)$self->Access();
 	}
 };
+%extend Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
+	~Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter() {
+	printf("Call custom destructor for instance of Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");
+	}
+};
 
 %nodefaultctor Handle_HLRBRep_ListNodeOfListOfBPoint;
 class Handle_HLRBRep_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRBRep_ListNodeOfListOfBPoint();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_ListNodeOfListOfBPoint();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_HLRBRep_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode 
 	return (HLRBRep_ListNodeOfListOfBPoint*)$self->Access();
 	}
 };
+%extend Handle_HLRBRep_ListNodeOfListOfBPoint {
+	~Handle_HLRBRep_ListNodeOfListOfBPoint() {
+	printf("Call custom destructor for instance of Handle_HLRBRep_ListNodeOfListOfBPoint\n");
+	}
+};
 
 %nodefaultctor Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds;
 class Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds : public Handle_TCollection_
 	return (HLRBRep_SequenceNodeOfSeqOfShapeBounds*)$self->Access();
 	}
 };
+%extend Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds {
+	~Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds() {
+	printf("Call custom destructor for instance of Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds\n");
+	}
+};
 
 %nodefaultctor Handle_HLRBRep_ListNodeOfListOfBPnt2D;
 class Handle_HLRBRep_ListNodeOfListOfBPnt2D : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRBRep_ListNodeOfListOfBPnt2D();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_ListNodeOfListOfBPnt2D();
 		%feature("autodoc", "1");
@@ -284,6 +306,11 @@ class Handle_HLRBRep_ListNodeOfListOfBPnt2D : public Handle_TCollection_MapNode 
 %extend Handle_HLRBRep_ListNodeOfListOfBPnt2D {
 	HLRBRep_ListNodeOfListOfBPnt2D* GetObject() {
 	return (HLRBRep_ListNodeOfListOfBPnt2D*)$self->Access();
+	}
+};
+%extend Handle_HLRBRep_ListNodeOfListOfBPnt2D {
+	~Handle_HLRBRep_ListNodeOfListOfBPnt2D() {
+	printf("Call custom destructor for instance of Handle_HLRBRep_ListNodeOfListOfBPnt2D\n");
 	}
 };
 
@@ -598,13 +625,16 @@ class HLRBRep_AreaLimit : public MMgt_TShared {
 		void Clear();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_AreaLimit();
 
 };
 %extend HLRBRep_AreaLimit {
 	Handle_HLRBRep_AreaLimit GetHandle() {
 	return *(Handle_HLRBRep_AreaLimit*) &$self;
+	}
+};
+%extend HLRBRep_AreaLimit {
+	~HLRBRep_AreaLimit() {
+	printf("Call custom destructor for instance of HLRBRep_AreaLimit\n");
 	}
 };
 
@@ -671,13 +701,16 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 		void Debug(const Standard_Boolean B);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_PolyAlgo();
 
 };
 %extend HLRBRep_PolyAlgo {
 	Handle_HLRBRep_PolyAlgo GetHandle() {
 	return *(Handle_HLRBRep_PolyAlgo*) &$self;
+	}
+};
+%extend HLRBRep_PolyAlgo {
+	~HLRBRep_PolyAlgo() {
+	printf("Call custom destructor for instance of HLRBRep_PolyAlgo\n");
 	}
 };
 
@@ -1068,13 +1101,16 @@ class HLRBRep_InternalAlgo : public MMgt_TShared {
 		Handle_HLRBRep_Data DataStructure() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_InternalAlgo();
 
 };
 %extend HLRBRep_InternalAlgo {
 	Handle_HLRBRep_InternalAlgo GetHandle() {
 	return *(Handle_HLRBRep_InternalAlgo*) &$self;
+	}
+};
+%extend HLRBRep_InternalAlgo {
+	~HLRBRep_InternalAlgo() {
+	printf("Call custom destructor for instance of HLRBRep_InternalAlgo\n");
 	}
 };
 
@@ -1245,13 +1281,16 @@ class HLRBRep_ListNodeOfListOfBPoint : public TCollection_MapNode {
 		HLRBRep_BiPoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_ListNodeOfListOfBPoint();
 
 };
 %extend HLRBRep_ListNodeOfListOfBPoint {
 	Handle_HLRBRep_ListNodeOfListOfBPoint GetHandle() {
 	return *(Handle_HLRBRep_ListNodeOfListOfBPoint*) &$self;
+	}
+};
+%extend HLRBRep_ListNodeOfListOfBPoint {
+	~HLRBRep_ListNodeOfListOfBPoint() {
+	printf("Call custom destructor for instance of HLRBRep_ListNodeOfListOfBPoint\n");
 	}
 };
 
@@ -2002,13 +2041,16 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 		void OutLinedShapeNullify();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_Algo();
 
 };
 %extend HLRBRep_Algo {
 	Handle_HLRBRep_Algo GetHandle() {
 	return *(Handle_HLRBRep_Algo*) &$self;
+	}
+};
+%extend HLRBRep_Algo {
+	~HLRBRep_Algo() {
+	printf("Call custom destructor for instance of HLRBRep_Algo\n");
 	}
 };
 
@@ -2077,13 +2119,16 @@ class HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter :
 		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
 
 };
 %extend HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
 	Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter GetHandle() {
 	return *(Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter*) &$self;
+	}
+};
+%extend HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
+	~HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");
 	}
 };
 
@@ -2154,13 +2199,16 @@ class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
 		HLRBRep_BiPnt2D & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_ListNodeOfListOfBPnt2D();
 
 };
 %extend HLRBRep_ListNodeOfListOfBPnt2D {
 	Handle_HLRBRep_ListNodeOfListOfBPnt2D GetHandle() {
 	return *(Handle_HLRBRep_ListNodeOfListOfBPnt2D*) &$self;
+	}
+};
+%extend HLRBRep_ListNodeOfListOfBPnt2D {
+	~HLRBRep_ListNodeOfListOfBPnt2D() {
+	printf("Call custom destructor for instance of HLRBRep_ListNodeOfListOfBPnt2D\n");
 	}
 };
 
@@ -2173,13 +2221,16 @@ class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 		HLRBRep_ShapeBounds & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRBRep_SequenceNodeOfSeqOfShapeBounds();
 
 };
 %extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
 	Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds GetHandle() {
 	return *(Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds*) &$self;
+	}
+};
+%extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
+	~HLRBRep_SequenceNodeOfSeqOfShapeBounds() {
+	printf("Call custom destructor for instance of HLRBRep_SequenceNodeOfSeqOfShapeBounds\n");
 	}
 };
 
@@ -2841,14 +2892,17 @@ class HLRBRep_Data : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~HLRBRep_Data();
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend HLRBRep_Data {
 	Handle_HLRBRep_Data GetHandle() {
 	return *(Handle_HLRBRep_Data*) &$self;
+	}
+};
+%extend HLRBRep_Data {
+	~HLRBRep_Data() {
+	printf("Call custom destructor for instance of HLRBRep_Data\n");
 	}
 };
 

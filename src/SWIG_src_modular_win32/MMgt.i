@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_MMgt_TShared : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MMgt_TShared();
-		%feature("autodoc", "1");
 		Handle_MMgt_TShared();
 		%feature("autodoc", "1");
 		Handle_MMgt_TShared(const Handle_MMgt_TShared &aHandle);
@@ -118,6 +116,11 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 	return (MMgt_TShared*)$self->Access();
 	}
 };
+%extend Handle_MMgt_TShared {
+	~Handle_MMgt_TShared() {
+	printf("Call custom destructor for instance of Handle_MMgt_TShared\n");
+	}
+};
 
 %nodefaultctor MMgt_TShared;
 class MMgt_TShared : public Standard_Transient {
@@ -128,13 +131,16 @@ class MMgt_TShared : public Standard_Transient {
 		virtual		void Delete() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MMgt_TShared();
 
 };
 %extend MMgt_TShared {
 	Handle_MMgt_TShared GetHandle() {
 	return *(Handle_MMgt_TShared*) &$self;
+	}
+};
+%extend MMgt_TShared {
+	~MMgt_TShared() {
+	printf("Call custom destructor for instance of MMgt_TShared\n");
 	}
 };
 

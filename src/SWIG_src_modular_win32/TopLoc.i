@@ -103,8 +103,6 @@ typedef gp_Trsf * TopLoc_TrsfPtr;
 class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TopLoc_SListNodeOfSListOfItemLocation();
-		%feature("autodoc", "1");
 		Handle_TopLoc_SListNodeOfSListOfItemLocation();
 		%feature("autodoc", "1");
 		Handle_TopLoc_SListNodeOfSListOfItemLocation(const Handle_TopLoc_SListNodeOfSListOfItemLocation &aHandle);
@@ -119,12 +117,15 @@ class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared 
 	return (TopLoc_SListNodeOfSListOfItemLocation*)$self->Access();
 	}
 };
+%extend Handle_TopLoc_SListNodeOfSListOfItemLocation {
+	~Handle_TopLoc_SListNodeOfSListOfItemLocation() {
+	printf("Call custom destructor for instance of Handle_TopLoc_SListNodeOfSListOfItemLocation\n");
+	}
+};
 
 %nodefaultctor Handle_TopLoc_Datum3D;
 class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopLoc_Datum3D();
 		%feature("autodoc", "1");
 		Handle_TopLoc_Datum3D();
 		%feature("autodoc", "1");
@@ -140,12 +141,15 @@ class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 	return (TopLoc_Datum3D*)$self->Access();
 	}
 };
+%extend Handle_TopLoc_Datum3D {
+	~Handle_TopLoc_Datum3D() {
+	printf("Call custom destructor for instance of Handle_TopLoc_Datum3D\n");
+	}
+};
 
 %nodefaultctor Handle_TopLoc_StdMapNodeOfMapOfLocation;
 class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopLoc_StdMapNodeOfMapOfLocation();
 		%feature("autodoc", "1");
 		Handle_TopLoc_StdMapNodeOfMapOfLocation();
 		%feature("autodoc", "1");
@@ -161,12 +165,15 @@ class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNod
 	return (TopLoc_StdMapNodeOfMapOfLocation*)$self->Access();
 	}
 };
+%extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
+	~Handle_TopLoc_StdMapNodeOfMapOfLocation() {
+	printf("Call custom destructor for instance of Handle_TopLoc_StdMapNodeOfMapOfLocation\n");
+	}
+};
 
 %nodefaultctor Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
 class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation();
 		%feature("autodoc", "1");
 		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation();
 		%feature("autodoc", "1");
@@ -180,6 +187,11 @@ class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollec
 %extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
 	TopLoc_IndexedMapNodeOfIndexedMapOfLocation* GetObject() {
 	return (TopLoc_IndexedMapNodeOfIndexedMapOfLocation*)$self->Access();
+	}
+};
+%extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+	~Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation() {
+	printf("Call custom destructor for instance of Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");
 	}
 };
 
@@ -196,13 +208,16 @@ class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopLoc_IndexedMapNodeOfIndexedMapOfLocation();
 
 };
 %extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
 	Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation GetHandle() {
 	return *(Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation*) &$self;
+	}
+};
+%extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+	~TopLoc_IndexedMapNodeOfIndexedMapOfLocation() {
+	printf("Call custom destructor for instance of TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");
 	}
 };
 
@@ -347,13 +362,16 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 		TopLoc_Location & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopLoc_StdMapNodeOfMapOfLocation();
 
 };
 %extend TopLoc_StdMapNodeOfMapOfLocation {
 	Handle_TopLoc_StdMapNodeOfMapOfLocation GetHandle() {
 	return *(Handle_TopLoc_StdMapNodeOfMapOfLocation*) &$self;
+	}
+};
+%extend TopLoc_StdMapNodeOfMapOfLocation {
+	~TopLoc_StdMapNodeOfMapOfLocation() {
+	printf("Call custom destructor for instance of TopLoc_StdMapNodeOfMapOfLocation\n");
 	}
 };
 
@@ -430,12 +448,15 @@ class TopLoc_Datum3D : public MMgt_TShared {
 		virtual		void ShallowDump(Standard_OStream & S) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopLoc_Datum3D();
 
 };
 %extend TopLoc_Datum3D {
 	Handle_TopLoc_Datum3D GetHandle() {
 	return *(Handle_TopLoc_Datum3D*) &$self;
+	}
+};
+%extend TopLoc_Datum3D {
+	~TopLoc_Datum3D() {
+	printf("Call custom destructor for instance of TopLoc_Datum3D\n");
 	}
 };

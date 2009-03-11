@@ -126,8 +126,6 @@ enum ChFiDS_State {
 class Handle_ChFiDS_SecHArray1 : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ChFiDS_SecHArray1();
-		%feature("autodoc", "1");
 		Handle_ChFiDS_SecHArray1();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SecHArray1(const Handle_ChFiDS_SecHArray1 &aHandle);
@@ -142,12 +140,15 @@ class Handle_ChFiDS_SecHArray1 : public Handle_MMgt_TShared {
 	return (ChFiDS_SecHArray1*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_SecHArray1 {
+	~Handle_ChFiDS_SecHArray1() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_SecHArray1\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_ListNodeOfListOfStripe;
 class Handle_ChFiDS_ListNodeOfListOfStripe : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_ListNodeOfListOfStripe();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfListOfStripe();
 		%feature("autodoc", "1");
@@ -163,12 +164,15 @@ class Handle_ChFiDS_ListNodeOfListOfStripe : public Handle_TCollection_MapNode {
 	return (ChFiDS_ListNodeOfListOfStripe*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_ListNodeOfListOfStripe {
+	~Handle_ChFiDS_ListNodeOfListOfStripe() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_ListNodeOfListOfStripe\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_Stripe;
 class Handle_ChFiDS_Stripe : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_Stripe();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Stripe();
 		%feature("autodoc", "1");
@@ -184,12 +188,15 @@ class Handle_ChFiDS_Stripe : public Handle_MMgt_TShared {
 	return (ChFiDS_Stripe*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_Stripe {
+	~Handle_ChFiDS_Stripe() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_Stripe\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_ListNodeOfListOfHElSpine;
 class Handle_ChFiDS_ListNodeOfListOfHElSpine : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_ListNodeOfListOfHElSpine();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfListOfHElSpine();
 		%feature("autodoc", "1");
@@ -205,12 +212,15 @@ class Handle_ChFiDS_ListNodeOfListOfHElSpine : public Handle_TCollection_MapNode
 	return (ChFiDS_ListNodeOfListOfHElSpine*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_ListNodeOfListOfHElSpine {
+	~Handle_ChFiDS_ListNodeOfListOfHElSpine() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_ListNodeOfListOfHElSpine\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_Spine;
 class Handle_ChFiDS_Spine : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_Spine();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Spine();
 		%feature("autodoc", "1");
@@ -226,12 +236,15 @@ class Handle_ChFiDS_Spine : public Handle_MMgt_TShared {
 	return (ChFiDS_Spine*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_Spine {
+	~Handle_ChFiDS_Spine() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_Spine\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_ChamfSpine;
 class Handle_ChFiDS_ChamfSpine : public Handle_ChFiDS_Spine {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_ChamfSpine();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ChamfSpine();
 		%feature("autodoc", "1");
@@ -247,12 +260,15 @@ class Handle_ChFiDS_ChamfSpine : public Handle_ChFiDS_Spine {
 	return (ChFiDS_ChamfSpine*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_ChamfSpine {
+	~Handle_ChFiDS_ChamfSpine() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_ChamfSpine\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
 class Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe();
 		%feature("autodoc", "1");
@@ -268,12 +284,15 @@ class Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : pub
 	return (ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
+	~Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_HData;
 class Handle_ChFiDS_HData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_HData();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HData();
 		%feature("autodoc", "1");
@@ -289,12 +308,15 @@ class Handle_ChFiDS_HData : public Handle_MMgt_TShared {
 	return (ChFiDS_HData*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_HData {
+	~Handle_ChFiDS_HData() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_HData\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSpine;
 class Handle_ChFiDS_SequenceNodeOfSequenceOfSpine : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_SequenceNodeOfSequenceOfSpine();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine();
 		%feature("autodoc", "1");
@@ -310,12 +332,15 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSpine : public Handle_TCollection_Se
 	return (ChFiDS_SequenceNodeOfSequenceOfSpine*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSpine {
+	~Handle_ChFiDS_SequenceNodeOfSequenceOfSpine() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_SequenceNodeOfSequenceOfSpine\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_SurfData;
 class Handle_ChFiDS_SurfData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_SurfData();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SurfData();
 		%feature("autodoc", "1");
@@ -331,12 +356,15 @@ class Handle_ChFiDS_SurfData : public Handle_MMgt_TShared {
 	return (ChFiDS_SurfData*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_SurfData {
+	~Handle_ChFiDS_SurfData() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_SurfData\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData;
 class Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData();
 		%feature("autodoc", "1");
@@ -352,12 +380,15 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData : public Handle_TCollection
 	return (ChFiDS_SequenceNodeOfSequenceOfSurfData*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData {
+	~Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_ListNodeOfRegularities;
 class Handle_ChFiDS_ListNodeOfRegularities : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_ListNodeOfRegularities();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfRegularities();
 		%feature("autodoc", "1");
@@ -373,12 +404,15 @@ class Handle_ChFiDS_ListNodeOfRegularities : public Handle_TCollection_MapNode {
 	return (ChFiDS_ListNodeOfRegularities*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_ListNodeOfRegularities {
+	~Handle_ChFiDS_ListNodeOfRegularities() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_ListNodeOfRegularities\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_FilSpine;
 class Handle_ChFiDS_FilSpine : public Handle_ChFiDS_Spine {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_FilSpine();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_FilSpine();
 		%feature("autodoc", "1");
@@ -394,12 +428,15 @@ class Handle_ChFiDS_FilSpine : public Handle_ChFiDS_Spine {
 	return (ChFiDS_FilSpine*)$self->Access();
 	}
 };
+%extend Handle_ChFiDS_FilSpine {
+	~Handle_ChFiDS_FilSpine() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_FilSpine\n");
+	}
+};
 
 %nodefaultctor Handle_ChFiDS_HElSpine;
 class Handle_ChFiDS_HElSpine : public Handle_Adaptor3d_HCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ChFiDS_HElSpine();
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HElSpine();
 		%feature("autodoc", "1");
@@ -413,6 +450,11 @@ class Handle_ChFiDS_HElSpine : public Handle_Adaptor3d_HCurve {
 %extend Handle_ChFiDS_HElSpine {
 	ChFiDS_HElSpine* GetObject() {
 	return (ChFiDS_HElSpine*)$self->Access();
+	}
+};
+%extend Handle_ChFiDS_HElSpine {
+	~Handle_ChFiDS_HElSpine() {
+	printf("Call custom destructor for instance of Handle_ChFiDS_HElSpine\n");
 	}
 };
 
@@ -581,13 +623,16 @@ class ChFiDS_Spine : public MMgt_TShared {
 		ChFiDS_ErrorStatus ErrorStatus() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_Spine();
 
 };
 %extend ChFiDS_Spine {
 	Handle_ChFiDS_Spine GetHandle() {
 	return *(Handle_ChFiDS_Spine*) &$self;
+	}
+};
+%extend ChFiDS_Spine {
+	~ChFiDS_Spine() {
+	printf("Call custom destructor for instance of ChFiDS_Spine\n");
 	}
 };
 
@@ -742,13 +787,16 @@ class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
 		Handle_ChFiDS_Stripe & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_ListNodeOfListOfStripe();
 
 };
 %extend ChFiDS_ListNodeOfListOfStripe {
 	Handle_ChFiDS_ListNodeOfListOfStripe GetHandle() {
 	return *(Handle_ChFiDS_ListNodeOfListOfStripe*) &$self;
+	}
+};
+%extend ChFiDS_ListNodeOfListOfStripe {
+	~ChFiDS_ListNodeOfListOfStripe() {
+	printf("Call custom destructor for instance of ChFiDS_ListNodeOfListOfStripe\n");
 	}
 };
 
@@ -783,13 +831,16 @@ class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
 		ChFiDS_Regul & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_ListNodeOfRegularities();
 
 };
 %extend ChFiDS_ListNodeOfRegularities {
 	Handle_ChFiDS_ListNodeOfRegularities GetHandle() {
 	return *(Handle_ChFiDS_ListNodeOfRegularities*) &$self;
+	}
+};
+%extend ChFiDS_ListNodeOfRegularities {
+	~ChFiDS_ListNodeOfRegularities() {
+	printf("Call custom destructor for instance of ChFiDS_ListNodeOfRegularities\n");
 	}
 };
 
@@ -882,13 +933,16 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 		Standard_Real MaxRadFromSeqAndLaws() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_FilSpine();
 
 };
 %extend ChFiDS_FilSpine {
 	Handle_ChFiDS_FilSpine GetHandle() {
 	return *(Handle_ChFiDS_FilSpine*) &$self;
+	}
+};
+%extend ChFiDS_FilSpine {
+	~ChFiDS_FilSpine() {
+	printf("Call custom destructor for instance of ChFiDS_FilSpine\n");
 	}
 };
 
@@ -965,13 +1019,16 @@ class ChFiDS_ChamfSpine : public ChFiDS_Spine {
 		ChFiDS_ChamfMethod IsChamfer() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_ChamfSpine();
 
 };
 %extend ChFiDS_ChamfSpine {
 	Handle_ChFiDS_ChamfSpine GetHandle() {
 	return *(Handle_ChFiDS_ChamfSpine*) &$self;
+	}
+};
+%extend ChFiDS_ChamfSpine {
+	~ChFiDS_ChamfSpine() {
+	printf("Call custom destructor for instance of ChFiDS_ChamfSpine\n");
 	}
 };
 
@@ -1086,13 +1143,16 @@ class ChFiDS_SurfData : public MMgt_TShared {
 		void TwistOnS2(const Standard_Boolean T);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_SurfData();
 
 };
 %extend ChFiDS_SurfData {
 	Handle_ChFiDS_SurfData GetHandle() {
 	return *(Handle_ChFiDS_SurfData*) &$self;
+	}
+};
+%extend ChFiDS_SurfData {
+	~ChFiDS_SurfData() {
+	printf("Call custom destructor for instance of ChFiDS_SurfData\n");
 	}
 };
 
@@ -1173,13 +1233,16 @@ class ChFiDS_HData : public MMgt_TShared {
 		Handle_ChFiDS_HData ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_HData();
 
 };
 %extend ChFiDS_HData {
 	Handle_ChFiDS_HData GetHandle() {
 	return *(Handle_ChFiDS_HData*) &$self;
+	}
+};
+%extend ChFiDS_HData {
+	~ChFiDS_HData() {
+	printf("Call custom destructor for instance of ChFiDS_HData\n");
 	}
 };
 
@@ -1192,13 +1255,16 @@ class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 		Handle_ChFiDS_SurfData & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_SequenceNodeOfSequenceOfSurfData();
 
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSurfData {
 	Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData GetHandle() {
 	return *(Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData*) &$self;
+	}
+};
+%extend ChFiDS_SequenceNodeOfSequenceOfSurfData {
+	~ChFiDS_SequenceNodeOfSequenceOfSurfData() {
+	printf("Call custom destructor for instance of ChFiDS_SequenceNodeOfSequenceOfSurfData\n");
 	}
 };
 
@@ -1299,13 +1365,16 @@ class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 		Handle_ChFiDS_Spine & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_SequenceNodeOfSequenceOfSpine();
 
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSpine {
 	Handle_ChFiDS_SequenceNodeOfSequenceOfSpine GetHandle() {
 	return *(Handle_ChFiDS_SequenceNodeOfSequenceOfSpine*) &$self;
+	}
+};
+%extend ChFiDS_SequenceNodeOfSequenceOfSpine {
+	~ChFiDS_SequenceNodeOfSequenceOfSpine() {
+	printf("Call custom destructor for instance of ChFiDS_SequenceNodeOfSequenceOfSpine\n");
 	}
 };
 
@@ -1326,13 +1395,16 @@ class ChFiDS_HElSpine : public Adaptor3d_HCurve {
 		ChFiDS_ElSpine & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_HElSpine();
 
 };
 %extend ChFiDS_HElSpine {
 	Handle_ChFiDS_HElSpine GetHandle() {
 	return *(Handle_ChFiDS_HElSpine*) &$self;
+	}
+};
+%extend ChFiDS_HElSpine {
+	~ChFiDS_HElSpine() {
+	printf("Call custom destructor for instance of ChFiDS_HElSpine\n");
 	}
 };
 
@@ -1503,13 +1575,16 @@ class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCo
 		ChFiDS_ListOfStripe & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe();
 
 };
 %extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
 	Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe GetHandle() {
 	return *(Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe*) &$self;
+	}
+};
+%extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
+	~ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe() {
+	printf("Call custom destructor for instance of ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe\n");
 	}
 };
 
@@ -1622,13 +1697,16 @@ class ChFiDS_Stripe : public MMgt_TShared {
 		Standard_Integer IsInDS(const Standard_Boolean First) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_Stripe();
 
 };
 %extend ChFiDS_Stripe {
 	Handle_ChFiDS_Stripe GetHandle() {
 	return *(Handle_ChFiDS_Stripe*) &$self;
+	}
+};
+%extend ChFiDS_Stripe {
+	~ChFiDS_Stripe() {
+	printf("Call custom destructor for instance of ChFiDS_Stripe\n");
 	}
 };
 
@@ -1661,13 +1739,16 @@ class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 		Handle_ChFiDS_HElSpine & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_ListNodeOfListOfHElSpine();
 
 };
 %extend ChFiDS_ListNodeOfListOfHElSpine {
 	Handle_ChFiDS_ListNodeOfListOfHElSpine GetHandle() {
 	return *(Handle_ChFiDS_ListNodeOfListOfHElSpine*) &$self;
+	}
+};
+%extend ChFiDS_ListNodeOfListOfHElSpine {
+	~ChFiDS_ListNodeOfListOfHElSpine() {
+	printf("Call custom destructor for instance of ChFiDS_ListNodeOfListOfHElSpine\n");
 	}
 };
 
@@ -1784,12 +1865,15 @@ class ChFiDS_SecHArray1 : public MMgt_TShared {
 		ChFiDS_SecArray1 & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_SecHArray1();
 
 };
 %extend ChFiDS_SecHArray1 {
 	Handle_ChFiDS_SecHArray1 GetHandle() {
 	return *(Handle_ChFiDS_SecHArray1*) &$self;
+	}
+};
+%extend ChFiDS_SecHArray1 {
+	~ChFiDS_SecHArray1() {
+	printf("Call custom destructor for instance of ChFiDS_SecHArray1\n");
 	}
 };

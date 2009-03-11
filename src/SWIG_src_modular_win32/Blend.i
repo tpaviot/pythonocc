@@ -120,8 +120,6 @@ enum Blend_DecrochStatus {
 class Handle_Blend_SequenceNodeOfSequenceOfPoint : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Blend_SequenceNodeOfSequenceOfPoint();
-		%feature("autodoc", "1");
 		Handle_Blend_SequenceNodeOfSequenceOfPoint();
 		%feature("autodoc", "1");
 		Handle_Blend_SequenceNodeOfSequenceOfPoint(const Handle_Blend_SequenceNodeOfSequenceOfPoint &aHandle);
@@ -134,6 +132,11 @@ class Handle_Blend_SequenceNodeOfSequenceOfPoint : public Handle_TCollection_Seq
 %extend Handle_Blend_SequenceNodeOfSequenceOfPoint {
 	Blend_SequenceNodeOfSequenceOfPoint* GetObject() {
 	return (Blend_SequenceNodeOfSequenceOfPoint*)$self->Access();
+	}
+};
+%extend Handle_Blend_SequenceNodeOfSequenceOfPoint {
+	~Handle_Blend_SequenceNodeOfSequenceOfPoint() {
+	printf("Call custom destructor for instance of Handle_Blend_SequenceNodeOfSequenceOfPoint\n");
 	}
 };
 
@@ -456,13 +459,16 @@ class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 		Blend_Point & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Blend_SequenceNodeOfSequenceOfPoint();
 
 };
 %extend Blend_SequenceNodeOfSequenceOfPoint {
 	Handle_Blend_SequenceNodeOfSequenceOfPoint GetHandle() {
 	return *(Handle_Blend_SequenceNodeOfSequenceOfPoint*) &$self;
+	}
+};
+%extend Blend_SequenceNodeOfSequenceOfPoint {
+	~Blend_SequenceNodeOfSequenceOfPoint() {
+	printf("Call custom destructor for instance of Blend_SequenceNodeOfSequenceOfPoint\n");
 	}
 };
 

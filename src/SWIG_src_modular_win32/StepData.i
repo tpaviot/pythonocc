@@ -108,8 +108,6 @@ enum StepData_Logical {
 class Handle_StepData_EDescr : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepData_EDescr();
-		%feature("autodoc", "1");
 		Handle_StepData_EDescr();
 		%feature("autodoc", "1");
 		Handle_StepData_EDescr(const Handle_StepData_EDescr &aHandle);
@@ -124,12 +122,15 @@ class Handle_StepData_EDescr : public Handle_MMgt_TShared {
 	return (StepData_EDescr*)$self->Access();
 	}
 };
+%extend Handle_StepData_EDescr {
+	~Handle_StepData_EDescr() {
+	printf("Call custom destructor for instance of Handle_StepData_EDescr\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_GeneralModule;
 class Handle_StepData_GeneralModule : public Handle_Interface_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_GeneralModule();
 		%feature("autodoc", "1");
 		Handle_StepData_GeneralModule();
 		%feature("autodoc", "1");
@@ -145,12 +146,15 @@ class Handle_StepData_GeneralModule : public Handle_Interface_GeneralModule {
 	return (StepData_GeneralModule*)$self->Access();
 	}
 };
+%extend Handle_StepData_GeneralModule {
+	~Handle_StepData_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_StepData_GeneralModule\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_DefaultGeneral;
 class Handle_StepData_DefaultGeneral : public Handle_StepData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_DefaultGeneral();
 		%feature("autodoc", "1");
 		Handle_StepData_DefaultGeneral();
 		%feature("autodoc", "1");
@@ -166,12 +170,15 @@ class Handle_StepData_DefaultGeneral : public Handle_StepData_GeneralModule {
 	return (StepData_DefaultGeneral*)$self->Access();
 	}
 };
+%extend Handle_StepData_DefaultGeneral {
+	~Handle_StepData_DefaultGeneral() {
+	printf("Call custom destructor for instance of Handle_StepData_DefaultGeneral\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_Described;
 class Handle_StepData_Described : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_Described();
 		%feature("autodoc", "1");
 		Handle_StepData_Described();
 		%feature("autodoc", "1");
@@ -187,12 +194,15 @@ class Handle_StepData_Described : public Handle_MMgt_TShared {
 	return (StepData_Described*)$self->Access();
 	}
 };
+%extend Handle_StepData_Described {
+	~Handle_StepData_Described() {
+	printf("Call custom destructor for instance of Handle_StepData_Described\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_Plex;
 class Handle_StepData_Plex : public Handle_StepData_Described {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_Plex();
 		%feature("autodoc", "1");
 		Handle_StepData_Plex();
 		%feature("autodoc", "1");
@@ -208,12 +218,15 @@ class Handle_StepData_Plex : public Handle_StepData_Described {
 	return (StepData_Plex*)$self->Access();
 	}
 };
+%extend Handle_StepData_Plex {
+	~Handle_StepData_Plex() {
+	printf("Call custom destructor for instance of Handle_StepData_Plex\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_SelectMember;
 class Handle_StepData_SelectMember : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_SelectMember();
 		%feature("autodoc", "1");
 		Handle_StepData_SelectMember();
 		%feature("autodoc", "1");
@@ -229,12 +242,15 @@ class Handle_StepData_SelectMember : public Handle_MMgt_TShared {
 	return (StepData_SelectMember*)$self->Access();
 	}
 };
+%extend Handle_StepData_SelectMember {
+	~Handle_StepData_SelectMember() {
+	printf("Call custom destructor for instance of Handle_StepData_SelectMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_SelectNamed;
 class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_SelectNamed();
 		%feature("autodoc", "1");
 		Handle_StepData_SelectNamed();
 		%feature("autodoc", "1");
@@ -250,12 +266,15 @@ class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
 	return (StepData_SelectNamed*)$self->Access();
 	}
 };
+%extend Handle_StepData_SelectNamed {
+	~Handle_StepData_SelectNamed() {
+	printf("Call custom destructor for instance of Handle_StepData_SelectNamed\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_ReadWriteModule;
 class Handle_StepData_ReadWriteModule : public Handle_Interface_ReaderModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_ReadWriteModule();
 		%feature("autodoc", "1");
 		Handle_StepData_ReadWriteModule();
 		%feature("autodoc", "1");
@@ -271,12 +290,15 @@ class Handle_StepData_ReadWriteModule : public Handle_Interface_ReaderModule {
 	return (StepData_ReadWriteModule*)$self->Access();
 	}
 };
+%extend Handle_StepData_ReadWriteModule {
+	~Handle_StepData_ReadWriteModule() {
+	printf("Call custom destructor for instance of Handle_StepData_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_DescrReadWrite;
 class Handle_StepData_DescrReadWrite : public Handle_StepData_ReadWriteModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_DescrReadWrite();
 		%feature("autodoc", "1");
 		Handle_StepData_DescrReadWrite();
 		%feature("autodoc", "1");
@@ -292,12 +314,15 @@ class Handle_StepData_DescrReadWrite : public Handle_StepData_ReadWriteModule {
 	return (StepData_DescrReadWrite*)$self->Access();
 	}
 };
+%extend Handle_StepData_DescrReadWrite {
+	~Handle_StepData_DescrReadWrite() {
+	printf("Call custom destructor for instance of Handle_StepData_DescrReadWrite\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_PDescr;
 class Handle_StepData_PDescr : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_PDescr();
 		%feature("autodoc", "1");
 		Handle_StepData_PDescr();
 		%feature("autodoc", "1");
@@ -313,12 +338,15 @@ class Handle_StepData_PDescr : public Handle_MMgt_TShared {
 	return (StepData_PDescr*)$self->Access();
 	}
 };
+%extend Handle_StepData_PDescr {
+	~Handle_StepData_PDescr() {
+	printf("Call custom destructor for instance of Handle_StepData_PDescr\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_SelectReal;
 class Handle_StepData_SelectReal : public Handle_StepData_SelectMember {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_SelectReal();
 		%feature("autodoc", "1");
 		Handle_StepData_SelectReal();
 		%feature("autodoc", "1");
@@ -334,12 +362,15 @@ class Handle_StepData_SelectReal : public Handle_StepData_SelectMember {
 	return (StepData_SelectReal*)$self->Access();
 	}
 };
+%extend Handle_StepData_SelectReal {
+	~Handle_StepData_SelectReal() {
+	printf("Call custom destructor for instance of Handle_StepData_SelectReal\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_ESDescr;
 class Handle_StepData_ESDescr : public Handle_StepData_EDescr {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_ESDescr();
 		%feature("autodoc", "1");
 		Handle_StepData_ESDescr();
 		%feature("autodoc", "1");
@@ -355,12 +386,15 @@ class Handle_StepData_ESDescr : public Handle_StepData_EDescr {
 	return (StepData_ESDescr*)$self->Access();
 	}
 };
+%extend Handle_StepData_ESDescr {
+	~Handle_StepData_ESDescr() {
+	printf("Call custom destructor for instance of Handle_StepData_ESDescr\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_ECDescr;
 class Handle_StepData_ECDescr : public Handle_StepData_EDescr {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_ECDescr();
 		%feature("autodoc", "1");
 		Handle_StepData_ECDescr();
 		%feature("autodoc", "1");
@@ -376,12 +410,15 @@ class Handle_StepData_ECDescr : public Handle_StepData_EDescr {
 	return (StepData_ECDescr*)$self->Access();
 	}
 };
+%extend Handle_StepData_ECDescr {
+	~Handle_StepData_ECDescr() {
+	printf("Call custom destructor for instance of Handle_StepData_ECDescr\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_DescrGeneral;
 class Handle_StepData_DescrGeneral : public Handle_StepData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_DescrGeneral();
 		%feature("autodoc", "1");
 		Handle_StepData_DescrGeneral();
 		%feature("autodoc", "1");
@@ -397,12 +434,15 @@ class Handle_StepData_DescrGeneral : public Handle_StepData_GeneralModule {
 	return (StepData_DescrGeneral*)$self->Access();
 	}
 };
+%extend Handle_StepData_DescrGeneral {
+	~Handle_StepData_DescrGeneral() {
+	printf("Call custom destructor for instance of Handle_StepData_DescrGeneral\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_SelectInt;
 class Handle_StepData_SelectInt : public Handle_StepData_SelectMember {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_SelectInt();
 		%feature("autodoc", "1");
 		Handle_StepData_SelectInt();
 		%feature("autodoc", "1");
@@ -418,12 +458,15 @@ class Handle_StepData_SelectInt : public Handle_StepData_SelectMember {
 	return (StepData_SelectInt*)$self->Access();
 	}
 };
+%extend Handle_StepData_SelectInt {
+	~Handle_StepData_SelectInt() {
+	printf("Call custom destructor for instance of Handle_StepData_SelectInt\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_UndefinedEntity;
 class Handle_StepData_UndefinedEntity : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_UndefinedEntity();
 		%feature("autodoc", "1");
 		Handle_StepData_UndefinedEntity();
 		%feature("autodoc", "1");
@@ -439,12 +482,15 @@ class Handle_StepData_UndefinedEntity : public Handle_MMgt_TShared {
 	return (StepData_UndefinedEntity*)$self->Access();
 	}
 };
+%extend Handle_StepData_UndefinedEntity {
+	~Handle_StepData_UndefinedEntity() {
+	printf("Call custom destructor for instance of Handle_StepData_UndefinedEntity\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_FreeFormEntity;
 class Handle_StepData_FreeFormEntity : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_FreeFormEntity();
 		%feature("autodoc", "1");
 		Handle_StepData_FreeFormEntity();
 		%feature("autodoc", "1");
@@ -460,12 +506,15 @@ class Handle_StepData_FreeFormEntity : public Handle_MMgt_TShared {
 	return (StepData_FreeFormEntity*)$self->Access();
 	}
 };
+%extend Handle_StepData_FreeFormEntity {
+	~Handle_StepData_FreeFormEntity() {
+	printf("Call custom destructor for instance of Handle_StepData_FreeFormEntity\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_StepModel;
 class Handle_StepData_StepModel : public Handle_Interface_InterfaceModel {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_StepModel();
 		%feature("autodoc", "1");
 		Handle_StepData_StepModel();
 		%feature("autodoc", "1");
@@ -481,12 +530,15 @@ class Handle_StepData_StepModel : public Handle_Interface_InterfaceModel {
 	return (StepData_StepModel*)$self->Access();
 	}
 };
+%extend Handle_StepData_StepModel {
+	~Handle_StepData_StepModel() {
+	printf("Call custom destructor for instance of Handle_StepData_StepModel\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_StepReaderData;
 class Handle_StepData_StepReaderData : public Handle_Interface_FileReaderData {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_StepReaderData();
 		%feature("autodoc", "1");
 		Handle_StepData_StepReaderData();
 		%feature("autodoc", "1");
@@ -502,12 +554,15 @@ class Handle_StepData_StepReaderData : public Handle_Interface_FileReaderData {
 	return (StepData_StepReaderData*)$self->Access();
 	}
 };
+%extend Handle_StepData_StepReaderData {
+	~Handle_StepData_StepReaderData() {
+	printf("Call custom destructor for instance of Handle_StepData_StepReaderData\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_Protocol;
 class Handle_StepData_Protocol : public Handle_Interface_Protocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_Protocol();
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol();
 		%feature("autodoc", "1");
@@ -523,12 +578,15 @@ class Handle_StepData_Protocol : public Handle_Interface_Protocol {
 	return (StepData_Protocol*)$self->Access();
 	}
 };
+%extend Handle_StepData_Protocol {
+	~Handle_StepData_Protocol() {
+	printf("Call custom destructor for instance of Handle_StepData_Protocol\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_FileProtocol;
 class Handle_StepData_FileProtocol : public Handle_StepData_Protocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_FileProtocol();
 		%feature("autodoc", "1");
 		Handle_StepData_FileProtocol();
 		%feature("autodoc", "1");
@@ -544,12 +602,15 @@ class Handle_StepData_FileProtocol : public Handle_StepData_Protocol {
 	return (StepData_FileProtocol*)$self->Access();
 	}
 };
+%extend Handle_StepData_FileProtocol {
+	~Handle_StepData_FileProtocol() {
+	printf("Call custom destructor for instance of Handle_StepData_FileProtocol\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_DescrProtocol;
 class Handle_StepData_DescrProtocol : public Handle_StepData_FileProtocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_DescrProtocol();
 		%feature("autodoc", "1");
 		Handle_StepData_DescrProtocol();
 		%feature("autodoc", "1");
@@ -565,12 +626,15 @@ class Handle_StepData_DescrProtocol : public Handle_StepData_FileProtocol {
 	return (StepData_DescrProtocol*)$self->Access();
 	}
 };
+%extend Handle_StepData_DescrProtocol {
+	~Handle_StepData_DescrProtocol() {
+	printf("Call custom destructor for instance of Handle_StepData_DescrProtocol\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_SelectArrReal;
 class Handle_StepData_SelectArrReal : public Handle_StepData_SelectNamed {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_SelectArrReal();
 		%feature("autodoc", "1");
 		Handle_StepData_SelectArrReal();
 		%feature("autodoc", "1");
@@ -586,12 +650,15 @@ class Handle_StepData_SelectArrReal : public Handle_StepData_SelectNamed {
 	return (StepData_SelectArrReal*)$self->Access();
 	}
 };
+%extend Handle_StepData_SelectArrReal {
+	~Handle_StepData_SelectArrReal() {
+	printf("Call custom destructor for instance of Handle_StepData_SelectArrReal\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_GlobalNodeOfWriterLib;
 class Handle_StepData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_GlobalNodeOfWriterLib();
 		%feature("autodoc", "1");
 		Handle_StepData_GlobalNodeOfWriterLib();
 		%feature("autodoc", "1");
@@ -607,12 +674,15 @@ class Handle_StepData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 	return (StepData_GlobalNodeOfWriterLib*)$self->Access();
 	}
 };
+%extend Handle_StepData_GlobalNodeOfWriterLib {
+	~Handle_StepData_GlobalNodeOfWriterLib() {
+	printf("Call custom destructor for instance of Handle_StepData_GlobalNodeOfWriterLib\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_HArray1OfField;
 class Handle_StepData_HArray1OfField : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_HArray1OfField();
 		%feature("autodoc", "1");
 		Handle_StepData_HArray1OfField();
 		%feature("autodoc", "1");
@@ -628,12 +698,15 @@ class Handle_StepData_HArray1OfField : public Handle_MMgt_TShared {
 	return (StepData_HArray1OfField*)$self->Access();
 	}
 };
+%extend Handle_StepData_HArray1OfField {
+	~Handle_StepData_HArray1OfField() {
+	printf("Call custom destructor for instance of Handle_StepData_HArray1OfField\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_NodeOfWriterLib;
 class Handle_StepData_NodeOfWriterLib : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_NodeOfWriterLib();
 		%feature("autodoc", "1");
 		Handle_StepData_NodeOfWriterLib();
 		%feature("autodoc", "1");
@@ -649,12 +722,15 @@ class Handle_StepData_NodeOfWriterLib : public Handle_MMgt_TShared {
 	return (StepData_NodeOfWriterLib*)$self->Access();
 	}
 };
+%extend Handle_StepData_NodeOfWriterLib {
+	~Handle_StepData_NodeOfWriterLib() {
+	printf("Call custom destructor for instance of Handle_StepData_NodeOfWriterLib\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_Simple;
 class Handle_StepData_Simple : public Handle_StepData_Described {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_Simple();
 		%feature("autodoc", "1");
 		Handle_StepData_Simple();
 		%feature("autodoc", "1");
@@ -670,12 +746,15 @@ class Handle_StepData_Simple : public Handle_StepData_Described {
 	return (StepData_Simple*)$self->Access();
 	}
 };
+%extend Handle_StepData_Simple {
+	~Handle_StepData_Simple() {
+	printf("Call custom destructor for instance of Handle_StepData_Simple\n");
+	}
+};
 
 %nodefaultctor Handle_StepData_FileRecognizer;
 class Handle_StepData_FileRecognizer : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepData_FileRecognizer();
 		%feature("autodoc", "1");
 		Handle_StepData_FileRecognizer();
 		%feature("autodoc", "1");
@@ -689,6 +768,11 @@ class Handle_StepData_FileRecognizer : public Handle_Standard_Transient {
 %extend Handle_StepData_FileRecognizer {
 	StepData_FileRecognizer* GetObject() {
 	return (StepData_FileRecognizer*)$self->Access();
+	}
+};
+%extend Handle_StepData_FileRecognizer {
+	~Handle_StepData_FileRecognizer() {
+	printf("Call custom destructor for instance of Handle_StepData_FileRecognizer\n");
 	}
 };
 
@@ -707,13 +791,16 @@ class StepData_NodeOfWriterLib : public MMgt_TShared {
 		const Handle_StepData_NodeOfWriterLib & Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_NodeOfWriterLib();
 
 };
 %extend StepData_NodeOfWriterLib {
 	Handle_StepData_NodeOfWriterLib GetHandle() {
 	return *(Handle_StepData_NodeOfWriterLib*) &$self;
+	}
+};
+%extend StepData_NodeOfWriterLib {
+	~StepData_NodeOfWriterLib() {
+	printf("Call custom destructor for instance of StepData_NodeOfWriterLib\n");
 	}
 };
 
@@ -746,13 +833,16 @@ class StepData_FreeFormEntity : public MMgt_TShared {
 		StepData_Field & CField(const Standard_Integer num);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_FreeFormEntity();
 
 };
 %extend StepData_FreeFormEntity {
 	Handle_StepData_FreeFormEntity GetHandle() {
 	return *(Handle_StepData_FreeFormEntity*) &$self;
+	}
+};
+%extend StepData_FreeFormEntity {
+	~StepData_FreeFormEntity() {
+	printf("Call custom destructor for instance of StepData_FreeFormEntity\n");
 	}
 };
 
@@ -825,13 +915,16 @@ class StepData_SelectMember : public MMgt_TShared {
 		virtual		void SetEnumText(const Standard_Integer val, const char * text);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_SelectMember();
 
 };
 %extend StepData_SelectMember {
 	Handle_StepData_SelectMember GetHandle() {
 	return *(Handle_StepData_SelectMember*) &$self;
+	}
+};
+%extend StepData_SelectMember {
+	~StepData_SelectMember() {
+	printf("Call custom destructor for instance of StepData_SelectMember\n");
 	}
 };
 
@@ -840,13 +933,16 @@ class StepData_SelectInt : public StepData_SelectMember {
 	public:
 		%feature("autodoc", "1");
 		StepData_SelectInt();
-		%feature("autodoc", "1");
-		virtual		~StepData_SelectInt();
 
 };
 %extend StepData_SelectInt {
 	Handle_StepData_SelectInt GetHandle() {
 	return *(Handle_StepData_SelectInt*) &$self;
+	}
+};
+%extend StepData_SelectInt {
+	~StepData_SelectInt() {
+	printf("Call custom destructor for instance of StepData_SelectInt\n");
 	}
 };
 
@@ -869,13 +965,16 @@ class StepData_FileProtocol : public StepData_Protocol {
 		virtual		Standard_CString SchemaName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_FileProtocol();
 
 };
 %extend StepData_FileProtocol {
 	Handle_StepData_FileProtocol GetHandle() {
 	return *(Handle_StepData_FileProtocol*) &$self;
+	}
+};
+%extend StepData_FileProtocol {
+	~StepData_FileProtocol() {
+	printf("Call custom destructor for instance of StepData_FileProtocol\n");
 	}
 };
 
@@ -888,13 +987,16 @@ class StepData_DescrProtocol : public StepData_FileProtocol {
 		void SetSchemaName(const char * name);
 		%feature("autodoc", "1");
 		void LibRecord() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_DescrProtocol();
 
 };
 %extend StepData_DescrProtocol {
 	Handle_StepData_DescrProtocol GetHandle() {
 	return *(Handle_StepData_DescrProtocol*) &$self;
+	}
+};
+%extend StepData_DescrProtocol {
+	~StepData_DescrProtocol() {
+	printf("Call custom destructor for instance of StepData_DescrProtocol\n");
 	}
 };
 
@@ -937,13 +1039,16 @@ class StepData_StepModel : public Interface_InterfaceModel {
 		virtual		Handle_TCollection_HAsciiString StringLabel(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_StepModel();
 
 };
 %extend StepData_StepModel {
 	Handle_StepData_StepModel GetHandle() {
 	return *(Handle_StepData_StepModel*) &$self;
+	}
+};
+%extend StepData_StepModel {
+	~StepData_StepModel() {
+	printf("Call custom destructor for instance of StepData_StepModel\n");
 	}
 };
 
@@ -963,6 +1068,11 @@ class StepData_FileRecognizer : public Standard_Transient {
 %extend StepData_FileRecognizer {
 	Handle_StepData_FileRecognizer GetHandle() {
 	return *(Handle_StepData_FileRecognizer*) &$self;
+	}
+};
+%extend StepData_FileRecognizer {
+	~StepData_FileRecognizer() {
+	printf("Call custom destructor for instance of StepData_FileRecognizer\n");
 	}
 };
 
@@ -1181,13 +1291,16 @@ class StepData_PDescr : public MMgt_TShared {
 		virtual		void Check(const StepData_Field &afild, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_PDescr();
 
 };
 %extend StepData_PDescr {
 	Handle_StepData_PDescr GetHandle() {
 	return *(Handle_StepData_PDescr*) &$self;
+	}
+};
+%extend StepData_PDescr {
+	~StepData_PDescr() {
+	printf("Call custom destructor for instance of StepData_PDescr\n");
 	}
 };
 
@@ -1223,19 +1336,27 @@ class StepData_ReadWriteModule : public Interface_ReaderModule {
 	return *(Handle_StepData_ReadWriteModule*) &$self;
 	}
 };
+%extend StepData_ReadWriteModule {
+	~StepData_ReadWriteModule() {
+	printf("Call custom destructor for instance of StepData_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor StepData_DescrReadWrite;
 class StepData_DescrReadWrite : public StepData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
 		StepData_DescrReadWrite(const Handle_StepData_Protocol &proto);
-		%feature("autodoc", "1");
-		virtual		~StepData_DescrReadWrite();
 
 };
 %extend StepData_DescrReadWrite {
 	Handle_StepData_DescrReadWrite GetHandle() {
 	return *(Handle_StepData_DescrReadWrite*) &$self;
+	}
+};
+%extend StepData_DescrReadWrite {
+	~StepData_DescrReadWrite() {
+	printf("Call custom destructor for instance of StepData_DescrReadWrite\n");
 	}
 };
 
@@ -1254,13 +1375,16 @@ class StepData_GlobalNodeOfWriterLib : public Standard_Transient {
 		const Handle_StepData_GlobalNodeOfWriterLib & Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_GlobalNodeOfWriterLib();
 
 };
 %extend StepData_GlobalNodeOfWriterLib {
 	Handle_StepData_GlobalNodeOfWriterLib GetHandle() {
 	return *(Handle_StepData_GlobalNodeOfWriterLib*) &$self;
+	}
+};
+%extend StepData_GlobalNodeOfWriterLib {
+	~StepData_GlobalNodeOfWriterLib() {
+	printf("Call custom destructor for instance of StepData_GlobalNodeOfWriterLib\n");
 	}
 };
 
@@ -1282,6 +1406,11 @@ class StepData_GeneralModule : public Interface_GeneralModule {
 	return *(Handle_StepData_GeneralModule*) &$self;
 	}
 };
+%extend StepData_GeneralModule {
+	~StepData_GeneralModule() {
+	printf("Call custom destructor for instance of StepData_GeneralModule\n");
+	}
+};
 
 %nodefaultctor StepData_DescrGeneral;
 class StepData_DescrGeneral : public StepData_GeneralModule {
@@ -1296,13 +1425,16 @@ class StepData_DescrGeneral : public StepData_GeneralModule {
 		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & ent) const;
-		%feature("autodoc", "1");
-		virtual		~StepData_DescrGeneral();
 
 };
 %extend StepData_DescrGeneral {
 	Handle_StepData_DescrGeneral GetHandle() {
 	return *(Handle_StepData_DescrGeneral*) &$self;
+	}
+};
+%extend StepData_DescrGeneral {
+	~StepData_DescrGeneral() {
+	printf("Call custom destructor for instance of StepData_DescrGeneral\n");
 	}
 };
 
@@ -1387,13 +1519,16 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 		Handle_Interface_Check const GlobalCheck() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_StepReaderData();
 
 };
 %extend StepData_StepReaderData {
 	Handle_StepData_StepReaderData GetHandle() {
 	return *(Handle_StepData_StepReaderData*) &$self;
+	}
+};
+%extend StepData_StepReaderData {
+	~StepData_StepReaderData() {
+	printf("Call custom destructor for instance of StepData_StepReaderData\n");
 	}
 };
 
@@ -1498,13 +1633,16 @@ class StepData_SelectNamed : public StepData_SelectMember {
 		virtual		void SetString(const char * val);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_SelectNamed();
 
 };
 %extend StepData_SelectNamed {
 	Handle_StepData_SelectNamed GetHandle() {
 	return *(Handle_StepData_SelectNamed*) &$self;
+	}
+};
+%extend StepData_SelectNamed {
+	~StepData_SelectNamed() {
+	printf("Call custom destructor for instance of StepData_SelectNamed\n");
 	}
 };
 
@@ -1544,6 +1682,11 @@ class StepData_EDescr : public MMgt_TShared {
 	return *(Handle_StepData_EDescr*) &$self;
 	}
 };
+%extend StepData_EDescr {
+	~StepData_EDescr() {
+	printf("Call custom destructor for instance of StepData_EDescr\n");
+	}
+};
 
 %nodefaultctor StepData_ESDescr;
 class StepData_ESDescr : public StepData_EDescr {
@@ -1578,13 +1721,16 @@ class StepData_ESDescr : public StepData_EDescr {
 		Handle_StepData_PDescr Field(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		Handle_StepData_PDescr NamedField(const char * name) const;
-		%feature("autodoc", "1");
-		virtual		~StepData_ESDescr();
 
 };
 %extend StepData_ESDescr {
 	Handle_StepData_ESDescr GetHandle() {
 	return *(Handle_StepData_ESDescr*) &$self;
+	}
+};
+%extend StepData_ESDescr {
+	~StepData_ESDescr() {
+	printf("Call custom destructor for instance of StepData_ESDescr\n");
 	}
 };
 
@@ -1637,13 +1783,16 @@ class StepData_SelectArrReal : public StepData_SelectNamed {
 		void SetArrReal(const Handle_TColStd_HArray1OfReal &arr);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_SelectArrReal();
 
 };
 %extend StepData_SelectArrReal {
 	Handle_StepData_SelectArrReal GetHandle() {
 	return *(Handle_StepData_SelectArrReal*) &$self;
+	}
+};
+%extend StepData_SelectArrReal {
+	~StepData_SelectArrReal() {
+	printf("Call custom destructor for instance of StepData_SelectArrReal\n");
 	}
 };
 
@@ -1707,6 +1856,11 @@ class StepData_Described : public MMgt_TShared {
 	return *(Handle_StepData_Described*) &$self;
 	}
 };
+%extend StepData_Described {
+	~StepData_Described() {
+	printf("Call custom destructor for instance of StepData_Described\n");
+	}
+};
 
 %nodefaultctor StepData_Simple;
 class StepData_Simple : public StepData_Described {
@@ -1727,13 +1881,16 @@ class StepData_Simple : public StepData_Described {
 		const StepData_FieldListN & Fields() const;
 		%feature("autodoc", "1");
 		StepData_FieldListN & CFields();
-		%feature("autodoc", "1");
-		virtual		~StepData_Simple();
 
 };
 %extend StepData_Simple {
 	Handle_StepData_Simple GetHandle() {
 	return *(Handle_StepData_Simple*) &$self;
+	}
+};
+%extend StepData_Simple {
+	~StepData_Simple() {
+	printf("Call custom destructor for instance of StepData_Simple\n");
 	}
 };
 
@@ -1764,13 +1921,16 @@ class StepData_HArray1OfField : public MMgt_TShared {
 		StepData_Array1OfField & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_HArray1OfField();
 
 };
 %extend StepData_HArray1OfField {
 	Handle_StepData_HArray1OfField GetHandle() {
 	return *(Handle_StepData_HArray1OfField*) &$self;
+	}
+};
+%extend StepData_HArray1OfField {
+	~StepData_HArray1OfField() {
+	printf("Call custom destructor for instance of StepData_HArray1OfField\n");
 	}
 };
 
@@ -1945,13 +2105,16 @@ class StepData_Plex : public StepData_Described {
 		virtual		void Shared(Interface_EntityIterator & list) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_Plex();
 
 };
 %extend StepData_Plex {
 	Handle_StepData_Plex GetHandle() {
 	return *(Handle_StepData_Plex*) &$self;
+	}
+};
+%extend StepData_Plex {
+	~StepData_Plex() {
+	printf("Call custom destructor for instance of StepData_Plex\n");
 	}
 };
 
@@ -1976,13 +2139,16 @@ class StepData_ECDescr : public StepData_EDescr {
 		virtual		Handle_StepData_Described NewEntity() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_ECDescr();
 
 };
 %extend StepData_ECDescr {
 	Handle_StepData_ECDescr GetHandle() {
 	return *(Handle_StepData_ECDescr*) &$self;
+	}
+};
+%extend StepData_ECDescr {
+	~StepData_ECDescr() {
+	printf("Call custom destructor for instance of StepData_ECDescr\n");
 	}
 };
 
@@ -1999,13 +2165,16 @@ class StepData_SelectReal : public StepData_SelectMember {
 		virtual		void SetReal(const Standard_Real val);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_SelectReal();
 
 };
 %extend StepData_SelectReal {
 	Handle_StepData_SelectReal GetHandle() {
 	return *(Handle_StepData_SelectReal*) &$self;
+	}
+};
+%extend StepData_SelectReal {
+	~StepData_SelectReal() {
+	printf("Call custom destructor for instance of StepData_SelectReal\n");
 	}
 };
 
@@ -2092,13 +2261,16 @@ class StepData_UndefinedEntity : public MMgt_TShared {
 		void FillShared(Interface_EntityIterator & list) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_UndefinedEntity();
 
 };
 %extend StepData_UndefinedEntity {
 	Handle_StepData_UndefinedEntity GetHandle() {
 	return *(Handle_StepData_UndefinedEntity*) &$self;
+	}
+};
+%extend StepData_UndefinedEntity {
+	~StepData_UndefinedEntity() {
+	printf("Call custom destructor for instance of StepData_UndefinedEntity\n");
 	}
 };
 
@@ -2141,12 +2313,15 @@ class StepData_DefaultGeneral : public StepData_GeneralModule {
 		virtual		void CopyCase(const Standard_Integer casenum, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepData_DefaultGeneral();
 
 };
 %extend StepData_DefaultGeneral {
 	Handle_StepData_DefaultGeneral GetHandle() {
 	return *(Handle_StepData_DefaultGeneral*) &$self;
+	}
+};
+%extend StepData_DefaultGeneral {
+	~StepData_DefaultGeneral() {
+	printf("Call custom destructor for instance of StepData_DefaultGeneral\n");
 	}
 };

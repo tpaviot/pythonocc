@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IGESGraph_LineFontDefPattern : public Handle_IGESData_LineFontEntity {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESGraph_LineFontDefPattern();
-		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefPattern();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefPattern(const Handle_IGESGraph_LineFontDefPattern &aHandle);
@@ -118,12 +116,15 @@ class Handle_IGESGraph_LineFontDefPattern : public Handle_IGESData_LineFontEntit
 	return (IGESGraph_LineFontDefPattern*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_LineFontDefPattern {
+	~Handle_IGESGraph_LineFontDefPattern() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_LineFontDefPattern\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_Pick;
 class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_Pick();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Pick();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_Pick*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_Pick {
+	~Handle_IGESGraph_Pick() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_Pick\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_HArray1OfTextDisplayTemplate;
 class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_HArray1OfTextDisplayTemplate();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextDisplayTemplate();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared
 	return (IGESGraph_HArray1OfTextDisplayTemplate*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_HArray1OfTextDisplayTemplate {
+	~Handle_IGESGraph_HArray1OfTextDisplayTemplate() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_HArray1OfTextDisplayTemplate\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_Color;
 class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_Color();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Color();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 	return (IGESGraph_Color*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_Color {
+	~Handle_IGESGraph_Color() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_Color\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_TextDisplayTemplate;
 class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_TextDisplayTemplate();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextDisplayTemplate();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_TextDisplayTemplate*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_TextDisplayTemplate {
+	~Handle_IGESGraph_TextDisplayTemplate() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_TextDisplayTemplate\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_NominalSize;
 class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_NominalSize();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_NominalSize();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_NominalSize*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_NominalSize {
+	~Handle_IGESGraph_NominalSize() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_NominalSize\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_DrawingSize;
 class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_DrawingSize();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingSize();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_DrawingSize*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_DrawingSize {
+	~Handle_IGESGraph_DrawingSize() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_DrawingSize\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_DrawingUnits;
 class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_DrawingUnits();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingUnits();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_DrawingUnits*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_DrawingUnits {
+	~Handle_IGESGraph_DrawingUnits() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_DrawingUnits\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_IntercharacterSpacing;
 class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_IntercharacterSpacing();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_IntercharacterSpacing();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity
 	return (IGESGraph_IntercharacterSpacing*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_IntercharacterSpacing {
+	~Handle_IGESGraph_IntercharacterSpacing() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_IntercharacterSpacing\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_GeneralModule;
 class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_GeneralModule();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_GeneralModule();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESGraph_GeneralModule*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_GeneralModule {
+	~Handle_IGESGraph_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_GeneralModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_HArray1OfColor;
 class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_HArray1OfColor();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfColor();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 	return (IGESGraph_HArray1OfColor*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_HArray1OfColor {
+	~Handle_IGESGraph_HArray1OfColor() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_HArray1OfColor\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_DefinitionLevel;
 class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_DefinitionLevel();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DefinitionLevel();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity 
 	return (IGESGraph_DefinitionLevel*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_DefinitionLevel {
+	~Handle_IGESGraph_DefinitionLevel() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_DefinitionLevel\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_HArray1OfTextFontDef;
 class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_HArray1OfTextFontDef();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextFontDef();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
 	return (IGESGraph_HArray1OfTextFontDef*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_HArray1OfTextFontDef {
+	~Handle_IGESGraph_HArray1OfTextFontDef() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_HArray1OfTextFontDef\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_SpecificModule;
 class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_SpecificModule();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_SpecificModule();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESGraph_SpecificModule*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_SpecificModule {
+	~Handle_IGESGraph_SpecificModule() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_SpecificModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_UniformRectGrid;
 class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_UniformRectGrid();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_UniformRectGrid();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_UniformRectGrid*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_UniformRectGrid {
+	~Handle_IGESGraph_UniformRectGrid() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_UniformRectGrid\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_HighLight;
 class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_HighLight();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HighLight();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_HighLight*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_HighLight {
+	~Handle_IGESGraph_HighLight() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_HighLight\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_LineFontDefTemplate;
 class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_LineFontDefTemplate();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefTemplate();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEnti
 	return (IGESGraph_LineFontDefTemplate*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_LineFontDefTemplate {
+	~Handle_IGESGraph_LineFontDefTemplate() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_LineFontDefTemplate\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_ReadWriteModule;
 class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_ReadWriteModule();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_ReadWriteModule();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESGraph_ReadWriteModule*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_ReadWriteModule {
+	~Handle_IGESGraph_ReadWriteModule() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_Protocol;
 class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_Protocol();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Protocol();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 	return (IGESGraph_Protocol*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_Protocol {
+	~Handle_IGESGraph_Protocol() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_Protocol\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_TextFontDef;
 class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_TextFontDef();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextFontDef();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_TextFontDef*)$self->Access();
 	}
 };
+%extend Handle_IGESGraph_TextFontDef {
+	~Handle_IGESGraph_TextFontDef() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_TextFontDef\n");
+	}
+};
 
 %nodefaultctor Handle_IGESGraph_LineFontPredefined;
 class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESGraph_LineFontPredefined();
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontPredefined();
 		%feature("autodoc", "1");
@@ -536,6 +594,11 @@ class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 %extend Handle_IGESGraph_LineFontPredefined {
 	IGESGraph_LineFontPredefined* GetObject() {
 	return (IGESGraph_LineFontPredefined*)$self->Access();
+	}
+};
+%extend Handle_IGESGraph_LineFontPredefined {
+	~Handle_IGESGraph_LineFontPredefined() {
+	printf("Call custom destructor for instance of Handle_IGESGraph_LineFontPredefined\n");
 	}
 };
 
@@ -554,13 +617,16 @@ class IGESGraph_HighLight : public IGESData_IGESEntity {
 		Standard_Boolean IsHighLighted() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_HighLight();
 
 };
 %extend IGESGraph_HighLight {
 	Handle_IGESGraph_HighLight GetHandle() {
 	return *(Handle_IGESGraph_HighLight*) &$self;
+	}
+};
+%extend IGESGraph_HighLight {
+	~IGESGraph_HighLight() {
+	printf("Call custom destructor for instance of IGESGraph_HighLight\n");
 	}
 };
 
@@ -579,13 +645,16 @@ class IGESGraph_Pick : public IGESData_IGESEntity {
 		Standard_Boolean IsPickable() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_Pick();
 
 };
 %extend IGESGraph_Pick {
 	Handle_IGESGraph_Pick GetHandle() {
 	return *(Handle_IGESGraph_Pick*) &$self;
+	}
+};
+%extend IGESGraph_Pick {
+	~IGESGraph_Pick() {
+	printf("Call custom destructor for instance of IGESGraph_Pick\n");
 	}
 };
 
@@ -632,13 +701,16 @@ class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
 		Standard_Real UnitValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_DrawingUnits();
 
 };
 %extend IGESGraph_DrawingUnits {
 	Handle_IGESGraph_DrawingUnits GetHandle() {
 	return *(Handle_IGESGraph_DrawingUnits*) &$self;
+	}
+};
+%extend IGESGraph_DrawingUnits {
+	~IGESGraph_DrawingUnits() {
+	printf("Call custom destructor for instance of IGESGraph_DrawingUnits\n");
 	}
 };
 
@@ -703,13 +775,16 @@ class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
 		Standard_Integer NbPointsY() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_UniformRectGrid();
 
 };
 %extend IGESGraph_UniformRectGrid {
 	Handle_IGESGraph_UniformRectGrid GetHandle() {
 	return *(Handle_IGESGraph_UniformRectGrid*) &$self;
+	}
+};
+%extend IGESGraph_UniformRectGrid {
+	~IGESGraph_UniformRectGrid() {
+	printf("Call custom destructor for instance of IGESGraph_UniformRectGrid\n");
 	}
 };
 
@@ -818,13 +893,16 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 		IGESGraph_Array1OfTextDisplayTemplate & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_HArray1OfTextDisplayTemplate();
 
 };
 %extend IGESGraph_HArray1OfTextDisplayTemplate {
 	Handle_IGESGraph_HArray1OfTextDisplayTemplate GetHandle() {
 	return *(Handle_IGESGraph_HArray1OfTextDisplayTemplate*) &$self;
+	}
+};
+%extend IGESGraph_HArray1OfTextDisplayTemplate {
+	~IGESGraph_HArray1OfTextDisplayTemplate() {
+	printf("Call custom destructor for instance of IGESGraph_HArray1OfTextDisplayTemplate\n");
 	}
 };
 
@@ -867,13 +945,16 @@ class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
 		Standard_Real ISpace() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_IntercharacterSpacing();
 
 };
 %extend IGESGraph_IntercharacterSpacing {
 	Handle_IGESGraph_IntercharacterSpacing GetHandle() {
 	return *(Handle_IGESGraph_IntercharacterSpacing*) &$self;
+	}
+};
+%extend IGESGraph_IntercharacterSpacing {
+	~IGESGraph_IntercharacterSpacing() {
+	printf("Call custom destructor for instance of IGESGraph_IntercharacterSpacing\n");
 	}
 };
 
@@ -918,13 +999,16 @@ class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
 		Standard_Real Scale() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_LineFontDefTemplate();
 
 };
 %extend IGESGraph_LineFontDefTemplate {
 	Handle_IGESGraph_LineFontDefTemplate GetHandle() {
 	return *(Handle_IGESGraph_LineFontDefTemplate*) &$self;
+	}
+};
+%extend IGESGraph_LineFontDefTemplate {
+	~IGESGraph_LineFontDefTemplate() {
+	printf("Call custom destructor for instance of IGESGraph_LineFontDefTemplate\n");
 	}
 };
 
@@ -1011,13 +1095,16 @@ class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_GeneralModule();
 
 };
 %extend IGESGraph_GeneralModule {
 	Handle_IGESGraph_GeneralModule GetHandle() {
 	return *(Handle_IGESGraph_GeneralModule*) &$self;
+	}
+};
+%extend IGESGraph_GeneralModule {
+	~IGESGraph_GeneralModule() {
+	printf("Call custom destructor for instance of IGESGraph_GeneralModule\n");
 	}
 };
 
@@ -1064,13 +1151,16 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 		Handle_TCollection_HAsciiString ColorName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_Color();
 
 };
 %extend IGESGraph_Color {
 	Handle_IGESGraph_Color GetHandle() {
 	return *(Handle_IGESGraph_Color*) &$self;
+	}
+};
+%extend IGESGraph_Color {
+	~IGESGraph_Color() {
+	printf("Call custom destructor for instance of IGESGraph_Color\n");
 	}
 };
 
@@ -1133,13 +1223,16 @@ class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 		gp_Pnt TransformedStartingCorner() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_TextDisplayTemplate();
 
 };
 %extend IGESGraph_TextDisplayTemplate {
 	Handle_IGESGraph_TextDisplayTemplate GetHandle() {
 	return *(Handle_IGESGraph_TextDisplayTemplate*) &$self;
+	}
+};
+%extend IGESGraph_TextDisplayTemplate {
+	~IGESGraph_TextDisplayTemplate() {
+	printf("Call custom destructor for instance of IGESGraph_TextDisplayTemplate\n");
 	}
 };
 
@@ -1154,13 +1247,16 @@ class IGESGraph_SpecificModule : public IGESData_SpecificModule {
 		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_SpecificModule();
 
 };
 %extend IGESGraph_SpecificModule {
 	Handle_IGESGraph_SpecificModule GetHandle() {
 	return *(Handle_IGESGraph_SpecificModule*) &$self;
+	}
+};
+%extend IGESGraph_SpecificModule {
+	~IGESGraph_SpecificModule() {
+	printf("Call custom destructor for instance of IGESGraph_SpecificModule\n");
 	}
 };
 
@@ -1215,13 +1311,16 @@ class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 		virtual		Standard_Integer LevelNumber(const Standard_Integer LevelIndex) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_DefinitionLevel();
 
 };
 %extend IGESGraph_DefinitionLevel {
 	Handle_IGESGraph_DefinitionLevel GetHandle() {
 	return *(Handle_IGESGraph_DefinitionLevel*) &$self;
+	}
+};
+%extend IGESGraph_DefinitionLevel {
+	~IGESGraph_DefinitionLevel() {
+	printf("Call custom destructor for instance of IGESGraph_DefinitionLevel\n");
 	}
 };
 
@@ -1238,13 +1337,16 @@ class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_ReadWriteModule();
 
 };
 %extend IGESGraph_ReadWriteModule {
 	Handle_IGESGraph_ReadWriteModule GetHandle() {
 	return *(Handle_IGESGraph_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESGraph_ReadWriteModule {
+	~IGESGraph_ReadWriteModule() {
+	printf("Call custom destructor for instance of IGESGraph_ReadWriteModule\n");
 	}
 };
 
@@ -1291,13 +1393,16 @@ class IGESGraph_NominalSize : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString StandardName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_NominalSize();
 
 };
 %extend IGESGraph_NominalSize {
 	Handle_IGESGraph_NominalSize GetHandle() {
 	return *(Handle_IGESGraph_NominalSize*) &$self;
+	}
+};
+%extend IGESGraph_NominalSize {
+	~IGESGraph_NominalSize() {
+	printf("Call custom destructor for instance of IGESGraph_NominalSize\n");
 	}
 };
 
@@ -1340,13 +1445,16 @@ class IGESGraph_DrawingSize : public IGESData_IGESEntity {
 		Standard_Real YSize() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_DrawingSize();
 
 };
 %extend IGESGraph_DrawingSize {
 	Handle_IGESGraph_DrawingSize GetHandle() {
 	return *(Handle_IGESGraph_DrawingSize*) &$self;
+	}
+};
+%extend IGESGraph_DrawingSize {
+	~IGESGraph_DrawingSize() {
+	printf("Call custom destructor for instance of IGESGraph_DrawingSize\n");
 	}
 };
 
@@ -1383,13 +1491,16 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 		void NextPenPosition(const Standard_Integer Chnum, const Standard_Integer Motionnum, Standard_Integer & IX, Standard_Integer & IY) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_TextFontDef();
 
 };
 %extend IGESGraph_TextFontDef {
 	Handle_IGESGraph_TextFontDef GetHandle() {
 	return *(Handle_IGESGraph_TextFontDef*) &$self;
+	}
+};
+%extend IGESGraph_TextFontDef {
+	~IGESGraph_TextFontDef() {
+	printf("Call custom destructor for instance of IGESGraph_TextFontDef\n");
 	}
 };
 
@@ -1406,13 +1517,16 @@ class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
 		Standard_Integer LineFontPatternCode() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_LineFontPredefined();
 
 };
 %extend IGESGraph_LineFontPredefined {
 	Handle_IGESGraph_LineFontPredefined GetHandle() {
 	return *(Handle_IGESGraph_LineFontPredefined*) &$self;
+	}
+};
+%extend IGESGraph_LineFontPredefined {
+	~IGESGraph_LineFontPredefined() {
+	printf("Call custom destructor for instance of IGESGraph_LineFontPredefined\n");
 	}
 };
 
@@ -1521,13 +1635,16 @@ class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 		Standard_Boolean IsVisible(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_LineFontDefPattern();
 
 };
 %extend IGESGraph_LineFontDefPattern {
 	Handle_IGESGraph_LineFontDefPattern GetHandle() {
 	return *(Handle_IGESGraph_LineFontDefPattern*) &$self;
+	}
+};
+%extend IGESGraph_LineFontDefPattern {
+	~IGESGraph_LineFontDefPattern() {
+	printf("Call custom destructor for instance of IGESGraph_LineFontDefPattern\n");
 	}
 };
 
@@ -1558,13 +1675,16 @@ class IGESGraph_HArray1OfColor : public MMgt_TShared {
 		IGESGraph_Array1OfColor & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_HArray1OfColor();
 
 };
 %extend IGESGraph_HArray1OfColor {
 	Handle_IGESGraph_HArray1OfColor GetHandle() {
 	return *(Handle_IGESGraph_HArray1OfColor*) &$self;
+	}
+};
+%extend IGESGraph_HArray1OfColor {
+	~IGESGraph_HArray1OfColor() {
+	printf("Call custom destructor for instance of IGESGraph_HArray1OfColor\n");
 	}
 };
 
@@ -1595,12 +1715,15 @@ class IGESGraph_HArray1OfTextFontDef : public MMgt_TShared {
 		IGESGraph_Array1OfTextFontDef & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESGraph_HArray1OfTextFontDef();
 
 };
 %extend IGESGraph_HArray1OfTextFontDef {
 	Handle_IGESGraph_HArray1OfTextFontDef GetHandle() {
 	return *(Handle_IGESGraph_HArray1OfTextFontDef*) &$self;
+	}
+};
+%extend IGESGraph_HArray1OfTextFontDef {
+	~IGESGraph_HArray1OfTextFontDef() {
+	printf("Call custom destructor for instance of IGESGraph_HArray1OfTextFontDef\n");
 	}
 };

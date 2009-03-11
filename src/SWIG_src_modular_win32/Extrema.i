@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC();
-		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC &aHandle);
@@ -118,12 +116,15 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TColle
 	return (Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
+	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_HArray1OfPOnSurf;
 class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_HArray1OfPOnSurf();
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnSurf();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 	return (Extrema_HArray1OfPOnSurf*)$self->Access();
 	}
 };
+%extend Handle_Extrema_HArray1OfPOnSurf {
+	~Handle_Extrema_HArray1OfPOnSurf() {
+	printf("Call custom destructor for instance of Handle_Extrema_HArray1OfPOnSurf\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : pu
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public
 	return (Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCol
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
+	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public
 	return (Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
+	~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public H
 	return (Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
+	~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_HArray2OfPOnCurv;
 class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_HArray2OfPOnCurv();
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
 	return (Extrema_HArray2OfPOnCurv*)$self->Access();
 	}
 };
+%extend Handle_Extrema_HArray2OfPOnCurv {
+	~Handle_Extrema_HArray2OfPOnCurv() {
+	printf("Call custom destructor for instance of Handle_Extrema_HArray2OfPOnCurv\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_HArray2OfPOnSurf;
 class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_HArray2OfPOnSurf();
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnSurf();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
 	return (Extrema_HArray2OfPOnSurf*)$self->Access();
 	}
 };
+%extend Handle_Extrema_HArray2OfPOnSurf {
+	~Handle_Extrema_HArray2OfPOnSurf() {
+	printf("Call custom destructor for instance of Handle_Extrema_HArray2OfPOnSurf\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv;
 class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection
 	return (Extrema_SequenceNodeOfSequenceOfPOnCurv*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv {
+	~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_HArray1OfPOnCurv2d;
 class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_HArray1OfPOnCurv2d();
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnCurv2d();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 	return (Extrema_HArray1OfPOnCurv2d*)$self->Access();
 	}
 };
+%extend Handle_Extrema_HArray1OfPOnCurv2d {
+	~Handle_Extrema_HArray1OfPOnCurv2d() {
+	printf("Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv2d\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public 
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public H
 	return (Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
+	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_HArray1OfPOnCurv;
 class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_HArray1OfPOnCurv();
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnCurv();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
 	return (Extrema_HArray1OfPOnCurv*)$self->Access();
 	}
 };
+%extend Handle_Extrema_HArray1OfPOnCurv {
+	~Handle_Extrema_HArray1OfPOnCurv() {
+	printf("Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
 class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollecti
 	return (Extrema_SequenceNodeOfSequenceOfPOnCurv2d*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
+	~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfBoolean;
 class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSequenceOfBoolean();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfBoolean();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection
 	return (Extrema_SequenceNodeOfSequenceOfBoolean*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSequenceOfBoolean {
+	~Handle_Extrema_SequenceNodeOfSequenceOfBoolean() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfBoolean\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCol
 	return (Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
+	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Hand
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
+	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d*)$self->Access();
 	}
 };
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
+	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_HArray2OfPOnCurv2d;
 class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_HArray2OfPOnCurv2d();
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv2d();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
 	return (Extrema_HArray2OfPOnCurv2d*)$self->Access();
 	}
 };
+%extend Handle_Extrema_HArray2OfPOnCurv2d {
+	~Handle_Extrema_HArray2OfPOnCurv2d() {
+	printf("Call custom destructor for instance of Handle_Extrema_HArray2OfPOnCurv2d\n");
+	}
+};
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf;
 class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf();
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf();
 		%feature("autodoc", "1");
@@ -557,6 +618,11 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
 	Extrema_SequenceNodeOfSequenceOfPOnSurf* GetObject() {
 	return (Extrema_SequenceNodeOfSequenceOfPOnSurf*)$self->Access();
+	}
+};
+%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
+	~Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf() {
+	printf("Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf\n");
 	}
 };
 
@@ -643,13 +709,16 @@ class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 		Standard_Boolean & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSequenceOfBoolean();
 
 };
 %extend Extrema_SequenceNodeOfSequenceOfBoolean {
 	Handle_Extrema_SequenceNodeOfSequenceOfBoolean GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSequenceOfBoolean*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfBoolean {
+	~Extrema_SequenceNodeOfSequenceOfBoolean() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfBoolean\n");
 	}
 };
 
@@ -1262,13 +1331,16 @@ class Extrema_HArray2OfPOnCurv2d : public MMgt_TShared {
 		Extrema_Array2OfPOnCurv2d & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_HArray2OfPOnCurv2d();
 
 };
 %extend Extrema_HArray2OfPOnCurv2d {
 	Handle_Extrema_HArray2OfPOnCurv2d GetHandle() {
 	return *(Handle_Extrema_HArray2OfPOnCurv2d*) &$self;
+	}
+};
+%extend Extrema_HArray2OfPOnCurv2d {
+	~Extrema_HArray2OfPOnCurv2d() {
+	printf("Call custom destructor for instance of Extrema_HArray2OfPOnCurv2d\n");
 	}
 };
 
@@ -1299,13 +1371,16 @@ class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
 		Extrema_Array1OfPOnSurf & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_HArray1OfPOnSurf();
 
 };
 %extend Extrema_HArray1OfPOnSurf {
 	Handle_Extrema_HArray1OfPOnSurf GetHandle() {
 	return *(Handle_Extrema_HArray1OfPOnSurf*) &$self;
+	}
+};
+%extend Extrema_HArray1OfPOnSurf {
+	~Extrema_HArray1OfPOnSurf() {
+	printf("Call custom destructor for instance of Extrema_HArray1OfPOnSurf\n");
 	}
 };
 
@@ -1446,13 +1521,16 @@ class Extrema_HArray1OfPOnCurv : public MMgt_TShared {
 		Extrema_Array1OfPOnCurv & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_HArray1OfPOnCurv();
 
 };
 %extend Extrema_HArray1OfPOnCurv {
 	Handle_Extrema_HArray1OfPOnCurv GetHandle() {
 	return *(Handle_Extrema_HArray1OfPOnCurv*) &$self;
+	}
+};
+%extend Extrema_HArray1OfPOnCurv {
+	~Extrema_HArray1OfPOnCurv() {
+	printf("Call custom destructor for instance of Extrema_HArray1OfPOnCurv\n");
 	}
 };
 
@@ -1465,13 +1543,16 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public TCollection_SeqNod
 		Extrema_POnCurv & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC();
 
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
 	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
+	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");
 	}
 };
 
@@ -1484,13 +1565,16 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TColle
 		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d();
 
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
 	Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");
 	}
 };
 
@@ -1535,13 +1619,16 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
 		Extrema_POnCurv & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSequenceOfPOnCurv();
 
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
 	Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
+	~Extrema_SequenceNodeOfSequenceOfPOnCurv() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv\n");
 	}
 };
 
@@ -1816,13 +1903,16 @@ class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
 		Extrema_Array2OfPOnSurf & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_HArray2OfPOnSurf();
 
 };
 %extend Extrema_HArray2OfPOnSurf {
 	Handle_Extrema_HArray2OfPOnSurf GetHandle() {
 	return *(Handle_Extrema_HArray2OfPOnSurf*) &$self;
+	}
+};
+%extend Extrema_HArray2OfPOnSurf {
+	~Extrema_HArray2OfPOnSurf() {
+	printf("Call custom destructor for instance of Extrema_HArray2OfPOnSurf\n");
 	}
 };
 
@@ -2001,13 +2091,16 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TColle
 		Extrema_POnCurv & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC();
 
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
 	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");
 	}
 };
 
@@ -2148,13 +2241,16 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_Se
 		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d();
 
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
 	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
+	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");
 	}
 };
 
@@ -2271,13 +2367,16 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollec
 		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d();
 
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
 	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");
 	}
 };
 
@@ -2492,13 +2591,16 @@ class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
 		Extrema_Array2OfPOnCurv & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_HArray2OfPOnCurv();
 
 };
 %extend Extrema_HArray2OfPOnCurv {
 	Handle_Extrema_HArray2OfPOnCurv GetHandle() {
 	return *(Handle_Extrema_HArray2OfPOnCurv*) &$self;
+	}
+};
+%extend Extrema_HArray2OfPOnCurv {
+	~Extrema_HArray2OfPOnCurv() {
+	printf("Call custom destructor for instance of Extrema_HArray2OfPOnCurv\n");
 	}
 };
 
@@ -2569,13 +2671,16 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TColle
 		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d();
 
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
 	Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
+	~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");
 	}
 };
 
@@ -3154,13 +3259,16 @@ class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
 		Extrema_Array1OfPOnCurv2d & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_HArray1OfPOnCurv2d();
 
 };
 %extend Extrema_HArray1OfPOnCurv2d {
 	Handle_Extrema_HArray1OfPOnCurv2d GetHandle() {
 	return *(Handle_Extrema_HArray1OfPOnCurv2d*) &$self;
+	}
+};
+%extend Extrema_HArray1OfPOnCurv2d {
+	~Extrema_HArray1OfPOnCurv2d() {
+	printf("Call custom destructor for instance of Extrema_HArray1OfPOnCurv2d\n");
 	}
 };
 
@@ -3189,13 +3297,16 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TC
 		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d();
 
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
 	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");
 	}
 };
 
@@ -3388,13 +3499,16 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection
 		Extrema_POnCurv & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC();
 
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
 	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
+	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC\n");
 	}
 };
 
@@ -3533,13 +3647,16 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public TCollection_SeqNode 
 		Extrema_POnCurv & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC();
 
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
 	Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
+	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");
 	}
 };
 
@@ -3552,13 +3669,16 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollect
 		Extrema_POnCurv & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC();
 
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
 	Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
+	~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");
 	}
 };
 
@@ -3571,13 +3691,16 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollect
 		Extrema_POnCurv & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC();
 
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
 	Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
+	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");
 	}
 };
 
@@ -3692,13 +3815,16 @@ class Extrema_SequenceNodeOfSequenceOfPOnSurf : public TCollection_SeqNode {
 		Extrema_POnSurf & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSequenceOfPOnSurf();
 
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnSurf {
 	Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnSurf {
+	~Extrema_SequenceNodeOfSequenceOfPOnSurf() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnSurf\n");
 	}
 };
 
@@ -3747,13 +3873,16 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
 		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSequenceOfPOnCurv2d();
 
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
 	Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
+	~Extrema_SequenceNodeOfSequenceOfPOnCurv2d() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");
 	}
 };
 
@@ -3816,13 +3945,16 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNod
 		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d();
 
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
 	Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d GetHandle() {
 	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
+	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");
 	}
 };
 

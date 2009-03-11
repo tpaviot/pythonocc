@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BinMFunction_ScopeDriver();
-		%feature("autodoc", "1");
 		Handle_BinMFunction_ScopeDriver();
 		%feature("autodoc", "1");
 		Handle_BinMFunction_ScopeDriver(const Handle_BinMFunction_ScopeDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
 	return (BinMFunction_ScopeDriver*)$self->Access();
 	}
 };
+%extend Handle_BinMFunction_ScopeDriver {
+	~Handle_BinMFunction_ScopeDriver() {
+	printf("Call custom destructor for instance of Handle_BinMFunction_ScopeDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinMFunction_GraphNodeDriver;
 class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinMFunction_GraphNodeDriver();
 		%feature("autodoc", "1");
 		Handle_BinMFunction_GraphNodeDriver();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	return (BinMFunction_GraphNodeDriver*)$self->Access();
 	}
 };
+%extend Handle_BinMFunction_GraphNodeDriver {
+	~Handle_BinMFunction_GraphNodeDriver() {
+	printf("Call custom destructor for instance of Handle_BinMFunction_GraphNodeDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinMFunction_FunctionDriver;
 class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinMFunction_FunctionDriver();
 		%feature("autodoc", "1");
 		Handle_BinMFunction_FunctionDriver();
 		%feature("autodoc", "1");
@@ -158,6 +162,11 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 %extend Handle_BinMFunction_FunctionDriver {
 	BinMFunction_FunctionDriver* GetObject() {
 	return (BinMFunction_FunctionDriver*)$self->Access();
+	}
+};
+%extend Handle_BinMFunction_FunctionDriver {
+	~Handle_BinMFunction_FunctionDriver() {
+	printf("Call custom destructor for instance of Handle_BinMFunction_FunctionDriver\n");
 	}
 };
 
@@ -186,13 +195,16 @@ class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMFunction_FunctionDriver();
 
 };
 %extend BinMFunction_FunctionDriver {
 	Handle_BinMFunction_FunctionDriver GetHandle() {
 	return *(Handle_BinMFunction_FunctionDriver*) &$self;
+	}
+};
+%extend BinMFunction_FunctionDriver {
+	~BinMFunction_FunctionDriver() {
+	printf("Call custom destructor for instance of BinMFunction_FunctionDriver\n");
 	}
 };
 
@@ -209,13 +221,16 @@ class BinMFunction_ScopeDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMFunction_ScopeDriver();
 
 };
 %extend BinMFunction_ScopeDriver {
 	Handle_BinMFunction_ScopeDriver GetHandle() {
 	return *(Handle_BinMFunction_ScopeDriver*) &$self;
+	}
+};
+%extend BinMFunction_ScopeDriver {
+	~BinMFunction_ScopeDriver() {
+	printf("Call custom destructor for instance of BinMFunction_ScopeDriver\n");
 	}
 };
 
@@ -232,12 +247,15 @@ class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMFunction_GraphNodeDriver();
 
 };
 %extend BinMFunction_GraphNodeDriver {
 	Handle_BinMFunction_GraphNodeDriver GetHandle() {
 	return *(Handle_BinMFunction_GraphNodeDriver*) &$self;
+	}
+};
+%extend BinMFunction_GraphNodeDriver {
+	~BinMFunction_GraphNodeDriver() {
+	printf("Call custom destructor for instance of BinMFunction_GraphNodeDriver\n");
 	}
 };

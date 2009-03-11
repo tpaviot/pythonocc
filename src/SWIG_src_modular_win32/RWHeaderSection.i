@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		~Handle_RWHeaderSection_ReadWriteModule();
-		%feature("autodoc", "1");
 		Handle_RWHeaderSection_ReadWriteModule();
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_ReadWriteModule(const Handle_RWHeaderSection_ReadWriteModule &aHandle);
@@ -118,12 +116,15 @@ class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteM
 	return (RWHeaderSection_ReadWriteModule*)$self->Access();
 	}
 };
+%extend Handle_RWHeaderSection_ReadWriteModule {
+	~Handle_RWHeaderSection_ReadWriteModule() {
+	printf("Call custom destructor for instance of Handle_RWHeaderSection_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor Handle_RWHeaderSection_GeneralModule;
 class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_RWHeaderSection_GeneralModule();
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_GeneralModule();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModul
 %extend Handle_RWHeaderSection_GeneralModule {
 	RWHeaderSection_GeneralModule* GetObject() {
 	return (RWHeaderSection_GeneralModule*)$self->Access();
+	}
+};
+%extend Handle_RWHeaderSection_GeneralModule {
+	~Handle_RWHeaderSection_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_RWHeaderSection_GeneralModule\n");
 	}
 };
 
@@ -201,13 +207,16 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~RWHeaderSection_ReadWriteModule();
 
 };
 %extend RWHeaderSection_ReadWriteModule {
 	Handle_RWHeaderSection_ReadWriteModule GetHandle() {
 	return *(Handle_RWHeaderSection_ReadWriteModule*) &$self;
+	}
+};
+%extend RWHeaderSection_ReadWriteModule {
+	~RWHeaderSection_ReadWriteModule() {
+	printf("Call custom destructor for instance of RWHeaderSection_ReadWriteModule\n");
 	}
 };
 
@@ -238,12 +247,15 @@ class RWHeaderSection_GeneralModule : public StepData_GeneralModule {
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~RWHeaderSection_GeneralModule();
 
 };
 %extend RWHeaderSection_GeneralModule {
 	Handle_RWHeaderSection_GeneralModule GetHandle() {
 	return *(Handle_RWHeaderSection_GeneralModule*) &$self;
+	}
+};
+%extend RWHeaderSection_GeneralModule {
+	~RWHeaderSection_GeneralModule() {
+	printf("Call custom destructor for instance of RWHeaderSection_GeneralModule\n");
 	}
 };

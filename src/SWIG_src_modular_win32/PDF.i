@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PDF_Attribute : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PDF_Attribute();
-		%feature("autodoc", "1");
 		Handle_PDF_Attribute();
 		%feature("autodoc", "1");
 		Handle_PDF_Attribute(const Handle_PDF_Attribute &aHandle);
@@ -118,12 +116,15 @@ class Handle_PDF_Attribute : public Handle_Standard_Persistent {
 	return (PDF_Attribute*)$self->Access();
 	}
 };
+%extend Handle_PDF_Attribute {
+	~Handle_PDF_Attribute() {
+	printf("Call custom destructor for instance of Handle_PDF_Attribute\n");
+	}
+};
 
 %nodefaultctor Handle_PDF_TagSource;
 class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PDF_TagSource();
 		%feature("autodoc", "1");
 		Handle_PDF_TagSource();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 	return (PDF_TagSource*)$self->Access();
 	}
 };
+%extend Handle_PDF_TagSource {
+	~Handle_PDF_TagSource() {
+	printf("Call custom destructor for instance of Handle_PDF_TagSource\n");
+	}
+};
 
 %nodefaultctor Handle_PDF_Reference;
 class Handle_PDF_Reference : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PDF_Reference();
 		%feature("autodoc", "1");
 		Handle_PDF_Reference();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_PDF_Reference : public Handle_PDF_Attribute {
 	return (PDF_Reference*)$self->Access();
 	}
 };
+%extend Handle_PDF_Reference {
+	~Handle_PDF_Reference() {
+	printf("Call custom destructor for instance of Handle_PDF_Reference\n");
+	}
+};
 
 %nodefaultctor Handle_PDF_Data;
 class Handle_PDF_Data : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PDF_Data();
 		%feature("autodoc", "1");
 		Handle_PDF_Data();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_PDF_Data : public Handle_Standard_Persistent {
 	return (PDF_Data*)$self->Access();
 	}
 };
+%extend Handle_PDF_Data {
+	~Handle_PDF_Data() {
+	printf("Call custom destructor for instance of Handle_PDF_Data\n");
+	}
+};
 
 %nodefaultctor Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1;
 class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1();
 		%feature("autodoc", "1");
 		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_A
 	return (PDF_VArrayNodeOfFieldOfHAttributeArray1*)$self->Access();
 	}
 };
+%extend Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 {
+	~Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1() {
+	printf("Call custom destructor for instance of Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1\n");
+	}
+};
 
 %nodefaultctor Handle_PDF_HAttributeArray1;
 class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PDF_HAttributeArray1();
 		%feature("autodoc", "1");
 		Handle_PDF_HAttributeArray1();
 		%feature("autodoc", "1");
@@ -223,6 +236,11 @@ class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
 	return (PDF_HAttributeArray1*)$self->Access();
 	}
 };
+%extend Handle_PDF_HAttributeArray1 {
+	~Handle_PDF_HAttributeArray1() {
+	printf("Call custom destructor for instance of Handle_PDF_HAttributeArray1\n");
+	}
+};
 
 %nodefaultctor PDF_Attribute;
 class PDF_Attribute : public Standard_Persistent {
@@ -233,13 +251,16 @@ class PDF_Attribute : public Standard_Persistent {
 		PDF_Attribute();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PDF_Attribute();
 
 };
 %extend PDF_Attribute {
 	Handle_PDF_Attribute GetHandle() {
 	return *(Handle_PDF_Attribute*) &$self;
+	}
+};
+%extend PDF_Attribute {
+	~PDF_Attribute() {
+	printf("Call custom destructor for instance of PDF_Attribute\n");
 	}
 };
 
@@ -260,13 +281,16 @@ class PDF_TagSource : public PDF_Attribute {
 		Standard_Integer _CSFDB_GetPDF_TagSourcemyValue() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPDF_TagSourcemyValue(const Standard_Integer p);
-		%feature("autodoc", "1");
-		virtual		~PDF_TagSource();
 
 };
 %extend PDF_TagSource {
 	Handle_PDF_TagSource GetHandle() {
 	return *(Handle_PDF_TagSource*) &$self;
+	}
+};
+%extend PDF_TagSource {
+	~PDF_TagSource() {
+	printf("Call custom destructor for instance of PDF_TagSource\n");
 	}
 };
 
@@ -315,13 +339,16 @@ class PDF_Reference : public PDF_Attribute {
 		void _CSFDB_SetPDF_ReferencemyValue(const Handle_PCollection_HAsciiString &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PDF_Reference();
 
 };
 %extend PDF_Reference {
 	Handle_PDF_Reference GetHandle() {
 	return *(Handle_PDF_Reference*) &$self;
+	}
+};
+%extend PDF_Reference {
+	~PDF_Reference() {
+	printf("Call custom destructor for instance of PDF_Reference\n");
 	}
 };
 
@@ -344,13 +371,16 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 		void _CSFDB_SetPDF_VArrayNodeOfFieldOfHAttributeArray1myValue(const Handle_PDF_Attribute &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PDF_VArrayNodeOfFieldOfHAttributeArray1();
 
 };
 %extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
 	Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 GetHandle() {
 	return *(Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1*) &$self;
+	}
+};
+%extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
+	~PDF_VArrayNodeOfFieldOfHAttributeArray1() {
+	printf("Call custom destructor for instance of PDF_VArrayNodeOfFieldOfHAttributeArray1\n");
 	}
 };
 
@@ -387,13 +417,16 @@ class PDF_Data : public Standard_Persistent {
 		void _CSFDB_SetPDF_DatamyAttributes(const Handle_PDF_HAttributeArray1 &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PDF_Data();
 
 };
 %extend PDF_Data {
 	Handle_PDF_Data GetHandle() {
 	return *(Handle_PDF_Data*) &$self;
+	}
+};
+%extend PDF_Data {
+	~PDF_Data() {
+	printf("Call custom destructor for instance of PDF_Data\n");
 	}
 };
 
@@ -434,13 +467,16 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 		const PDF_FieldOfHAttributeArray1 & _CSFDB_GetPDF_HAttributeArray1Data() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PDF_HAttributeArray1();
 
 };
 %extend PDF_HAttributeArray1 {
 	Handle_PDF_HAttributeArray1 GetHandle() {
 	return *(Handle_PDF_HAttributeArray1*) &$self;
+	}
+};
+%extend PDF_HAttributeArray1 {
+	~PDF_HAttributeArray1() {
+	printf("Call custom destructor for instance of PDF_HAttributeArray1\n");
 	}
 };
 

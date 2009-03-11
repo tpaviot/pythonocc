@@ -221,8 +221,6 @@ enum AIS2D_ClearMode {
 class Handle_AIS2D_ListNodeOfListOfIO : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_AIS2D_ListNodeOfListOfIO();
-		%feature("autodoc", "1");
 		Handle_AIS2D_ListNodeOfListOfIO();
 		%feature("autodoc", "1");
 		Handle_AIS2D_ListNodeOfListOfIO(const Handle_AIS2D_ListNodeOfListOfIO &aHandle);
@@ -237,12 +235,15 @@ class Handle_AIS2D_ListNodeOfListOfIO : public Handle_TCollection_MapNode {
 	return (AIS2D_ListNodeOfListOfIO*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_ListNodeOfListOfIO {
+	~Handle_AIS2D_ListNodeOfListOfIO() {
+	printf("Call custom destructor for instance of Handle_AIS2D_ListNodeOfListOfIO\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit;
 class Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit();
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit();
 		%feature("autodoc", "1");
@@ -258,12 +259,15 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit : public Handle_TCollectio
 	return (AIS2D_SequenceNodeOfSequenceOfPrimArchit*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit {
+	~Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit() {
+	printf("Call custom destructor for instance of Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_InteractiveContext;
 class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_InteractiveContext();
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveContext();
 		%feature("autodoc", "1");
@@ -279,12 +283,15 @@ class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
 	return (AIS2D_InteractiveContext*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_InteractiveContext {
+	~Handle_AIS2D_InteractiveContext() {
+	printf("Call custom destructor for instance of Handle_AIS2D_InteractiveContext\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_LocalContext;
 class Handle_AIS2D_LocalContext : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_LocalContext();
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalContext();
 		%feature("autodoc", "1");
@@ -300,12 +307,15 @@ class Handle_AIS2D_LocalContext : public Handle_MMgt_TShared {
 	return (AIS2D_LocalContext*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_LocalContext {
+	~Handle_AIS2D_LocalContext() {
+	printf("Call custom destructor for instance of Handle_AIS2D_LocalContext\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_InteractiveObject;
 class Handle_AIS2D_InteractiveObject : public Handle_Graphic2d_GraphicObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_InteractiveObject();
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject();
 		%feature("autodoc", "1");
@@ -321,12 +331,15 @@ class Handle_AIS2D_InteractiveObject : public Handle_Graphic2d_GraphicObject {
 	return (AIS2D_InteractiveObject*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_InteractiveObject {
+	~Handle_AIS2D_InteractiveObject() {
+	printf("Call custom destructor for instance of Handle_AIS2D_InteractiveObject\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_ProjShape;
 class Handle_AIS2D_ProjShape : public Handle_AIS2D_InteractiveObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_ProjShape();
 		%feature("autodoc", "1");
 		Handle_AIS2D_ProjShape();
 		%feature("autodoc", "1");
@@ -342,12 +355,15 @@ class Handle_AIS2D_ProjShape : public Handle_AIS2D_InteractiveObject {
 	return (AIS2D_ProjShape*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_ProjShape {
+	~Handle_AIS2D_ProjShape() {
+	printf("Call custom destructor for instance of Handle_AIS2D_ProjShape\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfLC;
 class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_DataMapNodeOfDataMapOfLC();
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLC();
 		%feature("autodoc", "1");
@@ -363,12 +379,15 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode 
 	return (AIS2D_DataMapNodeOfDataMapOfLC*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfLC {
+	~Handle_AIS2D_DataMapNodeOfDataMapOfLC() {
+	printf("Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfLC\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_HSequenceOfIO;
 class Handle_AIS2D_HSequenceOfIO : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_HSequenceOfIO();
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfIO();
 		%feature("autodoc", "1");
@@ -384,12 +403,15 @@ class Handle_AIS2D_HSequenceOfIO : public Handle_MMgt_TShared {
 	return (AIS2D_HSequenceOfIO*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_HSequenceOfIO {
+	~Handle_AIS2D_HSequenceOfIO() {
+	printf("Call custom destructor for instance of Handle_AIS2D_HSequenceOfIO\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_SequenceNodeOfSequenceOfIO;
 class Handle_AIS2D_SequenceNodeOfSequenceOfIO : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_SequenceNodeOfSequenceOfIO();
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfIO();
 		%feature("autodoc", "1");
@@ -405,12 +427,15 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfIO : public Handle_TCollection_SeqNod
 	return (AIS2D_SequenceNodeOfSequenceOfIO*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_SequenceNodeOfSequenceOfIO {
+	~Handle_AIS2D_SequenceNodeOfSequenceOfIO() {
+	printf("Call custom destructor for instance of Handle_AIS2D_SequenceNodeOfSequenceOfIO\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_LocalStatus;
 class Handle_AIS2D_LocalStatus : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_LocalStatus();
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalStatus();
 		%feature("autodoc", "1");
@@ -426,12 +451,15 @@ class Handle_AIS2D_LocalStatus : public Handle_MMgt_TShared {
 	return (AIS2D_LocalStatus*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_LocalStatus {
+	~Handle_AIS2D_LocalStatus() {
+	printf("Call custom destructor for instance of Handle_AIS2D_LocalStatus\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfLocStat;
 class Handle_AIS2D_DataMapNodeOfDataMapOfLocStat : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_DataMapNodeOfDataMapOfLocStat();
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat();
 		%feature("autodoc", "1");
@@ -447,12 +475,15 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLocStat : public Handle_TCollection_Map
 	return (AIS2D_DataMapNodeOfDataMapOfLocStat*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfLocStat {
+	~Handle_AIS2D_DataMapNodeOfDataMapOfLocStat() {
+	printf("Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfLocStat\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects;
 class Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects();
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects();
 		%feature("autodoc", "1");
@@ -468,12 +499,15 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects : public Handle_TCollection
 	return (AIS2D_DataMapNodeOfDataMapOfPrimAspects*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects {
+	~Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects() {
+	printf("Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus;
 class Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus();
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus();
 		%feature("autodoc", "1");
@@ -489,12 +523,15 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_Ma
 	return (AIS2D_DataMapNodeOfDataMapOfIOStatus*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus {
+	~Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus() {
+	printf("Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_HSequenceOfPrimArchit;
 class Handle_AIS2D_HSequenceOfPrimArchit : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_HSequenceOfPrimArchit();
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfPrimArchit();
 		%feature("autodoc", "1");
@@ -510,12 +547,15 @@ class Handle_AIS2D_HSequenceOfPrimArchit : public Handle_MMgt_TShared {
 	return (AIS2D_HSequenceOfPrimArchit*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_HSequenceOfPrimArchit {
+	~Handle_AIS2D_HSequenceOfPrimArchit() {
+	printf("Call custom destructor for instance of Handle_AIS2D_HSequenceOfPrimArchit\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_PrimitiveArchit;
 class Handle_AIS2D_PrimitiveArchit : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_PrimitiveArchit();
 		%feature("autodoc", "1");
 		Handle_AIS2D_PrimitiveArchit();
 		%feature("autodoc", "1");
@@ -531,12 +571,15 @@ class Handle_AIS2D_PrimitiveArchit : public Handle_MMgt_TShared {
 	return (AIS2D_PrimitiveArchit*)$self->Access();
 	}
 };
+%extend Handle_AIS2D_PrimitiveArchit {
+	~Handle_AIS2D_PrimitiveArchit() {
+	printf("Call custom destructor for instance of Handle_AIS2D_PrimitiveArchit\n");
+	}
+};
 
 %nodefaultctor Handle_AIS2D_GlobalStatus;
 class Handle_AIS2D_GlobalStatus : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AIS2D_GlobalStatus();
 		%feature("autodoc", "1");
 		Handle_AIS2D_GlobalStatus();
 		%feature("autodoc", "1");
@@ -550,6 +593,11 @@ class Handle_AIS2D_GlobalStatus : public Handle_MMgt_TShared {
 %extend Handle_AIS2D_GlobalStatus {
 	AIS2D_GlobalStatus* GetObject() {
 	return (AIS2D_GlobalStatus*)$self->Access();
+	}
+};
+%extend Handle_AIS2D_GlobalStatus {
+	~Handle_AIS2D_GlobalStatus() {
+	printf("Call custom destructor for instance of Handle_AIS2D_GlobalStatus\n");
 	}
 };
 
@@ -634,13 +682,16 @@ class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 		Handle_AIS2D_GlobalStatus & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_DataMapNodeOfDataMapOfIOStatus();
 
 };
 %extend AIS2D_DataMapNodeOfDataMapOfIOStatus {
 	Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus GetHandle() {
 	return *(Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus*) &$self;
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfIOStatus {
+	~AIS2D_DataMapNodeOfDataMapOfIOStatus() {
+	printf("Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfIOStatus\n");
 	}
 };
 
@@ -745,13 +796,16 @@ class AIS2D_LocalStatus : public MMgt_TShared {
 		Handle_Standard_Transient PreviousState() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_LocalStatus();
 
 };
 %extend AIS2D_LocalStatus {
 	Handle_AIS2D_LocalStatus GetHandle() {
 	return *(Handle_AIS2D_LocalStatus*) &$self;
+	}
+};
+%extend AIS2D_LocalStatus {
+	~AIS2D_LocalStatus() {
+	printf("Call custom destructor for instance of AIS2D_LocalStatus\n");
 	}
 };
 
@@ -766,13 +820,16 @@ class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
 		Handle_AIS2D_LocalStatus & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_DataMapNodeOfDataMapOfLocStat();
 
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLocStat {
 	Handle_AIS2D_DataMapNodeOfDataMapOfLocStat GetHandle() {
 	return *(Handle_AIS2D_DataMapNodeOfDataMapOfLocStat*) &$self;
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfLocStat {
+	~AIS2D_DataMapNodeOfDataMapOfLocStat() {
+	printf("Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfLocStat\n");
 	}
 };
 
@@ -837,13 +894,16 @@ class AIS2D_PrimitiveArchit : public MMgt_TShared {
 		Standard_Integer GetIndex() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_PrimitiveArchit();
 
 };
 %extend AIS2D_PrimitiveArchit {
 	Handle_AIS2D_PrimitiveArchit GetHandle() {
 	return *(Handle_AIS2D_PrimitiveArchit*) &$self;
+	}
+};
+%extend AIS2D_PrimitiveArchit {
+	~AIS2D_PrimitiveArchit() {
+	printf("Call custom destructor for instance of AIS2D_PrimitiveArchit\n");
 	}
 };
 
@@ -938,13 +998,16 @@ class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 		Handle_AIS2D_InteractiveObject & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_ListNodeOfListOfIO();
 
 };
 %extend AIS2D_ListNodeOfListOfIO {
 	Handle_AIS2D_ListNodeOfListOfIO GetHandle() {
 	return *(Handle_AIS2D_ListNodeOfListOfIO*) &$self;
+	}
+};
+%extend AIS2D_ListNodeOfListOfIO {
+	~AIS2D_ListNodeOfListOfIO() {
+	printf("Call custom destructor for instance of AIS2D_ListNodeOfListOfIO\n");
 	}
 };
 
@@ -959,13 +1022,16 @@ class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
 		Handle_Prs2d_AspectRoot & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_DataMapNodeOfDataMapOfPrimAspects();
 
 };
 %extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
 	Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects GetHandle() {
 	return *(Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects*) &$self;
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
+	~AIS2D_DataMapNodeOfDataMapOfPrimAspects() {
+	printf("Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfPrimAspects\n");
 	}
 };
 
@@ -1172,13 +1238,16 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		void SetDetectionMode(const AIS2D_TypeOfDetection mode);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_InteractiveContext();
 
 };
 %extend AIS2D_InteractiveContext {
 	Handle_AIS2D_InteractiveContext GetHandle() {
 	return *(Handle_AIS2D_InteractiveContext*) &$self;
+	}
+};
+%extend AIS2D_InteractiveContext {
+	~AIS2D_InteractiveContext() {
+	printf("Call custom destructor for instance of AIS2D_InteractiveContext\n");
 	}
 };
 
@@ -1251,13 +1320,16 @@ class AIS2D_InteractiveObject : public Graphic2d_GraphicObject {
 		virtual		void Retrieve(Aspect_IFStream & anIFStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_InteractiveObject();
 
 };
 %extend AIS2D_InteractiveObject {
 	Handle_AIS2D_InteractiveObject GetHandle() {
 	return *(Handle_AIS2D_InteractiveObject*) &$self;
+	}
+};
+%extend AIS2D_InteractiveObject {
+	~AIS2D_InteractiveObject() {
+	printf("Call custom destructor for instance of AIS2D_InteractiveObject\n");
 	}
 };
 
@@ -1290,13 +1362,16 @@ class AIS2D_ProjShape : public AIS2D_InteractiveObject {
 		Handle_Graphic2d_Line GetHLPrimitives() const;
 		%feature("autodoc", "1");
 		void ShowEdges(const Standard_Boolean aSharp=1, const Standard_Boolean aSmooth=1, const Standard_Boolean aSewn=1, const Standard_Boolean anOutline=1, const Standard_Boolean anIsoline=1);
-		%feature("autodoc", "1");
-		virtual		~AIS2D_ProjShape();
 
 };
 %extend AIS2D_ProjShape {
 	Handle_AIS2D_ProjShape GetHandle() {
 	return *(Handle_AIS2D_ProjShape*) &$self;
+	}
+};
+%extend AIS2D_ProjShape {
+	~AIS2D_ProjShape() {
+	printf("Call custom destructor for instance of AIS2D_ProjShape\n");
 	}
 };
 
@@ -1347,13 +1422,16 @@ class AIS2D_GlobalStatus : public MMgt_TShared {
 		Quantity_NameOfColor HighlightColor() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_GlobalStatus();
 
 };
 %extend AIS2D_GlobalStatus {
 	Handle_AIS2D_GlobalStatus GetHandle() {
 	return *(Handle_AIS2D_GlobalStatus*) &$self;
+	}
+};
+%extend AIS2D_GlobalStatus {
+	~AIS2D_GlobalStatus() {
+	printf("Call custom destructor for instance of AIS2D_GlobalStatus\n");
 	}
 };
 
@@ -1396,13 +1474,16 @@ class AIS2D_SequenceNodeOfSequenceOfIO : public TCollection_SeqNode {
 		Handle_AIS2D_InteractiveObject & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_SequenceNodeOfSequenceOfIO();
 
 };
 %extend AIS2D_SequenceNodeOfSequenceOfIO {
 	Handle_AIS2D_SequenceNodeOfSequenceOfIO GetHandle() {
 	return *(Handle_AIS2D_SequenceNodeOfSequenceOfIO*) &$self;
+	}
+};
+%extend AIS2D_SequenceNodeOfSequenceOfIO {
+	~AIS2D_SequenceNodeOfSequenceOfIO() {
+	printf("Call custom destructor for instance of AIS2D_SequenceNodeOfSequenceOfIO\n");
 	}
 };
 
@@ -1457,13 +1538,16 @@ class AIS2D_HSequenceOfIO : public MMgt_TShared {
 		Handle_AIS2D_HSequenceOfIO ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_HSequenceOfIO();
 
 };
 %extend AIS2D_HSequenceOfIO {
 	Handle_AIS2D_HSequenceOfIO GetHandle() {
 	return *(Handle_AIS2D_HSequenceOfIO*) &$self;
+	}
+};
+%extend AIS2D_HSequenceOfIO {
+	~AIS2D_HSequenceOfIO() {
+	printf("Call custom destructor for instance of AIS2D_HSequenceOfIO\n");
 	}
 };
 
@@ -1478,13 +1562,16 @@ class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
 		Handle_AIS2D_LocalContext & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_DataMapNodeOfDataMapOfLC();
 
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLC {
 	Handle_AIS2D_DataMapNodeOfDataMapOfLC GetHandle() {
 	return *(Handle_AIS2D_DataMapNodeOfDataMapOfLC*) &$self;
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfLC {
+	~AIS2D_DataMapNodeOfDataMapOfLC() {
+	printf("Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfLC\n");
 	}
 };
 
@@ -1541,13 +1628,16 @@ class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
 		Handle_AIS2D_PrimitiveArchit & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_SequenceNodeOfSequenceOfPrimArchit();
 
 };
 %extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
 	Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit GetHandle() {
 	return *(Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit*) &$self;
+	}
+};
+%extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
+	~AIS2D_SequenceNodeOfSequenceOfPrimArchit() {
+	printf("Call custom destructor for instance of AIS2D_SequenceNodeOfSequenceOfPrimArchit\n");
 	}
 };
 
@@ -1602,13 +1692,16 @@ class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 		Handle_AIS2D_HSequenceOfPrimArchit ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_HSequenceOfPrimArchit();
 
 };
 %extend AIS2D_HSequenceOfPrimArchit {
 	Handle_AIS2D_HSequenceOfPrimArchit GetHandle() {
 	return *(Handle_AIS2D_HSequenceOfPrimArchit*) &$self;
+	}
+};
+%extend AIS2D_HSequenceOfPrimArchit {
+	~AIS2D_HSequenceOfPrimArchit() {
+	printf("Call custom destructor for instance of AIS2D_HSequenceOfPrimArchit\n");
 	}
 };
 
@@ -1681,13 +1774,16 @@ class AIS2D_LocalContext : public MMgt_TShared {
 		void ClearSelected(const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AIS2D_LocalContext();
 
 };
 %extend AIS2D_LocalContext {
 	Handle_AIS2D_LocalContext GetHandle() {
 	return *(Handle_AIS2D_LocalContext*) &$self;
+	}
+};
+%extend AIS2D_LocalContext {
+	~AIS2D_LocalContext() {
+	printf("Call custom destructor for instance of AIS2D_LocalContext\n");
 	}
 };
 

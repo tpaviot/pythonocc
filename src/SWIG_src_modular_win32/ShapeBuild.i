@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ShapeBuild_ReShape();
-		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape();
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape(const Handle_ShapeBuild_ReShape &aHandle);
@@ -116,6 +114,11 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 %extend Handle_ShapeBuild_ReShape {
 	ShapeBuild_ReShape* GetObject() {
 	return (ShapeBuild_ReShape*)$self->Access();
+	}
+};
+%extend Handle_ShapeBuild_ReShape {
+	~Handle_ShapeBuild_ReShape() {
+	printf("Call custom destructor for instance of Handle_ShapeBuild_ReShape\n");
 	}
 };
 
@@ -182,13 +185,16 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeBuild_ReShape();
 
 };
 %extend ShapeBuild_ReShape {
 	Handle_ShapeBuild_ReShape GetHandle() {
 	return *(Handle_ShapeBuild_ReShape*) &$self;
+	}
+};
+%extend ShapeBuild_ReShape {
+	~ShapeBuild_ReShape() {
+	printf("Call custom destructor for instance of ShapeBuild_ReShape\n");
 	}
 };
 

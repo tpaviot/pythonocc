@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_STEPEdit_EditSDR : public Handle_IFSelect_Editor {
 	public:
 		%feature("autodoc", "1");
-		~Handle_STEPEdit_EditSDR();
-		%feature("autodoc", "1");
 		Handle_STEPEdit_EditSDR();
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditSDR(const Handle_STEPEdit_EditSDR &aHandle);
@@ -118,12 +116,15 @@ class Handle_STEPEdit_EditSDR : public Handle_IFSelect_Editor {
 	return (STEPEdit_EditSDR*)$self->Access();
 	}
 };
+%extend Handle_STEPEdit_EditSDR {
+	~Handle_STEPEdit_EditSDR() {
+	printf("Call custom destructor for instance of Handle_STEPEdit_EditSDR\n");
+	}
+};
 
 %nodefaultctor Handle_STEPEdit_EditContext;
 class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPEdit_EditContext();
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditContext();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 %extend Handle_STEPEdit_EditContext {
 	STEPEdit_EditContext* GetObject() {
 	return (STEPEdit_EditContext*)$self->Access();
+	}
+};
+%extend Handle_STEPEdit_EditContext {
+	~Handle_STEPEdit_EditContext() {
+	printf("Call custom destructor for instance of Handle_STEPEdit_EditContext\n");
 	}
 };
 
@@ -179,13 +185,16 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 		virtual		Standard_Boolean Load(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPEdit_EditContext();
 
 };
 %extend STEPEdit_EditContext {
 	Handle_STEPEdit_EditContext GetHandle() {
 	return *(Handle_STEPEdit_EditContext*) &$self;
+	}
+};
+%extend STEPEdit_EditContext {
+	~STEPEdit_EditContext() {
+	printf("Call custom destructor for instance of STEPEdit_EditContext\n");
 	}
 };
 
@@ -206,12 +215,15 @@ class STEPEdit_EditSDR : public IFSelect_Editor {
 		virtual		Standard_Boolean Load(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPEdit_EditSDR();
 
 };
 %extend STEPEdit_EditSDR {
 	Handle_STEPEdit_EditSDR GetHandle() {
 	return *(Handle_STEPEdit_EditSDR*) &$self;
+	}
+};
+%extend STEPEdit_EditSDR {
+	~STEPEdit_EditSDR() {
+	printf("Call custom destructor for instance of STEPEdit_EditSDR\n");
 	}
 };

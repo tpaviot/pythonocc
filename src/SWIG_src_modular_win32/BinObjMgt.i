@@ -109,8 +109,6 @@ typedef Standard_Byte * BinObjMgt_PByte;
 class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BinObjMgt_DataMapNodeOfRRelocationTable();
-		%feature("autodoc", "1");
 		Handle_BinObjMgt_DataMapNodeOfRRelocationTable();
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_DataMapNodeOfRRelocationTable(const Handle_BinObjMgt_DataMapNodeOfRRelocationTable &aHandle);
@@ -125,12 +123,15 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 	return (BinObjMgt_DataMapNodeOfRRelocationTable*)$self->Access();
 	}
 };
+%extend Handle_BinObjMgt_DataMapNodeOfRRelocationTable {
+	~Handle_BinObjMgt_DataMapNodeOfRRelocationTable() {
+	printf("Call custom destructor for instance of Handle_BinObjMgt_DataMapNodeOfRRelocationTable\n");
+	}
+};
 
 %nodefaultctor Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress;
 class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress();
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress();
 		%feature("autodoc", "1");
@@ -144,6 +145,11 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 %extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
 	BinObjMgt_SequenceNodeOfSequenceOfAddress* GetObject() {
 	return (BinObjMgt_SequenceNodeOfSequenceOfAddress*)$self->Access();
+	}
+};
+%extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
+	~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress() {
+	printf("Call custom destructor for instance of Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress\n");
 	}
 };
 
@@ -268,13 +274,16 @@ class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinObjMgt_DataMapNodeOfRRelocationTable();
 
 };
 %extend BinObjMgt_DataMapNodeOfRRelocationTable {
 	Handle_BinObjMgt_DataMapNodeOfRRelocationTable GetHandle() {
 	return *(Handle_BinObjMgt_DataMapNodeOfRRelocationTable*) &$self;
+	}
+};
+%extend BinObjMgt_DataMapNodeOfRRelocationTable {
+	~BinObjMgt_DataMapNodeOfRRelocationTable() {
+	printf("Call custom destructor for instance of BinObjMgt_DataMapNodeOfRRelocationTable\n");
 	}
 };
 
@@ -337,13 +346,16 @@ class BinObjMgt_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 		Standard_Address & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinObjMgt_SequenceNodeOfSequenceOfAddress();
 
 };
 %extend BinObjMgt_SequenceNodeOfSequenceOfAddress {
 	Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress GetHandle() {
 	return *(Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress*) &$self;
+	}
+};
+%extend BinObjMgt_SequenceNodeOfSequenceOfAddress {
+	~BinObjMgt_SequenceNodeOfSequenceOfAddress() {
+	printf("Call custom destructor for instance of BinObjMgt_SequenceNodeOfSequenceOfAddress\n");
 	}
 };
 

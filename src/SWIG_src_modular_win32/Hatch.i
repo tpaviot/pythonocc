@@ -108,8 +108,6 @@ enum Hatch_LineForm {
 class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Hatch_SequenceNodeOfSequenceOfLine();
-		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfLine();
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfLine(const Handle_Hatch_SequenceNodeOfSequenceOfLine &aHandle);
@@ -124,12 +122,15 @@ class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqN
 	return (Hatch_SequenceNodeOfSequenceOfLine*)$self->Access();
 	}
 };
+%extend Handle_Hatch_SequenceNodeOfSequenceOfLine {
+	~Handle_Hatch_SequenceNodeOfSequenceOfLine() {
+	printf("Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfLine\n");
+	}
+};
 
 %nodefaultctor Handle_Hatch_SequenceNodeOfSequenceOfParameter;
 class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Hatch_SequenceNodeOfSequenceOfParameter();
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfParameter();
 		%feature("autodoc", "1");
@@ -143,6 +144,11 @@ class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection
 %extend Handle_Hatch_SequenceNodeOfSequenceOfParameter {
 	Hatch_SequenceNodeOfSequenceOfParameter* GetObject() {
 	return (Hatch_SequenceNodeOfSequenceOfParameter*)$self->Access();
+	}
+};
+%extend Handle_Hatch_SequenceNodeOfSequenceOfParameter {
+	~Handle_Hatch_SequenceNodeOfSequenceOfParameter() {
+	printf("Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfParameter\n");
 	}
 };
 
@@ -205,13 +211,16 @@ class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 		Hatch_Line & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Hatch_SequenceNodeOfSequenceOfLine();
 
 };
 %extend Hatch_SequenceNodeOfSequenceOfLine {
 	Handle_Hatch_SequenceNodeOfSequenceOfLine GetHandle() {
 	return *(Handle_Hatch_SequenceNodeOfSequenceOfLine*) &$self;
+	}
+};
+%extend Hatch_SequenceNodeOfSequenceOfLine {
+	~Hatch_SequenceNodeOfSequenceOfLine() {
+	printf("Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfLine\n");
 	}
 };
 
@@ -352,12 +361,15 @@ class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {
 		Hatch_Parameter & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Hatch_SequenceNodeOfSequenceOfParameter();
 
 };
 %extend Hatch_SequenceNodeOfSequenceOfParameter {
 	Handle_Hatch_SequenceNodeOfSequenceOfParameter GetHandle() {
 	return *(Handle_Hatch_SequenceNodeOfSequenceOfParameter*) &$self;
+	}
+};
+%extend Hatch_SequenceNodeOfSequenceOfParameter {
+	~Hatch_SequenceNodeOfSequenceOfParameter() {
+	printf("Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfParameter\n");
 	}
 };

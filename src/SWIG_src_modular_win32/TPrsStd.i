@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_TPrsStd_Driver : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TPrsStd_Driver();
-		%feature("autodoc", "1");
 		Handle_TPrsStd_Driver();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_Driver(const Handle_TPrsStd_Driver &aHandle);
@@ -118,12 +116,15 @@ class Handle_TPrsStd_Driver : public Handle_MMgt_TShared {
 	return (TPrsStd_Driver*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_Driver {
+	~Handle_TPrsStd_Driver() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_Driver\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_GeometryDriver;
 class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_GeometryDriver();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_GeometryDriver();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_GeometryDriver*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_GeometryDriver {
+	~Handle_TPrsStd_GeometryDriver() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_GeometryDriver\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_ConstraintDriver;
 class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_ConstraintDriver();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_ConstraintDriver();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_ConstraintDriver*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_ConstraintDriver {
+	~Handle_TPrsStd_ConstraintDriver() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_ConstraintDriver\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_AISPresentation;
 class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_AISPresentation();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AISPresentation();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 	return (TPrsStd_AISPresentation*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_AISPresentation {
+	~Handle_TPrsStd_AISPresentation() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_AISPresentation\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_PointDriver;
 class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_PointDriver();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_PointDriver();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_PointDriver*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_PointDriver {
+	~Handle_TPrsStd_PointDriver() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_PointDriver\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_DriverTable;
 class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_DriverTable();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_DriverTable();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
 	return (TPrsStd_DriverTable*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_DriverTable {
+	~Handle_TPrsStd_DriverTable() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_DriverTable\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_AxisDriver;
 class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_AxisDriver();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AxisDriver();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_AxisDriver*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_AxisDriver {
+	~Handle_TPrsStd_AxisDriver() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_AxisDriver\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_AISViewer;
 class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_AISViewer();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AISViewer();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
 	return (TPrsStd_AISViewer*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_AISViewer {
+	~Handle_TPrsStd_AISViewer() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_AISViewer\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_PlaneDriver;
 class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_PlaneDriver();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_PlaneDriver();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_PlaneDriver*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_PlaneDriver {
+	~Handle_TPrsStd_PlaneDriver() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_PlaneDriver\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
 class Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollectio
 	return (TPrsStd_DataMapNodeOfDataMapOfGUIDDriver*)$self->Access();
 	}
 };
+%extend Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	~Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver\n");
+	}
+};
 
 %nodefaultctor Handle_TPrsStd_NamedShapeDriver;
 class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TPrsStd_NamedShapeDriver();
 		%feature("autodoc", "1");
 		Handle_TPrsStd_NamedShapeDriver();
 		%feature("autodoc", "1");
@@ -326,6 +354,11 @@ class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
 %extend Handle_TPrsStd_NamedShapeDriver {
 	TPrsStd_NamedShapeDriver* GetObject() {
 	return (TPrsStd_NamedShapeDriver*)$self->Access();
+	}
+};
+%extend Handle_TPrsStd_NamedShapeDriver {
+	~Handle_TPrsStd_NamedShapeDriver() {
+	printf("Call custom destructor for instance of Handle_TPrsStd_NamedShapeDriver\n");
 	}
 };
 
@@ -366,13 +399,16 @@ class TPrsStd_AISViewer : public TDF_Attribute {
 		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_AISViewer();
 
 };
 %extend TPrsStd_AISViewer {
 	Handle_TPrsStd_AISViewer GetHandle() {
 	return *(Handle_TPrsStd_AISViewer*) &$self;
+	}
+};
+%extend TPrsStd_AISViewer {
+	~TPrsStd_AISViewer() {
+	printf("Call custom destructor for instance of TPrsStd_AISViewer\n");
 	}
 };
 
@@ -390,6 +426,11 @@ class TPrsStd_Driver : public MMgt_TShared {
 	return *(Handle_TPrsStd_Driver*) &$self;
 	}
 };
+%extend TPrsStd_Driver {
+	~TPrsStd_Driver() {
+	printf("Call custom destructor for instance of TPrsStd_Driver\n");
+	}
+};
 
 %nodefaultctor TPrsStd_PlaneDriver;
 class TPrsStd_PlaneDriver : public TPrsStd_Driver {
@@ -398,13 +439,16 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 		TPrsStd_PlaneDriver();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_PlaneDriver();
 
 };
 %extend TPrsStd_PlaneDriver {
 	Handle_TPrsStd_PlaneDriver GetHandle() {
 	return *(Handle_TPrsStd_PlaneDriver*) &$self;
+	}
+};
+%extend TPrsStd_PlaneDriver {
+	~TPrsStd_PlaneDriver() {
+	printf("Call custom destructor for instance of TPrsStd_PlaneDriver\n");
 	}
 };
 
@@ -419,13 +463,16 @@ class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 		Handle_TPrsStd_Driver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver();
 
 };
 %extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
 	Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver GetHandle() {
 	return *(Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver*) &$self;
+	}
+};
+%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver() {
+	printf("Call custom destructor for instance of TPrsStd_DataMapNodeOfDataMapOfGUIDDriver\n");
 	}
 };
 
@@ -586,13 +633,16 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 		virtual		Standard_Boolean AfterUndo(const Handle_TDF_AttributeDelta &anAttDelta, const Standard_Boolean forceIt=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_AISPresentation();
 
 };
 %extend TPrsStd_AISPresentation {
 	Handle_TPrsStd_AISPresentation GetHandle() {
 	return *(Handle_TPrsStd_AISPresentation*) &$self;
+	}
+};
+%extend TPrsStd_AISPresentation {
+	~TPrsStd_AISPresentation() {
+	printf("Call custom destructor for instance of TPrsStd_AISPresentation\n");
 	}
 };
 
@@ -623,13 +673,16 @@ class TPrsStd_PointDriver : public TPrsStd_Driver {
 		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_PointDriver();
 
 };
 %extend TPrsStd_PointDriver {
 	Handle_TPrsStd_PointDriver GetHandle() {
 	return *(Handle_TPrsStd_PointDriver*) &$self;
+	}
+};
+%extend TPrsStd_PointDriver {
+	~TPrsStd_PointDriver() {
+	printf("Call custom destructor for instance of TPrsStd_PointDriver\n");
 	}
 };
 
@@ -642,13 +695,16 @@ class TPrsStd_AxisDriver : public TPrsStd_Driver {
 		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_AxisDriver();
 
 };
 %extend TPrsStd_AxisDriver {
 	Handle_TPrsStd_AxisDriver GetHandle() {
 	return *(Handle_TPrsStd_AxisDriver*) &$self;
+	}
+};
+%extend TPrsStd_AxisDriver {
+	~TPrsStd_AxisDriver() {
+	printf("Call custom destructor for instance of TPrsStd_AxisDriver\n");
 	}
 };
 
@@ -671,13 +727,16 @@ class TPrsStd_DriverTable : public MMgt_TShared {
 		void Clear();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_DriverTable();
 
 };
 %extend TPrsStd_DriverTable {
 	Handle_TPrsStd_DriverTable GetHandle() {
 	return *(Handle_TPrsStd_DriverTable*) &$self;
+	}
+};
+%extend TPrsStd_DriverTable {
+	~TPrsStd_DriverTable() {
+	printf("Call custom destructor for instance of TPrsStd_DriverTable\n");
 	}
 };
 
@@ -690,13 +749,16 @@ class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_GeometryDriver();
 
 };
 %extend TPrsStd_GeometryDriver {
 	Handle_TPrsStd_GeometryDriver GetHandle() {
 	return *(Handle_TPrsStd_GeometryDriver*) &$self;
+	}
+};
+%extend TPrsStd_GeometryDriver {
+	~TPrsStd_GeometryDriver() {
+	printf("Call custom destructor for instance of TPrsStd_GeometryDriver\n");
 	}
 };
 
@@ -739,13 +801,16 @@ class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
 		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_NamedShapeDriver();
 
 };
 %extend TPrsStd_NamedShapeDriver {
 	Handle_TPrsStd_NamedShapeDriver GetHandle() {
 	return *(Handle_TPrsStd_NamedShapeDriver*) &$self;
+	}
+};
+%extend TPrsStd_NamedShapeDriver {
+	~TPrsStd_NamedShapeDriver() {
+	printf("Call custom destructor for instance of TPrsStd_NamedShapeDriver\n");
 	}
 };
 
@@ -758,12 +823,15 @@ class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
 		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TPrsStd_ConstraintDriver();
 
 };
 %extend TPrsStd_ConstraintDriver {
 	Handle_TPrsStd_ConstraintDriver GetHandle() {
 	return *(Handle_TPrsStd_ConstraintDriver*) &$self;
+	}
+};
+%extend TPrsStd_ConstraintDriver {
+	~TPrsStd_ConstraintDriver() {
+	printf("Call custom destructor for instance of TPrsStd_ConstraintDriver\n");
 	}
 };

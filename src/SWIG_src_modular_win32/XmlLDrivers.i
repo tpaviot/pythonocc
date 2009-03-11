@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlLDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentStorageDriver(const Handle_XmlLDrivers_DocumentStorageDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 	return (XmlLDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlLDrivers_DocumentStorageDriver {
+	~Handle_XmlLDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_XmlLDrivers_DocumentStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
 class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TC
 	return (XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef*)$self->Access();
 	}
 };
+%extend Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
+	~Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef() {
+	printf("Call custom destructor for instance of Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");
+	}
+};
 
 %nodefaultctor Handle_XmlLDrivers_DocumentRetrievalDriver;
 class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
@@ -158,6 +162,11 @@ class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 %extend Handle_XmlLDrivers_DocumentRetrievalDriver {
 	XmlLDrivers_DocumentRetrievalDriver* GetObject() {
 	return (XmlLDrivers_DocumentRetrievalDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlLDrivers_DocumentRetrievalDriver {
+	~Handle_XmlLDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_XmlLDrivers_DocumentRetrievalDriver\n");
 	}
 };
 
@@ -178,13 +187,16 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlLDrivers_DocumentRetrievalDriver();
 
 };
 %extend XmlLDrivers_DocumentRetrievalDriver {
 	Handle_XmlLDrivers_DocumentRetrievalDriver GetHandle() {
 	return *(Handle_XmlLDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend XmlLDrivers_DocumentRetrievalDriver {
+	~XmlLDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of XmlLDrivers_DocumentRetrievalDriver\n");
 	}
 };
 
@@ -203,13 +215,16 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlLDrivers_DocumentStorageDriver();
 
 };
 %extend XmlLDrivers_DocumentStorageDriver {
 	Handle_XmlLDrivers_DocumentStorageDriver GetHandle() {
 	return *(Handle_XmlLDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend XmlLDrivers_DocumentStorageDriver {
+	~XmlLDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of XmlLDrivers_DocumentStorageDriver\n");
 	}
 };
 
@@ -272,13 +287,16 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 		XmlLDrivers_NamespaceDef & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
 
 };
 %extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
 	Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef GetHandle() {
 	return *(Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef*) &$self;
+	}
+};
+%extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
+	~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef() {
+	printf("Call custom destructor for instance of XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");
 	}
 };
 

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation();
-		%feature("autodoc", "1");
 		Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation(const Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation &aHandle);
@@ -118,12 +116,15 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation : public Handle_TCollec
 	return (ExprIntrp_StackNodeOfStackOfGeneralRelation*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation {
+	~Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_Generator;
 class Handle_ExprIntrp_Generator : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_Generator();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_Generator();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_ExprIntrp_Generator : public Handle_MMgt_TShared {
 	return (ExprIntrp_Generator*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_Generator {
+	~Handle_ExprIntrp_Generator() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_Generator\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_GenExp;
 class Handle_ExprIntrp_GenExp : public Handle_ExprIntrp_Generator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_GenExp();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_GenExp();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_ExprIntrp_GenExp : public Handle_ExprIntrp_Generator {
 	return (ExprIntrp_GenExp*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_GenExp {
+	~Handle_ExprIntrp_GenExp() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_GenExp\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_SyntaxError;
 class Handle_ExprIntrp_SyntaxError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_SyntaxError();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_SyntaxError();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_ExprIntrp_SyntaxError : public Handle_Standard_Failure {
 	return (ExprIntrp_SyntaxError*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_SyntaxError {
+	~Handle_ExprIntrp_SyntaxError() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_SyntaxError\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction;
 class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollec
 	return (ExprIntrp_StackNodeOfStackOfGeneralFunction*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction {
+	~Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_GenFct;
 class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_GenFct();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_GenFct();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
 	return (ExprIntrp_GenFct*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_GenFct {
+	~Handle_ExprIntrp_GenFct() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_GenFct\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression;
 class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TColl
 	return (ExprIntrp_StackNodeOfStackOfGeneralExpression*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	~Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
 class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCo
 	return (ExprIntrp_SequenceNodeOfSequenceOfNamedFunction*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
+	~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfNames;
 class Handle_ExprIntrp_StackNodeOfStackOfNames : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_StackNodeOfStackOfNames();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_StackNodeOfStackOfNames();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_ExprIntrp_StackNodeOfStackOfNames : public Handle_TCollection_MapNo
 	return (ExprIntrp_StackNodeOfStackOfNames*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_StackNodeOfStackOfNames {
+	~Handle_ExprIntrp_StackNodeOfStackOfNames() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfNames\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_GenRel;
 class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_GenRel();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_GenRel();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
 	return (ExprIntrp_GenRel*)$self->Access();
 	}
 };
+%extend Handle_ExprIntrp_GenRel {
+	~Handle_ExprIntrp_GenRel() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_GenRel\n");
+	}
+};
 
 %nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
 class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression();
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression();
 		%feature("autodoc", "1");
@@ -326,6 +354,11 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public Handle_T
 %extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
 	ExprIntrp_SequenceNodeOfSequenceOfNamedExpression* GetObject() {
 	return (ExprIntrp_SequenceNodeOfSequenceOfNamedExpression*)$self->Access();
+	}
+};
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression() {
+	printf("Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression\n");
 	}
 };
 
@@ -346,13 +379,16 @@ class ExprIntrp_Generator : public MMgt_TShared {
 		Handle_Expr_NamedFunction GetFunction(const TCollection_AsciiString &name) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_Generator();
 
 };
 %extend ExprIntrp_Generator {
 	Handle_ExprIntrp_Generator GetHandle() {
 	return *(Handle_ExprIntrp_Generator*) &$self;
+	}
+};
+%extend ExprIntrp_Generator {
+	~ExprIntrp_Generator() {
+	printf("Call custom destructor for instance of ExprIntrp_Generator\n");
 	}
 };
 
@@ -365,13 +401,16 @@ class ExprIntrp_GenFct : public ExprIntrp_Generator {
 		void Process(const TCollection_AsciiString &str);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_GenFct();
 
 };
 %extend ExprIntrp_GenFct {
 	Handle_ExprIntrp_GenFct GetHandle() {
 	return *(Handle_ExprIntrp_GenFct*) &$self;
+	}
+};
+%extend ExprIntrp_GenFct {
+	~ExprIntrp_GenFct() {
+	printf("Call custom destructor for instance of ExprIntrp_GenFct\n");
 	}
 };
 
@@ -384,13 +423,16 @@ class ExprIntrp_StackNodeOfStackOfNames : public TCollection_MapNode {
 		TCollection_AsciiString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_StackNodeOfStackOfNames();
 
 };
 %extend ExprIntrp_StackNodeOfStackOfNames {
 	Handle_ExprIntrp_StackNodeOfStackOfNames GetHandle() {
 	return *(Handle_ExprIntrp_StackNodeOfStackOfNames*) &$self;
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfNames {
+	~ExprIntrp_StackNodeOfStackOfNames() {
+	printf("Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfNames\n");
 	}
 };
 
@@ -485,13 +527,16 @@ class ExprIntrp_SyntaxError : public Standard_Failure {
 		Handle_ExprIntrp_SyntaxError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_SyntaxError();
 
 };
 %extend ExprIntrp_SyntaxError {
 	Handle_ExprIntrp_SyntaxError GetHandle() {
 	return *(Handle_ExprIntrp_SyntaxError*) &$self;
+	}
+};
+%extend ExprIntrp_SyntaxError {
+	~ExprIntrp_SyntaxError() {
+	printf("Call custom destructor for instance of ExprIntrp_SyntaxError\n");
 	}
 };
 
@@ -504,13 +549,16 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_Seq
 		Handle_Expr_NamedExpression & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_SequenceNodeOfSequenceOfNamedExpression();
 
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
 	Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression GetHandle() {
 	return *(Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression*) &$self;
+	}
+};
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	~ExprIntrp_SequenceNodeOfSequenceOfNamedExpression() {
+	printf("Call custom destructor for instance of ExprIntrp_SequenceNodeOfSequenceOfNamedExpression\n");
 	}
 };
 
@@ -557,13 +605,16 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 		Handle_Expr_GeneralRelation Relation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_GenRel();
 
 };
 %extend ExprIntrp_GenRel {
 	Handle_ExprIntrp_GenRel GetHandle() {
 	return *(Handle_ExprIntrp_GenRel*) &$self;
+	}
+};
+%extend ExprIntrp_GenRel {
+	~ExprIntrp_GenRel() {
+	printf("Call custom destructor for instance of ExprIntrp_GenRel\n");
 	}
 };
 
@@ -616,13 +667,16 @@ class ExprIntrp_StackNodeOfStackOfGeneralRelation : public TCollection_MapNode {
 		Handle_Expr_GeneralRelation & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_StackNodeOfStackOfGeneralRelation();
 
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralRelation {
 	Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation GetHandle() {
 	return *(Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation*) &$self;
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralRelation {
+	~ExprIntrp_StackNodeOfStackOfGeneralRelation() {
+	printf("Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralRelation\n");
 	}
 };
 
@@ -661,13 +715,16 @@ class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode
 		Handle_Expr_GeneralExpression & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_StackNodeOfStackOfGeneralExpression();
 
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
 	Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression GetHandle() {
 	return *(Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression*) &$self;
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	~ExprIntrp_StackNodeOfStackOfGeneralExpression() {
+	printf("Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralExpression\n");
 	}
 };
 
@@ -730,13 +787,16 @@ class ExprIntrp_StackNodeOfStackOfGeneralFunction : public TCollection_MapNode {
 		Handle_Expr_GeneralFunction & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_StackNodeOfStackOfGeneralFunction();
 
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralFunction {
 	Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction GetHandle() {
 	return *(Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction*) &$self;
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralFunction {
+	~ExprIntrp_StackNodeOfStackOfGeneralFunction() {
+	printf("Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralFunction\n");
 	}
 };
 
@@ -801,13 +861,16 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNo
 		Handle_Expr_NamedFunction & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_SequenceNodeOfSequenceOfNamedFunction();
 
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
 	Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction GetHandle() {
 	return *(Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction*) &$self;
+	}
+};
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
+	~ExprIntrp_SequenceNodeOfSequenceOfNamedFunction() {
+	printf("Call custom destructor for instance of ExprIntrp_SequenceNodeOfSequenceOfNamedFunction\n");
 	}
 };
 
@@ -844,13 +907,16 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 		Handle_Expr_GeneralExpression Expression() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ExprIntrp_GenExp();
 
 };
 %extend ExprIntrp_GenExp {
 	Handle_ExprIntrp_GenExp GetHandle() {
 	return *(Handle_ExprIntrp_GenExp*) &$self;
+	}
+};
+%extend ExprIntrp_GenExp {
+	~ExprIntrp_GenExp() {
+	printf("Call custom destructor for instance of ExprIntrp_GenExp\n");
 	}
 };
 

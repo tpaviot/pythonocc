@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ShapeAlgo_ToolContainer();
-		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer();
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer(const Handle_ShapeAlgo_ToolContainer &aHandle);
@@ -118,12 +116,15 @@ class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 	return (ShapeAlgo_ToolContainer*)$self->Access();
 	}
 };
+%extend Handle_ShapeAlgo_ToolContainer {
+	~Handle_ShapeAlgo_ToolContainer() {
+	printf("Call custom destructor for instance of Handle_ShapeAlgo_ToolContainer\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeAlgo_AlgoContainer;
 class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeAlgo_AlgoContainer();
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_AlgoContainer();
 		%feature("autodoc", "1");
@@ -139,6 +140,11 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	return (ShapeAlgo_AlgoContainer*)$self->Access();
 	}
 };
+%extend Handle_ShapeAlgo_AlgoContainer {
+	~Handle_ShapeAlgo_AlgoContainer() {
+	printf("Call custom destructor for instance of Handle_ShapeAlgo_AlgoContainer\n");
+	}
+};
 
 %nodefaultctor ShapeAlgo_ToolContainer;
 class ShapeAlgo_ToolContainer : public MMgt_TShared {
@@ -151,13 +157,16 @@ class ShapeAlgo_ToolContainer : public MMgt_TShared {
 		virtual		Handle_ShapeFix_EdgeProjAux EdgeProjAux() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAlgo_ToolContainer();
 
 };
 %extend ShapeAlgo_ToolContainer {
 	Handle_ShapeAlgo_ToolContainer GetHandle() {
 	return *(Handle_ShapeAlgo_ToolContainer*) &$self;
+	}
+};
+%extend ShapeAlgo_ToolContainer {
+	~ShapeAlgo_ToolContainer() {
+	printf("Call custom destructor for instance of ShapeAlgo_ToolContainer\n");
 	}
 };
 
@@ -196,12 +205,15 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 		virtual		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAlgo_AlgoContainer();
 
 };
 %extend ShapeAlgo_AlgoContainer {
 	Handle_ShapeAlgo_AlgoContainer GetHandle() {
 	return *(Handle_ShapeAlgo_AlgoContainer*) &$self;
+	}
+};
+%extend ShapeAlgo_AlgoContainer {
+	~ShapeAlgo_AlgoContainer() {
+	printf("Call custom destructor for instance of ShapeAlgo_AlgoContainer\n");
 	}
 };

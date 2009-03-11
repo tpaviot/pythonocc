@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TopBas_ListNodeOfListOfTestInterference();
-		%feature("autodoc", "1");
 		Handle_TopBas_ListNodeOfListOfTestInterference();
 		%feature("autodoc", "1");
 		Handle_TopBas_ListNodeOfListOfTestInterference(const Handle_TopBas_ListNodeOfListOfTestInterference &aHandle);
@@ -116,6 +114,11 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 %extend Handle_TopBas_ListNodeOfListOfTestInterference {
 	TopBas_ListNodeOfListOfTestInterference* GetObject() {
 	return (TopBas_ListNodeOfListOfTestInterference*)$self->Access();
+	}
+};
+%extend Handle_TopBas_ListNodeOfListOfTestInterference {
+	~Handle_TopBas_ListNodeOfListOfTestInterference() {
+	printf("Call custom destructor for instance of Handle_TopBas_ListNodeOfListOfTestInterference\n");
 	}
 };
 
@@ -174,13 +177,16 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 		TopBas_TestInterference & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopBas_ListNodeOfListOfTestInterference();
 
 };
 %extend TopBas_ListNodeOfListOfTestInterference {
 	Handle_TopBas_ListNodeOfListOfTestInterference GetHandle() {
 	return *(Handle_TopBas_ListNodeOfListOfTestInterference*) &$self;
+	}
+};
+%extend TopBas_ListNodeOfListOfTestInterference {
+	~TopBas_ListNodeOfListOfTestInterference() {
+	printf("Call custom destructor for instance of TopBas_ListNodeOfListOfTestInterference\n");
 	}
 };
 

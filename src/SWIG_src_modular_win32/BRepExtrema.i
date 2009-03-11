@@ -108,8 +108,6 @@ enum BRepExtrema_SupportType {
 class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution();
-		%feature("autodoc", "1");
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution();
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
@@ -124,12 +122,15 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 	return (BRepExtrema_SequenceNodeOfSeqOfSolution*)$self->Access();
 	}
 };
+%extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
+	~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution() {
+	printf("Call custom destructor for instance of Handle_BRepExtrema_SequenceNodeOfSeqOfSolution\n");
+	}
+};
 
 %nodefaultctor Handle_BRepExtrema_UnCompatibleShape;
 class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepExtrema_UnCompatibleShape();
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_UnCompatibleShape();
 		%feature("autodoc", "1");
@@ -143,6 +144,11 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 %extend Handle_BRepExtrema_UnCompatibleShape {
 	BRepExtrema_UnCompatibleShape* GetObject() {
 	return (BRepExtrema_UnCompatibleShape*)$self->Access();
+	}
+};
+%extend Handle_BRepExtrema_UnCompatibleShape {
+	~Handle_BRepExtrema_UnCompatibleShape() {
+	printf("Call custom destructor for instance of Handle_BRepExtrema_UnCompatibleShape\n");
 	}
 };
 
@@ -297,13 +303,16 @@ class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 		BRepExtrema_SolutionElem & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepExtrema_SequenceNodeOfSeqOfSolution();
 
 };
 %extend BRepExtrema_SequenceNodeOfSeqOfSolution {
 	Handle_BRepExtrema_SequenceNodeOfSeqOfSolution GetHandle() {
 	return *(Handle_BRepExtrema_SequenceNodeOfSeqOfSolution*) &$self;
+	}
+};
+%extend BRepExtrema_SequenceNodeOfSeqOfSolution {
+	~BRepExtrema_SequenceNodeOfSeqOfSolution() {
+	printf("Call custom destructor for instance of BRepExtrema_SequenceNodeOfSeqOfSolution\n");
 	}
 };
 
@@ -416,13 +425,16 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 		Handle_BRepExtrema_UnCompatibleShape NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepExtrema_UnCompatibleShape();
 
 };
 %extend BRepExtrema_UnCompatibleShape {
 	Handle_BRepExtrema_UnCompatibleShape GetHandle() {
 	return *(Handle_BRepExtrema_UnCompatibleShape*) &$self;
+	}
+};
+%extend BRepExtrema_UnCompatibleShape {
+	~BRepExtrema_UnCompatibleShape() {
+	printf("Call custom destructor for instance of BRepExtrema_UnCompatibleShape\n");
 	}
 };
 

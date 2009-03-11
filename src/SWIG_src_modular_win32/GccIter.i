@@ -131,8 +131,6 @@ enum GccIter_Type3 {
 class Handle_GccIter_IsParallel : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GccIter_IsParallel();
-		%feature("autodoc", "1");
 		Handle_GccIter_IsParallel();
 		%feature("autodoc", "1");
 		Handle_GccIter_IsParallel(const Handle_GccIter_IsParallel &aHandle);
@@ -145,6 +143,11 @@ class Handle_GccIter_IsParallel : public Handle_Standard_DomainError {
 %extend Handle_GccIter_IsParallel {
 	GccIter_IsParallel* GetObject() {
 	return (GccIter_IsParallel*)$self->Access();
+	}
+};
+%extend Handle_GccIter_IsParallel {
+	~Handle_GccIter_IsParallel() {
+	printf("Call custom destructor for instance of Handle_GccIter_IsParallel\n");
 	}
 };
 
@@ -163,12 +166,15 @@ class GccIter_IsParallel : public Standard_DomainError {
 		Handle_GccIter_IsParallel NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GccIter_IsParallel();
 
 };
 %extend GccIter_IsParallel {
 	Handle_GccIter_IsParallel GetHandle() {
 	return *(Handle_GccIter_IsParallel*) &$self;
+	}
+};
+%extend GccIter_IsParallel {
+	~GccIter_IsParallel() {
+	printf("Call custom destructor for instance of GccIter_IsParallel\n");
 	}
 };

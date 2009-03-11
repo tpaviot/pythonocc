@@ -113,8 +113,6 @@ enum Convert_ParameterisationType {
 class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles();
-		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles();
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles &aHandle);
@@ -129,12 +127,15 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles : public Handle_TColl
 	return (Convert_SequenceNodeOfSequenceOfArray1OfPoles*)$self->Access();
 	}
 };
+%extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles {
+	~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles() {
+	printf("Call custom destructor for instance of Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles\n");
+	}
+};
 
 %nodefaultctor Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d;
 class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d();
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d();
 		%feature("autodoc", "1");
@@ -148,6 +149,11 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
 	Convert_SequenceNodeOfSequenceOfArray1OfPoles2d* GetObject() {
 	return (Convert_SequenceNodeOfSequenceOfArray1OfPoles2d*)$self->Access();
+	}
+};
+%extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
+	~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d() {
+	printf("Call custom destructor for instance of Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");
 	}
 };
 
@@ -498,13 +504,16 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode
 		Handle_TColgp_HArray1OfPnt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Convert_SequenceNodeOfSequenceOfArray1OfPoles();
 
 };
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles {
 	Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles GetHandle() {
 	return *(Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles*) &$self;
+	}
+};
+%extend Convert_SequenceNodeOfSequenceOfArray1OfPoles {
+	~Convert_SequenceNodeOfSequenceOfArray1OfPoles() {
+	printf("Call custom destructor for instance of Convert_SequenceNodeOfSequenceOfArray1OfPoles\n");
 	}
 };
 
@@ -553,12 +562,15 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public TCollection_SeqNo
 		Handle_TColgp_HArray1OfPnt2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Convert_SequenceNodeOfSequenceOfArray1OfPoles2d();
 
 };
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
 	Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d GetHandle() {
 	return *(Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d*) &$self;
+	}
+};
+%extend Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
+	~Convert_SequenceNodeOfSequenceOfArray1OfPoles2d() {
+	printf("Call custom destructor for instance of Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");
 	}
 };

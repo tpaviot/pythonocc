@@ -111,8 +111,6 @@ enum BiTgte_ContactType {
 class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BiTgte_HCurveOnEdge();
-		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnEdge();
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnEdge(const Handle_BiTgte_HCurveOnEdge &aHandle);
@@ -127,12 +125,15 @@ class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 	return (BiTgte_HCurveOnEdge*)$self->Access();
 	}
 };
+%extend Handle_BiTgte_HCurveOnEdge {
+	~Handle_BiTgte_HCurveOnEdge() {
+	printf("Call custom destructor for instance of Handle_BiTgte_HCurveOnEdge\n");
+	}
+};
 
 %nodefaultctor Handle_BiTgte_HCurveOnVertex;
 class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BiTgte_HCurveOnVertex();
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnVertex();
 		%feature("autodoc", "1");
@@ -148,12 +149,15 @@ class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 	return (BiTgte_HCurveOnVertex*)$self->Access();
 	}
 };
+%extend Handle_BiTgte_HCurveOnVertex {
+	~Handle_BiTgte_HCurveOnVertex() {
+	printf("Call custom destructor for instance of Handle_BiTgte_HCurveOnVertex\n");
+	}
+};
 
 %nodefaultctor Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox;
 class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox();
 		%feature("autodoc", "1");
 		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox();
 		%feature("autodoc", "1");
@@ -167,6 +171,11 @@ class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_M
 %extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	BiTgte_DataMapNodeOfDataMapOfShapeBox* GetObject() {
 	return (BiTgte_DataMapNodeOfDataMapOfShapeBox*)$self->Access();
+	}
+};
+%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	~Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox() {
+	printf("Call custom destructor for instance of Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox\n");
 	}
 };
 
@@ -257,13 +266,16 @@ class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 		BiTgte_CurveOnEdge & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BiTgte_HCurveOnEdge();
 
 };
 %extend BiTgte_HCurveOnEdge {
 	Handle_BiTgte_HCurveOnEdge GetHandle() {
 	return *(Handle_BiTgte_HCurveOnEdge*) &$self;
+	}
+};
+%extend BiTgte_HCurveOnEdge {
+	~BiTgte_HCurveOnEdge() {
+	printf("Call custom destructor for instance of BiTgte_HCurveOnEdge\n");
 	}
 };
 
@@ -278,13 +290,16 @@ class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
 		Bnd_Box & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BiTgte_DataMapNodeOfDataMapOfShapeBox();
 
 };
 %extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox GetHandle() {
 	return *(Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox*) &$self;
+	}
+};
+%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	~BiTgte_DataMapNodeOfDataMapOfShapeBox() {
+	printf("Call custom destructor for instance of BiTgte_DataMapNodeOfDataMapOfShapeBox\n");
 	}
 };
 
@@ -305,13 +320,16 @@ class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
 		BiTgte_CurveOnVertex & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BiTgte_HCurveOnVertex();
 
 };
 %extend BiTgte_HCurveOnVertex {
 	Handle_BiTgte_HCurveOnVertex GetHandle() {
 	return *(Handle_BiTgte_HCurveOnVertex*) &$self;
+	}
+};
+%extend BiTgte_HCurveOnVertex {
+	~BiTgte_HCurveOnVertex() {
+	printf("Call custom destructor for instance of BiTgte_HCurveOnVertex\n");
 	}
 };
 

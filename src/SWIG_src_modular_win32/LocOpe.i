@@ -108,8 +108,6 @@ enum LocOpe_Operation {
 class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_LocOpe_ProjectedWires();
-		%feature("autodoc", "1");
 		Handle_LocOpe_ProjectedWires();
 		%feature("autodoc", "1");
 		Handle_LocOpe_ProjectedWires(const Handle_LocOpe_ProjectedWires &aHandle);
@@ -124,12 +122,15 @@ class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
 	return (LocOpe_ProjectedWires*)$self->Access();
 	}
 };
+%extend Handle_LocOpe_ProjectedWires {
+	~Handle_LocOpe_ProjectedWires() {
+	printf("Call custom destructor for instance of Handle_LocOpe_ProjectedWires\n");
+	}
+};
 
 %nodefaultctor Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt;
 class Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt();
 		%feature("autodoc", "1");
 		Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt();
 		%feature("autodoc", "1");
@@ -145,12 +146,15 @@ class Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt : public Handle_TCollection_M
 	return (LocOpe_DataMapNodeOfDataMapOfShapePnt*)$self->Access();
 	}
 };
+%extend Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	~Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt() {
+	printf("Call custom destructor for instance of Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt\n");
+	}
+};
 
 %nodefaultctor Handle_LocOpe_HBuilder;
 class Handle_LocOpe_HBuilder : public Handle_TopOpeBRepBuild_HBuilder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LocOpe_HBuilder();
 		%feature("autodoc", "1");
 		Handle_LocOpe_HBuilder();
 		%feature("autodoc", "1");
@@ -166,12 +170,15 @@ class Handle_LocOpe_HBuilder : public Handle_TopOpeBRepBuild_HBuilder {
 	return (LocOpe_HBuilder*)$self->Access();
 	}
 };
+%extend Handle_LocOpe_HBuilder {
+	~Handle_LocOpe_HBuilder() {
+	printf("Call custom destructor for instance of Handle_LocOpe_HBuilder\n");
+	}
+};
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfPntFace;
 class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LocOpe_SequenceNodeOfSequenceOfPntFace();
 		%feature("autodoc", "1");
 		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace();
 		%feature("autodoc", "1");
@@ -187,12 +194,15 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_
 	return (LocOpe_SequenceNodeOfSequenceOfPntFace*)$self->Access();
 	}
 };
+%extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
+	~Handle_LocOpe_SequenceNodeOfSequenceOfPntFace() {
+	printf("Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfPntFace\n");
+	}
+};
 
 %nodefaultctor Handle_LocOpe_GeneratedShape;
 class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LocOpe_GeneratedShape();
 		%feature("autodoc", "1");
 		Handle_LocOpe_GeneratedShape();
 		%feature("autodoc", "1");
@@ -208,12 +218,15 @@ class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
 	return (LocOpe_GeneratedShape*)$self->Access();
 	}
 };
+%extend Handle_LocOpe_GeneratedShape {
+	~Handle_LocOpe_GeneratedShape() {
+	printf("Call custom destructor for instance of Handle_LocOpe_GeneratedShape\n");
+	}
+};
 
 %nodefaultctor Handle_LocOpe_GluedShape;
 class Handle_LocOpe_GluedShape : public Handle_LocOpe_GeneratedShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LocOpe_GluedShape();
 		%feature("autodoc", "1");
 		Handle_LocOpe_GluedShape();
 		%feature("autodoc", "1");
@@ -229,12 +242,15 @@ class Handle_LocOpe_GluedShape : public Handle_LocOpe_GeneratedShape {
 	return (LocOpe_GluedShape*)$self->Access();
 	}
 };
+%extend Handle_LocOpe_GluedShape {
+	~Handle_LocOpe_GluedShape() {
+	printf("Call custom destructor for instance of Handle_LocOpe_GluedShape\n");
+	}
+};
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfLin;
 class Handle_LocOpe_SequenceNodeOfSequenceOfLin : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LocOpe_SequenceNodeOfSequenceOfLin();
 		%feature("autodoc", "1");
 		Handle_LocOpe_SequenceNodeOfSequenceOfLin();
 		%feature("autodoc", "1");
@@ -250,12 +266,15 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfLin : public Handle_TCollection_SeqN
 	return (LocOpe_SequenceNodeOfSequenceOfLin*)$self->Access();
 	}
 };
+%extend Handle_LocOpe_SequenceNodeOfSequenceOfLin {
+	~Handle_LocOpe_SequenceNodeOfSequenceOfLin() {
+	printf("Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfLin\n");
+	}
+};
 
 %nodefaultctor Handle_LocOpe_WiresOnShape;
 class Handle_LocOpe_WiresOnShape : public Handle_LocOpe_ProjectedWires {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LocOpe_WiresOnShape();
 		%feature("autodoc", "1");
 		Handle_LocOpe_WiresOnShape();
 		%feature("autodoc", "1");
@@ -271,12 +290,15 @@ class Handle_LocOpe_WiresOnShape : public Handle_LocOpe_ProjectedWires {
 	return (LocOpe_WiresOnShape*)$self->Access();
 	}
 };
+%extend Handle_LocOpe_WiresOnShape {
+	~Handle_LocOpe_WiresOnShape() {
+	printf("Call custom destructor for instance of Handle_LocOpe_WiresOnShape\n");
+	}
+};
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfCirc;
 class Handle_LocOpe_SequenceNodeOfSequenceOfCirc : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LocOpe_SequenceNodeOfSequenceOfCirc();
 		%feature("autodoc", "1");
 		Handle_LocOpe_SequenceNodeOfSequenceOfCirc();
 		%feature("autodoc", "1");
@@ -290,6 +312,11 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfCirc : public Handle_TCollection_Seq
 %extend Handle_LocOpe_SequenceNodeOfSequenceOfCirc {
 	LocOpe_SequenceNodeOfSequenceOfCirc* GetObject() {
 	return (LocOpe_SequenceNodeOfSequenceOfCirc*)$self->Access();
+	}
+};
+%extend Handle_LocOpe_SequenceNodeOfSequenceOfCirc {
+	~Handle_LocOpe_SequenceNodeOfSequenceOfCirc() {
+	printf("Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfCirc\n");
 	}
 };
 
@@ -473,6 +500,11 @@ class LocOpe_GeneratedShape : public MMgt_TShared {
 	return *(Handle_LocOpe_GeneratedShape*) &$self;
 	}
 };
+%extend LocOpe_GeneratedShape {
+	~LocOpe_GeneratedShape() {
+	printf("Call custom destructor for instance of LocOpe_GeneratedShape\n");
+	}
+};
 
 %nodefaultctor LocOpe_ProjectedWires;
 class LocOpe_ProjectedWires : public MMgt_TShared {
@@ -502,6 +534,11 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 	return *(Handle_LocOpe_ProjectedWires*) &$self;
 	}
 };
+%extend LocOpe_ProjectedWires {
+	~LocOpe_ProjectedWires() {
+	printf("Call custom destructor for instance of LocOpe_ProjectedWires\n");
+	}
+};
 
 %nodefaultctor LocOpe_WiresOnShape;
 class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
@@ -520,13 +557,16 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 		void BindAll();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		virtual		~LocOpe_WiresOnShape();
 
 };
 %extend LocOpe_WiresOnShape {
 	Handle_LocOpe_WiresOnShape GetHandle() {
 	return *(Handle_LocOpe_WiresOnShape*) &$self;
+	}
+};
+%extend LocOpe_WiresOnShape {
+	~LocOpe_WiresOnShape() {
+	printf("Call custom destructor for instance of LocOpe_WiresOnShape\n");
 	}
 };
 
@@ -569,13 +609,16 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 		gp_Circ & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LocOpe_SequenceNodeOfSequenceOfCirc();
 
 };
 %extend LocOpe_SequenceNodeOfSequenceOfCirc {
 	Handle_LocOpe_SequenceNodeOfSequenceOfCirc GetHandle() {
 	return *(Handle_LocOpe_SequenceNodeOfSequenceOfCirc*) &$self;
+	}
+};
+%extend LocOpe_SequenceNodeOfSequenceOfCirc {
+	~LocOpe_SequenceNodeOfSequenceOfCirc() {
+	printf("Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfCirc\n");
 	}
 };
 
@@ -618,13 +661,16 @@ class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 		virtual		const TopTools_ListOfShape & OrientedFaces();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LocOpe_GluedShape();
 
 };
 %extend LocOpe_GluedShape {
 	Handle_LocOpe_GluedShape GetHandle() {
 	return *(Handle_LocOpe_GluedShape*) &$self;
+	}
+};
+%extend LocOpe_GluedShape {
+	~LocOpe_GluedShape() {
+	printf("Call custom destructor for instance of LocOpe_GluedShape\n");
 	}
 };
 
@@ -639,13 +685,16 @@ class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
 		gp_Pnt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LocOpe_DataMapNodeOfDataMapOfShapePnt();
 
 };
 %extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
 	Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt GetHandle() {
 	return *(Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt*) &$self;
+	}
+};
+%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	~LocOpe_DataMapNodeOfDataMapOfShapePnt() {
+	printf("Call custom destructor for instance of LocOpe_DataMapNodeOfDataMapOfShapePnt\n");
 	}
 };
 
@@ -688,13 +737,16 @@ class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 		gp_Lin & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LocOpe_SequenceNodeOfSequenceOfLin();
 
 };
 %extend LocOpe_SequenceNodeOfSequenceOfLin {
 	Handle_LocOpe_SequenceNodeOfSequenceOfLin GetHandle() {
 	return *(Handle_LocOpe_SequenceNodeOfSequenceOfLin*) &$self;
+	}
+};
+%extend LocOpe_SequenceNodeOfSequenceOfLin {
+	~LocOpe_SequenceNodeOfSequenceOfLin() {
+	printf("Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfLin\n");
 	}
 };
 
@@ -709,13 +761,16 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 		void Classify(const Standard_Boolean B);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LocOpe_HBuilder();
 
 };
 %extend LocOpe_HBuilder {
 	Handle_LocOpe_HBuilder GetHandle() {
 	return *(Handle_LocOpe_HBuilder*) &$self;
+	}
+};
+%extend LocOpe_HBuilder {
+	~LocOpe_HBuilder() {
+	printf("Call custom destructor for instance of LocOpe_HBuilder\n");
 	}
 };
 
@@ -1182,12 +1237,15 @@ class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
 		LocOpe_PntFace & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LocOpe_SequenceNodeOfSequenceOfPntFace();
 
 };
 %extend LocOpe_SequenceNodeOfSequenceOfPntFace {
 	Handle_LocOpe_SequenceNodeOfSequenceOfPntFace GetHandle() {
 	return *(Handle_LocOpe_SequenceNodeOfSequenceOfPntFace*) &$self;
+	}
+};
+%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
+	~LocOpe_SequenceNodeOfSequenceOfPntFace() {
+	printf("Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfPntFace\n");
 	}
 };

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD();
-		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD &aHandle);
@@ -118,12 +116,15 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public Handle_TColle
 	return (STEPCAFControl_DataMapNodeOfDataMapOfShapePD*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
+	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public Handle_TColl
 	return (STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
+	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_ActorWrite;
 class Handle_STEPCAFControl_ActorWrite : public Handle_STEPControl_ActorWrite {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_ActorWrite();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ActorWrite();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_STEPCAFControl_ActorWrite : public Handle_STEPControl_ActorWrite {
 	return (STEPCAFControl_ActorWrite*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_ActorWrite {
+	~Handle_STEPCAFControl_ActorWrite() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_ActorWrite\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public Handle_
 	return (STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
+	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile;
 class Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile : public Handle_MM
 	return (STEPCAFControl_StackItemOfDictionaryOfExternFile*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile {
+	~Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public Handle_T
 	return (STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {
+	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_ExternFile;
 class Handle_STEPCAFControl_ExternFile : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_ExternFile();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ExternFile();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_STEPCAFControl_ExternFile : public Handle_MMgt_TShared {
 	return (STEPCAFControl_ExternFile*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_ExternFile {
+	~Handle_STEPCAFControl_ExternFile() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_ExternFile\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_DictionaryOfExternFile;
 class Handle_STEPCAFControl_DictionaryOfExternFile : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DictionaryOfExternFile();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DictionaryOfExternFile();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_STEPCAFControl_DictionaryOfExternFile : public Handle_MMgt_TShared 
 	return (STEPCAFControl_DictionaryOfExternFile*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_DictionaryOfExternFile {
+	~Handle_STEPCAFControl_DictionaryOfExternFile() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_DictionaryOfExternFile\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public Handl
 	return (STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
+	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public Handle
 	return (STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient {
+	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_Controller;
 class Handle_STEPCAFControl_Controller : public Handle_STEPControl_Controller {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_Controller();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_Controller();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_STEPCAFControl_Controller : public Handle_STEPControl_Controller {
 	return (STEPCAFControl_Controller*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_Controller {
+	~Handle_STEPCAFControl_Controller() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_Controller\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public Handle_TCo
 	return (STEPCAFControl_DataMapNodeOfDataMapOfLabelShape*)$self->Access();
 	}
 };
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
+	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape\n");
+	}
+};
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel();
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel();
 		%feature("autodoc", "1");
@@ -368,6 +402,11 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCo
 %extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
 	STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel* GetObject() {
 	return (STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel*)$self->Access();
+	}
+};
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
+	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel() {
+	printf("Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel\n");
 	}
 };
 
@@ -450,13 +489,16 @@ class STEPCAFControl_ExternFile : public MMgt_TShared {
 		TDF_Label GetLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_ExternFile();
 
 };
 %extend STEPCAFControl_ExternFile {
 	Handle_STEPCAFControl_ExternFile GetHandle() {
 	return *(Handle_STEPCAFControl_ExternFile*) &$self;
+	}
+};
+%extend STEPCAFControl_ExternFile {
+	~STEPCAFControl_ExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_ExternFile\n");
 	}
 };
 
@@ -531,13 +573,16 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public TCollection_MapNode
 		Handle_StepShape_ShapeDefinitionRepresentation & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR();
 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
 	Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR GetHandle() {
 	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR*) &$self;
+	}
+};
+%extend STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
+	~STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR\n");
 	}
 };
 
@@ -574,13 +619,16 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 		void RegisterAssembly(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_ActorWrite();
 
 };
 %extend STEPCAFControl_ActorWrite {
 	Handle_STEPCAFControl_ActorWrite GetHandle() {
 	return *(Handle_STEPCAFControl_ActorWrite*) &$self;
+	}
+};
+%extend STEPCAFControl_ActorWrite {
+	~STEPCAFControl_ActorWrite() {
+	printf("Call custom destructor for instance of STEPCAFControl_ActorWrite\n");
 	}
 };
 
@@ -595,13 +643,16 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNo
 		TDF_Label & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel();
 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
 	Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel GetHandle() {
 	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel*) &$self;
+	}
+};
+%extend STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
+	~STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel\n");
 	}
 };
 
@@ -614,13 +665,16 @@ class STEPCAFControl_Controller : public STEPControl_Controller {
 		Standard_Boolean Init();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_Controller();
 
 };
 %extend STEPCAFControl_Controller {
 	Handle_STEPCAFControl_Controller GetHandle() {
 	return *(Handle_STEPCAFControl_Controller*) &$self;
+	}
+};
+%extend STEPCAFControl_Controller {
+	~STEPCAFControl_Controller() {
+	printf("Call custom destructor for instance of STEPCAFControl_Controller\n");
 	}
 };
 
@@ -669,13 +723,16 @@ class STEPCAFControl_StackItemOfDictionaryOfExternFile : public MMgt_TShared {
 		void SetValue(const Handle_STEPCAFControl_DictionaryOfExternFile &cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_StackItemOfDictionaryOfExternFile();
 
 };
 %extend STEPCAFControl_StackItemOfDictionaryOfExternFile {
 	Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile GetHandle() {
 	return *(Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile*) &$self;
+	}
+};
+%extend STEPCAFControl_StackItemOfDictionaryOfExternFile {
+	~STEPCAFControl_StackItemOfDictionaryOfExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_StackItemOfDictionaryOfExternFile\n");
 	}
 };
 
@@ -690,13 +747,16 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public TCollection_
 		Handle_STEPCAFControl_ExternFile & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile();
 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
 	Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile GetHandle() {
 	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile*) &$self;
+	}
+};
+%extend STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
+	~STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile\n");
 	}
 };
 
@@ -711,13 +771,16 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public TCollection_MapNode 
 		Handle_StepBasic_ProductDefinition & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfShapePD();
 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
 	Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD GetHandle() {
 	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD*) &$self;
+	}
+};
+%extend STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
+	~STEPCAFControl_DataMapNodeOfDataMapOfShapePD() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfShapePD\n");
 	}
 };
 
@@ -732,13 +795,16 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public TCollection_M
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient();
 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient {
 	Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient GetHandle() {
 	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient*) &$self;
+	}
+};
+%extend STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient {
+	~STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient\n");
 	}
 };
 
@@ -879,13 +945,16 @@ class STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public TCollection_Ma
 		Handle_STEPCAFControl_ExternFile & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile();
 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
 	Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile GetHandle() {
 	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile*) &$self;
+	}
+};
+%extend STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
+	~STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile\n");
 	}
 };
 
@@ -960,13 +1029,16 @@ class STEPCAFControl_DictionaryOfExternFile : public MMgt_TShared {
 		Standard_Boolean Complete(Handle_STEPCAFControl_DictionaryOfExternFile & acell) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DictionaryOfExternFile();
 
 };
 %extend STEPCAFControl_DictionaryOfExternFile {
 	Handle_STEPCAFControl_DictionaryOfExternFile GetHandle() {
 	return *(Handle_STEPCAFControl_DictionaryOfExternFile*) &$self;
+	}
+};
+%extend STEPCAFControl_DictionaryOfExternFile {
+	~STEPCAFControl_DictionaryOfExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DictionaryOfExternFile\n");
 	}
 };
 
@@ -1087,13 +1159,16 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNo
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfLabelShape();
 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
 	Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape GetHandle() {
 	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape*) &$self;
+	}
+};
+%extend STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
+	~STEPCAFControl_DataMapNodeOfDataMapOfLabelShape() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfLabelShape\n");
 	}
 };
 
@@ -1108,13 +1183,16 @@ class STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public TCollection_Map
 		Handle_STEPCAFControl_ExternFile & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile();
 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {
 	Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile GetHandle() {
 	return *(Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile*) &$self;
+	}
+};
+%extend STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {
+	~STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile\n");
 	}
 };
 

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BRepApprox_ApproxLine : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepApprox_ApproxLine();
-		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine();
 		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine(const Handle_BRepApprox_ApproxLine &aHandle);
@@ -116,6 +114,11 @@ class Handle_BRepApprox_ApproxLine : public Handle_MMgt_TShared {
 %extend Handle_BRepApprox_ApproxLine {
 	BRepApprox_ApproxLine* GetObject() {
 	return (BRepApprox_ApproxLine*)$self->Access();
+	}
+};
+%extend Handle_BRepApprox_ApproxLine {
+	~Handle_BRepApprox_ApproxLine() {
+	printf("Call custom destructor for instance of Handle_BRepApprox_ApproxLine\n");
 	}
 };
 
@@ -258,13 +261,16 @@ class BRepApprox_ApproxLine : public MMgt_TShared {
 		IntSurf_PntOn2S Point(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_ApproxLine();
 
 };
 %extend BRepApprox_ApproxLine {
 	Handle_BRepApprox_ApproxLine GetHandle() {
 	return *(Handle_BRepApprox_ApproxLine*) &$self;
+	}
+};
+%extend BRepApprox_ApproxLine {
+	~BRepApprox_ApproxLine() {
+	printf("Call custom destructor for instance of BRepApprox_ApproxLine\n");
 	}
 };
 

@@ -184,8 +184,6 @@ enum Vrml_Texture2Wrap {
 class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Vrml_AsciiText();
-		%feature("autodoc", "1");
 		Handle_Vrml_AsciiText();
 		%feature("autodoc", "1");
 		Handle_Vrml_AsciiText(const Handle_Vrml_AsciiText &aHandle);
@@ -200,12 +198,15 @@ class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 	return (Vrml_AsciiText*)$self->Access();
 	}
 };
+%extend Handle_Vrml_AsciiText {
+	~Handle_Vrml_AsciiText() {
+	printf("Call custom destructor for instance of Handle_Vrml_AsciiText\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_LOD;
 class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_LOD();
 		%feature("autodoc", "1");
 		Handle_Vrml_LOD();
 		%feature("autodoc", "1");
@@ -221,12 +222,15 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	return (Vrml_LOD*)$self->Access();
 	}
 };
+%extend Handle_Vrml_LOD {
+	~Handle_Vrml_LOD() {
+	printf("Call custom destructor for instance of Handle_Vrml_LOD\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_Coordinate3;
 class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_Coordinate3();
 		%feature("autodoc", "1");
 		Handle_Vrml_Coordinate3();
 		%feature("autodoc", "1");
@@ -242,12 +246,15 @@ class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 	return (Vrml_Coordinate3*)$self->Access();
 	}
 };
+%extend Handle_Vrml_Coordinate3 {
+	~Handle_Vrml_Coordinate3() {
+	printf("Call custom destructor for instance of Handle_Vrml_Coordinate3\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_SFImage;
 class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_SFImage();
 		%feature("autodoc", "1");
 		Handle_Vrml_SFImage();
 		%feature("autodoc", "1");
@@ -263,12 +270,15 @@ class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 	return (Vrml_SFImage*)$self->Access();
 	}
 };
+%extend Handle_Vrml_SFImage {
+	~Handle_Vrml_SFImage() {
+	printf("Call custom destructor for instance of Handle_Vrml_SFImage\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_Normal;
 class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_Normal();
 		%feature("autodoc", "1");
 		Handle_Vrml_Normal();
 		%feature("autodoc", "1");
@@ -284,12 +294,15 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 	return (Vrml_Normal*)$self->Access();
 	}
 };
+%extend Handle_Vrml_Normal {
+	~Handle_Vrml_Normal() {
+	printf("Call custom destructor for instance of Handle_Vrml_Normal\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_Material;
 class Handle_Vrml_Material : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_Material();
 		%feature("autodoc", "1");
 		Handle_Vrml_Material();
 		%feature("autodoc", "1");
@@ -305,12 +318,15 @@ class Handle_Vrml_Material : public Handle_MMgt_TShared {
 	return (Vrml_Material*)$self->Access();
 	}
 };
+%extend Handle_Vrml_Material {
+	~Handle_Vrml_Material() {
+	printf("Call custom destructor for instance of Handle_Vrml_Material\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_IndexedLineSet;
 class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_IndexedLineSet();
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedLineSet();
 		%feature("autodoc", "1");
@@ -326,12 +342,15 @@ class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 	return (Vrml_IndexedLineSet*)$self->Access();
 	}
 };
+%extend Handle_Vrml_IndexedLineSet {
+	~Handle_Vrml_IndexedLineSet() {
+	printf("Call custom destructor for instance of Handle_Vrml_IndexedLineSet\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_IndexedFaceSet;
 class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_IndexedFaceSet();
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedFaceSet();
 		%feature("autodoc", "1");
@@ -347,12 +366,15 @@ class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 	return (Vrml_IndexedFaceSet*)$self->Access();
 	}
 };
+%extend Handle_Vrml_IndexedFaceSet {
+	~Handle_Vrml_IndexedFaceSet() {
+	printf("Call custom destructor for instance of Handle_Vrml_IndexedFaceSet\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_TextureCoordinate2;
 class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_TextureCoordinate2();
 		%feature("autodoc", "1");
 		Handle_Vrml_TextureCoordinate2();
 		%feature("autodoc", "1");
@@ -366,6 +388,11 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 %extend Handle_Vrml_TextureCoordinate2 {
 	Vrml_TextureCoordinate2* GetObject() {
 	return (Vrml_TextureCoordinate2*)$self->Access();
+	}
+};
+%extend Handle_Vrml_TextureCoordinate2 {
+	~Handle_Vrml_TextureCoordinate2() {
+	printf("Call custom destructor for instance of Handle_Vrml_TextureCoordinate2\n");
 	}
 };
 
@@ -594,13 +621,16 @@ class Vrml_AsciiText : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_AsciiText();
 
 };
 %extend Vrml_AsciiText {
 	Handle_Vrml_AsciiText GetHandle() {
 	return *(Handle_Vrml_AsciiText*) &$self;
+	}
+};
+%extend Vrml_AsciiText {
+	~Vrml_AsciiText() {
+	printf("Call custom destructor for instance of Vrml_AsciiText\n");
 	}
 };
 
@@ -631,13 +661,16 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_IndexedLineSet();
 
 };
 %extend Vrml_IndexedLineSet {
 	Handle_Vrml_IndexedLineSet GetHandle() {
 	return *(Handle_Vrml_IndexedLineSet*) &$self;
+	}
+};
+%extend Vrml_IndexedLineSet {
+	~Vrml_IndexedLineSet() {
+	printf("Call custom destructor for instance of Vrml_IndexedLineSet\n");
 	}
 };
 
@@ -698,13 +731,16 @@ class Vrml_SFImage : public MMgt_TShared {
 		Standard_Boolean ArrayFlag() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_SFImage();
 
 };
 %extend Vrml_SFImage {
 	Handle_Vrml_SFImage GetHandle() {
 	return *(Handle_Vrml_SFImage*) &$self;
+	}
+};
+%extend Vrml_SFImage {
+	~Vrml_SFImage() {
+	printf("Call custom destructor for instance of Vrml_SFImage\n");
 	}
 };
 
@@ -789,13 +825,16 @@ class Vrml_Normal : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_Normal();
 
 };
 %extend Vrml_Normal {
 	Handle_Vrml_Normal GetHandle() {
 	return *(Handle_Vrml_Normal*) &$self;
+	}
+};
+%extend Vrml_Normal {
+	~Vrml_Normal() {
+	printf("Call custom destructor for instance of Vrml_Normal\n");
 	}
 };
 
@@ -878,13 +917,16 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_Coordinate3();
 
 };
 %extend Vrml_Coordinate3 {
 	Handle_Vrml_Coordinate3 GetHandle() {
 	return *(Handle_Vrml_Coordinate3*) &$self;
+	}
+};
+%extend Vrml_Coordinate3 {
+	~Vrml_Coordinate3() {
+	printf("Call custom destructor for instance of Vrml_Coordinate3\n");
 	}
 };
 
@@ -961,13 +1003,16 @@ class Vrml_LOD : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_LOD();
 
 };
 %extend Vrml_LOD {
 	Handle_Vrml_LOD GetHandle() {
 	return *(Handle_Vrml_LOD*) &$self;
+	}
+};
+%extend Vrml_LOD {
+	~Vrml_LOD() {
+	printf("Call custom destructor for instance of Vrml_LOD\n");
 	}
 };
 
@@ -1156,13 +1201,16 @@ class Vrml_Material : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_Material();
 
 };
 %extend Vrml_Material {
 	Handle_Vrml_Material GetHandle() {
 	return *(Handle_Vrml_Material*) &$self;
+	}
+};
+%extend Vrml_Material {
+	~Vrml_Material() {
+	printf("Call custom destructor for instance of Vrml_Material\n");
 	}
 };
 
@@ -1323,13 +1371,16 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_TextureCoordinate2();
 
 };
 %extend Vrml_TextureCoordinate2 {
 	Handle_Vrml_TextureCoordinate2 GetHandle() {
 	return *(Handle_Vrml_TextureCoordinate2*) &$self;
+	}
+};
+%extend Vrml_TextureCoordinate2 {
+	~Vrml_TextureCoordinate2() {
+	printf("Call custom destructor for instance of Vrml_TextureCoordinate2\n");
 	}
 };
 
@@ -1360,12 +1411,15 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_IndexedFaceSet();
 
 };
 %extend Vrml_IndexedFaceSet {
 	Handle_Vrml_IndexedFaceSet GetHandle() {
 	return *(Handle_Vrml_IndexedFaceSet*) &$self;
+	}
+};
+%extend Vrml_IndexedFaceSet {
+	~Vrml_IndexedFaceSet() {
+	printf("Call custom destructor for instance of Vrml_IndexedFaceSet\n");
 	}
 };

@@ -103,8 +103,6 @@ typedef IntPolyh_MaillageAffinage * IntPolyh_PMaillageAffinage;
 class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints();
-		%feature("autodoc", "1");
 		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints();
 		%feature("autodoc", "1");
 		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints(const Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints &aHandle);
@@ -117,6 +115,11 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 %extend Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints {
 	IntPolyh_SequenceNodeOfSeqOfStartPoints* GetObject() {
 	return (IntPolyh_SequenceNodeOfSeqOfStartPoints*)$self->Access();
+	}
+};
+%extend Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints {
+	~Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints() {
+	printf("Call custom destructor for instance of Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints\n");
 	}
 };
 
@@ -267,13 +270,16 @@ class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 		IntPolyh_StartPoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntPolyh_SequenceNodeOfSeqOfStartPoints();
 
 };
 %extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
 	Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints GetHandle() {
 	return *(Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints*) &$self;
+	}
+};
+%extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
+	~IntPolyh_SequenceNodeOfSeqOfStartPoints() {
+	printf("Call custom destructor for instance of IntPolyh_SequenceNodeOfSeqOfStartPoints\n");
 	}
 };
 

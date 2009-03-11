@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GccAna_NoSolution();
-		%feature("autodoc", "1");
 		Handle_GccAna_NoSolution();
 		%feature("autodoc", "1");
 		Handle_GccAna_NoSolution(const Handle_GccAna_NoSolution &aHandle);
@@ -116,6 +114,11 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 %extend Handle_GccAna_NoSolution {
 	GccAna_NoSolution* GetObject() {
 	return (GccAna_NoSolution*)$self->Access();
+	}
+};
+%extend Handle_GccAna_NoSolution {
+	~Handle_GccAna_NoSolution() {
+	printf("Call custom destructor for instance of Handle_GccAna_NoSolution\n");
 	}
 };
 
@@ -296,13 +299,16 @@ class GccAna_NoSolution : public Standard_Failure {
 		Handle_GccAna_NoSolution NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GccAna_NoSolution();
 
 };
 %extend GccAna_NoSolution {
 	Handle_GccAna_NoSolution GetHandle() {
 	return *(Handle_GccAna_NoSolution*) &$self;
+	}
+};
+%extend GccAna_NoSolution {
+	~GccAna_NoSolution() {
+	printf("Call custom destructor for instance of GccAna_NoSolution\n");
 	}
 };
 

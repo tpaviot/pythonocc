@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_TColQuantity_HArray1OfLength : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TColQuantity_HArray1OfLength();
-		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray1OfLength();
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray1OfLength(const Handle_TColQuantity_HArray1OfLength &aHandle);
@@ -118,12 +116,15 @@ class Handle_TColQuantity_HArray1OfLength : public Handle_MMgt_TShared {
 	return (TColQuantity_HArray1OfLength*)$self->Access();
 	}
 };
+%extend Handle_TColQuantity_HArray1OfLength {
+	~Handle_TColQuantity_HArray1OfLength() {
+	printf("Call custom destructor for instance of Handle_TColQuantity_HArray1OfLength\n");
+	}
+};
 
 %nodefaultctor Handle_TColQuantity_HArray2OfLength;
 class Handle_TColQuantity_HArray2OfLength : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColQuantity_HArray2OfLength();
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray2OfLength();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_TColQuantity_HArray2OfLength : public Handle_MMgt_TShared {
 %extend Handle_TColQuantity_HArray2OfLength {
 	TColQuantity_HArray2OfLength* GetObject() {
 	return (TColQuantity_HArray2OfLength*)$self->Access();
+	}
+};
+%extend Handle_TColQuantity_HArray2OfLength {
+	~Handle_TColQuantity_HArray2OfLength() {
+	printf("Call custom destructor for instance of Handle_TColQuantity_HArray2OfLength\n");
 	}
 };
 
@@ -167,13 +173,16 @@ class TColQuantity_HArray1OfLength : public MMgt_TShared {
 		TColQuantity_Array1OfLength & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColQuantity_HArray1OfLength();
 
 };
 %extend TColQuantity_HArray1OfLength {
 	Handle_TColQuantity_HArray1OfLength GetHandle() {
 	return *(Handle_TColQuantity_HArray1OfLength*) &$self;
+	}
+};
+%extend TColQuantity_HArray1OfLength {
+	~TColQuantity_HArray1OfLength() {
+	printf("Call custom destructor for instance of TColQuantity_HArray1OfLength\n");
 	}
 };
 
@@ -246,13 +255,16 @@ class TColQuantity_HArray2OfLength : public MMgt_TShared {
 		TColQuantity_Array2OfLength & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColQuantity_HArray2OfLength();
 
 };
 %extend TColQuantity_HArray2OfLength {
 	Handle_TColQuantity_HArray2OfLength GetHandle() {
 	return *(Handle_TColQuantity_HArray2OfLength*) &$self;
+	}
+};
+%extend TColQuantity_HArray2OfLength {
+	~TColQuantity_HArray2OfLength() {
+	printf("Call custom destructor for instance of TColQuantity_HArray2OfLength\n");
 	}
 };
 

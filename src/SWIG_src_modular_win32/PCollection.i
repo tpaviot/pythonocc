@@ -112,8 +112,6 @@ enum PCollection_AccessMode {
 class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PCollection_HAsciiString();
-		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString();
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString(const Handle_PCollection_HAsciiString &aHandle);
@@ -128,12 +126,15 @@ class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 	return (PCollection_HAsciiString*)$self->Access();
 	}
 };
+%extend Handle_PCollection_HAsciiString {
+	~Handle_PCollection_HAsciiString() {
+	printf("Call custom destructor for instance of Handle_PCollection_HAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_PCollection_HExtendedString;
 class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCollection_HExtendedString();
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString();
 		%feature("autodoc", "1");
@@ -149,12 +150,15 @@ class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 	return (PCollection_HExtendedString*)$self->Access();
 	}
 };
+%extend Handle_PCollection_HExtendedString {
+	~Handle_PCollection_HExtendedString() {
+	printf("Call custom destructor for instance of Handle_PCollection_HExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_PCollection_IsNotRoot;
 class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCollection_IsNotRoot();
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNotRoot();
 		%feature("autodoc", "1");
@@ -170,12 +174,15 @@ class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 	return (PCollection_IsNotRoot*)$self->Access();
 	}
 };
+%extend Handle_PCollection_IsNotRoot {
+	~Handle_PCollection_IsNotRoot() {
+	printf("Call custom destructor for instance of Handle_PCollection_IsNotRoot\n");
+	}
+};
 
 %nodefaultctor Handle_PCollection_IsContained;
 class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCollection_IsContained();
 		%feature("autodoc", "1");
 		Handle_PCollection_IsContained();
 		%feature("autodoc", "1");
@@ -191,12 +198,15 @@ class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 	return (PCollection_IsContained*)$self->Access();
 	}
 };
+%extend Handle_PCollection_IsContained {
+	~Handle_PCollection_IsContained() {
+	printf("Call custom destructor for instance of Handle_PCollection_IsContained\n");
+	}
+};
 
 %nodefaultctor Handle_PCollection_IsNullTree;
 class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCollection_IsNullTree();
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNullTree();
 		%feature("autodoc", "1");
@@ -210,6 +220,11 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 %extend Handle_PCollection_IsNullTree {
 	PCollection_IsNullTree* GetObject() {
 	return (PCollection_IsNullTree*)$self->Access();
+	}
+};
+%extend Handle_PCollection_IsNullTree {
+	~Handle_PCollection_IsNullTree() {
+	printf("Call custom destructor for instance of Handle_PCollection_IsNullTree\n");
 	}
 };
 
@@ -228,13 +243,16 @@ class PCollection_IsNullTree : public Standard_Failure {
 		Handle_PCollection_IsNullTree NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_IsNullTree();
 
 };
 %extend PCollection_IsNullTree {
 	Handle_PCollection_IsNullTree GetHandle() {
 	return *(Handle_PCollection_IsNullTree*) &$self;
+	}
+};
+%extend PCollection_IsNullTree {
+	~PCollection_IsNullTree() {
+	printf("Call custom destructor for instance of PCollection_IsNullTree\n");
 	}
 };
 
@@ -269,13 +287,16 @@ class PCollection_IsNotRoot : public Standard_Failure {
 		Handle_PCollection_IsNotRoot NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_IsNotRoot();
 
 };
 %extend PCollection_IsNotRoot {
 	Handle_PCollection_IsNotRoot GetHandle() {
 	return *(Handle_PCollection_IsNotRoot*) &$self;
+	}
+};
+%extend PCollection_IsNotRoot {
+	~PCollection_IsNotRoot() {
+	printf("Call custom destructor for instance of PCollection_IsNotRoot\n");
 	}
 };
 
@@ -294,13 +315,16 @@ class PCollection_IsContained : public Standard_Failure {
 		Handle_PCollection_IsContained NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_IsContained();
 
 };
 %extend PCollection_IsContained {
 	Handle_PCollection_IsContained GetHandle() {
 	return *(Handle_PCollection_IsContained*) &$self;
+	}
+};
+%extend PCollection_IsContained {
+	~PCollection_IsContained() {
+	printf("Call custom destructor for instance of PCollection_IsContained\n");
 	}
 };
 
@@ -393,13 +417,16 @@ class PCollection_HExtendedString : public Standard_Persistent {
 		const DBC_VArrayOfExtCharacter & _CSFDB_GetPCollection_HExtendedStringData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_HExtendedString();
 
 };
 %extend PCollection_HExtendedString {
 	Handle_PCollection_HExtendedString GetHandle() {
 	return *(Handle_PCollection_HExtendedString*) &$self;
+	}
+};
+%extend PCollection_HExtendedString {
+	~PCollection_HExtendedString() {
+	printf("Call custom destructor for instance of PCollection_HExtendedString\n");
 	}
 };
 
@@ -512,13 +539,16 @@ class PCollection_HAsciiString : public Standard_Persistent {
 		const DBC_VArrayOfCharacter & _CSFDB_GetPCollection_HAsciiStringData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_HAsciiString();
 
 };
 %extend PCollection_HAsciiString {
 	Handle_PCollection_HAsciiString GetHandle() {
 	return *(Handle_PCollection_HAsciiString*) &$self;
+	}
+};
+%extend PCollection_HAsciiString {
+	~PCollection_HAsciiString() {
+	printf("Call custom destructor for instance of PCollection_HAsciiString\n");
 	}
 };
 

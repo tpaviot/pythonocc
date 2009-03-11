@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_StepAP203_Change : public Handle_StepBasic_ActionAssignment {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepAP203_Change();
-		%feature("autodoc", "1");
 		Handle_StepAP203_Change();
 		%feature("autodoc", "1");
 		Handle_StepAP203_Change(const Handle_StepAP203_Change &aHandle);
@@ -118,12 +116,15 @@ class Handle_StepAP203_Change : public Handle_StepBasic_ActionAssignment {
 	return (StepAP203_Change*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_Change {
+	~Handle_StepAP203_Change() {
+	printf("Call custom destructor for instance of Handle_StepAP203_Change\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfWorkItem;
 class Handle_StepAP203_HArray1OfWorkItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfWorkItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfWorkItem();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_StepAP203_HArray1OfWorkItem : public Handle_MMgt_TShared {
 	return (StepAP203_HArray1OfWorkItem*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_HArray1OfWorkItem {
+	~Handle_StepAP203_HArray1OfWorkItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfWorkItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_CcDesignPersonAndOrganizationAssignment;
 class Handle_StepAP203_CcDesignPersonAndOrganizationAssignment : public Handle_StepBasic_PersonAndOrganizationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_CcDesignPersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignPersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_StepAP203_CcDesignPersonAndOrganizationAssignment : public Handle_S
 	return (StepAP203_CcDesignPersonAndOrganizationAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_CcDesignPersonAndOrganizationAssignment {
+	~Handle_StepAP203_CcDesignPersonAndOrganizationAssignment() {
+	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignPersonAndOrganizationAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_StartRequest;
 class Handle_StepAP203_StartRequest : public Handle_StepBasic_ActionRequestAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_StartRequest();
 		%feature("autodoc", "1");
 		Handle_StepAP203_StartRequest();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_StepAP203_StartRequest : public Handle_StepBasic_ActionRequestAssig
 	return (StepAP203_StartRequest*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_StartRequest {
+	~Handle_StepAP203_StartRequest() {
+	printf("Call custom destructor for instance of Handle_StepAP203_StartRequest\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_CcDesignSpecificationReference;
 class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_DocumentReference {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_CcDesignSpecificationReference();
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignSpecificationReference();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_
 	return (StepAP203_CcDesignSpecificationReference*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_CcDesignSpecificationReference {
+	~Handle_StepAP203_CcDesignSpecificationReference() {
+	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignSpecificationReference\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfPersonOrganizationItem;
 class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfPersonOrganizationItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfPersonOrganizationItem();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TSha
 	return (StepAP203_HArray1OfPersonOrganizationItem*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_HArray1OfPersonOrganizationItem {
+	~Handle_StepAP203_HArray1OfPersonOrganizationItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfPersonOrganizationItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_ChangeRequest;
 class Handle_StepAP203_ChangeRequest : public Handle_StepBasic_ActionRequestAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_ChangeRequest();
 		%feature("autodoc", "1");
 		Handle_StepAP203_ChangeRequest();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_StepAP203_ChangeRequest : public Handle_StepBasic_ActionRequestAssi
 	return (StepAP203_ChangeRequest*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_ChangeRequest {
+	~Handle_StepAP203_ChangeRequest() {
+	printf("Call custom destructor for instance of Handle_StepAP203_ChangeRequest\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_CcDesignDateAndTimeAssignment;
 class Handle_StepAP203_CcDesignDateAndTimeAssignment : public Handle_StepBasic_DateAndTimeAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_CcDesignDateAndTimeAssignment();
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignDateAndTimeAssignment();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_StepAP203_CcDesignDateAndTimeAssignment : public Handle_StepBasic_D
 	return (StepAP203_CcDesignDateAndTimeAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_CcDesignDateAndTimeAssignment {
+	~Handle_StepAP203_CcDesignDateAndTimeAssignment() {
+	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignDateAndTimeAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_CcDesignApproval;
 class Handle_StepAP203_CcDesignApproval : public Handle_StepBasic_ApprovalAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_CcDesignApproval();
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignApproval();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_StepAP203_CcDesignApproval : public Handle_StepBasic_ApprovalAssign
 	return (StepAP203_CcDesignApproval*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_CcDesignApproval {
+	~Handle_StepAP203_CcDesignApproval() {
+	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignApproval\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfChangeRequestItem;
 class Handle_StepAP203_HArray1OfChangeRequestItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfChangeRequestItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfChangeRequestItem();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_StepAP203_HArray1OfChangeRequestItem : public Handle_MMgt_TShared {
 	return (StepAP203_HArray1OfChangeRequestItem*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_HArray1OfChangeRequestItem {
+	~Handle_StepAP203_HArray1OfChangeRequestItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfChangeRequestItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_StartWork;
 class Handle_StepAP203_StartWork : public Handle_StepBasic_ActionAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_StartWork();
 		%feature("autodoc", "1");
 		Handle_StepAP203_StartWork();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_StepAP203_StartWork : public Handle_StepBasic_ActionAssignment {
 	return (StepAP203_StartWork*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_StartWork {
+	~Handle_StepAP203_StartWork() {
+	printf("Call custom destructor for instance of Handle_StepAP203_StartWork\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfStartRequestItem;
 class Handle_StepAP203_HArray1OfStartRequestItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfStartRequestItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfStartRequestItem();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_StepAP203_HArray1OfStartRequestItem : public Handle_MMgt_TShared {
 	return (StepAP203_HArray1OfStartRequestItem*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_HArray1OfStartRequestItem {
+	~Handle_StepAP203_HArray1OfStartRequestItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfStartRequestItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_CcDesignSecurityClassification;
 class Handle_StepAP203_CcDesignSecurityClassification : public Handle_StepBasic_SecurityClassificationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_CcDesignSecurityClassification();
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignSecurityClassification();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_StepAP203_CcDesignSecurityClassification : public Handle_StepBasic_
 	return (StepAP203_CcDesignSecurityClassification*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_CcDesignSecurityClassification {
+	~Handle_StepAP203_CcDesignSecurityClassification() {
+	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignSecurityClassification\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfApprovedItem;
 class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfApprovedItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfApprovedItem();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
 	return (StepAP203_HArray1OfApprovedItem*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_HArray1OfApprovedItem {
+	~Handle_StepAP203_HArray1OfApprovedItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfApprovedItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfSpecifiedItem;
 class Handle_StepAP203_HArray1OfSpecifiedItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfSpecifiedItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfSpecifiedItem();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_StepAP203_HArray1OfSpecifiedItem : public Handle_MMgt_TShared {
 	return (StepAP203_HArray1OfSpecifiedItem*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_HArray1OfSpecifiedItem {
+	~Handle_StepAP203_HArray1OfSpecifiedItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfSpecifiedItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_CcDesignContract;
 class Handle_StepAP203_CcDesignContract : public Handle_StepBasic_ContractAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_CcDesignContract();
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignContract();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_StepAP203_CcDesignContract : public Handle_StepBasic_ContractAssign
 	return (StepAP203_CcDesignContract*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_CcDesignContract {
+	~Handle_StepAP203_CcDesignContract() {
+	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignContract\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfDateTimeItem;
 class Handle_StepAP203_HArray1OfDateTimeItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfDateTimeItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfDateTimeItem();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_StepAP203_HArray1OfDateTimeItem : public Handle_MMgt_TShared {
 	return (StepAP203_HArray1OfDateTimeItem*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_HArray1OfDateTimeItem {
+	~Handle_StepAP203_HArray1OfDateTimeItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfDateTimeItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_CcDesignCertification;
 class Handle_StepAP203_CcDesignCertification : public Handle_StepBasic_CertificationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_CcDesignCertification();
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignCertification();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_StepAP203_CcDesignCertification : public Handle_StepBasic_Certifica
 	return (StepAP203_CcDesignCertification*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_CcDesignCertification {
+	~Handle_StepAP203_CcDesignCertification() {
+	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignCertification\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfContractedItem;
 class Handle_StepAP203_HArray1OfContractedItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfContractedItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfContractedItem();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_StepAP203_HArray1OfContractedItem : public Handle_MMgt_TShared {
 	return (StepAP203_HArray1OfContractedItem*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_HArray1OfContractedItem {
+	~Handle_StepAP203_HArray1OfContractedItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfContractedItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfClassifiedItem;
 class Handle_StepAP203_HArray1OfClassifiedItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfClassifiedItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfClassifiedItem();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_StepAP203_HArray1OfClassifiedItem : public Handle_MMgt_TShared {
 	return (StepAP203_HArray1OfClassifiedItem*)$self->Access();
 	}
 };
+%extend Handle_StepAP203_HArray1OfClassifiedItem {
+	~Handle_StepAP203_HArray1OfClassifiedItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfClassifiedItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepAP203_HArray1OfCertifiedItem;
 class Handle_StepAP203_HArray1OfCertifiedItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepAP203_HArray1OfCertifiedItem();
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfCertifiedItem();
 		%feature("autodoc", "1");
@@ -536,6 +594,11 @@ class Handle_StepAP203_HArray1OfCertifiedItem : public Handle_MMgt_TShared {
 %extend Handle_StepAP203_HArray1OfCertifiedItem {
 	StepAP203_HArray1OfCertifiedItem* GetObject() {
 	return (StepAP203_HArray1OfCertifiedItem*)$self->Access();
+	}
+};
+%extend Handle_StepAP203_HArray1OfCertifiedItem {
+	~Handle_StepAP203_HArray1OfCertifiedItem() {
+	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfCertifiedItem\n");
 	}
 };
 
@@ -566,13 +629,16 @@ class StepAP203_HArray1OfSpecifiedItem : public MMgt_TShared {
 		StepAP203_Array1OfSpecifiedItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfSpecifiedItem();
 
 };
 %extend StepAP203_HArray1OfSpecifiedItem {
 	Handle_StepAP203_HArray1OfSpecifiedItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfSpecifiedItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfSpecifiedItem {
+	~StepAP203_HArray1OfSpecifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfSpecifiedItem\n");
 	}
 };
 
@@ -639,13 +705,16 @@ class StepAP203_HArray1OfChangeRequestItem : public MMgt_TShared {
 		StepAP203_Array1OfChangeRequestItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfChangeRequestItem();
 
 };
 %extend StepAP203_HArray1OfChangeRequestItem {
 	Handle_StepAP203_HArray1OfChangeRequestItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfChangeRequestItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfChangeRequestItem {
+	~StepAP203_HArray1OfChangeRequestItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfChangeRequestItem\n");
 	}
 };
 
@@ -662,13 +731,16 @@ class StepAP203_ChangeRequest : public StepBasic_ActionRequestAssignment {
 		void SetItems(const Handle_StepAP203_HArray1OfChangeRequestItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_ChangeRequest();
 
 };
 %extend StepAP203_ChangeRequest {
 	Handle_StepAP203_ChangeRequest GetHandle() {
 	return *(Handle_StepAP203_ChangeRequest*) &$self;
+	}
+};
+%extend StepAP203_ChangeRequest {
+	~StepAP203_ChangeRequest() {
+	printf("Call custom destructor for instance of StepAP203_ChangeRequest\n");
 	}
 };
 
@@ -685,13 +757,16 @@ class StepAP203_CcDesignSecurityClassification : public StepBasic_SecurityClassi
 		void SetItems(const Handle_StepAP203_HArray1OfClassifiedItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_CcDesignSecurityClassification();
 
 };
 %extend StepAP203_CcDesignSecurityClassification {
 	Handle_StepAP203_CcDesignSecurityClassification GetHandle() {
 	return *(Handle_StepAP203_CcDesignSecurityClassification*) &$self;
+	}
+};
+%extend StepAP203_CcDesignSecurityClassification {
+	~StepAP203_CcDesignSecurityClassification() {
+	printf("Call custom destructor for instance of StepAP203_CcDesignSecurityClassification\n");
 	}
 };
 
@@ -708,13 +783,16 @@ class StepAP203_CcDesignDateAndTimeAssignment : public StepBasic_DateAndTimeAssi
 		void SetItems(const Handle_StepAP203_HArray1OfDateTimeItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_CcDesignDateAndTimeAssignment();
 
 };
 %extend StepAP203_CcDesignDateAndTimeAssignment {
 	Handle_StepAP203_CcDesignDateAndTimeAssignment GetHandle() {
 	return *(Handle_StepAP203_CcDesignDateAndTimeAssignment*) &$self;
+	}
+};
+%extend StepAP203_CcDesignDateAndTimeAssignment {
+	~StepAP203_CcDesignDateAndTimeAssignment() {
+	printf("Call custom destructor for instance of StepAP203_CcDesignDateAndTimeAssignment\n");
 	}
 };
 
@@ -767,13 +845,16 @@ class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
 		void SetItems(const Handle_StepAP203_HArray1OfContractedItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_CcDesignContract();
 
 };
 %extend StepAP203_CcDesignContract {
 	Handle_StepAP203_CcDesignContract GetHandle() {
 	return *(Handle_StepAP203_CcDesignContract*) &$self;
+	}
+};
+%extend StepAP203_CcDesignContract {
+	~StepAP203_CcDesignContract() {
+	printf("Call custom destructor for instance of StepAP203_CcDesignContract\n");
 	}
 };
 
@@ -804,13 +885,16 @@ class StepAP203_HArray1OfCertifiedItem : public MMgt_TShared {
 		StepAP203_Array1OfCertifiedItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfCertifiedItem();
 
 };
 %extend StepAP203_HArray1OfCertifiedItem {
 	Handle_StepAP203_HArray1OfCertifiedItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfCertifiedItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfCertifiedItem {
+	~StepAP203_HArray1OfCertifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfCertifiedItem\n");
 	}
 };
 
@@ -929,13 +1013,16 @@ class StepAP203_HArray1OfClassifiedItem : public MMgt_TShared {
 		StepAP203_Array1OfClassifiedItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfClassifiedItem();
 
 };
 %extend StepAP203_HArray1OfClassifiedItem {
 	Handle_StepAP203_HArray1OfClassifiedItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfClassifiedItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfClassifiedItem {
+	~StepAP203_HArray1OfClassifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfClassifiedItem\n");
 	}
 };
 
@@ -1002,13 +1089,16 @@ class StepAP203_HArray1OfWorkItem : public MMgt_TShared {
 		StepAP203_Array1OfWorkItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfWorkItem();
 
 };
 %extend StepAP203_HArray1OfWorkItem {
 	Handle_StepAP203_HArray1OfWorkItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfWorkItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfWorkItem {
+	~StepAP203_HArray1OfWorkItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfWorkItem\n");
 	}
 };
 
@@ -1113,13 +1203,16 @@ class StepAP203_HArray1OfContractedItem : public MMgt_TShared {
 		StepAP203_Array1OfContractedItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfContractedItem();
 
 };
 %extend StepAP203_HArray1OfContractedItem {
 	Handle_StepAP203_HArray1OfContractedItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfContractedItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfContractedItem {
+	~StepAP203_HArray1OfContractedItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfContractedItem\n");
 	}
 };
 
@@ -1150,13 +1243,16 @@ class StepAP203_HArray1OfApprovedItem : public MMgt_TShared {
 		StepAP203_Array1OfApprovedItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfApprovedItem();
 
 };
 %extend StepAP203_HArray1OfApprovedItem {
 	Handle_StepAP203_HArray1OfApprovedItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfApprovedItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfApprovedItem {
+	~StepAP203_HArray1OfApprovedItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfApprovedItem\n");
 	}
 };
 
@@ -1173,13 +1269,16 @@ class StepAP203_StartWork : public StepBasic_ActionAssignment {
 		void SetItems(const Handle_StepAP203_HArray1OfWorkItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_StartWork();
 
 };
 %extend StepAP203_StartWork {
 	Handle_StepAP203_StartWork GetHandle() {
 	return *(Handle_StepAP203_StartWork*) &$self;
+	}
+};
+%extend StepAP203_StartWork {
+	~StepAP203_StartWork() {
+	printf("Call custom destructor for instance of StepAP203_StartWork\n");
 	}
 };
 
@@ -1210,13 +1309,16 @@ class StepAP203_HArray1OfPersonOrganizationItem : public MMgt_TShared {
 		StepAP203_Array1OfPersonOrganizationItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfPersonOrganizationItem();
 
 };
 %extend StepAP203_HArray1OfPersonOrganizationItem {
 	Handle_StepAP203_HArray1OfPersonOrganizationItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfPersonOrganizationItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfPersonOrganizationItem {
+	~StepAP203_HArray1OfPersonOrganizationItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfPersonOrganizationItem\n");
 	}
 };
 
@@ -1233,13 +1335,16 @@ class StepAP203_CcDesignPersonAndOrganizationAssignment : public StepBasic_Perso
 		void SetItems(const Handle_StepAP203_HArray1OfPersonOrganizationItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_CcDesignPersonAndOrganizationAssignment();
 
 };
 %extend StepAP203_CcDesignPersonAndOrganizationAssignment {
 	Handle_StepAP203_CcDesignPersonAndOrganizationAssignment GetHandle() {
 	return *(Handle_StepAP203_CcDesignPersonAndOrganizationAssignment*) &$self;
+	}
+};
+%extend StepAP203_CcDesignPersonAndOrganizationAssignment {
+	~StepAP203_CcDesignPersonAndOrganizationAssignment() {
+	printf("Call custom destructor for instance of StepAP203_CcDesignPersonAndOrganizationAssignment\n");
 	}
 };
 
@@ -1350,13 +1455,16 @@ class StepAP203_HArray1OfDateTimeItem : public MMgt_TShared {
 		StepAP203_Array1OfDateTimeItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfDateTimeItem();
 
 };
 %extend StepAP203_HArray1OfDateTimeItem {
 	Handle_StepAP203_HArray1OfDateTimeItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfDateTimeItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfDateTimeItem {
+	~StepAP203_HArray1OfDateTimeItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfDateTimeItem\n");
 	}
 };
 
@@ -1387,13 +1495,16 @@ class StepAP203_HArray1OfStartRequestItem : public MMgt_TShared {
 		StepAP203_Array1OfStartRequestItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_HArray1OfStartRequestItem();
 
 };
 %extend StepAP203_HArray1OfStartRequestItem {
 	Handle_StepAP203_HArray1OfStartRequestItem GetHandle() {
 	return *(Handle_StepAP203_HArray1OfStartRequestItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfStartRequestItem {
+	~StepAP203_HArray1OfStartRequestItem() {
+	printf("Call custom destructor for instance of StepAP203_HArray1OfStartRequestItem\n");
 	}
 };
 
@@ -1410,13 +1521,16 @@ class StepAP203_StartRequest : public StepBasic_ActionRequestAssignment {
 		void SetItems(const Handle_StepAP203_HArray1OfStartRequestItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_StartRequest();
 
 };
 %extend StepAP203_StartRequest {
 	Handle_StepAP203_StartRequest GetHandle() {
 	return *(Handle_StepAP203_StartRequest*) &$self;
+	}
+};
+%extend StepAP203_StartRequest {
+	~StepAP203_StartRequest() {
+	printf("Call custom destructor for instance of StepAP203_StartRequest\n");
 	}
 };
 
@@ -1433,13 +1547,16 @@ class StepAP203_Change : public StepBasic_ActionAssignment {
 		void SetItems(const Handle_StepAP203_HArray1OfWorkItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_Change();
 
 };
 %extend StepAP203_Change {
 	Handle_StepAP203_Change GetHandle() {
 	return *(Handle_StepAP203_Change*) &$self;
+	}
+};
+%extend StepAP203_Change {
+	~StepAP203_Change() {
+	printf("Call custom destructor for instance of StepAP203_Change\n");
 	}
 };
 
@@ -1526,13 +1643,16 @@ class StepAP203_CcDesignCertification : public StepBasic_CertificationAssignment
 		void SetItems(const Handle_StepAP203_HArray1OfCertifiedItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_CcDesignCertification();
 
 };
 %extend StepAP203_CcDesignCertification {
 	Handle_StepAP203_CcDesignCertification GetHandle() {
 	return *(Handle_StepAP203_CcDesignCertification*) &$self;
+	}
+};
+%extend StepAP203_CcDesignCertification {
+	~StepAP203_CcDesignCertification() {
+	printf("Call custom destructor for instance of StepAP203_CcDesignCertification\n");
 	}
 };
 
@@ -1549,13 +1669,16 @@ class StepAP203_CcDesignApproval : public StepBasic_ApprovalAssignment {
 		void SetItems(const Handle_StepAP203_HArray1OfApprovedItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_CcDesignApproval();
 
 };
 %extend StepAP203_CcDesignApproval {
 	Handle_StepAP203_CcDesignApproval GetHandle() {
 	return *(Handle_StepAP203_CcDesignApproval*) &$self;
+	}
+};
+%extend StepAP203_CcDesignApproval {
+	~StepAP203_CcDesignApproval() {
+	printf("Call custom destructor for instance of StepAP203_CcDesignApproval\n");
 	}
 };
 
@@ -1586,13 +1709,16 @@ class StepAP203_CcDesignSpecificationReference : public StepBasic_DocumentRefere
 		void SetItems(const Handle_StepAP203_HArray1OfSpecifiedItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_CcDesignSpecificationReference();
 
 };
 %extend StepAP203_CcDesignSpecificationReference {
 	Handle_StepAP203_CcDesignSpecificationReference GetHandle() {
 	return *(Handle_StepAP203_CcDesignSpecificationReference*) &$self;
+	}
+};
+%extend StepAP203_CcDesignSpecificationReference {
+	~StepAP203_CcDesignSpecificationReference() {
+	printf("Call custom destructor for instance of StepAP203_CcDesignSpecificationReference\n");
 	}
 };
 

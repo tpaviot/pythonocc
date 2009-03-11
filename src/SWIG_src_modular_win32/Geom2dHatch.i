@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher();
-		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher();
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher &aHandle);
@@ -118,12 +116,15 @@ class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public 
 	return (Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher*)$self->Access();
 	}
 };
+%extend Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	~Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
+	printf("Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher;
 class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher();
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollec
 %extend Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
 	Geom2dHatch_DataMapNodeOfHatchingsOfHatcher* GetObject() {
 	return (Geom2dHatch_DataMapNodeOfHatchingsOfHatcher*)$self->Access();
+	}
+};
+%extend Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
+	~Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher() {
+	printf("Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");
 	}
 };
 
@@ -383,13 +389,16 @@ class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollec
 		Geom2dHatch_ElementOfHatcher & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher();
 
 };
 %extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
 	Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher GetHandle() {
 	return *(Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher*) &$self;
+	}
+};
+%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");
 	}
 };
 
@@ -404,13 +413,16 @@ class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
 		Geom2dHatch_HatchingOfHatcher & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher();
 
 };
 %extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
 	Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher GetHandle() {
 	return *(Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher*) &$self;
+	}
+};
+%extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
+	~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");
 	}
 };
 

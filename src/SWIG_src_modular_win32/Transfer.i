@@ -123,8 +123,6 @@ enum Transfer_StatusResult {
 class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Transfer_HSequenceOfFinder();
-		%feature("autodoc", "1");
 		Handle_Transfer_HSequenceOfFinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_HSequenceOfFinder(const Handle_Transfer_HSequenceOfFinder &aHandle);
@@ -139,12 +137,15 @@ class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
 	return (Transfer_HSequenceOfFinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_HSequenceOfFinder {
+	~Handle_Transfer_HSequenceOfFinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_HSequenceOfFinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfBinder;
 class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_SequenceNodeOfSequenceOfBinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_SequenceNodeOfSequenceOfBinder();
 		%feature("autodoc", "1");
@@ -160,12 +161,15 @@ class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection
 	return (Transfer_SequenceNodeOfSequenceOfBinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
+	~Handle_Transfer_SequenceNodeOfSequenceOfBinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfBinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_Binder;
 class Handle_Transfer_Binder : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_Binder();
 		%feature("autodoc", "1");
 		Handle_Transfer_Binder();
 		%feature("autodoc", "1");
@@ -181,12 +185,15 @@ class Handle_Transfer_Binder : public Handle_MMgt_TShared {
 	return (Transfer_Binder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_Binder {
+	~Handle_Transfer_Binder() {
+	printf("Call custom destructor for instance of Handle_Transfer_Binder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_VoidBinder;
 class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_VoidBinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_VoidBinder();
 		%feature("autodoc", "1");
@@ -202,12 +209,15 @@ class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
 	return (Transfer_VoidBinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_VoidBinder {
+	~Handle_Transfer_VoidBinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_VoidBinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_Finder;
 class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_Finder();
 		%feature("autodoc", "1");
 		Handle_Transfer_Finder();
 		%feature("autodoc", "1");
@@ -223,12 +233,15 @@ class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 	return (Transfer_Finder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_Finder {
+	~Handle_Transfer_Finder() {
+	printf("Call custom destructor for instance of Handle_Transfer_Finder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_ResultFromTransient;
 class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_ResultFromTransient();
 		%feature("autodoc", "1");
 		Handle_Transfer_ResultFromTransient();
 		%feature("autodoc", "1");
@@ -244,12 +257,15 @@ class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
 	return (Transfer_ResultFromTransient*)$self->Access();
 	}
 };
+%extend Handle_Transfer_ResultFromTransient {
+	~Handle_Transfer_ResultFromTransient() {
+	printf("Call custom destructor for instance of Handle_Transfer_ResultFromTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_ProcessForFinder;
 class Handle_Transfer_ProcessForFinder : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_ProcessForFinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_ProcessForFinder();
 		%feature("autodoc", "1");
@@ -265,12 +281,15 @@ class Handle_Transfer_ProcessForFinder : public Handle_MMgt_TShared {
 	return (Transfer_ProcessForFinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_ProcessForFinder {
+	~Handle_Transfer_ProcessForFinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_ProcessForFinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder;
 class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder();
 		%feature("autodoc", "1");
@@ -286,12 +305,15 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public
 	return (Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
+	~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_ActorOfProcessForFinder;
 class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_ActorOfProcessForFinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorOfProcessForFinder();
 		%feature("autodoc", "1");
@@ -307,12 +329,15 @@ class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
 	return (Transfer_ActorOfProcessForFinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_ActorOfProcessForFinder {
+	~Handle_Transfer_ActorOfProcessForFinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_ActorOfProcessForFinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_TransientMapper;
 class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_TransientMapper();
 		%feature("autodoc", "1");
 		Handle_Transfer_TransientMapper();
 		%feature("autodoc", "1");
@@ -328,12 +353,15 @@ class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
 	return (Transfer_TransientMapper*)$self->Access();
 	}
 };
+%extend Handle_Transfer_TransientMapper {
+	~Handle_Transfer_TransientMapper() {
+	printf("Call custom destructor for instance of Handle_Transfer_TransientMapper\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient;
 class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient();
 		%feature("autodoc", "1");
 		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient();
 		%feature("autodoc", "1");
@@ -349,12 +377,15 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : pub
 	return (Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient*)$self->Access();
 	}
 };
+%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
+	~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient() {
+	printf("Call custom destructor for instance of Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_SimpleBinderOfTransient;
 class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_SimpleBinderOfTransient();
 		%feature("autodoc", "1");
 		Handle_Transfer_SimpleBinderOfTransient();
 		%feature("autodoc", "1");
@@ -370,12 +401,15 @@ class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
 	return (Transfer_SimpleBinderOfTransient*)$self->Access();
 	}
 };
+%extend Handle_Transfer_SimpleBinderOfTransient {
+	~Handle_Transfer_SimpleBinderOfTransient() {
+	printf("Call custom destructor for instance of Handle_Transfer_SimpleBinderOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_TransferFailure;
 class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_TransferFailure();
 		%feature("autodoc", "1");
 		Handle_Transfer_TransferFailure();
 		%feature("autodoc", "1");
@@ -391,12 +425,15 @@ class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
 	return (Transfer_TransferFailure*)$self->Access();
 	}
 };
+%extend Handle_Transfer_TransferFailure {
+	~Handle_Transfer_TransferFailure() {
+	printf("Call custom destructor for instance of Handle_Transfer_TransferFailure\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_ProcessForTransient;
 class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_ProcessForTransient();
 		%feature("autodoc", "1");
 		Handle_Transfer_ProcessForTransient();
 		%feature("autodoc", "1");
@@ -412,12 +449,15 @@ class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
 	return (Transfer_ProcessForTransient*)$self->Access();
 	}
 };
+%extend Handle_Transfer_ProcessForTransient {
+	~Handle_Transfer_ProcessForTransient() {
+	printf("Call custom destructor for instance of Handle_Transfer_ProcessForTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_TransientProcess;
 class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_TransientProcess();
 		%feature("autodoc", "1");
 		Handle_Transfer_TransientProcess();
 		%feature("autodoc", "1");
@@ -433,12 +473,15 @@ class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransi
 	return (Transfer_TransientProcess*)$self->Access();
 	}
 };
+%extend Handle_Transfer_TransientProcess {
+	~Handle_Transfer_TransientProcess() {
+	printf("Call custom destructor for instance of Handle_Transfer_TransientProcess\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfFinder;
 class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_SequenceNodeOfSequenceOfFinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_SequenceNodeOfSequenceOfFinder();
 		%feature("autodoc", "1");
@@ -454,12 +497,15 @@ class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection
 	return (Transfer_SequenceNodeOfSequenceOfFinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
+	~Handle_Transfer_SequenceNodeOfSequenceOfFinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfFinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_ActorOfProcessForTransient;
 class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_ActorOfProcessForTransient();
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorOfProcessForTransient();
 		%feature("autodoc", "1");
@@ -475,12 +521,15 @@ class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
 	return (Transfer_ActorOfProcessForTransient*)$self->Access();
 	}
 };
+%extend Handle_Transfer_ActorOfProcessForTransient {
+	~Handle_Transfer_ActorOfProcessForTransient() {
+	printf("Call custom destructor for instance of Handle_Transfer_ActorOfProcessForTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_ActorOfTransientProcess;
 class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfProcessForTransient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_ActorOfTransientProcess();
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorOfTransientProcess();
 		%feature("autodoc", "1");
@@ -496,12 +545,15 @@ class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfPr
 	return (Transfer_ActorOfTransientProcess*)$self->Access();
 	}
 };
+%extend Handle_Transfer_ActorOfTransientProcess {
+	~Handle_Transfer_ActorOfTransientProcess() {
+	printf("Call custom destructor for instance of Handle_Transfer_ActorOfTransientProcess\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_BinderOfTransientInteger;
 class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBinderOfTransient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_BinderOfTransientInteger();
 		%feature("autodoc", "1");
 		Handle_Transfer_BinderOfTransientInteger();
 		%feature("autodoc", "1");
@@ -517,12 +569,15 @@ class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBi
 	return (Transfer_BinderOfTransientInteger*)$self->Access();
 	}
 };
+%extend Handle_Transfer_BinderOfTransientInteger {
+	~Handle_Transfer_BinderOfTransientInteger() {
+	printf("Call custom destructor for instance of Handle_Transfer_BinderOfTransientInteger\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient;
 class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient();
 		%feature("autodoc", "1");
 		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient();
 		%feature("autodoc", "1");
@@ -538,12 +593,15 @@ class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_T
 	return (Transfer_DataMapNodeOfDataMapOfTransientTransient*)$self->Access();
 	}
 };
+%extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
+	~Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient() {
+	printf("Call custom destructor for instance of Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_ActorOfFinderProcess;
 class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProcessForFinder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_ActorOfFinderProcess();
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorOfFinderProcess();
 		%feature("autodoc", "1");
@@ -559,12 +617,15 @@ class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProce
 	return (Transfer_ActorOfFinderProcess*)$self->Access();
 	}
 };
+%extend Handle_Transfer_ActorOfFinderProcess {
+	~Handle_Transfer_ActorOfFinderProcess() {
+	printf("Call custom destructor for instance of Handle_Transfer_ActorOfFinderProcess\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_ActorDispatch;
 class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientProcess {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_ActorDispatch();
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorDispatch();
 		%feature("autodoc", "1");
@@ -580,12 +641,15 @@ class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientPro
 	return (Transfer_ActorDispatch*)$self->Access();
 	}
 };
+%extend Handle_Transfer_ActorDispatch {
+	~Handle_Transfer_ActorDispatch() {
+	printf("Call custom destructor for instance of Handle_Transfer_ActorDispatch\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_DispatchControl;
 class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_DispatchControl();
 		%feature("autodoc", "1");
 		Handle_Transfer_DispatchControl();
 		%feature("autodoc", "1");
@@ -601,12 +665,15 @@ class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
 	return (Transfer_DispatchControl*)$self->Access();
 	}
 };
+%extend Handle_Transfer_DispatchControl {
+	~Handle_Transfer_DispatchControl() {
+	printf("Call custom destructor for instance of Handle_Transfer_DispatchControl\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_FinderProcess;
 class Handle_Transfer_FinderProcess : public Handle_Transfer_ProcessForFinder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_FinderProcess();
 		%feature("autodoc", "1");
 		Handle_Transfer_FinderProcess();
 		%feature("autodoc", "1");
@@ -622,12 +689,15 @@ class Handle_Transfer_FinderProcess : public Handle_Transfer_ProcessForFinder {
 	return (Transfer_FinderProcess*)$self->Access();
 	}
 };
+%extend Handle_Transfer_FinderProcess {
+	~Handle_Transfer_FinderProcess() {
+	printf("Call custom destructor for instance of Handle_Transfer_FinderProcess\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_HSequenceOfBinder;
 class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_HSequenceOfBinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_HSequenceOfBinder();
 		%feature("autodoc", "1");
@@ -643,12 +713,15 @@ class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
 	return (Transfer_HSequenceOfBinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_HSequenceOfBinder {
+	~Handle_Transfer_HSequenceOfBinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_HSequenceOfBinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_MultipleBinder;
 class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_MultipleBinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_MultipleBinder();
 		%feature("autodoc", "1");
@@ -664,12 +737,15 @@ class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
 	return (Transfer_MultipleBinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_MultipleBinder {
+	~Handle_Transfer_MultipleBinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_MultipleBinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_ResultFromModel;
 class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_ResultFromModel();
 		%feature("autodoc", "1");
 		Handle_Transfer_ResultFromModel();
 		%feature("autodoc", "1");
@@ -685,12 +761,15 @@ class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 	return (Transfer_ResultFromModel*)$self->Access();
 	}
 };
+%extend Handle_Transfer_ResultFromModel {
+	~Handle_Transfer_ResultFromModel() {
+	printf("Call custom destructor for instance of Handle_Transfer_ResultFromModel\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_MapContainer;
 class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_MapContainer();
 		%feature("autodoc", "1");
 		Handle_Transfer_MapContainer();
 		%feature("autodoc", "1");
@@ -706,12 +785,15 @@ class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
 	return (Transfer_MapContainer*)$self->Access();
 	}
 };
+%extend Handle_Transfer_MapContainer {
+	~Handle_Transfer_MapContainer() {
+	printf("Call custom destructor for instance of Handle_Transfer_MapContainer\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_TransientListBinder;
 class Handle_Transfer_TransientListBinder : public Handle_Transfer_Binder {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_TransientListBinder();
 		%feature("autodoc", "1");
 		Handle_Transfer_TransientListBinder();
 		%feature("autodoc", "1");
@@ -727,12 +809,15 @@ class Handle_Transfer_TransientListBinder : public Handle_Transfer_Binder {
 	return (Transfer_TransientListBinder*)$self->Access();
 	}
 };
+%extend Handle_Transfer_TransientListBinder {
+	~Handle_Transfer_TransientListBinder() {
+	printf("Call custom destructor for instance of Handle_Transfer_TransientListBinder\n");
+	}
+};
 
 %nodefaultctor Handle_Transfer_TransferDeadLoop;
 class Handle_Transfer_TransferDeadLoop : public Handle_Transfer_TransferFailure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Transfer_TransferDeadLoop();
 		%feature("autodoc", "1");
 		Handle_Transfer_TransferDeadLoop();
 		%feature("autodoc", "1");
@@ -746,6 +831,11 @@ class Handle_Transfer_TransferDeadLoop : public Handle_Transfer_TransferFailure 
 %extend Handle_Transfer_TransferDeadLoop {
 	Transfer_TransferDeadLoop* GetObject() {
 	return (Transfer_TransferDeadLoop*)$self->Access();
+	}
+};
+%extend Handle_Transfer_TransferDeadLoop {
+	~Handle_Transfer_TransferDeadLoop() {
+	printf("Call custom destructor for instance of Handle_Transfer_TransferDeadLoop\n");
 	}
 };
 
@@ -826,13 +916,16 @@ class Transfer_DispatchControl : public Interface_CopyControl {
 		virtual		Standard_Boolean Search(const Handle_Standard_Transient &ent, Handle_Standard_Transient & res) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_DispatchControl();
 
 };
 %extend Transfer_DispatchControl {
 	Handle_Transfer_DispatchControl GetHandle() {
 	return *(Handle_Transfer_DispatchControl*) &$self;
+	}
+};
+%extend Transfer_DispatchControl {
+	~Transfer_DispatchControl() {
+	printf("Call custom destructor for instance of Transfer_DispatchControl\n");
 	}
 };
 
@@ -875,13 +968,16 @@ class Transfer_ResultFromTransient : public MMgt_TShared {
 		void FillBack(const Handle_Transfer_TransientProcess &TP) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_ResultFromTransient();
 
 };
 %extend Transfer_ResultFromTransient {
 	Handle_Transfer_ResultFromTransient GetHandle() {
 	return *(Handle_Transfer_ResultFromTransient*) &$self;
+	}
+};
+%extend Transfer_ResultFromTransient {
+	~Transfer_ResultFromTransient() {
+	printf("Call custom destructor for instance of Transfer_ResultFromTransient\n");
 	}
 };
 
@@ -1083,6 +1179,11 @@ class Transfer_Finder : public MMgt_TShared {
 	return *(Handle_Transfer_Finder*) &$self;
 	}
 };
+%extend Transfer_Finder {
+	~Transfer_Finder() {
+	printf("Call custom destructor for instance of Transfer_Finder\n");
+	}
+};
 
 %nodefaultctor Transfer_TransientMapper;
 class Transfer_TransientMapper : public Transfer_Finder {
@@ -1091,13 +1192,16 @@ class Transfer_TransientMapper : public Transfer_Finder {
 		Transfer_TransientMapper(const Handle_Standard_Transient &akey);
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_TransientMapper();
 
 };
 %extend Transfer_TransientMapper {
 	Handle_Transfer_TransientMapper GetHandle() {
 	return *(Handle_Transfer_TransientMapper*) &$self;
+	}
+};
+%extend Transfer_TransientMapper {
+	~Transfer_TransientMapper() {
+	printf("Call custom destructor for instance of Transfer_TransientMapper\n");
 	}
 };
 
@@ -1124,13 +1228,16 @@ class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
 		Handle_Transfer_ActorOfProcessForFinder Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_ActorOfProcessForFinder();
 
 };
 %extend Transfer_ActorOfProcessForFinder {
 	Handle_Transfer_ActorOfProcessForFinder GetHandle() {
 	return *(Handle_Transfer_ActorOfProcessForFinder*) &$self;
+	}
+};
+%extend Transfer_ActorOfProcessForFinder {
+	~Transfer_ActorOfProcessForFinder() {
+	printf("Call custom destructor for instance of Transfer_ActorOfProcessForFinder\n");
 	}
 };
 
@@ -1185,13 +1292,16 @@ class Transfer_HSequenceOfFinder : public MMgt_TShared {
 		Handle_Transfer_HSequenceOfFinder ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_HSequenceOfFinder();
 
 };
 %extend Transfer_HSequenceOfFinder {
 	Handle_Transfer_HSequenceOfFinder GetHandle() {
 	return *(Handle_Transfer_HSequenceOfFinder*) &$self;
+	}
+};
+%extend Transfer_HSequenceOfFinder {
+	~Transfer_HSequenceOfFinder() {
+	printf("Call custom destructor for instance of Transfer_HSequenceOfFinder\n");
 	}
 };
 
@@ -1330,13 +1440,16 @@ class Transfer_ProcessForFinder : public MMgt_TShared {
 		Handle_Message_ProgressIndicator GetProgress() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_ProcessForFinder();
 
 };
 %extend Transfer_ProcessForFinder {
 	Handle_Transfer_ProcessForFinder GetHandle() {
 	return *(Handle_Transfer_ProcessForFinder*) &$self;
+	}
+};
+%extend Transfer_ProcessForFinder {
+	~Transfer_ProcessForFinder() {
+	printf("Call custom destructor for instance of Transfer_ProcessForFinder\n");
 	}
 };
 
@@ -1355,13 +1468,16 @@ class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 		Handle_Transfer_TransientMapper TransientMapper(const Handle_Standard_Transient &obj) const;
 		%feature("autodoc", "1");
 		void PrintStats(const Standard_Integer mode, const Handle_Message_Messenger &S) const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_FinderProcess();
 
 };
 %extend Transfer_FinderProcess {
 	Handle_Transfer_FinderProcess GetHandle() {
 	return *(Handle_Transfer_FinderProcess*) &$self;
+	}
+};
+%extend Transfer_FinderProcess {
+	~Transfer_FinderProcess() {
+	printf("Call custom destructor for instance of Transfer_FinderProcess\n");
 	}
 };
 
@@ -1402,13 +1518,16 @@ class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
 		Handle_Transfer_ActorOfProcessForTransient Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_ActorOfProcessForTransient();
 
 };
 %extend Transfer_ActorOfProcessForTransient {
 	Handle_Transfer_ActorOfProcessForTransient GetHandle() {
 	return *(Handle_Transfer_ActorOfProcessForTransient*) &$self;
+	}
+};
+%extend Transfer_ActorOfProcessForTransient {
+	~Transfer_ActorOfProcessForTransient() {
+	printf("Call custom destructor for instance of Transfer_ActorOfProcessForTransient\n");
 	}
 };
 
@@ -1421,13 +1540,16 @@ class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransi
 		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		virtual		~Transfer_ActorOfTransientProcess();
 
 };
 %extend Transfer_ActorOfTransientProcess {
 	Handle_Transfer_ActorOfTransientProcess GetHandle() {
 	return *(Handle_Transfer_ActorOfTransientProcess*) &$self;
+	}
+};
+%extend Transfer_ActorOfTransientProcess {
+	~Transfer_ActorOfTransientProcess() {
+	printf("Call custom destructor for instance of Transfer_ActorOfTransientProcess\n");
 	}
 };
 
@@ -1444,13 +1566,16 @@ class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
 		void AddActor(const Handle_Transfer_ActorOfTransientProcess &actor);
 		%feature("autodoc", "1");
 		Transfer_TransferDispatch & TransferDispatch();
-		%feature("autodoc", "1");
-		virtual		~Transfer_ActorDispatch();
 
 };
 %extend Transfer_ActorDispatch {
 	Handle_Transfer_ActorDispatch GetHandle() {
 	return *(Handle_Transfer_ActorDispatch*) &$self;
+	}
+};
+%extend Transfer_ActorDispatch {
+	~Transfer_ActorDispatch() {
+	printf("Call custom destructor for instance of Transfer_ActorDispatch\n");
 	}
 };
 
@@ -1469,13 +1594,16 @@ class Transfer_TransferFailure : public Interface_InterfaceError {
 		Handle_Transfer_TransferFailure NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_TransferFailure();
 
 };
 %extend Transfer_TransferFailure {
 	Handle_Transfer_TransferFailure GetHandle() {
 	return *(Handle_Transfer_TransferFailure*) &$self;
+	}
+};
+%extend Transfer_TransferFailure {
+	~Transfer_TransferFailure() {
+	printf("Call custom destructor for instance of Transfer_TransferFailure\n");
 	}
 };
 
@@ -1488,13 +1616,16 @@ class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 		Transfer_TransferDeadLoop(const char * AString);
 		%feature("autodoc", "1");
 		Handle_Transfer_TransferDeadLoop NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~Transfer_TransferDeadLoop();
 
 };
 %extend Transfer_TransferDeadLoop {
 	Handle_Transfer_TransferDeadLoop GetHandle() {
 	return *(Handle_Transfer_TransferDeadLoop*) &$self;
+	}
+};
+%extend Transfer_TransferDeadLoop {
+	~Transfer_TransferDeadLoop() {
+	printf("Call custom destructor for instance of Transfer_TransferDeadLoop\n");
 	}
 };
 
@@ -1633,13 +1764,16 @@ class Transfer_ProcessForTransient : public MMgt_TShared {
 		Handle_Message_ProgressIndicator GetProgress() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_ProcessForTransient();
 
 };
 %extend Transfer_ProcessForTransient {
 	Handle_Transfer_ProcessForTransient GetHandle() {
 	return *(Handle_Transfer_ProcessForTransient*) &$self;
+	}
+};
+%extend Transfer_ProcessForTransient {
+	~Transfer_ProcessForTransient() {
+	printf("Call custom destructor for instance of Transfer_ProcessForTransient\n");
 	}
 };
 
@@ -1685,19 +1819,27 @@ class Transfer_Binder : public MMgt_TShared {
 	return *(Handle_Transfer_Binder*) &$self;
 	}
 };
+%extend Transfer_Binder {
+	~Transfer_Binder() {
+	printf("Call custom destructor for instance of Transfer_Binder\n");
+	}
+};
 
 %nodefaultctor Transfer_VoidBinder;
 class Transfer_VoidBinder : public Transfer_Binder {
 	public:
 		%feature("autodoc", "1");
 		Transfer_VoidBinder();
-		%feature("autodoc", "1");
-		virtual		~Transfer_VoidBinder();
 
 };
 %extend Transfer_VoidBinder {
 	Handle_Transfer_VoidBinder GetHandle() {
 	return *(Handle_Transfer_VoidBinder*) &$self;
+	}
+};
+%extend Transfer_VoidBinder {
+	~Transfer_VoidBinder() {
+	printf("Call custom destructor for instance of Transfer_VoidBinder\n");
 	}
 };
 
@@ -1716,13 +1858,16 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 		Handle_Transfer_Binder & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder();
 
 };
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
 	Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder GetHandle() {
 	return *(Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder*) &$self;
+	}
+};
+%extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
+	~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder() {
+	printf("Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");
 	}
 };
 
@@ -1771,13 +1916,16 @@ class Transfer_ResultFromModel : public MMgt_TShared {
 		Interface_CheckStatus ComputeCheckStatus(const Standard_Boolean enforce);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_ResultFromModel();
 
 };
 %extend Transfer_ResultFromModel {
 	Handle_Transfer_ResultFromModel GetHandle() {
 	return *(Handle_Transfer_ResultFromModel*) &$self;
+	}
+};
+%extend Transfer_ResultFromModel {
+	~Transfer_ResultFromModel() {
+	printf("Call custom destructor for instance of Transfer_ResultFromModel\n");
 	}
 };
 
@@ -1792,13 +1940,16 @@ class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_Map
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_DataMapNodeOfDataMapOfTransientTransient();
 
 };
 %extend Transfer_DataMapNodeOfDataMapOfTransientTransient {
 	Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient GetHandle() {
 	return *(Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient*) &$self;
+	}
+};
+%extend Transfer_DataMapNodeOfDataMapOfTransientTransient {
+	~Transfer_DataMapNodeOfDataMapOfTransientTransient() {
+	printf("Call custom destructor for instance of Transfer_DataMapNodeOfDataMapOfTransientTransient\n");
 	}
 };
 
@@ -1839,13 +1990,16 @@ class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
 		Standard_Boolean GetTypedResult(const Handle_Transfer_Binder &bnd, const Handle_Standard_Type &atype, Handle_Standard_Transient & res);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_SimpleBinderOfTransient();
 
 };
 %extend Transfer_SimpleBinderOfTransient {
 	Handle_Transfer_SimpleBinderOfTransient GetHandle() {
 	return *(Handle_Transfer_SimpleBinderOfTransient*) &$self;
+	}
+};
+%extend Transfer_SimpleBinderOfTransient {
+	~Transfer_SimpleBinderOfTransient() {
+	printf("Call custom destructor for instance of Transfer_SimpleBinderOfTransient\n");
 	}
 };
 
@@ -1864,13 +2018,16 @@ class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
 		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_FinderProcess &TP);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_ActorOfFinderProcess();
 
 };
 %extend Transfer_ActorOfFinderProcess {
 	Handle_Transfer_ActorOfFinderProcess GetHandle() {
 	return *(Handle_Transfer_ActorOfFinderProcess*) &$self;
+	}
+};
+%extend Transfer_ActorOfFinderProcess {
+	~Transfer_ActorOfFinderProcess() {
+	printf("Call custom destructor for instance of Transfer_ActorOfFinderProcess\n");
 	}
 };
 
@@ -1947,13 +2104,16 @@ class Transfer_MultipleBinder : public Transfer_Binder {
 		void SetMultipleResult(const Handle_TColStd_HSequenceOfTransient &mulres);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_MultipleBinder();
 
 };
 %extend Transfer_MultipleBinder {
 	Handle_Transfer_MultipleBinder GetHandle() {
 	return *(Handle_Transfer_MultipleBinder*) &$self;
+	}
+};
+%extend Transfer_MultipleBinder {
+	~Transfer_MultipleBinder() {
+	printf("Call custom destructor for instance of Transfer_MultipleBinder\n");
 	}
 };
 
@@ -1966,13 +2126,16 @@ class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
 		Handle_Transfer_Finder & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_SequenceNodeOfSequenceOfFinder();
 
 };
 %extend Transfer_SequenceNodeOfSequenceOfFinder {
 	Handle_Transfer_SequenceNodeOfSequenceOfFinder GetHandle() {
 	return *(Handle_Transfer_SequenceNodeOfSequenceOfFinder*) &$self;
+	}
+};
+%extend Transfer_SequenceNodeOfSequenceOfFinder {
+	~Transfer_SequenceNodeOfSequenceOfFinder() {
+	printf("Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfFinder\n");
 	}
 };
 
@@ -2029,13 +2192,16 @@ class Transfer_TransientListBinder : public Transfer_Binder {
 		const Handle_Standard_Transient & Transient(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_TransientListBinder();
 
 };
 %extend Transfer_TransientListBinder {
 	Handle_Transfer_TransientListBinder GetHandle() {
 	return *(Handle_Transfer_TransientListBinder*) &$self;
+	}
+};
+%extend Transfer_TransientListBinder {
+	~Transfer_TransientListBinder() {
+	printf("Call custom destructor for instance of Transfer_TransientListBinder\n");
 	}
 };
 
@@ -2050,13 +2216,16 @@ class Transfer_BinderOfTransientInteger : public Transfer_SimpleBinderOfTransien
 		Standard_Integer Integer() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_BinderOfTransientInteger();
 
 };
 %extend Transfer_BinderOfTransientInteger {
 	Handle_Transfer_BinderOfTransientInteger GetHandle() {
 	return *(Handle_Transfer_BinderOfTransientInteger*) &$self;
+	}
+};
+%extend Transfer_BinderOfTransientInteger {
+	~Transfer_BinderOfTransientInteger() {
+	printf("Call custom destructor for instance of Transfer_BinderOfTransientInteger\n");
 	}
 };
 
@@ -2111,13 +2280,16 @@ class Transfer_HSequenceOfBinder : public MMgt_TShared {
 		Handle_Transfer_HSequenceOfBinder ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_HSequenceOfBinder();
 
 };
 %extend Transfer_HSequenceOfBinder {
 	Handle_Transfer_HSequenceOfBinder GetHandle() {
 	return *(Handle_Transfer_HSequenceOfBinder*) &$self;
+	}
+};
+%extend Transfer_HSequenceOfBinder {
+	~Transfer_HSequenceOfBinder() {
+	printf("Call custom destructor for instance of Transfer_HSequenceOfBinder\n");
 	}
 };
 
@@ -2150,13 +2322,16 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCo
 		Handle_Transfer_Binder & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient();
 
 };
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
 	Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient GetHandle() {
 	return *(Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient*) &$self;
+	}
+};
+%extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
+	~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient() {
+	printf("Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient\n");
 	}
 };
 
@@ -2257,13 +2432,16 @@ class Transfer_TransientProcess : public Transfer_ProcessForTransient {
 		Handle_TColStd_HSequenceOfTransient RootsForTransfer();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_TransientProcess();
 
 };
 %extend Transfer_TransientProcess {
 	Handle_Transfer_TransientProcess GetHandle() {
 	return *(Handle_Transfer_TransientProcess*) &$self;
+	}
+};
+%extend Transfer_TransientProcess {
+	~Transfer_TransientProcess() {
+	printf("Call custom destructor for instance of Transfer_TransientProcess\n");
 	}
 };
 
@@ -2278,13 +2456,16 @@ class Transfer_MapContainer : public MMgt_TShared {
 		Transfer_DataMapOfTransientTransient & GetMapObjects();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_MapContainer();
 
 };
 %extend Transfer_MapContainer {
 	Handle_Transfer_MapContainer GetHandle() {
 	return *(Handle_Transfer_MapContainer*) &$self;
+	}
+};
+%extend Transfer_MapContainer {
+	~Transfer_MapContainer() {
+	printf("Call custom destructor for instance of Transfer_MapContainer\n");
 	}
 };
 
@@ -2317,12 +2498,15 @@ class Transfer_SequenceNodeOfSequenceOfBinder : public TCollection_SeqNode {
 		Handle_Transfer_Binder & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Transfer_SequenceNodeOfSequenceOfBinder();
 
 };
 %extend Transfer_SequenceNodeOfSequenceOfBinder {
 	Handle_Transfer_SequenceNodeOfSequenceOfBinder GetHandle() {
 	return *(Handle_Transfer_SequenceNodeOfSequenceOfBinder*) &$self;
+	}
+};
+%extend Transfer_SequenceNodeOfSequenceOfBinder {
+	~Transfer_SequenceNodeOfSequenceOfBinder() {
+	printf("Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfBinder\n");
 	}
 };

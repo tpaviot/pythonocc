@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation();
-		%feature("autodoc", "1");
 		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation();
 		%feature("autodoc", "1");
 		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation &aHandle);
@@ -116,6 +114,11 @@ class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Ha
 %extend Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
 	GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation* GetObject() {
 	return (GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation*)$self->Access();
+	}
+};
+%extend Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	~Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation() {
+	printf("Call custom destructor for instance of Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");
 	}
 };
 
@@ -640,13 +643,16 @@ class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollecti
 		GeomInt_ParameterAndOrientation & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation();
 
 };
 %extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
 	Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation GetHandle() {
 	return *(Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation*) &$self;
+	}
+};
+%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation() {
+	printf("Call custom destructor for instance of GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");
 	}
 };
 

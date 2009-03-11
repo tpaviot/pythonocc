@@ -103,8 +103,6 @@ typedef NCollection_UBTree<int, Bnd_Box> ShapeAnalysis_BoxBndTree;
 class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds();
-		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds();
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds(const Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds &aHandle);
@@ -119,12 +117,15 @@ class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TC
 	return (ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds*)$self->Access();
 	}
 };
+%extend Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
+	~Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds() {
+	printf("Call custom destructor for instance of Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeAnalysis_FreeBoundData;
 class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeAnalysis_FreeBoundData();
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_FreeBoundData();
 		%feature("autodoc", "1");
@@ -140,12 +141,15 @@ class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
 	return (ShapeAnalysis_FreeBoundData*)$self->Access();
 	}
 };
+%extend Handle_ShapeAnalysis_FreeBoundData {
+	~Handle_ShapeAnalysis_FreeBoundData() {
+	printf("Call custom destructor for instance of Handle_ShapeAnalysis_FreeBoundData\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeAnalysis_Wire;
 class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeAnalysis_Wire();
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Wire();
 		%feature("autodoc", "1");
@@ -161,12 +165,15 @@ class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
 	return (ShapeAnalysis_Wire*)$self->Access();
 	}
 };
+%extend Handle_ShapeAnalysis_Wire {
+	~Handle_ShapeAnalysis_Wire() {
+	printf("Call custom destructor for instance of Handle_ShapeAnalysis_Wire\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeAnalysis_TransferParameters;
 class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeAnalysis_TransferParameters();
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParameters();
 		%feature("autodoc", "1");
@@ -182,12 +189,15 @@ class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 	return (ShapeAnalysis_TransferParameters*)$self->Access();
 	}
 };
+%extend Handle_ShapeAnalysis_TransferParameters {
+	~Handle_ShapeAnalysis_TransferParameters() {
+	printf("Call custom destructor for instance of Handle_ShapeAnalysis_TransferParameters\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeAnalysis_TransferParametersProj;
 class Handle_ShapeAnalysis_TransferParametersProj : public Handle_ShapeAnalysis_TransferParameters {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeAnalysis_TransferParametersProj();
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParametersProj();
 		%feature("autodoc", "1");
@@ -203,12 +213,15 @@ class Handle_ShapeAnalysis_TransferParametersProj : public Handle_ShapeAnalysis_
 	return (ShapeAnalysis_TransferParametersProj*)$self->Access();
 	}
 };
+%extend Handle_ShapeAnalysis_TransferParametersProj {
+	~Handle_ShapeAnalysis_TransferParametersProj() {
+	printf("Call custom destructor for instance of Handle_ShapeAnalysis_TransferParametersProj\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal;
 class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal();
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal();
 		%feature("autodoc", "1");
@@ -224,12 +237,15 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public Handle
 	return (ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal*)$self->Access();
 	}
 };
+%extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
+	~Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal() {
+	printf("Call custom destructor for instance of Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeAnalysis_HSequenceOfFreeBounds;
 class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeAnalysis_HSequenceOfFreeBounds();
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_HSequenceOfFreeBounds();
 		%feature("autodoc", "1");
@@ -245,12 +261,15 @@ class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
 	return (ShapeAnalysis_HSequenceOfFreeBounds*)$self->Access();
 	}
 };
+%extend Handle_ShapeAnalysis_HSequenceOfFreeBounds {
+	~Handle_ShapeAnalysis_HSequenceOfFreeBounds() {
+	printf("Call custom destructor for instance of Handle_ShapeAnalysis_HSequenceOfFreeBounds\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal;
 class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
@@ -266,12 +285,15 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public Handle_TColl
 	return (ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
 	}
 };
+%extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
+	~Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeAnalysis_Surface;
 class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeAnalysis_Surface();
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Surface();
 		%feature("autodoc", "1");
@@ -287,6 +309,11 @@ class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 	return (ShapeAnalysis_Surface*)$self->Access();
 	}
 };
+%extend Handle_ShapeAnalysis_Surface {
+	~Handle_ShapeAnalysis_Surface() {
+	printf("Call custom destructor for instance of Handle_ShapeAnalysis_Surface\n");
+	}
+};
 
 %nodefaultctor ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal;
 class ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
@@ -299,13 +326,16 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal();
 
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
 	Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal GetHandle() {
 	return *(Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal*) &$self;
+	}
+};
+%extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
+	~ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal\n");
 	}
 };
 
@@ -406,13 +436,16 @@ class ShapeAnalysis_TransferParameters : public MMgt_TShared {
 		virtual		Standard_Boolean IsSameRange() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_TransferParameters();
 
 };
 %extend ShapeAnalysis_TransferParameters {
 	Handle_ShapeAnalysis_TransferParameters GetHandle() {
 	return *(Handle_ShapeAnalysis_TransferParameters*) &$self;
+	}
+};
+%extend ShapeAnalysis_TransferParameters {
+	~ShapeAnalysis_TransferParameters() {
+	printf("Call custom destructor for instance of ShapeAnalysis_TransferParameters\n");
 	}
 };
 
@@ -665,13 +698,16 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_M
 		TColStd_ListOfReal & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal();
 
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
 	Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal GetHandle() {
 	return *(Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal*) &$self;
+	}
+};
+%extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
+	~ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal() {
+	printf("Call custom destructor for instance of ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal\n");
 	}
 };
 
@@ -736,13 +772,16 @@ class ShapeAnalysis_FreeBoundData : public MMgt_TShared {
 		Standard_Real NotchWidth(const TopoDS_Wire &notch) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_FreeBoundData();
 
 };
 %extend ShapeAnalysis_FreeBoundData {
 	Handle_ShapeAnalysis_FreeBoundData GetHandle() {
 	return *(Handle_ShapeAnalysis_FreeBoundData*) &$self;
+	}
+};
+%extend ShapeAnalysis_FreeBoundData {
+	~ShapeAnalysis_FreeBoundData() {
+	printf("Call custom destructor for instance of ShapeAnalysis_FreeBoundData\n");
 	}
 };
 
@@ -797,13 +836,16 @@ class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
 		Handle_ShapeAnalysis_HSequenceOfFreeBounds ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_HSequenceOfFreeBounds();
 
 };
 %extend ShapeAnalysis_HSequenceOfFreeBounds {
 	Handle_ShapeAnalysis_HSequenceOfFreeBounds GetHandle() {
 	return *(Handle_ShapeAnalysis_HSequenceOfFreeBounds*) &$self;
+	}
+};
+%extend ShapeAnalysis_HSequenceOfFreeBounds {
+	~ShapeAnalysis_HSequenceOfFreeBounds() {
+	printf("Call custom destructor for instance of ShapeAnalysis_HSequenceOfFreeBounds\n");
 	}
 };
 
@@ -900,13 +942,16 @@ class ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public TCollection_SeqN
 		Handle_ShapeAnalysis_FreeBoundData & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds();
 
 };
 %extend ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
 	Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds GetHandle() {
 	return *(Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds*) &$self;
+	}
+};
+%extend ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
+	~ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds() {
+	printf("Call custom destructor for instance of ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds\n");
 	}
 };
 
@@ -1037,13 +1082,16 @@ class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParame
 		TopoDS_Vertex CopyNMVertex(const TopoDS_Vertex &theVert, const TopoDS_Face &toFace, const TopoDS_Face &fromFace);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_TransferParametersProj();
 
 };
 %extend ShapeAnalysis_TransferParametersProj {
 	Handle_ShapeAnalysis_TransferParametersProj GetHandle() {
 	return *(Handle_ShapeAnalysis_TransferParametersProj*) &$self;
+	}
+};
+%extend ShapeAnalysis_TransferParametersProj {
+	~ShapeAnalysis_TransferParametersProj() {
+	printf("Call custom destructor for instance of ShapeAnalysis_TransferParametersProj\n");
 	}
 };
 
@@ -1196,13 +1244,16 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 		Standard_Real MaxDistance2d() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_Wire();
 
 };
 %extend ShapeAnalysis_Wire {
 	Handle_ShapeAnalysis_Wire GetHandle() {
 	return *(Handle_ShapeAnalysis_Wire*) &$self;
+	}
+};
+%extend ShapeAnalysis_Wire {
+	~ShapeAnalysis_Wire() {
+	printf("Call custom destructor for instance of ShapeAnalysis_Wire\n");
 	}
 };
 
@@ -1367,13 +1418,16 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 		const Bnd_Box & GetBoxVL();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeAnalysis_Surface();
 
 };
 %extend ShapeAnalysis_Surface {
 	Handle_ShapeAnalysis_Surface GetHandle() {
 	return *(Handle_ShapeAnalysis_Surface*) &$self;
+	}
+};
+%extend ShapeAnalysis_Surface {
+	~ShapeAnalysis_Surface() {
+	printf("Call custom destructor for instance of ShapeAnalysis_Surface\n");
 	}
 };
 

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_XmlXCAFDrivers_DocumentRetrievalDriver : public Handle_XmlDrivers_DocumentRetrievalDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlXCAFDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
 		Handle_XmlXCAFDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_XmlXCAFDrivers_DocumentRetrievalDriver(const Handle_XmlXCAFDrivers_DocumentRetrievalDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_XmlXCAFDrivers_DocumentRetrievalDriver : public Handle_XmlDrivers_D
 	return (XmlXCAFDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlXCAFDrivers_DocumentRetrievalDriver {
+	~Handle_XmlXCAFDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_XmlXCAFDrivers_DocumentRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlXCAFDrivers_DocumentStorageDriver;
 class Handle_XmlXCAFDrivers_DocumentStorageDriver : public Handle_XmlDrivers_DocumentStorageDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlXCAFDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_XmlXCAFDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
@@ -139,6 +140,11 @@ class Handle_XmlXCAFDrivers_DocumentStorageDriver : public Handle_XmlDrivers_Doc
 	return (XmlXCAFDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlXCAFDrivers_DocumentStorageDriver {
+	~Handle_XmlXCAFDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_XmlXCAFDrivers_DocumentStorageDriver\n");
+	}
+};
 
 %nodefaultctor XmlXCAFDrivers_DocumentRetrievalDriver;
 class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetrievalDriver {
@@ -149,13 +155,16 @@ class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetriev
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlXCAFDrivers_DocumentRetrievalDriver();
 
 };
 %extend XmlXCAFDrivers_DocumentRetrievalDriver {
 	Handle_XmlXCAFDrivers_DocumentRetrievalDriver GetHandle() {
 	return *(Handle_XmlXCAFDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend XmlXCAFDrivers_DocumentRetrievalDriver {
+	~XmlXCAFDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of XmlXCAFDrivers_DocumentRetrievalDriver\n");
 	}
 };
 
@@ -168,13 +177,16 @@ class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDr
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlXCAFDrivers_DocumentStorageDriver();
 
 };
 %extend XmlXCAFDrivers_DocumentStorageDriver {
 	Handle_XmlXCAFDrivers_DocumentStorageDriver GetHandle() {
 	return *(Handle_XmlXCAFDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend XmlXCAFDrivers_DocumentStorageDriver {
+	~XmlXCAFDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of XmlXCAFDrivers_DocumentStorageDriver\n");
 	}
 };
 

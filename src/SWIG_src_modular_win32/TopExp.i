@@ -103,8 +103,6 @@ typedef TopoDS_Iterator * TopExp_Stack;
 class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TopExp_StackNodeOfStackOfIterator();
-		%feature("autodoc", "1");
 		Handle_TopExp_StackNodeOfStackOfIterator();
 		%feature("autodoc", "1");
 		Handle_TopExp_StackNodeOfStackOfIterator(const Handle_TopExp_StackNodeOfStackOfIterator &aHandle);
@@ -119,6 +117,11 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 	return (TopExp_StackNodeOfStackOfIterator*)$self->Access();
 	}
 };
+%extend Handle_TopExp_StackNodeOfStackOfIterator {
+	~Handle_TopExp_StackNodeOfStackOfIterator() {
+	printf("Call custom destructor for instance of Handle_TopExp_StackNodeOfStackOfIterator\n");
+	}
+};
 
 %nodefaultctor TopExp_StackNodeOfStackOfIterator;
 class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
@@ -129,13 +132,16 @@ class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 		TopoDS_Iterator & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopExp_StackNodeOfStackOfIterator();
 
 };
 %extend TopExp_StackNodeOfStackOfIterator {
 	Handle_TopExp_StackNodeOfStackOfIterator GetHandle() {
 	return *(Handle_TopExp_StackNodeOfStackOfIterator*) &$self;
+	}
+};
+%extend TopExp_StackNodeOfStackOfIterator {
+	~TopExp_StackNodeOfStackOfIterator() {
+	printf("Call custom destructor for instance of TopExp_StackNodeOfStackOfIterator\n");
 	}
 };
 

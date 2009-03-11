@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt();
-		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt();
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt(const Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt &aHandle);
@@ -118,12 +116,15 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public Ha
 	return (BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt*)$self->Access();
 	}
 };
+%extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
+	~Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt() {
+	printf("Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape;
 class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape();
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TColl
 	return (BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape*)$self->Access();
 	}
 };
+%extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
+	~Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape() {
+	printf("Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
 class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt();
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt();
 		%feature("autodoc", "1");
@@ -160,6 +164,11 @@ class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollect
 	return (BRepMAT2d_SequenceNodeOfSequenceOfBasicElt*)$self->Access();
 	}
 };
+%extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+	~Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
+	printf("Call custom destructor for instance of Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");
+	}
+};
 
 %nodefaultctor BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt;
 class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollection_MapNode {
@@ -172,13 +181,16 @@ class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollecti
 		BRepMAT2d_SequenceOfBasicElt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt();
 
 };
 %extend BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
 	Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt GetHandle() {
 	return *(Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt*) &$self;
+	}
+};
+%extend BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
+	~BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt() {
+	printf("Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt\n");
 	}
 };
 
@@ -221,13 +233,16 @@ class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 		Handle_MAT_BasicElt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt();
 
 };
 %extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
 	Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt GetHandle() {
 	return *(Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt*) &$self;
+	}
+};
+%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+	~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
+	printf("Call custom destructor for instance of BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");
 	}
 };
 
@@ -358,13 +373,16 @@ class BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public TCollection_MapNode
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape();
 
 };
 %extend BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
 	Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape GetHandle() {
 	return *(Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape*) &$self;
+	}
+};
+%extend BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
+	~BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape() {
+	printf("Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");
 	}
 };
 

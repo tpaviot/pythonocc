@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Poly_CoherentTriangulation();
-		%feature("autodoc", "1");
 		Handle_Poly_CoherentTriangulation();
 		%feature("autodoc", "1");
 		Handle_Poly_CoherentTriangulation(const Handle_Poly_CoherentTriangulation &aHandle);
@@ -118,12 +116,15 @@ class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 	return (Poly_CoherentTriangulation*)$self->Access();
 	}
 };
+%extend Handle_Poly_CoherentTriangulation {
+	~Handle_Poly_CoherentTriangulation() {
+	printf("Call custom destructor for instance of Handle_Poly_CoherentTriangulation\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_PolygonOnTriangulation;
 class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
 		Handle_Poly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 	return (Poly_PolygonOnTriangulation*)$self->Access();
 	}
 };
+%extend Handle_Poly_PolygonOnTriangulation {
+	~Handle_Poly_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of Handle_Poly_PolygonOnTriangulation\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_Polygon3D;
 class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_Polygon3D();
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon3D();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 	return (Poly_Polygon3D*)$self->Access();
 	}
 };
+%extend Handle_Poly_Polygon3D {
+	~Handle_Poly_Polygon3D() {
+	printf("Call custom destructor for instance of Handle_Poly_Polygon3D\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_Polygon2D;
 class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_Polygon2D();
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon2D();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 	return (Poly_Polygon2D*)$self->Access();
 	}
 };
+%extend Handle_Poly_Polygon2D {
+	~Handle_Poly_Polygon2D() {
+	printf("Call custom destructor for instance of Handle_Poly_Polygon2D\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_HArray1OfTriangle;
 class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_HArray1OfTriangle();
 		%feature("autodoc", "1");
 		Handle_Poly_HArray1OfTriangle();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 	return (Poly_HArray1OfTriangle*)$self->Access();
 	}
 };
+%extend Handle_Poly_HArray1OfTriangle {
+	~Handle_Poly_HArray1OfTriangle() {
+	printf("Call custom destructor for instance of Handle_Poly_HArray1OfTriangle\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_Triangulation;
 class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_Triangulation();
 		%feature("autodoc", "1");
 		Handle_Poly_Triangulation();
 		%feature("autodoc", "1");
@@ -221,6 +234,11 @@ class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 %extend Handle_Poly_Triangulation {
 	Poly_Triangulation* GetObject() {
 	return (Poly_Triangulation*)$self->Access();
+	}
+};
+%extend Handle_Poly_Triangulation {
+	~Handle_Poly_Triangulation() {
+	printf("Call custom destructor for instance of Handle_Poly_Triangulation\n");
 	}
 };
 
@@ -271,13 +289,16 @@ class Poly_PolygonOnTriangulation : public MMgt_TShared {
 		Handle_TColStd_HArray1OfReal Parameters() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_PolygonOnTriangulation();
 
 };
 %extend Poly_PolygonOnTriangulation {
 	Handle_Poly_PolygonOnTriangulation GetHandle() {
 	return *(Handle_Poly_PolygonOnTriangulation*) &$self;
+	}
+};
+%extend Poly_PolygonOnTriangulation {
+	~Poly_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of Poly_PolygonOnTriangulation\n");
 	}
 };
 
@@ -360,13 +381,16 @@ class Poly_Triangulation : public MMgt_TShared {
 		Standard_Boolean HasNormals() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_Triangulation();
 
 };
 %extend Poly_Triangulation {
 	Handle_Poly_Triangulation GetHandle() {
 	return *(Handle_Poly_Triangulation*) &$self;
+	}
+};
+%extend Poly_Triangulation {
+	~Poly_Triangulation() {
+	printf("Call custom destructor for instance of Poly_Triangulation\n");
 	}
 };
 
@@ -495,13 +519,16 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 		Poly_Array1OfTriangle & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_HArray1OfTriangle();
 
 };
 %extend Poly_HArray1OfTriangle {
 	Handle_Poly_HArray1OfTriangle GetHandle() {
 	return *(Handle_Poly_HArray1OfTriangle*) &$self;
+	}
+};
+%extend Poly_HArray1OfTriangle {
+	~Poly_HArray1OfTriangle() {
+	printf("Call custom destructor for instance of Poly_HArray1OfTriangle\n");
 	}
 };
 
@@ -576,13 +603,16 @@ class Poly_Polygon2D : public MMgt_TShared {
 		const TColgp_Array1OfPnt2d & Nodes() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_Polygon2D();
 
 };
 %extend Poly_Polygon2D {
 	Handle_Poly_Polygon2D GetHandle() {
 	return *(Handle_Poly_Polygon2D*) &$self;
+	}
+};
+%extend Poly_Polygon2D {
+	~Poly_Polygon2D() {
+	printf("Call custom destructor for instance of Poly_Polygon2D\n");
 	}
 };
 
@@ -609,12 +639,15 @@ class Poly_Polygon3D : public MMgt_TShared {
 		TColStd_Array1OfReal & ChangeParameters() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_Polygon3D();
 
 };
 %extend Poly_Polygon3D {
 	Handle_Poly_Polygon3D GetHandle() {
 	return *(Handle_Poly_Polygon3D*) &$self;
+	}
+};
+%extend Poly_Polygon3D {
+	~Poly_Polygon3D() {
+	printf("Call custom destructor for instance of Poly_Polygon3D\n");
 	}
 };

@@ -151,8 +151,6 @@ enum StepToTopoDS_TranslateShellError {
 class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI();
-		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI();
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI(const Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI &aHandle);
@@ -167,12 +165,15 @@ class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_
 	return (StepToTopoDS_DataMapNodeOfDataMapOfTRI*)$self->Access();
 	}
 };
+%extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	~Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI() {
+	printf("Call custom destructor for instance of Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI\n");
+	}
+};
 
 %nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointVertexMap;
 class Handle_StepToTopoDS_DataMapNodeOfPointVertexMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepToTopoDS_DataMapNodeOfPointVertexMap();
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap();
 		%feature("autodoc", "1");
@@ -188,12 +189,15 @@ class Handle_StepToTopoDS_DataMapNodeOfPointVertexMap : public Handle_TCollectio
 	return (StepToTopoDS_DataMapNodeOfPointVertexMap*)$self->Access();
 	}
 };
+%extend Handle_StepToTopoDS_DataMapNodeOfPointVertexMap {
+	~Handle_StepToTopoDS_DataMapNodeOfPointVertexMap() {
+	printf("Call custom destructor for instance of Handle_StepToTopoDS_DataMapNodeOfPointVertexMap\n");
+	}
+};
 
 %nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap;
 class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap();
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap();
 		%feature("autodoc", "1");
@@ -207,6 +211,11 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 %extend Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap {
 	StepToTopoDS_DataMapNodeOfPointEdgeMap* GetObject() {
 	return (StepToTopoDS_DataMapNodeOfPointEdgeMap*)$self->Access();
+	}
+};
+%extend Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	~Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap() {
+	printf("Call custom destructor for instance of Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap\n");
 	}
 };
 
@@ -427,13 +436,16 @@ class StepToTopoDS_DataMapNodeOfPointVertexMap : public TCollection_MapNode {
 		TopoDS_Vertex & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepToTopoDS_DataMapNodeOfPointVertexMap();
 
 };
 %extend StepToTopoDS_DataMapNodeOfPointVertexMap {
 	Handle_StepToTopoDS_DataMapNodeOfPointVertexMap GetHandle() {
 	return *(Handle_StepToTopoDS_DataMapNodeOfPointVertexMap*) &$self;
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfPointVertexMap {
+	~StepToTopoDS_DataMapNodeOfPointVertexMap() {
+	printf("Call custom destructor for instance of StepToTopoDS_DataMapNodeOfPointVertexMap\n");
 	}
 };
 
@@ -676,13 +688,16 @@ class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepToTopoDS_DataMapNodeOfDataMapOfTRI();
 
 };
 %extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
 	Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI GetHandle() {
 	return *(Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI*) &$self;
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	~StepToTopoDS_DataMapNodeOfDataMapOfTRI() {
+	printf("Call custom destructor for instance of StepToTopoDS_DataMapNodeOfDataMapOfTRI\n");
 	}
 };
 
@@ -741,13 +756,16 @@ class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
 		TopoDS_Edge & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepToTopoDS_DataMapNodeOfPointEdgeMap();
 
 };
 %extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
 	Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap GetHandle() {
 	return *(Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap*) &$self;
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	~StepToTopoDS_DataMapNodeOfPointEdgeMap() {
+	printf("Call custom destructor for instance of StepToTopoDS_DataMapNodeOfPointEdgeMap\n");
 	}
 };
 

@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_StdLDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentStorageDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StdLDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentStorageDriver(const Handle_StdLDrivers_DocumentStorageDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_StdLDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 	return (StdLDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_StdLDrivers_DocumentStorageDriver {
+	~Handle_StdLDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_StdLDrivers_DocumentStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_StdLDrivers_DocumentRetrievalDriver;
 class Handle_StdLDrivers_DocumentRetrievalDriver : public Handle_MDocStd_DocumentRetrievalDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_StdLDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 %extend Handle_StdLDrivers_DocumentRetrievalDriver {
 	StdLDrivers_DocumentRetrievalDriver* GetObject() {
 	return (StdLDrivers_DocumentRetrievalDriver*)$self->Access();
+	}
+};
+%extend Handle_StdLDrivers_DocumentRetrievalDriver {
+	~Handle_StdLDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_StdLDrivers_DocumentRetrievalDriver\n");
 	}
 };
 
@@ -163,13 +169,16 @@ class StdLDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdLDrivers_DocumentStorageDriver();
 
 };
 %extend StdLDrivers_DocumentStorageDriver {
 	Handle_StdLDrivers_DocumentStorageDriver GetHandle() {
 	return *(Handle_StdLDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend StdLDrivers_DocumentStorageDriver {
+	~StdLDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of StdLDrivers_DocumentStorageDriver\n");
 	}
 };
 
@@ -182,12 +191,15 @@ class StdLDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 		virtual		Handle_MDF_ARDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdLDrivers_DocumentRetrievalDriver();
 
 };
 %extend StdLDrivers_DocumentRetrievalDriver {
 	Handle_StdLDrivers_DocumentRetrievalDriver GetHandle() {
 	return *(Handle_StdLDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend StdLDrivers_DocumentRetrievalDriver {
+	~StdLDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of StdLDrivers_DocumentRetrievalDriver\n");
 	}
 };

@@ -140,8 +140,6 @@ enum MFT_TypeOfCommand {
 class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MFT_SequenceNodeOfListOfFontName();
-		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontName();
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontName(const Handle_MFT_SequenceNodeOfListOfFontName &aHandle);
@@ -156,12 +154,15 @@ class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNod
 	return (MFT_SequenceNodeOfListOfFontName*)$self->Access();
 	}
 };
+%extend Handle_MFT_SequenceNodeOfListOfFontName {
+	~Handle_MFT_SequenceNodeOfListOfFontName() {
+	printf("Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontName\n");
+	}
+};
 
 %nodefaultctor Handle_MFT_TextManager;
 class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MFT_TextManager();
 		%feature("autodoc", "1");
 		Handle_MFT_TextManager();
 		%feature("autodoc", "1");
@@ -177,12 +178,15 @@ class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 	return (MFT_TextManager*)$self->Access();
 	}
 };
+%extend Handle_MFT_TextManager {
+	~Handle_MFT_TextManager() {
+	printf("Call custom destructor for instance of Handle_MFT_TextManager\n");
+	}
+};
 
 %nodefaultctor Handle_MFT_FontManager;
 class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MFT_FontManager();
 		%feature("autodoc", "1");
 		Handle_MFT_FontManager();
 		%feature("autodoc", "1");
@@ -198,12 +202,15 @@ class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 	return (MFT_FontManager*)$self->Access();
 	}
 };
+%extend Handle_MFT_FontManager {
+	~Handle_MFT_FontManager() {
+	printf("Call custom destructor for instance of Handle_MFT_FontManager\n");
+	}
+};
 
 %nodefaultctor Handle_MFT_FontManagerError;
 class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MFT_FontManagerError();
 		%feature("autodoc", "1");
 		Handle_MFT_FontManagerError();
 		%feature("autodoc", "1");
@@ -219,12 +226,15 @@ class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 	return (MFT_FontManagerError*)$self->Access();
 	}
 };
+%extend Handle_MFT_FontManagerError {
+	~Handle_MFT_FontManagerError() {
+	printf("Call custom destructor for instance of Handle_MFT_FontManagerError\n");
+	}
+};
 
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontHandle;
 class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MFT_SequenceNodeOfListOfFontHandle();
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontHandle();
 		%feature("autodoc", "1");
@@ -240,12 +250,15 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 	return (MFT_SequenceNodeOfListOfFontHandle*)$self->Access();
 	}
 };
+%extend Handle_MFT_SequenceNodeOfListOfFontHandle {
+	~Handle_MFT_SequenceNodeOfListOfFontHandle() {
+	printf("Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontHandle\n");
+	}
+};
 
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontReference;
 class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MFT_SequenceNodeOfListOfFontReference();
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontReference();
 		%feature("autodoc", "1");
@@ -261,12 +274,15 @@ class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_S
 	return (MFT_SequenceNodeOfListOfFontReference*)$self->Access();
 	}
 };
+%extend Handle_MFT_SequenceNodeOfListOfFontReference {
+	~Handle_MFT_SequenceNodeOfListOfFontReference() {
+	printf("Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontReference\n");
+	}
+};
 
 %nodefaultctor Handle_MFT_FontManagerDefinitionError;
 class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MFT_FontManagerDefinitionError();
 		%feature("autodoc", "1");
 		Handle_MFT_FontManagerDefinitionError();
 		%feature("autodoc", "1");
@@ -282,6 +298,11 @@ class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObjec
 	return (MFT_FontManagerDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_MFT_FontManagerDefinitionError {
+	~Handle_MFT_FontManagerDefinitionError() {
+	printf("Call custom destructor for instance of Handle_MFT_FontManagerDefinitionError\n");
+	}
+};
 
 %nodefaultctor MFT_SequenceNodeOfListOfFontReference;
 class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
@@ -292,13 +313,16 @@ class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MFT_SequenceNodeOfListOfFontReference();
 
 };
 %extend MFT_SequenceNodeOfListOfFontReference {
 	Handle_MFT_SequenceNodeOfListOfFontReference GetHandle() {
 	return *(Handle_MFT_SequenceNodeOfListOfFontReference*) &$self;
+	}
+};
+%extend MFT_SequenceNodeOfListOfFontReference {
+	~MFT_SequenceNodeOfListOfFontReference() {
+	printf("Call custom destructor for instance of MFT_SequenceNodeOfListOfFontReference\n");
 	}
 };
 
@@ -461,13 +485,16 @@ class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 		TCollection_AsciiString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MFT_SequenceNodeOfListOfFontName();
 
 };
 %extend MFT_SequenceNodeOfListOfFontName {
 	Handle_MFT_SequenceNodeOfListOfFontName GetHandle() {
 	return *(Handle_MFT_SequenceNodeOfListOfFontName*) &$self;
+	}
+};
+%extend MFT_SequenceNodeOfListOfFontName {
+	~MFT_SequenceNodeOfListOfFontName() {
+	printf("Call custom destructor for instance of MFT_SequenceNodeOfListOfFontName\n");
 	}
 };
 
@@ -480,13 +507,16 @@ class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 		MFT_FileHandle & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MFT_SequenceNodeOfListOfFontHandle();
 
 };
 %extend MFT_SequenceNodeOfListOfFontHandle {
 	Handle_MFT_SequenceNodeOfListOfFontHandle GetHandle() {
 	return *(Handle_MFT_SequenceNodeOfListOfFontHandle*) &$self;
+	}
+};
+%extend MFT_SequenceNodeOfListOfFontHandle {
+	~MFT_SequenceNodeOfListOfFontHandle() {
+	printf("Call custom destructor for instance of MFT_SequenceNodeOfListOfFontHandle\n");
 	}
 };
 
@@ -517,13 +547,16 @@ class MFT_TextManager : public MMgt_TShared {
 		virtual		void EndString();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MFT_TextManager();
 
 };
 %extend MFT_TextManager {
 	Handle_MFT_TextManager GetHandle() {
 	return *(Handle_MFT_TextManager*) &$self;
+	}
+};
+%extend MFT_TextManager {
+	~MFT_TextManager() {
+	printf("Call custom destructor for instance of MFT_TextManager\n");
 	}
 };
 
@@ -542,13 +575,16 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 		Handle_MFT_FontManagerDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MFT_FontManagerDefinitionError();
 
 };
 %extend MFT_FontManagerDefinitionError {
 	Handle_MFT_FontManagerDefinitionError GetHandle() {
 	return *(Handle_MFT_FontManagerDefinitionError*) &$self;
+	}
+};
+%extend MFT_FontManagerDefinitionError {
+	~MFT_FontManagerDefinitionError() {
+	printf("Call custom destructor for instance of MFT_FontManagerDefinitionError\n");
 	}
 };
 
@@ -567,13 +603,16 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 		Handle_MFT_FontManagerError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MFT_FontManagerError();
 
 };
 %extend MFT_FontManagerError {
 	Handle_MFT_FontManagerError GetHandle() {
 	return *(Handle_MFT_FontManagerError*) &$self;
+	}
+};
+%extend MFT_FontManagerError {
+	~MFT_FontManagerError() {
+	printf("Call custom destructor for instance of MFT_FontManagerError\n");
 	}
 };
 
@@ -586,8 +625,6 @@ class MFT_FontManager : public MMgt_TShared {
 		MFT_FontManager(const Aspect_FontStyle &aFont, const OSD_OpenMode aFileMode=OSD_ReadOnly, const Standard_Boolean isComposite=0);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~MFT_FontManager();
 		%feature("autodoc", "1");
 		void SetFont(const Aspect_FontStyle &aFont);
 		%feature("autodoc", "1");
@@ -685,6 +722,11 @@ class MFT_FontManager : public MMgt_TShared {
 %extend MFT_FontManager {
 	Handle_MFT_FontManager GetHandle() {
 	return *(Handle_MFT_FontManager*) &$self;
+	}
+};
+%extend MFT_FontManager {
+	~MFT_FontManager() {
+	printf("Call custom destructor for instance of MFT_FontManager\n");
 	}
 };
 

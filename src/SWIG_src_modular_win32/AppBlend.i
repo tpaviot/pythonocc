@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d();
-		%feature("autodoc", "1");
 		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d();
 		%feature("autodoc", "1");
 		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d(const Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
@@ -116,6 +114,11 @@ class Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCol
 %extend Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
 	AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d* GetObject() {
 	return (AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d*)$self->Access();
+	}
+};
+%extend Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
+	~Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d() {
+	printf("Call custom destructor for instance of Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d\n");
 	}
 };
 
@@ -226,12 +229,15 @@ class AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNod
 		Handle_TColgp_HArray1OfPnt2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d();
 
 };
 %extend AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
 	Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d GetHandle() {
 	return *(Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d*) &$self;
+	}
+};
+%extend AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
+	~AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d() {
+	printf("Call custom destructor for instance of AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d\n");
 	}
 };

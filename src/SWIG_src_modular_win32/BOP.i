@@ -132,8 +132,6 @@ enum BOP_CheckStatus {
 class Handle_BOP_SequenceNodeOfSeqOfSeqOfShape : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BOP_SequenceNodeOfSeqOfSeqOfShape();
-		%feature("autodoc", "1");
 		Handle_BOP_SequenceNodeOfSeqOfSeqOfShape();
 		%feature("autodoc", "1");
 		Handle_BOP_SequenceNodeOfSeqOfSeqOfShape(const Handle_BOP_SequenceNodeOfSeqOfSeqOfShape &aHandle);
@@ -148,12 +146,15 @@ class Handle_BOP_SequenceNodeOfSeqOfSeqOfShape : public Handle_TCollection_SeqNo
 	return (BOP_SequenceNodeOfSeqOfSeqOfShape*)$self->Access();
 	}
 };
+%extend Handle_BOP_SequenceNodeOfSeqOfSeqOfShape {
+	~Handle_BOP_SequenceNodeOfSeqOfSeqOfShape() {
+	printf("Call custom destructor for instance of Handle_BOP_SequenceNodeOfSeqOfSeqOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_Loop;
 class Handle_BOP_Loop : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_Loop();
 		%feature("autodoc", "1");
 		Handle_BOP_Loop();
 		%feature("autodoc", "1");
@@ -169,12 +170,15 @@ class Handle_BOP_Loop : public Handle_MMgt_TShared {
 	return (BOP_Loop*)$self->Access();
 	}
 };
+%extend Handle_BOP_Loop {
+	~Handle_BOP_Loop() {
+	printf("Call custom destructor for instance of Handle_BOP_Loop\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_HistoryCollector;
 class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_HistoryCollector();
 		%feature("autodoc", "1");
 		Handle_BOP_HistoryCollector();
 		%feature("autodoc", "1");
@@ -190,12 +194,15 @@ class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
 	return (BOP_HistoryCollector*)$self->Access();
 	}
 };
+%extend Handle_BOP_HistoryCollector {
+	~Handle_BOP_HistoryCollector() {
+	printf("Call custom destructor for instance of Handle_BOP_HistoryCollector\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_ShellSolidHistoryCollector;
 class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_ShellSolidHistoryCollector();
 		%feature("autodoc", "1");
 		Handle_BOP_ShellSolidHistoryCollector();
 		%feature("autodoc", "1");
@@ -211,12 +218,15 @@ class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector
 	return (BOP_ShellSolidHistoryCollector*)$self->Access();
 	}
 };
+%extend Handle_BOP_ShellSolidHistoryCollector {
+	~Handle_BOP_ShellSolidHistoryCollector() {
+	printf("Call custom destructor for instance of Handle_BOP_ShellSolidHistoryCollector\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfListOfLoop;
 class Handle_BOP_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_ListNodeOfListOfListOfLoop();
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfListOfLoop();
 		%feature("autodoc", "1");
@@ -232,12 +242,15 @@ class Handle_BOP_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode 
 	return (BOP_ListNodeOfListOfListOfLoop*)$self->Access();
 	}
 };
+%extend Handle_BOP_ListNodeOfListOfListOfLoop {
+	~Handle_BOP_ListNodeOfListOfListOfLoop() {
+	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfListOfLoop\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_WireSolidHistoryCollector;
 class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_WireSolidHistoryCollector();
 		%feature("autodoc", "1");
 		Handle_BOP_WireSolidHistoryCollector();
 		%feature("autodoc", "1");
@@ -253,12 +266,15 @@ class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector 
 	return (BOP_WireSolidHistoryCollector*)$self->Access();
 	}
 };
+%extend Handle_BOP_WireSolidHistoryCollector {
+	~Handle_BOP_WireSolidHistoryCollector() {
+	printf("Call custom destructor for instance of Handle_BOP_WireSolidHistoryCollector\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
 class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier();
 		%feature("autodoc", "1");
 		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier();
 		%feature("autodoc", "1");
@@ -274,12 +290,15 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Ha
 	return (BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*)$self->Access();
 	}
 };
+%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
+	printf("Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfEdgeInfo;
 class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_ListNodeOfListOfEdgeInfo();
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfEdgeInfo();
 		%feature("autodoc", "1");
@@ -295,12 +314,15 @@ class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
 	return (BOP_ListNodeOfListOfEdgeInfo*)$self->Access();
 	}
 };
+%extend Handle_BOP_ListNodeOfListOfEdgeInfo {
+	~Handle_BOP_ListNodeOfListOfEdgeInfo() {
+	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfEdgeInfo\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
 class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo();
 		%feature("autodoc", "1");
 		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo();
 		%feature("autodoc", "1");
@@ -316,12 +338,15 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public H
 	return (BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo*)$self->Access();
 	}
 };
+%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
+	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo() {
+	printf("Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo;
 class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo();
 		%feature("autodoc", "1");
 		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo();
 		%feature("autodoc", "1");
@@ -337,12 +362,15 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public
 	return (BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo*)$self->Access();
 	}
 };
+%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
+	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo() {
+	printf("Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfCheckResult;
 class Handle_BOP_ListNodeOfListOfCheckResult : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_ListNodeOfListOfCheckResult();
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfCheckResult();
 		%feature("autodoc", "1");
@@ -358,12 +386,15 @@ class Handle_BOP_ListNodeOfListOfCheckResult : public Handle_TCollection_MapNode
 	return (BOP_ListNodeOfListOfCheckResult*)$self->Access();
 	}
 };
+%extend Handle_BOP_ListNodeOfListOfCheckResult {
+	~Handle_BOP_ListNodeOfListOfCheckResult() {
+	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfCheckResult\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_SolidSolidHistoryCollector;
 class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_SolidSolidHistoryCollector();
 		%feature("autodoc", "1");
 		Handle_BOP_SolidSolidHistoryCollector();
 		%feature("autodoc", "1");
@@ -379,12 +410,15 @@ class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector
 	return (BOP_SolidSolidHistoryCollector*)$self->Access();
 	}
 };
+%extend Handle_BOP_SolidSolidHistoryCollector {
+	~Handle_BOP_SolidSolidHistoryCollector() {
+	printf("Call custom destructor for instance of Handle_BOP_SolidSolidHistoryCollector\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfLoop;
 class Handle_BOP_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_ListNodeOfListOfLoop();
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfLoop();
 		%feature("autodoc", "1");
@@ -400,12 +434,15 @@ class Handle_BOP_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 	return (BOP_ListNodeOfListOfLoop*)$self->Access();
 	}
 };
+%extend Handle_BOP_ListNodeOfListOfLoop {
+	~Handle_BOP_ListNodeOfListOfLoop() {
+	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfLoop\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_SectionHistoryCollector;
 class Handle_BOP_SectionHistoryCollector : public Handle_BOP_HistoryCollector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_SectionHistoryCollector();
 		%feature("autodoc", "1");
 		Handle_BOP_SectionHistoryCollector();
 		%feature("autodoc", "1");
@@ -421,12 +458,15 @@ class Handle_BOP_SectionHistoryCollector : public Handle_BOP_HistoryCollector {
 	return (BOP_SectionHistoryCollector*)$self->Access();
 	}
 };
+%extend Handle_BOP_SectionHistoryCollector {
+	~Handle_BOP_SectionHistoryCollector() {
+	printf("Call custom destructor for instance of Handle_BOP_SectionHistoryCollector\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfFaceInfo;
 class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_ListNodeOfListOfFaceInfo();
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfFaceInfo();
 		%feature("autodoc", "1");
@@ -442,12 +482,15 @@ class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
 	return (BOP_ListNodeOfListOfFaceInfo*)$self->Access();
 	}
 };
+%extend Handle_BOP_ListNodeOfListOfFaceInfo {
+	~Handle_BOP_ListNodeOfListOfFaceInfo() {
+	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfFaceInfo\n");
+	}
+};
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfConnexityBlock;
 class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOP_ListNodeOfListOfConnexityBlock();
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfConnexityBlock();
 		%feature("autodoc", "1");
@@ -461,6 +504,11 @@ class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapN
 %extend Handle_BOP_ListNodeOfListOfConnexityBlock {
 	BOP_ListNodeOfListOfConnexityBlock* GetObject() {
 	return (BOP_ListNodeOfListOfConnexityBlock*)$self->Access();
+	}
+};
+%extend Handle_BOP_ListNodeOfListOfConnexityBlock {
+	~Handle_BOP_ListNodeOfListOfConnexityBlock() {
+	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfConnexityBlock\n");
 	}
 };
 
@@ -493,13 +541,16 @@ class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 		BOP_ListOfLoop & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_ListNodeOfListOfListOfLoop();
 
 };
 %extend BOP_ListNodeOfListOfListOfLoop {
 	Handle_BOP_ListNodeOfListOfListOfLoop GetHandle() {
 	return *(Handle_BOP_ListNodeOfListOfListOfLoop*) &$self;
+	}
+};
+%extend BOP_ListNodeOfListOfListOfLoop {
+	~BOP_ListNodeOfListOfListOfLoop() {
+	printf("Call custom destructor for instance of BOP_ListNodeOfListOfListOfLoop\n");
 	}
 };
 
@@ -522,13 +573,16 @@ class BOP_HistoryCollector : public MMgt_TShared {
 		virtual		Standard_Boolean HasDeleted() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_HistoryCollector();
 
 };
 %extend BOP_HistoryCollector {
 	Handle_BOP_HistoryCollector GetHandle() {
 	return *(Handle_BOP_HistoryCollector*) &$self;
+	}
+};
+%extend BOP_HistoryCollector {
+	~BOP_HistoryCollector() {
+	printf("Call custom destructor for instance of BOP_HistoryCollector\n");
 	}
 };
 
@@ -537,13 +591,16 @@ class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 	public:
 		%feature("autodoc", "1");
 		BOP_SectionHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2);
-		%feature("autodoc", "1");
-		virtual		~BOP_SectionHistoryCollector();
 
 };
 %extend BOP_SectionHistoryCollector {
 	Handle_BOP_SectionHistoryCollector GetHandle() {
 	return *(Handle_BOP_SectionHistoryCollector*) &$self;
+	}
+};
+%extend BOP_SectionHistoryCollector {
+	~BOP_SectionHistoryCollector() {
+	printf("Call custom destructor for instance of BOP_SectionHistoryCollector\n");
 	}
 };
 
@@ -604,13 +661,16 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_WireSolidHistoryCollector();
 
 };
 %extend BOP_WireSolidHistoryCollector {
 	Handle_BOP_WireSolidHistoryCollector GetHandle() {
 	return *(Handle_BOP_WireSolidHistoryCollector*) &$self;
+	}
+};
+%extend BOP_WireSolidHistoryCollector {
+	~BOP_WireSolidHistoryCollector() {
+	printf("Call custom destructor for instance of BOP_WireSolidHistoryCollector\n");
 	}
 };
 
@@ -651,13 +711,16 @@ class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_SolidSolidHistoryCollector();
 
 };
 %extend BOP_SolidSolidHistoryCollector {
 	Handle_BOP_SolidSolidHistoryCollector GetHandle() {
 	return *(Handle_BOP_SolidSolidHistoryCollector*) &$self;
+	}
+};
+%extend BOP_SolidSolidHistoryCollector {
+	~BOP_SolidSolidHistoryCollector() {
+	printf("Call custom destructor for instance of BOP_SolidSolidHistoryCollector\n");
 	}
 };
 
@@ -804,13 +867,16 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollect
 		BOP_ListOfFaceInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo();
 
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
 	Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo GetHandle() {
 	return *(Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo*) &$self;
+	}
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
+	~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo() {
+	printf("Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");
 	}
 };
 
@@ -979,13 +1045,16 @@ class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 		BOP_FaceInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_ListNodeOfListOfFaceInfo();
 
 };
 %extend BOP_ListNodeOfListOfFaceInfo {
 	Handle_BOP_ListNodeOfListOfFaceInfo GetHandle() {
 	return *(Handle_BOP_ListNodeOfListOfFaceInfo*) &$self;
+	}
+};
+%extend BOP_ListNodeOfListOfFaceInfo {
+	~BOP_ListNodeOfListOfFaceInfo() {
+	printf("Call custom destructor for instance of BOP_ListNodeOfListOfFaceInfo\n");
 	}
 };
 
@@ -1004,13 +1073,16 @@ class BOP_Loop : public MMgt_TShared {
 		const BOP_BlockIterator & BlockIterator() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_Loop();
 
 };
 %extend BOP_Loop {
 	Handle_BOP_Loop GetHandle() {
 	return *(Handle_BOP_Loop*) &$self;
+	}
+};
+%extend BOP_Loop {
+	~BOP_Loop() {
+	printf("Call custom destructor for instance of BOP_Loop\n");
 	}
 };
 
@@ -1085,13 +1157,16 @@ class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
 		BOP_EdgeInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_ListNodeOfListOfEdgeInfo();
 
 };
 %extend BOP_ListNodeOfListOfEdgeInfo {
 	Handle_BOP_ListNodeOfListOfEdgeInfo GetHandle() {
 	return *(Handle_BOP_ListNodeOfListOfEdgeInfo*) &$self;
+	}
+};
+%extend BOP_ListNodeOfListOfEdgeInfo {
+	~BOP_ListNodeOfListOfEdgeInfo() {
+	printf("Call custom destructor for instance of BOP_ListNodeOfListOfEdgeInfo\n");
 	}
 };
 
@@ -1308,13 +1383,16 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollecti
 		BOP_PSoClassif & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier();
 
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
 	Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier GetHandle() {
 	return *(Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*) &$self;
+	}
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
+	printf("Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");
 	}
 };
 
@@ -1333,13 +1411,16 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TColle
 		BOP_ListOfEdgeInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo();
 
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
 	Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo GetHandle() {
 	return *(Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo*) &$self;
+	}
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
+	~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo() {
+	printf("Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");
 	}
 };
 
@@ -1398,13 +1479,16 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 		BOP_CheckResult & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_ListNodeOfListOfCheckResult();
 
 };
 %extend BOP_ListNodeOfListOfCheckResult {
 	Handle_BOP_ListNodeOfListOfCheckResult GetHandle() {
 	return *(Handle_BOP_ListNodeOfListOfCheckResult*) &$self;
+	}
+};
+%extend BOP_ListNodeOfListOfCheckResult {
+	~BOP_ListNodeOfListOfCheckResult() {
+	printf("Call custom destructor for instance of BOP_ListNodeOfListOfCheckResult\n");
 	}
 };
 
@@ -1495,13 +1579,16 @@ class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
 		TopTools_SequenceOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_SequenceNodeOfSeqOfSeqOfShape();
 
 };
 %extend BOP_SequenceNodeOfSeqOfSeqOfShape {
 	Handle_BOP_SequenceNodeOfSeqOfSeqOfShape GetHandle() {
 	return *(Handle_BOP_SequenceNodeOfSeqOfSeqOfShape*) &$self;
+	}
+};
+%extend BOP_SequenceNodeOfSeqOfSeqOfShape {
+	~BOP_SequenceNodeOfSeqOfSeqOfShape() {
+	printf("Call custom destructor for instance of BOP_SequenceNodeOfSeqOfSeqOfShape\n");
 	}
 };
 
@@ -1828,13 +1915,16 @@ class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 		Handle_BOP_Loop & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_ListNodeOfListOfLoop();
 
 };
 %extend BOP_ListNodeOfListOfLoop {
 	Handle_BOP_ListNodeOfListOfLoop GetHandle() {
 	return *(Handle_BOP_ListNodeOfListOfLoop*) &$self;
+	}
+};
+%extend BOP_ListNodeOfListOfLoop {
+	~BOP_ListNodeOfListOfLoop() {
+	printf("Call custom destructor for instance of BOP_ListNodeOfListOfLoop\n");
 	}
 };
 
@@ -2091,13 +2181,16 @@ class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_ShellSolidHistoryCollector();
 
 };
 %extend BOP_ShellSolidHistoryCollector {
 	Handle_BOP_ShellSolidHistoryCollector GetHandle() {
 	return *(Handle_BOP_ShellSolidHistoryCollector*) &$self;
+	}
+};
+%extend BOP_ShellSolidHistoryCollector {
+	~BOP_ShellSolidHistoryCollector() {
+	printf("Call custom destructor for instance of BOP_ShellSolidHistoryCollector\n");
 	}
 };
 
@@ -2304,13 +2397,16 @@ class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 		BOP_ConnexityBlock & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_ListNodeOfListOfConnexityBlock();
 
 };
 %extend BOP_ListNodeOfListOfConnexityBlock {
 	Handle_BOP_ListNodeOfListOfConnexityBlock GetHandle() {
 	return *(Handle_BOP_ListNodeOfListOfConnexityBlock*) &$self;
+	}
+};
+%extend BOP_ListNodeOfListOfConnexityBlock {
+	~BOP_ListNodeOfListOfConnexityBlock() {
+	printf("Call custom destructor for instance of BOP_ListNodeOfListOfConnexityBlock\n");
 	}
 };
 

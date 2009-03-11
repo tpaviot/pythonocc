@@ -103,8 +103,6 @@ typedef Adaptor2d_Curve2d * Adaptor2d_Curve2dPtr;
 class Handle_Adaptor2d_HCurve2d : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Adaptor2d_HCurve2d();
-		%feature("autodoc", "1");
 		Handle_Adaptor2d_HCurve2d();
 		%feature("autodoc", "1");
 		Handle_Adaptor2d_HCurve2d(const Handle_Adaptor2d_HCurve2d &aHandle);
@@ -119,12 +117,15 @@ class Handle_Adaptor2d_HCurve2d : public Handle_MMgt_TShared {
 	return (Adaptor2d_HCurve2d*)$self->Access();
 	}
 };
+%extend Handle_Adaptor2d_HCurve2d {
+	~Handle_Adaptor2d_HCurve2d() {
+	printf("Call custom destructor for instance of Handle_Adaptor2d_HCurve2d\n");
+	}
+};
 
 %nodefaultctor Handle_Adaptor2d_HLine2d;
 class Handle_Adaptor2d_HLine2d : public Handle_Adaptor2d_HCurve2d {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Adaptor2d_HLine2d();
 		%feature("autodoc", "1");
 		Handle_Adaptor2d_HLine2d();
 		%feature("autodoc", "1");
@@ -138,6 +139,11 @@ class Handle_Adaptor2d_HLine2d : public Handle_Adaptor2d_HCurve2d {
 %extend Handle_Adaptor2d_HLine2d {
 	Adaptor2d_HLine2d* GetObject() {
 	return (Adaptor2d_HLine2d*)$self->Access();
+	}
+};
+%extend Handle_Adaptor2d_HLine2d {
+	~Handle_Adaptor2d_HLine2d() {
+	printf("Call custom destructor for instance of Handle_Adaptor2d_HLine2d\n");
 	}
 };
 
@@ -305,6 +311,11 @@ class Adaptor2d_HCurve2d : public MMgt_TShared {
 	return *(Handle_Adaptor2d_HCurve2d*) &$self;
 	}
 };
+%extend Adaptor2d_HCurve2d {
+	~Adaptor2d_HCurve2d() {
+	printf("Call custom destructor for instance of Adaptor2d_HCurve2d\n");
+	}
+};
 
 %nodefaultctor Adaptor2d_HLine2d;
 class Adaptor2d_HLine2d : public Adaptor2d_HCurve2d {
@@ -321,12 +332,15 @@ class Adaptor2d_HLine2d : public Adaptor2d_HCurve2d {
 		Adaptor2d_Line2d & ChangeCurve2d();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor2d_HLine2d();
 
 };
 %extend Adaptor2d_HLine2d {
 	Handle_Adaptor2d_HLine2d GetHandle() {
 	return *(Handle_Adaptor2d_HLine2d*) &$self;
+	}
+};
+%extend Adaptor2d_HLine2d {
+	~Adaptor2d_HLine2d() {
+	printf("Call custom destructor for instance of Adaptor2d_HLine2d\n");
 	}
 };

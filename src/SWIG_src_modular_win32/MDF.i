@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_MDF_ARDriverHSequence : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MDF_ARDriverHSequence();
-		%feature("autodoc", "1");
 		Handle_MDF_ARDriverHSequence();
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriverHSequence(const Handle_MDF_ARDriverHSequence &aHandle);
@@ -118,12 +116,15 @@ class Handle_MDF_ARDriverHSequence : public Handle_MMgt_TShared {
 	return (MDF_ARDriverHSequence*)$self->Access();
 	}
 };
+%extend Handle_MDF_ARDriverHSequence {
+	~Handle_MDF_ARDriverHSequence() {
+	printf("Call custom destructor for instance of Handle_MDF_ARDriverHSequence\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_ARDriverTable;
 class Handle_MDF_ARDriverTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_ARDriverTable();
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriverTable();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_MDF_ARDriverTable : public Handle_MMgt_TShared {
 	return (MDF_ARDriverTable*)$self->Access();
 	}
 };
+%extend Handle_MDF_ARDriverTable {
+	~Handle_MDF_ARDriverTable() {
+	printf("Call custom destructor for instance of Handle_MDF_ARDriverTable\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_ListNodeOfDriverListOfARDriverTable;
 class Handle_MDF_ListNodeOfDriverListOfARDriverTable : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_ListNodeOfDriverListOfARDriverTable();
 		%feature("autodoc", "1");
 		Handle_MDF_ListNodeOfDriverListOfARDriverTable();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_MDF_ListNodeOfDriverListOfARDriverTable : public Handle_TCollection
 	return (MDF_ListNodeOfDriverListOfARDriverTable*)$self->Access();
 	}
 };
+%extend Handle_MDF_ListNodeOfDriverListOfARDriverTable {
+	~Handle_MDF_ListNodeOfDriverListOfARDriverTable() {
+	printf("Call custom destructor for instance of Handle_MDF_ListNodeOfDriverListOfARDriverTable\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable;
 class Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable();
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public Handle_T
 	return (MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable*)$self->Access();
 	}
 };
+%extend Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
+	~Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable() {
+	printf("Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_ASDriver;
 class Handle_MDF_ASDriver : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_ASDriver();
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriver();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_MDF_ASDriver : public Handle_MMgt_TShared {
 	return (MDF_ASDriver*)$self->Access();
 	}
 };
+%extend Handle_MDF_ASDriver {
+	~Handle_MDF_ASDriver() {
+	printf("Call custom destructor for instance of Handle_MDF_ASDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_ReferenceStorageDriver;
 class Handle_MDF_ReferenceStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_ReferenceStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDF_ReferenceStorageDriver();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_MDF_ReferenceStorageDriver : public Handle_MDF_ASDriver {
 	return (MDF_ReferenceStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDF_ReferenceStorageDriver {
+	~Handle_MDF_ReferenceStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDF_ReferenceStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_ARDriver;
 class Handle_MDF_ARDriver : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_ARDriver();
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriver();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_MDF_ARDriver : public Handle_MMgt_TShared {
 	return (MDF_ARDriver*)$self->Access();
 	}
 };
+%extend Handle_MDF_ARDriver {
+	~Handle_MDF_ARDriver() {
+	printf("Call custom destructor for instance of Handle_MDF_ARDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_ReferenceRetrievalDriver;
 class Handle_MDF_ReferenceRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_ReferenceRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDF_ReferenceRetrievalDriver();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_MDF_ReferenceRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDF_ReferenceRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDF_ReferenceRetrievalDriver {
+	~Handle_MDF_ReferenceRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDF_ReferenceRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_TagSourceRetrievalDriver;
 class Handle_MDF_TagSourceRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_TagSourceRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDF_TagSourceRetrievalDriver();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_MDF_TagSourceRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDF_TagSourceRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDF_TagSourceRetrievalDriver {
+	~Handle_MDF_TagSourceRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDF_TagSourceRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_ASDriverTable;
 class Handle_MDF_ASDriverTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_ASDriverTable();
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriverTable();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_MDF_ASDriverTable : public Handle_MMgt_TShared {
 	return (MDF_ASDriverTable*)$self->Access();
 	}
 };
+%extend Handle_MDF_ASDriverTable {
+	~Handle_MDF_ASDriverTable() {
+	printf("Call custom destructor for instance of Handle_MDF_ASDriverTable\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_RRelocationTable;
 class Handle_MDF_RRelocationTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_RRelocationTable();
 		%feature("autodoc", "1");
 		Handle_MDF_RRelocationTable();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_MDF_RRelocationTable : public Handle_MMgt_TShared {
 	return (MDF_RRelocationTable*)$self->Access();
 	}
 };
+%extend Handle_MDF_RRelocationTable {
+	~Handle_MDF_RRelocationTable() {
+	printf("Call custom destructor for instance of Handle_MDF_RRelocationTable\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_ListNodeOfDriverListOfASDriverTable;
 class Handle_MDF_ListNodeOfDriverListOfASDriverTable : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_ListNodeOfDriverListOfASDriverTable();
 		%feature("autodoc", "1");
 		Handle_MDF_ListNodeOfDriverListOfASDriverTable();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_MDF_ListNodeOfDriverListOfASDriverTable : public Handle_TCollection
 	return (MDF_ListNodeOfDriverListOfASDriverTable*)$self->Access();
 	}
 };
+%extend Handle_MDF_ListNodeOfDriverListOfASDriverTable {
+	~Handle_MDF_ListNodeOfDriverListOfASDriverTable() {
+	printf("Call custom destructor for instance of Handle_MDF_ListNodeOfDriverListOfASDriverTable\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_ASDriverHSequence;
 class Handle_MDF_ASDriverHSequence : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_ASDriverHSequence();
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriverHSequence();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_MDF_ASDriverHSequence : public Handle_MMgt_TShared {
 	return (MDF_ASDriverHSequence*)$self->Access();
 	}
 };
+%extend Handle_MDF_ASDriverHSequence {
+	~Handle_MDF_ASDriverHSequence() {
+	printf("Call custom destructor for instance of Handle_MDF_ASDriverHSequence\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeASDriverMap;
 class Handle_MDF_DataMapNodeOfTypeASDriverMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_DataMapNodeOfTypeASDriverMap();
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeASDriverMap();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_MDF_DataMapNodeOfTypeASDriverMap : public Handle_TCollection_MapNod
 	return (MDF_DataMapNodeOfTypeASDriverMap*)$self->Access();
 	}
 };
+%extend Handle_MDF_DataMapNodeOfTypeASDriverMap {
+	~Handle_MDF_DataMapNodeOfTypeASDriverMap() {
+	printf("Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeASDriverMap\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeARDriverMap;
 class Handle_MDF_DataMapNodeOfTypeARDriverMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_DataMapNodeOfTypeARDriverMap();
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeARDriverMap();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_MDF_DataMapNodeOfTypeARDriverMap : public Handle_TCollection_MapNod
 	return (MDF_DataMapNodeOfTypeARDriverMap*)$self->Access();
 	}
 };
+%extend Handle_MDF_DataMapNodeOfTypeARDriverMap {
+	~Handle_MDF_DataMapNodeOfTypeARDriverMap() {
+	printf("Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeARDriverMap\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_SRelocationTable;
 class Handle_MDF_SRelocationTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_SRelocationTable();
 		%feature("autodoc", "1");
 		Handle_MDF_SRelocationTable();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_MDF_SRelocationTable : public Handle_MMgt_TShared {
 	return (MDF_SRelocationTable*)$self->Access();
 	}
 };
+%extend Handle_MDF_SRelocationTable {
+	~Handle_MDF_SRelocationTable() {
+	printf("Call custom destructor for instance of Handle_MDF_SRelocationTable\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_SequenceNodeOfARDriverSequence;
 class Handle_MDF_SequenceNodeOfARDriverSequence : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_SequenceNodeOfARDriverSequence();
 		%feature("autodoc", "1");
 		Handle_MDF_SequenceNodeOfARDriverSequence();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_MDF_SequenceNodeOfARDriverSequence : public Handle_TCollection_SeqN
 	return (MDF_SequenceNodeOfARDriverSequence*)$self->Access();
 	}
 };
+%extend Handle_MDF_SequenceNodeOfARDriverSequence {
+	~Handle_MDF_SequenceNodeOfARDriverSequence() {
+	printf("Call custom destructor for instance of Handle_MDF_SequenceNodeOfARDriverSequence\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable;
 class Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable();
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public Handle_T
 	return (MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable*)$self->Access();
 	}
 };
+%extend Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable {
+	~Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable() {
+	printf("Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_TagSourceStorageDriver;
 class Handle_MDF_TagSourceStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_TagSourceStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDF_TagSourceStorageDriver();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_MDF_TagSourceStorageDriver : public Handle_MDF_ASDriver {
 	return (MDF_TagSourceStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDF_TagSourceStorageDriver {
+	~Handle_MDF_TagSourceStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDF_TagSourceStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDF_SequenceNodeOfASDriverSequence;
 class Handle_MDF_SequenceNodeOfASDriverSequence : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDF_SequenceNodeOfASDriverSequence();
 		%feature("autodoc", "1");
 		Handle_MDF_SequenceNodeOfASDriverSequence();
 		%feature("autodoc", "1");
@@ -517,6 +572,11 @@ class Handle_MDF_SequenceNodeOfASDriverSequence : public Handle_TCollection_SeqN
 	return (MDF_SequenceNodeOfASDriverSequence*)$self->Access();
 	}
 };
+%extend Handle_MDF_SequenceNodeOfASDriverSequence {
+	~Handle_MDF_SequenceNodeOfASDriverSequence() {
+	printf("Call custom destructor for instance of Handle_MDF_SequenceNodeOfASDriverSequence\n");
+	}
+};
 
 %nodefaultctor MDF_DataMapNodeOfTypeARDriverMap;
 class MDF_DataMapNodeOfTypeARDriverMap : public TCollection_MapNode {
@@ -529,13 +589,16 @@ class MDF_DataMapNodeOfTypeARDriverMap : public TCollection_MapNode {
 		Handle_MDF_ARDriver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_DataMapNodeOfTypeARDriverMap();
 
 };
 %extend MDF_DataMapNodeOfTypeARDriverMap {
 	Handle_MDF_DataMapNodeOfTypeARDriverMap GetHandle() {
 	return *(Handle_MDF_DataMapNodeOfTypeARDriverMap*) &$self;
+	}
+};
+%extend MDF_DataMapNodeOfTypeARDriverMap {
+	~MDF_DataMapNodeOfTypeARDriverMap() {
+	printf("Call custom destructor for instance of MDF_DataMapNodeOfTypeARDriverMap\n");
 	}
 };
 
@@ -579,6 +642,11 @@ class MDF_ASDriver : public MMgt_TShared {
 	return *(Handle_MDF_ASDriver*) &$self;
 	}
 };
+%extend MDF_ASDriver {
+	~MDF_ASDriver() {
+	printf("Call custom destructor for instance of MDF_ASDriver\n");
+	}
+};
 
 %nodefaultctor MDF_TagSourceStorageDriver;
 class MDF_TagSourceStorageDriver : public MDF_ASDriver {
@@ -587,13 +655,16 @@ class MDF_TagSourceStorageDriver : public MDF_ASDriver {
 		MDF_TagSourceStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		~MDF_TagSourceStorageDriver();
 
 };
 %extend MDF_TagSourceStorageDriver {
 	Handle_MDF_TagSourceStorageDriver GetHandle() {
 	return *(Handle_MDF_TagSourceStorageDriver*) &$self;
+	}
+};
+%extend MDF_TagSourceStorageDriver {
+	~MDF_TagSourceStorageDriver() {
+	printf("Call custom destructor for instance of MDF_TagSourceStorageDriver\n");
 	}
 };
 
@@ -606,13 +677,16 @@ class MDF_ListNodeOfDriverListOfARDriverTable : public TCollection_MapNode {
 		Handle_MDF_ARDriver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_ListNodeOfDriverListOfARDriverTable();
 
 };
 %extend MDF_ListNodeOfDriverListOfARDriverTable {
 	Handle_MDF_ListNodeOfDriverListOfARDriverTable GetHandle() {
 	return *(Handle_MDF_ListNodeOfDriverListOfARDriverTable*) &$self;
+	}
+};
+%extend MDF_ListNodeOfDriverListOfARDriverTable {
+	~MDF_ListNodeOfDriverListOfARDriverTable() {
+	printf("Call custom destructor for instance of MDF_ListNodeOfDriverListOfARDriverTable\n");
 	}
 };
 
@@ -709,13 +783,16 @@ class MDF_DataMapNodeOfTypeASDriverMap : public TCollection_MapNode {
 		Handle_MDF_ASDriver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_DataMapNodeOfTypeASDriverMap();
 
 };
 %extend MDF_DataMapNodeOfTypeASDriverMap {
 	Handle_MDF_DataMapNodeOfTypeASDriverMap GetHandle() {
 	return *(Handle_MDF_DataMapNodeOfTypeASDriverMap*) &$self;
+	}
+};
+%extend MDF_DataMapNodeOfTypeASDriverMap {
+	~MDF_DataMapNodeOfTypeASDriverMap() {
+	printf("Call custom destructor for instance of MDF_DataMapNodeOfTypeASDriverMap\n");
 	}
 };
 
@@ -771,6 +848,11 @@ class MDF_ARDriver : public MMgt_TShared {
 	return *(Handle_MDF_ARDriver*) &$self;
 	}
 };
+%extend MDF_ARDriver {
+	~MDF_ARDriver() {
+	printf("Call custom destructor for instance of MDF_ARDriver\n");
+	}
+};
 
 %nodefaultctor MDF_TagSourceRetrievalDriver;
 class MDF_TagSourceRetrievalDriver : public MDF_ARDriver {
@@ -779,13 +861,16 @@ class MDF_TagSourceRetrievalDriver : public MDF_ARDriver {
 		MDF_TagSourceRetrievalDriver(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		~MDF_TagSourceRetrievalDriver();
 
 };
 %extend MDF_TagSourceRetrievalDriver {
 	Handle_MDF_TagSourceRetrievalDriver GetHandle() {
 	return *(Handle_MDF_TagSourceRetrievalDriver*) &$self;
+	}
+};
+%extend MDF_TagSourceRetrievalDriver {
+	~MDF_TagSourceRetrievalDriver() {
+	printf("Call custom destructor for instance of MDF_TagSourceRetrievalDriver\n");
 	}
 };
 
@@ -804,13 +889,16 @@ class MDF_ASDriverTable : public MMgt_TShared {
 		Standard_Boolean GetDriver(const Handle_Standard_Type &aType, Handle_MDF_ASDriver & anHDriver, const Standard_Integer aVersion=0) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_ASDriverTable();
 
 };
 %extend MDF_ASDriverTable {
 	Handle_MDF_ASDriverTable GetHandle() {
 	return *(Handle_MDF_ASDriverTable*) &$self;
+	}
+};
+%extend MDF_ASDriverTable {
+	~MDF_ASDriverTable() {
+	printf("Call custom destructor for instance of MDF_ASDriverTable\n");
 	}
 };
 
@@ -849,13 +937,16 @@ class MDF_ARDriverTable : public MMgt_TShared {
 		Standard_Boolean GetDriver(const Handle_Standard_Type &aType, Handle_MDF_ARDriver & anHDriver, const Standard_Integer aVersion=0) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_ARDriverTable();
 
 };
 %extend MDF_ARDriverTable {
 	Handle_MDF_ARDriverTable GetHandle() {
 	return *(Handle_MDF_ARDriverTable*) &$self;
+	}
+};
+%extend MDF_ARDriverTable {
+	~MDF_ARDriverTable() {
+	printf("Call custom destructor for instance of MDF_ARDriverTable\n");
 	}
 };
 
@@ -870,13 +961,16 @@ class MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public TCollection_Map
 		MDF_DriverListOfARDriverTable & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable();
 
 };
 %extend MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable {
 	Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable GetHandle() {
 	return *(Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable*) &$self;
+	}
+};
+%extend MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable {
+	~MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable() {
+	printf("Call custom destructor for instance of MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable\n");
 	}
 };
 
@@ -935,13 +1029,16 @@ class MDF_ListNodeOfDriverListOfASDriverTable : public TCollection_MapNode {
 		Handle_MDF_ASDriver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_ListNodeOfDriverListOfASDriverTable();
 
 };
 %extend MDF_ListNodeOfDriverListOfASDriverTable {
 	Handle_MDF_ListNodeOfDriverListOfASDriverTable GetHandle() {
 	return *(Handle_MDF_ListNodeOfDriverListOfASDriverTable*) &$self;
+	}
+};
+%extend MDF_ListNodeOfDriverListOfASDriverTable {
+	~MDF_ListNodeOfDriverListOfASDriverTable() {
+	printf("Call custom destructor for instance of MDF_ListNodeOfDriverListOfASDriverTable\n");
 	}
 };
 
@@ -960,13 +1057,16 @@ class MDF_ReferenceStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_ReferenceStorageDriver();
 
 };
 %extend MDF_ReferenceStorageDriver {
 	Handle_MDF_ReferenceStorageDriver GetHandle() {
 	return *(Handle_MDF_ReferenceStorageDriver*) &$self;
+	}
+};
+%extend MDF_ReferenceStorageDriver {
+	~MDF_ReferenceStorageDriver() {
+	printf("Call custom destructor for instance of MDF_ReferenceStorageDriver\n");
 	}
 };
 
@@ -1011,13 +1111,16 @@ class MDF_SRelocationTable : public MMgt_TShared {
 		PTColStd_TransientPersistentMap & OtherTable();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_SRelocationTable();
 
 };
 %extend MDF_SRelocationTable {
 	Handle_MDF_SRelocationTable GetHandle() {
 	return *(Handle_MDF_SRelocationTable*) &$self;
+	}
+};
+%extend MDF_SRelocationTable {
+	~MDF_SRelocationTable() {
+	printf("Call custom destructor for instance of MDF_SRelocationTable\n");
 	}
 };
 
@@ -1080,13 +1183,16 @@ class MDF_SequenceNodeOfARDriverSequence : public TCollection_SeqNode {
 		Handle_MDF_ARDriver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_SequenceNodeOfARDriverSequence();
 
 };
 %extend MDF_SequenceNodeOfARDriverSequence {
 	Handle_MDF_SequenceNodeOfARDriverSequence GetHandle() {
 	return *(Handle_MDF_SequenceNodeOfARDriverSequence*) &$self;
+	}
+};
+%extend MDF_SequenceNodeOfARDriverSequence {
+	~MDF_SequenceNodeOfARDriverSequence() {
+	printf("Call custom destructor for instance of MDF_SequenceNodeOfARDriverSequence\n");
 	}
 };
 
@@ -1101,13 +1207,16 @@ class MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public TCollection_Map
 		MDF_DriverListOfASDriverTable & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable();
 
 };
 %extend MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
 	Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable GetHandle() {
 	return *(Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable*) &$self;
+	}
+};
+%extend MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
+	~MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable() {
+	printf("Call custom destructor for instance of MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable\n");
 	}
 };
 
@@ -1162,13 +1271,16 @@ class MDF_ASDriverHSequence : public MMgt_TShared {
 		Handle_MDF_ASDriverHSequence ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_ASDriverHSequence();
 
 };
 %extend MDF_ASDriverHSequence {
 	Handle_MDF_ASDriverHSequence GetHandle() {
 	return *(Handle_MDF_ASDriverHSequence*) &$self;
+	}
+};
+%extend MDF_ASDriverHSequence {
+	~MDF_ASDriverHSequence() {
+	printf("Call custom destructor for instance of MDF_ASDriverHSequence\n");
 	}
 };
 
@@ -1209,13 +1321,16 @@ class MDF_ReferenceRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_ReferenceRetrievalDriver();
 
 };
 %extend MDF_ReferenceRetrievalDriver {
 	Handle_MDF_ReferenceRetrievalDriver GetHandle() {
 	return *(Handle_MDF_ReferenceRetrievalDriver*) &$self;
+	}
+};
+%extend MDF_ReferenceRetrievalDriver {
+	~MDF_ReferenceRetrievalDriver() {
+	printf("Call custom destructor for instance of MDF_ReferenceRetrievalDriver\n");
 	}
 };
 
@@ -1308,13 +1423,16 @@ class MDF_SequenceNodeOfASDriverSequence : public TCollection_SeqNode {
 		Handle_MDF_ASDriver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_SequenceNodeOfASDriverSequence();
 
 };
 %extend MDF_SequenceNodeOfASDriverSequence {
 	Handle_MDF_SequenceNodeOfASDriverSequence GetHandle() {
 	return *(Handle_MDF_SequenceNodeOfASDriverSequence*) &$self;
+	}
+};
+%extend MDF_SequenceNodeOfASDriverSequence {
+	~MDF_SequenceNodeOfASDriverSequence() {
+	printf("Call custom destructor for instance of MDF_SequenceNodeOfASDriverSequence\n");
 	}
 };
 
@@ -1371,13 +1489,16 @@ class MDF_RRelocationTable : public MMgt_TShared {
 		PTColStd_PersistentTransientMap & OtherTable();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_RRelocationTable();
 
 };
 %extend MDF_RRelocationTable {
 	Handle_MDF_RRelocationTable GetHandle() {
 	return *(Handle_MDF_RRelocationTable*) &$self;
+	}
+};
+%extend MDF_RRelocationTable {
+	~MDF_RRelocationTable() {
+	printf("Call custom destructor for instance of MDF_RRelocationTable\n");
 	}
 };
 
@@ -1482,13 +1603,16 @@ class MDF_ARDriverHSequence : public MMgt_TShared {
 		Handle_MDF_ARDriverHSequence ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDF_ARDriverHSequence();
 
 };
 %extend MDF_ARDriverHSequence {
 	Handle_MDF_ARDriverHSequence GetHandle() {
 	return *(Handle_MDF_ARDriverHSequence*) &$self;
+	}
+};
+%extend MDF_ARDriverHSequence {
+	~MDF_ARDriverHSequence() {
+	printf("Call custom destructor for instance of MDF_ARDriverHSequence\n");
 	}
 };
 

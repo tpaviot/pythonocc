@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PTopLoc_Datum3D();
-		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D();
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D(const Handle_PTopLoc_Datum3D &aHandle);
@@ -118,12 +116,15 @@ class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 	return (PTopLoc_Datum3D*)$self->Access();
 	}
 };
+%extend Handle_PTopLoc_Datum3D {
+	~Handle_PTopLoc_Datum3D() {
+	printf("Call custom destructor for instance of Handle_PTopLoc_Datum3D\n");
+	}
+};
 
 %nodefaultctor Handle_PTopLoc_ItemLocation;
 class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PTopLoc_ItemLocation();
 		%feature("autodoc", "1");
 		Handle_PTopLoc_ItemLocation();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 %extend Handle_PTopLoc_ItemLocation {
 	PTopLoc_ItemLocation* GetObject() {
 	return (PTopLoc_ItemLocation*)$self->Access();
+	}
+};
+%extend Handle_PTopLoc_ItemLocation {
+	~Handle_PTopLoc_ItemLocation() {
+	printf("Call custom destructor for instance of Handle_PTopLoc_ItemLocation\n");
 	}
 };
 
@@ -167,13 +173,16 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 		const PTopLoc_Location & _CSFDB_GetPTopLoc_ItemLocationmyNext() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PTopLoc_ItemLocation();
 
 };
 %extend PTopLoc_ItemLocation {
 	Handle_PTopLoc_ItemLocation GetHandle() {
 	return *(Handle_PTopLoc_ItemLocation*) &$self;
+	}
+};
+%extend PTopLoc_ItemLocation {
+	~PTopLoc_ItemLocation() {
+	printf("Call custom destructor for instance of PTopLoc_ItemLocation\n");
 	}
 };
 
@@ -192,13 +201,16 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 		const gp_Trsf & _CSFDB_GetPTopLoc_Datum3DmyTrsf() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PTopLoc_Datum3D();
 
 };
 %extend PTopLoc_Datum3D {
 	Handle_PTopLoc_Datum3D GetHandle() {
 	return *(Handle_PTopLoc_Datum3D*) &$self;
+	}
+};
+%extend PTopLoc_Datum3D {
+	~PTopLoc_Datum3D() {
+	printf("Call custom destructor for instance of PTopLoc_Datum3D\n");
 	}
 };
 

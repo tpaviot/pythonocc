@@ -164,8 +164,6 @@ enum StepBasic_SiPrefix {
 class Handle_StepBasic_Person : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StepBasic_Person();
-		%feature("autodoc", "1");
 		Handle_StepBasic_Person();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Person(const Handle_StepBasic_Person &aHandle);
@@ -180,12 +178,15 @@ class Handle_StepBasic_Person : public Handle_MMgt_TShared {
 	return (StepBasic_Person*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Person {
+	~Handle_StepBasic_Person() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Person\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_IdentificationRole;
 class Handle_StepBasic_IdentificationRole : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_IdentificationRole();
 		%feature("autodoc", "1");
 		Handle_StepBasic_IdentificationRole();
 		%feature("autodoc", "1");
@@ -201,12 +202,15 @@ class Handle_StepBasic_IdentificationRole : public Handle_MMgt_TShared {
 	return (StepBasic_IdentificationRole*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_IdentificationRole {
+	~Handle_StepBasic_IdentificationRole() {
+	printf("Call custom destructor for instance of Handle_StepBasic_IdentificationRole\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ApplicationContextElement;
 class Handle_StepBasic_ApplicationContextElement : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ApplicationContextElement();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApplicationContextElement();
 		%feature("autodoc", "1");
@@ -222,12 +226,15 @@ class Handle_StepBasic_ApplicationContextElement : public Handle_MMgt_TShared {
 	return (StepBasic_ApplicationContextElement*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ApplicationContextElement {
+	~Handle_StepBasic_ApplicationContextElement() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ApplicationContextElement\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductDefinition;
 class Handle_StepBasic_ProductDefinition : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductDefinition();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition();
 		%feature("autodoc", "1");
@@ -243,12 +250,15 @@ class Handle_StepBasic_ProductDefinition : public Handle_MMgt_TShared {
 	return (StepBasic_ProductDefinition*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductDefinition {
+	~Handle_StepBasic_ProductDefinition() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_NamedUnit;
 class Handle_StepBasic_NamedUnit : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_NamedUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_NamedUnit();
 		%feature("autodoc", "1");
@@ -264,12 +274,15 @@ class Handle_StepBasic_NamedUnit : public Handle_MMgt_TShared {
 	return (StepBasic_NamedUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_NamedUnit {
+	~Handle_StepBasic_NamedUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_NamedUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnit;
 class Handle_StepBasic_SiUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnit();
 		%feature("autodoc", "1");
@@ -285,12 +298,15 @@ class Handle_StepBasic_SiUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_SiUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnit {
+	~Handle_StepBasic_SiUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit;
 class Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit : public Handle_StepBasic_SiUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit();
 		%feature("autodoc", "1");
@@ -306,12 +322,15 @@ class Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit : public Handle_Ste
 	return (StepBasic_SiUnitAndThermodynamicTemperatureUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit {
+	~Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_CertificationAssignment;
 class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_CertificationAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_CertificationAssignment();
 		%feature("autodoc", "1");
@@ -327,12 +346,15 @@ class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_CertificationAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_CertificationAssignment {
+	~Handle_StepBasic_CertificationAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_CertificationAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ApprovalRelationship;
 class Handle_StepBasic_ApprovalRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ApprovalRelationship();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalRelationship();
 		%feature("autodoc", "1");
@@ -348,12 +370,15 @@ class Handle_StepBasic_ApprovalRelationship : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ApprovalRelationship {
+	~Handle_StepBasic_ApprovalRelationship() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnit;
 class Handle_StepBasic_ConversionBasedUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ConversionBasedUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnit();
 		%feature("autodoc", "1");
@@ -369,12 +394,15 @@ class Handle_StepBasic_ConversionBasedUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_ConversionBasedUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ConversionBasedUnit {
+	~Handle_StepBasic_ConversionBasedUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndRatioUnit;
 class Handle_StepBasic_ConversionBasedUnitAndRatioUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ConversionBasedUnitAndRatioUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndRatioUnit();
 		%feature("autodoc", "1");
@@ -390,12 +418,15 @@ class Handle_StepBasic_ConversionBasedUnitAndRatioUnit : public Handle_StepBasic
 	return (StepBasic_ConversionBasedUnitAndRatioUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ConversionBasedUnitAndRatioUnit {
+	~Handle_StepBasic_ConversionBasedUnitAndRatioUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndRatioUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ApprovalAssignment;
 class Handle_StepBasic_ApprovalAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ApprovalAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalAssignment();
 		%feature("autodoc", "1");
@@ -411,12 +442,15 @@ class Handle_StepBasic_ApprovalAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ApprovalAssignment {
+	~Handle_StepBasic_ApprovalAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ApprovalStatus;
 class Handle_StepBasic_ApprovalStatus : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ApprovalStatus();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalStatus();
 		%feature("autodoc", "1");
@@ -432,12 +466,15 @@ class Handle_StepBasic_ApprovalStatus : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalStatus*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ApprovalStatus {
+	~Handle_StepBasic_ApprovalStatus() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalStatus\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnitAndSolidAngleUnit;
 class Handle_StepBasic_SiUnitAndSolidAngleUnit : public Handle_StepBasic_SiUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnitAndSolidAngleUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndSolidAngleUnit();
 		%feature("autodoc", "1");
@@ -453,12 +490,15 @@ class Handle_StepBasic_SiUnitAndSolidAngleUnit : public Handle_StepBasic_SiUnit 
 	return (StepBasic_SiUnitAndSolidAngleUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnitAndSolidAngleUnit {
+	~Handle_StepBasic_SiUnitAndSolidAngleUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndSolidAngleUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ObjectRole;
 class Handle_StepBasic_ObjectRole : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ObjectRole();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ObjectRole();
 		%feature("autodoc", "1");
@@ -474,12 +514,15 @@ class Handle_StepBasic_ObjectRole : public Handle_MMgt_TShared {
 	return (StepBasic_ObjectRole*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ObjectRole {
+	~Handle_StepBasic_ObjectRole() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ObjectRole\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionRelationship;
 class Handle_StepBasic_ProductDefinitionRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductDefinitionRelationship();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionRelationship();
 		%feature("autodoc", "1");
@@ -495,12 +538,15 @@ class Handle_StepBasic_ProductDefinitionRelationship : public Handle_MMgt_TShare
 	return (StepBasic_ProductDefinitionRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductDefinitionRelationship {
+	~Handle_StepBasic_ProductDefinitionRelationship() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Approval;
 class Handle_StepBasic_Approval : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Approval();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Approval();
 		%feature("autodoc", "1");
@@ -516,12 +562,15 @@ class Handle_StepBasic_Approval : public Handle_MMgt_TShared {
 	return (StepBasic_Approval*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Approval {
+	~Handle_StepBasic_Approval() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Approval\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_IdentificationAssignment;
 class Handle_StepBasic_IdentificationAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_IdentificationAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_IdentificationAssignment();
 		%feature("autodoc", "1");
@@ -537,12 +586,15 @@ class Handle_StepBasic_IdentificationAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_IdentificationAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_IdentificationAssignment {
+	~Handle_StepBasic_IdentificationAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_IdentificationAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ExternalIdentificationAssignment;
 class Handle_StepBasic_ExternalIdentificationAssignment : public Handle_StepBasic_IdentificationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ExternalIdentificationAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ExternalIdentificationAssignment();
 		%feature("autodoc", "1");
@@ -558,12 +610,15 @@ class Handle_StepBasic_ExternalIdentificationAssignment : public Handle_StepBasi
 	return (StepBasic_ExternalIdentificationAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ExternalIdentificationAssignment {
+	~Handle_StepBasic_ExternalIdentificationAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ExternalIdentificationAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Effectivity;
 class Handle_StepBasic_Effectivity : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Effectivity();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Effectivity();
 		%feature("autodoc", "1");
@@ -579,12 +634,15 @@ class Handle_StepBasic_Effectivity : public Handle_MMgt_TShared {
 	return (StepBasic_Effectivity*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Effectivity {
+	~Handle_StepBasic_Effectivity() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Effectivity\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionEffectivity;
 class Handle_StepBasic_ProductDefinitionEffectivity : public Handle_StepBasic_Effectivity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductDefinitionEffectivity();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionEffectivity();
 		%feature("autodoc", "1");
@@ -600,12 +658,15 @@ class Handle_StepBasic_ProductDefinitionEffectivity : public Handle_StepBasic_Ef
 	return (StepBasic_ProductDefinitionEffectivity*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductDefinitionEffectivity {
+	~Handle_StepBasic_ProductDefinitionEffectivity() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionEffectivity\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Date;
 class Handle_StepBasic_Date : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Date();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Date();
 		%feature("autodoc", "1");
@@ -621,12 +682,15 @@ class Handle_StepBasic_Date : public Handle_MMgt_TShared {
 	return (StepBasic_Date*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Date {
+	~Handle_StepBasic_Date() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Date\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_OrdinalDate;
 class Handle_StepBasic_OrdinalDate : public Handle_StepBasic_Date {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_OrdinalDate();
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrdinalDate();
 		%feature("autodoc", "1");
@@ -642,12 +706,15 @@ class Handle_StepBasic_OrdinalDate : public Handle_StepBasic_Date {
 	return (StepBasic_OrdinalDate*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_OrdinalDate {
+	~Handle_StepBasic_OrdinalDate() {
+	printf("Call custom destructor for instance of Handle_StepBasic_OrdinalDate\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_CertificationType;
 class Handle_StepBasic_CertificationType : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_CertificationType();
 		%feature("autodoc", "1");
 		Handle_StepBasic_CertificationType();
 		%feature("autodoc", "1");
@@ -663,12 +730,15 @@ class Handle_StepBasic_CertificationType : public Handle_MMgt_TShared {
 	return (StepBasic_CertificationType*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_CertificationType {
+	~Handle_StepBasic_CertificationType() {
+	printf("Call custom destructor for instance of Handle_StepBasic_CertificationType\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DimensionalExponents;
 class Handle_StepBasic_DimensionalExponents : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DimensionalExponents();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DimensionalExponents();
 		%feature("autodoc", "1");
@@ -684,12 +754,15 @@ class Handle_StepBasic_DimensionalExponents : public Handle_MMgt_TShared {
 	return (StepBasic_DimensionalExponents*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DimensionalExponents {
+	~Handle_StepBasic_DimensionalExponents() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DimensionalExponents\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_MeasureWithUnit;
 class Handle_StepBasic_MeasureWithUnit : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_MeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_MeasureWithUnit();
 		%feature("autodoc", "1");
@@ -705,12 +778,15 @@ class Handle_StepBasic_MeasureWithUnit : public Handle_MMgt_TShared {
 	return (StepBasic_MeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_MeasureWithUnit {
+	~Handle_StepBasic_MeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_MeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_MassMeasureWithUnit;
 class Handle_StepBasic_MassMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_MassMeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_MassMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -726,12 +802,15 @@ class Handle_StepBasic_MassMeasureWithUnit : public Handle_StepBasic_MeasureWith
 	return (StepBasic_MassMeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_MassMeasureWithUnit {
+	~Handle_StepBasic_MassMeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_MassMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionContext;
 class Handle_StepBasic_ProductDefinitionContext : public Handle_StepBasic_ApplicationContextElement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductDefinitionContext();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionContext();
 		%feature("autodoc", "1");
@@ -747,12 +826,15 @@ class Handle_StepBasic_ProductDefinitionContext : public Handle_StepBasic_Applic
 	return (StepBasic_ProductDefinitionContext*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductDefinitionContext {
+	~Handle_StepBasic_ProductDefinitionContext() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DesignContext;
 class Handle_StepBasic_DesignContext : public Handle_StepBasic_ProductDefinitionContext {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DesignContext();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DesignContext();
 		%feature("autodoc", "1");
@@ -768,12 +850,15 @@ class Handle_StepBasic_DesignContext : public Handle_StepBasic_ProductDefinition
 	return (StepBasic_DesignContext*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DesignContext {
+	~Handle_StepBasic_DesignContext() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DesignContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DateAndTimeAssignment;
 class Handle_StepBasic_DateAndTimeAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DateAndTimeAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateAndTimeAssignment();
 		%feature("autodoc", "1");
@@ -789,12 +874,15 @@ class Handle_StepBasic_DateAndTimeAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_DateAndTimeAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DateAndTimeAssignment {
+	~Handle_StepBasic_DateAndTimeAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DateAndTimeAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductCategoryRelationship;
 class Handle_StepBasic_ProductCategoryRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductCategoryRelationship();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductCategoryRelationship();
 		%feature("autodoc", "1");
@@ -810,12 +898,15 @@ class Handle_StepBasic_ProductCategoryRelationship : public Handle_MMgt_TShared 
 	return (StepBasic_ProductCategoryRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductCategoryRelationship {
+	~Handle_StepBasic_ProductCategoryRelationship() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductCategoryRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfOrganization;
 class Handle_StepBasic_HArray1OfOrganization : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfOrganization();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfOrganization();
 		%feature("autodoc", "1");
@@ -831,12 +922,15 @@ class Handle_StepBasic_HArray1OfOrganization : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfOrganization*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfOrganization {
+	~Handle_StepBasic_HArray1OfOrganization() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfOrganization\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionWithAssociatedDocuments;
 class Handle_StepBasic_ProductDefinitionWithAssociatedDocuments : public Handle_StepBasic_ProductDefinition {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductDefinitionWithAssociatedDocuments();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments();
 		%feature("autodoc", "1");
@@ -852,12 +946,15 @@ class Handle_StepBasic_ProductDefinitionWithAssociatedDocuments : public Handle_
 	return (StepBasic_ProductDefinitionWithAssociatedDocuments*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductDefinitionWithAssociatedDocuments {
+	~Handle_StepBasic_ProductDefinitionWithAssociatedDocuments() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionWithAssociatedDocuments\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_PersonAndOrganization;
 class Handle_StepBasic_PersonAndOrganization : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_PersonAndOrganization();
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganization();
 		%feature("autodoc", "1");
@@ -873,12 +970,15 @@ class Handle_StepBasic_PersonAndOrganization : public Handle_MMgt_TShared {
 	return (StepBasic_PersonAndOrganization*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_PersonAndOrganization {
+	~Handle_StepBasic_PersonAndOrganization() {
+	printf("Call custom destructor for instance of Handle_StepBasic_PersonAndOrganization\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Contract;
 class Handle_StepBasic_Contract : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Contract();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Contract();
 		%feature("autodoc", "1");
@@ -894,12 +994,15 @@ class Handle_StepBasic_Contract : public Handle_MMgt_TShared {
 	return (StepBasic_Contract*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Contract {
+	~Handle_StepBasic_Contract() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Contract\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DocumentUsageConstraint;
 class Handle_StepBasic_DocumentUsageConstraint : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DocumentUsageConstraint();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentUsageConstraint();
 		%feature("autodoc", "1");
@@ -915,12 +1018,15 @@ class Handle_StepBasic_DocumentUsageConstraint : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentUsageConstraint*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DocumentUsageConstraint {
+	~Handle_StepBasic_DocumentUsageConstraint() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DocumentUsageConstraint\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ActionRequestSolution;
 class Handle_StepBasic_ActionRequestSolution : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ActionRequestSolution();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ActionRequestSolution();
 		%feature("autodoc", "1");
@@ -936,12 +1042,15 @@ class Handle_StepBasic_ActionRequestSolution : public Handle_MMgt_TShared {
 	return (StepBasic_ActionRequestSolution*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ActionRequestSolution {
+	~Handle_StepBasic_ActionRequestSolution() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ActionRequestSolution\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DocumentReference;
 class Handle_StepBasic_DocumentReference : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DocumentReference();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentReference();
 		%feature("autodoc", "1");
@@ -957,12 +1066,15 @@ class Handle_StepBasic_DocumentReference : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentReference*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DocumentReference {
+	~Handle_StepBasic_DocumentReference() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DocumentReference\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductContext;
 class Handle_StepBasic_ProductContext : public Handle_StepBasic_ApplicationContextElement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductContext();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductContext();
 		%feature("autodoc", "1");
@@ -978,12 +1090,15 @@ class Handle_StepBasic_ProductContext : public Handle_StepBasic_ApplicationConte
 	return (StepBasic_ProductContext*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductContext {
+	~Handle_StepBasic_ProductContext() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SolidAngleUnit;
 class Handle_StepBasic_SolidAngleUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SolidAngleUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SolidAngleUnit();
 		%feature("autodoc", "1");
@@ -999,12 +1114,15 @@ class Handle_StepBasic_SolidAngleUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_SolidAngleUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SolidAngleUnit {
+	~Handle_StepBasic_SolidAngleUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SolidAngleUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductCategory;
 class Handle_StepBasic_ProductCategory : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductCategory();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductCategory();
 		%feature("autodoc", "1");
@@ -1020,12 +1138,15 @@ class Handle_StepBasic_ProductCategory : public Handle_MMgt_TShared {
 	return (StepBasic_ProductCategory*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductCategory {
+	~Handle_StepBasic_ProductCategory() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductCategory\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductRelatedProductCategory;
 class Handle_StepBasic_ProductRelatedProductCategory : public Handle_StepBasic_ProductCategory {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductRelatedProductCategory();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductRelatedProductCategory();
 		%feature("autodoc", "1");
@@ -1041,12 +1162,15 @@ class Handle_StepBasic_ProductRelatedProductCategory : public Handle_StepBasic_P
 	return (StepBasic_ProductRelatedProductCategory*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductRelatedProductCategory {
+	~Handle_StepBasic_ProductRelatedProductCategory() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductRelatedProductCategory\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductType;
 class Handle_StepBasic_ProductType : public Handle_StepBasic_ProductRelatedProductCategory {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductType();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductType();
 		%feature("autodoc", "1");
@@ -1062,12 +1186,15 @@ class Handle_StepBasic_ProductType : public Handle_StepBasic_ProductRelatedProdu
 	return (StepBasic_ProductType*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductType {
+	~Handle_StepBasic_ProductType() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductType\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Document;
 class Handle_StepBasic_Document : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Document();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Document();
 		%feature("autodoc", "1");
@@ -1083,12 +1210,15 @@ class Handle_StepBasic_Document : public Handle_MMgt_TShared {
 	return (StepBasic_Document*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Document {
+	~Handle_StepBasic_Document() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Document\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnitAndAreaUnit;
 class Handle_StepBasic_SiUnitAndAreaUnit : public Handle_StepBasic_SiUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnitAndAreaUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndAreaUnit();
 		%feature("autodoc", "1");
@@ -1104,12 +1234,15 @@ class Handle_StepBasic_SiUnitAndAreaUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndAreaUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnitAndAreaUnit {
+	~Handle_StepBasic_SiUnitAndAreaUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndAreaUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DocumentType;
 class Handle_StepBasic_DocumentType : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DocumentType();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentType();
 		%feature("autodoc", "1");
@@ -1125,12 +1258,15 @@ class Handle_StepBasic_DocumentType : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentType*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DocumentType {
+	~Handle_StepBasic_DocumentType() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DocumentType\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_EffectivityAssignment;
 class Handle_StepBasic_EffectivityAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_EffectivityAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_EffectivityAssignment();
 		%feature("autodoc", "1");
@@ -1146,12 +1282,15 @@ class Handle_StepBasic_EffectivityAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_EffectivityAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_EffectivityAssignment {
+	~Handle_StepBasic_EffectivityAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_EffectivityAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionFormation;
 class Handle_StepBasic_ProductDefinitionFormation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductDefinitionFormation();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormation();
 		%feature("autodoc", "1");
@@ -1167,12 +1306,15 @@ class Handle_StepBasic_ProductDefinitionFormation : public Handle_MMgt_TShared {
 	return (StepBasic_ProductDefinitionFormation*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductDefinitionFormation {
+	~Handle_StepBasic_ProductDefinitionFormation() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormation\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource;
 class Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource : public Handle_StepBasic_ProductDefinitionFormation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource();
 		%feature("autodoc", "1");
@@ -1188,12 +1330,15 @@ class Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource : public Ha
 	return (StepBasic_ProductDefinitionFormationWithSpecifiedSource*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource {
+	~Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DocumentRepresentationType;
 class Handle_StepBasic_DocumentRepresentationType : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DocumentRepresentationType();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentRepresentationType();
 		%feature("autodoc", "1");
@@ -1209,12 +1354,15 @@ class Handle_StepBasic_DocumentRepresentationType : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentRepresentationType*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DocumentRepresentationType {
+	~Handle_StepBasic_DocumentRepresentationType() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DocumentRepresentationType\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit;
 class Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit();
 		%feature("autodoc", "1");
@@ -1230,12 +1378,15 @@ class Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public Handle_Step
 	return (StepBasic_ConversionBasedUnitAndPlaneAngleUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
+	~Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DateAndTime;
 class Handle_StepBasic_DateAndTime : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DateAndTime();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateAndTime();
 		%feature("autodoc", "1");
@@ -1251,12 +1402,15 @@ class Handle_StepBasic_DateAndTime : public Handle_MMgt_TShared {
 	return (StepBasic_DateAndTime*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DateAndTime {
+	~Handle_StepBasic_DateAndTime() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DateAndTime\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SecurityClassificationAssignment;
 class Handle_StepBasic_SecurityClassificationAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SecurityClassificationAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassificationAssignment();
 		%feature("autodoc", "1");
@@ -1272,12 +1426,15 @@ class Handle_StepBasic_SecurityClassificationAssignment : public Handle_MMgt_TSh
 	return (StepBasic_SecurityClassificationAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SecurityClassificationAssignment {
+	~Handle_StepBasic_SecurityClassificationAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SecurityClassificationAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_PersonAndOrganizationRole;
 class Handle_StepBasic_PersonAndOrganizationRole : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_PersonAndOrganizationRole();
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganizationRole();
 		%feature("autodoc", "1");
@@ -1293,12 +1450,15 @@ class Handle_StepBasic_PersonAndOrganizationRole : public Handle_MMgt_TShared {
 	return (StepBasic_PersonAndOrganizationRole*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_PersonAndOrganizationRole {
+	~Handle_StepBasic_PersonAndOrganizationRole() {
+	printf("Call custom destructor for instance of Handle_StepBasic_PersonAndOrganizationRole\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DocumentProductAssociation;
 class Handle_StepBasic_DocumentProductAssociation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DocumentProductAssociation();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentProductAssociation();
 		%feature("autodoc", "1");
@@ -1314,12 +1474,15 @@ class Handle_StepBasic_DocumentProductAssociation : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentProductAssociation*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DocumentProductAssociation {
+	~Handle_StepBasic_DocumentProductAssociation() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DocumentProductAssociation\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionFormationRelationship;
 class Handle_StepBasic_ProductDefinitionFormationRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductDefinitionFormationRelationship();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormationRelationship();
 		%feature("autodoc", "1");
@@ -1335,12 +1498,15 @@ class Handle_StepBasic_ProductDefinitionFormationRelationship : public Handle_MM
 	return (StepBasic_ProductDefinitionFormationRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductDefinitionFormationRelationship {
+	~Handle_StepBasic_ProductDefinitionFormationRelationship() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ApprovalDateTime;
 class Handle_StepBasic_ApprovalDateTime : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ApprovalDateTime();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalDateTime();
 		%feature("autodoc", "1");
@@ -1356,12 +1522,15 @@ class Handle_StepBasic_ApprovalDateTime : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalDateTime*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ApprovalDateTime {
+	~Handle_StepBasic_ApprovalDateTime() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalDateTime\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DateRole;
 class Handle_StepBasic_DateRole : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DateRole();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateRole();
 		%feature("autodoc", "1");
@@ -1377,12 +1546,15 @@ class Handle_StepBasic_DateRole : public Handle_MMgt_TShared {
 	return (StepBasic_DateRole*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DateRole {
+	~Handle_StepBasic_DateRole() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DateRole\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_GeneralProperty;
 class Handle_StepBasic_GeneralProperty : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_GeneralProperty();
 		%feature("autodoc", "1");
 		Handle_StepBasic_GeneralProperty();
 		%feature("autodoc", "1");
@@ -1398,12 +1570,15 @@ class Handle_StepBasic_GeneralProperty : public Handle_MMgt_TShared {
 	return (StepBasic_GeneralProperty*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_GeneralProperty {
+	~Handle_StepBasic_GeneralProperty() {
+	printf("Call custom destructor for instance of Handle_StepBasic_GeneralProperty\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SecurityClassification;
 class Handle_StepBasic_SecurityClassification : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SecurityClassification();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassification();
 		%feature("autodoc", "1");
@@ -1419,12 +1594,15 @@ class Handle_StepBasic_SecurityClassification : public Handle_MMgt_TShared {
 	return (StepBasic_SecurityClassification*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SecurityClassification {
+	~Handle_StepBasic_SecurityClassification() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SecurityClassification\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DigitalDocument;
 class Handle_StepBasic_DigitalDocument : public Handle_StepBasic_Document {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DigitalDocument();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DigitalDocument();
 		%feature("autodoc", "1");
@@ -1440,12 +1618,15 @@ class Handle_StepBasic_DigitalDocument : public Handle_StepBasic_Document {
 	return (StepBasic_DigitalDocument*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DigitalDocument {
+	~Handle_StepBasic_DigitalDocument() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DigitalDocument\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_MassUnit;
 class Handle_StepBasic_MassUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_MassUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_MassUnit();
 		%feature("autodoc", "1");
@@ -1461,12 +1642,15 @@ class Handle_StepBasic_MassUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_MassUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_MassUnit {
+	~Handle_StepBasic_MassUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_MassUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ExternalSource;
 class Handle_StepBasic_ExternalSource : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ExternalSource();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ExternalSource();
 		%feature("autodoc", "1");
@@ -1482,12 +1666,15 @@ class Handle_StepBasic_ExternalSource : public Handle_MMgt_TShared {
 	return (StepBasic_ExternalSource*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ExternalSource {
+	~Handle_StepBasic_ExternalSource() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ExternalSource\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ThermodynamicTemperatureUnit;
 class Handle_StepBasic_ThermodynamicTemperatureUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ThermodynamicTemperatureUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ThermodynamicTemperatureUnit();
 		%feature("autodoc", "1");
@@ -1503,12 +1690,15 @@ class Handle_StepBasic_ThermodynamicTemperatureUnit : public Handle_StepBasic_Na
 	return (StepBasic_ThermodynamicTemperatureUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ThermodynamicTemperatureUnit {
+	~Handle_StepBasic_ThermodynamicTemperatureUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ThermodynamicTemperatureUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnitAndRatioUnit;
 class Handle_StepBasic_SiUnitAndRatioUnit : public Handle_StepBasic_SiUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnitAndRatioUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndRatioUnit();
 		%feature("autodoc", "1");
@@ -1524,12 +1714,15 @@ class Handle_StepBasic_SiUnitAndRatioUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndRatioUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnitAndRatioUnit {
+	~Handle_StepBasic_SiUnitAndRatioUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndRatioUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfProduct;
 class Handle_StepBasic_HArray1OfProduct : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfProduct();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfProduct();
 		%feature("autodoc", "1");
@@ -1545,12 +1738,15 @@ class Handle_StepBasic_HArray1OfProduct : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfProduct*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfProduct {
+	~Handle_StepBasic_HArray1OfProduct() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfProduct\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Group;
 class Handle_StepBasic_Group : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Group();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Group();
 		%feature("autodoc", "1");
@@ -1566,12 +1762,15 @@ class Handle_StepBasic_Group : public Handle_MMgt_TShared {
 	return (StepBasic_Group*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Group {
+	~Handle_StepBasic_Group() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Group\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_MeasureValueMember;
 class Handle_StepBasic_MeasureValueMember : public Handle_StepData_SelectReal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_MeasureValueMember();
 		%feature("autodoc", "1");
 		Handle_StepBasic_MeasureValueMember();
 		%feature("autodoc", "1");
@@ -1587,12 +1786,15 @@ class Handle_StepBasic_MeasureValueMember : public Handle_StepData_SelectReal {
 	return (StepBasic_MeasureValueMember*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_MeasureValueMember {
+	~Handle_StepBasic_MeasureValueMember() {
+	printf("Call custom destructor for instance of Handle_StepBasic_MeasureValueMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SolidAngleMeasureWithUnit;
 class Handle_StepBasic_SolidAngleMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SolidAngleMeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SolidAngleMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -1608,12 +1810,15 @@ class Handle_StepBasic_SolidAngleMeasureWithUnit : public Handle_StepBasic_Measu
 	return (StepBasic_SolidAngleMeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SolidAngleMeasureWithUnit {
+	~Handle_StepBasic_SolidAngleMeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SolidAngleMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_TimeUnit;
 class Handle_StepBasic_TimeUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_TimeUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_TimeUnit();
 		%feature("autodoc", "1");
@@ -1629,12 +1834,15 @@ class Handle_StepBasic_TimeUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_TimeUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_TimeUnit {
+	~Handle_StepBasic_TimeUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_TimeUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_LocalTime;
 class Handle_StepBasic_LocalTime : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_LocalTime();
 		%feature("autodoc", "1");
 		Handle_StepBasic_LocalTime();
 		%feature("autodoc", "1");
@@ -1650,12 +1858,15 @@ class Handle_StepBasic_LocalTime : public Handle_MMgt_TShared {
 	return (StepBasic_LocalTime*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_LocalTime {
+	~Handle_StepBasic_LocalTime() {
+	printf("Call custom destructor for instance of Handle_StepBasic_LocalTime\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Address;
 class Handle_StepBasic_Address : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Address();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Address();
 		%feature("autodoc", "1");
@@ -1671,12 +1882,15 @@ class Handle_StepBasic_Address : public Handle_MMgt_TShared {
 	return (StepBasic_Address*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Address {
+	~Handle_StepBasic_Address() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Address\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_PersonalAddress;
 class Handle_StepBasic_PersonalAddress : public Handle_StepBasic_Address {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_PersonalAddress();
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonalAddress();
 		%feature("autodoc", "1");
@@ -1692,12 +1906,15 @@ class Handle_StepBasic_PersonalAddress : public Handle_StepBasic_Address {
 	return (StepBasic_PersonalAddress*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_PersonalAddress {
+	~Handle_StepBasic_PersonalAddress() {
+	printf("Call custom destructor for instance of Handle_StepBasic_PersonalAddress\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DocumentRelationship;
 class Handle_StepBasic_DocumentRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DocumentRelationship();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentRelationship();
 		%feature("autodoc", "1");
@@ -1713,12 +1930,15 @@ class Handle_StepBasic_DocumentRelationship : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DocumentRelationship {
+	~Handle_StepBasic_DocumentRelationship() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DocumentRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DerivedUnitElement;
 class Handle_StepBasic_DerivedUnitElement : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DerivedUnitElement();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DerivedUnitElement();
 		%feature("autodoc", "1");
@@ -1734,12 +1954,15 @@ class Handle_StepBasic_DerivedUnitElement : public Handle_MMgt_TShared {
 	return (StepBasic_DerivedUnitElement*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DerivedUnitElement {
+	~Handle_StepBasic_DerivedUnitElement() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DerivedUnitElement\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_VersionedActionRequest;
 class Handle_StepBasic_VersionedActionRequest : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_VersionedActionRequest();
 		%feature("autodoc", "1");
 		Handle_StepBasic_VersionedActionRequest();
 		%feature("autodoc", "1");
@@ -1755,12 +1978,15 @@ class Handle_StepBasic_VersionedActionRequest : public Handle_MMgt_TShared {
 	return (StepBasic_VersionedActionRequest*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_VersionedActionRequest {
+	~Handle_StepBasic_VersionedActionRequest() {
+	printf("Call custom destructor for instance of Handle_StepBasic_VersionedActionRequest\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndVolumeUnit;
 class Handle_StepBasic_ConversionBasedUnitAndVolumeUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ConversionBasedUnitAndVolumeUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndVolumeUnit();
 		%feature("autodoc", "1");
@@ -1776,12 +2002,15 @@ class Handle_StepBasic_ConversionBasedUnitAndVolumeUnit : public Handle_StepBasi
 	return (StepBasic_ConversionBasedUnitAndVolumeUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ConversionBasedUnitAndVolumeUnit {
+	~Handle_StepBasic_ConversionBasedUnitAndVolumeUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndVolumeUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndMassUnit;
 class Handle_StepBasic_ConversionBasedUnitAndMassUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ConversionBasedUnitAndMassUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndMassUnit();
 		%feature("autodoc", "1");
@@ -1797,12 +2026,15 @@ class Handle_StepBasic_ConversionBasedUnitAndMassUnit : public Handle_StepBasic_
 	return (StepBasic_ConversionBasedUnitAndMassUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ConversionBasedUnitAndMassUnit {
+	~Handle_StepBasic_ConversionBasedUnitAndMassUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndMassUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ActionAssignment;
 class Handle_StepBasic_ActionAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ActionAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ActionAssignment();
 		%feature("autodoc", "1");
@@ -1818,12 +2050,15 @@ class Handle_StepBasic_ActionAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_ActionAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ActionAssignment {
+	~Handle_StepBasic_ActionAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ActionAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_RatioUnit;
 class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_RatioUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_RatioUnit();
 		%feature("autodoc", "1");
@@ -1839,12 +2074,15 @@ class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_RatioUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_RatioUnit {
+	~Handle_StepBasic_RatioUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_RatioUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SecurityClassificationLevel;
 class Handle_StepBasic_SecurityClassificationLevel : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SecurityClassificationLevel();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassificationLevel();
 		%feature("autodoc", "1");
@@ -1860,12 +2098,15 @@ class Handle_StepBasic_SecurityClassificationLevel : public Handle_MMgt_TShared 
 	return (StepBasic_SecurityClassificationLevel*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SecurityClassificationLevel {
+	~Handle_StepBasic_SecurityClassificationLevel() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SecurityClassificationLevel\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnitAndVolumeUnit;
 class Handle_StepBasic_SiUnitAndVolumeUnit : public Handle_StepBasic_SiUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnitAndVolumeUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndVolumeUnit();
 		%feature("autodoc", "1");
@@ -1881,12 +2122,15 @@ class Handle_StepBasic_SiUnitAndVolumeUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndVolumeUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnitAndVolumeUnit {
+	~Handle_StepBasic_SiUnitAndVolumeUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndVolumeUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DateAssignment;
 class Handle_StepBasic_DateAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DateAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateAssignment();
 		%feature("autodoc", "1");
@@ -1902,12 +2146,15 @@ class Handle_StepBasic_DateAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_DateAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DateAssignment {
+	~Handle_StepBasic_DateAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DateAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Product;
 class Handle_StepBasic_Product : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Product();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Product();
 		%feature("autodoc", "1");
@@ -1923,12 +2170,15 @@ class Handle_StepBasic_Product : public Handle_MMgt_TShared {
 	return (StepBasic_Product*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Product {
+	~Handle_StepBasic_Product() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Product\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ActionMethod;
 class Handle_StepBasic_ActionMethod : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ActionMethod();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ActionMethod();
 		%feature("autodoc", "1");
@@ -1944,12 +2194,15 @@ class Handle_StepBasic_ActionMethod : public Handle_MMgt_TShared {
 	return (StepBasic_ActionMethod*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ActionMethod {
+	~Handle_StepBasic_ActionMethod() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ActionMethod\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_GroupRelationship;
 class Handle_StepBasic_GroupRelationship : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_GroupRelationship();
 		%feature("autodoc", "1");
 		Handle_StepBasic_GroupRelationship();
 		%feature("autodoc", "1");
@@ -1965,12 +2218,15 @@ class Handle_StepBasic_GroupRelationship : public Handle_MMgt_TShared {
 	return (StepBasic_GroupRelationship*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_GroupRelationship {
+	~Handle_StepBasic_GroupRelationship() {
+	printf("Call custom destructor for instance of Handle_StepBasic_GroupRelationship\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ActionRequestAssignment;
 class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ActionRequestAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ActionRequestAssignment();
 		%feature("autodoc", "1");
@@ -1986,12 +2242,15 @@ class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_ActionRequestAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ActionRequestAssignment {
+	~Handle_StepBasic_ActionRequestAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ActionRequestAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_PlaneAngleMeasureWithUnit;
 class Handle_StepBasic_PlaneAngleMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_PlaneAngleMeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_PlaneAngleMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -2007,12 +2266,15 @@ class Handle_StepBasic_PlaneAngleMeasureWithUnit : public Handle_StepBasic_Measu
 	return (StepBasic_PlaneAngleMeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_PlaneAngleMeasureWithUnit {
+	~Handle_StepBasic_PlaneAngleMeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_PlaneAngleMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_MechanicalContext;
 class Handle_StepBasic_MechanicalContext : public Handle_StepBasic_ProductContext {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_MechanicalContext();
 		%feature("autodoc", "1");
 		Handle_StepBasic_MechanicalContext();
 		%feature("autodoc", "1");
@@ -2028,12 +2290,15 @@ class Handle_StepBasic_MechanicalContext : public Handle_StepBasic_ProductContex
 	return (StepBasic_MechanicalContext*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_MechanicalContext {
+	~Handle_StepBasic_MechanicalContext() {
+	printf("Call custom destructor for instance of Handle_StepBasic_MechanicalContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndLengthUnit;
 class Handle_StepBasic_ConversionBasedUnitAndLengthUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ConversionBasedUnitAndLengthUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndLengthUnit();
 		%feature("autodoc", "1");
@@ -2049,12 +2314,15 @@ class Handle_StepBasic_ConversionBasedUnitAndLengthUnit : public Handle_StepBasi
 	return (StepBasic_ConversionBasedUnitAndLengthUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ConversionBasedUnitAndLengthUnit {
+	~Handle_StepBasic_ConversionBasedUnitAndLengthUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndLengthUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_OrganizationAssignment;
 class Handle_StepBasic_OrganizationAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_OrganizationAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrganizationAssignment();
 		%feature("autodoc", "1");
@@ -2070,12 +2338,15 @@ class Handle_StepBasic_OrganizationAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_OrganizationAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_OrganizationAssignment {
+	~Handle_StepBasic_OrganizationAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_OrganizationAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit;
 class Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit();
 		%feature("autodoc", "1");
@@ -2091,12 +2362,15 @@ class Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit : public Handle_Step
 	return (StepBasic_ConversionBasedUnitAndSolidAngleUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit {
+	~Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Certification;
 class Handle_StepBasic_Certification : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Certification();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Certification();
 		%feature("autodoc", "1");
@@ -2112,12 +2386,15 @@ class Handle_StepBasic_Certification : public Handle_MMgt_TShared {
 	return (StepBasic_Certification*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Certification {
+	~Handle_StepBasic_Certification() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Certification\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DocumentProductEquivalence;
 class Handle_StepBasic_DocumentProductEquivalence : public Handle_StepBasic_DocumentProductAssociation {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DocumentProductEquivalence();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentProductEquivalence();
 		%feature("autodoc", "1");
@@ -2133,12 +2410,15 @@ class Handle_StepBasic_DocumentProductEquivalence : public Handle_StepBasic_Docu
 	return (StepBasic_DocumentProductEquivalence*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DocumentProductEquivalence {
+	~Handle_StepBasic_DocumentProductEquivalence() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DocumentProductEquivalence\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_OrganizationalAddress;
 class Handle_StepBasic_OrganizationalAddress : public Handle_StepBasic_Address {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_OrganizationalAddress();
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrganizationalAddress();
 		%feature("autodoc", "1");
@@ -2154,12 +2434,15 @@ class Handle_StepBasic_OrganizationalAddress : public Handle_StepBasic_Address {
 	return (StepBasic_OrganizationalAddress*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_OrganizationalAddress {
+	~Handle_StepBasic_OrganizationalAddress() {
+	printf("Call custom destructor for instance of Handle_StepBasic_OrganizationalAddress\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_CalendarDate;
 class Handle_StepBasic_CalendarDate : public Handle_StepBasic_Date {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_CalendarDate();
 		%feature("autodoc", "1");
 		Handle_StepBasic_CalendarDate();
 		%feature("autodoc", "1");
@@ -2175,12 +2458,15 @@ class Handle_StepBasic_CalendarDate : public Handle_StepBasic_Date {
 	return (StepBasic_CalendarDate*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_CalendarDate {
+	~Handle_StepBasic_CalendarDate() {
+	printf("Call custom destructor for instance of Handle_StepBasic_CalendarDate\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfApproval;
 class Handle_StepBasic_HArray1OfApproval : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfApproval();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfApproval();
 		%feature("autodoc", "1");
@@ -2196,12 +2482,15 @@ class Handle_StepBasic_HArray1OfApproval : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfApproval*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfApproval {
+	~Handle_StepBasic_HArray1OfApproval() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfApproval\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndTimeUnit;
 class Handle_StepBasic_ConversionBasedUnitAndTimeUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ConversionBasedUnitAndTimeUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndTimeUnit();
 		%feature("autodoc", "1");
@@ -2217,12 +2506,15 @@ class Handle_StepBasic_ConversionBasedUnitAndTimeUnit : public Handle_StepBasic_
 	return (StepBasic_ConversionBasedUnitAndTimeUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ConversionBasedUnitAndTimeUnit {
+	~Handle_StepBasic_ConversionBasedUnitAndTimeUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndTimeUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfPerson;
 class Handle_StepBasic_HArray1OfPerson : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfPerson();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfPerson();
 		%feature("autodoc", "1");
@@ -2238,12 +2530,15 @@ class Handle_StepBasic_HArray1OfPerson : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfPerson*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfPerson {
+	~Handle_StepBasic_HArray1OfPerson() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfPerson\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ContractType;
 class Handle_StepBasic_ContractType : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ContractType();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ContractType();
 		%feature("autodoc", "1");
@@ -2259,12 +2554,15 @@ class Handle_StepBasic_ContractType : public Handle_MMgt_TShared {
 	return (StepBasic_ContractType*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ContractType {
+	~Handle_StepBasic_ContractType() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ContractType\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ProductConceptContext;
 class Handle_StepBasic_ProductConceptContext : public Handle_StepBasic_ApplicationContextElement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ProductConceptContext();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductConceptContext();
 		%feature("autodoc", "1");
@@ -2280,12 +2578,15 @@ class Handle_StepBasic_ProductConceptContext : public Handle_StepBasic_Applicati
 	return (StepBasic_ProductConceptContext*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ProductConceptContext {
+	~Handle_StepBasic_ProductConceptContext() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ProductConceptContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_AreaUnit;
 class Handle_StepBasic_AreaUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_AreaUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_AreaUnit();
 		%feature("autodoc", "1");
@@ -2301,12 +2602,15 @@ class Handle_StepBasic_AreaUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_AreaUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_AreaUnit {
+	~Handle_StepBasic_AreaUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_AreaUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfProductDefinition;
 class Handle_StepBasic_HArray1OfProductDefinition : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfProductDefinition();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfProductDefinition();
 		%feature("autodoc", "1");
@@ -2322,12 +2626,15 @@ class Handle_StepBasic_HArray1OfProductDefinition : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfProductDefinition*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfProductDefinition {
+	~Handle_StepBasic_HArray1OfProductDefinition() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfProductDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_VolumeUnit;
 class Handle_StepBasic_VolumeUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_VolumeUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_VolumeUnit();
 		%feature("autodoc", "1");
@@ -2343,12 +2650,15 @@ class Handle_StepBasic_VolumeUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_VolumeUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_VolumeUnit {
+	~Handle_StepBasic_VolumeUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_VolumeUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_RoleAssociation;
 class Handle_StepBasic_RoleAssociation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_RoleAssociation();
 		%feature("autodoc", "1");
 		Handle_StepBasic_RoleAssociation();
 		%feature("autodoc", "1");
@@ -2364,12 +2674,15 @@ class Handle_StepBasic_RoleAssociation : public Handle_MMgt_TShared {
 	return (StepBasic_RoleAssociation*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_RoleAssociation {
+	~Handle_StepBasic_RoleAssociation() {
+	printf("Call custom destructor for instance of Handle_StepBasic_RoleAssociation\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfNamedUnit;
 class Handle_StepBasic_HArray1OfNamedUnit : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfNamedUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfNamedUnit();
 		%feature("autodoc", "1");
@@ -2385,12 +2698,15 @@ class Handle_StepBasic_HArray1OfNamedUnit : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfNamedUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfNamedUnit {
+	~Handle_StepBasic_HArray1OfNamedUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfNamedUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_NameAssignment;
 class Handle_StepBasic_NameAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_NameAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_NameAssignment();
 		%feature("autodoc", "1");
@@ -2406,12 +2722,15 @@ class Handle_StepBasic_NameAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_NameAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_NameAssignment {
+	~Handle_StepBasic_NameAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_NameAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_OrganizationRole;
 class Handle_StepBasic_OrganizationRole : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_OrganizationRole();
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrganizationRole();
 		%feature("autodoc", "1");
@@ -2427,12 +2746,15 @@ class Handle_StepBasic_OrganizationRole : public Handle_MMgt_TShared {
 	return (StepBasic_OrganizationRole*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_OrganizationRole {
+	~Handle_StepBasic_OrganizationRole() {
+	printf("Call custom destructor for instance of Handle_StepBasic_OrganizationRole\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnitAndLengthUnit;
 class Handle_StepBasic_SiUnitAndLengthUnit : public Handle_StepBasic_SiUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnitAndLengthUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndLengthUnit();
 		%feature("autodoc", "1");
@@ -2448,12 +2770,15 @@ class Handle_StepBasic_SiUnitAndLengthUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndLengthUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnitAndLengthUnit {
+	~Handle_StepBasic_SiUnitAndLengthUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndLengthUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfDerivedUnitElement;
 class Handle_StepBasic_HArray1OfDerivedUnitElement : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfDerivedUnitElement();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfDerivedUnitElement();
 		%feature("autodoc", "1");
@@ -2469,12 +2794,15 @@ class Handle_StepBasic_HArray1OfDerivedUnitElement : public Handle_MMgt_TShared 
 	return (StepBasic_HArray1OfDerivedUnitElement*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfDerivedUnitElement {
+	~Handle_StepBasic_HArray1OfDerivedUnitElement() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfDerivedUnitElement\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfProductContext;
 class Handle_StepBasic_HArray1OfProductContext : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfProductContext();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfProductContext();
 		%feature("autodoc", "1");
@@ -2490,12 +2818,15 @@ class Handle_StepBasic_HArray1OfProductContext : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfProductContext*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfProductContext {
+	~Handle_StepBasic_HArray1OfProductContext() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfProductContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnitAndPlaneAngleUnit;
 class Handle_StepBasic_SiUnitAndPlaneAngleUnit : public Handle_StepBasic_SiUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnitAndPlaneAngleUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndPlaneAngleUnit();
 		%feature("autodoc", "1");
@@ -2511,12 +2842,15 @@ class Handle_StepBasic_SiUnitAndPlaneAngleUnit : public Handle_StepBasic_SiUnit 
 	return (StepBasic_SiUnitAndPlaneAngleUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnitAndPlaneAngleUnit {
+	~Handle_StepBasic_SiUnitAndPlaneAngleUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndPlaneAngleUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ExternallyDefinedItem;
 class Handle_StepBasic_ExternallyDefinedItem : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ExternallyDefinedItem();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ExternallyDefinedItem();
 		%feature("autodoc", "1");
@@ -2532,12 +2866,15 @@ class Handle_StepBasic_ExternallyDefinedItem : public Handle_MMgt_TShared {
 	return (StepBasic_ExternallyDefinedItem*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ExternallyDefinedItem {
+	~Handle_StepBasic_ExternallyDefinedItem() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ExternallyDefinedItem\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_WeekOfYearAndDayDate;
 class Handle_StepBasic_WeekOfYearAndDayDate : public Handle_StepBasic_Date {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_WeekOfYearAndDayDate();
 		%feature("autodoc", "1");
 		Handle_StepBasic_WeekOfYearAndDayDate();
 		%feature("autodoc", "1");
@@ -2553,12 +2890,15 @@ class Handle_StepBasic_WeekOfYearAndDayDate : public Handle_StepBasic_Date {
 	return (StepBasic_WeekOfYearAndDayDate*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_WeekOfYearAndDayDate {
+	~Handle_StepBasic_WeekOfYearAndDayDate() {
+	printf("Call custom destructor for instance of Handle_StepBasic_WeekOfYearAndDayDate\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_EulerAngles;
 class Handle_StepBasic_EulerAngles : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_EulerAngles();
 		%feature("autodoc", "1");
 		Handle_StepBasic_EulerAngles();
 		%feature("autodoc", "1");
@@ -2574,12 +2914,15 @@ class Handle_StepBasic_EulerAngles : public Handle_MMgt_TShared {
 	return (StepBasic_EulerAngles*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_EulerAngles {
+	~Handle_StepBasic_EulerAngles() {
+	printf("Call custom destructor for instance of Handle_StepBasic_EulerAngles\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnitAndMassUnit;
 class Handle_StepBasic_SiUnitAndMassUnit : public Handle_StepBasic_SiUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnitAndMassUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndMassUnit();
 		%feature("autodoc", "1");
@@ -2595,12 +2938,15 @@ class Handle_StepBasic_SiUnitAndMassUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndMassUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnitAndMassUnit {
+	~Handle_StepBasic_SiUnitAndMassUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndMassUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_CharacterizedObject;
 class Handle_StepBasic_CharacterizedObject : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_CharacterizedObject();
 		%feature("autodoc", "1");
 		Handle_StepBasic_CharacterizedObject();
 		%feature("autodoc", "1");
@@ -2616,12 +2962,15 @@ class Handle_StepBasic_CharacterizedObject : public Handle_MMgt_TShared {
 	return (StepBasic_CharacterizedObject*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_CharacterizedObject {
+	~Handle_StepBasic_CharacterizedObject() {
+	printf("Call custom destructor for instance of Handle_StepBasic_CharacterizedObject\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ContractAssignment;
 class Handle_StepBasic_ContractAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ContractAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ContractAssignment();
 		%feature("autodoc", "1");
@@ -2637,12 +2986,15 @@ class Handle_StepBasic_ContractAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_ContractAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ContractAssignment {
+	~Handle_StepBasic_ContractAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ContractAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_UncertaintyMeasureWithUnit;
 class Handle_StepBasic_UncertaintyMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_UncertaintyMeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_UncertaintyMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -2658,12 +3010,15 @@ class Handle_StepBasic_UncertaintyMeasureWithUnit : public Handle_StepBasic_Meas
 	return (StepBasic_UncertaintyMeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_UncertaintyMeasureWithUnit {
+	~Handle_StepBasic_UncertaintyMeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_UncertaintyMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ApprovalRole;
 class Handle_StepBasic_ApprovalRole : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ApprovalRole();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalRole();
 		%feature("autodoc", "1");
@@ -2679,12 +3034,15 @@ class Handle_StepBasic_ApprovalRole : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalRole*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ApprovalRole {
+	~Handle_StepBasic_ApprovalRole() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalRole\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_LengthMeasureWithUnit;
 class Handle_StepBasic_LengthMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_LengthMeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_LengthMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -2700,12 +3058,15 @@ class Handle_StepBasic_LengthMeasureWithUnit : public Handle_StepBasic_MeasureWi
 	return (StepBasic_LengthMeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_LengthMeasureWithUnit {
+	~Handle_StepBasic_LengthMeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_LengthMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ApplicationContext;
 class Handle_StepBasic_ApplicationContext : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ApplicationContext();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApplicationContext();
 		%feature("autodoc", "1");
@@ -2721,12 +3082,15 @@ class Handle_StepBasic_ApplicationContext : public Handle_MMgt_TShared {
 	return (StepBasic_ApplicationContext*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ApplicationContext {
+	~Handle_StepBasic_ApplicationContext() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ApplicationContext\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfDocument;
 class Handle_StepBasic_HArray1OfDocument : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfDocument();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfDocument();
 		%feature("autodoc", "1");
@@ -2742,12 +3106,15 @@ class Handle_StepBasic_HArray1OfDocument : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfDocument*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfDocument {
+	~Handle_StepBasic_HArray1OfDocument() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfDocument\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_CoordinatedUniversalTimeOffset;
 class Handle_StepBasic_CoordinatedUniversalTimeOffset : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_CoordinatedUniversalTimeOffset();
 		%feature("autodoc", "1");
 		Handle_StepBasic_CoordinatedUniversalTimeOffset();
 		%feature("autodoc", "1");
@@ -2763,12 +3130,15 @@ class Handle_StepBasic_CoordinatedUniversalTimeOffset : public Handle_MMgt_TShar
 	return (StepBasic_CoordinatedUniversalTimeOffset*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_CoordinatedUniversalTimeOffset {
+	~Handle_StepBasic_CoordinatedUniversalTimeOffset() {
+	printf("Call custom destructor for instance of Handle_StepBasic_CoordinatedUniversalTimeOffset\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SizeMember;
 class Handle_StepBasic_SizeMember : public Handle_StepData_SelectReal {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SizeMember();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SizeMember();
 		%feature("autodoc", "1");
@@ -2784,12 +3154,15 @@ class Handle_StepBasic_SizeMember : public Handle_StepData_SelectReal {
 	return (StepBasic_SizeMember*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SizeMember {
+	~Handle_StepBasic_SizeMember() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SizeMember\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_SiUnitAndTimeUnit;
 class Handle_StepBasic_SiUnitAndTimeUnit : public Handle_StepBasic_SiUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_SiUnitAndTimeUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndTimeUnit();
 		%feature("autodoc", "1");
@@ -2805,12 +3178,15 @@ class Handle_StepBasic_SiUnitAndTimeUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndTimeUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_SiUnitAndTimeUnit {
+	~Handle_StepBasic_SiUnitAndTimeUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndTimeUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DocumentFile;
 class Handle_StepBasic_DocumentFile : public Handle_StepBasic_Document {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DocumentFile();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentFile();
 		%feature("autodoc", "1");
@@ -2826,12 +3202,15 @@ class Handle_StepBasic_DocumentFile : public Handle_StepBasic_Document {
 	return (StepBasic_DocumentFile*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DocumentFile {
+	~Handle_StepBasic_DocumentFile() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DocumentFile\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DateTimeRole;
 class Handle_StepBasic_DateTimeRole : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DateTimeRole();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateTimeRole();
 		%feature("autodoc", "1");
@@ -2847,12 +3226,15 @@ class Handle_StepBasic_DateTimeRole : public Handle_MMgt_TShared {
 	return (StepBasic_DateTimeRole*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DateTimeRole {
+	~Handle_StepBasic_DateTimeRole() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DateTimeRole\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_DerivedUnit;
 class Handle_StepBasic_DerivedUnit : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_DerivedUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_DerivedUnit();
 		%feature("autodoc", "1");
@@ -2868,12 +3250,15 @@ class Handle_StepBasic_DerivedUnit : public Handle_MMgt_TShared {
 	return (StepBasic_DerivedUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_DerivedUnit {
+	~Handle_StepBasic_DerivedUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_DerivedUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit;
 class Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -2889,12 +3274,15 @@ class Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit : public Handle_MMgt_
 	return (StepBasic_HArray1OfUncertaintyMeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit {
+	~Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_LengthUnit;
 class Handle_StepBasic_LengthUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_LengthUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_LengthUnit();
 		%feature("autodoc", "1");
@@ -2910,12 +3298,15 @@ class Handle_StepBasic_LengthUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_LengthUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_LengthUnit {
+	~Handle_StepBasic_LengthUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_LengthUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndAreaUnit;
 class Handle_StepBasic_ConversionBasedUnitAndAreaUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ConversionBasedUnitAndAreaUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndAreaUnit();
 		%feature("autodoc", "1");
@@ -2931,12 +3322,15 @@ class Handle_StepBasic_ConversionBasedUnitAndAreaUnit : public Handle_StepBasic_
 	return (StepBasic_ConversionBasedUnitAndAreaUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ConversionBasedUnitAndAreaUnit {
+	~Handle_StepBasic_ConversionBasedUnitAndAreaUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndAreaUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_PlaneAngleUnit;
 class Handle_StepBasic_PlaneAngleUnit : public Handle_StepBasic_NamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_PlaneAngleUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_PlaneAngleUnit();
 		%feature("autodoc", "1");
@@ -2952,12 +3346,15 @@ class Handle_StepBasic_PlaneAngleUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_PlaneAngleUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_PlaneAngleUnit {
+	~Handle_StepBasic_PlaneAngleUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_PlaneAngleUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_PersonAndOrganizationAssignment;
 class Handle_StepBasic_PersonAndOrganizationAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_PersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
@@ -2973,12 +3370,15 @@ class Handle_StepBasic_PersonAndOrganizationAssignment : public Handle_MMgt_TSha
 	return (StepBasic_PersonAndOrganizationAssignment*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_PersonAndOrganizationAssignment {
+	~Handle_StepBasic_PersonAndOrganizationAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_PersonAndOrganizationAssignment\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Action;
 class Handle_StepBasic_Action : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Action();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Action();
 		%feature("autodoc", "1");
@@ -2994,12 +3394,15 @@ class Handle_StepBasic_Action : public Handle_MMgt_TShared {
 	return (StepBasic_Action*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Action {
+	~Handle_StepBasic_Action() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Action\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_Organization;
 class Handle_StepBasic_Organization : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_Organization();
 		%feature("autodoc", "1");
 		Handle_StepBasic_Organization();
 		%feature("autodoc", "1");
@@ -3015,12 +3418,15 @@ class Handle_StepBasic_Organization : public Handle_MMgt_TShared {
 	return (StepBasic_Organization*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_Organization {
+	~Handle_StepBasic_Organization() {
+	printf("Call custom destructor for instance of Handle_StepBasic_Organization\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_TimeMeasureWithUnit;
 class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_TimeMeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_TimeMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -3036,12 +3442,15 @@ class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWith
 	return (StepBasic_TimeMeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_TimeMeasureWithUnit {
+	~Handle_StepBasic_TimeMeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_TimeMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_RatioMeasureWithUnit;
 class Handle_StepBasic_RatioMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_RatioMeasureWithUnit();
 		%feature("autodoc", "1");
 		Handle_StepBasic_RatioMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -3057,12 +3466,15 @@ class Handle_StepBasic_RatioMeasureWithUnit : public Handle_StepBasic_MeasureWit
 	return (StepBasic_RatioMeasureWithUnit*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_RatioMeasureWithUnit {
+	~Handle_StepBasic_RatioMeasureWithUnit() {
+	printf("Call custom destructor for instance of Handle_StepBasic_RatioMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ApplicationProtocolDefinition;
 class Handle_StepBasic_ApplicationProtocolDefinition : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ApplicationProtocolDefinition();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApplicationProtocolDefinition();
 		%feature("autodoc", "1");
@@ -3078,12 +3490,15 @@ class Handle_StepBasic_ApplicationProtocolDefinition : public Handle_MMgt_TShare
 	return (StepBasic_ApplicationProtocolDefinition*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ApplicationProtocolDefinition {
+	~Handle_StepBasic_ApplicationProtocolDefinition() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ApplicationProtocolDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_ApprovalPersonOrganization;
 class Handle_StepBasic_ApprovalPersonOrganization : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_ApprovalPersonOrganization();
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalPersonOrganization();
 		%feature("autodoc", "1");
@@ -3099,12 +3514,15 @@ class Handle_StepBasic_ApprovalPersonOrganization : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalPersonOrganization*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_ApprovalPersonOrganization {
+	~Handle_StepBasic_ApprovalPersonOrganization() {
+	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalPersonOrganization\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_PhysicallyModeledProductDefinition;
 class Handle_StepBasic_PhysicallyModeledProductDefinition : public Handle_StepBasic_ProductDefinition {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_PhysicallyModeledProductDefinition();
 		%feature("autodoc", "1");
 		Handle_StepBasic_PhysicallyModeledProductDefinition();
 		%feature("autodoc", "1");
@@ -3120,12 +3538,15 @@ class Handle_StepBasic_PhysicallyModeledProductDefinition : public Handle_StepBa
 	return (StepBasic_PhysicallyModeledProductDefinition*)$self->Access();
 	}
 };
+%extend Handle_StepBasic_PhysicallyModeledProductDefinition {
+	~Handle_StepBasic_PhysicallyModeledProductDefinition() {
+	printf("Call custom destructor for instance of Handle_StepBasic_PhysicallyModeledProductDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_StepBasic_GroupAssignment;
 class Handle_StepBasic_GroupAssignment : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StepBasic_GroupAssignment();
 		%feature("autodoc", "1");
 		Handle_StepBasic_GroupAssignment();
 		%feature("autodoc", "1");
@@ -3139,6 +3560,11 @@ class Handle_StepBasic_GroupAssignment : public Handle_MMgt_TShared {
 %extend Handle_StepBasic_GroupAssignment {
 	StepBasic_GroupAssignment* GetObject() {
 	return (StepBasic_GroupAssignment*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_GroupAssignment {
+	~Handle_StepBasic_GroupAssignment() {
+	printf("Call custom destructor for instance of Handle_StepBasic_GroupAssignment\n");
 	}
 };
 
@@ -3163,13 +3589,16 @@ class StepBasic_MeasureWithUnit : public MMgt_TShared {
 		StepBasic_Unit UnitComponent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_MeasureWithUnit();
 
 };
 %extend StepBasic_MeasureWithUnit {
 	Handle_StepBasic_MeasureWithUnit GetHandle() {
 	return *(Handle_StepBasic_MeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_MeasureWithUnit {
+	~StepBasic_MeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_MeasureWithUnit\n");
 	}
 };
 
@@ -3178,13 +3607,16 @@ class StepBasic_PlaneAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	public:
 		%feature("autodoc", "1");
 		StepBasic_PlaneAngleMeasureWithUnit();
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PlaneAngleMeasureWithUnit();
 
 };
 %extend StepBasic_PlaneAngleMeasureWithUnit {
 	Handle_StepBasic_PlaneAngleMeasureWithUnit GetHandle() {
 	return *(Handle_StepBasic_PlaneAngleMeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_PlaneAngleMeasureWithUnit {
+	~StepBasic_PlaneAngleMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_PlaneAngleMeasureWithUnit\n");
 	}
 };
 
@@ -3201,13 +3633,16 @@ class StepBasic_NameAssignment : public MMgt_TShared {
 		void SetAssignedName(const Handle_TCollection_HAsciiString &AssignedName);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_NameAssignment();
 
 };
 %extend StepBasic_NameAssignment {
 	Handle_StepBasic_NameAssignment GetHandle() {
 	return *(Handle_StepBasic_NameAssignment*) &$self;
+	}
+};
+%extend StepBasic_NameAssignment {
+	~StepBasic_NameAssignment() {
+	printf("Call custom destructor for instance of StepBasic_NameAssignment\n");
 	}
 };
 
@@ -3228,13 +3663,16 @@ class StepBasic_DateAndTimeAssignment : public MMgt_TShared {
 		Handle_StepBasic_DateTimeRole Role() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DateAndTimeAssignment();
 
 };
 %extend StepBasic_DateAndTimeAssignment {
 	Handle_StepBasic_DateAndTimeAssignment GetHandle() {
 	return *(Handle_StepBasic_DateAndTimeAssignment*) &$self;
+	}
+};
+%extend StepBasic_DateAndTimeAssignment {
+	~StepBasic_DateAndTimeAssignment() {
+	printf("Call custom destructor for instance of StepBasic_DateAndTimeAssignment\n");
 	}
 };
 
@@ -3251,13 +3689,16 @@ class StepBasic_NamedUnit : public MMgt_TShared {
 		virtual		Handle_StepBasic_DimensionalExponents Dimensions() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_NamedUnit();
 
 };
 %extend StepBasic_NamedUnit {
 	Handle_StepBasic_NamedUnit GetHandle() {
 	return *(Handle_StepBasic_NamedUnit*) &$self;
+	}
+};
+%extend StepBasic_NamedUnit {
+	~StepBasic_NamedUnit() {
+	printf("Call custom destructor for instance of StepBasic_NamedUnit\n");
 	}
 };
 
@@ -3280,13 +3721,16 @@ class StepBasic_ConversionBasedUnit : public StepBasic_NamedUnit {
 		Handle_StepBasic_MeasureWithUnit ConversionFactor() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ConversionBasedUnit();
 
 };
 %extend StepBasic_ConversionBasedUnit {
 	Handle_StepBasic_ConversionBasedUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnit*) &$self;
+	}
+};
+%extend StepBasic_ConversionBasedUnit {
+	~StepBasic_ConversionBasedUnit() {
+	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnit\n");
 	}
 };
 
@@ -3299,13 +3743,16 @@ class StepBasic_ConversionBasedUnitAndAreaUnit : public StepBasic_ConversionBase
 		void SetAreaUnit(const Handle_StepBasic_AreaUnit &anAreaUnit);
 		%feature("autodoc", "1");
 		Handle_StepBasic_AreaUnit AreaUnit() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ConversionBasedUnitAndAreaUnit();
 
 };
 %extend StepBasic_ConversionBasedUnitAndAreaUnit {
 	Handle_StepBasic_ConversionBasedUnitAndAreaUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnitAndAreaUnit*) &$self;
+	}
+};
+%extend StepBasic_ConversionBasedUnitAndAreaUnit {
+	~StepBasic_ConversionBasedUnitAndAreaUnit() {
+	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndAreaUnit\n");
 	}
 };
 
@@ -3336,13 +3783,16 @@ class StepBasic_SiUnit : public StepBasic_NamedUnit {
 		virtual		Handle_StepBasic_DimensionalExponents Dimensions() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnit();
 
 };
 %extend StepBasic_SiUnit {
 	Handle_StepBasic_SiUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnit {
+	~StepBasic_SiUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnit\n");
 	}
 };
 
@@ -3355,13 +3805,16 @@ class StepBasic_SiUnitAndMassUnit : public StepBasic_SiUnit {
 		void SetMassUnit(const Handle_StepBasic_MassUnit &aMassUnit);
 		%feature("autodoc", "1");
 		Handle_StepBasic_MassUnit MassUnit() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnitAndMassUnit();
 
 };
 %extend StepBasic_SiUnitAndMassUnit {
 	Handle_StepBasic_SiUnitAndMassUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndMassUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndMassUnit {
+	~StepBasic_SiUnitAndMassUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnitAndMassUnit\n");
 	}
 };
 
@@ -3422,13 +3875,16 @@ class StepBasic_ProductCategory : public MMgt_TShared {
 		Standard_Boolean HasDescription() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductCategory();
 
 };
 %extend StepBasic_ProductCategory {
 	Handle_StepBasic_ProductCategory GetHandle() {
 	return *(Handle_StepBasic_ProductCategory*) &$self;
+	}
+};
+%extend StepBasic_ProductCategory {
+	~StepBasic_ProductCategory() {
+	printf("Call custom destructor for instance of StepBasic_ProductCategory\n");
 	}
 };
 
@@ -3445,13 +3901,16 @@ class StepBasic_DateRole : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DateRole();
 
 };
 %extend StepBasic_DateRole {
 	Handle_StepBasic_DateRole GetHandle() {
 	return *(Handle_StepBasic_DateRole*) &$self;
+	}
+};
+%extend StepBasic_DateRole {
+	~StepBasic_DateRole() {
+	printf("Call custom destructor for instance of StepBasic_DateRole\n");
 	}
 };
 
@@ -3482,13 +3941,16 @@ class StepBasic_HArray1OfOrganization : public MMgt_TShared {
 		StepBasic_Array1OfOrganization & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfOrganization();
 
 };
 %extend StepBasic_HArray1OfOrganization {
 	Handle_StepBasic_HArray1OfOrganization GetHandle() {
 	return *(Handle_StepBasic_HArray1OfOrganization*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfOrganization {
+	~StepBasic_HArray1OfOrganization() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfOrganization\n");
 	}
 };
 
@@ -3533,13 +3995,16 @@ class StepBasic_RatioUnit : public StepBasic_NamedUnit {
 		StepBasic_RatioUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_RatioUnit();
 
 };
 %extend StepBasic_RatioUnit {
 	Handle_StepBasic_RatioUnit GetHandle() {
 	return *(Handle_StepBasic_RatioUnit*) &$self;
+	}
+};
+%extend StepBasic_RatioUnit {
+	~StepBasic_RatioUnit() {
+	printf("Call custom destructor for instance of StepBasic_RatioUnit\n");
 	}
 };
 
@@ -3550,13 +4015,16 @@ class StepBasic_MassUnit : public StepBasic_NamedUnit {
 		StepBasic_MassUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_MassUnit();
 
 };
 %extend StepBasic_MassUnit {
 	Handle_StepBasic_MassUnit GetHandle() {
 	return *(Handle_StepBasic_MassUnit*) &$self;
+	}
+};
+%extend StepBasic_MassUnit {
+	~StepBasic_MassUnit() {
+	printf("Call custom destructor for instance of StepBasic_MassUnit\n");
 	}
 };
 
@@ -3577,13 +4045,16 @@ class StepBasic_DocumentReference : public MMgt_TShared {
 		void SetSource(const Handle_TCollection_HAsciiString &aSource);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DocumentReference();
 
 };
 %extend StepBasic_DocumentReference {
 	Handle_StepBasic_DocumentReference GetHandle() {
 	return *(Handle_StepBasic_DocumentReference*) &$self;
+	}
+};
+%extend StepBasic_DocumentReference {
+	~StepBasic_DocumentReference() {
+	printf("Call custom destructor for instance of StepBasic_DocumentReference\n");
 	}
 };
 
@@ -3614,13 +4085,16 @@ class StepBasic_VersionedActionRequest : public MMgt_TShared {
 		Standard_Boolean HasDescription() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_VersionedActionRequest();
 
 };
 %extend StepBasic_VersionedActionRequest {
 	Handle_StepBasic_VersionedActionRequest GetHandle() {
 	return *(Handle_StepBasic_VersionedActionRequest*) &$self;
+	}
+};
+%extend StepBasic_VersionedActionRequest {
+	~StepBasic_VersionedActionRequest() {
+	printf("Call custom destructor for instance of StepBasic_VersionedActionRequest\n");
 	}
 };
 
@@ -3677,13 +4151,16 @@ class StepBasic_ApplicationContextElement : public MMgt_TShared {
 		Handle_StepBasic_ApplicationContext FrameOfReference() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ApplicationContextElement();
 
 };
 %extend StepBasic_ApplicationContextElement {
 	Handle_StepBasic_ApplicationContextElement GetHandle() {
 	return *(Handle_StepBasic_ApplicationContextElement*) &$self;
+	}
+};
+%extend StepBasic_ApplicationContextElement {
+	~StepBasic_ApplicationContextElement() {
+	printf("Call custom destructor for instance of StepBasic_ApplicationContextElement\n");
 	}
 };
 
@@ -3698,13 +4175,16 @@ class StepBasic_ProductDefinitionContext : public StepBasic_ApplicationContextEl
 		void SetLifeCycleStage(const Handle_TCollection_HAsciiString &aLifeCycleStage);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString LifeCycleStage() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductDefinitionContext();
 
 };
 %extend StepBasic_ProductDefinitionContext {
 	Handle_StepBasic_ProductDefinitionContext GetHandle() {
 	return *(Handle_StepBasic_ProductDefinitionContext*) &$self;
+	}
+};
+%extend StepBasic_ProductDefinitionContext {
+	~StepBasic_ProductDefinitionContext() {
+	printf("Call custom destructor for instance of StepBasic_ProductDefinitionContext\n");
 	}
 };
 
@@ -3713,13 +4193,16 @@ class StepBasic_DesignContext : public StepBasic_ProductDefinitionContext {
 	public:
 		%feature("autodoc", "1");
 		StepBasic_DesignContext();
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DesignContext();
 
 };
 %extend StepBasic_DesignContext {
 	Handle_StepBasic_DesignContext GetHandle() {
 	return *(Handle_StepBasic_DesignContext*) &$self;
+	}
+};
+%extend StepBasic_DesignContext {
+	~StepBasic_DesignContext() {
+	printf("Call custom destructor for instance of StepBasic_DesignContext\n");
 	}
 };
 
@@ -3748,13 +4231,16 @@ class StepBasic_Organization : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Description() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Organization();
 
 };
 %extend StepBasic_Organization {
 	Handle_StepBasic_Organization GetHandle() {
 	return *(Handle_StepBasic_Organization*) &$self;
+	}
+};
+%extend StepBasic_Organization {
+	~StepBasic_Organization() {
+	printf("Call custom destructor for instance of StepBasic_Organization\n");
 	}
 };
 
@@ -3775,13 +4261,16 @@ class StepBasic_ActionRequestSolution : public MMgt_TShared {
 		void SetRequest(const Handle_StepBasic_VersionedActionRequest &Request);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ActionRequestSolution();
 
 };
 %extend StepBasic_ActionRequestSolution {
 	Handle_StepBasic_ActionRequestSolution GetHandle() {
 	return *(Handle_StepBasic_ActionRequestSolution*) &$self;
+	}
+};
+%extend StepBasic_ActionRequestSolution {
+	~StepBasic_ActionRequestSolution() {
+	printf("Call custom destructor for instance of StepBasic_ActionRequestSolution\n");
 	}
 };
 
@@ -3800,13 +4289,16 @@ class StepBasic_SiUnitAndPlaneAngleUnit : public StepBasic_SiUnit {
 		Handle_StepBasic_PlaneAngleUnit PlaneAngleUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnitAndPlaneAngleUnit();
 
 };
 %extend StepBasic_SiUnitAndPlaneAngleUnit {
 	Handle_StepBasic_SiUnitAndPlaneAngleUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndPlaneAngleUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndPlaneAngleUnit {
+	~StepBasic_SiUnitAndPlaneAngleUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnitAndPlaneAngleUnit\n");
 	}
 };
 
@@ -3817,13 +4309,16 @@ class StepBasic_TimeMeasureWithUnit : public StepBasic_MeasureWithUnit {
 		StepBasic_TimeMeasureWithUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_TimeMeasureWithUnit();
 
 };
 %extend StepBasic_TimeMeasureWithUnit {
 	Handle_StepBasic_TimeMeasureWithUnit GetHandle() {
 	return *(Handle_StepBasic_TimeMeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_TimeMeasureWithUnit {
+	~StepBasic_TimeMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_TimeMeasureWithUnit\n");
 	}
 };
 
@@ -3852,13 +4347,16 @@ class StepBasic_DocumentRelationship : public MMgt_TShared {
 		void SetRelatedDocument(const Handle_StepBasic_Document &aRelated);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DocumentRelationship();
 
 };
 %extend StepBasic_DocumentRelationship {
 	Handle_StepBasic_DocumentRelationship GetHandle() {
 	return *(Handle_StepBasic_DocumentRelationship*) &$self;
+	}
+};
+%extend StepBasic_DocumentRelationship {
+	~StepBasic_DocumentRelationship() {
+	printf("Call custom destructor for instance of StepBasic_DocumentRelationship\n");
 	}
 };
 
@@ -3881,13 +4379,16 @@ class StepBasic_ObjectRole : public MMgt_TShared {
 		Standard_Boolean HasDescription() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ObjectRole();
 
 };
 %extend StepBasic_ObjectRole {
 	Handle_StepBasic_ObjectRole GetHandle() {
 	return *(Handle_StepBasic_ObjectRole*) &$self;
+	}
+};
+%extend StepBasic_ObjectRole {
+	~StepBasic_ObjectRole() {
+	printf("Call custom destructor for instance of StepBasic_ObjectRole\n");
 	}
 };
 
@@ -3906,13 +4407,16 @@ class StepBasic_SiUnitAndThermodynamicTemperatureUnit : public StepBasic_SiUnit 
 		Handle_StepBasic_ThermodynamicTemperatureUnit ThermodynamicTemperatureUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnitAndThermodynamicTemperatureUnit();
 
 };
 %extend StepBasic_SiUnitAndThermodynamicTemperatureUnit {
 	Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndThermodynamicTemperatureUnit {
+	~StepBasic_SiUnitAndThermodynamicTemperatureUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnitAndThermodynamicTemperatureUnit\n");
 	}
 };
 
@@ -3931,13 +4435,16 @@ class StepBasic_SiUnitAndTimeUnit : public StepBasic_SiUnit {
 		Handle_StepBasic_TimeUnit TimeUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnitAndTimeUnit();
 
 };
 %extend StepBasic_SiUnitAndTimeUnit {
 	Handle_StepBasic_SiUnitAndTimeUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndTimeUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndTimeUnit {
+	~StepBasic_SiUnitAndTimeUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnitAndTimeUnit\n");
 	}
 };
 
@@ -3956,13 +4463,16 @@ class StepBasic_ConversionBasedUnitAndMassUnit : public StepBasic_ConversionBase
 		Handle_StepBasic_MassUnit MassUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ConversionBasedUnitAndMassUnit();
 
 };
 %extend StepBasic_ConversionBasedUnitAndMassUnit {
 	Handle_StepBasic_ConversionBasedUnitAndMassUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnitAndMassUnit*) &$self;
+	}
+};
+%extend StepBasic_ConversionBasedUnitAndMassUnit {
+	~StepBasic_ConversionBasedUnitAndMassUnit() {
+	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndMassUnit\n");
 	}
 };
 
@@ -3993,13 +4503,16 @@ class StepBasic_HArray1OfProductContext : public MMgt_TShared {
 		StepBasic_Array1OfProductContext & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfProductContext();
 
 };
 %extend StepBasic_HArray1OfProductContext {
 	Handle_StepBasic_HArray1OfProductContext GetHandle() {
 	return *(Handle_StepBasic_HArray1OfProductContext*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfProductContext {
+	~StepBasic_HArray1OfProductContext() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfProductContext\n");
 	}
 };
 
@@ -4046,13 +4559,16 @@ class StepBasic_ApplicationProtocolDefinition : public MMgt_TShared {
 		Handle_StepBasic_ApplicationContext Application() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ApplicationProtocolDefinition();
 
 };
 %extend StepBasic_ApplicationProtocolDefinition {
 	Handle_StepBasic_ApplicationProtocolDefinition GetHandle() {
 	return *(Handle_StepBasic_ApplicationProtocolDefinition*) &$self;
+	}
+};
+%extend StepBasic_ApplicationProtocolDefinition {
+	~StepBasic_ApplicationProtocolDefinition() {
+	printf("Call custom destructor for instance of StepBasic_ApplicationProtocolDefinition\n");
 	}
 };
 
@@ -4075,13 +4591,16 @@ class StepBasic_ProductRelatedProductCategory : public StepBasic_ProductCategory
 		Standard_Integer NbProducts() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductRelatedProductCategory();
 
 };
 %extend StepBasic_ProductRelatedProductCategory {
 	Handle_StepBasic_ProductRelatedProductCategory GetHandle() {
 	return *(Handle_StepBasic_ProductRelatedProductCategory*) &$self;
+	}
+};
+%extend StepBasic_ProductRelatedProductCategory {
+	~StepBasic_ProductRelatedProductCategory() {
+	printf("Call custom destructor for instance of StepBasic_ProductRelatedProductCategory\n");
 	}
 };
 
@@ -4090,13 +4609,16 @@ class StepBasic_ProductType : public StepBasic_ProductRelatedProductCategory {
 	public:
 		%feature("autodoc", "1");
 		StepBasic_ProductType();
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductType();
 
 };
 %extend StepBasic_ProductType {
 	Handle_StepBasic_ProductType GetHandle() {
 	return *(Handle_StepBasic_ProductType*) &$self;
+	}
+};
+%extend StepBasic_ProductType {
+	~StepBasic_ProductType() {
+	printf("Call custom destructor for instance of StepBasic_ProductType\n");
 	}
 };
 
@@ -4143,13 +4665,16 @@ class StepBasic_PlaneAngleUnit : public StepBasic_NamedUnit {
 		StepBasic_PlaneAngleUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PlaneAngleUnit();
 
 };
 %extend StepBasic_PlaneAngleUnit {
 	Handle_StepBasic_PlaneAngleUnit GetHandle() {
 	return *(Handle_StepBasic_PlaneAngleUnit*) &$self;
+	}
+};
+%extend StepBasic_PlaneAngleUnit {
+	~StepBasic_PlaneAngleUnit() {
+	printf("Call custom destructor for instance of StepBasic_PlaneAngleUnit\n");
 	}
 };
 
@@ -4168,13 +4693,16 @@ class StepBasic_ConversionBasedUnitAndTimeUnit : public StepBasic_ConversionBase
 		Handle_StepBasic_TimeUnit TimeUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ConversionBasedUnitAndTimeUnit();
 
 };
 %extend StepBasic_ConversionBasedUnitAndTimeUnit {
 	Handle_StepBasic_ConversionBasedUnitAndTimeUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnitAndTimeUnit*) &$self;
+	}
+};
+%extend StepBasic_ConversionBasedUnitAndTimeUnit {
+	~StepBasic_ConversionBasedUnitAndTimeUnit() {
+	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndTimeUnit\n");
 	}
 };
 
@@ -4193,13 +4721,16 @@ class StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public StepBasic_Conversi
 		Handle_StepBasic_PlaneAngleUnit PlaneAngleUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ConversionBasedUnitAndPlaneAngleUnit();
 
 };
 %extend StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
 	Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit*) &$self;
+	}
+};
+%extend StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
+	~StepBasic_ConversionBasedUnitAndPlaneAngleUnit() {
+	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndPlaneAngleUnit\n");
 	}
 };
 
@@ -4252,13 +4783,16 @@ class StepBasic_MeasureValueMember : public StepData_SelectReal {
 		virtual		Standard_Boolean SetName(const char * name);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_MeasureValueMember();
 
 };
 %extend StepBasic_MeasureValueMember {
 	Handle_StepBasic_MeasureValueMember GetHandle() {
 	return *(Handle_StepBasic_MeasureValueMember*) &$self;
+	}
+};
+%extend StepBasic_MeasureValueMember {
+	~StepBasic_MeasureValueMember() {
+	printf("Call custom destructor for instance of StepBasic_MeasureValueMember\n");
 	}
 };
 
@@ -4279,13 +4813,16 @@ class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
 		Handle_StepBasic_PersonAndOrganizationRole Role() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PersonAndOrganizationAssignment();
 
 };
 %extend StepBasic_PersonAndOrganizationAssignment {
 	Handle_StepBasic_PersonAndOrganizationAssignment GetHandle() {
 	return *(Handle_StepBasic_PersonAndOrganizationAssignment*) &$self;
+	}
+};
+%extend StepBasic_PersonAndOrganizationAssignment {
+	~StepBasic_PersonAndOrganizationAssignment() {
+	printf("Call custom destructor for instance of StepBasic_PersonAndOrganizationAssignment\n");
 	}
 };
 
@@ -4306,13 +4843,16 @@ class StepBasic_RoleAssociation : public MMgt_TShared {
 		void SetItemWithRole(const StepBasic_RoleSelect &ItemWithRole);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_RoleAssociation();
 
 };
 %extend StepBasic_RoleAssociation {
 	Handle_StepBasic_RoleAssociation GetHandle() {
 	return *(Handle_StepBasic_RoleAssociation*) &$self;
+	}
+};
+%extend StepBasic_RoleAssociation {
+	~StepBasic_RoleAssociation() {
+	printf("Call custom destructor for instance of StepBasic_RoleAssociation\n");
 	}
 };
 
@@ -4329,13 +4869,16 @@ class StepBasic_Effectivity : public MMgt_TShared {
 		void SetId(const Handle_TCollection_HAsciiString &aid);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Effectivity();
 
 };
 %extend StepBasic_Effectivity {
 	Handle_StepBasic_Effectivity GetHandle() {
 	return *(Handle_StepBasic_Effectivity*) &$self;
+	}
+};
+%extend StepBasic_Effectivity {
+	~StepBasic_Effectivity() {
+	printf("Call custom destructor for instance of StepBasic_Effectivity\n");
 	}
 };
 
@@ -4350,13 +4893,16 @@ class StepBasic_ProductDefinitionEffectivity : public StepBasic_Effectivity {
 		Handle_StepBasic_ProductDefinitionRelationship Usage() const;
 		%feature("autodoc", "1");
 		void SetUsage(const Handle_StepBasic_ProductDefinitionRelationship &aUsage);
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductDefinitionEffectivity();
 
 };
 %extend StepBasic_ProductDefinitionEffectivity {
 	Handle_StepBasic_ProductDefinitionEffectivity GetHandle() {
 	return *(Handle_StepBasic_ProductDefinitionEffectivity*) &$self;
+	}
+};
+%extend StepBasic_ProductDefinitionEffectivity {
+	~StepBasic_ProductDefinitionEffectivity() {
+	printf("Call custom destructor for instance of StepBasic_ProductDefinitionEffectivity\n");
 	}
 };
 
@@ -4373,13 +4919,16 @@ class StepBasic_EulerAngles : public MMgt_TShared {
 		void SetAngles(const Handle_TColStd_HArray1OfReal &Angles);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_EulerAngles();
 
 };
 %extend StepBasic_EulerAngles {
 	Handle_StepBasic_EulerAngles GetHandle() {
 	return *(Handle_StepBasic_EulerAngles*) &$self;
+	}
+};
+%extend StepBasic_EulerAngles {
+	~StepBasic_EulerAngles() {
+	printf("Call custom destructor for instance of StepBasic_EulerAngles\n");
 	}
 };
 
@@ -4396,13 +4945,16 @@ class StepBasic_Date : public MMgt_TShared {
 		Standard_Integer YearComponent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Date();
 
 };
 %extend StepBasic_Date {
 	Handle_StepBasic_Date GetHandle() {
 	return *(Handle_StepBasic_Date*) &$self;
+	}
+};
+%extend StepBasic_Date {
+	~StepBasic_Date() {
+	printf("Call custom destructor for instance of StepBasic_Date\n");
 	}
 };
 
@@ -4421,13 +4973,16 @@ class StepBasic_CalendarDate : public StepBasic_Date {
 		void SetMonthComponent(const Standard_Integer aMonthComponent);
 		%feature("autodoc", "1");
 		Standard_Integer MonthComponent() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_CalendarDate();
 
 };
 %extend StepBasic_CalendarDate {
 	Handle_StepBasic_CalendarDate GetHandle() {
 	return *(Handle_StepBasic_CalendarDate*) &$self;
+	}
+};
+%extend StepBasic_CalendarDate {
+	~StepBasic_CalendarDate() {
+	printf("Call custom destructor for instance of StepBasic_CalendarDate\n");
 	}
 };
 
@@ -4446,13 +5001,16 @@ class StepBasic_ConversionBasedUnitAndRatioUnit : public StepBasic_ConversionBas
 		Handle_StepBasic_RatioUnit RatioUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ConversionBasedUnitAndRatioUnit();
 
 };
 %extend StepBasic_ConversionBasedUnitAndRatioUnit {
 	Handle_StepBasic_ConversionBasedUnitAndRatioUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnitAndRatioUnit*) &$self;
+	}
+};
+%extend StepBasic_ConversionBasedUnitAndRatioUnit {
+	~StepBasic_ConversionBasedUnitAndRatioUnit() {
+	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndRatioUnit\n");
 	}
 };
 
@@ -4473,13 +5031,16 @@ class StepBasic_DerivedUnitElement : public MMgt_TShared {
 		Standard_Real Exponent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DerivedUnitElement();
 
 };
 %extend StepBasic_DerivedUnitElement {
 	Handle_StepBasic_DerivedUnitElement GetHandle() {
 	return *(Handle_StepBasic_DerivedUnitElement*) &$self;
+	}
+};
+%extend StepBasic_DerivedUnitElement {
+	~StepBasic_DerivedUnitElement() {
+	printf("Call custom destructor for instance of StepBasic_DerivedUnitElement\n");
 	}
 };
 
@@ -4544,13 +5105,16 @@ class StepBasic_ProductDefinition : public MMgt_TShared {
 		Handle_StepBasic_ProductDefinitionContext FrameOfReference() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductDefinition();
 
 };
 %extend StepBasic_ProductDefinition {
 	Handle_StepBasic_ProductDefinition GetHandle() {
 	return *(Handle_StepBasic_ProductDefinition*) &$self;
+	}
+};
+%extend StepBasic_ProductDefinition {
+	~StepBasic_ProductDefinition() {
+	printf("Call custom destructor for instance of StepBasic_ProductDefinition\n");
 	}
 };
 
@@ -4583,13 +5147,16 @@ class StepBasic_ApprovalStatus : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ApprovalStatus();
 
 };
 %extend StepBasic_ApprovalStatus {
 	Handle_StepBasic_ApprovalStatus GetHandle() {
 	return *(Handle_StepBasic_ApprovalStatus*) &$self;
+	}
+};
+%extend StepBasic_ApprovalStatus {
+	~StepBasic_ApprovalStatus() {
+	printf("Call custom destructor for instance of StepBasic_ApprovalStatus\n");
 	}
 };
 
@@ -4698,13 +5265,16 @@ class StepBasic_Address : public MMgt_TShared {
 		Standard_Boolean HasTelexNumber() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Address();
 
 };
 %extend StepBasic_Address {
 	Handle_StepBasic_Address GetHandle() {
 	return *(Handle_StepBasic_Address*) &$self;
+	}
+};
+%extend StepBasic_Address {
+	~StepBasic_Address() {
+	printf("Call custom destructor for instance of StepBasic_Address\n");
 	}
 };
 
@@ -4723,13 +5293,16 @@ class StepBasic_ProductContext : public StepBasic_ApplicationContextElement {
 		Handle_TCollection_HAsciiString DisciplineType() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductContext();
 
 };
 %extend StepBasic_ProductContext {
 	Handle_StepBasic_ProductContext GetHandle() {
 	return *(Handle_StepBasic_ProductContext*) &$self;
+	}
+};
+%extend StepBasic_ProductContext {
+	~StepBasic_ProductContext() {
+	printf("Call custom destructor for instance of StepBasic_ProductContext\n");
 	}
 };
 
@@ -4760,13 +5333,16 @@ class StepBasic_DocumentProductAssociation : public MMgt_TShared {
 		void SetRelatedProduct(const StepBasic_ProductOrFormationOrDefinition &RelatedProduct);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DocumentProductAssociation();
 
 };
 %extend StepBasic_DocumentProductAssociation {
 	Handle_StepBasic_DocumentProductAssociation GetHandle() {
 	return *(Handle_StepBasic_DocumentProductAssociation*) &$self;
+	}
+};
+%extend StepBasic_DocumentProductAssociation {
+	~StepBasic_DocumentProductAssociation() {
+	printf("Call custom destructor for instance of StepBasic_DocumentProductAssociation\n");
 	}
 };
 
@@ -4787,13 +5363,16 @@ class StepBasic_DocumentRepresentationType : public MMgt_TShared {
 		void SetRepresentedDocument(const Handle_StepBasic_Document &RepresentedDocument);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DocumentRepresentationType();
 
 };
 %extend StepBasic_DocumentRepresentationType {
 	Handle_StepBasic_DocumentRepresentationType GetHandle() {
 	return *(Handle_StepBasic_DocumentRepresentationType*) &$self;
+	}
+};
+%extend StepBasic_DocumentRepresentationType {
+	~StepBasic_DocumentRepresentationType() {
+	printf("Call custom destructor for instance of StepBasic_DocumentRepresentationType\n");
 	}
 };
 
@@ -4820,13 +5399,16 @@ class StepBasic_PersonalAddress : public StepBasic_Address {
 		Handle_TCollection_HAsciiString Description() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PersonalAddress();
 
 };
 %extend StepBasic_PersonalAddress {
 	Handle_StepBasic_PersonalAddress GetHandle() {
 	return *(Handle_StepBasic_PersonalAddress*) &$self;
+	}
+};
+%extend StepBasic_PersonalAddress {
+	~StepBasic_PersonalAddress() {
+	printf("Call custom destructor for instance of StepBasic_PersonalAddress\n");
 	}
 };
 
@@ -4843,13 +5425,16 @@ class StepBasic_CertificationType : public MMgt_TShared {
 		void SetDescription(const Handle_TCollection_HAsciiString &Description);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_CertificationType();
 
 };
 %extend StepBasic_CertificationType {
 	Handle_StepBasic_CertificationType GetHandle() {
 	return *(Handle_StepBasic_CertificationType*) &$self;
+	}
+};
+%extend StepBasic_CertificationType {
+	~StepBasic_CertificationType() {
+	printf("Call custom destructor for instance of StepBasic_CertificationType\n");
 	}
 };
 
@@ -4884,13 +5469,16 @@ class StepBasic_ProductDefinitionRelationship : public MMgt_TShared {
 		void SetRelatedProductDefinition(const Handle_StepBasic_ProductDefinition &RelatedProductDefinition);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductDefinitionRelationship();
 
 };
 %extend StepBasic_ProductDefinitionRelationship {
 	Handle_StepBasic_ProductDefinitionRelationship GetHandle() {
 	return *(Handle_StepBasic_ProductDefinitionRelationship*) &$self;
+	}
+};
+%extend StepBasic_ProductDefinitionRelationship {
+	~StepBasic_ProductDefinitionRelationship() {
+	printf("Call custom destructor for instance of StepBasic_ProductDefinitionRelationship\n");
 	}
 };
 
@@ -4923,13 +5511,16 @@ class StepBasic_Product : public MMgt_TShared {
 		Standard_Integer NbFrameOfReference() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Product();
 
 };
 %extend StepBasic_Product {
 	Handle_StepBasic_Product GetHandle() {
 	return *(Handle_StepBasic_Product*) &$self;
+	}
+};
+%extend StepBasic_Product {
+	~StepBasic_Product() {
+	printf("Call custom destructor for instance of StepBasic_Product\n");
 	}
 };
 
@@ -4944,13 +5535,16 @@ class StepBasic_ConversionBasedUnitAndVolumeUnit : public StepBasic_ConversionBa
 		Handle_StepBasic_VolumeUnit VolumeUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ConversionBasedUnitAndVolumeUnit();
 
 };
 %extend StepBasic_ConversionBasedUnitAndVolumeUnit {
 	Handle_StepBasic_ConversionBasedUnitAndVolumeUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnitAndVolumeUnit*) &$self;
+	}
+};
+%extend StepBasic_ConversionBasedUnitAndVolumeUnit {
+	~StepBasic_ConversionBasedUnitAndVolumeUnit() {
+	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndVolumeUnit\n");
 	}
 };
 
@@ -4973,13 +5567,16 @@ class StepBasic_Group : public MMgt_TShared {
 		Standard_Boolean HasDescription() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Group();
 
 };
 %extend StepBasic_Group {
 	Handle_StepBasic_Group GetHandle() {
 	return *(Handle_StepBasic_Group*) &$self;
+	}
+};
+%extend StepBasic_Group {
+	~StepBasic_Group() {
+	printf("Call custom destructor for instance of StepBasic_Group\n");
 	}
 };
 
@@ -4990,13 +5587,16 @@ class StepBasic_TimeUnit : public StepBasic_NamedUnit {
 		StepBasic_TimeUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_TimeUnit();
 
 };
 %extend StepBasic_TimeUnit {
 	Handle_StepBasic_TimeUnit GetHandle() {
 	return *(Handle_StepBasic_TimeUnit*) &$self;
+	}
+};
+%extend StepBasic_TimeUnit {
+	~StepBasic_TimeUnit() {
+	printf("Call custom destructor for instance of StepBasic_TimeUnit\n");
 	}
 };
 
@@ -5013,13 +5613,16 @@ class StepBasic_ApprovalRole : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Role() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ApprovalRole();
 
 };
 %extend StepBasic_ApprovalRole {
 	Handle_StepBasic_ApprovalRole GetHandle() {
 	return *(Handle_StepBasic_ApprovalRole*) &$self;
+	}
+};
+%extend StepBasic_ApprovalRole {
+	~StepBasic_ApprovalRole() {
+	printf("Call custom destructor for instance of StepBasic_ApprovalRole\n");
 	}
 };
 
@@ -5050,13 +5653,16 @@ class StepBasic_GroupRelationship : public MMgt_TShared {
 		void SetRelatedGroup(const Handle_StepBasic_Group &RelatedGroup);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_GroupRelationship();
 
 };
 %extend StepBasic_GroupRelationship {
 	Handle_StepBasic_GroupRelationship GetHandle() {
 	return *(Handle_StepBasic_GroupRelationship*) &$self;
+	}
+};
+%extend StepBasic_GroupRelationship {
+	~StepBasic_GroupRelationship() {
+	printf("Call custom destructor for instance of StepBasic_GroupRelationship\n");
 	}
 };
 
@@ -5073,13 +5679,16 @@ class StepBasic_CertificationAssignment : public MMgt_TShared {
 		void SetAssignedCertification(const Handle_StepBasic_Certification &AssignedCertification);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_CertificationAssignment();
 
 };
 %extend StepBasic_CertificationAssignment {
 	Handle_StepBasic_CertificationAssignment GetHandle() {
 	return *(Handle_StepBasic_CertificationAssignment*) &$self;
+	}
+};
+%extend StepBasic_CertificationAssignment {
+	~StepBasic_CertificationAssignment() {
+	printf("Call custom destructor for instance of StepBasic_CertificationAssignment\n");
 	}
 };
 
@@ -5090,13 +5699,16 @@ class StepBasic_MechanicalContext : public StepBasic_ProductContext {
 		StepBasic_MechanicalContext();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_MechanicalContext();
 
 };
 %extend StepBasic_MechanicalContext {
 	Handle_StepBasic_MechanicalContext GetHandle() {
 	return *(Handle_StepBasic_MechanicalContext*) &$self;
+	}
+};
+%extend StepBasic_MechanicalContext {
+	~StepBasic_MechanicalContext() {
+	printf("Call custom destructor for instance of StepBasic_MechanicalContext\n");
 	}
 };
 
@@ -5113,13 +5725,16 @@ class StepBasic_SecurityClassificationLevel : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SecurityClassificationLevel();
 
 };
 %extend StepBasic_SecurityClassificationLevel {
 	Handle_StepBasic_SecurityClassificationLevel GetHandle() {
 	return *(Handle_StepBasic_SecurityClassificationLevel*) &$self;
+	}
+};
+%extend StepBasic_SecurityClassificationLevel {
+	~StepBasic_SecurityClassificationLevel() {
+	printf("Call custom destructor for instance of StepBasic_SecurityClassificationLevel\n");
 	}
 };
 
@@ -5156,13 +5771,16 @@ class StepBasic_LocalTime : public MMgt_TShared {
 		Handle_StepBasic_CoordinatedUniversalTimeOffset Zone() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_LocalTime();
 
 };
 %extend StepBasic_LocalTime {
 	Handle_StepBasic_LocalTime GetHandle() {
 	return *(Handle_StepBasic_LocalTime*) &$self;
+	}
+};
+%extend StepBasic_LocalTime {
+	~StepBasic_LocalTime() {
+	printf("Call custom destructor for instance of StepBasic_LocalTime\n");
 	}
 };
 
@@ -5179,13 +5797,16 @@ class StepBasic_SecurityClassificationAssignment : public MMgt_TShared {
 		Handle_StepBasic_SecurityClassification AssignedSecurityClassification() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SecurityClassificationAssignment();
 
 };
 %extend StepBasic_SecurityClassificationAssignment {
 	Handle_StepBasic_SecurityClassificationAssignment GetHandle() {
 	return *(Handle_StepBasic_SecurityClassificationAssignment*) &$self;
+	}
+};
+%extend StepBasic_SecurityClassificationAssignment {
+	~StepBasic_SecurityClassificationAssignment() {
+	printf("Call custom destructor for instance of StepBasic_SecurityClassificationAssignment\n");
 	}
 };
 
@@ -5204,13 +5825,16 @@ class StepBasic_SiUnitAndSolidAngleUnit : public StepBasic_SiUnit {
 		Handle_StepBasic_SolidAngleUnit SolidAngleUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnitAndSolidAngleUnit();
 
 };
 %extend StepBasic_SiUnitAndSolidAngleUnit {
 	Handle_StepBasic_SiUnitAndSolidAngleUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndSolidAngleUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndSolidAngleUnit {
+	~StepBasic_SiUnitAndSolidAngleUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnitAndSolidAngleUnit\n");
 	}
 };
 
@@ -5221,13 +5845,16 @@ class StepBasic_ThermodynamicTemperatureUnit : public StepBasic_NamedUnit {
 		StepBasic_ThermodynamicTemperatureUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ThermodynamicTemperatureUnit();
 
 };
 %extend StepBasic_ThermodynamicTemperatureUnit {
 	Handle_StepBasic_ThermodynamicTemperatureUnit GetHandle() {
 	return *(Handle_StepBasic_ThermodynamicTemperatureUnit*) &$self;
+	}
+};
+%extend StepBasic_ThermodynamicTemperatureUnit {
+	~StepBasic_ThermodynamicTemperatureUnit() {
+	printf("Call custom destructor for instance of StepBasic_ThermodynamicTemperatureUnit\n");
 	}
 };
 
@@ -5258,13 +5885,16 @@ class StepBasic_Document : public MMgt_TShared {
 		void SetKind(const Handle_StepBasic_DocumentType &Kind);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Document();
 
 };
 %extend StepBasic_Document {
 	Handle_StepBasic_Document GetHandle() {
 	return *(Handle_StepBasic_Document*) &$self;
+	}
+};
+%extend StepBasic_Document {
+	~StepBasic_Document() {
+	printf("Call custom destructor for instance of StepBasic_Document\n");
 	}
 };
 
@@ -5285,13 +5915,16 @@ class StepBasic_DateAndTime : public MMgt_TShared {
 		Handle_StepBasic_LocalTime TimeComponent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DateAndTime();
 
 };
 %extend StepBasic_DateAndTime {
 	Handle_StepBasic_DateAndTime GetHandle() {
 	return *(Handle_StepBasic_DateAndTime*) &$self;
+	}
+};
+%extend StepBasic_DateAndTime {
+	~StepBasic_DateAndTime() {
+	printf("Call custom destructor for instance of StepBasic_DateAndTime\n");
 	}
 };
 
@@ -5318,13 +5951,16 @@ class StepBasic_OrganizationalAddress : public StepBasic_Address {
 		Handle_TCollection_HAsciiString Description() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_OrganizationalAddress();
 
 };
 %extend StepBasic_OrganizationalAddress {
 	Handle_StepBasic_OrganizationalAddress GetHandle() {
 	return *(Handle_StepBasic_OrganizationalAddress*) &$self;
+	}
+};
+%extend StepBasic_OrganizationalAddress {
+	~StepBasic_OrganizationalAddress() {
+	printf("Call custom destructor for instance of StepBasic_OrganizationalAddress\n");
 	}
 };
 
@@ -5341,13 +5977,16 @@ class StepBasic_DocumentFile : public StepBasic_Document {
 		void SetCharacterizedObject(const Handle_StepBasic_CharacterizedObject &CharacterizedObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DocumentFile();
 
 };
 %extend StepBasic_DocumentFile {
 	Handle_StepBasic_DocumentFile GetHandle() {
 	return *(Handle_StepBasic_DocumentFile*) &$self;
+	}
+};
+%extend StepBasic_DocumentFile {
+	~StepBasic_DocumentFile() {
+	printf("Call custom destructor for instance of StepBasic_DocumentFile\n");
 	}
 };
 
@@ -5380,13 +6019,16 @@ class StepBasic_ProductDefinitionFormationRelationship : public MMgt_TShared {
 		void SetRelatedProductDefinitionFormation(const Handle_StepBasic_ProductDefinitionFormation &RelatedProductDefinitionFormation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductDefinitionFormationRelationship();
 
 };
 %extend StepBasic_ProductDefinitionFormationRelationship {
 	Handle_StepBasic_ProductDefinitionFormationRelationship GetHandle() {
 	return *(Handle_StepBasic_ProductDefinitionFormationRelationship*) &$self;
+	}
+};
+%extend StepBasic_ProductDefinitionFormationRelationship {
+	~StepBasic_ProductDefinitionFormationRelationship() {
+	printf("Call custom destructor for instance of StepBasic_ProductDefinitionFormationRelationship\n");
 	}
 };
 
@@ -5415,13 +6057,16 @@ class StepBasic_CoordinatedUniversalTimeOffset : public MMgt_TShared {
 		StepBasic_AheadOrBehind Sense() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_CoordinatedUniversalTimeOffset();
 
 };
 %extend StepBasic_CoordinatedUniversalTimeOffset {
 	Handle_StepBasic_CoordinatedUniversalTimeOffset GetHandle() {
 	return *(Handle_StepBasic_CoordinatedUniversalTimeOffset*) &$self;
+	}
+};
+%extend StepBasic_CoordinatedUniversalTimeOffset {
+	~StepBasic_CoordinatedUniversalTimeOffset() {
+	printf("Call custom destructor for instance of StepBasic_CoordinatedUniversalTimeOffset\n");
 	}
 };
 
@@ -5448,13 +6093,16 @@ class StepBasic_GeneralProperty : public MMgt_TShared {
 		Standard_Boolean HasDescription() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_GeneralProperty();
 
 };
 %extend StepBasic_GeneralProperty {
 	Handle_StepBasic_GeneralProperty GetHandle() {
 	return *(Handle_StepBasic_GeneralProperty*) &$self;
+	}
+};
+%extend StepBasic_GeneralProperty {
+	~StepBasic_GeneralProperty() {
+	printf("Call custom destructor for instance of StepBasic_GeneralProperty\n");
 	}
 };
 
@@ -5473,13 +6121,16 @@ class StepBasic_SiUnitAndAreaUnit : public StepBasic_SiUnit {
 		virtual		Handle_StepBasic_DimensionalExponents Dimensions() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnitAndAreaUnit();
 
 };
 %extend StepBasic_SiUnitAndAreaUnit {
 	Handle_StepBasic_SiUnitAndAreaUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndAreaUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndAreaUnit {
+	~StepBasic_SiUnitAndAreaUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnitAndAreaUnit\n");
 	}
 };
 
@@ -5542,13 +6193,16 @@ class StepBasic_Action : public MMgt_TShared {
 		void SetChosenMethod(const Handle_StepBasic_ActionMethod &ChosenMethod);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Action();
 
 };
 %extend StepBasic_Action {
 	Handle_StepBasic_Action GetHandle() {
 	return *(Handle_StepBasic_Action*) &$self;
+	}
+};
+%extend StepBasic_Action {
+	~StepBasic_Action() {
+	printf("Call custom destructor for instance of StepBasic_Action\n");
 	}
 };
 
@@ -5559,13 +6213,16 @@ class StepBasic_SolidAngleUnit : public StepBasic_NamedUnit {
 		StepBasic_SolidAngleUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SolidAngleUnit();
 
 };
 %extend StepBasic_SolidAngleUnit {
 	Handle_StepBasic_SolidAngleUnit GetHandle() {
 	return *(Handle_StepBasic_SolidAngleUnit*) &$self;
+	}
+};
+%extend StepBasic_SolidAngleUnit {
+	~StepBasic_SolidAngleUnit() {
+	printf("Call custom destructor for instance of StepBasic_SolidAngleUnit\n");
 	}
 };
 
@@ -5602,13 +6259,16 @@ class StepBasic_ConversionBasedUnitAndSolidAngleUnit : public StepBasic_Conversi
 		Handle_StepBasic_SolidAngleUnit SolidAngleUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ConversionBasedUnitAndSolidAngleUnit();
 
 };
 %extend StepBasic_ConversionBasedUnitAndSolidAngleUnit {
 	Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit*) &$self;
+	}
+};
+%extend StepBasic_ConversionBasedUnitAndSolidAngleUnit {
+	~StepBasic_ConversionBasedUnitAndSolidAngleUnit() {
+	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndSolidAngleUnit\n");
 	}
 };
 
@@ -5619,13 +6279,16 @@ class StepBasic_AreaUnit : public StepBasic_NamedUnit {
 		StepBasic_AreaUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_AreaUnit();
 
 };
 %extend StepBasic_AreaUnit {
 	Handle_StepBasic_AreaUnit GetHandle() {
 	return *(Handle_StepBasic_AreaUnit*) &$self;
+	}
+};
+%extend StepBasic_AreaUnit {
+	~StepBasic_AreaUnit() {
+	printf("Call custom destructor for instance of StepBasic_AreaUnit\n");
 	}
 };
 
@@ -5650,13 +6313,16 @@ class StepBasic_Certification : public MMgt_TShared {
 		void SetKind(const Handle_StepBasic_CertificationType &Kind);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Certification();
 
 };
 %extend StepBasic_Certification {
 	Handle_StepBasic_Certification GetHandle() {
 	return *(Handle_StepBasic_Certification*) &$self;
+	}
+};
+%extend StepBasic_Certification {
+	~StepBasic_Certification() {
+	printf("Call custom destructor for instance of StepBasic_Certification\n");
 	}
 };
 
@@ -5673,13 +6339,16 @@ class StepBasic_GroupAssignment : public MMgt_TShared {
 		void SetAssignedGroup(const Handle_StepBasic_Group &AssignedGroup);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_GroupAssignment();
 
 };
 %extend StepBasic_GroupAssignment {
 	Handle_StepBasic_GroupAssignment GetHandle() {
 	return *(Handle_StepBasic_GroupAssignment*) &$self;
+	}
+};
+%extend StepBasic_GroupAssignment {
+	~StepBasic_GroupAssignment() {
+	printf("Call custom destructor for instance of StepBasic_GroupAssignment\n");
 	}
 };
 
@@ -5696,13 +6365,16 @@ class StepBasic_ActionAssignment : public MMgt_TShared {
 		void SetAssignedAction(const Handle_StepBasic_Action &AssignedAction);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ActionAssignment();
 
 };
 %extend StepBasic_ActionAssignment {
 	Handle_StepBasic_ActionAssignment GetHandle() {
 	return *(Handle_StepBasic_ActionAssignment*) &$self;
+	}
+};
+%extend StepBasic_ActionAssignment {
+	~StepBasic_ActionAssignment() {
+	printf("Call custom destructor for instance of StepBasic_ActionAssignment\n");
 	}
 };
 
@@ -5727,13 +6399,16 @@ class StepBasic_ProductDefinitionFormation : public MMgt_TShared {
 		Handle_StepBasic_Product OfProduct() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductDefinitionFormation();
 
 };
 %extend StepBasic_ProductDefinitionFormation {
 	Handle_StepBasic_ProductDefinitionFormation GetHandle() {
 	return *(Handle_StepBasic_ProductDefinitionFormation*) &$self;
+	}
+};
+%extend StepBasic_ProductDefinitionFormation {
+	~StepBasic_ProductDefinitionFormation() {
+	printf("Call custom destructor for instance of StepBasic_ProductDefinitionFormation\n");
 	}
 };
 
@@ -5748,13 +6423,16 @@ class StepBasic_ProductDefinitionFormationWithSpecifiedSource : public StepBasic
 		void SetMakeOrBuy(const StepBasic_Source aMakeOrBuy);
 		%feature("autodoc", "1");
 		StepBasic_Source MakeOrBuy() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductDefinitionFormationWithSpecifiedSource();
 
 };
 %extend StepBasic_ProductDefinitionFormationWithSpecifiedSource {
 	Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource GetHandle() {
 	return *(Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource*) &$self;
+	}
+};
+%extend StepBasic_ProductDefinitionFormationWithSpecifiedSource {
+	~StepBasic_ProductDefinitionFormationWithSpecifiedSource() {
+	printf("Call custom destructor for instance of StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");
 	}
 };
 
@@ -5785,13 +6463,16 @@ class StepBasic_HArray1OfNamedUnit : public MMgt_TShared {
 		StepBasic_Array1OfNamedUnit & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfNamedUnit();
 
 };
 %extend StepBasic_HArray1OfNamedUnit {
 	Handle_StepBasic_HArray1OfNamedUnit GetHandle() {
 	return *(Handle_StepBasic_HArray1OfNamedUnit*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfNamedUnit {
+	~StepBasic_HArray1OfNamedUnit() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfNamedUnit\n");
 	}
 };
 
@@ -5810,13 +6491,16 @@ class StepBasic_ConversionBasedUnitAndLengthUnit : public StepBasic_ConversionBa
 		Handle_StepBasic_LengthUnit LengthUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ConversionBasedUnitAndLengthUnit();
 
 };
 %extend StepBasic_ConversionBasedUnitAndLengthUnit {
 	Handle_StepBasic_ConversionBasedUnitAndLengthUnit GetHandle() {
 	return *(Handle_StepBasic_ConversionBasedUnitAndLengthUnit*) &$self;
+	}
+};
+%extend StepBasic_ConversionBasedUnitAndLengthUnit {
+	~StepBasic_ConversionBasedUnitAndLengthUnit() {
+	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndLengthUnit\n");
 	}
 };
 
@@ -5835,13 +6519,16 @@ class StepBasic_OrdinalDate : public StepBasic_Date {
 		Standard_Integer DayComponent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_OrdinalDate();
 
 };
 %extend StepBasic_OrdinalDate {
 	Handle_StepBasic_OrdinalDate GetHandle() {
 	return *(Handle_StepBasic_OrdinalDate*) &$self;
+	}
+};
+%extend StepBasic_OrdinalDate {
+	~StepBasic_OrdinalDate() {
+	printf("Call custom destructor for instance of StepBasic_OrdinalDate\n");
 	}
 };
 
@@ -5862,13 +6549,16 @@ class StepBasic_OrganizationAssignment : public MMgt_TShared {
 		Handle_StepBasic_OrganizationRole Role() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_OrganizationAssignment();
 
 };
 %extend StepBasic_OrganizationAssignment {
 	Handle_StepBasic_OrganizationAssignment GetHandle() {
 	return *(Handle_StepBasic_OrganizationAssignment*) &$self;
+	}
+};
+%extend StepBasic_OrganizationAssignment {
+	~StepBasic_OrganizationAssignment() {
+	printf("Call custom destructor for instance of StepBasic_OrganizationAssignment\n");
 	}
 };
 
@@ -5893,13 +6583,16 @@ class StepBasic_DocumentUsageConstraint : public MMgt_TShared {
 		void SetSubjectElementValue(const Handle_TCollection_HAsciiString &asev);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DocumentUsageConstraint();
 
 };
 %extend StepBasic_DocumentUsageConstraint {
 	Handle_StepBasic_DocumentUsageConstraint GetHandle() {
 	return *(Handle_StepBasic_DocumentUsageConstraint*) &$self;
+	}
+};
+%extend StepBasic_DocumentUsageConstraint {
+	~StepBasic_DocumentUsageConstraint() {
+	printf("Call custom destructor for instance of StepBasic_DocumentUsageConstraint\n");
 	}
 };
 
@@ -5916,13 +6609,16 @@ class StepBasic_ExternalSource : public MMgt_TShared {
 		void SetSourceId(const StepBasic_SourceItem &SourceId);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ExternalSource();
 
 };
 %extend StepBasic_ExternalSource {
 	Handle_StepBasic_ExternalSource GetHandle() {
 	return *(Handle_StepBasic_ExternalSource*) &$self;
+	}
+};
+%extend StepBasic_ExternalSource {
+	~StepBasic_ExternalSource() {
+	printf("Call custom destructor for instance of StepBasic_ExternalSource\n");
 	}
 };
 
@@ -5939,13 +6635,16 @@ class StepBasic_DateTimeRole : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DateTimeRole();
 
 };
 %extend StepBasic_DateTimeRole {
 	Handle_StepBasic_DateTimeRole GetHandle() {
 	return *(Handle_StepBasic_DateTimeRole*) &$self;
+	}
+};
+%extend StepBasic_DateTimeRole {
+	~StepBasic_DateTimeRole() {
+	printf("Call custom destructor for instance of StepBasic_DateTimeRole\n");
 	}
 };
 
@@ -5966,13 +6665,16 @@ class StepBasic_ExternallyDefinedItem : public MMgt_TShared {
 		void SetSource(const Handle_StepBasic_ExternalSource &Source);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ExternallyDefinedItem();
 
 };
 %extend StepBasic_ExternallyDefinedItem {
 	Handle_StepBasic_ExternallyDefinedItem GetHandle() {
 	return *(Handle_StepBasic_ExternallyDefinedItem*) &$self;
+	}
+};
+%extend StepBasic_ExternallyDefinedItem {
+	~StepBasic_ExternallyDefinedItem() {
+	printf("Call custom destructor for instance of StepBasic_ExternallyDefinedItem\n");
 	}
 };
 
@@ -5997,13 +6699,16 @@ class StepBasic_SecurityClassification : public MMgt_TShared {
 		Handle_StepBasic_SecurityClassificationLevel SecurityLevel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SecurityClassification();
 
 };
 %extend StepBasic_SecurityClassification {
 	Handle_StepBasic_SecurityClassification GetHandle() {
 	return *(Handle_StepBasic_SecurityClassification*) &$self;
+	}
+};
+%extend StepBasic_SecurityClassification {
+	~StepBasic_SecurityClassification() {
+	printf("Call custom destructor for instance of StepBasic_SecurityClassification\n");
 	}
 };
 
@@ -6028,13 +6733,16 @@ class StepBasic_Contract : public MMgt_TShared {
 		void SetKind(const Handle_StepBasic_ContractType &Kind);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Contract();
 
 };
 %extend StepBasic_Contract {
 	Handle_StepBasic_Contract GetHandle() {
 	return *(Handle_StepBasic_Contract*) &$self;
+	}
+};
+%extend StepBasic_Contract {
+	~StepBasic_Contract() {
+	printf("Call custom destructor for instance of StepBasic_Contract\n");
 	}
 };
 
@@ -6045,13 +6753,16 @@ class StepBasic_SolidAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 		StepBasic_SolidAngleMeasureWithUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SolidAngleMeasureWithUnit();
 
 };
 %extend StepBasic_SolidAngleMeasureWithUnit {
 	Handle_StepBasic_SolidAngleMeasureWithUnit GetHandle() {
 	return *(Handle_StepBasic_SolidAngleMeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_SolidAngleMeasureWithUnit {
+	~StepBasic_SolidAngleMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_SolidAngleMeasureWithUnit\n");
 	}
 };
 
@@ -6092,13 +6803,16 @@ class StepBasic_DimensionalExponents : public MMgt_TShared {
 		Standard_Real LuminousIntensityExponent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DimensionalExponents();
 
 };
 %extend StepBasic_DimensionalExponents {
 	Handle_StepBasic_DimensionalExponents GetHandle() {
 	return *(Handle_StepBasic_DimensionalExponents*) &$self;
+	}
+};
+%extend StepBasic_DimensionalExponents {
+	~StepBasic_DimensionalExponents() {
+	printf("Call custom destructor for instance of StepBasic_DimensionalExponents\n");
 	}
 };
 
@@ -6115,13 +6829,16 @@ class StepBasic_ContractAssignment : public MMgt_TShared {
 		void SetAssignedContract(const Handle_StepBasic_Contract &AssignedContract);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ContractAssignment();
 
 };
 %extend StepBasic_ContractAssignment {
 	Handle_StepBasic_ContractAssignment GetHandle() {
 	return *(Handle_StepBasic_ContractAssignment*) &$self;
+	}
+};
+%extend StepBasic_ContractAssignment {
+	~StepBasic_ContractAssignment() {
+	printf("Call custom destructor for instance of StepBasic_ContractAssignment\n");
 	}
 };
 
@@ -6142,13 +6859,16 @@ class StepBasic_ApprovalDateTime : public MMgt_TShared {
 		Handle_StepBasic_Approval DatedApproval() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ApprovalDateTime();
 
 };
 %extend StepBasic_ApprovalDateTime {
 	Handle_StepBasic_ApprovalDateTime GetHandle() {
 	return *(Handle_StepBasic_ApprovalDateTime*) &$self;
+	}
+};
+%extend StepBasic_ApprovalDateTime {
+	~StepBasic_ApprovalDateTime() {
+	printf("Call custom destructor for instance of StepBasic_ApprovalDateTime\n");
 	}
 };
 
@@ -6159,13 +6879,16 @@ class StepBasic_LengthMeasureWithUnit : public StepBasic_MeasureWithUnit {
 		StepBasic_LengthMeasureWithUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_LengthMeasureWithUnit();
 
 };
 %extend StepBasic_LengthMeasureWithUnit {
 	Handle_StepBasic_LengthMeasureWithUnit GetHandle() {
 	return *(Handle_StepBasic_LengthMeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_LengthMeasureWithUnit {
+	~StepBasic_LengthMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_LengthMeasureWithUnit\n");
 	}
 };
 
@@ -6218,13 +6941,16 @@ class StepBasic_EffectivityAssignment : public MMgt_TShared {
 		void SetAssignedEffectivity(const Handle_StepBasic_Effectivity &AssignedEffectivity);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_EffectivityAssignment();
 
 };
 %extend StepBasic_EffectivityAssignment {
 	Handle_StepBasic_EffectivityAssignment GetHandle() {
 	return *(Handle_StepBasic_EffectivityAssignment*) &$self;
+	}
+};
+%extend StepBasic_EffectivityAssignment {
+	~StepBasic_EffectivityAssignment() {
+	printf("Call custom destructor for instance of StepBasic_EffectivityAssignment\n");
 	}
 };
 
@@ -6243,13 +6969,16 @@ class StepBasic_SiUnitAndVolumeUnit : public StepBasic_SiUnit {
 		virtual		Handle_StepBasic_DimensionalExponents Dimensions() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnitAndVolumeUnit();
 
 };
 %extend StepBasic_SiUnitAndVolumeUnit {
 	Handle_StepBasic_SiUnitAndVolumeUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndVolumeUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndVolumeUnit {
+	~StepBasic_SiUnitAndVolumeUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnitAndVolumeUnit\n");
 	}
 };
 
@@ -6270,13 +6999,16 @@ class StepBasic_PersonAndOrganization : public MMgt_TShared {
 		Handle_StepBasic_Organization TheOrganization() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PersonAndOrganization();
 
 };
 %extend StepBasic_PersonAndOrganization {
 	Handle_StepBasic_PersonAndOrganization GetHandle() {
 	return *(Handle_StepBasic_PersonAndOrganization*) &$self;
+	}
+};
+%extend StepBasic_PersonAndOrganization {
+	~StepBasic_PersonAndOrganization() {
+	printf("Call custom destructor for instance of StepBasic_PersonAndOrganization\n");
 	}
 };
 
@@ -6295,13 +7027,16 @@ class StepBasic_SiUnitAndRatioUnit : public StepBasic_SiUnit {
 		Handle_StepBasic_RatioUnit RatioUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnitAndRatioUnit();
 
 };
 %extend StepBasic_SiUnitAndRatioUnit {
 	Handle_StepBasic_SiUnitAndRatioUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndRatioUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndRatioUnit {
+	~StepBasic_SiUnitAndRatioUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnitAndRatioUnit\n");
 	}
 };
 
@@ -6318,13 +7053,16 @@ class StepBasic_ContractType : public MMgt_TShared {
 		void SetDescription(const Handle_TCollection_HAsciiString &Description);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ContractType();
 
 };
 %extend StepBasic_ContractType {
 	Handle_StepBasic_ContractType GetHandle() {
 	return *(Handle_StepBasic_ContractType*) &$self;
+	}
+};
+%extend StepBasic_ContractType {
+	~StepBasic_ContractType() {
+	printf("Call custom destructor for instance of StepBasic_ContractType\n");
 	}
 };
 
@@ -6355,13 +7093,16 @@ class StepBasic_ActionMethod : public MMgt_TShared {
 		void SetPurpose(const Handle_TCollection_HAsciiString &Purpose);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ActionMethod();
 
 };
 %extend StepBasic_ActionMethod {
 	Handle_StepBasic_ActionMethod GetHandle() {
 	return *(Handle_StepBasic_ActionMethod*) &$self;
+	}
+};
+%extend StepBasic_ActionMethod {
+	~StepBasic_ActionMethod() {
+	printf("Call custom destructor for instance of StepBasic_ActionMethod\n");
 	}
 };
 
@@ -6384,13 +7125,16 @@ class StepBasic_ProductDefinitionWithAssociatedDocuments : public StepBasic_Prod
 		void SetDocIdsValue(const Standard_Integer num, const Handle_StepBasic_Document &adoc);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductDefinitionWithAssociatedDocuments();
 
 };
 %extend StepBasic_ProductDefinitionWithAssociatedDocuments {
 	Handle_StepBasic_ProductDefinitionWithAssociatedDocuments GetHandle() {
 	return *(Handle_StepBasic_ProductDefinitionWithAssociatedDocuments*) &$self;
+	}
+};
+%extend StepBasic_ProductDefinitionWithAssociatedDocuments {
+	~StepBasic_ProductDefinitionWithAssociatedDocuments() {
+	printf("Call custom destructor for instance of StepBasic_ProductDefinitionWithAssociatedDocuments\n");
 	}
 };
 
@@ -6407,13 +7151,16 @@ class StepBasic_PersonAndOrganizationRole : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PersonAndOrganizationRole();
 
 };
 %extend StepBasic_PersonAndOrganizationRole {
 	Handle_StepBasic_PersonAndOrganizationRole GetHandle() {
 	return *(Handle_StepBasic_PersonAndOrganizationRole*) &$self;
+	}
+};
+%extend StepBasic_PersonAndOrganizationRole {
+	~StepBasic_PersonAndOrganizationRole() {
+	printf("Call custom destructor for instance of StepBasic_PersonAndOrganizationRole\n");
 	}
 };
 
@@ -6424,13 +7171,16 @@ class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 		StepBasic_VolumeUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_VolumeUnit();
 
 };
 %extend StepBasic_VolumeUnit {
 	Handle_StepBasic_VolumeUnit GetHandle() {
 	return *(Handle_StepBasic_VolumeUnit*) &$self;
+	}
+};
+%extend StepBasic_VolumeUnit {
+	~StepBasic_VolumeUnit() {
+	printf("Call custom destructor for instance of StepBasic_VolumeUnit\n");
 	}
 };
 
@@ -6479,13 +7229,16 @@ class StepBasic_ProductCategoryRelationship : public MMgt_TShared {
 		void SetSubCategory(const Handle_StepBasic_ProductCategory &SubCategory);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductCategoryRelationship();
 
 };
 %extend StepBasic_ProductCategoryRelationship {
 	Handle_StepBasic_ProductCategoryRelationship GetHandle() {
 	return *(Handle_StepBasic_ProductCategoryRelationship*) &$self;
+	}
+};
+%extend StepBasic_ProductCategoryRelationship {
+	~StepBasic_ProductCategoryRelationship() {
+	printf("Call custom destructor for instance of StepBasic_ProductCategoryRelationship\n");
 	}
 };
 
@@ -6506,13 +7259,16 @@ class StepBasic_IdentificationAssignment : public MMgt_TShared {
 		void SetRole(const Handle_StepBasic_IdentificationRole &Role);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_IdentificationAssignment();
 
 };
 %extend StepBasic_IdentificationAssignment {
 	Handle_StepBasic_IdentificationAssignment GetHandle() {
 	return *(Handle_StepBasic_IdentificationAssignment*) &$self;
+	}
+};
+%extend StepBasic_IdentificationAssignment {
+	~StepBasic_IdentificationAssignment() {
+	printf("Call custom destructor for instance of StepBasic_IdentificationAssignment\n");
 	}
 };
 
@@ -6541,13 +7297,16 @@ class StepBasic_ApprovalRelationship : public MMgt_TShared {
 		Handle_StepBasic_Approval RelatedApproval() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ApprovalRelationship();
 
 };
 %extend StepBasic_ApprovalRelationship {
 	Handle_StepBasic_ApprovalRelationship GetHandle() {
 	return *(Handle_StepBasic_ApprovalRelationship*) &$self;
+	}
+};
+%extend StepBasic_ApprovalRelationship {
+	~StepBasic_ApprovalRelationship() {
+	printf("Call custom destructor for instance of StepBasic_ApprovalRelationship\n");
 	}
 };
 
@@ -6616,13 +7375,16 @@ class StepBasic_Person : public MMgt_TShared {
 		Standard_Integer NbSuffixTitles() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Person();
 
 };
 %extend StepBasic_Person {
 	Handle_StepBasic_Person GetHandle() {
 	return *(Handle_StepBasic_Person*) &$self;
+	}
+};
+%extend StepBasic_Person {
+	~StepBasic_Person() {
+	printf("Call custom destructor for instance of StepBasic_Person\n");
 	}
 };
 
@@ -6639,13 +7401,16 @@ class StepBasic_ApprovalAssignment : public MMgt_TShared {
 		Handle_StepBasic_Approval AssignedApproval() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ApprovalAssignment();
 
 };
 %extend StepBasic_ApprovalAssignment {
 	Handle_StepBasic_ApprovalAssignment GetHandle() {
 	return *(Handle_StepBasic_ApprovalAssignment*) &$self;
+	}
+};
+%extend StepBasic_ApprovalAssignment {
+	~StepBasic_ApprovalAssignment() {
+	printf("Call custom destructor for instance of StepBasic_ApprovalAssignment\n");
 	}
 };
 
@@ -6666,13 +7431,16 @@ class StepBasic_DateAssignment : public MMgt_TShared {
 		Handle_StepBasic_DateRole Role() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DateAssignment();
 
 };
 %extend StepBasic_DateAssignment {
 	Handle_StepBasic_DateAssignment GetHandle() {
 	return *(Handle_StepBasic_DateAssignment*) &$self;
+	}
+};
+%extend StepBasic_DateAssignment {
+	~StepBasic_DateAssignment() {
+	printf("Call custom destructor for instance of StepBasic_DateAssignment\n");
 	}
 };
 
@@ -6697,13 +7465,16 @@ class StepBasic_ApprovalPersonOrganization : public MMgt_TShared {
 		Handle_StepBasic_ApprovalRole Role() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ApprovalPersonOrganization();
 
 };
 %extend StepBasic_ApprovalPersonOrganization {
 	Handle_StepBasic_ApprovalPersonOrganization GetHandle() {
 	return *(Handle_StepBasic_ApprovalPersonOrganization*) &$self;
+	}
+};
+%extend StepBasic_ApprovalPersonOrganization {
+	~StepBasic_ApprovalPersonOrganization() {
+	printf("Call custom destructor for instance of StepBasic_ApprovalPersonOrganization\n");
 	}
 };
 
@@ -6724,13 +7495,16 @@ class StepBasic_DerivedUnit : public MMgt_TShared {
 		Handle_StepBasic_DerivedUnitElement ElementsValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DerivedUnit();
 
 };
 %extend StepBasic_DerivedUnit {
 	Handle_StepBasic_DerivedUnit GetHandle() {
 	return *(Handle_StepBasic_DerivedUnit*) &$self;
+	}
+};
+%extend StepBasic_DerivedUnit {
+	~StepBasic_DerivedUnit() {
+	printf("Call custom destructor for instance of StepBasic_DerivedUnit\n");
 	}
 };
 
@@ -6747,13 +7521,16 @@ class StepBasic_ExternalIdentificationAssignment : public StepBasic_Identificati
 		void SetSource(const Handle_StepBasic_ExternalSource &Source);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ExternalIdentificationAssignment();
 
 };
 %extend StepBasic_ExternalIdentificationAssignment {
 	Handle_StepBasic_ExternalIdentificationAssignment GetHandle() {
 	return *(Handle_StepBasic_ExternalIdentificationAssignment*) &$self;
+	}
+};
+%extend StepBasic_ExternalIdentificationAssignment {
+	~StepBasic_ExternalIdentificationAssignment() {
+	printf("Call custom destructor for instance of StepBasic_ExternalIdentificationAssignment\n");
 	}
 };
 
@@ -6764,13 +7541,16 @@ class StepBasic_DocumentProductEquivalence : public StepBasic_DocumentProductAss
 		StepBasic_DocumentProductEquivalence();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DocumentProductEquivalence();
 
 };
 %extend StepBasic_DocumentProductEquivalence {
 	Handle_StepBasic_DocumentProductEquivalence GetHandle() {
 	return *(Handle_StepBasic_DocumentProductEquivalence*) &$self;
+	}
+};
+%extend StepBasic_DocumentProductEquivalence {
+	~StepBasic_DocumentProductEquivalence() {
+	printf("Call custom destructor for instance of StepBasic_DocumentProductEquivalence\n");
 	}
 };
 
@@ -6817,13 +7597,16 @@ class StepBasic_MassMeasureWithUnit : public StepBasic_MeasureWithUnit {
 		StepBasic_MassMeasureWithUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_MassMeasureWithUnit();
 
 };
 %extend StepBasic_MassMeasureWithUnit {
 	Handle_StepBasic_MassMeasureWithUnit GetHandle() {
 	return *(Handle_StepBasic_MassMeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_MassMeasureWithUnit {
+	~StepBasic_MassMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_MassMeasureWithUnit\n");
 	}
 };
 
@@ -6906,13 +7689,16 @@ class StepBasic_HArray1OfProduct : public MMgt_TShared {
 		StepBasic_Array1OfProduct & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfProduct();
 
 };
 %extend StepBasic_HArray1OfProduct {
 	Handle_StepBasic_HArray1OfProduct GetHandle() {
 	return *(Handle_StepBasic_HArray1OfProduct*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfProduct {
+	~StepBasic_HArray1OfProduct() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfProduct\n");
 	}
 };
 
@@ -6943,13 +7729,16 @@ class StepBasic_HArray1OfDocument : public MMgt_TShared {
 		StepBasic_Array1OfDocument & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfDocument();
 
 };
 %extend StepBasic_HArray1OfDocument {
 	Handle_StepBasic_HArray1OfDocument GetHandle() {
 	return *(Handle_StepBasic_HArray1OfDocument*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfDocument {
+	~StepBasic_HArray1OfDocument() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfDocument\n");
 	}
 };
 
@@ -6970,13 +7759,16 @@ class StepBasic_Approval : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Level() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Approval();
 
 };
 %extend StepBasic_Approval {
 	Handle_StepBasic_Approval GetHandle() {
 	return *(Handle_StepBasic_Approval*) &$self;
+	}
+};
+%extend StepBasic_Approval {
+	~StepBasic_Approval() {
+	printf("Call custom destructor for instance of StepBasic_Approval\n");
 	}
 };
 
@@ -6993,13 +7785,16 @@ class StepBasic_OrganizationRole : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_OrganizationRole();
 
 };
 %extend StepBasic_OrganizationRole {
 	Handle_StepBasic_OrganizationRole GetHandle() {
 	return *(Handle_StepBasic_OrganizationRole*) &$self;
+	}
+};
+%extend StepBasic_OrganizationRole {
+	~StepBasic_OrganizationRole() {
+	printf("Call custom destructor for instance of StepBasic_OrganizationRole\n");
 	}
 };
 
@@ -7010,13 +7805,16 @@ class StepBasic_DigitalDocument : public StepBasic_Document {
 		StepBasic_DigitalDocument();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DigitalDocument();
 
 };
 %extend StepBasic_DigitalDocument {
 	Handle_StepBasic_DigitalDocument GetHandle() {
 	return *(Handle_StepBasic_DigitalDocument*) &$self;
+	}
+};
+%extend StepBasic_DigitalDocument {
+	~StepBasic_DigitalDocument() {
+	printf("Call custom destructor for instance of StepBasic_DigitalDocument\n");
 	}
 };
 
@@ -7047,13 +7845,16 @@ class StepBasic_HArray1OfPerson : public MMgt_TShared {
 		StepBasic_Array1OfPerson & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfPerson();
 
 };
 %extend StepBasic_HArray1OfPerson {
 	Handle_StepBasic_HArray1OfPerson GetHandle() {
 	return *(Handle_StepBasic_HArray1OfPerson*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfPerson {
+	~StepBasic_HArray1OfPerson() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfPerson\n");
 	}
 };
 
@@ -7072,13 +7873,16 @@ class StepBasic_SiUnitAndLengthUnit : public StepBasic_SiUnit {
 		Handle_StepBasic_LengthUnit LengthUnit() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SiUnitAndLengthUnit();
 
 };
 %extend StepBasic_SiUnitAndLengthUnit {
 	Handle_StepBasic_SiUnitAndLengthUnit GetHandle() {
 	return *(Handle_StepBasic_SiUnitAndLengthUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndLengthUnit {
+	~StepBasic_SiUnitAndLengthUnit() {
+	printf("Call custom destructor for instance of StepBasic_SiUnitAndLengthUnit\n");
 	}
 };
 
@@ -7095,13 +7899,16 @@ class StepBasic_SizeMember : public StepData_SelectReal {
 		virtual		Standard_Boolean SetName(const char * name);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SizeMember();
 
 };
 %extend StepBasic_SizeMember {
 	Handle_StepBasic_SizeMember GetHandle() {
 	return *(Handle_StepBasic_SizeMember*) &$self;
+	}
+};
+%extend StepBasic_SizeMember {
+	~StepBasic_SizeMember() {
+	printf("Call custom destructor for instance of StepBasic_SizeMember\n");
 	}
 };
 
@@ -7112,13 +7919,16 @@ class StepBasic_PhysicallyModeledProductDefinition : public StepBasic_ProductDef
 		StepBasic_PhysicallyModeledProductDefinition();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PhysicallyModeledProductDefinition();
 
 };
 %extend StepBasic_PhysicallyModeledProductDefinition {
 	Handle_StepBasic_PhysicallyModeledProductDefinition GetHandle() {
 	return *(Handle_StepBasic_PhysicallyModeledProductDefinition*) &$self;
+	}
+};
+%extend StepBasic_PhysicallyModeledProductDefinition {
+	~StepBasic_PhysicallyModeledProductDefinition() {
+	printf("Call custom destructor for instance of StepBasic_PhysicallyModeledProductDefinition\n");
 	}
 };
 
@@ -7141,13 +7951,16 @@ class StepBasic_UncertaintyMeasureWithUnit : public StepBasic_MeasureWithUnit {
 		Handle_TCollection_HAsciiString Description() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_UncertaintyMeasureWithUnit();
 
 };
 %extend StepBasic_UncertaintyMeasureWithUnit {
 	Handle_StepBasic_UncertaintyMeasureWithUnit GetHandle() {
 	return *(Handle_StepBasic_UncertaintyMeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_UncertaintyMeasureWithUnit {
+	~StepBasic_UncertaintyMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_UncertaintyMeasureWithUnit\n");
 	}
 };
 
@@ -7164,13 +7977,16 @@ class StepBasic_ProductConceptContext : public StepBasic_ApplicationContextEleme
 		void SetMarketSegmentType(const Handle_TCollection_HAsciiString &MarketSegmentType);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductConceptContext();
 
 };
 %extend StepBasic_ProductConceptContext {
 	Handle_StepBasic_ProductConceptContext GetHandle() {
 	return *(Handle_StepBasic_ProductConceptContext*) &$self;
+	}
+};
+%extend StepBasic_ProductConceptContext {
+	~StepBasic_ProductConceptContext() {
+	printf("Call custom destructor for instance of StepBasic_ProductConceptContext\n");
 	}
 };
 
@@ -7197,13 +8013,16 @@ class StepBasic_WeekOfYearAndDayDate : public StepBasic_Date {
 		Standard_Boolean HasDayComponent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_WeekOfYearAndDayDate();
 
 };
 %extend StepBasic_WeekOfYearAndDayDate {
 	Handle_StepBasic_WeekOfYearAndDayDate GetHandle() {
 	return *(Handle_StepBasic_WeekOfYearAndDayDate*) &$self;
+	}
+};
+%extend StepBasic_WeekOfYearAndDayDate {
+	~StepBasic_WeekOfYearAndDayDate() {
+	printf("Call custom destructor for instance of StepBasic_WeekOfYearAndDayDate\n");
 	}
 };
 
@@ -7214,13 +8033,16 @@ class StepBasic_RatioMeasureWithUnit : public StepBasic_MeasureWithUnit {
 		StepBasic_RatioMeasureWithUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_RatioMeasureWithUnit();
 
 };
 %extend StepBasic_RatioMeasureWithUnit {
 	Handle_StepBasic_RatioMeasureWithUnit GetHandle() {
 	return *(Handle_StepBasic_RatioMeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_RatioMeasureWithUnit {
+	~StepBasic_RatioMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_RatioMeasureWithUnit\n");
 	}
 };
 
@@ -7237,13 +8059,16 @@ class StepBasic_DocumentType : public MMgt_TShared {
 		void SetProductDataType(const Handle_TCollection_HAsciiString &apdt);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DocumentType();
 
 };
 %extend StepBasic_DocumentType {
 	Handle_StepBasic_DocumentType GetHandle() {
 	return *(Handle_StepBasic_DocumentType*) &$self;
+	}
+};
+%extend StepBasic_DocumentType {
+	~StepBasic_DocumentType() {
+	printf("Call custom destructor for instance of StepBasic_DocumentType\n");
 	}
 };
 
@@ -7266,13 +8091,16 @@ class StepBasic_IdentificationRole : public MMgt_TShared {
 		Standard_Boolean HasDescription() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_IdentificationRole();
 
 };
 %extend StepBasic_IdentificationRole {
 	Handle_StepBasic_IdentificationRole GetHandle() {
 	return *(Handle_StepBasic_IdentificationRole*) &$self;
+	}
+};
+%extend StepBasic_IdentificationRole {
+	~StepBasic_IdentificationRole() {
+	printf("Call custom destructor for instance of StepBasic_IdentificationRole\n");
 	}
 };
 
@@ -7323,13 +8151,16 @@ class StepBasic_HArray1OfApproval : public MMgt_TShared {
 		StepBasic_Array1OfApproval & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfApproval();
 
 };
 %extend StepBasic_HArray1OfApproval {
 	Handle_StepBasic_HArray1OfApproval GetHandle() {
 	return *(Handle_StepBasic_HArray1OfApproval*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfApproval {
+	~StepBasic_HArray1OfApproval() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfApproval\n");
 	}
 };
 
@@ -7340,13 +8171,16 @@ class StepBasic_LengthUnit : public StepBasic_NamedUnit {
 		StepBasic_LengthUnit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_LengthUnit();
 
 };
 %extend StepBasic_LengthUnit {
 	Handle_StepBasic_LengthUnit GetHandle() {
 	return *(Handle_StepBasic_LengthUnit*) &$self;
+	}
+};
+%extend StepBasic_LengthUnit {
+	~StepBasic_LengthUnit() {
+	printf("Call custom destructor for instance of StepBasic_LengthUnit\n");
 	}
 };
 
@@ -7413,13 +8247,16 @@ class StepBasic_HArray1OfDerivedUnitElement : public MMgt_TShared {
 		StepBasic_Array1OfDerivedUnitElement & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfDerivedUnitElement();
 
 };
 %extend StepBasic_HArray1OfDerivedUnitElement {
 	Handle_StepBasic_HArray1OfDerivedUnitElement GetHandle() {
 	return *(Handle_StepBasic_HArray1OfDerivedUnitElement*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfDerivedUnitElement {
+	~StepBasic_HArray1OfDerivedUnitElement() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfDerivedUnitElement\n");
 	}
 };
 
@@ -7436,13 +8273,16 @@ class StepBasic_ActionRequestAssignment : public MMgt_TShared {
 		void SetAssignedActionRequest(const Handle_StepBasic_VersionedActionRequest &AssignedActionRequest);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ActionRequestAssignment();
 
 };
 %extend StepBasic_ActionRequestAssignment {
 	Handle_StepBasic_ActionRequestAssignment GetHandle() {
 	return *(Handle_StepBasic_ActionRequestAssignment*) &$self;
+	}
+};
+%extend StepBasic_ActionRequestAssignment {
+	~StepBasic_ActionRequestAssignment() {
+	printf("Call custom destructor for instance of StepBasic_ActionRequestAssignment\n");
 	}
 };
 
@@ -7459,13 +8299,16 @@ class StepBasic_ApplicationContext : public MMgt_TShared {
 		Handle_TCollection_HAsciiString Application() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ApplicationContext();
 
 };
 %extend StepBasic_ApplicationContext {
 	Handle_StepBasic_ApplicationContext GetHandle() {
 	return *(Handle_StepBasic_ApplicationContext*) &$self;
+	}
+};
+%extend StepBasic_ApplicationContext {
+	~StepBasic_ApplicationContext() {
+	printf("Call custom destructor for instance of StepBasic_ApplicationContext\n");
 	}
 };
 
@@ -7496,13 +8339,16 @@ class StepBasic_HArray1OfUncertaintyMeasureWithUnit : public MMgt_TShared {
 		StepBasic_Array1OfUncertaintyMeasureWithUnit & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfUncertaintyMeasureWithUnit();
 
 };
 %extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
 	Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit GetHandle() {
 	return *(Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
+	~StepBasic_HArray1OfUncertaintyMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");
 	}
 };
 
@@ -7525,13 +8371,16 @@ class StepBasic_CharacterizedObject : public MMgt_TShared {
 		Standard_Boolean HasDescription() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_CharacterizedObject();
 
 };
 %extend StepBasic_CharacterizedObject {
 	Handle_StepBasic_CharacterizedObject GetHandle() {
 	return *(Handle_StepBasic_CharacterizedObject*) &$self;
+	}
+};
+%extend StepBasic_CharacterizedObject {
+	~StepBasic_CharacterizedObject() {
+	printf("Call custom destructor for instance of StepBasic_CharacterizedObject\n");
 	}
 };
 
@@ -7562,12 +8411,15 @@ class StepBasic_HArray1OfProductDefinition : public MMgt_TShared {
 		StepBasic_Array1OfProductDefinition & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_HArray1OfProductDefinition();
 
 };
 %extend StepBasic_HArray1OfProductDefinition {
 	Handle_StepBasic_HArray1OfProductDefinition GetHandle() {
 	return *(Handle_StepBasic_HArray1OfProductDefinition*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfProductDefinition {
+	~StepBasic_HArray1OfProductDefinition() {
+	printf("Call custom destructor for instance of StepBasic_HArray1OfProductDefinition\n");
 	}
 };

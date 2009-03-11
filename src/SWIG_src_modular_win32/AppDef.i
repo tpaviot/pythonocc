@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_SmoothCriterion {
 	public:
 		%feature("autodoc", "1");
-		~Handle_AppDef_MyCriterionOfTheVariational();
-		%feature("autodoc", "1");
 		Handle_AppDef_MyCriterionOfTheVariational();
 		%feature("autodoc", "1");
 		Handle_AppDef_MyCriterionOfTheVariational(const Handle_AppDef_MyCriterionOfTheVariational &aHandle);
@@ -118,12 +116,15 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 	return (AppDef_MyCriterionOfTheVariational*)$self->Access();
 	}
 };
+%extend Handle_AppDef_MyCriterionOfTheVariational {
+	~Handle_AppDef_MyCriterionOfTheVariational() {
+	printf("Call custom destructor for instance of Handle_AppDef_MyCriterionOfTheVariational\n");
+	}
+};
 
 %nodefaultctor Handle_AppDef_HArray1OfMultiPointConstraint;
 class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AppDef_HArray1OfMultiPointConstraint();
 		%feature("autodoc", "1");
 		Handle_AppDef_HArray1OfMultiPointConstraint();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 %extend Handle_AppDef_HArray1OfMultiPointConstraint {
 	AppDef_HArray1OfMultiPointConstraint* GetObject() {
 	return (AppDef_HArray1OfMultiPointConstraint*)$self->Access();
+	}
+};
+%extend Handle_AppDef_HArray1OfMultiPointConstraint {
+	~Handle_AppDef_HArray1OfMultiPointConstraint() {
+	printf("Call custom destructor for instance of Handle_AppDef_HArray1OfMultiPointConstraint\n");
 	}
 };
 
@@ -343,13 +349,16 @@ class AppDef_HArray1OfMultiPointConstraint : public MMgt_TShared {
 		AppDef_Array1OfMultiPointConstraint & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_HArray1OfMultiPointConstraint();
 
 };
 %extend AppDef_HArray1OfMultiPointConstraint {
 	Handle_AppDef_HArray1OfMultiPointConstraint GetHandle() {
 	return *(Handle_AppDef_HArray1OfMultiPointConstraint*) &$self;
+	}
+};
+%extend AppDef_HArray1OfMultiPointConstraint {
+	~AppDef_HArray1OfMultiPointConstraint() {
+	printf("Call custom destructor for instance of AppDef_HArray1OfMultiPointConstraint\n");
 	}
 };
 
@@ -746,13 +755,16 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 		virtual		void SetWeight(const TColStd_Array1OfReal &Weight);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_MyCriterionOfTheVariational();
 
 };
 %extend AppDef_MyCriterionOfTheVariational {
 	Handle_AppDef_MyCriterionOfTheVariational GetHandle() {
 	return *(Handle_AppDef_MyCriterionOfTheVariational*) &$self;
+	}
+};
+%extend AppDef_MyCriterionOfTheVariational {
+	~AppDef_MyCriterionOfTheVariational() {
+	printf("Call custom destructor for instance of AppDef_MyCriterionOfTheVariational\n");
 	}
 };
 

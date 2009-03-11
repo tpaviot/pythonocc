@@ -108,8 +108,6 @@ enum BinLDrivers_Marker {
 class Handle_BinLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BinLDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
 		Handle_BinLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_BinLDrivers_DocumentRetrievalDriver(const Handle_BinLDrivers_DocumentRetrievalDriver &aHandle);
@@ -124,12 +122,15 @@ class Handle_BinLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 	return (BinLDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_BinLDrivers_DocumentRetrievalDriver {
+	~Handle_BinLDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_BinLDrivers_DocumentRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinLDrivers_DocumentStorageDriver;
 class Handle_BinLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinLDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_BinLDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
@@ -143,6 +144,11 @@ class Handle_BinLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 %extend Handle_BinLDrivers_DocumentStorageDriver {
 	BinLDrivers_DocumentStorageDriver* GetObject() {
 	return (BinLDrivers_DocumentStorageDriver*)$self->Access();
+	}
+};
+%extend Handle_BinLDrivers_DocumentStorageDriver {
+	~Handle_BinLDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_BinLDrivers_DocumentStorageDriver\n");
 	}
 };
 
@@ -163,13 +169,16 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 		void AddSection(const TCollection_AsciiString &theName, const Standard_Boolean isPostRead=1);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinLDrivers_DocumentStorageDriver();
 
 };
 %extend BinLDrivers_DocumentStorageDriver {
 	Handle_BinLDrivers_DocumentStorageDriver GetHandle() {
 	return *(Handle_BinLDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend BinLDrivers_DocumentStorageDriver {
+	~BinLDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of BinLDrivers_DocumentStorageDriver\n");
 	}
 };
 
@@ -220,13 +229,16 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinLDrivers_DocumentRetrievalDriver();
 
 };
 %extend BinLDrivers_DocumentRetrievalDriver {
 	Handle_BinLDrivers_DocumentRetrievalDriver GetHandle() {
 	return *(Handle_BinLDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend BinLDrivers_DocumentRetrievalDriver {
+	~BinLDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of BinLDrivers_DocumentRetrievalDriver\n");
 	}
 };
 

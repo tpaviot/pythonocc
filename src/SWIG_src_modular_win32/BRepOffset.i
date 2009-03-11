@@ -132,8 +132,6 @@ enum BRepOffset_Mode {
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal &aHandle);
@@ -148,12 +146,15 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollect
 	return (BRepOffset_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
 	}
 };
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal {
+	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffset_ListNodeOfListOfInterval;
 class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffset_ListNodeOfListOfInterval();
 		%feature("autodoc", "1");
 		Handle_BRepOffset_ListNodeOfListOfInterval();
 		%feature("autodoc", "1");
@@ -169,12 +170,15 @@ class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_Map
 	return (BRepOffset_ListNodeOfListOfInterval*)$self->Access();
 	}
 };
+%extend Handle_BRepOffset_ListNodeOfListOfInterval {
+	~Handle_BRepOffset_ListNodeOfListOfInterval() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_ListNodeOfListOfInterval\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape();
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape();
 		%feature("autodoc", "1");
@@ -190,12 +194,15 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TC
 	return (BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape*)$self->Access();
 	}
 };
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset();
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset();
 		%feature("autodoc", "1");
@@ -211,12 +218,15 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TColle
 	return (BRepOffset_DataMapNodeOfDataMapOfShapeOffset*)$self->Access();
 	}
 };
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
+	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval();
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval();
 		%feature("autodoc", "1");
@@ -230,6 +240,11 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handl
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
 	BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval* GetObject() {
 	return (BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval*)$self->Access();
+	}
+};
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
+	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");
 	}
 };
 
@@ -524,13 +539,16 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_
 		BRepOffset_ListOfInterval & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval();
 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
 	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval GetHandle() {
 	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");
 	}
 };
 
@@ -545,13 +563,16 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_DataMapNodeOfDataMapOfShapeReal();
 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
 	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal GetHandle() {
 	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");
 	}
 };
 
@@ -606,13 +627,16 @@ class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 		BRepOffset_Interval & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_ListNodeOfListOfInterval();
 
 };
 %extend BRepOffset_ListNodeOfListOfInterval {
 	Handle_BRepOffset_ListNodeOfListOfInterval GetHandle() {
 	return *(Handle_BRepOffset_ListNodeOfListOfInterval*) &$self;
+	}
+};
+%extend BRepOffset_ListNodeOfListOfInterval {
+	~BRepOffset_ListNodeOfListOfInterval() {
+	printf("Call custom destructor for instance of BRepOffset_ListNodeOfListOfInterval\n");
 	}
 };
 
@@ -691,13 +715,16 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode 
 		BRepOffset_Offset & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_DataMapNodeOfDataMapOfShapeOffset();
 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
 	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset GetHandle() {
 	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeOffset() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");
 	}
 };
 
@@ -796,13 +823,16 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapN
 		TopTools_MapOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape();
 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
 	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape GetHandle() {
 	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");
 	}
 };
 

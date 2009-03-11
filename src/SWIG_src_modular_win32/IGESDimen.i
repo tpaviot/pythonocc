@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESDimen_DiameterDimension();
-		%feature("autodoc", "1");
 		Handle_IGESDimen_DiameterDimension();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DiameterDimension(const Handle_IGESDimen_DiameterDimension &aHandle);
@@ -118,12 +116,15 @@ class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_DiameterDimension*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_DiameterDimension {
+	~Handle_IGESDimen_DiameterDimension() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_DiameterDimension\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_DimensionDisplayData;
 class Handle_IGESDimen_DimensionDisplayData : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_DimensionDisplayData();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionDisplayData();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_IGESDimen_DimensionDisplayData : public Handle_IGESData_IGESEntity 
 	return (IGESDimen_DimensionDisplayData*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_DimensionDisplayData {
+	~Handle_IGESDimen_DimensionDisplayData() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_DimensionDisplayData\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_GeneralSymbol;
 class Handle_IGESDimen_GeneralSymbol : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_GeneralSymbol();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralSymbol();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_IGESDimen_GeneralSymbol : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_GeneralSymbol*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_GeneralSymbol {
+	~Handle_IGESDimen_GeneralSymbol() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_GeneralSymbol\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_LeaderArrow;
 class Handle_IGESDimen_LeaderArrow : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_LeaderArrow();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_LeaderArrow();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_IGESDimen_LeaderArrow : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_LeaderArrow*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_LeaderArrow {
+	~Handle_IGESDimen_LeaderArrow() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_LeaderArrow\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_DimensionTolerance;
 class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_DimensionTolerance();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionTolerance();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_DimensionTolerance*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_DimensionTolerance {
+	~Handle_IGESDimen_DimensionTolerance() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_DimensionTolerance\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_HArray1OfGeneralNote;
 class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_HArray1OfGeneralNote();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_HArray1OfGeneralNote();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
 	return (IGESDimen_HArray1OfGeneralNote*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_HArray1OfGeneralNote {
+	~Handle_IGESDimen_HArray1OfGeneralNote() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_HArray1OfGeneralNote\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_SectionedArea;
 class Handle_IGESDimen_SectionedArea : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_SectionedArea();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_SectionedArea();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_IGESDimen_SectionedArea : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_SectionedArea*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_SectionedArea {
+	~Handle_IGESDimen_SectionedArea() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_SectionedArea\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_GeneralLabel;
 class Handle_IGESDimen_GeneralLabel : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_GeneralLabel();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralLabel();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_IGESDimen_GeneralLabel : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_GeneralLabel*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_GeneralLabel {
+	~Handle_IGESDimen_GeneralLabel() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_GeneralLabel\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_RadiusDimension;
 class Handle_IGESDimen_RadiusDimension : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_RadiusDimension();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_RadiusDimension();
 		%feature("autodoc", "1");
@@ -286,12 +308,15 @@ class Handle_IGESDimen_RadiusDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_RadiusDimension*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_RadiusDimension {
+	~Handle_IGESDimen_RadiusDimension() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_RadiusDimension\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_WitnessLine;
 class Handle_IGESDimen_WitnessLine : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_WitnessLine();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_WitnessLine();
 		%feature("autodoc", "1");
@@ -307,12 +332,15 @@ class Handle_IGESDimen_WitnessLine : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_WitnessLine*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_WitnessLine {
+	~Handle_IGESDimen_WitnessLine() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_WitnessLine\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_CurveDimension;
 class Handle_IGESDimen_CurveDimension : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_CurveDimension();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_CurveDimension();
 		%feature("autodoc", "1");
@@ -328,12 +356,15 @@ class Handle_IGESDimen_CurveDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_CurveDimension*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_CurveDimension {
+	~Handle_IGESDimen_CurveDimension() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_CurveDimension\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_GeneralModule;
 class Handle_IGESDimen_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_GeneralModule();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralModule();
 		%feature("autodoc", "1");
@@ -349,12 +380,15 @@ class Handle_IGESDimen_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESDimen_GeneralModule*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_GeneralModule {
+	~Handle_IGESDimen_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_GeneralModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_BasicDimension;
 class Handle_IGESDimen_BasicDimension : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_BasicDimension();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_BasicDimension();
 		%feature("autodoc", "1");
@@ -370,12 +404,15 @@ class Handle_IGESDimen_BasicDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_BasicDimension*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_BasicDimension {
+	~Handle_IGESDimen_BasicDimension() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_BasicDimension\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_Section;
 class Handle_IGESDimen_Section : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_Section();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_Section();
 		%feature("autodoc", "1");
@@ -391,12 +428,15 @@ class Handle_IGESDimen_Section : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_Section*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_Section {
+	~Handle_IGESDimen_Section() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_Section\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_OrdinateDimension;
 class Handle_IGESDimen_OrdinateDimension : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_OrdinateDimension();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_OrdinateDimension();
 		%feature("autodoc", "1");
@@ -412,12 +452,15 @@ class Handle_IGESDimen_OrdinateDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_OrdinateDimension*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_OrdinateDimension {
+	~Handle_IGESDimen_OrdinateDimension() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_OrdinateDimension\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_ReadWriteModule;
 class Handle_IGESDimen_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_ReadWriteModule();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_ReadWriteModule();
 		%feature("autodoc", "1");
@@ -433,12 +476,15 @@ class Handle_IGESDimen_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESDimen_ReadWriteModule*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_ReadWriteModule {
+	~Handle_IGESDimen_ReadWriteModule() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_ReadWriteModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_Protocol;
 class Handle_IGESDimen_Protocol : public Handle_IGESData_Protocol {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_Protocol();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_Protocol();
 		%feature("autodoc", "1");
@@ -454,12 +500,15 @@ class Handle_IGESDimen_Protocol : public Handle_IGESData_Protocol {
 	return (IGESDimen_Protocol*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_Protocol {
+	~Handle_IGESDimen_Protocol() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_Protocol\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_FlagNote;
 class Handle_IGESDimen_FlagNote : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_FlagNote();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_FlagNote();
 		%feature("autodoc", "1");
@@ -475,12 +524,15 @@ class Handle_IGESDimen_FlagNote : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_FlagNote*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_FlagNote {
+	~Handle_IGESDimen_FlagNote() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_FlagNote\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_DimensionUnits;
 class Handle_IGESDimen_DimensionUnits : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_DimensionUnits();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionUnits();
 		%feature("autodoc", "1");
@@ -496,12 +548,15 @@ class Handle_IGESDimen_DimensionUnits : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_DimensionUnits*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_DimensionUnits {
+	~Handle_IGESDimen_DimensionUnits() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_DimensionUnits\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_AngularDimension;
 class Handle_IGESDimen_AngularDimension : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_AngularDimension();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_AngularDimension();
 		%feature("autodoc", "1");
@@ -517,12 +572,15 @@ class Handle_IGESDimen_AngularDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_AngularDimension*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_AngularDimension {
+	~Handle_IGESDimen_AngularDimension() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_AngularDimension\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_NewDimensionedGeometry;
 class Handle_IGESDimen_NewDimensionedGeometry : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_NewDimensionedGeometry();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_NewDimensionedGeometry();
 		%feature("autodoc", "1");
@@ -538,12 +596,15 @@ class Handle_IGESDimen_NewDimensionedGeometry : public Handle_IGESData_IGESEntit
 	return (IGESDimen_NewDimensionedGeometry*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_NewDimensionedGeometry {
+	~Handle_IGESDimen_NewDimensionedGeometry() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_NewDimensionedGeometry\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_HArray1OfLeaderArrow;
 class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_HArray1OfLeaderArrow();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_HArray1OfLeaderArrow();
 		%feature("autodoc", "1");
@@ -559,12 +620,15 @@ class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
 	return (IGESDimen_HArray1OfLeaderArrow*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_HArray1OfLeaderArrow {
+	~Handle_IGESDimen_HArray1OfLeaderArrow() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_HArray1OfLeaderArrow\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_DimensionedGeometry;
 class Handle_IGESDimen_DimensionedGeometry : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_DimensionedGeometry();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionedGeometry();
 		%feature("autodoc", "1");
@@ -580,12 +644,15 @@ class Handle_IGESDimen_DimensionedGeometry : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_DimensionedGeometry*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_DimensionedGeometry {
+	~Handle_IGESDimen_DimensionedGeometry() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_DimensionedGeometry\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_PointDimension;
 class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_PointDimension();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_PointDimension();
 		%feature("autodoc", "1");
@@ -601,12 +668,15 @@ class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_PointDimension*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_PointDimension {
+	~Handle_IGESDimen_PointDimension() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_PointDimension\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_NewGeneralNote;
 class Handle_IGESDimen_NewGeneralNote : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_NewGeneralNote();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_NewGeneralNote();
 		%feature("autodoc", "1");
@@ -622,12 +692,15 @@ class Handle_IGESDimen_NewGeneralNote : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_NewGeneralNote*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_NewGeneralNote {
+	~Handle_IGESDimen_NewGeneralNote() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_NewGeneralNote\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_GeneralNote;
 class Handle_IGESDimen_GeneralNote : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_GeneralNote();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralNote();
 		%feature("autodoc", "1");
@@ -643,12 +716,15 @@ class Handle_IGESDimen_GeneralNote : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_GeneralNote*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_GeneralNote {
+	~Handle_IGESDimen_GeneralNote() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_GeneralNote\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_LinearDimension;
 class Handle_IGESDimen_LinearDimension : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_LinearDimension();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_LinearDimension();
 		%feature("autodoc", "1");
@@ -664,12 +740,15 @@ class Handle_IGESDimen_LinearDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_LinearDimension*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_LinearDimension {
+	~Handle_IGESDimen_LinearDimension() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_LinearDimension\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_SpecificModule;
 class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_SpecificModule();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_SpecificModule();
 		%feature("autodoc", "1");
@@ -685,12 +764,15 @@ class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESDimen_SpecificModule*)$self->Access();
 	}
 };
+%extend Handle_IGESDimen_SpecificModule {
+	~Handle_IGESDimen_SpecificModule() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_SpecificModule\n");
+	}
+};
 
 %nodefaultctor Handle_IGESDimen_CenterLine;
 class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESDimen_CenterLine();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_CenterLine();
 		%feature("autodoc", "1");
@@ -704,6 +786,11 @@ class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
 %extend Handle_IGESDimen_CenterLine {
 	IGESDimen_CenterLine* GetObject() {
 	return (IGESDimen_CenterLine*)$self->Access();
+	}
+};
+%extend Handle_IGESDimen_CenterLine {
+	~Handle_IGESDimen_CenterLine() {
+	printf("Call custom destructor for instance of Handle_IGESDimen_CenterLine\n");
 	}
 };
 
@@ -730,13 +817,16 @@ class IGESDimen_CenterLine : public IGESData_IGESEntity {
 		Standard_Boolean IsCrossHair() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_CenterLine();
 
 };
 %extend IGESDimen_CenterLine {
 	Handle_IGESDimen_CenterLine GetHandle() {
 	return *(Handle_IGESDimen_CenterLine*) &$self;
+	}
+};
+%extend IGESDimen_CenterLine {
+	~IGESDimen_CenterLine() {
+	printf("Call custom destructor for instance of IGESDimen_CenterLine\n");
 	}
 };
 
@@ -793,13 +883,16 @@ class IGESDimen_HArray1OfLeaderArrow : public MMgt_TShared {
 		IGESDimen_Array1OfLeaderArrow & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_HArray1OfLeaderArrow();
 
 };
 %extend IGESDimen_HArray1OfLeaderArrow {
 	Handle_IGESDimen_HArray1OfLeaderArrow GetHandle() {
 	return *(Handle_IGESDimen_HArray1OfLeaderArrow*) &$self;
+	}
+};
+%extend IGESDimen_HArray1OfLeaderArrow {
+	~IGESDimen_HArray1OfLeaderArrow() {
+	printf("Call custom destructor for instance of IGESDimen_HArray1OfLeaderArrow\n");
 	}
 };
 
@@ -830,13 +923,16 @@ class IGESDimen_LeaderArrow : public IGESData_IGESEntity {
 		gp_Pnt TransformedSegmentTail(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_LeaderArrow();
 
 };
 %extend IGESDimen_LeaderArrow {
 	Handle_IGESDimen_LeaderArrow GetHandle() {
 	return *(Handle_IGESDimen_LeaderArrow*) &$self;
+	}
+};
+%extend IGESDimen_LeaderArrow {
+	~IGESDimen_LeaderArrow() {
+	printf("Call custom destructor for instance of IGESDimen_LeaderArrow\n");
 	}
 };
 
@@ -853,13 +949,16 @@ class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
 		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_ReadWriteModule();
 
 };
 %extend IGESDimen_ReadWriteModule {
 	Handle_IGESDimen_ReadWriteModule GetHandle() {
 	return *(Handle_IGESDimen_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESDimen_ReadWriteModule {
+	~IGESDimen_ReadWriteModule() {
+	printf("Call custom destructor for instance of IGESDimen_ReadWriteModule\n");
 	}
 };
 
@@ -886,13 +985,16 @@ class IGESDimen_GeneralSymbol : public IGESData_IGESEntity {
 		Handle_IGESDimen_LeaderArrow LeaderArrow(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_GeneralSymbol();
 
 };
 %extend IGESDimen_GeneralSymbol {
 	Handle_IGESDimen_GeneralSymbol GetHandle() {
 	return *(Handle_IGESDimen_GeneralSymbol*) &$self;
+	}
+};
+%extend IGESDimen_GeneralSymbol {
+	~IGESDimen_GeneralSymbol() {
+	printf("Call custom destructor for instance of IGESDimen_GeneralSymbol\n");
 	}
 };
 
@@ -913,13 +1015,16 @@ class IGESDimen_DimensionedGeometry : public IGESData_IGESEntity {
 		Handle_IGESData_IGESEntity GeometryEntity(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_DimensionedGeometry();
 
 };
 %extend IGESDimen_DimensionedGeometry {
 	Handle_IGESDimen_DimensionedGeometry GetHandle() {
 	return *(Handle_IGESDimen_DimensionedGeometry*) &$self;
+	}
+};
+%extend IGESDimen_DimensionedGeometry {
+	~IGESDimen_DimensionedGeometry() {
+	printf("Call custom destructor for instance of IGESDimen_DimensionedGeometry\n");
 	}
 };
 
@@ -968,13 +1073,16 @@ class IGESDimen_WitnessLine : public IGESData_IGESEntity {
 		gp_Pnt TransformedPoint(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_WitnessLine();
 
 };
 %extend IGESDimen_WitnessLine {
 	Handle_IGESDimen_WitnessLine GetHandle() {
 	return *(Handle_IGESDimen_WitnessLine*) &$self;
+	}
+};
+%extend IGESDimen_WitnessLine {
+	~IGESDimen_WitnessLine() {
+	printf("Call custom destructor for instance of IGESDimen_WitnessLine\n");
 	}
 };
 
@@ -999,13 +1107,16 @@ class IGESDimen_PointDimension : public IGESData_IGESEntity {
 		Handle_IGESGeom_CompositeCurve CompositeCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_PointDimension();
 
 };
 %extend IGESDimen_PointDimension {
 	Handle_IGESDimen_PointDimension GetHandle() {
 	return *(Handle_IGESDimen_PointDimension*) &$self;
+	}
+};
+%extend IGESDimen_PointDimension {
+	~IGESDimen_PointDimension() {
+	printf("Call custom destructor for instance of IGESDimen_PointDimension\n");
 	}
 };
 
@@ -1074,13 +1185,16 @@ class IGESDimen_DimensionDisplayData : public IGESData_IGESEntity {
 		Standard_Integer EndIndex(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_DimensionDisplayData();
 
 };
 %extend IGESDimen_DimensionDisplayData {
 	Handle_IGESDimen_DimensionDisplayData GetHandle() {
 	return *(Handle_IGESDimen_DimensionDisplayData*) &$self;
+	}
+};
+%extend IGESDimen_DimensionDisplayData {
+	~IGESDimen_DimensionDisplayData() {
+	printf("Call custom destructor for instance of IGESDimen_DimensionDisplayData\n");
 	}
 };
 
@@ -1103,13 +1217,16 @@ class IGESDimen_GeneralModule : public IGESData_GeneralModule {
 		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_GeneralModule();
 
 };
 %extend IGESDimen_GeneralModule {
 	Handle_IGESDimen_GeneralModule GetHandle() {
 	return *(Handle_IGESDimen_GeneralModule*) &$self;
+	}
+};
+%extend IGESDimen_GeneralModule {
+	~IGESDimen_GeneralModule() {
+	printf("Call custom destructor for instance of IGESDimen_GeneralModule\n");
 	}
 };
 
@@ -1194,13 +1311,16 @@ class IGESDimen_NewGeneralNote : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString Text(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_NewGeneralNote();
 
 };
 %extend IGESDimen_NewGeneralNote {
 	Handle_IGESDimen_NewGeneralNote GetHandle() {
 	return *(Handle_IGESDimen_NewGeneralNote*) &$self;
+	}
+};
+%extend IGESDimen_NewGeneralNote {
+	~IGESDimen_NewGeneralNote() {
+	printf("Call custom destructor for instance of IGESDimen_NewGeneralNote\n");
 	}
 };
 
@@ -1239,13 +1359,16 @@ class IGESDimen_SpecificModule : public IGESData_SpecificModule {
 		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_SpecificModule();
 
 };
 %extend IGESDimen_SpecificModule {
 	Handle_IGESDimen_SpecificModule GetHandle() {
 	return *(Handle_IGESDimen_SpecificModule*) &$self;
+	}
+};
+%extend IGESDimen_SpecificModule {
+	~IGESDimen_SpecificModule() {
+	printf("Call custom destructor for instance of IGESDimen_SpecificModule\n");
 	}
 };
 
@@ -1330,13 +1453,16 @@ class IGESDimen_SectionedArea : public IGESData_IGESEntity {
 		Handle_IGESData_IGESEntity IslandCurve(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_SectionedArea();
 
 };
 %extend IGESDimen_SectionedArea {
 	Handle_IGESDimen_SectionedArea GetHandle() {
 	return *(Handle_IGESDimen_SectionedArea*) &$self;
+	}
+};
+%extend IGESDimen_SectionedArea {
+	~IGESDimen_SectionedArea() {
+	printf("Call custom destructor for instance of IGESDimen_SectionedArea\n");
 	}
 };
 
@@ -1395,13 +1521,16 @@ class IGESDimen_FlagNote : public IGESData_IGESEntity {
 		Standard_Real TipLength() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_FlagNote();
 
 };
 %extend IGESDimen_FlagNote {
 	Handle_IGESDimen_FlagNote GetHandle() {
 	return *(Handle_IGESDimen_FlagNote*) &$self;
+	}
+};
+%extend IGESDimen_FlagNote {
+	~IGESDimen_FlagNote() {
+	printf("Call custom destructor for instance of IGESDimen_FlagNote\n");
 	}
 };
 
@@ -1426,13 +1555,16 @@ class IGESDimen_DiameterDimension : public IGESData_IGESEntity {
 		gp_Pnt2d TransformedCenter() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_DiameterDimension();
 
 };
 %extend IGESDimen_DiameterDimension {
 	Handle_IGESDimen_DiameterDimension GetHandle() {
 	return *(Handle_IGESDimen_DiameterDimension*) &$self;
+	}
+};
+%extend IGESDimen_DiameterDimension {
+	~IGESDimen_DiameterDimension() {
+	printf("Call custom destructor for instance of IGESDimen_DiameterDimension\n");
 	}
 };
 
@@ -1519,13 +1651,16 @@ class IGESDimen_Section : public IGESData_IGESEntity {
 		gp_Pnt TransformedPoint(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_Section();
 
 };
 %extend IGESDimen_Section {
 	Handle_IGESDimen_Section GetHandle() {
 	return *(Handle_IGESDimen_Section*) &$self;
+	}
+};
+%extend IGESDimen_Section {
+	~IGESDimen_Section() {
+	printf("Call custom destructor for instance of IGESDimen_Section\n");
 	}
 };
 
@@ -1592,13 +1727,16 @@ class IGESDimen_HArray1OfGeneralNote : public MMgt_TShared {
 		IGESDimen_Array1OfGeneralNote & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_HArray1OfGeneralNote();
 
 };
 %extend IGESDimen_HArray1OfGeneralNote {
 	Handle_IGESDimen_HArray1OfGeneralNote GetHandle() {
 	return *(Handle_IGESDimen_HArray1OfGeneralNote*) &$self;
+	}
+};
+%extend IGESDimen_HArray1OfGeneralNote {
+	~IGESDimen_HArray1OfGeneralNote() {
+	printf("Call custom destructor for instance of IGESDimen_HArray1OfGeneralNote\n");
 	}
 };
 
@@ -1651,13 +1789,16 @@ class IGESDimen_LinearDimension : public IGESData_IGESEntity {
 		Handle_IGESDimen_WitnessLine SecondWitness() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_LinearDimension();
 
 };
 %extend IGESDimen_LinearDimension {
 	Handle_IGESDimen_LinearDimension GetHandle() {
 	return *(Handle_IGESDimen_LinearDimension*) &$self;
+	}
+};
+%extend IGESDimen_LinearDimension {
+	~IGESDimen_LinearDimension() {
+	printf("Call custom destructor for instance of IGESDimen_LinearDimension\n");
 	}
 };
 
@@ -1702,13 +1843,16 @@ class IGESDimen_GeneralNote : public IGESData_IGESEntity {
 		Handle_TCollection_HAsciiString Text(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_GeneralNote();
 
 };
 %extend IGESDimen_GeneralNote {
 	Handle_IGESDimen_GeneralNote GetHandle() {
 	return *(Handle_IGESDimen_GeneralNote*) &$self;
+	}
+};
+%extend IGESDimen_GeneralNote {
+	~IGESDimen_GeneralNote() {
+	printf("Call custom destructor for instance of IGESDimen_GeneralNote\n");
 	}
 };
 
@@ -1767,13 +1911,16 @@ class IGESDimen_CurveDimension : public IGESData_IGESEntity {
 		Handle_IGESDimen_WitnessLine SecondWitnessLine() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_CurveDimension();
 
 };
 %extend IGESDimen_CurveDimension {
 	Handle_IGESDimen_CurveDimension GetHandle() {
 	return *(Handle_IGESDimen_CurveDimension*) &$self;
+	}
+};
+%extend IGESDimen_CurveDimension {
+	~IGESDimen_CurveDimension() {
+	printf("Call custom destructor for instance of IGESDimen_CurveDimension\n");
 	}
 };
 
@@ -1994,13 +2141,16 @@ class IGESDimen_AngularDimension : public IGESData_IGESEntity {
 		Handle_IGESDimen_LeaderArrow SecondLeader() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_AngularDimension();
 
 };
 %extend IGESDimen_AngularDimension {
 	Handle_IGESDimen_AngularDimension GetHandle() {
 	return *(Handle_IGESDimen_AngularDimension*) &$self;
+	}
+};
+%extend IGESDimen_AngularDimension {
+	~IGESDimen_AngularDimension() {
+	printf("Call custom destructor for instance of IGESDimen_AngularDimension\n");
 	}
 };
 
@@ -2023,13 +2173,16 @@ class IGESDimen_OrdinateDimension : public IGESData_IGESEntity {
 		Handle_IGESDimen_LeaderArrow Leader() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_OrdinateDimension();
 
 };
 %extend IGESDimen_OrdinateDimension {
 	Handle_IGESDimen_OrdinateDimension GetHandle() {
 	return *(Handle_IGESDimen_OrdinateDimension*) &$self;
+	}
+};
+%extend IGESDimen_OrdinateDimension {
+	~IGESDimen_OrdinateDimension() {
+	printf("Call custom destructor for instance of IGESDimen_OrdinateDimension\n");
 	}
 };
 
@@ -2072,13 +2225,16 @@ class IGESDimen_GeneralLabel : public IGESData_IGESEntity {
 		Handle_IGESDimen_LeaderArrow Leader(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_GeneralLabel();
 
 };
 %extend IGESDimen_GeneralLabel {
 	Handle_IGESDimen_GeneralLabel GetHandle() {
 	return *(Handle_IGESDimen_GeneralLabel*) &$self;
+	}
+};
+%extend IGESDimen_GeneralLabel {
+	~IGESDimen_GeneralLabel() {
+	printf("Call custom destructor for instance of IGESDimen_GeneralLabel\n");
 	}
 };
 
@@ -2101,13 +2257,16 @@ class IGESDimen_BasicDimension : public IGESData_IGESEntity {
 		gp_Pnt2d UpperLeft() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_BasicDimension();
 
 };
 %extend IGESDimen_BasicDimension {
 	Handle_IGESDimen_BasicDimension GetHandle() {
 	return *(Handle_IGESDimen_BasicDimension*) &$self;
+	}
+};
+%extend IGESDimen_BasicDimension {
+	~IGESDimen_BasicDimension() {
+	printf("Call custom destructor for instance of IGESDimen_BasicDimension\n");
 	}
 };
 
@@ -2162,13 +2321,16 @@ class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
 		Standard_Integer Precision() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_DimensionTolerance();
 
 };
 %extend IGESDimen_DimensionTolerance {
 	Handle_IGESDimen_DimensionTolerance GetHandle() {
 	return *(Handle_IGESDimen_DimensionTolerance*) &$self;
+	}
+};
+%extend IGESDimen_DimensionTolerance {
+	~IGESDimen_DimensionTolerance() {
+	printf("Call custom destructor for instance of IGESDimen_DimensionTolerance\n");
 	}
 };
 
@@ -2267,13 +2429,16 @@ class IGESDimen_DimensionUnits : public IGESData_IGESEntity {
 		Standard_Integer PrecisionOrDenominator() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_DimensionUnits();
 
 };
 %extend IGESDimen_DimensionUnits {
 	Handle_IGESDimen_DimensionUnits GetHandle() {
 	return *(Handle_IGESDimen_DimensionUnits*) &$self;
+	}
+};
+%extend IGESDimen_DimensionUnits {
+	~IGESDimen_DimensionUnits() {
+	printf("Call custom destructor for instance of IGESDimen_DimensionUnits\n");
 	}
 };
 
@@ -2326,13 +2491,16 @@ class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
 		Handle_IGESDimen_LeaderArrow Leader2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_RadiusDimension();
 
 };
 %extend IGESDimen_RadiusDimension {
 	Handle_IGESDimen_RadiusDimension GetHandle() {
 	return *(Handle_IGESDimen_RadiusDimension*) &$self;
+	}
+};
+%extend IGESDimen_RadiusDimension {
+	~IGESDimen_RadiusDimension() {
+	printf("Call custom destructor for instance of IGESDimen_RadiusDimension\n");
 	}
 };
 
@@ -2363,12 +2531,15 @@ class IGESDimen_NewDimensionedGeometry : public IGESData_IGESEntity {
 		gp_Pnt TransformedPoint(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESDimen_NewDimensionedGeometry();
 
 };
 %extend IGESDimen_NewDimensionedGeometry {
 	Handle_IGESDimen_NewDimensionedGeometry GetHandle() {
 	return *(Handle_IGESDimen_NewDimensionedGeometry*) &$self;
+	}
+};
+%extend IGESDimen_NewDimensionedGeometry {
+	~IGESDimen_NewDimensionedGeometry() {
+	printf("Call custom destructor for instance of IGESDimen_NewDimensionedGeometry\n");
 	}
 };

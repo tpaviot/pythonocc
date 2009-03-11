@@ -108,8 +108,6 @@ enum MeshShape_CurvatureType {
 class Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient();
-		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient();
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient(const Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient &aHandle);
@@ -124,12 +122,15 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public Handl
 	return (MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient*)$self->Access();
 	}
 };
+%extend Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
+	~Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient() {
+	printf("Call custom destructor for instance of Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_MeshShape_ListNodeOfPolygon;
 class Handle_MeshShape_ListNodeOfPolygon : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MeshShape_ListNodeOfPolygon();
 		%feature("autodoc", "1");
 		Handle_MeshShape_ListNodeOfPolygon();
 		%feature("autodoc", "1");
@@ -145,12 +146,15 @@ class Handle_MeshShape_ListNodeOfPolygon : public Handle_TCollection_MapNode {
 	return (MeshShape_ListNodeOfPolygon*)$self->Access();
 	}
 };
+%extend Handle_MeshShape_ListNodeOfPolygon {
+	~Handle_MeshShape_ListNodeOfPolygon() {
+	printf("Call custom destructor for instance of Handle_MeshShape_ListNodeOfPolygon\n");
+	}
+};
 
 %nodefaultctor Handle_MeshShape_ListNodeOfListOfSurfacePoint;
 class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MeshShape_ListNodeOfListOfSurfacePoint();
 		%feature("autodoc", "1");
 		Handle_MeshShape_ListNodeOfListOfSurfacePoint();
 		%feature("autodoc", "1");
@@ -166,12 +170,15 @@ class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_
 	return (MeshShape_ListNodeOfListOfSurfacePoint*)$self->Access();
 	}
 };
+%extend Handle_MeshShape_ListNodeOfListOfSurfacePoint {
+	~Handle_MeshShape_ListNodeOfListOfSurfacePoint() {
+	printf("Call custom destructor for instance of Handle_MeshShape_ListNodeOfListOfSurfacePoint\n");
+	}
+};
 
 %nodefaultctor Handle_MeshShape_StdMapNodeOfMapOfCouple;
 class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MeshShape_StdMapNodeOfMapOfCouple();
 		%feature("autodoc", "1");
 		Handle_MeshShape_StdMapNodeOfMapOfCouple();
 		%feature("autodoc", "1");
@@ -187,12 +194,15 @@ class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNo
 	return (MeshShape_StdMapNodeOfMapOfCouple*)$self->Access();
 	}
 };
+%extend Handle_MeshShape_StdMapNodeOfMapOfCouple {
+	~Handle_MeshShape_StdMapNodeOfMapOfCouple() {
+	printf("Call custom destructor for instance of Handle_MeshShape_StdMapNodeOfMapOfCouple\n");
+	}
+};
 
 %nodefaultctor Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY;
 class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY();
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY();
 		%feature("autodoc", "1");
@@ -208,12 +218,15 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY : public Handle_TCollecti
 	return (MeshShape_DataMapNodeOfDataMapOfIntegerXY*)$self->Access();
 	}
 };
+%extend Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY {
+	~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY() {
+	printf("Call custom destructor for instance of Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY\n");
+	}
+};
 
 %nodefaultctor Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt;
 class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt();
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt();
 		%feature("autodoc", "1");
@@ -229,6 +242,11 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public Handle_TCollect
 	return (MeshShape_DataMapNodeOfDataMapOfIntegerPnt*)$self->Access();
 	}
 };
+%extend Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
+	~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt() {
+	printf("Call custom destructor for instance of Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt\n");
+	}
+};
 
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfIntegerPnt;
 class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
@@ -241,13 +259,16 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
 		gp_Pnt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MeshShape_DataMapNodeOfDataMapOfIntegerPnt();
 
 };
 %extend MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
 	Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt GetHandle() {
 	return *(Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt*) &$self;
+	}
+};
+%extend MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
+	~MeshShape_DataMapNodeOfDataMapOfIntegerPnt() {
+	printf("Call custom destructor for instance of MeshShape_DataMapNodeOfDataMapOfIntegerPnt\n");
 	}
 };
 
@@ -282,13 +303,16 @@ class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_
 		TColStd_ListOfTransient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient();
 
 };
 %extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
 	Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient GetHandle() {
 	return *(Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient*) &$self;
+	}
+};
+%extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
+	~MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient() {
+	printf("Call custom destructor for instance of MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient\n");
 	}
 };
 
@@ -455,13 +479,16 @@ class MeshShape_ListNodeOfPolygon : public TCollection_MapNode {
 		MeshShape_PolygonPoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MeshShape_ListNodeOfPolygon();
 
 };
 %extend MeshShape_ListNodeOfPolygon {
 	Handle_MeshShape_ListNodeOfPolygon GetHandle() {
 	return *(Handle_MeshShape_ListNodeOfPolygon*) &$self;
+	}
+};
+%extend MeshShape_ListNodeOfPolygon {
+	~MeshShape_ListNodeOfPolygon() {
+	printf("Call custom destructor for instance of MeshShape_ListNodeOfPolygon\n");
 	}
 };
 
@@ -508,13 +535,16 @@ class MeshShape_StdMapNodeOfMapOfCouple : public TCollection_MapNode {
 		MeshShape_Couple & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MeshShape_StdMapNodeOfMapOfCouple();
 
 };
 %extend MeshShape_StdMapNodeOfMapOfCouple {
 	Handle_MeshShape_StdMapNodeOfMapOfCouple GetHandle() {
 	return *(Handle_MeshShape_StdMapNodeOfMapOfCouple*) &$self;
+	}
+};
+%extend MeshShape_StdMapNodeOfMapOfCouple {
+	~MeshShape_StdMapNodeOfMapOfCouple() {
+	printf("Call custom destructor for instance of MeshShape_StdMapNodeOfMapOfCouple\n");
 	}
 };
 
@@ -685,13 +715,16 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerXY : public TCollection_MapNode {
 		gp_XY & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MeshShape_DataMapNodeOfDataMapOfIntegerXY();
 
 };
 %extend MeshShape_DataMapNodeOfDataMapOfIntegerXY {
 	Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY GetHandle() {
 	return *(Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY*) &$self;
+	}
+};
+%extend MeshShape_DataMapNodeOfDataMapOfIntegerXY {
+	~MeshShape_DataMapNodeOfDataMapOfIntegerXY() {
+	printf("Call custom destructor for instance of MeshShape_DataMapNodeOfDataMapOfIntegerXY\n");
 	}
 };
 
@@ -734,12 +767,15 @@ class MeshShape_ListNodeOfListOfSurfacePoint : public TCollection_MapNode {
 		MeshShape_SurfacePoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MeshShape_ListNodeOfListOfSurfacePoint();
 
 };
 %extend MeshShape_ListNodeOfListOfSurfacePoint {
 	Handle_MeshShape_ListNodeOfListOfSurfacePoint GetHandle() {
 	return *(Handle_MeshShape_ListNodeOfListOfSurfacePoint*) &$self;
+	}
+};
+%extend MeshShape_ListNodeOfListOfSurfacePoint {
+	~MeshShape_ListNodeOfListOfSurfacePoint() {
+	printf("Call custom destructor for instance of MeshShape_ListNodeOfListOfSurfacePoint\n");
 	}
 };

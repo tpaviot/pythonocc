@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_XmlMDocStd_XLinkDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlMDocStd_XLinkDriver();
-		%feature("autodoc", "1");
 		Handle_XmlMDocStd_XLinkDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMDocStd_XLinkDriver(const Handle_XmlMDocStd_XLinkDriver &aHandle);
@@ -116,6 +114,11 @@ class Handle_XmlMDocStd_XLinkDriver : public Handle_XmlMDF_ADriver {
 %extend Handle_XmlMDocStd_XLinkDriver {
 	XmlMDocStd_XLinkDriver* GetObject() {
 	return (XmlMDocStd_XLinkDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMDocStd_XLinkDriver {
+	~Handle_XmlMDocStd_XLinkDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMDocStd_XLinkDriver\n");
 	}
 };
 
@@ -132,13 +135,16 @@ class XmlMDocStd_XLinkDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMDocStd_XLinkDriver();
 
 };
 %extend XmlMDocStd_XLinkDriver {
 	Handle_XmlMDocStd_XLinkDriver GetHandle() {
 	return *(Handle_XmlMDocStd_XLinkDriver*) &$self;
+	}
+};
+%extend XmlMDocStd_XLinkDriver {
+	~XmlMDocStd_XLinkDriver() {
+	printf("Call custom destructor for instance of XmlMDocStd_XLinkDriver\n");
 	}
 };
 

@@ -115,8 +115,6 @@ enum IntSurf_TypeTrans {
 class Handle_IntSurf_LineOn2S : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IntSurf_LineOn2S();
-		%feature("autodoc", "1");
 		Handle_IntSurf_LineOn2S();
 		%feature("autodoc", "1");
 		Handle_IntSurf_LineOn2S(const Handle_IntSurf_LineOn2S &aHandle);
@@ -131,12 +129,15 @@ class Handle_IntSurf_LineOn2S : public Handle_MMgt_TShared {
 	return (IntSurf_LineOn2S*)$self->Access();
 	}
 };
+%extend Handle_IntSurf_LineOn2S {
+	~Handle_IntSurf_LineOn2S() {
+	printf("Call custom destructor for instance of Handle_IntSurf_LineOn2S\n");
+	}
+};
 
 %nodefaultctor Handle_IntSurf_ListNodeOfListOfPntOn2S;
 class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntSurf_ListNodeOfListOfPntOn2S();
 		%feature("autodoc", "1");
 		Handle_IntSurf_ListNodeOfListOfPntOn2S();
 		%feature("autodoc", "1");
@@ -152,12 +153,15 @@ class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode
 	return (IntSurf_ListNodeOfListOfPntOn2S*)$self->Access();
 	}
 };
+%extend Handle_IntSurf_ListNodeOfListOfPntOn2S {
+	~Handle_IntSurf_ListNodeOfListOfPntOn2S() {
+	printf("Call custom destructor for instance of Handle_IntSurf_ListNodeOfListOfPntOn2S\n");
+	}
+};
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfCouple;
 class Handle_IntSurf_SequenceNodeOfSequenceOfCouple : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntSurf_SequenceNodeOfSequenceOfCouple();
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfCouple();
 		%feature("autodoc", "1");
@@ -173,12 +177,15 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfCouple : public Handle_TCollection_
 	return (IntSurf_SequenceNodeOfSequenceOfCouple*)$self->Access();
 	}
 };
+%extend Handle_IntSurf_SequenceNodeOfSequenceOfCouple {
+	~Handle_IntSurf_SequenceNodeOfSequenceOfCouple() {
+	printf("Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfCouple\n");
+	}
+};
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint;
 class Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint();
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint();
 		%feature("autodoc", "1");
@@ -194,12 +201,15 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint : public Handle_TCollecti
 	return (IntSurf_SequenceNodeOfSequenceOfPathPoint*)$self->Access();
 	}
 };
+%extend Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint {
+	~Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint() {
+	printf("Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint\n");
+	}
+};
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S;
 class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S();
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S();
 		%feature("autodoc", "1");
@@ -215,12 +225,15 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection
 	return (IntSurf_SequenceNodeOfSequenceOfPntOn2S*)$self->Access();
 	}
 };
+%extend Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	~Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S() {
+	printf("Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S\n");
+	}
+};
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint;
 class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint();
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint();
 		%feature("autodoc", "1");
@@ -236,6 +249,11 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TColl
 	return (IntSurf_SequenceNodeOfSequenceOfInteriorPoint*)$self->Access();
 	}
 };
+%extend Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
+	~Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint() {
+	printf("Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint\n");
+	}
+};
 
 %nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
 class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
@@ -246,13 +264,16 @@ class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
 		IntSurf_PntOn2S & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntSurf_ListNodeOfListOfPntOn2S();
 
 };
 %extend IntSurf_ListNodeOfListOfPntOn2S {
 	Handle_IntSurf_ListNodeOfListOfPntOn2S GetHandle() {
 	return *(Handle_IntSurf_ListNodeOfListOfPntOn2S*) &$self;
+	}
+};
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	~IntSurf_ListNodeOfListOfPntOn2S() {
+	printf("Call custom destructor for instance of IntSurf_ListNodeOfListOfPntOn2S\n");
 	}
 };
 
@@ -305,13 +326,16 @@ class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
 		IntSurf_PntOn2S & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntSurf_SequenceNodeOfSequenceOfPntOn2S();
 
 };
 %extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
 	Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S GetHandle() {
 	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S*) &$self;
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	~IntSurf_SequenceNodeOfSequenceOfPntOn2S() {
+	printf("Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfPntOn2S\n");
 	}
 };
 
@@ -540,13 +564,16 @@ class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
 		IntSurf_Couple & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntSurf_SequenceNodeOfSequenceOfCouple();
 
 };
 %extend IntSurf_SequenceNodeOfSequenceOfCouple {
 	Handle_IntSurf_SequenceNodeOfSequenceOfCouple GetHandle() {
 	return *(Handle_IntSurf_SequenceNodeOfSequenceOfCouple*) &$self;
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfCouple {
+	~IntSurf_SequenceNodeOfSequenceOfCouple() {
+	printf("Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfCouple\n");
 	}
 };
 
@@ -601,13 +628,16 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 		IntSurf_PathPoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntSurf_SequenceNodeOfSequenceOfPathPoint();
 
 };
 %extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
 	Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint GetHandle() {
 	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint*) &$self;
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
+	~IntSurf_SequenceNodeOfSequenceOfPathPoint() {
+	printf("Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfPathPoint\n");
 	}
 };
 
@@ -646,13 +676,16 @@ class IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public TCollection_SeqNode
 		IntSurf_InteriorPoint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntSurf_SequenceNodeOfSequenceOfInteriorPoint();
 
 };
 %extend IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
 	Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint GetHandle() {
 	return *(Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint*) &$self;
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
+	~IntSurf_SequenceNodeOfSequenceOfInteriorPoint() {
+	printf("Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfInteriorPoint\n");
 	}
 };
 
@@ -783,13 +816,16 @@ class IntSurf_LineOn2S : public MMgt_TShared {
 		void RemovePoint(const Standard_Integer I);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IntSurf_LineOn2S();
 
 };
 %extend IntSurf_LineOn2S {
 	Handle_IntSurf_LineOn2S GetHandle() {
 	return *(Handle_IntSurf_LineOn2S*) &$self;
+	}
+};
+%extend IntSurf_LineOn2S {
+	~IntSurf_LineOn2S() {
+	printf("Call custom destructor for instance of IntSurf_LineOn2S\n");
 	}
 };
 

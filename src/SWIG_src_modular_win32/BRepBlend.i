@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BRepBlend_AppFuncRoot : public Handle_Approx_SweepFunction {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepBlend_AppFuncRoot();
-		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRoot();
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRoot(const Handle_BRepBlend_AppFuncRoot &aHandle);
@@ -118,12 +116,15 @@ class Handle_BRepBlend_AppFuncRoot : public Handle_Approx_SweepFunction {
 	return (BRepBlend_AppFuncRoot*)$self->Access();
 	}
 };
+%extend Handle_BRepBlend_AppFuncRoot {
+	~Handle_BRepBlend_AppFuncRoot() {
+	printf("Call custom destructor for instance of Handle_BRepBlend_AppFuncRoot\n");
+	}
+};
 
 %nodefaultctor Handle_BRepBlend_AppFuncRst;
 class Handle_BRepBlend_AppFuncRst : public Handle_BRepBlend_AppFuncRoot {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepBlend_AppFuncRst();
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRst();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_BRepBlend_AppFuncRst : public Handle_BRepBlend_AppFuncRoot {
 	return (BRepBlend_AppFuncRst*)$self->Access();
 	}
 };
+%extend Handle_BRepBlend_AppFuncRst {
+	~Handle_BRepBlend_AppFuncRst() {
+	printf("Call custom destructor for instance of Handle_BRepBlend_AppFuncRst\n");
+	}
+};
 
 %nodefaultctor Handle_BRepBlend_SequenceNodeOfSequenceOfLine;
 class Handle_BRepBlend_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepBlend_SequenceNodeOfSequenceOfLine();
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfLine();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfLine : public Handle_TCollection_
 	return (BRepBlend_SequenceNodeOfSequenceOfLine*)$self->Access();
 	}
 };
+%extend Handle_BRepBlend_SequenceNodeOfSequenceOfLine {
+	~Handle_BRepBlend_SequenceNodeOfSequenceOfLine() {
+	printf("Call custom destructor for instance of Handle_BRepBlend_SequenceNodeOfSequenceOfLine\n");
+	}
+};
 
 %nodefaultctor Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst;
 class Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst();
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public Handle_TColle
 	return (BRepBlend_SequenceNodeOfSequenceOfPointOnRst*)$self->Access();
 	}
 };
+%extend Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
+	~Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst() {
+	printf("Call custom destructor for instance of Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst\n");
+	}
+};
 
 %nodefaultctor Handle_BRepBlend_Line;
 class Handle_BRepBlend_Line : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepBlend_Line();
 		%feature("autodoc", "1");
 		Handle_BRepBlend_Line();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_BRepBlend_Line : public Handle_MMgt_TShared {
 	return (BRepBlend_Line*)$self->Access();
 	}
 };
+%extend Handle_BRepBlend_Line {
+	~Handle_BRepBlend_Line() {
+	printf("Call custom destructor for instance of Handle_BRepBlend_Line\n");
+	}
+};
 
 %nodefaultctor Handle_BRepBlend_AppFunc;
 class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepBlend_AppFunc();
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFunc();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
 	return (BRepBlend_AppFunc*)$self->Access();
 	}
 };
+%extend Handle_BRepBlend_AppFunc {
+	~Handle_BRepBlend_AppFunc() {
+	printf("Call custom destructor for instance of Handle_BRepBlend_AppFunc\n");
+	}
+};
 
 %nodefaultctor Handle_BRepBlend_AppFuncRstRst;
 class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepBlend_AppFuncRstRst();
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRstRst();
 		%feature("autodoc", "1");
@@ -242,6 +258,11 @@ class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
 %extend Handle_BRepBlend_AppFuncRstRst {
 	BRepBlend_AppFuncRstRst* GetObject() {
 	return (BRepBlend_AppFuncRstRst*)$self->Access();
+	}
+};
+%extend Handle_BRepBlend_AppFuncRstRst {
+	~Handle_BRepBlend_AppFuncRstRst() {
+	printf("Call custom destructor for instance of Handle_BRepBlend_AppFuncRstRst\n");
 	}
 };
 
@@ -407,19 +428,27 @@ class BRepBlend_AppFuncRoot : public Approx_SweepFunction {
 	return *(Handle_BRepBlend_AppFuncRoot*) &$self;
 	}
 };
+%extend BRepBlend_AppFuncRoot {
+	~BRepBlend_AppFuncRoot() {
+	printf("Call custom destructor for instance of BRepBlend_AppFuncRoot\n");
+	}
+};
 
 %nodefaultctor BRepBlend_AppFuncRst;
 class BRepBlend_AppFuncRst : public BRepBlend_AppFuncRoot {
 	public:
 		%feature("autodoc", "1");
 		BRepBlend_AppFuncRst(Handle_BRepBlend_Line & Line, Blend_SurfRstFunction & Func, const Standard_Real Tol3d, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_AppFuncRst();
 
 };
 %extend BRepBlend_AppFuncRst {
 	Handle_BRepBlend_AppFuncRst GetHandle() {
 	return *(Handle_BRepBlend_AppFuncRst*) &$self;
+	}
+};
+%extend BRepBlend_AppFuncRst {
+	~BRepBlend_AppFuncRst() {
+	printf("Call custom destructor for instance of BRepBlend_AppFuncRst\n");
 	}
 };
 
@@ -432,13 +461,16 @@ class BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public TCollection_SeqNode 
 		BRepBlend_PointOnRst & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SequenceNodeOfSequenceOfPointOnRst();
 
 };
 %extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
 	Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst GetHandle() {
 	return *(Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst*) &$self;
+	}
+};
+%extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
+	~BRepBlend_SequenceNodeOfSequenceOfPointOnRst() {
+	printf("Call custom destructor for instance of BRepBlend_SequenceNodeOfSequenceOfPointOnRst\n");
 	}
 };
 
@@ -1203,13 +1235,16 @@ class BRepBlend_AppFunc : public BRepBlend_AppFuncRoot {
 		virtual		void Vec(math_Vector & Sol, const Blend_Point &Pnt) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_AppFunc();
 
 };
 %extend BRepBlend_AppFunc {
 	Handle_BRepBlend_AppFunc GetHandle() {
 	return *(Handle_BRepBlend_AppFunc*) &$self;
+	}
+};
+%extend BRepBlend_AppFunc {
+	~BRepBlend_AppFunc() {
+	printf("Call custom destructor for instance of BRepBlend_AppFunc\n");
 	}
 };
 
@@ -1324,13 +1359,16 @@ class BRepBlend_Line : public MMgt_TShared {
 		IntSurf_TypeTrans TransitionOnS() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_Line();
 
 };
 %extend BRepBlend_Line {
 	Handle_BRepBlend_Line GetHandle() {
 	return *(Handle_BRepBlend_Line*) &$self;
+	}
+};
+%extend BRepBlend_Line {
+	~BRepBlend_Line() {
+	printf("Call custom destructor for instance of BRepBlend_Line\n");
 	}
 };
 
@@ -1425,13 +1463,16 @@ class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
 		virtual		void Vec(math_Vector & Sol, const Blend_Point &Pnt) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_AppFuncRstRst();
 
 };
 %extend BRepBlend_AppFuncRstRst {
 	Handle_BRepBlend_AppFuncRstRst GetHandle() {
 	return *(Handle_BRepBlend_AppFuncRstRst*) &$self;
+	}
+};
+%extend BRepBlend_AppFuncRstRst {
+	~BRepBlend_AppFuncRstRst() {
+	printf("Call custom destructor for instance of BRepBlend_AppFuncRstRst\n");
 	}
 };
 
@@ -1902,13 +1943,16 @@ class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 		Handle_BRepBlend_Line & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SequenceNodeOfSequenceOfLine();
 
 };
 %extend BRepBlend_SequenceNodeOfSequenceOfLine {
 	Handle_BRepBlend_SequenceNodeOfSequenceOfLine GetHandle() {
 	return *(Handle_BRepBlend_SequenceNodeOfSequenceOfLine*) &$self;
+	}
+};
+%extend BRepBlend_SequenceNodeOfSequenceOfLine {
+	~BRepBlend_SequenceNodeOfSequenceOfLine() {
+	printf("Call custom destructor for instance of BRepBlend_SequenceNodeOfSequenceOfLine\n");
 	}
 };
 

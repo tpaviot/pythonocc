@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_NIS_InteractiveObject : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		~Handle_NIS_InteractiveObject();
-		%feature("autodoc", "1");
 		Handle_NIS_InteractiveObject();
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveObject(const Handle_NIS_InteractiveObject &aHandle);
@@ -118,12 +116,15 @@ class Handle_NIS_InteractiveObject : public Handle_Standard_Transient {
 	return (NIS_InteractiveObject*)$self->Access();
 	}
 };
+%extend Handle_NIS_InteractiveObject {
+	~Handle_NIS_InteractiveObject() {
+	printf("Call custom destructor for instance of Handle_NIS_InteractiveObject\n");
+	}
+};
 
 %nodefaultctor Handle_NIS_Triangulated;
 class Handle_NIS_Triangulated : public Handle_NIS_InteractiveObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_NIS_Triangulated();
 		%feature("autodoc", "1");
 		Handle_NIS_Triangulated();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_NIS_Triangulated : public Handle_NIS_InteractiveObject {
 	return (NIS_Triangulated*)$self->Access();
 	}
 };
+%extend Handle_NIS_Triangulated {
+	~Handle_NIS_Triangulated() {
+	printf("Call custom destructor for instance of Handle_NIS_Triangulated\n");
+	}
+};
 
 %nodefaultctor Handle_NIS_SelectFilter;
 class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_NIS_SelectFilter();
 		%feature("autodoc", "1");
 		Handle_NIS_SelectFilter();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
 	return (NIS_SelectFilter*)$self->Access();
 	}
 };
+%extend Handle_NIS_SelectFilter {
+	~Handle_NIS_SelectFilter() {
+	printf("Call custom destructor for instance of Handle_NIS_SelectFilter\n");
+	}
+};
 
 %nodefaultctor Handle_NIS_Drawer;
 class Handle_NIS_Drawer : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_NIS_Drawer();
 		%feature("autodoc", "1");
 		Handle_NIS_Drawer();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_NIS_Drawer : public Handle_Standard_Transient {
 	return (NIS_Drawer*)$self->Access();
 	}
 };
+%extend Handle_NIS_Drawer {
+	~Handle_NIS_Drawer() {
+	printf("Call custom destructor for instance of Handle_NIS_Drawer\n");
+	}
+};
 
 %nodefaultctor Handle_NIS_TriangulatedDrawer;
 class Handle_NIS_TriangulatedDrawer : public Handle_NIS_Drawer {
 	public:
-		%feature("autodoc", "1");
-		~Handle_NIS_TriangulatedDrawer();
 		%feature("autodoc", "1");
 		Handle_NIS_TriangulatedDrawer();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_NIS_TriangulatedDrawer : public Handle_NIS_Drawer {
 	return (NIS_TriangulatedDrawer*)$self->Access();
 	}
 };
+%extend Handle_NIS_TriangulatedDrawer {
+	~Handle_NIS_TriangulatedDrawer() {
+	printf("Call custom destructor for instance of Handle_NIS_TriangulatedDrawer\n");
+	}
+};
 
 %nodefaultctor Handle_NIS_InteractiveContext;
 class Handle_NIS_InteractiveContext : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_NIS_InteractiveContext();
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveContext();
 		%feature("autodoc", "1");
@@ -223,12 +236,15 @@ class Handle_NIS_InteractiveContext : public Handle_Standard_Transient {
 	return (NIS_InteractiveContext*)$self->Access();
 	}
 };
+%extend Handle_NIS_InteractiveContext {
+	~Handle_NIS_InteractiveContext() {
+	printf("Call custom destructor for instance of Handle_NIS_InteractiveContext\n");
+	}
+};
 
 %nodefaultctor Handle_NIS_Surface;
 class Handle_NIS_Surface : public Handle_NIS_InteractiveObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_NIS_Surface();
 		%feature("autodoc", "1");
 		Handle_NIS_Surface();
 		%feature("autodoc", "1");
@@ -244,12 +260,15 @@ class Handle_NIS_Surface : public Handle_NIS_InteractiveObject {
 	return (NIS_Surface*)$self->Access();
 	}
 };
+%extend Handle_NIS_Surface {
+	~Handle_NIS_Surface() {
+	printf("Call custom destructor for instance of Handle_NIS_Surface\n");
+	}
+};
 
 %nodefaultctor Handle_NIS_SurfaceDrawer;
 class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
 	public:
-		%feature("autodoc", "1");
-		~Handle_NIS_SurfaceDrawer();
 		%feature("autodoc", "1");
 		Handle_NIS_SurfaceDrawer();
 		%feature("autodoc", "1");
@@ -265,12 +284,15 @@ class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
 	return (NIS_SurfaceDrawer*)$self->Access();
 	}
 };
+%extend Handle_NIS_SurfaceDrawer {
+	~Handle_NIS_SurfaceDrawer() {
+	printf("Call custom destructor for instance of Handle_NIS_SurfaceDrawer\n");
+	}
+};
 
 %nodefaultctor Handle_NIS_View;
 class Handle_NIS_View : public Handle_V3d_OrthographicView {
 	public:
-		%feature("autodoc", "1");
-		~Handle_NIS_View();
 		%feature("autodoc", "1");
 		Handle_NIS_View();
 		%feature("autodoc", "1");
@@ -284,6 +306,11 @@ class Handle_NIS_View : public Handle_V3d_OrthographicView {
 %extend Handle_NIS_View {
 	NIS_View* GetObject() {
 	return (NIS_View*)$self->Access();
+	}
+};
+%extend Handle_NIS_View {
+	~Handle_NIS_View() {
+	printf("Call custom destructor for instance of Handle_NIS_View\n");
 	}
 };
 
@@ -335,6 +362,11 @@ class NIS_InteractiveObject : public Standard_Transient {
 	return *(Handle_NIS_InteractiveObject*) &$self;
 	}
 };
+%extend NIS_InteractiveObject {
+	~NIS_InteractiveObject() {
+	printf("Call custom destructor for instance of NIS_InteractiveObject\n");
+	}
+};
 
 %nodefaultctor NIS_Triangulated;
 class NIS_Triangulated : public NIS_InteractiveObject {
@@ -359,8 +391,6 @@ class NIS_Triangulated : public NIS_InteractiveObject {
 		Standard_Boolean IsSegments() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		virtual		~NIS_Triangulated();
 		%feature("autodoc", "1");
 		void SetNode(const Standard_Integer ind, const gp_XYZ &thePnt);
 		%feature("autodoc", "1");
@@ -408,6 +438,11 @@ class NIS_Triangulated : public NIS_InteractiveObject {
 %extend NIS_Triangulated {
 	Handle_NIS_Triangulated GetHandle() {
 	return *(Handle_NIS_Triangulated*) &$self;
+	}
+};
+%extend NIS_Triangulated {
+	~NIS_Triangulated() {
+	printf("Call custom destructor for instance of NIS_Triangulated\n");
 	}
 };
 
@@ -473,6 +508,11 @@ class NIS_Drawer : public Standard_Transient {
 	return *(Handle_NIS_Drawer*) &$self;
 	}
 };
+%extend NIS_Drawer {
+	~NIS_Drawer() {
+	printf("Call custom destructor for instance of NIS_Drawer\n");
+	}
+};
 
 %nodefaultctor NIS_SurfaceDrawer;
 class NIS_SurfaceDrawer : public NIS_Drawer {
@@ -497,13 +537,16 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 		virtual		void AfterDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
 		%feature("autodoc", "1");
 		virtual		void Draw(const Handle_NIS_InteractiveObject &arg0, const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
-		%feature("autodoc", "1");
-		virtual		~NIS_SurfaceDrawer();
 
 };
 %extend NIS_SurfaceDrawer {
 	Handle_NIS_SurfaceDrawer GetHandle() {
 	return *(Handle_NIS_SurfaceDrawer*) &$self;
+	}
+};
+%extend NIS_SurfaceDrawer {
+	~NIS_SurfaceDrawer() {
+	printf("Call custom destructor for instance of NIS_SurfaceDrawer\n");
 	}
 };
 
@@ -512,8 +555,6 @@ class NIS_InteractiveContext : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
 		NIS_InteractiveContext();
-		%feature("autodoc", "1");
-		virtual		~NIS_InteractiveContext();
 		%feature("autodoc", "1");
 		void AttachView(const Handle_NIS_View &theView);
 		%feature("autodoc", "1");
@@ -577,6 +618,11 @@ class NIS_InteractiveContext : public Standard_Transient {
 	return *(Handle_NIS_InteractiveContext*) &$self;
 	}
 };
+%extend NIS_InteractiveContext {
+	~NIS_InteractiveContext() {
+	printf("Call custom destructor for instance of NIS_InteractiveContext\n");
+	}
+};
 
 %nodefaultctor NIS_Surface;
 class NIS_Surface : public NIS_InteractiveObject {
@@ -585,8 +631,6 @@ class NIS_Surface : public NIS_InteractiveObject {
 		NIS_Surface(const Handle_Poly_Triangulation &theTri, const Handle_NCollection_BaseAllocator &theAlloc=0l);
 		%feature("autodoc", "1");
 		NIS_Surface(const TopoDS_Shape &theShape, const Handle_NCollection_BaseAllocator &theAlloc=0l);
-		%feature("autodoc", "1");
-		virtual		~NIS_Surface();
 		%feature("autodoc", "1");
 		Standard_Integer NNodes() const;
 		%feature("autodoc", "1");
@@ -618,6 +662,11 @@ class NIS_Surface : public NIS_InteractiveObject {
 %extend NIS_Surface {
 	Handle_NIS_Surface GetHandle() {
 	return *(Handle_NIS_Surface*) &$self;
+	}
+};
+%extend NIS_Surface {
+	~NIS_Surface() {
+	printf("Call custom destructor for instance of NIS_Surface\n");
 	}
 };
 
@@ -657,6 +706,11 @@ class NIS_SelectFilter : public Standard_Transient {
 	return *(Handle_NIS_SelectFilter*) &$self;
 	}
 };
+%extend NIS_SelectFilter {
+	~NIS_SelectFilter() {
+	printf("Call custom destructor for instance of NIS_SelectFilter\n");
+	}
+};
 
 %nodefaultctor NIS_View;
 class NIS_View : public V3d_OrthographicView {
@@ -679,13 +733,16 @@ class NIS_View : public V3d_OrthographicView {
 		Handle_NIS_InteractiveObject Pick(const gp_Ax1 &theAxis, const Standard_Real theOver, const Standard_Boolean isOnlySelectable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~NIS_View();
 
 };
 %extend NIS_View {
 	Handle_NIS_View GetHandle() {
 	return *(Handle_NIS_View*) &$self;
+	}
+};
+%extend NIS_View {
+	~NIS_View() {
+	printf("Call custom destructor for instance of NIS_View\n");
 	}
 };
 
@@ -706,12 +763,15 @@ class NIS_TriangulatedDrawer : public NIS_Drawer {
 		virtual		Standard_Boolean IsEqual(const Handle_NIS_Drawer &theOth) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~NIS_TriangulatedDrawer();
 
 };
 %extend NIS_TriangulatedDrawer {
 	Handle_NIS_TriangulatedDrawer GetHandle() {
 	return *(Handle_NIS_TriangulatedDrawer*) &$self;
+	}
+};
+%extend NIS_TriangulatedDrawer {
+	~NIS_TriangulatedDrawer() {
+	printf("Call custom destructor for instance of NIS_TriangulatedDrawer\n");
 	}
 };

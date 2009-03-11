@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ShapeConstruct_ProjectCurveOnSurface();
-		%feature("autodoc", "1");
 		Handle_ShapeConstruct_ProjectCurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_ShapeConstruct_ProjectCurveOnSurface(const Handle_ShapeConstruct_ProjectCurveOnSurface &aHandle);
@@ -116,6 +114,11 @@ class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 %extend Handle_ShapeConstruct_ProjectCurveOnSurface {
 	ShapeConstruct_ProjectCurveOnSurface* GetObject() {
 	return (ShapeConstruct_ProjectCurveOnSurface*)$self->Access();
+	}
+};
+%extend Handle_ShapeConstruct_ProjectCurveOnSurface {
+	~Handle_ShapeConstruct_ProjectCurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_ShapeConstruct_ProjectCurveOnSurface\n");
 	}
 };
 
@@ -170,13 +173,16 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 		Standard_Boolean PerformAdvanced(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeConstruct_ProjectCurveOnSurface();
 
 };
 %extend ShapeConstruct_ProjectCurveOnSurface {
 	Handle_ShapeConstruct_ProjectCurveOnSurface GetHandle() {
 	return *(Handle_ShapeConstruct_ProjectCurveOnSurface*) &$self;
+	}
+};
+%extend ShapeConstruct_ProjectCurveOnSurface {
+	~ShapeConstruct_ProjectCurveOnSurface() {
+	printf("Call custom destructor for instance of ShapeConstruct_ProjectCurveOnSurface\n");
 	}
 };
 

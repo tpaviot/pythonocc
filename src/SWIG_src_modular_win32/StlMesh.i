@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StlMesh_MeshDomain();
-		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain();
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain(const Handle_StlMesh_MeshDomain &aHandle);
@@ -118,12 +116,15 @@ class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 	return (StlMesh_MeshDomain*)$self->Access();
 	}
 };
+%extend Handle_StlMesh_MeshDomain {
+	~Handle_StlMesh_MeshDomain() {
+	printf("Call custom destructor for instance of Handle_StlMesh_MeshDomain\n");
+	}
+};
 
 %nodefaultctor Handle_StlMesh_MeshTriangle;
 class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StlMesh_MeshTriangle();
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshTriangle();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 	return (StlMesh_MeshTriangle*)$self->Access();
 	}
 };
+%extend Handle_StlMesh_MeshTriangle {
+	~Handle_StlMesh_MeshTriangle() {
+	printf("Call custom destructor for instance of Handle_StlMesh_MeshTriangle\n");
+	}
+};
 
 %nodefaultctor Handle_StlMesh_Mesh;
 class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StlMesh_Mesh();
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
 	return (StlMesh_Mesh*)$self->Access();
 	}
 };
+%extend Handle_StlMesh_Mesh {
+	~Handle_StlMesh_Mesh() {
+	printf("Call custom destructor for instance of Handle_StlMesh_Mesh\n");
+	}
+};
 
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMesh;
 class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StlMesh_SequenceNodeOfSequenceOfMesh();
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMesh();
 		%feature("autodoc", "1");
@@ -181,12 +188,15 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_Se
 	return (StlMesh_SequenceNodeOfSequenceOfMesh*)$self->Access();
 	}
 };
+%extend Handle_StlMesh_SequenceNodeOfSequenceOfMesh {
+	~Handle_StlMesh_SequenceNodeOfSequenceOfMesh() {
+	printf("Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMesh\n");
+	}
+};
 
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain;
 class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain();
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain();
 		%feature("autodoc", "1");
@@ -202,12 +212,15 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollect
 	return (StlMesh_SequenceNodeOfSequenceOfMeshDomain*)$self->Access();
 	}
 };
+%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+	~Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
+	printf("Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");
+	}
+};
 
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle;
 class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle();
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle();
 		%feature("autodoc", "1");
@@ -221,6 +234,11 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TColle
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
 	StlMesh_SequenceNodeOfSequenceOfMeshTriangle* GetObject() {
 	return (StlMesh_SequenceNodeOfSequenceOfMeshTriangle*)$self->Access();
+	}
+};
+%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
+	~Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle() {
+	printf("Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");
 	}
 };
 
@@ -249,13 +267,16 @@ class StlMesh_MeshDomain : public MMgt_TShared {
 		virtual		const TColgp_SequenceOfXYZ & Vertices() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StlMesh_MeshDomain();
 
 };
 %extend StlMesh_MeshDomain {
 	Handle_StlMesh_MeshDomain GetHandle() {
 	return *(Handle_StlMesh_MeshDomain*) &$self;
+	}
+};
+%extend StlMesh_MeshDomain {
+	~StlMesh_MeshDomain() {
+	printf("Call custom destructor for instance of StlMesh_MeshDomain\n");
 	}
 };
 
@@ -298,13 +319,16 @@ class StlMesh_Mesh : public MMgt_TShared {
 		virtual		const TColgp_SequenceOfXYZ & Vertices(const Standard_Integer DomainIndex=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StlMesh_Mesh();
 
 };
 %extend StlMesh_Mesh {
 	Handle_StlMesh_Mesh GetHandle() {
 	return *(Handle_StlMesh_Mesh*) &$self;
+	}
+};
+%extend StlMesh_Mesh {
+	~StlMesh_Mesh() {
+	printf("Call custom destructor for instance of StlMesh_Mesh\n");
 	}
 };
 
@@ -389,13 +413,16 @@ class StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public TCollection_SeqNode 
 		Handle_StlMesh_MeshTriangle & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StlMesh_SequenceNodeOfSequenceOfMeshTriangle();
 
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
 	Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle GetHandle() {
 	return *(Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle*) &$self;
+	}
+};
+%extend StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
+	~StlMesh_SequenceNodeOfSequenceOfMeshTriangle() {
+	printf("Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");
 	}
 };
 
@@ -416,13 +443,16 @@ class StlMesh_MeshTriangle : public MMgt_TShared {
 		void SetVertex(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StlMesh_MeshTriangle();
 
 };
 %extend StlMesh_MeshTriangle {
 	Handle_StlMesh_MeshTriangle GetHandle() {
 	return *(Handle_StlMesh_MeshTriangle*) &$self;
+	}
+};
+%extend StlMesh_MeshTriangle {
+	~StlMesh_MeshTriangle() {
+	printf("Call custom destructor for instance of StlMesh_MeshTriangle\n");
 	}
 };
 
@@ -435,13 +465,16 @@ class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
 		Handle_StlMesh_MeshDomain & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StlMesh_SequenceNodeOfSequenceOfMeshDomain();
 
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
 	Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain GetHandle() {
 	return *(Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain*) &$self;
+	}
+};
+%extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+	~StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
+	printf("Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");
 	}
 };
 
@@ -454,13 +487,16 @@ class StlMesh_SequenceNodeOfSequenceOfMesh : public TCollection_SeqNode {
 		Handle_StlMesh_Mesh & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StlMesh_SequenceNodeOfSequenceOfMesh();
 
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMesh {
 	Handle_StlMesh_SequenceNodeOfSequenceOfMesh GetHandle() {
 	return *(Handle_StlMesh_SequenceNodeOfSequenceOfMesh*) &$self;
+	}
+};
+%extend StlMesh_SequenceNodeOfSequenceOfMesh {
+	~StlMesh_SequenceNodeOfSequenceOfMesh() {
+	printf("Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMesh\n");
 	}
 };
 

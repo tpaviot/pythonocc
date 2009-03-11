@@ -103,8 +103,6 @@ typedef BRepBuilderAPI_Sewing BRepOffsetAPI_Sewing;
 class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape();
-		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape();
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape &aHandle);
@@ -119,12 +117,15 @@ class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public H
 	return (BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape*)$self->Access();
 	}
 };
+%extend Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	~Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal;
 class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal();
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal();
 		%feature("autodoc", "1");
@@ -140,12 +141,15 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handl
 	return (BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal*)$self->Access();
 	}
 };
+%extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
+	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal() {
+	printf("Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape;
 class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape();
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape();
 		%feature("autodoc", "1");
@@ -159,6 +163,11 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Hand
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape* GetObject() {
 	return (BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape*)$self->Access();
+	}
+};
+%extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
+	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
+	printf("Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");
 	}
 };
 
@@ -299,13 +308,16 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection
 		TopTools_SequenceOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape();
 
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape GetHandle() {
 	return *(Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape*) &$self;
+	}
+};
+%extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
+	~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");
 	}
 };
 
@@ -394,13 +406,16 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_
 		TColStd_SequenceOfReal & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal();
 
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
 	Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal GetHandle() {
 	return *(Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal*) &$self;
+	}
+};
+%extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
+	~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");
 	}
 };
 
@@ -511,13 +526,16 @@ class BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollect
 		TopTools_SequenceOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape();
 
 };
 %extend BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
 	Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape GetHandle() {
 	return *(Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape*) &$self;
+	}
+};
+%extend BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	~BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");
 	}
 };
 

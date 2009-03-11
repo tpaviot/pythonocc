@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GGraphic2d_Curve();
-		%feature("autodoc", "1");
 		Handle_GGraphic2d_Curve();
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_Curve(const Handle_GGraphic2d_Curve &aHandle);
@@ -118,12 +116,15 @@ class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 	return (GGraphic2d_Curve*)$self->Access();
 	}
 };
+%extend Handle_GGraphic2d_Curve {
+	~Handle_GGraphic2d_Curve() {
+	printf("Call custom destructor for instance of Handle_GGraphic2d_Curve\n");
+	}
+};
 
 %nodefaultctor Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve;
 class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve();
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve();
 		%feature("autodoc", "1");
@@ -139,12 +140,15 @@ class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollectio
 	return (GGraphic2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
 	}
 };
+%extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
+	~Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_GGraphic2d_CurveDefinitionError;
 class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GGraphic2d_CurveDefinitionError();
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_CurveDefinitionError();
 		%feature("autodoc", "1");
@@ -160,12 +164,15 @@ class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange
 	return (GGraphic2d_CurveDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_GGraphic2d_CurveDefinitionError {
+	~Handle_GGraphic2d_CurveDefinitionError() {
+	printf("Call custom destructor for instance of Handle_GGraphic2d_CurveDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_GGraphic2d_SetOfCurves;
 class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GGraphic2d_SetOfCurves();
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SetOfCurves();
 		%feature("autodoc", "1");
@@ -181,6 +188,11 @@ class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 	return (GGraphic2d_SetOfCurves*)$self->Access();
 	}
 };
+%extend Handle_GGraphic2d_SetOfCurves {
+	~Handle_GGraphic2d_SetOfCurves() {
+	printf("Call custom destructor for instance of Handle_GGraphic2d_SetOfCurves\n");
+	}
+};
 
 %nodefaultctor GGraphic2d_SequenceNodeOfSequenceOfCurve;
 class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
@@ -191,13 +203,16 @@ class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 		Handle_Geom2d_Curve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GGraphic2d_SequenceNodeOfSequenceOfCurve();
 
 };
 %extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
 	Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve GetHandle() {
 	return *(Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve*) &$self;
+	}
+};
+%extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
+	~GGraphic2d_SequenceNodeOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of GGraphic2d_SequenceNodeOfSequenceOfCurve\n");
 	}
 };
 
@@ -214,13 +229,16 @@ class GGraphic2d_SetOfCurves : public Graphic2d_Line {
 		Handle_Geom2d_Curve Values(const Standard_Integer aRank) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GGraphic2d_SetOfCurves();
 
 };
 %extend GGraphic2d_SetOfCurves {
 	Handle_GGraphic2d_SetOfCurves GetHandle() {
 	return *(Handle_GGraphic2d_SetOfCurves*) &$self;
+	}
+};
+%extend GGraphic2d_SetOfCurves {
+	~GGraphic2d_SetOfCurves() {
+	printf("Call custom destructor for instance of GGraphic2d_SetOfCurves\n");
 	}
 };
 
@@ -285,13 +303,16 @@ class GGraphic2d_Curve : public Graphic2d_Line {
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GGraphic2d_Curve();
 
 };
 %extend GGraphic2d_Curve {
 	Handle_GGraphic2d_Curve GetHandle() {
 	return *(Handle_GGraphic2d_Curve*) &$self;
+	}
+};
+%extend GGraphic2d_Curve {
+	~GGraphic2d_Curve() {
+	printf("Call custom destructor for instance of GGraphic2d_Curve\n");
 	}
 };
 
@@ -310,12 +331,15 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 		Handle_GGraphic2d_CurveDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GGraphic2d_CurveDefinitionError();
 
 };
 %extend GGraphic2d_CurveDefinitionError {
 	Handle_GGraphic2d_CurveDefinitionError GetHandle() {
 	return *(Handle_GGraphic2d_CurveDefinitionError*) &$self;
+	}
+};
+%extend GGraphic2d_CurveDefinitionError {
+	~GGraphic2d_CurveDefinitionError() {
+	printf("Call custom destructor for instance of GGraphic2d_CurveDefinitionError\n");
 	}
 };

@@ -110,8 +110,6 @@ enum TCollection_Side {
 class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TCollection_SeqNode();
-		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode();
 		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode(const Handle_TCollection_SeqNode &aHandle);
@@ -126,12 +124,15 @@ class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 	return (TCollection_SeqNode*)$self->Access();
 	}
 };
+%extend Handle_TCollection_SeqNode {
+	~Handle_TCollection_SeqNode() {
+	printf("Call custom destructor for instance of Handle_TCollection_SeqNode\n");
+	}
+};
 
 %nodefaultctor Handle_TCollection_HExtendedString;
 class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_HExtendedString();
 		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString();
 		%feature("autodoc", "1");
@@ -147,12 +148,15 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 	return (TCollection_HExtendedString*)$self->Access();
 	}
 };
+%extend Handle_TCollection_HExtendedString {
+	~Handle_TCollection_HExtendedString() {
+	printf("Call custom destructor for instance of Handle_TCollection_HExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_TCollection_AVLBaseNode;
 class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_AVLBaseNode();
 		%feature("autodoc", "1");
 		Handle_TCollection_AVLBaseNode();
 		%feature("autodoc", "1");
@@ -168,12 +172,15 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 	return (TCollection_AVLBaseNode*)$self->Access();
 	}
 };
+%extend Handle_TCollection_AVLBaseNode {
+	~Handle_TCollection_AVLBaseNode() {
+	printf("Call custom destructor for instance of Handle_TCollection_AVLBaseNode\n");
+	}
+};
 
 %nodefaultctor Handle_TCollection_HAsciiString;
 class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_HAsciiString();
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString();
 		%feature("autodoc", "1");
@@ -189,12 +196,15 @@ class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 	return (TCollection_HAsciiString*)$self->Access();
 	}
 };
+%extend Handle_TCollection_HAsciiString {
+	~Handle_TCollection_HAsciiString() {
+	printf("Call custom destructor for instance of Handle_TCollection_HAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_TCollection_MapNode;
 class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_MapNode();
 		%feature("autodoc", "1");
 		Handle_TCollection_MapNode();
 		%feature("autodoc", "1");
@@ -208,6 +218,11 @@ class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 %extend Handle_TCollection_MapNode {
 	TCollection_MapNode* GetObject() {
 	return (TCollection_MapNode*)$self->Access();
+	}
+};
+%extend Handle_TCollection_MapNode {
+	~Handle_TCollection_MapNode() {
+	printf("Call custom destructor for instance of Handle_TCollection_MapNode\n");
 	}
 };
 
@@ -440,13 +455,16 @@ class TCollection_MapNode : public MMgt_TShared {
 		TCollection_MapNodePtr & Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_MapNode();
 
 };
 %extend TCollection_MapNode {
 	Handle_TCollection_MapNode GetHandle() {
 	return *(Handle_TCollection_MapNode*) &$self;
+	}
+};
+%extend TCollection_MapNode {
+	~TCollection_MapNode() {
+	printf("Call custom destructor for instance of TCollection_MapNode\n");
 	}
 };
 
@@ -487,13 +505,16 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 		Standard_Integer & Count() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_AVLBaseNode();
 
 };
 %extend TCollection_AVLBaseNode {
 	Handle_TCollection_AVLBaseNode GetHandle() {
 	return *(Handle_TCollection_AVLBaseNode*) &$self;
+	}
+};
+%extend TCollection_AVLBaseNode {
+	~TCollection_AVLBaseNode() {
+	printf("Call custom destructor for instance of TCollection_AVLBaseNode\n");
 	}
 };
 
@@ -742,13 +763,16 @@ class TCollection_HExtendedString : public MMgt_TShared {
 		Standard_Boolean IsSameState(const Handle_TCollection_HExtendedString &other) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_HExtendedString();
 
 };
 %extend TCollection_HExtendedString {
 	Handle_TCollection_HExtendedString GetHandle() {
 	return *(Handle_TCollection_HExtendedString*) &$self;
+	}
+};
+%extend TCollection_HExtendedString {
+	~TCollection_HExtendedString() {
+	printf("Call custom destructor for instance of TCollection_HExtendedString\n");
 	}
 };
 
@@ -779,13 +803,16 @@ class TCollection_SeqNode : public MMgt_TShared {
 		TCollection_SeqNodePtr & Previous() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_SeqNode();
 
 };
 %extend TCollection_SeqNode {
 	Handle_TCollection_SeqNode GetHandle() {
 	return *(Handle_TCollection_SeqNode*) &$self;
+	}
+};
+%extend TCollection_SeqNode {
+	~TCollection_SeqNode() {
+	printf("Call custom destructor for instance of TCollection_SeqNode\n");
 	}
 };
 
@@ -972,12 +999,15 @@ class TCollection_HAsciiString : public MMgt_TShared {
 		Standard_Boolean IsSameState(const Handle_TCollection_HAsciiString &other) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_HAsciiString();
 
 };
 %extend TCollection_HAsciiString {
 	Handle_TCollection_HAsciiString GetHandle() {
 	return *(Handle_TCollection_HAsciiString*) &$self;
+	}
+};
+%extend TCollection_HAsciiString {
+	~TCollection_HAsciiString() {
+	printf("Call custom destructor for instance of TCollection_HAsciiString\n");
 	}
 };

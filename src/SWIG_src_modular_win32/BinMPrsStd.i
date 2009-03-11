@@ -102,8 +102,6 @@ Standard_Real & function transformation
 class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BinMPrsStd_PositionDriver();
-		%feature("autodoc", "1");
 		Handle_BinMPrsStd_PositionDriver();
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_PositionDriver(const Handle_BinMPrsStd_PositionDriver &aHandle);
@@ -118,12 +116,15 @@ class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 	return (BinMPrsStd_PositionDriver*)$self->Access();
 	}
 };
+%extend Handle_BinMPrsStd_PositionDriver {
+	~Handle_BinMPrsStd_PositionDriver() {
+	printf("Call custom destructor for instance of Handle_BinMPrsStd_PositionDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinMPrsStd_AISPresentationDriver;
 class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinMPrsStd_AISPresentationDriver();
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_AISPresentationDriver();
 		%feature("autodoc", "1");
@@ -137,6 +138,11 @@ class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 %extend Handle_BinMPrsStd_AISPresentationDriver {
 	BinMPrsStd_AISPresentationDriver* GetObject() {
 	return (BinMPrsStd_AISPresentationDriver*)$self->Access();
+	}
+};
+%extend Handle_BinMPrsStd_AISPresentationDriver {
+	~Handle_BinMPrsStd_AISPresentationDriver() {
+	printf("Call custom destructor for instance of Handle_BinMPrsStd_AISPresentationDriver\n");
 	}
 };
 
@@ -165,13 +171,16 @@ class BinMPrsStd_AISPresentationDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMPrsStd_AISPresentationDriver();
 
 };
 %extend BinMPrsStd_AISPresentationDriver {
 	Handle_BinMPrsStd_AISPresentationDriver GetHandle() {
 	return *(Handle_BinMPrsStd_AISPresentationDriver*) &$self;
+	}
+};
+%extend BinMPrsStd_AISPresentationDriver {
+	~BinMPrsStd_AISPresentationDriver() {
+	printf("Call custom destructor for instance of BinMPrsStd_AISPresentationDriver\n");
 	}
 };
 
@@ -188,12 +197,15 @@ class BinMPrsStd_PositionDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMPrsStd_PositionDriver();
 
 };
 %extend BinMPrsStd_PositionDriver {
 	Handle_BinMPrsStd_PositionDriver GetHandle() {
 	return *(Handle_BinMPrsStd_PositionDriver*) &$self;
+	}
+};
+%extend BinMPrsStd_PositionDriver {
+	~BinMPrsStd_PositionDriver() {
+	printf("Call custom destructor for instance of BinMPrsStd_PositionDriver\n");
 	}
 };

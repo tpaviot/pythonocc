@@ -559,7 +559,11 @@ class ModularBuilder(object):
         for mem_fun in class_declaration.public_members:#member_functions():
             # Member functions to exclude
             function_name = mem_fun.name
-            if not self.MEMBER_FUNCTIONS_TO_EXCLUDE.has_key(class_name):
+            if (function_name.startswith('~') and class_name.startswith('Handle_')):#DESTRUCTOR
+                print "Destructor found for a Handle_* class: ignored."
+            elif (function_name.startswith('~') and (('Handle_%s'%class_name) in self.ALREADY_EXPOSED)):
+                print "Destructor found for a smart pointer managed class."
+            elif not self.MEMBER_FUNCTIONS_TO_EXCLUDE.has_key(class_name):
                 self.write_function(mem_fun,CURRENT_CLASS_IS_ABSTRACT)
             elif function_name not in self.MEMBER_FUNCTIONS_TO_EXCLUDE[class_name]:
                  self.write_function(mem_fun,CURRENT_CLASS_IS_ABSTRACT)
@@ -573,6 +577,21 @@ class ModularBuilder(object):
             pointed_class = class_name[7:]
             self.fp.write("\t%s* GetObject() {\n"%pointed_class)
             self.fp.write("\treturn (%s*)$self->Access();\n\t}\n};"%pointed_class)
+            # Customize destructor
+            self.fp.write('\n%')
+            self.fp.write('extend %s {\n'%class_name)
+            self.fp.write('\t~%s() {\n\tprintf("Call custom destructor for instance of %s\\n");'%(class_name,class_name))
+            self.fp.write('\n\t}\n};')
+#        if (class_name == 'Handle_Standard_Transient'):
+#            #
+#            # Add a method to prevent deletion from Python
+#            #
+#            self.fp.write('\n%extend Handle_Standard_Transient {\nvoid __swig_destroy__() {\nprintf("Trying to delete Handle_Standard_Transient based object\\n");}};')
+#        if (class_name  == 'Standard_Transient'):
+#            #
+#            # Add a method to prevent deletion from Python
+#            #
+#            self.fp.write('\n%extend Standard_Transient {\nvoid __del__() {\nprintf("Trying to delete Standard_Transient based object\\n");}};')
         #
         # Adding a method GetHandle() to objects managed by handles
         #
@@ -582,6 +601,11 @@ class ModularBuilder(object):
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\t%s GetHandle() {\n"%handle_class_name)
             self.fp.write("\treturn *(%s*) &$self;\n\t}\n};"%handle_class_name)
+            # Customize destructor
+            self.fp.write('\n%')
+            self.fp.write('extend %s {\n'%class_name)
+            self.fp.write('\t~%s() {\n\tprintf("Call custom destructor for instance of %s\\n");'%(class_name,class_name))
+            self.fp.write('\n\t}\n};')
         #
         # On l'ajoute a la liste des classes deja exposees
         #

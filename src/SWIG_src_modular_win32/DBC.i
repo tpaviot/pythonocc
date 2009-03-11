@@ -103,8 +103,6 @@ typedef void * DBC_DBVArray;
 class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_DBC_VArrayNodeOfVArrayOfInteger();
-		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfInteger();
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfInteger(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
@@ -119,12 +117,15 @@ class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode
 	return (DBC_VArrayNodeOfVArrayOfInteger*)$self->Access();
 	}
 };
+%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
+	~Handle_DBC_VArrayNodeOfVArrayOfInteger() {
+	printf("Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfExtCharacter;
 class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_DBC_VArrayNodeOfVArrayOfExtCharacter();
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter();
 		%feature("autodoc", "1");
@@ -140,12 +141,15 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 	return (DBC_VArrayNodeOfVArrayOfExtCharacter*)$self->Access();
 	}
 };
+%extend Handle_DBC_VArrayNodeOfVArrayOfExtCharacter {
+	~Handle_DBC_VArrayNodeOfVArrayOfExtCharacter() {
+	printf("Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfExtCharacter\n");
+	}
+};
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfCharacter;
 class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_DBC_VArrayNodeOfVArrayOfCharacter();
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfCharacter();
 		%feature("autodoc", "1");
@@ -161,12 +165,15 @@ class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNo
 	return (DBC_VArrayNodeOfVArrayOfCharacter*)$self->Access();
 	}
 };
+%extend Handle_DBC_VArrayNodeOfVArrayOfCharacter {
+	~Handle_DBC_VArrayNodeOfVArrayOfCharacter() {
+	printf("Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfCharacter\n");
+	}
+};
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfReal;
 class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_DBC_VArrayNodeOfVArrayOfReal();
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfReal();
 		%feature("autodoc", "1");
@@ -180,6 +187,11 @@ class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 %extend Handle_DBC_VArrayNodeOfVArrayOfReal {
 	DBC_VArrayNodeOfVArrayOfReal* GetObject() {
 	return (DBC_VArrayNodeOfVArrayOfReal*)$self->Access();
+	}
+};
+%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
+	~Handle_DBC_VArrayNodeOfVArrayOfReal() {
+	printf("Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfReal\n");
 	}
 };
 
@@ -218,13 +230,16 @@ class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
 		void _CSFDB_SetDBC_VArrayNodeOfVArrayOfExtCharactermyValue(const Standard_ExtCharacter p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~DBC_VArrayNodeOfVArrayOfExtCharacter();
 
 };
 %extend DBC_VArrayNodeOfVArrayOfExtCharacter {
 	Handle_DBC_VArrayNodeOfVArrayOfExtCharacter GetHandle() {
 	return *(Handle_DBC_VArrayNodeOfVArrayOfExtCharacter*) &$self;
+	}
+};
+%extend DBC_VArrayNodeOfVArrayOfExtCharacter {
+	~DBC_VArrayNodeOfVArrayOfExtCharacter() {
+	printf("Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfExtCharacter\n");
 	}
 };
 
@@ -365,13 +380,16 @@ class DBC_VArrayNodeOfVArrayOfCharacter : public PStandard_ArrayNode {
 		void _CSFDB_SetDBC_VArrayNodeOfVArrayOfCharactermyValue(const Standard_Character p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~DBC_VArrayNodeOfVArrayOfCharacter();
 
 };
 %extend DBC_VArrayNodeOfVArrayOfCharacter {
 	Handle_DBC_VArrayNodeOfVArrayOfCharacter GetHandle() {
 	return *(Handle_DBC_VArrayNodeOfVArrayOfCharacter*) &$self;
+	}
+};
+%extend DBC_VArrayNodeOfVArrayOfCharacter {
+	~DBC_VArrayNodeOfVArrayOfCharacter() {
+	printf("Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfCharacter\n");
 	}
 };
 
@@ -420,13 +438,16 @@ class DBC_VArrayNodeOfVArrayOfReal : public PStandard_ArrayNode {
 		void _CSFDB_SetDBC_VArrayNodeOfVArrayOfRealmyValue(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~DBC_VArrayNodeOfVArrayOfReal();
 
 };
 %extend DBC_VArrayNodeOfVArrayOfReal {
 	Handle_DBC_VArrayNodeOfVArrayOfReal GetHandle() {
 	return *(Handle_DBC_VArrayNodeOfVArrayOfReal*) &$self;
+	}
+};
+%extend DBC_VArrayNodeOfVArrayOfReal {
+	~DBC_VArrayNodeOfVArrayOfReal() {
+	printf("Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfReal\n");
 	}
 };
 
@@ -491,12 +512,15 @@ class DBC_VArrayNodeOfVArrayOfInteger : public PStandard_ArrayNode {
 		void _CSFDB_SetDBC_VArrayNodeOfVArrayOfIntegermyValue(const Standard_Integer p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~DBC_VArrayNodeOfVArrayOfInteger();
 
 };
 %extend DBC_VArrayNodeOfVArrayOfInteger {
 	Handle_DBC_VArrayNodeOfVArrayOfInteger GetHandle() {
 	return *(Handle_DBC_VArrayNodeOfVArrayOfInteger*) &$self;
+	}
+};
+%extend DBC_VArrayNodeOfVArrayOfInteger {
+	~DBC_VArrayNodeOfVArrayOfInteger() {
+	printf("Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfInteger\n");
 	}
 };
