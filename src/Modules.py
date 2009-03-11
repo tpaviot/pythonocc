@@ -258,8 +258,7 @@ MODULES = [
                                                                'HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter':['Locate']}),
             ('HLRTopoBRep',[],[])                                                               ,
             ('BRepIntCurveSurface',[],[]),
-            ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
-                                'BRepFeat_MakeLinearForm':['TransformShapeFU']}),
+            
             ('MgtTopoDS',['Standard'],[]),
             ('MgtBRep',['Standard'],[]),
 ##################################
@@ -501,6 +500,8 @@ if sys.platform=='win32':
                ('RWStepVisual',['MoniTool','Interface','StepBasic','TCollection'],[]),
                ('TopOpeBRepBuild',['TopOpeBRepDS'],[],{'TopOpeBRepBuild_Builder1':['GFillSplitsPVS']}),
                ('LocOpe',['TopOpeBRepDS','TopOpeBRepTool'],['LocOpe_Revol','LocOpe_RevolutionForm']),
+               ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
+                                'BRepFeat_MakeLinearForm':['TransformShapeFU']}),
                ('TPrsStd',['Aspect',],[]),
                ('EDL',[],[]),
                ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
