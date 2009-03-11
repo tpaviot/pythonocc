@@ -687,6 +687,7 @@ class ModularBuilder(object):
         if sys.platform!='win32':
             #HXX_TO_EXCLUDE.append('TNaming_IteratorOnShapesSet.hxx') #error with gccxml under Linux
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
+            HXX_TO_EXCLUDE.append('Xw_Cextern.hxx')
             #HXX_TO_EXCLUDE.append('Interface_STAT.hxx')
             #HXX_TO_EXCLUDE.append('Interface_CheckIterator.hxx')
         # Under Linux, remove all *WNT* classes
