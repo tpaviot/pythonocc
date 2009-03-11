@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module MAT2d
 
@@ -98,116 +84,9 @@ Standard_Real & function transformation
 
 
 
-%nodefaultctor Handle_MAT2d_Connexion;
-class Handle_MAT2d_Connexion : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_Connexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion(const Handle_MAT2d_Connexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion(const MAT2d_Connexion *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_Connexion {
-	MAT2d_Connexion* GetObject() {
-	return (MAT2d_Connexion*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfConnexion;
-class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_SequenceNodeOfSequenceOfConnexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const Handle_MAT2d_SequenceNodeOfSequenceOfConnexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const MAT2d_SequenceNodeOfSequenceOfConnexion *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
-	MAT2d_SequenceNodeOfSequenceOfConnexion* GetObject() {
-	return (MAT2d_SequenceNodeOfSequenceOfConnexion*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
-class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
-	MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion* GetObject() {
-	return (MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
-class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry();
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry();
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry(const Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry(const MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
-	MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry* GetObject() {
-	return (MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_MAT2d_Circuit;
-class Handle_MAT2d_Circuit : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_Circuit();
-		%feature("autodoc", "1");
-		Handle_MAT2d_Circuit();
-		%feature("autodoc", "1");
-		Handle_MAT2d_Circuit(const Handle_MAT2d_Circuit &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Circuit(const MAT2d_Circuit *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Circuit const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_Circuit {
-	MAT2d_Circuit* GetObject() {
-	return (MAT2d_Circuit*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion;
 class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion();
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion();
 		%feature("autodoc", "1");
@@ -223,54 +102,111 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public Handle_TColle
 	return (MAT2d_DataMapNodeOfDataMapOfIntegerConnexion*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger;
-class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger();
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger();
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
-	MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger* GetObject() {
-	return (MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger*)$self->Access();
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
+	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion() {
+	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion\n");
 	}
 };
 
-%nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve;
-class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfConnexion;
+class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve();
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion();
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve();
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const Handle_MAT2d_SequenceNodeOfSequenceOfConnexion &aHandle);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve(const Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const MAT2d_SequenceNodeOfSequenceOfConnexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve(const MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
-	MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve* GetObject() {
-	return (MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve*)$self->Access();
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
+	MAT2d_SequenceNodeOfSequenceOfConnexion* GetObject() {
+	return (MAT2d_SequenceNodeOfSequenceOfConnexion*)$self->Access();
+	}
+};
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
+	~Handle_MAT2d_SequenceNodeOfSequenceOfConnexion() {
+	printf("Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfConnexion\n");
+	}
+};
+
+%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
+class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion();
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
+	MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion* GetObject() {
+	return (MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion*)$self->Access();
+	}
+};
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
+	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion() {
+	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion\n");
+	}
+};
+
+%nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
+class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry();
+		%feature("autodoc", "1");
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry(const Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry(const MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
+	MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry* GetObject() {
+	return (MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry*)$self->Access();
+	}
+};
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
+	~Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry() {
+	printf("Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry\n");
+	}
+};
+
+%nodefaultctor Handle_MAT2d_Circuit;
+class Handle_MAT2d_Circuit : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT2d_Circuit();
+		%feature("autodoc", "1");
+		Handle_MAT2d_Circuit(const Handle_MAT2d_Circuit &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Circuit(const MAT2d_Circuit *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Circuit const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT2d_Circuit {
+	MAT2d_Circuit* GetObject() {
+	return (MAT2d_Circuit*)$self->Access();
+	}
+};
+%extend Handle_MAT2d_Circuit {
+	~Handle_MAT2d_Circuit() {
+	printf("Call custom destructor for instance of Handle_MAT2d_Circuit\n");
 	}
 };
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger;
 class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger();
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger();
 		%feature("autodoc", "1");
@@ -286,12 +222,87 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public Handle_TCollectio
 	return (MAT2d_DataMapNodeOfDataMapOfBiIntInteger*)$self->Access();
 	}
 };
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
+	~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger() {
+	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger\n");
+	}
+};
+
+%nodefaultctor Handle_MAT2d_Connexion;
+class Handle_MAT2d_Connexion : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion();
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion(const Handle_MAT2d_Connexion &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion(const MAT2d_Connexion *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT2d_Connexion {
+	MAT2d_Connexion* GetObject() {
+	return (MAT2d_Connexion*)$self->Access();
+	}
+};
+%extend Handle_MAT2d_Connexion {
+	~Handle_MAT2d_Connexion() {
+	printf("Call custom destructor for instance of Handle_MAT2d_Connexion\n");
+	}
+};
+
+%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger;
+class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger();
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
+	MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger* GetObject() {
+	return (MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger*)$self->Access();
+	}
+};
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
+	~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger() {
+	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger\n");
+	}
+};
+
+%nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve;
+class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve();
+		%feature("autodoc", "1");
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve(const Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve(const MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
+	MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve* GetObject() {
+	return (MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve*)$self->Access();
+	}
+};
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
+	~Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
 class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d();
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d();
 		%feature("autodoc", "1");
@@ -307,12 +318,15 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public Handle_TCollectio
 	return (MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d*)$self->Access();
 	}
 };
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d() {
+	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");
+	}
+};
 
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfBoolean;
 class Handle_MAT2d_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_SequenceNodeOfSequenceOfBoolean();
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean();
 		%feature("autodoc", "1");
@@ -328,12 +342,15 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_S
 	return (MAT2d_SequenceNodeOfSequenceOfBoolean*)$self->Access();
 	}
 };
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfBoolean {
+	~Handle_MAT2d_SequenceNodeOfSequenceOfBoolean() {
+	printf("Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfBoolean\n");
+	}
+};
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec;
 class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec();
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec();
 		%feature("autodoc", "1");
@@ -349,12 +366,15 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public Handle_TCollectio
 	return (MAT2d_DataMapNodeOfDataMapOfIntegerBisec*)$self->Access();
 	}
 };
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
+	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec() {
+	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec\n");
+	}
+};
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d;
 class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d();
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d();
 		%feature("autodoc", "1");
@@ -368,6 +388,11 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public Handle_TCollectio
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
 	MAT2d_DataMapNodeOfDataMapOfIntegerVec2d* GetObject() {
 	return (MAT2d_DataMapNodeOfDataMapOfIntegerVec2d*)$self->Access();
+	}
+};
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
+	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d() {
+	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d\n");
 	}
 };
 
@@ -480,13 +505,16 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_DataMapNodeOfDataMapOfBiIntInteger();
 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
 	Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger GetHandle() {
 	return *(Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger*) &$self;
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
+	~MAT2d_DataMapNodeOfDataMapOfBiIntInteger() {
+	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfBiIntInteger\n");
 	}
 };
 
@@ -541,13 +569,16 @@ class MAT2d_Connexion : public MMgt_TShared {
 		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_Connexion();
 
 };
 %extend MAT2d_Connexion {
 	Handle_MAT2d_Connexion GetHandle() {
 	return *(Handle_MAT2d_Connexion*) &$self;
+	}
+};
+%extend MAT2d_Connexion {
+	~MAT2d_Connexion() {
+	printf("Call custom destructor for instance of MAT2d_Connexion\n");
 	}
 };
 
@@ -562,13 +593,16 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public TCollection_Ma
 		TColStd_SequenceOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger();
 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
 	Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger GetHandle() {
 	return *(Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger*) &$self;
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
+	~MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger() {
+	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger\n");
 	}
 };
 
@@ -583,13 +617,16 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
 		Bisector_Bisec & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_DataMapNodeOfDataMapOfIntegerBisec();
 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
 	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec GetHandle() {
 	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec*) &$self;
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
+	~MAT2d_DataMapNodeOfDataMapOfIntegerBisec() {
+	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerBisec\n");
 	}
 };
 
@@ -614,13 +651,16 @@ class MAT2d_Circuit : public MMgt_TShared {
 		Standard_Boolean ConnexionOn(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_Circuit();
 
 };
 %extend MAT2d_Circuit {
 	Handle_MAT2d_Circuit GetHandle() {
 	return *(Handle_MAT2d_Circuit*) &$self;
+	}
+};
+%extend MAT2d_Circuit {
+	~MAT2d_Circuit() {
+	printf("Call custom destructor for instance of MAT2d_Circuit\n");
 	}
 };
 
@@ -641,36 +681,6 @@ class MAT2d_BiInt {
 		void SecondIndex(const Standard_Integer I2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const MAT2d_BiInt &B) const;
-
-};
-
-%nodefaultctor MAT2d_DataMapOfIntegerConnexion;
-class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapOfIntegerConnexion(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		MAT2d_DataMapOfIntegerConnexion & Assign(const MAT2d_DataMapOfIntegerConnexion &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_DataMapOfIntegerConnexion();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT2d_Connexion &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & operator()(const Standard_Integer &K);
 
 };
 
@@ -713,13 +723,16 @@ class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 		Handle_MAT2d_Connexion & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_SequenceNodeOfSequenceOfConnexion();
 
 };
 %extend MAT2d_SequenceNodeOfSequenceOfConnexion {
 	Handle_MAT2d_SequenceNodeOfSequenceOfConnexion GetHandle() {
 	return *(Handle_MAT2d_SequenceNodeOfSequenceOfConnexion*) &$self;
+	}
+};
+%extend MAT2d_SequenceNodeOfSequenceOfConnexion {
+	~MAT2d_SequenceNodeOfSequenceOfConnexion() {
+	printf("Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfConnexion\n");
 	}
 };
 
@@ -730,8 +743,6 @@ class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
 		MAT2d_SequenceOfConnexion();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_SequenceOfConnexion();
 		%feature("autodoc", "1");
 		const MAT2d_SequenceOfConnexion & Assign(const MAT2d_SequenceOfConnexion &Other);
 		%feature("autodoc", "1");
@@ -771,6 +782,11 @@ class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend MAT2d_SequenceOfConnexion {
+	~MAT2d_SequenceOfConnexion() {
+	printf("Call custom destructor for instance of MAT2d_SequenceOfConnexion\n");
+	}
 };
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion;
@@ -821,11 +837,42 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 
 };
 
+%nodefaultctor MAT2d_DataMapOfIntegerConnexion;
+class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapOfIntegerConnexion(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MAT2d_DataMapOfIntegerConnexion & Assign(const MAT2d_DataMapOfIntegerConnexion &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT2d_Connexion &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion & operator()(const Standard_Integer &K);
+
+};
+%extend MAT2d_DataMapOfIntegerConnexion {
+	~MAT2d_DataMapOfIntegerConnexion() {
+	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerConnexion\n");
+	}
+};
+
 %nodefaultctor MAT2d_Tool2d;
 class MAT2d_Tool2d {
 	public:
-		%feature("autodoc", "1");
-		~MAT2d_Tool2d();
 		%feature("autodoc", "1");
 		MAT2d_Tool2d();
 		%feature("autodoc", "1");
@@ -871,6 +918,11 @@ class MAT2d_Tool2d {
 		%feature("autodoc", "1");
 		Bisector_Bisec & ChangeGeomBis(const Standard_Integer Index);
 
+};
+%extend MAT2d_Tool2d {
+	~MAT2d_Tool2d() {
+	printf("Call custom destructor for instance of MAT2d_Tool2d\n");
+	}
 };
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d;
@@ -952,13 +1004,16 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public TCollectio
 		MAT2d_SequenceOfConnexion & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion();
 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
 	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion GetHandle() {
 	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion*) &$self;
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
+	~MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion() {
+	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion\n");
 	}
 };
 
@@ -1003,13 +1058,16 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 		gp_Vec2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_DataMapNodeOfDataMapOfIntegerVec2d();
 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
 	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d GetHandle() {
 	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d*) &$self;
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
+	~MAT2d_DataMapNodeOfDataMapOfIntegerVec2d() {
+	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerVec2d\n");
 	}
 };
 
@@ -1040,13 +1098,16 @@ class MAT2d_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 		Standard_Boolean & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_SequenceNodeOfSequenceOfBoolean();
 
 };
 %extend MAT2d_SequenceNodeOfSequenceOfBoolean {
 	Handle_MAT2d_SequenceNodeOfSequenceOfBoolean GetHandle() {
 	return *(Handle_MAT2d_SequenceNodeOfSequenceOfBoolean*) &$self;
+	}
+};
+%extend MAT2d_SequenceNodeOfSequenceOfBoolean {
+	~MAT2d_SequenceNodeOfSequenceOfBoolean() {
+	printf("Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfBoolean\n");
 	}
 };
 
@@ -1091,8 +1152,6 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode 
 		Handle_MAT2d_Connexion & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_DataMapNodeOfDataMapOfIntegerConnexion();
 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
@@ -1100,12 +1159,15 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode 
 	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion*) &$self;
 	}
 };
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
+	~MAT2d_DataMapNodeOfDataMapOfIntegerConnexion() {
+	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerConnexion\n");
+	}
+};
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion;
 class MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion();
 		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion();
 		%feature("autodoc", "1");
@@ -1118,6 +1180,11 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion : public TCollection_Basi
 		const Handle_MAT2d_Connexion & Value() const;
 
 };
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion {
+	~MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion() {
+	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion\n");
+	}
+};
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve;
 class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode {
@@ -1128,13 +1195,16 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode
 		TColGeom2d_SequenceOfCurve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve();
 
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
 	Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve GetHandle() {
 	return *(Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve*) &$self;
+	}
+};
+%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
+	~MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve\n");
 	}
 };
 
@@ -1165,13 +1235,16 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqN
 		TColGeom2d_SequenceOfGeometry & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry();
 
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
 	Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry GetHandle() {
 	return *(Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry*) &$self;
+	}
+};
+%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
+	~MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry() {
+	printf("Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry\n");
 	}
 };
 
@@ -1217,8 +1290,6 @@ class MAT2d_Array2OfConnexion {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~MAT2d_Array2OfConnexion();
-		%feature("autodoc", "1");
 		const MAT2d_Array2OfConnexion & Assign(const MAT2d_Array2OfConnexion &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -1243,6 +1314,11 @@ class MAT2d_Array2OfConnexion {
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend MAT2d_Array2OfConnexion {
+	~MAT2d_Array2OfConnexion() {
+	printf("Call custom destructor for instance of MAT2d_Array2OfConnexion\n");
+	}
 };
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger;
@@ -1317,8 +1393,6 @@ class MAT2d_SequenceOfBoolean : public TCollection_BaseSequence {
 class MAT2d_MiniPath {
 	public:
 		%feature("autodoc", "1");
-		~MAT2d_MiniPath();
-		%feature("autodoc", "1");
 		MAT2d_MiniPath();
 		%feature("autodoc", "1");
 		void Perform(const MAT2d_SequenceOfSequenceOfGeometry &Figure, const Standard_Integer IndStart, const Standard_Boolean Sense);
@@ -1335,6 +1409,11 @@ class MAT2d_MiniPath {
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion Father(const Standard_Integer Index);
 
+};
+%extend MAT2d_MiniPath {
+	~MAT2d_MiniPath() {
+	printf("Call custom destructor for instance of MAT2d_MiniPath\n");
+	}
 };
 
 %nodefaultctor MAT2d_MapBiIntHasher;
@@ -1362,8 +1441,6 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 		gp_Pnt2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d();
 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
@@ -1371,12 +1448,15 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d*) &$self;
 	}
 };
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d() {
+	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");
+	}
+};
 
 %nodefaultctor MAT2d_Mat2d;
 class MAT2d_Mat2d {
 	public:
-		%feature("autodoc", "1");
-		~MAT2d_Mat2d();
 		%feature("autodoc", "1");
 		MAT2d_Mat2d();
 		%feature("autodoc", "1");
@@ -1396,4 +1476,9 @@ class MAT2d_Mat2d {
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfBisectors() const;
 
+};
+%extend MAT2d_Mat2d {
+	~MAT2d_Mat2d() {
+	printf("Call custom destructor for instance of MAT2d_Mat2d\n");
+	}
 };

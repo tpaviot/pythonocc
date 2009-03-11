@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module MoniTool
 
@@ -116,8 +102,6 @@ enum MoniTool_ValueType {
 class Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient();
-		%feature("autodoc", "1");
 		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient();
 		%feature("autodoc", "1");
 		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient(const Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient &aHandle);
@@ -132,12 +116,15 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient : public Handle_TColl
 	return (MoniTool_DataMapNodeOfDataMapOfShapeTransient*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient {
+	~Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_Profile;
 class Handle_MoniTool_Profile : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_Profile();
 		%feature("autodoc", "1");
 		Handle_MoniTool_Profile();
 		%feature("autodoc", "1");
@@ -153,12 +140,15 @@ class Handle_MoniTool_Profile : public Handle_MMgt_TShared {
 	return (MoniTool_Profile*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_Profile {
+	~Handle_MoniTool_Profile() {
+	printf("Call custom destructor for instance of Handle_MoniTool_Profile\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_DataMapNodeOfDataMapOfTimer;
 class Handle_MoniTool_DataMapNodeOfDataMapOfTimer : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_DataMapNodeOfDataMapOfTimer();
 		%feature("autodoc", "1");
 		Handle_MoniTool_DataMapNodeOfDataMapOfTimer();
 		%feature("autodoc", "1");
@@ -174,12 +164,15 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfTimer : public Handle_TCollection_Ma
 	return (MoniTool_DataMapNodeOfDataMapOfTimer*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_DataMapNodeOfDataMapOfTimer {
+	~Handle_MoniTool_DataMapNodeOfDataMapOfTimer() {
+	printf("Call custom destructor for instance of Handle_MoniTool_DataMapNodeOfDataMapOfTimer\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_SignText;
 class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_SignText();
 		%feature("autodoc", "1");
 		Handle_MoniTool_SignText();
 		%feature("autodoc", "1");
@@ -195,12 +188,15 @@ class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
 	return (MoniTool_SignText*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_SignText {
+	~Handle_MoniTool_SignText() {
+	printf("Call custom destructor for instance of Handle_MoniTool_SignText\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_CaseData;
 class Handle_MoniTool_CaseData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_CaseData();
 		%feature("autodoc", "1");
 		Handle_MoniTool_CaseData();
 		%feature("autodoc", "1");
@@ -216,33 +212,15 @@ class Handle_MoniTool_CaseData : public Handle_MMgt_TShared {
 	return (MoniTool_CaseData*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_MoniTool_Option;
-class Handle_MoniTool_Option : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_Option();
-		%feature("autodoc", "1");
-		Handle_MoniTool_Option();
-		%feature("autodoc", "1");
-		Handle_MoniTool_Option(const Handle_MoniTool_Option &aHandle);
-		%feature("autodoc", "1");
-		Handle_MoniTool_Option(const MoniTool_Option *anItem);
-		%feature("autodoc", "1");
-		Handle_MoniTool_Option const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MoniTool_Option {
-	MoniTool_Option* GetObject() {
-	return (MoniTool_Option*)$self->Access();
+%extend Handle_MoniTool_CaseData {
+	~Handle_MoniTool_CaseData() {
+	printf("Call custom destructor for instance of Handle_MoniTool_CaseData\n");
 	}
 };
 
 %nodefaultctor Handle_MoniTool_RealVal;
 class Handle_MoniTool_RealVal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_RealVal();
 		%feature("autodoc", "1");
 		Handle_MoniTool_RealVal();
 		%feature("autodoc", "1");
@@ -258,33 +236,39 @@ class Handle_MoniTool_RealVal : public Handle_MMgt_TShared {
 	return (MoniTool_RealVal*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_RealVal {
+	~Handle_MoniTool_RealVal() {
+	printf("Call custom destructor for instance of Handle_MoniTool_RealVal\n");
+	}
+};
 
-%nodefaultctor Handle_MoniTool_SequenceNodeOfSequenceOfElement;
-class Handle_MoniTool_SequenceNodeOfSequenceOfElement : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_MoniTool_Option;
+class Handle_MoniTool_Option : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MoniTool_SequenceNodeOfSequenceOfElement();
+		Handle_MoniTool_Option();
 		%feature("autodoc", "1");
-		Handle_MoniTool_SequenceNodeOfSequenceOfElement();
+		Handle_MoniTool_Option(const Handle_MoniTool_Option &aHandle);
 		%feature("autodoc", "1");
-		Handle_MoniTool_SequenceNodeOfSequenceOfElement(const Handle_MoniTool_SequenceNodeOfSequenceOfElement &aHandle);
+		Handle_MoniTool_Option(const MoniTool_Option *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_SequenceNodeOfSequenceOfElement(const MoniTool_SequenceNodeOfSequenceOfElement *anItem);
-		%feature("autodoc", "1");
-		Handle_MoniTool_SequenceNodeOfSequenceOfElement const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MoniTool_Option const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MoniTool_SequenceNodeOfSequenceOfElement {
-	MoniTool_SequenceNodeOfSequenceOfElement* GetObject() {
-	return (MoniTool_SequenceNodeOfSequenceOfElement*)$self->Access();
+%extend Handle_MoniTool_Option {
+	MoniTool_Option* GetObject() {
+	return (MoniTool_Option*)$self->Access();
+	}
+};
+%extend Handle_MoniTool_Option {
+	~Handle_MoniTool_Option() {
+	printf("Call custom destructor for instance of Handle_MoniTool_Option\n");
 	}
 };
 
 %nodefaultctor Handle_MoniTool_IntVal;
 class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_IntVal();
 		%feature("autodoc", "1");
 		Handle_MoniTool_IntVal();
 		%feature("autodoc", "1");
@@ -300,12 +284,15 @@ class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
 	return (MoniTool_IntVal*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_IntVal {
+	~Handle_MoniTool_IntVal() {
+	printf("Call custom destructor for instance of Handle_MoniTool_IntVal\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_Element;
 class Handle_MoniTool_Element : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_Element();
 		%feature("autodoc", "1");
 		Handle_MoniTool_Element();
 		%feature("autodoc", "1");
@@ -321,12 +308,15 @@ class Handle_MoniTool_Element : public Handle_MMgt_TShared {
 	return (MoniTool_Element*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_Element {
+	~Handle_MoniTool_Element() {
+	printf("Call custom destructor for instance of Handle_MoniTool_Element\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_TransientElem;
 class Handle_MoniTool_TransientElem : public Handle_MoniTool_Element {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_TransientElem();
 		%feature("autodoc", "1");
 		Handle_MoniTool_TransientElem();
 		%feature("autodoc", "1");
@@ -342,12 +332,15 @@ class Handle_MoniTool_TransientElem : public Handle_MoniTool_Element {
 	return (MoniTool_TransientElem*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_TransientElem {
+	~Handle_MoniTool_TransientElem() {
+	printf("Call custom destructor for instance of Handle_MoniTool_TransientElem\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_Timer;
 class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_Timer();
 		%feature("autodoc", "1");
 		Handle_MoniTool_Timer();
 		%feature("autodoc", "1");
@@ -363,12 +356,15 @@ class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
 	return (MoniTool_Timer*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_Timer {
+	~Handle_MoniTool_Timer() {
+	printf("Call custom destructor for instance of Handle_MoniTool_Timer\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_TypedValue;
 class Handle_MoniTool_TypedValue : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_TypedValue();
 		%feature("autodoc", "1");
 		Handle_MoniTool_TypedValue();
 		%feature("autodoc", "1");
@@ -384,12 +380,15 @@ class Handle_MoniTool_TypedValue : public Handle_MMgt_TShared {
 	return (MoniTool_TypedValue*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_TypedValue {
+	~Handle_MoniTool_TypedValue() {
+	printf("Call custom destructor for instance of Handle_MoniTool_TypedValue\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_HSequenceOfElement;
 class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_HSequenceOfElement();
 		%feature("autodoc", "1");
 		Handle_MoniTool_HSequenceOfElement();
 		%feature("autodoc", "1");
@@ -405,12 +404,15 @@ class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
 	return (MoniTool_HSequenceOfElement*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_HSequenceOfElement {
+	~Handle_MoniTool_HSequenceOfElement() {
+	printf("Call custom destructor for instance of Handle_MoniTool_HSequenceOfElement\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
 class Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient();
 		%feature("autodoc", "1");
 		Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient();
 		%feature("autodoc", "1");
@@ -426,12 +428,15 @@ class Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : publi
 	return (MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	~Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");
+	}
+};
 
 %nodefaultctor Handle_MoniTool_SignShape;
 class Handle_MoniTool_SignShape : public Handle_MoniTool_SignText {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MoniTool_SignShape();
 		%feature("autodoc", "1");
 		Handle_MoniTool_SignShape();
 		%feature("autodoc", "1");
@@ -447,6 +452,35 @@ class Handle_MoniTool_SignShape : public Handle_MoniTool_SignText {
 	return (MoniTool_SignShape*)$self->Access();
 	}
 };
+%extend Handle_MoniTool_SignShape {
+	~Handle_MoniTool_SignShape() {
+	printf("Call custom destructor for instance of Handle_MoniTool_SignShape\n");
+	}
+};
+
+%nodefaultctor Handle_MoniTool_SequenceNodeOfSequenceOfElement;
+class Handle_MoniTool_SequenceNodeOfSequenceOfElement : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MoniTool_SequenceNodeOfSequenceOfElement();
+		%feature("autodoc", "1");
+		Handle_MoniTool_SequenceNodeOfSequenceOfElement(const Handle_MoniTool_SequenceNodeOfSequenceOfElement &aHandle);
+		%feature("autodoc", "1");
+		Handle_MoniTool_SequenceNodeOfSequenceOfElement(const MoniTool_SequenceNodeOfSequenceOfElement *anItem);
+		%feature("autodoc", "1");
+		Handle_MoniTool_SequenceNodeOfSequenceOfElement const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MoniTool_SequenceNodeOfSequenceOfElement {
+	MoniTool_SequenceNodeOfSequenceOfElement* GetObject() {
+	return (MoniTool_SequenceNodeOfSequenceOfElement*)$self->Access();
+	}
+};
+%extend Handle_MoniTool_SequenceNodeOfSequenceOfElement {
+	~Handle_MoniTool_SequenceNodeOfSequenceOfElement() {
+	printf("Call custom destructor for instance of Handle_MoniTool_SequenceNodeOfSequenceOfElement\n");
+	}
+};
 
 %nodefaultctor MoniTool_RealVal;
 class MoniTool_RealVal : public MMgt_TShared {
@@ -459,13 +493,16 @@ class MoniTool_RealVal : public MMgt_TShared {
 		Standard_Real & CValue();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_RealVal();
 
 };
 %extend MoniTool_RealVal {
 	Handle_MoniTool_RealVal GetHandle() {
 	return *(Handle_MoniTool_RealVal*) &$self;
+	}
+};
+%extend MoniTool_RealVal {
+	~MoniTool_RealVal() {
+	printf("Call custom destructor for instance of MoniTool_RealVal\n");
 	}
 };
 
@@ -480,13 +517,16 @@ class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_DataMapNodeOfDataMapOfShapeTransient();
 
 };
 %extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
 	Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient GetHandle() {
 	return *(Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient*) &$self;
+	}
+};
+%extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
+	~MoniTool_DataMapNodeOfDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of MoniTool_DataMapNodeOfDataMapOfShapeTransient\n");
 	}
 };
 
@@ -545,13 +585,16 @@ class MoniTool_Profile : public MMgt_TShared {
 		Standard_Boolean FastValue(const char * optname, Handle_Standard_Transient & val) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_Profile();
 
 };
 %extend MoniTool_Profile {
 	Handle_MoniTool_Profile GetHandle() {
 	return *(Handle_MoniTool_Profile*) &$self;
+	}
+};
+%extend MoniTool_Profile {
+	~MoniTool_Profile() {
+	printf("Call custom destructor for instance of MoniTool_Profile\n");
 	}
 };
 
@@ -597,8 +640,6 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MoniTool_DataMapOfShapeTransient();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -613,6 +654,11 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const TopoDS_Shape &K);
 
+};
+%extend MoniTool_DataMapOfShapeTransient {
+	~MoniTool_DataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of MoniTool_DataMapOfShapeTransient\n");
+	}
 };
 
 %nodefaultctor MoniTool_Timer;
@@ -658,13 +704,16 @@ class MoniTool_Timer : public MMgt_TShared {
 		void GetAmendments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_Timer();
 
 };
 %extend MoniTool_Timer {
 	Handle_MoniTool_Timer GetHandle() {
 	return *(Handle_MoniTool_Timer*) &$self;
+	}
+};
+%extend MoniTool_Timer {
+	~MoniTool_Timer() {
+	printf("Call custom destructor for instance of MoniTool_Timer\n");
 	}
 };
 
@@ -679,13 +728,16 @@ class MoniTool_IntVal : public MMgt_TShared {
 		Standard_Integer & CValue();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_IntVal();
 
 };
 %extend MoniTool_IntVal {
 	Handle_MoniTool_IntVal GetHandle() {
 	return *(Handle_MoniTool_IntVal*) &$self;
+	}
+};
+%extend MoniTool_IntVal {
+	~MoniTool_IntVal() {
+	printf("Call custom destructor for instance of MoniTool_IntVal\n");
 	}
 };
 
@@ -711,6 +763,11 @@ class MoniTool_Element : public MMgt_TShared {
 %extend MoniTool_Element {
 	Handle_MoniTool_Element GetHandle() {
 	return *(Handle_MoniTool_Element*) &$self;
+	}
+};
+%extend MoniTool_Element {
+	~MoniTool_Element() {
+	printf("Call custom destructor for instance of MoniTool_Element\n");
 	}
 };
 
@@ -740,8 +797,6 @@ class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MoniTool_DataMapOfTimer();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const char * &K, const Handle_MoniTool_Timer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const char * &K) const;
@@ -757,68 +812,9 @@ class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
 		Handle_MoniTool_Timer & operator()(const char * &K);
 
 };
-
-%nodefaultctor MoniTool_DataInfo;
-class MoniTool_DataInfo {
-	public:
-		%feature("autodoc", "1");
-		~MoniTool_DataInfo();
-		%feature("autodoc", "1");
-		MoniTool_DataInfo();
-		%feature("autodoc", "1");
-		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		char * TypeName(const Handle_Standard_Transient &ent);
-
-};
-
-%nodefaultctor MoniTool_TransientElem;
-class MoniTool_TransientElem : public MoniTool_Element {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_TransientElem(const Handle_Standard_Transient &akey);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Equates(const Handle_MoniTool_Element &other) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ValueType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString ValueTypeName() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_TransientElem();
-
-};
-%extend MoniTool_TransientElem {
-	Handle_MoniTool_TransientElem GetHandle() {
-	return *(Handle_MoniTool_TransientElem*) &$self;
-	}
-};
-
-%nodefaultctor MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
-class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient(const TopoDS_Shape &K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient();
-
-};
-%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
-	Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient GetHandle() {
-	return *(Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient*) &$self;
+%extend MoniTool_DataMapOfTimer {
+	~MoniTool_DataMapOfTimer() {
+	printf("Call custom destructor for instance of MoniTool_DataMapOfTimer\n");
 	}
 };
 
@@ -927,8 +923,6 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		Handle_MoniTool_TypedValue StaticValue(const char * name);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_TypedValue();
 
 };
 %extend MoniTool_TypedValue {
@@ -936,12 +930,88 @@ class MoniTool_TypedValue : public MMgt_TShared {
 	return *(Handle_MoniTool_TypedValue*) &$self;
 	}
 };
+%extend MoniTool_TypedValue {
+	~MoniTool_TypedValue() {
+	printf("Call custom destructor for instance of MoniTool_TypedValue\n");
+	}
+};
+
+%nodefaultctor MoniTool_DataInfo;
+class MoniTool_DataInfo {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_DataInfo();
+		%feature("autodoc", "1");
+		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		char * TypeName(const Handle_Standard_Transient &ent);
+
+};
+%extend MoniTool_DataInfo {
+	~MoniTool_DataInfo() {
+	printf("Call custom destructor for instance of MoniTool_DataInfo\n");
+	}
+};
+
+%nodefaultctor MoniTool_TransientElem;
+class MoniTool_TransientElem : public MoniTool_Element {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_TransientElem(const Handle_Standard_Transient &akey);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Equates(const Handle_MoniTool_Element &other) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type ValueType() const;
+		%feature("autodoc", "1");
+		virtual		Standard_CString ValueTypeName() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MoniTool_TransientElem {
+	Handle_MoniTool_TransientElem GetHandle() {
+	return *(Handle_MoniTool_TransientElem*) &$self;
+	}
+};
+%extend MoniTool_TransientElem {
+	~MoniTool_TransientElem() {
+	printf("Call custom destructor for instance of MoniTool_TransientElem\n");
+	}
+};
+
+%nodefaultctor MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
+class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient(const TopoDS_Shape &K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient GetHandle() {
+	return *(Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient*) &$self;
+	}
+};
+%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");
+	}
+};
 
 %nodefaultctor MoniTool_AttrList;
 class MoniTool_AttrList {
 	public:
-		%feature("autodoc", "1");
-		~MoniTool_AttrList();
 		%feature("autodoc", "1");
 		MoniTool_AttrList();
 		%feature("autodoc", "1");
@@ -980,6 +1050,11 @@ class MoniTool_AttrList {
 		void GetAttributes(const MoniTool_AttrList &other, const char * fromname="", const Standard_Boolean copied=1);
 
 };
+%extend MoniTool_AttrList {
+	~MoniTool_AttrList() {
+	printf("Call custom destructor for instance of MoniTool_AttrList\n");
+	}
+};
 
 %nodefaultctor MoniTool_SignText;
 class MoniTool_SignText : public MMgt_TShared {
@@ -999,19 +1074,27 @@ class MoniTool_SignText : public MMgt_TShared {
 	return *(Handle_MoniTool_SignText*) &$self;
 	}
 };
+%extend MoniTool_SignText {
+	~MoniTool_SignText() {
+	printf("Call custom destructor for instance of MoniTool_SignText\n");
+	}
+};
 
 %nodefaultctor MoniTool_SignShape;
 class MoniTool_SignShape : public MoniTool_SignText {
 	public:
 		%feature("autodoc", "1");
 		MoniTool_SignShape();
-		%feature("autodoc", "1");
-		virtual		~MoniTool_SignShape();
 
 };
 %extend MoniTool_SignShape {
 	Handle_MoniTool_SignShape GetHandle() {
 	return *(Handle_MoniTool_SignShape*) &$self;
+	}
+};
+%extend MoniTool_SignShape {
+	~MoniTool_SignShape() {
+	printf("Call custom destructor for instance of MoniTool_SignShape\n");
 	}
 };
 
@@ -1034,9 +1117,12 @@ class MoniTool_OptValue {
 		void Value(Handle_Standard_Transient & val) const;
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~MoniTool_OptValue();
 
+};
+%extend MoniTool_OptValue {
+	~MoniTool_OptValue() {
+	printf("Call custom destructor for instance of MoniTool_OptValue\n");
+	}
 };
 
 %nodefaultctor MoniTool_DataMapNodeOfDataMapOfTimer;
@@ -1050,8 +1136,6 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 		Handle_MoniTool_Timer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_DataMapNodeOfDataMapOfTimer();
 
 };
 %extend MoniTool_DataMapNodeOfDataMapOfTimer {
@@ -1059,12 +1143,15 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 	return *(Handle_MoniTool_DataMapNodeOfDataMapOfTimer*) &$self;
 	}
 };
+%extend MoniTool_DataMapNodeOfDataMapOfTimer {
+	~MoniTool_DataMapNodeOfDataMapOfTimer() {
+	printf("Call custom destructor for instance of MoniTool_DataMapNodeOfDataMapOfTimer\n");
+	}
+};
 
 %nodefaultctor MoniTool_DataMapIteratorOfDataMapOfTimer;
 class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MoniTool_DataMapIteratorOfDataMapOfTimer();
 		%feature("autodoc", "1");
 		MoniTool_DataMapIteratorOfDataMapOfTimer();
 		%feature("autodoc", "1");
@@ -1077,6 +1164,11 @@ class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIter
 		const Handle_MoniTool_Timer & Value() const;
 
 };
+%extend MoniTool_DataMapIteratorOfDataMapOfTimer {
+	~MoniTool_DataMapIteratorOfDataMapOfTimer() {
+	printf("Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfTimer\n");
+	}
+};
 
 %nodefaultctor MoniTool_TimerSentry;
 class MoniTool_TimerSentry {
@@ -1088,12 +1180,15 @@ class MoniTool_TimerSentry {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~MoniTool_TimerSentry();
-		%feature("autodoc", "1");
 		Handle_MoniTool_Timer Timer() const;
 		%feature("autodoc", "1");
 		void Stop();
 
+};
+%extend MoniTool_TimerSentry {
+	~MoniTool_TimerSentry() {
+	printf("Call custom destructor for instance of MoniTool_TimerSentry\n");
+	}
 };
 
 %nodefaultctor MoniTool_IndexedDataMapOfShapeTransient;
@@ -1107,8 +1202,6 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MoniTool_IndexedDataMapOfShapeTransient();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
@@ -1135,6 +1228,11 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend MoniTool_IndexedDataMapOfShapeTransient {
+	~MoniTool_IndexedDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of MoniTool_IndexedDataMapOfShapeTransient\n");
+	}
+};
 
 %nodefaultctor MoniTool_SequenceNodeOfSequenceOfElement;
 class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
@@ -1145,13 +1243,16 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 		Handle_MoniTool_Element & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_SequenceNodeOfSequenceOfElement();
 
 };
 %extend MoniTool_SequenceNodeOfSequenceOfElement {
 	Handle_MoniTool_SequenceNodeOfSequenceOfElement GetHandle() {
 	return *(Handle_MoniTool_SequenceNodeOfSequenceOfElement*) &$self;
+	}
+};
+%extend MoniTool_SequenceNodeOfSequenceOfElement {
+	~MoniTool_SequenceNodeOfSequenceOfElement() {
+	printf("Call custom destructor for instance of MoniTool_SequenceNodeOfSequenceOfElement\n");
 	}
 };
 
@@ -1176,8 +1277,6 @@ class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
 		MoniTool_SequenceOfElement();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MoniTool_SequenceOfElement();
 		%feature("autodoc", "1");
 		const MoniTool_SequenceOfElement & Assign(const MoniTool_SequenceOfElement &Other);
 		%feature("autodoc", "1");
@@ -1217,6 +1316,11 @@ class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend MoniTool_SequenceOfElement {
+	~MoniTool_SequenceOfElement() {
+	printf("Call custom destructor for instance of MoniTool_SequenceOfElement\n");
+	}
 };
 
 %nodefaultctor MoniTool_CaseData;
@@ -1316,13 +1420,16 @@ class MoniTool_CaseData : public MMgt_TShared {
 		char * DefMsg(const char * casecode);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_CaseData();
 
 };
 %extend MoniTool_CaseData {
 	Handle_MoniTool_CaseData GetHandle() {
 	return *(Handle_MoniTool_CaseData*) &$self;
+	}
+};
+%extend MoniTool_CaseData {
+	~MoniTool_CaseData() {
+	printf("Call custom destructor for instance of MoniTool_CaseData\n");
 	}
 };
 
@@ -1377,13 +1484,16 @@ class MoniTool_HSequenceOfElement : public MMgt_TShared {
 		Handle_MoniTool_HSequenceOfElement ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_HSequenceOfElement();
 
 };
 %extend MoniTool_HSequenceOfElement {
 	Handle_MoniTool_HSequenceOfElement GetHandle() {
 	return *(Handle_MoniTool_HSequenceOfElement*) &$self;
+	}
+};
+%extend MoniTool_HSequenceOfElement {
+	~MoniTool_HSequenceOfElement() {
+	printf("Call custom destructor for instance of MoniTool_HSequenceOfElement\n");
 	}
 };
 
@@ -1424,8 +1534,6 @@ class MoniTool_Option : public MMgt_TShared {
 		void Value(Handle_Standard_Transient & val) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MoniTool_Option();
 
 };
 %extend MoniTool_Option {
@@ -1433,12 +1541,15 @@ class MoniTool_Option : public MMgt_TShared {
 	return *(Handle_MoniTool_Option*) &$self;
 	}
 };
+%extend MoniTool_Option {
+	~MoniTool_Option() {
+	printf("Call custom destructor for instance of MoniTool_Option\n");
+	}
+};
 
 %nodefaultctor MoniTool_DataMapIteratorOfDataMapOfShapeTransient;
 class MoniTool_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MoniTool_DataMapIteratorOfDataMapOfShapeTransient();
 		%feature("autodoc", "1");
 		MoniTool_DataMapIteratorOfDataMapOfShapeTransient();
 		%feature("autodoc", "1");
@@ -1450,4 +1561,9 @@ class MoniTool_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_Bas
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
+};
+%extend MoniTool_DataMapIteratorOfDataMapOfShapeTransient {
+	~MoniTool_DataMapIteratorOfDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfShapeTransient\n");
+	}
 };

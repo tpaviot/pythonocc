@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BOPTColStd
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger();
-		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger();
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger &aHandle);
@@ -118,12 +102,15 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public 
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*)$self->Access();
 	}
 };
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
+	printf("Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfI
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*)$self->Access();
 	}
 };
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
+	printf("Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger();
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger*)$self->Access();
 	}
 };
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");
+	}
+};
 
 %nodefaultctor Handle_BOPTColStd_ListNodeOfListOfListOfShape;
 class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BOPTColStd_ListNodeOfListOfListOfShape();
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_ListNodeOfListOfListOfShape();
 		%feature("autodoc", "1");
@@ -180,6 +173,47 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 	BOPTColStd_ListNodeOfListOfListOfShape* GetObject() {
 	return (BOPTColStd_ListNodeOfListOfListOfShape*)$self->Access();
 	}
+};
+%extend Handle_BOPTColStd_ListNodeOfListOfListOfShape {
+	~Handle_BOPTColStd_ListNodeOfListOfListOfShape() {
+	printf("Call custom destructor for instance of Handle_BOPTColStd_ListNodeOfListOfListOfShape\n");
+	}
+};
+
+%nodefaultctor BOPTColStd_CArray1OfShape;
+class BOPTColStd_CArray1OfShape {
+	public:
+		%feature("autodoc", "1");
+		BOPTColStd_CArray1OfShape(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer theNewLength);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~BOPTColStd_CArray1OfShape();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Integer FactLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer Append(const TopoDS_Shape &Value);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		TopoDS_Shape & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
+
 };
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -251,8 +285,6 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger();
 
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
@@ -260,41 +292,10 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger*) &$self;
 	}
 };
-
-%nodefaultctor BOPTColStd_CArray1OfShape;
-class BOPTColStd_CArray1OfShape {
-	public:
-		%feature("autodoc", "1");
-		BOPTColStd_CArray1OfShape(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~BOPTColStd_CArray1OfShape();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const TopoDS_Shape &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
-
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");
+	}
 };
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
@@ -312,13 +313,16 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollec
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger();
 
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
 	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger GetHandle() {
 	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*) &$self;
+	}
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");
 	}
 };
 
@@ -464,6 +468,42 @@ class BOPTColStd_ListOfListOfShape {
 
 };
 
+%nodefaultctor BOPTColStd_CArray1OfInteger;
+class BOPTColStd_CArray1OfInteger {
+	public:
+		%feature("autodoc", "1");
+		BOPTColStd_CArray1OfInteger(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer theNewLength);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~BOPTColStd_CArray1OfInteger();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Integer FactLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer Append(const Standard_Integer &Value);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Standard_Integer & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
+
+};
+
 %nodefaultctor BOPTColStd_ListNodeOfListOfListOfShape;
 class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 	public:
@@ -473,14 +513,79 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 		TopTools_ListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTColStd_ListNodeOfListOfListOfShape();
 
 };
 %extend BOPTColStd_ListNodeOfListOfListOfShape {
 	Handle_BOPTColStd_ListNodeOfListOfListOfShape GetHandle() {
 	return *(Handle_BOPTColStd_ListNodeOfListOfListOfShape*) &$self;
 	}
+};
+%extend BOPTColStd_ListNodeOfListOfListOfShape {
+	~BOPTColStd_ListNodeOfListOfListOfShape() {
+	printf("Call custom destructor for instance of BOPTColStd_ListNodeOfListOfListOfShape\n");
+	}
+};
+
+%nodefaultctor BOPTColStd_Failure;
+class BOPTColStd_Failure {
+	public:
+		%feature("autodoc", "1");
+		~BOPTColStd_Failure();
+		%feature("autodoc", "1");
+		BOPTColStd_Failure(const char * aMessage);
+		%feature("autodoc", "1");
+		Standard_CString Message() const;
+
+};
+
+%nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
+class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TColStd_IndexedMapOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		Standard_Integer & Key1() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		TColStd_IndexedMapOfInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger GetHandle() {
+	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*) &$self;
+	}
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");
+	}
+};
+
+%nodefaultctor BOPTColStd_ShapeWithRank;
+class BOPTColStd_ShapeWithRank {
+	public:
+		%feature("autodoc", "1");
+		~BOPTColStd_ShapeWithRank();
+		%feature("autodoc", "1");
+		BOPTColStd_ShapeWithRank();
+		%feature("autodoc", "1");
+		void SetShape(const TopoDS_Shape &aS);
+		%feature("autodoc", "1");
+		void SetRank(const Standard_Integer aR);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		Standard_Integer Rank() const;
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const Standard_Integer Upper) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &Other) const;
+
 };
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerInteger;
@@ -520,101 +625,6 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 		const Standard_Integer & FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		Standard_Integer & ChangeFromKey(const Standard_Integer &K);
-
-};
-
-%nodefaultctor BOPTColStd_Failure;
-class BOPTColStd_Failure {
-	public:
-		%feature("autodoc", "1");
-		~BOPTColStd_Failure();
-		%feature("autodoc", "1");
-		BOPTColStd_Failure(const char * aMessage);
-		%feature("autodoc", "1");
-		Standard_CString Message() const;
-
-};
-
-%nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
-class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TColStd_IndexedMapOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		TColStd_IndexedMapOfInteger & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
-
-};
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
-	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger GetHandle() {
-	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*) &$self;
-	}
-};
-
-%nodefaultctor BOPTColStd_ShapeWithRank;
-class BOPTColStd_ShapeWithRank {
-	public:
-		%feature("autodoc", "1");
-		~BOPTColStd_ShapeWithRank();
-		%feature("autodoc", "1");
-		BOPTColStd_ShapeWithRank();
-		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aS);
-		%feature("autodoc", "1");
-		void SetRank(const Standard_Integer aR);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		Standard_Integer Rank() const;
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Standard_Integer Upper) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &Other) const;
-
-};
-
-%nodefaultctor BOPTColStd_CArray1OfInteger;
-class BOPTColStd_CArray1OfInteger {
-	public:
-		%feature("autodoc", "1");
-		BOPTColStd_CArray1OfInteger(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~BOPTColStd_CArray1OfInteger();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const Standard_Integer &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Standard_Integer & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
 
 };
 

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BinObjMgt
 
@@ -96,20 +82,18 @@ Standard_Real & function transformation
 %include BinObjMgt_headers.i
 
 typedef Standard_Integer * BinObjMgt_PInteger;
-typedef Standard_Character * BinObjMgt_PChar;
 typedef Standard_ExtCharacter * BinObjMgt_PExtChar;
+typedef Standard_Character * BinObjMgt_PChar;
 typedef Standard_ShortReal * BinObjMgt_PShortReal;
 typedef Standard_Real * BinObjMgt_PReal;
-typedef TColStd_IndexedMapOfTransient BinObjMgt_SRelocationTable;
 typedef Standard_Byte * BinObjMgt_PByte;
+typedef TColStd_IndexedMapOfTransient BinObjMgt_SRelocationTable;
 
 
 
 %nodefaultctor Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress;
 class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress();
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress();
 		%feature("autodoc", "1");
@@ -125,12 +109,15 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 	return (BinObjMgt_SequenceNodeOfSequenceOfAddress*)$self->Access();
 	}
 };
+%extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
+	~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress() {
+	printf("Call custom destructor for instance of Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress\n");
+	}
+};
 
 %nodefaultctor Handle_BinObjMgt_DataMapNodeOfRRelocationTable;
 class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinObjMgt_DataMapNodeOfRRelocationTable();
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_DataMapNodeOfRRelocationTable();
 		%feature("autodoc", "1");
@@ -144,6 +131,11 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 %extend Handle_BinObjMgt_DataMapNodeOfRRelocationTable {
 	BinObjMgt_DataMapNodeOfRRelocationTable* GetObject() {
 	return (BinObjMgt_DataMapNodeOfRRelocationTable*)$self->Access();
+	}
+};
+%extend Handle_BinObjMgt_DataMapNodeOfRRelocationTable {
+	~Handle_BinObjMgt_DataMapNodeOfRRelocationTable() {
+	printf("Call custom destructor for instance of Handle_BinObjMgt_DataMapNodeOfRRelocationTable\n");
 	}
 };
 
@@ -318,8 +310,6 @@ class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinObjMgt_DataMapNodeOfRRelocationTable();
 
 };
 %extend BinObjMgt_DataMapNodeOfRRelocationTable {
@@ -327,12 +317,15 @@ class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	return *(Handle_BinObjMgt_DataMapNodeOfRRelocationTable*) &$self;
 	}
 };
+%extend BinObjMgt_DataMapNodeOfRRelocationTable {
+	~BinObjMgt_DataMapNodeOfRRelocationTable() {
+	printf("Call custom destructor for instance of BinObjMgt_DataMapNodeOfRRelocationTable\n");
+	}
+};
 
 %nodefaultctor BinObjMgt_DataMapIteratorOfRRelocationTable;
 class BinObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BinObjMgt_DataMapIteratorOfRRelocationTable();
 		%feature("autodoc", "1");
 		BinObjMgt_DataMapIteratorOfRRelocationTable();
 		%feature("autodoc", "1");
@@ -344,6 +337,11 @@ class BinObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
+};
+%extend BinObjMgt_DataMapIteratorOfRRelocationTable {
+	~BinObjMgt_DataMapIteratorOfRRelocationTable() {
+	printf("Call custom destructor for instance of BinObjMgt_DataMapIteratorOfRRelocationTable\n");
+	}
 };
 
 %nodefaultctor BinObjMgt_RRelocationTable;
@@ -357,8 +355,6 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BinObjMgt_RRelocationTable();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
@@ -375,6 +371,11 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const Standard_Integer &K);
 
 };
+%extend BinObjMgt_RRelocationTable {
+	~BinObjMgt_RRelocationTable() {
+	printf("Call custom destructor for instance of BinObjMgt_RRelocationTable\n");
+	}
+};
 
 %nodefaultctor BinObjMgt_SequenceNodeOfSequenceOfAddress;
 class BinObjMgt_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
@@ -385,12 +386,15 @@ class BinObjMgt_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 		Standard_Address & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinObjMgt_SequenceNodeOfSequenceOfAddress();
 
 };
 %extend BinObjMgt_SequenceNodeOfSequenceOfAddress {
 	Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress GetHandle() {
 	return *(Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress*) &$self;
+	}
+};
+%extend BinObjMgt_SequenceNodeOfSequenceOfAddress {
+	~BinObjMgt_SequenceNodeOfSequenceOfAddress() {
+	printf("Call custom destructor for instance of BinObjMgt_SequenceNodeOfSequenceOfAddress\n");
 	}
 };

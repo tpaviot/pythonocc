@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GeomAdaptor
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_GeomAdaptor_GHCurve : public Handle_Adaptor3d_HCurve {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GeomAdaptor_GHCurve();
-		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve();
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve(const Handle_GeomAdaptor_GHCurve &aHandle);
@@ -118,12 +102,15 @@ class Handle_GeomAdaptor_GHCurve : public Handle_Adaptor3d_HCurve {
 	return (GeomAdaptor_GHCurve*)$self->Access();
 	}
 };
+%extend Handle_GeomAdaptor_GHCurve {
+	~Handle_GeomAdaptor_GHCurve() {
+	printf("Call custom destructor for instance of Handle_GeomAdaptor_GHCurve\n");
+	}
+};
 
 %nodefaultctor Handle_GeomAdaptor_HCurve;
 class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomAdaptor_HCurve();
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HCurve();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 	return (GeomAdaptor_HCurve*)$self->Access();
 	}
 };
+%extend Handle_GeomAdaptor_HCurve {
+	~Handle_GeomAdaptor_HCurve() {
+	printf("Call custom destructor for instance of Handle_GeomAdaptor_HCurve\n");
+	}
+};
 
 %nodefaultctor Handle_GeomAdaptor_GHSurface;
 class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomAdaptor_GHSurface();
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHSurface();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
 	return (GeomAdaptor_GHSurface*)$self->Access();
 	}
 };
+%extend Handle_GeomAdaptor_GHSurface {
+	~Handle_GeomAdaptor_GHSurface() {
+	printf("Call custom destructor for instance of Handle_GeomAdaptor_GHSurface\n");
+	}
+};
 
 %nodefaultctor Handle_GeomAdaptor_HSurface;
 class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomAdaptor_HSurface();
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HSurface();
 		%feature("autodoc", "1");
@@ -179,6 +172,11 @@ class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 %extend Handle_GeomAdaptor_HSurface {
 	GeomAdaptor_HSurface* GetObject() {
 	return (GeomAdaptor_HSurface*)$self->Access();
+	}
+};
+%extend Handle_GeomAdaptor_HSurface {
+	~Handle_GeomAdaptor_HSurface() {
+	printf("Call custom destructor for instance of Handle_GeomAdaptor_HSurface\n");
 	}
 };
 
@@ -199,13 +197,16 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 		GeomAdaptor_Curve & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_GHCurve();
 
 };
 %extend GeomAdaptor_GHCurve {
 	Handle_GeomAdaptor_GHCurve GetHandle() {
 	return *(Handle_GeomAdaptor_GHCurve*) &$self;
+	}
+};
+%extend GeomAdaptor_GHCurve {
+	~GeomAdaptor_GHCurve() {
+	printf("Call custom destructor for instance of GeomAdaptor_GHCurve\n");
 	}
 };
 
@@ -220,13 +221,16 @@ class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 		GeomAdaptor_HCurve(const Handle_Geom_Curve &S);
 		%feature("autodoc", "1");
 		GeomAdaptor_HCurve(const Handle_Geom_Curve &S, const Standard_Real UFirst, const Standard_Real ULast);
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_HCurve();
 
 };
 %extend GeomAdaptor_HCurve {
 	Handle_GeomAdaptor_HCurve GetHandle() {
 	return *(Handle_GeomAdaptor_HCurve*) &$self;
+	}
+};
+%extend GeomAdaptor_HCurve {
+	~GeomAdaptor_HCurve() {
+	printf("Call custom destructor for instance of GeomAdaptor_HCurve\n");
 	}
 };
 
@@ -245,13 +249,16 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 		GeomAdaptor_Surface & ChangeSurface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_GHSurface();
 
 };
 %extend GeomAdaptor_GHSurface {
 	Handle_GeomAdaptor_GHSurface GetHandle() {
 	return *(Handle_GeomAdaptor_GHSurface*) &$self;
+	}
+};
+%extend GeomAdaptor_GHSurface {
+	~GeomAdaptor_GHSurface() {
+	printf("Call custom destructor for instance of GeomAdaptor_GHSurface\n");
 	}
 };
 
@@ -268,13 +275,33 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 		GeomAdaptor_HSurface(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_HSurface();
 
 };
 %extend GeomAdaptor_HSurface {
 	Handle_GeomAdaptor_HSurface GetHandle() {
 	return *(Handle_GeomAdaptor_HSurface*) &$self;
+	}
+};
+%extend GeomAdaptor_HSurface {
+	~GeomAdaptor_HSurface() {
+	printf("Call custom destructor for instance of GeomAdaptor_HSurface\n");
+	}
+};
+
+%nodefaultctor GeomAdaptor;
+class GeomAdaptor {
+	public:
+		%feature("autodoc", "1");
+		GeomAdaptor();
+		%feature("autodoc", "1");
+		Handle_Geom_Curve MakeCurve(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface MakeSurface(const Adaptor3d_Surface &S);
+
+};
+%extend GeomAdaptor {
+	~GeomAdaptor() {
+	printf("Call custom destructor for instance of GeomAdaptor\n");
 	}
 };
 
@@ -349,23 +376,12 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BezierCurve Bezier() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_Curve();
 
 };
-
-%nodefaultctor GeomAdaptor;
-class GeomAdaptor {
-	public:
-		%feature("autodoc", "1");
-		~GeomAdaptor();
-		%feature("autodoc", "1");
-		GeomAdaptor();
-		%feature("autodoc", "1");
-		Handle_Geom_Curve MakeCurve(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface MakeSurface(const Adaptor3d_Surface &S);
-
+%extend GeomAdaptor_Curve {
+	~GeomAdaptor_Curve() {
+	printf("Call custom destructor for instance of GeomAdaptor_Curve\n");
+	}
 };
 
 %nodefaultctor GeomAdaptor_Surface;
@@ -477,7 +493,10 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		virtual		Handle_Adaptor3d_HSurface BasisSurface() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real OffsetValue() const;
-		%feature("autodoc", "1");
-		virtual		~GeomAdaptor_Surface();
 
+};
+%extend GeomAdaptor_Surface {
+	~GeomAdaptor_Surface() {
+	printf("Call custom destructor for instance of GeomAdaptor_Surface\n");
+	}
 };

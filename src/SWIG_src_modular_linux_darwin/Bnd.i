@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Bnd
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Bnd_SequenceNodeOfSeqOfBox();
-		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox();
 		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
@@ -118,12 +102,15 @@ class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 	return (Bnd_SequenceNodeOfSeqOfBox*)$self->Access();
 	}
 };
+%extend Handle_Bnd_SequenceNodeOfSeqOfBox {
+	~Handle_Bnd_SequenceNodeOfSeqOfBox() {
+	printf("Call custom destructor for instance of Handle_Bnd_SequenceNodeOfSeqOfBox\n");
+	}
+};
 
 %nodefaultctor Handle_Bnd_HArray1OfBox2d;
 class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Bnd_HArray1OfBox2d();
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox2d();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 	return (Bnd_HArray1OfBox2d*)$self->Access();
 	}
 };
+%extend Handle_Bnd_HArray1OfBox2d {
+	~Handle_Bnd_HArray1OfBox2d() {
+	printf("Call custom destructor for instance of Handle_Bnd_HArray1OfBox2d\n");
+	}
+};
 
 %nodefaultctor Handle_Bnd_HArray1OfBox;
 class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Bnd_HArray1OfBox();
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox();
 		%feature("autodoc", "1");
@@ -160,101 +150,10 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 	return (Bnd_HArray1OfBox*)$self->Access();
 	}
 };
-
-%nodefaultctor Bnd_Box;
-class Bnd_Box {
-	public:
-		%feature("autodoc", "1");
-		~Bnd_Box();
-		%feature("autodoc", "1");
-		Bnd_Box();
-		%feature("autodoc", "1");
-		void SetWhole();
-		%feature("autodoc", "1");
-		void SetVoid();
-		%feature("autodoc", "1");
-		void Set(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		void Set(const gp_Pnt &P, const gp_Dir &D);
-		%feature("autodoc", "1");
-		void Update(const Standard_Real aXmin, const Standard_Real aYmin, const Standard_Real aZmin, const Standard_Real aXmax, const Standard_Real aYmax, const Standard_Real aZmax);
-		%feature("autodoc", "1");
-		void Update(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
-		%feature("autodoc", "1");
-		Standard_Real GetGap() const;
-		%feature("autodoc", "1");
-		void SetGap(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Enlarge(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Get(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void OpenXmin();
-		%feature("autodoc", "1");
-		void OpenXmax();
-		%feature("autodoc", "1");
-		void OpenYmin();
-		%feature("autodoc", "1");
-		void OpenYmax();
-		%feature("autodoc", "1");
-		void OpenZmin();
-		%feature("autodoc", "1");
-		void OpenZmax();
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenXmin() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenXmax() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenYmin() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenYmax() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenZmin() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenZmax() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsWhole() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsVoid() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsXThin(const Standard_Real tol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsYThin(const Standard_Real tol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsZThin(const Standard_Real tol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsThin(const Standard_Real tol) const;
-		%feature("autodoc", "1");
-		Bnd_Box Transformed(const gp_Trsf &T) const;
-		%feature("autodoc", "1");
-		void Add(const Bnd_Box &Other);
-		%feature("autodoc", "1");
-		void Add(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		void Add(const gp_Pnt &P, const gp_Dir &D);
-		%feature("autodoc", "1");
-		void Add(const gp_Dir &D);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Pnt &P) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Lin &L) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Pln &P) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_Box &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_Box &Other, const gp_Trsf &T) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Trsf &T1, const Bnd_Box &Other, const gp_Trsf &T2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Dir &D) const;
-		%feature("autodoc", "1");
-		Standard_Real Distance(const Bnd_Box &Other) const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareExtent() const;
-
+%extend Handle_Bnd_HArray1OfBox {
+	~Handle_Bnd_HArray1OfBox() {
+	printf("Call custom destructor for instance of Handle_Bnd_HArray1OfBox\n");
+	}
 };
 
 %nodefaultctor Bnd_B2d;
@@ -396,14 +295,113 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 		Bnd_Box & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Bnd_SequenceNodeOfSeqOfBox();
 
 };
 %extend Bnd_SequenceNodeOfSeqOfBox {
 	Handle_Bnd_SequenceNodeOfSeqOfBox GetHandle() {
 	return *(Handle_Bnd_SequenceNodeOfSeqOfBox*) &$self;
 	}
+};
+%extend Bnd_SequenceNodeOfSeqOfBox {
+	~Bnd_SequenceNodeOfSeqOfBox() {
+	printf("Call custom destructor for instance of Bnd_SequenceNodeOfSeqOfBox\n");
+	}
+};
+
+%nodefaultctor Bnd_Box;
+class Bnd_Box {
+	public:
+		%feature("autodoc", "1");
+		~Bnd_Box();
+		%feature("autodoc", "1");
+		Bnd_Box();
+		%feature("autodoc", "1");
+		void SetWhole();
+		%feature("autodoc", "1");
+		void SetVoid();
+		%feature("autodoc", "1");
+		void Set(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		void Set(const gp_Pnt &P, const gp_Dir &D);
+		%feature("autodoc", "1");
+		void Update(const Standard_Real aXmin, const Standard_Real aYmin, const Standard_Real aZmin, const Standard_Real aXmax, const Standard_Real aYmax, const Standard_Real aZmax);
+		%feature("autodoc", "1");
+		void Update(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+		%feature("autodoc", "1");
+		Standard_Real GetGap() const;
+		%feature("autodoc", "1");
+		void SetGap(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Enlarge(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Get(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void OpenXmin();
+		%feature("autodoc", "1");
+		void OpenXmax();
+		%feature("autodoc", "1");
+		void OpenYmin();
+		%feature("autodoc", "1");
+		void OpenYmax();
+		%feature("autodoc", "1");
+		void OpenZmin();
+		%feature("autodoc", "1");
+		void OpenZmax();
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenXmin() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenXmax() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenYmin() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenYmax() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenZmin() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenZmax() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsWhole() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsVoid() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsXThin(const Standard_Real tol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsYThin(const Standard_Real tol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsZThin(const Standard_Real tol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsThin(const Standard_Real tol) const;
+		%feature("autodoc", "1");
+		Bnd_Box Transformed(const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		void Add(const Bnd_Box &Other);
+		%feature("autodoc", "1");
+		void Add(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		void Add(const gp_Pnt &P, const gp_Dir &D);
+		%feature("autodoc", "1");
+		void Add(const gp_Dir &D);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Pnt &P) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Lin &L) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Pln &P) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_Box &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_Box &Other, const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Trsf &T1, const Bnd_Box &Other, const gp_Trsf &T2) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Dir &D) const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const Bnd_Box &Other) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareExtent() const;
+
 };
 
 %nodefaultctor Bnd_Array1OfBox2d;
@@ -439,76 +437,6 @@ class Bnd_Array1OfBox2d {
 		Bnd_Box2d & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		Bnd_Box2d & operator()(const Standard_Integer Index);
-
-};
-
-%nodefaultctor Bnd_Box2d;
-class Bnd_Box2d {
-	public:
-		%feature("autodoc", "1");
-		~Bnd_Box2d();
-		%feature("autodoc", "1");
-		Bnd_Box2d();
-		%feature("autodoc", "1");
-		void SetWhole();
-		%feature("autodoc", "1");
-		void SetVoid();
-		%feature("autodoc", "1");
-		void Set(const gp_Pnt2d &P);
-		%feature("autodoc", "1");
-		void Set(const gp_Pnt2d &P, const gp_Dir2d &D);
-		%feature("autodoc", "1");
-		void Update(const Standard_Real aXmin, const Standard_Real aYmin, const Standard_Real aXmax, const Standard_Real aYmax);
-		%feature("autodoc", "1");
-		void Update(const Standard_Real X, const Standard_Real Y);
-		%feature("autodoc", "1");
-		Standard_Real GetGap() const;
-		%feature("autodoc", "1");
-		void SetGap(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Enlarge(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Get(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void OpenXmin();
-		%feature("autodoc", "1");
-		void OpenXmax();
-		%feature("autodoc", "1");
-		void OpenYmin();
-		%feature("autodoc", "1");
-		void OpenYmax();
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenXmin() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenXmax() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenYmin() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpenYmax() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsWhole() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsVoid() const;
-		%feature("autodoc", "1");
-		Bnd_Box2d Transformed(const gp_Trsf2d &T) const;
-		%feature("autodoc", "1");
-		void Add(const Bnd_Box2d &Other);
-		%feature("autodoc", "1");
-		void Add(const gp_Pnt2d &P);
-		%feature("autodoc", "1");
-		void Add(const gp_Pnt2d &P, const gp_Dir2d &D);
-		%feature("autodoc", "1");
-		void Add(const gp_Dir2d &D);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Pnt2d &P) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_Box2d &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_Box2d &Other, const gp_Trsf2d &T) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Trsf2d &T1, const Bnd_Box2d &Other, const gp_Trsf2d &T2) const;
-		%feature("autodoc", "1");
-		void Dump() const;
 
 };
 
@@ -593,13 +521,16 @@ class Bnd_HArray1OfBox2d : public MMgt_TShared {
 		Bnd_Array1OfBox2d & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Bnd_HArray1OfBox2d();
 
 };
 %extend Bnd_HArray1OfBox2d {
 	Handle_Bnd_HArray1OfBox2d GetHandle() {
 	return *(Handle_Bnd_HArray1OfBox2d*) &$self;
+	}
+};
+%extend Bnd_HArray1OfBox2d {
+	~Bnd_HArray1OfBox2d() {
+	printf("Call custom destructor for instance of Bnd_HArray1OfBox2d\n");
 	}
 };
 
@@ -680,13 +611,16 @@ class Bnd_HArray1OfBox : public MMgt_TShared {
 		Bnd_Array1OfBox & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Bnd_HArray1OfBox();
 
 };
 %extend Bnd_HArray1OfBox {
 	Handle_Bnd_HArray1OfBox GetHandle() {
 	return *(Handle_Bnd_HArray1OfBox*) &$self;
+	}
+};
+%extend Bnd_HArray1OfBox {
+	~Bnd_HArray1OfBox() {
+	printf("Call custom destructor for instance of Bnd_HArray1OfBox\n");
 	}
 };
 
@@ -803,5 +737,75 @@ class Bnd_Array1OfBox {
 		Bnd_Box & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		Bnd_Box & operator()(const Standard_Integer Index);
+
+};
+
+%nodefaultctor Bnd_Box2d;
+class Bnd_Box2d {
+	public:
+		%feature("autodoc", "1");
+		~Bnd_Box2d();
+		%feature("autodoc", "1");
+		Bnd_Box2d();
+		%feature("autodoc", "1");
+		void SetWhole();
+		%feature("autodoc", "1");
+		void SetVoid();
+		%feature("autodoc", "1");
+		void Set(const gp_Pnt2d &P);
+		%feature("autodoc", "1");
+		void Set(const gp_Pnt2d &P, const gp_Dir2d &D);
+		%feature("autodoc", "1");
+		void Update(const Standard_Real aXmin, const Standard_Real aYmin, const Standard_Real aXmax, const Standard_Real aYmax);
+		%feature("autodoc", "1");
+		void Update(const Standard_Real X, const Standard_Real Y);
+		%feature("autodoc", "1");
+		Standard_Real GetGap() const;
+		%feature("autodoc", "1");
+		void SetGap(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Enlarge(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Get(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void OpenXmin();
+		%feature("autodoc", "1");
+		void OpenXmax();
+		%feature("autodoc", "1");
+		void OpenYmin();
+		%feature("autodoc", "1");
+		void OpenYmax();
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenXmin() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenXmax() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenYmin() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpenYmax() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsWhole() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsVoid() const;
+		%feature("autodoc", "1");
+		Bnd_Box2d Transformed(const gp_Trsf2d &T) const;
+		%feature("autodoc", "1");
+		void Add(const Bnd_Box2d &Other);
+		%feature("autodoc", "1");
+		void Add(const gp_Pnt2d &P);
+		%feature("autodoc", "1");
+		void Add(const gp_Pnt2d &P, const gp_Dir2d &D);
+		%feature("autodoc", "1");
+		void Add(const gp_Dir2d &D);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Pnt2d &P) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_Box2d &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_Box2d &Other, const gp_Trsf2d &T) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Trsf2d &T1, const Bnd_Box2d &Other, const gp_Trsf2d &T2) const;
+		%feature("autodoc", "1");
+		void Dump() const;
 
 };

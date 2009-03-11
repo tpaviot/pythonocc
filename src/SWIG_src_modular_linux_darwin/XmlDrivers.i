@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module XmlDrivers
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_XmlDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_DocumentRetrievalDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
 		Handle_XmlDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_XmlDrivers_DocumentRetrievalDriver(const Handle_XmlDrivers_DocumentRetrievalDriver &aHandle);
@@ -118,12 +102,15 @@ class Handle_XmlDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_Docu
 	return (XmlDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlDrivers_DocumentRetrievalDriver {
+	~Handle_XmlDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_XmlDrivers_DocumentRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlDrivers_DocumentStorageDriver;
 class Handle_XmlDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_DocumentStorageDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_XmlDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_XmlDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Docume
 	return (XmlDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlDrivers_DocumentStorageDriver {
+	~Handle_XmlDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_XmlDrivers_DocumentStorageDriver\n");
+	}
+};
 
 %nodefaultctor XmlDrivers;
 class XmlDrivers {
 	public:
-		%feature("autodoc", "1");
-		~XmlDrivers();
 		%feature("autodoc", "1");
 		XmlDrivers();
 		%feature("autodoc", "1");
@@ -152,6 +142,11 @@ class XmlDrivers {
 		%feature("autodoc", "1");
 		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 
+};
+%extend XmlDrivers {
+	~XmlDrivers() {
+	printf("Call custom destructor for instance of XmlDrivers\n");
+	}
 };
 
 %nodefaultctor XmlDrivers_DocumentStorageDriver;
@@ -163,13 +158,16 @@ class XmlDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDrive
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlDrivers_DocumentStorageDriver();
 
 };
 %extend XmlDrivers_DocumentStorageDriver {
 	Handle_XmlDrivers_DocumentStorageDriver GetHandle() {
 	return *(Handle_XmlDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend XmlDrivers_DocumentStorageDriver {
+	~XmlDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of XmlDrivers_DocumentStorageDriver\n");
 	}
 };
 
@@ -182,12 +180,15 @@ class XmlDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalD
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlDrivers_DocumentRetrievalDriver();
 
 };
 %extend XmlDrivers_DocumentRetrievalDriver {
 	Handle_XmlDrivers_DocumentRetrievalDriver GetHandle() {
 	return *(Handle_XmlDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend XmlDrivers_DocumentRetrievalDriver {
+	~XmlDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of XmlDrivers_DocumentRetrievalDriver\n");
 	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Message
 
@@ -249,8 +235,6 @@ enum Message_StatusType {
 class Handle_Message_Printer : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Message_Printer();
-		%feature("autodoc", "1");
 		Handle_Message_Printer();
 		%feature("autodoc", "1");
 		Handle_Message_Printer(const Handle_Message_Printer &aHandle);
@@ -265,12 +249,15 @@ class Handle_Message_Printer : public Handle_MMgt_TShared {
 	return (Message_Printer*)$self->Access();
 	}
 };
+%extend Handle_Message_Printer {
+	~Handle_Message_Printer() {
+	printf("Call custom destructor for instance of Handle_Message_Printer\n");
+	}
+};
 
 %nodefaultctor Handle_Message_PrinterOStream;
 class Handle_Message_PrinterOStream : public Handle_Message_Printer {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Message_PrinterOStream();
 		%feature("autodoc", "1");
 		Handle_Message_PrinterOStream();
 		%feature("autodoc", "1");
@@ -286,12 +273,15 @@ class Handle_Message_PrinterOStream : public Handle_Message_Printer {
 	return (Message_PrinterOStream*)$self->Access();
 	}
 };
+%extend Handle_Message_PrinterOStream {
+	~Handle_Message_PrinterOStream() {
+	printf("Call custom destructor for instance of Handle_Message_PrinterOStream\n");
+	}
+};
 
 %nodefaultctor Handle_Message_Messenger;
 class Handle_Message_Messenger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Message_Messenger();
 		%feature("autodoc", "1");
 		Handle_Message_Messenger();
 		%feature("autodoc", "1");
@@ -307,12 +297,15 @@ class Handle_Message_Messenger : public Handle_MMgt_TShared {
 	return (Message_Messenger*)$self->Access();
 	}
 };
+%extend Handle_Message_Messenger {
+	~Handle_Message_Messenger() {
+	printf("Call custom destructor for instance of Handle_Message_Messenger\n");
+	}
+};
 
 %nodefaultctor Handle_Message_SequenceNodeOfSequenceOfPrinters;
 class Handle_Message_SequenceNodeOfSequenceOfPrinters : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Message_SequenceNodeOfSequenceOfPrinters();
 		%feature("autodoc", "1");
 		Handle_Message_SequenceNodeOfSequenceOfPrinters();
 		%feature("autodoc", "1");
@@ -328,54 +321,15 @@ class Handle_Message_SequenceNodeOfSequenceOfPrinters : public Handle_TCollectio
 	return (Message_SequenceNodeOfSequenceOfPrinters*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Message_ProgressIndicator;
-class Handle_Message_ProgressIndicator : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Message_ProgressIndicator();
-		%feature("autodoc", "1");
-		Handle_Message_ProgressIndicator();
-		%feature("autodoc", "1");
-		Handle_Message_ProgressIndicator(const Handle_Message_ProgressIndicator &aHandle);
-		%feature("autodoc", "1");
-		Handle_Message_ProgressIndicator(const Message_ProgressIndicator *anItem);
-		%feature("autodoc", "1");
-		Handle_Message_ProgressIndicator const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Message_ProgressIndicator {
-	Message_ProgressIndicator* GetObject() {
-	return (Message_ProgressIndicator*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Message_SequenceNodeOfSequenceOfProgressScale;
-class Handle_Message_SequenceNodeOfSequenceOfProgressScale : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Message_SequenceNodeOfSequenceOfProgressScale();
-		%feature("autodoc", "1");
-		Handle_Message_SequenceNodeOfSequenceOfProgressScale();
-		%feature("autodoc", "1");
-		Handle_Message_SequenceNodeOfSequenceOfProgressScale(const Handle_Message_SequenceNodeOfSequenceOfProgressScale &aHandle);
-		%feature("autodoc", "1");
-		Handle_Message_SequenceNodeOfSequenceOfProgressScale(const Message_SequenceNodeOfSequenceOfProgressScale *anItem);
-		%feature("autodoc", "1");
-		Handle_Message_SequenceNodeOfSequenceOfProgressScale const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Message_SequenceNodeOfSequenceOfProgressScale {
-	Message_SequenceNodeOfSequenceOfProgressScale* GetObject() {
-	return (Message_SequenceNodeOfSequenceOfProgressScale*)$self->Access();
+%extend Handle_Message_SequenceNodeOfSequenceOfPrinters {
+	~Handle_Message_SequenceNodeOfSequenceOfPrinters() {
+	printf("Call custom destructor for instance of Handle_Message_SequenceNodeOfSequenceOfPrinters\n");
 	}
 };
 
 %nodefaultctor Handle_Message_ListNodeOfListOfMsg;
 class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Message_ListNodeOfListOfMsg();
 		%feature("autodoc", "1");
 		Handle_Message_ListNodeOfListOfMsg();
 		%feature("autodoc", "1");
@@ -391,12 +345,63 @@ class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
 	return (Message_ListNodeOfListOfMsg*)$self->Access();
 	}
 };
+%extend Handle_Message_ListNodeOfListOfMsg {
+	~Handle_Message_ListNodeOfListOfMsg() {
+	printf("Call custom destructor for instance of Handle_Message_ListNodeOfListOfMsg\n");
+	}
+};
+
+%nodefaultctor Handle_Message_ProgressIndicator;
+class Handle_Message_ProgressIndicator : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Message_ProgressIndicator();
+		%feature("autodoc", "1");
+		Handle_Message_ProgressIndicator(const Handle_Message_ProgressIndicator &aHandle);
+		%feature("autodoc", "1");
+		Handle_Message_ProgressIndicator(const Message_ProgressIndicator *anItem);
+		%feature("autodoc", "1");
+		Handle_Message_ProgressIndicator const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Message_ProgressIndicator {
+	Message_ProgressIndicator* GetObject() {
+	return (Message_ProgressIndicator*)$self->Access();
+	}
+};
+%extend Handle_Message_ProgressIndicator {
+	~Handle_Message_ProgressIndicator() {
+	printf("Call custom destructor for instance of Handle_Message_ProgressIndicator\n");
+	}
+};
+
+%nodefaultctor Handle_Message_SequenceNodeOfSequenceOfProgressScale;
+class Handle_Message_SequenceNodeOfSequenceOfProgressScale : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Message_SequenceNodeOfSequenceOfProgressScale();
+		%feature("autodoc", "1");
+		Handle_Message_SequenceNodeOfSequenceOfProgressScale(const Handle_Message_SequenceNodeOfSequenceOfProgressScale &aHandle);
+		%feature("autodoc", "1");
+		Handle_Message_SequenceNodeOfSequenceOfProgressScale(const Message_SequenceNodeOfSequenceOfProgressScale *anItem);
+		%feature("autodoc", "1");
+		Handle_Message_SequenceNodeOfSequenceOfProgressScale const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Message_SequenceNodeOfSequenceOfProgressScale {
+	Message_SequenceNodeOfSequenceOfProgressScale* GetObject() {
+	return (Message_SequenceNodeOfSequenceOfProgressScale*)$self->Access();
+	}
+};
+%extend Handle_Message_SequenceNodeOfSequenceOfProgressScale {
+	~Handle_Message_SequenceNodeOfSequenceOfProgressScale() {
+	printf("Call custom destructor for instance of Handle_Message_SequenceNodeOfSequenceOfProgressScale\n");
+	}
+};
 
 %nodefaultctor Handle_Message_Algorithm;
 class Handle_Message_Algorithm : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Message_Algorithm();
 		%feature("autodoc", "1");
 		Handle_Message_Algorithm();
 		%feature("autodoc", "1");
@@ -410,6 +415,11 @@ class Handle_Message_Algorithm : public Handle_MMgt_TShared {
 %extend Handle_Message_Algorithm {
 	Message_Algorithm* GetObject() {
 	return (Message_Algorithm*)$self->Access();
+	}
+};
+%extend Handle_Message_Algorithm {
+	~Handle_Message_Algorithm() {
+	printf("Call custom destructor for instance of Handle_Message_Algorithm\n");
 	}
 };
 
@@ -475,12 +485,15 @@ class Message_ProgressIndicator : public MMgt_TShared {
 	return *(Handle_Message_ProgressIndicator*) &$self;
 	}
 };
+%extend Message_ProgressIndicator {
+	~Message_ProgressIndicator() {
+	printf("Call custom destructor for instance of Message_ProgressIndicator\n");
+	}
+};
 
 %nodefaultctor Message_ProgressScale;
 class Message_ProgressScale {
 	public:
-		%feature("autodoc", "1");
-		~Message_ProgressScale();
 		%feature("autodoc", "1");
 		Message_ProgressScale();
 		%feature("autodoc", "1");
@@ -521,6 +534,11 @@ class Message_ProgressScale {
 		Standard_Real BaseToLocal(const Standard_Real val) const;
 
 };
+%extend Message_ProgressScale {
+	~Message_ProgressScale() {
+	printf("Call custom destructor for instance of Message_ProgressScale\n");
+	}
+};
 
 %nodefaultctor Message_Messenger;
 class Message_Messenger : public MMgt_TShared {
@@ -547,13 +565,16 @@ class Message_Messenger : public MMgt_TShared {
 		void Send(const TCollection_ExtendedString &theString, const Message_Gravity theGravity=Message_Warning, const Standard_Boolean putEndl=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Message_Messenger();
 
 };
 %extend Message_Messenger {
 	Handle_Message_Messenger GetHandle() {
 	return *(Handle_Message_Messenger*) &$self;
+	}
+};
+%extend Message_Messenger {
+	~Message_Messenger() {
+	printf("Call custom destructor for instance of Message_Messenger\n");
 	}
 };
 
@@ -616,13 +637,16 @@ class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 		Handle_Message_Printer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Message_SequenceNodeOfSequenceOfPrinters();
 
 };
 %extend Message_SequenceNodeOfSequenceOfPrinters {
 	Handle_Message_SequenceNodeOfSequenceOfPrinters GetHandle() {
 	return *(Handle_Message_SequenceNodeOfSequenceOfPrinters*) &$self;
+	}
+};
+%extend Message_SequenceNodeOfSequenceOfPrinters {
+	~Message_SequenceNodeOfSequenceOfPrinters() {
+	printf("Call custom destructor for instance of Message_SequenceNodeOfSequenceOfPrinters\n");
 	}
 };
 
@@ -659,13 +683,16 @@ class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 		Message_Msg & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Message_ListNodeOfListOfMsg();
 
 };
 %extend Message_ListNodeOfListOfMsg {
 	Handle_Message_ListNodeOfListOfMsg GetHandle() {
 	return *(Handle_Message_ListNodeOfListOfMsg*) &$self;
+	}
+};
+%extend Message_ListNodeOfListOfMsg {
+	~Message_ListNodeOfListOfMsg() {
+	printf("Call custom destructor for instance of Message_ListNodeOfListOfMsg\n");
 	}
 };
 
@@ -719,14 +746,17 @@ class Message_ListOfMsg {
 class Message {
 	public:
 		%feature("autodoc", "1");
-		~Message();
-		%feature("autodoc", "1");
 		Message();
 		%feature("autodoc", "1");
 		const Handle_Message_Messenger & DefaultMessenger();
 		%feature("autodoc", "1");
 		TCollection_AsciiString FillTime(const Standard_Integer Hour, const Standard_Integer Minute, const Standard_Real Second);
 
+};
+%extend Message {
+	~Message() {
+	printf("Call custom destructor for instance of Message\n");
+	}
 };
 
 %nodefaultctor Message_SequenceOfPrinters;
@@ -736,8 +766,6 @@ class Message_SequenceOfPrinters : public TCollection_BaseSequence {
 		Message_SequenceOfPrinters();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Message_SequenceOfPrinters();
 		%feature("autodoc", "1");
 		const Message_SequenceOfPrinters & Assign(const Message_SequenceOfPrinters &Other);
 		%feature("autodoc", "1");
@@ -778,6 +806,11 @@ class Message_SequenceOfPrinters : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Message_SequenceOfPrinters {
+	~Message_SequenceOfPrinters() {
+	printf("Call custom destructor for instance of Message_SequenceOfPrinters\n");
+	}
+};
 
 %nodefaultctor Message_Printer;
 class Message_Printer : public MMgt_TShared {
@@ -797,6 +830,11 @@ class Message_Printer : public MMgt_TShared {
 	return *(Handle_Message_Printer*) &$self;
 	}
 };
+%extend Message_Printer {
+	~Message_Printer() {
+	printf("Call custom destructor for instance of Message_Printer\n");
+	}
+};
 
 %nodefaultctor Message_PrinterOStream;
 class Message_PrinterOStream : public Message_Printer {
@@ -807,8 +845,6 @@ class Message_PrinterOStream : public Message_Printer {
 		Message_PrinterOStream(const char * theFileName, const Standard_Boolean theDoAppend, const Message_Gravity theTraceLevel=Message_Warning);
 		%feature("autodoc", "1");
 		void Close();
-		%feature("autodoc", "1");
-		virtual		~Message_PrinterOStream();
 		%feature("autodoc", "1");
 		Message_Gravity GetTraceLevel() const;
 		%feature("autodoc", "1");
@@ -832,6 +868,11 @@ class Message_PrinterOStream : public Message_Printer {
 %extend Message_PrinterOStream {
 	Handle_Message_PrinterOStream GetHandle() {
 	return *(Handle_Message_PrinterOStream*) &$self;
+	}
+};
+%extend Message_PrinterOStream {
+	~Message_PrinterOStream() {
+	printf("Call custom destructor for instance of Message_PrinterOStream\n");
 	}
 };
 
@@ -866,13 +907,16 @@ class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode
 		Message_ProgressScale & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Message_SequenceNodeOfSequenceOfProgressScale();
 
 };
 %extend Message_SequenceNodeOfSequenceOfProgressScale {
 	Handle_Message_SequenceNodeOfSequenceOfProgressScale GetHandle() {
 	return *(Handle_Message_SequenceNodeOfSequenceOfProgressScale*) &$self;
+	}
+};
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	~Message_SequenceNodeOfSequenceOfProgressScale() {
+	printf("Call custom destructor for instance of Message_SequenceNodeOfSequenceOfProgressScale\n");
 	}
 };
 

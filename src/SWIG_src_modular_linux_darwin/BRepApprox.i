@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepApprox
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_BRepApprox_ApproxLine : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepApprox_ApproxLine();
-		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine();
 		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine(const Handle_BRepApprox_ApproxLine &aHandle);
@@ -116,6 +100,11 @@ class Handle_BRepApprox_ApproxLine : public Handle_MMgt_TShared {
 %extend Handle_BRepApprox_ApproxLine {
 	BRepApprox_ApproxLine* GetObject() {
 	return (BRepApprox_ApproxLine*)$self->Access();
+	}
+};
+%extend Handle_BRepApprox_ApproxLine {
+	~Handle_BRepApprox_ApproxLine() {
+	printf("Call custom destructor for instance of Handle_BRepApprox_ApproxLine\n");
 	}
 };
 
@@ -148,6 +137,56 @@ class BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox : public 
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
 		%feature("autodoc", "1");
 		virtual		~BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox();
+
+};
+
+%nodefaultctor BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox;
+class BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
+	public:
+		%feature("autodoc", "1");
+		~BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox();
+		%feature("autodoc", "1");
+		BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters, const Standard_Real l1, const Standard_Real l2);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const Standard_Real l1, const Standard_Real l2);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const math_Vector &V1c, const math_Vector &V2c, const Standard_Real l1, const Standard_Real l2);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve BezierValue();
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & BSplineValue();
+		%feature("autodoc", "1");
+		const math_Matrix & FunctionMatrix() const;
+		%feature("autodoc", "1");
+		const math_Matrix & DerivativeFunctionMatrix() const;
+		%feature("autodoc", "1");
+		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		const math_Matrix & Distance();
+		%feature("autodoc", "1");
+		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Real FirstLambda() const;
+		%feature("autodoc", "1");
+		Standard_Real LastLambda() const;
+		%feature("autodoc", "1");
+		const math_Matrix & Points() const;
+		%feature("autodoc", "1");
+		const math_Matrix & Poles() const;
+		%feature("autodoc", "1");
+		const math_IntegerVector & KIndex() const;
 
 };
 
@@ -218,8 +257,6 @@ class BRepApprox_ApproxLine : public MMgt_TShared {
 		IntSurf_PntOn2S Point(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_ApproxLine();
 
 };
 %extend BRepApprox_ApproxLine {
@@ -227,27 +264,10 @@ class BRepApprox_ApproxLine : public MMgt_TShared {
 	return *(Handle_BRepApprox_ApproxLine*) &$self;
 	}
 };
-
-%nodefaultctor BRepApprox_MyGradientOfTheComputeLineBezierOfApprox;
-class BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
-	public:
-		%feature("autodoc", "1");
-		~BRepApprox_MyGradientOfTheComputeLineBezierOfApprox();
-		%feature("autodoc", "1");
-		BRepApprox_MyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve Value() const;
-		%feature("autodoc", "1");
-		Standard_Real Error(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2d() const;
-		%feature("autodoc", "1");
-		Standard_Real AverageError() const;
-
+%extend BRepApprox_ApproxLine {
+	~BRepApprox_ApproxLine() {
+	printf("Call custom destructor for instance of BRepApprox_ApproxLine\n");
+	}
 };
 
 %nodefaultctor BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox;
@@ -332,6 +352,52 @@ class BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
 
 };
 
+%nodefaultctor BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox;
+class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox();
+		%feature("autodoc", "1");
+		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &PS, const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox(const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		void Set(const BRepAdaptor_Surface &PS);
+		%feature("autodoc", "1");
+		void SetImplicitSurface(const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangent();
+		%feature("autodoc", "1");
+		const gp_Vec & Direction3d();
+		%feature("autodoc", "1");
+		const gp_Dir2d & Direction2d();
+		%feature("autodoc", "1");
+		const BRepAdaptor_Surface & PSurface() const;
+		%feature("autodoc", "1");
+		const IntSurf_Quadric & ISurface() const;
+		%feature("autodoc", "1");
+		virtual		~BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox();
+
+};
+
 %nodefaultctor BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox;
 class BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
 	public:
@@ -379,94 +445,6 @@ class BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
 		const math_Matrix & Poles() const;
 		%feature("autodoc", "1");
 		const math_IntegerVector & KIndex() const;
-
-};
-
-%nodefaultctor BRepApprox_SurfaceTool;
-class BRepApprox_SurfaceTool {
-	public:
-		%feature("autodoc", "1");
-		~BRepApprox_SurfaceTool();
-		%feature("autodoc", "1");
-		BRepApprox_SurfaceTool();
-		%feature("autodoc", "1");
-		Standard_Real FirstUParameter(const BRepAdaptor_Surface &Surf);
-		%feature("autodoc", "1");
-		Standard_Real FirstVParameter(const BRepAdaptor_Surface &Surf);
-		%feature("autodoc", "1");
-		Standard_Real LastUParameter(const BRepAdaptor_Surface &Surf);
-		%feature("autodoc", "1");
-		Standard_Real LastVParameter(const BRepAdaptor_Surface &Surf);
-		%feature("autodoc", "1");
-		Standard_Integer NbUIntervals(const BRepAdaptor_Surface &Surf, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		Standard_Integer NbVIntervals(const BRepAdaptor_Surface &Surf, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		void UIntervals(const BRepAdaptor_Surface &Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		void VIntervals(const BRepAdaptor_Surface &Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface UTrim(const BRepAdaptor_Surface &Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface VTrim(const BRepAdaptor_Surface &Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsUClosed(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsVClosed(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsUPeriodic(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Real UPeriod(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsVPeriodic(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Real VPeriod(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		gp_Pnt Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V);
-		%feature("autodoc", "1");
-		void D0(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
-		%feature("autodoc", "1");
-		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV);
-		%feature("autodoc", "1");
-		void D3(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV);
-		%feature("autodoc", "1");
-		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-		%feature("autodoc", "1");
-		Standard_Real UResolution(const BRepAdaptor_Surface &S, const Standard_Real R3d);
-		%feature("autodoc", "1");
-		Standard_Real VResolution(const BRepAdaptor_Surface &S, const Standard_Real R3d);
-		%feature("autodoc", "1");
-		GeomAbs_SurfaceType GetType(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		gp_Pln Plane(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		gp_Cylinder Cylinder(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		gp_Cone Cone(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		gp_Torus Torus(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		gp_Sphere Sphere(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Handle_Geom_BezierSurface Bezier(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface BSpline(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		gp_Ax1 AxeOfRevolution(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		gp_Dir Direction(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurve BasisCurve(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamplesU(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamplesV(const BRepAdaptor_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamplesU(const BRepAdaptor_Surface &S, const Standard_Real u1, const Standard_Real u2);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamplesV(const BRepAdaptor_Surface &S, const Standard_Real v1, const Standard_Real v2);
 
 };
 
@@ -617,6 +595,119 @@ class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 		%feature("autodoc", "1");
 		virtual		~BRepApprox_ThePrmPrmSvSurfacesOfApprox();
+
+};
+
+%nodefaultctor BRepApprox_SurfaceTool;
+class BRepApprox_SurfaceTool {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_SurfaceTool();
+		%feature("autodoc", "1");
+		Standard_Real FirstUParameter(const BRepAdaptor_Surface &Surf);
+		%feature("autodoc", "1");
+		Standard_Real FirstVParameter(const BRepAdaptor_Surface &Surf);
+		%feature("autodoc", "1");
+		Standard_Real LastUParameter(const BRepAdaptor_Surface &Surf);
+		%feature("autodoc", "1");
+		Standard_Real LastVParameter(const BRepAdaptor_Surface &Surf);
+		%feature("autodoc", "1");
+		Standard_Integer NbUIntervals(const BRepAdaptor_Surface &Surf, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		Standard_Integer NbVIntervals(const BRepAdaptor_Surface &Surf, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		void UIntervals(const BRepAdaptor_Surface &Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		void VIntervals(const BRepAdaptor_Surface &Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurface UTrim(const BRepAdaptor_Surface &Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurface VTrim(const BRepAdaptor_Surface &Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsUClosed(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsVClosed(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsUPeriodic(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Real UPeriod(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsVPeriodic(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Real VPeriod(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V);
+		%feature("autodoc", "1");
+		void D0(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
+		%feature("autodoc", "1");
+		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
+		%feature("autodoc", "1");
+		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV);
+		%feature("autodoc", "1");
+		void D3(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV);
+		%feature("autodoc", "1");
+		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
+		%feature("autodoc", "1");
+		Standard_Real UResolution(const BRepAdaptor_Surface &S, const Standard_Real R3d);
+		%feature("autodoc", "1");
+		Standard_Real VResolution(const BRepAdaptor_Surface &S, const Standard_Real R3d);
+		%feature("autodoc", "1");
+		GeomAbs_SurfaceType GetType(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		gp_Pln Plane(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		gp_Cylinder Cylinder(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		gp_Cone Cone(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		gp_Torus Torus(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		gp_Sphere Sphere(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Handle_Geom_BezierSurface Bezier(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineSurface BSpline(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		gp_Ax1 AxeOfRevolution(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		gp_Dir Direction(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurve BasisCurve(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamplesU(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamplesV(const BRepAdaptor_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamplesU(const BRepAdaptor_Surface &S, const Standard_Real u1, const Standard_Real u2);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamplesV(const BRepAdaptor_Surface &S, const Standard_Real v1, const Standard_Real v2);
+
+};
+%extend BRepApprox_SurfaceTool {
+	~BRepApprox_SurfaceTool() {
+	printf("Call custom destructor for instance of BRepApprox_SurfaceTool\n");
+	}
+};
+
+%nodefaultctor BRepApprox_MyGradientOfTheComputeLineBezierOfApprox;
+class BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
+	public:
+		%feature("autodoc", "1");
+		~BRepApprox_MyGradientOfTheComputeLineBezierOfApprox();
+		%feature("autodoc", "1");
+		BRepApprox_MyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve Value() const;
+		%feature("autodoc", "1");
+		Standard_Real Error(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2d() const;
+		%feature("autodoc", "1");
+		Standard_Real AverageError() const;
 
 };
 
@@ -885,101 +976,5 @@ class BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox : publ
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
 		%feature("autodoc", "1");
 		virtual		~BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox();
-
-};
-
-%nodefaultctor BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox;
-class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox();
-		%feature("autodoc", "1");
-		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &PS, const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox(const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		void Set(const BRepAdaptor_Surface &PS);
-		%feature("autodoc", "1");
-		void SetImplicitSurface(const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent();
-		%feature("autodoc", "1");
-		const gp_Vec & Direction3d();
-		%feature("autodoc", "1");
-		const gp_Dir2d & Direction2d();
-		%feature("autodoc", "1");
-		const BRepAdaptor_Surface & PSurface() const;
-		%feature("autodoc", "1");
-		const IntSurf_Quadric & ISurface() const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox();
-
-};
-
-%nodefaultctor BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox;
-class BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
-	public:
-		%feature("autodoc", "1");
-		~BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox();
-		%feature("autodoc", "1");
-		BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters, const Standard_Real l1, const Standard_Real l2);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const Standard_Real l1, const Standard_Real l2);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const math_Vector &V1c, const math_Vector &V2c, const Standard_Real l1, const Standard_Real l2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve BezierValue();
-		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & BSplineValue();
-		%feature("autodoc", "1");
-		const math_Matrix & FunctionMatrix() const;
-		%feature("autodoc", "1");
-		const math_Matrix & DerivativeFunctionMatrix() const;
-		%feature("autodoc", "1");
-		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		const math_Matrix & Distance();
-		%feature("autodoc", "1");
-		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Real FirstLambda() const;
-		%feature("autodoc", "1");
-		Standard_Real LastLambda() const;
-		%feature("autodoc", "1");
-		const math_Matrix & Points() const;
-		%feature("autodoc", "1");
-		const math_Matrix & Poles() const;
-		%feature("autodoc", "1");
-		const math_IntegerVector & KIndex() const;
 
 };

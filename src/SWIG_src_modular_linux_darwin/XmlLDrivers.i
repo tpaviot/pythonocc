@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module XmlLDrivers
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
-		%feature("autodoc", "1");
 		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef(const Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef &aHandle);
@@ -118,12 +102,15 @@ class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TC
 	return (XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef*)$self->Access();
 	}
 };
+%extend Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
+	~Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef() {
+	printf("Call custom destructor for instance of Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");
+	}
+};
 
 %nodefaultctor Handle_XmlLDrivers_DocumentStorageDriver;
 class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlLDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 	return (XmlLDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlLDrivers_DocumentStorageDriver {
+	~Handle_XmlLDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_XmlLDrivers_DocumentStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlLDrivers_DocumentRetrievalDriver;
 class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
@@ -158,6 +148,11 @@ class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 %extend Handle_XmlLDrivers_DocumentRetrievalDriver {
 	XmlLDrivers_DocumentRetrievalDriver* GetObject() {
 	return (XmlLDrivers_DocumentRetrievalDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlLDrivers_DocumentRetrievalDriver {
+	~Handle_XmlLDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_XmlLDrivers_DocumentRetrievalDriver\n");
 	}
 };
 
@@ -178,8 +173,6 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlLDrivers_DocumentRetrievalDriver();
 
 };
 %extend XmlLDrivers_DocumentRetrievalDriver {
@@ -187,12 +180,15 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	return *(Handle_XmlLDrivers_DocumentRetrievalDriver*) &$self;
 	}
 };
+%extend XmlLDrivers_DocumentRetrievalDriver {
+	~XmlLDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of XmlLDrivers_DocumentRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor XmlLDrivers;
 class XmlLDrivers {
 	public:
-		%feature("autodoc", "1");
-		~XmlLDrivers();
 		%feature("autodoc", "1");
 		XmlLDrivers();
 		%feature("autodoc", "1");
@@ -205,6 +201,11 @@ class XmlLDrivers {
 		TCollection_AsciiString StorageVersion();
 
 };
+%extend XmlLDrivers {
+	~XmlLDrivers() {
+	printf("Call custom destructor for instance of XmlLDrivers\n");
+	}
+};
 
 %nodefaultctor XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
 class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqNode {
@@ -215,13 +216,16 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 		XmlLDrivers_NamespaceDef & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
 
 };
 %extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
 	Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef GetHandle() {
 	return *(Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef*) &$self;
+	}
+};
+%extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
+	~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef() {
+	printf("Call custom destructor for instance of XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");
 	}
 };
 
@@ -240,13 +244,16 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlLDrivers_DocumentStorageDriver();
 
 };
 %extend XmlLDrivers_DocumentStorageDriver {
 	Handle_XmlLDrivers_DocumentStorageDriver GetHandle() {
 	return *(Handle_XmlLDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend XmlLDrivers_DocumentStorageDriver {
+	~XmlLDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of XmlLDrivers_DocumentStorageDriver\n");
 	}
 };
 

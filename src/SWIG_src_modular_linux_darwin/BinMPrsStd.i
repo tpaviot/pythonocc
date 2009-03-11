@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BinMPrsStd
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BinMPrsStd_PositionDriver();
-		%feature("autodoc", "1");
 		Handle_BinMPrsStd_PositionDriver();
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_PositionDriver(const Handle_BinMPrsStd_PositionDriver &aHandle);
@@ -118,12 +102,15 @@ class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 	return (BinMPrsStd_PositionDriver*)$self->Access();
 	}
 };
+%extend Handle_BinMPrsStd_PositionDriver {
+	~Handle_BinMPrsStd_PositionDriver() {
+	printf("Call custom destructor for instance of Handle_BinMPrsStd_PositionDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinMPrsStd_AISPresentationDriver;
 class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinMPrsStd_AISPresentationDriver();
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_AISPresentationDriver();
 		%feature("autodoc", "1");
@@ -137,6 +124,11 @@ class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 %extend Handle_BinMPrsStd_AISPresentationDriver {
 	BinMPrsStd_AISPresentationDriver* GetObject() {
 	return (BinMPrsStd_AISPresentationDriver*)$self->Access();
+	}
+};
+%extend Handle_BinMPrsStd_AISPresentationDriver {
+	~Handle_BinMPrsStd_AISPresentationDriver() {
+	printf("Call custom destructor for instance of Handle_BinMPrsStd_AISPresentationDriver\n");
 	}
 };
 
@@ -165,13 +157,16 @@ class BinMPrsStd_AISPresentationDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMPrsStd_AISPresentationDriver();
 
 };
 %extend BinMPrsStd_AISPresentationDriver {
 	Handle_BinMPrsStd_AISPresentationDriver GetHandle() {
 	return *(Handle_BinMPrsStd_AISPresentationDriver*) &$self;
+	}
+};
+%extend BinMPrsStd_AISPresentationDriver {
+	~BinMPrsStd_AISPresentationDriver() {
+	printf("Call custom destructor for instance of BinMPrsStd_AISPresentationDriver\n");
 	}
 };
 
@@ -188,12 +183,15 @@ class BinMPrsStd_PositionDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMPrsStd_PositionDriver();
 
 };
 %extend BinMPrsStd_PositionDriver {
 	Handle_BinMPrsStd_PositionDriver GetHandle() {
 	return *(Handle_BinMPrsStd_PositionDriver*) &$self;
+	}
+};
+%extend BinMPrsStd_PositionDriver {
+	~BinMPrsStd_PositionDriver() {
+	printf("Call custom destructor for instance of BinMPrsStd_PositionDriver\n");
 	}
 };

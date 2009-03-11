@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TShort
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_TShort_HSequenceOfShortReal : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TShort_HSequenceOfShortReal();
-		%feature("autodoc", "1");
 		Handle_TShort_HSequenceOfShortReal();
 		%feature("autodoc", "1");
 		Handle_TShort_HSequenceOfShortReal(const Handle_TShort_HSequenceOfShortReal &aHandle);
@@ -118,12 +102,15 @@ class Handle_TShort_HSequenceOfShortReal : public Handle_MMgt_TShared {
 	return (TShort_HSequenceOfShortReal*)$self->Access();
 	}
 };
+%extend Handle_TShort_HSequenceOfShortReal {
+	~Handle_TShort_HSequenceOfShortReal() {
+	printf("Call custom destructor for instance of Handle_TShort_HSequenceOfShortReal\n");
+	}
+};
 
 %nodefaultctor Handle_TShort_HArray1OfShortReal;
 class Handle_TShort_HArray1OfShortReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TShort_HArray1OfShortReal();
 		%feature("autodoc", "1");
 		Handle_TShort_HArray1OfShortReal();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_TShort_HArray1OfShortReal : public Handle_MMgt_TShared {
 	return (TShort_HArray1OfShortReal*)$self->Access();
 	}
 };
+%extend Handle_TShort_HArray1OfShortReal {
+	~Handle_TShort_HArray1OfShortReal() {
+	printf("Call custom destructor for instance of Handle_TShort_HArray1OfShortReal\n");
+	}
+};
 
 %nodefaultctor Handle_TShort_SequenceNodeOfSequenceOfShortReal;
 class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TShort_SequenceNodeOfSequenceOfShortReal();
 		%feature("autodoc", "1");
 		Handle_TShort_SequenceNodeOfSequenceOfShortReal();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollectio
 	return (TShort_SequenceNodeOfSequenceOfShortReal*)$self->Access();
 	}
 };
+%extend Handle_TShort_SequenceNodeOfSequenceOfShortReal {
+	~Handle_TShort_SequenceNodeOfSequenceOfShortReal() {
+	printf("Call custom destructor for instance of Handle_TShort_SequenceNodeOfSequenceOfShortReal\n");
+	}
+};
 
 %nodefaultctor Handle_TShort_HArray2OfShortReal;
 class Handle_TShort_HArray2OfShortReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TShort_HArray2OfShortReal();
 		%feature("autodoc", "1");
 		Handle_TShort_HArray2OfShortReal();
 		%feature("autodoc", "1");
@@ -179,6 +172,11 @@ class Handle_TShort_HArray2OfShortReal : public Handle_MMgt_TShared {
 %extend Handle_TShort_HArray2OfShortReal {
 	TShort_HArray2OfShortReal* GetObject() {
 	return (TShort_HArray2OfShortReal*)$self->Access();
+	}
+};
+%extend Handle_TShort_HArray2OfShortReal {
+	~Handle_TShort_HArray2OfShortReal() {
+	printf("Call custom destructor for instance of Handle_TShort_HArray2OfShortReal\n");
 	}
 };
 
@@ -209,13 +207,16 @@ class TShort_HArray1OfShortReal : public MMgt_TShared {
 		TShort_Array1OfShortReal & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TShort_HArray1OfShortReal();
 
 };
 %extend TShort_HArray1OfShortReal {
 	Handle_TShort_HArray1OfShortReal GetHandle() {
 	return *(Handle_TShort_HArray1OfShortReal*) &$self;
+	}
+};
+%extend TShort_HArray1OfShortReal {
+	~TShort_HArray1OfShortReal() {
+	printf("Call custom destructor for instance of TShort_HArray1OfShortReal\n");
 	}
 };
 
@@ -338,13 +339,16 @@ class TShort_HArray2OfShortReal : public MMgt_TShared {
 		TShort_Array2OfShortReal & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TShort_HArray2OfShortReal();
 
 };
 %extend TShort_HArray2OfShortReal {
 	Handle_TShort_HArray2OfShortReal GetHandle() {
 	return *(Handle_TShort_HArray2OfShortReal*) &$self;
+	}
+};
+%extend TShort_HArray2OfShortReal {
+	~TShort_HArray2OfShortReal() {
+	printf("Call custom destructor for instance of TShort_HArray2OfShortReal\n");
 	}
 };
 
@@ -357,13 +361,16 @@ class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
 		Standard_ShortReal & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TShort_SequenceNodeOfSequenceOfShortReal();
 
 };
 %extend TShort_SequenceNodeOfSequenceOfShortReal {
 	Handle_TShort_SequenceNodeOfSequenceOfShortReal GetHandle() {
 	return *(Handle_TShort_SequenceNodeOfSequenceOfShortReal*) &$self;
+	}
+};
+%extend TShort_SequenceNodeOfSequenceOfShortReal {
+	~TShort_SequenceNodeOfSequenceOfShortReal() {
+	printf("Call custom destructor for instance of TShort_SequenceNodeOfSequenceOfShortReal\n");
 	}
 };
 
@@ -418,13 +425,16 @@ class TShort_HSequenceOfShortReal : public MMgt_TShared {
 		Handle_TShort_HSequenceOfShortReal ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TShort_HSequenceOfShortReal();
 
 };
 %extend TShort_HSequenceOfShortReal {
 	Handle_TShort_HSequenceOfShortReal GetHandle() {
 	return *(Handle_TShort_HSequenceOfShortReal*) &$self;
+	}
+};
+%extend TShort_HSequenceOfShortReal {
+	~TShort_HSequenceOfShortReal() {
+	printf("Call custom destructor for instance of TShort_HSequenceOfShortReal\n");
 	}
 };
 

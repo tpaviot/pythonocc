@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TCollection
 
@@ -95,8 +81,8 @@ Standard_Real & function transformation
 
 %include TCollection_headers.i
 
-typedef TCollection_SeqNode * TCollection_SeqNodePtr;
 typedef TCollection_MapNode * TCollection_MapNodePtr;
+typedef TCollection_SeqNode * TCollection_SeqNodePtr;
 typedef TCollection_AVLBaseNode * TCollection_AVLBaseNodePtr;
 
 enum TCollection_Side {
@@ -109,8 +95,6 @@ enum TCollection_Side {
 %nodefaultctor Handle_TCollection_SeqNode;
 class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_SeqNode();
 		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode();
 		%feature("autodoc", "1");
@@ -126,12 +110,15 @@ class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 	return (TCollection_SeqNode*)$self->Access();
 	}
 };
+%extend Handle_TCollection_SeqNode {
+	~Handle_TCollection_SeqNode() {
+	printf("Call custom destructor for instance of Handle_TCollection_SeqNode\n");
+	}
+};
 
 %nodefaultctor Handle_TCollection_HAsciiString;
 class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_HAsciiString();
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString();
 		%feature("autodoc", "1");
@@ -147,12 +134,15 @@ class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 	return (TCollection_HAsciiString*)$self->Access();
 	}
 };
+%extend Handle_TCollection_HAsciiString {
+	~Handle_TCollection_HAsciiString() {
+	printf("Call custom destructor for instance of Handle_TCollection_HAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_TCollection_HExtendedString;
 class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_HExtendedString();
 		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString();
 		%feature("autodoc", "1");
@@ -168,12 +158,15 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 	return (TCollection_HExtendedString*)$self->Access();
 	}
 };
+%extend Handle_TCollection_HExtendedString {
+	~Handle_TCollection_HExtendedString() {
+	printf("Call custom destructor for instance of Handle_TCollection_HExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_TCollection_MapNode;
 class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_MapNode();
 		%feature("autodoc", "1");
 		Handle_TCollection_MapNode();
 		%feature("autodoc", "1");
@@ -189,12 +182,15 @@ class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 	return (TCollection_MapNode*)$self->Access();
 	}
 };
+%extend Handle_TCollection_MapNode {
+	~Handle_TCollection_MapNode() {
+	printf("Call custom destructor for instance of Handle_TCollection_MapNode\n");
+	}
+};
 
 %nodefaultctor Handle_TCollection_AVLBaseNode;
 class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TCollection_AVLBaseNode();
 		%feature("autodoc", "1");
 		Handle_TCollection_AVLBaseNode();
 		%feature("autodoc", "1");
@@ -208,6 +204,11 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 %extend Handle_TCollection_AVLBaseNode {
 	TCollection_AVLBaseNode* GetObject() {
 	return (TCollection_AVLBaseNode*)$self->Access();
+	}
+};
+%extend Handle_TCollection_AVLBaseNode {
+	~Handle_TCollection_AVLBaseNode() {
+	printf("Call custom destructor for instance of Handle_TCollection_AVLBaseNode\n");
 	}
 };
 
@@ -445,25 +446,6 @@ class TCollection {
 
 };
 
-%nodefaultctor TCollection_MapNode;
-class TCollection_MapNode : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TCollection_MapNode(const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_MapNode();
-
-};
-%extend TCollection_MapNode {
-	Handle_TCollection_MapNode GetHandle() {
-	return *(Handle_TCollection_MapNode*) &$self;
-	}
-};
-
 %nodefaultctor TCollection_SeqNode;
 class TCollection_SeqNode : public MMgt_TShared {
 	public:
@@ -475,13 +457,16 @@ class TCollection_SeqNode : public MMgt_TShared {
 		TCollection_SeqNodePtr & Previous() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_SeqNode();
 
 };
 %extend TCollection_SeqNode {
 	Handle_TCollection_SeqNode GetHandle() {
 	return *(Handle_TCollection_SeqNode*) &$self;
+	}
+};
+%extend TCollection_SeqNode {
+	~TCollection_SeqNode() {
+	printf("Call custom destructor for instance of TCollection_SeqNode\n");
 	}
 };
 
@@ -522,13 +507,16 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 		Standard_Integer & Count() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_AVLBaseNode();
 
 };
 %extend TCollection_AVLBaseNode {
 	Handle_TCollection_AVLBaseNode GetHandle() {
 	return *(Handle_TCollection_AVLBaseNode*) &$self;
+	}
+};
+%extend TCollection_AVLBaseNode {
+	~TCollection_AVLBaseNode() {
+	printf("Call custom destructor for instance of TCollection_AVLBaseNode\n");
 	}
 };
 
@@ -644,6 +632,28 @@ class TCollection_ExtendedString {
 
 };
 
+%nodefaultctor TCollection_MapNode;
+class TCollection_MapNode : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TCollection_MapNode(const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TCollection_MapNode {
+	Handle_TCollection_MapNode GetHandle() {
+	return *(Handle_TCollection_MapNode*) &$self;
+	}
+};
+%extend TCollection_MapNode {
+	~TCollection_MapNode() {
+	printf("Call custom destructor for instance of TCollection_MapNode\n");
+	}
+};
+
 %nodefaultctor TCollection_PrivCompareOfReal;
 class TCollection_PrivCompareOfReal {
 	public:
@@ -735,8 +745,6 @@ class TCollection_HExtendedString : public MMgt_TShared {
 		Standard_Boolean IsSameState(const Handle_TCollection_HExtendedString &other) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_HExtendedString();
 
 };
 %extend TCollection_HExtendedString {
@@ -744,21 +752,10 @@ class TCollection_HExtendedString : public MMgt_TShared {
 	return *(Handle_TCollection_HExtendedString*) &$self;
 	}
 };
-
-%nodefaultctor TCollection_BaseSequence;
-class TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		~TCollection_BaseSequence();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer I, const Standard_Integer J);
-
+%extend TCollection_HExtendedString {
+	~TCollection_HExtendedString() {
+	printf("Call custom destructor for instance of TCollection_HExtendedString\n");
+	}
 };
 
 %nodefaultctor TCollection_Array1Descriptor;
@@ -786,6 +783,22 @@ class TCollection_CompareOfInteger : public TCollection_PrivCompareOfInteger {
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
+
+};
+
+%nodefaultctor TCollection_BaseSequence;
+class TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		~TCollection_BaseSequence();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer I, const Standard_Integer J);
 
 };
 
@@ -958,13 +971,16 @@ class TCollection_HAsciiString : public MMgt_TShared {
 		Standard_Boolean IsSameState(const Handle_TCollection_HAsciiString &other) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TCollection_HAsciiString();
 
 };
 %extend TCollection_HAsciiString {
 	Handle_TCollection_HAsciiString GetHandle() {
 	return *(Handle_TCollection_HAsciiString*) &$self;
+	}
+};
+%extend TCollection_HAsciiString {
+	~TCollection_HAsciiString() {
+	printf("Call custom destructor for instance of TCollection_HAsciiString\n");
 	}
 };
 

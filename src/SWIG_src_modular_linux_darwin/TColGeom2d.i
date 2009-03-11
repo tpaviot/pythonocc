@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TColGeom2d
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_TColGeom2d_HSequenceOfGeometry : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TColGeom2d_HSequenceOfGeometry();
-		%feature("autodoc", "1");
 		Handle_TColGeom2d_HSequenceOfGeometry();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_HSequenceOfGeometry(const Handle_TColGeom2d_HSequenceOfGeometry &aHandle);
@@ -118,12 +102,15 @@ class Handle_TColGeom2d_HSequenceOfGeometry : public Handle_MMgt_TShared {
 	return (TColGeom2d_HSequenceOfGeometry*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_HSequenceOfGeometry {
+	~Handle_TColGeom2d_HSequenceOfGeometry() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfGeometry\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_HSequenceOfBoundedCurve;
 class Handle_TColGeom2d_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_HSequenceOfBoundedCurve();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_HSequenceOfBoundedCurve();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_TColGeom2d_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	return (TColGeom2d_HSequenceOfBoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_HSequenceOfBoundedCurve {
+	~Handle_TColGeom2d_HSequenceOfBoundedCurve() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfBoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve;
 class Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TCo
 	return (TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
+	~Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_HArray1OfBSplineCurve;
 class Handle_TColGeom2d_HArray1OfBSplineCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_HArray1OfBSplineCurve();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_HArray1OfBSplineCurve();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_TColGeom2d_HArray1OfBSplineCurve : public Handle_MMgt_TShared {
 	return (TColGeom2d_HArray1OfBSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_HArray1OfBSplineCurve {
+	~Handle_TColGeom2d_HArray1OfBSplineCurve() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_HArray1OfCurve;
 class Handle_TColGeom2d_HArray1OfCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_HArray1OfCurve();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_HArray1OfCurve();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_TColGeom2d_HArray1OfCurve : public Handle_MMgt_TShared {
 	return (TColGeom2d_HArray1OfCurve*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_HArray1OfCurve {
+	~Handle_TColGeom2d_HArray1OfCurve() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_HSequenceOfCurve;
 class Handle_TColGeom2d_HSequenceOfCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_HSequenceOfCurve();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_HSequenceOfCurve();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_TColGeom2d_HSequenceOfCurve : public Handle_MMgt_TShared {
 	return (TColGeom2d_HSequenceOfCurve*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_HSequenceOfCurve {
+	~Handle_TColGeom2d_HSequenceOfCurve() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry;
 class Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry();
 		%feature("autodoc", "1");
@@ -244,12 +246,15 @@ class Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry : public Handle_TCollec
 	return (TColGeom2d_SequenceNodeOfSequenceOfGeometry*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry {
+	~Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_HArray1OfBoundedCurve;
 class Handle_TColGeom2d_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_HArray1OfBoundedCurve();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_HArray1OfBoundedCurve();
 		%feature("autodoc", "1");
@@ -265,12 +270,15 @@ class Handle_TColGeom2d_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
 	return (TColGeom2d_HArray1OfBoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_HArray1OfBoundedCurve {
+	~Handle_TColGeom2d_HArray1OfBoundedCurve() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve;
 class Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve();
 		%feature("autodoc", "1");
@@ -286,12 +294,15 @@ class Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollectio
 	return (TColGeom2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
+	~Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_HArray1OfGeometry;
 class Handle_TColGeom2d_HArray1OfGeometry : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_HArray1OfGeometry();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_HArray1OfGeometry();
 		%feature("autodoc", "1");
@@ -307,12 +318,15 @@ class Handle_TColGeom2d_HArray1OfGeometry : public Handle_MMgt_TShared {
 	return (TColGeom2d_HArray1OfGeometry*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_HArray1OfGeometry {
+	~Handle_TColGeom2d_HArray1OfGeometry() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfGeometry\n");
+	}
+};
 
 %nodefaultctor Handle_TColGeom2d_HArray1OfBezierCurve;
 class Handle_TColGeom2d_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColGeom2d_HArray1OfBezierCurve();
 		%feature("autodoc", "1");
 		Handle_TColGeom2d_HArray1OfBezierCurve();
 		%feature("autodoc", "1");
@@ -328,6 +342,11 @@ class Handle_TColGeom2d_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 	return (TColGeom2d_HArray1OfBezierCurve*)$self->Access();
 	}
 };
+%extend Handle_TColGeom2d_HArray1OfBezierCurve {
+	~Handle_TColGeom2d_HArray1OfBezierCurve() {
+	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBezierCurve\n");
+	}
+};
 
 %nodefaultctor TColGeom2d_SequenceNodeOfSequenceOfCurve;
 class TColGeom2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
@@ -338,13 +357,16 @@ class TColGeom2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 		Handle_Geom2d_Curve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_SequenceNodeOfSequenceOfCurve();
 
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfCurve {
 	Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve GetHandle() {
 	return *(Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve*) &$self;
+	}
+};
+%extend TColGeom2d_SequenceNodeOfSequenceOfCurve {
+	~TColGeom2d_SequenceNodeOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_SequenceNodeOfSequenceOfCurve\n");
 	}
 };
 
@@ -359,8 +381,6 @@ class TColGeom2d_Array1OfBoundedCurve {
 		void Init(const Handle_Geom2d_BoundedCurve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom2d_Array1OfBoundedCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -382,6 +402,11 @@ class TColGeom2d_Array1OfBoundedCurve {
 		%feature("autodoc", "1");
 		Handle_Geom2d_BoundedCurve & operator()(const Standard_Integer Index);
 
+};
+%extend TColGeom2d_Array1OfBoundedCurve {
+	~TColGeom2d_Array1OfBoundedCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_Array1OfBoundedCurve\n");
+	}
 };
 
 %nodefaultctor TColGeom2d_HSequenceOfBoundedCurve;
@@ -435,13 +460,16 @@ class TColGeom2d_HSequenceOfBoundedCurve : public MMgt_TShared {
 		Handle_TColGeom2d_HSequenceOfBoundedCurve ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_HSequenceOfBoundedCurve();
 
 };
 %extend TColGeom2d_HSequenceOfBoundedCurve {
 	Handle_TColGeom2d_HSequenceOfBoundedCurve GetHandle() {
 	return *(Handle_TColGeom2d_HSequenceOfBoundedCurve*) &$self;
+	}
+};
+%extend TColGeom2d_HSequenceOfBoundedCurve {
+	~TColGeom2d_HSequenceOfBoundedCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_HSequenceOfBoundedCurve\n");
 	}
 };
 
@@ -456,8 +484,6 @@ class TColGeom2d_Array1OfBezierCurve {
 		void Init(const Handle_Geom2d_BezierCurve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom2d_Array1OfBezierCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -480,6 +506,11 @@ class TColGeom2d_Array1OfBezierCurve {
 		Handle_Geom2d_BezierCurve & operator()(const Standard_Integer Index);
 
 };
+%extend TColGeom2d_Array1OfBezierCurve {
+	~TColGeom2d_Array1OfBezierCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_Array1OfBezierCurve\n");
+	}
+};
 
 %nodefaultctor TColGeom2d_SequenceOfCurve;
 class TColGeom2d_SequenceOfCurve : public TCollection_BaseSequence {
@@ -488,8 +519,6 @@ class TColGeom2d_SequenceOfCurve : public TCollection_BaseSequence {
 		TColGeom2d_SequenceOfCurve();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColGeom2d_SequenceOfCurve();
 		%feature("autodoc", "1");
 		const TColGeom2d_SequenceOfCurve & Assign(const TColGeom2d_SequenceOfCurve &Other);
 		%feature("autodoc", "1");
@@ -530,6 +559,11 @@ class TColGeom2d_SequenceOfCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TColGeom2d_SequenceOfCurve {
+	~TColGeom2d_SequenceOfCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_SequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor TColGeom2d_HArray1OfBSplineCurve;
 class TColGeom2d_HArray1OfBSplineCurve : public MMgt_TShared {
@@ -558,13 +592,16 @@ class TColGeom2d_HArray1OfBSplineCurve : public MMgt_TShared {
 		TColGeom2d_Array1OfBSplineCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_HArray1OfBSplineCurve();
 
 };
 %extend TColGeom2d_HArray1OfBSplineCurve {
 	Handle_TColGeom2d_HArray1OfBSplineCurve GetHandle() {
 	return *(Handle_TColGeom2d_HArray1OfBSplineCurve*) &$self;
+	}
+};
+%extend TColGeom2d_HArray1OfBSplineCurve {
+	~TColGeom2d_HArray1OfBSplineCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_HArray1OfBSplineCurve\n");
 	}
 };
 
@@ -595,13 +632,16 @@ class TColGeom2d_HArray1OfGeometry : public MMgt_TShared {
 		TColGeom2d_Array1OfGeometry & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_HArray1OfGeometry();
 
 };
 %extend TColGeom2d_HArray1OfGeometry {
 	Handle_TColGeom2d_HArray1OfGeometry GetHandle() {
 	return *(Handle_TColGeom2d_HArray1OfGeometry*) &$self;
+	}
+};
+%extend TColGeom2d_HArray1OfGeometry {
+	~TColGeom2d_HArray1OfGeometry() {
+	printf("Call custom destructor for instance of TColGeom2d_HArray1OfGeometry\n");
 	}
 };
 
@@ -632,13 +672,16 @@ class TColGeom2d_HArray1OfBezierCurve : public MMgt_TShared {
 		TColGeom2d_Array1OfBezierCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_HArray1OfBezierCurve();
 
 };
 %extend TColGeom2d_HArray1OfBezierCurve {
 	Handle_TColGeom2d_HArray1OfBezierCurve GetHandle() {
 	return *(Handle_TColGeom2d_HArray1OfBezierCurve*) &$self;
+	}
+};
+%extend TColGeom2d_HArray1OfBezierCurve {
+	~TColGeom2d_HArray1OfBezierCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_HArray1OfBezierCurve\n");
 	}
 };
 
@@ -653,8 +696,6 @@ class TColGeom2d_Array1OfGeometry {
 		void Init(const Handle_Geom2d_Geometry &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom2d_Array1OfGeometry();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -676,6 +717,11 @@ class TColGeom2d_Array1OfGeometry {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Geometry & operator()(const Standard_Integer Index);
 
+};
+%extend TColGeom2d_Array1OfGeometry {
+	~TColGeom2d_Array1OfGeometry() {
+	printf("Call custom destructor for instance of TColGeom2d_Array1OfGeometry\n");
+	}
 };
 
 %nodefaultctor TColGeom2d_HSequenceOfGeometry;
@@ -729,13 +775,16 @@ class TColGeom2d_HSequenceOfGeometry : public MMgt_TShared {
 		Handle_TColGeom2d_HSequenceOfGeometry ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_HSequenceOfGeometry();
 
 };
 %extend TColGeom2d_HSequenceOfGeometry {
 	Handle_TColGeom2d_HSequenceOfGeometry GetHandle() {
 	return *(Handle_TColGeom2d_HSequenceOfGeometry*) &$self;
+	}
+};
+%extend TColGeom2d_HSequenceOfGeometry {
+	~TColGeom2d_HSequenceOfGeometry() {
+	printf("Call custom destructor for instance of TColGeom2d_HSequenceOfGeometry\n");
 	}
 };
 
@@ -748,13 +797,16 @@ class TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve : public TCollection_SeqNo
 		Handle_Geom2d_BoundedCurve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve();
 
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
 	Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve GetHandle() {
 	return *(Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve*) &$self;
+	}
+};
+%extend TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
+	~TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve\n");
 	}
 };
 
@@ -769,8 +821,6 @@ class TColGeom2d_Array1OfBSplineCurve {
 		void Init(const Handle_Geom2d_BSplineCurve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom2d_Array1OfBSplineCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -793,6 +843,11 @@ class TColGeom2d_Array1OfBSplineCurve {
 		Handle_Geom2d_BSplineCurve & operator()(const Standard_Integer Index);
 
 };
+%extend TColGeom2d_Array1OfBSplineCurve {
+	~TColGeom2d_Array1OfBSplineCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_Array1OfBSplineCurve\n");
+	}
+};
 
 %nodefaultctor TColGeom2d_SequenceOfBoundedCurve;
 class TColGeom2d_SequenceOfBoundedCurve : public TCollection_BaseSequence {
@@ -801,8 +856,6 @@ class TColGeom2d_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 		TColGeom2d_SequenceOfBoundedCurve();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColGeom2d_SequenceOfBoundedCurve();
 		%feature("autodoc", "1");
 		const TColGeom2d_SequenceOfBoundedCurve & Assign(const TColGeom2d_SequenceOfBoundedCurve &Other);
 		%feature("autodoc", "1");
@@ -843,6 +896,11 @@ class TColGeom2d_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TColGeom2d_SequenceOfBoundedCurve {
+	~TColGeom2d_SequenceOfBoundedCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_SequenceOfBoundedCurve\n");
+	}
+};
 
 %nodefaultctor TColGeom2d_SequenceOfGeometry;
 class TColGeom2d_SequenceOfGeometry : public TCollection_BaseSequence {
@@ -851,8 +909,6 @@ class TColGeom2d_SequenceOfGeometry : public TCollection_BaseSequence {
 		TColGeom2d_SequenceOfGeometry();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColGeom2d_SequenceOfGeometry();
 		%feature("autodoc", "1");
 		const TColGeom2d_SequenceOfGeometry & Assign(const TColGeom2d_SequenceOfGeometry &Other);
 		%feature("autodoc", "1");
@@ -892,6 +948,11 @@ class TColGeom2d_SequenceOfGeometry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColGeom2d_SequenceOfGeometry {
+	~TColGeom2d_SequenceOfGeometry() {
+	printf("Call custom destructor for instance of TColGeom2d_SequenceOfGeometry\n");
+	}
 };
 
 %nodefaultctor TColGeom2d_HSequenceOfCurve;
@@ -945,13 +1006,16 @@ class TColGeom2d_HSequenceOfCurve : public MMgt_TShared {
 		Handle_TColGeom2d_HSequenceOfCurve ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_HSequenceOfCurve();
 
 };
 %extend TColGeom2d_HSequenceOfCurve {
 	Handle_TColGeom2d_HSequenceOfCurve GetHandle() {
 	return *(Handle_TColGeom2d_HSequenceOfCurve*) &$self;
+	}
+};
+%extend TColGeom2d_HSequenceOfCurve {
+	~TColGeom2d_HSequenceOfCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_HSequenceOfCurve\n");
 	}
 };
 
@@ -966,8 +1030,6 @@ class TColGeom2d_Array1OfCurve {
 		void Init(const Handle_Geom2d_Curve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom2d_Array1OfCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -990,6 +1052,11 @@ class TColGeom2d_Array1OfCurve {
 		Handle_Geom2d_Curve & operator()(const Standard_Integer Index);
 
 };
+%extend TColGeom2d_Array1OfCurve {
+	~TColGeom2d_Array1OfCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_Array1OfCurve\n");
+	}
+};
 
 %nodefaultctor TColGeom2d_SequenceNodeOfSequenceOfGeometry;
 class TColGeom2d_SequenceNodeOfSequenceOfGeometry : public TCollection_SeqNode {
@@ -1000,13 +1067,16 @@ class TColGeom2d_SequenceNodeOfSequenceOfGeometry : public TCollection_SeqNode {
 		Handle_Geom2d_Geometry & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_SequenceNodeOfSequenceOfGeometry();
 
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
 	Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry GetHandle() {
 	return *(Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry*) &$self;
+	}
+};
+%extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
+	~TColGeom2d_SequenceNodeOfSequenceOfGeometry() {
+	printf("Call custom destructor for instance of TColGeom2d_SequenceNodeOfSequenceOfGeometry\n");
 	}
 };
 
@@ -1037,13 +1107,16 @@ class TColGeom2d_HArray1OfCurve : public MMgt_TShared {
 		TColGeom2d_Array1OfCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_HArray1OfCurve();
 
 };
 %extend TColGeom2d_HArray1OfCurve {
 	Handle_TColGeom2d_HArray1OfCurve GetHandle() {
 	return *(Handle_TColGeom2d_HArray1OfCurve*) &$self;
+	}
+};
+%extend TColGeom2d_HArray1OfCurve {
+	~TColGeom2d_HArray1OfCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_HArray1OfCurve\n");
 	}
 };
 
@@ -1074,12 +1147,15 @@ class TColGeom2d_HArray1OfBoundedCurve : public MMgt_TShared {
 		TColGeom2d_Array1OfBoundedCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColGeom2d_HArray1OfBoundedCurve();
 
 };
 %extend TColGeom2d_HArray1OfBoundedCurve {
 	Handle_TColGeom2d_HArray1OfBoundedCurve GetHandle() {
 	return *(Handle_TColGeom2d_HArray1OfBoundedCurve*) &$self;
+	}
+};
+%extend TColGeom2d_HArray1OfBoundedCurve {
+	~TColGeom2d_HArray1OfBoundedCurve() {
+	printf("Call custom destructor for instance of TColGeom2d_HArray1OfBoundedCurve\n");
 	}
 };

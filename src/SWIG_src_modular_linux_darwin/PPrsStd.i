@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module PPrsStd
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PPrsStd_AISPresentation();
-		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation();
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation(const Handle_PPrsStd_AISPresentation &aHandle);
@@ -118,12 +102,15 @@ class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 	return (PPrsStd_AISPresentation*)$self->Access();
 	}
 };
+%extend Handle_PPrsStd_AISPresentation {
+	~Handle_PPrsStd_AISPresentation() {
+	printf("Call custom destructor for instance of Handle_PPrsStd_AISPresentation\n");
+	}
+};
 
 %nodefaultctor Handle_PPrsStd_AISPresentation_1;
 class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPrsStd_AISPresentation_1();
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation_1();
 		%feature("autodoc", "1");
@@ -137,6 +124,11 @@ class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 %extend Handle_PPrsStd_AISPresentation_1 {
 	PPrsStd_AISPresentation_1* GetObject() {
 	return (PPrsStd_AISPresentation_1*)$self->Access();
+	}
+};
+%extend Handle_PPrsStd_AISPresentation_1 {
+	~Handle_PPrsStd_AISPresentation_1() {
+	printf("Call custom destructor for instance of Handle_PPrsStd_AISPresentation_1\n");
 	}
 };
 
@@ -205,13 +197,16 @@ class PPrsStd_AISPresentation_1 : public PDF_Attribute {
 		void _CSFDB_SetPPrsStd_AISPresentation_1myMode(const Standard_Integer p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPrsStd_AISPresentation_1();
 
 };
 %extend PPrsStd_AISPresentation_1 {
 	Handle_PPrsStd_AISPresentation_1 GetHandle() {
 	return *(Handle_PPrsStd_AISPresentation_1*) &$self;
+	}
+};
+%extend PPrsStd_AISPresentation_1 {
+	~PPrsStd_AISPresentation_1() {
+	printf("Call custom destructor for instance of PPrsStd_AISPresentation_1\n");
 	}
 };
 
@@ -272,12 +267,15 @@ class PPrsStd_AISPresentation : public PDF_Attribute {
 		void _CSFDB_SetPPrsStd_AISPresentationmyWidth(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPrsStd_AISPresentation();
 
 };
 %extend PPrsStd_AISPresentation {
 	Handle_PPrsStd_AISPresentation GetHandle() {
 	return *(Handle_PPrsStd_AISPresentation*) &$self;
+	}
+};
+%extend PPrsStd_AISPresentation {
+	~PPrsStd_AISPresentation() {
+	printf("Call custom destructor for instance of PPrsStd_AISPresentation\n");
 	}
 };

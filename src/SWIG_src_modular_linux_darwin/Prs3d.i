@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Prs3d
 
@@ -106,32 +92,9 @@ enum Prs3d_TypeOfLinePicking {
 
 
 
-%nodefaultctor Handle_Prs3d_InvalidAngle;
-class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_InvalidAngle();
-		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle();
-		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle(const Handle_Prs3d_InvalidAngle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle(const Prs3d_InvalidAngle *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_InvalidAngle {
-	Prs3d_InvalidAngle* GetObject() {
-	return (Prs3d_InvalidAngle*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Prs3d_CompositeAspect;
 class Handle_Prs3d_CompositeAspect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_CompositeAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_CompositeAspect();
 		%feature("autodoc", "1");
@@ -147,12 +110,15 @@ class Handle_Prs3d_CompositeAspect : public Handle_MMgt_TShared {
 	return (Prs3d_CompositeAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_CompositeAspect {
+	~Handle_Prs3d_CompositeAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_CompositeAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_AngleAspect;
 class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_AngleAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_AngleAspect();
 		%feature("autodoc", "1");
@@ -168,12 +134,15 @@ class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_AngleAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_AngleAspect {
+	~Handle_Prs3d_AngleAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_AngleAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_BasicAspect;
 class Handle_Prs3d_BasicAspect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_BasicAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_BasicAspect();
 		%feature("autodoc", "1");
@@ -189,12 +158,15 @@ class Handle_Prs3d_BasicAspect : public Handle_MMgt_TShared {
 	return (Prs3d_BasicAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_BasicAspect {
+	~Handle_Prs3d_BasicAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_BasicAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_LineAspect;
 class Handle_Prs3d_LineAspect : public Handle_Prs3d_BasicAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_LineAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_LineAspect();
 		%feature("autodoc", "1");
@@ -210,12 +182,39 @@ class Handle_Prs3d_LineAspect : public Handle_Prs3d_BasicAspect {
 	return (Prs3d_LineAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_LineAspect {
+	~Handle_Prs3d_LineAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_LineAspect\n");
+	}
+};
+
+%nodefaultctor Handle_Prs3d_InvalidAngle;
+class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle();
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle(const Handle_Prs3d_InvalidAngle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle(const Prs3d_InvalidAngle *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_InvalidAngle {
+	Prs3d_InvalidAngle* GetObject() {
+	return (Prs3d_InvalidAngle*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_InvalidAngle {
+	~Handle_Prs3d_InvalidAngle() {
+	printf("Call custom destructor for instance of Handle_Prs3d_InvalidAngle\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_PointAspect;
 class Handle_Prs3d_PointAspect : public Handle_Prs3d_BasicAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_PointAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_PointAspect();
 		%feature("autodoc", "1");
@@ -231,12 +230,15 @@ class Handle_Prs3d_PointAspect : public Handle_Prs3d_BasicAspect {
 	return (Prs3d_PointAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_PointAspect {
+	~Handle_Prs3d_PointAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_PointAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_TextAspect;
 class Handle_Prs3d_TextAspect : public Handle_Prs3d_BasicAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_TextAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_TextAspect();
 		%feature("autodoc", "1");
@@ -252,12 +254,15 @@ class Handle_Prs3d_TextAspect : public Handle_Prs3d_BasicAspect {
 	return (Prs3d_TextAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_TextAspect {
+	~Handle_Prs3d_TextAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_TextAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_Drawer;
 class Handle_Prs3d_Drawer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_Drawer();
 		%feature("autodoc", "1");
 		Handle_Prs3d_Drawer();
 		%feature("autodoc", "1");
@@ -273,12 +278,15 @@ class Handle_Prs3d_Drawer : public Handle_MMgt_TShared {
 	return (Prs3d_Drawer*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_Drawer {
+	~Handle_Prs3d_Drawer() {
+	printf("Call custom destructor for instance of Handle_Prs3d_Drawer\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_DatumAspect;
 class Handle_Prs3d_DatumAspect : public Handle_Prs3d_CompositeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_DatumAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_DatumAspect();
 		%feature("autodoc", "1");
@@ -294,12 +302,15 @@ class Handle_Prs3d_DatumAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_DatumAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_DatumAspect {
+	~Handle_Prs3d_DatumAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_DatumAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_PlaneSet;
 class Handle_Prs3d_PlaneSet : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_PlaneSet();
 		%feature("autodoc", "1");
 		Handle_Prs3d_PlaneSet();
 		%feature("autodoc", "1");
@@ -315,12 +326,15 @@ class Handle_Prs3d_PlaneSet : public Handle_MMgt_TShared {
 	return (Prs3d_PlaneSet*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_PlaneSet {
+	~Handle_Prs3d_PlaneSet() {
+	printf("Call custom destructor for instance of Handle_Prs3d_PlaneSet\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_LengthAspect;
 class Handle_Prs3d_LengthAspect : public Handle_Prs3d_CompositeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_LengthAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_LengthAspect();
 		%feature("autodoc", "1");
@@ -336,12 +350,15 @@ class Handle_Prs3d_LengthAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_LengthAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_LengthAspect {
+	~Handle_Prs3d_LengthAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_LengthAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_ShadingAspect;
 class Handle_Prs3d_ShadingAspect : public Handle_Prs3d_BasicAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_ShadingAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_ShadingAspect();
 		%feature("autodoc", "1");
@@ -357,12 +374,15 @@ class Handle_Prs3d_ShadingAspect : public Handle_Prs3d_BasicAspect {
 	return (Prs3d_ShadingAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_ShadingAspect {
+	~Handle_Prs3d_ShadingAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_ShadingAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_RadiusAspect;
 class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_RadiusAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_RadiusAspect();
 		%feature("autodoc", "1");
@@ -378,12 +398,15 @@ class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_RadiusAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_RadiusAspect {
+	~Handle_Prs3d_RadiusAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_RadiusAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_ArrowAspect;
 class Handle_Prs3d_ArrowAspect : public Handle_Prs3d_CompositeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_ArrowAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_ArrowAspect();
 		%feature("autodoc", "1");
@@ -399,12 +422,15 @@ class Handle_Prs3d_ArrowAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_ArrowAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_ArrowAspect {
+	~Handle_Prs3d_ArrowAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_ArrowAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_Projector;
 class Handle_Prs3d_Projector : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_Projector();
 		%feature("autodoc", "1");
 		Handle_Prs3d_Projector();
 		%feature("autodoc", "1");
@@ -420,12 +446,15 @@ class Handle_Prs3d_Projector : public Handle_MMgt_TShared {
 	return (Prs3d_Projector*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_Projector {
+	~Handle_Prs3d_Projector() {
+	printf("Call custom destructor for instance of Handle_Prs3d_Projector\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_IsoAspect;
 class Handle_Prs3d_IsoAspect : public Handle_Prs3d_LineAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_IsoAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_IsoAspect();
 		%feature("autodoc", "1");
@@ -441,12 +470,15 @@ class Handle_Prs3d_IsoAspect : public Handle_Prs3d_LineAspect {
 	return (Prs3d_IsoAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_IsoAspect {
+	~Handle_Prs3d_IsoAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_IsoAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_PlaneAspect;
 class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_PlaneAspect();
 		%feature("autodoc", "1");
 		Handle_Prs3d_PlaneAspect();
 		%feature("autodoc", "1");
@@ -462,12 +494,15 @@ class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_PlaneAspect*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_PlaneAspect {
+	~Handle_Prs3d_PlaneAspect() {
+	printf("Call custom destructor for instance of Handle_Prs3d_PlaneAspect\n");
+	}
+};
 
 %nodefaultctor Handle_Prs3d_Presentation;
 class Handle_Prs3d_Presentation : public Handle_Graphic3d_Structure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Prs3d_Presentation();
 		%feature("autodoc", "1");
 		Handle_Prs3d_Presentation();
 		%feature("autodoc", "1");
@@ -483,6 +518,11 @@ class Handle_Prs3d_Presentation : public Handle_Graphic3d_Structure {
 	return (Prs3d_Presentation*)$self->Access();
 	}
 };
+%extend Handle_Prs3d_Presentation {
+	~Handle_Prs3d_Presentation() {
+	printf("Call custom destructor for instance of Handle_Prs3d_Presentation\n");
+	}
+};
 
 %nodefaultctor Prs3d_BasicAspect;
 class Prs3d_BasicAspect : public MMgt_TShared {
@@ -491,13 +531,16 @@ class Prs3d_BasicAspect : public MMgt_TShared {
 		Prs3d_BasicAspect();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_BasicAspect();
 
 };
 %extend Prs3d_BasicAspect {
 	Handle_Prs3d_BasicAspect GetHandle() {
 	return *(Handle_Prs3d_BasicAspect*) &$self;
+	}
+};
+%extend Prs3d_BasicAspect {
+	~Prs3d_BasicAspect() {
+	printf("Call custom destructor for instance of Prs3d_BasicAspect\n");
 	}
 };
 
@@ -526,13 +569,16 @@ class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
 		Standard_Real Transparency(const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_FRONT_SIDE) const;
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectFillArea3d Aspect() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_ShadingAspect();
 
 };
 %extend Prs3d_ShadingAspect {
 	Handle_Prs3d_ShadingAspect GetHandle() {
 	return *(Handle_Prs3d_ShadingAspect*) &$self;
+	}
+};
+%extend Prs3d_ShadingAspect {
+	~Prs3d_ShadingAspect() {
+	printf("Call custom destructor for instance of Prs3d_ShadingAspect\n");
 	}
 };
 
@@ -557,8 +603,6 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 		virtual		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_LineAspect();
 
 };
 %extend Prs3d_LineAspect {
@@ -566,12 +610,15 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 	return *(Handle_Prs3d_LineAspect*) &$self;
 	}
 };
+%extend Prs3d_LineAspect {
+	~Prs3d_LineAspect() {
+	printf("Call custom destructor for instance of Prs3d_LineAspect\n");
+	}
+};
 
 %nodefaultctor Prs3d_Root;
 class Prs3d_Root {
 	public:
-		%feature("autodoc", "1");
-		~Prs3d_Root();
 		%feature("autodoc", "1");
 		Prs3d_Root();
 		%feature("autodoc", "1");
@@ -580,19 +627,10 @@ class Prs3d_Root {
 		Handle_Graphic3d_Group NewGroup(const Handle_Prs3d_Presentation &Prs3d);
 
 };
-
-%nodefaultctor Prs3d_Text;
-class Prs3d_Text : public Prs3d_Root {
-	public:
-		%feature("autodoc", "1");
-		~Prs3d_Text();
-		%feature("autodoc", "1");
-		Prs3d_Text();
-		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
-		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
-
+%extend Prs3d_Root {
+	~Prs3d_Root() {
+	printf("Call custom destructor for instance of Prs3d_Root\n");
+	}
 };
 
 %nodefaultctor Prs3d_CompositeAspect;
@@ -602,13 +640,16 @@ class Prs3d_CompositeAspect : public MMgt_TShared {
 		Prs3d_CompositeAspect();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_CompositeAspect();
 
 };
 %extend Prs3d_CompositeAspect {
 	Handle_Prs3d_CompositeAspect GetHandle() {
 	return *(Handle_Prs3d_CompositeAspect*) &$self;
+	}
+};
+%extend Prs3d_CompositeAspect {
+	~Prs3d_CompositeAspect() {
+	printf("Call custom destructor for instance of Prs3d_CompositeAspect\n");
 	}
 };
 
@@ -635,13 +676,16 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 		Handle_Graphic3d_AspectLine3d Aspect() const;
 		%feature("autodoc", "1");
 		virtual		void Print(Standard_OStream & s) const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_ArrowAspect();
 
 };
 %extend Prs3d_ArrowAspect {
 	Handle_Prs3d_ArrowAspect GetHandle() {
 	return *(Handle_Prs3d_ArrowAspect*) &$self;
+	}
+};
+%extend Prs3d_ArrowAspect {
+	~Prs3d_ArrowAspect() {
+	printf("Call custom destructor for instance of Prs3d_ArrowAspect\n");
 	}
 };
 
@@ -688,13 +732,16 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_DatumAspect();
 
 };
 %extend Prs3d_DatumAspect {
 	Handle_Prs3d_DatumAspect GetHandle() {
 	return *(Handle_Prs3d_DatumAspect*) &$self;
+	}
+};
+%extend Prs3d_DatumAspect {
+	~Prs3d_DatumAspect() {
+	printf("Call custom destructor for instance of Prs3d_DatumAspect\n");
 	}
 };
 
@@ -749,13 +796,16 @@ class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
 		Quantity_Length IsoDistance() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_PlaneAspect();
 
 };
 %extend Prs3d_PlaneAspect {
 	Handle_Prs3d_PlaneAspect GetHandle() {
 	return *(Handle_Prs3d_PlaneAspect*) &$self;
+	}
+};
+%extend Prs3d_PlaneAspect {
+	~Prs3d_PlaneAspect() {
+	printf("Call custom destructor for instance of Prs3d_PlaneAspect\n");
 	}
 };
 
@@ -800,13 +850,16 @@ class Prs3d_TextAspect : public Prs3d_BasicAspect {
 		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_TextAspect();
 
 };
 %extend Prs3d_TextAspect {
 	Handle_Prs3d_TextAspect GetHandle() {
 	return *(Handle_Prs3d_TextAspect*) &$self;
+	}
+};
+%extend Prs3d_TextAspect {
+	~Prs3d_TextAspect() {
+	printf("Call custom destructor for instance of Prs3d_TextAspect\n");
 	}
 };
 
@@ -831,13 +884,50 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 		void Direction(Quantity_Length & X, Quantity_Length & Y, Quantity_Length & Z) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_PlaneSet();
 
 };
 %extend Prs3d_PlaneSet {
 	Handle_Prs3d_PlaneSet GetHandle() {
 	return *(Handle_Prs3d_PlaneSet*) &$self;
+	}
+};
+%extend Prs3d_PlaneSet {
+	~Prs3d_PlaneSet() {
+	printf("Call custom destructor for instance of Prs3d_PlaneSet\n");
+	}
+};
+
+%nodefaultctor Prs3d_Text;
+class Prs3d_Text : public Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		~Prs3d_Text();
+		%feature("autodoc", "1");
+		Prs3d_Text();
+		%feature("autodoc", "1");
+		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
+		%feature("autodoc", "1");
+		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
+
+};
+
+%nodefaultctor Prs3d_RadiusAspect;
+class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_RadiusAspect(const Quantity_NameOfColor aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_RadiusAspect {
+	Handle_Prs3d_RadiusAspect GetHandle() {
+	return *(Handle_Prs3d_RadiusAspect*) &$self;
+	}
+};
+%extend Prs3d_RadiusAspect {
+	~Prs3d_RadiusAspect() {
+	printf("Call custom destructor for instance of Prs3d_RadiusAspect\n");
 	}
 };
 
@@ -874,13 +964,16 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_LengthAspect();
 
 };
 %extend Prs3d_LengthAspect {
 	Handle_Prs3d_LengthAspect GetHandle() {
 	return *(Handle_Prs3d_LengthAspect*) &$self;
+	}
+};
+%extend Prs3d_LengthAspect {
+	~Prs3d_LengthAspect() {
+	printf("Call custom destructor for instance of Prs3d_LengthAspect\n");
 	}
 };
 
@@ -957,13 +1050,16 @@ class Prs3d_Presentation : public Graphic3d_Structure {
 		void SetUnPickable();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_Presentation();
 
 };
 %extend Prs3d_Presentation {
 	Handle_Prs3d_Presentation GetHandle() {
 	return *(Handle_Prs3d_Presentation*) &$self;
+	}
+};
+%extend Prs3d_Presentation {
+	~Prs3d_Presentation() {
+	printf("Call custom destructor for instance of Prs3d_Presentation\n");
 	}
 };
 
@@ -988,13 +1084,16 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_AngleAspect();
 
 };
 %extend Prs3d_AngleAspect {
 	Handle_Prs3d_AngleAspect GetHandle() {
 	return *(Handle_Prs3d_AngleAspect*) &$self;
+	}
+};
+%extend Prs3d_AngleAspect {
+	~Prs3d_AngleAspect() {
+	printf("Call custom destructor for instance of Prs3d_AngleAspect\n");
 	}
 };
 
@@ -1025,13 +1124,16 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 		const Handle_Graphic3d_HArray1OfBytes & GetTexture();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_PointAspect();
 
 };
 %extend Prs3d_PointAspect {
 	Handle_Prs3d_PointAspect GetHandle() {
 	return *(Handle_Prs3d_PointAspect*) &$self;
+	}
+};
+%extend Prs3d_PointAspect {
+	~Prs3d_PointAspect() {
+	printf("Call custom destructor for instance of Prs3d_PointAspect\n");
 	}
 };
 
@@ -1046,13 +1148,16 @@ class Prs3d_Projector : public MMgt_TShared {
 		HLRAlgo_Projector Projector() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_Projector();
 
 };
 %extend Prs3d_Projector {
 	Handle_Prs3d_Projector GetHandle() {
 	return *(Handle_Prs3d_Projector*) &$self;
+	}
+};
+%extend Prs3d_Projector {
+	~Prs3d_Projector() {
+	printf("Call custom destructor for instance of Prs3d_Projector\n");
 	}
 };
 
@@ -1203,8 +1308,6 @@ class Prs3d_Drawer : public MMgt_TShared {
 		virtual		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_Drawer();
 
 };
 %extend Prs3d_Drawer {
@@ -1212,12 +1315,15 @@ class Prs3d_Drawer : public MMgt_TShared {
 	return *(Handle_Prs3d_Drawer*) &$self;
 	}
 };
+%extend Prs3d_Drawer {
+	~Prs3d_Drawer() {
+	printf("Call custom destructor for instance of Prs3d_Drawer\n");
+	}
+};
 
 %nodefaultctor Prs3d_ShapeTool;
 class Prs3d_ShapeTool {
 	public:
-		%feature("autodoc", "1");
-		~Prs3d_ShapeTool();
 		%feature("autodoc", "1");
 		Prs3d_ShapeTool(const TopoDS_Shape &TheShape);
 		%feature("autodoc", "1");
@@ -1266,6 +1372,11 @@ class Prs3d_ShapeTool {
 		Handle_Poly_Polygon3D Polygon3D(TopLoc_Location & l) const;
 
 };
+%extend Prs3d_ShapeTool {
+	~Prs3d_ShapeTool() {
+	printf("Call custom destructor for instance of Prs3d_ShapeTool\n");
+	}
+};
 
 %nodefaultctor Prs3d_IsoAspect;
 class Prs3d_IsoAspect : public Prs3d_LineAspect {
@@ -1282,13 +1393,16 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 		virtual		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_IsoAspect();
 
 };
 %extend Prs3d_IsoAspect {
 	Handle_Prs3d_IsoAspect GetHandle() {
 	return *(Handle_Prs3d_IsoAspect*) &$self;
+	}
+};
+%extend Prs3d_IsoAspect {
+	~Prs3d_IsoAspect() {
+	printf("Call custom destructor for instance of Prs3d_IsoAspect\n");
 	}
 };
 
@@ -1307,13 +1421,16 @@ class Prs3d_InvalidAngle : public Standard_RangeError {
 		Handle_Prs3d_InvalidAngle NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_InvalidAngle();
 
 };
 %extend Prs3d_InvalidAngle {
 	Handle_Prs3d_InvalidAngle GetHandle() {
 	return *(Handle_Prs3d_InvalidAngle*) &$self;
+	}
+};
+%extend Prs3d_InvalidAngle {
+	~Prs3d_InvalidAngle() {
+	printf("Call custom destructor for instance of Prs3d_InvalidAngle\n");
 	}
 };
 
@@ -1329,21 +1446,4 @@ class Prs3d_Arrow : public Prs3d_Root {
 		%feature("autodoc", "1");
 		void Fill(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
 
-};
-
-%nodefaultctor Prs3d_RadiusAspect;
-class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_RadiusAspect(const Quantity_NameOfColor aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Prs3d_RadiusAspect();
-
-};
-%extend Prs3d_RadiusAspect {
-	Handle_Prs3d_RadiusAspect GetHandle() {
-	return *(Handle_Prs3d_RadiusAspect*) &$self;
-	}
 };

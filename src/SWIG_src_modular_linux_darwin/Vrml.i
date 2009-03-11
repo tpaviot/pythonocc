@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Vrml
 
@@ -119,6 +105,12 @@ enum Vrml_FaceType {
 	Vrml_CONVEX,
 	};
 
+enum Vrml_FontStyleStyle {
+	Vrml_NONE,
+	Vrml_BOLD,
+	Vrml_ITALIC,
+	};
+
 enum Vrml_MaterialBindingAndNormalBinding {
 	Vrml_DEFAULT,
 	Vrml_OVERALL,
@@ -128,12 +120,6 @@ enum Vrml_MaterialBindingAndNormalBinding {
 	Vrml_PER_FACE_INDEXED,
 	Vrml_PER_VERTEX,
 	Vrml_PER_VERTEX_INDEXED,
-	};
-
-enum Vrml_FontStyleStyle {
-	Vrml_NONE,
-	Vrml_BOLD,
-	Vrml_ITALIC,
 	};
 
 enum Vrml_ConeParts {
@@ -184,8 +170,6 @@ enum Vrml_FontStyleFamily {
 class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Vrml_AsciiText();
-		%feature("autodoc", "1");
 		Handle_Vrml_AsciiText();
 		%feature("autodoc", "1");
 		Handle_Vrml_AsciiText(const Handle_Vrml_AsciiText &aHandle);
@@ -200,12 +184,15 @@ class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 	return (Vrml_AsciiText*)$self->Access();
 	}
 };
+%extend Handle_Vrml_AsciiText {
+	~Handle_Vrml_AsciiText() {
+	printf("Call custom destructor for instance of Handle_Vrml_AsciiText\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_LOD;
 class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_LOD();
 		%feature("autodoc", "1");
 		Handle_Vrml_LOD();
 		%feature("autodoc", "1");
@@ -221,12 +208,15 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	return (Vrml_LOD*)$self->Access();
 	}
 };
+%extend Handle_Vrml_LOD {
+	~Handle_Vrml_LOD() {
+	printf("Call custom destructor for instance of Handle_Vrml_LOD\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_IndexedFaceSet;
 class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_IndexedFaceSet();
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedFaceSet();
 		%feature("autodoc", "1");
@@ -242,12 +232,15 @@ class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 	return (Vrml_IndexedFaceSet*)$self->Access();
 	}
 };
+%extend Handle_Vrml_IndexedFaceSet {
+	~Handle_Vrml_IndexedFaceSet() {
+	printf("Call custom destructor for instance of Handle_Vrml_IndexedFaceSet\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_Coordinate3;
 class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_Coordinate3();
 		%feature("autodoc", "1");
 		Handle_Vrml_Coordinate3();
 		%feature("autodoc", "1");
@@ -263,33 +256,15 @@ class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 	return (Vrml_Coordinate3*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Vrml_Material;
-class Handle_Vrml_Material : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_Material();
-		%feature("autodoc", "1");
-		Handle_Vrml_Material();
-		%feature("autodoc", "1");
-		Handle_Vrml_Material(const Handle_Vrml_Material &aHandle);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material(const Vrml_Material *anItem);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Vrml_Material {
-	Vrml_Material* GetObject() {
-	return (Vrml_Material*)$self->Access();
+%extend Handle_Vrml_Coordinate3 {
+	~Handle_Vrml_Coordinate3() {
+	printf("Call custom destructor for instance of Handle_Vrml_Coordinate3\n");
 	}
 };
 
 %nodefaultctor Handle_Vrml_SFImage;
 class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_SFImage();
 		%feature("autodoc", "1");
 		Handle_Vrml_SFImage();
 		%feature("autodoc", "1");
@@ -305,12 +280,15 @@ class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 	return (Vrml_SFImage*)$self->Access();
 	}
 };
+%extend Handle_Vrml_SFImage {
+	~Handle_Vrml_SFImage() {
+	printf("Call custom destructor for instance of Handle_Vrml_SFImage\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_Normal;
 class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_Normal();
 		%feature("autodoc", "1");
 		Handle_Vrml_Normal();
 		%feature("autodoc", "1");
@@ -326,12 +304,39 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 	return (Vrml_Normal*)$self->Access();
 	}
 };
+%extend Handle_Vrml_Normal {
+	~Handle_Vrml_Normal() {
+	printf("Call custom destructor for instance of Handle_Vrml_Normal\n");
+	}
+};
+
+%nodefaultctor Handle_Vrml_Material;
+class Handle_Vrml_Material : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Vrml_Material();
+		%feature("autodoc", "1");
+		Handle_Vrml_Material(const Handle_Vrml_Material &aHandle);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material(const Vrml_Material *anItem);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Vrml_Material {
+	Vrml_Material* GetObject() {
+	return (Vrml_Material*)$self->Access();
+	}
+};
+%extend Handle_Vrml_Material {
+	~Handle_Vrml_Material() {
+	printf("Call custom destructor for instance of Handle_Vrml_Material\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_IndexedLineSet;
 class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_IndexedLineSet();
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedLineSet();
 		%feature("autodoc", "1");
@@ -347,12 +352,15 @@ class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 	return (Vrml_IndexedLineSet*)$self->Access();
 	}
 };
+%extend Handle_Vrml_IndexedLineSet {
+	~Handle_Vrml_IndexedLineSet() {
+	printf("Call custom destructor for instance of Handle_Vrml_IndexedLineSet\n");
+	}
+};
 
 %nodefaultctor Handle_Vrml_TextureCoordinate2;
 class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Vrml_TextureCoordinate2();
 		%feature("autodoc", "1");
 		Handle_Vrml_TextureCoordinate2();
 		%feature("autodoc", "1");
@@ -368,76 +376,23 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 	return (Vrml_TextureCoordinate2*)$self->Access();
 	}
 };
-
-%nodefaultctor Vrml_WWWInline;
-class Vrml_WWWInline {
-	public:
-		%feature("autodoc", "1");
-		~Vrml_WWWInline();
-		%feature("autodoc", "1");
-		Vrml_WWWInline();
-		%feature("autodoc", "1");
-		Vrml_WWWInline(const TCollection_AsciiString &aName, const gp_Vec &aBboxSize, const gp_Vec &aBboxCenter);
-		%feature("autodoc", "1");
-		void SetName(const TCollection_AsciiString &aName);
-		%feature("autodoc", "1");
-		TCollection_AsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetBboxSize(const gp_Vec &aBboxSize);
-		%feature("autodoc", "1");
-		gp_Vec BboxSize() const;
-		%feature("autodoc", "1");
-		void SetBboxCenter(const gp_Vec &aBboxCenter);
-		%feature("autodoc", "1");
-		gp_Vec BboxCenter() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
-
+%extend Handle_Vrml_TextureCoordinate2 {
+	~Handle_Vrml_TextureCoordinate2() {
+	printf("Call custom destructor for instance of Handle_Vrml_TextureCoordinate2\n");
+	}
 };
 
-%nodefaultctor Vrml_Texture2Transform;
-class Vrml_Texture2Transform {
+%nodefaultctor Vrml_Info;
+class Vrml_Info {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_Texture2Transform();
+		~Vrml_Info();
 		%feature("autodoc", "1");
-		Vrml_Texture2Transform();
+		Vrml_Info(const TCollection_AsciiString &aString="<Undefined info>");
 		%feature("autodoc", "1");
-		Vrml_Texture2Transform(const gp_Vec2d &aTranslation, const Standard_Real aRotation, const gp_Vec2d &aScaleFactor, const gp_Vec2d &aCenter);
+		void SetString(const TCollection_AsciiString &aString);
 		%feature("autodoc", "1");
-		void SetTranslation(const gp_Vec2d &aTranslation);
-		%feature("autodoc", "1");
-		gp_Vec2d Translation() const;
-		%feature("autodoc", "1");
-		void SetRotation(const Standard_Real aRotation);
-		%feature("autodoc", "1");
-		Standard_Real Rotation() const;
-		%feature("autodoc", "1");
-		void SetScaleFactor(const gp_Vec2d &aScaleFactor);
-		%feature("autodoc", "1");
-		gp_Vec2d ScaleFactor() const;
-		%feature("autodoc", "1");
-		void SetCenter(const gp_Vec2d &aCenter);
-		%feature("autodoc", "1");
-		gp_Vec2d Center() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
-
-};
-
-%nodefaultctor Vrml_Rotation;
-class Vrml_Rotation {
-	public:
-		%feature("autodoc", "1");
-		~Vrml_Rotation();
-		%feature("autodoc", "1");
-		Vrml_Rotation();
-		%feature("autodoc", "1");
-		Vrml_Rotation(const Vrml_SFRotation &aRotation);
-		%feature("autodoc", "1");
-		void SetRotation(const Vrml_SFRotation &aRotation);
-		%feature("autodoc", "1");
-		Vrml_SFRotation Rotation() const;
+		TCollection_AsciiString String() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
@@ -456,6 +411,18 @@ class Vrml_Switch {
 		Standard_Integer WhichChild() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
+
+};
+
+%nodefaultctor Vrml_TransformSeparator;
+class Vrml_TransformSeparator {
+	public:
+		%feature("autodoc", "1");
+		~Vrml_TransformSeparator();
+		%feature("autodoc", "1");
+		Vrml_TransformSeparator();
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream);
 
 };
 
@@ -494,6 +461,36 @@ class Vrml_Sphere {
 		void SetRadius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
+
+};
+
+%nodefaultctor Vrml_PointLight;
+class Vrml_PointLight {
+	public:
+		%feature("autodoc", "1");
+		~Vrml_PointLight();
+		%feature("autodoc", "1");
+		Vrml_PointLight();
+		%feature("autodoc", "1");
+		Vrml_PointLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color &aColor, const gp_Vec &aLocation);
+		%feature("autodoc", "1");
+		void SetOnOff(const Standard_Boolean aOnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean OnOff() const;
+		%feature("autodoc", "1");
+		void SetIntensity(const Standard_Real aIntensity);
+		%feature("autodoc", "1");
+		Standard_Real Intensity() const;
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		Quantity_Color Color() const;
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Vec &aLocation);
+		%feature("autodoc", "1");
+		gp_Vec Location() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
@@ -544,13 +541,16 @@ class Vrml_AsciiText : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_AsciiText();
 
 };
 %extend Vrml_AsciiText {
 	Handle_Vrml_AsciiText GetHandle() {
 	return *(Handle_Vrml_AsciiText*) &$self;
+	}
+};
+%extend Vrml_AsciiText {
+	~Vrml_AsciiText() {
+	printf("Call custom destructor for instance of Vrml_AsciiText\n");
 	}
 };
 
@@ -581,8 +581,6 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_IndexedLineSet();
 
 };
 %extend Vrml_IndexedLineSet {
@@ -590,156 +588,10 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 	return *(Handle_Vrml_IndexedLineSet*) &$self;
 	}
 };
-
-%nodefaultctor Vrml_Texture2;
-class Vrml_Texture2 {
-	public:
-		%feature("autodoc", "1");
-		~Vrml_Texture2();
-		%feature("autodoc", "1");
-		Vrml_Texture2();
-		%feature("autodoc", "1");
-		Vrml_Texture2(const TCollection_AsciiString &aFilename, const Handle_Vrml_SFImage &aImage, const Vrml_Texture2Wrap aWrapS, const Vrml_Texture2Wrap aWrapT);
-		%feature("autodoc", "1");
-		void SetFilename(const TCollection_AsciiString &aFilename);
-		%feature("autodoc", "1");
-		TCollection_AsciiString Filename() const;
-		%feature("autodoc", "1");
-		void SetImage(const Handle_Vrml_SFImage &aImage);
-		%feature("autodoc", "1");
-		Handle_Vrml_SFImage Image() const;
-		%feature("autodoc", "1");
-		void SetWrapS(const Vrml_Texture2Wrap aWrapS);
-		%feature("autodoc", "1");
-		Vrml_Texture2Wrap WrapS() const;
-		%feature("autodoc", "1");
-		void SetWrapT(const Vrml_Texture2Wrap aWrapT);
-		%feature("autodoc", "1");
-		Vrml_Texture2Wrap WrapT() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
-
-};
-
-%nodefaultctor Vrml_SFImage;
-class Vrml_SFImage : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Vrml_SFImage();
-		%feature("autodoc", "1");
-		Vrml_SFImage(const Standard_Integer aWidth, const Standard_Integer aHeight, const Vrml_SFImageNumber aNumber, const Handle_TColStd_HArray1OfInteger &anArray);
-		%feature("autodoc", "1");
-		void SetWidth(const Standard_Integer aWidth);
-		%feature("autodoc", "1");
-		Standard_Integer Width() const;
-		%feature("autodoc", "1");
-		void SetHeight(const Standard_Integer aHeight);
-		%feature("autodoc", "1");
-		Standard_Integer Height() const;
-		%feature("autodoc", "1");
-		void SetNumber(const Vrml_SFImageNumber aNumber);
-		%feature("autodoc", "1");
-		Vrml_SFImageNumber Number() const;
-		%feature("autodoc", "1");
-		void SetArray(const Handle_TColStd_HArray1OfInteger &anArray);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger Array() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ArrayFlag() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_SFImage();
-
-};
-%extend Vrml_SFImage {
-	Handle_Vrml_SFImage GetHandle() {
-	return *(Handle_Vrml_SFImage*) &$self;
+%extend Vrml_IndexedLineSet {
+	~Vrml_IndexedLineSet() {
+	printf("Call custom destructor for instance of Vrml_IndexedLineSet\n");
 	}
-};
-
-%nodefaultctor Vrml_Normal;
-class Vrml_Normal : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Vrml_Normal(const Handle_TColgp_HArray1OfVec &aVector);
-		%feature("autodoc", "1");
-		Vrml_Normal();
-		%feature("autodoc", "1");
-		void SetVector(const Handle_TColgp_HArray1OfVec &aVector);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec Vector() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_Normal();
-
-};
-%extend Vrml_Normal {
-	Handle_Vrml_Normal GetHandle() {
-	return *(Handle_Vrml_Normal*) &$self;
-	}
-};
-
-%nodefaultctor Vrml_LOD;
-class Vrml_LOD : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Vrml_LOD();
-		%feature("autodoc", "1");
-		Vrml_LOD(const Handle_TColStd_HArray1OfReal &aRange, const gp_Vec &aCenter);
-		%feature("autodoc", "1");
-		void SetRange(const Handle_TColStd_HArray1OfReal &aRange);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal Range() const;
-		%feature("autodoc", "1");
-		void SetCenter(const gp_Vec &aCenter);
-		%feature("autodoc", "1");
-		gp_Vec Center() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_LOD();
-
-};
-%extend Vrml_LOD {
-	Handle_Vrml_LOD GetHandle() {
-	return *(Handle_Vrml_LOD*) &$self;
-	}
-};
-
-%nodefaultctor Vrml_PointLight;
-class Vrml_PointLight {
-	public:
-		%feature("autodoc", "1");
-		~Vrml_PointLight();
-		%feature("autodoc", "1");
-		Vrml_PointLight();
-		%feature("autodoc", "1");
-		Vrml_PointLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color &aColor, const gp_Vec &aLocation);
-		%feature("autodoc", "1");
-		void SetOnOff(const Standard_Boolean aOnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean OnOff() const;
-		%feature("autodoc", "1");
-		void SetIntensity(const Standard_Real aIntensity);
-		%feature("autodoc", "1");
-		Standard_Real Intensity() const;
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		Quantity_Color Color() const;
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Vec &aLocation);
-		%feature("autodoc", "1");
-		gp_Vec Location() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
-
 };
 
 %nodefaultctor Vrml_SpotLight;
@@ -784,24 +636,163 @@ class Vrml_SpotLight {
 
 };
 
-%nodefaultctor Vrml_PointSet;
-class Vrml_PointSet {
+%nodefaultctor Vrml_Texture2;
+class Vrml_Texture2 {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_PointSet();
+		Vrml_Texture2();
 		%feature("autodoc", "1");
-		Vrml_PointSet(const Standard_Integer aStartIndex=0, const Standard_Integer aNumPoints=-0x000000001);
+		Vrml_Texture2(const TCollection_AsciiString &aFilename, const Handle_Vrml_SFImage &aImage, const Vrml_Texture2Wrap aWrapS, const Vrml_Texture2Wrap aWrapT);
 		%feature("autodoc", "1");
-		void SetStartIndex(const Standard_Integer aStartIndex);
+		void SetFilename(const TCollection_AsciiString &aFilename);
 		%feature("autodoc", "1");
-		Standard_Integer StartIndex() const;
+		TCollection_AsciiString Filename() const;
 		%feature("autodoc", "1");
-		void SetNumPoints(const Standard_Integer aNumPoints);
+		void SetImage(const Handle_Vrml_SFImage &aImage);
 		%feature("autodoc", "1");
-		Standard_Integer NumPoints() const;
+		Handle_Vrml_SFImage Image() const;
+		%feature("autodoc", "1");
+		void SetWrapS(const Vrml_Texture2Wrap aWrapS);
+		%feature("autodoc", "1");
+		Vrml_Texture2Wrap WrapS() const;
+		%feature("autodoc", "1");
+		void SetWrapT(const Vrml_Texture2Wrap aWrapT);
+		%feature("autodoc", "1");
+		Vrml_Texture2Wrap WrapT() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_Texture2 {
+	~Vrml_Texture2() {
+	printf("Call custom destructor for instance of Vrml_Texture2\n");
+	}
+};
+
+%nodefaultctor Vrml_SFImage;
+class Vrml_SFImage : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Vrml_SFImage();
+		%feature("autodoc", "1");
+		Vrml_SFImage(const Standard_Integer aWidth, const Standard_Integer aHeight, const Vrml_SFImageNumber aNumber, const Handle_TColStd_HArray1OfInteger &anArray);
+		%feature("autodoc", "1");
+		void SetWidth(const Standard_Integer aWidth);
+		%feature("autodoc", "1");
+		Standard_Integer Width() const;
+		%feature("autodoc", "1");
+		void SetHeight(const Standard_Integer aHeight);
+		%feature("autodoc", "1");
+		Standard_Integer Height() const;
+		%feature("autodoc", "1");
+		void SetNumber(const Vrml_SFImageNumber aNumber);
+		%feature("autodoc", "1");
+		Vrml_SFImageNumber Number() const;
+		%feature("autodoc", "1");
+		void SetArray(const Handle_TColStd_HArray1OfInteger &anArray);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger Array() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ArrayFlag() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Vrml_SFImage {
+	Handle_Vrml_SFImage GetHandle() {
+	return *(Handle_Vrml_SFImage*) &$self;
+	}
+};
+%extend Vrml_SFImage {
+	~Vrml_SFImage() {
+	printf("Call custom destructor for instance of Vrml_SFImage\n");
+	}
+};
+
+%nodefaultctor Vrml_LOD;
+class Vrml_LOD : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Vrml_LOD();
+		%feature("autodoc", "1");
+		Vrml_LOD(const Handle_TColStd_HArray1OfReal &aRange, const gp_Vec &aCenter);
+		%feature("autodoc", "1");
+		void SetRange(const Handle_TColStd_HArray1OfReal &aRange);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal Range() const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_Vec &aCenter);
+		%feature("autodoc", "1");
+		gp_Vec Center() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Vrml_LOD {
+	Handle_Vrml_LOD GetHandle() {
+	return *(Handle_Vrml_LOD*) &$self;
+	}
+};
+%extend Vrml_LOD {
+	~Vrml_LOD() {
+	printf("Call custom destructor for instance of Vrml_LOD\n");
+	}
+};
+
+%nodefaultctor Vrml_WWWInline;
+class Vrml_WWWInline {
+	public:
+		%feature("autodoc", "1");
+		~Vrml_WWWInline();
+		%feature("autodoc", "1");
+		Vrml_WWWInline();
+		%feature("autodoc", "1");
+		Vrml_WWWInline(const TCollection_AsciiString &aName, const gp_Vec &aBboxSize, const gp_Vec &aBboxCenter);
+		%feature("autodoc", "1");
+		void SetName(const TCollection_AsciiString &aName);
+		%feature("autodoc", "1");
+		TCollection_AsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetBboxSize(const gp_Vec &aBboxSize);
+		%feature("autodoc", "1");
+		gp_Vec BboxSize() const;
+		%feature("autodoc", "1");
+		void SetBboxCenter(const gp_Vec &aBboxCenter);
+		%feature("autodoc", "1");
+		gp_Vec BboxCenter() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
+
+};
+
+%nodefaultctor Vrml_Normal;
+class Vrml_Normal : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Vrml_Normal(const Handle_TColgp_HArray1OfVec &aVector);
+		%feature("autodoc", "1");
+		Vrml_Normal();
+		%feature("autodoc", "1");
+		void SetVector(const Handle_TColgp_HArray1OfVec &aVector);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec Vector() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Vrml_Normal {
+	Handle_Vrml_Normal GetHandle() {
+	return *(Handle_Vrml_Normal*) &$self;
+	}
+};
+%extend Vrml_Normal {
+	~Vrml_Normal() {
+	printf("Call custom destructor for instance of Vrml_Normal\n");
+	}
 };
 
 %nodefaultctor Vrml_Cylinder;
@@ -828,17 +819,33 @@ class Vrml_Cylinder {
 
 };
 
-%nodefaultctor Vrml;
-class Vrml {
+%nodefaultctor Vrml_Texture2Transform;
+class Vrml_Texture2Transform {
 	public:
 		%feature("autodoc", "1");
-		~Vrml();
+		~Vrml_Texture2Transform();
 		%feature("autodoc", "1");
-		Vrml();
+		Vrml_Texture2Transform();
 		%feature("autodoc", "1");
-		Standard_OStream & VrmlHeaderWriter(Standard_OStream & anOStream);
+		Vrml_Texture2Transform(const gp_Vec2d &aTranslation, const Standard_Real aRotation, const gp_Vec2d &aScaleFactor, const gp_Vec2d &aCenter);
 		%feature("autodoc", "1");
-		Standard_OStream & CommentWriter(const char * aComment, Standard_OStream & anOStream);
+		void SetTranslation(const gp_Vec2d &aTranslation);
+		%feature("autodoc", "1");
+		gp_Vec2d Translation() const;
+		%feature("autodoc", "1");
+		void SetRotation(const Standard_Real aRotation);
+		%feature("autodoc", "1");
+		Standard_Real Rotation() const;
+		%feature("autodoc", "1");
+		void SetScaleFactor(const gp_Vec2d &aScaleFactor);
+		%feature("autodoc", "1");
+		gp_Vec2d ScaleFactor() const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_Vec2d &aCenter);
+		%feature("autodoc", "1");
+		gp_Vec2d Center() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
 
@@ -900,19 +907,17 @@ class Vrml_OrthographicCamera {
 
 };
 
-%nodefaultctor Vrml_Info;
-class Vrml_Info {
+%nodefaultctor Vrml;
+class Vrml {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_Info();
+		~Vrml();
 		%feature("autodoc", "1");
-		Vrml_Info(const TCollection_AsciiString &aString="<Undefined info>");
+		Vrml();
 		%feature("autodoc", "1");
-		void SetString(const TCollection_AsciiString &aString);
+		Standard_OStream & VrmlHeaderWriter(Standard_OStream & anOStream);
 		%feature("autodoc", "1");
-		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		Standard_OStream & CommentWriter(const char * aComment, Standard_OStream & anOStream);
 
 };
 
@@ -945,18 +950,6 @@ class Vrml_Instancing {
 		Standard_OStream & DEF(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		Standard_OStream & USE(Standard_OStream & anOStream) const;
-
-};
-
-%nodefaultctor Vrml_TransformSeparator;
-class Vrml_TransformSeparator {
-	public:
-		%feature("autodoc", "1");
-		~Vrml_TransformSeparator();
-		%feature("autodoc", "1");
-		Vrml_TransformSeparator();
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream);
 
 };
 
@@ -1114,51 +1107,6 @@ class Vrml_PerspectiveCamera {
 
 };
 
-%nodefaultctor Vrml_Material;
-class Vrml_Material : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Vrml_Material(const Handle_Quantity_HArray1OfColor &aAmbientColor, const Handle_Quantity_HArray1OfColor &aDiffuseColor, const Handle_Quantity_HArray1OfColor &aSpecularColor, const Handle_Quantity_HArray1OfColor &aEmissiveColor, const Handle_TColStd_HArray1OfReal &aShininess, const Handle_TColStd_HArray1OfReal &aTransparency);
-		%feature("autodoc", "1");
-		Vrml_Material();
-		%feature("autodoc", "1");
-		void SetAmbientColor(const Handle_Quantity_HArray1OfColor &aAmbientColor);
-		%feature("autodoc", "1");
-		Handle_Quantity_HArray1OfColor AmbientColor() const;
-		%feature("autodoc", "1");
-		void SetDiffuseColor(const Handle_Quantity_HArray1OfColor &aDiffuseColor);
-		%feature("autodoc", "1");
-		Handle_Quantity_HArray1OfColor DiffuseColor() const;
-		%feature("autodoc", "1");
-		void SetSpecularColor(const Handle_Quantity_HArray1OfColor &aSpecularColor);
-		%feature("autodoc", "1");
-		Handle_Quantity_HArray1OfColor SpecularColor() const;
-		%feature("autodoc", "1");
-		void SetEmissiveColor(const Handle_Quantity_HArray1OfColor &aEmissiveColor);
-		%feature("autodoc", "1");
-		Handle_Quantity_HArray1OfColor EmissiveColor() const;
-		%feature("autodoc", "1");
-		void SetShininess(const Handle_TColStd_HArray1OfReal &aShininess);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal Shininess() const;
-		%feature("autodoc", "1");
-		void SetTransparency(const Handle_TColStd_HArray1OfReal &aTransparency);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal Transparency() const;
-		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_Material();
-
-};
-%extend Vrml_Material {
-	Handle_Vrml_Material GetHandle() {
-	return *(Handle_Vrml_Material*) &$self;
-	}
-};
-
 %nodefaultctor Vrml_WWWAnchor;
 class Vrml_WWWAnchor {
 	public:
@@ -1210,14 +1158,83 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_IndexedFaceSet();
 
 };
 %extend Vrml_IndexedFaceSet {
 	Handle_Vrml_IndexedFaceSet GetHandle() {
 	return *(Handle_Vrml_IndexedFaceSet*) &$self;
 	}
+};
+%extend Vrml_IndexedFaceSet {
+	~Vrml_IndexedFaceSet() {
+	printf("Call custom destructor for instance of Vrml_IndexedFaceSet\n");
+	}
+};
+
+%nodefaultctor Vrml_Material;
+class Vrml_Material : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Vrml_Material(const Handle_Quantity_HArray1OfColor &aAmbientColor, const Handle_Quantity_HArray1OfColor &aDiffuseColor, const Handle_Quantity_HArray1OfColor &aSpecularColor, const Handle_Quantity_HArray1OfColor &aEmissiveColor, const Handle_TColStd_HArray1OfReal &aShininess, const Handle_TColStd_HArray1OfReal &aTransparency);
+		%feature("autodoc", "1");
+		Vrml_Material();
+		%feature("autodoc", "1");
+		void SetAmbientColor(const Handle_Quantity_HArray1OfColor &aAmbientColor);
+		%feature("autodoc", "1");
+		Handle_Quantity_HArray1OfColor AmbientColor() const;
+		%feature("autodoc", "1");
+		void SetDiffuseColor(const Handle_Quantity_HArray1OfColor &aDiffuseColor);
+		%feature("autodoc", "1");
+		Handle_Quantity_HArray1OfColor DiffuseColor() const;
+		%feature("autodoc", "1");
+		void SetSpecularColor(const Handle_Quantity_HArray1OfColor &aSpecularColor);
+		%feature("autodoc", "1");
+		Handle_Quantity_HArray1OfColor SpecularColor() const;
+		%feature("autodoc", "1");
+		void SetEmissiveColor(const Handle_Quantity_HArray1OfColor &aEmissiveColor);
+		%feature("autodoc", "1");
+		Handle_Quantity_HArray1OfColor EmissiveColor() const;
+		%feature("autodoc", "1");
+		void SetShininess(const Handle_TColStd_HArray1OfReal &aShininess);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal Shininess() const;
+		%feature("autodoc", "1");
+		void SetTransparency(const Handle_TColStd_HArray1OfReal &aTransparency);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal Transparency() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Vrml_Material {
+	Handle_Vrml_Material GetHandle() {
+	return *(Handle_Vrml_Material*) &$self;
+	}
+};
+%extend Vrml_Material {
+	~Vrml_Material() {
+	printf("Call custom destructor for instance of Vrml_Material\n");
+	}
+};
+
+%nodefaultctor Vrml_Rotation;
+class Vrml_Rotation {
+	public:
+		%feature("autodoc", "1");
+		~Vrml_Rotation();
+		%feature("autodoc", "1");
+		Vrml_Rotation();
+		%feature("autodoc", "1");
+		Vrml_Rotation(const Vrml_SFRotation &aRotation);
+		%feature("autodoc", "1");
+		void SetRotation(const Vrml_SFRotation &aRotation);
+		%feature("autodoc", "1");
+		Vrml_SFRotation Rotation() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
+
 };
 
 %nodefaultctor Vrml_ShapeHints;
@@ -1311,13 +1328,16 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_Coordinate3();
 
 };
 %extend Vrml_Coordinate3 {
 	Handle_Vrml_Coordinate3 GetHandle() {
 	return *(Handle_Vrml_Coordinate3*) &$self;
+	}
+};
+%extend Vrml_Coordinate3 {
+	~Vrml_Coordinate3() {
+	printf("Call custom destructor for instance of Vrml_Coordinate3\n");
 	}
 };
 
@@ -1336,13 +1356,16 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Vrml_TextureCoordinate2();
 
 };
 %extend Vrml_TextureCoordinate2 {
 	Handle_Vrml_TextureCoordinate2 GetHandle() {
 	return *(Handle_Vrml_TextureCoordinate2*) &$self;
+	}
+};
+%extend Vrml_TextureCoordinate2 {
+	~Vrml_TextureCoordinate2() {
+	printf("Call custom destructor for instance of Vrml_TextureCoordinate2\n");
 	}
 };
 
@@ -1365,6 +1388,26 @@ class Vrml_Cone {
 		void SetHeight(const Standard_Real aHeight);
 		%feature("autodoc", "1");
 		Standard_Real Height() const;
+		%feature("autodoc", "1");
+		Standard_OStream & Print(Standard_OStream & anOStream) const;
+
+};
+
+%nodefaultctor Vrml_PointSet;
+class Vrml_PointSet {
+	public:
+		%feature("autodoc", "1");
+		~Vrml_PointSet();
+		%feature("autodoc", "1");
+		Vrml_PointSet(const Standard_Integer aStartIndex=0, const Standard_Integer aNumPoints=-0x000000001);
+		%feature("autodoc", "1");
+		void SetStartIndex(const Standard_Integer aStartIndex);
+		%feature("autodoc", "1");
+		Standard_Integer StartIndex() const;
+		%feature("autodoc", "1");
+		void SetNumPoints(const Standard_Integer aNumPoints);
+		%feature("autodoc", "1");
+		Standard_Integer NumPoints() const;
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StdFail
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_StdFail_UndefinedValue();
-		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedValue();
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedValue(const Handle_StdFail_UndefinedValue &aHandle);
@@ -118,12 +102,15 @@ class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 	return (StdFail_UndefinedValue*)$self->Access();
 	}
 };
+%extend Handle_StdFail_UndefinedValue {
+	~Handle_StdFail_UndefinedValue() {
+	printf("Call custom destructor for instance of Handle_StdFail_UndefinedValue\n");
+	}
+};
 
 %nodefaultctor Handle_StdFail_NotDone;
 class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdFail_NotDone();
 		%feature("autodoc", "1");
 		Handle_StdFail_NotDone();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 	return (StdFail_NotDone*)$self->Access();
 	}
 };
+%extend Handle_StdFail_NotDone {
+	~Handle_StdFail_NotDone() {
+	printf("Call custom destructor for instance of Handle_StdFail_NotDone\n");
+	}
+};
 
 %nodefaultctor Handle_StdFail_UndefinedDerivative;
 class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdFail_UndefinedDerivative();
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedDerivative();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 	return (StdFail_UndefinedDerivative*)$self->Access();
 	}
 };
+%extend Handle_StdFail_UndefinedDerivative {
+	~Handle_StdFail_UndefinedDerivative() {
+	printf("Call custom destructor for instance of Handle_StdFail_UndefinedDerivative\n");
+	}
+};
 
 %nodefaultctor Handle_StdFail_InfiniteSolutions;
 class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdFail_InfiniteSolutions();
 		%feature("autodoc", "1");
 		Handle_StdFail_InfiniteSolutions();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 	return (StdFail_InfiniteSolutions*)$self->Access();
 	}
 };
+%extend Handle_StdFail_InfiniteSolutions {
+	~Handle_StdFail_InfiniteSolutions() {
+	printf("Call custom destructor for instance of Handle_StdFail_InfiniteSolutions\n");
+	}
+};
 
 %nodefaultctor Handle_StdFail_Undefined;
 class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_StdFail_Undefined();
 		%feature("autodoc", "1");
 		Handle_StdFail_Undefined();
 		%feature("autodoc", "1");
@@ -200,6 +196,11 @@ class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 %extend Handle_StdFail_Undefined {
 	StdFail_Undefined* GetObject() {
 	return (StdFail_Undefined*)$self->Access();
+	}
+};
+%extend Handle_StdFail_Undefined {
+	~Handle_StdFail_Undefined() {
+	printf("Call custom destructor for instance of Handle_StdFail_Undefined\n");
 	}
 };
 
@@ -218,13 +219,16 @@ class StdFail_UndefinedDerivative : public Standard_DomainError {
 		Handle_StdFail_UndefinedDerivative NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_UndefinedDerivative();
 
 };
 %extend StdFail_UndefinedDerivative {
 	Handle_StdFail_UndefinedDerivative GetHandle() {
 	return *(Handle_StdFail_UndefinedDerivative*) &$self;
+	}
+};
+%extend StdFail_UndefinedDerivative {
+	~StdFail_UndefinedDerivative() {
+	printf("Call custom destructor for instance of StdFail_UndefinedDerivative\n");
 	}
 };
 
@@ -243,13 +247,16 @@ class StdFail_UndefinedValue : public Standard_DomainError {
 		Handle_StdFail_UndefinedValue NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_UndefinedValue();
 
 };
 %extend StdFail_UndefinedValue {
 	Handle_StdFail_UndefinedValue GetHandle() {
 	return *(Handle_StdFail_UndefinedValue*) &$self;
+	}
+};
+%extend StdFail_UndefinedValue {
+	~StdFail_UndefinedValue() {
+	printf("Call custom destructor for instance of StdFail_UndefinedValue\n");
 	}
 };
 
@@ -268,13 +275,16 @@ class StdFail_NotDone : public Standard_Failure {
 		Handle_StdFail_NotDone NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_NotDone();
 
 };
 %extend StdFail_NotDone {
 	Handle_StdFail_NotDone GetHandle() {
 	return *(Handle_StdFail_NotDone*) &$self;
+	}
+};
+%extend StdFail_NotDone {
+	~StdFail_NotDone() {
+	printf("Call custom destructor for instance of StdFail_NotDone\n");
 	}
 };
 
@@ -293,13 +303,16 @@ class StdFail_InfiniteSolutions : public Standard_Failure {
 		Handle_StdFail_InfiniteSolutions NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_InfiniteSolutions();
 
 };
 %extend StdFail_InfiniteSolutions {
 	Handle_StdFail_InfiniteSolutions GetHandle() {
 	return *(Handle_StdFail_InfiniteSolutions*) &$self;
+	}
+};
+%extend StdFail_InfiniteSolutions {
+	~StdFail_InfiniteSolutions() {
+	printf("Call custom destructor for instance of StdFail_InfiniteSolutions\n");
 	}
 };
 
@@ -318,12 +331,15 @@ class StdFail_Undefined : public Standard_Failure {
 		Handle_StdFail_Undefined NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~StdFail_Undefined();
 
 };
 %extend StdFail_Undefined {
 	Handle_StdFail_Undefined GetHandle() {
 	return *(Handle_StdFail_Undefined*) &$self;
+	}
+};
+%extend StdFail_Undefined {
+	~StdFail_Undefined() {
+	printf("Call custom destructor for instance of StdFail_Undefined\n");
 	}
 };

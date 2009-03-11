@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module PPoly
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PPoly_HArray1OfTriangle();
-		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle();
 		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle(const Handle_PPoly_HArray1OfTriangle &aHandle);
@@ -118,12 +102,15 @@ class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 	return (PPoly_HArray1OfTriangle*)$self->Access();
 	}
 };
+%extend Handle_PPoly_HArray1OfTriangle {
+	~Handle_PPoly_HArray1OfTriangle() {
+	printf("Call custom destructor for instance of Handle_PPoly_HArray1OfTriangle\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_Triangulation;
 class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_Triangulation();
 		%feature("autodoc", "1");
 		Handle_PPoly_Triangulation();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 	return (PPoly_Triangulation*)$self->Access();
 	}
 };
+%extend Handle_PPoly_Triangulation {
+	~Handle_PPoly_Triangulation() {
+	printf("Call custom destructor for instance of Handle_PPoly_Triangulation\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_Polygon2D;
 class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_Polygon2D();
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon2D();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 	return (PPoly_Polygon2D*)$self->Access();
 	}
 };
+%extend Handle_PPoly_Polygon2D {
+	~Handle_PPoly_Polygon2D() {
+	printf("Call custom destructor for instance of Handle_PPoly_Polygon2D\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_Polygon3D;
 class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_Polygon3D();
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon3D();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 	return (PPoly_Polygon3D*)$self->Access();
 	}
 };
+%extend Handle_PPoly_Polygon3D {
+	~Handle_PPoly_Polygon3D() {
+	printf("Call custom destructor for instance of Handle_PPoly_Polygon3D\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;
 class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle();
 		%feature("autodoc", "1");
 		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandar
 	return (PPoly_VArrayNodeOfFieldOfHArray1OfTriangle*)$self->Access();
 	}
 };
+%extend Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
+	~Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
+	printf("Call custom destructor for instance of Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");
+	}
+};
 
 %nodefaultctor Handle_PPoly_PolygonOnTriangulation;
 class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PPoly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
 		Handle_PPoly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
@@ -221,6 +220,11 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 %extend Handle_PPoly_PolygonOnTriangulation {
 	PPoly_PolygonOnTriangulation* GetObject() {
 	return (PPoly_PolygonOnTriangulation*)$self->Access();
+	}
+};
+%extend Handle_PPoly_PolygonOnTriangulation {
+	~Handle_PPoly_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of Handle_PPoly_PolygonOnTriangulation\n");
 	}
 };
 
@@ -269,13 +273,16 @@ class PPoly_Triangulation : public Standard_Persistent {
 		void _CSFDB_SetPPoly_TriangulationmyTriangles(const Handle_PPoly_HArray1OfTriangle &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_Triangulation();
 
 };
 %extend PPoly_Triangulation {
 	Handle_PPoly_Triangulation GetHandle() {
 	return *(Handle_PPoly_Triangulation*) &$self;
+	}
+};
+%extend PPoly_Triangulation {
+	~PPoly_Triangulation() {
+	printf("Call custom destructor for instance of PPoly_Triangulation\n");
 	}
 };
 
@@ -336,13 +343,16 @@ class PPoly_Polygon3D : public Standard_Persistent {
 		void _CSFDB_SetPPoly_Polygon3DmyParameters(const Handle_PColStd_HArray1OfReal &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_Polygon3D();
 
 };
 %extend PPoly_Polygon3D {
 	Handle_PPoly_Polygon3D GetHandle() {
 	return *(Handle_PPoly_Polygon3D*) &$self;
+	}
+};
+%extend PPoly_Polygon3D {
+	~PPoly_Polygon3D() {
+	printf("Call custom destructor for instance of PPoly_Polygon3D\n");
 	}
 };
 
@@ -393,13 +403,16 @@ class PPoly_Polygon2D : public Standard_Persistent {
 		void _CSFDB_SetPPoly_Polygon2DmyNodes(const Handle_PColgp_HArray1OfPnt2d &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_Polygon2D();
 
 };
 %extend PPoly_Polygon2D {
 	Handle_PPoly_Polygon2D GetHandle() {
 	return *(Handle_PPoly_Polygon2D*) &$self;
+	}
+};
+%extend PPoly_Polygon2D {
+	~PPoly_Polygon2D() {
+	printf("Call custom destructor for instance of PPoly_Polygon2D\n");
 	}
 };
 
@@ -446,13 +459,16 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 		const PPoly_Triangle & _CSFDB_GetPPoly_VArrayNodeOfFieldOfHArray1OfTrianglemyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle();
 
 };
 %extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
 	Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle GetHandle() {
 	return *(Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle*) &$self;
+	}
+};
+%extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
+	~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
+	printf("Call custom destructor for instance of PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");
 	}
 };
 
@@ -493,13 +509,16 @@ class PPoly_HArray1OfTriangle : public Standard_Persistent {
 		const PPoly_FieldOfHArray1OfTriangle & _CSFDB_GetPPoly_HArray1OfTriangleData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_HArray1OfTriangle();
 
 };
 %extend PPoly_HArray1OfTriangle {
 	Handle_PPoly_HArray1OfTriangle GetHandle() {
 	return *(Handle_PPoly_HArray1OfTriangle*) &$self;
+	}
+};
+%extend PPoly_HArray1OfTriangle {
+	~PPoly_HArray1OfTriangle() {
+	printf("Call custom destructor for instance of PPoly_HArray1OfTriangle\n");
 	}
 };
 
@@ -544,12 +563,15 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 		void _CSFDB_SetPPoly_PolygonOnTriangulationmyParameters(const Handle_PColStd_HArray1OfReal &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PPoly_PolygonOnTriangulation();
 
 };
 %extend PPoly_PolygonOnTriangulation {
 	Handle_PPoly_PolygonOnTriangulation GetHandle() {
 	return *(Handle_PPoly_PolygonOnTriangulation*) &$self;
+	}
+};
+%extend PPoly_PolygonOnTriangulation {
+	~PPoly_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of PPoly_PolygonOnTriangulation\n");
 	}
 };

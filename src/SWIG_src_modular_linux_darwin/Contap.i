@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Contap
 
@@ -116,8 +102,6 @@ enum Contap_IType {
 class Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour();
-		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour();
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour(const Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour &aHandle);
@@ -132,75 +116,15 @@ class Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : publ
 	return (Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Contap_TheHSequenceOfPointOfContour;
-class Handle_Contap_TheHSequenceOfPointOfContour : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Contap_TheHSequenceOfPointOfContour();
-		%feature("autodoc", "1");
-		Handle_Contap_TheHSequenceOfPointOfContour();
-		%feature("autodoc", "1");
-		Handle_Contap_TheHSequenceOfPointOfContour(const Handle_Contap_TheHSequenceOfPointOfContour &aHandle);
-		%feature("autodoc", "1");
-		Handle_Contap_TheHSequenceOfPointOfContour(const Contap_TheHSequenceOfPointOfContour *anItem);
-		%feature("autodoc", "1");
-		Handle_Contap_TheHSequenceOfPointOfContour const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Contap_TheHSequenceOfPointOfContour {
-	Contap_TheHSequenceOfPointOfContour* GetObject() {
-	return (Contap_TheHSequenceOfPointOfContour*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour;
-class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour();
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour();
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour &aHandle);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Contap_SequenceNodeOfTheSequenceOfPointOfContour *anItem);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
-	Contap_SequenceNodeOfTheSequenceOfPointOfContour* GetObject() {
-	return (Contap_SequenceNodeOfTheSequenceOfPointOfContour*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour;
-class Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour();
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour();
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour(const Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour &aHandle);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour(const Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour *anItem);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
-	Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour* GetObject() {
-	return (Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour*)$self->Access();
+%extend Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
+	~Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour() {
+	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour\n");
 	}
 };
 
 %nodefaultctor Handle_Contap_TheIWLineOfTheIWalkingOfContour;
 class Handle_Contap_TheIWLineOfTheIWalkingOfContour : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Contap_TheIWLineOfTheIWalkingOfContour();
 		%feature("autodoc", "1");
 		Handle_Contap_TheIWLineOfTheIWalkingOfContour();
 		%feature("autodoc", "1");
@@ -216,12 +140,87 @@ class Handle_Contap_TheIWLineOfTheIWalkingOfContour : public Handle_MMgt_TShared
 	return (Contap_TheIWLineOfTheIWalkingOfContour*)$self->Access();
 	}
 };
+%extend Handle_Contap_TheIWLineOfTheIWalkingOfContour {
+	~Handle_Contap_TheIWLineOfTheIWalkingOfContour() {
+	printf("Call custom destructor for instance of Handle_Contap_TheIWLineOfTheIWalkingOfContour\n");
+	}
+};
+
+%nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour;
+class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour();
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Contap_SequenceNodeOfTheSequenceOfPointOfContour *anItem);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
+	Contap_SequenceNodeOfTheSequenceOfPointOfContour* GetObject() {
+	return (Contap_SequenceNodeOfTheSequenceOfPointOfContour*)$self->Access();
+	}
+};
+%extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
+	~Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour() {
+	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour\n");
+	}
+};
+
+%nodefaultctor Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour;
+class Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour();
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour(const Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour(const Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour *anItem);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
+	Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour* GetObject() {
+	return (Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour*)$self->Access();
+	}
+};
+%extend Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
+	~Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour() {
+	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");
+	}
+};
+
+%nodefaultctor Handle_Contap_TheHSequenceOfPointOfContour;
+class Handle_Contap_TheHSequenceOfPointOfContour : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Contap_TheHSequenceOfPointOfContour();
+		%feature("autodoc", "1");
+		Handle_Contap_TheHSequenceOfPointOfContour(const Handle_Contap_TheHSequenceOfPointOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_TheHSequenceOfPointOfContour(const Contap_TheHSequenceOfPointOfContour *anItem);
+		%feature("autodoc", "1");
+		Handle_Contap_TheHSequenceOfPointOfContour const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Contap_TheHSequenceOfPointOfContour {
+	Contap_TheHSequenceOfPointOfContour* GetObject() {
+	return (Contap_TheHSequenceOfPointOfContour*)$self->Access();
+	}
+};
+%extend Handle_Contap_TheHSequenceOfPointOfContour {
+	~Handle_Contap_TheHSequenceOfPointOfContour() {
+	printf("Call custom destructor for instance of Handle_Contap_TheHSequenceOfPointOfContour\n");
+	}
+};
 
 %nodefaultctor Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour;
 class Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour();
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour();
 		%feature("autodoc", "1");
@@ -237,12 +236,15 @@ class Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public
 	return (Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour*)$self->Access();
 	}
 };
+%extend Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
+	~Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour() {
+	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour\n");
+	}
+};
 
 %nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour;
 class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour();
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour();
 		%feature("autodoc", "1");
@@ -258,6 +260,11 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCo
 	return (Contap_SequenceNodeOfTheSequenceOfLineOfContour*)$self->Access();
 	}
 };
+%extend Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour {
+	~Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour() {
+	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");
+	}
+};
 
 %nodefaultctor Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour;
 class Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public TCollection_SeqNode {
@@ -268,13 +275,16 @@ class Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public TCol
 		Contap_ThePathPointOfTheSearchOfContour & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour();
 
 };
 %extend Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
 	Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour GetHandle() {
 	return *(Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour*) &$self;
+	}
+};
+%extend Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
+	~Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour() {
+	printf("Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour\n");
 	}
 };
 
@@ -327,9 +337,12 @@ class Contap_TheSurfFunctionOfContour : public math_FunctionSetWithDerivatives {
 		Standard_Real Angle() const;
 		%feature("autodoc", "1");
 		const Handle_Adaptor3d_HSurface & Surface() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_TheSurfFunctionOfContour();
 
+};
+%extend Contap_TheSurfFunctionOfContour {
+	~Contap_TheSurfFunctionOfContour() {
+	printf("Call custom destructor for instance of Contap_TheSurfFunctionOfContour\n");
+	}
 };
 
 %nodefaultctor Contap_SequenceOfIWLineOfTheIWalkingOfContour;
@@ -339,8 +352,6 @@ class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSeq
 		Contap_SequenceOfIWLineOfTheIWalkingOfContour();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Contap_SequenceOfIWLineOfTheIWalkingOfContour();
 		%feature("autodoc", "1");
 		const Contap_SequenceOfIWLineOfTheIWalkingOfContour & Assign(const Contap_SequenceOfIWLineOfTheIWalkingOfContour &Other);
 		%feature("autodoc", "1");
@@ -381,12 +392,15 @@ class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSeq
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Contap_SequenceOfIWLineOfTheIWalkingOfContour {
+	~Contap_SequenceOfIWLineOfTheIWalkingOfContour() {
+	printf("Call custom destructor for instance of Contap_SequenceOfIWLineOfTheIWalkingOfContour\n");
+	}
+};
 
 %nodefaultctor Contap_HSurfaceTool;
 class Contap_HSurfaceTool {
 	public:
-		%feature("autodoc", "1");
-		~Contap_HSurfaceTool();
 		%feature("autodoc", "1");
 		Contap_HSurfaceTool();
 		%feature("autodoc", "1");
@@ -469,6 +483,11 @@ class Contap_HSurfaceTool {
 		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
 
 };
+%extend Contap_HSurfaceTool {
+	~Contap_HSurfaceTool() {
+	printf("Call custom destructor for instance of Contap_HSurfaceTool\n");
+	}
+};
 
 %nodefaultctor Contap_SequenceOfSegmentOfTheSearchOfContour;
 class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequence {
@@ -520,25 +539,6 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 
 };
 
-%nodefaultctor Contap_SequenceNodeOfTheSequenceOfPointOfContour;
-class Contap_SequenceNodeOfTheSequenceOfPointOfContour : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Contap_ThePointOfContour &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Contap_ThePointOfContour & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_SequenceNodeOfTheSequenceOfPointOfContour();
-
-};
-%extend Contap_SequenceNodeOfTheSequenceOfPointOfContour {
-	Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour GetHandle() {
-	return *(Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour*) &$self;
-	}
-};
-
 %nodefaultctor Contap_TheSurfPropsOfContour;
 class Contap_TheSurfPropsOfContour {
 	public:
@@ -552,6 +552,30 @@ class Contap_TheSurfPropsOfContour {
 		void DerivAndNorm(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & d1u, gp_Vec & d1v, gp_Vec & N);
 		%feature("autodoc", "1");
 		void NormAndDn(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N, gp_Vec & Dnu, gp_Vec & Dnv);
+
+};
+
+%nodefaultctor Contap_TheSearchOfContour;
+class Contap_TheSearchOfContour {
+	public:
+		%feature("autodoc", "1");
+		~Contap_TheSearchOfContour();
+		%feature("autodoc", "1");
+		Contap_TheSearchOfContour();
+		%feature("autodoc", "1");
+		void Perform(Contap_TheArcFunctionOfContour & F, const Handle_Adaptor3d_TopolTool &Domain, const Standard_Real TolBoundary, const Standard_Real TolTangency);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean AllArcSolution() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const Contap_ThePathPointOfTheSearchOfContour & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		const Contap_TheSegmentOfTheSearchOfContour & Segment(const Standard_Integer Index) const;
 
 };
 
@@ -656,13 +680,16 @@ class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
 		Handle_Contap_TheHSequenceOfPointOfContour ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_TheHSequenceOfPointOfContour();
 
 };
 %extend Contap_TheHSequenceOfPointOfContour {
 	Handle_Contap_TheHSequenceOfPointOfContour GetHandle() {
 	return *(Handle_Contap_TheHSequenceOfPointOfContour*) &$self;
+	}
+};
+%extend Contap_TheHSequenceOfPointOfContour {
+	~Contap_TheHSequenceOfPointOfContour() {
+	printf("Call custom destructor for instance of Contap_TheHSequenceOfPointOfContour\n");
 	}
 };
 
@@ -712,36 +739,6 @@ class Contap_Contour {
 
 };
 
-%nodefaultctor Contap_ThePathPointOfTheSearchOfContour;
-class Contap_ThePathPointOfTheSearchOfContour {
-	public:
-		%feature("autodoc", "1");
-		~Contap_ThePathPointOfTheSearchOfContour();
-		%feature("autodoc", "1");
-		Contap_ThePathPointOfTheSearchOfContour();
-		%feature("autodoc", "1");
-		Contap_ThePathPointOfTheSearchOfContour(const gp_Pnt &P, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
-		%feature("autodoc", "1");
-		Contap_ThePathPointOfTheSearchOfContour(const gp_Pnt &P, const Standard_Real Tol, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &P, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &P, const Standard_Real Tol, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
-		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNew() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HVertex & Vertex() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & Arc() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-
-};
-
 %nodefaultctor Contap_SequenceNodeOfTheSequenceOfLineOfContour;
 class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNode {
 	public:
@@ -751,13 +748,16 @@ class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNo
 		Contap_TheLineOfContour & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_SequenceNodeOfTheSequenceOfLineOfContour();
 
 };
 %extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
 	Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour GetHandle() {
 	return *(Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour*) &$self;
+	}
+};
+%extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
+	~Contap_SequenceNodeOfTheSequenceOfLineOfContour() {
+	printf("Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");
 	}
 };
 
@@ -872,13 +872,16 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 		Standard_Boolean IsTangentAtEnd() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_TheIWLineOfTheIWalkingOfContour();
 
 };
 %extend Contap_TheIWLineOfTheIWalkingOfContour {
 	Handle_Contap_TheIWLineOfTheIWalkingOfContour GetHandle() {
 	return *(Handle_Contap_TheIWLineOfTheIWalkingOfContour*) &$self;
+	}
+};
+%extend Contap_TheIWLineOfTheIWalkingOfContour {
+	~Contap_TheIWLineOfTheIWalkingOfContour() {
+	printf("Call custom destructor for instance of Contap_TheIWLineOfTheIWalkingOfContour\n");
 	}
 };
 
@@ -929,8 +932,6 @@ class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TColl
 		Handle_Contap_TheIWLineOfTheIWalkingOfContour & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour();
 
 };
 %extend Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
@@ -938,12 +939,15 @@ class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TColl
 	return *(Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour*) &$self;
 	}
 };
+%extend Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
+	~Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour() {
+	printf("Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");
+	}
+};
 
 %nodefaultctor Contap_TheLineOfContour;
 class Contap_TheLineOfContour {
 	public:
-		%feature("autodoc", "1");
-		~Contap_TheLineOfContour();
 		%feature("autodoc", "1");
 		Contap_TheLineOfContour();
 		%feature("autodoc", "1");
@@ -985,6 +989,11 @@ class Contap_TheLineOfContour {
 		%feature("autodoc", "1");
 		IntSurf_TypeTrans TransitionOnS() const;
 
+};
+%extend Contap_TheLineOfContour {
+	~Contap_TheLineOfContour() {
+	printf("Call custom destructor for instance of Contap_TheLineOfContour\n");
+	}
 };
 
 %nodefaultctor Contap_HContTool;
@@ -1033,35 +1042,9 @@ class Contap_HContTool {
 
 };
 
-%nodefaultctor Contap_TheSearchOfContour;
-class Contap_TheSearchOfContour {
-	public:
-		%feature("autodoc", "1");
-		~Contap_TheSearchOfContour();
-		%feature("autodoc", "1");
-		Contap_TheSearchOfContour();
-		%feature("autodoc", "1");
-		void Perform(Contap_TheArcFunctionOfContour & F, const Handle_Adaptor3d_TopolTool &Domain, const Standard_Real TolBoundary, const Standard_Real TolTangency);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean AllArcSolution() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const Contap_ThePathPointOfTheSearchOfContour & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const Contap_TheSegmentOfTheSearchOfContour & Segment(const Standard_Integer Index) const;
-
-};
-
 %nodefaultctor Contap_HCurve2dTool;
 class Contap_HCurve2dTool {
 	public:
-		%feature("autodoc", "1");
-		~Contap_HCurve2dTool();
 		%feature("autodoc", "1");
 		Contap_HCurve2dTool();
 		%feature("autodoc", "1");
@@ -1114,6 +1097,11 @@ class Contap_HCurve2dTool {
 		Standard_Integer NbSamples(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U0, const Standard_Real U1);
 
 };
+%extend Contap_HCurve2dTool {
+	~Contap_HCurve2dTool() {
+	printf("Call custom destructor for instance of Contap_HCurve2dTool\n");
+	}
+};
 
 %nodefaultctor Contap_TheSearchInsideOfContour;
 class Contap_TheSearchInsideOfContour {
@@ -1141,8 +1129,6 @@ class Contap_TheSearchInsideOfContour {
 class Contap_TheSegmentOfTheSearchOfContour {
 	public:
 		%feature("autodoc", "1");
-		~Contap_TheSegmentOfTheSearchOfContour();
-		%feature("autodoc", "1");
 		Contap_TheSegmentOfTheSearchOfContour();
 		%feature("autodoc", "1");
 		void SetValue(const Handle_Adaptor2d_HCurve2d &A);
@@ -1159,6 +1145,11 @@ class Contap_TheSegmentOfTheSearchOfContour {
 		%feature("autodoc", "1");
 		const Contap_ThePathPointOfTheSearchOfContour & LastPoint() const;
 
+};
+%extend Contap_TheSegmentOfTheSearchOfContour {
+	~Contap_TheSegmentOfTheSearchOfContour() {
+	printf("Call custom destructor for instance of Contap_TheSegmentOfTheSearchOfContour\n");
+	}
 };
 
 %nodefaultctor Contap_TheSequenceOfLineOfContour;
@@ -1215,8 +1206,6 @@ class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
 class Contap_ThePointOfContour {
 	public:
 		%feature("autodoc", "1");
-		~Contap_ThePointOfContour();
-		%feature("autodoc", "1");
 		Contap_ThePointOfContour();
 		%feature("autodoc", "1");
 		Contap_ThePointOfContour(const gp_Pnt &Pt, const Standard_Real U, const Standard_Real V);
@@ -1258,6 +1247,11 @@ class Contap_ThePointOfContour {
 		Standard_Boolean IsInternal() const;
 
 };
+%extend Contap_ThePointOfContour {
+	~Contap_ThePointOfContour() {
+	printf("Call custom destructor for instance of Contap_ThePointOfContour\n");
+	}
+};
 
 %nodefaultctor Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour;
 class Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public TCollection_SeqNode {
@@ -1268,13 +1262,71 @@ class Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public TColle
 		Contap_TheSegmentOfTheSearchOfContour & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour();
 
 };
 %extend Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
 	Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour GetHandle() {
 	return *(Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour*) &$self;
+	}
+};
+%extend Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
+	~Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour() {
+	printf("Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour\n");
+	}
+};
+
+%nodefaultctor Contap_ThePathPointOfTheSearchOfContour;
+class Contap_ThePathPointOfTheSearchOfContour {
+	public:
+		%feature("autodoc", "1");
+		Contap_ThePathPointOfTheSearchOfContour();
+		%feature("autodoc", "1");
+		Contap_ThePathPointOfTheSearchOfContour(const gp_Pnt &P, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
+		%feature("autodoc", "1");
+		Contap_ThePathPointOfTheSearchOfContour(const gp_Pnt &P, const Standard_Real Tol, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Pnt &P, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Pnt &P, const Standard_Real Tol, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
+		%feature("autodoc", "1");
+		const gp_Pnt & Value() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsNew() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HVertex & Vertex() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor2d_HCurve2d & Arc() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+
+};
+%extend Contap_ThePathPointOfTheSearchOfContour {
+	~Contap_ThePathPointOfTheSearchOfContour() {
+	printf("Call custom destructor for instance of Contap_ThePathPointOfTheSearchOfContour\n");
+	}
+};
+
+%nodefaultctor Contap_SequenceNodeOfTheSequenceOfPointOfContour;
+class Contap_SequenceNodeOfTheSequenceOfPointOfContour : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Contap_ThePointOfContour &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Contap_ThePointOfContour & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Contap_SequenceNodeOfTheSequenceOfPointOfContour {
+	Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour GetHandle() {
+	return *(Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour*) &$self;
+	}
+};
+%extend Contap_SequenceNodeOfTheSequenceOfPointOfContour {
+	~Contap_SequenceNodeOfTheSequenceOfPointOfContour() {
+	printf("Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfPointOfContour\n");
 	}
 };
 

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Geom2dHatch
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher();
-		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher();
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher(const Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher &aHandle);
@@ -118,12 +102,15 @@ class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollec
 	return (Geom2dHatch_DataMapNodeOfHatchingsOfHatcher*)$self->Access();
 	}
 };
+%extend Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
+	~Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher() {
+	printf("Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");
+	}
+};
 
 %nodefaultctor Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher;
 class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher();
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher();
 		%feature("autodoc", "1");
@@ -137,6 +124,11 @@ class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public 
 %extend Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
 	Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher* GetObject() {
 	return (Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher*)$self->Access();
+	}
+};
+%extend Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	~Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
+	printf("Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");
 	}
 };
 
@@ -159,6 +151,36 @@ class Geom2dHatch_ElementOfHatcher {
 		void Orientation(const TopAbs_Orientation Orientation);
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation() const;
+
+};
+
+%nodefaultctor Geom2dHatch_MapOfElementsOfElementsOfHatcher;
+class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_MapOfElementsOfElementsOfHatcher(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Geom2dHatch_MapOfElementsOfElementsOfHatcher & Assign(const Geom2dHatch_MapOfElementsOfElementsOfHatcher &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~Geom2dHatch_MapOfElementsOfElementsOfHatcher();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Geom2dHatch_ElementOfHatcher & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Geom2dHatch_ElementOfHatcher & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K);
 
 };
 
@@ -235,36 +257,6 @@ class Geom2dHatch_Hatcher {
 		const HatchGen_Domain & Domain(const Standard_Integer IndH, const Standard_Integer IDom) const;
 		%feature("autodoc", "1");
 		void Dump() const;
-
-};
-
-%nodefaultctor Geom2dHatch_MapOfElementsOfElementsOfHatcher;
-class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_MapOfElementsOfElementsOfHatcher(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Geom2dHatch_MapOfElementsOfElementsOfHatcher & Assign(const Geom2dHatch_MapOfElementsOfElementsOfHatcher &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~Geom2dHatch_MapOfElementsOfElementsOfHatcher();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Geom2dHatch_ElementOfHatcher & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Geom2dHatch_ElementOfHatcher & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K);
 
 };
 
@@ -361,13 +353,16 @@ class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
 		Geom2dHatch_HatchingOfHatcher & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher();
 
 };
 %extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
 	Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher GetHandle() {
 	return *(Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher*) &$self;
+	}
+};
+%extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
+	~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");
 	}
 };
 
@@ -382,13 +377,16 @@ class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollec
 		Geom2dHatch_ElementOfHatcher & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher();
 
 };
 %extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
 	Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher GetHandle() {
 	return *(Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher*) &$self;
+	}
+};
+%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");
 	}
 };
 

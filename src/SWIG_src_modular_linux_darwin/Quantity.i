@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Quantity
 
@@ -95,29 +81,33 @@ Standard_Real & function transformation
 
 %include Quantity_headers.i
 
-typedef Standard_Real Quantity_Scalaire;
 typedef Standard_Real Quantity_Length;
 typedef Standard_Real Quantity_PlaneAngle;
 typedef Standard_Real Quantity_Factor;
 typedef Standard_Real Quantity_Illuminance;
+typedef Standard_Real Quantity_AngularVelocity;
 typedef Standard_Real Quantity_AmountOfSubstance;
 typedef Standard_Real Quantity_ElectricCharge;
 typedef Standard_Real Quantity_Work;
 typedef Standard_Real Quantity_Energy;
 typedef Standard_Real Quantity_Acceleration;
 typedef Standard_Real Quantity_Normality;
+typedef Standard_Real Quantity_MomentOfAForce;
 typedef Standard_Real Quantity_SpecificHeatCapacity;
 typedef Standard_Real Quantity_SurfaceTension;
 typedef Standard_Real Quantity_Constant;
+typedef Standard_Real Quantity_KinematicViscosity;
 typedef Standard_Real Quantity_Entropy;
 typedef Standard_Real Quantity_Content;
 typedef Standard_Real Quantity_Rate;
+typedef Standard_Real Quantity_Velocity;
 typedef Standard_Real Quantity_LuminousEfficacity;
 typedef Standard_Real Quantity_MolarConcentration;
 typedef Standard_Real Quantity_MagneticFieldStrength;
 typedef Standard_Real Quantity_Capacitance;
 typedef Standard_Real Quantity_Parameter;
 typedef Standard_Real Quantity_ThermalConductivity;
+typedef Standard_Real Quantity_Frequency;
 typedef Standard_Real Quantity_MagneticFlux;
 typedef Standard_Real Quantity_VolumeFlow;
 typedef Standard_Real Quantity_KineticMoment;
@@ -125,33 +115,30 @@ typedef Standard_Real Quantity_Index;
 typedef Standard_Real Quantity_Molarity;
 typedef Standard_Real Quantity_MomentOfInertia;
 typedef Standard_Real Quantity_Mass;
-typedef Standard_Real Quantity_MomentOfAForce;
+typedef Standard_Real Quantity_Ratio;
 typedef Standard_Real Quantity_ElectricFieldStrength;
 typedef Standard_Real Quantity_Pressure;
 typedef Standard_Real Quantity_Power;
-typedef Standard_Real Quantity_Ratio;
 typedef Standard_Real Quantity_ElectricCurrent;
 typedef Standard_Real Quantity_DoseEquivalent;
 typedef Standard_Real Quantity_Density;
-typedef Standard_Real Quantity_SoundIntensity;
 typedef Standard_Real Quantity_MolarMass;
 typedef Standard_Real Quantity_Conductivity;
 typedef Standard_Real Quantity_Temperature;
+typedef Standard_Real Quantity_Consumption;
 typedef Standard_Real Quantity_Momentum;
-typedef Standard_Real Quantity_KinematicViscosity;
+typedef Standard_Real Quantity_Scalaire;
+typedef Standard_Real Quantity_MolarVolume;
 typedef Standard_Real Quantity_ElectricCapacitance;
 typedef Standard_Real Quantity_Reluctance;
 typedef Standard_Real Quantity_Concentration;
 typedef Standard_Real Quantity_MagneticFluxDensity;
 typedef Standard_Real Quantity_Quotient;
-typedef Standard_Real Quantity_Consumption;
 typedef Standard_Real Quantity_Volume;
-typedef Standard_Real Quantity_Frequency;
 typedef Standard_Real Quantity_AbsorbedDose;
 typedef Standard_Real Quantity_CoefficientOfExpansion;
 typedef Standard_Real Quantity_Area;
 typedef Standard_Real Quantity_Resistivity;
-typedef Standard_Real Quantity_AngularVelocity;
 typedef Standard_Real Quantity_Admittance;
 typedef Standard_Real Quantity_Torque;
 typedef Standard_Real Quantity_Viscosity;
@@ -161,7 +148,6 @@ typedef Standard_Real Quantity_LuminousExposition;
 typedef Standard_Real Quantity_Force;
 typedef Standard_Real Quantity_LuminousFlux;
 typedef Standard_Real Quantity_Enthalpy;
-typedef Standard_Real Quantity_MolarVolume;
 typedef Standard_Real Quantity_Luminance;
 typedef Standard_Real Quantity_Coefficient;
 typedef Standard_Real Quantity_Impedance;
@@ -170,10 +156,10 @@ typedef Standard_Real Quantity_Speed;
 typedef Standard_Real Quantity_Inductance;
 typedef Standard_Real Quantity_Weight;
 typedef Standard_Real Quantity_MassFlow;
-typedef Standard_Real Quantity_Velocity;
 typedef Standard_Real Quantity_LuminousIntensity;
 typedef Standard_Real Quantity_Resistance;
 typedef Standard_Real Quantity_ElectricPotential;
+typedef Standard_Real Quantity_SoundIntensity;
 
 enum Quantity_TypeOfColor {
 	Quantity_TOC_RGB,
@@ -777,8 +763,6 @@ enum Quantity_NameOfColor {
 class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Quantity_ColorDefinitionError();
-		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError(const Handle_Quantity_ColorDefinitionError &aHandle);
@@ -793,12 +777,15 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 	return (Quantity_ColorDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Quantity_ColorDefinitionError {
+	~Handle_Quantity_ColorDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Quantity_ColorDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Quantity_PeriodDefinitionError;
 class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Quantity_PeriodDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError();
 		%feature("autodoc", "1");
@@ -814,12 +801,15 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 	return (Quantity_PeriodDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_Quantity_PeriodDefinitionError {
+	~Handle_Quantity_PeriodDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Quantity_PeriodDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_Quantity_HArray1OfColor;
 class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Quantity_HArray1OfColor();
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor();
 		%feature("autodoc", "1");
@@ -835,12 +825,15 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	return (Quantity_HArray1OfColor*)$self->Access();
 	}
 };
+%extend Handle_Quantity_HArray1OfColor {
+	~Handle_Quantity_HArray1OfColor() {
+	printf("Call custom destructor for instance of Handle_Quantity_HArray1OfColor\n");
+	}
+};
 
 %nodefaultctor Handle_Quantity_DateDefinitionError;
 class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Quantity_DateDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError();
 		%feature("autodoc", "1");
@@ -854,6 +847,11 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 %extend Handle_Quantity_DateDefinitionError {
 	Quantity_DateDefinitionError* GetObject() {
 	return (Quantity_DateDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_Quantity_DateDefinitionError {
+	~Handle_Quantity_DateDefinitionError() {
+	printf("Call custom destructor for instance of Handle_Quantity_DateDefinitionError\n");
 	}
 };
 
@@ -912,13 +910,16 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_ColorDefinitionError();
 
 };
 %extend Quantity_ColorDefinitionError {
 	Handle_Quantity_ColorDefinitionError GetHandle() {
 	return *(Handle_Quantity_ColorDefinitionError*) &$self;
+	}
+};
+%extend Quantity_ColorDefinitionError {
+	~Quantity_ColorDefinitionError() {
+	printf("Call custom destructor for instance of Quantity_ColorDefinitionError\n");
 	}
 };
 
@@ -1089,13 +1090,16 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_PeriodDefinitionError();
 
 };
 %extend Quantity_PeriodDefinitionError {
 	Handle_Quantity_PeriodDefinitionError GetHandle() {
 	return *(Handle_Quantity_PeriodDefinitionError*) &$self;
+	}
+};
+%extend Quantity_PeriodDefinitionError {
+	~Quantity_PeriodDefinitionError() {
+	printf("Call custom destructor for instance of Quantity_PeriodDefinitionError\n");
 	}
 };
 
@@ -1228,13 +1232,16 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_DateDefinitionError();
 
 };
 %extend Quantity_DateDefinitionError {
 	Handle_Quantity_DateDefinitionError GetHandle() {
 	return *(Handle_Quantity_DateDefinitionError*) &$self;
+	}
+};
+%extend Quantity_DateDefinitionError {
+	~Quantity_DateDefinitionError() {
+	printf("Call custom destructor for instance of Quantity_DateDefinitionError\n");
 	}
 };
 
@@ -1265,13 +1272,16 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 		Quantity_Array1OfColor & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_HArray1OfColor();
 
 };
 %extend Quantity_HArray1OfColor {
 	Handle_Quantity_HArray1OfColor GetHandle() {
 	return *(Handle_Quantity_HArray1OfColor*) &$self;
+	}
+};
+%extend Quantity_HArray1OfColor {
+	~Quantity_HArray1OfColor() {
+	printf("Call custom destructor for instance of Quantity_HArray1OfColor\n");
 	}
 };
 

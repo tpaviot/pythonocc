@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module XmlMDF
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_XmlMDF_ADriver : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlMDF_ADriver();
-		%feature("autodoc", "1");
 		Handle_XmlMDF_ADriver();
 		%feature("autodoc", "1");
 		Handle_XmlMDF_ADriver(const Handle_XmlMDF_ADriver &aHandle);
@@ -118,12 +102,15 @@ class Handle_XmlMDF_ADriver : public Handle_MMgt_TShared {
 	return (XmlMDF_ADriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMDF_ADriver {
+	~Handle_XmlMDF_ADriver() {
+	printf("Call custom destructor for instance of Handle_XmlMDF_ADriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMDF_ReferenceDriver;
 class Handle_XmlMDF_ReferenceDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMDF_ReferenceDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMDF_ReferenceDriver();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_XmlMDF_ReferenceDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMDF_ReferenceDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMDF_ReferenceDriver {
+	~Handle_XmlMDF_ReferenceDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMDF_ReferenceDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMDF_TagSourceDriver;
 class Handle_XmlMDF_TagSourceDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMDF_TagSourceDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMDF_TagSourceDriver();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_XmlMDF_TagSourceDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMDF_TagSourceDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMDF_TagSourceDriver {
+	~Handle_XmlMDF_TagSourceDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMDF_TagSourceDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMDF_DataMapNodeOfMapOfDriver;
 class Handle_XmlMDF_DataMapNodeOfMapOfDriver : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMDF_DataMapNodeOfMapOfDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMDF_DataMapNodeOfMapOfDriver();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_XmlMDF_DataMapNodeOfMapOfDriver : public Handle_TCollection_MapNode
 	return (XmlMDF_DataMapNodeOfMapOfDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMDF_DataMapNodeOfMapOfDriver {
+	~Handle_XmlMDF_DataMapNodeOfMapOfDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMDF_DataMapNodeOfMapOfDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMDF_ADriverTable;
 class Handle_XmlMDF_ADriverTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMDF_ADriverTable();
 		%feature("autodoc", "1");
 		Handle_XmlMDF_ADriverTable();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_XmlMDF_ADriverTable : public Handle_MMgt_TShared {
 	return (XmlMDF_ADriverTable*)$self->Access();
 	}
 };
+%extend Handle_XmlMDF_ADriverTable {
+	~Handle_XmlMDF_ADriverTable() {
+	printf("Call custom destructor for instance of Handle_XmlMDF_ADriverTable\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMDF_DataMapNodeOfTypeADriverMap;
 class Handle_XmlMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMDF_DataMapNodeOfTypeADriverMap();
 		%feature("autodoc", "1");
 		Handle_XmlMDF_DataMapNodeOfTypeADriverMap();
 		%feature("autodoc", "1");
@@ -221,6 +220,11 @@ class Handle_XmlMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 %extend Handle_XmlMDF_DataMapNodeOfTypeADriverMap {
 	XmlMDF_DataMapNodeOfTypeADriverMap* GetObject() {
 	return (XmlMDF_DataMapNodeOfTypeADriverMap*)$self->Access();
+	}
+};
+%extend Handle_XmlMDF_DataMapNodeOfTypeADriverMap {
+	~Handle_XmlMDF_DataMapNodeOfTypeADriverMap() {
+	printf("Call custom destructor for instance of Handle_XmlMDF_DataMapNodeOfTypeADriverMap\n");
 	}
 };
 
@@ -251,13 +255,16 @@ class XmlMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 		Handle_XmlMDF_ADriver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMDF_DataMapNodeOfTypeADriverMap();
 
 };
 %extend XmlMDF_DataMapNodeOfTypeADriverMap {
 	Handle_XmlMDF_DataMapNodeOfTypeADriverMap GetHandle() {
 	return *(Handle_XmlMDF_DataMapNodeOfTypeADriverMap*) &$self;
+	}
+};
+%extend XmlMDF_DataMapNodeOfTypeADriverMap {
+	~XmlMDF_DataMapNodeOfTypeADriverMap() {
+	printf("Call custom destructor for instance of XmlMDF_DataMapNodeOfTypeADriverMap\n");
 	}
 };
 
@@ -287,6 +294,11 @@ class XmlMDF_ADriver : public MMgt_TShared {
 	return *(Handle_XmlMDF_ADriver*) &$self;
 	}
 };
+%extend XmlMDF_ADriver {
+	~XmlMDF_ADriver() {
+	printf("Call custom destructor for instance of XmlMDF_ADriver\n");
+	}
+};
 
 %nodefaultctor XmlMDF_ReferenceDriver;
 class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
@@ -297,13 +309,16 @@ class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
 		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		~XmlMDF_ReferenceDriver();
 
 };
 %extend XmlMDF_ReferenceDriver {
 	Handle_XmlMDF_ReferenceDriver GetHandle() {
 	return *(Handle_XmlMDF_ReferenceDriver*) &$self;
+	}
+};
+%extend XmlMDF_ReferenceDriver {
+	~XmlMDF_ReferenceDriver() {
+	printf("Call custom destructor for instance of XmlMDF_ReferenceDriver\n");
 	}
 };
 
@@ -318,13 +333,16 @@ class XmlMDF_DataMapNodeOfMapOfDriver : public TCollection_MapNode {
 		Handle_XmlMDF_ADriver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMDF_DataMapNodeOfMapOfDriver();
 
 };
 %extend XmlMDF_DataMapNodeOfMapOfDriver {
 	Handle_XmlMDF_DataMapNodeOfMapOfDriver GetHandle() {
 	return *(Handle_XmlMDF_DataMapNodeOfMapOfDriver*) &$self;
+	}
+};
+%extend XmlMDF_DataMapNodeOfMapOfDriver {
+	~XmlMDF_DataMapNodeOfMapOfDriver() {
+	printf("Call custom destructor for instance of XmlMDF_DataMapNodeOfMapOfDriver\n");
 	}
 };
 
@@ -341,8 +359,6 @@ class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMDF_TagSourceDriver();
 
 };
 %extend XmlMDF_TagSourceDriver {
@@ -350,12 +366,15 @@ class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
 	return *(Handle_XmlMDF_TagSourceDriver*) &$self;
 	}
 };
+%extend XmlMDF_TagSourceDriver {
+	~XmlMDF_TagSourceDriver() {
+	printf("Call custom destructor for instance of XmlMDF_TagSourceDriver\n");
+	}
+};
 
 %nodefaultctor XmlMDF_DataMapIteratorOfMapOfDriver;
 class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~XmlMDF_DataMapIteratorOfMapOfDriver();
 		%feature("autodoc", "1");
 		XmlMDF_DataMapIteratorOfMapOfDriver();
 		%feature("autodoc", "1");
@@ -367,6 +386,11 @@ class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator 
 		%feature("autodoc", "1");
 		const Handle_XmlMDF_ADriver & Value() const;
 
+};
+%extend XmlMDF_DataMapIteratorOfMapOfDriver {
+	~XmlMDF_DataMapIteratorOfMapOfDriver() {
+	printf("Call custom destructor for instance of XmlMDF_DataMapIteratorOfMapOfDriver\n");
+	}
 };
 
 %nodefaultctor XmlMDF_ADriverTable;
@@ -382,13 +406,16 @@ class XmlMDF_ADriverTable : public MMgt_TShared {
 		Standard_Boolean GetDriver(const Handle_Standard_Type &aType, Handle_XmlMDF_ADriver & anHDriver) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMDF_ADriverTable();
 
 };
 %extend XmlMDF_ADriverTable {
 	Handle_XmlMDF_ADriverTable GetHandle() {
 	return *(Handle_XmlMDF_ADriverTable*) &$self;
+	}
+};
+%extend XmlMDF_ADriverTable {
+	~XmlMDF_ADriverTable() {
+	printf("Call custom destructor for instance of XmlMDF_ADriverTable\n");
 	}
 };
 
@@ -403,8 +430,6 @@ class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~XmlMDF_TypeADriverMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Type &K, const Handle_XmlMDF_ADriver &I);
 		%feature("autodoc", "1");
@@ -421,6 +446,11 @@ class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
 		Handle_XmlMDF_ADriver & operator()(const Handle_Standard_Type &K);
 
 };
+%extend XmlMDF_TypeADriverMap {
+	~XmlMDF_TypeADriverMap() {
+	printf("Call custom destructor for instance of XmlMDF_TypeADriverMap\n");
+	}
+};
 
 %nodefaultctor XmlMDF_MapOfDriver;
 class XmlMDF_MapOfDriver : public TCollection_BasicMap {
@@ -433,8 +463,6 @@ class XmlMDF_MapOfDriver : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~XmlMDF_MapOfDriver();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_XmlMDF_ADriver &I);
 		%feature("autodoc", "1");
@@ -451,12 +479,15 @@ class XmlMDF_MapOfDriver : public TCollection_BasicMap {
 		Handle_XmlMDF_ADriver & operator()(const TCollection_AsciiString &K);
 
 };
+%extend XmlMDF_MapOfDriver {
+	~XmlMDF_MapOfDriver() {
+	printf("Call custom destructor for instance of XmlMDF_MapOfDriver\n");
+	}
+};
 
 %nodefaultctor XmlMDF_DataMapIteratorOfTypeADriverMap;
 class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~XmlMDF_DataMapIteratorOfTypeADriverMap();
 		%feature("autodoc", "1");
 		XmlMDF_DataMapIteratorOfTypeADriverMap();
 		%feature("autodoc", "1");
@@ -468,4 +499,9 @@ class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 		%feature("autodoc", "1");
 		const Handle_XmlMDF_ADriver & Value() const;
 
+};
+%extend XmlMDF_DataMapIteratorOfTypeADriverMap {
+	~XmlMDF_DataMapIteratorOfTypeADriverMap() {
+	printf("Call custom destructor for instance of XmlMDF_DataMapIteratorOfTypeADriverMap\n");
+	}
 };

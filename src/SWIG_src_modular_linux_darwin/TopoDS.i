@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TopoDS
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_TopoDS_TShape : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TopoDS_TShape();
-		%feature("autodoc", "1");
 		Handle_TopoDS_TShape();
 		%feature("autodoc", "1");
 		Handle_TopoDS_TShape(const Handle_TopoDS_TShape &aHandle);
@@ -118,12 +102,15 @@ class Handle_TopoDS_TShape : public Handle_MMgt_TShared {
 	return (TopoDS_TShape*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_TShape {
+	~Handle_TopoDS_TShape() {
+	printf("Call custom destructor for instance of Handle_TopoDS_TShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_TVertex;
 class Handle_TopoDS_TVertex : public Handle_TopoDS_TShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_TVertex();
 		%feature("autodoc", "1");
 		Handle_TopoDS_TVertex();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_TopoDS_TVertex : public Handle_TopoDS_TShape {
 	return (TopoDS_TVertex*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_TVertex {
+	~Handle_TopoDS_TVertex() {
+	printf("Call custom destructor for instance of Handle_TopoDS_TVertex\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_FrozenShape;
 class Handle_TopoDS_FrozenShape : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_FrozenShape();
 		%feature("autodoc", "1");
 		Handle_TopoDS_FrozenShape();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_TopoDS_FrozenShape : public Handle_Standard_DomainError {
 	return (TopoDS_FrozenShape*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_FrozenShape {
+	~Handle_TopoDS_FrozenShape() {
+	printf("Call custom destructor for instance of Handle_TopoDS_FrozenShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_ListNodeOfListOfShape;
 class Handle_TopoDS_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_ListNodeOfListOfShape();
 		%feature("autodoc", "1");
 		Handle_TopoDS_ListNodeOfListOfShape();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_TopoDS_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 	return (TopoDS_ListNodeOfListOfShape*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_ListNodeOfListOfShape {
+	~Handle_TopoDS_ListNodeOfListOfShape() {
+	printf("Call custom destructor for instance of Handle_TopoDS_ListNodeOfListOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_TFace;
 class Handle_TopoDS_TFace : public Handle_TopoDS_TShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_TFace();
 		%feature("autodoc", "1");
 		Handle_TopoDS_TFace();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_TopoDS_TFace : public Handle_TopoDS_TShape {
 	return (TopoDS_TFace*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_TFace {
+	~Handle_TopoDS_TFace() {
+	printf("Call custom destructor for instance of Handle_TopoDS_TFace\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_TCompound;
 class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_TCompound();
 		%feature("autodoc", "1");
 		Handle_TopoDS_TCompound();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 	return (TopoDS_TCompound*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_TCompound {
+	~Handle_TopoDS_TCompound() {
+	printf("Call custom destructor for instance of Handle_TopoDS_TCompound\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_UnCompatibleShapes;
 class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_UnCompatibleShapes();
 		%feature("autodoc", "1");
 		Handle_TopoDS_UnCompatibleShapes();
 		%feature("autodoc", "1");
@@ -244,12 +246,15 @@ class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
 	return (TopoDS_UnCompatibleShapes*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_UnCompatibleShapes {
+	~Handle_TopoDS_UnCompatibleShapes() {
+	printf("Call custom destructor for instance of Handle_TopoDS_UnCompatibleShapes\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_HShape;
 class Handle_TopoDS_HShape : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_HShape();
 		%feature("autodoc", "1");
 		Handle_TopoDS_HShape();
 		%feature("autodoc", "1");
@@ -265,12 +270,15 @@ class Handle_TopoDS_HShape : public Handle_MMgt_TShared {
 	return (TopoDS_HShape*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_HShape {
+	~Handle_TopoDS_HShape() {
+	printf("Call custom destructor for instance of Handle_TopoDS_HShape\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_TEdge;
 class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_TEdge();
 		%feature("autodoc", "1");
 		Handle_TopoDS_TEdge();
 		%feature("autodoc", "1");
@@ -286,12 +294,15 @@ class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
 	return (TopoDS_TEdge*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_TEdge {
+	~Handle_TopoDS_TEdge() {
+	printf("Call custom destructor for instance of Handle_TopoDS_TEdge\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_TShell;
 class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_TShell();
 		%feature("autodoc", "1");
 		Handle_TopoDS_TShell();
 		%feature("autodoc", "1");
@@ -307,12 +318,15 @@ class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 	return (TopoDS_TShell*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_TShell {
+	~Handle_TopoDS_TShell() {
+	printf("Call custom destructor for instance of Handle_TopoDS_TShell\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_TCompSolid;
 class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_TCompSolid();
 		%feature("autodoc", "1");
 		Handle_TopoDS_TCompSolid();
 		%feature("autodoc", "1");
@@ -328,12 +342,15 @@ class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
 	return (TopoDS_TCompSolid*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_TCompSolid {
+	~Handle_TopoDS_TCompSolid() {
+	printf("Call custom destructor for instance of Handle_TopoDS_TCompSolid\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_TSolid;
 class Handle_TopoDS_TSolid : public Handle_TopoDS_TShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_TSolid();
 		%feature("autodoc", "1");
 		Handle_TopoDS_TSolid();
 		%feature("autodoc", "1");
@@ -349,12 +366,15 @@ class Handle_TopoDS_TSolid : public Handle_TopoDS_TShape {
 	return (TopoDS_TSolid*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_TSolid {
+	~Handle_TopoDS_TSolid() {
+	printf("Call custom destructor for instance of Handle_TopoDS_TSolid\n");
+	}
+};
 
 %nodefaultctor Handle_TopoDS_TWire;
 class Handle_TopoDS_TWire : public Handle_TopoDS_TShape {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TopoDS_TWire();
 		%feature("autodoc", "1");
 		Handle_TopoDS_TWire();
 		%feature("autodoc", "1");
@@ -370,12 +390,15 @@ class Handle_TopoDS_TWire : public Handle_TopoDS_TShape {
 	return (TopoDS_TWire*)$self->Access();
 	}
 };
+%extend Handle_TopoDS_TWire {
+	~Handle_TopoDS_TWire() {
+	printf("Call custom destructor for instance of Handle_TopoDS_TWire\n");
+	}
+};
 
 %nodefaultctor TopoDS_Shape;
 class TopoDS_Shape {
 	public:
-		%feature("autodoc", "1");
-		~TopoDS_Shape();
 		%feature("autodoc", "1");
 		TopoDS_Shape();
 		%feature("autodoc", "1");
@@ -462,6 +485,11 @@ class TopoDS_Shape {
 		void TShape(const Handle_TopoDS_TShape &TS);
 
 };
+%extend TopoDS_Shape {
+	~TopoDS_Shape() {
+	printf("Call custom destructor for instance of TopoDS_Shape\n");
+	}
+};
 
 %nodefaultctor TopoDS_Compound;
 class TopoDS_Compound : public TopoDS_Shape {
@@ -488,13 +516,16 @@ class TopoDS_HShape : public MMgt_TShared {
 		TopoDS_Shape & ChangeShape();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_HShape();
 
 };
 %extend TopoDS_HShape {
 	Handle_TopoDS_HShape GetHandle() {
 	return *(Handle_TopoDS_HShape*) &$self;
+	}
+};
+%extend TopoDS_HShape {
+	~TopoDS_HShape() {
+	printf("Call custom destructor for instance of TopoDS_HShape\n");
 	}
 };
 
@@ -507,13 +538,16 @@ class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_ListNodeOfListOfShape();
 
 };
 %extend TopoDS_ListNodeOfListOfShape {
 	Handle_TopoDS_ListNodeOfListOfShape GetHandle() {
 	return *(Handle_TopoDS_ListNodeOfListOfShape*) &$self;
+	}
+};
+%extend TopoDS_ListNodeOfListOfShape {
+	~TopoDS_ListNodeOfListOfShape() {
+	printf("Call custom destructor for instance of TopoDS_ListNodeOfListOfShape\n");
 	}
 };
 
@@ -532,13 +566,16 @@ class TopoDS_FrozenShape : public Standard_DomainError {
 		Handle_TopoDS_FrozenShape NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_FrozenShape();
 
 };
 %extend TopoDS_FrozenShape {
 	Handle_TopoDS_FrozenShape GetHandle() {
 	return *(Handle_TopoDS_FrozenShape*) &$self;
+	}
+};
+%extend TopoDS_FrozenShape {
+	~TopoDS_FrozenShape() {
+	printf("Call custom destructor for instance of TopoDS_FrozenShape\n");
 	}
 };
 
@@ -614,6 +651,11 @@ class TopoDS_TShape : public MMgt_TShared {
 %extend TopoDS_TShape {
 	Handle_TopoDS_TShape GetHandle() {
 	return *(Handle_TopoDS_TShape*) &$self;
+	}
+};
+%extend TopoDS_TShape {
+	~TopoDS_TShape() {
+	printf("Call custom destructor for instance of TopoDS_TShape\n");
 	}
 };
 
@@ -700,13 +742,16 @@ class TopoDS_TWire : public TopoDS_TShape {
 		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_TWire();
 
 };
 %extend TopoDS_TWire {
 	Handle_TopoDS_TWire GetHandle() {
 	return *(Handle_TopoDS_TWire*) &$self;
+	}
+};
+%extend TopoDS_TWire {
+	~TopoDS_TWire() {
+	printf("Call custom destructor for instance of TopoDS_TWire\n");
 	}
 };
 
@@ -745,13 +790,16 @@ class TopoDS_UnCompatibleShapes : public Standard_DomainError {
 		Handle_TopoDS_UnCompatibleShapes NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_UnCompatibleShapes();
 
 };
 %extend TopoDS_UnCompatibleShapes {
 	Handle_TopoDS_UnCompatibleShapes GetHandle() {
 	return *(Handle_TopoDS_UnCompatibleShapes*) &$self;
+	}
+};
+%extend TopoDS_UnCompatibleShapes {
+	~TopoDS_UnCompatibleShapes() {
+	printf("Call custom destructor for instance of TopoDS_UnCompatibleShapes\n");
 	}
 };
 
@@ -796,13 +844,16 @@ class TopoDS_TCompound : public TopoDS_TShape {
 		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_TCompound();
 
 };
 %extend TopoDS_TCompound {
 	Handle_TopoDS_TCompound GetHandle() {
 	return *(Handle_TopoDS_TCompound*) &$self;
+	}
+};
+%extend TopoDS_TCompound {
+	~TopoDS_TCompound() {
+	printf("Call custom destructor for instance of TopoDS_TCompound\n");
 	}
 };
 
@@ -818,6 +869,11 @@ class TopoDS_TEdge : public TopoDS_TShape {
 %extend TopoDS_TEdge {
 	Handle_TopoDS_TEdge GetHandle() {
 	return *(Handle_TopoDS_TEdge*) &$self;
+	}
+};
+%extend TopoDS_TEdge {
+	~TopoDS_TEdge() {
+	printf("Call custom destructor for instance of TopoDS_TEdge\n");
 	}
 };
 
@@ -874,13 +930,16 @@ class TopoDS_TShell : public TopoDS_TShape {
 		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_TShell();
 
 };
 %extend TopoDS_TShell {
 	Handle_TopoDS_TShell GetHandle() {
 	return *(Handle_TopoDS_TShell*) &$self;
+	}
+};
+%extend TopoDS_TShell {
+	~TopoDS_TShell() {
+	printf("Call custom destructor for instance of TopoDS_TShell\n");
 	}
 };
 
@@ -895,13 +954,16 @@ class TopoDS_TFace : public TopoDS_TShape {
 		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_TFace();
 
 };
 %extend TopoDS_TFace {
 	Handle_TopoDS_TFace GetHandle() {
 	return *(Handle_TopoDS_TFace*) &$self;
+	}
+};
+%extend TopoDS_TFace {
+	~TopoDS_TFace() {
+	printf("Call custom destructor for instance of TopoDS_TFace\n");
 	}
 };
 
@@ -930,13 +992,16 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_TCompSolid();
 
 };
 %extend TopoDS_TCompSolid {
 	Handle_TopoDS_TCompSolid GetHandle() {
 	return *(Handle_TopoDS_TCompSolid*) &$self;
+	}
+};
+%extend TopoDS_TCompSolid {
+	~TopoDS_TCompSolid() {
+	printf("Call custom destructor for instance of TopoDS_TCompSolid\n");
 	}
 };
 
@@ -964,6 +1029,11 @@ class TopoDS_TVertex : public TopoDS_TShape {
 	return *(Handle_TopoDS_TVertex*) &$self;
 	}
 };
+%extend TopoDS_TVertex {
+	~TopoDS_TVertex() {
+	printf("Call custom destructor for instance of TopoDS_TVertex\n");
+	}
+};
 
 %nodefaultctor TopoDS_Face;
 class TopoDS_Face : public TopoDS_Shape {
@@ -986,12 +1056,15 @@ class TopoDS_TSolid : public TopoDS_TShape {
 		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TopoDS_TSolid();
 
 };
 %extend TopoDS_TSolid {
 	Handle_TopoDS_TSolid GetHandle() {
 	return *(Handle_TopoDS_TSolid*) &$self;
+	}
+};
+%extend TopoDS_TSolid {
+	~TopoDS_TSolid() {
+	printf("Call custom destructor for instance of TopoDS_TSolid\n");
 	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Select3D
 
@@ -108,8 +94,6 @@ enum Select3D_TypeOfSensitivity {
 class Handle_Select3D_SensitiveEntity : public Handle_SelectBasics_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveEntity();
-		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveEntity();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveEntity(const Handle_Select3D_SensitiveEntity &aHandle);
@@ -124,12 +108,15 @@ class Handle_Select3D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 	return (Select3D_SensitiveEntity*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveEntity {
+	~Handle_Select3D_SensitiveEntity() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveEntity\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitivePoly;
 class Handle_Select3D_SensitivePoly : public Handle_Select3D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitivePoly();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitivePoly();
 		%feature("autodoc", "1");
@@ -145,12 +132,15 @@ class Handle_Select3D_SensitivePoly : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitivePoly*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitivePoly {
+	~Handle_Select3D_SensitivePoly() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitivePoly\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitiveCurve;
 class Handle_Select3D_SensitiveCurve : public Handle_Select3D_SensitivePoly {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveCurve();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveCurve();
 		%feature("autodoc", "1");
@@ -166,12 +156,15 @@ class Handle_Select3D_SensitiveCurve : public Handle_Select3D_SensitivePoly {
 	return (Select3D_SensitiveCurve*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveCurve {
+	~Handle_Select3D_SensitiveCurve() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitiveCircle;
 class Handle_Select3D_SensitiveCircle : public Handle_Select3D_SensitivePoly {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveCircle();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveCircle();
 		%feature("autodoc", "1");
@@ -187,12 +180,15 @@ class Handle_Select3D_SensitiveCircle : public Handle_Select3D_SensitivePoly {
 	return (Select3D_SensitiveCircle*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveCircle {
+	~Handle_Select3D_SensitiveCircle() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveCircle\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitiveTriangle;
 class Handle_Select3D_SensitiveTriangle : public Handle_Select3D_SensitivePoly {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveTriangle();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveTriangle();
 		%feature("autodoc", "1");
@@ -208,12 +204,15 @@ class Handle_Select3D_SensitiveTriangle : public Handle_Select3D_SensitivePoly {
 	return (Select3D_SensitiveTriangle*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveTriangle {
+	~Handle_Select3D_SensitiveTriangle() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveTriangle\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitivePoint;
 class Handle_Select3D_SensitivePoint : public Handle_Select3D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitivePoint();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitivePoint();
 		%feature("autodoc", "1");
@@ -229,12 +228,15 @@ class Handle_Select3D_SensitivePoint : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitivePoint*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitivePoint {
+	~Handle_Select3D_SensitivePoint() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitivePoint\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SequenceNodeOfSensitiveEntitySequence;
 class Handle_Select3D_SequenceNodeOfSensitiveEntitySequence : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SequenceNodeOfSensitiveEntitySequence();
 		%feature("autodoc", "1");
 		Handle_Select3D_SequenceNodeOfSensitiveEntitySequence();
 		%feature("autodoc", "1");
@@ -250,12 +252,15 @@ class Handle_Select3D_SequenceNodeOfSensitiveEntitySequence : public Handle_TCol
 	return (Select3D_SequenceNodeOfSensitiveEntitySequence*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SequenceNodeOfSensitiveEntitySequence {
+	~Handle_Select3D_SequenceNodeOfSensitiveEntitySequence() {
+	printf("Call custom destructor for instance of Handle_Select3D_SequenceNodeOfSensitiveEntitySequence\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitiveFace;
 class Handle_Select3D_SensitiveFace : public Handle_Select3D_SensitivePoly {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveFace();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveFace();
 		%feature("autodoc", "1");
@@ -271,12 +276,15 @@ class Handle_Select3D_SensitiveFace : public Handle_Select3D_SensitivePoly {
 	return (Select3D_SensitiveFace*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveFace {
+	~Handle_Select3D_SensitiveFace() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveFace\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitiveSegment;
 class Handle_Select3D_SensitiveSegment : public Handle_Select3D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveSegment();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveSegment();
 		%feature("autodoc", "1");
@@ -292,12 +300,15 @@ class Handle_Select3D_SensitiveSegment : public Handle_Select3D_SensitiveEntity 
 	return (Select3D_SensitiveSegment*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveSegment {
+	~Handle_Select3D_SensitiveSegment() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveSegment\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_ListNodeOfListOfSensitive;
 class Handle_Select3D_ListNodeOfListOfSensitive : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_ListNodeOfListOfSensitive();
 		%feature("autodoc", "1");
 		Handle_Select3D_ListNodeOfListOfSensitive();
 		%feature("autodoc", "1");
@@ -313,12 +324,15 @@ class Handle_Select3D_ListNodeOfListOfSensitive : public Handle_TCollection_MapN
 	return (Select3D_ListNodeOfListOfSensitive*)$self->Access();
 	}
 };
+%extend Handle_Select3D_ListNodeOfListOfSensitive {
+	~Handle_Select3D_ListNodeOfListOfSensitive() {
+	printf("Call custom destructor for instance of Handle_Select3D_ListNodeOfListOfSensitive\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitiveWire;
 class Handle_Select3D_SensitiveWire : public Handle_Select3D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveWire();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveWire();
 		%feature("autodoc", "1");
@@ -334,12 +348,15 @@ class Handle_Select3D_SensitiveWire : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitiveWire*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveWire {
+	~Handle_Select3D_SensitiveWire() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveWire\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitiveBox;
 class Handle_Select3D_SensitiveBox : public Handle_Select3D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveBox();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveBox();
 		%feature("autodoc", "1");
@@ -355,12 +372,15 @@ class Handle_Select3D_SensitiveBox : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitiveBox*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveBox {
+	~Handle_Select3D_SensitiveBox() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveBox\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitiveTriangulation;
 class Handle_Select3D_SensitiveTriangulation : public Handle_Select3D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveTriangulation();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveTriangulation();
 		%feature("autodoc", "1");
@@ -376,12 +396,15 @@ class Handle_Select3D_SensitiveTriangulation : public Handle_Select3D_SensitiveE
 	return (Select3D_SensitiveTriangulation*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveTriangulation {
+	~Handle_Select3D_SensitiveTriangulation() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveTriangulation\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_SensitiveGroup;
 class Handle_Select3D_SensitiveGroup : public Handle_Select3D_SensitiveEntity {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_SensitiveGroup();
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveGroup();
 		%feature("autodoc", "1");
@@ -397,12 +420,15 @@ class Handle_Select3D_SensitiveGroup : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitiveGroup*)$self->Access();
 	}
 };
+%extend Handle_Select3D_SensitiveGroup {
+	~Handle_Select3D_SensitiveGroup() {
+	printf("Call custom destructor for instance of Handle_Select3D_SensitiveGroup\n");
+	}
+};
 
 %nodefaultctor Handle_Select3D_ListNodeOfListOfSensitiveTriangle;
 class Handle_Select3D_ListNodeOfListOfSensitiveTriangle : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Select3D_ListNodeOfListOfSensitiveTriangle();
 		%feature("autodoc", "1");
 		Handle_Select3D_ListNodeOfListOfSensitiveTriangle();
 		%feature("autodoc", "1");
@@ -416,6 +442,11 @@ class Handle_Select3D_ListNodeOfListOfSensitiveTriangle : public Handle_TCollect
 %extend Handle_Select3D_ListNodeOfListOfSensitiveTriangle {
 	Select3D_ListNodeOfListOfSensitiveTriangle* GetObject() {
 	return (Select3D_ListNodeOfListOfSensitiveTriangle*)$self->Access();
+	}
+};
+%extend Handle_Select3D_ListNodeOfListOfSensitiveTriangle {
+	~Handle_Select3D_ListNodeOfListOfSensitiveTriangle() {
+	printf("Call custom destructor for instance of Handle_Select3D_ListNodeOfListOfSensitiveTriangle\n");
 	}
 };
 
@@ -448,8 +479,6 @@ class Select3D_Projector {
 		Select3D_Projector(const gp_GTrsf &GT, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~Select3D_Projector();
 		%feature("autodoc", "1");
 		void Set(const gp_Trsf &T, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
@@ -490,12 +519,15 @@ class Select3D_Projector {
 		virtual		void Transform(gp_Lin & Lin, const gp_GTrsf &T) const;
 
 };
+%extend Select3D_Projector {
+	~Select3D_Projector() {
+	printf("Call custom destructor for instance of Select3D_Projector\n");
+	}
+};
 
 %nodefaultctor Select3D_ListIteratorOfListOfSensitive;
 class Select3D_ListIteratorOfListOfSensitive {
 	public:
-		%feature("autodoc", "1");
-		~Select3D_ListIteratorOfListOfSensitive();
 		%feature("autodoc", "1");
 		Select3D_ListIteratorOfListOfSensitive();
 		%feature("autodoc", "1");
@@ -509,6 +541,11 @@ class Select3D_ListIteratorOfListOfSensitive {
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveEntity & Value() const;
 
+};
+%extend Select3D_ListIteratorOfListOfSensitive {
+	~Select3D_ListIteratorOfListOfSensitive() {
+	printf("Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitive\n");
+	}
 };
 
 %nodefaultctor Select3D_Pnt2d;
@@ -525,8 +562,6 @@ class Select3D_Pnt2d {
 class Select3D_ListIteratorOfListOfSensitiveTriangle {
 	public:
 		%feature("autodoc", "1");
-		~Select3D_ListIteratorOfListOfSensitiveTriangle();
-		%feature("autodoc", "1");
 		Select3D_ListIteratorOfListOfSensitiveTriangle();
 		%feature("autodoc", "1");
 		Select3D_ListIteratorOfListOfSensitiveTriangle(const Select3D_ListOfSensitiveTriangle &L);
@@ -540,6 +575,11 @@ class Select3D_ListIteratorOfListOfSensitiveTriangle {
 		Handle_Select3D_SensitiveTriangle & Value() const;
 
 };
+%extend Select3D_ListIteratorOfListOfSensitiveTriangle {
+	~Select3D_ListIteratorOfListOfSensitiveTriangle() {
+	printf("Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitiveTriangle\n");
+	}
+};
 
 %nodefaultctor Select3D_ListNodeOfListOfSensitive;
 class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
@@ -550,13 +590,16 @@ class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
 		Handle_Select3D_SensitiveEntity & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_ListNodeOfListOfSensitive();
 
 };
 %extend Select3D_ListNodeOfListOfSensitive {
 	Handle_Select3D_ListNodeOfListOfSensitive GetHandle() {
 	return *(Handle_Select3D_ListNodeOfListOfSensitive*) &$self;
+	}
+};
+%extend Select3D_ListNodeOfListOfSensitive {
+	~Select3D_ListNodeOfListOfSensitive() {
+	printf("Call custom destructor for instance of Select3D_ListNodeOfListOfSensitive\n");
 	}
 };
 
@@ -569,13 +612,16 @@ class Select3D_ListNodeOfListOfSensitiveTriangle : public TCollection_MapNode {
 		Handle_Select3D_SensitiveTriangle & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_ListNodeOfListOfSensitiveTriangle();
 
 };
 %extend Select3D_ListNodeOfListOfSensitiveTriangle {
 	Handle_Select3D_ListNodeOfListOfSensitiveTriangle GetHandle() {
 	return *(Handle_Select3D_ListNodeOfListOfSensitiveTriangle*) &$self;
+	}
+};
+%extend Select3D_ListNodeOfListOfSensitiveTriangle {
+	~Select3D_ListNodeOfListOfSensitiveTriangle() {
+	printf("Call custom destructor for instance of Select3D_ListNodeOfListOfSensitiveTriangle\n");
 	}
 };
 
@@ -629,6 +675,11 @@ class Select3D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 	return *(Handle_Select3D_SensitiveEntity*) &$self;
 	}
 };
+%extend Select3D_SensitiveEntity {
+	~Select3D_SensitiveEntity() {
+	printf("Call custom destructor for instance of Select3D_SensitiveEntity\n");
+	}
+};
 
 %nodefaultctor Select3D_SensitiveSegment;
 class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
@@ -647,13 +698,16 @@ class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 		gp_Pnt EndPoint() const;
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & boxes);
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitiveSegment();
 
 };
 %extend Select3D_SensitiveSegment {
 	Handle_Select3D_SensitiveSegment GetHandle() {
 	return *(Handle_Select3D_SensitiveSegment*) &$self;
+	}
+};
+%extend Select3D_SensitiveSegment {
+	~Select3D_SensitiveSegment() {
+	printf("Call custom destructor for instance of Select3D_SensitiveSegment\n");
 	}
 };
 
@@ -666,13 +720,16 @@ class Select3D_SequenceNodeOfSensitiveEntitySequence : public TCollection_SeqNod
 		Handle_Select3D_SensitiveEntity & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SequenceNodeOfSensitiveEntitySequence();
 
 };
 %extend Select3D_SequenceNodeOfSensitiveEntitySequence {
 	Handle_Select3D_SequenceNodeOfSensitiveEntitySequence GetHandle() {
 	return *(Handle_Select3D_SequenceNodeOfSensitiveEntitySequence*) &$self;
+	}
+};
+%extend Select3D_SequenceNodeOfSensitiveEntitySequence {
+	~Select3D_SequenceNodeOfSensitiveEntitySequence() {
+	printf("Call custom destructor for instance of Select3D_SequenceNodeOfSensitiveEntitySequence\n");
 	}
 };
 
@@ -717,13 +774,16 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitiveTriangulation();
 
 };
 %extend Select3D_SensitiveTriangulation {
 	Handle_Select3D_SensitiveTriangulation GetHandle() {
 	return *(Handle_Select3D_SensitiveTriangulation*) &$self;
+	}
+};
+%extend Select3D_SensitiveTriangulation {
+	~Select3D_SensitiveTriangulation() {
+	printf("Call custom destructor for instance of Select3D_SensitiveTriangulation\n");
 	}
 };
 
@@ -749,6 +809,11 @@ class Select3D_SensitivePoly : public Select3D_SensitiveEntity {
 	return *(Handle_Select3D_SensitivePoly*) &$self;
 	}
 };
+%extend Select3D_SensitivePoly {
+	~Select3D_SensitivePoly() {
+	printf("Call custom destructor for instance of Select3D_SensitivePoly\n");
+	}
+};
 
 %nodefaultctor Select3D_ListOfSensitiveTriangle;
 class Select3D_ListOfSensitiveTriangle {
@@ -761,8 +826,6 @@ class Select3D_ListOfSensitiveTriangle {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Select3D_ListOfSensitiveTriangle();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -795,39 +858,9 @@ class Select3D_ListOfSensitiveTriangle {
 		void InsertAfter(Select3D_ListOfSensitiveTriangle & Other, Select3D_ListIteratorOfListOfSensitiveTriangle & It);
 
 };
-
-%nodefaultctor Select3D_SensitivePoint;
-class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Select3D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &Point);
-		%feature("autodoc", "1");
-		virtual		void Project(const Select3D_Projector &aProjector);
-		%feature("autodoc", "1");
-		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
-		%feature("autodoc", "1");
-		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
-		%feature("autodoc", "1");
-		gp_Pnt Point() const;
-		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitivePoint();
-
-};
-%extend Select3D_SensitivePoint {
-	Handle_Select3D_SensitivePoint GetHandle() {
-	return *(Handle_Select3D_SensitivePoint*) &$self;
+%extend Select3D_ListOfSensitiveTriangle {
+	~Select3D_ListOfSensitiveTriangle() {
+	printf("Call custom destructor for instance of Select3D_ListOfSensitiveTriangle\n");
 	}
 };
 
@@ -876,13 +909,16 @@ class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
 		virtual		void SetLastPrj(const Select3D_Projector &aPrj);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitiveGroup();
 
 };
 %extend Select3D_SensitiveGroup {
 	Handle_Select3D_SensitiveGroup GetHandle() {
 	return *(Handle_Select3D_SensitiveGroup*) &$self;
+	}
+};
+%extend Select3D_SensitiveGroup {
+	~Select3D_SensitiveGroup() {
+	printf("Call custom destructor for instance of Select3D_SensitiveGroup\n");
 	}
 };
 
@@ -925,13 +961,16 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitiveCurve();
 
 };
 %extend Select3D_SensitiveCurve {
 	Handle_Select3D_SensitiveCurve GetHandle() {
 	return *(Handle_Select3D_SensitiveCurve*) &$self;
+	}
+};
+%extend Select3D_SensitiveCurve {
+	~Select3D_SensitiveCurve() {
+	printf("Call custom destructor for instance of Select3D_SensitiveCurve\n");
 	}
 };
 
@@ -962,13 +1001,16 @@ class Select3D_SensitiveBox : public Select3D_SensitiveEntity {
 		const Bnd_Box & Box() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitiveBox();
 
 };
 %extend Select3D_SensitiveBox {
 	Handle_Select3D_SensitiveBox GetHandle() {
 	return *(Handle_Select3D_SensitiveBox*) &$self;
+	}
+};
+%extend Select3D_SensitiveBox {
+	~Select3D_SensitiveBox() {
+	printf("Call custom destructor for instance of Select3D_SensitiveBox\n");
 	}
 };
 
@@ -991,13 +1033,16 @@ class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitiveFace();
 
 };
 %extend Select3D_SensitiveFace {
 	Handle_Select3D_SensitiveFace GetHandle() {
 	return *(Handle_Select3D_SensitiveFace*) &$self;
+	}
+};
+%extend Select3D_SensitiveFace {
+	~Select3D_SensitiveFace() {
+	printf("Call custom destructor for instance of Select3D_SensitiveFace\n");
 	}
 };
 
@@ -1012,8 +1057,6 @@ class Select3D_ListOfSensitive {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Select3D_ListOfSensitive();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -1046,6 +1089,49 @@ class Select3D_ListOfSensitive {
 		void InsertAfter(Select3D_ListOfSensitive & Other, Select3D_ListIteratorOfListOfSensitive & It);
 
 };
+%extend Select3D_ListOfSensitive {
+	~Select3D_ListOfSensitive() {
+	printf("Call custom destructor for instance of Select3D_ListOfSensitive\n");
+	}
+};
+
+%nodefaultctor Select3D_SensitivePoint;
+class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		Select3D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &Point);
+		%feature("autodoc", "1");
+		virtual		void Project(const Select3D_Projector &aProjector);
+		%feature("autodoc", "1");
+		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
+		%feature("autodoc", "1");
+		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		%feature("autodoc", "1");
+		gp_Pnt Point() const;
+		%feature("autodoc", "1");
+		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Select3D_SensitivePoint {
+	Handle_Select3D_SensitivePoint GetHandle() {
+	return *(Handle_Select3D_SensitivePoint*) &$self;
+	}
+};
+%extend Select3D_SensitivePoint {
+	~Select3D_SensitivePoint() {
+	printf("Call custom destructor for instance of Select3D_SensitivePoint\n");
+	}
+};
 
 %nodefaultctor Select3D_SensitiveTriangle;
 class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
@@ -1074,13 +1160,16 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitiveTriangle();
 
 };
 %extend Select3D_SensitiveTriangle {
 	Handle_Select3D_SensitiveTriangle GetHandle() {
 	return *(Handle_Select3D_SensitiveTriangle*) &$self;
+	}
+};
+%extend Select3D_SensitiveTriangle {
+	~Select3D_SensitiveTriangle() {
+	printf("Call custom destructor for instance of Select3D_SensitiveTriangle\n");
 	}
 };
 
@@ -1111,13 +1200,16 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitiveCircle();
 
 };
 %extend Select3D_SensitiveCircle {
 	Handle_Select3D_SensitiveCircle GetHandle() {
 	return *(Handle_Select3D_SensitiveCircle*) &$self;
+	}
+};
+%extend Select3D_SensitiveCircle {
+	~Select3D_SensitiveCircle() {
+	printf("Call custom destructor for instance of Select3D_SensitiveCircle\n");
 	}
 };
 
@@ -1128,8 +1220,6 @@ class Select3D_SensitiveEntitySequence : public TCollection_BaseSequence {
 		Select3D_SensitiveEntitySequence();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Select3D_SensitiveEntitySequence();
 		%feature("autodoc", "1");
 		const Select3D_SensitiveEntitySequence & Assign(const Select3D_SensitiveEntitySequence &Other);
 		%feature("autodoc", "1");
@@ -1170,6 +1260,11 @@ class Select3D_SensitiveEntitySequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Select3D_SensitiveEntitySequence {
+	~Select3D_SensitiveEntitySequence() {
+	printf("Call custom destructor for instance of Select3D_SensitiveEntitySequence\n");
+	}
+};
 
 %nodefaultctor Select3D_SensitiveWire;
 class Select3D_SensitiveWire : public Select3D_SensitiveEntity {
@@ -1204,12 +1299,15 @@ class Select3D_SensitiveWire : public Select3D_SensitiveEntity {
 		virtual		void SetLastPrj(const Select3D_Projector &aPrj);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Select3D_SensitiveWire();
 
 };
 %extend Select3D_SensitiveWire {
 	Handle_Select3D_SensitiveWire GetHandle() {
 	return *(Handle_Select3D_SensitiveWire*) &$self;
+	}
+};
+%extend Select3D_SensitiveWire {
+	~Select3D_SensitiveWire() {
+	printf("Call custom destructor for instance of Select3D_SensitiveWire\n");
 	}
 };

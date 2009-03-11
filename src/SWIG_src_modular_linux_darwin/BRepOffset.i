@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepOffset
 
@@ -132,8 +118,6 @@ enum BRepOffset_Type {
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal &aHandle);
@@ -148,33 +132,15 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollect
 	return (BRepOffset_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
-class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape();
-		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape();
-		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
-	BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape* GetObject() {
-	return (BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape*)$self->Access();
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal {
+	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");
 	}
 };
 
 %nodefaultctor Handle_BRepOffset_ListNodeOfListOfInterval;
 class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffset_ListNodeOfListOfInterval();
 		%feature("autodoc", "1");
 		Handle_BRepOffset_ListNodeOfListOfInterval();
 		%feature("autodoc", "1");
@@ -190,12 +156,15 @@ class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_Map
 	return (BRepOffset_ListNodeOfListOfInterval*)$self->Access();
 	}
 };
+%extend Handle_BRepOffset_ListNodeOfListOfInterval {
+	~Handle_BRepOffset_ListNodeOfListOfInterval() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_ListNodeOfListOfInterval\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset();
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset();
 		%feature("autodoc", "1");
@@ -211,12 +180,15 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TColle
 	return (BRepOffset_DataMapNodeOfDataMapOfShapeOffset*)$self->Access();
 	}
 };
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
+	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval();
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval();
 		%feature("autodoc", "1");
@@ -230,6 +202,35 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handl
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
 	BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval* GetObject() {
 	return (BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval*)$self->Access();
+	}
+};
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
+	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");
+	}
+};
+
+%nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
+class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape();
+		%feature("autodoc", "1");
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape* GetObject() {
+	return (BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape*)$self->Access();
+	}
+};
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
+	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");
 	}
 };
 
@@ -260,6 +261,24 @@ class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
 		TopTools_MapOfShape & ChangeFind(const TopoDS_Shape &K);
 		%feature("autodoc", "1");
 		TopTools_MapOfShape & operator()(const TopoDS_Shape &K);
+
+};
+
+%nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeReal;
+class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		~BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
+		%feature("autodoc", "1");
+		BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
+		%feature("autodoc", "1");
+		BRepOffset_DataMapIteratorOfDataMapOfShapeReal(const BRepOffset_DataMapOfShapeReal &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepOffset_DataMapOfShapeReal &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Real & Value() const;
 
 };
 
@@ -318,24 +337,6 @@ class BRepOffset_ListIteratorOfListOfInterval {
 		void Next();
 		%feature("autodoc", "1");
 		BRepOffset_Interval & Value() const;
-
-};
-
-%nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeReal;
-class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		BRepOffset_DataMapIteratorOfDataMapOfShapeReal(const BRepOffset_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepOffset_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Real & Value() const;
 
 };
 
@@ -434,13 +435,16 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode 
 		BRepOffset_Offset & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_DataMapNodeOfDataMapOfShapeOffset();
 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
 	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset GetHandle() {
 	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeOffset() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");
 	}
 };
 
@@ -455,13 +459,16 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapN
 		TopTools_MapOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape();
 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
 	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape GetHandle() {
 	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");
 	}
 };
 
@@ -536,13 +543,16 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_
 		BRepOffset_ListOfInterval & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval();
 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
 	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval GetHandle() {
 	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");
 	}
 };
 
@@ -592,8 +602,6 @@ class BRepOffset_Interval {
 class BRepOffset_Inter3d {
 	public:
 		%feature("autodoc", "1");
-		~BRepOffset_Inter3d();
-		%feature("autodoc", "1");
 		BRepOffset_Inter3d(const Handle_BRepAlgo_AsDes &AsDes, const TopAbs_State Side, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void CompletInt(const TopTools_ListOfShape &SetOfFaces, const BRepAlgo_Image &InitOffsetFace);
@@ -621,6 +629,11 @@ class BRepOffset_Inter3d {
 		TopTools_MapOfShape & NewEdges();
 
 };
+%extend BRepOffset_Inter3d {
+	~BRepOffset_Inter3d() {
+	printf("Call custom destructor for instance of BRepOffset_Inter3d\n");
+	}
+};
 
 %nodefaultctor BRepOffset_ListNodeOfListOfInterval;
 class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
@@ -631,13 +644,16 @@ class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 		BRepOffset_Interval & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_ListNodeOfListOfInterval();
 
 };
 %extend BRepOffset_ListNodeOfListOfInterval {
 	Handle_BRepOffset_ListNodeOfListOfInterval GetHandle() {
 	return *(Handle_BRepOffset_ListNodeOfListOfInterval*) &$self;
+	}
+};
+%extend BRepOffset_ListNodeOfListOfInterval {
+	~BRepOffset_ListNodeOfListOfInterval() {
+	printf("Call custom destructor for instance of BRepOffset_ListNodeOfListOfInterval\n");
 	}
 };
 
@@ -656,18 +672,6 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_
 		const TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
 		const TopTools_MapOfShape & Value() const;
-
-};
-
-%nodefaultctor BRepOffset;
-class BRepOffset {
-	public:
-		%feature("autodoc", "1");
-		~BRepOffset();
-		%feature("autodoc", "1");
-		BRepOffset();
-		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
 
 };
 
@@ -712,13 +716,16 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 		Standard_Real & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffset_DataMapNodeOfDataMapOfShapeReal();
 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
 	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal GetHandle() {
 	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");
 	}
 };
 
@@ -852,4 +859,19 @@ class BRepOffset_Offset {
 		%feature("autodoc", "1");
 		BRepOffset_Status Status() const;
 
+};
+
+%nodefaultctor BRepOffset;
+class BRepOffset {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset();
+		%feature("autodoc", "1");
+		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
+
+};
+%extend BRepOffset {
+	~BRepOffset() {
+	printf("Call custom destructor for instance of BRepOffset\n");
+	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Poly
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Poly_HArray1OfTriangle();
-		%feature("autodoc", "1");
 		Handle_Poly_HArray1OfTriangle();
 		%feature("autodoc", "1");
 		Handle_Poly_HArray1OfTriangle(const Handle_Poly_HArray1OfTriangle &aHandle);
@@ -118,12 +102,15 @@ class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 	return (Poly_HArray1OfTriangle*)$self->Access();
 	}
 };
+%extend Handle_Poly_HArray1OfTriangle {
+	~Handle_Poly_HArray1OfTriangle() {
+	printf("Call custom destructor for instance of Handle_Poly_HArray1OfTriangle\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_PolygonOnTriangulation;
 class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
 		Handle_Poly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 	return (Poly_PolygonOnTriangulation*)$self->Access();
 	}
 };
+%extend Handle_Poly_PolygonOnTriangulation {
+	~Handle_Poly_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of Handle_Poly_PolygonOnTriangulation\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_Polygon2D;
 class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_Polygon2D();
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon2D();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 	return (Poly_Polygon2D*)$self->Access();
 	}
 };
+%extend Handle_Poly_Polygon2D {
+	~Handle_Poly_Polygon2D() {
+	printf("Call custom destructor for instance of Handle_Poly_Polygon2D\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_Triangulation;
 class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_Triangulation();
 		%feature("autodoc", "1");
 		Handle_Poly_Triangulation();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 	return (Poly_Triangulation*)$self->Access();
 	}
 };
+%extend Handle_Poly_Triangulation {
+	~Handle_Poly_Triangulation() {
+	printf("Call custom destructor for instance of Handle_Poly_Triangulation\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_CoherentTriangulation;
 class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_CoherentTriangulation();
 		%feature("autodoc", "1");
 		Handle_Poly_CoherentTriangulation();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 	return (Poly_CoherentTriangulation*)$self->Access();
 	}
 };
+%extend Handle_Poly_CoherentTriangulation {
+	~Handle_Poly_CoherentTriangulation() {
+	printf("Call custom destructor for instance of Handle_Poly_CoherentTriangulation\n");
+	}
+};
 
 %nodefaultctor Handle_Poly_Polygon3D;
 class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Poly_Polygon3D();
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon3D();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 	return (Poly_Polygon3D*)$self->Access();
 	}
 };
+%extend Handle_Poly_Polygon3D {
+	~Handle_Poly_Polygon3D() {
+	printf("Call custom destructor for instance of Handle_Poly_Polygon3D\n");
+	}
+};
 
 %nodefaultctor Poly_Connect;
 class Poly_Connect {
 	public:
-		%feature("autodoc", "1");
-		~Poly_Connect();
 		%feature("autodoc", "1");
 		Poly_Connect(const Handle_Poly_Triangulation &T);
 		%feature("autodoc", "1");
@@ -248,6 +250,11 @@ class Poly_Connect {
 		%feature("autodoc", "1");
 		Standard_Integer Value() const;
 
+};
+%extend Poly_Connect {
+	~Poly_Connect() {
+	printf("Call custom destructor for instance of Poly_Connect\n");
+	}
 };
 
 %nodefaultctor Poly_CoherentNode;
@@ -286,6 +293,40 @@ class Poly_CoherentNode : public gp_XYZ {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & theStream) const;
 
+};
+
+%nodefaultctor Poly_PolygonOnTriangulation;
+class Poly_PolygonOnTriangulation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger &Nodes);
+		%feature("autodoc", "1");
+		Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger &Nodes, const TColStd_Array1OfReal &Parameters);
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		void Deflection(const Standard_Real D);
+		%feature("autodoc", "1");
+		Standard_Integer NbNodes() const;
+		%feature("autodoc", "1");
+		const TColStd_Array1OfInteger & Nodes() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasParameters() const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal Parameters() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Poly_PolygonOnTriangulation {
+	Handle_Poly_PolygonOnTriangulation GetHandle() {
+	return *(Handle_Poly_PolygonOnTriangulation*) &$self;
+	}
+};
+%extend Poly_PolygonOnTriangulation {
+	~Poly_PolygonOnTriangulation() {
+	printf("Call custom destructor for instance of Poly_PolygonOnTriangulation\n");
+	}
 };
 
 %nodefaultctor Poly_Array1OfTriangle;
@@ -367,8 +408,6 @@ class Poly_Triangulation : public MMgt_TShared {
 		Standard_Boolean HasNormals() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_Triangulation();
 
 };
 %extend Poly_Triangulation {
@@ -376,35 +415,9 @@ class Poly_Triangulation : public MMgt_TShared {
 	return *(Handle_Poly_Triangulation*) &$self;
 	}
 };
-
-%nodefaultctor Poly_PolygonOnTriangulation;
-class Poly_PolygonOnTriangulation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger &Nodes);
-		%feature("autodoc", "1");
-		Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger &Nodes, const TColStd_Array1OfReal &Parameters);
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		void Deflection(const Standard_Real D);
-		%feature("autodoc", "1");
-		Standard_Integer NbNodes() const;
-		%feature("autodoc", "1");
-		const TColStd_Array1OfInteger & Nodes() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasParameters() const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal Parameters() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_PolygonOnTriangulation();
-
-};
-%extend Poly_PolygonOnTriangulation {
-	Handle_Poly_PolygonOnTriangulation GetHandle() {
-	return *(Handle_Poly_PolygonOnTriangulation*) &$self;
+%extend Poly_Triangulation {
+	~Poly_Triangulation() {
+	printf("Call custom destructor for instance of Poly_Triangulation\n");
 	}
 };
 
@@ -442,6 +455,32 @@ class Poly_CoherentTriangle {
 
 };
 
+%nodefaultctor Poly_Triangle;
+class Poly_Triangle {
+	public:
+		%feature("autodoc", "1");
+		~Poly_Triangle();
+		%feature("autodoc", "1");
+		Poly_Triangle();
+		%feature("autodoc", "1");
+		Poly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer Index, const Standard_Integer Node);
+		%feature("autodoc", "1");
+		void Get(Standard_Integer & N1, Standard_Integer & N2, Standard_Integer & N3) const;
+		%feature("autodoc", "1");
+		Standard_Integer Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer Index);
+
+};
+
 %nodefaultctor Poly_Polygon2D;
 class Poly_Polygon2D : public MMgt_TShared {
 	public:
@@ -457,8 +496,6 @@ class Poly_Polygon2D : public MMgt_TShared {
 		const TColgp_Array1OfPnt2d & Nodes() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_Polygon2D();
 
 };
 %extend Poly_Polygon2D {
@@ -466,12 +503,15 @@ class Poly_Polygon2D : public MMgt_TShared {
 	return *(Handle_Poly_Polygon2D*) &$self;
 	}
 };
+%extend Poly_Polygon2D {
+	~Poly_Polygon2D() {
+	printf("Call custom destructor for instance of Poly_Polygon2D\n");
+	}
+};
 
 %nodefaultctor Poly;
 class Poly {
 	public:
-		%feature("autodoc", "1");
-		~Poly();
 		%feature("autodoc", "1");
 		Poly();
 		%feature("autodoc", "1");
@@ -495,6 +535,11 @@ class Poly {
 		%feature("autodoc", "1");
 		void ComputeNormals(const Handle_Poly_Triangulation &Tri);
 
+};
+%extend Poly {
+	~Poly() {
+	printf("Call custom destructor for instance of Poly\n");
+	}
 };
 
 %nodefaultctor Poly_HArray1OfTriangle;
@@ -524,13 +569,16 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 		Poly_Array1OfTriangle & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_HArray1OfTriangle();
 
 };
 %extend Poly_HArray1OfTriangle {
 	Handle_Poly_HArray1OfTriangle GetHandle() {
 	return *(Handle_Poly_HArray1OfTriangle*) &$self;
+	}
+};
+%extend Poly_HArray1OfTriangle {
+	~Poly_HArray1OfTriangle() {
+	printf("Call custom destructor for instance of Poly_HArray1OfTriangle\n");
 	}
 };
 
@@ -560,32 +608,6 @@ class Poly_CoherentLink {
 
 };
 
-%nodefaultctor Poly_Triangle;
-class Poly_Triangle {
-	public:
-		%feature("autodoc", "1");
-		~Poly_Triangle();
-		%feature("autodoc", "1");
-		Poly_Triangle();
-		%feature("autodoc", "1");
-		Poly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer Index, const Standard_Integer Node);
-		%feature("autodoc", "1");
-		void Get(Standard_Integer & N1, Standard_Integer & N2, Standard_Integer & N3) const;
-		%feature("autodoc", "1");
-		Standard_Integer Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer Index);
-
-};
-
 %nodefaultctor Poly_Polygon3D;
 class Poly_Polygon3D : public MMgt_TShared {
 	public:
@@ -609,12 +631,15 @@ class Poly_Polygon3D : public MMgt_TShared {
 		TColStd_Array1OfReal & ChangeParameters() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Poly_Polygon3D();
 
 };
 %extend Poly_Polygon3D {
 	Handle_Poly_Polygon3D GetHandle() {
 	return *(Handle_Poly_Polygon3D*) &$self;
+	}
+};
+%extend Poly_Polygon3D {
+	~Poly_Polygon3D() {
+	printf("Call custom destructor for instance of Poly_Polygon3D\n");
 	}
 };

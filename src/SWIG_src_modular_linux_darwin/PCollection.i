@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module PCollection
 
@@ -112,8 +98,6 @@ enum PCollection_AccessMode {
 class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PCollection_HAsciiString();
-		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString();
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString(const Handle_PCollection_HAsciiString &aHandle);
@@ -128,12 +112,15 @@ class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 	return (PCollection_HAsciiString*)$self->Access();
 	}
 };
+%extend Handle_PCollection_HAsciiString {
+	~Handle_PCollection_HAsciiString() {
+	printf("Call custom destructor for instance of Handle_PCollection_HAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_PCollection_HExtendedString;
 class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCollection_HExtendedString();
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString();
 		%feature("autodoc", "1");
@@ -149,12 +136,15 @@ class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 	return (PCollection_HExtendedString*)$self->Access();
 	}
 };
+%extend Handle_PCollection_HExtendedString {
+	~Handle_PCollection_HExtendedString() {
+	printf("Call custom destructor for instance of Handle_PCollection_HExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_PCollection_IsNotRoot;
 class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCollection_IsNotRoot();
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNotRoot();
 		%feature("autodoc", "1");
@@ -170,12 +160,15 @@ class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 	return (PCollection_IsNotRoot*)$self->Access();
 	}
 };
+%extend Handle_PCollection_IsNotRoot {
+	~Handle_PCollection_IsNotRoot() {
+	printf("Call custom destructor for instance of Handle_PCollection_IsNotRoot\n");
+	}
+};
 
 %nodefaultctor Handle_PCollection_IsContained;
 class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCollection_IsContained();
 		%feature("autodoc", "1");
 		Handle_PCollection_IsContained();
 		%feature("autodoc", "1");
@@ -191,12 +184,15 @@ class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 	return (PCollection_IsContained*)$self->Access();
 	}
 };
+%extend Handle_PCollection_IsContained {
+	~Handle_PCollection_IsContained() {
+	printf("Call custom destructor for instance of Handle_PCollection_IsContained\n");
+	}
+};
 
 %nodefaultctor Handle_PCollection_IsNullTree;
 class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PCollection_IsNullTree();
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNullTree();
 		%feature("autodoc", "1");
@@ -210,6 +206,11 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 %extend Handle_PCollection_IsNullTree {
 	PCollection_IsNullTree* GetObject() {
 	return (PCollection_IsNullTree*)$self->Access();
+	}
+};
+%extend Handle_PCollection_IsNullTree {
+	~Handle_PCollection_IsNullTree() {
+	printf("Call custom destructor for instance of Handle_PCollection_IsNullTree\n");
 	}
 };
 
@@ -228,13 +229,16 @@ class PCollection_IsNullTree : public Standard_Failure {
 		Handle_PCollection_IsNullTree NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_IsNullTree();
 
 };
 %extend PCollection_IsNullTree {
 	Handle_PCollection_IsNullTree GetHandle() {
 	return *(Handle_PCollection_IsNullTree*) &$self;
+	}
+};
+%extend PCollection_IsNullTree {
+	~PCollection_IsNullTree() {
+	printf("Call custom destructor for instance of PCollection_IsNullTree\n");
 	}
 };
 
@@ -269,13 +273,16 @@ class PCollection_IsNotRoot : public Standard_Failure {
 		Handle_PCollection_IsNotRoot NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_IsNotRoot();
 
 };
 %extend PCollection_IsNotRoot {
 	Handle_PCollection_IsNotRoot GetHandle() {
 	return *(Handle_PCollection_IsNotRoot*) &$self;
+	}
+};
+%extend PCollection_IsNotRoot {
+	~PCollection_IsNotRoot() {
+	printf("Call custom destructor for instance of PCollection_IsNotRoot\n");
 	}
 };
 
@@ -294,13 +301,16 @@ class PCollection_IsContained : public Standard_Failure {
 		Handle_PCollection_IsContained NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_IsContained();
 
 };
 %extend PCollection_IsContained {
 	Handle_PCollection_IsContained GetHandle() {
 	return *(Handle_PCollection_IsContained*) &$self;
+	}
+};
+%extend PCollection_IsContained {
+	~PCollection_IsContained() {
+	printf("Call custom destructor for instance of PCollection_IsContained\n");
 	}
 };
 
@@ -413,13 +423,16 @@ class PCollection_HAsciiString : public Standard_Persistent {
 		const DBC_VArrayOfCharacter & _CSFDB_GetPCollection_HAsciiStringData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_HAsciiString();
 
 };
 %extend PCollection_HAsciiString {
 	Handle_PCollection_HAsciiString GetHandle() {
 	return *(Handle_PCollection_HAsciiString*) &$self;
+	}
+};
+%extend PCollection_HAsciiString {
+	~PCollection_HAsciiString() {
+	printf("Call custom destructor for instance of PCollection_HAsciiString\n");
 	}
 };
 
@@ -552,12 +565,15 @@ class PCollection_HExtendedString : public Standard_Persistent {
 		const DBC_VArrayOfExtCharacter & _CSFDB_GetPCollection_HExtendedStringData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PCollection_HExtendedString();
 
 };
 %extend PCollection_HExtendedString {
 	Handle_PCollection_HExtendedString GetHandle() {
 	return *(Handle_PCollection_HExtendedString*) &$self;
+	}
+};
+%extend PCollection_HExtendedString {
+	~PCollection_HExtendedString() {
+	printf("Call custom destructor for instance of PCollection_HExtendedString\n");
 	}
 };

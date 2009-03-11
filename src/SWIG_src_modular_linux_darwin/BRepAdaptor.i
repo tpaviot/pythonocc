@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepAdaptor
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_BRepAdaptor_HCompCurve : public Handle_Adaptor3d_HCurve {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HCompCurve();
-		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCompCurve();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCompCurve(const Handle_BRepAdaptor_HCompCurve &aHandle);
@@ -118,12 +102,15 @@ class Handle_BRepAdaptor_HCompCurve : public Handle_Adaptor3d_HCurve {
 	return (BRepAdaptor_HCompCurve*)$self->Access();
 	}
 };
+%extend Handle_BRepAdaptor_HCompCurve {
+	~Handle_BRepAdaptor_HCompCurve() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HCompCurve\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAdaptor_HCurve2d;
 class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HCurve2d();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve2d();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 	return (BRepAdaptor_HCurve2d*)$self->Access();
 	}
 };
+%extend Handle_BRepAdaptor_HCurve2d {
+	~Handle_BRepAdaptor_HCurve2d() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HCurve2d\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAdaptor_HCurve;
 class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HCurve();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
 	return (BRepAdaptor_HCurve*)$self->Access();
 	}
 };
+%extend Handle_BRepAdaptor_HCurve {
+	~Handle_BRepAdaptor_HCurve() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HCurve\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAdaptor_HSurface;
 class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HSurface();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HSurface();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 	return (BRepAdaptor_HSurface*)$self->Access();
 	}
 };
+%extend Handle_BRepAdaptor_HSurface {
+	~Handle_BRepAdaptor_HSurface() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HSurface\n");
+	}
+};
 
 %nodefaultctor Handle_BRepAdaptor_HArray1OfCurve;
 class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepAdaptor_HArray1OfCurve();
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HArray1OfCurve();
 		%feature("autodoc", "1");
@@ -200,6 +196,11 @@ class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 %extend Handle_BRepAdaptor_HArray1OfCurve {
 	BRepAdaptor_HArray1OfCurve* GetObject() {
 	return (BRepAdaptor_HArray1OfCurve*)$self->Access();
+	}
+};
+%extend Handle_BRepAdaptor_HArray1OfCurve {
+	~Handle_BRepAdaptor_HArray1OfCurve() {
+	printf("Call custom destructor for instance of Handle_BRepAdaptor_HArray1OfCurve\n");
 	}
 };
 
@@ -220,13 +221,16 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 		BRepAdaptor_CompCurve & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HCompCurve();
 
 };
 %extend BRepAdaptor_HCompCurve {
 	Handle_BRepAdaptor_HCompCurve GetHandle() {
 	return *(Handle_BRepAdaptor_HCompCurve*) &$self;
+	}
+};
+%extend BRepAdaptor_HCompCurve {
+	~BRepAdaptor_HCompCurve() {
+	printf("Call custom destructor for instance of BRepAdaptor_HCompCurve\n");
 	}
 };
 
@@ -248,6 +252,42 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 
 };
 
+%nodefaultctor BRepAdaptor_Array1OfCurve;
+class BRepAdaptor_Array1OfCurve {
+	public:
+		%feature("autodoc", "1");
+		BRepAdaptor_Array1OfCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		BRepAdaptor_Array1OfCurve(const BRepAdaptor_Curve &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const BRepAdaptor_Curve &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~BRepAdaptor_Array1OfCurve();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const BRepAdaptor_Array1OfCurve & Assign(const BRepAdaptor_Array1OfCurve &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const BRepAdaptor_Curve &Value);
+		%feature("autodoc", "1");
+		const BRepAdaptor_Curve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BRepAdaptor_Curve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		BRepAdaptor_Curve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BRepAdaptor_Curve & operator()(const Standard_Integer Index);
+
+};
+
 %nodefaultctor BRepAdaptor_HCurve;
 class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 	public:
@@ -265,13 +305,16 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 		BRepAdaptor_Curve & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HCurve();
 
 };
 %extend BRepAdaptor_HCurve {
 	Handle_BRepAdaptor_HCurve GetHandle() {
 	return *(Handle_BRepAdaptor_HCurve*) &$self;
+	}
+};
+%extend BRepAdaptor_HCurve {
+	~BRepAdaptor_HCurve() {
+	printf("Call custom destructor for instance of BRepAdaptor_HCurve\n");
 	}
 };
 
@@ -302,13 +345,16 @@ class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 		BRepAdaptor_Array1OfCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HArray1OfCurve();
 
 };
 %extend BRepAdaptor_HArray1OfCurve {
 	Handle_BRepAdaptor_HArray1OfCurve GetHandle() {
 	return *(Handle_BRepAdaptor_HArray1OfCurve*) &$self;
+	}
+};
+%extend BRepAdaptor_HArray1OfCurve {
+	~BRepAdaptor_HArray1OfCurve() {
+	printf("Call custom destructor for instance of BRepAdaptor_HArray1OfCurve\n");
 	}
 };
 
@@ -327,13 +373,16 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 		BRepAdaptor_Curve2d & ChangeCurve2d();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HCurve2d();
 
 };
 %extend BRepAdaptor_HCurve2d {
 	Handle_BRepAdaptor_HCurve2d GetHandle() {
 	return *(Handle_BRepAdaptor_HCurve2d*) &$self;
+	}
+};
+%extend BRepAdaptor_HCurve2d {
+	~BRepAdaptor_HCurve2d() {
+	printf("Call custom destructor for instance of BRepAdaptor_HCurve2d\n");
 	}
 };
 
@@ -412,9 +461,12 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BezierCurve Bezier() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_CompCurve();
 
+};
+%extend BRepAdaptor_CompCurve {
+	~BRepAdaptor_CompCurve() {
+	printf("Call custom destructor for instance of BRepAdaptor_CompCurve\n");
+	}
 };
 
 %nodefaultctor BRepAdaptor_Surface;
@@ -530,45 +582,12 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		virtual		Handle_Adaptor3d_HSurface BasisSurface() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real OffsetValue() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_Surface();
 
 };
-
-%nodefaultctor BRepAdaptor_Array1OfCurve;
-class BRepAdaptor_Array1OfCurve {
-	public:
-		%feature("autodoc", "1");
-		BRepAdaptor_Array1OfCurve(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		BRepAdaptor_Array1OfCurve(const BRepAdaptor_Curve &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const BRepAdaptor_Curve &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~BRepAdaptor_Array1OfCurve();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const BRepAdaptor_Array1OfCurve & Assign(const BRepAdaptor_Array1OfCurve &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const BRepAdaptor_Curve &Value);
-		%feature("autodoc", "1");
-		const BRepAdaptor_Curve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BRepAdaptor_Curve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		BRepAdaptor_Curve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BRepAdaptor_Curve & operator()(const Standard_Integer Index);
-
+%extend BRepAdaptor_Surface {
+	~BRepAdaptor_Surface() {
+	printf("Call custom destructor for instance of BRepAdaptor_Surface\n");
+	}
 };
 
 %nodefaultctor BRepAdaptor_Curve;
@@ -654,9 +673,12 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BezierCurve Bezier() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_Curve();
 
+};
+%extend BRepAdaptor_Curve {
+	~BRepAdaptor_Curve() {
+	printf("Call custom destructor for instance of BRepAdaptor_Curve\n");
+	}
 };
 
 %nodefaultctor BRepAdaptor_HSurface;
@@ -674,12 +696,15 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 		BRepAdaptor_Surface & ChangeSurface();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_HSurface();
 
 };
 %extend BRepAdaptor_HSurface {
 	Handle_BRepAdaptor_HSurface GetHandle() {
 	return *(Handle_BRepAdaptor_HSurface*) &$self;
+	}
+};
+%extend BRepAdaptor_HSurface {
+	~BRepAdaptor_HSurface() {
+	printf("Call custom destructor for instance of BRepAdaptor_HSurface\n");
 	}
 };

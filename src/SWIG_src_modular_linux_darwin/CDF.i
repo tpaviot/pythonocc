@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module CDF
 
@@ -127,6 +113,13 @@ enum CDF_SubComponentStatus {
 	CDF_SCS_Modified,
 	};
 
+enum CDF_TryStoreStatus {
+	CDF_TS_OK,
+	CDF_TS_NoCurrentDocument,
+	CDF_TS_NoDriver,
+	CDF_TS_NoSubComponentDriver,
+	};
+
 enum CDF_StoreStatus {
 	CDF_SS_OK,
 	CDF_SS_DriverFailure,
@@ -140,13 +133,6 @@ enum CDF_StoreSetNameStatus {
 	CDF_SSNS_OpenDocument,
 	};
 
-enum CDF_TryStoreStatus {
-	CDF_TS_OK,
-	CDF_TS_NoCurrentDocument,
-	CDF_TS_NoDriver,
-	CDF_TS_NoSubComponentDriver,
-	};
-
 enum CDF_TypeOfActivation {
 	CDF_TOA_New,
 	CDF_TOA_Modified,
@@ -158,8 +144,6 @@ enum CDF_TypeOfActivation {
 %nodefaultctor Handle_CDF_MetaDataDriverError;
 class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDF_MetaDataDriverError();
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverError();
 		%feature("autodoc", "1");
@@ -175,54 +159,15 @@ class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 	return (CDF_MetaDataDriverError*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_CDF_StoreList;
-class Handle_CDF_StoreList : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		~Handle_CDF_StoreList();
-		%feature("autodoc", "1");
-		Handle_CDF_StoreList();
-		%feature("autodoc", "1");
-		Handle_CDF_StoreList(const Handle_CDF_StoreList &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDF_StoreList(const CDF_StoreList *anItem);
-		%feature("autodoc", "1");
-		Handle_CDF_StoreList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDF_StoreList {
-	CDF_StoreList* GetObject() {
-	return (CDF_StoreList*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_CDF_Directory;
-class Handle_CDF_Directory : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		~Handle_CDF_Directory();
-		%feature("autodoc", "1");
-		Handle_CDF_Directory();
-		%feature("autodoc", "1");
-		Handle_CDF_Directory(const Handle_CDF_Directory &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDF_Directory(const CDF_Directory *anItem);
-		%feature("autodoc", "1");
-		Handle_CDF_Directory const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDF_Directory {
-	CDF_Directory* GetObject() {
-	return (CDF_Directory*)$self->Access();
+%extend Handle_CDF_MetaDataDriverError {
+	~Handle_CDF_MetaDataDriverError() {
+	printf("Call custom destructor for instance of Handle_CDF_MetaDataDriverError\n");
 	}
 };
 
 %nodefaultctor Handle_CDF_Session;
 class Handle_CDF_Session : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDF_Session();
 		%feature("autodoc", "1");
 		Handle_CDF_Session();
 		%feature("autodoc", "1");
@@ -238,12 +183,63 @@ class Handle_CDF_Session : public Handle_Standard_Transient {
 	return (CDF_Session*)$self->Access();
 	}
 };
+%extend Handle_CDF_Session {
+	~Handle_CDF_Session() {
+	printf("Call custom destructor for instance of Handle_CDF_Session\n");
+	}
+};
+
+%nodefaultctor Handle_CDF_StoreList;
+class Handle_CDF_StoreList : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_CDF_StoreList();
+		%feature("autodoc", "1");
+		Handle_CDF_StoreList(const Handle_CDF_StoreList &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_StoreList(const CDF_StoreList *anItem);
+		%feature("autodoc", "1");
+		Handle_CDF_StoreList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_CDF_StoreList {
+	CDF_StoreList* GetObject() {
+	return (CDF_StoreList*)$self->Access();
+	}
+};
+%extend Handle_CDF_StoreList {
+	~Handle_CDF_StoreList() {
+	printf("Call custom destructor for instance of Handle_CDF_StoreList\n");
+	}
+};
+
+%nodefaultctor Handle_CDF_Directory;
+class Handle_CDF_Directory : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_CDF_Directory();
+		%feature("autodoc", "1");
+		Handle_CDF_Directory(const Handle_CDF_Directory &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_Directory(const CDF_Directory *anItem);
+		%feature("autodoc", "1");
+		Handle_CDF_Directory const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_CDF_Directory {
+	CDF_Directory* GetObject() {
+	return (CDF_Directory*)$self->Access();
+	}
+};
+%extend Handle_CDF_Directory {
+	~Handle_CDF_Directory() {
+	printf("Call custom destructor for instance of Handle_CDF_Directory\n");
+	}
+};
 
 %nodefaultctor Handle_CDF_Application;
 class Handle_CDF_Application : public Handle_CDM_Application {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDF_Application();
 		%feature("autodoc", "1");
 		Handle_CDF_Application();
 		%feature("autodoc", "1");
@@ -259,12 +255,15 @@ class Handle_CDF_Application : public Handle_CDM_Application {
 	return (CDF_Application*)$self->Access();
 	}
 };
+%extend Handle_CDF_Application {
+	~Handle_CDF_Application() {
+	printf("Call custom destructor for instance of Handle_CDF_Application\n");
+	}
+};
 
 %nodefaultctor Handle_CDF_MetaDataDriverFactory;
 class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDF_MetaDataDriverFactory();
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverFactory();
 		%feature("autodoc", "1");
@@ -280,12 +279,15 @@ class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 	return (CDF_MetaDataDriverFactory*)$self->Access();
 	}
 };
+%extend Handle_CDF_MetaDataDriverFactory {
+	~Handle_CDF_MetaDataDriverFactory() {
+	printf("Call custom destructor for instance of Handle_CDF_MetaDataDriverFactory\n");
+	}
+};
 
 %nodefaultctor Handle_CDF_MetaDataDriver;
 class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_CDF_MetaDataDriver();
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriver();
 		%feature("autodoc", "1");
@@ -299,6 +301,11 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 %extend Handle_CDF_MetaDataDriver {
 	CDF_MetaDataDriver* GetObject() {
 	return (CDF_MetaDataDriver*)$self->Access();
+	}
+};
+%extend Handle_CDF_MetaDataDriver {
+	~Handle_CDF_MetaDataDriver() {
+	printf("Call custom destructor for instance of Handle_CDF_MetaDataDriver\n");
 	}
 };
 
@@ -364,73 +371,9 @@ class CDF_Application : public CDM_Application {
 	return *(Handle_CDF_Application*) &$self;
 	}
 };
-
-%nodefaultctor CDF_MetaDataDriverError;
-class CDF_MetaDataDriverError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		CDF_MetaDataDriverError();
-		%feature("autodoc", "1");
-		CDF_MetaDataDriverError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDF_MetaDataDriverError();
-
-};
-%extend CDF_MetaDataDriverError {
-	Handle_CDF_MetaDataDriverError GetHandle() {
-	return *(Handle_CDF_MetaDataDriverError*) &$self;
-	}
-};
-
-%nodefaultctor CDF_StoreList;
-class CDF_StoreList : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		CDF_StoreList(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		Standard_Boolean IsConsistent() const;
-		%feature("autodoc", "1");
-		CDF_StoreStatus Store(Handle_CDM_MetaData & aMetaData, TCollection_ExtendedString & aStatusAssociatedText);
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_CDM_Document Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDF_StoreList();
-
-};
-%extend CDF_StoreList {
-	Handle_CDF_StoreList GetHandle() {
-	return *(Handle_CDF_StoreList*) &$self;
-	}
-};
-
-%nodefaultctor CDF_MetaDataDriverFactory;
-class CDF_MetaDataDriverFactory : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		virtual		Handle_CDF_MetaDataDriver Build() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend CDF_MetaDataDriverFactory {
-	Handle_CDF_MetaDataDriverFactory GetHandle() {
-	return *(Handle_CDF_MetaDataDriverFactory*) &$self;
+%extend CDF_Application {
+	~CDF_Application() {
+	printf("Call custom destructor for instance of CDF_Application\n");
 	}
 };
 
@@ -478,6 +421,139 @@ class CDF_MetaDataDriver : public Standard_Transient {
 	return *(Handle_CDF_MetaDataDriver*) &$self;
 	}
 };
+%extend CDF_MetaDataDriver {
+	~CDF_MetaDataDriver() {
+	printf("Call custom destructor for instance of CDF_MetaDataDriver\n");
+	}
+};
+
+%nodefaultctor CDF_Timer;
+class CDF_Timer {
+	public:
+		%feature("autodoc", "1");
+		~CDF_Timer();
+		%feature("autodoc", "1");
+		CDF_Timer();
+		%feature("autodoc", "1");
+		void ShowAndRestart(const char * aMessage);
+		%feature("autodoc", "1");
+		void ShowAndStop(const char * aMessage);
+		%feature("autodoc", "1");
+		Standard_Boolean MustShow();
+
+};
+
+%nodefaultctor CDF_MetaDataDriverError;
+class CDF_MetaDataDriverError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		CDF_MetaDataDriverError();
+		%feature("autodoc", "1");
+		CDF_MetaDataDriverError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend CDF_MetaDataDriverError {
+	Handle_CDF_MetaDataDriverError GetHandle() {
+	return *(Handle_CDF_MetaDataDriverError*) &$self;
+	}
+};
+%extend CDF_MetaDataDriverError {
+	~CDF_MetaDataDriverError() {
+	printf("Call custom destructor for instance of CDF_MetaDataDriverError\n");
+	}
+};
+
+%nodefaultctor CDF_StoreList;
+class CDF_StoreList : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		CDF_StoreList(const Handle_CDM_Document &aDocument);
+		%feature("autodoc", "1");
+		Standard_Boolean IsConsistent() const;
+		%feature("autodoc", "1");
+		CDF_StoreStatus Store(Handle_CDM_MetaData & aMetaData, TCollection_ExtendedString & aStatusAssociatedText);
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_CDM_Document Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend CDF_StoreList {
+	Handle_CDF_StoreList GetHandle() {
+	return *(Handle_CDF_StoreList*) &$self;
+	}
+};
+%extend CDF_StoreList {
+	~CDF_StoreList() {
+	printf("Call custom destructor for instance of CDF_StoreList\n");
+	}
+};
+
+%nodefaultctor CDF_MetaDataDriverFactory;
+class CDF_MetaDataDriverFactory : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		virtual		Handle_CDF_MetaDataDriver Build() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend CDF_MetaDataDriverFactory {
+	Handle_CDF_MetaDataDriverFactory GetHandle() {
+	return *(Handle_CDF_MetaDataDriverFactory*) &$self;
+	}
+};
+%extend CDF_MetaDataDriverFactory {
+	~CDF_MetaDataDriverFactory() {
+	printf("Call custom destructor for instance of CDF_MetaDataDriverFactory\n");
+	}
+};
+
+%nodefaultctor CDF_Directory;
+class CDF_Directory : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		CDF_Directory();
+		%feature("autodoc", "1");
+		void Add(const Handle_CDM_Document &aDocument);
+		%feature("autodoc", "1");
+		void Remove(const Handle_CDM_Document &aDocument);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_CDM_Document &aDocument) const;
+		%feature("autodoc", "1");
+		Handle_CDM_Document Last();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend CDF_Directory {
+	Handle_CDF_Directory GetHandle() {
+	return *(Handle_CDF_Directory*) &$self;
+	}
+};
+%extend CDF_Directory {
+	~CDF_Directory() {
+	printf("Call custom destructor for instance of CDF_Directory\n");
+	}
+};
 
 %nodefaultctor CDF_Session;
 class CDF_Session : public Standard_Transient {
@@ -504,8 +580,6 @@ class CDF_Session : public Standard_Transient {
 		void LoadDriver();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDF_Session();
 
 };
 %extend CDF_Session {
@@ -513,12 +587,15 @@ class CDF_Session : public Standard_Transient {
 	return *(Handle_CDF_Session*) &$self;
 	}
 };
+%extend CDF_Session {
+	~CDF_Session() {
+	printf("Call custom destructor for instance of CDF_Session\n");
+	}
+};
 
 %nodefaultctor CDF_DirectoryIterator;
 class CDF_DirectoryIterator {
 	public:
-		%feature("autodoc", "1");
-		~CDF_DirectoryIterator();
 		%feature("autodoc", "1");
 		CDF_DirectoryIterator();
 		%feature("autodoc", "1");
@@ -530,6 +607,11 @@ class CDF_DirectoryIterator {
 		%feature("autodoc", "1");
 		Handle_CDM_Document Document();
 
+};
+%extend CDF_DirectoryIterator {
+	~CDF_DirectoryIterator() {
+	printf("Call custom destructor for instance of CDF_DirectoryIterator\n");
+	}
 };
 
 %nodefaultctor CDF_Store;
@@ -607,50 +689,5 @@ class CDF_Store {
 		CDF_StoreSetNameStatus SetName(const TCollection_ExtendedString &aName);
 		%feature("autodoc", "1");
 		Standard_Boolean SetFolder(const Standard_ExtString aFolder);
-
-};
-
-%nodefaultctor CDF_Directory;
-class CDF_Directory : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		CDF_Directory();
-		%feature("autodoc", "1");
-		void Add(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		void Remove(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_CDM_Document &aDocument) const;
-		%feature("autodoc", "1");
-		Handle_CDM_Document Last();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~CDF_Directory();
-
-};
-%extend CDF_Directory {
-	Handle_CDF_Directory GetHandle() {
-	return *(Handle_CDF_Directory*) &$self;
-	}
-};
-
-%nodefaultctor CDF_Timer;
-class CDF_Timer {
-	public:
-		%feature("autodoc", "1");
-		~CDF_Timer();
-		%feature("autodoc", "1");
-		CDF_Timer();
-		%feature("autodoc", "1");
-		void ShowAndRestart(const char * aMessage);
-		%feature("autodoc", "1");
-		void ShowAndStop(const char * aMessage);
-		%feature("autodoc", "1");
-		Standard_Boolean MustShow();
 
 };

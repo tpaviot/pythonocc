@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module IFSelect
 
@@ -141,452 +127,9 @@ enum IFSelect_RemainMode {
 
 
 
-%nodefaultctor Handle_IFSelect_WorkSession;
-class Handle_IFSelect_WorkSession : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_WorkSession();
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession();
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession(const Handle_IFSelect_WorkSession &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession(const IFSelect_WorkSession *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_WorkSession {
-	IFSelect_WorkSession* GetObject() {
-	return (IFSelect_WorkSession*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_ShareOut;
-class Handle_IFSelect_ShareOut : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_ShareOut();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ShareOut();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ShareOut(const Handle_IFSelect_ShareOut &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ShareOut(const IFSelect_ShareOut *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ShareOut const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_ShareOut {
-	IFSelect_ShareOut* GetObject() {
-	return (IFSelect_ShareOut*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_Transformer;
-class Handle_IFSelect_Transformer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_Transformer();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Transformer();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Transformer(const Handle_IFSelect_Transformer &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Transformer(const IFSelect_Transformer *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Transformer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_Transformer {
-	IFSelect_Transformer* GetObject() {
-	return (IFSelect_Transformer*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_TransformStandard;
-class Handle_IFSelect_TransformStandard : public Handle_IFSelect_Transformer {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_TransformStandard();
-		%feature("autodoc", "1");
-		Handle_IFSelect_TransformStandard();
-		%feature("autodoc", "1");
-		Handle_IFSelect_TransformStandard(const Handle_IFSelect_TransformStandard &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_TransformStandard(const IFSelect_TransformStandard *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_TransformStandard const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_TransformStandard {
-	IFSelect_TransformStandard* GetObject() {
-	return (IFSelect_TransformStandard*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_Signature;
-class Handle_IFSelect_Signature : public Handle_Interface_SignType {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_Signature();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Signature();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Signature(const Handle_IFSelect_Signature &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Signature(const IFSelect_Signature *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Signature const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_Signature {
-	IFSelect_Signature* GetObject() {
-	return (IFSelect_Signature*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SignCategory;
-class Handle_IFSelect_SignCategory : public Handle_IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SignCategory();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignCategory();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignCategory(const Handle_IFSelect_SignCategory &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignCategory(const IFSelect_SignCategory *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignCategory const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SignCategory {
-	IFSelect_SignCategory* GetObject() {
-	return (IFSelect_SignCategory*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_GeneralModifier;
-class Handle_IFSelect_GeneralModifier : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_GeneralModifier();
-		%feature("autodoc", "1");
-		Handle_IFSelect_GeneralModifier();
-		%feature("autodoc", "1");
-		Handle_IFSelect_GeneralModifier(const Handle_IFSelect_GeneralModifier &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_GeneralModifier(const IFSelect_GeneralModifier *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_GeneralModifier const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_GeneralModifier {
-	IFSelect_GeneralModifier* GetObject() {
-	return (IFSelect_GeneralModifier*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_Modifier;
-class Handle_IFSelect_Modifier : public Handle_IFSelect_GeneralModifier {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_Modifier();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Modifier();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Modifier(const Handle_IFSelect_Modifier &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Modifier(const IFSelect_Modifier *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Modifier const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_Modifier {
-	IFSelect_Modifier* GetObject() {
-	return (IFSelect_Modifier*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_ModifReorder;
-class Handle_IFSelect_ModifReorder : public Handle_IFSelect_Modifier {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_ModifReorder();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ModifReorder();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ModifReorder(const Handle_IFSelect_ModifReorder &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ModifReorder(const IFSelect_ModifReorder *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ModifReorder const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_ModifReorder {
-	IFSelect_ModifReorder* GetObject() {
-	return (IFSelect_ModifReorder*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_Selection;
-class Handle_IFSelect_Selection : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_Selection();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection(const Handle_IFSelect_Selection &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection(const IFSelect_Selection *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_Selection {
-	IFSelect_Selection* GetObject() {
-	return (IFSelect_Selection*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectDeduct;
-class Handle_IFSelect_SelectDeduct : public Handle_IFSelect_Selection {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectDeduct();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectDeduct();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectDeduct(const Handle_IFSelect_SelectDeduct &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectDeduct(const IFSelect_SelectDeduct *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectDeduct const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectDeduct {
-	IFSelect_SelectDeduct* GetObject() {
-	return (IFSelect_SelectDeduct*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectExplore;
-class Handle_IFSelect_SelectExplore : public Handle_IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectExplore();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectExplore();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectExplore(const Handle_IFSelect_SelectExplore &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectExplore(const IFSelect_SelectExplore *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectExplore const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectExplore {
-	IFSelect_SelectExplore* GetObject() {
-	return (IFSelect_SelectExplore*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectSignedSharing;
-class Handle_IFSelect_SelectSignedSharing : public Handle_IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectSignedSharing();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignedSharing();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignedSharing(const Handle_IFSelect_SelectSignedSharing &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignedSharing(const IFSelect_SelectSignedSharing *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignedSharing const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectSignedSharing {
-	IFSelect_SelectSignedSharing* GetObject() {
-	return (IFSelect_SelectSignedSharing*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_IntParam;
-class Handle_IFSelect_IntParam : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_IntParam();
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam();
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam(const Handle_IFSelect_IntParam &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam(const IFSelect_IntParam *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_IntParam {
-	IFSelect_IntParam* GetObject() {
-	return (IFSelect_IntParam*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_ListEditor;
-class Handle_IFSelect_ListEditor : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_ListEditor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ListEditor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ListEditor(const Handle_IFSelect_ListEditor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ListEditor(const IFSelect_ListEditor *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ListEditor const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_ListEditor {
-	IFSelect_ListEditor* GetObject() {
-	return (IFSelect_ListEditor*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectBase;
-class Handle_IFSelect_SelectBase : public Handle_IFSelect_Selection {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectBase();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectBase();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectBase(const Handle_IFSelect_SelectBase &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectBase(const IFSelect_SelectBase *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectBase const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectBase {
-	IFSelect_SelectBase* GetObject() {
-	return (IFSelect_SelectBase*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectPointed;
-class Handle_IFSelect_SelectPointed : public Handle_IFSelect_SelectBase {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectPointed();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectPointed();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectPointed(const Handle_IFSelect_SelectPointed &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectPointed(const IFSelect_SelectPointed *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectPointed const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectPointed {
-	IFSelect_SelectPointed* GetObject() {
-	return (IFSelect_SelectPointed*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectExtract;
-class Handle_IFSelect_SelectExtract : public Handle_IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectExtract();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectExtract();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectExtract(const Handle_IFSelect_SelectExtract &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectExtract(const IFSelect_SelectExtract *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectExtract const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectExtract {
-	IFSelect_SelectExtract* GetObject() {
-	return (IFSelect_SelectExtract*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectRange;
-class Handle_IFSelect_SelectRange : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectRange();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRange();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRange(const Handle_IFSelect_SelectRange &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRange(const IFSelect_SelectRange *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRange const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectRange {
-	IFSelect_SelectRange* GetObject() {
-	return (IFSelect_SelectRange*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SessionDumper;
-class Handle_IFSelect_SessionDumper : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SessionDumper();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionDumper();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionDumper(const Handle_IFSelect_SessionDumper &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionDumper(const IFSelect_SessionDumper *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionDumper const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SessionDumper {
-	IFSelect_SessionDumper* GetObject() {
-	return (IFSelect_SessionDumper*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectErrorEntities;
-class Handle_IFSelect_SelectErrorEntities : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectErrorEntities();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectErrorEntities();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectErrorEntities(const Handle_IFSelect_SelectErrorEntities &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectErrorEntities(const IFSelect_SelectErrorEntities *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectErrorEntities const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectErrorEntities {
-	IFSelect_SelectErrorEntities* GetObject() {
-	return (IFSelect_SelectErrorEntities*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_IFSelect_SignatureList;
 class Handle_IFSelect_SignatureList : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SignatureList();
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignatureList();
 		%feature("autodoc", "1");
@@ -602,33 +145,447 @@ class Handle_IFSelect_SignatureList : public Handle_MMgt_TShared {
 	return (IFSelect_SignatureList*)$self->Access();
 	}
 };
+%extend Handle_IFSelect_SignatureList {
+	~Handle_IFSelect_SignatureList() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SignatureList\n");
+	}
+};
 
-%nodefaultctor Handle_IFSelect_SignCounter;
-class Handle_IFSelect_SignCounter : public Handle_IFSelect_SignatureList {
+%nodefaultctor Handle_IFSelect_WorkSession;
+class Handle_IFSelect_WorkSession : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IFSelect_SignCounter();
+		Handle_IFSelect_WorkSession();
 		%feature("autodoc", "1");
-		Handle_IFSelect_SignCounter();
+		Handle_IFSelect_WorkSession(const Handle_IFSelect_WorkSession &aHandle);
 		%feature("autodoc", "1");
-		Handle_IFSelect_SignCounter(const Handle_IFSelect_SignCounter &aHandle);
+		Handle_IFSelect_WorkSession(const IFSelect_WorkSession *anItem);
 		%feature("autodoc", "1");
-		Handle_IFSelect_SignCounter(const IFSelect_SignCounter *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignCounter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IFSelect_WorkSession const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IFSelect_SignCounter {
-	IFSelect_SignCounter* GetObject() {
-	return (IFSelect_SignCounter*)$self->Access();
+%extend Handle_IFSelect_WorkSession {
+	IFSelect_WorkSession* GetObject() {
+	return (IFSelect_WorkSession*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_WorkSession {
+	~Handle_IFSelect_WorkSession() {
+	printf("Call custom destructor for instance of Handle_IFSelect_WorkSession\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_ShareOut;
+class Handle_IFSelect_ShareOut : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_ShareOut();
+		%feature("autodoc", "1");
+		Handle_IFSelect_ShareOut(const Handle_IFSelect_ShareOut &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ShareOut(const IFSelect_ShareOut *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ShareOut const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_ShareOut {
+	IFSelect_ShareOut* GetObject() {
+	return (IFSelect_ShareOut*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_ShareOut {
+	~Handle_IFSelect_ShareOut() {
+	printf("Call custom destructor for instance of Handle_IFSelect_ShareOut\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_Transformer;
+class Handle_IFSelect_Transformer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_Transformer();
+		%feature("autodoc", "1");
+		Handle_IFSelect_Transformer(const Handle_IFSelect_Transformer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Transformer(const IFSelect_Transformer *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Transformer const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_Transformer {
+	IFSelect_Transformer* GetObject() {
+	return (IFSelect_Transformer*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_Transformer {
+	~Handle_IFSelect_Transformer() {
+	printf("Call custom destructor for instance of Handle_IFSelect_Transformer\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_TransformStandard;
+class Handle_IFSelect_TransformStandard : public Handle_IFSelect_Transformer {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_TransformStandard();
+		%feature("autodoc", "1");
+		Handle_IFSelect_TransformStandard(const Handle_IFSelect_TransformStandard &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_TransformStandard(const IFSelect_TransformStandard *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_TransformStandard const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_TransformStandard {
+	IFSelect_TransformStandard* GetObject() {
+	return (IFSelect_TransformStandard*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_TransformStandard {
+	~Handle_IFSelect_TransformStandard() {
+	printf("Call custom destructor for instance of Handle_IFSelect_TransformStandard\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_Signature;
+class Handle_IFSelect_Signature : public Handle_Interface_SignType {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature();
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature(const Handle_IFSelect_Signature &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature(const IFSelect_Signature *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_Signature {
+	IFSelect_Signature* GetObject() {
+	return (IFSelect_Signature*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_Signature {
+	~Handle_IFSelect_Signature() {
+	printf("Call custom destructor for instance of Handle_IFSelect_Signature\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SignCategory;
+class Handle_IFSelect_SignCategory : public Handle_IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCategory();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCategory(const Handle_IFSelect_SignCategory &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCategory(const IFSelect_SignCategory *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCategory const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SignCategory {
+	IFSelect_SignCategory* GetObject() {
+	return (IFSelect_SignCategory*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SignCategory {
+	~Handle_IFSelect_SignCategory() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SignCategory\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_GeneralModifier;
+class Handle_IFSelect_GeneralModifier : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_GeneralModifier();
+		%feature("autodoc", "1");
+		Handle_IFSelect_GeneralModifier(const Handle_IFSelect_GeneralModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_GeneralModifier(const IFSelect_GeneralModifier *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_GeneralModifier const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_GeneralModifier {
+	IFSelect_GeneralModifier* GetObject() {
+	return (IFSelect_GeneralModifier*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_GeneralModifier {
+	~Handle_IFSelect_GeneralModifier() {
+	printf("Call custom destructor for instance of Handle_IFSelect_GeneralModifier\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_Modifier;
+class Handle_IFSelect_Modifier : public Handle_IFSelect_GeneralModifier {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_Modifier();
+		%feature("autodoc", "1");
+		Handle_IFSelect_Modifier(const Handle_IFSelect_Modifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Modifier(const IFSelect_Modifier *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Modifier const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_Modifier {
+	IFSelect_Modifier* GetObject() {
+	return (IFSelect_Modifier*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_Modifier {
+	~Handle_IFSelect_Modifier() {
+	printf("Call custom destructor for instance of Handle_IFSelect_Modifier\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_ModifReorder;
+class Handle_IFSelect_ModifReorder : public Handle_IFSelect_Modifier {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifReorder();
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifReorder(const Handle_IFSelect_ModifReorder &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifReorder(const IFSelect_ModifReorder *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifReorder const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_ModifReorder {
+	IFSelect_ModifReorder* GetObject() {
+	return (IFSelect_ModifReorder*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_ModifReorder {
+	~Handle_IFSelect_ModifReorder() {
+	printf("Call custom destructor for instance of Handle_IFSelect_ModifReorder\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_Selection;
+class Handle_IFSelect_Selection : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection();
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection(const Handle_IFSelect_Selection &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection(const IFSelect_Selection *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_Selection {
+	IFSelect_Selection* GetObject() {
+	return (IFSelect_Selection*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_Selection {
+	~Handle_IFSelect_Selection() {
+	printf("Call custom destructor for instance of Handle_IFSelect_Selection\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectDeduct;
+class Handle_IFSelect_SelectDeduct : public Handle_IFSelect_Selection {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDeduct();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDeduct(const Handle_IFSelect_SelectDeduct &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDeduct(const IFSelect_SelectDeduct *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDeduct const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectDeduct {
+	IFSelect_SelectDeduct* GetObject() {
+	return (IFSelect_SelectDeduct*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectDeduct {
+	~Handle_IFSelect_SelectDeduct() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectDeduct\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectExplore;
+class Handle_IFSelect_SelectExplore : public Handle_IFSelect_SelectDeduct {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExplore();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExplore(const Handle_IFSelect_SelectExplore &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExplore(const IFSelect_SelectExplore *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExplore const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectExplore {
+	IFSelect_SelectExplore* GetObject() {
+	return (IFSelect_SelectExplore*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectExplore {
+	~Handle_IFSelect_SelectExplore() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectExplore\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectSignedSharing;
+class Handle_IFSelect_SelectSignedSharing : public Handle_IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedSharing();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedSharing(const Handle_IFSelect_SelectSignedSharing &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedSharing(const IFSelect_SelectSignedSharing *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedSharing const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectSignedSharing {
+	IFSelect_SelectSignedSharing* GetObject() {
+	return (IFSelect_SelectSignedSharing*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectSignedSharing {
+	~Handle_IFSelect_SelectSignedSharing() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectSignedSharing\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_IntParam;
+class Handle_IFSelect_IntParam : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam();
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam(const Handle_IFSelect_IntParam &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam(const IFSelect_IntParam *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_IntParam {
+	IFSelect_IntParam* GetObject() {
+	return (IFSelect_IntParam*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_IntParam {
+	~Handle_IFSelect_IntParam() {
+	printf("Call custom destructor for instance of Handle_IFSelect_IntParam\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectBase;
+class Handle_IFSelect_SelectBase : public Handle_IFSelect_Selection {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase(const Handle_IFSelect_SelectBase &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase(const IFSelect_SelectBase *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectBase {
+	IFSelect_SelectBase* GetObject() {
+	return (IFSelect_SelectBase*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectBase {
+	~Handle_IFSelect_SelectBase() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectBase\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectPointed;
+class Handle_IFSelect_SelectPointed : public Handle_IFSelect_SelectBase {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectPointed();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectPointed(const Handle_IFSelect_SelectPointed &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectPointed(const IFSelect_SelectPointed *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectPointed const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectPointed {
+	IFSelect_SelectPointed* GetObject() {
+	return (IFSelect_SelectPointed*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectPointed {
+	~Handle_IFSelect_SelectPointed() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectPointed\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectExtract;
+class Handle_IFSelect_SelectExtract : public Handle_IFSelect_SelectDeduct {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExtract();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExtract(const Handle_IFSelect_SelectExtract &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExtract(const IFSelect_SelectExtract *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExtract const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectExtract {
+	IFSelect_SelectExtract* GetObject() {
+	return (IFSelect_SelectExtract*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectExtract {
+	~Handle_IFSelect_SelectExtract() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectExtract\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectRange;
+class Handle_IFSelect_SelectRange : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRange();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRange(const Handle_IFSelect_SelectRange &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRange(const IFSelect_SelectRange *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRange const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectRange {
+	IFSelect_SelectRange* GetObject() {
+	return (IFSelect_SelectRange*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectRange {
+	~Handle_IFSelect_SelectRange() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectRange\n");
 	}
 };
 
 %nodefaultctor Handle_IFSelect_Dispatch;
 class Handle_IFSelect_Dispatch : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_Dispatch();
 		%feature("autodoc", "1");
 		Handle_IFSelect_Dispatch();
 		%feature("autodoc", "1");
@@ -644,999 +601,15 @@ class Handle_IFSelect_Dispatch : public Handle_MMgt_TShared {
 	return (IFSelect_Dispatch*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_IFSelect_DispPerCount;
-class Handle_IFSelect_DispPerCount : public Handle_IFSelect_Dispatch {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_DispPerCount();
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerCount();
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerCount(const Handle_IFSelect_DispPerCount &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerCount(const IFSelect_DispPerCount *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerCount const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_DispPerCount {
-	IFSelect_DispPerCount* GetObject() {
-	return (IFSelect_DispPerCount*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectAnyType;
-class Handle_IFSelect_SelectAnyType : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectAnyType();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyType();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyType(const Handle_IFSelect_SelectAnyType &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyType(const IFSelect_SelectAnyType *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyType const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectAnyType {
-	IFSelect_SelectAnyType* GetObject() {
-	return (IFSelect_SelectAnyType*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectType;
-class Handle_IFSelect_SelectType : public Handle_IFSelect_SelectAnyType {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectType();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectType();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectType(const Handle_IFSelect_SelectType &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectType(const IFSelect_SelectType *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectType const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectType {
-	IFSelect_SelectType* GetObject() {
-	return (IFSelect_SelectType*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_HSeqOfSelection;
-class Handle_IFSelect_HSeqOfSelection : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_HSeqOfSelection();
-		%feature("autodoc", "1");
-		Handle_IFSelect_HSeqOfSelection();
-		%feature("autodoc", "1");
-		Handle_IFSelect_HSeqOfSelection(const Handle_IFSelect_HSeqOfSelection &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_HSeqOfSelection(const IFSelect_HSeqOfSelection *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_HSeqOfSelection const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_HSeqOfSelection {
-	IFSelect_HSeqOfSelection* GetObject() {
-	return (IFSelect_HSeqOfSelection*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectUnknownEntities;
-class Handle_IFSelect_SelectUnknownEntities : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectUnknownEntities();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnknownEntities();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnknownEntities(const Handle_IFSelect_SelectUnknownEntities &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnknownEntities(const IFSelect_SelectUnknownEntities *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnknownEntities const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectUnknownEntities {
-	IFSelect_SelectUnknownEntities* GetObject() {
-	return (IFSelect_SelectUnknownEntities*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectFlag;
-class Handle_IFSelect_SelectFlag : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectFlag();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectFlag();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectFlag(const Handle_IFSelect_SelectFlag &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectFlag(const IFSelect_SelectFlag *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectFlag const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectFlag {
-	IFSelect_SelectFlag* GetObject() {
-	return (IFSelect_SelectFlag*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectSuite;
-class Handle_IFSelect_SelectSuite : public Handle_IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectSuite();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSuite();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSuite(const Handle_IFSelect_SelectSuite &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSuite(const IFSelect_SelectSuite *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSuite const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectSuite {
-	IFSelect_SelectSuite* GetObject() {
-	return (IFSelect_SelectSuite*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
-class Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier(const Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier(const IFSelect_SequenceNodeOfSequenceOfGeneralModifier *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
-	IFSelect_SequenceNodeOfSequenceOfGeneralModifier* GetObject() {
-	return (IFSelect_SequenceNodeOfSequenceOfGeneralModifier*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SignType;
-class Handle_IFSelect_SignType : public Handle_IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SignType();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignType();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignType(const Handle_IFSelect_SignType &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignType(const IFSelect_SignType *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignType const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SignType {
-	IFSelect_SignType* GetObject() {
-	return (IFSelect_SignType*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectControl;
-class Handle_IFSelect_SelectControl : public Handle_IFSelect_Selection {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectControl();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectControl();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectControl(const Handle_IFSelect_SelectControl &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectControl(const IFSelect_SelectControl *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectControl const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectControl {
-	IFSelect_SelectControl* GetObject() {
-	return (IFSelect_SelectControl*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_WorkLibrary;
-class Handle_IFSelect_WorkLibrary : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_WorkLibrary();
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary();
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary(const Handle_IFSelect_WorkLibrary &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary(const IFSelect_WorkLibrary *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_WorkLibrary {
-	IFSelect_WorkLibrary* GetObject() {
-	return (IFSelect_WorkLibrary*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectCombine;
-class Handle_IFSelect_SelectCombine : public Handle_IFSelect_Selection {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectCombine();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectCombine();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectCombine(const Handle_IFSelect_SelectCombine &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectCombine(const IFSelect_SelectCombine *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectCombine const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectCombine {
-	IFSelect_SelectCombine* GetObject() {
-	return (IFSelect_SelectCombine*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectIntersection;
-class Handle_IFSelect_SelectIntersection : public Handle_IFSelect_SelectCombine {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectIntersection();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectIntersection();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectIntersection(const Handle_IFSelect_SelectIntersection &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectIntersection(const IFSelect_SelectIntersection *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectIntersection const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectIntersection {
-	IFSelect_SelectIntersection* GetObject() {
-	return (IFSelect_SelectIntersection*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectUnion;
-class Handle_IFSelect_SelectUnion : public Handle_IFSelect_SelectCombine {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectUnion();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnion();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnion(const Handle_IFSelect_SelectUnion &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnion(const IFSelect_SelectUnion *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnion const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectUnion {
-	IFSelect_SelectUnion* GetObject() {
-	return (IFSelect_SelectUnion*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectModelRoots;
-class Handle_IFSelect_SelectModelRoots : public Handle_IFSelect_SelectBase {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectModelRoots();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelRoots();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelRoots(const Handle_IFSelect_SelectModelRoots &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelRoots(const IFSelect_SelectModelRoots *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelRoots const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectModelRoots {
-	IFSelect_SelectModelRoots* GetObject() {
-	return (IFSelect_SelectModelRoots*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
-class Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel(const Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel(const IFSelect_SequenceNodeOfSequenceOfInterfaceModel *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
-	IFSelect_SequenceNodeOfSequenceOfInterfaceModel* GetObject() {
-	return (IFSelect_SequenceNodeOfSequenceOfInterfaceModel*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectShared;
-class Handle_IFSelect_SelectShared : public Handle_IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectShared();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectShared();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectShared(const Handle_IFSelect_SelectShared &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectShared(const IFSelect_SelectShared *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectShared const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectShared {
-	IFSelect_SelectShared* GetObject() {
-	return (IFSelect_SelectShared*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectSharing;
-class Handle_IFSelect_SelectSharing : public Handle_IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectSharing();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSharing();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSharing(const Handle_IFSelect_SelectSharing &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSharing(const IFSelect_SelectSharing *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSharing const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectSharing {
-	IFSelect_SelectSharing* GetObject() {
-	return (IFSelect_SelectSharing*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_EditForm;
-class Handle_IFSelect_EditForm : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_EditForm();
-		%feature("autodoc", "1");
-		Handle_IFSelect_EditForm();
-		%feature("autodoc", "1");
-		Handle_IFSelect_EditForm(const Handle_IFSelect_EditForm &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_EditForm(const IFSelect_EditForm *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_EditForm const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_EditForm {
-	IFSelect_EditForm* GetObject() {
-	return (IFSelect_EditForm*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_DispPerFiles;
-class Handle_IFSelect_DispPerFiles : public Handle_IFSelect_Dispatch {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_DispPerFiles();
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerFiles();
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerFiles(const Handle_IFSelect_DispPerFiles &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerFiles(const IFSelect_DispPerFiles *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerFiles const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_DispPerFiles {
-	IFSelect_DispPerFiles* GetObject() {
-	return (IFSelect_DispPerFiles*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_DispPerOne;
-class Handle_IFSelect_DispPerOne : public Handle_IFSelect_Dispatch {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_DispPerOne();
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerOne();
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerOne(const Handle_IFSelect_DispPerOne &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerOne(const IFSelect_DispPerOne *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerOne const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_DispPerOne {
-	IFSelect_DispPerOne* GetObject() {
-	return (IFSelect_DispPerOne*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_PacketList;
-class Handle_IFSelect_PacketList : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_PacketList();
-		%feature("autodoc", "1");
-		Handle_IFSelect_PacketList();
-		%feature("autodoc", "1");
-		Handle_IFSelect_PacketList(const Handle_IFSelect_PacketList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_PacketList(const IFSelect_PacketList *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_PacketList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_PacketList {
-	IFSelect_PacketList* GetObject() {
-	return (IFSelect_PacketList*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectIncorrectEntities;
-class Handle_IFSelect_SelectIncorrectEntities : public Handle_IFSelect_SelectFlag {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectIncorrectEntities();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectIncorrectEntities();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectIncorrectEntities(const Handle_IFSelect_SelectIncorrectEntities &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectIncorrectEntities(const IFSelect_SelectIncorrectEntities *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectIncorrectEntities const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectIncorrectEntities {
-	IFSelect_SelectIncorrectEntities* GetObject() {
-	return (IFSelect_SelectIncorrectEntities*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_DispPerSignature;
-class Handle_IFSelect_DispPerSignature : public Handle_IFSelect_Dispatch {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_DispPerSignature();
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerSignature();
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerSignature(const Handle_IFSelect_DispPerSignature &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerSignature(const IFSelect_DispPerSignature *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_DispPerSignature const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_DispPerSignature {
-	IFSelect_DispPerSignature* GetObject() {
-	return (IFSelect_DispPerSignature*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectAnyList;
-class Handle_IFSelect_SelectAnyList : public Handle_IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectAnyList();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyList();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyList(const Handle_IFSelect_SelectAnyList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyList(const IFSelect_SelectAnyList *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectAnyList {
-	IFSelect_SelectAnyList* GetObject() {
-	return (IFSelect_SelectAnyList*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectInList;
-class Handle_IFSelect_SelectInList : public Handle_IFSelect_SelectAnyList {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectInList();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectInList();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectInList(const Handle_IFSelect_SelectInList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectInList(const IFSelect_SelectInList *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectInList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectInList {
-	IFSelect_SelectInList* GetObject() {
-	return (IFSelect_SelectInList*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_AppliedModifiers;
-class Handle_IFSelect_AppliedModifiers : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_AppliedModifiers();
-		%feature("autodoc", "1");
-		Handle_IFSelect_AppliedModifiers();
-		%feature("autodoc", "1");
-		Handle_IFSelect_AppliedModifiers(const Handle_IFSelect_AppliedModifiers &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_AppliedModifiers(const IFSelect_AppliedModifiers *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_AppliedModifiers const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_AppliedModifiers {
-	IFSelect_AppliedModifiers* GetObject() {
-	return (IFSelect_AppliedModifiers*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_Activator;
-class Handle_IFSelect_Activator : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_Activator();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Activator();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Activator(const Handle_IFSelect_Activator &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Activator(const IFSelect_Activator *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Activator const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_Activator {
-	IFSelect_Activator* GetObject() {
-	return (IFSelect_Activator*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectModelEntities;
-class Handle_IFSelect_SelectModelEntities : public Handle_IFSelect_SelectBase {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectModelEntities();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelEntities();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelEntities(const Handle_IFSelect_SelectModelEntities &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelEntities(const IFSelect_SelectModelEntities *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelEntities const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectModelEntities {
-	IFSelect_SelectModelEntities* GetObject() {
-	return (IFSelect_SelectModelEntities*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SignMultiple;
-class Handle_IFSelect_SignMultiple : public Handle_IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SignMultiple();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignMultiple();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignMultiple(const Handle_IFSelect_SignMultiple &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignMultiple(const IFSelect_SignMultiple *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignMultiple const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SignMultiple {
-	IFSelect_SignMultiple* GetObject() {
-	return (IFSelect_SignMultiple*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_GraphCounter;
-class Handle_IFSelect_GraphCounter : public Handle_IFSelect_SignCounter {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_GraphCounter();
-		%feature("autodoc", "1");
-		Handle_IFSelect_GraphCounter();
-		%feature("autodoc", "1");
-		Handle_IFSelect_GraphCounter(const Handle_IFSelect_GraphCounter &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_GraphCounter(const IFSelect_GraphCounter *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_GraphCounter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_GraphCounter {
-	IFSelect_GraphCounter* GetObject() {
-	return (IFSelect_GraphCounter*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectDiff;
-class Handle_IFSelect_SelectDiff : public Handle_IFSelect_SelectControl {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectDiff();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectDiff();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectDiff(const Handle_IFSelect_SelectDiff &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectDiff(const IFSelect_SelectDiff *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectDiff const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectDiff {
-	IFSelect_SelectDiff* GetObject() {
-	return (IFSelect_SelectDiff*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers;
-class Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers(const Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers(const IFSelect_SequenceNodeOfSequenceOfAppliedModifiers *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
-	IFSelect_SequenceNodeOfSequenceOfAppliedModifiers* GetObject() {
-	return (IFSelect_SequenceNodeOfSequenceOfAppliedModifiers*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_Editor;
-class Handle_IFSelect_Editor : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_Editor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor(const Handle_IFSelect_Editor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor(const IFSelect_Editor *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_Editor {
-	IFSelect_Editor* GetObject() {
-	return (IFSelect_Editor*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_ParamEditor;
-class Handle_IFSelect_ParamEditor : public Handle_IFSelect_Editor {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_ParamEditor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ParamEditor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ParamEditor(const Handle_IFSelect_ParamEditor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ParamEditor(const IFSelect_ParamEditor *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ParamEditor const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_ParamEditor {
-	IFSelect_ParamEditor* GetObject() {
-	return (IFSelect_ParamEditor*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_CheckCounter;
-class Handle_IFSelect_CheckCounter : public Handle_IFSelect_SignatureList {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_CheckCounter();
-		%feature("autodoc", "1");
-		Handle_IFSelect_CheckCounter();
-		%feature("autodoc", "1");
-		Handle_IFSelect_CheckCounter(const Handle_IFSelect_CheckCounter &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_CheckCounter(const IFSelect_CheckCounter *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_CheckCounter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_CheckCounter {
-	IFSelect_CheckCounter* GetObject() {
-	return (IFSelect_CheckCounter*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SequenceNodeOfTSeqOfDispatch;
-class Handle_IFSelect_SequenceNodeOfTSeqOfDispatch : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SequenceNodeOfTSeqOfDispatch();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch(const Handle_IFSelect_SequenceNodeOfTSeqOfDispatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch(const IFSelect_SequenceNodeOfTSeqOfDispatch *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SequenceNodeOfTSeqOfDispatch {
-	IFSelect_SequenceNodeOfTSeqOfDispatch* GetObject() {
-	return (IFSelect_SequenceNodeOfTSeqOfDispatch*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectSent;
-class Handle_IFSelect_SelectSent : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectSent();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSent();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSent(const Handle_IFSelect_SelectSent &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSent(const IFSelect_SelectSent *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSent const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectSent {
-	IFSelect_SelectSent* GetObject() {
-	return (IFSelect_SelectSent*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SignAncestor;
-class Handle_IFSelect_SignAncestor : public Handle_IFSelect_SignType {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SignAncestor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignAncestor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignAncestor(const Handle_IFSelect_SignAncestor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignAncestor(const IFSelect_SignAncestor *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignAncestor const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SignAncestor {
-	IFSelect_SignAncestor* GetObject() {
-	return (IFSelect_SignAncestor*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SignValidity;
-class Handle_IFSelect_SignValidity : public Handle_IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SignValidity();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignValidity();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignValidity(const Handle_IFSelect_SignValidity &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignValidity(const IFSelect_SignValidity *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignValidity const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SignValidity {
-	IFSelect_SignValidity* GetObject() {
-	return (IFSelect_SignValidity*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_ModifEditForm;
-class Handle_IFSelect_ModifEditForm : public Handle_IFSelect_Modifier {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_ModifEditForm();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ModifEditForm();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ModifEditForm(const Handle_IFSelect_ModifEditForm &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ModifEditForm(const IFSelect_ModifEditForm *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ModifEditForm const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_ModifEditForm {
-	IFSelect_ModifEditForm* GetObject() {
-	return (IFSelect_ModifEditForm*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectRootComps;
-class Handle_IFSelect_SelectRootComps : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectRootComps();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRootComps();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRootComps(const Handle_IFSelect_SelectRootComps &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRootComps(const IFSelect_SelectRootComps *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRootComps const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectRootComps {
-	IFSelect_SelectRootComps* GetObject() {
-	return (IFSelect_SelectRootComps*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectRoots;
-class Handle_IFSelect_SelectRoots : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectRoots();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRoots();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRoots(const Handle_IFSelect_SelectRoots &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRoots(const IFSelect_SelectRoots *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectRoots const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectRoots {
-	IFSelect_SelectRoots* GetObject() {
-	return (IFSelect_SelectRoots*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectSignature;
-class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectSignature();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature(const Handle_IFSelect_SelectSignature &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature(const IFSelect_SelectSignature *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectSignature {
-	IFSelect_SelectSignature* GetObject() {
-	return (IFSelect_SelectSignature*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_BasicDumper;
-class Handle_IFSelect_BasicDumper : public Handle_IFSelect_SessionDumper {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_BasicDumper();
-		%feature("autodoc", "1");
-		Handle_IFSelect_BasicDumper();
-		%feature("autodoc", "1");
-		Handle_IFSelect_BasicDumper(const Handle_IFSelect_BasicDumper &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_BasicDumper(const IFSelect_BasicDumper *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_BasicDumper const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_BasicDumper {
-	IFSelect_BasicDumper* GetObject() {
-	return (IFSelect_BasicDumper*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SessionPilot;
-class Handle_IFSelect_SessionPilot : public Handle_IFSelect_Activator {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SessionPilot();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionPilot();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionPilot(const Handle_IFSelect_SessionPilot &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionPilot(const IFSelect_SessionPilot *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionPilot const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SessionPilot {
-	IFSelect_SessionPilot* GetObject() {
-	return (IFSelect_SessionPilot*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_IFSelect_SelectSignedShared;
-class Handle_IFSelect_SelectSignedShared : public Handle_IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectSignedShared();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignedShared();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignedShared(const Handle_IFSelect_SelectSignedShared &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignedShared(const IFSelect_SelectSignedShared *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignedShared const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectSignedShared {
-	IFSelect_SelectSignedShared* GetObject() {
-	return (IFSelect_SelectSignedShared*)$self->Access();
+%extend Handle_IFSelect_Dispatch {
+	~Handle_IFSelect_Dispatch() {
+	printf("Call custom destructor for instance of Handle_IFSelect_Dispatch\n");
 	}
 };
 
 %nodefaultctor Handle_IFSelect_DispGlobal;
 class Handle_IFSelect_DispGlobal : public Handle_IFSelect_Dispatch {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_DispGlobal();
 		%feature("autodoc", "1");
 		Handle_IFSelect_DispGlobal();
 		%feature("autodoc", "1");
@@ -1652,12 +625,1239 @@ class Handle_IFSelect_DispGlobal : public Handle_IFSelect_Dispatch {
 	return (IFSelect_DispGlobal*)$self->Access();
 	}
 };
+%extend Handle_IFSelect_DispGlobal {
+	~Handle_IFSelect_DispGlobal() {
+	printf("Call custom destructor for instance of Handle_IFSelect_DispGlobal\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SessionDumper;
+class Handle_IFSelect_SessionDumper : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionDumper();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionDumper(const Handle_IFSelect_SessionDumper &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionDumper(const IFSelect_SessionDumper *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionDumper const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SessionDumper {
+	IFSelect_SessionDumper* GetObject() {
+	return (IFSelect_SessionDumper*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SessionDumper {
+	~Handle_IFSelect_SessionDumper() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SessionDumper\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_ModifEditForm;
+class Handle_IFSelect_ModifEditForm : public Handle_IFSelect_Modifier {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifEditForm();
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifEditForm(const Handle_IFSelect_ModifEditForm &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifEditForm(const IFSelect_ModifEditForm *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifEditForm const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_ModifEditForm {
+	IFSelect_ModifEditForm* GetObject() {
+	return (IFSelect_ModifEditForm*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_ModifEditForm {
+	~Handle_IFSelect_ModifEditForm() {
+	printf("Call custom destructor for instance of Handle_IFSelect_ModifEditForm\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_ListEditor;
+class Handle_IFSelect_ListEditor : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_ListEditor();
+		%feature("autodoc", "1");
+		Handle_IFSelect_ListEditor(const Handle_IFSelect_ListEditor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ListEditor(const IFSelect_ListEditor *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ListEditor const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_ListEditor {
+	IFSelect_ListEditor* GetObject() {
+	return (IFSelect_ListEditor*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_ListEditor {
+	~Handle_IFSelect_ListEditor() {
+	printf("Call custom destructor for instance of Handle_IFSelect_ListEditor\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectErrorEntities;
+class Handle_IFSelect_SelectErrorEntities : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectErrorEntities();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectErrorEntities(const Handle_IFSelect_SelectErrorEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectErrorEntities(const IFSelect_SelectErrorEntities *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectErrorEntities const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectErrorEntities {
+	IFSelect_SelectErrorEntities* GetObject() {
+	return (IFSelect_SelectErrorEntities*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectErrorEntities {
+	~Handle_IFSelect_SelectErrorEntities() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectErrorEntities\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectSharing;
+class Handle_IFSelect_SelectSharing : public Handle_IFSelect_SelectDeduct {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing(const Handle_IFSelect_SelectSharing &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing(const IFSelect_SelectSharing *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectSharing {
+	IFSelect_SelectSharing* GetObject() {
+	return (IFSelect_SelectSharing*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectSharing {
+	~Handle_IFSelect_SelectSharing() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectSharing\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SignCounter;
+class Handle_IFSelect_SignCounter : public Handle_IFSelect_SignatureList {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCounter();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCounter(const Handle_IFSelect_SignCounter &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCounter(const IFSelect_SignCounter *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCounter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SignCounter {
+	IFSelect_SignCounter* GetObject() {
+	return (IFSelect_SignCounter*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SignCounter {
+	~Handle_IFSelect_SignCounter() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SignCounter\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectAnyType;
+class Handle_IFSelect_SelectAnyType : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyType();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyType(const Handle_IFSelect_SelectAnyType &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyType(const IFSelect_SelectAnyType *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyType const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectAnyType {
+	IFSelect_SelectAnyType* GetObject() {
+	return (IFSelect_SelectAnyType*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectAnyType {
+	~Handle_IFSelect_SelectAnyType() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectAnyType\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectType;
+class Handle_IFSelect_SelectType : public Handle_IFSelect_SelectAnyType {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectType();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectType(const Handle_IFSelect_SelectType &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectType(const IFSelect_SelectType *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectType const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectType {
+	IFSelect_SelectType* GetObject() {
+	return (IFSelect_SelectType*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectType {
+	~Handle_IFSelect_SelectType() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectType\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_PacketList;
+class Handle_IFSelect_PacketList : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_PacketList();
+		%feature("autodoc", "1");
+		Handle_IFSelect_PacketList(const Handle_IFSelect_PacketList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_PacketList(const IFSelect_PacketList *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_PacketList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_PacketList {
+	IFSelect_PacketList* GetObject() {
+	return (IFSelect_PacketList*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_PacketList {
+	~Handle_IFSelect_PacketList() {
+	printf("Call custom destructor for instance of Handle_IFSelect_PacketList\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_HSeqOfSelection;
+class Handle_IFSelect_HSeqOfSelection : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection();
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection(const Handle_IFSelect_HSeqOfSelection &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection(const IFSelect_HSeqOfSelection *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_HSeqOfSelection {
+	IFSelect_HSeqOfSelection* GetObject() {
+	return (IFSelect_HSeqOfSelection*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_HSeqOfSelection {
+	~Handle_IFSelect_HSeqOfSelection() {
+	printf("Call custom destructor for instance of Handle_IFSelect_HSeqOfSelection\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectUnknownEntities;
+class Handle_IFSelect_SelectUnknownEntities : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities(const Handle_IFSelect_SelectUnknownEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities(const IFSelect_SelectUnknownEntities *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectUnknownEntities {
+	IFSelect_SelectUnknownEntities* GetObject() {
+	return (IFSelect_SelectUnknownEntities*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectUnknownEntities {
+	~Handle_IFSelect_SelectUnknownEntities() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectUnknownEntities\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectFlag;
+class Handle_IFSelect_SelectFlag : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectFlag();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectFlag(const Handle_IFSelect_SelectFlag &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectFlag(const IFSelect_SelectFlag *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectFlag const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectFlag {
+	IFSelect_SelectFlag* GetObject() {
+	return (IFSelect_SelectFlag*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectFlag {
+	~Handle_IFSelect_SelectFlag() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectFlag\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectSuite;
+class Handle_IFSelect_SelectSuite : public Handle_IFSelect_SelectDeduct {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSuite();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSuite(const Handle_IFSelect_SelectSuite &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSuite(const IFSelect_SelectSuite *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSuite const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectSuite {
+	IFSelect_SelectSuite* GetObject() {
+	return (IFSelect_SelectSuite*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectSuite {
+	~Handle_IFSelect_SelectSuite() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectSuite\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
+class Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier(const Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier(const IFSelect_SequenceNodeOfSequenceOfGeneralModifier *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
+	IFSelect_SequenceNodeOfSequenceOfGeneralModifier* GetObject() {
+	return (IFSelect_SequenceNodeOfSequenceOfGeneralModifier*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
+	~Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SignType;
+class Handle_IFSelect_SignType : public Handle_IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType(const Handle_IFSelect_SignType &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType(const IFSelect_SignType *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SignType {
+	IFSelect_SignType* GetObject() {
+	return (IFSelect_SignType*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SignType {
+	~Handle_IFSelect_SignType() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SignType\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectControl;
+class Handle_IFSelect_SelectControl : public Handle_IFSelect_Selection {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectControl();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectControl(const Handle_IFSelect_SelectControl &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectControl(const IFSelect_SelectControl *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectControl const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectControl {
+	IFSelect_SelectControl* GetObject() {
+	return (IFSelect_SelectControl*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectControl {
+	~Handle_IFSelect_SelectControl() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectControl\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_WorkLibrary;
+class Handle_IFSelect_WorkLibrary : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkLibrary();
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkLibrary(const Handle_IFSelect_WorkLibrary &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkLibrary(const IFSelect_WorkLibrary *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_WorkLibrary {
+	IFSelect_WorkLibrary* GetObject() {
+	return (IFSelect_WorkLibrary*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_WorkLibrary {
+	~Handle_IFSelect_WorkLibrary() {
+	printf("Call custom destructor for instance of Handle_IFSelect_WorkLibrary\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectCombine;
+class Handle_IFSelect_SelectCombine : public Handle_IFSelect_Selection {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine(const Handle_IFSelect_SelectCombine &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine(const IFSelect_SelectCombine *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectCombine {
+	IFSelect_SelectCombine* GetObject() {
+	return (IFSelect_SelectCombine*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectCombine {
+	~Handle_IFSelect_SelectCombine() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectCombine\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectIntersection;
+class Handle_IFSelect_SelectIntersection : public Handle_IFSelect_SelectCombine {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIntersection();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIntersection(const Handle_IFSelect_SelectIntersection &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIntersection(const IFSelect_SelectIntersection *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIntersection const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectIntersection {
+	IFSelect_SelectIntersection* GetObject() {
+	return (IFSelect_SelectIntersection*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectIntersection {
+	~Handle_IFSelect_SelectIntersection() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectIntersection\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectUnion;
+class Handle_IFSelect_SelectUnion : public Handle_IFSelect_SelectCombine {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnion();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnion(const Handle_IFSelect_SelectUnion &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnion(const IFSelect_SelectUnion *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnion const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectUnion {
+	IFSelect_SelectUnion* GetObject() {
+	return (IFSelect_SelectUnion*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectUnion {
+	~Handle_IFSelect_SelectUnion() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectUnion\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectModelRoots;
+class Handle_IFSelect_SelectModelRoots : public Handle_IFSelect_SelectBase {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots(const Handle_IFSelect_SelectModelRoots &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots(const IFSelect_SelectModelRoots *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectModelRoots {
+	IFSelect_SelectModelRoots* GetObject() {
+	return (IFSelect_SelectModelRoots*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectModelRoots {
+	~Handle_IFSelect_SelectModelRoots() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectModelRoots\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
+class Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel(const Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel(const IFSelect_SequenceNodeOfSequenceOfInterfaceModel *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
+	IFSelect_SequenceNodeOfSequenceOfInterfaceModel* GetObject() {
+	return (IFSelect_SequenceNodeOfSequenceOfInterfaceModel*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
+	~Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectShared;
+class Handle_IFSelect_SelectShared : public Handle_IFSelect_SelectDeduct {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectShared();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectShared(const Handle_IFSelect_SelectShared &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectShared(const IFSelect_SelectShared *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectShared const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectShared {
+	IFSelect_SelectShared* GetObject() {
+	return (IFSelect_SelectShared*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectShared {
+	~Handle_IFSelect_SelectShared() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectShared\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectSignature;
+class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature(const Handle_IFSelect_SelectSignature &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature(const IFSelect_SelectSignature *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectSignature {
+	IFSelect_SelectSignature* GetObject() {
+	return (IFSelect_SelectSignature*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectSignature {
+	~Handle_IFSelect_SelectSignature() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectSignature\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_EditForm;
+class Handle_IFSelect_EditForm : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_EditForm();
+		%feature("autodoc", "1");
+		Handle_IFSelect_EditForm(const Handle_IFSelect_EditForm &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_EditForm(const IFSelect_EditForm *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_EditForm const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_EditForm {
+	IFSelect_EditForm* GetObject() {
+	return (IFSelect_EditForm*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_EditForm {
+	~Handle_IFSelect_EditForm() {
+	printf("Call custom destructor for instance of Handle_IFSelect_EditForm\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_DispPerFiles;
+class Handle_IFSelect_DispPerFiles : public Handle_IFSelect_Dispatch {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerFiles();
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerFiles(const Handle_IFSelect_DispPerFiles &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerFiles(const IFSelect_DispPerFiles *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerFiles const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_DispPerFiles {
+	IFSelect_DispPerFiles* GetObject() {
+	return (IFSelect_DispPerFiles*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_DispPerFiles {
+	~Handle_IFSelect_DispPerFiles() {
+	printf("Call custom destructor for instance of Handle_IFSelect_DispPerFiles\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_DispPerOne;
+class Handle_IFSelect_DispPerOne : public Handle_IFSelect_Dispatch {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerOne();
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerOne(const Handle_IFSelect_DispPerOne &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerOne(const IFSelect_DispPerOne *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerOne const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_DispPerOne {
+	IFSelect_DispPerOne* GetObject() {
+	return (IFSelect_DispPerOne*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_DispPerOne {
+	~Handle_IFSelect_DispPerOne() {
+	printf("Call custom destructor for instance of Handle_IFSelect_DispPerOne\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectIncorrectEntities;
+class Handle_IFSelect_SelectIncorrectEntities : public Handle_IFSelect_SelectFlag {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIncorrectEntities();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIncorrectEntities(const Handle_IFSelect_SelectIncorrectEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIncorrectEntities(const IFSelect_SelectIncorrectEntities *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIncorrectEntities const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectIncorrectEntities {
+	IFSelect_SelectIncorrectEntities* GetObject() {
+	return (IFSelect_SelectIncorrectEntities*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectIncorrectEntities {
+	~Handle_IFSelect_SelectIncorrectEntities() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectIncorrectEntities\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_DispPerSignature;
+class Handle_IFSelect_DispPerSignature : public Handle_IFSelect_Dispatch {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerSignature();
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerSignature(const Handle_IFSelect_DispPerSignature &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerSignature(const IFSelect_DispPerSignature *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerSignature const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_DispPerSignature {
+	IFSelect_DispPerSignature* GetObject() {
+	return (IFSelect_DispPerSignature*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_DispPerSignature {
+	~Handle_IFSelect_DispPerSignature() {
+	printf("Call custom destructor for instance of Handle_IFSelect_DispPerSignature\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectAnyList;
+class Handle_IFSelect_SelectAnyList : public Handle_IFSelect_SelectDeduct {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList(const Handle_IFSelect_SelectAnyList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList(const IFSelect_SelectAnyList *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectAnyList {
+	IFSelect_SelectAnyList* GetObject() {
+	return (IFSelect_SelectAnyList*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectAnyList {
+	~Handle_IFSelect_SelectAnyList() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectAnyList\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectInList;
+class Handle_IFSelect_SelectInList : public Handle_IFSelect_SelectAnyList {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList(const Handle_IFSelect_SelectInList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList(const IFSelect_SelectInList *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectInList {
+	IFSelect_SelectInList* GetObject() {
+	return (IFSelect_SelectInList*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectInList {
+	~Handle_IFSelect_SelectInList() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectInList\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_AppliedModifiers;
+class Handle_IFSelect_AppliedModifiers : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_AppliedModifiers();
+		%feature("autodoc", "1");
+		Handle_IFSelect_AppliedModifiers(const Handle_IFSelect_AppliedModifiers &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_AppliedModifiers(const IFSelect_AppliedModifiers *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_AppliedModifiers const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_AppliedModifiers {
+	IFSelect_AppliedModifiers* GetObject() {
+	return (IFSelect_AppliedModifiers*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_AppliedModifiers {
+	~Handle_IFSelect_AppliedModifiers() {
+	printf("Call custom destructor for instance of Handle_IFSelect_AppliedModifiers\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_Activator;
+class Handle_IFSelect_Activator : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_Activator();
+		%feature("autodoc", "1");
+		Handle_IFSelect_Activator(const Handle_IFSelect_Activator &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Activator(const IFSelect_Activator *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Activator const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_Activator {
+	IFSelect_Activator* GetObject() {
+	return (IFSelect_Activator*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_Activator {
+	~Handle_IFSelect_Activator() {
+	printf("Call custom destructor for instance of Handle_IFSelect_Activator\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectModelEntities;
+class Handle_IFSelect_SelectModelEntities : public Handle_IFSelect_SelectBase {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelEntities();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelEntities(const Handle_IFSelect_SelectModelEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelEntities(const IFSelect_SelectModelEntities *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelEntities const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectModelEntities {
+	IFSelect_SelectModelEntities* GetObject() {
+	return (IFSelect_SelectModelEntities*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectModelEntities {
+	~Handle_IFSelect_SelectModelEntities() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectModelEntities\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SignMultiple;
+class Handle_IFSelect_SignMultiple : public Handle_IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignMultiple();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignMultiple(const Handle_IFSelect_SignMultiple &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignMultiple(const IFSelect_SignMultiple *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignMultiple const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SignMultiple {
+	IFSelect_SignMultiple* GetObject() {
+	return (IFSelect_SignMultiple*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SignMultiple {
+	~Handle_IFSelect_SignMultiple() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SignMultiple\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_GraphCounter;
+class Handle_IFSelect_GraphCounter : public Handle_IFSelect_SignCounter {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_GraphCounter();
+		%feature("autodoc", "1");
+		Handle_IFSelect_GraphCounter(const Handle_IFSelect_GraphCounter &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_GraphCounter(const IFSelect_GraphCounter *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_GraphCounter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_GraphCounter {
+	IFSelect_GraphCounter* GetObject() {
+	return (IFSelect_GraphCounter*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_GraphCounter {
+	~Handle_IFSelect_GraphCounter() {
+	printf("Call custom destructor for instance of Handle_IFSelect_GraphCounter\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectDiff;
+class Handle_IFSelect_SelectDiff : public Handle_IFSelect_SelectControl {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDiff();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDiff(const Handle_IFSelect_SelectDiff &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDiff(const IFSelect_SelectDiff *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDiff const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectDiff {
+	IFSelect_SelectDiff* GetObject() {
+	return (IFSelect_SelectDiff*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectDiff {
+	~Handle_IFSelect_SelectDiff() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectDiff\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers;
+class Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers(const Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers(const IFSelect_SequenceNodeOfSequenceOfAppliedModifiers *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
+	IFSelect_SequenceNodeOfSequenceOfAppliedModifiers* GetObject() {
+	return (IFSelect_SequenceNodeOfSequenceOfAppliedModifiers*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
+	~Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_Editor;
+class Handle_IFSelect_Editor : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor();
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor(const Handle_IFSelect_Editor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor(const IFSelect_Editor *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_Editor {
+	IFSelect_Editor* GetObject() {
+	return (IFSelect_Editor*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_Editor {
+	~Handle_IFSelect_Editor() {
+	printf("Call custom destructor for instance of Handle_IFSelect_Editor\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_ParamEditor;
+class Handle_IFSelect_ParamEditor : public Handle_IFSelect_Editor {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor();
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor(const Handle_IFSelect_ParamEditor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor(const IFSelect_ParamEditor *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_ParamEditor {
+	IFSelect_ParamEditor* GetObject() {
+	return (IFSelect_ParamEditor*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_ParamEditor {
+	~Handle_IFSelect_ParamEditor() {
+	printf("Call custom destructor for instance of Handle_IFSelect_ParamEditor\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_CheckCounter;
+class Handle_IFSelect_CheckCounter : public Handle_IFSelect_SignatureList {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_CheckCounter();
+		%feature("autodoc", "1");
+		Handle_IFSelect_CheckCounter(const Handle_IFSelect_CheckCounter &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_CheckCounter(const IFSelect_CheckCounter *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_CheckCounter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_CheckCounter {
+	IFSelect_CheckCounter* GetObject() {
+	return (IFSelect_CheckCounter*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_CheckCounter {
+	~Handle_IFSelect_CheckCounter() {
+	printf("Call custom destructor for instance of Handle_IFSelect_CheckCounter\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SequenceNodeOfTSeqOfDispatch;
+class Handle_IFSelect_SequenceNodeOfTSeqOfDispatch : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch(const Handle_IFSelect_SequenceNodeOfTSeqOfDispatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch(const IFSelect_SequenceNodeOfTSeqOfDispatch *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SequenceNodeOfTSeqOfDispatch {
+	IFSelect_SequenceNodeOfTSeqOfDispatch* GetObject() {
+	return (IFSelect_SequenceNodeOfTSeqOfDispatch*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SequenceNodeOfTSeqOfDispatch {
+	~Handle_IFSelect_SequenceNodeOfTSeqOfDispatch() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfTSeqOfDispatch\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectSent;
+class Handle_IFSelect_SelectSent : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSent();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSent(const Handle_IFSelect_SelectSent &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSent(const IFSelect_SelectSent *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSent const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectSent {
+	IFSelect_SelectSent* GetObject() {
+	return (IFSelect_SelectSent*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectSent {
+	~Handle_IFSelect_SelectSent() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectSent\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SignAncestor;
+class Handle_IFSelect_SignAncestor : public Handle_IFSelect_SignType {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignAncestor();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignAncestor(const Handle_IFSelect_SignAncestor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignAncestor(const IFSelect_SignAncestor *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignAncestor const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SignAncestor {
+	IFSelect_SignAncestor* GetObject() {
+	return (IFSelect_SignAncestor*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SignAncestor {
+	~Handle_IFSelect_SignAncestor() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SignAncestor\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SignValidity;
+class Handle_IFSelect_SignValidity : public Handle_IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignValidity();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignValidity(const Handle_IFSelect_SignValidity &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignValidity(const IFSelect_SignValidity *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignValidity const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SignValidity {
+	IFSelect_SignValidity* GetObject() {
+	return (IFSelect_SignValidity*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SignValidity {
+	~Handle_IFSelect_SignValidity() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SignValidity\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectRootComps;
+class Handle_IFSelect_SelectRootComps : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRootComps();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRootComps(const Handle_IFSelect_SelectRootComps &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRootComps(const IFSelect_SelectRootComps *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRootComps const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectRootComps {
+	IFSelect_SelectRootComps* GetObject() {
+	return (IFSelect_SelectRootComps*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectRootComps {
+	~Handle_IFSelect_SelectRootComps() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectRootComps\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectRoots;
+class Handle_IFSelect_SelectRoots : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRoots();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRoots(const Handle_IFSelect_SelectRoots &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRoots(const IFSelect_SelectRoots *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRoots const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectRoots {
+	IFSelect_SelectRoots* GetObject() {
+	return (IFSelect_SelectRoots*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectRoots {
+	~Handle_IFSelect_SelectRoots() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectRoots\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_DispPerCount;
+class Handle_IFSelect_DispPerCount : public Handle_IFSelect_Dispatch {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerCount();
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerCount(const Handle_IFSelect_DispPerCount &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerCount(const IFSelect_DispPerCount *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerCount const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_DispPerCount {
+	IFSelect_DispPerCount* GetObject() {
+	return (IFSelect_DispPerCount*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_DispPerCount {
+	~Handle_IFSelect_DispPerCount() {
+	printf("Call custom destructor for instance of Handle_IFSelect_DispPerCount\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SelectSignedShared;
+class Handle_IFSelect_SelectSignedShared : public Handle_IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedShared();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedShared(const Handle_IFSelect_SelectSignedShared &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedShared(const IFSelect_SelectSignedShared *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedShared const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectSignedShared {
+	IFSelect_SelectSignedShared* GetObject() {
+	return (IFSelect_SelectSignedShared*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectSignedShared {
+	~Handle_IFSelect_SelectSignedShared() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectSignedShared\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_BasicDumper;
+class Handle_IFSelect_BasicDumper : public Handle_IFSelect_SessionDumper {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_BasicDumper();
+		%feature("autodoc", "1");
+		Handle_IFSelect_BasicDumper(const Handle_IFSelect_BasicDumper &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_BasicDumper(const IFSelect_BasicDumper *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_BasicDumper const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_BasicDumper {
+	IFSelect_BasicDumper* GetObject() {
+	return (IFSelect_BasicDumper*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_BasicDumper {
+	~Handle_IFSelect_BasicDumper() {
+	printf("Call custom destructor for instance of Handle_IFSelect_BasicDumper\n");
+	}
+};
+
+%nodefaultctor Handle_IFSelect_SessionPilot;
+class Handle_IFSelect_SessionPilot : public Handle_IFSelect_Activator {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot(const Handle_IFSelect_SessionPilot &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot(const IFSelect_SessionPilot *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SessionPilot {
+	IFSelect_SessionPilot* GetObject() {
+	return (IFSelect_SessionPilot*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SessionPilot {
+	~Handle_IFSelect_SessionPilot() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SessionPilot\n");
+	}
+};
 
 %nodefaultctor Handle_IFSelect_ModelCopier;
 class Handle_IFSelect_ModelCopier : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_ModelCopier();
 		%feature("autodoc", "1");
 		Handle_IFSelect_ModelCopier();
 		%feature("autodoc", "1");
@@ -1673,12 +1873,15 @@ class Handle_IFSelect_ModelCopier : public Handle_MMgt_TShared {
 	return (IFSelect_ModelCopier*)$self->Access();
 	}
 };
+%extend Handle_IFSelect_ModelCopier {
+	~Handle_IFSelect_ModelCopier() {
+	printf("Call custom destructor for instance of Handle_IFSelect_ModelCopier\n");
+	}
+};
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfTSeqOfSelection;
 class Handle_IFSelect_SequenceNodeOfTSeqOfSelection : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SequenceNodeOfTSeqOfSelection();
 		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfTSeqOfSelection();
 		%feature("autodoc", "1");
@@ -1694,12 +1897,15 @@ class Handle_IFSelect_SequenceNodeOfTSeqOfSelection : public Handle_TCollection_
 	return (IFSelect_SequenceNodeOfTSeqOfSelection*)$self->Access();
 	}
 };
+%extend Handle_IFSelect_SequenceNodeOfTSeqOfSelection {
+	~Handle_IFSelect_SequenceNodeOfTSeqOfSelection() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfTSeqOfSelection\n");
+	}
+};
 
 %nodefaultctor Handle_IFSelect_SelectEntityNumber;
 class Handle_IFSelect_SelectEntityNumber : public Handle_IFSelect_SelectBase {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_SelectEntityNumber();
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectEntityNumber();
 		%feature("autodoc", "1");
@@ -1715,12 +1921,15 @@ class Handle_IFSelect_SelectEntityNumber : public Handle_IFSelect_SelectBase {
 	return (IFSelect_SelectEntityNumber*)$self->Access();
 	}
 };
+%extend Handle_IFSelect_SelectEntityNumber {
+	~Handle_IFSelect_SelectEntityNumber() {
+	printf("Call custom destructor for instance of Handle_IFSelect_SelectEntityNumber\n");
+	}
+};
 
 %nodefaultctor Handle_IFSelect_Act;
 class Handle_IFSelect_Act : public Handle_IFSelect_Activator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IFSelect_Act();
 		%feature("autodoc", "1");
 		Handle_IFSelect_Act();
 		%feature("autodoc", "1");
@@ -1736,23 +1945,36 @@ class Handle_IFSelect_Act : public Handle_IFSelect_Activator {
 	return (IFSelect_Act*)$self->Access();
 	}
 };
+%extend Handle_IFSelect_Act {
+	~Handle_IFSelect_Act() {
+	printf("Call custom destructor for instance of Handle_IFSelect_Act\n");
+	}
+};
 
-%nodefaultctor IFSelect_SequenceNodeOfTSeqOfDispatch;
-class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
+%nodefaultctor IFSelect_SelectionIterator;
+class IFSelect_SelectionIterator {
 	public:
 		%feature("autodoc", "1");
-		IFSelect_SequenceNodeOfTSeqOfDispatch(const Handle_IFSelect_Dispatch &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		IFSelect_SelectionIterator();
 		%feature("autodoc", "1");
-		Handle_IFSelect_Dispatch & Value() const;
+		IFSelect_SelectionIterator(const Handle_IFSelect_Selection &sel);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void AddFromIter(IFSelect_SelectionIterator & iter);
 		%feature("autodoc", "1");
-		virtual		~IFSelect_SequenceNodeOfTSeqOfDispatch();
+		void AddItem(const Handle_IFSelect_Selection &sel);
+		%feature("autodoc", "1");
+		void AddList(const IFSelect_TSeqOfSelection &list);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & Value() const;
 
 };
-%extend IFSelect_SequenceNodeOfTSeqOfDispatch {
-	Handle_IFSelect_SequenceNodeOfTSeqOfDispatch GetHandle() {
-	return *(Handle_IFSelect_SequenceNodeOfTSeqOfDispatch*) &$self;
+%extend IFSelect_SelectionIterator {
+	~IFSelect_SelectionIterator() {
+	printf("Call custom destructor for instance of IFSelect_SelectionIterator\n");
 	}
 };
 
@@ -1763,8 +1985,6 @@ class IFSelect_TSeqOfDispatch : public TCollection_BaseSequence {
 		IFSelect_TSeqOfDispatch();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IFSelect_TSeqOfDispatch();
 		%feature("autodoc", "1");
 		const IFSelect_TSeqOfDispatch & Assign(const IFSelect_TSeqOfDispatch &Other);
 		%feature("autodoc", "1");
@@ -1805,63 +2025,9 @@ class IFSelect_TSeqOfDispatch : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-
-%nodefaultctor IFSelect_ModelCopier;
-class IFSelect_ModelCopier : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_ModelCopier();
-		%feature("autodoc", "1");
-		void SetShareOut(const Handle_IFSelect_ShareOut &sho);
-		%feature("autodoc", "1");
-		void ClearResult();
-		%feature("autodoc", "1");
-		Standard_Boolean AddFile(const TCollection_AsciiString &filename, const Handle_Interface_InterfaceModel &content);
-		%feature("autodoc", "1");
-		Standard_Boolean NameFile(const Standard_Integer num, const TCollection_AsciiString &filename);
-		%feature("autodoc", "1");
-		Standard_Boolean ClearFile(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean SetAppliedModifiers(const Standard_Integer num, const Handle_IFSelect_AppliedModifiers &applied);
-		%feature("autodoc", "1");
-		Standard_Boolean ClearAppliedModifiers(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Interface_CheckIterator Copy(IFSelect_ShareOutResult & eval, const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Interface_CheckIterator SendCopied(const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Interface_CheckIterator Send(IFSelect_ShareOutResult & eval, const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Interface_CheckIterator SendAll(const char * filename, const Interface_Graph &G, const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Interface_CheckIterator SendSelected(const char * filename, const Interface_Graph &G, const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol, const Interface_EntityIterator &iter);
-		%feature("autodoc", "1");
-		void CopiedRemaining(const Interface_Graph &G, const Handle_IFSelect_WorkLibrary &WL, Interface_CopyTool & TC, Handle_Interface_InterfaceModel & newmod);
-		%feature("autodoc", "1");
-		Standard_Boolean SetRemaining(Interface_Graph & CG) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbFiles() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString FileName(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel FileModel(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_AppliedModifiers AppliedModifiers(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void BeginSentFiles(const Handle_IFSelect_ShareOut &sho, const Standard_Boolean record);
-		%feature("autodoc", "1");
-		void AddSentFile(const char * filename);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString SentFiles() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_ModelCopier();
-
-};
-%extend IFSelect_ModelCopier {
-	Handle_IFSelect_ModelCopier GetHandle() {
-	return *(Handle_IFSelect_ModelCopier*) &$self;
+%extend IFSelect_TSeqOfDispatch {
+	~IFSelect_TSeqOfDispatch() {
+	printf("Call custom destructor for instance of IFSelect_TSeqOfDispatch\n");
 	}
 };
 
@@ -1887,6 +2053,11 @@ class IFSelect_Selection : public MMgt_TShared {
 	return *(Handle_IFSelect_Selection*) &$self;
 	}
 };
+%extend IFSelect_Selection {
+	~IFSelect_Selection() {
+	printf("Call custom destructor for instance of IFSelect_Selection\n");
+	}
+};
 
 %nodefaultctor IFSelect_SelectBase;
 class IFSelect_SelectBase : public IFSelect_Selection {
@@ -1896,6 +2067,11 @@ class IFSelect_SelectBase : public IFSelect_Selection {
 %extend IFSelect_SelectBase {
 	Handle_IFSelect_SelectBase GetHandle() {
 	return *(Handle_IFSelect_SelectBase*) &$self;
+	}
+};
+%extend IFSelect_SelectBase {
+	~IFSelect_SelectBase() {
+	printf("Call custom destructor for instance of IFSelect_SelectBase\n");
 	}
 };
 
@@ -1934,13 +2110,16 @@ class IFSelect_SelectPointed : public IFSelect_SelectBase {
 		void Update(const Handle_Interface_CopyControl &control);
 		%feature("autodoc", "1");
 		void Update(const Handle_IFSelect_Transformer &trf);
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectPointed();
 
 };
 %extend IFSelect_SelectPointed {
 	Handle_IFSelect_SelectPointed GetHandle() {
 	return *(Handle_IFSelect_SelectPointed*) &$self;
+	}
+};
+%extend IFSelect_SelectPointed {
+	~IFSelect_SelectPointed() {
+	printf("Call custom destructor for instance of IFSelect_SelectPointed\n");
 	}
 };
 
@@ -1974,6 +2153,11 @@ class IFSelect_Signature : public Interface_SignType {
 	return *(Handle_IFSelect_Signature*) &$self;
 	}
 };
+%extend IFSelect_Signature {
+	~IFSelect_Signature() {
+	printf("Call custom destructor for instance of IFSelect_Signature\n");
+	}
+};
 
 %nodefaultctor IFSelect_SignMultiple;
 class IFSelect_SignMultiple : public IFSelect_Signature {
@@ -1984,13 +2168,16 @@ class IFSelect_SignMultiple : public IFSelect_Signature {
 		void Add(const Handle_IFSelect_Signature &subsign, const Standard_Integer width=0, const Standard_Boolean maxi=0);
 		%feature("autodoc", "1");
 		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SignMultiple();
 
 };
 %extend IFSelect_SignMultiple {
 	Handle_IFSelect_SignMultiple GetHandle() {
 	return *(Handle_IFSelect_SignMultiple*) &$self;
+	}
+};
+%extend IFSelect_SignMultiple {
+	~IFSelect_SignMultiple() {
+	printf("Call custom destructor for instance of IFSelect_SignMultiple\n");
 	}
 };
 
@@ -2018,6 +2205,11 @@ class IFSelect_SelectDeduct : public IFSelect_Selection {
 %extend IFSelect_SelectDeduct {
 	Handle_IFSelect_SelectDeduct GetHandle() {
 	return *(Handle_IFSelect_SelectDeduct*) &$self;
+	}
+};
+%extend IFSelect_SelectDeduct {
+	~IFSelect_SelectDeduct() {
+	printf("Call custom destructor for instance of IFSelect_SelectDeduct\n");
 	}
 };
 
@@ -2063,6 +2255,11 @@ class IFSelect_SelectAnyList : public IFSelect_SelectDeduct {
 	return *(Handle_IFSelect_SelectAnyList*) &$self;
 	}
 };
+%extend IFSelect_SelectAnyList {
+	~IFSelect_SelectAnyList() {
+	printf("Call custom destructor for instance of IFSelect_SelectAnyList\n");
+	}
+};
 
 %nodefaultctor IFSelect_SelectInList;
 class IFSelect_SelectInList : public IFSelect_SelectAnyList {
@@ -2076,6 +2273,11 @@ class IFSelect_SelectInList : public IFSelect_SelectAnyList {
 %extend IFSelect_SelectInList {
 	Handle_IFSelect_SelectInList GetHandle() {
 	return *(Handle_IFSelect_SelectInList*) &$self;
+	}
+};
+%extend IFSelect_SelectInList {
+	~IFSelect_SelectInList() {
+	printf("Call custom destructor for instance of IFSelect_SelectInList\n");
 	}
 };
 
@@ -2105,14 +2307,17 @@ class IFSelect_SelectExtract : public IFSelect_SelectDeduct {
 	return *(Handle_IFSelect_SelectExtract*) &$self;
 	}
 };
+%extend IFSelect_SelectExtract {
+	~IFSelect_SelectExtract() {
+	printf("Call custom destructor for instance of IFSelect_SelectExtract\n");
+	}
+};
 
 %nodefaultctor IFSelect_SelectErrorEntities;
 class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 	public:
 		%feature("autodoc", "1");
 		IFSelect_SelectErrorEntities();
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectErrorEntities();
 
 };
 %extend IFSelect_SelectErrorEntities {
@@ -2120,12 +2325,15 @@ class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 	return *(Handle_IFSelect_SelectErrorEntities*) &$self;
 	}
 };
+%extend IFSelect_SelectErrorEntities {
+	~IFSelect_SelectErrorEntities() {
+	printf("Call custom destructor for instance of IFSelect_SelectErrorEntities\n");
+	}
+};
 
 %nodefaultctor IFSelect_ContextModif;
 class IFSelect_ContextModif {
 	public:
-		%feature("autodoc", "1");
-		~IFSelect_ContextModif();
 		%feature("autodoc", "1");
 		IFSelect_ContextModif(const Interface_Graph &graph, const Interface_CopyTool &TC, const char * filename="");
 		%feature("autodoc", "1");
@@ -2188,48 +2396,9 @@ class IFSelect_ContextModif {
 		Interface_CheckIterator CheckList() const;
 
 };
-
-%nodefaultctor IFSelect_GeneralModifier;
-class IFSelect_GeneralModifier : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean MayChangeGraph() const;
-		%feature("autodoc", "1");
-		void SetDispatch(const Handle_IFSelect_Dispatch &disp);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Dispatch Dispatch() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Applies(const Handle_IFSelect_Dispatch &disp) const;
-		%feature("autodoc", "1");
-		void SetSelection(const Handle_IFSelect_Selection &sel);
-		%feature("autodoc", "1");
-		void ResetSelection();
-		%feature("autodoc", "1");
-		Standard_Boolean HasSelection() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection Selection() const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_GeneralModifier {
-	Handle_IFSelect_GeneralModifier GetHandle() {
-	return *(Handle_IFSelect_GeneralModifier*) &$self;
-	}
-};
-
-%nodefaultctor IFSelect_Modifier;
-class IFSelect_Modifier : public IFSelect_GeneralModifier {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Perform(IFSelect_ContextModif & ctx, const Handle_Interface_InterfaceModel &target, const Handle_Interface_Protocol &protocol, Interface_CopyTool & TC) const;
-
-};
-%extend IFSelect_Modifier {
-	Handle_IFSelect_Modifier GetHandle() {
-	return *(Handle_IFSelect_Modifier*) &$self;
+%extend IFSelect_ContextModif {
+	~IFSelect_ContextModif() {
+	printf("Call custom destructor for instance of IFSelect_ContextModif\n");
 	}
 };
 
@@ -2257,6 +2426,11 @@ class IFSelect_SelectControl : public IFSelect_Selection {
 	return *(Handle_IFSelect_SelectControl*) &$self;
 	}
 };
+%extend IFSelect_SelectControl {
+	~IFSelect_SelectControl() {
+	printf("Call custom destructor for instance of IFSelect_SelectControl\n");
+	}
+};
 
 %nodefaultctor IFSelect_SelectDiff;
 class IFSelect_SelectDiff : public IFSelect_SelectControl {
@@ -2267,13 +2441,16 @@ class IFSelect_SelectDiff : public IFSelect_SelectControl {
 		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectDiff();
 
 };
 %extend IFSelect_SelectDiff {
 	Handle_IFSelect_SelectDiff GetHandle() {
 	return *(Handle_IFSelect_SelectDiff*) &$self;
+	}
+};
+%extend IFSelect_SelectDiff {
+	~IFSelect_SelectDiff() {
+	printf("Call custom destructor for instance of IFSelect_SelectDiff\n");
 	}
 };
 
@@ -2304,8 +2481,6 @@ class IFSelect_IntParam : public MMgt_TShared {
 		void SetValue(const Standard_Integer val);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_IntParam();
 
 };
 %extend IFSelect_IntParam {
@@ -2313,29 +2488,10 @@ class IFSelect_IntParam : public MMgt_TShared {
 	return *(Handle_IFSelect_IntParam*) &$self;
 	}
 };
-
-%nodefaultctor IFSelect_SelectionIterator;
-class IFSelect_SelectionIterator {
-	public:
-		%feature("autodoc", "1");
-		~IFSelect_SelectionIterator();
-		%feature("autodoc", "1");
-		IFSelect_SelectionIterator();
-		%feature("autodoc", "1");
-		IFSelect_SelectionIterator(const Handle_IFSelect_Selection &sel);
-		%feature("autodoc", "1");
-		void AddFromIter(IFSelect_SelectionIterator & iter);
-		%feature("autodoc", "1");
-		void AddItem(const Handle_IFSelect_Selection &sel);
-		%feature("autodoc", "1");
-		void AddList(const IFSelect_TSeqOfSelection &list);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & Value() const;
-
+%extend IFSelect_IntParam {
+	~IFSelect_IntParam() {
+	printf("Call custom destructor for instance of IFSelect_IntParam\n");
+	}
 };
 
 %nodefaultctor IFSelect_Transformer;
@@ -2358,6 +2514,11 @@ class IFSelect_Transformer : public MMgt_TShared {
 	return *(Handle_IFSelect_Transformer*) &$self;
 	}
 };
+%extend IFSelect_Transformer {
+	~IFSelect_Transformer() {
+	printf("Call custom destructor for instance of IFSelect_Transformer\n");
+	}
+};
 
 %nodefaultctor IFSelect_SequenceOfGeneralModifier;
 class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
@@ -2366,8 +2527,6 @@ class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
 		IFSelect_SequenceOfGeneralModifier();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IFSelect_SequenceOfGeneralModifier();
 		%feature("autodoc", "1");
 		const IFSelect_SequenceOfGeneralModifier & Assign(const IFSelect_SequenceOfGeneralModifier &Other);
 		%feature("autodoc", "1");
@@ -2408,6 +2567,11 @@ class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IFSelect_SequenceOfGeneralModifier {
+	~IFSelect_SequenceOfGeneralModifier() {
+	printf("Call custom destructor for instance of IFSelect_SequenceOfGeneralModifier\n");
+	}
+};
 
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfAppliedModifiers;
 class IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public TCollection_SeqNode {
@@ -2418,13 +2582,67 @@ class IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public TCollection_Seq
 		Handle_IFSelect_AppliedModifiers & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SequenceNodeOfSequenceOfAppliedModifiers();
 
 };
 %extend IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
 	Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers GetHandle() {
 	return *(Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers*) &$self;
+	}
+};
+%extend IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
+	~IFSelect_SequenceNodeOfSequenceOfAppliedModifiers() {
+	printf("Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfAppliedModifiers\n");
+	}
+};
+
+%nodefaultctor IFSelect_ShareOutResult;
+class IFSelect_ShareOutResult {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_ShareOutResult(const Handle_IFSelect_ShareOut &sho, const Handle_Interface_InterfaceModel &mod);
+		%feature("autodoc", "1");
+		IFSelect_ShareOutResult(const Handle_IFSelect_ShareOut &sho, const Interface_Graph &G);
+		%feature("autodoc", "1");
+		IFSelect_ShareOutResult(const Handle_IFSelect_Dispatch &disp, const Handle_Interface_InterfaceModel &mod);
+		%feature("autodoc", "1");
+		IFSelect_ShareOutResult(const Handle_IFSelect_Dispatch &disp, const Interface_Graph &G);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ShareOut ShareOut() const;
+		%feature("autodoc", "1");
+		const Interface_Graph & Graph() const;
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Evaluate();
+		%feature("autodoc", "1");
+		Handle_IFSelect_PacketList Packets(const Standard_Boolean complete=1);
+		%feature("autodoc", "1");
+		Standard_Integer NbPackets();
+		%feature("autodoc", "1");
+		void Prepare();
+		%feature("autodoc", "1");
+		Standard_Boolean More();
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		void NextDispatch();
+		%feature("autodoc", "1");
+		Handle_IFSelect_Dispatch Dispatch() const;
+		%feature("autodoc", "1");
+		Standard_Integer DispatchRank() const;
+		%feature("autodoc", "1");
+		void PacketsInDispatch(Standard_Integer & numpack, Standard_Integer & nbpacks) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator PacketRoot();
+		%feature("autodoc", "1");
+		Interface_EntityIterator PacketContent();
+		%feature("autodoc", "1");
+		TCollection_AsciiString FileName() const;
+
+};
+%extend IFSelect_ShareOutResult {
+	~IFSelect_ShareOutResult() {
+	printf("Call custom destructor for instance of IFSelect_ShareOutResult\n");
 	}
 };
 
@@ -2468,6 +2686,11 @@ class IFSelect_Dispatch : public MMgt_TShared {
 	return *(Handle_IFSelect_Dispatch*) &$self;
 	}
 };
+%extend IFSelect_Dispatch {
+	~IFSelect_Dispatch() {
+	printf("Call custom destructor for instance of IFSelect_Dispatch\n");
+	}
+};
 
 %nodefaultctor IFSelect_DispPerSignature;
 class IFSelect_DispPerSignature : public IFSelect_Dispatch {
@@ -2480,13 +2703,40 @@ class IFSelect_DispPerSignature : public IFSelect_Dispatch {
 		void SetSignCounter(const Handle_IFSelect_SignCounter &sign);
 		%feature("autodoc", "1");
 		Standard_CString SignName() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_DispPerSignature();
 
 };
 %extend IFSelect_DispPerSignature {
 	Handle_IFSelect_DispPerSignature GetHandle() {
 	return *(Handle_IFSelect_DispPerSignature*) &$self;
+	}
+};
+%extend IFSelect_DispPerSignature {
+	~IFSelect_DispPerSignature() {
+	printf("Call custom destructor for instance of IFSelect_DispPerSignature\n");
+	}
+};
+
+%nodefaultctor IFSelect_SelectModelRoots;
+class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectModelRoots();
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectModelRoots {
+	Handle_IFSelect_SelectModelRoots GetHandle() {
+	return *(Handle_IFSelect_SelectModelRoots*) &$self;
+	}
+};
+%extend IFSelect_SelectModelRoots {
+	~IFSelect_SelectModelRoots() {
+	printf("Call custom destructor for instance of IFSelect_SelectModelRoots\n");
 	}
 };
 
@@ -2531,8 +2781,6 @@ class IFSelect_TransformStandard : public IFSelect_Transformer {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_TransformStandard();
 
 };
 %extend IFSelect_TransformStandard {
@@ -2540,48 +2788,9 @@ class IFSelect_TransformStandard : public IFSelect_Transformer {
 	return *(Handle_IFSelect_TransformStandard*) &$self;
 	}
 };
-
-%nodefaultctor IFSelect_SelectExplore;
-class IFSelect_SelectExplore : public IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer Level() const;
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExploreLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectExplore {
-	Handle_IFSelect_SelectExplore GetHandle() {
-	return *(Handle_IFSelect_SelectExplore*) &$self;
-	}
-};
-
-%nodefaultctor IFSelect_SelectSignedShared;
-class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectSignedShared(const Handle_IFSelect_Signature &matcher, const char * signtext, const Standard_Boolean exact=1, const Standard_Integer level=0);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Signature Signature() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & SignatureText() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsExact() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectSignedShared();
-
-};
-%extend IFSelect_SelectSignedShared {
-	Handle_IFSelect_SelectSignedShared GetHandle() {
-	return *(Handle_IFSelect_SelectSignedShared*) &$self;
+%extend IFSelect_TransformStandard {
+	~IFSelect_TransformStandard() {
+	printf("Call custom destructor for instance of IFSelect_TransformStandard\n");
 	}
 };
 
@@ -2611,6 +2820,11 @@ class IFSelect_SelectCombine : public IFSelect_Selection {
 	return *(Handle_IFSelect_SelectCombine*) &$self;
 	}
 };
+%extend IFSelect_SelectCombine {
+	~IFSelect_SelectCombine() {
+	printf("Call custom destructor for instance of IFSelect_SelectCombine\n");
+	}
+};
 
 %nodefaultctor IFSelect_SignType;
 class IFSelect_SignType : public IFSelect_Signature {
@@ -2621,13 +2835,40 @@ class IFSelect_SignType : public IFSelect_Signature {
 		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SignType();
 
 };
 %extend IFSelect_SignType {
 	Handle_IFSelect_SignType GetHandle() {
 	return *(Handle_IFSelect_SignType*) &$self;
+	}
+};
+%extend IFSelect_SignType {
+	~IFSelect_SignType() {
+	printf("Call custom destructor for instance of IFSelect_SignType\n");
+	}
+};
+
+%nodefaultctor IFSelect_SignValidity;
+class IFSelect_SignValidity : public IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SignValidity();
+		%feature("autodoc", "1");
+		char * CVal(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SignValidity {
+	Handle_IFSelect_SignValidity GetHandle() {
+	return *(Handle_IFSelect_SignValidity*) &$self;
+	}
+};
+%extend IFSelect_SignValidity {
+	~IFSelect_SignValidity() {
+	printf("Call custom destructor for instance of IFSelect_SignValidity\n");
 	}
 };
 
@@ -2662,8 +2903,6 @@ class IFSelect_PacketList : public MMgt_TShared {
 		Interface_EntityIterator Duplicated(const Standard_Integer count, const Standard_Boolean andmore) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_PacketList();
 
 };
 %extend IFSelect_PacketList {
@@ -2671,23 +2910,9 @@ class IFSelect_PacketList : public MMgt_TShared {
 	return *(Handle_IFSelect_PacketList*) &$self;
 	}
 };
-
-%nodefaultctor IFSelect_SignCategory;
-class IFSelect_SignCategory : public IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SignCategory();
-		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SignCategory();
-
-};
-%extend IFSelect_SignCategory {
-	Handle_IFSelect_SignCategory GetHandle() {
-	return *(Handle_IFSelect_SignCategory*) &$self;
+%extend IFSelect_PacketList {
+	~IFSelect_PacketList() {
+	printf("Call custom destructor for instance of IFSelect_PacketList\n");
 	}
 };
 
@@ -2707,6 +2932,11 @@ class IFSelect_SelectAnyType : public IFSelect_SelectExtract {
 	return *(Handle_IFSelect_SelectAnyType*) &$self;
 	}
 };
+%extend IFSelect_SelectAnyType {
+	~IFSelect_SelectAnyType() {
+	printf("Call custom destructor for instance of IFSelect_SelectAnyType\n");
+	}
+};
 
 %nodefaultctor IFSelect_SelectType;
 class IFSelect_SelectType : public IFSelect_SelectAnyType {
@@ -2719,13 +2949,78 @@ class IFSelect_SelectType : public IFSelect_SelectAnyType {
 		void SetType(const Handle_Standard_Type &atype);
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectType();
 
 };
 %extend IFSelect_SelectType {
 	Handle_IFSelect_SelectType GetHandle() {
 	return *(Handle_IFSelect_SelectType*) &$self;
+	}
+};
+%extend IFSelect_SelectType {
+	~IFSelect_SelectType() {
+	printf("Call custom destructor for instance of IFSelect_SelectType\n");
+	}
+};
+
+%nodefaultctor IFSelect_ModelCopier;
+class IFSelect_ModelCopier : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_ModelCopier();
+		%feature("autodoc", "1");
+		void SetShareOut(const Handle_IFSelect_ShareOut &sho);
+		%feature("autodoc", "1");
+		void ClearResult();
+		%feature("autodoc", "1");
+		Standard_Boolean AddFile(const TCollection_AsciiString &filename, const Handle_Interface_InterfaceModel &content);
+		%feature("autodoc", "1");
+		Standard_Boolean NameFile(const Standard_Integer num, const TCollection_AsciiString &filename);
+		%feature("autodoc", "1");
+		Standard_Boolean ClearFile(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean SetAppliedModifiers(const Standard_Integer num, const Handle_IFSelect_AppliedModifiers &applied);
+		%feature("autodoc", "1");
+		Standard_Boolean ClearAppliedModifiers(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Interface_CheckIterator Copy(IFSelect_ShareOutResult & eval, const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Interface_CheckIterator SendCopied(const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Interface_CheckIterator Send(IFSelect_ShareOutResult & eval, const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Interface_CheckIterator SendAll(const char * filename, const Interface_Graph &G, const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Interface_CheckIterator SendSelected(const char * filename, const Interface_Graph &G, const Handle_IFSelect_WorkLibrary &WL, const Handle_Interface_Protocol &protocol, const Interface_EntityIterator &iter);
+		%feature("autodoc", "1");
+		void CopiedRemaining(const Interface_Graph &G, const Handle_IFSelect_WorkLibrary &WL, Interface_CopyTool & TC, Handle_Interface_InterfaceModel & newmod);
+		%feature("autodoc", "1");
+		Standard_Boolean SetRemaining(Interface_Graph & CG) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbFiles() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString FileName(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel FileModel(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_AppliedModifiers AppliedModifiers(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void BeginSentFiles(const Handle_IFSelect_ShareOut &sho, const Standard_Boolean record);
+		%feature("autodoc", "1");
+		void AddSentFile(const char * filename);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString SentFiles() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_ModelCopier {
+	Handle_IFSelect_ModelCopier GetHandle() {
+	return *(Handle_IFSelect_ModelCopier*) &$self;
+	}
+};
+%extend IFSelect_ModelCopier {
+	~IFSelect_ModelCopier() {
+	printf("Call custom destructor for instance of IFSelect_ModelCopier\n");
 	}
 };
 
@@ -2768,13 +3063,16 @@ class IFSelect_SignatureList : public MMgt_TShared {
 		virtual		void PrintSum(const Handle_Message_Messenger &S) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SignatureList();
 
 };
 %extend IFSelect_SignatureList {
 	Handle_IFSelect_SignatureList GetHandle() {
 	return *(Handle_IFSelect_SignatureList*) &$self;
+	}
+};
+%extend IFSelect_SignatureList {
+	~IFSelect_SignatureList() {
+	printf("Call custom destructor for instance of IFSelect_SignatureList\n");
 	}
 };
 
@@ -2815,13 +3113,16 @@ class IFSelect_SignCounter : public IFSelect_SignatureList {
 		virtual		Handle_TCollection_HAsciiString Sign(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		char * ComputedSign(const Handle_Standard_Transient &ent, const Interface_Graph &G);
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SignCounter();
 
 };
 %extend IFSelect_SignCounter {
 	Handle_IFSelect_SignCounter GetHandle() {
 	return *(Handle_IFSelect_SignCounter*) &$self;
+	}
+};
+%extend IFSelect_SignCounter {
+	~IFSelect_SignCounter() {
+	printf("Call custom destructor for instance of IFSelect_SignCounter\n");
 	}
 };
 
@@ -2834,8 +3135,6 @@ class IFSelect_GraphCounter : public IFSelect_SignCounter {
 		Handle_IFSelect_SelectDeduct Applied() const;
 		%feature("autodoc", "1");
 		void SetApplied(const Handle_IFSelect_SelectDeduct &sel);
-		%feature("autodoc", "1");
-		virtual		~IFSelect_GraphCounter();
 
 };
 %extend IFSelect_GraphCounter {
@@ -2843,55 +3142,10 @@ class IFSelect_GraphCounter : public IFSelect_SignCounter {
 	return *(Handle_IFSelect_GraphCounter*) &$self;
 	}
 };
-
-%nodefaultctor IFSelect_TSeqOfSelection;
-class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_TSeqOfSelection();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~IFSelect_TSeqOfSelection();
-		%feature("autodoc", "1");
-		const IFSelect_TSeqOfSelection & Assign(const IFSelect_TSeqOfSelection &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_IFSelect_Selection &T);
-		%feature("autodoc", "1");
-		void Append(IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_IFSelect_Selection &T);
-		%feature("autodoc", "1");
-		void Prepend(IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_IFSelect_Selection &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_IFSelect_Selection &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & First() const;
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IFSelect_Selection &I);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
+%extend IFSelect_GraphCounter {
+	~IFSelect_GraphCounter() {
+	printf("Call custom destructor for instance of IFSelect_GraphCounter\n");
+	}
 };
 
 %nodefaultctor IFSelect_SequenceNodeOfTSeqOfSelection;
@@ -2903,13 +3157,16 @@ class IFSelect_SequenceNodeOfTSeqOfSelection : public TCollection_SeqNode {
 		Handle_IFSelect_Selection & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SequenceNodeOfTSeqOfSelection();
 
 };
 %extend IFSelect_SequenceNodeOfTSeqOfSelection {
 	Handle_IFSelect_SequenceNodeOfTSeqOfSelection GetHandle() {
 	return *(Handle_IFSelect_SequenceNodeOfTSeqOfSelection*) &$self;
+	}
+};
+%extend IFSelect_SequenceNodeOfTSeqOfSelection {
+	~IFSelect_SequenceNodeOfTSeqOfSelection() {
+	printf("Call custom destructor for instance of IFSelect_SequenceNodeOfTSeqOfSelection\n");
 	}
 };
 
@@ -2934,13 +3191,16 @@ class IFSelect_DispPerCount : public IFSelect_Dispatch {
 		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_DispPerCount();
 
 };
 %extend IFSelect_DispPerCount {
 	Handle_IFSelect_DispPerCount GetHandle() {
 	return *(Handle_IFSelect_DispPerCount*) &$self;
+	}
+};
+%extend IFSelect_DispPerCount {
+	~IFSelect_DispPerCount() {
+	printf("Call custom destructor for instance of IFSelect_DispPerCount\n");
 	}
 };
 
@@ -2972,6 +3232,11 @@ class IFSelect_WorkLibrary : public Standard_Transient {
 %extend IFSelect_WorkLibrary {
 	Handle_IFSelect_WorkLibrary GetHandle() {
 	return *(Handle_IFSelect_WorkLibrary*) &$self;
+	}
+};
+%extend IFSelect_WorkLibrary {
+	~IFSelect_WorkLibrary() {
+	printf("Call custom destructor for instance of IFSelect_WorkLibrary\n");
 	}
 };
 
@@ -3068,13 +3333,68 @@ class IFSelect_EditForm : public MMgt_TShared {
 		Standard_Boolean Undo();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_EditForm();
 
 };
 %extend IFSelect_EditForm {
 	Handle_IFSelect_EditForm GetHandle() {
 	return *(Handle_IFSelect_EditForm*) &$self;
+	}
+};
+%extend IFSelect_EditForm {
+	~IFSelect_EditForm() {
+	printf("Call custom destructor for instance of IFSelect_EditForm\n");
+	}
+};
+
+%nodefaultctor IFSelect_SelectExplore;
+class IFSelect_SelectExplore : public IFSelect_SelectDeduct {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer Level() const;
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExploreLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectExplore {
+	Handle_IFSelect_SelectExplore GetHandle() {
+	return *(Handle_IFSelect_SelectExplore*) &$self;
+	}
+};
+%extend IFSelect_SelectExplore {
+	~IFSelect_SelectExplore() {
+	printf("Call custom destructor for instance of IFSelect_SelectExplore\n");
+	}
+};
+
+%nodefaultctor IFSelect_SelectSignedShared;
+class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectSignedShared(const Handle_IFSelect_Signature &matcher, const char * signtext, const Standard_Boolean exact=1, const Standard_Integer level=0);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature Signature() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & SignatureText() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsExact() const;
+
+};
+%extend IFSelect_SelectSignedShared {
+	Handle_IFSelect_SelectSignedShared GetHandle() {
+	return *(Handle_IFSelect_SelectSignedShared*) &$self;
+	}
+};
+%extend IFSelect_SelectSignedShared {
+	~IFSelect_SelectSignedShared() {
+	printf("Call custom destructor for instance of IFSelect_SelectSignedShared\n");
 	}
 };
 
@@ -3095,8 +3415,6 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectSignedSharing();
 
 };
 %extend IFSelect_SelectSignedSharing {
@@ -3104,12 +3422,15 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 	return *(Handle_IFSelect_SelectSignedSharing*) &$self;
 	}
 };
+%extend IFSelect_SelectSignedSharing {
+	~IFSelect_SelectSignedSharing() {
+	printf("Call custom destructor for instance of IFSelect_SelectSignedSharing\n");
+	}
+};
 
 %nodefaultctor IFSelect_Functions;
 class IFSelect_Functions {
 	public:
-		%feature("autodoc", "1");
-		~IFSelect_Functions();
 		%feature("autodoc", "1");
 		IFSelect_Functions();
 		%feature("autodoc", "1");
@@ -3124,6 +3445,11 @@ class IFSelect_Functions {
 		void Init();
 
 };
+%extend IFSelect_Functions {
+	~IFSelect_Functions() {
+	printf("Call custom destructor for instance of IFSelect_Functions\n");
+	}
+};
 
 %nodefaultctor IFSelect_SelectShared;
 class IFSelect_SelectShared : public IFSelect_SelectDeduct {
@@ -3136,13 +3462,16 @@ class IFSelect_SelectShared : public IFSelect_SelectDeduct {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectShared();
 
 };
 %extend IFSelect_SelectShared {
 	Handle_IFSelect_SelectShared GetHandle() {
 	return *(Handle_IFSelect_SelectShared*) &$self;
+	}
+};
+%extend IFSelect_SelectShared {
+	~IFSelect_SelectShared() {
+	printf("Call custom destructor for instance of IFSelect_SelectShared\n");
 	}
 };
 
@@ -3163,8 +3492,6 @@ class IFSelect_SelectSent : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectSent();
 
 };
 %extend IFSelect_SelectSent {
@@ -3172,25 +3499,9 @@ class IFSelect_SelectSent : public IFSelect_SelectExtract {
 	return *(Handle_IFSelect_SelectSent*) &$self;
 	}
 };
-
-%nodefaultctor IFSelect_SelectModelRoots;
-class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectModelRoots();
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectModelRoots();
-
-};
-%extend IFSelect_SelectModelRoots {
-	Handle_IFSelect_SelectModelRoots GetHandle() {
-	return *(Handle_IFSelect_SelectModelRoots*) &$self;
+%extend IFSelect_SelectSent {
+	~IFSelect_SelectSent() {
+	printf("Call custom destructor for instance of IFSelect_SelectSent\n");
 	}
 };
 
@@ -3236,6 +3547,11 @@ class IFSelect_Activator : public MMgt_TShared {
 	return *(Handle_IFSelect_Activator*) &$self;
 	}
 };
+%extend IFSelect_Activator {
+	~IFSelect_Activator() {
+	printf("Call custom destructor for instance of IFSelect_Activator\n");
+	}
+};
 
 %nodefaultctor IFSelect_Act;
 class IFSelect_Act : public IFSelect_Activator {
@@ -3244,13 +3560,16 @@ class IFSelect_Act : public IFSelect_Activator {
 		IFSelect_Act(const char * name, const char * help, const IFSelect_ActFunc func);
 		%feature("autodoc", "1");
 		void SetGroup(const char * group, const char * file="");
-		%feature("autodoc", "1");
-		virtual		~IFSelect_Act();
 
 };
 %extend IFSelect_Act {
 	Handle_IFSelect_Act GetHandle() {
 	return *(Handle_IFSelect_Act*) &$self;
+	}
+};
+%extend IFSelect_Act {
+	~IFSelect_Act() {
+	printf("Call custom destructor for instance of IFSelect_Act\n");
 	}
 };
 
@@ -3263,13 +3582,16 @@ class IFSelect_SignAncestor : public IFSelect_SignType {
 		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SignAncestor();
 
 };
 %extend IFSelect_SignAncestor {
 	Handle_IFSelect_SignAncestor GetHandle() {
 	return *(Handle_IFSelect_SignAncestor*) &$self;
+	}
+};
+%extend IFSelect_SignAncestor {
+	~IFSelect_SignAncestor() {
+	printf("Call custom destructor for instance of IFSelect_SignAncestor\n");
 	}
 };
 
@@ -3294,13 +3616,16 @@ class IFSelect_DispPerFiles : public IFSelect_Dispatch {
 		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_DispPerFiles();
 
 };
 %extend IFSelect_DispPerFiles {
 	Handle_IFSelect_DispPerFiles GetHandle() {
 	return *(Handle_IFSelect_DispPerFiles*) &$self;
+	}
+};
+%extend IFSelect_DispPerFiles {
+	~IFSelect_DispPerFiles() {
+	printf("Call custom destructor for instance of IFSelect_DispPerFiles\n");
 	}
 };
 
@@ -3363,13 +3688,16 @@ class IFSelect_SessionPilot : public IFSelect_Activator {
 		virtual		char * Help(const Standard_Integer number) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SessionPilot();
 
 };
 %extend IFSelect_SessionPilot {
 	Handle_IFSelect_SessionPilot GetHandle() {
 	return *(Handle_IFSelect_SessionPilot*) &$self;
+	}
+};
+%extend IFSelect_SessionPilot {
+	~IFSelect_SessionPilot() {
+	printf("Call custom destructor for instance of IFSelect_SessionPilot\n");
 	}
 };
 
@@ -3393,19 +3721,80 @@ class IFSelect_SessionDumper : public MMgt_TShared {
 	return *(Handle_IFSelect_SessionDumper*) &$self;
 	}
 };
+%extend IFSelect_SessionDumper {
+	~IFSelect_SessionDumper() {
+	printf("Call custom destructor for instance of IFSelect_SessionDumper\n");
+	}
+};
 
 %nodefaultctor IFSelect_BasicDumper;
 class IFSelect_BasicDumper : public IFSelect_SessionDumper {
 	public:
 		%feature("autodoc", "1");
 		IFSelect_BasicDumper();
-		%feature("autodoc", "1");
-		virtual		~IFSelect_BasicDumper();
 
 };
 %extend IFSelect_BasicDumper {
 	Handle_IFSelect_BasicDumper GetHandle() {
 	return *(Handle_IFSelect_BasicDumper*) &$self;
+	}
+};
+%extend IFSelect_BasicDumper {
+	~IFSelect_BasicDumper() {
+	printf("Call custom destructor for instance of IFSelect_BasicDumper\n");
+	}
+};
+
+%nodefaultctor IFSelect_TSeqOfSelection;
+class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_TSeqOfSelection();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const IFSelect_TSeqOfSelection & Assign(const IFSelect_TSeqOfSelection &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_IFSelect_Selection &T);
+		%feature("autodoc", "1");
+		void Append(IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_IFSelect_Selection &T);
+		%feature("autodoc", "1");
+		void Prepend(IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_IFSelect_Selection &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_IFSelect_Selection &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & First() const;
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IFSelect_Selection &I);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend IFSelect_TSeqOfSelection {
+	~IFSelect_TSeqOfSelection() {
+	printf("Call custom destructor for instance of IFSelect_TSeqOfSelection\n");
 	}
 };
 
@@ -3422,8 +3811,6 @@ class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectModelEntities();
 
 };
 %extend IFSelect_SelectModelEntities {
@@ -3431,53 +3818,10 @@ class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
 	return *(Handle_IFSelect_SelectModelEntities*) &$self;
 	}
 };
-
-%nodefaultctor IFSelect_ShareOutResult;
-class IFSelect_ShareOutResult {
-	public:
-		%feature("autodoc", "1");
-		~IFSelect_ShareOutResult();
-		%feature("autodoc", "1");
-		IFSelect_ShareOutResult(const Handle_IFSelect_ShareOut &sho, const Handle_Interface_InterfaceModel &mod);
-		%feature("autodoc", "1");
-		IFSelect_ShareOutResult(const Handle_IFSelect_ShareOut &sho, const Interface_Graph &G);
-		%feature("autodoc", "1");
-		IFSelect_ShareOutResult(const Handle_IFSelect_Dispatch &disp, const Handle_Interface_InterfaceModel &mod);
-		%feature("autodoc", "1");
-		IFSelect_ShareOutResult(const Handle_IFSelect_Dispatch &disp, const Interface_Graph &G);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ShareOut ShareOut() const;
-		%feature("autodoc", "1");
-		const Interface_Graph & Graph() const;
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void Evaluate();
-		%feature("autodoc", "1");
-		Handle_IFSelect_PacketList Packets(const Standard_Boolean complete=1);
-		%feature("autodoc", "1");
-		Standard_Integer NbPackets();
-		%feature("autodoc", "1");
-		void Prepare();
-		%feature("autodoc", "1");
-		Standard_Boolean More();
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		void NextDispatch();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Dispatch Dispatch() const;
-		%feature("autodoc", "1");
-		Standard_Integer DispatchRank() const;
-		%feature("autodoc", "1");
-		void PacketsInDispatch(Standard_Integer & numpack, Standard_Integer & nbpacks) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator PacketRoot();
-		%feature("autodoc", "1");
-		Interface_EntityIterator PacketContent();
-		%feature("autodoc", "1");
-		TCollection_AsciiString FileName() const;
-
+%extend IFSelect_SelectModelEntities {
+	~IFSelect_SelectModelEntities() {
+	printf("Call custom destructor for instance of IFSelect_SelectModelEntities\n");
+	}
 };
 
 %nodefaultctor IFSelect_SelectRange;
@@ -3511,13 +3855,16 @@ class IFSelect_SelectRange : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectRange();
 
 };
 %extend IFSelect_SelectRange {
 	Handle_IFSelect_SelectRange GetHandle() {
 	return *(Handle_IFSelect_SelectRange*) &$self;
+	}
+};
+%extend IFSelect_SelectRange {
+	~IFSelect_SelectRange() {
+	printf("Call custom destructor for instance of IFSelect_SelectRange\n");
 	}
 };
 
@@ -3536,13 +3883,16 @@ class IFSelect_SelectFlag : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectFlag();
 
 };
 %extend IFSelect_SelectFlag {
 	Handle_IFSelect_SelectFlag GetHandle() {
 	return *(Handle_IFSelect_SelectFlag*) &$self;
+	}
+};
+%extend IFSelect_SelectFlag {
+	~IFSelect_SelectFlag() {
+	printf("Call custom destructor for instance of IFSelect_SelectFlag\n");
 	}
 };
 
@@ -3559,13 +3909,16 @@ class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectRootComps();
 
 };
 %extend IFSelect_SelectRootComps {
 	Handle_IFSelect_SelectRootComps GetHandle() {
 	return *(Handle_IFSelect_SelectRootComps*) &$self;
+	}
+};
+%extend IFSelect_SelectRootComps {
+	~IFSelect_SelectRootComps() {
+	printf("Call custom destructor for instance of IFSelect_SelectRootComps\n");
 	}
 };
 
@@ -3576,13 +3929,16 @@ class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
 		IFSelect_SelectIncorrectEntities();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectIncorrectEntities();
 
 };
 %extend IFSelect_SelectIncorrectEntities {
 	Handle_IFSelect_SelectIncorrectEntities GetHandle() {
 	return *(Handle_IFSelect_SelectIncorrectEntities*) &$self;
+	}
+};
+%extend IFSelect_SelectIncorrectEntities {
+	~IFSelect_SelectIncorrectEntities() {
+	printf("Call custom destructor for instance of IFSelect_SelectIncorrectEntities\n");
 	}
 };
 
@@ -3609,13 +3965,16 @@ class IFSelect_SelectSuite : public IFSelect_SelectDeduct {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectSuite();
 
 };
 %extend IFSelect_SelectSuite {
 	Handle_IFSelect_SelectSuite GetHandle() {
 	return *(Handle_IFSelect_SelectSuite*) &$self;
+	}
+};
+%extend IFSelect_SelectSuite {
+	~IFSelect_SelectSuite() {
+	printf("Call custom destructor for instance of IFSelect_SelectSuite\n");
 	}
 };
 
@@ -3660,13 +4019,16 @@ class IFSelect_ListEditor : public MMgt_TShared {
 		Standard_Boolean IsTouched() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_ListEditor();
 
 };
 %extend IFSelect_ListEditor {
 	Handle_IFSelect_ListEditor GetHandle() {
 	return *(Handle_IFSelect_ListEditor*) &$self;
+	}
+};
+%extend IFSelect_ListEditor {
+	~IFSelect_ListEditor() {
+	printf("Call custom destructor for instance of IFSelect_ListEditor\n");
 	}
 };
 
@@ -3691,13 +4053,16 @@ class IFSelect_AppliedModifiers : public MMgt_TShared {
 		Standard_Boolean IsForAll() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_AppliedModifiers();
 
 };
 %extend IFSelect_AppliedModifiers {
 	Handle_IFSelect_AppliedModifiers GetHandle() {
 	return *(Handle_IFSelect_AppliedModifiers*) &$self;
+	}
+};
+%extend IFSelect_AppliedModifiers {
+	~IFSelect_AppliedModifiers() {
+	printf("Call custom destructor for instance of IFSelect_AppliedModifiers\n");
 	}
 };
 
@@ -3712,13 +4077,16 @@ class IFSelect_SelectIntersection : public IFSelect_SelectCombine {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectIntersection();
 
 };
 %extend IFSelect_SelectIntersection {
 	Handle_IFSelect_SelectIntersection GetHandle() {
 	return *(Handle_IFSelect_SelectIntersection*) &$self;
+	}
+};
+%extend IFSelect_SelectIntersection {
+	~IFSelect_SelectIntersection() {
+	printf("Call custom destructor for instance of IFSelect_SelectIntersection\n");
 	}
 };
 
@@ -3789,13 +4157,16 @@ class IFSelect_ShareOut : public MMgt_TShared {
 		TCollection_AsciiString FileName(const Standard_Integer dnum, const Standard_Integer pnum, const Standard_Integer nbpack=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_ShareOut();
 
 };
 %extend IFSelect_ShareOut {
 	Handle_IFSelect_ShareOut GetHandle() {
 	return *(Handle_IFSelect_ShareOut*) &$self;
+	}
+};
+%extend IFSelect_ShareOut {
+	~IFSelect_ShareOut() {
+	printf("Call custom destructor for instance of IFSelect_ShareOut\n");
 	}
 };
 
@@ -3876,9 +4247,12 @@ class IFSelect_SessionFile {
 		Handle_Standard_Transient ItemValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IFSelect_SessionFile();
 
+};
+%extend IFSelect_SessionFile {
+	~IFSelect_SessionFile() {
+	printf("Call custom destructor for instance of IFSelect_SessionFile\n");
+	}
 };
 
 %nodefaultctor IFSelect_SelectUnion;
@@ -3892,8 +4266,6 @@ class IFSelect_SelectUnion : public IFSelect_SelectCombine {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectUnion();
 
 };
 %extend IFSelect_SelectUnion {
@@ -3901,25 +4273,89 @@ class IFSelect_SelectUnion : public IFSelect_SelectCombine {
 	return *(Handle_IFSelect_SelectUnion*) &$self;
 	}
 };
+%extend IFSelect_SelectUnion {
+	~IFSelect_SelectUnion() {
+	printf("Call custom destructor for instance of IFSelect_SelectUnion\n");
+	}
+};
 
-%nodefaultctor IFSelect_SignValidity;
-class IFSelect_SignValidity : public IFSelect_Signature {
+%nodefaultctor IFSelect_GeneralModifier;
+class IFSelect_GeneralModifier : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		IFSelect_SignValidity();
+		Standard_Boolean MayChangeGraph() const;
 		%feature("autodoc", "1");
-		char * CVal(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
+		void SetDispatch(const Handle_IFSelect_Dispatch &disp);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Dispatch Dispatch() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Applies(const Handle_IFSelect_Dispatch &disp) const;
+		%feature("autodoc", "1");
+		void SetSelection(const Handle_IFSelect_Selection &sel);
+		%feature("autodoc", "1");
+		void ResetSelection();
+		%feature("autodoc", "1");
+		Standard_Boolean HasSelection() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection Selection() const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_GeneralModifier {
+	Handle_IFSelect_GeneralModifier GetHandle() {
+	return *(Handle_IFSelect_GeneralModifier*) &$self;
+	}
+};
+%extend IFSelect_GeneralModifier {
+	~IFSelect_GeneralModifier() {
+	printf("Call custom destructor for instance of IFSelect_GeneralModifier\n");
+	}
+};
+
+%nodefaultctor IFSelect_SignCategory;
+class IFSelect_SignCategory : public IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SignCategory();
 		%feature("autodoc", "1");
 		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SignValidity();
 
 };
-%extend IFSelect_SignValidity {
-	Handle_IFSelect_SignValidity GetHandle() {
-	return *(Handle_IFSelect_SignValidity*) &$self;
+%extend IFSelect_SignCategory {
+	Handle_IFSelect_SignCategory GetHandle() {
+	return *(Handle_IFSelect_SignCategory*) &$self;
+	}
+};
+%extend IFSelect_SignCategory {
+	~IFSelect_SignCategory() {
+	printf("Call custom destructor for instance of IFSelect_SignCategory\n");
+	}
+};
+
+%nodefaultctor IFSelect_SequenceNodeOfTSeqOfDispatch;
+class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SequenceNodeOfTSeqOfDispatch(const Handle_IFSelect_Dispatch &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Dispatch & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SequenceNodeOfTSeqOfDispatch {
+	Handle_IFSelect_SequenceNodeOfTSeqOfDispatch GetHandle() {
+	return *(Handle_IFSelect_SequenceNodeOfTSeqOfDispatch*) &$self;
+	}
+};
+%extend IFSelect_SequenceNodeOfTSeqOfDispatch {
+	~IFSelect_SequenceNodeOfTSeqOfDispatch() {
+	printf("Call custom destructor for instance of IFSelect_SequenceNodeOfTSeqOfDispatch\n");
 	}
 };
 
@@ -3948,13 +4384,16 @@ class IFSelect_SelectSignature : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectSignature();
 
 };
 %extend IFSelect_SelectSignature {
 	Handle_IFSelect_SelectSignature GetHandle() {
 	return *(Handle_IFSelect_SelectSignature*) &$self;
+	}
+};
+%extend IFSelect_SelectSignature {
+	~IFSelect_SelectSignature() {
+	printf("Call custom destructor for instance of IFSelect_SelectSignature\n");
 	}
 };
 
@@ -4014,6 +4453,11 @@ class IFSelect_Editor : public MMgt_TShared {
 	return *(Handle_IFSelect_Editor*) &$self;
 	}
 };
+%extend IFSelect_Editor {
+	~IFSelect_Editor() {
+	printf("Call custom destructor for instance of IFSelect_Editor\n");
+	}
+};
 
 %nodefaultctor IFSelect_ParamEditor;
 class IFSelect_ParamEditor : public IFSelect_Editor {
@@ -4026,13 +4470,16 @@ class IFSelect_ParamEditor : public IFSelect_Editor {
 		void AddConstantText(const char * val, const char * shortname, const char * completename="");
 		%feature("autodoc", "1");
 		Handle_IFSelect_ParamEditor StaticEditor(const Handle_TColStd_HSequenceOfHAsciiString &list, const char * label="");
-		%feature("autodoc", "1");
-		virtual		~IFSelect_ParamEditor();
 
 };
 %extend IFSelect_ParamEditor {
 	Handle_IFSelect_ParamEditor GetHandle() {
 	return *(Handle_IFSelect_ParamEditor*) &$self;
+	}
+};
+%extend IFSelect_ParamEditor {
+	~IFSelect_ParamEditor() {
+	printf("Call custom destructor for instance of IFSelect_ParamEditor\n");
 	}
 };
 
@@ -4047,8 +4494,6 @@ class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectUnknownEntities();
 
 };
 %extend IFSelect_SelectUnknownEntities {
@@ -4056,23 +4501,9 @@ class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 	return *(Handle_IFSelect_SelectUnknownEntities*) &$self;
 	}
 };
-
-%nodefaultctor IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
-class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SequenceNodeOfSequenceOfInterfaceModel(const Handle_Interface_InterfaceModel &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SequenceNodeOfSequenceOfInterfaceModel();
-
-};
-%extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
-	Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel GetHandle() {
-	return *(Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel*) &$self;
+%extend IFSelect_SelectUnknownEntities {
+	~IFSelect_SelectUnknownEntities() {
+	printf("Call custom destructor for instance of IFSelect_SelectUnknownEntities\n");
 	}
 };
 
@@ -4089,8 +4520,6 @@ class IFSelect_SelectRoots : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectRoots();
 
 };
 %extend IFSelect_SelectRoots {
@@ -4098,12 +4527,15 @@ class IFSelect_SelectRoots : public IFSelect_SelectExtract {
 	return *(Handle_IFSelect_SelectRoots*) &$self;
 	}
 };
+%extend IFSelect_SelectRoots {
+	~IFSelect_SelectRoots() {
+	printf("Call custom destructor for instance of IFSelect_SelectRoots\n");
+	}
+};
 
 %nodefaultctor IFSelect_ContextWrite;
 class IFSelect_ContextWrite {
 	public:
-		%feature("autodoc", "1");
-		~IFSelect_ContextWrite();
 		%feature("autodoc", "1");
 		IFSelect_ContextWrite(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &proto, const Handle_IFSelect_AppliedModifiers &applieds, const char * filename);
 		%feature("autodoc", "1");
@@ -4152,6 +4584,11 @@ class IFSelect_ContextWrite {
 		Interface_CheckIterator CheckList() const;
 
 };
+%extend IFSelect_ContextWrite {
+	~IFSelect_ContextWrite() {
+	printf("Call custom destructor for instance of IFSelect_ContextWrite\n");
+	}
+};
 
 %nodefaultctor IFSelect_CheckCounter;
 class IFSelect_CheckCounter : public IFSelect_SignatureList {
@@ -4166,13 +4603,16 @@ class IFSelect_CheckCounter : public IFSelect_SignatureList {
 		void Analyse(const Interface_CheckIterator &list, const Handle_Interface_InterfaceModel &model, const Standard_Boolean original=0, const Standard_Boolean failsonly=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_CheckCounter();
 
 };
 %extend IFSelect_CheckCounter {
 	Handle_IFSelect_CheckCounter GetHandle() {
 	return *(Handle_IFSelect_CheckCounter*) &$self;
+	}
+};
+%extend IFSelect_CheckCounter {
+	~IFSelect_CheckCounter() {
+	printf("Call custom destructor for instance of IFSelect_CheckCounter\n");
 	}
 };
 
@@ -4185,13 +4625,58 @@ class IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public TCollection_SeqN
 		Handle_IFSelect_GeneralModifier & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SequenceNodeOfSequenceOfGeneralModifier();
 
 };
 %extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
 	Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier GetHandle() {
 	return *(Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier*) &$self;
+	}
+};
+%extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
+	~IFSelect_SequenceNodeOfSequenceOfGeneralModifier() {
+	printf("Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfGeneralModifier\n");
+	}
+};
+
+%nodefaultctor IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
+class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SequenceNodeOfSequenceOfInterfaceModel(const Handle_Interface_InterfaceModel &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
+	Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel GetHandle() {
+	return *(Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel*) &$self;
+	}
+};
+%extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
+	~IFSelect_SequenceNodeOfSequenceOfInterfaceModel() {
+	printf("Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfInterfaceModel\n");
+	}
+};
+
+%nodefaultctor IFSelect_Modifier;
+class IFSelect_Modifier : public IFSelect_GeneralModifier {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Perform(IFSelect_ContextModif & ctx, const Handle_Interface_InterfaceModel &target, const Handle_Interface_Protocol &protocol, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_Modifier {
+	Handle_IFSelect_Modifier GetHandle() {
+	return *(Handle_IFSelect_Modifier*) &$self;
+	}
+};
+%extend IFSelect_Modifier {
+	~IFSelect_Modifier() {
+	printf("Call custom destructor for instance of IFSelect_Modifier\n");
 	}
 };
 
@@ -4201,18 +4686,81 @@ class IFSelect_ModifReorder : public IFSelect_Modifier {
 		%feature("autodoc", "1");
 		IFSelect_ModifReorder(const Standard_Boolean rootlast=1);
 		%feature("autodoc", "1");
-		virtual		void Perform(IFSelect_ContextModif & ctx, const Handle_Interface_InterfaceModel &target, const Handle_Interface_Protocol &protocol, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_ModifReorder();
 
 };
 %extend IFSelect_ModifReorder {
 	Handle_IFSelect_ModifReorder GetHandle() {
 	return *(Handle_IFSelect_ModifReorder*) &$self;
+	}
+};
+%extend IFSelect_ModifReorder {
+	~IFSelect_ModifReorder() {
+	printf("Call custom destructor for instance of IFSelect_ModifReorder\n");
+	}
+};
+
+%nodefaultctor IFSelect_HSeqOfSelection;
+class IFSelect_HSeqOfSelection : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_HSeqOfSelection();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_IFSelect_HSeqOfSelection &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_IFSelect_HSeqOfSelection &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_IFSelect_HSeqOfSelection &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_IFSelect_HSeqOfSelection &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const IFSelect_TSeqOfSelection & Sequence() const;
+		%feature("autodoc", "1");
+		IFSelect_TSeqOfSelection & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_HSeqOfSelection {
+	Handle_IFSelect_HSeqOfSelection GetHandle() {
+	return *(Handle_IFSelect_HSeqOfSelection*) &$self;
+	}
+};
+%extend IFSelect_HSeqOfSelection {
+	~IFSelect_HSeqOfSelection() {
+	printf("Call custom destructor for instance of IFSelect_HSeqOfSelection\n");
 	}
 };
 
@@ -4231,13 +4779,16 @@ class IFSelect_DispPerOne : public IFSelect_Dispatch {
 		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_DispPerOne();
 
 };
 %extend IFSelect_DispPerOne {
 	Handle_IFSelect_DispPerOne GetHandle() {
 	return *(Handle_IFSelect_DispPerOne*) &$self;
+	}
+};
+%extend IFSelect_DispPerOne {
+	~IFSelect_DispPerOne() {
+	printf("Call custom destructor for instance of IFSelect_DispPerOne\n");
 	}
 };
 
@@ -4570,13 +5121,16 @@ class IFSelect_WorkSession : public MMgt_TShared {
 		void ListEntities(const Interface_EntityIterator &iter, const Standard_Integer mode) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_WorkSession();
 
 };
 %extend IFSelect_WorkSession {
 	Handle_IFSelect_WorkSession GetHandle() {
 	return *(Handle_IFSelect_WorkSession*) &$self;
+	}
+};
+%extend IFSelect_WorkSession {
+	~IFSelect_WorkSession() {
+	printf("Call custom destructor for instance of IFSelect_WorkSession\n");
 	}
 };
 
@@ -4595,13 +5149,16 @@ class IFSelect_DispGlobal : public IFSelect_Dispatch {
 		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_DispGlobal();
 
 };
 %extend IFSelect_DispGlobal {
 	Handle_IFSelect_DispGlobal GetHandle() {
 	return *(Handle_IFSelect_DispGlobal*) &$self;
+	}
+};
+%extend IFSelect_DispGlobal {
+	~IFSelect_DispGlobal() {
+	printf("Call custom destructor for instance of IFSelect_DispGlobal\n");
 	}
 };
 
@@ -4620,13 +5177,16 @@ class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectEntityNumber();
 
 };
 %extend IFSelect_SelectEntityNumber {
 	Handle_IFSelect_SelectEntityNumber GetHandle() {
 	return *(Handle_IFSelect_SelectEntityNumber*) &$self;
+	}
+};
+%extend IFSelect_SelectEntityNumber {
+	~IFSelect_SelectEntityNumber() {
+	printf("Call custom destructor for instance of IFSelect_SelectEntityNumber\n");
 	}
 };
 
@@ -4637,8 +5197,6 @@ class IFSelect_SequenceOfAppliedModifiers : public TCollection_BaseSequence {
 		IFSelect_SequenceOfAppliedModifiers();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IFSelect_SequenceOfAppliedModifiers();
 		%feature("autodoc", "1");
 		const IFSelect_SequenceOfAppliedModifiers & Assign(const IFSelect_SequenceOfAppliedModifiers &Other);
 		%feature("autodoc", "1");
@@ -4679,6 +5237,11 @@ class IFSelect_SequenceOfAppliedModifiers : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IFSelect_SequenceOfAppliedModifiers {
+	~IFSelect_SequenceOfAppliedModifiers() {
+	printf("Call custom destructor for instance of IFSelect_SequenceOfAppliedModifiers\n");
+	}
+};
 
 %nodefaultctor IFSelect_SequenceOfInterfaceModel;
 class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
@@ -4687,8 +5250,6 @@ class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
 		IFSelect_SequenceOfInterfaceModel();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IFSelect_SequenceOfInterfaceModel();
 		%feature("autodoc", "1");
 		const IFSelect_SequenceOfInterfaceModel & Assign(const IFSelect_SequenceOfInterfaceModel &Other);
 		%feature("autodoc", "1");
@@ -4729,6 +5290,11 @@ class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IFSelect_SequenceOfInterfaceModel {
+	~IFSelect_SequenceOfInterfaceModel() {
+	printf("Call custom destructor for instance of IFSelect_SequenceOfInterfaceModel\n");
+	}
+};
 
 %nodefaultctor IFSelect_SelectSharing;
 class IFSelect_SelectSharing : public IFSelect_SelectDeduct {
@@ -4741,13 +5307,16 @@ class IFSelect_SelectSharing : public IFSelect_SelectDeduct {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_SelectSharing();
 
 };
 %extend IFSelect_SelectSharing {
 	Handle_IFSelect_SelectSharing GetHandle() {
 	return *(Handle_IFSelect_SelectSharing*) &$self;
+	}
+};
+%extend IFSelect_SelectSharing {
+	~IFSelect_SelectSharing() {
+	printf("Call custom destructor for instance of IFSelect_SelectSharing\n");
 	}
 };
 
@@ -4764,8 +5333,6 @@ class IFSelect_ModifEditForm : public IFSelect_Modifier {
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_ModifEditForm();
 
 };
 %extend IFSelect_ModifEditForm {
@@ -4773,64 +5340,8 @@ class IFSelect_ModifEditForm : public IFSelect_Modifier {
 	return *(Handle_IFSelect_ModifEditForm*) &$self;
 	}
 };
-
-%nodefaultctor IFSelect_HSeqOfSelection;
-class IFSelect_HSeqOfSelection : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_HSeqOfSelection();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_IFSelect_HSeqOfSelection &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_IFSelect_HSeqOfSelection &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_IFSelect_HSeqOfSelection &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_IFSelect_HSeqOfSelection &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_IFSelect_HSeqOfSelection Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const IFSelect_TSeqOfSelection & Sequence() const;
-		%feature("autodoc", "1");
-		IFSelect_TSeqOfSelection & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_IFSelect_HSeqOfSelection ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IFSelect_HSeqOfSelection();
-
-};
-%extend IFSelect_HSeqOfSelection {
-	Handle_IFSelect_HSeqOfSelection GetHandle() {
-	return *(Handle_IFSelect_HSeqOfSelection*) &$self;
+%extend IFSelect_ModifEditForm {
+	~IFSelect_ModifEditForm() {
+	printf("Call custom destructor for instance of IFSelect_ModifEditForm\n");
 	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module FEmTool
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_FEmTool_ElementaryCriterion : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_FEmTool_ElementaryCriterion();
-		%feature("autodoc", "1");
 		Handle_FEmTool_ElementaryCriterion();
 		%feature("autodoc", "1");
 		Handle_FEmTool_ElementaryCriterion(const Handle_FEmTool_ElementaryCriterion &aHandle);
@@ -118,12 +102,15 @@ class Handle_FEmTool_ElementaryCriterion : public Handle_MMgt_TShared {
 	return (FEmTool_ElementaryCriterion*)$self->Access();
 	}
 };
+%extend Handle_FEmTool_ElementaryCriterion {
+	~Handle_FEmTool_ElementaryCriterion() {
+	printf("Call custom destructor for instance of Handle_FEmTool_ElementaryCriterion\n");
+	}
+};
 
 %nodefaultctor Handle_FEmTool_LinearFlexion;
 class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
 	public:
-		%feature("autodoc", "1");
-		~Handle_FEmTool_LinearFlexion();
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearFlexion();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
 	return (FEmTool_LinearFlexion*)$self->Access();
 	}
 };
+%extend Handle_FEmTool_LinearFlexion {
+	~Handle_FEmTool_LinearFlexion() {
+	printf("Call custom destructor for instance of Handle_FEmTool_LinearFlexion\n");
+	}
+};
 
 %nodefaultctor Handle_FEmTool_SequenceNodeOfSeqOfLinConstr;
 class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_FEmTool_SequenceNodeOfSeqOfLinConstr();
 		%feature("autodoc", "1");
 		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr();
 		%feature("autodoc", "1");
@@ -160,33 +150,15 @@ class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_Se
 	return (FEmTool_SequenceNodeOfSeqOfLinConstr*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_FEmTool_SparseMatrix;
-class Handle_FEmTool_SparseMatrix : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_FEmTool_SparseMatrix();
-		%feature("autodoc", "1");
-		Handle_FEmTool_SparseMatrix();
-		%feature("autodoc", "1");
-		Handle_FEmTool_SparseMatrix(const Handle_FEmTool_SparseMatrix &aHandle);
-		%feature("autodoc", "1");
-		Handle_FEmTool_SparseMatrix(const FEmTool_SparseMatrix *anItem);
-		%feature("autodoc", "1");
-		Handle_FEmTool_SparseMatrix const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_FEmTool_SparseMatrix {
-	FEmTool_SparseMatrix* GetObject() {
-	return (FEmTool_SparseMatrix*)$self->Access();
+%extend Handle_FEmTool_SequenceNodeOfSeqOfLinConstr {
+	~Handle_FEmTool_SequenceNodeOfSeqOfLinConstr() {
+	printf("Call custom destructor for instance of Handle_FEmTool_SequenceNodeOfSeqOfLinConstr\n");
 	}
 };
 
 %nodefaultctor Handle_FEmTool_LinearTension;
 class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 	public:
-		%feature("autodoc", "1");
-		~Handle_FEmTool_LinearTension();
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearTension();
 		%feature("autodoc", "1");
@@ -202,12 +174,15 @@ class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 	return (FEmTool_LinearTension*)$self->Access();
 	}
 };
+%extend Handle_FEmTool_LinearTension {
+	~Handle_FEmTool_LinearTension() {
+	printf("Call custom destructor for instance of Handle_FEmTool_LinearTension\n");
+	}
+};
 
 %nodefaultctor Handle_FEmTool_ListNodeOfListOfVectors;
 class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_FEmTool_ListNodeOfListOfVectors();
 		%feature("autodoc", "1");
 		Handle_FEmTool_ListNodeOfListOfVectors();
 		%feature("autodoc", "1");
@@ -223,12 +198,15 @@ class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode
 	return (FEmTool_ListNodeOfListOfVectors*)$self->Access();
 	}
 };
+%extend Handle_FEmTool_ListNodeOfListOfVectors {
+	~Handle_FEmTool_ListNodeOfListOfVectors() {
+	printf("Call custom destructor for instance of Handle_FEmTool_ListNodeOfListOfVectors\n");
+	}
+};
 
 %nodefaultctor Handle_FEmTool_LinearJerk;
 class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 	public:
-		%feature("autodoc", "1");
-		~Handle_FEmTool_LinearJerk();
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearJerk();
 		%feature("autodoc", "1");
@@ -244,12 +222,39 @@ class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 	return (FEmTool_LinearJerk*)$self->Access();
 	}
 };
+%extend Handle_FEmTool_LinearJerk {
+	~Handle_FEmTool_LinearJerk() {
+	printf("Call custom destructor for instance of Handle_FEmTool_LinearJerk\n");
+	}
+};
+
+%nodefaultctor Handle_FEmTool_SparseMatrix;
+class Handle_FEmTool_SparseMatrix : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_FEmTool_SparseMatrix();
+		%feature("autodoc", "1");
+		Handle_FEmTool_SparseMatrix(const Handle_FEmTool_SparseMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SparseMatrix(const FEmTool_SparseMatrix *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SparseMatrix const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_FEmTool_SparseMatrix {
+	FEmTool_SparseMatrix* GetObject() {
+	return (FEmTool_SparseMatrix*)$self->Access();
+	}
+};
+%extend Handle_FEmTool_SparseMatrix {
+	~Handle_FEmTool_SparseMatrix() {
+	printf("Call custom destructor for instance of Handle_FEmTool_SparseMatrix\n");
+	}
+};
 
 %nodefaultctor Handle_FEmTool_ProfileMatrix;
 class Handle_FEmTool_ProfileMatrix : public Handle_FEmTool_SparseMatrix {
 	public:
-		%feature("autodoc", "1");
-		~Handle_FEmTool_ProfileMatrix();
 		%feature("autodoc", "1");
 		Handle_FEmTool_ProfileMatrix();
 		%feature("autodoc", "1");
@@ -265,12 +270,15 @@ class Handle_FEmTool_ProfileMatrix : public Handle_FEmTool_SparseMatrix {
 	return (FEmTool_ProfileMatrix*)$self->Access();
 	}
 };
+%extend Handle_FEmTool_ProfileMatrix {
+	~Handle_FEmTool_ProfileMatrix() {
+	printf("Call custom destructor for instance of Handle_FEmTool_ProfileMatrix\n");
+	}
+};
 
 %nodefaultctor Handle_FEmTool_Curve;
 class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_FEmTool_Curve();
 		%feature("autodoc", "1");
 		Handle_FEmTool_Curve();
 		%feature("autodoc", "1");
@@ -286,12 +294,15 @@ class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
 	return (FEmTool_Curve*)$self->Access();
 	}
 };
+%extend Handle_FEmTool_Curve {
+	~Handle_FEmTool_Curve() {
+	printf("Call custom destructor for instance of Handle_FEmTool_Curve\n");
+	}
+};
 
 %nodefaultctor Handle_FEmTool_HAssemblyTable;
 class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_FEmTool_HAssemblyTable();
 		%feature("autodoc", "1");
 		Handle_FEmTool_HAssemblyTable();
 		%feature("autodoc", "1");
@@ -305,6 +316,11 @@ class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 %extend Handle_FEmTool_HAssemblyTable {
 	FEmTool_HAssemblyTable* GetObject() {
 	return (FEmTool_HAssemblyTable*)$self->Access();
+	}
+};
+%extend Handle_FEmTool_HAssemblyTable {
+	~Handle_FEmTool_HAssemblyTable() {
+	printf("Call custom destructor for instance of Handle_FEmTool_HAssemblyTable\n");
 	}
 };
 
@@ -343,13 +359,16 @@ class FEmTool_Curve : public MMgt_TShared {
 		void ReduceDegree(const Standard_Integer IndexOfElement, const Standard_Real Tol, Standard_Integer & NewDegree, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~FEmTool_Curve();
 
 };
 %extend FEmTool_Curve {
 	Handle_FEmTool_Curve GetHandle() {
 	return *(Handle_FEmTool_Curve*) &$self;
+	}
+};
+%extend FEmTool_Curve {
+	~FEmTool_Curve() {
+	printf("Call custom destructor for instance of FEmTool_Curve\n");
 	}
 };
 
@@ -362,13 +381,16 @@ class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 		Handle_TColStd_HArray1OfReal & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~FEmTool_ListNodeOfListOfVectors();
 
 };
 %extend FEmTool_ListNodeOfListOfVectors {
 	Handle_FEmTool_ListNodeOfListOfVectors GetHandle() {
 	return *(Handle_FEmTool_ListNodeOfListOfVectors*) &$self;
+	}
+};
+%extend FEmTool_ListNodeOfListOfVectors {
+	~FEmTool_ListNodeOfListOfVectors() {
+	printf("Call custom destructor for instance of FEmTool_ListNodeOfListOfVectors\n");
 	}
 };
 
@@ -381,13 +403,16 @@ class FEmTool_SequenceNodeOfSeqOfLinConstr : public TCollection_SeqNode {
 		FEmTool_ListOfVectors & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~FEmTool_SequenceNodeOfSeqOfLinConstr();
 
 };
 %extend FEmTool_SequenceNodeOfSeqOfLinConstr {
 	Handle_FEmTool_SequenceNodeOfSeqOfLinConstr GetHandle() {
 	return *(Handle_FEmTool_SequenceNodeOfSeqOfLinConstr*) &$self;
+	}
+};
+%extend FEmTool_SequenceNodeOfSeqOfLinConstr {
+	~FEmTool_SequenceNodeOfSeqOfLinConstr() {
+	printf("Call custom destructor for instance of FEmTool_SequenceNodeOfSeqOfLinConstr\n");
 	}
 };
 
@@ -415,6 +440,11 @@ class FEmTool_ElementaryCriterion : public MMgt_TShared {
 	return *(Handle_FEmTool_ElementaryCriterion*) &$self;
 	}
 };
+%extend FEmTool_ElementaryCriterion {
+	~FEmTool_ElementaryCriterion() {
+	printf("Call custom destructor for instance of FEmTool_ElementaryCriterion\n");
+	}
+};
 
 %nodefaultctor FEmTool_LinearJerk;
 class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
@@ -425,13 +455,16 @@ class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
 		virtual		void Hessian(const Standard_Integer Dimension1, const Standard_Integer Dimension2, math_Matrix & H);
 		%feature("autodoc", "1");
 		virtual		void Gradient(const Standard_Integer Dimension, math_Vector & G);
-		%feature("autodoc", "1");
-		virtual		~FEmTool_LinearJerk();
 
 };
 %extend FEmTool_LinearJerk {
 	Handle_FEmTool_LinearJerk GetHandle() {
 	return *(Handle_FEmTool_LinearJerk*) &$self;
+	}
+};
+%extend FEmTool_LinearJerk {
+	~FEmTool_LinearJerk() {
+	printf("Call custom destructor for instance of FEmTool_LinearJerk\n");
 	}
 };
 
@@ -482,13 +515,16 @@ class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 		virtual		void Gradient(const Standard_Integer Dimension, math_Vector & G);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~FEmTool_LinearTension();
 
 };
 %extend FEmTool_LinearTension {
 	Handle_FEmTool_LinearTension GetHandle() {
 	return *(Handle_FEmTool_LinearTension*) &$self;
+	}
+};
+%extend FEmTool_LinearTension {
+	~FEmTool_LinearTension() {
+	printf("Call custom destructor for instance of FEmTool_LinearTension\n");
 	}
 };
 
@@ -522,6 +558,11 @@ class FEmTool_SparseMatrix : public MMgt_TShared {
 	return *(Handle_FEmTool_SparseMatrix*) &$self;
 	}
 };
+%extend FEmTool_SparseMatrix {
+	~FEmTool_SparseMatrix() {
+	printf("Call custom destructor for instance of FEmTool_SparseMatrix\n");
+	}
+};
 
 %nodefaultctor FEmTool_ProfileMatrix;
 class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
@@ -534,13 +575,16 @@ class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 		void OutM() const;
 		%feature("autodoc", "1");
 		void OutS() const;
-		%feature("autodoc", "1");
-		virtual		~FEmTool_ProfileMatrix();
 
 };
 %extend FEmTool_ProfileMatrix {
 	Handle_FEmTool_ProfileMatrix GetHandle() {
 	return *(Handle_FEmTool_ProfileMatrix*) &$self;
+	}
+};
+%extend FEmTool_ProfileMatrix {
+	~FEmTool_ProfileMatrix() {
+	printf("Call custom destructor for instance of FEmTool_ProfileMatrix\n");
 	}
 };
 
@@ -555,8 +599,6 @@ class FEmTool_ListOfVectors {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~FEmTool_ListOfVectors();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -588,6 +630,11 @@ class FEmTool_ListOfVectors {
 		%feature("autodoc", "1");
 		void InsertAfter(FEmTool_ListOfVectors & Other, FEmTool_ListIteratorOfListOfVectors & It);
 
+};
+%extend FEmTool_ListOfVectors {
+	~FEmTool_ListOfVectors() {
+	printf("Call custom destructor for instance of FEmTool_ListOfVectors\n");
+	}
 };
 
 %nodefaultctor FEmTool_HAssemblyTable;
@@ -623,13 +670,16 @@ class FEmTool_HAssemblyTable : public MMgt_TShared {
 		FEmTool_AssemblyTable & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~FEmTool_HAssemblyTable();
 
 };
 %extend FEmTool_HAssemblyTable {
 	Handle_FEmTool_HAssemblyTable GetHandle() {
 	return *(Handle_FEmTool_HAssemblyTable*) &$self;
+	}
+};
+%extend FEmTool_HAssemblyTable {
+	~FEmTool_HAssemblyTable() {
+	printf("Call custom destructor for instance of FEmTool_HAssemblyTable\n");
 	}
 };
 
@@ -644,8 +694,6 @@ class FEmTool_AssemblyTable {
 		void Init(const Handle_TColStd_HArray1OfInteger &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~FEmTool_AssemblyTable();
 		%feature("autodoc", "1");
 		const FEmTool_AssemblyTable & Assign(const FEmTool_AssemblyTable &Other);
 		%feature("autodoc", "1");
@@ -671,6 +719,11 @@ class FEmTool_AssemblyTable {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend FEmTool_AssemblyTable {
+	~FEmTool_AssemblyTable() {
+	printf("Call custom destructor for instance of FEmTool_AssemblyTable\n");
+	}
 };
 
 %nodefaultctor FEmTool_ElementsOfRefMatrix;
@@ -704,13 +757,16 @@ class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
 		virtual		void Gradient(const Standard_Integer Dimension, math_Vector & G);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~FEmTool_LinearFlexion();
 
 };
 %extend FEmTool_LinearFlexion {
 	Handle_FEmTool_LinearFlexion GetHandle() {
 	return *(Handle_FEmTool_LinearFlexion*) &$self;
+	}
+};
+%extend FEmTool_LinearFlexion {
+	~FEmTool_LinearFlexion() {
+	printf("Call custom destructor for instance of FEmTool_LinearFlexion\n");
 	}
 };
 
@@ -768,8 +824,6 @@ class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
 class FEmTool_ListIteratorOfListOfVectors {
 	public:
 		%feature("autodoc", "1");
-		~FEmTool_ListIteratorOfListOfVectors();
-		%feature("autodoc", "1");
 		FEmTool_ListIteratorOfListOfVectors();
 		%feature("autodoc", "1");
 		FEmTool_ListIteratorOfListOfVectors(const FEmTool_ListOfVectors &L);
@@ -782,4 +836,9 @@ class FEmTool_ListIteratorOfListOfVectors {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal & Value() const;
 
+};
+%extend FEmTool_ListIteratorOfListOfVectors {
+	~FEmTool_ListIteratorOfListOfVectors() {
+	printf("Call custom destructor for instance of FEmTool_ListIteratorOfListOfVectors\n");
+	}
 };

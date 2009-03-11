@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepCheck
 
@@ -135,32 +121,9 @@ enum BRepCheck_Status {
 
 
 
-%nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult;
-class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
-	BRepCheck_DataMapNodeOfDataMapOfShapeResult* GetObject() {
-	return (BRepCheck_DataMapNodeOfDataMapOfShapeResult*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_BRepCheck_Result;
 class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepCheck_Result();
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Result();
 		%feature("autodoc", "1");
@@ -176,75 +139,15 @@ class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 	return (BRepCheck_Result*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_BRepCheck_Shell;
-class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
-	public:
-		%feature("autodoc", "1");
-		~Handle_BRepCheck_Shell();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Shell();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Shell(const Handle_BRepCheck_Shell &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Shell(const BRepCheck_Shell *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Shell const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepCheck_Shell {
-	BRepCheck_Shell* GetObject() {
-	return (BRepCheck_Shell*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
-class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
-	BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus* GetObject() {
-	return (BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_BRepCheck_Edge;
-class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
-	public:
-		%feature("autodoc", "1");
-		~Handle_BRepCheck_Edge();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Edge();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Edge(const Handle_BRepCheck_Edge &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Edge(const BRepCheck_Edge *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Edge const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepCheck_Edge {
-	BRepCheck_Edge* GetObject() {
-	return (BRepCheck_Edge*)$self->Access();
+%extend Handle_BRepCheck_Result {
+	~Handle_BRepCheck_Result() {
+	printf("Call custom destructor for instance of Handle_BRepCheck_Result\n");
 	}
 };
 
 %nodefaultctor Handle_BRepCheck_Vertex;
 class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepCheck_Vertex();
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Vertex();
 		%feature("autodoc", "1");
@@ -260,12 +163,111 @@ class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 	return (BRepCheck_Vertex*)$self->Access();
 	}
 };
+%extend Handle_BRepCheck_Vertex {
+	~Handle_BRepCheck_Vertex() {
+	printf("Call custom destructor for instance of Handle_BRepCheck_Vertex\n");
+	}
+};
+
+%nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult;
+class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult();
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
+	BRepCheck_DataMapNodeOfDataMapOfShapeResult* GetObject() {
+	return (BRepCheck_DataMapNodeOfDataMapOfShapeResult*)$self->Access();
+	}
+};
+%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
+	~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult() {
+	printf("Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult\n");
+	}
+};
+
+%nodefaultctor Handle_BRepCheck_Shell;
+class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Shell();
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Shell(const Handle_BRepCheck_Shell &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Shell(const BRepCheck_Shell *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Shell const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepCheck_Shell {
+	BRepCheck_Shell* GetObject() {
+	return (BRepCheck_Shell*)$self->Access();
+	}
+};
+%extend Handle_BRepCheck_Shell {
+	~Handle_BRepCheck_Shell() {
+	printf("Call custom destructor for instance of Handle_BRepCheck_Shell\n");
+	}
+};
+
+%nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
+class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus();
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
+	BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus* GetObject() {
+	return (BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus*)$self->Access();
+	}
+};
+%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
+	~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus() {
+	printf("Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");
+	}
+};
+
+%nodefaultctor Handle_BRepCheck_Edge;
+class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Edge();
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Edge(const Handle_BRepCheck_Edge &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Edge(const BRepCheck_Edge *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Edge const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepCheck_Edge {
+	BRepCheck_Edge* GetObject() {
+	return (BRepCheck_Edge*)$self->Access();
+	}
+};
+%extend Handle_BRepCheck_Edge {
+	~Handle_BRepCheck_Edge() {
+	printf("Call custom destructor for instance of Handle_BRepCheck_Edge\n");
+	}
+};
 
 %nodefaultctor Handle_BRepCheck_ListNodeOfListOfStatus;
 class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepCheck_ListNodeOfListOfStatus();
 		%feature("autodoc", "1");
 		Handle_BRepCheck_ListNodeOfListOfStatus();
 		%feature("autodoc", "1");
@@ -281,12 +283,15 @@ class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNod
 	return (BRepCheck_ListNodeOfListOfStatus*)$self->Access();
 	}
 };
+%extend Handle_BRepCheck_ListNodeOfListOfStatus {
+	~Handle_BRepCheck_ListNodeOfListOfStatus() {
+	printf("Call custom destructor for instance of Handle_BRepCheck_ListNodeOfListOfStatus\n");
+	}
+};
 
 %nodefaultctor Handle_BRepCheck_Wire;
 class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepCheck_Wire();
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Wire();
 		%feature("autodoc", "1");
@@ -302,12 +307,15 @@ class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 	return (BRepCheck_Wire*)$self->Access();
 	}
 };
+%extend Handle_BRepCheck_Wire {
+	~Handle_BRepCheck_Wire() {
+	printf("Call custom destructor for instance of Handle_BRepCheck_Wire\n");
+	}
+};
 
 %nodefaultctor Handle_BRepCheck_Face;
 class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepCheck_Face();
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Face();
 		%feature("autodoc", "1");
@@ -323,6 +331,11 @@ class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 	return (BRepCheck_Face*)$self->Access();
 	}
 };
+%extend Handle_BRepCheck_Face {
+	~Handle_BRepCheck_Face() {
+	printf("Call custom destructor for instance of Handle_BRepCheck_Face\n");
+	}
+};
 
 %nodefaultctor BRepCheck_ListNodeOfListOfStatus;
 class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
@@ -333,8 +346,6 @@ class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
 		BRepCheck_Status & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepCheck_ListNodeOfListOfStatus();
 
 };
 %extend BRepCheck_ListNodeOfListOfStatus {
@@ -342,12 +353,15 @@ class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
 	return *(Handle_BRepCheck_ListNodeOfListOfStatus*) &$self;
 	}
 };
+%extend BRepCheck_ListNodeOfListOfStatus {
+	~BRepCheck_ListNodeOfListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_ListNodeOfListOfStatus\n");
+	}
+};
 
 %nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeResult;
 class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepCheck_DataMapIteratorOfDataMapOfShapeResult();
 		%feature("autodoc", "1");
 		BRepCheck_DataMapIteratorOfDataMapOfShapeResult();
 		%feature("autodoc", "1");
@@ -359,6 +373,11 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_Basic
 		%feature("autodoc", "1");
 		const Handle_BRepCheck_Result & Value() const;
 
+};
+%extend BRepCheck_DataMapIteratorOfDataMapOfShapeResult {
+	~BRepCheck_DataMapIteratorOfDataMapOfShapeResult() {
+	printf("Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeResult\n");
+	}
 };
 
 %nodefaultctor BRepCheck_Result;
@@ -401,6 +420,11 @@ class BRepCheck_Result : public MMgt_TShared {
 	return *(Handle_BRepCheck_Result*) &$self;
 	}
 };
+%extend BRepCheck_Result {
+	~BRepCheck_Result() {
+	printf("Call custom destructor for instance of BRepCheck_Result\n");
+	}
+};
 
 %nodefaultctor BRepCheck_Shell;
 class BRepCheck_Shell : public BRepCheck_Result {
@@ -417,13 +441,16 @@ class BRepCheck_Shell : public BRepCheck_Result {
 		Standard_Boolean IsUnorientable() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbConnectedSet(TopTools_ListOfShape & theSets);
-		%feature("autodoc", "1");
-		virtual		~BRepCheck_Shell();
 
 };
 %extend BRepCheck_Shell {
 	Handle_BRepCheck_Shell GetHandle() {
 	return *(Handle_BRepCheck_Shell*) &$self;
+	}
+};
+%extend BRepCheck_Shell {
+	~BRepCheck_Shell() {
+	printf("Call custom destructor for instance of BRepCheck_Shell\n");
 	}
 };
 
@@ -482,13 +509,16 @@ class BRepCheck_Wire : public BRepCheck_Result {
 		void GeometricControls(const Standard_Boolean B);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepCheck_Wire();
 
 };
 %extend BRepCheck_Wire {
 	Handle_BRepCheck_Wire GetHandle() {
 	return *(Handle_BRepCheck_Wire*) &$self;
+	}
+};
+%extend BRepCheck_Wire {
+	~BRepCheck_Wire() {
+	printf("Call custom destructor for instance of BRepCheck_Wire\n");
 	}
 };
 
@@ -519,13 +549,16 @@ class BRepCheck_Face : public BRepCheck_Result {
 		void GeometricControls(const Standard_Boolean B);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepCheck_Face();
 
 };
 %extend BRepCheck_Face {
 	Handle_BRepCheck_Face GetHandle() {
 	return *(Handle_BRepCheck_Face*) &$self;
+	}
+};
+%extend BRepCheck_Face {
+	~BRepCheck_Face() {
+	printf("Call custom destructor for instance of BRepCheck_Face\n");
 	}
 };
 
@@ -540,13 +573,16 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 		Handle_BRepCheck_Result & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepCheck_DataMapNodeOfDataMapOfShapeResult();
 
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
 	Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult GetHandle() {
 	return *(Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult*) &$self;
+	}
+};
+%extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
+	~BRepCheck_DataMapNodeOfDataMapOfShapeResult() {
+	printf("Call custom destructor for instance of BRepCheck_DataMapNodeOfDataMapOfShapeResult\n");
 	}
 };
 
@@ -562,8 +598,6 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepCheck_DataMapOfShapeResult();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepCheck_Result &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -578,6 +612,11 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Result & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepCheck_DataMapOfShapeResult {
+	~BRepCheck_DataMapOfShapeResult() {
+	printf("Call custom destructor for instance of BRepCheck_DataMapOfShapeResult\n");
+	}
 };
 
 %nodefaultctor BRepCheck;
@@ -615,13 +654,16 @@ class BRepCheck_Edge : public BRepCheck_Result {
 		Standard_Real Tolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepCheck_Edge();
 
 };
 %extend BRepCheck_Edge {
 	Handle_BRepCheck_Edge GetHandle() {
 	return *(Handle_BRepCheck_Edge*) &$self;
+	}
+};
+%extend BRepCheck_Edge {
+	~BRepCheck_Edge() {
+	printf("Call custom destructor for instance of BRepCheck_Edge\n");
 	}
 };
 
@@ -636,13 +678,16 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_Map
 		BRepCheck_ListOfStatus & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus();
 
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
 	Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus GetHandle() {
 	return *(Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus*) &$self;
+	}
+};
+%extend BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
+	~BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");
 	}
 };
 
@@ -734,8 +779,6 @@ class BRepCheck_ListIteratorOfListOfStatus {
 class BRepCheck_Analyzer {
 	public:
 		%feature("autodoc", "1");
-		~BRepCheck_Analyzer();
-		%feature("autodoc", "1");
 		BRepCheck_Analyzer(const TopoDS_Shape &S, const Standard_Boolean B=1);
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shape &S, const Standard_Boolean GeomControls=1);
@@ -746,6 +789,11 @@ class BRepCheck_Analyzer {
 		%feature("autodoc", "1");
 		const Handle_BRepCheck_Result & Result(const TopoDS_Shape &S) const;
 
+};
+%extend BRepCheck_Analyzer {
+	~BRepCheck_Analyzer() {
+	printf("Call custom destructor for instance of BRepCheck_Analyzer\n");
+	}
 };
 
 %nodefaultctor BRepCheck_Vertex;
@@ -763,12 +811,15 @@ class BRepCheck_Vertex : public BRepCheck_Result {
 		Standard_Real Tolerance();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepCheck_Vertex();
 
 };
 %extend BRepCheck_Vertex {
 	Handle_BRepCheck_Vertex GetHandle() {
 	return *(Handle_BRepCheck_Vertex*) &$self;
+	}
+};
+%extend BRepCheck_Vertex {
+	~BRepCheck_Vertex() {
+	printf("Call custom destructor for instance of BRepCheck_Vertex\n");
 	}
 };

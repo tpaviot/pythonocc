@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Dico
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Dico_StackItemOfDictionaryOfTransient();
-		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient();
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient(const Handle_Dico_StackItemOfDictionaryOfTransient &aHandle);
@@ -118,12 +102,15 @@ class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared 
 	return (Dico_StackItemOfDictionaryOfTransient*)$self->Access();
 	}
 };
+%extend Handle_Dico_StackItemOfDictionaryOfTransient {
+	~Handle_Dico_StackItemOfDictionaryOfTransient() {
+	printf("Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Dico_DictionaryOfInteger;
 class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dico_DictionaryOfInteger();
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfInteger();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 	return (Dico_DictionaryOfInteger*)$self->Access();
 	}
 };
+%extend Handle_Dico_DictionaryOfInteger {
+	~Handle_Dico_DictionaryOfInteger() {
+	printf("Call custom destructor for instance of Handle_Dico_DictionaryOfInteger\n");
+	}
+};
 
 %nodefaultctor Handle_Dico_DictionaryOfTransient;
 class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dico_DictionaryOfTransient();
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 	return (Dico_DictionaryOfTransient*)$self->Access();
 	}
 };
+%extend Handle_Dico_DictionaryOfTransient {
+	~Handle_Dico_DictionaryOfTransient() {
+	printf("Call custom destructor for instance of Handle_Dico_DictionaryOfTransient\n");
+	}
+};
 
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfInteger;
 class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dico_StackItemOfDictionaryOfInteger();
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfInteger();
 		%feature("autodoc", "1");
@@ -179,6 +172,11 @@ class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 %extend Handle_Dico_StackItemOfDictionaryOfInteger {
 	Dico_StackItemOfDictionaryOfInteger* GetObject() {
 	return (Dico_StackItemOfDictionaryOfInteger*)$self->Access();
+	}
+};
+%extend Handle_Dico_StackItemOfDictionaryOfInteger {
+	~Handle_Dico_StackItemOfDictionaryOfInteger() {
+	printf("Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfInteger\n");
 	}
 };
 
@@ -223,8 +221,6 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 		Standard_Boolean Complete(Handle_Dico_DictionaryOfInteger & acell) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dico_DictionaryOfInteger();
 
 };
 %extend Dico_DictionaryOfInteger {
@@ -232,12 +228,15 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 	return *(Handle_Dico_DictionaryOfInteger*) &$self;
 	}
 };
+%extend Dico_DictionaryOfInteger {
+	~Dico_DictionaryOfInteger() {
+	printf("Call custom destructor for instance of Dico_DictionaryOfInteger\n");
+	}
+};
 
 %nodefaultctor Dico_IteratorOfDictionaryOfTransient;
 class Dico_IteratorOfDictionaryOfTransient {
 	public:
-		%feature("autodoc", "1");
-		~Dico_IteratorOfDictionaryOfTransient();
 		%feature("autodoc", "1");
 		Dico_IteratorOfDictionaryOfTransient(const Handle_Dico_DictionaryOfTransient &acell);
 		%feature("autodoc", "1");
@@ -256,6 +255,11 @@ class Dico_IteratorOfDictionaryOfTransient {
 		TCollection_AsciiString Name() const;
 
 };
+%extend Dico_IteratorOfDictionaryOfTransient {
+	~Dico_IteratorOfDictionaryOfTransient() {
+	printf("Call custom destructor for instance of Dico_IteratorOfDictionaryOfTransient\n");
+	}
+};
 
 %nodefaultctor Dico_StackItemOfDictionaryOfTransient;
 class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
@@ -272,13 +276,16 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 		void SetValue(const Handle_Dico_DictionaryOfTransient &cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dico_StackItemOfDictionaryOfTransient();
 
 };
 %extend Dico_StackItemOfDictionaryOfTransient {
 	Handle_Dico_StackItemOfDictionaryOfTransient GetHandle() {
 	return *(Handle_Dico_StackItemOfDictionaryOfTransient*) &$self;
+	}
+};
+%extend Dico_StackItemOfDictionaryOfTransient {
+	~Dico_StackItemOfDictionaryOfTransient() {
+	printf("Call custom destructor for instance of Dico_StackItemOfDictionaryOfTransient\n");
 	}
 };
 
@@ -297,13 +304,16 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 		void SetValue(const Handle_Dico_DictionaryOfInteger &cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dico_StackItemOfDictionaryOfInteger();
 
 };
 %extend Dico_StackItemOfDictionaryOfInteger {
 	Handle_Dico_StackItemOfDictionaryOfInteger GetHandle() {
 	return *(Handle_Dico_StackItemOfDictionaryOfInteger*) &$self;
+	}
+};
+%extend Dico_StackItemOfDictionaryOfInteger {
+	~Dico_StackItemOfDictionaryOfInteger() {
+	printf("Call custom destructor for instance of Dico_StackItemOfDictionaryOfInteger\n");
 	}
 };
 
@@ -348,13 +358,16 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 		Standard_Boolean Complete(Handle_Dico_DictionaryOfTransient & acell) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dico_DictionaryOfTransient();
 
 };
 %extend Dico_DictionaryOfTransient {
 	Handle_Dico_DictionaryOfTransient GetHandle() {
 	return *(Handle_Dico_DictionaryOfTransient*) &$self;
+	}
+};
+%extend Dico_DictionaryOfTransient {
+	~Dico_DictionaryOfTransient() {
+	printf("Call custom destructor for instance of Dico_DictionaryOfTransient\n");
 	}
 };
 

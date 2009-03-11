@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BinMDF
 
@@ -98,53 +84,9 @@ Standard_Real & function transformation
 
 
 
-%nodefaultctor Handle_BinMDF_DataMapNodeOfTypeADriverMap;
-class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_BinMDF_DataMapNodeOfTypeADriverMap();
-		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfTypeADriverMap();
-		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfTypeADriverMap(const Handle_BinMDF_DataMapNodeOfTypeADriverMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfTypeADriverMap(const BinMDF_DataMapNodeOfTypeADriverMap *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfTypeADriverMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDF_DataMapNodeOfTypeADriverMap {
-	BinMDF_DataMapNodeOfTypeADriverMap* GetObject() {
-	return (BinMDF_DataMapNodeOfTypeADriverMap*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_BinMDF_DoubleMapNodeOfTypeIdMap;
-class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_BinMDF_DoubleMapNodeOfTypeIdMap();
-		%feature("autodoc", "1");
-		Handle_BinMDF_DoubleMapNodeOfTypeIdMap();
-		%feature("autodoc", "1");
-		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const Handle_BinMDF_DoubleMapNodeOfTypeIdMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const BinMDF_DoubleMapNodeOfTypeIdMap *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDF_DoubleMapNodeOfTypeIdMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
-	BinMDF_DoubleMapNodeOfTypeIdMap* GetObject() {
-	return (BinMDF_DoubleMapNodeOfTypeIdMap*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_BinMDF_ADriver;
 class Handle_BinMDF_ADriver : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinMDF_ADriver();
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriver();
 		%feature("autodoc", "1");
@@ -160,12 +102,63 @@ class Handle_BinMDF_ADriver : public Handle_MMgt_TShared {
 	return (BinMDF_ADriver*)$self->Access();
 	}
 };
+%extend Handle_BinMDF_ADriver {
+	~Handle_BinMDF_ADriver() {
+	printf("Call custom destructor for instance of Handle_BinMDF_ADriver\n");
+	}
+};
+
+%nodefaultctor Handle_BinMDF_TagSourceDriver;
+class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMDF_TagSourceDriver();
+		%feature("autodoc", "1");
+		Handle_BinMDF_TagSourceDriver(const Handle_BinMDF_TagSourceDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_TagSourceDriver(const BinMDF_TagSourceDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMDF_TagSourceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMDF_TagSourceDriver {
+	BinMDF_TagSourceDriver* GetObject() {
+	return (BinMDF_TagSourceDriver*)$self->Access();
+	}
+};
+%extend Handle_BinMDF_TagSourceDriver {
+	~Handle_BinMDF_TagSourceDriver() {
+	printf("Call custom destructor for instance of Handle_BinMDF_TagSourceDriver\n");
+	}
+};
+
+%nodefaultctor Handle_BinMDF_DoubleMapNodeOfTypeIdMap;
+class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap();
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const Handle_BinMDF_DoubleMapNodeOfTypeIdMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const BinMDF_DoubleMapNodeOfTypeIdMap *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
+	BinMDF_DoubleMapNodeOfTypeIdMap* GetObject() {
+	return (BinMDF_DoubleMapNodeOfTypeIdMap*)$self->Access();
+	}
+};
+%extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
+	~Handle_BinMDF_DoubleMapNodeOfTypeIdMap() {
+	printf("Call custom destructor for instance of Handle_BinMDF_DoubleMapNodeOfTypeIdMap\n");
+	}
+};
 
 %nodefaultctor Handle_BinMDF_ReferenceDriver;
 class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinMDF_ReferenceDriver();
 		%feature("autodoc", "1");
 		Handle_BinMDF_ReferenceDriver();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 	return (BinMDF_ReferenceDriver*)$self->Access();
 	}
 };
+%extend Handle_BinMDF_ReferenceDriver {
+	~Handle_BinMDF_ReferenceDriver() {
+	printf("Call custom destructor for instance of Handle_BinMDF_ReferenceDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinMDF_DataMapNodeOfStringIdMap;
 class Handle_BinMDF_DataMapNodeOfStringIdMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinMDF_DataMapNodeOfStringIdMap();
 		%feature("autodoc", "1");
 		Handle_BinMDF_DataMapNodeOfStringIdMap();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_BinMDF_DataMapNodeOfStringIdMap : public Handle_TCollection_MapNode
 	return (BinMDF_DataMapNodeOfStringIdMap*)$self->Access();
 	}
 };
+%extend Handle_BinMDF_DataMapNodeOfStringIdMap {
+	~Handle_BinMDF_DataMapNodeOfStringIdMap() {
+	printf("Call custom destructor for instance of Handle_BinMDF_DataMapNodeOfStringIdMap\n");
+	}
+};
 
 %nodefaultctor Handle_BinMDF_ADriverTable;
 class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinMDF_ADriverTable();
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriverTable();
 		%feature("autodoc", "1");
@@ -223,25 +222,33 @@ class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 	return (BinMDF_ADriverTable*)$self->Access();
 	}
 };
+%extend Handle_BinMDF_ADriverTable {
+	~Handle_BinMDF_ADriverTable() {
+	printf("Call custom destructor for instance of Handle_BinMDF_ADriverTable\n");
+	}
+};
 
-%nodefaultctor Handle_BinMDF_TagSourceDriver;
-class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
+%nodefaultctor Handle_BinMDF_DataMapNodeOfTypeADriverMap;
+class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BinMDF_TagSourceDriver();
+		Handle_BinMDF_DataMapNodeOfTypeADriverMap();
 		%feature("autodoc", "1");
-		Handle_BinMDF_TagSourceDriver();
+		Handle_BinMDF_DataMapNodeOfTypeADriverMap(const Handle_BinMDF_DataMapNodeOfTypeADriverMap &aHandle);
 		%feature("autodoc", "1");
-		Handle_BinMDF_TagSourceDriver(const Handle_BinMDF_TagSourceDriver &aHandle);
+		Handle_BinMDF_DataMapNodeOfTypeADriverMap(const BinMDF_DataMapNodeOfTypeADriverMap *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDF_TagSourceDriver(const BinMDF_TagSourceDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDF_TagSourceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMDF_DataMapNodeOfTypeADriverMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BinMDF_TagSourceDriver {
-	BinMDF_TagSourceDriver* GetObject() {
-	return (BinMDF_TagSourceDriver*)$self->Access();
+%extend Handle_BinMDF_DataMapNodeOfTypeADriverMap {
+	BinMDF_DataMapNodeOfTypeADriverMap* GetObject() {
+	return (BinMDF_DataMapNodeOfTypeADriverMap*)$self->Access();
+	}
+};
+%extend Handle_BinMDF_DataMapNodeOfTypeADriverMap {
+	~Handle_BinMDF_DataMapNodeOfTypeADriverMap() {
+	printf("Call custom destructor for instance of Handle_BinMDF_DataMapNodeOfTypeADriverMap\n");
 	}
 };
 
@@ -269,6 +276,11 @@ class BinMDF_ADriver : public MMgt_TShared {
 	return *(Handle_BinMDF_ADriver*) &$self;
 	}
 };
+%extend BinMDF_ADriver {
+	~BinMDF_ADriver() {
+	printf("Call custom destructor for instance of BinMDF_ADriver\n");
+	}
+};
 
 %nodefaultctor BinMDF_TagSourceDriver;
 class BinMDF_TagSourceDriver : public BinMDF_ADriver {
@@ -279,13 +291,16 @@ class BinMDF_TagSourceDriver : public BinMDF_ADriver {
 		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		~BinMDF_TagSourceDriver();
 
 };
 %extend BinMDF_TagSourceDriver {
 	Handle_BinMDF_TagSourceDriver GetHandle() {
 	return *(Handle_BinMDF_TagSourceDriver*) &$self;
+	}
+};
+%extend BinMDF_TagSourceDriver {
+	~BinMDF_TagSourceDriver() {
+	printf("Call custom destructor for instance of BinMDF_TagSourceDriver\n");
 	}
 };
 
@@ -306,13 +321,16 @@ class BinMDF_ADriverTable : public MMgt_TShared {
 		Handle_BinMDF_ADriver GetDriver(const Standard_Integer theTypeId) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMDF_ADriverTable();
 
 };
 %extend BinMDF_ADriverTable {
 	Handle_BinMDF_ADriverTable GetHandle() {
 	return *(Handle_BinMDF_ADriverTable*) &$self;
+	}
+};
+%extend BinMDF_ADriverTable {
+	~BinMDF_ADriverTable() {
+	printf("Call custom destructor for instance of BinMDF_ADriverTable\n");
 	}
 };
 
@@ -347,13 +365,16 @@ class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMDF_DoubleMapNodeOfTypeIdMap();
 
 };
 %extend BinMDF_DoubleMapNodeOfTypeIdMap {
 	Handle_BinMDF_DoubleMapNodeOfTypeIdMap GetHandle() {
 	return *(Handle_BinMDF_DoubleMapNodeOfTypeIdMap*) &$self;
+	}
+};
+%extend BinMDF_DoubleMapNodeOfTypeIdMap {
+	~BinMDF_DoubleMapNodeOfTypeIdMap() {
+	printf("Call custom destructor for instance of BinMDF_DoubleMapNodeOfTypeIdMap\n");
 	}
 };
 
@@ -391,8 +412,6 @@ class BinMDF_StringIdMap : public TCollection_BasicMap {
 class BinMDF_DoubleMapIteratorOfTypeIdMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BinMDF_DoubleMapIteratorOfTypeIdMap();
-		%feature("autodoc", "1");
 		BinMDF_DoubleMapIteratorOfTypeIdMap();
 		%feature("autodoc", "1");
 		BinMDF_DoubleMapIteratorOfTypeIdMap(const BinMDF_TypeIdMap &aMap);
@@ -403,6 +422,11 @@ class BinMDF_DoubleMapIteratorOfTypeIdMap : public TCollection_BasicMapIterator 
 		%feature("autodoc", "1");
 		const Standard_Integer & Key2() const;
 
+};
+%extend BinMDF_DoubleMapIteratorOfTypeIdMap {
+	~BinMDF_DoubleMapIteratorOfTypeIdMap() {
+	printf("Call custom destructor for instance of BinMDF_DoubleMapIteratorOfTypeIdMap\n");
+	}
 };
 
 %nodefaultctor BinMDF_ReferenceDriver;
@@ -418,13 +442,16 @@ class BinMDF_ReferenceDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMDF_ReferenceDriver();
 
 };
 %extend BinMDF_ReferenceDriver {
 	Handle_BinMDF_ReferenceDriver GetHandle() {
 	return *(Handle_BinMDF_ReferenceDriver*) &$self;
+	}
+};
+%extend BinMDF_ReferenceDriver {
+	~BinMDF_ReferenceDriver() {
+	printf("Call custom destructor for instance of BinMDF_ReferenceDriver\n");
 	}
 };
 
@@ -439,8 +466,6 @@ class BinMDF_TypeADriverMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BinMDF_TypeADriverMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Type &K, const Handle_BinMDF_ADriver &I);
 		%feature("autodoc", "1");
@@ -457,6 +482,11 @@ class BinMDF_TypeADriverMap : public TCollection_BasicMap {
 		Handle_BinMDF_ADriver & operator()(const Handle_Standard_Type &K);
 
 };
+%extend BinMDF_TypeADriverMap {
+	~BinMDF_TypeADriverMap() {
+	printf("Call custom destructor for instance of BinMDF_TypeADriverMap\n");
+	}
+};
 
 %nodefaultctor BinMDF_TypeIdMap;
 class BinMDF_TypeIdMap : public TCollection_BasicMap {
@@ -469,8 +499,6 @@ class BinMDF_TypeIdMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BinMDF_TypeIdMap();
 		%feature("autodoc", "1");
 		void Bind(const Handle_Standard_Type &K1, const Standard_Integer &K2);
 		%feature("autodoc", "1");
@@ -489,12 +517,15 @@ class BinMDF_TypeIdMap : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const Standard_Integer &K);
 
 };
+%extend BinMDF_TypeIdMap {
+	~BinMDF_TypeIdMap() {
+	printf("Call custom destructor for instance of BinMDF_TypeIdMap\n");
+	}
+};
 
 %nodefaultctor BinMDF_DataMapIteratorOfTypeADriverMap;
 class BinMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BinMDF_DataMapIteratorOfTypeADriverMap();
 		%feature("autodoc", "1");
 		BinMDF_DataMapIteratorOfTypeADriverMap();
 		%feature("autodoc", "1");
@@ -506,6 +537,11 @@ class BinMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 		%feature("autodoc", "1");
 		const Handle_BinMDF_ADriver & Value() const;
 
+};
+%extend BinMDF_DataMapIteratorOfTypeADriverMap {
+	~BinMDF_DataMapIteratorOfTypeADriverMap() {
+	printf("Call custom destructor for instance of BinMDF_DataMapIteratorOfTypeADriverMap\n");
+	}
 };
 
 %nodefaultctor BinMDF;
@@ -531,13 +567,16 @@ class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 		Handle_BinMDF_ADriver & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMDF_DataMapNodeOfTypeADriverMap();
 
 };
 %extend BinMDF_DataMapNodeOfTypeADriverMap {
 	Handle_BinMDF_DataMapNodeOfTypeADriverMap GetHandle() {
 	return *(Handle_BinMDF_DataMapNodeOfTypeADriverMap*) &$self;
+	}
+};
+%extend BinMDF_DataMapNodeOfTypeADriverMap {
+	~BinMDF_DataMapNodeOfTypeADriverMap() {
+	printf("Call custom destructor for instance of BinMDF_DataMapNodeOfTypeADriverMap\n");
 	}
 };
 
@@ -552,12 +591,15 @@ class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinMDF_DataMapNodeOfStringIdMap();
 
 };
 %extend BinMDF_DataMapNodeOfStringIdMap {
 	Handle_BinMDF_DataMapNodeOfStringIdMap GetHandle() {
 	return *(Handle_BinMDF_DataMapNodeOfStringIdMap*) &$self;
+	}
+};
+%extend BinMDF_DataMapNodeOfStringIdMap {
+	~BinMDF_DataMapNodeOfStringIdMap() {
+	printf("Call custom destructor for instance of BinMDF_DataMapNodeOfStringIdMap\n");
 	}
 };

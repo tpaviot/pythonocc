@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %{
 #include <Handle_TCollection_HAsciiString.hxx>
@@ -38,9 +24,6 @@
 #include <Handle_TCollection_HExtendedString.hxx>
 #include <Handle_TCollection_SeqNode.hxx>
 #include <Handle_TCollection_MapNode.hxx>
-#include <MMgt_TShared.hxx>
-#include <MMgt_StackManager.hxx>
-#include <Handle_MMgt_TShared.hxx>
 #include <GeomPlate_BuildAveragePlane.hxx>
 #include <GeomPlate_CurveConstraint.hxx>
 #include <GeomPlate_HArray1OfSequenceOfReal.hxx>
@@ -72,6 +55,9 @@
 #include <Handle_GeomPlate_PointConstraint.hxx>
 #include <Handle_GeomPlate_Surface.hxx>
 #include <Handle_GeomPlate_CurveConstraint.hxx>
+#include <MMgt_TShared.hxx>
+#include <MMgt_StackManager.hxx>
+#include <Handle_MMgt_TShared.hxx>
 #include <Standard_PrimitiveTypes.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Persistent.hxx>
@@ -175,6 +161,31 @@
 #include <Handle_Standard_OutOfRange.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_NullValue.hxx>
+#include <AppParCurves_HArray1OfMultiBSpCurve.hxx>
+#include <AppParCurves_ConstraintCouple.hxx>
+#include <AppParCurves_HArray1OfConstraintCouple.hxx>
+#include <AppParCurves_SequenceNodeOfSequenceOfMultiCurve.hxx>
+#include <AppParCurves_Array1OfConstraintCouple.hxx>
+#include <AppParCurves_SequenceOfMultiBSpCurve.hxx>
+#include <AppParCurves_HArray1OfMultiPoint.hxx>
+#include <AppParCurves_MultiBSpCurve.hxx>
+#include <AppParCurves_Array1OfMultiBSpCurve.hxx>
+#include <AppParCurves_MultiPoint.hxx>
+#include <AppParCurves_MultiCurve.hxx>
+#include <AppParCurves_SmoothCriterion.hxx>
+#include <AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve.hxx>
+#include <AppParCurves_SequenceOfMultiCurve.hxx>
+#include <AppParCurves_Array1OfMultiPoint.hxx>
+#include <AppParCurves_Constraint.hxx>
+#include <AppParCurves_HArray1OfMultiCurve.hxx>
+#include <AppParCurves_Array1OfMultiCurve.hxx>
+#include <Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve.hxx>
+#include <Handle_AppParCurves_HArray1OfMultiPoint.hxx>
+#include <Handle_AppParCurves_SmoothCriterion.hxx>
+#include <Handle_AppParCurves_HArray1OfMultiCurve.hxx>
+#include <Handle_AppParCurves_HArray1OfConstraintCouple.hxx>
+#include <Handle_AppParCurves_HArray1OfMultiBSpCurve.hxx>
+#include <Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve.hxx>
 #include <GeomFill_LocationDraft.hxx>
 #include <GeomFill_BoundWithSurf.hxx>
 #include <GeomFill_TgtOnCoons.hxx>
@@ -281,37 +292,12 @@
 #include <GeomAbs_UVSense.hxx>
 #include <GeomAbs_SurfaceType.hxx>
 #include <GeomAbs_JoinType.hxx>
-#include <AppParCurves_HArray1OfMultiBSpCurve.hxx>
-#include <AppParCurves_ConstraintCouple.hxx>
-#include <AppParCurves_HArray1OfConstraintCouple.hxx>
-#include <AppParCurves_SequenceNodeOfSequenceOfMultiCurve.hxx>
-#include <AppParCurves_Array1OfConstraintCouple.hxx>
-#include <AppParCurves_SequenceOfMultiBSpCurve.hxx>
-#include <AppParCurves_HArray1OfMultiPoint.hxx>
-#include <AppParCurves_MultiBSpCurve.hxx>
-#include <AppParCurves_Array1OfMultiBSpCurve.hxx>
-#include <AppParCurves_MultiPoint.hxx>
-#include <AppParCurves_MultiCurve.hxx>
-#include <AppParCurves_SmoothCriterion.hxx>
-#include <AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve.hxx>
-#include <AppParCurves_SequenceOfMultiCurve.hxx>
-#include <AppParCurves_Array1OfMultiPoint.hxx>
-#include <AppParCurves_Constraint.hxx>
-#include <AppParCurves_HArray1OfMultiCurve.hxx>
-#include <AppParCurves_Array1OfMultiCurve.hxx>
-#include <Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve.hxx>
-#include <Handle_AppParCurves_HArray1OfMultiPoint.hxx>
-#include <Handle_AppParCurves_SmoothCriterion.hxx>
-#include <Handle_AppParCurves_HArray1OfMultiCurve.hxx>
-#include <Handle_AppParCurves_HArray1OfConstraintCouple.hxx>
-#include <Handle_AppParCurves_HArray1OfMultiBSpCurve.hxx>
-#include <Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve.hxx>
 %};
 
 %import TCollection.i
-%import MMgt.i
 %import GeomPlate.i
+%import MMgt.i
 %import Standard.i
+%import AppParCurves.i
 %import GeomFill.i
 %import GeomAbs.i
-%import AppParCurves.i

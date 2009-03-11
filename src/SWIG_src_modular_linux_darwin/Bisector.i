@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Bisector
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_Bisector_Curve : public Handle_Geom2d_Curve {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Bisector_Curve();
-		%feature("autodoc", "1");
 		Handle_Bisector_Curve();
 		%feature("autodoc", "1");
 		Handle_Bisector_Curve(const Handle_Bisector_Curve &aHandle);
@@ -118,12 +102,15 @@ class Handle_Bisector_Curve : public Handle_Geom2d_Curve {
 	return (Bisector_Curve*)$self->Access();
 	}
 };
+%extend Handle_Bisector_Curve {
+	~Handle_Bisector_Curve() {
+	printf("Call custom destructor for instance of Handle_Bisector_Curve\n");
+	}
+};
 
 %nodefaultctor Handle_Bisector_BisecAna;
 class Handle_Bisector_BisecAna : public Handle_Bisector_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Bisector_BisecAna();
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecAna();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_Bisector_BisecAna : public Handle_Bisector_Curve {
 	return (Bisector_BisecAna*)$self->Access();
 	}
 };
+%extend Handle_Bisector_BisecAna {
+	~Handle_Bisector_BisecAna() {
+	printf("Call custom destructor for instance of Handle_Bisector_BisecAna\n");
+	}
+};
 
 %nodefaultctor Handle_Bisector_BisecCC;
 class Handle_Bisector_BisecCC : public Handle_Bisector_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Bisector_BisecCC();
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecCC();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_Bisector_BisecCC : public Handle_Bisector_Curve {
 	return (Bisector_BisecCC*)$self->Access();
 	}
 };
+%extend Handle_Bisector_BisecCC {
+	~Handle_Bisector_BisecCC() {
+	printf("Call custom destructor for instance of Handle_Bisector_BisecCC\n");
+	}
+};
 
 %nodefaultctor Handle_Bisector_BisecPC;
 class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Bisector_BisecPC();
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecPC();
 		%feature("autodoc", "1");
@@ -179,6 +172,11 @@ class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 %extend Handle_Bisector_BisecPC {
 	Bisector_BisecPC* GetObject() {
 	return (Bisector_BisecPC*)$self->Access();
+	}
+};
+%extend Handle_Bisector_BisecPC {
+	~Handle_Bisector_BisecPC() {
+	printf("Call custom destructor for instance of Handle_Bisector_BisecPC\n");
 	}
 };
 
@@ -224,6 +222,11 @@ class Bisector_Curve : public Geom2d_Curve {
 %extend Bisector_Curve {
 	Handle_Bisector_Curve GetHandle() {
 	return *(Handle_Bisector_Curve*) &$self;
+	}
+};
+%extend Bisector_Curve {
+	~Bisector_Curve() {
+	printf("Call custom destructor for instance of Bisector_Curve\n");
 	}
 };
 
@@ -286,13 +289,16 @@ class Bisector_BisecCC : public Bisector_Curve {
 		const Bisector_PolyBis & Polygon() const;
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
-		%feature("autodoc", "1");
-		virtual		~Bisector_BisecCC();
 
 };
 %extend Bisector_BisecCC {
 	Handle_Bisector_BisecCC GetHandle() {
 	return *(Handle_Bisector_BisecCC*) &$self;
+	}
+};
+%extend Bisector_BisecCC {
+	~Bisector_BisecCC() {
+	printf("Call custom destructor for instance of Bisector_BisecCC\n");
 	}
 };
 
@@ -363,13 +369,16 @@ class Bisector_BisecPC : public Bisector_Curve {
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Bisector_BisecPC();
 
 };
 %extend Bisector_BisecPC {
 	Handle_Bisector_BisecPC GetHandle() {
 	return *(Handle_Bisector_BisecPC*) &$self;
+	}
+};
+%extend Bisector_BisecPC {
+	~Bisector_BisecPC() {
+	printf("Call custom destructor for instance of Bisector_BisecPC\n");
 	}
 };
 
@@ -444,13 +453,41 @@ class Bisector_BisecAna : public Bisector_Curve {
 		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Bisector_BisecAna();
 
 };
 %extend Bisector_BisecAna {
 	Handle_Bisector_BisecAna GetHandle() {
 	return *(Handle_Bisector_BisecAna*) &$self;
+	}
+};
+%extend Bisector_BisecAna {
+	~Bisector_BisecAna() {
+	printf("Call custom destructor for instance of Bisector_BisecAna\n");
+	}
+};
+
+%nodefaultctor Bisector_Bisec;
+class Bisector_Bisec {
+	public:
+		%feature("autodoc", "1");
+		Bisector_Bisec();
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & ChangeValue();
+
+};
+%extend Bisector_Bisec {
+	~Bisector_Bisec() {
+	printf("Call custom destructor for instance of Bisector_Bisec\n");
 	}
 };
 
@@ -557,27 +594,5 @@ class Bisector_PolyBis {
 		Standard_Integer Interval(const Standard_Real U) const;
 		%feature("autodoc", "1");
 		void Transform(const gp_Trsf2d &T);
-
-};
-
-%nodefaultctor Bisector_Bisec;
-class Bisector_Bisec {
-	public:
-		%feature("autodoc", "1");
-		~Bisector_Bisec();
-		%feature("autodoc", "1");
-		Bisector_Bisec();
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & ChangeValue();
 
 };

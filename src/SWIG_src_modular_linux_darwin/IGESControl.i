@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module IGESControl
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer {
 	public:
 		%feature("autodoc", "1");
-		~Handle_IGESControl_AlgoContainer();
-		%feature("autodoc", "1");
 		Handle_IGESControl_AlgoContainer();
 		%feature("autodoc", "1");
 		Handle_IGESControl_AlgoContainer(const Handle_IGESControl_AlgoContainer &aHandle);
@@ -118,12 +102,15 @@ class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer 
 	return (IGESControl_AlgoContainer*)$self->Access();
 	}
 };
+%extend Handle_IGESControl_AlgoContainer {
+	~Handle_IGESControl_AlgoContainer() {
+	printf("Call custom destructor for instance of Handle_IGESControl_AlgoContainer\n");
+	}
+};
 
 %nodefaultctor Handle_IGESControl_ActorWrite;
 class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProcess {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESControl_ActorWrite();
 		%feature("autodoc", "1");
 		Handle_IGESControl_ActorWrite();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 	return (IGESControl_ActorWrite*)$self->Access();
 	}
 };
+%extend Handle_IGESControl_ActorWrite {
+	~Handle_IGESControl_ActorWrite() {
+	printf("Call custom destructor for instance of Handle_IGESControl_ActorWrite\n");
+	}
+};
 
 %nodefaultctor Handle_IGESControl_IGESBoundary;
 class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESControl_IGESBoundary();
 		%feature("autodoc", "1");
 		Handle_IGESControl_IGESBoundary();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 	return (IGESControl_IGESBoundary*)$self->Access();
 	}
 };
+%extend Handle_IGESControl_IGESBoundary {
+	~Handle_IGESControl_IGESBoundary() {
+	printf("Call custom destructor for instance of Handle_IGESControl_IGESBoundary\n");
+	}
+};
 
 %nodefaultctor Handle_IGESControl_Controller;
 class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESControl_Controller();
 		%feature("autodoc", "1");
 		Handle_IGESControl_Controller();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 	return (IGESControl_Controller*)$self->Access();
 	}
 };
+%extend Handle_IGESControl_Controller {
+	~Handle_IGESControl_Controller() {
+	printf("Call custom destructor for instance of Handle_IGESControl_Controller\n");
+	}
+};
 
 %nodefaultctor Handle_IGESControl_ToolContainer;
 class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer {
 	public:
-		%feature("autodoc", "1");
-		~Handle_IGESControl_ToolContainer();
 		%feature("autodoc", "1");
 		Handle_IGESControl_ToolContainer();
 		%feature("autodoc", "1");
@@ -202,6 +198,11 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 	return (IGESControl_ToolContainer*)$self->Access();
 	}
 };
+%extend Handle_IGESControl_ToolContainer {
+	~Handle_IGESControl_ToolContainer() {
+	printf("Call custom destructor for instance of Handle_IGESControl_ToolContainer\n");
+	}
+};
 
 %nodefaultctor IGESControl_AlgoContainer;
 class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
@@ -210,13 +211,16 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 		IGESControl_AlgoContainer();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESControl_AlgoContainer();
 
 };
 %extend IGESControl_AlgoContainer {
 	Handle_IGESControl_AlgoContainer GetHandle() {
 	return *(Handle_IGESControl_AlgoContainer*) &$self;
+	}
+};
+%extend IGESControl_AlgoContainer {
+	~IGESControl_AlgoContainer() {
+	printf("Call custom destructor for instance of IGESControl_AlgoContainer\n");
 	}
 };
 
@@ -237,9 +241,12 @@ class IGESControl_Reader : public XSControl_Reader {
 		virtual		Standard_Integer NbRootsForTransfer();
 		%feature("autodoc", "1");
 		void PrintTransferInfo(const IFSelect_PrintFail failwarn, const IFSelect_PrintCount mode) const;
-		%feature("autodoc", "1");
-		virtual		~IGESControl_Reader();
 
+};
+%extend IGESControl_Reader {
+	~IGESControl_Reader() {
+	printf("Call custom destructor for instance of IGESControl_Reader\n");
+	}
 };
 
 %nodefaultctor IGESControl_IGESBoundary;
@@ -253,13 +260,16 @@ class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 		virtual		void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESControl_IGESBoundary();
 
 };
 %extend IGESControl_IGESBoundary {
 	Handle_IGESControl_IGESBoundary GetHandle() {
 	return *(Handle_IGESControl_IGESBoundary*) &$self;
+	}
+};
+%extend IGESControl_IGESBoundary {
+	~IGESControl_IGESBoundary() {
+	printf("Call custom destructor for instance of IGESControl_IGESBoundary\n");
 	}
 };
 
@@ -274,13 +284,16 @@ class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESControl_ActorWrite();
 
 };
 %extend IGESControl_ActorWrite {
 	Handle_IGESControl_ActorWrite GetHandle() {
 	return *(Handle_IGESControl_ActorWrite*) &$self;
+	}
+};
+%extend IGESControl_ActorWrite {
+	~IGESControl_ActorWrite() {
+	printf("Call custom destructor for instance of IGESControl_ActorWrite\n");
 	}
 };
 
@@ -293,8 +306,6 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 		virtual		Handle_IGESToBRep_IGESBoundary IGESBoundary() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESControl_ToolContainer();
 
 };
 %extend IGESControl_ToolContainer {
@@ -302,12 +313,15 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 	return *(Handle_IGESControl_ToolContainer*) &$self;
 	}
 };
+%extend IGESControl_ToolContainer {
+	~IGESControl_ToolContainer() {
+	printf("Call custom destructor for instance of IGESControl_ToolContainer\n");
+	}
+};
 
 %nodefaultctor IGESControl_Writer;
 class IGESControl_Writer {
 	public:
-		%feature("autodoc", "1");
-		~IGESControl_Writer();
 		%feature("autodoc", "1");
 		IGESControl_Writer();
 		%feature("autodoc", "1");
@@ -336,6 +350,11 @@ class IGESControl_Writer {
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
 
 };
+%extend IGESControl_Writer {
+	~IGESControl_Writer() {
+	printf("Call custom destructor for instance of IGESControl_Writer\n");
+	}
+};
 
 %nodefaultctor IGESControl_Controller;
 class IGESControl_Controller : public XSControl_Controller {
@@ -354,12 +373,15 @@ class IGESControl_Controller : public XSControl_Controller {
 		virtual		void Customise(Handle_XSControl_WorkSession & WS);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~IGESControl_Controller();
 
 };
 %extend IGESControl_Controller {
 	Handle_IGESControl_Controller GetHandle() {
 	return *(Handle_IGESControl_Controller*) &$self;
+	}
+};
+%extend IGESControl_Controller {
+	~IGESControl_Controller() {
+	printf("Call custom destructor for instance of IGESControl_Controller\n");
 	}
 };

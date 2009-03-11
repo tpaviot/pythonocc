@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module AppParCurves
 
@@ -109,8 +95,6 @@ enum AppParCurves_Constraint {
 class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_AppParCurves_HArray1OfMultiCurve();
-		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiCurve();
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiCurve(const Handle_AppParCurves_HArray1OfMultiCurve &aHandle);
@@ -125,12 +109,15 @@ class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 	return (AppParCurves_HArray1OfMultiCurve*)$self->Access();
 	}
 };
+%extend Handle_AppParCurves_HArray1OfMultiCurve {
+	~Handle_AppParCurves_HArray1OfMultiCurve() {
+	printf("Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiCurve\n");
+	}
+};
 
 %nodefaultctor Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve;
 class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve();
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve();
 		%feature("autodoc", "1");
@@ -146,12 +133,15 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_
 	return (AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve*)$self->Access();
 	}
 };
+%extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
+	~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve() {
+	printf("Call custom destructor for instance of Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");
+	}
+};
 
 %nodefaultctor Handle_AppParCurves_SmoothCriterion;
 class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AppParCurves_SmoothCriterion();
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SmoothCriterion();
 		%feature("autodoc", "1");
@@ -167,12 +157,15 @@ class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 	return (AppParCurves_SmoothCriterion*)$self->Access();
 	}
 };
+%extend Handle_AppParCurves_SmoothCriterion {
+	~Handle_AppParCurves_SmoothCriterion() {
+	printf("Call custom destructor for instance of Handle_AppParCurves_SmoothCriterion\n");
+	}
+};
 
 %nodefaultctor Handle_AppParCurves_HArray1OfMultiBSpCurve;
 class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AppParCurves_HArray1OfMultiBSpCurve();
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiBSpCurve();
 		%feature("autodoc", "1");
@@ -188,12 +181,15 @@ class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 	return (AppParCurves_HArray1OfMultiBSpCurve*)$self->Access();
 	}
 };
+%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
+	~Handle_AppParCurves_HArray1OfMultiBSpCurve() {
+	printf("Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiBSpCurve\n");
+	}
+};
 
 %nodefaultctor Handle_AppParCurves_HArray1OfMultiPoint;
 class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AppParCurves_HArray1OfMultiPoint();
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiPoint();
 		%feature("autodoc", "1");
@@ -209,12 +205,15 @@ class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 	return (AppParCurves_HArray1OfMultiPoint*)$self->Access();
 	}
 };
+%extend Handle_AppParCurves_HArray1OfMultiPoint {
+	~Handle_AppParCurves_HArray1OfMultiPoint() {
+	printf("Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiPoint\n");
+	}
+};
 
 %nodefaultctor Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve;
 class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve();
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve();
 		%feature("autodoc", "1");
@@ -230,12 +229,15 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCo
 	return (AppParCurves_SequenceNodeOfSequenceOfMultiCurve*)$self->Access();
 	}
 };
+%extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
+	~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve() {
+	printf("Call custom destructor for instance of Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve\n");
+	}
+};
 
 %nodefaultctor Handle_AppParCurves_HArray1OfConstraintCouple;
 class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AppParCurves_HArray1OfConstraintCouple();
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfConstraintCouple();
 		%feature("autodoc", "1");
@@ -249,6 +251,11 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 %extend Handle_AppParCurves_HArray1OfConstraintCouple {
 	AppParCurves_HArray1OfConstraintCouple* GetObject() {
 	return (AppParCurves_HArray1OfConstraintCouple*)$self->Access();
+	}
+};
+%extend Handle_AppParCurves_HArray1OfConstraintCouple {
+	~Handle_AppParCurves_HArray1OfConstraintCouple() {
+	printf("Call custom destructor for instance of Handle_AppParCurves_HArray1OfConstraintCouple\n");
 	}
 };
 
@@ -382,23 +389,39 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 
 };
 
-%nodefaultctor AppParCurves_ConstraintCouple;
-class AppParCurves_ConstraintCouple {
+%nodefaultctor AppParCurves_Array1OfMultiCurve;
+class AppParCurves_Array1OfMultiCurve {
 	public:
 		%feature("autodoc", "1");
-		~AppParCurves_ConstraintCouple();
+		AppParCurves_Array1OfMultiCurve(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		AppParCurves_ConstraintCouple();
+		AppParCurves_Array1OfMultiCurve(const AppParCurves_MultiCurve &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		AppParCurves_ConstraintCouple(const Standard_Integer TheIndex, const AppParCurves_Constraint Cons);
+		void Init(const AppParCurves_MultiCurve &V);
 		%feature("autodoc", "1");
-		Standard_Integer Index() const;
+		void Destroy();
 		%feature("autodoc", "1");
-		AppParCurves_Constraint Constraint() const;
+		~AppParCurves_Array1OfMultiCurve();
 		%feature("autodoc", "1");
-		void SetIndex(const Standard_Integer TheIndex);
+		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
-		void SetConstraint(const AppParCurves_Constraint Cons);
+		const AppParCurves_Array1OfMultiCurve & Assign(const AppParCurves_Array1OfMultiCurve &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AppParCurves_MultiCurve &Value);
+		%feature("autodoc", "1");
+		const AppParCurves_MultiCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiCurve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve & operator()(const Standard_Integer Index);
 
 };
 
@@ -411,13 +434,16 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNo
 		AppParCurves_MultiCurve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppParCurves_SequenceNodeOfSequenceOfMultiCurve();
 
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
 	Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve GetHandle() {
 	return *(Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve*) &$self;
+	}
+};
+%extend AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
+	~AppParCurves_SequenceNodeOfSequenceOfMultiCurve() {
+	printf("Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiCurve\n");
 	}
 };
 
@@ -461,6 +487,26 @@ class AppParCurves_MultiPoint {
 
 };
 
+%nodefaultctor AppParCurves_ConstraintCouple;
+class AppParCurves_ConstraintCouple {
+	public:
+		%feature("autodoc", "1");
+		~AppParCurves_ConstraintCouple();
+		%feature("autodoc", "1");
+		AppParCurves_ConstraintCouple();
+		%feature("autodoc", "1");
+		AppParCurves_ConstraintCouple(const Standard_Integer TheIndex, const AppParCurves_Constraint Cons);
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		AppParCurves_Constraint Constraint() const;
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer TheIndex);
+		%feature("autodoc", "1");
+		void SetConstraint(const AppParCurves_Constraint Cons);
+
+};
+
 %nodefaultctor AppParCurves_HArray1OfMultiCurve;
 class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 	public:
@@ -488,8 +534,6 @@ class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 		AppParCurves_Array1OfMultiCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppParCurves_HArray1OfMultiCurve();
 
 };
 %extend AppParCurves_HArray1OfMultiCurve {
@@ -497,41 +541,10 @@ class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 	return *(Handle_AppParCurves_HArray1OfMultiCurve*) &$self;
 	}
 };
-
-%nodefaultctor AppParCurves_Array1OfMultiCurve;
-class AppParCurves_Array1OfMultiCurve {
-	public:
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiCurve(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiCurve(const AppParCurves_MultiCurve &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const AppParCurves_MultiCurve &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~AppParCurves_Array1OfMultiCurve();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const AppParCurves_Array1OfMultiCurve & Assign(const AppParCurves_Array1OfMultiCurve &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AppParCurves_MultiCurve &Value);
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve & operator()(const Standard_Integer Index);
-
+%extend AppParCurves_HArray1OfMultiCurve {
+	~AppParCurves_HArray1OfMultiCurve() {
+	printf("Call custom destructor for instance of AppParCurves_HArray1OfMultiCurve\n");
+	}
 };
 
 %nodefaultctor AppParCurves_SmoothCriterion;
@@ -576,6 +589,11 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 %extend AppParCurves_SmoothCriterion {
 	Handle_AppParCurves_SmoothCriterion GetHandle() {
 	return *(Handle_AppParCurves_SmoothCriterion*) &$self;
+	}
+};
+%extend AppParCurves_SmoothCriterion {
+	~AppParCurves_SmoothCriterion() {
+	printf("Call custom destructor for instance of AppParCurves_SmoothCriterion\n");
 	}
 };
 
@@ -674,13 +692,16 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_Se
 		AppParCurves_MultiBSpCurve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve();
 
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
 	Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve GetHandle() {
 	return *(Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve*) &$self;
+	}
+};
+%extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
+	~AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve() {
+	printf("Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");
 	}
 };
 
@@ -747,8 +768,6 @@ class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 		AppParCurves_Array1OfConstraintCouple & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppParCurves_HArray1OfConstraintCouple();
 
 };
 %extend AppParCurves_HArray1OfConstraintCouple {
@@ -756,41 +775,10 @@ class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 	return *(Handle_AppParCurves_HArray1OfConstraintCouple*) &$self;
 	}
 };
-
-%nodefaultctor AppParCurves_Array1OfMultiPoint;
-class AppParCurves_Array1OfMultiPoint {
-	public:
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiPoint(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiPoint(const AppParCurves_MultiPoint &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const AppParCurves_MultiPoint &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~AppParCurves_Array1OfMultiPoint();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const AppParCurves_Array1OfMultiPoint & Assign(const AppParCurves_Array1OfMultiPoint &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AppParCurves_MultiPoint &Value);
-		%feature("autodoc", "1");
-		const AppParCurves_MultiPoint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiPoint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint & operator()(const Standard_Integer Index);
-
+%extend AppParCurves_HArray1OfConstraintCouple {
+	~AppParCurves_HArray1OfConstraintCouple() {
+	printf("Call custom destructor for instance of AppParCurves_HArray1OfConstraintCouple\n");
+	}
 };
 
 %nodefaultctor AppParCurves_HArray1OfMultiPoint;
@@ -820,13 +808,16 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 		AppParCurves_Array1OfMultiPoint & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppParCurves_HArray1OfMultiPoint();
 
 };
 %extend AppParCurves_HArray1OfMultiPoint {
 	Handle_AppParCurves_HArray1OfMultiPoint GetHandle() {
 	return *(Handle_AppParCurves_HArray1OfMultiPoint*) &$self;
+	}
+};
+%extend AppParCurves_HArray1OfMultiPoint {
+	~AppParCurves_HArray1OfMultiPoint() {
+	printf("Call custom destructor for instance of AppParCurves_HArray1OfMultiPoint\n");
 	}
 };
 
@@ -875,12 +866,51 @@ class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
 		AppParCurves_Array1OfMultiBSpCurve & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppParCurves_HArray1OfMultiBSpCurve();
 
 };
 %extend AppParCurves_HArray1OfMultiBSpCurve {
 	Handle_AppParCurves_HArray1OfMultiBSpCurve GetHandle() {
 	return *(Handle_AppParCurves_HArray1OfMultiBSpCurve*) &$self;
 	}
+};
+%extend AppParCurves_HArray1OfMultiBSpCurve {
+	~AppParCurves_HArray1OfMultiBSpCurve() {
+	printf("Call custom destructor for instance of AppParCurves_HArray1OfMultiBSpCurve\n");
+	}
+};
+
+%nodefaultctor AppParCurves_Array1OfMultiPoint;
+class AppParCurves_Array1OfMultiPoint {
+	public:
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfMultiPoint(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfMultiPoint(const AppParCurves_MultiPoint &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const AppParCurves_MultiPoint &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~AppParCurves_Array1OfMultiPoint();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiPoint & Assign(const AppParCurves_Array1OfMultiPoint &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AppParCurves_MultiPoint &Value);
+		%feature("autodoc", "1");
+		const AppParCurves_MultiPoint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiPoint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint & operator()(const Standard_Integer Index);
+
 };

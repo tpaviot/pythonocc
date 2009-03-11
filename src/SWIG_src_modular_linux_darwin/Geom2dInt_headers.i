@@ -1,68 +1,54 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %{
 
 // Headers necessary to define wrapped classes.
 
-#include<Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
-#include<Geom2dInt_Geom2dCurveTool.hxx>
-#include<Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter.hxx>
-#include<Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
-#include<Geom2dInt_TheIntPCurvePCurveOfGInter.hxx>
-#include<Geom2dInt_TheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter.hxx>
+#include<Geom2dInt_GInter.hxx>
+#include<Geom2dInt_Geom2dCurveTool.hxx>
+#include<Geom2dInt_IntConicCurveOfGInter.hxx>
+#include<Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter.hxx>
+#include<Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
+#include<Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
+#include<Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter.hxx>
+#include<Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter.hxx>
+#include<Geom2dInt_TheIntConicCurveOfGInter.hxx>
+#include<Geom2dInt_TheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter.hxx>
-#include<Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
-#include<Geom2dInt_TheProjPCurOfGInter.hxx>
-#include<Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter.hxx>
-#include<Geom2dInt_GInter.hxx>
-#include<Geom2dInt_IntConicCurveOfGInter.hxx>
-#include<Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter.hxx>
+#include<Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter.hxx>
+#include<Geom2dInt_TheProjPCurOfGInter.hxx>
 #include<Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
 
 // Additional headers necessary for compilation.
 
-#include<Adaptor2d_HCurve2d.hxx>
-#include<Adaptor2d_Line2d.hxx>
-#include<Adaptor2d_HLine2d.hxx>
-#include<Adaptor2d_Curve2dPtr.hxx>
 #include<Adaptor2d_Curve2d.hxx>
+#include<Adaptor2d_Curve2dPtr.hxx>
+#include<Adaptor2d_HCurve2d.hxx>
+#include<Adaptor2d_HLine2d.hxx>
+#include<Adaptor2d_Line2d.hxx>
 
 // Needed headers necessary for compilation.
 

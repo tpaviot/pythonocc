@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module PNaming
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_PNaming_Name : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PNaming_Name();
-		%feature("autodoc", "1");
 		Handle_PNaming_Name();
 		%feature("autodoc", "1");
 		Handle_PNaming_Name(const Handle_PNaming_Name &aHandle);
@@ -118,12 +102,15 @@ class Handle_PNaming_Name : public Handle_Standard_Persistent {
 	return (PNaming_Name*)$self->Access();
 	}
 };
+%extend Handle_PNaming_Name {
+	~Handle_PNaming_Name() {
+	printf("Call custom destructor for instance of Handle_PNaming_Name\n");
+	}
+};
 
 %nodefaultctor Handle_PNaming_HArray1OfNamedShape;
 class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PNaming_HArray1OfNamedShape();
 		%feature("autodoc", "1");
 		Handle_PNaming_HArray1OfNamedShape();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 	return (PNaming_HArray1OfNamedShape*)$self->Access();
 	}
 };
+%extend Handle_PNaming_HArray1OfNamedShape {
+	~Handle_PNaming_HArray1OfNamedShape() {
+	printf("Call custom destructor for instance of Handle_PNaming_HArray1OfNamedShape\n");
+	}
+};
 
 %nodefaultctor Handle_PNaming_NamedShape;
 class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PNaming_NamedShape();
 		%feature("autodoc", "1");
 		Handle_PNaming_NamedShape();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 	return (PNaming_NamedShape*)$self->Access();
 	}
 };
+%extend Handle_PNaming_NamedShape {
+	~Handle_PNaming_NamedShape() {
+	printf("Call custom destructor for instance of Handle_PNaming_NamedShape\n");
+	}
+};
 
 %nodefaultctor Handle_PNaming_Naming;
 class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PNaming_Naming();
 		%feature("autodoc", "1");
 		Handle_PNaming_Naming();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 	return (PNaming_Naming*)$self->Access();
 	}
 };
+%extend Handle_PNaming_Naming {
+	~Handle_PNaming_Naming() {
+	printf("Call custom destructor for instance of Handle_PNaming_Naming\n");
+	}
+};
 
 %nodefaultctor Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
 class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PStandard_ArrayNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape();
 		%feature("autodoc", "1");
 		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape();
 		%feature("autodoc", "1");
@@ -200,6 +196,11 @@ class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PSta
 %extend Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
 	PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape* GetObject() {
 	return (PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape*)$self->Access();
+	}
+};
+%extend Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	~Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape() {
+	printf("Call custom destructor for instance of Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");
 	}
 };
 
@@ -222,13 +223,16 @@ class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNod
 		void _CSFDB_SetPNaming_VArrayNodeOfFieldOfHArray1OfNamedShapemyValue(const Handle_PNaming_NamedShape &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape();
 
 };
 %extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
 	Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape GetHandle() {
 	return *(Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape*) &$self;
+	}
+};
+%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape() {
+	printf("Call custom destructor for instance of PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");
 	}
 };
 
@@ -249,13 +253,16 @@ class PNaming_Naming : public PDF_Attribute {
 		void _CSFDB_SetPNaming_NamingmyName(const Handle_PNaming_Name &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PNaming_Naming();
 
 };
 %extend PNaming_Naming {
 	Handle_PNaming_Naming GetHandle() {
 	return *(Handle_PNaming_Naming*) &$self;
+	}
+};
+%extend PNaming_Naming {
+	~PNaming_Naming() {
+	printf("Call custom destructor for instance of PNaming_Naming\n");
 	}
 };
 
@@ -302,13 +309,16 @@ class PNaming_NamedShape : public PDF_Attribute {
 		void _CSFDB_SetPNaming_NamedShapemyVersion(const Standard_Integer p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PNaming_NamedShape();
 
 };
 %extend PNaming_NamedShape {
 	Handle_PNaming_NamedShape GetHandle() {
 	return *(Handle_PNaming_NamedShape*) &$self;
+	}
+};
+%extend PNaming_NamedShape {
+	~PNaming_NamedShape() {
+	printf("Call custom destructor for instance of PNaming_NamedShape\n");
 	}
 };
 
@@ -349,13 +359,16 @@ class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 		const PNaming_FieldOfHArray1OfNamedShape & _CSFDB_GetPNaming_HArray1OfNamedShapeData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PNaming_HArray1OfNamedShape();
 
 };
 %extend PNaming_HArray1OfNamedShape {
 	Handle_PNaming_HArray1OfNamedShape GetHandle() {
 	return *(Handle_PNaming_HArray1OfNamedShape*) &$self;
+	}
+};
+%extend PNaming_HArray1OfNamedShape {
+	~PNaming_HArray1OfNamedShape() {
+	printf("Call custom destructor for instance of PNaming_HArray1OfNamedShape\n");
 	}
 };
 
@@ -380,9 +393,12 @@ class PNaming_FieldOfHArray1OfNamedShape : public DBC_BaseArray {
 		Handle_PNaming_NamedShape & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PNaming_FieldOfHArray1OfNamedShape();
 
+};
+%extend PNaming_FieldOfHArray1OfNamedShape {
+	~PNaming_FieldOfHArray1OfNamedShape() {
+	printf("Call custom destructor for instance of PNaming_FieldOfHArray1OfNamedShape\n");
+	}
 };
 
 %nodefaultctor PNaming_Name;
@@ -434,13 +450,16 @@ class PNaming_Name : public Standard_Persistent {
 		void _CSFDB_SetPNaming_NamemyIndex(const Standard_Integer p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PNaming_Name();
 
 };
 %extend PNaming_Name {
 	Handle_PNaming_Name GetHandle() {
 	return *(Handle_PNaming_Name*) &$self;
+	}
+};
+%extend PNaming_Name {
+	~PNaming_Name() {
+	printf("Call custom destructor for instance of PNaming_Name\n");
 	}
 };
 

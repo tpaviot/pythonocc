@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module ShapeProcess
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ShapeProcess_StackItemOfDictionaryOfOperator();
-		%feature("autodoc", "1");
 		Handle_ShapeProcess_StackItemOfDictionaryOfOperator();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_StackItemOfDictionaryOfOperator(const Handle_ShapeProcess_StackItemOfDictionaryOfOperator &aHandle);
@@ -118,12 +102,15 @@ class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_T
 	return (ShapeProcess_StackItemOfDictionaryOfOperator*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
+	~Handle_ShapeProcess_StackItemOfDictionaryOfOperator() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_StackItemOfDictionaryOfOperator\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_Context;
 class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_Context();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Context();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 	return (ShapeProcess_Context*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_Context {
+	~Handle_ShapeProcess_Context() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_Context\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_Operator;
 class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_Operator();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Operator();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 	return (ShapeProcess_Operator*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_Operator {
+	~Handle_ShapeProcess_Operator() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_Operator\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_UOperator;
 class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_UOperator();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_UOperator();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 	return (ShapeProcess_UOperator*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_UOperator {
+	~Handle_ShapeProcess_UOperator() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_UOperator\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_DictionaryOfOperator;
 class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_DictionaryOfOperator();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_DictionaryOfOperator();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 	return (ShapeProcess_DictionaryOfOperator*)$self->Access();
 	}
 };
+%extend Handle_ShapeProcess_DictionaryOfOperator {
+	~Handle_ShapeProcess_DictionaryOfOperator() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_DictionaryOfOperator\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeProcess_ShapeContext;
 class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeProcess_ShapeContext();
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_ShapeContext();
 		%feature("autodoc", "1");
@@ -221,6 +220,11 @@ class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 %extend Handle_ShapeProcess_ShapeContext {
 	ShapeProcess_ShapeContext* GetObject() {
 	return (ShapeProcess_ShapeContext*)$self->Access();
+	}
+};
+%extend Handle_ShapeProcess_ShapeContext {
+	~Handle_ShapeProcess_ShapeContext() {
+	printf("Call custom destructor for instance of Handle_ShapeProcess_ShapeContext\n");
 	}
 };
 
@@ -238,19 +242,27 @@ class ShapeProcess_Operator : public MMgt_TShared {
 	return *(Handle_ShapeProcess_Operator*) &$self;
 	}
 };
+%extend ShapeProcess_Operator {
+	~ShapeProcess_Operator() {
+	printf("Call custom destructor for instance of ShapeProcess_Operator\n");
+	}
+};
 
 %nodefaultctor ShapeProcess_UOperator;
 class ShapeProcess_UOperator : public ShapeProcess_Operator {
 	public:
 		%feature("autodoc", "1");
 		ShapeProcess_UOperator(const ShapeProcess_OperFunc func);
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_UOperator();
 
 };
 %extend ShapeProcess_UOperator {
 	Handle_ShapeProcess_UOperator GetHandle() {
 	return *(Handle_ShapeProcess_UOperator*) &$self;
+	}
+};
+%extend ShapeProcess_UOperator {
+	~ShapeProcess_UOperator() {
+	printf("Call custom destructor for instance of ShapeProcess_UOperator\n");
 	}
 };
 
@@ -285,13 +297,16 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 		void SetValue(const Handle_ShapeProcess_DictionaryOfOperator &cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_StackItemOfDictionaryOfOperator();
 
 };
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
 	Handle_ShapeProcess_StackItemOfDictionaryOfOperator GetHandle() {
 	return *(Handle_ShapeProcess_StackItemOfDictionaryOfOperator*) &$self;
+	}
+};
+%extend ShapeProcess_StackItemOfDictionaryOfOperator {
+	~ShapeProcess_StackItemOfDictionaryOfOperator() {
+	printf("Call custom destructor for instance of ShapeProcess_StackItemOfDictionaryOfOperator\n");
 	}
 };
 
@@ -313,8 +328,6 @@ class ShapeProcess_OperLibrary {
 class ShapeProcess_IteratorOfDictionaryOfOperator {
 	public:
 		%feature("autodoc", "1");
-		~ShapeProcess_IteratorOfDictionaryOfOperator();
-		%feature("autodoc", "1");
 		ShapeProcess_IteratorOfDictionaryOfOperator(const Handle_ShapeProcess_DictionaryOfOperator &acell);
 		%feature("autodoc", "1");
 		ShapeProcess_IteratorOfDictionaryOfOperator(const Handle_ShapeProcess_DictionaryOfOperator &acell, const char * basename);
@@ -331,6 +344,11 @@ class ShapeProcess_IteratorOfDictionaryOfOperator {
 		%feature("autodoc", "1");
 		TCollection_AsciiString Name() const;
 
+};
+%extend ShapeProcess_IteratorOfDictionaryOfOperator {
+	~ShapeProcess_IteratorOfDictionaryOfOperator() {
+	printf("Call custom destructor for instance of ShapeProcess_IteratorOfDictionaryOfOperator\n");
+	}
 };
 
 %nodefaultctor ShapeProcess_Context;
@@ -378,13 +396,16 @@ class ShapeProcess_Context : public MMgt_TShared {
 		Standard_Integer TraceLevel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_Context();
 
 };
 %extend ShapeProcess_Context {
 	Handle_ShapeProcess_Context GetHandle() {
 	return *(Handle_ShapeProcess_Context*) &$self;
+	}
+};
+%extend ShapeProcess_Context {
+	~ShapeProcess_Context() {
+	printf("Call custom destructor for instance of ShapeProcess_Context\n");
 	}
 };
 
@@ -429,13 +450,16 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		GeomAbs_Shape ContinuityVal(const char * param, const GeomAbs_Shape def) const;
 		%feature("autodoc", "1");
 		void PrintStatistics() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_ShapeContext();
 
 };
 %extend ShapeProcess_ShapeContext {
 	Handle_ShapeProcess_ShapeContext GetHandle() {
 	return *(Handle_ShapeProcess_ShapeContext*) &$self;
+	}
+};
+%extend ShapeProcess_ShapeContext {
+	~ShapeProcess_ShapeContext() {
+	printf("Call custom destructor for instance of ShapeProcess_ShapeContext\n");
 	}
 };
 
@@ -480,12 +504,15 @@ class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
 		Standard_Boolean Complete(Handle_ShapeProcess_DictionaryOfOperator & acell) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeProcess_DictionaryOfOperator();
 
 };
 %extend ShapeProcess_DictionaryOfOperator {
 	Handle_ShapeProcess_DictionaryOfOperator GetHandle() {
 	return *(Handle_ShapeProcess_DictionaryOfOperator*) &$self;
+	}
+};
+%extend ShapeProcess_DictionaryOfOperator {
+	~ShapeProcess_DictionaryOfOperator() {
+	printf("Call custom destructor for instance of ShapeProcess_DictionaryOfOperator\n");
 	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Xw
 
@@ -133,8 +119,6 @@ enum Xw_TypeOfMapping {
 class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Xw_HListOfMFTFonts();
-		%feature("autodoc", "1");
 		Handle_Xw_HListOfMFTFonts();
 		%feature("autodoc", "1");
 		Handle_Xw_HListOfMFTFonts(const Handle_Xw_HListOfMFTFonts &aHandle);
@@ -149,12 +133,15 @@ class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
 	return (Xw_HListOfMFTFonts*)$self->Access();
 	}
 };
+%extend Handle_Xw_HListOfMFTFonts {
+	~Handle_Xw_HListOfMFTFonts() {
+	printf("Call custom destructor for instance of Handle_Xw_HListOfMFTFonts\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_TextManager;
 class Handle_Xw_TextManager : public Handle_MFT_TextManager {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_TextManager();
 		%feature("autodoc", "1");
 		Handle_Xw_TextManager();
 		%feature("autodoc", "1");
@@ -170,12 +157,15 @@ class Handle_Xw_TextManager : public Handle_MFT_TextManager {
 	return (Xw_TextManager*)$self->Access();
 	}
 };
+%extend Handle_Xw_TextManager {
+	~Handle_Xw_TextManager() {
+	printf("Call custom destructor for instance of Handle_Xw_TextManager\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_Driver;
 class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_Driver();
 		%feature("autodoc", "1");
 		Handle_Xw_Driver();
 		%feature("autodoc", "1");
@@ -191,12 +181,15 @@ class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
 	return (Xw_Driver*)$self->Access();
 	}
 };
+%extend Handle_Xw_Driver {
+	~Handle_Xw_Driver() {
+	printf("Call custom destructor for instance of Handle_Xw_Driver\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_Window;
 class Handle_Xw_Window : public Handle_Aspect_Window {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_Window();
 		%feature("autodoc", "1");
 		Handle_Xw_Window();
 		%feature("autodoc", "1");
@@ -212,12 +205,15 @@ class Handle_Xw_Window : public Handle_Aspect_Window {
 	return (Xw_Window*)$self->Access();
 	}
 };
+%extend Handle_Xw_Window {
+	~Handle_Xw_Window() {
+	printf("Call custom destructor for instance of Handle_Xw_Window\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_ColorMap;
 class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_ColorMap();
 		%feature("autodoc", "1");
 		Handle_Xw_ColorMap();
 		%feature("autodoc", "1");
@@ -233,12 +229,15 @@ class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
 	return (Xw_ColorMap*)$self->Access();
 	}
 };
+%extend Handle_Xw_ColorMap {
+	~Handle_Xw_ColorMap() {
+	printf("Call custom destructor for instance of Handle_Xw_ColorMap\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_HListOfMFTSizes;
 class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_HListOfMFTSizes();
 		%feature("autodoc", "1");
 		Handle_Xw_HListOfMFTSizes();
 		%feature("autodoc", "1");
@@ -254,12 +253,15 @@ class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
 	return (Xw_HListOfMFTSizes*)$self->Access();
 	}
 };
+%extend Handle_Xw_HListOfMFTSizes {
+	~Handle_Xw_HListOfMFTSizes() {
+	printf("Call custom destructor for instance of Handle_Xw_HListOfMFTSizes\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_GraphicDevice;
 class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_GraphicDevice();
 		%feature("autodoc", "1");
 		Handle_Xw_GraphicDevice();
 		%feature("autodoc", "1");
@@ -275,12 +277,15 @@ class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
 	return (Xw_GraphicDevice*)$self->Access();
 	}
 };
+%extend Handle_Xw_GraphicDevice {
+	~Handle_Xw_GraphicDevice() {
+	printf("Call custom destructor for instance of Handle_Xw_GraphicDevice\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_FontMap;
 class Handle_Xw_FontMap : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_FontMap();
 		%feature("autodoc", "1");
 		Handle_Xw_FontMap();
 		%feature("autodoc", "1");
@@ -296,12 +301,15 @@ class Handle_Xw_FontMap : public Handle_Standard_Transient {
 	return (Xw_FontMap*)$self->Access();
 	}
 };
+%extend Handle_Xw_FontMap {
+	~Handle_Xw_FontMap() {
+	printf("Call custom destructor for instance of Handle_Xw_FontMap\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_MarkMap;
 class Handle_Xw_MarkMap : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_MarkMap();
 		%feature("autodoc", "1");
 		Handle_Xw_MarkMap();
 		%feature("autodoc", "1");
@@ -317,33 +325,15 @@ class Handle_Xw_MarkMap : public Handle_Standard_Transient {
 	return (Xw_MarkMap*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Xw_PixMap;
-class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_PixMap();
-		%feature("autodoc", "1");
-		Handle_Xw_PixMap();
-		%feature("autodoc", "1");
-		Handle_Xw_PixMap(const Handle_Xw_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_PixMap(const Xw_PixMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_PixMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_PixMap {
-	Xw_PixMap* GetObject() {
-	return (Xw_PixMap*)$self->Access();
+%extend Handle_Xw_MarkMap {
+	~Handle_Xw_MarkMap() {
+	printf("Call custom destructor for instance of Handle_Xw_MarkMap\n");
 	}
 };
 
 %nodefaultctor Handle_Xw_HListOfIndexs;
 class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_HListOfIndexs();
 		%feature("autodoc", "1");
 		Handle_Xw_HListOfIndexs();
 		%feature("autodoc", "1");
@@ -359,12 +349,15 @@ class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 	return (Xw_HListOfIndexs*)$self->Access();
 	}
 };
+%extend Handle_Xw_HListOfIndexs {
+	~Handle_Xw_HListOfIndexs() {
+	printf("Call custom destructor for instance of Handle_Xw_HListOfIndexs\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_IconBox;
 class Handle_Xw_IconBox : public Handle_Xw_Window {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_IconBox();
 		%feature("autodoc", "1");
 		Handle_Xw_IconBox();
 		%feature("autodoc", "1");
@@ -380,12 +373,15 @@ class Handle_Xw_IconBox : public Handle_Xw_Window {
 	return (Xw_IconBox*)$self->Access();
 	}
 };
+%extend Handle_Xw_IconBox {
+	~Handle_Xw_IconBox() {
+	printf("Call custom destructor for instance of Handle_Xw_IconBox\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_WidthMap;
 class Handle_Xw_WidthMap : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_WidthMap();
 		%feature("autodoc", "1");
 		Handle_Xw_WidthMap();
 		%feature("autodoc", "1");
@@ -401,12 +397,15 @@ class Handle_Xw_WidthMap : public Handle_Standard_Transient {
 	return (Xw_WidthMap*)$self->Access();
 	}
 };
+%extend Handle_Xw_WidthMap {
+	~Handle_Xw_WidthMap() {
+	printf("Call custom destructor for instance of Handle_Xw_WidthMap\n");
+	}
+};
 
 %nodefaultctor Handle_Xw_TypeMap;
 class Handle_Xw_TypeMap : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Xw_TypeMap();
 		%feature("autodoc", "1");
 		Handle_Xw_TypeMap();
 		%feature("autodoc", "1");
@@ -420,6 +419,35 @@ class Handle_Xw_TypeMap : public Handle_Standard_Transient {
 %extend Handle_Xw_TypeMap {
 	Xw_TypeMap* GetObject() {
 	return (Xw_TypeMap*)$self->Access();
+	}
+};
+%extend Handle_Xw_TypeMap {
+	~Handle_Xw_TypeMap() {
+	printf("Call custom destructor for instance of Handle_Xw_TypeMap\n");
+	}
+};
+
+%nodefaultctor Handle_Xw_PixMap;
+class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_PixMap();
+		%feature("autodoc", "1");
+		Handle_Xw_PixMap(const Handle_Xw_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_PixMap(const Xw_PixMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_PixMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_PixMap {
+	Xw_PixMap* GetObject() {
+	return (Xw_PixMap*)$self->Access();
+	}
+};
+%extend Handle_Xw_PixMap {
+	~Handle_Xw_PixMap() {
+	printf("Call custom destructor for instance of Handle_Xw_PixMap\n");
 	}
 };
 
@@ -450,13 +478,16 @@ class Xw_HListOfMFTFonts : public MMgt_TShared {
 		Xw_ListOfMFTFonts & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Xw_HListOfMFTFonts();
 
 };
 %extend Xw_HListOfMFTFonts {
 	Handle_Xw_HListOfMFTFonts GetHandle() {
 	return *(Handle_Xw_HListOfMFTFonts*) &$self;
+	}
+};
+%extend Xw_HListOfMFTFonts {
+	~Xw_HListOfMFTFonts() {
+	printf("Call custom destructor for instance of Xw_HListOfMFTFonts\n");
 	}
 };
 
@@ -471,8 +502,6 @@ class Xw_ListOfMFTFonts {
 		void Init(const Handle_MFT_FontManager &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Xw_ListOfMFTFonts();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -494,6 +523,11 @@ class Xw_ListOfMFTFonts {
 		%feature("autodoc", "1");
 		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
 
+};
+%extend Xw_ListOfMFTFonts {
+	~Xw_ListOfMFTFonts() {
+	printf("Call custom destructor for instance of Xw_ListOfMFTFonts\n");
+	}
 };
 
 %nodefaultctor Xw_Driver;
@@ -641,13 +675,16 @@ class Xw_Driver : public Aspect_WindowDriver {
 		virtual		Standard_Integer LocalMarkIndex(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Xw_Driver();
 
 };
 %extend Xw_Driver {
 	Handle_Xw_Driver GetHandle() {
 	return *(Handle_Xw_Driver*) &$self;
+	}
+};
+%extend Xw_Driver {
+	~Xw_Driver() {
+	printf("Call custom destructor for instance of Xw_Driver\n");
 	}
 };
 
@@ -666,8 +703,6 @@ class Xw_ColorMap : public MMgt_TShared {
 		virtual		void SetHighlightColor(const Quantity_Color &aColor);
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Xw_ColorMap();
 		%feature("autodoc", "1");
 		virtual		Quantity_Color HighlightColor() const;
 		%feature("autodoc", "1");
@@ -715,6 +750,11 @@ class Xw_ColorMap : public MMgt_TShared {
 	return *(Handle_Xw_ColorMap*) &$self;
 	}
 };
+%extend Xw_ColorMap {
+	~Xw_ColorMap() {
+	printf("Call custom destructor for instance of Xw_ColorMap\n");
+	}
+};
 
 %nodefaultctor Xw_FontMap;
 class Xw_FontMap : public Standard_Transient {
@@ -728,8 +768,6 @@ class Xw_FontMap : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~Xw_FontMap();
-		%feature("autodoc", "1");
 		Standard_Integer FreeFonts() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -738,6 +776,11 @@ class Xw_FontMap : public Standard_Transient {
 %extend Xw_FontMap {
 	Handle_Xw_FontMap GetHandle() {
 	return *(Handle_Xw_FontMap*) &$self;
+	}
+};
+%extend Xw_FontMap {
+	~Xw_FontMap() {
+	printf("Call custom destructor for instance of Xw_FontMap\n");
 	}
 };
 
@@ -768,13 +811,16 @@ class Xw_HListOfIndexs : public MMgt_TShared {
 		Xw_ListOfIndexs & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Xw_HListOfIndexs();
 
 };
 %extend Xw_HListOfIndexs {
 	Handle_Xw_HListOfIndexs GetHandle() {
 	return *(Handle_Xw_HListOfIndexs*) &$self;
+	}
+};
+%extend Xw_HListOfIndexs {
+	~Xw_HListOfIndexs() {
+	printf("Call custom destructor for instance of Xw_HListOfIndexs\n");
 	}
 };
 
@@ -791,13 +837,16 @@ class Xw_PixMap : public Aspect_PixMap {
 		virtual		Aspect_Handle PixmapID() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Xw_PixMap();
 
 };
 %extend Xw_PixMap {
 	Handle_Xw_PixMap GetHandle() {
 	return *(Handle_Xw_PixMap*) &$self;
+	}
+};
+%extend Xw_PixMap {
+	~Xw_PixMap() {
+	printf("Call custom destructor for instance of Xw_PixMap\n");
 	}
 };
 
@@ -922,13 +971,16 @@ class Xw_Window : public Aspect_Window {
 		Standard_Boolean BackgroundPixel(Standard_Integer & aPixel) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Xw_Window();
 
 };
 %extend Xw_Window {
 	Handle_Xw_Window GetHandle() {
 	return *(Handle_Xw_Window*) &$self;
+	}
+};
+%extend Xw_Window {
+	~Xw_Window() {
+	printf("Call custom destructor for instance of Xw_Window\n");
 	}
 };
 
@@ -943,8 +995,6 @@ class Xw_IconBox : public Xw_Window {
 		void Show() const;
 		%feature("autodoc", "1");
 		Standard_Integer UnloadIcons(const char * Name);
-		%feature("autodoc", "1");
-		virtual		~Xw_IconBox();
 		%feature("autodoc", "1");
 		void AddIcon(const Handle_Xw_Window &W, const char * Name, const Standard_Integer aWidth=0, const Standard_Integer aHeight=0);
 		%feature("autodoc", "1");
@@ -964,6 +1014,11 @@ class Xw_IconBox : public Xw_Window {
 %extend Xw_IconBox {
 	Handle_Xw_IconBox GetHandle() {
 	return *(Handle_Xw_IconBox*) &$self;
+	}
+};
+%extend Xw_IconBox {
+	~Xw_IconBox() {
+	printf("Call custom destructor for instance of Xw_IconBox\n");
 	}
 };
 
@@ -994,13 +1049,16 @@ class Xw_TextManager : public MFT_TextManager {
 		virtual		void EndString();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Xw_TextManager();
 
 };
 %extend Xw_TextManager {
 	Handle_Xw_TextManager GetHandle() {
 	return *(Handle_Xw_TextManager*) &$self;
+	}
+};
+%extend Xw_TextManager {
+	~Xw_TextManager() {
+	printf("Call custom destructor for instance of Xw_TextManager\n");
 	}
 };
 
@@ -1016,8 +1074,6 @@ class Xw_WidthMap : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~Xw_WidthMap();
-		%feature("autodoc", "1");
 		Standard_Integer FreeWidths() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1026,6 +1082,11 @@ class Xw_WidthMap : public Standard_Transient {
 %extend Xw_WidthMap {
 	Handle_Xw_WidthMap GetHandle() {
 	return *(Handle_Xw_WidthMap*) &$self;
+	}
+};
+%extend Xw_WidthMap {
+	~Xw_WidthMap() {
+	printf("Call custom destructor for instance of Xw_WidthMap\n");
 	}
 };
 
@@ -1041,8 +1102,6 @@ class Xw_TypeMap : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~Xw_TypeMap();
-		%feature("autodoc", "1");
 		Standard_Integer FreeTypes() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1051,6 +1110,11 @@ class Xw_TypeMap : public Standard_Transient {
 %extend Xw_TypeMap {
 	Handle_Xw_TypeMap GetHandle() {
 	return *(Handle_Xw_TypeMap*) &$self;
+	}
+};
+%extend Xw_TypeMap {
+	~Xw_TypeMap() {
+	printf("Call custom destructor for instance of Xw_TypeMap\n");
 	}
 };
 
@@ -1098,8 +1162,6 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~Xw_GraphicDevice();
-		%feature("autodoc", "1");
 		Handle_Xw_ColorMap ColorMap2D() const;
 		%feature("autodoc", "1");
 		Xw_TypeOfVisual VisualClass2D() const;
@@ -1140,6 +1202,11 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 	return *(Handle_Xw_GraphicDevice*) &$self;
 	}
 };
+%extend Xw_GraphicDevice {
+	~Xw_GraphicDevice() {
+	printf("Call custom destructor for instance of Xw_GraphicDevice\n");
+	}
+};
 
 %nodefaultctor Xw_HListOfMFTSizes;
 class Xw_HListOfMFTSizes : public MMgt_TShared {
@@ -1168,8 +1235,6 @@ class Xw_HListOfMFTSizes : public MMgt_TShared {
 		Xw_ListOfMFTSizes & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Xw_HListOfMFTSizes();
 
 };
 %extend Xw_HListOfMFTSizes {
@@ -1177,17 +1242,10 @@ class Xw_HListOfMFTSizes : public MMgt_TShared {
 	return *(Handle_Xw_HListOfMFTSizes*) &$self;
 	}
 };
-
-%nodefaultctor Xw;
-class Xw {
-	public:
-		%feature("autodoc", "1");
-		~Xw();
-		%feature("autodoc", "1");
-		Xw();
-		%feature("autodoc", "1");
-		void SetTrace(const Standard_Integer TraceLevel, const Standard_Integer ErrorLevel);
-
+%extend Xw_HListOfMFTSizes {
+	~Xw_HListOfMFTSizes() {
+	printf("Call custom destructor for instance of Xw_HListOfMFTSizes\n");
+	}
 };
 
 %nodefaultctor Xw_MarkMap;
@@ -1202,8 +1260,6 @@ class Xw_MarkMap : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~Xw_MarkMap();
-		%feature("autodoc", "1");
 		Standard_Integer FreeMarkers() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1213,6 +1269,23 @@ class Xw_MarkMap : public Standard_Transient {
 	Handle_Xw_MarkMap GetHandle() {
 	return *(Handle_Xw_MarkMap*) &$self;
 	}
+};
+%extend Xw_MarkMap {
+	~Xw_MarkMap() {
+	printf("Call custom destructor for instance of Xw_MarkMap\n");
+	}
+};
+
+%nodefaultctor Xw;
+class Xw {
+	public:
+		%feature("autodoc", "1");
+		~Xw();
+		%feature("autodoc", "1");
+		Xw();
+		%feature("autodoc", "1");
+		void SetTrace(const Standard_Integer TraceLevel, const Standard_Integer ErrorLevel);
+
 };
 
 %nodefaultctor Xw_ListOfMFTSizes;

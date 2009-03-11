@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module ObjMgt
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
 	public:
 		%feature("autodoc", "1");
-		~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef();
-		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef();
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
@@ -118,12 +102,15 @@ class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
 	return (ObjMgt_SeqNodeOfPSeqOfExtRef*)$self->Access();
 	}
 };
+%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
+	~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef() {
+	printf("Call custom destructor for instance of Handle_ObjMgt_SeqNodeOfPSeqOfExtRef\n");
+	}
+};
 
 %nodefaultctor Handle_ObjMgt_ExternRef;
 class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ObjMgt_ExternRef();
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternRef();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 	return (ObjMgt_ExternRef*)$self->Access();
 	}
 };
+%extend Handle_ObjMgt_ExternRef {
+	~Handle_ObjMgt_ExternRef() {
+	printf("Call custom destructor for instance of Handle_ObjMgt_ExternRef\n");
+	}
+};
 
 %nodefaultctor Handle_ObjMgt_ExternShareable;
 class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ObjMgt_ExternShareable();
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternShareable();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
 	return (ObjMgt_ExternShareable*)$self->Access();
 	}
 };
+%extend Handle_ObjMgt_ExternShareable {
+	~Handle_ObjMgt_ExternShareable() {
+	printf("Call custom destructor for instance of Handle_ObjMgt_ExternShareable\n");
+	}
+};
 
 %nodefaultctor Handle_ObjMgt_PSeqOfExtRef;
 class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ObjMgt_PSeqOfExtRef();
 		%feature("autodoc", "1");
 		Handle_ObjMgt_PSeqOfExtRef();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
 	return (ObjMgt_PSeqOfExtRef*)$self->Access();
 	}
 };
+%extend Handle_ObjMgt_PSeqOfExtRef {
+	~Handle_ObjMgt_PSeqOfExtRef() {
+	printf("Call custom destructor for instance of Handle_ObjMgt_PSeqOfExtRef\n");
+	}
+};
 
 %nodefaultctor ObjMgt_SeqExplorerOfPSeqOfExtRef;
 class ObjMgt_SeqExplorerOfPSeqOfExtRef {
 	public:
-		%feature("autodoc", "1");
-		~ObjMgt_SeqExplorerOfPSeqOfExtRef();
 		%feature("autodoc", "1");
 		ObjMgt_SeqExplorerOfPSeqOfExtRef(const Handle_ObjMgt_PSeqOfExtRef &S);
 		%feature("autodoc", "1");
@@ -198,6 +194,11 @@ class ObjMgt_SeqExplorerOfPSeqOfExtRef {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T);
 
+};
+%extend ObjMgt_SeqExplorerOfPSeqOfExtRef {
+	~ObjMgt_SeqExplorerOfPSeqOfExtRef() {
+	printf("Call custom destructor for instance of ObjMgt_SeqExplorerOfPSeqOfExtRef\n");
+	}
 };
 
 %nodefaultctor ObjMgt_ExternRef;
@@ -217,13 +218,16 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 		void _CSFDB_SetObjMgt_ExternRefmyBindingIndex(const Standard_Integer p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ObjMgt_ExternRef();
 
 };
 %extend ObjMgt_ExternRef {
 	Handle_ObjMgt_ExternRef GetHandle() {
 	return *(Handle_ObjMgt_ExternRef*) &$self;
+	}
+};
+%extend ObjMgt_ExternRef {
+	~ObjMgt_ExternRef() {
+	printf("Call custom destructor for instance of ObjMgt_ExternRef\n");
 	}
 };
 
@@ -266,13 +270,16 @@ class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ObjMgt_SeqNodeOfPSeqOfExtRef();
 
 };
 %extend ObjMgt_SeqNodeOfPSeqOfExtRef {
 	Handle_ObjMgt_SeqNodeOfPSeqOfExtRef GetHandle() {
 	return *(Handle_ObjMgt_SeqNodeOfPSeqOfExtRef*) &$self;
+	}
+};
+%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
+	~ObjMgt_SeqNodeOfPSeqOfExtRef() {
+	printf("Call custom destructor for instance of ObjMgt_SeqNodeOfPSeqOfExtRef\n");
 	}
 };
 
@@ -336,8 +343,6 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~ObjMgt_PSeqOfExtRef();
-		%feature("autodoc", "1");
 		ObjMgt_PSeqOfExtRef(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_PSeqOfExtRefFirstItem() const;
@@ -360,6 +365,11 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 	return *(Handle_ObjMgt_PSeqOfExtRef*) &$self;
 	}
 };
+%extend ObjMgt_PSeqOfExtRef {
+	~ObjMgt_PSeqOfExtRef() {
+	printf("Call custom destructor for instance of ObjMgt_PSeqOfExtRef\n");
+	}
+};
 
 %nodefaultctor ObjMgt_ExternShareable;
 class ObjMgt_ExternShareable : public Standard_Persistent {
@@ -374,12 +384,15 @@ class ObjMgt_ExternShareable : public Standard_Persistent {
 		void _CSFDB_SetObjMgt_ExternShareablemyEntry(const Handle_PCollection_HAsciiString &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ObjMgt_ExternShareable();
 
 };
 %extend ObjMgt_ExternShareable {
 	Handle_ObjMgt_ExternShareable GetHandle() {
 	return *(Handle_ObjMgt_ExternShareable*) &$self;
+	}
+};
+%extend ObjMgt_ExternShareable {
+	~ObjMgt_ExternShareable() {
+	printf("Call custom destructor for instance of ObjMgt_ExternShareable\n");
 	}
 };

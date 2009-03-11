@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Resource
 
@@ -109,8 +95,6 @@ enum Resource_FormatType {
 class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString();
-		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString();
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString(const Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString &aHandle);
@@ -125,12 +109,15 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 	return (Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString*)$self->Access();
 	}
 };
+%extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
+	printf("Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");
+	}
+};
 
 %nodefaultctor Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
 class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");
@@ -146,12 +133,15 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 	return (Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString*)$self->Access();
 	}
 };
+%extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString() {
+	printf("Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");
+	}
+};
 
 %nodefaultctor Handle_Resource_NoSuchResource;
 class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Resource_NoSuchResource();
 		%feature("autodoc", "1");
 		Handle_Resource_NoSuchResource();
 		%feature("autodoc", "1");
@@ -167,12 +157,15 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 	return (Resource_NoSuchResource*)$self->Access();
 	}
 };
+%extend Handle_Resource_NoSuchResource {
+	~Handle_Resource_NoSuchResource() {
+	printf("Call custom destructor for instance of Handle_Resource_NoSuchResource\n");
+	}
+};
 
 %nodefaultctor Handle_Resource_Manager;
 class Handle_Resource_Manager : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Resource_Manager();
 		%feature("autodoc", "1");
 		Handle_Resource_Manager();
 		%feature("autodoc", "1");
@@ -187,6 +180,41 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 	Resource_Manager* GetObject() {
 	return (Resource_Manager*)$self->Access();
 	}
+};
+%extend Handle_Resource_Manager {
+	~Handle_Resource_Manager() {
+	printf("Call custom destructor for instance of Handle_Resource_Manager\n");
+	}
+};
+
+%nodefaultctor Resource_DataMapOfAsciiStringAsciiString;
+class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Resource_DataMapOfAsciiStringAsciiString(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Resource_DataMapOfAsciiStringAsciiString & Assign(const Resource_DataMapOfAsciiStringAsciiString &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~Resource_DataMapOfAsciiStringAsciiString();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TCollection_AsciiString &K, const TCollection_AsciiString &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Find(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & operator()(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString & ChangeFind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & operator()(const TCollection_AsciiString &K);
+
 };
 
 %nodefaultctor Resource_Array1OfAsciiString;
@@ -225,36 +253,6 @@ class Resource_Array1OfAsciiString {
 
 };
 
-%nodefaultctor Resource_DataMapOfAsciiStringAsciiString;
-class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Resource_DataMapOfAsciiStringAsciiString(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Resource_DataMapOfAsciiStringAsciiString & Assign(const Resource_DataMapOfAsciiStringAsciiString &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~Resource_DataMapOfAsciiStringAsciiString();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_AsciiString &K, const TCollection_AsciiString &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Find(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & operator()(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString & ChangeFind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & operator()(const TCollection_AsciiString &K);
-
-};
-
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
 class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCollection_BasicMapIterator {
 	public:
@@ -284,13 +282,16 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection
 		TCollection_AsciiString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString();
 
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
 	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString GetHandle() {
 	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString*) &$self;
+	}
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString() {
+	printf("Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");
 	}
 };
 
@@ -323,13 +324,16 @@ class Resource_Manager : public MMgt_TShared {
 		virtual		void SetResource(const char * aResourceName, const Standard_ExtString aValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Resource_Manager();
 
 };
 %extend Resource_Manager {
 	Handle_Resource_Manager GetHandle() {
 	return *(Handle_Resource_Manager*) &$self;
+	}
+};
+%extend Resource_Manager {
+	~Resource_Manager() {
+	printf("Call custom destructor for instance of Resource_Manager\n");
 	}
 };
 
@@ -404,13 +408,16 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 		TCollection_ExtendedString & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString();
 
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
 	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString GetHandle() {
 	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString*) &$self;
+	}
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
+	printf("Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");
 	}
 };
 
@@ -429,13 +436,16 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 		Handle_Resource_NoSuchResource NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Resource_NoSuchResource();
 
 };
 %extend Resource_NoSuchResource {
 	Handle_Resource_NoSuchResource GetHandle() {
 	return *(Handle_Resource_NoSuchResource*) &$self;
+	}
+};
+%extend Resource_NoSuchResource {
+	~Resource_NoSuchResource() {
+	printf("Call custom destructor for instance of Resource_NoSuchResource\n");
 	}
 };
 

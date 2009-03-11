@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TDocStd
 
@@ -103,8 +89,6 @@ typedef TDocStd_XLink * TDocStd_XLinkPtr;
 class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TDocStd_ApplicationDelta();
-		%feature("autodoc", "1");
 		Handle_TDocStd_ApplicationDelta();
 		%feature("autodoc", "1");
 		Handle_TDocStd_ApplicationDelta(const Handle_TDocStd_ApplicationDelta &aHandle);
@@ -119,12 +103,15 @@ class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
 	return (TDocStd_ApplicationDelta*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_ApplicationDelta {
+	~Handle_TDocStd_ApplicationDelta() {
+	printf("Call custom destructor for instance of Handle_TDocStd_ApplicationDelta\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_Modified;
 class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_Modified();
 		%feature("autodoc", "1");
 		Handle_TDocStd_Modified();
 		%feature("autodoc", "1");
@@ -140,12 +127,15 @@ class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 	return (TDocStd_Modified*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_Modified {
+	~Handle_TDocStd_Modified() {
+	printf("Call custom destructor for instance of Handle_TDocStd_Modified\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_XLink;
 class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_XLink();
 		%feature("autodoc", "1");
 		Handle_TDocStd_XLink();
 		%feature("autodoc", "1");
@@ -161,12 +151,15 @@ class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 	return (TDocStd_XLink*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_XLink {
+	~Handle_TDocStd_XLink() {
+	printf("Call custom destructor for instance of Handle_TDocStd_XLink\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_Document;
 class Handle_TDocStd_Document : public Handle_CDM_Document {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_Document();
 		%feature("autodoc", "1");
 		Handle_TDocStd_Document();
 		%feature("autodoc", "1");
@@ -182,12 +175,15 @@ class Handle_TDocStd_Document : public Handle_CDM_Document {
 	return (TDocStd_Document*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_Document {
+	~Handle_TDocStd_Document() {
+	printf("Call custom destructor for instance of Handle_TDocStd_Document\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_MultiTransactionManager;
 class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_MultiTransactionManager();
 		%feature("autodoc", "1");
 		Handle_TDocStd_MultiTransactionManager();
 		%feature("autodoc", "1");
@@ -203,12 +199,15 @@ class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 	return (TDocStd_MultiTransactionManager*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_MultiTransactionManager {
+	~Handle_TDocStd_MultiTransactionManager() {
+	printf("Call custom destructor for instance of Handle_TDocStd_MultiTransactionManager\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_Owner;
 class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_Owner();
 		%feature("autodoc", "1");
 		Handle_TDocStd_Owner();
 		%feature("autodoc", "1");
@@ -224,12 +223,15 @@ class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 	return (TDocStd_Owner*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_Owner {
+	~Handle_TDocStd_Owner() {
+	printf("Call custom destructor for instance of Handle_TDocStd_Owner\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
 class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta();
 		%feature("autodoc", "1");
 		Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta();
 		%feature("autodoc", "1");
@@ -245,12 +247,15 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TC
 	return (TDocStd_SequenceNodeOfSequenceOfApplicationDelta*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
+	~Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta() {
+	printf("Call custom destructor for instance of Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap;
 class Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap();
 		%feature("autodoc", "1");
 		Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap();
 		%feature("autodoc", "1");
@@ -266,12 +271,15 @@ class Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap : public Handle_TCollection_
 	return (TDocStd_DataMapNodeOfLabelIDMapDataMap*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	~Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap() {
+	printf("Call custom destructor for instance of Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfDocument;
 class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_SequenceNodeOfSequenceOfDocument();
 		%feature("autodoc", "1");
 		Handle_TDocStd_SequenceNodeOfSequenceOfDocument();
 		%feature("autodoc", "1");
@@ -287,12 +295,15 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollectio
 	return (TDocStd_SequenceNodeOfSequenceOfDocument*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_SequenceNodeOfSequenceOfDocument {
+	~Handle_TDocStd_SequenceNodeOfSequenceOfDocument() {
+	printf("Call custom destructor for instance of Handle_TDocStd_SequenceNodeOfSequenceOfDocument\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_CompoundDelta;
 class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_CompoundDelta();
 		%feature("autodoc", "1");
 		Handle_TDocStd_CompoundDelta();
 		%feature("autodoc", "1");
@@ -308,12 +319,15 @@ class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 	return (TDocStd_CompoundDelta*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_CompoundDelta {
+	~Handle_TDocStd_CompoundDelta() {
+	printf("Call custom destructor for instance of Handle_TDocStd_CompoundDelta\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_XLinkRoot;
 class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_XLinkRoot();
 		%feature("autodoc", "1");
 		Handle_TDocStd_XLinkRoot();
 		%feature("autodoc", "1");
@@ -329,12 +343,15 @@ class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 	return (TDocStd_XLinkRoot*)$self->Access();
 	}
 };
+%extend Handle_TDocStd_XLinkRoot {
+	~Handle_TDocStd_XLinkRoot() {
+	printf("Call custom destructor for instance of Handle_TDocStd_XLinkRoot\n");
+	}
+};
 
 %nodefaultctor Handle_TDocStd_Application;
 class Handle_TDocStd_Application : public Handle_CDF_Application {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TDocStd_Application();
 		%feature("autodoc", "1");
 		Handle_TDocStd_Application();
 		%feature("autodoc", "1");
@@ -348,6 +365,11 @@ class Handle_TDocStd_Application : public Handle_CDF_Application {
 %extend Handle_TDocStd_Application {
 	TDocStd_Application* GetObject() {
 	return (TDocStd_Application*)$self->Access();
+	}
+};
+%extend Handle_TDocStd_Application {
+	~Handle_TDocStd_Application() {
+	printf("Call custom destructor for instance of Handle_TDocStd_Application\n");
 	}
 };
 
@@ -444,8 +466,6 @@ class TDocStd_Document : public CDM_Document {
 		Standard_Boolean ModificationMode() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_Document();
 
 };
 %extend TDocStd_Document {
@@ -453,32 +473,15 @@ class TDocStd_Document : public CDM_Document {
 	return *(Handle_TDocStd_Document*) &$self;
 	}
 };
-
-%nodefaultctor TDocStd_XLinkIterator;
-class TDocStd_XLinkIterator {
-	public:
-		%feature("autodoc", "1");
-		~TDocStd_XLinkIterator();
-		%feature("autodoc", "1");
-		TDocStd_XLinkIterator();
-		%feature("autodoc", "1");
-		TDocStd_XLinkIterator(const Handle_TDocStd_Document &D);
-		%feature("autodoc", "1");
-		void Initialize(const Handle_TDocStd_Document &D);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TDocStd_XLink * Value() const;
-
+%extend TDocStd_Document {
+	~TDocStd_Document() {
+	printf("Call custom destructor for instance of TDocStd_Document\n");
+	}
 };
 
 %nodefaultctor TDocStd_XLinkTool;
 class TDocStd_XLinkTool {
 	public:
-		%feature("autodoc", "1");
-		~TDocStd_XLinkTool();
 		%feature("autodoc", "1");
 		TDocStd_XLinkTool();
 		%feature("autodoc", "1");
@@ -494,6 +497,11 @@ class TDocStd_XLinkTool {
 		%feature("autodoc", "1");
 		Handle_TDF_RelocationTable RelocationTable() const;
 
+};
+%extend TDocStd_XLinkTool {
+	~TDocStd_XLinkTool() {
+	printf("Call custom destructor for instance of TDocStd_XLinkTool\n");
+	}
 };
 
 %nodefaultctor TDocStd_MultiTransactionManager;
@@ -547,13 +555,207 @@ class TDocStd_MultiTransactionManager : public MMgt_TShared {
 		void ClearRedos();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_MultiTransactionManager();
 
 };
 %extend TDocStd_MultiTransactionManager {
 	Handle_TDocStd_MultiTransactionManager GetHandle() {
 	return *(Handle_TDocStd_MultiTransactionManager*) &$self;
+	}
+};
+%extend TDocStd_MultiTransactionManager {
+	~TDocStd_MultiTransactionManager() {
+	printf("Call custom destructor for instance of TDocStd_MultiTransactionManager\n");
+	}
+};
+
+%nodefaultctor TDocStd_ApplicationDelta;
+class TDocStd_ApplicationDelta : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_ApplicationDelta();
+		%feature("autodoc", "1");
+		TDocStd_SequenceOfDocument & GetDocuments();
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & GetName() const;
+		%feature("autodoc", "1");
+		void SetName(const TCollection_ExtendedString &theName);
+		%feature("autodoc", "1");
+		void Dump(Standard_OStream & anOS) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_ApplicationDelta {
+	Handle_TDocStd_ApplicationDelta GetHandle() {
+	return *(Handle_TDocStd_ApplicationDelta*) &$self;
+	}
+};
+%extend TDocStd_ApplicationDelta {
+	~TDocStd_ApplicationDelta() {
+	printf("Call custom destructor for instance of TDocStd_ApplicationDelta\n");
+	}
+};
+
+%nodefaultctor TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
+class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_SequenceNodeOfSequenceOfApplicationDelta(const Handle_TDocStd_ApplicationDelta &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_TDocStd_ApplicationDelta & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
+	Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta GetHandle() {
+	return *(Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta*) &$self;
+	}
+};
+%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
+	~TDocStd_SequenceNodeOfSequenceOfApplicationDelta() {
+	printf("Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");
+	}
+};
+
+%nodefaultctor TDocStd_Owner;
+class TDocStd_Owner : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		void SetDocument(const Handle_TDF_Data &indata, const Handle_TDocStd_Document &doc);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document GetDocument(const Handle_TDF_Data &ofdata);
+		%feature("autodoc", "1");
+		TDocStd_Owner();
+		%feature("autodoc", "1");
+		void SetDocument(const Handle_TDocStd_Document &document);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document GetDocument() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_Owner {
+	Handle_TDocStd_Owner GetHandle() {
+	return *(Handle_TDocStd_Owner*) &$self;
+	}
+};
+%extend TDocStd_Owner {
+	~TDocStd_Owner() {
+	printf("Call custom destructor for instance of TDocStd_Owner\n");
+	}
+};
+
+%nodefaultctor TDocStd;
+class TDocStd {
+	public:
+		%feature("autodoc", "1");
+		~TDocStd();
+		%feature("autodoc", "1");
+		TDocStd();
+		%feature("autodoc", "1");
+		void IDList(TDF_IDList & anIDList);
+
+};
+
+%nodefaultctor TDocStd_Context;
+class TDocStd_Context {
+	public:
+		%feature("autodoc", "1");
+		~TDocStd_Context();
+		%feature("autodoc", "1");
+		TDocStd_Context();
+		%feature("autodoc", "1");
+		void SetModifiedReferences(const Standard_Boolean Mod);
+		%feature("autodoc", "1");
+		Standard_Boolean ModifiedReferences() const;
+
+};
+
+%nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
+class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_SequenceNodeOfSequenceOfDocument(const Handle_TDocStd_Document &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_SequenceNodeOfSequenceOfDocument {
+	Handle_TDocStd_SequenceNodeOfSequenceOfDocument GetHandle() {
+	return *(Handle_TDocStd_SequenceNodeOfSequenceOfDocument*) &$self;
+	}
+};
+%extend TDocStd_SequenceNodeOfSequenceOfDocument {
+	~TDocStd_SequenceNodeOfSequenceOfDocument() {
+	printf("Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfDocument\n");
+	}
+};
+
+%nodefaultctor TDocStd_SequenceOfDocument;
+class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_SequenceOfDocument();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TDocStd_SequenceOfDocument & Assign(const TDocStd_SequenceOfDocument &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TDocStd_Document &T);
+		%feature("autodoc", "1");
+		void Append(TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TDocStd_Document &T);
+		%feature("autodoc", "1");
+		void Prepend(TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_TDocStd_Document &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_TDocStd_Document &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		const Handle_TDocStd_Document & First() const;
+		%feature("autodoc", "1");
+		const Handle_TDocStd_Document & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		const Handle_TDocStd_Document & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TDocStd_Document & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TDocStd_Document &I);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend TDocStd_SequenceOfDocument {
+	~TDocStd_SequenceOfDocument() {
+	printf("Call custom destructor for instance of TDocStd_SequenceOfDocument\n");
 	}
 };
 
@@ -599,130 +801,9 @@ class TDocStd_Application : public CDF_Application {
 	return *(Handle_TDocStd_Application*) &$self;
 	}
 };
-
-%nodefaultctor TDocStd_ApplicationDelta;
-class TDocStd_ApplicationDelta : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_ApplicationDelta();
-		%feature("autodoc", "1");
-		TDocStd_SequenceOfDocument & GetDocuments();
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & GetName() const;
-		%feature("autodoc", "1");
-		void SetName(const TCollection_ExtendedString &theName);
-		%feature("autodoc", "1");
-		void Dump(Standard_OStream & anOS) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_ApplicationDelta();
-
-};
-%extend TDocStd_ApplicationDelta {
-	Handle_TDocStd_ApplicationDelta GetHandle() {
-	return *(Handle_TDocStd_ApplicationDelta*) &$self;
-	}
-};
-
-%nodefaultctor TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
-class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_SequenceNodeOfSequenceOfApplicationDelta(const Handle_TDocStd_ApplicationDelta &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TDocStd_ApplicationDelta & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_SequenceNodeOfSequenceOfApplicationDelta();
-
-};
-%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
-	Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta GetHandle() {
-	return *(Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta*) &$self;
-	}
-};
-
-%nodefaultctor TDocStd_Owner;
-class TDocStd_Owner : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		void SetDocument(const Handle_TDF_Data &indata, const Handle_TDocStd_Document &doc);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Document GetDocument(const Handle_TDF_Data &ofdata);
-		%feature("autodoc", "1");
-		TDocStd_Owner();
-		%feature("autodoc", "1");
-		void SetDocument(const Handle_TDocStd_Document &document);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Document GetDocument() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_Owner();
-
-};
-%extend TDocStd_Owner {
-	Handle_TDocStd_Owner GetHandle() {
-	return *(Handle_TDocStd_Owner*) &$self;
-	}
-};
-
-%nodefaultctor TDocStd;
-class TDocStd {
-	public:
-		%feature("autodoc", "1");
-		~TDocStd();
-		%feature("autodoc", "1");
-		TDocStd();
-		%feature("autodoc", "1");
-		void IDList(TDF_IDList & anIDList);
-
-};
-
-%nodefaultctor TDocStd_Context;
-class TDocStd_Context {
-	public:
-		%feature("autodoc", "1");
-		~TDocStd_Context();
-		%feature("autodoc", "1");
-		TDocStd_Context();
-		%feature("autodoc", "1");
-		void SetModifiedReferences(const Standard_Boolean Mod);
-		%feature("autodoc", "1");
-		Standard_Boolean ModifiedReferences() const;
-
-};
-
-%nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
-class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_SequenceNodeOfSequenceOfDocument(const Handle_TDocStd_Document &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Document & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_SequenceNodeOfSequenceOfDocument();
-
-};
-%extend TDocStd_SequenceNodeOfSequenceOfDocument {
-	Handle_TDocStd_SequenceNodeOfSequenceOfDocument GetHandle() {
-	return *(Handle_TDocStd_SequenceNodeOfSequenceOfDocument*) &$self;
+%extend TDocStd_Application {
+	~TDocStd_Application() {
+	printf("Call custom destructor for instance of TDocStd_Application\n");
 	}
 };
 
@@ -789,8 +870,6 @@ class TDocStd_Modified : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_Modified();
 
 };
 %extend TDocStd_Modified {
@@ -798,55 +877,10 @@ class TDocStd_Modified : public TDF_Attribute {
 	return *(Handle_TDocStd_Modified*) &$self;
 	}
 };
-
-%nodefaultctor TDocStd_SequenceOfDocument;
-class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_SequenceOfDocument();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~TDocStd_SequenceOfDocument();
-		%feature("autodoc", "1");
-		const TDocStd_SequenceOfDocument & Assign(const TDocStd_SequenceOfDocument &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TDocStd_Document &T);
-		%feature("autodoc", "1");
-		void Append(TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TDocStd_Document &T);
-		%feature("autodoc", "1");
-		void Prepend(TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TDocStd_Document &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TDocStd_Document &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		const Handle_TDocStd_Document & First() const;
-		%feature("autodoc", "1");
-		const Handle_TDocStd_Document & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		const Handle_TDocStd_Document & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TDocStd_Document & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TDocStd_Document &I);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Document & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Document & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
+%extend TDocStd_Modified {
+	~TDocStd_Modified() {
+	printf("Call custom destructor for instance of TDocStd_Modified\n");
+	}
 };
 
 %nodefaultctor TDocStd_LabelIDMapDataMap;
@@ -908,13 +942,16 @@ class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
 		TDF_IDMap & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_DataMapNodeOfLabelIDMapDataMap();
 
 };
 %extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
 	Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap GetHandle() {
 	return *(Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap*) &$self;
+	}
+};
+%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	~TDocStd_DataMapNodeOfLabelIDMapDataMap() {
+	printf("Call custom destructor for instance of TDocStd_DataMapNodeOfLabelIDMapDataMap\n");
 	}
 };
 
@@ -925,8 +962,6 @@ class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 		TDocStd_SequenceOfApplicationDelta();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDocStd_SequenceOfApplicationDelta();
 		%feature("autodoc", "1");
 		const TDocStd_SequenceOfApplicationDelta & Assign(const TDocStd_SequenceOfApplicationDelta &Other);
 		%feature("autodoc", "1");
@@ -967,6 +1002,31 @@ class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TDocStd_SequenceOfApplicationDelta {
+	~TDocStd_SequenceOfApplicationDelta() {
+	printf("Call custom destructor for instance of TDocStd_SequenceOfApplicationDelta\n");
+	}
+};
+
+%nodefaultctor TDocStd_XLinkIterator;
+class TDocStd_XLinkIterator {
+	public:
+		%feature("autodoc", "1");
+		~TDocStd_XLinkIterator();
+		%feature("autodoc", "1");
+		TDocStd_XLinkIterator();
+		%feature("autodoc", "1");
+		TDocStd_XLinkIterator(const Handle_TDocStd_Document &D);
+		%feature("autodoc", "1");
+		void Initialize(const Handle_TDocStd_Document &D);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TDocStd_XLink * Value() const;
+
+};
 
 %nodefaultctor TDocStd_CompoundDelta;
 class TDocStd_CompoundDelta : public TDF_Delta {
@@ -975,13 +1035,16 @@ class TDocStd_CompoundDelta : public TDF_Delta {
 		TDocStd_CompoundDelta();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_CompoundDelta();
 
 };
 %extend TDocStd_CompoundDelta {
 	Handle_TDocStd_CompoundDelta GetHandle() {
 	return *(Handle_TDocStd_CompoundDelta*) &$self;
+	}
+};
+%extend TDocStd_CompoundDelta {
+	~TDocStd_CompoundDelta() {
+	printf("Call custom destructor for instance of TDocStd_CompoundDelta\n");
 	}
 };
 
@@ -1010,13 +1073,16 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_XLinkRoot();
 
 };
 %extend TDocStd_XLinkRoot {
 	Handle_TDocStd_XLinkRoot GetHandle() {
 	return *(Handle_TDocStd_XLinkRoot*) &$self;
+	}
+};
+%extend TDocStd_XLinkRoot {
+	~TDocStd_XLinkRoot() {
+	printf("Call custom destructor for instance of TDocStd_XLinkRoot\n");
 	}
 };
 
@@ -1063,12 +1129,15 @@ class TDocStd_XLink : public TDF_Attribute {
 		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TDocStd_XLink();
 
 };
 %extend TDocStd_XLink {
 	Handle_TDocStd_XLink GetHandle() {
 	return *(Handle_TDocStd_XLink*) &$self;
+	}
+};
+%extend TDocStd_XLink {
+	~TDocStd_XLink() {
+	printf("Call custom destructor for instance of TDocStd_XLink\n");
 	}
 };

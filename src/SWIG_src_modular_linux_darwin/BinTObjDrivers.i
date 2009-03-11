@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BinTObjDrivers
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_DocumentStorageDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BinTObjDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_DocumentStorageDriver(const Handle_BinTObjDrivers_DocumentStorageDriver &aHandle);
@@ -118,12 +102,15 @@ class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Do
 	return (BinTObjDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_BinTObjDrivers_DocumentStorageDriver {
+	~Handle_BinTObjDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_BinTObjDrivers_DocumentStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinTObjDrivers_ObjectDriver;
 class Handle_BinTObjDrivers_ObjectDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinTObjDrivers_ObjectDriver();
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ObjectDriver();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_BinTObjDrivers_ObjectDriver : public Handle_BinMDF_ADriver {
 	return (BinTObjDrivers_ObjectDriver*)$self->Access();
 	}
 };
+%extend Handle_BinTObjDrivers_ObjectDriver {
+	~Handle_BinTObjDrivers_ObjectDriver() {
+	printf("Call custom destructor for instance of Handle_BinTObjDrivers_ObjectDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinTObjDrivers_ReferenceDriver;
 class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinTObjDrivers_ReferenceDriver();
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ReferenceDriver();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
 	return (BinTObjDrivers_ReferenceDriver*)$self->Access();
 	}
 };
+%extend Handle_BinTObjDrivers_ReferenceDriver {
+	~Handle_BinTObjDrivers_ReferenceDriver() {
+	printf("Call custom destructor for instance of Handle_BinTObjDrivers_ReferenceDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinTObjDrivers_ModelDriver;
 class Handle_BinTObjDrivers_ModelDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinTObjDrivers_ModelDriver();
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ModelDriver();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_BinTObjDrivers_ModelDriver : public Handle_BinMDF_ADriver {
 	return (BinTObjDrivers_ModelDriver*)$self->Access();
 	}
 };
+%extend Handle_BinTObjDrivers_ModelDriver {
+	~Handle_BinTObjDrivers_ModelDriver() {
+	printf("Call custom destructor for instance of Handle_BinTObjDrivers_ModelDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinTObjDrivers_DocumentRetrievalDriver;
 class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_DocumentRetrievalDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinTObjDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_
 	return (BinTObjDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_BinTObjDrivers_DocumentRetrievalDriver {
+	~Handle_BinTObjDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_BinTObjDrivers_DocumentRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinTObjDrivers_XYZDriver;
 class Handle_BinTObjDrivers_XYZDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinTObjDrivers_XYZDriver();
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_XYZDriver();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_BinTObjDrivers_XYZDriver : public Handle_BinMDF_ADriver {
 	return (BinTObjDrivers_XYZDriver*)$self->Access();
 	}
 };
+%extend Handle_BinTObjDrivers_XYZDriver {
+	~Handle_BinTObjDrivers_XYZDriver() {
+	printf("Call custom destructor for instance of Handle_BinTObjDrivers_XYZDriver\n");
+	}
+};
 
 %nodefaultctor Handle_BinTObjDrivers_IntSparseArrayDriver;
 class Handle_BinTObjDrivers_IntSparseArrayDriver : public Handle_BinMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BinTObjDrivers_IntSparseArrayDriver();
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_IntSparseArrayDriver();
 		%feature("autodoc", "1");
@@ -242,6 +244,11 @@ class Handle_BinTObjDrivers_IntSparseArrayDriver : public Handle_BinMDF_ADriver 
 %extend Handle_BinTObjDrivers_IntSparseArrayDriver {
 	BinTObjDrivers_IntSparseArrayDriver* GetObject() {
 	return (BinTObjDrivers_IntSparseArrayDriver*)$self->Access();
+	}
+};
+%extend Handle_BinTObjDrivers_IntSparseArrayDriver {
+	~Handle_BinTObjDrivers_IntSparseArrayDriver() {
+	printf("Call custom destructor for instance of Handle_BinTObjDrivers_IntSparseArrayDriver\n");
 	}
 };
 
@@ -258,13 +265,16 @@ class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinTObjDrivers_ModelDriver();
 
 };
 %extend BinTObjDrivers_ModelDriver {
 	Handle_BinTObjDrivers_ModelDriver GetHandle() {
 	return *(Handle_BinTObjDrivers_ModelDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_ModelDriver {
+	~BinTObjDrivers_ModelDriver() {
+	printf("Call custom destructor for instance of BinTObjDrivers_ModelDriver\n");
 	}
 };
 
@@ -281,13 +291,16 @@ class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinTObjDrivers_IntSparseArrayDriver();
 
 };
 %extend BinTObjDrivers_IntSparseArrayDriver {
 	Handle_BinTObjDrivers_IntSparseArrayDriver GetHandle() {
 	return *(Handle_BinTObjDrivers_IntSparseArrayDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_IntSparseArrayDriver {
+	~BinTObjDrivers_IntSparseArrayDriver() {
+	printf("Call custom destructor for instance of BinTObjDrivers_IntSparseArrayDriver\n");
 	}
 };
 
@@ -304,13 +317,16 @@ class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinTObjDrivers_ReferenceDriver();
 
 };
 %extend BinTObjDrivers_ReferenceDriver {
 	Handle_BinTObjDrivers_ReferenceDriver GetHandle() {
 	return *(Handle_BinTObjDrivers_ReferenceDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_ReferenceDriver {
+	~BinTObjDrivers_ReferenceDriver() {
+	printf("Call custom destructor for instance of BinTObjDrivers_ReferenceDriver\n");
 	}
 };
 
@@ -327,8 +343,6 @@ class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinTObjDrivers_ObjectDriver();
 
 };
 %extend BinTObjDrivers_ObjectDriver {
@@ -336,12 +350,15 @@ class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
 	return *(Handle_BinTObjDrivers_ObjectDriver*) &$self;
 	}
 };
+%extend BinTObjDrivers_ObjectDriver {
+	~BinTObjDrivers_ObjectDriver() {
+	printf("Call custom destructor for instance of BinTObjDrivers_ObjectDriver\n");
+	}
+};
 
 %nodefaultctor BinTObjDrivers;
 class BinTObjDrivers {
 	public:
-		%feature("autodoc", "1");
-		~BinTObjDrivers();
 		%feature("autodoc", "1");
 		BinTObjDrivers();
 		%feature("autodoc", "1");
@@ -349,6 +366,11 @@ class BinTObjDrivers {
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
+};
+%extend BinTObjDrivers {
+	~BinTObjDrivers() {
+	printf("Call custom destructor for instance of BinTObjDrivers\n");
+	}
 };
 
 %nodefaultctor BinTObjDrivers_DocumentRetrievalDriver;
@@ -360,13 +382,16 @@ class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrie
 		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinTObjDrivers_DocumentRetrievalDriver();
 
 };
 %extend BinTObjDrivers_DocumentRetrievalDriver {
 	Handle_BinTObjDrivers_DocumentRetrievalDriver GetHandle() {
 	return *(Handle_BinTObjDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_DocumentRetrievalDriver {
+	~BinTObjDrivers_DocumentRetrievalDriver() {
+	printf("Call custom destructor for instance of BinTObjDrivers_DocumentRetrievalDriver\n");
 	}
 };
 
@@ -379,13 +404,16 @@ class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageD
 		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinTObjDrivers_DocumentStorageDriver();
 
 };
 %extend BinTObjDrivers_DocumentStorageDriver {
 	Handle_BinTObjDrivers_DocumentStorageDriver GetHandle() {
 	return *(Handle_BinTObjDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_DocumentStorageDriver {
+	~BinTObjDrivers_DocumentStorageDriver() {
+	printf("Call custom destructor for instance of BinTObjDrivers_DocumentStorageDriver\n");
 	}
 };
 
@@ -402,12 +430,15 @@ class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BinTObjDrivers_XYZDriver();
 
 };
 %extend BinTObjDrivers_XYZDriver {
 	Handle_BinTObjDrivers_XYZDriver GetHandle() {
 	return *(Handle_BinTObjDrivers_XYZDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_XYZDriver {
+	~BinTObjDrivers_XYZDriver() {
+	printf("Call custom destructor for instance of BinTObjDrivers_XYZDriver\n");
 	}
 };

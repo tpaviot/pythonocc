@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Storage
 
@@ -130,347 +116,9 @@ enum Storage_SolveMode {
 
 
 
-%nodefaultctor Handle_Storage_InternalData;
-class Handle_Storage_InternalData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_InternalData();
-		%feature("autodoc", "1");
-		Handle_Storage_InternalData();
-		%feature("autodoc", "1");
-		Handle_Storage_InternalData(const Handle_Storage_InternalData &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_InternalData(const Storage_InternalData *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_InternalData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_InternalData {
-	Storage_InternalData* GetObject() {
-	return (Storage_InternalData*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_SequenceNodeOfSeqOfCallBack;
-class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_SequenceNodeOfSeqOfCallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
-	Storage_SequenceNodeOfSeqOfCallBack* GetObject() {
-	return (Storage_SequenceNodeOfSeqOfCallBack*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_TypeData;
-class Handle_Storage_TypeData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_TypeData();
-		%feature("autodoc", "1");
-		Handle_Storage_TypeData();
-		%feature("autodoc", "1");
-		Handle_Storage_TypeData(const Handle_Storage_TypeData &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_TypeData(const Storage_TypeData *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_TypeData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_TypeData {
-	Storage_TypeData* GetObject() {
-	return (Storage_TypeData*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_DataMapNodeOfMapOfPers;
-class Handle_Storage_DataMapNodeOfMapOfPers : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_DataMapNodeOfMapOfPers();
-		%feature("autodoc", "1");
-		Handle_Storage_DataMapNodeOfMapOfPers();
-		%feature("autodoc", "1");
-		Handle_Storage_DataMapNodeOfMapOfPers(const Handle_Storage_DataMapNodeOfMapOfPers &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_DataMapNodeOfMapOfPers(const Storage_DataMapNodeOfMapOfPers *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_DataMapNodeOfMapOfPers const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_DataMapNodeOfMapOfPers {
-	Storage_DataMapNodeOfMapOfPers* GetObject() {
-	return (Storage_DataMapNodeOfMapOfPers*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_SequenceNodeOfSeqOfPersistent;
-class Handle_Storage_SequenceNodeOfSeqOfPersistent : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_SequenceNodeOfSeqOfPersistent();
-		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfPersistent();
-		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfPersistent(const Handle_Storage_SequenceNodeOfSeqOfPersistent &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfPersistent(const Storage_SequenceNodeOfSeqOfPersistent *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfPersistent const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_SequenceNodeOfSeqOfPersistent {
-	Storage_SequenceNodeOfSeqOfPersistent* GetObject() {
-	return (Storage_SequenceNodeOfSeqOfPersistent*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_StreamReadError;
-class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_StreamReadError();
-		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError();
-		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError(const Handle_Storage_StreamReadError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError(const Storage_StreamReadError *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_StreamReadError {
-	Storage_StreamReadError* GetObject() {
-	return (Storage_StreamReadError*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_StreamTypeMismatchError;
-class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadError {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_StreamTypeMismatchError();
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError();
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError(const Handle_Storage_StreamTypeMismatchError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError(const Storage_StreamTypeMismatchError *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_StreamTypeMismatchError {
-	Storage_StreamTypeMismatchError* GetObject() {
-	return (Storage_StreamTypeMismatchError*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_HSeqOfPersistent;
-class Handle_Storage_HSeqOfPersistent : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_HSeqOfPersistent();
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfPersistent();
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfPersistent(const Handle_Storage_HSeqOfPersistent &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfPersistent(const Storage_HSeqOfPersistent *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfPersistent const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_HSeqOfPersistent {
-	Storage_HSeqOfPersistent* GetObject() {
-	return (Storage_HSeqOfPersistent*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_HPArray;
-class Handle_Storage_HPArray : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_HPArray();
-		%feature("autodoc", "1");
-		Handle_Storage_HPArray();
-		%feature("autodoc", "1");
-		Handle_Storage_HPArray(const Handle_Storage_HPArray &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_HPArray(const Storage_HPArray *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_HPArray const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_HPArray {
-	Storage_HPArray* GetObject() {
-	return (Storage_HPArray*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_StreamFormatError;
-class Handle_Storage_StreamFormatError : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_StreamFormatError();
-		%feature("autodoc", "1");
-		Handle_Storage_StreamFormatError();
-		%feature("autodoc", "1");
-		Handle_Storage_StreamFormatError(const Handle_Storage_StreamFormatError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamFormatError(const Storage_StreamFormatError *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamFormatError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_StreamFormatError {
-	Storage_StreamFormatError* GetObject() {
-	return (Storage_StreamFormatError*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_HSeqOfCallBack;
-class Handle_Storage_HSeqOfCallBack : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_HSeqOfCallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfCallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfCallBack(const Handle_Storage_HSeqOfCallBack &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfCallBack(const Storage_HSeqOfCallBack *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_HSeqOfCallBack {
-	Storage_HSeqOfCallBack* GetObject() {
-	return (Storage_HSeqOfCallBack*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_Root;
-class Handle_Storage_Root : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_Root();
-		%feature("autodoc", "1");
-		Handle_Storage_Root();
-		%feature("autodoc", "1");
-		Handle_Storage_Root(const Handle_Storage_Root &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_Root(const Storage_Root *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_Root const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_Root {
-	Storage_Root* GetObject() {
-	return (Storage_Root*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_CallBack;
-class Handle_Storage_CallBack : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_CallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack(const Handle_Storage_CallBack &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack(const Storage_CallBack *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_CallBack {
-	Storage_CallBack* GetObject() {
-	return (Storage_CallBack*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_DefaultCallBack;
-class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_DefaultCallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_DefaultCallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_DefaultCallBack(const Handle_Storage_DefaultCallBack &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_DefaultCallBack(const Storage_DefaultCallBack *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_DefaultCallBack const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_DefaultCallBack {
-	Storage_DefaultCallBack* GetObject() {
-	return (Storage_DefaultCallBack*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_Data;
-class Handle_Storage_Data : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_Data();
-		%feature("autodoc", "1");
-		Handle_Storage_Data();
-		%feature("autodoc", "1");
-		Handle_Storage_Data(const Handle_Storage_Data &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_Data(const Storage_Data *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_Data const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_Data {
-	Storage_Data* GetObject() {
-	return (Storage_Data*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Storage_HArrayOfSchema;
-class Handle_Storage_HArrayOfSchema : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_HArrayOfSchema();
-		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfSchema();
-		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfSchema(const Handle_Storage_HArrayOfSchema &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfSchema(const Storage_HArrayOfSchema *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfSchema const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_HArrayOfSchema {
-	Storage_HArrayOfSchema* GetObject() {
-	return (Storage_HArrayOfSchema*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_Storage_Schema;
 class Handle_Storage_Schema : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_Schema();
 		%feature("autodoc", "1");
 		Handle_Storage_Schema();
 		%feature("autodoc", "1");
@@ -486,12 +134,327 @@ class Handle_Storage_Schema : public Handle_MMgt_TShared {
 	return (Storage_Schema*)$self->Access();
 	}
 };
+%extend Handle_Storage_Schema {
+	~Handle_Storage_Schema() {
+	printf("Call custom destructor for instance of Handle_Storage_Schema\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_InternalData;
+class Handle_Storage_InternalData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_InternalData();
+		%feature("autodoc", "1");
+		Handle_Storage_InternalData(const Handle_Storage_InternalData &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_InternalData(const Storage_InternalData *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_InternalData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_InternalData {
+	Storage_InternalData* GetObject() {
+	return (Storage_InternalData*)$self->Access();
+	}
+};
+%extend Handle_Storage_InternalData {
+	~Handle_Storage_InternalData() {
+	printf("Call custom destructor for instance of Handle_Storage_InternalData\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_SequenceNodeOfSeqOfCallBack;
+class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack();
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
+	Storage_SequenceNodeOfSeqOfCallBack* GetObject() {
+	return (Storage_SequenceNodeOfSeqOfCallBack*)$self->Access();
+	}
+};
+%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
+	~Handle_Storage_SequenceNodeOfSeqOfCallBack() {
+	printf("Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfCallBack\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_DataMapNodeOfMapOfPers;
+class Handle_Storage_DataMapNodeOfMapOfPers : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_DataMapNodeOfMapOfPers();
+		%feature("autodoc", "1");
+		Handle_Storage_DataMapNodeOfMapOfPers(const Handle_Storage_DataMapNodeOfMapOfPers &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_DataMapNodeOfMapOfPers(const Storage_DataMapNodeOfMapOfPers *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_DataMapNodeOfMapOfPers const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_DataMapNodeOfMapOfPers {
+	Storage_DataMapNodeOfMapOfPers* GetObject() {
+	return (Storage_DataMapNodeOfMapOfPers*)$self->Access();
+	}
+};
+%extend Handle_Storage_DataMapNodeOfMapOfPers {
+	~Handle_Storage_DataMapNodeOfMapOfPers() {
+	printf("Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfPers\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_SequenceNodeOfSeqOfPersistent;
+class Handle_Storage_SequenceNodeOfSeqOfPersistent : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfPersistent();
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfPersistent(const Handle_Storage_SequenceNodeOfSeqOfPersistent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfPersistent(const Storage_SequenceNodeOfSeqOfPersistent *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfPersistent const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_SequenceNodeOfSeqOfPersistent {
+	Storage_SequenceNodeOfSeqOfPersistent* GetObject() {
+	return (Storage_SequenceNodeOfSeqOfPersistent*)$self->Access();
+	}
+};
+%extend Handle_Storage_SequenceNodeOfSeqOfPersistent {
+	~Handle_Storage_SequenceNodeOfSeqOfPersistent() {
+	printf("Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfPersistent\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_StreamReadError;
+class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError();
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError(const Handle_Storage_StreamReadError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError(const Storage_StreamReadError *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_StreamReadError {
+	Storage_StreamReadError* GetObject() {
+	return (Storage_StreamReadError*)$self->Access();
+	}
+};
+%extend Handle_Storage_StreamReadError {
+	~Handle_Storage_StreamReadError() {
+	printf("Call custom destructor for instance of Handle_Storage_StreamReadError\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_StreamTypeMismatchError;
+class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError();
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError(const Handle_Storage_StreamTypeMismatchError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError(const Storage_StreamTypeMismatchError *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_StreamTypeMismatchError {
+	Storage_StreamTypeMismatchError* GetObject() {
+	return (Storage_StreamTypeMismatchError*)$self->Access();
+	}
+};
+%extend Handle_Storage_StreamTypeMismatchError {
+	~Handle_Storage_StreamTypeMismatchError() {
+	printf("Call custom destructor for instance of Handle_Storage_StreamTypeMismatchError\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_HSeqOfPersistent;
+class Handle_Storage_HSeqOfPersistent : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfPersistent();
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfPersistent(const Handle_Storage_HSeqOfPersistent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfPersistent(const Storage_HSeqOfPersistent *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfPersistent const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_HSeqOfPersistent {
+	Storage_HSeqOfPersistent* GetObject() {
+	return (Storage_HSeqOfPersistent*)$self->Access();
+	}
+};
+%extend Handle_Storage_HSeqOfPersistent {
+	~Handle_Storage_HSeqOfPersistent() {
+	printf("Call custom destructor for instance of Handle_Storage_HSeqOfPersistent\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_HPArray;
+class Handle_Storage_HPArray : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_HPArray();
+		%feature("autodoc", "1");
+		Handle_Storage_HPArray(const Handle_Storage_HPArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HPArray(const Storage_HPArray *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_HPArray const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_HPArray {
+	Storage_HPArray* GetObject() {
+	return (Storage_HPArray*)$self->Access();
+	}
+};
+%extend Handle_Storage_HPArray {
+	~Handle_Storage_HPArray() {
+	printf("Call custom destructor for instance of Handle_Storage_HPArray\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_StreamFormatError;
+class Handle_Storage_StreamFormatError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_StreamFormatError();
+		%feature("autodoc", "1");
+		Handle_Storage_StreamFormatError(const Handle_Storage_StreamFormatError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamFormatError(const Storage_StreamFormatError *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamFormatError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_StreamFormatError {
+	Storage_StreamFormatError* GetObject() {
+	return (Storage_StreamFormatError*)$self->Access();
+	}
+};
+%extend Handle_Storage_StreamFormatError {
+	~Handle_Storage_StreamFormatError() {
+	printf("Call custom destructor for instance of Handle_Storage_StreamFormatError\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_HSeqOfCallBack;
+class Handle_Storage_HSeqOfCallBack : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack();
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack(const Handle_Storage_HSeqOfCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack(const Storage_HSeqOfCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_HSeqOfCallBack {
+	Storage_HSeqOfCallBack* GetObject() {
+	return (Storage_HSeqOfCallBack*)$self->Access();
+	}
+};
+%extend Handle_Storage_HSeqOfCallBack {
+	~Handle_Storage_HSeqOfCallBack() {
+	printf("Call custom destructor for instance of Handle_Storage_HSeqOfCallBack\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_Root;
+class Handle_Storage_Root : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_Root();
+		%feature("autodoc", "1");
+		Handle_Storage_Root(const Handle_Storage_Root &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_Root(const Storage_Root *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_Root const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_Root {
+	Storage_Root* GetObject() {
+	return (Storage_Root*)$self->Access();
+	}
+};
+%extend Handle_Storage_Root {
+	~Handle_Storage_Root() {
+	printf("Call custom destructor for instance of Handle_Storage_Root\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_Data;
+class Handle_Storage_Data : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_Data();
+		%feature("autodoc", "1");
+		Handle_Storage_Data(const Handle_Storage_Data &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_Data(const Storage_Data *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_Data const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_Data {
+	Storage_Data* GetObject() {
+	return (Storage_Data*)$self->Access();
+	}
+};
+%extend Handle_Storage_Data {
+	~Handle_Storage_Data() {
+	printf("Call custom destructor for instance of Handle_Storage_Data\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_HArrayOfSchema;
+class Handle_Storage_HArrayOfSchema : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfSchema();
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfSchema(const Handle_Storage_HArrayOfSchema &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfSchema(const Storage_HArrayOfSchema *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfSchema const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_HArrayOfSchema {
+	Storage_HArrayOfSchema* GetObject() {
+	return (Storage_HArrayOfSchema*)$self->Access();
+	}
+};
+%extend Handle_Storage_HArrayOfSchema {
+	~Handle_Storage_HArrayOfSchema() {
+	printf("Call custom destructor for instance of Handle_Storage_HArrayOfSchema\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_StreamWriteError;
 class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_StreamWriteError();
 		%feature("autodoc", "1");
 		Handle_Storage_StreamWriteError();
 		%feature("autodoc", "1");
@@ -507,12 +470,15 @@ class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 	return (Storage_StreamWriteError*)$self->Access();
 	}
 };
+%extend Handle_Storage_StreamWriteError {
+	~Handle_Storage_StreamWriteError() {
+	printf("Call custom destructor for instance of Handle_Storage_StreamWriteError\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_DataMapNodeOfMapOfCallBack;
 class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_DataMapNodeOfMapOfCallBack();
 		%feature("autodoc", "1");
 		Handle_Storage_DataMapNodeOfMapOfCallBack();
 		%feature("autodoc", "1");
@@ -528,12 +494,15 @@ class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapN
 	return (Storage_DataMapNodeOfMapOfCallBack*)$self->Access();
 	}
 };
+%extend Handle_Storage_DataMapNodeOfMapOfCallBack {
+	~Handle_Storage_DataMapNodeOfMapOfCallBack() {
+	printf("Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfCallBack\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_IndexedDataMapNodeOfPType;
 class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_IndexedDataMapNodeOfPType();
 		%feature("autodoc", "1");
 		Handle_Storage_IndexedDataMapNodeOfPType();
 		%feature("autodoc", "1");
@@ -549,12 +518,15 @@ class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNo
 	return (Storage_IndexedDataMapNodeOfPType*)$self->Access();
 	}
 };
+%extend Handle_Storage_IndexedDataMapNodeOfPType {
+	~Handle_Storage_IndexedDataMapNodeOfPType() {
+	printf("Call custom destructor for instance of Handle_Storage_IndexedDataMapNodeOfPType\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_RootData;
 class Handle_Storage_RootData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_RootData();
 		%feature("autodoc", "1");
 		Handle_Storage_RootData();
 		%feature("autodoc", "1");
@@ -570,12 +542,15 @@ class Handle_Storage_RootData : public Handle_MMgt_TShared {
 	return (Storage_RootData*)$self->Access();
 	}
 };
+%extend Handle_Storage_RootData {
+	~Handle_Storage_RootData() {
+	printf("Call custom destructor for instance of Handle_Storage_RootData\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_TypedCallBack;
 class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_TypedCallBack();
 		%feature("autodoc", "1");
 		Handle_Storage_TypedCallBack();
 		%feature("autodoc", "1");
@@ -591,12 +566,15 @@ class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
 	return (Storage_TypedCallBack*)$self->Access();
 	}
 };
+%extend Handle_Storage_TypedCallBack {
+	~Handle_Storage_TypedCallBack() {
+	printf("Call custom destructor for instance of Handle_Storage_TypedCallBack\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_StreamExtCharParityError;
 class Handle_Storage_StreamExtCharParityError : public Handle_Storage_StreamReadError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_StreamExtCharParityError();
 		%feature("autodoc", "1");
 		Handle_Storage_StreamExtCharParityError();
 		%feature("autodoc", "1");
@@ -612,12 +590,15 @@ class Handle_Storage_StreamExtCharParityError : public Handle_Storage_StreamRead
 	return (Storage_StreamExtCharParityError*)$self->Access();
 	}
 };
+%extend Handle_Storage_StreamExtCharParityError {
+	~Handle_Storage_StreamExtCharParityError() {
+	printf("Call custom destructor for instance of Handle_Storage_StreamExtCharParityError\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_SequenceNodeOfSeqOfRoot;
 class Handle_Storage_SequenceNodeOfSeqOfRoot : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_SequenceNodeOfSeqOfRoot();
 		%feature("autodoc", "1");
 		Handle_Storage_SequenceNodeOfSeqOfRoot();
 		%feature("autodoc", "1");
@@ -633,12 +614,39 @@ class Handle_Storage_SequenceNodeOfSeqOfRoot : public Handle_TCollection_SeqNode
 	return (Storage_SequenceNodeOfSeqOfRoot*)$self->Access();
 	}
 };
+%extend Handle_Storage_SequenceNodeOfSeqOfRoot {
+	~Handle_Storage_SequenceNodeOfSeqOfRoot() {
+	printf("Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfRoot\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_TypeData;
+class Handle_Storage_TypeData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_TypeData();
+		%feature("autodoc", "1");
+		Handle_Storage_TypeData(const Handle_Storage_TypeData &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_TypeData(const Storage_TypeData *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_TypeData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_TypeData {
+	Storage_TypeData* GetObject() {
+	return (Storage_TypeData*)$self->Access();
+	}
+};
+%extend Handle_Storage_TypeData {
+	~Handle_Storage_TypeData() {
+	printf("Call custom destructor for instance of Handle_Storage_TypeData\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_StreamModeError;
 class Handle_Storage_StreamModeError : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_StreamModeError();
 		%feature("autodoc", "1");
 		Handle_Storage_StreamModeError();
 		%feature("autodoc", "1");
@@ -654,12 +662,15 @@ class Handle_Storage_StreamModeError : public Handle_Standard_Failure {
 	return (Storage_StreamModeError*)$self->Access();
 	}
 };
+%extend Handle_Storage_StreamModeError {
+	~Handle_Storage_StreamModeError() {
+	printf("Call custom destructor for instance of Handle_Storage_StreamModeError\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_HeaderData;
 class Handle_Storage_HeaderData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_HeaderData();
 		%feature("autodoc", "1");
 		Handle_Storage_HeaderData();
 		%feature("autodoc", "1");
@@ -675,12 +686,63 @@ class Handle_Storage_HeaderData : public Handle_MMgt_TShared {
 	return (Storage_HeaderData*)$self->Access();
 	}
 };
+%extend Handle_Storage_HeaderData {
+	~Handle_Storage_HeaderData() {
+	printf("Call custom destructor for instance of Handle_Storage_HeaderData\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_CallBack;
+class Handle_Storage_CallBack : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack();
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack(const Handle_Storage_CallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack(const Storage_CallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_CallBack {
+	Storage_CallBack* GetObject() {
+	return (Storage_CallBack*)$self->Access();
+	}
+};
+%extend Handle_Storage_CallBack {
+	~Handle_Storage_CallBack() {
+	printf("Call custom destructor for instance of Handle_Storage_CallBack\n");
+	}
+};
+
+%nodefaultctor Handle_Storage_DefaultCallBack;
+class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack();
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack(const Handle_Storage_DefaultCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack(const Storage_DefaultCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_DefaultCallBack {
+	Storage_DefaultCallBack* GetObject() {
+	return (Storage_DefaultCallBack*)$self->Access();
+	}
+};
+%extend Handle_Storage_DefaultCallBack {
+	~Handle_Storage_DefaultCallBack() {
+	printf("Call custom destructor for instance of Handle_Storage_DefaultCallBack\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_StreamUnknownTypeError;
 class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_StreamUnknownTypeError();
 		%feature("autodoc", "1");
 		Handle_Storage_StreamUnknownTypeError();
 		%feature("autodoc", "1");
@@ -696,12 +758,15 @@ class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadEr
 	return (Storage_StreamUnknownTypeError*)$self->Access();
 	}
 };
+%extend Handle_Storage_StreamUnknownTypeError {
+	~Handle_Storage_StreamUnknownTypeError() {
+	printf("Call custom destructor for instance of Handle_Storage_StreamUnknownTypeError\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_HArrayOfCallBack;
 class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_HArrayOfCallBack();
 		%feature("autodoc", "1");
 		Handle_Storage_HArrayOfCallBack();
 		%feature("autodoc", "1");
@@ -717,12 +782,15 @@ class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
 	return (Storage_HArrayOfCallBack*)$self->Access();
 	}
 };
+%extend Handle_Storage_HArrayOfCallBack {
+	~Handle_Storage_HArrayOfCallBack() {
+	printf("Call custom destructor for instance of Handle_Storage_HArrayOfCallBack\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_HSeqOfRoot;
 class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_HSeqOfRoot();
 		%feature("autodoc", "1");
 		Handle_Storage_HSeqOfRoot();
 		%feature("autodoc", "1");
@@ -738,12 +806,15 @@ class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 	return (Storage_HSeqOfRoot*)$self->Access();
 	}
 };
+%extend Handle_Storage_HSeqOfRoot {
+	~Handle_Storage_HSeqOfRoot() {
+	printf("Call custom destructor for instance of Handle_Storage_HSeqOfRoot\n");
+	}
+};
 
 %nodefaultctor Handle_Storage_StdMapNodeOfMapOfAsciiString;
 class Handle_Storage_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Storage_StdMapNodeOfMapOfAsciiString();
 		%feature("autodoc", "1");
 		Handle_Storage_StdMapNodeOfMapOfAsciiString();
 		%feature("autodoc", "1");
@@ -759,6 +830,11 @@ class Handle_Storage_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_Ma
 	return (Storage_StdMapNodeOfMapOfAsciiString*)$self->Access();
 	}
 };
+%extend Handle_Storage_StdMapNodeOfMapOfAsciiString {
+	~Handle_Storage_StdMapNodeOfMapOfAsciiString() {
+	printf("Call custom destructor for instance of Handle_Storage_StdMapNodeOfMapOfAsciiString\n");
+	}
+};
 
 %nodefaultctor Storage_SequenceNodeOfSeqOfPersistent;
 class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
@@ -769,8 +845,6 @@ class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
 		Handle_Standard_Persistent & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_SequenceNodeOfSeqOfPersistent();
 
 };
 %extend Storage_SequenceNodeOfSeqOfPersistent {
@@ -778,23 +852,9 @@ class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
 	return *(Handle_Storage_SequenceNodeOfSeqOfPersistent*) &$self;
 	}
 };
-
-%nodefaultctor Storage_StdMapNodeOfMapOfAsciiString;
-class Storage_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Storage_StdMapNodeOfMapOfAsciiString(const TCollection_AsciiString &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_StdMapNodeOfMapOfAsciiString();
-
-};
-%extend Storage_StdMapNodeOfMapOfAsciiString {
-	Handle_Storage_StdMapNodeOfMapOfAsciiString GetHandle() {
-	return *(Handle_Storage_StdMapNodeOfMapOfAsciiString*) &$self;
+%extend Storage_SequenceNodeOfSeqOfPersistent {
+	~Storage_SequenceNodeOfSeqOfPersistent() {
+	printf("Call custom destructor for instance of Storage_SequenceNodeOfSeqOfPersistent\n");
 	}
 };
 
@@ -805,8 +865,6 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 		Storage_SeqOfRoot();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Storage_SeqOfRoot();
 		%feature("autodoc", "1");
 		const Storage_SeqOfRoot & Assign(const Storage_SeqOfRoot &Other);
 		%feature("autodoc", "1");
@@ -847,6 +905,33 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Storage_SeqOfRoot {
+	~Storage_SeqOfRoot() {
+	printf("Call custom destructor for instance of Storage_SeqOfRoot\n");
+	}
+};
+
+%nodefaultctor Storage_StdMapNodeOfMapOfAsciiString;
+class Storage_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Storage_StdMapNodeOfMapOfAsciiString(const TCollection_AsciiString &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_StdMapNodeOfMapOfAsciiString {
+	Handle_Storage_StdMapNodeOfMapOfAsciiString GetHandle() {
+	return *(Handle_Storage_StdMapNodeOfMapOfAsciiString*) &$self;
+	}
+};
+%extend Storage_StdMapNodeOfMapOfAsciiString {
+	~Storage_StdMapNodeOfMapOfAsciiString() {
+	printf("Call custom destructor for instance of Storage_StdMapNodeOfMapOfAsciiString\n");
+	}
+};
 
 %nodefaultctor Storage_ArrayOfCallBack;
 class Storage_ArrayOfCallBack {
@@ -859,8 +944,6 @@ class Storage_ArrayOfCallBack {
 		void Init(const Handle_Storage_CallBack &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Storage_ArrayOfCallBack();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -883,6 +966,11 @@ class Storage_ArrayOfCallBack {
 		Handle_Storage_CallBack & operator()(const Standard_Integer Index);
 
 };
+%extend Storage_ArrayOfCallBack {
+	~Storage_ArrayOfCallBack() {
+	printf("Call custom destructor for instance of Storage_ArrayOfCallBack\n");
+	}
+};
 
 %nodefaultctor Storage_MapOfCallBack;
 class Storage_MapOfCallBack : public TCollection_BasicMap {
@@ -895,8 +983,6 @@ class Storage_MapOfCallBack : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Storage_MapOfCallBack();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_TypedCallBack &I);
 		%feature("autodoc", "1");
@@ -913,67 +999,9 @@ class Storage_MapOfCallBack : public TCollection_BasicMap {
 		Handle_Storage_TypedCallBack & operator()(const TCollection_AsciiString &K);
 
 };
-
-%nodefaultctor Storage_InternalData;
-class Storage_InternalData : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_InternalData();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_InternalData();
-
-};
-%extend Storage_InternalData {
-	Handle_Storage_InternalData GetHandle() {
-	return *(Handle_Storage_InternalData*) &$self;
-	}
-};
-
-%nodefaultctor Storage_StreamReadError;
-class Storage_StreamReadError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Storage_StreamReadError();
-		%feature("autodoc", "1");
-		Storage_StreamReadError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_StreamReadError();
-
-};
-%extend Storage_StreamReadError {
-	Handle_Storage_StreamReadError GetHandle() {
-	return *(Handle_Storage_StreamReadError*) &$self;
-	}
-};
-
-%nodefaultctor Storage_StreamUnknownTypeError;
-class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
-	public:
-		%feature("autodoc", "1");
-		Storage_StreamUnknownTypeError();
-		%feature("autodoc", "1");
-		Storage_StreamUnknownTypeError(const char * AString);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamUnknownTypeError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		~Storage_StreamUnknownTypeError();
-
-};
-%extend Storage_StreamUnknownTypeError {
-	Handle_Storage_StreamUnknownTypeError GetHandle() {
-	return *(Handle_Storage_StreamUnknownTypeError*) &$self;
+%extend Storage_MapOfCallBack {
+	~Storage_MapOfCallBack() {
+	printf("Call custom destructor for instance of Storage_MapOfCallBack\n");
 	}
 };
 
@@ -1004,13 +1032,16 @@ class Storage_HArrayOfSchema : public MMgt_TShared {
 		Storage_ArrayOfSchema & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_HArrayOfSchema();
 
 };
 %extend Storage_HArrayOfSchema {
 	Handle_Storage_HArrayOfSchema GetHandle() {
 	return *(Handle_Storage_HArrayOfSchema*) &$self;
+	}
+};
+%extend Storage_HArrayOfSchema {
+	~Storage_HArrayOfSchema() {
+	printf("Call custom destructor for instance of Storage_HArrayOfSchema\n");
 	}
 };
 
@@ -1025,13 +1056,16 @@ class Storage_DataMapNodeOfMapOfPers : public TCollection_MapNode {
 		Handle_Storage_Root & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_DataMapNodeOfMapOfPers();
 
 };
 %extend Storage_DataMapNodeOfMapOfPers {
 	Handle_Storage_DataMapNodeOfMapOfPers GetHandle() {
 	return *(Handle_Storage_DataMapNodeOfMapOfPers*) &$self;
+	}
+};
+%extend Storage_DataMapNodeOfMapOfPers {
+	~Storage_DataMapNodeOfMapOfPers() {
+	printf("Call custom destructor for instance of Storage_DataMapNodeOfMapOfPers\n");
 	}
 };
 
@@ -1056,13 +1090,16 @@ class Storage_TypedCallBack : public MMgt_TShared {
 		Standard_Integer Index() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_TypedCallBack();
 
 };
 %extend Storage_TypedCallBack {
 	Handle_Storage_TypedCallBack GetHandle() {
 	return *(Handle_Storage_TypedCallBack*) &$self;
+	}
+};
+%extend Storage_TypedCallBack {
+	~Storage_TypedCallBack() {
+	printf("Call custom destructor for instance of Storage_TypedCallBack\n");
 	}
 };
 
@@ -1102,11 +1139,31 @@ class Storage_MapOfAsciiString : public TCollection_BasicMap {
 
 };
 
+%nodefaultctor Storage_InternalData;
+class Storage_InternalData : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_InternalData();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_InternalData {
+	Handle_Storage_InternalData GetHandle() {
+	return *(Handle_Storage_InternalData*) &$self;
+	}
+};
+%extend Storage_InternalData {
+	~Storage_InternalData() {
+	printf("Call custom destructor for instance of Storage_InternalData\n");
+	}
+};
+
 %nodefaultctor Storage_DataMapIteratorOfMapOfCallBack;
 class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Storage_DataMapIteratorOfMapOfCallBack();
 		%feature("autodoc", "1");
 		Storage_DataMapIteratorOfMapOfCallBack();
 		%feature("autodoc", "1");
@@ -1119,23 +1176,38 @@ class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterat
 		const Handle_Storage_TypedCallBack & Value() const;
 
 };
+%extend Storage_DataMapIteratorOfMapOfCallBack {
+	~Storage_DataMapIteratorOfMapOfCallBack() {
+	printf("Call custom destructor for instance of Storage_DataMapIteratorOfMapOfCallBack\n");
+	}
+};
 
-%nodefaultctor Storage_DataMapIteratorOfMapOfPers;
-class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
+%nodefaultctor Storage_StreamReadError;
+class Storage_StreamReadError : public Standard_Failure {
 	public:
 		%feature("autodoc", "1");
-		~Storage_DataMapIteratorOfMapOfPers();
+		Storage_StreamReadError();
 		%feature("autodoc", "1");
-		Storage_DataMapIteratorOfMapOfPers();
+		Storage_StreamReadError(const char * AString);
 		%feature("autodoc", "1");
-		Storage_DataMapIteratorOfMapOfPers(const Storage_MapOfPers &aMap);
+		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Initialize(const Storage_MapOfPers &aMap);
+		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		const TCollection_AsciiString & Key() const;
+		Handle_Storage_StreamReadError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
-		const Handle_Storage_Root & Value() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
+};
+%extend Storage_StreamReadError {
+	Handle_Storage_StreamReadError GetHandle() {
+	return *(Handle_Storage_StreamReadError*) &$self;
+	}
+};
+%extend Storage_StreamReadError {
+	~Storage_StreamReadError() {
+	printf("Call custom destructor for instance of Storage_StreamReadError\n");
+	}
 };
 
 %nodefaultctor Storage_StreamExtCharParityError;
@@ -1146,20 +1218,17 @@ class Storage_StreamExtCharParityError : public Storage_StreamReadError {
 		%feature("autodoc", "1");
 		Storage_StreamExtCharParityError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
 		Handle_Storage_StreamExtCharParityError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_StreamExtCharParityError();
 
 };
 %extend Storage_StreamExtCharParityError {
 	Handle_Storage_StreamExtCharParityError GetHandle() {
 	return *(Handle_Storage_StreamExtCharParityError*) &$self;
+	}
+};
+%extend Storage_StreamExtCharParityError {
+	~Storage_StreamExtCharParityError() {
+	printf("Call custom destructor for instance of Storage_StreamExtCharParityError\n");
 	}
 };
 
@@ -1238,13 +1307,44 @@ class Storage_Schema : public MMgt_TShared {
 		Standard_Boolean PersistentToAdd(const Handle_Standard_Persistent &sp) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_Schema();
 
 };
 %extend Storage_Schema {
 	Handle_Storage_Schema GetHandle() {
 	return *(Handle_Storage_Schema*) &$self;
+	}
+};
+%extend Storage_Schema {
+	~Storage_Schema() {
+	printf("Call custom destructor for instance of Storage_Schema\n");
+	}
+};
+
+%nodefaultctor Storage_StreamUnknownTypeError;
+class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
+	public:
+		%feature("autodoc", "1");
+		Storage_StreamUnknownTypeError();
+		%feature("autodoc", "1");
+		Storage_StreamUnknownTypeError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamUnknownTypeError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_StreamUnknownTypeError {
+	Handle_Storage_StreamUnknownTypeError GetHandle() {
+	return *(Handle_Storage_StreamUnknownTypeError*) &$self;
+	}
+};
+%extend Storage_StreamUnknownTypeError {
+	~Storage_StreamUnknownTypeError() {
+	printf("Call custom destructor for instance of Storage_StreamUnknownTypeError\n");
 	}
 };
 
@@ -1273,13 +1373,16 @@ class Storage_RootData : public MMgt_TShared {
 		void ClearErrorStatus();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_RootData();
 
 };
 %extend Storage_RootData {
 	Handle_Storage_RootData GetHandle() {
 	return *(Handle_Storage_RootData*) &$self;
+	}
+};
+%extend Storage_RootData {
+	~Storage_RootData() {
+	printf("Call custom destructor for instance of Storage_RootData\n");
 	}
 };
 
@@ -1294,8 +1397,6 @@ class Storage_ArrayOfSchema {
 		void Init(const Handle_Storage_Schema &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Storage_ArrayOfSchema();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1318,6 +1419,11 @@ class Storage_ArrayOfSchema {
 		Handle_Storage_Schema & operator()(const Standard_Integer Index);
 
 };
+%extend Storage_ArrayOfSchema {
+	~Storage_ArrayOfSchema() {
+	printf("Call custom destructor for instance of Storage_ArrayOfSchema\n");
+	}
+};
 
 %nodefaultctor Storage_StreamWriteError;
 class Storage_StreamWriteError : public Standard_Failure {
@@ -1334,13 +1440,16 @@ class Storage_StreamWriteError : public Standard_Failure {
 		Handle_Storage_StreamWriteError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_StreamWriteError();
 
 };
 %extend Storage_StreamWriteError {
 	Handle_Storage_StreamWriteError GetHandle() {
 	return *(Handle_Storage_StreamWriteError*) &$self;
+	}
+};
+%extend Storage_StreamWriteError {
+	~Storage_StreamWriteError() {
+	printf("Call custom destructor for instance of Storage_StreamWriteError\n");
 	}
 };
 
@@ -1356,6 +1465,27 @@ class Storage {
 
 };
 
+%nodefaultctor Storage_DataMapIteratorOfMapOfPers;
+class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		Storage_DataMapIteratorOfMapOfPers();
+		%feature("autodoc", "1");
+		Storage_DataMapIteratorOfMapOfPers(const Storage_MapOfPers &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const Storage_MapOfPers &aMap);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		const Handle_Storage_Root & Value() const;
+
+};
+%extend Storage_DataMapIteratorOfMapOfPers {
+	~Storage_DataMapIteratorOfMapOfPers() {
+	printf("Call custom destructor for instance of Storage_DataMapIteratorOfMapOfPers\n");
+	}
+};
+
 %nodefaultctor Storage_DataMapNodeOfMapOfCallBack;
 class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 	public:
@@ -1367,13 +1497,16 @@ class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 		Handle_Storage_TypedCallBack & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_DataMapNodeOfMapOfCallBack();
 
 };
 %extend Storage_DataMapNodeOfMapOfCallBack {
 	Handle_Storage_DataMapNodeOfMapOfCallBack GetHandle() {
 	return *(Handle_Storage_DataMapNodeOfMapOfCallBack*) &$self;
+	}
+};
+%extend Storage_DataMapNodeOfMapOfCallBack {
+	~Storage_DataMapNodeOfMapOfCallBack() {
+	printf("Call custom destructor for instance of Storage_DataMapNodeOfMapOfCallBack\n");
 	}
 };
 
@@ -1402,13 +1535,16 @@ class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_IndexedDataMapNodeOfPType();
 
 };
 %extend Storage_IndexedDataMapNodeOfPType {
 	Handle_Storage_IndexedDataMapNodeOfPType GetHandle() {
 	return *(Handle_Storage_IndexedDataMapNodeOfPType*) &$self;
+	}
+};
+%extend Storage_IndexedDataMapNodeOfPType {
+	~Storage_IndexedDataMapNodeOfPType() {
+	printf("Call custom destructor for instance of Storage_IndexedDataMapNodeOfPType\n");
 	}
 };
 
@@ -1427,13 +1563,16 @@ class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 		Handle_Storage_StreamTypeMismatchError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_StreamTypeMismatchError();
 
 };
 %extend Storage_StreamTypeMismatchError {
 	Handle_Storage_StreamTypeMismatchError GetHandle() {
 	return *(Handle_Storage_StreamTypeMismatchError*) &$self;
+	}
+};
+%extend Storage_StreamTypeMismatchError {
+	~Storage_StreamTypeMismatchError() {
+	printf("Call custom destructor for instance of Storage_StreamTypeMismatchError\n");
 	}
 };
 
@@ -1587,6 +1726,46 @@ class Storage_BaseDriver {
 
 };
 
+%nodefaultctor Storage_HPArray;
+class Storage_HPArray : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up, const Handle_Standard_Persistent &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Standard_Persistent &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &Value);
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Storage_PArray & Array1() const;
+		%feature("autodoc", "1");
+		Storage_PArray & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_HPArray {
+	Handle_Storage_HPArray GetHandle() {
+	return *(Handle_Storage_HPArray*) &$self;
+	}
+};
+%extend Storage_HPArray {
+	~Storage_HPArray() {
+	printf("Call custom destructor for instance of Storage_HPArray\n");
+	}
+};
+
 %nodefaultctor Storage_CallBack;
 class Storage_CallBack : public MMgt_TShared {
 	public:
@@ -1607,6 +1786,11 @@ class Storage_CallBack : public MMgt_TShared {
 	return *(Handle_Storage_CallBack*) &$self;
 	}
 };
+%extend Storage_CallBack {
+	~Storage_CallBack() {
+	printf("Call custom destructor for instance of Storage_CallBack\n");
+	}
+};
 
 %nodefaultctor Storage_SequenceNodeOfSeqOfCallBack;
 class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
@@ -1617,13 +1801,16 @@ class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
 		Handle_Storage_CallBack & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_SequenceNodeOfSeqOfCallBack();
 
 };
 %extend Storage_SequenceNodeOfSeqOfCallBack {
 	Handle_Storage_SequenceNodeOfSeqOfCallBack GetHandle() {
 	return *(Handle_Storage_SequenceNodeOfSeqOfCallBack*) &$self;
+	}
+};
+%extend Storage_SequenceNodeOfSeqOfCallBack {
+	~Storage_SequenceNodeOfSeqOfCallBack() {
+	printf("Call custom destructor for instance of Storage_SequenceNodeOfSeqOfCallBack\n");
 	}
 };
 
@@ -1678,13 +1865,16 @@ class Storage_HSeqOfRoot : public MMgt_TShared {
 		Handle_Storage_HSeqOfRoot ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_HSeqOfRoot();
 
 };
 %extend Storage_HSeqOfRoot {
 	Handle_Storage_HSeqOfRoot GetHandle() {
 	return *(Handle_Storage_HSeqOfRoot*) &$self;
+	}
+};
+%extend Storage_HSeqOfRoot {
+	~Storage_HSeqOfRoot() {
+	printf("Call custom destructor for instance of Storage_HSeqOfRoot\n");
 	}
 };
 
@@ -1697,13 +1887,108 @@ class Storage_SequenceNodeOfSeqOfRoot : public TCollection_SeqNode {
 		Handle_Storage_Root & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_SequenceNodeOfSeqOfRoot();
 
 };
 %extend Storage_SequenceNodeOfSeqOfRoot {
 	Handle_Storage_SequenceNodeOfSeqOfRoot GetHandle() {
 	return *(Handle_Storage_SequenceNodeOfSeqOfRoot*) &$self;
+	}
+};
+%extend Storage_SequenceNodeOfSeqOfRoot {
+	~Storage_SequenceNodeOfSeqOfRoot() {
+	printf("Call custom destructor for instance of Storage_SequenceNodeOfSeqOfRoot\n");
+	}
+};
+
+%nodefaultctor Storage_SeqOfPersistent;
+class Storage_SeqOfPersistent : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Storage_SeqOfPersistent();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Storage_SeqOfPersistent & Assign(const Storage_SeqOfPersistent &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Standard_Persistent &T);
+		%feature("autodoc", "1");
+		void Append(Storage_SeqOfPersistent & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Standard_Persistent &T);
+		%feature("autodoc", "1");
+		void Prepend(Storage_SeqOfPersistent & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Standard_Persistent &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Storage_SeqOfPersistent & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Standard_Persistent &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Storage_SeqOfPersistent & S);
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & First() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Storage_SeqOfPersistent & S);
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &I);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Storage_SeqOfPersistent {
+	~Storage_SeqOfPersistent() {
+	printf("Call custom destructor for instance of Storage_SeqOfPersistent\n");
+	}
+};
+
+%nodefaultctor Storage_PArray;
+class Storage_PArray {
+	public:
+		%feature("autodoc", "1");
+		Storage_PArray(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Storage_PArray(const Handle_Standard_Persistent &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_Standard_Persistent &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Storage_PArray & Assign(const Storage_PArray &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &Value);
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & operator()(const Standard_Integer Index);
+
+};
+%extend Storage_PArray {
+	~Storage_PArray() {
+	printf("Call custom destructor for instance of Storage_PArray\n");
 	}
 };
 
@@ -1758,8 +2043,6 @@ class Storage_HSeqOfCallBack : public MMgt_TShared {
 		Handle_Storage_HSeqOfCallBack ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_HSeqOfCallBack();
 
 };
 %extend Storage_HSeqOfCallBack {
@@ -1767,91 +2050,10 @@ class Storage_HSeqOfCallBack : public MMgt_TShared {
 	return *(Handle_Storage_HSeqOfCallBack*) &$self;
 	}
 };
-
-%nodefaultctor Storage_SeqOfPersistent;
-class Storage_SeqOfPersistent : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Storage_SeqOfPersistent();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~Storage_SeqOfPersistent();
-		%feature("autodoc", "1");
-		const Storage_SeqOfPersistent & Assign(const Storage_SeqOfPersistent &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Standard_Persistent &T);
-		%feature("autodoc", "1");
-		void Append(Storage_SeqOfPersistent & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Standard_Persistent &T);
-		%feature("autodoc", "1");
-		void Prepend(Storage_SeqOfPersistent & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Standard_Persistent &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Storage_SeqOfPersistent & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Standard_Persistent &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Storage_SeqOfPersistent & S);
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & First() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Storage_SeqOfPersistent & S);
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &I);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-
-%nodefaultctor Storage_PArray;
-class Storage_PArray {
-	public:
-		%feature("autodoc", "1");
-		Storage_PArray(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Storage_PArray(const Handle_Standard_Persistent &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_Standard_Persistent &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~Storage_PArray();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Storage_PArray & Assign(const Storage_PArray &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &Value);
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & operator()(const Standard_Integer Index);
-
+%extend Storage_HSeqOfCallBack {
+	~Storage_HSeqOfCallBack() {
+	printf("Call custom destructor for instance of Storage_HSeqOfCallBack\n");
+	}
 };
 
 %nodefaultctor Storage_StreamModeError;
@@ -1869,13 +2071,16 @@ class Storage_StreamModeError : public Standard_Failure {
 		Handle_Storage_StreamModeError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_StreamModeError();
 
 };
 %extend Storage_StreamModeError {
 	Handle_Storage_StreamModeError GetHandle() {
 	return *(Handle_Storage_StreamModeError*) &$self;
+	}
+};
+%extend Storage_StreamModeError {
+	~Storage_StreamModeError() {
+	printf("Call custom destructor for instance of Storage_StreamModeError\n");
 	}
 };
 
@@ -1894,13 +2099,16 @@ class Storage_DefaultCallBack : public Storage_CallBack {
 		virtual		void Read(const Handle_Standard_Persistent &aPers, Storage_BaseDriver & aDriver, const Handle_Storage_Schema &aSchema) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_DefaultCallBack();
 
 };
 %extend Storage_DefaultCallBack {
 	Handle_Storage_DefaultCallBack GetHandle() {
 	return *(Handle_Storage_DefaultCallBack*) &$self;
+	}
+};
+%extend Storage_DefaultCallBack {
+	~Storage_DefaultCallBack() {
+	printf("Call custom destructor for instance of Storage_DefaultCallBack\n");
 	}
 };
 
@@ -1919,13 +2127,16 @@ class Storage_StreamFormatError : public Standard_Failure {
 		Handle_Storage_StreamFormatError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_StreamFormatError();
 
 };
 %extend Storage_StreamFormatError {
 	Handle_Storage_StreamFormatError GetHandle() {
 	return *(Handle_Storage_StreamFormatError*) &$self;
+	}
+};
+%extend Storage_StreamFormatError {
+	~Storage_StreamFormatError() {
+	printf("Call custom destructor for instance of Storage_StreamFormatError\n");
 	}
 };
 
@@ -1950,13 +2161,16 @@ class Storage_TypeData : public MMgt_TShared {
 		void Clear();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_TypeData();
 
 };
 %extend Storage_TypeData {
 	Handle_Storage_TypeData GetHandle() {
 	return *(Handle_Storage_TypeData*) &$self;
+	}
+};
+%extend Storage_TypeData {
+	~Storage_TypeData() {
+	printf("Call custom destructor for instance of Storage_TypeData\n");
 	}
 };
 
@@ -2063,13 +2277,16 @@ class Storage_Data : public MMgt_TShared {
 		Handle_TColStd_HSequenceOfAsciiString Types() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_Data();
 
 };
 %extend Storage_Data {
 	Handle_Storage_Data GetHandle() {
 	return *(Handle_Storage_Data*) &$self;
+	}
+};
+%extend Storage_Data {
+	~Storage_Data() {
+	printf("Call custom destructor for instance of Storage_Data\n");
 	}
 };
 
@@ -2092,13 +2309,16 @@ class Storage_Root : public MMgt_TShared {
 		TCollection_AsciiString Type() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_Root();
 
 };
 %extend Storage_Root {
 	Handle_Storage_Root GetHandle() {
 	return *(Handle_Storage_Root*) &$self;
+	}
+};
+%extend Storage_Root {
+	~Storage_Root() {
+	printf("Call custom destructor for instance of Storage_Root\n");
 	}
 };
 
@@ -2145,8 +2365,6 @@ class Storage_HeaderData : public MMgt_TShared {
 		void ClearErrorStatus();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_HeaderData();
 
 };
 %extend Storage_HeaderData {
@@ -2154,41 +2372,9 @@ class Storage_HeaderData : public MMgt_TShared {
 	return *(Handle_Storage_HeaderData*) &$self;
 	}
 };
-
-%nodefaultctor Storage_HPArray;
-class Storage_HPArray : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up, const Handle_Standard_Persistent &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Standard_Persistent &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &Value);
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Storage_PArray & Array1() const;
-		%feature("autodoc", "1");
-		Storage_PArray & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_HPArray();
-
-};
-%extend Storage_HPArray {
-	Handle_Storage_HPArray GetHandle() {
-	return *(Handle_Storage_HPArray*) &$self;
+%extend Storage_HeaderData {
+	~Storage_HeaderData() {
+	printf("Call custom destructor for instance of Storage_HeaderData\n");
 	}
 };
 
@@ -2220,8 +2406,6 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Storage_MapOfPers();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_Root &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
@@ -2236,6 +2420,11 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Storage_Root & operator()(const TCollection_AsciiString &K);
 
+};
+%extend Storage_MapOfPers {
+	~Storage_MapOfPers() {
+	printf("Call custom destructor for instance of Storage_MapOfPers\n");
+	}
 };
 
 %nodefaultctor Storage_HArrayOfCallBack;
@@ -2265,13 +2454,16 @@ class Storage_HArrayOfCallBack : public MMgt_TShared {
 		Storage_ArrayOfCallBack & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_HArrayOfCallBack();
 
 };
 %extend Storage_HArrayOfCallBack {
 	Handle_Storage_HArrayOfCallBack GetHandle() {
 	return *(Handle_Storage_HArrayOfCallBack*) &$self;
+	}
+};
+%extend Storage_HArrayOfCallBack {
+	~Storage_HArrayOfCallBack() {
+	printf("Call custom destructor for instance of Storage_HArrayOfCallBack\n");
 	}
 };
 
@@ -2326,13 +2518,16 @@ class Storage_HSeqOfPersistent : public MMgt_TShared {
 		Handle_Storage_HSeqOfPersistent ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Storage_HSeqOfPersistent();
 
 };
 %extend Storage_HSeqOfPersistent {
 	Handle_Storage_HSeqOfPersistent GetHandle() {
 	return *(Handle_Storage_HSeqOfPersistent*) &$self;
+	}
+};
+%extend Storage_HSeqOfPersistent {
+	~Storage_HSeqOfPersistent() {
+	printf("Call custom destructor for instance of Storage_HSeqOfPersistent\n");
 	}
 };
 
@@ -2343,8 +2538,6 @@ class Storage_SeqOfCallBack : public TCollection_BaseSequence {
 		Storage_SeqOfCallBack();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Storage_SeqOfCallBack();
 		%feature("autodoc", "1");
 		const Storage_SeqOfCallBack & Assign(const Storage_SeqOfCallBack &Other);
 		%feature("autodoc", "1");
@@ -2384,4 +2577,9 @@ class Storage_SeqOfCallBack : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Storage_SeqOfCallBack {
+	~Storage_SeqOfCallBack() {
+	printf("Call custom destructor for instance of Storage_SeqOfCallBack\n");
+	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module AppDef
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_AppDef_HArray1OfMultiPointConstraint();
-		%feature("autodoc", "1");
 		Handle_AppDef_HArray1OfMultiPointConstraint();
 		%feature("autodoc", "1");
 		Handle_AppDef_HArray1OfMultiPointConstraint(const Handle_AppDef_HArray1OfMultiPointConstraint &aHandle);
@@ -118,12 +102,15 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 	return (AppDef_HArray1OfMultiPointConstraint*)$self->Access();
 	}
 };
+%extend Handle_AppDef_HArray1OfMultiPointConstraint {
+	~Handle_AppDef_HArray1OfMultiPointConstraint() {
+	printf("Call custom destructor for instance of Handle_AppDef_HArray1OfMultiPointConstraint\n");
+	}
+};
 
 %nodefaultctor Handle_AppDef_MyCriterionOfTheVariational;
 class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_SmoothCriterion {
 	public:
-		%feature("autodoc", "1");
-		~Handle_AppDef_MyCriterionOfTheVariational();
 		%feature("autodoc", "1");
 		Handle_AppDef_MyCriterionOfTheVariational();
 		%feature("autodoc", "1");
@@ -137,6 +124,11 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 %extend Handle_AppDef_MyCriterionOfTheVariational {
 	AppDef_MyCriterionOfTheVariational* GetObject() {
 	return (AppDef_MyCriterionOfTheVariational*)$self->Access();
+	}
+};
+%extend Handle_AppDef_MyCriterionOfTheVariational {
+	~Handle_AppDef_MyCriterionOfTheVariational() {
+	printf("Call custom destructor for instance of Handle_AppDef_MyCriterionOfTheVariational\n");
 	}
 };
 
@@ -219,13 +211,16 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 		virtual		void SetWeight(const TColStd_Array1OfReal &Weight);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_MyCriterionOfTheVariational();
 
 };
 %extend AppDef_MyCriterionOfTheVariational {
 	Handle_AppDef_MyCriterionOfTheVariational GetHandle() {
 	return *(Handle_AppDef_MyCriterionOfTheVariational*) &$self;
+	}
+};
+%extend AppDef_MyCriterionOfTheVariational {
+	~AppDef_MyCriterionOfTheVariational() {
+	printf("Call custom destructor for instance of AppDef_MyCriterionOfTheVariational\n");
 	}
 };
 
@@ -313,28 +308,6 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 
 };
 
-%nodefaultctor AppDef_TheGradient;
-class AppDef_TheGradient {
-	public:
-		%feature("autodoc", "1");
-		~AppDef_TheGradient();
-		%feature("autodoc", "1");
-		AppDef_TheGradient(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve Value() const;
-		%feature("autodoc", "1");
-		Standard_Real Error(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2d() const;
-		%feature("autodoc", "1");
-		Standard_Real AverageError() const;
-
-};
-
 %nodefaultctor AppDef_MyBSplGradientOfBSplineCompute;
 class AppDef_MyBSplGradientOfBSplineCompute {
 	public:
@@ -386,13 +359,16 @@ class AppDef_HArray1OfMultiPointConstraint : public MMgt_TShared {
 		AppDef_Array1OfMultiPointConstraint & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_HArray1OfMultiPointConstraint();
 
 };
 %extend AppDef_HArray1OfMultiPointConstraint {
 	Handle_AppDef_HArray1OfMultiPointConstraint GetHandle() {
 	return *(Handle_AppDef_HArray1OfMultiPointConstraint*) &$self;
+	}
+};
+%extend AppDef_HArray1OfMultiPointConstraint {
+	~AppDef_HArray1OfMultiPointConstraint() {
+	printf("Call custom destructor for instance of AppDef_HArray1OfMultiPointConstraint\n");
 	}
 };
 
@@ -475,26 +451,6 @@ class AppDef_TheLeastSquares {
 		const math_Matrix & Poles() const;
 		%feature("autodoc", "1");
 		const math_IntegerVector & KIndex() const;
-
-};
-
-%nodefaultctor AppDef_ResConstraintOfMyGradientbisOfBSplineCompute;
-class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
-	public:
-		%feature("autodoc", "1");
-		~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute();
-		%feature("autodoc", "1");
-		AppDef_ResConstraintOfMyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const math_Matrix & ConstraintMatrix() const;
-		%feature("autodoc", "1");
-		const math_Vector & Duale() const;
-		%feature("autodoc", "1");
-		const math_Matrix & ConstraintDerivative(const AppDef_MultiLine &SSP, const math_Vector &Parameters, const Standard_Integer Deg, const math_Matrix &DA);
-		%feature("autodoc", "1");
-		const math_Matrix & InverseMatrix() const;
 
 };
 
@@ -608,11 +564,29 @@ class AppDef_TheResol {
 
 };
 
+%nodefaultctor AppDef_ResConstraintOfMyGradientbisOfBSplineCompute;
+class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
+	public:
+		%feature("autodoc", "1");
+		~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute();
+		%feature("autodoc", "1");
+		AppDef_ResConstraintOfMyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const math_Matrix & ConstraintMatrix() const;
+		%feature("autodoc", "1");
+		const math_Vector & Duale() const;
+		%feature("autodoc", "1");
+		const math_Matrix & ConstraintDerivative(const AppDef_MultiLine &SSP, const math_Vector &Parameters, const Standard_Integer Deg, const math_Matrix &DA);
+		%feature("autodoc", "1");
+		const math_Matrix & InverseMatrix() const;
+
+};
+
 %nodefaultctor AppDef_TheVariational;
 class AppDef_TheVariational {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_TheVariational();
 		%feature("autodoc", "1");
 		AppDef_TheVariational(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=100, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Boolean WithMinMax=0, const Standard_Boolean WithCutting=1, const Standard_Real Tolerance=1.0e+0, const Standard_Integer NbIterations=2);
 		%feature("autodoc", "1");
@@ -685,6 +659,11 @@ class AppDef_TheVariational {
 		void SetNbIterations(const Standard_Integer Iter);
 
 };
+%extend AppDef_TheVariational {
+	~AppDef_TheVariational() {
+	printf("Call custom destructor for instance of AppDef_TheVariational\n");
+	}
+};
 
 %nodefaultctor AppDef_Gradient_BFGSOfMyGradientOfCompute;
 class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
@@ -695,6 +674,28 @@ class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
 		%feature("autodoc", "1");
 		virtual		~AppDef_Gradient_BFGSOfMyGradientOfCompute();
+
+};
+
+%nodefaultctor AppDef_TheGradient;
+class AppDef_TheGradient {
+	public:
+		%feature("autodoc", "1");
+		~AppDef_TheGradient();
+		%feature("autodoc", "1");
+		AppDef_TheGradient(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve Value() const;
+		%feature("autodoc", "1");
+		Standard_Real Error(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2d() const;
+		%feature("autodoc", "1");
+		Standard_Real AverageError() const;
 
 };
 

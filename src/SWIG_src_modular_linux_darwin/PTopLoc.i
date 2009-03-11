@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module PTopLoc
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PTopLoc_Datum3D();
-		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D();
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D(const Handle_PTopLoc_Datum3D &aHandle);
@@ -118,12 +102,15 @@ class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 	return (PTopLoc_Datum3D*)$self->Access();
 	}
 };
+%extend Handle_PTopLoc_Datum3D {
+	~Handle_PTopLoc_Datum3D() {
+	printf("Call custom destructor for instance of Handle_PTopLoc_Datum3D\n");
+	}
+};
 
 %nodefaultctor Handle_PTopLoc_ItemLocation;
 class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PTopLoc_ItemLocation();
 		%feature("autodoc", "1");
 		Handle_PTopLoc_ItemLocation();
 		%feature("autodoc", "1");
@@ -137,6 +124,11 @@ class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 %extend Handle_PTopLoc_ItemLocation {
 	PTopLoc_ItemLocation* GetObject() {
 	return (PTopLoc_ItemLocation*)$self->Access();
+	}
+};
+%extend Handle_PTopLoc_ItemLocation {
+	~Handle_PTopLoc_ItemLocation() {
+	printf("Call custom destructor for instance of Handle_PTopLoc_ItemLocation\n");
 	}
 };
 
@@ -155,8 +147,6 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 		const gp_Trsf & _CSFDB_GetPTopLoc_Datum3DmyTrsf() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PTopLoc_Datum3D();
 
 };
 %extend PTopLoc_Datum3D {
@@ -164,12 +154,15 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 	return *(Handle_PTopLoc_Datum3D*) &$self;
 	}
 };
+%extend PTopLoc_Datum3D {
+	~PTopLoc_Datum3D() {
+	printf("Call custom destructor for instance of PTopLoc_Datum3D\n");
+	}
+};
 
 %nodefaultctor PTopLoc_Location;
 class PTopLoc_Location {
 	public:
-		%feature("autodoc", "1");
-		~PTopLoc_Location();
 		%feature("autodoc", "1");
 		PTopLoc_Location();
 		%feature("autodoc", "1");
@@ -187,6 +180,11 @@ class PTopLoc_Location {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPTopLoc_LocationmyData(const Handle_PTopLoc_ItemLocation &p);
 
+};
+%extend PTopLoc_Location {
+	~PTopLoc_Location() {
+	printf("Call custom destructor for instance of PTopLoc_Location\n");
+	}
 };
 
 %nodefaultctor PTopLoc_ItemLocation;
@@ -216,12 +214,15 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 		const PTopLoc_Location & _CSFDB_GetPTopLoc_ItemLocationmyNext() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PTopLoc_ItemLocation();
 
 };
 %extend PTopLoc_ItemLocation {
 	Handle_PTopLoc_ItemLocation GetHandle() {
 	return *(Handle_PTopLoc_ItemLocation*) &$self;
+	}
+};
+%extend PTopLoc_ItemLocation {
+	~PTopLoc_ItemLocation() {
+	printf("Call custom destructor for instance of PTopLoc_ItemLocation\n");
 	}
 };

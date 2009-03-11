@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GGraphic2d
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GGraphic2d_CurveDefinitionError();
-		%feature("autodoc", "1");
 		Handle_GGraphic2d_CurveDefinitionError();
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_CurveDefinitionError(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
@@ -118,12 +102,15 @@ class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange
 	return (GGraphic2d_CurveDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_GGraphic2d_CurveDefinitionError {
+	~Handle_GGraphic2d_CurveDefinitionError() {
+	printf("Call custom destructor for instance of Handle_GGraphic2d_CurveDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_GGraphic2d_Curve;
 class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GGraphic2d_Curve();
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_Curve();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 	return (GGraphic2d_Curve*)$self->Access();
 	}
 };
+%extend Handle_GGraphic2d_Curve {
+	~Handle_GGraphic2d_Curve() {
+	printf("Call custom destructor for instance of Handle_GGraphic2d_Curve\n");
+	}
+};
 
 %nodefaultctor Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve;
 class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve();
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollectio
 	return (GGraphic2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
 	}
 };
+%extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
+	~Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_GGraphic2d_SetOfCurves;
 class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GGraphic2d_SetOfCurves();
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SetOfCurves();
 		%feature("autodoc", "1");
@@ -181,6 +174,11 @@ class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 	return (GGraphic2d_SetOfCurves*)$self->Access();
 	}
 };
+%extend Handle_GGraphic2d_SetOfCurves {
+	~Handle_GGraphic2d_SetOfCurves() {
+	printf("Call custom destructor for instance of Handle_GGraphic2d_SetOfCurves\n");
+	}
+};
 
 %nodefaultctor GGraphic2d_SequenceNodeOfSequenceOfCurve;
 class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
@@ -191,13 +189,16 @@ class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 		Handle_Geom2d_Curve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GGraphic2d_SequenceNodeOfSequenceOfCurve();
 
 };
 %extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
 	Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve GetHandle() {
 	return *(Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve*) &$self;
+	}
+};
+%extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
+	~GGraphic2d_SequenceNodeOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of GGraphic2d_SequenceNodeOfSequenceOfCurve\n");
 	}
 };
 
@@ -214,13 +215,16 @@ class GGraphic2d_SetOfCurves : public Graphic2d_Line {
 		Handle_Geom2d_Curve Values(const Standard_Integer aRank) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GGraphic2d_SetOfCurves();
 
 };
 %extend GGraphic2d_SetOfCurves {
 	Handle_GGraphic2d_SetOfCurves GetHandle() {
 	return *(Handle_GGraphic2d_SetOfCurves*) &$self;
+	}
+};
+%extend GGraphic2d_SetOfCurves {
+	~GGraphic2d_SetOfCurves() {
+	printf("Call custom destructor for instance of GGraphic2d_SetOfCurves\n");
 	}
 };
 
@@ -231,8 +235,6 @@ class GGraphic2d_SequenceOfCurve : public TCollection_BaseSequence {
 		GGraphic2d_SequenceOfCurve();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~GGraphic2d_SequenceOfCurve();
 		%feature("autodoc", "1");
 		const GGraphic2d_SequenceOfCurve & Assign(const GGraphic2d_SequenceOfCurve &Other);
 		%feature("autodoc", "1");
@@ -273,6 +275,11 @@ class GGraphic2d_SequenceOfCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend GGraphic2d_SequenceOfCurve {
+	~GGraphic2d_SequenceOfCurve() {
+	printf("Call custom destructor for instance of GGraphic2d_SequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor GGraphic2d_Curve;
 class GGraphic2d_Curve : public Graphic2d_Line {
@@ -285,13 +292,16 @@ class GGraphic2d_Curve : public Graphic2d_Line {
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GGraphic2d_Curve();
 
 };
 %extend GGraphic2d_Curve {
 	Handle_GGraphic2d_Curve GetHandle() {
 	return *(Handle_GGraphic2d_Curve*) &$self;
+	}
+};
+%extend GGraphic2d_Curve {
+	~GGraphic2d_Curve() {
+	printf("Call custom destructor for instance of GGraphic2d_Curve\n");
 	}
 };
 
@@ -310,12 +320,15 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 		Handle_GGraphic2d_CurveDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GGraphic2d_CurveDefinitionError();
 
 };
 %extend GGraphic2d_CurveDefinitionError {
 	Handle_GGraphic2d_CurveDefinitionError GetHandle() {
 	return *(Handle_GGraphic2d_CurveDefinitionError*) &$self;
+	}
+};
+%extend GGraphic2d_CurveDefinitionError {
+	~GGraphic2d_CurveDefinitionError() {
+	printf("Call custom destructor for instance of GGraphic2d_CurveDefinitionError\n");
 	}
 };

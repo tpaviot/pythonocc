@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GccEnt
 
@@ -110,8 +96,6 @@ enum GccEnt_Position {
 class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GccEnt_BadQualifier();
-		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier();
 		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier(const Handle_GccEnt_BadQualifier &aHandle);
@@ -126,28 +110,37 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 	return (GccEnt_BadQualifier*)$self->Access();
 	}
 };
+%extend Handle_GccEnt_BadQualifier {
+	~Handle_GccEnt_BadQualifier() {
+	printf("Call custom destructor for instance of Handle_GccEnt_BadQualifier\n");
+	}
+};
 
-%nodefaultctor GccEnt;
-class GccEnt {
+%nodefaultctor GccEnt_QualifiedLin;
+class GccEnt_QualifiedLin {
 	public:
 		%feature("autodoc", "1");
-		~GccEnt();
+		~GccEnt_QualifiedLin();
 		%feature("autodoc", "1");
-		GccEnt();
+		GccEnt_QualifiedLin(const gp_Lin2d &Qualified, const GccEnt_Position Qualifier);
 		%feature("autodoc", "1");
-		GccEnt_QualifiedLin Unqualified(const gp_Lin2d &Obj);
+		gp_Lin2d Qualified() const;
 		%feature("autodoc", "1");
-		GccEnt_QualifiedCirc Unqualified(const gp_Circ2d &Obj);
+		GccEnt_Position Qualifier() const;
 		%feature("autodoc", "1");
-		GccEnt_QualifiedCirc Enclosing(const gp_Circ2d &Obj);
+		Standard_Boolean IsUnqualified() const;
 		%feature("autodoc", "1");
-		GccEnt_QualifiedLin Enclosed(const gp_Lin2d &Obj);
+		Standard_Boolean IsEnclosed() const;
 		%feature("autodoc", "1");
-		GccEnt_QualifiedCirc Enclosed(const gp_Circ2d &Obj);
+		Standard_Boolean IsOutside() const;
 		%feature("autodoc", "1");
-		GccEnt_QualifiedLin Outside(const gp_Lin2d &Obj);
+		GccEnt_QualifiedLin();
 		%feature("autodoc", "1");
-		GccEnt_QualifiedCirc Outside(const gp_Circ2d &Obj);
+		GccEnt_Position _CSFDB_GetGccEnt_QualifiedLinTheQualifier() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetGccEnt_QualifiedLinTheQualifier(const GccEnt_Position p);
+		%feature("autodoc", "1");
+		const gp_Lin2d & _CSFDB_GetGccEnt_QualifiedLinTheQualified() const;
 
 };
 
@@ -187,31 +180,55 @@ class GccEnt_Array1OfPosition {
 
 };
 
-%nodefaultctor GccEnt_QualifiedLin;
-class GccEnt_QualifiedLin {
+%nodefaultctor GccEnt_BadQualifier;
+class GccEnt_BadQualifier : public Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~GccEnt_QualifiedLin();
+		GccEnt_BadQualifier();
 		%feature("autodoc", "1");
-		GccEnt_QualifiedLin(const gp_Lin2d &Qualified, const GccEnt_Position Qualifier);
+		GccEnt_BadQualifier(const char * AString);
 		%feature("autodoc", "1");
-		gp_Lin2d Qualified() const;
+		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		GccEnt_Position Qualifier() const;
+		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Standard_Boolean IsUnqualified() const;
+		Handle_GccEnt_BadQualifier NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEnclosed() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GccEnt_BadQualifier {
+	Handle_GccEnt_BadQualifier GetHandle() {
+	return *(Handle_GccEnt_BadQualifier*) &$self;
+	}
+};
+%extend GccEnt_BadQualifier {
+	~GccEnt_BadQualifier() {
+	printf("Call custom destructor for instance of GccEnt_BadQualifier\n");
+	}
+};
+
+%nodefaultctor GccEnt;
+class GccEnt {
+	public:
 		%feature("autodoc", "1");
-		Standard_Boolean IsOutside() const;
+		~GccEnt();
 		%feature("autodoc", "1");
-		GccEnt_QualifiedLin();
+		GccEnt();
 		%feature("autodoc", "1");
-		GccEnt_Position _CSFDB_GetGccEnt_QualifiedLinTheQualifier() const;
+		GccEnt_QualifiedLin Unqualified(const gp_Lin2d &Obj);
 		%feature("autodoc", "1");
-		void _CSFDB_SetGccEnt_QualifiedLinTheQualifier(const GccEnt_Position p);
+		GccEnt_QualifiedCirc Unqualified(const gp_Circ2d &Obj);
 		%feature("autodoc", "1");
-		const gp_Lin2d & _CSFDB_GetGccEnt_QualifiedLinTheQualified() const;
+		GccEnt_QualifiedCirc Enclosing(const gp_Circ2d &Obj);
+		%feature("autodoc", "1");
+		GccEnt_QualifiedLin Enclosed(const gp_Lin2d &Obj);
+		%feature("autodoc", "1");
+		GccEnt_QualifiedCirc Enclosed(const gp_Circ2d &Obj);
+		%feature("autodoc", "1");
+		GccEnt_QualifiedLin Outside(const gp_Lin2d &Obj);
+		%feature("autodoc", "1");
+		GccEnt_QualifiedCirc Outside(const gp_Circ2d &Obj);
 
 };
 
@@ -243,29 +260,4 @@ class GccEnt_QualifiedCirc {
 		%feature("autodoc", "1");
 		void _CSFDB_SetGccEnt_QualifiedCircTheQualifier(const GccEnt_Position p);
 
-};
-
-%nodefaultctor GccEnt_BadQualifier;
-class GccEnt_BadQualifier : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		GccEnt_BadQualifier();
-		%feature("autodoc", "1");
-		GccEnt_BadQualifier(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_GccEnt_BadQualifier NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GccEnt_BadQualifier();
-
-};
-%extend GccEnt_BadQualifier {
-	Handle_GccEnt_BadQualifier GetHandle() {
-	return *(Handle_GccEnt_BadQualifier*) &$self;
-	}
 };

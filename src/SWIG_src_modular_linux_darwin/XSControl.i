@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module XSControl
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XSControl_TransferWriter();
-		%feature("autodoc", "1");
 		Handle_XSControl_TransferWriter();
 		%feature("autodoc", "1");
 		Handle_XSControl_TransferWriter(const Handle_XSControl_TransferWriter &aHandle);
@@ -118,12 +102,15 @@ class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 	return (XSControl_TransferWriter*)$self->Access();
 	}
 };
+%extend Handle_XSControl_TransferWriter {
+	~Handle_XSControl_TransferWriter() {
+	printf("Call custom destructor for instance of Handle_XSControl_TransferWriter\n");
+	}
+};
 
 %nodefaultctor Handle_XSControl_SignTransferStatus;
 class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XSControl_SignTransferStatus();
 		%feature("autodoc", "1");
 		Handle_XSControl_SignTransferStatus();
 		%feature("autodoc", "1");
@@ -139,33 +126,15 @@ class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 	return (XSControl_SignTransferStatus*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_XSControl_TransferReader;
-class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_XSControl_TransferReader();
-		%feature("autodoc", "1");
-		Handle_XSControl_TransferReader();
-		%feature("autodoc", "1");
-		Handle_XSControl_TransferReader(const Handle_XSControl_TransferReader &aHandle);
-		%feature("autodoc", "1");
-		Handle_XSControl_TransferReader(const XSControl_TransferReader *anItem);
-		%feature("autodoc", "1");
-		Handle_XSControl_TransferReader const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XSControl_TransferReader {
-	XSControl_TransferReader* GetObject() {
-	return (XSControl_TransferReader*)$self->Access();
+%extend Handle_XSControl_SignTransferStatus {
+	~Handle_XSControl_SignTransferStatus() {
+	printf("Call custom destructor for instance of Handle_XSControl_SignTransferStatus\n");
 	}
 };
 
 %nodefaultctor Handle_XSControl_Controller;
 class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XSControl_Controller();
 		%feature("autodoc", "1");
 		Handle_XSControl_Controller();
 		%feature("autodoc", "1");
@@ -181,12 +150,39 @@ class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 	return (XSControl_Controller*)$self->Access();
 	}
 };
+%extend Handle_XSControl_Controller {
+	~Handle_XSControl_Controller() {
+	printf("Call custom destructor for instance of Handle_XSControl_Controller\n");
+	}
+};
+
+%nodefaultctor Handle_XSControl_TransferReader;
+class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_XSControl_TransferReader();
+		%feature("autodoc", "1");
+		Handle_XSControl_TransferReader(const Handle_XSControl_TransferReader &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_TransferReader(const XSControl_TransferReader *anItem);
+		%feature("autodoc", "1");
+		Handle_XSControl_TransferReader const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XSControl_TransferReader {
+	XSControl_TransferReader* GetObject() {
+	return (XSControl_TransferReader*)$self->Access();
+	}
+};
+%extend Handle_XSControl_TransferReader {
+	~Handle_XSControl_TransferReader() {
+	printf("Call custom destructor for instance of Handle_XSControl_TransferReader\n");
+	}
+};
 
 %nodefaultctor Handle_XSControl_SelectForTransfer;
 class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XSControl_SelectForTransfer();
 		%feature("autodoc", "1");
 		Handle_XSControl_SelectForTransfer();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract 
 	return (XSControl_SelectForTransfer*)$self->Access();
 	}
 };
+%extend Handle_XSControl_SelectForTransfer {
+	~Handle_XSControl_SelectForTransfer() {
+	printf("Call custom destructor for instance of Handle_XSControl_SelectForTransfer\n");
+	}
+};
 
 %nodefaultctor Handle_XSControl_Vars;
 class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XSControl_Vars();
 		%feature("autodoc", "1");
 		Handle_XSControl_Vars();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 	return (XSControl_Vars*)$self->Access();
 	}
 };
+%extend Handle_XSControl_Vars {
+	~Handle_XSControl_Vars() {
+	printf("Call custom destructor for instance of Handle_XSControl_Vars\n");
+	}
+};
 
 %nodefaultctor Handle_XSControl_WorkSession;
 class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XSControl_WorkSession();
 		%feature("autodoc", "1");
 		Handle_XSControl_WorkSession();
 		%feature("autodoc", "1");
@@ -244,12 +246,15 @@ class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 	return (XSControl_WorkSession*)$self->Access();
 	}
 };
+%extend Handle_XSControl_WorkSession {
+	~Handle_XSControl_WorkSession() {
+	printf("Call custom destructor for instance of Handle_XSControl_WorkSession\n");
+	}
+};
 
 %nodefaultctor Handle_XSControl_ConnectedShapes;
 class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XSControl_ConnectedShapes();
 		%feature("autodoc", "1");
 		Handle_XSControl_ConnectedShapes();
 		%feature("autodoc", "1");
@@ -265,12 +270,15 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 	return (XSControl_ConnectedShapes*)$self->Access();
 	}
 };
+%extend Handle_XSControl_ConnectedShapes {
+	~Handle_XSControl_ConnectedShapes() {
+	printf("Call custom destructor for instance of Handle_XSControl_ConnectedShapes\n");
+	}
+};
 
 %nodefaultctor XSControl;
 class XSControl {
 	public:
-		%feature("autodoc", "1");
-		~XSControl();
 		%feature("autodoc", "1");
 		XSControl();
 		%feature("autodoc", "1");
@@ -278,6 +286,11 @@ class XSControl {
 		%feature("autodoc", "1");
 		Handle_XSControl_Vars Vars(const Handle_IFSelect_SessionPilot &pilot);
 
+};
+%extend XSControl {
+	~XSControl() {
+	printf("Call custom destructor for instance of XSControl\n");
+	}
 };
 
 %nodefaultctor XSControl_SignTransferStatus;
@@ -299,8 +312,6 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XSControl_SignTransferStatus();
 
 };
 %extend XSControl_SignTransferStatus {
@@ -308,17 +319,10 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 	return *(Handle_XSControl_SignTransferStatus*) &$self;
 	}
 };
-
-%nodefaultctor XSControl_Functions;
-class XSControl_Functions {
-	public:
-		%feature("autodoc", "1");
-		~XSControl_Functions();
-		%feature("autodoc", "1");
-		XSControl_Functions();
-		%feature("autodoc", "1");
-		void Init();
-
+%extend XSControl_SignTransferStatus {
+	~XSControl_SignTransferStatus() {
+	printf("Call custom destructor for instance of XSControl_SignTransferStatus\n");
+	}
 };
 
 %nodefaultctor XSControl_ConnectedShapes;
@@ -338,8 +342,6 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 		Handle_TColStd_HSequenceOfTransient AdjacentEntities(const TopoDS_Shape &ashape, const Handle_Transfer_TransientProcess &TP, const TopAbs_ShapeEnum type);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XSControl_ConnectedShapes();
 
 };
 %extend XSControl_ConnectedShapes {
@@ -347,12 +349,15 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 	return *(Handle_XSControl_ConnectedShapes*) &$self;
 	}
 };
+%extend XSControl_ConnectedShapes {
+	~XSControl_ConnectedShapes() {
+	printf("Call custom destructor for instance of XSControl_ConnectedShapes\n");
+	}
+};
 
 %nodefaultctor XSControl_Utils;
 class XSControl_Utils {
 	public:
-		%feature("autodoc", "1");
-		~XSControl_Utils();
 		%feature("autodoc", "1");
 		XSControl_Utils();
 		%feature("autodoc", "1");
@@ -439,6 +444,27 @@ class XSControl_Utils {
 		Handle_Standard_Transient ArrToSeq(const Handle_Standard_Transient &arr) const;
 		%feature("autodoc", "1");
 		Standard_Integer SeqIntValue(const Handle_TColStd_HSequenceOfInteger &list, const Standard_Integer num) const;
+
+};
+%extend XSControl_Utils {
+	~XSControl_Utils() {
+	printf("Call custom destructor for instance of XSControl_Utils\n");
+	}
+};
+
+%nodefaultctor XSControl_FuncShape;
+class XSControl_FuncShape {
+	public:
+		%feature("autodoc", "1");
+		~XSControl_FuncShape();
+		%feature("autodoc", "1");
+		XSControl_FuncShape();
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		Standard_Integer MoreShapes(const Handle_XSControl_WorkSession &session, Handle_TopTools_HSequenceOfShape & list, const char * name);
+		%feature("autodoc", "1");
+		Standard_Boolean FileAndVar(const Handle_XSControl_WorkSession &session, const char * file, const char * var, const char * def, TCollection_AsciiString & resfile, TCollection_AsciiString & resvar);
 
 };
 
@@ -532,51 +558,9 @@ class XSControl_Controller : public MMgt_TShared {
 	return *(Handle_XSControl_Controller*) &$self;
 	}
 };
-
-%nodefaultctor XSControl_TransferWriter;
-class XSControl_TransferWriter : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		XSControl_TransferWriter();
-		%feature("autodoc", "1");
-		Handle_Transfer_FinderProcess FinderProcess() const;
-		%feature("autodoc", "1");
-		void SetFinderProcess(const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		Handle_XSControl_Controller Controller() const;
-		%feature("autodoc", "1");
-		void SetController(const Handle_XSControl_Controller &ctl);
-		%feature("autodoc", "1");
-		void Clear(const Standard_Integer mode);
-		%feature("autodoc", "1");
-		Standard_Integer TransferMode() const;
-		%feature("autodoc", "1");
-		void SetTransferMode(const Standard_Integer mode);
-		%feature("autodoc", "1");
-		void PrintStats(const Standard_Integer what, const Standard_Integer mode=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean RecognizeTransient(const Handle_Standard_Transient &obj);
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus TransferWriteTransient(const Handle_Interface_InterfaceModel &model, const Handle_Standard_Transient &obj);
-		%feature("autodoc", "1");
-		Standard_Boolean RecognizeShape(const TopoDS_Shape &shape);
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus TransferWriteShape(const Handle_Interface_InterfaceModel &model, const TopoDS_Shape &shape);
-		%feature("autodoc", "1");
-		Interface_CheckIterator CheckList() const;
-		%feature("autodoc", "1");
-		Interface_CheckIterator ResultCheckList(const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		void PrintStatsProcess(const Handle_Transfer_FinderProcess &TP, const Standard_Integer what, const Standard_Integer mode=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XSControl_TransferWriter();
-
-};
-%extend XSControl_TransferWriter {
-	Handle_XSControl_TransferWriter GetHandle() {
-	return *(Handle_XSControl_TransferWriter*) &$self;
+%extend XSControl_Controller {
+	~XSControl_Controller() {
+	printf("Call custom destructor for instance of XSControl_Controller\n");
 	}
 };
 
@@ -589,8 +573,6 @@ class XSControl_Reader {
 		XSControl_Reader(const char * norm);
 		%feature("autodoc", "1");
 		XSControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
-		%feature("autodoc", "1");
-		virtual		~XSControl_Reader();
 		%feature("autodoc", "1");
 		Standard_Boolean SetNorm(const char * norm);
 		%feature("autodoc", "1");
@@ -637,12 +619,65 @@ class XSControl_Reader {
 		void GetStatsTransfer(const Handle_TColStd_HSequenceOfTransient &list, Standard_Integer & nbMapped, Standard_Integer & nbWithResult, Standard_Integer & nbWithFail) const;
 
 };
+%extend XSControl_Reader {
+	~XSControl_Reader() {
+	printf("Call custom destructor for instance of XSControl_Reader\n");
+	}
+};
+
+%nodefaultctor XSControl_TransferWriter;
+class XSControl_TransferWriter : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		XSControl_TransferWriter();
+		%feature("autodoc", "1");
+		Handle_Transfer_FinderProcess FinderProcess() const;
+		%feature("autodoc", "1");
+		void SetFinderProcess(const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		Handle_XSControl_Controller Controller() const;
+		%feature("autodoc", "1");
+		void SetController(const Handle_XSControl_Controller &ctl);
+		%feature("autodoc", "1");
+		void Clear(const Standard_Integer mode);
+		%feature("autodoc", "1");
+		Standard_Integer TransferMode() const;
+		%feature("autodoc", "1");
+		void SetTransferMode(const Standard_Integer mode);
+		%feature("autodoc", "1");
+		void PrintStats(const Standard_Integer what, const Standard_Integer mode=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean RecognizeTransient(const Handle_Standard_Transient &obj);
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus TransferWriteTransient(const Handle_Interface_InterfaceModel &model, const Handle_Standard_Transient &obj);
+		%feature("autodoc", "1");
+		Standard_Boolean RecognizeShape(const TopoDS_Shape &shape);
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus TransferWriteShape(const Handle_Interface_InterfaceModel &model, const TopoDS_Shape &shape);
+		%feature("autodoc", "1");
+		Interface_CheckIterator CheckList() const;
+		%feature("autodoc", "1");
+		Interface_CheckIterator ResultCheckList(const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		void PrintStatsProcess(const Handle_Transfer_FinderProcess &TP, const Standard_Integer what, const Standard_Integer mode=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XSControl_TransferWriter {
+	Handle_XSControl_TransferWriter GetHandle() {
+	return *(Handle_XSControl_TransferWriter*) &$self;
+	}
+};
+%extend XSControl_TransferWriter {
+	~XSControl_TransferWriter() {
+	printf("Call custom destructor for instance of XSControl_TransferWriter\n");
+	}
+};
 
 %nodefaultctor XSControl_Writer;
 class XSControl_Writer {
 	public:
-		%feature("autodoc", "1");
-		~XSControl_Writer();
 		%feature("autodoc", "1");
 		XSControl_Writer();
 		%feature("autodoc", "1");
@@ -664,6 +699,11 @@ class XSControl_Writer {
 		%feature("autodoc", "1");
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
 
+};
+%extend XSControl_Writer {
+	~XSControl_Writer() {
+	printf("Call custom destructor for instance of XSControl_Writer\n");
+	}
 };
 
 %nodefaultctor XSControl_WorkSession;
@@ -731,8 +771,6 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 		void SetVars(const Handle_XSControl_Vars &newvars);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XSControl_WorkSession();
 
 };
 %extend XSControl_WorkSession {
@@ -740,20 +778,21 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 	return *(Handle_XSControl_WorkSession*) &$self;
 	}
 };
+%extend XSControl_WorkSession {
+	~XSControl_WorkSession() {
+	printf("Call custom destructor for instance of XSControl_WorkSession\n");
+	}
+};
 
-%nodefaultctor XSControl_FuncShape;
-class XSControl_FuncShape {
+%nodefaultctor XSControl_Functions;
+class XSControl_Functions {
 	public:
 		%feature("autodoc", "1");
-		~XSControl_FuncShape();
+		~XSControl_Functions();
 		%feature("autodoc", "1");
-		XSControl_FuncShape();
+		XSControl_Functions();
 		%feature("autodoc", "1");
 		void Init();
-		%feature("autodoc", "1");
-		Standard_Integer MoreShapes(const Handle_XSControl_WorkSession &session, Handle_TopTools_HSequenceOfShape & list, const char * name);
-		%feature("autodoc", "1");
-		Standard_Boolean FileAndVar(const Handle_XSControl_WorkSession &session, const char * file, const char * var, const char * def, TCollection_AsciiString & resfile, TCollection_AsciiString & resvar);
 
 };
 
@@ -856,13 +895,16 @@ class XSControl_TransferReader : public MMgt_TShared {
 		void PrintStatsOnList(const Handle_Transfer_TransientProcess &TP, const Handle_TColStd_HSequenceOfTransient &list, const Standard_Integer what, const Standard_Integer mode=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XSControl_TransferReader();
 
 };
 %extend XSControl_TransferReader {
 	Handle_XSControl_TransferReader GetHandle() {
 	return *(Handle_XSControl_TransferReader*) &$self;
+	}
+};
+%extend XSControl_TransferReader {
+	~XSControl_TransferReader() {
+	printf("Call custom destructor for instance of XSControl_TransferReader\n");
 	}
 };
 
@@ -887,12 +929,15 @@ class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
 		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XSControl_SelectForTransfer();
 
 };
 %extend XSControl_SelectForTransfer {
 	Handle_XSControl_SelectForTransfer GetHandle() {
 	return *(Handle_XSControl_SelectForTransfer*) &$self;
+	}
+};
+%extend XSControl_SelectForTransfer {
+	~XSControl_SelectForTransfer() {
+	printf("Call custom destructor for instance of XSControl_SelectForTransfer\n");
 	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module MDataStd
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_MDataStd_DirectoryRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_MDataStd_DirectoryRetrievalDriver();
-		%feature("autodoc", "1");
 		Handle_MDataStd_DirectoryRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_DirectoryRetrievalDriver(const Handle_MDataStd_DirectoryRetrievalDriver &aHandle);
@@ -118,12 +102,15 @@ class Handle_MDataStd_DirectoryRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_DirectoryRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_DirectoryRetrievalDriver {
+	~Handle_MDataStd_DirectoryRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_DirectoryRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_RealArrayRetrievalDriver_1;
 class Handle_MDataStd_RealArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_RealArrayRetrievalDriver_1();
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealArrayRetrievalDriver_1();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_MDataStd_RealArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	return (MDataStd_RealArrayRetrievalDriver_1*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_RealArrayRetrievalDriver_1 {
+	~Handle_MDataStd_RealArrayRetrievalDriver_1() {
+	printf("Call custom destructor for instance of Handle_MDataStd_RealArrayRetrievalDriver_1\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ByteArrayRetrievalDriver_1;
 class Handle_MDataStd_ByteArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ByteArrayRetrievalDriver_1();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ByteArrayRetrievalDriver_1();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_MDataStd_ByteArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	return (MDataStd_ByteArrayRetrievalDriver_1*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ByteArrayRetrievalDriver_1 {
+	~Handle_MDataStd_ByteArrayRetrievalDriver_1() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ByteArrayRetrievalDriver_1\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ReferenceListStorageDriver;
 class Handle_MDataStd_ReferenceListStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ReferenceListStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceListStorageDriver();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_MDataStd_ReferenceListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ReferenceListStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ReferenceListStorageDriver {
+	~Handle_MDataStd_ReferenceListStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ReferenceListStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntegerListStorageDriver;
 class Handle_MDataStd_IntegerListStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntegerListStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerListStorageDriver();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_MDataStd_IntegerListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_IntegerListStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntegerListStorageDriver {
+	~Handle_MDataStd_IntegerListStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntegerListStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_BooleanListRetrievalDriver;
 class Handle_MDataStd_BooleanListRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_BooleanListRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanListRetrievalDriver();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_MDataStd_BooleanListRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_BooleanListRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_BooleanListRetrievalDriver {
+	~Handle_MDataStd_BooleanListRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_BooleanListRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayRetrievalDriver_1;
 class Handle_MDataStd_ExtStringArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ExtStringArrayRetrievalDriver_1();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringArrayRetrievalDriver_1();
 		%feature("autodoc", "1");
@@ -244,12 +246,15 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver_1 : public Handle_MDF_ARDriv
 	return (MDataStd_ExtStringArrayRetrievalDriver_1*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ExtStringArrayRetrievalDriver_1 {
+	~Handle_MDataStd_ExtStringArrayRetrievalDriver_1() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ExtStringArrayRetrievalDriver_1\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_PlacementRetrievalDriver;
 class Handle_MDataStd_PlacementRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_PlacementRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_PlacementRetrievalDriver();
 		%feature("autodoc", "1");
@@ -265,12 +270,15 @@ class Handle_MDataStd_PlacementRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_PlacementRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_PlacementRetrievalDriver {
+	~Handle_MDataStd_PlacementRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_PlacementRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_TreeNodeRetrievalDriver;
 class Handle_MDataStd_TreeNodeRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_TreeNodeRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_TreeNodeRetrievalDriver();
 		%feature("autodoc", "1");
@@ -286,12 +294,15 @@ class Handle_MDataStd_TreeNodeRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_TreeNodeRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_TreeNodeRetrievalDriver {
+	~Handle_MDataStd_TreeNodeRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_TreeNodeRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_CommentStorageDriver;
 class Handle_MDataStd_CommentStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_CommentStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_CommentStorageDriver();
 		%feature("autodoc", "1");
@@ -307,12 +318,15 @@ class Handle_MDataStd_CommentStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_CommentStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_CommentStorageDriver {
+	~Handle_MDataStd_CommentStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_CommentStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ExpressionStorageDriver;
 class Handle_MDataStd_ExpressionStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ExpressionStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExpressionStorageDriver();
 		%feature("autodoc", "1");
@@ -328,12 +342,15 @@ class Handle_MDataStd_ExpressionStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ExpressionStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ExpressionStorageDriver {
+	~Handle_MDataStd_ExpressionStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ExpressionStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_PlaneRetrievalDriver;
 class Handle_MDataStd_PlaneRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_PlaneRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_PlaneRetrievalDriver();
 		%feature("autodoc", "1");
@@ -349,12 +366,15 @@ class Handle_MDataStd_PlaneRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_PlaneRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_PlaneRetrievalDriver {
+	~Handle_MDataStd_PlaneRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_PlaneRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayRetrievalDriver;
 class Handle_MDataStd_ExtStringArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ExtStringArrayRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringArrayRetrievalDriver();
 		%feature("autodoc", "1");
@@ -370,12 +390,15 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver : public Handle_MDF_ARDriver
 	return (MDataStd_ExtStringArrayRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ExtStringArrayRetrievalDriver {
+	~Handle_MDataStd_ExtStringArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ExtStringArrayRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ExtStringListRetrievalDriver;
 class Handle_MDataStd_ExtStringListRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ExtStringListRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringListRetrievalDriver();
 		%feature("autodoc", "1");
@@ -391,12 +414,15 @@ class Handle_MDataStd_ExtStringListRetrievalDriver : public Handle_MDF_ARDriver 
 	return (MDataStd_ExtStringListRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ExtStringListRetrievalDriver {
+	~Handle_MDataStd_ExtStringListRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ExtStringListRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_TickRetrievalDriver;
 class Handle_MDataStd_TickRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_TickRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_TickRetrievalDriver();
 		%feature("autodoc", "1");
@@ -412,12 +438,15 @@ class Handle_MDataStd_TickRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_TickRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_TickRetrievalDriver {
+	~Handle_MDataStd_TickRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_TickRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_AxisStorageDriver;
 class Handle_MDataStd_AxisStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_AxisStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_AxisStorageDriver();
 		%feature("autodoc", "1");
@@ -433,12 +462,15 @@ class Handle_MDataStd_AxisStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_AxisStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_AxisStorageDriver {
+	~Handle_MDataStd_AxisStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_AxisStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_DirectoryStorageDriver;
 class Handle_MDataStd_DirectoryStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_DirectoryStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_DirectoryStorageDriver();
 		%feature("autodoc", "1");
@@ -454,12 +486,15 @@ class Handle_MDataStd_DirectoryStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_DirectoryStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_DirectoryStorageDriver {
+	~Handle_MDataStd_DirectoryStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_DirectoryStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_GeometryStorageDriver;
 class Handle_MDataStd_GeometryStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_GeometryStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_GeometryStorageDriver();
 		%feature("autodoc", "1");
@@ -475,12 +510,15 @@ class Handle_MDataStd_GeometryStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_GeometryStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_GeometryStorageDriver {
+	~Handle_MDataStd_GeometryStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_GeometryStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntegerListRetrievalDriver;
 class Handle_MDataStd_IntegerListRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntegerListRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerListRetrievalDriver();
 		%feature("autodoc", "1");
@@ -496,12 +534,15 @@ class Handle_MDataStd_IntegerListRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_IntegerListRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntegerListRetrievalDriver {
+	~Handle_MDataStd_IntegerListRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntegerListRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_AxisRetrievalDriver;
 class Handle_MDataStd_AxisRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_AxisRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_AxisRetrievalDriver();
 		%feature("autodoc", "1");
@@ -517,12 +558,15 @@ class Handle_MDataStd_AxisRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_AxisRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_AxisRetrievalDriver {
+	~Handle_MDataStd_AxisRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_AxisRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_AsciiStringStorageDriver;
 class Handle_MDataStd_AsciiStringStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_AsciiStringStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_AsciiStringStorageDriver();
 		%feature("autodoc", "1");
@@ -538,12 +582,15 @@ class Handle_MDataStd_AsciiStringStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_AsciiStringStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_AsciiStringStorageDriver {
+	~Handle_MDataStd_AsciiStringStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_AsciiStringStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ConstraintRetrievalDriver;
 class Handle_MDataStd_ConstraintRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ConstraintRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ConstraintRetrievalDriver();
 		%feature("autodoc", "1");
@@ -559,12 +606,15 @@ class Handle_MDataStd_ConstraintRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_ConstraintRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ConstraintRetrievalDriver {
+	~Handle_MDataStd_ConstraintRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ConstraintRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_AsciiStringRetrievalDriver;
 class Handle_MDataStd_AsciiStringRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_AsciiStringRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_AsciiStringRetrievalDriver();
 		%feature("autodoc", "1");
@@ -580,12 +630,15 @@ class Handle_MDataStd_AsciiStringRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_AsciiStringRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_AsciiStringRetrievalDriver {
+	~Handle_MDataStd_AsciiStringRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_AsciiStringRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver_1;
 class Handle_MDataStd_IntPackedMapRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntPackedMapRetrievalDriver_1();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntPackedMapRetrievalDriver_1();
 		%feature("autodoc", "1");
@@ -601,12 +654,15 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver_1 : public Handle_MDF_ARDriver
 	return (MDataStd_IntPackedMapRetrievalDriver_1*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntPackedMapRetrievalDriver_1 {
+	~Handle_MDataStd_IntPackedMapRetrievalDriver_1() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntPackedMapRetrievalDriver_1\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntegerStorageDriver;
 class Handle_MDataStd_IntegerStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntegerStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerStorageDriver();
 		%feature("autodoc", "1");
@@ -622,12 +678,15 @@ class Handle_MDataStd_IntegerStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_IntegerStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntegerStorageDriver {
+	~Handle_MDataStd_IntegerStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntegerStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ReferenceArrayStorageDriver;
 class Handle_MDataStd_ReferenceArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ReferenceArrayStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceArrayStorageDriver();
 		%feature("autodoc", "1");
@@ -643,12 +702,15 @@ class Handle_MDataStd_ReferenceArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ReferenceArrayStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ReferenceArrayStorageDriver {
+	~Handle_MDataStd_ReferenceArrayStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ReferenceArrayStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_UAttributeRetrievalDriver;
 class Handle_MDataStd_UAttributeRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_UAttributeRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_UAttributeRetrievalDriver();
 		%feature("autodoc", "1");
@@ -664,12 +726,15 @@ class Handle_MDataStd_UAttributeRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_UAttributeRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_UAttributeRetrievalDriver {
+	~Handle_MDataStd_UAttributeRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_UAttributeRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_RelationRetrievalDriver;
 class Handle_MDataStd_RelationRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_RelationRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_RelationRetrievalDriver();
 		%feature("autodoc", "1");
@@ -685,12 +750,15 @@ class Handle_MDataStd_RelationRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_RelationRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_RelationRetrievalDriver {
+	~Handle_MDataStd_RelationRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_RelationRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_TreeNodeStorageDriver;
 class Handle_MDataStd_TreeNodeStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_TreeNodeStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_TreeNodeStorageDriver();
 		%feature("autodoc", "1");
@@ -706,12 +774,15 @@ class Handle_MDataStd_TreeNodeStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_TreeNodeStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_TreeNodeStorageDriver {
+	~Handle_MDataStd_TreeNodeStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_TreeNodeStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_PointRetrievalDriver;
 class Handle_MDataStd_PointRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_PointRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_PointRetrievalDriver();
 		%feature("autodoc", "1");
@@ -727,12 +798,15 @@ class Handle_MDataStd_PointRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_PointRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_PointRetrievalDriver {
+	~Handle_MDataStd_PointRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_PointRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_NoteBookRetrievalDriver;
 class Handle_MDataStd_NoteBookRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_NoteBookRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_NoteBookRetrievalDriver();
 		%feature("autodoc", "1");
@@ -748,12 +822,15 @@ class Handle_MDataStd_NoteBookRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_NoteBookRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_NoteBookRetrievalDriver {
+	~Handle_MDataStd_NoteBookRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_NoteBookRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntegerArrayRetrievalDriver;
 class Handle_MDataStd_IntegerArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntegerArrayRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerArrayRetrievalDriver();
 		%feature("autodoc", "1");
@@ -769,12 +846,15 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_IntegerArrayRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntegerArrayRetrievalDriver {
+	~Handle_MDataStd_IntegerArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntegerArrayRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ExpressionRetrievalDriver;
 class Handle_MDataStd_ExpressionRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ExpressionRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExpressionRetrievalDriver();
 		%feature("autodoc", "1");
@@ -790,12 +870,15 @@ class Handle_MDataStd_ExpressionRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_ExpressionRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ExpressionRetrievalDriver {
+	~Handle_MDataStd_ExpressionRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ExpressionRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_NameRetrievalDriver;
 class Handle_MDataStd_NameRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_NameRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_NameRetrievalDriver();
 		%feature("autodoc", "1");
@@ -811,12 +894,15 @@ class Handle_MDataStd_NameRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_NameRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_NameRetrievalDriver {
+	~Handle_MDataStd_NameRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_NameRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_PatternStdStorageDriver;
 class Handle_MDataStd_PatternStdStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_PatternStdStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_PatternStdStorageDriver();
 		%feature("autodoc", "1");
@@ -832,12 +918,15 @@ class Handle_MDataStd_PatternStdStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_PatternStdStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_PatternStdStorageDriver {
+	~Handle_MDataStd_PatternStdStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_PatternStdStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_RealArrayRetrievalDriver;
 class Handle_MDataStd_RealArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_RealArrayRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealArrayRetrievalDriver();
 		%feature("autodoc", "1");
@@ -853,12 +942,15 @@ class Handle_MDataStd_RealArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_RealArrayRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_RealArrayRetrievalDriver {
+	~Handle_MDataStd_RealArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_RealArrayRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ReferenceArrayRetrievalDriver;
 class Handle_MDataStd_ReferenceArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ReferenceArrayRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceArrayRetrievalDriver();
 		%feature("autodoc", "1");
@@ -874,12 +966,15 @@ class Handle_MDataStd_ReferenceArrayRetrievalDriver : public Handle_MDF_ARDriver
 	return (MDataStd_ReferenceArrayRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ReferenceArrayRetrievalDriver {
+	~Handle_MDataStd_ReferenceArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ReferenceArrayRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_NameStorageDriver;
 class Handle_MDataStd_NameStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_NameStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_NameStorageDriver();
 		%feature("autodoc", "1");
@@ -895,12 +990,15 @@ class Handle_MDataStd_NameStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_NameStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_NameStorageDriver {
+	~Handle_MDataStd_NameStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_NameStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_PatternStdRetrievalDriver;
 class Handle_MDataStd_PatternStdRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_PatternStdRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_PatternStdRetrievalDriver();
 		%feature("autodoc", "1");
@@ -916,12 +1014,15 @@ class Handle_MDataStd_PatternStdRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_PatternStdRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_PatternStdRetrievalDriver {
+	~Handle_MDataStd_PatternStdRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_PatternStdRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_RealStorageDriver;
 class Handle_MDataStd_RealStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_RealStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealStorageDriver();
 		%feature("autodoc", "1");
@@ -937,12 +1038,15 @@ class Handle_MDataStd_RealStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_RealStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_RealStorageDriver {
+	~Handle_MDataStd_RealStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_RealStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_RealListRetrievalDriver;
 class Handle_MDataStd_RealListRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_RealListRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealListRetrievalDriver();
 		%feature("autodoc", "1");
@@ -958,12 +1062,15 @@ class Handle_MDataStd_RealListRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_RealListRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_RealListRetrievalDriver {
+	~Handle_MDataStd_RealListRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_RealListRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_BooleanArrayStorageDriver;
 class Handle_MDataStd_BooleanArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_BooleanArrayStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanArrayStorageDriver();
 		%feature("autodoc", "1");
@@ -979,12 +1086,15 @@ class Handle_MDataStd_BooleanArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_BooleanArrayStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_BooleanArrayStorageDriver {
+	~Handle_MDataStd_BooleanArrayStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_BooleanArrayStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntPackedMapStorageDriver;
 class Handle_MDataStd_IntPackedMapStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntPackedMapStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntPackedMapStorageDriver();
 		%feature("autodoc", "1");
@@ -1000,12 +1110,15 @@ class Handle_MDataStd_IntPackedMapStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_IntPackedMapStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntPackedMapStorageDriver {
+	~Handle_MDataStd_IntPackedMapStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntPackedMapStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayStorageDriver;
 class Handle_MDataStd_ExtStringArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ExtStringArrayStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringArrayStorageDriver();
 		%feature("autodoc", "1");
@@ -1021,33 +1134,15 @@ class Handle_MDataStd_ExtStringArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ExtStringArrayStorageDriver*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_MDataStd_NamedDataRetrievalDriver;
-class Handle_MDataStd_NamedDataRetrievalDriver : public Handle_MDF_ARDriver {
-	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_NamedDataRetrievalDriver();
-		%feature("autodoc", "1");
-		Handle_MDataStd_NamedDataRetrievalDriver();
-		%feature("autodoc", "1");
-		Handle_MDataStd_NamedDataRetrievalDriver(const Handle_MDataStd_NamedDataRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDataStd_NamedDataRetrievalDriver(const MDataStd_NamedDataRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MDataStd_NamedDataRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDataStd_NamedDataRetrievalDriver {
-	MDataStd_NamedDataRetrievalDriver* GetObject() {
-	return (MDataStd_NamedDataRetrievalDriver*)$self->Access();
+%extend Handle_MDataStd_ExtStringArrayStorageDriver {
+	~Handle_MDataStd_ExtStringArrayStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ExtStringArrayStorageDriver\n");
 	}
 };
 
 %nodefaultctor Handle_MDataStd_PointStorageDriver;
 class Handle_MDataStd_PointStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_PointStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_PointStorageDriver();
 		%feature("autodoc", "1");
@@ -1063,12 +1158,15 @@ class Handle_MDataStd_PointStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_PointStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_PointStorageDriver {
+	~Handle_MDataStd_PointStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_PointStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_NamedDataStorageDriver;
 class Handle_MDataStd_NamedDataStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_NamedDataStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_NamedDataStorageDriver();
 		%feature("autodoc", "1");
@@ -1084,12 +1182,15 @@ class Handle_MDataStd_NamedDataStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_NamedDataStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_NamedDataStorageDriver {
+	~Handle_MDataStd_NamedDataStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_NamedDataStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ShapeRetrievalDriver;
 class Handle_MDataStd_ShapeRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ShapeRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ShapeRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1105,12 +1206,15 @@ class Handle_MDataStd_ShapeRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_ShapeRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ShapeRetrievalDriver {
+	~Handle_MDataStd_ShapeRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ShapeRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ExtStringListStorageDriver;
 class Handle_MDataStd_ExtStringListStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ExtStringListStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringListStorageDriver();
 		%feature("autodoc", "1");
@@ -1126,12 +1230,15 @@ class Handle_MDataStd_ExtStringListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ExtStringListStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ExtStringListStorageDriver {
+	~Handle_MDataStd_ExtStringListStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ExtStringListStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_RelationStorageDriver;
 class Handle_MDataStd_RelationStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_RelationStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_RelationStorageDriver();
 		%feature("autodoc", "1");
@@ -1147,12 +1254,15 @@ class Handle_MDataStd_RelationStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_RelationStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_RelationStorageDriver {
+	~Handle_MDataStd_RelationStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_RelationStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_BooleanArrayRetrievalDriver;
 class Handle_MDataStd_BooleanArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_BooleanArrayRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanArrayRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1168,12 +1278,15 @@ class Handle_MDataStd_BooleanArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_BooleanArrayRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_BooleanArrayRetrievalDriver {
+	~Handle_MDataStd_BooleanArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_BooleanArrayRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntegerArrayRetrievalDriver_1;
 class Handle_MDataStd_IntegerArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntegerArrayRetrievalDriver_1();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerArrayRetrievalDriver_1();
 		%feature("autodoc", "1");
@@ -1189,12 +1302,15 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver_1 : public Handle_MDF_ARDriver
 	return (MDataStd_IntegerArrayRetrievalDriver_1*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntegerArrayRetrievalDriver_1 {
+	~Handle_MDataStd_IntegerArrayRetrievalDriver_1() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntegerArrayRetrievalDriver_1\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_PlaneStorageDriver;
 class Handle_MDataStd_PlaneStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_PlaneStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_PlaneStorageDriver();
 		%feature("autodoc", "1");
@@ -1210,12 +1326,39 @@ class Handle_MDataStd_PlaneStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_PlaneStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_PlaneStorageDriver {
+	~Handle_MDataStd_PlaneStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_PlaneStorageDriver\n");
+	}
+};
+
+%nodefaultctor Handle_MDataStd_NamedDataRetrievalDriver;
+class Handle_MDataStd_NamedDataRetrievalDriver : public Handle_MDF_ARDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_MDataStd_NamedDataRetrievalDriver();
+		%feature("autodoc", "1");
+		Handle_MDataStd_NamedDataRetrievalDriver(const Handle_MDataStd_NamedDataRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NamedDataRetrievalDriver(const MDataStd_NamedDataRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NamedDataRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDataStd_NamedDataRetrievalDriver {
+	MDataStd_NamedDataRetrievalDriver* GetObject() {
+	return (MDataStd_NamedDataRetrievalDriver*)$self->Access();
+	}
+};
+%extend Handle_MDataStd_NamedDataRetrievalDriver {
+	~Handle_MDataStd_NamedDataRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_NamedDataRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntegerArrayStorageDriver;
 class Handle_MDataStd_IntegerArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntegerArrayStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerArrayStorageDriver();
 		%feature("autodoc", "1");
@@ -1231,12 +1374,15 @@ class Handle_MDataStd_IntegerArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_IntegerArrayStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntegerArrayStorageDriver {
+	~Handle_MDataStd_IntegerArrayStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntegerArrayStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_UAttributeStorageDriver;
 class Handle_MDataStd_UAttributeStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_UAttributeStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_UAttributeStorageDriver();
 		%feature("autodoc", "1");
@@ -1252,12 +1398,15 @@ class Handle_MDataStd_UAttributeStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_UAttributeStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_UAttributeStorageDriver {
+	~Handle_MDataStd_UAttributeStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_UAttributeStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_BooleanListStorageDriver;
 class Handle_MDataStd_BooleanListStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_BooleanListStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanListStorageDriver();
 		%feature("autodoc", "1");
@@ -1273,12 +1422,15 @@ class Handle_MDataStd_BooleanListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_BooleanListStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_BooleanListStorageDriver {
+	~Handle_MDataStd_BooleanListStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_BooleanListStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_PlacementStorageDriver;
 class Handle_MDataStd_PlacementStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_PlacementStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_PlacementStorageDriver();
 		%feature("autodoc", "1");
@@ -1294,12 +1446,15 @@ class Handle_MDataStd_PlacementStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_PlacementStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_PlacementStorageDriver {
+	~Handle_MDataStd_PlacementStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_PlacementStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_VariableStorageDriver;
 class Handle_MDataStd_VariableStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_VariableStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_VariableStorageDriver();
 		%feature("autodoc", "1");
@@ -1315,12 +1470,15 @@ class Handle_MDataStd_VariableStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_VariableStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_VariableStorageDriver {
+	~Handle_MDataStd_VariableStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_VariableStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ReferenceListRetrievalDriver;
 class Handle_MDataStd_ReferenceListRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ReferenceListRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceListRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1336,12 +1494,15 @@ class Handle_MDataStd_ReferenceListRetrievalDriver : public Handle_MDF_ARDriver 
 	return (MDataStd_ReferenceListRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ReferenceListRetrievalDriver {
+	~Handle_MDataStd_ReferenceListRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ReferenceListRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_GeometryRetrievalDriver;
 class Handle_MDataStd_GeometryRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_GeometryRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_GeometryRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1357,12 +1518,15 @@ class Handle_MDataStd_GeometryRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_GeometryRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_GeometryRetrievalDriver {
+	~Handle_MDataStd_GeometryRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_GeometryRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_NoteBookStorageDriver;
 class Handle_MDataStd_NoteBookStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_NoteBookStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_NoteBookStorageDriver();
 		%feature("autodoc", "1");
@@ -1378,12 +1542,15 @@ class Handle_MDataStd_NoteBookStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_NoteBookStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_NoteBookStorageDriver {
+	~Handle_MDataStd_NoteBookStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_NoteBookStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ByteArrayStorageDriver;
 class Handle_MDataStd_ByteArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ByteArrayStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ByteArrayStorageDriver();
 		%feature("autodoc", "1");
@@ -1399,12 +1566,15 @@ class Handle_MDataStd_ByteArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ByteArrayStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ByteArrayStorageDriver {
+	~Handle_MDataStd_ByteArrayStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ByteArrayStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntegerRetrievalDriver;
 class Handle_MDataStd_IntegerRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntegerRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1420,12 +1590,15 @@ class Handle_MDataStd_IntegerRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_IntegerRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntegerRetrievalDriver {
+	~Handle_MDataStd_IntegerRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntegerRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ShapeStorageDriver;
 class Handle_MDataStd_ShapeStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ShapeStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ShapeStorageDriver();
 		%feature("autodoc", "1");
@@ -1441,12 +1614,15 @@ class Handle_MDataStd_ShapeStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ShapeStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ShapeStorageDriver {
+	~Handle_MDataStd_ShapeStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ShapeStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_CommentRetrievalDriver;
 class Handle_MDataStd_CommentRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_CommentRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_CommentRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1462,12 +1638,15 @@ class Handle_MDataStd_CommentRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_CommentRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_CommentRetrievalDriver {
+	~Handle_MDataStd_CommentRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_CommentRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ByteArrayRetrievalDriver;
 class Handle_MDataStd_ByteArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ByteArrayRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ByteArrayRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1483,12 +1662,15 @@ class Handle_MDataStd_ByteArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_ByteArrayRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ByteArrayRetrievalDriver {
+	~Handle_MDataStd_ByteArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ByteArrayRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_ConstraintStorageDriver;
 class Handle_MDataStd_ConstraintStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_ConstraintStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_ConstraintStorageDriver();
 		%feature("autodoc", "1");
@@ -1504,12 +1686,15 @@ class Handle_MDataStd_ConstraintStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ConstraintStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_ConstraintStorageDriver {
+	~Handle_MDataStd_ConstraintStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_ConstraintStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver;
 class Handle_MDataStd_IntPackedMapRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_IntPackedMapRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntPackedMapRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1525,12 +1710,15 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_IntPackedMapRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_IntPackedMapRetrievalDriver {
+	~Handle_MDataStd_IntPackedMapRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_IntPackedMapRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_RealListStorageDriver;
 class Handle_MDataStd_RealListStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_RealListStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealListStorageDriver();
 		%feature("autodoc", "1");
@@ -1546,12 +1734,15 @@ class Handle_MDataStd_RealListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_RealListStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_RealListStorageDriver {
+	~Handle_MDataStd_RealListStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_RealListStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_TickStorageDriver;
 class Handle_MDataStd_TickStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_TickStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_TickStorageDriver();
 		%feature("autodoc", "1");
@@ -1567,12 +1758,15 @@ class Handle_MDataStd_TickStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_TickStorageDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_TickStorageDriver {
+	~Handle_MDataStd_TickStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_TickStorageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_RealRetrievalDriver;
 class Handle_MDataStd_RealRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_RealRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1588,12 +1782,15 @@ class Handle_MDataStd_RealRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_RealRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_RealRetrievalDriver {
+	~Handle_MDataStd_RealRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_RealRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_VariableRetrievalDriver;
 class Handle_MDataStd_VariableRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_VariableRetrievalDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_VariableRetrievalDriver();
 		%feature("autodoc", "1");
@@ -1609,12 +1806,15 @@ class Handle_MDataStd_VariableRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_VariableRetrievalDriver*)$self->Access();
 	}
 };
+%extend Handle_MDataStd_VariableRetrievalDriver {
+	~Handle_MDataStd_VariableRetrievalDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_VariableRetrievalDriver\n");
+	}
+};
 
 %nodefaultctor Handle_MDataStd_RealArrayStorageDriver;
 class Handle_MDataStd_RealArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_MDataStd_RealArrayStorageDriver();
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealArrayStorageDriver();
 		%feature("autodoc", "1");
@@ -1628,6 +1828,11 @@ class Handle_MDataStd_RealArrayStorageDriver : public Handle_MDF_ASDriver {
 %extend Handle_MDataStd_RealArrayStorageDriver {
 	MDataStd_RealArrayStorageDriver* GetObject() {
 	return (MDataStd_RealArrayStorageDriver*)$self->Access();
+	}
+};
+%extend Handle_MDataStd_RealArrayStorageDriver {
+	~Handle_MDataStd_RealArrayStorageDriver() {
+	printf("Call custom destructor for instance of Handle_MDataStd_RealArrayStorageDriver\n");
 	}
 };
 
@@ -1646,13 +1851,16 @@ class MDataStd_ExpressionStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ExpressionStorageDriver();
 
 };
 %extend MDataStd_ExpressionStorageDriver {
 	Handle_MDataStd_ExpressionStorageDriver GetHandle() {
 	return *(Handle_MDataStd_ExpressionStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_ExpressionStorageDriver {
+	~MDataStd_ExpressionStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_ExpressionStorageDriver\n");
 	}
 };
 
@@ -1671,13 +1879,16 @@ class MDataStd_RealStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_RealStorageDriver();
 
 };
 %extend MDataStd_RealStorageDriver {
 	Handle_MDataStd_RealStorageDriver GetHandle() {
 	return *(Handle_MDataStd_RealStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_RealStorageDriver {
+	~MDataStd_RealStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_RealStorageDriver\n");
 	}
 };
 
@@ -1696,13 +1907,16 @@ class MDataStd_ReferenceArrayRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ReferenceArrayRetrievalDriver();
 
 };
 %extend MDataStd_ReferenceArrayRetrievalDriver {
 	Handle_MDataStd_ReferenceArrayRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_ReferenceArrayRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_ReferenceArrayRetrievalDriver {
+	~MDataStd_ReferenceArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_ReferenceArrayRetrievalDriver\n");
 	}
 };
 
@@ -1721,13 +1935,16 @@ class MDataStd_PlacementRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_PlacementRetrievalDriver();
 
 };
 %extend MDataStd_PlacementRetrievalDriver {
 	Handle_MDataStd_PlacementRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_PlacementRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_PlacementRetrievalDriver {
+	~MDataStd_PlacementRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_PlacementRetrievalDriver\n");
 	}
 };
 
@@ -1746,13 +1963,16 @@ class MDataStd_ReferenceListRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ReferenceListRetrievalDriver();
 
 };
 %extend MDataStd_ReferenceListRetrievalDriver {
 	Handle_MDataStd_ReferenceListRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_ReferenceListRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_ReferenceListRetrievalDriver {
+	~MDataStd_ReferenceListRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_ReferenceListRetrievalDriver\n");
 	}
 };
 
@@ -1771,13 +1991,16 @@ class MDataStd_NameRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_NameRetrievalDriver();
 
 };
 %extend MDataStd_NameRetrievalDriver {
 	Handle_MDataStd_NameRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_NameRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_NameRetrievalDriver {
+	~MDataStd_NameRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_NameRetrievalDriver\n");
 	}
 };
 
@@ -1796,13 +2019,16 @@ class MDataStd_PointStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_PointStorageDriver();
 
 };
 %extend MDataStd_PointStorageDriver {
 	Handle_MDataStd_PointStorageDriver GetHandle() {
 	return *(Handle_MDataStd_PointStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_PointStorageDriver {
+	~MDataStd_PointStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_PointStorageDriver\n");
 	}
 };
 
@@ -1821,13 +2047,16 @@ class MDataStd_PatternStdStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_PatternStdStorageDriver();
 
 };
 %extend MDataStd_PatternStdStorageDriver {
 	Handle_MDataStd_PatternStdStorageDriver GetHandle() {
 	return *(Handle_MDataStd_PatternStdStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_PatternStdStorageDriver {
+	~MDataStd_PatternStdStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_PatternStdStorageDriver\n");
 	}
 };
 
@@ -1846,13 +2075,16 @@ class MDataStd_PlaneStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_PlaneStorageDriver();
 
 };
 %extend MDataStd_PlaneStorageDriver {
 	Handle_MDataStd_PlaneStorageDriver GetHandle() {
 	return *(Handle_MDataStd_PlaneStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_PlaneStorageDriver {
+	~MDataStd_PlaneStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_PlaneStorageDriver\n");
 	}
 };
 
@@ -1871,13 +2103,16 @@ class MDataStd_ExtStringArrayStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ExtStringArrayStorageDriver();
 
 };
 %extend MDataStd_ExtStringArrayStorageDriver {
 	Handle_MDataStd_ExtStringArrayStorageDriver GetHandle() {
 	return *(Handle_MDataStd_ExtStringArrayStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_ExtStringArrayStorageDriver {
+	~MDataStd_ExtStringArrayStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_ExtStringArrayStorageDriver\n");
 	}
 };
 
@@ -1896,13 +2131,16 @@ class MDataStd_ConstraintStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ConstraintStorageDriver();
 
 };
 %extend MDataStd_ConstraintStorageDriver {
 	Handle_MDataStd_ConstraintStorageDriver GetHandle() {
 	return *(Handle_MDataStd_ConstraintStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_ConstraintStorageDriver {
+	~MDataStd_ConstraintStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_ConstraintStorageDriver\n");
 	}
 };
 
@@ -1921,13 +2159,16 @@ class MDataStd_AxisStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_AxisStorageDriver();
 
 };
 %extend MDataStd_AxisStorageDriver {
 	Handle_MDataStd_AxisStorageDriver GetHandle() {
 	return *(Handle_MDataStd_AxisStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_AxisStorageDriver {
+	~MDataStd_AxisStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_AxisStorageDriver\n");
 	}
 };
 
@@ -1946,13 +2187,16 @@ class MDataStd_ExpressionRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ExpressionRetrievalDriver();
 
 };
 %extend MDataStd_ExpressionRetrievalDriver {
 	Handle_MDataStd_ExpressionRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_ExpressionRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_ExpressionRetrievalDriver {
+	~MDataStd_ExpressionRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_ExpressionRetrievalDriver\n");
 	}
 };
 
@@ -1971,13 +2215,16 @@ class MDataStd_TickRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_TickRetrievalDriver();
 
 };
 %extend MDataStd_TickRetrievalDriver {
 	Handle_MDataStd_TickRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_TickRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_TickRetrievalDriver {
+	~MDataStd_TickRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_TickRetrievalDriver\n");
 	}
 };
 
@@ -1996,13 +2243,16 @@ class MDataStd_CommentStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_CommentStorageDriver();
 
 };
 %extend MDataStd_CommentStorageDriver {
 	Handle_MDataStd_CommentStorageDriver GetHandle() {
 	return *(Handle_MDataStd_CommentStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_CommentStorageDriver {
+	~MDataStd_CommentStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_CommentStorageDriver\n");
 	}
 };
 
@@ -2021,13 +2271,16 @@ class MDataStd_UAttributeRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_UAttributeRetrievalDriver();
 
 };
 %extend MDataStd_UAttributeRetrievalDriver {
 	Handle_MDataStd_UAttributeRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_UAttributeRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_UAttributeRetrievalDriver {
+	~MDataStd_UAttributeRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_UAttributeRetrievalDriver\n");
 	}
 };
 
@@ -2046,13 +2299,16 @@ class MDataStd_ExtStringArrayRetrievalDriver_1 : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ExtStringArrayRetrievalDriver_1();
 
 };
 %extend MDataStd_ExtStringArrayRetrievalDriver_1 {
 	Handle_MDataStd_ExtStringArrayRetrievalDriver_1 GetHandle() {
 	return *(Handle_MDataStd_ExtStringArrayRetrievalDriver_1*) &$self;
+	}
+};
+%extend MDataStd_ExtStringArrayRetrievalDriver_1 {
+	~MDataStd_ExtStringArrayRetrievalDriver_1() {
+	printf("Call custom destructor for instance of MDataStd_ExtStringArrayRetrievalDriver_1\n");
 	}
 };
 
@@ -2071,13 +2327,16 @@ class MDataStd_PlaneRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_PlaneRetrievalDriver();
 
 };
 %extend MDataStd_PlaneRetrievalDriver {
 	Handle_MDataStd_PlaneRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_PlaneRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_PlaneRetrievalDriver {
+	~MDataStd_PlaneRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_PlaneRetrievalDriver\n");
 	}
 };
 
@@ -2096,13 +2355,16 @@ class MDataStd_DirectoryStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_DirectoryStorageDriver();
 
 };
 %extend MDataStd_DirectoryStorageDriver {
 	Handle_MDataStd_DirectoryStorageDriver GetHandle() {
 	return *(Handle_MDataStd_DirectoryStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_DirectoryStorageDriver {
+	~MDataStd_DirectoryStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_DirectoryStorageDriver\n");
 	}
 };
 
@@ -2121,13 +2383,16 @@ class MDataStd_ReferenceListStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ReferenceListStorageDriver();
 
 };
 %extend MDataStd_ReferenceListStorageDriver {
 	Handle_MDataStd_ReferenceListStorageDriver GetHandle() {
 	return *(Handle_MDataStd_ReferenceListStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_ReferenceListStorageDriver {
+	~MDataStd_ReferenceListStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_ReferenceListStorageDriver\n");
 	}
 };
 
@@ -2146,8 +2411,6 @@ class MDataStd_IntPackedMapStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntPackedMapStorageDriver();
 
 };
 %extend MDataStd_IntPackedMapStorageDriver {
@@ -2155,12 +2418,15 @@ class MDataStd_IntPackedMapStorageDriver : public MDF_ASDriver {
 	return *(Handle_MDataStd_IntPackedMapStorageDriver*) &$self;
 	}
 };
+%extend MDataStd_IntPackedMapStorageDriver {
+	~MDataStd_IntPackedMapStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_IntPackedMapStorageDriver\n");
+	}
+};
 
 %nodefaultctor MDataStd;
 class MDataStd {
 	public:
-		%feature("autodoc", "1");
-		~MDataStd();
 		%feature("autodoc", "1");
 		MDataStd();
 		%feature("autodoc", "1");
@@ -2185,6 +2451,11 @@ class MDataStd {
 		TDataStd_GeometryEnum IntegerToGeometryType(const Standard_Integer i);
 
 };
+%extend MDataStd {
+	~MDataStd() {
+	printf("Call custom destructor for instance of MDataStd\n");
+	}
+};
 
 %nodefaultctor MDataStd_RealArrayRetrievalDriver;
 class MDataStd_RealArrayRetrievalDriver : public MDF_ARDriver {
@@ -2201,13 +2472,16 @@ class MDataStd_RealArrayRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_RealArrayRetrievalDriver();
 
 };
 %extend MDataStd_RealArrayRetrievalDriver {
 	Handle_MDataStd_RealArrayRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_RealArrayRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_RealArrayRetrievalDriver {
+	~MDataStd_RealArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_RealArrayRetrievalDriver\n");
 	}
 };
 
@@ -2226,13 +2500,16 @@ class MDataStd_RealArrayRetrievalDriver_1 : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_RealArrayRetrievalDriver_1();
 
 };
 %extend MDataStd_RealArrayRetrievalDriver_1 {
 	Handle_MDataStd_RealArrayRetrievalDriver_1 GetHandle() {
 	return *(Handle_MDataStd_RealArrayRetrievalDriver_1*) &$self;
+	}
+};
+%extend MDataStd_RealArrayRetrievalDriver_1 {
+	~MDataStd_RealArrayRetrievalDriver_1() {
+	printf("Call custom destructor for instance of MDataStd_RealArrayRetrievalDriver_1\n");
 	}
 };
 
@@ -2251,13 +2528,16 @@ class MDataStd_TreeNodeRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_TreeNodeRetrievalDriver();
 
 };
 %extend MDataStd_TreeNodeRetrievalDriver {
 	Handle_MDataStd_TreeNodeRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_TreeNodeRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_TreeNodeRetrievalDriver {
+	~MDataStd_TreeNodeRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_TreeNodeRetrievalDriver\n");
 	}
 };
 
@@ -2276,13 +2556,16 @@ class MDataStd_IntegerListRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntegerListRetrievalDriver();
 
 };
 %extend MDataStd_IntegerListRetrievalDriver {
 	Handle_MDataStd_IntegerListRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_IntegerListRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_IntegerListRetrievalDriver {
+	~MDataStd_IntegerListRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_IntegerListRetrievalDriver\n");
 	}
 };
 
@@ -2301,13 +2584,16 @@ class MDataStd_DirectoryRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_DirectoryRetrievalDriver();
 
 };
 %extend MDataStd_DirectoryRetrievalDriver {
 	Handle_MDataStd_DirectoryRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_DirectoryRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_DirectoryRetrievalDriver {
+	~MDataStd_DirectoryRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_DirectoryRetrievalDriver\n");
 	}
 };
 
@@ -2326,13 +2612,16 @@ class MDataStd_ByteArrayRetrievalDriver_1 : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ByteArrayRetrievalDriver_1();
 
 };
 %extend MDataStd_ByteArrayRetrievalDriver_1 {
 	Handle_MDataStd_ByteArrayRetrievalDriver_1 GetHandle() {
 	return *(Handle_MDataStd_ByteArrayRetrievalDriver_1*) &$self;
+	}
+};
+%extend MDataStd_ByteArrayRetrievalDriver_1 {
+	~MDataStd_ByteArrayRetrievalDriver_1() {
+	printf("Call custom destructor for instance of MDataStd_ByteArrayRetrievalDriver_1\n");
 	}
 };
 
@@ -2351,13 +2640,16 @@ class MDataStd_AxisRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_AxisRetrievalDriver();
 
 };
 %extend MDataStd_AxisRetrievalDriver {
 	Handle_MDataStd_AxisRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_AxisRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_AxisRetrievalDriver {
+	~MDataStd_AxisRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_AxisRetrievalDriver\n");
 	}
 };
 
@@ -2376,13 +2668,16 @@ class MDataStd_TreeNodeStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_TreeNodeStorageDriver();
 
 };
 %extend MDataStd_TreeNodeStorageDriver {
 	Handle_MDataStd_TreeNodeStorageDriver GetHandle() {
 	return *(Handle_MDataStd_TreeNodeStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_TreeNodeStorageDriver {
+	~MDataStd_TreeNodeStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_TreeNodeStorageDriver\n");
 	}
 };
 
@@ -2401,13 +2696,16 @@ class MDataStd_BooleanListStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_BooleanListStorageDriver();
 
 };
 %extend MDataStd_BooleanListStorageDriver {
 	Handle_MDataStd_BooleanListStorageDriver GetHandle() {
 	return *(Handle_MDataStd_BooleanListStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_BooleanListStorageDriver {
+	~MDataStd_BooleanListStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_BooleanListStorageDriver\n");
 	}
 };
 
@@ -2426,13 +2724,16 @@ class MDataStd_ShapeStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ShapeStorageDriver();
 
 };
 %extend MDataStd_ShapeStorageDriver {
 	Handle_MDataStd_ShapeStorageDriver GetHandle() {
 	return *(Handle_MDataStd_ShapeStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_ShapeStorageDriver {
+	~MDataStd_ShapeStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_ShapeStorageDriver\n");
 	}
 };
 
@@ -2451,13 +2752,16 @@ class MDataStd_ConstraintRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ConstraintRetrievalDriver();
 
 };
 %extend MDataStd_ConstraintRetrievalDriver {
 	Handle_MDataStd_ConstraintRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_ConstraintRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_ConstraintRetrievalDriver {
+	~MDataStd_ConstraintRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_ConstraintRetrievalDriver\n");
 	}
 };
 
@@ -2476,13 +2780,16 @@ class MDataStd_NoteBookRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_NoteBookRetrievalDriver();
 
 };
 %extend MDataStd_NoteBookRetrievalDriver {
 	Handle_MDataStd_NoteBookRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_NoteBookRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_NoteBookRetrievalDriver {
+	~MDataStd_NoteBookRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_NoteBookRetrievalDriver\n");
 	}
 };
 
@@ -2501,13 +2808,16 @@ class MDataStd_IntegerListStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntegerListStorageDriver();
 
 };
 %extend MDataStd_IntegerListStorageDriver {
 	Handle_MDataStd_IntegerListStorageDriver GetHandle() {
 	return *(Handle_MDataStd_IntegerListStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_IntegerListStorageDriver {
+	~MDataStd_IntegerListStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_IntegerListStorageDriver\n");
 	}
 };
 
@@ -2526,13 +2836,16 @@ class MDataStd_IntegerArrayStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntegerArrayStorageDriver();
 
 };
 %extend MDataStd_IntegerArrayStorageDriver {
 	Handle_MDataStd_IntegerArrayStorageDriver GetHandle() {
 	return *(Handle_MDataStd_IntegerArrayStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_IntegerArrayStorageDriver {
+	~MDataStd_IntegerArrayStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_IntegerArrayStorageDriver\n");
 	}
 };
 
@@ -2551,13 +2864,16 @@ class MDataStd_IntegerRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntegerRetrievalDriver();
 
 };
 %extend MDataStd_IntegerRetrievalDriver {
 	Handle_MDataStd_IntegerRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_IntegerRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_IntegerRetrievalDriver {
+	~MDataStd_IntegerRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_IntegerRetrievalDriver\n");
 	}
 };
 
@@ -2576,13 +2892,16 @@ class MDataStd_BooleanArrayStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_BooleanArrayStorageDriver();
 
 };
 %extend MDataStd_BooleanArrayStorageDriver {
 	Handle_MDataStd_BooleanArrayStorageDriver GetHandle() {
 	return *(Handle_MDataStd_BooleanArrayStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_BooleanArrayStorageDriver {
+	~MDataStd_BooleanArrayStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_BooleanArrayStorageDriver\n");
 	}
 };
 
@@ -2601,13 +2920,16 @@ class MDataStd_NoteBookStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_NoteBookStorageDriver();
 
 };
 %extend MDataStd_NoteBookStorageDriver {
 	Handle_MDataStd_NoteBookStorageDriver GetHandle() {
 	return *(Handle_MDataStd_NoteBookStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_NoteBookStorageDriver {
+	~MDataStd_NoteBookStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_NoteBookStorageDriver\n");
 	}
 };
 
@@ -2626,13 +2948,16 @@ class MDataStd_ReferenceArrayStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ReferenceArrayStorageDriver();
 
 };
 %extend MDataStd_ReferenceArrayStorageDriver {
 	Handle_MDataStd_ReferenceArrayStorageDriver GetHandle() {
 	return *(Handle_MDataStd_ReferenceArrayStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_ReferenceArrayStorageDriver {
+	~MDataStd_ReferenceArrayStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_ReferenceArrayStorageDriver\n");
 	}
 };
 
@@ -2651,13 +2976,16 @@ class MDataStd_IntPackedMapRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntPackedMapRetrievalDriver();
 
 };
 %extend MDataStd_IntPackedMapRetrievalDriver {
 	Handle_MDataStd_IntPackedMapRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_IntPackedMapRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_IntPackedMapRetrievalDriver {
+	~MDataStd_IntPackedMapRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_IntPackedMapRetrievalDriver\n");
 	}
 };
 
@@ -2676,13 +3004,16 @@ class MDataStd_NamedDataStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_NamedDataStorageDriver();
 
 };
 %extend MDataStd_NamedDataStorageDriver {
 	Handle_MDataStd_NamedDataStorageDriver GetHandle() {
 	return *(Handle_MDataStd_NamedDataStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_NamedDataStorageDriver {
+	~MDataStd_NamedDataStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_NamedDataStorageDriver\n");
 	}
 };
 
@@ -2701,13 +3032,16 @@ class MDataStd_IntegerStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntegerStorageDriver();
 
 };
 %extend MDataStd_IntegerStorageDriver {
 	Handle_MDataStd_IntegerStorageDriver GetHandle() {
 	return *(Handle_MDataStd_IntegerStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_IntegerStorageDriver {
+	~MDataStd_IntegerStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_IntegerStorageDriver\n");
 	}
 };
 
@@ -2726,13 +3060,16 @@ class MDataStd_UAttributeStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_UAttributeStorageDriver();
 
 };
 %extend MDataStd_UAttributeStorageDriver {
 	Handle_MDataStd_UAttributeStorageDriver GetHandle() {
 	return *(Handle_MDataStd_UAttributeStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_UAttributeStorageDriver {
+	~MDataStd_UAttributeStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_UAttributeStorageDriver\n");
 	}
 };
 
@@ -2751,13 +3088,16 @@ class MDataStd_PatternStdRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_PatternStdRetrievalDriver();
 
 };
 %extend MDataStd_PatternStdRetrievalDriver {
 	Handle_MDataStd_PatternStdRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_PatternStdRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_PatternStdRetrievalDriver {
+	~MDataStd_PatternStdRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_PatternStdRetrievalDriver\n");
 	}
 };
 
@@ -2776,13 +3116,16 @@ class MDataStd_PointRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_PointRetrievalDriver();
 
 };
 %extend MDataStd_PointRetrievalDriver {
 	Handle_MDataStd_PointRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_PointRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_PointRetrievalDriver {
+	~MDataStd_PointRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_PointRetrievalDriver\n");
 	}
 };
 
@@ -2801,13 +3144,16 @@ class MDataStd_AsciiStringRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_AsciiStringRetrievalDriver();
 
 };
 %extend MDataStd_AsciiStringRetrievalDriver {
 	Handle_MDataStd_AsciiStringRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_AsciiStringRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_AsciiStringRetrievalDriver {
+	~MDataStd_AsciiStringRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_AsciiStringRetrievalDriver\n");
 	}
 };
 
@@ -2826,13 +3172,16 @@ class MDataStd_ExtStringArrayRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ExtStringArrayRetrievalDriver();
 
 };
 %extend MDataStd_ExtStringArrayRetrievalDriver {
 	Handle_MDataStd_ExtStringArrayRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_ExtStringArrayRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_ExtStringArrayRetrievalDriver {
+	~MDataStd_ExtStringArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_ExtStringArrayRetrievalDriver\n");
 	}
 };
 
@@ -2851,13 +3200,16 @@ class MDataStd_ByteArrayRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ByteArrayRetrievalDriver();
 
 };
 %extend MDataStd_ByteArrayRetrievalDriver {
 	Handle_MDataStd_ByteArrayRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_ByteArrayRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_ByteArrayRetrievalDriver {
+	~MDataStd_ByteArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_ByteArrayRetrievalDriver\n");
 	}
 };
 
@@ -2876,13 +3228,16 @@ class MDataStd_NameStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_NameStorageDriver();
 
 };
 %extend MDataStd_NameStorageDriver {
 	Handle_MDataStd_NameStorageDriver GetHandle() {
 	return *(Handle_MDataStd_NameStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_NameStorageDriver {
+	~MDataStd_NameStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_NameStorageDriver\n");
 	}
 };
 
@@ -2901,13 +3256,16 @@ class MDataStd_RelationStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_RelationStorageDriver();
 
 };
 %extend MDataStd_RelationStorageDriver {
 	Handle_MDataStd_RelationStorageDriver GetHandle() {
 	return *(Handle_MDataStd_RelationStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_RelationStorageDriver {
+	~MDataStd_RelationStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_RelationStorageDriver\n");
 	}
 };
 
@@ -2926,13 +3284,16 @@ class MDataStd_ExtStringListRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ExtStringListRetrievalDriver();
 
 };
 %extend MDataStd_ExtStringListRetrievalDriver {
 	Handle_MDataStd_ExtStringListRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_ExtStringListRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_ExtStringListRetrievalDriver {
+	~MDataStd_ExtStringListRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_ExtStringListRetrievalDriver\n");
 	}
 };
 
@@ -2951,13 +3312,16 @@ class MDataStd_GeometryRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_GeometryRetrievalDriver();
 
 };
 %extend MDataStd_GeometryRetrievalDriver {
 	Handle_MDataStd_GeometryRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_GeometryRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_GeometryRetrievalDriver {
+	~MDataStd_GeometryRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_GeometryRetrievalDriver\n");
 	}
 };
 
@@ -2976,13 +3340,16 @@ class MDataStd_RealListStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_RealListStorageDriver();
 
 };
 %extend MDataStd_RealListStorageDriver {
 	Handle_MDataStd_RealListStorageDriver GetHandle() {
 	return *(Handle_MDataStd_RealListStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_RealListStorageDriver {
+	~MDataStd_RealListStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_RealListStorageDriver\n");
 	}
 };
 
@@ -3001,13 +3368,16 @@ class MDataStd_RealRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_RealRetrievalDriver();
 
 };
 %extend MDataStd_RealRetrievalDriver {
 	Handle_MDataStd_RealRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_RealRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_RealRetrievalDriver {
+	~MDataStd_RealRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_RealRetrievalDriver\n");
 	}
 };
 
@@ -3026,13 +3396,16 @@ class MDataStd_TickStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_TickStorageDriver();
 
 };
 %extend MDataStd_TickStorageDriver {
 	Handle_MDataStd_TickStorageDriver GetHandle() {
 	return *(Handle_MDataStd_TickStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_TickStorageDriver {
+	~MDataStd_TickStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_TickStorageDriver\n");
 	}
 };
 
@@ -3051,13 +3424,16 @@ class MDataStd_PlacementStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_PlacementStorageDriver();
 
 };
 %extend MDataStd_PlacementStorageDriver {
 	Handle_MDataStd_PlacementStorageDriver GetHandle() {
 	return *(Handle_MDataStd_PlacementStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_PlacementStorageDriver {
+	~MDataStd_PlacementStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_PlacementStorageDriver\n");
 	}
 };
 
@@ -3076,13 +3452,16 @@ class MDataStd_RealArrayStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_RealArrayStorageDriver();
 
 };
 %extend MDataStd_RealArrayStorageDriver {
 	Handle_MDataStd_RealArrayStorageDriver GetHandle() {
 	return *(Handle_MDataStd_RealArrayStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_RealArrayStorageDriver {
+	~MDataStd_RealArrayStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_RealArrayStorageDriver\n");
 	}
 };
 
@@ -3101,13 +3480,16 @@ class MDataStd_IntPackedMapRetrievalDriver_1 : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntPackedMapRetrievalDriver_1();
 
 };
 %extend MDataStd_IntPackedMapRetrievalDriver_1 {
 	Handle_MDataStd_IntPackedMapRetrievalDriver_1 GetHandle() {
 	return *(Handle_MDataStd_IntPackedMapRetrievalDriver_1*) &$self;
+	}
+};
+%extend MDataStd_IntPackedMapRetrievalDriver_1 {
+	~MDataStd_IntPackedMapRetrievalDriver_1() {
+	printf("Call custom destructor for instance of MDataStd_IntPackedMapRetrievalDriver_1\n");
 	}
 };
 
@@ -3126,13 +3508,16 @@ class MDataStd_CommentRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_CommentRetrievalDriver();
 
 };
 %extend MDataStd_CommentRetrievalDriver {
 	Handle_MDataStd_CommentRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_CommentRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_CommentRetrievalDriver {
+	~MDataStd_CommentRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_CommentRetrievalDriver\n");
 	}
 };
 
@@ -3151,13 +3536,16 @@ class MDataStd_AsciiStringStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_AsciiStringStorageDriver();
 
 };
 %extend MDataStd_AsciiStringStorageDriver {
 	Handle_MDataStd_AsciiStringStorageDriver GetHandle() {
 	return *(Handle_MDataStd_AsciiStringStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_AsciiStringStorageDriver {
+	~MDataStd_AsciiStringStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_AsciiStringStorageDriver\n");
 	}
 };
 
@@ -3176,13 +3564,16 @@ class MDataStd_IntegerArrayRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntegerArrayRetrievalDriver();
 
 };
 %extend MDataStd_IntegerArrayRetrievalDriver {
 	Handle_MDataStd_IntegerArrayRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_IntegerArrayRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_IntegerArrayRetrievalDriver {
+	~MDataStd_IntegerArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_IntegerArrayRetrievalDriver\n");
 	}
 };
 
@@ -3201,13 +3592,16 @@ class MDataStd_VariableStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_VariableStorageDriver();
 
 };
 %extend MDataStd_VariableStorageDriver {
 	Handle_MDataStd_VariableStorageDriver GetHandle() {
 	return *(Handle_MDataStd_VariableStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_VariableStorageDriver {
+	~MDataStd_VariableStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_VariableStorageDriver\n");
 	}
 };
 
@@ -3226,13 +3620,16 @@ class MDataStd_GeometryStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_GeometryStorageDriver();
 
 };
 %extend MDataStd_GeometryStorageDriver {
 	Handle_MDataStd_GeometryStorageDriver GetHandle() {
 	return *(Handle_MDataStd_GeometryStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_GeometryStorageDriver {
+	~MDataStd_GeometryStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_GeometryStorageDriver\n");
 	}
 };
 
@@ -3251,13 +3648,16 @@ class MDataStd_ByteArrayStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ByteArrayStorageDriver();
 
 };
 %extend MDataStd_ByteArrayStorageDriver {
 	Handle_MDataStd_ByteArrayStorageDriver GetHandle() {
 	return *(Handle_MDataStd_ByteArrayStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_ByteArrayStorageDriver {
+	~MDataStd_ByteArrayStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_ByteArrayStorageDriver\n");
 	}
 };
 
@@ -3276,13 +3676,16 @@ class MDataStd_IntegerArrayRetrievalDriver_1 : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_IntegerArrayRetrievalDriver_1();
 
 };
 %extend MDataStd_IntegerArrayRetrievalDriver_1 {
 	Handle_MDataStd_IntegerArrayRetrievalDriver_1 GetHandle() {
 	return *(Handle_MDataStd_IntegerArrayRetrievalDriver_1*) &$self;
+	}
+};
+%extend MDataStd_IntegerArrayRetrievalDriver_1 {
+	~MDataStd_IntegerArrayRetrievalDriver_1() {
+	printf("Call custom destructor for instance of MDataStd_IntegerArrayRetrievalDriver_1\n");
 	}
 };
 
@@ -3301,13 +3704,16 @@ class MDataStd_RealListRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_RealListRetrievalDriver();
 
 };
 %extend MDataStd_RealListRetrievalDriver {
 	Handle_MDataStd_RealListRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_RealListRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_RealListRetrievalDriver {
+	~MDataStd_RealListRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_RealListRetrievalDriver\n");
 	}
 };
 
@@ -3326,13 +3732,16 @@ class MDataStd_ShapeRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ShapeRetrievalDriver();
 
 };
 %extend MDataStd_ShapeRetrievalDriver {
 	Handle_MDataStd_ShapeRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_ShapeRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_ShapeRetrievalDriver {
+	~MDataStd_ShapeRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_ShapeRetrievalDriver\n");
 	}
 };
 
@@ -3351,13 +3760,16 @@ class MDataStd_BooleanArrayRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_BooleanArrayRetrievalDriver();
 
 };
 %extend MDataStd_BooleanArrayRetrievalDriver {
 	Handle_MDataStd_BooleanArrayRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_BooleanArrayRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_BooleanArrayRetrievalDriver {
+	~MDataStd_BooleanArrayRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_BooleanArrayRetrievalDriver\n");
 	}
 };
 
@@ -3376,13 +3788,16 @@ class MDataStd_NamedDataRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_NamedDataRetrievalDriver();
 
 };
 %extend MDataStd_NamedDataRetrievalDriver {
 	Handle_MDataStd_NamedDataRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_NamedDataRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_NamedDataRetrievalDriver {
+	~MDataStd_NamedDataRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_NamedDataRetrievalDriver\n");
 	}
 };
 
@@ -3401,13 +3816,16 @@ class MDataStd_ExtStringListStorageDriver : public MDF_ASDriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_ExtStringListStorageDriver();
 
 };
 %extend MDataStd_ExtStringListStorageDriver {
 	Handle_MDataStd_ExtStringListStorageDriver GetHandle() {
 	return *(Handle_MDataStd_ExtStringListStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_ExtStringListStorageDriver {
+	~MDataStd_ExtStringListStorageDriver() {
+	printf("Call custom destructor for instance of MDataStd_ExtStringListStorageDriver\n");
 	}
 };
 
@@ -3426,13 +3844,16 @@ class MDataStd_RelationRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_RelationRetrievalDriver();
 
 };
 %extend MDataStd_RelationRetrievalDriver {
 	Handle_MDataStd_RelationRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_RelationRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_RelationRetrievalDriver {
+	~MDataStd_RelationRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_RelationRetrievalDriver\n");
 	}
 };
 
@@ -3451,13 +3872,16 @@ class MDataStd_BooleanListRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_BooleanListRetrievalDriver();
 
 };
 %extend MDataStd_BooleanListRetrievalDriver {
 	Handle_MDataStd_BooleanListRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_BooleanListRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_BooleanListRetrievalDriver {
+	~MDataStd_BooleanListRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_BooleanListRetrievalDriver\n");
 	}
 };
 
@@ -3476,12 +3900,15 @@ class MDataStd_VariableRetrievalDriver : public MDF_ARDriver {
 		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~MDataStd_VariableRetrievalDriver();
 
 };
 %extend MDataStd_VariableRetrievalDriver {
 	Handle_MDataStd_VariableRetrievalDriver GetHandle() {
 	return *(Handle_MDataStd_VariableRetrievalDriver*) &$self;
+	}
+};
+%extend MDataStd_VariableRetrievalDriver {
+	~MDataStd_VariableRetrievalDriver() {
+	printf("Call custom destructor for instance of MDataStd_VariableRetrievalDriver\n");
 	}
 };

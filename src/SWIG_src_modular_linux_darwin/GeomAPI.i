@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GeomAPI
 
@@ -98,40 +84,6 @@ Standard_Real & function transformation
 
 
 
-%nodefaultctor GeomAPI_ExtremaCurveSurface;
-class GeomAPI_ExtremaCurveSurface {
-	public:
-		%feature("autodoc", "1");
-		~GeomAPI_ExtremaCurveSurface();
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaCurveSurface();
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface, const Quantity_Parameter Wmin, const Quantity_Parameter Wmax, const Quantity_Parameter Umin, const Quantity_Parameter Umax, const Quantity_Parameter Vmin, const Quantity_Parameter Vmax);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface, const Quantity_Parameter Wmin, const Quantity_Parameter Wmax, const Quantity_Parameter Umin, const Quantity_Parameter Umax, const Quantity_Parameter Vmin, const Quantity_Parameter Vmax);
-		%feature("autodoc", "1");
-		Standard_Integer NbExtrema() const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
-		%feature("autodoc", "1");
-		void Parameters(const Standard_Integer Index, Quantity_Parameter & W, Quantity_Parameter & U, Quantity_Parameter & V) const;
-		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt & PC, gp_Pnt & PS) const;
-		%feature("autodoc", "1");
-		void LowerDistanceParameters(Quantity_Parameter & W, Quantity_Parameter & U, Quantity_Parameter & V) const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtCS & Extrema() const;
-
-};
-
 %nodefaultctor GeomAPI_ProjectPointOnSurf;
 class GeomAPI_ProjectPointOnSurf {
 	public:
@@ -182,25 +134,9 @@ class GeomAPI_ProjectPointOnSurf {
 
 };
 
-%nodefaultctor GeomAPI;
-class GeomAPI {
-	public:
-		%feature("autodoc", "1");
-		~GeomAPI();
-		%feature("autodoc", "1");
-		GeomAPI();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve To2d(const Handle_Geom_Curve &C, const gp_Pln &P);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve To3d(const Handle_Geom2d_Curve &C, const gp_Pln &P);
-
-};
-
 %nodefaultctor GeomAPI_Interpolate;
 class GeomAPI_Interpolate {
 	public:
-		%feature("autodoc", "1");
-		~GeomAPI_Interpolate();
 		%feature("autodoc", "1");
 		GeomAPI_Interpolate(const Handle_TColgp_HArray1OfPnt &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -217,12 +153,15 @@ class GeomAPI_Interpolate {
 		Standard_Boolean IsDone() const;
 
 };
+%extend GeomAPI_Interpolate {
+	~GeomAPI_Interpolate() {
+	printf("Call custom destructor for instance of GeomAPI_Interpolate\n");
+	}
+};
 
 %nodefaultctor GeomAPI_PointsToBSpline;
 class GeomAPI_PointsToBSpline {
 	public:
-		%feature("autodoc", "1");
-		~GeomAPI_PointsToBSpline();
 		%feature("autodoc", "1");
 		GeomAPI_PointsToBSpline();
 		%feature("autodoc", "1");
@@ -237,12 +176,49 @@ class GeomAPI_PointsToBSpline {
 		const Handle_Geom_BSplineCurve & Curve() const;
 
 };
+%extend GeomAPI_PointsToBSpline {
+	~GeomAPI_PointsToBSpline() {
+	printf("Call custom destructor for instance of GeomAPI_PointsToBSpline\n");
+	}
+};
+
+%nodefaultctor GeomAPI_ExtremaSurfaceSurface;
+class GeomAPI_ExtremaSurfaceSurface {
+	public:
+		%feature("autodoc", "1");
+		~GeomAPI_ExtremaSurfaceSurface();
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaSurfaceSurface();
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
+		%feature("autodoc", "1");
+		Standard_Integer NbExtrema() const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc", "1");
+		void Parameters(const Standard_Integer Index, Quantity_Parameter & U1, Quantity_Parameter & V1, Quantity_Parameter & U2, Quantity_Parameter & V2) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc", "1");
+		void LowerDistanceParameters(Quantity_Parameter & U1, Quantity_Parameter & V1, Quantity_Parameter & U2, Quantity_Parameter & V2) const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtSS & Extrema() const;
+
+};
 
 %nodefaultctor GeomAPI_IntCS;
 class GeomAPI_IntCS {
 	public:
-		%feature("autodoc", "1");
-		~GeomAPI_IntCS();
 		%feature("autodoc", "1");
 		GeomAPI_IntCS();
 		%feature("autodoc", "1");
@@ -265,12 +241,15 @@ class GeomAPI_IntCS {
 		void Parameters(const Standard_Integer Index, Quantity_Parameter & U1, Quantity_Parameter & V1, Quantity_Parameter & U2, Quantity_Parameter & V2) const;
 
 };
+%extend GeomAPI_IntCS {
+	~GeomAPI_IntCS() {
+	printf("Call custom destructor for instance of GeomAPI_IntCS\n");
+	}
+};
 
 %nodefaultctor GeomAPI_PointsToBSplineSurface;
 class GeomAPI_PointsToBSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~GeomAPI_PointsToBSplineSurface();
 		%feature("autodoc", "1");
 		GeomAPI_PointsToBSplineSurface();
 		%feature("autodoc", "1");
@@ -288,6 +267,28 @@ class GeomAPI_PointsToBSplineSurface {
 		%feature("autodoc", "1");
 		const Handle_Geom_BSplineSurface & Surface() const;
 
+};
+%extend GeomAPI_PointsToBSplineSurface {
+	~GeomAPI_PointsToBSplineSurface() {
+	printf("Call custom destructor for instance of GeomAPI_PointsToBSplineSurface\n");
+	}
+};
+
+%nodefaultctor GeomAPI;
+class GeomAPI {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve To2d(const Handle_Geom_Curve &C, const gp_Pln &P);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve To3d(const Handle_Geom2d_Curve &C, const gp_Pln &P);
+
+};
+%extend GeomAPI {
+	~GeomAPI() {
+	printf("Call custom destructor for instance of GeomAPI\n");
+	}
 };
 
 %nodefaultctor GeomAPI_ExtremaCurveCurve;
@@ -334,8 +335,6 @@ class GeomAPI_ExtremaCurveCurve {
 class GeomAPI_IntSS {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_IntSS();
-		%feature("autodoc", "1");
 		GeomAPI_IntSS();
 		%feature("autodoc", "1");
 		GeomAPI_IntSS(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Standard_Real Tol);
@@ -349,38 +348,43 @@ class GeomAPI_IntSS {
 		const Handle_Geom_Curve & Line(const Standard_Integer I) const;
 
 };
+%extend GeomAPI_IntSS {
+	~GeomAPI_IntSS() {
+	printf("Call custom destructor for instance of GeomAPI_IntSS\n");
+	}
+};
 
-%nodefaultctor GeomAPI_ExtremaSurfaceSurface;
-class GeomAPI_ExtremaSurfaceSurface {
+%nodefaultctor GeomAPI_ExtremaCurveSurface;
+class GeomAPI_ExtremaCurveSurface {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_ExtremaSurfaceSurface();
+		~GeomAPI_ExtremaCurveSurface();
 		%feature("autodoc", "1");
-		GeomAPI_ExtremaSurfaceSurface();
+		GeomAPI_ExtremaCurveSurface();
 		%feature("autodoc", "1");
-		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
+		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
 		%feature("autodoc", "1");
-		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
+		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface, const Quantity_Parameter Wmin, const Quantity_Parameter Wmax, const Quantity_Parameter Umin, const Quantity_Parameter Umax, const Quantity_Parameter Vmin, const Quantity_Parameter Vmax);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
+		void Init(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
+		void Init(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface, const Quantity_Parameter Wmin, const Quantity_Parameter Wmax, const Quantity_Parameter Umin, const Quantity_Parameter Umax, const Quantity_Parameter Vmin, const Quantity_Parameter Vmax);
 		%feature("autodoc", "1");
 		Standard_Integer NbExtrema() const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
 		%feature("autodoc", "1");
-		void Parameters(const Standard_Integer Index, Quantity_Parameter & U1, Quantity_Parameter & V1, Quantity_Parameter & U2, Quantity_Parameter & V2) const;
+		void Parameters(const Standard_Integer Index, Quantity_Parameter & W, Quantity_Parameter & U, Quantity_Parameter & V) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
+		void NearestPoints(gp_Pnt & PC, gp_Pnt & PS) const;
 		%feature("autodoc", "1");
-		void LowerDistanceParameters(Quantity_Parameter & U1, Quantity_Parameter & V1, Quantity_Parameter & U2, Quantity_Parameter & V2) const;
+		void LowerDistanceParameters(Quantity_Parameter & W, Quantity_Parameter & U, Quantity_Parameter & V) const;
 		%feature("autodoc", "1");
 		Quantity_Length LowerDistance() const;
 		%feature("autodoc", "1");
-		const Extrema_ExtSS & Extrema() const;
+		const Extrema_ExtCS & Extrema() const;
 
 };
 

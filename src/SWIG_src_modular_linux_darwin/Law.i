@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Law
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_Law_Function : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Law_Function();
-		%feature("autodoc", "1");
 		Handle_Law_Function();
 		%feature("autodoc", "1");
 		Handle_Law_Function(const Handle_Law_Function &aHandle);
@@ -118,12 +102,15 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 	return (Law_Function*)$self->Access();
 	}
 };
+%extend Handle_Law_Function {
+	~Handle_Law_Function() {
+	printf("Call custom destructor for instance of Handle_Law_Function\n");
+	}
+};
 
 %nodefaultctor Handle_Law_Linear;
 class Handle_Law_Linear : public Handle_Law_Function {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_Linear();
 		%feature("autodoc", "1");
 		Handle_Law_Linear();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_Law_Linear : public Handle_Law_Function {
 	return (Law_Linear*)$self->Access();
 	}
 };
+%extend Handle_Law_Linear {
+	~Handle_Law_Linear() {
+	printf("Call custom destructor for instance of Handle_Law_Linear\n");
+	}
+};
 
 %nodefaultctor Handle_Law_Constant;
 class Handle_Law_Constant : public Handle_Law_Function {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_Constant();
 		%feature("autodoc", "1");
 		Handle_Law_Constant();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_Law_Constant : public Handle_Law_Function {
 	return (Law_Constant*)$self->Access();
 	}
 };
+%extend Handle_Law_Constant {
+	~Handle_Law_Constant() {
+	printf("Call custom destructor for instance of Handle_Law_Constant\n");
+	}
+};
 
 %nodefaultctor Handle_Law_ListNodeOfLaws;
 class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_ListNodeOfLaws();
 		%feature("autodoc", "1");
 		Handle_Law_ListNodeOfLaws();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	return (Law_ListNodeOfLaws*)$self->Access();
 	}
 };
+%extend Handle_Law_ListNodeOfLaws {
+	~Handle_Law_ListNodeOfLaws() {
+	printf("Call custom destructor for instance of Handle_Law_ListNodeOfLaws\n");
+	}
+};
 
 %nodefaultctor Handle_Law_BSpFunc;
 class Handle_Law_BSpFunc : public Handle_Law_Function {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_BSpFunc();
 		%feature("autodoc", "1");
 		Handle_Law_BSpFunc();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 	return (Law_BSpFunc*)$self->Access();
 	}
 };
+%extend Handle_Law_BSpFunc {
+	~Handle_Law_BSpFunc() {
+	printf("Call custom destructor for instance of Handle_Law_BSpFunc\n");
+	}
+};
 
 %nodefaultctor Handle_Law_Interpol;
 class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_Interpol();
 		%feature("autodoc", "1");
 		Handle_Law_Interpol();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 	return (Law_Interpol*)$self->Access();
 	}
 };
+%extend Handle_Law_Interpol {
+	~Handle_Law_Interpol() {
+	printf("Call custom destructor for instance of Handle_Law_Interpol\n");
+	}
+};
 
 %nodefaultctor Handle_Law_BSpline;
 class Handle_Law_BSpline : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_BSpline();
 		%feature("autodoc", "1");
 		Handle_Law_BSpline();
 		%feature("autodoc", "1");
@@ -244,12 +246,15 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 	return (Law_BSpline*)$self->Access();
 	}
 };
+%extend Handle_Law_BSpline {
+	~Handle_Law_BSpline() {
+	printf("Call custom destructor for instance of Handle_Law_BSpline\n");
+	}
+};
 
 %nodefaultctor Handle_Law_S;
 class Handle_Law_S : public Handle_Law_BSpFunc {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_S();
 		%feature("autodoc", "1");
 		Handle_Law_S();
 		%feature("autodoc", "1");
@@ -265,12 +270,15 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 	return (Law_S*)$self->Access();
 	}
 };
+%extend Handle_Law_S {
+	~Handle_Law_S() {
+	printf("Call custom destructor for instance of Handle_Law_S\n");
+	}
+};
 
 %nodefaultctor Handle_Law_Composite;
 class Handle_Law_Composite : public Handle_Law_Function {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Law_Composite();
 		%feature("autodoc", "1");
 		Handle_Law_Composite();
 		%feature("autodoc", "1");
@@ -286,12 +294,15 @@ class Handle_Law_Composite : public Handle_Law_Function {
 	return (Law_Composite*)$self->Access();
 	}
 };
+%extend Handle_Law_Composite {
+	~Handle_Law_Composite() {
+	printf("Call custom destructor for instance of Handle_Law_Composite\n");
+	}
+};
 
 %nodefaultctor Law_ListIteratorOfLaws;
 class Law_ListIteratorOfLaws {
 	public:
-		%feature("autodoc", "1");
-		~Law_ListIteratorOfLaws();
 		%feature("autodoc", "1");
 		Law_ListIteratorOfLaws();
 		%feature("autodoc", "1");
@@ -305,6 +316,11 @@ class Law_ListIteratorOfLaws {
 		%feature("autodoc", "1");
 		Handle_Law_Function & Value() const;
 
+};
+%extend Law_ListIteratorOfLaws {
+	~Law_ListIteratorOfLaws() {
+	printf("Call custom destructor for instance of Law_ListIteratorOfLaws\n");
+	}
 };
 
 %nodefaultctor Law_Function;
@@ -335,6 +351,11 @@ class Law_Function : public MMgt_TShared {
 	return *(Handle_Law_Function*) &$self;
 	}
 };
+%extend Law_Function {
+	~Law_Function() {
+	printf("Call custom destructor for instance of Law_Function\n");
+	}
+};
 
 %nodefaultctor Law_BSpFunc;
 class Law_BSpFunc : public Law_Function {
@@ -347,13 +368,16 @@ class Law_BSpFunc : public Law_Function {
 		Handle_Law_BSpline Curve() const;
 		%feature("autodoc", "1");
 		void SetCurve(const Handle_Law_BSpline &C);
-		%feature("autodoc", "1");
-		virtual		~Law_BSpFunc();
 
 };
 %extend Law_BSpFunc {
 	Handle_Law_BSpFunc GetHandle() {
 	return *(Handle_Law_BSpFunc*) &$self;
+	}
+};
+%extend Law_BSpFunc {
+	~Law_BSpFunc() {
+	printf("Call custom destructor for instance of Law_BSpFunc\n");
 	}
 };
 
@@ -366,13 +390,16 @@ class Law_ListNodeOfLaws : public TCollection_MapNode {
 		Handle_Law_Function & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_ListNodeOfLaws();
 
 };
 %extend Law_ListNodeOfLaws {
 	Handle_Law_ListNodeOfLaws GetHandle() {
 	return *(Handle_Law_ListNodeOfLaws*) &$self;
+	}
+};
+%extend Law_ListNodeOfLaws {
+	~Law_ListNodeOfLaws() {
+	printf("Call custom destructor for instance of Law_ListNodeOfLaws\n");
 	}
 };
 
@@ -391,13 +418,16 @@ class Law_Interpol : public Law_BSpFunc {
 		void SetInRelative(const TColgp_Array1OfPnt2d &ParAndRad, const Standard_Real Ud, const Standard_Real Uf, const Standard_Real Dd, const Standard_Real Df, const Standard_Boolean Periodic=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_Interpol();
 
 };
 %extend Law_Interpol {
 	Handle_Law_Interpol GetHandle() {
 	return *(Handle_Law_Interpol*) &$self;
+	}
+};
+%extend Law_Interpol {
+	~Law_Interpol() {
+	printf("Call custom destructor for instance of Law_Interpol\n");
 	}
 };
 
@@ -434,13 +464,16 @@ class Law_Composite : public Law_Function {
 		void SetPeriodic();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_Composite();
 
 };
 %extend Law_Composite {
 	Handle_Law_Composite GetHandle() {
 	return *(Handle_Law_Composite*) &$self;
+	}
+};
+%extend Law_Composite {
+	~Law_Composite() {
+	printf("Call custom destructor for instance of Law_Composite\n");
 	}
 };
 
@@ -471,13 +504,16 @@ class Law_S : public Law_BSpFunc {
 		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Ddeb, const Standard_Real Pfin, const Standard_Real Valfin, const Standard_Real Dfin);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_S();
 
 };
 %extend Law_S {
 	Handle_Law_S GetHandle() {
 	return *(Handle_Law_S*) &$self;
+	}
+};
+%extend Law_S {
+	~Law_S() {
+	printf("Call custom destructor for instance of Law_S\n");
 	}
 };
 
@@ -506,13 +542,16 @@ class Law_Constant : public Law_Function {
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_Constant();
 
 };
 %extend Law_Constant {
 	Handle_Law_Constant GetHandle() {
 	return *(Handle_Law_Constant*) &$self;
+	}
+};
+%extend Law_Constant {
+	~Law_Constant() {
+	printf("Call custom destructor for instance of Law_Constant\n");
 	}
 };
 
@@ -541,13 +580,16 @@ class Law_Linear : public Law_Function {
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_Linear();
 
 };
 %extend Law_Linear {
 	Handle_Law_Linear GetHandle() {
 	return *(Handle_Law_Linear*) &$self;
+	}
+};
+%extend Law_Linear {
+	~Law_Linear() {
+	printf("Call custom destructor for instance of Law_Linear\n");
 	}
 };
 
@@ -562,8 +604,6 @@ class Law_Laws {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Law_Laws();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -596,12 +636,15 @@ class Law_Laws {
 		void InsertAfter(Law_Laws & Other, Law_ListIteratorOfLaws & It);
 
 };
+%extend Law_Laws {
+	~Law_Laws() {
+	printf("Call custom destructor for instance of Law_Laws\n");
+	}
+};
 
 %nodefaultctor Law;
 class Law {
 	public:
-		%feature("autodoc", "1");
-		~Law();
 		%feature("autodoc", "1");
 		Law();
 		%feature("autodoc", "1");
@@ -618,12 +661,15 @@ class Law {
 		Handle_Law_BSpline ScaleCub(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
 
 };
+%extend Law {
+	~Law() {
+	printf("Call custom destructor for instance of Law\n");
+	}
+};
 
 %nodefaultctor Law_Interpolate;
 class Law_Interpolate {
 	public:
-		%feature("autodoc", "1");
-		~Law_Interpolate();
 		%feature("autodoc", "1");
 		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -639,6 +685,11 @@ class Law_Interpolate {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
+};
+%extend Law_Interpolate {
+	~Law_Interpolate() {
+	printf("Call custom destructor for instance of Law_Interpolate\n");
+	}
 };
 
 %nodefaultctor Law_BSpline;
@@ -772,12 +823,15 @@ class Law_BSpline : public MMgt_TShared {
 		Handle_Law_BSpline Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Law_BSpline();
 
 };
 %extend Law_BSpline {
 	Handle_Law_BSpline GetHandle() {
 	return *(Handle_Law_BSpline*) &$self;
+	}
+};
+%extend Law_BSpline {
+	~Law_BSpline() {
+	printf("Call custom destructor for instance of Law_BSpline\n");
 	}
 };

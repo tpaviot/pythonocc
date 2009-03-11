@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module HLRAlgo
 
@@ -98,32 +84,9 @@ Standard_Real & function transformation
 
 
 
-%nodefaultctor Handle_HLRAlgo_PolyShellData;
-class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyShellData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyShellData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyShellData(const Handle_HLRAlgo_PolyShellData &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyShellData(const HLRAlgo_PolyShellData *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyShellData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_PolyShellData {
-	HLRAlgo_PolyShellData* GetObject() {
-	return (HLRAlgo_PolyShellData*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_HLRAlgo_ListNodeOfInterferenceList;
 class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_ListNodeOfInterferenceList();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_ListNodeOfInterferenceList();
 		%feature("autodoc", "1");
@@ -139,117 +102,15 @@ class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapN
 	return (HLRAlgo_ListNodeOfInterferenceList*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_HLRAlgo_HArray1OfTData;
-class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_HArray1OfTData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfTData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfTData(const Handle_HLRAlgo_HArray1OfTData &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfTData(const HLRAlgo_HArray1OfTData *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfTData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_HArray1OfTData {
-	HLRAlgo_HArray1OfTData* GetObject() {
-	return (HLRAlgo_HArray1OfTData*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_HLRAlgo_HArray1OfPISeg;
-class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_HArray1OfPISeg();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg(const HLRAlgo_HArray1OfPISeg *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_HArray1OfPISeg {
-	HLRAlgo_HArray1OfPISeg* GetObject() {
-	return (HLRAlgo_HArray1OfPISeg*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_HLRAlgo_PolyData;
-class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyData(const Handle_HLRAlgo_PolyData &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyData(const HLRAlgo_PolyData *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_PolyData {
-	HLRAlgo_PolyData* GetObject() {
-	return (HLRAlgo_PolyData*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_HLRAlgo_PolyInternalData;
-class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyInternalData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalData(const Handle_HLRAlgo_PolyInternalData &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalData(const HLRAlgo_PolyInternalData *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_PolyInternalData {
-	HLRAlgo_PolyInternalData* GetObject() {
-	return (HLRAlgo_PolyInternalData*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_HLRAlgo_ListNodeOfListOfBPoint;
-class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_ListNodeOfListOfBPoint();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfListOfBPoint();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfListOfBPoint(const Handle_HLRAlgo_ListNodeOfListOfBPoint &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfListOfBPoint(const HLRAlgo_ListNodeOfListOfBPoint *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfListOfBPoint const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_ListNodeOfListOfBPoint {
-	HLRAlgo_ListNodeOfListOfBPoint* GetObject() {
-	return (HLRAlgo_ListNodeOfListOfBPoint*)$self->Access();
+%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
+	~Handle_HLRAlgo_ListNodeOfInterferenceList() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_ListNodeOfInterferenceList\n");
 	}
 };
 
 %nodefaultctor Handle_HLRAlgo_WiresBlock;
 class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_WiresBlock();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_WiresBlock();
 		%feature("autodoc", "1");
@@ -265,12 +126,159 @@ class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 	return (HLRAlgo_WiresBlock*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_WiresBlock {
+	~Handle_HLRAlgo_WiresBlock() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_WiresBlock\n");
+	}
+};
+
+%nodefaultctor Handle_HLRAlgo_HArray1OfTData;
+class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfTData();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfTData(const Handle_HLRAlgo_HArray1OfTData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfTData(const HLRAlgo_HArray1OfTData *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfTData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_HArray1OfTData {
+	HLRAlgo_HArray1OfTData* GetObject() {
+	return (HLRAlgo_HArray1OfTData*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_HArray1OfTData {
+	~Handle_HLRAlgo_HArray1OfTData() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_HArray1OfTData\n");
+	}
+};
+
+%nodefaultctor Handle_HLRAlgo_PolyShellData;
+class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyShellData();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyShellData(const Handle_HLRAlgo_PolyShellData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyShellData(const HLRAlgo_PolyShellData *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyShellData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_PolyShellData {
+	HLRAlgo_PolyShellData* GetObject() {
+	return (HLRAlgo_PolyShellData*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_PolyShellData {
+	~Handle_HLRAlgo_PolyShellData() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyShellData\n");
+	}
+};
+
+%nodefaultctor Handle_HLRAlgo_HArray1OfPISeg;
+class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg(const HLRAlgo_HArray1OfPISeg *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_HArray1OfPISeg {
+	HLRAlgo_HArray1OfPISeg* GetObject() {
+	return (HLRAlgo_HArray1OfPISeg*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_HArray1OfPISeg {
+	~Handle_HLRAlgo_HArray1OfPISeg() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPISeg\n");
+	}
+};
+
+%nodefaultctor Handle_HLRAlgo_PolyData;
+class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyData();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyData(const Handle_HLRAlgo_PolyData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyData(const HLRAlgo_PolyData *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_PolyData {
+	HLRAlgo_PolyData* GetObject() {
+	return (HLRAlgo_PolyData*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_PolyData {
+	~Handle_HLRAlgo_PolyData() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyData\n");
+	}
+};
+
+%nodefaultctor Handle_HLRAlgo_PolyInternalData;
+class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalData();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalData(const Handle_HLRAlgo_PolyInternalData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalData(const HLRAlgo_PolyInternalData *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_PolyInternalData {
+	HLRAlgo_PolyInternalData* GetObject() {
+	return (HLRAlgo_PolyInternalData*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_PolyInternalData {
+	~Handle_HLRAlgo_PolyInternalData() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyInternalData\n");
+	}
+};
+
+%nodefaultctor Handle_HLRAlgo_ListNodeOfListOfBPoint;
+class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfListOfBPoint();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfListOfBPoint(const Handle_HLRAlgo_ListNodeOfListOfBPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfListOfBPoint(const HLRAlgo_ListNodeOfListOfBPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfListOfBPoint const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_ListNodeOfListOfBPoint {
+	HLRAlgo_ListNodeOfListOfBPoint* GetObject() {
+	return (HLRAlgo_ListNodeOfListOfBPoint*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_ListNodeOfListOfBPoint {
+	~Handle_HLRAlgo_ListNodeOfListOfBPoint() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_ListNodeOfListOfBPoint\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPINod;
 class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_HArray1OfPINod();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfPINod();
 		%feature("autodoc", "1");
@@ -286,12 +294,15 @@ class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
 	return (HLRAlgo_HArray1OfPINod*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_HArray1OfPINod {
+	~Handle_HLRAlgo_HArray1OfPINod() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPINod\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_EdgesBlock;
 class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_EdgesBlock();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_EdgesBlock();
 		%feature("autodoc", "1");
@@ -307,12 +318,15 @@ class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 	return (HLRAlgo_EdgesBlock*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_EdgesBlock {
+	~Handle_HLRAlgo_EdgesBlock() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_EdgesBlock\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_PolyAlgo;
 class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyAlgo();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyAlgo();
 		%feature("autodoc", "1");
@@ -328,12 +342,15 @@ class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyAlgo*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_PolyAlgo {
+	~Handle_HLRAlgo_PolyAlgo() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyAlgo\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_PolyInternalNode;
 class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_PolyInternalNode();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyInternalNode();
 		%feature("autodoc", "1");
@@ -349,12 +366,15 @@ class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyInternalNode*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_PolyInternalNode {
+	~Handle_HLRAlgo_PolyInternalNode() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_PolyInternalNode\n");
+	}
+};
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPHDat;
 class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_HLRAlgo_HArray1OfPHDat();
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfPHDat();
 		%feature("autodoc", "1");
@@ -370,16 +390,29 @@ class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 	return (HLRAlgo_HArray1OfPHDat*)$self->Access();
 	}
 };
+%extend Handle_HLRAlgo_HArray1OfPHDat {
+	~Handle_HLRAlgo_HArray1OfPHDat() {
+	printf("Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPHDat\n");
+	}
+};
 
-%nodefaultctor HLRAlgo_HArray1OfPISeg;
-class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
+%nodefaultctor HLRAlgo_Array1OfPHDat;
+class HLRAlgo_Array1OfPHDat {
 	public:
 		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfPISeg(const Standard_Integer Low, const Standard_Integer Up);
+		HLRAlgo_Array1OfPHDat(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfPISeg(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_PolyInternalSegment &V);
+		HLRAlgo_Array1OfPHDat(const HLRAlgo_PolyHidingData &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const HLRAlgo_PolyInternalSegment &V);
+		void Init(const HLRAlgo_PolyHidingData &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~HLRAlgo_Array1OfPHDat();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfPHDat & Assign(const HLRAlgo_Array1OfPHDat &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -387,25 +420,16 @@ class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyInternalSegment &Value);
+		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyHidingData &Value);
 		%feature("autodoc", "1");
-		const HLRAlgo_PolyInternalSegment & Value(const Standard_Integer Index) const;
+		const HLRAlgo_PolyHidingData & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		HLRAlgo_PolyInternalSegment & ChangeValue(const Standard_Integer Index);
+		const HLRAlgo_PolyHidingData & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfPISeg & Array1() const;
+		HLRAlgo_PolyHidingData & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPISeg & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_HArray1OfPISeg();
+		HLRAlgo_PolyHidingData & operator()(const Standard_Integer Index);
 
-};
-%extend HLRAlgo_HArray1OfPISeg {
-	Handle_HLRAlgo_HArray1OfPISeg GetHandle() {
-	return *(Handle_HLRAlgo_HArray1OfPISeg*) &$self;
-	}
 };
 
 %nodefaultctor HLRAlgo_ListIteratorOfInterferenceList;
@@ -444,15 +468,15 @@ class HLRAlgo_PolyHidingData {
 
 };
 
-%nodefaultctor HLRAlgo_HArray1OfPHDat;
-class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
+%nodefaultctor HLRAlgo_HArray1OfPISeg;
+class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up);
+		HLRAlgo_HArray1OfPISeg(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_PolyHidingData &V);
+		HLRAlgo_HArray1OfPISeg(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_PolyInternalSegment &V);
 		%feature("autodoc", "1");
-		void Init(const HLRAlgo_PolyHidingData &V);
+		void Init(const HLRAlgo_PolyInternalSegment &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -460,43 +484,91 @@ class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyHidingData &Value);
+		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyInternalSegment &Value);
 		%feature("autodoc", "1");
-		const HLRAlgo_PolyHidingData & Value(const Standard_Integer Index) const;
+		const HLRAlgo_PolyInternalSegment & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		HLRAlgo_PolyHidingData & ChangeValue(const Standard_Integer Index);
+		HLRAlgo_PolyInternalSegment & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfPHDat & Array1() const;
+		const HLRAlgo_Array1OfPISeg & Array1() const;
 		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPHDat & ChangeArray1();
+		HLRAlgo_Array1OfPISeg & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_HArray1OfPHDat();
 
 };
-%extend HLRAlgo_HArray1OfPHDat {
-	Handle_HLRAlgo_HArray1OfPHDat GetHandle() {
-	return *(Handle_HLRAlgo_HArray1OfPHDat*) &$self;
+%extend HLRAlgo_HArray1OfPISeg {
+	Handle_HLRAlgo_HArray1OfPISeg GetHandle() {
+	return *(Handle_HLRAlgo_HArray1OfPISeg*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfPISeg {
+	~HLRAlgo_HArray1OfPISeg() {
+	printf("Call custom destructor for instance of HLRAlgo_HArray1OfPISeg\n");
 	}
 };
 
-%nodefaultctor HLRAlgo_Coincidence;
-class HLRAlgo_Coincidence {
+%nodefaultctor HLRAlgo_PolyInternalNode;
+class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~HLRAlgo_Coincidence();
+		HLRAlgo_PolyInternalNode();
 		%feature("autodoc", "1");
-		HLRAlgo_Coincidence();
+		Standard_Address Indices() const;
 		%feature("autodoc", "1");
-		void Set2D(const Standard_Integer FE, const Standard_Real Param);
+		Standard_Address RValues() const;
 		%feature("autodoc", "1");
-		void SetState3D(const TopAbs_State stbef, const TopAbs_State staft);
-		%feature("autodoc", "1");
-		void Value2D(Standard_Integer & FE, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void State3D(TopAbs_State & stbef, TopAbs_State & staft) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
+};
+%extend HLRAlgo_PolyInternalNode {
+	Handle_HLRAlgo_PolyInternalNode GetHandle() {
+	return *(Handle_HLRAlgo_PolyInternalNode*) &$self;
+	}
+};
+%extend HLRAlgo_PolyInternalNode {
+	~HLRAlgo_PolyInternalNode() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyInternalNode\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_Array1OfPINod;
+class HLRAlgo_Array1OfPINod {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPINod(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPINod(const Handle_HLRAlgo_PolyInternalNode &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_HLRAlgo_PolyInternalNode &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfPINod & Assign(const HLRAlgo_Array1OfPINod &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_HLRAlgo_PolyInternalNode &Value);
+		%feature("autodoc", "1");
+		const Handle_HLRAlgo_PolyInternalNode & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_HLRAlgo_PolyInternalNode & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalNode & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalNode & operator()(const Standard_Integer Index);
+
+};
+%extend HLRAlgo_Array1OfPINod {
+	~HLRAlgo_Array1OfPINod() {
+	printf("Call custom destructor for instance of HLRAlgo_Array1OfPINod\n");
+	}
 };
 
 %nodefaultctor HLRAlgo_Projector;
@@ -545,486 +617,30 @@ class HLRAlgo_Projector {
 
 };
 
-%nodefaultctor HLRAlgo_PolyInternalSegment;
-class HLRAlgo_PolyInternalSegment {
+%nodefaultctor HLRAlgo_EdgeIterator;
+class HLRAlgo_EdgeIterator {
 	public:
 		%feature("autodoc", "1");
-		~HLRAlgo_PolyInternalSegment();
+		~HLRAlgo_EdgeIterator();
 		%feature("autodoc", "1");
-		HLRAlgo_PolyInternalSegment();
+		HLRAlgo_EdgeIterator();
 		%feature("autodoc", "1");
-		Standard_Address Indices() const;
+		void InitHidden(const HLRAlgo_EdgeStatus &status);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreHidden() const;
+		%feature("autodoc", "1");
+		void NextHidden();
+		%feature("autodoc", "1");
+		void Hidden(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
+		%feature("autodoc", "1");
+		void InitVisible(const HLRAlgo_EdgeStatus &status);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreVisible() const;
+		%feature("autodoc", "1");
+		void NextVisible();
+		%feature("autodoc", "1");
+		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
 
-};
-
-%nodefaultctor HLRAlgo_ListNodeOfListOfBPoint;
-class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_ListNodeOfListOfBPoint(const HLRAlgo_BiPoint &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		HLRAlgo_BiPoint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_ListNodeOfListOfBPoint();
-
-};
-%extend HLRAlgo_ListNodeOfListOfBPoint {
-	Handle_HLRAlgo_ListNodeOfListOfBPoint GetHandle() {
-	return *(Handle_HLRAlgo_ListNodeOfListOfBPoint*) &$self;
-	}
-};
-
-%nodefaultctor HLRAlgo_Array1OfTData;
-class HLRAlgo_Array1OfTData {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfTData(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfTData(const HLRAlgo_TriangleData &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const HLRAlgo_TriangleData &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~HLRAlgo_Array1OfTData();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfTData & Assign(const HLRAlgo_Array1OfTData &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HLRAlgo_TriangleData &Value);
-		%feature("autodoc", "1");
-		const HLRAlgo_TriangleData & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const HLRAlgo_TriangleData & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		HLRAlgo_TriangleData & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		HLRAlgo_TriangleData & operator()(const Standard_Integer Index);
-
-};
-
-%nodefaultctor HLRAlgo_ListNodeOfInterferenceList;
-class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_ListNodeOfInterferenceList(const HLRAlgo_Interference &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		HLRAlgo_Interference & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_ListNodeOfInterferenceList();
-
-};
-%extend HLRAlgo_ListNodeOfInterferenceList {
-	Handle_HLRAlgo_ListNodeOfInterferenceList GetHandle() {
-	return *(Handle_HLRAlgo_ListNodeOfInterferenceList*) &$self;
-	}
-};
-
-%nodefaultctor HLRAlgo_PolyInternalNode;
-class HLRAlgo_PolyInternalNode : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_PolyInternalNode();
-		%feature("autodoc", "1");
-		Standard_Address Indices() const;
-		%feature("autodoc", "1");
-		Standard_Address RValues() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyInternalNode();
-
-};
-%extend HLRAlgo_PolyInternalNode {
-	Handle_HLRAlgo_PolyInternalNode GetHandle() {
-	return *(Handle_HLRAlgo_PolyInternalNode*) &$self;
-	}
-};
-
-%nodefaultctor HLRAlgo_InterferenceList;
-class HLRAlgo_InterferenceList {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_InterferenceList();
-		%feature("autodoc", "1");
-		void Assign(const HLRAlgo_InterferenceList &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~HLRAlgo_InterferenceList();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const HLRAlgo_Interference &I);
-		%feature("autodoc", "1");
-		void Prepend(const HLRAlgo_Interference &I, HLRAlgo_ListIteratorOfInterferenceList & theIt);
-		%feature("autodoc", "1");
-		void Prepend(HLRAlgo_InterferenceList & Other);
-		%feature("autodoc", "1");
-		void Append(const HLRAlgo_Interference &I);
-		%feature("autodoc", "1");
-		void Append(const HLRAlgo_Interference &I, HLRAlgo_ListIteratorOfInterferenceList & theIt);
-		%feature("autodoc", "1");
-		void Append(HLRAlgo_InterferenceList & Other);
-		%feature("autodoc", "1");
-		HLRAlgo_Interference & First() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Interference & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(HLRAlgo_ListIteratorOfInterferenceList & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const HLRAlgo_Interference &I, HLRAlgo_ListIteratorOfInterferenceList & It);
-		%feature("autodoc", "1");
-		void InsertBefore(HLRAlgo_InterferenceList & Other, HLRAlgo_ListIteratorOfInterferenceList & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const HLRAlgo_Interference &I, HLRAlgo_ListIteratorOfInterferenceList & It);
-		%feature("autodoc", "1");
-		void InsertAfter(HLRAlgo_InterferenceList & Other, HLRAlgo_ListIteratorOfInterferenceList & It);
-
-};
-
-%nodefaultctor HLRAlgo_Array1OfPINod;
-class HLRAlgo_Array1OfPINod {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPINod(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPINod(const Handle_HLRAlgo_PolyInternalNode &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_HLRAlgo_PolyInternalNode &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~HLRAlgo_Array1OfPINod();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfPINod & Assign(const HLRAlgo_Array1OfPINod &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_HLRAlgo_PolyInternalNode &Value);
-		%feature("autodoc", "1");
-		const Handle_HLRAlgo_PolyInternalNode & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_HLRAlgo_PolyInternalNode & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalNode & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalNode & operator()(const Standard_Integer Index);
-
-};
-
-%nodefaultctor HLRAlgo_Intersection;
-class HLRAlgo_Intersection {
-	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_Intersection();
-		%feature("autodoc", "1");
-		HLRAlgo_Intersection();
-		%feature("autodoc", "1");
-		HLRAlgo_Intersection(const TopAbs_Orientation Ori, const Standard_Integer Lev, const Standard_Integer SegInd, const Standard_Integer Ind, const Standard_Real P, const Standard_ShortReal Tol, const TopAbs_State S);
-		%feature("autodoc", "1");
-		void Orientation(const TopAbs_Orientation Ori);
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-		%feature("autodoc", "1");
-		void Level(const Standard_Integer Lev);
-		%feature("autodoc", "1");
-		Standard_Integer Level() const;
-		%feature("autodoc", "1");
-		void SegIndex(const Standard_Integer SegInd);
-		%feature("autodoc", "1");
-		Standard_Integer SegIndex() const;
-		%feature("autodoc", "1");
-		void Index(const Standard_Integer Ind);
-		%feature("autodoc", "1");
-		Standard_Integer Index() const;
-		%feature("autodoc", "1");
-		void Parameter(const Standard_Real P);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		void Tolerance(const Standard_ShortReal T);
-		%feature("autodoc", "1");
-		Standard_ShortReal Tolerance() const;
-		%feature("autodoc", "1");
-		void State(const TopAbs_State St);
-		%feature("autodoc", "1");
-		TopAbs_State State() const;
-
-};
-
-%nodefaultctor HLRAlgo_PolyAlgo;
-class HLRAlgo_PolyAlgo : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_PolyAlgo();
-		%feature("autodoc", "1");
-		void Init(const Handle_TColStd_HArray1OfTransient &HShell);
-		%feature("autodoc", "1");
-		TColStd_Array1OfTransient & PolyShell() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Update();
-		%feature("autodoc", "1");
-		void InitHide();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreHide() const;
-		%feature("autodoc", "1");
-		void NextHide();
-		%feature("autodoc", "1");
-		void Hide(Standard_Address & Coordinates, HLRAlgo_EdgeStatus & status, Standard_Integer & Index, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
-		%feature("autodoc", "1");
-		void InitShow();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreShow() const;
-		%feature("autodoc", "1");
-		void NextShow();
-		%feature("autodoc", "1");
-		void Show(Standard_Address & Coordinates, Standard_Integer & Index, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyAlgo();
-
-};
-%extend HLRAlgo_PolyAlgo {
-	Handle_HLRAlgo_PolyAlgo GetHandle() {
-	return *(Handle_HLRAlgo_PolyAlgo*) &$self;
-	}
-};
-
-%nodefaultctor HLRAlgo_PolyShellData;
-class HLRAlgo_PolyShellData : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_PolyShellData(const Standard_Integer nbFace);
-		%feature("autodoc", "1");
-		void UpdateGlobalMinMax(const Standard_Address TotMinMax);
-		%feature("autodoc", "1");
-		void UpdateHiding(const Standard_Integer nbHiding);
-		%feature("autodoc", "1");
-		Standard_Boolean Hiding() const;
-		%feature("autodoc", "1");
-		TColStd_Array1OfTransient & PolyData();
-		%feature("autodoc", "1");
-		TColStd_Array1OfTransient & HidingPolyData();
-		%feature("autodoc", "1");
-		HLRAlgo_ListOfBPoint & Edges();
-		%feature("autodoc", "1");
-		Standard_Address Indices();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyShellData();
-
-};
-%extend HLRAlgo_PolyShellData {
-	Handle_HLRAlgo_PolyShellData GetHandle() {
-	return *(Handle_HLRAlgo_PolyShellData*) &$self;
-	}
-};
-
-%nodefaultctor HLRAlgo_Array1OfPISeg;
-class HLRAlgo_Array1OfPISeg {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPISeg(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPISeg(const HLRAlgo_PolyInternalSegment &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const HLRAlgo_PolyInternalSegment &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~HLRAlgo_Array1OfPISeg();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfPISeg & Assign(const HLRAlgo_Array1OfPISeg &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyInternalSegment &Value);
-		%feature("autodoc", "1");
-		const HLRAlgo_PolyInternalSegment & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const HLRAlgo_PolyInternalSegment & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		HLRAlgo_PolyInternalSegment & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		HLRAlgo_PolyInternalSegment & operator()(const Standard_Integer Index);
-
-};
-
-%nodefaultctor HLRAlgo_EdgesBlock;
-class HLRAlgo_EdgesBlock : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_EdgesBlock(const Standard_Integer NbEdges);
-		%feature("autodoc", "1");
-		Standard_Integer NbEdges() const;
-		%feature("autodoc", "1");
-		void Edge(const Standard_Integer I, const Standard_Integer EI);
-		%feature("autodoc", "1");
-		Standard_Integer Edge(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		void Orientation(const Standard_Integer I, const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OutLine(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		void OutLine(const Standard_Integer I, const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Internal(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		void Internal(const Standard_Integer I, const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Double(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		void Double(const Standard_Integer I, const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean IsoLine(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		void IsoLine(const Standard_Integer I, const Standard_Boolean B);
-		%feature("autodoc", "1");
-		void UpdateMinMax(const Standard_Address TotMinMax);
-		%feature("autodoc", "1");
-		Standard_Address MinMax() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_EdgesBlock();
-
-};
-%extend HLRAlgo_EdgesBlock {
-	Handle_HLRAlgo_EdgesBlock GetHandle() {
-	return *(Handle_HLRAlgo_EdgesBlock*) &$self;
-	}
-};
-
-%nodefaultctor HLRAlgo_PolyData;
-class HLRAlgo_PolyData : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_PolyData();
-		%feature("autodoc", "1");
-		void HNodes(const Handle_TColgp_HArray1OfXYZ &HNodes);
-		%feature("autodoc", "1");
-		void HTData(const Handle_HLRAlgo_HArray1OfTData &HTData);
-		%feature("autodoc", "1");
-		void HPHDat(const Handle_HLRAlgo_HArray1OfPHDat &HPHDat);
-		%feature("autodoc", "1");
-		void FaceIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FaceIndex() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfXYZ & Nodes() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfTData & TData() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPHDat & PHDat() const;
-		%feature("autodoc", "1");
-		void UpdateGlobalMinMax(const Standard_Address ToTMinMax);
-		%feature("autodoc", "1");
-		Standard_Boolean Hiding() const;
-		%feature("autodoc", "1");
-		void HideByPolyData(const Standard_Address Coordinates, const Standard_Address RealPtr, const Standard_Address Indices, const Standard_Boolean HidingShell, HLRAlgo_EdgeStatus & status);
-		%feature("autodoc", "1");
-		Standard_Address Indices();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyData();
-
-};
-%extend HLRAlgo_PolyData {
-	Handle_HLRAlgo_PolyData GetHandle() {
-	return *(Handle_HLRAlgo_PolyData*) &$self;
-	}
-};
-
-%nodefaultctor HLRAlgo_PolyInternalData;
-class HLRAlgo_PolyInternalData : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_PolyInternalData(const Standard_Integer nbNod, const Standard_Integer nbTri);
-		%feature("autodoc", "1");
-		void UpdateLinks(Standard_Address & TData, Standard_Address & PISeg, Standard_Address & PINod);
-		%feature("autodoc", "1");
-		Standard_Integer AddNode(const Standard_Address Nod1RValues, const Standard_Address Nod2RValues, Standard_Address & PINod1, Standard_Address & PINod2, const Standard_Real coef1, const Standard_Real X3, const Standard_Real Y3, const Standard_Real Z3);
-		%feature("autodoc", "1");
-		void UpdateLinks(const Standard_Integer ip1, const Standard_Integer ip2, const Standard_Integer ip3, Standard_Address & TData1, Standard_Address & TData2, Standard_Address & PISeg1, Standard_Address & PISeg2, Standard_Address & PINod1, Standard_Address & PINod2);
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		void IncTData(Standard_Address & TData1, Standard_Address & TData2);
-		%feature("autodoc", "1");
-		void IncPISeg(Standard_Address & PISeg1, Standard_Address & PISeg2);
-		%feature("autodoc", "1");
-		void IncPINod(Standard_Address & PINod1, Standard_Address & PINod2);
-		%feature("autodoc", "1");
-		void DecTData();
-		%feature("autodoc", "1");
-		void DecPISeg();
-		%feature("autodoc", "1");
-		void DecPINod();
-		%feature("autodoc", "1");
-		Standard_Integer NbTData() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPISeg() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPINod() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Planar() const;
-		%feature("autodoc", "1");
-		void Planar(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean IntOutL() const;
-		%feature("autodoc", "1");
-		void IntOutL(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfTData & TData() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPISeg & PISeg() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPINod & PINod() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_PolyInternalData();
-
-};
-%extend HLRAlgo_PolyInternalData {
-	Handle_HLRAlgo_PolyInternalData GetHandle() {
-	return *(Handle_HLRAlgo_PolyInternalData*) &$self;
-	}
 };
 
 %nodefaultctor HLRAlgo_BiPoint;
@@ -1073,23 +689,99 @@ class HLRAlgo_BiPoint {
 
 };
 
-%nodefaultctor HLRAlgo_Array1OfPHDat;
-class HLRAlgo_Array1OfPHDat {
+%nodefaultctor HLRAlgo_PolyInternalSegment;
+class HLRAlgo_PolyInternalSegment {
 	public:
 		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPHDat(const Standard_Integer Low, const Standard_Integer Up);
+		~HLRAlgo_PolyInternalSegment();
 		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPHDat(const HLRAlgo_PolyHidingData &Item, const Standard_Integer Low, const Standard_Integer Up);
+		HLRAlgo_PolyInternalSegment();
+		%feature("autodoc", "1");
+		Standard_Address Indices() const;
+
+};
+
+%nodefaultctor HLRAlgo_EdgesBlock;
+class HLRAlgo_EdgesBlock : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_EdgesBlock(const Standard_Integer NbEdges);
+		%feature("autodoc", "1");
+		Standard_Integer NbEdges() const;
+		%feature("autodoc", "1");
+		void Edge(const Standard_Integer I, const Standard_Integer EI);
+		%feature("autodoc", "1");
+		Standard_Integer Edge(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		void Orientation(const Standard_Integer I, const TopAbs_Orientation Or);
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OutLine(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		void OutLine(const Standard_Integer I, const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Internal(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		void Internal(const Standard_Integer I, const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Double(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		void Double(const Standard_Integer I, const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean IsoLine(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		void IsoLine(const Standard_Integer I, const Standard_Boolean B);
+		%feature("autodoc", "1");
+		void UpdateMinMax(const Standard_Address TotMinMax);
+		%feature("autodoc", "1");
+		Standard_Address MinMax() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_EdgesBlock {
+	Handle_HLRAlgo_EdgesBlock GetHandle() {
+	return *(Handle_HLRAlgo_EdgesBlock*) &$self;
+	}
+};
+%extend HLRAlgo_EdgesBlock {
+	~HLRAlgo_EdgesBlock() {
+	printf("Call custom destructor for instance of HLRAlgo_EdgesBlock\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_ListNodeOfListOfBPoint;
+class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_ListNodeOfListOfBPoint(const HLRAlgo_BiPoint &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		HLRAlgo_BiPoint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_ListNodeOfListOfBPoint {
+	Handle_HLRAlgo_ListNodeOfListOfBPoint GetHandle() {
+	return *(Handle_HLRAlgo_ListNodeOfListOfBPoint*) &$self;
+	}
+};
+%extend HLRAlgo_ListNodeOfListOfBPoint {
+	~HLRAlgo_ListNodeOfListOfBPoint() {
+	printf("Call custom destructor for instance of HLRAlgo_ListNodeOfListOfBPoint\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_HArray1OfPHDat;
+class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_PolyHidingData &V);
 		%feature("autodoc", "1");
 		void Init(const HLRAlgo_PolyHidingData &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		~HLRAlgo_Array1OfPHDat();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfPHDat & Assign(const HLRAlgo_Array1OfPHDat &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1101,11 +793,325 @@ class HLRAlgo_Array1OfPHDat {
 		%feature("autodoc", "1");
 		const HLRAlgo_PolyHidingData & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const HLRAlgo_PolyHidingData & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
 		HLRAlgo_PolyHidingData & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		HLRAlgo_PolyHidingData & operator()(const Standard_Integer Index);
+		const HLRAlgo_Array1OfPHDat & Array1() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPHDat & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_HArray1OfPHDat {
+	Handle_HLRAlgo_HArray1OfPHDat GetHandle() {
+	return *(Handle_HLRAlgo_HArray1OfPHDat*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfPHDat {
+	~HLRAlgo_HArray1OfPHDat() {
+	printf("Call custom destructor for instance of HLRAlgo_HArray1OfPHDat\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_Array1OfTData;
+class HLRAlgo_Array1OfTData {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfTData(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfTData(const HLRAlgo_TriangleData &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const HLRAlgo_TriangleData &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~HLRAlgo_Array1OfTData();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfTData & Assign(const HLRAlgo_Array1OfTData &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const HLRAlgo_TriangleData &Value);
+		%feature("autodoc", "1");
+		const HLRAlgo_TriangleData & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const HLRAlgo_TriangleData & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		HLRAlgo_TriangleData & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		HLRAlgo_TriangleData & operator()(const Standard_Integer Index);
+
+};
+
+%nodefaultctor HLRAlgo_ListNodeOfInterferenceList;
+class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_ListNodeOfInterferenceList(const HLRAlgo_Interference &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		HLRAlgo_Interference & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_ListNodeOfInterferenceList {
+	Handle_HLRAlgo_ListNodeOfInterferenceList GetHandle() {
+	return *(Handle_HLRAlgo_ListNodeOfInterferenceList*) &$self;
+	}
+};
+%extend HLRAlgo_ListNodeOfInterferenceList {
+	~HLRAlgo_ListNodeOfInterferenceList() {
+	printf("Call custom destructor for instance of HLRAlgo_ListNodeOfInterferenceList\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_WiresBlock;
+class HLRAlgo_WiresBlock : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_WiresBlock(const Standard_Integer NbWires);
+		%feature("autodoc", "1");
+		Standard_Integer NbWires() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer I, const Handle_HLRAlgo_EdgesBlock &W);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock & Wire(const Standard_Integer I);
+		%feature("autodoc", "1");
+		void UpdateMinMax(const Standard_Address TotMinMax);
+		%feature("autodoc", "1");
+		Standard_Address MinMax() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_WiresBlock {
+	Handle_HLRAlgo_WiresBlock GetHandle() {
+	return *(Handle_HLRAlgo_WiresBlock*) &$self;
+	}
+};
+%extend HLRAlgo_WiresBlock {
+	~HLRAlgo_WiresBlock() {
+	printf("Call custom destructor for instance of HLRAlgo_WiresBlock\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_PolyAlgo;
+class HLRAlgo_PolyAlgo : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_PolyAlgo();
+		%feature("autodoc", "1");
+		void Init(const Handle_TColStd_HArray1OfTransient &HShell);
+		%feature("autodoc", "1");
+		TColStd_Array1OfTransient & PolyShell() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Update();
+		%feature("autodoc", "1");
+		void InitHide();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreHide() const;
+		%feature("autodoc", "1");
+		void NextHide();
+		%feature("autodoc", "1");
+		void Hide(Standard_Address & Coordinates, HLRAlgo_EdgeStatus & status, Standard_Integer & Index, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
+		%feature("autodoc", "1");
+		void InitShow();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreShow() const;
+		%feature("autodoc", "1");
+		void NextShow();
+		%feature("autodoc", "1");
+		void Show(Standard_Address & Coordinates, Standard_Integer & Index, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_PolyAlgo {
+	Handle_HLRAlgo_PolyAlgo GetHandle() {
+	return *(Handle_HLRAlgo_PolyAlgo*) &$self;
+	}
+};
+%extend HLRAlgo_PolyAlgo {
+	~HLRAlgo_PolyAlgo() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyAlgo\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_PolyShellData;
+class HLRAlgo_PolyShellData : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_PolyShellData(const Standard_Integer nbFace);
+		%feature("autodoc", "1");
+		void UpdateGlobalMinMax(const Standard_Address TotMinMax);
+		%feature("autodoc", "1");
+		void UpdateHiding(const Standard_Integer nbHiding);
+		%feature("autodoc", "1");
+		Standard_Boolean Hiding() const;
+		%feature("autodoc", "1");
+		TColStd_Array1OfTransient & PolyData();
+		%feature("autodoc", "1");
+		TColStd_Array1OfTransient & HidingPolyData();
+		%feature("autodoc", "1");
+		HLRAlgo_ListOfBPoint & Edges();
+		%feature("autodoc", "1");
+		Standard_Address Indices();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_PolyShellData {
+	Handle_HLRAlgo_PolyShellData GetHandle() {
+	return *(Handle_HLRAlgo_PolyShellData*) &$self;
+	}
+};
+%extend HLRAlgo_PolyShellData {
+	~HLRAlgo_PolyShellData() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyShellData\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_Array1OfPISeg;
+class HLRAlgo_Array1OfPISeg {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPISeg(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPISeg(const HLRAlgo_PolyInternalSegment &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const HLRAlgo_PolyInternalSegment &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~HLRAlgo_Array1OfPISeg();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfPISeg & Assign(const HLRAlgo_Array1OfPISeg &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyInternalSegment &Value);
+		%feature("autodoc", "1");
+		const HLRAlgo_PolyInternalSegment & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const HLRAlgo_PolyInternalSegment & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		HLRAlgo_PolyInternalSegment & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		HLRAlgo_PolyInternalSegment & operator()(const Standard_Integer Index);
+
+};
+
+%nodefaultctor HLRAlgo_PolyData;
+class HLRAlgo_PolyData : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_PolyData();
+		%feature("autodoc", "1");
+		void HNodes(const Handle_TColgp_HArray1OfXYZ &HNodes);
+		%feature("autodoc", "1");
+		void HTData(const Handle_HLRAlgo_HArray1OfTData &HTData);
+		%feature("autodoc", "1");
+		void HPHDat(const Handle_HLRAlgo_HArray1OfPHDat &HPHDat);
+		%feature("autodoc", "1");
+		void FaceIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FaceIndex() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfXYZ & Nodes() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfTData & TData() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPHDat & PHDat() const;
+		%feature("autodoc", "1");
+		void UpdateGlobalMinMax(const Standard_Address ToTMinMax);
+		%feature("autodoc", "1");
+		Standard_Boolean Hiding() const;
+		%feature("autodoc", "1");
+		void HideByPolyData(const Standard_Address Coordinates, const Standard_Address RealPtr, const Standard_Address Indices, const Standard_Boolean HidingShell, HLRAlgo_EdgeStatus & status);
+		%feature("autodoc", "1");
+		Standard_Address Indices();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_PolyData {
+	Handle_HLRAlgo_PolyData GetHandle() {
+	return *(Handle_HLRAlgo_PolyData*) &$self;
+	}
+};
+%extend HLRAlgo_PolyData {
+	~HLRAlgo_PolyData() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyData\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_ListIteratorOfListOfBPoint;
+class HLRAlgo_ListIteratorOfListOfBPoint {
+	public:
+		%feature("autodoc", "1");
+		~HLRAlgo_ListIteratorOfListOfBPoint();
+		%feature("autodoc", "1");
+		HLRAlgo_ListIteratorOfListOfBPoint();
+		%feature("autodoc", "1");
+		HLRAlgo_ListIteratorOfListOfBPoint(const HLRAlgo_ListOfBPoint &L);
+		%feature("autodoc", "1");
+		void Initialize(const HLRAlgo_ListOfBPoint &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		HLRAlgo_BiPoint & Value() const;
+
+};
+
+%nodefaultctor HLRAlgo_Interference;
+class HLRAlgo_Interference {
+	public:
+		%feature("autodoc", "1");
+		~HLRAlgo_Interference();
+		%feature("autodoc", "1");
+		HLRAlgo_Interference();
+		%feature("autodoc", "1");
+		HLRAlgo_Interference(const HLRAlgo_Intersection &Inters, const HLRAlgo_Coincidence &Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
+		%feature("autodoc", "1");
+		void Intersection(const HLRAlgo_Intersection &I);
+		%feature("autodoc", "1");
+		void Boundary(const HLRAlgo_Coincidence &B);
+		%feature("autodoc", "1");
+		void Orientation(const TopAbs_Orientation Or);
+		%feature("autodoc", "1");
+		void Transition(const TopAbs_Orientation Or);
+		%feature("autodoc", "1");
+		void BoundaryTransition(const TopAbs_Orientation Or);
+		%feature("autodoc", "1");
+		const HLRAlgo_Intersection & Intersection() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Intersection & ChangeIntersection();
+		%feature("autodoc", "1");
+		const HLRAlgo_Coincidence & Boundary() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Coincidence & ChangeBoundary();
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Transition() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation BoundaryTransition() const;
 
 };
 
@@ -1155,43 +1161,6 @@ class HLRAlgo_ListOfBPoint {
 
 };
 
-%nodefaultctor HLRAlgo_HArray1OfTData;
-class HLRAlgo_HArray1OfTData : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfTData(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfTData(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_TriangleData &V);
-		%feature("autodoc", "1");
-		void Init(const HLRAlgo_TriangleData &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HLRAlgo_TriangleData &Value);
-		%feature("autodoc", "1");
-		const HLRAlgo_TriangleData & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		HLRAlgo_TriangleData & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfTData & Array1() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfTData & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_HArray1OfTData();
-
-};
-%extend HLRAlgo_HArray1OfTData {
-	Handle_HLRAlgo_HArray1OfTData GetHandle() {
-	return *(Handle_HLRAlgo_HArray1OfTData*) &$self;
-	}
-};
-
 %nodefaultctor HLRAlgo_HArray1OfPINod;
 class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 	public:
@@ -1219,13 +1188,116 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 		HLRAlgo_Array1OfPINod & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_HArray1OfPINod();
 
 };
 %extend HLRAlgo_HArray1OfPINod {
 	Handle_HLRAlgo_HArray1OfPINod GetHandle() {
 	return *(Handle_HLRAlgo_HArray1OfPINod*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfPINod {
+	~HLRAlgo_HArray1OfPINod() {
+	printf("Call custom destructor for instance of HLRAlgo_HArray1OfPINod\n");
+	}
+};
+
+%nodefaultctor HLRAlgo_Intersection;
+class HLRAlgo_Intersection {
+	public:
+		%feature("autodoc", "1");
+		~HLRAlgo_Intersection();
+		%feature("autodoc", "1");
+		HLRAlgo_Intersection();
+		%feature("autodoc", "1");
+		HLRAlgo_Intersection(const TopAbs_Orientation Ori, const Standard_Integer Lev, const Standard_Integer SegInd, const Standard_Integer Ind, const Standard_Real P, const Standard_ShortReal Tol, const TopAbs_State S);
+		%feature("autodoc", "1");
+		void Orientation(const TopAbs_Orientation Ori);
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		void Level(const Standard_Integer Lev);
+		%feature("autodoc", "1");
+		Standard_Integer Level() const;
+		%feature("autodoc", "1");
+		void SegIndex(const Standard_Integer SegInd);
+		%feature("autodoc", "1");
+		Standard_Integer SegIndex() const;
+		%feature("autodoc", "1");
+		void Index(const Standard_Integer Ind);
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		void Parameter(const Standard_Real P);
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		void Tolerance(const Standard_ShortReal T);
+		%feature("autodoc", "1");
+		Standard_ShortReal Tolerance() const;
+		%feature("autodoc", "1");
+		void State(const TopAbs_State St);
+		%feature("autodoc", "1");
+		TopAbs_State State() const;
+
+};
+
+%nodefaultctor HLRAlgo_PolyInternalData;
+class HLRAlgo_PolyInternalData : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_PolyInternalData(const Standard_Integer nbNod, const Standard_Integer nbTri);
+		%feature("autodoc", "1");
+		void UpdateLinks(Standard_Address & TData, Standard_Address & PISeg, Standard_Address & PINod);
+		%feature("autodoc", "1");
+		Standard_Integer AddNode(const Standard_Address Nod1RValues, const Standard_Address Nod2RValues, Standard_Address & PINod1, Standard_Address & PINod2, const Standard_Real coef1, const Standard_Real X3, const Standard_Real Y3, const Standard_Real Z3);
+		%feature("autodoc", "1");
+		void UpdateLinks(const Standard_Integer ip1, const Standard_Integer ip2, const Standard_Integer ip3, Standard_Address & TData1, Standard_Address & TData2, Standard_Address & PISeg1, Standard_Address & PISeg2, Standard_Address & PINod1, Standard_Address & PINod2);
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		void IncTData(Standard_Address & TData1, Standard_Address & TData2);
+		%feature("autodoc", "1");
+		void IncPISeg(Standard_Address & PISeg1, Standard_Address & PISeg2);
+		%feature("autodoc", "1");
+		void IncPINod(Standard_Address & PINod1, Standard_Address & PINod2);
+		%feature("autodoc", "1");
+		void DecTData();
+		%feature("autodoc", "1");
+		void DecPISeg();
+		%feature("autodoc", "1");
+		void DecPINod();
+		%feature("autodoc", "1");
+		Standard_Integer NbTData() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPISeg() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPINod() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Planar() const;
+		%feature("autodoc", "1");
+		void Planar(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean IntOutL() const;
+		%feature("autodoc", "1");
+		void IntOutL(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfTData & TData() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPISeg & PISeg() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPINod & PINod() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_PolyInternalData {
+	Handle_HLRAlgo_PolyInternalData GetHandle() {
+	return *(Handle_HLRAlgo_PolyInternalData*) &$self;
+	}
+};
+%extend HLRAlgo_PolyInternalData {
+	~HLRAlgo_PolyInternalData() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyInternalData\n");
 	}
 };
 
@@ -1238,42 +1310,6 @@ class HLRAlgo_TriangleData {
 		HLRAlgo_TriangleData();
 		%feature("autodoc", "1");
 		Standard_Address Indices() const;
-
-};
-
-%nodefaultctor HLRAlgo_Interference;
-class HLRAlgo_Interference {
-	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_Interference();
-		%feature("autodoc", "1");
-		HLRAlgo_Interference();
-		%feature("autodoc", "1");
-		HLRAlgo_Interference(const HLRAlgo_Intersection &Inters, const HLRAlgo_Coincidence &Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
-		%feature("autodoc", "1");
-		void Intersection(const HLRAlgo_Intersection &I);
-		%feature("autodoc", "1");
-		void Boundary(const HLRAlgo_Coincidence &B);
-		%feature("autodoc", "1");
-		void Orientation(const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		void Transition(const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		void BoundaryTransition(const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		const HLRAlgo_Intersection & Intersection() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Intersection & ChangeIntersection();
-		%feature("autodoc", "1");
-		const HLRAlgo_Coincidence & Boundary() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Coincidence & ChangeBoundary();
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Transition() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation BoundaryTransition() const;
 
 };
 
@@ -1303,50 +1339,44 @@ class HLRAlgo {
 
 };
 
-%nodefaultctor HLRAlgo_ListIteratorOfListOfBPoint;
-class HLRAlgo_ListIteratorOfListOfBPoint {
+%nodefaultctor HLRAlgo_HArray1OfTData;
+class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~HLRAlgo_ListIteratorOfListOfBPoint();
+		HLRAlgo_HArray1OfTData(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		HLRAlgo_ListIteratorOfListOfBPoint();
+		HLRAlgo_HArray1OfTData(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_TriangleData &V);
 		%feature("autodoc", "1");
-		HLRAlgo_ListIteratorOfListOfBPoint(const HLRAlgo_ListOfBPoint &L);
+		void Init(const HLRAlgo_TriangleData &V);
 		%feature("autodoc", "1");
-		void Initialize(const HLRAlgo_ListOfBPoint &L);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void Next();
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		HLRAlgo_BiPoint & Value() const;
+		void SetValue(const Standard_Integer Index, const HLRAlgo_TriangleData &Value);
+		%feature("autodoc", "1");
+		const HLRAlgo_TriangleData & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		HLRAlgo_TriangleData & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfTData & Array1() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfTData & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-
-%nodefaultctor HLRAlgo_EdgeIterator;
-class HLRAlgo_EdgeIterator {
-	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_EdgeIterator();
-		%feature("autodoc", "1");
-		HLRAlgo_EdgeIterator();
-		%feature("autodoc", "1");
-		void InitHidden(const HLRAlgo_EdgeStatus &status);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreHidden() const;
-		%feature("autodoc", "1");
-		void NextHidden();
-		%feature("autodoc", "1");
-		void Hidden(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
-		%feature("autodoc", "1");
-		void InitVisible(const HLRAlgo_EdgeStatus &status);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreVisible() const;
-		%feature("autodoc", "1");
-		void NextVisible();
-		%feature("autodoc", "1");
-		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
-
+%extend HLRAlgo_HArray1OfTData {
+	Handle_HLRAlgo_HArray1OfTData GetHandle() {
+	return *(Handle_HLRAlgo_HArray1OfTData*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfTData {
+	~HLRAlgo_HArray1OfTData() {
+	printf("Call custom destructor for instance of HLRAlgo_HArray1OfTData\n");
+	}
 };
 
 %nodefaultctor HLRAlgo_EdgeStatus;
@@ -1383,29 +1413,66 @@ class HLRAlgo_EdgeStatus {
 
 };
 
-%nodefaultctor HLRAlgo_WiresBlock;
-class HLRAlgo_WiresBlock : public MMgt_TShared {
+%nodefaultctor HLRAlgo_Coincidence;
+class HLRAlgo_Coincidence {
 	public:
 		%feature("autodoc", "1");
-		HLRAlgo_WiresBlock(const Standard_Integer NbWires);
+		~HLRAlgo_Coincidence();
 		%feature("autodoc", "1");
-		Standard_Integer NbWires() const;
+		HLRAlgo_Coincidence();
 		%feature("autodoc", "1");
-		void Set(const Standard_Integer I, const Handle_HLRAlgo_EdgesBlock &W);
+		void Set2D(const Standard_Integer FE, const Standard_Real Param);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock & Wire(const Standard_Integer I);
+		void SetState3D(const TopAbs_State stbef, const TopAbs_State staft);
 		%feature("autodoc", "1");
-		void UpdateMinMax(const Standard_Address TotMinMax);
+		void Value2D(Standard_Integer & FE, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Address MinMax() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~HLRAlgo_WiresBlock();
+		void State3D(TopAbs_State & stbef, TopAbs_State & staft) const;
 
 };
-%extend HLRAlgo_WiresBlock {
-	Handle_HLRAlgo_WiresBlock GetHandle() {
-	return *(Handle_HLRAlgo_WiresBlock*) &$self;
-	}
+
+%nodefaultctor HLRAlgo_InterferenceList;
+class HLRAlgo_InterferenceList {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_InterferenceList();
+		%feature("autodoc", "1");
+		void Assign(const HLRAlgo_InterferenceList &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		~HLRAlgo_InterferenceList();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const HLRAlgo_Interference &I);
+		%feature("autodoc", "1");
+		void Prepend(const HLRAlgo_Interference &I, HLRAlgo_ListIteratorOfInterferenceList & theIt);
+		%feature("autodoc", "1");
+		void Prepend(HLRAlgo_InterferenceList & Other);
+		%feature("autodoc", "1");
+		void Append(const HLRAlgo_Interference &I);
+		%feature("autodoc", "1");
+		void Append(const HLRAlgo_Interference &I, HLRAlgo_ListIteratorOfInterferenceList & theIt);
+		%feature("autodoc", "1");
+		void Append(HLRAlgo_InterferenceList & Other);
+		%feature("autodoc", "1");
+		HLRAlgo_Interference & First() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Interference & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(HLRAlgo_ListIteratorOfInterferenceList & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const HLRAlgo_Interference &I, HLRAlgo_ListIteratorOfInterferenceList & It);
+		%feature("autodoc", "1");
+		void InsertBefore(HLRAlgo_InterferenceList & Other, HLRAlgo_ListIteratorOfInterferenceList & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const HLRAlgo_Interference &I, HLRAlgo_ListIteratorOfInterferenceList & It);
+		%feature("autodoc", "1");
+		void InsertAfter(HLRAlgo_InterferenceList & Other, HLRAlgo_ListIteratorOfInterferenceList & It);
+
 };

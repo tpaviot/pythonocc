@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepOffsetAPI
 
@@ -103,8 +89,6 @@ typedef BRepBuilderAPI_Sewing BRepOffsetAPI_Sewing;
 class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape();
-		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape();
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape &aHandle);
@@ -119,12 +103,15 @@ class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public H
 	return (BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape*)$self->Access();
 	}
 };
+%extend Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	~Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal;
 class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal();
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal();
 		%feature("autodoc", "1");
@@ -140,12 +127,15 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handl
 	return (BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal*)$self->Access();
 	}
 };
+%extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
+	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal() {
+	printf("Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape;
 class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape();
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape();
 		%feature("autodoc", "1");
@@ -159,6 +149,35 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Hand
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape* GetObject() {
 	return (BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape*)$self->Access();
+	}
+};
+%extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
+	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
+	printf("Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");
+	}
+};
+
+%nodefaultctor BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape;
+class BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const TopoDS_Shape &K, const TopTools_SequenceOfShape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		TopTools_SequenceOfShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape GetHandle() {
+	return *(Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape*) &$self;
+	}
+};
+%extend BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	~BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");
 	}
 };
 
@@ -184,27 +203,6 @@ class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepOffsetAPI_MakeDraft();
 
-};
-
-%nodefaultctor BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape;
-class BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const TopoDS_Shape &K, const TopTools_SequenceOfShape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		TopTools_SequenceOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape();
-
-};
-%extend BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape GetHandle() {
-	return *(Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape*) &$self;
-	}
 };
 
 %nodefaultctor BRepOffsetAPI_DraftAngle;
@@ -348,13 +346,16 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection
 		TopTools_SequenceOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape();
 
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape GetHandle() {
 	return *(Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape*) &$self;
+	}
+};
+%extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
+	~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");
 	}
 };
 
@@ -405,32 +406,6 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		~BRepOffsetAPI_MakePipeShell();
-
-};
-
-%nodefaultctor BRepOffsetAPI_ThruSections;
-class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		BRepOffsetAPI_ThruSections(const Standard_Boolean isSolid=0, const Standard_Boolean ruled=0, const Standard_Real pres3d=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		void Init(const Standard_Boolean isSolid=0, const Standard_Boolean ruled=0, const Standard_Real pres3d=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		void AddWire(const TopoDS_Wire &wire);
-		%feature("autodoc", "1");
-		void AddVertex(const TopoDS_Vertex &aVertex);
-		%feature("autodoc", "1");
-		void CheckCompatibility(const Standard_Boolean check=1);
-		%feature("autodoc", "1");
-		virtual		void Build();
-		%feature("autodoc", "1");
-		const TopoDS_Shape & FirstShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & LastShape() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape GeneratedFace(const TopoDS_Shape &Edge) const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_ThruSections();
 
 };
 
@@ -571,14 +546,43 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_
 		TColStd_SequenceOfReal & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal();
 
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
 	Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal GetHandle() {
 	return *(Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal*) &$self;
 	}
+};
+%extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
+	~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");
+	}
+};
+
+%nodefaultctor BRepOffsetAPI_ThruSections;
+class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepOffsetAPI_ThruSections(const Standard_Boolean isSolid=0, const Standard_Boolean ruled=0, const Standard_Real pres3d=9.99999999999999954748111825886258685613938723691e-7);
+		%feature("autodoc", "1");
+		void Init(const Standard_Boolean isSolid=0, const Standard_Boolean ruled=0, const Standard_Real pres3d=9.99999999999999954748111825886258685613938723691e-7);
+		%feature("autodoc", "1");
+		void AddWire(const TopoDS_Wire &wire);
+		%feature("autodoc", "1");
+		void AddVertex(const TopoDS_Vertex &aVertex);
+		%feature("autodoc", "1");
+		void CheckCompatibility(const Standard_Boolean check=1);
+		%feature("autodoc", "1");
+		virtual		void Build();
+		%feature("autodoc", "1");
+		const TopoDS_Shape & FirstShape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & LastShape() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape GeneratedFace(const TopoDS_Shape &Edge) const;
+		%feature("autodoc", "1");
+		virtual		~BRepOffsetAPI_ThruSections();
+
 };
 
 %nodefaultctor BRepOffsetAPI_NormalProjection;

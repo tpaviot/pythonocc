@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GCE2d
 
@@ -116,8 +102,6 @@ class GCE2d_Root {
 class GCE2d_MakeLine : public GCE2d_Root {
 	public:
 		%feature("autodoc", "1");
-		~GCE2d_MakeLine();
-		%feature("autodoc", "1");
 		GCE2d_MakeLine(const gp_Ax2d &A);
 		%feature("autodoc", "1");
 		GCE2d_MakeLine(const gp_Lin2d &L);
@@ -135,12 +119,15 @@ class GCE2d_MakeLine : public GCE2d_Root {
 		const Handle_Geom2d_Line & Operator() const;
 
 };
+%extend GCE2d_MakeLine {
+	~GCE2d_MakeLine() {
+	printf("Call custom destructor for instance of GCE2d_MakeLine\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeParabola;
 class GCE2d_MakeParabola : public GCE2d_Root {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeParabola();
 		%feature("autodoc", "1");
 		GCE2d_MakeParabola(const gp_Parab2d &Prb);
 		%feature("autodoc", "1");
@@ -159,12 +146,15 @@ class GCE2d_MakeParabola : public GCE2d_Root {
 		const Handle_Geom2d_Parabola & Operator() const;
 
 };
+%extend GCE2d_MakeParabola {
+	~GCE2d_MakeParabola() {
+	printf("Call custom destructor for instance of GCE2d_MakeParabola\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeArcOfCircle;
 class GCE2d_MakeArcOfCircle : public GCE2d_Root {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeArcOfCircle();
 		%feature("autodoc", "1");
 		GCE2d_MakeArcOfCircle(const gp_Circ2d &Circ, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
@@ -181,12 +171,15 @@ class GCE2d_MakeArcOfCircle : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%extend GCE2d_MakeArcOfCircle {
+	~GCE2d_MakeArcOfCircle() {
+	printf("Call custom destructor for instance of GCE2d_MakeArcOfCircle\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeArcOfHyperbola;
 class GCE2d_MakeArcOfHyperbola : public GCE2d_Root {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeArcOfHyperbola();
 		%feature("autodoc", "1");
 		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d &Hypr, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
@@ -199,12 +192,15 @@ class GCE2d_MakeArcOfHyperbola : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%extend GCE2d_MakeArcOfHyperbola {
+	~GCE2d_MakeArcOfHyperbola() {
+	printf("Call custom destructor for instance of GCE2d_MakeArcOfHyperbola\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeCircle;
 class GCE2d_MakeCircle : public GCE2d_Root {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeCircle();
 		%feature("autodoc", "1");
 		GCE2d_MakeCircle(const gp_Circ2d &C);
 		%feature("autodoc", "1");
@@ -227,12 +223,15 @@ class GCE2d_MakeCircle : public GCE2d_Root {
 		const Handle_Geom2d_Circle & Operator() const;
 
 };
+%extend GCE2d_MakeCircle {
+	~GCE2d_MakeCircle() {
+	printf("Call custom destructor for instance of GCE2d_MakeCircle\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeScale;
 class GCE2d_MakeScale {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeScale();
 		%feature("autodoc", "1");
 		GCE2d_MakeScale(const gp_Pnt2d &Point, const Standard_Real Scale);
 		%feature("autodoc", "1");
@@ -241,12 +240,15 @@ class GCE2d_MakeScale {
 		const Handle_Geom2d_Transformation & Operator() const;
 
 };
+%extend GCE2d_MakeScale {
+	~GCE2d_MakeScale() {
+	printf("Call custom destructor for instance of GCE2d_MakeScale\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeHyperbola;
 class GCE2d_MakeHyperbola : public GCE2d_Root {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeHyperbola();
 		%feature("autodoc", "1");
 		GCE2d_MakeHyperbola(const gp_Hypr2d &H);
 		%feature("autodoc", "1");
@@ -261,12 +263,15 @@ class GCE2d_MakeHyperbola : public GCE2d_Root {
 		const Handle_Geom2d_Hyperbola & Operator() const;
 
 };
+%extend GCE2d_MakeHyperbola {
+	~GCE2d_MakeHyperbola() {
+	printf("Call custom destructor for instance of GCE2d_MakeHyperbola\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeSegment;
 class GCE2d_MakeSegment : public GCE2d_Root {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeSegment();
 		%feature("autodoc", "1");
 		GCE2d_MakeSegment(const gp_Pnt2d &P1, const gp_Pnt2d &P2);
 		%feature("autodoc", "1");
@@ -283,12 +288,15 @@ class GCE2d_MakeSegment : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%extend GCE2d_MakeSegment {
+	~GCE2d_MakeSegment() {
+	printf("Call custom destructor for instance of GCE2d_MakeSegment\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeEllipse;
 class GCE2d_MakeEllipse : public GCE2d_Root {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeEllipse();
 		%feature("autodoc", "1");
 		GCE2d_MakeEllipse(const gp_Elips2d &E);
 		%feature("autodoc", "1");
@@ -303,12 +311,15 @@ class GCE2d_MakeEllipse : public GCE2d_Root {
 		const Handle_Geom2d_Ellipse & Operator() const;
 
 };
+%extend GCE2d_MakeEllipse {
+	~GCE2d_MakeEllipse() {
+	printf("Call custom destructor for instance of GCE2d_MakeEllipse\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeArcOfParabola;
 class GCE2d_MakeArcOfParabola : public GCE2d_Root {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeArcOfParabola();
 		%feature("autodoc", "1");
 		GCE2d_MakeArcOfParabola(const gp_Parab2d &Parab, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
@@ -321,12 +332,15 @@ class GCE2d_MakeArcOfParabola : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%extend GCE2d_MakeArcOfParabola {
+	~GCE2d_MakeArcOfParabola() {
+	printf("Call custom destructor for instance of GCE2d_MakeArcOfParabola\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeRotation;
 class GCE2d_MakeRotation {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeRotation();
 		%feature("autodoc", "1");
 		GCE2d_MakeRotation(const gp_Pnt2d &Point, const Standard_Real Angle);
 		%feature("autodoc", "1");
@@ -335,12 +349,15 @@ class GCE2d_MakeRotation {
 		const Handle_Geom2d_Transformation & Operator() const;
 
 };
+%extend GCE2d_MakeRotation {
+	~GCE2d_MakeRotation() {
+	printf("Call custom destructor for instance of GCE2d_MakeRotation\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeMirror;
 class GCE2d_MakeMirror {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeMirror();
 		%feature("autodoc", "1");
 		GCE2d_MakeMirror(const gp_Pnt2d &Point);
 		%feature("autodoc", "1");
@@ -355,12 +372,15 @@ class GCE2d_MakeMirror {
 		const Handle_Geom2d_Transformation & Operator() const;
 
 };
+%extend GCE2d_MakeMirror {
+	~GCE2d_MakeMirror() {
+	printf("Call custom destructor for instance of GCE2d_MakeMirror\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeArcOfEllipse;
 class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeArcOfEllipse();
 		%feature("autodoc", "1");
 		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
@@ -373,12 +393,15 @@ class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%extend GCE2d_MakeArcOfEllipse {
+	~GCE2d_MakeArcOfEllipse() {
+	printf("Call custom destructor for instance of GCE2d_MakeArcOfEllipse\n");
+	}
+};
 
 %nodefaultctor GCE2d_MakeTranslation;
 class GCE2d_MakeTranslation {
 	public:
-		%feature("autodoc", "1");
-		~GCE2d_MakeTranslation();
 		%feature("autodoc", "1");
 		GCE2d_MakeTranslation(const gp_Vec2d &Vect);
 		%feature("autodoc", "1");
@@ -388,4 +411,9 @@ class GCE2d_MakeTranslation {
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Transformation & Operator() const;
 
+};
+%extend GCE2d_MakeTranslation {
+	~GCE2d_MakeTranslation() {
+	printf("Call custom destructor for instance of GCE2d_MakeTranslation\n");
+	}
 };

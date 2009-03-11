@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module VrmlConverter
 
@@ -115,8 +101,6 @@ enum VrmlConverter_TypeOfCamera {
 class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_VrmlConverter_ShadingAspect();
-		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect();
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect(const Handle_VrmlConverter_ShadingAspect &aHandle);
@@ -131,12 +115,15 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 	return (VrmlConverter_ShadingAspect*)$self->Access();
 	}
 };
+%extend Handle_VrmlConverter_ShadingAspect {
+	~Handle_VrmlConverter_ShadingAspect() {
+	printf("Call custom destructor for instance of Handle_VrmlConverter_ShadingAspect\n");
+	}
+};
 
 %nodefaultctor Handle_VrmlConverter_LineAspect;
 class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_VrmlConverter_LineAspect();
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect();
 		%feature("autodoc", "1");
@@ -152,12 +139,15 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 	return (VrmlConverter_LineAspect*)$self->Access();
 	}
 };
+%extend Handle_VrmlConverter_LineAspect {
+	~Handle_VrmlConverter_LineAspect() {
+	printf("Call custom destructor for instance of Handle_VrmlConverter_LineAspect\n");
+	}
+};
 
 %nodefaultctor Handle_VrmlConverter_PointAspect;
 class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_VrmlConverter_PointAspect();
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_PointAspect();
 		%feature("autodoc", "1");
@@ -173,12 +163,15 @@ class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 	return (VrmlConverter_PointAspect*)$self->Access();
 	}
 };
+%extend Handle_VrmlConverter_PointAspect {
+	~Handle_VrmlConverter_PointAspect() {
+	printf("Call custom destructor for instance of Handle_VrmlConverter_PointAspect\n");
+	}
+};
 
 %nodefaultctor Handle_VrmlConverter_Projector;
 class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_VrmlConverter_Projector();
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Projector();
 		%feature("autodoc", "1");
@@ -194,12 +187,15 @@ class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 	return (VrmlConverter_Projector*)$self->Access();
 	}
 };
+%extend Handle_VrmlConverter_Projector {
+	~Handle_VrmlConverter_Projector() {
+	printf("Call custom destructor for instance of Handle_VrmlConverter_Projector\n");
+	}
+};
 
 %nodefaultctor Handle_VrmlConverter_IsoAspect;
 class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 	public:
-		%feature("autodoc", "1");
-		~Handle_VrmlConverter_IsoAspect();
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect();
 		%feature("autodoc", "1");
@@ -215,12 +211,15 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 	return (VrmlConverter_IsoAspect*)$self->Access();
 	}
 };
+%extend Handle_VrmlConverter_IsoAspect {
+	~Handle_VrmlConverter_IsoAspect() {
+	printf("Call custom destructor for instance of Handle_VrmlConverter_IsoAspect\n");
+	}
+};
 
 %nodefaultctor Handle_VrmlConverter_Drawer;
 class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_VrmlConverter_Drawer();
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Drawer();
 		%feature("autodoc", "1");
@@ -234,6 +233,11 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 %extend Handle_VrmlConverter_Drawer {
 	VrmlConverter_Drawer* GetObject() {
 	return (VrmlConverter_Drawer*)$self->Access();
+	}
+};
+%extend Handle_VrmlConverter_Drawer {
+	~Handle_VrmlConverter_Drawer() {
+	printf("Call custom destructor for instance of Handle_VrmlConverter_Drawer\n");
 	}
 };
 
@@ -278,13 +282,42 @@ class VrmlConverter_LineAspect : public MMgt_TShared {
 		Standard_Boolean HasMaterial() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~VrmlConverter_LineAspect();
 
 };
 %extend VrmlConverter_LineAspect {
 	Handle_VrmlConverter_LineAspect GetHandle() {
 	return *(Handle_VrmlConverter_LineAspect*) &$self;
+	}
+};
+%extend VrmlConverter_LineAspect {
+	~VrmlConverter_LineAspect() {
+	printf("Call custom destructor for instance of VrmlConverter_LineAspect\n");
+	}
+};
+
+%nodefaultctor VrmlConverter_IsoAspect;
+class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_IsoAspect();
+		%feature("autodoc", "1");
+		VrmlConverter_IsoAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff, const Standard_Integer aNumber);
+		%feature("autodoc", "1");
+		void SetNumber(const Standard_Integer aNumber);
+		%feature("autodoc", "1");
+		Standard_Integer Number() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_IsoAspect {
+	Handle_VrmlConverter_IsoAspect GetHandle() {
+	return *(Handle_VrmlConverter_IsoAspect*) &$self;
+	}
+};
+%extend VrmlConverter_IsoAspect {
+	~VrmlConverter_IsoAspect() {
+	printf("Call custom destructor for instance of VrmlConverter_IsoAspect\n");
 	}
 };
 
@@ -320,6 +353,24 @@ class VrmlConverter_ShadedShape {
 
 };
 
+%nodefaultctor VrmlConverter_WFDeflectionRestrictedFace;
+class VrmlConverter_WFDeflectionRestrictedFace {
+	public:
+		%feature("autodoc", "1");
+		~VrmlConverter_WFDeflectionRestrictedFace();
+		%feature("autodoc", "1");
+		VrmlConverter_WFDeflectionRestrictedFace();
+		%feature("autodoc", "1");
+		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		void AddUIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		void AddVIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
+
+};
+
 %nodefaultctor VrmlConverter_Projector;
 class VrmlConverter_Projector : public MMgt_TShared {
 	public:
@@ -339,8 +390,6 @@ class VrmlConverter_Projector : public MMgt_TShared {
 		HLRAlgo_Projector Projector() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~VrmlConverter_Projector();
 
 };
 %extend VrmlConverter_Projector {
@@ -348,46 +397,10 @@ class VrmlConverter_Projector : public MMgt_TShared {
 	return *(Handle_VrmlConverter_Projector*) &$self;
 	}
 };
-
-%nodefaultctor VrmlConverter_IsoAspect;
-class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_IsoAspect();
-		%feature("autodoc", "1");
-		VrmlConverter_IsoAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff, const Standard_Integer aNumber);
-		%feature("autodoc", "1");
-		void SetNumber(const Standard_Integer aNumber);
-		%feature("autodoc", "1");
-		Standard_Integer Number() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~VrmlConverter_IsoAspect();
-
-};
-%extend VrmlConverter_IsoAspect {
-	Handle_VrmlConverter_IsoAspect GetHandle() {
-	return *(Handle_VrmlConverter_IsoAspect*) &$self;
+%extend VrmlConverter_Projector {
+	~VrmlConverter_Projector() {
+	printf("Call custom destructor for instance of VrmlConverter_Projector\n");
 	}
-};
-
-%nodefaultctor VrmlConverter_WFDeflectionRestrictedFace;
-class VrmlConverter_WFDeflectionRestrictedFace {
-	public:
-		%feature("autodoc", "1");
-		~VrmlConverter_WFDeflectionRestrictedFace();
-		%feature("autodoc", "1");
-		VrmlConverter_WFDeflectionRestrictedFace();
-		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		void AddUIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		void AddVIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
-
 };
 
 %nodefaultctor VrmlConverter_Curve;
@@ -423,13 +436,16 @@ class VrmlConverter_PointAspect : public MMgt_TShared {
 		Standard_Boolean HasMaterial() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~VrmlConverter_PointAspect();
 
 };
 %extend VrmlConverter_PointAspect {
 	Handle_VrmlConverter_PointAspect GetHandle() {
 	return *(Handle_VrmlConverter_PointAspect*) &$self;
+	}
+};
+%extend VrmlConverter_PointAspect {
+	~VrmlConverter_PointAspect() {
+	printf("Call custom destructor for instance of VrmlConverter_PointAspect\n");
 	}
 };
 
@@ -522,13 +538,16 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 		void SetSeenLineAspect(const Handle_VrmlConverter_LineAspect &anAspect);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~VrmlConverter_Drawer();
 
 };
 %extend VrmlConverter_Drawer {
 	Handle_VrmlConverter_Drawer GetHandle() {
 	return *(Handle_VrmlConverter_Drawer*) &$self;
+	}
+};
+%extend VrmlConverter_Drawer {
+	~VrmlConverter_Drawer() {
+	printf("Call custom destructor for instance of VrmlConverter_Drawer\n");
 	}
 };
 
@@ -575,13 +594,16 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 		Standard_Boolean HasMaterial() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~VrmlConverter_ShadingAspect();
 
 };
 %extend VrmlConverter_ShadingAspect {
 	Handle_VrmlConverter_ShadingAspect GetHandle() {
 	return *(Handle_VrmlConverter_ShadingAspect*) &$self;
+	}
+};
+%extend VrmlConverter_ShadingAspect {
+	~VrmlConverter_ShadingAspect() {
+	printf("Call custom destructor for instance of VrmlConverter_ShadingAspect\n");
 	}
 };
 

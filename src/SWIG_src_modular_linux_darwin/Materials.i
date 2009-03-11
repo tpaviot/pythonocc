@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Materials
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Materials_SequenceNodeOfMtsSequence();
-		%feature("autodoc", "1");
 		Handle_Materials_SequenceNodeOfMtsSequence();
 		%feature("autodoc", "1");
 		Handle_Materials_SequenceNodeOfMtsSequence(const Handle_Materials_SequenceNodeOfMtsSequence &aHandle);
@@ -118,12 +102,15 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 	return (Materials_SequenceNodeOfMtsSequence*)$self->Access();
 	}
 };
+%extend Handle_Materials_SequenceNodeOfMtsSequence {
+	~Handle_Materials_SequenceNodeOfMtsSequence() {
+	printf("Call custom destructor for instance of Handle_Materials_SequenceNodeOfMtsSequence\n");
+	}
+};
 
 %nodefaultctor Handle_Materials_FuzzyInstance;
 class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Materials_FuzzyInstance();
 		%feature("autodoc", "1");
 		Handle_Materials_FuzzyInstance();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 	return (Materials_FuzzyInstance*)$self->Access();
 	}
 };
+%extend Handle_Materials_FuzzyInstance {
+	~Handle_Materials_FuzzyInstance() {
+	printf("Call custom destructor for instance of Handle_Materials_FuzzyInstance\n");
+	}
+};
 
 %nodefaultctor Handle_Materials_MaterialDefinition;
 class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitionsDictionary {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Materials_MaterialDefinition();
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialDefinition();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitio
 	return (Materials_MaterialDefinition*)$self->Access();
 	}
 };
+%extend Handle_Materials_MaterialDefinition {
+	~Handle_Materials_MaterialDefinition() {
+	printf("Call custom destructor for instance of Handle_Materials_MaterialDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_Materials_Color;
 class Handle_Materials_Color : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Materials_Color();
 		%feature("autodoc", "1");
 		Handle_Materials_Color();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_Materials_Color : public Handle_Standard_Transient {
 	return (Materials_Color*)$self->Access();
 	}
 };
+%extend Handle_Materials_Color {
+	~Handle_Materials_Color() {
+	printf("Call custom destructor for instance of Handle_Materials_Color\n");
+	}
+};
 
 %nodefaultctor Handle_Materials_Material;
 class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Materials_Material();
 		%feature("autodoc", "1");
 		Handle_Materials_Material();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
 	return (Materials_Material*)$self->Access();
 	}
 };
+%extend Handle_Materials_Material {
+	~Handle_Materials_Material() {
+	printf("Call custom destructor for instance of Handle_Materials_Material\n");
+	}
+};
 
 %nodefaultctor Handle_Materials_MaterialsDictionary;
 class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Materials_MaterialsDictionary();
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsDictionary();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 	return (Materials_MaterialsDictionary*)$self->Access();
 	}
 };
+%extend Handle_Materials_MaterialsDictionary {
+	~Handle_Materials_MaterialsDictionary() {
+	printf("Call custom destructor for instance of Handle_Materials_MaterialsDictionary\n");
+	}
+};
 
 %nodefaultctor Handle_Materials_MaterialsSequence;
 class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Materials_MaterialsSequence();
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsSequence();
 		%feature("autodoc", "1");
@@ -242,6 +244,11 @@ class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
 %extend Handle_Materials_MaterialsSequence {
 	Materials_MaterialsSequence* GetObject() {
 	return (Materials_MaterialsSequence*)$self->Access();
+	}
+};
+%extend Handle_Materials_MaterialsSequence {
+	~Handle_Materials_MaterialsSequence() {
+	printf("Call custom destructor for instance of Handle_Materials_MaterialsSequence\n");
 	}
 };
 
@@ -264,13 +271,16 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Materials_MaterialsDictionary();
 
 };
 %extend Materials_MaterialsDictionary {
 	Handle_Materials_MaterialsDictionary GetHandle() {
 	return *(Handle_Materials_MaterialsDictionary*) &$self;
+	}
+};
+%extend Materials_MaterialsDictionary {
+	~Materials_MaterialsDictionary() {
+	printf("Call custom destructor for instance of Materials_MaterialsDictionary\n");
 	}
 };
 
@@ -309,13 +319,16 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 		virtual		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Materials_FuzzyInstance();
 
 };
 %extend Materials_FuzzyInstance {
 	Handle_Materials_FuzzyInstance GetHandle() {
 	return *(Handle_Materials_FuzzyInstance*) &$self;
+	}
+};
+%extend Materials_FuzzyInstance {
+	~Materials_FuzzyInstance() {
+	printf("Call custom destructor for instance of Materials_FuzzyInstance\n");
 	}
 };
 
@@ -326,13 +339,16 @@ class Materials_Material : public Materials_FuzzyInstance {
 		Materials_Material(const char * amaterial);
 		%feature("autodoc", "1");
 		TCollection_AsciiString Name() const;
-		%feature("autodoc", "1");
-		virtual		~Materials_Material();
 
 };
 %extend Materials_Material {
 	Handle_Materials_Material GetHandle() {
 	return *(Handle_Materials_Material*) &$self;
+	}
+};
+%extend Materials_Material {
+	~Materials_Material() {
+	printf("Call custom destructor for instance of Materials_Material\n");
 	}
 };
 
@@ -345,13 +361,16 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 		Handle_Materials_Material & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Materials_SequenceNodeOfMtsSequence();
 
 };
 %extend Materials_SequenceNodeOfMtsSequence {
 	Handle_Materials_SequenceNodeOfMtsSequence GetHandle() {
 	return *(Handle_Materials_SequenceNodeOfMtsSequence*) &$self;
+	}
+};
+%extend Materials_SequenceNodeOfMtsSequence {
+	~Materials_SequenceNodeOfMtsSequence() {
+	printf("Call custom destructor for instance of Materials_SequenceNodeOfMtsSequence\n");
 	}
 };
 
@@ -364,8 +383,6 @@ class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 		virtual		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Materials_MaterialDefinition();
 
 };
 %extend Materials_MaterialDefinition {
@@ -373,12 +390,15 @@ class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 	return *(Handle_Materials_MaterialDefinition*) &$self;
 	}
 };
+%extend Materials_MaterialDefinition {
+	~Materials_MaterialDefinition() {
+	printf("Call custom destructor for instance of Materials_MaterialDefinition\n");
+	}
+};
 
 %nodefaultctor Materials;
 class Materials {
 	public:
-		%feature("autodoc", "1");
-		~Materials();
 		%feature("autodoc", "1");
 		Materials();
 		%feature("autodoc", "1");
@@ -399,6 +419,11 @@ class Materials {
 		Handle_Materials_Material Material(const Standard_Integer anindex);
 
 };
+%extend Materials {
+	~Materials() {
+	printf("Call custom destructor for instance of Materials\n");
+	}
+};
 
 %nodefaultctor Materials_MtsSequence;
 class Materials_MtsSequence : public TCollection_BaseSequence {
@@ -407,8 +432,6 @@ class Materials_MtsSequence : public TCollection_BaseSequence {
 		Materials_MtsSequence();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Materials_MtsSequence();
 		%feature("autodoc", "1");
 		const Materials_MtsSequence & Assign(const Materials_MtsSequence &Other);
 		%feature("autodoc", "1");
@@ -448,6 +471,11 @@ class Materials_MtsSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Materials_MtsSequence {
+	~Materials_MtsSequence() {
+	printf("Call custom destructor for instance of Materials_MtsSequence\n");
+	}
 };
 
 %nodefaultctor Materials_MaterialsSequence;
@@ -501,13 +529,16 @@ class Materials_MaterialsSequence : public MMgt_TShared {
 		Handle_Materials_MaterialsSequence ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Materials_MaterialsSequence();
 
 };
 %extend Materials_MaterialsSequence {
 	Handle_Materials_MaterialsSequence GetHandle() {
 	return *(Handle_Materials_MaterialsSequence*) &$self;
+	}
+};
+%extend Materials_MaterialsSequence {
+	~Materials_MaterialsSequence() {
+	printf("Call custom destructor for instance of Materials_MaterialsSequence\n");
 	}
 };
 
@@ -532,12 +563,15 @@ class Materials_Color : public Standard_Transient {
 		void SetColor255(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Materials_Color();
 
 };
 %extend Materials_Color {
 	Handle_Materials_Color GetHandle() {
 	return *(Handle_Materials_Color*) &$self;
+	}
+};
+%extend Materials_Color {
+	~Materials_Color() {
+	printf("Call custom destructor for instance of Materials_Color\n");
 	}
 };

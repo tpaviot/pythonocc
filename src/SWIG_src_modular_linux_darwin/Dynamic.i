@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Dynamic
 
@@ -110,8 +96,6 @@ enum Dynamic_ModeEnum {
 class Handle_Dynamic_DynamicInstance : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Dynamic_DynamicInstance();
-		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicInstance();
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicInstance(const Handle_Dynamic_DynamicInstance &aHandle);
@@ -126,33 +110,15 @@ class Handle_Dynamic_DynamicInstance : public Handle_MMgt_TShared {
 	return (Dynamic_DynamicInstance*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfMethods;
-class Handle_Dynamic_SequenceNodeOfSeqOfMethods : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_SequenceNodeOfSeqOfMethods();
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethods();
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethods(const Handle_Dynamic_SequenceNodeOfSeqOfMethods &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethods(const Dynamic_SequenceNodeOfSeqOfMethods *anItem);
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethods const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Dynamic_SequenceNodeOfSeqOfMethods {
-	Dynamic_SequenceNodeOfSeqOfMethods* GetObject() {
-	return (Dynamic_SequenceNodeOfSeqOfMethods*)$self->Access();
+%extend Handle_Dynamic_DynamicInstance {
+	~Handle_Dynamic_DynamicInstance() {
+	printf("Call custom destructor for instance of Handle_Dynamic_DynamicInstance\n");
 	}
 };
 
 %nodefaultctor Handle_Dynamic_Variable;
 class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_Variable();
 		%feature("autodoc", "1");
 		Handle_Dynamic_Variable();
 		%feature("autodoc", "1");
@@ -168,12 +134,15 @@ class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 	return (Dynamic_Variable*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_Variable {
+	~Handle_Dynamic_Variable() {
+	printf("Call custom destructor for instance of Handle_Dynamic_Variable\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_VariableNode;
 class Handle_Dynamic_VariableNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_VariableNode();
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableNode();
 		%feature("autodoc", "1");
@@ -189,12 +158,15 @@ class Handle_Dynamic_VariableNode : public Handle_MMgt_TShared {
 	return (Dynamic_VariableNode*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_VariableNode {
+	~Handle_Dynamic_VariableNode() {
+	printf("Call custom destructor for instance of Handle_Dynamic_VariableNode\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions;
 class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions();
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions();
 		%feature("autodoc", "1");
@@ -210,12 +182,15 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TColle
 	return (Dynamic_SequenceNodeOfSeqOfMethodDefinitions*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
+	~Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions() {
+	printf("Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfClasses;
 class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_SequenceNodeOfSeqOfClasses();
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfClasses();
 		%feature("autodoc", "1");
@@ -231,12 +206,15 @@ class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqN
 	return (Dynamic_SequenceNodeOfSeqOfClasses*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_SequenceNodeOfSeqOfClasses {
+	~Handle_Dynamic_SequenceNodeOfSeqOfClasses() {
+	printf("Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfClasses\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_ParameterNode;
 class Handle_Dynamic_ParameterNode : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_ParameterNode();
 		%feature("autodoc", "1");
 		Handle_Dynamic_ParameterNode();
 		%feature("autodoc", "1");
@@ -252,12 +230,15 @@ class Handle_Dynamic_ParameterNode : public Handle_MMgt_TShared {
 	return (Dynamic_ParameterNode*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_ParameterNode {
+	~Handle_Dynamic_ParameterNode() {
+	printf("Call custom destructor for instance of Handle_Dynamic_ParameterNode\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_FuzzyClass;
 class Handle_Dynamic_FuzzyClass : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_FuzzyClass();
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyClass();
 		%feature("autodoc", "1");
@@ -273,12 +254,15 @@ class Handle_Dynamic_FuzzyClass : public Handle_MMgt_TShared {
 	return (Dynamic_FuzzyClass*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_FuzzyClass {
+	~Handle_Dynamic_FuzzyClass() {
+	printf("Call custom destructor for instance of Handle_Dynamic_FuzzyClass\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_FuzzyDefinition;
 class Handle_Dynamic_FuzzyDefinition : public Handle_Dynamic_FuzzyClass {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_FuzzyDefinition();
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinition();
 		%feature("autodoc", "1");
@@ -294,12 +278,15 @@ class Handle_Dynamic_FuzzyDefinition : public Handle_Dynamic_FuzzyClass {
 	return (Dynamic_FuzzyDefinition*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_FuzzyDefinition {
+	~Handle_Dynamic_FuzzyDefinition() {
+	printf("Call custom destructor for instance of Handle_Dynamic_FuzzyDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_Method;
 class Handle_Dynamic_Method : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_Method();
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method();
 		%feature("autodoc", "1");
@@ -315,12 +302,15 @@ class Handle_Dynamic_Method : public Handle_MMgt_TShared {
 	return (Dynamic_Method*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_Method {
+	~Handle_Dynamic_Method() {
+	printf("Call custom destructor for instance of Handle_Dynamic_Method\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_Parameter;
 class Handle_Dynamic_Parameter : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_Parameter();
 		%feature("autodoc", "1");
 		Handle_Dynamic_Parameter();
 		%feature("autodoc", "1");
@@ -336,12 +326,15 @@ class Handle_Dynamic_Parameter : public Handle_MMgt_TShared {
 	return (Dynamic_Parameter*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_Parameter {
+	~Handle_Dynamic_Parameter() {
+	printf("Call custom destructor for instance of Handle_Dynamic_Parameter\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_RealParameter;
 class Handle_Dynamic_RealParameter : public Handle_Dynamic_Parameter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_RealParameter();
 		%feature("autodoc", "1");
 		Handle_Dynamic_RealParameter();
 		%feature("autodoc", "1");
@@ -357,12 +350,39 @@ class Handle_Dynamic_RealParameter : public Handle_Dynamic_Parameter {
 	return (Dynamic_RealParameter*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_RealParameter {
+	~Handle_Dynamic_RealParameter() {
+	printf("Call custom destructor for instance of Handle_Dynamic_RealParameter\n");
+	}
+};
+
+%nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfMethods;
+class Handle_Dynamic_SequenceNodeOfSeqOfMethods : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceNodeOfSeqOfMethods();
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceNodeOfSeqOfMethods(const Handle_Dynamic_SequenceNodeOfSeqOfMethods &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceNodeOfSeqOfMethods(const Dynamic_SequenceNodeOfSeqOfMethods *anItem);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceNodeOfSeqOfMethods const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Dynamic_SequenceNodeOfSeqOfMethods {
+	Dynamic_SequenceNodeOfSeqOfMethods* GetObject() {
+	return (Dynamic_SequenceNodeOfSeqOfMethods*)$self->Access();
+	}
+};
+%extend Handle_Dynamic_SequenceNodeOfSeqOfMethods {
+	~Handle_Dynamic_SequenceNodeOfSeqOfMethods() {
+	printf("Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethods\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_MethodDefinition;
 class Handle_Dynamic_MethodDefinition : public Handle_Dynamic_Method {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_MethodDefinition();
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinition();
 		%feature("autodoc", "1");
@@ -378,12 +398,15 @@ class Handle_Dynamic_MethodDefinition : public Handle_Dynamic_Method {
 	return (Dynamic_MethodDefinition*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_MethodDefinition {
+	~Handle_Dynamic_MethodDefinition() {
+	printf("Call custom destructor for instance of Handle_Dynamic_MethodDefinition\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_CompiledMethod;
 class Handle_Dynamic_CompiledMethod : public Handle_Dynamic_MethodDefinition {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_CompiledMethod();
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompiledMethod();
 		%feature("autodoc", "1");
@@ -399,12 +422,15 @@ class Handle_Dynamic_CompiledMethod : public Handle_Dynamic_MethodDefinition {
 	return (Dynamic_CompiledMethod*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_CompiledMethod {
+	~Handle_Dynamic_CompiledMethod() {
+	printf("Call custom destructor for instance of Handle_Dynamic_CompiledMethod\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_InterpretedMethod;
 class Handle_Dynamic_InterpretedMethod : public Handle_Dynamic_MethodDefinition {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_InterpretedMethod();
 		%feature("autodoc", "1");
 		Handle_Dynamic_InterpretedMethod();
 		%feature("autodoc", "1");
@@ -420,12 +446,15 @@ class Handle_Dynamic_InterpretedMethod : public Handle_Dynamic_MethodDefinition 
 	return (Dynamic_InterpretedMethod*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_InterpretedMethod {
+	~Handle_Dynamic_InterpretedMethod() {
+	printf("Call custom destructor for instance of Handle_Dynamic_InterpretedMethod\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_BooleanParameter;
 class Handle_Dynamic_BooleanParameter : public Handle_Dynamic_Parameter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_BooleanParameter();
 		%feature("autodoc", "1");
 		Handle_Dynamic_BooleanParameter();
 		%feature("autodoc", "1");
@@ -441,12 +470,15 @@ class Handle_Dynamic_BooleanParameter : public Handle_Dynamic_Parameter {
 	return (Dynamic_BooleanParameter*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_BooleanParameter {
+	~Handle_Dynamic_BooleanParameter() {
+	printf("Call custom destructor for instance of Handle_Dynamic_BooleanParameter\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_SequenceOfFuzzyDefinitions;
 class Handle_Dynamic_SequenceOfFuzzyDefinitions : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_SequenceOfFuzzyDefinitions();
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfFuzzyDefinitions();
 		%feature("autodoc", "1");
@@ -462,12 +494,15 @@ class Handle_Dynamic_SequenceOfFuzzyDefinitions : public Handle_MMgt_TShared {
 	return (Dynamic_SequenceOfFuzzyDefinitions*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_SequenceOfFuzzyDefinitions {
+	~Handle_Dynamic_SequenceOfFuzzyDefinitions() {
+	printf("Call custom destructor for instance of Handle_Dynamic_SequenceOfFuzzyDefinitions\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_AbstractVariableInstance;
 class Handle_Dynamic_AbstractVariableInstance : public Handle_Dynamic_Variable {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_AbstractVariableInstance();
 		%feature("autodoc", "1");
 		Handle_Dynamic_AbstractVariableInstance();
 		%feature("autodoc", "1");
@@ -483,12 +518,15 @@ class Handle_Dynamic_AbstractVariableInstance : public Handle_Dynamic_Variable {
 	return (Dynamic_AbstractVariableInstance*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_AbstractVariableInstance {
+	~Handle_Dynamic_AbstractVariableInstance() {
+	printf("Call custom destructor for instance of Handle_Dynamic_AbstractVariableInstance\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_VariableInstance;
 class Handle_Dynamic_VariableInstance : public Handle_Dynamic_AbstractVariableInstance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_VariableInstance();
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableInstance();
 		%feature("autodoc", "1");
@@ -504,12 +542,15 @@ class Handle_Dynamic_VariableInstance : public Handle_Dynamic_AbstractVariableIn
 	return (Dynamic_VariableInstance*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_VariableInstance {
+	~Handle_Dynamic_VariableInstance() {
+	printf("Call custom destructor for instance of Handle_Dynamic_VariableInstance\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_VariableGroup;
 class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_VariableGroup();
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableGroup();
 		%feature("autodoc", "1");
@@ -525,12 +566,15 @@ class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 	return (Dynamic_VariableGroup*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_VariableGroup {
+	~Handle_Dynamic_VariableGroup() {
+	printf("Call custom destructor for instance of Handle_Dynamic_VariableGroup\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_IntegerParameter;
 class Handle_Dynamic_IntegerParameter : public Handle_Dynamic_Parameter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_IntegerParameter();
 		%feature("autodoc", "1");
 		Handle_Dynamic_IntegerParameter();
 		%feature("autodoc", "1");
@@ -546,12 +590,15 @@ class Handle_Dynamic_IntegerParameter : public Handle_Dynamic_Parameter {
 	return (Dynamic_IntegerParameter*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_IntegerParameter {
+	~Handle_Dynamic_IntegerParameter() {
+	printf("Call custom destructor for instance of Handle_Dynamic_IntegerParameter\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_CompositVariableInstance;
 class Handle_Dynamic_CompositVariableInstance : public Handle_Dynamic_AbstractVariableInstance {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_CompositVariableInstance();
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompositVariableInstance();
 		%feature("autodoc", "1");
@@ -567,12 +614,15 @@ class Handle_Dynamic_CompositVariableInstance : public Handle_Dynamic_AbstractVa
 	return (Dynamic_CompositVariableInstance*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_CompositVariableInstance {
+	~Handle_Dynamic_CompositVariableInstance() {
+	printf("Call custom destructor for instance of Handle_Dynamic_CompositVariableInstance\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_SequenceOfClasses;
 class Handle_Dynamic_SequenceOfClasses : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_SequenceOfClasses();
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfClasses();
 		%feature("autodoc", "1");
@@ -588,12 +638,15 @@ class Handle_Dynamic_SequenceOfClasses : public Handle_MMgt_TShared {
 	return (Dynamic_SequenceOfClasses*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_SequenceOfClasses {
+	~Handle_Dynamic_SequenceOfClasses() {
+	printf("Call custom destructor for instance of Handle_Dynamic_SequenceOfClasses\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_MethodDefinitionsDictionary;
 class Handle_Dynamic_MethodDefinitionsDictionary : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_MethodDefinitionsDictionary();
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinitionsDictionary();
 		%feature("autodoc", "1");
@@ -609,12 +662,15 @@ class Handle_Dynamic_MethodDefinitionsDictionary : public Handle_Standard_Transi
 	return (Dynamic_MethodDefinitionsDictionary*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_MethodDefinitionsDictionary {
+	~Handle_Dynamic_MethodDefinitionsDictionary() {
+	printf("Call custom destructor for instance of Handle_Dynamic_MethodDefinitionsDictionary\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_SequenceOfMethodDefinitions;
 class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_SequenceOfMethodDefinitions();
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethodDefinitions();
 		%feature("autodoc", "1");
@@ -630,12 +686,15 @@ class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
 	return (Dynamic_SequenceOfMethodDefinitions*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_SequenceOfMethodDefinitions {
+	~Handle_Dynamic_SequenceOfMethodDefinitions() {
+	printf("Call custom destructor for instance of Handle_Dynamic_SequenceOfMethodDefinitions\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_SequenceOfMethods;
 class Handle_Dynamic_SequenceOfMethods : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_SequenceOfMethods();
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethods();
 		%feature("autodoc", "1");
@@ -651,12 +710,15 @@ class Handle_Dynamic_SequenceOfMethods : public Handle_MMgt_TShared {
 	return (Dynamic_SequenceOfMethods*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_SequenceOfMethods {
+	~Handle_Dynamic_SequenceOfMethods() {
+	printf("Call custom destructor for instance of Handle_Dynamic_SequenceOfMethods\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions;
 class Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions();
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions();
 		%feature("autodoc", "1");
@@ -672,12 +734,15 @@ class Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public Handle_TCollec
 	return (Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
+	~Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions() {
+	printf("Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_InstanceParameter;
 class Handle_Dynamic_InstanceParameter : public Handle_Dynamic_Parameter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_InstanceParameter();
 		%feature("autodoc", "1");
 		Handle_Dynamic_InstanceParameter();
 		%feature("autodoc", "1");
@@ -693,12 +758,15 @@ class Handle_Dynamic_InstanceParameter : public Handle_Dynamic_Parameter {
 	return (Dynamic_InstanceParameter*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_InstanceParameter {
+	~Handle_Dynamic_InstanceParameter() {
+	printf("Call custom destructor for instance of Handle_Dynamic_InstanceParameter\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_DynamicClass;
 class Handle_Dynamic_DynamicClass : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_DynamicClass();
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicClass();
 		%feature("autodoc", "1");
@@ -714,12 +782,15 @@ class Handle_Dynamic_DynamicClass : public Handle_MMgt_TShared {
 	return (Dynamic_DynamicClass*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_DynamicClass {
+	~Handle_Dynamic_DynamicClass() {
+	printf("Call custom destructor for instance of Handle_Dynamic_DynamicClass\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_DynamicDerivedClass;
 class Handle_Dynamic_DynamicDerivedClass : public Handle_Dynamic_DynamicClass {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_DynamicDerivedClass();
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicDerivedClass();
 		%feature("autodoc", "1");
@@ -735,12 +806,15 @@ class Handle_Dynamic_DynamicDerivedClass : public Handle_Dynamic_DynamicClass {
 	return (Dynamic_DynamicDerivedClass*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_DynamicDerivedClass {
+	~Handle_Dynamic_DynamicDerivedClass() {
+	printf("Call custom destructor for instance of Handle_Dynamic_DynamicDerivedClass\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_StringParameter;
 class Handle_Dynamic_StringParameter : public Handle_Dynamic_Parameter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_StringParameter();
 		%feature("autodoc", "1");
 		Handle_Dynamic_StringParameter();
 		%feature("autodoc", "1");
@@ -756,12 +830,15 @@ class Handle_Dynamic_StringParameter : public Handle_Dynamic_Parameter {
 	return (Dynamic_StringParameter*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_StringParameter {
+	~Handle_Dynamic_StringParameter() {
+	printf("Call custom destructor for instance of Handle_Dynamic_StringParameter\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_CompositMethod;
 class Handle_Dynamic_CompositMethod : public Handle_Dynamic_MethodDefinition {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_CompositMethod();
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompositMethod();
 		%feature("autodoc", "1");
@@ -777,12 +854,15 @@ class Handle_Dynamic_CompositMethod : public Handle_Dynamic_MethodDefinition {
 	return (Dynamic_CompositMethod*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_CompositMethod {
+	~Handle_Dynamic_CompositMethod() {
+	printf("Call custom destructor for instance of Handle_Dynamic_CompositMethod\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_ObjectParameter;
 class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_ObjectParameter();
 		%feature("autodoc", "1");
 		Handle_Dynamic_ObjectParameter();
 		%feature("autodoc", "1");
@@ -798,12 +878,15 @@ class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
 	return (Dynamic_ObjectParameter*)$self->Access();
 	}
 };
+%extend Handle_Dynamic_ObjectParameter {
+	~Handle_Dynamic_ObjectParameter() {
+	printf("Call custom destructor for instance of Handle_Dynamic_ObjectParameter\n");
+	}
+};
 
 %nodefaultctor Handle_Dynamic_FuzzyDefinitionsDictionary;
 class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Dynamic_FuzzyDefinitionsDictionary();
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinitionsDictionary();
 		%feature("autodoc", "1");
@@ -817,6 +900,11 @@ class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
 %extend Handle_Dynamic_FuzzyDefinitionsDictionary {
 	Dynamic_FuzzyDefinitionsDictionary* GetObject() {
 	return (Dynamic_FuzzyDefinitionsDictionary*)$self->Access();
+	}
+};
+%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
+	~Handle_Dynamic_FuzzyDefinitionsDictionary() {
+	printf("Call custom destructor for instance of Handle_Dynamic_FuzzyDefinitionsDictionary\n");
 	}
 };
 
@@ -846,19 +934,27 @@ class Dynamic_Method : public MMgt_TShared {
 	return *(Handle_Dynamic_Method*) &$self;
 	}
 };
+%extend Dynamic_Method {
+	~Dynamic_Method() {
+	printf("Call custom destructor for instance of Dynamic_Method\n");
+	}
+};
 
 %nodefaultctor Dynamic_MethodDefinition;
 class Dynamic_MethodDefinition : public Dynamic_Method {
 	public:
 		%feature("autodoc", "1");
 		void AddVariable(const Handle_Dynamic_Parameter &aparameter, const Dynamic_ModeEnum amode, const Standard_Boolean agroup=0);
-		%feature("autodoc", "1");
-		virtual		~Dynamic_MethodDefinition();
 
 };
 %extend Dynamic_MethodDefinition {
 	Handle_Dynamic_MethodDefinition GetHandle() {
 	return *(Handle_Dynamic_MethodDefinition*) &$self;
+	}
+};
+%extend Dynamic_MethodDefinition {
+	~Dynamic_MethodDefinition() {
+	printf("Call custom destructor for instance of Dynamic_MethodDefinition\n");
 	}
 };
 
@@ -873,13 +969,69 @@ class Dynamic_InterpretedMethod : public Dynamic_MethodDefinition {
 		TCollection_AsciiString Function() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_InterpretedMethod();
 
 };
 %extend Dynamic_InterpretedMethod {
 	Handle_Dynamic_InterpretedMethod GetHandle() {
 	return *(Handle_Dynamic_InterpretedMethod*) &$self;
+	}
+};
+%extend Dynamic_InterpretedMethod {
+	~Dynamic_InterpretedMethod() {
+	printf("Call custom destructor for instance of Dynamic_InterpretedMethod\n");
+	}
+};
+
+%nodefaultctor Dynamic_SeqOfMethodDefinitions;
+class Dynamic_SeqOfMethodDefinitions : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_SeqOfMethodDefinitions();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Dynamic_SeqOfMethodDefinitions & Assign(const Dynamic_SeqOfMethodDefinitions &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Dynamic_MethodDefinition &T);
+		%feature("autodoc", "1");
+		void Append(Dynamic_SeqOfMethodDefinitions & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Dynamic_MethodDefinition &T);
+		%feature("autodoc", "1");
+		void Prepend(Dynamic_SeqOfMethodDefinitions & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Dynamic_MethodDefinition &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Dynamic_SeqOfMethodDefinitions & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Dynamic_MethodDefinition &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Dynamic_SeqOfMethodDefinitions & S);
+		%feature("autodoc", "1");
+		const Handle_Dynamic_MethodDefinition & First() const;
+		%feature("autodoc", "1");
+		const Handle_Dynamic_MethodDefinition & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Dynamic_SeqOfMethodDefinitions & S);
+		%feature("autodoc", "1");
+		const Handle_Dynamic_MethodDefinition & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Dynamic_MethodDefinition & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Dynamic_MethodDefinition &I);
+		%feature("autodoc", "1");
+		Handle_Dynamic_MethodDefinition & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Dynamic_MethodDefinition & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Dynamic_SeqOfMethodDefinitions {
+	~Dynamic_SeqOfMethodDefinitions() {
+	printf("Call custom destructor for instance of Dynamic_SeqOfMethodDefinitions\n");
 	}
 };
 
@@ -902,13 +1054,16 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 		virtual		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_DynamicClass();
 
 };
 %extend Dynamic_DynamicClass {
 	Handle_Dynamic_DynamicClass GetHandle() {
 	return *(Handle_Dynamic_DynamicClass*) &$self;
+	}
+};
+%extend Dynamic_DynamicClass {
+	~Dynamic_DynamicClass() {
+	printf("Call custom destructor for instance of Dynamic_DynamicClass\n");
 	}
 };
 
@@ -923,13 +1078,16 @@ class Dynamic_CompiledMethod : public Dynamic_MethodDefinition {
 		TCollection_AsciiString Function() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_CompiledMethod();
 
 };
 %extend Dynamic_CompiledMethod {
 	Handle_Dynamic_CompiledMethod GetHandle() {
 	return *(Handle_Dynamic_CompiledMethod*) &$self;
+	}
+};
+%extend Dynamic_CompiledMethod {
+	~Dynamic_CompiledMethod() {
+	printf("Call custom destructor for instance of Dynamic_CompiledMethod\n");
 	}
 };
 
@@ -942,13 +1100,16 @@ class Dynamic_SequenceNodeOfSeqOfClasses : public TCollection_SeqNode {
 		Handle_Dynamic_DynamicClass & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_SequenceNodeOfSeqOfClasses();
 
 };
 %extend Dynamic_SequenceNodeOfSeqOfClasses {
 	Handle_Dynamic_SequenceNodeOfSeqOfClasses GetHandle() {
 	return *(Handle_Dynamic_SequenceNodeOfSeqOfClasses*) &$self;
+	}
+};
+%extend Dynamic_SequenceNodeOfSeqOfClasses {
+	~Dynamic_SequenceNodeOfSeqOfClasses() {
+	printf("Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfClasses\n");
 	}
 };
 
@@ -961,13 +1122,40 @@ class Dynamic_Parameter : public MMgt_TShared {
 		virtual		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_Parameter();
 
 };
 %extend Dynamic_Parameter {
 	Handle_Dynamic_Parameter GetHandle() {
 	return *(Handle_Dynamic_Parameter*) &$self;
+	}
+};
+%extend Dynamic_Parameter {
+	~Dynamic_Parameter() {
+	printf("Call custom destructor for instance of Dynamic_Parameter\n");
+	}
+};
+
+%nodefaultctor Dynamic_InstanceParameter;
+class Dynamic_InstanceParameter : public Dynamic_Parameter {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_InstanceParameter(const char * aparameter);
+		%feature("autodoc", "1");
+		Dynamic_InstanceParameter(const char * aparameter, const Handle_Dynamic_DynamicInstance &avalue);
+		%feature("autodoc", "1");
+		Handle_Dynamic_DynamicInstance Value() const;
+		%feature("autodoc", "1");
+		void Value(const Handle_Dynamic_DynamicInstance &avalue);
+
+};
+%extend Dynamic_InstanceParameter {
+	Handle_Dynamic_InstanceParameter GetHandle() {
+	return *(Handle_Dynamic_InstanceParameter*) &$self;
+	}
+};
+%extend Dynamic_InstanceParameter {
+	~Dynamic_InstanceParameter() {
+	printf("Call custom destructor for instance of Dynamic_InstanceParameter\n");
 	}
 };
 
@@ -978,8 +1166,6 @@ class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
 		Dynamic_SeqOfMethods();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Dynamic_SeqOfMethods();
 		%feature("autodoc", "1");
 		const Dynamic_SeqOfMethods & Assign(const Dynamic_SeqOfMethods &Other);
 		%feature("autodoc", "1");
@@ -1020,6 +1206,11 @@ class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Dynamic_SeqOfMethods {
+	~Dynamic_SeqOfMethods() {
+	printf("Call custom destructor for instance of Dynamic_SeqOfMethods\n");
+	}
+};
 
 %nodefaultctor Dynamic_MethodDefinitionsDictionary;
 class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
@@ -1042,13 +1233,16 @@ class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_MethodDefinitionsDictionary();
 
 };
 %extend Dynamic_MethodDefinitionsDictionary {
 	Handle_Dynamic_MethodDefinitionsDictionary GetHandle() {
 	return *(Handle_Dynamic_MethodDefinitionsDictionary*) &$self;
+	}
+};
+%extend Dynamic_MethodDefinitionsDictionary {
+	~Dynamic_MethodDefinitionsDictionary() {
+	printf("Call custom destructor for instance of Dynamic_MethodDefinitionsDictionary\n");
 	}
 };
 
@@ -1069,13 +1263,16 @@ class Dynamic_VariableNode : public MMgt_TShared {
 		Handle_Dynamic_VariableNode Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_VariableNode();
 
 };
 %extend Dynamic_VariableNode {
 	Handle_Dynamic_VariableNode GetHandle() {
 	return *(Handle_Dynamic_VariableNode*) &$self;
+	}
+};
+%extend Dynamic_VariableNode {
+	~Dynamic_VariableNode() {
+	printf("Call custom destructor for instance of Dynamic_VariableNode\n");
 	}
 };
 
@@ -1096,13 +1293,16 @@ class Dynamic_Variable : public MMgt_TShared {
 		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_Variable();
 
 };
 %extend Dynamic_Variable {
 	Handle_Dynamic_Variable GetHandle() {
 	return *(Handle_Dynamic_Variable*) &$self;
+	}
+};
+%extend Dynamic_Variable {
+	~Dynamic_Variable() {
+	printf("Call custom destructor for instance of Dynamic_Variable\n");
 	}
 };
 
@@ -1111,13 +1311,16 @@ class Dynamic_VariableGroup : public Dynamic_Variable {
 	public:
 		%feature("autodoc", "1");
 		Dynamic_VariableGroup();
-		%feature("autodoc", "1");
-		virtual		~Dynamic_VariableGroup();
 
 };
 %extend Dynamic_VariableGroup {
 	Handle_Dynamic_VariableGroup GetHandle() {
 	return *(Handle_Dynamic_VariableGroup*) &$self;
+	}
+};
+%extend Dynamic_VariableGroup {
+	~Dynamic_VariableGroup() {
+	printf("Call custom destructor for instance of Dynamic_VariableGroup\n");
 	}
 };
 
@@ -1172,13 +1375,16 @@ class Dynamic_SequenceOfMethods : public MMgt_TShared {
 		Handle_Dynamic_SequenceOfMethods ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_SequenceOfMethods();
 
 };
 %extend Dynamic_SequenceOfMethods {
 	Handle_Dynamic_SequenceOfMethods GetHandle() {
 	return *(Handle_Dynamic_SequenceOfMethods*) &$self;
+	}
+};
+%extend Dynamic_SequenceOfMethods {
+	~Dynamic_SequenceOfMethods() {
+	printf("Call custom destructor for instance of Dynamic_SequenceOfMethods\n");
 	}
 };
 
@@ -1197,13 +1403,16 @@ class Dynamic_RealParameter : public Dynamic_Parameter {
 		virtual		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_RealParameter();
 
 };
 %extend Dynamic_RealParameter {
 	Handle_Dynamic_RealParameter GetHandle() {
 	return *(Handle_Dynamic_RealParameter*) &$self;
+	}
+};
+%extend Dynamic_RealParameter {
+	~Dynamic_RealParameter() {
+	printf("Call custom destructor for instance of Dynamic_RealParameter\n");
 	}
 };
 
@@ -1216,13 +1425,16 @@ class Dynamic_SequenceNodeOfSeqOfMethods : public TCollection_SeqNode {
 		Handle_Dynamic_Method & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_SequenceNodeOfSeqOfMethods();
 
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethods {
 	Handle_Dynamic_SequenceNodeOfSeqOfMethods GetHandle() {
 	return *(Handle_Dynamic_SequenceNodeOfSeqOfMethods*) &$self;
+	}
+};
+%extend Dynamic_SequenceNodeOfSeqOfMethods {
+	~Dynamic_SequenceNodeOfSeqOfMethods() {
+	printf("Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethods\n");
 	}
 };
 
@@ -1243,13 +1455,44 @@ class Dynamic_BooleanParameter : public Dynamic_Parameter {
 		virtual		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_BooleanParameter();
 
 };
 %extend Dynamic_BooleanParameter {
 	Handle_Dynamic_BooleanParameter GetHandle() {
 	return *(Handle_Dynamic_BooleanParameter*) &$self;
+	}
+};
+%extend Dynamic_BooleanParameter {
+	~Dynamic_BooleanParameter() {
+	printf("Call custom destructor for instance of Dynamic_BooleanParameter\n");
+	}
+};
+
+%nodefaultctor Dynamic_StringParameter;
+class Dynamic_StringParameter : public Dynamic_Parameter {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_StringParameter(const char * aparameter);
+		%feature("autodoc", "1");
+		Dynamic_StringParameter(const char * aparameter, const char * astring);
+		%feature("autodoc", "1");
+		TCollection_AsciiString Value() const;
+		%feature("autodoc", "1");
+		void Value(const char * avalue);
+		%feature("autodoc", "1");
+		virtual		void Dump(Standard_OStream & astream) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Dynamic_StringParameter {
+	Handle_Dynamic_StringParameter GetHandle() {
+	return *(Handle_Dynamic_StringParameter*) &$self;
+	}
+};
+%extend Dynamic_StringParameter {
+	~Dynamic_StringParameter() {
+	printf("Call custom destructor for instance of Dynamic_StringParameter\n");
 	}
 };
 
@@ -1278,13 +1521,16 @@ class Dynamic_DynamicInstance : public MMgt_TShared {
 		void Execute(const char * amethod) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_DynamicInstance();
 
 };
 %extend Dynamic_DynamicInstance {
 	Handle_Dynamic_DynamicInstance GetHandle() {
 	return *(Handle_Dynamic_DynamicInstance*) &$self;
+	}
+};
+%extend Dynamic_DynamicInstance {
+	~Dynamic_DynamicInstance() {
+	printf("Call custom destructor for instance of Dynamic_DynamicInstance\n");
 	}
 };
 
@@ -1295,8 +1541,6 @@ class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
 		Dynamic_SeqOfClasses();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Dynamic_SeqOfClasses();
 		%feature("autodoc", "1");
 		const Dynamic_SeqOfClasses & Assign(const Dynamic_SeqOfClasses &Other);
 		%feature("autodoc", "1");
@@ -1337,6 +1581,11 @@ class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Dynamic_SeqOfClasses {
+	~Dynamic_SeqOfClasses() {
+	printf("Call custom destructor for instance of Dynamic_SeqOfClasses\n");
+	}
+};
 
 %nodefaultctor Dynamic_ParameterNode;
 class Dynamic_ParameterNode : public MMgt_TShared {
@@ -1355,13 +1604,16 @@ class Dynamic_ParameterNode : public MMgt_TShared {
 		Handle_Dynamic_ParameterNode Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_ParameterNode();
 
 };
 %extend Dynamic_ParameterNode {
 	Handle_Dynamic_ParameterNode GetHandle() {
 	return *(Handle_Dynamic_ParameterNode*) &$self;
+	}
+};
+%extend Dynamic_ParameterNode {
+	~Dynamic_ParameterNode() {
+	printf("Call custom destructor for instance of Dynamic_ParameterNode\n");
 	}
 };
 
@@ -1407,19 +1659,27 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 	return *(Handle_Dynamic_FuzzyClass*) &$self;
 	}
 };
+%extend Dynamic_FuzzyClass {
+	~Dynamic_FuzzyClass() {
+	printf("Call custom destructor for instance of Dynamic_FuzzyClass\n");
+	}
+};
 
 %nodefaultctor Dynamic_FuzzyDefinition;
 class Dynamic_FuzzyDefinition : public Dynamic_FuzzyClass {
 	public:
 		%feature("autodoc", "1");
 		Dynamic_FuzzyDefinition(const char * aname);
-		%feature("autodoc", "1");
-		virtual		~Dynamic_FuzzyDefinition();
 
 };
 %extend Dynamic_FuzzyDefinition {
 	Handle_Dynamic_FuzzyDefinition GetHandle() {
 	return *(Handle_Dynamic_FuzzyDefinition*) &$self;
+	}
+};
+%extend Dynamic_FuzzyDefinition {
+	~Dynamic_FuzzyDefinition() {
+	printf("Call custom destructor for instance of Dynamic_FuzzyDefinition\n");
 	}
 };
 
@@ -1438,13 +1698,16 @@ class Dynamic_IntegerParameter : public Dynamic_Parameter {
 		virtual		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_IntegerParameter();
 
 };
 %extend Dynamic_IntegerParameter {
 	Handle_Dynamic_IntegerParameter GetHandle() {
 	return *(Handle_Dynamic_IntegerParameter*) &$self;
+	}
+};
+%extend Dynamic_IntegerParameter {
+	~Dynamic_IntegerParameter() {
+	printf("Call custom destructor for instance of Dynamic_IntegerParameter\n");
 	}
 };
 
@@ -1467,8 +1730,6 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_FuzzyDefinitionsDictionary();
 
 };
 %extend Dynamic_FuzzyDefinitionsDictionary {
@@ -1476,55 +1737,10 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 	return *(Handle_Dynamic_FuzzyDefinitionsDictionary*) &$self;
 	}
 };
-
-%nodefaultctor Dynamic_SeqOfMethodDefinitions;
-class Dynamic_SeqOfMethodDefinitions : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_SeqOfMethodDefinitions();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~Dynamic_SeqOfMethodDefinitions();
-		%feature("autodoc", "1");
-		const Dynamic_SeqOfMethodDefinitions & Assign(const Dynamic_SeqOfMethodDefinitions &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_MethodDefinition &T);
-		%feature("autodoc", "1");
-		void Append(Dynamic_SeqOfMethodDefinitions & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_MethodDefinition &T);
-		%feature("autodoc", "1");
-		void Prepend(Dynamic_SeqOfMethodDefinitions & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Dynamic_MethodDefinition &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Dynamic_SeqOfMethodDefinitions & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Dynamic_MethodDefinition &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Dynamic_SeqOfMethodDefinitions & S);
-		%feature("autodoc", "1");
-		const Handle_Dynamic_MethodDefinition & First() const;
-		%feature("autodoc", "1");
-		const Handle_Dynamic_MethodDefinition & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Dynamic_SeqOfMethodDefinitions & S);
-		%feature("autodoc", "1");
-		const Handle_Dynamic_MethodDefinition & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Dynamic_MethodDefinition & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Dynamic_MethodDefinition &I);
-		%feature("autodoc", "1");
-		Handle_Dynamic_MethodDefinition & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Dynamic_MethodDefinition & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
+%extend Dynamic_FuzzyDefinitionsDictionary {
+	~Dynamic_FuzzyDefinitionsDictionary() {
+	printf("Call custom destructor for instance of Dynamic_FuzzyDefinitionsDictionary\n");
+	}
 };
 
 %nodefaultctor Dynamic_SequenceOfFuzzyDefinitions;
@@ -1578,13 +1794,16 @@ class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
 		Handle_Dynamic_SequenceOfFuzzyDefinitions ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_SequenceOfFuzzyDefinitions();
 
 };
 %extend Dynamic_SequenceOfFuzzyDefinitions {
 	Handle_Dynamic_SequenceOfFuzzyDefinitions GetHandle() {
 	return *(Handle_Dynamic_SequenceOfFuzzyDefinitions*) &$self;
+	}
+};
+%extend Dynamic_SequenceOfFuzzyDefinitions {
+	~Dynamic_SequenceOfFuzzyDefinitions() {
+	printf("Call custom destructor for instance of Dynamic_SequenceOfFuzzyDefinitions\n");
 	}
 };
 
@@ -1603,13 +1822,16 @@ class Dynamic_ObjectParameter : public Dynamic_Parameter {
 		virtual		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_ObjectParameter();
 
 };
 %extend Dynamic_ObjectParameter {
 	Handle_Dynamic_ObjectParameter GetHandle() {
 	return *(Handle_Dynamic_ObjectParameter*) &$self;
+	}
+};
+%extend Dynamic_ObjectParameter {
+	~Dynamic_ObjectParameter() {
+	printf("Call custom destructor for instance of Dynamic_ObjectParameter\n");
 	}
 };
 
@@ -1625,6 +1847,11 @@ class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
 %extend Dynamic_AbstractVariableInstance {
 	Handle_Dynamic_AbstractVariableInstance GetHandle() {
 	return *(Handle_Dynamic_AbstractVariableInstance*) &$self;
+	}
+};
+%extend Dynamic_AbstractVariableInstance {
+	~Dynamic_AbstractVariableInstance() {
+	printf("Call custom destructor for instance of Dynamic_AbstractVariableInstance\n");
 	}
 };
 
@@ -1679,13 +1906,16 @@ class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
 		Handle_Dynamic_SequenceOfMethodDefinitions ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_SequenceOfMethodDefinitions();
 
 };
 %extend Dynamic_SequenceOfMethodDefinitions {
 	Handle_Dynamic_SequenceOfMethodDefinitions GetHandle() {
 	return *(Handle_Dynamic_SequenceOfMethodDefinitions*) &$self;
+	}
+};
+%extend Dynamic_SequenceOfMethodDefinitions {
+	~Dynamic_SequenceOfMethodDefinitions() {
+	printf("Call custom destructor for instance of Dynamic_SequenceOfMethodDefinitions\n");
 	}
 };
 
@@ -1698,13 +1928,16 @@ class Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public TCollection_SeqNode {
 		Handle_Dynamic_FuzzyDefinition & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions();
 
 };
 %extend Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
 	Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions GetHandle() {
 	return *(Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions*) &$self;
+	}
+};
+%extend Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
+	~Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions() {
+	printf("Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");
 	}
 };
 
@@ -1717,13 +1950,16 @@ class Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public TCollection_SeqNode 
 		Handle_Dynamic_MethodDefinition & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_SequenceNodeOfSeqOfMethodDefinitions();
 
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
 	Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions GetHandle() {
 	return *(Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions*) &$self;
+	}
+};
+%extend Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
+	~Dynamic_SequenceNodeOfSeqOfMethodDefinitions() {
+	printf("Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");
 	}
 };
 
@@ -1738,13 +1974,16 @@ class Dynamic_VariableInstance : public Dynamic_AbstractVariableInstance {
 		Handle_Dynamic_Variable Variable() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_VariableInstance();
 
 };
 %extend Dynamic_VariableInstance {
 	Handle_Dynamic_VariableInstance GetHandle() {
 	return *(Handle_Dynamic_VariableInstance*) &$self;
+	}
+};
+%extend Dynamic_VariableInstance {
+	~Dynamic_VariableInstance() {
+	printf("Call custom destructor for instance of Dynamic_VariableInstance\n");
 	}
 };
 
@@ -1763,13 +2002,16 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 		virtual		void Dump(Standard_OStream & astream) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_CompositMethod();
 
 };
 %extend Dynamic_CompositMethod {
 	Handle_Dynamic_CompositMethod GetHandle() {
 	return *(Handle_Dynamic_CompositMethod*) &$self;
+	}
+};
+%extend Dynamic_CompositMethod {
+	~Dynamic_CompositMethod() {
+	printf("Call custom destructor for instance of Dynamic_CompositMethod\n");
 	}
 };
 
@@ -1824,13 +2066,16 @@ class Dynamic_SequenceOfClasses : public MMgt_TShared {
 		Handle_Dynamic_SequenceOfClasses ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_SequenceOfClasses();
 
 };
 %extend Dynamic_SequenceOfClasses {
 	Handle_Dynamic_SequenceOfClasses GetHandle() {
 	return *(Handle_Dynamic_SequenceOfClasses*) &$self;
+	}
+};
+%extend Dynamic_SequenceOfClasses {
+	~Dynamic_SequenceOfClasses() {
+	printf("Call custom destructor for instance of Dynamic_SequenceOfClasses\n");
 	}
 };
 
@@ -1859,13 +2104,16 @@ class Dynamic_DynamicDerivedClass : public Dynamic_DynamicClass {
 		virtual		Handle_Dynamic_DynamicInstance Instance() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_DynamicDerivedClass();
 
 };
 %extend Dynamic_DynamicDerivedClass {
 	Handle_Dynamic_DynamicDerivedClass GetHandle() {
 	return *(Handle_Dynamic_DynamicDerivedClass*) &$self;
+	}
+};
+%extend Dynamic_DynamicDerivedClass {
+	~Dynamic_DynamicDerivedClass() {
+	printf("Call custom destructor for instance of Dynamic_DynamicDerivedClass\n");
 	}
 };
 
@@ -1880,8 +2128,6 @@ class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance
 		Handle_Dynamic_VariableNode FirstVariableNode() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_CompositVariableInstance();
 
 };
 %extend Dynamic_CompositVariableInstance {
@@ -1889,54 +2135,9 @@ class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance
 	return *(Handle_Dynamic_CompositVariableInstance*) &$self;
 	}
 };
-
-%nodefaultctor Dynamic_StringParameter;
-class Dynamic_StringParameter : public Dynamic_Parameter {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_StringParameter(const char * aparameter);
-		%feature("autodoc", "1");
-		Dynamic_StringParameter(const char * aparameter, const char * astring);
-		%feature("autodoc", "1");
-		TCollection_AsciiString Value() const;
-		%feature("autodoc", "1");
-		void Value(const char * avalue);
-		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_StringParameter();
-
-};
-%extend Dynamic_StringParameter {
-	Handle_Dynamic_StringParameter GetHandle() {
-	return *(Handle_Dynamic_StringParameter*) &$self;
-	}
-};
-
-%nodefaultctor Dynamic_InstanceParameter;
-class Dynamic_InstanceParameter : public Dynamic_Parameter {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_InstanceParameter(const char * aparameter);
-		%feature("autodoc", "1");
-		Dynamic_InstanceParameter(const char * aparameter, const Handle_Dynamic_DynamicInstance &avalue);
-		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicInstance Value() const;
-		%feature("autodoc", "1");
-		void Value(const Handle_Dynamic_DynamicInstance &avalue);
-		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Dynamic_InstanceParameter();
-
-};
-%extend Dynamic_InstanceParameter {
-	Handle_Dynamic_InstanceParameter GetHandle() {
-	return *(Handle_Dynamic_InstanceParameter*) &$self;
+%extend Dynamic_CompositVariableInstance {
+	~Dynamic_CompositVariableInstance() {
+	printf("Call custom destructor for instance of Dynamic_CompositVariableInstance\n");
 	}
 };
 
@@ -1947,8 +2148,6 @@ class Dynamic_SeqOfFuzzyDefinitions : public TCollection_BaseSequence {
 		Dynamic_SeqOfFuzzyDefinitions();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Dynamic_SeqOfFuzzyDefinitions();
 		%feature("autodoc", "1");
 		const Dynamic_SeqOfFuzzyDefinitions & Assign(const Dynamic_SeqOfFuzzyDefinitions &Other);
 		%feature("autodoc", "1");
@@ -1988,4 +2187,9 @@ class Dynamic_SeqOfFuzzyDefinitions : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Dynamic_SeqOfFuzzyDefinitions {
+	~Dynamic_SeqOfFuzzyDefinitions() {
+	printf("Call custom destructor for instance of Dynamic_SeqOfFuzzyDefinitions\n");
+	}
 };

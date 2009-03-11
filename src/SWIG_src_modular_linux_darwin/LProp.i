@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module LProp
 
@@ -115,8 +101,6 @@ enum LProp_Status {
 class Handle_LProp_SequenceNodeOfSequenceOfCIType : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		~Handle_LProp_SequenceNodeOfSequenceOfCIType();
-		%feature("autodoc", "1");
 		Handle_LProp_SequenceNodeOfSequenceOfCIType();
 		%feature("autodoc", "1");
 		Handle_LProp_SequenceNodeOfSequenceOfCIType(const Handle_LProp_SequenceNodeOfSequenceOfCIType &aHandle);
@@ -131,12 +115,15 @@ class Handle_LProp_SequenceNodeOfSequenceOfCIType : public Handle_TCollection_Se
 	return (LProp_SequenceNodeOfSequenceOfCIType*)$self->Access();
 	}
 };
+%extend Handle_LProp_SequenceNodeOfSequenceOfCIType {
+	~Handle_LProp_SequenceNodeOfSequenceOfCIType() {
+	printf("Call custom destructor for instance of Handle_LProp_SequenceNodeOfSequenceOfCIType\n");
+	}
+};
 
 %nodefaultctor Handle_LProp_BadContinuity;
 class Handle_LProp_BadContinuity : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LProp_BadContinuity();
 		%feature("autodoc", "1");
 		Handle_LProp_BadContinuity();
 		%feature("autodoc", "1");
@@ -152,12 +139,15 @@ class Handle_LProp_BadContinuity : public Handle_Standard_Failure {
 	return (LProp_BadContinuity*)$self->Access();
 	}
 };
+%extend Handle_LProp_BadContinuity {
+	~Handle_LProp_BadContinuity() {
+	printf("Call custom destructor for instance of Handle_LProp_BadContinuity\n");
+	}
+};
 
 %nodefaultctor Handle_LProp_NotDefined;
 class Handle_LProp_NotDefined : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_LProp_NotDefined();
 		%feature("autodoc", "1");
 		Handle_LProp_NotDefined();
 		%feature("autodoc", "1");
@@ -173,6 +163,11 @@ class Handle_LProp_NotDefined : public Handle_Standard_Failure {
 	return (LProp_NotDefined*)$self->Access();
 	}
 };
+%extend Handle_LProp_NotDefined {
+	~Handle_LProp_NotDefined() {
+	printf("Call custom destructor for instance of Handle_LProp_NotDefined\n");
+	}
+};
 
 %nodefaultctor LProp_SequenceNodeOfSequenceOfCIType;
 class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
@@ -183,13 +178,16 @@ class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
 		LProp_CIType & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LProp_SequenceNodeOfSequenceOfCIType();
 
 };
 %extend LProp_SequenceNodeOfSequenceOfCIType {
 	Handle_LProp_SequenceNodeOfSequenceOfCIType GetHandle() {
 	return *(Handle_LProp_SequenceNodeOfSequenceOfCIType*) &$self;
+	}
+};
+%extend LProp_SequenceNodeOfSequenceOfCIType {
+	~LProp_SequenceNodeOfSequenceOfCIType() {
+	printf("Call custom destructor for instance of LProp_SequenceNodeOfSequenceOfCIType\n");
 	}
 };
 
@@ -208,13 +206,16 @@ class LProp_BadContinuity : public Standard_Failure {
 		Handle_LProp_BadContinuity NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LProp_BadContinuity();
 
 };
 %extend LProp_BadContinuity {
 	Handle_LProp_BadContinuity GetHandle() {
 	return *(Handle_LProp_BadContinuity*) &$self;
+	}
+};
+%extend LProp_BadContinuity {
+	~LProp_BadContinuity() {
+	printf("Call custom destructor for instance of LProp_BadContinuity\n");
 	}
 };
 
@@ -319,12 +320,15 @@ class LProp_NotDefined : public Standard_Failure {
 		Handle_LProp_NotDefined NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~LProp_NotDefined();
 
 };
 %extend LProp_NotDefined {
 	Handle_LProp_NotDefined GetHandle() {
 	return *(Handle_LProp_NotDefined*) &$self;
+	}
+};
+%extend LProp_NotDefined {
+	~LProp_NotDefined() {
+	printf("Call custom destructor for instance of LProp_NotDefined\n");
 	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Geom
 
@@ -96,36 +82,11 @@ Standard_Real & function transformation
 %include Geom_headers.i
 
 
-enum GeomAbs_BSplKnotDistribution {
-	GeomAbs_NonUniform,
-	GeomAbs_Uniform,
-	GeomAbs_QuasiUniform,
-	GeomAbs_PiecewiseBezier,
-	};
-
-enum GeomAbs_Shape {
-	GeomAbs_C0,
-	GeomAbs_G1,
-	GeomAbs_C1,
-	GeomAbs_G2,
-	GeomAbs_C2,
-	GeomAbs_C3,
-	GeomAbs_CN,
-	};
-
-enum GeomAbs_IsoType {
-	GeomAbs_IsoU,
-	GeomAbs_IsoV,
-	GeomAbs_NoneIso,
-	};
-
 
 
 %nodefaultctor Handle_Geom_UndefinedValue;
 class Handle_Geom_UndefinedValue : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_UndefinedValue();
 		%feature("autodoc", "1");
 		Handle_Geom_UndefinedValue();
 		%feature("autodoc", "1");
@@ -141,12 +102,15 @@ class Handle_Geom_UndefinedValue : public Handle_Standard_DomainError {
 	return (Geom_UndefinedValue*)$self->Access();
 	}
 };
+%extend Handle_Geom_UndefinedValue {
+	~Handle_Geom_UndefinedValue() {
+	printf("Call custom destructor for instance of Handle_Geom_UndefinedValue\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Geometry;
 class Handle_Geom_Geometry : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Geometry();
 		%feature("autodoc", "1");
 		Handle_Geom_Geometry();
 		%feature("autodoc", "1");
@@ -162,12 +126,15 @@ class Handle_Geom_Geometry : public Handle_MMgt_TShared {
 	return (Geom_Geometry*)$self->Access();
 	}
 };
+%extend Handle_Geom_Geometry {
+	~Handle_Geom_Geometry() {
+	printf("Call custom destructor for instance of Handle_Geom_Geometry\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Curve;
 class Handle_Geom_Curve : public Handle_Geom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Curve();
 		%feature("autodoc", "1");
 		Handle_Geom_Curve();
 		%feature("autodoc", "1");
@@ -183,12 +150,15 @@ class Handle_Geom_Curve : public Handle_Geom_Geometry {
 	return (Geom_Curve*)$self->Access();
 	}
 };
+%extend Handle_Geom_Curve {
+	~Handle_Geom_Curve() {
+	printf("Call custom destructor for instance of Handle_Geom_Curve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_BoundedCurve;
 class Handle_Geom_BoundedCurve : public Handle_Geom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_BoundedCurve();
 		%feature("autodoc", "1");
 		Handle_Geom_BoundedCurve();
 		%feature("autodoc", "1");
@@ -204,12 +174,15 @@ class Handle_Geom_BoundedCurve : public Handle_Geom_Curve {
 	return (Geom_BoundedCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom_BoundedCurve {
+	~Handle_Geom_BoundedCurve() {
+	printf("Call custom destructor for instance of Handle_Geom_BoundedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_SequenceNodeOfSequenceOfSurface;
 class Handle_Geom_SequenceNodeOfSequenceOfSurface : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_SequenceNodeOfSequenceOfSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_SequenceNodeOfSequenceOfSurface();
 		%feature("autodoc", "1");
@@ -225,12 +198,15 @@ class Handle_Geom_SequenceNodeOfSequenceOfSurface : public Handle_TCollection_Se
 	return (Geom_SequenceNodeOfSequenceOfSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_SequenceNodeOfSequenceOfSurface {
+	~Handle_Geom_SequenceNodeOfSequenceOfSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_SequenceNodeOfSequenceOfSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_AxisPlacement;
 class Handle_Geom_AxisPlacement : public Handle_Geom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_AxisPlacement();
 		%feature("autodoc", "1");
 		Handle_Geom_AxisPlacement();
 		%feature("autodoc", "1");
@@ -246,12 +222,15 @@ class Handle_Geom_AxisPlacement : public Handle_Geom_Geometry {
 	return (Geom_AxisPlacement*)$self->Access();
 	}
 };
+%extend Handle_Geom_AxisPlacement {
+	~Handle_Geom_AxisPlacement() {
+	printf("Call custom destructor for instance of Handle_Geom_AxisPlacement\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Axis2Placement;
 class Handle_Geom_Axis2Placement : public Handle_Geom_AxisPlacement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Axis2Placement();
 		%feature("autodoc", "1");
 		Handle_Geom_Axis2Placement();
 		%feature("autodoc", "1");
@@ -267,12 +246,15 @@ class Handle_Geom_Axis2Placement : public Handle_Geom_AxisPlacement {
 	return (Geom_Axis2Placement*)$self->Access();
 	}
 };
+%extend Handle_Geom_Axis2Placement {
+	~Handle_Geom_Axis2Placement() {
+	printf("Call custom destructor for instance of Handle_Geom_Axis2Placement\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_HSequenceOfSurface;
 class Handle_Geom_HSequenceOfSurface : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_HSequenceOfSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfSurface();
 		%feature("autodoc", "1");
@@ -288,12 +270,15 @@ class Handle_Geom_HSequenceOfSurface : public Handle_MMgt_TShared {
 	return (Geom_HSequenceOfSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_HSequenceOfSurface {
+	~Handle_Geom_HSequenceOfSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_HSequenceOfSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Line;
 class Handle_Geom_Line : public Handle_Geom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Line();
 		%feature("autodoc", "1");
 		Handle_Geom_Line();
 		%feature("autodoc", "1");
@@ -309,12 +294,15 @@ class Handle_Geom_Line : public Handle_Geom_Curve {
 	return (Geom_Line*)$self->Access();
 	}
 };
+%extend Handle_Geom_Line {
+	~Handle_Geom_Line() {
+	printf("Call custom destructor for instance of Handle_Geom_Line\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Transformation;
 class Handle_Geom_Transformation : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Transformation();
 		%feature("autodoc", "1");
 		Handle_Geom_Transformation();
 		%feature("autodoc", "1");
@@ -330,12 +318,15 @@ class Handle_Geom_Transformation : public Handle_MMgt_TShared {
 	return (Geom_Transformation*)$self->Access();
 	}
 };
+%extend Handle_Geom_Transformation {
+	~Handle_Geom_Transformation() {
+	printf("Call custom destructor for instance of Handle_Geom_Transformation\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Vector;
 class Handle_Geom_Vector : public Handle_Geom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Vector();
 		%feature("autodoc", "1");
 		Handle_Geom_Vector();
 		%feature("autodoc", "1");
@@ -351,12 +342,15 @@ class Handle_Geom_Vector : public Handle_Geom_Geometry {
 	return (Geom_Vector*)$self->Access();
 	}
 };
+%extend Handle_Geom_Vector {
+	~Handle_Geom_Vector() {
+	printf("Call custom destructor for instance of Handle_Geom_Vector\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Surface;
 class Handle_Geom_Surface : public Handle_Geom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Surface();
 		%feature("autodoc", "1");
 		Handle_Geom_Surface();
 		%feature("autodoc", "1");
@@ -372,12 +366,15 @@ class Handle_Geom_Surface : public Handle_Geom_Geometry {
 	return (Geom_Surface*)$self->Access();
 	}
 };
+%extend Handle_Geom_Surface {
+	~Handle_Geom_Surface() {
+	printf("Call custom destructor for instance of Handle_Geom_Surface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_ElementarySurface;
 class Handle_Geom_ElementarySurface : public Handle_Geom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_ElementarySurface();
 		%feature("autodoc", "1");
 		Handle_Geom_ElementarySurface();
 		%feature("autodoc", "1");
@@ -393,12 +390,15 @@ class Handle_Geom_ElementarySurface : public Handle_Geom_Surface {
 	return (Geom_ElementarySurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_ElementarySurface {
+	~Handle_Geom_ElementarySurface() {
+	printf("Call custom destructor for instance of Handle_Geom_ElementarySurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_ConicalSurface;
 class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_ConicalSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_ConicalSurface();
 		%feature("autodoc", "1");
@@ -414,12 +414,15 @@ class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
 	return (Geom_ConicalSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_ConicalSurface {
+	~Handle_Geom_ConicalSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_ConicalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Conic;
 class Handle_Geom_Conic : public Handle_Geom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Conic();
 		%feature("autodoc", "1");
 		Handle_Geom_Conic();
 		%feature("autodoc", "1");
@@ -435,12 +438,15 @@ class Handle_Geom_Conic : public Handle_Geom_Curve {
 	return (Geom_Conic*)$self->Access();
 	}
 };
+%extend Handle_Geom_Conic {
+	~Handle_Geom_Conic() {
+	printf("Call custom destructor for instance of Handle_Geom_Conic\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Hyperbola;
 class Handle_Geom_Hyperbola : public Handle_Geom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Hyperbola();
 		%feature("autodoc", "1");
 		Handle_Geom_Hyperbola();
 		%feature("autodoc", "1");
@@ -456,12 +462,15 @@ class Handle_Geom_Hyperbola : public Handle_Geom_Conic {
 	return (Geom_Hyperbola*)$self->Access();
 	}
 };
+%extend Handle_Geom_Hyperbola {
+	~Handle_Geom_Hyperbola() {
+	printf("Call custom destructor for instance of Handle_Geom_Hyperbola\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Point;
 class Handle_Geom_Point : public Handle_Geom_Geometry {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Point();
 		%feature("autodoc", "1");
 		Handle_Geom_Point();
 		%feature("autodoc", "1");
@@ -477,12 +486,15 @@ class Handle_Geom_Point : public Handle_Geom_Geometry {
 	return (Geom_Point*)$self->Access();
 	}
 };
+%extend Handle_Geom_Point {
+	~Handle_Geom_Point() {
+	printf("Call custom destructor for instance of Handle_Geom_Point\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface;
 class Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface();
 		%feature("autodoc", "1");
@@ -498,12 +510,15 @@ class Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface : public Handle_TCollec
 	return (Geom_SequenceNodeOfSequenceOfBSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface {
+	~Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Parabola;
 class Handle_Geom_Parabola : public Handle_Geom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Parabola();
 		%feature("autodoc", "1");
 		Handle_Geom_Parabola();
 		%feature("autodoc", "1");
@@ -519,12 +534,15 @@ class Handle_Geom_Parabola : public Handle_Geom_Conic {
 	return (Geom_Parabola*)$self->Access();
 	}
 };
+%extend Handle_Geom_Parabola {
+	~Handle_Geom_Parabola() {
+	printf("Call custom destructor for instance of Handle_Geom_Parabola\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_TrimmedCurve;
 class Handle_Geom_TrimmedCurve : public Handle_Geom_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_TrimmedCurve();
 		%feature("autodoc", "1");
 		Handle_Geom_TrimmedCurve();
 		%feature("autodoc", "1");
@@ -540,12 +558,15 @@ class Handle_Geom_TrimmedCurve : public Handle_Geom_BoundedCurve {
 	return (Geom_TrimmedCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom_TrimmedCurve {
+	~Handle_Geom_TrimmedCurve() {
+	printf("Call custom destructor for instance of Handle_Geom_TrimmedCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_BoundedSurface;
 class Handle_Geom_BoundedSurface : public Handle_Geom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_BoundedSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_BoundedSurface();
 		%feature("autodoc", "1");
@@ -561,12 +582,15 @@ class Handle_Geom_BoundedSurface : public Handle_Geom_Surface {
 	return (Geom_BoundedSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_BoundedSurface {
+	~Handle_Geom_BoundedSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_BoundedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_BezierSurface;
 class Handle_Geom_BezierSurface : public Handle_Geom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_BezierSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_BezierSurface();
 		%feature("autodoc", "1");
@@ -582,33 +606,15 @@ class Handle_Geom_BezierSurface : public Handle_Geom_BoundedSurface {
 	return (Geom_BezierSurface*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Geom_SweptSurface;
-class Handle_Geom_SweptSurface : public Handle_Geom_Surface {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_SweptSurface();
-		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface();
-		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface(const Handle_Geom_SweptSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface(const Geom_SweptSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_SweptSurface {
-	Geom_SweptSurface* GetObject() {
-	return (Geom_SweptSurface*)$self->Access();
+%extend Handle_Geom_BezierSurface {
+	~Handle_Geom_BezierSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_BezierSurface\n");
 	}
 };
 
 %nodefaultctor Handle_Geom_SphericalSurface;
 class Handle_Geom_SphericalSurface : public Handle_Geom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_SphericalSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_SphericalSurface();
 		%feature("autodoc", "1");
@@ -624,12 +630,39 @@ class Handle_Geom_SphericalSurface : public Handle_Geom_ElementarySurface {
 	return (Geom_SphericalSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_SphericalSurface {
+	~Handle_Geom_SphericalSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_SphericalSurface\n");
+	}
+};
+
+%nodefaultctor Handle_Geom_SweptSurface;
+class Handle_Geom_SweptSurface : public Handle_Geom_Surface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_SweptSurface();
+		%feature("autodoc", "1");
+		Handle_Geom_SweptSurface(const Handle_Geom_SweptSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_SweptSurface(const Geom_SweptSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_SweptSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_SweptSurface {
+	Geom_SweptSurface* GetObject() {
+	return (Geom_SweptSurface*)$self->Access();
+	}
+};
+%extend Handle_Geom_SweptSurface {
+	~Handle_Geom_SweptSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_SweptSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_SurfaceOfLinearExtrusion;
 class Handle_Geom_SurfaceOfLinearExtrusion : public Handle_Geom_SweptSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_SurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
 		Handle_Geom_SurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
@@ -645,12 +678,15 @@ class Handle_Geom_SurfaceOfLinearExtrusion : public Handle_Geom_SweptSurface {
 	return (Geom_SurfaceOfLinearExtrusion*)$self->Access();
 	}
 };
+%extend Handle_Geom_SurfaceOfLinearExtrusion {
+	~Handle_Geom_SurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of Handle_Geom_SurfaceOfLinearExtrusion\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Axis1Placement;
 class Handle_Geom_Axis1Placement : public Handle_Geom_AxisPlacement {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Axis1Placement();
 		%feature("autodoc", "1");
 		Handle_Geom_Axis1Placement();
 		%feature("autodoc", "1");
@@ -666,12 +702,15 @@ class Handle_Geom_Axis1Placement : public Handle_Geom_AxisPlacement {
 	return (Geom_Axis1Placement*)$self->Access();
 	}
 };
+%extend Handle_Geom_Axis1Placement {
+	~Handle_Geom_Axis1Placement() {
+	printf("Call custom destructor for instance of Handle_Geom_Axis1Placement\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_BSplineSurface;
 class Handle_Geom_BSplineSurface : public Handle_Geom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_BSplineSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface();
 		%feature("autodoc", "1");
@@ -687,33 +726,15 @@ class Handle_Geom_BSplineSurface : public Handle_Geom_BoundedSurface {
 	return (Geom_BSplineSurface*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Geom_SurfaceOfRevolution;
-class Handle_Geom_SurfaceOfRevolution : public Handle_Geom_SweptSurface {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_SurfaceOfRevolution();
-		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution();
-		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution(const Handle_Geom_SurfaceOfRevolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution(const Geom_SurfaceOfRevolution *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_SurfaceOfRevolution {
-	Geom_SurfaceOfRevolution* GetObject() {
-	return (Geom_SurfaceOfRevolution*)$self->Access();
+%extend Handle_Geom_BSplineSurface {
+	~Handle_Geom_BSplineSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_BSplineSurface\n");
 	}
 };
 
 %nodefaultctor Handle_Geom_CartesianPoint;
 class Handle_Geom_CartesianPoint : public Handle_Geom_Point {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_CartesianPoint();
 		%feature("autodoc", "1");
 		Handle_Geom_CartesianPoint();
 		%feature("autodoc", "1");
@@ -729,33 +750,15 @@ class Handle_Geom_CartesianPoint : public Handle_Geom_Point {
 	return (Geom_CartesianPoint*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Geom_BezierCurve;
-class Handle_Geom_BezierCurve : public Handle_Geom_BoundedCurve {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_BezierCurve();
-		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve();
-		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve(const Handle_Geom_BezierCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve(const Geom_BezierCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_BezierCurve {
-	Geom_BezierCurve* GetObject() {
-	return (Geom_BezierCurve*)$self->Access();
+%extend Handle_Geom_CartesianPoint {
+	~Handle_Geom_CartesianPoint() {
+	printf("Call custom destructor for instance of Handle_Geom_CartesianPoint\n");
 	}
 };
 
 %nodefaultctor Handle_Geom_CylindricalSurface;
 class Handle_Geom_CylindricalSurface : public Handle_Geom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_CylindricalSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_CylindricalSurface();
 		%feature("autodoc", "1");
@@ -771,12 +774,15 @@ class Handle_Geom_CylindricalSurface : public Handle_Geom_ElementarySurface {
 	return (Geom_CylindricalSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_CylindricalSurface {
+	~Handle_Geom_CylindricalSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_CylindricalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_OffsetCurve;
 class Handle_Geom_OffsetCurve : public Handle_Geom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_OffsetCurve();
 		%feature("autodoc", "1");
 		Handle_Geom_OffsetCurve();
 		%feature("autodoc", "1");
@@ -792,12 +798,15 @@ class Handle_Geom_OffsetCurve : public Handle_Geom_Curve {
 	return (Geom_OffsetCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom_OffsetCurve {
+	~Handle_Geom_OffsetCurve() {
+	printf("Call custom destructor for instance of Handle_Geom_OffsetCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_HSequenceOfBSplineSurface;
 class Handle_Geom_HSequenceOfBSplineSurface : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_HSequenceOfBSplineSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfBSplineSurface();
 		%feature("autodoc", "1");
@@ -813,12 +822,15 @@ class Handle_Geom_HSequenceOfBSplineSurface : public Handle_MMgt_TShared {
 	return (Geom_HSequenceOfBSplineSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_HSequenceOfBSplineSurface {
+	~Handle_Geom_HSequenceOfBSplineSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_HSequenceOfBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_RectangularTrimmedSurface;
 class Handle_Geom_RectangularTrimmedSurface : public Handle_Geom_BoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_RectangularTrimmedSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_RectangularTrimmedSurface();
 		%feature("autodoc", "1");
@@ -834,12 +846,15 @@ class Handle_Geom_RectangularTrimmedSurface : public Handle_Geom_BoundedSurface 
 	return (Geom_RectangularTrimmedSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_RectangularTrimmedSurface {
+	~Handle_Geom_RectangularTrimmedSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_RectangularTrimmedSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_OffsetSurface;
 class Handle_Geom_OffsetSurface : public Handle_Geom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_OffsetSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_OffsetSurface();
 		%feature("autodoc", "1");
@@ -855,12 +870,15 @@ class Handle_Geom_OffsetSurface : public Handle_Geom_Surface {
 	return (Geom_OffsetSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_OffsetSurface {
+	~Handle_Geom_OffsetSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_OffsetSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_BSplineCurve;
 class Handle_Geom_BSplineCurve : public Handle_Geom_BoundedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_BSplineCurve();
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve();
 		%feature("autodoc", "1");
@@ -876,12 +894,15 @@ class Handle_Geom_BSplineCurve : public Handle_Geom_BoundedCurve {
 	return (Geom_BSplineCurve*)$self->Access();
 	}
 };
+%extend Handle_Geom_BSplineCurve {
+	~Handle_Geom_BSplineCurve() {
+	printf("Call custom destructor for instance of Handle_Geom_BSplineCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_VectorWithMagnitude;
 class Handle_Geom_VectorWithMagnitude : public Handle_Geom_Vector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_VectorWithMagnitude();
 		%feature("autodoc", "1");
 		Handle_Geom_VectorWithMagnitude();
 		%feature("autodoc", "1");
@@ -897,12 +918,15 @@ class Handle_Geom_VectorWithMagnitude : public Handle_Geom_Vector {
 	return (Geom_VectorWithMagnitude*)$self->Access();
 	}
 };
+%extend Handle_Geom_VectorWithMagnitude {
+	~Handle_Geom_VectorWithMagnitude() {
+	printf("Call custom destructor for instance of Handle_Geom_VectorWithMagnitude\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_ToroidalSurface;
 class Handle_Geom_ToroidalSurface : public Handle_Geom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_ToroidalSurface();
 		%feature("autodoc", "1");
 		Handle_Geom_ToroidalSurface();
 		%feature("autodoc", "1");
@@ -918,12 +942,15 @@ class Handle_Geom_ToroidalSurface : public Handle_Geom_ElementarySurface {
 	return (Geom_ToroidalSurface*)$self->Access();
 	}
 };
+%extend Handle_Geom_ToroidalSurface {
+	~Handle_Geom_ToroidalSurface() {
+	printf("Call custom destructor for instance of Handle_Geom_ToroidalSurface\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Direction;
 class Handle_Geom_Direction : public Handle_Geom_Vector {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Direction();
 		%feature("autodoc", "1");
 		Handle_Geom_Direction();
 		%feature("autodoc", "1");
@@ -939,12 +966,39 @@ class Handle_Geom_Direction : public Handle_Geom_Vector {
 	return (Geom_Direction*)$self->Access();
 	}
 };
+%extend Handle_Geom_Direction {
+	~Handle_Geom_Direction() {
+	printf("Call custom destructor for instance of Handle_Geom_Direction\n");
+	}
+};
+
+%nodefaultctor Handle_Geom_BezierCurve;
+class Handle_Geom_BezierCurve : public Handle_Geom_BoundedCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_BezierCurve();
+		%feature("autodoc", "1");
+		Handle_Geom_BezierCurve(const Handle_Geom_BezierCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_BezierCurve(const Geom_BezierCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_BezierCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_BezierCurve {
+	Geom_BezierCurve* GetObject() {
+	return (Geom_BezierCurve*)$self->Access();
+	}
+};
+%extend Handle_Geom_BezierCurve {
+	~Handle_Geom_BezierCurve() {
+	printf("Call custom destructor for instance of Handle_Geom_BezierCurve\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_UndefinedDerivative;
 class Handle_Geom_UndefinedDerivative : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_UndefinedDerivative();
 		%feature("autodoc", "1");
 		Handle_Geom_UndefinedDerivative();
 		%feature("autodoc", "1");
@@ -960,12 +1014,15 @@ class Handle_Geom_UndefinedDerivative : public Handle_Standard_DomainError {
 	return (Geom_UndefinedDerivative*)$self->Access();
 	}
 };
+%extend Handle_Geom_UndefinedDerivative {
+	~Handle_Geom_UndefinedDerivative() {
+	printf("Call custom destructor for instance of Handle_Geom_UndefinedDerivative\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Circle;
 class Handle_Geom_Circle : public Handle_Geom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Circle();
 		%feature("autodoc", "1");
 		Handle_Geom_Circle();
 		%feature("autodoc", "1");
@@ -981,12 +1038,15 @@ class Handle_Geom_Circle : public Handle_Geom_Conic {
 	return (Geom_Circle*)$self->Access();
 	}
 };
+%extend Handle_Geom_Circle {
+	~Handle_Geom_Circle() {
+	printf("Call custom destructor for instance of Handle_Geom_Circle\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Ellipse;
 class Handle_Geom_Ellipse : public Handle_Geom_Conic {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Ellipse();
 		%feature("autodoc", "1");
 		Handle_Geom_Ellipse();
 		%feature("autodoc", "1");
@@ -1002,12 +1062,39 @@ class Handle_Geom_Ellipse : public Handle_Geom_Conic {
 	return (Geom_Ellipse*)$self->Access();
 	}
 };
+%extend Handle_Geom_Ellipse {
+	~Handle_Geom_Ellipse() {
+	printf("Call custom destructor for instance of Handle_Geom_Ellipse\n");
+	}
+};
+
+%nodefaultctor Handle_Geom_SurfaceOfRevolution;
+class Handle_Geom_SurfaceOfRevolution : public Handle_Geom_SweptSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_SurfaceOfRevolution();
+		%feature("autodoc", "1");
+		Handle_Geom_SurfaceOfRevolution(const Handle_Geom_SurfaceOfRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_SurfaceOfRevolution(const Geom_SurfaceOfRevolution *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_SurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_SurfaceOfRevolution {
+	Geom_SurfaceOfRevolution* GetObject() {
+	return (Geom_SurfaceOfRevolution*)$self->Access();
+	}
+};
+%extend Handle_Geom_SurfaceOfRevolution {
+	~Handle_Geom_SurfaceOfRevolution() {
+	printf("Call custom destructor for instance of Handle_Geom_SurfaceOfRevolution\n");
+	}
+};
 
 %nodefaultctor Handle_Geom_Plane;
 class Handle_Geom_Plane : public Handle_Geom_ElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Geom_Plane();
 		%feature("autodoc", "1");
 		Handle_Geom_Plane();
 		%feature("autodoc", "1");
@@ -1023,6 +1110,11 @@ class Handle_Geom_Plane : public Handle_Geom_ElementarySurface {
 	return (Geom_Plane*)$self->Access();
 	}
 };
+%extend Handle_Geom_Plane {
+	~Handle_Geom_Plane() {
+	printf("Call custom destructor for instance of Handle_Geom_Plane\n");
+	}
+};
 
 %nodefaultctor Geom_SequenceOfSurface;
 class Geom_SequenceOfSurface : public TCollection_BaseSequence {
@@ -1031,8 +1123,6 @@ class Geom_SequenceOfSurface : public TCollection_BaseSequence {
 		Geom_SequenceOfSurface();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Geom_SequenceOfSurface();
 		%feature("autodoc", "1");
 		const Geom_SequenceOfSurface & Assign(const Geom_SequenceOfSurface &Other);
 		%feature("autodoc", "1");
@@ -1072,6 +1162,11 @@ class Geom_SequenceOfSurface : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Geom_SequenceOfSurface {
+	~Geom_SequenceOfSurface() {
+	printf("Call custom destructor for instance of Geom_SequenceOfSurface\n");
+	}
 };
 
 %nodefaultctor Geom_Geometry;
@@ -1118,6 +1213,11 @@ class Geom_Geometry : public MMgt_TShared {
 %extend Geom_Geometry {
 	Handle_Geom_Geometry GetHandle() {
 	return *(Handle_Geom_Geometry*) &$self;
+	}
+};
+%extend Geom_Geometry {
+	~Geom_Geometry() {
+	printf("Call custom destructor for instance of Geom_Geometry\n");
 	}
 };
 
@@ -1167,6 +1267,11 @@ class Geom_Curve : public Geom_Geometry {
 	return *(Handle_Geom_Curve*) &$self;
 	}
 };
+%extend Geom_Curve {
+	~Geom_Curve() {
+	printf("Call custom destructor for instance of Geom_Curve\n");
+	}
+};
 
 %nodefaultctor Geom_BoundedCurve;
 class Geom_BoundedCurve : public Geom_Curve {
@@ -1180,6 +1285,11 @@ class Geom_BoundedCurve : public Geom_Curve {
 %extend Geom_BoundedCurve {
 	Handle_Geom_BoundedCurve GetHandle() {
 	return *(Handle_Geom_BoundedCurve*) &$self;
+	}
+};
+%extend Geom_BoundedCurve {
+	~Geom_BoundedCurve() {
+	printf("Call custom destructor for instance of Geom_BoundedCurve\n");
 	}
 };
 
@@ -1247,6 +1357,11 @@ class Geom_Surface : public Geom_Geometry {
 	return *(Handle_Geom_Surface*) &$self;
 	}
 };
+%extend Geom_Surface {
+	~Geom_Surface() {
+	printf("Call custom destructor for instance of Geom_Surface\n");
+	}
+};
 
 %nodefaultctor Geom_OffsetSurface;
 class Geom_OffsetSurface : public Geom_Surface {
@@ -1287,13 +1402,16 @@ class Geom_OffsetSurface : public Geom_Surface {
 		Standard_Boolean UOsculatingSurface(const Standard_Real U, const Standard_Real V, Standard_Boolean & IsOpposite, Handle_Geom_BSplineSurface & UOsculSurf) const;
 		%feature("autodoc", "1");
 		Standard_Boolean VOsculatingSurface(const Standard_Real U, const Standard_Real V, Standard_Boolean & IsOpposite, Handle_Geom_BSplineSurface & VOsculSurf) const;
-		%feature("autodoc", "1");
-		virtual		~Geom_OffsetSurface();
 
 };
 %extend Geom_OffsetSurface {
 	Handle_Geom_OffsetSurface GetHandle() {
 	return *(Handle_Geom_OffsetSurface*) &$self;
+	}
+};
+%extend Geom_OffsetSurface {
+	~Geom_OffsetSurface() {
+	printf("Call custom destructor for instance of Geom_OffsetSurface\n");
 	}
 };
 
@@ -1307,6 +1425,11 @@ class Geom_BoundedSurface : public Geom_Surface {
 %extend Geom_BoundedSurface {
 	Handle_Geom_BoundedSurface GetHandle() {
 	return *(Handle_Geom_BoundedSurface*) &$self;
+	}
+};
+%extend Geom_BoundedSurface {
+	~Geom_BoundedSurface() {
+	printf("Call custom destructor for instance of Geom_BoundedSurface\n");
 	}
 };
 
@@ -1336,6 +1459,11 @@ class Geom_AxisPlacement : public Geom_Geometry {
 	return *(Handle_Geom_AxisPlacement*) &$self;
 	}
 };
+%extend Geom_AxisPlacement {
+	~Geom_AxisPlacement() {
+	printf("Call custom destructor for instance of Geom_AxisPlacement\n");
+	}
+};
 
 %nodefaultctor Geom_Axis1Placement;
 class Geom_Axis1Placement : public Geom_AxisPlacement {
@@ -1354,13 +1482,16 @@ class Geom_Axis1Placement : public Geom_AxisPlacement {
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Axis1Placement();
 
 };
 %extend Geom_Axis1Placement {
 	Handle_Geom_Axis1Placement GetHandle() {
 	return *(Handle_Geom_Axis1Placement*) &$self;
+	}
+};
+%extend Geom_Axis1Placement {
+	~Geom_Axis1Placement() {
+	printf("Call custom destructor for instance of Geom_Axis1Placement\n");
 	}
 };
 
@@ -1400,6 +1531,11 @@ class Geom_ElementarySurface : public Geom_Surface {
 %extend Geom_ElementarySurface {
 	Handle_Geom_ElementarySurface GetHandle() {
 	return *(Handle_Geom_ElementarySurface*) &$self;
+	}
+};
+%extend Geom_ElementarySurface {
+	~Geom_ElementarySurface() {
+	printf("Call custom destructor for instance of Geom_ElementarySurface\n");
 	}
 };
 
@@ -1452,13 +1588,16 @@ class Geom_Plane : public Geom_ElementarySurface {
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Plane();
 
 };
 %extend Geom_Plane {
 	Handle_Geom_Plane GetHandle() {
 	return *(Handle_Geom_Plane*) &$self;
+	}
+};
+%extend Geom_Plane {
+	~Geom_Plane() {
+	printf("Call custom destructor for instance of Geom_Plane\n");
 	}
 };
 
@@ -1581,13 +1720,16 @@ class Geom_BezierSurface : public Geom_BoundedSurface {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_BezierSurface();
 
 };
 %extend Geom_BezierSurface {
 	Handle_Geom_BezierSurface GetHandle() {
 	return *(Handle_Geom_BezierSurface*) &$self;
+	}
+};
+%extend Geom_BezierSurface {
+	~Geom_BezierSurface() {
+	printf("Call custom destructor for instance of Geom_BezierSurface\n");
 	}
 };
 
@@ -1627,6 +1769,11 @@ class Geom_Conic : public Geom_Curve {
 %extend Geom_Conic {
 	Handle_Geom_Conic GetHandle() {
 	return *(Handle_Geom_Conic*) &$self;
+	}
+};
+%extend Geom_Conic {
+	~Geom_Conic() {
+	printf("Call custom destructor for instance of Geom_Conic\n");
 	}
 };
 
@@ -1693,13 +1840,16 @@ class Geom_Hyperbola : public Geom_Conic {
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Hyperbola();
 
 };
 %extend Geom_Hyperbola {
 	Handle_Geom_Hyperbola GetHandle() {
 	return *(Handle_Geom_Hyperbola*) &$self;
+	}
+};
+%extend Geom_Hyperbola {
+	~Geom_Hyperbola() {
+	printf("Call custom destructor for instance of Geom_Hyperbola\n");
 	}
 };
 
@@ -1749,6 +1899,11 @@ class Geom_Vector : public Geom_Geometry {
 	return *(Handle_Geom_Vector*) &$self;
 	}
 };
+%extend Geom_Vector {
+	~Geom_Vector() {
+	printf("Call custom destructor for instance of Geom_Vector\n");
+	}
+};
 
 %nodefaultctor Geom_Direction;
 class Geom_Direction : public Geom_Vector {
@@ -1773,13 +1928,16 @@ class Geom_Direction : public Geom_Vector {
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Direction();
 
 };
 %extend Geom_Direction {
 	Handle_Geom_Direction GetHandle() {
 	return *(Handle_Geom_Direction*) &$self;
+	}
+};
+%extend Geom_Direction {
+	~Geom_Direction() {
+	printf("Call custom destructor for instance of Geom_Direction\n");
 	}
 };
 
@@ -1826,13 +1984,16 @@ class Geom_Circle : public Geom_Conic {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Circle();
 
 };
 %extend Geom_Circle {
 	Handle_Geom_Circle GetHandle() {
 	return *(Handle_Geom_Circle*) &$self;
+	}
+};
+%extend Geom_Circle {
+	~Geom_Circle() {
+	printf("Call custom destructor for instance of Geom_Circle\n");
 	}
 };
 
@@ -1845,13 +2006,16 @@ class Geom_SequenceNodeOfSequenceOfBSplineSurface : public TCollection_SeqNode {
 		Handle_Geom_BSplineSurface & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_SequenceNodeOfSequenceOfBSplineSurface();
 
 };
 %extend Geom_SequenceNodeOfSequenceOfBSplineSurface {
 	Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface GetHandle() {
 	return *(Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface*) &$self;
+	}
+};
+%extend Geom_SequenceNodeOfSequenceOfBSplineSurface {
+	~Geom_SequenceNodeOfSequenceOfBSplineSurface() {
+	printf("Call custom destructor for instance of Geom_SequenceNodeOfSequenceOfBSplineSurface\n");
 	}
 };
 
@@ -1864,13 +2028,56 @@ class Geom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 		Handle_Geom_Surface & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_SequenceNodeOfSequenceOfSurface();
 
 };
 %extend Geom_SequenceNodeOfSequenceOfSurface {
 	Handle_Geom_SequenceNodeOfSequenceOfSurface GetHandle() {
 	return *(Handle_Geom_SequenceNodeOfSequenceOfSurface*) &$self;
+	}
+};
+%extend Geom_SequenceNodeOfSequenceOfSurface {
+	~Geom_SequenceNodeOfSequenceOfSurface() {
+	printf("Call custom destructor for instance of Geom_SequenceNodeOfSequenceOfSurface\n");
+	}
+};
+
+%nodefaultctor Geom_Axis2Placement;
+class Geom_Axis2Placement : public Geom_AxisPlacement {
+	public:
+		%feature("autodoc", "1");
+		Geom_Axis2Placement(const gp_Ax2 &A2);
+		%feature("autodoc", "1");
+		Geom_Axis2Placement(const gp_Pnt &P, const gp_Dir &N, const gp_Dir &Vx);
+		%feature("autodoc", "1");
+		void SetAx2(const gp_Ax2 &A2);
+		%feature("autodoc", "1");
+		virtual		void SetDirection(const gp_Dir &V);
+		%feature("autodoc", "1");
+		void SetXDirection(const gp_Dir &Vx);
+		%feature("autodoc", "1");
+		void SetYDirection(const gp_Dir &Vy);
+		%feature("autodoc", "1");
+		gp_Ax2 Ax2() const;
+		%feature("autodoc", "1");
+		const gp_Dir & XDirection() const;
+		%feature("autodoc", "1");
+		const gp_Dir & YDirection() const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf &T);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Geometry Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom_Axis2Placement {
+	Handle_Geom_Axis2Placement GetHandle() {
+	return *(Handle_Geom_Axis2Placement*) &$self;
+	}
+};
+%extend Geom_Axis2Placement {
+	~Geom_Axis2Placement() {
+	printf("Call custom destructor for instance of Geom_Axis2Placement\n");
 	}
 };
 
@@ -1937,8 +2144,6 @@ class Geom_OffsetCurve : public Geom_Curve {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_OffsetCurve();
 
 };
 %extend Geom_OffsetCurve {
@@ -1946,12 +2151,15 @@ class Geom_OffsetCurve : public Geom_Curve {
 	return *(Handle_Geom_OffsetCurve*) &$self;
 	}
 };
+%extend Geom_OffsetCurve {
+	~Geom_OffsetCurve() {
+	printf("Call custom destructor for instance of Geom_OffsetCurve\n");
+	}
+};
 
 %nodefaultctor Geom_OsculatingSurface;
 class Geom_OsculatingSurface {
 	public:
-		%feature("autodoc", "1");
-		~Geom_OsculatingSurface();
 		%feature("autodoc", "1");
 		Geom_OsculatingSurface();
 		%feature("autodoc", "1");
@@ -1967,6 +2175,11 @@ class Geom_OsculatingSurface {
 		%feature("autodoc", "1");
 		Standard_Boolean VOscSurf(const Standard_Real U, const Standard_Real V, Standard_Boolean & t, Handle_Geom_BSplineSurface & L) const;
 
+};
+%extend Geom_OsculatingSurface {
+	~Geom_OsculatingSurface() {
+	printf("Call custom destructor for instance of Geom_OsculatingSurface\n");
+	}
 };
 
 %nodefaultctor Geom_SweptSurface;
@@ -1985,6 +2198,11 @@ class Geom_SweptSurface : public Geom_Surface {
 %extend Geom_SweptSurface {
 	Handle_Geom_SweptSurface GetHandle() {
 	return *(Handle_Geom_SweptSurface*) &$self;
+	}
+};
+%extend Geom_SweptSurface {
+	~Geom_SweptSurface() {
+	printf("Call custom destructor for instance of Geom_SweptSurface\n");
 	}
 };
 
@@ -2045,13 +2263,16 @@ class Geom_VectorWithMagnitude : public Geom_Vector {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_VectorWithMagnitude();
 
 };
 %extend Geom_VectorWithMagnitude {
 	Handle_Geom_VectorWithMagnitude GetHandle() {
 	return *(Handle_Geom_VectorWithMagnitude*) &$self;
+	}
+};
+%extend Geom_VectorWithMagnitude {
+	~Geom_VectorWithMagnitude() {
+	printf("Call custom destructor for instance of Geom_VectorWithMagnitude\n");
 	}
 };
 
@@ -2062,8 +2283,6 @@ class Geom_SequenceOfBSplineSurface : public TCollection_BaseSequence {
 		Geom_SequenceOfBSplineSurface();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Geom_SequenceOfBSplineSurface();
 		%feature("autodoc", "1");
 		const Geom_SequenceOfBSplineSurface & Assign(const Geom_SequenceOfBSplineSurface &Other);
 		%feature("autodoc", "1");
@@ -2104,6 +2323,11 @@ class Geom_SequenceOfBSplineSurface : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Geom_SequenceOfBSplineSurface {
+	~Geom_SequenceOfBSplineSurface() {
+	printf("Call custom destructor for instance of Geom_SequenceOfBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Geom_Point;
 class Geom_Point : public Geom_Geometry {
@@ -2129,6 +2353,11 @@ class Geom_Point : public Geom_Geometry {
 %extend Geom_Point {
 	Handle_Geom_Point GetHandle() {
 	return *(Handle_Geom_Point*) &$self;
+	}
+};
+%extend Geom_Point {
+	~Geom_Point() {
+	printf("Call custom destructor for instance of Geom_Point\n");
 	}
 };
 
@@ -2207,13 +2436,16 @@ class Geom_SurfaceOfRevolution : public Geom_SweptSurface {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_SurfaceOfRevolution();
 
 };
 %extend Geom_SurfaceOfRevolution {
 	Handle_Geom_SurfaceOfRevolution GetHandle() {
 	return *(Handle_Geom_SurfaceOfRevolution*) &$self;
+	}
+};
+%extend Geom_SurfaceOfRevolution {
+	~Geom_SurfaceOfRevolution() {
+	printf("Call custom destructor for instance of Geom_SurfaceOfRevolution\n");
 	}
 };
 
@@ -2232,13 +2464,16 @@ class Geom_UndefinedValue : public Standard_DomainError {
 		Handle_Geom_UndefinedValue NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_UndefinedValue();
 
 };
 %extend Geom_UndefinedValue {
 	Handle_Geom_UndefinedValue GetHandle() {
 	return *(Handle_Geom_UndefinedValue*) &$self;
+	}
+};
+%extend Geom_UndefinedValue {
+	~Geom_UndefinedValue() {
+	printf("Call custom destructor for instance of Geom_UndefinedValue\n");
 	}
 };
 
@@ -2307,13 +2542,16 @@ class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_RectangularTrimmedSurface();
 
 };
 %extend Geom_RectangularTrimmedSurface {
 	Handle_Geom_RectangularTrimmedSurface GetHandle() {
 	return *(Handle_Geom_RectangularTrimmedSurface*) &$self;
+	}
+};
+%extend Geom_RectangularTrimmedSurface {
+	~Geom_RectangularTrimmedSurface() {
+	printf("Call custom destructor for instance of Geom_RectangularTrimmedSurface\n");
 	}
 };
 
@@ -2374,13 +2612,16 @@ class Geom_Line : public Geom_Curve {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Line();
 
 };
 %extend Geom_Line {
 	Handle_Geom_Line GetHandle() {
 	return *(Handle_Geom_Line*) &$self;
+	}
+};
+%extend Geom_Line {
+	~Geom_Line() {
+	printf("Call custom destructor for instance of Geom_Line\n");
 	}
 };
 
@@ -2439,13 +2680,16 @@ class Geom_CylindricalSurface : public Geom_ElementarySurface {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_CylindricalSurface();
 
 };
 %extend Geom_CylindricalSurface {
 	Handle_Geom_CylindricalSurface GetHandle() {
 	return *(Handle_Geom_CylindricalSurface*) &$self;
+	}
+};
+%extend Geom_CylindricalSurface {
+	~Geom_CylindricalSurface() {
+	printf("Call custom destructor for instance of Geom_CylindricalSurface\n");
 	}
 };
 
@@ -2508,13 +2752,16 @@ class Geom_Ellipse : public Geom_Conic {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Ellipse();
 
 };
 %extend Geom_Ellipse {
 	Handle_Geom_Ellipse GetHandle() {
 	return *(Handle_Geom_Ellipse*) &$self;
+	}
+};
+%extend Geom_Ellipse {
+	~Geom_Ellipse() {
+	printf("Call custom destructor for instance of Geom_Ellipse\n");
 	}
 };
 
@@ -2569,13 +2816,16 @@ class Geom_HSequenceOfBSplineSurface : public MMgt_TShared {
 		Handle_Geom_HSequenceOfBSplineSurface ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_HSequenceOfBSplineSurface();
 
 };
 %extend Geom_HSequenceOfBSplineSurface {
 	Handle_Geom_HSequenceOfBSplineSurface GetHandle() {
 	return *(Handle_Geom_HSequenceOfBSplineSurface*) &$self;
+	}
+};
+%extend Geom_HSequenceOfBSplineSurface {
+	~Geom_HSequenceOfBSplineSurface() {
+	printf("Call custom destructor for instance of Geom_HSequenceOfBSplineSurface\n");
 	}
 };
 
@@ -2634,13 +2884,16 @@ class Geom_Parabola : public Geom_Conic {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Parabola();
 
 };
 %extend Geom_Parabola {
 	Handle_Geom_Parabola GetHandle() {
 	return *(Handle_Geom_Parabola*) &$self;
+	}
+};
+%extend Geom_Parabola {
+	~Geom_Parabola() {
+	printf("Call custom destructor for instance of Geom_Parabola\n");
 	}
 };
 
@@ -2707,13 +2960,16 @@ class Geom_ConicalSurface : public Geom_ElementarySurface {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_ConicalSurface();
 
 };
 %extend Geom_ConicalSurface {
 	Handle_Geom_ConicalSurface GetHandle() {
 	return *(Handle_Geom_ConicalSurface*) &$self;
+	}
+};
+%extend Geom_ConicalSurface {
+	~Geom_ConicalSurface() {
+	printf("Call custom destructor for instance of Geom_ConicalSurface\n");
 	}
 };
 
@@ -2782,13 +3038,16 @@ class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_SurfaceOfLinearExtrusion();
 
 };
 %extend Geom_SurfaceOfLinearExtrusion {
 	Handle_Geom_SurfaceOfLinearExtrusion GetHandle() {
 	return *(Handle_Geom_SurfaceOfLinearExtrusion*) &$self;
+	}
+};
+%extend Geom_SurfaceOfLinearExtrusion {
+	~Geom_SurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of Geom_SurfaceOfLinearExtrusion\n");
 	}
 };
 
@@ -2843,13 +3102,16 @@ class Geom_TrimmedCurve : public Geom_BoundedCurve {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_TrimmedCurve();
 
 };
 %extend Geom_TrimmedCurve {
 	Handle_Geom_TrimmedCurve GetHandle() {
 	return *(Handle_Geom_TrimmedCurve*) &$self;
+	}
+};
+%extend Geom_TrimmedCurve {
+	~Geom_TrimmedCurve() {
+	printf("Call custom destructor for instance of Geom_TrimmedCurve\n");
 	}
 };
 
@@ -2912,13 +3174,16 @@ class Geom_ToroidalSurface : public Geom_ElementarySurface {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_ToroidalSurface();
 
 };
 %extend Geom_ToroidalSurface {
 	Handle_Geom_ToroidalSurface GetHandle() {
 	return *(Handle_Geom_ToroidalSurface*) &$self;
+	}
+};
+%extend Geom_ToroidalSurface {
+	~Geom_ToroidalSurface() {
+	printf("Call custom destructor for instance of Geom_ToroidalSurface\n");
 	}
 };
 
@@ -2937,13 +3202,16 @@ class Geom_UndefinedDerivative : public Standard_DomainError {
 		Handle_Geom_UndefinedDerivative NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_UndefinedDerivative();
 
 };
 %extend Geom_UndefinedDerivative {
 	Handle_Geom_UndefinedDerivative GetHandle() {
 	return *(Handle_Geom_UndefinedDerivative*) &$self;
+	}
+};
+%extend Geom_UndefinedDerivative {
+	~Geom_UndefinedDerivative() {
+	printf("Call custom destructor for instance of Geom_UndefinedDerivative\n");
 	}
 };
 
@@ -3082,13 +3350,16 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_BSplineCurve();
 
 };
 %extend Geom_BSplineCurve {
 	Handle_Geom_BSplineCurve GetHandle() {
 	return *(Handle_Geom_BSplineCurve*) &$self;
+	}
+};
+%extend Geom_BSplineCurve {
+	~Geom_BSplineCurve() {
+	printf("Call custom destructor for instance of Geom_BSplineCurve\n");
 	}
 };
 
@@ -3143,13 +3414,16 @@ class Geom_HSequenceOfSurface : public MMgt_TShared {
 		Handle_Geom_HSequenceOfSurface ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_HSequenceOfSurface();
 
 };
 %extend Geom_HSequenceOfSurface {
 	Handle_Geom_HSequenceOfSurface GetHandle() {
 	return *(Handle_Geom_HSequenceOfSurface*) &$self;
+	}
+};
+%extend Geom_HSequenceOfSurface {
+	~Geom_HSequenceOfSurface() {
+	printf("Call custom destructor for instance of Geom_HSequenceOfSurface\n");
 	}
 };
 
@@ -3210,13 +3484,16 @@ class Geom_Transformation : public MMgt_TShared {
 		Handle_Geom_Transformation Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Transformation();
 
 };
 %extend Geom_Transformation {
 	Handle_Geom_Transformation GetHandle() {
 	return *(Handle_Geom_Transformation*) &$self;
+	}
+};
+%extend Geom_Transformation {
+	~Geom_Transformation() {
+	printf("Call custom destructor for instance of Geom_Transformation\n");
 	}
 };
 
@@ -3301,13 +3578,16 @@ class Geom_BezierCurve : public Geom_BoundedCurve {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_BezierCurve();
 
 };
 %extend Geom_BezierCurve {
 	Handle_Geom_BezierCurve GetHandle() {
 	return *(Handle_Geom_BezierCurve*) &$self;
+	}
+};
+%extend Geom_BezierCurve {
+	~Geom_BezierCurve() {
+	printf("Call custom destructor for instance of Geom_BezierCurve\n");
 	}
 };
 
@@ -3344,8 +3624,6 @@ class Geom_CartesianPoint : public Geom_Point {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_CartesianPoint();
 
 };
 %extend Geom_CartesianPoint {
@@ -3353,41 +3631,9 @@ class Geom_CartesianPoint : public Geom_Point {
 	return *(Handle_Geom_CartesianPoint*) &$self;
 	}
 };
-
-%nodefaultctor Geom_Axis2Placement;
-class Geom_Axis2Placement : public Geom_AxisPlacement {
-	public:
-		%feature("autodoc", "1");
-		Geom_Axis2Placement(const gp_Ax2 &A2);
-		%feature("autodoc", "1");
-		Geom_Axis2Placement(const gp_Pnt &P, const gp_Dir &N, const gp_Dir &Vx);
-		%feature("autodoc", "1");
-		void SetAx2(const gp_Ax2 &A2);
-		%feature("autodoc", "1");
-		virtual		void SetDirection(const gp_Dir &V);
-		%feature("autodoc", "1");
-		void SetXDirection(const gp_Dir &Vx);
-		%feature("autodoc", "1");
-		void SetYDirection(const gp_Dir &Vy);
-		%feature("autodoc", "1");
-		gp_Ax2 Ax2() const;
-		%feature("autodoc", "1");
-		const gp_Dir & XDirection() const;
-		%feature("autodoc", "1");
-		const gp_Dir & YDirection() const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_Axis2Placement();
-
-};
-%extend Geom_Axis2Placement {
-	Handle_Geom_Axis2Placement GetHandle() {
-	return *(Handle_Geom_Axis2Placement*) &$self;
+%extend Geom_CartesianPoint {
+	~Geom_CartesianPoint() {
+	printf("Call custom destructor for instance of Geom_CartesianPoint\n");
 	}
 };
 
@@ -3602,13 +3848,16 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_BSplineSurface();
 
 };
 %extend Geom_BSplineSurface {
 	Handle_Geom_BSplineSurface GetHandle() {
 	return *(Handle_Geom_BSplineSurface*) &$self;
+	}
+};
+%extend Geom_BSplineSurface {
+	~Geom_BSplineSurface() {
+	printf("Call custom destructor for instance of Geom_BSplineSurface\n");
 	}
 };
 
@@ -3667,12 +3916,15 @@ class Geom_SphericalSurface : public Geom_ElementarySurface {
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Geom_SphericalSurface();
 
 };
 %extend Geom_SphericalSurface {
 	Handle_Geom_SphericalSurface GetHandle() {
 	return *(Handle_Geom_SphericalSurface*) &$self;
+	}
+};
+%extend Geom_SphericalSurface {
+	~Geom_SphericalSurface() {
+	printf("Call custom destructor for instance of Geom_SphericalSurface\n");
 	}
 };

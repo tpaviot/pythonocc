@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TColgp
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_TColgp_HArray2OfPnt : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfPnt();
-		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfPnt();
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfPnt(const Handle_TColgp_HArray2OfPnt &aHandle);
@@ -118,12 +102,15 @@ class Handle_TColgp_HArray2OfPnt : public Handle_MMgt_TShared {
 	return (TColgp_HArray2OfPnt*)$self->Access();
 	}
 };
+%extend Handle_TColgp_HArray2OfPnt {
+	~Handle_TColgp_HArray2OfPnt() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfPnt\n");
+	}
+};
 
 %nodefaultctor Handle_TColgp_HSequenceOfXYZ;
 class Handle_TColgp_HSequenceOfXYZ : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HSequenceOfXYZ();
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfXYZ();
 		%feature("autodoc", "1");
@@ -139,33 +126,15 @@ class Handle_TColgp_HSequenceOfXYZ : public Handle_MMgt_TShared {
 	return (TColgp_HSequenceOfXYZ*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_TColgp_HArray1OfVec;
-class Handle_TColgp_HArray1OfVec : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfVec();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec(const Handle_TColgp_HArray1OfVec &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec(const TColgp_HArray1OfVec *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfVec {
-	TColgp_HArray1OfVec* GetObject() {
-	return (TColgp_HArray1OfVec*)$self->Access();
+%extend Handle_TColgp_HSequenceOfXYZ {
+	~Handle_TColgp_HSequenceOfXYZ() {
+	printf("Call custom destructor for instance of Handle_TColgp_HSequenceOfXYZ\n");
 	}
 };
 
 %nodefaultctor Handle_TColgp_HArray2OfVec2d;
 class Handle_TColgp_HArray2OfVec2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfVec2d();
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfVec2d();
 		%feature("autodoc", "1");
@@ -181,12 +150,15 @@ class Handle_TColgp_HArray2OfVec2d : public Handle_MMgt_TShared {
 	return (TColgp_HArray2OfVec2d*)$self->Access();
 	}
 };
+%extend Handle_TColgp_HArray2OfVec2d {
+	~Handle_TColgp_HArray2OfVec2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfVec2d\n");
+	}
+};
 
 %nodefaultctor Handle_TColgp_HArray2OfDir2d;
 class Handle_TColgp_HArray2OfDir2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfDir2d();
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfDir2d();
 		%feature("autodoc", "1");
@@ -202,537 +174,15 @@ class Handle_TColgp_HArray2OfDir2d : public Handle_MMgt_TShared {
 	return (TColgp_HArray2OfDir2d*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_TColgp_HSequenceOfDir;
-class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HSequenceOfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir(const Handle_TColgp_HSequenceOfDir &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir(const TColgp_HSequenceOfDir *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HSequenceOfDir {
-	TColgp_HSequenceOfDir* GetObject() {
-	return (TColgp_HSequenceOfDir*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray2OfLin2d;
-class Handle_TColgp_HArray2OfLin2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfLin2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfLin2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfLin2d(const Handle_TColgp_HArray2OfLin2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfLin2d(const TColgp_HArray2OfLin2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray2OfLin2d {
-	TColgp_HArray2OfLin2d* GetObject() {
-	return (TColgp_HArray2OfLin2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray2OfXYZ;
-class Handle_TColgp_HArray2OfXYZ : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfXYZ();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXYZ();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXYZ(const Handle_TColgp_HArray2OfXYZ &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXYZ(const TColgp_HArray2OfXYZ *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray2OfXYZ {
-	TColgp_HArray2OfXYZ* GetObject() {
-	return (TColgp_HArray2OfXYZ*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray1OfVec2d;
-class Handle_TColgp_HArray1OfVec2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfVec2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec2d(const Handle_TColgp_HArray1OfVec2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec2d(const TColgp_HArray1OfVec2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfVec2d {
-	TColgp_HArray1OfVec2d* GetObject() {
-	return (TColgp_HArray1OfVec2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray1OfXY;
-class Handle_TColgp_HArray1OfXY : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfXY();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXY();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXY(const Handle_TColgp_HArray1OfXY &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXY(const TColgp_HArray1OfXY *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXY const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfXY {
-	TColgp_HArray1OfXY* GetObject() {
-	return (TColgp_HArray1OfXY*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray1OfXYZ;
-class Handle_TColgp_HArray1OfXYZ : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfXYZ();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXYZ();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXYZ(const Handle_TColgp_HArray1OfXYZ &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXYZ(const TColgp_HArray1OfXYZ *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfXYZ {
-	TColgp_HArray1OfXYZ* GetObject() {
-	return (TColgp_HArray1OfXYZ*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfPnt;
-class Handle_TColgp_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_SequenceNodeOfSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt(const Handle_TColgp_SequenceNodeOfSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt(const TColgp_SequenceNodeOfSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfPnt {
-	TColgp_SequenceNodeOfSequenceOfPnt* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfPnt*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HSequenceOfPnt;
-class Handle_TColgp_HSequenceOfPnt : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt(const Handle_TColgp_HSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt(const TColgp_HSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HSequenceOfPnt {
-	TColgp_HSequenceOfPnt* GetObject() {
-	return (TColgp_HSequenceOfPnt*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfDir2d;
-class Handle_TColgp_SequenceNodeOfSequenceOfDir2d : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_SequenceNodeOfSequenceOfDir2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir2d(const Handle_TColgp_SequenceNodeOfSequenceOfDir2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir2d(const TColgp_SequenceNodeOfSequenceOfDir2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfDir2d {
-	TColgp_SequenceNodeOfSequenceOfDir2d* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfDir2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d;
-class Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d(const Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d(const TColgp_DataMapNodeOfDataMapOfIntegerCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
-	TColgp_DataMapNodeOfDataMapOfIntegerCirc2d* GetObject() {
-	return (TColgp_DataMapNodeOfDataMapOfIntegerCirc2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray2OfVec;
-class Handle_TColgp_HArray2OfVec : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfVec();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfVec();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfVec(const Handle_TColgp_HArray2OfVec &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfVec(const TColgp_HArray2OfVec *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfVec const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray2OfVec {
-	TColgp_HArray2OfVec* GetObject() {
-	return (TColgp_HArray2OfVec*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfVec;
-class Handle_TColgp_SequenceNodeOfSequenceOfVec : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_SequenceNodeOfSequenceOfVec();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec(const Handle_TColgp_SequenceNodeOfSequenceOfVec &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec(const TColgp_SequenceNodeOfSequenceOfVec *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfVec {
-	TColgp_SequenceNodeOfSequenceOfVec* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfVec*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfVec2d;
-class Handle_TColgp_SequenceNodeOfSequenceOfVec2d : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_SequenceNodeOfSequenceOfVec2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec2d(const Handle_TColgp_SequenceNodeOfSequenceOfVec2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec2d(const TColgp_SequenceNodeOfSequenceOfVec2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfVec2d {
-	TColgp_SequenceNodeOfSequenceOfVec2d* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfVec2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfDir;
-class Handle_TColgp_SequenceNodeOfSequenceOfDir : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_SequenceNodeOfSequenceOfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir(const Handle_TColgp_SequenceNodeOfSequenceOfDir &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir(const TColgp_SequenceNodeOfSequenceOfDir *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfDir {
-	TColgp_SequenceNodeOfSequenceOfDir* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfDir*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray2OfPnt2d;
-class Handle_TColgp_HArray2OfPnt2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfPnt2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfPnt2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfPnt2d(const Handle_TColgp_HArray2OfPnt2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfPnt2d(const TColgp_HArray2OfPnt2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray2OfPnt2d {
-	TColgp_HArray2OfPnt2d* GetObject() {
-	return (TColgp_HArray2OfPnt2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray1OfDir;
-class Handle_TColgp_HArray1OfDir : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir(const Handle_TColgp_HArray1OfDir &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir(const TColgp_HArray1OfDir *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfDir {
-	TColgp_HArray1OfDir* GetObject() {
-	return (TColgp_HArray1OfDir*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HSequenceOfVec;
-class Handle_TColgp_HSequenceOfVec : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HSequenceOfVec();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfVec();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfVec(const Handle_TColgp_HSequenceOfVec &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfVec(const TColgp_HSequenceOfVec *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfVec const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HSequenceOfVec {
-	TColgp_HSequenceOfVec* GetObject() {
-	return (TColgp_HSequenceOfVec*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray1OfDir2d;
-class Handle_TColgp_HArray1OfDir2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfDir2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d(const Handle_TColgp_HArray1OfDir2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d(const TColgp_HArray1OfDir2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfDir2d {
-	TColgp_HArray1OfDir2d* GetObject() {
-	return (TColgp_HArray1OfDir2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfPnt2d;
-class Handle_TColgp_SequenceNodeOfSequenceOfPnt2d : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_SequenceNodeOfSequenceOfPnt2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d(const Handle_TColgp_SequenceNodeOfSequenceOfPnt2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d(const TColgp_SequenceNodeOfSequenceOfPnt2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfPnt2d {
-	TColgp_SequenceNodeOfSequenceOfPnt2d* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfPnt2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray2OfXY;
-class Handle_TColgp_HArray2OfXY : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfXY();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXY();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXY(const Handle_TColgp_HArray2OfXY &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXY(const TColgp_HArray2OfXY *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXY const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray2OfXY {
-	TColgp_HArray2OfXY* GetObject() {
-	return (TColgp_HArray2OfXY*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray1OfLin2d;
-class Handle_TColgp_HArray1OfLin2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfLin2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d(const Handle_TColgp_HArray1OfLin2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d(const TColgp_HArray1OfLin2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfLin2d {
-	TColgp_HArray1OfLin2d* GetObject() {
-	return (TColgp_HArray1OfLin2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXY;
-class Handle_TColgp_SequenceNodeOfSequenceOfXY : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_SequenceNodeOfSequenceOfXY();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXY();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXY(const Handle_TColgp_SequenceNodeOfSequenceOfXY &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXY(const TColgp_SequenceNodeOfSequenceOfXY *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXY const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfXY {
-	TColgp_SequenceNodeOfSequenceOfXY* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfXY*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray1OfCirc2d;
-class Handle_TColgp_HArray1OfCirc2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfCirc2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d(const Handle_TColgp_HArray1OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d(const TColgp_HArray1OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfCirc2d {
-	TColgp_HArray1OfCirc2d* GetObject() {
-	return (TColgp_HArray1OfCirc2d*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HArray2OfDir;
-class Handle_TColgp_HArray2OfDir : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfDir(const Handle_TColgp_HArray2OfDir &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfDir(const TColgp_HArray2OfDir *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfDir const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray2OfDir {
-	TColgp_HArray2OfDir* GetObject() {
-	return (TColgp_HArray2OfDir*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_TColgp_HSequenceOfDir2d;
-class Handle_TColgp_HSequenceOfDir2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HSequenceOfDir2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d(const Handle_TColgp_HSequenceOfDir2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d(const TColgp_HSequenceOfDir2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HSequenceOfDir2d {
-	TColgp_HSequenceOfDir2d* GetObject() {
-	return (TColgp_HSequenceOfDir2d*)$self->Access();
+%extend Handle_TColgp_HArray2OfDir2d {
+	~Handle_TColgp_HArray2OfDir2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfDir2d\n");
 	}
 };
 
 %nodefaultctor Handle_TColgp_HArray2OfCirc2d;
 class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray2OfCirc2d();
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfCirc2d();
 		%feature("autodoc", "1");
@@ -748,12 +198,591 @@ class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
 	return (TColgp_HArray2OfCirc2d*)$self->Access();
 	}
 };
+%extend Handle_TColgp_HArray2OfCirc2d {
+	~Handle_TColgp_HArray2OfCirc2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfCirc2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray1OfVec;
+class Handle_TColgp_HArray1OfVec : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec(const Handle_TColgp_HArray1OfVec &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec(const TColgp_HArray1OfVec *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfVec {
+	TColgp_HArray1OfVec* GetObject() {
+	return (TColgp_HArray1OfVec*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfVec {
+	~Handle_TColgp_HArray1OfVec() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfVec\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray2OfLin2d;
+class Handle_TColgp_HArray2OfLin2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfLin2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfLin2d(const Handle_TColgp_HArray2OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfLin2d(const TColgp_HArray2OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray2OfLin2d {
+	TColgp_HArray2OfLin2d* GetObject() {
+	return (TColgp_HArray2OfLin2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray2OfLin2d {
+	~Handle_TColgp_HArray2OfLin2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfLin2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray2OfXYZ;
+class Handle_TColgp_HArray2OfXYZ : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfXYZ();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfXYZ(const Handle_TColgp_HArray2OfXYZ &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfXYZ(const TColgp_HArray2OfXYZ *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray2OfXYZ {
+	TColgp_HArray2OfXYZ* GetObject() {
+	return (TColgp_HArray2OfXYZ*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray2OfXYZ {
+	~Handle_TColgp_HArray2OfXYZ() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfXYZ\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray1OfVec2d;
+class Handle_TColgp_HArray1OfVec2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec2d(const Handle_TColgp_HArray1OfVec2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec2d(const TColgp_HArray1OfVec2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfVec2d {
+	TColgp_HArray1OfVec2d* GetObject() {
+	return (TColgp_HArray1OfVec2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfVec2d {
+	~Handle_TColgp_HArray1OfVec2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfVec2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray1OfXY;
+class Handle_TColgp_HArray1OfXY : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfXY();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfXY(const Handle_TColgp_HArray1OfXY &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfXY(const TColgp_HArray1OfXY *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfXY const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfXY {
+	TColgp_HArray1OfXY* GetObject() {
+	return (TColgp_HArray1OfXY*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfXY {
+	~Handle_TColgp_HArray1OfXY() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfXY\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray1OfXYZ;
+class Handle_TColgp_HArray1OfXYZ : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfXYZ();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfXYZ(const Handle_TColgp_HArray1OfXYZ &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfXYZ(const TColgp_HArray1OfXYZ *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfXYZ {
+	TColgp_HArray1OfXYZ* GetObject() {
+	return (TColgp_HArray1OfXYZ*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfXYZ {
+	~Handle_TColgp_HArray1OfXYZ() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfXYZ\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfPnt;
+class Handle_TColgp_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt(const Handle_TColgp_SequenceNodeOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt(const TColgp_SequenceNodeOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfPnt {
+	TColgp_SequenceNodeOfSequenceOfPnt* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfPnt*)$self->Access();
+	}
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfPnt {
+	~Handle_TColgp_SequenceNodeOfSequenceOfPnt() {
+	printf("Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfPnt\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HSequenceOfPnt;
+class Handle_TColgp_HSequenceOfPnt : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt(const Handle_TColgp_HSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt(const TColgp_HSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HSequenceOfPnt {
+	TColgp_HSequenceOfPnt* GetObject() {
+	return (TColgp_HSequenceOfPnt*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HSequenceOfPnt {
+	~Handle_TColgp_HSequenceOfPnt() {
+	printf("Call custom destructor for instance of Handle_TColgp_HSequenceOfPnt\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfDir2d;
+class Handle_TColgp_SequenceNodeOfSequenceOfDir2d : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfDir2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfDir2d(const Handle_TColgp_SequenceNodeOfSequenceOfDir2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfDir2d(const TColgp_SequenceNodeOfSequenceOfDir2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfDir2d {
+	TColgp_SequenceNodeOfSequenceOfDir2d* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfDir2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfDir2d {
+	~Handle_TColgp_SequenceNodeOfSequenceOfDir2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfDir2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray2OfVec;
+class Handle_TColgp_HArray2OfVec : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfVec();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfVec(const Handle_TColgp_HArray2OfVec &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfVec(const TColgp_HArray2OfVec *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfVec const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray2OfVec {
+	TColgp_HArray2OfVec* GetObject() {
+	return (TColgp_HArray2OfVec*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray2OfVec {
+	~Handle_TColgp_HArray2OfVec() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfVec\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfVec;
+class Handle_TColgp_SequenceNodeOfSequenceOfVec : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfVec();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfVec(const Handle_TColgp_SequenceNodeOfSequenceOfVec &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfVec(const TColgp_SequenceNodeOfSequenceOfVec *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfVec const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfVec {
+	TColgp_SequenceNodeOfSequenceOfVec* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfVec*)$self->Access();
+	}
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfVec {
+	~Handle_TColgp_SequenceNodeOfSequenceOfVec() {
+	printf("Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfVec\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfVec2d;
+class Handle_TColgp_SequenceNodeOfSequenceOfVec2d : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfVec2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfVec2d(const Handle_TColgp_SequenceNodeOfSequenceOfVec2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfVec2d(const TColgp_SequenceNodeOfSequenceOfVec2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfVec2d {
+	TColgp_SequenceNodeOfSequenceOfVec2d* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfVec2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfVec2d {
+	~Handle_TColgp_SequenceNodeOfSequenceOfVec2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfVec2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfDir;
+class Handle_TColgp_SequenceNodeOfSequenceOfDir : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfDir();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfDir(const Handle_TColgp_SequenceNodeOfSequenceOfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfDir(const TColgp_SequenceNodeOfSequenceOfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfDir {
+	TColgp_SequenceNodeOfSequenceOfDir* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfDir*)$self->Access();
+	}
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfDir {
+	~Handle_TColgp_SequenceNodeOfSequenceOfDir() {
+	printf("Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfDir\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray2OfPnt2d;
+class Handle_TColgp_HArray2OfPnt2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfPnt2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfPnt2d(const Handle_TColgp_HArray2OfPnt2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfPnt2d(const TColgp_HArray2OfPnt2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray2OfPnt2d {
+	TColgp_HArray2OfPnt2d* GetObject() {
+	return (TColgp_HArray2OfPnt2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray2OfPnt2d {
+	~Handle_TColgp_HArray2OfPnt2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfPnt2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray1OfDir;
+class Handle_TColgp_HArray1OfDir : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir(const Handle_TColgp_HArray1OfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir(const TColgp_HArray1OfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfDir {
+	TColgp_HArray1OfDir* GetObject() {
+	return (TColgp_HArray1OfDir*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfDir {
+	~Handle_TColgp_HArray1OfDir() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfDir\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HSequenceOfVec;
+class Handle_TColgp_HSequenceOfVec : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfVec();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfVec(const Handle_TColgp_HSequenceOfVec &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfVec(const TColgp_HSequenceOfVec *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfVec const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HSequenceOfVec {
+	TColgp_HSequenceOfVec* GetObject() {
+	return (TColgp_HSequenceOfVec*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HSequenceOfVec {
+	~Handle_TColgp_HSequenceOfVec() {
+	printf("Call custom destructor for instance of Handle_TColgp_HSequenceOfVec\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray1OfDir2d;
+class Handle_TColgp_HArray1OfDir2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d(const Handle_TColgp_HArray1OfDir2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d(const TColgp_HArray1OfDir2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfDir2d {
+	TColgp_HArray1OfDir2d* GetObject() {
+	return (TColgp_HArray1OfDir2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfDir2d {
+	~Handle_TColgp_HArray1OfDir2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfDir2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray2OfXY;
+class Handle_TColgp_HArray2OfXY : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfXY();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfXY(const Handle_TColgp_HArray2OfXY &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfXY(const TColgp_HArray2OfXY *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfXY const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray2OfXY {
+	TColgp_HArray2OfXY* GetObject() {
+	return (TColgp_HArray2OfXY*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray2OfXY {
+	~Handle_TColgp_HArray2OfXY() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfXY\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray1OfLin2d;
+class Handle_TColgp_HArray1OfLin2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d(const Handle_TColgp_HArray1OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d(const TColgp_HArray1OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfLin2d {
+	TColgp_HArray1OfLin2d* GetObject() {
+	return (TColgp_HArray1OfLin2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfLin2d {
+	~Handle_TColgp_HArray1OfLin2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfLin2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXY;
+class Handle_TColgp_SequenceNodeOfSequenceOfXY : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfXY();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfXY(const Handle_TColgp_SequenceNodeOfSequenceOfXY &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfXY(const TColgp_SequenceNodeOfSequenceOfXY *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfXY const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfXY {
+	TColgp_SequenceNodeOfSequenceOfXY* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfXY*)$self->Access();
+	}
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfXY {
+	~Handle_TColgp_SequenceNodeOfSequenceOfXY() {
+	printf("Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfXY\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray1OfCirc2d;
+class Handle_TColgp_HArray1OfCirc2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d(const Handle_TColgp_HArray1OfCirc2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d(const TColgp_HArray1OfCirc2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfCirc2d {
+	TColgp_HArray1OfCirc2d* GetObject() {
+	return (TColgp_HArray1OfCirc2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfCirc2d {
+	~Handle_TColgp_HArray1OfCirc2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfCirc2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HArray2OfDir;
+class Handle_TColgp_HArray2OfDir : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfDir();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfDir(const Handle_TColgp_HArray2OfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfDir(const TColgp_HArray2OfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray2OfDir const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray2OfDir {
+	TColgp_HArray2OfDir* GetObject() {
+	return (TColgp_HArray2OfDir*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray2OfDir {
+	~Handle_TColgp_HArray2OfDir() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray2OfDir\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfPnt2d;
+class Handle_TColgp_SequenceNodeOfSequenceOfPnt2d : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d(const Handle_TColgp_SequenceNodeOfSequenceOfPnt2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d(const TColgp_SequenceNodeOfSequenceOfPnt2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfPnt2d {
+	TColgp_SequenceNodeOfSequenceOfPnt2d* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfPnt2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfPnt2d {
+	~Handle_TColgp_SequenceNodeOfSequenceOfPnt2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfPnt2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HSequenceOfDir2d;
+class Handle_TColgp_HSequenceOfDir2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d(const Handle_TColgp_HSequenceOfDir2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d(const TColgp_HSequenceOfDir2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HSequenceOfDir2d {
+	TColgp_HSequenceOfDir2d* GetObject() {
+	return (TColgp_HSequenceOfDir2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HSequenceOfDir2d {
+	~Handle_TColgp_HSequenceOfDir2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HSequenceOfDir2d\n");
+	}
+};
 
 %nodefaultctor Handle_TColgp_HArray1OfPnt2d;
 class Handle_TColgp_HArray1OfPnt2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfPnt2d();
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt2d();
 		%feature("autodoc", "1");
@@ -769,12 +798,39 @@ class Handle_TColgp_HArray1OfPnt2d : public Handle_MMgt_TShared {
 	return (TColgp_HArray1OfPnt2d*)$self->Access();
 	}
 };
+%extend Handle_TColgp_HArray1OfPnt2d {
+	~Handle_TColgp_HArray1OfPnt2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfPnt2d\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d;
+class Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d(const Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d(const TColgp_DataMapNodeOfDataMapOfIntegerCirc2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
+	TColgp_DataMapNodeOfDataMapOfIntegerCirc2d* GetObject() {
+	return (TColgp_DataMapNodeOfDataMapOfIntegerCirc2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
+	~Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d\n");
+	}
+};
 
 %nodefaultctor Handle_TColgp_HSequenceOfXY;
 class Handle_TColgp_HSequenceOfXY : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HSequenceOfXY();
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfXY();
 		%feature("autodoc", "1");
@@ -790,12 +846,39 @@ class Handle_TColgp_HSequenceOfXY : public Handle_MMgt_TShared {
 	return (TColgp_HSequenceOfXY*)$self->Access();
 	}
 };
+%extend Handle_TColgp_HSequenceOfXY {
+	~Handle_TColgp_HSequenceOfXY() {
+	printf("Call custom destructor for instance of Handle_TColgp_HSequenceOfXY\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_HSequenceOfDir;
+class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir(const Handle_TColgp_HSequenceOfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir(const TColgp_HSequenceOfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HSequenceOfDir {
+	TColgp_HSequenceOfDir* GetObject() {
+	return (TColgp_HSequenceOfDir*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HSequenceOfDir {
+	~Handle_TColgp_HSequenceOfDir() {
+	printf("Call custom destructor for instance of Handle_TColgp_HSequenceOfDir\n");
+	}
+};
 
 %nodefaultctor Handle_TColgp_HSequenceOfVec2d;
 class Handle_TColgp_HSequenceOfVec2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HSequenceOfVec2d();
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfVec2d();
 		%feature("autodoc", "1");
@@ -811,12 +894,15 @@ class Handle_TColgp_HSequenceOfVec2d : public Handle_MMgt_TShared {
 	return (TColgp_HSequenceOfVec2d*)$self->Access();
 	}
 };
+%extend Handle_TColgp_HSequenceOfVec2d {
+	~Handle_TColgp_HSequenceOfVec2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HSequenceOfVec2d\n");
+	}
+};
 
 %nodefaultctor Handle_TColgp_HArray1OfPnt;
 class Handle_TColgp_HArray1OfPnt : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HArray1OfPnt();
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt();
 		%feature("autodoc", "1");
@@ -832,12 +918,39 @@ class Handle_TColgp_HArray1OfPnt : public Handle_MMgt_TShared {
 	return (TColgp_HArray1OfPnt*)$self->Access();
 	}
 };
+%extend Handle_TColgp_HArray1OfPnt {
+	~Handle_TColgp_HArray1OfPnt() {
+	printf("Call custom destructor for instance of Handle_TColgp_HArray1OfPnt\n");
+	}
+};
+
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXYZ;
+class Handle_TColgp_SequenceNodeOfSequenceOfXYZ : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ();
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ(const Handle_TColgp_SequenceNodeOfSequenceOfXYZ &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ(const TColgp_SequenceNodeOfSequenceOfXYZ *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfXYZ {
+	TColgp_SequenceNodeOfSequenceOfXYZ* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfXYZ*)$self->Access();
+	}
+};
+%extend Handle_TColgp_SequenceNodeOfSequenceOfXYZ {
+	~Handle_TColgp_SequenceNodeOfSequenceOfXYZ() {
+	printf("Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfXYZ\n");
+	}
+};
 
 %nodefaultctor Handle_TColgp_HSequenceOfPnt2d;
 class Handle_TColgp_HSequenceOfPnt2d : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_HSequenceOfPnt2d();
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfPnt2d();
 		%feature("autodoc", "1");
@@ -853,25 +966,9 @@ class Handle_TColgp_HSequenceOfPnt2d : public Handle_MMgt_TShared {
 	return (TColgp_HSequenceOfPnt2d*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXYZ;
-class Handle_TColgp_SequenceNodeOfSequenceOfXYZ : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_TColgp_SequenceNodeOfSequenceOfXYZ();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ(const Handle_TColgp_SequenceNodeOfSequenceOfXYZ &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ(const TColgp_SequenceNodeOfSequenceOfXYZ *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfXYZ {
-	TColgp_SequenceNodeOfSequenceOfXYZ* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfXYZ*)$self->Access();
+%extend Handle_TColgp_HSequenceOfPnt2d {
+	~Handle_TColgp_HSequenceOfPnt2d() {
+	printf("Call custom destructor for instance of Handle_TColgp_HSequenceOfPnt2d\n");
 	}
 };
 
@@ -926,13 +1023,16 @@ class TColgp_HSequenceOfXYZ : public MMgt_TShared {
 		Handle_TColgp_HSequenceOfXYZ ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HSequenceOfXYZ();
 
 };
 %extend TColgp_HSequenceOfXYZ {
 	Handle_TColgp_HSequenceOfXYZ GetHandle() {
 	return *(Handle_TColgp_HSequenceOfXYZ*) &$self;
+	}
+};
+%extend TColgp_HSequenceOfXYZ {
+	~TColgp_HSequenceOfXYZ() {
+	printf("Call custom destructor for instance of TColgp_HSequenceOfXYZ\n");
 	}
 };
 
@@ -987,13 +1087,16 @@ class TColgp_HSequenceOfVec : public MMgt_TShared {
 		Handle_TColgp_HSequenceOfVec ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HSequenceOfVec();
 
 };
 %extend TColgp_HSequenceOfVec {
 	Handle_TColgp_HSequenceOfVec GetHandle() {
 	return *(Handle_TColgp_HSequenceOfVec*) &$self;
+	}
+};
+%extend TColgp_HSequenceOfVec {
+	~TColgp_HSequenceOfVec() {
+	printf("Call custom destructor for instance of TColgp_HSequenceOfVec\n");
 	}
 };
 
@@ -1033,15 +1136,21 @@ class TColgp_Array1OfDir2d {
 
 };
 
-%nodefaultctor TColgp_HArray2OfXY;
-class TColgp_HArray2OfXY : public MMgt_TShared {
+%nodefaultctor TColgp_Array2OfDir;
+class TColgp_Array2OfDir {
 	public:
 		%feature("autodoc", "1");
-		TColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColgp_Array2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		TColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_XY &V);
+		TColgp_Array2OfDir(const gp_Dir &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		void Init(const gp_XY &V);
+		void Init(const gp_Dir &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		~TColgp_Array2OfDir();
+		%feature("autodoc", "1");
+		const TColgp_Array2OfDir & Assign(const TColgp_Array2OfDir &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -1055,25 +1164,16 @@ class TColgp_HArray2OfXY : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XY &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir &Value);
 		%feature("autodoc", "1");
-		const gp_XY & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		const gp_Dir & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		gp_XY & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		const gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		const TColgp_Array2OfXY & Array2() const;
+		gp_Dir & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
-		TColgp_Array2OfXY & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfXY();
+		gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
-};
-%extend TColgp_HArray2OfXY {
-	Handle_TColgp_HArray2OfXY GetHandle() {
-	return *(Handle_TColgp_HArray2OfXY*) &$self;
-	}
 };
 
 %nodefaultctor TColgp_SequenceOfPnt2d;
@@ -1153,13 +1253,16 @@ class TColgp_HArray1OfDir : public MMgt_TShared {
 		TColgp_Array1OfDir & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfDir();
 
 };
 %extend TColgp_HArray1OfDir {
 	Handle_TColgp_HArray1OfDir GetHandle() {
 	return *(Handle_TColgp_HArray1OfDir*) &$self;
+	}
+};
+%extend TColgp_HArray1OfDir {
+	~TColgp_HArray1OfDir() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfDir\n");
 	}
 };
 
@@ -1196,13 +1299,62 @@ class TColgp_HArray2OfVec : public MMgt_TShared {
 		TColgp_Array2OfVec & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfVec();
 
 };
 %extend TColgp_HArray2OfVec {
 	Handle_TColgp_HArray2OfVec GetHandle() {
 	return *(Handle_TColgp_HArray2OfVec*) &$self;
+	}
+};
+%extend TColgp_HArray2OfVec {
+	~TColgp_HArray2OfVec() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfVec\n");
+	}
+};
+
+%nodefaultctor TColgp_HArray2OfDir2d;
+class TColgp_HArray2OfDir2d : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColgp_HArray2OfDir2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColgp_HArray2OfDir2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Dir2d &V);
+		%feature("autodoc", "1");
+		void Init(const gp_Dir2d &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir2d &Value);
+		%feature("autodoc", "1");
+		const gp_Dir2d & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		gp_Dir2d & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		const TColgp_Array2OfDir2d & Array2() const;
+		%feature("autodoc", "1");
+		TColgp_Array2OfDir2d & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_HArray2OfDir2d {
+	Handle_TColgp_HArray2OfDir2d GetHandle() {
+	return *(Handle_TColgp_HArray2OfDir2d*) &$self;
+	}
+};
+%extend TColgp_HArray2OfDir2d {
+	~TColgp_HArray2OfDir2d() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfDir2d\n");
 	}
 };
 
@@ -1215,8 +1367,6 @@ class TColgp_SequenceNodeOfSequenceOfXYZ : public TCollection_SeqNode {
 		gp_XYZ & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfXYZ();
 
 };
 %extend TColgp_SequenceNodeOfSequenceOfXYZ {
@@ -1224,23 +1374,9 @@ class TColgp_SequenceNodeOfSequenceOfXYZ : public TCollection_SeqNode {
 	return *(Handle_TColgp_SequenceNodeOfSequenceOfXYZ*) &$self;
 	}
 };
-
-%nodefaultctor TColgp_SequenceNodeOfSequenceOfVec;
-class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TColgp_SequenceNodeOfSequenceOfVec(const gp_Vec &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		gp_Vec & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfVec();
-
-};
-%extend TColgp_SequenceNodeOfSequenceOfVec {
-	Handle_TColgp_SequenceNodeOfSequenceOfVec GetHandle() {
-	return *(Handle_TColgp_SequenceNodeOfSequenceOfVec*) &$self;
+%extend TColgp_SequenceNodeOfSequenceOfXYZ {
+	~TColgp_SequenceNodeOfSequenceOfXYZ() {
+	printf("Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfXYZ\n");
 	}
 };
 
@@ -1377,13 +1513,16 @@ class TColgp_HArray2OfLin2d : public MMgt_TShared {
 		TColgp_Array2OfLin2d & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfLin2d();
 
 };
 %extend TColgp_HArray2OfLin2d {
 	Handle_TColgp_HArray2OfLin2d GetHandle() {
 	return *(Handle_TColgp_HArray2OfLin2d*) &$self;
+	}
+};
+%extend TColgp_HArray2OfLin2d {
+	~TColgp_HArray2OfLin2d() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfLin2d\n");
 	}
 };
 
@@ -1396,13 +1535,16 @@ class TColgp_SequenceNodeOfSequenceOfXY : public TCollection_SeqNode {
 		gp_XY & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfXY();
 
 };
 %extend TColgp_SequenceNodeOfSequenceOfXY {
 	Handle_TColgp_SequenceNodeOfSequenceOfXY GetHandle() {
 	return *(Handle_TColgp_SequenceNodeOfSequenceOfXY*) &$self;
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfXY {
+	~TColgp_SequenceNodeOfSequenceOfXY() {
+	printf("Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfXY\n");
 	}
 };
 
@@ -1565,13 +1707,16 @@ class TColgp_HArray2OfCirc2d : public MMgt_TShared {
 		TColgp_Array2OfCirc2d & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfCirc2d();
 
 };
 %extend TColgp_HArray2OfCirc2d {
 	Handle_TColgp_HArray2OfCirc2d GetHandle() {
 	return *(Handle_TColgp_HArray2OfCirc2d*) &$self;
+	}
+};
+%extend TColgp_HArray2OfCirc2d {
+	~TColgp_HArray2OfCirc2d() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfCirc2d\n");
 	}
 };
 
@@ -1716,13 +1861,16 @@ class TColgp_HArray2OfVec2d : public MMgt_TShared {
 		TColgp_Array2OfVec2d & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfVec2d();
 
 };
 %extend TColgp_HArray2OfVec2d {
 	Handle_TColgp_HArray2OfVec2d GetHandle() {
 	return *(Handle_TColgp_HArray2OfVec2d*) &$self;
+	}
+};
+%extend TColgp_HArray2OfVec2d {
+	~TColgp_HArray2OfVec2d() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfVec2d\n");
 	}
 };
 
@@ -1753,13 +1901,38 @@ class TColgp_HArray1OfLin2d : public MMgt_TShared {
 		TColgp_Array1OfLin2d & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfLin2d();
 
 };
 %extend TColgp_HArray1OfLin2d {
 	Handle_TColgp_HArray1OfLin2d GetHandle() {
 	return *(Handle_TColgp_HArray1OfLin2d*) &$self;
+	}
+};
+%extend TColgp_HArray1OfLin2d {
+	~TColgp_HArray1OfLin2d() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfLin2d\n");
+	}
+};
+
+%nodefaultctor TColgp_SequenceNodeOfSequenceOfVec;
+class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TColgp_SequenceNodeOfSequenceOfVec(const gp_Vec &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		gp_Vec & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_SequenceNodeOfSequenceOfVec {
+	Handle_TColgp_SequenceNodeOfSequenceOfVec GetHandle() {
+	return *(Handle_TColgp_SequenceNodeOfSequenceOfVec*) &$self;
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfVec {
+	~TColgp_SequenceNodeOfSequenceOfVec() {
+	printf("Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec\n");
 	}
 };
 
@@ -1799,6 +1972,46 @@ class TColgp_Array1OfXY {
 
 };
 
+%nodefaultctor TColgp_HArray1OfVec2d;
+class TColgp_HArray1OfVec2d : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec2d &V);
+		%feature("autodoc", "1");
+		void Init(const gp_Vec2d &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Vec2d &Value);
+		%feature("autodoc", "1");
+		const gp_Vec2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Vec2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TColgp_Array1OfVec2d & Array1() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfVec2d & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_HArray1OfVec2d {
+	Handle_TColgp_HArray1OfVec2d GetHandle() {
+	return *(Handle_TColgp_HArray1OfVec2d*) &$self;
+	}
+};
+%extend TColgp_HArray1OfVec2d {
+	~TColgp_HArray1OfVec2d() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfVec2d\n");
+	}
+};
+
 %nodefaultctor TColgp_HArray1OfDir2d;
 class TColgp_HArray1OfDir2d : public MMgt_TShared {
 	public:
@@ -1826,13 +2039,16 @@ class TColgp_HArray1OfDir2d : public MMgt_TShared {
 		TColgp_Array1OfDir2d & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfDir2d();
 
 };
 %extend TColgp_HArray1OfDir2d {
 	Handle_TColgp_HArray1OfDir2d GetHandle() {
 	return *(Handle_TColgp_HArray1OfDir2d*) &$self;
+	}
+};
+%extend TColgp_HArray1OfDir2d {
+	~TColgp_HArray1OfDir2d() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfDir2d\n");
 	}
 };
 
@@ -1935,13 +2151,16 @@ class TColgp_HArray1OfPnt : public MMgt_TShared {
 		TColgp_Array1OfPnt & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfPnt();
 
 };
 %extend TColgp_HArray1OfPnt {
 	Handle_TColgp_HArray1OfPnt GetHandle() {
 	return *(Handle_TColgp_HArray1OfPnt*) &$self;
+	}
+};
+%extend TColgp_HArray1OfPnt {
+	~TColgp_HArray1OfPnt() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfPnt\n");
 	}
 };
 
@@ -1994,13 +2213,16 @@ class TColgp_SequenceNodeOfSequenceOfDir : public TCollection_SeqNode {
 		gp_Dir & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfDir();
 
 };
 %extend TColgp_SequenceNodeOfSequenceOfDir {
 	Handle_TColgp_SequenceNodeOfSequenceOfDir GetHandle() {
 	return *(Handle_TColgp_SequenceNodeOfSequenceOfDir*) &$self;
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfDir {
+	~TColgp_SequenceNodeOfSequenceOfDir() {
+	printf("Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir\n");
 	}
 };
 
@@ -2052,49 +2274,6 @@ class TColgp_SequenceOfXYZ : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
-};
-
-%nodefaultctor TColgp_HArray2OfDir2d;
-class TColgp_HArray2OfDir2d : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColgp_HArray2OfDir2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColgp_HArray2OfDir2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Dir2d &V);
-		%feature("autodoc", "1");
-		void Init(const gp_Dir2d &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir2d &Value);
-		%feature("autodoc", "1");
-		const gp_Dir2d & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		gp_Dir2d & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const TColgp_Array2OfDir2d & Array2() const;
-		%feature("autodoc", "1");
-		TColgp_Array2OfDir2d & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfDir2d();
-
-};
-%extend TColgp_HArray2OfDir2d {
-	Handle_TColgp_HArray2OfDir2d GetHandle() {
-	return *(Handle_TColgp_HArray2OfDir2d*) &$self;
-	}
 };
 
 %nodefaultctor TColgp_Array2OfPnt2d;
@@ -2200,13 +2379,16 @@ class TColgp_HArray1OfCirc2d : public MMgt_TShared {
 		TColgp_Array1OfCirc2d & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfCirc2d();
 
 };
 %extend TColgp_HArray1OfCirc2d {
 	Handle_TColgp_HArray1OfCirc2d GetHandle() {
 	return *(Handle_TColgp_HArray1OfCirc2d*) &$self;
+	}
+};
+%extend TColgp_HArray1OfCirc2d {
+	~TColgp_HArray1OfCirc2d() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfCirc2d\n");
 	}
 };
 
@@ -2243,8 +2425,6 @@ class TColgp_HArray2OfPnt : public MMgt_TShared {
 		TColgp_Array2OfPnt & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfPnt();
 
 };
 %extend TColgp_HArray2OfPnt {
@@ -2252,22 +2432,61 @@ class TColgp_HArray2OfPnt : public MMgt_TShared {
 	return *(Handle_TColgp_HArray2OfPnt*) &$self;
 	}
 };
+%extend TColgp_HArray2OfPnt {
+	~TColgp_HArray2OfPnt() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfPnt\n");
+	}
+};
 
-%nodefaultctor TColgp_Array2OfDir;
-class TColgp_Array2OfDir {
+%nodefaultctor TColgp_HArray1OfXYZ;
+class TColgp_HArray1OfXYZ : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColgp_Array2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		TColgp_Array2OfDir(const gp_Dir &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up, const gp_XYZ &V);
 		%feature("autodoc", "1");
-		void Init(const gp_Dir &V);
+		void Init(const gp_XYZ &V);
 		%feature("autodoc", "1");
-		void Destroy();
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		~TColgp_Array2OfDir();
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		const TColgp_Array2OfDir & Assign(const TColgp_Array2OfDir &Other);
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_XYZ &Value);
+		%feature("autodoc", "1");
+		const gp_XYZ & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_XYZ & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TColgp_Array1OfXYZ & Array1() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfXYZ & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_HArray1OfXYZ {
+	Handle_TColgp_HArray1OfXYZ GetHandle() {
+	return *(Handle_TColgp_HArray1OfXYZ*) &$self;
+	}
+};
+%extend TColgp_HArray1OfXYZ {
+	~TColgp_HArray1OfXYZ() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfXYZ\n");
+	}
+};
+
+%nodefaultctor TColgp_HArray2OfXY;
+class TColgp_HArray2OfXY : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_XY &V);
+		%feature("autodoc", "1");
+		void Init(const gp_XY &V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -2281,16 +2500,28 @@ class TColgp_Array2OfDir {
 		%feature("autodoc", "1");
 		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XY &Value);
 		%feature("autodoc", "1");
-		const gp_Dir & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		const gp_XY & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		const gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		gp_XY & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
-		gp_Dir & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		const TColgp_Array2OfXY & Array2() const;
 		%feature("autodoc", "1");
-		gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		TColgp_Array2OfXY & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
+};
+%extend TColgp_HArray2OfXY {
+	Handle_TColgp_HArray2OfXY GetHandle() {
+	return *(Handle_TColgp_HArray2OfXY*) &$self;
+	}
+};
+%extend TColgp_HArray2OfXY {
+	~TColgp_HArray2OfXY() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfXY\n");
+	}
 };
 
 %nodefaultctor TColgp_Array2OfVec2d;
@@ -2396,13 +2627,16 @@ class TColgp_HArray1OfXY : public MMgt_TShared {
 		TColgp_Array1OfXY & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfXY();
 
 };
 %extend TColgp_HArray1OfXY {
 	Handle_TColgp_HArray1OfXY GetHandle() {
 	return *(Handle_TColgp_HArray1OfXY*) &$self;
+	}
+};
+%extend TColgp_HArray1OfXY {
+	~TColgp_HArray1OfXY() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfXY\n");
 	}
 };
 
@@ -2439,13 +2673,16 @@ class TColgp_HArray2OfXYZ : public MMgt_TShared {
 		TColgp_Array2OfXYZ & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfXYZ();
 
 };
 %extend TColgp_HArray2OfXYZ {
 	Handle_TColgp_HArray2OfXYZ GetHandle() {
 	return *(Handle_TColgp_HArray2OfXYZ*) &$self;
+	}
+};
+%extend TColgp_HArray2OfXYZ {
+	~TColgp_HArray2OfXYZ() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfXYZ\n");
 	}
 };
 
@@ -2460,13 +2697,16 @@ class TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public TCollection_MapNode {
 		gp_Circ2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_DataMapNodeOfDataMapOfIntegerCirc2d();
 
 };
 %extend TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
 	Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d GetHandle() {
 	return *(Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d*) &$self;
+	}
+};
+%extend TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
+	~TColgp_DataMapNodeOfDataMapOfIntegerCirc2d() {
+	printf("Call custom destructor for instance of TColgp_DataMapNodeOfDataMapOfIntegerCirc2d\n");
 	}
 };
 
@@ -2561,13 +2801,16 @@ class TColgp_HSequenceOfPnt2d : public MMgt_TShared {
 		Handle_TColgp_HSequenceOfPnt2d ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HSequenceOfPnt2d();
 
 };
 %extend TColgp_HSequenceOfPnt2d {
 	Handle_TColgp_HSequenceOfPnt2d GetHandle() {
 	return *(Handle_TColgp_HSequenceOfPnt2d*) &$self;
+	}
+};
+%extend TColgp_HSequenceOfPnt2d {
+	~TColgp_HSequenceOfPnt2d() {
+	printf("Call custom destructor for instance of TColgp_HSequenceOfPnt2d\n");
 	}
 };
 
@@ -2580,13 +2823,16 @@ class TColgp_SequenceNodeOfSequenceOfDir2d : public TCollection_SeqNode {
 		gp_Dir2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfDir2d();
 
 };
 %extend TColgp_SequenceNodeOfSequenceOfDir2d {
 	Handle_TColgp_SequenceNodeOfSequenceOfDir2d GetHandle() {
 	return *(Handle_TColgp_SequenceNodeOfSequenceOfDir2d*) &$self;
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfDir2d {
+	~TColgp_SequenceNodeOfSequenceOfDir2d() {
+	printf("Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir2d\n");
 	}
 };
 
@@ -2709,13 +2955,16 @@ class TColgp_HArray2OfPnt2d : public MMgt_TShared {
 		TColgp_Array2OfPnt2d & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfPnt2d();
 
 };
 %extend TColgp_HArray2OfPnt2d {
 	Handle_TColgp_HArray2OfPnt2d GetHandle() {
 	return *(Handle_TColgp_HArray2OfPnt2d*) &$self;
+	}
+};
+%extend TColgp_HArray2OfPnt2d {
+	~TColgp_HArray2OfPnt2d() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfPnt2d\n");
 	}
 };
 
@@ -2728,13 +2977,16 @@ class TColgp_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 		gp_Pnt & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfPnt();
 
 };
 %extend TColgp_SequenceNodeOfSequenceOfPnt {
 	Handle_TColgp_SequenceNodeOfSequenceOfPnt GetHandle() {
 	return *(Handle_TColgp_SequenceNodeOfSequenceOfPnt*) &$self;
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfPnt {
+	~TColgp_SequenceNodeOfSequenceOfPnt() {
+	printf("Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfPnt\n");
 	}
 };
 
@@ -2837,13 +3089,16 @@ class TColgp_SequenceNodeOfSequenceOfVec2d : public TCollection_SeqNode {
 		gp_Vec2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfVec2d();
 
 };
 %extend TColgp_SequenceNodeOfSequenceOfVec2d {
 	Handle_TColgp_SequenceNodeOfSequenceOfVec2d GetHandle() {
 	return *(Handle_TColgp_SequenceNodeOfSequenceOfVec2d*) &$self;
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfVec2d {
+	~TColgp_SequenceNodeOfSequenceOfVec2d() {
+	printf("Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec2d\n");
 	}
 };
 
@@ -2874,13 +3129,16 @@ class TColgp_HArray1OfPnt2d : public MMgt_TShared {
 		TColgp_Array1OfPnt2d & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfPnt2d();
 
 };
 %extend TColgp_HArray1OfPnt2d {
 	Handle_TColgp_HArray1OfPnt2d GetHandle() {
 	return *(Handle_TColgp_HArray1OfPnt2d*) &$self;
+	}
+};
+%extend TColgp_HArray1OfPnt2d {
+	~TColgp_HArray1OfPnt2d() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfPnt2d\n");
 	}
 };
 
@@ -2893,13 +3151,16 @@ class TColgp_SequenceNodeOfSequenceOfPnt2d : public TCollection_SeqNode {
 		gp_Pnt2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_SequenceNodeOfSequenceOfPnt2d();
 
 };
 %extend TColgp_SequenceNodeOfSequenceOfPnt2d {
 	Handle_TColgp_SequenceNodeOfSequenceOfPnt2d GetHandle() {
 	return *(Handle_TColgp_SequenceNodeOfSequenceOfPnt2d*) &$self;
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfPnt2d {
+	~TColgp_SequenceNodeOfSequenceOfPnt2d() {
+	printf("Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfPnt2d\n");
 	}
 };
 
@@ -2954,13 +3215,16 @@ class TColgp_HSequenceOfDir2d : public MMgt_TShared {
 		Handle_TColgp_HSequenceOfDir2d ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HSequenceOfDir2d();
 
 };
 %extend TColgp_HSequenceOfDir2d {
 	Handle_TColgp_HSequenceOfDir2d GetHandle() {
 	return *(Handle_TColgp_HSequenceOfDir2d*) &$self;
+	}
+};
+%extend TColgp_HSequenceOfDir2d {
+	~TColgp_HSequenceOfDir2d() {
+	printf("Call custom destructor for instance of TColgp_HSequenceOfDir2d\n");
 	}
 };
 
@@ -3002,43 +3266,6 @@ class TColgp_Array2OfPnt {
 		%feature("autodoc", "1");
 		gp_Pnt & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
-};
-
-%nodefaultctor TColgp_HArray1OfVec2d;
-class TColgp_HArray1OfVec2d : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec2d &V);
-		%feature("autodoc", "1");
-		void Init(const gp_Vec2d &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec2d &Value);
-		%feature("autodoc", "1");
-		const gp_Vec2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Vec2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TColgp_Array1OfVec2d & Array1() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfVec2d & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfVec2d();
-
-};
-%extend TColgp_HArray1OfVec2d {
-	Handle_TColgp_HArray1OfVec2d GetHandle() {
-	return *(Handle_TColgp_HArray1OfVec2d*) &$self;
-	}
 };
 
 %nodefaultctor TColgp_DataMapOfIntegerCirc2d;
@@ -3122,13 +3349,16 @@ class TColgp_HSequenceOfDir : public MMgt_TShared {
 		Handle_TColgp_HSequenceOfDir ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HSequenceOfDir();
 
 };
 %extend TColgp_HSequenceOfDir {
 	Handle_TColgp_HSequenceOfDir GetHandle() {
 	return *(Handle_TColgp_HSequenceOfDir*) &$self;
+	}
+};
+%extend TColgp_HSequenceOfDir {
+	~TColgp_HSequenceOfDir() {
+	printf("Call custom destructor for instance of TColgp_HSequenceOfDir\n");
 	}
 };
 
@@ -3159,13 +3389,16 @@ class TColgp_HArray1OfVec : public MMgt_TShared {
 		TColgp_Array1OfVec & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfVec();
 
 };
 %extend TColgp_HArray1OfVec {
 	Handle_TColgp_HArray1OfVec GetHandle() {
 	return *(Handle_TColgp_HArray1OfVec*) &$self;
+	}
+};
+%extend TColgp_HArray1OfVec {
+	~TColgp_HArray1OfVec() {
+	printf("Call custom destructor for instance of TColgp_HArray1OfVec\n");
 	}
 };
 
@@ -3260,13 +3493,16 @@ class TColgp_HSequenceOfXY : public MMgt_TShared {
 		Handle_TColgp_HSequenceOfXY ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HSequenceOfXY();
 
 };
 %extend TColgp_HSequenceOfXY {
 	Handle_TColgp_HSequenceOfXY GetHandle() {
 	return *(Handle_TColgp_HSequenceOfXY*) &$self;
+	}
+};
+%extend TColgp_HSequenceOfXY {
+	~TColgp_HSequenceOfXY() {
+	printf("Call custom destructor for instance of TColgp_HSequenceOfXY\n");
 	}
 };
 
@@ -3321,13 +3557,16 @@ class TColgp_HSequenceOfVec2d : public MMgt_TShared {
 		Handle_TColgp_HSequenceOfVec2d ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HSequenceOfVec2d();
 
 };
 %extend TColgp_HSequenceOfVec2d {
 	Handle_TColgp_HSequenceOfVec2d GetHandle() {
 	return *(Handle_TColgp_HSequenceOfVec2d*) &$self;
+	}
+};
+%extend TColgp_HSequenceOfVec2d {
+	~TColgp_HSequenceOfVec2d() {
+	printf("Call custom destructor for instance of TColgp_HSequenceOfVec2d\n");
 	}
 };
 
@@ -3382,13 +3621,16 @@ class TColgp_HSequenceOfPnt : public MMgt_TShared {
 		Handle_TColgp_HSequenceOfPnt ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HSequenceOfPnt();
 
 };
 %extend TColgp_HSequenceOfPnt {
 	Handle_TColgp_HSequenceOfPnt GetHandle() {
 	return *(Handle_TColgp_HSequenceOfPnt*) &$self;
+	}
+};
+%extend TColgp_HSequenceOfPnt {
+	~TColgp_HSequenceOfPnt() {
+	printf("Call custom destructor for instance of TColgp_HSequenceOfPnt\n");
 	}
 };
 
@@ -3425,13 +3667,16 @@ class TColgp_HArray2OfDir : public MMgt_TShared {
 		TColgp_Array2OfDir & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray2OfDir();
 
 };
 %extend TColgp_HArray2OfDir {
 	Handle_TColgp_HArray2OfDir GetHandle() {
 	return *(Handle_TColgp_HArray2OfDir*) &$self;
+	}
+};
+%extend TColgp_HArray2OfDir {
+	~TColgp_HArray2OfDir() {
+	printf("Call custom destructor for instance of TColgp_HArray2OfDir\n");
 	}
 };
 
@@ -3505,41 +3750,4 @@ class TColgp_Array1OfCirc2d {
 		%feature("autodoc", "1");
 		gp_Circ2d & operator()(const Standard_Integer Index);
 
-};
-
-%nodefaultctor TColgp_HArray1OfXYZ;
-class TColgp_HArray1OfXYZ : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up, const gp_XYZ &V);
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XYZ &Value);
-		%feature("autodoc", "1");
-		const gp_XYZ & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_XYZ & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TColgp_Array1OfXYZ & Array1() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfXYZ & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~TColgp_HArray1OfXYZ();
-
-};
-%extend TColgp_HArray1OfXYZ {
-	Handle_TColgp_HArray1OfXYZ GetHandle() {
-	return *(Handle_TColgp_HArray1OfXYZ*) &$self;
-	}
 };

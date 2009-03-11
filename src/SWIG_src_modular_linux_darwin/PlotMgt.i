@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module PlotMgt
 
@@ -158,8 +144,6 @@ enum PlotMgt_ImageFormat {
 class Handle_PlotMgt_PlotterParameter : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PlotMgt_PlotterParameter();
-		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterParameter();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterParameter(const Handle_PlotMgt_PlotterParameter &aHandle);
@@ -174,12 +158,15 @@ class Handle_PlotMgt_PlotterParameter : public Handle_MMgt_TShared {
 	return (PlotMgt_PlotterParameter*)$self->Access();
 	}
 };
+%extend Handle_PlotMgt_PlotterParameter {
+	~Handle_PlotMgt_PlotterParameter() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_PlotterParameter\n");
+	}
+};
 
 %nodefaultctor Handle_PlotMgt_HListOfMFTSizes;
 class Handle_PlotMgt_HListOfMFTSizes : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_HListOfMFTSizes();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfMFTSizes();
 		%feature("autodoc", "1");
@@ -195,12 +182,15 @@ class Handle_PlotMgt_HListOfMFTSizes : public Handle_MMgt_TShared {
 	return (PlotMgt_HListOfMFTSizes*)$self->Access();
 	}
 };
+%extend Handle_PlotMgt_HListOfMFTSizes {
+	~Handle_PlotMgt_HListOfMFTSizes() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_HListOfMFTSizes\n");
+	}
+};
 
 %nodefaultctor Handle_PlotMgt_PlotterDefinitionError;
 class Handle_PlotMgt_PlotterDefinitionError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_PlotterDefinitionError();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterDefinitionError();
 		%feature("autodoc", "1");
@@ -216,12 +206,15 @@ class Handle_PlotMgt_PlotterDefinitionError : public Handle_Standard_OutOfRange 
 	return (PlotMgt_PlotterDefinitionError*)$self->Access();
 	}
 };
+%extend Handle_PlotMgt_PlotterDefinitionError {
+	~Handle_PlotMgt_PlotterDefinitionError() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_PlotterDefinitionError\n");
+	}
+};
 
 %nodefaultctor Handle_PlotMgt_PlotterDriver;
 class Handle_PlotMgt_PlotterDriver : public Handle_Aspect_Driver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_PlotterDriver();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterDriver();
 		%feature("autodoc", "1");
@@ -237,33 +230,15 @@ class Handle_PlotMgt_PlotterDriver : public Handle_Aspect_Driver {
 	return (PlotMgt_PlotterDriver*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_PlotMgt_ImageDriver;
-class Handle_PlotMgt_ImageDriver : public Handle_PlotMgt_PlotterDriver {
-	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_ImageDriver();
-		%feature("autodoc", "1");
-		Handle_PlotMgt_ImageDriver();
-		%feature("autodoc", "1");
-		Handle_PlotMgt_ImageDriver(const Handle_PlotMgt_ImageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_ImageDriver(const PlotMgt_ImageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_ImageDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PlotMgt_ImageDriver {
-	PlotMgt_ImageDriver* GetObject() {
-	return (PlotMgt_ImageDriver*)$self->Access();
+%extend Handle_PlotMgt_PlotterDriver {
+	~Handle_PlotMgt_PlotterDriver() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_PlotterDriver\n");
 	}
 };
 
 %nodefaultctor Handle_PlotMgt_Plotter;
 class Handle_PlotMgt_Plotter : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_Plotter();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_Plotter();
 		%feature("autodoc", "1");
@@ -279,12 +254,39 @@ class Handle_PlotMgt_Plotter : public Handle_MMgt_TShared {
 	return (PlotMgt_Plotter*)$self->Access();
 	}
 };
+%extend Handle_PlotMgt_Plotter {
+	~Handle_PlotMgt_Plotter() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_Plotter\n");
+	}
+};
+
+%nodefaultctor Handle_PlotMgt_ImageDriver;
+class Handle_PlotMgt_ImageDriver : public Handle_PlotMgt_PlotterDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_PlotMgt_ImageDriver();
+		%feature("autodoc", "1");
+		Handle_PlotMgt_ImageDriver(const Handle_PlotMgt_ImageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_ImageDriver(const PlotMgt_ImageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_ImageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PlotMgt_ImageDriver {
+	PlotMgt_ImageDriver* GetObject() {
+	return (PlotMgt_ImageDriver*)$self->Access();
+	}
+};
+%extend Handle_PlotMgt_ImageDriver {
+	~Handle_PlotMgt_ImageDriver() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_ImageDriver\n");
+	}
+};
 
 %nodefaultctor Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter;
 class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter();
 		%feature("autodoc", "1");
@@ -300,12 +302,15 @@ class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TColle
 	return (PlotMgt_SequenceNodeOfListOfPlotterParameter*)$self->Access();
 	}
 };
+%extend Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter {
+	~Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter\n");
+	}
+};
 
 %nodefaultctor Handle_PlotMgt_HListOfMFTFonts;
 class Handle_PlotMgt_HListOfMFTFonts : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_HListOfMFTFonts();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfMFTFonts();
 		%feature("autodoc", "1");
@@ -321,12 +326,15 @@ class Handle_PlotMgt_HListOfMFTFonts : public Handle_MMgt_TShared {
 	return (PlotMgt_HListOfMFTFonts*)$self->Access();
 	}
 };
+%extend Handle_PlotMgt_HListOfMFTFonts {
+	~Handle_PlotMgt_HListOfMFTFonts() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_HListOfMFTFonts\n");
+	}
+};
 
 %nodefaultctor Handle_PlotMgt_TextManager;
 class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_TextManager();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_TextManager();
 		%feature("autodoc", "1");
@@ -342,12 +350,15 @@ class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
 	return (PlotMgt_TextManager*)$self->Access();
 	}
 };
+%extend Handle_PlotMgt_TextManager {
+	~Handle_PlotMgt_TextManager() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_TextManager\n");
+	}
+};
 
 %nodefaultctor Handle_PlotMgt_HListOfPlotterParameter;
 class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_HListOfPlotterParameter();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfPlotterParameter();
 		%feature("autodoc", "1");
@@ -363,12 +374,15 @@ class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
 	return (PlotMgt_HListOfPlotterParameter*)$self->Access();
 	}
 };
+%extend Handle_PlotMgt_HListOfPlotterParameter {
+	~Handle_PlotMgt_HListOfPlotterParameter() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_HListOfPlotterParameter\n");
+	}
+};
 
 %nodefaultctor Handle_PlotMgt_PlotterAccessError;
 class Handle_PlotMgt_PlotterAccessError : public Handle_Standard_OutOfRange {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PlotMgt_PlotterAccessError();
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterAccessError();
 		%feature("autodoc", "1");
@@ -382,6 +396,11 @@ class Handle_PlotMgt_PlotterAccessError : public Handle_Standard_OutOfRange {
 %extend Handle_PlotMgt_PlotterAccessError {
 	PlotMgt_PlotterAccessError* GetObject() {
 	return (PlotMgt_PlotterAccessError*)$self->Access();
+	}
+};
+%extend Handle_PlotMgt_PlotterAccessError {
+	~Handle_PlotMgt_PlotterAccessError() {
+	printf("Call custom destructor for instance of Handle_PlotMgt_PlotterAccessError\n");
 	}
 };
 
@@ -412,13 +431,16 @@ class PlotMgt_TextManager : public MFT_TextManager {
 		virtual		void EndString();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_TextManager();
 
 };
 %extend PlotMgt_TextManager {
 	Handle_PlotMgt_TextManager GetHandle() {
 	return *(Handle_PlotMgt_TextManager*) &$self;
+	}
+};
+%extend PlotMgt_TextManager {
+	~PlotMgt_TextManager() {
+	printf("Call custom destructor for instance of PlotMgt_TextManager\n");
 	}
 };
 
@@ -431,13 +453,16 @@ class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode 
 		Handle_PlotMgt_PlotterParameter & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_SequenceNodeOfListOfPlotterParameter();
 
 };
 %extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
 	Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter GetHandle() {
 	return *(Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter*) &$self;
+	}
+};
+%extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
+	~PlotMgt_SequenceNodeOfListOfPlotterParameter() {
+	printf("Call custom destructor for instance of PlotMgt_SequenceNodeOfListOfPlotterParameter\n");
 	}
 };
 
@@ -485,8 +510,6 @@ class PlotMgt_ListOfPlotterParameter : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~PlotMgt_ListOfPlotterParameter();
-		%feature("autodoc", "1");
 		const PlotMgt_ListOfPlotterParameter & Assign(const PlotMgt_ListOfPlotterParameter &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_PlotMgt_PlotterParameter &T);
@@ -525,6 +548,11 @@ class PlotMgt_ListOfPlotterParameter : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend PlotMgt_ListOfPlotterParameter {
+	~PlotMgt_ListOfPlotterParameter() {
+	printf("Call custom destructor for instance of PlotMgt_ListOfPlotterParameter\n");
+	}
 };
 
 %nodefaultctor PlotMgt_PlotterParameter;
@@ -572,13 +600,16 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 		void SetMValue(const Handle_TColStd_HSequenceOfAsciiString &aMap);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_PlotterParameter();
 
 };
 %extend PlotMgt_PlotterParameter {
 	Handle_PlotMgt_PlotterParameter GetHandle() {
 	return *(Handle_PlotMgt_PlotterParameter*) &$self;
+	}
+};
+%extend PlotMgt_PlotterParameter {
+	~PlotMgt_PlotterParameter() {
+	printf("Call custom destructor for instance of PlotMgt_PlotterParameter\n");
 	}
 };
 
@@ -915,13 +946,16 @@ class PlotMgt_Plotter : public MMgt_TShared {
 		void SetFontMap(const Handle_Aspect_FontMap &aFontMap);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_Plotter();
 
 };
 %extend PlotMgt_Plotter {
 	Handle_PlotMgt_Plotter GetHandle() {
 	return *(Handle_PlotMgt_Plotter*) &$self;
+	}
+};
+%extend PlotMgt_Plotter {
+	~PlotMgt_Plotter() {
+	printf("Call custom destructor for instance of PlotMgt_Plotter\n");
 	}
 };
 
@@ -1033,6 +1067,11 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 	return *(Handle_PlotMgt_PlotterDriver*) &$self;
 	}
 };
+%extend PlotMgt_PlotterDriver {
+	~PlotMgt_PlotterDriver() {
+	printf("Call custom destructor for instance of PlotMgt_PlotterDriver\n");
+	}
+};
 
 %nodefaultctor PlotMgt_HListOfMFTFonts;
 class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
@@ -1061,8 +1100,6 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 		PlotMgt_ListOfMFTFonts & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_HListOfMFTFonts();
 
 };
 %extend PlotMgt_HListOfMFTFonts {
@@ -1070,12 +1107,15 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 	return *(Handle_PlotMgt_HListOfMFTFonts*) &$self;
 	}
 };
+%extend PlotMgt_HListOfMFTFonts {
+	~PlotMgt_HListOfMFTFonts() {
+	printf("Call custom destructor for instance of PlotMgt_HListOfMFTFonts\n");
+	}
+};
 
 %nodefaultctor PlotMgt;
 class PlotMgt {
 	public:
-		%feature("autodoc", "1");
-		~PlotMgt();
 		%feature("autodoc", "1");
 		PlotMgt();
 		%feature("autodoc", "1");
@@ -1108,6 +1148,11 @@ class PlotMgt {
 		void PaperSize(TCollection_AsciiString & aFormat, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%extend PlotMgt {
+	~PlotMgt() {
+	printf("Call custom destructor for instance of PlotMgt\n");
+	}
+};
 
 %nodefaultctor PlotMgt_PlotterDefinitionError;
 class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
@@ -1124,13 +1169,16 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 		Handle_PlotMgt_PlotterDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_PlotterDefinitionError();
 
 };
 %extend PlotMgt_PlotterDefinitionError {
 	Handle_PlotMgt_PlotterDefinitionError GetHandle() {
 	return *(Handle_PlotMgt_PlotterDefinitionError*) &$self;
+	}
+};
+%extend PlotMgt_PlotterDefinitionError {
+	~PlotMgt_PlotterDefinitionError() {
+	printf("Call custom destructor for instance of PlotMgt_PlotterDefinitionError\n");
 	}
 };
 
@@ -1149,13 +1197,16 @@ class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
 		Handle_PlotMgt_PlotterAccessError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_PlotterAccessError();
 
 };
 %extend PlotMgt_PlotterAccessError {
 	Handle_PlotMgt_PlotterAccessError GetHandle() {
 	return *(Handle_PlotMgt_PlotterAccessError*) &$self;
+	}
+};
+%extend PlotMgt_PlotterAccessError {
+	~PlotMgt_PlotterAccessError() {
+	printf("Call custom destructor for instance of PlotMgt_PlotterAccessError\n");
 	}
 };
 
@@ -1186,13 +1237,16 @@ class PlotMgt_HListOfMFTSizes : public MMgt_TShared {
 		PlotMgt_ListOfMFTSizes & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_HListOfMFTSizes();
 
 };
 %extend PlotMgt_HListOfMFTSizes {
 	Handle_PlotMgt_HListOfMFTSizes GetHandle() {
 	return *(Handle_PlotMgt_HListOfMFTSizes*) &$self;
+	}
+};
+%extend PlotMgt_HListOfMFTSizes {
+	~PlotMgt_HListOfMFTSizes() {
+	printf("Call custom destructor for instance of PlotMgt_HListOfMFTSizes\n");
 	}
 };
 
@@ -1209,13 +1263,16 @@ class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 		virtual		void EndDraw(const Standard_Boolean dontFlush=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_ImageDriver();
 
 };
 %extend PlotMgt_ImageDriver {
 	Handle_PlotMgt_ImageDriver GetHandle() {
 	return *(Handle_PlotMgt_ImageDriver*) &$self;
+	}
+};
+%extend PlotMgt_ImageDriver {
+	~PlotMgt_ImageDriver() {
+	printf("Call custom destructor for instance of PlotMgt_ImageDriver\n");
 	}
 };
 
@@ -1270,13 +1327,16 @@ class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
 		Handle_PlotMgt_HListOfPlotterParameter ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PlotMgt_HListOfPlotterParameter();
 
 };
 %extend PlotMgt_HListOfPlotterParameter {
 	Handle_PlotMgt_HListOfPlotterParameter GetHandle() {
 	return *(Handle_PlotMgt_HListOfPlotterParameter*) &$self;
+	}
+};
+%extend PlotMgt_HListOfPlotterParameter {
+	~PlotMgt_HListOfPlotterParameter() {
+	printf("Call custom destructor for instance of PlotMgt_HListOfPlotterParameter\n");
 	}
 };
 
@@ -1291,8 +1351,6 @@ class PlotMgt_ListOfMFTFonts {
 		void Init(const Handle_MFT_FontManager &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~PlotMgt_ListOfMFTFonts();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1314,4 +1372,9 @@ class PlotMgt_ListOfMFTFonts {
 		%feature("autodoc", "1");
 		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
 
+};
+%extend PlotMgt_ListOfMFTFonts {
+	~PlotMgt_ListOfMFTFonts() {
+	printf("Call custom destructor for instance of PlotMgt_ListOfMFTFonts\n");
+	}
 };

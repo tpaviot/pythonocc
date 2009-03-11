@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module XmlMXCAFDoc
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_XmlMXCAFDoc_LocationDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_LocationDriver();
-		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_LocationDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_LocationDriver(const Handle_XmlMXCAFDoc_LocationDriver &aHandle);
@@ -118,12 +102,15 @@ class Handle_XmlMXCAFDoc_LocationDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_LocationDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMXCAFDoc_LocationDriver {
+	~Handle_XmlMXCAFDoc_LocationDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_LocationDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMXCAFDoc_ColorToolDriver;
 class Handle_XmlMXCAFDoc_ColorToolDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_ColorToolDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_ColorToolDriver();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_XmlMXCAFDoc_ColorToolDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_ColorToolDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMXCAFDoc_ColorToolDriver {
+	~Handle_XmlMXCAFDoc_ColorToolDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_ColorToolDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMXCAFDoc_CentroidDriver;
 class Handle_XmlMXCAFDoc_CentroidDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_CentroidDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_CentroidDriver();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_XmlMXCAFDoc_CentroidDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_CentroidDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMXCAFDoc_CentroidDriver {
+	~Handle_XmlMXCAFDoc_CentroidDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_CentroidDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMXCAFDoc_GraphNodeDriver;
 class Handle_XmlMXCAFDoc_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_GraphNodeDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_GraphNodeDriver();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_XmlMXCAFDoc_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_GraphNodeDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMXCAFDoc_GraphNodeDriver {
+	~Handle_XmlMXCAFDoc_GraphNodeDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_GraphNodeDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMXCAFDoc_VolumeDriver;
 class Handle_XmlMXCAFDoc_VolumeDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_VolumeDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_VolumeDriver();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_XmlMXCAFDoc_VolumeDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_VolumeDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMXCAFDoc_VolumeDriver {
+	~Handle_XmlMXCAFDoc_VolumeDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_VolumeDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMXCAFDoc_DocumentToolDriver;
 class Handle_XmlMXCAFDoc_DocumentToolDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_DocumentToolDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_DocumentToolDriver();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_XmlMXCAFDoc_DocumentToolDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_DocumentToolDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMXCAFDoc_DocumentToolDriver {
+	~Handle_XmlMXCAFDoc_DocumentToolDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_DocumentToolDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMXCAFDoc_ColorDriver;
 class Handle_XmlMXCAFDoc_ColorDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_ColorDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_ColorDriver();
 		%feature("autodoc", "1");
@@ -244,12 +246,15 @@ class Handle_XmlMXCAFDoc_ColorDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_ColorDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMXCAFDoc_ColorDriver {
+	~Handle_XmlMXCAFDoc_ColorDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_ColorDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMXCAFDoc_LayerToolDriver;
 class Handle_XmlMXCAFDoc_LayerToolDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_LayerToolDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_LayerToolDriver();
 		%feature("autodoc", "1");
@@ -265,12 +270,15 @@ class Handle_XmlMXCAFDoc_LayerToolDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_LayerToolDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMXCAFDoc_LayerToolDriver {
+	~Handle_XmlMXCAFDoc_LayerToolDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_LayerToolDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMXCAFDoc_ShapeToolDriver;
 class Handle_XmlMXCAFDoc_ShapeToolDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_ShapeToolDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_ShapeToolDriver();
 		%feature("autodoc", "1");
@@ -286,12 +294,15 @@ class Handle_XmlMXCAFDoc_ShapeToolDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_ShapeToolDriver*)$self->Access();
 	}
 };
+%extend Handle_XmlMXCAFDoc_ShapeToolDriver {
+	~Handle_XmlMXCAFDoc_ShapeToolDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_ShapeToolDriver\n");
+	}
+};
 
 %nodefaultctor Handle_XmlMXCAFDoc_AreaDriver;
 class Handle_XmlMXCAFDoc_AreaDriver : public Handle_XmlMDF_ADriver {
 	public:
-		%feature("autodoc", "1");
-		~Handle_XmlMXCAFDoc_AreaDriver();
 		%feature("autodoc", "1");
 		Handle_XmlMXCAFDoc_AreaDriver();
 		%feature("autodoc", "1");
@@ -305,6 +316,11 @@ class Handle_XmlMXCAFDoc_AreaDriver : public Handle_XmlMDF_ADriver {
 %extend Handle_XmlMXCAFDoc_AreaDriver {
 	XmlMXCAFDoc_AreaDriver* GetObject() {
 	return (XmlMXCAFDoc_AreaDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMXCAFDoc_AreaDriver {
+	~Handle_XmlMXCAFDoc_AreaDriver() {
+	printf("Call custom destructor for instance of Handle_XmlMXCAFDoc_AreaDriver\n");
 	}
 };
 
@@ -321,13 +337,16 @@ class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_DocumentToolDriver();
 
 };
 %extend XmlMXCAFDoc_DocumentToolDriver {
 	Handle_XmlMXCAFDoc_DocumentToolDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_DocumentToolDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_DocumentToolDriver {
+	~XmlMXCAFDoc_DocumentToolDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_DocumentToolDriver\n");
 	}
 };
 
@@ -348,13 +367,16 @@ class XmlMXCAFDoc_LocationDriver : public XmlMDF_ADriver {
 		Standard_Boolean Translate(const XmlObjMgt_Element &theParent, TopLoc_Location & theLoc, XmlObjMgt_RRelocationTable & theMap);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_LocationDriver();
 
 };
 %extend XmlMXCAFDoc_LocationDriver {
 	Handle_XmlMXCAFDoc_LocationDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_LocationDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_LocationDriver {
+	~XmlMXCAFDoc_LocationDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_LocationDriver\n");
 	}
 };
 
@@ -371,13 +393,16 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_ColorDriver();
 
 };
 %extend XmlMXCAFDoc_ColorDriver {
 	Handle_XmlMXCAFDoc_ColorDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_ColorDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_ColorDriver {
+	~XmlMXCAFDoc_ColorDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_ColorDriver\n");
 	}
 };
 
@@ -406,13 +431,16 @@ class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_VolumeDriver();
 
 };
 %extend XmlMXCAFDoc_VolumeDriver {
 	Handle_XmlMXCAFDoc_VolumeDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_VolumeDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_VolumeDriver {
+	~XmlMXCAFDoc_VolumeDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_VolumeDriver\n");
 	}
 };
 
@@ -429,13 +457,16 @@ class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_ColorToolDriver();
 
 };
 %extend XmlMXCAFDoc_ColorToolDriver {
 	Handle_XmlMXCAFDoc_ColorToolDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_ColorToolDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_ColorToolDriver {
+	~XmlMXCAFDoc_ColorToolDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_ColorToolDriver\n");
 	}
 };
 
@@ -452,13 +483,16 @@ class XmlMXCAFDoc_GraphNodeDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_GraphNodeDriver();
 
 };
 %extend XmlMXCAFDoc_GraphNodeDriver {
 	Handle_XmlMXCAFDoc_GraphNodeDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_GraphNodeDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_GraphNodeDriver {
+	~XmlMXCAFDoc_GraphNodeDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_GraphNodeDriver\n");
 	}
 };
 
@@ -475,13 +509,16 @@ class XmlMXCAFDoc_LayerToolDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_LayerToolDriver();
 
 };
 %extend XmlMXCAFDoc_LayerToolDriver {
 	Handle_XmlMXCAFDoc_LayerToolDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_LayerToolDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_LayerToolDriver {
+	~XmlMXCAFDoc_LayerToolDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_LayerToolDriver\n");
 	}
 };
 
@@ -498,13 +535,16 @@ class XmlMXCAFDoc_ShapeToolDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_ShapeToolDriver();
 
 };
 %extend XmlMXCAFDoc_ShapeToolDriver {
 	Handle_XmlMXCAFDoc_ShapeToolDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_ShapeToolDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_ShapeToolDriver {
+	~XmlMXCAFDoc_ShapeToolDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_ShapeToolDriver\n");
 	}
 };
 
@@ -521,13 +561,16 @@ class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_AreaDriver();
 
 };
 %extend XmlMXCAFDoc_AreaDriver {
 	Handle_XmlMXCAFDoc_AreaDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_AreaDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_AreaDriver {
+	~XmlMXCAFDoc_AreaDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_AreaDriver\n");
 	}
 };
 
@@ -544,12 +587,15 @@ class XmlMXCAFDoc_CentroidDriver : public XmlMDF_ADriver {
 		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~XmlMXCAFDoc_CentroidDriver();
 
 };
 %extend XmlMXCAFDoc_CentroidDriver {
 	Handle_XmlMXCAFDoc_CentroidDriver GetHandle() {
 	return *(Handle_XmlMXCAFDoc_CentroidDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_CentroidDriver {
+	~XmlMXCAFDoc_CentroidDriver() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc_CentroidDriver\n");
 	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepTools
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_BRepTools_ReShape();
-		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape();
 		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape(const Handle_BRepTools_ReShape &aHandle);
@@ -118,12 +102,15 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 	return (BRepTools_ReShape*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_ReShape {
+	~Handle_BRepTools_ReShape() {
+	printf("Call custom destructor for instance of Handle_BRepTools_ReShape\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_Modification;
 class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_Modification();
 		%feature("autodoc", "1");
 		Handle_BRepTools_Modification();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 	return (BRepTools_Modification*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_Modification {
+	~Handle_BRepTools_Modification() {
+	printf("Call custom destructor for instance of Handle_BRepTools_Modification\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_NurbsConvertModification;
 class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_NurbsConvertModification();
 		%feature("autodoc", "1");
 		Handle_BRepTools_NurbsConvertModification();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 	return (BRepTools_NurbsConvertModification*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_NurbsConvertModification {
+	~Handle_BRepTools_NurbsConvertModification() {
+	printf("Call custom destructor for instance of Handle_BRepTools_NurbsConvertModification\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_GTrsfModification;
 class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_GTrsfModification();
 		%feature("autodoc", "1");
 		Handle_BRepTools_GTrsfModification();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 	return (BRepTools_GTrsfModification*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_GTrsfModification {
+	~Handle_BRepTools_GTrsfModification() {
+	printf("Call custom destructor for instance of Handle_BRepTools_GTrsfModification\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_TrsfModification;
 class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_TrsfModification();
 		%feature("autodoc", "1");
 		Handle_BRepTools_TrsfModification();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 	return (BRepTools_TrsfModification*)$self->Access();
 	}
 };
+%extend Handle_BRepTools_TrsfModification {
+	~Handle_BRepTools_TrsfModification() {
+	printf("Call custom destructor for instance of Handle_BRepTools_TrsfModification\n");
+	}
+};
 
 %nodefaultctor Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d;
 class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d();
 		%feature("autodoc", "1");
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d();
 		%feature("autodoc", "1");
@@ -223,27 +222,10 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 	return (BRepTools_DataMapNodeOfMapOfVertexPnt2d*)$self->Access();
 	}
 };
-
-%nodefaultctor BRepTools_Modifier;
-class BRepTools_Modifier {
-	public:
-		%feature("autodoc", "1");
-		~BRepTools_Modifier();
-		%feature("autodoc", "1");
-		BRepTools_Modifier();
-		%feature("autodoc", "1");
-		BRepTools_Modifier(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		BRepTools_Modifier(const TopoDS_Shape &S, const Handle_BRepTools_Modification &M);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Perform(const Handle_BRepTools_Modification &M);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & ModifiedShape(const TopoDS_Shape &S) const;
-
+%extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {
+	~Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d() {
+	printf("Call custom destructor for instance of Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");
+	}
 };
 
 %nodefaultctor BRepTools_Quilt;
@@ -295,13 +277,16 @@ class BRepTools_ReShape : public MMgt_TShared {
 		Standard_Boolean & ModeConsiderOrientation();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_ReShape();
 
 };
 %extend BRepTools_ReShape {
 	Handle_BRepTools_ReShape GetHandle() {
 	return *(Handle_BRepTools_ReShape*) &$self;
+	}
+};
+%extend BRepTools_ReShape {
+	~BRepTools_ReShape() {
+	printf("Call custom destructor for instance of BRepTools_ReShape\n");
 	}
 };
 
@@ -477,6 +462,11 @@ class BRepTools_Modification : public MMgt_TShared {
 	return *(Handle_BRepTools_Modification*) &$self;
 	}
 };
+%extend BRepTools_Modification {
+	~BRepTools_Modification() {
+	printf("Call custom destructor for instance of BRepTools_Modification\n");
+	}
+};
 
 %nodefaultctor BRepTools_GTrsfModification;
 class BRepTools_GTrsfModification : public BRepTools_Modification {
@@ -485,14 +475,39 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 		BRepTools_GTrsfModification(const gp_GTrsf &T);
 		%feature("autodoc", "1");
 		gp_GTrsf & GTrsf();
-		%feature("autodoc", "1");
-		virtual		~BRepTools_GTrsfModification();
 
 };
 %extend BRepTools_GTrsfModification {
 	Handle_BRepTools_GTrsfModification GetHandle() {
 	return *(Handle_BRepTools_GTrsfModification*) &$self;
 	}
+};
+%extend BRepTools_GTrsfModification {
+	~BRepTools_GTrsfModification() {
+	printf("Call custom destructor for instance of BRepTools_GTrsfModification\n");
+	}
+};
+
+%nodefaultctor BRepTools_Modifier;
+class BRepTools_Modifier {
+	public:
+		%feature("autodoc", "1");
+		~BRepTools_Modifier();
+		%feature("autodoc", "1");
+		BRepTools_Modifier();
+		%feature("autodoc", "1");
+		BRepTools_Modifier(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		BRepTools_Modifier(const TopoDS_Shape &S, const Handle_BRepTools_Modification &M);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void Perform(const Handle_BRepTools_Modification &M);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & ModifiedShape(const TopoDS_Shape &S) const;
+
 };
 
 %nodefaultctor BRepTools_TrsfModification;
@@ -516,13 +531,16 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_TrsfModification();
 
 };
 %extend BRepTools_TrsfModification {
 	Handle_BRepTools_TrsfModification GetHandle() {
 	return *(Handle_BRepTools_TrsfModification*) &$self;
+	}
+};
+%extend BRepTools_TrsfModification {
+	~BRepTools_TrsfModification() {
+	printf("Call custom destructor for instance of BRepTools_TrsfModification\n");
 	}
 };
 
@@ -554,6 +572,38 @@ class BRepTools_WireExplorer {
 		%feature("autodoc", "1");
 		void Clear();
 
+};
+
+%nodefaultctor BRepTools_NurbsConvertModification;
+class BRepTools_NurbsConvertModification : public BRepTools_Modification {
+	public:
+		%feature("autodoc", "1");
+		BRepTools_NurbsConvertModification();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepTools_NurbsConvertModification {
+	Handle_BRepTools_NurbsConvertModification GetHandle() {
+	return *(Handle_BRepTools_NurbsConvertModification*) &$self;
+	}
+};
+%extend BRepTools_NurbsConvertModification {
+	~BRepTools_NurbsConvertModification() {
+	printf("Call custom destructor for instance of BRepTools_NurbsConvertModification\n");
+	}
 };
 
 %nodefaultctor BRepTools_DataMapIteratorOfMapOfVertexPnt2d;
@@ -605,8 +655,6 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 		TColgp_SequenceOfPnt2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_DataMapNodeOfMapOfVertexPnt2d();
 
 };
 %extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
@@ -614,32 +662,8 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 	return *(Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d*) &$self;
 	}
 };
-
-%nodefaultctor BRepTools_NurbsConvertModification;
-class BRepTools_NurbsConvertModification : public BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		BRepTools_NurbsConvertModification();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_NurbsConvertModification();
-
-};
-%extend BRepTools_NurbsConvertModification {
-	Handle_BRepTools_NurbsConvertModification GetHandle() {
-	return *(Handle_BRepTools_NurbsConvertModification*) &$self;
+%extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
+	~BRepTools_DataMapNodeOfMapOfVertexPnt2d() {
+	printf("Call custom destructor for instance of BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");
 	}
 };

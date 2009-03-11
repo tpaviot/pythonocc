@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GccInt
 
@@ -111,8 +97,6 @@ enum GccInt_IType {
 class Handle_GccInt_Bisec : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GccInt_Bisec();
-		%feature("autodoc", "1");
 		Handle_GccInt_Bisec();
 		%feature("autodoc", "1");
 		Handle_GccInt_Bisec(const Handle_GccInt_Bisec &aHandle);
@@ -127,12 +111,15 @@ class Handle_GccInt_Bisec : public Handle_MMgt_TShared {
 	return (GccInt_Bisec*)$self->Access();
 	}
 };
+%extend Handle_GccInt_Bisec {
+	~Handle_GccInt_Bisec() {
+	printf("Call custom destructor for instance of Handle_GccInt_Bisec\n");
+	}
+};
 
 %nodefaultctor Handle_GccInt_BLine;
 class Handle_GccInt_BLine : public Handle_GccInt_Bisec {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GccInt_BLine();
 		%feature("autodoc", "1");
 		Handle_GccInt_BLine();
 		%feature("autodoc", "1");
@@ -148,12 +135,15 @@ class Handle_GccInt_BLine : public Handle_GccInt_Bisec {
 	return (GccInt_BLine*)$self->Access();
 	}
 };
+%extend Handle_GccInt_BLine {
+	~Handle_GccInt_BLine() {
+	printf("Call custom destructor for instance of Handle_GccInt_BLine\n");
+	}
+};
 
 %nodefaultctor Handle_GccInt_BParab;
 class Handle_GccInt_BParab : public Handle_GccInt_Bisec {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GccInt_BParab();
 		%feature("autodoc", "1");
 		Handle_GccInt_BParab();
 		%feature("autodoc", "1");
@@ -169,12 +159,15 @@ class Handle_GccInt_BParab : public Handle_GccInt_Bisec {
 	return (GccInt_BParab*)$self->Access();
 	}
 };
+%extend Handle_GccInt_BParab {
+	~Handle_GccInt_BParab() {
+	printf("Call custom destructor for instance of Handle_GccInt_BParab\n");
+	}
+};
 
 %nodefaultctor Handle_GccInt_BElips;
 class Handle_GccInt_BElips : public Handle_GccInt_Bisec {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GccInt_BElips();
 		%feature("autodoc", "1");
 		Handle_GccInt_BElips();
 		%feature("autodoc", "1");
@@ -190,12 +183,15 @@ class Handle_GccInt_BElips : public Handle_GccInt_Bisec {
 	return (GccInt_BElips*)$self->Access();
 	}
 };
+%extend Handle_GccInt_BElips {
+	~Handle_GccInt_BElips() {
+	printf("Call custom destructor for instance of Handle_GccInt_BElips\n");
+	}
+};
 
 %nodefaultctor Handle_GccInt_BPoint;
 class Handle_GccInt_BPoint : public Handle_GccInt_Bisec {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GccInt_BPoint();
 		%feature("autodoc", "1");
 		Handle_GccInt_BPoint();
 		%feature("autodoc", "1");
@@ -211,12 +207,15 @@ class Handle_GccInt_BPoint : public Handle_GccInt_Bisec {
 	return (GccInt_BPoint*)$self->Access();
 	}
 };
+%extend Handle_GccInt_BPoint {
+	~Handle_GccInt_BPoint() {
+	printf("Call custom destructor for instance of Handle_GccInt_BPoint\n");
+	}
+};
 
 %nodefaultctor Handle_GccInt_BCirc;
 class Handle_GccInt_BCirc : public Handle_GccInt_Bisec {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GccInt_BCirc();
 		%feature("autodoc", "1");
 		Handle_GccInt_BCirc();
 		%feature("autodoc", "1");
@@ -232,12 +231,15 @@ class Handle_GccInt_BCirc : public Handle_GccInt_Bisec {
 	return (GccInt_BCirc*)$self->Access();
 	}
 };
+%extend Handle_GccInt_BCirc {
+	~Handle_GccInt_BCirc() {
+	printf("Call custom destructor for instance of Handle_GccInt_BCirc\n");
+	}
+};
 
 %nodefaultctor Handle_GccInt_BHyper;
 class Handle_GccInt_BHyper : public Handle_GccInt_Bisec {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GccInt_BHyper();
 		%feature("autodoc", "1");
 		Handle_GccInt_BHyper();
 		%feature("autodoc", "1");
@@ -251,6 +253,11 @@ class Handle_GccInt_BHyper : public Handle_GccInt_Bisec {
 %extend Handle_GccInt_BHyper {
 	GccInt_BHyper* GetObject() {
 	return (GccInt_BHyper*)$self->Access();
+	}
+};
+%extend Handle_GccInt_BHyper {
+	~Handle_GccInt_BHyper() {
+	printf("Call custom destructor for instance of Handle_GccInt_BHyper\n");
 	}
 };
 
@@ -280,19 +287,27 @@ class GccInt_Bisec : public MMgt_TShared {
 	return *(Handle_GccInt_Bisec*) &$self;
 	}
 };
+%extend GccInt_Bisec {
+	~GccInt_Bisec() {
+	printf("Call custom destructor for instance of GccInt_Bisec\n");
+	}
+};
 
 %nodefaultctor GccInt_BParab;
 class GccInt_BParab : public GccInt_Bisec {
 	public:
 		%feature("autodoc", "1");
 		GccInt_BParab(const gp_Parab2d &Parab);
-		%feature("autodoc", "1");
-		virtual		~GccInt_BParab();
 
 };
 %extend GccInt_BParab {
 	Handle_GccInt_BParab GetHandle() {
 	return *(Handle_GccInt_BParab*) &$self;
+	}
+};
+%extend GccInt_BParab {
+	~GccInt_BParab() {
+	printf("Call custom destructor for instance of GccInt_BParab\n");
 	}
 };
 
@@ -307,13 +322,16 @@ class GccInt_BCirc : public GccInt_Bisec {
 		virtual		GccInt_IType ArcType() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GccInt_BCirc();
 
 };
 %extend GccInt_BCirc {
 	Handle_GccInt_BCirc GetHandle() {
 	return *(Handle_GccInt_BCirc*) &$self;
+	}
+};
+%extend GccInt_BCirc {
+	~GccInt_BCirc() {
+	printf("Call custom destructor for instance of GccInt_BCirc\n");
 	}
 };
 
@@ -328,13 +346,16 @@ class GccInt_BElips : public GccInt_Bisec {
 		virtual		GccInt_IType ArcType() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GccInt_BElips();
 
 };
 %extend GccInt_BElips {
 	Handle_GccInt_BElips GetHandle() {
 	return *(Handle_GccInt_BElips*) &$self;
+	}
+};
+%extend GccInt_BElips {
+	~GccInt_BElips() {
+	printf("Call custom destructor for instance of GccInt_BElips\n");
 	}
 };
 
@@ -349,13 +370,16 @@ class GccInt_BPoint : public GccInt_Bisec {
 		virtual		GccInt_IType ArcType() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GccInt_BPoint();
 
 };
 %extend GccInt_BPoint {
 	Handle_GccInt_BPoint GetHandle() {
 	return *(Handle_GccInt_BPoint*) &$self;
+	}
+};
+%extend GccInt_BPoint {
+	~GccInt_BPoint() {
+	printf("Call custom destructor for instance of GccInt_BPoint\n");
 	}
 };
 
@@ -370,13 +394,16 @@ class GccInt_BHyper : public GccInt_Bisec {
 		virtual		GccInt_IType ArcType() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GccInt_BHyper();
 
 };
 %extend GccInt_BHyper {
 	Handle_GccInt_BHyper GetHandle() {
 	return *(Handle_GccInt_BHyper*) &$self;
+	}
+};
+%extend GccInt_BHyper {
+	~GccInt_BHyper() {
+	printf("Call custom destructor for instance of GccInt_BHyper\n");
 	}
 };
 
@@ -391,12 +418,15 @@ class GccInt_BLine : public GccInt_Bisec {
 		virtual		GccInt_IType ArcType() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GccInt_BLine();
 
 };
 %extend GccInt_BLine {
 	Handle_GccInt_BLine GetHandle() {
 	return *(Handle_GccInt_BLine*) &$self;
+	}
+};
+%extend GccInt_BLine {
+	~GccInt_BLine() {
+	printf("Call custom destructor for instance of GccInt_BLine\n");
 	}
 };

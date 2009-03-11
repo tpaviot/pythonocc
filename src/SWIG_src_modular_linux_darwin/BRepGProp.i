@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepGProp
 
@@ -128,44 +114,6 @@ class BRepGProp_Sinert : public GProp_GProps {
 
 };
 
-%nodefaultctor BRepGProp_UFunctionOfVinertGK;
-class BRepGProp_UFunctionOfVinertGK : public math_Function {
-	public:
-		%feature("autodoc", "1");
-		~BRepGProp_UFunctionOfVinertGK();
-		%feature("autodoc", "1");
-		BRepGProp_UFunctionOfVinertGK(const BRepGProp_Face &theSurface, const gp_Pnt &theVertex, const Standard_Boolean IsByPoint, const Standard_Address theCoeffs);
-		%feature("autodoc", "1");
-		void SetValueType(const GProp_ValueType theType);
-		%feature("autodoc", "1");
-		void SetVParam(const Standard_Real theVParam);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-
-};
-
-%nodefaultctor BRepGProp_Domain;
-class BRepGProp_Domain {
-	public:
-		%feature("autodoc", "1");
-		~BRepGProp_Domain();
-		%feature("autodoc", "1");
-		BRepGProp_Domain();
-		%feature("autodoc", "1");
-		BRepGProp_Domain(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		Standard_Boolean More();
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		const TopoDS_Edge & Value();
-		%feature("autodoc", "1");
-		void Next();
-
-};
-
 %nodefaultctor BRepGProp;
 class BRepGProp {
 	public:
@@ -187,6 +135,30 @@ class BRepGProp {
 		Standard_Real VolumePropertiesGK(const TopoDS_Shape &S, GProp_GProps & VProps, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
 		%feature("autodoc", "1");
 		Standard_Real VolumePropertiesGK(const TopoDS_Shape &S, GProp_GProps & VProps, const gp_Pln &thePln, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
+
+};
+
+%nodefaultctor BRepGProp_EdgeTool;
+class BRepGProp_EdgeTool {
+	public:
+		%feature("autodoc", "1");
+		~BRepGProp_EdgeTool();
+		%feature("autodoc", "1");
+		BRepGProp_EdgeTool();
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Integer IntegrationOrder(const BRepAdaptor_Curve &C);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const BRepAdaptor_Curve &C, const Standard_Real U);
+		%feature("autodoc", "1");
+		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const BRepAdaptor_Curve &C, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		void Intervals(const BRepAdaptor_Curve &C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 };
 
@@ -252,6 +224,60 @@ class BRepGProp_Vinert : public GProp_GProps {
 
 };
 
+%nodefaultctor BRepGProp_UFunctionOfVinertGK;
+class BRepGProp_UFunctionOfVinertGK : public math_Function {
+	public:
+		%feature("autodoc", "1");
+		~BRepGProp_UFunctionOfVinertGK();
+		%feature("autodoc", "1");
+		BRepGProp_UFunctionOfVinertGK(const BRepGProp_Face &theSurface, const gp_Pnt &theVertex, const Standard_Boolean IsByPoint, const Standard_Address theCoeffs);
+		%feature("autodoc", "1");
+		void SetValueType(const GProp_ValueType theType);
+		%feature("autodoc", "1");
+		void SetVParam(const Standard_Real theVParam);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+
+};
+
+%nodefaultctor BRepGProp_Cinert;
+class BRepGProp_Cinert : public GProp_GProps {
+	public:
+		%feature("autodoc", "1");
+		~BRepGProp_Cinert();
+		%feature("autodoc", "1");
+		BRepGProp_Cinert();
+		%feature("autodoc", "1");
+		BRepGProp_Cinert(const BRepAdaptor_Curve &C, const gp_Pnt &CLocation);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt &CLocation);
+		%feature("autodoc", "1");
+		void Perform(const BRepAdaptor_Curve &C);
+
+};
+
+%nodefaultctor BRepGProp_Domain;
+class BRepGProp_Domain {
+	public:
+		%feature("autodoc", "1");
+		~BRepGProp_Domain();
+		%feature("autodoc", "1");
+		BRepGProp_Domain();
+		%feature("autodoc", "1");
+		BRepGProp_Domain(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		Standard_Boolean More();
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Value();
+		%feature("autodoc", "1");
+		void Next();
+
+};
+
 %nodefaultctor BRepGProp_TFunctionOfVinertGK;
 class BRepGProp_TFunctionOfVinertGK : public math_Function {
 	public:
@@ -275,46 +301,6 @@ class BRepGProp_TFunctionOfVinertGK : public math_Function {
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
-
-};
-
-%nodefaultctor BRepGProp_Cinert;
-class BRepGProp_Cinert : public GProp_GProps {
-	public:
-		%feature("autodoc", "1");
-		~BRepGProp_Cinert();
-		%feature("autodoc", "1");
-		BRepGProp_Cinert();
-		%feature("autodoc", "1");
-		BRepGProp_Cinert(const BRepAdaptor_Curve &C, const gp_Pnt &CLocation);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt &CLocation);
-		%feature("autodoc", "1");
-		void Perform(const BRepAdaptor_Curve &C);
-
-};
-
-%nodefaultctor BRepGProp_EdgeTool;
-class BRepGProp_EdgeTool {
-	public:
-		%feature("autodoc", "1");
-		~BRepGProp_EdgeTool();
-		%feature("autodoc", "1");
-		BRepGProp_EdgeTool();
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Integer IntegrationOrder(const BRepAdaptor_Curve &C);
-		%feature("autodoc", "1");
-		gp_Pnt Value(const BRepAdaptor_Curve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const BRepAdaptor_Curve &C, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		void Intervals(const BRepAdaptor_Curve &C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 };
 

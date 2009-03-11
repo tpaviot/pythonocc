@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GeomFill
 
@@ -132,8 +118,6 @@ enum GeomFill_PipeError {
 class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GeomFill_LocationLaw();
-		%feature("autodoc", "1");
 		Handle_GeomFill_LocationLaw();
 		%feature("autodoc", "1");
 		Handle_GeomFill_LocationLaw(const Handle_GeomFill_LocationLaw &aHandle);
@@ -148,12 +132,15 @@ class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
 	return (GeomFill_LocationLaw*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_LocationLaw {
+	~Handle_GeomFill_LocationLaw() {
+	printf("Call custom destructor for instance of Handle_GeomFill_LocationLaw\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_CurveAndTrihedron;
 class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_CurveAndTrihedron();
 		%feature("autodoc", "1");
 		Handle_GeomFill_CurveAndTrihedron();
 		%feature("autodoc", "1");
@@ -169,12 +156,15 @@ class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
 	return (GeomFill_CurveAndTrihedron*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_CurveAndTrihedron {
+	~Handle_GeomFill_CurveAndTrihedron() {
+	printf("Call custom destructor for instance of Handle_GeomFill_CurveAndTrihedron\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_TgtField;
 class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_TgtField();
 		%feature("autodoc", "1");
 		Handle_GeomFill_TgtField();
 		%feature("autodoc", "1");
@@ -190,12 +180,15 @@ class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
 	return (GeomFill_TgtField*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_TgtField {
+	~Handle_GeomFill_TgtField() {
+	printf("Call custom destructor for instance of Handle_GeomFill_TgtField\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_TgtOnCoons;
 class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_TgtOnCoons();
 		%feature("autodoc", "1");
 		Handle_GeomFill_TgtOnCoons();
 		%feature("autodoc", "1");
@@ -211,12 +204,15 @@ class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
 	return (GeomFill_TgtOnCoons*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_TgtOnCoons {
+	~Handle_GeomFill_TgtOnCoons() {
+	printf("Call custom destructor for instance of Handle_GeomFill_TgtOnCoons\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_LocationGuide;
 class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_LocationGuide();
 		%feature("autodoc", "1");
 		Handle_GeomFill_LocationGuide();
 		%feature("autodoc", "1");
@@ -232,12 +228,15 @@ class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
 	return (GeomFill_LocationGuide*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_LocationGuide {
+	~Handle_GeomFill_LocationGuide() {
+	printf("Call custom destructor for instance of Handle_GeomFill_LocationGuide\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_HArray1OfLocationLaw;
 class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_HArray1OfLocationLaw();
 		%feature("autodoc", "1");
 		Handle_GeomFill_HArray1OfLocationLaw();
 		%feature("autodoc", "1");
@@ -253,12 +252,15 @@ class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
 	return (GeomFill_HArray1OfLocationLaw*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_HArray1OfLocationLaw {
+	~Handle_GeomFill_HArray1OfLocationLaw() {
+	printf("Call custom destructor for instance of Handle_GeomFill_HArray1OfLocationLaw\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfCurve;
 class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_SequenceNodeOfSequenceOfCurve();
 		%feature("autodoc", "1");
 		Handle_GeomFill_SequenceNodeOfSequenceOfCurve();
 		%feature("autodoc", "1");
@@ -274,12 +276,15 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 	return (GeomFill_SequenceNodeOfSequenceOfCurve*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_SequenceNodeOfSequenceOfCurve {
+	~Handle_GeomFill_SequenceNodeOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of Handle_GeomFill_SequenceNodeOfSequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_CoonsAlgPatch;
 class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_CoonsAlgPatch();
 		%feature("autodoc", "1");
 		Handle_GeomFill_CoonsAlgPatch();
 		%feature("autodoc", "1");
@@ -295,12 +300,15 @@ class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
 	return (GeomFill_CoonsAlgPatch*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_CoonsAlgPatch {
+	~Handle_GeomFill_CoonsAlgPatch() {
+	printf("Call custom destructor for instance of Handle_GeomFill_CoonsAlgPatch\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_TrihedronLaw;
 class Handle_GeomFill_TrihedronLaw : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_TrihedronLaw();
 		%feature("autodoc", "1");
 		Handle_GeomFill_TrihedronLaw();
 		%feature("autodoc", "1");
@@ -316,12 +324,15 @@ class Handle_GeomFill_TrihedronLaw : public Handle_MMgt_TShared {
 	return (GeomFill_TrihedronLaw*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_TrihedronLaw {
+	~Handle_GeomFill_TrihedronLaw() {
+	printf("Call custom destructor for instance of Handle_GeomFill_TrihedronLaw\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_TrihedronWithGuide;
 class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_TrihedronWithGuide();
 		%feature("autodoc", "1");
 		Handle_GeomFill_TrihedronWithGuide();
 		%feature("autodoc", "1");
@@ -337,12 +348,15 @@ class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_TrihedronWithGuide*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_TrihedronWithGuide {
+	~Handle_GeomFill_TrihedronWithGuide() {
+	printf("Call custom destructor for instance of Handle_GeomFill_TrihedronWithGuide\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_GuideTrihedronAC;
 class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGuide {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_GuideTrihedronAC();
 		%feature("autodoc", "1");
 		Handle_GeomFill_GuideTrihedronAC();
 		%feature("autodoc", "1");
@@ -358,12 +372,15 @@ class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGui
 	return (GeomFill_GuideTrihedronAC*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_GuideTrihedronAC {
+	~Handle_GeomFill_GuideTrihedronAC() {
+	printf("Call custom destructor for instance of Handle_GeomFill_GuideTrihedronAC\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_SectionLaw;
 class Handle_GeomFill_SectionLaw : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_SectionLaw();
 		%feature("autodoc", "1");
 		Handle_GeomFill_SectionLaw();
 		%feature("autodoc", "1");
@@ -379,12 +396,15 @@ class Handle_GeomFill_SectionLaw : public Handle_MMgt_TShared {
 	return (GeomFill_SectionLaw*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_SectionLaw {
+	~Handle_GeomFill_SectionLaw() {
+	printf("Call custom destructor for instance of Handle_GeomFill_SectionLaw\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_NSections;
 class Handle_GeomFill_NSections : public Handle_GeomFill_SectionLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_NSections();
 		%feature("autodoc", "1");
 		Handle_GeomFill_NSections();
 		%feature("autodoc", "1");
@@ -400,12 +420,15 @@ class Handle_GeomFill_NSections : public Handle_GeomFill_SectionLaw {
 	return (GeomFill_NSections*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_NSections {
+	~Handle_GeomFill_NSections() {
+	printf("Call custom destructor for instance of Handle_GeomFill_NSections\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_Boundary;
 class Handle_GeomFill_Boundary : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_Boundary();
 		%feature("autodoc", "1");
 		Handle_GeomFill_Boundary();
 		%feature("autodoc", "1");
@@ -421,12 +444,15 @@ class Handle_GeomFill_Boundary : public Handle_MMgt_TShared {
 	return (GeomFill_Boundary*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_Boundary {
+	~Handle_GeomFill_Boundary() {
+	printf("Call custom destructor for instance of Handle_GeomFill_Boundary\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_SimpleBound;
 class Handle_GeomFill_SimpleBound : public Handle_GeomFill_Boundary {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_SimpleBound();
 		%feature("autodoc", "1");
 		Handle_GeomFill_SimpleBound();
 		%feature("autodoc", "1");
@@ -442,12 +468,15 @@ class Handle_GeomFill_SimpleBound : public Handle_GeomFill_Boundary {
 	return (GeomFill_SimpleBound*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_SimpleBound {
+	~Handle_GeomFill_SimpleBound() {
+	printf("Call custom destructor for instance of Handle_GeomFill_SimpleBound\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_SweepFunction;
 class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_SweepFunction();
 		%feature("autodoc", "1");
 		Handle_GeomFill_SweepFunction();
 		%feature("autodoc", "1");
@@ -463,33 +492,15 @@ class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
 	return (GeomFill_SweepFunction*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_GeomFill_LocationDraft;
-class Handle_GeomFill_LocationDraft : public Handle_GeomFill_LocationLaw {
-	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_LocationDraft();
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationDraft();
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationDraft(const Handle_GeomFill_LocationDraft &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationDraft(const GeomFill_LocationDraft *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationDraft const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_LocationDraft {
-	GeomFill_LocationDraft* GetObject() {
-	return (GeomFill_LocationDraft*)$self->Access();
+%extend Handle_GeomFill_SweepFunction {
+	~Handle_GeomFill_SweepFunction() {
+	printf("Call custom destructor for instance of Handle_GeomFill_SweepFunction\n");
 	}
 };
 
 %nodefaultctor Handle_GeomFill_CircularBlendFunc;
 class Handle_GeomFill_CircularBlendFunc : public Handle_Approx_SweepFunction {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_CircularBlendFunc();
 		%feature("autodoc", "1");
 		Handle_GeomFill_CircularBlendFunc();
 		%feature("autodoc", "1");
@@ -505,12 +516,39 @@ class Handle_GeomFill_CircularBlendFunc : public Handle_Approx_SweepFunction {
 	return (GeomFill_CircularBlendFunc*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_CircularBlendFunc {
+	~Handle_GeomFill_CircularBlendFunc() {
+	printf("Call custom destructor for instance of Handle_GeomFill_CircularBlendFunc\n");
+	}
+};
+
+%nodefaultctor Handle_GeomFill_LocationDraft;
+class Handle_GeomFill_LocationDraft : public Handle_GeomFill_LocationLaw {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationDraft();
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationDraft(const Handle_GeomFill_LocationDraft &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationDraft(const GeomFill_LocationDraft *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationDraft const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_LocationDraft {
+	GeomFill_LocationDraft* GetObject() {
+	return (GeomFill_LocationDraft*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_LocationDraft {
+	~Handle_GeomFill_LocationDraft() {
+	printf("Call custom destructor for instance of Handle_GeomFill_LocationDraft\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_BoundWithSurf;
 class Handle_GeomFill_BoundWithSurf : public Handle_GeomFill_Boundary {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_BoundWithSurf();
 		%feature("autodoc", "1");
 		Handle_GeomFill_BoundWithSurf();
 		%feature("autodoc", "1");
@@ -526,12 +564,15 @@ class Handle_GeomFill_BoundWithSurf : public Handle_GeomFill_Boundary {
 	return (GeomFill_BoundWithSurf*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_BoundWithSurf {
+	~Handle_GeomFill_BoundWithSurf() {
+	printf("Call custom destructor for instance of Handle_GeomFill_BoundWithSurf\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_Line;
 class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_Line();
 		%feature("autodoc", "1");
 		Handle_GeomFill_Line();
 		%feature("autodoc", "1");
@@ -547,12 +588,15 @@ class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 	return (GeomFill_Line*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_Line {
+	~Handle_GeomFill_Line() {
+	printf("Call custom destructor for instance of Handle_GeomFill_Line\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_Frenet;
 class Handle_GeomFill_Frenet : public Handle_GeomFill_TrihedronLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_Frenet();
 		%feature("autodoc", "1");
 		Handle_GeomFill_Frenet();
 		%feature("autodoc", "1");
@@ -568,12 +612,15 @@ class Handle_GeomFill_Frenet : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_Frenet*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_Frenet {
+	~Handle_GeomFill_Frenet() {
+	printf("Call custom destructor for instance of Handle_GeomFill_Frenet\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_Darboux;
 class Handle_GeomFill_Darboux : public Handle_GeomFill_TrihedronLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_Darboux();
 		%feature("autodoc", "1");
 		Handle_GeomFill_Darboux();
 		%feature("autodoc", "1");
@@ -589,12 +636,15 @@ class Handle_GeomFill_Darboux : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_Darboux*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_Darboux {
+	~Handle_GeomFill_Darboux() {
+	printf("Call custom destructor for instance of Handle_GeomFill_Darboux\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_ConstantBiNormal;
 class Handle_GeomFill_ConstantBiNormal : public Handle_GeomFill_TrihedronLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_ConstantBiNormal();
 		%feature("autodoc", "1");
 		Handle_GeomFill_ConstantBiNormal();
 		%feature("autodoc", "1");
@@ -610,12 +660,15 @@ class Handle_GeomFill_ConstantBiNormal : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_ConstantBiNormal*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_ConstantBiNormal {
+	~Handle_GeomFill_ConstantBiNormal() {
+	printf("Call custom destructor for instance of Handle_GeomFill_ConstantBiNormal\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_DegeneratedBound;
 class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_DegeneratedBound();
 		%feature("autodoc", "1");
 		Handle_GeomFill_DegeneratedBound();
 		%feature("autodoc", "1");
@@ -631,12 +684,15 @@ class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
 	return (GeomFill_DegeneratedBound*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_DegeneratedBound {
+	~Handle_GeomFill_DegeneratedBound() {
+	printf("Call custom destructor for instance of Handle_GeomFill_DegeneratedBound\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_CorrectedFrenet;
 class Handle_GeomFill_CorrectedFrenet : public Handle_GeomFill_TrihedronLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_CorrectedFrenet();
 		%feature("autodoc", "1");
 		Handle_GeomFill_CorrectedFrenet();
 		%feature("autodoc", "1");
@@ -652,12 +708,15 @@ class Handle_GeomFill_CorrectedFrenet : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_CorrectedFrenet*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_CorrectedFrenet {
+	~Handle_GeomFill_CorrectedFrenet() {
+	printf("Call custom destructor for instance of Handle_GeomFill_CorrectedFrenet\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_GuideTrihedronPlan;
 class Handle_GeomFill_GuideTrihedronPlan : public Handle_GeomFill_TrihedronWithGuide {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_GuideTrihedronPlan();
 		%feature("autodoc", "1");
 		Handle_GeomFill_GuideTrihedronPlan();
 		%feature("autodoc", "1");
@@ -673,12 +732,15 @@ class Handle_GeomFill_GuideTrihedronPlan : public Handle_GeomFill_TrihedronWithG
 	return (GeomFill_GuideTrihedronPlan*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_GuideTrihedronPlan {
+	~Handle_GeomFill_GuideTrihedronPlan() {
+	printf("Call custom destructor for instance of Handle_GeomFill_GuideTrihedronPlan\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_UniformSection;
 class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_UniformSection();
 		%feature("autodoc", "1");
 		Handle_GeomFill_UniformSection();
 		%feature("autodoc", "1");
@@ -694,12 +756,15 @@ class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
 	return (GeomFill_UniformSection*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_UniformSection {
+	~Handle_GeomFill_UniformSection() {
+	printf("Call custom destructor for instance of Handle_GeomFill_UniformSection\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfTrsf;
 class Handle_GeomFill_SequenceNodeOfSequenceOfTrsf : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_SequenceNodeOfSequenceOfTrsf();
 		%feature("autodoc", "1");
 		Handle_GeomFill_SequenceNodeOfSequenceOfTrsf();
 		%feature("autodoc", "1");
@@ -715,12 +780,15 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfTrsf : public Handle_TCollection_S
 	return (GeomFill_SequenceNodeOfSequenceOfTrsf*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_SequenceNodeOfSequenceOfTrsf {
+	~Handle_GeomFill_SequenceNodeOfSequenceOfTrsf() {
+	printf("Call custom destructor for instance of Handle_GeomFill_SequenceNodeOfSequenceOfTrsf\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_EvolvedSection;
 class Handle_GeomFill_EvolvedSection : public Handle_GeomFill_SectionLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_EvolvedSection();
 		%feature("autodoc", "1");
 		Handle_GeomFill_EvolvedSection();
 		%feature("autodoc", "1");
@@ -736,12 +804,15 @@ class Handle_GeomFill_EvolvedSection : public Handle_GeomFill_SectionLaw {
 	return (GeomFill_EvolvedSection*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_EvolvedSection {
+	~Handle_GeomFill_EvolvedSection() {
+	printf("Call custom destructor for instance of Handle_GeomFill_EvolvedSection\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_DraftTrihedron;
 class Handle_GeomFill_DraftTrihedron : public Handle_GeomFill_TrihedronLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_DraftTrihedron();
 		%feature("autodoc", "1");
 		Handle_GeomFill_DraftTrihedron();
 		%feature("autodoc", "1");
@@ -757,12 +828,15 @@ class Handle_GeomFill_DraftTrihedron : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_DraftTrihedron*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_DraftTrihedron {
+	~Handle_GeomFill_DraftTrihedron() {
+	printf("Call custom destructor for instance of Handle_GeomFill_DraftTrihedron\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_HArray1OfSectionLaw;
 class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_HArray1OfSectionLaw();
 		%feature("autodoc", "1");
 		Handle_GeomFill_HArray1OfSectionLaw();
 		%feature("autodoc", "1");
@@ -778,12 +852,15 @@ class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
 	return (GeomFill_HArray1OfSectionLaw*)$self->Access();
 	}
 };
+%extend Handle_GeomFill_HArray1OfSectionLaw {
+	~Handle_GeomFill_HArray1OfSectionLaw() {
+	printf("Call custom destructor for instance of Handle_GeomFill_HArray1OfSectionLaw\n");
+	}
+};
 
 %nodefaultctor Handle_GeomFill_Fixed;
 class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomFill_Fixed();
 		%feature("autodoc", "1");
 		Handle_GeomFill_Fixed();
 		%feature("autodoc", "1");
@@ -797,6 +874,11 @@ class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
 %extend Handle_GeomFill_Fixed {
 	GeomFill_Fixed* GetObject() {
 	return (GeomFill_Fixed*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_Fixed {
+	~Handle_GeomFill_Fixed() {
+	printf("Call custom destructor for instance of Handle_GeomFill_Fixed\n");
 	}
 };
 
@@ -895,13 +977,16 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_CircularBlendFunc();
 
 };
 %extend GeomFill_CircularBlendFunc {
 	Handle_GeomFill_CircularBlendFunc GetHandle() {
 	return *(Handle_GeomFill_CircularBlendFunc*) &$self;
+	}
+};
+%extend GeomFill_CircularBlendFunc {
+	~GeomFill_CircularBlendFunc() {
+	printf("Call custom destructor for instance of GeomFill_CircularBlendFunc\n");
 	}
 };
 
@@ -965,42 +1050,15 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 	return *(Handle_GeomFill_SectionLaw*) &$self;
 	}
 };
-
-%nodefaultctor GeomFill_CornerState;
-class GeomFill_CornerState {
-	public:
-		%feature("autodoc", "1");
-		~GeomFill_CornerState();
-		%feature("autodoc", "1");
-		GeomFill_CornerState();
-		%feature("autodoc", "1");
-		Standard_Real Gap() const;
-		%feature("autodoc", "1");
-		void Gap(const Standard_Real G);
-		%feature("autodoc", "1");
-		Standard_Real TgtAng() const;
-		%feature("autodoc", "1");
-		void TgtAng(const Standard_Real Ang);
-		%feature("autodoc", "1");
-		Standard_Boolean HasConstraint() const;
-		%feature("autodoc", "1");
-		void Constraint();
-		%feature("autodoc", "1");
-		Standard_Real NorAng() const;
-		%feature("autodoc", "1");
-		void NorAng(const Standard_Real Ang);
-		%feature("autodoc", "1");
-		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void DoKill(const Standard_Real Scal);
-
+%extend GeomFill_SectionLaw {
+	~GeomFill_SectionLaw() {
+	printf("Call custom destructor for instance of GeomFill_SectionLaw\n");
+	}
 };
 
 %nodefaultctor GeomFill;
 class GeomFill {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill();
 		%feature("autodoc", "1");
 		GeomFill();
 		%feature("autodoc", "1");
@@ -1022,6 +1080,11 @@ class GeomFill {
 		%feature("autodoc", "1");
 		Standard_Real GetTolerance(const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real Radius, const Standard_Real AngularTol, const Standard_Real SpatialTol);
 
+};
+%extend GeomFill {
+	~GeomFill() {
+	printf("Call custom destructor for instance of GeomFill\n");
+	}
 };
 
 %nodefaultctor GeomFill_FunctionDraft;
@@ -1061,13 +1124,16 @@ class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
 		gp_Trsf & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_SequenceNodeOfSequenceOfTrsf();
 
 };
 %extend GeomFill_SequenceNodeOfSequenceOfTrsf {
 	Handle_GeomFill_SequenceNodeOfSequenceOfTrsf GetHandle() {
 	return *(Handle_GeomFill_SequenceNodeOfSequenceOfTrsf*) &$self;
+	}
+};
+%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+	~GeomFill_SequenceNodeOfSequenceOfTrsf() {
+	printf("Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfTrsf\n");
 	}
 };
 
@@ -1129,8 +1195,6 @@ class GeomFill_Profiler {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~GeomFill_Profiler();
-		%feature("autodoc", "1");
 		void AddCurve(const Handle_Geom_Curve &Curve);
 		%feature("autodoc", "1");
 		virtual		void Perform(const Standard_Real PTol);
@@ -1151,6 +1215,11 @@ class GeomFill_Profiler {
 		%feature("autodoc", "1");
 		const Handle_Geom_Curve & Curve(const Standard_Integer Index) const;
 
+};
+%extend GeomFill_Profiler {
+	~GeomFill_Profiler() {
+	printf("Call custom destructor for instance of GeomFill_Profiler\n");
+	}
 };
 
 %nodefaultctor GeomFill_LocationLaw;
@@ -1215,6 +1284,11 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 	return *(Handle_GeomFill_LocationLaw*) &$self;
 	}
 };
+%extend GeomFill_LocationLaw {
+	~GeomFill_LocationLaw() {
+	printf("Call custom destructor for instance of GeomFill_LocationLaw\n");
+	}
+};
 
 %nodefaultctor GeomFill_TrihedronLaw;
 class GeomFill_TrihedronLaw : public MMgt_TShared {
@@ -1254,6 +1328,11 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 	return *(Handle_GeomFill_TrihedronLaw*) &$self;
 	}
 };
+%extend GeomFill_TrihedronLaw {
+	~GeomFill_TrihedronLaw() {
+	printf("Call custom destructor for instance of GeomFill_TrihedronLaw\n");
+	}
+};
 
 %nodefaultctor GeomFill_TrihedronWithGuide;
 class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
@@ -1269,6 +1348,11 @@ class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 	return *(Handle_GeomFill_TrihedronWithGuide*) &$self;
 	}
 };
+%extend GeomFill_TrihedronWithGuide {
+	~GeomFill_TrihedronWithGuide() {
+	printf("Call custom destructor for instance of GeomFill_TrihedronWithGuide\n");
+	}
+};
 
 %nodefaultctor GeomFill_GuideTrihedronPlan;
 class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
@@ -1279,13 +1363,16 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &thePath);
 		%feature("autodoc", "1");
 		virtual		void Origine(const Standard_Real OrACR1, const Standard_Real OrACR2);
-		%feature("autodoc", "1");
-		virtual		~GeomFill_GuideTrihedronPlan();
 
 };
 %extend GeomFill_GuideTrihedronPlan {
 	Handle_GeomFill_GuideTrihedronPlan GetHandle() {
 	return *(Handle_GeomFill_GuideTrihedronPlan*) &$self;
+	}
+};
+%extend GeomFill_GuideTrihedronPlan {
+	~GeomFill_GuideTrihedronPlan() {
+	printf("Call custom destructor for instance of GeomFill_GuideTrihedronPlan\n");
 	}
 };
 
@@ -1314,8 +1401,6 @@ class GeomFill_Tensor {
 %nodefaultctor GeomFill_Pipe;
 class GeomFill_Pipe {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_Pipe();
 		%feature("autodoc", "1");
 		GeomFill_Pipe();
 		%feature("autodoc", "1");
@@ -1368,6 +1453,11 @@ class GeomFill_Pipe {
 		Standard_Real ErrorOnSurf() const;
 
 };
+%extend GeomFill_Pipe {
+	~GeomFill_Pipe() {
+	printf("Call custom destructor for instance of GeomFill_Pipe\n");
+	}
+};
 
 %nodefaultctor GeomFill_CoonsAlgPatch;
 class GeomFill_CoonsAlgPatch : public MMgt_TShared {
@@ -1394,13 +1484,16 @@ class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 		const Handle_Law_Function & Func(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_CoonsAlgPatch();
 
 };
 %extend GeomFill_CoonsAlgPatch {
 	Handle_GeomFill_CoonsAlgPatch GetHandle() {
 	return *(Handle_GeomFill_CoonsAlgPatch*) &$self;
+	}
+};
+%extend GeomFill_CoonsAlgPatch {
+	~GeomFill_CoonsAlgPatch() {
+	printf("Call custom destructor for instance of GeomFill_CoonsAlgPatch\n");
 	}
 };
 
@@ -1453,13 +1546,16 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 		virtual		Handle_Geom_Curve ConstantSection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_UniformSection();
 
 };
 %extend GeomFill_UniformSection {
 	Handle_GeomFill_UniformSection GetHandle() {
 	return *(Handle_GeomFill_UniformSection*) &$self;
+	}
+};
+%extend GeomFill_UniformSection {
+	~GeomFill_UniformSection() {
+	printf("Call custom destructor for instance of GeomFill_UniformSection\n");
 	}
 };
 
@@ -1539,19 +1635,27 @@ class GeomFill_Boundary : public MMgt_TShared {
 	return *(Handle_GeomFill_Boundary*) &$self;
 	}
 };
+%extend GeomFill_Boundary {
+	~GeomFill_Boundary() {
+	printf("Call custom destructor for instance of GeomFill_Boundary\n");
+	}
+};
 
 %nodefaultctor GeomFill_SimpleBound;
 class GeomFill_SimpleBound : public GeomFill_Boundary {
 	public:
 		%feature("autodoc", "1");
 		GeomFill_SimpleBound(const Handle_Adaptor3d_HCurve &Curve, const Standard_Real Tol3d, const Standard_Real Tolang);
-		%feature("autodoc", "1");
-		virtual		~GeomFill_SimpleBound();
 
 };
 %extend GeomFill_SimpleBound {
 	Handle_GeomFill_SimpleBound GetHandle() {
 	return *(Handle_GeomFill_SimpleBound*) &$self;
+	}
+};
+%extend GeomFill_SimpleBound {
+	~GeomFill_SimpleBound() {
+	printf("Call custom destructor for instance of GeomFill_SimpleBound\n");
 	}
 };
 
@@ -1602,13 +1706,16 @@ class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 		GeomFill_Array1OfSectionLaw & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_HArray1OfSectionLaw();
 
 };
 %extend GeomFill_HArray1OfSectionLaw {
 	Handle_GeomFill_HArray1OfSectionLaw GetHandle() {
 	return *(Handle_GeomFill_HArray1OfSectionLaw*) &$self;
+	}
+};
+%extend GeomFill_HArray1OfSectionLaw {
+	~GeomFill_HArray1OfSectionLaw() {
+	printf("Call custom destructor for instance of GeomFill_HArray1OfSectionLaw\n");
 	}
 };
 
@@ -1661,13 +1768,16 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 		virtual		Handle_Geom_Curve ConstantSection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_EvolvedSection();
 
 };
 %extend GeomFill_EvolvedSection {
 	Handle_GeomFill_EvolvedSection GetHandle() {
 	return *(Handle_GeomFill_EvolvedSection*) &$self;
+	}
+};
+%extend GeomFill_EvolvedSection {
+	~GeomFill_EvolvedSection() {
+	printf("Call custom destructor for instance of GeomFill_EvolvedSection\n");
 	}
 };
 
@@ -1698,13 +1808,16 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_DraftTrihedron();
 
 };
 %extend GeomFill_DraftTrihedron {
 	Handle_GeomFill_DraftTrihedron GetHandle() {
 	return *(Handle_GeomFill_DraftTrihedron*) &$self;
+	}
+};
+%extend GeomFill_DraftTrihedron {
+	~GeomFill_DraftTrihedron() {
+	printf("Call custom destructor for instance of GeomFill_DraftTrihedron\n");
 	}
 };
 
@@ -1749,13 +1862,43 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_Fixed();
 
 };
 %extend GeomFill_Fixed {
 	Handle_GeomFill_Fixed GetHandle() {
 	return *(Handle_GeomFill_Fixed*) &$self;
+	}
+};
+%extend GeomFill_Fixed {
+	~GeomFill_Fixed() {
+	printf("Call custom destructor for instance of GeomFill_Fixed\n");
+	}
+};
+
+%nodefaultctor GeomFill_BSplineCurves;
+class GeomFill_BSplineCurves {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_BSplineCurves();
+		%feature("autodoc", "1");
+		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const Handle_Geom_BSplineCurve &C4, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const Handle_Geom_BSplineCurve &C4, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		const Handle_Geom_BSplineSurface & Surface() const;
+
+};
+%extend GeomFill_BSplineCurves {
+	~GeomFill_BSplineCurves() {
+	printf("Call custom destructor for instance of GeomFill_BSplineCurves\n");
 	}
 };
 
@@ -1788,13 +1931,16 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_CorrectedFrenet();
 
 };
 %extend GeomFill_CorrectedFrenet {
 	Handle_GeomFill_CorrectedFrenet GetHandle() {
 	return *(Handle_GeomFill_CorrectedFrenet*) &$self;
+	}
+};
+%extend GeomFill_CorrectedFrenet {
+	~GeomFill_CorrectedFrenet() {
+	printf("Call custom destructor for instance of GeomFill_CorrectedFrenet\n");
 	}
 };
 
@@ -1844,8 +1990,6 @@ class GeomFill_Array1OfLocationLaw {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~GeomFill_Array1OfLocationLaw();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const GeomFill_Array1OfLocationLaw & Assign(const GeomFill_Array1OfLocationLaw &Other);
@@ -1867,6 +2011,11 @@ class GeomFill_Array1OfLocationLaw {
 		Handle_GeomFill_LocationLaw & operator()(const Standard_Integer Index);
 
 };
+%extend GeomFill_Array1OfLocationLaw {
+	~GeomFill_Array1OfLocationLaw() {
+	printf("Call custom destructor for instance of GeomFill_Array1OfLocationLaw\n");
+	}
+};
 
 %nodefaultctor GeomFill_Array1OfSectionLaw;
 class GeomFill_Array1OfSectionLaw {
@@ -1879,8 +2028,6 @@ class GeomFill_Array1OfSectionLaw {
 		void Init(const Handle_GeomFill_SectionLaw &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~GeomFill_Array1OfSectionLaw();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1902,6 +2049,11 @@ class GeomFill_Array1OfSectionLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_SectionLaw & operator()(const Standard_Integer Index);
 
+};
+%extend GeomFill_Array1OfSectionLaw {
+	~GeomFill_Array1OfSectionLaw() {
+	printf("Call custom destructor for instance of GeomFill_Array1OfSectionLaw\n");
+	}
 };
 
 %nodefaultctor GeomFill_LocationGuide;
@@ -1969,13 +2121,16 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 		void SetOrigine(const Standard_Real Param1, const Standard_Real Param2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_LocationGuide();
 
 };
 %extend GeomFill_LocationGuide {
 	Handle_GeomFill_LocationGuide GetHandle() {
 	return *(Handle_GeomFill_LocationGuide*) &$self;
+	}
+};
+%extend GeomFill_LocationGuide {
+	~GeomFill_LocationGuide() {
+	printf("Call custom destructor for instance of GeomFill_LocationGuide\n");
 	}
 };
 
@@ -2001,6 +2156,11 @@ class GeomFill_TgtField : public MMgt_TShared {
 	return *(Handle_GeomFill_TgtField*) &$self;
 	}
 };
+%extend GeomFill_TgtField {
+	~GeomFill_TgtField() {
+	printf("Call custom destructor for instance of GeomFill_TgtField\n");
+	}
+};
 
 %nodefaultctor GeomFill_TgtOnCoons;
 class GeomFill_TgtOnCoons : public GeomFill_TgtField {
@@ -2009,13 +2169,16 @@ class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 		GeomFill_TgtOnCoons(const Handle_GeomFill_CoonsAlgPatch &K, const Standard_Integer I);
 		%feature("autodoc", "1");
 		virtual		void D1(const Standard_Real W, gp_Vec & T, gp_Vec & DT) const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_TgtOnCoons();
 
 };
 %extend GeomFill_TgtOnCoons {
 	Handle_GeomFill_TgtOnCoons GetHandle() {
 	return *(Handle_GeomFill_TgtOnCoons*) &$self;
+	}
+};
+%extend GeomFill_TgtOnCoons {
+	~GeomFill_TgtOnCoons() {
+	printf("Call custom destructor for instance of GeomFill_TgtOnCoons\n");
 	}
 };
 
@@ -2028,16 +2191,17 @@ class GeomFill_Generator : public GeomFill_Profiler {
 		virtual		void Perform(const Standard_Real PTol);
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Surface() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_Generator();
 
+};
+%extend GeomFill_Generator {
+	~GeomFill_Generator() {
+	printf("Call custom destructor for instance of GeomFill_Generator\n");
+	}
 };
 
 %nodefaultctor GeomFill_SectionPlacement;
 class GeomFill_SectionPlacement {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_SectionPlacement();
 		%feature("autodoc", "1");
 		GeomFill_SectionPlacement(const Handle_GeomFill_LocationLaw &L, const Handle_Geom_Geometry &Section);
 		%feature("autodoc", "1");
@@ -2066,6 +2230,11 @@ class GeomFill_SectionPlacement {
 		Handle_Geom_Curve ModifiedSection(const Standard_Boolean WithTranslation) const;
 
 };
+%extend GeomFill_SectionPlacement {
+	~GeomFill_SectionPlacement() {
+	printf("Call custom destructor for instance of GeomFill_SectionPlacement\n");
+	}
+};
 
 %nodefaultctor GeomFill_DegeneratedBound;
 class GeomFill_DegeneratedBound : public GeomFill_Boundary {
@@ -2084,14 +2253,47 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 		virtual		Standard_Boolean IsDegenerated() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_DegeneratedBound();
 
 };
 %extend GeomFill_DegeneratedBound {
 	Handle_GeomFill_DegeneratedBound GetHandle() {
 	return *(Handle_GeomFill_DegeneratedBound*) &$self;
 	}
+};
+%extend GeomFill_DegeneratedBound {
+	~GeomFill_DegeneratedBound() {
+	printf("Call custom destructor for instance of GeomFill_DegeneratedBound\n");
+	}
+};
+
+%nodefaultctor GeomFill_CornerState;
+class GeomFill_CornerState {
+	public:
+		%feature("autodoc", "1");
+		~GeomFill_CornerState();
+		%feature("autodoc", "1");
+		GeomFill_CornerState();
+		%feature("autodoc", "1");
+		Standard_Real Gap() const;
+		%feature("autodoc", "1");
+		void Gap(const Standard_Real G);
+		%feature("autodoc", "1");
+		Standard_Real TgtAng() const;
+		%feature("autodoc", "1");
+		void TgtAng(const Standard_Real Ang);
+		%feature("autodoc", "1");
+		Standard_Boolean HasConstraint() const;
+		%feature("autodoc", "1");
+		void Constraint();
+		%feature("autodoc", "1");
+		Standard_Real NorAng() const;
+		%feature("autodoc", "1");
+		void NorAng(const Standard_Real Ang);
+		%feature("autodoc", "1");
+		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void DoKill(const Standard_Real Scal);
+
 };
 
 %nodefaultctor GeomFill_Darboux;
@@ -2119,13 +2321,16 @@ class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_Darboux();
 
 };
 %extend GeomFill_Darboux {
 	Handle_GeomFill_Darboux GetHandle() {
 	return *(Handle_GeomFill_Darboux*) &$self;
+	}
+};
+%extend GeomFill_Darboux {
+	~GeomFill_Darboux() {
+	printf("Call custom destructor for instance of GeomFill_Darboux\n");
 	}
 };
 
@@ -2160,8 +2365,6 @@ class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
 		GeomFill_SequenceOfCurve();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~GeomFill_SequenceOfCurve();
 		%feature("autodoc", "1");
 		const GeomFill_SequenceOfCurve & Assign(const GeomFill_SequenceOfCurve &Other);
 		%feature("autodoc", "1");
@@ -2202,6 +2405,11 @@ class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend GeomFill_SequenceOfCurve {
+	~GeomFill_SequenceOfCurve() {
+	printf("Call custom destructor for instance of GeomFill_SequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor GeomFill_Line;
 class GeomFill_Line : public MMgt_TShared {
@@ -2216,13 +2424,16 @@ class GeomFill_Line : public MMgt_TShared {
 		Standard_Integer Point(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_Line();
 
 };
 %extend GeomFill_Line {
 	Handle_GeomFill_Line GetHandle() {
 	return *(Handle_GeomFill_Line*) &$self;
+	}
+};
+%extend GeomFill_Line {
+	~GeomFill_Line() {
+	printf("Call custom destructor for instance of GeomFill_Line\n");
 	}
 };
 
@@ -2285,13 +2496,16 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 		gp_Dir Direction() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_LocationDraft();
 
 };
 %extend GeomFill_LocationDraft {
 	Handle_GeomFill_LocationDraft GetHandle() {
 	return *(Handle_GeomFill_LocationDraft*) &$self;
+	}
+};
+%extend GeomFill_LocationDraft {
+	~GeomFill_LocationDraft() {
+	printf("Call custom destructor for instance of GeomFill_LocationDraft\n");
 	}
 };
 
@@ -2328,13 +2542,16 @@ class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 		virtual		void Origine(const Standard_Real OrACR1, const Standard_Real OrACR2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_GuideTrihedronAC();
 
 };
 %extend GeomFill_GuideTrihedronAC {
 	Handle_GeomFill_GuideTrihedronAC GetHandle() {
 	return *(Handle_GeomFill_GuideTrihedronAC*) &$self;
+	}
+};
+%extend GeomFill_GuideTrihedronAC {
+	~GeomFill_GuideTrihedronAC() {
+	printf("Call custom destructor for instance of GeomFill_GuideTrihedronAC\n");
 	}
 };
 
@@ -2365,8 +2582,6 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 		GeomFill_Array1OfLocationLaw & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_HArray1OfLocationLaw();
 
 };
 %extend GeomFill_HArray1OfLocationLaw {
@@ -2374,43 +2589,9 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 	return *(Handle_GeomFill_HArray1OfLocationLaw*) &$self;
 	}
 };
-
-%nodefaultctor GeomFill_Frenet;
-class GeomFill_Frenet : public GeomFill_TrihedronLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Frenet();
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_Frenet();
-
-};
-%extend GeomFill_Frenet {
-	Handle_GeomFill_Frenet GetHandle() {
-	return *(Handle_GeomFill_Frenet*) &$self;
+%extend GeomFill_HArray1OfLocationLaw {
+	~GeomFill_HArray1OfLocationLaw() {
+	printf("Call custom destructor for instance of GeomFill_HArray1OfLocationLaw\n");
 	}
 };
 
@@ -2457,13 +2638,16 @@ class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 		virtual		void Rotation(gp_Pnt & Center) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_CurveAndTrihedron();
 
 };
 %extend GeomFill_CurveAndTrihedron {
 	Handle_GeomFill_CurveAndTrihedron GetHandle() {
 	return *(Handle_GeomFill_CurveAndTrihedron*) &$self;
+	}
+};
+%extend GeomFill_CurveAndTrihedron {
+	~GeomFill_CurveAndTrihedron() {
+	printf("Call custom destructor for instance of GeomFill_CurveAndTrihedron\n");
 	}
 };
 
@@ -2508,13 +2692,16 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_SweepFunction();
 
 };
 %extend GeomFill_SweepFunction {
 	Handle_GeomFill_SweepFunction GetHandle() {
 	return *(Handle_GeomFill_SweepFunction*) &$self;
+	}
+};
+%extend GeomFill_SweepFunction {
+	~GeomFill_SweepFunction() {
+	printf("Call custom destructor for instance of GeomFill_SweepFunction\n");
 	}
 };
 
@@ -2603,13 +2790,16 @@ class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 		Handle_Geom_Curve & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_SequenceNodeOfSequenceOfCurve();
 
 };
 %extend GeomFill_SequenceNodeOfSequenceOfCurve {
 	Handle_GeomFill_SequenceNodeOfSequenceOfCurve GetHandle() {
 	return *(Handle_GeomFill_SequenceNodeOfSequenceOfCurve*) &$self;
+	}
+};
+%extend GeomFill_SequenceNodeOfSequenceOfCurve {
+	~GeomFill_SequenceNodeOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfCurve\n");
 	}
 };
 
@@ -2635,11 +2825,51 @@ class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 
 };
 
+%nodefaultctor GeomFill_Frenet;
+class GeomFill_Frenet : public GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Frenet();
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_Frenet {
+	Handle_GeomFill_Frenet GetHandle() {
+	return *(Handle_GeomFill_Frenet*) &$self;
+	}
+};
+%extend GeomFill_Frenet {
+	~GeomFill_Frenet() {
+	printf("Call custom destructor for instance of GeomFill_Frenet\n");
+	}
+};
+
 %nodefaultctor GeomFill_ConstrainedFilling;
 class GeomFill_ConstrainedFilling {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_ConstrainedFilling();
 		%feature("autodoc", "1");
 		GeomFill_ConstrainedFilling(const Standard_Integer MaxDeg, const Standard_Integer MaxSeg);
 		%feature("autodoc", "1");
@@ -2666,36 +2896,15 @@ class GeomFill_ConstrainedFilling {
 		void CheckResult(const Standard_Integer I);
 
 };
-
-%nodefaultctor GeomFill_BSplineCurves;
-class GeomFill_BSplineCurves {
-	public:
-		%feature("autodoc", "1");
-		~GeomFill_BSplineCurves();
-		%feature("autodoc", "1");
-		GeomFill_BSplineCurves();
-		%feature("autodoc", "1");
-		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const Handle_Geom_BSplineCurve &C4, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const Handle_Geom_BSplineCurve &C4, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		const Handle_Geom_BSplineSurface & Surface() const;
-
+%extend GeomFill_ConstrainedFilling {
+	~GeomFill_ConstrainedFilling() {
+	printf("Call custom destructor for instance of GeomFill_ConstrainedFilling\n");
+	}
 };
 
 %nodefaultctor GeomFill_Sweep;
 class GeomFill_Sweep {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_Sweep();
 		%feature("autodoc", "1");
 		GeomFill_Sweep(const Handle_GeomFill_LocationLaw &Location, const Standard_Boolean WithKpart=1);
 		%feature("autodoc", "1");
@@ -2728,6 +2937,11 @@ class GeomFill_Sweep {
 		Handle_Geom2d_Curve Trace(const Standard_Integer IndexOfTrace) const;
 
 };
+%extend GeomFill_Sweep {
+	~GeomFill_Sweep() {
+	printf("Call custom destructor for instance of GeomFill_Sweep\n");
+	}
+};
 
 %nodefaultctor GeomFill_ConstantBiNormal;
 class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
@@ -2756,13 +2970,16 @@ class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_ConstantBiNormal();
 
 };
 %extend GeomFill_ConstantBiNormal {
 	Handle_GeomFill_ConstantBiNormal GetHandle() {
 	return *(Handle_GeomFill_ConstantBiNormal*) &$self;
+	}
+};
+%extend GeomFill_ConstantBiNormal {
+	~GeomFill_ConstantBiNormal() {
+	printf("Call custom destructor for instance of GeomFill_ConstantBiNormal\n");
 	}
 };
 
@@ -2828,8 +3045,6 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 class GeomFill_BezierCurves {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_BezierCurves();
-		%feature("autodoc", "1");
 		GeomFill_BezierCurves();
 		%feature("autodoc", "1");
 		GeomFill_BezierCurves(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const Handle_Geom_BezierCurve &C4, const GeomFill_FillingStyle Type);
@@ -2846,6 +3061,11 @@ class GeomFill_BezierCurves {
 		%feature("autodoc", "1");
 		const Handle_Geom_BezierSurface & Surface() const;
 
+};
+%extend GeomFill_BezierCurves {
+	~GeomFill_BezierCurves() {
+	printf("Call custom destructor for instance of GeomFill_BezierCurves\n");
+	}
 };
 
 %nodefaultctor GeomFill_BoundWithSurf;
@@ -2871,12 +3091,15 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 		virtual		Standard_Boolean IsDegenerated() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_BoundWithSurf();
 
 };
 %extend GeomFill_BoundWithSurf {
 	Handle_GeomFill_BoundWithSurf GetHandle() {
 	return *(Handle_GeomFill_BoundWithSurf*) &$self;
+	}
+};
+%extend GeomFill_BoundWithSurf {
+	~GeomFill_BoundWithSurf() {
+	printf("Call custom destructor for instance of GeomFill_BoundWithSurf\n");
 	}
 };

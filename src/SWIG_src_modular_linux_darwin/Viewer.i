@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Viewer
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_Viewer_BadValue : public Handle_Standard_OutOfRange {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Viewer_BadValue();
-		%feature("autodoc", "1");
 		Handle_Viewer_BadValue();
 		%feature("autodoc", "1");
 		Handle_Viewer_BadValue(const Handle_Viewer_BadValue &aHandle);
@@ -118,12 +102,15 @@ class Handle_Viewer_BadValue : public Handle_Standard_OutOfRange {
 	return (Viewer_BadValue*)$self->Access();
 	}
 };
+%extend Handle_Viewer_BadValue {
+	~Handle_Viewer_BadValue() {
+	printf("Call custom destructor for instance of Handle_Viewer_BadValue\n");
+	}
+};
 
 %nodefaultctor Handle_Viewer_Viewer;
 class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Viewer_Viewer();
 		%feature("autodoc", "1");
 		Handle_Viewer_Viewer();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 	return (Viewer_Viewer*)$self->Access();
 	}
 };
+%extend Handle_Viewer_Viewer {
+	~Handle_Viewer_Viewer() {
+	printf("Call custom destructor for instance of Handle_Viewer_Viewer\n");
+	}
+};
 
 %nodefaultctor Handle_Viewer_View;
 class Handle_Viewer_View : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Viewer_View();
 		%feature("autodoc", "1");
 		Handle_Viewer_View();
 		%feature("autodoc", "1");
@@ -158,6 +148,11 @@ class Handle_Viewer_View : public Handle_MMgt_TShared {
 %extend Handle_Viewer_View {
 	Viewer_View* GetObject() {
 	return (Viewer_View*)$self->Access();
+	}
+};
+%extend Handle_Viewer_View {
+	~Handle_Viewer_View() {
+	printf("Call custom destructor for instance of Handle_Viewer_View\n");
 	}
 };
 
@@ -181,6 +176,11 @@ class Viewer_View : public MMgt_TShared {
 	return *(Handle_Viewer_View*) &$self;
 	}
 };
+%extend Viewer_View {
+	~Viewer_View() {
+	printf("Call custom destructor for instance of Viewer_View\n");
+	}
+};
 
 %nodefaultctor Viewer_Viewer;
 class Viewer_Viewer : public MMgt_TShared {
@@ -202,6 +202,11 @@ class Viewer_Viewer : public MMgt_TShared {
 	return *(Handle_Viewer_Viewer*) &$self;
 	}
 };
+%extend Viewer_Viewer {
+	~Viewer_Viewer() {
+	printf("Call custom destructor for instance of Viewer_Viewer\n");
+	}
+};
 
 %nodefaultctor Viewer_BadValue;
 class Viewer_BadValue : public Standard_OutOfRange {
@@ -218,12 +223,15 @@ class Viewer_BadValue : public Standard_OutOfRange {
 		Handle_Viewer_BadValue NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Viewer_BadValue();
 
 };
 %extend Viewer_BadValue {
 	Handle_Viewer_BadValue GetHandle() {
 	return *(Handle_Viewer_BadValue*) &$self;
+	}
+};
+%extend Viewer_BadValue {
+	~Viewer_BadValue() {
+	printf("Call custom destructor for instance of Viewer_BadValue\n");
 	}
 };

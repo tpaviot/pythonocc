@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module PXCAFDoc
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence : public Handle_PMMgt_PManaged {
 	public:
 		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence();
-		%feature("autodoc", "1");
 		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &aHandle);
@@ -118,12 +102,15 @@ class Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence : public Handle_PMMgt_PManaged 
 	return (PXCAFDoc_SeqNodeOfGraphNodeSequence*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence {
+	~Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_Location;
 class Handle_PXCAFDoc_Location : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_Location();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Location();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_PXCAFDoc_Location : public Handle_PDF_Attribute {
 	return (PXCAFDoc_Location*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_Location {
+	~Handle_PXCAFDoc_Location() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_Location\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_GraphNode;
 class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_GraphNode();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_GraphNode();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
 	return (PXCAFDoc_GraphNode*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_GraphNode {
+	~Handle_PXCAFDoc_GraphNode() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_GraphNode\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_GraphNodeSequence;
 class Handle_PXCAFDoc_GraphNodeSequence : public Handle_Standard_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_GraphNodeSequence();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_GraphNodeSequence();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_PXCAFDoc_GraphNodeSequence : public Handle_Standard_Persistent {
 	return (PXCAFDoc_GraphNodeSequence*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_GraphNodeSequence {
+	~Handle_PXCAFDoc_GraphNodeSequence() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_GraphNodeSequence\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_DocumentTool;
 class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_DocumentTool();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_DocumentTool();
 		%feature("autodoc", "1");
@@ -202,12 +198,15 @@ class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
 	return (PXCAFDoc_DocumentTool*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_DocumentTool {
+	~Handle_PXCAFDoc_DocumentTool() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_DocumentTool\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_Centroid;
 class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_Centroid();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Centroid();
 		%feature("autodoc", "1");
@@ -223,12 +222,15 @@ class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 	return (PXCAFDoc_Centroid*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_Centroid {
+	~Handle_PXCAFDoc_Centroid() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_Centroid\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_ShapeTool;
 class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_ShapeTool();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_ShapeTool();
 		%feature("autodoc", "1");
@@ -244,12 +246,15 @@ class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
 	return (PXCAFDoc_ShapeTool*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_ShapeTool {
+	~Handle_PXCAFDoc_ShapeTool() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_ShapeTool\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_Volume;
 class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_Volume();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Volume();
 		%feature("autodoc", "1");
@@ -265,12 +270,15 @@ class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
 	return (PXCAFDoc_Volume*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_Volume {
+	~Handle_PXCAFDoc_Volume() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_Volume\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_Area;
 class Handle_PXCAFDoc_Area : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_Area();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Area();
 		%feature("autodoc", "1");
@@ -286,12 +294,15 @@ class Handle_PXCAFDoc_Area : public Handle_PDF_Attribute {
 	return (PXCAFDoc_Area*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_Area {
+	~Handle_PXCAFDoc_Area() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_Area\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_LayerTool;
 class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_LayerTool();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_LayerTool();
 		%feature("autodoc", "1");
@@ -307,12 +318,15 @@ class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
 	return (PXCAFDoc_LayerTool*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_LayerTool {
+	~Handle_PXCAFDoc_LayerTool() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_LayerTool\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_Color;
 class Handle_PXCAFDoc_Color : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_Color();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Color();
 		%feature("autodoc", "1");
@@ -328,12 +342,15 @@ class Handle_PXCAFDoc_Color : public Handle_PDF_Attribute {
 	return (PXCAFDoc_Color*)$self->Access();
 	}
 };
+%extend Handle_PXCAFDoc_Color {
+	~Handle_PXCAFDoc_Color() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_Color\n");
+	}
+};
 
 %nodefaultctor Handle_PXCAFDoc_ColorTool;
 class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 	public:
-		%feature("autodoc", "1");
-		~Handle_PXCAFDoc_ColorTool();
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_ColorTool();
 		%feature("autodoc", "1");
@@ -347,6 +364,11 @@ class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 %extend Handle_PXCAFDoc_ColorTool {
 	PXCAFDoc_ColorTool* GetObject() {
 	return (PXCAFDoc_ColorTool*)$self->Access();
+	}
+};
+%extend Handle_PXCAFDoc_ColorTool {
+	~Handle_PXCAFDoc_ColorTool() {
+	printf("Call custom destructor for instance of Handle_PXCAFDoc_ColorTool\n");
 	}
 };
 
@@ -369,13 +391,16 @@ class PXCAFDoc_Volume : public PDF_Attribute {
 		void _CSFDB_SetPXCAFDoc_VolumemyValue(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_Volume();
 
 };
 %extend PXCAFDoc_Volume {
 	Handle_PXCAFDoc_Volume GetHandle() {
 	return *(Handle_PXCAFDoc_Volume*) &$self;
+	}
+};
+%extend PXCAFDoc_Volume {
+	~PXCAFDoc_Volume() {
+	printf("Call custom destructor for instance of PXCAFDoc_Volume\n");
 	}
 };
 
@@ -439,8 +464,6 @@ class PXCAFDoc_GraphNodeSequence : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_GraphNodeSequence();
-		%feature("autodoc", "1");
 		PXCAFDoc_GraphNodeSequence(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence _CSFDB_GetPXCAFDoc_GraphNodeSequenceFirstItem() const;
@@ -463,12 +486,15 @@ class PXCAFDoc_GraphNodeSequence : public Standard_Persistent {
 	return *(Handle_PXCAFDoc_GraphNodeSequence*) &$self;
 	}
 };
+%extend PXCAFDoc_GraphNodeSequence {
+	~PXCAFDoc_GraphNodeSequence() {
+	printf("Call custom destructor for instance of PXCAFDoc_GraphNodeSequence\n");
+	}
+};
 
 %nodefaultctor PXCAFDoc_SeqExplorerOfGraphNodeSequence;
 class PXCAFDoc_SeqExplorerOfGraphNodeSequence {
 	public:
-		%feature("autodoc", "1");
-		~PXCAFDoc_SeqExplorerOfGraphNodeSequence();
 		%feature("autodoc", "1");
 		PXCAFDoc_SeqExplorerOfGraphNodeSequence(const Handle_PXCAFDoc_GraphNodeSequence &S);
 		%feature("autodoc", "1");
@@ -480,6 +506,11 @@ class PXCAFDoc_SeqExplorerOfGraphNodeSequence {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const Handle_PXCAFDoc_GraphNode &T);
 
+};
+%extend PXCAFDoc_SeqExplorerOfGraphNodeSequence {
+	~PXCAFDoc_SeqExplorerOfGraphNodeSequence() {
+	printf("Call custom destructor for instance of PXCAFDoc_SeqExplorerOfGraphNodeSequence\n");
+	}
 };
 
 %nodefaultctor PXCAFDoc_Location;
@@ -499,13 +530,16 @@ class PXCAFDoc_Location : public PDF_Attribute {
 		const PTopLoc_Location & _CSFDB_GetPXCAFDoc_LocationmyPLocation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_Location();
 
 };
 %extend PXCAFDoc_Location {
 	Handle_PXCAFDoc_Location GetHandle() {
 	return *(Handle_PXCAFDoc_Location*) &$self;
+	}
+};
+%extend PXCAFDoc_Location {
+	~PXCAFDoc_Location() {
+	printf("Call custom destructor for instance of PXCAFDoc_Location\n");
 	}
 };
 
@@ -548,13 +582,16 @@ class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
 		void _CSFDB_SetPXCAFDoc_SeqNodeOfGraphNodeSequenceMyNext(const Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_SeqNodeOfGraphNodeSequence();
 
 };
 %extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
 	Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence GetHandle() {
 	return *(Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence*) &$self;
+	}
+};
+%extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
+	~PXCAFDoc_SeqNodeOfGraphNodeSequence() {
+	printf("Call custom destructor for instance of PXCAFDoc_SeqNodeOfGraphNodeSequence\n");
 	}
 };
 
@@ -575,13 +612,16 @@ class PXCAFDoc_Color : public PDF_Attribute {
 		const Quantity_Color & _CSFDB_GetPXCAFDoc_ColormyColor() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_Color();
 
 };
 %extend PXCAFDoc_Color {
 	Handle_PXCAFDoc_Color GetHandle() {
 	return *(Handle_PXCAFDoc_Color*) &$self;
+	}
+};
+%extend PXCAFDoc_Color {
+	~PXCAFDoc_Color() {
+	printf("Call custom destructor for instance of PXCAFDoc_Color\n");
 	}
 };
 
@@ -594,13 +634,16 @@ class PXCAFDoc_ShapeTool : public PDF_Attribute {
 		PXCAFDoc_ShapeTool(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_ShapeTool();
 
 };
 %extend PXCAFDoc_ShapeTool {
 	Handle_PXCAFDoc_ShapeTool GetHandle() {
 	return *(Handle_PXCAFDoc_ShapeTool*) &$self;
+	}
+};
+%extend PXCAFDoc_ShapeTool {
+	~PXCAFDoc_ShapeTool() {
+	printf("Call custom destructor for instance of PXCAFDoc_ShapeTool\n");
 	}
 };
 
@@ -643,13 +686,16 @@ class PXCAFDoc_GraphNode : public PDF_Attribute {
 		const Standard_GUID & _CSFDB_GetPXCAFDoc_GraphNodemyGraphID() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_GraphNode();
 
 };
 %extend PXCAFDoc_GraphNode {
 	Handle_PXCAFDoc_GraphNode GetHandle() {
 	return *(Handle_PXCAFDoc_GraphNode*) &$self;
+	}
+};
+%extend PXCAFDoc_GraphNode {
+	~PXCAFDoc_GraphNode() {
+	printf("Call custom destructor for instance of PXCAFDoc_GraphNode\n");
 	}
 };
 
@@ -670,13 +716,16 @@ class PXCAFDoc_Centroid : public PDF_Attribute {
 		const gp_Pnt & _CSFDB_GetPXCAFDoc_CentroidmyPCentroid() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_Centroid();
 
 };
 %extend PXCAFDoc_Centroid {
 	Handle_PXCAFDoc_Centroid GetHandle() {
 	return *(Handle_PXCAFDoc_Centroid*) &$self;
+	}
+};
+%extend PXCAFDoc_Centroid {
+	~PXCAFDoc_Centroid() {
+	printf("Call custom destructor for instance of PXCAFDoc_Centroid\n");
 	}
 };
 
@@ -699,13 +748,16 @@ class PXCAFDoc_Area : public PDF_Attribute {
 		void _CSFDB_SetPXCAFDoc_AreamyValue(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_Area();
 
 };
 %extend PXCAFDoc_Area {
 	Handle_PXCAFDoc_Area GetHandle() {
 	return *(Handle_PXCAFDoc_Area*) &$self;
+	}
+};
+%extend PXCAFDoc_Area {
+	~PXCAFDoc_Area() {
+	printf("Call custom destructor for instance of PXCAFDoc_Area\n");
 	}
 };
 
@@ -718,13 +770,16 @@ class PXCAFDoc_ColorTool : public PDF_Attribute {
 		PXCAFDoc_ColorTool(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_ColorTool();
 
 };
 %extend PXCAFDoc_ColorTool {
 	Handle_PXCAFDoc_ColorTool GetHandle() {
 	return *(Handle_PXCAFDoc_ColorTool*) &$self;
+	}
+};
+%extend PXCAFDoc_ColorTool {
+	~PXCAFDoc_ColorTool() {
+	printf("Call custom destructor for instance of PXCAFDoc_ColorTool\n");
 	}
 };
 
@@ -737,13 +792,16 @@ class PXCAFDoc_DocumentTool : public PDF_Attribute {
 		PXCAFDoc_DocumentTool(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_DocumentTool();
 
 };
 %extend PXCAFDoc_DocumentTool {
 	Handle_PXCAFDoc_DocumentTool GetHandle() {
 	return *(Handle_PXCAFDoc_DocumentTool*) &$self;
+	}
+};
+%extend PXCAFDoc_DocumentTool {
+	~PXCAFDoc_DocumentTool() {
+	printf("Call custom destructor for instance of PXCAFDoc_DocumentTool\n");
 	}
 };
 
@@ -756,12 +814,15 @@ class PXCAFDoc_LayerTool : public PDF_Attribute {
 		PXCAFDoc_LayerTool(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~PXCAFDoc_LayerTool();
 
 };
 %extend PXCAFDoc_LayerTool {
 	Handle_PXCAFDoc_LayerTool GetHandle() {
 	return *(Handle_PXCAFDoc_LayerTool*) &$self;
+	}
+};
+%extend PXCAFDoc_LayerTool {
+	~PXCAFDoc_LayerTool() {
+	printf("Call custom destructor for instance of PXCAFDoc_LayerTool\n");
 	}
 };

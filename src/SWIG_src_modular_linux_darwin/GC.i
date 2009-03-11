@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GC
 
@@ -116,8 +102,6 @@ class GC_Root {
 class GC_MakeEllipse : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		~GC_MakeEllipse();
-		%feature("autodoc", "1");
 		GC_MakeEllipse(const gp_Elips &E);
 		%feature("autodoc", "1");
 		GC_MakeEllipse(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
@@ -129,12 +113,15 @@ class GC_MakeEllipse : public GC_Root {
 		const Handle_Geom_Ellipse & Operator() const;
 
 };
+%extend GC_MakeEllipse {
+	~GC_MakeEllipse() {
+	printf("Call custom destructor for instance of GC_MakeEllipse\n");
+	}
+};
 
 %nodefaultctor GC_MakeConicalSurface;
 class GC_MakeConicalSurface : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeConicalSurface();
 		%feature("autodoc", "1");
 		GC_MakeConicalSurface(const gp_Ax2 &A2, const Standard_Real Ang, const Standard_Real Radius);
 		%feature("autodoc", "1");
@@ -157,12 +144,15 @@ class GC_MakeConicalSurface : public GC_Root {
 		const Handle_Geom_ConicalSurface & Operator() const;
 
 };
+%extend GC_MakeConicalSurface {
+	~GC_MakeConicalSurface() {
+	printf("Call custom destructor for instance of GC_MakeConicalSurface\n");
+	}
+};
 
 %nodefaultctor GC_MakeCylindricalSurface;
 class GC_MakeCylindricalSurface : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeCylindricalSurface();
 		%feature("autodoc", "1");
 		GC_MakeCylindricalSurface(const gp_Ax2 &A2, const Standard_Real Radius);
 		%feature("autodoc", "1");
@@ -183,12 +173,15 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		const Handle_Geom_CylindricalSurface & Operator() const;
 
 };
+%extend GC_MakeCylindricalSurface {
+	~GC_MakeCylindricalSurface() {
+	printf("Call custom destructor for instance of GC_MakeCylindricalSurface\n");
+	}
+};
 
 %nodefaultctor GC_MakeArcOfCircle;
 class GC_MakeArcOfCircle : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeArcOfCircle();
 		%feature("autodoc", "1");
 		GC_MakeArcOfCircle(const gp_Circ &Circ, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
@@ -205,12 +198,15 @@ class GC_MakeArcOfCircle : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%extend GC_MakeArcOfCircle {
+	~GC_MakeArcOfCircle() {
+	printf("Call custom destructor for instance of GC_MakeArcOfCircle\n");
+	}
+};
 
 %nodefaultctor GC_MakeHyperbola;
 class GC_MakeHyperbola : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeHyperbola();
 		%feature("autodoc", "1");
 		GC_MakeHyperbola(const gp_Hypr &H);
 		%feature("autodoc", "1");
@@ -223,12 +219,15 @@ class GC_MakeHyperbola : public GC_Root {
 		const Handle_Geom_Hyperbola & Operator() const;
 
 };
+%extend GC_MakeHyperbola {
+	~GC_MakeHyperbola() {
+	printf("Call custom destructor for instance of GC_MakeHyperbola\n");
+	}
+};
 
 %nodefaultctor GC_MakeLine;
 class GC_MakeLine : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeLine();
 		%feature("autodoc", "1");
 		GC_MakeLine(const gp_Ax1 &A1);
 		%feature("autodoc", "1");
@@ -245,12 +244,15 @@ class GC_MakeLine : public GC_Root {
 		const Handle_Geom_Line & Operator() const;
 
 };
+%extend GC_MakeLine {
+	~GC_MakeLine() {
+	printf("Call custom destructor for instance of GC_MakeLine\n");
+	}
+};
 
 %nodefaultctor GC_MakeMirror;
 class GC_MakeMirror {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeMirror();
 		%feature("autodoc", "1");
 		GC_MakeMirror(const gp_Pnt &Point);
 		%feature("autodoc", "1");
@@ -269,12 +271,15 @@ class GC_MakeMirror {
 		const Handle_Geom_Transformation & Operator() const;
 
 };
+%extend GC_MakeMirror {
+	~GC_MakeMirror() {
+	printf("Call custom destructor for instance of GC_MakeMirror\n");
+	}
+};
 
 %nodefaultctor GC_MakeScale;
 class GC_MakeScale {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeScale();
 		%feature("autodoc", "1");
 		GC_MakeScale(const gp_Pnt &Point, const Standard_Real Scale);
 		%feature("autodoc", "1");
@@ -283,12 +288,15 @@ class GC_MakeScale {
 		const Handle_Geom_Transformation & Operator() const;
 
 };
+%extend GC_MakeScale {
+	~GC_MakeScale() {
+	printf("Call custom destructor for instance of GC_MakeScale\n");
+	}
+};
 
 %nodefaultctor GC_MakeCircle;
 class GC_MakeCircle : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeCircle();
 		%feature("autodoc", "1");
 		GC_MakeCircle(const gp_Circ &C);
 		%feature("autodoc", "1");
@@ -311,12 +319,15 @@ class GC_MakeCircle : public GC_Root {
 		const Handle_Geom_Circle & Operator() const;
 
 };
+%extend GC_MakeCircle {
+	~GC_MakeCircle() {
+	printf("Call custom destructor for instance of GC_MakeCircle\n");
+	}
+};
 
 %nodefaultctor GC_MakeArcOfHyperbola;
 class GC_MakeArcOfHyperbola : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeArcOfHyperbola();
 		%feature("autodoc", "1");
 		GC_MakeArcOfHyperbola(const gp_Hypr &Hypr, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
@@ -329,12 +340,15 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%extend GC_MakeArcOfHyperbola {
+	~GC_MakeArcOfHyperbola() {
+	printf("Call custom destructor for instance of GC_MakeArcOfHyperbola\n");
+	}
+};
 
 %nodefaultctor GC_MakeTrimmedCone;
 class GC_MakeTrimmedCone : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeTrimmedCone();
 		%feature("autodoc", "1");
 		GC_MakeTrimmedCone(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &P4);
 		%feature("autodoc", "1");
@@ -345,12 +359,15 @@ class GC_MakeTrimmedCone : public GC_Root {
 		const Handle_Geom_RectangularTrimmedSurface & Operator() const;
 
 };
+%extend GC_MakeTrimmedCone {
+	~GC_MakeTrimmedCone() {
+	printf("Call custom destructor for instance of GC_MakeTrimmedCone\n");
+	}
+};
 
 %nodefaultctor GC_MakePlane;
 class GC_MakePlane : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakePlane();
 		%feature("autodoc", "1");
 		GC_MakePlane(const gp_Ax2 &A2);
 		%feature("autodoc", "1");
@@ -373,12 +390,15 @@ class GC_MakePlane : public GC_Root {
 		const Handle_Geom_Plane & Operator() const;
 
 };
+%extend GC_MakePlane {
+	~GC_MakePlane() {
+	printf("Call custom destructor for instance of GC_MakePlane\n");
+	}
+};
 
 %nodefaultctor GC_MakeArcOfEllipse;
 class GC_MakeArcOfEllipse : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeArcOfEllipse();
 		%feature("autodoc", "1");
 		GC_MakeArcOfEllipse(const gp_Elips &Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
@@ -391,12 +411,15 @@ class GC_MakeArcOfEllipse : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%extend GC_MakeArcOfEllipse {
+	~GC_MakeArcOfEllipse() {
+	printf("Call custom destructor for instance of GC_MakeArcOfEllipse\n");
+	}
+};
 
 %nodefaultctor GC_MakeSegment;
 class GC_MakeSegment : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeSegment();
 		%feature("autodoc", "1");
 		GC_MakeSegment(const gp_Pnt &P1, const gp_Pnt &P2);
 		%feature("autodoc", "1");
@@ -411,12 +434,15 @@ class GC_MakeSegment : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%extend GC_MakeSegment {
+	~GC_MakeSegment() {
+	printf("Call custom destructor for instance of GC_MakeSegment\n");
+	}
+};
 
 %nodefaultctor GC_MakeTranslation;
 class GC_MakeTranslation {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeTranslation();
 		%feature("autodoc", "1");
 		GC_MakeTranslation(const gp_Vec &Vect);
 		%feature("autodoc", "1");
@@ -427,12 +453,15 @@ class GC_MakeTranslation {
 		const Handle_Geom_Transformation & Operator() const;
 
 };
+%extend GC_MakeTranslation {
+	~GC_MakeTranslation() {
+	printf("Call custom destructor for instance of GC_MakeTranslation\n");
+	}
+};
 
 %nodefaultctor GC_MakeRotation;
 class GC_MakeRotation {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeRotation();
 		%feature("autodoc", "1");
 		GC_MakeRotation(const gp_Lin &Line, const Standard_Real Angle);
 		%feature("autodoc", "1");
@@ -445,12 +474,15 @@ class GC_MakeRotation {
 		const Handle_Geom_Transformation & Operator() const;
 
 };
+%extend GC_MakeRotation {
+	~GC_MakeRotation() {
+	printf("Call custom destructor for instance of GC_MakeRotation\n");
+	}
+};
 
 %nodefaultctor GC_MakeArcOfParabola;
 class GC_MakeArcOfParabola : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeArcOfParabola();
 		%feature("autodoc", "1");
 		GC_MakeArcOfParabola(const gp_Parab &Parab, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
@@ -463,12 +495,15 @@ class GC_MakeArcOfParabola : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%extend GC_MakeArcOfParabola {
+	~GC_MakeArcOfParabola() {
+	printf("Call custom destructor for instance of GC_MakeArcOfParabola\n");
+	}
+};
 
 %nodefaultctor GC_MakeTrimmedCylinder;
 class GC_MakeTrimmedCylinder : public GC_Root {
 	public:
-		%feature("autodoc", "1");
-		~GC_MakeTrimmedCylinder();
 		%feature("autodoc", "1");
 		GC_MakeTrimmedCylinder(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
 		%feature("autodoc", "1");
@@ -484,4 +519,9 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 		%feature("autodoc", "1");
 		const Handle_Geom_RectangularTrimmedSurface & Operator() const;
 
+};
+%extend GC_MakeTrimmedCylinder {
+	~GC_MakeTrimmedCylinder() {
+	printf("Call custom destructor for instance of GC_MakeTrimmedCylinder\n");
+	}
 };

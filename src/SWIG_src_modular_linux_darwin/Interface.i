@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Interface
 
@@ -136,8 +122,6 @@ enum Interface_CheckStatus {
 class Handle_Interface_EntityCluster : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Interface_EntityCluster();
-		%feature("autodoc", "1");
 		Handle_Interface_EntityCluster();
 		%feature("autodoc", "1");
 		Handle_Interface_EntityCluster(const Handle_Interface_EntityCluster &aHandle);
@@ -152,264 +136,15 @@ class Handle_Interface_EntityCluster : public Handle_MMgt_TShared {
 	return (Interface_EntityCluster*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Interface_ParamList;
-class Handle_Interface_ParamList : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_ParamList();
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList();
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList(const Handle_Interface_ParamList &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList(const Interface_ParamList *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_ParamList {
-	Interface_ParamList* GetObject() {
-	return (Interface_ParamList*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient;
-class Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient();
-		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient();
-		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient(const Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient(const Interface_DataMapNodeOfDataMapOfIntegerTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient {
-	Interface_DataMapNodeOfDataMapOfIntegerTransient* GetObject() {
-	return (Interface_DataMapNodeOfDataMapOfIntegerTransient*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_InterfaceError;
-class Handle_Interface_InterfaceError : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_InterfaceError();
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceError();
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceError(const Handle_Interface_InterfaceError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceError(const Interface_InterfaceError *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_InterfaceError {
-	Interface_InterfaceError* GetObject() {
-	return (Interface_InterfaceError*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_CheckFailure;
-class Handle_Interface_CheckFailure : public Handle_Interface_InterfaceError {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_CheckFailure();
-		%feature("autodoc", "1");
-		Handle_Interface_CheckFailure();
-		%feature("autodoc", "1");
-		Handle_Interface_CheckFailure(const Handle_Interface_CheckFailure &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_CheckFailure(const Interface_CheckFailure *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_CheckFailure const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_CheckFailure {
-	Interface_CheckFailure* GetObject() {
-	return (Interface_CheckFailure*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_Check;
-class Handle_Interface_Check : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_Check();
-		%feature("autodoc", "1");
-		Handle_Interface_Check();
-		%feature("autodoc", "1");
-		Handle_Interface_Check(const Handle_Interface_Check &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_Check(const Interface_Check *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_Check const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_Check {
-	Interface_Check* GetObject() {
-	return (Interface_Check*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_SignType;
-class Handle_Interface_SignType : public Handle_MoniTool_SignText {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_SignType();
-		%feature("autodoc", "1");
-		Handle_Interface_SignType();
-		%feature("autodoc", "1");
-		Handle_Interface_SignType(const Handle_Interface_SignType &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_SignType(const Interface_SignType *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_SignType const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_SignType {
-	Interface_SignType* GetObject() {
-	return (Interface_SignType*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_CopyControl;
-class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_CopyControl();
-		%feature("autodoc", "1");
-		Handle_Interface_CopyControl();
-		%feature("autodoc", "1");
-		Handle_Interface_CopyControl(const Handle_Interface_CopyControl &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_CopyControl(const Interface_CopyControl *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_CopyControl const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_CopyControl {
-	Interface_CopyControl* GetObject() {
-	return (Interface_CopyControl*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_GeneralModule;
-class Handle_Interface_GeneralModule : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_GeneralModule();
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule();
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule(const Handle_Interface_GeneralModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule(const Interface_GeneralModule *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_GeneralModule {
-	Interface_GeneralModule* GetObject() {
-	return (Interface_GeneralModule*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString;
-class Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString();
-		%feature("autodoc", "1");
-		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString();
-		%feature("autodoc", "1");
-		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const Interface_IndexedMapNodeOfIndexedMapOfAsciiString *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
-	Interface_IndexedMapNodeOfIndexedMapOfAsciiString* GetObject() {
-	return (Interface_IndexedMapNodeOfIndexedMapOfAsciiString*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_NodeOfReaderLib;
-class Handle_Interface_NodeOfReaderLib : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_NodeOfReaderLib();
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib();
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib(const Handle_Interface_NodeOfReaderLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib(const Interface_NodeOfReaderLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_NodeOfReaderLib {
-	Interface_NodeOfReaderLib* GetObject() {
-	return (Interface_NodeOfReaderLib*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_TypedValue;
-class Handle_Interface_TypedValue : public Handle_MoniTool_TypedValue {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_TypedValue();
-		%feature("autodoc", "1");
-		Handle_Interface_TypedValue();
-		%feature("autodoc", "1");
-		Handle_Interface_TypedValue(const Handle_Interface_TypedValue &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_TypedValue(const Interface_TypedValue *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_TypedValue const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_TypedValue {
-	Interface_TypedValue* GetObject() {
-	return (Interface_TypedValue*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_CopyMap;
-class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_CopyMap();
-		%feature("autodoc", "1");
-		Handle_Interface_CopyMap();
-		%feature("autodoc", "1");
-		Handle_Interface_CopyMap(const Handle_Interface_CopyMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_CopyMap(const Interface_CopyMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_CopyMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_CopyMap {
-	Interface_CopyMap* GetObject() {
-	return (Interface_CopyMap*)$self->Access();
+%extend Handle_Interface_EntityCluster {
+	~Handle_Interface_EntityCluster() {
+	printf("Call custom destructor for instance of Handle_Interface_EntityCluster\n");
 	}
 };
 
 %nodefaultctor Handle_Interface_ReportEntity;
 class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_ReportEntity();
 		%feature("autodoc", "1");
 		Handle_Interface_ReportEntity();
 		%feature("autodoc", "1");
@@ -425,369 +160,15 @@ class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
 	return (Interface_ReportEntity*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_Interface_ReaderModule;
-class Handle_Interface_ReaderModule : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_ReaderModule();
-		%feature("autodoc", "1");
-		Handle_Interface_ReaderModule();
-		%feature("autodoc", "1");
-		Handle_Interface_ReaderModule(const Handle_Interface_ReaderModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_ReaderModule(const Interface_ReaderModule *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_ReaderModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_ReaderModule {
-	Interface_ReaderModule* GetObject() {
-	return (Interface_ReaderModule*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_GTool;
-class Handle_Interface_GTool : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_GTool();
-		%feature("autodoc", "1");
-		Handle_Interface_GTool();
-		%feature("autodoc", "1");
-		Handle_Interface_GTool(const Handle_Interface_GTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_GTool(const Interface_GTool *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_GTool const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_GTool {
-	Interface_GTool* GetObject() {
-	return (Interface_GTool*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_InterfaceMismatch;
-class Handle_Interface_InterfaceMismatch : public Handle_Interface_InterfaceError {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_InterfaceMismatch();
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch();
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch(const Handle_Interface_InterfaceMismatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch(const Interface_InterfaceMismatch *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_InterfaceMismatch {
-	Interface_InterfaceMismatch* GetObject() {
-	return (Interface_InterfaceMismatch*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_InterfaceModel;
-class Handle_Interface_InterfaceModel : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_InterfaceModel();
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel();
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel(const Handle_Interface_InterfaceModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel(const Interface_InterfaceModel *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_InterfaceModel {
-	Interface_InterfaceModel* GetObject() {
-	return (Interface_InterfaceModel*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_SequenceNodeOfSequenceOfCheck;
-class Handle_Interface_SequenceNodeOfSequenceOfCheck : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_SequenceNodeOfSequenceOfCheck();
-		%feature("autodoc", "1");
-		Handle_Interface_SequenceNodeOfSequenceOfCheck();
-		%feature("autodoc", "1");
-		Handle_Interface_SequenceNodeOfSequenceOfCheck(const Handle_Interface_SequenceNodeOfSequenceOfCheck &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_SequenceNodeOfSequenceOfCheck(const Interface_SequenceNodeOfSequenceOfCheck *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_SequenceNodeOfSequenceOfCheck const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_SequenceNodeOfSequenceOfCheck {
-	Interface_SequenceNodeOfSequenceOfCheck* GetObject() {
-	return (Interface_SequenceNodeOfSequenceOfCheck*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_HSequenceOfCheck;
-class Handle_Interface_HSequenceOfCheck : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_HSequenceOfCheck();
-		%feature("autodoc", "1");
-		Handle_Interface_HSequenceOfCheck();
-		%feature("autodoc", "1");
-		Handle_Interface_HSequenceOfCheck(const Handle_Interface_HSequenceOfCheck &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_HSequenceOfCheck(const Interface_HSequenceOfCheck *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_HSequenceOfCheck const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_HSequenceOfCheck {
-	Interface_HSequenceOfCheck* GetObject() {
-	return (Interface_HSequenceOfCheck*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_NodeOfGeneralLib;
-class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_NodeOfGeneralLib();
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib();
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib(const Handle_Interface_NodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib(const Interface_NodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_NodeOfGeneralLib {
-	Interface_NodeOfGeneralLib* GetObject() {
-	return (Interface_NodeOfGeneralLib*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_ParamSet;
-class Handle_Interface_ParamSet : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_ParamSet();
-		%feature("autodoc", "1");
-		Handle_Interface_ParamSet();
-		%feature("autodoc", "1");
-		Handle_Interface_ParamSet(const Handle_Interface_ParamSet &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_ParamSet(const Interface_ParamSet *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_ParamSet const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_ParamSet {
-	Interface_ParamSet* GetObject() {
-	return (Interface_ParamSet*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_FileReaderData;
-class Handle_Interface_FileReaderData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_FileReaderData();
-		%feature("autodoc", "1");
-		Handle_Interface_FileReaderData();
-		%feature("autodoc", "1");
-		Handle_Interface_FileReaderData(const Handle_Interface_FileReaderData &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_FileReaderData(const Interface_FileReaderData *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_FileReaderData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_FileReaderData {
-	Interface_FileReaderData* GetObject() {
-	return (Interface_FileReaderData*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_IntVal;
-class Handle_Interface_IntVal : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_IntVal();
-		%feature("autodoc", "1");
-		Handle_Interface_IntVal();
-		%feature("autodoc", "1");
-		Handle_Interface_IntVal(const Handle_Interface_IntVal &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_IntVal(const Interface_IntVal *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_IntVal const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_IntVal {
-	Interface_IntVal* GetObject() {
-	return (Interface_IntVal*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_HArray1OfHAsciiString;
-class Handle_Interface_HArray1OfHAsciiString : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_HArray1OfHAsciiString();
-		%feature("autodoc", "1");
-		Handle_Interface_HArray1OfHAsciiString();
-		%feature("autodoc", "1");
-		Handle_Interface_HArray1OfHAsciiString(const Handle_Interface_HArray1OfHAsciiString &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_HArray1OfHAsciiString(const Interface_HArray1OfHAsciiString *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_HArray1OfHAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_HArray1OfHAsciiString {
-	Interface_HArray1OfHAsciiString* GetObject() {
-	return (Interface_HArray1OfHAsciiString*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_Static;
-class Handle_Interface_Static : public Handle_Interface_TypedValue {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_Static();
-		%feature("autodoc", "1");
-		Handle_Interface_Static();
-		%feature("autodoc", "1");
-		Handle_Interface_Static(const Handle_Interface_Static &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_Static(const Interface_Static *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_Static const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_Static {
-	Interface_Static* GetObject() {
-	return (Interface_Static*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_GlobalNodeOfGeneralLib;
-class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_GlobalNodeOfGeneralLib();
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib();
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib(const Interface_GlobalNodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_GlobalNodeOfGeneralLib {
-	Interface_GlobalNodeOfGeneralLib* GetObject() {
-	return (Interface_GlobalNodeOfGeneralLib*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_SignLabel;
-class Handle_Interface_SignLabel : public Handle_MoniTool_SignText {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_SignLabel();
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel();
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel(const Handle_Interface_SignLabel &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel(const Interface_SignLabel *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_SignLabel {
-	Interface_SignLabel* GetObject() {
-	return (Interface_SignLabel*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_UndefinedContent;
-class Handle_Interface_UndefinedContent : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_UndefinedContent();
-		%feature("autodoc", "1");
-		Handle_Interface_UndefinedContent();
-		%feature("autodoc", "1");
-		Handle_Interface_UndefinedContent(const Handle_Interface_UndefinedContent &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_UndefinedContent(const Interface_UndefinedContent *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_UndefinedContent const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_UndefinedContent {
-	Interface_UndefinedContent* GetObject() {
-	return (Interface_UndefinedContent*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_HGraph;
-class Handle_Interface_HGraph : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_HGraph();
-		%feature("autodoc", "1");
-		Handle_Interface_HGraph();
-		%feature("autodoc", "1");
-		Handle_Interface_HGraph(const Handle_Interface_HGraph &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_HGraph(const Interface_HGraph *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_HGraph const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_HGraph {
-	Interface_HGraph* GetObject() {
-	return (Interface_HGraph*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_Interface_Protocol;
-class Handle_Interface_Protocol : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_Protocol();
-		%feature("autodoc", "1");
-		Handle_Interface_Protocol();
-		%feature("autodoc", "1");
-		Handle_Interface_Protocol(const Handle_Interface_Protocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_Protocol(const Interface_Protocol *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_Protocol {
-	Interface_Protocol* GetObject() {
-	return (Interface_Protocol*)$self->Access();
+%extend Handle_Interface_ReportEntity {
+	~Handle_Interface_ReportEntity() {
+	printf("Call custom destructor for instance of Handle_Interface_ReportEntity\n");
 	}
 };
 
 %nodefaultctor Handle_Interface_GlobalNodeOfReaderLib;
 class Handle_Interface_GlobalNodeOfReaderLib : public Handle_Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_GlobalNodeOfReaderLib();
 		%feature("autodoc", "1");
 		Handle_Interface_GlobalNodeOfReaderLib();
 		%feature("autodoc", "1");
@@ -803,12 +184,711 @@ class Handle_Interface_GlobalNodeOfReaderLib : public Handle_Standard_Transient 
 	return (Interface_GlobalNodeOfReaderLib*)$self->Access();
 	}
 };
+%extend Handle_Interface_GlobalNodeOfReaderLib {
+	~Handle_Interface_GlobalNodeOfReaderLib() {
+	printf("Call custom destructor for instance of Handle_Interface_GlobalNodeOfReaderLib\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_ParamSet;
+class Handle_Interface_ParamSet : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_ParamSet();
+		%feature("autodoc", "1");
+		Handle_Interface_ParamSet(const Handle_Interface_ParamSet &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_ParamSet(const Interface_ParamSet *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_ParamSet const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_ParamSet {
+	Interface_ParamSet* GetObject() {
+	return (Interface_ParamSet*)$self->Access();
+	}
+};
+%extend Handle_Interface_ParamSet {
+	~Handle_Interface_ParamSet() {
+	printf("Call custom destructor for instance of Handle_Interface_ParamSet\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_ParamList;
+class Handle_Interface_ParamList : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList();
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList(const Handle_Interface_ParamList &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList(const Interface_ParamList *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_ParamList {
+	Interface_ParamList* GetObject() {
+	return (Interface_ParamList*)$self->Access();
+	}
+};
+%extend Handle_Interface_ParamList {
+	~Handle_Interface_ParamList() {
+	printf("Call custom destructor for instance of Handle_Interface_ParamList\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient;
+class Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient();
+		%feature("autodoc", "1");
+		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient(const Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient(const Interface_DataMapNodeOfDataMapOfIntegerTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient {
+	Interface_DataMapNodeOfDataMapOfIntegerTransient* GetObject() {
+	return (Interface_DataMapNodeOfDataMapOfIntegerTransient*)$self->Access();
+	}
+};
+%extend Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient {
+	~Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient() {
+	printf("Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_InterfaceError;
+class Handle_Interface_InterfaceError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceError();
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceError(const Handle_Interface_InterfaceError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceError(const Interface_InterfaceError *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_InterfaceError {
+	Interface_InterfaceError* GetObject() {
+	return (Interface_InterfaceError*)$self->Access();
+	}
+};
+%extend Handle_Interface_InterfaceError {
+	~Handle_Interface_InterfaceError() {
+	printf("Call custom destructor for instance of Handle_Interface_InterfaceError\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_CheckFailure;
+class Handle_Interface_CheckFailure : public Handle_Interface_InterfaceError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_CheckFailure();
+		%feature("autodoc", "1");
+		Handle_Interface_CheckFailure(const Handle_Interface_CheckFailure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_CheckFailure(const Interface_CheckFailure *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_CheckFailure const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_CheckFailure {
+	Interface_CheckFailure* GetObject() {
+	return (Interface_CheckFailure*)$self->Access();
+	}
+};
+%extend Handle_Interface_CheckFailure {
+	~Handle_Interface_CheckFailure() {
+	printf("Call custom destructor for instance of Handle_Interface_CheckFailure\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_Check;
+class Handle_Interface_Check : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_Check();
+		%feature("autodoc", "1");
+		Handle_Interface_Check(const Handle_Interface_Check &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_Check(const Interface_Check *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_Check const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_Check {
+	Interface_Check* GetObject() {
+	return (Interface_Check*)$self->Access();
+	}
+};
+%extend Handle_Interface_Check {
+	~Handle_Interface_Check() {
+	printf("Call custom destructor for instance of Handle_Interface_Check\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_SignType;
+class Handle_Interface_SignType : public Handle_MoniTool_SignText {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_SignType();
+		%feature("autodoc", "1");
+		Handle_Interface_SignType(const Handle_Interface_SignType &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_SignType(const Interface_SignType *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_SignType const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_SignType {
+	Interface_SignType* GetObject() {
+	return (Interface_SignType*)$self->Access();
+	}
+};
+%extend Handle_Interface_SignType {
+	~Handle_Interface_SignType() {
+	printf("Call custom destructor for instance of Handle_Interface_SignType\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_CopyControl;
+class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl();
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl(const Handle_Interface_CopyControl &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl(const Interface_CopyControl *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_CopyControl {
+	Interface_CopyControl* GetObject() {
+	return (Interface_CopyControl*)$self->Access();
+	}
+};
+%extend Handle_Interface_CopyControl {
+	~Handle_Interface_CopyControl() {
+	printf("Call custom destructor for instance of Handle_Interface_CopyControl\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_GeneralModule;
+class Handle_Interface_GeneralModule : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule();
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule(const Handle_Interface_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule(const Interface_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_GeneralModule {
+	Interface_GeneralModule* GetObject() {
+	return (Interface_GeneralModule*)$self->Access();
+	}
+};
+%extend Handle_Interface_GeneralModule {
+	~Handle_Interface_GeneralModule() {
+	printf("Call custom destructor for instance of Handle_Interface_GeneralModule\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString;
+class Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString();
+		%feature("autodoc", "1");
+		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const Interface_IndexedMapNodeOfIndexedMapOfAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
+	Interface_IndexedMapNodeOfIndexedMapOfAsciiString* GetObject() {
+	return (Interface_IndexedMapNodeOfIndexedMapOfAsciiString*)$self->Access();
+	}
+};
+%extend Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
+	~Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString() {
+	printf("Call custom destructor for instance of Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_NodeOfReaderLib;
+class Handle_Interface_NodeOfReaderLib : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfReaderLib();
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfReaderLib(const Handle_Interface_NodeOfReaderLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfReaderLib(const Interface_NodeOfReaderLib *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfReaderLib const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_NodeOfReaderLib {
+	Interface_NodeOfReaderLib* GetObject() {
+	return (Interface_NodeOfReaderLib*)$self->Access();
+	}
+};
+%extend Handle_Interface_NodeOfReaderLib {
+	~Handle_Interface_NodeOfReaderLib() {
+	printf("Call custom destructor for instance of Handle_Interface_NodeOfReaderLib\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_TypedValue;
+class Handle_Interface_TypedValue : public Handle_MoniTool_TypedValue {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_TypedValue();
+		%feature("autodoc", "1");
+		Handle_Interface_TypedValue(const Handle_Interface_TypedValue &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_TypedValue(const Interface_TypedValue *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_TypedValue const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_TypedValue {
+	Interface_TypedValue* GetObject() {
+	return (Interface_TypedValue*)$self->Access();
+	}
+};
+%extend Handle_Interface_TypedValue {
+	~Handle_Interface_TypedValue() {
+	printf("Call custom destructor for instance of Handle_Interface_TypedValue\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_CopyMap;
+class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_CopyMap();
+		%feature("autodoc", "1");
+		Handle_Interface_CopyMap(const Handle_Interface_CopyMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_CopyMap(const Interface_CopyMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_CopyMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_CopyMap {
+	Interface_CopyMap* GetObject() {
+	return (Interface_CopyMap*)$self->Access();
+	}
+};
+%extend Handle_Interface_CopyMap {
+	~Handle_Interface_CopyMap() {
+	printf("Call custom destructor for instance of Handle_Interface_CopyMap\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_ReaderModule;
+class Handle_Interface_ReaderModule : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_ReaderModule();
+		%feature("autodoc", "1");
+		Handle_Interface_ReaderModule(const Handle_Interface_ReaderModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_ReaderModule(const Interface_ReaderModule *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_ReaderModule const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_ReaderModule {
+	Interface_ReaderModule* GetObject() {
+	return (Interface_ReaderModule*)$self->Access();
+	}
+};
+%extend Handle_Interface_ReaderModule {
+	~Handle_Interface_ReaderModule() {
+	printf("Call custom destructor for instance of Handle_Interface_ReaderModule\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_GTool;
+class Handle_Interface_GTool : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_GTool();
+		%feature("autodoc", "1");
+		Handle_Interface_GTool(const Handle_Interface_GTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_GTool(const Interface_GTool *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_GTool const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_GTool {
+	Interface_GTool* GetObject() {
+	return (Interface_GTool*)$self->Access();
+	}
+};
+%extend Handle_Interface_GTool {
+	~Handle_Interface_GTool() {
+	printf("Call custom destructor for instance of Handle_Interface_GTool\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_InterfaceMismatch;
+class Handle_Interface_InterfaceMismatch : public Handle_Interface_InterfaceError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch();
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch(const Handle_Interface_InterfaceMismatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch(const Interface_InterfaceMismatch *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_InterfaceMismatch {
+	Interface_InterfaceMismatch* GetObject() {
+	return (Interface_InterfaceMismatch*)$self->Access();
+	}
+};
+%extend Handle_Interface_InterfaceMismatch {
+	~Handle_Interface_InterfaceMismatch() {
+	printf("Call custom destructor for instance of Handle_Interface_InterfaceMismatch\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_InterfaceModel;
+class Handle_Interface_InterfaceModel : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel();
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel(const Handle_Interface_InterfaceModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel(const Interface_InterfaceModel *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_InterfaceModel {
+	Interface_InterfaceModel* GetObject() {
+	return (Interface_InterfaceModel*)$self->Access();
+	}
+};
+%extend Handle_Interface_InterfaceModel {
+	~Handle_Interface_InterfaceModel() {
+	printf("Call custom destructor for instance of Handle_Interface_InterfaceModel\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_SequenceNodeOfSequenceOfCheck;
+class Handle_Interface_SequenceNodeOfSequenceOfCheck : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_SequenceNodeOfSequenceOfCheck();
+		%feature("autodoc", "1");
+		Handle_Interface_SequenceNodeOfSequenceOfCheck(const Handle_Interface_SequenceNodeOfSequenceOfCheck &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_SequenceNodeOfSequenceOfCheck(const Interface_SequenceNodeOfSequenceOfCheck *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_SequenceNodeOfSequenceOfCheck const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_SequenceNodeOfSequenceOfCheck {
+	Interface_SequenceNodeOfSequenceOfCheck* GetObject() {
+	return (Interface_SequenceNodeOfSequenceOfCheck*)$self->Access();
+	}
+};
+%extend Handle_Interface_SequenceNodeOfSequenceOfCheck {
+	~Handle_Interface_SequenceNodeOfSequenceOfCheck() {
+	printf("Call custom destructor for instance of Handle_Interface_SequenceNodeOfSequenceOfCheck\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_HSequenceOfCheck;
+class Handle_Interface_HSequenceOfCheck : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_HSequenceOfCheck();
+		%feature("autodoc", "1");
+		Handle_Interface_HSequenceOfCheck(const Handle_Interface_HSequenceOfCheck &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_HSequenceOfCheck(const Interface_HSequenceOfCheck *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_HSequenceOfCheck const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_HSequenceOfCheck {
+	Interface_HSequenceOfCheck* GetObject() {
+	return (Interface_HSequenceOfCheck*)$self->Access();
+	}
+};
+%extend Handle_Interface_HSequenceOfCheck {
+	~Handle_Interface_HSequenceOfCheck() {
+	printf("Call custom destructor for instance of Handle_Interface_HSequenceOfCheck\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_NodeOfGeneralLib;
+class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib();
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib(const Handle_Interface_NodeOfGeneralLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib(const Interface_NodeOfGeneralLib *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_NodeOfGeneralLib {
+	Interface_NodeOfGeneralLib* GetObject() {
+	return (Interface_NodeOfGeneralLib*)$self->Access();
+	}
+};
+%extend Handle_Interface_NodeOfGeneralLib {
+	~Handle_Interface_NodeOfGeneralLib() {
+	printf("Call custom destructor for instance of Handle_Interface_NodeOfGeneralLib\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_FileReaderData;
+class Handle_Interface_FileReaderData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_FileReaderData();
+		%feature("autodoc", "1");
+		Handle_Interface_FileReaderData(const Handle_Interface_FileReaderData &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_FileReaderData(const Interface_FileReaderData *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_FileReaderData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_FileReaderData {
+	Interface_FileReaderData* GetObject() {
+	return (Interface_FileReaderData*)$self->Access();
+	}
+};
+%extend Handle_Interface_FileReaderData {
+	~Handle_Interface_FileReaderData() {
+	printf("Call custom destructor for instance of Handle_Interface_FileReaderData\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_IntVal;
+class Handle_Interface_IntVal : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_IntVal();
+		%feature("autodoc", "1");
+		Handle_Interface_IntVal(const Handle_Interface_IntVal &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_IntVal(const Interface_IntVal *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_IntVal const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_IntVal {
+	Interface_IntVal* GetObject() {
+	return (Interface_IntVal*)$self->Access();
+	}
+};
+%extend Handle_Interface_IntVal {
+	~Handle_Interface_IntVal() {
+	printf("Call custom destructor for instance of Handle_Interface_IntVal\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_HArray1OfHAsciiString;
+class Handle_Interface_HArray1OfHAsciiString : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_HArray1OfHAsciiString();
+		%feature("autodoc", "1");
+		Handle_Interface_HArray1OfHAsciiString(const Handle_Interface_HArray1OfHAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_HArray1OfHAsciiString(const Interface_HArray1OfHAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_HArray1OfHAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_HArray1OfHAsciiString {
+	Interface_HArray1OfHAsciiString* GetObject() {
+	return (Interface_HArray1OfHAsciiString*)$self->Access();
+	}
+};
+%extend Handle_Interface_HArray1OfHAsciiString {
+	~Handle_Interface_HArray1OfHAsciiString() {
+	printf("Call custom destructor for instance of Handle_Interface_HArray1OfHAsciiString\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_Static;
+class Handle_Interface_Static : public Handle_Interface_TypedValue {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_Static();
+		%feature("autodoc", "1");
+		Handle_Interface_Static(const Handle_Interface_Static &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_Static(const Interface_Static *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_Static const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_Static {
+	Interface_Static* GetObject() {
+	return (Interface_Static*)$self->Access();
+	}
+};
+%extend Handle_Interface_Static {
+	~Handle_Interface_Static() {
+	printf("Call custom destructor for instance of Handle_Interface_Static\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_GlobalNodeOfGeneralLib;
+class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib();
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib(const Interface_GlobalNodeOfGeneralLib *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_GlobalNodeOfGeneralLib {
+	Interface_GlobalNodeOfGeneralLib* GetObject() {
+	return (Interface_GlobalNodeOfGeneralLib*)$self->Access();
+	}
+};
+%extend Handle_Interface_GlobalNodeOfGeneralLib {
+	~Handle_Interface_GlobalNodeOfGeneralLib() {
+	printf("Call custom destructor for instance of Handle_Interface_GlobalNodeOfGeneralLib\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_SignLabel;
+class Handle_Interface_SignLabel : public Handle_MoniTool_SignText {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel();
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel(const Handle_Interface_SignLabel &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel(const Interface_SignLabel *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_SignLabel {
+	Interface_SignLabel* GetObject() {
+	return (Interface_SignLabel*)$self->Access();
+	}
+};
+%extend Handle_Interface_SignLabel {
+	~Handle_Interface_SignLabel() {
+	printf("Call custom destructor for instance of Handle_Interface_SignLabel\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_UndefinedContent;
+class Handle_Interface_UndefinedContent : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_UndefinedContent();
+		%feature("autodoc", "1");
+		Handle_Interface_UndefinedContent(const Handle_Interface_UndefinedContent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_UndefinedContent(const Interface_UndefinedContent *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_UndefinedContent const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_UndefinedContent {
+	Interface_UndefinedContent* GetObject() {
+	return (Interface_UndefinedContent*)$self->Access();
+	}
+};
+%extend Handle_Interface_UndefinedContent {
+	~Handle_Interface_UndefinedContent() {
+	printf("Call custom destructor for instance of Handle_Interface_UndefinedContent\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_HGraph;
+class Handle_Interface_HGraph : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_HGraph();
+		%feature("autodoc", "1");
+		Handle_Interface_HGraph(const Handle_Interface_HGraph &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_HGraph(const Interface_HGraph *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_HGraph const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_HGraph {
+	Interface_HGraph* GetObject() {
+	return (Interface_HGraph*)$self->Access();
+	}
+};
+%extend Handle_Interface_HGraph {
+	~Handle_Interface_HGraph() {
+	printf("Call custom destructor for instance of Handle_Interface_HGraph\n");
+	}
+};
+
+%nodefaultctor Handle_Interface_Protocol;
+class Handle_Interface_Protocol : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_Protocol();
+		%feature("autodoc", "1");
+		Handle_Interface_Protocol(const Handle_Interface_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_Protocol(const Interface_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_Protocol {
+	Interface_Protocol* GetObject() {
+	return (Interface_Protocol*)$self->Access();
+	}
+};
+%extend Handle_Interface_Protocol {
+	~Handle_Interface_Protocol() {
+	printf("Call custom destructor for instance of Handle_Interface_Protocol\n");
+	}
+};
 
 %nodefaultctor Handle_Interface_DataMapNodeOfDataMapOfTransientInteger;
 class Handle_Interface_DataMapNodeOfDataMapOfTransientInteger : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Interface_DataMapNodeOfDataMapOfTransientInteger();
 		%feature("autodoc", "1");
 		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger();
 		%feature("autodoc", "1");
@@ -824,18 +904,39 @@ class Handle_Interface_DataMapNodeOfDataMapOfTransientInteger : public Handle_TC
 	return (Interface_DataMapNodeOfDataMapOfTransientInteger*)$self->Access();
 	}
 };
+%extend Handle_Interface_DataMapNodeOfDataMapOfTransientInteger {
+	~Handle_Interface_DataMapNodeOfDataMapOfTransientInteger() {
+	printf("Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfTransientInteger\n");
+	}
+};
 
-%nodefaultctor Interface_MapAsciiStringHasher;
-class Interface_MapAsciiStringHasher {
+%nodefaultctor Interface_IndexedMapOfAsciiString;
+class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		~Interface_MapAsciiStringHasher();
+		Interface_IndexedMapOfAsciiString(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		Interface_MapAsciiStringHasher();
+		Interface_IndexedMapOfAsciiString & Assign(const Interface_IndexedMapOfAsciiString &Other);
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const TCollection_AsciiString &K, const Standard_Integer Upper);
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TCollection_AsciiString &K1, const TCollection_AsciiString &K2);
+		void Clear();
+		%feature("autodoc", "1");
+		~Interface_IndexedMapOfAsciiString();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TCollection_AsciiString &K) const;
 
 };
 
@@ -854,8 +955,6 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 		const Handle_Interface_GlobalNodeOfReaderLib & Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_GlobalNodeOfReaderLib();
 
 };
 %extend Interface_GlobalNodeOfReaderLib {
@@ -863,12 +962,15 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 	return *(Handle_Interface_GlobalNodeOfReaderLib*) &$self;
 	}
 };
+%extend Interface_GlobalNodeOfReaderLib {
+	~Interface_GlobalNodeOfReaderLib() {
+	printf("Call custom destructor for instance of Interface_GlobalNodeOfReaderLib\n");
+	}
+};
 
 %nodefaultctor Interface_ReaderLib;
 class Interface_ReaderLib {
 	public:
-		%feature("autodoc", "1");
-		~Interface_ReaderLib();
 		%feature("autodoc", "1");
 		void SetGlobal(const Handle_Interface_ReaderModule &amodule, const Handle_Interface_Protocol &aprotocol);
 		%feature("autodoc", "1");
@@ -895,6 +997,11 @@ class Interface_ReaderLib {
 		const Handle_Interface_Protocol & Protocol() const;
 
 };
+%extend Interface_ReaderLib {
+	~Interface_ReaderLib() {
+	printf("Call custom destructor for instance of Interface_ReaderLib\n");
+	}
+};
 
 %nodefaultctor Interface_DataMapOfIntegerTransient;
 class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
@@ -907,8 +1014,6 @@ class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Interface_DataMapOfIntegerTransient();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
@@ -924,6 +1029,11 @@ class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const Standard_Integer &K);
 
+};
+%extend Interface_DataMapOfIntegerTransient {
+	~Interface_DataMapOfIntegerTransient() {
+	printf("Call custom destructor for instance of Interface_DataMapOfIntegerTransient\n");
+	}
 };
 
 %nodefaultctor Interface_GeneralModule;
@@ -968,6 +1078,11 @@ class Interface_GeneralModule : public MMgt_TShared {
 	return *(Handle_Interface_GeneralModule*) &$self;
 	}
 };
+%extend Interface_GeneralModule {
+	~Interface_GeneralModule() {
+	printf("Call custom destructor for instance of Interface_GeneralModule\n");
+	}
+};
 
 %nodefaultctor Interface_CopyControl;
 class Interface_CopyControl : public MMgt_TShared {
@@ -985,6 +1100,11 @@ class Interface_CopyControl : public MMgt_TShared {
 %extend Interface_CopyControl {
 	Handle_Interface_CopyControl GetHandle() {
 	return *(Handle_Interface_CopyControl*) &$self;
+	}
+};
+%extend Interface_CopyControl {
+	~Interface_CopyControl() {
+	printf("Call custom destructor for instance of Interface_CopyControl\n");
 	}
 };
 
@@ -1050,12 +1170,64 @@ class Interface_FileReaderData : public MMgt_TShared {
 	return *(Handle_Interface_FileReaderData*) &$self;
 	}
 };
+%extend Interface_FileReaderData {
+	~Interface_FileReaderData() {
+	printf("Call custom destructor for instance of Interface_FileReaderData\n");
+	}
+};
+
+%nodefaultctor Interface_DataMapIteratorOfDataMapOfIntegerTransient;
+class Interface_DataMapIteratorOfDataMapOfIntegerTransient : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		Interface_DataMapIteratorOfDataMapOfIntegerTransient();
+		%feature("autodoc", "1");
+		Interface_DataMapIteratorOfDataMapOfIntegerTransient(const Interface_DataMapOfIntegerTransient &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const Interface_DataMapOfIntegerTransient &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value() const;
+
+};
+%extend Interface_DataMapIteratorOfDataMapOfIntegerTransient {
+	~Interface_DataMapIteratorOfDataMapOfIntegerTransient() {
+	printf("Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfIntegerTransient\n");
+	}
+};
+
+%nodefaultctor Interface_GlobalNodeOfGeneralLib;
+class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Interface_GlobalNodeOfGeneralLib();
+		%feature("autodoc", "1");
+		void Add(const Handle_Interface_GeneralModule &amodule, const Handle_Interface_Protocol &aprotocol);
+		%feature("autodoc", "1");
+		const Handle_Interface_GeneralModule & Module() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Protocol & Protocol() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_GlobalNodeOfGeneralLib & Next() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_GlobalNodeOfGeneralLib {
+	Handle_Interface_GlobalNodeOfGeneralLib GetHandle() {
+	return *(Handle_Interface_GlobalNodeOfGeneralLib*) &$self;
+	}
+};
+%extend Interface_GlobalNodeOfGeneralLib {
+	~Interface_GlobalNodeOfGeneralLib() {
+	printf("Call custom destructor for instance of Interface_GlobalNodeOfGeneralLib\n");
+	}
+};
 
 %nodefaultctor Interface_ShareFlags;
 class Interface_ShareFlags {
 	public:
-		%feature("autodoc", "1");
-		~Interface_ShareFlags();
 		%feature("autodoc", "1");
 		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
@@ -1078,78 +1250,10 @@ class Interface_ShareFlags {
 		Handle_Standard_Transient Root(const Standard_Integer num=1) const;
 
 };
-
-%nodefaultctor Interface_DataMapIteratorOfDataMapOfIntegerTransient;
-class Interface_DataMapIteratorOfDataMapOfIntegerTransient : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~Interface_DataMapIteratorOfDataMapOfIntegerTransient();
-		%feature("autodoc", "1");
-		Interface_DataMapIteratorOfDataMapOfIntegerTransient();
-		%feature("autodoc", "1");
-		Interface_DataMapIteratorOfDataMapOfIntegerTransient(const Interface_DataMapOfIntegerTransient &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const Interface_DataMapOfIntegerTransient &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
-
-};
-
-%nodefaultctor Interface_GlobalNodeOfGeneralLib;
-class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Interface_GlobalNodeOfGeneralLib();
-		%feature("autodoc", "1");
-		void Add(const Handle_Interface_GeneralModule &amodule, const Handle_Interface_Protocol &aprotocol);
-		%feature("autodoc", "1");
-		const Handle_Interface_GeneralModule & Module() const;
-		%feature("autodoc", "1");
-		const Handle_Interface_Protocol & Protocol() const;
-		%feature("autodoc", "1");
-		const Handle_Interface_GlobalNodeOfGeneralLib & Next() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_GlobalNodeOfGeneralLib();
-
-};
-%extend Interface_GlobalNodeOfGeneralLib {
-	Handle_Interface_GlobalNodeOfGeneralLib GetHandle() {
-	return *(Handle_Interface_GlobalNodeOfGeneralLib*) &$self;
+%extend Interface_ShareFlags {
+	~Interface_ShareFlags() {
+	printf("Call custom destructor for instance of Interface_ShareFlags\n");
 	}
-};
-
-%nodefaultctor Interface_IndexedMapOfAsciiString;
-class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Interface_IndexedMapOfAsciiString(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Interface_IndexedMapOfAsciiString & Assign(const Interface_IndexedMapOfAsciiString &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~Interface_IndexedMapOfAsciiString();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TCollection_AsciiString &K) const;
-
 };
 
 %nodefaultctor Interface_ReaderModule;
@@ -1170,6 +1274,11 @@ class Interface_ReaderModule : public MMgt_TShared {
 	return *(Handle_Interface_ReaderModule*) &$self;
 	}
 };
+%extend Interface_ReaderModule {
+	~Interface_ReaderModule() {
+	printf("Call custom destructor for instance of Interface_ReaderModule\n");
+	}
+};
 
 %nodefaultctor Interface_DataMapNodeOfDataMapOfTransientInteger;
 class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapNode {
@@ -1182,13 +1291,16 @@ class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapN
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_DataMapNodeOfDataMapOfTransientInteger();
 
 };
 %extend Interface_DataMapNodeOfDataMapOfTransientInteger {
 	Handle_Interface_DataMapNodeOfDataMapOfTransientInteger GetHandle() {
 	return *(Handle_Interface_DataMapNodeOfDataMapOfTransientInteger*) &$self;
+	}
+};
+%extend Interface_DataMapNodeOfDataMapOfTransientInteger {
+	~Interface_DataMapNodeOfDataMapOfTransientInteger() {
+	printf("Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfTransientInteger\n");
 	}
 };
 
@@ -1205,13 +1317,16 @@ class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_Map
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_IndexedMapNodeOfIndexedMapOfAsciiString();
 
 };
 %extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
 	Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString GetHandle() {
 	return *(Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString*) &$self;
+	}
+};
+%extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
+	~Interface_IndexedMapNodeOfIndexedMapOfAsciiString() {
+	printf("Call custom destructor for instance of Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");
 	}
 };
 
@@ -1226,13 +1341,16 @@ class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapN
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_DataMapNodeOfDataMapOfIntegerTransient();
 
 };
 %extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
 	Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient GetHandle() {
 	return *(Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient*) &$self;
+	}
+};
+%extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
+	~Interface_DataMapNodeOfDataMapOfIntegerTransient() {
+	printf("Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfIntegerTransient\n");
 	}
 };
 
@@ -1251,14 +1369,31 @@ class Interface_CopyMap : public Interface_CopyControl {
 		virtual		Standard_Boolean Search(const Handle_Standard_Transient &ent, Handle_Standard_Transient & res) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_CopyMap();
 
 };
 %extend Interface_CopyMap {
 	Handle_Interface_CopyMap GetHandle() {
 	return *(Handle_Interface_CopyMap*) &$self;
 	}
+};
+%extend Interface_CopyMap {
+	~Interface_CopyMap() {
+	printf("Call custom destructor for instance of Interface_CopyMap\n");
+	}
+};
+
+%nodefaultctor Interface_MapAsciiStringHasher;
+class Interface_MapAsciiStringHasher {
+	public:
+		%feature("autodoc", "1");
+		~Interface_MapAsciiStringHasher();
+		%feature("autodoc", "1");
+		Interface_MapAsciiStringHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const TCollection_AsciiString &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const TCollection_AsciiString &K1, const TCollection_AsciiString &K2);
+
 };
 
 %nodefaultctor Interface_CopyTool;
@@ -1302,9 +1437,12 @@ class Interface_CopyTool {
 		Interface_EntityIterator RootResult(const Standard_Boolean withreports=0) const;
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Interface_CopyTool();
 
+};
+%extend Interface_CopyTool {
+	~Interface_CopyTool() {
+	printf("Call custom destructor for instance of Interface_CopyTool\n");
+	}
 };
 
 %nodefaultctor Interface_Array1OfFileParameter;
@@ -1347,8 +1485,6 @@ class Interface_Array1OfFileParameter {
 class Interface_GeneralLib {
 	public:
 		%feature("autodoc", "1");
-		~Interface_GeneralLib();
-		%feature("autodoc", "1");
 		void SetGlobal(const Handle_Interface_GeneralModule &amodule, const Handle_Interface_Protocol &aprotocol);
 		%feature("autodoc", "1");
 		Interface_GeneralLib(const Handle_Interface_Protocol &aprotocol);
@@ -1374,30 +1510,53 @@ class Interface_GeneralLib {
 		const Handle_Interface_Protocol & Protocol() const;
 
 };
+%extend Interface_GeneralLib {
+	~Interface_GeneralLib() {
+	printf("Call custom destructor for instance of Interface_GeneralLib\n");
+	}
+};
 
-%nodefaultctor Interface_DataMapIteratorOfDataMapOfTransientInteger;
-class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_BasicMapIterator {
+%nodefaultctor Interface_ParamList;
+class Interface_ParamList : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Interface_DataMapIteratorOfDataMapOfTransientInteger();
+		Interface_ParamList(const Standard_Integer theIncrement=256);
 		%feature("autodoc", "1");
-		Interface_DataMapIteratorOfDataMapOfTransientInteger();
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Interface_DataMapIteratorOfDataMapOfTransientInteger(const Interface_DataMapOfTransientInteger &aMap);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void Initialize(const Interface_DataMapOfTransientInteger &aMap);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Key() const;
+		void SetValue(const Standard_Integer Index, const Interface_FileParameter &Value);
 		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
+		const Interface_FileParameter & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Interface_FileParameter & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Interface_FileParameter & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Interface_FileParameter & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
+};
+%extend Interface_ParamList {
+	Handle_Interface_ParamList GetHandle() {
+	return *(Handle_Interface_ParamList*) &$self;
+	}
+};
+%extend Interface_ParamList {
+	~Interface_ParamList() {
+	printf("Call custom destructor for instance of Interface_ParamList\n");
+	}
 };
 
 %nodefaultctor Interface_EntityList;
 class Interface_EntityList {
 	public:
-		%feature("autodoc", "1");
-		~Interface_EntityList();
 		%feature("autodoc", "1");
 		Interface_EntityList();
 		%feature("autodoc", "1");
@@ -1426,12 +1585,15 @@ class Interface_EntityList {
 		Handle_Standard_Transient TypedEntity(const Handle_Standard_Type &atype, const Standard_Integer num=0) const;
 
 };
+%extend Interface_EntityList {
+	~Interface_EntityList() {
+	printf("Call custom destructor for instance of Interface_EntityList\n");
+	}
+};
 
 %nodefaultctor Interface_ShareTool;
 class Interface_ShareTool {
 	public:
-		%feature("autodoc", "1");
-		~Interface_ShareTool();
 		%feature("autodoc", "1");
 		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
@@ -1467,6 +1629,11 @@ class Interface_ShareTool {
 		%feature("autodoc", "1");
 		void Print(const Interface_EntityIterator &iter, const Handle_Message_Messenger &S) const;
 
+};
+%extend Interface_ShareTool {
+	~Interface_ShareTool() {
+	printf("Call custom destructor for instance of Interface_ShareTool\n");
+	}
 };
 
 %nodefaultctor Interface_HSequenceOfCheck;
@@ -1520,13 +1687,16 @@ class Interface_HSequenceOfCheck : public MMgt_TShared {
 		Handle_Interface_HSequenceOfCheck ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_HSequenceOfCheck();
 
 };
 %extend Interface_HSequenceOfCheck {
 	Handle_Interface_HSequenceOfCheck GetHandle() {
 	return *(Handle_Interface_HSequenceOfCheck*) &$self;
+	}
+};
+%extend Interface_HSequenceOfCheck {
+	~Interface_HSequenceOfCheck() {
+	printf("Call custom destructor for instance of Interface_HSequenceOfCheck\n");
 	}
 };
 
@@ -1543,13 +1713,16 @@ class Interface_TypedValue : public MoniTool_TypedValue {
 		Interface_ParamType ValueTypeToParamType(const MoniTool_ValueType typ);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_TypedValue();
 
 };
 %extend Interface_TypedValue {
 	Handle_Interface_TypedValue GetHandle() {
 	return *(Handle_Interface_TypedValue*) &$self;
+	}
+};
+%extend Interface_TypedValue {
+	~Interface_TypedValue() {
+	printf("Call custom destructor for instance of Interface_TypedValue\n");
 	}
 };
 
@@ -1608,13 +1781,16 @@ class Interface_Static : public Interface_TypedValue {
 		void Standards();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_Static();
 
 };
 %extend Interface_Static {
 	Handle_Interface_Static GetHandle() {
 	return *(Handle_Interface_Static*) &$self;
+	}
+};
+%extend Interface_Static {
+	~Interface_Static() {
+	printf("Call custom destructor for instance of Interface_Static\n");
 	}
 };
 
@@ -1657,13 +1833,16 @@ class Interface_IntVal : public MMgt_TShared {
 		Standard_Integer & CValue();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_IntVal();
 
 };
 %extend Interface_IntVal {
 	Handle_Interface_IntVal GetHandle() {
 	return *(Handle_Interface_IntVal*) &$self;
+	}
+};
+%extend Interface_IntVal {
+	~Interface_IntVal() {
+	printf("Call custom destructor for instance of Interface_IntVal\n");
 	}
 };
 
@@ -1682,13 +1861,16 @@ class Interface_NodeOfGeneralLib : public MMgt_TShared {
 		const Handle_Interface_NodeOfGeneralLib & Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_NodeOfGeneralLib();
 
 };
 %extend Interface_NodeOfGeneralLib {
 	Handle_Interface_NodeOfGeneralLib GetHandle() {
 	return *(Handle_Interface_NodeOfGeneralLib*) &$self;
+	}
+};
+%extend Interface_NodeOfGeneralLib {
+	~Interface_NodeOfGeneralLib() {
+	printf("Call custom destructor for instance of Interface_NodeOfGeneralLib\n");
 	}
 };
 
@@ -1707,8 +1889,6 @@ class Interface_InterfaceError : public Standard_Failure {
 		Handle_Interface_InterfaceError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_InterfaceError();
 
 };
 %extend Interface_InterfaceError {
@@ -1716,39 +1896,30 @@ class Interface_InterfaceError : public Standard_Failure {
 	return *(Handle_Interface_InterfaceError*) &$self;
 	}
 };
+%extend Interface_InterfaceError {
+	~Interface_InterfaceError() {
+	printf("Call custom destructor for instance of Interface_InterfaceError\n");
+	}
+};
 
-%nodefaultctor Interface_ParamList;
-class Interface_ParamList : public MMgt_TShared {
+%nodefaultctor Interface_DataMapIteratorOfDataMapOfTransientInteger;
+class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		Interface_ParamList(const Standard_Integer theIncrement=256);
+		Interface_DataMapIteratorOfDataMapOfTransientInteger();
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Interface_DataMapIteratorOfDataMapOfTransientInteger(const Interface_DataMapOfTransientInteger &aMap);
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		void Initialize(const Interface_DataMapOfTransientInteger &aMap);
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		const Handle_Standard_Transient & Key() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Interface_FileParameter &Value);
-		%feature("autodoc", "1");
-		const Interface_FileParameter & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Interface_FileParameter & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Interface_FileParameter & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Interface_FileParameter & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_ParamList();
+		const Standard_Integer & Value() const;
 
 };
-%extend Interface_ParamList {
-	Handle_Interface_ParamList GetHandle() {
-	return *(Handle_Interface_ParamList*) &$self;
+%extend Interface_DataMapIteratorOfDataMapOfTransientInteger {
+	~Interface_DataMapIteratorOfDataMapOfTransientInteger() {
+	printf("Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfTransientInteger\n");
 	}
 };
 
@@ -1791,13 +1962,16 @@ class Interface_UndefinedContent : public MMgt_TShared {
 		void GetFromAnother(const Handle_Interface_UndefinedContent &other, Interface_CopyTool & TC);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_UndefinedContent();
 
 };
 %extend Interface_UndefinedContent {
 	Handle_Interface_UndefinedContent GetHandle() {
 	return *(Handle_Interface_UndefinedContent*) &$self;
+	}
+};
+%extend Interface_UndefinedContent {
+	~Interface_UndefinedContent() {
+	printf("Call custom destructor for instance of Interface_UndefinedContent\n");
 	}
 };
 
@@ -1856,13 +2030,16 @@ class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 		Handle_Interface_Check & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_SequenceNodeOfSequenceOfCheck();
 
 };
 %extend Interface_SequenceNodeOfSequenceOfCheck {
 	Handle_Interface_SequenceNodeOfSequenceOfCheck GetHandle() {
 	return *(Handle_Interface_SequenceNodeOfSequenceOfCheck*) &$self;
+	}
+};
+%extend Interface_SequenceNodeOfSequenceOfCheck {
+	~Interface_SequenceNodeOfSequenceOfCheck() {
+	printf("Call custom destructor for instance of Interface_SequenceNodeOfSequenceOfCheck\n");
 	}
 };
 
@@ -1963,6 +2140,11 @@ class Interface_FileReaderTool {
 		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
 
 };
+%extend Interface_FileReaderTool {
+	~Interface_FileReaderTool() {
+	printf("Call custom destructor for instance of Interface_FileReaderTool\n");
+	}
+};
 
 %nodefaultctor Interface_HArray1OfHAsciiString;
 class Interface_HArray1OfHAsciiString : public MMgt_TShared {
@@ -1991,8 +2173,6 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 		Interface_Array1OfHAsciiString & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_HArray1OfHAsciiString();
 
 };
 %extend Interface_HArray1OfHAsciiString {
@@ -2000,12 +2180,15 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 	return *(Handle_Interface_HArray1OfHAsciiString*) &$self;
 	}
 };
+%extend Interface_HArray1OfHAsciiString {
+	~Interface_HArray1OfHAsciiString() {
+	printf("Call custom destructor for instance of Interface_HArray1OfHAsciiString\n");
+	}
+};
 
 %nodefaultctor Interface_CheckTool;
 class Interface_CheckTool {
 	public:
-		%feature("autodoc", "1");
-		~Interface_CheckTool();
 		%feature("autodoc", "1");
 		Interface_CheckTool(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &protocol);
 		%feature("autodoc", "1");
@@ -2038,12 +2221,15 @@ class Interface_CheckTool {
 		Interface_EntityIterator UnknownEntities();
 
 };
+%extend Interface_CheckTool {
+	~Interface_CheckTool() {
+	printf("Call custom destructor for instance of Interface_CheckTool\n");
+	}
+};
 
 %nodefaultctor Interface_Graph;
 class Interface_Graph {
 	public:
-		%feature("autodoc", "1");
-		~Interface_Graph();
 		%feature("autodoc", "1");
 		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
@@ -2138,6 +2324,11 @@ class Interface_Graph {
 		Handle_TCollection_HAsciiString Name(const Handle_Standard_Transient &ent) const;
 
 };
+%extend Interface_Graph {
+	~Interface_Graph() {
+	printf("Call custom destructor for instance of Interface_Graph\n");
+	}
+};
 
 %nodefaultctor Interface_SignType;
 class Interface_SignType : public MoniTool_SignText {
@@ -2155,6 +2346,11 @@ class Interface_SignType : public MoniTool_SignText {
 %extend Interface_SignType {
 	Handle_Interface_SignType GetHandle() {
 	return *(Handle_Interface_SignType*) &$self;
+	}
+};
+%extend Interface_SignType {
+	~Interface_SignType() {
+	printf("Call custom destructor for instance of Interface_SignType\n");
 	}
 };
 
@@ -2243,13 +2439,16 @@ class Interface_ReportEntity : public MMgt_TShared {
 		Standard_Boolean IsUnknown() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_ReportEntity();
 
 };
 %extend Interface_ReportEntity {
 	Handle_Interface_ReportEntity GetHandle() {
 	return *(Handle_Interface_ReportEntity*) &$self;
+	}
+};
+%extend Interface_ReportEntity {
+	~Interface_ReportEntity() {
+	printf("Call custom destructor for instance of Interface_ReportEntity\n");
 	}
 };
 
@@ -2264,13 +2463,16 @@ class Interface_SignLabel : public MoniTool_SignText {
 		virtual		TCollection_AsciiString Text(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &context) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_SignLabel();
 
 };
 %extend Interface_SignLabel {
 	Handle_Interface_SignLabel GetHandle() {
 	return *(Handle_Interface_SignLabel*) &$self;
+	}
+};
+%extend Interface_SignLabel {
+	~Interface_SignLabel() {
+	printf("Call custom destructor for instance of Interface_SignLabel\n");
 	}
 };
 
@@ -2293,13 +2495,81 @@ class Interface_HGraph : public MMgt_TShared {
 		Interface_Graph & CGraph();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_HGraph();
 
 };
 %extend Interface_HGraph {
 	Handle_Interface_HGraph GetHandle() {
 	return *(Handle_Interface_HGraph*) &$self;
+	}
+};
+%extend Interface_HGraph {
+	~Interface_HGraph() {
+	printf("Call custom destructor for instance of Interface_HGraph\n");
+	}
+};
+
+%nodefaultctor Interface_CheckIterator;
+class Interface_CheckIterator {
+	public:
+		%feature("autodoc", "1");
+		Interface_CheckIterator();
+		%feature("autodoc", "1");
+		Interface_CheckIterator(const char * name);
+		%feature("autodoc", "1");
+		void SetName(const char * name);
+		%feature("autodoc", "1");
+		Standard_CString Name() const;
+		%feature("autodoc", "1");
+		void SetModel(const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Merge(Interface_CheckIterator & other);
+		%feature("autodoc", "1");
+		void Add(const Handle_Interface_Check &ach, const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Check(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Check(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check & CCheck(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Handle_Interface_Check & CCheck(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty(const Standard_Boolean failsonly) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Complies(const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Interface_CheckIterator Extract(const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Interface_CheckIterator Extract(const char * mess, const Standard_Integer incl, const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const char * mess, const Standard_Integer incl, const Interface_CheckStatus status);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient Checkeds(const Standard_Boolean failsonly, const Standard_Boolean global) const;
+		%feature("autodoc", "1");
+		void Start() const;
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Value() const;
+		%feature("autodoc", "1");
+		Standard_Integer Number() const;
+		%feature("autodoc", "1");
+		void Print(const Handle_Message_Messenger &S, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
+		%feature("autodoc", "1");
+		void Print(const Handle_Message_Messenger &S, const Handle_Interface_InterfaceModel &model, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend Interface_CheckIterator {
+	~Interface_CheckIterator() {
+	printf("Call custom destructor for instance of Interface_CheckIterator\n");
 	}
 };
 
@@ -2345,6 +2615,11 @@ class Interface_Protocol : public MMgt_TShared {
 	return *(Handle_Interface_Protocol*) &$self;
 	}
 };
+%extend Interface_Protocol {
+	~Interface_Protocol() {
+	printf("Call custom destructor for instance of Interface_Protocol\n");
+	}
+};
 
 %nodefaultctor Interface_SequenceOfCheck;
 class Interface_SequenceOfCheck : public TCollection_BaseSequence {
@@ -2353,8 +2628,6 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 		Interface_SequenceOfCheck();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Interface_SequenceOfCheck();
 		%feature("autodoc", "1");
 		const Interface_SequenceOfCheck & Assign(const Interface_SequenceOfCheck &Other);
 		%feature("autodoc", "1");
@@ -2394,6 +2667,11 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Interface_SequenceOfCheck {
+	~Interface_SequenceOfCheck() {
+	printf("Call custom destructor for instance of Interface_SequenceOfCheck\n");
+	}
 };
 
 %nodefaultctor Interface_Check;
@@ -2487,13 +2765,16 @@ class Interface_Check : public MMgt_TShared {
 		void Trace(const Standard_Integer level=-0x000000001, const Standard_Integer final=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_Check();
 
 };
 %extend Interface_Check {
 	Handle_Interface_Check GetHandle() {
 	return *(Handle_Interface_Check*) &$self;
+	}
+};
+%extend Interface_Check {
+	~Interface_Check() {
+	printf("Call custom destructor for instance of Interface_Check\n");
 	}
 };
 
@@ -2526,13 +2807,16 @@ class Interface_GTool : public MMgt_TShared {
 		Standard_Boolean Select(const Handle_Standard_Transient &ent, Handle_Interface_GeneralModule & gmod, Standard_Integer & CN, const Standard_Boolean enforce=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_GTool();
 
 };
 %extend Interface_GTool {
 	Handle_Interface_GTool GetHandle() {
 	return *(Handle_Interface_GTool*) &$self;
+	}
+};
+%extend Interface_GTool {
+	~Interface_GTool() {
+	printf("Call custom destructor for instance of Interface_GTool\n");
 	}
 };
 
@@ -2603,9 +2887,12 @@ class Interface_EntityIterator {
 		Handle_TColStd_HSequenceOfTransient Content() const;
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Interface_EntityIterator();
 
+};
+%extend Interface_EntityIterator {
+	~Interface_EntityIterator() {
+	printf("Call custom destructor for instance of Interface_EntityIterator\n");
+	}
 };
 
 %nodefaultctor Interface_GraphContent;
@@ -2796,6 +3083,11 @@ class Interface_InterfaceModel : public MMgt_TShared {
 	return *(Handle_Interface_InterfaceModel*) &$self;
 	}
 };
+%extend Interface_InterfaceModel {
+	~Interface_InterfaceModel() {
+	printf("Call custom destructor for instance of Interface_InterfaceModel\n");
+	}
+};
 
 %nodefaultctor Interface_CheckFailure;
 class Interface_CheckFailure : public Interface_InterfaceError {
@@ -2812,13 +3104,16 @@ class Interface_CheckFailure : public Interface_InterfaceError {
 		Handle_Interface_CheckFailure NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_CheckFailure();
 
 };
 %extend Interface_CheckFailure {
 	Handle_Interface_CheckFailure GetHandle() {
 	return *(Handle_Interface_CheckFailure*) &$self;
+	}
+};
+%extend Interface_CheckFailure {
+	~Interface_CheckFailure() {
+	printf("Call custom destructor for instance of Interface_CheckFailure\n");
 	}
 };
 
@@ -2833,8 +3128,6 @@ class Interface_Array1OfHAsciiString {
 		void Init(const Handle_TCollection_HAsciiString &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Interface_Array1OfHAsciiString();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2857,6 +3150,11 @@ class Interface_Array1OfHAsciiString {
 		Handle_TCollection_HAsciiString & operator()(const Standard_Integer Index);
 
 };
+%extend Interface_Array1OfHAsciiString {
+	~Interface_Array1OfHAsciiString() {
+	printf("Call custom destructor for instance of Interface_Array1OfHAsciiString\n");
+	}
+};
 
 %nodefaultctor Interface_NodeOfReaderLib;
 class Interface_NodeOfReaderLib : public MMgt_TShared {
@@ -2873,13 +3171,16 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 		const Handle_Interface_NodeOfReaderLib & Next() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_NodeOfReaderLib();
 
 };
 %extend Interface_NodeOfReaderLib {
 	Handle_Interface_NodeOfReaderLib GetHandle() {
 	return *(Handle_Interface_NodeOfReaderLib*) &$self;
+	}
+};
+%extend Interface_NodeOfReaderLib {
+	~Interface_NodeOfReaderLib() {
+	printf("Call custom destructor for instance of Interface_NodeOfReaderLib\n");
 	}
 };
 
@@ -2898,8 +3199,6 @@ class Interface_InterfaceMismatch : public Interface_InterfaceError {
 		Handle_Interface_InterfaceMismatch NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_InterfaceMismatch();
 
 };
 %extend Interface_InterfaceMismatch {
@@ -2907,12 +3206,15 @@ class Interface_InterfaceMismatch : public Interface_InterfaceError {
 	return *(Handle_Interface_InterfaceMismatch*) &$self;
 	}
 };
+%extend Interface_InterfaceMismatch {
+	~Interface_InterfaceMismatch() {
+	printf("Call custom destructor for instance of Interface_InterfaceMismatch\n");
+	}
+};
 
 %nodefaultctor Interface_LineBuffer;
 class Interface_LineBuffer {
 	public:
-		%feature("autodoc", "1");
-		~Interface_LineBuffer();
 		%feature("autodoc", "1");
 		Interface_LineBuffer(const Standard_Integer size=10);
 		%feature("autodoc", "1");
@@ -2947,6 +3249,11 @@ class Interface_LineBuffer {
 		void Add(const Standard_Character text);
 
 };
+%extend Interface_LineBuffer {
+	~Interface_LineBuffer() {
+	printf("Call custom destructor for instance of Interface_LineBuffer\n");
+	}
+};
 
 %nodefaultctor Interface_ParamSet;
 class Interface_ParamSet : public MMgt_TShared {
@@ -2970,14 +3277,17 @@ class Interface_ParamSet : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~Interface_ParamSet();
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Interface_ParamSet {
 	Handle_Interface_ParamSet GetHandle() {
 	return *(Handle_Interface_ParamSet*) &$self;
+	}
+};
+%extend Interface_ParamSet {
+	~Interface_ParamSet() {
+	printf("Call custom destructor for instance of Interface_ParamSet\n");
 	}
 };
 
@@ -3008,13 +3318,16 @@ class Interface_EntityCluster : public MMgt_TShared {
 		void FillIterator(Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Interface_EntityCluster();
 
 };
 %extend Interface_EntityCluster {
 	Handle_Interface_EntityCluster GetHandle() {
 	return *(Handle_Interface_EntityCluster*) &$self;
+	}
+};
+%extend Interface_EntityCluster {
+	~Interface_EntityCluster() {
+	printf("Call custom destructor for instance of Interface_EntityCluster\n");
 	}
 };
 

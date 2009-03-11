@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module ShapeExtend
 
@@ -126,32 +112,9 @@ enum ShapeExtend_Parametrisation {
 
 
 
-%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
-class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg();
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg();
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
-	ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg* GetObject() {
-	return (ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg*)$self->Access();
-	}
-};
-
 %nodefaultctor Handle_ShapeExtend_BasicMsgRegistrator;
 class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeExtend_BasicMsgRegistrator();
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_BasicMsgRegistrator();
 		%feature("autodoc", "1");
@@ -167,12 +130,15 @@ class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 	return (ShapeExtend_BasicMsgRegistrator*)$self->Access();
 	}
 };
+%extend Handle_ShapeExtend_BasicMsgRegistrator {
+	~Handle_ShapeExtend_BasicMsgRegistrator() {
+	printf("Call custom destructor for instance of Handle_ShapeExtend_BasicMsgRegistrator\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeExtend_MsgRegistrator;
 class Handle_ShapeExtend_MsgRegistrator : public Handle_ShapeExtend_BasicMsgRegistrator {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeExtend_MsgRegistrator();
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_MsgRegistrator();
 		%feature("autodoc", "1");
@@ -188,12 +154,39 @@ class Handle_ShapeExtend_MsgRegistrator : public Handle_ShapeExtend_BasicMsgRegi
 	return (ShapeExtend_MsgRegistrator*)$self->Access();
 	}
 };
+%extend Handle_ShapeExtend_MsgRegistrator {
+	~Handle_ShapeExtend_MsgRegistrator() {
+	printf("Call custom destructor for instance of Handle_ShapeExtend_MsgRegistrator\n");
+	}
+};
+
+%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
+class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg();
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
+	ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg* GetObject() {
+	return (ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg*)$self->Access();
+	}
+};
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
+	~Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg() {
+	printf("Call custom destructor for instance of Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
 class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
 		%feature("autodoc", "1");
@@ -209,12 +202,15 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handl
 	return (ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*)$self->Access();
 	}
 };
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg() {
+	printf("Call custom destructor for instance of Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeExtend_ComplexCurve;
 class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeExtend_ComplexCurve();
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_ComplexCurve();
 		%feature("autodoc", "1");
@@ -230,12 +226,15 @@ class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 	return (ShapeExtend_ComplexCurve*)$self->Access();
 	}
 };
+%extend Handle_ShapeExtend_ComplexCurve {
+	~Handle_ShapeExtend_ComplexCurve() {
+	printf("Call custom destructor for instance of Handle_ShapeExtend_ComplexCurve\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeExtend_WireData;
 class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeExtend_WireData();
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_WireData();
 		%feature("autodoc", "1");
@@ -251,12 +250,15 @@ class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 	return (ShapeExtend_WireData*)$self->Access();
 	}
 };
+%extend Handle_ShapeExtend_WireData {
+	~Handle_ShapeExtend_WireData() {
+	printf("Call custom destructor for instance of Handle_ShapeExtend_WireData\n");
+	}
+};
 
 %nodefaultctor Handle_ShapeExtend_CompositeSurface;
 class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 	public:
-		%feature("autodoc", "1");
-		~Handle_ShapeExtend_CompositeSurface();
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_CompositeSurface();
 		%feature("autodoc", "1");
@@ -270,6 +272,11 @@ class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 %extend Handle_ShapeExtend_CompositeSurface {
 	ShapeExtend_CompositeSurface* GetObject() {
 	return (ShapeExtend_CompositeSurface*)$self->Access();
+	}
+};
+%extend Handle_ShapeExtend_CompositeSurface {
+	~Handle_ShapeExtend_CompositeSurface() {
+	printf("Call custom destructor for instance of Handle_ShapeExtend_CompositeSurface\n");
 	}
 };
 
@@ -336,13 +343,16 @@ class ShapeExtend_WireData : public MMgt_TShared {
 		TopoDS_Wire WireAPIMake() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeExtend_WireData();
 
 };
 %extend ShapeExtend_WireData {
 	Handle_ShapeExtend_WireData GetHandle() {
 	return *(Handle_ShapeExtend_WireData*) &$self;
+	}
+};
+%extend ShapeExtend_WireData {
+	~ShapeExtend_WireData() {
+	printf("Call custom destructor for instance of ShapeExtend_WireData\n");
 	}
 };
 
@@ -405,13 +415,16 @@ class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 		virtual		void Send(const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeExtend_BasicMsgRegistrator();
 
 };
 %extend ShapeExtend_BasicMsgRegistrator {
 	Handle_ShapeExtend_BasicMsgRegistrator GetHandle() {
 	return *(Handle_ShapeExtend_BasicMsgRegistrator*) &$self;
+	}
+};
+%extend ShapeExtend_BasicMsgRegistrator {
+	~ShapeExtend_BasicMsgRegistrator() {
+	printf("Call custom destructor for instance of ShapeExtend_BasicMsgRegistrator\n");
 	}
 };
 
@@ -526,13 +539,44 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		Standard_Boolean CheckConnectivity(const Standard_Real prec);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeExtend_CompositeSurface();
 
 };
 %extend ShapeExtend_CompositeSurface {
 	Handle_ShapeExtend_CompositeSurface GetHandle() {
 	return *(Handle_ShapeExtend_CompositeSurface*) &$self;
+	}
+};
+%extend ShapeExtend_CompositeSurface {
+	~ShapeExtend_CompositeSurface() {
+	printf("Call custom destructor for instance of ShapeExtend_CompositeSurface\n");
+	}
+};
+
+%nodefaultctor ShapeExtend_MsgRegistrator;
+class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
+	public:
+		%feature("autodoc", "1");
+		ShapeExtend_MsgRegistrator();
+		%feature("autodoc", "1");
+		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
+		%feature("autodoc", "1");
+		virtual		void Send(const TopoDS_Shape &shape, const Message_Msg &message, const Message_Gravity gravity);
+		%feature("autodoc", "1");
+		const ShapeExtend_DataMapOfTransientListOfMsg & MapTransient() const;
+		%feature("autodoc", "1");
+		const ShapeExtend_DataMapOfShapeListOfMsg & MapShape() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeExtend_MsgRegistrator {
+	Handle_ShapeExtend_MsgRegistrator GetHandle() {
+	return *(Handle_ShapeExtend_MsgRegistrator*) &$self;
+	}
+};
+%extend ShapeExtend_MsgRegistrator {
+	~ShapeExtend_MsgRegistrator() {
+	printf("Call custom destructor for instance of ShapeExtend_MsgRegistrator\n");
 	}
 };
 
@@ -547,13 +591,16 @@ class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapN
 		Message_ListOfMsg & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg();
 
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
 	Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg GetHandle() {
 	return *(Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg*) &$self;
+	}
+};
+%extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
+	~ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg() {
+	printf("Call custom destructor for instance of ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg\n");
 	}
 };
 
@@ -568,13 +615,16 @@ class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_
 		Message_ListOfMsg & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
 
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
 	Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg GetHandle() {
 	return *(Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*) &$self;
+	}
+};
+%extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	~ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg() {
+	printf("Call custom destructor for instance of ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg\n");
 	}
 };
 
@@ -624,31 +674,6 @@ class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_
 		%feature("autodoc", "1");
 		const Message_ListOfMsg & Value() const;
 
-};
-
-%nodefaultctor ShapeExtend_MsgRegistrator;
-class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
-	public:
-		%feature("autodoc", "1");
-		ShapeExtend_MsgRegistrator();
-		%feature("autodoc", "1");
-		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
-		%feature("autodoc", "1");
-		virtual		void Send(const TopoDS_Shape &shape, const Message_Msg &message, const Message_Gravity gravity);
-		%feature("autodoc", "1");
-		const ShapeExtend_DataMapOfTransientListOfMsg & MapTransient() const;
-		%feature("autodoc", "1");
-		const ShapeExtend_DataMapOfShapeListOfMsg & MapShape() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeExtend_MsgRegistrator();
-
-};
-%extend ShapeExtend_MsgRegistrator {
-	Handle_ShapeExtend_MsgRegistrator GetHandle() {
-	return *(Handle_ShapeExtend_MsgRegistrator*) &$self;
-	}
 };
 
 %nodefaultctor ShapeExtend_ComplexCurve;
@@ -701,12 +726,15 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 	return *(Handle_ShapeExtend_ComplexCurve*) &$self;
 	}
 };
+%extend ShapeExtend_ComplexCurve {
+	~ShapeExtend_ComplexCurve() {
+	printf("Call custom destructor for instance of ShapeExtend_ComplexCurve\n");
+	}
+};
 
 %nodefaultctor ShapeExtend_Explorer;
 class ShapeExtend_Explorer {
 	public:
-		%feature("autodoc", "1");
-		~ShapeExtend_Explorer();
 		%feature("autodoc", "1");
 		ShapeExtend_Explorer();
 		%feature("autodoc", "1");
@@ -725,12 +753,15 @@ class ShapeExtend_Explorer {
 		void DispatchList(const Handle_TopTools_HSequenceOfShape &list, Handle_TopTools_HSequenceOfShape & vertices, Handle_TopTools_HSequenceOfShape & edges, Handle_TopTools_HSequenceOfShape & wires, Handle_TopTools_HSequenceOfShape & faces, Handle_TopTools_HSequenceOfShape & shells, Handle_TopTools_HSequenceOfShape & solids, Handle_TopTools_HSequenceOfShape & compsols, Handle_TopTools_HSequenceOfShape & compounds) const;
 
 };
+%extend ShapeExtend_Explorer {
+	~ShapeExtend_Explorer() {
+	printf("Call custom destructor for instance of ShapeExtend_Explorer\n");
+	}
+};
 
 %nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg;
 class ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg();
 		%feature("autodoc", "1");
 		ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg();
 		%feature("autodoc", "1");
@@ -742,4 +773,9 @@ class ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg : public TCollect
 		%feature("autodoc", "1");
 		const Message_ListOfMsg & Value() const;
 
+};
+%extend ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg {
+	~ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg() {
+	printf("Call custom destructor for instance of ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg\n");
+	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module SelectMgr
 
@@ -119,8 +105,6 @@ enum SelectMgr_TypeOfUpdate {
 class Handle_SelectMgr_EntityOwner : public Handle_SelectBasics_EntityOwner {
 	public:
 		%feature("autodoc", "1");
-		~Handle_SelectMgr_EntityOwner();
-		%feature("autodoc", "1");
 		Handle_SelectMgr_EntityOwner();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_EntityOwner(const Handle_SelectMgr_EntityOwner &aHandle);
@@ -135,12 +119,15 @@ class Handle_SelectMgr_EntityOwner : public Handle_SelectBasics_EntityOwner {
 	return (SelectMgr_EntityOwner*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_EntityOwner {
+	~Handle_SelectMgr_EntityOwner() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_EntityOwner\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_Filter;
 class Handle_SelectMgr_Filter : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_Filter();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_Filter();
 		%feature("autodoc", "1");
@@ -156,12 +143,15 @@ class Handle_SelectMgr_Filter : public Handle_MMgt_TShared {
 	return (SelectMgr_Filter*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_Filter {
+	~Handle_SelectMgr_Filter() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_Filter\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_CompositionFilter;
 class Handle_SelectMgr_CompositionFilter : public Handle_SelectMgr_Filter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_CompositionFilter();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_CompositionFilter();
 		%feature("autodoc", "1");
@@ -177,12 +167,15 @@ class Handle_SelectMgr_CompositionFilter : public Handle_SelectMgr_Filter {
 	return (SelectMgr_CompositionFilter*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_CompositionFilter {
+	~Handle_SelectMgr_CompositionFilter() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_CompositionFilter\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_AndFilter;
 class Handle_SelectMgr_AndFilter : public Handle_SelectMgr_CompositionFilter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_AndFilter();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_AndFilter();
 		%feature("autodoc", "1");
@@ -198,12 +191,15 @@ class Handle_SelectMgr_AndFilter : public Handle_SelectMgr_CompositionFilter {
 	return (SelectMgr_AndFilter*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_AndFilter {
+	~Handle_SelectMgr_AndFilter() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_AndFilter\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfFilter;
 class Handle_SelectMgr_SequenceNodeOfSequenceOfFilter : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_SequenceNodeOfSequenceOfFilter();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter();
 		%feature("autodoc", "1");
@@ -219,12 +215,15 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfFilter : public Handle_TCollectio
 	return (SelectMgr_SequenceNodeOfSequenceOfFilter*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfFilter {
+	~Handle_SelectMgr_SequenceNodeOfSequenceOfFilter() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfFilter\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation;
 class Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation();
 		%feature("autodoc", "1");
@@ -240,12 +239,15 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public Handle
 	return (SelectMgr_DataMapNodeOfDataMapOfSelectionActivation*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
+	~Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfSelector;
 class Handle_SelectMgr_SequenceNodeOfSequenceOfSelector : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_SequenceNodeOfSequenceOfSelector();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SequenceNodeOfSequenceOfSelector();
 		%feature("autodoc", "1");
@@ -261,12 +263,15 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelector : public Handle_TCollect
 	return (SelectMgr_SequenceNodeOfSequenceOfSelector*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfSelector {
+	~Handle_SelectMgr_SequenceNodeOfSequenceOfSelector() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfSelector\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_SelectionManager;
 class Handle_SelectMgr_SelectionManager : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_SelectionManager();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SelectionManager();
 		%feature("autodoc", "1");
@@ -282,12 +287,15 @@ class Handle_SelectMgr_SelectionManager : public Handle_MMgt_TShared {
 	return (SelectMgr_SelectionManager*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_SelectionManager {
+	~Handle_SelectMgr_SelectionManager() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_SelectionManager\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_ViewerSelector;
 class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_ViewerSelector();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_ViewerSelector();
 		%feature("autodoc", "1");
@@ -303,12 +311,15 @@ class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
 	return (SelectMgr_ViewerSelector*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_ViewerSelector {
+	~Handle_SelectMgr_ViewerSelector() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_ViewerSelector\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
 class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors();
 		%feature("autodoc", "1");
@@ -324,12 +335,15 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCo
 	return (SelectMgr_DataMapNodeOfDataMapOfObjectSelectors*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	~Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
 class Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner();
 		%feature("autodoc", "1");
@@ -345,12 +359,15 @@ class Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public Handle_TCollec
 	return (SelectMgr_IndexedMapNodeOfIndexedMapOfOwner*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
+	~Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfSelection;
 class Handle_SelectMgr_SequenceNodeOfSequenceOfSelection : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_SequenceNodeOfSequenceOfSelection();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SequenceNodeOfSequenceOfSelection();
 		%feature("autodoc", "1");
@@ -366,12 +383,15 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelection : public Handle_TCollec
 	return (SelectMgr_SequenceNodeOfSequenceOfSelection*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfSelection {
+	~Handle_SelectMgr_SequenceNodeOfSequenceOfSelection() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfSelection\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive;
 class Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive();
 		%feature("autodoc", "1");
@@ -387,12 +407,15 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public Handle_TC
 	return (SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
+	~Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfOwner;
 class Handle_SelectMgr_SequenceNodeOfSequenceOfOwner : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_SequenceNodeOfSequenceOfOwner();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SequenceNodeOfSequenceOfOwner();
 		%feature("autodoc", "1");
@@ -408,12 +431,15 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfOwner : public Handle_TCollection
 	return (SelectMgr_SequenceNodeOfSequenceOfOwner*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfOwner {
+	~Handle_SelectMgr_SequenceNodeOfSequenceOfOwner() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfOwner\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_ListNodeOfListOfFilter;
 class Handle_SelectMgr_ListNodeOfListOfFilter : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_ListNodeOfListOfFilter();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_ListNodeOfListOfFilter();
 		%feature("autodoc", "1");
@@ -429,12 +455,15 @@ class Handle_SelectMgr_ListNodeOfListOfFilter : public Handle_TCollection_MapNod
 	return (SelectMgr_ListNodeOfListOfFilter*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_ListNodeOfListOfFilter {
+	~Handle_SelectMgr_ListNodeOfListOfFilter() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_ListNodeOfListOfFilter\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_OrFilter;
 class Handle_SelectMgr_OrFilter : public Handle_SelectMgr_CompositionFilter {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_OrFilter();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_OrFilter();
 		%feature("autodoc", "1");
@@ -450,12 +479,15 @@ class Handle_SelectMgr_OrFilter : public Handle_SelectMgr_CompositionFilter {
 	return (SelectMgr_OrFilter*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_OrFilter {
+	~Handle_SelectMgr_OrFilter() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_OrFilter\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_SelectableObject;
 class Handle_SelectMgr_SelectableObject : public Handle_PrsMgr_PresentableObject {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_SelectableObject();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SelectableObject();
 		%feature("autodoc", "1");
@@ -471,12 +503,15 @@ class Handle_SelectMgr_SelectableObject : public Handle_PrsMgr_PresentableObject
 	return (SelectMgr_SelectableObject*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_SelectableObject {
+	~Handle_SelectMgr_SelectableObject() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_SelectableObject\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_Selection;
 class Handle_SelectMgr_Selection : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_Selection();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_Selection();
 		%feature("autodoc", "1");
@@ -492,12 +527,15 @@ class Handle_SelectMgr_Selection : public Handle_MMgt_TShared {
 	return (SelectMgr_Selection*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_Selection {
+	~Handle_SelectMgr_Selection() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_Selection\n");
+	}
+};
 
 %nodefaultctor Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion;
 class Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public Handle_TCollection_MapNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion();
 		%feature("autodoc", "1");
 		Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion();
 		%feature("autodoc", "1");
@@ -513,6 +551,11 @@ class Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : publ
 	return (SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion*)$self->Access();
 	}
 };
+%extend Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
+	~Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion() {
+	printf("Call custom destructor for instance of Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion\n");
+	}
+};
 
 %nodefaultctor SelectMgr_ListNodeOfListOfFilter;
 class SelectMgr_ListNodeOfListOfFilter : public TCollection_MapNode {
@@ -523,13 +566,16 @@ class SelectMgr_ListNodeOfListOfFilter : public TCollection_MapNode {
 		Handle_SelectMgr_Filter & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_ListNodeOfListOfFilter();
 
 };
 %extend SelectMgr_ListNodeOfListOfFilter {
 	Handle_SelectMgr_ListNodeOfListOfFilter GetHandle() {
 	return *(Handle_SelectMgr_ListNodeOfListOfFilter*) &$self;
+	}
+};
+%extend SelectMgr_ListNodeOfListOfFilter {
+	~SelectMgr_ListNodeOfListOfFilter() {
+	printf("Call custom destructor for instance of SelectMgr_ListNodeOfListOfFilter\n");
 	}
 };
 
@@ -547,6 +593,11 @@ class SelectMgr_Filter : public MMgt_TShared {
 %extend SelectMgr_Filter {
 	Handle_SelectMgr_Filter GetHandle() {
 	return *(Handle_SelectMgr_Filter*) &$self;
+	}
+};
+%extend SelectMgr_Filter {
+	~SelectMgr_Filter() {
+	printf("Call custom destructor for instance of SelectMgr_Filter\n");
 	}
 };
 
@@ -572,6 +623,11 @@ class SelectMgr_CompositionFilter : public SelectMgr_Filter {
 	return *(Handle_SelectMgr_CompositionFilter*) &$self;
 	}
 };
+%extend SelectMgr_CompositionFilter {
+	~SelectMgr_CompositionFilter() {
+	printf("Call custom destructor for instance of SelectMgr_CompositionFilter\n");
+	}
+};
 
 %nodefaultctor SelectMgr_AndFilter;
 class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
@@ -580,13 +636,16 @@ class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 		SelectMgr_AndFilter();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anobj) const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_AndFilter();
 
 };
 %extend SelectMgr_AndFilter {
 	Handle_SelectMgr_AndFilter GetHandle() {
 	return *(Handle_SelectMgr_AndFilter*) &$self;
+	}
+};
+%extend SelectMgr_AndFilter {
+	~SelectMgr_AndFilter() {
+	printf("Call custom destructor for instance of SelectMgr_AndFilter\n");
 	}
 };
 
@@ -601,13 +660,16 @@ class SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public TCollection_MapN
 		Handle_SelectBasics_SensitiveEntity & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive();
 
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
 	Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive GetHandle() {
 	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive*) &$self;
+	}
+};
+%extend SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
+	~SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive\n");
 	}
 };
 
@@ -622,8 +684,6 @@ class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_IndexedDataMapOfOwnerCriterion();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_SelectBasics_EntityOwner &K, const SelectMgr_SortCriterion &I);
 		%feature("autodoc", "1");
@@ -649,6 +709,11 @@ class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		SelectMgr_SortCriterion & ChangeFromKey(const Handle_SelectBasics_EntityOwner &K);
 
+};
+%extend SelectMgr_IndexedDataMapOfOwnerCriterion {
+	~SelectMgr_IndexedDataMapOfOwnerCriterion() {
+	printf("Call custom destructor for instance of SelectMgr_IndexedDataMapOfOwnerCriterion\n");
+	}
 };
 
 %nodefaultctor SelectMgr_SelectionManager;
@@ -718,13 +783,16 @@ class SelectMgr_SelectionManager : public MMgt_TShared {
 		TCollection_AsciiString Status(const Handle_SelectMgr_SelectableObject &anObject) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_SelectionManager();
 
 };
 %extend SelectMgr_SelectionManager {
 	Handle_SelectMgr_SelectionManager GetHandle() {
 	return *(Handle_SelectMgr_SelectionManager*) &$self;
+	}
+};
+%extend SelectMgr_SelectionManager {
+	~SelectMgr_SelectionManager() {
+	printf("Call custom destructor for instance of SelectMgr_SelectionManager\n");
 	}
 };
 
@@ -829,13 +897,16 @@ class SelectMgr_ViewerSelector : public MMgt_TShared {
 		Standard_Boolean IsUpdateSortPossible() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_ViewerSelector();
 
 };
 %extend SelectMgr_ViewerSelector {
 	Handle_SelectMgr_ViewerSelector GetHandle() {
 	return *(Handle_SelectMgr_ViewerSelector*) &$self;
+	}
+};
+%extend SelectMgr_ViewerSelector {
+	~SelectMgr_ViewerSelector() {
+	printf("Call custom destructor for instance of SelectMgr_ViewerSelector\n");
 	}
 };
 
@@ -850,13 +921,16 @@ class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_M
 		Standard_Integer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_DataMapNodeOfDataMapOfSelectionActivation();
 
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
 	Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation GetHandle() {
 	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation*) &$self;
+	}
+};
+%extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
+	~SelectMgr_DataMapNodeOfDataMapOfSelectionActivation() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfSelectionActivation\n");
 	}
 };
 
@@ -912,6 +986,35 @@ class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 	return *(Handle_SelectMgr_SelectableObject*) &$self;
 	}
 };
+%extend SelectMgr_SelectableObject {
+	~SelectMgr_SelectableObject() {
+	printf("Call custom destructor for instance of SelectMgr_SelectableObject\n");
+	}
+};
+
+%nodefaultctor SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
+class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const Handle_SelectMgr_SelectableObject &K, const SelectMgr_SequenceOfSelector &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectableObject & Key() const;
+		%feature("autodoc", "1");
+		SelectMgr_SequenceOfSelector & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors GetHandle() {
+	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors*) &$self;
+	}
+};
+%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	~SelectMgr_DataMapNodeOfDataMapOfObjectSelectors() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");
+	}
+};
 
 %nodefaultctor SelectMgr_DataMapOfSelectionActivation;
 class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
@@ -952,13 +1055,16 @@ class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 		Handle_SelectMgr_EntityOwner & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_SequenceNodeOfSequenceOfOwner();
 
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfOwner {
 	Handle_SelectMgr_SequenceNodeOfSequenceOfOwner GetHandle() {
 	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfOwner*) &$self;
+	}
+};
+%extend SelectMgr_SequenceNodeOfSequenceOfOwner {
+	~SelectMgr_SequenceNodeOfSequenceOfOwner() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfOwner\n");
 	}
 };
 
@@ -969,8 +1075,6 @@ class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
 		SelectMgr_SequenceOfSelection();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_SequenceOfSelection();
 		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfSelection & Assign(const SelectMgr_SequenceOfSelection &Other);
 		%feature("autodoc", "1");
@@ -1011,12 +1115,15 @@ class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend SelectMgr_SequenceOfSelection {
+	~SelectMgr_SequenceOfSelection() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceOfSelection\n");
+	}
+};
 
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation;
 class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation();
 		%feature("autodoc", "1");
 		SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation();
 		%feature("autodoc", "1");
@@ -1028,6 +1135,11 @@ class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollecti
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation {
+	~SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation\n");
+	}
 };
 
 %nodefaultctor SelectMgr_Selection;
@@ -1057,8 +1169,6 @@ class SelectMgr_Selection : public MMgt_TShared {
 		void UpdateStatus(const SelectMgr_TypeOfUpdate TheStat);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_Selection();
 
 };
 %extend SelectMgr_Selection {
@@ -1066,12 +1176,15 @@ class SelectMgr_Selection : public MMgt_TShared {
 	return *(Handle_SelectMgr_Selection*) &$self;
 	}
 };
+%extend SelectMgr_Selection {
+	~SelectMgr_Selection() {
+	printf("Call custom destructor for instance of SelectMgr_Selection\n");
+	}
+};
 
 %nodefaultctor SelectMgr_ListIteratorOfListOfFilter;
 class SelectMgr_ListIteratorOfListOfFilter {
 	public:
-		%feature("autodoc", "1");
-		~SelectMgr_ListIteratorOfListOfFilter();
 		%feature("autodoc", "1");
 		SelectMgr_ListIteratorOfListOfFilter();
 		%feature("autodoc", "1");
@@ -1086,25 +1199,9 @@ class SelectMgr_ListIteratorOfListOfFilter {
 		Handle_SelectMgr_Filter & Value() const;
 
 };
-
-%nodefaultctor SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
-class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const Handle_SelectMgr_SelectableObject &K, const SelectMgr_SequenceOfSelector &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectableObject & Key() const;
-		%feature("autodoc", "1");
-		SelectMgr_SequenceOfSelector & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_DataMapNodeOfDataMapOfObjectSelectors();
-
-};
-%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
-	Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors GetHandle() {
-	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors*) &$self;
+%extend SelectMgr_ListIteratorOfListOfFilter {
+	~SelectMgr_ListIteratorOfListOfFilter() {
+	printf("Call custom destructor for instance of SelectMgr_ListIteratorOfListOfFilter\n");
 	}
 };
 
@@ -1119,8 +1216,6 @@ class SelectMgr_ListOfFilter {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_ListOfFilter();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -1152,6 +1247,11 @@ class SelectMgr_ListOfFilter {
 		%feature("autodoc", "1");
 		void InsertAfter(SelectMgr_ListOfFilter & Other, SelectMgr_ListIteratorOfListOfFilter & It);
 
+};
+%extend SelectMgr_ListOfFilter {
+	~SelectMgr_ListOfFilter() {
+	printf("Call custom destructor for instance of SelectMgr_ListOfFilter\n");
+	}
 };
 
 %nodefaultctor SelectMgr_SortCriterion;
@@ -1202,8 +1302,6 @@ class SelectMgr_IndexedMapOfOwner : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectMgr_IndexedMapOfOwner();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_SelectMgr_EntityOwner &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Handle_SelectMgr_EntityOwner &K);
@@ -1219,6 +1317,11 @@ class SelectMgr_IndexedMapOfOwner : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const Handle_SelectMgr_EntityOwner &K) const;
 
 };
+%extend SelectMgr_IndexedMapOfOwner {
+	~SelectMgr_IndexedMapOfOwner() {
+	printf("Call custom destructor for instance of SelectMgr_IndexedMapOfOwner\n");
+	}
+};
 
 %nodefaultctor SelectMgr_SequenceOfSelector;
 class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
@@ -1227,8 +1330,6 @@ class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
 		SelectMgr_SequenceOfSelector();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_SequenceOfSelector();
 		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfSelector & Assign(const SelectMgr_SequenceOfSelector &Other);
 		%feature("autodoc", "1");
@@ -1269,6 +1370,11 @@ class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend SelectMgr_SequenceOfSelector {
+	~SelectMgr_SequenceOfSelector() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceOfSelector\n");
+	}
+};
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfFilter;
 class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
@@ -1279,13 +1385,16 @@ class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
 		Handle_SelectMgr_Filter & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_SequenceNodeOfSequenceOfFilter();
 
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfFilter {
 	Handle_SelectMgr_SequenceNodeOfSequenceOfFilter GetHandle() {
 	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfFilter*) &$self;
+	}
+};
+%extend SelectMgr_SequenceNodeOfSequenceOfFilter {
+	~SelectMgr_SequenceNodeOfSequenceOfFilter() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfFilter\n");
 	}
 };
 
@@ -1298,13 +1407,16 @@ class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
 		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anobj) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_OrFilter();
 
 };
 %extend SelectMgr_OrFilter {
 	Handle_SelectMgr_OrFilter GetHandle() {
 	return *(Handle_SelectMgr_OrFilter*) &$self;
+	}
+};
+%extend SelectMgr_OrFilter {
+	~SelectMgr_OrFilter() {
+	printf("Call custom destructor for instance of SelectMgr_OrFilter\n");
 	}
 };
 
@@ -1315,8 +1427,6 @@ class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
 		SelectMgr_SequenceOfFilter();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_SequenceOfFilter();
 		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfFilter & Assign(const SelectMgr_SequenceOfFilter &Other);
 		%feature("autodoc", "1");
@@ -1357,6 +1467,11 @@ class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend SelectMgr_SequenceOfFilter {
+	~SelectMgr_SequenceOfFilter() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceOfFilter\n");
+	}
+};
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelection;
 class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
@@ -1367,13 +1482,16 @@ class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
 		Handle_SelectMgr_Selection & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_SequenceNodeOfSequenceOfSelection();
 
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelection {
 	Handle_SelectMgr_SequenceNodeOfSequenceOfSelection GetHandle() {
 	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfSelection*) &$self;
+	}
+};
+%extend SelectMgr_SequenceNodeOfSequenceOfSelection {
+	~SelectMgr_SequenceNodeOfSequenceOfSelection() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfSelection\n");
 	}
 };
 
@@ -1384,8 +1502,6 @@ class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
 		SelectMgr_SequenceOfOwner();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_SequenceOfOwner();
 		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfOwner & Assign(const SelectMgr_SequenceOfOwner &Other);
 		%feature("autodoc", "1");
@@ -1426,67 +1542,10 @@ class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-
-%nodefaultctor SelectMgr_DataMapOfIntegerSensitive;
-class SelectMgr_DataMapOfIntegerSensitive : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_DataMapOfIntegerSensitive(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		SelectMgr_DataMapOfIntegerSensitive & Assign(const SelectMgr_DataMapOfIntegerSensitive &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_DataMapOfIntegerSensitive();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_SelectBasics_SensitiveEntity &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Handle_SelectBasics_SensitiveEntity & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Handle_SelectBasics_SensitiveEntity & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & operator()(const Standard_Integer &K);
-
-};
-
-%nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive;
-class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		~SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive();
-		%feature("autodoc", "1");
-		SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive();
-		%feature("autodoc", "1");
-		SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive(const SelectMgr_DataMapOfIntegerSensitive &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const SelectMgr_DataMapOfIntegerSensitive &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const Handle_SelectBasics_SensitiveEntity & Value() const;
-
-};
-
-%nodefaultctor SelectMgr_CompareResults;
-class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
-	public:
-		%feature("autodoc", "1");
-		~SelectMgr_CompareResults();
-		%feature("autodoc", "1");
-		SelectMgr_CompareResults(const SelectMgr_IndexedDataMapOfOwnerCriterion &aMapOfCriterion);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
-
+%extend SelectMgr_SequenceOfOwner {
+	~SelectMgr_SequenceOfOwner() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceOfOwner\n");
+	}
 };
 
 %nodefaultctor SelectMgr_EntityOwner;
@@ -1532,8 +1591,6 @@ class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
 		virtual		Standard_Boolean IsForcedHilight() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_EntityOwner();
 
 };
 %extend SelectMgr_EntityOwner {
@@ -1541,12 +1598,83 @@ class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
 	return *(Handle_SelectMgr_EntityOwner*) &$self;
 	}
 };
+%extend SelectMgr_EntityOwner {
+	~SelectMgr_EntityOwner() {
+	printf("Call custom destructor for instance of SelectMgr_EntityOwner\n");
+	}
+};
+
+%nodefaultctor SelectMgr_DataMapOfIntegerSensitive;
+class SelectMgr_DataMapOfIntegerSensitive : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_DataMapOfIntegerSensitive(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		SelectMgr_DataMapOfIntegerSensitive & Assign(const SelectMgr_DataMapOfIntegerSensitive &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Handle_SelectBasics_SensitiveEntity &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Handle_SelectBasics_SensitiveEntity & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Handle_SelectBasics_SensitiveEntity & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity & operator()(const Standard_Integer &K);
+
+};
+%extend SelectMgr_DataMapOfIntegerSensitive {
+	~SelectMgr_DataMapOfIntegerSensitive() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapOfIntegerSensitive\n");
+	}
+};
+
+%nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive;
+class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive();
+		%feature("autodoc", "1");
+		SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive(const SelectMgr_DataMapOfIntegerSensitive &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const SelectMgr_DataMapOfIntegerSensitive &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const Handle_SelectBasics_SensitiveEntity & Value() const;
+
+};
+%extend SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive {
+	~SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive\n");
+	}
+};
+
+%nodefaultctor SelectMgr_CompareResults;
+class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
+	public:
+		%feature("autodoc", "1");
+		~SelectMgr_CompareResults();
+		%feature("autodoc", "1");
+		SelectMgr_CompareResults(const SelectMgr_IndexedDataMapOfOwnerCriterion &aMapOfCriterion);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
+
+};
 
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors;
 class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors();
 		%feature("autodoc", "1");
 		SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors();
 		%feature("autodoc", "1");
@@ -1558,6 +1686,11 @@ class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_B
 		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfSelector & Value() const;
 
+};
+%extend SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors {
+	~SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors\n");
+	}
 };
 
 %nodefaultctor SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion;
@@ -1575,13 +1708,16 @@ class SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public TCol
 		SelectMgr_SortCriterion & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion();
 
 };
 %extend SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
 	Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion GetHandle() {
 	return *(Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion*) &$self;
+	}
+};
+%extend SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
+	~SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion() {
+	printf("Call custom destructor for instance of SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion\n");
 	}
 };
 
@@ -1594,13 +1730,16 @@ class SelectMgr_SequenceNodeOfSequenceOfSelector : public TCollection_SeqNode {
 		Handle_SelectMgr_ViewerSelector & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_SequenceNodeOfSequenceOfSelector();
 
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelector {
 	Handle_SelectMgr_SequenceNodeOfSequenceOfSelector GetHandle() {
 	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfSelector*) &$self;
+	}
+};
+%extend SelectMgr_SequenceNodeOfSequenceOfSelector {
+	~SelectMgr_SequenceNodeOfSequenceOfSelector() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfSelector\n");
 	}
 };
 
@@ -1617,12 +1756,15 @@ class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~SelectMgr_IndexedMapNodeOfIndexedMapOfOwner();
 
 };
 %extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
 	Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner GetHandle() {
 	return *(Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner*) &$self;
+	}
+};
+%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
+	~SelectMgr_IndexedMapNodeOfIndexedMapOfOwner() {
+	printf("Call custom destructor for instance of SelectMgr_IndexedMapNodeOfIndexedMapOfOwner\n");
 	}
 };

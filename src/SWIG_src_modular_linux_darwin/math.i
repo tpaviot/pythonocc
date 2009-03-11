@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module math
 
@@ -110,8 +96,6 @@ enum math_Status {
 class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_math_NotSquare();
-		%feature("autodoc", "1");
 		Handle_math_NotSquare();
 		%feature("autodoc", "1");
 		Handle_math_NotSquare(const Handle_math_NotSquare &aHandle);
@@ -126,12 +110,15 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 	return (math_NotSquare*)$self->Access();
 	}
 };
+%extend Handle_math_NotSquare {
+	~Handle_math_NotSquare() {
+	printf("Call custom destructor for instance of Handle_math_NotSquare\n");
+	}
+};
 
 %nodefaultctor Handle_math_SingularMatrix;
 class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 	public:
-		%feature("autodoc", "1");
-		~Handle_math_SingularMatrix();
 		%feature("autodoc", "1");
 		Handle_math_SingularMatrix();
 		%feature("autodoc", "1");
@@ -145,6 +132,11 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 %extend Handle_math_SingularMatrix {
 	math_SingularMatrix* GetObject() {
 	return (math_SingularMatrix*)$self->Access();
+	}
+};
+%extend Handle_math_SingularMatrix {
+	~Handle_math_SingularMatrix() {
+	printf("Call custom destructor for instance of Handle_math_SingularMatrix\n");
 	}
 };
 
@@ -342,30 +334,6 @@ class math_BracketedRoot {
 
 };
 
-%nodefaultctor math_FunctionRoot;
-class math_FunctionRoot {
-	public:
-		%feature("autodoc", "1");
-		~math_FunctionRoot();
-		%feature("autodoc", "1");
-		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		Standard_Real Derivative() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
-
-};
-
 %nodefaultctor math_Powell;
 class math_Powell {
 	public:
@@ -389,6 +357,30 @@ class math_Powell {
 		void Location(math_Vector & Loc) const;
 		%feature("autodoc", "1");
 		Standard_Real Minimum() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		void Dump(Standard_OStream & o) const;
+
+};
+
+%nodefaultctor math_FunctionRoot;
+class math_FunctionRoot {
+	public:
+		%feature("autodoc", "1");
+		~math_FunctionRoot();
+		%feature("autodoc", "1");
+		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations=100);
+		%feature("autodoc", "1");
+		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Derivative() const;
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
@@ -429,38 +421,6 @@ class math_Array1OfValueAndWeight {
 		math_ValueAndWeight & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		math_ValueAndWeight & operator()(const Standard_Integer Index);
-
-};
-
-%nodefaultctor math_KronrodSingleIntegration;
-class math_KronrodSingleIntegration {
-	public:
-		%feature("autodoc", "1");
-		~math_KronrodSingleIntegration();
-		%feature("autodoc", "1");
-		math_KronrodSingleIntegration();
-		%feature("autodoc", "1");
-		math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
-		%feature("autodoc", "1");
-		math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
-		%feature("autodoc", "1");
-		void Perform(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
-		%feature("autodoc", "1");
-		void Perform(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Real ErrorReached() const;
-		%feature("autodoc", "1");
-		Standard_Real AbsolutError() const;
-		%feature("autodoc", "1");
-		Standard_Integer OrderReached() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterReached() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 
@@ -505,13 +465,16 @@ class math_SingularMatrix : public Standard_Failure {
 		Handle_math_SingularMatrix NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~math_SingularMatrix();
 
 };
 %extend math_SingularMatrix {
 	Handle_math_SingularMatrix GetHandle() {
 	return *(Handle_math_SingularMatrix*) &$self;
+	}
+};
+%extend math_SingularMatrix {
+	~math_SingularMatrix() {
+	printf("Call custom destructor for instance of math_SingularMatrix\n");
 	}
 };
 
@@ -739,6 +702,32 @@ class math_ComputeGaussPointsAndWeights {
 
 };
 
+%nodefaultctor math_FunctionSet;
+class math_FunctionSet {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+
+};
+
+%nodefaultctor math_FunctionSetWithDerivatives;
+class math_FunctionSetWithDerivatives : public math_FunctionSet {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+
+};
+
 %nodefaultctor math_GaussSingleIntegration;
 class math_GaussSingleIntegration {
 	public:
@@ -930,8 +919,6 @@ class math_NotSquare : public Standard_DimensionError {
 		Handle_math_NotSquare NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~math_NotSquare();
 
 };
 %extend math_NotSquare {
@@ -939,31 +926,10 @@ class math_NotSquare : public Standard_DimensionError {
 	return *(Handle_math_NotSquare*) &$self;
 	}
 };
-
-%nodefaultctor math_FunctionSet;
-class math_FunctionSet {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-
-};
-
-%nodefaultctor math_FunctionSetWithDerivatives;
-class math_FunctionSetWithDerivatives : public math_FunctionSet {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-
+%extend math_NotSquare {
+	~math_NotSquare() {
+	printf("Call custom destructor for instance of math_NotSquare\n");
+	}
 };
 
 %nodefaultctor math_Crout;
@@ -1423,6 +1389,38 @@ class math_RealRandom {
 		void Reset();
 		%feature("autodoc", "1");
 		Standard_Real Next();
+
+};
+
+%nodefaultctor math_KronrodSingleIntegration;
+class math_KronrodSingleIntegration {
+	public:
+		%feature("autodoc", "1");
+		~math_KronrodSingleIntegration();
+		%feature("autodoc", "1");
+		math_KronrodSingleIntegration();
+		%feature("autodoc", "1");
+		math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
+		%feature("autodoc", "1");
+		math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
+		%feature("autodoc", "1");
+		void Perform(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
+		%feature("autodoc", "1");
+		void Perform(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
+		%feature("autodoc", "1");
+		Standard_Real ErrorReached() const;
+		%feature("autodoc", "1");
+		Standard_Real AbsolutError() const;
+		%feature("autodoc", "1");
+		Standard_Integer OrderReached() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterReached() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 

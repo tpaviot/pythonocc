@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GeomPlate
 
@@ -102,8 +88,6 @@ Standard_Real & function transformation
 class Handle_GeomPlate_PointConstraint : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		~Handle_GeomPlate_PointConstraint();
-		%feature("autodoc", "1");
 		Handle_GeomPlate_PointConstraint();
 		%feature("autodoc", "1");
 		Handle_GeomPlate_PointConstraint(const Handle_GeomPlate_PointConstraint &aHandle);
@@ -118,12 +102,15 @@ class Handle_GeomPlate_PointConstraint : public Handle_MMgt_TShared {
 	return (GeomPlate_PointConstraint*)$self->Access();
 	}
 };
+%extend Handle_GeomPlate_PointConstraint {
+	~Handle_GeomPlate_PointConstraint() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_PointConstraint\n");
+	}
+};
 
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
 class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint();
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint();
 		%feature("autodoc", "1");
@@ -139,12 +126,15 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_T
 	return (GeomPlate_SequenceNodeOfSequenceOfPointConstraint*)$self->Access();
 	}
 };
+%extend Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
+	~Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint\n");
+	}
+};
 
 %nodefaultctor Handle_GeomPlate_HArray1OfHCurveOnSurface;
 class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomPlate_HArray1OfHCurveOnSurface();
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfHCurveOnSurface();
 		%feature("autodoc", "1");
@@ -160,12 +150,15 @@ class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
 	return (GeomPlate_HArray1OfHCurveOnSurface*)$self->Access();
 	}
 };
+%extend Handle_GeomPlate_HArray1OfHCurveOnSurface {
+	~Handle_GeomPlate_HArray1OfHCurveOnSurface() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_HArray1OfHCurveOnSurface\n");
+	}
+};
 
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfAij;
 class Handle_GeomPlate_SequenceNodeOfSequenceOfAij : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomPlate_SequenceNodeOfSequenceOfAij();
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfAij();
 		%feature("autodoc", "1");
@@ -181,12 +174,15 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfAij : public Handle_TCollection_S
 	return (GeomPlate_SequenceNodeOfSequenceOfAij*)$self->Access();
 	}
 };
+%extend Handle_GeomPlate_SequenceNodeOfSequenceOfAij {
+	~Handle_GeomPlate_SequenceNodeOfSequenceOfAij() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_SequenceNodeOfSequenceOfAij\n");
+	}
+};
 
 %nodefaultctor Handle_GeomPlate_HSequenceOfPointConstraint;
 class Handle_GeomPlate_HSequenceOfPointConstraint : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomPlate_HSequenceOfPointConstraint();
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfPointConstraint();
 		%feature("autodoc", "1");
@@ -202,54 +198,15 @@ class Handle_GeomPlate_HSequenceOfPointConstraint : public Handle_MMgt_TShared {
 	return (GeomPlate_HSequenceOfPointConstraint*)$self->Access();
 	}
 };
-
-%nodefaultctor Handle_GeomPlate_HSequenceOfCurveConstraint;
-class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		~Handle_GeomPlate_HSequenceOfCurveConstraint();
-		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfCurveConstraint();
-		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfCurveConstraint(const Handle_GeomPlate_HSequenceOfCurveConstraint &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfCurveConstraint(const GeomPlate_HSequenceOfCurveConstraint *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfCurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomPlate_HSequenceOfCurveConstraint {
-	GeomPlate_HSequenceOfCurveConstraint* GetObject() {
-	return (GeomPlate_HSequenceOfCurveConstraint*)$self->Access();
-	}
-};
-
-%nodefaultctor Handle_GeomPlate_Surface;
-class Handle_GeomPlate_Surface : public Handle_Geom_Surface {
-	public:
-		%feature("autodoc", "1");
-		~Handle_GeomPlate_Surface();
-		%feature("autodoc", "1");
-		Handle_GeomPlate_Surface();
-		%feature("autodoc", "1");
-		Handle_GeomPlate_Surface(const Handle_GeomPlate_Surface &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomPlate_Surface(const GeomPlate_Surface *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomPlate_Surface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomPlate_Surface {
-	GeomPlate_Surface* GetObject() {
-	return (GeomPlate_Surface*)$self->Access();
+%extend Handle_GeomPlate_HSequenceOfPointConstraint {
+	~Handle_GeomPlate_HSequenceOfPointConstraint() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_HSequenceOfPointConstraint\n");
 	}
 };
 
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint;
 class Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public Handle_TCollection_SeqNode {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint();
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint();
 		%feature("autodoc", "1");
@@ -265,12 +222,39 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public Handle_T
 	return (GeomPlate_SequenceNodeOfSequenceOfCurveConstraint*)$self->Access();
 	}
 };
+%extend Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
+	~Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint\n");
+	}
+};
+
+%nodefaultctor Handle_GeomPlate_Surface;
+class Handle_GeomPlate_Surface : public Handle_Geom_Surface {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomPlate_Surface();
+		%feature("autodoc", "1");
+		Handle_GeomPlate_Surface(const Handle_GeomPlate_Surface &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomPlate_Surface(const GeomPlate_Surface *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomPlate_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomPlate_Surface {
+	GeomPlate_Surface* GetObject() {
+	return (GeomPlate_Surface*)$self->Access();
+	}
+};
+%extend Handle_GeomPlate_Surface {
+	~Handle_GeomPlate_Surface() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_Surface\n");
+	}
+};
 
 %nodefaultctor Handle_GeomPlate_HArray1OfSequenceOfReal;
 class Handle_GeomPlate_HArray1OfSequenceOfReal : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomPlate_HArray1OfSequenceOfReal();
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfSequenceOfReal();
 		%feature("autodoc", "1");
@@ -286,12 +270,15 @@ class Handle_GeomPlate_HArray1OfSequenceOfReal : public Handle_MMgt_TShared {
 	return (GeomPlate_HArray1OfSequenceOfReal*)$self->Access();
 	}
 };
+%extend Handle_GeomPlate_HArray1OfSequenceOfReal {
+	~Handle_GeomPlate_HArray1OfSequenceOfReal() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_HArray1OfSequenceOfReal\n");
+	}
+};
 
 %nodefaultctor Handle_GeomPlate_CurveConstraint;
 class Handle_GeomPlate_CurveConstraint : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_GeomPlate_CurveConstraint();
 		%feature("autodoc", "1");
 		Handle_GeomPlate_CurveConstraint();
 		%feature("autodoc", "1");
@@ -305,6 +292,35 @@ class Handle_GeomPlate_CurveConstraint : public Handle_MMgt_TShared {
 %extend Handle_GeomPlate_CurveConstraint {
 	GeomPlate_CurveConstraint* GetObject() {
 	return (GeomPlate_CurveConstraint*)$self->Access();
+	}
+};
+%extend Handle_GeomPlate_CurveConstraint {
+	~Handle_GeomPlate_CurveConstraint() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_CurveConstraint\n");
+	}
+};
+
+%nodefaultctor Handle_GeomPlate_HSequenceOfCurveConstraint;
+class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomPlate_HSequenceOfCurveConstraint();
+		%feature("autodoc", "1");
+		Handle_GeomPlate_HSequenceOfCurveConstraint(const Handle_GeomPlate_HSequenceOfCurveConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomPlate_HSequenceOfCurveConstraint(const GeomPlate_HSequenceOfCurveConstraint *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomPlate_HSequenceOfCurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomPlate_HSequenceOfCurveConstraint {
+	GeomPlate_HSequenceOfCurveConstraint* GetObject() {
+	return (GeomPlate_HSequenceOfCurveConstraint*)$self->Access();
+	}
+};
+%extend Handle_GeomPlate_HSequenceOfCurveConstraint {
+	~Handle_GeomPlate_HSequenceOfCurveConstraint() {
+	printf("Call custom destructor for instance of Handle_GeomPlate_HSequenceOfCurveConstraint\n");
 	}
 };
 
@@ -363,13 +379,16 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 		Handle_Adaptor2d_HCurve2d ProjectedCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_CurveConstraint();
 
 };
 %extend GeomPlate_CurveConstraint {
 	Handle_GeomPlate_CurveConstraint GetHandle() {
 	return *(Handle_GeomPlate_CurveConstraint*) &$self;
+	}
+};
+%extend GeomPlate_CurveConstraint {
+	~GeomPlate_CurveConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_CurveConstraint\n");
 	}
 };
 
@@ -400,13 +419,16 @@ class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 		GeomPlate_Array1OfHCurveOnSurface & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_HArray1OfHCurveOnSurface();
 
 };
 %extend GeomPlate_HArray1OfHCurveOnSurface {
 	Handle_GeomPlate_HArray1OfHCurveOnSurface GetHandle() {
 	return *(Handle_GeomPlate_HArray1OfHCurveOnSurface*) &$self;
+	}
+};
+%extend GeomPlate_HArray1OfHCurveOnSurface {
+	~GeomPlate_HArray1OfHCurveOnSurface() {
+	printf("Call custom destructor for instance of GeomPlate_HArray1OfHCurveOnSurface\n");
 	}
 };
 
@@ -461,13 +483,16 @@ class GeomPlate_HSequenceOfCurveConstraint : public MMgt_TShared {
 		Handle_GeomPlate_HSequenceOfCurveConstraint ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_HSequenceOfCurveConstraint();
 
 };
 %extend GeomPlate_HSequenceOfCurveConstraint {
 	Handle_GeomPlate_HSequenceOfCurveConstraint GetHandle() {
 	return *(Handle_GeomPlate_HSequenceOfCurveConstraint*) &$self;
+	}
+};
+%extend GeomPlate_HSequenceOfCurveConstraint {
+	~GeomPlate_HSequenceOfCurveConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_HSequenceOfCurveConstraint\n");
 	}
 };
 
@@ -480,13 +505,16 @@ class GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public TCollection_Seq
 		Handle_GeomPlate_CurveConstraint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_SequenceNodeOfSequenceOfCurveConstraint();
 
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
 	Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint GetHandle() {
 	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint*) &$self;
+	}
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
+	~GeomPlate_SequenceNodeOfSequenceOfCurveConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfCurveConstraint\n");
 	}
 };
 
@@ -541,13 +569,16 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 		Handle_GeomPlate_HSequenceOfPointConstraint ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_HSequenceOfPointConstraint();
 
 };
 %extend GeomPlate_HSequenceOfPointConstraint {
 	Handle_GeomPlate_HSequenceOfPointConstraint GetHandle() {
 	return *(Handle_GeomPlate_HSequenceOfPointConstraint*) &$self;
+	}
+};
+%extend GeomPlate_HSequenceOfPointConstraint {
+	~GeomPlate_HSequenceOfPointConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_HSequenceOfPointConstraint\n");
 	}
 };
 
@@ -590,13 +621,16 @@ class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
 		GeomPlate_Array1OfSequenceOfReal & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_HArray1OfSequenceOfReal();
 
 };
 %extend GeomPlate_HArray1OfSequenceOfReal {
 	Handle_GeomPlate_HArray1OfSequenceOfReal GetHandle() {
 	return *(Handle_GeomPlate_HArray1OfSequenceOfReal*) &$self;
+	}
+};
+%extend GeomPlate_HArray1OfSequenceOfReal {
+	~GeomPlate_HArray1OfSequenceOfReal() {
+	printf("Call custom destructor for instance of GeomPlate_HArray1OfSequenceOfReal\n");
 	}
 };
 
@@ -607,8 +641,6 @@ class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
 		GeomPlate_SequenceOfCurveConstraint();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~GeomPlate_SequenceOfCurveConstraint();
 		%feature("autodoc", "1");
 		const GeomPlate_SequenceOfCurveConstraint & Assign(const GeomPlate_SequenceOfCurveConstraint &Other);
 		%feature("autodoc", "1");
@@ -649,6 +681,11 @@ class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend GeomPlate_SequenceOfCurveConstraint {
+	~GeomPlate_SequenceOfCurveConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_SequenceOfCurveConstraint\n");
+	}
+};
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
 class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_SeqNode {
@@ -659,8 +696,6 @@ class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_Seq
 		Handle_GeomPlate_PointConstraint & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_SequenceNodeOfSequenceOfPointConstraint();
 
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
@@ -668,12 +703,15 @@ class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_Seq
 	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint*) &$self;
 	}
 };
+%extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
+	~GeomPlate_SequenceNodeOfSequenceOfPointConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfPointConstraint\n");
+	}
+};
 
 %nodefaultctor GeomPlate_BuildAveragePlane;
 class GeomPlate_BuildAveragePlane {
 	public:
-		%feature("autodoc", "1");
-		~GeomPlate_BuildAveragePlane();
 		%feature("autodoc", "1");
 		GeomPlate_BuildAveragePlane(const Handle_TColgp_HArray1OfPnt &Pts, const Standard_Integer NbBoundPoints, const Standard_Real Tol, const Standard_Integer POption, const Standard_Integer NOption);
 		%feature("autodoc", "1");
@@ -691,6 +729,11 @@ class GeomPlate_BuildAveragePlane {
 		%feature("autodoc", "1");
 		Standard_Boolean HalfSpace(const TColgp_SequenceOfVec &NewNormals, TColgp_SequenceOfVec & Normals, GeomPlate_SequenceOfAij & Bset, const Standard_Real LinTol, const Standard_Real AngTol);
 
+};
+%extend GeomPlate_BuildAveragePlane {
+	~GeomPlate_BuildAveragePlane() {
+	printf("Call custom destructor for instance of GeomPlate_BuildAveragePlane\n");
+	}
 };
 
 %nodefaultctor GeomPlate_Surface;
@@ -758,13 +801,16 @@ class GeomPlate_Surface : public Geom_Surface {
 		void Constraints(TColgp_SequenceOfXY & Seq) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_Surface();
 
 };
 %extend GeomPlate_Surface {
 	Handle_GeomPlate_Surface GetHandle() {
 	return *(Handle_GeomPlate_Surface*) &$self;
+	}
+};
+%extend GeomPlate_Surface {
+	~GeomPlate_Surface() {
+	printf("Call custom destructor for instance of GeomPlate_Surface\n");
 	}
 };
 
@@ -794,8 +840,6 @@ class GeomPlate_Array1OfHCurveOnSurface {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~GeomPlate_Array1OfHCurveOnSurface();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const GeomPlate_Array1OfHCurveOnSurface & Assign(const GeomPlate_Array1OfHCurveOnSurface &Other);
@@ -817,6 +861,11 @@ class GeomPlate_Array1OfHCurveOnSurface {
 		Handle_Adaptor3d_HCurveOnSurface & operator()(const Standard_Integer Index);
 
 };
+%extend GeomPlate_Array1OfHCurveOnSurface {
+	~GeomPlate_Array1OfHCurveOnSurface() {
+	printf("Call custom destructor for instance of GeomPlate_Array1OfHCurveOnSurface\n");
+	}
+};
 
 %nodefaultctor GeomPlate_SequenceOfPointConstraint;
 class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
@@ -825,8 +874,6 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 		GeomPlate_SequenceOfPointConstraint();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~GeomPlate_SequenceOfPointConstraint();
 		%feature("autodoc", "1");
 		const GeomPlate_SequenceOfPointConstraint & Assign(const GeomPlate_SequenceOfPointConstraint &Other);
 		%feature("autodoc", "1");
@@ -867,6 +914,11 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend GeomPlate_SequenceOfPointConstraint {
+	~GeomPlate_SequenceOfPointConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_SequenceOfPointConstraint\n");
+	}
+};
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
 class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
@@ -877,8 +929,6 @@ class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 		GeomPlate_Aij & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_SequenceNodeOfSequenceOfAij();
 
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfAij {
@@ -886,12 +936,15 @@ class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfAij*) &$self;
 	}
 };
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	~GeomPlate_SequenceNodeOfSequenceOfAij() {
+	printf("Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfAij\n");
+	}
+};
 
 %nodefaultctor GeomPlate_BuildPlateSurface;
 class GeomPlate_BuildPlateSurface {
 	public:
-		%feature("autodoc", "1");
-		~GeomPlate_BuildPlateSurface();
 		%feature("autodoc", "1");
 		GeomPlate_BuildPlateSurface(const Handle_TColStd_HArray1OfInteger &NPoints, const Handle_GeomPlate_HArray1OfHCurveOnSurface &TabCurve, const Handle_TColStd_HArray1OfInteger &Tang, const Standard_Integer Degree, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
@@ -943,6 +996,11 @@ class GeomPlate_BuildPlateSurface {
 		%feature("autodoc", "1");
 		Standard_Real G2Error(const Standard_Integer Index);
 
+};
+%extend GeomPlate_BuildPlateSurface {
+	~GeomPlate_BuildPlateSurface() {
+	printf("Call custom destructor for instance of GeomPlate_BuildPlateSurface\n");
+	}
 };
 
 %nodefaultctor GeomPlate_PlateG1Criterion;
@@ -998,8 +1056,6 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 		GeomLProp_SLProps & LPropSurf();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_PointConstraint();
 
 };
 %extend GeomPlate_PointConstraint {
@@ -1007,12 +1063,15 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 	return *(Handle_GeomPlate_PointConstraint*) &$self;
 	}
 };
+%extend GeomPlate_PointConstraint {
+	~GeomPlate_PointConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_PointConstraint\n");
+	}
+};
 
 %nodefaultctor GeomPlate_MakeApprox;
 class GeomPlate_MakeApprox {
 	public:
-		%feature("autodoc", "1");
-		~GeomPlate_MakeApprox();
 		%feature("autodoc", "1");
 		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const AdvApp2Var_Criterion &PlateCrit, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
 		%feature("autodoc", "1");
@@ -1024,6 +1083,11 @@ class GeomPlate_MakeApprox {
 		%feature("autodoc", "1");
 		Standard_Real CriterionError() const;
 
+};
+%extend GeomPlate_MakeApprox {
+	~GeomPlate_MakeApprox() {
+	printf("Call custom destructor for instance of GeomPlate_MakeApprox\n");
+	}
 };
 
 %nodefaultctor GeomPlate_SequenceOfAij;
