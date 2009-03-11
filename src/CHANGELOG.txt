@@ -1,4 +1,6 @@
-2008/3/4:
+2009/3/11:
+	- Segfaults/memory bugfix (added cursomtzed default destructor for Standard_Transcient objects)
+2009/3/4:
 	- Better portability for lib finding
 2009/3/2:
 	- Added OCC.Toolkits...
