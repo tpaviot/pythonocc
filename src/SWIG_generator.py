@@ -1,38 +1,22 @@
 # -*- coding: iso-8859-1 -*-
 #! /usr/bin/python
 
-##Copyright 2008 Thomas Paviot
+##Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
 ##
-##thomas.paviot@free.fr
+##This file is part of pythonOCC.
 ##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCasacde library.
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
 ##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU General Public License for more details.
 ##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+##You should have received a copy of the GNU General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import os, os.path
 import sys
@@ -58,40 +42,26 @@ READ CAREFULLY the OpenCascade and CeCILL-A licenses before redistributing this 
 """
     fp.write(header)
 
-def WriteCeCILLLicenseHeader(fp):
+def WriteLicenseHeader(fp):
     header = """/*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 """
     fp.write(header)
@@ -169,7 +139,7 @@ class ModularBuilder(object):
         if self._generate_doc:
             self.WriteLicenseHeader = WriteDisclaimerHeader
         else:
-            self.WriteLicenseHeader = WriteCeCILLLicenseHeader
+            self.WriteLicenseHeader = WriteLicenseHeader
         self._mb = None
         self.fp = None
         self.occ_fp = None
@@ -291,7 +261,7 @@ class ModularBuilder(object):
         Generate the file for dependencies.
         """
         dependencies_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_dependencies.i'%self.MODULE_NAME),"w")
-        WriteCeCILLLicenseHeader(dependencies_fp)
+        WriteLicenseHeader(dependencies_fp)
         if len(self.module_dependencies)==0:
             return True
         dependencies_fp.write("%{\n")
@@ -308,7 +278,7 @@ class ModularBuilder(object):
         Write the SWIG file that contains all required headers for compilation.
         """
         headers_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_headers.i'%self.MODULE_NAME),"w")
-        WriteCeCILLLicenseHeader(headers_fp)
+        WriteLicenseHeader(headers_fp)
          # Write includes
         headers_fp.write("%{\n")
         headers_fp.write("\n// Headers necessary to define wrapped classes.\n\n")
@@ -344,7 +314,21 @@ class ModularBuilder(object):
                 header_to_add = '%s.hxx'%return_type
                 if not (header_to_add in self.NEEDED_HXX):
                     self.NEEDED_HXX.append('%s.hxx'%return_type)
-                        
+        
+    def CheckClassReturnAHandle(self,class_declaration):
+        """
+        Check whether a method in the class returns a Handle_* smart pointer
+        """
+        RETURN_TYPES = []
+        for mem_fun in class_declaration.public_members:#member_functions():
+            if hasattr(mem_fun,"return_type"):
+                return_type = "%s"%mem_fun.return_type
+                RETURN_TYPES.append(return_type)
+        for return_type in RETURN_TYPES:
+            if 'Handle_' in return_type:
+                return True
+        return False
+    
     def write_function( self , mem_fun , parent_is_abstract):
         """
         Write member functions declarations
@@ -381,7 +365,6 @@ class ModularBuilder(object):
                     if not (header_to_add in self.NEEDED_HXX):
                         self.NEEDED_HXX.append('%s.hxx'%return_type)
         #print return_type
-
         print "\t\t %s added."%function_name
         # FEATURE AUTODOC
         to_write = '\t\t%feature("autodoc", "1");\n'
@@ -507,6 +490,7 @@ class ModularBuilder(object):
         """
         # list with exposed member functions decl_strings
         CURRENT_CLASS_IS_ABSTRACT = False
+        #self.CURRENT_CLASS_METHODS_RETURN_TYPES = []
         self._CURRENT_CLASS_EXPOSED_METHODS = []
         class_name = class_declaration.name
         if class_name in self.ALREADY_EXPOSED:
@@ -519,7 +503,18 @@ class ModularBuilder(object):
         if from_package!=self.MODULE_NAME:
             self.AddDependency(from_package)
             return True
-     
+        #
+        # Check whether a method of the class returns a Handle_* type
+        #
+        HAVE_HANDLE_RETURN_TYPE = self.CheckClassReturnAHandle(class_declaration)
+        #
+        # Filter classes that need a customized destructor
+        #
+        if (HAVE_HANDLE_RETURN_TYPE or (('Handle_%s'%class_name) in self.ALREADY_EXPOSED))\
+        or class_name.startswith('Handle_'):
+            NEED_CUSTOMIZED_DESTRUCTOR = True
+        else:
+            NEED_CUSTOMIZED_DESTRUCTOR = False
         if class_declaration.is_abstract: #cannot instanciate abstract class
             CURRENT_CLASS_IS_ABSTRACT = True
 
@@ -559,7 +554,7 @@ class ModularBuilder(object):
         for mem_fun in class_declaration.public_members:#member_functions():
             # Member functions to exclude
             function_name = mem_fun.name
-            if (function_name.startswith('~') and class_name.startswith('Handle_')):#DESTRUCTOR
+            if (function_name.startswith('~') and NEED_CUSTOMIZED_DESTRUCTOR):#class_name.startswith('Handle_')):#DESTRUCTOR
                 print "Destructor found for a Handle_* class: ignored."
             elif (function_name.startswith('~') and (('Handle_%s'%class_name) in self.ALREADY_EXPOSED)):
                 print "Destructor found for a smart pointer managed class."
@@ -578,10 +573,10 @@ class ModularBuilder(object):
             self.fp.write("\t%s* GetObject() {\n"%pointed_class)
             self.fp.write("\treturn (%s*)$self->Access();\n\t}\n};"%pointed_class)
             # Customize destructor
-            self.fp.write('\n%')
-            self.fp.write('extend %s {\n'%class_name)
-            self.fp.write('\t~%s() {\n\tprintf("Call custom destructor for instance of %s\\n");'%(class_name,class_name))
-            self.fp.write('\n\t}\n};')
+#            self.fp.write('\n%')
+#            self.fp.write('extend %s {\n'%class_name)
+#            self.fp.write('\t~%s() {\n\tprintf("Call custom destructor for instance of %s\\n");'%(class_name,class_name))
+#            self.fp.write('\n\t}\n};')
 #        if (class_name == 'Handle_Standard_Transient'):
 #            #
 #            # Add a method to prevent deletion from Python
@@ -601,6 +596,7 @@ class ModularBuilder(object):
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\t%s GetHandle() {\n"%handle_class_name)
             self.fp.write("\treturn *(%s*) &$self;\n\t}\n};"%handle_class_name)
+        if NEED_CUSTOMIZED_DESTRUCTOR:
             # Customize destructor
             self.fp.write('\n%')
             self.fp.write('extend %s {\n'%class_name)
