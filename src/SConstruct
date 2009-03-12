@@ -23,6 +23,7 @@ import os
 import sys
 import commands
 import SCons
+import platform
 
 ##########################################################################################
 ########## PROXY TO NEWER SCONS (DOWNLOADED IF NEEDED) ###################################
@@ -59,6 +60,8 @@ if sconsVersion<9806.0 and not os.environ.has_key('NO_SCONS_GET_RECENT'):
 #
 env = Environment()
 BUILD_DIR = os.path.join(os.getcwd(),'..','build','OCC')
+if not os.path.isdir(BUILD_DIR):
+        os.mkdir(BUILD_DIR)
 BuildDir(BUILD_DIR,'.',duplicate = 0)
 #
 # First define platform specific settings
@@ -76,15 +79,12 @@ except KeyError:
     print "OpenCascade CAS_ROOT environment variable not set."
     OCC_ROOT = None
 
-if sys.platform=='win32':
+if sys.platform()=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_win32')
     # Try to find OCC paths from environment analysis
     if OCC_ROOT!=None:
         OCC_INC = os.path.join(OCC_ROOT,'inc')
         OCC_LIB = os.path.join(OCC_ROOT,'win32','lib')
-    else:
-        OCC_INC='C:/OCC/ros/inc'
-        OCC_LIB='C:/OCC/ros/win32/lib'
     GCC_XML_PATH = os.path.join(os.getcwd(),'pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = ['WNT','WIN32','_WINDOWS','CSFDB','NDEBUG']
@@ -143,7 +143,7 @@ if env['PLATFORM']=='win32':
 #)
 #opts.Update(env)
 
-print 'Build pythonOCC %s for platform: %s'%(VERSION,env['PLATFORM'])
+print 'Build pythonOCC %s for platform: %s'%(VERSION,platform.platform())
 
 env.Append(CXXFLAGS=ECA)
 env.Append(CPPDEFINES=DEFINE_MACROS)	
@@ -195,7 +195,7 @@ def CheckOCC(context):
 		ret=context.TryLink('/**/','.cpp')##include<Standard.hxx>;\n','.cpp')
 		context.Result(ret)
 		if not ret:
-			print "Pas bon!!"
+			print "OCC does not work."
 		else:
 			return ret
 	return False	
@@ -256,6 +256,44 @@ env = conf.Finish()
 #env.SConscript(dirs=['.'],build_dir=buildDir,duplicate=0)
 #SConscript('SConscript', build_dir=buildDir, duplicate=0, exports={'MODE':'release'})
 
+##################################
+#### Create __init__.py script ###
+##################################
+def Create__init__():
+    """
+    Create the __init__.py file for OCC package.
+    just create domething like: __all__ = ['gp,'gce']
+    """
+    print "Creating __init__.py script."
+    init_fp = open(os.path.join(BUILD_DIR,'__init__.py'),'w')
+    #
+    # First set important OpenCascade env var
+    # These settings are taken from OCC message forum:
+    # http://www.opencascade.org/org/forum/thread_12800/
+    # I did a test case in my OCAF application, and i could not see any problem, even with your first case.My environment variables concerning the memory manager are:
+    #
+    #MMGT_OPT=1 //use the optimised memory manager
+    #MMGT_CLEAR=1 //this is important , at least in my case.Many problems could rise if i did not set this variable.Sets all bits of new allocated memory to NULL.
+    #MMGT_REENTRANT=0 //My application is not multi threaded , so i do not need this.
+    init_fp.write('import os\n')
+    init_fp.write('#\n#Define OpenCascade behaviour settings\n#\n')
+    init_fp.write("os.environ['MMGT_CLEAR']='1'\n")
+    init_fp.write("os.environ['MMGT_OPT']='1'\n")
+    init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
+    init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
+    #
+    # Include Version number
+    #
+    init_fp.write("VERSION='%s'\n"%VERSION)
+    #
+    init_fp.write('__all__=[')
+    for module_tuple in MODULES:
+        module_name = module_tuple[0]
+        init_fp.write("'%s',\n"%module_name)
+    init_fp.write("'Visualization',\n'Misc'\n")
+    init_fp.write(']\n')
+    init_fp.close()
+Create__init__()
 ##############################
 #### pythonOCC build #########
 ##############################
