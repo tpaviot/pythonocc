@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepMAT2d
 
@@ -198,8 +184,6 @@ class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollecti
 class BRepMAT2d_BisectingLocus {
 	public:
 		%feature("autodoc", "1");
-		~BRepMAT2d_BisectingLocus();
-		%feature("autodoc", "1");
 		BRepMAT2d_BisectingLocus();
 		%feature("autodoc", "1");
 		void Compute(BRepMAT2d_Explorer & anExplo, const Standard_Integer LineIndex=1, const MAT_Side aSide=MAT_Left);
@@ -222,6 +206,11 @@ class BRepMAT2d_BisectingLocus {
 		%feature("autodoc", "1");
 		Bisector_Bisec GeomBis(const Handle_MAT_Arc &anArc, Standard_Boolean & Reverse) const;
 
+};
+%extend BRepMAT2d_BisectingLocus {
+	~BRepMAT2d_BisectingLocus() {
+	printf("Call custom destructor for instance of BRepMAT2d_BisectingLocus\n");
+	}
 };
 
 %nodefaultctor BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
@@ -272,8 +261,6 @@ class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMAT2d_SequenceOfBasicElt();
-		%feature("autodoc", "1");
 		const BRepMAT2d_SequenceOfBasicElt & Assign(const BRepMAT2d_SequenceOfBasicElt &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_MAT_BasicElt &T);
@@ -313,6 +300,11 @@ class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend BRepMAT2d_SequenceOfBasicElt {
+	~BRepMAT2d_SequenceOfBasicElt() {
+	printf("Call custom destructor for instance of BRepMAT2d_SequenceOfBasicElt\n");
+	}
+};
 
 %nodefaultctor BRepMAT2d_DataMapOfShapeSequenceOfBasicElt;
 class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
@@ -348,8 +340,6 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape();
-		%feature("autodoc", "1");
 		BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape();
 		%feature("autodoc", "1");
 		BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape(const BRepMAT2d_DataMapOfBasicEltShape &aMap);
@@ -360,6 +350,11 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_Bas
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Value() const;
 
+};
+%extend BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape {
+	~BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape() {
+	printf("Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape\n");
+	}
 };
 
 %nodefaultctor BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape;
@@ -420,8 +415,6 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 class BRepMAT2d_LinkTopoBilo {
 	public:
 		%feature("autodoc", "1");
-		~BRepMAT2d_LinkTopoBilo();
-		%feature("autodoc", "1");
 		BRepMAT2d_LinkTopoBilo();
 		%feature("autodoc", "1");
 		BRepMAT2d_LinkTopoBilo(const BRepMAT2d_Explorer &Explo, const BRepMAT2d_BisectingLocus &BiLo);
@@ -439,12 +432,15 @@ class BRepMAT2d_LinkTopoBilo {
 		TopoDS_Shape GeneratingShape(const Handle_MAT_BasicElt &aBE) const;
 
 };
+%extend BRepMAT2d_LinkTopoBilo {
+	~BRepMAT2d_LinkTopoBilo() {
+	printf("Call custom destructor for instance of BRepMAT2d_LinkTopoBilo\n");
+	}
+};
 
 %nodefaultctor BRepMAT2d_Explorer;
 class BRepMAT2d_Explorer {
 	public:
-		%feature("autodoc", "1");
-		~BRepMAT2d_Explorer();
 		%feature("autodoc", "1");
 		BRepMAT2d_Explorer();
 		%feature("autodoc", "1");
@@ -476,4 +472,9 @@ class BRepMAT2d_Explorer {
 		%feature("autodoc", "1");
 		const MAT2d_SequenceOfBoolean & GetIsClosed() const;
 
+};
+%extend BRepMAT2d_Explorer {
+	~BRepMAT2d_Explorer() {
+	printf("Call custom destructor for instance of BRepMAT2d_Explorer\n");
+	}
 };

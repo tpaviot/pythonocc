@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module ChFi3d
 
@@ -191,6 +177,11 @@ class ChFi3d_Builder {
 		Standard_Integer PerformTwoCornerbyInter(const Standard_Integer Index);
 
 };
+%extend ChFi3d_Builder {
+	~ChFi3d_Builder() {
+	printf("Call custom destructor for instance of ChFi3d_Builder\n");
+	}
+};
 
 %nodefaultctor ChFi3d_SearchSing;
 class ChFi3d_SearchSing : public math_FunctionWithDerivative {
@@ -259,9 +250,12 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		virtual		void PerformSurf(ChFiDS_SequenceOfSurfData & Data, const Handle_ChFiDS_HElSpine &Guide, const Handle_ChFiDS_Spine &Spine, const Standard_Integer Choix, const Handle_BRepAdaptor_HSurface &S1, const Handle_Adaptor3d_TopolTool &I1, const Handle_BRepAdaptor_HCurve2d &PC1, const Handle_BRepAdaptor_HSurface &Sref1, const Handle_BRepAdaptor_HCurve2d &PCref1, Standard_Boolean & Decroch1, const TopAbs_Orientation Or1, const Handle_BRepAdaptor_HSurface &S2, const Handle_Adaptor3d_TopolTool &I2, const Handle_BRepAdaptor_HCurve2d &PC2, const Handle_BRepAdaptor_HSurface &Sref2, const Handle_BRepAdaptor_HCurve2d &PCref2, Standard_Boolean & Decroch2, const TopAbs_Orientation Or2, const Standard_Real MaxStep, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP1, const Standard_Boolean RecRst1, const Standard_Boolean RecP2, const Standard_Boolean RecRst2, const math_Vector &Soldep);
 		%feature("autodoc", "1");
 		Standard_Integer FindChoiceDistAngle(const Standard_Integer Choice, const Standard_Boolean DisOnF1) const;
-		%feature("autodoc", "1");
-		virtual		~ChFi3d_ChBuilder();
 
+};
+%extend ChFi3d_ChBuilder {
+	~ChFi3d_ChBuilder() {
+	printf("Call custom destructor for instance of ChFi3d_ChBuilder\n");
+	}
 };
 
 %nodefaultctor ChFi3d_FilBuilder;
@@ -311,7 +305,10 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		Standard_Integer NbSurf(const Standard_Integer IC) const;
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SecHArray1 Sect(const Standard_Integer IC, const Standard_Integer IS) const;
-		%feature("autodoc", "1");
-		virtual		~ChFi3d_FilBuilder();
 
+};
+%extend ChFi3d_FilBuilder {
+	~ChFi3d_FilBuilder() {
+	printf("Call custom destructor for instance of ChFi3d_FilBuilder\n");
+	}
 };

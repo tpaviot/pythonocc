@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TopoDSToStep
 
@@ -151,8 +137,6 @@ class TopoDSToStep_Root {
 class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		~TopoDSToStep_WireframeBuilder();
-		%feature("autodoc", "1");
 		TopoDSToStep_WireframeBuilder();
 		%feature("autodoc", "1");
 		TopoDSToStep_WireframeBuilder(const TopoDS_Shape &S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
@@ -170,12 +154,15 @@ class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 		Standard_Boolean GetTrimmedCurveFromShape(const TopoDS_Shape &S, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
 
 };
+%extend TopoDSToStep_WireframeBuilder {
+	~TopoDSToStep_WireframeBuilder() {
+	printf("Call custom destructor for instance of TopoDSToStep_WireframeBuilder\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_MakeStepVertex;
 class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_MakeStepVertex();
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeStepVertex();
 		%feature("autodoc", "1");
@@ -188,12 +175,15 @@ class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
 		TopoDSToStep_MakeVertexError Error() const;
 
 };
+%extend TopoDSToStep_MakeStepVertex {
+	~TopoDSToStep_MakeStepVertex() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeStepVertex\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_MakeFacetedBrep;
 class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_MakeFacetedBrep();
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeFacetedBrep(const TopoDS_Shell &S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
@@ -202,12 +192,15 @@ class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
 		const Handle_StepShape_FacetedBrep & Value() const;
 
 };
+%extend TopoDSToStep_MakeFacetedBrep {
+	~TopoDSToStep_MakeFacetedBrep() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeFacetedBrep\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_MakeStepWire;
 class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_MakeStepWire();
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeStepWire();
 		%feature("autodoc", "1");
@@ -220,24 +213,30 @@ class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
 		TopoDSToStep_MakeWireError Error() const;
 
 };
+%extend TopoDSToStep_MakeStepWire {
+	~TopoDSToStep_MakeStepWire() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeStepWire\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_MakeFacetedBrepAndBrepWithVoids;
 class TopoDSToStep_MakeFacetedBrepAndBrepWithVoids : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_MakeFacetedBrepAndBrepWithVoids();
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeFacetedBrepAndBrepWithVoids(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_FacetedBrepAndBrepWithVoids & Value() const;
 
 };
+%extend TopoDSToStep_MakeFacetedBrepAndBrepWithVoids {
+	~TopoDSToStep_MakeFacetedBrepAndBrepWithVoids() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeFacetedBrepAndBrepWithVoids\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_MakeShellBasedSurfaceModel;
 class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_MakeShellBasedSurfaceModel();
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Face &F, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
@@ -248,12 +247,15 @@ class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 		const Handle_StepShape_ShellBasedSurfaceModel & Value() const;
 
 };
+%extend TopoDSToStep_MakeShellBasedSurfaceModel {
+	~TopoDSToStep_MakeShellBasedSurfaceModel() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeShellBasedSurfaceModel\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_Tool;
 class TopoDSToStep_Tool {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_Tool();
 		%feature("autodoc", "1");
 		TopoDSToStep_Tool();
 		%feature("autodoc", "1");
@@ -300,12 +302,15 @@ class TopoDSToStep_Tool {
 		Standard_Integer PCurveMode() const;
 
 };
+%extend TopoDSToStep_Tool {
+	~TopoDSToStep_Tool() {
+	printf("Call custom destructor for instance of TopoDSToStep_Tool\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep;
 class TopoDSToStep {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep();
 		%feature("autodoc", "1");
 		TopoDSToStep();
 		%feature("autodoc", "1");
@@ -324,12 +329,15 @@ class TopoDSToStep {
 		void AddResult(const Handle_Transfer_FinderProcess &FP, const TopoDSToStep_Tool &Tool);
 
 };
+%extend TopoDSToStep {
+	~TopoDSToStep() {
+	printf("Call custom destructor for instance of TopoDSToStep\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_Builder;
 class TopoDSToStep_Builder : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_Builder();
 		%feature("autodoc", "1");
 		TopoDSToStep_Builder();
 		%feature("autodoc", "1");
@@ -342,24 +350,30 @@ class TopoDSToStep_Builder : public TopoDSToStep_Root {
 		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
 
 };
+%extend TopoDSToStep_Builder {
+	~TopoDSToStep_Builder() {
+	printf("Call custom destructor for instance of TopoDSToStep_Builder\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_MakeBrepWithVoids;
 class TopoDSToStep_MakeBrepWithVoids : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_MakeBrepWithVoids();
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeBrepWithVoids(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_BrepWithVoids & Value() const;
 
 };
+%extend TopoDSToStep_MakeBrepWithVoids {
+	~TopoDSToStep_MakeBrepWithVoids() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeBrepWithVoids\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_MakeStepFace;
 class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_MakeStepFace();
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeStepFace();
 		%feature("autodoc", "1");
@@ -372,12 +386,15 @@ class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
 		TopoDSToStep_MakeFaceError Error() const;
 
 };
+%extend TopoDSToStep_MakeStepFace {
+	~TopoDSToStep_MakeStepFace() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeStepFace\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_MakeManifoldSolidBrep;
 class TopoDSToStep_MakeManifoldSolidBrep : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_MakeManifoldSolidBrep();
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeManifoldSolidBrep(const TopoDS_Shell &S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
@@ -386,12 +403,15 @@ class TopoDSToStep_MakeManifoldSolidBrep : public TopoDSToStep_Root {
 		const Handle_StepShape_ManifoldSolidBrep & Value() const;
 
 };
+%extend TopoDSToStep_MakeManifoldSolidBrep {
+	~TopoDSToStep_MakeManifoldSolidBrep() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeManifoldSolidBrep\n");
+	}
+};
 
 %nodefaultctor TopoDSToStep_MakeStepEdge;
 class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_MakeStepEdge();
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeStepEdge();
 		%feature("autodoc", "1");
@@ -403,6 +423,11 @@ class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeEdgeError Error() const;
 
+};
+%extend TopoDSToStep_MakeStepEdge {
+	~TopoDSToStep_MakeStepEdge() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeStepEdge\n");
+	}
 };
 
 %nodefaultctor TopoDSToStep_FacetedTool;
@@ -421,10 +446,13 @@ class TopoDSToStep_FacetedTool {
 class TopoDSToStep_MakeGeometricCurveSet : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		~TopoDSToStep_MakeGeometricCurveSet();
-		%feature("autodoc", "1");
 		TopoDSToStep_MakeGeometricCurveSet(const TopoDS_Shape &SH, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_GeometricCurveSet & Value() const;
 
+};
+%extend TopoDSToStep_MakeGeometricCurveSet {
+	~TopoDSToStep_MakeGeometricCurveSet() {
+	printf("Call custom destructor for instance of TopoDSToStep_MakeGeometricCurveSet\n");
+	}
 };

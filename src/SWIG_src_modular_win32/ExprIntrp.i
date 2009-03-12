@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module ExprIntrp
 
@@ -444,8 +430,6 @@ class ExprIntrp_SequenceOfNamedFunction : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ExprIntrp_SequenceOfNamedFunction();
-		%feature("autodoc", "1");
 		const ExprIntrp_SequenceOfNamedFunction & Assign(const ExprIntrp_SequenceOfNamedFunction &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Expr_NamedFunction &T);
@@ -484,6 +468,11 @@ class ExprIntrp_SequenceOfNamedFunction : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend ExprIntrp_SequenceOfNamedFunction {
+	~ExprIntrp_SequenceOfNamedFunction() {
+	printf("Call custom destructor for instance of ExprIntrp_SequenceOfNamedFunction\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_StackOfNames;
@@ -622,8 +611,6 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 class ExprIntrp_StackIteratorOfStackOfGeneralRelation {
 	public:
 		%feature("autodoc", "1");
-		~ExprIntrp_StackIteratorOfStackOfGeneralRelation();
-		%feature("autodoc", "1");
 		ExprIntrp_StackIteratorOfStackOfGeneralRelation();
 		%feature("autodoc", "1");
 		ExprIntrp_StackIteratorOfStackOfGeneralRelation(const ExprIntrp_StackOfGeneralRelation &S);
@@ -637,12 +624,15 @@ class ExprIntrp_StackIteratorOfStackOfGeneralRelation {
 		const Handle_Expr_GeneralRelation & Value() const;
 
 };
+%extend ExprIntrp_StackIteratorOfStackOfGeneralRelation {
+	~ExprIntrp_StackIteratorOfStackOfGeneralRelation() {
+	printf("Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralRelation\n");
+	}
+};
 
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralFunction;
 class ExprIntrp_StackIteratorOfStackOfGeneralFunction {
 	public:
-		%feature("autodoc", "1");
-		~ExprIntrp_StackIteratorOfStackOfGeneralFunction();
 		%feature("autodoc", "1");
 		ExprIntrp_StackIteratorOfStackOfGeneralFunction();
 		%feature("autodoc", "1");
@@ -656,6 +646,11 @@ class ExprIntrp_StackIteratorOfStackOfGeneralFunction {
 		%feature("autodoc", "1");
 		const Handle_Expr_GeneralFunction & Value() const;
 
+};
+%extend ExprIntrp_StackIteratorOfStackOfGeneralFunction {
+	~ExprIntrp_StackIteratorOfStackOfGeneralFunction() {
+	printf("Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralFunction\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralRelation;
@@ -700,10 +695,13 @@ class ExprIntrp_StackOfGeneralRelation {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ExprIntrp_StackOfGeneralRelation();
-		%feature("autodoc", "1");
 		Handle_Expr_GeneralRelation & ChangeTop();
 
+};
+%extend ExprIntrp_StackOfGeneralRelation {
+	~ExprIntrp_StackOfGeneralRelation() {
+	printf("Call custom destructor for instance of ExprIntrp_StackOfGeneralRelation\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralExpression;
@@ -735,8 +733,6 @@ class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
 		ExprIntrp_SequenceOfNamedExpression();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~ExprIntrp_SequenceOfNamedExpression();
 		%feature("autodoc", "1");
 		const ExprIntrp_SequenceOfNamedExpression & Assign(const ExprIntrp_SequenceOfNamedExpression &Other);
 		%feature("autodoc", "1");
@@ -776,6 +772,11 @@ class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend ExprIntrp_SequenceOfNamedExpression {
+	~ExprIntrp_SequenceOfNamedExpression() {
+	printf("Call custom destructor for instance of ExprIntrp_SequenceOfNamedExpression\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralFunction;
@@ -820,10 +821,13 @@ class ExprIntrp_StackOfGeneralFunction {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ExprIntrp_StackOfGeneralFunction();
-		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction & ChangeTop();
 
+};
+%extend ExprIntrp_StackOfGeneralFunction {
+	~ExprIntrp_StackOfGeneralFunction() {
+	printf("Call custom destructor for instance of ExprIntrp_StackOfGeneralFunction\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_StackOfGeneralExpression;
@@ -846,10 +850,13 @@ class ExprIntrp_StackOfGeneralExpression {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ExprIntrp_StackOfGeneralExpression();
-		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression & ChangeTop();
 
+};
+%extend ExprIntrp_StackOfGeneralExpression {
+	~ExprIntrp_StackOfGeneralExpression() {
+	printf("Call custom destructor for instance of ExprIntrp_StackOfGeneralExpression\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
@@ -878,8 +885,6 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNo
 class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 	public:
 		%feature("autodoc", "1");
-		~ExprIntrp_StackIteratorOfStackOfGeneralExpression();
-		%feature("autodoc", "1");
 		ExprIntrp_StackIteratorOfStackOfGeneralExpression();
 		%feature("autodoc", "1");
 		ExprIntrp_StackIteratorOfStackOfGeneralExpression(const ExprIntrp_StackOfGeneralExpression &S);
@@ -892,6 +897,11 @@ class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 		%feature("autodoc", "1");
 		const Handle_Expr_GeneralExpression & Value() const;
 
+};
+%extend ExprIntrp_StackIteratorOfStackOfGeneralExpression {
+	~ExprIntrp_StackIteratorOfStackOfGeneralExpression() {
+	printf("Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralExpression\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_GenExp;
@@ -923,8 +933,6 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 %nodefaultctor ExprIntrp_Analysis;
 class ExprIntrp_Analysis {
 	public:
-		%feature("autodoc", "1");
-		~ExprIntrp_Analysis();
 		%feature("autodoc", "1");
 		ExprIntrp_Analysis();
 		%feature("autodoc", "1");
@@ -964,4 +972,9 @@ class ExprIntrp_Analysis {
 		%feature("autodoc", "1");
 		Handle_Expr_NamedFunction GetFunction(const TCollection_AsciiString &name);
 
+};
+%extend ExprIntrp_Analysis {
+	~ExprIntrp_Analysis() {
+	printf("Call custom destructor for instance of ExprIntrp_Analysis\n");
+	}
 };

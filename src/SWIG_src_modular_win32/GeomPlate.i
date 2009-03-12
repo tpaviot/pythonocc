@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GeomPlate
 
@@ -472,8 +458,6 @@ class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~GeomPlate_SequenceOfCurveConstraint();
-		%feature("autodoc", "1");
 		const GeomPlate_SequenceOfCurveConstraint & Assign(const GeomPlate_SequenceOfCurveConstraint &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_GeomPlate_CurveConstraint &T);
@@ -512,6 +496,11 @@ class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend GeomPlate_SequenceOfCurveConstraint {
+	~GeomPlate_SequenceOfCurveConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_SequenceOfCurveConstraint\n");
+	}
 };
 
 %nodefaultctor GeomPlate_HArray1OfSequenceOfReal;
@@ -622,8 +611,6 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 class GeomPlate_MakeApprox {
 	public:
 		%feature("autodoc", "1");
-		~GeomPlate_MakeApprox();
-		%feature("autodoc", "1");
 		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const AdvApp2Var_Criterion &PlateCrit, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
 		%feature("autodoc", "1");
 		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const Standard_Real dmax, const Standard_Integer CritOrder=0, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
@@ -634,6 +621,11 @@ class GeomPlate_MakeApprox {
 		%feature("autodoc", "1");
 		Standard_Real CriterionError() const;
 
+};
+%extend GeomPlate_MakeApprox {
+	~GeomPlate_MakeApprox() {
+	printf("Call custom destructor for instance of GeomPlate_MakeApprox\n");
+	}
 };
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
@@ -730,8 +722,6 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 class GeomPlate_BuildAveragePlane {
 	public:
 		%feature("autodoc", "1");
-		~GeomPlate_BuildAveragePlane();
-		%feature("autodoc", "1");
 		GeomPlate_BuildAveragePlane(const Handle_TColgp_HArray1OfPnt &Pts, const Standard_Integer NbBoundPoints, const Standard_Real Tol, const Standard_Integer POption, const Standard_Integer NOption);
 		%feature("autodoc", "1");
 		GeomPlate_BuildAveragePlane(const TColgp_SequenceOfVec &Normals, const Handle_TColgp_HArray1OfPnt &Pts);
@@ -748,6 +738,11 @@ class GeomPlate_BuildAveragePlane {
 		%feature("autodoc", "1");
 		Standard_Boolean HalfSpace(const TColgp_SequenceOfVec &NewNormals, TColgp_SequenceOfVec & Normals, GeomPlate_SequenceOfAij & Bset, const Standard_Real LinTol, const Standard_Real AngTol);
 
+};
+%extend GeomPlate_BuildAveragePlane {
+	~GeomPlate_BuildAveragePlane() {
+	printf("Call custom destructor for instance of GeomPlate_BuildAveragePlane\n");
+	}
 };
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
@@ -872,8 +867,6 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~GeomPlate_SequenceOfPointConstraint();
-		%feature("autodoc", "1");
 		const GeomPlate_SequenceOfPointConstraint & Assign(const GeomPlate_SequenceOfPointConstraint &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_GeomPlate_PointConstraint &T);
@@ -912,6 +905,11 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend GeomPlate_SequenceOfPointConstraint {
+	~GeomPlate_SequenceOfPointConstraint() {
+	printf("Call custom destructor for instance of GeomPlate_SequenceOfPointConstraint\n");
+	}
 };
 
 %nodefaultctor GeomPlate_PointConstraint;
@@ -1020,8 +1018,6 @@ class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
 class GeomPlate_BuildPlateSurface {
 	public:
 		%feature("autodoc", "1");
-		~GeomPlate_BuildPlateSurface();
-		%feature("autodoc", "1");
 		GeomPlate_BuildPlateSurface(const Handle_TColStd_HArray1OfInteger &NPoints, const Handle_GeomPlate_HArray1OfHCurveOnSurface &TabCurve, const Handle_TColStd_HArray1OfInteger &Tang, const Standard_Integer Degree, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
 		GeomPlate_BuildPlateSurface(const Handle_Geom_Surface &Surf, const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=10, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
@@ -1072,6 +1068,11 @@ class GeomPlate_BuildPlateSurface {
 		%feature("autodoc", "1");
 		Standard_Real G2Error(const Standard_Integer Index);
 
+};
+%extend GeomPlate_BuildPlateSurface {
+	~GeomPlate_BuildPlateSurface() {
+	printf("Call custom destructor for instance of GeomPlate_BuildPlateSurface\n");
+	}
 };
 
 %nodefaultctor GeomPlate_Aij;
@@ -1148,8 +1149,6 @@ class GeomPlate_Array1OfHCurveOnSurface {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~GeomPlate_Array1OfHCurveOnSurface();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const GeomPlate_Array1OfHCurveOnSurface & Assign(const GeomPlate_Array1OfHCurveOnSurface &Other);
@@ -1170,4 +1169,9 @@ class GeomPlate_Array1OfHCurveOnSurface {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurveOnSurface & operator()(const Standard_Integer Index);
 
+};
+%extend GeomPlate_Array1OfHCurveOnSurface {
+	~GeomPlate_Array1OfHCurveOnSurface() {
+	printf("Call custom destructor for instance of GeomPlate_Array1OfHCurveOnSurface\n");
+	}
 };

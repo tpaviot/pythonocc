@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepAP214
 
@@ -1261,9 +1247,12 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		virtual		Handle_StepShape_ShapeRepresentation ShapeRepresentation() const;
 		%feature("autodoc", "1");
 		virtual		Handle_StepBasic_SecurityClassification SecurityClassification() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_ApprovalItem();
 
+};
+%extend StepAP214_ApprovalItem {
+	~StepAP214_ApprovalItem() {
+	printf("Call custom destructor for instance of StepAP214_ApprovalItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_Array1OfAutoDesignPresentedItemSelect;
@@ -1311,9 +1300,12 @@ class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_PersonAndOrganizationItem();
 
+};
+%extend StepAP214_PersonAndOrganizationItem {
+	~StepAP214_PersonAndOrganizationItem() {
+	printf("Call custom destructor for instance of StepAP214_PersonAndOrganizationItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_ExternallyDefinedGeneralProperty;
@@ -1477,9 +1469,12 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		Handle_StepRepr_ExternallyDefinedRepresentation ExternallyDefinedRepresentation() const;
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignDocumentReference AutoDesignDocumentReference() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_AutoDesignGeneralOrgItem();
 
+};
+%extend StepAP214_AutoDesignGeneralOrgItem {
+	~StepAP214_AutoDesignGeneralOrgItem() {
+	printf("Call custom destructor for instance of StepAP214_AutoDesignGeneralOrgItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_Array1OfDateItem;
@@ -1543,9 +1538,12 @@ class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments ProductDefinitionWithAssociatedDocuments() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_AutoDesignDateAndPersonItem();
 
+};
+%extend StepAP214_AutoDesignDateAndPersonItem {
+	~StepAP214_AutoDesignDateAndPersonItem() {
+	printf("Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignNominalDateAndTimeAssignment;
@@ -1785,9 +1783,12 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		Handle_StepShape_ShapeRepresentation ShapeRepresentation() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_TemplateInstance TemplateInstance() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_AutoDesignGroupedItem();
 
+};
+%extend StepAP214_AutoDesignGroupedItem {
+	~StepAP214_AutoDesignGroupedItem() {
+	printf("Call custom destructor for instance of StepAP214_AutoDesignGroupedItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_HArray1OfDocumentReferenceItem;
@@ -1845,9 +1846,12 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_Effectivity Effectivity() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_DateItem();
 
+};
+%extend StepAP214_DateItem {
+	~StepAP214_DateItem() {
+	printf("Call custom destructor for instance of StepAP214_DateItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_SecurityClassificationItem;
@@ -2014,12 +2018,15 @@ class StepAP214_HArray1OfDateItem : public MMgt_TShared {
 class StepAP214 {
 	public:
 		%feature("autodoc", "1");
-		~StepAP214();
-		%feature("autodoc", "1");
 		StepAP214();
 		%feature("autodoc", "1");
 		Handle_StepAP214_Protocol Protocol();
 
+};
+%extend StepAP214 {
+	~StepAP214() {
+	printf("Call custom destructor for instance of StepAP214\n");
+	}
 };
 
 %nodefaultctor StepAP214_HArray1OfSecurityClassificationItem;
@@ -2343,9 +2350,12 @@ class StepAP214_AutoDesignReferencingItem : public StepData_SelectType {
 		Handle_StepRepr_RepresentationRelationship RepresentationRelationship() const;
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspect ShapeAspect() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_AutoDesignReferencingItem();
 
+};
+%extend StepAP214_AutoDesignReferencingItem {
+	~StepAP214_AutoDesignReferencingItem() {
+	printf("Call custom destructor for instance of StepAP214_AutoDesignReferencingItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AppliedDateAndTimeAssignment;
@@ -2405,9 +2415,12 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		Handle_StepRepr_ShapeAspect ShapeAspect() const;
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_DocumentReferenceItem();
 
+};
+%extend StepAP214_DocumentReferenceItem {
+	~StepAP214_DocumentReferenceItem() {
+	printf("Call custom destructor for instance of StepAP214_DocumentReferenceItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignPresentedItemSelect;
@@ -2429,9 +2442,12 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		Handle_StepRepr_ShapeAspect ShapeAspect() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentRelationship DocumentRelationship() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_AutoDesignPresentedItemSelect();
 
+};
+%extend StepAP214_AutoDesignPresentedItemSelect {
+	~StepAP214_AutoDesignPresentedItemSelect() {
+	printf("Call custom destructor for instance of StepAP214_AutoDesignPresentedItemSelect\n");
+	}
 };
 
 %nodefaultctor StepAP214_GroupItem;
@@ -2443,9 +2459,12 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		virtual		Handle_StepGeom_GeometricRepresentationItem GeometricRepresentationItem() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_GroupItem();
 
+};
+%extend StepAP214_GroupItem {
+	~StepAP214_GroupItem() {
+	printf("Call custom destructor for instance of StepAP214_GroupItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AppliedSecurityClassificationAssignment;
@@ -2679,9 +2698,12 @@ class StepAP214_AutoDesignOrganizationItem : public StepAP214_AutoDesignGeneralO
 		Handle_StepBasic_Document Document() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_PhysicallyModeledProductDefinition PhysicallyModeledProductDefinition() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_AutoDesignOrganizationItem();
 
+};
+%extend StepAP214_AutoDesignOrganizationItem {
+	~StepAP214_AutoDesignOrganizationItem() {
+	printf("Call custom destructor for instance of StepAP214_AutoDesignOrganizationItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignApprovalAssignment;
@@ -2731,9 +2753,12 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_Effectivity Effectivity() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_DateAndTimeItem();
 
+};
+%extend StepAP214_DateAndTimeItem {
+	~StepAP214_DateAndTimeItem() {
+	printf("Call custom destructor for instance of StepAP214_DateAndTimeItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_Array1OfExternalIdentificationItem;
@@ -3073,9 +3098,12 @@ class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
 		Handle_StepAP214_AutoDesignDateAndPersonAssignment AutoDesignDateAndPersonAssignment() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionEffectivity ProductDefinitionEffectivity() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_AutoDesignDateAndTimeItem();
 
+};
+%extend StepAP214_AutoDesignDateAndTimeItem {
+	~StepAP214_AutoDesignDateAndTimeItem() {
+	printf("Call custom destructor for instance of StepAP214_AutoDesignDateAndTimeItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_Array1OfDocumentReferenceItem;
@@ -3167,9 +3195,12 @@ class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 		Handle_StepAP214_AutoDesignDateAndPersonAssignment AutoDesignDateAndPersonAssignment() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionEffectivity ProductDefinitionEffectivity() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_AutoDesignDatedItem();
 
+};
+%extend StepAP214_AutoDesignDatedItem {
+	~StepAP214_AutoDesignDatedItem() {
+	printf("Call custom destructor for instance of StepAP214_AutoDesignDatedItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_Array1OfAutoDesignGeneralOrgItem;
@@ -3299,9 +3330,12 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		Handle_StepAP214_ExternallyDefinedGeneralProperty ExternallyDefinedGeneralProperty() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_ExternalIdentificationItem();
 
+};
+%extend StepAP214_ExternalIdentificationItem {
+	~StepAP214_ExternalIdentificationItem() {
+	printf("Call custom destructor for instance of StepAP214_ExternalIdentificationItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AppliedDateAssignment;
@@ -3379,9 +3413,12 @@ class StepAP214_PresentedItemSelect : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_PresentedItemSelect();
 
+};
+%extend StepAP214_PresentedItemSelect {
+	~StepAP214_PresentedItemSelect() {
+	printf("Call custom destructor for instance of StepAP214_PresentedItemSelect\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignActualDateAndTimeAssignment;
@@ -3495,9 +3532,12 @@ class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_Approval Approval() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP214_OrganizationItem();
 
+};
+%extend StepAP214_OrganizationItem {
+	~StepAP214_OrganizationItem() {
+	printf("Call custom destructor for instance of StepAP214_OrganizationItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_HArray1OfOrganizationItem;

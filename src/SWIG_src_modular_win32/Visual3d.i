@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Visual3d
 
@@ -799,8 +785,6 @@ class Handle_Visual3d_ContextPickDefinitionError : public Handle_Standard_OutOfR
 class Visual3d_SetIteratorOfSetOfLight {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_SetIteratorOfSetOfLight();
-		%feature("autodoc", "1");
 		Visual3d_SetIteratorOfSetOfLight();
 		%feature("autodoc", "1");
 		Visual3d_SetIteratorOfSetOfLight(const Visual3d_SetOfLight &S);
@@ -813,6 +797,11 @@ class Visual3d_SetIteratorOfSetOfLight {
 		%feature("autodoc", "1");
 		const Handle_Visual3d_Light & Value() const;
 
+};
+%extend Visual3d_SetIteratorOfSetOfLight {
+	~Visual3d_SetIteratorOfSetOfLight() {
+	printf("Call custom destructor for instance of Visual3d_SetIteratorOfSetOfLight\n");
+	}
 };
 
 %nodefaultctor Visual3d_ContextPick;
@@ -851,8 +840,6 @@ class Visual3d_SetListOfSetOfView {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Visual3d_SetListOfSetOfView();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_Visual3d_View &I);
@@ -883,6 +870,11 @@ class Visual3d_SetListOfSetOfView {
 		%feature("autodoc", "1");
 		void InsertAfter(Visual3d_SetListOfSetOfView & Other, Visual3d_ListIteratorOfSetListOfSetOfView & It);
 
+};
+%extend Visual3d_SetListOfSetOfView {
+	~Visual3d_SetListOfSetOfView() {
+	printf("Call custom destructor for instance of Visual3d_SetListOfSetOfView\n");
+	}
 };
 
 %nodefaultctor Visual3d_TransformError;
@@ -917,8 +909,6 @@ class Visual3d_TransformError : public Standard_OutOfRange {
 class Visual3d_PickPath {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_PickPath();
-		%feature("autodoc", "1");
 		Visual3d_PickPath();
 		%feature("autodoc", "1");
 		Visual3d_PickPath(const Standard_Integer AElemNumber, const Standard_Integer APickId, const Handle_Graphic3d_Structure &AStructure);
@@ -935,6 +925,11 @@ class Visual3d_PickPath {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Structure StructIdentifier() const;
 
+};
+%extend Visual3d_PickPath {
+	~Visual3d_PickPath() {
+	printf("Call custom destructor for instance of Visual3d_PickPath\n");
+	}
 };
 
 %nodefaultctor Visual3d_LayerDefinitionError;
@@ -1065,8 +1060,6 @@ class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
 class Visual3d_ContextView {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_ContextView();
-		%feature("autodoc", "1");
 		Visual3d_ContextView();
 		%feature("autodoc", "1");
 		void SetSurfaceDetail(const Visual3d_TypeOfSurfaceDetail TOSD);
@@ -1150,6 +1143,11 @@ class Visual3d_ContextView {
 		Handle_Graphic3d_TextureEnv TextureEnv() const;
 
 };
+%extend Visual3d_ContextView {
+	~Visual3d_ContextView() {
+	printf("Call custom destructor for instance of Visual3d_ContextView\n");
+	}
+};
 
 %nodefaultctor Visual3d_ListNodeOfSetListOfSetOfClipPlane;
 class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
@@ -1177,8 +1175,6 @@ class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
 class Visual3d_ListIteratorOfSetListOfSetOfLight {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_ListIteratorOfSetListOfSetOfLight();
-		%feature("autodoc", "1");
 		Visual3d_ListIteratorOfSetListOfSetOfLight();
 		%feature("autodoc", "1");
 		Visual3d_ListIteratorOfSetListOfSetOfLight(const Visual3d_SetListOfSetOfLight &L);
@@ -1191,6 +1187,11 @@ class Visual3d_ListIteratorOfSetListOfSetOfLight {
 		%feature("autodoc", "1");
 		Handle_Visual3d_Light & Value() const;
 
+};
+%extend Visual3d_ListIteratorOfSetListOfSetOfLight {
+	~Visual3d_ListIteratorOfSetListOfSetOfLight() {
+	printf("Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfLight\n");
+	}
 };
 
 %nodefaultctor Visual3d_ListNodeOfSetListOfSetOfLight;
@@ -1283,8 +1284,6 @@ class Visual3d_SetListOfSetOfLight {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Visual3d_SetListOfSetOfLight();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_Visual3d_Light &I);
@@ -1315,6 +1314,11 @@ class Visual3d_SetListOfSetOfLight {
 		%feature("autodoc", "1");
 		void InsertAfter(Visual3d_SetListOfSetOfLight & Other, Visual3d_ListIteratorOfSetListOfSetOfLight & It);
 
+};
+%extend Visual3d_SetListOfSetOfLight {
+	~Visual3d_SetListOfSetOfLight() {
+	printf("Call custom destructor for instance of Visual3d_SetListOfSetOfLight\n");
+	}
 };
 
 %nodefaultctor Visual3d_ListNodeOfSetListOfSetOfView;
@@ -1351,8 +1355,6 @@ class Visual3d_SetListOfSetOfClipPlane {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Visual3d_SetListOfSetOfClipPlane();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_Visual3d_ClipPlane &I);
@@ -1383,6 +1385,11 @@ class Visual3d_SetListOfSetOfClipPlane {
 		%feature("autodoc", "1");
 		void InsertAfter(Visual3d_SetListOfSetOfClipPlane & Other, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
 
+};
+%extend Visual3d_SetListOfSetOfClipPlane {
+	~Visual3d_SetListOfSetOfClipPlane() {
+	printf("Call custom destructor for instance of Visual3d_SetListOfSetOfClipPlane\n");
+	}
 };
 
 %nodefaultctor Visual3d_HSetOfView;
@@ -1437,8 +1444,6 @@ class Visual3d_HSetOfView : public MMgt_TShared {
 class Visual3d_SetIteratorOfSetOfClipPlane {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_SetIteratorOfSetOfClipPlane();
-		%feature("autodoc", "1");
 		Visual3d_SetIteratorOfSetOfClipPlane();
 		%feature("autodoc", "1");
 		Visual3d_SetIteratorOfSetOfClipPlane(const Visual3d_SetOfClipPlane &S);
@@ -1451,6 +1456,11 @@ class Visual3d_SetIteratorOfSetOfClipPlane {
 		%feature("autodoc", "1");
 		const Handle_Visual3d_ClipPlane & Value() const;
 
+};
+%extend Visual3d_SetIteratorOfSetOfClipPlane {
+	~Visual3d_SetIteratorOfSetOfClipPlane() {
+	printf("Call custom destructor for instance of Visual3d_SetIteratorOfSetOfClipPlane\n");
+	}
 };
 
 %nodefaultctor Visual3d_ViewManager;
@@ -1597,8 +1607,6 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 class Visual3d_PickDescriptor {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_PickDescriptor();
-		%feature("autodoc", "1");
 		Visual3d_PickDescriptor(const Visual3d_ContextPick &CTX);
 		%feature("autodoc", "1");
 		void AddPickPath(const Visual3d_PickPath &APickPath);
@@ -1615,6 +1623,11 @@ class Visual3d_PickDescriptor {
 		%feature("autodoc", "1");
 		Standard_Integer TopElementNumber() const;
 
+};
+%extend Visual3d_PickDescriptor {
+	~Visual3d_PickDescriptor() {
+	printf("Call custom destructor for instance of Visual3d_PickDescriptor\n");
+	}
 };
 
 %nodefaultctor Visual3d_ClipDefinitionError;
@@ -1855,8 +1868,6 @@ class Visual3d_Light : public MMgt_TShared {
 class Visual3d_ListIteratorOfSetListOfSetOfView {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_ListIteratorOfSetListOfSetOfView();
-		%feature("autodoc", "1");
 		Visual3d_ListIteratorOfSetListOfSetOfView();
 		%feature("autodoc", "1");
 		Visual3d_ListIteratorOfSetListOfSetOfView(const Visual3d_SetListOfSetOfView &L);
@@ -1870,12 +1881,15 @@ class Visual3d_ListIteratorOfSetListOfSetOfView {
 		Handle_Visual3d_View & Value() const;
 
 };
+%extend Visual3d_ListIteratorOfSetListOfSetOfView {
+	~Visual3d_ListIteratorOfSetListOfSetOfView() {
+	printf("Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfView\n");
+	}
+};
 
 %nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfClipPlane;
 class Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
 	public:
-		%feature("autodoc", "1");
-		~Visual3d_ListIteratorOfSetListOfSetOfClipPlane();
 		%feature("autodoc", "1");
 		Visual3d_ListIteratorOfSetListOfSetOfClipPlane();
 		%feature("autodoc", "1");
@@ -1889,6 +1903,11 @@ class Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
 		%feature("autodoc", "1");
 		Handle_Visual3d_ClipPlane & Value() const;
 
+};
+%extend Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
+	~Visual3d_ListIteratorOfSetListOfSetOfClipPlane() {
+	printf("Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfClipPlane\n");
+	}
 };
 
 %nodefaultctor Visual3d_HSetOfLight;
@@ -2023,8 +2042,6 @@ class Visual3d_SetOfLight {
 class Visual3d_SetIteratorOfSetOfView {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_SetIteratorOfSetOfView();
-		%feature("autodoc", "1");
 		Visual3d_SetIteratorOfSetOfView();
 		%feature("autodoc", "1");
 		Visual3d_SetIteratorOfSetOfView(const Visual3d_SetOfView &S);
@@ -2037,6 +2054,11 @@ class Visual3d_SetIteratorOfSetOfView {
 		%feature("autodoc", "1");
 		const Handle_Visual3d_View & Value() const;
 
+};
+%extend Visual3d_SetIteratorOfSetOfView {
+	~Visual3d_SetIteratorOfSetOfView() {
+	printf("Call custom destructor for instance of Visual3d_SetIteratorOfSetOfView\n");
+	}
 };
 
 %nodefaultctor Visual3d_View;

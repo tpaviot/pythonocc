@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module MAT2d
 
@@ -714,8 +700,6 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 class MAT2d_Tool2d {
 	public:
 		%feature("autodoc", "1");
-		~MAT2d_Tool2d();
-		%feature("autodoc", "1");
 		MAT2d_Tool2d();
 		%feature("autodoc", "1");
 		void Sense(const MAT_Side aside);
@@ -760,6 +744,11 @@ class MAT2d_Tool2d {
 		%feature("autodoc", "1");
 		Bisector_Bisec & ChangeGeomBis(const Standard_Integer Index);
 
+};
+%extend MAT2d_Tool2d {
+	~MAT2d_Tool2d() {
+	printf("Call custom destructor for instance of MAT2d_Tool2d\n");
+	}
 };
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfBoolean;
@@ -846,8 +835,6 @@ class MAT2d_Array2OfConnexion {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~MAT2d_Array2OfConnexion();
-		%feature("autodoc", "1");
 		const MAT2d_Array2OfConnexion & Assign(const MAT2d_Array2OfConnexion &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -872,6 +859,11 @@ class MAT2d_Array2OfConnexion {
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend MAT2d_Array2OfConnexion {
+	~MAT2d_Array2OfConnexion() {
+	printf("Call custom destructor for instance of MAT2d_Array2OfConnexion\n");
+	}
 };
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
@@ -1058,8 +1050,6 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode 
 class MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion();
-		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion();
 		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion(const MAT2d_DataMapOfIntegerConnexion &aMap);
@@ -1070,6 +1060,11 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion : public TCollection_Basi
 		%feature("autodoc", "1");
 		const Handle_MAT2d_Connexion & Value() const;
 
+};
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion {
+	~MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion() {
+	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion\n");
+	}
 };
 
 %nodefaultctor MAT2d_Connexion;
@@ -1230,8 +1225,6 @@ class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MAT2d_DataMapOfIntegerConnexion();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT2d_Connexion &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1246,6 +1239,11 @@ class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion & operator()(const Standard_Integer &K);
 
+};
+%extend MAT2d_DataMapOfIntegerConnexion {
+	~MAT2d_DataMapOfIntegerConnexion() {
+	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerConnexion\n");
+	}
 };
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntInteger;
@@ -1356,8 +1354,6 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMap
 class MAT2d_MiniPath {
 	public:
 		%feature("autodoc", "1");
-		~MAT2d_MiniPath();
-		%feature("autodoc", "1");
 		MAT2d_MiniPath();
 		%feature("autodoc", "1");
 		void Perform(const MAT2d_SequenceOfSequenceOfGeometry &Figure, const Standard_Integer IndStart, const Standard_Boolean Sense);
@@ -1374,6 +1370,11 @@ class MAT2d_MiniPath {
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion Father(const Standard_Integer Index);
 
+};
+%extend MAT2d_MiniPath {
+	~MAT2d_MiniPath() {
+	printf("Call custom destructor for instance of MAT2d_MiniPath\n");
+	}
 };
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
@@ -1407,8 +1408,6 @@ class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
 		MAT2d_SequenceOfConnexion();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_SequenceOfConnexion();
 		%feature("autodoc", "1");
 		const MAT2d_SequenceOfConnexion & Assign(const MAT2d_SequenceOfConnexion &Other);
 		%feature("autodoc", "1");
@@ -1449,12 +1448,15 @@ class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MAT2d_SequenceOfConnexion {
+	~MAT2d_SequenceOfConnexion() {
+	printf("Call custom destructor for instance of MAT2d_SequenceOfConnexion\n");
+	}
+};
 
 %nodefaultctor MAT2d_Mat2d;
 class MAT2d_Mat2d {
 	public:
-		%feature("autodoc", "1");
-		~MAT2d_Mat2d();
 		%feature("autodoc", "1");
 		MAT2d_Mat2d();
 		%feature("autodoc", "1");
@@ -1474,4 +1476,9 @@ class MAT2d_Mat2d {
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfBisectors() const;
 
+};
+%extend MAT2d_Mat2d {
+	~MAT2d_Mat2d() {
+	printf("Call custom destructor for instance of MAT2d_Mat2d\n");
+	}
 };

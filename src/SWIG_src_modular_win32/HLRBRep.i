@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module HLRBRep
 
@@ -318,8 +304,6 @@ class Handle_HLRBRep_ListNodeOfListOfBPnt2D : public Handle_TCollection_MapNode 
 class HLRBRep_BCurveTool {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_BCurveTool();
-		%feature("autodoc", "1");
 		HLRBRep_BCurveTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
@@ -382,6 +366,11 @@ class HLRBRep_BCurveTool {
 		%feature("autodoc", "1");
 		Standard_Integer NbSamples(const BRepAdaptor_Curve &C, const Standard_Real U0, const Standard_Real U1);
 
+};
+%extend HLRBRep_BCurveTool {
+	~HLRBRep_BCurveTool() {
+	printf("Call custom destructor for instance of HLRBRep_BCurveTool\n");
+	}
 };
 
 %nodefaultctor HLRBRep_CInter;
@@ -782,8 +771,6 @@ class HLRBRep_TheProjPCurOfCInter {
 class HLRBRep_BSurfaceTool {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_BSurfaceTool();
-		%feature("autodoc", "1");
 		HLRBRep_BSurfaceTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstUParameter(const BRepAdaptor_Surface &Surf);
@@ -884,6 +871,11 @@ class HLRBRep_BSurfaceTool {
 		%feature("autodoc", "1");
 		Standard_Integer NbSamplesV(const BRepAdaptor_Surface &S, const Standard_Real v1, const Standard_Real v2);
 
+};
+%extend HLRBRep_BSurfaceTool {
+	~HLRBRep_BSurfaceTool() {
+	printf("Call custom destructor for instance of HLRBRep_BSurfaceTool\n");
+	}
 };
 
 %nodefaultctor HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter;
@@ -1174,8 +1166,6 @@ class HLRBRep_EdgeInterferenceTool {
 class HLRBRep_LineTool {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_LineTool();
-		%feature("autodoc", "1");
 		HLRBRep_LineTool();
 		%feature("autodoc", "1");
 		Standard_Integer NbIntervals(const gp_Lin &arg0, const GeomAbs_Shape arg1);
@@ -1209,17 +1199,25 @@ class HLRBRep_LineTool {
 		void SamplePars(const gp_Lin &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
 
 };
+%extend HLRBRep_LineTool {
+	~HLRBRep_LineTool() {
+	printf("Call custom destructor for instance of HLRBRep_LineTool\n");
+	}
+};
 
 %nodefaultctor HLRBRep_ShapeToHLR;
 class HLRBRep_ShapeToHLR {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_ShapeToHLR();
-		%feature("autodoc", "1");
 		HLRBRep_ShapeToHLR();
 		%feature("autodoc", "1");
 		Handle_HLRBRep_Data Load(const Handle_HLRTopoBRep_OutLiner &S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
 
+};
+%extend HLRBRep_ShapeToHLR {
+	~HLRBRep_ShapeToHLR() {
+	printf("Call custom destructor for instance of HLRBRep_ShapeToHLR\n");
+	}
 };
 
 %nodefaultctor HLRBRep;
@@ -1239,8 +1237,6 @@ class HLRBRep {
 %nodefaultctor HLRBRep_FaceIterator;
 class HLRBRep_FaceIterator {
 	public:
-		%feature("autodoc", "1");
-		~HLRBRep_FaceIterator();
 		%feature("autodoc", "1");
 		HLRBRep_FaceIterator();
 		%feature("autodoc", "1");
@@ -1270,6 +1266,11 @@ class HLRBRep_FaceIterator {
 		%feature("autodoc", "1");
 		Standard_Boolean IsoLine() const;
 
+};
+%extend HLRBRep_FaceIterator {
+	~HLRBRep_FaceIterator() {
+	printf("Call custom destructor for instance of HLRBRep_FaceIterator\n");
+	}
 };
 
 %nodefaultctor HLRBRep_ListNodeOfListOfBPoint;
@@ -2084,8 +2085,6 @@ class HLRBRep_TheExactInterCSurf {
 class HLRBRep_ThePolyhedronToolOfInterCSurf {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_ThePolyhedronToolOfInterCSurf();
-		%feature("autodoc", "1");
 		HLRBRep_ThePolyhedronToolOfInterCSurf();
 		%feature("autodoc", "1");
 		const Bnd_Box & Bounding(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
@@ -2108,6 +2107,11 @@ class HLRBRep_ThePolyhedronToolOfInterCSurf {
 		%feature("autodoc", "1");
 		void Dump(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 
+};
+%extend HLRBRep_ThePolyhedronToolOfInterCSurf {
+	~HLRBRep_ThePolyhedronToolOfInterCSurf() {
+	printf("Call custom destructor for instance of HLRBRep_ThePolyhedronToolOfInterCSurf\n");
+	}
 };
 
 %nodefaultctor HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
@@ -2158,8 +2162,6 @@ class HLRBRep_SLPropsATool {
 class HLRBRep_ShapeBounds {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_ShapeBounds();
-		%feature("autodoc", "1");
 		HLRBRep_ShapeBounds();
 		%feature("autodoc", "1");
 		HLRBRep_ShapeBounds(const Handle_HLRTopoBRep_OutLiner &S, const Handle_MMgt_TShared &SData, const Standard_Integer nbIso, const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer E1, const Standard_Integer E2, const Standard_Integer F1, const Standard_Integer F2);
@@ -2188,6 +2190,11 @@ class HLRBRep_ShapeBounds {
 		%feature("autodoc", "1");
 		Standard_Address MinMax() const;
 
+};
+%extend HLRBRep_ShapeBounds {
+	~HLRBRep_ShapeBounds() {
+	printf("Call custom destructor for instance of HLRBRep_ShapeBounds\n");
+	}
 };
 
 %nodefaultctor HLRBRep_ListNodeOfListOfBPnt2D;
@@ -2286,8 +2293,6 @@ class HLRBRep_TheQuadCurvExactInterCSurf {
 class HLRBRep_CurveTool {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_CurveTool();
-		%feature("autodoc", "1");
 		HLRBRep_CurveTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const Standard_Address C);
@@ -2346,6 +2351,11 @@ class HLRBRep_CurveTool {
 		%feature("autodoc", "1");
 		Standard_Integer NbSamples(const Standard_Address C);
 
+};
+%extend HLRBRep_CurveTool {
+	~HLRBRep_CurveTool() {
+	printf("Call custom destructor for instance of HLRBRep_CurveTool\n");
+	}
 };
 
 %nodefaultctor HLRBRep_TheCSFunctionOfInterCSurf;
@@ -2488,8 +2498,6 @@ class HLRBRep_BiPoint {
 class HLRBRep_FaceData {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_FaceData();
-		%feature("autodoc", "1");
 		HLRBRep_FaceData();
 		%feature("autodoc", "1");
 		void Set(const TopoDS_Face &FG, const TopAbs_Orientation Or, const Standard_Boolean Cl, const Standard_Integer NW);
@@ -2564,6 +2572,11 @@ class HLRBRep_FaceData {
 		%feature("autodoc", "1");
 		Standard_ShortReal Tolerance() const;
 
+};
+%extend HLRBRep_FaceData {
+	~HLRBRep_FaceData() {
+	printf("Call custom destructor for instance of HLRBRep_FaceData\n");
+	}
 };
 
 %nodefaultctor HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter;
@@ -2672,8 +2685,6 @@ class HLRBRep_Surface {
 class HLRBRep_SurfaceTool {
 	public:
 		%feature("autodoc", "1");
-		~HLRBRep_SurfaceTool();
-		%feature("autodoc", "1");
 		HLRBRep_SurfaceTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstUParameter(const Standard_Address Surf);
@@ -2759,6 +2770,11 @@ class HLRBRep_SurfaceTool {
 		Standard_Integer NbSamplesV(const Standard_Address S, const Standard_Real v1, const Standard_Real v2);
 
 };
+%extend HLRBRep_SurfaceTool {
+	~HLRBRep_SurfaceTool() {
+	printf("Call custom destructor for instance of HLRBRep_SurfaceTool\n");
+	}
+};
 
 %nodefaultctor HLRBRep_EdgeIList;
 class HLRBRep_EdgeIList {
@@ -2815,9 +2831,12 @@ class HLRBRep_EdgeBuilder {
 		TopAbs_Orientation Orientation() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~HLRBRep_EdgeBuilder();
 
+};
+%extend HLRBRep_EdgeBuilder {
+	~HLRBRep_EdgeBuilder() {
+	printf("Call custom destructor for instance of HLRBRep_EdgeBuilder\n");
+	}
 };
 
 %nodefaultctor HLRBRep_Data;

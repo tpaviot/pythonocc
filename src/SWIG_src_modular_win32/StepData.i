@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepData
 
@@ -1080,8 +1066,6 @@ class StepData_FileRecognizer : public Standard_Transient {
 class StepData_Field {
 	public:
 		%feature("autodoc", "1");
-		~StepData_Field();
-		%feature("autodoc", "1");
 		StepData_Field();
 		%feature("autodoc", "1");
 		StepData_Field(const StepData_Field &other, const Standard_Boolean copy=0);
@@ -1168,6 +1152,11 @@ class StepData_Field {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Transient() const;
 
+};
+%extend StepData_Field {
+	~StepData_Field() {
+	printf("Call custom destructor for instance of StepData_Field\n");
+	}
 };
 
 %nodefaultctor StepData_EnumTool;
@@ -1650,8 +1639,6 @@ class StepData_SelectNamed : public StepData_SelectMember {
 class StepData {
 	public:
 		%feature("autodoc", "1");
-		~StepData();
-		%feature("autodoc", "1");
 		StepData();
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol HeaderProtocol();
@@ -1662,6 +1649,11 @@ class StepData {
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol Protocol();
 
+};
+%extend StepData {
+	~StepData() {
+	printf("Call custom destructor for instance of StepData\n");
+	}
 };
 
 %nodefaultctor StepData_EDescr;
@@ -1800,8 +1792,6 @@ class StepData_SelectArrReal : public StepData_SelectNamed {
 class StepData_HeaderTool {
 	public:
 		%feature("autodoc", "1");
-		~StepData_HeaderTool();
-		%feature("autodoc", "1");
 		StepData_HeaderTool(const Handle_StepData_StepReaderData &data);
 		%feature("autodoc", "1");
 		StepData_HeaderTool(const TColStd_SequenceOfAsciiString &names);
@@ -1824,6 +1814,11 @@ class StepData_HeaderTool {
 		%feature("autodoc", "1");
 		void Print(Standard_OStream & S) const;
 
+};
+%extend StepData_HeaderTool {
+	~StepData_HeaderTool() {
+	printf("Call custom destructor for instance of StepData_HeaderTool\n");
+	}
 };
 
 %nodefaultctor StepData_Described;
@@ -1938,8 +1933,6 @@ class StepData_HArray1OfField : public MMgt_TShared {
 class StepData_WriterLib {
 	public:
 		%feature("autodoc", "1");
-		~StepData_WriterLib();
-		%feature("autodoc", "1");
 		void SetGlobal(const Handle_StepData_ReadWriteModule &amodule, const Handle_StepData_Protocol &aprotocol);
 		%feature("autodoc", "1");
 		StepData_WriterLib(const Handle_StepData_Protocol &aprotocol);
@@ -1965,12 +1958,15 @@ class StepData_WriterLib {
 		const Handle_StepData_Protocol & Protocol() const;
 
 };
+%extend StepData_WriterLib {
+	~StepData_WriterLib() {
+	printf("Call custom destructor for instance of StepData_WriterLib\n");
+	}
+};
 
 %nodefaultctor StepData_StepWriter;
 class StepData_StepWriter {
 	public:
-		%feature("autodoc", "1");
-		~StepData_StepWriter();
 		%feature("autodoc", "1");
 		StepData_StepWriter(const Handle_StepData_StepModel &amodel);
 		%feature("autodoc", "1");
@@ -2070,6 +2066,11 @@ class StepData_StepWriter {
 		%feature("autodoc", "1");
 		Standard_Boolean Print(Standard_OStream & S);
 
+};
+%extend StepData_StepWriter {
+	~StepData_StepWriter() {
+	printf("Call custom destructor for instance of StepData_StepWriter\n");
+	}
 };
 
 %nodefaultctor StepData_Plex;
@@ -2232,6 +2233,11 @@ class StepData_SelectType {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 
+};
+%extend StepData_SelectType {
+	~StepData_SelectType() {
+	printf("Call custom destructor for instance of StepData_SelectType\n");
+	}
 };
 
 %nodefaultctor StepData_UndefinedEntity;

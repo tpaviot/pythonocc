@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepVisual
 
@@ -2143,9 +2129,12 @@ class StepVisual_SurfaceStyleElementSelect : public StepData_SelectType {
 		Handle_StepVisual_SurfaceStyleBoundary SurfaceStyleBoundary() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleParameterLine SurfaceStyleParameterLine() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_SurfaceStyleElementSelect();
 
+};
+%extend StepVisual_SurfaceStyleElementSelect {
+	~StepVisual_SurfaceStyleElementSelect() {
+	printf("Call custom destructor for instance of StepVisual_SurfaceStyleElementSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_CameraUsage;
@@ -2220,8 +2209,6 @@ class StepVisual_Array1OfCurveStyleFontPattern {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfCurveStyleFontPattern();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfCurveStyleFontPattern & Assign(const StepVisual_Array1OfCurveStyleFontPattern &Other);
@@ -2242,6 +2229,11 @@ class StepVisual_Array1OfCurveStyleFontPattern {
 		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyleFontPattern & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfCurveStyleFontPattern {
+	~StepVisual_Array1OfCurveStyleFontPattern() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfCurveStyleFontPattern\n");
+	}
 };
 
 %nodefaultctor StepVisual_Array1OfStyleContextSelect;
@@ -2361,9 +2353,12 @@ class StepVisual_PresentationRepresentationSelect : public StepData_SelectType {
 		Handle_StepVisual_PresentationRepresentation PresentationRepresentation() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationSet PresentationSet() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationRepresentationSelect();
 
+};
+%extend StepVisual_PresentationRepresentationSelect {
+	~StepVisual_PresentationRepresentationSelect() {
+	printf("Call custom destructor for instance of StepVisual_PresentationRepresentationSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_HArray1OfStyleContextSelect;
@@ -2987,9 +2982,12 @@ class StepVisual_PresentationSizeAssignmentSelect : public StepData_SelectType {
 		Handle_StepVisual_PresentationArea PresentationArea() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_AreaInSet AreaInSet() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationSizeAssignmentSelect();
 
+};
+%extend StepVisual_PresentationSizeAssignmentSelect {
+	~StepVisual_PresentationSizeAssignmentSelect() {
+	printf("Call custom destructor for instance of StepVisual_PresentationSizeAssignmentSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_PointStyle;
@@ -3135,9 +3133,12 @@ class StepVisual_MarkerSelect : public StepData_SelectType {
 		virtual		Standard_Integer CaseMem(const Handle_StepData_SelectMember &sm) const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_MarkerMember MarkerMember() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_MarkerSelect();
 
+};
+%extend StepVisual_MarkerSelect {
+	~StepVisual_MarkerSelect() {
+	printf("Call custom destructor for instance of StepVisual_MarkerSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_SurfaceStyleParameterLine;
@@ -3257,9 +3258,12 @@ class StepVisual_PresentationStyleSelect : public StepData_SelectType {
 		Handle_StepVisual_CurveStyle CurveStyle() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleUsage SurfaceStyleUsage() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_PresentationStyleSelect();
 
+};
+%extend StepVisual_PresentationStyleSelect {
+	~StepVisual_PresentationStyleSelect() {
+	printf("Call custom destructor for instance of StepVisual_PresentationStyleSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_ExternallyDefinedCurveFont;
@@ -3497,9 +3501,12 @@ class StepVisual_InvisibleItem : public StepData_SelectType {
 		Handle_StepVisual_PresentationLayerAssignment PresentationLayerAssignment() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationRepresentation PresentationRepresentation() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_InvisibleItem();
 
+};
+%extend StepVisual_InvisibleItem {
+	~StepVisual_InvisibleItem() {
+	printf("Call custom destructor for instance of StepVisual_InvisibleItem\n");
+	}
 };
 
 %nodefaultctor StepVisual_PresentationView;
@@ -4011,9 +4018,12 @@ class StepVisual_StyleContextSelect : public StepData_SelectType {
 		Handle_StepRepr_RepresentationItem RepresentationItem() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationSet PresentationSet() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_StyleContextSelect();
 
+};
+%extend StepVisual_StyleContextSelect {
+	~StepVisual_StyleContextSelect() {
+	printf("Call custom destructor for instance of StepVisual_StyleContextSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_AreaInSet;
@@ -4079,9 +4089,12 @@ class StepVisual_CurveStyleFontSelect : public StepData_SelectType {
 		Handle_StepVisual_PreDefinedCurveFont PreDefinedCurveFont() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_ExternallyDefinedCurveFont ExternallyDefinedCurveFont() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_CurveStyleFontSelect();
 
+};
+%extend StepVisual_CurveStyleFontSelect {
+	~StepVisual_CurveStyleFontSelect() {
+	printf("Call custom destructor for instance of StepVisual_CurveStyleFontSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_Template;
@@ -4116,8 +4129,6 @@ class StepVisual_Array1OfPresentationStyleAssignment {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfPresentationStyleAssignment();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfPresentationStyleAssignment & Assign(const StepVisual_Array1OfPresentationStyleAssignment &Other);
@@ -4139,6 +4150,11 @@ class StepVisual_Array1OfPresentationStyleAssignment {
 		Handle_StepVisual_PresentationStyleAssignment & operator()(const Standard_Integer Index);
 
 };
+%extend StepVisual_Array1OfPresentationStyleAssignment {
+	~StepVisual_Array1OfPresentationStyleAssignment() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfPresentationStyleAssignment\n");
+	}
+};
 
 %nodefaultctor StepVisual_LayeredItem;
 class StepVisual_LayeredItem : public StepData_SelectType {
@@ -4151,9 +4167,12 @@ class StepVisual_LayeredItem : public StepData_SelectType {
 		Handle_StepVisual_PresentationRepresentation PresentationRepresentation() const;
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationItem RepresentationItem() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_LayeredItem();
 
+};
+%extend StepVisual_LayeredItem {
+	~StepVisual_LayeredItem() {
+	printf("Call custom destructor for instance of StepVisual_LayeredItem\n");
+	}
 };
 
 %nodefaultctor StepVisual_FillAreaStyle;
@@ -4459,9 +4478,12 @@ class StepVisual_FontSelect : public StepData_SelectType {
 		Handle_StepVisual_PreDefinedTextFont PreDefinedTextFont() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_ExternallyDefinedTextFont ExternallyDefinedTextFont() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_FontSelect();
 
+};
+%extend StepVisual_FontSelect {
+	~StepVisual_FontSelect() {
+	printf("Call custom destructor for instance of StepVisual_FontSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_Array1OfPresentationStyleSelect;
@@ -4855,9 +4877,12 @@ class StepVisual_FillStyleSelect : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_FillAreaStyleColour FillAreaStyleColour() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_FillStyleSelect();
 
+};
+%extend StepVisual_FillStyleSelect {
+	~StepVisual_FillStyleSelect() {
+	printf("Call custom destructor for instance of StepVisual_FillStyleSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_DraughtingModel;
@@ -4891,9 +4916,12 @@ class StepVisual_AreaOrView : public StepData_SelectType {
 		Handle_StepVisual_PresentationArea PresentationArea() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationView PresentationView() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_AreaOrView();
 
+};
+%extend StepVisual_AreaOrView {
+	~StepVisual_AreaOrView() {
+	printf("Call custom destructor for instance of StepVisual_AreaOrView\n");
+	}
 };
 
 %nodefaultctor StepVisual_DraughtingAnnotationOccurrence;
@@ -4927,9 +4955,12 @@ class StepVisual_InvisibilityContext : public StepData_SelectType {
 		Handle_StepVisual_PresentationRepresentation PresentationRepresentation() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationSet PresentationSet() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_InvisibilityContext();
 
+};
+%extend StepVisual_InvisibilityContext {
+	~StepVisual_InvisibilityContext() {
+	printf("Call custom destructor for instance of StepVisual_InvisibilityContext\n");
+	}
 };
 
 %nodefaultctor StepVisual_TextOrCharacter;
@@ -4945,9 +4976,12 @@ class StepVisual_TextOrCharacter : public StepData_SelectType {
 		Handle_StepVisual_CompositeText CompositeText() const;
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextLiteral TextLiteral() const;
-		%feature("autodoc", "1");
-		virtual		~StepVisual_TextOrCharacter();
 
+};
+%extend StepVisual_TextOrCharacter {
+	~StepVisual_TextOrCharacter() {
+	printf("Call custom destructor for instance of StepVisual_TextOrCharacter\n");
+	}
 };
 
 %nodefaultctor StepVisual_HArray1OfBoxCharacteristicSelect;

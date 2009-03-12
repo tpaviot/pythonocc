@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module MAT
 
@@ -523,8 +509,6 @@ class MAT_DataMapOfIntegerBasicElt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MAT_DataMapOfIntegerBasicElt();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT_BasicElt &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -539,6 +523,11 @@ class MAT_DataMapOfIntegerBasicElt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt & operator()(const Standard_Integer &K);
 
+};
+%extend MAT_DataMapOfIntegerBasicElt {
+	~MAT_DataMapOfIntegerBasicElt() {
+	printf("Call custom destructor for instance of MAT_DataMapOfIntegerBasicElt\n");
+	}
 };
 
 %nodefaultctor MAT_SequenceNodeOfSequenceOfArc;
@@ -621,8 +610,6 @@ class MAT_DataMapOfIntegerBisector : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MAT_DataMapOfIntegerBisector();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT_Bisector &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -638,12 +625,15 @@ class MAT_DataMapOfIntegerBisector : public TCollection_BasicMap {
 		Handle_MAT_Bisector & operator()(const Standard_Integer &K);
 
 };
+%extend MAT_DataMapOfIntegerBisector {
+	~MAT_DataMapOfIntegerBisector() {
+	printf("Call custom destructor for instance of MAT_DataMapOfIntegerBisector\n");
+	}
+};
 
 %nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerArc;
 class MAT_DataMapIteratorOfDataMapOfIntegerArc : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MAT_DataMapIteratorOfDataMapOfIntegerArc();
 		%feature("autodoc", "1");
 		MAT_DataMapIteratorOfDataMapOfIntegerArc();
 		%feature("autodoc", "1");
@@ -655,6 +645,11 @@ class MAT_DataMapIteratorOfDataMapOfIntegerArc : public TCollection_BasicMapIter
 		%feature("autodoc", "1");
 		const Handle_MAT_Arc & Value() const;
 
+};
+%extend MAT_DataMapIteratorOfDataMapOfIntegerArc {
+	~MAT_DataMapIteratorOfDataMapOfIntegerArc() {
+	printf("Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerArc\n");
+	}
 };
 
 %nodefaultctor MAT_TListNodeOfListOfBisector;
@@ -869,8 +864,6 @@ class MAT_SequenceOfArc : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MAT_SequenceOfArc();
-		%feature("autodoc", "1");
 		const MAT_SequenceOfArc & Assign(const MAT_SequenceOfArc &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_MAT_Arc &T);
@@ -910,12 +903,15 @@ class MAT_SequenceOfArc : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MAT_SequenceOfArc {
+	~MAT_SequenceOfArc() {
+	printf("Call custom destructor for instance of MAT_SequenceOfArc\n");
+	}
+};
 
 %nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerBasicElt;
 class MAT_DataMapIteratorOfDataMapOfIntegerBasicElt : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MAT_DataMapIteratorOfDataMapOfIntegerBasicElt();
 		%feature("autodoc", "1");
 		MAT_DataMapIteratorOfDataMapOfIntegerBasicElt();
 		%feature("autodoc", "1");
@@ -928,12 +924,15 @@ class MAT_DataMapIteratorOfDataMapOfIntegerBasicElt : public TCollection_BasicMa
 		const Handle_MAT_BasicElt & Value() const;
 
 };
+%extend MAT_DataMapIteratorOfDataMapOfIntegerBasicElt {
+	~MAT_DataMapIteratorOfDataMapOfIntegerBasicElt() {
+	printf("Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerBasicElt\n");
+	}
+};
 
 %nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerBisector;
 class MAT_DataMapIteratorOfDataMapOfIntegerBisector : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MAT_DataMapIteratorOfDataMapOfIntegerBisector();
 		%feature("autodoc", "1");
 		MAT_DataMapIteratorOfDataMapOfIntegerBisector();
 		%feature("autodoc", "1");
@@ -945,6 +944,11 @@ class MAT_DataMapIteratorOfDataMapOfIntegerBisector : public TCollection_BasicMa
 		%feature("autodoc", "1");
 		const Handle_MAT_Bisector & Value() const;
 
+};
+%extend MAT_DataMapIteratorOfDataMapOfIntegerBisector {
+	~MAT_DataMapIteratorOfDataMapOfIntegerBisector() {
+	printf("Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerBisector\n");
+	}
 };
 
 %nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerBasicElt;
@@ -1015,8 +1019,6 @@ class MAT_Node : public MMgt_TShared {
 class MAT_DataMapIteratorOfDataMapOfIntegerNode : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MAT_DataMapIteratorOfDataMapOfIntegerNode();
-		%feature("autodoc", "1");
 		MAT_DataMapIteratorOfDataMapOfIntegerNode();
 		%feature("autodoc", "1");
 		MAT_DataMapIteratorOfDataMapOfIntegerNode(const MAT_DataMapOfIntegerNode &aMap);
@@ -1028,6 +1030,11 @@ class MAT_DataMapIteratorOfDataMapOfIntegerNode : public TCollection_BasicMapIte
 		const Handle_MAT_Node & Value() const;
 
 };
+%extend MAT_DataMapIteratorOfDataMapOfIntegerNode {
+	~MAT_DataMapIteratorOfDataMapOfIntegerNode() {
+	printf("Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerNode\n");
+	}
+};
 
 %nodefaultctor MAT_SequenceOfBasicElt;
 class MAT_SequenceOfBasicElt : public TCollection_BaseSequence {
@@ -1036,8 +1043,6 @@ class MAT_SequenceOfBasicElt : public TCollection_BaseSequence {
 		MAT_SequenceOfBasicElt();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT_SequenceOfBasicElt();
 		%feature("autodoc", "1");
 		const MAT_SequenceOfBasicElt & Assign(const MAT_SequenceOfBasicElt &Other);
 		%feature("autodoc", "1");
@@ -1077,6 +1082,11 @@ class MAT_SequenceOfBasicElt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend MAT_SequenceOfBasicElt {
+	~MAT_SequenceOfBasicElt() {
+	printf("Call custom destructor for instance of MAT_SequenceOfBasicElt\n");
+	}
 };
 
 %nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerBisector;
@@ -1231,8 +1241,6 @@ class MAT_DataMapOfIntegerNode : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MAT_DataMapOfIntegerNode();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT_Node &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1247,6 +1255,11 @@ class MAT_DataMapOfIntegerNode : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_MAT_Node & operator()(const Standard_Integer &K);
 
+};
+%extend MAT_DataMapOfIntegerNode {
+	~MAT_DataMapOfIntegerNode() {
+	printf("Call custom destructor for instance of MAT_DataMapOfIntegerNode\n");
+	}
 };
 
 %nodefaultctor MAT_BasicElt;
@@ -1365,8 +1378,6 @@ class MAT_DataMapOfIntegerArc : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MAT_DataMapOfIntegerArc();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT_Arc &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1381,6 +1392,11 @@ class MAT_DataMapOfIntegerArc : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_MAT_Arc & operator()(const Standard_Integer &K);
 
+};
+%extend MAT_DataMapOfIntegerArc {
+	~MAT_DataMapOfIntegerArc() {
+	printf("Call custom destructor for instance of MAT_DataMapOfIntegerArc\n");
+	}
 };
 
 %nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerNode;

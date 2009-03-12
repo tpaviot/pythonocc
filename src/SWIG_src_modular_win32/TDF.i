@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TDF
 
@@ -952,8 +938,6 @@ class TDF_AttributeDoubleMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_AttributeDoubleMap();
-		%feature("autodoc", "1");
 		void Bind(const Handle_TDF_Attribute &K1, const Handle_TDF_Attribute &K2);
 		%feature("autodoc", "1");
 		Standard_Boolean AreBound(const Handle_TDF_Attribute &K1, const Handle_TDF_Attribute &K2) const;
@@ -970,6 +954,11 @@ class TDF_AttributeDoubleMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind2(const Handle_TDF_Attribute &K);
 
+};
+%extend TDF_AttributeDoubleMap {
+	~TDF_AttributeDoubleMap() {
+	printf("Call custom destructor for instance of TDF_AttributeDoubleMap\n");
+	}
 };
 
 %nodefaultctor TDF_DataMapIteratorOfLabelDataMap;
@@ -1302,8 +1291,6 @@ class TDF_AttributeList {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_AttributeList();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_TDF_Attribute &I);
@@ -1335,6 +1322,11 @@ class TDF_AttributeList {
 		void InsertAfter(TDF_AttributeList & Other, TDF_ListIteratorOfAttributeList & It);
 
 };
+%extend TDF_AttributeList {
+	~TDF_AttributeList() {
+	printf("Call custom destructor for instance of TDF_AttributeList\n");
+	}
+};
 
 %nodefaultctor TDF_SequenceNodeOfLabelSequence;
 class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
@@ -1362,8 +1354,6 @@ class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
 class TDF_ListIteratorOfDeltaList {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ListIteratorOfDeltaList();
-		%feature("autodoc", "1");
 		TDF_ListIteratorOfDeltaList();
 		%feature("autodoc", "1");
 		TDF_ListIteratorOfDeltaList(const TDF_DeltaList &L);
@@ -1376,6 +1366,11 @@ class TDF_ListIteratorOfDeltaList {
 		%feature("autodoc", "1");
 		Handle_TDF_Delta & Value() const;
 
+};
+%extend TDF_ListIteratorOfDeltaList {
+	~TDF_ListIteratorOfDeltaList() {
+	printf("Call custom destructor for instance of TDF_ListIteratorOfDeltaList\n");
+	}
 };
 
 %nodefaultctor TDF_ListNodeOfAttributeDeltaList;
@@ -1404,8 +1399,6 @@ class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
 class TDF_DataMapIteratorOfAttributeDataMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_DataMapIteratorOfAttributeDataMap();
-		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfAttributeDataMap();
 		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfAttributeDataMap(const TDF_AttributeDataMap &aMap);
@@ -1416,6 +1409,11 @@ class TDF_DataMapIteratorOfAttributeDataMap : public TCollection_BasicMapIterato
 		%feature("autodoc", "1");
 		const Handle_TDF_Attribute & Value() const;
 
+};
+%extend TDF_DataMapIteratorOfAttributeDataMap {
+	~TDF_DataMapIteratorOfAttributeDataMap() {
+	printf("Call custom destructor for instance of TDF_DataMapIteratorOfAttributeDataMap\n");
+	}
 };
 
 %nodefaultctor TDF_LabelDoubleMap;
@@ -1502,8 +1500,6 @@ class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 class TDF_ListIteratorOfAttributeDeltaList {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ListIteratorOfAttributeDeltaList();
-		%feature("autodoc", "1");
 		TDF_ListIteratorOfAttributeDeltaList();
 		%feature("autodoc", "1");
 		TDF_ListIteratorOfAttributeDeltaList(const TDF_AttributeDeltaList &L);
@@ -1517,12 +1513,15 @@ class TDF_ListIteratorOfAttributeDeltaList {
 		Handle_TDF_AttributeDelta & Value() const;
 
 };
+%extend TDF_ListIteratorOfAttributeDeltaList {
+	~TDF_ListIteratorOfAttributeDeltaList() {
+	printf("Call custom destructor for instance of TDF_ListIteratorOfAttributeDeltaList\n");
+	}
+};
 
 %nodefaultctor TDF_DoubleMapIteratorOfAttributeDoubleMap;
 class TDF_DoubleMapIteratorOfAttributeDoubleMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDF_DoubleMapIteratorOfAttributeDoubleMap();
 		%feature("autodoc", "1");
 		TDF_DoubleMapIteratorOfAttributeDoubleMap();
 		%feature("autodoc", "1");
@@ -1534,6 +1533,11 @@ class TDF_DoubleMapIteratorOfAttributeDoubleMap : public TCollection_BasicMapIte
 		%feature("autodoc", "1");
 		const Handle_TDF_Attribute & Key2() const;
 
+};
+%extend TDF_DoubleMapIteratorOfAttributeDoubleMap {
+	~TDF_DoubleMapIteratorOfAttributeDoubleMap() {
+	printf("Call custom destructor for instance of TDF_DoubleMapIteratorOfAttributeDoubleMap\n");
+	}
 };
 
 %nodefaultctor TDF_ListNodeOfLabelList;
@@ -1696,8 +1700,6 @@ class TDF_AttributeDeltaList {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_AttributeDeltaList();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_TDF_AttributeDelta &I);
@@ -1728,6 +1730,11 @@ class TDF_AttributeDeltaList {
 		%feature("autodoc", "1");
 		void InsertAfter(TDF_AttributeDeltaList & Other, TDF_ListIteratorOfAttributeDeltaList & It);
 
+};
+%extend TDF_AttributeDeltaList {
+	~TDF_AttributeDeltaList() {
+	printf("Call custom destructor for instance of TDF_AttributeDeltaList\n");
+	}
 };
 
 %nodefaultctor TDF_StdMapNodeOfAttributeMap;
@@ -1800,8 +1807,6 @@ class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 class TDF_ChildIDIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ChildIDIterator();
-		%feature("autodoc", "1");
 		TDF_ChildIDIterator();
 		%feature("autodoc", "1");
 		TDF_ChildIDIterator(const TDF_Label &aLabel, const Standard_GUID &anID, const Standard_Boolean allLevels=0);
@@ -1816,6 +1821,11 @@ class TDF_ChildIDIterator {
 		%feature("autodoc", "1");
 		Handle_TDF_Attribute Value() const;
 
+};
+%extend TDF_ChildIDIterator {
+	~TDF_ChildIDIterator() {
+	printf("Call custom destructor for instance of TDF_ChildIDIterator\n");
+	}
 };
 
 %nodefaultctor TDF_DeltaOnModification;
@@ -1998,8 +2008,6 @@ class TDF_Transaction {
 		%feature("autodoc", "1");
 		void Abort();
 		%feature("autodoc", "1");
-		~TDF_Transaction();
-		%feature("autodoc", "1");
 		Handle_TDF_Data Data() const;
 		%feature("autodoc", "1");
 		Standard_Integer Transaction() const;
@@ -2008,6 +2016,11 @@ class TDF_Transaction {
 		%feature("autodoc", "1");
 		Standard_Boolean IsOpen() const;
 
+};
+%extend TDF_Transaction {
+	~TDF_Transaction() {
+	printf("Call custom destructor for instance of TDF_Transaction\n");
+	}
 };
 
 %nodefaultctor TDF_ListNodeOfIDList;
@@ -2156,8 +2169,6 @@ class TDF_AttributeDataMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_AttributeDataMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_TDF_Attribute &K, const Handle_TDF_Attribute &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_TDF_Attribute &K) const;
@@ -2173,6 +2184,11 @@ class TDF_AttributeDataMap : public TCollection_BasicMap {
 		Handle_TDF_Attribute & operator()(const Handle_TDF_Attribute &K);
 
 };
+%extend TDF_AttributeDataMap {
+	~TDF_AttributeDataMap() {
+	printf("Call custom destructor for instance of TDF_AttributeDataMap\n");
+	}
+};
 
 %nodefaultctor TDF_DeltaList;
 class TDF_DeltaList {
@@ -2185,8 +2201,6 @@ class TDF_DeltaList {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_DeltaList();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -2218,6 +2232,11 @@ class TDF_DeltaList {
 		%feature("autodoc", "1");
 		void InsertAfter(TDF_DeltaList & Other, TDF_ListIteratorOfDeltaList & It);
 
+};
+%extend TDF_DeltaList {
+	~TDF_DeltaList() {
+	printf("Call custom destructor for instance of TDF_DeltaList\n");
+	}
 };
 
 %nodefaultctor TDF_Reference;
@@ -2426,8 +2445,6 @@ class TDF_AttributeSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_AttributeSequence();
-		%feature("autodoc", "1");
 		const TDF_AttributeSequence & Assign(const TDF_AttributeSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TDF_Attribute &T);
@@ -2466,6 +2483,11 @@ class TDF_AttributeSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TDF_AttributeSequence {
+	~TDF_AttributeSequence() {
+	printf("Call custom destructor for instance of TDF_AttributeSequence\n");
+	}
 };
 
 %nodefaultctor TDF_ListNodeOfAttributeList;
@@ -2620,8 +2642,6 @@ class TDF_DataSet : public MMgt_TShared {
 class TDF_Label {
 	public:
 		%feature("autodoc", "1");
-		~TDF_Label();
-		%feature("autodoc", "1");
 		TDF_Label();
 		%feature("autodoc", "1");
 		void Nullify();
@@ -2697,6 +2717,11 @@ class TDF_Label {
 		void EntryDump(Standard_OStream & anOS) const;
 
 };
+%extend TDF_Label {
+	~TDF_Label() {
+	printf("Call custom destructor for instance of TDF_Label\n");
+	}
+};
 
 %nodefaultctor TDF_IDMap;
 class TDF_IDMap : public TCollection_BasicMap {
@@ -2724,8 +2749,6 @@ class TDF_IDMap : public TCollection_BasicMap {
 class TDF_CopyLabel {
 	public:
 		%feature("autodoc", "1");
-		~TDF_CopyLabel();
-		%feature("autodoc", "1");
 		TDF_CopyLabel();
 		%feature("autodoc", "1");
 		TDF_CopyLabel(const TDF_Label &aSource, const TDF_Label &aTarget);
@@ -2745,6 +2768,11 @@ class TDF_CopyLabel {
 		const Handle_TDF_RelocationTable & RelocationTable() const;
 
 };
+%extend TDF_CopyLabel {
+	~TDF_CopyLabel() {
+	printf("Call custom destructor for instance of TDF_CopyLabel\n");
+	}
+};
 
 %nodefaultctor TDF_AttributeIndexedMap;
 class TDF_AttributeIndexedMap : public TCollection_BasicMap {
@@ -2757,8 +2785,6 @@ class TDF_AttributeIndexedMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_AttributeIndexedMap();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_TDF_Attribute &K);
 		%feature("autodoc", "1");
@@ -2774,6 +2800,11 @@ class TDF_AttributeIndexedMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const Handle_TDF_Attribute &K) const;
 
+};
+%extend TDF_AttributeIndexedMap {
+	~TDF_AttributeIndexedMap() {
+	printf("Call custom destructor for instance of TDF_AttributeIndexedMap\n");
+	}
 };
 
 %nodefaultctor TDF;
@@ -2870,8 +2901,6 @@ class TDF_AttributeIterator {
 class TDF_MapIteratorOfAttributeMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_MapIteratorOfAttributeMap();
-		%feature("autodoc", "1");
 		TDF_MapIteratorOfAttributeMap();
 		%feature("autodoc", "1");
 		TDF_MapIteratorOfAttributeMap(const TDF_AttributeMap &aMap);
@@ -2880,6 +2909,11 @@ class TDF_MapIteratorOfAttributeMap : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const Handle_TDF_Attribute & Key() const;
 
+};
+%extend TDF_MapIteratorOfAttributeMap {
+	~TDF_MapIteratorOfAttributeMap() {
+	printf("Call custom destructor for instance of TDF_MapIteratorOfAttributeMap\n");
+	}
 };
 
 %nodefaultctor TDF_AttributeMap;
@@ -3240,8 +3274,6 @@ class TDF_ClosureMode {
 class TDF_ListIteratorOfAttributeList {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ListIteratorOfAttributeList();
-		%feature("autodoc", "1");
 		TDF_ListIteratorOfAttributeList();
 		%feature("autodoc", "1");
 		TDF_ListIteratorOfAttributeList(const TDF_AttributeList &L);
@@ -3254,6 +3286,11 @@ class TDF_ListIteratorOfAttributeList {
 		%feature("autodoc", "1");
 		Handle_TDF_Attribute & Value() const;
 
+};
+%extend TDF_ListIteratorOfAttributeList {
+	~TDF_ListIteratorOfAttributeList() {
+	printf("Call custom destructor for instance of TDF_ListIteratorOfAttributeList\n");
+	}
 };
 
 %nodefaultctor TDF_LabelIntegerMap;
@@ -3298,8 +3335,6 @@ class TDF_AttributeArray1 {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TDF_AttributeArray1();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TDF_AttributeArray1 & Assign(const TDF_AttributeArray1 &Other);
@@ -3320,4 +3355,9 @@ class TDF_AttributeArray1 {
 		%feature("autodoc", "1");
 		Handle_TDF_Attribute & operator()(const Standard_Integer Index);
 
+};
+%extend TDF_AttributeArray1 {
+	~TDF_AttributeArray1() {
+	printf("Call custom destructor for instance of TDF_AttributeArray1\n");
+	}
 };

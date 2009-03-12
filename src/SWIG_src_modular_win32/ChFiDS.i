@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module ChFiDS
 
@@ -470,8 +456,6 @@ class ChFiDS_StripeArray1 {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~ChFiDS_StripeArray1();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const ChFiDS_StripeArray1 & Assign(const ChFiDS_StripeArray1 &Other);
@@ -492,6 +476,11 @@ class ChFiDS_StripeArray1 {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Stripe & operator()(const Standard_Integer Index);
 
+};
+%extend ChFiDS_StripeArray1 {
+	~ChFiDS_StripeArray1() {
+	printf("Call custom destructor for instance of ChFiDS_StripeArray1\n");
+	}
 };
 
 %nodefaultctor ChFiDS_Spine;
@@ -676,8 +665,6 @@ class ChFiDS_SecArray1 {
 class ChFiDS_FaceInterference {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_FaceInterference();
-		%feature("autodoc", "1");
 		ChFiDS_FaceInterference();
 		%feature("autodoc", "1");
 		void SetInterference(const Standard_Integer LineIndex, const TopAbs_Orientation Trans, const Handle_Geom2d_Curve &PCurv1, const Handle_Geom2d_Curve &PCurv2);
@@ -711,6 +698,11 @@ class ChFiDS_FaceInterference {
 		Standard_Real Parameter(const Standard_Boolean IsFirst) const;
 
 };
+%extend ChFiDS_FaceInterference {
+	~ChFiDS_FaceInterference() {
+	printf("Call custom destructor for instance of ChFiDS_FaceInterference\n");
+	}
+};
 
 %nodefaultctor ChFiDS_ListOfStripe;
 class ChFiDS_ListOfStripe {
@@ -723,8 +715,6 @@ class ChFiDS_ListOfStripe {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~ChFiDS_ListOfStripe();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -757,12 +747,15 @@ class ChFiDS_ListOfStripe {
 		void InsertAfter(ChFiDS_ListOfStripe & Other, ChFiDS_ListIteratorOfListOfStripe & It);
 
 };
+%extend ChFiDS_ListOfStripe {
+	~ChFiDS_ListOfStripe() {
+	printf("Call custom destructor for instance of ChFiDS_ListOfStripe\n");
+	}
+};
 
 %nodefaultctor ChFiDS_ListIteratorOfListOfHElSpine;
 class ChFiDS_ListIteratorOfListOfHElSpine {
 	public:
-		%feature("autodoc", "1");
-		~ChFiDS_ListIteratorOfListOfHElSpine();
 		%feature("autodoc", "1");
 		ChFiDS_ListIteratorOfListOfHElSpine();
 		%feature("autodoc", "1");
@@ -776,6 +769,11 @@ class ChFiDS_ListIteratorOfListOfHElSpine {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HElSpine & Value() const;
 
+};
+%extend ChFiDS_ListIteratorOfListOfHElSpine {
+	~ChFiDS_ListIteratorOfListOfHElSpine() {
+	printf("Call custom destructor for instance of ChFiDS_ListIteratorOfListOfHElSpine\n");
+	}
 };
 
 %nodefaultctor ChFiDS_ListNodeOfListOfStripe;
@@ -954,8 +952,6 @@ class ChFiDS_SequenceOfSpine : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ChFiDS_SequenceOfSpine();
-		%feature("autodoc", "1");
 		const ChFiDS_SequenceOfSpine & Assign(const ChFiDS_SequenceOfSpine &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_ChFiDS_Spine &T);
@@ -994,6 +990,11 @@ class ChFiDS_SequenceOfSpine : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend ChFiDS_SequenceOfSpine {
+	~ChFiDS_SequenceOfSpine() {
+	printf("Call custom destructor for instance of ChFiDS_SequenceOfSpine\n");
+	}
 };
 
 %nodefaultctor ChFiDS_ChamfSpine;
@@ -1290,8 +1291,6 @@ class ChFiDS_CircSection {
 class ChFiDS_ListIteratorOfListOfStripe {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_ListIteratorOfListOfStripe();
-		%feature("autodoc", "1");
 		ChFiDS_ListIteratorOfListOfStripe();
 		%feature("autodoc", "1");
 		ChFiDS_ListIteratorOfListOfStripe(const ChFiDS_ListOfStripe &L);
@@ -1305,6 +1304,11 @@ class ChFiDS_ListIteratorOfListOfStripe {
 		Handle_ChFiDS_Stripe & Value() const;
 
 };
+%extend ChFiDS_ListIteratorOfListOfStripe {
+	~ChFiDS_ListIteratorOfListOfStripe() {
+	printf("Call custom destructor for instance of ChFiDS_ListIteratorOfListOfStripe\n");
+	}
+};
 
 %nodefaultctor ChFiDS_SequenceOfSurfData;
 class ChFiDS_SequenceOfSurfData : public TCollection_BaseSequence {
@@ -1313,8 +1317,6 @@ class ChFiDS_SequenceOfSurfData : public TCollection_BaseSequence {
 		ChFiDS_SequenceOfSurfData();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~ChFiDS_SequenceOfSurfData();
 		%feature("autodoc", "1");
 		const ChFiDS_SequenceOfSurfData & Assign(const ChFiDS_SequenceOfSurfData &Other);
 		%feature("autodoc", "1");
@@ -1354,6 +1356,11 @@ class ChFiDS_SequenceOfSurfData : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend ChFiDS_SequenceOfSurfData {
+	~ChFiDS_SequenceOfSurfData() {
+	printf("Call custom destructor for instance of ChFiDS_SequenceOfSurfData\n");
+	}
 };
 
 %nodefaultctor ChFiDS_SequenceNodeOfSequenceOfSpine;
@@ -1483,9 +1490,12 @@ class ChFiDS_ElSpine : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BezierCurve Bezier() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		~ChFiDS_ElSpine();
 
+};
+%extend ChFiDS_ElSpine {
+	~ChFiDS_ElSpine() {
+	printf("Call custom destructor for instance of ChFiDS_ElSpine\n");
+	}
 };
 
 %nodefaultctor ChFiDS_ListOfHElSpine;
@@ -1499,8 +1509,6 @@ class ChFiDS_ListOfHElSpine {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~ChFiDS_ListOfHElSpine();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -1532,6 +1540,11 @@ class ChFiDS_ListOfHElSpine {
 		%feature("autodoc", "1");
 		void InsertAfter(ChFiDS_ListOfHElSpine & Other, ChFiDS_ListIteratorOfListOfHElSpine & It);
 
+};
+%extend ChFiDS_ListOfHElSpine {
+	~ChFiDS_ListOfHElSpine() {
+	printf("Call custom destructor for instance of ChFiDS_ListOfHElSpine\n");
+	}
 };
 
 %nodefaultctor ChFiDS_Regul;

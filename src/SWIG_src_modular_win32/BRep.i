@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRep
 
@@ -908,8 +894,6 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 class BRep_ListIteratorOfListOfCurveRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~BRep_ListIteratorOfListOfCurveRepresentation();
-		%feature("autodoc", "1");
 		BRep_ListIteratorOfListOfCurveRepresentation();
 		%feature("autodoc", "1");
 		BRep_ListIteratorOfListOfCurveRepresentation(const BRep_ListOfCurveRepresentation &L);
@@ -923,12 +907,15 @@ class BRep_ListIteratorOfListOfCurveRepresentation {
 		Handle_BRep_CurveRepresentation & Value() const;
 
 };
+%extend BRep_ListIteratorOfListOfCurveRepresentation {
+	~BRep_ListIteratorOfListOfCurveRepresentation() {
+	printf("Call custom destructor for instance of BRep_ListIteratorOfListOfCurveRepresentation\n");
+	}
+};
 
 %nodefaultctor BRep_Tool;
 class BRep_Tool {
 	public:
-		%feature("autodoc", "1");
-		~BRep_Tool();
 		%feature("autodoc", "1");
 		BRep_Tool();
 		%feature("autodoc", "1");
@@ -1031,6 +1018,11 @@ class BRep_Tool {
 		gp_Pnt2d Parameters(const TopoDS_Vertex &V, const TopoDS_Face &F);
 
 };
+%extend BRep_Tool {
+	~BRep_Tool() {
+	printf("Call custom destructor for instance of BRep_Tool\n");
+	}
+};
 
 %nodefaultctor BRep_ListOfPointRepresentation;
 class BRep_ListOfPointRepresentation {
@@ -1043,8 +1035,6 @@ class BRep_ListOfPointRepresentation {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRep_ListOfPointRepresentation();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -1076,6 +1066,11 @@ class BRep_ListOfPointRepresentation {
 		%feature("autodoc", "1");
 		void InsertAfter(BRep_ListOfPointRepresentation & Other, BRep_ListIteratorOfListOfPointRepresentation & It);
 
+};
+%extend BRep_ListOfPointRepresentation {
+	~BRep_ListOfPointRepresentation() {
+	printf("Call custom destructor for instance of BRep_ListOfPointRepresentation\n");
+	}
 };
 
 %nodefaultctor BRep_PolygonOnTriangulation;
@@ -1358,8 +1353,6 @@ class BRep_TFace : public TopoDS_TFace {
 class BRep_ListIteratorOfListOfPointRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~BRep_ListIteratorOfListOfPointRepresentation();
-		%feature("autodoc", "1");
 		BRep_ListIteratorOfListOfPointRepresentation();
 		%feature("autodoc", "1");
 		BRep_ListIteratorOfListOfPointRepresentation(const BRep_ListOfPointRepresentation &L);
@@ -1372,6 +1365,11 @@ class BRep_ListIteratorOfListOfPointRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_PointRepresentation & Value() const;
 
+};
+%extend BRep_ListIteratorOfListOfPointRepresentation {
+	~BRep_ListIteratorOfListOfPointRepresentation() {
+	printf("Call custom destructor for instance of BRep_ListIteratorOfListOfPointRepresentation\n");
+	}
 };
 
 %nodefaultctor BRep_Curve3D;
@@ -1556,8 +1554,6 @@ class BRep_ListOfCurveRepresentation {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRep_ListOfCurveRepresentation();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_BRep_CurveRepresentation &I);
@@ -1588,6 +1584,11 @@ class BRep_ListOfCurveRepresentation {
 		%feature("autodoc", "1");
 		void InsertAfter(BRep_ListOfCurveRepresentation & Other, BRep_ListIteratorOfListOfCurveRepresentation & It);
 
+};
+%extend BRep_ListOfCurveRepresentation {
+	~BRep_ListOfCurveRepresentation() {
+	printf("Call custom destructor for instance of BRep_ListOfCurveRepresentation\n");
+	}
 };
 
 %nodefaultctor BRep_PolygonOnClosedSurface;

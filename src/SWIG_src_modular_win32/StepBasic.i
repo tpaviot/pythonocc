@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepBasic
 
@@ -3830,8 +3816,6 @@ class StepBasic_Array1OfProduct {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepBasic_Array1OfProduct();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfProduct & Assign(const StepBasic_Array1OfProduct &Other);
@@ -3852,6 +3836,11 @@ class StepBasic_Array1OfProduct {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Product & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfProduct {
+	~StepBasic_Array1OfProduct() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfProduct\n");
+	}
 };
 
 %nodefaultctor StepBasic_ProductCategory;
@@ -3983,9 +3972,12 @@ class StepBasic_RoleSelect : public StepData_SelectType {
 		Handle_StepBasic_NameAssignment NameAssignment() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassificationAssignment SecurityClassificationAssignment() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_RoleSelect();
 
+};
+%extend StepBasic_RoleSelect {
+	~StepBasic_RoleSelect() {
+	printf("Call custom destructor for instance of StepBasic_RoleSelect\n");
+	}
 };
 
 %nodefaultctor StepBasic_RatioUnit;
@@ -4110,8 +4102,6 @@ class StepBasic_Array1OfProductDefinition {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepBasic_Array1OfProductDefinition();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfProductDefinition & Assign(const StepBasic_Array1OfProductDefinition &Other);
@@ -4132,6 +4122,11 @@ class StepBasic_Array1OfProductDefinition {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfProductDefinition {
+	~StepBasic_Array1OfProductDefinition() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfProductDefinition\n");
+	}
 };
 
 %nodefaultctor StepBasic_ApplicationContextElement;
@@ -4529,9 +4524,12 @@ class StepBasic_DateTimeSelect : public StepData_SelectType {
 		Handle_StepBasic_LocalTime LocalTime() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateAndTime DateAndTime() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_DateTimeSelect();
 
+};
+%extend StepBasic_DateTimeSelect {
+	~StepBasic_DateTimeSelect() {
+	printf("Call custom destructor for instance of StepBasic_DateTimeSelect\n");
+	}
 };
 
 %nodefaultctor StepBasic_ApplicationProtocolDefinition;
@@ -4634,8 +4632,6 @@ class StepBasic_Array1OfOrganization {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepBasic_Array1OfOrganization();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfOrganization & Assign(const StepBasic_Array1OfOrganization &Other);
@@ -4656,6 +4652,11 @@ class StepBasic_Array1OfOrganization {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Organization & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfOrganization {
+	~StepBasic_Array1OfOrganization() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfOrganization\n");
+	}
 };
 
 %nodefaultctor StepBasic_PlaneAngleUnit;
@@ -4746,8 +4747,6 @@ class StepBasic_Array1OfApproval {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepBasic_Array1OfApproval();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfApproval & Assign(const StepBasic_Array1OfApproval &Other);
@@ -4768,6 +4767,11 @@ class StepBasic_Array1OfApproval {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Approval & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfApproval {
+	~StepBasic_Array1OfApproval() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfApproval\n");
+	}
 };
 
 %nodefaultctor StepBasic_MeasureValueMember;
@@ -5056,8 +5060,6 @@ class StepBasic_Array1OfPerson {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepBasic_Array1OfPerson();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfPerson & Assign(const StepBasic_Array1OfPerson &Other);
@@ -5078,6 +5080,11 @@ class StepBasic_Array1OfPerson {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Person & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfPerson {
+	~StepBasic_Array1OfPerson() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfPerson\n");
+	}
 };
 
 %nodefaultctor StepBasic_ProductDefinition;
@@ -5129,9 +5136,12 @@ class StepBasic_Unit : public StepData_SelectType {
 		Handle_StepBasic_NamedUnit NamedUnit() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_DerivedUnit DerivedUnit() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_Unit();
 
+};
+%extend StepBasic_Unit {
+	~StepBasic_Unit() {
+	printf("Call custom destructor for instance of StepBasic_Unit\n");
+	}
 };
 
 %nodefaultctor StepBasic_ApprovalStatus;
@@ -6146,8 +6156,6 @@ class StepBasic_Array1OfProductContext {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepBasic_Array1OfProductContext();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfProductContext & Assign(const StepBasic_Array1OfProductContext &Other);
@@ -6168,6 +6176,11 @@ class StepBasic_Array1OfProductContext {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductContext & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfProductContext {
+	~StepBasic_Array1OfProductContext() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfProductContext\n");
+	}
 };
 
 %nodefaultctor StepBasic_Action;
@@ -6239,9 +6252,12 @@ class StepBasic_PersonOrganizationSelect : public StepData_SelectType {
 		Handle_StepBasic_Organization Organization() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganization PersonAndOrganization() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_PersonOrganizationSelect();
 
+};
+%extend StepBasic_PersonOrganizationSelect {
+	~StepBasic_PersonOrganizationSelect() {
+	printf("Call custom destructor for instance of StepBasic_PersonOrganizationSelect\n");
+	}
 };
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndSolidAngleUnit;
@@ -6904,8 +6920,6 @@ class StepBasic_Array1OfDerivedUnitElement {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepBasic_Array1OfDerivedUnitElement();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfDerivedUnitElement & Assign(const StepBasic_Array1OfDerivedUnitElement &Other);
@@ -6926,6 +6940,11 @@ class StepBasic_Array1OfDerivedUnitElement {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DerivedUnitElement & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfDerivedUnitElement {
+	~StepBasic_Array1OfDerivedUnitElement() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfDerivedUnitElement\n");
+	}
 };
 
 %nodefaultctor StepBasic_EffectivityAssignment;
@@ -7197,9 +7216,12 @@ class StepBasic_ProductOrFormationOrDefinition : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_ProductOrFormationOrDefinition();
 
+};
+%extend StepBasic_ProductOrFormationOrDefinition {
+	~StepBasic_ProductOrFormationOrDefinition() {
+	printf("Call custom destructor for instance of StepBasic_ProductOrFormationOrDefinition\n");
+	}
 };
 
 %nodefaultctor StepBasic_ProductCategoryRelationship;
@@ -7566,8 +7588,6 @@ class StepBasic_Array1OfNamedUnit {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepBasic_Array1OfNamedUnit();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfNamedUnit & Assign(const StepBasic_Array1OfNamedUnit &Other);
@@ -7588,6 +7608,11 @@ class StepBasic_Array1OfNamedUnit {
 		%feature("autodoc", "1");
 		Handle_StepBasic_NamedUnit & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfNamedUnit {
+	~StepBasic_Array1OfNamedUnit() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfNamedUnit\n");
+	}
 };
 
 %nodefaultctor StepBasic_MassMeasureWithUnit;
@@ -7621,9 +7646,12 @@ class StepBasic_SourceItem : public StepData_SelectType {
 		virtual		Handle_StepData_SelectMember NewMember() const;
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Identifier() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SourceItem();
 
+};
+%extend StepBasic_SourceItem {
+	~StepBasic_SourceItem() {
+	printf("Call custom destructor for instance of StepBasic_SourceItem\n");
+	}
 };
 
 %nodefaultctor StepBasic_Array1OfUncertaintyMeasureWithUnit;
@@ -7637,8 +7665,6 @@ class StepBasic_Array1OfUncertaintyMeasureWithUnit {
 		void Init(const Handle_StepBasic_UncertaintyMeasureWithUnit &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepBasic_Array1OfUncertaintyMeasureWithUnit();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -7660,6 +7686,11 @@ class StepBasic_Array1OfUncertaintyMeasureWithUnit {
 		%feature("autodoc", "1");
 		Handle_StepBasic_UncertaintyMeasureWithUnit & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfUncertaintyMeasureWithUnit {
+	~StepBasic_Array1OfUncertaintyMeasureWithUnit() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfUncertaintyMeasureWithUnit\n");
+	}
 };
 
 %nodefaultctor StepBasic_HArray1OfProduct;
@@ -8119,9 +8150,12 @@ class StepBasic_SizeSelect : public StepData_SelectType {
 		void SetRealValue(const Standard_Real aReal);
 		%feature("autodoc", "1");
 		Standard_Real RealValue() const;
-		%feature("autodoc", "1");
-		virtual		~StepBasic_SizeSelect();
 
+};
+%extend StepBasic_SizeSelect {
+	~StepBasic_SizeSelect() {
+	printf("Call custom destructor for instance of StepBasic_SizeSelect\n");
+	}
 };
 
 %nodefaultctor StepBasic_HArray1OfApproval;
@@ -8196,8 +8230,6 @@ class StepBasic_Array1OfDocument {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepBasic_Array1OfDocument();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfDocument & Assign(const StepBasic_Array1OfDocument &Other);
@@ -8218,6 +8250,11 @@ class StepBasic_Array1OfDocument {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Document & operator()(const Standard_Integer Index);
 
+};
+%extend StepBasic_Array1OfDocument {
+	~StepBasic_Array1OfDocument() {
+	printf("Call custom destructor for instance of StepBasic_Array1OfDocument\n");
+	}
 };
 
 %nodefaultctor StepBasic_HArray1OfDerivedUnitElement;

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module STEPCAFControl
 
@@ -414,8 +400,6 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCo
 class STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile();
-		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile();
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile(const STEPCAFControl_DataMapOfLabelExternFile &aMap);
@@ -426,6 +410,11 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile : public TCollect
 		%feature("autodoc", "1");
 		const Handle_STEPCAFControl_ExternFile & Value() const;
 
+};
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile {
+	~STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile\n");
+	}
 };
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeTransient;
@@ -439,8 +428,6 @@ class STEPCAFControl_DataMapOfShapeTransient : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapOfShapeTransient();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
@@ -456,6 +443,11 @@ class STEPCAFControl_DataMapOfShapeTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const TopoDS_Shape &K);
 
+};
+%extend STEPCAFControl_DataMapOfShapeTransient {
+	~STEPCAFControl_DataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapOfShapeTransient\n");
+	}
 };
 
 %nodefaultctor STEPCAFControl_ExternFile;
@@ -514,8 +506,6 @@ class STEPCAFControl_DataMapOfShapePD : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapOfShapePD();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_StepBasic_ProductDefinition &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -531,6 +521,11 @@ class STEPCAFControl_DataMapOfShapePD : public TCollection_BasicMap {
 		Handle_StepBasic_ProductDefinition & operator()(const TopoDS_Shape &K);
 
 };
+%extend STEPCAFControl_DataMapOfShapePD {
+	~STEPCAFControl_DataMapOfShapePD() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapOfShapePD\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeSDR;
 class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
@@ -543,8 +538,6 @@ class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapOfShapeSDR();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_StepShape_ShapeDefinitionRepresentation &I);
 		%feature("autodoc", "1");
@@ -560,6 +553,11 @@ class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_StepShape_ShapeDefinitionRepresentation & operator()(const TopoDS_Shape &K);
 
+};
+%extend STEPCAFControl_DataMapOfShapeSDR {
+	~STEPCAFControl_DataMapOfShapeSDR() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapOfShapeSDR\n");
+	}
 };
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR;
@@ -820,8 +818,6 @@ class STEPCAFControl_DataMapOfPDExternFile : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapOfPDExternFile();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_StepBasic_ProductDefinition &K, const Handle_STEPCAFControl_ExternFile &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_StepBasic_ProductDefinition &K) const;
@@ -837,12 +833,15 @@ class STEPCAFControl_DataMapOfPDExternFile : public TCollection_BasicMap {
 		Handle_STEPCAFControl_ExternFile & operator()(const Handle_StepBasic_ProductDefinition &K);
 
 };
+%extend STEPCAFControl_DataMapOfPDExternFile {
+	~STEPCAFControl_DataMapOfPDExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapOfPDExternFile\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile;
 class STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile();
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile();
 		%feature("autodoc", "1");
@@ -854,6 +853,11 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile : public TCollectio
 		%feature("autodoc", "1");
 		const Handle_STEPCAFControl_ExternFile & Value() const;
 
+};
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile {
+	~STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile\n");
+	}
 };
 
 %nodefaultctor STEPCAFControl_DataMapOfSDRExternFile;
@@ -867,8 +871,6 @@ class STEPCAFControl_DataMapOfSDRExternFile : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapOfSDRExternFile();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_StepShape_ShapeDefinitionRepresentation &K, const Handle_STEPCAFControl_ExternFile &I);
 		%feature("autodoc", "1");
@@ -885,6 +887,11 @@ class STEPCAFControl_DataMapOfSDRExternFile : public TCollection_BasicMap {
 		Handle_STEPCAFControl_ExternFile & operator()(const Handle_StepShape_ShapeDefinitionRepresentation &K);
 
 };
+%extend STEPCAFControl_DataMapOfSDRExternFile {
+	~STEPCAFControl_DataMapOfSDRExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapOfSDRExternFile\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_DataMapOfLabelExternFile;
 class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
@@ -897,8 +904,6 @@ class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapOfLabelExternFile();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const Handle_STEPCAFControl_ExternFile &I);
 		%feature("autodoc", "1");
@@ -914,6 +919,11 @@ class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ExternFile & operator()(const TDF_Label &K);
 
+};
+%extend STEPCAFControl_DataMapOfLabelExternFile {
+	~STEPCAFControl_DataMapOfLabelExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapOfLabelExternFile\n");
+	}
 };
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel;
@@ -1046,8 +1056,6 @@ class STEPCAFControl_DictionaryOfExternFile : public MMgt_TShared {
 class STEPCAFControl_IteratorOfDictionaryOfExternFile {
 	public:
 		%feature("autodoc", "1");
-		~STEPCAFControl_IteratorOfDictionaryOfExternFile();
-		%feature("autodoc", "1");
 		STEPCAFControl_IteratorOfDictionaryOfExternFile(const Handle_STEPCAFControl_DictionaryOfExternFile &acell);
 		%feature("autodoc", "1");
 		STEPCAFControl_IteratorOfDictionaryOfExternFile(const Handle_STEPCAFControl_DictionaryOfExternFile &acell, const char * basename);
@@ -1065,12 +1073,15 @@ class STEPCAFControl_IteratorOfDictionaryOfExternFile {
 		TCollection_AsciiString Name() const;
 
 };
+%extend STEPCAFControl_IteratorOfDictionaryOfExternFile {
+	~STEPCAFControl_IteratorOfDictionaryOfExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_IteratorOfDictionaryOfExternFile\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_Reader;
 class STEPCAFControl_Reader {
 	public:
-		%feature("autodoc", "1");
-		~STEPCAFControl_Reader();
 		%feature("autodoc", "1");
 		STEPCAFControl_Reader();
 		%feature("autodoc", "1");
@@ -1129,12 +1140,15 @@ class STEPCAFControl_Reader {
 		Standard_Boolean GetMatMode() const;
 
 };
+%extend STEPCAFControl_Reader {
+	~STEPCAFControl_Reader() {
+	printf("Call custom destructor for instance of STEPCAFControl_Reader\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient;
 class STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient();
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient();
 		%feature("autodoc", "1");
@@ -1146,6 +1160,11 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient : public TCollecti
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
+};
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient {
+	~STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient\n");
+	}
 };
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
@@ -1199,8 +1218,6 @@ class STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public TCollection_Map
 %nodefaultctor STEPCAFControl_Writer;
 class STEPCAFControl_Writer {
 	public:
-		%feature("autodoc", "1");
-		~STEPCAFControl_Writer();
 		%feature("autodoc", "1");
 		STEPCAFControl_Writer();
 		%feature("autodoc", "1");
@@ -1257,12 +1274,15 @@ class STEPCAFControl_Writer {
 		Standard_Boolean GetMaterialMode() const;
 
 };
+%extend STEPCAFControl_Writer {
+	~STEPCAFControl_Writer() {
+	printf("Call custom destructor for instance of STEPCAFControl_Writer\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapePD;
 class STEPCAFControl_DataMapIteratorOfDataMapOfShapePD : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapIteratorOfDataMapOfShapePD();
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfShapePD();
 		%feature("autodoc", "1");
@@ -1275,12 +1295,15 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapePD : public TCollection_Basi
 		const Handle_StepBasic_ProductDefinition & Value() const;
 
 };
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapePD {
+	~STEPCAFControl_DataMapIteratorOfDataMapOfShapePD() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapePD\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile;
 class STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile();
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile();
 		%feature("autodoc", "1");
@@ -1293,12 +1316,15 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile : public TCollection
 		const Handle_STEPCAFControl_ExternFile & Value() const;
 
 };
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile {
+	~STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR;
 class STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR();
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR();
 		%feature("autodoc", "1");
@@ -1310,4 +1336,9 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR : public TCollection_Bas
 		%feature("autodoc", "1");
 		const Handle_StepShape_ShapeDefinitionRepresentation & Value() const;
 
+};
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR {
+	~STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR\n");
+	}
 };

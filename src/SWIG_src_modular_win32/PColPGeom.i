@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module PColPGeom
 
@@ -829,9 +815,12 @@ class PColPGeom_FieldOfHArray1OfBoundedSurface : public DBC_BaseArray {
 		Handle_PGeom_BoundedSurface & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray1OfBoundedSurface();
 
+};
+%extend PColPGeom_FieldOfHArray1OfBoundedSurface {
+	~PColPGeom_FieldOfHArray1OfBoundedSurface() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBoundedSurface\n");
+	}
 };
 
 %nodefaultctor PColPGeom_HArray1OfSurface;
@@ -1017,9 +1006,12 @@ class PColPGeom_FieldOfHArray2OfBoundedSurface : public DBC_BaseArray {
 		Handle_PGeom_BoundedSurface & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray2OfBoundedSurface();
 
+};
+%extend PColPGeom_FieldOfHArray2OfBoundedSurface {
+	~PColPGeom_FieldOfHArray2OfBoundedSurface() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBoundedSurface\n");
+	}
 };
 
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface;
@@ -1123,9 +1115,12 @@ class PColPGeom_FieldOfHArray2OfBSplineSurface : public DBC_BaseArray {
 		Handle_PGeom_BSplineSurface & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray2OfBSplineSurface();
 
+};
+%extend PColPGeom_FieldOfHArray2OfBSplineSurface {
+	~PColPGeom_FieldOfHArray2OfBSplineSurface() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBSplineSurface\n");
+	}
 };
 
 %nodefaultctor PColPGeom_FieldOfHArray1OfBSplineCurve;
@@ -1149,9 +1144,12 @@ class PColPGeom_FieldOfHArray1OfBSplineCurve : public DBC_BaseArray {
 		Handle_PGeom_BSplineCurve & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray1OfBSplineCurve();
 
+};
+%extend PColPGeom_FieldOfHArray1OfBSplineCurve {
+	~PColPGeom_FieldOfHArray1OfBSplineCurve() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBSplineCurve\n");
+	}
 };
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
@@ -1207,9 +1205,12 @@ class PColPGeom_FieldOfHArray2OfSurface : public DBC_BaseArray {
 		Handle_PGeom_Surface & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray2OfSurface();
 
+};
+%extend PColPGeom_FieldOfHArray2OfSurface {
+	~PColPGeom_FieldOfHArray2OfSurface() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray2OfSurface\n");
+	}
 };
 
 %nodefaultctor PColPGeom_HArray1OfBoundedSurface;
@@ -1477,9 +1478,12 @@ class PColPGeom_FieldOfHArray1OfSurface : public DBC_BaseArray {
 		Handle_PGeom_Surface & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray1OfSurface();
 
+};
+%extend PColPGeom_FieldOfHArray1OfSurface {
+	~PColPGeom_FieldOfHArray1OfSurface() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray1OfSurface\n");
+	}
 };
 
 %nodefaultctor PColPGeom_FieldOfHArray1OfCurve;
@@ -1503,9 +1507,12 @@ class PColPGeom_FieldOfHArray1OfCurve : public DBC_BaseArray {
 		Handle_PGeom_Curve & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray1OfCurve();
 
+};
+%extend PColPGeom_FieldOfHArray1OfCurve {
+	~PColPGeom_FieldOfHArray1OfCurve() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray1OfCurve\n");
+	}
 };
 
 %nodefaultctor PColPGeom_FieldOfHArray2OfBezierSurface;
@@ -1529,9 +1536,12 @@ class PColPGeom_FieldOfHArray2OfBezierSurface : public DBC_BaseArray {
 		Handle_PGeom_BezierSurface & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray2OfBezierSurface();
 
+};
+%extend PColPGeom_FieldOfHArray2OfBezierSurface {
+	~PColPGeom_FieldOfHArray2OfBezierSurface() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBezierSurface\n");
+	}
 };
 
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface;
@@ -1747,9 +1757,12 @@ class PColPGeom_FieldOfHArray1OfBoundedCurve : public DBC_BaseArray {
 		Handle_PGeom_BoundedCurve & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray1OfBoundedCurve();
 
+};
+%extend PColPGeom_FieldOfHArray1OfBoundedCurve {
+	~PColPGeom_FieldOfHArray1OfBoundedCurve() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBoundedCurve\n");
+	}
 };
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
@@ -1853,9 +1866,12 @@ class PColPGeom_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
 		Handle_PGeom_BezierCurve & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColPGeom_FieldOfHArray1OfBezierCurve();
 
+};
+%extend PColPGeom_FieldOfHArray1OfBezierCurve {
+	~PColPGeom_FieldOfHArray1OfBezierCurve() {
+	printf("Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBezierCurve\n");
+	}
 };
 
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve;

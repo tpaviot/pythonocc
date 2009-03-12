@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepMesh
 
@@ -716,8 +702,6 @@ class BRepMesh_ListOfSurfaceGrid {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_ListOfSurfaceGrid();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_BRepMesh_SurfaceGrid &I);
@@ -748,6 +732,11 @@ class BRepMesh_ListOfSurfaceGrid {
 		%feature("autodoc", "1");
 		void InsertAfter(BRepMesh_ListOfSurfaceGrid & Other, BRepMesh_ListIteratorOfListOfSurfaceGrid & It);
 
+};
+%extend BRepMesh_ListOfSurfaceGrid {
+	~BRepMesh_ListOfSurfaceGrid() {
+	printf("Call custom destructor for instance of BRepMesh_ListOfSurfaceGrid\n");
+	}
 };
 
 %nodefaultctor BRepMesh_IndexedMapOfVertex;
@@ -784,8 +773,6 @@ class BRepMesh_IndexedMapOfVertex : public TCollection_BasicMap {
 class BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid();
-		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid();
 		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid(const BRepMesh_DataMapOfShapeSurfaceGrid &aMap);
@@ -796,6 +783,11 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid : public TCollection_B
 		%feature("autodoc", "1");
 		const Handle_BRepMesh_SurfaceGrid & Value() const;
 
+};
+%extend BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid {
+	~BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid\n");
+	}
 };
 
 %nodefaultctor BRepMesh_NodeHasherOfDataStructureOfDelaun;
@@ -1172,8 +1164,6 @@ class BRepMesh_DataMapOfShapeEdgeDiscret : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapOfShapeEdgeDiscret();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepMesh_EdgeDiscret &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -1188,6 +1178,11 @@ class BRepMesh_DataMapOfShapeEdgeDiscret : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_BRepMesh_EdgeDiscret & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepMesh_DataMapOfShapeEdgeDiscret {
+	~BRepMesh_DataMapOfShapeEdgeDiscret() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapOfShapeEdgeDiscret\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapOfIntegerFace;
@@ -1902,8 +1897,6 @@ class BRepMesh_DataMapOfVertexInteger : public TCollection_BasicMap {
 class BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret();
-		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret();
 		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret(const BRepMesh_DataMapOfShapeEdgeDiscret &aMap);
@@ -1914,6 +1907,11 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret : public TCollection_B
 		%feature("autodoc", "1");
 		const Handle_BRepMesh_EdgeDiscret & Value() const;
 
+};
+%extend BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret {
+	~BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret\n");
+	}
 };
 
 %nodefaultctor BRepMesh_SelectorOfDataStructureOfDelaun;
@@ -2044,8 +2042,6 @@ class BRepMesh_DataMapOfShapeSurfaceGrid : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapOfShapeSurfaceGrid();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepMesh_SurfaceGrid &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -2060,6 +2056,11 @@ class BRepMesh_DataMapOfShapeSurfaceGrid : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_BRepMesh_SurfaceGrid & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepMesh_DataMapOfShapeSurfaceGrid {
+	~BRepMesh_DataMapOfShapeSurfaceGrid() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapOfShapeSurfaceGrid\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapOfMeshVertexInteger;
@@ -2108,8 +2109,6 @@ class BRepMesh_HeapSortVertexOfDelaun {
 class BRepMesh_ListIteratorOfListOfSurfaceGrid {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_ListIteratorOfListOfSurfaceGrid();
-		%feature("autodoc", "1");
 		BRepMesh_ListIteratorOfListOfSurfaceGrid();
 		%feature("autodoc", "1");
 		BRepMesh_ListIteratorOfListOfSurfaceGrid(const BRepMesh_ListOfSurfaceGrid &L);
@@ -2122,6 +2121,11 @@ class BRepMesh_ListIteratorOfListOfSurfaceGrid {
 		%feature("autodoc", "1");
 		Handle_BRepMesh_SurfaceGrid & Value() const;
 
+};
+%extend BRepMesh_ListIteratorOfListOfSurfaceGrid {
+	~BRepMesh_ListIteratorOfListOfSurfaceGrid() {
+	printf("Call custom destructor for instance of BRepMesh_ListIteratorOfListOfSurfaceGrid\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger;
@@ -2366,8 +2370,6 @@ class BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public TCollection_MapN
 class BRepMesh_Delaun {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_Delaun();
-		%feature("autodoc", "1");
 		BRepMesh_Delaun(BRepMesh_Array1OfVertexOfDelaun & Vertices, const Standard_Boolean ZPositive=1);
 		%feature("autodoc", "1");
 		BRepMesh_Delaun(const Handle_BRepMesh_DataStructureOfDelaun &OldMesh, BRepMesh_Array1OfVertexOfDelaun & Vertices, const Standard_Boolean ZPositive=1);
@@ -2412,6 +2414,11 @@ class BRepMesh_Delaun {
 		%feature("autodoc", "1");
 		Standard_Integer TriangleContaining(const BRepMesh_Vertex &theVertex);
 
+};
+%extend BRepMesh_Delaun {
+	~BRepMesh_Delaun() {
+	printf("Call custom destructor for instance of BRepMesh_Delaun\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfIntegerFace;

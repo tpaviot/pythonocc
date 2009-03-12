@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepElement
 
@@ -1169,8 +1155,6 @@ class StepElement_SequenceOfSurfaceElementPurposeMember : public TCollection_Bas
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepElement_SequenceOfSurfaceElementPurposeMember();
-		%feature("autodoc", "1");
 		const StepElement_SequenceOfSurfaceElementPurposeMember & Assign(const StepElement_SequenceOfSurfaceElementPurposeMember &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepElement_SurfaceElementPurposeMember &T);
@@ -1209,6 +1193,11 @@ class StepElement_SequenceOfSurfaceElementPurposeMember : public TCollection_Bas
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend StepElement_SequenceOfSurfaceElementPurposeMember {
+	~StepElement_SequenceOfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_SequenceOfSurfaceElementPurposeMember\n");
+	}
 };
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfElementMaterial;
@@ -1263,8 +1252,6 @@ class StepElement_SequenceOfCurveElementPurposeMember : public TCollection_BaseS
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepElement_SequenceOfCurveElementPurposeMember();
-		%feature("autodoc", "1");
 		const StepElement_SequenceOfCurveElementPurposeMember & Assign(const StepElement_SequenceOfCurveElementPurposeMember &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepElement_CurveElementPurposeMember &T);
@@ -1303,6 +1290,11 @@ class StepElement_SequenceOfCurveElementPurposeMember : public TCollection_BaseS
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend StepElement_SequenceOfCurveElementPurposeMember {
+	~StepElement_SequenceOfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_SequenceOfCurveElementPurposeMember\n");
+	}
 };
 
 %nodefaultctor StepElement_SurfaceSection;
@@ -1462,9 +1454,12 @@ class StepElement_ElementAspect : public StepData_SelectType {
 		void SetCurveEdge(const StepElement_CurveEdge aVal);
 		%feature("autodoc", "1");
 		StepElement_CurveEdge CurveEdge() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_ElementAspect();
 
+};
+%extend StepElement_ElementAspect {
+	~StepElement_ElementAspect() {
+	printf("Call custom destructor for instance of StepElement_ElementAspect\n");
+	}
 };
 
 %nodefaultctor StepElement_Array2OfSurfaceElementPurposeMember;
@@ -1478,8 +1473,6 @@ class StepElement_Array2OfSurfaceElementPurposeMember {
 		void Init(const Handle_StepElement_SurfaceElementPurposeMember &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepElement_Array2OfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
 		const StepElement_Array2OfSurfaceElementPurposeMember & Assign(const StepElement_Array2OfSurfaceElementPurposeMember &Other);
 		%feature("autodoc", "1");
@@ -1505,6 +1498,11 @@ class StepElement_Array2OfSurfaceElementPurposeMember {
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceElementPurposeMember & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend StepElement_Array2OfSurfaceElementPurposeMember {
+	~StepElement_Array2OfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_Array2OfSurfaceElementPurposeMember\n");
+	}
 };
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember;
@@ -1667,8 +1665,6 @@ class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepElement_Array1OfHSequenceOfCurveElementPurposeMember();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfHSequenceOfCurveElementPurposeMember & Assign(const StepElement_Array1OfHSequenceOfCurveElementPurposeMember &Other);
@@ -1689,6 +1685,11 @@ class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfCurveElementPurposeMember & operator()(const Standard_Integer Index);
 
+};
+%extend StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
+	~StepElement_Array1OfHSequenceOfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_Array1OfHSequenceOfCurveElementPurposeMember\n");
+	}
 };
 
 %nodefaultctor StepElement_Volume3dElementDescriptor;
@@ -1952,9 +1953,12 @@ class StepElement_MeasureOrUnspecifiedValue : public StepData_SelectType {
 		void SetUnspecifiedValue(const StepElement_UnspecifiedValue aVal);
 		%feature("autodoc", "1");
 		StepElement_UnspecifiedValue UnspecifiedValue() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_MeasureOrUnspecifiedValue();
 
+};
+%extend StepElement_MeasureOrUnspecifiedValue {
+	~StepElement_MeasureOrUnspecifiedValue() {
+	printf("Call custom destructor for instance of StepElement_MeasureOrUnspecifiedValue\n");
+	}
 };
 
 %nodefaultctor StepElement_CurveElementPurposeMember;
@@ -2004,9 +2008,12 @@ class StepElement_CurveElementFreedom : public StepData_SelectType {
 		void SetApplicationDefinedDegreeOfFreedom(const Handle_TCollection_HAsciiString &aVal);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString ApplicationDefinedDegreeOfFreedom() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_CurveElementFreedom();
 
+};
+%extend StepElement_CurveElementFreedom {
+	~StepElement_CurveElementFreedom() {
+	printf("Call custom destructor for instance of StepElement_CurveElementFreedom\n");
+	}
 };
 
 %nodefaultctor StepElement_HSequenceOfCurveElementSectionDefinition;
@@ -2355,8 +2362,6 @@ class StepElement_Array1OfSurfaceSection {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepElement_Array1OfSurfaceSection();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfSurfaceSection & Assign(const StepElement_Array1OfSurfaceSection &Other);
@@ -2378,6 +2383,11 @@ class StepElement_Array1OfSurfaceSection {
 		Handle_StepElement_SurfaceSection & operator()(const Standard_Integer Index);
 
 };
+%extend StepElement_Array1OfSurfaceSection {
+	~StepElement_Array1OfSurfaceSection() {
+	printf("Call custom destructor for instance of StepElement_Array1OfSurfaceSection\n");
+	}
+};
 
 %nodefaultctor StepElement_SurfaceElementPurpose;
 class StepElement_SurfaceElementPurpose : public StepData_SelectType {
@@ -2398,9 +2408,12 @@ class StepElement_SurfaceElementPurpose : public StepData_SelectType {
 		void SetApplicationDefinedElementPurpose(const Handle_TCollection_HAsciiString &aVal);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString ApplicationDefinedElementPurpose() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_SurfaceElementPurpose();
 
+};
+%extend StepElement_SurfaceElementPurpose {
+	~StepElement_SurfaceElementPurpose() {
+	printf("Call custom destructor for instance of StepElement_SurfaceElementPurpose\n");
+	}
 };
 
 %nodefaultctor StepElement_Array1OfVolumeElementPurpose;
@@ -2486,9 +2499,12 @@ class StepElement_CurveElementPurpose : public StepData_SelectType {
 		void SetApplicationDefinedElementPurpose(const Handle_TCollection_HAsciiString &aVal);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString ApplicationDefinedElementPurpose() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_CurveElementPurpose();
 
+};
+%extend StepElement_CurveElementPurpose {
+	~StepElement_CurveElementPurpose() {
+	printf("Call custom destructor for instance of StepElement_CurveElementPurpose\n");
+	}
 };
 
 %nodefaultctor StepElement_SurfaceElementPurposeMember;
@@ -2629,8 +2645,6 @@ class StepElement_Array1OfCurveElementSectionDefinition {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepElement_Array1OfCurveElementSectionDefinition();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfCurveElementSectionDefinition & Assign(const StepElement_Array1OfCurveElementSectionDefinition &Other);
@@ -2652,6 +2666,11 @@ class StepElement_Array1OfCurveElementSectionDefinition {
 		Handle_StepElement_CurveElementSectionDefinition & operator()(const Standard_Integer Index);
 
 };
+%extend StepElement_Array1OfCurveElementSectionDefinition {
+	~StepElement_Array1OfCurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of StepElement_Array1OfCurveElementSectionDefinition\n");
+	}
+};
 
 %nodefaultctor StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember;
 class StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
@@ -2664,8 +2683,6 @@ class StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
 		void Init(const Handle_StepElement_HSequenceOfSurfaceElementPurposeMember &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2687,6 +2704,11 @@ class StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfSurfaceElementPurposeMember & operator()(const Standard_Integer Index);
 
+};
+%extend StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
+	~StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember\n");
+	}
 };
 
 %nodefaultctor StepElement_HArray2OfSurfaceElementPurposeMember;
@@ -2743,8 +2765,6 @@ class StepElement_SequenceOfCurveElementSectionDefinition : public TCollection_B
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepElement_SequenceOfCurveElementSectionDefinition();
-		%feature("autodoc", "1");
 		const StepElement_SequenceOfCurveElementSectionDefinition & Assign(const StepElement_SequenceOfCurveElementSectionDefinition &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepElement_CurveElementSectionDefinition &T);
@@ -2783,6 +2803,11 @@ class StepElement_SequenceOfCurveElementSectionDefinition : public TCollection_B
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend StepElement_SequenceOfCurveElementSectionDefinition {
+	~StepElement_SequenceOfCurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of StepElement_SequenceOfCurveElementSectionDefinition\n");
+	}
 };
 
 %nodefaultctor StepElement_HArray1OfHSequenceOfCurveElementPurposeMember;
@@ -2837,8 +2862,6 @@ class StepElement_Array2OfCurveElementPurposeMember {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepElement_Array2OfCurveElementPurposeMember();
-		%feature("autodoc", "1");
 		const StepElement_Array2OfCurveElementPurposeMember & Assign(const StepElement_Array2OfCurveElementPurposeMember &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -2864,6 +2887,11 @@ class StepElement_Array2OfCurveElementPurposeMember {
 		Handle_StepElement_CurveElementPurposeMember & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend StepElement_Array2OfCurveElementPurposeMember {
+	~StepElement_Array2OfCurveElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_Array2OfCurveElementPurposeMember\n");
+	}
+};
 
 %nodefaultctor StepElement_SequenceOfElementMaterial;
 class StepElement_SequenceOfElementMaterial : public TCollection_BaseSequence {
@@ -2872,8 +2900,6 @@ class StepElement_SequenceOfElementMaterial : public TCollection_BaseSequence {
 		StepElement_SequenceOfElementMaterial();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~StepElement_SequenceOfElementMaterial();
 		%feature("autodoc", "1");
 		const StepElement_SequenceOfElementMaterial & Assign(const StepElement_SequenceOfElementMaterial &Other);
 		%feature("autodoc", "1");
@@ -2913,6 +2939,11 @@ class StepElement_SequenceOfElementMaterial : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend StepElement_SequenceOfElementMaterial {
+	~StepElement_SequenceOfElementMaterial() {
+	printf("Call custom destructor for instance of StepElement_SequenceOfElementMaterial\n");
+	}
 };
 
 %nodefaultctor StepElement_Array2OfSurfaceElementPurpose;
@@ -2967,8 +2998,6 @@ class StepElement_Array1OfVolumeElementPurposeMember {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepElement_Array1OfVolumeElementPurposeMember();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfVolumeElementPurposeMember & Assign(const StepElement_Array1OfVolumeElementPurposeMember &Other);
@@ -2989,6 +3018,11 @@ class StepElement_Array1OfVolumeElementPurposeMember {
 		%feature("autodoc", "1");
 		Handle_StepElement_VolumeElementPurposeMember & operator()(const Standard_Integer Index);
 
+};
+%extend StepElement_Array1OfVolumeElementPurposeMember {
+	~StepElement_Array1OfVolumeElementPurposeMember() {
+	printf("Call custom destructor for instance of StepElement_Array1OfVolumeElementPurposeMember\n");
+	}
 };
 
 %nodefaultctor StepElement_CurveElementFreedomMember;
@@ -3208,9 +3242,12 @@ class StepElement_VolumeElementPurpose : public StepData_SelectType {
 		void SetApplicationDefinedElementPurpose(const Handle_TCollection_HAsciiString &aVal);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString ApplicationDefinedElementPurpose() const;
-		%feature("autodoc", "1");
-		virtual		~StepElement_VolumeElementPurpose();
 
+};
+%extend StepElement_VolumeElementPurpose {
+	~StepElement_VolumeElementPurpose() {
+	printf("Call custom destructor for instance of StepElement_VolumeElementPurpose\n");
+	}
 };
 
 %nodefaultctor StepElement_HArray1OfCurveElementSectionDefinition;
@@ -3265,8 +3302,6 @@ class StepElement_Array1OfCurveElementEndReleasePacket {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepElement_Array1OfCurveElementEndReleasePacket();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfCurveElementEndReleasePacket & Assign(const StepElement_Array1OfCurveElementEndReleasePacket &Other);
@@ -3287,6 +3322,11 @@ class StepElement_Array1OfCurveElementEndReleasePacket {
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementEndReleasePacket & operator()(const Standard_Integer Index);
 
+};
+%extend StepElement_Array1OfCurveElementEndReleasePacket {
+	~StepElement_Array1OfCurveElementEndReleasePacket() {
+	printf("Call custom destructor for instance of StepElement_Array1OfCurveElementEndReleasePacket\n");
+	}
 };
 
 %nodefaultctor StepElement_CurveElementEndReleasePacket;

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module AIS
 
@@ -1827,8 +1813,6 @@ class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
 class AIS_DataMapIteratorOfDataMapOfILC : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~AIS_DataMapIteratorOfDataMapOfILC();
-		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapOfILC();
 		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapOfILC(const AIS_DataMapOfILC &aMap);
@@ -1840,12 +1824,15 @@ class AIS_DataMapIteratorOfDataMapOfILC : public TCollection_BasicMapIterator {
 		const Handle_AIS_LocalContext & Value() const;
 
 };
+%extend AIS_DataMapIteratorOfDataMapOfILC {
+	~AIS_DataMapIteratorOfDataMapOfILC() {
+	printf("Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfILC\n");
+	}
+};
 
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfTransientTransient;
 class AIS_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~AIS_DataMapIteratorOfDataMapOfTransientTransient();
 		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapOfTransientTransient();
 		%feature("autodoc", "1");
@@ -1857,6 +1844,11 @@ class AIS_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_Basi
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
+};
+%extend AIS_DataMapIteratorOfDataMapOfTransientTransient {
+	~AIS_DataMapIteratorOfDataMapOfTransientTransient() {
+	printf("Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfTransientTransient\n");
+	}
 };
 
 %nodefaultctor AIS_InteractiveObject;
@@ -2149,8 +2141,6 @@ class AIS_DataMapOfSelStat : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS_DataMapOfSelStat();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_SelectMgr_SelectableObject &K, const Handle_AIS_LocalStatus &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_SelectMgr_SelectableObject &K) const;
@@ -2165,6 +2155,11 @@ class AIS_DataMapOfSelStat : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_AIS_LocalStatus & operator()(const Handle_SelectMgr_SelectableObject &K);
 
+};
+%extend AIS_DataMapOfSelStat {
+	~AIS_DataMapOfSelStat() {
+	printf("Call custom destructor for instance of AIS_DataMapOfSelStat\n");
+	}
 };
 
 %nodefaultctor AIS_ExclusionFilter;
@@ -2429,8 +2424,6 @@ class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS_SequenceOfInteractive();
-		%feature("autodoc", "1");
 		const AIS_SequenceOfInteractive & Assign(const AIS_SequenceOfInteractive &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_AIS_InteractiveObject &T);
@@ -2469,6 +2462,11 @@ class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend AIS_SequenceOfInteractive {
+	~AIS_SequenceOfInteractive() {
+	printf("Call custom destructor for instance of AIS_SequenceOfInteractive\n");
+	}
 };
 
 %nodefaultctor AIS_Line;
@@ -2529,8 +2527,6 @@ class AIS_DataMapOfILC : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS_DataMapOfILC();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_AIS_LocalContext &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -2545,6 +2541,11 @@ class AIS_DataMapOfILC : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_AIS_LocalContext & operator()(const Standard_Integer &K);
 
+};
+%extend AIS_DataMapOfILC {
+	~AIS_DataMapOfILC() {
+	printf("Call custom destructor for instance of AIS_DataMapOfILC\n");
+	}
 };
 
 %nodefaultctor AIS_OffsetDimension;
@@ -2833,8 +2834,6 @@ class AIS_IdenticRelation : public AIS_Relation {
 class AIS_ListIteratorOfListOfInteractive {
 	public:
 		%feature("autodoc", "1");
-		~AIS_ListIteratorOfListOfInteractive();
-		%feature("autodoc", "1");
 		AIS_ListIteratorOfListOfInteractive();
 		%feature("autodoc", "1");
 		AIS_ListIteratorOfListOfInteractive(const AIS_ListOfInteractive &L);
@@ -2848,6 +2847,11 @@ class AIS_ListIteratorOfListOfInteractive {
 		Handle_AIS_InteractiveObject & Value() const;
 
 };
+%extend AIS_ListIteratorOfListOfInteractive {
+	~AIS_ListIteratorOfListOfInteractive() {
+	printf("Call custom destructor for instance of AIS_ListIteratorOfListOfInteractive\n");
+	}
+};
 
 %nodefaultctor AIS_IndexedDataMapOfOwnerPrs;
 class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
@@ -2860,8 +2864,6 @@ class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AIS_IndexedDataMapOfOwnerPrs();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_SelectMgr_EntityOwner &K, const Handle_Prs3d_Presentation &I);
 		%feature("autodoc", "1");
@@ -2887,6 +2889,11 @@ class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Prs3d_Presentation & ChangeFromKey(const Handle_SelectMgr_EntityOwner &K);
 
+};
+%extend AIS_IndexedDataMapOfOwnerPrs {
+	~AIS_IndexedDataMapOfOwnerPrs() {
+	printf("Call custom destructor for instance of AIS_IndexedDataMapOfOwnerPrs\n");
+	}
 };
 
 %nodefaultctor AIS_Axis;
@@ -3077,8 +3084,6 @@ class AIS_ParallelRelation : public AIS_Relation {
 class AIS_DataMapIteratorOfDataMapOfSelStat : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~AIS_DataMapIteratorOfDataMapOfSelStat();
-		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapOfSelStat();
 		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapOfSelStat(const AIS_DataMapOfSelStat &aMap);
@@ -3089,6 +3094,11 @@ class AIS_DataMapIteratorOfDataMapOfSelStat : public TCollection_BasicMapIterato
 		%feature("autodoc", "1");
 		const Handle_AIS_LocalStatus & Value() const;
 
+};
+%extend AIS_DataMapIteratorOfDataMapOfSelStat {
+	~AIS_DataMapIteratorOfDataMapOfSelStat() {
+	printf("Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfSelStat\n");
+	}
 };
 
 %nodefaultctor AIS_Plane;
@@ -3321,8 +3331,6 @@ class AIS_DataMapOfTransientTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS_DataMapOfTransientTransient();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
@@ -3337,6 +3345,11 @@ class AIS_DataMapOfTransientTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K);
 
+};
+%extend AIS_DataMapOfTransientTransient {
+	~AIS_DataMapOfTransientTransient() {
+	printf("Call custom destructor for instance of AIS_DataMapOfTransientTransient\n");
+	}
 };
 
 %nodefaultctor AIS_MultipleConnectedInteractive;
@@ -3533,8 +3546,6 @@ class AIS_ListOfInteractive {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS_ListOfInteractive();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_AIS_InteractiveObject &I);
@@ -3565,6 +3576,11 @@ class AIS_ListOfInteractive {
 		%feature("autodoc", "1");
 		void InsertAfter(AIS_ListOfInteractive & Other, AIS_ListIteratorOfListOfInteractive & It);
 
+};
+%extend AIS_ListOfInteractive {
+	~AIS_ListOfInteractive() {
+	printf("Call custom destructor for instance of AIS_ListOfInteractive\n");
+	}
 };
 
 %nodefaultctor AIS_InteractiveContext;
@@ -4151,8 +4167,6 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 class AIS_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~AIS_DataMapIteratorOfDataMapOfIOStatus();
-		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapOfIOStatus();
 		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapOfIOStatus(const AIS_DataMapOfIOStatus &aMap);
@@ -4163,6 +4177,11 @@ class AIS_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIterat
 		%feature("autodoc", "1");
 		const Handle_AIS_GlobalStatus & Value() const;
 
+};
+%extend AIS_DataMapIteratorOfDataMapOfIOStatus {
+	~AIS_DataMapIteratorOfDataMapOfIOStatus() {
+	printf("Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfIOStatus\n");
+	}
 };
 
 %nodefaultctor AIS_Chamf2dDimension;
@@ -4273,8 +4292,6 @@ class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS_DataMapOfIOStatus();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_AIS_InteractiveObject &K, const Handle_AIS_GlobalStatus &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_AIS_InteractiveObject &K) const;
@@ -4289,6 +4306,11 @@ class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K);
 
+};
+%extend AIS_DataMapOfIOStatus {
+	~AIS_DataMapOfIOStatus() {
+	printf("Call custom destructor for instance of AIS_DataMapOfIOStatus\n");
+	}
 };
 
 %nodefaultctor AIS_MultipleConnectedShape;
@@ -4595,8 +4617,6 @@ class AIS_Point : public AIS_InteractiveObject {
 class AIS_MapIteratorOfMapOfInteractive : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~AIS_MapIteratorOfMapOfInteractive();
-		%feature("autodoc", "1");
 		AIS_MapIteratorOfMapOfInteractive();
 		%feature("autodoc", "1");
 		AIS_MapIteratorOfMapOfInteractive(const AIS_MapOfInteractive &aMap);
@@ -4605,6 +4625,11 @@ class AIS_MapIteratorOfMapOfInteractive : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const Handle_AIS_InteractiveObject & Key() const;
 
+};
+%extend AIS_MapIteratorOfMapOfInteractive {
+	~AIS_MapIteratorOfMapOfInteractive() {
+	printf("Call custom destructor for instance of AIS_MapIteratorOfMapOfInteractive\n");
+	}
 };
 
 %nodefaultctor AIS_EqualDistanceRelation;
@@ -4837,8 +4862,6 @@ class AIS_SequenceOfDimension : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS_SequenceOfDimension();
-		%feature("autodoc", "1");
 		const AIS_SequenceOfDimension & Assign(const AIS_SequenceOfDimension &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_AIS_Relation &T);
@@ -4877,6 +4900,11 @@ class AIS_SequenceOfDimension : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend AIS_SequenceOfDimension {
+	~AIS_SequenceOfDimension() {
+	printf("Call custom destructor for instance of AIS_SequenceOfDimension\n");
+	}
 };
 
 %nodefaultctor AIS_LocalContext;

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module FEmTool
 
@@ -458,8 +444,6 @@ class FEmTool_AssemblyTable {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~FEmTool_AssemblyTable();
-		%feature("autodoc", "1");
 		const FEmTool_AssemblyTable & Assign(const FEmTool_AssemblyTable &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -484,6 +468,11 @@ class FEmTool_AssemblyTable {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend FEmTool_AssemblyTable {
+	~FEmTool_AssemblyTable() {
+	printf("Call custom destructor for instance of FEmTool_AssemblyTable\n");
+	}
 };
 
 %nodefaultctor FEmTool_Assembly;
@@ -550,8 +539,6 @@ class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 class FEmTool_ListIteratorOfListOfVectors {
 	public:
 		%feature("autodoc", "1");
-		~FEmTool_ListIteratorOfListOfVectors();
-		%feature("autodoc", "1");
 		FEmTool_ListIteratorOfListOfVectors();
 		%feature("autodoc", "1");
 		FEmTool_ListIteratorOfListOfVectors(const FEmTool_ListOfVectors &L);
@@ -564,6 +551,11 @@ class FEmTool_ListIteratorOfListOfVectors {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal & Value() const;
 
+};
+%extend FEmTool_ListIteratorOfListOfVectors {
+	~FEmTool_ListIteratorOfListOfVectors() {
+	printf("Call custom destructor for instance of FEmTool_ListIteratorOfListOfVectors\n");
+	}
 };
 
 %nodefaultctor FEmTool_Curve;
@@ -686,8 +678,6 @@ class FEmTool_ListOfVectors {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~FEmTool_ListOfVectors();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_TColStd_HArray1OfReal &I);
@@ -718,6 +708,11 @@ class FEmTool_ListOfVectors {
 		%feature("autodoc", "1");
 		void InsertAfter(FEmTool_ListOfVectors & Other, FEmTool_ListIteratorOfListOfVectors & It);
 
+};
+%extend FEmTool_ListOfVectors {
+	~FEmTool_ListOfVectors() {
+	printf("Call custom destructor for instance of FEmTool_ListOfVectors\n");
+	}
 };
 
 %nodefaultctor FEmTool_HAssemblyTable;

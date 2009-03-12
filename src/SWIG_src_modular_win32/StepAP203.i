@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepAP203
 
@@ -909,9 +895,12 @@ class StepAP203_SpecifiedItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspect ShapeAspect() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_SpecifiedItem();
 
+};
+%extend StepAP203_SpecifiedItem {
+	~StepAP203_SpecifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_SpecifiedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_Array1OfContractedItem;
@@ -1111,9 +1100,12 @@ class StepAP203_StartRequestItem : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_StartRequestItem();
 
+};
+%extend StepAP203_StartRequestItem {
+	~StepAP203_StartRequestItem() {
+	printf("Call custom destructor for instance of StepAP203_StartRequestItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_PersonOrganizationItem;
@@ -1143,9 +1135,12 @@ class StepAP203_PersonOrganizationItem : public StepData_SelectType {
 		Handle_StepBasic_Contract Contract() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassification SecurityClassification() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_PersonOrganizationItem();
 
+};
+%extend StepAP203_PersonOrganizationItem {
+	~StepAP203_PersonOrganizationItem() {
+	printf("Call custom destructor for instance of StepAP203_PersonOrganizationItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_WorkItem;
@@ -1157,9 +1152,12 @@ class StepAP203_WorkItem : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_WorkItem();
 
+};
+%extend StepAP203_WorkItem {
+	~StepAP203_WorkItem() {
+	printf("Call custom destructor for instance of StepAP203_WorkItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_CertifiedItem;
@@ -1171,9 +1169,12 @@ class StepAP203_CertifiedItem : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_StepRepr_SuppliedPartRelationship SuppliedPartRelationship() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_CertifiedItem();
 
+};
+%extend StepAP203_CertifiedItem {
+	~StepAP203_CertifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_CertifiedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_HArray1OfContractedItem;
@@ -1357,9 +1358,12 @@ class StepAP203_ChangeRequestItem : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_ChangeRequestItem();
 
+};
+%extend StepAP203_ChangeRequestItem {
+	~StepAP203_ChangeRequestItem() {
+	printf("Call custom destructor for instance of StepAP203_ChangeRequestItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_DateTimeItem;
@@ -1387,9 +1391,12 @@ class StepAP203_DateTimeItem : public StepData_SelectType {
 		Handle_StepBasic_SecurityClassification SecurityClassification() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_Certification Certification() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_DateTimeItem();
 
+};
+%extend StepAP203_DateTimeItem {
+	~StepAP203_DateTimeItem() {
+	printf("Call custom destructor for instance of StepAP203_DateTimeItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_Array1OfStartRequestItem;
@@ -1625,9 +1632,12 @@ class StepAP203_ApprovedItem : public StepData_SelectType {
 		Handle_StepBasic_Certification Certification() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_Contract Contract() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_ApprovedItem();
 
+};
+%extend StepAP203_ApprovedItem {
+	~StepAP203_ApprovedItem() {
+	printf("Call custom destructor for instance of StepAP203_ApprovedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_CcDesignCertification;
@@ -1691,9 +1701,12 @@ class StepAP203_ContractedItem : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_ContractedItem();
 
+};
+%extend StepAP203_ContractedItem {
+	~StepAP203_ContractedItem() {
+	printf("Call custom destructor for instance of StepAP203_ContractedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_CcDesignSpecificationReference;
@@ -1733,9 +1746,12 @@ class StepAP203_ClassifiedItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
 		%feature("autodoc", "1");
 		Handle_StepRepr_AssemblyComponentUsage AssemblyComponentUsage() const;
-		%feature("autodoc", "1");
-		virtual		~StepAP203_ClassifiedItem();
 
+};
+%extend StepAP203_ClassifiedItem {
+	~StepAP203_ClassifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_ClassifiedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_Array1OfDateTimeItem;

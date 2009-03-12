@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TDataStd
 
@@ -2725,8 +2711,6 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal();
-		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal(const TDataStd_DataMapOfStringHArray1OfReal &aMap);
@@ -2737,6 +2721,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal : public TCollectio
 		%feature("autodoc", "1");
 		const Handle_TColStd_HArray1OfReal & Value() const;
 
+};
+%extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal {
+	~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal\n");
+	}
 };
 
 %nodefaultctor TDataStd_DataMapOfStringHArray1OfInteger;
@@ -2750,8 +2739,6 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringHArray1OfInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfInteger &I);
 		%feature("autodoc", "1");
@@ -2767,6 +2754,11 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend TDataStd_DataMapOfStringHArray1OfInteger {
+	~TDataStd_DataMapOfStringHArray1OfInteger() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringHArray1OfInteger\n");
+	}
 };
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringByte;
@@ -3107,8 +3099,6 @@ class TDataStd_Real : public TDF_Attribute {
 class TDataStd_ChildNodeIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_ChildNodeIterator();
-		%feature("autodoc", "1");
 		TDataStd_ChildNodeIterator();
 		%feature("autodoc", "1");
 		TDataStd_ChildNodeIterator(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
@@ -3123,6 +3113,11 @@ class TDataStd_ChildNodeIterator {
 		%feature("autodoc", "1");
 		Handle_TDataStd_TreeNode Value() const;
 
+};
+%extend TDataStd_ChildNodeIterator {
+	~TDataStd_ChildNodeIterator() {
+	printf("Call custom destructor for instance of TDataStd_ChildNodeIterator\n");
+	}
 };
 
 %nodefaultctor TDataStd_Relation;
@@ -3853,8 +3848,6 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringHArray1OfReal();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfReal &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
@@ -3869,6 +3862,11 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend TDataStd_DataMapOfStringHArray1OfReal {
+	~TDataStd_DataMapOfStringHArray1OfReal() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringHArray1OfReal\n");
+	}
 };
 
 %nodefaultctor TDataStd_ListIteratorOfListOfExtendedString;
@@ -4431,8 +4429,6 @@ class TDataStd_Constraint : public TDF_Attribute {
 class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger();
-		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger(const TDataStd_DataMapOfStringHArray1OfInteger &aMap);
@@ -4443,6 +4439,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger : public TCollec
 		%feature("autodoc", "1");
 		const Handle_TColStd_HArray1OfInteger & Value() const;
 
+};
+%extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger {
+	~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger\n");
+	}
 };
 
 %nodefaultctor TDataStd_Plane;

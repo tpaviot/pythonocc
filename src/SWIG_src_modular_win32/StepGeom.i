@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepGeom
 
@@ -2737,8 +2723,6 @@ class StepGeom_Array2OfSurfacePatch {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepGeom_Array2OfSurfacePatch();
-		%feature("autodoc", "1");
 		const StepGeom_Array2OfSurfacePatch & Assign(const StepGeom_Array2OfSurfacePatch &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -2763,6 +2747,11 @@ class StepGeom_Array2OfSurfacePatch {
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend StepGeom_Array2OfSurfacePatch {
+	~StepGeom_Array2OfSurfacePatch() {
+	printf("Call custom destructor for instance of StepGeom_Array2OfSurfacePatch\n");
+	}
 };
 
 %nodefaultctor StepGeom_PointReplica;
@@ -3284,9 +3273,12 @@ class StepGeom_PcurveOrSurface : public StepData_SelectType {
 		Handle_StepGeom_Pcurve Pcurve() const;
 		%feature("autodoc", "1");
 		Handle_StepGeom_Surface Surface() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_PcurveOrSurface();
 
+};
+%extend StepGeom_PcurveOrSurface {
+	~StepGeom_PcurveOrSurface() {
+	printf("Call custom destructor for instance of StepGeom_PcurveOrSurface\n");
+	}
 };
 
 %nodefaultctor StepGeom_ElementarySurface;
@@ -3582,9 +3574,12 @@ class StepGeom_VectorOrDirection : public StepData_SelectType {
 		Handle_StepGeom_Vector Vector() const;
 		%feature("autodoc", "1");
 		Handle_StepGeom_Direction Direction() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_VectorOrDirection();
 
+};
+%extend StepGeom_VectorOrDirection {
+	~StepGeom_VectorOrDirection() {
+	printf("Call custom destructor for instance of StepGeom_VectorOrDirection\n");
+	}
 };
 
 %nodefaultctor StepGeom_SweptSurface;
@@ -3840,9 +3835,12 @@ class StepGeom_SurfaceBoundary : public StepData_SelectType {
 		Handle_StepGeom_BoundaryCurve BoundaryCurve() const;
 		%feature("autodoc", "1");
 		Handle_StepGeom_DegeneratePcurve DegeneratePcurve() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_SurfaceBoundary();
 
+};
+%extend StepGeom_SurfaceBoundary {
+	~StepGeom_SurfaceBoundary() {
+	printf("Call custom destructor for instance of StepGeom_SurfaceBoundary\n");
+	}
 };
 
 %nodefaultctor StepGeom_Circle;
@@ -3885,8 +3883,6 @@ class StepGeom_Array1OfCartesianPoint {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepGeom_Array1OfCartesianPoint();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepGeom_Array1OfCartesianPoint & Assign(const StepGeom_Array1OfCartesianPoint &Other);
@@ -3907,6 +3903,11 @@ class StepGeom_Array1OfCartesianPoint {
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianPoint & operator()(const Standard_Integer Index);
 
+};
+%extend StepGeom_Array1OfCartesianPoint {
+	~StepGeom_Array1OfCartesianPoint() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfCartesianPoint\n");
+	}
 };
 
 %nodefaultctor StepGeom_ReparametrisedCompositeCurveSegment;
@@ -4045,8 +4046,6 @@ class StepGeom_Array1OfCurve {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepGeom_Array1OfCurve();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepGeom_Array1OfCurve & Assign(const StepGeom_Array1OfCurve &Other);
@@ -4068,6 +4067,11 @@ class StepGeom_Array1OfCurve {
 		Handle_StepGeom_Curve & operator()(const Standard_Integer Index);
 
 };
+%extend StepGeom_Array1OfCurve {
+	~StepGeom_Array1OfCurve() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfCurve\n");
+	}
+};
 
 %nodefaultctor StepGeom_Array2OfCartesianPoint;
 class StepGeom_Array2OfCartesianPoint {
@@ -4080,8 +4084,6 @@ class StepGeom_Array2OfCartesianPoint {
 		void Init(const Handle_StepGeom_CartesianPoint &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepGeom_Array2OfCartesianPoint();
 		%feature("autodoc", "1");
 		const StepGeom_Array2OfCartesianPoint & Assign(const StepGeom_Array2OfCartesianPoint &Other);
 		%feature("autodoc", "1");
@@ -4107,6 +4109,11 @@ class StepGeom_Array2OfCartesianPoint {
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianPoint & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend StepGeom_Array2OfCartesianPoint {
+	~StepGeom_Array2OfCartesianPoint() {
+	printf("Call custom destructor for instance of StepGeom_Array2OfCartesianPoint\n");
+	}
 };
 
 %nodefaultctor StepGeom_SurfacePatch;
@@ -4195,8 +4202,6 @@ class StepGeom_Array1OfBoundaryCurve {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepGeom_Array1OfBoundaryCurve();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepGeom_Array1OfBoundaryCurve & Assign(const StepGeom_Array1OfBoundaryCurve &Other);
@@ -4218,6 +4223,11 @@ class StepGeom_Array1OfBoundaryCurve {
 		Handle_StepGeom_BoundaryCurve & operator()(const Standard_Integer Index);
 
 };
+%extend StepGeom_Array1OfBoundaryCurve {
+	~StepGeom_Array1OfBoundaryCurve() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfBoundaryCurve\n");
+	}
+};
 
 %nodefaultctor StepGeom_CurveOnSurface;
 class StepGeom_CurveOnSurface : public StepData_SelectType {
@@ -4232,9 +4242,12 @@ class StepGeom_CurveOnSurface : public StepData_SelectType {
 		Handle_StepGeom_SurfaceCurve SurfaceCurve() const;
 		%feature("autodoc", "1");
 		Handle_StepGeom_CompositeCurveOnSurface CompositeCurveOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_CurveOnSurface();
 
+};
+%extend StepGeom_CurveOnSurface {
+	~StepGeom_CurveOnSurface() {
+	printf("Call custom destructor for instance of StepGeom_CurveOnSurface\n");
+	}
 };
 
 %nodefaultctor StepGeom_Array1OfCompositeCurveSegment;
@@ -4248,8 +4261,6 @@ class StepGeom_Array1OfCompositeCurveSegment {
 		void Init(const Handle_StepGeom_CompositeCurveSegment &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepGeom_Array1OfCompositeCurveSegment();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -4271,6 +4282,11 @@ class StepGeom_Array1OfCompositeCurveSegment {
 		%feature("autodoc", "1");
 		Handle_StepGeom_CompositeCurveSegment & operator()(const Standard_Integer Index);
 
+};
+%extend StepGeom_Array1OfCompositeCurveSegment {
+	~StepGeom_Array1OfCompositeCurveSegment() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfCompositeCurveSegment\n");
+	}
 };
 
 %nodefaultctor StepGeom_SeamCurve;
@@ -4650,9 +4666,12 @@ class StepGeom_TrimmingSelect : public StepData_SelectType {
 		void SetParameterValue(const Standard_Real aParameterValue);
 		%feature("autodoc", "1");
 		Standard_Real ParameterValue() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_TrimmingSelect();
 
+};
+%extend StepGeom_TrimmingSelect {
+	~StepGeom_TrimmingSelect() {
+	printf("Call custom destructor for instance of StepGeom_TrimmingSelect\n");
+	}
 };
 
 %nodefaultctor StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
@@ -5780,9 +5799,12 @@ class StepGeom_Axis2Placement : public StepData_SelectType {
 		Handle_StepGeom_Axis2Placement2d Axis2Placement2d() const;
 		%feature("autodoc", "1");
 		Handle_StepGeom_Axis2Placement3d Axis2Placement3d() const;
-		%feature("autodoc", "1");
-		virtual		~StepGeom_Axis2Placement();
 
+};
+%extend StepGeom_Axis2Placement {
+	~StepGeom_Axis2Placement() {
+	printf("Call custom destructor for instance of StepGeom_Axis2Placement\n");
+	}
 };
 
 %nodefaultctor StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;

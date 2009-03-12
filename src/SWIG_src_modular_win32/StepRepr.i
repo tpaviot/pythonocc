@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepRepr
 
@@ -1502,8 +1488,6 @@ class StepRepr_Array1OfPropertyDefinitionRepresentation {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepRepr_Array1OfPropertyDefinitionRepresentation();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepRepr_Array1OfPropertyDefinitionRepresentation & Assign(const StepRepr_Array1OfPropertyDefinitionRepresentation &Other);
@@ -1524,6 +1508,11 @@ class StepRepr_Array1OfPropertyDefinitionRepresentation {
 		%feature("autodoc", "1");
 		Handle_StepRepr_PropertyDefinitionRepresentation & operator()(const Standard_Integer Index);
 
+};
+%extend StepRepr_Array1OfPropertyDefinitionRepresentation {
+	~StepRepr_Array1OfPropertyDefinitionRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_Array1OfPropertyDefinitionRepresentation\n");
+	}
 };
 
 %nodefaultctor StepRepr_CharacterizedDefinition;
@@ -1547,9 +1536,12 @@ class StepRepr_CharacterizedDefinition : public StepData_SelectType {
 		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentFile DocumentFile() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_CharacterizedDefinition();
 
+};
+%extend StepRepr_CharacterizedDefinition {
+	~StepRepr_CharacterizedDefinition() {
+	printf("Call custom destructor for instance of StepRepr_CharacterizedDefinition\n");
+	}
 };
 
 %nodefaultctor StepRepr_ShapeAspectRelationship;
@@ -1957,9 +1949,12 @@ class StepRepr_RepresentedDefinition : public StepData_SelectType {
 		Handle_StepRepr_ShapeAspect ShapeAspect() const;
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_RepresentedDefinition();
 
+};
+%extend StepRepr_RepresentedDefinition {
+	~StepRepr_RepresentedDefinition() {
+	printf("Call custom destructor for instance of StepRepr_RepresentedDefinition\n");
+	}
 };
 
 %nodefaultctor StepRepr_SuppliedPartRelationship;
@@ -2612,8 +2607,6 @@ class StepRepr_SequenceOfMaterialPropertyRepresentation : public TCollection_Bas
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepRepr_SequenceOfMaterialPropertyRepresentation();
-		%feature("autodoc", "1");
 		const StepRepr_SequenceOfMaterialPropertyRepresentation & Assign(const StepRepr_SequenceOfMaterialPropertyRepresentation &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepRepr_MaterialPropertyRepresentation &T);
@@ -2653,6 +2646,11 @@ class StepRepr_SequenceOfMaterialPropertyRepresentation : public TCollection_Bas
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend StepRepr_SequenceOfMaterialPropertyRepresentation {
+	~StepRepr_SequenceOfMaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_SequenceOfMaterialPropertyRepresentation\n");
+	}
+};
 
 %nodefaultctor StepRepr_ShapeAspectDerivingRelationship;
 class StepRepr_ShapeAspectDerivingRelationship : public StepRepr_ShapeAspectRelationship {
@@ -2685,9 +2683,12 @@ class StepRepr_Transformation : public StepData_SelectType {
 		Handle_StepRepr_ItemDefinedTransformation ItemDefinedTransformation() const;
 		%feature("autodoc", "1");
 		Handle_StepRepr_FunctionallyDefinedTransformation FunctionallyDefinedTransformation() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_Transformation();
 
+};
+%extend StepRepr_Transformation {
+	~StepRepr_Transformation() {
+	printf("Call custom destructor for instance of StepRepr_Transformation\n");
+	}
 };
 
 %nodefaultctor StepRepr_RepresentationMap;
@@ -2732,8 +2733,6 @@ class StepRepr_Array1OfMaterialPropertyRepresentation {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepRepr_Array1OfMaterialPropertyRepresentation();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepRepr_Array1OfMaterialPropertyRepresentation & Assign(const StepRepr_Array1OfMaterialPropertyRepresentation &Other);
@@ -2754,6 +2753,11 @@ class StepRepr_Array1OfMaterialPropertyRepresentation {
 		%feature("autodoc", "1");
 		Handle_StepRepr_MaterialPropertyRepresentation & operator()(const Standard_Integer Index);
 
+};
+%extend StepRepr_Array1OfMaterialPropertyRepresentation {
+	~StepRepr_Array1OfMaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of StepRepr_Array1OfMaterialPropertyRepresentation\n");
+	}
 };
 
 %nodefaultctor StepRepr_PropertyDefinition;
@@ -2944,8 +2948,6 @@ class StepRepr_SequenceOfRepresentationItem : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepRepr_SequenceOfRepresentationItem();
-		%feature("autodoc", "1");
 		const StepRepr_SequenceOfRepresentationItem & Assign(const StepRepr_SequenceOfRepresentationItem &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepRepr_RepresentationItem &T);
@@ -2984,6 +2986,11 @@ class StepRepr_SequenceOfRepresentationItem : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend StepRepr_SequenceOfRepresentationItem {
+	~StepRepr_SequenceOfRepresentationItem() {
+	printf("Call custom destructor for instance of StepRepr_SequenceOfRepresentationItem\n");
+	}
 };
 
 %nodefaultctor StepRepr_ExternallyDefinedRepresentation;
@@ -3103,9 +3110,12 @@ class StepRepr_ShapeDefinition : public StepData_SelectType {
 		Handle_StepRepr_ShapeAspect ShapeAspect() const;
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ShapeDefinition();
 
+};
+%extend StepRepr_ShapeDefinition {
+	~StepRepr_ShapeDefinition() {
+	printf("Call custom destructor for instance of StepRepr_ShapeDefinition\n");
+	}
 };
 
 %nodefaultctor StepRepr_DescriptiveRepresentationItem;
@@ -3246,8 +3256,6 @@ class StepRepr_Array1OfRepresentationItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepRepr_Array1OfRepresentationItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepRepr_Array1OfRepresentationItem & Assign(const StepRepr_Array1OfRepresentationItem &Other);
@@ -3269,6 +3277,11 @@ class StepRepr_Array1OfRepresentationItem {
 		Handle_StepRepr_RepresentationItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepRepr_Array1OfRepresentationItem {
+	~StepRepr_Array1OfRepresentationItem() {
+	printf("Call custom destructor for instance of StepRepr_Array1OfRepresentationItem\n");
+	}
+};
 
 %nodefaultctor StepRepr_ConfigurationDesignItem;
 class StepRepr_ConfigurationDesignItem : public StepData_SelectType {
@@ -3281,9 +3294,12 @@ class StepRepr_ConfigurationDesignItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
-		%feature("autodoc", "1");
-		virtual		~StepRepr_ConfigurationDesignItem();
 
+};
+%extend StepRepr_ConfigurationDesignItem {
+	~StepRepr_ConfigurationDesignItem() {
+	printf("Call custom destructor for instance of StepRepr_ConfigurationDesignItem\n");
+	}
 };
 
 %nodefaultctor StepRepr_MeasureRepresentationItem;

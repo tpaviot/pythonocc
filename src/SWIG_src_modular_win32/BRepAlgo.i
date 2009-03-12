@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepAlgo
 
@@ -321,8 +307,6 @@ class BRepAlgo_Loop {
 class BRepAlgo_DSAccess {
 	public:
 		%feature("autodoc", "1");
-		~BRepAlgo_DSAccess();
-		%feature("autodoc", "1");
 		BRepAlgo_DSAccess();
 		%feature("autodoc", "1");
 		void Init();
@@ -374,12 +358,15 @@ class BRepAlgo_DSAccess {
 		Handle_TopOpeBRepBuild_HBuilder & ChangeBuilder();
 
 };
+%extend BRepAlgo_DSAccess {
+	~BRepAlgo_DSAccess() {
+	printf("Call custom destructor for instance of BRepAlgo_DSAccess\n");
+	}
+};
 
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference;
 class BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference();
 		%feature("autodoc", "1");
 		BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference();
 		%feature("autodoc", "1");
@@ -391,6 +378,11 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference : public TCollection_
 		%feature("autodoc", "1");
 		const Handle_TopOpeBRepDS_Interference & Value() const;
 
+};
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference {
+	~BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference() {
+	printf("Call custom destructor for instance of BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeInterference;
@@ -423,8 +415,6 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~BRepAlgo_BooleanOperation();
-		%feature("autodoc", "1");
 		void PerformDS();
 		%feature("autodoc", "1");
 		void Perform(const TopAbs_State St1, const TopAbs_State St2);
@@ -439,6 +429,11 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
 
+};
+%extend BRepAlgo_BooleanOperation {
+	~BRepAlgo_BooleanOperation() {
+	printf("Call custom destructor for instance of BRepAlgo_BooleanOperation\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_Fuse;
@@ -662,9 +657,12 @@ class BRepAlgo_TopOpe {
 		const Handle_BOP_HistoryCollector & History() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~BRepAlgo_TopOpe();
 
+};
+%extend BRepAlgo_TopOpe {
+	~BRepAlgo_TopOpe() {
+	printf("Call custom destructor for instance of BRepAlgo_TopOpe\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_Image;
@@ -739,8 +737,6 @@ class BRepAlgo_FaceRestrictor {
 class BRepAlgo_BooleanOperations {
 	public:
 		%feature("autodoc", "1");
-		~BRepAlgo_BooleanOperations();
-		%feature("autodoc", "1");
 		BRepAlgo_BooleanOperations();
 		%feature("autodoc", "1");
 		void Shapes2d(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
@@ -777,6 +773,11 @@ class BRepAlgo_BooleanOperations {
 		%feature("autodoc", "1");
 		BRepAlgo_DSAccess & DataStructureAccess();
 
+};
+%extend BRepAlgo_BooleanOperations {
+	~BRepAlgo_BooleanOperations() {
+	printf("Call custom destructor for instance of BRepAlgo_BooleanOperations\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_Section;
@@ -820,9 +821,12 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		Handle_Geom2d_Curve PCurveOn1(const TopoDS_Shape &E) const;
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve PCurveOn2(const TopoDS_Shape &E) const;
-		%feature("autodoc", "1");
-		virtual		~BRepAlgo_Section();
 
+};
+%extend BRepAlgo_Section {
+	~BRepAlgo_Section() {
+	printf("Call custom destructor for instance of BRepAlgo_Section\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_Common;
@@ -847,8 +851,6 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepAlgo_DataMapOfShapeInterference();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_TopOpeBRepDS_Interference &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -863,6 +865,11 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepAlgo_DataMapOfShapeInterference {
+	~BRepAlgo_DataMapOfShapeInterference() {
+	printf("Call custom destructor for instance of BRepAlgo_DataMapOfShapeInterference\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_SequenceOfSequenceOfInteger;

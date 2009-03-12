@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module AdvApp2Var
 
@@ -318,8 +304,6 @@ class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 class AdvApp2Var_Framework {
 	public:
 		%feature("autodoc", "1");
-		~AdvApp2Var_Framework();
-		%feature("autodoc", "1");
 		AdvApp2Var_Framework();
 		%feature("autodoc", "1");
 		AdvApp2Var_Framework(const AdvApp2Var_SequenceOfNode &Frame, const AdvApp2Var_SequenceOfStrip &UFrontier, const AdvApp2Var_SequenceOfStrip &VFrontier);
@@ -351,12 +335,15 @@ class AdvApp2Var_Framework {
 		const Handle_TColStd_HArray1OfReal & VEquation(const Standard_Integer IndexIso, const Standard_Integer IndexStrip) const;
 
 };
+%extend AdvApp2Var_Framework {
+	~AdvApp2Var_Framework() {
+	printf("Call custom destructor for instance of AdvApp2Var_Framework\n");
+	}
+};
 
 %nodefaultctor AdvApp2Var_Patch;
 class AdvApp2Var_Patch {
 	public:
-		%feature("autodoc", "1");
-		~AdvApp2Var_Patch();
 		%feature("autodoc", "1");
 		AdvApp2Var_Patch();
 		%feature("autodoc", "1");
@@ -416,6 +403,11 @@ class AdvApp2Var_Patch {
 		%feature("autodoc", "1");
 		void SetCritValue(const Standard_Real dist);
 
+};
+%extend AdvApp2Var_Patch {
+	~AdvApp2Var_Patch() {
+	printf("Call custom destructor for instance of AdvApp2Var_Patch\n");
+	}
 };
 
 %nodefaultctor AdvApp2Var_Data;
@@ -504,8 +496,6 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 class AdvApp2Var_Context {
 	public:
 		%feature("autodoc", "1");
-		~AdvApp2Var_Context();
-		%feature("autodoc", "1");
 		AdvApp2Var_Context();
 		%feature("autodoc", "1");
 		AdvApp2Var_Context(const Standard_Integer ifav, const Standard_Integer iu, const Standard_Integer iv, const Standard_Integer nlimu, const Standard_Integer nlimv, const Standard_Integer iprecis, const Standard_Integer nb1Dss, const Standard_Integer nb2Dss, const Standard_Integer nb3Dss, const Handle_TColStd_HArray1OfReal &tol1D, const Handle_TColStd_HArray1OfReal &tol2D, const Handle_TColStd_HArray1OfReal &tol3D, const Handle_TColStd_HArray2OfReal &tof1D, const Handle_TColStd_HArray2OfReal &tof2D, const Handle_TColStd_HArray2OfReal &tof3D);
@@ -546,6 +536,11 @@ class AdvApp2Var_Context {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray2OfReal CToler() const;
 
+};
+%extend AdvApp2Var_Context {
+	~AdvApp2Var_Context() {
+	printf("Call custom destructor for instance of AdvApp2Var_Context\n");
+	}
 };
 
 %nodefaultctor AdvApp2Var_SequenceNodeOfStrip;
@@ -646,8 +641,6 @@ class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
 class AdvApp2Var_ApproxAFunc2Var {
 	public:
 		%feature("autodoc", "1");
-		~AdvApp2Var_ApproxAFunc2Var();
-		%feature("autodoc", "1");
 		AdvApp2Var_ApproxAFunc2Var(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const Handle_TColStd_HArray1OfReal &OneDTol, const Handle_TColStd_HArray1OfReal &TwoDTol, const Handle_TColStd_HArray1OfReal &ThreeDTol, const Handle_TColStd_HArray2OfReal &OneDTolFr, const Handle_TColStd_HArray2OfReal &TwoDTolFr, const Handle_TColStd_HArray2OfReal &ThreeDTolFr, const Standard_Real FirstInU, const Standard_Real LastInU, const Standard_Real FirstInV, const Standard_Real LastInV, const GeomAbs_IsoType FavorIso, const GeomAbs_Shape ContInU, const GeomAbs_Shape ContInV, const Standard_Integer PrecisCode, const Standard_Integer MaxDegInU, const Standard_Integer MaxDegInV, const Standard_Integer MaxPatch, const AdvApp2Var_EvaluatorFunc2Var &Func, AdvApprox_Cutting & UChoice, AdvApprox_Cutting & VChoice);
 		%feature("autodoc", "1");
 		AdvApp2Var_ApproxAFunc2Var(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const Handle_TColStd_HArray1OfReal &OneDTol, const Handle_TColStd_HArray1OfReal &TwoDTol, const Handle_TColStd_HArray1OfReal &ThreeDTol, const Handle_TColStd_HArray2OfReal &OneDTolFr, const Handle_TColStd_HArray2OfReal &TwoDTolFr, const Handle_TColStd_HArray2OfReal &ThreeDTolFr, const Standard_Real FirstInU, const Standard_Real LastInU, const Standard_Real FirstInV, const Standard_Real LastInV, const GeomAbs_IsoType FavorIso, const GeomAbs_Shape ContInU, const GeomAbs_Shape ContInV, const Standard_Integer PrecisCode, const Standard_Integer MaxDegInU, const Standard_Integer MaxDegInV, const Standard_Integer MaxPatch, const AdvApp2Var_EvaluatorFunc2Var &Func, const AdvApp2Var_Criterion &Crit, AdvApprox_Cutting & UChoice, AdvApprox_Cutting & VChoice);
@@ -684,6 +677,11 @@ class AdvApp2Var_ApproxAFunc2Var {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend AdvApp2Var_ApproxAFunc2Var {
+	~AdvApp2Var_ApproxAFunc2Var() {
+	printf("Call custom destructor for instance of AdvApp2Var_ApproxAFunc2Var\n");
+	}
 };
 
 %nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfStrip;

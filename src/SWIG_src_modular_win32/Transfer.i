@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Transfer
 
@@ -851,8 +837,6 @@ class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Transfer_TransferMapOfProcessForTransient();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_Standard_Transient &K, const Handle_Transfer_Binder &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Handle_Standard_Transient &K, const Handle_Transfer_Binder &T);
@@ -877,6 +861,11 @@ class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Transfer_Binder & ChangeFromKey(const Handle_Standard_Transient &K);
 
+};
+%extend Transfer_TransferMapOfProcessForTransient {
+	~Transfer_TransferMapOfProcessForTransient() {
+	printf("Call custom destructor for instance of Transfer_TransferMapOfProcessForTransient\n");
+	}
 };
 
 %nodefaultctor Transfer_TransferInput;
@@ -993,8 +982,6 @@ class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Transfer_DataMapOfTransientTransient();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
@@ -1010,6 +997,11 @@ class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K);
 
 };
+%extend Transfer_DataMapOfTransientTransient {
+	~Transfer_DataMapOfTransientTransient() {
+	printf("Call custom destructor for instance of Transfer_DataMapOfTransientTransient\n");
+	}
+};
 
 %nodefaultctor Transfer_SequenceOfFinder;
 class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
@@ -1018,8 +1010,6 @@ class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
 		Transfer_SequenceOfFinder();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Transfer_SequenceOfFinder();
 		%feature("autodoc", "1");
 		const Transfer_SequenceOfFinder & Assign(const Transfer_SequenceOfFinder &Other);
 		%feature("autodoc", "1");
@@ -1060,6 +1050,11 @@ class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Transfer_SequenceOfFinder {
+	~Transfer_SequenceOfFinder() {
+	printf("Call custom destructor for instance of Transfer_SequenceOfFinder\n");
+	}
+};
 
 %nodefaultctor Transfer_TransferDispatch;
 class Transfer_TransferDispatch : public Interface_CopyTool {
@@ -1074,16 +1069,17 @@ class Transfer_TransferDispatch : public Interface_CopyTool {
 		Handle_Transfer_TransientProcess TransientProcess() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Copy(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
-		%feature("autodoc", "1");
-		virtual		~Transfer_TransferDispatch();
 
+};
+%extend Transfer_TransferDispatch {
+	~Transfer_TransferDispatch() {
+	printf("Call custom destructor for instance of Transfer_TransferDispatch\n");
+	}
 };
 
 %nodefaultctor Transfer_TransferIterator;
 class Transfer_TransferIterator {
 	public:
-		%feature("autodoc", "1");
-		~Transfer_TransferIterator();
 		%feature("autodoc", "1");
 		Transfer_TransferIterator();
 		%feature("autodoc", "1");
@@ -1125,6 +1121,11 @@ class Transfer_TransferIterator {
 		%feature("autodoc", "1");
 		Handle_Interface_Check const Check() const;
 
+};
+%extend Transfer_TransferIterator {
+	~Transfer_TransferIterator() {
+	printf("Call custom destructor for instance of Transfer_TransferIterator\n");
+	}
 };
 
 %nodefaultctor Transfer_Finder;
@@ -1957,8 +1958,6 @@ class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_Map
 class Transfer_IteratorOfProcessForFinder : public Transfer_TransferIterator {
 	public:
 		%feature("autodoc", "1");
-		~Transfer_IteratorOfProcessForFinder();
-		%feature("autodoc", "1");
 		Transfer_IteratorOfProcessForFinder(const Standard_Boolean withstarts);
 		%feature("autodoc", "1");
 		void Add(const Handle_Transfer_Binder &binder);
@@ -1971,6 +1970,11 @@ class Transfer_IteratorOfProcessForFinder : public Transfer_TransferIterator {
 		%feature("autodoc", "1");
 		const Handle_Transfer_Finder & Starting() const;
 
+};
+%extend Transfer_IteratorOfProcessForFinder {
+	~Transfer_IteratorOfProcessForFinder() {
+	printf("Call custom destructor for instance of Transfer_IteratorOfProcessForFinder\n");
+	}
 };
 
 %nodefaultctor Transfer_SimpleBinderOfTransient;
@@ -2039,8 +2043,6 @@ class Transfer_SequenceOfBinder : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Transfer_SequenceOfBinder();
-		%feature("autodoc", "1");
 		const Transfer_SequenceOfBinder & Assign(const Transfer_SequenceOfBinder &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Transfer_Binder &T);
@@ -2079,6 +2081,11 @@ class Transfer_SequenceOfBinder : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Transfer_SequenceOfBinder {
+	~Transfer_SequenceOfBinder() {
+	printf("Call custom destructor for instance of Transfer_SequenceOfBinder\n");
+	}
 };
 
 %nodefaultctor Transfer_MultipleBinder;
@@ -2143,8 +2150,6 @@ class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
 class Transfer_TransferOutput {
 	public:
 		%feature("autodoc", "1");
-		~Transfer_TransferOutput();
-		%feature("autodoc", "1");
 		Transfer_TransferOutput(const Handle_Transfer_ActorOfTransientProcess &actor, const Handle_Interface_InterfaceModel &amodel);
 		%feature("autodoc", "1");
 		Transfer_TransferOutput(const Handle_Transfer_TransientProcess &proc, const Handle_Interface_InterfaceModel &amodel);
@@ -2165,6 +2170,11 @@ class Transfer_TransferOutput {
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel ModelForStatus(const Handle_Interface_Protocol &protocol, const Standard_Boolean normal, const Standard_Boolean roots=1) const;
 
+};
+%extend Transfer_TransferOutput {
+	~Transfer_TransferOutput() {
+	printf("Call custom destructor for instance of Transfer_TransferOutput\n");
+	}
 };
 
 %nodefaultctor Transfer_TransientListBinder;
@@ -2297,14 +2307,17 @@ class Transfer_HSequenceOfBinder : public MMgt_TShared {
 class Transfer_DataInfo {
 	public:
 		%feature("autodoc", "1");
-		~Transfer_DataInfo();
-		%feature("autodoc", "1");
 		Transfer_DataInfo();
 		%feature("autodoc", "1");
 		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
 		%feature("autodoc", "1");
 		char * TypeName(const Handle_Standard_Transient &ent);
 
+};
+%extend Transfer_DataInfo {
+	~Transfer_DataInfo() {
+	printf("Call custom destructor for instance of Transfer_DataInfo\n");
+	}
 };
 
 %nodefaultctor Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient;
@@ -2347,8 +2360,6 @@ class Transfer_TransferMapOfProcessForFinder : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Transfer_TransferMapOfProcessForFinder();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_Transfer_Finder &K, const Handle_Transfer_Binder &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Handle_Transfer_Finder &K, const Handle_Transfer_Binder &T);
@@ -2374,12 +2385,15 @@ class Transfer_TransferMapOfProcessForFinder : public TCollection_BasicMap {
 		Handle_Transfer_Binder & ChangeFromKey(const Handle_Transfer_Finder &K);
 
 };
+%extend Transfer_TransferMapOfProcessForFinder {
+	~Transfer_TransferMapOfProcessForFinder() {
+	printf("Call custom destructor for instance of Transfer_TransferMapOfProcessForFinder\n");
+	}
+};
 
 %nodefaultctor Transfer_DataMapIteratorOfDataMapOfTransientTransient;
 class Transfer_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Transfer_DataMapIteratorOfDataMapOfTransientTransient();
 		%feature("autodoc", "1");
 		Transfer_DataMapIteratorOfDataMapOfTransientTransient();
 		%feature("autodoc", "1");
@@ -2391,6 +2405,11 @@ class Transfer_DataMapIteratorOfDataMapOfTransientTransient : public TCollection
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
+};
+%extend Transfer_DataMapIteratorOfDataMapOfTransientTransient {
+	~Transfer_DataMapIteratorOfDataMapOfTransientTransient() {
+	printf("Call custom destructor for instance of Transfer_DataMapIteratorOfDataMapOfTransientTransient\n");
+	}
 };
 
 %nodefaultctor Transfer_TransientProcess;
@@ -2473,8 +2492,6 @@ class Transfer_MapContainer : public MMgt_TShared {
 class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator {
 	public:
 		%feature("autodoc", "1");
-		~Transfer_IteratorOfProcessForTransient();
-		%feature("autodoc", "1");
 		Transfer_IteratorOfProcessForTransient(const Standard_Boolean withstarts);
 		%feature("autodoc", "1");
 		void Add(const Handle_Transfer_Binder &binder);
@@ -2487,6 +2504,11 @@ class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator 
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Starting() const;
 
+};
+%extend Transfer_IteratorOfProcessForTransient {
+	~Transfer_IteratorOfProcessForTransient() {
+	printf("Call custom destructor for instance of Transfer_IteratorOfProcessForTransient\n");
+	}
 };
 
 %nodefaultctor Transfer_SequenceNodeOfSequenceOfBinder;

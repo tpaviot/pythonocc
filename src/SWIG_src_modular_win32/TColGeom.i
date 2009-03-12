@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TColGeom
 
@@ -646,8 +632,6 @@ class TColGeom_Array1OfBoundedCurve {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColGeom_Array1OfBoundedCurve();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColGeom_Array1OfBoundedCurve & Assign(const TColGeom_Array1OfBoundedCurve &Other);
@@ -669,6 +653,11 @@ class TColGeom_Array1OfBoundedCurve {
 		Handle_Geom_BoundedCurve & operator()(const Standard_Integer Index);
 
 };
+%extend TColGeom_Array1OfBoundedCurve {
+	~TColGeom_Array1OfBoundedCurve() {
+	printf("Call custom destructor for instance of TColGeom_Array1OfBoundedCurve\n");
+	}
+};
 
 %nodefaultctor TColGeom_Array1OfCurve;
 class TColGeom_Array1OfCurve {
@@ -681,8 +670,6 @@ class TColGeom_Array1OfCurve {
 		void Init(const Handle_Geom_Curve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom_Array1OfCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -704,6 +691,11 @@ class TColGeom_Array1OfCurve {
 		%feature("autodoc", "1");
 		Handle_Geom_Curve & operator()(const Standard_Integer Index);
 
+};
+%extend TColGeom_Array1OfCurve {
+	~TColGeom_Array1OfCurve() {
+	printf("Call custom destructor for instance of TColGeom_Array1OfCurve\n");
+	}
 };
 
 %nodefaultctor TColGeom_HSequenceOfSurface;
@@ -912,8 +904,6 @@ class TColGeom_Array2OfSurface {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColGeom_Array2OfSurface();
-		%feature("autodoc", "1");
 		const TColGeom_Array2OfSurface & Assign(const TColGeom_Array2OfSurface &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -939,6 +929,11 @@ class TColGeom_Array2OfSurface {
 		Handle_Geom_Surface & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColGeom_Array2OfSurface {
+	~TColGeom_Array2OfSurface() {
+	printf("Call custom destructor for instance of TColGeom_Array2OfSurface\n");
+	}
+};
 
 %nodefaultctor TColGeom_Array2OfBezierSurface;
 class TColGeom_Array2OfBezierSurface {
@@ -951,8 +946,6 @@ class TColGeom_Array2OfBezierSurface {
 		void Init(const Handle_Geom_BezierSurface &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom_Array2OfBezierSurface();
 		%feature("autodoc", "1");
 		const TColGeom_Array2OfBezierSurface & Assign(const TColGeom_Array2OfBezierSurface &Other);
 		%feature("autodoc", "1");
@@ -978,6 +971,11 @@ class TColGeom_Array2OfBezierSurface {
 		%feature("autodoc", "1");
 		Handle_Geom_BezierSurface & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TColGeom_Array2OfBezierSurface {
+	~TColGeom_Array2OfBezierSurface() {
+	printf("Call custom destructor for instance of TColGeom_Array2OfBezierSurface\n");
+	}
 };
 
 %nodefaultctor TColGeom_HSequenceOfBoundedCurve;
@@ -1052,8 +1050,6 @@ class TColGeom_SequenceOfBoundedSurface : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColGeom_SequenceOfBoundedSurface();
-		%feature("autodoc", "1");
 		const TColGeom_SequenceOfBoundedSurface & Assign(const TColGeom_SequenceOfBoundedSurface &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Geom_BoundedSurface &T);
@@ -1093,6 +1089,11 @@ class TColGeom_SequenceOfBoundedSurface : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TColGeom_SequenceOfBoundedSurface {
+	~TColGeom_SequenceOfBoundedSurface() {
+	printf("Call custom destructor for instance of TColGeom_SequenceOfBoundedSurface\n");
+	}
+};
 
 %nodefaultctor TColGeom_Array1OfSurface;
 class TColGeom_Array1OfSurface {
@@ -1105,8 +1106,6 @@ class TColGeom_Array1OfSurface {
 		void Init(const Handle_Geom_Surface &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom_Array1OfSurface();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1128,6 +1127,11 @@ class TColGeom_Array1OfSurface {
 		%feature("autodoc", "1");
 		Handle_Geom_Surface & operator()(const Standard_Integer Index);
 
+};
+%extend TColGeom_Array1OfSurface {
+	~TColGeom_Array1OfSurface() {
+	printf("Call custom destructor for instance of TColGeom_Array1OfSurface\n");
+	}
 };
 
 %nodefaultctor TColGeom_HArray2OfBezierSurface;
@@ -1270,8 +1274,6 @@ class TColGeom_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColGeom_SequenceOfBoundedCurve();
-		%feature("autodoc", "1");
 		const TColGeom_SequenceOfBoundedCurve & Assign(const TColGeom_SequenceOfBoundedCurve &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Geom_BoundedCurve &T);
@@ -1310,6 +1312,11 @@ class TColGeom_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColGeom_SequenceOfBoundedCurve {
+	~TColGeom_SequenceOfBoundedCurve() {
+	printf("Call custom destructor for instance of TColGeom_SequenceOfBoundedCurve\n");
+	}
 };
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
@@ -1410,8 +1417,6 @@ class TColGeom_Array1OfBoundedSurface {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColGeom_Array1OfBoundedSurface();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColGeom_Array1OfBoundedSurface & Assign(const TColGeom_Array1OfBoundedSurface &Other);
@@ -1432,6 +1437,11 @@ class TColGeom_Array1OfBoundedSurface {
 		%feature("autodoc", "1");
 		Handle_Geom_BoundedSurface & operator()(const Standard_Integer Index);
 
+};
+%extend TColGeom_Array1OfBoundedSurface {
+	~TColGeom_Array1OfBoundedSurface() {
+	printf("Call custom destructor for instance of TColGeom_Array1OfBoundedSurface\n");
+	}
 };
 
 %nodefaultctor TColGeom_HArray1OfBSplineCurve;
@@ -1482,8 +1492,6 @@ class TColGeom_SequenceOfSurface : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColGeom_SequenceOfSurface();
-		%feature("autodoc", "1");
 		const TColGeom_SequenceOfSurface & Assign(const TColGeom_SequenceOfSurface &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Geom_Surface &T);
@@ -1522,6 +1530,11 @@ class TColGeom_SequenceOfSurface : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColGeom_SequenceOfSurface {
+	~TColGeom_SequenceOfSurface() {
+	printf("Call custom destructor for instance of TColGeom_SequenceOfSurface\n");
+	}
 };
 
 %nodefaultctor TColGeom_HArray2OfBSplineSurface;
@@ -1582,8 +1595,6 @@ class TColGeom_Array2OfBoundedSurface {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColGeom_Array2OfBoundedSurface();
-		%feature("autodoc", "1");
 		const TColGeom_Array2OfBoundedSurface & Assign(const TColGeom_Array2OfBoundedSurface &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -1609,6 +1620,11 @@ class TColGeom_Array2OfBoundedSurface {
 		Handle_Geom_BoundedSurface & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColGeom_Array2OfBoundedSurface {
+	~TColGeom_Array2OfBoundedSurface() {
+	printf("Call custom destructor for instance of TColGeom_Array2OfBoundedSurface\n");
+	}
+};
 
 %nodefaultctor TColGeom_Array1OfBSplineCurve;
 class TColGeom_Array1OfBSplineCurve {
@@ -1621,8 +1637,6 @@ class TColGeom_Array1OfBSplineCurve {
 		void Init(const Handle_Geom_BSplineCurve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom_Array1OfBSplineCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1645,6 +1659,11 @@ class TColGeom_Array1OfBSplineCurve {
 		Handle_Geom_BSplineCurve & operator()(const Standard_Integer Index);
 
 };
+%extend TColGeom_Array1OfBSplineCurve {
+	~TColGeom_Array1OfBSplineCurve() {
+	printf("Call custom destructor for instance of TColGeom_Array1OfBSplineCurve\n");
+	}
+};
 
 %nodefaultctor TColGeom_Array1OfBezierCurve;
 class TColGeom_Array1OfBezierCurve {
@@ -1657,8 +1676,6 @@ class TColGeom_Array1OfBezierCurve {
 		void Init(const Handle_Geom_BezierCurve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom_Array1OfBezierCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1681,6 +1698,11 @@ class TColGeom_Array1OfBezierCurve {
 		Handle_Geom_BezierCurve & operator()(const Standard_Integer Index);
 
 };
+%extend TColGeom_Array1OfBezierCurve {
+	~TColGeom_Array1OfBezierCurve() {
+	printf("Call custom destructor for instance of TColGeom_Array1OfBezierCurve\n");
+	}
+};
 
 %nodefaultctor TColGeom_Array2OfBSplineSurface;
 class TColGeom_Array2OfBSplineSurface {
@@ -1693,8 +1715,6 @@ class TColGeom_Array2OfBSplineSurface {
 		void Init(const Handle_Geom_BSplineSurface &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColGeom_Array2OfBSplineSurface();
 		%feature("autodoc", "1");
 		const TColGeom_Array2OfBSplineSurface & Assign(const TColGeom_Array2OfBSplineSurface &Other);
 		%feature("autodoc", "1");
@@ -1720,6 +1740,11 @@ class TColGeom_Array2OfBSplineSurface {
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TColGeom_Array2OfBSplineSurface {
+	~TColGeom_Array2OfBSplineSurface() {
+	printf("Call custom destructor for instance of TColGeom_Array2OfBSplineSurface\n");
+	}
 };
 
 %nodefaultctor TColGeom_HArray1OfBezierCurve;
@@ -1770,8 +1795,6 @@ class TColGeom_SequenceOfCurve : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColGeom_SequenceOfCurve();
-		%feature("autodoc", "1");
 		const TColGeom_SequenceOfCurve & Assign(const TColGeom_SequenceOfCurve &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Geom_Curve &T);
@@ -1810,6 +1833,11 @@ class TColGeom_SequenceOfCurve : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColGeom_SequenceOfCurve {
+	~TColGeom_SequenceOfCurve() {
+	printf("Call custom destructor for instance of TColGeom_SequenceOfCurve\n");
+	}
 };
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfSurface;

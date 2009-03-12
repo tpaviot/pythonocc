@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module MoniTool
 
@@ -756,8 +742,6 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MoniTool_DataMapOfShapeTransient();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -773,6 +757,11 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const TopoDS_Shape &K);
 
 };
+%extend MoniTool_DataMapOfShapeTransient {
+	~MoniTool_DataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of MoniTool_DataMapOfShapeTransient\n");
+	}
+};
 
 %nodefaultctor MoniTool_TimerSentry;
 class MoniTool_TimerSentry {
@@ -784,12 +773,15 @@ class MoniTool_TimerSentry {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~MoniTool_TimerSentry();
-		%feature("autodoc", "1");
 		Handle_MoniTool_Timer Timer() const;
 		%feature("autodoc", "1");
 		void Stop();
 
+};
+%extend MoniTool_TimerSentry {
+	~MoniTool_TimerSentry() {
+	printf("Call custom destructor for instance of MoniTool_TimerSentry\n");
+	}
 };
 
 %nodefaultctor MoniTool_IntVal;
@@ -844,8 +836,6 @@ class MoniTool_RealVal : public MMgt_TShared {
 class MoniTool_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MoniTool_DataMapIteratorOfDataMapOfShapeTransient();
-		%feature("autodoc", "1");
 		MoniTool_DataMapIteratorOfDataMapOfShapeTransient();
 		%feature("autodoc", "1");
 		MoniTool_DataMapIteratorOfDataMapOfShapeTransient(const MoniTool_DataMapOfShapeTransient &aMap);
@@ -856,6 +846,11 @@ class MoniTool_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_Bas
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
+};
+%extend MoniTool_DataMapIteratorOfDataMapOfShapeTransient {
+	~MoniTool_DataMapIteratorOfDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfShapeTransient\n");
+	}
 };
 
 %nodefaultctor MoniTool_Element;
@@ -1030,14 +1025,17 @@ class MoniTool_CaseData : public MMgt_TShared {
 class MoniTool_DataInfo {
 	public:
 		%feature("autodoc", "1");
-		~MoniTool_DataInfo();
-		%feature("autodoc", "1");
 		MoniTool_DataInfo();
 		%feature("autodoc", "1");
 		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
 		%feature("autodoc", "1");
 		char * TypeName(const Handle_Standard_Transient &ent);
 
+};
+%extend MoniTool_DataInfo {
+	~MoniTool_DataInfo() {
+	printf("Call custom destructor for instance of MoniTool_DataInfo\n");
+	}
 };
 
 %nodefaultctor MoniTool_MTHasher;
@@ -1285,9 +1283,12 @@ class MoniTool_OptValue {
 		void Value(Handle_Standard_Transient & val) const;
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~MoniTool_OptValue();
 
+};
+%extend MoniTool_OptValue {
+	~MoniTool_OptValue() {
+	printf("Call custom destructor for instance of MoniTool_OptValue\n");
+	}
 };
 
 %nodefaultctor MoniTool_Stat;
@@ -1332,8 +1333,6 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MoniTool_IndexedDataMapOfShapeTransient();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const Handle_Standard_Transient &T);
@@ -1359,12 +1358,15 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend MoniTool_IndexedDataMapOfShapeTransient {
+	~MoniTool_IndexedDataMapOfShapeTransient() {
+	printf("Call custom destructor for instance of MoniTool_IndexedDataMapOfShapeTransient\n");
+	}
+};
 
 %nodefaultctor MoniTool_AttrList;
 class MoniTool_AttrList {
 	public:
-		%feature("autodoc", "1");
-		~MoniTool_AttrList();
 		%feature("autodoc", "1");
 		MoniTool_AttrList();
 		%feature("autodoc", "1");
@@ -1403,6 +1405,11 @@ class MoniTool_AttrList {
 		void GetAttributes(const MoniTool_AttrList &other, const char * fromname="", const Standard_Boolean copied=1);
 
 };
+%extend MoniTool_AttrList {
+	~MoniTool_AttrList() {
+	printf("Call custom destructor for instance of MoniTool_AttrList\n");
+	}
+};
 
 %nodefaultctor MoniTool_SequenceOfElement;
 class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
@@ -1411,8 +1418,6 @@ class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
 		MoniTool_SequenceOfElement();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MoniTool_SequenceOfElement();
 		%feature("autodoc", "1");
 		const MoniTool_SequenceOfElement & Assign(const MoniTool_SequenceOfElement &Other);
 		%feature("autodoc", "1");
@@ -1453,6 +1458,11 @@ class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MoniTool_SequenceOfElement {
+	~MoniTool_SequenceOfElement() {
+	printf("Call custom destructor for instance of MoniTool_SequenceOfElement\n");
+	}
+};
 
 %nodefaultctor MoniTool_DataMapOfTimer;
 class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
@@ -1465,8 +1475,6 @@ class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MoniTool_DataMapOfTimer();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const char * &K, const Handle_MoniTool_Timer &I);
 		%feature("autodoc", "1");
@@ -1482,6 +1490,11 @@ class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_MoniTool_Timer & operator()(const char * &K);
 
+};
+%extend MoniTool_DataMapOfTimer {
+	~MoniTool_DataMapOfTimer() {
+	printf("Call custom destructor for instance of MoniTool_DataMapOfTimer\n");
+	}
 };
 
 %nodefaultctor MoniTool_Option;
@@ -1538,8 +1551,6 @@ class MoniTool_Option : public MMgt_TShared {
 class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MoniTool_DataMapIteratorOfDataMapOfTimer();
-		%feature("autodoc", "1");
 		MoniTool_DataMapIteratorOfDataMapOfTimer();
 		%feature("autodoc", "1");
 		MoniTool_DataMapIteratorOfDataMapOfTimer(const MoniTool_DataMapOfTimer &aMap);
@@ -1550,4 +1561,9 @@ class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIter
 		%feature("autodoc", "1");
 		const Handle_MoniTool_Timer & Value() const;
 
+};
+%extend MoniTool_DataMapIteratorOfDataMapOfTimer {
+	~MoniTool_DataMapIteratorOfDataMapOfTimer() {
+	printf("Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfTimer\n");
+	}
 };

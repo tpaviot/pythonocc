@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module IGESData
 
@@ -1100,14 +1086,17 @@ class IGESData_NodeOfWriterLib : public MMgt_TShared {
 class IGESData {
 	public:
 		%feature("autodoc", "1");
-		~IGESData();
-		%feature("autodoc", "1");
 		IGESData();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		Handle_IGESData_Protocol Protocol();
 
+};
+%extend IGESData {
+	~IGESData() {
+	printf("Call custom destructor for instance of IGESData\n");
+	}
 };
 
 %nodefaultctor IGESData_IGESType;
@@ -1188,8 +1177,6 @@ class IGESData_Array1OfIGESEntity {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IGESData_Array1OfIGESEntity();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESData_Array1OfIGESEntity & Assign(const IGESData_Array1OfIGESEntity &Other);
@@ -1210,6 +1197,11 @@ class IGESData_Array1OfIGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity & operator()(const Standard_Integer Index);
 
+};
+%extend IGESData_Array1OfIGESEntity {
+	~IGESData_Array1OfIGESEntity() {
+	printf("Call custom destructor for instance of IGESData_Array1OfIGESEntity\n");
+	}
 };
 
 %nodefaultctor IGESData_UndefinedEntity;
@@ -1492,8 +1484,6 @@ class IGESData_NameEntity : public IGESData_IGESEntity {
 class IGESData_WriterLib {
 	public:
 		%feature("autodoc", "1");
-		~IGESData_WriterLib();
-		%feature("autodoc", "1");
 		void SetGlobal(const Handle_IGESData_ReadWriteModule &amodule, const Handle_IGESData_Protocol &aprotocol);
 		%feature("autodoc", "1");
 		IGESData_WriterLib(const Handle_IGESData_Protocol &aprotocol);
@@ -1519,12 +1509,15 @@ class IGESData_WriterLib {
 		const Handle_IGESData_Protocol & Protocol() const;
 
 };
+%extend IGESData_WriterLib {
+	~IGESData_WriterLib() {
+	printf("Call custom destructor for instance of IGESData_WriterLib\n");
+	}
+};
 
 %nodefaultctor IGESData_SpecificLib;
 class IGESData_SpecificLib {
 	public:
-		%feature("autodoc", "1");
-		~IGESData_SpecificLib();
 		%feature("autodoc", "1");
 		void SetGlobal(const Handle_IGESData_SpecificModule &amodule, const Handle_IGESData_Protocol &aprotocol);
 		%feature("autodoc", "1");
@@ -1550,6 +1543,11 @@ class IGESData_SpecificLib {
 		%feature("autodoc", "1");
 		const Handle_IGESData_Protocol & Protocol() const;
 
+};
+%extend IGESData_SpecificLib {
+	~IGESData_SpecificLib() {
+	printf("Call custom destructor for instance of IGESData_SpecificLib\n");
+	}
 };
 
 %nodefaultctor IGESData_FreeFormatEntity;
@@ -1748,8 +1746,6 @@ class IGESData_FileRecognizer : public Standard_Transient {
 class IGESData_ParamReader {
 	public:
 		%feature("autodoc", "1");
-		~IGESData_ParamReader();
-		%feature("autodoc", "1");
 		IGESData_ParamReader(const Handle_Interface_ParamList &list, const Handle_Interface_Check &ach, const Standard_Integer base=1, const Standard_Integer nbpar=0, const Standard_Integer num=0);
 		%feature("autodoc", "1");
 		Standard_Integer EntityNumber() const;
@@ -1869,6 +1865,11 @@ class IGESData_ParamReader {
 		Standard_Boolean IsCheckEmpty() const;
 
 };
+%extend IGESData_ParamReader {
+	~IGESData_ParamReader() {
+	printf("Call custom destructor for instance of IGESData_ParamReader\n");
+	}
+};
 
 %nodefaultctor IGESData_LevelListEntity;
 class IGESData_LevelListEntity : public IGESData_IGESEntity {
@@ -1958,8 +1959,6 @@ class IGESData_ViewKindEntity : public IGESData_IGESEntity {
 class IGESData_IGESWriter {
 	public:
 		%feature("autodoc", "1");
-		~IGESData_IGESWriter();
-		%feature("autodoc", "1");
 		IGESData_IGESWriter(const Handle_IGESData_IGESModel &amodel);
 		%feature("autodoc", "1");
 		IGESData_IGESWriter();
@@ -2014,6 +2013,11 @@ class IGESData_IGESWriter {
 		%feature("autodoc", "1");
 		Standard_Boolean Print(Standard_OStream & S) const;
 
+};
+%extend IGESData_IGESWriter {
+	~IGESData_IGESWriter() {
+	printf("Call custom destructor for instance of IGESData_IGESWriter\n");
+	}
 };
 
 %nodefaultctor IGESData_DefaultGeneral;
@@ -2145,8 +2149,6 @@ class IGESData_LineFontEntity : public IGESData_IGESEntity {
 %nodefaultctor IGESData_GlobalSection;
 class IGESData_GlobalSection {
 	public:
-		%feature("autodoc", "1");
-		~IGESData_GlobalSection();
 		%feature("autodoc", "1");
 		IGESData_GlobalSection();
 		%feature("autodoc", "1");
@@ -2281,6 +2283,11 @@ class IGESData_GlobalSection {
 		void SetApplicationProtocol(const Handle_TCollection_HAsciiString &val);
 
 };
+%extend IGESData_GlobalSection {
+	~IGESData_GlobalSection() {
+	printf("Call custom destructor for instance of IGESData_GlobalSection\n");
+	}
+};
 
 %nodefaultctor IGESData_IGESReaderData;
 class IGESData_IGESReaderData : public Interface_FileReaderData {
@@ -2364,8 +2371,6 @@ class IGESData_GlobalNodeOfWriterLib : public Standard_Transient {
 class IGESData_BasicEditor {
 	public:
 		%feature("autodoc", "1");
-		~IGESData_BasicEditor();
-		%feature("autodoc", "1");
 		IGESData_BasicEditor(const Handle_IGESData_Protocol &protocol);
 		%feature("autodoc", "1");
 		IGESData_BasicEditor(const Handle_IGESData_IGESModel &model, const Handle_IGESData_Protocol &protocol);
@@ -2400,6 +2405,11 @@ class IGESData_BasicEditor {
 		%feature("autodoc", "1");
 		Standard_Integer DraftingMax();
 
+};
+%extend IGESData_BasicEditor {
+	~IGESData_BasicEditor() {
+	printf("Call custom destructor for instance of IGESData_BasicEditor\n");
+	}
 };
 
 %nodefaultctor IGESData_SingleParentEntity;

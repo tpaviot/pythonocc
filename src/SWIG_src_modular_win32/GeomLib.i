@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GeomLib
 
@@ -202,8 +188,6 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 class GeomLib_Interpolate {
 	public:
 		%feature("autodoc", "1");
-		~GeomLib_Interpolate();
-		%feature("autodoc", "1");
 		GeomLib_Interpolate(const Standard_Integer Degree, const Standard_Integer NumPoints, const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -213,12 +197,15 @@ class GeomLib_Interpolate {
 		Handle_Geom_BSplineCurve Curve() const;
 
 };
+%extend GeomLib_Interpolate {
+	~GeomLib_Interpolate() {
+	printf("Call custom destructor for instance of GeomLib_Interpolate\n");
+	}
+};
 
 %nodefaultctor GeomLib_MakeCurvefromApprox;
 class GeomLib_MakeCurvefromApprox {
 	public:
-		%feature("autodoc", "1");
-		~GeomLib_MakeCurvefromApprox();
 		%feature("autodoc", "1");
 		GeomLib_MakeCurvefromApprox(const AdvApprox_ApproxAFunction &Approx);
 		%feature("autodoc", "1");
@@ -241,6 +228,11 @@ class GeomLib_MakeCurvefromApprox {
 		Handle_Geom_BSplineCurve Curve(const Standard_Integer Index1D, const Standard_Integer Index3D) const;
 
 };
+%extend GeomLib_MakeCurvefromApprox {
+	~GeomLib_MakeCurvefromApprox() {
+	printf("Call custom destructor for instance of GeomLib_MakeCurvefromApprox\n");
+	}
+};
 
 %nodefaultctor GeomLib_IsPlanarSurface;
 class GeomLib_IsPlanarSurface {
@@ -260,8 +252,6 @@ class GeomLib_IsPlanarSurface {
 class GeomLib_Check2dBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~GeomLib_Check2dBSplineCurve();
-		%feature("autodoc", "1");
 		GeomLib_Check2dBSplineCurve(const Handle_Geom2d_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -273,12 +263,15 @@ class GeomLib_Check2dBSplineCurve {
 		Handle_Geom2d_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
 
 };
+%extend GeomLib_Check2dBSplineCurve {
+	~GeomLib_Check2dBSplineCurve() {
+	printf("Call custom destructor for instance of GeomLib_Check2dBSplineCurve\n");
+	}
+};
 
 %nodefaultctor GeomLib;
 class GeomLib {
 	public:
-		%feature("autodoc", "1");
-		~GeomLib();
 		%feature("autodoc", "1");
 		GeomLib();
 		%feature("autodoc", "1");
@@ -315,12 +308,15 @@ class GeomLib {
 		Standard_Integer NormEstim(const Handle_Geom_Surface &S, const gp_Pnt2d &UV, const Standard_Real Tol, gp_Dir & N);
 
 };
+%extend GeomLib {
+	~GeomLib() {
+	printf("Call custom destructor for instance of GeomLib\n");
+	}
+};
 
 %nodefaultctor GeomLib_CheckBSplineCurve;
 class GeomLib_CheckBSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~GeomLib_CheckBSplineCurve();
 		%feature("autodoc", "1");
 		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
 		%feature("autodoc", "1");
@@ -332,4 +328,9 @@ class GeomLib_CheckBSplineCurve {
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
 
+};
+%extend GeomLib_CheckBSplineCurve {
+	~GeomLib_CheckBSplineCurve() {
+	printf("Call custom destructor for instance of GeomLib_CheckBSplineCurve\n");
+	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TopOpeBRepTool
 
@@ -560,9 +546,12 @@ class TopOpeBRepTool_BoxSort {
 		const Bnd_Box & Box(const TopoDS_Shape &S) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_BoxSort();
 
+};
+%extend TopOpeBRepTool_BoxSort {
+	~TopOpeBRepTool_BoxSort() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_BoxSort\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepTool_ListNodeOfListOfC2DF;
@@ -1227,8 +1216,6 @@ class TopOpeBRepTool_DataMapOfShapeListOfC2DF : public TCollection_BasicMap {
 class TopOpeBRepTool_C2DF {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepTool_C2DF();
-		%feature("autodoc", "1");
 		TopOpeBRepTool_C2DF();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_C2DF(const Handle_Geom2d_Curve &PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol, const TopoDS_Face &F);
@@ -1246,12 +1233,15 @@ class TopOpeBRepTool_C2DF {
 		Standard_Boolean IsFace(const TopoDS_Face &F) const;
 
 };
+%extend TopOpeBRepTool_C2DF {
+	~TopOpeBRepTool_C2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_C2DF\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_CurveTool;
 class TopOpeBRepTool_CurveTool {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_CurveTool();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_CurveTool();
 		%feature("autodoc", "1");
@@ -1275,6 +1265,11 @@ class TopOpeBRepTool_CurveTool {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve MakePCurveOnFace(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, const Standard_Real first=0.0, const Standard_Real last=0.0);
 
+};
+%extend TopOpeBRepTool_CurveTool {
+	~TopOpeBRepTool_CurveTool() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_CurveTool\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepTool_TOOL;
@@ -1399,8 +1394,6 @@ class TopOpeBRepTool_TOOL {
 class TopOpeBRepTool_ShapeTool {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepTool_ShapeTool();
-		%feature("autodoc", "1");
 		TopOpeBRepTool_ShapeTool();
 		%feature("autodoc", "1");
 		Standard_Real Tolerance(const TopoDS_Shape &S);
@@ -1447,6 +1440,11 @@ class TopOpeBRepTool_ShapeTool {
 		%feature("autodoc", "1");
 		Standard_Real Resolution3d(const TopoDS_Face &F, const Standard_Real Tol2d);
 
+};
+%extend TopOpeBRepTool_ShapeTool {
+	~TopOpeBRepTool_ShapeTool() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_ShapeTool\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepTool_AncestorsTool;

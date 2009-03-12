@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module IGESToBRep
 
@@ -198,8 +184,6 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 class IGESToBRep_CurveAndSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESToBRep_CurveAndSurface();
-		%feature("autodoc", "1");
 		IGESToBRep_CurveAndSurface();
 		%feature("autodoc", "1");
 		IGESToBRep_CurveAndSurface(const IGESToBRep_CurveAndSurface &CS);
@@ -289,12 +273,15 @@ class IGESToBRep_CurveAndSurface {
 		Standard_Real GetUVResolution();
 
 };
+%extend IGESToBRep_CurveAndSurface {
+	~IGESToBRep_CurveAndSurface() {
+	printf("Call custom destructor for instance of IGESToBRep_CurveAndSurface\n");
+	}
+};
 
 %nodefaultctor IGESToBRep_TopoCurve;
 class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESToBRep_TopoCurve();
 		%feature("autodoc", "1");
 		IGESToBRep_TopoCurve();
 		%feature("autodoc", "1");
@@ -348,6 +335,11 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("autodoc", "1");
 		Standard_Boolean BadCase() const;
 
+};
+%extend IGESToBRep_TopoCurve {
+	~IGESToBRep_TopoCurve() {
+	printf("Call custom destructor for instance of IGESToBRep_TopoCurve\n");
+	}
 };
 
 %nodefaultctor IGESToBRep_ToolContainer;
@@ -408,8 +400,6 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 class IGESToBRep {
 	public:
 		%feature("autodoc", "1");
-		~IGESToBRep();
-		%feature("autodoc", "1");
 		IGESToBRep();
 		%feature("autodoc", "1");
 		void Init();
@@ -437,12 +427,15 @@ class IGESToBRep {
 		Standard_Boolean TransferPCurve(const TopoDS_Edge &fromedge, const TopoDS_Edge &toedge, const TopoDS_Face &face);
 
 };
+%extend IGESToBRep {
+	~IGESToBRep() {
+	printf("Call custom destructor for instance of IGESToBRep\n");
+	}
+};
 
 %nodefaultctor IGESToBRep_Reader;
 class IGESToBRep_Reader {
 	public:
-		%feature("autodoc", "1");
-		~IGESToBRep_Reader();
 		%feature("autodoc", "1");
 		IGESToBRep_Reader();
 		%feature("autodoc", "1");
@@ -476,6 +469,11 @@ class IGESToBRep_Reader {
 		%feature("autodoc", "1");
 		TopoDS_Shape OneShape() const;
 
+};
+%extend IGESToBRep_Reader {
+	~IGESToBRep_Reader() {
+	printf("Call custom destructor for instance of IGESToBRep_Reader\n");
+	}
 };
 
 %nodefaultctor IGESToBRep_IGESBoundary;
@@ -546,8 +544,6 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESToBRep_BasicCurve();
-		%feature("autodoc", "1");
 		IGESToBRep_BasicCurve();
 		%feature("autodoc", "1");
 		IGESToBRep_BasicCurve(const IGESToBRep_CurveAndSurface &CS);
@@ -585,12 +581,15 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 		Handle_Geom_Transformation TransferTransformation(const Handle_IGESGeom_TransformationMatrix &start);
 
 };
+%extend IGESToBRep_BasicCurve {
+	~IGESToBRep_BasicCurve() {
+	printf("Call custom destructor for instance of IGESToBRep_BasicCurve\n");
+	}
+};
 
 %nodefaultctor IGESToBRep_BasicSurface;
 class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESToBRep_BasicSurface();
 		%feature("autodoc", "1");
 		IGESToBRep_BasicSurface();
 		%feature("autodoc", "1");
@@ -614,6 +613,11 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface TransferBSplineSurface(const Handle_IGESGeom_BSplineSurface &start);
 
+};
+%extend IGESToBRep_BasicSurface {
+	~IGESToBRep_BasicSurface() {
+	printf("Call custom destructor for instance of IGESToBRep_BasicSurface\n");
+	}
 };
 
 %nodefaultctor IGESToBRep_TopoSurface;

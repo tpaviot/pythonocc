@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module ProjLib
 
@@ -202,8 +188,6 @@ class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ProjLib_SequenceOfHSequenceOfPnt();
-		%feature("autodoc", "1");
 		const ProjLib_SequenceOfHSequenceOfPnt & Assign(const ProjLib_SequenceOfHSequenceOfPnt &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TColgp_HSequenceOfPnt &T);
@@ -242,6 +226,11 @@ class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend ProjLib_SequenceOfHSequenceOfPnt {
+	~ProjLib_SequenceOfHSequenceOfPnt() {
+	printf("Call custom destructor for instance of ProjLib_SequenceOfHSequenceOfPnt\n");
+	}
 };
 
 %nodefaultctor ProjLib_CompProjectedCurve;
@@ -301,9 +290,12 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		const Handle_ProjLib_HSequenceOfHSequenceOfPnt & GetSequence() const;
 		%feature("autodoc", "1");
 		virtual		GeomAbs_CurveType GetType() const;
-		%feature("autodoc", "1");
-		virtual		~ProjLib_CompProjectedCurve();
 
+};
+%extend ProjLib_CompProjectedCurve {
+	~ProjLib_CompProjectedCurve() {
+	printf("Call custom destructor for instance of ProjLib_CompProjectedCurve\n");
+	}
 };
 
 %nodefaultctor ProjLib_ProjectedCurve;
@@ -379,9 +371,12 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		virtual		Handle_Geom2d_BezierCurve Bezier() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		~ProjLib_ProjectedCurve();
 
+};
+%extend ProjLib_ProjectedCurve {
+	~ProjLib_ProjectedCurve() {
+	printf("Call custom destructor for instance of ProjLib_ProjectedCurve\n");
+	}
 };
 
 %nodefaultctor ProjLib_Projector;
@@ -391,8 +386,6 @@ class ProjLib_Projector {
 		ProjLib_Projector();
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Projector();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -438,6 +431,11 @@ class ProjLib_Projector {
 		%feature("autodoc", "1");
 		void VFrame(const Standard_Real CFirst, const Standard_Real CLast, const Standard_Real VFirst, const Standard_Real Period);
 
+};
+%extend ProjLib_Projector {
+	~ProjLib_Projector() {
+	printf("Call custom destructor for instance of ProjLib_Projector\n");
+	}
 };
 
 %nodefaultctor ProjLib_Cylinder;
@@ -680,19 +678,20 @@ class ProjLib_ProjectOnSurface {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~ProjLib_ProjectOnSurface();
-		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve BSpline() const;
 
 };
+%extend ProjLib_ProjectOnSurface {
+	~ProjLib_ProjectOnSurface() {
+	printf("Call custom destructor for instance of ProjLib_ProjectOnSurface\n");
+	}
+};
 
 %nodefaultctor ProjLib_ComputeApproxOnPolarSurface;
 class ProjLib_ComputeApproxOnPolarSurface {
 	public:
-		%feature("autodoc", "1");
-		~ProjLib_ComputeApproxOnPolarSurface();
 		%feature("autodoc", "1");
 		ProjLib_ComputeApproxOnPolarSurface();
 		%feature("autodoc", "1");
@@ -714,6 +713,11 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
+};
+%extend ProjLib_ComputeApproxOnPolarSurface {
+	~ProjLib_ComputeApproxOnPolarSurface() {
+	printf("Call custom destructor for instance of ProjLib_ComputeApproxOnPolarSurface\n");
+	}
 };
 
 %nodefaultctor ProjLib_PrjResolve;
@@ -805,9 +809,12 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BezierCurve Bezier() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		~ProjLib_ProjectOnPlane();
 
+};
+%extend ProjLib_ProjectOnPlane {
+	~ProjLib_ProjectOnPlane() {
+	printf("Call custom destructor for instance of ProjLib_ProjectOnPlane\n");
+	}
 };
 
 %nodefaultctor ProjLib_Plane;
@@ -926,8 +933,6 @@ class ProjLib_Cone : public ProjLib_Projector {
 class ProjLib_ComputeApprox {
 	public:
 		%feature("autodoc", "1");
-		~ProjLib_ComputeApprox();
-		%feature("autodoc", "1");
 		ProjLib_ComputeApprox(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve BSpline() const;
@@ -936,4 +941,9 @@ class ProjLib_ComputeApprox {
 		%feature("autodoc", "1");
 		Standard_Real Tolerance() const;
 
+};
+%extend ProjLib_ComputeApprox {
+	~ProjLib_ComputeApprox() {
+	printf("Call custom destructor for instance of ProjLib_ComputeApprox\n");
+	}
 };

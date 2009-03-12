@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module SelectMgr
 
@@ -575,8 +561,6 @@ class Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : publ
 class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive();
-		%feature("autodoc", "1");
 		SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive();
 		%feature("autodoc", "1");
 		SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive(const SelectMgr_DataMapOfIntegerSensitive &aMap);
@@ -587,6 +571,11 @@ class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_
 		%feature("autodoc", "1");
 		const Handle_SelectBasics_SensitiveEntity & Value() const;
 
+};
+%extend SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive {
+	~SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive\n");
+	}
 };
 
 %nodefaultctor SelectMgr_ListNodeOfListOfFilter;
@@ -685,8 +674,6 @@ class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 class SelectMgr_ListIteratorOfListOfFilter {
 	public:
 		%feature("autodoc", "1");
-		~SelectMgr_ListIteratorOfListOfFilter();
-		%feature("autodoc", "1");
 		SelectMgr_ListIteratorOfListOfFilter();
 		%feature("autodoc", "1");
 		SelectMgr_ListIteratorOfListOfFilter(const SelectMgr_ListOfFilter &L);
@@ -700,6 +687,11 @@ class SelectMgr_ListIteratorOfListOfFilter {
 		Handle_SelectMgr_Filter & Value() const;
 
 };
+%extend SelectMgr_ListIteratorOfListOfFilter {
+	~SelectMgr_ListIteratorOfListOfFilter() {
+	printf("Call custom destructor for instance of SelectMgr_ListIteratorOfListOfFilter\n");
+	}
+};
 
 %nodefaultctor SelectMgr_ListOfFilter;
 class SelectMgr_ListOfFilter {
@@ -712,8 +704,6 @@ class SelectMgr_ListOfFilter {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_ListOfFilter();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -745,6 +735,11 @@ class SelectMgr_ListOfFilter {
 		%feature("autodoc", "1");
 		void InsertAfter(SelectMgr_ListOfFilter & Other, SelectMgr_ListIteratorOfListOfFilter & It);
 
+};
+%extend SelectMgr_ListOfFilter {
+	~SelectMgr_ListOfFilter() {
+	printf("Call custom destructor for instance of SelectMgr_ListOfFilter\n");
+	}
 };
 
 %nodefaultctor SelectMgr_EntityOwner;
@@ -985,8 +980,6 @@ class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectMgr_SequenceOfSelection();
-		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfSelection & Assign(const SelectMgr_SequenceOfSelection &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_SelectMgr_Selection &T);
@@ -1025,6 +1018,11 @@ class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend SelectMgr_SequenceOfSelection {
+	~SelectMgr_SequenceOfSelection() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceOfSelection\n");
+	}
 };
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelector;
@@ -1083,8 +1081,6 @@ class SelectMgr_IndexedMapOfOwner : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectMgr_IndexedMapOfOwner();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_SelectMgr_EntityOwner &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Handle_SelectMgr_EntityOwner &K);
@@ -1099,6 +1095,11 @@ class SelectMgr_IndexedMapOfOwner : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const Handle_SelectMgr_EntityOwner &K) const;
 
+};
+%extend SelectMgr_IndexedMapOfOwner {
+	~SelectMgr_IndexedMapOfOwner() {
+	printf("Call custom destructor for instance of SelectMgr_IndexedMapOfOwner\n");
+	}
 };
 
 %nodefaultctor SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
@@ -1165,8 +1166,6 @@ class SelectMgr_SortCriterion {
 class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation();
-		%feature("autodoc", "1");
 		SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation();
 		%feature("autodoc", "1");
 		SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation(const SelectMgr_DataMapOfSelectionActivation &aMap);
@@ -1177,6 +1176,11 @@ class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollecti
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation {
+	~SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation\n");
+	}
 };
 
 %nodefaultctor SelectMgr_ViewerSelector;
@@ -1291,8 +1295,6 @@ class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_M
 class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors();
-		%feature("autodoc", "1");
 		SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors();
 		%feature("autodoc", "1");
 		SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors(const SelectMgr_DataMapOfObjectSelectors &aMap);
@@ -1303,6 +1305,11 @@ class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_B
 		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfSelector & Value() const;
 
+};
+%extend SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors {
+	~SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors\n");
+	}
 };
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfFilter;
@@ -1334,8 +1341,6 @@ class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
 		SelectMgr_SequenceOfFilter();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_SequenceOfFilter();
 		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfFilter & Assign(const SelectMgr_SequenceOfFilter &Other);
 		%feature("autodoc", "1");
@@ -1375,6 +1380,11 @@ class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend SelectMgr_SequenceOfFilter {
+	~SelectMgr_SequenceOfFilter() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceOfFilter\n");
+	}
 };
 
 %nodefaultctor SelectMgr_SelectableObject;
@@ -1465,8 +1475,6 @@ class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectMgr_SequenceOfOwner();
-		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfOwner & Assign(const SelectMgr_SequenceOfOwner &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_SelectMgr_EntityOwner &T);
@@ -1506,6 +1514,11 @@ class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend SelectMgr_SequenceOfOwner {
+	~SelectMgr_SequenceOfOwner() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceOfOwner\n");
+	}
+};
 
 %nodefaultctor SelectMgr_IndexedDataMapOfOwnerCriterion;
 class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
@@ -1518,8 +1531,6 @@ class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_IndexedDataMapOfOwnerCriterion();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_SelectBasics_EntityOwner &K, const SelectMgr_SortCriterion &I);
 		%feature("autodoc", "1");
@@ -1546,6 +1557,11 @@ class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
 		SelectMgr_SortCriterion & ChangeFromKey(const Handle_SelectBasics_EntityOwner &K);
 
 };
+%extend SelectMgr_IndexedDataMapOfOwnerCriterion {
+	~SelectMgr_IndexedDataMapOfOwnerCriterion() {
+	printf("Call custom destructor for instance of SelectMgr_IndexedDataMapOfOwnerCriterion\n");
+	}
+};
 
 %nodefaultctor SelectMgr_SequenceOfSelector;
 class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
@@ -1554,8 +1570,6 @@ class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
 		SelectMgr_SequenceOfSelector();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectMgr_SequenceOfSelector();
 		%feature("autodoc", "1");
 		const SelectMgr_SequenceOfSelector & Assign(const SelectMgr_SequenceOfSelector &Other);
 		%feature("autodoc", "1");
@@ -1595,6 +1609,11 @@ class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend SelectMgr_SequenceOfSelector {
+	~SelectMgr_SequenceOfSelector() {
+	printf("Call custom destructor for instance of SelectMgr_SequenceOfSelector\n");
+	}
 };
 
 %nodefaultctor SelectMgr_DataMapOfSelectionActivation;
@@ -1665,8 +1684,6 @@ class SelectMgr_DataMapOfIntegerSensitive : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectMgr_DataMapOfIntegerSensitive();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_SelectBasics_SensitiveEntity &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1681,6 +1698,11 @@ class SelectMgr_DataMapOfIntegerSensitive : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity & operator()(const Standard_Integer &K);
 
+};
+%extend SelectMgr_DataMapOfIntegerSensitive {
+	~SelectMgr_DataMapOfIntegerSensitive() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapOfIntegerSensitive\n");
+	}
 };
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfOwner;

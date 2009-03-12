@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TopOpeBRep
 
@@ -437,8 +423,6 @@ class TopOpeBRep_HArray1OfLineInter : public MMgt_TShared {
 class TopOpeBRep_GeomTool {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_GeomTool();
-		%feature("autodoc", "1");
 		TopOpeBRep_GeomTool();
 		%feature("autodoc", "1");
 		void MakeCurves(const Standard_Real min, const Standard_Real max, const TopOpeBRep_LineInter &L, const TopoDS_Shape &S1, const TopoDS_Shape &S2, TopOpeBRepDS_Curve & C, Handle_Geom2d_Curve & PC1, Handle_Geom2d_Curve & PC2);
@@ -449,6 +433,11 @@ class TopOpeBRep_GeomTool {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve MakeBSpline1fromWALKING2d(const TopOpeBRep_LineInter &L, const Standard_Integer SI);
 
+};
+%extend TopOpeBRep_GeomTool {
+	~TopOpeBRep_GeomTool() {
+	printf("Call custom destructor for instance of TopOpeBRep_GeomTool\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_DSFiller;
@@ -807,8 +796,6 @@ class TopOpeBRep_Array1OfVPointInter {
 class TopOpeBRep_FacesFiller {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_FacesFiller();
-		%feature("autodoc", "1");
 		TopOpeBRep_FacesFiller();
 		%feature("autodoc", "1");
 		void Insert(const TopoDS_Shape &F1, const TopoDS_Shape &F2, TopOpeBRep_FacesIntersector & FACINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
@@ -907,6 +894,11 @@ class TopOpeBRep_FacesFiller {
 		%feature("autodoc", "1");
 		Standard_Boolean EqualpPonR(const TopOpeBRep_LineInter &Lrest, const TopOpeBRep_VPointInter &VP1, const TopOpeBRep_VPointInter &VP2);
 
+};
+%extend TopOpeBRep_FacesFiller {
+	~TopOpeBRep_FacesFiller() {
+	printf("Call custom destructor for instance of TopOpeBRep_FacesFiller\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_WPointInterIterator;
@@ -1113,8 +1105,6 @@ class TopOpeBRep_Array1OfLineInter {
 class TopOpeBRep_FacesIntersector {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_FacesIntersector();
-		%feature("autodoc", "1");
 		TopOpeBRep_FacesIntersector();
 		%feature("autodoc", "1");
 		void Perform(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
@@ -1158,6 +1148,11 @@ class TopOpeBRep_FacesIntersector {
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%extend TopOpeBRep_FacesIntersector {
+	~TopOpeBRep_FacesIntersector() {
+	printf("Call custom destructor for instance of TopOpeBRep_FacesIntersector\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_FFDumper;
 class TopOpeBRep_FFDumper : public MMgt_TShared {
@@ -1199,8 +1194,6 @@ class TopOpeBRep_FFDumper : public MMgt_TShared {
 class TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool();
-		%feature("autodoc", "1");
 		TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool();
 		%feature("autodoc", "1");
 		TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool(const TopOpeBRep_DataMapOfTopolTool &aMap);
@@ -1211,6 +1204,11 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool : public TCollection_BasicM
 		%feature("autodoc", "1");
 		const Handle_BRepTopAdaptor_TopolTool & Value() const;
 
+};
+%extend TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool {
+	~TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool() {
+	printf("Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_ListOfBipoint;
@@ -1485,8 +1483,6 @@ class TopOpeBRep_DataMapOfTopolTool : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRep_DataMapOfTopolTool();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepTopAdaptor_TopolTool &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -1501,6 +1497,11 @@ class TopOpeBRep_DataMapOfTopolTool : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool & operator()(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRep_DataMapOfTopolTool {
+	~TopOpeBRep_DataMapOfTopolTool() {
+	printf("Call custom destructor for instance of TopOpeBRep_DataMapOfTopolTool\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_Hctxee2d;
@@ -1585,8 +1586,6 @@ class TopOpeBRep_SequenceOfPoint2d : public TCollection_BaseSequence {
 class TopOpeBRep_Point2d {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_Point2d();
-		%feature("autodoc", "1");
 		TopOpeBRep_Point2d();
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer ie1=0, const Standard_Integer ie2=0) const;
@@ -1659,6 +1658,11 @@ class TopOpeBRep_Point2d {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_Hctxee2d Hctxee2d() const;
 
+};
+%extend TopOpeBRep_Point2d {
+	~TopOpeBRep_Point2d() {
+	printf("Call custom destructor for instance of TopOpeBRep_Point2d\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger;

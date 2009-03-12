@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Units
 
@@ -636,8 +622,6 @@ class Units_StrgSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Units_StrgSequence();
-		%feature("autodoc", "1");
 		const Units_StrgSequence & Assign(const Units_StrgSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TCollection_HAsciiString &T);
@@ -677,12 +661,15 @@ class Units_StrgSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Units_StrgSequence {
+	~Units_StrgSequence() {
+	printf("Call custom destructor for instance of Units_StrgSequence\n");
+	}
+};
 
 %nodefaultctor Units_Sentence;
 class Units_Sentence {
 	public:
-		%feature("autodoc", "1");
-		~Units_Sentence();
 		%feature("autodoc", "1");
 		Units_Sentence(const Handle_Units_Lexicon &alexicon, const char * astring);
 		%feature("autodoc", "1");
@@ -698,6 +685,11 @@ class Units_Sentence {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend Units_Sentence {
+	~Units_Sentence() {
+	printf("Call custom destructor for instance of Units_Sentence\n");
+	}
 };
 
 %nodefaultctor Units_MathSentence;
@@ -717,8 +709,6 @@ class Units_TksSequence : public TCollection_BaseSequence {
 		Units_TksSequence();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Units_TksSequence();
 		%feature("autodoc", "1");
 		const Units_TksSequence & Assign(const Units_TksSequence &Other);
 		%feature("autodoc", "1");
@@ -758,6 +748,11 @@ class Units_TksSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Units_TksSequence {
+	~Units_TksSequence() {
+	printf("Call custom destructor for instance of Units_TksSequence\n");
+	}
 };
 
 %nodefaultctor Units_Unit;
@@ -904,8 +899,6 @@ class Units_UnitsSequence : public MMgt_TShared {
 class Units_Measurement {
 	public:
 		%feature("autodoc", "1");
-		~Units_Measurement();
-		%feature("autodoc", "1");
 		Units_Measurement();
 		%feature("autodoc", "1");
 		Units_Measurement(const Standard_Real avalue, const Handle_Units_Token &atoken);
@@ -952,6 +945,11 @@ class Units_Measurement {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend Units_Measurement {
+	~Units_Measurement() {
+	printf("Call custom destructor for instance of Units_Measurement\n");
+	}
 };
 
 %nodefaultctor Units_Token;
@@ -1366,8 +1364,6 @@ class Units_UtsSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Units_UtsSequence();
-		%feature("autodoc", "1");
 		const Units_UtsSequence & Assign(const Units_UtsSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Units_Unit &T);
@@ -1406,6 +1402,11 @@ class Units_UtsSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Units_UtsSequence {
+	~Units_UtsSequence() {
+	printf("Call custom destructor for instance of Units_UtsSequence\n");
+	}
 };
 
 %nodefaultctor Units_Explorer;
@@ -1452,8 +1453,6 @@ class Units_Explorer {
 class Units {
 	public:
 		%feature("autodoc", "1");
-		~Units();
-		%feature("autodoc", "1");
 		Units();
 		%feature("autodoc", "1");
 		void UnitsFile(const char * afile);
@@ -1484,6 +1483,11 @@ class Units {
 		%feature("autodoc", "1");
 		Handle_Units_Dimensions Dimensions(const char * aType);
 
+};
+%extend Units {
+	~Units() {
+	printf("Call custom destructor for instance of Units\n");
+	}
 };
 
 %nodefaultctor Units_TokensSequence;
@@ -1574,8 +1578,6 @@ class Units_QtsSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Units_QtsSequence();
-		%feature("autodoc", "1");
 		const Units_QtsSequence & Assign(const Units_QtsSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Units_Quantity &T);
@@ -1614,6 +1616,11 @@ class Units_QtsSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Units_QtsSequence {
+	~Units_QtsSequence() {
+	printf("Call custom destructor for instance of Units_QtsSequence\n");
+	}
 };
 
 %nodefaultctor Units_SequenceNodeOfUtsSequence;

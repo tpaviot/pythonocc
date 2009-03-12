@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module XmlMDF
 
@@ -372,8 +358,6 @@ class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~XmlMDF_TypeADriverMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Type &K, const Handle_XmlMDF_ADriver &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_Standard_Type &K) const;
@@ -389,12 +373,15 @@ class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
 		Handle_XmlMDF_ADriver & operator()(const Handle_Standard_Type &K);
 
 };
+%extend XmlMDF_TypeADriverMap {
+	~XmlMDF_TypeADriverMap() {
+	printf("Call custom destructor for instance of XmlMDF_TypeADriverMap\n");
+	}
+};
 
 %nodefaultctor XmlMDF_DataMapIteratorOfTypeADriverMap;
 class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~XmlMDF_DataMapIteratorOfTypeADriverMap();
 		%feature("autodoc", "1");
 		XmlMDF_DataMapIteratorOfTypeADriverMap();
 		%feature("autodoc", "1");
@@ -406,6 +393,11 @@ class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 		%feature("autodoc", "1");
 		const Handle_XmlMDF_ADriver & Value() const;
 
+};
+%extend XmlMDF_DataMapIteratorOfTypeADriverMap {
+	~XmlMDF_DataMapIteratorOfTypeADriverMap() {
+	printf("Call custom destructor for instance of XmlMDF_DataMapIteratorOfTypeADriverMap\n");
+	}
 };
 
 %nodefaultctor XmlMDF_TagSourceDriver;
@@ -438,8 +430,6 @@ class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
 class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~XmlMDF_DataMapIteratorOfMapOfDriver();
-		%feature("autodoc", "1");
 		XmlMDF_DataMapIteratorOfMapOfDriver();
 		%feature("autodoc", "1");
 		XmlMDF_DataMapIteratorOfMapOfDriver(const XmlMDF_MapOfDriver &aMap);
@@ -450,6 +440,11 @@ class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator 
 		%feature("autodoc", "1");
 		const Handle_XmlMDF_ADriver & Value() const;
 
+};
+%extend XmlMDF_DataMapIteratorOfMapOfDriver {
+	~XmlMDF_DataMapIteratorOfMapOfDriver() {
+	printf("Call custom destructor for instance of XmlMDF_DataMapIteratorOfMapOfDriver\n");
+	}
 };
 
 %nodefaultctor XmlMDF_ADriverTable;
@@ -490,8 +485,6 @@ class XmlMDF_MapOfDriver : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~XmlMDF_MapOfDriver();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_XmlMDF_ADriver &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
@@ -506,4 +499,9 @@ class XmlMDF_MapOfDriver : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_XmlMDF_ADriver & operator()(const TCollection_AsciiString &K);
 
+};
+%extend XmlMDF_MapOfDriver {
+	~XmlMDF_MapOfDriver() {
+	printf("Call custom destructor for instance of XmlMDF_MapOfDriver\n");
+	}
 };

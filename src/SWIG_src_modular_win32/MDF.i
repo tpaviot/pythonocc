@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module MDF
 
@@ -606,8 +592,6 @@ class MDF_DataMapNodeOfTypeARDriverMap : public TCollection_MapNode {
 class MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable();
-		%feature("autodoc", "1");
 		MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable();
 		%feature("autodoc", "1");
 		MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable(const MDF_TypeDriverListMapOfASDriverTable &aMap);
@@ -618,6 +602,11 @@ class MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable : public TCollection
 		%feature("autodoc", "1");
 		const MDF_DriverListOfASDriverTable & Value() const;
 
+};
+%extend MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable {
+	~MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable() {
+	printf("Call custom destructor for instance of MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable\n");
+	}
 };
 
 %nodefaultctor MDF_ASDriver;
@@ -702,8 +691,6 @@ class MDF_DriverListOfARDriverTable {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MDF_DriverListOfARDriverTable();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_MDF_ARDriver &I);
@@ -735,6 +722,11 @@ class MDF_DriverListOfARDriverTable {
 		void InsertAfter(MDF_DriverListOfARDriverTable & Other, MDF_ListIteratorOfDriverListOfARDriverTable & It);
 
 };
+%extend MDF_DriverListOfARDriverTable {
+	~MDF_DriverListOfARDriverTable() {
+	printf("Call custom destructor for instance of MDF_DriverListOfARDriverTable\n");
+	}
+};
 
 %nodefaultctor MDF;
 class MDF {
@@ -758,8 +750,6 @@ class MDF {
 class MDF_DataMapIteratorOfTypeARDriverMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MDF_DataMapIteratorOfTypeARDriverMap();
-		%feature("autodoc", "1");
 		MDF_DataMapIteratorOfTypeARDriverMap();
 		%feature("autodoc", "1");
 		MDF_DataMapIteratorOfTypeARDriverMap(const MDF_TypeARDriverMap &aMap);
@@ -770,6 +760,11 @@ class MDF_DataMapIteratorOfTypeARDriverMap : public TCollection_BasicMapIterator
 		%feature("autodoc", "1");
 		const Handle_MDF_ARDriver & Value() const;
 
+};
+%extend MDF_DataMapIteratorOfTypeARDriverMap {
+	~MDF_DataMapIteratorOfTypeARDriverMap() {
+	printf("Call custom destructor for instance of MDF_DataMapIteratorOfTypeARDriverMap\n");
+	}
 };
 
 %nodefaultctor MDF_DataMapNodeOfTypeASDriverMap;
@@ -808,8 +803,6 @@ class MDF_TypeARDriverMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MDF_TypeARDriverMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Type &K, const Handle_MDF_ARDriver &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_Standard_Type &K) const;
@@ -824,6 +817,11 @@ class MDF_TypeARDriverMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriver & operator()(const Handle_Standard_Type &K);
 
+};
+%extend MDF_TypeARDriverMap {
+	~MDF_TypeARDriverMap() {
+	printf("Call custom destructor for instance of MDF_TypeARDriverMap\n");
+	}
 };
 
 %nodefaultctor MDF_ARDriver;
@@ -906,8 +904,6 @@ class MDF_ASDriverTable : public MMgt_TShared {
 class MDF_ListIteratorOfDriverListOfASDriverTable {
 	public:
 		%feature("autodoc", "1");
-		~MDF_ListIteratorOfDriverListOfASDriverTable();
-		%feature("autodoc", "1");
 		MDF_ListIteratorOfDriverListOfASDriverTable();
 		%feature("autodoc", "1");
 		MDF_ListIteratorOfDriverListOfASDriverTable(const MDF_DriverListOfASDriverTable &L);
@@ -920,6 +916,11 @@ class MDF_ListIteratorOfDriverListOfASDriverTable {
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriver & Value() const;
 
+};
+%extend MDF_ListIteratorOfDriverListOfASDriverTable {
+	~MDF_ListIteratorOfDriverListOfASDriverTable() {
+	printf("Call custom destructor for instance of MDF_ListIteratorOfDriverListOfASDriverTable\n");
+	}
 };
 
 %nodefaultctor MDF_ARDriverTable;
@@ -986,8 +987,6 @@ class MDF_DriverListOfASDriverTable {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MDF_DriverListOfASDriverTable();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_MDF_ASDriver &I);
@@ -1018,6 +1017,11 @@ class MDF_DriverListOfASDriverTable {
 		%feature("autodoc", "1");
 		void InsertAfter(MDF_DriverListOfASDriverTable & Other, MDF_ListIteratorOfDriverListOfASDriverTable & It);
 
+};
+%extend MDF_DriverListOfASDriverTable {
+	~MDF_DriverListOfASDriverTable() {
+	printf("Call custom destructor for instance of MDF_DriverListOfASDriverTable\n");
+	}
 };
 
 %nodefaultctor MDF_ListNodeOfDriverListOfASDriverTable;
@@ -1074,8 +1078,6 @@ class MDF_ReferenceStorageDriver : public MDF_ASDriver {
 class MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable();
-		%feature("autodoc", "1");
 		MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable();
 		%feature("autodoc", "1");
 		MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable(const MDF_TypeDriverListMapOfARDriverTable &aMap);
@@ -1086,6 +1088,11 @@ class MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable : public TCollection
 		%feature("autodoc", "1");
 		const MDF_DriverListOfARDriverTable & Value() const;
 
+};
+%extend MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable {
+	~MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable() {
+	printf("Call custom destructor for instance of MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable\n");
+	}
 };
 
 %nodefaultctor MDF_SRelocationTable;
@@ -1158,8 +1165,6 @@ class MDF_TypeDriverListMapOfARDriverTable : public TCollection_BasicMap {
 class MDF_ListIteratorOfDriverListOfARDriverTable {
 	public:
 		%feature("autodoc", "1");
-		~MDF_ListIteratorOfDriverListOfARDriverTable();
-		%feature("autodoc", "1");
 		MDF_ListIteratorOfDriverListOfARDriverTable();
 		%feature("autodoc", "1");
 		MDF_ListIteratorOfDriverListOfARDriverTable(const MDF_DriverListOfARDriverTable &L);
@@ -1172,6 +1177,11 @@ class MDF_ListIteratorOfDriverListOfARDriverTable {
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriver & Value() const;
 
+};
+%extend MDF_ListIteratorOfDriverListOfARDriverTable {
+	~MDF_ListIteratorOfDriverListOfARDriverTable() {
+	printf("Call custom destructor for instance of MDF_ListIteratorOfDriverListOfARDriverTable\n");
+	}
 };
 
 %nodefaultctor MDF_SequenceNodeOfARDriverSequence;
@@ -1372,8 +1382,6 @@ class MDF_ASDriverSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MDF_ASDriverSequence();
-		%feature("autodoc", "1");
 		const MDF_ASDriverSequence & Assign(const MDF_ASDriverSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_MDF_ASDriver &T);
@@ -1413,6 +1421,11 @@ class MDF_ASDriverSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MDF_ASDriverSequence {
+	~MDF_ASDriverSequence() {
+	printf("Call custom destructor for instance of MDF_ASDriverSequence\n");
+	}
+};
 
 %nodefaultctor MDF_SequenceNodeOfASDriverSequence;
 class MDF_SequenceNodeOfASDriverSequence : public TCollection_SeqNode {
@@ -1448,8 +1461,6 @@ class MDF_TypeASDriverMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MDF_TypeASDriverMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Type &K, const Handle_MDF_ASDriver &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_Standard_Type &K) const;
@@ -1464,6 +1475,11 @@ class MDF_TypeASDriverMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriver & operator()(const Handle_Standard_Type &K);
 
+};
+%extend MDF_TypeASDriverMap {
+	~MDF_TypeASDriverMap() {
+	printf("Call custom destructor for instance of MDF_TypeASDriverMap\n");
+	}
 };
 
 %nodefaultctor MDF_RRelocationTable;
@@ -1510,8 +1526,6 @@ class MDF_ARDriverSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MDF_ARDriverSequence();
-		%feature("autodoc", "1");
 		const MDF_ARDriverSequence & Assign(const MDF_ARDriverSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_MDF_ARDriver &T);
@@ -1550,6 +1564,11 @@ class MDF_ARDriverSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend MDF_ARDriverSequence {
+	~MDF_ARDriverSequence() {
+	printf("Call custom destructor for instance of MDF_ARDriverSequence\n");
+	}
 };
 
 %nodefaultctor MDF_ARDriverHSequence;
@@ -1620,8 +1639,6 @@ class MDF_ARDriverHSequence : public MMgt_TShared {
 class MDF_DataMapIteratorOfTypeASDriverMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MDF_DataMapIteratorOfTypeASDriverMap();
-		%feature("autodoc", "1");
 		MDF_DataMapIteratorOfTypeASDriverMap();
 		%feature("autodoc", "1");
 		MDF_DataMapIteratorOfTypeASDriverMap(const MDF_TypeASDriverMap &aMap);
@@ -1632,4 +1649,9 @@ class MDF_DataMapIteratorOfTypeASDriverMap : public TCollection_BasicMapIterator
 		%feature("autodoc", "1");
 		const Handle_MDF_ASDriver & Value() const;
 
+};
+%extend MDF_DataMapIteratorOfTypeASDriverMap {
+	~MDF_DataMapIteratorOfTypeASDriverMap() {
+	printf("Call custom destructor for instance of MDF_DataMapIteratorOfTypeASDriverMap\n");
+	}
 };

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Interface
 
@@ -956,8 +942,6 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 class Interface_ReaderLib {
 	public:
 		%feature("autodoc", "1");
-		~Interface_ReaderLib();
-		%feature("autodoc", "1");
 		void SetGlobal(const Handle_Interface_ReaderModule &amodule, const Handle_Interface_Protocol &aprotocol);
 		%feature("autodoc", "1");
 		Interface_ReaderLib(const Handle_Interface_Protocol &aprotocol);
@@ -982,6 +966,11 @@ class Interface_ReaderLib {
 		%feature("autodoc", "1");
 		const Handle_Interface_Protocol & Protocol() const;
 
+};
+%extend Interface_ReaderLib {
+	~Interface_ReaderLib() {
+	printf("Call custom destructor for instance of Interface_ReaderLib\n");
+	}
 };
 
 %nodefaultctor Interface_ReaderModule;
@@ -1221,9 +1210,12 @@ class Interface_EntityIterator {
 		Handle_TColStd_HSequenceOfTransient Content() const;
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Interface_EntityIterator();
 
+};
+%extend Interface_EntityIterator {
+	~Interface_EntityIterator() {
+	printf("Call custom destructor for instance of Interface_EntityIterator\n");
+	}
 };
 
 %nodefaultctor Interface_GraphContent;
@@ -1294,8 +1286,6 @@ class Interface_ParamList : public MMgt_TShared {
 class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~Interface_DataMapIteratorOfDataMapOfTransientInteger();
-		%feature("autodoc", "1");
 		Interface_DataMapIteratorOfDataMapOfTransientInteger();
 		%feature("autodoc", "1");
 		Interface_DataMapIteratorOfDataMapOfTransientInteger(const Interface_DataMapOfTransientInteger &aMap);
@@ -1307,12 +1297,15 @@ class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_
 		const Standard_Integer & Value() const;
 
 };
+%extend Interface_DataMapIteratorOfDataMapOfTransientInteger {
+	~Interface_DataMapIteratorOfDataMapOfTransientInteger() {
+	printf("Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfTransientInteger\n");
+	}
+};
 
 %nodefaultctor Interface_DataMapIteratorOfDataMapOfIntegerTransient;
 class Interface_DataMapIteratorOfDataMapOfIntegerTransient : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Interface_DataMapIteratorOfDataMapOfIntegerTransient();
 		%feature("autodoc", "1");
 		Interface_DataMapIteratorOfDataMapOfIntegerTransient();
 		%feature("autodoc", "1");
@@ -1324,6 +1317,11 @@ class Interface_DataMapIteratorOfDataMapOfIntegerTransient : public TCollection_
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
+};
+%extend Interface_DataMapIteratorOfDataMapOfIntegerTransient {
+	~Interface_DataMapIteratorOfDataMapOfIntegerTransient() {
+	printf("Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfIntegerTransient\n");
+	}
 };
 
 %nodefaultctor Interface_GlobalNodeOfGeneralLib;
@@ -1395,16 +1393,17 @@ class Interface_CopyTool {
 		Interface_EntityIterator RootResult(const Standard_Boolean withreports=0) const;
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~Interface_CopyTool();
 
+};
+%extend Interface_CopyTool {
+	~Interface_CopyTool() {
+	printf("Call custom destructor for instance of Interface_CopyTool\n");
+	}
 };
 
 %nodefaultctor Interface_ShareFlags;
 class Interface_ShareFlags {
 	public:
-		%feature("autodoc", "1");
-		~Interface_ShareFlags();
 		%feature("autodoc", "1");
 		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
@@ -1426,6 +1425,11 @@ class Interface_ShareFlags {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Root(const Standard_Integer num=1) const;
 
+};
+%extend Interface_ShareFlags {
+	~Interface_ShareFlags() {
+	printf("Call custom destructor for instance of Interface_ShareFlags\n");
+	}
 };
 
 %nodefaultctor Interface_InterfaceError;
@@ -1506,8 +1510,6 @@ class Interface_CopyControl : public MMgt_TShared {
 class Interface_EntityList {
 	public:
 		%feature("autodoc", "1");
-		~Interface_EntityList();
-		%feature("autodoc", "1");
 		Interface_EntityList();
 		%feature("autodoc", "1");
 		void Clear();
@@ -1534,6 +1536,11 @@ class Interface_EntityList {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient TypedEntity(const Handle_Standard_Type &atype, const Standard_Integer num=0) const;
 
+};
+%extend Interface_EntityList {
+	~Interface_EntityList() {
+	printf("Call custom destructor for instance of Interface_EntityList\n");
+	}
 };
 
 %nodefaultctor Interface_Array1OfFileParameter;
@@ -1638,8 +1645,6 @@ class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Interface_DataMapOfIntegerTransient();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1654,6 +1659,11 @@ class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const Standard_Integer &K);
 
+};
+%extend Interface_DataMapOfIntegerTransient {
+	~Interface_DataMapOfIntegerTransient() {
+	printf("Call custom destructor for instance of Interface_DataMapOfIntegerTransient\n");
+	}
 };
 
 %nodefaultctor Interface_FloatWriter;
@@ -1688,8 +1698,6 @@ class Interface_FloatWriter {
 class Interface_GeneralLib {
 	public:
 		%feature("autodoc", "1");
-		~Interface_GeneralLib();
-		%feature("autodoc", "1");
 		void SetGlobal(const Handle_Interface_GeneralModule &amodule, const Handle_Interface_Protocol &aprotocol);
 		%feature("autodoc", "1");
 		Interface_GeneralLib(const Handle_Interface_Protocol &aprotocol);
@@ -1715,6 +1723,11 @@ class Interface_GeneralLib {
 		const Handle_Interface_Protocol & Protocol() const;
 
 };
+%extend Interface_GeneralLib {
+	~Interface_GeneralLib() {
+	printf("Call custom destructor for instance of Interface_GeneralLib\n");
+	}
+};
 
 %nodefaultctor Interface_Array1OfHAsciiString;
 class Interface_Array1OfHAsciiString {
@@ -1727,8 +1740,6 @@ class Interface_Array1OfHAsciiString {
 		void Init(const Handle_TCollection_HAsciiString &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Interface_Array1OfHAsciiString();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1751,12 +1762,15 @@ class Interface_Array1OfHAsciiString {
 		Handle_TCollection_HAsciiString & operator()(const Standard_Integer Index);
 
 };
+%extend Interface_Array1OfHAsciiString {
+	~Interface_Array1OfHAsciiString() {
+	printf("Call custom destructor for instance of Interface_Array1OfHAsciiString\n");
+	}
+};
 
 %nodefaultctor Interface_ShareTool;
 class Interface_ShareTool {
 	public:
-		%feature("autodoc", "1");
-		~Interface_ShareTool();
 		%feature("autodoc", "1");
 		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
@@ -1792,6 +1806,11 @@ class Interface_ShareTool {
 		%feature("autodoc", "1");
 		void Print(const Interface_EntityIterator &iter, const Handle_Message_Messenger &S) const;
 
+};
+%extend Interface_ShareTool {
+	~Interface_ShareTool() {
+	printf("Call custom destructor for instance of Interface_ShareTool\n");
+	}
 };
 
 %nodefaultctor Interface_TypedValue;
@@ -2189,12 +2208,15 @@ class Interface_FileReaderTool {
 		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
 
 };
+%extend Interface_FileReaderTool {
+	~Interface_FileReaderTool() {
+	printf("Call custom destructor for instance of Interface_FileReaderTool\n");
+	}
+};
 
 %nodefaultctor Interface_CheckTool;
 class Interface_CheckTool {
 	public:
-		%feature("autodoc", "1");
-		~Interface_CheckTool();
 		%feature("autodoc", "1");
 		Interface_CheckTool(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &protocol);
 		%feature("autodoc", "1");
@@ -2226,6 +2248,11 @@ class Interface_CheckTool {
 		%feature("autodoc", "1");
 		Interface_EntityIterator UnknownEntities();
 
+};
+%extend Interface_CheckTool {
+	~Interface_CheckTool() {
+	printf("Call custom destructor for instance of Interface_CheckTool\n");
+	}
 };
 
 %nodefaultctor Interface_HArray1OfHAsciiString;
@@ -2271,8 +2298,6 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 %nodefaultctor Interface_Graph;
 class Interface_Graph {
 	public:
-		%feature("autodoc", "1");
-		~Interface_Graph();
 		%feature("autodoc", "1");
 		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
@@ -2366,6 +2391,11 @@ class Interface_Graph {
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Name(const Handle_Standard_Transient &ent) const;
 
+};
+%extend Interface_Graph {
+	~Interface_Graph() {
+	printf("Call custom destructor for instance of Interface_Graph\n");
+	}
 };
 
 %nodefaultctor Interface_DataMapNodeOfDataMapOfTransientInteger;
@@ -2654,8 +2684,6 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Interface_SequenceOfCheck();
-		%feature("autodoc", "1");
 		const Interface_SequenceOfCheck & Assign(const Interface_SequenceOfCheck &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Interface_Check &T);
@@ -2694,6 +2722,11 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Interface_SequenceOfCheck {
+	~Interface_SequenceOfCheck() {
+	printf("Call custom destructor for instance of Interface_SequenceOfCheck\n");
+	}
 };
 
 %nodefaultctor Interface_GTool;
@@ -2999,9 +3032,12 @@ class Interface_CheckIterator {
 		void Print(const Handle_Message_Messenger &S, const Handle_Interface_InterfaceModel &model, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Interface_CheckIterator();
 
+};
+%extend Interface_CheckIterator {
+	~Interface_CheckIterator() {
+	printf("Call custom destructor for instance of Interface_CheckIterator\n");
+	}
 };
 
 %nodefaultctor Interface_NodeOfReaderLib;
@@ -3036,8 +3072,6 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 class Interface_LineBuffer {
 	public:
 		%feature("autodoc", "1");
-		~Interface_LineBuffer();
-		%feature("autodoc", "1");
 		Interface_LineBuffer(const Standard_Integer size=10);
 		%feature("autodoc", "1");
 		void SetMax(const Standard_Integer max);
@@ -3070,6 +3104,11 @@ class Interface_LineBuffer {
 		%feature("autodoc", "1");
 		void Add(const Standard_Character text);
 
+};
+%extend Interface_LineBuffer {
+	~Interface_LineBuffer() {
+	printf("Call custom destructor for instance of Interface_LineBuffer\n");
+	}
 };
 
 %nodefaultctor Interface_ParamSet;

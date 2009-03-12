@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module IFSelect
 
@@ -2185,8 +2171,6 @@ class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 class IFSelect_SelectionIterator {
 	public:
 		%feature("autodoc", "1");
-		~IFSelect_SelectionIterator();
-		%feature("autodoc", "1");
 		IFSelect_SelectionIterator();
 		%feature("autodoc", "1");
 		IFSelect_SelectionIterator(const Handle_IFSelect_Selection &sel);
@@ -2203,6 +2187,11 @@ class IFSelect_SelectionIterator {
 		%feature("autodoc", "1");
 		const Handle_IFSelect_Selection & Value() const;
 
+};
+%extend IFSelect_SelectionIterator {
+	~IFSelect_SelectionIterator() {
+	printf("Call custom destructor for instance of IFSelect_SelectionIterator\n");
+	}
 };
 
 %nodefaultctor IFSelect_Activator;
@@ -2489,8 +2478,6 @@ class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IFSelect_SequenceOfGeneralModifier();
-		%feature("autodoc", "1");
 		const IFSelect_SequenceOfGeneralModifier & Assign(const IFSelect_SequenceOfGeneralModifier &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_IFSelect_GeneralModifier &T);
@@ -2529,6 +2516,11 @@ class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IFSelect_SequenceOfGeneralModifier {
+	~IFSelect_SequenceOfGeneralModifier() {
+	printf("Call custom destructor for instance of IFSelect_SequenceOfGeneralModifier\n");
+	}
 };
 
 %nodefaultctor IFSelect_SequenceNodeOfTSeqOfSelection;
@@ -2645,8 +2637,6 @@ class IFSelect_TSeqOfDispatch : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IFSelect_TSeqOfDispatch();
-		%feature("autodoc", "1");
 		const IFSelect_TSeqOfDispatch & Assign(const IFSelect_TSeqOfDispatch &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_IFSelect_Dispatch &T);
@@ -2685,6 +2675,11 @@ class IFSelect_TSeqOfDispatch : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IFSelect_TSeqOfDispatch {
+	~IFSelect_TSeqOfDispatch() {
+	printf("Call custom destructor for instance of IFSelect_TSeqOfDispatch\n");
+	}
 };
 
 %nodefaultctor IFSelect_Transformer;
@@ -2817,8 +2812,6 @@ class IFSelect_SignType : public IFSelect_Signature {
 class IFSelect_ContextModif {
 	public:
 		%feature("autodoc", "1");
-		~IFSelect_ContextModif();
-		%feature("autodoc", "1");
 		IFSelect_ContextModif(const Interface_Graph &graph, const Interface_CopyTool &TC, const char * filename="");
 		%feature("autodoc", "1");
 		IFSelect_ContextModif(const Interface_Graph &graph, const char * filename="");
@@ -2879,6 +2872,11 @@ class IFSelect_ContextModif {
 		%feature("autodoc", "1");
 		Interface_CheckIterator CheckList() const;
 
+};
+%extend IFSelect_ContextModif {
+	~IFSelect_ContextModif() {
+	printf("Call custom destructor for instance of IFSelect_ContextModif\n");
+	}
 };
 
 %nodefaultctor IFSelect_PacketList;
@@ -3147,8 +3145,6 @@ class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
 class IFSelect_ShareOutResult {
 	public:
 		%feature("autodoc", "1");
-		~IFSelect_ShareOutResult();
-		%feature("autodoc", "1");
 		IFSelect_ShareOutResult(const Handle_IFSelect_ShareOut &sho, const Handle_Interface_InterfaceModel &mod);
 		%feature("autodoc", "1");
 		IFSelect_ShareOutResult(const Handle_IFSelect_ShareOut &sho, const Interface_Graph &G);
@@ -3189,6 +3185,11 @@ class IFSelect_ShareOutResult {
 		%feature("autodoc", "1");
 		TCollection_AsciiString FileName() const;
 
+};
+%extend IFSelect_ShareOutResult {
+	~IFSelect_ShareOutResult() {
+	printf("Call custom destructor for instance of IFSelect_ShareOutResult\n");
+	}
 };
 
 %nodefaultctor IFSelect_SignatureList;
@@ -3501,8 +3502,6 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 class IFSelect_Functions {
 	public:
 		%feature("autodoc", "1");
-		~IFSelect_Functions();
-		%feature("autodoc", "1");
 		IFSelect_Functions();
 		%feature("autodoc", "1");
 		Handle_Standard_Transient GiveEntity(const Handle_IFSelect_WorkSession &WS, const char * name="");
@@ -3515,6 +3514,11 @@ class IFSelect_Functions {
 		%feature("autodoc", "1");
 		void Init();
 
+};
+%extend IFSelect_Functions {
+	~IFSelect_Functions() {
+	printf("Call custom destructor for instance of IFSelect_Functions\n");
+	}
 };
 
 %nodefaultctor IFSelect_SelectShared;
@@ -3801,8 +3805,6 @@ class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IFSelect_TSeqOfSelection();
-		%feature("autodoc", "1");
 		const IFSelect_TSeqOfSelection & Assign(const IFSelect_TSeqOfSelection &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_IFSelect_Selection &T);
@@ -3841,6 +3843,11 @@ class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IFSelect_TSeqOfSelection {
+	~IFSelect_TSeqOfSelection() {
+	printf("Call custom destructor for instance of IFSelect_TSeqOfSelection\n");
+	}
 };
 
 %nodefaultctor IFSelect_SelectModelEntities;
@@ -3905,8 +3912,6 @@ class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IFSelect_SequenceOfInterfaceModel();
-		%feature("autodoc", "1");
 		const IFSelect_SequenceOfInterfaceModel & Assign(const IFSelect_SequenceOfInterfaceModel &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Interface_InterfaceModel &T);
@@ -3945,6 +3950,11 @@ class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IFSelect_SequenceOfInterfaceModel {
+	~IFSelect_SequenceOfInterfaceModel() {
+	printf("Call custom destructor for instance of IFSelect_SequenceOfInterfaceModel\n");
+	}
 };
 
 %nodefaultctor IFSelect_IntParam;
@@ -4384,9 +4394,12 @@ class IFSelect_SessionFile {
 		Handle_Standard_Transient ItemValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IFSelect_SessionFile();
 
+};
+%extend IFSelect_SessionFile {
+	~IFSelect_SessionFile() {
+	printf("Call custom destructor for instance of IFSelect_SessionFile\n");
+	}
 };
 
 %nodefaultctor IFSelect_SelectUnion;
@@ -4585,8 +4598,6 @@ class IFSelect_SelectRoots : public IFSelect_SelectExtract {
 class IFSelect_ContextWrite {
 	public:
 		%feature("autodoc", "1");
-		~IFSelect_ContextWrite();
-		%feature("autodoc", "1");
 		IFSelect_ContextWrite(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &proto, const Handle_IFSelect_AppliedModifiers &applieds, const char * filename);
 		%feature("autodoc", "1");
 		IFSelect_ContextWrite(const Handle_Interface_HGraph &hgraph, const Handle_Interface_Protocol &proto, const Handle_IFSelect_AppliedModifiers &applieds, const char * filename);
@@ -4633,6 +4644,11 @@ class IFSelect_ContextWrite {
 		%feature("autodoc", "1");
 		Interface_CheckIterator CheckList() const;
 
+};
+%extend IFSelect_ContextWrite {
+	~IFSelect_ContextWrite() {
+	printf("Call custom destructor for instance of IFSelect_ContextWrite\n");
+	}
 };
 
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
@@ -5191,8 +5207,6 @@ class IFSelect_SequenceOfAppliedModifiers : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IFSelect_SequenceOfAppliedModifiers();
-		%feature("autodoc", "1");
 		const IFSelect_SequenceOfAppliedModifiers & Assign(const IFSelect_SequenceOfAppliedModifiers &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_IFSelect_AppliedModifiers &T);
@@ -5231,6 +5245,11 @@ class IFSelect_SequenceOfAppliedModifiers : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IFSelect_SequenceOfAppliedModifiers {
+	~IFSelect_SequenceOfAppliedModifiers() {
+	printf("Call custom destructor for instance of IFSelect_SequenceOfAppliedModifiers\n");
+	}
 };
 
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfInterfaceModel;

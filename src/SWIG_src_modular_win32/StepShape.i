@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepShape
 
@@ -2538,8 +2524,6 @@ class Handle_StepShape_ContextDependentShapeRepresentation : public Handle_MMgt_
 class StepShape_BooleanOperand {
 	public:
 		%feature("autodoc", "1");
-		~StepShape_BooleanOperand();
-		%feature("autodoc", "1");
 		StepShape_BooleanOperand();
 		%feature("autodoc", "1");
 		void SetTypeOfContent(const Standard_Integer aTypeOfContent);
@@ -2562,6 +2546,11 @@ class StepShape_BooleanOperand {
 		%feature("autodoc", "1");
 		void SetBooleanResult(const Handle_StepShape_BooleanResult &aBooleanResult);
 
+};
+%extend StepShape_BooleanOperand {
+	~StepShape_BooleanOperand() {
+	printf("Call custom destructor for instance of StepShape_BooleanOperand\n");
+	}
 };
 
 %nodefaultctor StepShape_SolidModel;
@@ -3407,9 +3396,12 @@ class StepShape_DimensionalCharacteristic : public StepData_SelectType {
 		Handle_StepShape_DimensionalLocation DimensionalLocation() const;
 		%feature("autodoc", "1");
 		Handle_StepShape_DimensionalSize DimensionalSize() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_DimensionalCharacteristic();
 
+};
+%extend StepShape_DimensionalCharacteristic {
+	~StepShape_DimensionalCharacteristic() {
+	printf("Call custom destructor for instance of StepShape_DimensionalCharacteristic\n");
+	}
 };
 
 %nodefaultctor StepShape_ConnectedFaceSet;
@@ -3630,8 +3622,6 @@ class StepShape_Array1OfConnectedEdgeSet {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfConnectedEdgeSet();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfConnectedEdgeSet & Assign(const StepShape_Array1OfConnectedEdgeSet &Other);
@@ -3652,6 +3642,11 @@ class StepShape_Array1OfConnectedEdgeSet {
 		%feature("autodoc", "1");
 		Handle_StepShape_ConnectedEdgeSet & operator()(const Standard_Integer Index);
 
+};
+%extend StepShape_Array1OfConnectedEdgeSet {
+	~StepShape_Array1OfConnectedEdgeSet() {
+	printf("Call custom destructor for instance of StepShape_Array1OfConnectedEdgeSet\n");
+	}
 };
 
 %nodefaultctor StepShape_CsgSolid;
@@ -4062,8 +4057,6 @@ class StepShape_Array1OfOrientedEdge {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfOrientedEdge();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfOrientedEdge & Assign(const StepShape_Array1OfOrientedEdge &Other);
@@ -4085,6 +4078,11 @@ class StepShape_Array1OfOrientedEdge {
 		Handle_StepShape_OrientedEdge & operator()(const Standard_Integer Index);
 
 };
+%extend StepShape_Array1OfOrientedEdge {
+	~StepShape_Array1OfOrientedEdge() {
+	printf("Call custom destructor for instance of StepShape_Array1OfOrientedEdge\n");
+	}
+};
 
 %nodefaultctor StepShape_Array1OfFace;
 class StepShape_Array1OfFace {
@@ -4097,8 +4095,6 @@ class StepShape_Array1OfFace {
 		void Init(const Handle_StepShape_Face &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepShape_Array1OfFace();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -4120,6 +4116,11 @@ class StepShape_Array1OfFace {
 		%feature("autodoc", "1");
 		Handle_StepShape_Face & operator()(const Standard_Integer Index);
 
+};
+%extend StepShape_Array1OfFace {
+	~StepShape_Array1OfFace() {
+	printf("Call custom destructor for instance of StepShape_Array1OfFace\n");
+	}
 };
 
 %nodefaultctor StepShape_OpenShell;
@@ -4383,9 +4384,12 @@ class StepShape_ValueQualifier : public StepData_SelectType {
 		Handle_StepShape_PrecisionQualifier PrecisionQualifier() const;
 		%feature("autodoc", "1");
 		Handle_StepShape_TypeQualifier TypeQualifier() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_ValueQualifier();
 
+};
+%extend StepShape_ValueQualifier {
+	~StepShape_ValueQualifier() {
+	printf("Call custom destructor for instance of StepShape_ValueQualifier\n");
+	}
 };
 
 %nodefaultctor StepShape_SurfaceModel;
@@ -4397,9 +4401,12 @@ class StepShape_SurfaceModel : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_StepShape_ShellBasedSurfaceModel ShellBasedSurfaceModel() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_SurfaceModel();
 
+};
+%extend StepShape_SurfaceModel {
+	~StepShape_SurfaceModel() {
+	printf("Call custom destructor for instance of StepShape_SurfaceModel\n");
+	}
 };
 
 %nodefaultctor StepShape_FacetedBrepAndBrepWithVoids;
@@ -4640,8 +4647,6 @@ class StepShape_Array1OfOrientedClosedShell {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfOrientedClosedShell();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfOrientedClosedShell & Assign(const StepShape_Array1OfOrientedClosedShell &Other);
@@ -4662,6 +4667,11 @@ class StepShape_Array1OfOrientedClosedShell {
 		%feature("autodoc", "1");
 		Handle_StepShape_OrientedClosedShell & operator()(const Standard_Integer Index);
 
+};
+%extend StepShape_Array1OfOrientedClosedShell {
+	~StepShape_Array1OfOrientedClosedShell() {
+	printf("Call custom destructor for instance of StepShape_Array1OfOrientedClosedShell\n");
+	}
 };
 
 %nodefaultctor StepShape_HArray1OfValueQualifier;
@@ -4777,9 +4787,12 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 		Handle_StepShape_ClosedShell ClosedShell() const;
 		%feature("autodoc", "1");
 		Handle_StepShape_OpenShell OpenShell() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_ReversibleTopologyItem();
 
+};
+%extend StepShape_ReversibleTopologyItem {
+	~StepShape_ReversibleTopologyItem() {
+	printf("Call custom destructor for instance of StepShape_ReversibleTopologyItem\n");
+	}
 };
 
 %nodefaultctor StepShape_QualifiedRepresentationItem;
@@ -4976,8 +4989,6 @@ class StepShape_ConnectedFaceShapeRepresentation : public StepRepr_Representatio
 class StepShape_CsgSelect {
 	public:
 		%feature("autodoc", "1");
-		~StepShape_CsgSelect();
-		%feature("autodoc", "1");
 		StepShape_CsgSelect();
 		%feature("autodoc", "1");
 		void SetTypeOfContent(const Standard_Integer aTypeOfContent);
@@ -4992,6 +5003,11 @@ class StepShape_CsgSelect {
 		%feature("autodoc", "1");
 		void SetCsgPrimitive(const StepShape_CsgPrimitive &aCsgPrimitive);
 
+};
+%extend StepShape_CsgSelect {
+	~StepShape_CsgSelect() {
+	printf("Call custom destructor for instance of StepShape_CsgSelect\n");
+	}
 };
 
 %nodefaultctor StepShape_GeometricCurveSet;
@@ -5088,8 +5104,6 @@ class StepShape_Array1OfFaceBound {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfFaceBound();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfFaceBound & Assign(const StepShape_Array1OfFaceBound &Other);
@@ -5111,6 +5125,11 @@ class StepShape_Array1OfFaceBound {
 		Handle_StepShape_FaceBound & operator()(const Standard_Integer Index);
 
 };
+%extend StepShape_Array1OfFaceBound {
+	~StepShape_Array1OfFaceBound() {
+	printf("Call custom destructor for instance of StepShape_Array1OfFaceBound\n");
+	}
+};
 
 %nodefaultctor StepShape_Array1OfConnectedFaceSet;
 class StepShape_Array1OfConnectedFaceSet {
@@ -5123,8 +5142,6 @@ class StepShape_Array1OfConnectedFaceSet {
 		void Init(const Handle_StepShape_ConnectedFaceSet &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepShape_Array1OfConnectedFaceSet();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -5146,6 +5163,11 @@ class StepShape_Array1OfConnectedFaceSet {
 		%feature("autodoc", "1");
 		Handle_StepShape_ConnectedFaceSet & operator()(const Standard_Integer Index);
 
+};
+%extend StepShape_Array1OfConnectedFaceSet {
+	~StepShape_Array1OfConnectedFaceSet() {
+	printf("Call custom destructor for instance of StepShape_Array1OfConnectedFaceSet\n");
+	}
 };
 
 %nodefaultctor StepShape_VertexPoint;
@@ -5307,9 +5329,12 @@ class StepShape_Shell : public StepData_SelectType {
 		Handle_StepShape_OpenShell OpenShell() const;
 		%feature("autodoc", "1");
 		Handle_StepShape_ClosedShell ClosedShell() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_Shell();
 
+};
+%extend StepShape_Shell {
+	~StepShape_Shell() {
+	printf("Call custom destructor for instance of StepShape_Shell\n");
+	}
 };
 
 %nodefaultctor StepShape_MeasureQualification;
@@ -5375,9 +5400,12 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 		Handle_StepShape_RightCircularCone RightCircularCone() const;
 		%feature("autodoc", "1");
 		Handle_StepShape_RightCircularCylinder RightCircularCylinder() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_CsgPrimitive();
 
+};
+%extend StepShape_CsgPrimitive {
+	~StepShape_CsgPrimitive() {
+	printf("Call custom destructor for instance of StepShape_CsgPrimitive\n");
+	}
 };
 
 %nodefaultctor StepShape_ManifoldSurfaceShapeRepresentation;
@@ -5449,9 +5477,12 @@ class StepShape_ToleranceMethodDefinition : public StepData_SelectType {
 		Handle_StepShape_ToleranceValue ToleranceValue() const;
 		%feature("autodoc", "1");
 		Handle_StepShape_LimitsAndFits LimitsAndFits() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_ToleranceMethodDefinition();
 
+};
+%extend StepShape_ToleranceMethodDefinition {
+	~StepShape_ToleranceMethodDefinition() {
+	printf("Call custom destructor for instance of StepShape_ToleranceMethodDefinition\n");
+	}
 };
 
 %nodefaultctor StepShape_Torus;
@@ -5656,8 +5687,6 @@ class StepShape_Array1OfEdge {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfEdge();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfEdge & Assign(const StepShape_Array1OfEdge &Other);
@@ -5678,6 +5707,11 @@ class StepShape_Array1OfEdge {
 		%feature("autodoc", "1");
 		Handle_StepShape_Edge & operator()(const Standard_Integer Index);
 
+};
+%extend StepShape_Array1OfEdge {
+	~StepShape_Array1OfEdge() {
+	printf("Call custom destructor for instance of StepShape_Array1OfEdge\n");
+	}
 };
 
 %nodefaultctor StepShape_BrepWithVoids;
@@ -5725,9 +5759,12 @@ class StepShape_GeometricSetSelect : public StepData_SelectType {
 		Handle_StepGeom_Curve Curve() const;
 		%feature("autodoc", "1");
 		Handle_StepGeom_Surface Surface() const;
-		%feature("autodoc", "1");
-		virtual		~StepShape_GeometricSetSelect();
 
+};
+%extend StepShape_GeometricSetSelect {
+	~StepShape_GeometricSetSelect() {
+	printf("Call custom destructor for instance of StepShape_GeometricSetSelect\n");
+	}
 };
 
 %nodefaultctor StepShape_SeamEdge;

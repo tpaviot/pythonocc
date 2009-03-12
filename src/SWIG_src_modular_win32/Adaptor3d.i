@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Adaptor3d
 
@@ -667,8 +653,6 @@ class Adaptor3d_Surface {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~Adaptor3d_Surface();
-		%feature("autodoc", "1");
 		virtual		Standard_Real FirstUParameter() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real LastUParameter() const;
@@ -764,6 +748,11 @@ class Adaptor3d_Surface {
 		virtual		Standard_Real OffsetValue() const;
 
 };
+%extend Adaptor3d_Surface {
+	~Adaptor3d_Surface() {
+	printf("Call custom destructor for instance of Adaptor3d_Surface\n");
+	}
+};
 
 %nodefaultctor Adaptor3d_SurfaceOfRevolution;
 class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
@@ -780,9 +769,12 @@ class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
 		void Load(const gp_Ax1 &V);
 		%feature("autodoc", "1");
 		gp_Ax3 Axis() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_SurfaceOfRevolution();
 
+};
+%extend Adaptor3d_SurfaceOfRevolution {
+	~Adaptor3d_SurfaceOfRevolution() {
+	printf("Call custom destructor for instance of Adaptor3d_SurfaceOfRevolution\n");
+	}
 };
 
 %nodefaultctor Adaptor3d_HVertex;
@@ -824,8 +816,6 @@ class Adaptor3d_Curve {
 		Adaptor3d_Curve();
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_Curve();
 		%feature("autodoc", "1");
 		virtual		Standard_Real FirstParameter() const;
 		%feature("autodoc", "1");
@@ -884,6 +874,11 @@ class Adaptor3d_Curve {
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
 
 };
+%extend Adaptor3d_Curve {
+	~Adaptor3d_Curve() {
+	printf("Call custom destructor for instance of Adaptor3d_Curve\n");
+	}
+};
 
 %nodefaultctor Adaptor3d_CurveOnSurface;
 class Adaptor3d_CurveOnSurface : public Adaptor3d_Curve {
@@ -906,9 +901,12 @@ class Adaptor3d_CurveOnSurface : public Adaptor3d_Curve {
 		Handle_Adaptor2d_HCurve2d & ChangeCurve();
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurface & ChangeSurface();
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_CurveOnSurface();
 
+};
+%extend Adaptor3d_CurveOnSurface {
+	~Adaptor3d_CurveOnSurface() {
+	printf("Call custom destructor for instance of Adaptor3d_CurveOnSurface\n");
+	}
 };
 
 %nodefaultctor Adaptor3d_HOffsetCurve;
@@ -1042,9 +1040,12 @@ class Adaptor3d_SurfaceOfLinearExtrusion : public Adaptor3d_Surface {
 		virtual		gp_Dir Direction() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Adaptor3d_HCurve BasisCurve() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_SurfaceOfLinearExtrusion();
 
+};
+%extend Adaptor3d_SurfaceOfLinearExtrusion {
+	~Adaptor3d_SurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of Adaptor3d_SurfaceOfLinearExtrusion\n");
+	}
 };
 
 %nodefaultctor Adaptor3d_HCurveOnSurface;
@@ -1154,9 +1155,12 @@ class Adaptor3d_OffsetCurve : public Adaptor2d_Curve2d {
 		virtual		Handle_Geom2d_BezierCurve Bezier() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_OffsetCurve();
 
+};
+%extend Adaptor3d_OffsetCurve {
+	~Adaptor3d_OffsetCurve() {
+	printf("Call custom destructor for instance of Adaptor3d_OffsetCurve\n");
+	}
 };
 
 %nodefaultctor Adaptor3d_IsoCurve;
@@ -1238,9 +1242,12 @@ class Adaptor3d_IsoCurve : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BezierCurve Bezier() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_IsoCurve();
 
+};
+%extend Adaptor3d_IsoCurve {
+	~Adaptor3d_IsoCurve() {
+	printf("Call custom destructor for instance of Adaptor3d_IsoCurve\n");
+	}
 };
 
 %nodefaultctor Adaptor3d_HSurfaceOfRevolution;

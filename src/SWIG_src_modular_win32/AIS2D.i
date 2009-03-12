@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module AIS2D
 
@@ -605,8 +591,6 @@ class Handle_AIS2D_GlobalStatus : public Handle_MMgt_TShared {
 class AIS2D_ListIteratorOfListOfIO {
 	public:
 		%feature("autodoc", "1");
-		~AIS2D_ListIteratorOfListOfIO();
-		%feature("autodoc", "1");
 		AIS2D_ListIteratorOfListOfIO();
 		%feature("autodoc", "1");
 		AIS2D_ListIteratorOfListOfIO(const AIS2D_ListOfIO &L);
@@ -620,6 +604,11 @@ class AIS2D_ListIteratorOfListOfIO {
 		Handle_AIS2D_InteractiveObject & Value() const;
 
 };
+%extend AIS2D_ListIteratorOfListOfIO {
+	~AIS2D_ListIteratorOfListOfIO() {
+	printf("Call custom destructor for instance of AIS2D_ListIteratorOfListOfIO\n");
+	}
+};
 
 %nodefaultctor AIS2D_SequenceOfPrimArchit;
 class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
@@ -628,8 +617,6 @@ class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
 		AIS2D_SequenceOfPrimArchit();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AIS2D_SequenceOfPrimArchit();
 		%feature("autodoc", "1");
 		const AIS2D_SequenceOfPrimArchit & Assign(const AIS2D_SequenceOfPrimArchit &Other);
 		%feature("autodoc", "1");
@@ -670,6 +657,11 @@ class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AIS2D_SequenceOfPrimArchit {
+	~AIS2D_SequenceOfPrimArchit() {
+	printf("Call custom destructor for instance of AIS2D_SequenceOfPrimArchit\n");
+	}
+};
 
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfIOStatus;
 class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
@@ -707,8 +699,6 @@ class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS2D_DataMapOfLC();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Handle_AIS2D_LocalContext &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -724,12 +714,15 @@ class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 		Handle_AIS2D_LocalContext & operator()(const Standard_Integer &K);
 
 };
+%extend AIS2D_DataMapOfLC {
+	~AIS2D_DataMapOfLC() {
+	printf("Call custom destructor for instance of AIS2D_DataMapOfLC\n");
+	}
+};
 
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfLocStat;
 class AIS2D_DataMapIteratorOfDataMapOfLocStat : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~AIS2D_DataMapIteratorOfDataMapOfLocStat();
 		%feature("autodoc", "1");
 		AIS2D_DataMapIteratorOfDataMapOfLocStat();
 		%feature("autodoc", "1");
@@ -741,6 +734,11 @@ class AIS2D_DataMapIteratorOfDataMapOfLocStat : public TCollection_BasicMapItera
 		%feature("autodoc", "1");
 		const Handle_AIS2D_LocalStatus & Value() const;
 
+};
+%extend AIS2D_DataMapIteratorOfDataMapOfLocStat {
+	~AIS2D_DataMapIteratorOfDataMapOfLocStat() {
+	printf("Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfLocStat\n");
+	}
 };
 
 %nodefaultctor AIS2D_LocalStatus;
@@ -841,8 +839,6 @@ class AIS2D_SequenceOfIO : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS2D_SequenceOfIO();
-		%feature("autodoc", "1");
 		const AIS2D_SequenceOfIO & Assign(const AIS2D_SequenceOfIO &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_AIS2D_InteractiveObject &T);
@@ -882,6 +878,11 @@ class AIS2D_SequenceOfIO : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AIS2D_SequenceOfIO {
+	~AIS2D_SequenceOfIO() {
+	printf("Call custom destructor for instance of AIS2D_SequenceOfIO\n");
+	}
+};
 
 %nodefaultctor AIS2D_PrimitiveArchit;
 class AIS2D_PrimitiveArchit : public MMgt_TShared {
@@ -911,8 +912,6 @@ class AIS2D_PrimitiveArchit : public MMgt_TShared {
 class AIS2D_DataMapIteratorOfDataMapOfLC : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~AIS2D_DataMapIteratorOfDataMapOfLC();
-		%feature("autodoc", "1");
 		AIS2D_DataMapIteratorOfDataMapOfLC();
 		%feature("autodoc", "1");
 		AIS2D_DataMapIteratorOfDataMapOfLC(const AIS2D_DataMapOfLC &aMap);
@@ -923,6 +922,11 @@ class AIS2D_DataMapIteratorOfDataMapOfLC : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const Handle_AIS2D_LocalContext & Value() const;
 
+};
+%extend AIS2D_DataMapIteratorOfDataMapOfLC {
+	~AIS2D_DataMapIteratorOfDataMapOfLC() {
+	printf("Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfLC\n");
+	}
 };
 
 %nodefaultctor AIS2D_ListOfIO;
@@ -936,8 +940,6 @@ class AIS2D_ListOfIO {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AIS2D_ListOfIO();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -970,12 +972,15 @@ class AIS2D_ListOfIO {
 		void InsertAfter(AIS2D_ListOfIO & Other, AIS2D_ListIteratorOfListOfIO & It);
 
 };
+%extend AIS2D_ListOfIO {
+	~AIS2D_ListOfIO() {
+	printf("Call custom destructor for instance of AIS2D_ListOfIO\n");
+	}
+};
 
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfIOStatus;
 class AIS2D_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~AIS2D_DataMapIteratorOfDataMapOfIOStatus();
 		%feature("autodoc", "1");
 		AIS2D_DataMapIteratorOfDataMapOfIOStatus();
 		%feature("autodoc", "1");
@@ -987,6 +992,11 @@ class AIS2D_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIter
 		%feature("autodoc", "1");
 		const Handle_AIS2D_GlobalStatus & Value() const;
 
+};
+%extend AIS2D_DataMapIteratorOfDataMapOfIOStatus {
+	~AIS2D_DataMapIteratorOfDataMapOfIOStatus() {
+	printf("Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfIOStatus\n");
+	}
 };
 
 %nodefaultctor AIS2D_ListNodeOfListOfIO;
@@ -1039,8 +1049,6 @@ class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
 class AIS2D_DataMapIteratorOfDataMapOfPrimAspects : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~AIS2D_DataMapIteratorOfDataMapOfPrimAspects();
-		%feature("autodoc", "1");
 		AIS2D_DataMapIteratorOfDataMapOfPrimAspects();
 		%feature("autodoc", "1");
 		AIS2D_DataMapIteratorOfDataMapOfPrimAspects(const AIS2D_DataMapOfPrimAspects &aMap);
@@ -1051,6 +1059,11 @@ class AIS2D_DataMapIteratorOfDataMapOfPrimAspects : public TCollection_BasicMapI
 		%feature("autodoc", "1");
 		const Handle_Prs2d_AspectRoot & Value() const;
 
+};
+%extend AIS2D_DataMapIteratorOfDataMapOfPrimAspects {
+	~AIS2D_DataMapIteratorOfDataMapOfPrimAspects() {
+	printf("Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfPrimAspects\n");
+	}
 };
 
 %nodefaultctor AIS2D_InteractiveContext;
@@ -1447,8 +1460,6 @@ class AIS2D_DataMapOfIOStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS2D_DataMapOfIOStatus();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_GlobalStatus &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_AIS2D_InteractiveObject &K) const;
@@ -1463,6 +1474,11 @@ class AIS2D_DataMapOfIOStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_AIS2D_GlobalStatus & operator()(const Handle_AIS2D_InteractiveObject &K);
 
+};
+%extend AIS2D_DataMapOfIOStatus {
+	~AIS2D_DataMapOfIOStatus() {
+	printf("Call custom destructor for instance of AIS2D_DataMapOfIOStatus\n");
+	}
 };
 
 %nodefaultctor AIS2D_SequenceNodeOfSequenceOfIO;
@@ -1587,8 +1603,6 @@ class AIS2D_DataMapOfPrimAspects : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS2D_DataMapOfPrimAspects();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Graphic2d_Primitive &K, const Handle_Prs2d_AspectRoot &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_Graphic2d_Primitive &K) const;
@@ -1604,12 +1618,15 @@ class AIS2D_DataMapOfPrimAspects : public TCollection_BasicMap {
 		Handle_Prs2d_AspectRoot & operator()(const Handle_Graphic2d_Primitive &K);
 
 };
+%extend AIS2D_DataMapOfPrimAspects {
+	~AIS2D_DataMapOfPrimAspects() {
+	printf("Call custom destructor for instance of AIS2D_DataMapOfPrimAspects\n");
+	}
+};
 
 %nodefaultctor AIS2D;
 class AIS2D {
 	public:
-		%feature("autodoc", "1");
-		~AIS2D();
 		%feature("autodoc", "1");
 		AIS2D();
 		%feature("autodoc", "1");
@@ -1617,6 +1634,11 @@ class AIS2D {
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject Retrieve(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
 
+};
+%extend AIS2D {
+	~AIS2D() {
+	printf("Call custom destructor for instance of AIS2D\n");
+	}
 };
 
 %nodefaultctor AIS2D_SequenceNodeOfSequenceOfPrimArchit;
@@ -1799,8 +1821,6 @@ class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS2D_DataMapOfLocStat();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_LocalStatus &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_AIS2D_InteractiveObject &K) const;
@@ -1815,4 +1835,9 @@ class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalStatus & operator()(const Handle_AIS2D_InteractiveObject &K);
 
+};
+%extend AIS2D_DataMapOfLocStat {
+	~AIS2D_DataMapOfLocStat() {
+	printf("Call custom destructor for instance of AIS2D_DataMapOfLocStat\n");
+	}
 };

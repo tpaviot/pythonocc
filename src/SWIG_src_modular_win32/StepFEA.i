@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepFEA
 
@@ -1838,8 +1824,6 @@ class StepFEA_Array1OfCurveElementEndOffset {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepFEA_Array1OfCurveElementEndOffset();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepFEA_Array1OfCurveElementEndOffset & Assign(const StepFEA_Array1OfCurveElementEndOffset &Other);
@@ -1860,6 +1844,11 @@ class StepFEA_Array1OfCurveElementEndOffset {
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementEndOffset & operator()(const Standard_Integer Index);
 
+};
+%extend StepFEA_Array1OfCurveElementEndOffset {
+	~StepFEA_Array1OfCurveElementEndOffset() {
+	printf("Call custom destructor for instance of StepFEA_Array1OfCurveElementEndOffset\n");
+	}
 };
 
 %nodefaultctor StepFEA_HArray1OfCurveElementEndOffset;
@@ -2270,8 +2259,6 @@ class StepFEA_SequenceOfNodeRepresentation : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepFEA_SequenceOfNodeRepresentation();
-		%feature("autodoc", "1");
 		const StepFEA_SequenceOfNodeRepresentation & Assign(const StepFEA_SequenceOfNodeRepresentation &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepFEA_NodeRepresentation &T);
@@ -2310,6 +2297,11 @@ class StepFEA_SequenceOfNodeRepresentation : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend StepFEA_SequenceOfNodeRepresentation {
+	~StepFEA_SequenceOfNodeRepresentation() {
+	printf("Call custom destructor for instance of StepFEA_SequenceOfNodeRepresentation\n");
+	}
 };
 
 %nodefaultctor StepFEA_HArray1OfCurveElementInterval;
@@ -2360,8 +2352,6 @@ class StepFEA_SequenceOfElementRepresentation : public TCollection_BaseSequence 
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepFEA_SequenceOfElementRepresentation();
-		%feature("autodoc", "1");
 		const StepFEA_SequenceOfElementRepresentation & Assign(const StepFEA_SequenceOfElementRepresentation &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepFEA_ElementRepresentation &T);
@@ -2400,6 +2390,11 @@ class StepFEA_SequenceOfElementRepresentation : public TCollection_BaseSequence 
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend StepFEA_SequenceOfElementRepresentation {
+	~StepFEA_SequenceOfElementRepresentation() {
+	printf("Call custom destructor for instance of StepFEA_SequenceOfElementRepresentation\n");
+	}
 };
 
 %nodefaultctor StepFEA_HArray1OfElementRepresentation;
@@ -2531,9 +2526,12 @@ class StepFEA_SymmetricTensor23d : public StepData_SelectType {
 		void SetAnisotropicSymmetricTensor23d(const Handle_TColStd_HArray1OfReal &aVal);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal AnisotropicSymmetricTensor23d() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_SymmetricTensor23d();
 
+};
+%extend StepFEA_SymmetricTensor23d {
+	~StepFEA_SymmetricTensor23d() {
+	printf("Call custom destructor for instance of StepFEA_SymmetricTensor23d\n");
+	}
 };
 
 %nodefaultctor StepFEA_FeaLinearElasticity;
@@ -2667,9 +2665,12 @@ class StepFEA_SymmetricTensor42d : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal AnisotropicSymmetricTensor42d() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_SymmetricTensor42d();
 
+};
+%extend StepFEA_SymmetricTensor42d {
+	~StepFEA_SymmetricTensor42d() {
+	printf("Call custom destructor for instance of StepFEA_SymmetricTensor42d\n");
+	}
 };
 
 %nodefaultctor StepFEA_FeaMoistureAbsorption;
@@ -2772,8 +2773,6 @@ class StepFEA_Array1OfNodeRepresentation {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepFEA_Array1OfNodeRepresentation();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepFEA_Array1OfNodeRepresentation & Assign(const StepFEA_Array1OfNodeRepresentation &Other);
@@ -2794,6 +2793,11 @@ class StepFEA_Array1OfNodeRepresentation {
 		%feature("autodoc", "1");
 		Handle_StepFEA_NodeRepresentation & operator()(const Standard_Integer Index);
 
+};
+%extend StepFEA_Array1OfNodeRepresentation {
+	~StepFEA_Array1OfNodeRepresentation() {
+	printf("Call custom destructor for instance of StepFEA_Array1OfNodeRepresentation\n");
+	}
 };
 
 %nodefaultctor StepFEA_HArray1OfNodeRepresentation;
@@ -2844,8 +2848,6 @@ class StepFEA_SequenceOfElementGeometricRelationship : public TCollection_BaseSe
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepFEA_SequenceOfElementGeometricRelationship();
-		%feature("autodoc", "1");
 		const StepFEA_SequenceOfElementGeometricRelationship & Assign(const StepFEA_SequenceOfElementGeometricRelationship &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepFEA_ElementGeometricRelationship &T);
@@ -2885,6 +2887,11 @@ class StepFEA_SequenceOfElementGeometricRelationship : public TCollection_BaseSe
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend StepFEA_SequenceOfElementGeometricRelationship {
+	~StepFEA_SequenceOfElementGeometricRelationship() {
+	printf("Call custom destructor for instance of StepFEA_SequenceOfElementGeometricRelationship\n");
+	}
+};
 
 %nodefaultctor StepFEA_Array1OfCurveElementEndRelease;
 class StepFEA_Array1OfCurveElementEndRelease {
@@ -2897,8 +2904,6 @@ class StepFEA_Array1OfCurveElementEndRelease {
 		void Init(const Handle_StepFEA_CurveElementEndRelease &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepFEA_Array1OfCurveElementEndRelease();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2920,6 +2925,11 @@ class StepFEA_Array1OfCurveElementEndRelease {
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementEndRelease & operator()(const Standard_Integer Index);
 
+};
+%extend StepFEA_Array1OfCurveElementEndRelease {
+	~StepFEA_Array1OfCurveElementEndRelease() {
+	printf("Call custom destructor for instance of StepFEA_Array1OfCurveElementEndRelease\n");
+	}
 };
 
 %nodefaultctor StepFEA_SymmetricTensor43dMember;
@@ -3035,9 +3045,12 @@ class StepFEA_ElementOrElementGroup : public StepData_SelectType {
 		Handle_StepFEA_ElementRepresentation ElementRepresentation() const;
 		%feature("autodoc", "1");
 		Handle_StepFEA_ElementGroup ElementGroup() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_ElementOrElementGroup();
 
+};
+%extend StepFEA_ElementOrElementGroup {
+	~StepFEA_ElementOrElementGroup() {
+	printf("Call custom destructor for instance of StepFEA_ElementOrElementGroup\n");
+	}
 };
 
 %nodefaultctor StepFEA_Curve3dElementProperty;
@@ -3186,8 +3199,6 @@ class StepFEA_Array1OfCurveElementInterval {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepFEA_Array1OfCurveElementInterval();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepFEA_Array1OfCurveElementInterval & Assign(const StepFEA_Array1OfCurveElementInterval &Other);
@@ -3208,6 +3219,11 @@ class StepFEA_Array1OfCurveElementInterval {
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementInterval & operator()(const Standard_Integer Index);
 
+};
+%extend StepFEA_Array1OfCurveElementInterval {
+	~StepFEA_Array1OfCurveElementInterval() {
+	printf("Call custom destructor for instance of StepFEA_Array1OfCurveElementInterval\n");
+	}
 };
 
 %nodefaultctor StepFEA_FeaGroup;
@@ -3249,9 +3265,12 @@ class StepFEA_CurveElementEndCoordinateSystem : public StepData_SelectType {
 		Handle_StepFEA_AlignedCurve3dElementCoordinateSystem AlignedCurve3dElementCoordinateSystem() const;
 		%feature("autodoc", "1");
 		Handle_StepFEA_ParametricCurve3dElementCoordinateSystem ParametricCurve3dElementCoordinateSystem() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_CurveElementEndCoordinateSystem();
 
+};
+%extend StepFEA_CurveElementEndCoordinateSystem {
+	~StepFEA_CurveElementEndCoordinateSystem() {
+	printf("Call custom destructor for instance of StepFEA_CurveElementEndCoordinateSystem\n");
+	}
 };
 
 %nodefaultctor StepFEA_NodeSet;
@@ -3522,8 +3541,6 @@ class StepFEA_Array1OfElementRepresentation {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepFEA_Array1OfElementRepresentation();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepFEA_Array1OfElementRepresentation & Assign(const StepFEA_Array1OfElementRepresentation &Other);
@@ -3544,6 +3561,11 @@ class StepFEA_Array1OfElementRepresentation {
 		%feature("autodoc", "1");
 		Handle_StepFEA_ElementRepresentation & operator()(const Standard_Integer Index);
 
+};
+%extend StepFEA_Array1OfElementRepresentation {
+	~StepFEA_Array1OfElementRepresentation() {
+	printf("Call custom destructor for instance of StepFEA_Array1OfElementRepresentation\n");
+	}
 };
 
 %nodefaultctor StepFEA_HSequenceOfNodeRepresentation;
@@ -3943,9 +3965,12 @@ class StepFEA_SymmetricTensor22d : public StepData_SelectType {
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal AnisotropicSymmetricTensor22d() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_SymmetricTensor22d();
 
+};
+%extend StepFEA_SymmetricTensor22d {
+	~StepFEA_SymmetricTensor22d() {
+	printf("Call custom destructor for instance of StepFEA_SymmetricTensor22d\n");
+	}
 };
 
 %nodefaultctor StepFEA_DummyNode;
@@ -4184,8 +4209,6 @@ class StepFEA_SequenceOfCurve3dElementProperty : public TCollection_BaseSequence
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepFEA_SequenceOfCurve3dElementProperty();
-		%feature("autodoc", "1");
 		const StepFEA_SequenceOfCurve3dElementProperty & Assign(const StepFEA_SequenceOfCurve3dElementProperty &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepFEA_Curve3dElementProperty &T);
@@ -4225,6 +4248,11 @@ class StepFEA_SequenceOfCurve3dElementProperty : public TCollection_BaseSequence
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend StepFEA_SequenceOfCurve3dElementProperty {
+	~StepFEA_SequenceOfCurve3dElementProperty() {
+	printf("Call custom destructor for instance of StepFEA_SequenceOfCurve3dElementProperty\n");
+	}
+};
 
 %nodefaultctor StepFEA_DegreeOfFreedom;
 class StepFEA_DegreeOfFreedom : public StepData_SelectType {
@@ -4245,9 +4273,12 @@ class StepFEA_DegreeOfFreedom : public StepData_SelectType {
 		void SetApplicationDefinedDegreeOfFreedom(const Handle_TCollection_HAsciiString &aVal);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString ApplicationDefinedDegreeOfFreedom() const;
-		%feature("autodoc", "1");
-		virtual		~StepFEA_DegreeOfFreedom();
 
+};
+%extend StepFEA_DegreeOfFreedom {
+	~StepFEA_DegreeOfFreedom() {
+	printf("Call custom destructor for instance of StepFEA_DegreeOfFreedom\n");
+	}
 };
 
 %nodefaultctor StepFEA_FeaCurveSectionGeometricRelationship;

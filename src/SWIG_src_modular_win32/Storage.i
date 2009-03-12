@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Storage
 
@@ -962,8 +948,6 @@ class Storage_ArrayOfCallBack {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Storage_ArrayOfCallBack();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Storage_ArrayOfCallBack & Assign(const Storage_ArrayOfCallBack &Other);
@@ -984,6 +968,11 @@ class Storage_ArrayOfCallBack {
 		%feature("autodoc", "1");
 		Handle_Storage_CallBack & operator()(const Standard_Integer Index);
 
+};
+%extend Storage_ArrayOfCallBack {
+	~Storage_ArrayOfCallBack() {
+	printf("Call custom destructor for instance of Storage_ArrayOfCallBack\n");
+	}
 };
 
 %nodefaultctor Storage_RootData;
@@ -1100,8 +1089,6 @@ class Storage_MapOfCallBack : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Storage_MapOfCallBack();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_TypedCallBack &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
@@ -1116,6 +1103,11 @@ class Storage_MapOfCallBack : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Storage_TypedCallBack & operator()(const TCollection_AsciiString &K);
 
+};
+%extend Storage_MapOfCallBack {
+	~Storage_MapOfCallBack() {
+	printf("Call custom destructor for instance of Storage_MapOfCallBack\n");
+	}
 };
 
 %nodefaultctor Storage_InternalData;
@@ -1336,8 +1328,6 @@ class Storage_SeqOfCallBack : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Storage_SeqOfCallBack();
-		%feature("autodoc", "1");
 		const Storage_SeqOfCallBack & Assign(const Storage_SeqOfCallBack &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Storage_CallBack &T);
@@ -1376,6 +1366,11 @@ class Storage_SeqOfCallBack : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Storage_SeqOfCallBack {
+	~Storage_SeqOfCallBack() {
+	printf("Call custom destructor for instance of Storage_SeqOfCallBack\n");
+	}
 };
 
 %nodefaultctor Storage_DataMapNodeOfMapOfPers;
@@ -1558,8 +1553,6 @@ class Storage_HPArray : public MMgt_TShared {
 class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~Storage_DataMapIteratorOfMapOfCallBack();
-		%feature("autodoc", "1");
 		Storage_DataMapIteratorOfMapOfCallBack();
 		%feature("autodoc", "1");
 		Storage_DataMapIteratorOfMapOfCallBack(const Storage_MapOfCallBack &aMap);
@@ -1570,6 +1563,11 @@ class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterat
 		%feature("autodoc", "1");
 		const Handle_Storage_TypedCallBack & Value() const;
 
+};
+%extend Storage_DataMapIteratorOfMapOfCallBack {
+	~Storage_DataMapIteratorOfMapOfCallBack() {
+	printf("Call custom destructor for instance of Storage_DataMapIteratorOfMapOfCallBack\n");
+	}
 };
 
 %nodefaultctor Storage_MapOfPers;
@@ -1583,8 +1581,6 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Storage_MapOfPers();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_Root &I);
 		%feature("autodoc", "1");
@@ -1600,6 +1596,11 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Storage_Root & operator()(const TCollection_AsciiString &K);
 
+};
+%extend Storage_MapOfPers {
+	~Storage_MapOfPers() {
+	printf("Call custom destructor for instance of Storage_MapOfPers\n");
+	}
 };
 
 %nodefaultctor Storage_Schema;
@@ -1740,8 +1741,6 @@ class Storage_ArrayOfSchema {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Storage_ArrayOfSchema();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Storage_ArrayOfSchema & Assign(const Storage_ArrayOfSchema &Other);
@@ -1763,6 +1762,11 @@ class Storage_ArrayOfSchema {
 		Handle_Storage_Schema & operator()(const Standard_Integer Index);
 
 };
+%extend Storage_ArrayOfSchema {
+	~Storage_ArrayOfSchema() {
+	printf("Call custom destructor for instance of Storage_ArrayOfSchema\n");
+	}
+};
 
 %nodefaultctor Storage_SeqOfRoot;
 class Storage_SeqOfRoot : public TCollection_BaseSequence {
@@ -1771,8 +1775,6 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 		Storage_SeqOfRoot();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Storage_SeqOfRoot();
 		%feature("autodoc", "1");
 		const Storage_SeqOfRoot & Assign(const Storage_SeqOfRoot &Other);
 		%feature("autodoc", "1");
@@ -1813,12 +1815,15 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Storage_SeqOfRoot {
+	~Storage_SeqOfRoot() {
+	printf("Call custom destructor for instance of Storage_SeqOfRoot\n");
+	}
+};
 
 %nodefaultctor Storage_DataMapIteratorOfMapOfPers;
 class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Storage_DataMapIteratorOfMapOfPers();
 		%feature("autodoc", "1");
 		Storage_DataMapIteratorOfMapOfPers();
 		%feature("autodoc", "1");
@@ -1830,6 +1835,11 @@ class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const Handle_Storage_Root & Value() const;
 
+};
+%extend Storage_DataMapIteratorOfMapOfPers {
+	~Storage_DataMapIteratorOfMapOfPers() {
+	printf("Call custom destructor for instance of Storage_DataMapIteratorOfMapOfPers\n");
+	}
 };
 
 %nodefaultctor Storage_DataMapNodeOfMapOfCallBack;
@@ -2256,8 +2266,6 @@ class Storage_SeqOfPersistent : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Storage_SeqOfPersistent();
-		%feature("autodoc", "1");
 		const Storage_SeqOfPersistent & Assign(const Storage_SeqOfPersistent &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Standard_Persistent &T);
@@ -2297,6 +2305,11 @@ class Storage_SeqOfPersistent : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Storage_SeqOfPersistent {
+	~Storage_SeqOfPersistent() {
+	printf("Call custom destructor for instance of Storage_SeqOfPersistent\n");
+	}
+};
 
 %nodefaultctor Storage_PArray;
 class Storage_PArray {
@@ -2309,8 +2322,6 @@ class Storage_PArray {
 		void Init(const Handle_Standard_Persistent &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Storage_PArray();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2332,6 +2343,11 @@ class Storage_PArray {
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent & operator()(const Standard_Integer Index);
 
+};
+%extend Storage_PArray {
+	~Storage_PArray() {
+	printf("Call custom destructor for instance of Storage_PArray\n");
+	}
 };
 
 %nodefaultctor Storage_StreamModeError;

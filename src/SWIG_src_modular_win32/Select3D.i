@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Select3D
 
@@ -590,8 +576,6 @@ class Select3D_SensitiveEntitySequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Select3D_SensitiveEntitySequence();
-		%feature("autodoc", "1");
 		const Select3D_SensitiveEntitySequence & Assign(const Select3D_SensitiveEntitySequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Select3D_SensitiveEntity &T);
@@ -631,6 +615,11 @@ class Select3D_SensitiveEntitySequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Select3D_SensitiveEntitySequence {
+	~Select3D_SensitiveEntitySequence() {
+	printf("Call custom destructor for instance of Select3D_SensitiveEntitySequence\n");
+	}
+};
 
 %nodefaultctor Select3D_Projector;
 class Select3D_Projector {
@@ -651,8 +640,6 @@ class Select3D_Projector {
 		Select3D_Projector(const gp_GTrsf &GT, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~Select3D_Projector();
 		%feature("autodoc", "1");
 		void Set(const gp_Trsf &T, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
@@ -693,12 +680,15 @@ class Select3D_Projector {
 		virtual		void Transform(gp_Lin & Lin, const gp_GTrsf &T) const;
 
 };
+%extend Select3D_Projector {
+	~Select3D_Projector() {
+	printf("Call custom destructor for instance of Select3D_Projector\n");
+	}
+};
 
 %nodefaultctor Select3D_ListIteratorOfListOfSensitive;
 class Select3D_ListIteratorOfListOfSensitive {
 	public:
-		%feature("autodoc", "1");
-		~Select3D_ListIteratorOfListOfSensitive();
 		%feature("autodoc", "1");
 		Select3D_ListIteratorOfListOfSensitive();
 		%feature("autodoc", "1");
@@ -712,6 +702,11 @@ class Select3D_ListIteratorOfListOfSensitive {
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveEntity & Value() const;
 
+};
+%extend Select3D_ListIteratorOfListOfSensitive {
+	~Select3D_ListIteratorOfListOfSensitive() {
+	printf("Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitive\n");
+	}
 };
 
 %nodefaultctor Select3D_Pnt;
@@ -892,8 +887,6 @@ class Select3D_ListOfSensitive {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Select3D_ListOfSensitive();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_Select3D_SensitiveEntity &I);
@@ -925,12 +918,15 @@ class Select3D_ListOfSensitive {
 		void InsertAfter(Select3D_ListOfSensitive & Other, Select3D_ListIteratorOfListOfSensitive & It);
 
 };
+%extend Select3D_ListOfSensitive {
+	~Select3D_ListOfSensitive() {
+	printf("Call custom destructor for instance of Select3D_ListOfSensitive\n");
+	}
+};
 
 %nodefaultctor Select3D_ListIteratorOfListOfSensitiveTriangle;
 class Select3D_ListIteratorOfListOfSensitiveTriangle {
 	public:
-		%feature("autodoc", "1");
-		~Select3D_ListIteratorOfListOfSensitiveTriangle();
 		%feature("autodoc", "1");
 		Select3D_ListIteratorOfListOfSensitiveTriangle();
 		%feature("autodoc", "1");
@@ -944,6 +940,11 @@ class Select3D_ListIteratorOfListOfSensitiveTriangle {
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveTriangle & Value() const;
 
+};
+%extend Select3D_ListIteratorOfListOfSensitiveTriangle {
+	~Select3D_ListIteratorOfListOfSensitiveTriangle() {
+	printf("Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitiveTriangle\n");
+	}
 };
 
 %nodefaultctor Select3D_Pnt2d;
@@ -1154,8 +1155,6 @@ class Select3D_ListOfSensitiveTriangle {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Select3D_ListOfSensitiveTriangle();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_Select3D_SensitiveTriangle &I);
@@ -1186,6 +1185,11 @@ class Select3D_ListOfSensitiveTriangle {
 		%feature("autodoc", "1");
 		void InsertAfter(Select3D_ListOfSensitiveTriangle & Other, Select3D_ListIteratorOfListOfSensitiveTriangle & It);
 
+};
+%extend Select3D_ListOfSensitiveTriangle {
+	~Select3D_ListOfSensitiveTriangle() {
+	printf("Call custom destructor for instance of Select3D_ListOfSensitiveTriangle\n");
+	}
 };
 
 %nodefaultctor Select3D_SensitiveWire;

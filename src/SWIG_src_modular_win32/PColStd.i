@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module PColStd
 
@@ -1003,9 +989,12 @@ class PColStd_FieldOfHArray1OfExtendedString : public DBC_BaseArray {
 		Handle_PCollection_HExtendedString & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColStd_FieldOfHArray1OfExtendedString();
 
+};
+%extend PColStd_FieldOfHArray1OfExtendedString {
+	~PColStd_FieldOfHArray1OfExtendedString() {
+	printf("Call custom destructor for instance of PColStd_FieldOfHArray1OfExtendedString\n");
+	}
 };
 
 %nodefaultctor PColStd_HOfReal;
@@ -1724,8 +1713,6 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
 class PColStd_SeqExplorerOfHSequenceOfHExtendedString {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_SeqExplorerOfHSequenceOfHExtendedString();
-		%feature("autodoc", "1");
 		PColStd_SeqExplorerOfHSequenceOfHExtendedString(const Handle_PColStd_HSequenceOfHExtendedString &S);
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString Value(const Standard_Integer Index);
@@ -1736,6 +1723,11 @@ class PColStd_SeqExplorerOfHSequenceOfHExtendedString {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HExtendedString &T);
 
+};
+%extend PColStd_SeqExplorerOfHSequenceOfHExtendedString {
+	~PColStd_SeqExplorerOfHSequenceOfHExtendedString() {
+	printf("Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHExtendedString\n");
+	}
 };
 
 %nodefaultctor PColStd_FieldOfHArray2OfPersistent;
@@ -1759,9 +1751,12 @@ class PColStd_FieldOfHArray2OfPersistent : public DBC_BaseArray {
 		Handle_Standard_Persistent & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColStd_FieldOfHArray2OfPersistent();
 
+};
+%extend PColStd_FieldOfHArray2OfPersistent {
+	~PColStd_FieldOfHArray2OfPersistent() {
+	printf("Call custom destructor for instance of PColStd_FieldOfHArray2OfPersistent\n");
+	}
 };
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfInteger;
@@ -2056,8 +2051,6 @@ class PColStd_HSingleListOfReal : public PMMgt_PManaged {
 class PColStd_SeqExplorerOfHSequenceOfHAsciiString {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_SeqExplorerOfHSequenceOfHAsciiString();
-		%feature("autodoc", "1");
 		PColStd_SeqExplorerOfHSequenceOfHAsciiString(const Handle_PColStd_HSequenceOfHAsciiString &S);
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString Value(const Standard_Integer Index);
@@ -2068,6 +2061,11 @@ class PColStd_SeqExplorerOfHSequenceOfHAsciiString {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HAsciiString &T);
 
+};
+%extend PColStd_SeqExplorerOfHSequenceOfHAsciiString {
+	~PColStd_SeqExplorerOfHSequenceOfHAsciiString() {
+	printf("Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHAsciiString\n");
+	}
 };
 
 %nodefaultctor PColStd_HDoubleListOfReal;
@@ -2246,8 +2244,6 @@ class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
 class PColStd_SeqExplorerOfHSequenceOfPersistent {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_SeqExplorerOfHSequenceOfPersistent();
-		%feature("autodoc", "1");
 		PColStd_SeqExplorerOfHSequenceOfPersistent(const Handle_PColStd_HSequenceOfPersistent &S);
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent Value(const Standard_Integer Index);
@@ -2258,6 +2254,11 @@ class PColStd_SeqExplorerOfHSequenceOfPersistent {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const Handle_Standard_Persistent &T);
 
+};
+%extend PColStd_SeqExplorerOfHSequenceOfPersistent {
+	~PColStd_SeqExplorerOfHSequenceOfPersistent() {
+	printf("Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfPersistent\n");
+	}
 };
 
 %nodefaultctor PColStd_FieldOfHArray1OfReal;
@@ -2567,9 +2568,12 @@ class PColStd_FieldOfHArray1OfPersistent : public DBC_BaseArray {
 		Handle_Standard_Persistent & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColStd_FieldOfHArray1OfPersistent();
 
+};
+%extend PColStd_FieldOfHArray1OfPersistent {
+	~PColStd_FieldOfHArray1OfPersistent() {
+	printf("Call custom destructor for instance of PColStd_FieldOfHArray1OfPersistent\n");
+	}
 };
 
 %nodefaultctor PColStd_HSingleListOfInteger;

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module ShapeAnalysis
 
@@ -343,8 +329,6 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode
 class ShapeAnalysis_ShapeTolerance {
 	public:
 		%feature("autodoc", "1");
-		~ShapeAnalysis_ShapeTolerance();
-		%feature("autodoc", "1");
 		ShapeAnalysis_ShapeTolerance();
 		%feature("autodoc", "1");
 		Standard_Real Tolerance(const TopoDS_Shape &shape, const Standard_Integer mode, const TopAbs_ShapeEnum type=TopAbs_SHAPE);
@@ -359,6 +343,11 @@ class ShapeAnalysis_ShapeTolerance {
 		%feature("autodoc", "1");
 		Standard_Real GlobalTolerance(const Standard_Integer mode) const;
 
+};
+%extend ShapeAnalysis_ShapeTolerance {
+	~ShapeAnalysis_ShapeTolerance() {
+	printf("Call custom destructor for instance of ShapeAnalysis_ShapeTolerance\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_FreeBounds;
@@ -452,8 +441,6 @@ class ShapeAnalysis_TransferParameters : public MMgt_TShared {
 %nodefaultctor ShapeAnalysis_ShapeContents;
 class ShapeAnalysis_ShapeContents {
 	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis_ShapeContents();
 		%feature("autodoc", "1");
 		ShapeAnalysis_ShapeContents();
 		%feature("autodoc", "1");
@@ -553,6 +540,11 @@ class ShapeAnalysis_ShapeContents {
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape Trimmed2dSec() const;
 
+};
+%extend ShapeAnalysis_ShapeContents {
+	~ShapeAnalysis_ShapeContents() {
+	printf("Call custom destructor for instance of ShapeAnalysis_ShapeContents\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_Curve;
@@ -963,8 +955,6 @@ class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ShapeAnalysis_SequenceOfFreeBounds();
-		%feature("autodoc", "1");
 		const ShapeAnalysis_SequenceOfFreeBounds & Assign(const ShapeAnalysis_SequenceOfFreeBounds &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_ShapeAnalysis_FreeBoundData &T);
@@ -1003,6 +993,11 @@ class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend ShapeAnalysis_SequenceOfFreeBounds {
+	~ShapeAnalysis_SequenceOfFreeBounds() {
+	printf("Call custom destructor for instance of ShapeAnalysis_SequenceOfFreeBounds\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_WireOrder;
@@ -1261,8 +1256,6 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 class ShapeAnalysis_WireVertex {
 	public:
 		%feature("autodoc", "1");
-		~ShapeAnalysis_WireVertex();
-		%feature("autodoc", "1");
 		ShapeAnalysis_WireVertex();
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Wire &wire, const Standard_Real preci);
@@ -1313,6 +1306,11 @@ class ShapeAnalysis_WireVertex {
 		%feature("autodoc", "1");
 		Standard_Integer NextCriter(const Standard_Integer crit, const Standard_Integer num=0) const;
 
+};
+%extend ShapeAnalysis_WireVertex {
+	~ShapeAnalysis_WireVertex() {
+	printf("Call custom destructor for instance of ShapeAnalysis_WireVertex\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal;
@@ -1467,8 +1465,6 @@ class ShapeAnalysis_Shell {
 class ShapeAnalysis_FreeBoundsProperties {
 	public:
 		%feature("autodoc", "1");
-		~ShapeAnalysis_FreeBoundsProperties();
-		%feature("autodoc", "1");
 		ShapeAnalysis_FreeBoundsProperties();
 		%feature("autodoc", "1");
 		ShapeAnalysis_FreeBoundsProperties(const TopoDS_Shape &shape, const Standard_Real tolerance, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=0);
@@ -1513,4 +1509,9 @@ class ShapeAnalysis_FreeBoundsProperties {
 		%feature("autodoc", "1");
 		Standard_Boolean FillProperties(Handle_ShapeAnalysis_FreeBoundData & fbData, const Standard_Real prec=0.0);
 
+};
+%extend ShapeAnalysis_FreeBoundsProperties {
+	~ShapeAnalysis_FreeBoundsProperties() {
+	printf("Call custom destructor for instance of ShapeAnalysis_FreeBoundsProperties\n");
+	}
 };

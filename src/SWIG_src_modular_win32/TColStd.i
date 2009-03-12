@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TColStd
 
@@ -1420,8 +1406,6 @@ class TColStd_SequenceOfHAsciiString : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_SequenceOfHAsciiString();
-		%feature("autodoc", "1");
 		const TColStd_SequenceOfHAsciiString & Assign(const TColStd_SequenceOfHAsciiString &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TCollection_HAsciiString &T);
@@ -1461,6 +1445,11 @@ class TColStd_SequenceOfHAsciiString : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TColStd_SequenceOfHAsciiString {
+	~TColStd_SequenceOfHAsciiString() {
+	printf("Call custom destructor for instance of TColStd_SequenceOfHAsciiString\n");
+	}
+};
 
 %nodefaultctor TColStd_SequenceOfTransient;
 class TColStd_SequenceOfTransient : public TCollection_BaseSequence {
@@ -1469,8 +1458,6 @@ class TColStd_SequenceOfTransient : public TCollection_BaseSequence {
 		TColStd_SequenceOfTransient();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_SequenceOfTransient();
 		%feature("autodoc", "1");
 		const TColStd_SequenceOfTransient & Assign(const TColStd_SequenceOfTransient &Other);
 		%feature("autodoc", "1");
@@ -1510,6 +1497,11 @@ class TColStd_SequenceOfTransient : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColStd_SequenceOfTransient {
+	~TColStd_SequenceOfTransient() {
+	printf("Call custom destructor for instance of TColStd_SequenceOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient;
@@ -1734,10 +1726,13 @@ class TColStd_StackOfTransient {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_StackOfTransient();
-		%feature("autodoc", "1");
 		Handle_Standard_Transient & ChangeTop();
 
+};
+%extend TColStd_StackOfTransient {
+	~TColStd_StackOfTransient() {
+	printf("Call custom destructor for instance of TColStd_StackOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_ListIteratorOfSetListOfSetOfReal;
@@ -1998,8 +1993,6 @@ class TColStd_SetListOfSetOfTransient {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_SetListOfSetOfTransient();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_Standard_Transient &I);
@@ -2030,6 +2023,11 @@ class TColStd_SetListOfSetOfTransient {
 		%feature("autodoc", "1");
 		void InsertAfter(TColStd_SetListOfSetOfTransient & Other, TColStd_ListIteratorOfSetListOfSetOfTransient & It);
 
+};
+%extend TColStd_SetListOfSetOfTransient {
+	~TColStd_SetListOfSetOfTransient() {
+	printf("Call custom destructor for instance of TColStd_SetListOfSetOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger;
@@ -2440,8 +2438,6 @@ class TColStd_SequenceOfInteger : public TCollection_BaseSequence {
 class TColStd_SetIteratorOfSetOfTransient {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_SetIteratorOfSetOfTransient();
-		%feature("autodoc", "1");
 		TColStd_SetIteratorOfSetOfTransient();
 		%feature("autodoc", "1");
 		TColStd_SetIteratorOfSetOfTransient(const TColStd_SetOfTransient &S);
@@ -2454,6 +2450,11 @@ class TColStd_SetIteratorOfSetOfTransient {
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
+};
+%extend TColStd_SetIteratorOfSetOfTransient {
+	~TColStd_SetIteratorOfSetOfTransient() {
+	printf("Call custom destructor for instance of TColStd_SetIteratorOfSetOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_SetIteratorOfSetOfReal;
@@ -2638,8 +2639,6 @@ class TColStd_Array1OfTransient {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColStd_Array1OfTransient();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColStd_Array1OfTransient & Assign(const TColStd_Array1OfTransient &Other);
@@ -2660,6 +2659,11 @@ class TColStd_Array1OfTransient {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const Standard_Integer Index);
 
+};
+%extend TColStd_Array1OfTransient {
+	~TColStd_Array1OfTransient() {
+	printf("Call custom destructor for instance of TColStd_Array1OfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_IndexedMapOfReal;
@@ -2696,8 +2700,6 @@ class TColStd_IndexedMapOfReal : public TCollection_BasicMap {
 class TColStd_ListIteratorOfSetListOfSetOfTransient {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_ListIteratorOfSetListOfSetOfTransient();
-		%feature("autodoc", "1");
 		TColStd_ListIteratorOfSetListOfSetOfTransient();
 		%feature("autodoc", "1");
 		TColStd_ListIteratorOfSetListOfSetOfTransient(const TColStd_SetListOfSetOfTransient &L);
@@ -2710,6 +2712,11 @@ class TColStd_ListIteratorOfSetListOfSetOfTransient {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Value() const;
 
+};
+%extend TColStd_ListIteratorOfSetListOfSetOfTransient {
+	~TColStd_ListIteratorOfSetListOfSetOfTransient() {
+	printf("Call custom destructor for instance of TColStd_ListIteratorOfSetListOfSetOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_HArray2OfBoolean;
@@ -3030,8 +3037,6 @@ class TColStd_IndexedDataMapOfTransientTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_IndexedDataMapOfTransientTransient();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Handle_Standard_Transient &K, const Handle_Standard_Transient &T);
@@ -3056,6 +3061,11 @@ class TColStd_IndexedDataMapOfTransientTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & ChangeFromKey(const Handle_Standard_Transient &K);
 
+};
+%extend TColStd_IndexedDataMapOfTransientTransient {
+	~TColStd_IndexedDataMapOfTransientTransient() {
+	printf("Call custom destructor for instance of TColStd_IndexedDataMapOfTransientTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_HSequenceOfTransient;
@@ -3372,8 +3382,6 @@ class TColStd_Array2OfCharacter {
 class TColStd_ListIteratorOfListOfTransient {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_ListIteratorOfListOfTransient();
-		%feature("autodoc", "1");
 		TColStd_ListIteratorOfListOfTransient();
 		%feature("autodoc", "1");
 		TColStd_ListIteratorOfListOfTransient(const TColStd_ListOfTransient &L);
@@ -3386,6 +3394,11 @@ class TColStd_ListIteratorOfListOfTransient {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Value() const;
 
+};
+%extend TColStd_ListIteratorOfListOfTransient {
+	~TColStd_ListIteratorOfListOfTransient() {
+	printf("Call custom destructor for instance of TColStd_ListIteratorOfListOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_MapTransientHasher;
@@ -3714,8 +3727,6 @@ class TColStd_IndexedMapOfTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_IndexedMapOfTransient();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Handle_Standard_Transient &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Handle_Standard_Transient &K);
@@ -3730,6 +3741,11 @@ class TColStd_IndexedMapOfTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const Handle_Standard_Transient &K) const;
 
+};
+%extend TColStd_IndexedMapOfTransient {
+	~TColStd_IndexedMapOfTransient() {
+	printf("Call custom destructor for instance of TColStd_IndexedMapOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_Array1OfCharacter;
@@ -3990,8 +4006,6 @@ class TColStd_ListNodeOfSetListOfSetOfTransient : public TCollection_MapNode {
 class TColStd_StackIteratorOfStackOfTransient {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_StackIteratorOfStackOfTransient();
-		%feature("autodoc", "1");
 		TColStd_StackIteratorOfStackOfTransient();
 		%feature("autodoc", "1");
 		TColStd_StackIteratorOfStackOfTransient(const TColStd_StackOfTransient &S);
@@ -4004,6 +4018,11 @@ class TColStd_StackIteratorOfStackOfTransient {
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
+};
+%extend TColStd_StackIteratorOfStackOfTransient {
+	~TColStd_StackIteratorOfStackOfTransient() {
+	printf("Call custom destructor for instance of TColStd_StackIteratorOfStackOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_HSequenceOfHAsciiString;
@@ -4174,8 +4193,6 @@ class TColStd_Array2OfTransient {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColStd_Array2OfTransient();
-		%feature("autodoc", "1");
 		const TColStd_Array2OfTransient & Assign(const TColStd_Array2OfTransient &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -4200,6 +4217,11 @@ class TColStd_Array2OfTransient {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TColStd_Array2OfTransient {
+	~TColStd_Array2OfTransient() {
+	printf("Call custom destructor for instance of TColStd_Array2OfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_QueueNodeOfQueueOfTransient;
@@ -4360,8 +4382,6 @@ class TColStd_ListOfTransient {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_ListOfTransient();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_Standard_Transient &I);
@@ -4393,6 +4413,11 @@ class TColStd_ListOfTransient {
 		void InsertAfter(TColStd_ListOfTransient & Other, TColStd_ListIteratorOfListOfTransient & It);
 
 };
+%extend TColStd_ListOfTransient {
+	~TColStd_ListOfTransient() {
+	printf("Call custom destructor for instance of TColStd_ListOfTransient\n");
+	}
+};
 
 %nodefaultctor TColStd_MapIteratorOfMapOfInteger;
 class TColStd_MapIteratorOfMapOfInteger : public TCollection_BasicMapIterator {
@@ -4417,8 +4442,6 @@ class TColStd_SequenceOfHExtendedString : public TCollection_BaseSequence {
 		TColStd_SequenceOfHExtendedString();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_SequenceOfHExtendedString();
 		%feature("autodoc", "1");
 		const TColStd_SequenceOfHExtendedString & Assign(const TColStd_SequenceOfHExtendedString &Other);
 		%feature("autodoc", "1");
@@ -4458,6 +4481,11 @@ class TColStd_SequenceOfHExtendedString : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColStd_SequenceOfHExtendedString {
+	~TColStd_SequenceOfHExtendedString() {
+	printf("Call custom destructor for instance of TColStd_SequenceOfHExtendedString\n");
+	}
 };
 
 %nodefaultctor TColStd_DataMapOfIntegerListOfInteger;
@@ -5078,8 +5106,6 @@ class TColStd_QueueOfTransient {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_QueueOfTransient();
-		%feature("autodoc", "1");
 		void Push(const Handle_Standard_Transient &T);
 		%feature("autodoc", "1");
 		void Pop();
@@ -5087,12 +5113,15 @@ class TColStd_QueueOfTransient {
 		Handle_Standard_Transient & ChangeFront();
 
 };
+%extend TColStd_QueueOfTransient {
+	~TColStd_QueueOfTransient() {
+	printf("Call custom destructor for instance of TColStd_QueueOfTransient\n");
+	}
+};
 
 %nodefaultctor TColStd_MapIteratorOfMapOfTransient;
 class TColStd_MapIteratorOfMapOfTransient : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_MapIteratorOfMapOfTransient();
 		%feature("autodoc", "1");
 		TColStd_MapIteratorOfMapOfTransient();
 		%feature("autodoc", "1");
@@ -5102,6 +5131,11 @@ class TColStd_MapIteratorOfMapOfTransient : public TCollection_BasicMapIterator 
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Key() const;
 
+};
+%extend TColStd_MapIteratorOfMapOfTransient {
+	~TColStd_MapIteratorOfMapOfTransient() {
+	printf("Call custom destructor for instance of TColStd_MapIteratorOfMapOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_HSetOfInteger;

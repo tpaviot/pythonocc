@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TNaming
 
@@ -429,8 +415,6 @@ class TNaming_NamedShapeHasher {
 class TNaming_Tool {
 	public:
 		%feature("autodoc", "1");
-		~TNaming_Tool();
-		%feature("autodoc", "1");
 		TNaming_Tool();
 		%feature("autodoc", "1");
 		TopoDS_Shape CurrentShape(const Handle_TNaming_NamedShape &NS);
@@ -462,12 +446,15 @@ class TNaming_Tool {
 		void FindShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const Handle_TNaming_NamedShape &Arg, TopoDS_Shape & S);
 
 };
+%extend TNaming_Tool {
+	~TNaming_Tool() {
+	printf("Call custom destructor for instance of TNaming_Tool\n");
+	}
+};
 
 %nodefaultctor TNaming_Name;
 class TNaming_Name {
 	public:
-		%feature("autodoc", "1");
-		~TNaming_Name();
 		%feature("autodoc", "1");
 		TNaming_Name();
 		%feature("autodoc", "1");
@@ -499,6 +486,11 @@ class TNaming_Name {
 		%feature("autodoc", "1");
 		void Paste(TNaming_Name & into, const Handle_TDF_RelocationTable &RT) const;
 
+};
+%extend TNaming_Name {
+	~TNaming_Name() {
+	printf("Call custom destructor for instance of TNaming_Name\n");
+	}
 };
 
 %nodefaultctor TNaming_NamingTool;
@@ -741,8 +733,6 @@ class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollect
 class TNaming_RefShape {
 	public:
 		%feature("autodoc", "1");
-		~TNaming_RefShape();
-		%feature("autodoc", "1");
 		TNaming_RefShape();
 		%feature("autodoc", "1");
 		TNaming_RefShape(const TopoDS_Shape &S);
@@ -760,6 +750,11 @@ class TNaming_RefShape {
 		Handle_TNaming_NamedShape NamedShape() const;
 
 };
+%extend TNaming_RefShape {
+	~TNaming_RefShape() {
+	printf("Call custom destructor for instance of TNaming_RefShape\n");
+	}
+};
 
 %nodefaultctor TNaming_ListOfNamedShape;
 class TNaming_ListOfNamedShape {
@@ -772,8 +767,6 @@ class TNaming_ListOfNamedShape {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TNaming_ListOfNamedShape();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -805,6 +798,11 @@ class TNaming_ListOfNamedShape {
 		%feature("autodoc", "1");
 		void InsertAfter(TNaming_ListOfNamedShape & Other, TNaming_ListIteratorOfListOfNamedShape & It);
 
+};
+%extend TNaming_ListOfNamedShape {
+	~TNaming_ListOfNamedShape() {
+	printf("Call custom destructor for instance of TNaming_ListOfNamedShape\n");
+	}
 };
 
 %nodefaultctor TNaming_Scope;
@@ -911,8 +909,6 @@ class TNaming_SameShapeIterator {
 class TNaming_Builder {
 	public:
 		%feature("autodoc", "1");
-		~TNaming_Builder();
-		%feature("autodoc", "1");
 		TNaming_Builder(const TDF_Label &aLabel);
 		%feature("autodoc", "1");
 		void Generated(const TopoDS_Shape &newShape);
@@ -929,6 +925,11 @@ class TNaming_Builder {
 		%feature("autodoc", "1");
 		Handle_TNaming_NamedShape NamedShape() const;
 
+};
+%extend TNaming_Builder {
+	~TNaming_Builder() {
+	printf("Call custom destructor for instance of TNaming_Builder\n");
+	}
 };
 
 %nodefaultctor TNaming_CopyShape;
@@ -1015,8 +1016,6 @@ class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
 class TNaming_Selector {
 	public:
 		%feature("autodoc", "1");
-		~TNaming_Selector();
-		%feature("autodoc", "1");
 		Standard_Boolean IsIdentified(const TDF_Label &access, const TopoDS_Shape &selection, Handle_TNaming_NamedShape & NS, const Standard_Boolean Geometry=0);
 		%feature("autodoc", "1");
 		TNaming_Selector(const TDF_Label &aLabel);
@@ -1031,6 +1030,11 @@ class TNaming_Selector {
 		%feature("autodoc", "1");
 		Handle_TNaming_NamedShape NamedShape() const;
 
+};
+%extend TNaming_Selector {
+	~TNaming_Selector() {
+	printf("Call custom destructor for instance of TNaming_Selector\n");
+	}
 };
 
 %nodefaultctor TNaming_ListNodeOfListOfNamedShape;
@@ -1127,8 +1131,6 @@ class TNaming_ListOfMapOfShape {
 class TNaming_MapIteratorOfMapOfNamedShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TNaming_MapIteratorOfMapOfNamedShape();
-		%feature("autodoc", "1");
 		TNaming_MapIteratorOfMapOfNamedShape();
 		%feature("autodoc", "1");
 		TNaming_MapIteratorOfMapOfNamedShape(const TNaming_MapOfNamedShape &aMap);
@@ -1138,12 +1140,15 @@ class TNaming_MapIteratorOfMapOfNamedShape : public TCollection_BasicMapIterator
 		const Handle_TNaming_NamedShape & Key() const;
 
 };
+%extend TNaming_MapIteratorOfMapOfNamedShape {
+	~TNaming_MapIteratorOfMapOfNamedShape() {
+	printf("Call custom destructor for instance of TNaming_MapIteratorOfMapOfNamedShape\n");
+	}
+};
 
 %nodefaultctor TNaming_ListIteratorOfListOfNamedShape;
 class TNaming_ListIteratorOfListOfNamedShape {
 	public:
-		%feature("autodoc", "1");
-		~TNaming_ListIteratorOfListOfNamedShape();
 		%feature("autodoc", "1");
 		TNaming_ListIteratorOfListOfNamedShape();
 		%feature("autodoc", "1");
@@ -1157,6 +1162,11 @@ class TNaming_ListIteratorOfListOfNamedShape {
 		%feature("autodoc", "1");
 		Handle_TNaming_NamedShape & Value() const;
 
+};
+%extend TNaming_ListIteratorOfListOfNamedShape {
+	~TNaming_ListIteratorOfListOfNamedShape() {
+	printf("Call custom destructor for instance of TNaming_ListIteratorOfListOfNamedShape\n");
+	}
 };
 
 %nodefaultctor TNaming_ListIteratorOfListOfMapOfShape;
@@ -1183,8 +1193,6 @@ class TNaming_ListIteratorOfListOfMapOfShape {
 class TNaming_OldShapeIterator {
 	public:
 		%feature("autodoc", "1");
-		~TNaming_OldShapeIterator();
-		%feature("autodoc", "1");
 		TNaming_OldShapeIterator(const TopoDS_Shape &aShape, const Standard_Integer Transaction, const TDF_Label &access);
 		%feature("autodoc", "1");
 		TNaming_OldShapeIterator(const TopoDS_Shape &aShape, const TDF_Label &access);
@@ -1205,6 +1213,11 @@ class TNaming_OldShapeIterator {
 		%feature("autodoc", "1");
 		Standard_Boolean IsModification() const;
 
+};
+%extend TNaming_OldShapeIterator {
+	~TNaming_OldShapeIterator() {
+	printf("Call custom destructor for instance of TNaming_OldShapeIterator\n");
+	}
 };
 
 %nodefaultctor TNaming_NamedShape;
@@ -1417,8 +1430,6 @@ class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
 class TNaming_NewShapeIterator {
 	public:
 		%feature("autodoc", "1");
-		~TNaming_NewShapeIterator();
-		%feature("autodoc", "1");
 		TNaming_NewShapeIterator(const TopoDS_Shape &aShape, const Standard_Integer Transaction, const TDF_Label &access);
 		%feature("autodoc", "1");
 		TNaming_NewShapeIterator(const TopoDS_Shape &aShape, const TDF_Label &access);
@@ -1439,6 +1450,11 @@ class TNaming_NewShapeIterator {
 		%feature("autodoc", "1");
 		Standard_Boolean IsModification() const;
 
+};
+%extend TNaming_NewShapeIterator {
+	~TNaming_NewShapeIterator() {
+	printf("Call custom destructor for instance of TNaming_NewShapeIterator\n");
+	}
 };
 
 %nodefaultctor TNaming_Naming;

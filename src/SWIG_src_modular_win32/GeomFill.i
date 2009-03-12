@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module GeomFill
 
@@ -1022,8 +1008,6 @@ class GeomFill_Profiler {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~GeomFill_Profiler();
-		%feature("autodoc", "1");
 		void AddCurve(const Handle_Geom_Curve &Curve);
 		%feature("autodoc", "1");
 		virtual		void Perform(const Standard_Real PTol);
@@ -1045,6 +1029,11 @@ class GeomFill_Profiler {
 		const Handle_Geom_Curve & Curve(const Standard_Integer Index) const;
 
 };
+%extend GeomFill_Profiler {
+	~GeomFill_Profiler() {
+	printf("Call custom destructor for instance of GeomFill_Profiler\n");
+	}
+};
 
 %nodefaultctor GeomFill_Generator;
 class GeomFill_Generator : public GeomFill_Profiler {
@@ -1053,16 +1042,17 @@ class GeomFill_Generator : public GeomFill_Profiler {
 		GeomFill_Generator();
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Surface() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_Generator();
 
+};
+%extend GeomFill_Generator {
+	~GeomFill_Generator() {
+	printf("Call custom destructor for instance of GeomFill_Generator\n");
+	}
 };
 
 %nodefaultctor GeomFill_SectionPlacement;
 class GeomFill_SectionPlacement {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_SectionPlacement();
 		%feature("autodoc", "1");
 		GeomFill_SectionPlacement(const Handle_GeomFill_LocationLaw &L, const Handle_Geom_Geometry &Section);
 		%feature("autodoc", "1");
@@ -1090,6 +1080,11 @@ class GeomFill_SectionPlacement {
 		%feature("autodoc", "1");
 		Handle_Geom_Curve ModifiedSection(const Standard_Boolean WithTranslation) const;
 
+};
+%extend GeomFill_SectionPlacement {
+	~GeomFill_SectionPlacement() {
+	printf("Call custom destructor for instance of GeomFill_SectionPlacement\n");
+	}
 };
 
 %nodefaultctor GeomFill_Boundary;
@@ -1204,8 +1199,6 @@ class GeomFill_Array1OfSectionLaw {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~GeomFill_Array1OfSectionLaw();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const GeomFill_Array1OfSectionLaw & Assign(const GeomFill_Array1OfSectionLaw &Other);
@@ -1227,6 +1220,11 @@ class GeomFill_Array1OfSectionLaw {
 		Handle_GeomFill_SectionLaw & operator()(const Standard_Integer Index);
 
 };
+%extend GeomFill_Array1OfSectionLaw {
+	~GeomFill_Array1OfSectionLaw() {
+	printf("Call custom destructor for instance of GeomFill_Array1OfSectionLaw\n");
+	}
+};
 
 %nodefaultctor GeomFill_SequenceOfCurve;
 class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
@@ -1235,8 +1233,6 @@ class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
 		GeomFill_SequenceOfCurve();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~GeomFill_SequenceOfCurve();
 		%feature("autodoc", "1");
 		const GeomFill_SequenceOfCurve & Assign(const GeomFill_SequenceOfCurve &Other);
 		%feature("autodoc", "1");
@@ -1276,6 +1272,11 @@ class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend GeomFill_SequenceOfCurve {
+	~GeomFill_SequenceOfCurve() {
+	printf("Call custom destructor for instance of GeomFill_SequenceOfCurve\n");
+	}
 };
 
 %nodefaultctor GeomFill_CoonsAlgPatch;
@@ -1740,8 +1741,6 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 class GeomFill {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill();
-		%feature("autodoc", "1");
 		GeomFill();
 		%feature("autodoc", "1");
 		Handle_Geom_Surface Surface(const Handle_Geom_Curve &Curve1, const Handle_Geom_Curve &Curve2);
@@ -1762,6 +1761,11 @@ class GeomFill {
 		%feature("autodoc", "1");
 		Standard_Real GetTolerance(const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real Radius, const Standard_Real AngularTol, const Standard_Real SpatialTol);
 
+};
+%extend GeomFill {
+	~GeomFill() {
+	printf("Call custom destructor for instance of GeomFill\n");
+	}
 };
 
 %nodefaultctor GeomFill_CurveAndTrihedron;
@@ -2178,8 +2182,6 @@ class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 class GeomFill_ConstrainedFilling {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_ConstrainedFilling();
-		%feature("autodoc", "1");
 		GeomFill_ConstrainedFilling(const Standard_Integer MaxDeg, const Standard_Integer MaxSeg);
 		%feature("autodoc", "1");
 		void Init(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Standard_Boolean NoCheck=0);
@@ -2204,6 +2206,11 @@ class GeomFill_ConstrainedFilling {
 		%feature("autodoc", "1");
 		void CheckResult(const Standard_Integer I);
 
+};
+%extend GeomFill_ConstrainedFilling {
+	~GeomFill_ConstrainedFilling() {
+	printf("Call custom destructor for instance of GeomFill_ConstrainedFilling\n");
+	}
 };
 
 %nodefaultctor GeomFill_UniformSection;
@@ -2342,8 +2349,6 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 class GeomFill_BSplineCurves {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_BSplineCurves();
-		%feature("autodoc", "1");
 		GeomFill_BSplineCurves();
 		%feature("autodoc", "1");
 		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const Handle_Geom_BSplineCurve &C4, const GeomFill_FillingStyle Type);
@@ -2360,6 +2365,11 @@ class GeomFill_BSplineCurves {
 		%feature("autodoc", "1");
 		const Handle_Geom_BSplineSurface & Surface() const;
 
+};
+%extend GeomFill_BSplineCurves {
+	~GeomFill_BSplineCurves() {
+	printf("Call custom destructor for instance of GeomFill_BSplineCurves\n");
+	}
 };
 
 %nodefaultctor GeomFill_CornerState;
@@ -2416,8 +2426,6 @@ class GeomFill_QuasiAngularConvertor {
 class GeomFill_Sweep {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_Sweep();
-		%feature("autodoc", "1");
 		GeomFill_Sweep(const Handle_GeomFill_LocationLaw &Location, const Standard_Boolean WithKpart=1);
 		%feature("autodoc", "1");
 		void SetDomain(const Standard_Real First, const Standard_Real Last, const Standard_Real SectionFirst, const Standard_Real SectionLast);
@@ -2448,6 +2456,11 @@ class GeomFill_Sweep {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve Trace(const Standard_Integer IndexOfTrace) const;
 
+};
+%extend GeomFill_Sweep {
+	~GeomFill_Sweep() {
+	printf("Call custom destructor for instance of GeomFill_Sweep\n");
+	}
 };
 
 %nodefaultctor GeomFill_ConstantBiNormal;
@@ -2712,8 +2725,6 @@ class GeomFill_Coons : public GeomFill_Filling {
 class GeomFill_BezierCurves {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_BezierCurves();
-		%feature("autodoc", "1");
 		GeomFill_BezierCurves();
 		%feature("autodoc", "1");
 		GeomFill_BezierCurves(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const Handle_Geom_BezierCurve &C4, const GeomFill_FillingStyle Type);
@@ -2730,6 +2741,11 @@ class GeomFill_BezierCurves {
 		%feature("autodoc", "1");
 		const Handle_Geom_BezierSurface & Surface() const;
 
+};
+%extend GeomFill_BezierCurves {
+	~GeomFill_BezierCurves() {
+	printf("Call custom destructor for instance of GeomFill_BezierCurves\n");
+	}
 };
 
 %nodefaultctor GeomFill_Line;
@@ -2798,8 +2814,6 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 class GeomFill_Pipe {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_Pipe();
-		%feature("autodoc", "1");
 		GeomFill_Pipe();
 		%feature("autodoc", "1");
 		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Standard_Real Radius);
@@ -2850,6 +2864,11 @@ class GeomFill_Pipe {
 		%feature("autodoc", "1");
 		Standard_Real ErrorOnSurf() const;
 
+};
+%extend GeomFill_Pipe {
+	~GeomFill_Pipe() {
+	printf("Call custom destructor for instance of GeomFill_Pipe\n");
+	}
 };
 
 %nodefaultctor GeomFill_CorrectedFrenet;
@@ -2940,8 +2959,6 @@ class GeomFill_Array1OfLocationLaw {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~GeomFill_Array1OfLocationLaw();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const GeomFill_Array1OfLocationLaw & Assign(const GeomFill_Array1OfLocationLaw &Other);
@@ -2962,6 +2979,11 @@ class GeomFill_Array1OfLocationLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_LocationLaw & operator()(const Standard_Integer Index);
 
+};
+%extend GeomFill_Array1OfLocationLaw {
+	~GeomFill_Array1OfLocationLaw() {
+	printf("Call custom destructor for instance of GeomFill_Array1OfLocationLaw\n");
+	}
 };
 
 %nodefaultctor GeomFill_LocationGuide;

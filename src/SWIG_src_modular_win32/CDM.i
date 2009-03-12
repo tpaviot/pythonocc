@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module CDM
 
@@ -455,8 +441,6 @@ class CDM_ListOfDocument {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~CDM_ListOfDocument();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_CDM_Document &I);
@@ -488,12 +472,15 @@ class CDM_ListOfDocument {
 		void InsertAfter(CDM_ListOfDocument & Other, CDM_ListIteratorOfListOfDocument & It);
 
 };
+%extend CDM_ListOfDocument {
+	~CDM_ListOfDocument() {
+	printf("Call custom destructor for instance of CDM_ListOfDocument\n");
+	}
+};
 
 %nodefaultctor CDM_ListIteratorOfListOfReferences;
 class CDM_ListIteratorOfListOfReferences {
 	public:
-		%feature("autodoc", "1");
-		~CDM_ListIteratorOfListOfReferences();
 		%feature("autodoc", "1");
 		CDM_ListIteratorOfListOfReferences();
 		%feature("autodoc", "1");
@@ -507,6 +494,11 @@ class CDM_ListIteratorOfListOfReferences {
 		%feature("autodoc", "1");
 		Handle_CDM_Reference & Value() const;
 
+};
+%extend CDM_ListIteratorOfListOfReferences {
+	~CDM_ListIteratorOfListOfReferences() {
+	printf("Call custom destructor for instance of CDM_ListIteratorOfListOfReferences\n");
+	}
 };
 
 %nodefaultctor CDM_ListNodeOfListOfReferences;
@@ -543,8 +535,6 @@ class CDM_PresentationDirectory : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~CDM_PresentationDirectory();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Handle_CDM_Document &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
@@ -559,6 +549,11 @@ class CDM_PresentationDirectory : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_CDM_Document & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend CDM_PresentationDirectory {
+	~CDM_PresentationDirectory() {
+	printf("Call custom destructor for instance of CDM_PresentationDirectory\n");
+	}
 };
 
 %nodefaultctor CDM_DataMapNodeOfPresentationDirectory;
@@ -741,8 +736,6 @@ class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator 
 class CDM_ListIteratorOfListOfDocument {
 	public:
 		%feature("autodoc", "1");
-		~CDM_ListIteratorOfListOfDocument();
-		%feature("autodoc", "1");
 		CDM_ListIteratorOfListOfDocument();
 		%feature("autodoc", "1");
 		CDM_ListIteratorOfListOfDocument(const CDM_ListOfDocument &L);
@@ -755,6 +748,11 @@ class CDM_ListIteratorOfListOfDocument {
 		%feature("autodoc", "1");
 		Handle_CDM_Document & Value() const;
 
+};
+%extend CDM_ListIteratorOfListOfDocument {
+	~CDM_ListIteratorOfListOfDocument() {
+	printf("Call custom destructor for instance of CDM_ListIteratorOfListOfDocument\n");
+	}
 };
 
 %nodefaultctor CDM_DataMapNodeOfMetaDataLookUpTable;
@@ -821,8 +819,6 @@ class CDM_MetaDataLookUpTable : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~CDM_MetaDataLookUpTable();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Handle_CDM_MetaData &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
@@ -838,12 +834,15 @@ class CDM_MetaDataLookUpTable : public TCollection_BasicMap {
 		Handle_CDM_MetaData & operator()(const TCollection_ExtendedString &K);
 
 };
+%extend CDM_MetaDataLookUpTable {
+	~CDM_MetaDataLookUpTable() {
+	printf("Call custom destructor for instance of CDM_MetaDataLookUpTable\n");
+	}
+};
 
 %nodefaultctor CDM_StackIteratorOfStackOfDocument;
 class CDM_StackIteratorOfStackOfDocument {
 	public:
-		%feature("autodoc", "1");
-		~CDM_StackIteratorOfStackOfDocument();
 		%feature("autodoc", "1");
 		CDM_StackIteratorOfStackOfDocument();
 		%feature("autodoc", "1");
@@ -857,6 +856,11 @@ class CDM_StackIteratorOfStackOfDocument {
 		%feature("autodoc", "1");
 		const Handle_CDM_Document & Value() const;
 
+};
+%extend CDM_StackIteratorOfStackOfDocument {
+	~CDM_StackIteratorOfStackOfDocument() {
+	printf("Call custom destructor for instance of CDM_StackIteratorOfStackOfDocument\n");
+	}
 };
 
 %nodefaultctor CDM_ListNodeOfListOfDocument;
@@ -893,8 +897,6 @@ class CDM_ListOfReferences {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~CDM_ListOfReferences();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_CDM_Reference &I);
@@ -926,6 +928,11 @@ class CDM_ListOfReferences {
 		void InsertAfter(CDM_ListOfReferences & Other, CDM_ListIteratorOfListOfReferences & It);
 
 };
+%extend CDM_ListOfReferences {
+	~CDM_ListOfReferences() {
+	printf("Call custom destructor for instance of CDM_ListOfReferences\n");
+	}
+};
 
 %nodefaultctor CDM_DataMapNodeOfNamesDirectory;
 class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
@@ -955,8 +962,6 @@ class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
 class CDM_DataMapIteratorOfPresentationDirectory : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~CDM_DataMapIteratorOfPresentationDirectory();
-		%feature("autodoc", "1");
 		CDM_DataMapIteratorOfPresentationDirectory();
 		%feature("autodoc", "1");
 		CDM_DataMapIteratorOfPresentationDirectory(const CDM_PresentationDirectory &aMap);
@@ -968,12 +973,15 @@ class CDM_DataMapIteratorOfPresentationDirectory : public TCollection_BasicMapIt
 		const Handle_CDM_Document & Value() const;
 
 };
+%extend CDM_DataMapIteratorOfPresentationDirectory {
+	~CDM_DataMapIteratorOfPresentationDirectory() {
+	printf("Call custom destructor for instance of CDM_DataMapIteratorOfPresentationDirectory\n");
+	}
+};
 
 %nodefaultctor CDM_DataMapIteratorOfMetaDataLookUpTable;
 class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~CDM_DataMapIteratorOfMetaDataLookUpTable();
 		%feature("autodoc", "1");
 		CDM_DataMapIteratorOfMetaDataLookUpTable();
 		%feature("autodoc", "1");
@@ -985,6 +993,11 @@ class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIter
 		%feature("autodoc", "1");
 		const Handle_CDM_MetaData & Value() const;
 
+};
+%extend CDM_DataMapIteratorOfMetaDataLookUpTable {
+	~CDM_DataMapIteratorOfMetaDataLookUpTable() {
+	printf("Call custom destructor for instance of CDM_DataMapIteratorOfMetaDataLookUpTable\n");
+	}
 };
 
 %nodefaultctor CDM_DocumentHasher;
@@ -1027,8 +1040,6 @@ class CDM_COutMessageDriver : public CDM_MessageDriver {
 class CDM_MapIteratorOfMapOfDocument : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~CDM_MapIteratorOfMapOfDocument();
-		%feature("autodoc", "1");
 		CDM_MapIteratorOfMapOfDocument();
 		%feature("autodoc", "1");
 		CDM_MapIteratorOfMapOfDocument(const CDM_MapOfDocument &aMap);
@@ -1037,6 +1048,11 @@ class CDM_MapIteratorOfMapOfDocument : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const Handle_CDM_Document & Key() const;
 
+};
+%extend CDM_MapIteratorOfMapOfDocument {
+	~CDM_MapIteratorOfMapOfDocument() {
+	printf("Call custom destructor for instance of CDM_MapIteratorOfMapOfDocument\n");
+	}
 };
 
 %nodefaultctor CDM_StackOfDocument;
@@ -1059,17 +1075,18 @@ class CDM_StackOfDocument {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~CDM_StackOfDocument();
-		%feature("autodoc", "1");
 		Handle_CDM_Document & ChangeTop();
 
+};
+%extend CDM_StackOfDocument {
+	~CDM_StackOfDocument() {
+	printf("Call custom destructor for instance of CDM_StackOfDocument\n");
+	}
 };
 
 %nodefaultctor CDM_ReferenceIterator;
 class CDM_ReferenceIterator {
 	public:
-		%feature("autodoc", "1");
-		~CDM_ReferenceIterator();
 		%feature("autodoc", "1");
 		CDM_ReferenceIterator(const Handle_CDM_Document &aDocument);
 		%feature("autodoc", "1");
@@ -1083,6 +1100,11 @@ class CDM_ReferenceIterator {
 		%feature("autodoc", "1");
 		Standard_Integer DocumentVersion() const;
 
+};
+%extend CDM_ReferenceIterator {
+	~CDM_ReferenceIterator() {
+	printf("Call custom destructor for instance of CDM_ReferenceIterator\n");
+	}
 };
 
 %nodefaultctor CDM_MetaData;

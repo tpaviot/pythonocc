@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module Approx
 
@@ -258,8 +244,6 @@ class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TColle
 class Approx_CurvilinearParameter {
 	public:
 		%feature("autodoc", "1");
-		~Approx_CurvilinearParameter();
-		%feature("autodoc", "1");
 		Approx_CurvilinearParameter(const Handle_Adaptor3d_HCurve &C3D, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
 		%feature("autodoc", "1");
 		Approx_CurvilinearParameter(const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &Surf, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
@@ -285,6 +269,11 @@ class Approx_CurvilinearParameter {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend Approx_CurvilinearParameter {
+	~Approx_CurvilinearParameter() {
+	printf("Call custom destructor for instance of Approx_CurvilinearParameter\n");
+	}
+};
 
 %nodefaultctor Approx_MyLeastSquareOfFitAndDivide;
 class Approx_MyLeastSquareOfFitAndDivide {
@@ -309,8 +298,6 @@ class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
 		Approx_SequenceOfHArray1OfReal();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Approx_SequenceOfHArray1OfReal();
 		%feature("autodoc", "1");
 		const Approx_SequenceOfHArray1OfReal & Assign(const Approx_SequenceOfHArray1OfReal &Other);
 		%feature("autodoc", "1");
@@ -351,12 +338,15 @@ class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Approx_SequenceOfHArray1OfReal {
+	~Approx_SequenceOfHArray1OfReal() {
+	printf("Call custom destructor for instance of Approx_SequenceOfHArray1OfReal\n");
+	}
+};
 
 %nodefaultctor Approx_Curve2d;
 class Approx_Curve2d {
 	public:
-		%feature("autodoc", "1");
-		~Approx_Curve2d();
 		%feature("autodoc", "1");
 		Approx_Curve2d(const Handle_Adaptor2d_HCurve2d &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real TolU, const Standard_Real TolV, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
 		%feature("autodoc", "1");
@@ -371,12 +361,15 @@ class Approx_Curve2d {
 		Standard_Real MaxError2dV() const;
 
 };
+%extend Approx_Curve2d {
+	~Approx_Curve2d() {
+	printf("Call custom destructor for instance of Approx_Curve2d\n");
+	}
+};
 
 %nodefaultctor Approx_Curve3d;
 class Approx_Curve3d {
 	public:
-		%feature("autodoc", "1");
-		~Approx_Curve3d();
 		%feature("autodoc", "1");
 		Approx_Curve3d(const Handle_Adaptor3d_HCurve &Curve, const Standard_Real Tol3d, const GeomAbs_Shape Order, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
@@ -390,6 +383,11 @@ class Approx_Curve3d {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend Approx_Curve3d {
+	~Approx_Curve3d() {
+	printf("Call custom destructor for instance of Approx_Curve3d\n");
+	}
 };
 
 %nodefaultctor Approx_SequenceNodeOfSequenceOfArray1OfPnt2d;
@@ -640,8 +638,6 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 class Approx_SameParameter {
 	public:
 		%feature("autodoc", "1");
-		~Approx_SameParameter();
-		%feature("autodoc", "1");
 		Approx_SameParameter(const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Geom_Surface &S, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
@@ -656,6 +652,11 @@ class Approx_SameParameter {
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve Curve2d() const;
 
+};
+%extend Approx_SameParameter {
+	~Approx_SameParameter() {
+	printf("Call custom destructor for instance of Approx_SameParameter\n");
+	}
 };
 
 %nodefaultctor Approx_SequenceNodeOfSequenceOfHArray1OfReal;
@@ -716,8 +717,6 @@ class Approx_FitAndDivide2d {
 class Approx_CurveOnSurface {
 	public:
 		%feature("autodoc", "1");
-		~Approx_CurveOnSurface();
-		%feature("autodoc", "1");
 		Approx_CurveOnSurface(const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &Surf, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments, const Standard_Boolean Only3d=0, const Standard_Boolean Only2d=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -734,6 +733,11 @@ class Approx_CurveOnSurface {
 		%feature("autodoc", "1");
 		Standard_Real MaxError2dV() const;
 
+};
+%extend Approx_CurveOnSurface {
+	~Approx_CurveOnSurface() {
+	printf("Call custom destructor for instance of Approx_CurveOnSurface\n");
+	}
 };
 
 %nodefaultctor Approx_CurvlinFunc;
@@ -800,8 +804,6 @@ class Approx_Array1OfAdHSurface {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Approx_Array1OfAdHSurface();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Approx_Array1OfAdHSurface & Assign(const Approx_Array1OfAdHSurface &Other);
@@ -822,6 +824,11 @@ class Approx_Array1OfAdHSurface {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurface & operator()(const Standard_Integer Index);
 
+};
+%extend Approx_Array1OfAdHSurface {
+	~Approx_Array1OfAdHSurface() {
+	printf("Call custom destructor for instance of Approx_Array1OfAdHSurface\n");
+	}
 };
 
 %nodefaultctor Approx_MyLeastSquareOfFitAndDivide2d;
@@ -847,8 +854,6 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		Approx_SequenceOfArray1OfPnt2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Approx_SequenceOfArray1OfPnt2d();
 		%feature("autodoc", "1");
 		const Approx_SequenceOfArray1OfPnt2d & Assign(const Approx_SequenceOfArray1OfPnt2d &Other);
 		%feature("autodoc", "1");
@@ -888,6 +893,11 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Approx_SequenceOfArray1OfPnt2d {
+	~Approx_SequenceOfArray1OfPnt2d() {
+	printf("Call custom destructor for instance of Approx_SequenceOfArray1OfPnt2d\n");
+	}
 };
 
 %nodefaultctor Approx_SweepApproximation;

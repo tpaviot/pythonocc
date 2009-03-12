@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module SelectBasics
 
@@ -372,8 +358,6 @@ class SelectBasics_ListOfSensitive {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectBasics_ListOfSensitive();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_SelectBasics_SensitiveEntity &I);
@@ -405,12 +389,15 @@ class SelectBasics_ListOfSensitive {
 		void InsertAfter(SelectBasics_ListOfSensitive & Other, SelectBasics_ListIteratorOfListOfSensitive & It);
 
 };
+%extend SelectBasics_ListOfSensitive {
+	~SelectBasics_ListOfSensitive() {
+	printf("Call custom destructor for instance of SelectBasics_ListOfSensitive\n");
+	}
+};
 
 %nodefaultctor SelectBasics_ListIteratorOfListOfSensitive;
 class SelectBasics_ListIteratorOfListOfSensitive {
 	public:
-		%feature("autodoc", "1");
-		~SelectBasics_ListIteratorOfListOfSensitive();
 		%feature("autodoc", "1");
 		SelectBasics_ListIteratorOfListOfSensitive();
 		%feature("autodoc", "1");
@@ -424,6 +411,11 @@ class SelectBasics_ListIteratorOfListOfSensitive {
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity & Value() const;
 
+};
+%extend SelectBasics_ListIteratorOfListOfSensitive {
+	~SelectBasics_ListIteratorOfListOfSensitive() {
+	printf("Call custom destructor for instance of SelectBasics_ListIteratorOfListOfSensitive\n");
+	}
 };
 
 %nodefaultctor SelectBasics_BasicTool;
@@ -624,8 +616,6 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectBasics_SequenceOfOwner();
-		%feature("autodoc", "1");
 		const SelectBasics_SequenceOfOwner & Assign(const SelectBasics_SequenceOfOwner &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_SelectBasics_EntityOwner &T);
@@ -664,6 +654,11 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend SelectBasics_SequenceOfOwner {
+	~SelectBasics_SequenceOfOwner() {
+	printf("Call custom destructor for instance of SelectBasics_SequenceOfOwner\n");
+	}
 };
 
 %nodefaultctor SelectBasics_ListNodeOfListOfSensitive;

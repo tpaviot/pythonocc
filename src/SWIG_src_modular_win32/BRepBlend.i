@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module BRepBlend
 
@@ -906,8 +892,6 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 class BRepBlend_Extremity {
 	public:
 		%feature("autodoc", "1");
-		~BRepBlend_Extremity();
-		%feature("autodoc", "1");
 		BRepBlend_Extremity();
 		%feature("autodoc", "1");
 		BRepBlend_Extremity(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const Standard_Real Param, const Standard_Real Tol);
@@ -950,6 +934,11 @@ class BRepBlend_Extremity {
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnGuide() const;
 
+};
+%extend BRepBlend_Extremity {
+	~BRepBlend_Extremity() {
+	printf("Call custom destructor for instance of BRepBlend_Extremity\n");
+	}
 };
 
 %nodefaultctor BRepBlend_Chamfer;
@@ -1256,8 +1245,6 @@ class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepBlend_SequenceOfLine();
-		%feature("autodoc", "1");
 		const BRepBlend_SequenceOfLine & Assign(const BRepBlend_SequenceOfLine &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_BRepBlend_Line &T);
@@ -1297,12 +1284,15 @@ class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend BRepBlend_SequenceOfLine {
+	~BRepBlend_SequenceOfLine() {
+	printf("Call custom destructor for instance of BRepBlend_SequenceOfLine\n");
+	}
+};
 
 %nodefaultctor BRepBlend_CSWalking;
 class BRepBlend_CSWalking {
 	public:
-		%feature("autodoc", "1");
-		~BRepBlend_CSWalking();
 		%feature("autodoc", "1");
 		BRepBlend_CSWalking(const Handle_Adaptor3d_HCurve &Curv, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &Domain);
 		%feature("autodoc", "1");
@@ -1314,6 +1304,11 @@ class BRepBlend_CSWalking {
 		%feature("autodoc", "1");
 		const Handle_BRepBlend_Line & Line() const;
 
+};
+%extend BRepBlend_CSWalking {
+	~BRepBlend_CSWalking() {
+	printf("Call custom destructor for instance of BRepBlend_CSWalking\n");
+	}
 };
 
 %nodefaultctor BRepBlend_Line;
@@ -1562,8 +1557,6 @@ class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
 class BRepBlend_HCurve2dTool {
 	public:
 		%feature("autodoc", "1");
-		~BRepBlend_HCurve2dTool();
-		%feature("autodoc", "1");
 		BRepBlend_HCurve2dTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const Handle_Adaptor2d_HCurve2d &C);
@@ -1615,6 +1608,11 @@ class BRepBlend_HCurve2dTool {
 		Standard_Integer NbSamples(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U0, const Standard_Real U1);
 
 };
+%extend BRepBlend_HCurve2dTool {
+	~BRepBlend_HCurve2dTool() {
+	printf("Call custom destructor for instance of BRepBlend_HCurve2dTool\n");
+	}
+};
 
 %nodefaultctor BRepBlend_SurfPointEvolRadInv;
 class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
@@ -1647,8 +1645,6 @@ class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
 %nodefaultctor BRepBlend_HCurveTool;
 class BRepBlend_HCurveTool {
 	public:
-		%feature("autodoc", "1");
-		~BRepBlend_HCurveTool();
 		%feature("autodoc", "1");
 		BRepBlend_HCurveTool();
 		%feature("autodoc", "1");
@@ -1700,6 +1696,11 @@ class BRepBlend_HCurveTool {
 		%feature("autodoc", "1");
 		Standard_Integer NbSamples(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1);
 
+};
+%extend BRepBlend_HCurveTool {
+	~BRepBlend_HCurveTool() {
+	printf("Call custom destructor for instance of BRepBlend_HCurveTool\n");
+	}
 };
 
 %nodefaultctor BRepBlend_ChAsymInv;
@@ -1828,8 +1829,6 @@ class BRepBlend_AppSurf : public AppBlend_Approx {
 class BRepBlend_HSurfaceTool {
 	public:
 		%feature("autodoc", "1");
-		~BRepBlend_HSurfaceTool();
-		%feature("autodoc", "1");
 		BRepBlend_HSurfaceTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstUParameter(const Handle_Adaptor3d_HSurface &Surf);
@@ -1911,12 +1910,15 @@ class BRepBlend_HSurfaceTool {
 		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
 
 };
+%extend BRepBlend_HSurfaceTool {
+	~BRepBlend_HSurfaceTool() {
+	printf("Call custom destructor for instance of BRepBlend_HSurfaceTool\n");
+	}
+};
 
 %nodefaultctor BRepBlend_PointOnRst;
 class BRepBlend_PointOnRst {
 	public:
-		%feature("autodoc", "1");
-		~BRepBlend_PointOnRst();
 		%feature("autodoc", "1");
 		BRepBlend_PointOnRst();
 		%feature("autodoc", "1");
@@ -1932,6 +1934,11 @@ class BRepBlend_PointOnRst {
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnArc() const;
 
+};
+%extend BRepBlend_PointOnRst {
+	~BRepBlend_PointOnRst() {
+	printf("Call custom destructor for instance of BRepBlend_PointOnRst\n");
+	}
 };
 
 %nodefaultctor BRepBlend_SequenceNodeOfSequenceOfLine;
@@ -1988,8 +1995,6 @@ class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
 class BRepBlend_SurfRstLineBuilder {
 	public:
 		%feature("autodoc", "1");
-		~BRepBlend_SurfRstLineBuilder();
-		%feature("autodoc", "1");
 		BRepBlend_SurfRstLineBuilder(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_TopolTool &Domain1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor2d_HCurve2d &Rst, const Handle_Adaptor3d_TopolTool &Domain2);
 		%feature("autodoc", "1");
 		void Perform(Blend_SurfRstFunction & Func, Blend_FuncInv & Finv, Blend_SurfPointFuncInv & FinvP, Blend_SurfCurvFuncInv & FinvC, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
@@ -2008,6 +2013,11 @@ class BRepBlend_SurfRstLineBuilder {
 		%feature("autodoc", "1");
 		Standard_Boolean DecrochEnd() const;
 
+};
+%extend BRepBlend_SurfRstLineBuilder {
+	~BRepBlend_SurfRstLineBuilder() {
+	printf("Call custom destructor for instance of BRepBlend_SurfRstLineBuilder\n");
+	}
 };
 
 %nodefaultctor BRepBlend_SequenceOfPointOnRst;
@@ -2064,8 +2074,6 @@ class BRepBlend_SequenceOfPointOnRst : public TCollection_BaseSequence {
 class BRepBlend_BlendTool {
 	public:
 		%feature("autodoc", "1");
-		~BRepBlend_BlendTool();
-		%feature("autodoc", "1");
 		BRepBlend_BlendTool();
 		%feature("autodoc", "1");
 		Standard_Boolean Project(const gp_Pnt2d &P, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -2085,12 +2093,15 @@ class BRepBlend_BlendTool {
 		Handle_Adaptor2d_HCurve2d CurveOnSurf(const Handle_Adaptor2d_HCurve2d &C, const Handle_Adaptor3d_HSurface &arg1);
 
 };
+%extend BRepBlend_BlendTool {
+	~BRepBlend_BlendTool() {
+	printf("Call custom destructor for instance of BRepBlend_BlendTool\n");
+	}
+};
 
 %nodefaultctor BRepBlend_RstRstLineBuilder;
 class BRepBlend_RstRstLineBuilder {
 	public:
-		%feature("autodoc", "1");
-		~BRepBlend_RstRstLineBuilder();
 		%feature("autodoc", "1");
 		BRepBlend_RstRstLineBuilder(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor2d_HCurve2d &Rst1, const Handle_Adaptor3d_TopolTool &Domain1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor2d_HCurve2d &Rst2, const Handle_Adaptor3d_TopolTool &Domain2);
 		%feature("autodoc", "1");
@@ -2113,12 +2124,15 @@ class BRepBlend_RstRstLineBuilder {
 		Standard_Boolean Decroch2End() const;
 
 };
+%extend BRepBlend_RstRstLineBuilder {
+	~BRepBlend_RstRstLineBuilder() {
+	printf("Call custom destructor for instance of BRepBlend_RstRstLineBuilder\n");
+	}
+};
 
 %nodefaultctor BRepBlend_Walking;
 class BRepBlend_Walking {
 	public:
-		%feature("autodoc", "1");
-		~BRepBlend_Walking();
 		%feature("autodoc", "1");
 		BRepBlend_Walking(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor3d_TopolTool &Domain1, const Handle_Adaptor3d_TopolTool &Domain2);
 		%feature("autodoc", "1");
@@ -2154,6 +2168,11 @@ class BRepBlend_Walking {
 		%feature("autodoc", "1");
 		const Handle_BRepBlend_Line & Line() const;
 
+};
+%extend BRepBlend_Walking {
+	~BRepBlend_Walking() {
+	printf("Call custom destructor for instance of BRepBlend_Walking\n");
+	}
 };
 
 %nodefaultctor BRepBlend_EvolRad;

@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module StepToGeom
 
@@ -114,432 +100,540 @@ class StepToGeom_Root {
 class StepToGeom_MakeEllipse2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeEllipse2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeEllipse2d(const Handle_StepGeom_Ellipse &C);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Ellipse & Value() const;
 
+};
+%extend StepToGeom_MakeEllipse2d {
+	~StepToGeom_MakeEllipse2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeEllipse2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeTrimmedCurve2d;
 class StepToGeom_MakeTrimmedCurve2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeTrimmedCurve2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeTrimmedCurve2d(const Handle_StepGeom_TrimmedCurve &C);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_BSplineCurve & Value() const;
 
+};
+%extend StepToGeom_MakeTrimmedCurve2d {
+	~StepToGeom_MakeTrimmedCurve2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeTrimmedCurve2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeDirection;
 class StepToGeom_MakeDirection : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeDirection();
-		%feature("autodoc", "1");
 		StepToGeom_MakeDirection(const Handle_StepGeom_Direction &D);
 		%feature("autodoc", "1");
 		const Handle_Geom_Direction & Value() const;
 
+};
+%extend StepToGeom_MakeDirection {
+	~StepToGeom_MakeDirection() {
+	printf("Call custom destructor for instance of StepToGeom_MakeDirection\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeAxis1Placement;
 class StepToGeom_MakeAxis1Placement : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeAxis1Placement();
-		%feature("autodoc", "1");
 		StepToGeom_MakeAxis1Placement(const Handle_StepGeom_Axis1Placement &A);
 		%feature("autodoc", "1");
 		const Handle_Geom_Axis1Placement & Value() const;
 
+};
+%extend StepToGeom_MakeAxis1Placement {
+	~StepToGeom_MakeAxis1Placement() {
+	printf("Call custom destructor for instance of StepToGeom_MakeAxis1Placement\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakePolyline;
 class StepToGeom_MakePolyline : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakePolyline();
-		%feature("autodoc", "1");
 		StepToGeom_MakePolyline(const Handle_StepGeom_Polyline &PL);
 		%feature("autodoc", "1");
 		const Handle_Geom_BSplineCurve & Value() const;
 
+};
+%extend StepToGeom_MakePolyline {
+	~StepToGeom_MakePolyline() {
+	printf("Call custom destructor for instance of StepToGeom_MakePolyline\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakePolyline2d;
 class StepToGeom_MakePolyline2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakePolyline2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakePolyline2d(const Handle_StepGeom_Polyline &PL);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_BSplineCurve & Value() const;
 
+};
+%extend StepToGeom_MakePolyline2d {
+	~StepToGeom_MakePolyline2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakePolyline2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeConic;
 class StepToGeom_MakeConic : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeConic();
-		%feature("autodoc", "1");
 		StepToGeom_MakeConic(const Handle_StepGeom_Conic &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_Conic & Value() const;
 
+};
+%extend StepToGeom_MakeConic {
+	~StepToGeom_MakeConic() {
+	printf("Call custom destructor for instance of StepToGeom_MakeConic\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeEllipse;
 class StepToGeom_MakeEllipse : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeEllipse();
-		%feature("autodoc", "1");
 		StepToGeom_MakeEllipse(const Handle_StepGeom_Ellipse &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_Ellipse & Value() const;
 
+};
+%extend StepToGeom_MakeEllipse {
+	~StepToGeom_MakeEllipse() {
+	printf("Call custom destructor for instance of StepToGeom_MakeEllipse\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeToroidalSurface;
 class StepToGeom_MakeToroidalSurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeToroidalSurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeToroidalSurface(const Handle_StepGeom_ToroidalSurface &TorSurf);
 		%feature("autodoc", "1");
 		const Handle_Geom_ToroidalSurface & Value() const;
 
+};
+%extend StepToGeom_MakeToroidalSurface {
+	~StepToGeom_MakeToroidalSurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeToroidalSurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeBoundedCurve;
 class StepToGeom_MakeBoundedCurve : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeBoundedCurve();
-		%feature("autodoc", "1");
 		StepToGeom_MakeBoundedCurve(const Handle_StepGeom_BoundedCurve &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_BoundedCurve & Value() const;
 
+};
+%extend StepToGeom_MakeBoundedCurve {
+	~StepToGeom_MakeBoundedCurve() {
+	printf("Call custom destructor for instance of StepToGeom_MakeBoundedCurve\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeBoundedCurve2d;
 class StepToGeom_MakeBoundedCurve2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeBoundedCurve2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeBoundedCurve2d(const Handle_StepGeom_BoundedCurve &C);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_BoundedCurve & Value() const;
 
+};
+%extend StepToGeom_MakeBoundedCurve2d {
+	~StepToGeom_MakeBoundedCurve2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeBoundedCurve2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeSurface;
 class StepToGeom_MakeSurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeSurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeSurface(const Handle_StepGeom_Surface &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Value() const;
 
+};
+%extend StepToGeom_MakeSurface {
+	~StepToGeom_MakeSurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeSurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeElementarySurface;
 class StepToGeom_MakeElementarySurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeElementarySurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeElementarySurface(const Handle_StepGeom_ElementarySurface &S);
 		%feature("autodoc", "1");
 		const Handle_Geom_ElementarySurface & Value() const;
 
+};
+%extend StepToGeom_MakeElementarySurface {
+	~StepToGeom_MakeElementarySurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeElementarySurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeHyperbola;
 class StepToGeom_MakeHyperbola : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeHyperbola();
-		%feature("autodoc", "1");
 		StepToGeom_MakeHyperbola(const Handle_StepGeom_Hyperbola &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_Hyperbola & Value() const;
 
+};
+%extend StepToGeom_MakeHyperbola {
+	~StepToGeom_MakeHyperbola() {
+	printf("Call custom destructor for instance of StepToGeom_MakeHyperbola\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeConicalSurface;
 class StepToGeom_MakeConicalSurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeConicalSurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeConicalSurface(const Handle_StepGeom_ConicalSurface &Surf);
 		%feature("autodoc", "1");
 		const Handle_Geom_ConicalSurface & Value() const;
 
+};
+%extend StepToGeom_MakeConicalSurface {
+	~StepToGeom_MakeConicalSurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeConicalSurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeBoundedSurface;
 class StepToGeom_MakeBoundedSurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeBoundedSurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeBoundedSurface(const Handle_StepGeom_BoundedSurface &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_BoundedSurface & Value() const;
 
+};
+%extend StepToGeom_MakeBoundedSurface {
+	~StepToGeom_MakeBoundedSurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeBoundedSurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeVectorWithMagnitude2d;
 class StepToGeom_MakeVectorWithMagnitude2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeVectorWithMagnitude2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeVectorWithMagnitude2d(const Handle_StepGeom_Vector &V);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_VectorWithMagnitude & Value() const;
 
+};
+%extend StepToGeom_MakeVectorWithMagnitude2d {
+	~StepToGeom_MakeVectorWithMagnitude2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeConic2d;
 class StepToGeom_MakeConic2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeConic2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeConic2d(const Handle_StepGeom_Conic &C);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Conic & Value() const;
 
+};
+%extend StepToGeom_MakeConic2d {
+	~StepToGeom_MakeConic2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeConic2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeBSplineSurface;
 class StepToGeom_MakeBSplineSurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeBSplineSurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeBSplineSurface(const Handle_StepGeom_BSplineSurface &Bsplin);
 		%feature("autodoc", "1");
 		const Handle_Geom_BSplineSurface & Value() const;
 
+};
+%extend StepToGeom_MakeBSplineSurface {
+	~StepToGeom_MakeBSplineSurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeBSplineSurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeSweptSurface;
 class StepToGeom_MakeSweptSurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeSweptSurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeSweptSurface(const Handle_StepGeom_SweptSurface &S);
 		%feature("autodoc", "1");
 		const Handle_Geom_SweptSurface & Value() const;
 
+};
+%extend StepToGeom_MakeSweptSurface {
+	~StepToGeom_MakeSweptSurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeSweptSurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeCartesianPoint2d;
 class StepToGeom_MakeCartesianPoint2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeCartesianPoint2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeCartesianPoint2d(const Handle_StepGeom_CartesianPoint &P);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_CartesianPoint & Value() const;
 
+};
+%extend StepToGeom_MakeCartesianPoint2d {
+	~StepToGeom_MakeCartesianPoint2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeCartesianPoint2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakePlane;
 class StepToGeom_MakePlane : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakePlane();
-		%feature("autodoc", "1");
 		StepToGeom_MakePlane(const Handle_StepGeom_Plane &P);
 		%feature("autodoc", "1");
 		const Handle_Geom_Plane & Value() const;
 
+};
+%extend StepToGeom_MakePlane {
+	~StepToGeom_MakePlane() {
+	printf("Call custom destructor for instance of StepToGeom_MakePlane\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeCircle2d;
 class StepToGeom_MakeCircle2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeCircle2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeCircle2d(const Handle_StepGeom_Circle &C);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Circle & Value() const;
 
+};
+%extend StepToGeom_MakeCircle2d {
+	~StepToGeom_MakeCircle2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeCircle2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeLine;
 class StepToGeom_MakeLine : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeLine();
-		%feature("autodoc", "1");
 		StepToGeom_MakeLine(const Handle_StepGeom_Line &L);
 		%feature("autodoc", "1");
 		const Handle_Geom_Line & Value() const;
 
+};
+%extend StepToGeom_MakeLine {
+	~StepToGeom_MakeLine() {
+	printf("Call custom destructor for instance of StepToGeom_MakeLine\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeLine2d;
 class StepToGeom_MakeLine2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeLine2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeLine2d(const Handle_StepGeom_Line &L);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Line & Value() const;
 
+};
+%extend StepToGeom_MakeLine2d {
+	~StepToGeom_MakeLine2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeLine2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeParabola2d;
 class StepToGeom_MakeParabola2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeParabola2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeParabola2d(const Handle_StepGeom_Parabola &C);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Parabola & Value() const;
 
+};
+%extend StepToGeom_MakeParabola2d {
+	~StepToGeom_MakeParabola2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeParabola2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeAxisPlacement;
 class StepToGeom_MakeAxisPlacement : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeAxisPlacement();
-		%feature("autodoc", "1");
 		StepToGeom_MakeAxisPlacement(const Handle_StepGeom_Axis2Placement2d &A);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_AxisPlacement & Value() const;
 
+};
+%extend StepToGeom_MakeAxisPlacement {
+	~StepToGeom_MakeAxisPlacement() {
+	printf("Call custom destructor for instance of StepToGeom_MakeAxisPlacement\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeParabola;
 class StepToGeom_MakeParabola : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeParabola();
-		%feature("autodoc", "1");
 		StepToGeom_MakeParabola(const Handle_StepGeom_Parabola &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_Parabola & Value() const;
 
+};
+%extend StepToGeom_MakeParabola {
+	~StepToGeom_MakeParabola() {
+	printf("Call custom destructor for instance of StepToGeom_MakeParabola\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeTrimmedCurve;
 class StepToGeom_MakeTrimmedCurve : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeTrimmedCurve();
-		%feature("autodoc", "1");
 		StepToGeom_MakeTrimmedCurve(const Handle_StepGeom_TrimmedCurve &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_TrimmedCurve & Value() const;
 
+};
+%extend StepToGeom_MakeTrimmedCurve {
+	~StepToGeom_MakeTrimmedCurve() {
+	printf("Call custom destructor for instance of StepToGeom_MakeTrimmedCurve\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeSurfaceOfRevolution;
 class StepToGeom_MakeSurfaceOfRevolution : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeSurfaceOfRevolution();
-		%feature("autodoc", "1");
 		StepToGeom_MakeSurfaceOfRevolution(const Handle_StepGeom_SurfaceOfRevolution &RevSurf);
 		%feature("autodoc", "1");
 		const Handle_Geom_SurfaceOfRevolution & Value() const;
 
+};
+%extend StepToGeom_MakeSurfaceOfRevolution {
+	~StepToGeom_MakeSurfaceOfRevolution() {
+	printf("Call custom destructor for instance of StepToGeom_MakeSurfaceOfRevolution\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeCartesianPoint;
 class StepToGeom_MakeCartesianPoint : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeCartesianPoint();
-		%feature("autodoc", "1");
 		StepToGeom_MakeCartesianPoint(const Handle_StepGeom_CartesianPoint &P);
 		%feature("autodoc", "1");
 		const Handle_Geom_CartesianPoint & Value() const;
 
+};
+%extend StepToGeom_MakeCartesianPoint {
+	~StepToGeom_MakeCartesianPoint() {
+	printf("Call custom destructor for instance of StepToGeom_MakeCartesianPoint\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeHyperbola2d;
 class StepToGeom_MakeHyperbola2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeHyperbola2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeHyperbola2d(const Handle_StepGeom_Hyperbola &C);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Hyperbola & Value() const;
 
+};
+%extend StepToGeom_MakeHyperbola2d {
+	~StepToGeom_MakeHyperbola2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeHyperbola2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeVectorWithMagnitude;
 class StepToGeom_MakeVectorWithMagnitude : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeVectorWithMagnitude();
-		%feature("autodoc", "1");
 		StepToGeom_MakeVectorWithMagnitude(const Handle_StepGeom_Vector &V);
 		%feature("autodoc", "1");
 		const Handle_Geom_VectorWithMagnitude & Value() const;
 
+};
+%extend StepToGeom_MakeVectorWithMagnitude {
+	~StepToGeom_MakeVectorWithMagnitude() {
+	printf("Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeBSplineCurve2d;
 class StepToGeom_MakeBSplineCurve2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeBSplineCurve2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeBSplineCurve2d(const Handle_StepGeom_BSplineCurve &Bsplin);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_BSplineCurve & Value() const;
 
+};
+%extend StepToGeom_MakeBSplineCurve2d {
+	~StepToGeom_MakeBSplineCurve2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeBSplineCurve2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeSphericalSurface;
 class StepToGeom_MakeSphericalSurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeSphericalSurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeSphericalSurface(const Handle_StepGeom_SphericalSurface &Surf);
 		%feature("autodoc", "1");
 		const Handle_Geom_SphericalSurface & Value() const;
 
+};
+%extend StepToGeom_MakeSphericalSurface {
+	~StepToGeom_MakeSphericalSurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeSphericalSurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeCurve;
 class StepToGeom_MakeCurve : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeCurve();
-		%feature("autodoc", "1");
 		StepToGeom_MakeCurve(const Handle_StepGeom_Curve &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_Curve & Value() const;
 
+};
+%extend StepToGeom_MakeCurve {
+	~StepToGeom_MakeCurve() {
+	printf("Call custom destructor for instance of StepToGeom_MakeCurve\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeTransformation2d;
@@ -570,94 +664,118 @@ class StepToGeom_MakeTransformation3d : public StepToGeom_Root {
 class StepToGeom_MakeBSplineCurve : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeBSplineCurve();
-		%feature("autodoc", "1");
 		StepToGeom_MakeBSplineCurve(const Handle_StepGeom_BSplineCurve &Bsplin);
 		%feature("autodoc", "1");
 		const Handle_Geom_BSplineCurve & Value() const;
 
+};
+%extend StepToGeom_MakeBSplineCurve {
+	~StepToGeom_MakeBSplineCurve() {
+	printf("Call custom destructor for instance of StepToGeom_MakeBSplineCurve\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeRectangularTrimmedSurface;
 class StepToGeom_MakeRectangularTrimmedSurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeRectangularTrimmedSurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeRectangularTrimmedSurface(const Handle_StepGeom_RectangularTrimmedSurface &RTSurf);
 		%feature("autodoc", "1");
 		const Handle_Geom_RectangularTrimmedSurface & Value() const;
 
+};
+%extend StepToGeom_MakeRectangularTrimmedSurface {
+	~StepToGeom_MakeRectangularTrimmedSurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeRectangularTrimmedSurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeCircle;
 class StepToGeom_MakeCircle : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeCircle();
-		%feature("autodoc", "1");
 		StepToGeom_MakeCircle(const Handle_StepGeom_Circle &C);
 		%feature("autodoc", "1");
 		const Handle_Geom_Circle & Value() const;
 
+};
+%extend StepToGeom_MakeCircle {
+	~StepToGeom_MakeCircle() {
+	printf("Call custom destructor for instance of StepToGeom_MakeCircle\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeAxis2Placement;
 class StepToGeom_MakeAxis2Placement : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeAxis2Placement();
-		%feature("autodoc", "1");
 		StepToGeom_MakeAxis2Placement(const Handle_StepGeom_Axis2Placement3d &A);
 		%feature("autodoc", "1");
 		const Handle_Geom_Axis2Placement & Value() const;
 
+};
+%extend StepToGeom_MakeAxis2Placement {
+	~StepToGeom_MakeAxis2Placement() {
+	printf("Call custom destructor for instance of StepToGeom_MakeAxis2Placement\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeCurve2d;
 class StepToGeom_MakeCurve2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeCurve2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeCurve2d(const Handle_StepGeom_Curve &C);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Curve & Value() const;
 
+};
+%extend StepToGeom_MakeCurve2d {
+	~StepToGeom_MakeCurve2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeCurve2d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeCylindricalSurface;
 class StepToGeom_MakeCylindricalSurface : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeCylindricalSurface();
-		%feature("autodoc", "1");
 		StepToGeom_MakeCylindricalSurface(const Handle_StepGeom_CylindricalSurface &Surf);
 		%feature("autodoc", "1");
 		const Handle_Geom_CylindricalSurface & Value() const;
 
+};
+%extend StepToGeom_MakeCylindricalSurface {
+	~StepToGeom_MakeCylindricalSurface() {
+	printf("Call custom destructor for instance of StepToGeom_MakeCylindricalSurface\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeSurfaceOfLinearExtrusion;
 class StepToGeom_MakeSurfaceOfLinearExtrusion : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeSurfaceOfLinearExtrusion();
-		%feature("autodoc", "1");
 		StepToGeom_MakeSurfaceOfLinearExtrusion(const Handle_StepGeom_SurfaceOfLinearExtrusion &Surf);
 		%feature("autodoc", "1");
 		const Handle_Geom_SurfaceOfLinearExtrusion & Value() const;
 
+};
+%extend StepToGeom_MakeSurfaceOfLinearExtrusion {
+	~StepToGeom_MakeSurfaceOfLinearExtrusion() {
+	printf("Call custom destructor for instance of StepToGeom_MakeSurfaceOfLinearExtrusion\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeDirection2d;
 class StepToGeom_MakeDirection2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeDirection2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeDirection2d(const Handle_StepGeom_Direction &D);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Direction & Value() const;
 
+};
+%extend StepToGeom_MakeDirection2d {
+	~StepToGeom_MakeDirection2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeDirection2d\n");
+	}
 };

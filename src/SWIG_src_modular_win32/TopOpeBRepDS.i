@@ -1,36 +1,22 @@
 /*
-##Copyright 2008-2009 Thomas Paviot
-##
-##thomas.paviot@free.fr
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCascade library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 %module TopOpeBRepDS
 
@@ -825,8 +811,6 @@ class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState : public Handle_TColl
 class TopOpeBRepDS_ListIteratorOfListOfInterference {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_ListIteratorOfListOfInterference();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_ListIteratorOfListOfInterference();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_ListIteratorOfListOfInterference(const TopOpeBRepDS_ListOfInterference &L);
@@ -840,12 +824,15 @@ class TopOpeBRepDS_ListIteratorOfListOfInterference {
 		Handle_TopOpeBRepDS_Interference & Value() const;
 
 };
+%extend TopOpeBRepDS_ListIteratorOfListOfInterference {
+	~TopOpeBRepDS_ListIteratorOfListOfInterference() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_ListIteratorOfListOfInterference\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_InterferenceTool;
 class TopOpeBRepDS_InterferenceTool {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_InterferenceTool();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_InterferenceTool();
 		%feature("autodoc", "1");
@@ -867,6 +854,11 @@ class TopOpeBRepDS_InterferenceTool {
 		%feature("autodoc", "1");
 		void Parameter(const Handle_TopOpeBRepDS_Interference &CPI, const Standard_Real Par);
 
+};
+%extend TopOpeBRepDS_InterferenceTool {
+	~TopOpeBRepDS_InterferenceTool() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_InterferenceTool\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_TOOL;
@@ -892,8 +884,6 @@ class TopOpeBRepDS_TOOL {
 %nodefaultctor TopOpeBRepDS_InterferenceIterator;
 class TopOpeBRepDS_InterferenceIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_InterferenceIterator();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_InterferenceIterator();
 		%feature("autodoc", "1");
@@ -922,12 +912,15 @@ class TopOpeBRepDS_InterferenceIterator {
 		TopOpeBRepDS_ListIteratorOfListOfInterference & ChangeIterator();
 
 };
+%extend TopOpeBRepDS_InterferenceIterator {
+	~TopOpeBRepDS_InterferenceIterator() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_InterferenceIterator\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_CurveIterator;
 class TopOpeBRepDS_CurveIterator : public TopOpeBRepDS_InterferenceIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_CurveIterator();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_CurveIterator(const TopOpeBRepDS_ListOfInterference &L);
 		%feature("autodoc", "1");
@@ -937,6 +930,11 @@ class TopOpeBRepDS_CurveIterator : public TopOpeBRepDS_InterferenceIterator {
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Curve & PCurve() const;
 
+};
+%extend TopOpeBRepDS_CurveIterator {
+	~TopOpeBRepDS_CurveIterator() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_CurveIterator\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_GapTool;
@@ -1983,8 +1981,6 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState : public TCollection_MapNode
 class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape(const TopOpeBRepDS_DataMapOfInterferenceShape &aMap);
@@ -1995,6 +1991,11 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape : public TCollect
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Value() const;
 
+};
+%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape {
+	~TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_ShapeSurface;
@@ -2008,8 +2009,6 @@ class TopOpeBRepDS_ShapeSurface : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_ShapeSurface();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_Geom_Surface &I);
 		%feature("autodoc", "1");
@@ -2025,6 +2024,11 @@ class TopOpeBRepDS_ShapeSurface : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Geom_Surface & operator()(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepDS_ShapeSurface {
+	~TopOpeBRepDS_ShapeSurface() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_ShapeSurface\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_EdgeInterferenceTool;
@@ -2293,8 +2297,6 @@ class TopOpeBRepDS_ListOfInterference {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_ListOfInterference();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Handle_TopOpeBRepDS_Interference &I);
@@ -2326,12 +2328,15 @@ class TopOpeBRepDS_ListOfInterference {
 		void InsertAfter(TopOpeBRepDS_ListOfInterference & Other, TopOpeBRepDS_ListIteratorOfListOfInterference & It);
 
 };
+%extend TopOpeBRepDS_ListOfInterference {
+	~TopOpeBRepDS_ListOfInterference() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_ListOfInterference\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_Surface;
 class TopOpeBRepDS_Surface {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_Surface();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Surface();
 		%feature("autodoc", "1");
@@ -2351,6 +2356,11 @@ class TopOpeBRepDS_Surface {
 		%feature("autodoc", "1");
 		void ChangeKeep(const Standard_Boolean B);
 
+};
+%extend TopOpeBRepDS_Surface {
+	~TopOpeBRepDS_Surface() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_Surface\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_PointExplorer;
@@ -2563,8 +2573,6 @@ class TopOpeBRepDS_DataMapNodeOfMapOfCurve : public TCollection_MapNode {
 class TopOpeBRepDS_DataStructure {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataStructure();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_DataStructure();
 		%feature("autodoc", "1");
 		void Init();
@@ -2760,6 +2768,11 @@ class TopOpeBRepDS_DataStructure {
 		TopTools_IndexedMapOfShape & ChangeMapOfRejectedShapesTool();
 
 };
+%extend TopOpeBRepDS_DataStructure {
+	~TopOpeBRepDS_DataStructure() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataStructure\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfMapOfCurve;
 class TopOpeBRepDS_DataMapIteratorOfMapOfCurve : public TCollection_BasicMapIterator {
@@ -2783,8 +2796,6 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfCurve : public TCollection_BasicMapIter
 class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference(const TopOpeBRepDS_DataMapOfInterferenceListOfInterference &aMap);
@@ -2795,6 +2806,11 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference : pu
 		%feature("autodoc", "1");
 		const TopOpeBRepDS_ListOfInterference & Value() const;
 
+};
+%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference {
+	~TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData;
@@ -2927,8 +2943,6 @@ class TopOpeBRepDS_ShapeWithState {
 class TopOpeBRepDS_Curve {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_Curve();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_Curve();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Curve(const Handle_Geom_Curve &P, const Standard_Real T, const Standard_Boolean IsWalk=0);
@@ -2995,6 +3009,11 @@ class TopOpeBRepDS_Curve {
 		%feature("autodoc", "1");
 		Standard_OStream & Dump(Standard_OStream & OS, const Standard_Integer index, const Standard_Boolean compact=1) const;
 
+};
+%extend TopOpeBRepDS_Curve {
+	~TopOpeBRepDS_Curve() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_Curve\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference;
@@ -3531,8 +3550,6 @@ class TopOpeBRepDS_DataMapOfIntegerListOfInterference : public TCollection_Basic
 class TopOpeBRepDS_DataMapIteratorOfShapeSurface : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfShapeSurface();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfShapeSurface();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfShapeSurface(const TopOpeBRepDS_ShapeSurface &aMap);
@@ -3543,4 +3560,9 @@ class TopOpeBRepDS_DataMapIteratorOfShapeSurface : public TCollection_BasicMapIt
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Value() const;
 
+};
+%extend TopOpeBRepDS_DataMapIteratorOfShapeSurface {
+	~TopOpeBRepDS_DataMapIteratorOfShapeSurface() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfShapeSurface\n");
+	}
 };
