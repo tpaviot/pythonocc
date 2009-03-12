@@ -24,6 +24,7 @@ import sys
 import commands
 import SCons
 import platform
+from Modules import MODULES
 
 ##########################################################################################
 ########## PROXY TO NEWER SCONS (DOWNLOADED IF NEEDED) ###################################
@@ -59,9 +60,12 @@ if sconsVersion<9806.0 and not os.environ.has_key('NO_SCONS_GET_RECENT'):
 # Create environment
 #
 env = Environment()
-BUILD_DIR = os.path.join(os.getcwd(),'..','build','OCC')
+BUILD_ROOT = os.path.join(os.getcwd(),'..','build')
+BUILD_DIR = os.path.join(BUILD_ROOT,'OCC')
+if not os.path.isdir(BUILD_ROOT):
+        os.mkdir(BUILD_ROOT)
 if not os.path.isdir(BUILD_DIR):
-        os.mkdir(BUILD_DIR)
+        os.mkdir(BUILD_DIR)        
 BuildDir(BUILD_DIR,'.',duplicate = 0)
 #
 # First define platform specific settings
@@ -79,7 +83,7 @@ except KeyError:
     print "OpenCascade CAS_ROOT environment variable not set."
     OCC_ROOT = None
 
-if sys.platform()=='win32':
+if sys.platform=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_win32')
     # Try to find OCC paths from environment analysis
     if OCC_ROOT!=None:
@@ -143,7 +147,7 @@ if env['PLATFORM']=='win32':
 #)
 #opts.Update(env)
 
-print 'Build pythonOCC %s for platform: %s'%(VERSION,platform.platform())
+print 'Build pythonOCC-%s for platform: %s'%(VERSION,platform.platform())
 
 env.Append(CXXFLAGS=ECA)
 env.Append(CPPDEFINES=DEFINE_MACROS)	
@@ -300,7 +304,6 @@ Create__init__()
 #
 # First generate the SWIG .i files if they're not in the SWIG_* path
 #
-from Modules import MODULES
 for module in MODULES:
 	module_name = module[0]
 	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
