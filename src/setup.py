@@ -255,14 +255,14 @@ extension.append(Extension("OCC._Misc",
 install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
 data = (install_dir,\
         [os.path.join(os.getcwd(),'AUTHORS'),
-         os.path.join(os.getcwd(),'Licence_CeCILL_V2-en.txt')])
+         os.path.join(os.getcwd(),'..','gpl.txt')])
     
 KARGS = {"ext_modules":extension}
 #
 # SETUP
 #
 setup(name = "pythonOCC",
-      license = "CeCILL",
+      license = "GPL V3",
       url = "http://www.pythonocc.org",
       author = "Thomas Paviot",
       author_email = "thomas.paviot@free.fr",
