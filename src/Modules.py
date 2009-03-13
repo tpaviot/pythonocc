@@ -56,7 +56,7 @@ MODULES = [
            ('IFGraph',['TCollection','MoniTool'],[]),
            ('Transfer',['MoniTool','IFSelect'],[],{'Transfer_Finder':['GetStringAttribute']}),
            ('XSAlgo',['Standard'],['XSAlgo_AlgoContainer']),
-           ('XSControl',['TopoDS','TCollection','Interface','MoniTool','IFSelect'],['XSControl_Vars']),
+           ('XSControl',['MoniTool','TCollection'],['XSControl_Vars']),
 ############################################
 ############# Stl ##########################
 ############################################
