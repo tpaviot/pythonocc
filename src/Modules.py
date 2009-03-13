@@ -208,8 +208,8 @@ MODULES = [
 ########################
 ##### IGES #############
 ########################
-           ('IGESToBRep',['IGESData','Interface','MoniTool','TCollection'],['IGESToBRep_AlgoContainer'],{'IGESToBRep_TopoSurface':['TransferPlaneSurface']}),
-           ('IGESControl',['IFSelect','IGESData','Interface','MoniTool','TCollection'],[]),
+           ('IGESToBRep',['MoniTool','TCollection','Handle_Interface'],['IGESToBRep_AlgoContainer'],{'IGESToBRep_TopoSurface':['TransferPlaneSurface']}),
+           ('IGESControl',['MoniTool','TCollection','Handle_Interface'],[]),
 ########################
 ##### STEP #############
 ########################           
