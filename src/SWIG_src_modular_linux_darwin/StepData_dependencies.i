@@ -22,11 +22,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <MMgt_TShared.hxx>
 #include <MMgt_StackManager.hxx>
 #include <Handle_MMgt_TShared.hxx>
-#include <Handle_TCollection_HAsciiString.hxx>
-#include <Handle_TCollection_AVLBaseNode.hxx>
-#include <Handle_TCollection_HExtendedString.hxx>
-#include <Handle_TCollection_SeqNode.hxx>
-#include <Handle_TCollection_MapNode.hxx>
 #include <Interface_GTool.hxx>
 #include <Interface_Protocol.hxx>
 #include <Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
@@ -45,6 +40,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Interface_TypedValue.hxx>
 #include <Interface_Statics.hxx>
 #include <Interface_EntityCluster.hxx>
+#include <Interface_STAT.hxx>
 #include <Interface_StaticSatisfies.hxx>
 #include <Interface_InterfaceMismatch.hxx>
 #include <Interface_DataMapIteratorOfDataMapOfIntegerTransient.hxx>
@@ -87,10 +83,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Interface_IntVal.hxx>
 #include <Interface_ParamSet.hxx>
 #include <Interface_HArray1OfHAsciiString.hxx>
+#include <Interface_CheckTool.hxx>
 #include <Interface_ValueInterpret.hxx>
 #include <Interface_ParamType.hxx>
 #include <Interface_CopyTool.hxx>
 #include <Interface_VectorOfFileParameter.hxx>
+#include <Interface_CheckIterator.hxx>
 #include <Interface_CopyControl.hxx>
 #include <Interface_ReportEntity.hxx>
 #include <Interface_GeneralLib.hxx>
@@ -236,6 +234,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import MMgt.i
-%import TCollection.i
 %import Interface.i
 %import Standard.i
