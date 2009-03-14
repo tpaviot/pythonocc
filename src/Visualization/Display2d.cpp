@@ -37,6 +37,7 @@ void Display2d::Init(int window_handle)
 	gd = new WNT_GraphicDevice();
 	printf("WNT Graphic device created.\n");
 	myWindow = new WNT_Window( gd ,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo));
+	myWindow->SetFlags(WDF_NOERASEBKGRND);
 	printf("WNT window created.\n");
 	myDriver = new WNT_WDriver(myWindow);
 	printf("Driver created.\n");
@@ -50,7 +51,6 @@ void Display2d::Init(int window_handle)
 	// Create WNT_Window
 	if (!myWindow->IsMapped())
 		myWindow->Map();
-	myWindow->SetFlags(WDF_NOERASEBKGRND);
     myV2dViewer = new V2d_Viewer( gd , (short* const)"" );
     printf("V2d_Viewer created.\n");
 	myAIS2DContext = new AIS2D_InteractiveContext(myV2dViewer);
