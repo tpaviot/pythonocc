@@ -26,6 +26,7 @@
 #include <Graphic3d_WNTGraphicDevice.hxx>
 #include <WNT_GraphicDevice.hxx>
 #else
+#include <cstdlib>
 #include <Xw_Window.hxx>
 #include <Xw_Driver.hxx>
 #include <Graphic3d_GraphicDevice.hxx>
