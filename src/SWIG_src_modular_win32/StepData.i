@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module StepData
@@ -1484,8 +1484,6 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 		Standard_Boolean ReadLogical(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, StepData_Logical & flag) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReadString(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Handle_TCollection_HAsciiString & val) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEnumParam(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, char * & text) const;
 		%feature("autodoc", "1");
 		void FailEnumValue(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");

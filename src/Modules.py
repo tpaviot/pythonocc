@@ -205,11 +205,7 @@ MODULES = [
            ('GeomTools',['Handle_TCollection'],[]),
            ('GeomToStep',[],[]),
            ('GProp',[],[]),
-########################
-##### IGES #############
-########################
-           ('IGESToBRep',['MoniTool','TCollection','Handle_Interface'],['IGESToBRep_AlgoContainer'],{'IGESToBRep_TopoSurface':['TransferPlaneSurface']}),
-           ('IGESControl',['MoniTool','TCollection','Handle_Interface'],[]),
+
 ########################
 ##### STEP #############
 ########################           
@@ -421,6 +417,64 @@ MODULES = [
             ('PXCAFDoc',['DBC'],[]),
             #('MS',[],[]), GCCXMLERROR
             ('XmlObjMgt',['TCollection'],[],{'XmlObjMgt':['GetInteger']}),
+########################
+##### IGES #############
+########################
+            ('IGESToBRep',['MoniTool','TCollection','Handle_Interface'],['IGESToBRep_AlgoContainer'],{'IGESToBRep_TopoSurface':['TransferPlaneSurface']}),
+            ('IGESControl',['MoniTool','TCollection','Handle_Interface'],[]),
+            ('IGESData',['MoniTool','TCollection'],['IGESData_Protocol'],{'IGESData_IGESReaderData':['DirValues']}),
+            ('IGESBasic',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent'],['IGESBasic_Protocol']),
+            ('IGESDefs',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent'],['IGESDefs_Protocol']),
+            ('IGESAppli',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent'],['IGESAppli_Protocol']),
+            ('IGESDimen',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent'],['IGESDimen_Protocol']),
+            ('IGESGeom',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent'],['IGESGeom_Protocol']),
+            ('IGESGraph',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent'],['IGESGraph_Protocol']),
+            ('IGESSelect',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent'],['IGESSelect_Protocol'],{'IGESSelect_SelectBasicGeom':['CurvesOnly']}),
+            ('IGESSolid',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent'],['IGESSolid_Protocol']),
+            ('IGESCAFControl',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent'],[]),
+            ##('IGESDraw',[],[]), DON'T WORK
+            ('IGESConvGeom',[],[]),
+            ('IGESFile',[],[]),
+########################################
+############## STEP ####################
+########################################
+            ('StepData',['MoniTool','TCollection'],['StepData_Protocol'],{'StepData_FreeFormEntity':['StepData_FreeFormEntity'],\
+'StepData_UndefinedEntity':['Super'],'StepData_StepReaderData':['ReadEnumParam']}),#,'StepData_UndefinedEntity']),
+            ('StepBasic',['MoniTool','TCollection','Handle_Interface'],[]),
+            ('StepDimTol',['MoniTool','TCollection','Handle_Interface','StepBasic'],[]),
+            ('STEPEdit',['MoniTool','TCollection','Handle_Interface'],[]),
+            ('StepFEA',['MoniTool','TCollection','Handle_Interface','Interface_SequenceOfCheck'],['StepFEA_SymmetricTensor43d']),
+            ('StepFile',['MoniTool','TCollection','Handle_Interface'],[]),
+            ('STEPSelections',['MoniTool','TCollection','Handle_Interface','Interface_SequenceOfCheck'],[],\
+                {'STEPSelections_Counter':['POP','POP2']}),
+            ('StepSelect',['MoniTool','TCollection','Handle_Interface'],[]),
+            ('StepToGeom',['MoniTool','TCollection','Handle_Interface'],[]),
+            ('StepToTopoDS',['MoniTool','TCollection','Handle_Interface'],['StepToTopoDS_Builder']),
+            ('StepElement',['MoniTool','TCollection','Handle_Interface','Interface_SequenceOfCheck'],[]), 
+            ('STEPCAFControl',['MoniTool','TCollection','Handle_Interface',\
+                               'Transfer','XSControl','Interface_Data','Interface_Map',\
+                               'Interface_Indexed'],[]),
+            ('StepRepr',['MoniTool','TCollection','Handle_Interface','Interface_SequenceOfCheck'],[]),
+            ('StepShape',['MoniTool','TCollection','Handle_Interface','StepBasic'],[]),
+            ('StepGeom',['MoniTool','TCollection','Handle_Interface','StepBasic'],[]),
+            ('StepAP203',['MoniTool','TCollection','Handle_Interface','StepBasic'],[]),
+            ##('StepAP209',['XSControl','TCollection','MoniTool','Interface','StepBasic'],[]),# GCCXML ERROR
+            ('StepVisual',['MoniTool','TCollection','Handle_Interface','StepBasic'],[]),
+            ('StepAP214',['MoniTool','TCollection','Handle_Interface','StepBasic','StepGeom','StepRepr'],['StepAP214_Protocol']),
+            ('RWHeaderSection',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepAP203',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepAP214',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepBasic',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepDimTol',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepElement',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepFEA',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepGeom',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepRepr',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepShape',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('RWStepVisual',['MoniTool','TCollection','Handle_Interface','Interface_GraphContent','StepBasic'],[]),
+            ('APIHeaderSection',['MoniTool','TCollection','Handle_Interface'],[]),
+            ('TransferBRep',['MoniTool','TCollection','Handle_Interface','Interface_SequenceOfCheck'],['TransferBRep_ShapeMapper'],\
+                {'TransferBRep':['BRepCheck']}),
            ]
 #####################################
 # Visualization part is OS specific #
@@ -446,58 +500,7 @@ if sys.platform=='win32':
              #('WNT',[],[]), gccxml error
              ])
     MODULES.extend([
-                ###########################################
-                ############## IGES #######################
-                ###########################################
-               ('IGESBasic',['MoniTool','Interface','IGESData','TCollection'],['IGESBasic_Protocol']),
-               ('IGESDefs',['Interface','MoniTool','IGESData','TCollection'],['IGESDefs_Protocol']),
-               ('IGESAppli',['IGESData','Interface','MoniTool','TCollection'],['IGESAppli_Protocol']),
-               ('IGESDimen',['IGESData','Interface','MoniTool','TCollection'],['IGESDimen_Protocol']),
-               ('IGESGeom',['IGESData','Interface','MoniTool','TCollection'],['IGESGeom_Protocol']),
-               ('IGESGraph',['IGESData','Interface','MoniTool','TCollection'],['IGESGraph_Protocol']),
-               ('IGESSelect',['IGESData','Interface','MoniTool','TCollection','IFSelect'],['IGESSelect_Protocol'],{'IGESSelect_SelectBasicGeom':['CurvesOnly']}),
-               ('IGESSolid',['IGESData','Interface','MoniTool','TCollection'],['IGESSolid_Protocol']),
-               ('IGESData',['IGESData','Interface','MoniTool','TCollection'],['IGESData_Protocol']),
-               ('IGESCAFControl',['IGESData','Interface','MoniTool','TCollection'],[]),
-               ##('IGESDraw',[],[]), DON'T WORK
-               ('IGESConvGeom',[],[]),
-               ('IGESFile',[],[]),
                ('XDEDRAW',[],[]),
-               ########################################
-               ############## STEP ####################
-               ########################################
-               ('StepData',['Interface','MoniTool','TCollection','IGESGraph','IGESGeom'],['StepData_Protocol'],{'StepData_FreeFormEntity':['StepData_FreeFormEntity'],'StepData_UndefinedEntity':['Super']}),#,'StepData_UndefinedEntity']),
-               ('StepBasic',['Interface','MoniTool','TCollection'],[]),
-               #('StepConstruct',[],[]), #GCCXML ERROR
-               ('StepDimTol',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('STEPEdit',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('StepFEA',['MoniTool','Interface','StepBasic','TCollection'],['StepFEA_SymmetricTensor43d']),
-               ('StepFile',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('STEPSelections',['MoniTool','Interface','StepBasic','TCollection'],[],\
-                {'STEPSelections_Counter':['POP','POP2']}),
-               ('StepSelect',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('StepToGeom',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('StepToTopoDS',['MoniTool','Interface','StepBasic','TCollection'],['StepToTopoDS_Builder']),
-               ('StepElement',['StepBasic','Interface','MoniTool','TCollection'],[]), 
-               ('STEPCAFControl',['IFSelect','XSControl','Transfer','IGESData','Interface','MoniTool','TCollection'],[]),
-               ('StepRepr',['Interface','MoniTool'],[]),
-               ('StepShape',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('StepGeom',['StepShape','StepBasic','Interface','MoniTool','TCollection'],[]),
-               ('StepAP203',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               #('StepAP209',['XSControl','TCollection','MoniTool','Interface','StepBasic'],[]),# GCCXML ERROR
-               ('StepVisual',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('StepAP214',['StepGeom','StepRepr','MoniTool','Interface','StepBasic','TCollection'],['StepAP214_Protocol']),
-               ('RWHeaderSection',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepAP203',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepAP214',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepBasic',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepDimTol',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepElement',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepFEA',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepGeom',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepRepr',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepShape',['MoniTool','Interface','StepBasic','TCollection'],[]),
-               ('RWStepVisual',['MoniTool','Interface','StepBasic','TCollection'],[]),
                ('TopOpeBRepBuild',['TopOpeBRepDS'],[],{'TopOpeBRepBuild_Builder1':['GFillSplitsPVS']}),
                ('LocOpe',['TopOpeBRepDS','TopOpeBRepTool'],['LocOpe_Revol','LocOpe_RevolutionForm']),
                ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
@@ -505,12 +508,7 @@ if sys.platform=='win32':
                ('TPrsStd',['Aspect',],[]),
                ('EDL',[],[]),
                ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
-               ('APIHeaderSection',['Interface','MoniTool','TCollection'],[]),
-               
-             
                ('DNaming',[],[]),
-               ('TransferBRep',['MoniTool','Interface'],['TransferBRep_ShapeMapper'],\
-                {'TransferBRep':['BRepCheck']}),
                ])
 else:
     MODULES.extend([

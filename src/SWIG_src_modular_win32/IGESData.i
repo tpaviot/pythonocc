@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module IGESData
@@ -2308,8 +2308,6 @@ class IGESData_IGESReaderData : public Interface_FileReaderData {
 		void SetDirPart(const Standard_Integer num, const Standard_Integer i1, const Standard_Integer i2, const Standard_Integer i3, const Standard_Integer i4, const Standard_Integer i5, const Standard_Integer i6, const Standard_Integer i7, const Standard_Integer i8, const Standard_Integer i9, const Standard_Integer i10, const Standard_Integer i11, const Standard_Integer i12, const Standard_Integer i13, const Standard_Integer i14, const Standard_Integer i15, const Standard_Integer i16, const Standard_Integer i17, const char * res1, const char * res2, const char * label, const char * subs);
 		%feature("autodoc", "1");
 		const IGESData_DirPart & DirPart(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void DirValues(const Standard_Integer num, Standard_Integer & i1, Standard_Integer & i2, Standard_Integer & i3, Standard_Integer & i4, Standard_Integer & i5, Standard_Integer & i6, Standard_Integer & i7, Standard_Integer & i8, Standard_Integer & i9, Standard_Integer & i10, Standard_Integer & i11, Standard_Integer & i12, Standard_Integer & i13, Standard_Integer & i14, Standard_Integer & i15, Standard_Integer & i16, Standard_Integer & i17, char * & res1, char * & res2, char * & label, char * & subs) const;
 		%feature("autodoc", "1");
 		IGESData_IGESType DirType(const Standard_Integer num) const;
 		%feature("autodoc", "1");
