@@ -146,25 +146,25 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         self.Context.SetDisplayMode(OCC.AIS.AIS_ExactHLR)
     
     def View_Top(self):
-        self.View.SetProj(OCC._Zpos) 
+        self.View.SetProj(OCC.V3d.V3d_Zpos) 
 
     def View_Bottom(self):
-        self.View.SetProj(OCC._Zneg)
+        self.View.SetProj(OCC.V3d.V3d_Zneg)
         
     def View_Left(self):
-        self.View.SetProj(OCC._Xneg)
+        self.View.SetProj(OCC.V3d.V3d_Xneg)
 
     def View_Right(self):
-        self.View.SetProj(OCC._Xpos)
+        self.View.SetProj(OCC.V3d.V3d_Xpos)
 
     def View_Front(self):
-        self.View.SetProj(OCC._Yneg)
+        self.View.SetProj(OCC.V3d.V3d_Yneg)
 
     def View_Rear(self):
-        self.View.SetProj(OCC._Ypos)
+        self.View.SetProj(OCC.V3d.V3d_Ypos)
 
     def View_Iso(self):
-        self.View.SetProj(OCC._XposYnegZpos)
+        self.View.SetProj(OCC.V3d.V3d_XposYnegZpos)
         
     def ExportToImage(self,Filename):
         self.View.Dump(Filename)
