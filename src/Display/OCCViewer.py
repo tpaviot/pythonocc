@@ -24,6 +24,8 @@ import OCC.V3d
 import OCC.V2d
 import OCC.AIS
 import OCC.AIS2D
+import OCC.Quantity
+
 try:
     import OCC.NIS
     HAVE_NIS = False
@@ -177,7 +179,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
     def DisplayShape(self,shape,material=None,texture=None):
         if material:#careful: != operator segfaults
-            self.View.SetSurfaceDetail(OCC._TEX_ALL)
+            self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
             shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
             shape_to_display.SetMaterial(material)
             if texture:
@@ -193,7 +195,17 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         self._objects_displayed.append(shape_to_display)
         self.Context.Display(shape_to_display.GetHandle())
         self.FitAll()
-    
+
+    def DisplayColoredShape(self,shape,color):
+        dict_color = {'WHITE':OCC.Quantity.Quantity_NOC_WHITE,\
+                      'BLUE':OCC.Quantity.Quantity_NOC_BLUE1,\
+                      'RED':OCC.Quantity.Quantity_NOC_RED,\
+                      'GREEN':OCC.Quantity.Quantity_NOC_GREEN}
+        shape_to_display = OCC.AIS.AIS_Shape(shape)
+        self.Context.SetColor(shape_to_display.GetHandle(),dict_color[color],0)
+        self.Context.Display(shape_to_display.GetHandle())
+        self.FitAll()
+        
     def DisplayTriedron(self):
         self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_WHITE, 0.08,  OCC.V3d.V3d_WIREFRAME)
         self.Repaint()
