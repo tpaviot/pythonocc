@@ -132,7 +132,7 @@ class GraphicsCanva3D(wx.Panel):
             self._3dDisplay.Repaint()
             
     def ZoomAll(self):
-        self._3dDisplay.Zoom_FitAll()
+        self._3dDisplay.FitAll()#Zoom_FitAll()
 
     def Repaint(self, evt):
        if self._inited:
@@ -270,6 +270,7 @@ class GraphicsCanva3D(wx.Panel):
         self._3dDisplay.ExportToImage(filename)
 
 if __name__=="__main__":
+    from OCC.BRepPrimAPI import *
     class AppFrame(wx.Frame):
         def __init__(self, parent):
             wx.Frame.__init__(self, parent, -1, "wxDisplay3d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
