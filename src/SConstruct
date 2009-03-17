@@ -97,7 +97,7 @@ if sys.platform=='win32':
     ELA = []
     EXTRA_LIBS = []    
 elif sys.platform=='linux2':
-    architecture = platform.uname()[5] #returns i386, i686 etc.
+    architecture = platform.machine() #returns i386, i686 etc.
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     OCC_INC = '/usr/local/inc' # Ubuntu 8.04 Hardy default installation path for headers
     CONFIG_H_PATH = '/usr/local/inc'
@@ -113,7 +113,7 @@ elif sys.platform=='linux2':
     EXTRA_LIBS = ['m','stc++',lib_python]
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
-    architecture = platform.uname()[5]
+    architecture = platform.machine()
     OCC_INC = '/usr/local/inc'
     OCC_LIB = '/usr/local/lib'
     GCC_XML_PATH = '/usr/bin' 
@@ -218,6 +218,8 @@ if not conf.CheckCXXHeader('stdexcept','<>'):
 if env['PLATFORM']=='posix':
 	if not conf.CheckCXXHeader('X11/XWDFile.h','<>'):
 		Exit(1)
+	if not conf.CheckCXXHeader('cstdlib','<>'):
+		Exit(1)
 #
 # Check available OpenCascade libs on dest machine
 # The ALL_ACC_LIBRARIES list is generated from the Windows distribution
@@ -283,6 +285,9 @@ def Create__init__():
     init_fp.write("os.environ['MMGT_OPT']='1'\n")
     init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
     init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
+    # Display stuff
+    init_fp.write("os.environ['DISPLAY']=':0.0'\n")
+    init_fp.write("os.environ['CSF_GraphicShr']='/usr/local/lib/libTKOpenGL.so\n")
     #
     # Include Version number
     #
@@ -311,10 +316,7 @@ for module in MODULES:
 #
 # SWIGing .i files
 #
-swig_flags = ''
-for opt in SWIG_OPTS:
-	swig_flags += ' '+opt 
-env['SWIGFLAGS'] = [SWIG_OPTS]#swig_flags
+env['SWIGFLAGS'] = [SWIG_OPTS]
 env['SWIGPATH']  = [OCC_INC]
 env['LIBS']=AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
 #
