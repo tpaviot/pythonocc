@@ -155,7 +155,9 @@ env.Append(LINKFLAGS=ELA)
 #
 PYTHON_INC = sysconfig.get_python_inc()
 PYTHON_LIB = sysconfig.get_python_lib()
-env.Append( CPPPATH= [PYTHON_INC,OCC_INC])
+VISUALIZATNION_PATH = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,'Visualization')
+MISC_PATH = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,'Misc')
+env.Append( CPPPATH= [PYTHON_INC,OCC_INC, VISUALIZATION_PATH, MISC_PATH])
 env.Append( LIBPATH = [OCC_LIB] )
 env.Append( LIBPATH = PYTHON_LIB)
 if env['PLATFORM']!='win32':
@@ -287,7 +289,7 @@ def Create__init__():
     init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
     # Display stuff
     init_fp.write("os.environ['DISPLAY']=':0.0'\n")
-    init_fp.write("os.environ['CSF_GraphicShr']='/usr/local/lib/libTKOpenGL.so\n")
+    init_fp.write("os.environ['CSF_GraphicShr']='/usr/local/lib/libTKOpenGL.so'\n")
     #
     # Include Version number
     #
@@ -327,3 +329,14 @@ for module in MODULES:
 	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
 	SHARED_Library_pathname = os.path.join(BUILD_DIR,'%s'%module_name)
 	env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+# Build Visualization
+SWIG_source_file = os.path.join(VISUALIZATION_PATH,'Visualization.i')
+CC1 = os.path.join(VISUALIZATION_PATH,'Display2d.cpp')
+CC2 = os.path.join(VISUALIZATION_PATH,'Display3d.cpp')
+CC3 = os.path.join(VISUALIZATION_PATH,'NISDisplay3d.cpp')
+SHARED_Library_pathname = os.path.join(BUILD_DIR,'Visualization')
+env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file, CC1, CC2, CC3],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+# Build Misc
+SWIG_source_file = os.path.join(MISC_PATH,'Misc.i')
+SHARED_Library_pathname = os.path.join(BUILD_DIR,'Misc')
+env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
