@@ -176,7 +176,24 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_STRETCH, True)
         else:
             self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_NONE, True )
+            
+    def DisplayMessage(self,point,text_to_write):
+        """
+        point: a gp_Pnt instance
+        text_to_write: a string
+        """
+        import OCC.BRepBuilderAPI
+        import OCC.Prs3d
+        import OCC.Graphic3d
+        V1 = OCC.BRepBuilderAPI.BRepBuilderAPI_MakeVertex(point)
+        aisShape = OCC.AIS.AIS_Shape(V1.Vertex())
+        aDrawer = aisShape.Attributes()
+        aPresentation = OCC.Prs3d.Prs3d_Presentation(self.Viewer_handle)
+        Prs3d_Text().Draw(aPresentation,aDrawer,"Test", point)
+        aPresentation.Display()
+        self.Context.Display(anAIS.GetHandle())
 
+        
     def DisplayShape(self,shape,material=None,texture=None):
         if material:#careful: != operator segfaults
             self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
