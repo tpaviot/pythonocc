@@ -155,7 +155,7 @@ env.Append(LINKFLAGS=ELA)
 #
 PYTHON_INC = sysconfig.get_python_inc()
 PYTHON_LIB = sysconfig.get_python_lib()
-VISUALIZATNION_PATH = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,'Visualization')
+VISUALIZATION_PATH = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,'Misc')
 env.Append( CPPPATH= [PYTHON_INC,OCC_INC, VISUALIZATION_PATH, MISC_PATH])
 env.Append( LIBPATH = [OCC_LIB] )
