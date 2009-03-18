@@ -22,6 +22,24 @@
 #include <Visualization.h>
 %}
 
+class Display2d {
+ public:
+	%feature("autodoc", "1");
+	Display2d();
+	%feature("autodoc", "1");
+	~Display2d();
+	%feature("autodoc", "1");
+	void Init(const int handle);
+	%feature("autodoc", "1");
+	Handle_V2d_View& GetView();
+	%feature("autodoc", "1");
+	Handle_V2d_Viewer& GetViewer();
+	%feature("autodoc", "1");
+	Handle_AIS2D_InteractiveContext GetContext();
+	%feature("autodoc", "1");
+	void Test();
+};
+
 class Display3d {
  public:
 	%feature("autodoc", "1");
@@ -40,6 +58,7 @@ class Display3d {
 	void Test();
 };
 
+#ifdef WNT
 class NISDisplay3d {
  public:
 	%feature("autodoc", "1");
@@ -57,21 +76,5 @@ class NISDisplay3d {
 	%feature("autodoc", "1");
 	void Test();
 };
+#endif
 
-class Display2d {
- public:
-	%feature("autodoc", "1");
-	Display2d();
-	%feature("autodoc", "1");
-	~Display2d();
-	%feature("autodoc", "1");
-	void Init(const int handle);
-	%feature("autodoc", "1");
-	Handle_V2d_View& GetView();
-	%feature("autodoc", "1");
-	Handle_V2d_Viewer& GetViewer();
-	%feature("autodoc", "1");
-	Handle_AIS2D_InteractiveContext GetContext();
-	%feature("autodoc", "1");
-	void Test();
-};

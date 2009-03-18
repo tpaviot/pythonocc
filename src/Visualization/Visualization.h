@@ -126,7 +126,6 @@ protected:
    Handle_Graphic3d_GraphicDevice gd;
    Handle_Xw_Driver myDriver;
    #endif
-   TopoDS_Shape mySelectedShape;
 };
 
 #endif

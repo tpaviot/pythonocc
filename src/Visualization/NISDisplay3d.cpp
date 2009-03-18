@@ -19,6 +19,8 @@
 
 #include "Visualization.h"
 
+#ifdef WNT
+
 #define ZVIEW_SIZE 100
 
 NISDisplay3d::NISDisplay3d()
@@ -79,3 +81,4 @@ void NISDisplay3d::Test()
       //myV3dView->ZFitAll();
       //myV3dView->FitAll();
 }
+#endif

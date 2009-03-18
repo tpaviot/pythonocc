@@ -48,7 +48,6 @@ void Display2d::Init(int window_handle)
 	printf("Xw_Window created.\n");
 	myDriver = new Xw_Driver(myWindow);
 	#endif
-	// Create WNT_Window
 	if (!myWindow->IsMapped())
 		myWindow->Map();
     myV2dViewer = new V2d_Viewer( gd , (short* const)"" );
