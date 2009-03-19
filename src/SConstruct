@@ -102,7 +102,6 @@ if not os.path.isdir(BUILD_DIR):
 OCC_INCLUDE_PATH = ARGUMENTS.get('OCC_INCLUDE_PATH', '')
 OCC_LIBRARY_PATH = ARGUMENTS.get('OCC_LIBRARY_PATH', '')
 OCC_CONFIG_H_PATH = ARGUMENTS.get('OCC_CONFIG_H_PATH', '')
-print OCC_INCLUDE_PATH, OCC_LIBRARY_PATH, OCC_CONFIG_H_PATH
 BuildDir(BUILD_DIR,'.',duplicate = 0)
 #
 # First define platform specific settings
@@ -151,6 +150,7 @@ elif sys.platform=='linux2':
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     architecture = platform.machine()
+    CONFIG_H_PATH = '/usr/local/inc'
     OCC_INC = '/usr/local/inc'
     OCC_LIB = '/usr/local/lib'
     GCC_XML_PATH = '/usr/bin' 
@@ -164,6 +164,15 @@ elif sys.platform=='darwin':
     EXTRA_LIBS = ['m','stc++',lib_python]
 else:
     raise "Unsupported platform"
+#
+# Overwrite default values with users
+#
+if OCC_INCLUDE_PATH != '':
+	OCC_INC = OCC_INCLUDE_PATH
+if OCC_LIBRARY_PATH != '':
+	OCC_LIB = OCC_LIBRARY_PATH
+if OCC_CONFIG_H_PATH != '':
+	CONFIG_H_PATH = OCC_CONFIG_H_PATH
 #
 # Set Win32 paths
 #
@@ -409,6 +418,33 @@ if INSTALL:
 		TARGET_SO_FILENAME = os.path.join(INSTALL_DIR,SO_BASE_FILENAME)
 		shutil.copyfile(SOURCE_SO_FILENAME,TARGET_SO_FILENAME)
 		print "Copying %s->%s"%(SOURCE_SO_FILENAME, TARGET_SO_FILENAME)
+	# Copy _Visualization.so
+	SO_BASE_FILENAME = ''.join(['_','Visualization',sysconfig.get_config_vars()['SO']])
+	SOURCE_SO_FILENAME = os.path.join(BUILD_DIR,SO_BASE_FILENAME)
+	TARGET_SO_FILENAME = os.path.join(INSTALL_DIR,SO_BASE_FILENAME)
+	shutil.copyfile(SOURCE_SO_FILENAME,TARGET_SO_FILENAME)
+	print "Copying %s->%s"%(SOURCE_SO_FILENAME, TARGET_SO_FILENAME)
+	# Copy _Misc.so
+	SO_BASE_FILENAME = ''.join(['_','Misc',sysconfig.get_config_vars()['SO']])
+	SOURCE_SO_FILENAME = os.path.join(BUILD_DIR,SO_BASE_FILENAME)
+	TARGET_SO_FILENAME = os.path.join(INSTALL_DIR,SO_BASE_FILENAME)
+	shutil.copyfile(SOURCE_SO_FILENAME,TARGET_SO_FILENAME)
+	print "Copying %s->%s"%(SOURCE_SO_FILENAME, TARGET_SO_FILENAME)
+	# Copy Visualization.py
+	SOURCE_FILENAME = os.path.join(VISUALIZATION_PATH,'Visualization.py')
+	TARGET_FILENAME = os.path.join(INSTALL_DIR,'Visualization.py')
+	shutil.copyfile(SOURCE_FILENAME,TARGET_FILENAME)
+	print "Copying %s->%s"%(SOURCE_FILENAME, TARGET_FILENAME)
+	# Copy Visualization.py
+	SOURCE_FILENAME = os.path.join(VISUALIZATION_PATH,'Visualization.py')
+	TARGET_FILENAME = os.path.join(INSTALL_DIR,'Visualization.py')
+	shutil.copyfile(SOURCE_FILENAME,TARGET_FILENAME)
+	print "Copying %s->%s"%(SOURCE_FILENAME, TARGET_FILENAME)
+	# Copy Misc.py
+	SOURCE_FILENAME = os.path.join(MISC_PATH,'Misc.py')
+	TARGET_FILENAME = os.path.join(INSTALL_DIR,'Misc.py')
+	shutil.copyfile(SOURCE_FILENAME,TARGET_FILENAME)
+	print "Copying %s->%s"%(SOURCE_FILENAME, TARGET_FILENAME)
 	# Copy __init__.py file
 	INIT_BASE_FILENAME = '__init__.py'
 	SOURCE_INIT_FILENAME = os.path.join(BUILD_DIR,INIT_BASE_FILENAME)
