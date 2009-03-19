@@ -315,10 +315,6 @@ Create__init__()
 #### pythonOCC build #########
 ##############################
 #
-# Display progress (useful if the library is up-to-date
-#
-Progress('Evaluating $TARGET\n')
-#
 # First generate the SWIG .i files if they're not in the SWIG_* path
 #
 for module in MODULES:
@@ -334,33 +330,59 @@ env['SWIGFLAGS'] = [SWIG_OPTS]
 env['SWIGPATH']  = [OCC_INC]
 env['LIBS']=AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
 #
+# First detect mode 'build' or 'install'
+#
+if ARGUMENTS.get('mode')=='install':
+	INSTALL = True
+else:
+	INSTALL = False
+if ARGUMENTS.get('mode')=='build':
+	BUILD = True
+else:
+	BUILD = False
+print INSTALL
+print BUILD
+Exit()
+
+#
 # Build shared libraries
 #
-SHARED_LIBRARIES = []
-for module in MODULES:
-	module_name = module[0]
-	print 'Processing %s'%module_name
-	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
-	SHARED_Library_pathname = os.path.join(BUILD_DIR,'%s'%module_name)
-	sl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
-	SHARED_LIBRARIES.append(sl)
-# Build Visualization
-SWIG_source_file = os.path.join(VISUALIZATION_PATH,'Visualization.i')
-CC1 = os.path.join(VISUALIZATION_PATH,'Display2d.cpp')
-CC2 = os.path.join(VISUALIZATION_PATH,'Display3d.cpp')
-CC3 = os.path.join(VISUALIZATION_PATH,'NISDisplay3d.cpp')
-SHARED_Library_pathname = os.path.join(BUILD_DIR,'Visualization')
-vsl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file, CC1, CC2, CC3],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
-SHARED_LIBRARIES.append(vsl)
-# Build Misc
-SWIG_source_file = os.path.join(MISC_PATH,'Misc.i')
-SHARED_Library_pathname = os.path.join(BUILD_DIR,'Misc')
-msl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
-SHARED_LIBRARIES.append(msl)
+if INSTALL or BUILD:
+	SHARED_LIBRARIES = []
+	for module in MODULES:
+		module_name = module[0]
+		print 'Processing %s'%module_name
+		SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
+		SWIG_SOURCE_FILES.append(SWIG_source_file)
+		SHARED_Library_pathname = os.path.join(BUILD_DIR,'%s'%module_name)
+		sl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+		SHARED_LIBRARIES.append(sl)
+	# Build Visualization
+	SWIG_source_file = os.path.join(VISUALIZATION_PATH,'Visualization.i')
+	CC1 = os.path.join(VISUALIZATION_PATH,'Display2d.cpp')
+	CC2 = os.path.join(VISUALIZATION_PATH,'Display3d.cpp')
+	CC3 = os.path.join(VISUALIZATION_PATH,'NISDisplay3d.cpp')
+	SHARED_Library_pathname = os.path.join(BUILD_DIR,'Visualization')
+	vsl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file, CC1, CC2, CC3],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+	SHARED_LIBRARIES.append(vsl)
+	# Build Misc
+	SWIG_source_file = os.path.join(MISC_PATH,'Misc.i')
+	SHARED_Library_pathname = os.path.join(BUILD_DIR,'Misc')
+	msl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+	SHARED_LIBRARIES.append(msl)
+
 #
 # Install to /site-packages/OCC directory
 #
-INSTALL_DIR = os.path.join(sysconfig.get_python_lib(),'OCC')
-print INSTALL_DIR
-env.Install(INSTALL_DIR, SHARED_LIBRARIES)
-env.Alias('install', INSTALL_DIR)
+if INSTALL:
+	INSTALL_DIR = os.path.join(sysconfig.get_python_lib(),'OCC')
+	# First install libraries _Standard.so, _gp.so etc.
+	print 'Install pythonOCC-%s to %s'%(VERSION,INSTALL_DIR)
+	env.Install(INSTALL_DIR, SHARED_LIBRARIES)
+	# Copy swig files 
+	for module in MODULES:
+		SOURCE_FILE = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
+		TARGET_FILE = os.path.join(INSTALL_DIR,"%s.i"%module_name)
+		# Copy
+		Copy(TARGET_FILE,SOURCE_FILE)
+	
