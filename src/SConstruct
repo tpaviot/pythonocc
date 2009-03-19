@@ -61,9 +61,31 @@ if sconsVersion<9806.0 and not os.environ.has_key('NO_SCONS_GET_RECENT'):
 # Help string
 #
 Help("""
-       Type: 'scons program' to build the production program,
-             'scons debug' to build the debug version.
+       Type: 'scons mode=build [Options]' to build the production program,
+             'scons mode=install' to install files to python directory.
+       Options are:
+       		 - OCC_INCLUDE_PATH
+       		 - OCC_CONFIG_H_PATH
+       		 - OCC_LIBRARY_PATH
+       
+       For instance, just type:
+       scons mode=build OCC_INCLUDE=/usr/local/include OCC_CONFIG_H=/usr/local/include
+       OCC_LIBRARY_PATH=/usr/local/lib
+       
+       Then
+       sudo scons mode=install (require root privileges)
        """)
+#
+# First detect mode 'build' or 'install'
+#
+if ARGUMENTS.get('mode')=='install':
+	INSTALL = True
+else:
+	INSTALL = False
+if ARGUMENTS.get('mode')=='build':
+	BUILD = True
+else:
+	BUILD = False
 #
 # Create environment
 #
@@ -151,14 +173,6 @@ if env['PLATFORM']=='win32':
 	env.Append(CPPPATH=os.environ['INCLUDE'].split(';'))
 	env.Append(LIBPATH=os.environ['LIB'].split(';'))
 	env['ENV']['TMP'] = os.environ['TMP']
-#
-# Build Options
-#
-#opts=Variables()
-#opts.AddVariables(
-#('OCC_INC','Directories where to look for OpenCascade headers',['/usr/inc','/usr/local/inc','./inc',OCC_INC],None,Split),
-#)
-#opts.Update(env)
 
 print 'Build pythonOCC-%s for platform: %s'%(VERSION,platform.platform())
 
@@ -219,57 +233,61 @@ def CheckOCC(context):
 			return ret
 	return False	
 
-conf = env.Configure(custom_tests={'CheckCXX':CheckCXX,'CheckSwig':CheckSwig,'CheckOCC':CheckOCC},)
 
-conf.CheckCXX()
-conf.CheckSwig()
-#conf.CheckOCC() don't work
-if not conf.CheckCXXHeader('stdlib.h','<>'):
-	Exit(1)
-if not conf.CheckCXXHeader('string.h','<>'):
-	Exit(1)
-if not conf.CheckCXXHeader('Python.h','<>'):
-	Exit(1)
-if not conf.CheckCXXHeader('stdexcept','<>'):
-	Exit(1)
-if env['PLATFORM']=='posix':
-	if not conf.CheckCXXHeader('X11/XWDFile.h','<>'):
+def CheckConfiguration(env):
+	conf = env.Configure(custom_tests={'CheckCXX':CheckCXX,'CheckSwig':CheckSwig,'CheckOCC':CheckOCC},)
+	conf.CheckCXX()
+	conf.CheckSwig()
+	#conf.CheckOCC() don't work
+	if not conf.CheckCXXHeader('stdlib.h','<>'):
 		Exit(1)
-	if not conf.CheckCXXHeader('cstdlib','<>'):
+	if not conf.CheckCXXHeader('string.h','<>'):
 		Exit(1)
-#
-# Check available OpenCascade libs on dest machine
-# The ALL_ACC_LIBRARIES list is generated from the Windows distribution
-# of OpenCascade6.3.0
-#
-ALL_OCC_LIBRARIES = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
-             'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
-             'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', 'TKCDLFront', 'TKCPPClient', 'TKCPPExt',\
-             'TKCPPIntExt', 'TKCPPJini', 'TKCSFDBSchema', 'TKDCAF', 'TKDraw', 'TKernel',\
-             'TKFeat', 'TKFillet', 'TKG2d', 'TKG3d', 'TKGeomAlgo', 'TKGeomBase', 'TKHLR', 'TKIDLFront',\
-             'TKIGES', 'TKjcas','TKLCAF', 'TKMath', 'TKMesh', 'TKMeshVS', 'TKNIS', 'TKOffset',\
-             'TKOpenGl', 'TKPCAF', 'TKPLCAF', 'TKPrim', 'TKPShape', 'TKService', 'TKShapeSchema',\
-             'TKShHealing', 'TKStdLSchema', 'TKStdSchema', 'TKSTEP', 'TKSTEP209', 'TKSTEPAttr',\
-             'TKSTEPBase', 'TKSTL', 'TKTCPPExt', 'TKTObj', 'TKTObjDRAW', 'TKTopAlgo', 'TKTopTest',\
-             'TKV2d', 'TKV3d', 'TKViewerTest', 'TKVRML', 'TKWOK', 'TKWOKTcl', 'TKXCAF', 'TKXCAFSchema',\
-             'TKXDEDRAW', 'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
-             'TKXmlXCAF', 'TKXSBase', 'TKXSDRAW','XCAFPlugin', 'XmlLPlugin', 'XmlPlugin',\
-             'XmlXCAFPlugin']
-AVAILABLE_OCC_LIBS = []
-for lib in ALL_OCC_LIBRARIES:
-	if conf.CheckLib(lib, language = "C++"):
-		AVAILABLE_OCC_LIBS.append(lib)
-#
-# Check extra libs
-#
-AVAILABLE_EXTRA_LIBS = []
-for extra_lib in EXTRA_LIBS:
-	if conf.CheckLib(extra_lib, language = "C++"):
-		AVAILABLE_EXTRA_LIBS.append(extra_lib)
-#
-# End Configuration check
-#
-env = conf.Finish()
+	if not conf.CheckCXXHeader('Python.h','<>'):
+		Exit(1)
+	if not conf.CheckCXXHeader('stdexcept','<>'):
+		Exit(1)
+	if env['PLATFORM']=='posix':
+		if not conf.CheckCXXHeader('X11/XWDFile.h','<>'):
+			Exit(1)
+		if not conf.CheckCXXHeader('cstdlib','<>'):
+			Exit(1)
+	#
+	# Check available OpenCascade libs on dest machine
+	# The ALL_ACC_LIBRARIES list is generated from the Windows distribution
+	# of OpenCascade6.3.0
+	#
+	ALL_OCC_LIBRARIES = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
+		     'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
+		     'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', 'TKCDLFront', 'TKCPPClient', 'TKCPPExt',\
+		     'TKCPPIntExt', 'TKCPPJini', 'TKCSFDBSchema', 'TKDCAF', 'TKDraw', 'TKernel',\
+		     'TKFeat', 'TKFillet', 'TKG2d', 'TKG3d', 'TKGeomAlgo', 'TKGeomBase', 'TKHLR', 'TKIDLFront',\
+		     'TKIGES', 'TKjcas','TKLCAF', 'TKMath', 'TKMesh', 'TKMeshVS', 'TKNIS', 'TKOffset',\
+		     'TKOpenGl', 'TKPCAF', 'TKPLCAF', 'TKPrim', 'TKPShape', 'TKService', 'TKShapeSchema',\
+		     'TKShHealing', 'TKStdLSchema', 'TKStdSchema', 'TKSTEP', 'TKSTEP209', 'TKSTEPAttr',\
+		     'TKSTEPBase', 'TKSTL', 'TKTCPPExt', 'TKTObj', 'TKTObjDRAW', 'TKTopAlgo', 'TKTopTest',\
+		     'TKV2d', 'TKV3d', 'TKViewerTest', 'TKVRML', 'TKWOK', 'TKWOKTcl', 'TKXCAF', 'TKXCAFSchema',\
+		     'TKXDEDRAW', 'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
+		     'TKXmlXCAF', 'TKXSBase', 'TKXSDRAW','XCAFPlugin', 'XmlLPlugin', 'XmlPlugin',\
+		     'XmlXCAFPlugin']
+	AVAILABLE_OCC_LIBS = []
+	for lib in ALL_OCC_LIBRARIES:
+		if conf.CheckLib(lib, language = "C++"):
+			AVAILABLE_OCC_LIBS.append(lib)
+	#
+	# Check extra libs
+	#
+	AVAILABLE_EXTRA_LIBS = []
+	for extra_lib in EXTRA_LIBS:
+		if conf.CheckLib(extra_lib, language = "C++"):
+			AVAILABLE_EXTRA_LIBS.append(extra_lib)
+	#
+	# End Configuration check
+	#
+	env = conf.Finish()
+	ALL_LIBS = AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
+	return ALL_LIBS
+
 ##################################
 #### Create __init__.py script ###
 ##################################
@@ -310,79 +328,110 @@ def Create__init__():
     init_fp.write("'Visualization',\n'Misc'\n")
     init_fp.write(']\n')
     init_fp.close()
-Create__init__()
+
 ##############################
 #### pythonOCC build #########
 ##############################
-#
-# First generate the SWIG .i files if they're not in the SWIG_* path
-#
-for module in MODULES:
-	module_name = module[0]
-	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
-	if not (os.path.isfile(SWIG_source_file)): #if no .i file, generate_it		
-		import SWIG_generator
-		builder = SWIG_generator.ModularBuilder(module, False)
-#
-# SWIGing .i files
-#
-env['SWIGFLAGS'] = [SWIG_OPTS]
-env['SWIGPATH']  = [OCC_INC]
-env['LIBS']=AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
-#
-# First detect mode 'build' or 'install'
-#
-if ARGUMENTS.get('mode')=='install':
-	INSTALL = True
-else:
-	INSTALL = False
-if ARGUMENTS.get('mode')=='build':
-	BUILD = True
-else:
-	BUILD = False
-print INSTALL
-print BUILD
-Exit()
-
-#
-# Build shared libraries
-#
-if INSTALL or BUILD:
-	SHARED_LIBRARIES = []
+if BUILD:
+	#
+	# First generate the SWIG .i files if they're not in the SWIG_* path
+	#
+	for module in MODULES:
+		module_name = module[0]
+		SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
+		if not (os.path.isfile(SWIG_source_file)): #if no .i file, generate_it		
+			import SWIG_generator
+			builder = SWIG_generator.ModularBuilder(module, False)
+	#
+	# Check configuration
+	#
+	ALL_LIBS = CheckConfiguration(env)
+	#
+	# SWIGing .i files
+	#
+	env['SWIGFLAGS'] = [SWIG_OPTS]
+	env['SWIGPATH']  = [OCC_INC]
+	env['LIBS']= ALL_LIBS#AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
+	#
+	# Build shared libraries
+	#
 	for module in MODULES:
 		module_name = module[0]
 		print 'Processing %s'%module_name
 		SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
-		SWIG_SOURCE_FILES.append(SWIG_source_file)
+		#SWIG_SOURCE_FILES.append(SWIG_source_file)
 		SHARED_Library_pathname = os.path.join(BUILD_DIR,'%s'%module_name)
-		sl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
-		SHARED_LIBRARIES.append(sl)
+		env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 	# Build Visualization
 	SWIG_source_file = os.path.join(VISUALIZATION_PATH,'Visualization.i')
 	CC1 = os.path.join(VISUALIZATION_PATH,'Display2d.cpp')
 	CC2 = os.path.join(VISUALIZATION_PATH,'Display3d.cpp')
 	CC3 = os.path.join(VISUALIZATION_PATH,'NISDisplay3d.cpp')
 	SHARED_Library_pathname = os.path.join(BUILD_DIR,'Visualization')
-	vsl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file, CC1, CC2, CC3],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
-	SHARED_LIBRARIES.append(vsl)
+	env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file, CC1, CC2, CC3],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 	# Build Misc
 	SWIG_source_file = os.path.join(MISC_PATH,'Misc.i')
 	SHARED_Library_pathname = os.path.join(BUILD_DIR,'Misc')
-	msl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
-	SHARED_LIBRARIES.append(msl)
-
+	env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+	#
+	# Create initialization script
+	#
+	Create__init__()
 #
 # Install to /site-packages/OCC directory
 #
 if INSTALL:
 	INSTALL_DIR = os.path.join(sysconfig.get_python_lib(),'OCC')
+	#
+	# Create directories
+	#
+	import shutil
+	if not os.path.isdir(INSTALL_DIR):
+		os.mkdir(INSTALL_DIR)
+	DISPLAY_DIR = os.path.join(INSTALL_DIR,'Display')
+	if not os.path.isdir(DISPLAY_DIR):
+		os.mkdir(DISPLAY_DIR)
 	# First install libraries _Standard.so, _gp.so etc.
 	print 'Install pythonOCC-%s to %s'%(VERSION,INSTALL_DIR)
-	env.Install(INSTALL_DIR, SHARED_LIBRARIES)
-	# Copy swig files 
+	# Copy python files 
 	for module in MODULES:
-		SOURCE_FILE = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
-		TARGET_FILE = os.path.join(INSTALL_DIR,"%s.i"%module_name)
-		# Copy
-		Copy(TARGET_FILE,SOURCE_FILE)
+		module_name = module[0]
+                print module_name
+                PYTHON_BASE_FILENAME = "%s.py"%module_name
+		SOURCE_PYTHON_FILENAME = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,PYTHON_BASE_FILENAME)
+		TARGET_PYTHON_FILENAME = os.path.join(INSTALL_DIR,PYTHON_BASE_FILENAME)
+		# Copy python file
+		shutil.copyfile(SOURCE_PYTHON_FILENAME,TARGET_PYTHON_FILENAME)
+		print "Copying %s->%s"%(SOURCE_PYTHON_FILENAME, TARGET_PYTHON_FILENAME)
+		# Copy .so file
+		SO_BASE_FILENAME = ''.join(['_',module_name,sysconfig.get_config_vars()['SO']])
+		SOURCE_SO_FILENAME = os.path.join(BUILD_DIR,SO_BASE_FILENAME)
+		TARGET_SO_FILENAME = os.path.join(INSTALL_DIR,SO_BASE_FILENAME)
+		shutil.copyfile(SOURCE_SO_FILENAME,TARGET_SO_FILENAME)
+		print "Copying %s->%s"%(SOURCE_SO_FILENAME, TARGET_SO_FILENAME)
+	# Copy __init__.py file
+	INIT_BASE_FILENAME = '__init__.py'
+	SOURCE_INIT_FILENAME = os.path.join(BUILD_DIR,INIT_BASE_FILENAME)
+	TARGET_INIT_FILENAME = os.path.join(INSTALL_DIR,INIT_BASE_FILENAME)
+	shutil.copyfile(SOURCE_INIT_FILENAME,TARGET_INIT_FILENAME)
+	print "Copying %s->%s"%(SOURCE_INIT_FILENAME, TARGET_INIT_FILENAME)
+	# Copy OCCViewer.py
+	OCCVIEWER_BASE_FILENAME = 'OCCViewer.py'
+	SOURCE_OCCVIEWER_FILENAME = os.path.join(os.getcwd(),'Display',OCCVIEWER_BASE_FILENAME)
+	TARGET_OCCVIEWER_FILENAME = os.path.join(DISPLAY_DIR,OCCVIEWER_BASE_FILENAME)
+	shutil.copyfile(SOURCE_OCCVIEWER_FILENAME,TARGET_OCCVIEWER_FILENAME)
+	print "Copying %s->%s"%(SOURCE_OCCVIEWER_FILENAME, TARGET_OCCVIEWER_FILENAME)
+	# Copy wxDisplay.py
+	WXDISPLAY_BASE_FILENAME = 'wxDisplay.py'
+	SOURCE_WXDISPLAY_FILENAME = os.path.join(os.getcwd(),'Display',WXDISPLAY_BASE_FILENAME)
+	TARGET_WXDISPLAY_FILENAME = os.path.join(DISPLAY_DIR,WXDISPLAY_BASE_FILENAME)
+	shutil.copyfile(SOURCE_WXDISPLAY_FILENAME,TARGET_WXDISPLAY_FILENAME)
+	print "Copying %s->%s"%(SOURCE_WXDISPLAY_FILENAME, TARGET_WXDISPLAY_FILENAME)
+	# Copy __init__.py
+	BASE_FILENAME = '__init__.py'
+	SOURCE_FILENAME = os.path.join(os.getcwd(),'Display',BASE_FILENAME)
+	TARGET_FILENAME = os.path.join(DISPLAY_DIR,BASE_FILENAME)
+	shutil.copyfile(SOURCE_FILENAME,TARGET_FILENAME)
+	print "Copying %s->%s"%(SOURCE_FILENAME, TARGET_FILENAME)
+
 	
