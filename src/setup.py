@@ -190,22 +190,7 @@ LIBS = []
 for library in libraries:
     found = glob.glob(os.path.join(OCC_LIB,'*%s*'%library))
     if len(found)>0:
-        LIBS.append(library)
-        #print len(found)
-#if sys.platform == 'win32': # names are TKFillet.lib
-#    LIBFILES = glob.glob(os.path.join(OCC_LIB,'*.lib'))
-#    LIBS = []
-#    for LIBFILE in LIBFILES:
-#        libname = os.path.basename(LIBFILE).split(".")[0]
-#        LIBS.append(libname)
-#        #print LIBS
-#else: #under Linux or MacOSX, names are libTKFillet*
-#    LIBFILES = glob.glob(os.path.join(OCC_LIB,'lib*TK*'))
-#    LIBS = []
-#    for LIBFILE in LIBFILES:
-#        libname = os.path.basename(LIBFILE).split(".")[0]
-#        if not (libname in LIBS):
-#            LIBS.append(libname[3:])                        
+        LIBS.append(library)                 
 #
 # Setup
 #
