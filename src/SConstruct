@@ -323,8 +323,8 @@ def Create__init__():
     init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
     init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
     # Display stuff
-    init_fp.write("os.environ['DISPLAY']=':0.0'\n")
-    init_fp.write("os.environ['CSF_GraphicShr']='/usr/local/lib/libTKOpenGL.so'\n")
+    #init_fp.write("os.environ['DISPLAY']=':0.0'\n")
+    #init_fp.write("os.environ['CSF_GraphicShr']='/usr/local/lib/libTKOpenGL.so'\n")
     #
     # Include Version number
     #
