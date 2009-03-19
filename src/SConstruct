@@ -339,6 +339,7 @@ env['LIBS']=AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
 SHARED_LIBRARIES = []
 for module in MODULES:
 	module_name = module[0]
+	print 'Processing %s'%module_name
 	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
 	SHARED_Library_pathname = os.path.join(BUILD_DIR,'%s'%module_name)
 	sl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
