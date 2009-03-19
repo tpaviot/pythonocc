@@ -23,6 +23,7 @@ import os
 import sys
 import commands
 import SCons
+import SCons.Util
 import platform
 from Modules import MODULES
 
@@ -57,15 +58,29 @@ if sconsVersion<9806.0 and not os.environ.has_key('NO_SCONS_GET_RECENT'):
 	if os.path.exists(newDir):
 		Exit(os.execv(newPrefix+"/scons.py",[newPrefix+'/scons.py']+sys.argv[1:]))
 #
+# Help string
+#
+Help("""
+       Type: 'scons program' to build the production program,
+             'scons debug' to build the debug version.
+       """)
+#
 # Create environment
 #
 env = Environment()
 BUILD_ROOT = os.path.join(os.getcwd(),'..','build')
 BUILD_DIR = os.path.join(BUILD_ROOT,'OCC')
 if not os.path.isdir(BUILD_ROOT):
-        os.mkdir(BUILD_ROOT)
+        Mkdir(BUILD_ROOT)        
 if not os.path.isdir(BUILD_DIR):
-        os.mkdir(BUILD_DIR)        
+        Mkdir(BUILD_DIR)
+#
+# Get options
+#
+OCC_INCLUDE_PATH = ARGUMENTS.get('OCC_INCLUDE_PATH', '')
+OCC_LIBRARY_PATH = ARGUMENTS.get('OCC_LIBRARY_PATH', '')
+OCC_CONFIG_H_PATH = ARGUMENTS.get('OCC_CONFIG_H_PATH', '')
+print OCC_INCLUDE_PATH, OCC_LIBRARY_PATH, OCC_CONFIG_H_PATH
 BuildDir(BUILD_DIR,'.',duplicate = 0)
 #
 # First define platform specific settings
@@ -255,13 +270,6 @@ for extra_lib in EXTRA_LIBS:
 # End Configuration check
 #
 env = conf.Finish()
-#
-# SConscript
-#
-#buildDir=os.path.join(os.getcwd(),'build_scons')
-#env.SConscript(dirs=['.'],build_dir=buildDir,duplicate=0)
-#SConscript('SConscript', build_dir=buildDir, duplicate=0, exports={'MODE':'release'})
-
 ##################################
 #### Create __init__.py script ###
 ##################################
@@ -307,6 +315,10 @@ Create__init__()
 #### pythonOCC build #########
 ##############################
 #
+# Display progress (useful if the library is up-to-date
+#
+Progress('Evaluating $TARGET\n')
+#
 # First generate the SWIG .i files if they're not in the SWIG_* path
 #
 for module in MODULES:
@@ -324,19 +336,30 @@ env['LIBS']=AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
 #
 # Build shared libraries
 #
+SHARED_LIBRARIES = []
 for module in MODULES:
 	module_name = module[0]
 	SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
 	SHARED_Library_pathname = os.path.join(BUILD_DIR,'%s'%module_name)
-	env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+	sl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+	SHARED_LIBRARIES.append(sl)
 # Build Visualization
 SWIG_source_file = os.path.join(VISUALIZATION_PATH,'Visualization.i')
 CC1 = os.path.join(VISUALIZATION_PATH,'Display2d.cpp')
 CC2 = os.path.join(VISUALIZATION_PATH,'Display3d.cpp')
 CC3 = os.path.join(VISUALIZATION_PATH,'NISDisplay3d.cpp')
 SHARED_Library_pathname = os.path.join(BUILD_DIR,'Visualization')
-env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file, CC1, CC2, CC3],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+vsl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file, CC1, CC2, CC3],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+SHARED_LIBRARIES.append(vsl)
 # Build Misc
 SWIG_source_file = os.path.join(MISC_PATH,'Misc.i')
 SHARED_Library_pathname = os.path.join(BUILD_DIR,'Misc')
-env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+msl = env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
+SHARED_LIBRARIES.append(msl)
+#
+# Install to /site-packages/OCC directory
+#
+INSTALL_DIR = os.path.join(sysconfig.get_python_lib(),'OCC')
+print INSTALL_DIR
+env.Install(INSTALL_DIR, SHARED_LIBRARIES)
+env.Alias('install', INSTALL_DIR)
