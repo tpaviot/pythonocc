@@ -205,11 +205,6 @@ MODULES = [
            ('GeomTools',['Handle_TCollection'],[]),
            ('GeomToStep',[],[]),
            ('GProp',[],[]),
-
-########################
-##### STEP #############
-########################           
-           ('STEPControl',['IFSelect','TopoDS_Shape','Interface','MoniTool','TCollection'],[]),
 #########################
 ###### BRep #############
 #########################
@@ -438,6 +433,7 @@ MODULES = [
 ########################################
 ############## STEP ####################
 ########################################
+            ('STEPControl',['MoniTool','TCollection','Handle_Interface'],[]),
             ('StepData',['MoniTool','TCollection'],['StepData_Protocol'],{'StepData_FreeFormEntity':['StepData_FreeFormEntity'],\
 'StepData_UndefinedEntity':['Super'],'StepData_StepReaderData':['ReadEnumParam']}),#,'StepData_UndefinedEntity']),
             ('StepBasic',['MoniTool','TCollection','Handle_Interface'],[]),
