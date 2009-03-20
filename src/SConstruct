@@ -93,9 +93,9 @@ env = Environment()
 BUILD_ROOT = os.path.join(os.getcwd(),'..','build')
 BUILD_DIR = os.path.join(BUILD_ROOT,'OCC')
 if not os.path.isdir(BUILD_ROOT):
-        Mkdir(BUILD_ROOT)        
+        os.mkdir(BUILD_ROOT)        
 if not os.path.isdir(BUILD_DIR):
-        Mkdir(BUILD_DIR)
+        os.mkdir(BUILD_DIR)
 #
 # Get options
 #
@@ -107,7 +107,7 @@ BuildDir(BUILD_DIR,'.',duplicate = 0)
 # First define platform specific settings
 #
 #
-# Define pythonOCC version
+# pythonOCC version
 #
 VERSION = 'wo0.2'
 #
@@ -116,7 +116,7 @@ VERSION = 'wo0.2'
 try:
     OCC_ROOT = os.environ['CASROOT']
 except KeyError:
-    print "OpenCascade CAS_ROOT environment variable not set."
+    print "OpenCascade CASROOT environment variable not set."
     OCC_ROOT = None
 
 if sys.platform=='win32':
