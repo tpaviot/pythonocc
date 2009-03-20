@@ -27,14 +27,14 @@ from distutils import sysconfig
 #
 # Define pythonOCC version
 #
-VERSION = '2009/02/23'
+VERSION = '2009_03_14'
 #
 # Define paths
 #
 try:
     OCC_ROOT = os.environ['CASROOT']
 except KeyError:
-    print "OopenCascade CAS_ROOT environment variable not set."
+    print "OpenCascade CASROOT environment variable not set."
     OCC_ROOT = None
 
 if sys.platform=='win32':
