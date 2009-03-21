@@ -117,8 +117,6 @@ class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntPolyh_SeqOfStartPoints();
-		%feature("autodoc", "1");
 		const IntPolyh_SeqOfStartPoints & Assign(const IntPolyh_SeqOfStartPoints &Other);
 		%feature("autodoc", "1");
 		void Append(const IntPolyh_StartPoint &T);
@@ -158,12 +156,15 @@ class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntPolyh_SeqOfStartPoints {
+	~IntPolyh_SeqOfStartPoints() {
+	printf("Call custom destructor for instance of IntPolyh_SeqOfStartPoints\n");
+	}
+};
 
 %nodefaultctor IntPolyh_Edge;
 class IntPolyh_Edge {
 	public:
-		%feature("autodoc", "1");
-		~IntPolyh_Edge();
 		%feature("autodoc", "1");
 		IntPolyh_Edge();
 		%feature("autodoc", "1");
@@ -192,6 +193,11 @@ class IntPolyh_Edge {
 		void Dump(const Standard_Integer v) const;
 
 };
+%extend IntPolyh_Edge {
+	~IntPolyh_Edge() {
+	printf("Call custom destructor for instance of IntPolyh_Edge\n");
+	}
+};
 
 %nodefaultctor IntPolyh_ArrayOfCouples;
 class IntPolyh_ArrayOfCouples {
@@ -219,10 +225,13 @@ class IntPolyh_ArrayOfCouples {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfCouples();
-		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend IntPolyh_ArrayOfCouples {
+	~IntPolyh_ArrayOfCouples() {
+	printf("Call custom destructor for instance of IntPolyh_ArrayOfCouples\n");
+	}
 };
 
 %nodefaultctor IntPolyh_SectionLine;
@@ -253,12 +262,15 @@ class IntPolyh_SectionLine {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_SectionLine();
-		%feature("autodoc", "1");
 		void Dump() const;
 		%feature("autodoc", "1");
 		void Prepend(const IntPolyh_StartPoint &SP);
 
+};
+%extend IntPolyh_SectionLine {
+	~IntPolyh_SectionLine() {
+	printf("Call custom destructor for instance of IntPolyh_SectionLine\n");
+	}
 };
 
 %nodefaultctor IntPolyh_ArrayOfEdges;
@@ -291,10 +303,13 @@ class IntPolyh_ArrayOfEdges {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfEdges();
-		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend IntPolyh_ArrayOfEdges {
+	~IntPolyh_ArrayOfEdges() {
+	printf("Call custom destructor for instance of IntPolyh_ArrayOfEdges\n");
+	}
 };
 
 %nodefaultctor IntPolyh_ArrayOfTangentZones;
@@ -325,17 +340,18 @@ class IntPolyh_ArrayOfTangentZones {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfTangentZones();
-		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend IntPolyh_ArrayOfTangentZones {
+	~IntPolyh_ArrayOfTangentZones() {
+	printf("Call custom destructor for instance of IntPolyh_ArrayOfTangentZones\n");
+	}
 };
 
 %nodefaultctor IntPolyh_Point;
 class IntPolyh_Point {
 	public:
-		%feature("autodoc", "1");
-		~IntPolyh_Point();
 		%feature("autodoc", "1");
 		IntPolyh_Point();
 		%feature("autodoc", "1");
@@ -400,12 +416,15 @@ class IntPolyh_Point {
 		void Dump(const Standard_Integer i) const;
 
 };
+%extend IntPolyh_Point {
+	~IntPolyh_Point() {
+	printf("Call custom destructor for instance of IntPolyh_Point\n");
+	}
+};
 
 %nodefaultctor IntPolyh_StartPoint;
 class IntPolyh_StartPoint {
 	public:
-		%feature("autodoc", "1");
-		~IntPolyh_StartPoint();
 		%feature("autodoc", "1");
 		IntPolyh_StartPoint();
 		%feature("autodoc", "1");
@@ -472,6 +491,11 @@ class IntPolyh_StartPoint {
 		void Dump(const Standard_Integer i) const;
 
 };
+%extend IntPolyh_StartPoint {
+	~IntPolyh_StartPoint() {
+	printf("Call custom destructor for instance of IntPolyh_StartPoint\n");
+	}
+};
 
 %nodefaultctor IntPolyh_ArrayOfSectionLines;
 class IntPolyh_ArrayOfSectionLines {
@@ -501,10 +525,13 @@ class IntPolyh_ArrayOfSectionLines {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfSectionLines();
-		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend IntPolyh_ArrayOfSectionLines {
+	~IntPolyh_ArrayOfSectionLines() {
+	printf("Call custom destructor for instance of IntPolyh_ArrayOfSectionLines\n");
+	}
 };
 
 %nodefaultctor IntPolyh_ArrayOfStartPoints;
@@ -531,10 +558,13 @@ class IntPolyh_ArrayOfStartPoints {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfStartPoints();
-		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend IntPolyh_ArrayOfStartPoints {
+	~IntPolyh_ArrayOfStartPoints() {
+	printf("Call custom destructor for instance of IntPolyh_ArrayOfStartPoints\n");
+	}
 };
 
 %nodefaultctor IntPolyh_SequenceNodeOfSeqOfStartPoints;
@@ -563,8 +593,6 @@ class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 class IntPolyh_Couple {
 	public:
 		%feature("autodoc", "1");
-		~IntPolyh_Couple();
-		%feature("autodoc", "1");
 		IntPolyh_Couple();
 		%feature("autodoc", "1");
 		IntPolyh_Couple(const Standard_Integer i1, const Standard_Integer i2);
@@ -586,12 +614,15 @@ class IntPolyh_Couple {
 		void Dump(const Standard_Integer v) const;
 
 };
+%extend IntPolyh_Couple {
+	~IntPolyh_Couple() {
+	printf("Call custom destructor for instance of IntPolyh_Couple\n");
+	}
+};
 
 %nodefaultctor IntPolyh_Intersection;
 class IntPolyh_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~IntPolyh_Intersection();
 		%feature("autodoc", "1");
 		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2);
 		%feature("autodoc", "1");
@@ -617,6 +648,11 @@ class IntPolyh_Intersection {
 		%feature("autodoc", "1");
 		void GetTangentZonePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntPolyh_Intersection {
+	~IntPolyh_Intersection() {
+	printf("Call custom destructor for instance of IntPolyh_Intersection\n");
+	}
 };
 
 %nodefaultctor IntPolyh_ArrayOfPoints;
@@ -649,10 +685,13 @@ class IntPolyh_ArrayOfPoints {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfPoints();
-		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend IntPolyh_ArrayOfPoints {
+	~IntPolyh_ArrayOfPoints() {
+	printf("Call custom destructor for instance of IntPolyh_ArrayOfPoints\n");
+	}
 };
 
 %nodefaultctor IntPolyh_ArrayOfTriangles;
@@ -685,10 +724,13 @@ class IntPolyh_ArrayOfTriangles {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfTriangles();
-		%feature("autodoc", "1");
 		void Dump() const;
 		%feature("autodoc", "1");
 		void DumpFleches() const;
 
+};
+%extend IntPolyh_ArrayOfTriangles {
+	~IntPolyh_ArrayOfTriangles() {
+	printf("Call custom destructor for instance of IntPolyh_ArrayOfTriangles\n");
+	}
 };

@@ -913,16 +913,17 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
 		%feature("autodoc", "1");
 		virtual		GeomAbs_CurveType GetType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_SnglrFunc();
 
+};
+%extend GeomFill_SnglrFunc {
+	~GeomFill_SnglrFunc() {
+	printf("Call custom destructor for instance of GeomFill_SnglrFunc\n");
+	}
 };
 
 %nodefaultctor GeomFill_PolynomialConvertor;
 class GeomFill_PolynomialConvertor {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_PolynomialConvertor();
 		%feature("autodoc", "1");
 		GeomFill_PolynomialConvertor();
 		%feature("autodoc", "1");
@@ -936,6 +937,11 @@ class GeomFill_PolynomialConvertor {
 		%feature("autodoc", "1");
 		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles) const;
 
+};
+%extend GeomFill_PolynomialConvertor {
+	~GeomFill_PolynomialConvertor() {
+	printf("Call custom destructor for instance of GeomFill_PolynomialConvertor\n");
+	}
 };
 
 %nodefaultctor GeomFill_CircularBlendFunc;
@@ -1110,9 +1116,12 @@ class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 		Standard_Boolean DerivTX(const gp_Vec &dN, const Standard_Real teta, math_Matrix & D);
 		%feature("autodoc", "1");
 		Standard_Boolean Deriv2X(const math_Vector &X, GeomFill_Tensor & T);
-		%feature("autodoc", "1");
-		virtual		~GeomFill_FunctionDraft();
 
+};
+%extend GeomFill_FunctionDraft {
+	~GeomFill_FunctionDraft() {
+	printf("Call custom destructor for instance of GeomFill_FunctionDraft\n");
+	}
 };
 
 %nodefaultctor GeomFill_SequenceNodeOfSequenceOfTrsf;
@@ -1144,8 +1153,6 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 		GeomFill_SequenceOfTrsf();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~GeomFill_SequenceOfTrsf();
 		%feature("autodoc", "1");
 		const GeomFill_SequenceOfTrsf & Assign(const GeomFill_SequenceOfTrsf &Other);
 		%feature("autodoc", "1");
@@ -1185,6 +1192,11 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend GeomFill_SequenceOfTrsf {
+	~GeomFill_SequenceOfTrsf() {
+	printf("Call custom destructor for instance of GeomFill_SequenceOfTrsf\n");
+	}
 };
 
 %nodefaultctor GeomFill_Profiler;
@@ -1380,8 +1392,6 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 class GeomFill_Tensor {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_Tensor();
-		%feature("autodoc", "1");
 		GeomFill_Tensor(const Standard_Integer NbRow, const Standard_Integer NbCol, const Standard_Integer NbMat);
 		%feature("autodoc", "1");
 		void Init(const Standard_Real InitialValue);
@@ -1396,6 +1406,11 @@ class GeomFill_Tensor {
 		%feature("autodoc", "1");
 		void Multiply(const math_Vector &Right, math_Matrix & Product) const;
 
+};
+%extend GeomFill_Tensor {
+	~GeomFill_Tensor() {
+	printf("Call custom destructor for instance of GeomFill_Tensor\n");
+	}
 };
 
 %nodefaultctor GeomFill_Pipe;
@@ -1563,8 +1578,6 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 class GeomFill_Filling {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_Filling();
-		%feature("autodoc", "1");
 		GeomFill_Filling();
 		%feature("autodoc", "1");
 		Standard_Integer NbUPoles() const;
@@ -1578,12 +1591,15 @@ class GeomFill_Filling {
 		void Weights(TColStd_Array2OfReal & Weights) const;
 
 };
+%extend GeomFill_Filling {
+	~GeomFill_Filling() {
+	printf("Call custom destructor for instance of GeomFill_Filling\n");
+	}
+};
 
 %nodefaultctor GeomFill_Stretch;
 class GeomFill_Stretch : public GeomFill_Filling {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_Stretch();
 		%feature("autodoc", "1");
 		GeomFill_Stretch();
 		%feature("autodoc", "1");
@@ -1595,6 +1611,11 @@ class GeomFill_Stretch : public GeomFill_Filling {
 		%feature("autodoc", "1");
 		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
 
+};
+%extend GeomFill_Stretch {
+	~GeomFill_Stretch() {
+	printf("Call custom destructor for instance of GeomFill_Stretch\n");
+	}
 };
 
 %nodefaultctor GeomFill_Boundary;
@@ -1663,8 +1684,6 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 class GeomFill_QuasiAngularConvertor {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_QuasiAngularConvertor();
-		%feature("autodoc", "1");
 		GeomFill_QuasiAngularConvertor();
 		%feature("autodoc", "1");
 		Standard_Boolean Initialized() const;
@@ -1677,6 +1696,11 @@ class GeomFill_QuasiAngularConvertor {
 		%feature("autodoc", "1");
 		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights, TColStd_Array1OfReal & D2Weights);
 
+};
+%extend GeomFill_QuasiAngularConvertor {
+	~GeomFill_QuasiAngularConvertor() {
+	printf("Call custom destructor for instance of GeomFill_QuasiAngularConvertor\n");
+	}
 };
 
 %nodefaultctor GeomFill_HArray1OfSectionLaw;
@@ -1825,8 +1849,6 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 class GeomFill_Coons : public GeomFill_Filling {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_Coons();
-		%feature("autodoc", "1");
 		GeomFill_Coons();
 		%feature("autodoc", "1");
 		GeomFill_Coons(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
@@ -1837,6 +1859,11 @@ class GeomFill_Coons : public GeomFill_Filling {
 		%feature("autodoc", "1");
 		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
 
+};
+%extend GeomFill_Coons {
+	~GeomFill_Coons() {
+	printf("Call custom destructor for instance of GeomFill_Coons\n");
+	}
 };
 
 %nodefaultctor GeomFill_Fixed;
@@ -1948,8 +1975,6 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 class GeomFill_Curved : public GeomFill_Filling {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_Curved();
-		%feature("autodoc", "1");
 		GeomFill_Curved();
 		%feature("autodoc", "1");
 		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
@@ -1976,6 +2001,11 @@ class GeomFill_Curved : public GeomFill_Filling {
 		%feature("autodoc", "1");
 		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
 
+};
+%extend GeomFill_Curved {
+	~GeomFill_Curved() {
+	printf("Call custom destructor for instance of GeomFill_Curved\n");
+	}
 };
 
 %nodefaultctor GeomFill_Array1OfLocationLaw;
@@ -2270,8 +2300,6 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 class GeomFill_CornerState {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_CornerState();
-		%feature("autodoc", "1");
 		GeomFill_CornerState();
 		%feature("autodoc", "1");
 		Standard_Real Gap() const;
@@ -2294,6 +2322,11 @@ class GeomFill_CornerState {
 		%feature("autodoc", "1");
 		void DoKill(const Standard_Real Scal);
 
+};
+%extend GeomFill_CornerState {
+	~GeomFill_CornerState() {
+	printf("Call custom destructor for instance of GeomFill_CornerState\n");
+	}
 };
 
 %nodefaultctor GeomFill_Darboux;
@@ -2353,9 +2386,12 @@ class GeomFill_SectionGenerator : public GeomFill_Profiler {
 		void Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths) const;
 		%feature("autodoc", "1");
 		Standard_Real Parameter(const Standard_Integer P) const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_SectionGenerator();
 
+};
+%extend GeomFill_SectionGenerator {
+	~GeomFill_SectionGenerator() {
+	printf("Call custom destructor for instance of GeomFill_SectionGenerator\n");
+	}
 };
 
 %nodefaultctor GeomFill_SequenceOfCurve;
@@ -2709,8 +2745,6 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 class GeomFill_LocFunction {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_LocFunction();
-		%feature("autodoc", "1");
 		GeomFill_LocFunction(const Handle_GeomFill_LocationLaw &Law);
 		%feature("autodoc", "1");
 		Standard_Boolean D0(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
@@ -2721,6 +2755,11 @@ class GeomFill_LocFunction {
 		%feature("autodoc", "1");
 		void DN(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, const Standard_Integer Order, Standard_Real &OutValue, Standard_Integer & Ier);
 
+};
+%extend GeomFill_LocFunction {
+	~GeomFill_LocFunction() {
+	printf("Call custom destructor for instance of GeomFill_LocFunction\n");
+	}
 };
 
 %nodefaultctor GeomFill_AppSurf;
@@ -2776,9 +2815,12 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_AppSurf();
 
+};
+%extend GeomFill_AppSurf {
+	~GeomFill_AppSurf() {
+	printf("Call custom destructor for instance of GeomFill_AppSurf\n");
+	}
 };
 
 %nodefaultctor GeomFill_SequenceNodeOfSequenceOfCurve;
@@ -2820,9 +2862,12 @@ class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 		void DEDT(const Standard_Real X, const gp_Vec &DP, const gp_Vec &DV, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void D2E(const Standard_Real X, const gp_Vec &DP, const gp_Vec &D2P, const gp_Vec &DV, const gp_Vec &D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~GeomFill_PlanFunc();
 
+};
+%extend GeomFill_PlanFunc {
+	~GeomFill_PlanFunc() {
+	printf("Call custom destructor for instance of GeomFill_PlanFunc\n");
+	}
 };
 
 %nodefaultctor GeomFill_Frenet;
@@ -3036,9 +3081,12 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_AppSweep();
 
+};
+%extend GeomFill_AppSweep {
+	~GeomFill_AppSweep() {
+	printf("Call custom destructor for instance of GeomFill_AppSweep\n");
+	}
 };
 
 %nodefaultctor GeomFill_BezierCurves;

@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class GeomAPI_ProjectPointOnSurf {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_ProjectPointOnSurf();
-		%feature("autodoc", "1");
 		GeomAPI_ProjectPointOnSurf();
 		%feature("autodoc", "1");
 		GeomAPI_ProjectPointOnSurf(const gp_Pnt &P, const Handle_Geom_Surface &Surface);
@@ -132,6 +130,11 @@ class GeomAPI_ProjectPointOnSurf {
 		%feature("autodoc", "1");
 		const Extrema_ExtPS & Extrema() const;
 
+};
+%extend GeomAPI_ProjectPointOnSurf {
+	~GeomAPI_ProjectPointOnSurf() {
+	printf("Call custom destructor for instance of GeomAPI_ProjectPointOnSurf\n");
+	}
 };
 
 %nodefaultctor GeomAPI_Interpolate;
@@ -186,8 +189,6 @@ class GeomAPI_PointsToBSpline {
 class GeomAPI_ExtremaSurfaceSurface {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_ExtremaSurfaceSurface();
-		%feature("autodoc", "1");
 		GeomAPI_ExtremaSurfaceSurface();
 		%feature("autodoc", "1");
 		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
@@ -214,6 +215,11 @@ class GeomAPI_ExtremaSurfaceSurface {
 		%feature("autodoc", "1");
 		const Extrema_ExtSS & Extrema() const;
 
+};
+%extend GeomAPI_ExtremaSurfaceSurface {
+	~GeomAPI_ExtremaSurfaceSurface() {
+	printf("Call custom destructor for instance of GeomAPI_ExtremaSurfaceSurface\n");
+	}
 };
 
 %nodefaultctor GeomAPI_IntCS;
@@ -295,8 +301,6 @@ class GeomAPI {
 class GeomAPI_ExtremaCurveCurve {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_ExtremaCurveCurve();
-		%feature("autodoc", "1");
 		GeomAPI_ExtremaCurveCurve();
 		%feature("autodoc", "1");
 		GeomAPI_ExtremaCurveCurve(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
@@ -330,6 +334,11 @@ class GeomAPI_ExtremaCurveCurve {
 		Quantity_Length TotalLowerDistance();
 
 };
+%extend GeomAPI_ExtremaCurveCurve {
+	~GeomAPI_ExtremaCurveCurve() {
+	printf("Call custom destructor for instance of GeomAPI_ExtremaCurveCurve\n");
+	}
+};
 
 %nodefaultctor GeomAPI_IntSS;
 class GeomAPI_IntSS {
@@ -358,8 +367,6 @@ class GeomAPI_IntSS {
 class GeomAPI_ExtremaCurveSurface {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_ExtremaCurveSurface();
-		%feature("autodoc", "1");
 		GeomAPI_ExtremaCurveSurface();
 		%feature("autodoc", "1");
 		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
@@ -387,12 +394,15 @@ class GeomAPI_ExtremaCurveSurface {
 		const Extrema_ExtCS & Extrema() const;
 
 };
+%extend GeomAPI_ExtremaCurveSurface {
+	~GeomAPI_ExtremaCurveSurface() {
+	printf("Call custom destructor for instance of GeomAPI_ExtremaCurveSurface\n");
+	}
+};
 
 %nodefaultctor GeomAPI_ProjectPointOnCurve;
 class GeomAPI_ProjectPointOnCurve {
 	public:
-		%feature("autodoc", "1");
-		~GeomAPI_ProjectPointOnCurve();
 		%feature("autodoc", "1");
 		GeomAPI_ProjectPointOnCurve();
 		%feature("autodoc", "1");
@@ -426,4 +436,9 @@ class GeomAPI_ProjectPointOnCurve {
 		%feature("autodoc", "1");
 		const Extrema_ExtPC & Extrema() const;
 
+};
+%extend GeomAPI_ProjectPointOnCurve {
+	~GeomAPI_ProjectPointOnCurve() {
+	printf("Call custom destructor for instance of GeomAPI_ProjectPointOnCurve\n");
+	}
 };

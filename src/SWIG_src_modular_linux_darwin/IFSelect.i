@@ -2458,14 +2458,17 @@ class IFSelect_SelectDiff : public IFSelect_SelectControl {
 class IFSelect {
 	public:
 		%feature("autodoc", "1");
-		~IFSelect();
-		%feature("autodoc", "1");
 		IFSelect();
 		%feature("autodoc", "1");
 		Standard_Boolean SaveSession(const Handle_IFSelect_WorkSession &WS, const char * file);
 		%feature("autodoc", "1");
 		Standard_Boolean RestoreSession(const Handle_IFSelect_WorkSession &WS, const char * file);
 
+};
+%extend IFSelect {
+	~IFSelect() {
+	printf("Call custom destructor for instance of IFSelect\n");
+	}
 };
 
 %nodefaultctor IFSelect_IntParam;

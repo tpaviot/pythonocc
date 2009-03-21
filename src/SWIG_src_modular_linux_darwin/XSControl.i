@@ -456,8 +456,6 @@ class XSControl_Utils {
 class XSControl_FuncShape {
 	public:
 		%feature("autodoc", "1");
-		~XSControl_FuncShape();
-		%feature("autodoc", "1");
 		XSControl_FuncShape();
 		%feature("autodoc", "1");
 		void Init();
@@ -466,6 +464,11 @@ class XSControl_FuncShape {
 		%feature("autodoc", "1");
 		Standard_Boolean FileAndVar(const Handle_XSControl_WorkSession &session, const char * file, const char * var, const char * def, TCollection_AsciiString & resfile, TCollection_AsciiString & resvar);
 
+};
+%extend XSControl_FuncShape {
+	~XSControl_FuncShape() {
+	printf("Call custom destructor for instance of XSControl_FuncShape\n");
+	}
 };
 
 %nodefaultctor XSControl_Controller;
@@ -788,12 +791,15 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 class XSControl_Functions {
 	public:
 		%feature("autodoc", "1");
-		~XSControl_Functions();
-		%feature("autodoc", "1");
 		XSControl_Functions();
 		%feature("autodoc", "1");
 		void Init();
 
+};
+%extend XSControl_Functions {
+	~XSControl_Functions() {
+	printf("Call custom destructor for instance of XSControl_Functions\n");
+	}
 };
 
 %nodefaultctor XSControl_TransferReader;

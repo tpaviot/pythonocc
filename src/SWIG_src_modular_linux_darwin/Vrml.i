@@ -386,8 +386,6 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 class Vrml_Info {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_Info();
-		%feature("autodoc", "1");
 		Vrml_Info(const TCollection_AsciiString &aString="<Undefined info>");
 		%feature("autodoc", "1");
 		void SetString(const TCollection_AsciiString &aString);
@@ -397,12 +395,15 @@ class Vrml_Info {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Info {
+	~Vrml_Info() {
+	printf("Call custom destructor for instance of Vrml_Info\n");
+	}
+};
 
 %nodefaultctor Vrml_Switch;
 class Vrml_Switch {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_Switch();
 		%feature("autodoc", "1");
 		Vrml_Switch(const Standard_Integer aWhichChild=-0x000000001);
 		%feature("autodoc", "1");
@@ -413,24 +414,30 @@ class Vrml_Switch {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Switch {
+	~Vrml_Switch() {
+	printf("Call custom destructor for instance of Vrml_Switch\n");
+	}
+};
 
 %nodefaultctor Vrml_TransformSeparator;
 class Vrml_TransformSeparator {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_TransformSeparator();
 		%feature("autodoc", "1");
 		Vrml_TransformSeparator();
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream);
 
 };
+%extend Vrml_TransformSeparator {
+	~Vrml_TransformSeparator() {
+	printf("Call custom destructor for instance of Vrml_TransformSeparator\n");
+	}
+};
 
 %nodefaultctor Vrml_Cube;
 class Vrml_Cube {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_Cube();
 		%feature("autodoc", "1");
 		Vrml_Cube(const Standard_Real aWidth=2, const Standard_Real aHeight=2, const Standard_Real aDepth=2);
 		%feature("autodoc", "1");
@@ -449,12 +456,15 @@ class Vrml_Cube {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Cube {
+	~Vrml_Cube() {
+	printf("Call custom destructor for instance of Vrml_Cube\n");
+	}
+};
 
 %nodefaultctor Vrml_Sphere;
 class Vrml_Sphere {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_Sphere();
 		%feature("autodoc", "1");
 		Vrml_Sphere(const Standard_Real aRadius=1);
 		%feature("autodoc", "1");
@@ -465,12 +475,15 @@ class Vrml_Sphere {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Sphere {
+	~Vrml_Sphere() {
+	printf("Call custom destructor for instance of Vrml_Sphere\n");
+	}
+};
 
 %nodefaultctor Vrml_PointLight;
 class Vrml_PointLight {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_PointLight();
 		%feature("autodoc", "1");
 		Vrml_PointLight();
 		%feature("autodoc", "1");
@@ -495,12 +508,15 @@ class Vrml_PointLight {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_PointLight {
+	~Vrml_PointLight() {
+	printf("Call custom destructor for instance of Vrml_PointLight\n");
+	}
+};
 
 %nodefaultctor Vrml_NormalBinding;
 class Vrml_NormalBinding {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_NormalBinding();
 		%feature("autodoc", "1");
 		Vrml_NormalBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
 		%feature("autodoc", "1");
@@ -512,6 +528,11 @@ class Vrml_NormalBinding {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_NormalBinding {
+	~Vrml_NormalBinding() {
+	printf("Call custom destructor for instance of Vrml_NormalBinding\n");
+	}
 };
 
 %nodefaultctor Vrml_AsciiText;
@@ -598,8 +619,6 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 class Vrml_SpotLight {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_SpotLight();
-		%feature("autodoc", "1");
 		Vrml_SpotLight();
 		%feature("autodoc", "1");
 		Vrml_SpotLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color &aColor, const gp_Vec &aLocation, const gp_Vec &aDirection, const Standard_Real aDropOffRate, const Standard_Real aCutOffAngle);
@@ -634,6 +653,11 @@ class Vrml_SpotLight {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_SpotLight {
+	~Vrml_SpotLight() {
+	printf("Call custom destructor for instance of Vrml_SpotLight\n");
+	}
 };
 
 %nodefaultctor Vrml_Texture2;
@@ -745,8 +769,6 @@ class Vrml_LOD : public MMgt_TShared {
 class Vrml_WWWInline {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_WWWInline();
-		%feature("autodoc", "1");
 		Vrml_WWWInline();
 		%feature("autodoc", "1");
 		Vrml_WWWInline(const TCollection_AsciiString &aName, const gp_Vec &aBboxSize, const gp_Vec &aBboxCenter);
@@ -765,6 +787,11 @@ class Vrml_WWWInline {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_WWWInline {
+	~Vrml_WWWInline() {
+	printf("Call custom destructor for instance of Vrml_WWWInline\n");
+	}
 };
 
 %nodefaultctor Vrml_Normal;
@@ -799,8 +826,6 @@ class Vrml_Normal : public MMgt_TShared {
 class Vrml_Cylinder {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_Cylinder();
-		%feature("autodoc", "1");
 		Vrml_Cylinder(const Vrml_CylinderParts aParts=Vrml_CylinderALL, const Standard_Real aRadius=1, const Standard_Real aHeight=2);
 		%feature("autodoc", "1");
 		void SetParts(const Vrml_CylinderParts aParts);
@@ -818,12 +843,15 @@ class Vrml_Cylinder {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Cylinder {
+	~Vrml_Cylinder() {
+	printf("Call custom destructor for instance of Vrml_Cylinder\n");
+	}
+};
 
 %nodefaultctor Vrml_Texture2Transform;
 class Vrml_Texture2Transform {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_Texture2Transform();
 		%feature("autodoc", "1");
 		Vrml_Texture2Transform();
 		%feature("autodoc", "1");
@@ -848,12 +876,15 @@ class Vrml_Texture2Transform {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Texture2Transform {
+	~Vrml_Texture2Transform() {
+	printf("Call custom destructor for instance of Vrml_Texture2Transform\n");
+	}
+};
 
 %nodefaultctor Vrml_SFRotation;
 class Vrml_SFRotation {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_SFRotation();
 		%feature("autodoc", "1");
 		Vrml_SFRotation();
 		%feature("autodoc", "1");
@@ -876,12 +907,15 @@ class Vrml_SFRotation {
 		Standard_Real Angle() const;
 
 };
+%extend Vrml_SFRotation {
+	~Vrml_SFRotation() {
+	printf("Call custom destructor for instance of Vrml_SFRotation\n");
+	}
+};
 
 %nodefaultctor Vrml_OrthographicCamera;
 class Vrml_OrthographicCamera {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_OrthographicCamera();
 		%feature("autodoc", "1");
 		Vrml_OrthographicCamera();
 		%feature("autodoc", "1");
@@ -906,12 +940,15 @@ class Vrml_OrthographicCamera {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_OrthographicCamera {
+	~Vrml_OrthographicCamera() {
+	printf("Call custom destructor for instance of Vrml_OrthographicCamera\n");
+	}
+};
 
 %nodefaultctor Vrml;
 class Vrml {
 	public:
-		%feature("autodoc", "1");
-		~Vrml();
 		%feature("autodoc", "1");
 		Vrml();
 		%feature("autodoc", "1");
@@ -920,12 +957,15 @@ class Vrml {
 		Standard_OStream & CommentWriter(const char * aComment, Standard_OStream & anOStream);
 
 };
+%extend Vrml {
+	~Vrml() {
+	printf("Call custom destructor for instance of Vrml\n");
+	}
+};
 
 %nodefaultctor Vrml_Scale;
 class Vrml_Scale {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_Scale();
 		%feature("autodoc", "1");
 		Vrml_Scale();
 		%feature("autodoc", "1");
@@ -938,12 +978,15 @@ class Vrml_Scale {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Scale {
+	~Vrml_Scale() {
+	printf("Call custom destructor for instance of Vrml_Scale\n");
+	}
+};
 
 %nodefaultctor Vrml_Instancing;
 class Vrml_Instancing {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_Instancing();
 		%feature("autodoc", "1");
 		Vrml_Instancing(const TCollection_AsciiString &aString);
 		%feature("autodoc", "1");
@@ -952,12 +995,15 @@ class Vrml_Instancing {
 		Standard_OStream & USE(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Instancing {
+	~Vrml_Instancing() {
+	printf("Call custom destructor for instance of Vrml_Instancing\n");
+	}
+};
 
 %nodefaultctor Vrml_MaterialBinding;
 class Vrml_MaterialBinding {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_MaterialBinding();
 		%feature("autodoc", "1");
 		Vrml_MaterialBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
 		%feature("autodoc", "1");
@@ -970,12 +1016,15 @@ class Vrml_MaterialBinding {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_MaterialBinding {
+	~Vrml_MaterialBinding() {
+	printf("Call custom destructor for instance of Vrml_MaterialBinding\n");
+	}
+};
 
 %nodefaultctor Vrml_MatrixTransform;
 class Vrml_MatrixTransform {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_MatrixTransform();
 		%feature("autodoc", "1");
 		Vrml_MatrixTransform();
 		%feature("autodoc", "1");
@@ -988,12 +1037,15 @@ class Vrml_MatrixTransform {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_MatrixTransform {
+	~Vrml_MatrixTransform() {
+	printf("Call custom destructor for instance of Vrml_MatrixTransform\n");
+	}
+};
 
 %nodefaultctor Vrml_DirectionalLight;
 class Vrml_DirectionalLight {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_DirectionalLight();
 		%feature("autodoc", "1");
 		Vrml_DirectionalLight();
 		%feature("autodoc", "1");
@@ -1018,12 +1070,15 @@ class Vrml_DirectionalLight {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_DirectionalLight {
+	~Vrml_DirectionalLight() {
+	printf("Call custom destructor for instance of Vrml_DirectionalLight\n");
+	}
+};
 
 %nodefaultctor Vrml_FontStyle;
 class Vrml_FontStyle {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_FontStyle();
 		%feature("autodoc", "1");
 		Vrml_FontStyle(const Standard_Real aSize=10, const Vrml_FontStyleFamily aFamily=Vrml_SERIF, const Vrml_FontStyleStyle aStyle=Vrml_NONE);
 		%feature("autodoc", "1");
@@ -1042,12 +1097,15 @@ class Vrml_FontStyle {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_FontStyle {
+	~Vrml_FontStyle() {
+	printf("Call custom destructor for instance of Vrml_FontStyle\n");
+	}
+};
 
 %nodefaultctor Vrml_Transform;
 class Vrml_Transform {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_Transform();
 		%feature("autodoc", "1");
 		Vrml_Transform();
 		%feature("autodoc", "1");
@@ -1076,12 +1134,15 @@ class Vrml_Transform {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Transform {
+	~Vrml_Transform() {
+	printf("Call custom destructor for instance of Vrml_Transform\n");
+	}
+};
 
 %nodefaultctor Vrml_PerspectiveCamera;
 class Vrml_PerspectiveCamera {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_PerspectiveCamera();
 		%feature("autodoc", "1");
 		Vrml_PerspectiveCamera();
 		%feature("autodoc", "1");
@@ -1106,12 +1167,15 @@ class Vrml_PerspectiveCamera {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_PerspectiveCamera {
+	~Vrml_PerspectiveCamera() {
+	printf("Call custom destructor for instance of Vrml_PerspectiveCamera\n");
+	}
+};
 
 %nodefaultctor Vrml_WWWAnchor;
 class Vrml_WWWAnchor {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_WWWAnchor();
 		%feature("autodoc", "1");
 		Vrml_WWWAnchor(const TCollection_AsciiString &aName="", const TCollection_AsciiString &aDescription="", const Vrml_WWWAnchorMap aMap=Vrml_MAP_NONE);
 		%feature("autodoc", "1");
@@ -1129,6 +1193,11 @@ class Vrml_WWWAnchor {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_WWWAnchor {
+	~Vrml_WWWAnchor() {
+	printf("Call custom destructor for instance of Vrml_WWWAnchor\n");
+	}
 };
 
 %nodefaultctor Vrml_IndexedFaceSet;
@@ -1223,8 +1292,6 @@ class Vrml_Material : public MMgt_TShared {
 class Vrml_Rotation {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_Rotation();
-		%feature("autodoc", "1");
 		Vrml_Rotation();
 		%feature("autodoc", "1");
 		Vrml_Rotation(const Vrml_SFRotation &aRotation);
@@ -1236,12 +1303,15 @@ class Vrml_Rotation {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Rotation {
+	~Vrml_Rotation() {
+	printf("Call custom destructor for instance of Vrml_Rotation\n");
+	}
+};
 
 %nodefaultctor Vrml_ShapeHints;
 class Vrml_ShapeHints {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_ShapeHints();
 		%feature("autodoc", "1");
 		Vrml_ShapeHints(const Vrml_VertexOrdering aVertexOrdering=Vrml_UNKNOWN_ORDERING, const Vrml_ShapeType aShapeType=Vrml_UNKNOWN_SHAPE_TYPE, const Vrml_FaceType aFaceType=Vrml_CONVEX, const Standard_Real aAngle=5.0e-1);
 		%feature("autodoc", "1");
@@ -1264,12 +1334,15 @@ class Vrml_ShapeHints {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_ShapeHints {
+	~Vrml_ShapeHints() {
+	printf("Call custom destructor for instance of Vrml_ShapeHints\n");
+	}
+};
 
 %nodefaultctor Vrml_Separator;
 class Vrml_Separator {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_Separator();
 		%feature("autodoc", "1");
 		Vrml_Separator(const Vrml_SeparatorRenderCulling aRenderCulling);
 		%feature("autodoc", "1");
@@ -1282,12 +1355,15 @@ class Vrml_Separator {
 		Standard_OStream & Print(Standard_OStream & anOStream);
 
 };
+%extend Vrml_Separator {
+	~Vrml_Separator() {
+	printf("Call custom destructor for instance of Vrml_Separator\n");
+	}
+};
 
 %nodefaultctor Vrml_Translation;
 class Vrml_Translation {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_Translation();
 		%feature("autodoc", "1");
 		Vrml_Translation();
 		%feature("autodoc", "1");
@@ -1300,17 +1376,25 @@ class Vrml_Translation {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Translation {
+	~Vrml_Translation() {
+	printf("Call custom destructor for instance of Vrml_Translation\n");
+	}
+};
 
 %nodefaultctor Vrml_Group;
 class Vrml_Group {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_Group();
-		%feature("autodoc", "1");
 		Vrml_Group();
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream);
 
+};
+%extend Vrml_Group {
+	~Vrml_Group() {
+	printf("Call custom destructor for instance of Vrml_Group\n");
+	}
 };
 
 %nodefaultctor Vrml_Coordinate3;
@@ -1373,8 +1457,6 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 class Vrml_Cone {
 	public:
 		%feature("autodoc", "1");
-		~Vrml_Cone();
-		%feature("autodoc", "1");
 		Vrml_Cone(const Vrml_ConeParts aParts=Vrml_ConeALL, const Standard_Real aBottomRadius=1, const Standard_Real aHeight=2);
 		%feature("autodoc", "1");
 		void SetParts(const Vrml_ConeParts aParts);
@@ -1392,12 +1474,15 @@ class Vrml_Cone {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Cone {
+	~Vrml_Cone() {
+	printf("Call custom destructor for instance of Vrml_Cone\n");
+	}
+};
 
 %nodefaultctor Vrml_PointSet;
 class Vrml_PointSet {
 	public:
-		%feature("autodoc", "1");
-		~Vrml_PointSet();
 		%feature("autodoc", "1");
 		Vrml_PointSet(const Standard_Integer aStartIndex=0, const Standard_Integer aNumPoints=-0x000000001);
 		%feature("autodoc", "1");
@@ -1411,4 +1496,9 @@ class Vrml_PointSet {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_PointSet {
+	~Vrml_PointSet() {
+	printf("Call custom destructor for instance of Vrml_PointSet\n");
+	}
 };

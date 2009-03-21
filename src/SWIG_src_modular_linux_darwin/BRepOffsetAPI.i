@@ -200,9 +200,12 @@ class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 		TopoDS_Shell Shell() const;
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_MakeDraft();
 
+};
+%extend BRepOffsetAPI_MakeDraft {
+	~BRepOffsetAPI_MakeDraft() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeDraft\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_DraftAngle;
@@ -238,9 +241,12 @@ class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
 		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_DraftAngle();
 
+};
+%extend BRepOffsetAPI_DraftAngle {
+	~BRepOffsetAPI_DraftAngle() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_DraftAngle\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_SequenceOfSequenceOfReal;
@@ -250,8 +256,6 @@ class BRepOffsetAPI_SequenceOfSequenceOfReal : public TCollection_BaseSequence {
 		BRepOffsetAPI_SequenceOfSequenceOfReal();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepOffsetAPI_SequenceOfSequenceOfReal();
 		%feature("autodoc", "1");
 		const BRepOffsetAPI_SequenceOfSequenceOfReal & Assign(const BRepOffsetAPI_SequenceOfSequenceOfReal &Other);
 		%feature("autodoc", "1");
@@ -291,6 +295,11 @@ class BRepOffsetAPI_SequenceOfSequenceOfReal : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend BRepOffsetAPI_SequenceOfSequenceOfReal {
+	~BRepOffsetAPI_SequenceOfSequenceOfReal() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfReal\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_MakeFilling;
@@ -332,9 +341,12 @@ class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 		Standard_Real G1Error(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		Standard_Real G2Error(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_MakeFilling();
 
+};
+%extend BRepOffsetAPI_MakeFilling {
+	~BRepOffsetAPI_MakeFilling() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeFilling\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape;
@@ -404,9 +416,12 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 		virtual		TopoDS_Shape LastShape();
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_MakePipeShell();
 
+};
+%extend BRepOffsetAPI_MakePipeShell {
+	~BRepOffsetAPI_MakePipeShell() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakePipeShell\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_SequenceOfSequenceOfShape;
@@ -416,8 +431,6 @@ class BRepOffsetAPI_SequenceOfSequenceOfShape : public TCollection_BaseSequence 
 		BRepOffsetAPI_SequenceOfSequenceOfShape();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepOffsetAPI_SequenceOfSequenceOfShape();
 		%feature("autodoc", "1");
 		const BRepOffsetAPI_SequenceOfSequenceOfShape & Assign(const BRepOffsetAPI_SequenceOfSequenceOfShape &Other);
 		%feature("autodoc", "1");
@@ -458,6 +471,11 @@ class BRepOffsetAPI_SequenceOfSequenceOfShape : public TCollection_BaseSequence 
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend BRepOffsetAPI_SequenceOfSequenceOfShape {
+	~BRepOffsetAPI_SequenceOfSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfShape\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_MakeOffsetShape;
 class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
@@ -476,9 +494,12 @@ class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
 		const TopTools_ListOfShape & GeneratedEdge(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		GeomAbs_JoinType GetJoinType() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_MakeOffsetShape();
 
+};
+%extend BRepOffsetAPI_MakeOffsetShape {
+	~BRepOffsetAPI_MakeOffsetShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeOffsetShape\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_MakeThickSolid;
@@ -490,16 +511,17 @@ class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
 		BRepOffsetAPI_MakeThickSolid(const TopoDS_Shape &S, const TopTools_ListOfShape &ClosingFaces, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode=BRepOffset_Skin, const Standard_Boolean Intersection=0, const Standard_Boolean SelfInter=0, const GeomAbs_JoinType Join=GeomAbs_Arc);
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_MakeThickSolid();
 
+};
+%extend BRepOffsetAPI_MakeThickSolid {
+	~BRepOffsetAPI_MakeThickSolid() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeThickSolid\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape;
 class BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape();
 		%feature("autodoc", "1");
 		BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape();
 		%feature("autodoc", "1");
@@ -511,6 +533,11 @@ class BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCol
 		%feature("autodoc", "1");
 		const TopTools_SequenceOfShape & Value() const;
 
+};
+%extend BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape {
+	~BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_MakeEvolved;
@@ -532,9 +559,12 @@ class BRepOffsetAPI_MakeEvolved : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Shape & Top() const;
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Bottom() const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_MakeEvolved();
 
+};
+%extend BRepOffsetAPI_MakeEvolved {
+	~BRepOffsetAPI_MakeEvolved() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeEvolved\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal;
@@ -580,9 +610,12 @@ class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Shape & LastShape() const;
 		%feature("autodoc", "1");
 		TopoDS_Shape GeneratedFace(const TopoDS_Shape &Edge) const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_ThruSections();
 
+};
+%extend BRepOffsetAPI_ThruSections {
+	~BRepOffsetAPI_ThruSections() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_ThruSections\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_NormalProjection;
@@ -618,9 +651,12 @@ class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Shape & Ancestor(const TopoDS_Edge &E) const;
 		%feature("autodoc", "1");
 		Standard_Boolean BuildWire(TopTools_ListOfShape & Liste) const;
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_NormalProjection();
 
+};
+%extend BRepOffsetAPI_NormalProjection {
+	~BRepOffsetAPI_NormalProjection() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_NormalProjection\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_MakeOffset;
@@ -644,9 +680,12 @@ class BRepOffsetAPI_MakeOffset : public BRepBuilderAPI_MakeShape {
 		virtual		void Build();
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_MakeOffset();
 
+};
+%extend BRepOffsetAPI_MakeOffset {
+	~BRepOffsetAPI_MakeOffset() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeOffset\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_MakePipe;
@@ -664,9 +703,12 @@ class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
 		virtual		TopoDS_Shape LastShape();
 		%feature("autodoc", "1");
 		TopoDS_Shape Generated(const TopoDS_Shape &SSpine, const TopoDS_Shape &SProfile);
-		%feature("autodoc", "1");
-		virtual		~BRepOffsetAPI_MakePipe();
 
+};
+%extend BRepOffsetAPI_MakePipe {
+	~BRepOffsetAPI_MakePipe() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakePipe\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_DataMapOfShapeSequenceOfShape;
@@ -680,8 +722,6 @@ class BRepOffsetAPI_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap 
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepOffsetAPI_DataMapOfShapeSequenceOfShape();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopTools_SequenceOfShape &I);
 		%feature("autodoc", "1");
@@ -697,4 +737,9 @@ class BRepOffsetAPI_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap 
 		%feature("autodoc", "1");
 		TopTools_SequenceOfShape & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepOffsetAPI_DataMapOfShapeSequenceOfShape {
+	~BRepOffsetAPI_DataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_DataMapOfShapeSequenceOfShape\n");
+	}
 };

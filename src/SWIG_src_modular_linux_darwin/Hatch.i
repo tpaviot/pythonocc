@@ -164,14 +164,17 @@ class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {
 class Hatch_Line {
 	public:
 		%feature("autodoc", "1");
-		~Hatch_Line();
-		%feature("autodoc", "1");
 		Hatch_Line();
 		%feature("autodoc", "1");
 		Hatch_Line(const gp_Lin2d &L, const Hatch_LineForm T);
 		%feature("autodoc", "1");
 		void AddIntersection(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index, const Standard_Real Par2, const Standard_Real theToler);
 
+};
+%extend Hatch_Line {
+	~Hatch_Line() {
+	printf("Call custom destructor for instance of Hatch_Line\n");
+	}
 };
 
 %nodefaultctor Hatch_SequenceOfParameter;
@@ -181,8 +184,6 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 		Hatch_SequenceOfParameter();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Hatch_SequenceOfParameter();
 		%feature("autodoc", "1");
 		const Hatch_SequenceOfParameter & Assign(const Hatch_SequenceOfParameter &Other);
 		%feature("autodoc", "1");
@@ -223,12 +224,15 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Hatch_SequenceOfParameter {
+	~Hatch_SequenceOfParameter() {
+	printf("Call custom destructor for instance of Hatch_SequenceOfParameter\n");
+	}
+};
 
 %nodefaultctor Hatch_Hatcher;
 class Hatch_Hatcher {
 	public:
-		%feature("autodoc", "1");
-		~Hatch_Hatcher();
 		%feature("autodoc", "1");
 		Hatch_Hatcher(const Standard_Real Tol, const Standard_Boolean Oriented=1);
 		%feature("autodoc", "1");
@@ -275,6 +279,11 @@ class Hatch_Hatcher {
 		void EndIndex(const Standard_Integer I, const Standard_Integer J, Standard_Integer & Index, Standard_Real &OutValue) const;
 
 };
+%extend Hatch_Hatcher {
+	~Hatch_Hatcher() {
+	printf("Call custom destructor for instance of Hatch_Hatcher\n");
+	}
+};
 
 %nodefaultctor Hatch_SequenceOfLine;
 class Hatch_SequenceOfLine : public TCollection_BaseSequence {
@@ -283,8 +292,6 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 		Hatch_SequenceOfLine();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Hatch_SequenceOfLine();
 		%feature("autodoc", "1");
 		const Hatch_SequenceOfLine & Assign(const Hatch_SequenceOfLine &Other);
 		%feature("autodoc", "1");
@@ -325,17 +332,25 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Hatch_SequenceOfLine {
+	~Hatch_SequenceOfLine() {
+	printf("Call custom destructor for instance of Hatch_SequenceOfLine\n");
+	}
+};
 
 %nodefaultctor Hatch_Parameter;
 class Hatch_Parameter {
 	public:
 		%feature("autodoc", "1");
-		~Hatch_Parameter();
-		%feature("autodoc", "1");
 		Hatch_Parameter();
 		%feature("autodoc", "1");
 		Hatch_Parameter(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index=0, const Standard_Real Par2=0);
 
+};
+%extend Hatch_Parameter {
+	~Hatch_Parameter() {
+	printf("Call custom destructor for instance of Hatch_Parameter\n");
+	}
 };
 
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfLine;

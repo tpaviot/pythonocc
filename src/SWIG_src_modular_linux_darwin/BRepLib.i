@@ -131,12 +131,15 @@ class BRepLib_Command {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~BRepLib_Command();
-		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		void Check() const;
 
+};
+%extend BRepLib_Command {
+	~BRepLib_Command() {
+	printf("Call custom destructor for instance of BRepLib_Command\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeShape;
@@ -158,9 +161,12 @@ class BRepLib_MakeShape : public BRepLib_Command {
 		virtual		const TopTools_ListOfShape & NewFaces(const Standard_Integer I);
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & FacesFromEdges(const TopoDS_Edge &E);
-		%feature("autodoc", "1");
-		virtual		~BRepLib_MakeShape();
 
+};
+%extend BRepLib_MakeShape {
+	~BRepLib_MakeShape() {
+	printf("Call custom destructor for instance of BRepLib_MakeShape\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeVertex;
@@ -170,9 +176,12 @@ class BRepLib_MakeVertex : public BRepLib_MakeShape {
 		BRepLib_MakeVertex(const gp_Pnt &P);
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex() const;
-		%feature("autodoc", "1");
-		virtual		~BRepLib_MakeVertex();
 
+};
+%extend BRepLib_MakeVertex {
+	~BRepLib_MakeVertex() {
+	printf("Call custom destructor for instance of BRepLib_MakeVertex\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeEdge;
@@ -280,9 +289,12 @@ class BRepLib_MakeEdge : public BRepLib_MakeShape {
 		const TopoDS_Vertex & Vertex1() const;
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex2() const;
-		%feature("autodoc", "1");
-		virtual		~BRepLib_MakeEdge();
 
+};
+%extend BRepLib_MakeEdge {
+	~BRepLib_MakeEdge() {
+	printf("Call custom destructor for instance of BRepLib_MakeEdge\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeEdge2d;
@@ -364,9 +376,12 @@ class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
 		const TopoDS_Vertex & Vertex1() const;
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex2() const;
-		%feature("autodoc", "1");
-		virtual		~BRepLib_MakeEdge2d();
 
+};
+%extend BRepLib_MakeEdge2d {
+	~BRepLib_MakeEdge2d() {
+	printf("Call custom destructor for instance of BRepLib_MakeEdge2d\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeShell;
@@ -384,16 +399,17 @@ class BRepLib_MakeShell : public BRepLib_MakeShape {
 		BRepLib_ShellError Error() const;
 		%feature("autodoc", "1");
 		const TopoDS_Shell & Shell() const;
-		%feature("autodoc", "1");
-		virtual		~BRepLib_MakeShell();
 
+};
+%extend BRepLib_MakeShell {
+	~BRepLib_MakeShell() {
+	printf("Call custom destructor for instance of BRepLib_MakeShell\n");
+	}
 };
 
 %nodefaultctor BRepLib_FuseEdges;
 class BRepLib_FuseEdges {
 	public:
-		%feature("autodoc", "1");
-		~BRepLib_FuseEdges();
 		%feature("autodoc", "1");
 		BRepLib_FuseEdges(const TopoDS_Shape &theShape, const Standard_Boolean PerformNow=0);
 		%feature("autodoc", "1");
@@ -413,6 +429,11 @@ class BRepLib_FuseEdges {
 		%feature("autodoc", "1");
 		void Perform();
 
+};
+%extend BRepLib_FuseEdges {
+	~BRepLib_FuseEdges() {
+	printf("Call custom destructor for instance of BRepLib_FuseEdges\n");
+	}
 };
 
 %nodefaultctor BRepLib;
@@ -499,9 +520,12 @@ class BRepLib_MakePolygon : public BRepLib_MakeShape {
 		const TopoDS_Edge & Edge() const;
 		%feature("autodoc", "1");
 		const TopoDS_Wire & Wire() const;
-		%feature("autodoc", "1");
-		virtual		~BRepLib_MakePolygon();
 
+};
+%extend BRepLib_MakePolygon {
+	~BRepLib_MakePolygon() {
+	printf("Call custom destructor for instance of BRepLib_MakePolygon\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeSolid;
@@ -527,9 +551,12 @@ class BRepLib_MakeSolid : public BRepLib_MakeShape {
 		const TopoDS_Solid & Solid() const;
 		%feature("autodoc", "1");
 		virtual		BRepLib_ShapeModification FaceStatus(const TopoDS_Face &F) const;
-		%feature("autodoc", "1");
-		virtual		~BRepLib_MakeSolid();
 
+};
+%extend BRepLib_MakeSolid {
+	~BRepLib_MakeSolid() {
+	printf("Call custom destructor for instance of BRepLib_MakeSolid\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeFace;
@@ -591,9 +618,12 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 		BRepLib_FaceError Error() const;
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		virtual		~BRepLib_MakeFace();
 
+};
+%extend BRepLib_MakeFace {
+	~BRepLib_MakeFace() {
+	printf("Call custom destructor for instance of BRepLib_MakeFace\n");
+	}
 };
 
 %nodefaultctor BRepLib_FindSurface;
@@ -656,7 +686,10 @@ class BRepLib_MakeWire : public BRepLib_MakeShape {
 		const TopoDS_Edge & Edge() const;
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex() const;
-		%feature("autodoc", "1");
-		virtual		~BRepLib_MakeWire();
 
+};
+%extend BRepLib_MakeWire {
+	~BRepLib_MakeWire() {
+	printf("Call custom destructor for instance of BRepLib_MakeWire\n");
+	}
 };

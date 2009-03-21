@@ -111,8 +111,6 @@ class GeomConvert_ApproxCurve {
 class GeomConvert_BSplineSurfaceKnotSplitting {
 	public:
 		%feature("autodoc", "1");
-		~GeomConvert_BSplineSurfaceKnotSplitting();
-		%feature("autodoc", "1");
 		GeomConvert_BSplineSurfaceKnotSplitting(const Handle_Geom_BSplineSurface &BasisSurface, const Standard_Integer UContinuityRange, const Standard_Integer VContinuityRange);
 		%feature("autodoc", "1");
 		Standard_Integer NbUSplits() const;
@@ -126,12 +124,15 @@ class GeomConvert_BSplineSurfaceKnotSplitting {
 		Standard_Integer VSplitValue(const Standard_Integer VIndex) const;
 
 };
+%extend GeomConvert_BSplineSurfaceKnotSplitting {
+	~GeomConvert_BSplineSurfaceKnotSplitting() {
+	printf("Call custom destructor for instance of GeomConvert_BSplineSurfaceKnotSplitting\n");
+	}
+};
 
 %nodefaultctor GeomConvert_BSplineCurveKnotSplitting;
 class GeomConvert_BSplineCurveKnotSplitting {
 	public:
-		%feature("autodoc", "1");
-		~GeomConvert_BSplineCurveKnotSplitting();
 		%feature("autodoc", "1");
 		GeomConvert_BSplineCurveKnotSplitting(const Handle_Geom_BSplineCurve &BasisCurve, const Standard_Integer ContinuityRange);
 		%feature("autodoc", "1");
@@ -141,6 +142,11 @@ class GeomConvert_BSplineCurveKnotSplitting {
 		%feature("autodoc", "1");
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
+};
+%extend GeomConvert_BSplineCurveKnotSplitting {
+	~GeomConvert_BSplineCurveKnotSplitting() {
+	printf("Call custom destructor for instance of GeomConvert_BSplineCurveKnotSplitting\n");
+	}
 };
 
 %nodefaultctor GeomConvert;

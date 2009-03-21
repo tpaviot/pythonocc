@@ -119,9 +119,12 @@ class IntCurvesFace_Intersector {
 		Bnd_Box Bounding() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntCurvesFace_Intersector();
 
+};
+%extend IntCurvesFace_Intersector {
+	~IntCurvesFace_Intersector() {
+	printf("Call custom destructor for instance of IntCurvesFace_Intersector\n");
+	}
 };
 
 %nodefaultctor IntCurvesFace_ShapeIntersector;
@@ -159,7 +162,10 @@ class IntCurvesFace_ShapeIntersector {
 		void SortResult();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntCurvesFace_ShapeIntersector();
 
+};
+%extend IntCurvesFace_ShapeIntersector {
+	~IntCurvesFace_ShapeIntersector() {
+	printf("Call custom destructor for instance of IntCurvesFace_ShapeIntersector\n");
+	}
 };

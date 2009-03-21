@@ -775,8 +775,6 @@ class V3d_PositionLight : public V3d_Light {
 class V3d {
 	public:
 		%feature("autodoc", "1");
-		~V3d();
-		%feature("autodoc", "1");
 		V3d();
 		%feature("autodoc", "1");
 		Graphic3d_Vector GetProjAxis(const V3d_TypeOfOrientation Orientation);
@@ -793,6 +791,11 @@ class V3d {
 		%feature("autodoc", "1");
 		void SetPlane(const Handle_V3d_Viewer &aViewer, const Quantity_Length x1, const Quantity_Length y1, const Quantity_Length z1, const Quantity_Length x2, const Quantity_Length y2, const Quantity_Length z2);
 
+};
+%extend V3d {
+	~V3d() {
+	printf("Call custom destructor for instance of V3d\n");
+	}
 };
 
 %nodefaultctor V3d_CircularGrid;
@@ -1521,14 +1524,17 @@ class V3d_OrthographicView : public V3d_View {
 class V3d_ListOfTransient : public TColStd_ListOfTransient {
 	public:
 		%feature("autodoc", "1");
-		~V3d_ListOfTransient();
-		%feature("autodoc", "1");
 		V3d_ListOfTransient();
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Handle_Standard_Transient &aTransient) const;
 		%feature("autodoc", "1");
 		void Remove(const Handle_Standard_Transient &aTransient);
 
+};
+%extend V3d_ListOfTransient {
+	~V3d_ListOfTransient() {
+	printf("Call custom destructor for instance of V3d_ListOfTransient\n");
+	}
 };
 
 %nodefaultctor V3d_Viewer;

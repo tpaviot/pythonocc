@@ -267,8 +267,6 @@ class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AppParCurves_SequenceOfMultiCurve();
-		%feature("autodoc", "1");
 		const AppParCurves_SequenceOfMultiCurve & Assign(const AppParCurves_SequenceOfMultiCurve &Other);
 		%feature("autodoc", "1");
 		void Append(const AppParCurves_MultiCurve &T);
@@ -308,6 +306,11 @@ class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AppParCurves_SequenceOfMultiCurve {
+	~AppParCurves_SequenceOfMultiCurve() {
+	printf("Call custom destructor for instance of AppParCurves_SequenceOfMultiCurve\n");
+	}
+};
 
 %nodefaultctor AppParCurves_MultiCurve;
 class AppParCurves_MultiCurve {
@@ -320,8 +323,6 @@ class AppParCurves_MultiCurve {
 		AppParCurves_MultiCurve(const AppParCurves_Array1OfMultiPoint &tabMU);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~AppParCurves_MultiCurve();
 		%feature("autodoc", "1");
 		void SetNbPoles(const Standard_Integer nbPoles);
 		%feature("autodoc", "1");
@@ -364,6 +365,11 @@ class AppParCurves_MultiCurve {
 		virtual		void Dump(Standard_OStream & o) const;
 
 };
+%extend AppParCurves_MultiCurve {
+	~AppParCurves_MultiCurve() {
+	printf("Call custom destructor for instance of AppParCurves_MultiCurve\n");
+	}
+};
 
 %nodefaultctor AppParCurves_MultiBSpCurve;
 class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
@@ -384,9 +390,12 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		const TColStd_Array1OfReal & Knots() const;
 		%feature("autodoc", "1");
 		const TColStd_Array1OfInteger & Multiplicities() const;
-		%feature("autodoc", "1");
-		virtual		~AppParCurves_MultiBSpCurve();
 
+};
+%extend AppParCurves_MultiBSpCurve {
+	~AppParCurves_MultiBSpCurve() {
+	printf("Call custom destructor for instance of AppParCurves_MultiBSpCurve\n");
+	}
 };
 
 %nodefaultctor AppParCurves_Array1OfMultiCurve;
@@ -400,8 +409,6 @@ class AppParCurves_Array1OfMultiCurve {
 		void Init(const AppParCurves_MultiCurve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~AppParCurves_Array1OfMultiCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -423,6 +430,11 @@ class AppParCurves_Array1OfMultiCurve {
 		%feature("autodoc", "1");
 		AppParCurves_MultiCurve & operator()(const Standard_Integer Index);
 
+};
+%extend AppParCurves_Array1OfMultiCurve {
+	~AppParCurves_Array1OfMultiCurve() {
+	printf("Call custom destructor for instance of AppParCurves_Array1OfMultiCurve\n");
+	}
 };
 
 %nodefaultctor AppParCurves_SequenceNodeOfSequenceOfMultiCurve;
@@ -463,8 +475,6 @@ class AppParCurves_MultiPoint {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~AppParCurves_MultiPoint();
-		%feature("autodoc", "1");
 		void SetPoint(const Standard_Integer Index, const gp_Pnt &Point);
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const Standard_Integer Index) const;
@@ -486,12 +496,15 @@ class AppParCurves_MultiPoint {
 		virtual		void Dump(Standard_OStream & o) const;
 
 };
+%extend AppParCurves_MultiPoint {
+	~AppParCurves_MultiPoint() {
+	printf("Call custom destructor for instance of AppParCurves_MultiPoint\n");
+	}
+};
 
 %nodefaultctor AppParCurves_ConstraintCouple;
 class AppParCurves_ConstraintCouple {
 	public:
-		%feature("autodoc", "1");
-		~AppParCurves_ConstraintCouple();
 		%feature("autodoc", "1");
 		AppParCurves_ConstraintCouple();
 		%feature("autodoc", "1");
@@ -505,6 +518,11 @@ class AppParCurves_ConstraintCouple {
 		%feature("autodoc", "1");
 		void SetConstraint(const AppParCurves_Constraint Cons);
 
+};
+%extend AppParCurves_ConstraintCouple {
+	~AppParCurves_ConstraintCouple() {
+	printf("Call custom destructor for instance of AppParCurves_ConstraintCouple\n");
+	}
 };
 
 %nodefaultctor AppParCurves_HArray1OfMultiCurve;
@@ -609,8 +627,6 @@ class AppParCurves_Array1OfConstraintCouple {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~AppParCurves_Array1OfConstraintCouple();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const AppParCurves_Array1OfConstraintCouple & Assign(const AppParCurves_Array1OfConstraintCouple &Other);
@@ -632,6 +648,11 @@ class AppParCurves_Array1OfConstraintCouple {
 		AppParCurves_ConstraintCouple & operator()(const Standard_Integer Index);
 
 };
+%extend AppParCurves_Array1OfConstraintCouple {
+	~AppParCurves_Array1OfConstraintCouple() {
+	printf("Call custom destructor for instance of AppParCurves_Array1OfConstraintCouple\n");
+	}
+};
 
 %nodefaultctor AppParCurves_SequenceOfMultiBSpCurve;
 class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
@@ -640,8 +661,6 @@ class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 		AppParCurves_SequenceOfMultiBSpCurve();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AppParCurves_SequenceOfMultiBSpCurve();
 		%feature("autodoc", "1");
 		const AppParCurves_SequenceOfMultiBSpCurve & Assign(const AppParCurves_SequenceOfMultiBSpCurve &Other);
 		%feature("autodoc", "1");
@@ -682,6 +701,11 @@ class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AppParCurves_SequenceOfMultiBSpCurve {
+	~AppParCurves_SequenceOfMultiBSpCurve() {
+	printf("Call custom destructor for instance of AppParCurves_SequenceOfMultiBSpCurve\n");
+	}
+};
 
 %nodefaultctor AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve;
 class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_SeqNode {
@@ -717,8 +741,6 @@ class AppParCurves_Array1OfMultiBSpCurve {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~AppParCurves_Array1OfMultiBSpCurve();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const AppParCurves_Array1OfMultiBSpCurve & Assign(const AppParCurves_Array1OfMultiBSpCurve &Other);
@@ -739,6 +761,11 @@ class AppParCurves_Array1OfMultiBSpCurve {
 		%feature("autodoc", "1");
 		AppParCurves_MultiBSpCurve & operator()(const Standard_Integer Index);
 
+};
+%extend AppParCurves_Array1OfMultiBSpCurve {
+	~AppParCurves_Array1OfMultiBSpCurve() {
+	printf("Call custom destructor for instance of AppParCurves_Array1OfMultiBSpCurve\n");
+	}
 };
 
 %nodefaultctor AppParCurves_HArray1OfConstraintCouple;
@@ -825,8 +852,6 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 class AppParCurves {
 	public:
 		%feature("autodoc", "1");
-		~AppParCurves();
-		%feature("autodoc", "1");
 		AppParCurves();
 		%feature("autodoc", "1");
 		void BernsteinMatrix(const Standard_Integer NbPoles, const math_Vector &U, math_Matrix & A);
@@ -837,6 +862,11 @@ class AppParCurves {
 		%feature("autodoc", "1");
 		void SplineFunction(const Standard_Integer NbPoles, const Standard_Integer Degree, const math_Vector &Parameters, const math_Vector &FlatKnots, math_Matrix & A, math_Matrix & DA, math_IntegerVector & Index);
 
+};
+%extend AppParCurves {
+	~AppParCurves() {
+	printf("Call custom destructor for instance of AppParCurves\n");
+	}
 };
 
 %nodefaultctor AppParCurves_HArray1OfMultiBSpCurve;
@@ -891,8 +921,6 @@ class AppParCurves_Array1OfMultiPoint {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~AppParCurves_Array1OfMultiPoint();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const AppParCurves_Array1OfMultiPoint & Assign(const AppParCurves_Array1OfMultiPoint &Other);
@@ -913,4 +941,9 @@ class AppParCurves_Array1OfMultiPoint {
 		%feature("autodoc", "1");
 		AppParCurves_MultiPoint & operator()(const Standard_Integer Index);
 
+};
+%extend AppParCurves_Array1OfMultiPoint {
+	~AppParCurves_Array1OfMultiPoint() {
+	printf("Call custom destructor for instance of AppParCurves_Array1OfMultiPoint\n");
+	}
 };

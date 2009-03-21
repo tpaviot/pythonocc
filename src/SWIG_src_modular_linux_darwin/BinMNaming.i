@@ -198,10 +198,13 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 class BinMNaming {
 	public:
 		%feature("autodoc", "1");
-		~BinMNaming();
-		%feature("autodoc", "1");
 		BinMNaming();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
+};
+%extend BinMNaming {
+	~BinMNaming() {
+	printf("Call custom destructor for instance of BinMNaming\n");
+	}
 };

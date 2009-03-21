@@ -922,8 +922,6 @@ class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Interface_IndexedMapOfAsciiString();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TCollection_AsciiString &K);
@@ -938,6 +936,11 @@ class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const TCollection_AsciiString &K) const;
 
+};
+%extend Interface_IndexedMapOfAsciiString {
+	~Interface_IndexedMapOfAsciiString() {
+	printf("Call custom destructor for instance of Interface_IndexedMapOfAsciiString\n");
+	}
 };
 
 %nodefaultctor Interface_GlobalNodeOfReaderLib;
@@ -1386,14 +1389,17 @@ class Interface_CopyMap : public Interface_CopyControl {
 class Interface_MapAsciiStringHasher {
 	public:
 		%feature("autodoc", "1");
-		~Interface_MapAsciiStringHasher();
-		%feature("autodoc", "1");
 		Interface_MapAsciiStringHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TCollection_AsciiString &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TCollection_AsciiString &K1, const TCollection_AsciiString &K2);
 
+};
+%extend Interface_MapAsciiStringHasher {
+	~Interface_MapAsciiStringHasher() {
+	printf("Call custom destructor for instance of Interface_MapAsciiStringHasher\n");
+	}
 };
 
 %nodefaultctor Interface_CopyTool;
@@ -1457,8 +1463,6 @@ class Interface_Array1OfFileParameter {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Interface_Array1OfFileParameter();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Interface_Array1OfFileParameter & Assign(const Interface_Array1OfFileParameter &Other);
@@ -1479,6 +1483,11 @@ class Interface_Array1OfFileParameter {
 		%feature("autodoc", "1");
 		Interface_FileParameter & operator()(const Standard_Integer Index);
 
+};
+%extend Interface_Array1OfFileParameter {
+	~Interface_Array1OfFileParameter() {
+	printf("Call custom destructor for instance of Interface_Array1OfFileParameter\n");
+	}
 };
 
 %nodefaultctor Interface_GeneralLib;
@@ -1798,8 +1807,6 @@ class Interface_Static : public Interface_TypedValue {
 class Interface_FloatWriter {
 	public:
 		%feature("autodoc", "1");
-		~Interface_FloatWriter();
-		%feature("autodoc", "1");
 		Interface_FloatWriter(const Standard_Integer chars=0);
 		%feature("autodoc", "1");
 		void SetFormat(const char * form, const Standard_Boolean reset=1);
@@ -1820,6 +1827,11 @@ class Interface_FloatWriter {
 		%feature("autodoc", "1");
 		Standard_Integer Convert(const Standard_Real val, const char * text, const Standard_Boolean zerosup, const Standard_Real Range1, const Standard_Real Range2, const char * mainform, const char * rangeform);
 
+};
+%extend Interface_FloatWriter {
+	~Interface_FloatWriter() {
+	printf("Call custom destructor for instance of Interface_FloatWriter\n");
+	}
 };
 
 %nodefaultctor Interface_IntVal;
@@ -1979,8 +1991,6 @@ class Interface_UndefinedContent : public MMgt_TShared {
 class Interface_IntList {
 	public:
 		%feature("autodoc", "1");
-		~Interface_IntList();
-		%feature("autodoc", "1");
 		Interface_IntList();
 		%feature("autodoc", "1");
 		Interface_IntList(const Standard_Integer nbe);
@@ -2020,6 +2030,11 @@ class Interface_IntList {
 		void AdjustSize(const Standard_Integer margin=0);
 
 };
+%extend Interface_IntList {
+	~Interface_IntList() {
+	printf("Call custom destructor for instance of Interface_IntList\n");
+	}
+};
 
 %nodefaultctor Interface_SequenceNodeOfSequenceOfCheck;
 class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
@@ -2046,8 +2061,6 @@ class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 %nodefaultctor Interface_BitMap;
 class Interface_BitMap {
 	public:
-		%feature("autodoc", "1");
-		~Interface_BitMap();
 		%feature("autodoc", "1");
 		Interface_BitMap(const Standard_Integer nbitems, const Standard_Integer resflags=0);
 		%feature("autodoc", "1");
@@ -2089,6 +2102,11 @@ class Interface_BitMap {
 		%feature("autodoc", "1");
 		void Init(const Standard_Boolean val, const Standard_Integer flag=0) const;
 
+};
+%extend Interface_BitMap {
+	~Interface_BitMap() {
+	printf("Call custom destructor for instance of Interface_BitMap\n");
+	}
 };
 
 %nodefaultctor Interface_FileReaderTool;
@@ -2372,8 +2390,6 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Interface_MSG();
-		%feature("autodoc", "1");
 		Standard_CString Value() const;
 		%feature("autodoc", "1");
 		Standard_Integer Read(std::istream & S);
@@ -2410,6 +2426,11 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		void Print(Standard_OStream & S, const char * val, const Standard_Integer max, const Standard_Integer just=-0x000000001);
 
+};
+%extend Interface_MSG {
+	~Interface_MSG() {
+	printf("Call custom destructor for instance of Interface_MSG\n");
+	}
 };
 
 %nodefaultctor Interface_ReportEntity;
@@ -2824,8 +2845,6 @@ class Interface_GTool : public MMgt_TShared {
 class Interface_Category {
 	public:
 		%feature("autodoc", "1");
-		~Interface_Category();
-		%feature("autodoc", "1");
 		Interface_Category();
 		%feature("autodoc", "1");
 		Interface_Category(const Handle_Interface_Protocol &proto);
@@ -2852,6 +2871,11 @@ class Interface_Category {
 		%feature("autodoc", "1");
 		void Init();
 
+};
+%extend Interface_Category {
+	~Interface_Category() {
+	printf("Call custom destructor for instance of Interface_Category\n");
+	}
 };
 
 %nodefaultctor Interface_EntityIterator;
@@ -2916,9 +2940,12 @@ class Interface_GraphContent : public Interface_EntityIterator {
 		void Begin();
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~Interface_GraphContent();
 
+};
+%extend Interface_GraphContent {
+	~Interface_GraphContent() {
+	printf("Call custom destructor for instance of Interface_GraphContent\n");
+	}
 };
 
 %nodefaultctor Interface_DataMapOfTransientInteger;
@@ -2932,8 +2959,6 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Interface_DataMapOfTransientInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -2949,6 +2974,11 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Handle_Standard_Transient &K);
 
+};
+%extend Interface_DataMapOfTransientInteger {
+	~Interface_DataMapOfTransientInteger() {
+	printf("Call custom destructor for instance of Interface_DataMapOfTransientInteger\n");
+	}
 };
 
 %nodefaultctor Interface_InterfaceModel;
@@ -3352,7 +3382,10 @@ class Interface_FileParameter {
 		void Clear();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Interface_FileParameter();
 
+};
+%extend Interface_FileParameter {
+	~Interface_FileParameter() {
+	printf("Call custom destructor for instance of Interface_FileParameter\n");
+	}
 };

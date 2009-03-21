@@ -1450,8 +1450,6 @@ class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
 class XmlMDataStd {
 	public:
 		%feature("autodoc", "1");
-		~XmlMDataStd();
-		%feature("autodoc", "1");
 		XmlMDataStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);
@@ -1460,6 +1458,11 @@ class XmlMDataStd {
 		%feature("autodoc", "1");
 		Standard_Integer DocumentVersion();
 
+};
+%extend XmlMDataStd {
+	~XmlMDataStd() {
+	printf("Call custom destructor for instance of XmlMDataStd\n");
+	}
 };
 
 %nodefaultctor XmlMDataStd_PlacementDriver;

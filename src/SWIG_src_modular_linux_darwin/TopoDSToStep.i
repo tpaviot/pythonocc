@@ -125,12 +125,15 @@ enum TopoDSToStep_FacetedError {
 class TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		~TopoDSToStep_Root();
-		%feature("autodoc", "1");
 		Standard_Real & Tolerance();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
+};
+%extend TopoDSToStep_Root {
+	~TopoDSToStep_Root() {
+	printf("Call custom destructor for instance of TopoDSToStep_Root\n");
+	}
 };
 
 %nodefaultctor TopoDSToStep_WireframeBuilder;
@@ -164,12 +167,15 @@ class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 class TopoDSToStep_FacetedTool {
 	public:
 		%feature("autodoc", "1");
-		~TopoDSToStep_FacetedTool();
-		%feature("autodoc", "1");
 		TopoDSToStep_FacetedTool();
 		%feature("autodoc", "1");
 		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
 
+};
+%extend TopoDSToStep_FacetedTool {
+	~TopoDSToStep_FacetedTool() {
+	printf("Call custom destructor for instance of TopoDSToStep_FacetedTool\n");
+	}
 };
 
 %nodefaultctor TopoDSToStep_MakeStepVertex;

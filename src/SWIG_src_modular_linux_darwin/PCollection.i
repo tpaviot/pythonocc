@@ -246,8 +246,6 @@ class PCollection_IsNullTree : public Standard_Failure {
 class PCollection_PrivCompareOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~PCollection_PrivCompareOfInteger();
-		%feature("autodoc", "1");
 		PCollection_PrivCompareOfInteger();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
@@ -256,6 +254,11 @@ class PCollection_PrivCompareOfInteger {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
+};
+%extend PCollection_PrivCompareOfInteger {
+	~PCollection_PrivCompareOfInteger() {
+	printf("Call custom destructor for instance of PCollection_PrivCompareOfInteger\n");
+	}
 };
 
 %nodefaultctor PCollection_IsNotRoot;
@@ -440,8 +443,6 @@ class PCollection_HAsciiString : public Standard_Persistent {
 class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~PCollection_CompareOfInteger();
-		%feature("autodoc", "1");
 		PCollection_CompareOfInteger();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
@@ -449,12 +450,15 @@ class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
 };
+%extend PCollection_CompareOfInteger {
+	~PCollection_CompareOfInteger() {
+	printf("Call custom destructor for instance of PCollection_CompareOfInteger\n");
+	}
+};
 
 %nodefaultctor PCollection_PrivCompareOfReal;
 class PCollection_PrivCompareOfReal {
 	public:
-		%feature("autodoc", "1");
-		~PCollection_PrivCompareOfReal();
 		%feature("autodoc", "1");
 		PCollection_PrivCompareOfReal();
 		%feature("autodoc", "1");
@@ -465,15 +469,23 @@ class PCollection_PrivCompareOfReal {
 		Standard_Boolean IsEqual(const Standard_Real &Left, const Standard_Real &Right) const;
 
 };
+%extend PCollection_PrivCompareOfReal {
+	~PCollection_PrivCompareOfReal() {
+	printf("Call custom destructor for instance of PCollection_PrivCompareOfReal\n");
+	}
+};
 
 %nodefaultctor PCollection_CompareOfReal;
 class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {
 	public:
 		%feature("autodoc", "1");
-		~PCollection_CompareOfReal();
-		%feature("autodoc", "1");
 		PCollection_CompareOfReal();
 
+};
+%extend PCollection_CompareOfReal {
+	~PCollection_CompareOfReal() {
+	printf("Call custom destructor for instance of PCollection_CompareOfReal\n");
+	}
 };
 
 %nodefaultctor PCollection_HExtendedString;

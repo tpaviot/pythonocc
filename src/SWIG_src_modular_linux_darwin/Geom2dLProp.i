@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class Geom2dLProp_NumericCurInf2d {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dLProp_NumericCurInf2d();
-		%feature("autodoc", "1");
 		Geom2dLProp_NumericCurInf2d();
 		%feature("autodoc", "1");
 		void PerformCurExt(const Handle_Geom2d_Curve &C, LProp_CurAndInf & Result);
@@ -103,6 +101,11 @@ class Geom2dLProp_NumericCurInf2d {
 		Standard_Boolean IsDone() const;
 
 };
+%extend Geom2dLProp_NumericCurInf2d {
+	~Geom2dLProp_NumericCurInf2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_NumericCurInf2d\n");
+	}
+};
 
 %nodefaultctor Geom2dLProp_FCurNulOfNumericCurInf2d;
 class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative {
@@ -115,16 +118,17 @@ class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative 
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Geom2dLProp_FCurNulOfNumericCurInf2d();
 
+};
+%extend Geom2dLProp_FCurNulOfNumericCurInf2d {
+	~Geom2dLProp_FCurNulOfNumericCurInf2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_FCurNulOfNumericCurInf2d\n");
+	}
 };
 
 %nodefaultctor Geom2dLProp_Curve2dTool;
 class Geom2dLProp_Curve2dTool {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dLProp_Curve2dTool();
 		%feature("autodoc", "1");
 		Geom2dLProp_Curve2dTool();
 		%feature("autodoc", "1");
@@ -143,12 +147,15 @@ class Geom2dLProp_Curve2dTool {
 		Standard_Real LastParameter(const Handle_Geom2d_Curve &C);
 
 };
+%extend Geom2dLProp_Curve2dTool {
+	~Geom2dLProp_Curve2dTool() {
+	printf("Call custom destructor for instance of Geom2dLProp_Curve2dTool\n");
+	}
+};
 
 %nodefaultctor Geom2dLProp_CurAndInf2d;
 class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dLProp_CurAndInf2d();
 		%feature("autodoc", "1");
 		Geom2dLProp_CurAndInf2d();
 		%feature("autodoc", "1");
@@ -161,12 +168,15 @@ class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 		Standard_Boolean IsDone() const;
 
 };
+%extend Geom2dLProp_CurAndInf2d {
+	~Geom2dLProp_CurAndInf2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_CurAndInf2d\n");
+	}
+};
 
 %nodefaultctor Geom2dLProp_CLProps2d;
 class Geom2dLProp_CLProps2d {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dLProp_CLProps2d();
 		%feature("autodoc", "1");
 		Geom2dLProp_CLProps2d(const Handle_Geom2d_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
@@ -197,6 +207,11 @@ class Geom2dLProp_CLProps2d {
 		void CentreOfCurvature(gp_Pnt2d & P);
 
 };
+%extend Geom2dLProp_CLProps2d {
+	~Geom2dLProp_CLProps2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_CLProps2d\n");
+	}
+};
 
 %nodefaultctor Geom2dLProp_FCurExtOfNumericCurInf2d;
 class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative {
@@ -211,7 +226,10 @@ class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative 
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsMinKC(const Standard_Real Param) const;
-		%feature("autodoc", "1");
-		virtual		~Geom2dLProp_FCurExtOfNumericCurInf2d();
 
+};
+%extend Geom2dLProp_FCurExtOfNumericCurInf2d {
+	~Geom2dLProp_FCurExtOfNumericCurInf2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_FCurExtOfNumericCurInf2d\n");
+	}
 };

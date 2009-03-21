@@ -88,14 +88,17 @@ Standard_Real & function transformation
 class GCE2d_Root {
 	public:
 		%feature("autodoc", "1");
-		~GCE2d_Root();
-		%feature("autodoc", "1");
 		GCE2d_Root();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		gce_ErrorType Status() const;
 
+};
+%extend GCE2d_Root {
+	~GCE2d_Root() {
+	printf("Call custom destructor for instance of GCE2d_Root\n");
+	}
 };
 
 %nodefaultctor GCE2d_MakeLine;

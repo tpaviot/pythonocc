@@ -586,8 +586,6 @@ class Message_SequenceOfProgressScale : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Message_SequenceOfProgressScale();
-		%feature("autodoc", "1");
 		const Message_SequenceOfProgressScale & Assign(const Message_SequenceOfProgressScale &Other);
 		%feature("autodoc", "1");
 		void Append(const Message_ProgressScale &T);
@@ -627,6 +625,11 @@ class Message_SequenceOfProgressScale : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Message_SequenceOfProgressScale {
+	~Message_SequenceOfProgressScale() {
+	printf("Call custom destructor for instance of Message_SequenceOfProgressScale\n");
+	}
+};
 
 %nodefaultctor Message_SequenceNodeOfSequenceOfPrinters;
 class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
@@ -660,8 +663,6 @@ class Message_ProgressSentry {
 		%feature("autodoc", "1");
 		void EndScope();
 		%feature("autodoc", "1");
-		~Message_ProgressSentry();
-		%feature("autodoc", "1");
 		void NextScope() const;
 		%feature("autodoc", "1");
 		void Next() const;
@@ -672,6 +673,11 @@ class Message_ProgressSentry {
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 
+};
+%extend Message_ProgressSentry {
+	~Message_ProgressSentry() {
+	printf("Call custom destructor for instance of Message_ProgressSentry\n");
+	}
 };
 
 %nodefaultctor Message_ListNodeOfListOfMsg;
@@ -708,8 +714,6 @@ class Message_ListOfMsg {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Message_ListOfMsg();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Message_Msg &I);
@@ -740,6 +744,11 @@ class Message_ListOfMsg {
 		%feature("autodoc", "1");
 		void InsertAfter(Message_ListOfMsg & Other, Message_ListIteratorOfListOfMsg & It);
 
+};
+%extend Message_ListOfMsg {
+	~Message_ListOfMsg() {
+	printf("Call custom destructor for instance of Message_ListOfMsg\n");
+	}
 };
 
 %nodefaultctor Message;
@@ -880,8 +889,6 @@ class Message_PrinterOStream : public Message_Printer {
 class Message_MsgFile {
 	public:
 		%feature("autodoc", "1");
-		~Message_MsgFile();
-		%feature("autodoc", "1");
 		Message_MsgFile();
 		%feature("autodoc", "1");
 		Standard_Boolean Load(const char * theDirName, const char * theFileName);
@@ -896,6 +903,11 @@ class Message_MsgFile {
 		%feature("autodoc", "1");
 		const TCollection_ExtendedString & Msg(const TCollection_AsciiString &key);
 
+};
+%extend Message_MsgFile {
+	~Message_MsgFile() {
+	printf("Call custom destructor for instance of Message_MsgFile\n");
+	}
 };
 
 %nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
@@ -924,8 +936,6 @@ class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode
 class Message_ListIteratorOfListOfMsg {
 	public:
 		%feature("autodoc", "1");
-		~Message_ListIteratorOfListOfMsg();
-		%feature("autodoc", "1");
 		Message_ListIteratorOfListOfMsg();
 		%feature("autodoc", "1");
 		Message_ListIteratorOfListOfMsg(const Message_ListOfMsg &L);
@@ -939,12 +949,15 @@ class Message_ListIteratorOfListOfMsg {
 		Message_Msg & Value() const;
 
 };
+%extend Message_ListIteratorOfListOfMsg {
+	~Message_ListIteratorOfListOfMsg() {
+	printf("Call custom destructor for instance of Message_ListIteratorOfListOfMsg\n");
+	}
+};
 
 %nodefaultctor Message_Msg;
 class Message_Msg {
 	public:
-		%feature("autodoc", "1");
-		~Message_Msg();
 		%feature("autodoc", "1");
 		Message_Msg();
 		%feature("autodoc", "1");
@@ -980,4 +993,9 @@ class Message_Msg {
 		%feature("autodoc", "1");
 		const TCollection_ExtendedString & Get();
 
+};
+%extend Message_Msg {
+	~Message_Msg() {
+	printf("Call custom destructor for instance of Message_Msg\n");
+	}
 };

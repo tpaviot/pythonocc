@@ -199,8 +199,6 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Resource_DataMapOfAsciiStringAsciiString();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const TCollection_AsciiString &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
@@ -216,6 +214,11 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 		TCollection_AsciiString & operator()(const TCollection_AsciiString &K);
 
 };
+%extend Resource_DataMapOfAsciiStringAsciiString {
+	~Resource_DataMapOfAsciiStringAsciiString() {
+	printf("Call custom destructor for instance of Resource_DataMapOfAsciiStringAsciiString\n");
+	}
+};
 
 %nodefaultctor Resource_Array1OfAsciiString;
 class Resource_Array1OfAsciiString {
@@ -228,8 +231,6 @@ class Resource_Array1OfAsciiString {
 		void Init(const TCollection_AsciiString &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Resource_Array1OfAsciiString();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -252,12 +253,15 @@ class Resource_Array1OfAsciiString {
 		TCollection_AsciiString & operator()(const Standard_Integer Index);
 
 };
+%extend Resource_Array1OfAsciiString {
+	~Resource_Array1OfAsciiString() {
+	printf("Call custom destructor for instance of Resource_Array1OfAsciiString\n");
+	}
+};
 
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
 class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString();
 		%feature("autodoc", "1");
 		Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString();
 		%feature("autodoc", "1");
@@ -269,6 +273,11 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCol
 		%feature("autodoc", "1");
 		const TCollection_ExtendedString & Value() const;
 
+};
+%extend Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString {
+	~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString() {
+	printf("Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString\n");
+	}
 };
 
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
@@ -341,8 +350,6 @@ class Resource_Manager : public MMgt_TShared {
 class Resource_Unicode {
 	public:
 		%feature("autodoc", "1");
-		~Resource_Unicode();
-		%feature("autodoc", "1");
 		Resource_Unicode();
 		%feature("autodoc", "1");
 		void ConvertSJISToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
@@ -372,29 +379,40 @@ class Resource_Unicode {
 		Standard_Boolean ConvertUnicodeToFormat(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
 
 };
+%extend Resource_Unicode {
+	~Resource_Unicode() {
+	printf("Call custom destructor for instance of Resource_Unicode\n");
+	}
+};
 
 %nodefaultctor Resource_QuickSortOfArray1;
 class Resource_QuickSortOfArray1 {
 	public:
-		%feature("autodoc", "1");
-		~Resource_QuickSortOfArray1();
 		%feature("autodoc", "1");
 		Resource_QuickSortOfArray1();
 		%feature("autodoc", "1");
 		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
 
 };
+%extend Resource_QuickSortOfArray1 {
+	~Resource_QuickSortOfArray1() {
+	printf("Call custom destructor for instance of Resource_QuickSortOfArray1\n");
+	}
+};
 
 %nodefaultctor Resource_LexicalCompare;
 class Resource_LexicalCompare {
 	public:
 		%feature("autodoc", "1");
-		~Resource_LexicalCompare();
-		%feature("autodoc", "1");
 		Resource_LexicalCompare();
 		%feature("autodoc", "1");
 		Standard_Boolean IsLower(const TCollection_AsciiString &Left, const TCollection_AsciiString &Right) const;
 
+};
+%extend Resource_LexicalCompare {
+	~Resource_LexicalCompare() {
+	printf("Call custom destructor for instance of Resource_LexicalCompare\n");
+	}
 };
 
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString;
@@ -461,8 +479,6 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Resource_DataMapOfAsciiStringExtendedString();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const TCollection_ExtendedString &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
@@ -478,12 +494,15 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 		TCollection_ExtendedString & operator()(const TCollection_AsciiString &K);
 
 };
+%extend Resource_DataMapOfAsciiStringExtendedString {
+	~Resource_DataMapOfAsciiStringExtendedString() {
+	printf("Call custom destructor for instance of Resource_DataMapOfAsciiStringExtendedString\n");
+	}
+};
 
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString;
 class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");
 		Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");
@@ -495,4 +514,9 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollec
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Value() const;
 
+};
+%extend Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString {
+	~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString() {
+	printf("Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString\n");
+	}
 };

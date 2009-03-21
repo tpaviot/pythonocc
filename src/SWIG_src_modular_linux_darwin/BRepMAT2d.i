@@ -222,8 +222,6 @@ class BRepMAT2d_Explorer {
 class BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt();
-		%feature("autodoc", "1");
 		BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt();
 		%feature("autodoc", "1");
 		BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt(const BRepMAT2d_DataMapOfShapeSequenceOfBasicElt &aMap);
@@ -234,6 +232,11 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt : public TColl
 		%feature("autodoc", "1");
 		const BRepMAT2d_SequenceOfBasicElt & Value() const;
 
+};
+%extend BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt {
+	~BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt() {
+	printf("Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt\n");
+	}
 };
 
 %nodefaultctor BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt;
@@ -272,8 +275,6 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepMAT2d_SequenceOfBasicElt &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -288,6 +289,11 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepMAT2d_DataMapOfShapeSequenceOfBasicElt {
+	~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt() {
+	printf("Call custom destructor for instance of BRepMAT2d_DataMapOfShapeSequenceOfBasicElt\n");
+	}
 };
 
 %nodefaultctor BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape;
@@ -326,8 +332,6 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMAT2d_DataMapOfBasicEltShape();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_MAT_BasicElt &K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_MAT_BasicElt &K) const;
@@ -342,6 +346,11 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopoDS_Shape & operator()(const Handle_MAT_BasicElt &K);
 
+};
+%extend BRepMAT2d_DataMapOfBasicEltShape {
+	~BRepMAT2d_DataMapOfBasicEltShape() {
+	printf("Call custom destructor for instance of BRepMAT2d_DataMapOfBasicEltShape\n");
+	}
 };
 
 %nodefaultctor BRepMAT2d_BisectingLocus;

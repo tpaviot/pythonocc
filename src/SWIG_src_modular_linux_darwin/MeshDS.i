@@ -126,8 +126,6 @@ class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TC
 class MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger();
-		%feature("autodoc", "1");
 		MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger();
 		%feature("autodoc", "1");
 		MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger(const MeshDS_DataMapOfIntegerMapOfInteger &aMap);
@@ -138,6 +136,11 @@ class MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_
 		%feature("autodoc", "1");
 		const TColStd_MapOfInteger & Value() const;
 
+};
+%extend MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger {
+	~MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger() {
+	printf("Call custom destructor for instance of MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger\n");
+	}
 };
 
 %nodefaultctor MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
@@ -176,8 +179,6 @@ class MeshDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MeshDS_DataMapOfIntegerMapOfInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TColStd_MapOfInteger &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -192,4 +193,9 @@ class MeshDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TColStd_MapOfInteger & operator()(const Standard_Integer &K);
 
+};
+%extend MeshDS_DataMapOfIntegerMapOfInteger {
+	~MeshDS_DataMapOfIntegerMapOfInteger() {
+	printf("Call custom destructor for instance of MeshDS_DataMapOfIntegerMapOfInteger\n");
+	}
 };

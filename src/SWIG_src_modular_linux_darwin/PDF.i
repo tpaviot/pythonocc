@@ -473,8 +473,6 @@ class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
 class PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
 	public:
 		%feature("autodoc", "1");
-		~PDF_VArrayTNodeOfFieldOfHAttributeArray1();
-		%feature("autodoc", "1");
 		PDF_VArrayTNodeOfFieldOfHAttributeArray1();
 		%feature("autodoc", "1");
 		PDF_VArrayTNodeOfFieldOfHAttributeArray1(const Handle_PDF_Attribute &aValue);
@@ -483,4 +481,9 @@ class PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
+	~PDF_VArrayTNodeOfFieldOfHAttributeArray1() {
+	printf("Call custom destructor for instance of PDF_VArrayTNodeOfFieldOfHAttributeArray1\n");
+	}
 };

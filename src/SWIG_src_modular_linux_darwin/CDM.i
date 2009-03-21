@@ -584,8 +584,6 @@ class CDM_NamesDirectory : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~CDM_NamesDirectory();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
@@ -600,6 +598,11 @@ class CDM_NamesDirectory : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend CDM_NamesDirectory {
+	~CDM_NamesDirectory() {
+	printf("Call custom destructor for instance of CDM_NamesDirectory\n");
+	}
 };
 
 %nodefaultctor CDM_ListOfReferences;
@@ -941,8 +944,6 @@ class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
 class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~CDM_DataMapIteratorOfNamesDirectory();
-		%feature("autodoc", "1");
 		CDM_DataMapIteratorOfNamesDirectory();
 		%feature("autodoc", "1");
 		CDM_DataMapIteratorOfNamesDirectory(const CDM_NamesDirectory &aMap);
@@ -953,6 +954,11 @@ class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator 
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend CDM_DataMapIteratorOfNamesDirectory {
+	~CDM_DataMapIteratorOfNamesDirectory() {
+	printf("Call custom destructor for instance of CDM_DataMapIteratorOfNamesDirectory\n");
+	}
 };
 
 %nodefaultctor CDM_StackIteratorOfStackOfDocument;
@@ -1023,14 +1029,17 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 class CDM_DocumentHasher {
 	public:
 		%feature("autodoc", "1");
-		~CDM_DocumentHasher();
-		%feature("autodoc", "1");
 		CDM_DocumentHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_CDM_Document &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_CDM_Document &K1, const Handle_CDM_Document &K2);
 
+};
+%extend CDM_DocumentHasher {
+	~CDM_DocumentHasher() {
+	printf("Call custom destructor for instance of CDM_DocumentHasher\n");
+	}
 };
 
 %nodefaultctor CDM_ListOfDocument;
@@ -1094,14 +1103,17 @@ class CDM_MapOfDocument : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~CDM_MapOfDocument();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_CDM_Document &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Handle_CDM_Document &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_CDM_Document &aKey);
 
+};
+%extend CDM_MapOfDocument {
+	~CDM_MapOfDocument() {
+	printf("Call custom destructor for instance of CDM_MapOfDocument\n");
+	}
 };
 
 %nodefaultctor CDM_ListNodeOfListOfDocument;

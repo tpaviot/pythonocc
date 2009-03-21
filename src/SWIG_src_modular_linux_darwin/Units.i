@@ -697,10 +697,13 @@ class Units_Sentence {
 class Units_MathSentence : public Units_Sentence {
 	public:
 		%feature("autodoc", "1");
-		~Units_MathSentence();
-		%feature("autodoc", "1");
 		Units_MathSentence(const char * astring);
 
+};
+%extend Units_MathSentence {
+	~Units_MathSentence() {
+	printf("Call custom destructor for instance of Units_MathSentence\n");
+	}
 };
 
 %nodefaultctor Units_StringsSequence;
@@ -1323,8 +1326,6 @@ class Units_UtsSequence : public TCollection_BaseSequence {
 class Units_Explorer {
 	public:
 		%feature("autodoc", "1");
-		~Units_Explorer();
-		%feature("autodoc", "1");
 		Units_Explorer();
 		%feature("autodoc", "1");
 		Units_Explorer(const Handle_Units_UnitsSystem &aunitssystem);
@@ -1357,6 +1358,11 @@ class Units_Explorer {
 		%feature("autodoc", "1");
 		Standard_Boolean IsActive() const;
 
+};
+%extend Units_Explorer {
+	~Units_Explorer() {
+	printf("Call custom destructor for instance of Units_Explorer\n");
+	}
 };
 
 %nodefaultctor Units;
@@ -1468,8 +1474,6 @@ class Units_TokensSequence : public MMgt_TShared {
 class Units_UnitSentence : public Units_Sentence {
 	public:
 		%feature("autodoc", "1");
-		~Units_UnitSentence();
-		%feature("autodoc", "1");
 		Units_UnitSentence(const char * astring);
 		%feature("autodoc", "1");
 		Units_UnitSentence(const char * astring, const Handle_Units_QuantitiesSequence &aquantitiessequence);
@@ -1478,6 +1482,11 @@ class Units_UnitSentence : public Units_Sentence {
 		%feature("autodoc", "1");
 		void SetUnits(const Handle_Units_QuantitiesSequence &aquantitiessequence);
 
+};
+%extend Units_UnitSentence {
+	~Units_UnitSentence() {
+	printf("Call custom destructor for instance of Units_UnitSentence\n");
+	}
 };
 
 %nodefaultctor Units_QtsSequence;

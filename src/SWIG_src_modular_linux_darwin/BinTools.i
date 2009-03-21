@@ -117,8 +117,6 @@ class BinTools_Curve2dSet {
 class BinTools_LocationSet {
 	public:
 		%feature("autodoc", "1");
-		~BinTools_LocationSet();
-		%feature("autodoc", "1");
 		BinTools_LocationSet();
 		%feature("autodoc", "1");
 		void Clear();
@@ -136,12 +134,15 @@ class BinTools_LocationSet {
 		void Read(std::istream & IS);
 
 };
+%extend BinTools_LocationSet {
+	~BinTools_LocationSet() {
+	printf("Call custom destructor for instance of BinTools_LocationSet\n");
+	}
+};
 
 %nodefaultctor BinTools;
 class BinTools {
 	public:
-		%feature("autodoc", "1");
-		~BinTools();
 		%feature("autodoc", "1");
 		BinTools();
 		%feature("autodoc", "1");
@@ -162,6 +163,11 @@ class BinTools {
 		std::istream & GetExtChar(std::istream & IS, Standard_ExtCharacter & theValue);
 
 };
+%extend BinTools {
+	~BinTools() {
+	printf("Call custom destructor for instance of BinTools\n");
+	}
+};
 
 %nodefaultctor BinTools_ShapeSet;
 class BinTools_ShapeSet {
@@ -170,8 +176,6 @@ class BinTools_ShapeSet {
 		BinTools_ShapeSet(const Standard_Boolean isWithTriangles=0);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~BinTools_ShapeSet();
 		%feature("autodoc", "1");
 		void SetFormatNb(const Standard_Integer theFormatNb);
 		%feature("autodoc", "1");
@@ -223,6 +227,11 @@ class BinTools_ShapeSet {
 		%feature("autodoc", "1");
 		void WritePolygonOnTriangulation(Standard_OStream & OS) const;
 
+};
+%extend BinTools_ShapeSet {
+	~BinTools_ShapeSet() {
+	printf("Call custom destructor for instance of BinTools_ShapeSet\n");
+	}
 };
 
 %nodefaultctor BinTools_SurfaceSet;

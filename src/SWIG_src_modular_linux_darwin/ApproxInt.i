@@ -101,3 +101,8 @@ class ApproxInt_SvSurfaces {
 		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 
 };
+%extend ApproxInt_SvSurfaces {
+	~ApproxInt_SvSurfaces() {
+	printf("Call custom destructor for instance of ApproxInt_SvSurfaces\n");
+	}
+};

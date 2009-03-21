@@ -808,8 +808,6 @@ class Handle_IGESGeom_TabulatedCylinder : public Handle_IGESData_IGESEntity {
 class IGESGeom_ToolBoundary {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolBoundary();
-		%feature("autodoc", "1");
 		IGESGeom_ToolBoundary();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_Boundary &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -828,6 +826,11 @@ class IGESGeom_ToolBoundary {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_Boundary &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolBoundary {
+	~IGESGeom_ToolBoundary() {
+	printf("Call custom destructor for instance of IGESGeom_ToolBoundary\n");
+	}
 };
 
 %nodefaultctor IGESGeom_TrimmedSurface;
@@ -1146,8 +1149,6 @@ class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
 class IGESGeom_ToolOffsetSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolOffsetSurface();
-		%feature("autodoc", "1");
 		IGESGeom_ToolOffsetSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_OffsetSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1164,6 +1165,11 @@ class IGESGeom_ToolOffsetSurface {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_OffsetSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolOffsetSurface {
+	~IGESGeom_ToolOffsetSurface() {
+	printf("Call custom destructor for instance of IGESGeom_ToolOffsetSurface\n");
+	}
 };
 
 %nodefaultctor IGESGeom_Line;
@@ -1204,8 +1210,6 @@ class IGESGeom_Line : public IGESData_IGESEntity {
 class IGESGeom_ToolCopiousData {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolCopiousData();
-		%feature("autodoc", "1");
 		IGESGeom_ToolCopiousData();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_CopiousData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1222,6 +1226,11 @@ class IGESGeom_ToolCopiousData {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_CopiousData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolCopiousData {
+	~IGESGeom_ToolCopiousData() {
+	printf("Call custom destructor for instance of IGESGeom_ToolCopiousData\n");
+	}
 };
 
 %nodefaultctor IGESGeom_CurveOnSurface;
@@ -1260,8 +1269,6 @@ class IGESGeom_CurveOnSurface : public IGESData_IGESEntity {
 class IGESGeom_ToolSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolSplineCurve();
-		%feature("autodoc", "1");
 		IGESGeom_ToolSplineCurve();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_SplineCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1278,6 +1285,11 @@ class IGESGeom_ToolSplineCurve {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_SplineCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolSplineCurve {
+	~IGESGeom_ToolSplineCurve() {
+	printf("Call custom destructor for instance of IGESGeom_ToolSplineCurve\n");
+	}
 };
 
 %nodefaultctor IGESGeom_BoundedSurface;
@@ -1348,8 +1360,6 @@ class IGESGeom_RuledSurface : public IGESData_IGESEntity {
 class IGESGeom_ToolFlash {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolFlash();
-		%feature("autodoc", "1");
 		IGESGeom_ToolFlash();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_Flash &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1369,12 +1379,15 @@ class IGESGeom_ToolFlash {
 		void OwnDump(const Handle_IGESGeom_Flash &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGeom_ToolFlash {
+	~IGESGeom_ToolFlash() {
+	printf("Call custom destructor for instance of IGESGeom_ToolFlash\n");
+	}
+};
 
 %nodefaultctor IGESGeom_ToolTabulatedCylinder;
 class IGESGeom_ToolTabulatedCylinder {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolTabulatedCylinder();
 		%feature("autodoc", "1");
 		IGESGeom_ToolTabulatedCylinder();
 		%feature("autodoc", "1");
@@ -1393,12 +1406,15 @@ class IGESGeom_ToolTabulatedCylinder {
 		void OwnDump(const Handle_IGESGeom_TabulatedCylinder &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGeom_ToolTabulatedCylinder {
+	~IGESGeom_ToolTabulatedCylinder() {
+	printf("Call custom destructor for instance of IGESGeom_ToolTabulatedCylinder\n");
+	}
+};
 
 %nodefaultctor IGESGeom_ToolConicArc;
 class IGESGeom_ToolConicArc {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolConicArc();
 		%feature("autodoc", "1");
 		IGESGeom_ToolConicArc();
 		%feature("autodoc", "1");
@@ -1418,6 +1434,11 @@ class IGESGeom_ToolConicArc {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_ConicArc &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolConicArc {
+	~IGESGeom_ToolConicArc() {
+	printf("Call custom destructor for instance of IGESGeom_ToolConicArc\n");
+	}
 };
 
 %nodefaultctor IGESGeom_OffsetSurface;
@@ -1454,8 +1475,6 @@ class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 class IGESGeom_ToolDirection {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolDirection();
-		%feature("autodoc", "1");
 		IGESGeom_ToolDirection();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_Direction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1472,6 +1491,11 @@ class IGESGeom_ToolDirection {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_Direction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolDirection {
+	~IGESGeom_ToolDirection() {
+	printf("Call custom destructor for instance of IGESGeom_ToolDirection\n");
+	}
 };
 
 %nodefaultctor IGESGeom_Array1OfCurveOnSurface;
@@ -1534,8 +1558,6 @@ class IGESGeom {
 class IGESGeom_ToolCircularArc {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolCircularArc();
-		%feature("autodoc", "1");
 		IGESGeom_ToolCircularArc();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_CircularArc &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1553,12 +1575,15 @@ class IGESGeom_ToolCircularArc {
 		void OwnDump(const Handle_IGESGeom_CircularArc &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGeom_ToolCircularArc {
+	~IGESGeom_ToolCircularArc() {
+	printf("Call custom destructor for instance of IGESGeom_ToolCircularArc\n");
+	}
+};
 
 %nodefaultctor IGESGeom_ToolSplineSurface;
 class IGESGeom_ToolSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolSplineSurface();
 		%feature("autodoc", "1");
 		IGESGeom_ToolSplineSurface();
 		%feature("autodoc", "1");
@@ -1576,6 +1601,11 @@ class IGESGeom_ToolSplineSurface {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_SplineSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolSplineSurface {
+	~IGESGeom_ToolSplineSurface() {
+	printf("Call custom destructor for instance of IGESGeom_ToolSplineSurface\n");
+	}
 };
 
 %nodefaultctor IGESGeom_SplineSurface;
@@ -1664,8 +1694,6 @@ class IGESGeom_HArray1OfBoundary : public MMgt_TShared {
 class IGESGeom_ToolCurveOnSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolCurveOnSurface();
-		%feature("autodoc", "1");
 		IGESGeom_ToolCurveOnSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_CurveOnSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1685,12 +1713,15 @@ class IGESGeom_ToolCurveOnSurface {
 		void OwnDump(const Handle_IGESGeom_CurveOnSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGeom_ToolCurveOnSurface {
+	~IGESGeom_ToolCurveOnSurface() {
+	printf("Call custom destructor for instance of IGESGeom_ToolCurveOnSurface\n");
+	}
+};
 
 %nodefaultctor IGESGeom_ToolRuledSurface;
 class IGESGeom_ToolRuledSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolRuledSurface();
 		%feature("autodoc", "1");
 		IGESGeom_ToolRuledSurface();
 		%feature("autodoc", "1");
@@ -1708,6 +1739,11 @@ class IGESGeom_ToolRuledSurface {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_RuledSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolRuledSurface {
+	~IGESGeom_ToolRuledSurface() {
+	printf("Call custom destructor for instance of IGESGeom_ToolRuledSurface\n");
+	}
 };
 
 %nodefaultctor IGESGeom_Array1OfBoundary;
@@ -1807,8 +1843,6 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 class IGESGeom_ToolBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolBSplineCurve();
-		%feature("autodoc", "1");
 		IGESGeom_ToolBSplineCurve();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_BSplineCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1826,12 +1860,15 @@ class IGESGeom_ToolBSplineCurve {
 		void OwnDump(const Handle_IGESGeom_BSplineCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGeom_ToolBSplineCurve {
+	~IGESGeom_ToolBSplineCurve() {
+	printf("Call custom destructor for instance of IGESGeom_ToolBSplineCurve\n");
+	}
+};
 
 %nodefaultctor IGESGeom_ToolPlane;
 class IGESGeom_ToolPlane {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolPlane();
 		%feature("autodoc", "1");
 		IGESGeom_ToolPlane();
 		%feature("autodoc", "1");
@@ -1849,6 +1886,11 @@ class IGESGeom_ToolPlane {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_Plane &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolPlane {
+	~IGESGeom_ToolPlane() {
+	printf("Call custom destructor for instance of IGESGeom_ToolPlane\n");
+	}
 };
 
 %nodefaultctor IGESGeom_CompositeCurve;
@@ -1881,8 +1923,6 @@ class IGESGeom_CompositeCurve : public IGESData_IGESEntity {
 class IGESGeom_ToolTransformationMatrix {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolTransformationMatrix();
-		%feature("autodoc", "1");
 		IGESGeom_ToolTransformationMatrix();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_TransformationMatrix &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1901,6 +1941,11 @@ class IGESGeom_ToolTransformationMatrix {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_TransformationMatrix &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolTransformationMatrix {
+	~IGESGeom_ToolTransformationMatrix() {
+	printf("Call custom destructor for instance of IGESGeom_ToolTransformationMatrix\n");
+	}
 };
 
 %nodefaultctor IGESGeom_SpecificModule;
@@ -2135,8 +2180,6 @@ class IGESGeom_CopiousData : public IGESData_IGESEntity {
 class IGESGeom_ToolLine {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolLine();
-		%feature("autodoc", "1");
 		IGESGeom_ToolLine();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_Line &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2154,12 +2197,15 @@ class IGESGeom_ToolLine {
 		void OwnDump(const Handle_IGESGeom_Line &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGeom_ToolLine {
+	~IGESGeom_ToolLine() {
+	printf("Call custom destructor for instance of IGESGeom_ToolLine\n");
+	}
+};
 
 %nodefaultctor IGESGeom_ToolBoundedSurface;
 class IGESGeom_ToolBoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolBoundedSurface();
 		%feature("autodoc", "1");
 		IGESGeom_ToolBoundedSurface();
 		%feature("autodoc", "1");
@@ -2178,12 +2224,15 @@ class IGESGeom_ToolBoundedSurface {
 		void OwnDump(const Handle_IGESGeom_BoundedSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGeom_ToolBoundedSurface {
+	~IGESGeom_ToolBoundedSurface() {
+	printf("Call custom destructor for instance of IGESGeom_ToolBoundedSurface\n");
+	}
+};
 
 %nodefaultctor IGESGeom_ToolCompositeCurve;
 class IGESGeom_ToolCompositeCurve {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolCompositeCurve();
 		%feature("autodoc", "1");
 		IGESGeom_ToolCompositeCurve();
 		%feature("autodoc", "1");
@@ -2201,6 +2250,11 @@ class IGESGeom_ToolCompositeCurve {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_CompositeCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolCompositeCurve {
+	~IGESGeom_ToolCompositeCurve() {
+	printf("Call custom destructor for instance of IGESGeom_ToolCompositeCurve\n");
+	}
 };
 
 %nodefaultctor IGESGeom_Point;
@@ -2323,8 +2377,6 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 class IGESGeom_ToolPoint {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolPoint();
-		%feature("autodoc", "1");
 		IGESGeom_ToolPoint();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_Point &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2341,6 +2393,11 @@ class IGESGeom_ToolPoint {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_Point &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolPoint {
+	~IGESGeom_ToolPoint() {
+	printf("Call custom destructor for instance of IGESGeom_ToolPoint\n");
+	}
 };
 
 %nodefaultctor IGESGeom_Array1OfTransformationMatrix;
@@ -2412,8 +2469,6 @@ class IGESGeom_Direction : public IGESData_IGESEntity {
 class IGESGeom_ToolBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolBSplineSurface();
-		%feature("autodoc", "1");
 		IGESGeom_ToolBSplineSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_BSplineSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2431,12 +2486,15 @@ class IGESGeom_ToolBSplineSurface {
 		void OwnDump(const Handle_IGESGeom_BSplineSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGeom_ToolBSplineSurface {
+	~IGESGeom_ToolBSplineSurface() {
+	printf("Call custom destructor for instance of IGESGeom_ToolBSplineSurface\n");
+	}
+};
 
 %nodefaultctor IGESGeom_ToolTrimmedSurface;
 class IGESGeom_ToolTrimmedSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolTrimmedSurface();
 		%feature("autodoc", "1");
 		IGESGeom_ToolTrimmedSurface();
 		%feature("autodoc", "1");
@@ -2455,12 +2513,15 @@ class IGESGeom_ToolTrimmedSurface {
 		void OwnDump(const Handle_IGESGeom_TrimmedSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGeom_ToolTrimmedSurface {
+	~IGESGeom_ToolTrimmedSurface() {
+	printf("Call custom destructor for instance of IGESGeom_ToolTrimmedSurface\n");
+	}
+};
 
 %nodefaultctor IGESGeom_ToolOffsetCurve;
 class IGESGeom_ToolOffsetCurve {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolOffsetCurve();
 		%feature("autodoc", "1");
 		IGESGeom_ToolOffsetCurve();
 		%feature("autodoc", "1");
@@ -2480,6 +2541,11 @@ class IGESGeom_ToolOffsetCurve {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_OffsetCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolOffsetCurve {
+	~IGESGeom_ToolOffsetCurve() {
+	printf("Call custom destructor for instance of IGESGeom_ToolOffsetCurve\n");
+	}
 };
 
 %nodefaultctor IGESGeom_Flash;
@@ -2524,8 +2590,6 @@ class IGESGeom_Flash : public IGESData_IGESEntity {
 class IGESGeom_ToolSurfaceOfRevolution {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolSurfaceOfRevolution();
-		%feature("autodoc", "1");
 		IGESGeom_ToolSurfaceOfRevolution();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_SurfaceOfRevolution &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2542,6 +2606,11 @@ class IGESGeom_ToolSurfaceOfRevolution {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGeom_SurfaceOfRevolution &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGeom_ToolSurfaceOfRevolution {
+	~IGESGeom_ToolSurfaceOfRevolution() {
+	printf("Call custom destructor for instance of IGESGeom_ToolSurfaceOfRevolution\n");
+	}
 };
 
 %nodefaultctor IGESGeom_OffsetCurve;

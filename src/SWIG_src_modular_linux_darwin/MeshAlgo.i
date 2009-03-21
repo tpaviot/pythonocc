@@ -113,14 +113,17 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 class MeshAlgo {
 	public:
 		%feature("autodoc", "1");
-		~MeshAlgo();
-		%feature("autodoc", "1");
 		MeshAlgo();
 		%feature("autodoc", "1");
 		void SetMesure(const Standard_Boolean val);
 		%feature("autodoc", "1");
 		void SetTrace(const Standard_Integer val);
 
+};
+%extend MeshAlgo {
+	~MeshAlgo() {
+	printf("Call custom destructor for instance of MeshAlgo\n");
+	}
 };
 
 %nodefaultctor MeshAlgo_DataMapOfIntegerCirc;
@@ -134,8 +137,6 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MeshAlgo_DataMapOfIntegerCirc();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const MeshAlgo_Circ &I);
 		%feature("autodoc", "1");
@@ -152,12 +153,15 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 		MeshAlgo_Circ & operator()(const Standard_Integer &K);
 
 };
+%extend MeshAlgo_DataMapOfIntegerCirc {
+	~MeshAlgo_DataMapOfIntegerCirc() {
+	printf("Call custom destructor for instance of MeshAlgo_DataMapOfIntegerCirc\n");
+	}
+};
 
 %nodefaultctor MeshAlgo_CircleTool;
 class MeshAlgo_CircleTool {
 	public:
-		%feature("autodoc", "1");
-		~MeshAlgo_CircleTool();
 		%feature("autodoc", "1");
 		MeshAlgo_CircleTool(const MeshDS_BaseAllocator &theAlloc);
 		%feature("autodoc", "1");
@@ -184,12 +188,15 @@ class MeshAlgo_CircleTool {
 		Standard_Integer & GetNbPoints();
 
 };
+%extend MeshAlgo_CircleTool {
+	~MeshAlgo_CircleTool() {
+	printf("Call custom destructor for instance of MeshAlgo_CircleTool\n");
+	}
+};
 
 %nodefaultctor MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc;
 class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc();
 		%feature("autodoc", "1");
 		MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc();
 		%feature("autodoc", "1");
@@ -202,12 +209,15 @@ class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicM
 		const MeshAlgo_Circ & Value() const;
 
 };
+%extend MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc {
+	~MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc() {
+	printf("Call custom destructor for instance of MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc\n");
+	}
+};
 
 %nodefaultctor MeshAlgo_Circ;
 class MeshAlgo_Circ {
 	public:
-		%feature("autodoc", "1");
-		~MeshAlgo_Circ();
 		%feature("autodoc", "1");
 		MeshAlgo_Circ();
 		%feature("autodoc", "1");
@@ -221,6 +231,11 @@ class MeshAlgo_Circ {
 		%feature("autodoc", "1");
 		const Standard_Real & Radius() const;
 
+};
+%extend MeshAlgo_Circ {
+	~MeshAlgo_Circ() {
+	printf("Call custom destructor for instance of MeshAlgo_Circ\n");
+	}
 };
 
 %nodefaultctor MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc;

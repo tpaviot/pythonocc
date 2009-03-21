@@ -122,10 +122,13 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BRepAlgoAPI_BooleanOperation();
-		%feature("autodoc", "1");
 		const TopTools_ListOfShape & SectionEdges();
 
+};
+%extend BRepAlgoAPI_BooleanOperation {
+	~BRepAlgoAPI_BooleanOperation() {
+	printf("Call custom destructor for instance of BRepAlgoAPI_BooleanOperation\n");
+	}
 };
 
 %nodefaultctor BRepAlgoAPI_Fuse;
@@ -135,9 +138,12 @@ class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
 		BRepAlgoAPI_Fuse(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Fuse(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		~BRepAlgoAPI_Fuse();
 
+};
+%extend BRepAlgoAPI_Fuse {
+	~BRepAlgoAPI_Fuse() {
+	printf("Call custom destructor for instance of BRepAlgoAPI_Fuse\n");
+	}
 };
 
 %nodefaultctor BRepAlgoAPI_Section;
@@ -198,9 +204,12 @@ class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
 		BRepAlgoAPI_Cut(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Cut(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF, const Standard_Boolean bFWD=1);
-		%feature("autodoc", "1");
-		virtual		~BRepAlgoAPI_Cut();
 
+};
+%extend BRepAlgoAPI_Cut {
+	~BRepAlgoAPI_Cut() {
+	printf("Call custom destructor for instance of BRepAlgoAPI_Cut\n");
+	}
 };
 
 %nodefaultctor BRepAlgoAPI_Common;
@@ -210,7 +219,10 @@ class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
 		BRepAlgoAPI_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		~BRepAlgoAPI_Common();
 
+};
+%extend BRepAlgoAPI_Common {
+	~BRepAlgoAPI_Common() {
+	printf("Call custom destructor for instance of BRepAlgoAPI_Common\n");
+	}
 };

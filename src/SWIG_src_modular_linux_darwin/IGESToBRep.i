@@ -473,8 +473,6 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESToBRep_BRepEntity();
-		%feature("autodoc", "1");
 		IGESToBRep_BRepEntity();
 		%feature("autodoc", "1");
 		IGESToBRep_BRepEntity(const IGESToBRep_CurveAndSurface &CS);
@@ -495,6 +493,11 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferManifoldSolid(const Handle_IGESSolid_ManifoldSolid &start);
 
+};
+%extend IGESToBRep_BRepEntity {
+	~IGESToBRep_BRepEntity() {
+	printf("Call custom destructor for instance of IGESToBRep_BRepEntity\n");
+	}
 };
 
 %nodefaultctor IGESToBRep_BasicCurve;
@@ -548,8 +551,6 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESToBRep_TopoSurface();
-		%feature("autodoc", "1");
 		IGESToBRep_TopoSurface();
 		%feature("autodoc", "1");
 		IGESToBRep_TopoSurface(const IGESToBRep_CurveAndSurface &CS);
@@ -578,6 +579,11 @@ class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 		%feature("autodoc", "1");
 		TopoDS_Shape ParamSurface(const Handle_IGESData_IGESEntity &start, gp_Trsf2d & trans, Standard_Real &OutValue);
 
+};
+%extend IGESToBRep_TopoSurface {
+	~IGESToBRep_TopoSurface() {
+	printf("Call custom destructor for instance of IGESToBRep_TopoSurface\n");
+	}
 };
 
 %nodefaultctor IGESToBRep_Reader;

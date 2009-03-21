@@ -112,8 +112,6 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 class BRepSweep_Tool {
 	public:
 		%feature("autodoc", "1");
-		~BRepSweep_Tool();
-		%feature("autodoc", "1");
 		BRepSweep_Tool(const TopoDS_Shape &aShape);
 		%feature("autodoc", "1");
 		Standard_Integer NbShapes() const;
@@ -128,6 +126,11 @@ class BRepSweep_Tool {
 		%feature("autodoc", "1");
 		void SetOrientation(TopoDS_Shape & aShape, const TopAbs_Orientation Or) const;
 
+};
+%extend BRepSweep_Tool {
+	~BRepSweep_Tool() {
+	printf("Call custom destructor for instance of BRepSweep_Tool\n");
+	}
 };
 
 %nodefaultctor BRepSweep_NumLinearRegularSweep;
@@ -187,12 +190,15 @@ class BRepSweep_NumLinearRegularSweep {
 		Standard_Boolean Closed() const;
 
 };
+%extend BRepSweep_NumLinearRegularSweep {
+	~BRepSweep_NumLinearRegularSweep() {
+	printf("Call custom destructor for instance of BRepSweep_NumLinearRegularSweep\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Iterator;
 class BRepSweep_Iterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepSweep_Iterator();
 		%feature("autodoc", "1");
 		BRepSweep_Iterator();
 		%feature("autodoc", "1");
@@ -206,6 +212,11 @@ class BRepSweep_Iterator {
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation() const;
 
+};
+%extend BRepSweep_Iterator {
+	~BRepSweep_Iterator() {
+	printf("Call custom destructor for instance of BRepSweep_Iterator\n");
+	}
 };
 
 %nodefaultctor BRepSweep_Trsf;
@@ -251,6 +262,11 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		virtual		void SetContinuity(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS);
 
 };
+%extend BRepSweep_Trsf {
+	~BRepSweep_Trsf() {
+	printf("Call custom destructor for instance of BRepSweep_Trsf\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Translation;
 class BRepSweep_Translation : public BRepSweep_Trsf {
@@ -258,12 +274,15 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("autodoc", "1");
 		BRepSweep_Translation(const TopoDS_Shape &S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Vec &V, const Standard_Boolean C, const Standard_Boolean Canonize=1);
 		%feature("autodoc", "1");
-		virtual		~BRepSweep_Translation();
-		%feature("autodoc", "1");
 		virtual		TopAbs_Orientation DirectSolid(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS);
 		%feature("autodoc", "1");
 		gp_Vec Vec() const;
 
+};
+%extend BRepSweep_Translation {
+	~BRepSweep_Translation() {
+	printf("Call custom destructor for instance of BRepSweep_Translation\n");
+	}
 };
 
 %nodefaultctor BRepSweep_SequenceOfShapesOfNumLinearRegularSweep;
@@ -273,8 +292,6 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 		BRepSweep_SequenceOfShapesOfNumLinearRegularSweep();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepSweep_SequenceOfShapesOfNumLinearRegularSweep();
 		%feature("autodoc", "1");
 		const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & Assign(const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep &Other);
 		%feature("autodoc", "1");
@@ -315,6 +332,11 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend BRepSweep_SequenceOfShapesOfNumLinearRegularSweep {
+	~BRepSweep_SequenceOfShapesOfNumLinearRegularSweep() {
+	printf("Call custom destructor for instance of BRepSweep_SequenceOfShapesOfNumLinearRegularSweep\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Array2OfShapesOfNumLinearRegularSweep;
 class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
@@ -327,8 +349,6 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 		void Init(const TopoDS_Shape &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BRepSweep_Array2OfShapesOfNumLinearRegularSweep();
 		%feature("autodoc", "1");
 		const BRepSweep_Array2OfShapesOfNumLinearRegularSweep & Assign(const BRepSweep_Array2OfShapesOfNumLinearRegularSweep &Other);
 		%feature("autodoc", "1");
@@ -355,12 +375,15 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 		TopoDS_Shape & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
+	~BRepSweep_Array2OfShapesOfNumLinearRegularSweep() {
+	printf("Call custom destructor for instance of BRepSweep_Array2OfShapesOfNumLinearRegularSweep\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Revol;
 class BRepSweep_Revol {
 	public:
-		%feature("autodoc", "1");
-		~BRepSweep_Revol();
 		%feature("autodoc", "1");
 		BRepSweep_Revol(const TopoDS_Shape &S, const gp_Ax1 &A, const Quantity_PlaneAngle D, const Standard_Boolean C=0);
 		%feature("autodoc", "1");
@@ -383,12 +406,15 @@ class BRepSweep_Revol {
 		Quantity_PlaneAngle Angle() const;
 
 };
+%extend BRepSweep_Revol {
+	~BRepSweep_Revol() {
+	printf("Call custom destructor for instance of BRepSweep_Revol\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Builder;
 class BRepSweep_Builder {
 	public:
-		%feature("autodoc", "1");
-		~BRepSweep_Builder();
 		%feature("autodoc", "1");
 		BRepSweep_Builder(const BRep_Builder &aBuilder);
 		%feature("autodoc", "1");
@@ -408,6 +434,11 @@ class BRepSweep_Builder {
 		%feature("autodoc", "1");
 		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape &aShape2) const;
 
+};
+%extend BRepSweep_Builder {
+	~BRepSweep_Builder() {
+	printf("Call custom destructor for instance of BRepSweep_Builder\n");
+	}
 };
 
 %nodefaultctor BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep;
@@ -475,16 +506,17 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		gp_Ax1 Axe() const;
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle Angle() const;
-		%feature("autodoc", "1");
-		virtual		~BRepSweep_Rotation();
 
+};
+%extend BRepSweep_Rotation {
+	~BRepSweep_Rotation() {
+	printf("Call custom destructor for instance of BRepSweep_Rotation\n");
+	}
 };
 
 %nodefaultctor BRepSweep_Prism;
 class BRepSweep_Prism {
 	public:
-		%feature("autodoc", "1");
-		~BRepSweep_Prism();
 		%feature("autodoc", "1");
 		BRepSweep_Prism(const TopoDS_Shape &S, const gp_Vec &V, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
 		%feature("autodoc", "1");
@@ -504,4 +536,9 @@ class BRepSweep_Prism {
 		%feature("autodoc", "1");
 		gp_Vec Vec() const;
 
+};
+%extend BRepSweep_Prism {
+	~BRepSweep_Prism() {
+	printf("Call custom destructor for instance of BRepSweep_Prism\n");
+	}
 };

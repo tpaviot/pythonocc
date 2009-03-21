@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BndLib_AddSurface {
 	public:
 		%feature("autodoc", "1");
-		~BndLib_AddSurface();
-		%feature("autodoc", "1");
 		BndLib_AddSurface();
 		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Surface &S, const Standard_Real Tol, Bnd_Box & B);
@@ -97,12 +95,15 @@ class BndLib_AddSurface {
 		void Add(const Adaptor3d_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 
 };
+%extend BndLib_AddSurface {
+	~BndLib_AddSurface() {
+	printf("Call custom destructor for instance of BndLib_AddSurface\n");
+	}
+};
 
 %nodefaultctor BndLib_Add3dCurve;
 class BndLib_Add3dCurve {
 	public:
-		%feature("autodoc", "1");
-		~BndLib_Add3dCurve();
 		%feature("autodoc", "1");
 		BndLib_Add3dCurve();
 		%feature("autodoc", "1");
@@ -111,12 +112,15 @@ class BndLib_Add3dCurve {
 		void Add(const Adaptor3d_Curve &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box & B);
 
 };
+%extend BndLib_Add3dCurve {
+	~BndLib_Add3dCurve() {
+	printf("Call custom destructor for instance of BndLib_Add3dCurve\n");
+	}
+};
 
 %nodefaultctor BndLib;
 class BndLib {
 	public:
-		%feature("autodoc", "1");
-		~BndLib();
 		%feature("autodoc", "1");
 		BndLib();
 		%feature("autodoc", "1");
@@ -165,12 +169,15 @@ class BndLib {
 		void Add(const gp_Torus &P, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 
 };
+%extend BndLib {
+	~BndLib() {
+	printf("Call custom destructor for instance of BndLib\n");
+	}
+};
 
 %nodefaultctor BndLib_Add2dCurve;
 class BndLib_Add2dCurve {
 	public:
-		%feature("autodoc", "1");
-		~BndLib_Add2dCurve();
 		%feature("autodoc", "1");
 		BndLib_Add2dCurve();
 		%feature("autodoc", "1");
@@ -178,4 +185,9 @@ class BndLib_Add2dCurve {
 		%feature("autodoc", "1");
 		void Add(const Adaptor2d_Curve2d &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box2d & B);
 
+};
+%extend BndLib_Add2dCurve {
+	~BndLib_Add2dCurve() {
+	printf("Call custom destructor for instance of BndLib_Add2dCurve\n");
+	}
 };

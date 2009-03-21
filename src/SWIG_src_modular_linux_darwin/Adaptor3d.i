@@ -640,9 +640,12 @@ class Adaptor3d_InterFunc : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_InterFunc();
 
+};
+%extend Adaptor3d_InterFunc {
+	~Adaptor3d_InterFunc() {
+	printf("Call custom destructor for instance of Adaptor3d_InterFunc\n");
+	}
 };
 
 %nodefaultctor Adaptor3d_HOffsetCurve;

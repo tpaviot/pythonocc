@@ -327,8 +327,6 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 class MDocStd_ListIteratorOfDocEntryList {
 	public:
 		%feature("autodoc", "1");
-		~MDocStd_ListIteratorOfDocEntryList();
-		%feature("autodoc", "1");
 		MDocStd_ListIteratorOfDocEntryList();
 		%feature("autodoc", "1");
 		MDocStd_ListIteratorOfDocEntryList(const MDocStd_DocEntryList &L);
@@ -341,6 +339,11 @@ class MDocStd_ListIteratorOfDocEntryList {
 		%feature("autodoc", "1");
 		TCollection_AsciiString & Value() const;
 
+};
+%extend MDocStd_ListIteratorOfDocEntryList {
+	~MDocStd_ListIteratorOfDocEntryList() {
+	printf("Call custom destructor for instance of MDocStd_ListIteratorOfDocEntryList\n");
+	}
 };
 
 %nodefaultctor MDocStd_XLinkRetrievalDriver;
@@ -460,8 +463,6 @@ class MDocStd_DocEntryList {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MDocStd_DocEntryList();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TCollection_AsciiString &I);
@@ -493,6 +494,11 @@ class MDocStd_DocEntryList {
 		void InsertAfter(MDocStd_DocEntryList & Other, MDocStd_ListIteratorOfDocEntryList & It);
 
 };
+%extend MDocStd_DocEntryList {
+	~MDocStd_DocEntryList() {
+	printf("Call custom destructor for instance of MDocStd_DocEntryList\n");
+	}
+};
 
 %nodefaultctor MDocStd_PersistentMap;
 class MDocStd_PersistentMap : public TCollection_BasicMap {
@@ -506,12 +512,15 @@ class MDocStd_PersistentMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MDocStd_PersistentMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_Standard_Persistent &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Handle_Standard_Persistent &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_Standard_Persistent &aKey);
 
+};
+%extend MDocStd_PersistentMap {
+	~MDocStd_PersistentMap() {
+	printf("Call custom destructor for instance of MDocStd_PersistentMap\n");
+	}
 };

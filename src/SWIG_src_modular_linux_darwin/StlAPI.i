@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class StlAPI_Writer {
 	public:
 		%feature("autodoc", "1");
-		~StlAPI_Writer();
-		%feature("autodoc", "1");
 		StlAPI_Writer();
 		%feature("autodoc", "1");
 		void SetDeflection(const Standard_Real aDeflection);
@@ -103,24 +101,30 @@ class StlAPI_Writer {
 		void Write(const TopoDS_Shape &aShape, const char * aFileName);
 
 };
+%extend StlAPI_Writer {
+	~StlAPI_Writer() {
+	printf("Call custom destructor for instance of StlAPI_Writer\n");
+	}
+};
 
 %nodefaultctor StlAPI_Reader;
 class StlAPI_Reader {
 	public:
-		%feature("autodoc", "1");
-		~StlAPI_Reader();
 		%feature("autodoc", "1");
 		StlAPI_Reader();
 		%feature("autodoc", "1");
 		void Read(TopoDS_Shape & aShape, const char * aFileName);
 
 };
+%extend StlAPI_Reader {
+	~StlAPI_Reader() {
+	printf("Call custom destructor for instance of StlAPI_Reader\n");
+	}
+};
 
 %nodefaultctor StlAPI;
 class StlAPI {
 	public:
-		%feature("autodoc", "1");
-		~StlAPI();
 		%feature("autodoc", "1");
 		StlAPI();
 		%feature("autodoc", "1");
@@ -128,4 +132,9 @@ class StlAPI {
 		%feature("autodoc", "1");
 		void Read(TopoDS_Shape & aShape, const char * aFile);
 
+};
+%extend StlAPI {
+	~StlAPI() {
+	printf("Call custom destructor for instance of StlAPI\n");
+	}
 };

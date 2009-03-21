@@ -119,8 +119,6 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 class Voxel_DS {
 	public:
 		%feature("autodoc", "1");
-		~Voxel_DS();
-		%feature("autodoc", "1");
 		Voxel_DS();
 		%feature("autodoc", "1");
 		Voxel_DS(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
@@ -156,6 +154,11 @@ class Voxel_DS {
 		Standard_Boolean GetVoxelZ(const Standard_Real z, Standard_Integer & iz) const;
 
 };
+%extend Voxel_DS {
+	~Voxel_DS() {
+	printf("Call custom destructor for instance of Voxel_DS\n");
+	}
+};
 
 %nodefaultctor Voxel_BoolDS;
 class Voxel_BoolDS : public Voxel_DS {
@@ -167,14 +170,17 @@ class Voxel_BoolDS : public Voxel_DS {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Voxel_BoolDS();
-		%feature("autodoc", "1");
 		void SetZero();
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Boolean data=1);
 		%feature("autodoc", "1");
 		Standard_Boolean Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
 
+};
+%extend Voxel_BoolDS {
+	~Voxel_BoolDS() {
+	printf("Call custom destructor for instance of Voxel_BoolDS\n");
+	}
 };
 
 %nodefaultctor Voxel_ColorDS;
@@ -189,14 +195,17 @@ class Voxel_ColorDS : public Voxel_DS {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Voxel_ColorDS();
-		%feature("autodoc", "1");
 		void SetZero();
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Byte data);
 		%feature("autodoc", "1");
 		Standard_Byte Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
 
+};
+%extend Voxel_ColorDS {
+	~Voxel_ColorDS() {
+	printf("Call custom destructor for instance of Voxel_ColorDS\n");
+	}
 };
 
 %nodefaultctor Voxel_FloatDS;
@@ -211,14 +220,17 @@ class Voxel_FloatDS : public Voxel_DS {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Voxel_FloatDS();
-		%feature("autodoc", "1");
 		void SetZero();
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_ShortReal data);
 		%feature("autodoc", "1");
 		Standard_ShortReal Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
 
+};
+%extend Voxel_FloatDS {
+	~Voxel_FloatDS() {
+	printf("Call custom destructor for instance of Voxel_FloatDS\n");
+	}
 };
 
 %nodefaultctor Voxel_CollisionDetection;
@@ -252,16 +264,17 @@ class Voxel_CollisionDetection {
 		const Voxel_BoolDS & GetCollisions() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Voxel_CollisionDetection();
 
+};
+%extend Voxel_CollisionDetection {
+	~Voxel_CollisionDetection() {
+	printf("Call custom destructor for instance of Voxel_CollisionDetection\n");
+	}
 };
 
 %nodefaultctor Voxel_Selector;
 class Voxel_Selector {
 	public:
-		%feature("autodoc", "1");
-		~Voxel_Selector();
 		%feature("autodoc", "1");
 		Voxel_Selector();
 		%feature("autodoc", "1");
@@ -275,6 +288,11 @@ class Voxel_Selector {
 		%feature("autodoc", "1");
 		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer & ix, Standard_Integer & iy, Standard_Integer & iz);
 
+};
+%extend Voxel_Selector {
+	~Voxel_Selector() {
+	printf("Call custom destructor for instance of Voxel_Selector\n");
+	}
 };
 
 %nodefaultctor Voxel_Prs;
@@ -333,8 +351,6 @@ class Voxel_Prs : public AIS_InteractiveObject {
 class Voxel_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		~Voxel_BooleanOperation();
-		%feature("autodoc", "1");
 		Voxel_BooleanOperation();
 		%feature("autodoc", "1");
 		Standard_Boolean Fuse(Voxel_BoolDS & theVoxels1, const Voxel_BoolDS &theVoxels2) const;
@@ -350,6 +366,11 @@ class Voxel_BooleanOperation {
 		Standard_Boolean Cut(Voxel_FloatDS & theVoxels1, const Voxel_FloatDS &theVoxels2) const;
 
 };
+%extend Voxel_BooleanOperation {
+	~Voxel_BooleanOperation() {
+	printf("Call custom destructor for instance of Voxel_BooleanOperation\n");
+	}
+};
 
 %nodefaultctor Voxel_FastConverter;
 class Voxel_FastConverter {
@@ -364,7 +385,10 @@ class Voxel_FastConverter {
 		Standard_Boolean FillInVolume(const Standard_Byte inner, const Standard_Integer ithread=1);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Voxel_FastConverter();
 
+};
+%extend Voxel_FastConverter {
+	~Voxel_FastConverter() {
+	printf("Call custom destructor for instance of Voxel_FastConverter\n");
+	}
 };

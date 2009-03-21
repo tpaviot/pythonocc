@@ -94,8 +94,6 @@ enum ChFi3d_FilletShape {
 class ChFi3d {
 	public:
 		%feature("autodoc", "1");
-		~ChFi3d();
-		%feature("autodoc", "1");
 		ChFi3d();
 		%feature("autodoc", "1");
 		Standard_Integer ConcaveSide(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const TopoDS_Edge &E, TopAbs_Orientation & Or1, TopAbs_Orientation & Or2);
@@ -106,6 +104,11 @@ class ChFi3d {
 		%feature("autodoc", "1");
 		Standard_Boolean SameSide(const TopAbs_Orientation Or, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const TopAbs_Orientation OrFace1, const TopAbs_Orientation OrFace2);
 
+};
+%extend ChFi3d {
+	~ChFi3d() {
+	printf("Call custom destructor for instance of ChFi3d\n");
+	}
 };
 
 %nodefaultctor ChFi3d_Builder;
@@ -253,9 +256,12 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~ChFi3d_SearchSing();
 
+};
+%extend ChFi3d_SearchSing {
+	~ChFi3d_SearchSing() {
+	printf("Call custom destructor for instance of ChFi3d_SearchSing\n");
+	}
 };
 
 %nodefaultctor ChFi3d_FilBuilder;

@@ -320,7 +320,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Xw_PixMap.hxx>
 #include <Xw_TextManager.hxx>
 #include <Xw_MarkMap.hxx>
-#include <Xw_Cextern.hxx>
 #include <Xw_HListOfMFTFonts.hxx>
 #include <Xw_ListOfMFTFonts.hxx>
 #include <Xw_HListOfMFTSizes.hxx>

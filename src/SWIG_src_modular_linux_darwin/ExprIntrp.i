@@ -454,8 +454,6 @@ class ExprIntrp_SyntaxError : public Standard_Failure {
 class ExprIntrp_StackIteratorOfStackOfNames {
 	public:
 		%feature("autodoc", "1");
-		~ExprIntrp_StackIteratorOfStackOfNames();
-		%feature("autodoc", "1");
 		ExprIntrp_StackIteratorOfStackOfNames();
 		%feature("autodoc", "1");
 		ExprIntrp_StackIteratorOfStackOfNames(const ExprIntrp_StackOfNames &S);
@@ -468,6 +466,11 @@ class ExprIntrp_StackIteratorOfStackOfNames {
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Value() const;
 
+};
+%extend ExprIntrp_StackIteratorOfStackOfNames {
+	~ExprIntrp_StackIteratorOfStackOfNames() {
+	printf("Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfNames\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralFunction;
@@ -594,10 +597,13 @@ class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 class ExprIntrp {
 	public:
 		%feature("autodoc", "1");
-		~ExprIntrp();
-		%feature("autodoc", "1");
 		ExprIntrp();
 
+};
+%extend ExprIntrp {
+	~ExprIntrp() {
+	printf("Call custom destructor for instance of ExprIntrp\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_GenRel;
@@ -925,10 +931,13 @@ class ExprIntrp_StackOfNames {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ExprIntrp_StackOfNames();
-		%feature("autodoc", "1");
 		TCollection_AsciiString & ChangeTop();
 
+};
+%extend ExprIntrp_StackOfNames {
+	~ExprIntrp_StackOfNames() {
+	printf("Call custom destructor for instance of ExprIntrp_StackOfNames\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;

@@ -1290,8 +1290,6 @@ class PColgp_HArray1OfXY : public Standard_Persistent {
 class PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d(const gp_Lin2d &aValue);
@@ -1300,6 +1298,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfDir2d;
@@ -1386,8 +1389,6 @@ class PColgp_HArray1OfVec : public Standard_Persistent {
 class PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d(const gp_Vec2d &aValue);
@@ -1396,6 +1397,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray2OfVec;
@@ -1516,8 +1522,6 @@ class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
 class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfPnt();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfPnt();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfPnt(const gp_Pnt &aValue);
@@ -1527,12 +1531,15 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt {
 		Standard_Address Value() const;
 
 };
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfPnt {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfPnt() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfPnt\n");
+	}
+};
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
 	public:
-		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ();
 		%feature("autodoc", "1");
@@ -1542,6 +1549,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray2OfVec2d;
@@ -1612,8 +1624,6 @@ class PColgp_HArray2OfVec2d : public Standard_Persistent {
 class PColgp_SeqExplorerOfHSequenceOfXYZ {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_SeqExplorerOfHSequenceOfXYZ();
-		%feature("autodoc", "1");
 		PColgp_SeqExplorerOfHSequenceOfXYZ(const Handle_PColgp_HSequenceOfXYZ &S);
 		%feature("autodoc", "1");
 		gp_XYZ Value(const Standard_Integer Index);
@@ -1624,6 +1634,11 @@ class PColgp_SeqExplorerOfHSequenceOfXYZ {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const gp_XYZ &T);
 
+};
+%extend PColgp_SeqExplorerOfHSequenceOfXYZ {
+	~PColgp_SeqExplorerOfHSequenceOfXYZ() {
+	printf("Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfXYZ\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
@@ -1677,9 +1692,12 @@ class PColgp_FieldOfHArray2OfXY : public DBC_BaseArray {
 		gp_XY & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfXY();
 
+};
+%extend PColgp_FieldOfHArray2OfXY {
+	~PColgp_FieldOfHArray2OfXY() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfXY\n");
+	}
 };
 
 %nodefaultctor PColgp_FieldOfHArray1OfVec;
@@ -1703,9 +1721,12 @@ class PColgp_FieldOfHArray1OfVec : public DBC_BaseArray {
 		gp_Vec & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfVec();
 
+};
+%extend PColgp_FieldOfHArray1OfVec {
+	~PColgp_FieldOfHArray1OfVec() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfVec\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfVec;
@@ -1759,9 +1780,12 @@ class PColgp_FieldOfHArray1OfXYZ : public DBC_BaseArray {
 		gp_XYZ & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfXYZ();
 
+};
+%extend PColgp_FieldOfHArray1OfXYZ {
+	~PColgp_FieldOfHArray1OfXYZ() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfXYZ\n");
+	}
 };
 
 %nodefaultctor PColgp_FieldOfHArray1OfPnt2d;
@@ -1785,16 +1809,17 @@ class PColgp_FieldOfHArray1OfPnt2d : public DBC_BaseArray {
 		gp_Pnt2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfPnt2d();
 
+};
+%extend PColgp_FieldOfHArray1OfPnt2d {
+	~PColgp_FieldOfHArray1OfPnt2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfPnt2d\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d {
 	public:
-		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d();
 		%feature("autodoc", "1");
@@ -1804,6 +1829,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d;
@@ -1921,9 +1951,12 @@ class PColgp_FieldOfHArray2OfVec : public DBC_BaseArray {
 		gp_Vec & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfVec();
 
+};
+%extend PColgp_FieldOfHArray2OfVec {
+	~PColgp_FieldOfHArray2OfVec() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfVec\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray1OfDir;
@@ -1980,8 +2013,6 @@ class PColgp_HArray1OfDir : public Standard_Persistent {
 class PColgp_VArrayTNodeOfFieldOfHArray2OfVec {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfVec();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfVec();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfVec(const gp_Vec &aValue);
@@ -1991,12 +2022,15 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfVec {
 		Standard_Address Value() const;
 
 };
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfVec {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfVec() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfVec\n");
+	}
+};
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
 	public:
-		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d();
 		%feature("autodoc", "1");
@@ -2006,6 +2040,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfDir2d;
@@ -2136,8 +2175,6 @@ class PColgp_HArray2OfXYZ : public Standard_Persistent {
 class PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d(const gp_Dir2d &aValue);
@@ -2146,6 +2183,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray2OfPnt2d;
@@ -2246,8 +2288,6 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public PStandard_ArrayNode {
 class PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfXY();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfXY();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfXY(const gp_XY &aValue);
@@ -2256,6 +2296,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfXY() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfXY\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray1OfLin2d;
@@ -2379,9 +2424,12 @@ class PColgp_FieldOfHArray2OfPnt : public DBC_BaseArray {
 		gp_Pnt & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfPnt();
 
+};
+%extend PColgp_FieldOfHArray2OfPnt {
+	~PColgp_FieldOfHArray2OfPnt() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfPnt\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray2OfCirc2d;
@@ -2540,8 +2588,6 @@ class PColgp_HSequenceOfDir : public Standard_Persistent {
 class PColgp_SeqExplorerOfHSequenceOfVec {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_SeqExplorerOfHSequenceOfVec();
-		%feature("autodoc", "1");
 		PColgp_SeqExplorerOfHSequenceOfVec(const Handle_PColgp_HSequenceOfVec &S);
 		%feature("autodoc", "1");
 		gp_Vec Value(const Standard_Integer Index);
@@ -2552,6 +2598,11 @@ class PColgp_SeqExplorerOfHSequenceOfVec {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const gp_Vec &T);
 
+};
+%extend PColgp_SeqExplorerOfHSequenceOfVec {
+	~PColgp_SeqExplorerOfHSequenceOfVec() {
+	printf("Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfVec\n");
+	}
 };
 
 %nodefaultctor PColgp_SeqNodeOfHSequenceOfXYZ;
@@ -2625,9 +2676,12 @@ class PColgp_FieldOfHArray2OfDir : public DBC_BaseArray {
 		gp_Dir & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfDir();
 
+};
+%extend PColgp_FieldOfHArray2OfDir {
+	~PColgp_FieldOfHArray2OfDir() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfDir\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfVec;
@@ -2728,8 +2782,6 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 class PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d(const gp_Lin2d &aValue);
@@ -2738,6 +2790,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d\n");
+	}
 };
 
 %nodefaultctor PColgp_HSequenceOfVec;
@@ -2899,9 +2956,12 @@ class PColgp_FieldOfHArray1OfPnt : public DBC_BaseArray {
 		gp_Pnt & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfPnt();
 
+};
+%extend PColgp_FieldOfHArray1OfPnt {
+	~PColgp_FieldOfHArray1OfPnt() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfPnt\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray2OfPnt;
@@ -2989,9 +3049,12 @@ class PColgp_FieldOfHArray2OfDir2d : public DBC_BaseArray {
 		gp_Dir2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfDir2d();
 
+};
+%extend PColgp_FieldOfHArray2OfDir2d {
+	~PColgp_FieldOfHArray2OfDir2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfDir2d\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray1OfVec2d;
@@ -3095,9 +3158,12 @@ class PColgp_FieldOfHArray2OfCirc2d : public DBC_BaseArray {
 		gp_Circ2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfCirc2d();
 
+};
+%extend PColgp_FieldOfHArray2OfCirc2d {
+	~PColgp_FieldOfHArray2OfCirc2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfCirc2d\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray1OfPnt2d;
@@ -3154,8 +3220,6 @@ class PColgp_HArray1OfPnt2d : public Standard_Persistent {
 class PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfVec();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfVec();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfVec(const gp_Vec &aValue);
@@ -3165,12 +3229,15 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
 		Standard_Address Value() const;
 
 };
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfVec() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfVec\n");
+	}
+};
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
 	public:
-		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d();
 		%feature("autodoc", "1");
@@ -3180,6 +3247,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray2OfXY;
@@ -3410,8 +3482,6 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public PStandard_ArrayNode {
 class PColgp_SeqExplorerOfHSequenceOfDir {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_SeqExplorerOfHSequenceOfDir();
-		%feature("autodoc", "1");
 		PColgp_SeqExplorerOfHSequenceOfDir(const Handle_PColgp_HSequenceOfDir &S);
 		%feature("autodoc", "1");
 		gp_Dir Value(const Standard_Integer Index);
@@ -3423,12 +3493,15 @@ class PColgp_SeqExplorerOfHSequenceOfDir {
 		Standard_Integer Location(const Standard_Integer N, const gp_Dir &T);
 
 };
+%extend PColgp_SeqExplorerOfHSequenceOfDir {
+	~PColgp_SeqExplorerOfHSequenceOfDir() {
+	printf("Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfDir\n");
+	}
+};
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfDir;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfDir {
 	public:
-		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfDir();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfDir();
 		%feature("autodoc", "1");
@@ -3438,6 +3511,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfDir {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfDir {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfDir() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfDir\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfXY;
@@ -3491,16 +3569,17 @@ class PColgp_FieldOfHArray2OfVec2d : public DBC_BaseArray {
 		gp_Vec2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfVec2d();
 
+};
+%extend PColgp_FieldOfHArray2OfVec2d {
+	~PColgp_FieldOfHArray2OfVec2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfVec2d\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
 	public:
-		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d();
 		%feature("autodoc", "1");
@@ -3510,6 +3589,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray1OfCirc2d;
@@ -3566,8 +3650,6 @@ class PColgp_HArray1OfCirc2d : public Standard_Persistent {
 class PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ(const gp_XYZ &aValue);
@@ -3576,6 +3658,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ\n");
+	}
 };
 
 %nodefaultctor PColgp_FieldOfHArray1OfXY;
@@ -3599,9 +3686,12 @@ class PColgp_FieldOfHArray1OfXY : public DBC_BaseArray {
 		gp_XY & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfXY();
 
+};
+%extend PColgp_FieldOfHArray1OfXY {
+	~PColgp_FieldOfHArray1OfXY() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfXY\n");
+	}
 };
 
 %nodefaultctor PColgp_FieldOfHArray2OfPnt2d;
@@ -3625,9 +3715,12 @@ class PColgp_FieldOfHArray2OfPnt2d : public DBC_BaseArray {
 		gp_Pnt2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfPnt2d();
 
+};
+%extend PColgp_FieldOfHArray2OfPnt2d {
+	~PColgp_FieldOfHArray2OfPnt2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfPnt2d\n");
+	}
 };
 
 %nodefaultctor PColgp_FieldOfHArray2OfXYZ;
@@ -3651,9 +3744,12 @@ class PColgp_FieldOfHArray2OfXYZ : public DBC_BaseArray {
 		gp_XYZ & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfXYZ();
 
+};
+%extend PColgp_FieldOfHArray2OfXYZ {
+	~PColgp_FieldOfHArray2OfXYZ() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfXYZ\n");
+	}
 };
 
 %nodefaultctor PColgp_FieldOfHArray1OfDir;
@@ -3677,9 +3773,12 @@ class PColgp_FieldOfHArray1OfDir : public DBC_BaseArray {
 		gp_Dir & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfDir();
 
+};
+%extend PColgp_FieldOfHArray1OfDir {
+	~PColgp_FieldOfHArray1OfDir() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfDir\n");
+	}
 };
 
 %nodefaultctor PColgp_HSequenceOfPnt;
@@ -3871,16 +3970,17 @@ class PColgp_FieldOfHArray1OfCirc2d : public DBC_BaseArray {
 		gp_Circ2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfCirc2d();
 
+};
+%extend PColgp_FieldOfHArray1OfCirc2d {
+	~PColgp_FieldOfHArray1OfCirc2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfCirc2d\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfXY;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfXY {
 	public:
-		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfXY();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfXY();
 		%feature("autodoc", "1");
@@ -3890,6 +3990,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfXY {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfXY {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfXY() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfXY\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfLin2d;
@@ -3943,16 +4048,17 @@ class PColgp_FieldOfHArray1OfDir2d : public DBC_BaseArray {
 		gp_Dir2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfDir2d();
 
+};
+%extend PColgp_FieldOfHArray1OfDir2d {
+	~PColgp_FieldOfHArray1OfDir2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfDir2d\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
 	public:
-		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d();
 		%feature("autodoc", "1");
@@ -3962,6 +4068,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfXY;
@@ -4015,9 +4126,12 @@ class PColgp_FieldOfHArray2OfLin2d : public DBC_BaseArray {
 		gp_Lin2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray2OfLin2d();
 
+};
+%extend PColgp_FieldOfHArray2OfLin2d {
+	~PColgp_FieldOfHArray2OfLin2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray2OfLin2d\n");
+	}
 };
 
 %nodefaultctor PColgp_HSequenceOfXYZ;
@@ -4159,9 +4273,12 @@ class PColgp_FieldOfHArray1OfVec2d : public DBC_BaseArray {
 		gp_Vec2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfVec2d();
 
+};
+%extend PColgp_FieldOfHArray1OfVec2d {
+	~PColgp_FieldOfHArray1OfVec2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfVec2d\n");
+	}
 };
 
 %nodefaultctor PColgp_HArray2OfDir;
@@ -4249,9 +4366,12 @@ class PColgp_FieldOfHArray1OfLin2d : public DBC_BaseArray {
 		gp_Lin2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColgp_FieldOfHArray1OfLin2d();
 
+};
+%extend PColgp_FieldOfHArray1OfLin2d {
+	~PColgp_FieldOfHArray1OfLin2d() {
+	printf("Call custom destructor for instance of PColgp_FieldOfHArray1OfLin2d\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d;
@@ -4288,8 +4408,6 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public PStandard_ArrayNode {
 class PColgp_SeqExplorerOfHSequenceOfPnt {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_SeqExplorerOfHSequenceOfPnt();
-		%feature("autodoc", "1");
 		PColgp_SeqExplorerOfHSequenceOfPnt(const Handle_PColgp_HSequenceOfPnt &S);
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Integer Index);
@@ -4300,6 +4418,11 @@ class PColgp_SeqExplorerOfHSequenceOfPnt {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const gp_Pnt &T);
 
+};
+%extend PColgp_SeqExplorerOfHSequenceOfPnt {
+	~PColgp_SeqExplorerOfHSequenceOfPnt() {
+	printf("Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfPnt\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d;
@@ -4336,8 +4459,6 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public PStandard_ArrayNode {
 class PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d(const gp_Circ2d &aValue);
@@ -4347,12 +4468,15 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d {
 		Standard_Address Value() const;
 
 };
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d\n");
+	}
+};
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfPnt;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt {
 	public:
-		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray1OfPnt();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt();
 		%feature("autodoc", "1");
@@ -4362,6 +4486,11 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfPnt {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfPnt() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfPnt\n");
+	}
 };
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfDir;
@@ -4428,8 +4557,6 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public PStandard_ArrayNode {
 class PColgp_VArrayTNodeOfFieldOfHArray2OfDir {
 	public:
 		%feature("autodoc", "1");
-		~PColgp_VArrayTNodeOfFieldOfHArray2OfDir();
-		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfDir();
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfDir(const gp_Dir &aValue);
@@ -4438,4 +4565,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfDir {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfDir {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfDir() {
+	printf("Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfDir\n");
+	}
 };

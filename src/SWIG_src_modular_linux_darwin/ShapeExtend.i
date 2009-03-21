@@ -360,8 +360,6 @@ class ShapeExtend_WireData : public MMgt_TShared {
 class ShapeExtend {
 	public:
 		%feature("autodoc", "1");
-		~ShapeExtend();
-		%feature("autodoc", "1");
 		ShapeExtend();
 		%feature("autodoc", "1");
 		void Init();
@@ -370,6 +368,11 @@ class ShapeExtend {
 		%feature("autodoc", "1");
 		Standard_Boolean DecodeStatus(const Standard_Integer flag, const ShapeExtend_Status status);
 
+};
+%extend ShapeExtend {
+	~ShapeExtend() {
+	printf("Call custom destructor for instance of ShapeExtend\n");
+	}
 };
 
 %nodefaultctor ShapeExtend_DataMapOfShapeListOfMsg;
@@ -383,8 +386,6 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~ShapeExtend_DataMapOfShapeListOfMsg();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Message_ListOfMsg &I);
 		%feature("autodoc", "1");
@@ -400,6 +401,11 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Message_ListOfMsg & operator()(const TopoDS_Shape &K);
 
+};
+%extend ShapeExtend_DataMapOfShapeListOfMsg {
+	~ShapeExtend_DataMapOfShapeListOfMsg() {
+	printf("Call custom destructor for instance of ShapeExtend_DataMapOfShapeListOfMsg\n");
+	}
 };
 
 %nodefaultctor ShapeExtend_BasicMsgRegistrator;
@@ -640,8 +646,6 @@ class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ShapeExtend_DataMapOfTransientListOfMsg();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Message_ListOfMsg &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
@@ -657,12 +661,15 @@ class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
 		Message_ListOfMsg & operator()(const Handle_Standard_Transient &K);
 
 };
+%extend ShapeExtend_DataMapOfTransientListOfMsg {
+	~ShapeExtend_DataMapOfTransientListOfMsg() {
+	printf("Call custom destructor for instance of ShapeExtend_DataMapOfTransientListOfMsg\n");
+	}
+};
 
 %nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg;
 class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg();
 		%feature("autodoc", "1");
 		ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg();
 		%feature("autodoc", "1");
@@ -674,6 +681,11 @@ class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_
 		%feature("autodoc", "1");
 		const Message_ListOfMsg & Value() const;
 
+};
+%extend ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg {
+	~ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg() {
+	printf("Call custom destructor for instance of ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg\n");
+	}
 };
 
 %nodefaultctor ShapeExtend_ComplexCurve;

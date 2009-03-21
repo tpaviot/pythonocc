@@ -96,8 +96,6 @@ enum LocalAnalysis_StatusErrorType {
 class LocalAnalysis_SurfaceContinuity {
 	public:
 		%feature("autodoc", "1");
-		~LocalAnalysis_SurfaceContinuity();
-		%feature("autodoc", "1");
 		LocalAnalysis_SurfaceContinuity(const Handle_Geom_Surface &Surf1, const Standard_Real u1, const Standard_Real v1, const Handle_Geom_Surface &Surf2, const Standard_Real u2, const Standard_Real v2, const GeomAbs_Shape Order, const Standard_Real EpsNul=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsC0=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsC1=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsC2=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsG1=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Percent=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Maxlen=10000);
 		%feature("autodoc", "1");
 		LocalAnalysis_SurfaceContinuity(const Handle_Geom2d_Curve &curv1, const Handle_Geom2d_Curve &curv2, const Standard_Real U, const Handle_Geom_Surface &Surf1, const Handle_Geom_Surface &Surf2, const GeomAbs_Shape Order, const Standard_Real EpsNul=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsC0=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsC1=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsC2=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsG1=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Percent=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Maxlen=10000);
@@ -145,12 +143,15 @@ class LocalAnalysis_SurfaceContinuity {
 		Standard_Boolean IsG2() const;
 
 };
+%extend LocalAnalysis_SurfaceContinuity {
+	~LocalAnalysis_SurfaceContinuity() {
+	printf("Call custom destructor for instance of LocalAnalysis_SurfaceContinuity\n");
+	}
+};
 
 %nodefaultctor LocalAnalysis;
 class LocalAnalysis {
 	public:
-		%feature("autodoc", "1");
-		~LocalAnalysis();
 		%feature("autodoc", "1");
 		LocalAnalysis();
 		%feature("autodoc", "1");
@@ -159,12 +160,15 @@ class LocalAnalysis {
 		void Dump(const LocalAnalysis_CurveContinuity &curvconti, Standard_OStream & o);
 
 };
+%extend LocalAnalysis {
+	~LocalAnalysis() {
+	printf("Call custom destructor for instance of LocalAnalysis\n");
+	}
+};
 
 %nodefaultctor LocalAnalysis_CurveContinuity;
 class LocalAnalysis_CurveContinuity {
 	public:
-		%feature("autodoc", "1");
-		~LocalAnalysis_CurveContinuity();
 		%feature("autodoc", "1");
 		LocalAnalysis_CurveContinuity(const Handle_Geom_Curve &Curv1, const Standard_Real u1, const Handle_Geom_Curve &Curv2, const Standard_Real u2, const GeomAbs_Shape Order, const Standard_Real EpsNul=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsC0=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsC1=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsC2=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsG1=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real EpsG2=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Percent=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Maxlen=10000);
 		%feature("autodoc", "1");
@@ -200,4 +204,9 @@ class LocalAnalysis_CurveContinuity {
 		%feature("autodoc", "1");
 		Standard_Boolean IsG2() const;
 
+};
+%extend LocalAnalysis_CurveContinuity {
+	~LocalAnalysis_CurveContinuity() {
+	printf("Call custom destructor for instance of LocalAnalysis_CurveContinuity\n");
+	}
 };

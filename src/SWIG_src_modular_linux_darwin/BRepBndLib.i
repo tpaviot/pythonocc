@@ -88,12 +88,15 @@ Standard_Real & function transformation
 class BRepBndLib {
 	public:
 		%feature("autodoc", "1");
-		~BRepBndLib();
-		%feature("autodoc", "1");
 		BRepBndLib();
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Shape &S, Bnd_Box & B);
 		%feature("autodoc", "1");
 		void AddClose(const TopoDS_Shape &S, Bnd_Box & B);
 
+};
+%extend BRepBndLib {
+	~BRepBndLib() {
+	printf("Call custom destructor for instance of BRepBndLib\n");
+	}
 };

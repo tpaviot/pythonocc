@@ -1107,14 +1107,17 @@ class Storage_TypedCallBack : public MMgt_TShared {
 class Storage_MapPSDHasher {
 	public:
 		%feature("autodoc", "1");
-		~Storage_MapPSDHasher();
-		%feature("autodoc", "1");
 		Storage_MapPSDHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_Standard_Persistent &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_Standard_Persistent &K1, const Handle_Standard_Persistent &K2);
 
+};
+%extend Storage_MapPSDHasher {
+	~Storage_MapPSDHasher() {
+	printf("Call custom destructor for instance of Storage_MapPSDHasher\n");
+	}
 };
 
 %nodefaultctor Storage_MapOfAsciiString;
@@ -1129,14 +1132,17 @@ class Storage_MapOfAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Storage_MapOfAsciiString();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const TCollection_AsciiString &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const TCollection_AsciiString &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const TCollection_AsciiString &aKey);
 
+};
+%extend Storage_MapOfAsciiString {
+	~Storage_MapOfAsciiString() {
+	printf("Call custom destructor for instance of Storage_MapOfAsciiString\n");
+	}
 };
 
 %nodefaultctor Storage_InternalData;
@@ -1457,12 +1463,15 @@ class Storage_StreamWriteError : public Standard_Failure {
 class Storage {
 	public:
 		%feature("autodoc", "1");
-		~Storage();
-		%feature("autodoc", "1");
 		Storage();
 		%feature("autodoc", "1");
 		TCollection_AsciiString Version();
 
+};
+%extend Storage {
+	~Storage() {
+	printf("Call custom destructor for instance of Storage\n");
+	}
 };
 
 %nodefaultctor Storage_DataMapIteratorOfMapOfPers;
@@ -1514,10 +1523,13 @@ class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 class Storage_stCONSTclCOM {
 	public:
 		%feature("autodoc", "1");
-		~Storage_stCONSTclCOM();
-		%feature("autodoc", "1");
 		Storage_stCONSTclCOM();
 
+};
+%extend Storage_stCONSTclCOM {
+	~Storage_stCONSTclCOM() {
+	printf("Call custom destructor for instance of Storage_stCONSTclCOM\n");
+	}
 };
 
 %nodefaultctor Storage_IndexedDataMapNodeOfPType;
@@ -1724,6 +1736,11 @@ class Storage_BaseDriver {
 		%feature("autodoc", "1");
 		virtual		Storage_Error Close();
 
+};
+%extend Storage_BaseDriver {
+	~Storage_BaseDriver() {
+	printf("Call custom destructor for instance of Storage_BaseDriver\n");
+	}
 };
 
 %nodefaultctor Storage_HPArray;
@@ -2186,8 +2203,6 @@ class Storage_PType : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Storage_PType();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TCollection_AsciiString &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TCollection_AsciiString &K, const Standard_Integer &T);
@@ -2212,6 +2227,11 @@ class Storage_PType : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & ChangeFromKey(const TCollection_AsciiString &K);
 
+};
+%extend Storage_PType {
+	~Storage_PType() {
+	printf("Call custom destructor for instance of Storage_PType\n");
+	}
 };
 
 %nodefaultctor Storage_Data;
@@ -2382,8 +2402,6 @@ class Storage_HeaderData : public MMgt_TShared {
 class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~Storage_MapIteratorOfMapOfAsciiString();
-		%feature("autodoc", "1");
 		Storage_MapIteratorOfMapOfAsciiString();
 		%feature("autodoc", "1");
 		Storage_MapIteratorOfMapOfAsciiString(const Storage_MapOfAsciiString &aMap);
@@ -2392,6 +2410,11 @@ class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterato
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Key() const;
 
+};
+%extend Storage_MapIteratorOfMapOfAsciiString {
+	~Storage_MapIteratorOfMapOfAsciiString() {
+	printf("Call custom destructor for instance of Storage_MapIteratorOfMapOfAsciiString\n");
+	}
 };
 
 %nodefaultctor Storage_MapOfPers;

@@ -88,94 +88,118 @@ Standard_Real & function transformation
 class SortTools_QuickSortOfReal {
 	public:
 		%feature("autodoc", "1");
-		~SortTools_QuickSortOfReal();
-		%feature("autodoc", "1");
 		SortTools_QuickSortOfReal();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
+};
+%extend SortTools_QuickSortOfReal {
+	~SortTools_QuickSortOfReal() {
+	printf("Call custom destructor for instance of SortTools_QuickSortOfReal\n");
+	}
 };
 
 %nodefaultctor SortTools_HeapSortOfInteger;
 class SortTools_HeapSortOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~SortTools_HeapSortOfInteger();
-		%feature("autodoc", "1");
 		SortTools_HeapSortOfInteger();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
+};
+%extend SortTools_HeapSortOfInteger {
+	~SortTools_HeapSortOfInteger() {
+	printf("Call custom destructor for instance of SortTools_HeapSortOfInteger\n");
+	}
 };
 
 %nodefaultctor SortTools_StraightInsertionSortOfInteger;
 class SortTools_StraightInsertionSortOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~SortTools_StraightInsertionSortOfInteger();
-		%feature("autodoc", "1");
 		SortTools_StraightInsertionSortOfInteger();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
+};
+%extend SortTools_StraightInsertionSortOfInteger {
+	~SortTools_StraightInsertionSortOfInteger() {
+	printf("Call custom destructor for instance of SortTools_StraightInsertionSortOfInteger\n");
+	}
 };
 
 %nodefaultctor SortTools_HeapSortOfReal;
 class SortTools_HeapSortOfReal {
 	public:
 		%feature("autodoc", "1");
-		~SortTools_HeapSortOfReal();
-		%feature("autodoc", "1");
 		SortTools_HeapSortOfReal();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
+};
+%extend SortTools_HeapSortOfReal {
+	~SortTools_HeapSortOfReal() {
+	printf("Call custom destructor for instance of SortTools_HeapSortOfReal\n");
+	}
 };
 
 %nodefaultctor SortTools_StraightInsertionSortOfReal;
 class SortTools_StraightInsertionSortOfReal {
 	public:
 		%feature("autodoc", "1");
-		~SortTools_StraightInsertionSortOfReal();
-		%feature("autodoc", "1");
 		SortTools_StraightInsertionSortOfReal();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
+};
+%extend SortTools_StraightInsertionSortOfReal {
+	~SortTools_StraightInsertionSortOfReal() {
+	printf("Call custom destructor for instance of SortTools_StraightInsertionSortOfReal\n");
+	}
 };
 
 %nodefaultctor SortTools_QuickSortOfInteger;
 class SortTools_QuickSortOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~SortTools_QuickSortOfInteger();
-		%feature("autodoc", "1");
 		SortTools_QuickSortOfInteger();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
+};
+%extend SortTools_QuickSortOfInteger {
+	~SortTools_QuickSortOfInteger() {
+	printf("Call custom destructor for instance of SortTools_QuickSortOfInteger\n");
+	}
 };
 
 %nodefaultctor SortTools_ShellSortOfReal;
 class SortTools_ShellSortOfReal {
 	public:
 		%feature("autodoc", "1");
-		~SortTools_ShellSortOfReal();
-		%feature("autodoc", "1");
 		SortTools_ShellSortOfReal();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
+};
+%extend SortTools_ShellSortOfReal {
+	~SortTools_ShellSortOfReal() {
+	printf("Call custom destructor for instance of SortTools_ShellSortOfReal\n");
+	}
 };
 
 %nodefaultctor SortTools_ShellSortOfInteger;
 class SortTools_ShellSortOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~SortTools_ShellSortOfInteger();
-		%feature("autodoc", "1");
 		SortTools_ShellSortOfInteger();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
+};
+%extend SortTools_ShellSortOfInteger {
+	~SortTools_ShellSortOfInteger() {
+	printf("Call custom destructor for instance of SortTools_ShellSortOfInteger\n");
+	}
 };

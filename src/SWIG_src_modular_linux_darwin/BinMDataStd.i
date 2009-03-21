@@ -1710,8 +1710,6 @@ class BinMDataStd_IntegerListDriver : public BinMDF_ADriver {
 class BinMDataStd {
 	public:
 		%feature("autodoc", "1");
-		~BinMDataStd();
-		%feature("autodoc", "1");
 		BinMDataStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
@@ -1720,6 +1718,11 @@ class BinMDataStd {
 		%feature("autodoc", "1");
 		Standard_Integer DocumentVersion();
 
+};
+%extend BinMDataStd {
+	~BinMDataStd() {
+	printf("Call custom destructor for instance of BinMDataStd\n");
+	}
 };
 
 %nodefaultctor BinMDataStd_PlacementDriver;

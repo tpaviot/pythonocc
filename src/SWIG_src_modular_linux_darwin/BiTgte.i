@@ -401,8 +401,6 @@ class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BiTgte_DataMapOfShapeBox();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Bnd_Box &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -418,12 +416,15 @@ class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
 		Bnd_Box & operator()(const TopoDS_Shape &K);
 
 };
+%extend BiTgte_DataMapOfShapeBox {
+	~BiTgte_DataMapOfShapeBox() {
+	printf("Call custom destructor for instance of BiTgte_DataMapOfShapeBox\n");
+	}
+};
 
 %nodefaultctor BiTgte_DataMapIteratorOfDataMapOfShapeBox;
 class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BiTgte_DataMapIteratorOfDataMapOfShapeBox();
 		%feature("autodoc", "1");
 		BiTgte_DataMapIteratorOfDataMapOfShapeBox();
 		%feature("autodoc", "1");
@@ -435,6 +436,11 @@ class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIte
 		%feature("autodoc", "1");
 		const Bnd_Box & Value() const;
 
+};
+%extend BiTgte_DataMapIteratorOfDataMapOfShapeBox {
+	~BiTgte_DataMapIteratorOfDataMapOfShapeBox() {
+	printf("Call custom destructor for instance of BiTgte_DataMapIteratorOfDataMapOfShapeBox\n");
+	}
 };
 
 %nodefaultctor BiTgte_CurveOnEdge;

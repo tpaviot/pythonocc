@@ -456,8 +456,6 @@ class ChFiDS_SecArray1 {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~ChFiDS_SecArray1();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const ChFiDS_SecArray1 & Assign(const ChFiDS_SecArray1 &Other);
@@ -478,6 +476,11 @@ class ChFiDS_SecArray1 {
 		%feature("autodoc", "1");
 		ChFiDS_CircSection & operator()(const Standard_Integer Index);
 
+};
+%extend ChFiDS_SecArray1 {
+	~ChFiDS_SecArray1() {
+	printf("Call custom destructor for instance of ChFiDS_SecArray1\n");
+	}
 };
 
 %nodefaultctor ChFiDS_ListOfStripe;
@@ -556,8 +559,6 @@ class ChFiDS_ListIteratorOfListOfHElSpine {
 class ChFiDS_CommonPoint {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_CommonPoint();
-		%feature("autodoc", "1");
 		ChFiDS_CommonPoint();
 		%feature("autodoc", "1");
 		void Reset();
@@ -596,6 +597,11 @@ class ChFiDS_CommonPoint {
 		%feature("autodoc", "1");
 		const gp_Vec & Vector() const;
 
+};
+%extend ChFiDS_CommonPoint {
+	~ChFiDS_CommonPoint() {
+	printf("Call custom destructor for instance of ChFiDS_CommonPoint\n");
+	}
 };
 
 %nodefaultctor ChFiDS_Spine;
@@ -1015,8 +1021,6 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ChFiDS_IndexedDataMapOfVertexListOfStripe();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &T);
@@ -1042,12 +1046,15 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 		ChFiDS_ListOfStripe & ChangeFromKey(const TopoDS_Vertex &K);
 
 };
+%extend ChFiDS_IndexedDataMapOfVertexListOfStripe {
+	~ChFiDS_IndexedDataMapOfVertexListOfStripe() {
+	printf("Call custom destructor for instance of ChFiDS_IndexedDataMapOfVertexListOfStripe\n");
+	}
+};
 
 %nodefaultctor ChFiDS_StripeMap;
 class ChFiDS_StripeMap {
 	public:
-		%feature("autodoc", "1");
-		~ChFiDS_StripeMap();
 		%feature("autodoc", "1");
 		ChFiDS_StripeMap();
 		%feature("autodoc", "1");
@@ -1067,6 +1074,11 @@ class ChFiDS_StripeMap {
 		%feature("autodoc", "1");
 		void Clear();
 
+};
+%extend ChFiDS_StripeMap {
+	~ChFiDS_StripeMap() {
+	printf("Call custom destructor for instance of ChFiDS_StripeMap\n");
+	}
 };
 
 %nodefaultctor ChFiDS_ListNodeOfListOfStripe;
@@ -1390,8 +1402,6 @@ class ChFiDS_Regularities {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ChFiDS_Regularities();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const ChFiDS_Regul &I);
@@ -1423,6 +1433,11 @@ class ChFiDS_Regularities {
 		void InsertAfter(ChFiDS_Regularities & Other, ChFiDS_ListIteratorOfRegularities & It);
 
 };
+%extend ChFiDS_Regularities {
+	~ChFiDS_Regularities() {
+	printf("Call custom destructor for instance of ChFiDS_Regularities\n");
+	}
+};
 
 %nodefaultctor ChFiDS_SequenceNodeOfSequenceOfSpine;
 class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
@@ -1450,8 +1465,6 @@ class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 class ChFiDS_CircSection {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_CircSection();
-		%feature("autodoc", "1");
 		ChFiDS_CircSection();
 		%feature("autodoc", "1");
 		void Set(const gp_Circ &C, const Standard_Real F, const Standard_Real L);
@@ -1462,6 +1475,11 @@ class ChFiDS_CircSection {
 		%feature("autodoc", "1");
 		void Get(gp_Lin & C, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend ChFiDS_CircSection {
+	~ChFiDS_CircSection() {
+	printf("Call custom destructor for instance of ChFiDS_CircSection\n");
+	}
 };
 
 %nodefaultctor ChFiDS_StripeArray1;
@@ -1781,8 +1799,6 @@ class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 class ChFiDS_Map {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_Map();
-		%feature("autodoc", "1");
 		ChFiDS_Map();
 		%feature("autodoc", "1");
 		void Fill(const TopoDS_Shape &S, const TopAbs_ShapeEnum T1, const TopAbs_ShapeEnum T2);
@@ -1798,12 +1814,15 @@ class ChFiDS_Map {
 		const TopTools_ListOfShape & operator()(const Standard_Integer I) const;
 
 };
+%extend ChFiDS_Map {
+	~ChFiDS_Map() {
+	printf("Call custom destructor for instance of ChFiDS_Map\n");
+	}
+};
 
 %nodefaultctor ChFiDS_ListIteratorOfRegularities;
 class ChFiDS_ListIteratorOfRegularities {
 	public:
-		%feature("autodoc", "1");
-		~ChFiDS_ListIteratorOfRegularities();
 		%feature("autodoc", "1");
 		ChFiDS_ListIteratorOfRegularities();
 		%feature("autodoc", "1");
@@ -1817,6 +1836,11 @@ class ChFiDS_ListIteratorOfRegularities {
 		%feature("autodoc", "1");
 		ChFiDS_Regul & Value() const;
 
+};
+%extend ChFiDS_ListIteratorOfRegularities {
+	~ChFiDS_ListIteratorOfRegularities() {
+	printf("Call custom destructor for instance of ChFiDS_ListIteratorOfRegularities\n");
+	}
 };
 
 %nodefaultctor ChFiDS_SecHArray1;
@@ -1863,8 +1887,6 @@ class ChFiDS_SecHArray1 : public MMgt_TShared {
 class ChFiDS_Regul {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_Regul();
-		%feature("autodoc", "1");
 		ChFiDS_Regul();
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Integer IC);
@@ -1883,4 +1905,9 @@ class ChFiDS_Regul {
 		%feature("autodoc", "1");
 		Standard_Integer S2() const;
 
+};
+%extend ChFiDS_Regul {
+	~ChFiDS_Regul() {
+	printf("Call custom destructor for instance of ChFiDS_Regul\n");
+	}
 };

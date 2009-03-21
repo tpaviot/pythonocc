@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BSplSLib {
 	public:
 		%feature("autodoc", "1");
-		~BSplSLib();
-		%feature("autodoc", "1");
 		BSplSLib();
 		%feature("autodoc", "1");
 		void RationalDerivative(const Standard_Integer UDeg, const Standard_Integer VDeg, const Standard_Integer N, const Standard_Integer M, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean All=1);
@@ -160,4 +158,9 @@ class BSplSLib {
 		%feature("autodoc", "1");
 		void Interpolate(const Standard_Integer UDegree, const Standard_Integer VDegree, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const TColStd_Array1OfReal &UParameters, const TColStd_Array1OfReal &VParameters, TColgp_Array2OfPnt & Poles, Standard_Integer & InversionProblem);
 
+};
+%extend BSplSLib {
+	~BSplSLib() {
+	printf("Call custom destructor for instance of BSplSLib\n");
+	}
 };

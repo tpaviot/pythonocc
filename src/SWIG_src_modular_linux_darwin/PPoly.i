@@ -290,8 +290,6 @@ class PPoly_Triangulation : public Standard_Persistent {
 class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
 	public:
 		%feature("autodoc", "1");
-		~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle();
-		%feature("autodoc", "1");
 		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle();
 		%feature("autodoc", "1");
 		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle(const PPoly_Triangle &aValue);
@@ -300,6 +298,11 @@ class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
+	~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle() {
+	printf("Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");
+	}
 };
 
 %nodefaultctor PPoly_Polygon3D;
@@ -360,8 +363,6 @@ class PPoly_Polygon3D : public Standard_Persistent {
 class PPoly_Triangle {
 	public:
 		%feature("autodoc", "1");
-		~PPoly_Triangle();
-		%feature("autodoc", "1");
 		PPoly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
@@ -372,6 +373,11 @@ class PPoly_Triangle {
 		%feature("autodoc", "1");
 		Standard_Integer & _CSFDB_GetPPoly_TrianglemyNodes(const Standard_Integer i1);
 
+};
+%extend PPoly_Triangle {
+	~PPoly_Triangle() {
+	printf("Call custom destructor for instance of PPoly_Triangle\n");
+	}
 };
 
 %nodefaultctor PPoly_Polygon2D;
@@ -437,9 +443,12 @@ class PPoly_FieldOfHArray1OfTriangle : public DBC_BaseArray {
 		PPoly_Triangle & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PPoly_FieldOfHArray1OfTriangle();
 
+};
+%extend PPoly_FieldOfHArray1OfTriangle {
+	~PPoly_FieldOfHArray1OfTriangle() {
+	printf("Call custom destructor for instance of PPoly_FieldOfHArray1OfTriangle\n");
+	}
 };
 
 %nodefaultctor PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;

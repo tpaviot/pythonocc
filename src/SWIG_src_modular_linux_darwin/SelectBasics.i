@@ -232,8 +232,6 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 class SelectBasics_SortAlgo {
 	public:
 		%feature("autodoc", "1");
-		~SelectBasics_SortAlgo();
-		%feature("autodoc", "1");
 		SelectBasics_SortAlgo();
 		%feature("autodoc", "1");
 		SelectBasics_SortAlgo(const Bnd_Box2d &ClippingRectangle, const Standard_Real sizeOfSensitiveArea, const Handle_Bnd_HArray1OfBox2d &theRectangles);
@@ -251,12 +249,15 @@ class SelectBasics_SortAlgo {
 		Standard_Integer Value() const;
 
 };
+%extend SelectBasics_SortAlgo {
+	~SelectBasics_SortAlgo() {
+	printf("Call custom destructor for instance of SelectBasics_SortAlgo\n");
+	}
+};
 
 %nodefaultctor SelectBasics;
 class SelectBasics {
 	public:
-		%feature("autodoc", "1");
-		~SelectBasics();
 		%feature("autodoc", "1");
 		SelectBasics();
 		%feature("autodoc", "1");
@@ -264,6 +265,11 @@ class SelectBasics {
 		%feature("autodoc", "1");
 		Standard_Integer MinOwnerPriority();
 
+};
+%extend SelectBasics {
+	~SelectBasics() {
+	printf("Call custom destructor for instance of SelectBasics\n");
+	}
 };
 
 %nodefaultctor SelectBasics_ListNodeOfListOfSensitive;
@@ -386,8 +392,6 @@ class SelectBasics_ListOfBox2d {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectBasics_ListOfBox2d();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Bnd_Box2d &I);
@@ -419,12 +423,15 @@ class SelectBasics_ListOfBox2d {
 		void InsertAfter(SelectBasics_ListOfBox2d & Other, SelectBasics_ListIteratorOfListOfBox2d & It);
 
 };
+%extend SelectBasics_ListOfBox2d {
+	~SelectBasics_ListOfBox2d() {
+	printf("Call custom destructor for instance of SelectBasics_ListOfBox2d\n");
+	}
+};
 
 %nodefaultctor SelectBasics_BasicTool;
 class SelectBasics_BasicTool {
 	public:
-		%feature("autodoc", "1");
-		~SelectBasics_BasicTool();
 		%feature("autodoc", "1");
 		SelectBasics_BasicTool();
 		%feature("autodoc", "1");
@@ -434,6 +441,11 @@ class SelectBasics_BasicTool {
 		%feature("autodoc", "1");
 		Standard_Boolean MatchPolyg2d(const TColgp_Array1OfPnt2d &tabpoint, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue, Standard_Integer & Rank);
 
+};
+%extend SelectBasics_BasicTool {
+	~SelectBasics_BasicTool() {
+	printf("Call custom destructor for instance of SelectBasics_BasicTool\n");
+	}
 };
 
 %nodefaultctor SelectBasics_SequenceNodeOfSequenceOfOwner;
@@ -462,8 +474,6 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 class SelectBasics_ListIteratorOfListOfBox2d {
 	public:
 		%feature("autodoc", "1");
-		~SelectBasics_ListIteratorOfListOfBox2d();
-		%feature("autodoc", "1");
 		SelectBasics_ListIteratorOfListOfBox2d();
 		%feature("autodoc", "1");
 		SelectBasics_ListIteratorOfListOfBox2d(const SelectBasics_ListOfBox2d &L);
@@ -476,6 +486,11 @@ class SelectBasics_ListIteratorOfListOfBox2d {
 		%feature("autodoc", "1");
 		Bnd_Box2d & Value() const;
 
+};
+%extend SelectBasics_ListIteratorOfListOfBox2d {
+	~SelectBasics_ListIteratorOfListOfBox2d() {
+	printf("Call custom destructor for instance of SelectBasics_ListIteratorOfListOfBox2d\n");
+	}
 };
 
 %nodefaultctor SelectBasics_ListIteratorOfListOfSensitive;
@@ -592,8 +607,6 @@ class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectBasics_SequenceOfAddress();
-		%feature("autodoc", "1");
 		const SelectBasics_SequenceOfAddress & Assign(const SelectBasics_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
 		void Append(const Standard_Address &T);
@@ -632,6 +645,11 @@ class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend SelectBasics_SequenceOfAddress {
+	~SelectBasics_SequenceOfAddress() {
+	printf("Call custom destructor for instance of SelectBasics_SequenceOfAddress\n");
+	}
 };
 
 %nodefaultctor SelectBasics_ListOfSensitive;

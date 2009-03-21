@@ -479,8 +479,6 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollect
 class STEPSelections_Counter {
 	public:
 		%feature("autodoc", "1");
-		~STEPSelections_Counter();
-		%feature("autodoc", "1");
 		STEPSelections_Counter();
 		%feature("autodoc", "1");
 		void Count(const Interface_Graph &graph, const Handle_Standard_Transient &start);
@@ -507,6 +505,11 @@ class STEPSelections_Counter {
 		%feature("autodoc", "1");
 		Standard_Integer NbSourceWires() const;
 
+};
+%extend STEPSelections_Counter {
+	~STEPSelections_Counter() {
+	printf("Call custom destructor for instance of STEPSelections_Counter\n");
+	}
 };
 
 %nodefaultctor STEPSelections_SelectInstances;

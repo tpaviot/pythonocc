@@ -109,9 +109,12 @@ class IFGraph_Compare : public Interface_GraphContent {
 		Interface_EntityIterator FirstOnly() const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator SecondOnly() const;
-		%feature("autodoc", "1");
-		virtual		~IFGraph_Compare();
 
+};
+%extend IFGraph_Compare {
+	~IFGraph_Compare() {
+	printf("Call custom destructor for instance of IFGraph_Compare\n");
+	}
 };
 
 %nodefaultctor IFGraph_SubPartsIterator;
@@ -184,9 +187,12 @@ class IFGraph_Cycles : public IFGraph_SubPartsIterator {
 		IFGraph_Cycles(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
 		IFGraph_Cycles(IFGraph_StrongComponants & subparts);
-		%feature("autodoc", "1");
-		virtual		~IFGraph_Cycles();
 
+};
+%extend IFGraph_Cycles {
+	~IFGraph_Cycles() {
+	printf("Call custom destructor for instance of IFGraph_Cycles\n");
+	}
 };
 
 %nodefaultctor IFGraph_AllConnected;
@@ -202,9 +208,12 @@ class IFGraph_AllConnected : public Interface_GraphContent {
 		void ResetData();
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_AllConnected();
 
+};
+%extend IFGraph_AllConnected {
+	~IFGraph_AllConnected() {
+	printf("Call custom destructor for instance of IFGraph_AllConnected\n");
+	}
 };
 
 %nodefaultctor IFGraph_StrongComponants;
@@ -216,9 +225,12 @@ class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 		IFGraph_StrongComponants(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_StrongComponants();
 
+};
+%extend IFGraph_StrongComponants {
+	~IFGraph_StrongComponants() {
+	printf("Call custom destructor for instance of IFGraph_StrongComponants\n");
+	}
 };
 
 %nodefaultctor IFGraph_ConnectedComponants;
@@ -230,9 +242,12 @@ class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 		IFGraph_ConnectedComponants(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_ConnectedComponants();
 
+};
+%extend IFGraph_ConnectedComponants {
+	~IFGraph_ConnectedComponants() {
+	printf("Call custom destructor for instance of IFGraph_ConnectedComponants\n");
+	}
 };
 
 %nodefaultctor IFGraph_AllShared;
@@ -250,9 +265,12 @@ class IFGraph_AllShared : public Interface_GraphContent {
 		void ResetData();
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_AllShared();
 
+};
+%extend IFGraph_AllShared {
+	~IFGraph_AllShared() {
+	printf("Call custom destructor for instance of IFGraph_AllShared\n");
+	}
 };
 
 %nodefaultctor IFGraph_Articulations;
@@ -268,9 +286,12 @@ class IFGraph_Articulations : public Interface_GraphContent {
 		void ResetData();
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_Articulations();
 
+};
+%extend IFGraph_Articulations {
+	~IFGraph_Articulations() {
+	printf("Call custom destructor for instance of IFGraph_Articulations\n");
+	}
 };
 
 %nodefaultctor IFGraph_ExternalSources;
@@ -288,9 +309,12 @@ class IFGraph_ExternalSources : public Interface_GraphContent {
 		virtual		void Evaluate();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_ExternalSources();
 
+};
+%extend IFGraph_ExternalSources {
+	~IFGraph_ExternalSources() {
+	printf("Call custom destructor for instance of IFGraph_ExternalSources\n");
+	}
 };
 
 %nodefaultctor IFGraph_Cumulate;
@@ -316,9 +340,12 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 		Standard_Integer NbTimes(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Standard_Integer HighestNbTimes() const;
-		%feature("autodoc", "1");
-		virtual		~IFGraph_Cumulate();
 
+};
+%extend IFGraph_Cumulate {
+	~IFGraph_Cumulate() {
+	printf("Call custom destructor for instance of IFGraph_Cumulate\n");
+	}
 };
 
 %nodefaultctor IFGraph_SCRoots;
@@ -332,7 +359,10 @@ class IFGraph_SCRoots : public IFGraph_StrongComponants {
 		IFGraph_SCRoots(IFGraph_StrongComponants & subparts);
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_SCRoots();
 
+};
+%extend IFGraph_SCRoots {
+	~IFGraph_SCRoots() {
+	printf("Call custom destructor for instance of IFGraph_SCRoots\n");
+	}
 };

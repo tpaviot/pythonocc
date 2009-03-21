@@ -375,8 +375,6 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 class Dico_IteratorOfDictionaryOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~Dico_IteratorOfDictionaryOfInteger();
-		%feature("autodoc", "1");
 		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell);
 		%feature("autodoc", "1");
 		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell, const char * basename);
@@ -393,4 +391,9 @@ class Dico_IteratorOfDictionaryOfInteger {
 		%feature("autodoc", "1");
 		TCollection_AsciiString Name() const;
 
+};
+%extend Dico_IteratorOfDictionaryOfInteger {
+	~Dico_IteratorOfDictionaryOfInteger() {
+	printf("Call custom destructor for instance of Dico_IteratorOfDictionaryOfInteger\n");
+	}
 };

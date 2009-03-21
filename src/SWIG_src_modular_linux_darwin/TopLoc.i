@@ -193,14 +193,17 @@ class TopLoc_MapOfLocation : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopLoc_MapOfLocation();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const TopLoc_Location &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const TopLoc_Location &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const TopLoc_Location &aKey);
 
+};
+%extend TopLoc_MapOfLocation {
+	~TopLoc_MapOfLocation() {
+	printf("Call custom destructor for instance of TopLoc_MapOfLocation\n");
+	}
 };
 
 %nodefaultctor TopLoc_IndexedMapOfLocation;
@@ -214,8 +217,6 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopLoc_IndexedMapOfLocation();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopLoc_Location &K);
 		%feature("autodoc", "1");
@@ -231,6 +232,11 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const TopLoc_Location &K) const;
 
+};
+%extend TopLoc_IndexedMapOfLocation {
+	~TopLoc_IndexedMapOfLocation() {
+	printf("Call custom destructor for instance of TopLoc_IndexedMapOfLocation\n");
+	}
 };
 
 %nodefaultctor TopLoc_StdMapNodeOfMapOfLocation;
@@ -338,8 +344,6 @@ class TopLoc_Location {
 class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopLoc_MapIteratorOfMapOfLocation();
-		%feature("autodoc", "1");
 		TopLoc_MapIteratorOfMapOfLocation();
 		%feature("autodoc", "1");
 		TopLoc_MapIteratorOfMapOfLocation(const TopLoc_MapOfLocation &aMap);
@@ -349,12 +353,15 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 		const TopLoc_Location & Key() const;
 
 };
+%extend TopLoc_MapIteratorOfMapOfLocation {
+	~TopLoc_MapIteratorOfMapOfLocation() {
+	printf("Call custom destructor for instance of TopLoc_MapIteratorOfMapOfLocation\n");
+	}
+};
 
 %nodefaultctor TopLoc_MapLocationHasher;
 class TopLoc_MapLocationHasher {
 	public:
-		%feature("autodoc", "1");
-		~TopLoc_MapLocationHasher();
 		%feature("autodoc", "1");
 		TopLoc_MapLocationHasher();
 		%feature("autodoc", "1");
@@ -362,6 +369,11 @@ class TopLoc_MapLocationHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
 
+};
+%extend TopLoc_MapLocationHasher {
+	~TopLoc_MapLocationHasher() {
+	printf("Call custom destructor for instance of TopLoc_MapLocationHasher\n");
+	}
 };
 
 %nodefaultctor TopLoc_ItemLocation;
@@ -375,9 +387,12 @@ class TopLoc_ItemLocation {
 		TopLoc_ItemLocation & Assign(const TopLoc_ItemLocation &anOther);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopLoc_ItemLocation();
 
+};
+%extend TopLoc_ItemLocation {
+	~TopLoc_ItemLocation() {
+	printf("Call custom destructor for instance of TopLoc_ItemLocation\n");
+	}
 };
 
 %nodefaultctor TopLoc_Datum3D;
@@ -422,8 +437,6 @@ class TopLoc_SListOfItemLocation {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopLoc_SListOfItemLocation();
-		%feature("autodoc", "1");
 		const TopLoc_ItemLocation & Value() const;
 		%feature("autodoc", "1");
 		TopLoc_ItemLocation & ChangeValue();
@@ -448,4 +461,9 @@ class TopLoc_SListOfItemLocation {
 		%feature("autodoc", "1");
 		void Next();
 
+};
+%extend TopLoc_SListOfItemLocation {
+	~TopLoc_SListOfItemLocation() {
+	printf("Call custom destructor for instance of TopLoc_SListOfItemLocation\n");
+	}
 };

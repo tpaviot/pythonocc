@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class CPnts_UniformDeflection {
 	public:
 		%feature("autodoc", "1");
-		~CPnts_UniformDeflection();
-		%feature("autodoc", "1");
 		CPnts_UniformDeflection();
 		%feature("autodoc", "1");
 		CPnts_UniformDeflection(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
@@ -119,24 +117,30 @@ class CPnts_UniformDeflection {
 		gp_Pnt Point() const;
 
 };
+%extend CPnts_UniformDeflection {
+	~CPnts_UniformDeflection() {
+	printf("Call custom destructor for instance of CPnts_UniformDeflection\n");
+	}
+};
 
 %nodefaultctor CPnts_MyGaussFunction;
 class CPnts_MyGaussFunction : public math_Function {
 	public:
-		%feature("autodoc", "1");
-		~CPnts_MyGaussFunction();
 		%feature("autodoc", "1");
 		CPnts_MyGaussFunction();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
 };
+%extend CPnts_MyGaussFunction {
+	~CPnts_MyGaussFunction() {
+	printf("Call custom destructor for instance of CPnts_MyGaussFunction\n");
+	}
+};
 
 %nodefaultctor CPnts_AbscissaPoint;
 class CPnts_AbscissaPoint {
 	public:
-		%feature("autodoc", "1");
-		~CPnts_AbscissaPoint();
 		%feature("autodoc", "1");
 		Standard_Real Length(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
@@ -193,6 +197,11 @@ class CPnts_AbscissaPoint {
 		void SetParameter(const Standard_Real P);
 
 };
+%extend CPnts_AbscissaPoint {
+	~CPnts_AbscissaPoint() {
+	printf("Call custom destructor for instance of CPnts_AbscissaPoint\n");
+	}
+};
 
 %nodefaultctor CPnts_MyRootFunction;
 class CPnts_MyRootFunction : public math_FunctionWithDerivative {
@@ -209,7 +218,10 @@ class CPnts_MyRootFunction : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~CPnts_MyRootFunction();
 
+};
+%extend CPnts_MyRootFunction {
+	~CPnts_MyRootFunction() {
+	printf("Call custom destructor for instance of CPnts_MyRootFunction\n");
+	}
 };

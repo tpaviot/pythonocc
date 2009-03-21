@@ -417,8 +417,6 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : publi
 class TopOpeBRepTool_face {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepTool_face();
-		%feature("autodoc", "1");
 		TopOpeBRepTool_face();
 		%feature("autodoc", "1");
 		Standard_Boolean Init(const TopoDS_Wire &W, const TopoDS_Face &Fref);
@@ -434,12 +432,15 @@ class TopOpeBRepTool_face {
 		TopoDS_Face RealF() const;
 
 };
+%extend TopOpeBRepTool_face {
+	~TopOpeBRepTool_face() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_face\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_ShapeClassifier;
 class TopOpeBRepTool_ShapeClassifier {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_ShapeClassifier();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_ShapeClassifier();
 		%feature("autodoc", "1");
@@ -478,12 +479,15 @@ class TopOpeBRepTool_ShapeClassifier {
 		const gp_Pnt & P3D() const;
 
 };
+%extend TopOpeBRepTool_ShapeClassifier {
+	~TopOpeBRepTool_ShapeClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_ShapeClassifier\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_GeomTool;
 class TopOpeBRepTool_GeomTool {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_GeomTool();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_GeomTool(const TopOpeBRepTool_OutCurveType TypeC3D=TopOpeBRepTool_BSPLINE1, const Standard_Boolean CompC3D=1, const Standard_Boolean CompPC1=1, const Standard_Boolean CompPC2=1);
 		%feature("autodoc", "1");
@@ -520,6 +524,11 @@ class TopOpeBRepTool_GeomTool {
 		Standard_Boolean CompPC2() const;
 
 };
+%extend TopOpeBRepTool_GeomTool {
+	~TopOpeBRepTool_GeomTool() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_GeomTool\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_SolidClassifier;
 class TopOpeBRepTool_SolidClassifier {
@@ -531,8 +540,6 @@ class TopOpeBRepTool_SolidClassifier {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TopOpeBRepTool_SolidClassifier();
-		%feature("autodoc", "1");
 		void LoadSolid(const TopoDS_Solid &S);
 		%feature("autodoc", "1");
 		TopAbs_State Classify(const TopoDS_Solid &S, const gp_Pnt &P, const Standard_Real Tol);
@@ -543,6 +550,11 @@ class TopOpeBRepTool_SolidClassifier {
 		%feature("autodoc", "1");
 		TopAbs_State State() const;
 
+};
+%extend TopOpeBRepTool_SolidClassifier {
+	~TopOpeBRepTool_SolidClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_SolidClassifier\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
@@ -577,8 +589,6 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TColl
 class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
 		TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal(const TopOpeBRepTool_DataMapOfShapeReal &aMap);
@@ -590,12 +600,15 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal : public TCollection_Ba
 		const Standard_Real & Value() const;
 
 };
+%extend TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal {
+	~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface;
 class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface();
 		%feature("autodoc", "1");
@@ -608,12 +621,15 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface : public TCollection_Ba
 		const TopOpeBRepTool_face & Value() const;
 
 };
+%extend TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface {
+	~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_CLASSI;
 class TopOpeBRepTool_CLASSI {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_CLASSI();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_CLASSI();
 		%feature("autodoc", "1");
@@ -634,6 +650,11 @@ class TopOpeBRepTool_CLASSI {
 		Standard_Boolean Classilist(const TopTools_ListOfShape &lS, TopTools_DataMapOfShapeListOfShape & mapgreasma);
 
 };
+%extend TopOpeBRepTool_CLASSI {
+	~TopOpeBRepTool_CLASSI() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_CLASSI\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfShapeBox2d;
 class TopOpeBRepTool_IndexedDataMapOfShapeBox2d : public TCollection_BasicMap {
@@ -646,8 +667,6 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox2d : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_IndexedDataMapOfShapeBox2d();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const Bnd_Box2d &I);
 		%feature("autodoc", "1");
@@ -674,24 +693,30 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox2d : public TCollection_BasicMap {
 		Bnd_Box2d & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepTool_IndexedDataMapOfShapeBox2d {
+	~TopOpeBRepTool_IndexedDataMapOfShapeBox2d() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfShapeBox2d\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_AncestorsTool;
 class TopOpeBRepTool_AncestorsTool {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_AncestorsTool();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_AncestorsTool();
 		%feature("autodoc", "1");
 		void MakeAncestors(const TopoDS_Shape &S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA, TopTools_IndexedDataMapOfShapeListOfShape & M);
 
 };
+%extend TopOpeBRepTool_AncestorsTool {
+	~TopOpeBRepTool_AncestorsTool() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_AncestorsTool\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_ListIteratorOfListOfC2DF;
 class TopOpeBRepTool_ListIteratorOfListOfC2DF {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_ListIteratorOfListOfC2DF();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_ListIteratorOfListOfC2DF();
 		%feature("autodoc", "1");
@@ -706,6 +731,11 @@ class TopOpeBRepTool_ListIteratorOfListOfC2DF {
 		TopOpeBRepTool_C2DF & Value() const;
 
 };
+%extend TopOpeBRepTool_ListIteratorOfListOfC2DF {
+	~TopOpeBRepTool_ListIteratorOfListOfC2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_ListIteratorOfListOfC2DF\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfShapeBox;
 class TopOpeBRepTool_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
@@ -718,8 +748,6 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_IndexedDataMapOfShapeBox();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const Bnd_Box &I);
 		%feature("autodoc", "1");
@@ -746,12 +774,15 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		Bnd_Box & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepTool_IndexedDataMapOfShapeBox {
+	~TopOpeBRepTool_IndexedDataMapOfShapeBox() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfShapeBox\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF;
 class TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF();
 		%feature("autodoc", "1");
@@ -763,6 +794,11 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF : public TColle
 		%feature("autodoc", "1");
 		const TopOpeBRepTool_C2DF & Value() const;
 
+};
+%extend TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF {
+	~TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepTool_ListNodeOfListOfC2DF;
@@ -819,8 +855,6 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public
 class TopOpeBRepTool_connexity {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepTool_connexity();
-		%feature("autodoc", "1");
 		TopOpeBRepTool_connexity();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_connexity(const TopoDS_Shape &Key);
@@ -850,6 +884,11 @@ class TopOpeBRepTool_connexity {
 		Standard_Integer IsInternal(TopTools_ListOfShape & Item) const;
 
 };
+%extend TopOpeBRepTool_connexity {
+	~TopOpeBRepTool_connexity() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_connexity\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_DataMapOfOrientedShapeC2DF;
 class TopOpeBRepTool_DataMapOfOrientedShapeC2DF : public TCollection_BasicMap {
@@ -862,8 +901,6 @@ class TopOpeBRepTool_DataMapOfOrientedShapeC2DF : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_DataMapOfOrientedShapeC2DF();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopOpeBRepTool_C2DF &I);
 		%feature("autodoc", "1");
@@ -880,12 +917,15 @@ class TopOpeBRepTool_DataMapOfOrientedShapeC2DF : public TCollection_BasicMap {
 		TopOpeBRepTool_C2DF & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepTool_DataMapOfOrientedShapeC2DF {
+	~TopOpeBRepTool_DataMapOfOrientedShapeC2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapOfOrientedShapeC2DF\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool;
 class TopOpeBRepTool {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool();
 		%feature("autodoc", "1");
 		TopOpeBRepTool();
 		%feature("autodoc", "1");
@@ -908,6 +948,11 @@ class TopOpeBRepTool {
 		Standard_OStream & Print(const TopOpeBRepTool_OutCurveType OCT, Standard_OStream & S);
 
 };
+%extend TopOpeBRepTool {
+	~TopOpeBRepTool() {
+	printf("Call custom destructor for instance of TopOpeBRepTool\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfShapeAddress;
 class TopOpeBRepTool_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
@@ -920,8 +965,6 @@ class TopOpeBRepTool_IndexedDataMapOfShapeAddress : public TCollection_BasicMap 
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_IndexedDataMapOfShapeAddress();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const Standard_Address &I);
 		%feature("autodoc", "1");
@@ -948,6 +991,11 @@ class TopOpeBRepTool_IndexedDataMapOfShapeAddress : public TCollection_BasicMap 
 		Standard_Address & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepTool_IndexedDataMapOfShapeAddress {
+	~TopOpeBRepTool_IndexedDataMapOfShapeAddress() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfShapeAddress\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_DataMapOfShapeListOfC2DF;
 class TopOpeBRepTool_DataMapOfShapeListOfC2DF : public TCollection_BasicMap {
@@ -960,8 +1008,6 @@ class TopOpeBRepTool_DataMapOfShapeListOfC2DF : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_DataMapOfShapeListOfC2DF();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopOpeBRepTool_ListOfC2DF &I);
 		%feature("autodoc", "1");
@@ -978,12 +1024,15 @@ class TopOpeBRepTool_DataMapOfShapeListOfC2DF : public TCollection_BasicMap {
 		TopOpeBRepTool_ListOfC2DF & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepTool_DataMapOfShapeListOfC2DF {
+	~TopOpeBRepTool_DataMapOfShapeListOfC2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapOfShapeListOfC2DF\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_REGUS;
 class TopOpeBRepTool_REGUS {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_REGUS();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_REGUS();
 		%feature("autodoc", "1");
@@ -1015,6 +1064,11 @@ class TopOpeBRepTool_REGUS {
 		%feature("autodoc", "1");
 		Standard_Boolean NearestF(const TopoDS_Edge &e, const TopTools_ListOfShape &lof, TopoDS_Face & ffound) const;
 
+};
+%extend TopOpeBRepTool_REGUS {
+	~TopOpeBRepTool_REGUS() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_REGUS\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d;
@@ -1049,8 +1103,6 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public TCo
 class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF();
-		%feature("autodoc", "1");
 		TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF(const TopOpeBRepTool_DataMapOfShapeListOfC2DF &aMap);
@@ -1061,6 +1113,11 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF : public TCollect
 		%feature("autodoc", "1");
 		const TopOpeBRepTool_ListOfC2DF & Value() const;
 
+};
+%extend TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF {
+	~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepTool_HBoxTool;
@@ -1158,8 +1215,6 @@ class TopOpeBRepTool_BoxSort {
 class TopOpeBRepTool_REGUW {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepTool_REGUW();
-		%feature("autodoc", "1");
 		TopOpeBRepTool_REGUW(const TopoDS_Face &FRef);
 		%feature("autodoc", "1");
 		const TopoDS_Face & Fref() const;
@@ -1203,6 +1258,11 @@ class TopOpeBRepTool_REGUW {
 		Standard_Boolean UpdateMultiple(const TopoDS_Vertex &v);
 
 };
+%extend TopOpeBRepTool_REGUW {
+	~TopOpeBRepTool_REGUW() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_REGUW\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal;
 class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
@@ -1231,8 +1291,6 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNod
 %nodefaultctor TopOpeBRepTool_CORRISO;
 class TopOpeBRepTool_CORRISO {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_CORRISO();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_CORRISO();
 		%feature("autodoc", "1");
@@ -1283,6 +1341,11 @@ class TopOpeBRepTool_CORRISO {
 		Standard_Boolean RemoveOldConnexity(const TopoDS_Vertex &V, const TopoDS_Edge &E);
 
 };
+%extend TopOpeBRepTool_CORRISO {
+	~TopOpeBRepTool_CORRISO() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_CORRISO\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface;
 class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public TCollection_MapNode {
@@ -1312,8 +1375,6 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public TCollection_MapNod
 class TopOpeBRepTool_FuseEdges {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepTool_FuseEdges();
-		%feature("autodoc", "1");
 		TopOpeBRepTool_FuseEdges(const TopoDS_Shape &theShape, const Standard_Boolean PerformNow=0);
 		%feature("autodoc", "1");
 		void AvoidEdges(const TopTools_IndexedMapOfShape &theMapEdg);
@@ -1331,6 +1392,11 @@ class TopOpeBRepTool_FuseEdges {
 		void Perform();
 
 };
+%extend TopOpeBRepTool_FuseEdges {
+	~TopOpeBRepTool_FuseEdges() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_FuseEdges\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_DataMapOfShapeReal;
 class TopOpeBRepTool_DataMapOfShapeReal : public TCollection_BasicMap {
@@ -1343,8 +1409,6 @@ class TopOpeBRepTool_DataMapOfShapeReal : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_DataMapOfShapeReal();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Real &I);
 		%feature("autodoc", "1");
@@ -1361,6 +1425,11 @@ class TopOpeBRepTool_DataMapOfShapeReal : public TCollection_BasicMap {
 		Standard_Real & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepTool_DataMapOfShapeReal {
+	~TopOpeBRepTool_DataMapOfShapeReal() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapOfShapeReal\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_DataMapOfShapeface;
 class TopOpeBRepTool_DataMapOfShapeface : public TCollection_BasicMap {
@@ -1373,8 +1442,6 @@ class TopOpeBRepTool_DataMapOfShapeface : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_DataMapOfShapeface();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopOpeBRepTool_face &I);
 		%feature("autodoc", "1");
@@ -1390,6 +1457,11 @@ class TopOpeBRepTool_DataMapOfShapeface : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopOpeBRepTool_face & operator()(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepTool_DataMapOfShapeface {
+	~TopOpeBRepTool_DataMapOfShapeface() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_DataMapOfShapeface\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepTool_C2DF;
@@ -1479,8 +1551,6 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public TCollectio
 %nodefaultctor TopOpeBRepTool_TOOL;
 class TopOpeBRepTool_TOOL {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_TOOL();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_TOOL();
 		%feature("autodoc", "1");
@@ -1593,12 +1663,15 @@ class TopOpeBRepTool_TOOL {
 		Standard_Boolean EdgeONFace(const Standard_Real par, const TopoDS_Edge &ed, const gp_Pnt2d &uv, const TopoDS_Face &fa, Standard_Boolean & isonfa);
 
 };
+%extend TopOpeBRepTool_TOOL {
+	~TopOpeBRepTool_TOOL() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_TOOL\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_makeTransition;
 class TopOpeBRepTool_makeTransition {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_makeTransition();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_makeTransition();
 		%feature("autodoc", "1");
@@ -1623,6 +1696,11 @@ class TopOpeBRepTool_makeTransition {
 		Standard_Boolean MkTonE(TopAbs_State & stb, TopAbs_State & sta);
 
 };
+%extend TopOpeBRepTool_makeTransition {
+	~TopOpeBRepTool_makeTransition() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_makeTransition\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfSolidClassifier;
 class TopOpeBRepTool_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
@@ -1635,8 +1713,6 @@ class TopOpeBRepTool_IndexedDataMapOfSolidClassifier : public TCollection_BasicM
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_IndexedDataMapOfSolidClassifier();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const BRepClass3d_SolidClassifier &I);
 		%feature("autodoc", "1");
@@ -1663,12 +1739,15 @@ class TopOpeBRepTool_IndexedDataMapOfSolidClassifier : public TCollection_BasicM
 		BRepClass3d_SolidClassifier & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepTool_IndexedDataMapOfSolidClassifier {
+	~TopOpeBRepTool_IndexedDataMapOfSolidClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfSolidClassifier\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_ShapeExplorer;
 class TopOpeBRepTool_ShapeExplorer {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_ShapeExplorer();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_ShapeExplorer();
 		%feature("autodoc", "1");
@@ -1689,6 +1768,11 @@ class TopOpeBRepTool_ShapeExplorer {
 		Standard_OStream & DumpCurrent(Standard_OStream & OS) const;
 
 };
+%extend TopOpeBRepTool_ShapeExplorer {
+	~TopOpeBRepTool_ShapeExplorer() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_ShapeExplorer\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_ListOfC2DF;
 class TopOpeBRepTool_ListOfC2DF {
@@ -1701,8 +1785,6 @@ class TopOpeBRepTool_ListOfC2DF {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_ListOfC2DF();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -1735,12 +1817,15 @@ class TopOpeBRepTool_ListOfC2DF {
 		void InsertAfter(TopOpeBRepTool_ListOfC2DF & Other, TopOpeBRepTool_ListIteratorOfListOfC2DF & It);
 
 };
+%extend TopOpeBRepTool_ListOfC2DF {
+	~TopOpeBRepTool_ListOfC2DF() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_ListOfC2DF\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_PurgeInternalEdges;
 class TopOpeBRepTool_PurgeInternalEdges {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_PurgeInternalEdges();
 		%feature("autodoc", "1");
 		TopOpeBRepTool_PurgeInternalEdges(const TopoDS_Shape &theShape, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
@@ -1755,6 +1840,11 @@ class TopOpeBRepTool_PurgeInternalEdges {
 		void Perform();
 
 };
+%extend TopOpeBRepTool_PurgeInternalEdges {
+	~TopOpeBRepTool_PurgeInternalEdges() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_PurgeInternalEdges\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfShapeconnexity;
 class TopOpeBRepTool_IndexedDataMapOfShapeconnexity : public TCollection_BasicMap {
@@ -1767,8 +1857,6 @@ class TopOpeBRepTool_IndexedDataMapOfShapeconnexity : public TCollection_BasicMa
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepTool_IndexedDataMapOfShapeconnexity();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const TopOpeBRepTool_connexity &I);
 		%feature("autodoc", "1");
@@ -1794,6 +1882,11 @@ class TopOpeBRepTool_IndexedDataMapOfShapeconnexity : public TCollection_BasicMa
 		%feature("autodoc", "1");
 		TopOpeBRepTool_connexity & ChangeFromKey(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepTool_IndexedDataMapOfShapeconnexity {
+	~TopOpeBRepTool_IndexedDataMapOfShapeconnexity() {
+	printf("Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfShapeconnexity\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepTool_ShapeTool;

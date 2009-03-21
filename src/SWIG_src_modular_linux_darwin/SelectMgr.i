@@ -808,8 +808,6 @@ class SelectMgr_DataMapOfObjectSelectors : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectMgr_DataMapOfObjectSelectors();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_SelectMgr_SelectableObject &K, const SelectMgr_SequenceOfSelector &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_SelectMgr_SelectableObject &K) const;
@@ -824,6 +822,11 @@ class SelectMgr_DataMapOfObjectSelectors : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		SelectMgr_SequenceOfSelector & operator()(const Handle_SelectMgr_SelectableObject &K);
 
+};
+%extend SelectMgr_DataMapOfObjectSelectors {
+	~SelectMgr_DataMapOfObjectSelectors() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapOfObjectSelectors\n");
+	}
 };
 
 %nodefaultctor SelectMgr_ViewerSelector;
@@ -1028,8 +1031,6 @@ class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectMgr_DataMapOfSelectionActivation();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_SelectMgr_Selection &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_SelectMgr_Selection &K) const;
@@ -1044,6 +1045,11 @@ class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Handle_SelectMgr_Selection &K);
 
+};
+%extend SelectMgr_DataMapOfSelectionActivation {
+	~SelectMgr_DataMapOfSelectionActivation() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapOfSelectionActivation\n");
+	}
 };
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfOwner;
@@ -1258,8 +1264,6 @@ class SelectMgr_ListOfFilter {
 class SelectMgr_SortCriterion {
 	public:
 		%feature("autodoc", "1");
-		~SelectMgr_SortCriterion();
-		%feature("autodoc", "1");
 		SelectMgr_SortCriterion();
 		%feature("autodoc", "1");
 		SelectMgr_SortCriterion(const Standard_Integer aPriority, const Standard_Real aDepth, const Standard_Real aMinDist);
@@ -1288,6 +1292,11 @@ class SelectMgr_SortCriterion {
 		%feature("autodoc", "1");
 		Standard_Boolean operator<(const SelectMgr_SortCriterion &anOtherCriterion) const;
 
+};
+%extend SelectMgr_SortCriterion {
+	~SelectMgr_SortCriterion() {
+	printf("Call custom destructor for instance of SelectMgr_SortCriterion\n");
+	}
 };
 
 %nodefaultctor SelectMgr_IndexedMapOfOwner;
@@ -1662,14 +1671,17 @@ class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_
 class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~SelectMgr_CompareResults();
-		%feature("autodoc", "1");
 		SelectMgr_CompareResults(const SelectMgr_IndexedDataMapOfOwnerCriterion &aMapOfCriterion);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
+};
+%extend SelectMgr_CompareResults {
+	~SelectMgr_CompareResults() {
+	printf("Call custom destructor for instance of SelectMgr_CompareResults\n");
+	}
 };
 
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors;

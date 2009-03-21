@@ -112,12 +112,15 @@ class Handle_XmlMDocStd_XLinkDriver : public Handle_XmlMDF_ADriver {
 class XmlMDocStd {
 	public:
 		%feature("autodoc", "1");
-		~XmlMDocStd();
-		%feature("autodoc", "1");
 		XmlMDocStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
+};
+%extend XmlMDocStd {
+	~XmlMDocStd() {
+	printf("Call custom destructor for instance of XmlMDocStd\n");
+	}
 };
 
 %nodefaultctor XmlMDocStd_XLinkDriver;

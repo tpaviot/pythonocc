@@ -497,8 +497,6 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Contap_SequenceOfSegmentOfTheSearchOfContour();
-		%feature("autodoc", "1");
 		const Contap_SequenceOfSegmentOfTheSearchOfContour & Assign(const Contap_SequenceOfSegmentOfTheSearchOfContour &Other);
 		%feature("autodoc", "1");
 		void Append(const Contap_TheSegmentOfTheSearchOfContour &T);
@@ -538,12 +536,15 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Contap_SequenceOfSegmentOfTheSearchOfContour {
+	~Contap_SequenceOfSegmentOfTheSearchOfContour() {
+	printf("Call custom destructor for instance of Contap_SequenceOfSegmentOfTheSearchOfContour\n");
+	}
+};
 
 %nodefaultctor Contap_TheSurfPropsOfContour;
 class Contap_TheSurfPropsOfContour {
 	public:
-		%feature("autodoc", "1");
-		~Contap_TheSurfPropsOfContour();
 		%feature("autodoc", "1");
 		Contap_TheSurfPropsOfContour();
 		%feature("autodoc", "1");
@@ -554,12 +555,15 @@ class Contap_TheSurfPropsOfContour {
 		void NormAndDn(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N, gp_Vec & Dnu, gp_Vec & Dnv);
 
 };
+%extend Contap_TheSurfPropsOfContour {
+	~Contap_TheSurfPropsOfContour() {
+	printf("Call custom destructor for instance of Contap_TheSurfPropsOfContour\n");
+	}
+};
 
 %nodefaultctor Contap_TheSearchOfContour;
 class Contap_TheSearchOfContour {
 	public:
-		%feature("autodoc", "1");
-		~Contap_TheSearchOfContour();
 		%feature("autodoc", "1");
 		Contap_TheSearchOfContour();
 		%feature("autodoc", "1");
@@ -578,6 +582,11 @@ class Contap_TheSearchOfContour {
 		const Contap_TheSegmentOfTheSearchOfContour & Segment(const Standard_Integer Index) const;
 
 };
+%extend Contap_TheSearchOfContour {
+	~Contap_TheSearchOfContour() {
+	printf("Call custom destructor for instance of Contap_TheSearchOfContour\n");
+	}
+};
 
 %nodefaultctor Contap_SequenceOfPathPointOfTheSearchOfContour;
 class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSequence {
@@ -586,8 +595,6 @@ class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSe
 		Contap_SequenceOfPathPointOfTheSearchOfContour();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Contap_SequenceOfPathPointOfTheSearchOfContour();
 		%feature("autodoc", "1");
 		const Contap_SequenceOfPathPointOfTheSearchOfContour & Assign(const Contap_SequenceOfPathPointOfTheSearchOfContour &Other);
 		%feature("autodoc", "1");
@@ -627,6 +634,11 @@ class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSe
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Contap_SequenceOfPathPointOfTheSearchOfContour {
+	~Contap_SequenceOfPathPointOfTheSearchOfContour() {
+	printf("Call custom destructor for instance of Contap_SequenceOfPathPointOfTheSearchOfContour\n");
+	}
 };
 
 %nodefaultctor Contap_TheHSequenceOfPointOfContour;
@@ -697,8 +709,6 @@ class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
 class Contap_Contour {
 	public:
 		%feature("autodoc", "1");
-		~Contap_Contour();
-		%feature("autodoc", "1");
 		Contap_Contour();
 		%feature("autodoc", "1");
 		Contap_Contour(const gp_Vec &Direction);
@@ -738,6 +748,11 @@ class Contap_Contour {
 		Contap_TheSurfFunctionOfContour & SurfaceFunction();
 
 };
+%extend Contap_Contour {
+	~Contap_Contour() {
+	printf("Call custom destructor for instance of Contap_Contour\n");
+	}
+};
 
 %nodefaultctor Contap_SequenceNodeOfTheSequenceOfLineOfContour;
 class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNode {
@@ -768,8 +783,6 @@ class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
 		Contap_TheSequenceOfPointOfContour();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Contap_TheSequenceOfPointOfContour();
 		%feature("autodoc", "1");
 		const Contap_TheSequenceOfPointOfContour & Assign(const Contap_TheSequenceOfPointOfContour &Other);
 		%feature("autodoc", "1");
@@ -809,6 +822,11 @@ class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Contap_TheSequenceOfPointOfContour {
+	~Contap_TheSequenceOfPointOfContour() {
+	printf("Call custom destructor for instance of Contap_TheSequenceOfPointOfContour\n");
+	}
 };
 
 %nodefaultctor Contap_TheIWLineOfTheIWalkingOfContour;
@@ -889,8 +907,6 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 class Contap_ContAna {
 	public:
 		%feature("autodoc", "1");
-		~Contap_ContAna();
-		%feature("autodoc", "1");
 		Contap_ContAna();
 		%feature("autodoc", "1");
 		void Perform(const gp_Sphere &S, const gp_Dir &D);
@@ -921,6 +937,11 @@ class Contap_ContAna {
 		%feature("autodoc", "1");
 		gp_Lin Line(const Standard_Integer Index) const;
 
+};
+%extend Contap_ContAna {
+	~Contap_ContAna() {
+	printf("Call custom destructor for instance of Contap_ContAna\n");
+	}
 };
 
 %nodefaultctor Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour;
@@ -1000,8 +1021,6 @@ class Contap_TheLineOfContour {
 class Contap_HContTool {
 	public:
 		%feature("autodoc", "1");
-		~Contap_HContTool();
-		%feature("autodoc", "1");
 		Contap_HContTool();
 		%feature("autodoc", "1");
 		Standard_Integer NbSamplesU(const Handle_Adaptor3d_HSurface &S, const Standard_Real u1, const Standard_Real u2);
@@ -1040,6 +1059,11 @@ class Contap_HContTool {
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllSolution(const Handle_Adaptor2d_HCurve2d &C);
 
+};
+%extend Contap_HContTool {
+	~Contap_HContTool() {
+	printf("Call custom destructor for instance of Contap_HContTool\n");
+	}
 };
 
 %nodefaultctor Contap_HCurve2dTool;
@@ -1107,8 +1131,6 @@ class Contap_HCurve2dTool {
 class Contap_TheSearchInsideOfContour {
 	public:
 		%feature("autodoc", "1");
-		~Contap_TheSearchInsideOfContour();
-		%feature("autodoc", "1");
 		Contap_TheSearchInsideOfContour();
 		%feature("autodoc", "1");
 		Contap_TheSearchInsideOfContour(Contap_TheSurfFunctionOfContour & F, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &T, const Standard_Real Epsilon);
@@ -1123,6 +1145,11 @@ class Contap_TheSearchInsideOfContour {
 		%feature("autodoc", "1");
 		const IntSurf_InteriorPoint & Value(const Standard_Integer Index) const;
 
+};
+%extend Contap_TheSearchInsideOfContour {
+	~Contap_TheSearchInsideOfContour() {
+	printf("Call custom destructor for instance of Contap_TheSearchInsideOfContour\n");
+	}
 };
 
 %nodefaultctor Contap_TheSegmentOfTheSearchOfContour;
@@ -1159,8 +1186,6 @@ class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
 		Contap_TheSequenceOfLineOfContour();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Contap_TheSequenceOfLineOfContour();
 		%feature("autodoc", "1");
 		const Contap_TheSequenceOfLineOfContour & Assign(const Contap_TheSequenceOfLineOfContour &Other);
 		%feature("autodoc", "1");
@@ -1200,6 +1225,11 @@ class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Contap_TheSequenceOfLineOfContour {
+	~Contap_TheSequenceOfLineOfContour() {
+	printf("Call custom destructor for instance of Contap_TheSequenceOfLineOfContour\n");
+	}
 };
 
 %nodefaultctor Contap_ThePointOfContour;
@@ -1361,7 +1391,10 @@ class Contap_TheArcFunctionOfContour : public math_FunctionWithDerivative {
 		const gp_Pnt & Valpoint(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const IntSurf_Quadric & Quadric() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_TheArcFunctionOfContour();
 
+};
+%extend Contap_TheArcFunctionOfContour {
+	~Contap_TheArcFunctionOfContour() {
+	printf("Call custom destructor for instance of Contap_TheArcFunctionOfContour\n");
+	}
 };

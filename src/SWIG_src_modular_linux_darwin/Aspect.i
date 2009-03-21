@@ -1640,8 +1640,6 @@ class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
 class Aspect_Edge {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_Edge();
-		%feature("autodoc", "1");
 		Aspect_Edge();
 		%feature("autodoc", "1");
 		Aspect_Edge(const Standard_Integer AIndex1, const Standard_Integer AIndex2, const Aspect_TypeOfEdge AType);
@@ -1656,6 +1654,11 @@ class Aspect_Edge {
 		%feature("autodoc", "1");
 		Aspect_TypeOfEdge Type() const;
 
+};
+%extend Aspect_Edge {
+	~Aspect_Edge() {
+	printf("Call custom destructor for instance of Aspect_Edge\n");
+	}
 };
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfFontMapEntry;
@@ -1686,6 +1689,11 @@ class Aspect_GraphicCallbackStruct {
 		%feature("autodoc", "1");
 		Aspect_GraphicCallbackStruct();
 
+};
+%extend Aspect_GraphicCallbackStruct {
+	~Aspect_GraphicCallbackStruct() {
+	printf("Call custom destructor for instance of Aspect_GraphicCallbackStruct\n");
+	}
 };
 
 %nodefaultctor Aspect_AspectFillAreaDefinitionError;
@@ -1779,12 +1787,15 @@ class Aspect_Pixel {
 		virtual		void Print(Standard_OStream & s) const;
 
 };
+%extend Aspect_Pixel {
+	~Aspect_Pixel() {
+	printf("Call custom destructor for instance of Aspect_Pixel\n");
+	}
+};
 
 %nodefaultctor Aspect_ColorPixel;
 class Aspect_ColorPixel : public Aspect_Pixel {
 	public:
-		%feature("autodoc", "1");
-		~Aspect_ColorPixel();
 		%feature("autodoc", "1");
 		Aspect_ColorPixel();
 		%feature("autodoc", "1");
@@ -1804,6 +1815,11 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 		%feature("autodoc", "1");
 		const Quantity_Color & _CSFDB_GetAspect_ColorPixelmyColor() const;
 
+};
+%extend Aspect_ColorPixel {
+	~Aspect_ColorPixel() {
+	printf("Call custom destructor for instance of Aspect_ColorPixel\n");
+	}
 };
 
 %nodefaultctor Aspect_UndefinedMap;
@@ -1864,8 +1880,6 @@ class Aspect_AspectMarker : public MMgt_TShared {
 class Aspect_IndexPixel : public Aspect_Pixel {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_IndexPixel();
-		%feature("autodoc", "1");
 		Aspect_IndexPixel();
 		%feature("autodoc", "1");
 		Aspect_IndexPixel(const Standard_Integer anIndex);
@@ -1889,6 +1903,11 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 		void _CSFDB_SetAspect_IndexPixelmyIndex(const Standard_Integer p);
 
 };
+%extend Aspect_IndexPixel {
+	~Aspect_IndexPixel() {
+	printf("Call custom destructor for instance of Aspect_IndexPixel\n");
+	}
+};
 
 %nodefaultctor Aspect_RGBPixel;
 class Aspect_RGBPixel {
@@ -1896,6 +1915,11 @@ class Aspect_RGBPixel {
 		%feature("autodoc", "1");
 		Aspect_RGBPixel();
 
+};
+%extend Aspect_RGBPixel {
+	~Aspect_RGBPixel() {
+	printf("Call custom destructor for instance of Aspect_RGBPixel\n");
+	}
 };
 
 %nodefaultctor Aspect_SequenceOfTypeMapEntry;
@@ -1905,8 +1929,6 @@ class Aspect_SequenceOfTypeMapEntry : public TCollection_BaseSequence {
 		Aspect_SequenceOfTypeMapEntry();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Aspect_SequenceOfTypeMapEntry();
 		%feature("autodoc", "1");
 		const Aspect_SequenceOfTypeMapEntry & Assign(const Aspect_SequenceOfTypeMapEntry &Other);
 		%feature("autodoc", "1");
@@ -1946,6 +1968,11 @@ class Aspect_SequenceOfTypeMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Aspect_SequenceOfTypeMapEntry {
+	~Aspect_SequenceOfTypeMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfTypeMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_WindowError;
@@ -2478,8 +2505,6 @@ class Aspect_SequenceOfColor : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Aspect_SequenceOfColor();
-		%feature("autodoc", "1");
 		const Aspect_SequenceOfColor & Assign(const Aspect_SequenceOfColor &Other);
 		%feature("autodoc", "1");
 		void Append(const Quantity_Color &T);
@@ -2518,6 +2543,11 @@ class Aspect_SequenceOfColor : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Aspect_SequenceOfColor {
+	~Aspect_SequenceOfColor() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfColor\n");
+	}
 };
 
 %nodefaultctor Aspect_GraphicDeviceDefinitionError;
@@ -2708,8 +2738,6 @@ class Aspect_MarkerStyleDefinitionError : public Standard_OutOfRange {
 class Aspect_MarkMapEntry {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_MarkMapEntry();
-		%feature("autodoc", "1");
 		Aspect_MarkMapEntry();
 		%feature("autodoc", "1");
 		Aspect_MarkMapEntry(const Standard_Integer index, const Aspect_MarkerStyle &style);
@@ -2734,6 +2762,11 @@ class Aspect_MarkMapEntry {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend Aspect_MarkMapEntry {
+	~Aspect_MarkMapEntry() {
+	printf("Call custom destructor for instance of Aspect_MarkMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_ColorCubeColorMap;
@@ -2800,8 +2833,6 @@ class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 class Aspect_WidthMapEntry {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_WidthMapEntry();
-		%feature("autodoc", "1");
 		Aspect_WidthMapEntry();
 		%feature("autodoc", "1");
 		Aspect_WidthMapEntry(const Standard_Integer index, const Aspect_WidthOfLine style);
@@ -2835,12 +2866,15 @@ class Aspect_WidthMapEntry {
 		void Dump() const;
 
 };
+%extend Aspect_WidthMapEntry {
+	~Aspect_WidthMapEntry() {
+	printf("Call custom destructor for instance of Aspect_WidthMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_GenId;
 class Aspect_GenId {
 	public:
-		%feature("autodoc", "1");
-		~Aspect_GenId();
 		%feature("autodoc", "1");
 		Aspect_GenId();
 		%feature("autodoc", "1");
@@ -2858,6 +2892,11 @@ class Aspect_GenId {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 
+};
+%extend Aspect_GenId {
+	~Aspect_GenId() {
+	printf("Call custom destructor for instance of Aspect_GenId\n");
+	}
 };
 
 %nodefaultctor Aspect_LineWidthDefinitionError;
@@ -2892,8 +2931,6 @@ class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 class Aspect_FontMapEntry {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_FontMapEntry();
-		%feature("autodoc", "1");
 		Aspect_FontMapEntry();
 		%feature("autodoc", "1");
 		Aspect_FontMapEntry(const Standard_Integer index, const Aspect_FontStyle &style);
@@ -2918,6 +2955,11 @@ class Aspect_FontMapEntry {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend Aspect_FontMapEntry {
+	~Aspect_FontMapEntry() {
+	printf("Call custom destructor for instance of Aspect_FontMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_Window;
@@ -3106,8 +3148,6 @@ class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Aspect_SequenceOfFontMapEntry();
-		%feature("autodoc", "1");
 		const Aspect_SequenceOfFontMapEntry & Assign(const Aspect_SequenceOfFontMapEntry &Other);
 		%feature("autodoc", "1");
 		void Append(const Aspect_FontMapEntry &T);
@@ -3147,6 +3187,11 @@ class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Aspect_SequenceOfFontMapEntry {
+	~Aspect_SequenceOfFontMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfFontMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_Array1OfEdge;
 class Aspect_Array1OfEdge {
@@ -3159,8 +3204,6 @@ class Aspect_Array1OfEdge {
 		void Init(const Aspect_Edge &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Aspect_Array1OfEdge();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -3183,12 +3226,15 @@ class Aspect_Array1OfEdge {
 		Aspect_Edge & operator()(const Standard_Integer Index);
 
 };
+%extend Aspect_Array1OfEdge {
+	~Aspect_Array1OfEdge() {
+	printf("Call custom destructor for instance of Aspect_Array1OfEdge\n");
+	}
+};
 
 %nodefaultctor Aspect_FontStyle;
 class Aspect_FontStyle {
 	public:
-		%feature("autodoc", "1");
-		~Aspect_FontStyle();
 		%feature("autodoc", "1");
 		Aspect_FontStyle();
 		%feature("autodoc", "1");
@@ -3267,6 +3313,11 @@ class Aspect_FontStyle {
 		Standard_Boolean operator!=(const Aspect_FontStyle &Other) const;
 
 };
+%extend Aspect_FontStyle {
+	~Aspect_FontStyle() {
+	printf("Call custom destructor for instance of Aspect_FontStyle\n");
+	}
+};
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfColorMapEntry;
 class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode {
@@ -3293,8 +3344,6 @@ class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode 
 %nodefaultctor Aspect_ColorMapEntry;
 class Aspect_ColorMapEntry {
 	public:
-		%feature("autodoc", "1");
-		~Aspect_ColorMapEntry();
 		%feature("autodoc", "1");
 		Aspect_ColorMapEntry();
 		%feature("autodoc", "1");
@@ -3339,12 +3388,15 @@ class Aspect_ColorMapEntry {
 		void _CSFDB_SetAspect_ColorMapEntrymyIndexIsDef(const Standard_Boolean p);
 
 };
+%extend Aspect_ColorMapEntry {
+	~Aspect_ColorMapEntry() {
+	printf("Call custom destructor for instance of Aspect_ColorMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect;
 class Aspect {
 	public:
-		%feature("autodoc", "1");
-		~Aspect();
 		%feature("autodoc", "1");
 		Aspect();
 		%feature("autodoc", "1");
@@ -3354,6 +3406,11 @@ class Aspect {
 		%feature("autodoc", "1");
 		Standard_Boolean Inverse(const TColStd_Array2OfReal &aMat, TColStd_Array2OfReal & Inv);
 
+};
+%extend Aspect {
+	~Aspect() {
+	printf("Call custom destructor for instance of Aspect\n");
+	}
 };
 
 %nodefaultctor Aspect_AspectLine;
@@ -3418,8 +3475,6 @@ class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Aspect_SequenceOfColorMapEntry();
-		%feature("autodoc", "1");
 		const Aspect_SequenceOfColorMapEntry & Assign(const Aspect_SequenceOfColorMapEntry &Other);
 		%feature("autodoc", "1");
 		void Append(const Aspect_ColorMapEntry &T);
@@ -3458,6 +3513,11 @@ class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Aspect_SequenceOfColorMapEntry {
+	~Aspect_SequenceOfColorMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfColorMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_CircularGrid;
@@ -3530,8 +3590,6 @@ class Aspect_FontMap : public MMgt_TShared {
 class Aspect_LineStyle {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_LineStyle();
-		%feature("autodoc", "1");
 		Aspect_LineStyle();
 		%feature("autodoc", "1");
 		Aspect_LineStyle(const Aspect_TypeOfLine Type);
@@ -3557,12 +3615,15 @@ class Aspect_LineStyle {
 		Standard_Boolean operator!=(const Aspect_LineStyle &Other) const;
 
 };
+%extend Aspect_LineStyle {
+	~Aspect_LineStyle() {
+	printf("Call custom destructor for instance of Aspect_LineStyle\n");
+	}
+};
 
 %nodefaultctor Aspect_TypeMapEntry;
 class Aspect_TypeMapEntry {
 	public:
-		%feature("autodoc", "1");
-		~Aspect_TypeMapEntry();
 		%feature("autodoc", "1");
 		Aspect_TypeMapEntry();
 		%feature("autodoc", "1");
@@ -3589,12 +3650,15 @@ class Aspect_TypeMapEntry {
 		void Dump() const;
 
 };
+%extend Aspect_TypeMapEntry {
+	~Aspect_TypeMapEntry() {
+	printf("Call custom destructor for instance of Aspect_TypeMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_MarkerStyle;
 class Aspect_MarkerStyle {
 	public:
-		%feature("autodoc", "1");
-		~Aspect_MarkerStyle();
 		%feature("autodoc", "1");
 		Aspect_MarkerStyle();
 		%feature("autodoc", "1");
@@ -3624,6 +3688,11 @@ class Aspect_MarkerStyle {
 		%feature("autodoc", "1");
 		Standard_Boolean operator!=(const Aspect_MarkerStyle &Other) const;
 
+};
+%extend Aspect_MarkerStyle {
+	~Aspect_MarkerStyle() {
+	printf("Call custom destructor for instance of Aspect_MarkerStyle\n");
+	}
 };
 
 %nodefaultctor Aspect_DriverDefinitionError;
@@ -3690,8 +3759,6 @@ class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Aspect_SequenceOfMarkMapEntry();
-		%feature("autodoc", "1");
 		const Aspect_SequenceOfMarkMapEntry & Assign(const Aspect_SequenceOfMarkMapEntry &Other);
 		%feature("autodoc", "1");
 		void Append(const Aspect_MarkMapEntry &T);
@@ -3730,6 +3797,11 @@ class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Aspect_SequenceOfMarkMapEntry {
+	~Aspect_SequenceOfMarkMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfMarkMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_BadAccess;
@@ -3870,8 +3942,6 @@ class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Aspect_SequenceOfWidthMapEntry();
-		%feature("autodoc", "1");
 		const Aspect_SequenceOfWidthMapEntry & Assign(const Aspect_SequenceOfWidthMapEntry &Other);
 		%feature("autodoc", "1");
 		void Append(const Aspect_WidthMapEntry &T);
@@ -3910,6 +3980,11 @@ class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Aspect_SequenceOfWidthMapEntry {
+	~Aspect_SequenceOfWidthMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfWidthMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_PixmapDefinitionError;
@@ -4212,8 +4287,6 @@ class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 class Aspect_Background {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_Background();
-		%feature("autodoc", "1");
 		Aspect_Background();
 		%feature("autodoc", "1");
 		Aspect_Background(const Quantity_Color &AColor);
@@ -4222,4 +4295,9 @@ class Aspect_Background {
 		%feature("autodoc", "1");
 		Quantity_Color Color() const;
 
+};
+%extend Aspect_Background {
+	~Aspect_Background() {
+	printf("Call custom destructor for instance of Aspect_Background\n");
+	}
 };

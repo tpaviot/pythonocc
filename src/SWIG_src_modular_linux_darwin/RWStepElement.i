@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepElement_RWAnalysisItemWithinRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepElement_RWAnalysisItemWithinRepresentation();
-		%feature("autodoc", "1");
 		RWStepElement_RWAnalysisItemWithinRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_AnalysisItemWithinRepresentation &ent) const;
@@ -99,12 +97,15 @@ class RWStepElement_RWAnalysisItemWithinRepresentation {
 		void Share(const Handle_StepElement_AnalysisItemWithinRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWAnalysisItemWithinRepresentation {
+	~RWStepElement_RWAnalysisItemWithinRepresentation() {
+	printf("Call custom destructor for instance of RWStepElement_RWAnalysisItemWithinRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWSurfaceSectionField;
 class RWStepElement_RWSurfaceSectionField {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceSectionField();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceSectionField();
 		%feature("autodoc", "1");
@@ -115,12 +116,15 @@ class RWStepElement_RWSurfaceSectionField {
 		void Share(const Handle_StepElement_SurfaceSectionField &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWSurfaceSectionField {
+	~RWStepElement_RWSurfaceSectionField() {
+	printf("Call custom destructor for instance of RWStepElement_RWSurfaceSectionField\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWCurveElementSectionDefinition;
 class RWStepElement_RWCurveElementSectionDefinition {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWCurveElementSectionDefinition();
 		%feature("autodoc", "1");
 		RWStepElement_RWCurveElementSectionDefinition();
 		%feature("autodoc", "1");
@@ -131,12 +135,15 @@ class RWStepElement_RWCurveElementSectionDefinition {
 		void Share(const Handle_StepElement_CurveElementSectionDefinition &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWCurveElementSectionDefinition {
+	~RWStepElement_RWCurveElementSectionDefinition() {
+	printf("Call custom destructor for instance of RWStepElement_RWCurveElementSectionDefinition\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
 class RWStepElement_RWSurface3dElementDescriptor {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurface3dElementDescriptor();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurface3dElementDescriptor();
 		%feature("autodoc", "1");
@@ -147,12 +154,15 @@ class RWStepElement_RWSurface3dElementDescriptor {
 		void Share(const Handle_StepElement_Surface3dElementDescriptor &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWSurface3dElementDescriptor {
+	~RWStepElement_RWSurface3dElementDescriptor() {
+	printf("Call custom destructor for instance of RWStepElement_RWSurface3dElementDescriptor\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWCurveElementSectionDerivedDefinitions;
 class RWStepElement_RWCurveElementSectionDerivedDefinitions {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWCurveElementSectionDerivedDefinitions();
 		%feature("autodoc", "1");
 		RWStepElement_RWCurveElementSectionDerivedDefinitions();
 		%feature("autodoc", "1");
@@ -163,12 +173,15 @@ class RWStepElement_RWCurveElementSectionDerivedDefinitions {
 		void Share(const Handle_StepElement_CurveElementSectionDerivedDefinitions &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWCurveElementSectionDerivedDefinitions {
+	~RWStepElement_RWCurveElementSectionDerivedDefinitions() {
+	printf("Call custom destructor for instance of RWStepElement_RWCurveElementSectionDerivedDefinitions\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWSurfaceSectionFieldVarying;
 class RWStepElement_RWSurfaceSectionFieldVarying {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceSectionFieldVarying();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceSectionFieldVarying();
 		%feature("autodoc", "1");
@@ -179,12 +192,15 @@ class RWStepElement_RWSurfaceSectionFieldVarying {
 		void Share(const Handle_StepElement_SurfaceSectionFieldVarying &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWSurfaceSectionFieldVarying {
+	~RWStepElement_RWSurfaceSectionFieldVarying() {
+	printf("Call custom destructor for instance of RWStepElement_RWSurfaceSectionFieldVarying\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWElementDescriptor;
 class RWStepElement_RWElementDescriptor {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWElementDescriptor();
 		%feature("autodoc", "1");
 		RWStepElement_RWElementDescriptor();
 		%feature("autodoc", "1");
@@ -195,12 +211,15 @@ class RWStepElement_RWElementDescriptor {
 		void Share(const Handle_StepElement_ElementDescriptor &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWElementDescriptor {
+	~RWStepElement_RWElementDescriptor() {
+	printf("Call custom destructor for instance of RWStepElement_RWElementDescriptor\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWElementMaterial;
 class RWStepElement_RWElementMaterial {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWElementMaterial();
 		%feature("autodoc", "1");
 		RWStepElement_RWElementMaterial();
 		%feature("autodoc", "1");
@@ -211,12 +230,15 @@ class RWStepElement_RWElementMaterial {
 		void Share(const Handle_StepElement_ElementMaterial &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWElementMaterial {
+	~RWStepElement_RWElementMaterial() {
+	printf("Call custom destructor for instance of RWStepElement_RWElementMaterial\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWVolume3dElementDescriptor;
 class RWStepElement_RWVolume3dElementDescriptor {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWVolume3dElementDescriptor();
 		%feature("autodoc", "1");
 		RWStepElement_RWVolume3dElementDescriptor();
 		%feature("autodoc", "1");
@@ -227,12 +249,15 @@ class RWStepElement_RWVolume3dElementDescriptor {
 		void Share(const Handle_StepElement_Volume3dElementDescriptor &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWVolume3dElementDescriptor {
+	~RWStepElement_RWVolume3dElementDescriptor() {
+	printf("Call custom destructor for instance of RWStepElement_RWVolume3dElementDescriptor\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWSurfaceElementProperty;
 class RWStepElement_RWSurfaceElementProperty {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceElementProperty();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceElementProperty();
 		%feature("autodoc", "1");
@@ -243,12 +268,15 @@ class RWStepElement_RWSurfaceElementProperty {
 		void Share(const Handle_StepElement_SurfaceElementProperty &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWSurfaceElementProperty {
+	~RWStepElement_RWSurfaceElementProperty() {
+	printf("Call custom destructor for instance of RWStepElement_RWSurfaceElementProperty\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWUniformSurfaceSection;
 class RWStepElement_RWUniformSurfaceSection {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWUniformSurfaceSection();
 		%feature("autodoc", "1");
 		RWStepElement_RWUniformSurfaceSection();
 		%feature("autodoc", "1");
@@ -259,12 +287,15 @@ class RWStepElement_RWUniformSurfaceSection {
 		void Share(const Handle_StepElement_UniformSurfaceSection &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWUniformSurfaceSection {
+	~RWStepElement_RWUniformSurfaceSection() {
+	printf("Call custom destructor for instance of RWStepElement_RWUniformSurfaceSection\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWSurfaceSectionFieldConstant;
 class RWStepElement_RWSurfaceSectionFieldConstant {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceSectionFieldConstant();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceSectionFieldConstant();
 		%feature("autodoc", "1");
@@ -275,12 +306,15 @@ class RWStepElement_RWSurfaceSectionFieldConstant {
 		void Share(const Handle_StepElement_SurfaceSectionFieldConstant &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWSurfaceSectionFieldConstant {
+	~RWStepElement_RWSurfaceSectionFieldConstant() {
+	printf("Call custom destructor for instance of RWStepElement_RWSurfaceSectionFieldConstant\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWCurve3dElementDescriptor;
 class RWStepElement_RWCurve3dElementDescriptor {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWCurve3dElementDescriptor();
 		%feature("autodoc", "1");
 		RWStepElement_RWCurve3dElementDescriptor();
 		%feature("autodoc", "1");
@@ -291,12 +325,15 @@ class RWStepElement_RWCurve3dElementDescriptor {
 		void Share(const Handle_StepElement_Curve3dElementDescriptor &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWCurve3dElementDescriptor {
+	~RWStepElement_RWCurve3dElementDescriptor() {
+	printf("Call custom destructor for instance of RWStepElement_RWCurve3dElementDescriptor\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWCurveElementEndReleasePacket;
 class RWStepElement_RWCurveElementEndReleasePacket {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWCurveElementEndReleasePacket();
 		%feature("autodoc", "1");
 		RWStepElement_RWCurveElementEndReleasePacket();
 		%feature("autodoc", "1");
@@ -307,12 +344,15 @@ class RWStepElement_RWCurveElementEndReleasePacket {
 		void Share(const Handle_StepElement_CurveElementEndReleasePacket &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepElement_RWCurveElementEndReleasePacket {
+	~RWStepElement_RWCurveElementEndReleasePacket() {
+	printf("Call custom destructor for instance of RWStepElement_RWCurveElementEndReleasePacket\n");
+	}
+};
 
 %nodefaultctor RWStepElement_RWSurfaceSection;
 class RWStepElement_RWSurfaceSection {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceSection();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceSection();
 		%feature("autodoc", "1");
@@ -322,4 +362,9 @@ class RWStepElement_RWSurfaceSection {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepElement_SurfaceSection &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepElement_RWSurfaceSection {
+	~RWStepElement_RWSurfaceSection() {
+	printf("Call custom destructor for instance of RWStepElement_RWSurfaceSection\n");
+	}
 };

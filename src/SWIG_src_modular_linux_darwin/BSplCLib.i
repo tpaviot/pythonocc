@@ -99,8 +99,6 @@ enum BSplCLib_MultDistribution {
 class BSplCLib {
 	public:
 		%feature("autodoc", "1");
-		~BSplCLib();
-		%feature("autodoc", "1");
 		BSplCLib();
 		%feature("autodoc", "1");
 		void Hunt(const TColStd_Array1OfReal &XX, const Standard_Real X, Standard_Integer & Iloc);
@@ -377,4 +375,9 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		void Resolution(const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const Standard_Integer NumPoles, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer Degree, const Standard_Real Tolerance3D, Standard_Real &OutValue);
 
+};
+%extend BSplCLib {
+	~BSplCLib() {
+	printf("Call custom destructor for instance of BSplCLib\n");
+	}
 };

@@ -211,8 +211,6 @@ class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 class Intf_SectionPoint {
 	public:
 		%feature("autodoc", "1");
-		~Intf_SectionPoint();
-		%feature("autodoc", "1");
 		const gp_Pnt & Pnt() const;
 		%feature("autodoc", "1");
 		Standard_Real ParamOnFirst() const;
@@ -248,6 +246,11 @@ class Intf_SectionPoint {
 		void Dump(const Standard_Integer Indent) const;
 
 };
+%extend Intf_SectionPoint {
+	~Intf_SectionPoint() {
+	printf("Call custom destructor for instance of Intf_SectionPoint\n");
+	}
+};
 
 %nodefaultctor Intf_SeqOfTangentZone;
 class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
@@ -256,8 +259,6 @@ class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
 		Intf_SeqOfTangentZone();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Intf_SeqOfTangentZone();
 		%feature("autodoc", "1");
 		const Intf_SeqOfTangentZone & Assign(const Intf_SeqOfTangentZone &Other);
 		%feature("autodoc", "1");
@@ -298,6 +299,11 @@ class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Intf_SeqOfTangentZone {
+	~Intf_SeqOfTangentZone() {
+	printf("Call custom destructor for instance of Intf_SeqOfTangentZone\n");
+	}
+};
 
 %nodefaultctor Intf_SeqOfSectionLine;
 class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
@@ -306,8 +312,6 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 		Intf_SeqOfSectionLine();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Intf_SeqOfSectionLine();
 		%feature("autodoc", "1");
 		const Intf_SeqOfSectionLine & Assign(const Intf_SeqOfSectionLine &Other);
 		%feature("autodoc", "1");
@@ -348,6 +352,11 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Intf_SeqOfSectionLine {
+	~Intf_SeqOfSectionLine() {
+	printf("Call custom destructor for instance of Intf_SeqOfSectionLine\n");
+	}
+};
 
 %nodefaultctor Intf_Array1OfLin;
 class Intf_Array1OfLin {
@@ -360,8 +369,6 @@ class Intf_Array1OfLin {
 		void Init(const gp_Lin &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Intf_Array1OfLin();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -384,12 +391,15 @@ class Intf_Array1OfLin {
 		gp_Lin & operator()(const Standard_Integer Index);
 
 };
+%extend Intf_Array1OfLin {
+	~Intf_Array1OfLin() {
+	printf("Call custom destructor for instance of Intf_Array1OfLin\n");
+	}
+};
 
 %nodefaultctor Intf_Interference;
 class Intf_Interference {
 	public:
-		%feature("autodoc", "1");
-		~Intf_Interference();
 		%feature("autodoc", "1");
 		Standard_Integer NbSectionPoints() const;
 		%feature("autodoc", "1");
@@ -414,6 +424,11 @@ class Intf_Interference {
 		void Dump() const;
 
 };
+%extend Intf_Interference {
+	~Intf_Interference() {
+	printf("Call custom destructor for instance of Intf_Interference\n");
+	}
+};
 
 %nodefaultctor Intf_SeqOfSectionPoint;
 class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
@@ -422,8 +437,6 @@ class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
 		Intf_SeqOfSectionPoint();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Intf_SeqOfSectionPoint();
 		%feature("autodoc", "1");
 		const Intf_SeqOfSectionPoint & Assign(const Intf_SeqOfSectionPoint &Other);
 		%feature("autodoc", "1");
@@ -464,12 +477,15 @@ class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Intf_SeqOfSectionPoint {
+	~Intf_SeqOfSectionPoint() {
+	printf("Call custom destructor for instance of Intf_SeqOfSectionPoint\n");
+	}
+};
 
 %nodefaultctor Intf_TangentZone;
 class Intf_TangentZone {
 	public:
-		%feature("autodoc", "1");
-		~Intf_TangentZone();
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfPoints() const;
 		%feature("autodoc", "1");
@@ -510,12 +526,15 @@ class Intf_TangentZone {
 		void Dump(const Standard_Integer Indent) const;
 
 };
+%extend Intf_TangentZone {
+	~Intf_TangentZone() {
+	printf("Call custom destructor for instance of Intf_TangentZone\n");
+	}
+};
 
 %nodefaultctor Intf_SectionLine;
 class Intf_SectionLine {
 	public:
-		%feature("autodoc", "1");
-		~Intf_SectionLine();
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfPoints() const;
 		%feature("autodoc", "1");
@@ -548,6 +567,11 @@ class Intf_SectionLine {
 		void Dump(const Standard_Integer Indent) const;
 
 };
+%extend Intf_SectionLine {
+	~Intf_SectionLine() {
+	printf("Call custom destructor for instance of Intf_SectionLine\n");
+	}
+};
 
 %nodefaultctor Intf_SequenceNodeOfSeqOfTangentZone;
 class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
@@ -575,8 +599,6 @@ class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
 class Intf_Tool {
 	public:
 		%feature("autodoc", "1");
-		~Intf_Tool();
-		%feature("autodoc", "1");
 		Intf_Tool();
 		%feature("autodoc", "1");
 		void Lin2dBox(const gp_Lin2d &theLin2d, const Bnd_Box2d &bounding, Bnd_Box2d & boxLin);
@@ -598,12 +620,15 @@ class Intf_Tool {
 		Standard_Real EndParam(const Standard_Integer SegmentNum) const;
 
 };
+%extend Intf_Tool {
+	~Intf_Tool() {
+	printf("Call custom destructor for instance of Intf_Tool\n");
+	}
+};
 
 %nodefaultctor Intf;
 class Intf {
 	public:
-		%feature("autodoc", "1");
-		~Intf();
 		%feature("autodoc", "1");
 		Intf();
 		%feature("autodoc", "1");
@@ -611,4 +636,9 @@ class Intf {
 		%feature("autodoc", "1");
 		Standard_Boolean Contain(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &ThePnt);
 
+};
+%extend Intf {
+	~Intf() {
+	printf("Call custom destructor for instance of Intf\n");
+	}
 };

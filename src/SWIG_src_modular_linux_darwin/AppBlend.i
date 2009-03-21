@@ -177,6 +177,11 @@ class AppBlend_Approx {
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 
 };
+%extend AppBlend_Approx {
+	~AppBlend_Approx() {
+	printf("Call custom destructor for instance of AppBlend_Approx\n");
+	}
+};
 
 %nodefaultctor AppBlend_SequenceOfArray1OfPnt2d;
 class AppBlend_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {

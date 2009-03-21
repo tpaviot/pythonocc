@@ -101,8 +101,6 @@ enum GCPnts_AbscissaType {
 class GCPnts_TangentialDeflection {
 	public:
 		%feature("autodoc", "1");
-		~GCPnts_TangentialDeflection();
-		%feature("autodoc", "1");
 		GCPnts_TangentialDeflection();
 		%feature("autodoc", "1");
 		GCPnts_TangentialDeflection(const Adaptor3d_Curve &C, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints=2, const Standard_Real UTol=1.00000000000000006228159145777985641889706869279e-9);
@@ -128,12 +126,15 @@ class GCPnts_TangentialDeflection {
 		gp_Pnt Value(const Standard_Integer I) const;
 
 };
+%extend GCPnts_TangentialDeflection {
+	~GCPnts_TangentialDeflection() {
+	printf("Call custom destructor for instance of GCPnts_TangentialDeflection\n");
+	}
+};
 
 %nodefaultctor GCPnts_UniformAbscissa;
 class GCPnts_UniformAbscissa {
 	public:
-		%feature("autodoc", "1");
-		~GCPnts_UniformAbscissa();
 		%feature("autodoc", "1");
 		GCPnts_UniformAbscissa();
 		%feature("autodoc", "1");
@@ -178,12 +179,15 @@ class GCPnts_UniformAbscissa {
 		Standard_Real Abscissa() const;
 
 };
+%extend GCPnts_UniformAbscissa {
+	~GCPnts_UniformAbscissa() {
+	printf("Call custom destructor for instance of GCPnts_UniformAbscissa\n");
+	}
+};
 
 %nodefaultctor GCPnts_UniformDeflection;
 class GCPnts_UniformDeflection {
 	public:
-		%feature("autodoc", "1");
-		~GCPnts_UniformDeflection();
 		%feature("autodoc", "1");
 		GCPnts_UniformDeflection();
 		%feature("autodoc", "1");
@@ -214,12 +218,15 @@ class GCPnts_UniformDeflection {
 		Standard_Real Deflection() const;
 
 };
+%extend GCPnts_UniformDeflection {
+	~GCPnts_UniformDeflection() {
+	printf("Call custom destructor for instance of GCPnts_UniformDeflection\n");
+	}
+};
 
 %nodefaultctor GCPnts_QuasiUniformAbscissa;
 class GCPnts_QuasiUniformAbscissa {
 	public:
-		%feature("autodoc", "1");
-		~GCPnts_QuasiUniformAbscissa();
 		%feature("autodoc", "1");
 		GCPnts_QuasiUniformAbscissa();
 		%feature("autodoc", "1");
@@ -246,12 +253,15 @@ class GCPnts_QuasiUniformAbscissa {
 		Standard_Real Parameter(const Standard_Integer Index) const;
 
 };
+%extend GCPnts_QuasiUniformAbscissa {
+	~GCPnts_QuasiUniformAbscissa() {
+	printf("Call custom destructor for instance of GCPnts_QuasiUniformAbscissa\n");
+	}
+};
 
 %nodefaultctor GCPnts_QuasiUniformDeflection;
 class GCPnts_QuasiUniformDeflection {
 	public:
-		%feature("autodoc", "1");
-		~GCPnts_QuasiUniformDeflection();
 		%feature("autodoc", "1");
 		GCPnts_QuasiUniformDeflection();
 		%feature("autodoc", "1");
@@ -282,12 +292,15 @@ class GCPnts_QuasiUniformDeflection {
 		Standard_Real Deflection() const;
 
 };
+%extend GCPnts_QuasiUniformDeflection {
+	~GCPnts_QuasiUniformDeflection() {
+	printf("Call custom destructor for instance of GCPnts_QuasiUniformDeflection\n");
+	}
+};
 
 %nodefaultctor GCPnts_AbscissaPoint;
 class GCPnts_AbscissaPoint {
 	public:
-		%feature("autodoc", "1");
-		~GCPnts_AbscissaPoint();
 		%feature("autodoc", "1");
 		Standard_Real Length(Adaptor3d_Curve & C);
 		%feature("autodoc", "1");
@@ -327,4 +340,9 @@ class GCPnts_AbscissaPoint {
 		%feature("autodoc", "1");
 		Standard_Real Parameter() const;
 
+};
+%extend GCPnts_AbscissaPoint {
+	~GCPnts_AbscissaPoint() {
+	printf("Call custom destructor for instance of GCPnts_AbscissaPoint\n");
+	}
 };

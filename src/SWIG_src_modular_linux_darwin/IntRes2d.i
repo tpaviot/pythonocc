@@ -159,8 +159,6 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntRes2d_SequenceOfIntersectionSegment();
-		%feature("autodoc", "1");
 		const IntRes2d_SequenceOfIntersectionSegment & Assign(const IntRes2d_SequenceOfIntersectionSegment &Other);
 		%feature("autodoc", "1");
 		void Append(const IntRes2d_IntersectionSegment &T);
@@ -200,12 +198,15 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntRes2d_SequenceOfIntersectionSegment {
+	~IntRes2d_SequenceOfIntersectionSegment() {
+	printf("Call custom destructor for instance of IntRes2d_SequenceOfIntersectionSegment\n");
+	}
+};
 
 %nodefaultctor IntRes2d_Transition;
 class IntRes2d_Transition {
 	public:
-		%feature("autodoc", "1");
-		~IntRes2d_Transition();
 		%feature("autodoc", "1");
 		IntRes2d_Transition();
 		%feature("autodoc", "1");
@@ -254,12 +255,15 @@ class IntRes2d_Transition {
 		void _CSFDB_SetIntRes2d_Transitionoppos(const Standard_Boolean p);
 
 };
+%extend IntRes2d_Transition {
+	~IntRes2d_Transition() {
+	printf("Call custom destructor for instance of IntRes2d_Transition\n");
+	}
+};
 
 %nodefaultctor IntRes2d_IntersectionSegment;
 class IntRes2d_IntersectionSegment {
 	public:
-		%feature("autodoc", "1");
-		~IntRes2d_IntersectionSegment();
 		%feature("autodoc", "1");
 		IntRes2d_IntersectionSegment();
 		%feature("autodoc", "1");
@@ -296,12 +300,15 @@ class IntRes2d_IntersectionSegment {
 		const IntRes2d_IntersectionPoint & _CSFDB_GetIntRes2d_IntersectionSegmentptlast() const;
 
 };
+%extend IntRes2d_IntersectionSegment {
+	~IntRes2d_IntersectionSegment() {
+	printf("Call custom destructor for instance of IntRes2d_IntersectionSegment\n");
+	}
+};
 
 %nodefaultctor IntRes2d_IntersectionPoint;
 class IntRes2d_IntersectionPoint {
 	public:
-		%feature("autodoc", "1");
-		~IntRes2d_IntersectionPoint();
 		%feature("autodoc", "1");
 		IntRes2d_IntersectionPoint();
 		%feature("autodoc", "1");
@@ -334,6 +341,11 @@ class IntRes2d_IntersectionPoint {
 		const IntRes2d_Transition & _CSFDB_GetIntRes2d_IntersectionPointtrans2() const;
 
 };
+%extend IntRes2d_IntersectionPoint {
+	~IntRes2d_IntersectionPoint() {
+	printf("Call custom destructor for instance of IntRes2d_IntersectionPoint\n");
+	}
+};
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
 class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_SeqNode {
@@ -361,8 +373,6 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 class IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		~IntRes2d_Intersection();
-		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
@@ -378,12 +388,15 @@ class IntRes2d_Intersection {
 		void SetReversedParameters(const Standard_Boolean flag);
 
 };
+%extend IntRes2d_Intersection {
+	~IntRes2d_Intersection() {
+	printf("Call custom destructor for instance of IntRes2d_Intersection\n");
+	}
+};
 
 %nodefaultctor IntRes2d_Domain;
 class IntRes2d_Domain {
 	public:
-		%feature("autodoc", "1");
-		~IntRes2d_Domain();
 		%feature("autodoc", "1");
 		IntRes2d_Domain();
 		%feature("autodoc", "1");
@@ -420,6 +433,11 @@ class IntRes2d_Domain {
 		void EquivalentParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%extend IntRes2d_Domain {
+	~IntRes2d_Domain() {
+	printf("Call custom destructor for instance of IntRes2d_Domain\n");
+	}
+};
 
 %nodefaultctor IntRes2d_SequenceOfIntersectionPoint;
 class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
@@ -428,8 +446,6 @@ class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 		IntRes2d_SequenceOfIntersectionPoint();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntRes2d_SequenceOfIntersectionPoint();
 		%feature("autodoc", "1");
 		const IntRes2d_SequenceOfIntersectionPoint & Assign(const IntRes2d_SequenceOfIntersectionPoint &Other);
 		%feature("autodoc", "1");
@@ -469,6 +485,11 @@ class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IntRes2d_SequenceOfIntersectionPoint {
+	~IntRes2d_SequenceOfIntersectionPoint() {
+	printf("Call custom destructor for instance of IntRes2d_SequenceOfIntersectionPoint\n");
+	}
 };
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;

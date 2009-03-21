@@ -88,14 +88,17 @@ Standard_Real & function transformation
 class GC_Root {
 	public:
 		%feature("autodoc", "1");
-		~GC_Root();
-		%feature("autodoc", "1");
 		GC_Root();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		gce_ErrorType Status() const;
 
+};
+%extend GC_Root {
+	~GC_Root() {
+	printf("Call custom destructor for instance of GC_Root\n");
+	}
 };
 
 %nodefaultctor GC_MakeEllipse;

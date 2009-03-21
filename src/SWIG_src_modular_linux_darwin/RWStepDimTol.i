@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepDimTol_RWDatumFeature {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWDatumFeature();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWDatumFeature();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumFeature &ent) const;
@@ -99,12 +97,15 @@ class RWStepDimTol_RWDatumFeature {
 		void Share(const Handle_StepDimTol_DatumFeature &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWDatumFeature {
+	~RWStepDimTol_RWDatumFeature() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWDatumFeature\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWGeometricToleranceWithDatumReference;
 class RWStepDimTol_RWGeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWGeometricToleranceWithDatumReference();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeometricToleranceWithDatumReference();
 		%feature("autodoc", "1");
@@ -115,12 +116,15 @@ class RWStepDimTol_RWGeometricToleranceWithDatumReference {
 		void Share(const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWGeometricToleranceWithDatumReference {
+	~RWStepDimTol_RWGeometricToleranceWithDatumReference() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceWithDatumReference\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWPlacedDatumTargetFeature;
 class RWStepDimTol_RWPlacedDatumTargetFeature {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWPlacedDatumTargetFeature();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWPlacedDatumTargetFeature();
 		%feature("autodoc", "1");
@@ -131,12 +135,15 @@ class RWStepDimTol_RWPlacedDatumTargetFeature {
 		void Share(const Handle_StepDimTol_PlacedDatumTargetFeature &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWPlacedDatumTargetFeature {
+	~RWStepDimTol_RWPlacedDatumTargetFeature() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWPlacedDatumTargetFeature\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWDatumReference;
 class RWStepDimTol_RWDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWDatumReference();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWDatumReference();
 		%feature("autodoc", "1");
@@ -147,12 +154,15 @@ class RWStepDimTol_RWDatumReference {
 		void Share(const Handle_StepDimTol_DatumReference &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWDatumReference {
+	~RWStepDimTol_RWDatumReference() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWDatumReference\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWRoundnessTolerance;
 class RWStepDimTol_RWRoundnessTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWRoundnessTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWRoundnessTolerance();
 		%feature("autodoc", "1");
@@ -163,12 +173,15 @@ class RWStepDimTol_RWRoundnessTolerance {
 		void Share(const Handle_StepDimTol_RoundnessTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWRoundnessTolerance {
+	~RWStepDimTol_RWRoundnessTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWRoundnessTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWAngularityTolerance;
 class RWStepDimTol_RWAngularityTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWAngularityTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWAngularityTolerance();
 		%feature("autodoc", "1");
@@ -179,12 +192,15 @@ class RWStepDimTol_RWAngularityTolerance {
 		void Share(const Handle_StepDimTol_AngularityTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWAngularityTolerance {
+	~RWStepDimTol_RWAngularityTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWAngularityTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWPerpendicularityTolerance;
 class RWStepDimTol_RWPerpendicularityTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWPerpendicularityTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWPerpendicularityTolerance();
 		%feature("autodoc", "1");
@@ -195,12 +211,15 @@ class RWStepDimTol_RWPerpendicularityTolerance {
 		void Share(const Handle_StepDimTol_PerpendicularityTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWPerpendicularityTolerance {
+	~RWStepDimTol_RWPerpendicularityTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWPerpendicularityTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWSymmetryTolerance;
 class RWStepDimTol_RWSymmetryTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWSymmetryTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWSymmetryTolerance();
 		%feature("autodoc", "1");
@@ -211,12 +230,15 @@ class RWStepDimTol_RWSymmetryTolerance {
 		void Share(const Handle_StepDimTol_SymmetryTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWSymmetryTolerance {
+	~RWStepDimTol_RWSymmetryTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWSymmetryTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWCircularRunoutTolerance;
 class RWStepDimTol_RWCircularRunoutTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWCircularRunoutTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWCircularRunoutTolerance();
 		%feature("autodoc", "1");
@@ -227,12 +249,15 @@ class RWStepDimTol_RWCircularRunoutTolerance {
 		void Share(const Handle_StepDimTol_CircularRunoutTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWCircularRunoutTolerance {
+	~RWStepDimTol_RWCircularRunoutTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWCircularRunoutTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWParallelismTolerance;
 class RWStepDimTol_RWParallelismTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWParallelismTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWParallelismTolerance();
 		%feature("autodoc", "1");
@@ -243,12 +268,15 @@ class RWStepDimTol_RWParallelismTolerance {
 		void Share(const Handle_StepDimTol_ParallelismTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWParallelismTolerance {
+	~RWStepDimTol_RWParallelismTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWParallelismTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWPositionTolerance;
 class RWStepDimTol_RWPositionTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWPositionTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWPositionTolerance();
 		%feature("autodoc", "1");
@@ -259,12 +287,15 @@ class RWStepDimTol_RWPositionTolerance {
 		void Share(const Handle_StepDimTol_PositionTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWPositionTolerance {
+	~RWStepDimTol_RWPositionTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWPositionTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWSurfaceProfileTolerance;
 class RWStepDimTol_RWSurfaceProfileTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWSurfaceProfileTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWSurfaceProfileTolerance();
 		%feature("autodoc", "1");
@@ -275,12 +306,15 @@ class RWStepDimTol_RWSurfaceProfileTolerance {
 		void Share(const Handle_StepDimTol_SurfaceProfileTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWSurfaceProfileTolerance {
+	~RWStepDimTol_RWSurfaceProfileTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWSurfaceProfileTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWLineProfileTolerance;
 class RWStepDimTol_RWLineProfileTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWLineProfileTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWLineProfileTolerance();
 		%feature("autodoc", "1");
@@ -291,12 +325,15 @@ class RWStepDimTol_RWLineProfileTolerance {
 		void Share(const Handle_StepDimTol_LineProfileTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWLineProfileTolerance {
+	~RWStepDimTol_RWLineProfileTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWLineProfileTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWDatumTarget;
 class RWStepDimTol_RWDatumTarget {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWDatumTarget();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWDatumTarget();
 		%feature("autodoc", "1");
@@ -307,12 +344,15 @@ class RWStepDimTol_RWDatumTarget {
 		void Share(const Handle_StepDimTol_DatumTarget &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWDatumTarget {
+	~RWStepDimTol_RWDatumTarget() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWDatumTarget\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWFlatnessTolerance;
 class RWStepDimTol_RWFlatnessTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWFlatnessTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWFlatnessTolerance();
 		%feature("autodoc", "1");
@@ -323,12 +363,15 @@ class RWStepDimTol_RWFlatnessTolerance {
 		void Share(const Handle_StepDimTol_FlatnessTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWFlatnessTolerance {
+	~RWStepDimTol_RWFlatnessTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWFlatnessTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
 class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
 		%feature("autodoc", "1");
@@ -339,12 +382,15 @@ class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 		void Share(const Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
+	~RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWGeometricTolerance;
 class RWStepDimTol_RWGeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWGeometricTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeometricTolerance();
 		%feature("autodoc", "1");
@@ -355,12 +401,15 @@ class RWStepDimTol_RWGeometricTolerance {
 		void Share(const Handle_StepDimTol_GeometricTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWGeometricTolerance {
+	~RWStepDimTol_RWGeometricTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWGeometricTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWStraightnessTolerance;
 class RWStepDimTol_RWStraightnessTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWStraightnessTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWStraightnessTolerance();
 		%feature("autodoc", "1");
@@ -371,12 +420,15 @@ class RWStepDimTol_RWStraightnessTolerance {
 		void Share(const Handle_StepDimTol_StraightnessTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWStraightnessTolerance {
+	~RWStepDimTol_RWStraightnessTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWStraightnessTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWCylindricityTolerance;
 class RWStepDimTol_RWCylindricityTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWCylindricityTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWCylindricityTolerance();
 		%feature("autodoc", "1");
@@ -387,12 +439,15 @@ class RWStepDimTol_RWCylindricityTolerance {
 		void Share(const Handle_StepDimTol_CylindricityTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWCylindricityTolerance {
+	~RWStepDimTol_RWCylindricityTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWCylindricityTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWGeometricToleranceRelationship;
 class RWStepDimTol_RWGeometricToleranceRelationship {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWGeometricToleranceRelationship();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeometricToleranceRelationship();
 		%feature("autodoc", "1");
@@ -403,12 +458,15 @@ class RWStepDimTol_RWGeometricToleranceRelationship {
 		void Share(const Handle_StepDimTol_GeometricToleranceRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWGeometricToleranceRelationship {
+	~RWStepDimTol_RWGeometricToleranceRelationship() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceRelationship\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWCoaxialityTolerance;
 class RWStepDimTol_RWCoaxialityTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWCoaxialityTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWCoaxialityTolerance();
 		%feature("autodoc", "1");
@@ -419,12 +477,15 @@ class RWStepDimTol_RWCoaxialityTolerance {
 		void Share(const Handle_StepDimTol_CoaxialityTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWCoaxialityTolerance {
+	~RWStepDimTol_RWCoaxialityTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWCoaxialityTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWTotalRunoutTolerance;
 class RWStepDimTol_RWTotalRunoutTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWTotalRunoutTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWTotalRunoutTolerance();
 		%feature("autodoc", "1");
@@ -435,12 +496,15 @@ class RWStepDimTol_RWTotalRunoutTolerance {
 		void Share(const Handle_StepDimTol_TotalRunoutTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWTotalRunoutTolerance {
+	~RWStepDimTol_RWTotalRunoutTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWTotalRunoutTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWModifiedGeometricTolerance;
 class RWStepDimTol_RWModifiedGeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWModifiedGeometricTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWModifiedGeometricTolerance();
 		%feature("autodoc", "1");
@@ -451,12 +515,15 @@ class RWStepDimTol_RWModifiedGeometricTolerance {
 		void Share(const Handle_StepDimTol_ModifiedGeometricTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWModifiedGeometricTolerance {
+	~RWStepDimTol_RWModifiedGeometricTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWModifiedGeometricTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWConcentricityTolerance;
 class RWStepDimTol_RWConcentricityTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWConcentricityTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWConcentricityTolerance();
 		%feature("autodoc", "1");
@@ -467,12 +534,15 @@ class RWStepDimTol_RWConcentricityTolerance {
 		void Share(const Handle_StepDimTol_ConcentricityTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWConcentricityTolerance {
+	~RWStepDimTol_RWConcentricityTolerance() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWConcentricityTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWDatum;
 class RWStepDimTol_RWDatum {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWDatum();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWDatum();
 		%feature("autodoc", "1");
@@ -483,12 +553,15 @@ class RWStepDimTol_RWDatum {
 		void Share(const Handle_StepDimTol_Datum &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepDimTol_RWDatum {
+	~RWStepDimTol_RWDatum() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWDatum\n");
+	}
+};
 
 %nodefaultctor RWStepDimTol_RWCommonDatum;
 class RWStepDimTol_RWCommonDatum {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWCommonDatum();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWCommonDatum();
 		%feature("autodoc", "1");
@@ -498,4 +571,9 @@ class RWStepDimTol_RWCommonDatum {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepDimTol_CommonDatum &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepDimTol_RWCommonDatum {
+	~RWStepDimTol_RWCommonDatum() {
+	printf("Call custom destructor for instance of RWStepDimTol_RWCommonDatum\n");
+	}
 };

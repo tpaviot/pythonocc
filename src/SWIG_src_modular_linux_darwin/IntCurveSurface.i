@@ -179,8 +179,6 @@ class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntCurveSurface_SequenceOfPnt();
-		%feature("autodoc", "1");
 		const IntCurveSurface_SequenceOfPnt & Assign(const IntCurveSurface_SequenceOfPnt &Other);
 		%feature("autodoc", "1");
 		void Append(const IntCurveSurface_IntersectionPoint &T);
@@ -220,12 +218,15 @@ class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntCurveSurface_SequenceOfPnt {
+	~IntCurveSurface_SequenceOfPnt() {
+	printf("Call custom destructor for instance of IntCurveSurface_SequenceOfPnt\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_IntersectionPoint;
 class IntCurveSurface_IntersectionPoint {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_IntersectionPoint();
 		%feature("autodoc", "1");
 		IntCurveSurface_IntersectionPoint();
 		%feature("autodoc", "1");
@@ -248,12 +249,15 @@ class IntCurveSurface_IntersectionPoint {
 		void Dump() const;
 
 };
+%extend IntCurveSurface_IntersectionPoint {
+	~IntCurveSurface_IntersectionPoint() {
+	printf("Call custom destructor for instance of IntCurveSurface_IntersectionPoint\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_TheQuadCurvExactHInter;
 class IntCurveSurface_TheQuadCurvExactHInter {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_TheQuadCurvExactHInter();
 		%feature("autodoc", "1");
 		IntCurveSurface_TheQuadCurvExactHInter(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
@@ -267,6 +271,11 @@ class IntCurveSurface_TheQuadCurvExactHInter {
 		%feature("autodoc", "1");
 		void Intervals(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntCurveSurface_TheQuadCurvExactHInter {
+	~IntCurveSurface_TheQuadCurvExactHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_TheQuadCurvExactHInter\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_TheHSurfaceTool;
@@ -368,8 +377,6 @@ class IntCurveSurface_TheHSurfaceTool {
 class IntCurveSurface_TheExactHInter {
 	public:
 		%feature("autodoc", "1");
-		~IntCurveSurface_TheExactHInter();
-		%feature("autodoc", "1");
 		IntCurveSurface_TheExactHInter(const Standard_Real U, const Standard_Real V, const Standard_Real W, const IntCurveSurface_TheCSFunctionOfHInter &F, const Standard_Real TolTangency, const Standard_Real MarginCoef=0.0);
 		%feature("autodoc", "1");
 		IntCurveSurface_TheExactHInter(const IntCurveSurface_TheCSFunctionOfHInter &F, const Standard_Real TolTangency);
@@ -389,12 +396,15 @@ class IntCurveSurface_TheExactHInter {
 		IntCurveSurface_TheCSFunctionOfHInter & Function();
 
 };
+%extend IntCurveSurface_TheExactHInter {
+	~IntCurveSurface_TheExactHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_TheExactHInter\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_Intersection;
 class IntCurveSurface_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_Intersection();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -409,12 +419,15 @@ class IntCurveSurface_Intersection {
 		void Dump() const;
 
 };
+%extend IntCurveSurface_Intersection {
+	~IntCurveSurface_Intersection() {
+	printf("Call custom destructor for instance of IntCurveSurface_Intersection\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_HInter;
 class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_HInter();
 		%feature("autodoc", "1");
 		IntCurveSurface_HInter();
 		%feature("autodoc", "1");
@@ -429,6 +442,11 @@ class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
 
 };
+%extend IntCurveSurface_HInter {
+	~IntCurveSurface_HInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_HInter\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
 class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_FunctionWithDerivative {
@@ -441,9 +459,12 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter();
 
+};
+%extend IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter {
+	~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfPnt;
@@ -472,8 +493,6 @@ class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 class IntCurveSurface_ThePolygonToolOfHInter {
 	public:
 		%feature("autodoc", "1");
-		~IntCurveSurface_ThePolygonToolOfHInter();
-		%feature("autodoc", "1");
 		IntCurveSurface_ThePolygonToolOfHInter();
 		%feature("autodoc", "1");
 		const Bnd_Box & Bounding(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
@@ -491,12 +510,15 @@ class IntCurveSurface_ThePolygonToolOfHInter {
 		void Dump(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
 
 };
+%extend IntCurveSurface_ThePolygonToolOfHInter {
+	~IntCurveSurface_ThePolygonToolOfHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_ThePolygonToolOfHInter\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_IntersectionSegment;
 class IntCurveSurface_IntersectionSegment {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_IntersectionSegment();
 		%feature("autodoc", "1");
 		IntCurveSurface_IntersectionSegment();
 		%feature("autodoc", "1");
@@ -517,12 +539,15 @@ class IntCurveSurface_IntersectionSegment {
 		void Dump() const;
 
 };
+%extend IntCurveSurface_IntersectionSegment {
+	~IntCurveSurface_IntersectionSegment() {
+	printf("Call custom destructor for instance of IntCurveSurface_IntersectionSegment\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_ThePolygonOfHInter;
 class IntCurveSurface_ThePolygonOfHInter {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_ThePolygonOfHInter();
 		%feature("autodoc", "1");
 		IntCurveSurface_ThePolygonOfHInter(const Handle_Adaptor3d_HCurve &Curve, const Standard_Integer NbPnt);
 		%feature("autodoc", "1");
@@ -554,6 +579,11 @@ class IntCurveSurface_ThePolygonOfHInter {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend IntCurveSurface_ThePolygonOfHInter {
+	~IntCurveSurface_ThePolygonOfHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_ThePolygonOfHInter\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfSeg;
@@ -617,8 +647,6 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntCurveSurface_SequenceOfSeg();
-		%feature("autodoc", "1");
 		const IntCurveSurface_SequenceOfSeg & Assign(const IntCurveSurface_SequenceOfSeg &Other);
 		%feature("autodoc", "1");
 		void Append(const IntCurveSurface_IntersectionSegment &T);
@@ -657,6 +685,11 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IntCurveSurface_SequenceOfSeg {
+	~IntCurveSurface_SequenceOfSeg() {
+	printf("Call custom destructor for instance of IntCurveSurface_SequenceOfSeg\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_TheHCurveTool;
@@ -726,8 +759,6 @@ class IntCurveSurface_TheHCurveTool {
 class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 	public:
 		%feature("autodoc", "1");
-		~IntCurveSurface_TheInterferenceOfHInter();
-		%feature("autodoc", "1");
 		IntCurveSurface_TheInterferenceOfHInter();
 		%feature("autodoc", "1");
 		IntCurveSurface_TheInterferenceOfHInter(const IntCurveSurface_ThePolygonOfHInter &thePolyg, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
@@ -758,4 +789,9 @@ class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 		%feature("autodoc", "1");
 		void Interference(const IntCurveSurface_ThePolygonOfHInter &thePolyg, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 
+};
+%extend IntCurveSurface_TheInterferenceOfHInter {
+	~IntCurveSurface_TheInterferenceOfHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_TheInterferenceOfHInter\n");
+	}
 };

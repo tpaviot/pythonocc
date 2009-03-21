@@ -147,8 +147,6 @@ class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BinObjMgt_SequenceOfAddress();
-		%feature("autodoc", "1");
 		const BinObjMgt_SequenceOfAddress & Assign(const BinObjMgt_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
 		void Append(const Standard_Address &T);
@@ -187,6 +185,11 @@ class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend BinObjMgt_SequenceOfAddress {
+	~BinObjMgt_SequenceOfAddress() {
+	printf("Call custom destructor for instance of BinObjMgt_SequenceOfAddress\n");
+	}
 };
 
 %nodefaultctor BinObjMgt_Persistent;
@@ -294,9 +297,12 @@ class BinObjMgt_Persistent {
 		std::istream & Read(std::istream & theIS);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BinObjMgt_Persistent();
 
+};
+%extend BinObjMgt_Persistent {
+	~BinObjMgt_Persistent() {
+	printf("Call custom destructor for instance of BinObjMgt_Persistent\n");
+	}
 };
 
 %nodefaultctor BinObjMgt_DataMapNodeOfRRelocationTable;

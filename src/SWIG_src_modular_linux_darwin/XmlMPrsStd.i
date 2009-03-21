@@ -136,12 +136,15 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 class XmlMPrsStd {
 	public:
 		%feature("autodoc", "1");
-		~XmlMPrsStd();
-		%feature("autodoc", "1");
 		XmlMPrsStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
+};
+%extend XmlMPrsStd {
+	~XmlMPrsStd() {
+	printf("Call custom destructor for instance of XmlMPrsStd\n");
+	}
 };
 
 %nodefaultctor XmlMPrsStd_AISPresentationDriver;

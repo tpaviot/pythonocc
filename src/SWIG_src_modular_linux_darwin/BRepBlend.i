@@ -275,9 +275,12 @@ class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfPointConstRadInv();
 
+};
+%extend BRepBlend_SurfPointConstRadInv {
+	~BRepBlend_SurfPointConstRadInv() {
+	printf("Call custom destructor for instance of BRepBlend_SurfPointConstRadInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_SequenceNodeOfSequenceOfPointOnRst;
@@ -389,9 +392,12 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_RstRstEvolRad();
 
+};
+%extend BRepBlend_RstRstEvolRad {
+	~BRepBlend_RstRstEvolRad() {
+	printf("Call custom destructor for instance of BRepBlend_RstRstEvolRad\n");
+	}
 };
 
 %nodefaultctor BRepBlend_EvolRadInv;
@@ -417,9 +423,12 @@ class BRepBlend_EvolRadInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_EvolRadInv();
 
+};
+%extend BRepBlend_EvolRadInv {
+	~BRepBlend_EvolRadInv() {
+	printf("Call custom destructor for instance of BRepBlend_EvolRadInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_BlendTool;
@@ -496,9 +505,12 @@ class BRepBlend_ConstRadInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real R, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ConstRadInv();
 
+};
+%extend BRepBlend_ConstRadInv {
+	~BRepBlend_ConstRadInv() {
+	printf("Call custom destructor for instance of BRepBlend_ConstRadInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_HCurve2dTool;
@@ -633,9 +645,12 @@ class BRepBlend_Chamfer : public Blend_Function {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_Chamfer();
 
+};
+%extend BRepBlend_Chamfer {
+	~BRepBlend_Chamfer() {
+	printf("Call custom destructor for instance of BRepBlend_Chamfer\n");
+	}
 };
 
 %nodefaultctor BRepBlend_ConstRad;
@@ -717,9 +732,12 @@ class BRepBlend_ConstRad : public Blend_Function {
 		gp_Ax1 AxeRot(const Standard_Real Prm);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ConstRad();
 
+};
+%extend BRepBlend_ConstRad {
+	~BRepBlend_ConstRad() {
+	printf("Call custom destructor for instance of BRepBlend_ConstRad\n");
+	}
 };
 
 %nodefaultctor BRepBlend_PointOnRst;
@@ -770,9 +788,12 @@ class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfCurvEvolRadInv();
 
+};
+%extend BRepBlend_SurfCurvEvolRadInv {
+	~BRepBlend_SurfCurvEvolRadInv() {
+	printf("Call custom destructor for instance of BRepBlend_SurfCurvEvolRadInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_SurfCurvConstRadInv;
@@ -798,9 +819,12 @@ class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfCurvConstRadInv();
 
+};
+%extend BRepBlend_SurfCurvConstRadInv {
+	~BRepBlend_SurfCurvConstRadInv() {
+	printf("Call custom destructor for instance of BRepBlend_SurfCurvConstRadInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_CurvPointRadInv;
@@ -826,9 +850,12 @@ class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_CurvPointRadInv();
 
+};
+%extend BRepBlend_CurvPointRadInv {
+	~BRepBlend_CurvPointRadInv() {
+	printf("Call custom destructor for instance of BRepBlend_CurvPointRadInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_SurfPointEvolRadInv;
@@ -854,9 +881,12 @@ class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfPointEvolRadInv();
 
+};
+%extend BRepBlend_SurfPointEvolRadInv {
+	~BRepBlend_SurfPointEvolRadInv() {
+	printf("Call custom destructor for instance of BRepBlend_SurfPointEvolRadInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_ChamfInv;
@@ -882,9 +912,12 @@ class BRepBlend_ChamfInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real Dist1, const Standard_Real Dist2, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ChamfInv();
 
+};
+%extend BRepBlend_ChamfInv {
+	~BRepBlend_ChamfInv() {
+	printf("Call custom destructor for instance of BRepBlend_ChamfInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_Ruled;
@@ -958,9 +991,12 @@ class BRepBlend_Ruled : public Blend_Function {
 		gp_Ax1 AxeRot(const Standard_Real Prm);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_Ruled();
 
+};
+%extend BRepBlend_Ruled {
+	~BRepBlend_Ruled() {
+	printf("Call custom destructor for instance of BRepBlend_Ruled\n");
+	}
 };
 
 %nodefaultctor BRepBlend_AppFuncRoot;
@@ -1120,9 +1156,12 @@ class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfRstConstRad();
 
+};
+%extend BRepBlend_SurfRstConstRad {
+	~BRepBlend_SurfRstConstRad() {
+	printf("Call custom destructor for instance of BRepBlend_SurfRstConstRad\n");
+	}
 };
 
 %nodefaultctor BRepBlend_SurfRstLineBuilder;
@@ -1231,9 +1270,12 @@ class BRepBlend_ChAsym : public Blend_Function {
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ChAsym();
 
+};
+%extend BRepBlend_ChAsym {
+	~BRepBlend_ChAsym() {
+	printf("Call custom destructor for instance of BRepBlend_ChAsym\n");
+	}
 };
 
 %nodefaultctor BRepBlend_AppSurface;
@@ -1287,9 +1329,12 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_AppSurface();
 
+};
+%extend BRepBlend_AppSurface {
+	~BRepBlend_AppSurface() {
+	printf("Call custom destructor for instance of BRepBlend_AppSurface\n");
+	}
 };
 
 %nodefaultctor BRepBlend_Extremity;
@@ -1574,9 +1619,12 @@ class BRepBlend_CSConstRad : public Blend_CSFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_CSConstRad();
 
+};
+%extend BRepBlend_CSConstRad {
+	~BRepBlend_CSConstRad() {
+	printf("Call custom destructor for instance of BRepBlend_CSConstRad\n");
+	}
 };
 
 %nodefaultctor BRepBlend_AppFuncRstRst;
@@ -1624,9 +1672,12 @@ class BRepBlend_RuledInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_RuledInv();
 
+};
+%extend BRepBlend_RuledInv {
+	~BRepBlend_RuledInv() {
+	printf("Call custom destructor for instance of BRepBlend_RuledInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_HCurveTool;
@@ -1767,9 +1818,12 @@ class BRepBlend_CSCircular : public Blend_CSFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_CSCircular();
 
+};
+%extend BRepBlend_CSCircular {
+	~BRepBlend_CSCircular() {
+	printf("Call custom destructor for instance of BRepBlend_CSCircular\n");
+	}
 };
 
 %nodefaultctor BRepBlend_ChAsymInv;
@@ -1797,16 +1851,17 @@ class BRepBlend_ChAsymInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ChAsymInv();
 
+};
+%extend BRepBlend_ChAsymInv {
+	~BRepBlend_ChAsymInv() {
+	printf("Call custom destructor for instance of BRepBlend_ChAsymInv\n");
+	}
 };
 
 %nodefaultctor BRepBlend_Corde;
 class BRepBlend_Corde {
 	public:
-		%feature("autodoc", "1");
-		~BRepBlend_Corde();
 		%feature("autodoc", "1");
 		BRepBlend_Corde(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &CGuide);
 		%feature("autodoc", "1");
@@ -1834,6 +1889,11 @@ class BRepBlend_Corde {
 		%feature("autodoc", "1");
 		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
+};
+%extend BRepBlend_Corde {
+	~BRepBlend_Corde() {
+	printf("Call custom destructor for instance of BRepBlend_Corde\n");
+	}
 };
 
 %nodefaultctor BRepBlend_AppSurf;
@@ -1889,9 +1949,12 @@ class BRepBlend_AppSurf : public AppBlend_Approx {
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_AppSurf();
 
+};
+%extend BRepBlend_AppSurf {
+	~BRepBlend_AppSurf() {
+	printf("Call custom destructor for instance of BRepBlend_AppSurf\n");
+	}
 };
 
 %nodefaultctor BRepBlend_HSurfaceTool;
@@ -2024,8 +2087,6 @@ class BRepBlend_SequenceOfPointOnRst : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepBlend_SequenceOfPointOnRst();
-		%feature("autodoc", "1");
 		const BRepBlend_SequenceOfPointOnRst & Assign(const BRepBlend_SequenceOfPointOnRst &Other);
 		%feature("autodoc", "1");
 		void Append(const BRepBlend_PointOnRst &T);
@@ -2064,6 +2125,11 @@ class BRepBlend_SequenceOfPointOnRst : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend BRepBlend_SequenceOfPointOnRst {
+	~BRepBlend_SequenceOfPointOnRst() {
+	printf("Call custom destructor for instance of BRepBlend_SequenceOfPointOnRst\n");
+	}
 };
 
 %nodefaultctor BRepBlend_RstRstConstRad;
@@ -2153,9 +2219,12 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_RstRstConstRad();
 
+};
+%extend BRepBlend_RstRstConstRad {
+	~BRepBlend_RstRstConstRad() {
+	printf("Call custom destructor for instance of BRepBlend_RstRstConstRad\n");
+	}
 };
 
 %nodefaultctor BRepBlend_Walking;
@@ -2280,9 +2349,12 @@ class BRepBlend_EvolRad : public Blend_Function {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_EvolRad();
 
+};
+%extend BRepBlend_EvolRad {
+	~BRepBlend_EvolRad() {
+	printf("Call custom destructor for instance of BRepBlend_EvolRad\n");
+	}
 };
 
 %nodefaultctor BRepBlend_SurfRstEvolRad;
@@ -2368,7 +2440,10 @@ class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfRstEvolRad();
 
+};
+%extend BRepBlend_SurfRstEvolRad {
+	~BRepBlend_SurfRstEvolRad() {
+	printf("Call custom destructor for instance of BRepBlend_SurfRstEvolRad\n");
+	}
 };

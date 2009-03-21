@@ -228,8 +228,6 @@ class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TShort_SequenceOfShortReal();
-		%feature("autodoc", "1");
 		const TShort_SequenceOfShortReal & Assign(const TShort_SequenceOfShortReal &Other);
 		%feature("autodoc", "1");
 		void Append(const Standard_ShortReal &T);
@@ -269,6 +267,11 @@ class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TShort_SequenceOfShortReal {
+	~TShort_SequenceOfShortReal() {
+	printf("Call custom destructor for instance of TShort_SequenceOfShortReal\n");
+	}
+};
 
 %nodefaultctor TShort_Array1OfShortReal;
 class TShort_Array1OfShortReal {
@@ -281,8 +284,6 @@ class TShort_Array1OfShortReal {
 		void Init(const Standard_ShortReal &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TShort_Array1OfShortReal();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -304,6 +305,11 @@ class TShort_Array1OfShortReal {
 		%feature("autodoc", "1");
 		Standard_ShortReal & operator()(const Standard_Integer Index);
 
+};
+%extend TShort_Array1OfShortReal {
+	~TShort_Array1OfShortReal() {
+	printf("Call custom destructor for instance of TShort_Array1OfShortReal\n");
+	}
 };
 
 %nodefaultctor TShort_HArray2OfShortReal;
@@ -450,8 +456,6 @@ class TShort_Array2OfShortReal {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TShort_Array2OfShortReal();
-		%feature("autodoc", "1");
 		const TShort_Array2OfShortReal & Assign(const TShort_Array2OfShortReal &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -476,4 +480,9 @@ class TShort_Array2OfShortReal {
 		%feature("autodoc", "1");
 		Standard_ShortReal & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TShort_Array2OfShortReal {
+	~TShort_Array2OfShortReal() {
+	printf("Call custom destructor for instance of TShort_Array2OfShortReal\n");
+	}
 };

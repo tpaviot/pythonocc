@@ -245,24 +245,30 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 class VrmlConverter_WFShape {
 	public:
 		%feature("autodoc", "1");
-		~VrmlConverter_WFShape();
-		%feature("autodoc", "1");
 		VrmlConverter_WFShape();
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
+};
+%extend VrmlConverter_WFShape {
+	~VrmlConverter_WFShape() {
+	printf("Call custom destructor for instance of VrmlConverter_WFShape\n");
+	}
 };
 
 %nodefaultctor VrmlConverter_WFDeflectionShape;
 class VrmlConverter_WFDeflectionShape {
 	public:
 		%feature("autodoc", "1");
-		~VrmlConverter_WFDeflectionShape();
-		%feature("autodoc", "1");
 		VrmlConverter_WFDeflectionShape();
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
+};
+%extend VrmlConverter_WFDeflectionShape {
+	~VrmlConverter_WFDeflectionShape() {
+	printf("Call custom destructor for instance of VrmlConverter_WFDeflectionShape\n");
+	}
 };
 
 %nodefaultctor VrmlConverter_LineAspect;
@@ -325,8 +331,6 @@ class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 class VrmlConverter_WFRestrictedFace {
 	public:
 		%feature("autodoc", "1");
-		~VrmlConverter_WFRestrictedFace();
-		%feature("autodoc", "1");
 		VrmlConverter_WFRestrictedFace();
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
@@ -338,12 +342,15 @@ class VrmlConverter_WFRestrictedFace {
 		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
+%extend VrmlConverter_WFRestrictedFace {
+	~VrmlConverter_WFRestrictedFace() {
+	printf("Call custom destructor for instance of VrmlConverter_WFRestrictedFace\n");
+	}
+};
 
 %nodefaultctor VrmlConverter_ShadedShape;
 class VrmlConverter_ShadedShape {
 	public:
-		%feature("autodoc", "1");
-		~VrmlConverter_ShadedShape();
 		%feature("autodoc", "1");
 		VrmlConverter_ShadedShape();
 		%feature("autodoc", "1");
@@ -352,12 +359,15 @@ class VrmlConverter_ShadedShape {
 		void ComputeNormal(const TopoDS_Face &aFace, Poly_Connect & pc, TColgp_Array1OfDir & Nor);
 
 };
+%extend VrmlConverter_ShadedShape {
+	~VrmlConverter_ShadedShape() {
+	printf("Call custom destructor for instance of VrmlConverter_ShadedShape\n");
+	}
+};
 
 %nodefaultctor VrmlConverter_WFDeflectionRestrictedFace;
 class VrmlConverter_WFDeflectionRestrictedFace {
 	public:
-		%feature("autodoc", "1");
-		~VrmlConverter_WFDeflectionRestrictedFace();
 		%feature("autodoc", "1");
 		VrmlConverter_WFDeflectionRestrictedFace();
 		%feature("autodoc", "1");
@@ -369,6 +379,11 @@ class VrmlConverter_WFDeflectionRestrictedFace {
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
 
+};
+%extend VrmlConverter_WFDeflectionRestrictedFace {
+	~VrmlConverter_WFDeflectionRestrictedFace() {
+	printf("Call custom destructor for instance of VrmlConverter_WFDeflectionRestrictedFace\n");
+	}
 };
 
 %nodefaultctor VrmlConverter_Projector;
@@ -407,8 +422,6 @@ class VrmlConverter_Projector : public MMgt_TShared {
 class VrmlConverter_Curve {
 	public:
 		%feature("autodoc", "1");
-		~VrmlConverter_Curve();
-		%feature("autodoc", "1");
 		VrmlConverter_Curve();
 		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Curve &aCurve, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
@@ -417,6 +430,11 @@ class VrmlConverter_Curve {
 		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, Standard_OStream & anOStream, const Standard_Integer aNbPoints);
 
+};
+%extend VrmlConverter_Curve {
+	~VrmlConverter_Curve() {
+	printf("Call custom destructor for instance of VrmlConverter_Curve\n");
+	}
 };
 
 %nodefaultctor VrmlConverter_PointAspect;
@@ -555,8 +573,6 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 class VrmlConverter_DeflectionCurve {
 	public:
 		%feature("autodoc", "1");
-		~VrmlConverter_DeflectionCurve();
-		%feature("autodoc", "1");
 		VrmlConverter_DeflectionCurve();
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Handle_VrmlConverter_Drawer &aDrawer);
@@ -569,6 +585,11 @@ class VrmlConverter_DeflectionCurve {
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real aDeflection);
 
+};
+%extend VrmlConverter_DeflectionCurve {
+	~VrmlConverter_DeflectionCurve() {
+	printf("Call custom destructor for instance of VrmlConverter_DeflectionCurve\n");
+	}
 };
 
 %nodefaultctor VrmlConverter_ShadingAspect;
@@ -611,10 +632,13 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 class VrmlConverter_HLRShape {
 	public:
 		%feature("autodoc", "1");
-		~VrmlConverter_HLRShape();
-		%feature("autodoc", "1");
 		VrmlConverter_HLRShape();
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
 
+};
+%extend VrmlConverter_HLRShape {
+	~VrmlConverter_HLRShape() {
+	printf("Call custom destructor for instance of VrmlConverter_HLRShape\n");
+	}
 };

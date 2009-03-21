@@ -190,8 +190,6 @@ class BOPTColStd_CArray1OfShape {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTColStd_CArray1OfShape();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -215,6 +213,11 @@ class BOPTColStd_CArray1OfShape {
 		Standard_Integer BlockLength() const;
 
 };
+%extend BOPTColStd_CArray1OfShape {
+	~BOPTColStd_CArray1OfShape() {
+	printf("Call custom destructor for instance of BOPTColStd_CArray1OfShape\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger;
 class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection_BasicMap {
@@ -227,8 +230,6 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const Standard_Integer &K, const TColStd_IndexedMapOfInteger &I);
 		%feature("autodoc", "1");
@@ -255,12 +256,15 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
 
 };
+%extend BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger {
+	~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_ShapeWithRankHasher;
 class BOPTColStd_ShapeWithRankHasher {
 	public:
-		%feature("autodoc", "1");
-		~BOPTColStd_ShapeWithRankHasher();
 		%feature("autodoc", "1");
 		BOPTColStd_ShapeWithRankHasher();
 		%feature("autodoc", "1");
@@ -268,6 +272,11 @@ class BOPTColStd_ShapeWithRankHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &SR1, const BOPTColStd_ShapeWithRank &SR2);
 
+};
+%extend BOPTColStd_ShapeWithRankHasher {
+	~BOPTColStd_ShapeWithRankHasher() {
+	printf("Call custom destructor for instance of BOPTColStd_ShapeWithRankHasher\n");
+	}
 };
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
@@ -336,8 +345,6 @@ class BOPTColStd_CArray1OfPnt2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTColStd_CArray1OfPnt2d();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -361,6 +368,11 @@ class BOPTColStd_CArray1OfPnt2d {
 		Standard_Integer BlockLength() const;
 
 };
+%extend BOPTColStd_CArray1OfPnt2d {
+	~BOPTColStd_CArray1OfPnt2d() {
+	printf("Call custom destructor for instance of BOPTColStd_CArray1OfPnt2d\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfSWRInteger;
 class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
@@ -373,8 +385,6 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTColStd_IndexedDataMapOfSWRInteger();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const BOPTColStd_ShapeWithRank &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -401,12 +411,15 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 		Standard_Integer & ChangeFromKey(const BOPTColStd_ShapeWithRank &K);
 
 };
+%extend BOPTColStd_IndexedDataMapOfSWRInteger {
+	~BOPTColStd_IndexedDataMapOfSWRInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapOfSWRInteger\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_ListIteratorOfListOfListOfShape;
 class BOPTColStd_ListIteratorOfListOfListOfShape {
 	public:
-		%feature("autodoc", "1");
-		~BOPTColStd_ListIteratorOfListOfListOfShape();
 		%feature("autodoc", "1");
 		BOPTColStd_ListIteratorOfListOfListOfShape();
 		%feature("autodoc", "1");
@@ -421,6 +434,11 @@ class BOPTColStd_ListIteratorOfListOfListOfShape {
 		TopTools_ListOfShape & Value() const;
 
 };
+%extend BOPTColStd_ListIteratorOfListOfListOfShape {
+	~BOPTColStd_ListIteratorOfListOfListOfShape() {
+	printf("Call custom destructor for instance of BOPTColStd_ListIteratorOfListOfListOfShape\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_ListOfListOfShape;
 class BOPTColStd_ListOfListOfShape {
@@ -433,8 +451,6 @@ class BOPTColStd_ListOfListOfShape {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTColStd_ListOfListOfShape();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -467,6 +483,11 @@ class BOPTColStd_ListOfListOfShape {
 		void InsertAfter(BOPTColStd_ListOfListOfShape & Other, BOPTColStd_ListIteratorOfListOfListOfShape & It);
 
 };
+%extend BOPTColStd_ListOfListOfShape {
+	~BOPTColStd_ListOfListOfShape() {
+	printf("Call custom destructor for instance of BOPTColStd_ListOfListOfShape\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_CArray1OfInteger;
 class BOPTColStd_CArray1OfInteger {
@@ -477,8 +498,6 @@ class BOPTColStd_CArray1OfInteger {
 		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BOPTColStd_CArray1OfInteger();
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -502,6 +521,11 @@ class BOPTColStd_CArray1OfInteger {
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
 
+};
+%extend BOPTColStd_CArray1OfInteger {
+	~BOPTColStd_CArray1OfInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_CArray1OfInteger\n");
+	}
 };
 
 %nodefaultctor BOPTColStd_ListNodeOfListOfListOfShape;
@@ -530,12 +554,15 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 class BOPTColStd_Failure {
 	public:
 		%feature("autodoc", "1");
-		~BOPTColStd_Failure();
-		%feature("autodoc", "1");
 		BOPTColStd_Failure(const char * aMessage);
 		%feature("autodoc", "1");
 		Standard_CString Message() const;
 
+};
+%extend BOPTColStd_Failure {
+	~BOPTColStd_Failure() {
+	printf("Call custom destructor for instance of BOPTColStd_Failure\n");
+	}
 };
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -570,8 +597,6 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 class BOPTColStd_ShapeWithRank {
 	public:
 		%feature("autodoc", "1");
-		~BOPTColStd_ShapeWithRank();
-		%feature("autodoc", "1");
 		BOPTColStd_ShapeWithRank();
 		%feature("autodoc", "1");
 		void SetShape(const TopoDS_Shape &aS);
@@ -587,6 +612,11 @@ class BOPTColStd_ShapeWithRank {
 		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &Other) const;
 
 };
+%extend BOPTColStd_ShapeWithRank {
+	~BOPTColStd_ShapeWithRank() {
+	printf("Call custom destructor for instance of BOPTColStd_ShapeWithRank\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerInteger;
 class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
@@ -599,8 +629,6 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTColStd_IndexedDataMapOfIntegerInteger();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const Standard_Integer &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -627,12 +655,15 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 		Standard_Integer & ChangeFromKey(const Standard_Integer &K);
 
 };
+%extend BOPTColStd_IndexedDataMapOfIntegerInteger {
+	~BOPTColStd_IndexedDataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerInteger\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_Dump;
 class BOPTColStd_Dump {
 	public:
-		%feature("autodoc", "1");
-		~BOPTColStd_Dump();
 		%feature("autodoc", "1");
 		BOPTColStd_Dump();
 		%feature("autodoc", "1");
@@ -640,4 +671,9 @@ class BOPTColStd_Dump {
 		%feature("autodoc", "1");
 		void PrintMessage(const char * aMessage);
 
+};
+%extend BOPTColStd_Dump {
+	~BOPTColStd_Dump() {
+	printf("Call custom destructor for instance of BOPTColStd_Dump\n");
+	}
 };

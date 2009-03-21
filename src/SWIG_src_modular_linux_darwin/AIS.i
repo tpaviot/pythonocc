@@ -3331,8 +3331,6 @@ class AIS_TexturedShape : public AIS_Shape {
 class AIS {
 	public:
 		%feature("autodoc", "1");
-		~AIS();
-		%feature("autodoc", "1");
 		AIS();
 		%feature("autodoc", "1");
 		gp_Pnt Nearest(const TopoDS_Shape &aShape, const gp_Pnt &aPoint);
@@ -3379,6 +3377,11 @@ class AIS {
 		%feature("autodoc", "1");
 		void ComputeProjVertexPresentation(const Handle_Prs3d_Presentation &aPres, const Handle_AIS_Drawer &aDrawer, const TopoDS_Vertex &aVertex, const gp_Pnt &ProjPoint, const Quantity_NameOfColor aColor=Quantity_NOC_PURPLE, const Standard_Real aWidth=2, const Aspect_TypeOfMarker aProjTOM=Aspect_TOM_PLUS, const Aspect_TypeOfLine aCallTOL=Aspect_TOL_DOT);
 
+};
+%extend AIS {
+	~AIS() {
+	printf("Call custom destructor for instance of AIS\n");
+	}
 };
 
 %nodefaultctor AIS_ParallelRelation;
@@ -3435,8 +3438,6 @@ class AIS_C0RegularityFilter : public SelectMgr_Filter {
 class AIS_GraphicTool {
 	public:
 		%feature("autodoc", "1");
-		~AIS_GraphicTool();
-		%feature("autodoc", "1");
 		AIS_GraphicTool();
 		%feature("autodoc", "1");
 		Quantity_NameOfColor GetLineColor(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
@@ -3455,6 +3456,11 @@ class AIS_GraphicTool {
 		%feature("autodoc", "1");
 		Graphic3d_MaterialAspect GetMaterial(const Handle_Prs3d_Drawer &aDrawer);
 
+};
+%extend AIS_GraphicTool {
+	~AIS_GraphicTool() {
+	printf("Call custom destructor for instance of AIS_GraphicTool\n");
+	}
 };
 
 %nodefaultctor AIS_ListNodeOfListOfInteractive;
@@ -3613,14 +3619,17 @@ class AIS_MapOfInteractive : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS_MapOfInteractive();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_AIS_InteractiveObject &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Handle_AIS_InteractiveObject &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_AIS_InteractiveObject &aKey);
 
+};
+%extend AIS_MapOfInteractive {
+	~AIS_MapOfInteractive() {
+	printf("Call custom destructor for instance of AIS_MapOfInteractive\n");
+	}
 };
 
 %nodefaultctor AIS_LocalContext;
@@ -4146,8 +4155,6 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AIS_DataMapofIntegerListOfinteractive();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const AIS_ListOfInteractive &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -4162,6 +4169,11 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		AIS_ListOfInteractive & operator()(const Standard_Integer &K);
 
+};
+%extend AIS_DataMapofIntegerListOfinteractive {
+	~AIS_DataMapofIntegerListOfinteractive() {
+	printf("Call custom destructor for instance of AIS_DataMapofIntegerListOfinteractive\n");
+	}
 };
 
 %nodefaultctor AIS_SymmetricRelation;
@@ -4284,8 +4296,6 @@ class AIS_GlobalStatus : public MMgt_TShared {
 class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive();
-		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive();
 		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive(const AIS_DataMapofIntegerListOfinteractive &aMap);
@@ -4296,6 +4306,11 @@ class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollectio
 		%feature("autodoc", "1");
 		const AIS_ListOfInteractive & Value() const;
 
+};
+%extend AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive {
+	~AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive() {
+	printf("Call custom destructor for instance of AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive\n");
+	}
 };
 
 %nodefaultctor AIS_InteractiveContext;

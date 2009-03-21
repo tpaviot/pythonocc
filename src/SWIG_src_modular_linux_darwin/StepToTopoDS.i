@@ -209,17 +209,18 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 class StepToTopoDS_PointPair {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_PointPair();
-		%feature("autodoc", "1");
 		StepToTopoDS_PointPair(const Handle_StepGeom_CartesianPoint &P1, const Handle_StepGeom_CartesianPoint &P2);
 
+};
+%extend StepToTopoDS_PointPair {
+	~StepToTopoDS_PointPair() {
+	printf("Call custom destructor for instance of StepToTopoDS_PointPair\n");
+	}
 };
 
 %nodefaultctor StepToTopoDS_Root;
 class StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_Root();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -232,12 +233,15 @@ class StepToTopoDS_Root {
 		void SetMaxTol(const Standard_Real maxpreci);
 
 };
+%extend StepToTopoDS_Root {
+	~StepToTopoDS_Root() {
+	printf("Call custom destructor for instance of StepToTopoDS_Root\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_TranslateShell;
 class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateShell();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateShell();
 		%feature("autodoc", "1");
@@ -250,12 +254,15 @@ class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateShellError Error() const;
 
 };
+%extend StepToTopoDS_TranslateShell {
+	~StepToTopoDS_TranslateShell() {
+	printf("Call custom destructor for instance of StepToTopoDS_TranslateShell\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_MakeTransformed;
 class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_MakeTransformed();
 		%feature("autodoc", "1");
 		StepToTopoDS_MakeTransformed();
 		%feature("autodoc", "1");
@@ -269,6 +276,11 @@ class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
 		%feature("autodoc", "1");
 		TopoDS_Shape TranslateMappedItem(const Handle_StepRepr_MappedItem &mapit, const Handle_Transfer_TransientProcess &TP);
 
+};
+%extend StepToTopoDS_MakeTransformed {
+	~StepToTopoDS_MakeTransformed() {
+	printf("Call custom destructor for instance of StepToTopoDS_MakeTransformed\n");
+	}
 };
 
 %nodefaultctor StepToTopoDS_Tool;
@@ -390,14 +402,17 @@ class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMap
 class StepToTopoDS_CartesianPointHasher {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_CartesianPointHasher();
-		%feature("autodoc", "1");
 		StepToTopoDS_CartesianPointHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_StepGeom_CartesianPoint &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_StepGeom_CartesianPoint &K1, const Handle_StepGeom_CartesianPoint &K2);
 
+};
+%extend StepToTopoDS_CartesianPointHasher {
+	~StepToTopoDS_CartesianPointHasher() {
+	printf("Call custom destructor for instance of StepToTopoDS_CartesianPointHasher\n");
+	}
 };
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfPointEdgeMap;
@@ -473,14 +488,17 @@ class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIt
 class StepToTopoDS_PointPairHasher {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_PointPairHasher();
-		%feature("autodoc", "1");
 		StepToTopoDS_PointPairHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const StepToTopoDS_PointPair &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const StepToTopoDS_PointPair &K1, const StepToTopoDS_PointPair &K2);
 
+};
+%extend StepToTopoDS_PointPairHasher {
+	~StepToTopoDS_PointPairHasher() {
+	printf("Call custom destructor for instance of StepToTopoDS_PointPairHasher\n");
+	}
 };
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfPointVertexMap;
@@ -519,8 +537,6 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepToTopoDS_DataMapOfTRI();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_StepShape_TopologicalRepresentationItem &K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_StepShape_TopologicalRepresentationItem &K) const;
@@ -536,12 +552,15 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const Handle_StepShape_TopologicalRepresentationItem &K);
 
 };
+%extend StepToTopoDS_DataMapOfTRI {
+	~StepToTopoDS_DataMapOfTRI() {
+	printf("Call custom destructor for instance of StepToTopoDS_DataMapOfTRI\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_TranslateFace;
 class StepToTopoDS_TranslateFace : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateFace();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateFace();
 		%feature("autodoc", "1");
@@ -554,12 +573,15 @@ class StepToTopoDS_TranslateFace : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateFaceError Error() const;
 
 };
+%extend StepToTopoDS_TranslateFace {
+	~StepToTopoDS_TranslateFace() {
+	printf("Call custom destructor for instance of StepToTopoDS_TranslateFace\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_TranslatePolyLoop;
 class StepToTopoDS_TranslatePolyLoop : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslatePolyLoop();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslatePolyLoop();
 		%feature("autodoc", "1");
@@ -572,12 +594,15 @@ class StepToTopoDS_TranslatePolyLoop : public StepToTopoDS_Root {
 		StepToTopoDS_TranslatePolyLoopError Error() const;
 
 };
+%extend StepToTopoDS_TranslatePolyLoop {
+	~StepToTopoDS_TranslatePolyLoop() {
+	printf("Call custom destructor for instance of StepToTopoDS_TranslatePolyLoop\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_TranslateCompositeCurve;
 class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateCompositeCurve();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateCompositeCurve();
 		%feature("autodoc", "1");
@@ -592,6 +617,11 @@ class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
 		const TopoDS_Wire & Value() const;
 
 };
+%extend StepToTopoDS_TranslateCompositeCurve {
+	~StepToTopoDS_TranslateCompositeCurve() {
+	printf("Call custom destructor for instance of StepToTopoDS_TranslateCompositeCurve\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_PointVertexMap;
 class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
@@ -604,8 +634,6 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~StepToTopoDS_PointVertexMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_StepGeom_CartesianPoint &K, const TopoDS_Vertex &I);
 		%feature("autodoc", "1");
@@ -622,12 +650,15 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 		TopoDS_Vertex & operator()(const Handle_StepGeom_CartesianPoint &K);
 
 };
+%extend StepToTopoDS_PointVertexMap {
+	~StepToTopoDS_PointVertexMap() {
+	printf("Call custom destructor for instance of StepToTopoDS_PointVertexMap\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_TranslateEdgeLoop;
 class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateEdgeLoop();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateEdgeLoop();
 		%feature("autodoc", "1");
@@ -640,12 +671,15 @@ class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateEdgeLoopError Error() const;
 
 };
+%extend StepToTopoDS_TranslateEdgeLoop {
+	~StepToTopoDS_TranslateEdgeLoop() {
+	printf("Call custom destructor for instance of StepToTopoDS_TranslateEdgeLoop\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_DataMapIteratorOfPointEdgeMap;
 class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_DataMapIteratorOfPointEdgeMap();
 		%feature("autodoc", "1");
 		StepToTopoDS_DataMapIteratorOfPointEdgeMap();
 		%feature("autodoc", "1");
@@ -658,12 +692,15 @@ class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIt
 		const TopoDS_Edge & Value() const;
 
 };
+%extend StepToTopoDS_DataMapIteratorOfPointEdgeMap {
+	~StepToTopoDS_DataMapIteratorOfPointEdgeMap() {
+	printf("Call custom destructor for instance of StepToTopoDS_DataMapIteratorOfPointEdgeMap\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_GeometricTool;
 class StepToTopoDS_GeometricTool {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_GeometricTool();
 		%feature("autodoc", "1");
 		StepToTopoDS_GeometricTool();
 		%feature("autodoc", "1");
@@ -675,6 +712,11 @@ class StepToTopoDS_GeometricTool {
 		%feature("autodoc", "1");
 		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
 
+};
+%extend StepToTopoDS_GeometricTool {
+	~StepToTopoDS_GeometricTool() {
+	printf("Call custom destructor for instance of StepToTopoDS_GeometricTool\n");
+	}
 };
 
 %nodefaultctor StepToTopoDS_PointEdgeMap;
@@ -688,8 +730,6 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~StepToTopoDS_PointEdgeMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const StepToTopoDS_PointPair &K, const TopoDS_Edge &I);
 		%feature("autodoc", "1");
@@ -706,12 +746,15 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 		TopoDS_Edge & operator()(const StepToTopoDS_PointPair &K);
 
 };
+%extend StepToTopoDS_PointEdgeMap {
+	~StepToTopoDS_PointEdgeMap() {
+	printf("Call custom destructor for instance of StepToTopoDS_PointEdgeMap\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_TranslateVertex;
 class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateVertex();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateVertex();
 		%feature("autodoc", "1");
@@ -724,12 +767,15 @@ class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateVertexError Error() const;
 
 };
+%extend StepToTopoDS_TranslateVertex {
+	~StepToTopoDS_TranslateVertex() {
+	printf("Call custom destructor for instance of StepToTopoDS_TranslateVertex\n");
+	}
+};
 
 %nodefaultctor StepToTopoDS_TranslateCurveBoundedSurface;
 class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateCurveBoundedSurface();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateCurveBoundedSurface();
 		%feature("autodoc", "1");
@@ -739,6 +785,11 @@ class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 		%feature("autodoc", "1");
 		const TopoDS_Face & Value() const;
 
+};
+%extend StepToTopoDS_TranslateCurveBoundedSurface {
+	~StepToTopoDS_TranslateCurveBoundedSurface() {
+	printf("Call custom destructor for instance of StepToTopoDS_TranslateCurveBoundedSurface\n");
+	}
 };
 
 %nodefaultctor StepToTopoDS;
@@ -774,8 +825,6 @@ class StepToTopoDS {
 class StepToTopoDS_TranslateVertexLoop : public StepToTopoDS_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateVertexLoop();
-		%feature("autodoc", "1");
 		StepToTopoDS_TranslateVertexLoop();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateVertexLoop(const Handle_StepShape_VertexLoop &VL, StepToTopoDS_Tool & T);
@@ -786,4 +835,9 @@ class StepToTopoDS_TranslateVertexLoop : public StepToTopoDS_Root {
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateVertexLoopError Error() const;
 
+};
+%extend StepToTopoDS_TranslateVertexLoop {
+	~StepToTopoDS_TranslateVertexLoop() {
+	printf("Call custom destructor for instance of StepToTopoDS_TranslateVertexLoop\n");
+	}
 };

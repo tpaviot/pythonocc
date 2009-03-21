@@ -270,8 +270,6 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 class ShapeProcess {
 	public:
 		%feature("autodoc", "1");
-		~ShapeProcess();
-		%feature("autodoc", "1");
 		ShapeProcess();
 		%feature("autodoc", "1");
 		Standard_Boolean RegisterOperator(const char * name, const Handle_ShapeProcess_Operator &op);
@@ -280,6 +278,11 @@ class ShapeProcess {
 		%feature("autodoc", "1");
 		Standard_Boolean Perform(const Handle_ShapeProcess_Context &context, const char * seq);
 
+};
+%extend ShapeProcess {
+	~ShapeProcess() {
+	printf("Call custom destructor for instance of ShapeProcess\n");
+	}
 };
 
 %nodefaultctor ShapeProcess_StackItemOfDictionaryOfOperator;
@@ -314,14 +317,17 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 class ShapeProcess_OperLibrary {
 	public:
 		%feature("autodoc", "1");
-		~ShapeProcess_OperLibrary();
-		%feature("autodoc", "1");
 		ShapeProcess_OperLibrary();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
 
+};
+%extend ShapeProcess_OperLibrary {
+	~ShapeProcess_OperLibrary() {
+	printf("Call custom destructor for instance of ShapeProcess_OperLibrary\n");
+	}
 };
 
 %nodefaultctor ShapeProcess_IteratorOfDictionaryOfOperator;

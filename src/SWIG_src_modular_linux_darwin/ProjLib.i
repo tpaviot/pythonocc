@@ -307,9 +307,12 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 		ProjLib_Cylinder(const gp_Cylinder &Cyl, const gp_Elips &E);
 		%feature("autodoc", "1");
 		void Init(const gp_Cylinder &Cyl);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Cylinder();
 
+};
+%extend ProjLib_Cylinder {
+	~ProjLib_Cylinder() {
+	printf("Call custom destructor for instance of ProjLib_Cylinder\n");
+	}
 };
 
 %nodefaultctor ProjLib_CompProjectedCurve;
@@ -481,16 +484,17 @@ class ProjLib_Sphere : public ProjLib_Projector {
 		virtual		void Project(const gp_Hypr &H);
 		%feature("autodoc", "1");
 		void SetInBounds(const Standard_Real U);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Sphere();
 
+};
+%extend ProjLib_Sphere {
+	~ProjLib_Sphere() {
+	printf("Call custom destructor for instance of ProjLib_Sphere\n");
+	}
 };
 
 %nodefaultctor ProjLib;
 class ProjLib {
 	public:
-		%feature("autodoc", "1");
-		~ProjLib();
 		%feature("autodoc", "1");
 		ProjLib();
 		%feature("autodoc", "1");
@@ -526,6 +530,11 @@ class ProjLib {
 		%feature("autodoc", "1");
 		gp_Lin2d Project(const gp_Torus &To, const gp_Circ &Ci);
 
+};
+%extend ProjLib {
+	~ProjLib() {
+	printf("Call custom destructor for instance of ProjLib\n");
+	}
 };
 
 %nodefaultctor ProjLib_ProjectOnSurface;
@@ -578,9 +587,12 @@ class ProjLib_Plane : public ProjLib_Projector {
 		virtual		void Project(const gp_Parab &P);
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Hypr &H);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Plane();
 
+};
+%extend ProjLib_Plane {
+	~ProjLib_Plane() {
+	printf("Call custom destructor for instance of ProjLib_Plane\n");
+	}
 };
 
 %nodefaultctor ProjLib_Torus;
@@ -604,9 +616,12 @@ class ProjLib_Torus : public ProjLib_Projector {
 		virtual		void Project(const gp_Parab &P);
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Hypr &H);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Torus();
 
+};
+%extend ProjLib_Torus {
+	~ProjLib_Torus() {
+	printf("Call custom destructor for instance of ProjLib_Torus\n");
+	}
 };
 
 %nodefaultctor ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
@@ -735,8 +750,6 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 class ProjLib_PrjResolve {
 	public:
 		%feature("autodoc", "1");
-		~ProjLib_PrjResolve();
-		%feature("autodoc", "1");
 		ProjLib_PrjResolve(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Integer Fix);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real t, const Standard_Real U, const Standard_Real V, const gp_Pnt2d &Tol, const gp_Pnt2d &Inf, const gp_Pnt2d &Sup, const Standard_Real FTol=-0x000000001, const Standard_Boolean StrictInside=0);
@@ -745,6 +758,11 @@ class ProjLib_PrjResolve {
 		%feature("autodoc", "1");
 		gp_Pnt2d Solution() const;
 
+};
+%extend ProjLib_PrjResolve {
+	~ProjLib_PrjResolve() {
+	printf("Call custom destructor for instance of ProjLib_PrjResolve\n");
+	}
 };
 
 %nodefaultctor ProjLib_HCompProjectedCurve;
@@ -823,9 +841,12 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		gp_Pnt2d Solution() const;
-		%feature("autodoc", "1");
-		virtual		~ProjLib_PrjFunc();
 
+};
+%extend ProjLib_PrjFunc {
+	~ProjLib_PrjFunc() {
+	printf("Call custom destructor for instance of ProjLib_PrjFunc\n");
+	}
 };
 
 %nodefaultctor ProjLib_HSequenceOfHSequenceOfPnt;
@@ -943,7 +964,10 @@ class ProjLib_Cone : public ProjLib_Projector {
 		virtual		void Project(const gp_Parab &P);
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Hypr &H);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Cone();
 
+};
+%extend ProjLib_Cone {
+	~ProjLib_Cone() {
+	printf("Call custom destructor for instance of ProjLib_Cone\n");
+	}
 };

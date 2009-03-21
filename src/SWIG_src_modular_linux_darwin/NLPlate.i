@@ -659,8 +659,6 @@ class NLPlate_NLPlate {
 		%feature("autodoc", "1");
 		void destroy();
 		%feature("autodoc", "1");
-		~NLPlate_NLPlate();
-		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		gp_XYZ Evaluate(const gp_XY &point2d) const;
@@ -673,6 +671,11 @@ class NLPlate_NLPlate {
 		%feature("autodoc", "1");
 		Standard_Integer MaxActiveConstraintOrder() const;
 
+};
+%extend NLPlate_NLPlate {
+	~NLPlate_NLPlate() {
+	printf("Call custom destructor for instance of NLPlate_NLPlate\n");
+	}
 };
 
 %nodefaultctor NLPlate_StackOfPlate;
@@ -695,17 +698,18 @@ class NLPlate_StackOfPlate {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~NLPlate_StackOfPlate();
-		%feature("autodoc", "1");
 		Plate_Plate & ChangeTop();
 
+};
+%extend NLPlate_StackOfPlate {
+	~NLPlate_StackOfPlate() {
+	printf("Call custom destructor for instance of NLPlate_StackOfPlate\n");
+	}
 };
 
 %nodefaultctor NLPlate_StackIteratorOfStackOfPlate;
 class NLPlate_StackIteratorOfStackOfPlate {
 	public:
-		%feature("autodoc", "1");
-		~NLPlate_StackIteratorOfStackOfPlate();
 		%feature("autodoc", "1");
 		NLPlate_StackIteratorOfStackOfPlate();
 		%feature("autodoc", "1");
@@ -719,4 +723,9 @@ class NLPlate_StackIteratorOfStackOfPlate {
 		%feature("autodoc", "1");
 		const Plate_Plate & Value() const;
 
+};
+%extend NLPlate_StackIteratorOfStackOfPlate {
+	~NLPlate_StackIteratorOfStackOfPlate() {
+	printf("Call custom destructor for instance of NLPlate_StackIteratorOfStackOfPlate\n");
+	}
 };

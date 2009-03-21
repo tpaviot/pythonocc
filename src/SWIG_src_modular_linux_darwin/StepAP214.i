@@ -1279,8 +1279,6 @@ class StepAP214_Array1OfPresentedItemSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfPresentedItemSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfPresentedItemSelect & Assign(const StepAP214_Array1OfPresentedItemSelect &Other);
@@ -1301,6 +1299,11 @@ class StepAP214_Array1OfPresentedItemSelect {
 		%feature("autodoc", "1");
 		StepAP214_PresentedItemSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfPresentedItemSelect {
+	~StepAP214_Array1OfPresentedItemSelect() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfPresentedItemSelect\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignGeneralOrgItem;
@@ -1386,8 +1389,6 @@ class StepAP214_Array1OfDateItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfDateItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfDateItem & Assign(const StepAP214_Array1OfDateItem &Other);
@@ -1408,6 +1409,11 @@ class StepAP214_Array1OfDateItem {
 		%feature("autodoc", "1");
 		StepAP214_DateItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfDateItem {
+	~StepAP214_Array1OfDateItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfDateItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AppliedPresentedItem;
@@ -1789,8 +1795,6 @@ class StepAP214_Array1OfAutoDesignDatedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfAutoDesignDatedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignDatedItem & Assign(const StepAP214_Array1OfAutoDesignDatedItem &Other);
@@ -1811,6 +1815,11 @@ class StepAP214_Array1OfAutoDesignDatedItem {
 		%feature("autodoc", "1");
 		StepAP214_AutoDesignDatedItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfAutoDesignDatedItem {
+	~StepAP214_Array1OfAutoDesignDatedItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignDatedItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignPersonAndOrganizationAssignment;
@@ -2159,8 +2168,6 @@ class StepAP214_Array1OfAutoDesignPresentedItemSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfAutoDesignPresentedItemSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignPresentedItemSelect & Assign(const StepAP214_Array1OfAutoDesignPresentedItemSelect &Other);
@@ -2181,6 +2188,11 @@ class StepAP214_Array1OfAutoDesignPresentedItemSelect {
 		%feature("autodoc", "1");
 		StepAP214_AutoDesignPresentedItemSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfAutoDesignPresentedItemSelect {
+	~StepAP214_Array1OfAutoDesignPresentedItemSelect() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignPresentedItemSelect\n");
+	}
 };
 
 %nodefaultctor StepAP214;
@@ -2210,8 +2222,6 @@ class StepAP214_Array1OfDateAndTimeItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfDateAndTimeItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfDateAndTimeItem & Assign(const StepAP214_Array1OfDateAndTimeItem &Other);
@@ -2232,6 +2242,11 @@ class StepAP214_Array1OfDateAndTimeItem {
 		%feature("autodoc", "1");
 		StepAP214_DateAndTimeItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfDateAndTimeItem {
+	~StepAP214_Array1OfDateAndTimeItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfDateAndTimeItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignDocumentReference;
@@ -2276,8 +2291,6 @@ class StepAP214_Array1OfAutoDesignDateAndPersonItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfAutoDesignDateAndPersonItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignDateAndPersonItem & Assign(const StepAP214_Array1OfAutoDesignDateAndPersonItem &Other);
@@ -2298,6 +2311,11 @@ class StepAP214_Array1OfAutoDesignDateAndPersonItem {
 		%feature("autodoc", "1");
 		StepAP214_AutoDesignDateAndPersonItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfAutoDesignDateAndPersonItem {
+	~StepAP214_Array1OfAutoDesignDateAndPersonItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndPersonItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignSecurityClassificationAssignment;
@@ -2344,8 +2362,6 @@ class StepAP214_Array1OfOrganizationItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfOrganizationItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfOrganizationItem & Assign(const StepAP214_Array1OfOrganizationItem &Other);
@@ -2367,6 +2383,11 @@ class StepAP214_Array1OfOrganizationItem {
 		StepAP214_OrganizationItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP214_Array1OfOrganizationItem {
+	~StepAP214_Array1OfOrganizationItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfOrganizationItem\n");
+	}
+};
 
 %nodefaultctor StepAP214_Array1OfApprovalItem;
 class StepAP214_Array1OfApprovalItem {
@@ -2379,8 +2400,6 @@ class StepAP214_Array1OfApprovalItem {
 		void Init(const StepAP214_ApprovalItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepAP214_Array1OfApprovalItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2402,6 +2421,11 @@ class StepAP214_Array1OfApprovalItem {
 		%feature("autodoc", "1");
 		StepAP214_ApprovalItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfApprovalItem {
+	~StepAP214_Array1OfApprovalItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfApprovalItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignOrganizationItem;
@@ -2467,8 +2491,6 @@ class StepAP214_Array1OfAutoDesignGroupedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfAutoDesignGroupedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignGroupedItem & Assign(const StepAP214_Array1OfAutoDesignGroupedItem &Other);
@@ -2489,6 +2511,11 @@ class StepAP214_Array1OfAutoDesignGroupedItem {
 		%feature("autodoc", "1");
 		StepAP214_AutoDesignGroupedItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfAutoDesignGroupedItem {
+	~StepAP214_Array1OfAutoDesignGroupedItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignGroupedItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_HArray1OfAutoDesignPresentedItemSelect;
@@ -2718,8 +2745,6 @@ class StepAP214_Array1OfGroupItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfGroupItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfGroupItem & Assign(const StepAP214_Array1OfGroupItem &Other);
@@ -2740,6 +2765,11 @@ class StepAP214_Array1OfGroupItem {
 		%feature("autodoc", "1");
 		StepAP214_GroupItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfGroupItem {
+	~StepAP214_Array1OfGroupItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfGroupItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignApprovalAssignment;
@@ -2841,8 +2871,6 @@ class StepAP214_Array1OfAutoDesignReferencingItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfAutoDesignReferencingItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignReferencingItem & Assign(const StepAP214_Array1OfAutoDesignReferencingItem &Other);
@@ -2864,6 +2892,11 @@ class StepAP214_Array1OfAutoDesignReferencingItem {
 		StepAP214_AutoDesignReferencingItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP214_Array1OfAutoDesignReferencingItem {
+	~StepAP214_Array1OfAutoDesignReferencingItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignReferencingItem\n");
+	}
+};
 
 %nodefaultctor StepAP214_Array1OfExternalIdentificationItem;
 class StepAP214_Array1OfExternalIdentificationItem {
@@ -2876,8 +2909,6 @@ class StepAP214_Array1OfExternalIdentificationItem {
 		void Init(const StepAP214_ExternalIdentificationItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepAP214_Array1OfExternalIdentificationItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2899,6 +2930,11 @@ class StepAP214_Array1OfExternalIdentificationItem {
 		%feature("autodoc", "1");
 		StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfExternalIdentificationItem {
+	~StepAP214_Array1OfExternalIdentificationItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfExternalIdentificationItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_HArray1OfAutoDesignGeneralOrgItem;
@@ -3170,8 +3206,6 @@ class StepAP214_Array1OfDocumentReferenceItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfDocumentReferenceItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfDocumentReferenceItem & Assign(const StepAP214_Array1OfDocumentReferenceItem &Other);
@@ -3192,6 +3226,11 @@ class StepAP214_Array1OfDocumentReferenceItem {
 		%feature("autodoc", "1");
 		StepAP214_DocumentReferenceItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfDocumentReferenceItem {
+	~StepAP214_Array1OfDocumentReferenceItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfDocumentReferenceItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_PersonAndOrganizationItem;
@@ -3293,8 +3332,6 @@ class StepAP214_Array1OfAutoDesignGeneralOrgItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfAutoDesignGeneralOrgItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignGeneralOrgItem & Assign(const StepAP214_Array1OfAutoDesignGeneralOrgItem &Other);
@@ -3315,6 +3352,11 @@ class StepAP214_Array1OfAutoDesignGeneralOrgItem {
 		%feature("autodoc", "1");
 		StepAP214_AutoDesignGeneralOrgItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfAutoDesignGeneralOrgItem {
+	~StepAP214_Array1OfAutoDesignGeneralOrgItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignGeneralOrgItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_ExternalIdentificationItem;
@@ -3392,8 +3434,6 @@ class StepAP214_Array1OfPersonAndOrganizationItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfPersonAndOrganizationItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfPersonAndOrganizationItem & Assign(const StepAP214_Array1OfPersonAndOrganizationItem &Other);
@@ -3415,15 +3455,23 @@ class StepAP214_Array1OfPersonAndOrganizationItem {
 		StepAP214_PersonAndOrganizationItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP214_Array1OfPersonAndOrganizationItem {
+	~StepAP214_Array1OfPersonAndOrganizationItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfPersonAndOrganizationItem\n");
+	}
+};
 
 %nodefaultctor StepAP214_SecurityClassificationItem;
 class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 	public:
 		%feature("autodoc", "1");
 		StepAP214_SecurityClassificationItem();
-		%feature("autodoc", "1");
-		virtual		~StepAP214_SecurityClassificationItem();
 
+};
+%extend StepAP214_SecurityClassificationItem {
+	~StepAP214_SecurityClassificationItem() {
+	printf("Call custom destructor for instance of StepAP214_SecurityClassificationItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_HArray1OfDateItem;
@@ -3550,8 +3598,6 @@ class StepAP214_Array1OfSecurityClassificationItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP214_Array1OfSecurityClassificationItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfSecurityClassificationItem & Assign(const StepAP214_Array1OfSecurityClassificationItem &Other);
@@ -3573,6 +3619,11 @@ class StepAP214_Array1OfSecurityClassificationItem {
 		StepAP214_SecurityClassificationItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP214_Array1OfSecurityClassificationItem {
+	~StepAP214_Array1OfSecurityClassificationItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfSecurityClassificationItem\n");
+	}
+};
 
 %nodefaultctor StepAP214_Array1OfAutoDesignDateAndTimeItem;
 class StepAP214_Array1OfAutoDesignDateAndTimeItem {
@@ -3585,8 +3636,6 @@ class StepAP214_Array1OfAutoDesignDateAndTimeItem {
 		void Init(const StepAP214_AutoDesignDateAndTimeItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepAP214_Array1OfAutoDesignDateAndTimeItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -3608,6 +3657,11 @@ class StepAP214_Array1OfAutoDesignDateAndTimeItem {
 		%feature("autodoc", "1");
 		StepAP214_AutoDesignDateAndTimeItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP214_Array1OfAutoDesignDateAndTimeItem {
+	~StepAP214_Array1OfAutoDesignDateAndTimeItem() {
+	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndTimeItem\n");
+	}
 };
 
 %nodefaultctor StepAP214_AutoDesignNominalDateAssignment;

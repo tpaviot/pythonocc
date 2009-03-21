@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class AppCont_FitFunction {
 	public:
 		%feature("autodoc", "1");
-		~AppCont_FitFunction();
-		%feature("autodoc", "1");
 		AppCont_FitFunction(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -99,12 +97,15 @@ class AppCont_FitFunction {
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%extend AppCont_FitFunction {
+	~AppCont_FitFunction() {
+	printf("Call custom destructor for instance of AppCont_FitFunction\n");
+	}
+};
 
 %nodefaultctor AppCont_FunctionTool2d;
 class AppCont_FunctionTool2d {
 	public:
-		%feature("autodoc", "1");
-		~AppCont_FunctionTool2d();
 		%feature("autodoc", "1");
 		AppCont_FunctionTool2d();
 		%feature("autodoc", "1");
@@ -129,6 +130,11 @@ class AppCont_FunctionTool2d {
 		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
 
 };
+%extend AppCont_FunctionTool2d {
+	~AppCont_FunctionTool2d() {
+	printf("Call custom destructor for instance of AppCont_FunctionTool2d\n");
+	}
+};
 
 %nodefaultctor AppCont_Function;
 class AppCont_Function {
@@ -145,12 +151,15 @@ class AppCont_Function {
 		virtual		Standard_Boolean D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
 
 };
+%extend AppCont_Function {
+	~AppCont_Function() {
+	printf("Call custom destructor for instance of AppCont_Function\n");
+	}
+};
 
 %nodefaultctor AppCont_FunctionTool;
 class AppCont_FunctionTool {
 	public:
-		%feature("autodoc", "1");
-		~AppCont_FunctionTool();
 		%feature("autodoc", "1");
 		AppCont_FunctionTool();
 		%feature("autodoc", "1");
@@ -175,6 +184,11 @@ class AppCont_FunctionTool {
 		Standard_Boolean D1(const AppCont_Function &C, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
 
 };
+%extend AppCont_FunctionTool {
+	~AppCont_FunctionTool() {
+	printf("Call custom destructor for instance of AppCont_FunctionTool\n");
+	}
+};
 
 %nodefaultctor AppCont_Function2d;
 class AppCont_Function2d {
@@ -191,12 +205,15 @@ class AppCont_Function2d {
 		virtual		Standard_Boolean D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V) const;
 
 };
+%extend AppCont_Function2d {
+	~AppCont_Function2d() {
+	printf("Call custom destructor for instance of AppCont_Function2d\n");
+	}
+};
 
 %nodefaultctor AppCont_FitFunction2d;
 class AppCont_FitFunction2d {
 	public:
-		%feature("autodoc", "1");
-		~AppCont_FitFunction2d();
 		%feature("autodoc", "1");
 		AppCont_FitFunction2d(const AppCont_Function2d &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
 		%feature("autodoc", "1");
@@ -206,4 +223,9 @@ class AppCont_FitFunction2d {
 		%feature("autodoc", "1");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend AppCont_FitFunction2d {
+	~AppCont_FitFunction2d() {
+	printf("Call custom destructor for instance of AppCont_FitFunction2d\n");
+	}
 };

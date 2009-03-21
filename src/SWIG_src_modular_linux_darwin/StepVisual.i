@@ -2441,8 +2441,6 @@ class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
 class StepVisual_BoxCharacteristicSelect {
 	public:
 		%feature("autodoc", "1");
-		~StepVisual_BoxCharacteristicSelect();
-		%feature("autodoc", "1");
 		StepVisual_BoxCharacteristicSelect();
 		%feature("autodoc", "1");
 		Standard_Integer TypeOfContent() const;
@@ -2453,6 +2451,11 @@ class StepVisual_BoxCharacteristicSelect {
 		%feature("autodoc", "1");
 		void SetRealValue(const Standard_Real aValue);
 
+};
+%extend StepVisual_BoxCharacteristicSelect {
+	~StepVisual_BoxCharacteristicSelect() {
+	printf("Call custom destructor for instance of StepVisual_BoxCharacteristicSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_HArray1OfTextOrCharacter;
@@ -2558,8 +2561,6 @@ class StepVisual_Array1OfInvisibleItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfInvisibleItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfInvisibleItem & Assign(const StepVisual_Array1OfInvisibleItem &Other);
@@ -2580,6 +2581,11 @@ class StepVisual_Array1OfInvisibleItem {
 		%feature("autodoc", "1");
 		StepVisual_InvisibleItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfInvisibleItem {
+	~StepVisual_Array1OfInvisibleItem() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfInvisibleItem\n");
+	}
 };
 
 %nodefaultctor StepVisual_SurfaceStyleSilhouette;
@@ -2755,8 +2761,6 @@ class StepVisual_Array1OfStyleContextSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfStyleContextSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfStyleContextSelect & Assign(const StepVisual_Array1OfStyleContextSelect &Other);
@@ -2777,6 +2781,11 @@ class StepVisual_Array1OfStyleContextSelect {
 		%feature("autodoc", "1");
 		StepVisual_StyleContextSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfStyleContextSelect {
+	~StepVisual_Array1OfStyleContextSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfStyleContextSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_TextLiteral;
@@ -3279,8 +3288,6 @@ class StepVisual_Array1OfDirectionCountSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfDirectionCountSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfDirectionCountSelect & Assign(const StepVisual_Array1OfDirectionCountSelect &Other);
@@ -3301,6 +3308,11 @@ class StepVisual_Array1OfDirectionCountSelect {
 		%feature("autodoc", "1");
 		StepVisual_DirectionCountSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfDirectionCountSelect {
+	~StepVisual_Array1OfDirectionCountSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfDirectionCountSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_HArray1OfLayeredItem;
@@ -3413,8 +3425,6 @@ class StepVisual_Array1OfTextOrCharacter {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfTextOrCharacter();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfTextOrCharacter & Assign(const StepVisual_Array1OfTextOrCharacter &Other);
@@ -3435,6 +3445,11 @@ class StepVisual_Array1OfTextOrCharacter {
 		%feature("autodoc", "1");
 		StepVisual_TextOrCharacter & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfTextOrCharacter {
+	~StepVisual_Array1OfTextOrCharacter() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfTextOrCharacter\n");
+	}
 };
 
 %nodefaultctor StepVisual_PreDefinedItem;
@@ -3616,8 +3631,6 @@ class StepVisual_Array1OfFillStyleSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfFillStyleSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfFillStyleSelect & Assign(const StepVisual_Array1OfFillStyleSelect &Other);
@@ -3638,6 +3651,11 @@ class StepVisual_Array1OfFillStyleSelect {
 		%feature("autodoc", "1");
 		StepVisual_FillStyleSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfFillStyleSelect {
+	~StepVisual_Array1OfFillStyleSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfFillStyleSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_PreDefinedCurveFont;
@@ -3967,8 +3985,6 @@ class StepVisual_Array1OfBoxCharacteristicSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfBoxCharacteristicSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfBoxCharacteristicSelect & Assign(const StepVisual_Array1OfBoxCharacteristicSelect &Other);
@@ -3989,6 +4005,11 @@ class StepVisual_Array1OfBoxCharacteristicSelect {
 		%feature("autodoc", "1");
 		StepVisual_BoxCharacteristicSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfBoxCharacteristicSelect {
+	~StepVisual_Array1OfBoxCharacteristicSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfBoxCharacteristicSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_SurfaceStyleControlGrid;
@@ -4222,8 +4243,6 @@ class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
 class StepVisual_DirectionCountSelect {
 	public:
 		%feature("autodoc", "1");
-		~StepVisual_DirectionCountSelect();
-		%feature("autodoc", "1");
 		StepVisual_DirectionCountSelect();
 		%feature("autodoc", "1");
 		void SetTypeOfContent(const Standard_Integer aTypeOfContent);
@@ -4239,6 +4258,11 @@ class StepVisual_DirectionCountSelect {
 		void SetVDirectionCount(const Standard_Integer aUDirectionCount);
 
 };
+%extend StepVisual_DirectionCountSelect {
+	~StepVisual_DirectionCountSelect() {
+	printf("Call custom destructor for instance of StepVisual_DirectionCountSelect\n");
+	}
+};
 
 %nodefaultctor StepVisual_Array1OfLayeredItem;
 class StepVisual_Array1OfLayeredItem {
@@ -4251,8 +4275,6 @@ class StepVisual_Array1OfLayeredItem {
 		void Init(const StepVisual_LayeredItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepVisual_Array1OfLayeredItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -4274,6 +4296,11 @@ class StepVisual_Array1OfLayeredItem {
 		%feature("autodoc", "1");
 		StepVisual_LayeredItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfLayeredItem {
+	~StepVisual_Array1OfLayeredItem() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfLayeredItem\n");
+	}
 };
 
 %nodefaultctor StepVisual_CurveStyle;
@@ -4326,8 +4353,6 @@ class StepVisual_Array1OfSurfaceStyleElementSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfSurfaceStyleElementSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfSurfaceStyleElementSelect & Assign(const StepVisual_Array1OfSurfaceStyleElementSelect &Other);
@@ -4348,6 +4373,11 @@ class StepVisual_Array1OfSurfaceStyleElementSelect {
 		%feature("autodoc", "1");
 		StepVisual_SurfaceStyleElementSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfSurfaceStyleElementSelect {
+	~StepVisual_Array1OfSurfaceStyleElementSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfSurfaceStyleElementSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_MechanicalDesignGeometricPresentationRepresentation;
@@ -4655,8 +4685,6 @@ class StepVisual_Array1OfPresentationStyleSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfPresentationStyleSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfPresentationStyleSelect & Assign(const StepVisual_Array1OfPresentationStyleSelect &Other);
@@ -4677,6 +4705,11 @@ class StepVisual_Array1OfPresentationStyleSelect {
 		%feature("autodoc", "1");
 		StepVisual_PresentationStyleSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfPresentationStyleSelect {
+	~StepVisual_Array1OfPresentationStyleSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfPresentationStyleSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_HArray1OfInvisibleItem;

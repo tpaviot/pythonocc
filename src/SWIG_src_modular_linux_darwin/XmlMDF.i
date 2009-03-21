@@ -232,8 +232,6 @@ class Handle_XmlMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 class XmlMDF {
 	public:
 		%feature("autodoc", "1");
-		~XmlMDF();
-		%feature("autodoc", "1");
 		XmlMDF();
 		%feature("autodoc", "1");
 		void FromTo(const Handle_TDF_Data &aSource, XmlObjMgt_Element & aTarget, XmlObjMgt_SRelocationTable & aReloc, const Handle_XmlMDF_ADriverTable &aDrivers);
@@ -242,6 +240,11 @@ class XmlMDF {
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
+};
+%extend XmlMDF {
+	~XmlMDF() {
+	printf("Call custom destructor for instance of XmlMDF\n");
+	}
 };
 
 %nodefaultctor XmlMDF_DataMapNodeOfTypeADriverMap;

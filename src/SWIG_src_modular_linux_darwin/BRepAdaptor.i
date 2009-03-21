@@ -247,9 +247,12 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 		const TopoDS_Edge & Edge() const;
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_Curve2d();
 
+};
+%extend BRepAdaptor_Curve2d {
+	~BRepAdaptor_Curve2d() {
+	printf("Call custom destructor for instance of BRepAdaptor_Curve2d\n");
+	}
 };
 
 %nodefaultctor BRepAdaptor_Array1OfCurve;
@@ -263,8 +266,6 @@ class BRepAdaptor_Array1OfCurve {
 		void Init(const BRepAdaptor_Curve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BRepAdaptor_Array1OfCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -286,6 +287,11 @@ class BRepAdaptor_Array1OfCurve {
 		%feature("autodoc", "1");
 		BRepAdaptor_Curve & operator()(const Standard_Integer Index);
 
+};
+%extend BRepAdaptor_Array1OfCurve {
+	~BRepAdaptor_Array1OfCurve() {
+	printf("Call custom destructor for instance of BRepAdaptor_Array1OfCurve\n");
+	}
 };
 
 %nodefaultctor BRepAdaptor_HCurve;

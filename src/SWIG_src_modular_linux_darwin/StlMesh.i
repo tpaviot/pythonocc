@@ -270,8 +270,6 @@ class StlMesh_MeshDomain : public MMgt_TShared {
 class StlMesh_MeshExplorer {
 	public:
 		%feature("autodoc", "1");
-		~StlMesh_MeshExplorer();
-		%feature("autodoc", "1");
 		StlMesh_MeshExplorer(const Handle_StlMesh_Mesh &M);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
@@ -286,6 +284,11 @@ class StlMesh_MeshExplorer {
 		%feature("autodoc", "1");
 		void TriangleOrientation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend StlMesh_MeshExplorer {
+	~StlMesh_MeshExplorer() {
+	printf("Call custom destructor for instance of StlMesh_MeshExplorer\n");
+	}
 };
 
 %nodefaultctor StlMesh_SequenceOfMeshDomain;

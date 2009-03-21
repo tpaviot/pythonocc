@@ -1253,8 +1253,6 @@ class BRep_Curve3D : public BRep_GCurve {
 class BRep_Builder : public TopoDS_Builder3D {
 	public:
 		%feature("autodoc", "1");
-		~BRep_Builder();
-		%feature("autodoc", "1");
 		BRep_Builder();
 		%feature("autodoc", "1");
 		void MakeFace(TopoDS_Face & F) const;
@@ -1359,6 +1357,11 @@ class BRep_Builder : public TopoDS_Builder3D {
 		%feature("autodoc", "1");
 		void Transfert(const TopoDS_Edge &Ein, const TopoDS_Edge &Eout, const TopoDS_Vertex &Vin, const TopoDS_Vertex &Vout) const;
 
+};
+%extend BRep_Builder {
+	~BRep_Builder() {
+	printf("Call custom destructor for instance of BRep_Builder\n");
+	}
 };
 
 %nodefaultctor BRep_PolygonOnSurface;

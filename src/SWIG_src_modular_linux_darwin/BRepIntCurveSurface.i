@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BRepIntCurveSurface_Inter {
 	public:
 		%feature("autodoc", "1");
-		~BRepIntCurveSurface_Inter();
-		%feature("autodoc", "1");
 		BRepIntCurveSurface_Inter();
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shape &Sh, const GeomAdaptor_Curve &Cu, const Standard_Real Tol);
@@ -116,4 +114,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
 
+};
+%extend BRepIntCurveSurface_Inter {
+	~BRepIntCurveSurface_Inter() {
+	printf("Call custom destructor for instance of BRepIntCurveSurface_Inter\n");
+	}
 };

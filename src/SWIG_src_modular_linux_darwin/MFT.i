@@ -350,10 +350,13 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 class MFT {
 	public:
 		%feature("autodoc", "1");
-		~MFT();
-		%feature("autodoc", "1");
 		MFT();
 
+};
+%extend MFT {
+	~MFT() {
+	printf("Call custom destructor for instance of MFT\n");
+	}
 };
 
 %nodefaultctor MFT_SequenceNodeOfListOfFontName;
@@ -385,8 +388,6 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 		MFT_ListOfFontHandle();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MFT_ListOfFontHandle();
 		%feature("autodoc", "1");
 		const MFT_ListOfFontHandle & Assign(const MFT_ListOfFontHandle &Other);
 		%feature("autodoc", "1");
@@ -427,6 +428,11 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MFT_ListOfFontHandle {
+	~MFT_ListOfFontHandle() {
+	printf("Call custom destructor for instance of MFT_ListOfFontHandle\n");
+	}
+};
 
 %nodefaultctor MFT_ListOfFontName;
 class MFT_ListOfFontName : public TCollection_BaseSequence {
@@ -435,8 +441,6 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 		MFT_ListOfFontName();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MFT_ListOfFontName();
 		%feature("autodoc", "1");
 		const MFT_ListOfFontName & Assign(const MFT_ListOfFontName &Other);
 		%feature("autodoc", "1");
@@ -477,6 +481,11 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MFT_ListOfFontName {
+	~MFT_ListOfFontName() {
+	printf("Call custom destructor for instance of MFT_ListOfFontName\n");
+	}
+};
 
 %nodefaultctor MFT_ListOfFontReference;
 class MFT_ListOfFontReference : public TCollection_BaseSequence {
@@ -485,8 +494,6 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 		MFT_ListOfFontReference();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MFT_ListOfFontReference();
 		%feature("autodoc", "1");
 		const MFT_ListOfFontReference & Assign(const MFT_ListOfFontReference &Other);
 		%feature("autodoc", "1");
@@ -526,6 +533,11 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend MFT_ListOfFontReference {
+	~MFT_ListOfFontReference() {
+	printf("Call custom destructor for instance of MFT_ListOfFontReference\n");
+	}
 };
 
 %nodefaultctor MFT_SequenceNodeOfListOfFontReference;

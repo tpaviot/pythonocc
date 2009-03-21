@@ -146,15 +146,23 @@ class AdvApprox_Cutting {
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
+%extend AdvApprox_Cutting {
+	~AdvApprox_Cutting() {
+	printf("Call custom destructor for instance of AdvApprox_Cutting\n");
+	}
+};
 
 %nodefaultctor AdvApprox_PrefAndRec;
 class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 	public:
 		%feature("autodoc", "1");
 		AdvApprox_PrefAndRec(const TColStd_Array1OfReal &RecomendedCut, const TColStd_Array1OfReal &PrefferedCut, const Standard_Real Weight=5);
-		%feature("autodoc", "1");
-		virtual		~AdvApprox_PrefAndRec();
 
+};
+%extend AdvApprox_PrefAndRec {
+	~AdvApprox_PrefAndRec() {
+	printf("Call custom destructor for instance of AdvApprox_PrefAndRec\n");
+	}
 };
 
 %nodefaultctor AdvApprox_PrefCutting;
@@ -164,9 +172,12 @@ class AdvApprox_PrefCutting : public AdvApprox_Cutting {
 		AdvApprox_PrefCutting(const TColStd_Array1OfReal &CutPnts);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~AdvApprox_PrefCutting();
 
+};
+%extend AdvApprox_PrefCutting {
+	~AdvApprox_PrefCutting() {
+	printf("Call custom destructor for instance of AdvApprox_PrefCutting\n");
+	}
 };
 
 %nodefaultctor AdvApprox_DichoCutting;
@@ -176,9 +187,12 @@ class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 		AdvApprox_DichoCutting();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~AdvApprox_DichoCutting();
 
+};
+%extend AdvApprox_DichoCutting {
+	~AdvApprox_DichoCutting() {
+	printf("Call custom destructor for instance of AdvApprox_DichoCutting\n");
+	}
 };
 
 %nodefaultctor AdvApprox_SimpleApprox;

@@ -1002,8 +1002,6 @@ class TDF_DeltaOnForget : public TDF_AttributeDelta {
 class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_DoubleMapIteratorOfGUIDProgIDMap();
-		%feature("autodoc", "1");
 		TDF_DoubleMapIteratorOfGUIDProgIDMap();
 		%feature("autodoc", "1");
 		TDF_DoubleMapIteratorOfGUIDProgIDMap(const TDF_GUIDProgIDMap &aMap);
@@ -1014,6 +1012,11 @@ class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator
 		%feature("autodoc", "1");
 		const TCollection_ExtendedString & Key2() const;
 
+};
+%extend TDF_DoubleMapIteratorOfGUIDProgIDMap {
+	~TDF_DoubleMapIteratorOfGUIDProgIDMap() {
+	printf("Call custom destructor for instance of TDF_DoubleMapIteratorOfGUIDProgIDMap\n");
+	}
 };
 
 %nodefaultctor TDF_AttributeDoubleMap;
@@ -1074,8 +1077,6 @@ class TDF_MapIteratorOfAttributeMap : public TCollection_BasicMapIterator {
 class TDF_ListIteratorOfLabelList {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ListIteratorOfLabelList();
-		%feature("autodoc", "1");
 		TDF_ListIteratorOfLabelList();
 		%feature("autodoc", "1");
 		TDF_ListIteratorOfLabelList(const TDF_LabelList &L);
@@ -1088,6 +1089,11 @@ class TDF_ListIteratorOfLabelList {
 		%feature("autodoc", "1");
 		TDF_Label & Value() const;
 
+};
+%extend TDF_ListIteratorOfLabelList {
+	~TDF_ListIteratorOfLabelList() {
+	printf("Call custom destructor for instance of TDF_ListIteratorOfLabelList\n");
+	}
 };
 
 %nodefaultctor TDF_Attribute;
@@ -1206,8 +1212,6 @@ class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 class TDF_ListIteratorOfIDList {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ListIteratorOfIDList();
-		%feature("autodoc", "1");
 		TDF_ListIteratorOfIDList();
 		%feature("autodoc", "1");
 		TDF_ListIteratorOfIDList(const TDF_IDList &L);
@@ -1220,6 +1224,11 @@ class TDF_ListIteratorOfIDList {
 		%feature("autodoc", "1");
 		Standard_GUID & Value() const;
 
+};
+%extend TDF_ListIteratorOfIDList {
+	~TDF_ListIteratorOfIDList() {
+	printf("Call custom destructor for instance of TDF_ListIteratorOfIDList\n");
+	}
 };
 
 %nodefaultctor TDF_DeltaOnModification;
@@ -1291,8 +1300,6 @@ class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 class TDF_ClosureMode {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ClosureMode();
-		%feature("autodoc", "1");
 		TDF_ClosureMode(const Standard_Boolean aMode=1);
 		%feature("autodoc", "1");
 		void Descendants(const Standard_Boolean aStatus);
@@ -1304,12 +1311,15 @@ class TDF_ClosureMode {
 		Standard_Boolean References() const;
 
 };
+%extend TDF_ClosureMode {
+	~TDF_ClosureMode() {
+	printf("Call custom destructor for instance of TDF_ClosureMode\n");
+	}
+};
 
 %nodefaultctor TDF_LabelMapHasher;
 class TDF_LabelMapHasher {
 	public:
-		%feature("autodoc", "1");
-		~TDF_LabelMapHasher();
 		%feature("autodoc", "1");
 		TDF_LabelMapHasher();
 		%feature("autodoc", "1");
@@ -1317,6 +1327,11 @@ class TDF_LabelMapHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TDF_Label &aLab1, const TDF_Label &aLab2);
 
+};
+%extend TDF_LabelMapHasher {
+	~TDF_LabelMapHasher() {
+	printf("Call custom destructor for instance of TDF_LabelMapHasher\n");
+	}
 };
 
 %nodefaultctor TDF_Label;
@@ -1408,8 +1423,6 @@ class TDF_Label {
 class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_MapIteratorOfLabelMap();
-		%feature("autodoc", "1");
 		TDF_MapIteratorOfLabelMap();
 		%feature("autodoc", "1");
 		TDF_MapIteratorOfLabelMap(const TDF_LabelMap &aMap);
@@ -1418,6 +1431,11 @@ class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const TDF_Label & Key() const;
 
+};
+%extend TDF_MapIteratorOfLabelMap {
+	~TDF_MapIteratorOfLabelMap() {
+	printf("Call custom destructor for instance of TDF_MapIteratorOfLabelMap\n");
+	}
 };
 
 %nodefaultctor TDF_DataMapNodeOfLabelLabelMap;
@@ -1527,8 +1545,6 @@ class TDF_LabelIndexedMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_LabelIndexedMap();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TDF_Label &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TDF_Label &K);
@@ -1544,6 +1560,11 @@ class TDF_LabelIndexedMap : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TDF_Label &K) const;
 
 };
+%extend TDF_LabelIndexedMap {
+	~TDF_LabelIndexedMap() {
+	printf("Call custom destructor for instance of TDF_LabelIndexedMap\n");
+	}
+};
 
 %nodefaultctor TDF_AttributeMap;
 class TDF_AttributeMap : public TCollection_BasicMap {
@@ -1557,14 +1578,17 @@ class TDF_AttributeMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_AttributeMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_TDF_Attribute &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Handle_TDF_Attribute &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_TDF_Attribute &aKey);
 
+};
+%extend TDF_AttributeMap {
+	~TDF_AttributeMap() {
+	printf("Call custom destructor for instance of TDF_AttributeMap\n");
+	}
 };
 
 %nodefaultctor TDF_LabelSequence;
@@ -1574,8 +1598,6 @@ class TDF_LabelSequence : public TCollection_BaseSequence {
 		TDF_LabelSequence();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelSequence();
 		%feature("autodoc", "1");
 		const TDF_LabelSequence & Assign(const TDF_LabelSequence &Other);
 		%feature("autodoc", "1");
@@ -1616,6 +1638,11 @@ class TDF_LabelSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TDF_LabelSequence {
+	~TDF_LabelSequence() {
+	printf("Call custom destructor for instance of TDF_LabelSequence\n");
+	}
+};
 
 %nodefaultctor TDF_LabelMap;
 class TDF_LabelMap : public TCollection_BasicMap {
@@ -1629,14 +1656,17 @@ class TDF_LabelMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_LabelMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const TDF_Label &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const TDF_Label &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const TDF_Label &aKey);
 
+};
+%extend TDF_LabelMap {
+	~TDF_LabelMap() {
+	printf("Call custom destructor for instance of TDF_LabelMap\n");
+	}
 };
 
 %nodefaultctor TDF_LabelDataMap;
@@ -1650,8 +1680,6 @@ class TDF_LabelDataMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelDataMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const TDF_Label &I);
 		%feature("autodoc", "1");
@@ -1668,12 +1696,15 @@ class TDF_LabelDataMap : public TCollection_BasicMap {
 		TDF_Label & operator()(const TDF_Label &K);
 
 };
+%extend TDF_LabelDataMap {
+	~TDF_LabelDataMap() {
+	printf("Call custom destructor for instance of TDF_LabelDataMap\n");
+	}
+};
 
 %nodefaultctor TDF_MapIteratorOfIDMap;
 class TDF_MapIteratorOfIDMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDF_MapIteratorOfIDMap();
 		%feature("autodoc", "1");
 		TDF_MapIteratorOfIDMap();
 		%feature("autodoc", "1");
@@ -1683,6 +1714,11 @@ class TDF_MapIteratorOfIDMap : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const Standard_GUID & Key() const;
 
+};
+%extend TDF_MapIteratorOfIDMap {
+	~TDF_MapIteratorOfIDMap() {
+	printf("Call custom destructor for instance of TDF_MapIteratorOfIDMap\n");
+	}
 };
 
 %nodefaultctor TDF_LabelList;
@@ -1696,8 +1732,6 @@ class TDF_LabelList {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelList();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -1730,6 +1764,11 @@ class TDF_LabelList {
 		void InsertAfter(TDF_LabelList & Other, TDF_ListIteratorOfLabelList & It);
 
 };
+%extend TDF_LabelList {
+	~TDF_LabelList() {
+	printf("Call custom destructor for instance of TDF_LabelList\n");
+	}
+};
 
 %nodefaultctor TDF_DefaultDeltaOnModification;
 class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
@@ -1756,8 +1795,6 @@ class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
 %nodefaultctor TDF_IDFilter;
 class TDF_IDFilter {
 	public:
-		%feature("autodoc", "1");
-		~TDF_IDFilter();
 		%feature("autodoc", "1");
 		TDF_IDFilter(const Standard_Boolean ignoreMode=1);
 		%feature("autodoc", "1");
@@ -1787,6 +1824,11 @@ class TDF_IDFilter {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & anOS) const;
 
+};
+%extend TDF_IDFilter {
+	~TDF_IDFilter() {
+	printf("Call custom destructor for instance of TDF_IDFilter\n");
+	}
 };
 
 %nodefaultctor TDF_ListNodeOfIDList;
@@ -2080,8 +2122,6 @@ class TDF_ChildIDIterator {
 class TDF_CopyTool {
 	public:
 		%feature("autodoc", "1");
-		~TDF_CopyTool();
-		%feature("autodoc", "1");
 		TDF_CopyTool();
 		%feature("autodoc", "1");
 		void Copy(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_RelocationTable &aRelocationTable);
@@ -2090,6 +2130,11 @@ class TDF_CopyTool {
 		%feature("autodoc", "1");
 		void Copy(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_RelocationTable &aRelocationTable, const TDF_IDFilter &aPrivilegeFilter, const TDF_IDFilter &aRefFilter, const Standard_Boolean setSelfContained);
 
+};
+%extend TDF_CopyTool {
+	~TDF_CopyTool() {
+	printf("Call custom destructor for instance of TDF_CopyTool\n");
+	}
 };
 
 %nodefaultctor TDF_DataMapNodeOfAttributeDataMap;
@@ -2120,8 +2165,6 @@ class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 class TDF_DataMapIteratorOfLabelIntegerMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_DataMapIteratorOfLabelIntegerMap();
-		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelIntegerMap();
 		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelIntegerMap(const TDF_LabelIntegerMap &aMap);
@@ -2133,12 +2176,15 @@ class TDF_DataMapIteratorOfLabelIntegerMap : public TCollection_BasicMapIterator
 		const Standard_Integer & Value() const;
 
 };
+%extend TDF_DataMapIteratorOfLabelIntegerMap {
+	~TDF_DataMapIteratorOfLabelIntegerMap() {
+	printf("Call custom destructor for instance of TDF_DataMapIteratorOfLabelIntegerMap\n");
+	}
+};
 
 %nodefaultctor TDF_DataMapIteratorOfLabelLabelMap;
 class TDF_DataMapIteratorOfLabelLabelMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDF_DataMapIteratorOfLabelLabelMap();
 		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelLabelMap();
 		%feature("autodoc", "1");
@@ -2150,6 +2196,11 @@ class TDF_DataMapIteratorOfLabelLabelMap : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const TDF_Label & Value() const;
 
+};
+%extend TDF_DataMapIteratorOfLabelLabelMap {
+	~TDF_DataMapIteratorOfLabelLabelMap() {
+	printf("Call custom destructor for instance of TDF_DataMapIteratorOfLabelLabelMap\n");
+	}
 };
 
 %nodefaultctor TDF_AttributeDataMap;
@@ -2197,8 +2248,6 @@ class TDF_GUIDProgIDMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_GUIDProgIDMap();
-		%feature("autodoc", "1");
 		void Bind(const Standard_GUID &K1, const TCollection_ExtendedString &K2);
 		%feature("autodoc", "1");
 		Standard_Boolean AreBound(const Standard_GUID &K1, const TCollection_ExtendedString &K2) const;
@@ -2216,6 +2265,11 @@ class TDF_GUIDProgIDMap : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const TCollection_ExtendedString &K);
 
 };
+%extend TDF_GUIDProgIDMap {
+	~TDF_GUIDProgIDMap() {
+	printf("Call custom destructor for instance of TDF_GUIDProgIDMap\n");
+	}
+};
 
 %nodefaultctor TDF_IDList;
 class TDF_IDList {
@@ -2228,8 +2282,6 @@ class TDF_IDList {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_IDList();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -2261,6 +2313,11 @@ class TDF_IDList {
 		%feature("autodoc", "1");
 		void InsertAfter(TDF_IDList & Other, TDF_ListIteratorOfIDList & It);
 
+};
+%extend TDF_IDList {
+	~TDF_IDList() {
+	printf("Call custom destructor for instance of TDF_IDList\n");
+	}
 };
 
 %nodefaultctor TDF_DataMapIteratorOfAttributeDataMap;
@@ -2330,8 +2387,6 @@ class TDF_Data : public MMgt_TShared {
 class TDF_Tool {
 	public:
 		%feature("autodoc", "1");
-		~TDF_Tool();
-		%feature("autodoc", "1");
 		TDF_Tool();
 		%feature("autodoc", "1");
 		Standard_Integer NbLabels(const TDF_Label &aLabel);
@@ -2379,6 +2434,11 @@ class TDF_Tool {
 		void ExtendedDeepDump(Standard_OStream & anOS, const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
 
 };
+%extend TDF_Tool {
+	~TDF_Tool() {
+	printf("Call custom destructor for instance of TDF_Tool\n");
+	}
+};
 
 %nodefaultctor TDF_DeltaOnResume;
 class TDF_DeltaOnResume : public TDF_AttributeDelta {
@@ -2414,8 +2474,6 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_LabelLabelMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const TDF_Label &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TDF_Label &K) const;
@@ -2430,6 +2488,11 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_Label & operator()(const TDF_Label &K);
 
+};
+%extend TDF_LabelLabelMap {
+	~TDF_LabelLabelMap() {
+	printf("Call custom destructor for instance of TDF_LabelLabelMap\n");
+	}
 };
 
 %nodefaultctor TDF_DataSet;
@@ -2523,8 +2586,6 @@ class TDF_ListIteratorOfDeltaList {
 class TDF_AttributeIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_AttributeIterator();
-		%feature("autodoc", "1");
 		TDF_AttributeIterator();
 		%feature("autodoc", "1");
 		TDF_AttributeIterator(const TDF_Label &aLabel, const Standard_Boolean withoutForgotten=1);
@@ -2540,6 +2601,11 @@ class TDF_AttributeIterator {
 		TDF_Attribute * Value() const;
 
 };
+%extend TDF_AttributeIterator {
+	~TDF_AttributeIterator() {
+	printf("Call custom destructor for instance of TDF_AttributeIterator\n");
+	}
+};
 
 %nodefaultctor TDF_LabelDoubleMap;
 class TDF_LabelDoubleMap : public TCollection_BasicMap {
@@ -2552,8 +2618,6 @@ class TDF_LabelDoubleMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelDoubleMap();
 		%feature("autodoc", "1");
 		void Bind(const TDF_Label &K1, const TDF_Label &K2);
 		%feature("autodoc", "1");
@@ -2571,6 +2635,11 @@ class TDF_LabelDoubleMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind2(const TDF_Label &K);
 
+};
+%extend TDF_LabelDoubleMap {
+	~TDF_LabelDoubleMap() {
+	printf("Call custom destructor for instance of TDF_LabelDoubleMap\n");
+	}
 };
 
 %nodefaultctor TDF_DataMapNodeOfLabelDataMap;
@@ -2715,14 +2784,17 @@ class TDF_IDMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_IDMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const Standard_GUID &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Standard_GUID &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Standard_GUID &aKey);
 
+};
+%extend TDF_IDMap {
+	~TDF_IDMap() {
+	printf("Call custom destructor for instance of TDF_IDMap\n");
+	}
 };
 
 %nodefaultctor TDF_DeltaList;
@@ -2908,8 +2980,6 @@ class TDF_Transaction {
 class TDF_ChildIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ChildIterator();
-		%feature("autodoc", "1");
 		TDF_ChildIterator();
 		%feature("autodoc", "1");
 		TDF_ChildIterator(const TDF_Label &aLabel, const Standard_Boolean allLevels=0);
@@ -2924,6 +2994,11 @@ class TDF_ChildIterator {
 		%feature("autodoc", "1");
 		TDF_Label const Value() const;
 
+};
+%extend TDF_ChildIterator {
+	~TDF_ChildIterator() {
+	printf("Call custom destructor for instance of TDF_ChildIterator\n");
+	}
 };
 
 %nodefaultctor TDF_AttributeDeltaList;
@@ -3106,8 +3181,6 @@ class TDF_AttributeIndexedMap : public TCollection_BasicMap {
 class TDF {
 	public:
 		%feature("autodoc", "1");
-		~TDF();
-		%feature("autodoc", "1");
 		TDF();
 		%feature("autodoc", "1");
 		const Standard_GUID & LowestID();
@@ -3120,6 +3193,11 @@ class TDF {
 		%feature("autodoc", "1");
 		Standard_Boolean ProgIDFromGUID(const Standard_GUID &ID, TCollection_ExtendedString & ProgID);
 
+};
+%extend TDF {
+	~TDF() {
+	printf("Call custom destructor for instance of TDF\n");
+	}
 };
 
 %nodefaultctor TDF_ListNodeOfAttributeList;
@@ -3156,8 +3234,6 @@ class TDF_LabelIntegerMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_LabelIntegerMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TDF_Label &K) const;
@@ -3172,6 +3248,11 @@ class TDF_LabelIntegerMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TDF_Label &K);
 
+};
+%extend TDF_LabelIntegerMap {
+	~TDF_LabelIntegerMap() {
+	printf("Call custom destructor for instance of TDF_LabelIntegerMap\n");
+	}
 };
 
 %nodefaultctor TDF_Reference;
@@ -3256,8 +3337,6 @@ class TDF_Delta : public MMgt_TShared {
 class TDF_ComparisonTool {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ComparisonTool();
-		%feature("autodoc", "1");
 		TDF_ComparisonTool();
 		%feature("autodoc", "1");
 		void Compare(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_DataSet &aTargetDataSet, const TDF_IDFilter &aFilter, const Handle_TDF_RelocationTable &aRelocationTable);
@@ -3270,6 +3349,11 @@ class TDF_ComparisonTool {
 		%feature("autodoc", "1");
 		Standard_Boolean IsSelfContained(const TDF_Label &aLabel, const Handle_TDF_DataSet &aDataSet);
 
+};
+%extend TDF_ComparisonTool {
+	~TDF_ComparisonTool() {
+	printf("Call custom destructor for instance of TDF_ComparisonTool\n");
+	}
 };
 
 %nodefaultctor TDF_DeltaOnRemoval;
@@ -3314,8 +3398,6 @@ class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
 class TDF_ClosureTool {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ClosureTool();
-		%feature("autodoc", "1");
 		TDF_ClosureTool();
 		%feature("autodoc", "1");
 		void Closure(const Handle_TDF_DataSet &aDataSet);
@@ -3325,12 +3407,15 @@ class TDF_ClosureTool {
 		void Closure(const TDF_Label &aLabel, TDF_LabelMap & aLabMap, TDF_AttributeMap & anAttMap, const TDF_IDFilter &aFilter, const TDF_ClosureMode &aMode);
 
 };
+%extend TDF_ClosureTool {
+	~TDF_ClosureTool() {
+	printf("Call custom destructor for instance of TDF_ClosureTool\n");
+	}
+};
 
 %nodefaultctor TDF_DoubleMapIteratorOfLabelDoubleMap;
 class TDF_DoubleMapIteratorOfLabelDoubleMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDF_DoubleMapIteratorOfLabelDoubleMap();
 		%feature("autodoc", "1");
 		TDF_DoubleMapIteratorOfLabelDoubleMap();
 		%feature("autodoc", "1");
@@ -3343,12 +3428,15 @@ class TDF_DoubleMapIteratorOfLabelDoubleMap : public TCollection_BasicMapIterato
 		const TDF_Label & Key2() const;
 
 };
+%extend TDF_DoubleMapIteratorOfLabelDoubleMap {
+	~TDF_DoubleMapIteratorOfLabelDoubleMap() {
+	printf("Call custom destructor for instance of TDF_DoubleMapIteratorOfLabelDoubleMap\n");
+	}
+};
 
 %nodefaultctor TDF_DataMapIteratorOfLabelDataMap;
 class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDF_DataMapIteratorOfLabelDataMap();
 		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelDataMap();
 		%feature("autodoc", "1");
@@ -3360,4 +3448,9 @@ class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const TDF_Label & Value() const;
 
+};
+%extend TDF_DataMapIteratorOfLabelDataMap {
+	~TDF_DataMapIteratorOfLabelDataMap() {
+	printf("Call custom destructor for instance of TDF_DataMapIteratorOfLabelDataMap\n");
+	}
 };

@@ -105,8 +105,6 @@ enum gce_ErrorType {
 class gce_MakeScale {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeScale();
-		%feature("autodoc", "1");
 		gce_MakeScale(const gp_Pnt &Point, const Standard_Real Scale);
 		%feature("autodoc", "1");
 		const gp_Trsf & Value() const;
@@ -114,12 +112,15 @@ class gce_MakeScale {
 		const gp_Trsf & Operator() const;
 
 };
+%extend gce_MakeScale {
+	~gce_MakeScale() {
+	printf("Call custom destructor for instance of gce_MakeScale\n");
+	}
+};
 
 %nodefaultctor gce_Root;
 class gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_Root();
 		%feature("autodoc", "1");
 		gce_Root();
 		%feature("autodoc", "1");
@@ -128,12 +129,15 @@ class gce_Root {
 		gce_ErrorType Status() const;
 
 };
+%extend gce_Root {
+	~gce_Root() {
+	printf("Call custom destructor for instance of gce_Root\n");
+	}
+};
 
 %nodefaultctor gce_MakeParab2d;
 class gce_MakeParab2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeParab2d();
 		%feature("autodoc", "1");
 		gce_MakeParab2d(const gp_Ax2d &MirrorAxis, const Standard_Real Focal, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
@@ -150,12 +154,15 @@ class gce_MakeParab2d : public gce_Root {
 		const gp_Parab2d & Operator() const;
 
 };
+%extend gce_MakeParab2d {
+	~gce_MakeParab2d() {
+	printf("Call custom destructor for instance of gce_MakeParab2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeLin2d;
 class gce_MakeLin2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeLin2d();
 		%feature("autodoc", "1");
 		gce_MakeLin2d(const gp_Ax2d &A);
 		%feature("autodoc", "1");
@@ -174,12 +181,15 @@ class gce_MakeLin2d : public gce_Root {
 		gp_Lin2d Operator() const;
 
 };
+%extend gce_MakeLin2d {
+	~gce_MakeLin2d() {
+	printf("Call custom destructor for instance of gce_MakeLin2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeMirror2d;
 class gce_MakeMirror2d {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeMirror2d();
 		%feature("autodoc", "1");
 		gce_MakeMirror2d(const gp_Pnt2d &Point);
 		%feature("autodoc", "1");
@@ -194,12 +204,15 @@ class gce_MakeMirror2d {
 		const gp_Trsf2d & Operator() const;
 
 };
+%extend gce_MakeMirror2d {
+	~gce_MakeMirror2d() {
+	printf("Call custom destructor for instance of gce_MakeMirror2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeRotation;
 class gce_MakeRotation {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeRotation();
 		%feature("autodoc", "1");
 		gce_MakeRotation(const gp_Lin &Line, const Standard_Real Angle);
 		%feature("autodoc", "1");
@@ -212,12 +225,15 @@ class gce_MakeRotation {
 		const gp_Trsf & Operator() const;
 
 };
+%extend gce_MakeRotation {
+	~gce_MakeRotation() {
+	printf("Call custom destructor for instance of gce_MakeRotation\n");
+	}
+};
 
 %nodefaultctor gce_MakeCirc2d;
 class gce_MakeCirc2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeCirc2d();
 		%feature("autodoc", "1");
 		gce_MakeCirc2d(const gp_Ax2d &XAxis, const Standard_Real Radius, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
@@ -238,12 +254,15 @@ class gce_MakeCirc2d : public gce_Root {
 		const gp_Circ2d & Operator() const;
 
 };
+%extend gce_MakeCirc2d {
+	~gce_MakeCirc2d() {
+	printf("Call custom destructor for instance of gce_MakeCirc2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeHypr2d;
 class gce_MakeHypr2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeHypr2d();
 		%feature("autodoc", "1");
 		gce_MakeHypr2d(const gp_Pnt2d &S1, const gp_Pnt2d &S2, const gp_Pnt2d &Center);
 		%feature("autodoc", "1");
@@ -256,12 +275,15 @@ class gce_MakeHypr2d : public gce_Root {
 		const gp_Hypr2d & Operator() const;
 
 };
+%extend gce_MakeHypr2d {
+	~gce_MakeHypr2d() {
+	printf("Call custom destructor for instance of gce_MakeHypr2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeElips2d;
 class gce_MakeElips2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeElips2d();
 		%feature("autodoc", "1");
 		gce_MakeElips2d(const gp_Ax2d &MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
@@ -274,12 +296,15 @@ class gce_MakeElips2d : public gce_Root {
 		const gp_Elips2d & Operator() const;
 
 };
+%extend gce_MakeElips2d {
+	~gce_MakeElips2d() {
+	printf("Call custom destructor for instance of gce_MakeElips2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeCirc;
 class gce_MakeCirc : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeCirc();
 		%feature("autodoc", "1");
 		gce_MakeCirc(const gp_Ax2 &A2, const Standard_Real Radius);
 		%feature("autodoc", "1");
@@ -302,12 +327,15 @@ class gce_MakeCirc : public gce_Root {
 		const gp_Circ & Operator() const;
 
 };
+%extend gce_MakeCirc {
+	~gce_MakeCirc() {
+	printf("Call custom destructor for instance of gce_MakeCirc\n");
+	}
+};
 
 %nodefaultctor gce_MakeHypr;
 class gce_MakeHypr : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeHypr();
 		%feature("autodoc", "1");
 		gce_MakeHypr(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 		%feature("autodoc", "1");
@@ -318,12 +346,15 @@ class gce_MakeHypr : public gce_Root {
 		const gp_Hypr & Operator() const;
 
 };
+%extend gce_MakeHypr {
+	~gce_MakeHypr() {
+	printf("Call custom destructor for instance of gce_MakeHypr\n");
+	}
+};
 
 %nodefaultctor gce_MakeTranslation;
 class gce_MakeTranslation {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeTranslation();
 		%feature("autodoc", "1");
 		gce_MakeTranslation(const gp_Vec &Vect);
 		%feature("autodoc", "1");
@@ -334,12 +365,15 @@ class gce_MakeTranslation {
 		const gp_Trsf & Operator() const;
 
 };
+%extend gce_MakeTranslation {
+	~gce_MakeTranslation() {
+	printf("Call custom destructor for instance of gce_MakeTranslation\n");
+	}
+};
 
 %nodefaultctor gce_MakeParab;
 class gce_MakeParab : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeParab();
 		%feature("autodoc", "1");
 		gce_MakeParab(const gp_Ax2 &A2, const Standard_Real Focal);
 		%feature("autodoc", "1");
@@ -350,12 +384,15 @@ class gce_MakeParab : public gce_Root {
 		const gp_Parab & Operator() const;
 
 };
+%extend gce_MakeParab {
+	~gce_MakeParab() {
+	printf("Call custom destructor for instance of gce_MakeParab\n");
+	}
+};
 
 %nodefaultctor gce_MakeCylinder;
 class gce_MakeCylinder : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeCylinder();
 		%feature("autodoc", "1");
 		gce_MakeCylinder(const gp_Ax2 &A2, const Standard_Real Radius);
 		%feature("autodoc", "1");
@@ -374,12 +411,15 @@ class gce_MakeCylinder : public gce_Root {
 		const gp_Cylinder & Operator() const;
 
 };
+%extend gce_MakeCylinder {
+	~gce_MakeCylinder() {
+	printf("Call custom destructor for instance of gce_MakeCylinder\n");
+	}
+};
 
 %nodefaultctor gce_MakeDir;
 class gce_MakeDir : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeDir();
 		%feature("autodoc", "1");
 		gce_MakeDir(const gp_Vec &V);
 		%feature("autodoc", "1");
@@ -394,12 +434,15 @@ class gce_MakeDir : public gce_Root {
 		const gp_Dir & Operator() const;
 
 };
+%extend gce_MakeDir {
+	~gce_MakeDir() {
+	printf("Call custom destructor for instance of gce_MakeDir\n");
+	}
+};
 
 %nodefaultctor gce_MakeRotation2d;
 class gce_MakeRotation2d {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeRotation2d();
 		%feature("autodoc", "1");
 		gce_MakeRotation2d(const gp_Pnt2d &Point, const Standard_Real Angle);
 		%feature("autodoc", "1");
@@ -408,12 +451,15 @@ class gce_MakeRotation2d {
 		const gp_Trsf2d & Operator() const;
 
 };
+%extend gce_MakeRotation2d {
+	~gce_MakeRotation2d() {
+	printf("Call custom destructor for instance of gce_MakeRotation2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeTranslation2d;
 class gce_MakeTranslation2d {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeTranslation2d();
 		%feature("autodoc", "1");
 		gce_MakeTranslation2d(const gp_Vec2d &Vect);
 		%feature("autodoc", "1");
@@ -424,12 +470,15 @@ class gce_MakeTranslation2d {
 		const gp_Trsf2d & Operator() const;
 
 };
+%extend gce_MakeTranslation2d {
+	~gce_MakeTranslation2d() {
+	printf("Call custom destructor for instance of gce_MakeTranslation2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeDir2d;
 class gce_MakeDir2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeDir2d();
 		%feature("autodoc", "1");
 		gce_MakeDir2d(const gp_Vec2d &V);
 		%feature("autodoc", "1");
@@ -444,12 +493,15 @@ class gce_MakeDir2d : public gce_Root {
 		const gp_Dir2d & Operator() const;
 
 };
+%extend gce_MakeDir2d {
+	~gce_MakeDir2d() {
+	printf("Call custom destructor for instance of gce_MakeDir2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeElips;
 class gce_MakeElips : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeElips();
 		%feature("autodoc", "1");
 		gce_MakeElips(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 		%feature("autodoc", "1");
@@ -460,12 +512,15 @@ class gce_MakeElips : public gce_Root {
 		const gp_Elips & Operator() const;
 
 };
+%extend gce_MakeElips {
+	~gce_MakeElips() {
+	printf("Call custom destructor for instance of gce_MakeElips\n");
+	}
+};
 
 %nodefaultctor gce_MakeScale2d;
 class gce_MakeScale2d {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeScale2d();
 		%feature("autodoc", "1");
 		gce_MakeScale2d(const gp_Pnt2d &Point, const Standard_Real Scale);
 		%feature("autodoc", "1");
@@ -474,12 +529,15 @@ class gce_MakeScale2d {
 		const gp_Trsf2d & Operator() const;
 
 };
+%extend gce_MakeScale2d {
+	~gce_MakeScale2d() {
+	printf("Call custom destructor for instance of gce_MakeScale2d\n");
+	}
+};
 
 %nodefaultctor gce_MakeMirror;
 class gce_MakeMirror {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeMirror();
 		%feature("autodoc", "1");
 		gce_MakeMirror(const gp_Pnt &Point);
 		%feature("autodoc", "1");
@@ -498,12 +556,15 @@ class gce_MakeMirror {
 		const gp_Trsf & Operator() const;
 
 };
+%extend gce_MakeMirror {
+	~gce_MakeMirror() {
+	printf("Call custom destructor for instance of gce_MakeMirror\n");
+	}
+};
 
 %nodefaultctor gce_MakePln;
 class gce_MakePln : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakePln();
 		%feature("autodoc", "1");
 		gce_MakePln(const gp_Ax2 &A2);
 		%feature("autodoc", "1");
@@ -526,12 +587,15 @@ class gce_MakePln : public gce_Root {
 		const gp_Pln & Operator() const;
 
 };
+%extend gce_MakePln {
+	~gce_MakePln() {
+	printf("Call custom destructor for instance of gce_MakePln\n");
+	}
+};
 
 %nodefaultctor gce_MakeLin;
 class gce_MakeLin : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeLin();
 		%feature("autodoc", "1");
 		gce_MakeLin(const gp_Ax1 &A1);
 		%feature("autodoc", "1");
@@ -546,12 +610,15 @@ class gce_MakeLin : public gce_Root {
 		const gp_Lin & Operator() const;
 
 };
+%extend gce_MakeLin {
+	~gce_MakeLin() {
+	printf("Call custom destructor for instance of gce_MakeLin\n");
+	}
+};
 
 %nodefaultctor gce_MakeCone;
 class gce_MakeCone : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeCone();
 		%feature("autodoc", "1");
 		gce_MakeCone(const gp_Ax2 &A2, const Standard_Real Ang, const Standard_Real Radius);
 		%feature("autodoc", "1");
@@ -571,4 +638,9 @@ class gce_MakeCone : public gce_Root {
 		%feature("autodoc", "1");
 		const gp_Cone & Operator() const;
 
+};
+%extend gce_MakeCone {
+	~gce_MakeCone() {
+	printf("Call custom destructor for instance of gce_MakeCone\n");
+	}
 };

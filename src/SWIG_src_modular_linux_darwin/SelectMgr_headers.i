@@ -558,7 +558,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TCollection_SeqNodePtr.hxx>
 #include<TCollection_Side.hxx>
 #include<Xw.hxx>
-#include<Xw_Cextern.hxx>
 #include<Xw_ColorMap.hxx>
 #include<Xw_Driver.hxx>
 #include<Xw_FontMap.hxx>

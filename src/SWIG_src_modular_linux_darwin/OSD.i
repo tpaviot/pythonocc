@@ -932,8 +932,6 @@ class OSD_Chronometer {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~OSD_Chronometer();
-		%feature("autodoc", "1");
 		virtual		void Reset();
 		%feature("autodoc", "1");
 		virtual		void Stop();
@@ -948,6 +946,11 @@ class OSD_Chronometer {
 		%feature("autodoc", "1");
 		void Show(Standard_Real &OutValue, Standard_Real &OutValue);
 
+};
+%extend OSD_Chronometer {
+	~OSD_Chronometer() {
+	printf("Call custom destructor for instance of OSD_Chronometer\n");
+	}
 };
 
 %nodefaultctor OSD_Exception;
@@ -1032,8 +1035,6 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 class OSD_Disk {
 	public:
 		%feature("autodoc", "1");
-		~OSD_Disk();
-		%feature("autodoc", "1");
 		OSD_Disk();
 		%feature("autodoc", "1");
 		OSD_Disk(const OSD_Path &Name);
@@ -1065,6 +1066,11 @@ class OSD_Disk {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_Disk {
+	~OSD_Disk() {
+	printf("Call custom destructor for instance of OSD_Disk\n");
+	}
+};
 
 %nodefaultctor OSD_DirectoryIterator;
 class OSD_DirectoryIterator {
@@ -1075,8 +1081,6 @@ class OSD_DirectoryIterator {
 		OSD_DirectoryIterator(const OSD_Path &where, const TCollection_AsciiString &Mask);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~OSD_DirectoryIterator();
 		%feature("autodoc", "1");
 		void Initialize(const OSD_Path &where, const TCollection_AsciiString &Mask);
 		%feature("autodoc", "1");
@@ -1094,6 +1098,11 @@ class OSD_DirectoryIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Error() const;
 
+};
+%extend OSD_DirectoryIterator {
+	~OSD_DirectoryIterator() {
+	printf("Call custom destructor for instance of OSD_DirectoryIterator\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_ILLEGAL_INSTRUCTION;
@@ -1212,8 +1221,6 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 class OSD_FileNode {
 	public:
 		%feature("autodoc", "1");
-		~OSD_FileNode();
-		%feature("autodoc", "1");
 		void Path(OSD_Path & Name) const;
 		%feature("autodoc", "1");
 		void SetPath(const OSD_Path &Name);
@@ -1247,12 +1254,15 @@ class OSD_FileNode {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_FileNode {
+	~OSD_FileNode() {
+	printf("Call custom destructor for instance of OSD_FileNode\n");
+	}
+};
 
 %nodefaultctor OSD_Error;
 class OSD_Error {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Error();
 		%feature("autodoc", "1");
 		OSD_Error();
 		%feature("autodoc", "1");
@@ -1267,12 +1277,15 @@ class OSD_Error {
 		void Reset();
 
 };
+%extend OSD_Error {
+	~OSD_Error() {
+	printf("Call custom destructor for instance of OSD_Error\n");
+	}
+};
 
 %nodefaultctor OSD_Protection;
 class OSD_Protection {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Protection();
 		%feature("autodoc", "1");
 		OSD_Protection();
 		%feature("autodoc", "1");
@@ -1303,12 +1316,15 @@ class OSD_Protection {
 		void Sub(OSD_SingleProtection & aProt, const OSD_SingleProtection aRight);
 
 };
+%extend OSD_Protection {
+	~OSD_Protection() {
+	printf("Call custom destructor for instance of OSD_Protection\n");
+	}
+};
 
 %nodefaultctor OSD_SharedMemory;
 class OSD_SharedMemory {
 	public:
-		%feature("autodoc", "1");
-		~OSD_SharedMemory();
 		%feature("autodoc", "1");
 		OSD_SharedMemory();
 		%feature("autodoc", "1");
@@ -1331,6 +1347,11 @@ class OSD_SharedMemory {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_SharedMemory {
+	~OSD_SharedMemory() {
+	printf("Call custom destructor for instance of OSD_SharedMemory\n");
+	}
+};
 
 %nodefaultctor OSD_FileIterator;
 class OSD_FileIterator {
@@ -1341,8 +1362,6 @@ class OSD_FileIterator {
 		OSD_FileIterator(const OSD_Path &where, const TCollection_AsciiString &Mask);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~OSD_FileIterator();
 		%feature("autodoc", "1");
 		void Initialize(const OSD_Path &where, const TCollection_AsciiString &Mask);
 		%feature("autodoc", "1");
@@ -1361,12 +1380,15 @@ class OSD_FileIterator {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_FileIterator {
+	~OSD_FileIterator() {
+	printf("Call custom destructor for instance of OSD_FileIterator\n");
+	}
+};
 
 %nodefaultctor OSD_Path;
 class OSD_Path {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Path();
 		%feature("autodoc", "1");
 		OSD_Path();
 		%feature("autodoc", "1");
@@ -1431,6 +1453,11 @@ class OSD_Path {
 		TCollection_AsciiString AbsolutePath(const TCollection_AsciiString &DirPath, const TCollection_AsciiString &RelFilePath);
 
 };
+%extend OSD_Path {
+	~OSD_Path() {
+	printf("Call custom destructor for instance of OSD_Path\n");
+	}
+};
 
 %nodefaultctor OSD_Signal;
 class OSD_Signal : public Standard_Failure {
@@ -1464,8 +1491,6 @@ class OSD_Signal : public Standard_Failure {
 class OSD_Real2String {
 	public:
 		%feature("autodoc", "1");
-		~OSD_Real2String();
-		%feature("autodoc", "1");
 		OSD_Real2String();
 		%feature("autodoc", "1");
 		Standard_Boolean RealToCString(const Standard_Real aReal, Standard_PCharacter & aString) const;
@@ -1473,12 +1498,15 @@ class OSD_Real2String {
 		Standard_Boolean CStringToReal(const char * aString, Standard_Real &OutValue);
 
 };
+%extend OSD_Real2String {
+	~OSD_Real2String() {
+	printf("Call custom destructor for instance of OSD_Real2String\n");
+	}
+};
 
 %nodefaultctor OSD_Directory;
 class OSD_Directory : public OSD_FileNode {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Directory();
 		%feature("autodoc", "1");
 		OSD_Directory();
 		%feature("autodoc", "1");
@@ -1488,6 +1516,11 @@ class OSD_Directory : public OSD_FileNode {
 		%feature("autodoc", "1");
 		OSD_Directory BuildTemporary();
 
+};
+%extend OSD_Directory {
+	~OSD_Directory() {
+	printf("Call custom destructor for instance of OSD_Directory\n");
+	}
 };
 
 %nodefaultctor OSD_SharedLibrary;
@@ -1509,9 +1542,12 @@ class OSD_SharedLibrary {
 		Standard_CString DlError() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~OSD_SharedLibrary();
 
+};
+%extend OSD_SharedLibrary {
+	~OSD_SharedLibrary() {
+	printf("Call custom destructor for instance of OSD_SharedLibrary\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_INT_OVERFLOW;
@@ -1578,8 +1614,6 @@ class OSD_Timer : public OSD_Chronometer {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~OSD_Timer();
-		%feature("autodoc", "1");
 		virtual		void Reset();
 		%feature("autodoc", "1");
 		virtual		void Show();
@@ -1592,6 +1626,11 @@ class OSD_Timer : public OSD_Chronometer {
 		%feature("autodoc", "1");
 		virtual		void Start();
 
+};
+%extend OSD_Timer {
+	~OSD_Timer() {
+	printf("Call custom destructor for instance of OSD_Timer\n");
+	}
 };
 
 %nodefaultctor OSD_SIGSYS;
@@ -1654,8 +1693,6 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 class OSD {
 	public:
 		%feature("autodoc", "1");
-		~OSD();
-		%feature("autodoc", "1");
 		OSD();
 		%feature("autodoc", "1");
 		void SetSignal(const Standard_Boolean aFloatingSignal=1);
@@ -1683,12 +1720,15 @@ class OSD {
 		Standard_Boolean UseSETranslator();
 
 };
+%extend OSD {
+	~OSD() {
+	printf("Call custom destructor for instance of OSD\n");
+	}
+};
 
 %nodefaultctor OSD_Environment;
 class OSD_Environment {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Environment();
 		%feature("autodoc", "1");
 		OSD_Environment();
 		%feature("autodoc", "1");
@@ -1717,12 +1757,15 @@ class OSD_Environment {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_Environment {
+	~OSD_Environment() {
+	printf("Call custom destructor for instance of OSD_Environment\n");
+	}
+};
 
 %nodefaultctor OSD_File;
 class OSD_File : public OSD_FileNode {
 	public:
-		%feature("autodoc", "1");
-		~OSD_File();
 		%feature("autodoc", "1");
 		OSD_File();
 		%feature("autodoc", "1");
@@ -1778,6 +1821,11 @@ class OSD_File : public OSD_FileNode {
 		%feature("autodoc", "1");
 		Standard_Boolean Edit();
 
+};
+%extend OSD_File {
+	~OSD_File() {
+	printf("Call custom destructor for instance of OSD_File\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_FLT_STACK_CHECK;
@@ -1850,8 +1898,6 @@ class OSD_Thread {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~OSD_Thread();
-		%feature("autodoc", "1");
 		void SetPriority(const Standard_Integer thePriority);
 		%feature("autodoc", "1");
 		Standard_Boolean Run(const Standard_Address data=0, const Standard_Integer WNTStackSize=0);
@@ -1867,12 +1913,15 @@ class OSD_Thread {
 		Standard_ThreadId Current();
 
 };
+%extend OSD_Thread {
+	~OSD_Thread() {
+	printf("Call custom destructor for instance of OSD_Thread\n");
+	}
+};
 
 %nodefaultctor OSD_Printer;
 class OSD_Printer {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Printer();
 		%feature("autodoc", "1");
 		OSD_Printer(const TCollection_AsciiString &Name);
 		%feature("autodoc", "1");
@@ -1888,6 +1937,11 @@ class OSD_Printer {
 		%feature("autodoc", "1");
 		Standard_Integer Error() const;
 
+};
+%extend OSD_Printer {
+	~OSD_Printer() {
+	printf("Call custom destructor for instance of OSD_Printer\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_CTRL_BREAK;
@@ -2258,8 +2312,6 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 class OSD_Host {
 	public:
 		%feature("autodoc", "1");
-		~OSD_Host();
-		%feature("autodoc", "1");
 		OSD_Host();
 		%feature("autodoc", "1");
 		TCollection_AsciiString SystemVersion();
@@ -2285,6 +2337,11 @@ class OSD_Host {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_Host {
+	~OSD_Host() {
+	printf("Call custom destructor for instance of OSD_Host\n");
+	}
+};
 
 %nodefaultctor OSD_EnvironmentIterator;
 class OSD_EnvironmentIterator {
@@ -2293,8 +2350,6 @@ class OSD_EnvironmentIterator {
 		OSD_EnvironmentIterator();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~OSD_EnvironmentIterator();
 		%feature("autodoc", "1");
 		Standard_Boolean More();
 		%feature("autodoc", "1");
@@ -2310,6 +2365,11 @@ class OSD_EnvironmentIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Error() const;
 
+};
+%extend OSD_EnvironmentIterator {
+	~OSD_EnvironmentIterator() {
+	printf("Call custom destructor for instance of OSD_EnvironmentIterator\n");
+	}
 };
 
 %nodefaultctor OSD_SIGSEGV;

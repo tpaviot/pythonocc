@@ -232,8 +232,6 @@ class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged
 class PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
 	public:
 		%feature("autodoc", "1");
-		~PShort_VArrayTNodeOfFieldOfHArray2OfShortReal();
-		%feature("autodoc", "1");
 		PShort_VArrayTNodeOfFieldOfHArray2OfShortReal();
 		%feature("autodoc", "1");
 		PShort_VArrayTNodeOfFieldOfHArray2OfShortReal(const Standard_ShortReal &aValue);
@@ -242,6 +240,11 @@ class PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
+	~PShort_VArrayTNodeOfFieldOfHArray2OfShortReal() {
+	printf("Call custom destructor for instance of PShort_VArrayTNodeOfFieldOfHArray2OfShortReal\n");
+	}
 };
 
 %nodefaultctor PShort_VArrayNodeOfFieldOfHArray2OfShortReal;
@@ -329,16 +332,17 @@ class PShort_FieldOfHArray1OfShortReal : public DBC_BaseArray {
 		Standard_ShortReal & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PShort_FieldOfHArray1OfShortReal();
 
+};
+%extend PShort_FieldOfHArray1OfShortReal {
+	~PShort_FieldOfHArray1OfShortReal() {
+	printf("Call custom destructor for instance of PShort_FieldOfHArray1OfShortReal\n");
+	}
 };
 
 %nodefaultctor PShort_VArrayTNodeOfFieldOfHArray1OfShortReal;
 class PShort_VArrayTNodeOfFieldOfHArray1OfShortReal {
 	public:
-		%feature("autodoc", "1");
-		~PShort_VArrayTNodeOfFieldOfHArray1OfShortReal();
 		%feature("autodoc", "1");
 		PShort_VArrayTNodeOfFieldOfHArray1OfShortReal();
 		%feature("autodoc", "1");
@@ -348,6 +352,11 @@ class PShort_VArrayTNodeOfFieldOfHArray1OfShortReal {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PShort_VArrayTNodeOfFieldOfHArray1OfShortReal {
+	~PShort_VArrayTNodeOfFieldOfHArray1OfShortReal() {
+	printf("Call custom destructor for instance of PShort_VArrayTNodeOfFieldOfHArray1OfShortReal\n");
+	}
 };
 
 %nodefaultctor PShort_FieldOfHArray2OfShortReal;
@@ -371,16 +380,17 @@ class PShort_FieldOfHArray2OfShortReal : public DBC_BaseArray {
 		Standard_ShortReal & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PShort_FieldOfHArray2OfShortReal();
 
+};
+%extend PShort_FieldOfHArray2OfShortReal {
+	~PShort_FieldOfHArray2OfShortReal() {
+	printf("Call custom destructor for instance of PShort_FieldOfHArray2OfShortReal\n");
+	}
 };
 
 %nodefaultctor PShort_SeqExplorerOfHSequenceOfShortReal;
 class PShort_SeqExplorerOfHSequenceOfShortReal {
 	public:
-		%feature("autodoc", "1");
-		~PShort_SeqExplorerOfHSequenceOfShortReal();
 		%feature("autodoc", "1");
 		PShort_SeqExplorerOfHSequenceOfShortReal(const Handle_PShort_HSequenceOfShortReal &S);
 		%feature("autodoc", "1");
@@ -392,6 +402,11 @@ class PShort_SeqExplorerOfHSequenceOfShortReal {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const Standard_ShortReal &T);
 
+};
+%extend PShort_SeqExplorerOfHSequenceOfShortReal {
+	~PShort_SeqExplorerOfHSequenceOfShortReal() {
+	printf("Call custom destructor for instance of PShort_SeqExplorerOfHSequenceOfShortReal\n");
+	}
 };
 
 %nodefaultctor PShort_SeqNodeOfHSequenceOfShortReal;

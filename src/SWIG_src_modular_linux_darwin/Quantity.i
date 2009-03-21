@@ -867,8 +867,6 @@ class Quantity_Array2OfColor {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Quantity_Array2OfColor();
-		%feature("autodoc", "1");
 		const Quantity_Array2OfColor & Assign(const Quantity_Array2OfColor &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -893,6 +891,11 @@ class Quantity_Array2OfColor {
 		%feature("autodoc", "1");
 		Quantity_Color & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend Quantity_Array2OfColor {
+	~Quantity_Array2OfColor() {
+	printf("Call custom destructor for instance of Quantity_Array2OfColor\n");
+	}
 };
 
 %nodefaultctor Quantity_ColorDefinitionError;
@@ -935,8 +938,6 @@ class Quantity_Array1OfCoefficient {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Quantity_Array1OfCoefficient();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Quantity_Array1OfCoefficient & Assign(const Quantity_Array1OfCoefficient &Other);
@@ -958,12 +959,15 @@ class Quantity_Array1OfCoefficient {
 		Quantity_Coefficient & operator()(const Standard_Integer Index);
 
 };
+%extend Quantity_Array1OfCoefficient {
+	~Quantity_Array1OfCoefficient() {
+	printf("Call custom destructor for instance of Quantity_Array1OfCoefficient\n");
+	}
+};
 
 %nodefaultctor Quantity_Period;
 class Quantity_Period {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Period();
 		%feature("autodoc", "1");
 		Quantity_Period(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
@@ -1010,12 +1014,15 @@ class Quantity_Period {
 		void _CSFDB_SetQuantity_PeriodmyUSec(const Standard_Integer p);
 
 };
+%extend Quantity_Period {
+	~Quantity_Period() {
+	printf("Call custom destructor for instance of Quantity_Period\n");
+	}
+};
 
 %nodefaultctor Quantity_Date;
 class Quantity_Date {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Date();
 		%feature("autodoc", "1");
 		Quantity_Date();
 		%feature("autodoc", "1");
@@ -1074,6 +1081,11 @@ class Quantity_Date {
 		void _CSFDB_SetQuantity_DatemyUSec(const Standard_Integer p);
 
 };
+%extend Quantity_Date {
+	~Quantity_Date() {
+	printf("Call custom destructor for instance of Quantity_Date\n");
+	}
+};
 
 %nodefaultctor Quantity_PeriodDefinitionError;
 class Quantity_PeriodDefinitionError : public Standard_DomainError {
@@ -1106,8 +1118,6 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 %nodefaultctor Quantity_Color;
 class Quantity_Color {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Color();
 		%feature("autodoc", "1");
 		Quantity_Color();
 		%feature("autodoc", "1");
@@ -1180,6 +1190,11 @@ class Quantity_Color {
 		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
 
 };
+%extend Quantity_Color {
+	~Quantity_Color() {
+	printf("Call custom destructor for instance of Quantity_Color\n");
+	}
+};
 
 %nodefaultctor Quantity_Array1OfColor;
 class Quantity_Array1OfColor {
@@ -1192,8 +1207,6 @@ class Quantity_Array1OfColor {
 		void Init(const Quantity_Color &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Quantity_Array1OfColor();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1215,6 +1228,11 @@ class Quantity_Array1OfColor {
 		%feature("autodoc", "1");
 		Quantity_Color & operator()(const Standard_Integer Index);
 
+};
+%extend Quantity_Array1OfColor {
+	~Quantity_Array1OfColor() {
+	printf("Call custom destructor for instance of Quantity_Array1OfColor\n");
+	}
 };
 
 %nodefaultctor Quantity_DateDefinitionError;
@@ -1289,8 +1307,6 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 class Quantity_Convert {
 	public:
 		%feature("autodoc", "1");
-		~Quantity_Convert();
-		%feature("autodoc", "1");
 		Quantity_Convert();
 		%feature("autodoc", "1");
 		void SetQuantity(const Quantity_PhysicalQuantity aQuantity, const Quantity_Coefficient aCoef);
@@ -1301,4 +1317,9 @@ class Quantity_Convert {
 		%feature("autodoc", "1");
 		Standard_Boolean IsPhysicalQuantity(const TCollection_AsciiString &aTypeName, TCollection_AsciiString & anEnum);
 
+};
+%extend Quantity_Convert {
+	~Quantity_Convert() {
+	printf("Call custom destructor for instance of Quantity_Convert\n");
+	}
 };

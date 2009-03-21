@@ -313,14 +313,17 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 class CDF {
 	public:
 		%feature("autodoc", "1");
-		~CDF();
-		%feature("autodoc", "1");
 		CDF();
 		%feature("autodoc", "1");
 		void GetLicense(const Standard_Integer anApplicationIdentifier);
 		%feature("autodoc", "1");
 		Standard_Boolean IsAvailable(const Standard_Integer anApplicationIdentifier);
 
+};
+%extend CDF {
+	~CDF() {
+	printf("Call custom destructor for instance of CDF\n");
+	}
 };
 
 %nodefaultctor CDF_Application;
@@ -431,8 +434,6 @@ class CDF_MetaDataDriver : public Standard_Transient {
 class CDF_Timer {
 	public:
 		%feature("autodoc", "1");
-		~CDF_Timer();
-		%feature("autodoc", "1");
 		CDF_Timer();
 		%feature("autodoc", "1");
 		void ShowAndRestart(const char * aMessage);
@@ -441,6 +442,11 @@ class CDF_Timer {
 		%feature("autodoc", "1");
 		Standard_Boolean MustShow();
 
+};
+%extend CDF_Timer {
+	~CDF_Timer() {
+	printf("Call custom destructor for instance of CDF_Timer\n");
+	}
 };
 
 %nodefaultctor CDF_MetaDataDriverError;
@@ -618,8 +624,6 @@ class CDF_DirectoryIterator {
 class CDF_Store {
 	public:
 		%feature("autodoc", "1");
-		~CDF_Store();
-		%feature("autodoc", "1");
 		CDF_Store(const Handle_CDM_Document &aDocument);
 		%feature("autodoc", "1");
 		CDF_TryStoreStatus Check();
@@ -690,4 +694,9 @@ class CDF_Store {
 		%feature("autodoc", "1");
 		Standard_Boolean SetFolder(const Standard_ExtString aFolder);
 
+};
+%extend CDF_Store {
+	~CDF_Store() {
+	printf("Call custom destructor for instance of CDF_Store\n");
+	}
 };

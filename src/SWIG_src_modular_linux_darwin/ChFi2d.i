@@ -104,17 +104,18 @@ enum ChFi2d_ConstructionError {
 class ChFi2d {
 	public:
 		%feature("autodoc", "1");
-		~ChFi2d();
-		%feature("autodoc", "1");
 		ChFi2d();
 
+};
+%extend ChFi2d {
+	~ChFi2d() {
+	printf("Call custom destructor for instance of ChFi2d\n");
+	}
 };
 
 %nodefaultctor ChFi2d_Builder;
 class ChFi2d_Builder {
 	public:
-		%feature("autodoc", "1");
-		~ChFi2d_Builder();
 		%feature("autodoc", "1");
 		ChFi2d_Builder();
 		%feature("autodoc", "1");
@@ -160,4 +161,9 @@ class ChFi2d_Builder {
 		%feature("autodoc", "1");
 		ChFi2d_ConstructionError Status() const;
 
+};
+%extend ChFi2d_Builder {
+	~ChFi2d_Builder() {
+	printf("Call custom destructor for instance of ChFi2d_Builder\n");
+	}
 };

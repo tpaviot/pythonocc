@@ -125,8 +125,6 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 class IntAna_Int3Pln {
 	public:
 		%feature("autodoc", "1");
-		~IntAna_Int3Pln();
-		%feature("autodoc", "1");
 		IntAna_Int3Pln();
 		%feature("autodoc", "1");
 		IntAna_Int3Pln(const gp_Pln &P1, const gp_Pln &P2, const gp_Pln &P3);
@@ -140,12 +138,15 @@ class IntAna_Int3Pln {
 		const gp_Pnt & Value() const;
 
 };
+%extend IntAna_Int3Pln {
+	~IntAna_Int3Pln() {
+	printf("Call custom destructor for instance of IntAna_Int3Pln\n");
+	}
+};
 
 %nodefaultctor IntAna_Quadric;
 class IntAna_Quadric {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_Quadric();
 		%feature("autodoc", "1");
 		IntAna_Quadric();
 		%feature("autodoc", "1");
@@ -170,12 +171,15 @@ class IntAna_Quadric {
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax3 &Axis) const;
 
 };
+%extend IntAna_Quadric {
+	~IntAna_Quadric() {
+	printf("Call custom destructor for instance of IntAna_Quadric\n");
+	}
+};
 
 %nodefaultctor IntAna_QuadQuadGeo;
 class IntAna_QuadQuadGeo {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_QuadQuadGeo();
 		%feature("autodoc", "1");
 		IntAna_QuadQuadGeo();
 		%feature("autodoc", "1");
@@ -242,12 +246,15 @@ class IntAna_QuadQuadGeo {
 		const gp_Pnt & PChar() const;
 
 };
+%extend IntAna_QuadQuadGeo {
+	~IntAna_QuadQuadGeo() {
+	printf("Call custom destructor for instance of IntAna_QuadQuadGeo\n");
+	}
+};
 
 %nodefaultctor IntAna_IntQuadQuad;
 class IntAna_IntQuadQuad {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_IntQuadQuad();
 		%feature("autodoc", "1");
 		IntAna_IntQuadQuad();
 		%feature("autodoc", "1");
@@ -282,12 +289,15 @@ class IntAna_IntQuadQuad {
 		Standard_Integer PreviousCurve(const Standard_Integer I, Standard_Boolean & Opposite) const;
 
 };
+%extend IntAna_IntQuadQuad {
+	~IntAna_IntQuadQuad() {
+	printf("Call custom destructor for instance of IntAna_IntQuadQuad\n");
+	}
+};
 
 %nodefaultctor IntAna_Curve;
 class IntAna_Curve {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_Curve();
 		%feature("autodoc", "1");
 		IntAna_Curve();
 		%feature("autodoc", "1");
@@ -320,12 +330,15 @@ class IntAna_Curve {
 		void SetDomain(const Standard_Real Theta1, const Standard_Real Theta2);
 
 };
+%extend IntAna_Curve {
+	~IntAna_Curve() {
+	printf("Call custom destructor for instance of IntAna_Curve\n");
+	}
+};
 
 %nodefaultctor IntAna_IntConicQuad;
 class IntAna_IntConicQuad {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_IntConicQuad();
 		%feature("autodoc", "1");
 		IntAna_IntConicQuad();
 		%feature("autodoc", "1");
@@ -382,6 +395,11 @@ class IntAna_IntConicQuad {
 		Standard_Real ParamOnConic(const Standard_Integer i) const;
 
 };
+%extend IntAna_IntConicQuad {
+	~IntAna_IntConicQuad() {
+	printf("Call custom destructor for instance of IntAna_IntConicQuad\n");
+	}
+};
 
 %nodefaultctor IntAna_ListOfCurve;
 class IntAna_ListOfCurve {
@@ -394,8 +412,6 @@ class IntAna_ListOfCurve {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntAna_ListOfCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -428,12 +444,15 @@ class IntAna_ListOfCurve {
 		void InsertAfter(IntAna_ListOfCurve & Other, IntAna_ListIteratorOfListOfCurve & It);
 
 };
+%extend IntAna_ListOfCurve {
+	~IntAna_ListOfCurve() {
+	printf("Call custom destructor for instance of IntAna_ListOfCurve\n");
+	}
+};
 
 %nodefaultctor IntAna_ListIteratorOfListOfCurve;
 class IntAna_ListIteratorOfListOfCurve {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_ListIteratorOfListOfCurve();
 		%feature("autodoc", "1");
 		IntAna_ListIteratorOfListOfCurve();
 		%feature("autodoc", "1");
@@ -447,6 +466,11 @@ class IntAna_ListIteratorOfListOfCurve {
 		%feature("autodoc", "1");
 		IntAna_Curve & Value() const;
 
+};
+%extend IntAna_ListIteratorOfListOfCurve {
+	~IntAna_ListIteratorOfListOfCurve() {
+	printf("Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");
+	}
 };
 
 %nodefaultctor IntAna_ListNodeOfListOfCurve;
@@ -475,8 +499,6 @@ class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 class IntAna_IntLinTorus {
 	public:
 		%feature("autodoc", "1");
-		~IntAna_IntLinTorus();
-		%feature("autodoc", "1");
 		IntAna_IntLinTorus();
 		%feature("autodoc", "1");
 		IntAna_IntLinTorus(const gp_Lin &L, const gp_Torus &T);
@@ -493,4 +515,9 @@ class IntAna_IntLinTorus {
 		%feature("autodoc", "1");
 		void ParamOnTorus(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntAna_IntLinTorus {
+	~IntAna_IntLinTorus() {
+	printf("Call custom destructor for instance of IntAna_IntLinTorus\n");
+	}
 };

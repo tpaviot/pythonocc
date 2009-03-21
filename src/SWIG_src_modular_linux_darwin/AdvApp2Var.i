@@ -198,8 +198,6 @@ class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AdvApp2Var_SequenceOfNode();
-		%feature("autodoc", "1");
 		const AdvApp2Var_SequenceOfNode & Assign(const AdvApp2Var_SequenceOfNode &Other);
 		%feature("autodoc", "1");
 		void Append(const AdvApp2Var_Node &T);
@@ -239,12 +237,15 @@ class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AdvApp2Var_SequenceOfNode {
+	~AdvApp2Var_SequenceOfNode() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceOfNode\n");
+	}
+};
 
 %nodefaultctor AdvApp2Var_Network;
 class AdvApp2Var_Network {
 	public:
-		%feature("autodoc", "1");
-		~AdvApp2Var_Network();
 		%feature("autodoc", "1");
 		AdvApp2Var_Network();
 		%feature("autodoc", "1");
@@ -276,6 +277,11 @@ class AdvApp2Var_Network {
 		%feature("autodoc", "1");
 		const AdvApp2Var_Patch & operator()(const Standard_Integer UIndex, const Standard_Integer VIndex) const;
 
+};
+%extend AdvApp2Var_Network {
+	~AdvApp2Var_Network() {
+	printf("Call custom destructor for instance of AdvApp2Var_Network\n");
+	}
 };
 
 %nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfNode;
@@ -440,8 +446,6 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AdvApp2Var_Strip();
-		%feature("autodoc", "1");
 		const AdvApp2Var_Strip & Assign(const AdvApp2Var_Strip &Other);
 		%feature("autodoc", "1");
 		void Append(const AdvApp2Var_Iso &T);
@@ -481,12 +485,15 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AdvApp2Var_Strip {
+	~AdvApp2Var_Strip() {
+	printf("Call custom destructor for instance of AdvApp2Var_Strip\n");
+	}
+};
 
 %nodefaultctor AdvApp2Var_Data;
 class AdvApp2Var_Data {
 	public:
-		%feature("autodoc", "1");
-		~AdvApp2Var_Data();
 		%feature("autodoc", "1");
 		AdvApp2Var_Data();
 		%feature("autodoc", "1");
@@ -512,6 +519,11 @@ class AdvApp2Var_Data {
 		%feature("autodoc", "1");
 		mmapgs2_1_ & Getmmapgs2();
 
+};
+%extend AdvApp2Var_Data {
+	~AdvApp2Var_Data() {
+	printf("Call custom destructor for instance of AdvApp2Var_Data\n");
+	}
 };
 
 %nodefaultctor AdvApp2Var_Context;
@@ -573,8 +585,6 @@ class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AdvApp2Var_SequenceOfPatch();
-		%feature("autodoc", "1");
 		const AdvApp2Var_SequenceOfPatch & Assign(const AdvApp2Var_SequenceOfPatch &Other);
 		%feature("autodoc", "1");
 		void Append(const AdvApp2Var_Patch &T);
@@ -614,6 +624,11 @@ class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AdvApp2Var_SequenceOfPatch {
+	~AdvApp2Var_SequenceOfPatch() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceOfPatch\n");
+	}
+};
 
 %nodefaultctor AdvApp2Var_SequenceOfStrip;
 class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
@@ -622,8 +637,6 @@ class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
 		AdvApp2Var_SequenceOfStrip();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AdvApp2Var_SequenceOfStrip();
 		%feature("autodoc", "1");
 		const AdvApp2Var_SequenceOfStrip & Assign(const AdvApp2Var_SequenceOfStrip &Other);
 		%feature("autodoc", "1");
@@ -663,6 +676,11 @@ class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend AdvApp2Var_SequenceOfStrip {
+	~AdvApp2Var_SequenceOfStrip() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceOfStrip\n");
+	}
 };
 
 %nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfPatch;
@@ -760,8 +778,6 @@ class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
 class AdvApp2Var_Node {
 	public:
 		%feature("autodoc", "1");
-		~AdvApp2Var_Node();
-		%feature("autodoc", "1");
 		AdvApp2Var_Node();
 		%feature("autodoc", "1");
 		AdvApp2Var_Node(const Standard_Integer iu, const Standard_Integer iv);
@@ -785,6 +801,11 @@ class AdvApp2Var_Node {
 		Standard_Real Error(const Standard_Integer iu, const Standard_Integer iv) const;
 
 };
+%extend AdvApp2Var_Node {
+	~AdvApp2Var_Node() {
+	printf("Call custom destructor for instance of AdvApp2Var_Node\n");
+	}
+};
 
 %nodefaultctor AdvApp2Var_Criterion;
 class AdvApp2Var_Criterion {
@@ -802,4 +823,9 @@ class AdvApp2Var_Criterion {
 		%feature("autodoc", "1");
 		AdvApp2Var_CriterionRepartition Repartition() const;
 
+};
+%extend AdvApp2Var_Criterion {
+	~AdvApp2Var_Criterion() {
+	printf("Call custom destructor for instance of AdvApp2Var_Criterion\n");
+	}
 };

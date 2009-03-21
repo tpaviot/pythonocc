@@ -100,31 +100,35 @@ enum DsgPrs_ArrowSide {
 class DsgPrs_SymbPresentation {
 	public:
 		%feature("autodoc", "1");
-		~DsgPrs_SymbPresentation();
-		%feature("autodoc", "1");
 		DsgPrs_SymbPresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &OffsetPoint);
 
+};
+%extend DsgPrs_SymbPresentation {
+	~DsgPrs_SymbPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_SymbPresentation\n");
+	}
 };
 
 %nodefaultctor DsgPrs_FilletRadiusPresentation;
 class DsgPrs_FilletRadiusPresentation {
 	public:
 		%feature("autodoc", "1");
-		~DsgPrs_FilletRadiusPresentation();
-		%feature("autodoc", "1");
 		DsgPrs_FilletRadiusPresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real thevalue, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const gp_Dir &aNormalDir, const gp_Pnt &aBasePnt, const gp_Pnt &aFirstPoint, const gp_Pnt &aSecondPoint, const gp_Pnt &aCenter, const DsgPrs_ArrowSide ArrowPrs, const Standard_Boolean drawRevers, gp_Pnt & DrawPosition, gp_Pnt & EndOfArrow, Handle_Geom_TrimmedCurve & TrimCurve, Standard_Boolean & HasCircle);
 
 };
+%extend DsgPrs_FilletRadiusPresentation {
+	~DsgPrs_FilletRadiusPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_FilletRadiusPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_MidPointPresentation;
 class DsgPrs_MidPointPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_MidPointPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_MidPointPresentation();
 		%feature("autodoc", "1");
@@ -137,36 +141,45 @@ class DsgPrs_MidPointPresentation {
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Elips &anElips, const gp_Pnt &MidPoint, const gp_Pnt &Position, const gp_Pnt &AttachPoint, const gp_Pnt &Point1, const gp_Pnt &Point2, const Standard_Boolean first);
 
 };
+%extend DsgPrs_MidPointPresentation {
+	~DsgPrs_MidPointPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_MidPointPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_ShapeDirPresentation;
 class DsgPrs_ShapeDirPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_ShapeDirPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_ShapeDirPresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &prs, const Handle_Prs3d_Drawer &aDrawer, const TopoDS_Shape &shape, const Standard_Integer mode);
 
 };
+%extend DsgPrs_ShapeDirPresentation {
+	~DsgPrs_ShapeDirPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_ShapeDirPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_ShadedPlanePresentation;
 class DsgPrs_ShadedPlanePresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_ShadedPlanePresentation();
 		%feature("autodoc", "1");
 		DsgPrs_ShadedPlanePresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPt1, const gp_Pnt &aPt2, const gp_Pnt &aPt3);
 
 };
+%extend DsgPrs_ShadedPlanePresentation {
+	~DsgPrs_ShadedPlanePresentation() {
+	printf("Call custom destructor for instance of DsgPrs_ShadedPlanePresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_LengthPresentation;
 class DsgPrs_LengthPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_LengthPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_LengthPresentation();
 		%feature("autodoc", "1");
@@ -181,22 +194,28 @@ class DsgPrs_LengthPresentation {
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &Pt1, const gp_Pnt &Pt2, const DsgPrs_ArrowSide ArrowSide);
 
 };
+%extend DsgPrs_LengthPresentation {
+	~DsgPrs_LengthPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_LengthPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_RadiusPresentation;
 class DsgPrs_RadiusPresentation {
 	public:
 		%feature("autodoc", "1");
-		~DsgPrs_RadiusPresentation();
-		%feature("autodoc", "1");
 		DsgPrs_RadiusPresentation();
 
+};
+%extend DsgPrs_RadiusPresentation {
+	~DsgPrs_RadiusPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_RadiusPresentation\n");
+	}
 };
 
 %nodefaultctor DsgPrs_EqualDistancePresentation;
 class DsgPrs_EqualDistancePresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_EqualDistancePresentation();
 		%feature("autodoc", "1");
 		DsgPrs_EqualDistancePresentation();
 		%feature("autodoc", "1");
@@ -207,24 +226,30 @@ class DsgPrs_EqualDistancePresentation {
 		void AddIntervalBetweenTwoArcs(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Circ &aCircle1, const gp_Circ &aCircle2, const gp_Pnt &aPoint1, const gp_Pnt &aPoint2, const gp_Pnt &aPoint3, const gp_Pnt &aPoint4, const DsgPrs_ArrowSide anArrowSide);
 
 };
+%extend DsgPrs_EqualDistancePresentation {
+	~DsgPrs_EqualDistancePresentation() {
+	printf("Call custom destructor for instance of DsgPrs_EqualDistancePresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_XYZPlanePresentation;
 class DsgPrs_XYZPlanePresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_XYZPlanePresentation();
 		%feature("autodoc", "1");
 		DsgPrs_XYZPlanePresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPt1, const gp_Pnt &aPt2, const gp_Pnt &aPt3);
 
 };
+%extend DsgPrs_XYZPlanePresentation {
+	~DsgPrs_XYZPlanePresentation() {
+	printf("Call custom destructor for instance of DsgPrs_XYZPlanePresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_IdenticPresentation;
 class DsgPrs_IdenticPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_IdenticPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_IdenticPresentation();
 		%feature("autodoc", "1");
@@ -239,12 +264,15 @@ class DsgPrs_IdenticPresentation {
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Elips &anEllipse, const gp_Pnt &aFAttach, const gp_Pnt &aSAttach, const gp_Pnt &aPntOffset, const gp_Pnt &aPntOnElli);
 
 };
+%extend DsgPrs_IdenticPresentation {
+	~DsgPrs_IdenticPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_IdenticPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_DiameterPresentation;
 class DsgPrs_DiameterPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_DiameterPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_DiameterPresentation();
 		%feature("autodoc", "1");
@@ -253,24 +281,30 @@ class DsgPrs_DiameterPresentation {
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint, const gp_Circ &aCircle, const Standard_Real uFirst, const Standard_Real uLast, const DsgPrs_ArrowSide ArrowSide, const Standard_Boolean IsDiamSymbol);
 
 };
+%extend DsgPrs_DiameterPresentation {
+	~DsgPrs_DiameterPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_DiameterPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_FixPresentation;
 class DsgPrs_FixPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_FixPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_FixPresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPntAttach, const gp_Pnt &aPntEnd, const gp_Dir &aNormPln, const Standard_Real aSymbSize);
 
 };
+%extend DsgPrs_FixPresentation {
+	~DsgPrs_FixPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_FixPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_EllipseRadiusPresentation;
 class DsgPrs_EllipseRadiusPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_EllipseRadiusPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_EllipseRadiusPresentation();
 		%feature("autodoc", "1");
@@ -281,24 +315,30 @@ class DsgPrs_EllipseRadiusPresentation {
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real theval, const TCollection_ExtendedString &aText, const Handle_Geom_OffsetCurve &aCurve, const gp_Pnt &AttachmentPoint, const gp_Pnt &anEndOfArrow, const gp_Pnt &aCenter, const Standard_Real uFirst, const Standard_Boolean IsInDomain, const Standard_Boolean IsMaxRadius, const DsgPrs_ArrowSide ArrowSide);
 
 };
+%extend DsgPrs_EllipseRadiusPresentation {
+	~DsgPrs_EllipseRadiusPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_EllipseRadiusPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_DatumPrs;
 class DsgPrs_DatumPrs : public Prs3d_Root {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_DatumPrs();
 		%feature("autodoc", "1");
 		DsgPrs_DatumPrs();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const gp_Ax2 &aDatum, const Handle_Prs3d_Drawer &aDrawer);
 
 };
+%extend DsgPrs_DatumPrs {
+	~DsgPrs_DatumPrs() {
+	printf("Call custom destructor for instance of DsgPrs_DatumPrs\n");
+	}
+};
 
 %nodefaultctor DsgPrs_AnglePresentation;
 class DsgPrs_AnglePresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_AnglePresentation();
 		%feature("autodoc", "1");
 		DsgPrs_AnglePresentation();
 		%feature("autodoc", "1");
@@ -317,36 +357,45 @@ class DsgPrs_AnglePresentation {
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real theval, const gp_Pnt &theCenter, const gp_Pnt &AttachmentPoint1, const gp_Ax1 &theAxe, const DsgPrs_ArrowSide ArrowSide);
 
 };
+%extend DsgPrs_AnglePresentation {
+	~DsgPrs_AnglePresentation() {
+	printf("Call custom destructor for instance of DsgPrs_AnglePresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_TangentPresentation;
 class DsgPrs_TangentPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_TangentPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_TangentPresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &OffsetPoint, const gp_Dir &aDirection, const Standard_Real aLength);
 
 };
+%extend DsgPrs_TangentPresentation {
+	~DsgPrs_TangentPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_TangentPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_DatumTool;
 class DsgPrs_DatumTool {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_DatumTool();
 		%feature("autodoc", "1");
 		DsgPrs_DatumTool();
 		%feature("autodoc", "1");
 		gp_Ax2 Ax2(const gp_Ax2 &aDatum);
 
 };
+%extend DsgPrs_DatumTool {
+	~DsgPrs_DatumTool() {
+	printf("Call custom destructor for instance of DsgPrs_DatumTool\n");
+	}
+};
 
 %nodefaultctor DsgPrs_Chamf2dPresentation;
 class DsgPrs_Chamf2dPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_Chamf2dPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_Chamf2dPresentation();
 		%feature("autodoc", "1");
@@ -355,12 +404,15 @@ class DsgPrs_Chamf2dPresentation {
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPntAttach, const gp_Pnt &aPntEnd, const TCollection_ExtendedString &aText, const DsgPrs_ArrowSide ArrowSide);
 
 };
+%extend DsgPrs_Chamf2dPresentation {
+	~DsgPrs_Chamf2dPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_Chamf2dPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_ParalPresentation;
 class DsgPrs_ParalPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_ParalPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_ParalPresentation();
 		%feature("autodoc", "1");
@@ -369,24 +421,30 @@ class DsgPrs_ParalPresentation {
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Dir &aDirection, const gp_Pnt &OffsetPoint, const DsgPrs_ArrowSide ArrowSide);
 
 };
+%extend DsgPrs_ParalPresentation {
+	~DsgPrs_ParalPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_ParalPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_EqualRadiusPresentation;
 class DsgPrs_EqualRadiusPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_EqualRadiusPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_EqualRadiusPresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &FirstCenter, const gp_Pnt &SecondCenter, const gp_Pnt &FirstPoint, const gp_Pnt &SecondPoint, const Handle_Geom_Plane &Plane);
 
 };
+%extend DsgPrs_EqualRadiusPresentation {
+	~DsgPrs_EqualRadiusPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_EqualRadiusPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_OffsetPresentation;
 class DsgPrs_OffsetPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_OffsetPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_OffsetPresentation();
 		%feature("autodoc", "1");
@@ -395,24 +453,30 @@ class DsgPrs_OffsetPresentation {
 		void AddAxes(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Dir &aDirection, const gp_Dir &aDirection2, const gp_Pnt &OffsetPoint);
 
 };
+%extend DsgPrs_OffsetPresentation {
+	~DsgPrs_OffsetPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_OffsetPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_PerpenPresentation;
 class DsgPrs_PerpenPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_PerpenPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_PerpenPresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &pAx1, const gp_Pnt &pAx2, const gp_Pnt &pnt1, const gp_Pnt &pnt2, const gp_Pnt &OffsetPoint, const Standard_Boolean intOut1, const Standard_Boolean intOut2);
 
 };
+%extend DsgPrs_PerpenPresentation {
+	~DsgPrs_PerpenPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_PerpenPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs;
 class DsgPrs {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs();
 		%feature("autodoc", "1");
 		DsgPrs();
 		%feature("autodoc", "1");
@@ -433,12 +497,15 @@ class DsgPrs {
 		Standard_Real DistanceFromApex(const gp_Elips &elips, const gp_Pnt &Apex, const Standard_Real par);
 
 };
+%extend DsgPrs {
+	~DsgPrs() {
+	printf("Call custom destructor for instance of DsgPrs\n");
+	}
+};
 
 %nodefaultctor DsgPrs_XYZAxisPresentation;
 class DsgPrs_XYZAxisPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_XYZAxisPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_XYZAxisPresentation();
 		%feature("autodoc", "1");
@@ -447,24 +514,30 @@ class DsgPrs_XYZAxisPresentation {
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LineAspect &aLineAspect, const Handle_Prs3d_ArrowAspect &anArrowAspect, const Handle_Prs3d_TextAspect &aTextAspect, const gp_Dir &aDir, const Standard_Real aVal, const char * aText, const gp_Pnt &aPfirst, const gp_Pnt &aPlast);
 
 };
+%extend DsgPrs_XYZAxisPresentation {
+	~DsgPrs_XYZAxisPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_XYZAxisPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_ConcentricPresentation;
 class DsgPrs_ConcentricPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_ConcentricPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_ConcentricPresentation();
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aCenter, const Standard_Real aRadius, const gp_Dir &aNorm, const gp_Pnt &aPoint);
 
 };
+%extend DsgPrs_ConcentricPresentation {
+	~DsgPrs_ConcentricPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_ConcentricPresentation\n");
+	}
+};
 
 %nodefaultctor DsgPrs_SymmetricPresentation;
 class DsgPrs_SymmetricPresentation {
 	public:
-		%feature("autodoc", "1");
-		~DsgPrs_SymmetricPresentation();
 		%feature("autodoc", "1");
 		DsgPrs_SymmetricPresentation();
 		%feature("autodoc", "1");
@@ -474,4 +547,9 @@ class DsgPrs_SymmetricPresentation {
 		%feature("autodoc", "1");
 		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Lin &aAxis, const gp_Pnt &OffsetPoint);
 
+};
+%extend DsgPrs_SymmetricPresentation {
+	~DsgPrs_SymmetricPresentation() {
+	printf("Call custom destructor for instance of DsgPrs_SymmetricPresentation\n");
+	}
 };

@@ -227,8 +227,6 @@ class LProp_SequenceOfCIType : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~LProp_SequenceOfCIType();
-		%feature("autodoc", "1");
 		const LProp_SequenceOfCIType & Assign(const LProp_SequenceOfCIType &Other);
 		%feature("autodoc", "1");
 		void Append(const LProp_CIType &T);
@@ -268,12 +266,15 @@ class LProp_SequenceOfCIType : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend LProp_SequenceOfCIType {
+	~LProp_SequenceOfCIType() {
+	printf("Call custom destructor for instance of LProp_SequenceOfCIType\n");
+	}
+};
 
 %nodefaultctor LProp_CurAndInf;
 class LProp_CurAndInf {
 	public:
-		%feature("autodoc", "1");
-		~LProp_CurAndInf();
 		%feature("autodoc", "1");
 		LProp_CurAndInf();
 		%feature("autodoc", "1");
@@ -292,17 +293,25 @@ class LProp_CurAndInf {
 		LProp_CIType Type(const Standard_Integer N) const;
 
 };
+%extend LProp_CurAndInf {
+	~LProp_CurAndInf() {
+	printf("Call custom destructor for instance of LProp_CurAndInf\n");
+	}
+};
 
 %nodefaultctor LProp_AnalyticCurInf;
 class LProp_AnalyticCurInf {
 	public:
 		%feature("autodoc", "1");
-		~LProp_AnalyticCurInf();
-		%feature("autodoc", "1");
 		LProp_AnalyticCurInf();
 		%feature("autodoc", "1");
 		void Perform(const GeomAbs_CurveType T, const Standard_Real UFirst, const Standard_Real ULast, LProp_CurAndInf & Result);
 
+};
+%extend LProp_AnalyticCurInf {
+	~LProp_AnalyticCurInf() {
+	printf("Call custom destructor for instance of LProp_AnalyticCurInf\n");
+	}
 };
 
 %nodefaultctor LProp_NotDefined;

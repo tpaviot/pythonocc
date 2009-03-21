@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class Geom2dAPI_InterCurveCurve {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dAPI_InterCurveCurve();
-		%feature("autodoc", "1");
 		Geom2dAPI_InterCurveCurve();
 		%feature("autodoc", "1");
 		Geom2dAPI_InterCurveCurve(const Handle_Geom2d_Curve &C1, const Handle_Geom2d_Curve &C2, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-7);
@@ -112,6 +110,11 @@ class Geom2dAPI_InterCurveCurve {
 		%feature("autodoc", "1");
 		const Geom2dInt_GInter & Intersector() const;
 
+};
+%extend Geom2dAPI_InterCurveCurve {
+	~Geom2dAPI_InterCurveCurve() {
+	printf("Call custom destructor for instance of Geom2dAPI_InterCurveCurve\n");
+	}
 };
 
 %nodefaultctor Geom2dAPI_Interpolate;
@@ -143,8 +146,6 @@ class Geom2dAPI_Interpolate {
 class Geom2dAPI_ExtremaCurveCurve {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dAPI_ExtremaCurveCurve();
-		%feature("autodoc", "1");
 		Geom2dAPI_ExtremaCurveCurve(const Handle_Geom2d_Curve &C1, const Handle_Geom2d_Curve &C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
 		%feature("autodoc", "1");
 		Standard_Integer NbExtrema() const;
@@ -164,12 +165,15 @@ class Geom2dAPI_ExtremaCurveCurve {
 		const Extrema_ExtCC2d & Extrema() const;
 
 };
+%extend Geom2dAPI_ExtremaCurveCurve {
+	~Geom2dAPI_ExtremaCurveCurve() {
+	printf("Call custom destructor for instance of Geom2dAPI_ExtremaCurveCurve\n");
+	}
+};
 
 %nodefaultctor Geom2dAPI_ProjectPointOnCurve;
 class Geom2dAPI_ProjectPointOnCurve {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dAPI_ProjectPointOnCurve();
 		%feature("autodoc", "1");
 		Geom2dAPI_ProjectPointOnCurve();
 		%feature("autodoc", "1");
@@ -199,6 +203,11 @@ class Geom2dAPI_ProjectPointOnCurve {
 		%feature("autodoc", "1");
 		const Extrema_ExtPC2d & Extrema() const;
 
+};
+%extend Geom2dAPI_ProjectPointOnCurve {
+	~Geom2dAPI_ProjectPointOnCurve() {
+	printf("Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");
+	}
 };
 
 %nodefaultctor Geom2dAPI_PointsToBSpline;

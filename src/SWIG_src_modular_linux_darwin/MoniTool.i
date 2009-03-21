@@ -602,8 +602,6 @@ class MoniTool_Profile : public MMgt_TShared {
 class MoniTool_Stat {
 	public:
 		%feature("autodoc", "1");
-		~MoniTool_Stat();
-		%feature("autodoc", "1");
 		MoniTool_Stat(const char * title="");
 		%feature("autodoc", "1");
 		MoniTool_Stat(const MoniTool_Stat &other);
@@ -626,6 +624,11 @@ class MoniTool_Stat {
 		%feature("autodoc", "1");
 		Standard_Real Percent(const Standard_Integer fromlev=0) const;
 
+};
+%extend MoniTool_Stat {
+	~MoniTool_Stat() {
+	printf("Call custom destructor for instance of MoniTool_Stat\n");
+	}
 };
 
 %nodefaultctor MoniTool_DataMapOfShapeTransient;
@@ -775,14 +778,17 @@ class MoniTool_Element : public MMgt_TShared {
 class MoniTool_ElemHasher {
 	public:
 		%feature("autodoc", "1");
-		~MoniTool_ElemHasher();
-		%feature("autodoc", "1");
 		MoniTool_ElemHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_MoniTool_Element &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_MoniTool_Element &K1, const Handle_MoniTool_Element &K2);
 
+};
+%extend MoniTool_ElemHasher {
+	~MoniTool_ElemHasher() {
+	printf("Call custom destructor for instance of MoniTool_ElemHasher\n");
+	}
 };
 
 %nodefaultctor MoniTool_DataMapOfTimer;
@@ -1260,14 +1266,17 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 class MoniTool_MTHasher {
 	public:
 		%feature("autodoc", "1");
-		~MoniTool_MTHasher();
-		%feature("autodoc", "1");
 		MoniTool_MTHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const char * Str, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const char * Str1, const char * Str2);
 
+};
+%extend MoniTool_MTHasher {
+	~MoniTool_MTHasher() {
+	printf("Call custom destructor for instance of MoniTool_MTHasher\n");
+	}
 };
 
 %nodefaultctor MoniTool_SequenceOfElement;

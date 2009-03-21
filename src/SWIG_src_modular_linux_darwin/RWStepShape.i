@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepShape_RWFacetedBrep {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWFacetedBrep();
-		%feature("autodoc", "1");
 		RWStepShape_RWFacetedBrep();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_FacetedBrep &ent) const;
@@ -99,12 +97,15 @@ class RWStepShape_RWFacetedBrep {
 		void Share(const Handle_StepShape_FacetedBrep &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWFacetedBrep {
+	~RWStepShape_RWFacetedBrep() {
+	printf("Call custom destructor for instance of RWStepShape_RWFacetedBrep\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWVertexPoint;
 class RWStepShape_RWVertexPoint {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWVertexPoint();
 		%feature("autodoc", "1");
 		RWStepShape_RWVertexPoint();
 		%feature("autodoc", "1");
@@ -115,12 +116,15 @@ class RWStepShape_RWVertexPoint {
 		void Share(const Handle_StepShape_VertexPoint &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWVertexPoint {
+	~RWStepShape_RWVertexPoint() {
+	printf("Call custom destructor for instance of RWStepShape_RWVertexPoint\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWPath;
 class RWStepShape_RWPath {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWPath();
 		%feature("autodoc", "1");
 		RWStepShape_RWPath();
 		%feature("autodoc", "1");
@@ -131,12 +135,15 @@ class RWStepShape_RWPath {
 		void Share(const Handle_StepShape_Path &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWPath {
+	~RWStepShape_RWPath() {
+	printf("Call custom destructor for instance of RWStepShape_RWPath\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWSubface;
 class RWStepShape_RWSubface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSubface();
 		%feature("autodoc", "1");
 		RWStepShape_RWSubface();
 		%feature("autodoc", "1");
@@ -147,12 +154,15 @@ class RWStepShape_RWSubface {
 		void Share(const Handle_StepShape_Subface &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWSubface {
+	~RWStepShape_RWSubface() {
+	printf("Call custom destructor for instance of RWStepShape_RWSubface\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWDimensionalSizeWithPath;
 class RWStepShape_RWDimensionalSizeWithPath {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalSizeWithPath();
 		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalSizeWithPath();
 		%feature("autodoc", "1");
@@ -163,12 +173,15 @@ class RWStepShape_RWDimensionalSizeWithPath {
 		void Share(const Handle_StepShape_DimensionalSizeWithPath &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWDimensionalSizeWithPath {
+	~RWStepShape_RWDimensionalSizeWithPath() {
+	printf("Call custom destructor for instance of RWStepShape_RWDimensionalSizeWithPath\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWConnectedFaceSet;
 class RWStepShape_RWConnectedFaceSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWConnectedFaceSet();
 		%feature("autodoc", "1");
 		RWStepShape_RWConnectedFaceSet();
 		%feature("autodoc", "1");
@@ -179,12 +192,15 @@ class RWStepShape_RWConnectedFaceSet {
 		void Share(const Handle_StepShape_ConnectedFaceSet &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWConnectedFaceSet {
+	~RWStepShape_RWConnectedFaceSet() {
+	printf("Call custom destructor for instance of RWStepShape_RWConnectedFaceSet\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWBoxedHalfSpace;
 class RWStepShape_RWBoxedHalfSpace {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWBoxedHalfSpace();
 		%feature("autodoc", "1");
 		RWStepShape_RWBoxedHalfSpace();
 		%feature("autodoc", "1");
@@ -195,12 +211,15 @@ class RWStepShape_RWBoxedHalfSpace {
 		void Share(const Handle_StepShape_BoxedHalfSpace &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWBoxedHalfSpace {
+	~RWStepShape_RWBoxedHalfSpace() {
+	printf("Call custom destructor for instance of RWStepShape_RWBoxedHalfSpace\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWBooleanResult;
 class RWStepShape_RWBooleanResult {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWBooleanResult();
 		%feature("autodoc", "1");
 		RWStepShape_RWBooleanResult();
 		%feature("autodoc", "1");
@@ -211,12 +230,15 @@ class RWStepShape_RWBooleanResult {
 		void Share(const Handle_StepShape_BooleanResult &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWBooleanResult {
+	~RWStepShape_RWBooleanResult() {
+	printf("Call custom destructor for instance of RWStepShape_RWBooleanResult\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWFaceSurface;
 class RWStepShape_RWFaceSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFaceSurface();
 		%feature("autodoc", "1");
 		RWStepShape_RWFaceSurface();
 		%feature("autodoc", "1");
@@ -227,12 +249,15 @@ class RWStepShape_RWFaceSurface {
 		void Share(const Handle_StepShape_FaceSurface &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWFaceSurface {
+	~RWStepShape_RWFaceSurface() {
+	printf("Call custom destructor for instance of RWStepShape_RWFaceSurface\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWDimensionalCharacteristicRepresentation;
 class RWStepShape_RWDimensionalCharacteristicRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalCharacteristicRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalCharacteristicRepresentation();
 		%feature("autodoc", "1");
@@ -243,12 +268,15 @@ class RWStepShape_RWDimensionalCharacteristicRepresentation {
 		void Share(const Handle_StepShape_DimensionalCharacteristicRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWDimensionalCharacteristicRepresentation {
+	~RWStepShape_RWDimensionalCharacteristicRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWDimensionalCharacteristicRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWPolyLoop;
 class RWStepShape_RWPolyLoop {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWPolyLoop();
 		%feature("autodoc", "1");
 		RWStepShape_RWPolyLoop();
 		%feature("autodoc", "1");
@@ -259,12 +287,15 @@ class RWStepShape_RWPolyLoop {
 		void Share(const Handle_StepShape_PolyLoop &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWPolyLoop {
+	~RWStepShape_RWPolyLoop() {
+	printf("Call custom destructor for instance of RWStepShape_RWPolyLoop\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWOrientedClosedShell;
 class RWStepShape_RWOrientedClosedShell {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedClosedShell();
 		%feature("autodoc", "1");
 		RWStepShape_RWOrientedClosedShell();
 		%feature("autodoc", "1");
@@ -275,12 +306,15 @@ class RWStepShape_RWOrientedClosedShell {
 		void Share(const Handle_StepShape_OrientedClosedShell &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWOrientedClosedShell {
+	~RWStepShape_RWOrientedClosedShell() {
+	printf("Call custom destructor for instance of RWStepShape_RWOrientedClosedShell\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWManifoldSolidBrep;
 class RWStepShape_RWManifoldSolidBrep {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWManifoldSolidBrep();
 		%feature("autodoc", "1");
 		RWStepShape_RWManifoldSolidBrep();
 		%feature("autodoc", "1");
@@ -291,12 +325,15 @@ class RWStepShape_RWManifoldSolidBrep {
 		void Share(const Handle_StepShape_ManifoldSolidBrep &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWManifoldSolidBrep {
+	~RWStepShape_RWManifoldSolidBrep() {
+	printf("Call custom destructor for instance of RWStepShape_RWManifoldSolidBrep\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation;
 class RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation();
 		%feature("autodoc", "1");
@@ -307,12 +344,15 @@ class RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
 		void Share(const Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
+	~RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWEdgeBasedWireframeShapeRepresentation;
 class RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWEdgeBasedWireframeShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWEdgeBasedWireframeShapeRepresentation();
 		%feature("autodoc", "1");
@@ -323,12 +363,15 @@ class RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
 		void Share(const Handle_StepShape_EdgeBasedWireframeShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
+	~RWStepShape_RWEdgeBasedWireframeShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWEdgeBasedWireframeShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWPrecisionQualifier;
 class RWStepShape_RWPrecisionQualifier {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWPrecisionQualifier();
 		%feature("autodoc", "1");
 		RWStepShape_RWPrecisionQualifier();
 		%feature("autodoc", "1");
@@ -337,12 +380,15 @@ class RWStepShape_RWPrecisionQualifier {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_PrecisionQualifier &ent) const;
 
 };
+%extend RWStepShape_RWPrecisionQualifier {
+	~RWStepShape_RWPrecisionQualifier() {
+	printf("Call custom destructor for instance of RWStepShape_RWPrecisionQualifier\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWFaceOuterBound;
 class RWStepShape_RWFaceOuterBound {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFaceOuterBound();
 		%feature("autodoc", "1");
 		RWStepShape_RWFaceOuterBound();
 		%feature("autodoc", "1");
@@ -353,12 +399,15 @@ class RWStepShape_RWFaceOuterBound {
 		void Share(const Handle_StepShape_FaceOuterBound &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWFaceOuterBound {
+	~RWStepShape_RWFaceOuterBound() {
+	printf("Call custom destructor for instance of RWStepShape_RWFaceOuterBound\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWAdvancedBrepShapeRepresentation;
 class RWStepShape_RWAdvancedBrepShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWAdvancedBrepShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWAdvancedBrepShapeRepresentation();
 		%feature("autodoc", "1");
@@ -369,12 +418,15 @@ class RWStepShape_RWAdvancedBrepShapeRepresentation {
 		void Share(const Handle_StepShape_AdvancedBrepShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWAdvancedBrepShapeRepresentation {
+	~RWStepShape_RWAdvancedBrepShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWAdvancedBrepShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWManifoldSurfaceShapeRepresentation;
 class RWStepShape_RWManifoldSurfaceShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWManifoldSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWManifoldSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
@@ -385,12 +437,15 @@ class RWStepShape_RWManifoldSurfaceShapeRepresentation {
 		void Share(const Handle_StepShape_ManifoldSurfaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWManifoldSurfaceShapeRepresentation {
+	~RWStepShape_RWManifoldSurfaceShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWManifoldSurfaceShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWGeometricSet;
 class RWStepShape_RWGeometricSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWGeometricSet();
 		%feature("autodoc", "1");
 		RWStepShape_RWGeometricSet();
 		%feature("autodoc", "1");
@@ -401,12 +456,15 @@ class RWStepShape_RWGeometricSet {
 		void Share(const Handle_StepShape_GeometricSet &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWGeometricSet {
+	~RWStepShape_RWGeometricSet() {
+	printf("Call custom destructor for instance of RWStepShape_RWGeometricSet\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWEdgeBasedWireframeModel;
 class RWStepShape_RWEdgeBasedWireframeModel {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWEdgeBasedWireframeModel();
 		%feature("autodoc", "1");
 		RWStepShape_RWEdgeBasedWireframeModel();
 		%feature("autodoc", "1");
@@ -417,12 +475,15 @@ class RWStepShape_RWEdgeBasedWireframeModel {
 		void Share(const Handle_StepShape_EdgeBasedWireframeModel &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWEdgeBasedWireframeModel {
+	~RWStepShape_RWEdgeBasedWireframeModel() {
+	printf("Call custom destructor for instance of RWStepShape_RWEdgeBasedWireframeModel\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWSolidReplica;
 class RWStepShape_RWSolidReplica {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSolidReplica();
 		%feature("autodoc", "1");
 		RWStepShape_RWSolidReplica();
 		%feature("autodoc", "1");
@@ -433,12 +494,15 @@ class RWStepShape_RWSolidReplica {
 		void Share(const Handle_StepShape_SolidReplica &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWSolidReplica {
+	~RWStepShape_RWSolidReplica() {
+	printf("Call custom destructor for instance of RWStepShape_RWSolidReplica\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWExtrudedAreaSolid;
 class RWStepShape_RWExtrudedAreaSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWExtrudedAreaSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWExtrudedAreaSolid();
 		%feature("autodoc", "1");
@@ -449,12 +513,15 @@ class RWStepShape_RWExtrudedAreaSolid {
 		void Share(const Handle_StepShape_ExtrudedAreaSolid &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWExtrudedAreaSolid {
+	~RWStepShape_RWExtrudedAreaSolid() {
+	printf("Call custom destructor for instance of RWStepShape_RWExtrudedAreaSolid\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWCompoundShapeRepresentation;
 class RWStepShape_RWCompoundShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWCompoundShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWCompoundShapeRepresentation();
 		%feature("autodoc", "1");
@@ -465,12 +532,15 @@ class RWStepShape_RWCompoundShapeRepresentation {
 		void Share(const Handle_StepShape_CompoundShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWCompoundShapeRepresentation {
+	~RWStepShape_RWCompoundShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWCompoundShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWConnectedFaceShapeRepresentation;
 class RWStepShape_RWConnectedFaceShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWConnectedFaceShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWConnectedFaceShapeRepresentation();
 		%feature("autodoc", "1");
@@ -481,12 +551,15 @@ class RWStepShape_RWConnectedFaceShapeRepresentation {
 		void Share(const Handle_StepShape_ConnectedFaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWConnectedFaceShapeRepresentation {
+	~RWStepShape_RWConnectedFaceShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWConnectedFaceShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWSubedge;
 class RWStepShape_RWSubedge {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSubedge();
 		%feature("autodoc", "1");
 		RWStepShape_RWSubedge();
 		%feature("autodoc", "1");
@@ -497,12 +570,15 @@ class RWStepShape_RWSubedge {
 		void Share(const Handle_StepShape_Subedge &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWSubedge {
+	~RWStepShape_RWSubedge() {
+	printf("Call custom destructor for instance of RWStepShape_RWSubedge\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWShapeRepresentation;
 class RWStepShape_RWShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWShapeRepresentation();
 		%feature("autodoc", "1");
@@ -513,12 +589,15 @@ class RWStepShape_RWShapeRepresentation {
 		void Share(const Handle_StepShape_ShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWShapeRepresentation {
+	~RWStepShape_RWShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWMeasureQualification;
 class RWStepShape_RWMeasureQualification {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWMeasureQualification();
 		%feature("autodoc", "1");
 		RWStepShape_RWMeasureQualification();
 		%feature("autodoc", "1");
@@ -529,12 +608,15 @@ class RWStepShape_RWMeasureQualification {
 		void Share(const Handle_StepShape_MeasureQualification &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWMeasureQualification {
+	~RWStepShape_RWMeasureQualification() {
+	printf("Call custom destructor for instance of RWStepShape_RWMeasureQualification\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWBlock;
 class RWStepShape_RWBlock {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWBlock();
 		%feature("autodoc", "1");
 		RWStepShape_RWBlock();
 		%feature("autodoc", "1");
@@ -545,12 +627,15 @@ class RWStepShape_RWBlock {
 		void Share(const Handle_StepShape_Block &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWBlock {
+	~RWStepShape_RWBlock() {
+	printf("Call custom destructor for instance of RWStepShape_RWBlock\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWFacetedBrepShapeRepresentation;
 class RWStepShape_RWFacetedBrepShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFacetedBrepShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWFacetedBrepShapeRepresentation();
 		%feature("autodoc", "1");
@@ -561,12 +646,15 @@ class RWStepShape_RWFacetedBrepShapeRepresentation {
 		void Share(const Handle_StepShape_FacetedBrepShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWFacetedBrepShapeRepresentation {
+	~RWStepShape_RWFacetedBrepShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWFacetedBrepShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWShellBasedSurfaceModel;
 class RWStepShape_RWShellBasedSurfaceModel {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWShellBasedSurfaceModel();
 		%feature("autodoc", "1");
 		RWStepShape_RWShellBasedSurfaceModel();
 		%feature("autodoc", "1");
@@ -577,12 +665,15 @@ class RWStepShape_RWShellBasedSurfaceModel {
 		void Share(const Handle_StepShape_ShellBasedSurfaceModel &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWShellBasedSurfaceModel {
+	~RWStepShape_RWShellBasedSurfaceModel() {
+	printf("Call custom destructor for instance of RWStepShape_RWShellBasedSurfaceModel\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWShapeDimensionRepresentation;
 class RWStepShape_RWShapeDimensionRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWShapeDimensionRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWShapeDimensionRepresentation();
 		%feature("autodoc", "1");
@@ -593,12 +684,15 @@ class RWStepShape_RWShapeDimensionRepresentation {
 		void Share(const Handle_StepShape_ShapeDimensionRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWShapeDimensionRepresentation {
+	~RWStepShape_RWShapeDimensionRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWShapeDimensionRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWToleranceValue;
 class RWStepShape_RWToleranceValue {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWToleranceValue();
 		%feature("autodoc", "1");
 		RWStepShape_RWToleranceValue();
 		%feature("autodoc", "1");
@@ -609,12 +703,15 @@ class RWStepShape_RWToleranceValue {
 		void Share(const Handle_StepShape_ToleranceValue &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWToleranceValue {
+	~RWStepShape_RWToleranceValue() {
+	printf("Call custom destructor for instance of RWStepShape_RWToleranceValue\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWOrientedFace;
 class RWStepShape_RWOrientedFace {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedFace();
 		%feature("autodoc", "1");
 		RWStepShape_RWOrientedFace();
 		%feature("autodoc", "1");
@@ -625,12 +722,15 @@ class RWStepShape_RWOrientedFace {
 		void Share(const Handle_StepShape_OrientedFace &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWOrientedFace {
+	~RWStepShape_RWOrientedFace() {
+	printf("Call custom destructor for instance of RWStepShape_RWOrientedFace\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWEdge;
 class RWStepShape_RWEdge {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWEdge();
 		%feature("autodoc", "1");
 		RWStepShape_RWEdge();
 		%feature("autodoc", "1");
@@ -641,12 +741,15 @@ class RWStepShape_RWEdge {
 		void Share(const Handle_StepShape_Edge &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWEdge {
+	~RWStepShape_RWEdge() {
+	printf("Call custom destructor for instance of RWStepShape_RWEdge\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWFace;
 class RWStepShape_RWFace {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFace();
 		%feature("autodoc", "1");
 		RWStepShape_RWFace();
 		%feature("autodoc", "1");
@@ -657,12 +760,15 @@ class RWStepShape_RWFace {
 		void Share(const Handle_StepShape_Face &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWFace {
+	~RWStepShape_RWFace() {
+	printf("Call custom destructor for instance of RWStepShape_RWFace\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWCsgSolid;
 class RWStepShape_RWCsgSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWCsgSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWCsgSolid();
 		%feature("autodoc", "1");
@@ -673,12 +779,15 @@ class RWStepShape_RWCsgSolid {
 		void Share(const Handle_StepShape_CsgSolid &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWCsgSolid {
+	~RWStepShape_RWCsgSolid() {
+	printf("Call custom destructor for instance of RWStepShape_RWCsgSolid\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWFacetedBrepAndBrepWithVoids;
 class RWStepShape_RWFacetedBrepAndBrepWithVoids {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFacetedBrepAndBrepWithVoids();
 		%feature("autodoc", "1");
 		RWStepShape_RWFacetedBrepAndBrepWithVoids();
 		%feature("autodoc", "1");
@@ -689,12 +798,15 @@ class RWStepShape_RWFacetedBrepAndBrepWithVoids {
 		void Share(const Handle_StepShape_FacetedBrepAndBrepWithVoids &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWFacetedBrepAndBrepWithVoids {
+	~RWStepShape_RWFacetedBrepAndBrepWithVoids() {
+	printf("Call custom destructor for instance of RWStepShape_RWFacetedBrepAndBrepWithVoids\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWClosedShell;
 class RWStepShape_RWClosedShell {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWClosedShell();
 		%feature("autodoc", "1");
 		RWStepShape_RWClosedShell();
 		%feature("autodoc", "1");
@@ -705,12 +817,15 @@ class RWStepShape_RWClosedShell {
 		void Share(const Handle_StepShape_ClosedShell &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWClosedShell {
+	~RWStepShape_RWClosedShell() {
+	printf("Call custom destructor for instance of RWStepShape_RWClosedShell\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWPlusMinusTolerance;
 class RWStepShape_RWPlusMinusTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWPlusMinusTolerance();
 		%feature("autodoc", "1");
 		RWStepShape_RWPlusMinusTolerance();
 		%feature("autodoc", "1");
@@ -721,12 +836,15 @@ class RWStepShape_RWPlusMinusTolerance {
 		void Share(const Handle_StepShape_PlusMinusTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWPlusMinusTolerance {
+	~RWStepShape_RWPlusMinusTolerance() {
+	printf("Call custom destructor for instance of RWStepShape_RWPlusMinusTolerance\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWVertexLoop;
 class RWStepShape_RWVertexLoop {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWVertexLoop();
 		%feature("autodoc", "1");
 		RWStepShape_RWVertexLoop();
 		%feature("autodoc", "1");
@@ -737,12 +855,15 @@ class RWStepShape_RWVertexLoop {
 		void Share(const Handle_StepShape_VertexLoop &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWVertexLoop {
+	~RWStepShape_RWVertexLoop() {
+	printf("Call custom destructor for instance of RWStepShape_RWVertexLoop\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWSweptAreaSolid;
 class RWStepShape_RWSweptAreaSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSweptAreaSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWSweptAreaSolid();
 		%feature("autodoc", "1");
@@ -753,12 +874,15 @@ class RWStepShape_RWSweptAreaSolid {
 		void Share(const Handle_StepShape_SweptAreaSolid &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWSweptAreaSolid {
+	~RWStepShape_RWSweptAreaSolid() {
+	printf("Call custom destructor for instance of RWStepShape_RWSweptAreaSolid\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWOrientedOpenShell;
 class RWStepShape_RWOrientedOpenShell {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedOpenShell();
 		%feature("autodoc", "1");
 		RWStepShape_RWOrientedOpenShell();
 		%feature("autodoc", "1");
@@ -769,12 +893,15 @@ class RWStepShape_RWOrientedOpenShell {
 		void Share(const Handle_StepShape_OrientedOpenShell &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWOrientedOpenShell {
+	~RWStepShape_RWOrientedOpenShell() {
+	printf("Call custom destructor for instance of RWStepShape_RWOrientedOpenShell\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem;
 class RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem();
 		%feature("autodoc", "1");
 		RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem();
 		%feature("autodoc", "1");
@@ -785,12 +912,15 @@ class RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
 		void Share(const Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
+	~RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem() {
+	printf("Call custom destructor for instance of RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWFaceBasedSurfaceModel;
 class RWStepShape_RWFaceBasedSurfaceModel {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFaceBasedSurfaceModel();
 		%feature("autodoc", "1");
 		RWStepShape_RWFaceBasedSurfaceModel();
 		%feature("autodoc", "1");
@@ -801,12 +931,15 @@ class RWStepShape_RWFaceBasedSurfaceModel {
 		void Share(const Handle_StepShape_FaceBasedSurfaceModel &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWFaceBasedSurfaceModel {
+	~RWStepShape_RWFaceBasedSurfaceModel() {
+	printf("Call custom destructor for instance of RWStepShape_RWFaceBasedSurfaceModel\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWQualifiedRepresentationItem;
 class RWStepShape_RWQualifiedRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWQualifiedRepresentationItem();
 		%feature("autodoc", "1");
 		RWStepShape_RWQualifiedRepresentationItem();
 		%feature("autodoc", "1");
@@ -817,12 +950,15 @@ class RWStepShape_RWQualifiedRepresentationItem {
 		void Share(const Handle_StepShape_QualifiedRepresentationItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWQualifiedRepresentationItem {
+	~RWStepShape_RWQualifiedRepresentationItem() {
+	printf("Call custom destructor for instance of RWStepShape_RWQualifiedRepresentationItem\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWOrientedEdge;
 class RWStepShape_RWOrientedEdge {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedEdge();
 		%feature("autodoc", "1");
 		RWStepShape_RWOrientedEdge();
 		%feature("autodoc", "1");
@@ -833,12 +969,15 @@ class RWStepShape_RWOrientedEdge {
 		void Share(const Handle_StepShape_OrientedEdge &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWOrientedEdge {
+	~RWStepShape_RWOrientedEdge() {
+	printf("Call custom destructor for instance of RWStepShape_RWOrientedEdge\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWConnectedEdgeSet;
 class RWStepShape_RWConnectedEdgeSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWConnectedEdgeSet();
 		%feature("autodoc", "1");
 		RWStepShape_RWConnectedEdgeSet();
 		%feature("autodoc", "1");
@@ -849,12 +988,15 @@ class RWStepShape_RWConnectedEdgeSet {
 		void Share(const Handle_StepShape_ConnectedEdgeSet &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWConnectedEdgeSet {
+	~RWStepShape_RWConnectedEdgeSet() {
+	printf("Call custom destructor for instance of RWStepShape_RWConnectedEdgeSet\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWOpenShell;
 class RWStepShape_RWOpenShell {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOpenShell();
 		%feature("autodoc", "1");
 		RWStepShape_RWOpenShell();
 		%feature("autodoc", "1");
@@ -865,12 +1007,15 @@ class RWStepShape_RWOpenShell {
 		void Share(const Handle_StepShape_OpenShell &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWOpenShell {
+	~RWStepShape_RWOpenShell() {
+	printf("Call custom destructor for instance of RWStepShape_RWOpenShell\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWAngularSize;
 class RWStepShape_RWAngularSize {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWAngularSize();
 		%feature("autodoc", "1");
 		RWStepShape_RWAngularSize();
 		%feature("autodoc", "1");
@@ -881,12 +1026,15 @@ class RWStepShape_RWAngularSize {
 		void Share(const Handle_StepShape_AngularSize &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWAngularSize {
+	~RWStepShape_RWAngularSize() {
+	printf("Call custom destructor for instance of RWStepShape_RWAngularSize\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWVertex;
 class RWStepShape_RWVertex {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWVertex();
 		%feature("autodoc", "1");
 		RWStepShape_RWVertex();
 		%feature("autodoc", "1");
@@ -895,12 +1043,15 @@ class RWStepShape_RWVertex {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Vertex &ent) const;
 
 };
+%extend RWStepShape_RWVertex {
+	~RWStepShape_RWVertex() {
+	printf("Call custom destructor for instance of RWStepShape_RWVertex\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWSphere;
 class RWStepShape_RWSphere {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSphere();
 		%feature("autodoc", "1");
 		RWStepShape_RWSphere();
 		%feature("autodoc", "1");
@@ -911,12 +1062,15 @@ class RWStepShape_RWSphere {
 		void Share(const Handle_StepShape_Sphere &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWSphere {
+	~RWStepShape_RWSphere() {
+	printf("Call custom destructor for instance of RWStepShape_RWSphere\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWExtrudedFaceSolid;
 class RWStepShape_RWExtrudedFaceSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWExtrudedFaceSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWExtrudedFaceSolid();
 		%feature("autodoc", "1");
@@ -927,12 +1081,15 @@ class RWStepShape_RWExtrudedFaceSolid {
 		void Share(const Handle_StepShape_ExtrudedFaceSolid &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWExtrudedFaceSolid {
+	~RWStepShape_RWExtrudedFaceSolid() {
+	printf("Call custom destructor for instance of RWStepShape_RWExtrudedFaceSolid\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWCsgShapeRepresentation;
 class RWStepShape_RWCsgShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWCsgShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWCsgShapeRepresentation();
 		%feature("autodoc", "1");
@@ -943,12 +1100,15 @@ class RWStepShape_RWCsgShapeRepresentation {
 		void Share(const Handle_StepShape_CsgShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWCsgShapeRepresentation {
+	~RWStepShape_RWCsgShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWCsgShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWOrientedPath;
 class RWStepShape_RWOrientedPath {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedPath();
 		%feature("autodoc", "1");
 		RWStepShape_RWOrientedPath();
 		%feature("autodoc", "1");
@@ -959,12 +1119,15 @@ class RWStepShape_RWOrientedPath {
 		void Share(const Handle_StepShape_OrientedPath &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWOrientedPath {
+	~RWStepShape_RWOrientedPath() {
+	printf("Call custom destructor for instance of RWStepShape_RWOrientedPath\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWLoopAndPath;
 class RWStepShape_RWLoopAndPath {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWLoopAndPath();
 		%feature("autodoc", "1");
 		RWStepShape_RWLoopAndPath();
 		%feature("autodoc", "1");
@@ -975,12 +1138,15 @@ class RWStepShape_RWLoopAndPath {
 		void Share(const Handle_StepShape_LoopAndPath &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWLoopAndPath {
+	~RWStepShape_RWLoopAndPath() {
+	printf("Call custom destructor for instance of RWStepShape_RWLoopAndPath\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWRevolvedFaceSolid;
 class RWStepShape_RWRevolvedFaceSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWRevolvedFaceSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWRevolvedFaceSolid();
 		%feature("autodoc", "1");
@@ -991,12 +1157,15 @@ class RWStepShape_RWRevolvedFaceSolid {
 		void Share(const Handle_StepShape_RevolvedFaceSolid &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWRevolvedFaceSolid {
+	~RWStepShape_RWRevolvedFaceSolid() {
+	printf("Call custom destructor for instance of RWStepShape_RWRevolvedFaceSolid\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWShapeDefinitionRepresentation;
 class RWStepShape_RWShapeDefinitionRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWShapeDefinitionRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWShapeDefinitionRepresentation();
 		%feature("autodoc", "1");
@@ -1007,12 +1176,15 @@ class RWStepShape_RWShapeDefinitionRepresentation {
 		void Share(const Handle_StepShape_ShapeDefinitionRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWShapeDefinitionRepresentation {
+	~RWStepShape_RWShapeDefinitionRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWShapeDefinitionRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWDimensionalLocation;
 class RWStepShape_RWDimensionalLocation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalLocation();
 		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalLocation();
 		%feature("autodoc", "1");
@@ -1023,12 +1195,15 @@ class RWStepShape_RWDimensionalLocation {
 		void Share(const Handle_StepShape_DimensionalLocation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWDimensionalLocation {
+	~RWStepShape_RWDimensionalLocation() {
+	printf("Call custom destructor for instance of RWStepShape_RWDimensionalLocation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWHalfSpaceSolid;
 class RWStepShape_RWHalfSpaceSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWHalfSpaceSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWHalfSpaceSolid();
 		%feature("autodoc", "1");
@@ -1039,12 +1214,15 @@ class RWStepShape_RWHalfSpaceSolid {
 		void Share(const Handle_StepShape_HalfSpaceSolid &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWHalfSpaceSolid {
+	~RWStepShape_RWHalfSpaceSolid() {
+	printf("Call custom destructor for instance of RWStepShape_RWHalfSpaceSolid\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWTopologicalRepresentationItem;
 class RWStepShape_RWTopologicalRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWTopologicalRepresentationItem();
 		%feature("autodoc", "1");
 		RWStepShape_RWTopologicalRepresentationItem();
 		%feature("autodoc", "1");
@@ -1053,12 +1231,15 @@ class RWStepShape_RWTopologicalRepresentationItem {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_TopologicalRepresentationItem &ent) const;
 
 };
+%extend RWStepShape_RWTopologicalRepresentationItem {
+	~RWStepShape_RWTopologicalRepresentationItem() {
+	printf("Call custom destructor for instance of RWStepShape_RWTopologicalRepresentationItem\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWNonManifoldSurfaceShapeRepresentation;
 class RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWNonManifoldSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWNonManifoldSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
@@ -1069,12 +1250,15 @@ class RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
 		void Share(const Handle_StepShape_NonManifoldSurfaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
+	~RWStepShape_RWNonManifoldSurfaceShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWNonManifoldSurfaceShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWConnectedFaceSubSet;
 class RWStepShape_RWConnectedFaceSubSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWConnectedFaceSubSet();
 		%feature("autodoc", "1");
 		RWStepShape_RWConnectedFaceSubSet();
 		%feature("autodoc", "1");
@@ -1085,12 +1269,15 @@ class RWStepShape_RWConnectedFaceSubSet {
 		void Share(const Handle_StepShape_ConnectedFaceSubSet &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWConnectedFaceSubSet {
+	~RWStepShape_RWConnectedFaceSubSet() {
+	printf("Call custom destructor for instance of RWStepShape_RWConnectedFaceSubSet\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWSolidModel;
 class RWStepShape_RWSolidModel {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSolidModel();
 		%feature("autodoc", "1");
 		RWStepShape_RWSolidModel();
 		%feature("autodoc", "1");
@@ -1099,12 +1286,15 @@ class RWStepShape_RWSolidModel {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_SolidModel &ent) const;
 
 };
+%extend RWStepShape_RWSolidModel {
+	~RWStepShape_RWSolidModel() {
+	printf("Call custom destructor for instance of RWStepShape_RWSolidModel\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation;
 class RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
@@ -1115,12 +1305,15 @@ class RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation {
 		void Share(const Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation {
+	~RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWEdgeLoop;
 class RWStepShape_RWEdgeLoop {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWEdgeLoop();
 		%feature("autodoc", "1");
 		RWStepShape_RWEdgeLoop();
 		%feature("autodoc", "1");
@@ -1133,12 +1326,15 @@ class RWStepShape_RWEdgeLoop {
 		void Check(const Handle_StepShape_EdgeLoop &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
+%extend RWStepShape_RWEdgeLoop {
+	~RWStepShape_RWEdgeLoop() {
+	printf("Call custom destructor for instance of RWStepShape_RWEdgeLoop\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWTypeQualifier;
 class RWStepShape_RWTypeQualifier {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWTypeQualifier();
 		%feature("autodoc", "1");
 		RWStepShape_RWTypeQualifier();
 		%feature("autodoc", "1");
@@ -1147,12 +1343,15 @@ class RWStepShape_RWTypeQualifier {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_TypeQualifier &ent) const;
 
 };
+%extend RWStepShape_RWTypeQualifier {
+	~RWStepShape_RWTypeQualifier() {
+	printf("Call custom destructor for instance of RWStepShape_RWTypeQualifier\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWRightAngularWedge;
 class RWStepShape_RWRightAngularWedge {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWRightAngularWedge();
 		%feature("autodoc", "1");
 		RWStepShape_RWRightAngularWedge();
 		%feature("autodoc", "1");
@@ -1163,12 +1362,15 @@ class RWStepShape_RWRightAngularWedge {
 		void Share(const Handle_StepShape_RightAngularWedge &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWRightAngularWedge {
+	~RWStepShape_RWRightAngularWedge() {
+	printf("Call custom destructor for instance of RWStepShape_RWRightAngularWedge\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWTorus;
 class RWStepShape_RWTorus {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWTorus();
 		%feature("autodoc", "1");
 		RWStepShape_RWTorus();
 		%feature("autodoc", "1");
@@ -1179,12 +1381,15 @@ class RWStepShape_RWTorus {
 		void Share(const Handle_StepShape_Torus &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWTorus {
+	~RWStepShape_RWTorus() {
+	printf("Call custom destructor for instance of RWStepShape_RWTorus\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWLoop;
 class RWStepShape_RWLoop {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWLoop();
 		%feature("autodoc", "1");
 		RWStepShape_RWLoop();
 		%feature("autodoc", "1");
@@ -1193,12 +1398,15 @@ class RWStepShape_RWLoop {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Loop &ent) const;
 
 };
+%extend RWStepShape_RWLoop {
+	~RWStepShape_RWLoop() {
+	printf("Call custom destructor for instance of RWStepShape_RWLoop\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWSweptFaceSolid;
 class RWStepShape_RWSweptFaceSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSweptFaceSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWSweptFaceSolid();
 		%feature("autodoc", "1");
@@ -1209,12 +1417,15 @@ class RWStepShape_RWSweptFaceSolid {
 		void Share(const Handle_StepShape_SweptFaceSolid &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWSweptFaceSolid {
+	~RWStepShape_RWSweptFaceSolid() {
+	printf("Call custom destructor for instance of RWStepShape_RWSweptFaceSolid\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWLimitsAndFits;
 class RWStepShape_RWLimitsAndFits {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWLimitsAndFits();
 		%feature("autodoc", "1");
 		RWStepShape_RWLimitsAndFits();
 		%feature("autodoc", "1");
@@ -1223,12 +1434,15 @@ class RWStepShape_RWLimitsAndFits {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_LimitsAndFits &ent) const;
 
 };
+%extend RWStepShape_RWLimitsAndFits {
+	~RWStepShape_RWLimitsAndFits() {
+	printf("Call custom destructor for instance of RWStepShape_RWLimitsAndFits\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWAngularLocation;
 class RWStepShape_RWAngularLocation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWAngularLocation();
 		%feature("autodoc", "1");
 		RWStepShape_RWAngularLocation();
 		%feature("autodoc", "1");
@@ -1239,12 +1453,15 @@ class RWStepShape_RWAngularLocation {
 		void Share(const Handle_StepShape_AngularLocation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWAngularLocation {
+	~RWStepShape_RWAngularLocation() {
+	printf("Call custom destructor for instance of RWStepShape_RWAngularLocation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWGeometricCurveSet;
 class RWStepShape_RWGeometricCurveSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWGeometricCurveSet();
 		%feature("autodoc", "1");
 		RWStepShape_RWGeometricCurveSet();
 		%feature("autodoc", "1");
@@ -1255,12 +1472,15 @@ class RWStepShape_RWGeometricCurveSet {
 		void Share(const Handle_StepShape_GeometricCurveSet &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWGeometricCurveSet {
+	~RWStepShape_RWGeometricCurveSet() {
+	printf("Call custom destructor for instance of RWStepShape_RWGeometricCurveSet\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWDimensionalLocationWithPath;
 class RWStepShape_RWDimensionalLocationWithPath {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalLocationWithPath();
 		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalLocationWithPath();
 		%feature("autodoc", "1");
@@ -1271,12 +1491,15 @@ class RWStepShape_RWDimensionalLocationWithPath {
 		void Share(const Handle_StepShape_DimensionalLocationWithPath &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWDimensionalLocationWithPath {
+	~RWStepShape_RWDimensionalLocationWithPath() {
+	printf("Call custom destructor for instance of RWStepShape_RWDimensionalLocationWithPath\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWEdgeCurve;
 class RWStepShape_RWEdgeCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWEdgeCurve();
 		%feature("autodoc", "1");
 		RWStepShape_RWEdgeCurve();
 		%feature("autodoc", "1");
@@ -1289,12 +1512,15 @@ class RWStepShape_RWEdgeCurve {
 		void Check(const Handle_StepShape_EdgeCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
+%extend RWStepShape_RWEdgeCurve {
+	~RWStepShape_RWEdgeCurve() {
+	printf("Call custom destructor for instance of RWStepShape_RWEdgeCurve\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWTransitionalShapeRepresentation;
 class RWStepShape_RWTransitionalShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWTransitionalShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWTransitionalShapeRepresentation();
 		%feature("autodoc", "1");
@@ -1305,12 +1531,15 @@ class RWStepShape_RWTransitionalShapeRepresentation {
 		void Share(const Handle_StepShape_TransitionalShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWTransitionalShapeRepresentation {
+	~RWStepShape_RWTransitionalShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWTransitionalShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWBoxDomain;
 class RWStepShape_RWBoxDomain {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWBoxDomain();
 		%feature("autodoc", "1");
 		RWStepShape_RWBoxDomain();
 		%feature("autodoc", "1");
@@ -1321,12 +1550,15 @@ class RWStepShape_RWBoxDomain {
 		void Share(const Handle_StepShape_BoxDomain &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWBoxDomain {
+	~RWStepShape_RWBoxDomain() {
+	printf("Call custom destructor for instance of RWStepShape_RWBoxDomain\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWRightCircularCone;
 class RWStepShape_RWRightCircularCone {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWRightCircularCone();
 		%feature("autodoc", "1");
 		RWStepShape_RWRightCircularCone();
 		%feature("autodoc", "1");
@@ -1337,12 +1569,15 @@ class RWStepShape_RWRightCircularCone {
 		void Share(const Handle_StepShape_RightCircularCone &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWRightCircularCone {
+	~RWStepShape_RWRightCircularCone() {
+	printf("Call custom destructor for instance of RWStepShape_RWRightCircularCone\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWRevolvedAreaSolid;
 class RWStepShape_RWRevolvedAreaSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWRevolvedAreaSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWRevolvedAreaSolid();
 		%feature("autodoc", "1");
@@ -1353,12 +1588,15 @@ class RWStepShape_RWRevolvedAreaSolid {
 		void Share(const Handle_StepShape_RevolvedAreaSolid &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWRevolvedAreaSolid {
+	~RWStepShape_RWRevolvedAreaSolid() {
+	printf("Call custom destructor for instance of RWStepShape_RWRevolvedAreaSolid\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWDimensionalSize;
 class RWStepShape_RWDimensionalSize {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalSize();
 		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalSize();
 		%feature("autodoc", "1");
@@ -1369,12 +1607,15 @@ class RWStepShape_RWDimensionalSize {
 		void Share(const Handle_StepShape_DimensionalSize &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWDimensionalSize {
+	~RWStepShape_RWDimensionalSize() {
+	printf("Call custom destructor for instance of RWStepShape_RWDimensionalSize\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWFaceBound;
 class RWStepShape_RWFaceBound {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFaceBound();
 		%feature("autodoc", "1");
 		RWStepShape_RWFaceBound();
 		%feature("autodoc", "1");
@@ -1387,12 +1628,15 @@ class RWStepShape_RWFaceBound {
 		void Check(const Handle_StepShape_FaceBound &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
+%extend RWStepShape_RWFaceBound {
+	~RWStepShape_RWFaceBound() {
+	printf("Call custom destructor for instance of RWStepShape_RWFaceBound\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWContextDependentShapeRepresentation;
 class RWStepShape_RWContextDependentShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWContextDependentShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWContextDependentShapeRepresentation();
 		%feature("autodoc", "1");
@@ -1403,12 +1647,15 @@ class RWStepShape_RWContextDependentShapeRepresentation {
 		void Share(const Handle_StepShape_ContextDependentShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWContextDependentShapeRepresentation {
+	~RWStepShape_RWContextDependentShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWContextDependentShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation;
 class RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation();
 		%feature("autodoc", "1");
@@ -1419,12 +1666,15 @@ class RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
 		void Share(const Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
+	~RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWAdvancedFace;
 class RWStepShape_RWAdvancedFace {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWAdvancedFace();
 		%feature("autodoc", "1");
 		RWStepShape_RWAdvancedFace();
 		%feature("autodoc", "1");
@@ -1435,12 +1685,15 @@ class RWStepShape_RWAdvancedFace {
 		void Share(const Handle_StepShape_AdvancedFace &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWAdvancedFace {
+	~RWStepShape_RWAdvancedFace() {
+	printf("Call custom destructor for instance of RWStepShape_RWAdvancedFace\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWSeamEdge;
 class RWStepShape_RWSeamEdge {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSeamEdge();
 		%feature("autodoc", "1");
 		RWStepShape_RWSeamEdge();
 		%feature("autodoc", "1");
@@ -1451,12 +1704,15 @@ class RWStepShape_RWSeamEdge {
 		void Share(const Handle_StepShape_SeamEdge &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWSeamEdge {
+	~RWStepShape_RWSeamEdge() {
+	printf("Call custom destructor for instance of RWStepShape_RWSeamEdge\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWBrepWithVoids;
 class RWStepShape_RWBrepWithVoids {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWBrepWithVoids();
 		%feature("autodoc", "1");
 		RWStepShape_RWBrepWithVoids();
 		%feature("autodoc", "1");
@@ -1469,12 +1725,15 @@ class RWStepShape_RWBrepWithVoids {
 		void Check(const Handle_StepShape_BrepWithVoids &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
+%extend RWStepShape_RWBrepWithVoids {
+	~RWStepShape_RWBrepWithVoids() {
+	printf("Call custom destructor for instance of RWStepShape_RWBrepWithVoids\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWShapeRepresentationWithParameters;
 class RWStepShape_RWShapeRepresentationWithParameters {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWShapeRepresentationWithParameters();
 		%feature("autodoc", "1");
 		RWStepShape_RWShapeRepresentationWithParameters();
 		%feature("autodoc", "1");
@@ -1485,12 +1744,15 @@ class RWStepShape_RWShapeRepresentationWithParameters {
 		void Share(const Handle_StepShape_ShapeRepresentationWithParameters &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWShapeRepresentationWithParameters {
+	~RWStepShape_RWShapeRepresentationWithParameters() {
+	printf("Call custom destructor for instance of RWStepShape_RWShapeRepresentationWithParameters\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWRightCircularCylinder;
 class RWStepShape_RWRightCircularCylinder {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWRightCircularCylinder();
 		%feature("autodoc", "1");
 		RWStepShape_RWRightCircularCylinder();
 		%feature("autodoc", "1");
@@ -1501,12 +1763,15 @@ class RWStepShape_RWRightCircularCylinder {
 		void Share(const Handle_StepShape_RightCircularCylinder &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepShape_RWRightCircularCylinder {
+	~RWStepShape_RWRightCircularCylinder() {
+	printf("Call custom destructor for instance of RWStepShape_RWRightCircularCylinder\n");
+	}
+};
 
 %nodefaultctor RWStepShape_RWPointRepresentation;
 class RWStepShape_RWPointRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWPointRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWPointRepresentation();
 		%feature("autodoc", "1");
@@ -1516,4 +1781,9 @@ class RWStepShape_RWPointRepresentation {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepShape_PointRepresentation &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepShape_RWPointRepresentation {
+	~RWStepShape_RWPointRepresentation() {
+	printf("Call custom destructor for instance of RWStepShape_RWPointRepresentation\n");
+	}
 };

@@ -1111,6 +1111,11 @@ class Standard_MMgrRoot {
 		virtual		void SetReentrant(Standard_Boolean );
 
 };
+%extend Standard_MMgrRoot {
+	~Standard_MMgrRoot() {
+	printf("Call custom destructor for instance of Standard_MMgrRoot\n");
+	}
+};
 
 %nodefaultctor Standard_MMgrRaw;
 class Standard_MMgrRaw : public Standard_MMgrRoot {
@@ -1123,9 +1128,12 @@ class Standard_MMgrRaw : public Standard_MMgrRoot {
 		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
 		%feature("autodoc", "1");
 		virtual		void Free(Standard_Address & arg0);
-		%feature("autodoc", "1");
-		virtual		~Standard_MMgrRaw();
 
+};
+%extend Standard_MMgrRaw {
+	~Standard_MMgrRaw() {
+	printf("Call custom destructor for instance of Standard_MMgrRaw\n");
+	}
 };
 
 %nodefaultctor Standard_NoMoreObject;
@@ -1268,8 +1276,6 @@ class Standard_MMgrOpt : public Standard_MMgrRoot {
 		%feature("autodoc", "1");
 		Standard_MMgrOpt(const Standard_Boolean aClear=1, const Standard_Boolean aMMap=1, const Standard_Size aCellSize=200, const Standard_Integer aNbPages=10000, const Standard_Size aThreshold=40000, const Standard_Boolean isReentrant=0);
 		%feature("autodoc", "1");
-		virtual		~Standard_MMgrOpt();
-		%feature("autodoc", "1");
 		virtual		Standard_Address Allocate(const Standard_Size aSize);
 		%feature("autodoc", "1");
 		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
@@ -1280,6 +1286,11 @@ class Standard_MMgrOpt : public Standard_MMgrRoot {
 		%feature("autodoc", "1");
 		virtual		void SetReentrant(Standard_Boolean );
 
+};
+%extend Standard_MMgrOpt {
+	~Standard_MMgrOpt() {
+	printf("Call custom destructor for instance of Standard_MMgrOpt\n");
+	}
 };
 
 %nodefaultctor Standard_TypeMismatch;
@@ -1318,8 +1329,6 @@ class Standard_Storable {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~Standard_Storable();
-		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_Storable &Other) const;
@@ -1328,6 +1337,11 @@ class Standard_Storable {
 		%feature("autodoc", "1");
 		virtual		void ShallowDump(Standard_OStream & S) const;
 
+};
+%extend Standard_Storable {
+	~Standard_Storable() {
+	printf("Call custom destructor for instance of Standard_Storable\n");
+	}
 };
 
 %nodefaultctor Standard_DimensionMismatch;
@@ -1420,6 +1434,11 @@ class Standard_ErrorHandlerCallback {
 		%feature("autodoc", "1");
 		virtual		void DestroyCallback();
 
+};
+%extend Standard_ErrorHandlerCallback {
+	~Standard_ErrorHandlerCallback() {
+	printf("Call custom destructor for instance of Standard_ErrorHandlerCallback\n");
+	}
 };
 
 %nodefaultctor Standard_NegativeValue;
@@ -1675,8 +1694,6 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 class Standard {
 	public:
 		%feature("autodoc", "1");
-		~Standard();
-		%feature("autodoc", "1");
 		Standard();
 		%feature("autodoc", "1");
 		Standard_Address Allocate(const Standard_Size aSize);
@@ -1691,6 +1708,11 @@ class Standard {
 		%feature("autodoc", "1");
 		void SetReentrant(const Standard_Boolean isReentrant);
 
+};
+%extend Standard {
+	~Standard() {
+	printf("Call custom destructor for instance of Standard\n");
+	}
 };
 
 %nodefaultctor Standard_Underflow;
@@ -1781,8 +1803,6 @@ class Standard_NullObject : public Standard_DomainError {
 class Standard_GUID {
 	public:
 		%feature("autodoc", "1");
-		~Standard_GUID();
-		%feature("autodoc", "1");
 		Standard_GUID();
 		%feature("autodoc", "1");
 		Standard_GUID(const char * aGuid);
@@ -1861,6 +1881,11 @@ class Standard_GUID {
 		%feature("autodoc", "1");
 		void _CSFDB_SetStandard_GUIDmy8b6(const Standard_Byte p);
 
+};
+%extend Standard_GUID {
+	~Standard_GUID() {
+	printf("Call custom destructor for instance of Standard_GUID\n");
+	}
 };
 
 %nodefaultctor Standard_ErrorHandler;
@@ -1956,12 +1981,15 @@ class Standard_Mutex : public Standard_ErrorHandlerCallback {
 		%feature("autodoc", "1");
 		Standard_Mutex();
 		%feature("autodoc", "1");
-		virtual		~Standard_Mutex();
-		%feature("autodoc", "1");
 		void Lock();
 		%feature("autodoc", "1");
 		Standard_Boolean TryLock();
 		%feature("autodoc", "1");
 		void Unlock();
 
+};
+%extend Standard_Mutex {
+	~Standard_Mutex() {
+	printf("Call custom destructor for instance of Standard_Mutex\n");
+	}
 };

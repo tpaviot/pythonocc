@@ -2083,12 +2083,15 @@ class Dynamic_SequenceOfClasses : public MMgt_TShared {
 class Dynamic {
 	public:
 		%feature("autodoc", "1");
-		~Dynamic();
-		%feature("autodoc", "1");
 		Dynamic();
 		%feature("autodoc", "1");
 		Dynamic_ModeEnum Mode(const char * amode);
 
+};
+%extend Dynamic {
+	~Dynamic() {
+	printf("Call custom destructor for instance of Dynamic\n");
+	}
 };
 
 %nodefaultctor Dynamic_DynamicDerivedClass;

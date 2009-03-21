@@ -186,12 +186,15 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 class XmlMFunction {
 	public:
 		%feature("autodoc", "1");
-		~XmlMFunction();
-		%feature("autodoc", "1");
 		XmlMFunction();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
+};
+%extend XmlMFunction {
+	~XmlMFunction() {
+	printf("Call custom destructor for instance of XmlMFunction\n");
+	}
 };
 
 %nodefaultctor XmlMFunction_GraphNodeDriver;

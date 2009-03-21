@@ -571,8 +571,6 @@ class ShapeCustom_Surface {
 class ShapeCustom {
 	public:
 		%feature("autodoc", "1");
-		~ShapeCustom();
-		%feature("autodoc", "1");
 		ShapeCustom();
 		%feature("autodoc", "1");
 		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & context, BRepTools_Modifier & MD);
@@ -581,6 +579,11 @@ class ShapeCustom {
 		%feature("autodoc", "1");
 		TopoDS_Shape ScaleShape(const TopoDS_Shape &S, const Standard_Real scale);
 
+};
+%extend ShapeCustom {
+	~ShapeCustom() {
+	printf("Call custom destructor for instance of ShapeCustom\n");
+	}
 };
 
 %nodefaultctor ShapeCustom_DirectModification;

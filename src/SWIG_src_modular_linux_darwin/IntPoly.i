@@ -188,8 +188,6 @@ class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntPoly_SequenceOfSequenceOfPnt2d();
-		%feature("autodoc", "1");
 		const IntPoly_SequenceOfSequenceOfPnt2d & Assign(const IntPoly_SequenceOfSequenceOfPnt2d &Other);
 		%feature("autodoc", "1");
 		void Append(const TColgp_SequenceOfPnt2d &T);
@@ -229,12 +227,15 @@ class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntPoly_SequenceOfSequenceOfPnt2d {
+	~IntPoly_SequenceOfSequenceOfPnt2d() {
+	printf("Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt2d\n");
+	}
+};
 
 %nodefaultctor IntPoly_PlaneSection;
 class IntPoly_PlaneSection {
 	public:
-		%feature("autodoc", "1");
-		~IntPoly_PlaneSection();
 		%feature("autodoc", "1");
 		IntPoly_PlaneSection();
 		%feature("autodoc", "1");
@@ -258,6 +259,11 @@ class IntPoly_PlaneSection {
 		%feature("autodoc", "1");
 		TopoDS_Edge Edge(const Standard_Integer Index);
 
+};
+%extend IntPoly_PlaneSection {
+	~IntPoly_PlaneSection() {
+	printf("Call custom destructor for instance of IntPoly_PlaneSection\n");
+	}
 };
 
 %nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt;
@@ -290,8 +296,6 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 class IntPoly_ShapeSection {
 	public:
 		%feature("autodoc", "1");
-		~IntPoly_ShapeSection();
-		%feature("autodoc", "1");
 		IntPoly_ShapeSection();
 		%feature("autodoc", "1");
 		IntPoly_ShapeSection(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
@@ -323,12 +327,15 @@ class IntPoly_ShapeSection {
 		TopoDS_Edge Edge(const Standard_Integer Index);
 
 };
+%extend IntPoly_ShapeSection {
+	~IntPoly_ShapeSection() {
+	printf("Call custom destructor for instance of IntPoly_ShapeSection\n");
+	}
+};
 
 %nodefaultctor IntPoly_PntHasher;
 class IntPoly_PntHasher {
 	public:
-		%feature("autodoc", "1");
-		~IntPoly_PntHasher();
 		%feature("autodoc", "1");
 		IntPoly_PntHasher();
 		%feature("autodoc", "1");
@@ -336,6 +343,11 @@ class IntPoly_PntHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
 
+};
+%extend IntPoly_PntHasher {
+	~IntPoly_PntHasher() {
+	printf("Call custom destructor for instance of IntPoly_PntHasher\n");
+	}
 };
 
 %nodefaultctor IntPoly_SequenceOfSequenceOfPnt;
@@ -345,8 +357,6 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 		IntPoly_SequenceOfSequenceOfPnt();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntPoly_SequenceOfSequenceOfPnt();
 		%feature("autodoc", "1");
 		const IntPoly_SequenceOfSequenceOfPnt & Assign(const IntPoly_SequenceOfSequenceOfPnt &Other);
 		%feature("autodoc", "1");
@@ -387,6 +397,11 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntPoly_SequenceOfSequenceOfPnt {
+	~IntPoly_SequenceOfSequenceOfPnt() {
+	printf("Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt\n");
+	}
+};
 
 %nodefaultctor IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
 class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNode {
@@ -422,8 +437,6 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntPoly_IndexedMapOfPnt2d();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const gp_Pnt2d &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const gp_Pnt2d &K);
@@ -438,6 +451,11 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const gp_Pnt2d &K) const;
 
+};
+%extend IntPoly_IndexedMapOfPnt2d {
+	~IntPoly_IndexedMapOfPnt2d() {
+	printf("Call custom destructor for instance of IntPoly_IndexedMapOfPnt2d\n");
+	}
 };
 
 %nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
@@ -500,8 +518,6 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntPoly_IndexedMapOfPnt();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const gp_Pnt &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const gp_Pnt &K);
@@ -517,12 +533,15 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const gp_Pnt &K) const;
 
 };
+%extend IntPoly_IndexedMapOfPnt {
+	~IntPoly_IndexedMapOfPnt() {
+	printf("Call custom destructor for instance of IntPoly_IndexedMapOfPnt\n");
+	}
+};
 
 %nodefaultctor IntPoly_Pnt2dHasher;
 class IntPoly_Pnt2dHasher {
 	public:
-		%feature("autodoc", "1");
-		~IntPoly_Pnt2dHasher();
 		%feature("autodoc", "1");
 		IntPoly_Pnt2dHasher();
 		%feature("autodoc", "1");
@@ -530,4 +549,9 @@ class IntPoly_Pnt2dHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
 
+};
+%extend IntPoly_Pnt2dHasher {
+	~IntPoly_Pnt2dHasher() {
+	printf("Call custom destructor for instance of IntPoly_Pnt2dHasher\n");
+	}
 };

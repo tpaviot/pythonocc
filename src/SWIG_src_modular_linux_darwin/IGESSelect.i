@@ -1940,14 +1940,17 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 class IGESSelect {
 	public:
 		%feature("autodoc", "1");
-		~IGESSelect();
-		%feature("autodoc", "1");
 		IGESSelect();
 		%feature("autodoc", "1");
 		void Run();
 		%feature("autodoc", "1");
 		Standard_Integer WhatIges(const Handle_IGESData_IGESEntity &ent, const Interface_Graph &G, Handle_IGESData_IGESEntity & sup, Standard_Integer & index);
 
+};
+%extend IGESSelect {
+	~IGESSelect() {
+	printf("Call custom destructor for instance of IGESSelect\n");
+	}
 };
 
 %nodefaultctor IGESSelect_AutoCorrect;

@@ -116,8 +116,6 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 class XmlObjMgt {
 	public:
 		%feature("autodoc", "1");
-		~XmlObjMgt();
-		%feature("autodoc", "1");
 		XmlObjMgt();
 		%feature("autodoc", "1");
 		const XmlObjMgt_DOMString & IdString();
@@ -145,12 +143,15 @@ class XmlObjMgt {
 		Standard_Boolean GetReal(const XmlObjMgt_DOMString &theString, Standard_Real &OutValue);
 
 };
+%extend XmlObjMgt {
+	~XmlObjMgt() {
+	printf("Call custom destructor for instance of XmlObjMgt\n");
+	}
+};
 
 %nodefaultctor XmlObjMgt_GP;
 class XmlObjMgt_GP {
 	public:
-		%feature("autodoc", "1");
-		~XmlObjMgt_GP();
 		%feature("autodoc", "1");
 		XmlObjMgt_GP();
 		%feature("autodoc", "1");
@@ -166,6 +167,11 @@ class XmlObjMgt_GP {
 		%feature("autodoc", "1");
 		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_XYZ & T);
 
+};
+%extend XmlObjMgt_GP {
+	~XmlObjMgt_GP() {
+	printf("Call custom destructor for instance of XmlObjMgt_GP\n");
+	}
 };
 
 %nodefaultctor XmlObjMgt_DataMapIteratorOfRRelocationTable;
@@ -217,8 +223,6 @@ class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 class XmlObjMgt_Persistent {
 	public:
 		%feature("autodoc", "1");
-		~XmlObjMgt_Persistent();
-		%feature("autodoc", "1");
 		XmlObjMgt_Persistent();
 		%feature("autodoc", "1");
 		XmlObjMgt_Persistent(const XmlObjMgt_Element &theElement);
@@ -235,6 +239,11 @@ class XmlObjMgt_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer Id() const;
 
+};
+%extend XmlObjMgt_Persistent {
+	~XmlObjMgt_Persistent() {
+	printf("Call custom destructor for instance of XmlObjMgt_Persistent\n");
+	}
 };
 
 %nodefaultctor XmlObjMgt_RRelocationTable;

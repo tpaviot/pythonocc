@@ -216,8 +216,6 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~HLRTopoBRep_MapOfShapeListOfVData();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const HLRTopoBRep_ListOfVData &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -233,6 +231,11 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 		HLRTopoBRep_ListOfVData & operator()(const TopoDS_Shape &K);
 
 };
+%extend HLRTopoBRep_MapOfShapeListOfVData {
+	~HLRTopoBRep_MapOfShapeListOfVData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_MapOfShapeListOfVData\n");
+	}
+};
 
 %nodefaultctor HLRTopoBRep_ListOfVData;
 class HLRTopoBRep_ListOfVData {
@@ -245,8 +248,6 @@ class HLRTopoBRep_ListOfVData {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~HLRTopoBRep_ListOfVData();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -279,12 +280,15 @@ class HLRTopoBRep_ListOfVData {
 		void InsertAfter(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
 
 };
+%extend HLRTopoBRep_ListOfVData {
+	~HLRTopoBRep_ListOfVData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_ListOfVData\n");
+	}
+};
 
 %nodefaultctor HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData;
 class HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData();
 		%feature("autodoc", "1");
 		HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData();
 		%feature("autodoc", "1");
@@ -296,6 +300,11 @@ class HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData : public TCollection_B
 		%feature("autodoc", "1");
 		const HLRTopoBRep_FaceData & Value() const;
 
+};
+%extend HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData {
+	~HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData\n");
+	}
 };
 
 %nodefaultctor HLRTopoBRep_OutLiner;
@@ -337,8 +346,6 @@ class HLRTopoBRep_OutLiner : public MMgt_TShared {
 %nodefaultctor HLRTopoBRep_Data;
 class HLRTopoBRep_Data {
 	public:
-		%feature("autodoc", "1");
-		~HLRTopoBRep_Data();
 		%feature("autodoc", "1");
 		HLRTopoBRep_Data();
 		%feature("autodoc", "1");
@@ -413,12 +420,15 @@ class HLRTopoBRep_Data {
 		void Append(const TopoDS_Vertex &V, const Standard_Real P);
 
 };
+%extend HLRTopoBRep_Data {
+	~HLRTopoBRep_Data() {
+	printf("Call custom destructor for instance of HLRTopoBRep_Data\n");
+	}
+};
 
 %nodefaultctor HLRTopoBRep_FaceData;
 class HLRTopoBRep_FaceData {
 	public:
-		%feature("autodoc", "1");
-		~HLRTopoBRep_FaceData();
 		%feature("autodoc", "1");
 		HLRTopoBRep_FaceData();
 		%feature("autodoc", "1");
@@ -434,6 +444,11 @@ class HLRTopoBRep_FaceData {
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & AddIsoL();
 
+};
+%extend HLRTopoBRep_FaceData {
+	~HLRTopoBRep_FaceData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_FaceData\n");
+	}
 };
 
 %nodefaultctor HLRTopoBRep_ListNodeOfListOfVData;
@@ -462,8 +477,6 @@ class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
 class HLRTopoBRep_VData {
 	public:
 		%feature("autodoc", "1");
-		~HLRTopoBRep_VData();
-		%feature("autodoc", "1");
 		HLRTopoBRep_VData();
 		%feature("autodoc", "1");
 		HLRTopoBRep_VData(const Standard_Real P, const TopoDS_Shape &V);
@@ -473,12 +486,15 @@ class HLRTopoBRep_VData {
 		const TopoDS_Shape & Vertex() const;
 
 };
+%extend HLRTopoBRep_VData {
+	~HLRTopoBRep_VData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_VData\n");
+	}
+};
 
 %nodefaultctor HLRTopoBRep_ListIteratorOfListOfVData;
 class HLRTopoBRep_ListIteratorOfListOfVData {
 	public:
-		%feature("autodoc", "1");
-		~HLRTopoBRep_ListIteratorOfListOfVData();
 		%feature("autodoc", "1");
 		HLRTopoBRep_ListIteratorOfListOfVData();
 		%feature("autodoc", "1");
@@ -493,12 +509,15 @@ class HLRTopoBRep_ListIteratorOfListOfVData {
 		HLRTopoBRep_VData & Value() const;
 
 };
+%extend HLRTopoBRep_ListIteratorOfListOfVData {
+	~HLRTopoBRep_ListIteratorOfListOfVData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_ListIteratorOfListOfVData\n");
+	}
+};
 
 %nodefaultctor HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData;
 class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData();
 		%feature("autodoc", "1");
 		HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData();
 		%feature("autodoc", "1");
@@ -510,6 +529,11 @@ class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_Ba
 		%feature("autodoc", "1");
 		const HLRTopoBRep_ListOfVData & Value() const;
 
+};
+%extend HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData {
+	~HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData\n");
+	}
 };
 
 %nodefaultctor HLRTopoBRep_DataMapOfShapeFaceData;
@@ -523,8 +547,6 @@ class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~HLRTopoBRep_DataMapOfShapeFaceData();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const HLRTopoBRep_FaceData &I);
 		%feature("autodoc", "1");
@@ -541,12 +563,15 @@ class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
 		HLRTopoBRep_FaceData & operator()(const TopoDS_Shape &K);
 
 };
+%extend HLRTopoBRep_DataMapOfShapeFaceData {
+	~HLRTopoBRep_DataMapOfShapeFaceData() {
+	printf("Call custom destructor for instance of HLRTopoBRep_DataMapOfShapeFaceData\n");
+	}
+};
 
 %nodefaultctor HLRTopoBRep_FaceIsoLiner;
 class HLRTopoBRep_FaceIsoLiner {
 	public:
-		%feature("autodoc", "1");
-		~HLRTopoBRep_FaceIsoLiner();
 		%feature("autodoc", "1");
 		HLRTopoBRep_FaceIsoLiner();
 		%feature("autodoc", "1");
@@ -556,6 +581,11 @@ class HLRTopoBRep_FaceIsoLiner {
 		%feature("autodoc", "1");
 		void MakeIsoLine(const TopoDS_Face &F, const Handle_Geom2d_Line &Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
 
+};
+%extend HLRTopoBRep_FaceIsoLiner {
+	~HLRTopoBRep_FaceIsoLiner() {
+	printf("Call custom destructor for instance of HLRTopoBRep_FaceIsoLiner\n");
+	}
 };
 
 %nodefaultctor HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData;
@@ -586,10 +616,13 @@ class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNod
 class HLRTopoBRep_DSFiller {
 	public:
 		%feature("autodoc", "1");
-		~HLRTopoBRep_DSFiller();
-		%feature("autodoc", "1");
 		HLRTopoBRep_DSFiller();
 		%feature("autodoc", "1");
 		void Insert(const TopoDS_Shape &S, Contap_Contour & FO, HLRTopoBRep_Data & DS, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
 
+};
+%extend HLRTopoBRep_DSFiller {
+	~HLRTopoBRep_DSFiller() {
+	printf("Call custom destructor for instance of HLRTopoBRep_DSFiller\n");
+	}
 };

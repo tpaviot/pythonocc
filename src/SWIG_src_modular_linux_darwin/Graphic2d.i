@@ -1763,8 +1763,6 @@ class Graphic2d_Array1OfVertex {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic2d_Array1OfVertex();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Graphic2d_Array1OfVertex & Assign(const Graphic2d_Array1OfVertex &Other);
@@ -1785,6 +1783,11 @@ class Graphic2d_Array1OfVertex {
 		%feature("autodoc", "1");
 		Graphic2d_Vertex & operator()(const Standard_Integer Index);
 
+};
+%extend Graphic2d_Array1OfVertex {
+	~Graphic2d_Array1OfVertex() {
+	printf("Call custom destructor for instance of Graphic2d_Array1OfVertex\n");
+	}
 };
 
 %nodefaultctor Graphic2d_ImageFile;
@@ -2290,8 +2293,6 @@ class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Graphic2d_SequenceOfVertex();
-		%feature("autodoc", "1");
 		const Graphic2d_SequenceOfVertex & Assign(const Graphic2d_SequenceOfVertex &Other);
 		%feature("autodoc", "1");
 		void Append(const Graphic2d_Vertex &T);
@@ -2330,6 +2331,11 @@ class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Graphic2d_SequenceOfVertex {
+	~Graphic2d_SequenceOfVertex() {
+	printf("Call custom destructor for instance of Graphic2d_SequenceOfVertex\n");
+	}
 };
 
 %nodefaultctor Graphic2d_Marker;
@@ -2412,8 +2418,6 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 class Graphic2d_Vertex {
 	public:
 		%feature("autodoc", "1");
-		~Graphic2d_Vertex();
-		%feature("autodoc", "1");
 		Graphic2d_Vertex();
 		%feature("autodoc", "1");
 		Graphic2d_Vertex(const Standard_Real AX, const Standard_Real AY);
@@ -2436,6 +2440,11 @@ class Graphic2d_Vertex {
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Graphic2d_Vertex &AV1, const Graphic2d_Vertex &AV2);
 
+};
+%extend Graphic2d_Vertex {
+	~Graphic2d_Vertex() {
+	printf("Call custom destructor for instance of Graphic2d_Vertex\n");
+	}
 };
 
 %nodefaultctor Graphic2d_HidingGraphicObject;
@@ -2852,6 +2861,11 @@ class Graphic2d_CBitFields8 {
 		%feature("autodoc", "1");
 		Graphic2d_CBitFields8();
 
+};
+%extend Graphic2d_CBitFields8 {
+	~Graphic2d_CBitFields8() {
+	printf("Call custom destructor for instance of Graphic2d_CBitFields8\n");
+	}
 };
 
 %nodefaultctor Graphic2d_FramedText;

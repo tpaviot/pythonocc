@@ -137,8 +137,6 @@ class ShapeConstruct {
 class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
 	public:
 		%feature("autodoc", "1");
-		~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d();
-		%feature("autodoc", "1");
 		ShapeConstruct_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
 		void AddCurve(const TColgp_Array1OfPnt2d &Poles);
@@ -156,12 +154,15 @@ class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
 };
+%extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+	~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d() {
+	printf("Call custom destructor for instance of ShapeConstruct_CompBezierCurves2dToBSplineCurve2d\n");
+	}
+};
 
 %nodefaultctor ShapeConstruct_CompBezierCurvesToBSplineCurve;
 class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~ShapeConstruct_CompBezierCurvesToBSplineCurve();
 		%feature("autodoc", "1");
 		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
@@ -179,6 +180,11 @@ class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 		%feature("autodoc", "1");
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
+};
+%extend ShapeConstruct_CompBezierCurvesToBSplineCurve {
+	~ShapeConstruct_CompBezierCurvesToBSplineCurve() {
+	printf("Call custom destructor for instance of ShapeConstruct_CompBezierCurvesToBSplineCurve\n");
+	}
 };
 
 %nodefaultctor ShapeConstruct_Curve;
@@ -219,9 +225,12 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 		virtual		void Build();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeConstruct_MakeTriangulation();
 
+};
+%extend ShapeConstruct_MakeTriangulation {
+	~ShapeConstruct_MakeTriangulation() {
+	printf("Call custom destructor for instance of ShapeConstruct_MakeTriangulation\n");
+	}
 };
 
 %nodefaultctor ShapeConstruct_ProjectCurveOnSurface;

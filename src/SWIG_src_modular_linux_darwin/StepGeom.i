@@ -3305,8 +3305,6 @@ class StepGeom_Array1OfTrimmingSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepGeom_Array1OfTrimmingSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepGeom_Array1OfTrimmingSelect & Assign(const StepGeom_Array1OfTrimmingSelect &Other);
@@ -3327,6 +3325,11 @@ class StepGeom_Array1OfTrimmingSelect {
 		%feature("autodoc", "1");
 		StepGeom_TrimmingSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepGeom_Array1OfTrimmingSelect {
+	~StepGeom_Array1OfTrimmingSelect() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfTrimmingSelect\n");
+	}
 };
 
 %nodefaultctor StepGeom_Array1OfBoundaryCurve;
@@ -5586,8 +5589,6 @@ class StepGeom_Array1OfSurfaceBoundary {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepGeom_Array1OfSurfaceBoundary();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepGeom_Array1OfSurfaceBoundary & Assign(const StepGeom_Array1OfSurfaceBoundary &Other);
@@ -5608,6 +5609,11 @@ class StepGeom_Array1OfSurfaceBoundary {
 		%feature("autodoc", "1");
 		StepGeom_SurfaceBoundary & operator()(const Standard_Integer Index);
 
+};
+%extend StepGeom_Array1OfSurfaceBoundary {
+	~StepGeom_Array1OfSurfaceBoundary() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfSurfaceBoundary\n");
+	}
 };
 
 %nodefaultctor StepGeom_UniformCurve;
@@ -5861,8 +5867,6 @@ class StepGeom_Array1OfPcurveOrSurface {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepGeom_Array1OfPcurveOrSurface();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepGeom_Array1OfPcurveOrSurface & Assign(const StepGeom_Array1OfPcurveOrSurface &Other);
@@ -5883,6 +5887,11 @@ class StepGeom_Array1OfPcurveOrSurface {
 		%feature("autodoc", "1");
 		StepGeom_PcurveOrSurface & operator()(const Standard_Integer Index);
 
+};
+%extend StepGeom_Array1OfPcurveOrSurface {
+	~StepGeom_Array1OfPcurveOrSurface() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfPcurveOrSurface\n");
+	}
 };
 
 %nodefaultctor StepGeom_CartesianTransformationOperator3d;

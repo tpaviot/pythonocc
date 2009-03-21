@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class Sweep_NumShapeTool {
 	public:
 		%feature("autodoc", "1");
-		~Sweep_NumShapeTool();
-		%feature("autodoc", "1");
 		Sweep_NumShapeTool(const Sweep_NumShape &aShape);
 		%feature("autodoc", "1");
 		Standard_Integer NbShapes() const;
@@ -111,12 +109,15 @@ class Sweep_NumShapeTool {
 		Sweep_NumShape LastVertex() const;
 
 };
+%extend Sweep_NumShapeTool {
+	~Sweep_NumShapeTool() {
+	printf("Call custom destructor for instance of Sweep_NumShapeTool\n");
+	}
+};
 
 %nodefaultctor Sweep_NumShape;
 class Sweep_NumShape {
 	public:
-		%feature("autodoc", "1");
-		~Sweep_NumShape();
 		%feature("autodoc", "1");
 		Sweep_NumShape();
 		%feature("autodoc", "1");
@@ -137,12 +138,15 @@ class Sweep_NumShape {
 		TopAbs_Orientation Orientation() const;
 
 };
+%extend Sweep_NumShape {
+	~Sweep_NumShape() {
+	printf("Call custom destructor for instance of Sweep_NumShape\n");
+	}
+};
 
 %nodefaultctor Sweep_NumShapeIterator;
 class Sweep_NumShapeIterator {
 	public:
-		%feature("autodoc", "1");
-		~Sweep_NumShapeIterator();
 		%feature("autodoc", "1");
 		Sweep_NumShapeIterator();
 		%feature("autodoc", "1");
@@ -156,4 +160,9 @@ class Sweep_NumShapeIterator {
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation() const;
 
+};
+%extend Sweep_NumShapeIterator {
+	~Sweep_NumShapeIterator() {
+	printf("Call custom destructor for instance of Sweep_NumShapeIterator\n");
+	}
 };

@@ -538,8 +538,6 @@ class PCDM_Reader : public Standard_Transient {
 class PCDM_Reference {
 	public:
 		%feature("autodoc", "1");
-		~PCDM_Reference();
-		%feature("autodoc", "1");
 		PCDM_Reference();
 		%feature("autodoc", "1");
 		PCDM_Reference(const Standard_Integer aReferenceIdentifier, const TCollection_ExtendedString &aFileName, const Standard_Integer aDocumentVersion);
@@ -550,6 +548,11 @@ class PCDM_Reference {
 		%feature("autodoc", "1");
 		Standard_Integer DocumentVersion() const;
 
+};
+%extend PCDM_Reference {
+	~PCDM_Reference() {
+	printf("Call custom destructor for instance of PCDM_Reference\n");
+	}
 };
 
 %nodefaultctor PCDM;
@@ -630,8 +633,6 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~PCDM_SequenceOfReference();
-		%feature("autodoc", "1");
 		const PCDM_SequenceOfReference & Assign(const PCDM_SequenceOfReference &Other);
 		%feature("autodoc", "1");
 		void Append(const PCDM_Reference &T);
@@ -670,6 +671,11 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend PCDM_SequenceOfReference {
+	~PCDM_SequenceOfReference() {
+	printf("Call custom destructor for instance of PCDM_SequenceOfReference\n");
+	}
 };
 
 %nodefaultctor PCDM_RetrievalDriver;

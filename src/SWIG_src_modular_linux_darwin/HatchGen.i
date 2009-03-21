@@ -206,12 +206,15 @@ class HatchGen_IntersectionPoint {
 		virtual		void Dump(const Standard_Integer Index=0) const;
 
 };
+%extend HatchGen_IntersectionPoint {
+	~HatchGen_IntersectionPoint() {
+	printf("Call custom destructor for instance of HatchGen_IntersectionPoint\n");
+	}
+};
 
 %nodefaultctor HatchGen_PointOnElement;
 class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 	public:
-		%feature("autodoc", "1");
-		~HatchGen_PointOnElement();
 		%feature("autodoc", "1");
 		HatchGen_PointOnElement();
 		%feature("autodoc", "1");
@@ -228,6 +231,11 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		Standard_Boolean IsDifferent(const HatchGen_PointOnElement &Point, const Standard_Real Confusion) const;
 
 };
+%extend HatchGen_PointOnElement {
+	~HatchGen_PointOnElement() {
+	printf("Call custom destructor for instance of HatchGen_PointOnElement\n");
+	}
+};
 
 %nodefaultctor HatchGen_PointsOnHatching;
 class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
@@ -236,8 +244,6 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 		HatchGen_PointsOnHatching();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~HatchGen_PointsOnHatching();
 		%feature("autodoc", "1");
 		const HatchGen_PointsOnHatching & Assign(const HatchGen_PointsOnHatching &Other);
 		%feature("autodoc", "1");
@@ -278,12 +284,15 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend HatchGen_PointsOnHatching {
+	~HatchGen_PointsOnHatching() {
+	printf("Call custom destructor for instance of HatchGen_PointsOnHatching\n");
+	}
+};
 
 %nodefaultctor HatchGen_Domain;
 class HatchGen_Domain {
 	public:
-		%feature("autodoc", "1");
-		~HatchGen_Domain();
 		%feature("autodoc", "1");
 		HatchGen_Domain();
 		%feature("autodoc", "1");
@@ -314,6 +323,11 @@ class HatchGen_Domain {
 		void Dump(const Standard_Integer Index=0) const;
 
 };
+%extend HatchGen_Domain {
+	~HatchGen_Domain() {
+	printf("Call custom destructor for instance of HatchGen_Domain\n");
+	}
+};
 
 %nodefaultctor HatchGen_PointOnHatching;
 class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
@@ -326,8 +340,6 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		HatchGen_PointOnHatching(const IntRes2d_IntersectionPoint &Point);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~HatchGen_PointOnHatching();
 		%feature("autodoc", "1");
 		void AddPoint(const HatchGen_PointOnElement &Point, const Standard_Real Confusion);
 		%feature("autodoc", "1");
@@ -348,6 +360,11 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		virtual		void Dump(const Standard_Integer Index=0) const;
 
 };
+%extend HatchGen_PointOnHatching {
+	~HatchGen_PointOnHatching() {
+	printf("Call custom destructor for instance of HatchGen_PointOnHatching\n");
+	}
+};
 
 %nodefaultctor HatchGen_PointsOnElement;
 class HatchGen_PointsOnElement : public TCollection_BaseSequence {
@@ -356,8 +373,6 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 		HatchGen_PointsOnElement();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~HatchGen_PointsOnElement();
 		%feature("autodoc", "1");
 		const HatchGen_PointsOnElement & Assign(const HatchGen_PointsOnElement &Other);
 		%feature("autodoc", "1");
@@ -397,6 +412,11 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend HatchGen_PointsOnElement {
+	~HatchGen_PointsOnElement() {
+	printf("Call custom destructor for instance of HatchGen_PointsOnElement\n");
+	}
 };
 
 %nodefaultctor HatchGen_SequenceNodeOfDomains;
@@ -473,8 +493,6 @@ class HatchGen_Domains : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~HatchGen_Domains();
-		%feature("autodoc", "1");
 		const HatchGen_Domains & Assign(const HatchGen_Domains &Other);
 		%feature("autodoc", "1");
 		void Append(const HatchGen_Domain &T);
@@ -513,4 +531,9 @@ class HatchGen_Domains : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend HatchGen_Domains {
+	~HatchGen_Domains() {
+	printf("Call custom destructor for instance of HatchGen_Domains\n");
+	}
 };

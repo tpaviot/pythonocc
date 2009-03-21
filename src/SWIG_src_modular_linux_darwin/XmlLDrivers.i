@@ -265,8 +265,6 @@ class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~XmlLDrivers_SequenceOfNamespaceDef();
-		%feature("autodoc", "1");
 		const XmlLDrivers_SequenceOfNamespaceDef & Assign(const XmlLDrivers_SequenceOfNamespaceDef &Other);
 		%feature("autodoc", "1");
 		void Append(const XmlLDrivers_NamespaceDef &T);
@@ -306,12 +304,15 @@ class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend XmlLDrivers_SequenceOfNamespaceDef {
+	~XmlLDrivers_SequenceOfNamespaceDef() {
+	printf("Call custom destructor for instance of XmlLDrivers_SequenceOfNamespaceDef\n");
+	}
+};
 
 %nodefaultctor XmlLDrivers_NamespaceDef;
 class XmlLDrivers_NamespaceDef {
 	public:
-		%feature("autodoc", "1");
-		~XmlLDrivers_NamespaceDef();
 		%feature("autodoc", "1");
 		XmlLDrivers_NamespaceDef();
 		%feature("autodoc", "1");
@@ -321,4 +322,9 @@ class XmlLDrivers_NamespaceDef {
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & URI() const;
 
+};
+%extend XmlLDrivers_NamespaceDef {
+	~XmlLDrivers_NamespaceDef() {
+	printf("Call custom destructor for instance of XmlLDrivers_NamespaceDef\n");
+	}
 };

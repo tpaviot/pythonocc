@@ -117,19 +117,20 @@ class GeomLib_CheckBSplineCurve {
 class GeomLib_DenominatorMultiplier {
 	public:
 		%feature("autodoc", "1");
-		~GeomLib_DenominatorMultiplier();
-		%feature("autodoc", "1");
 		GeomLib_DenominatorMultiplier(const Handle_Geom_BSplineSurface &Surface, const TColStd_Array1OfReal &KnotVector);
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Real UParameter, const Standard_Real VParameter) const;
 
 };
+%extend GeomLib_DenominatorMultiplier {
+	~GeomLib_DenominatorMultiplier() {
+	printf("Call custom destructor for instance of GeomLib_DenominatorMultiplier\n");
+	}
+};
 
 %nodefaultctor GeomLib_Tool;
 class GeomLib_Tool {
 	public:
-		%feature("autodoc", "1");
-		~GeomLib_Tool();
 		%feature("autodoc", "1");
 		GeomLib_Tool();
 		%feature("autodoc", "1");
@@ -140,17 +141,25 @@ class GeomLib_Tool {
 		Standard_Boolean Parameter(const Handle_Geom2d_Curve &Curve, const gp_Pnt2d &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
 
 };
+%extend GeomLib_Tool {
+	~GeomLib_Tool() {
+	printf("Call custom destructor for instance of GeomLib_Tool\n");
+	}
+};
 
 %nodefaultctor GeomLib_LogSample;
 class GeomLib_LogSample : public math_FunctionSample {
 	public:
 		%feature("autodoc", "1");
-		~GeomLib_LogSample();
-		%feature("autodoc", "1");
 		GeomLib_LogSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
 
+};
+%extend GeomLib_LogSample {
+	~GeomLib_LogSample() {
+	printf("Call custom destructor for instance of GeomLib_LogSample\n");
+	}
 };
 
 %nodefaultctor GeomLib_Interpolate;
@@ -176,14 +185,17 @@ class GeomLib_Interpolate {
 class GeomLib_IsPlanarSurface {
 	public:
 		%feature("autodoc", "1");
-		~GeomLib_IsPlanarSurface();
-		%feature("autodoc", "1");
 		GeomLib_IsPlanarSurface(const Handle_Geom_Surface &S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
 		%feature("autodoc", "1");
 		Standard_Boolean IsPlanar() const;
 		%feature("autodoc", "1");
 		const gp_Pln & Plan() const;
 
+};
+%extend GeomLib_IsPlanarSurface {
+	~GeomLib_IsPlanarSurface() {
+	printf("Call custom destructor for instance of GeomLib_IsPlanarSurface\n");
+	}
 };
 
 %nodefaultctor GeomLib_PolyFunc;
@@ -197,9 +209,12 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~GeomLib_PolyFunc();
 
+};
+%extend GeomLib_PolyFunc {
+	~GeomLib_PolyFunc() {
+	printf("Call custom destructor for instance of GeomLib_PolyFunc\n");
+	}
 };
 
 %nodefaultctor GeomLib;
@@ -290,8 +305,6 @@ class GeomLib_Array1OfMat {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~GeomLib_Array1OfMat();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const GeomLib_Array1OfMat & Assign(const GeomLib_Array1OfMat &Other);
@@ -312,6 +325,11 @@ class GeomLib_Array1OfMat {
 		%feature("autodoc", "1");
 		gp_Mat & operator()(const Standard_Integer Index);
 
+};
+%extend GeomLib_Array1OfMat {
+	~GeomLib_Array1OfMat() {
+	printf("Call custom destructor for instance of GeomLib_Array1OfMat\n");
+	}
 };
 
 %nodefaultctor GeomLib_Check2dBSplineCurve;

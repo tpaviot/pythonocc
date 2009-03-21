@@ -4199,8 +4199,6 @@ class StepShape_Array1OfValueQualifier {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfValueQualifier();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfValueQualifier & Assign(const StepShape_Array1OfValueQualifier &Other);
@@ -4221,6 +4219,11 @@ class StepShape_Array1OfValueQualifier {
 		%feature("autodoc", "1");
 		StepShape_ValueQualifier & operator()(const Standard_Integer Index);
 
+};
+%extend StepShape_Array1OfValueQualifier {
+	~StepShape_Array1OfValueQualifier() {
+	printf("Call custom destructor for instance of StepShape_Array1OfValueQualifier\n");
+	}
 };
 
 %nodefaultctor StepShape_Array1OfOrientedClosedShell;
@@ -4418,8 +4421,6 @@ class StepShape_Array1OfShell {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfShell();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfShell & Assign(const StepShape_Array1OfShell &Other);
@@ -4440,6 +4441,11 @@ class StepShape_Array1OfShell {
 		%feature("autodoc", "1");
 		StepShape_Shell & operator()(const Standard_Integer Index);
 
+};
+%extend StepShape_Array1OfShell {
+	~StepShape_Array1OfShell() {
+	printf("Call custom destructor for instance of StepShape_Array1OfShell\n");
+	}
 };
 
 %nodefaultctor StepShape_Array1OfOrientedEdge;
@@ -5991,8 +5997,6 @@ class StepShape_Array1OfGeometricSetSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfGeometricSetSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfGeometricSetSelect & Assign(const StepShape_Array1OfGeometricSetSelect &Other);
@@ -6013,6 +6017,11 @@ class StepShape_Array1OfGeometricSetSelect {
 		%feature("autodoc", "1");
 		StepShape_GeometricSetSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepShape_Array1OfGeometricSetSelect {
+	~StepShape_Array1OfGeometricSetSelect() {
+	printf("Call custom destructor for instance of StepShape_Array1OfGeometricSetSelect\n");
+	}
 };
 
 %nodefaultctor StepShape_BoxDomain;

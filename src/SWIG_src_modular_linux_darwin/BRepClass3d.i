@@ -112,8 +112,6 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepClass3d_DataMapIteratorOfMapOfInter();
-		%feature("autodoc", "1");
 		BRepClass3d_DataMapIteratorOfMapOfInter();
 		%feature("autodoc", "1");
 		BRepClass3d_DataMapIteratorOfMapOfInter(const BRepClass3d_MapOfInter &aMap);
@@ -125,12 +123,15 @@ class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapItera
 		const Standard_Address & Value() const;
 
 };
+%extend BRepClass3d_DataMapIteratorOfMapOfInter {
+	~BRepClass3d_DataMapIteratorOfMapOfInter() {
+	printf("Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");
+	}
+};
 
 %nodefaultctor BRepClass3d_SClassifier;
 class BRepClass3d_SClassifier {
 	public:
-		%feature("autodoc", "1");
-		~BRepClass3d_SClassifier();
 		%feature("autodoc", "1");
 		BRepClass3d_SClassifier();
 		%feature("autodoc", "1");
@@ -149,6 +150,11 @@ class BRepClass3d_SClassifier {
 		TopoDS_Face Face() const;
 
 };
+%extend BRepClass3d_SClassifier {
+	~BRepClass3d_SClassifier() {
+	printf("Call custom destructor for instance of BRepClass3d_SClassifier\n");
+	}
+};
 
 %nodefaultctor BRepClass3d_SolidExplorer;
 class BRepClass3d_SolidExplorer {
@@ -161,8 +167,6 @@ class BRepClass3d_SolidExplorer {
 		BRepClass3d_SolidExplorer(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~BRepClass3d_SolidExplorer();
 		%feature("autodoc", "1");
 		void InitShape(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
@@ -217,6 +221,11 @@ class BRepClass3d_SolidExplorer {
 		void Destroy();
 
 };
+%extend BRepClass3d_SolidExplorer {
+	~BRepClass3d_SolidExplorer() {
+	printf("Call custom destructor for instance of BRepClass3d_SolidExplorer\n");
+	}
+};
 
 %nodefaultctor BRepClass3d_SolidClassifier;
 class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
@@ -235,9 +244,12 @@ class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 		void PerformInfinitePoint(const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BRepClass3d_SolidClassifier();
 
+};
+%extend BRepClass3d_SolidClassifier {
+	~BRepClass3d_SolidClassifier() {
+	printf("Call custom destructor for instance of BRepClass3d_SolidClassifier\n");
+	}
 };
 
 %nodefaultctor BRepClass3d_DataMapNodeOfMapOfInter;
@@ -268,8 +280,6 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 class BRepClass3d_SolidPassiveClassifier {
 	public:
 		%feature("autodoc", "1");
-		~BRepClass3d_SolidPassiveClassifier();
-		%feature("autodoc", "1");
 		BRepClass3d_SolidPassiveClassifier();
 		%feature("autodoc", "1");
 		void Reset(const gp_Lin &L, const Standard_Real P, const Standard_Real Tol);
@@ -285,6 +295,11 @@ class BRepClass3d_SolidPassiveClassifier {
 		TopAbs_State State() const;
 
 };
+%extend BRepClass3d_SolidPassiveClassifier {
+	~BRepClass3d_SolidPassiveClassifier() {
+	printf("Call custom destructor for instance of BRepClass3d_SolidPassiveClassifier\n");
+	}
+};
 
 %nodefaultctor BRepClass3d_MapOfInter;
 class BRepClass3d_MapOfInter : public TCollection_BasicMap {
@@ -297,8 +312,6 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepClass3d_MapOfInter();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Address &I);
 		%feature("autodoc", "1");
@@ -315,12 +328,15 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 		Standard_Address & operator()(const TopoDS_Shape &K);
 
 };
+%extend BRepClass3d_MapOfInter {
+	~BRepClass3d_MapOfInter() {
+	printf("Call custom destructor for instance of BRepClass3d_MapOfInter\n");
+	}
+};
 
 %nodefaultctor BRepClass3d_Intersector3d;
 class BRepClass3d_Intersector3d {
 	public:
-		%feature("autodoc", "1");
-		~BRepClass3d_Intersector3d();
 		%feature("autodoc", "1");
 		BRepClass3d_Intersector3d();
 		%feature("autodoc", "1");
@@ -344,4 +360,9 @@ class BRepClass3d_Intersector3d {
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
 
+};
+%extend BRepClass3d_Intersector3d {
+	~BRepClass3d_Intersector3d() {
+	printf("Call custom destructor for instance of BRepClass3d_Intersector3d\n");
+	}
 };

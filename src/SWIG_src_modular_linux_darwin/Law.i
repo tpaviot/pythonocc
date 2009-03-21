@@ -481,8 +481,6 @@ class Law_Composite : public Law_Function {
 class Law_BSplineKnotSplitting {
 	public:
 		%feature("autodoc", "1");
-		~Law_BSplineKnotSplitting();
-		%feature("autodoc", "1");
 		Law_BSplineKnotSplitting(const Handle_Law_BSpline &BasisLaw, const Standard_Integer ContinuityRange);
 		%feature("autodoc", "1");
 		Standard_Integer NbSplits() const;
@@ -491,6 +489,11 @@ class Law_BSplineKnotSplitting {
 		%feature("autodoc", "1");
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
+};
+%extend Law_BSplineKnotSplitting {
+	~Law_BSplineKnotSplitting() {
+	printf("Call custom destructor for instance of Law_BSplineKnotSplitting\n");
+	}
 };
 
 %nodefaultctor Law_S;

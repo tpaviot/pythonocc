@@ -120,8 +120,6 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 class GccEnt_QualifiedLin {
 	public:
 		%feature("autodoc", "1");
-		~GccEnt_QualifiedLin();
-		%feature("autodoc", "1");
 		GccEnt_QualifiedLin(const gp_Lin2d &Qualified, const GccEnt_Position Qualifier);
 		%feature("autodoc", "1");
 		gp_Lin2d Qualified() const;
@@ -143,6 +141,11 @@ class GccEnt_QualifiedLin {
 		const gp_Lin2d & _CSFDB_GetGccEnt_QualifiedLinTheQualified() const;
 
 };
+%extend GccEnt_QualifiedLin {
+	~GccEnt_QualifiedLin() {
+	printf("Call custom destructor for instance of GccEnt_QualifiedLin\n");
+	}
+};
 
 %nodefaultctor GccEnt_Array1OfPosition;
 class GccEnt_Array1OfPosition {
@@ -155,8 +158,6 @@ class GccEnt_Array1OfPosition {
 		void Init(const GccEnt_Position &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~GccEnt_Array1OfPosition();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -178,6 +179,11 @@ class GccEnt_Array1OfPosition {
 		%feature("autodoc", "1");
 		GccEnt_Position & operator()(const Standard_Integer Index);
 
+};
+%extend GccEnt_Array1OfPosition {
+	~GccEnt_Array1OfPosition() {
+	printf("Call custom destructor for instance of GccEnt_Array1OfPosition\n");
+	}
 };
 
 %nodefaultctor GccEnt_BadQualifier;
@@ -212,8 +218,6 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 class GccEnt {
 	public:
 		%feature("autodoc", "1");
-		~GccEnt();
-		%feature("autodoc", "1");
 		GccEnt();
 		%feature("autodoc", "1");
 		GccEnt_QualifiedLin Unqualified(const gp_Lin2d &Obj);
@@ -231,12 +235,15 @@ class GccEnt {
 		GccEnt_QualifiedCirc Outside(const gp_Circ2d &Obj);
 
 };
+%extend GccEnt {
+	~GccEnt() {
+	printf("Call custom destructor for instance of GccEnt\n");
+	}
+};
 
 %nodefaultctor GccEnt_QualifiedCirc;
 class GccEnt_QualifiedCirc {
 	public:
-		%feature("autodoc", "1");
-		~GccEnt_QualifiedCirc();
 		%feature("autodoc", "1");
 		GccEnt_QualifiedCirc(const gp_Circ2d &Qualified, const GccEnt_Position Qualifier);
 		%feature("autodoc", "1");
@@ -260,4 +267,9 @@ class GccEnt_QualifiedCirc {
 		%feature("autodoc", "1");
 		void _CSFDB_SetGccEnt_QualifiedCircTheQualifier(const GccEnt_Position p);
 
+};
+%extend GccEnt_QualifiedCirc {
+	~GccEnt_QualifiedCirc() {
+	printf("Call custom destructor for instance of GccEnt_QualifiedCirc\n");
+	}
 };

@@ -262,12 +262,15 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 class V2d {
 	public:
 		%feature("autodoc", "1");
-		~V2d();
-		%feature("autodoc", "1");
 		V2d();
 		%feature("autodoc", "1");
 		void Draw(const Handle_V2d_Viewer &aViewer);
 
+};
+%extend V2d {
+	~V2d() {
+	printf("Call custom destructor for instance of V2d\n");
+	}
 };
 
 %nodefaultctor V2d_CircularGrid;

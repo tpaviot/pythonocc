@@ -99,6 +99,11 @@ class TopClass_Intersection3d {
 		virtual		TopAbs_State State() const;
 
 };
+%extend TopClass_Intersection3d {
+	~TopClass_Intersection3d() {
+	printf("Call custom destructor for instance of TopClass_Intersection3d\n");
+	}
+};
 
 %nodefaultctor TopClass_SolidExplorer;
 class TopClass_SolidExplorer {
@@ -128,4 +133,9 @@ class TopClass_SolidExplorer {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean RejectFace(const gp_Lin &L, const Standard_Real Par) const;
 
+};
+%extend TopClass_SolidExplorer {
+	~TopClass_SolidExplorer() {
+	printf("Call custom destructor for instance of TopClass_SolidExplorer\n");
+	}
 };

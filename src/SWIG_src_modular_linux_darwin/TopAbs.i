@@ -114,8 +114,6 @@ enum TopAbs_ShapeEnum {
 class TopAbs {
 	public:
 		%feature("autodoc", "1");
-		~TopAbs();
-		%feature("autodoc", "1");
 		TopAbs();
 		%feature("autodoc", "1");
 		TopAbs_Orientation Compose(const TopAbs_Orientation Or1, const TopAbs_Orientation Or2);
@@ -130,4 +128,9 @@ class TopAbs {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(const TopAbs_State St, Standard_OStream & S);
 
+};
+%extend TopAbs {
+	~TopAbs() {
+	printf("Call custom destructor for instance of TopAbs\n");
+	}
 };

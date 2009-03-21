@@ -640,8 +640,6 @@ class StepAP203_Array1OfCertifiedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfCertifiedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfCertifiedItem & Assign(const StepAP203_Array1OfCertifiedItem &Other);
@@ -662,6 +660,11 @@ class StepAP203_Array1OfCertifiedItem {
 		%feature("autodoc", "1");
 		StepAP203_CertifiedItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfCertifiedItem {
+	~StepAP203_Array1OfCertifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfCertifiedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_ChangeRequestItem;
@@ -693,8 +696,6 @@ class StepAP203_Array1OfClassifiedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfClassifiedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfClassifiedItem & Assign(const StepAP203_Array1OfClassifiedItem &Other);
@@ -715,6 +716,11 @@ class StepAP203_Array1OfClassifiedItem {
 		%feature("autodoc", "1");
 		StepAP203_ClassifiedItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfClassifiedItem {
+	~StepAP203_Array1OfClassifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfClassifiedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_ContractedItem;
@@ -838,8 +844,6 @@ class StepAP203_Array1OfWorkItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfWorkItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfWorkItem & Assign(const StepAP203_Array1OfWorkItem &Other);
@@ -860,6 +864,11 @@ class StepAP203_Array1OfWorkItem {
 		%feature("autodoc", "1");
 		StepAP203_WorkItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfWorkItem {
+	~StepAP203_Array1OfWorkItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfWorkItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_CertifiedItem;
@@ -931,8 +940,6 @@ class StepAP203_Array1OfApprovedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfApprovedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfApprovedItem & Assign(const StepAP203_Array1OfApprovedItem &Other);
@@ -953,6 +960,11 @@ class StepAP203_Array1OfApprovedItem {
 		%feature("autodoc", "1");
 		StepAP203_ApprovedItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfApprovedItem {
+	~StepAP203_Array1OfApprovedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfApprovedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_HArray1OfCertifiedItem;
@@ -1026,8 +1038,6 @@ class StepAP203_Array1OfContractedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfContractedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfContractedItem & Assign(const StepAP203_Array1OfContractedItem &Other);
@@ -1049,6 +1059,11 @@ class StepAP203_Array1OfContractedItem {
 		StepAP203_ContractedItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP203_Array1OfContractedItem {
+	~StepAP203_Array1OfContractedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfContractedItem\n");
+	}
+};
 
 %nodefaultctor StepAP203_Array1OfPersonOrganizationItem;
 class StepAP203_Array1OfPersonOrganizationItem {
@@ -1061,8 +1076,6 @@ class StepAP203_Array1OfPersonOrganizationItem {
 		void Init(const StepAP203_PersonOrganizationItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepAP203_Array1OfPersonOrganizationItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1085,6 +1098,11 @@ class StepAP203_Array1OfPersonOrganizationItem {
 		StepAP203_PersonOrganizationItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP203_Array1OfPersonOrganizationItem {
+	~StepAP203_Array1OfPersonOrganizationItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfPersonOrganizationItem\n");
+	}
+};
 
 %nodefaultctor StepAP203_Array1OfChangeRequestItem;
 class StepAP203_Array1OfChangeRequestItem {
@@ -1097,8 +1115,6 @@ class StepAP203_Array1OfChangeRequestItem {
 		void Init(const StepAP203_ChangeRequestItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepAP203_Array1OfChangeRequestItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1120,6 +1136,11 @@ class StepAP203_Array1OfChangeRequestItem {
 		%feature("autodoc", "1");
 		StepAP203_ChangeRequestItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfChangeRequestItem {
+	~StepAP203_Array1OfChangeRequestItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfChangeRequestItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_CcDesignSecurityClassification;
@@ -1453,8 +1474,6 @@ class StepAP203_Array1OfStartRequestItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfStartRequestItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfStartRequestItem & Assign(const StepAP203_Array1OfStartRequestItem &Other);
@@ -1475,6 +1494,11 @@ class StepAP203_Array1OfStartRequestItem {
 		%feature("autodoc", "1");
 		StepAP203_StartRequestItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfStartRequestItem {
+	~StepAP203_Array1OfStartRequestItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfStartRequestItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_ClassifiedItem;
@@ -1677,8 +1701,6 @@ class StepAP203_Array1OfSpecifiedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfSpecifiedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfSpecifiedItem & Assign(const StepAP203_Array1OfSpecifiedItem &Other);
@@ -1699,6 +1721,11 @@ class StepAP203_Array1OfSpecifiedItem {
 		%feature("autodoc", "1");
 		StepAP203_SpecifiedItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfSpecifiedItem {
+	~StepAP203_Array1OfSpecifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfSpecifiedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_CcDesignCertification;
@@ -1805,8 +1832,6 @@ class StepAP203_Array1OfDateTimeItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfDateTimeItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfDateTimeItem & Assign(const StepAP203_Array1OfDateTimeItem &Other);
@@ -1827,6 +1852,11 @@ class StepAP203_Array1OfDateTimeItem {
 		%feature("autodoc", "1");
 		StepAP203_DateTimeItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfDateTimeItem {
+	~StepAP203_Array1OfDateTimeItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfDateTimeItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_DateTimeItem;

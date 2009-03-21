@@ -245,8 +245,6 @@ class GraphTools_SCList {
 class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~GraphTools_ListIteratorOfListOfSequenceOfInteger();
-		%feature("autodoc", "1");
 		GraphTools_ListIteratorOfListOfSequenceOfInteger();
 		%feature("autodoc", "1");
 		GraphTools_ListIteratorOfListOfSequenceOfInteger(const GraphTools_ListOfSequenceOfInteger &L);
@@ -259,6 +257,11 @@ class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 		%feature("autodoc", "1");
 		TColStd_SequenceOfInteger & Value() const;
 
+};
+%extend GraphTools_ListIteratorOfListOfSequenceOfInteger {
+	~GraphTools_ListIteratorOfListOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of GraphTools_ListIteratorOfListOfSequenceOfInteger\n");
+	}
 };
 
 %nodefaultctor GraphTools_ListIteratorOfSCList;
@@ -288,8 +291,6 @@ class GraphTools_ListIteratorOfSCList {
 class GraphTools_TSNode {
 	public:
 		%feature("autodoc", "1");
-		~GraphTools_TSNode();
-		%feature("autodoc", "1");
 		GraphTools_TSNode();
 		%feature("autodoc", "1");
 		void Reset();
@@ -306,6 +307,11 @@ class GraphTools_TSNode {
 		%feature("autodoc", "1");
 		Standard_Integer GetSuccessor(const Standard_Integer index) const;
 
+};
+%extend GraphTools_TSNode {
+	~GraphTools_TSNode() {
+	printf("Call custom destructor for instance of GraphTools_TSNode\n");
+	}
 };
 
 %nodefaultctor GraphTools_ListNodeOfSCList;
@@ -371,8 +377,6 @@ class GraphTools_ListOfSequenceOfInteger {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~GraphTools_ListOfSequenceOfInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TColStd_SequenceOfInteger &I);
@@ -403,6 +407,11 @@ class GraphTools_ListOfSequenceOfInteger {
 		%feature("autodoc", "1");
 		void InsertAfter(GraphTools_ListOfSequenceOfInteger & Other, GraphTools_ListIteratorOfListOfSequenceOfInteger & It);
 
+};
+%extend GraphTools_ListOfSequenceOfInteger {
+	~GraphTools_ListOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of GraphTools_ListOfSequenceOfInteger\n");
+	}
 };
 
 %nodefaultctor GraphTools_ListNodeOfListOfSequenceOfInteger;

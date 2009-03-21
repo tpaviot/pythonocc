@@ -486,8 +486,6 @@ class TFunction_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicM
 class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel();
-		%feature("autodoc", "1");
 		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
 		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapOfIntegerLabel &aMap);
@@ -498,6 +496,11 @@ class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_
 		%feature("autodoc", "1");
 		const TDF_Label & Key2() const;
 
+};
+%extend TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel {
+	~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel() {
+	printf("Call custom destructor for instance of TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel\n");
+	}
 };
 
 %nodefaultctor TFunction_DataMapOfLabelListOfLabel;
@@ -511,8 +514,6 @@ class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TFunction_DataMapOfLabelListOfLabel();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const TDF_LabelList &I);
 		%feature("autodoc", "1");
@@ -528,6 +529,11 @@ class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_LabelList & operator()(const TDF_Label &K);
 
+};
+%extend TFunction_DataMapOfLabelListOfLabel {
+	~TFunction_DataMapOfLabelListOfLabel() {
+	printf("Call custom destructor for instance of TFunction_DataMapOfLabelListOfLabel\n");
+	}
 };
 
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfGUIDDriver;
@@ -566,8 +572,6 @@ class TFunction_Array1OfDataMapOfGUIDDriver {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TFunction_Array1OfDataMapOfGUIDDriver();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TFunction_Array1OfDataMapOfGUIDDriver & Assign(const TFunction_Array1OfDataMapOfGUIDDriver &Other);
@@ -588,6 +592,11 @@ class TFunction_Array1OfDataMapOfGUIDDriver {
 		%feature("autodoc", "1");
 		TFunction_DataMapOfGUIDDriver & operator()(const Standard_Integer Index);
 
+};
+%extend TFunction_Array1OfDataMapOfGUIDDriver {
+	~TFunction_Array1OfDataMapOfGUIDDriver() {
+	printf("Call custom destructor for instance of TFunction_Array1OfDataMapOfGUIDDriver\n");
+	}
 };
 
 %nodefaultctor TFunction_DriverTable;
@@ -678,8 +687,6 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 class TFunction_Logbook {
 	public:
 		%feature("autodoc", "1");
-		~TFunction_Logbook();
-		%feature("autodoc", "1");
 		TFunction_Logbook();
 		%feature("autodoc", "1");
 		void Clear();
@@ -708,6 +715,11 @@ class TFunction_Logbook {
 		%feature("autodoc", "1");
 		Standard_OStream & Dump(Standard_OStream & stream) const;
 
+};
+%extend TFunction_Logbook {
+	~TFunction_Logbook() {
+	printf("Call custom destructor for instance of TFunction_Logbook\n");
+	}
 };
 
 %nodefaultctor TFunction_IFunction;
@@ -769,8 +781,6 @@ class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TFunction_DoubleMapOfIntegerLabel();
-		%feature("autodoc", "1");
 		void Bind(const Standard_Integer &K1, const TDF_Label &K2);
 		%feature("autodoc", "1");
 		Standard_Boolean AreBound(const Standard_Integer &K1, const TDF_Label &K2) const;
@@ -788,12 +798,15 @@ class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const TDF_Label &K);
 
 };
+%extend TFunction_DoubleMapOfIntegerLabel {
+	~TFunction_DoubleMapOfIntegerLabel() {
+	printf("Call custom destructor for instance of TFunction_DoubleMapOfIntegerLabel\n");
+	}
+};
 
 %nodefaultctor TFunction_Iterator;
 class TFunction_Iterator {
 	public:
-		%feature("autodoc", "1");
-		~TFunction_Iterator();
 		%feature("autodoc", "1");
 		TFunction_Iterator();
 		%feature("autodoc", "1");
@@ -819,6 +832,11 @@ class TFunction_Iterator {
 		%feature("autodoc", "1");
 		Standard_OStream & Dump(Standard_OStream & OS) const;
 
+};
+%extend TFunction_Iterator {
+	~TFunction_Iterator() {
+	printf("Call custom destructor for instance of TFunction_Iterator\n");
+	}
 };
 
 %nodefaultctor TFunction_GraphNode;
@@ -949,8 +967,6 @@ class TFunction_Scope : public TDF_Attribute {
 class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel();
-		%feature("autodoc", "1");
 		TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel();
 		%feature("autodoc", "1");
 		TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel(const TFunction_DataMapOfLabelListOfLabel &aMap);
@@ -961,4 +977,9 @@ class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_
 		%feature("autodoc", "1");
 		const TDF_LabelList & Value() const;
 
+};
+%extend TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel {
+	~TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel() {
+	printf("Call custom destructor for instance of TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel\n");
+	}
 };

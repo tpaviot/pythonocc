@@ -463,8 +463,6 @@ class PrsMgr_Presentations : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~PrsMgr_Presentations();
-		%feature("autodoc", "1");
 		const PrsMgr_Presentations & Assign(const PrsMgr_Presentations &Other);
 		%feature("autodoc", "1");
 		void Append(const PrsMgr_ModedPresentation &T);
@@ -503,6 +501,11 @@ class PrsMgr_Presentations : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend PrsMgr_Presentations {
+	~PrsMgr_Presentations() {
+	printf("Call custom destructor for instance of PrsMgr_Presentations\n");
+	}
 };
 
 %nodefaultctor PrsMgr_SequenceNodeOfPresentations;

@@ -872,8 +872,6 @@ class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 class Transfer_TransferInput {
 	public:
 		%feature("autodoc", "1");
-		~Transfer_TransferInput();
-		%feature("autodoc", "1");
 		Transfer_TransferInput();
 		%feature("autodoc", "1");
 		Interface_EntityIterator Entities(Transfer_TransferIterator & list) const;
@@ -886,6 +884,11 @@ class Transfer_TransferInput {
 		%feature("autodoc", "1");
 		void FillModel(const Handle_Transfer_FinderProcess &proc, const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &proto, const Standard_Boolean roots=1) const;
 
+};
+%extend Transfer_TransferInput {
+	~Transfer_TransferInput() {
+	printf("Call custom destructor for instance of Transfer_TransferInput\n");
+	}
 };
 
 %nodefaultctor Transfer_DispatchControl;
@@ -1634,14 +1637,17 @@ class Transfer_TransferDispatch : public Interface_CopyTool {
 class Transfer_FindHasher {
 	public:
 		%feature("autodoc", "1");
-		~Transfer_FindHasher();
-		%feature("autodoc", "1");
 		Transfer_FindHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_Transfer_Finder &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_Transfer_Finder &K1, const Handle_Transfer_Finder &K2);
 
+};
+%extend Transfer_FindHasher {
+	~Transfer_FindHasher() {
+	printf("Call custom destructor for instance of Transfer_FindHasher\n");
+	}
 };
 
 %nodefaultctor Transfer_TransferFailure;

@@ -261,8 +261,6 @@ class Poly_Connect {
 class Poly_CoherentNode : public gp_XYZ {
 	public:
 		%feature("autodoc", "1");
-		~Poly_CoherentNode();
-		%feature("autodoc", "1");
 		Poly_CoherentNode();
 		%feature("autodoc", "1");
 		Poly_CoherentNode(const gp_XYZ &thePnt);
@@ -293,6 +291,11 @@ class Poly_CoherentNode : public gp_XYZ {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & theStream) const;
 
+};
+%extend Poly_CoherentNode {
+	~Poly_CoherentNode() {
+	printf("Call custom destructor for instance of Poly_CoherentNode\n");
+	}
 };
 
 %nodefaultctor Poly_PolygonOnTriangulation;
@@ -341,8 +344,6 @@ class Poly_Array1OfTriangle {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Poly_Array1OfTriangle();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Poly_Array1OfTriangle & Assign(const Poly_Array1OfTriangle &Other);
@@ -363,6 +364,11 @@ class Poly_Array1OfTriangle {
 		%feature("autodoc", "1");
 		Poly_Triangle & operator()(const Standard_Integer Index);
 
+};
+%extend Poly_Array1OfTriangle {
+	~Poly_Array1OfTriangle() {
+	printf("Call custom destructor for instance of Poly_Array1OfTriangle\n");
+	}
 };
 
 %nodefaultctor Poly_Triangulation;
@@ -425,8 +431,6 @@ class Poly_Triangulation : public MMgt_TShared {
 class Poly_CoherentTriangle {
 	public:
 		%feature("autodoc", "1");
-		~Poly_CoherentTriangle();
-		%feature("autodoc", "1");
 		Poly_CoherentTriangle();
 		%feature("autodoc", "1");
 		Poly_CoherentTriangle(const Standard_Integer iNode0, const Standard_Integer iNode1, const Standard_Integer iNode2);
@@ -454,12 +458,15 @@ class Poly_CoherentTriangle {
 		Standard_Integer FindConnection(const Poly_CoherentTriangle &arg0) const;
 
 };
+%extend Poly_CoherentTriangle {
+	~Poly_CoherentTriangle() {
+	printf("Call custom destructor for instance of Poly_CoherentTriangle\n");
+	}
+};
 
 %nodefaultctor Poly_Triangle;
 class Poly_Triangle {
 	public:
-		%feature("autodoc", "1");
-		~Poly_Triangle();
 		%feature("autodoc", "1");
 		Poly_Triangle();
 		%feature("autodoc", "1");
@@ -479,6 +486,11 @@ class Poly_Triangle {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 
+};
+%extend Poly_Triangle {
+	~Poly_Triangle() {
+	printf("Call custom destructor for instance of Poly_Triangle\n");
+	}
 };
 
 %nodefaultctor Poly_Polygon2D;
@@ -586,8 +598,6 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 class Poly_CoherentLink {
 	public:
 		%feature("autodoc", "1");
-		~Poly_CoherentLink();
-		%feature("autodoc", "1");
 		Poly_CoherentLink();
 		%feature("autodoc", "1");
 		Poly_CoherentLink(const Standard_Integer iNode0, const Standard_Integer iNode1);
@@ -606,6 +616,11 @@ class Poly_CoherentLink {
 		%feature("autodoc", "1");
 		void Nullify();
 
+};
+%extend Poly_CoherentLink {
+	~Poly_CoherentLink() {
+	printf("Call custom destructor for instance of Poly_CoherentLink\n");
+	}
 };
 
 %nodefaultctor Poly_Polygon3D;

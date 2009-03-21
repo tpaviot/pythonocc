@@ -337,8 +337,6 @@ class Approx_SameParameter {
 class Approx_MyLeastSquareOfFitAndDivide2d {
 	public:
 		%feature("autodoc", "1");
-		~Approx_MyLeastSquareOfFitAndDivide2d();
-		%feature("autodoc", "1");
 		Approx_MyLeastSquareOfFitAndDivide2d(const AppCont_Function2d &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -347,6 +345,11 @@ class Approx_MyLeastSquareOfFitAndDivide2d {
 		%feature("autodoc", "1");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend Approx_MyLeastSquareOfFitAndDivide2d {
+	~Approx_MyLeastSquareOfFitAndDivide2d() {
+	printf("Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide2d\n");
+	}
 };
 
 %nodefaultctor Approx_HArray1OfAdHSurface;
@@ -393,8 +396,6 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 class Approx_MCurvesToBSpCurve {
 	public:
 		%feature("autodoc", "1");
-		~Approx_MCurvesToBSpCurve();
-		%feature("autodoc", "1");
 		Approx_MCurvesToBSpCurve();
 		%feature("autodoc", "1");
 		void Reset();
@@ -410,6 +411,11 @@ class Approx_MCurvesToBSpCurve {
 		const AppParCurves_MultiBSpCurve & ChangeValue();
 
 };
+%extend Approx_MCurvesToBSpCurve {
+	~Approx_MCurvesToBSpCurve() {
+	printf("Call custom destructor for instance of Approx_MCurvesToBSpCurve\n");
+	}
+};
 
 %nodefaultctor Approx_Array1OfGTrsf2d;
 class Approx_Array1OfGTrsf2d {
@@ -422,8 +428,6 @@ class Approx_Array1OfGTrsf2d {
 		void Init(const gp_GTrsf2d &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Approx_Array1OfGTrsf2d();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -446,12 +450,15 @@ class Approx_Array1OfGTrsf2d {
 		gp_GTrsf2d & operator()(const Standard_Integer Index);
 
 };
+%extend Approx_Array1OfGTrsf2d {
+	~Approx_Array1OfGTrsf2d() {
+	printf("Call custom destructor for instance of Approx_Array1OfGTrsf2d\n");
+	}
+};
 
 %nodefaultctor Approx_FitAndDivide;
 class Approx_FitAndDivide {
 	public:
-		%feature("autodoc", "1");
-		~Approx_FitAndDivide();
 		%feature("autodoc", "1");
 		Approx_FitAndDivide(const AppCont_Function &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
@@ -477,6 +484,11 @@ class Approx_FitAndDivide {
 		%feature("autodoc", "1");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend Approx_FitAndDivide {
+	~Approx_FitAndDivide() {
+	printf("Call custom destructor for instance of Approx_FitAndDivide\n");
+	}
 };
 
 %nodefaultctor Approx_HArray1OfGTrsf2d;
@@ -598,8 +610,6 @@ class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
 class Approx_FitAndDivide2d {
 	public:
 		%feature("autodoc", "1");
-		~Approx_FitAndDivide2d();
-		%feature("autodoc", "1");
 		Approx_FitAndDivide2d(const AppCont_Function2d &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
 		Approx_FitAndDivide2d(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
@@ -624,6 +634,11 @@ class Approx_FitAndDivide2d {
 		%feature("autodoc", "1");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend Approx_FitAndDivide2d {
+	~Approx_FitAndDivide2d() {
+	printf("Call custom destructor for instance of Approx_FitAndDivide2d\n");
+	}
 };
 
 %nodefaultctor Approx_CurveOnSurface;
@@ -796,8 +811,6 @@ class Approx_SweepFunction : public MMgt_TShared {
 class Approx_MyLeastSquareOfFitAndDivide {
 	public:
 		%feature("autodoc", "1");
-		~Approx_MyLeastSquareOfFitAndDivide();
-		%feature("autodoc", "1");
 		Approx_MyLeastSquareOfFitAndDivide(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -806,6 +819,11 @@ class Approx_MyLeastSquareOfFitAndDivide {
 		%feature("autodoc", "1");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend Approx_MyLeastSquareOfFitAndDivide {
+	~Approx_MyLeastSquareOfFitAndDivide() {
+	printf("Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide\n");
+	}
 };
 
 %nodefaultctor Approx_Array1OfAdHSurface;
@@ -904,8 +922,6 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 class Approx_SweepApproximation {
 	public:
 		%feature("autodoc", "1");
-		~Approx_SweepApproximation();
-		%feature("autodoc", "1");
 		Approx_SweepApproximation(const Handle_Approx_SweepFunction &Func);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const Standard_Real BoundTol, const Standard_Real Tol2d, const Standard_Real TolAngular, const GeomAbs_Shape Continuity=GeomAbs_C0, const Standard_Integer Degmax=11, const Standard_Integer Segmax=50);
@@ -960,4 +976,9 @@ class Approx_SweepApproximation {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend Approx_SweepApproximation {
+	~Approx_SweepApproximation() {
+	printf("Call custom destructor for instance of Approx_SweepApproximation\n");
+	}
 };

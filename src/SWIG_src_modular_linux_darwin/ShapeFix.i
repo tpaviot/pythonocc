@@ -554,8 +554,6 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 class ShapeFix_FreeBounds {
 	public:
 		%feature("autodoc", "1");
-		~ShapeFix_FreeBounds();
-		%feature("autodoc", "1");
 		ShapeFix_FreeBounds();
 		%feature("autodoc", "1");
 		ShapeFix_FreeBounds(const TopoDS_Shape &shape, const Standard_Real sewtoler, const Standard_Real closetoler, const Standard_Boolean splitclosed, const Standard_Boolean splitopen);
@@ -568,6 +566,11 @@ class ShapeFix_FreeBounds {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & GetShape() const;
 
+};
+%extend ShapeFix_FreeBounds {
+	~ShapeFix_FreeBounds() {
+	printf("Call custom destructor for instance of ShapeFix_FreeBounds\n");
+	}
 };
 
 %nodefaultctor ShapeFix_WireVertex;
@@ -607,8 +610,6 @@ class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ShapeFix_SequenceOfWireSegment();
-		%feature("autodoc", "1");
 		const ShapeFix_SequenceOfWireSegment & Assign(const ShapeFix_SequenceOfWireSegment &Other);
 		%feature("autodoc", "1");
 		void Append(const ShapeFix_WireSegment &T);
@@ -647,6 +648,11 @@ class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend ShapeFix_SequenceOfWireSegment {
+	~ShapeFix_SequenceOfWireSegment() {
+	printf("Call custom destructor for instance of ShapeFix_SequenceOfWireSegment\n");
+	}
 };
 
 %nodefaultctor ShapeFix_Solid;
@@ -701,8 +707,6 @@ class ShapeFix_Solid : public ShapeFix_Root {
 class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d();
-		%feature("autodoc", "1");
 		ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d();
 		%feature("autodoc", "1");
 		ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d(const ShapeFix_DataMapOfShapeBox2d &aMap);
@@ -714,12 +718,15 @@ class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMa
 		const Bnd_Box2d & Value() const;
 
 };
+%extend ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d {
+	~ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d() {
+	printf("Call custom destructor for instance of ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d\n");
+	}
+};
 
 %nodefaultctor ShapeFix_EdgeConnect;
 class ShapeFix_EdgeConnect {
 	public:
-		%feature("autodoc", "1");
-		~ShapeFix_EdgeConnect();
 		%feature("autodoc", "1");
 		ShapeFix_EdgeConnect();
 		%feature("autodoc", "1");
@@ -731,6 +738,11 @@ class ShapeFix_EdgeConnect {
 		%feature("autodoc", "1");
 		void Clear();
 
+};
+%extend ShapeFix_EdgeConnect {
+	~ShapeFix_EdgeConnect() {
+	printf("Call custom destructor for instance of ShapeFix_EdgeConnect\n");
+	}
 };
 
 %nodefaultctor ShapeFix_DataMapOfShapeBox2d;
@@ -744,8 +756,6 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~ShapeFix_DataMapOfShapeBox2d();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Bnd_Box2d &I);
 		%feature("autodoc", "1");
@@ -761,6 +771,11 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Bnd_Box2d & operator()(const TopoDS_Shape &K);
 
+};
+%extend ShapeFix_DataMapOfShapeBox2d {
+	~ShapeFix_DataMapOfShapeBox2d() {
+	printf("Call custom destructor for instance of ShapeFix_DataMapOfShapeBox2d\n");
+	}
 };
 
 %nodefaultctor ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
@@ -859,8 +874,6 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 class ShapeFix {
 	public:
 		%feature("autodoc", "1");
-		~ShapeFix();
-		%feature("autodoc", "1");
 		ShapeFix();
 		%feature("autodoc", "1");
 		Standard_Boolean SameParameter(const TopoDS_Shape &shape, const Standard_Boolean enforce, const Standard_Real preci=0.0);
@@ -871,6 +884,11 @@ class ShapeFix {
 		%feature("autodoc", "1");
 		Standard_Boolean FixVertexPosition(TopoDS_Shape & theshape, const Standard_Real theTolerance, const Handle_ShapeBuild_ReShape &thecontext);
 
+};
+%extend ShapeFix {
+	~ShapeFix() {
+	printf("Call custom destructor for instance of ShapeFix\n");
+	}
 };
 
 %nodefaultctor ShapeFix_Shape;
@@ -1092,14 +1110,17 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 class ShapeFix_ShapeTolerance {
 	public:
 		%feature("autodoc", "1");
-		~ShapeFix_ShapeTolerance();
-		%feature("autodoc", "1");
 		ShapeFix_ShapeTolerance();
 		%feature("autodoc", "1");
 		Standard_Boolean LimitTolerance(const TopoDS_Shape &shape, const Standard_Real tmin, const Standard_Real tmax=0.0, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
 		%feature("autodoc", "1");
 		void SetTolerance(const TopoDS_Shape &shape, const Standard_Real preci, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
 
+};
+%extend ShapeFix_ShapeTolerance {
+	~ShapeFix_ShapeTolerance() {
+	printf("Call custom destructor for instance of ShapeFix_ShapeTolerance\n");
+	}
 };
 
 %nodefaultctor ShapeFix_Wire;
@@ -1290,8 +1311,6 @@ class ShapeFix_Wire : public ShapeFix_Root {
 class ShapeFix_SplitTool {
 	public:
 		%feature("autodoc", "1");
-		~ShapeFix_SplitTool();
-		%feature("autodoc", "1");
 		ShapeFix_SplitTool();
 		%feature("autodoc", "1");
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real param, const TopoDS_Vertex &vert, const TopoDS_Face &face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real tol3d, const Standard_Real tol2d) const;
@@ -1303,12 +1322,15 @@ class ShapeFix_SplitTool {
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer & aNum, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
 
 };
+%extend ShapeFix_SplitTool {
+	~ShapeFix_SplitTool() {
+	printf("Call custom destructor for instance of ShapeFix_SplitTool\n");
+	}
+};
 
 %nodefaultctor ShapeFix_FaceConnect;
 class ShapeFix_FaceConnect {
 	public:
-		%feature("autodoc", "1");
-		~ShapeFix_FaceConnect();
 		%feature("autodoc", "1");
 		ShapeFix_FaceConnect();
 		%feature("autodoc", "1");
@@ -1318,6 +1340,11 @@ class ShapeFix_FaceConnect {
 		%feature("autodoc", "1");
 		void Clear();
 
+};
+%extend ShapeFix_FaceConnect {
+	~ShapeFix_FaceConnect() {
+	printf("Call custom destructor for instance of ShapeFix_FaceConnect\n");
+	}
 };
 
 %nodefaultctor ShapeFix_Edge;

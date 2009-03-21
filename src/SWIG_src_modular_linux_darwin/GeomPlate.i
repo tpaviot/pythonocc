@@ -586,12 +586,15 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 class GeomPlate_Aij {
 	public:
 		%feature("autodoc", "1");
-		~GeomPlate_Aij();
-		%feature("autodoc", "1");
 		GeomPlate_Aij();
 		%feature("autodoc", "1");
 		GeomPlate_Aij(const Standard_Integer anInd1, const Standard_Integer anInd2, const gp_Vec &aVec);
 
+};
+%extend GeomPlate_Aij {
+	~GeomPlate_Aij() {
+	printf("Call custom destructor for instance of GeomPlate_Aij\n");
+	}
 };
 
 %nodefaultctor GeomPlate_HArray1OfSequenceOfReal;
@@ -823,9 +826,12 @@ class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
 		virtual		void Value(AdvApp2Var_Patch & P, const AdvApp2Var_Context &C) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_PlateG0Criterion();
 
+};
+%extend GeomPlate_PlateG0Criterion {
+	~GeomPlate_PlateG0Criterion() {
+	printf("Call custom destructor for instance of GeomPlate_PlateG0Criterion\n");
+	}
 };
 
 %nodefaultctor GeomPlate_Array1OfHCurveOnSurface;
@@ -1012,9 +1018,12 @@ class GeomPlate_PlateG1Criterion : public AdvApp2Var_Criterion {
 		virtual		void Value(AdvApp2Var_Patch & P, const AdvApp2Var_Context &C) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
-		%feature("autodoc", "1");
-		virtual		~GeomPlate_PlateG1Criterion();
 
+};
+%extend GeomPlate_PlateG1Criterion {
+	~GeomPlate_PlateG1Criterion() {
+	printf("Call custom destructor for instance of GeomPlate_PlateG1Criterion\n");
+	}
 };
 
 %nodefaultctor GeomPlate_PointConstraint;
@@ -1098,8 +1107,6 @@ class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~GeomPlate_SequenceOfAij();
-		%feature("autodoc", "1");
 		const GeomPlate_SequenceOfAij & Assign(const GeomPlate_SequenceOfAij &Other);
 		%feature("autodoc", "1");
 		void Append(const GeomPlate_Aij &T);
@@ -1139,6 +1146,11 @@ class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend GeomPlate_SequenceOfAij {
+	~GeomPlate_SequenceOfAij() {
+	printf("Call custom destructor for instance of GeomPlate_SequenceOfAij\n");
+	}
+};
 
 %nodefaultctor GeomPlate_Array1OfSequenceOfReal;
 class GeomPlate_Array1OfSequenceOfReal {
@@ -1151,8 +1163,6 @@ class GeomPlate_Array1OfSequenceOfReal {
 		void Init(const TColStd_SequenceOfReal &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~GeomPlate_Array1OfSequenceOfReal();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1174,4 +1184,9 @@ class GeomPlate_Array1OfSequenceOfReal {
 		%feature("autodoc", "1");
 		TColStd_SequenceOfReal & operator()(const Standard_Integer Index);
 
+};
+%extend GeomPlate_Array1OfSequenceOfReal {
+	~GeomPlate_Array1OfSequenceOfReal() {
+	printf("Call custom destructor for instance of GeomPlate_Array1OfSequenceOfReal\n");
+	}
 };

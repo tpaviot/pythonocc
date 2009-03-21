@@ -662,19 +662,20 @@ class TDocStd_Owner : public TDF_Attribute {
 class TDocStd {
 	public:
 		%feature("autodoc", "1");
-		~TDocStd();
-		%feature("autodoc", "1");
 		TDocStd();
 		%feature("autodoc", "1");
 		void IDList(TDF_IDList & anIDList);
 
 };
+%extend TDocStd {
+	~TDocStd() {
+	printf("Call custom destructor for instance of TDocStd\n");
+	}
+};
 
 %nodefaultctor TDocStd_Context;
 class TDocStd_Context {
 	public:
-		%feature("autodoc", "1");
-		~TDocStd_Context();
 		%feature("autodoc", "1");
 		TDocStd_Context();
 		%feature("autodoc", "1");
@@ -682,6 +683,11 @@ class TDocStd_Context {
 		%feature("autodoc", "1");
 		Standard_Boolean ModifiedReferences() const;
 
+};
+%extend TDocStd_Context {
+	~TDocStd_Context() {
+	printf("Call custom destructor for instance of TDocStd_Context\n");
+	}
 };
 
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
@@ -811,8 +817,6 @@ class TDocStd_Application : public CDF_Application {
 class TDocStd_PathParser {
 	public:
 		%feature("autodoc", "1");
-		~TDocStd_PathParser();
-		%feature("autodoc", "1");
 		TDocStd_PathParser(const TCollection_ExtendedString &path);
 		%feature("autodoc", "1");
 		void Parse();
@@ -827,6 +831,11 @@ class TDocStd_PathParser {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 
+};
+%extend TDocStd_PathParser {
+	~TDocStd_PathParser() {
+	printf("Call custom destructor for instance of TDocStd_PathParser\n");
+	}
 };
 
 %nodefaultctor TDocStd_Modified;
@@ -895,8 +904,6 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDocStd_LabelIDMapDataMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const TDF_IDMap &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TDF_Label &K) const;
@@ -912,12 +919,15 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 		TDF_IDMap & operator()(const TDF_Label &K);
 
 };
+%extend TDocStd_LabelIDMapDataMap {
+	~TDocStd_LabelIDMapDataMap() {
+	printf("Call custom destructor for instance of TDocStd_LabelIDMapDataMap\n");
+	}
+};
 
 %nodefaultctor TDocStd_DataMapIteratorOfLabelIDMapDataMap;
 class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDocStd_DataMapIteratorOfLabelIDMapDataMap();
 		%feature("autodoc", "1");
 		TDocStd_DataMapIteratorOfLabelIDMapDataMap();
 		%feature("autodoc", "1");
@@ -929,6 +939,11 @@ class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIt
 		%feature("autodoc", "1");
 		const TDF_IDMap & Value() const;
 
+};
+%extend TDocStd_DataMapIteratorOfLabelIDMapDataMap {
+	~TDocStd_DataMapIteratorOfLabelIDMapDataMap() {
+	printf("Call custom destructor for instance of TDocStd_DataMapIteratorOfLabelIDMapDataMap\n");
+	}
 };
 
 %nodefaultctor TDocStd_DataMapNodeOfLabelIDMapDataMap;
@@ -1012,8 +1027,6 @@ class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 class TDocStd_XLinkIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDocStd_XLinkIterator();
-		%feature("autodoc", "1");
 		TDocStd_XLinkIterator();
 		%feature("autodoc", "1");
 		TDocStd_XLinkIterator(const Handle_TDocStd_Document &D);
@@ -1026,6 +1039,11 @@ class TDocStd_XLinkIterator {
 		%feature("autodoc", "1");
 		TDocStd_XLink * Value() const;
 
+};
+%extend TDocStd_XLinkIterator {
+	~TDocStd_XLinkIterator() {
+	printf("Call custom destructor for instance of TDocStd_XLinkIterator\n");
+	}
 };
 
 %nodefaultctor TDocStd_CompoundDelta;

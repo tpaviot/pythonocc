@@ -467,8 +467,6 @@ class PNaming_Name : public Standard_Persistent {
 class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 	public:
 		%feature("autodoc", "1");
-		~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape();
-		%feature("autodoc", "1");
 		PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape();
 		%feature("autodoc", "1");
 		PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape(const Handle_PNaming_NamedShape &aValue);
@@ -477,4 +475,9 @@ class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
+	~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape() {
+	printf("Call custom destructor for instance of PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape\n");
+	}
 };

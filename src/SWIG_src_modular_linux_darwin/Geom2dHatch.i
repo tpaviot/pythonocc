@@ -136,8 +136,6 @@ class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public 
 class Geom2dHatch_ElementOfHatcher {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dHatch_ElementOfHatcher();
-		%feature("autodoc", "1");
 		Geom2dHatch_ElementOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_ElementOfHatcher(const Geom2dHatch_ElementOfHatcher &Other);
@@ -153,6 +151,11 @@ class Geom2dHatch_ElementOfHatcher {
 		TopAbs_Orientation Orientation() const;
 
 };
+%extend Geom2dHatch_ElementOfHatcher {
+	~Geom2dHatch_ElementOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_ElementOfHatcher\n");
+	}
+};
 
 %nodefaultctor Geom2dHatch_MapOfElementsOfElementsOfHatcher;
 class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap {
@@ -165,8 +168,6 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Geom2dHatch_MapOfElementsOfElementsOfHatcher();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I);
 		%feature("autodoc", "1");
@@ -183,12 +184,15 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 		Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K);
 
 };
+%extend Geom2dHatch_MapOfElementsOfElementsOfHatcher {
+	~Geom2dHatch_MapOfElementsOfElementsOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_MapOfElementsOfElementsOfHatcher\n");
+	}
+};
 
 %nodefaultctor Geom2dHatch_Hatcher;
 class Geom2dHatch_Hatcher {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_Hatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_Hatcher(const Geom2dHatch_Intersector &Intersector, const Standard_Real Confusion2d, const Standard_Real Confusion3d, const Standard_Boolean KeepPnt=0, const Standard_Boolean KeepSeg=0);
 		%feature("autodoc", "1");
@@ -259,12 +263,15 @@ class Geom2dHatch_Hatcher {
 		void Dump() const;
 
 };
+%extend Geom2dHatch_Hatcher {
+	~Geom2dHatch_Hatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_Hatcher\n");
+	}
+};
 
 %nodefaultctor Geom2dHatch_HatchingOfHatcher;
 class Geom2dHatch_HatchingOfHatcher {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_HatchingOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_HatchingOfHatcher();
 		%feature("autodoc", "1");
@@ -315,12 +322,15 @@ class Geom2dHatch_HatchingOfHatcher {
 		gp_Pnt2d ClassificationPoint() const;
 
 };
+%extend Geom2dHatch_HatchingOfHatcher {
+	~Geom2dHatch_HatchingOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_HatchingOfHatcher\n");
+	}
+};
 
 %nodefaultctor Geom2dHatch_ClassifierOfHatcher;
 class Geom2dHatch_ClassifierOfHatcher {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_ClassifierOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_ClassifierOfHatcher();
 		%feature("autodoc", "1");
@@ -340,6 +350,11 @@ class Geom2dHatch_ClassifierOfHatcher {
 		%feature("autodoc", "1");
 		IntRes2d_Position Position() const;
 
+};
+%extend Geom2dHatch_ClassifierOfHatcher {
+	~Geom2dHatch_ClassifierOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_ClassifierOfHatcher\n");
+	}
 };
 
 %nodefaultctor Geom2dHatch_DataMapNodeOfHatchingsOfHatcher;
@@ -394,8 +409,6 @@ class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollec
 class Geom2dHatch_Intersector : public Geom2dInt_GInter {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dHatch_Intersector();
-		%feature("autodoc", "1");
 		Geom2dHatch_Intersector(const Standard_Real Confusion, const Standard_Real Tangency);
 		%feature("autodoc", "1");
 		Standard_Real ConfusionTolerance() const;
@@ -415,6 +428,11 @@ class Geom2dHatch_Intersector : public Geom2dInt_GInter {
 		void LocalGeometry(const Geom2dAdaptor_Curve &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
 
 };
+%extend Geom2dHatch_Intersector {
+	~Geom2dHatch_Intersector() {
+	printf("Call custom destructor for instance of Geom2dHatch_Intersector\n");
+	}
+};
 
 %nodefaultctor Geom2dHatch_HatchingsOfHatcher;
 class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
@@ -427,8 +445,6 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Geom2dHatch_HatchingsOfHatcher();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_HatchingOfHatcher &I);
 		%feature("autodoc", "1");
@@ -445,12 +461,15 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 		Geom2dHatch_HatchingOfHatcher & operator()(const Standard_Integer &K);
 
 };
+%extend Geom2dHatch_HatchingsOfHatcher {
+	~Geom2dHatch_HatchingsOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_HatchingsOfHatcher\n");
+	}
+};
 
 %nodefaultctor Geom2dHatch_FClass2dOfClassifierOfHatcher;
 class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_FClass2dOfClassifierOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_FClass2dOfClassifierOfHatcher();
 		%feature("autodoc", "1");
@@ -469,6 +488,11 @@ class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 		Standard_Boolean IsHeadOrEnd() const;
 
 };
+%extend Geom2dHatch_FClass2dOfClassifierOfHatcher {
+	~Geom2dHatch_FClass2dOfClassifierOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_FClass2dOfClassifierOfHatcher\n");
+	}
+};
 
 %nodefaultctor Geom2dHatch_ElementsOfHatcher;
 class Geom2dHatch_ElementsOfHatcher {
@@ -479,8 +503,6 @@ class Geom2dHatch_ElementsOfHatcher {
 		Geom2dHatch_ElementsOfHatcher(const Geom2dHatch_ElementsOfHatcher &Other);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Geom2dHatch_ElementsOfHatcher();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I);
 		%feature("autodoc", "1");
@@ -521,12 +543,15 @@ class Geom2dHatch_ElementsOfHatcher {
 		void CurrentEdge(Geom2dAdaptor_Curve & E, TopAbs_Orientation & Or) const;
 
 };
+%extend Geom2dHatch_ElementsOfHatcher {
+	~Geom2dHatch_ElementsOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_ElementsOfHatcher\n");
+	}
+};
 
 %nodefaultctor Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher;
 class Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher();
 		%feature("autodoc", "1");
@@ -539,12 +564,15 @@ class Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher : public TCollection_Basic
 		const Geom2dHatch_HatchingOfHatcher & Value() const;
 
 };
+%extend Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher {
+	~Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher\n");
+	}
+};
 
 %nodefaultctor Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher;
 class Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher();
 		%feature("autodoc", "1");
@@ -556,4 +584,9 @@ class Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher : public TCo
 		%feature("autodoc", "1");
 		const Geom2dHatch_ElementOfHatcher & Value() const;
 
+};
+%extend Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher {
+	~Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher() {
+	printf("Call custom destructor for instance of Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher\n");
+	}
 };

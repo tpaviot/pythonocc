@@ -466,8 +466,6 @@ class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepCheck_DataMapOfShapeListOfStatus();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepCheck_ListOfStatus &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -482,6 +480,11 @@ class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BRepCheck_ListOfStatus & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepCheck_DataMapOfShapeListOfStatus {
+	~BRepCheck_DataMapOfShapeListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_DataMapOfShapeListOfStatus\n");
+	}
 };
 
 %nodefaultctor BRepCheck_Wire;
@@ -623,8 +626,6 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 class BRepCheck {
 	public:
 		%feature("autodoc", "1");
-		~BRepCheck();
-		%feature("autodoc", "1");
 		BRepCheck();
 		%feature("autodoc", "1");
 		void Add(BRepCheck_ListOfStatus & List, const BRepCheck_Status Stat);
@@ -633,6 +634,11 @@ class BRepCheck {
 		%feature("autodoc", "1");
 		Standard_Boolean SelfIntersection(const TopoDS_Wire &W, const TopoDS_Face &F, TopoDS_Edge & E1, TopoDS_Edge & E2);
 
+};
+%extend BRepCheck {
+	~BRepCheck() {
+	printf("Call custom destructor for instance of BRepCheck\n");
+	}
 };
 
 %nodefaultctor BRepCheck_Edge;
@@ -695,8 +701,6 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_Map
 class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus();
-		%feature("autodoc", "1");
 		BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus();
 		%feature("autodoc", "1");
 		BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus(const BRepCheck_DataMapOfShapeListOfStatus &aMap);
@@ -707,6 +711,11 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection
 		%feature("autodoc", "1");
 		const BRepCheck_ListOfStatus & Value() const;
 
+};
+%extend BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus {
+	~BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus\n");
+	}
 };
 
 %nodefaultctor BRepCheck_ListOfStatus;
@@ -720,8 +729,6 @@ class BRepCheck_ListOfStatus {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepCheck_ListOfStatus();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -754,12 +761,15 @@ class BRepCheck_ListOfStatus {
 		void InsertAfter(BRepCheck_ListOfStatus & Other, BRepCheck_ListIteratorOfListOfStatus & It);
 
 };
+%extend BRepCheck_ListOfStatus {
+	~BRepCheck_ListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_ListOfStatus\n");
+	}
+};
 
 %nodefaultctor BRepCheck_ListIteratorOfListOfStatus;
 class BRepCheck_ListIteratorOfListOfStatus {
 	public:
-		%feature("autodoc", "1");
-		~BRepCheck_ListIteratorOfListOfStatus();
 		%feature("autodoc", "1");
 		BRepCheck_ListIteratorOfListOfStatus();
 		%feature("autodoc", "1");
@@ -773,6 +783,11 @@ class BRepCheck_ListIteratorOfListOfStatus {
 		%feature("autodoc", "1");
 		BRepCheck_Status & Value() const;
 
+};
+%extend BRepCheck_ListIteratorOfListOfStatus {
+	~BRepCheck_ListIteratorOfListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_ListIteratorOfListOfStatus\n");
+	}
 };
 
 %nodefaultctor BRepCheck_Analyzer;

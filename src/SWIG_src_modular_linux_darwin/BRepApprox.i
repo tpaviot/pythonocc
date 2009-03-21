@@ -135,16 +135,17 @@ class BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox : public 
 		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox();
 
+};
+%extend BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox {
+	~BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox;
 class BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
@@ -189,12 +190,15 @@ class BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
+	~BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_MyGradientbisOfTheComputeLineOfApprox;
 class BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_MyGradientbisOfTheComputeLineOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_MyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
@@ -211,6 +215,11 @@ class BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
 		Standard_Real AverageError() const;
 
 };
+%extend BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
+	~BRepApprox_MyGradientbisOfTheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_MyGradientbisOfTheComputeLineOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox;
 class BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox : public math_BFGS {
@@ -219,16 +228,17 @@ class BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox : public m
 		BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox();
 
+};
+%extend BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox {
+	~BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox;
 class BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
@@ -242,6 +252,11 @@ class BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 		%feature("autodoc", "1");
 		const math_Matrix & InverseMatrix() const;
 
+};
+%extend BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
+	~BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_ApproxLine;
@@ -297,16 +312,17 @@ class BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox : public mat
 		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox();
 
+};
+%extend BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox {
+	~BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox;
 class BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
@@ -351,6 +367,11 @@ class BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
+	~BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox;
 class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox : public math_FunctionSetWithDerivatives {
@@ -393,16 +414,17 @@ class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox : public math_Functi
 		const BRepAdaptor_Surface & PSurface() const;
 		%feature("autodoc", "1");
 		const IntSurf_Quadric & ISurface() const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox();
 
+};
+%extend BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox {
+	~BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox;
 class BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
@@ -447,12 +469,15 @@ class BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
+	~BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox;
 class BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
@@ -467,12 +492,15 @@ class BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
 		const math_Matrix & InverseMatrix() const;
 
 };
+%extend BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
+	~BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_TheComputeLineBezierOfApprox;
 class BRepApprox_TheComputeLineBezierOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_TheComputeLineBezierOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_TheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
@@ -510,6 +538,11 @@ class BRepApprox_TheComputeLineBezierOfApprox {
 		%feature("autodoc", "1");
 		const TColStd_Array1OfReal & Parameters(const Standard_Integer Index=1) const;
 
+};
+%extend BRepApprox_TheComputeLineBezierOfApprox {
+	~BRepApprox_TheComputeLineBezierOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_TheComputeLineBezierOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox;
@@ -549,16 +582,17 @@ class BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox : public
 		void SetFirstLambda(const Standard_Real l1);
 		%feature("autodoc", "1");
 		void SetLastLambda(const Standard_Real l2);
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox();
 
+};
+%extend BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox {
+	~BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_Approx;
 class BRepApprox_Approx {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_Approx();
 		%feature("autodoc", "1");
 		BRepApprox_Approx();
 		%feature("autodoc", "1");
@@ -577,6 +611,11 @@ class BRepApprox_Approx {
 		const AppParCurves_MultiBSpCurve & Value(const Standard_Integer Index) const;
 
 };
+%extend BRepApprox_Approx {
+	~BRepApprox_Approx() {
+	printf("Call custom destructor for instance of BRepApprox_Approx\n");
+	}
+};
 
 %nodefaultctor BRepApprox_ThePrmPrmSvSurfacesOfApprox;
 class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
@@ -593,9 +632,12 @@ class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_ThePrmPrmSvSurfacesOfApprox();
 
+};
+%extend BRepApprox_ThePrmPrmSvSurfacesOfApprox {
+	~BRepApprox_ThePrmPrmSvSurfacesOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_ThePrmPrmSvSurfacesOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_SurfaceTool;
@@ -693,8 +735,6 @@ class BRepApprox_SurfaceTool {
 class BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
 	public:
 		%feature("autodoc", "1");
-		~BRepApprox_MyGradientOfTheComputeLineBezierOfApprox();
-		%feature("autodoc", "1");
 		BRepApprox_MyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -710,12 +750,15 @@ class BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
 		Standard_Real AverageError() const;
 
 };
+%extend BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
+	~BRepApprox_MyGradientOfTheComputeLineBezierOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_MyGradientOfTheComputeLineBezierOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_TheComputeLineOfApprox;
 class BRepApprox_TheComputeLineOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_TheComputeLineOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_TheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
@@ -758,12 +801,15 @@ class BRepApprox_TheComputeLineOfApprox {
 		const TColStd_Array1OfReal & Parameters() const;
 
 };
+%extend BRepApprox_TheComputeLineOfApprox {
+	~BRepApprox_TheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_TheComputeLineOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox;
 class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox();
 		%feature("autodoc", "1");
@@ -792,6 +838,11 @@ class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 		BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox & Function();
 
 };
+%extend BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
+	~BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox;
 class BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox : public math_BFGS {
@@ -800,16 +851,17 @@ class BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox : publi
 		BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox();
 
+};
+%extend BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox {
+	~BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_TheMultiLineOfApprox;
 class BRepApprox_TheMultiLineOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_TheMultiLineOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_TheMultiLineOfApprox(const Handle_BRepApprox_ApproxLine &line, const Standard_Address PtrSvSurfaces, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Real xo, const Standard_Real ax, const Standard_Real yo, const Standard_Real ay, const Standard_Real zo, const Standard_Real az, const Standard_Real u1o, const Standard_Real a1u, const Standard_Real v1o, const Standard_Real a1v, const Standard_Real u2o, const Standard_Real a2u, const Standard_Real v2o, const Standard_Real a2v, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin=0, const Standard_Integer IndMax=0);
 		%feature("autodoc", "1");
@@ -839,6 +891,11 @@ class BRepApprox_TheMultiLineOfApprox {
 		%feature("autodoc", "1");
 		BRepApprox_TheMultiLineOfApprox MakeMLBetween(const Standard_Integer Low, const Standard_Integer High, const Standard_Integer NbPointsToInsert) const;
 
+};
+%extend BRepApprox_TheMultiLineOfApprox {
+	~BRepApprox_TheMultiLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_TheMultiLineOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox;
@@ -876,9 +933,12 @@ class BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox : public mat
 		const BRepAdaptor_Surface & AuxillarSurface1() const;
 		%feature("autodoc", "1");
 		const BRepAdaptor_Surface & AuxillarSurface2() const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox();
 
+};
+%extend BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox {
+	~BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_TheImpPrmSvSurfacesOfApprox;
@@ -898,16 +958,17 @@ class BRepApprox_TheImpPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_TheImpPrmSvSurfacesOfApprox();
 
+};
+%extend BRepApprox_TheImpPrmSvSurfacesOfApprox {
+	~BRepApprox_TheImpPrmSvSurfacesOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_TheImpPrmSvSurfacesOfApprox\n");
+	}
 };
 
 %nodefaultctor BRepApprox_TheMultiLineToolOfApprox;
 class BRepApprox_TheMultiLineToolOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_TheMultiLineToolOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_TheMultiLineToolOfApprox();
 		%feature("autodoc", "1");
@@ -942,12 +1003,15 @@ class BRepApprox_TheMultiLineToolOfApprox {
 		Approx_Status WhatStatus(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
 
 };
+%extend BRepApprox_TheMultiLineToolOfApprox {
+	~BRepApprox_TheMultiLineToolOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_TheMultiLineToolOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_MyBSplGradientOfTheComputeLineOfApprox;
 class BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
 	public:
-		%feature("autodoc", "1");
-		~BRepApprox_MyBSplGradientOfTheComputeLineOfApprox();
 		%feature("autodoc", "1");
 		BRepApprox_MyBSplGradientOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=1);
 		%feature("autodoc", "1");
@@ -966,6 +1030,11 @@ class BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
 		Standard_Real AverageError() const;
 
 };
+%extend BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
+	~BRepApprox_MyBSplGradientOfTheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_MyBSplGradientOfTheComputeLineOfApprox\n");
+	}
+};
 
 %nodefaultctor BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox;
 class BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox : public math_BFGS {
@@ -974,7 +1043,10 @@ class BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox : publ
 		BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
-		%feature("autodoc", "1");
-		virtual		~BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox();
 
+};
+%extend BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox {
+	~BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox() {
+	printf("Call custom destructor for instance of BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox\n");
+	}
 };

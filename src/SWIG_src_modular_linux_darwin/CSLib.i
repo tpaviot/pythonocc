@@ -117,9 +117,12 @@ class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~CSLib_NormalPolyDef();
 
+};
+%extend CSLib_NormalPolyDef {
+	~CSLib_NormalPolyDef() {
+	printf("Call custom destructor for instance of CSLib_NormalPolyDef\n");
+	}
 };
 
 %nodefaultctor CSLib_Class2d;
@@ -139,16 +142,17 @@ class CSLib_Class2d {
 		const CSLib_Class2d & Copy(const CSLib_Class2d &Other) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~CSLib_Class2d();
 
+};
+%extend CSLib_Class2d {
+	~CSLib_Class2d() {
+	printf("Call custom destructor for instance of CSLib_Class2d\n");
+	}
 };
 
 %nodefaultctor CSLib;
 class CSLib {
 	public:
-		%feature("autodoc", "1");
-		~CSLib();
 		%feature("autodoc", "1");
 		CSLib();
 		%feature("autodoc", "1");
@@ -166,4 +170,9 @@ class CSLib {
 		%feature("autodoc", "1");
 		gp_Vec DNNormal(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerNUV, const Standard_Integer Iduref=0, const Standard_Integer Idvref=0);
 
+};
+%extend CSLib {
+	~CSLib() {
+	printf("Call custom destructor for instance of CSLib\n");
+	}
 };

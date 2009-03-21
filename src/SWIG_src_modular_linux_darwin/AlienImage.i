@@ -574,6 +574,11 @@ class AlienImage_SGIRGBFileHeader {
 		AlienImage_SGIRGBFileHeader();
 
 };
+%extend AlienImage_SGIRGBFileHeader {
+	~AlienImage_SGIRGBFileHeader() {
+	printf("Call custom destructor for instance of AlienImage_SGIRGBFileHeader\n");
+	}
+};
 
 %nodefaultctor AlienImage_SUNRFFileHeader;
 class AlienImage_SUNRFFileHeader {
@@ -581,6 +586,11 @@ class AlienImage_SUNRFFileHeader {
 		%feature("autodoc", "1");
 		AlienImage_SUNRFFileHeader();
 
+};
+%extend AlienImage_SUNRFFileHeader {
+	~AlienImage_SUNRFFileHeader() {
+	printf("Call custom destructor for instance of AlienImage_SUNRFFileHeader\n");
+	}
 };
 
 %nodefaultctor AlienImage_AlienUserImage;
@@ -641,14 +651,17 @@ class AlienImage_SGIRGBAlienImage : public AlienImage_AlienUserImage {
 class AlienImage_MemoryOperations {
 	public:
 		%feature("autodoc", "1");
-		~AlienImage_MemoryOperations();
-		%feature("autodoc", "1");
 		AlienImage_MemoryOperations();
 		%feature("autodoc", "1");
 		void SwapLong(const Standard_Address Data, const Standard_Integer Size);
 		%feature("autodoc", "1");
 		void SwapShort(const Standard_Address Data, const Standard_Integer Size);
 
+};
+%extend AlienImage_MemoryOperations {
+	~AlienImage_MemoryOperations() {
+	printf("Call custom destructor for instance of AlienImage_MemoryOperations\n");
+	}
 };
 
 %nodefaultctor AlienImage_SunRFAlienImage;
@@ -760,6 +773,11 @@ class AlienImage_X11XColor {
 		AlienImage_X11XColor();
 
 };
+%extend AlienImage_X11XColor {
+	~AlienImage_X11XColor() {
+	printf("Call custom destructor for instance of AlienImage_X11XColor\n");
+	}
+};
 
 %nodefaultctor AlienImage_BMPAlienData;
 class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
@@ -795,8 +813,6 @@ class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
 class AlienImage {
 	public:
 		%feature("autodoc", "1");
-		~AlienImage();
-		%feature("autodoc", "1");
 		AlienImage();
 		%feature("autodoc", "1");
 		Standard_Boolean CreateImage(const TCollection_AsciiString &theFileName, Handle_Image_Image & theImage);
@@ -807,6 +823,11 @@ class AlienImage {
 		%feature("autodoc", "1");
 		Standard_Boolean LoadImageFile(const char * anImageFile, Handle_Image_Image & anImage, Standard_Integer & aWidth, Standard_Integer & aHeight);
 
+};
+%extend AlienImage {
+	~AlienImage() {
+	printf("Call custom destructor for instance of AlienImage\n");
+	}
 };
 
 %nodefaultctor AlienImage_AidaAlienImage;
@@ -987,6 +1008,11 @@ class AlienImage_BMPHeader {
 		%feature("autodoc", "1");
 		AlienImage_BMPHeader();
 
+};
+%extend AlienImage_BMPHeader {
+	~AlienImage_BMPHeader() {
+	printf("Call custom destructor for instance of AlienImage_BMPHeader\n");
+	}
 };
 
 %nodefaultctor AlienImage_GIFAlienData;

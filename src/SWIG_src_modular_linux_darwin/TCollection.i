@@ -294,8 +294,6 @@ class TCollection_AsciiString {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TCollection_AsciiString();
-		%feature("autodoc", "1");
 		Standard_Integer FirstLocationInSet(const TCollection_AsciiString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
 		Standard_Integer FirstLocationNotInSet(const TCollection_AsciiString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
@@ -419,12 +417,15 @@ class TCollection_AsciiString {
 		Standard_Boolean ISSIMILAR(const TCollection_AsciiString &string1, const TCollection_AsciiString &string2);
 
 };
+%extend TCollection_AsciiString {
+	~TCollection_AsciiString() {
+	printf("Call custom destructor for instance of TCollection_AsciiString\n");
+	}
+};
 
 %nodefaultctor TCollection_BasicMapIterator;
 class TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TCollection_BasicMapIterator();
 		%feature("autodoc", "1");
 		void Reset();
 		%feature("autodoc", "1");
@@ -433,17 +434,25 @@ class TCollection_BasicMapIterator {
 		void Next();
 
 };
+%extend TCollection_BasicMapIterator {
+	~TCollection_BasicMapIterator() {
+	printf("Call custom destructor for instance of TCollection_BasicMapIterator\n");
+	}
+};
 
 %nodefaultctor TCollection;
 class TCollection {
 	public:
 		%feature("autodoc", "1");
-		~TCollection();
-		%feature("autodoc", "1");
 		TCollection();
 		%feature("autodoc", "1");
 		Standard_Integer NextPrimeForMap(const Standard_Integer I);
 
+};
+%extend TCollection {
+	~TCollection() {
+	printf("Call custom destructor for instance of TCollection\n");
+	}
 };
 
 %nodefaultctor TCollection_SeqNode;
@@ -474,8 +483,6 @@ class TCollection_SeqNode : public MMgt_TShared {
 class TCollection_PrivCompareOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~TCollection_PrivCompareOfInteger();
-		%feature("autodoc", "1");
 		TCollection_PrivCompareOfInteger();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
@@ -484,6 +491,11 @@ class TCollection_PrivCompareOfInteger {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
+};
+%extend TCollection_PrivCompareOfInteger {
+	~TCollection_PrivCompareOfInteger() {
+	printf("Call custom destructor for instance of TCollection_PrivCompareOfInteger\n");
+	}
 };
 
 %nodefaultctor TCollection_AVLBaseNode;
@@ -560,8 +572,6 @@ class TCollection_ExtendedString {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TCollection_ExtendedString();
-		%feature("autodoc", "1");
 		void Insert(const Standard_Integer where, const Standard_ExtCharacter what);
 		%feature("autodoc", "1");
 		void Insert(const Standard_Integer where, const TCollection_ExtendedString &what);
@@ -631,6 +641,11 @@ class TCollection_ExtendedString {
 		Standard_Integer LengthOfCString() const;
 
 };
+%extend TCollection_ExtendedString {
+	~TCollection_ExtendedString() {
+	printf("Call custom destructor for instance of TCollection_ExtendedString\n");
+	}
+};
 
 %nodefaultctor TCollection_MapNode;
 class TCollection_MapNode : public MMgt_TShared {
@@ -658,8 +673,6 @@ class TCollection_MapNode : public MMgt_TShared {
 class TCollection_PrivCompareOfReal {
 	public:
 		%feature("autodoc", "1");
-		~TCollection_PrivCompareOfReal();
-		%feature("autodoc", "1");
 		TCollection_PrivCompareOfReal();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Real &Left, const Standard_Real &Right) const;
@@ -668,6 +681,11 @@ class TCollection_PrivCompareOfReal {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsEqual(const Standard_Real &Left, const Standard_Real &Right) const;
 
+};
+%extend TCollection_PrivCompareOfReal {
+	~TCollection_PrivCompareOfReal() {
+	printf("Call custom destructor for instance of TCollection_PrivCompareOfReal\n");
+	}
 };
 
 %nodefaultctor TCollection_HExtendedString;
@@ -762,8 +780,6 @@ class TCollection_HExtendedString : public MMgt_TShared {
 class TCollection_Array1Descriptor {
 	public:
 		%feature("autodoc", "1");
-		~TCollection_Array1Descriptor();
-		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -771,12 +787,15 @@ class TCollection_Array1Descriptor {
 		Standard_Address Address() const;
 
 };
+%extend TCollection_Array1Descriptor {
+	~TCollection_Array1Descriptor() {
+	printf("Call custom destructor for instance of TCollection_Array1Descriptor\n");
+	}
+};
 
 %nodefaultctor TCollection_CompareOfInteger;
 class TCollection_CompareOfInteger : public TCollection_PrivCompareOfInteger {
 	public:
-		%feature("autodoc", "1");
-		~TCollection_CompareOfInteger();
 		%feature("autodoc", "1");
 		TCollection_CompareOfInteger();
 		%feature("autodoc", "1");
@@ -785,12 +804,15 @@ class TCollection_CompareOfInteger : public TCollection_PrivCompareOfInteger {
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
 };
+%extend TCollection_CompareOfInteger {
+	~TCollection_CompareOfInteger() {
+	printf("Call custom destructor for instance of TCollection_CompareOfInteger\n");
+	}
+};
 
 %nodefaultctor TCollection_BaseSequence;
 class TCollection_BaseSequence {
 	public:
-		%feature("autodoc", "1");
-		~TCollection_BaseSequence();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -801,12 +823,15 @@ class TCollection_BaseSequence {
 		void Exchange(const Standard_Integer I, const Standard_Integer J);
 
 };
+%extend TCollection_BaseSequence {
+	~TCollection_BaseSequence() {
+	printf("Call custom destructor for instance of TCollection_BaseSequence\n");
+	}
+};
 
 %nodefaultctor TCollection_CompareOfReal;
 class TCollection_CompareOfReal : public TCollection_PrivCompareOfReal {
 	public:
-		%feature("autodoc", "1");
-		~TCollection_CompareOfReal();
 		%feature("autodoc", "1");
 		TCollection_CompareOfReal();
 		%feature("autodoc", "1");
@@ -815,12 +840,15 @@ class TCollection_CompareOfReal : public TCollection_PrivCompareOfReal {
 		virtual		Standard_Boolean IsGreater(const Standard_Real &Left, const Standard_Real &Right) const;
 
 };
+%extend TCollection_CompareOfReal {
+	~TCollection_CompareOfReal() {
+	printf("Call custom destructor for instance of TCollection_CompareOfReal\n");
+	}
+};
 
 %nodefaultctor TCollection_BasicMap;
 class TCollection_BasicMap {
 	public:
-		%feature("autodoc", "1");
-		~TCollection_BasicMap();
 		%feature("autodoc", "1");
 		Standard_Integer NbBuckets() const;
 		%feature("autodoc", "1");
@@ -830,6 +858,11 @@ class TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Statistics(Standard_OStream & S) const;
 
+};
+%extend TCollection_BasicMap {
+	~TCollection_BasicMap() {
+	printf("Call custom destructor for instance of TCollection_BasicMap\n");
+	}
 };
 
 %nodefaultctor TCollection_HAsciiString;
@@ -988,8 +1021,6 @@ class TCollection_HAsciiString : public MMgt_TShared {
 class TCollection_Array2Descriptor {
 	public:
 		%feature("autodoc", "1");
-		~TCollection_Array2Descriptor();
-		%feature("autodoc", "1");
 		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
 		Standard_Integer LowerRow() const;
@@ -1000,4 +1031,9 @@ class TCollection_Array2Descriptor {
 		%feature("autodoc", "1");
 		Standard_Address Address() const;
 
+};
+%extend TCollection_Array2Descriptor {
+	~TCollection_Array2Descriptor() {
+	printf("Call custom destructor for instance of TCollection_Array2Descriptor\n");
+	}
 };

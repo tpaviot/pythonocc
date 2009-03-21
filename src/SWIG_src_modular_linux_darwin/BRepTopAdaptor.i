@@ -240,8 +240,6 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool();
-		%feature("autodoc", "1");
 		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool();
 		%feature("autodoc", "1");
 		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool(const BRepTopAdaptor_MapOfShapeTool &aMap);
@@ -252,6 +250,11 @@ class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicM
 		%feature("autodoc", "1");
 		const BRepTopAdaptor_Tool & Value() const;
 
+};
+%extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
+	~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool\n");
+	}
 };
 
 %nodefaultctor BRepTopAdaptor_FClass2d;
@@ -266,12 +269,15 @@ class BRepTopAdaptor_FClass2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BRepTopAdaptor_FClass2d();
-		%feature("autodoc", "1");
 		const BRepTopAdaptor_FClass2d & Copy(const BRepTopAdaptor_FClass2d &Other) const;
 		%feature("autodoc", "1");
 		TopAbs_State TestOnRestriction(const gp_Pnt2d &Puv, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1) const;
 
+};
+%extend BRepTopAdaptor_FClass2d {
+	~BRepTopAdaptor_FClass2d() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_FClass2d\n");
+	}
 };
 
 %nodefaultctor BRepTopAdaptor_TopolTool;
@@ -391,8 +397,6 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepTopAdaptor_MapOfShapeTool();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepTopAdaptor_Tool &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -408,6 +412,11 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 		BRepTopAdaptor_Tool & operator()(const TopoDS_Shape &K);
 
 };
+%extend BRepTopAdaptor_MapOfShapeTool {
+	~BRepTopAdaptor_MapOfShapeTool() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_MapOfShapeTool\n");
+	}
+};
 
 %nodefaultctor BRepTopAdaptor_SeqOfPtr;
 class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
@@ -416,8 +425,6 @@ class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 		BRepTopAdaptor_SeqOfPtr();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepTopAdaptor_SeqOfPtr();
 		%feature("autodoc", "1");
 		const BRepTopAdaptor_SeqOfPtr & Assign(const BRepTopAdaptor_SeqOfPtr &Other);
 		%feature("autodoc", "1");
@@ -457,6 +464,11 @@ class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend BRepTopAdaptor_SeqOfPtr {
+	~BRepTopAdaptor_SeqOfPtr() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_SeqOfPtr\n");
+	}
 };
 
 %nodefaultctor BRepTopAdaptor_DataMapNodeOfMapOfShapeTool;

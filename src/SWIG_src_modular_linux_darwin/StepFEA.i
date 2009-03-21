@@ -3488,8 +3488,6 @@ class StepFEA_Array1OfDegreeOfFreedom {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepFEA_Array1OfDegreeOfFreedom();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepFEA_Array1OfDegreeOfFreedom & Assign(const StepFEA_Array1OfDegreeOfFreedom &Other);
@@ -3510,6 +3508,11 @@ class StepFEA_Array1OfDegreeOfFreedom {
 		%feature("autodoc", "1");
 		StepFEA_DegreeOfFreedom & operator()(const Standard_Integer Index);
 
+};
+%extend StepFEA_Array1OfDegreeOfFreedom {
+	~StepFEA_Array1OfDegreeOfFreedom() {
+	printf("Call custom destructor for instance of StepFEA_Array1OfDegreeOfFreedom\n");
+	}
 };
 
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship;

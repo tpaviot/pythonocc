@@ -37,6 +37,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Interface_TypedValue.hxx>
 #include <Interface_Statics.hxx>
 #include <Interface_EntityCluster.hxx>
+#include <Interface_STAT.hxx>
 #include <Interface_StaticSatisfies.hxx>
 #include <Interface_InterfaceMismatch.hxx>
 #include <Interface_DataMapIteratorOfDataMapOfIntegerTransient.hxx>
@@ -79,10 +80,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Interface_IntVal.hxx>
 #include <Interface_ParamSet.hxx>
 #include <Interface_HArray1OfHAsciiString.hxx>
+#include <Interface_CheckTool.hxx>
 #include <Interface_ValueInterpret.hxx>
 #include <Interface_ParamType.hxx>
 #include <Interface_CopyTool.hxx>
 #include <Interface_VectorOfFileParameter.hxx>
+#include <Interface_CheckIterator.hxx>
 #include <Interface_CopyControl.hxx>
 #include <Interface_ReportEntity.hxx>
 #include <Interface_GeneralLib.hxx>

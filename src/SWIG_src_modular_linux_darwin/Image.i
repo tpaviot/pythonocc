@@ -354,8 +354,6 @@ class Image_Image : public MMgt_TShared {
 class Image_IndexPixelMapHasher {
 	public:
 		%feature("autodoc", "1");
-		~Image_IndexPixelMapHasher();
-		%feature("autodoc", "1");
 		Image_IndexPixelMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Aspect_IndexPixel &K, const Standard_Integer Upper);
@@ -363,12 +361,15 @@ class Image_IndexPixelMapHasher {
 		Standard_Boolean IsEqual(const Aspect_IndexPixel &K1, const Aspect_IndexPixel &K2);
 
 };
+%extend Image_IndexPixelMapHasher {
+	~Image_IndexPixelMapHasher() {
+	printf("Call custom destructor for instance of Image_IndexPixelMapHasher\n");
+	}
+};
 
 %nodefaultctor Image_PixelInterpolation;
 class Image_PixelInterpolation {
 	public:
-		%feature("autodoc", "1");
-		~Image_PixelInterpolation();
 		%feature("autodoc", "1");
 		Image_PixelInterpolation();
 		%feature("autodoc", "1");
@@ -379,12 +380,15 @@ class Image_PixelInterpolation {
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
+%extend Image_PixelInterpolation {
+	~Image_PixelInterpolation() {
+	printf("Call custom destructor for instance of Image_PixelInterpolation\n");
+	}
+};
 
 %nodefaultctor Image_PlanarPixelInterpolation;
 class Image_PlanarPixelInterpolation : public Image_PixelInterpolation {
 	public:
-		%feature("autodoc", "1");
-		~Image_PlanarPixelInterpolation();
 		%feature("autodoc", "1");
 		Image_PlanarPixelInterpolation();
 		%feature("autodoc", "1");
@@ -392,6 +396,11 @@ class Image_PlanarPixelInterpolation : public Image_PixelInterpolation {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real X, const Standard_Real Y, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
+};
+%extend Image_PlanarPixelInterpolation {
+	~Image_PlanarPixelInterpolation() {
+	printf("Call custom destructor for instance of Image_PlanarPixelInterpolation\n");
+	}
 };
 
 %nodefaultctor Image_PixelRowOfDIndexedImage;
@@ -405,8 +414,6 @@ class Image_PixelRowOfDIndexedImage {
 		void Init(const Aspect_IndexPixel &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Image_PixelRowOfDIndexedImage();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -429,12 +436,15 @@ class Image_PixelRowOfDIndexedImage {
 		Aspect_IndexPixel & operator()(const Standard_Integer Index);
 
 };
+%extend Image_PixelRowOfDIndexedImage {
+	~Image_PixelRowOfDIndexedImage() {
+	printf("Call custom destructor for instance of Image_PixelRowOfDIndexedImage\n");
+	}
+};
 
 %nodefaultctor Image_DataMapIteratorOfLookupTable;
 class Image_DataMapIteratorOfLookupTable : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Image_DataMapIteratorOfLookupTable();
 		%feature("autodoc", "1");
 		Image_DataMapIteratorOfLookupTable();
 		%feature("autodoc", "1");
@@ -446,6 +456,11 @@ class Image_DataMapIteratorOfLookupTable : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const Aspect_IndexPixel & Value() const;
 
+};
+%extend Image_DataMapIteratorOfLookupTable {
+	~Image_DataMapIteratorOfLookupTable() {
+	printf("Call custom destructor for instance of Image_DataMapIteratorOfLookupTable\n");
+	}
 };
 
 %nodefaultctor Image_LookupTable;
@@ -459,8 +474,6 @@ class Image_LookupTable : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Image_LookupTable();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Aspect_IndexPixel &K, const Aspect_IndexPixel &I);
 		%feature("autodoc", "1");
@@ -476,6 +489,11 @@ class Image_LookupTable : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Aspect_IndexPixel & operator()(const Aspect_IndexPixel &K);
 
+};
+%extend Image_LookupTable {
+	~Image_LookupTable() {
+	printf("Call custom destructor for instance of Image_LookupTable\n");
+	}
 };
 
 %nodefaultctor Image_DColorImage;
@@ -634,8 +652,6 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 class Image {
 	public:
 		%feature("autodoc", "1");
-		~Image();
-		%feature("autodoc", "1");
 		Image();
 		%feature("autodoc", "1");
 		void Zoom(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real aCoefX, const Standard_Real aCoefY);
@@ -659,12 +675,15 @@ class Image {
 		void Affine(const Handle_Image_Image &aImage, const gp_Trsf &Trsf);
 
 };
+%extend Image {
+	~Image() {
+	printf("Call custom destructor for instance of Image\n");
+	}
+};
 
 %nodefaultctor Image_AveragePixelInterpolation;
 class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
 	public:
-		%feature("autodoc", "1");
-		~Image_AveragePixelInterpolation();
 		%feature("autodoc", "1");
 		Image_AveragePixelInterpolation();
 		%feature("autodoc", "1");
@@ -674,6 +693,11 @@ class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
+};
+%extend Image_AveragePixelInterpolation {
+	~Image_AveragePixelInterpolation() {
+	printf("Call custom destructor for instance of Image_AveragePixelInterpolation\n");
+	}
 };
 
 %nodefaultctor Image_DataMapNodeOfLookupTable;
@@ -806,8 +830,6 @@ class Image_DIndexedImage : public Image_Image {
 class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
 	public:
 		%feature("autodoc", "1");
-		~Image_BilinearPixelInterpolation();
-		%feature("autodoc", "1");
 		Image_BilinearPixelInterpolation();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
@@ -816,6 +838,11 @@ class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
+};
+%extend Image_BilinearPixelInterpolation {
+	~Image_BilinearPixelInterpolation() {
+	printf("Call custom destructor for instance of Image_BilinearPixelInterpolation\n");
+	}
 };
 
 %nodefaultctor Image_Convertor;
@@ -843,14 +870,17 @@ class Image_Convertor {
 class Image_ColorPixelMapHasher {
 	public:
 		%feature("autodoc", "1");
-		~Image_ColorPixelMapHasher();
-		%feature("autodoc", "1");
 		Image_ColorPixelMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Aspect_ColorPixel &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_ColorPixel &K1, const Aspect_ColorPixel &K2);
 
+};
+%extend Image_ColorPixelMapHasher {
+	~Image_ColorPixelMapHasher() {
+	printf("Call custom destructor for instance of Image_ColorPixelMapHasher\n");
+	}
 };
 
 %nodefaultctor Image_ColorPixelDataMap;
@@ -864,8 +894,6 @@ class Image_ColorPixelDataMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Image_ColorPixelDataMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Aspect_ColorPixel &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -882,6 +910,11 @@ class Image_ColorPixelDataMap : public TCollection_BasicMap {
 		Standard_Integer & operator()(const Aspect_ColorPixel &K);
 
 };
+%extend Image_ColorPixelDataMap {
+	~Image_ColorPixelDataMap() {
+	printf("Call custom destructor for instance of Image_ColorPixelDataMap\n");
+	}
+};
 
 %nodefaultctor Image_PixelRowOfDColorImage;
 class Image_PixelRowOfDColorImage {
@@ -894,8 +927,6 @@ class Image_PixelRowOfDColorImage {
 		void Init(const Aspect_ColorPixel &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Image_PixelRowOfDColorImage();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -918,12 +949,15 @@ class Image_PixelRowOfDColorImage {
 		Aspect_ColorPixel & operator()(const Standard_Integer Index);
 
 };
+%extend Image_PixelRowOfDColorImage {
+	~Image_PixelRowOfDColorImage() {
+	printf("Call custom destructor for instance of Image_PixelRowOfDColorImage\n");
+	}
+};
 
 %nodefaultctor Image_BalancedPixelInterpolation;
 class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
 	public:
-		%feature("autodoc", "1");
-		~Image_BalancedPixelInterpolation();
 		%feature("autodoc", "1");
 		Image_BalancedPixelInterpolation();
 		%feature("autodoc", "1");
@@ -934,12 +968,15 @@ class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
+%extend Image_BalancedPixelInterpolation {
+	~Image_BalancedPixelInterpolation() {
+	printf("Call custom destructor for instance of Image_BalancedPixelInterpolation\n");
+	}
+};
 
 %nodefaultctor Image_DataMapIteratorOfColorPixelDataMap;
 class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Image_DataMapIteratorOfColorPixelDataMap();
 		%feature("autodoc", "1");
 		Image_DataMapIteratorOfColorPixelDataMap();
 		%feature("autodoc", "1");
@@ -951,6 +988,11 @@ class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIter
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend Image_DataMapIteratorOfColorPixelDataMap {
+	~Image_DataMapIteratorOfColorPixelDataMap() {
+	printf("Call custom destructor for instance of Image_DataMapIteratorOfColorPixelDataMap\n");
+	}
 };
 
 %nodefaultctor Image_PseudoColorImage;
@@ -1009,8 +1051,6 @@ class Image_PixelFieldOfDColorImage {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Image_PixelFieldOfDColorImage();
-		%feature("autodoc", "1");
 		Standard_Integer Width() const;
 		%feature("autodoc", "1");
 		Standard_Integer Height() const;
@@ -1029,4 +1069,9 @@ class Image_PixelFieldOfDColorImage {
 		%feature("autodoc", "1");
 		Aspect_ColorPixel & operator()(const Standard_Integer X, const Standard_Integer Y);
 
+};
+%extend Image_PixelFieldOfDColorImage {
+	~Image_PixelFieldOfDColorImage() {
+	printf("Call custom destructor for instance of Image_PixelFieldOfDColorImage\n");
+	}
 };

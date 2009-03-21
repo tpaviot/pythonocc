@@ -449,14 +449,17 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public 
 class IntTools_SurfaceRangeSampleMapHasher {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_SurfaceRangeSampleMapHasher();
-		%feature("autodoc", "1");
 		IntTools_SurfaceRangeSampleMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const IntTools_SurfaceRangeSample &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IntTools_SurfaceRangeSample &S1, const IntTools_SurfaceRangeSample &S2);
 
+};
+%extend IntTools_SurfaceRangeSampleMapHasher {
+	~IntTools_SurfaceRangeSampleMapHasher() {
+	printf("Call custom destructor for instance of IntTools_SurfaceRangeSampleMapHasher\n");
+	}
 };
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfRoots;
@@ -497,19 +500,20 @@ class IntTools_FClass2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntTools_FClass2d();
-		%feature("autodoc", "1");
 		TopAbs_State TestOnRestriction(const gp_Pnt2d &Puv, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsHole() const;
 
 };
+%extend IntTools_FClass2d {
+	~IntTools_FClass2d() {
+	printf("Call custom destructor for instance of IntTools_FClass2d\n");
+	}
+};
 
 %nodefaultctor IntTools_CommonPrt;
 class IntTools_CommonPrt {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_CommonPrt();
 		%feature("autodoc", "1");
 		IntTools_CommonPrt();
 		%feature("autodoc", "1");
@@ -564,6 +568,11 @@ class IntTools_CommonPrt {
 		void BoundingPoints(gp_Pnt & aP1, gp_Pnt & aP2) const;
 
 };
+%extend IntTools_CommonPrt {
+	~IntTools_CommonPrt() {
+	printf("Call custom destructor for instance of IntTools_CommonPrt\n");
+	}
+};
 
 %nodefaultctor IntTools_ListNodeOfListOfBox;
 class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
@@ -591,8 +600,6 @@ class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
 class IntTools_PntOnFace {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_PntOnFace();
-		%feature("autodoc", "1");
 		IntTools_PntOnFace();
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Face &aF, const gp_Pnt &aP, const Standard_Real U, const Standard_Real V);
@@ -614,6 +621,11 @@ class IntTools_PntOnFace {
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%extend IntTools_PntOnFace {
+	~IntTools_PntOnFace() {
+	printf("Call custom destructor for instance of IntTools_PntOnFace\n");
+	}
+};
 
 %nodefaultctor IntTools_IndexedDataMapOfShapeAddress;
 class IntTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
@@ -626,8 +638,6 @@ class IntTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_IndexedDataMapOfShapeAddress();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const Standard_Address &I);
 		%feature("autodoc", "1");
@@ -654,6 +664,11 @@ class IntTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
 		Standard_Address & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend IntTools_IndexedDataMapOfShapeAddress {
+	~IntTools_IndexedDataMapOfShapeAddress() {
+	printf("Call custom destructor for instance of IntTools_IndexedDataMapOfShapeAddress\n");
+	}
+};
 
 %nodefaultctor IntTools_Array1OfRoots;
 class IntTools_Array1OfRoots {
@@ -666,8 +681,6 @@ class IntTools_Array1OfRoots {
 		void Init(const IntTools_Root &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntTools_Array1OfRoots();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -690,6 +703,11 @@ class IntTools_Array1OfRoots {
 		IntTools_Root & operator()(const Standard_Integer Index);
 
 };
+%extend IntTools_Array1OfRoots {
+	~IntTools_Array1OfRoots() {
+	printf("Call custom destructor for instance of IntTools_Array1OfRoots\n");
+	}
+};
 
 %nodefaultctor IntTools_SequenceOfRoots;
 class IntTools_SequenceOfRoots : public TCollection_BaseSequence {
@@ -698,8 +716,6 @@ class IntTools_SequenceOfRoots : public TCollection_BaseSequence {
 		IntTools_SequenceOfRoots();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_SequenceOfRoots();
 		%feature("autodoc", "1");
 		const IntTools_SequenceOfRoots & Assign(const IntTools_SequenceOfRoots &Other);
 		%feature("autodoc", "1");
@@ -740,6 +756,11 @@ class IntTools_SequenceOfRoots : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntTools_SequenceOfRoots {
+	~IntTools_SequenceOfRoots() {
+	printf("Call custom destructor for instance of IntTools_SequenceOfRoots\n");
+	}
+};
 
 %nodefaultctor IntTools_SequenceOfCurves;
 class IntTools_SequenceOfCurves : public TCollection_BaseSequence {
@@ -748,8 +769,6 @@ class IntTools_SequenceOfCurves : public TCollection_BaseSequence {
 		IntTools_SequenceOfCurves();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_SequenceOfCurves();
 		%feature("autodoc", "1");
 		const IntTools_SequenceOfCurves & Assign(const IntTools_SequenceOfCurves &Other);
 		%feature("autodoc", "1");
@@ -790,6 +809,11 @@ class IntTools_SequenceOfCurves : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntTools_SequenceOfCurves {
+	~IntTools_SequenceOfCurves() {
+	printf("Call custom destructor for instance of IntTools_SequenceOfCurves\n");
+	}
+};
 
 %nodefaultctor IntTools_ListOfSurfaceRangeSample;
 class IntTools_ListOfSurfaceRangeSample {
@@ -802,8 +826,6 @@ class IntTools_ListOfSurfaceRangeSample {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_ListOfSurfaceRangeSample();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -836,12 +858,15 @@ class IntTools_ListOfSurfaceRangeSample {
 		void InsertAfter(IntTools_ListOfSurfaceRangeSample & Other, IntTools_ListIteratorOfListOfSurfaceRangeSample & It);
 
 };
+%extend IntTools_ListOfSurfaceRangeSample {
+	~IntTools_ListOfSurfaceRangeSample() {
+	printf("Call custom destructor for instance of IntTools_ListOfSurfaceRangeSample\n");
+	}
+};
 
 %nodefaultctor IntTools_Compare;
 class IntTools_Compare {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_Compare();
 		%feature("autodoc", "1");
 		IntTools_Compare();
 		%feature("autodoc", "1");
@@ -853,6 +878,11 @@ class IntTools_Compare {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IntTools_Root &Left, const IntTools_Root &Right) const;
 
+};
+%extend IntTools_Compare {
+	~IntTools_Compare() {
+	printf("Call custom destructor for instance of IntTools_Compare\n");
+	}
 };
 
 %nodefaultctor IntTools_DataMapOfCurveSampleBox;
@@ -866,8 +896,6 @@ class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_DataMapOfCurveSampleBox();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const IntTools_CurveRangeSample &K, const Bnd_Box &I);
 		%feature("autodoc", "1");
@@ -884,12 +912,15 @@ class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
 		Bnd_Box & operator()(const IntTools_CurveRangeSample &K);
 
 };
+%extend IntTools_DataMapOfCurveSampleBox {
+	~IntTools_DataMapOfCurveSampleBox() {
+	printf("Call custom destructor for instance of IntTools_DataMapOfCurveSampleBox\n");
+	}
+};
 
 %nodefaultctor IntTools_CompareRange;
 class IntTools_CompareRange {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_CompareRange();
 		%feature("autodoc", "1");
 		IntTools_CompareRange();
 		%feature("autodoc", "1");
@@ -901,6 +932,11 @@ class IntTools_CompareRange {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IntTools_Range &Left, const IntTools_Range &Right) const;
 
+};
+%extend IntTools_CompareRange {
+	~IntTools_CompareRange() {
+	printf("Call custom destructor for instance of IntTools_CompareRange\n");
+	}
 };
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfPntOn2Faces;
@@ -929,12 +965,15 @@ class IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public TCollection_SeqNode 
 class IntTools_QuickSort {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_QuickSort();
-		%feature("autodoc", "1");
 		IntTools_QuickSort();
 		%feature("autodoc", "1");
 		void Sort(IntTools_Array1OfRoots & TheArray, const IntTools_Compare &Comp);
 
+};
+%extend IntTools_QuickSort {
+	~IntTools_QuickSort() {
+	printf("Call custom destructor for instance of IntTools_QuickSort\n");
+	}
 };
 
 %nodefaultctor IntTools_MapOfCurveSample;
@@ -949,14 +988,17 @@ class IntTools_MapOfCurveSample : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_MapOfCurveSample();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const IntTools_CurveRangeSample &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const IntTools_CurveRangeSample &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const IntTools_CurveRangeSample &aKey);
 
+};
+%extend IntTools_MapOfCurveSample {
+	~IntTools_MapOfCurveSample() {
+	printf("Call custom destructor for instance of IntTools_MapOfCurveSample\n");
+	}
 };
 
 %nodefaultctor IntTools_SequenceOfCommonPrts;
@@ -966,8 +1008,6 @@ class IntTools_SequenceOfCommonPrts : public TCollection_BaseSequence {
 		IntTools_SequenceOfCommonPrts();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_SequenceOfCommonPrts();
 		%feature("autodoc", "1");
 		const IntTools_SequenceOfCommonPrts & Assign(const IntTools_SequenceOfCommonPrts &Other);
 		%feature("autodoc", "1");
@@ -1008,12 +1048,15 @@ class IntTools_SequenceOfCommonPrts : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntTools_SequenceOfCommonPrts {
+	~IntTools_SequenceOfCommonPrts() {
+	printf("Call custom destructor for instance of IntTools_SequenceOfCommonPrts\n");
+	}
+};
 
 %nodefaultctor IntTools_MarkedRangeSet;
 class IntTools_MarkedRangeSet {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_MarkedRangeSet();
 		%feature("autodoc", "1");
 		IntTools_MarkedRangeSet();
 		%feature("autodoc", "1");
@@ -1048,6 +1091,11 @@ class IntTools_MarkedRangeSet {
 		IntTools_Range Range(const Standard_Integer theIndex) const;
 
 };
+%extend IntTools_MarkedRangeSet {
+	~IntTools_MarkedRangeSet() {
+	printf("Call custom destructor for instance of IntTools_MarkedRangeSet\n");
+	}
+};
 
 %nodefaultctor IntTools_DataMapOfSurfaceSampleBox;
 class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
@@ -1060,8 +1108,6 @@ class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_DataMapOfSurfaceSampleBox();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const IntTools_SurfaceRangeSample &K, const Bnd_Box &I);
 		%feature("autodoc", "1");
@@ -1078,6 +1124,11 @@ class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
 		Bnd_Box & operator()(const IntTools_SurfaceRangeSample &K);
 
 };
+%extend IntTools_DataMapOfSurfaceSampleBox {
+	~IntTools_DataMapOfSurfaceSampleBox() {
+	printf("Call custom destructor for instance of IntTools_DataMapOfSurfaceSampleBox\n");
+	}
+};
 
 %nodefaultctor IntTools_CArray1OfInteger;
 class IntTools_CArray1OfInteger {
@@ -1092,8 +1143,6 @@ class IntTools_CArray1OfInteger {
 		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntTools_CArray1OfInteger();
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1111,6 +1160,11 @@ class IntTools_CArray1OfInteger {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IntTools_CArray1OfInteger &Other) const;
 
+};
+%extend IntTools_CArray1OfInteger {
+	~IntTools_CArray1OfInteger() {
+	printf("Call custom destructor for instance of IntTools_CArray1OfInteger\n");
+	}
 };
 
 %nodefaultctor IntTools_StdMapNodeOfMapOfSurfaceSample;
@@ -1142,8 +1196,6 @@ class IntTools_SequenceOfRanges : public TCollection_BaseSequence {
 		IntTools_SequenceOfRanges();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_SequenceOfRanges();
 		%feature("autodoc", "1");
 		const IntTools_SequenceOfRanges & Assign(const IntTools_SequenceOfRanges &Other);
 		%feature("autodoc", "1");
@@ -1184,12 +1236,15 @@ class IntTools_SequenceOfRanges : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntTools_SequenceOfRanges {
+	~IntTools_SequenceOfRanges() {
+	printf("Call custom destructor for instance of IntTools_SequenceOfRanges\n");
+	}
+};
 
 %nodefaultctor IntTools_SurfaceRangeSample;
 class IntTools_SurfaceRangeSample {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_SurfaceRangeSample();
 		%feature("autodoc", "1");
 		IntTools_SurfaceRangeSample();
 		%feature("autodoc", "1");
@@ -1246,12 +1301,15 @@ class IntTools_SurfaceRangeSample {
 		Standard_Integer GetRangeIndexVDeeper(const Standard_Integer theNbSampleV) const;
 
 };
+%extend IntTools_SurfaceRangeSample {
+	~IntTools_SurfaceRangeSample() {
+	printf("Call custom destructor for instance of IntTools_SurfaceRangeSample\n");
+	}
+};
 
 %nodefaultctor IntTools_Range;
 class IntTools_Range {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_Range();
 		%feature("autodoc", "1");
 		IntTools_Range();
 		%feature("autodoc", "1");
@@ -1267,6 +1325,11 @@ class IntTools_Range {
 		%feature("autodoc", "1");
 		void Range(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntTools_Range {
+	~IntTools_Range() {
+	printf("Call custom destructor for instance of IntTools_Range\n");
+	}
 };
 
 %nodefaultctor IntTools_IndexedDataMapOfTransientAddress;
@@ -1320,8 +1383,6 @@ class IntTools_Context {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntTools_Context();
-		%feature("autodoc", "1");
 		IntTools_FClass2d & FClass2d(const TopoDS_Face &aF);
 		%feature("autodoc", "1");
 		GeomAPI_ProjectPointOnSurf & ProjPS(const TopoDS_Face &aF);
@@ -1359,12 +1420,15 @@ class IntTools_Context {
 		Standard_Boolean ProjectPointOnEdge(const gp_Pnt &aP, const TopoDS_Edge &aE, Standard_Real &OutValue);
 
 };
+%extend IntTools_Context {
+	~IntTools_Context() {
+	printf("Call custom destructor for instance of IntTools_Context\n");
+	}
+};
 
 %nodefaultctor IntTools_MapIteratorOfMapOfSurfaceSample;
 class IntTools_MapIteratorOfMapOfSurfaceSample : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_MapIteratorOfMapOfSurfaceSample();
 		%feature("autodoc", "1");
 		IntTools_MapIteratorOfMapOfSurfaceSample();
 		%feature("autodoc", "1");
@@ -1375,12 +1439,15 @@ class IntTools_MapIteratorOfMapOfSurfaceSample : public TCollection_BasicMapIter
 		const IntTools_SurfaceRangeSample & Key() const;
 
 };
+%extend IntTools_MapIteratorOfMapOfSurfaceSample {
+	~IntTools_MapIteratorOfMapOfSurfaceSample() {
+	printf("Call custom destructor for instance of IntTools_MapIteratorOfMapOfSurfaceSample\n");
+	}
+};
 
 %nodefaultctor IntTools_EdgeFace;
 class IntTools_EdgeFace {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_EdgeFace();
 		%feature("autodoc", "1");
 		IntTools_EdgeFace();
 		%feature("autodoc", "1");
@@ -1419,6 +1486,11 @@ class IntTools_EdgeFace {
 		Standard_Boolean IsEqDistance(const gp_Pnt &aP, const BRepAdaptor_Surface &aS, const Standard_Real aT, Standard_Real &OutValue);
 
 };
+%extend IntTools_EdgeFace {
+	~IntTools_EdgeFace() {
+	printf("Call custom destructor for instance of IntTools_EdgeFace\n");
+	}
+};
 
 %nodefaultctor IntTools_Array1OfRange;
 class IntTools_Array1OfRange {
@@ -1431,8 +1503,6 @@ class IntTools_Array1OfRange {
 		void Init(const IntTools_Range &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntTools_Array1OfRange();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1455,12 +1525,15 @@ class IntTools_Array1OfRange {
 		IntTools_Range & operator()(const Standard_Integer Index);
 
 };
+%extend IntTools_Array1OfRange {
+	~IntTools_Array1OfRange() {
+	printf("Call custom destructor for instance of IntTools_Array1OfRange\n");
+	}
+};
 
 %nodefaultctor IntTools_BaseRangeSample;
 class IntTools_BaseRangeSample {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_BaseRangeSample();
 		%feature("autodoc", "1");
 		IntTools_BaseRangeSample();
 		%feature("autodoc", "1");
@@ -1471,12 +1544,15 @@ class IntTools_BaseRangeSample {
 		Standard_Integer GetDepth() const;
 
 };
+%extend IntTools_BaseRangeSample {
+	~IntTools_BaseRangeSample() {
+	printf("Call custom destructor for instance of IntTools_BaseRangeSample\n");
+	}
+};
 
 %nodefaultctor IntTools_CurveRangeSample;
 class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_CurveRangeSample();
 		%feature("autodoc", "1");
 		IntTools_CurveRangeSample();
 		%feature("autodoc", "1");
@@ -1493,12 +1569,15 @@ class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
 		Standard_Integer GetRangeIndexDeeper(const Standard_Integer theNbSample) const;
 
 };
+%extend IntTools_CurveRangeSample {
+	~IntTools_CurveRangeSample() {
+	printf("Call custom destructor for instance of IntTools_CurveRangeSample\n");
+	}
+};
 
 %nodefaultctor IntTools;
 class IntTools {
 	public:
-		%feature("autodoc", "1");
-		~IntTools();
 		%feature("autodoc", "1");
 		IntTools();
 		%feature("autodoc", "1");
@@ -1516,6 +1595,11 @@ class IntTools {
 		%feature("autodoc", "1");
 		Standard_Integer PrepareArgs(BRepAdaptor_Curve & C, const Standard_Real tMax, const Standard_Real tMin, const Standard_Integer Discret, const Standard_Real Deflect, IntTools_CArray1OfReal & anArgs);
 
+};
+%extend IntTools {
+	~IntTools() {
+	printf("Call custom destructor for instance of IntTools\n");
+	}
 };
 
 %nodefaultctor IntTools_Curve;
@@ -1603,14 +1687,17 @@ class IntTools_ListNodeOfListOfSurfaceRangeSample : public TCollection_MapNode {
 class IntTools_CurveRangeSampleMapHasher {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_CurveRangeSampleMapHasher();
-		%feature("autodoc", "1");
 		IntTools_CurveRangeSampleMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const IntTools_CurveRangeSample &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IntTools_CurveRangeSample &S1, const IntTools_CurveRangeSample &S2);
 
+};
+%extend IntTools_CurveRangeSampleMapHasher {
+	~IntTools_CurveRangeSampleMapHasher() {
+	printf("Call custom destructor for instance of IntTools_CurveRangeSampleMapHasher\n");
+	}
 };
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfCommonPrts;
@@ -1639,8 +1726,6 @@ class IntTools_SequenceNodeOfSequenceOfCommonPrts : public TCollection_SeqNode {
 class IntTools_CurveRangeLocalizeData {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_CurveRangeLocalizeData();
-		%feature("autodoc", "1");
 		IntTools_CurveRangeLocalizeData(const Standard_Integer theNbSample, const Standard_Real theMinRange);
 		%feature("autodoc", "1");
 		Standard_Integer GetNbSample() const;
@@ -1657,6 +1742,11 @@ class IntTools_CurveRangeLocalizeData {
 		%feature("autodoc", "1");
 		void ListRangeOut(IntTools_ListOfCurveRangeSample & theList) const;
 
+};
+%extend IntTools_CurveRangeLocalizeData {
+	~IntTools_CurveRangeLocalizeData() {
+	printf("Call custom destructor for instance of IntTools_CurveRangeLocalizeData\n");
+	}
 };
 
 %nodefaultctor IntTools_TopolTool;
@@ -1705,8 +1795,6 @@ class IntTools_SequenceOfPntOn2Faces : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_SequenceOfPntOn2Faces();
-		%feature("autodoc", "1");
 		const IntTools_SequenceOfPntOn2Faces & Assign(const IntTools_SequenceOfPntOn2Faces &Other);
 		%feature("autodoc", "1");
 		void Append(const IntTools_PntOn2Faces &T);
@@ -1746,12 +1834,15 @@ class IntTools_SequenceOfPntOn2Faces : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntTools_SequenceOfPntOn2Faces {
+	~IntTools_SequenceOfPntOn2Faces() {
+	printf("Call custom destructor for instance of IntTools_SequenceOfPntOn2Faces\n");
+	}
+};
 
 %nodefaultctor IntTools_EdgeEdge;
 class IntTools_EdgeEdge {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_EdgeEdge();
 		%feature("autodoc", "1");
 		IntTools_EdgeEdge();
 		%feature("autodoc", "1");
@@ -1794,12 +1885,15 @@ class IntTools_EdgeEdge {
 		const IntTools_Range & Range2() const;
 
 };
+%extend IntTools_EdgeEdge {
+	~IntTools_EdgeEdge() {
+	printf("Call custom destructor for instance of IntTools_EdgeEdge\n");
+	}
+};
 
 %nodefaultctor IntTools_LineConstructor;
 class IntTools_LineConstructor {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_LineConstructor();
 		%feature("autodoc", "1");
 		IntTools_LineConstructor();
 		%feature("autodoc", "1");
@@ -1814,12 +1908,15 @@ class IntTools_LineConstructor {
 		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%extend IntTools_LineConstructor {
+	~IntTools_LineConstructor() {
+	printf("Call custom destructor for instance of IntTools_LineConstructor\n");
+	}
+};
 
 %nodefaultctor IntTools_SurfaceRangeLocalizeData;
 class IntTools_SurfaceRangeLocalizeData {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_SurfaceRangeLocalizeData();
 		%feature("autodoc", "1");
 		IntTools_SurfaceRangeLocalizeData();
 		%feature("autodoc", "1");
@@ -1888,6 +1985,11 @@ class IntTools_SurfaceRangeLocalizeData {
 		void ClearGrid();
 
 };
+%extend IntTools_SurfaceRangeLocalizeData {
+	~IntTools_SurfaceRangeLocalizeData() {
+	printf("Call custom destructor for instance of IntTools_SurfaceRangeLocalizeData\n");
+	}
+};
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfRanges;
 class IntTools_SequenceNodeOfSequenceOfRanges : public TCollection_SeqNode {
@@ -1914,8 +2016,6 @@ class IntTools_SequenceNodeOfSequenceOfRanges : public TCollection_SeqNode {
 %nodefaultctor IntTools_Root;
 class IntTools_Root {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_Root();
 		%feature("autodoc", "1");
 		IntTools_Root();
 		%feature("autodoc", "1");
@@ -1947,6 +2047,11 @@ class IntTools_Root {
 		%feature("autodoc", "1");
 		void Interval(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntTools_Root {
+	~IntTools_Root() {
+	printf("Call custom destructor for instance of IntTools_Root\n");
+	}
 };
 
 %nodefaultctor IntTools_StdMapNodeOfMapOfCurveSample;
@@ -2021,8 +2126,6 @@ class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNo
 class IntTools_PntOn2Faces {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_PntOn2Faces();
-		%feature("autodoc", "1");
 		IntTools_PntOn2Faces();
 		%feature("autodoc", "1");
 		IntTools_PntOn2Faces(const IntTools_PntOnFace &aP1, const IntTools_PntOnFace &aP2);
@@ -2039,6 +2142,11 @@ class IntTools_PntOn2Faces {
 		%feature("autodoc", "1");
 		Standard_Boolean IsValid() const;
 
+};
+%extend IntTools_PntOn2Faces {
+	~IntTools_PntOn2Faces() {
+	printf("Call custom destructor for instance of IntTools_PntOn2Faces\n");
+	}
 };
 
 %nodefaultctor IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
@@ -2081,8 +2189,6 @@ class IntTools_ListOfCurveRangeSample {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_ListOfCurveRangeSample();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const IntTools_CurveRangeSample &I);
@@ -2114,12 +2220,15 @@ class IntTools_ListOfCurveRangeSample {
 		void InsertAfter(IntTools_ListOfCurveRangeSample & Other, IntTools_ListIteratorOfListOfCurveRangeSample & It);
 
 };
+%extend IntTools_ListOfCurveRangeSample {
+	~IntTools_ListOfCurveRangeSample() {
+	printf("Call custom destructor for instance of IntTools_ListOfCurveRangeSample\n");
+	}
+};
 
 %nodefaultctor IntTools_ListIteratorOfListOfCurveRangeSample;
 class IntTools_ListIteratorOfListOfCurveRangeSample {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_ListIteratorOfListOfCurveRangeSample();
 		%feature("autodoc", "1");
 		IntTools_ListIteratorOfListOfCurveRangeSample();
 		%feature("autodoc", "1");
@@ -2134,12 +2243,15 @@ class IntTools_ListIteratorOfListOfCurveRangeSample {
 		IntTools_CurveRangeSample & Value() const;
 
 };
+%extend IntTools_ListIteratorOfListOfCurveRangeSample {
+	~IntTools_ListIteratorOfListOfCurveRangeSample() {
+	printf("Call custom destructor for instance of IntTools_ListIteratorOfListOfCurveRangeSample\n");
+	}
+};
 
 %nodefaultctor IntTools_BeanBeanIntersector;
 class IntTools_BeanBeanIntersector {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_BeanBeanIntersector();
 		%feature("autodoc", "1");
 		IntTools_BeanBeanIntersector();
 		%feature("autodoc", "1");
@@ -2166,12 +2278,15 @@ class IntTools_BeanBeanIntersector {
 		void Result(IntTools_SequenceOfRanges & theResults) const;
 
 };
+%extend IntTools_BeanBeanIntersector {
+	~IntTools_BeanBeanIntersector() {
+	printf("Call custom destructor for instance of IntTools_BeanBeanIntersector\n");
+	}
+};
 
 %nodefaultctor IntTools_DataMapIteratorOfDataMapOfCurveSampleBox;
 class IntTools_DataMapIteratorOfDataMapOfCurveSampleBox : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_DataMapIteratorOfDataMapOfCurveSampleBox();
 		%feature("autodoc", "1");
 		IntTools_DataMapIteratorOfDataMapOfCurveSampleBox();
 		%feature("autodoc", "1");
@@ -2184,17 +2299,25 @@ class IntTools_DataMapIteratorOfDataMapOfCurveSampleBox : public TCollection_Bas
 		const Bnd_Box & Value() const;
 
 };
+%extend IntTools_DataMapIteratorOfDataMapOfCurveSampleBox {
+	~IntTools_DataMapIteratorOfDataMapOfCurveSampleBox() {
+	printf("Call custom destructor for instance of IntTools_DataMapIteratorOfDataMapOfCurveSampleBox\n");
+	}
+};
 
 %nodefaultctor IntTools_QuickSortRange;
 class IntTools_QuickSortRange {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_QuickSortRange();
-		%feature("autodoc", "1");
 		IntTools_QuickSortRange();
 		%feature("autodoc", "1");
 		void Sort(IntTools_Array1OfRange & TheArray, const IntTools_CompareRange &Comp);
 
+};
+%extend IntTools_QuickSortRange {
+	~IntTools_QuickSortRange() {
+	printf("Call custom destructor for instance of IntTools_QuickSortRange\n");
+	}
 };
 
 %nodefaultctor IntTools_CArray1OfReal;
@@ -2210,8 +2333,6 @@ class IntTools_CArray1OfReal {
 		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntTools_CArray1OfReal();
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2230,12 +2351,15 @@ class IntTools_CArray1OfReal {
 		Standard_Boolean IsEqual(const IntTools_CArray1OfReal &Other) const;
 
 };
+%extend IntTools_CArray1OfReal {
+	~IntTools_CArray1OfReal() {
+	printf("Call custom destructor for instance of IntTools_CArray1OfReal\n");
+	}
+};
 
 %nodefaultctor IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox;
 class IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox();
 		%feature("autodoc", "1");
 		IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox();
 		%feature("autodoc", "1");
@@ -2248,12 +2372,15 @@ class IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox : public TCollection_B
 		const Bnd_Box & Value() const;
 
 };
+%extend IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox {
+	~IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox() {
+	printf("Call custom destructor for instance of IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox\n");
+	}
+};
 
 %nodefaultctor IntTools_Tools;
 class IntTools_Tools {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_Tools();
 		%feature("autodoc", "1");
 		IntTools_Tools();
 		%feature("autodoc", "1");
@@ -2290,12 +2417,15 @@ class IntTools_Tools {
 		Standard_Real CurveTolerance(const Handle_Geom_Curve &aC, const Standard_Real aTolBase);
 
 };
+%extend IntTools_Tools {
+	~IntTools_Tools() {
+	printf("Call custom destructor for instance of IntTools_Tools\n");
+	}
+};
 
 %nodefaultctor IntTools_ListIteratorOfListOfSurfaceRangeSample;
 class IntTools_ListIteratorOfListOfSurfaceRangeSample {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_ListIteratorOfListOfSurfaceRangeSample();
 		%feature("autodoc", "1");
 		IntTools_ListIteratorOfListOfSurfaceRangeSample();
 		%feature("autodoc", "1");
@@ -2310,12 +2440,15 @@ class IntTools_ListIteratorOfListOfSurfaceRangeSample {
 		IntTools_SurfaceRangeSample & Value() const;
 
 };
+%extend IntTools_ListIteratorOfListOfSurfaceRangeSample {
+	~IntTools_ListIteratorOfListOfSurfaceRangeSample() {
+	printf("Call custom destructor for instance of IntTools_ListIteratorOfListOfSurfaceRangeSample\n");
+	}
+};
 
 %nodefaultctor IntTools_ShrunkRange;
 class IntTools_ShrunkRange {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_ShrunkRange();
 		%feature("autodoc", "1");
 		IntTools_ShrunkRange();
 		%feature("autodoc", "1");
@@ -2336,6 +2469,11 @@ class IntTools_ShrunkRange {
 		Standard_Integer ErrorStatus() const;
 
 };
+%extend IntTools_ShrunkRange {
+	~IntTools_ShrunkRange() {
+	printf("Call custom destructor for instance of IntTools_ShrunkRange\n");
+	}
+};
 
 %nodefaultctor IntTools_ListOfBox;
 class IntTools_ListOfBox {
@@ -2348,8 +2486,6 @@ class IntTools_ListOfBox {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_ListOfBox();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -2382,12 +2518,15 @@ class IntTools_ListOfBox {
 		void InsertAfter(IntTools_ListOfBox & Other, IntTools_ListIteratorOfListOfBox & It);
 
 };
+%extend IntTools_ListOfBox {
+	~IntTools_ListOfBox() {
+	printf("Call custom destructor for instance of IntTools_ListOfBox\n");
+	}
+};
 
 %nodefaultctor IntTools_MapIteratorOfMapOfCurveSample;
 class IntTools_MapIteratorOfMapOfCurveSample : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_MapIteratorOfMapOfCurveSample();
 		%feature("autodoc", "1");
 		IntTools_MapIteratorOfMapOfCurveSample();
 		%feature("autodoc", "1");
@@ -2398,12 +2537,15 @@ class IntTools_MapIteratorOfMapOfCurveSample : public TCollection_BasicMapIterat
 		const IntTools_CurveRangeSample & Key() const;
 
 };
+%extend IntTools_MapIteratorOfMapOfCurveSample {
+	~IntTools_MapIteratorOfMapOfCurveSample() {
+	printf("Call custom destructor for instance of IntTools_MapIteratorOfMapOfCurveSample\n");
+	}
+};
 
 %nodefaultctor IntTools_BeanFaceIntersector;
 class IntTools_BeanFaceIntersector {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_BeanFaceIntersector();
 		%feature("autodoc", "1");
 		IntTools_BeanFaceIntersector();
 		%feature("autodoc", "1");
@@ -2434,12 +2576,15 @@ class IntTools_BeanFaceIntersector {
 		void Result(IntTools_SequenceOfRanges & theResults) const;
 
 };
+%extend IntTools_BeanFaceIntersector {
+	~IntTools_BeanFaceIntersector() {
+	printf("Call custom destructor for instance of IntTools_BeanFaceIntersector\n");
+	}
+};
 
 %nodefaultctor IntTools_FaceFace;
 class IntTools_FaceFace {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_FaceFace();
 		%feature("autodoc", "1");
 		IntTools_FaceFace();
 		%feature("autodoc", "1");
@@ -2467,6 +2612,11 @@ class IntTools_FaceFace {
 		%feature("autodoc", "1");
 		void SetList(IntSurf_ListOfPntOn2S & ListOfPnts);
 
+};
+%extend IntTools_FaceFace {
+	~IntTools_FaceFace() {
+	printf("Call custom destructor for instance of IntTools_FaceFace\n");
+	}
 };
 
 %nodefaultctor IntTools_DataMapNodeOfDataMapOfCurveSampleBox;
@@ -2505,14 +2655,17 @@ class IntTools_MapOfSurfaceSample : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_MapOfSurfaceSample();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const IntTools_SurfaceRangeSample &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const IntTools_SurfaceRangeSample &aKey) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const IntTools_SurfaceRangeSample &aKey);
 
+};
+%extend IntTools_MapOfSurfaceSample {
+	~IntTools_MapOfSurfaceSample() {
+	printf("Call custom destructor for instance of IntTools_MapOfSurfaceSample\n");
+	}
 };
 
 %nodefaultctor IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress;
@@ -2547,8 +2700,6 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : public TCo
 class IntTools_ListIteratorOfListOfBox {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_ListIteratorOfListOfBox();
-		%feature("autodoc", "1");
 		IntTools_ListIteratorOfListOfBox();
 		%feature("autodoc", "1");
 		IntTools_ListIteratorOfListOfBox(const IntTools_ListOfBox &L);
@@ -2561,4 +2712,9 @@ class IntTools_ListIteratorOfListOfBox {
 		%feature("autodoc", "1");
 		Bnd_Box & Value() const;
 
+};
+%extend IntTools_ListIteratorOfListOfBox {
+	~IntTools_ListIteratorOfListOfBox() {
+	printf("Call custom destructor for instance of IntTools_ListIteratorOfListOfBox\n");
+	}
 };

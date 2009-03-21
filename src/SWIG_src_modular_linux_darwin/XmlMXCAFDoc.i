@@ -410,12 +410,15 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 class XmlMXCAFDoc {
 	public:
 		%feature("autodoc", "1");
-		~XmlMXCAFDoc();
-		%feature("autodoc", "1");
 		XmlMXCAFDoc();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);
 
+};
+%extend XmlMXCAFDoc {
+	~XmlMXCAFDoc() {
+	printf("Call custom destructor for instance of XmlMXCAFDoc\n");
+	}
 };
 
 %nodefaultctor XmlMXCAFDoc_VolumeDriver;

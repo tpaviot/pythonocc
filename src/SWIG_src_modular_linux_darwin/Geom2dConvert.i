@@ -136,8 +136,6 @@ class Geom2dConvert {
 class Geom2dConvert_BSplineCurveKnotSplitting {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dConvert_BSplineCurveKnotSplitting();
-		%feature("autodoc", "1");
 		Geom2dConvert_BSplineCurveKnotSplitting(const Handle_Geom2d_BSplineCurve &BasisCurve, const Standard_Integer ContinuityRange);
 		%feature("autodoc", "1");
 		Standard_Integer NbSplits() const;
@@ -146,6 +144,11 @@ class Geom2dConvert_BSplineCurveKnotSplitting {
 		%feature("autodoc", "1");
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
+};
+%extend Geom2dConvert_BSplineCurveKnotSplitting {
+	~Geom2dConvert_BSplineCurveKnotSplitting() {
+	printf("Call custom destructor for instance of Geom2dConvert_BSplineCurveKnotSplitting\n");
+	}
 };
 
 %nodefaultctor Geom2dConvert_BSplineCurveToBezierCurve;

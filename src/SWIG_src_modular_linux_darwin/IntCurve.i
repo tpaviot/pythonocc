@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class IntCurve_PConicTool {
 	public:
 		%feature("autodoc", "1");
-		~IntCurve_PConicTool();
-		%feature("autodoc", "1");
 		IntCurve_PConicTool();
 		%feature("autodoc", "1");
 		Standard_Real EpsX(const IntCurve_PConic &C);
@@ -105,6 +103,11 @@ class IntCurve_PConicTool {
 		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 
 };
+%extend IntCurve_PConicTool {
+	~IntCurve_PConicTool() {
+	printf("Call custom destructor for instance of IntCurve_PConicTool\n");
+	}
+};
 
 %nodefaultctor IntCurve_MyImpParToolOfIntImpConicParConic;
 class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDerivative {
@@ -117,16 +120,17 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~IntCurve_MyImpParToolOfIntImpConicParConic();
 
+};
+%extend IntCurve_MyImpParToolOfIntImpConicParConic {
+	~IntCurve_MyImpParToolOfIntImpConicParConic() {
+	printf("Call custom destructor for instance of IntCurve_MyImpParToolOfIntImpConicParConic\n");
+	}
 };
 
 %nodefaultctor IntCurve_IntImpConicParConic;
 class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~IntCurve_IntImpConicParConic();
 		%feature("autodoc", "1");
 		IntCurve_IntImpConicParConic();
 		%feature("autodoc", "1");
@@ -141,12 +145,15 @@ class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &TheImpTool, const IntCurve_PConic &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer & NbResultats, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };
+%extend IntCurve_IntImpConicParConic {
+	~IntCurve_IntImpConicParConic() {
+	printf("Call custom destructor for instance of IntCurve_IntImpConicParConic\n");
+	}
+};
 
 %nodefaultctor IntCurve_IntConicConic;
 class IntCurve_IntConicConic : public IntRes2d_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~IntCurve_IntConicConic();
 		%feature("autodoc", "1");
 		IntCurve_IntConicConic();
 		%feature("autodoc", "1");
@@ -211,12 +218,15 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		void Perform(const gp_Hypr2d &H1, const IntRes2d_Domain &D1, const gp_Hypr2d &H2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
+%extend IntCurve_IntConicConic {
+	~IntCurve_IntConicConic() {
+	printf("Call custom destructor for instance of IntCurve_IntConicConic\n");
+	}
+};
 
 %nodefaultctor IntCurve_IConicTool;
 class IntCurve_IConicTool {
 	public:
-		%feature("autodoc", "1");
-		~IntCurve_IConicTool();
 		%feature("autodoc", "1");
 		IntCurve_IConicTool();
 		%feature("autodoc", "1");
@@ -245,12 +255,15 @@ class IntCurve_IConicTool {
 		Standard_Real FindParameter(const gp_Pnt2d &P) const;
 
 };
+%extend IntCurve_IConicTool {
+	~IntCurve_IConicTool() {
+	printf("Call custom destructor for instance of IntCurve_IConicTool\n");
+	}
+};
 
 %nodefaultctor IntCurve_ProjectOnPConicTool;
 class IntCurve_ProjectOnPConicTool {
 	public:
-		%feature("autodoc", "1");
-		~IntCurve_ProjectOnPConicTool();
 		%feature("autodoc", "1");
 		IntCurve_ProjectOnPConicTool();
 		%feature("autodoc", "1");
@@ -259,12 +272,15 @@ class IntCurve_ProjectOnPConicTool {
 		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 
 };
+%extend IntCurve_ProjectOnPConicTool {
+	~IntCurve_ProjectOnPConicTool() {
+	printf("Call custom destructor for instance of IntCurve_ProjectOnPConicTool\n");
+	}
+};
 
 %nodefaultctor IntCurve_PConic;
 class IntCurve_PConic {
 	public:
-		%feature("autodoc", "1");
-		~IntCurve_PConic();
 		%feature("autodoc", "1");
 		IntCurve_PConic(const IntCurve_PConic &PC);
 		%feature("autodoc", "1");
@@ -294,4 +310,9 @@ class IntCurve_PConic {
 		%feature("autodoc", "1");
 		Standard_Real Param2() const;
 
+};
+%extend IntCurve_PConic {
+	~IntCurve_PConic() {
+	printf("Call custom destructor for instance of IntCurve_PConic\n");
+	}
 };

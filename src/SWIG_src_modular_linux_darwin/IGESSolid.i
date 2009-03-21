@@ -934,8 +934,6 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 class IGESSolid_ToolSolidInstance {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolSolidInstance();
-		%feature("autodoc", "1");
 		IGESSolid_ToolSolidInstance();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_SolidInstance &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -953,12 +951,15 @@ class IGESSolid_ToolSolidInstance {
 		void OwnDump(const Handle_IGESSolid_SolidInstance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESSolid_ToolSolidInstance {
+	~IGESSolid_ToolSolidInstance() {
+	printf("Call custom destructor for instance of IGESSolid_ToolSolidInstance\n");
+	}
+};
 
 %nodefaultctor IGESSolid_ToolSphere;
 class IGESSolid_ToolSphere {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolSphere();
 		%feature("autodoc", "1");
 		IGESSolid_ToolSphere();
 		%feature("autodoc", "1");
@@ -976,6 +977,11 @@ class IGESSolid_ToolSphere {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_Sphere &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolSphere {
+	~IGESSolid_ToolSphere() {
+	printf("Call custom destructor for instance of IGESSolid_ToolSphere\n");
+	}
 };
 
 %nodefaultctor IGESSolid_Ellipsoid;
@@ -1028,8 +1034,6 @@ class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
 class IGESSolid_ToolToroidalSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolToroidalSurface();
-		%feature("autodoc", "1");
 		IGESSolid_ToolToroidalSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_ToroidalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1046,6 +1050,11 @@ class IGESSolid_ToolToroidalSurface {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_ToroidalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolToroidalSurface {
+	~IGESSolid_ToolToroidalSurface() {
+	printf("Call custom destructor for instance of IGESSolid_ToolToroidalSurface\n");
+	}
 };
 
 %nodefaultctor IGESSolid_ConeFrustum;
@@ -1148,8 +1157,6 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 class IGESSolid_ToolSolidOfRevolution {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolSolidOfRevolution();
-		%feature("autodoc", "1");
 		IGESSolid_ToolSolidOfRevolution();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_SolidOfRevolution &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1166,6 +1173,11 @@ class IGESSolid_ToolSolidOfRevolution {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_SolidOfRevolution &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolSolidOfRevolution {
+	~IGESSolid_ToolSolidOfRevolution() {
+	printf("Call custom destructor for instance of IGESSolid_ToolSolidOfRevolution\n");
+	}
 };
 
 %nodefaultctor IGESSolid_Array1OfShell;
@@ -1353,8 +1365,6 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 class IGESSolid_ToolConeFrustum {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolConeFrustum();
-		%feature("autodoc", "1");
 		IGESSolid_ToolConeFrustum();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_ConeFrustum &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1371,6 +1381,11 @@ class IGESSolid_ToolConeFrustum {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_ConeFrustum &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolConeFrustum {
+	~IGESSolid_ToolConeFrustum() {
+	printf("Call custom destructor for instance of IGESSolid_ToolConeFrustum\n");
+	}
 };
 
 %nodefaultctor IGESSolid_HArray1OfLoop;
@@ -1417,8 +1432,6 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 class IGESSolid_ToolEdgeList {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolEdgeList();
-		%feature("autodoc", "1");
 		IGESSolid_ToolEdgeList();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_EdgeList &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1436,12 +1449,15 @@ class IGESSolid_ToolEdgeList {
 		void OwnDump(const Handle_IGESSolid_EdgeList &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESSolid_ToolEdgeList {
+	~IGESSolid_ToolEdgeList() {
+	printf("Call custom destructor for instance of IGESSolid_ToolEdgeList\n");
+	}
+};
 
 %nodefaultctor IGESSolid_ToolShell;
 class IGESSolid_ToolShell {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolShell();
 		%feature("autodoc", "1");
 		IGESSolid_ToolShell();
 		%feature("autodoc", "1");
@@ -1460,12 +1476,15 @@ class IGESSolid_ToolShell {
 		void OwnDump(const Handle_IGESSolid_Shell &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESSolid_ToolShell {
+	~IGESSolid_ToolShell() {
+	printf("Call custom destructor for instance of IGESSolid_ToolShell\n");
+	}
+};
 
 %nodefaultctor IGESSolid_ToolRightAngularWedge;
 class IGESSolid_ToolRightAngularWedge {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolRightAngularWedge();
 		%feature("autodoc", "1");
 		IGESSolid_ToolRightAngularWedge();
 		%feature("autodoc", "1");
@@ -1483,6 +1502,11 @@ class IGESSolid_ToolRightAngularWedge {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_RightAngularWedge &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolRightAngularWedge {
+	~IGESSolid_ToolRightAngularWedge() {
+	printf("Call custom destructor for instance of IGESSolid_ToolRightAngularWedge\n");
+	}
 };
 
 %nodefaultctor IGESSolid_Shell;
@@ -1521,8 +1545,6 @@ class IGESSolid_Shell : public IGESData_IGESEntity {
 class IGESSolid_ToolSelectedComponent {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolSelectedComponent();
-		%feature("autodoc", "1");
 		IGESSolid_ToolSelectedComponent();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_SelectedComponent &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1539,6 +1561,11 @@ class IGESSolid_ToolSelectedComponent {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_SelectedComponent &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolSelectedComponent {
+	~IGESSolid_ToolSelectedComponent() {
+	printf("Call custom destructor for instance of IGESSolid_ToolSelectedComponent\n");
+	}
 };
 
 %nodefaultctor IGESSolid_ToroidalSurface;
@@ -1581,8 +1608,6 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 class IGESSolid_ToolFace {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolFace();
-		%feature("autodoc", "1");
 		IGESSolid_ToolFace();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_Face &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1599,6 +1624,11 @@ class IGESSolid_ToolFace {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_Face &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolFace {
+	~IGESSolid_ToolFace() {
+	printf("Call custom destructor for instance of IGESSolid_ToolFace\n");
+	}
 };
 
 %nodefaultctor IGESSolid_SpecificModule;
@@ -1655,8 +1685,6 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 class IGESSolid_ToolLoop {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolLoop();
-		%feature("autodoc", "1");
 		IGESSolid_ToolLoop();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_Loop &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1674,12 +1702,15 @@ class IGESSolid_ToolLoop {
 		void OwnDump(const Handle_IGESSolid_Loop &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESSolid_ToolLoop {
+	~IGESSolid_ToolLoop() {
+	printf("Call custom destructor for instance of IGESSolid_ToolLoop\n");
+	}
+};
 
 %nodefaultctor IGESSolid_ToolEllipsoid;
 class IGESSolid_ToolEllipsoid {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolEllipsoid();
 		%feature("autodoc", "1");
 		IGESSolid_ToolEllipsoid();
 		%feature("autodoc", "1");
@@ -1697,6 +1728,11 @@ class IGESSolid_ToolEllipsoid {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_Ellipsoid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolEllipsoid {
+	~IGESSolid_ToolEllipsoid() {
+	printf("Call custom destructor for instance of IGESSolid_ToolEllipsoid\n");
+	}
 };
 
 %nodefaultctor IGESSolid_Array1OfFace;
@@ -1742,8 +1778,6 @@ class IGESSolid_Array1OfFace {
 class IGESSolid_ToolBlock {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolBlock();
-		%feature("autodoc", "1");
 		IGESSolid_ToolBlock();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_Block &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1760,6 +1794,11 @@ class IGESSolid_ToolBlock {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_Block &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolBlock {
+	~IGESSolid_ToolBlock() {
+	printf("Call custom destructor for instance of IGESSolid_ToolBlock\n");
+	}
 };
 
 %nodefaultctor IGESSolid_Cylinder;
@@ -1800,8 +1839,6 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 class IGESSolid_ToolTorus {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolTorus();
-		%feature("autodoc", "1");
 		IGESSolid_ToolTorus();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1818,6 +1855,11 @@ class IGESSolid_ToolTorus {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolTorus {
+	~IGESSolid_ToolTorus() {
+	printf("Call custom destructor for instance of IGESSolid_ToolTorus\n");
+	}
 };
 
 %nodefaultctor IGESSolid_TopoBuilder;
@@ -1885,8 +1927,6 @@ class IGESSolid_TopoBuilder {
 class IGESSolid_ToolBooleanTree {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolBooleanTree();
-		%feature("autodoc", "1");
 		IGESSolid_ToolBooleanTree();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_BooleanTree &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1903,6 +1943,11 @@ class IGESSolid_ToolBooleanTree {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_BooleanTree &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolBooleanTree {
+	~IGESSolid_ToolBooleanTree() {
+	printf("Call custom destructor for instance of IGESSolid_ToolBooleanTree\n");
+	}
 };
 
 %nodefaultctor IGESSolid_Sphere;
@@ -1937,8 +1982,6 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 class IGESSolid_ToolManifoldSolid {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolManifoldSolid();
-		%feature("autodoc", "1");
 		IGESSolid_ToolManifoldSolid();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_ManifoldSolid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1955,6 +1998,11 @@ class IGESSolid_ToolManifoldSolid {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_ManifoldSolid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolManifoldSolid {
+	~IGESSolid_ToolManifoldSolid() {
+	printf("Call custom destructor for instance of IGESSolid_ToolManifoldSolid\n");
+	}
 };
 
 %nodefaultctor IGESSolid_VertexList;
@@ -1987,8 +2035,6 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 class IGESSolid_ToolConicalSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolConicalSurface();
-		%feature("autodoc", "1");
 		IGESSolid_ToolConicalSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_ConicalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2005,6 +2051,11 @@ class IGESSolid_ToolConicalSurface {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_ConicalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolConicalSurface {
+	~IGESSolid_ToolConicalSurface() {
+	printf("Call custom destructor for instance of IGESSolid_ToolConicalSurface\n");
+	}
 };
 
 %nodefaultctor IGESSolid_HArray1OfFace;
@@ -2322,8 +2373,6 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 class IGESSolid_ToolCylindricalSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolCylindricalSurface();
-		%feature("autodoc", "1");
 		IGESSolid_ToolCylindricalSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_CylindricalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2340,6 +2389,11 @@ class IGESSolid_ToolCylindricalSurface {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_CylindricalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolCylindricalSurface {
+	~IGESSolid_ToolCylindricalSurface() {
+	printf("Call custom destructor for instance of IGESSolid_ToolCylindricalSurface\n");
+	}
 };
 
 %nodefaultctor IGESSolid_ConicalSurface;
@@ -2412,8 +2466,6 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 class IGESSolid_ToolPlaneSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolPlaneSurface();
-		%feature("autodoc", "1");
 		IGESSolid_ToolPlaneSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_PlaneSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2431,12 +2483,15 @@ class IGESSolid_ToolPlaneSurface {
 		void OwnDump(const Handle_IGESSolid_PlaneSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESSolid_ToolPlaneSurface {
+	~IGESSolid_ToolPlaneSurface() {
+	printf("Call custom destructor for instance of IGESSolid_ToolPlaneSurface\n");
+	}
+};
 
 %nodefaultctor IGESSolid_ToolSolidAssembly;
 class IGESSolid_ToolSolidAssembly {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolSolidAssembly();
 		%feature("autodoc", "1");
 		IGESSolid_ToolSolidAssembly();
 		%feature("autodoc", "1");
@@ -2455,12 +2510,15 @@ class IGESSolid_ToolSolidAssembly {
 		void OwnDump(const Handle_IGESSolid_SolidAssembly &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESSolid_ToolSolidAssembly {
+	~IGESSolid_ToolSolidAssembly() {
+	printf("Call custom destructor for instance of IGESSolid_ToolSolidAssembly\n");
+	}
+};
 
 %nodefaultctor IGESSolid_ToolVertexList;
 class IGESSolid_ToolVertexList {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolVertexList();
 		%feature("autodoc", "1");
 		IGESSolid_ToolVertexList();
 		%feature("autodoc", "1");
@@ -2478,6 +2536,11 @@ class IGESSolid_ToolVertexList {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_VertexList &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolVertexList {
+	~IGESSolid_ToolVertexList() {
+	printf("Call custom destructor for instance of IGESSolid_ToolVertexList\n");
+	}
 };
 
 %nodefaultctor IGESSolid_EdgeList;
@@ -2518,8 +2581,6 @@ class IGESSolid_EdgeList : public IGESData_IGESEntity {
 class IGESSolid_ToolSphericalSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolSphericalSurface();
-		%feature("autodoc", "1");
 		IGESSolid_ToolSphericalSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_SphericalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2537,12 +2598,15 @@ class IGESSolid_ToolSphericalSurface {
 		void OwnDump(const Handle_IGESSolid_SphericalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESSolid_ToolSphericalSurface {
+	~IGESSolid_ToolSphericalSurface() {
+	printf("Call custom destructor for instance of IGESSolid_ToolSphericalSurface\n");
+	}
+};
 
 %nodefaultctor IGESSolid_ToolSolidOfLinearExtrusion;
 class IGESSolid_ToolSolidOfLinearExtrusion {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolSolidOfLinearExtrusion();
 		%feature("autodoc", "1");
 		IGESSolid_ToolSolidOfLinearExtrusion();
 		%feature("autodoc", "1");
@@ -2561,12 +2625,15 @@ class IGESSolid_ToolSolidOfLinearExtrusion {
 		void OwnDump(const Handle_IGESSolid_SolidOfLinearExtrusion &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESSolid_ToolSolidOfLinearExtrusion {
+	~IGESSolid_ToolSolidOfLinearExtrusion() {
+	printf("Call custom destructor for instance of IGESSolid_ToolSolidOfLinearExtrusion\n");
+	}
+};
 
 %nodefaultctor IGESSolid_ToolCylinder;
 class IGESSolid_ToolCylinder {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolCylinder();
 		%feature("autodoc", "1");
 		IGESSolid_ToolCylinder();
 		%feature("autodoc", "1");
@@ -2584,6 +2651,11 @@ class IGESSolid_ToolCylinder {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESSolid_Cylinder &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESSolid_ToolCylinder {
+	~IGESSolid_ToolCylinder() {
+	printf("Call custom destructor for instance of IGESSolid_ToolCylinder\n");
+	}
 };
 
 %nodefaultctor IGESSolid_ReadWriteModule;

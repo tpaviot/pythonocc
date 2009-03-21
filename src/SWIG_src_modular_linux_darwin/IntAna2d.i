@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class IntAna2d_IntPoint {
 	public:
 		%feature("autodoc", "1");
-		~IntAna2d_IntPoint();
-		%feature("autodoc", "1");
 		IntAna2d_IntPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real U1, const Standard_Real U2);
 		%feature("autodoc", "1");
 		IntAna2d_IntPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real U1);
@@ -123,12 +121,15 @@ class IntAna2d_IntPoint {
 		void _CSFDB_SetIntAna2d_IntPointmyimplicit(const Standard_Boolean p);
 
 };
+%extend IntAna2d_IntPoint {
+	~IntAna2d_IntPoint() {
+	printf("Call custom destructor for instance of IntAna2d_IntPoint\n");
+	}
+};
 
 %nodefaultctor IntAna2d_Conic;
 class IntAna2d_Conic {
 	public:
-		%feature("autodoc", "1");
-		~IntAna2d_Conic();
 		%feature("autodoc", "1");
 		IntAna2d_Conic(const gp_Circ2d &C);
 		%feature("autodoc", "1");
@@ -151,12 +152,15 @@ class IntAna2d_Conic {
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax2d &Axis) const;
 
 };
+%extend IntAna2d_Conic {
+	~IntAna2d_Conic() {
+	printf("Call custom destructor for instance of IntAna2d_Conic\n");
+	}
+};
 
 %nodefaultctor IntAna2d_AnaIntersection;
 class IntAna2d_AnaIntersection {
 	public:
-		%feature("autodoc", "1");
-		~IntAna2d_AnaIntersection();
 		%feature("autodoc", "1");
 		IntAna2d_AnaIntersection();
 		%feature("autodoc", "1");
@@ -204,4 +208,9 @@ class IntAna2d_AnaIntersection {
 		%feature("autodoc", "1");
 		const IntAna2d_IntPoint & Point(const Standard_Integer N) const;
 
+};
+%extend IntAna2d_AnaIntersection {
+	~IntAna2d_AnaIntersection() {
+	printf("Call custom destructor for instance of IntAna2d_AnaIntersection\n");
+	}
 };

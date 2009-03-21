@@ -1573,8 +1573,6 @@ class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringByte();
-		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringByte();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringByte(const TDataStd_DataMapOfStringByte &aMap);
@@ -1585,6 +1583,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMa
 		%feature("autodoc", "1");
 		const Standard_Byte & Value() const;
 
+};
+%extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
+	~TDataStd_DataMapIteratorOfDataMapOfStringByte() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringByte\n");
+	}
 };
 
 %nodefaultctor TDataStd_NoteBook;
@@ -1685,8 +1688,6 @@ class TDataStd_Array1OfTrsf {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TDataStd_Array1OfTrsf();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TDataStd_Array1OfTrsf & Assign(const TDataStd_Array1OfTrsf &Other);
@@ -1708,12 +1709,15 @@ class TDataStd_Array1OfTrsf {
 		gp_Trsf & operator()(const Standard_Integer Index);
 
 };
+%extend TDataStd_Array1OfTrsf {
+	~TDataStd_Array1OfTrsf() {
+	printf("Call custom destructor for instance of TDataStd_Array1OfTrsf\n");
+	}
+};
 
 %nodefaultctor TDataStd_ListIteratorOfListOfExtendedString;
 class TDataStd_ListIteratorOfListOfExtendedString {
 	public:
-		%feature("autodoc", "1");
-		~TDataStd_ListIteratorOfListOfExtendedString();
 		%feature("autodoc", "1");
 		TDataStd_ListIteratorOfListOfExtendedString();
 		%feature("autodoc", "1");
@@ -1727,6 +1731,11 @@ class TDataStd_ListIteratorOfListOfExtendedString {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & Value() const;
 
+};
+%extend TDataStd_ListIteratorOfListOfExtendedString {
+	~TDataStd_ListIteratorOfListOfExtendedString() {
+	printf("Call custom destructor for instance of TDataStd_ListIteratorOfListOfExtendedString\n");
+	}
 };
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringReal;
@@ -1847,8 +1856,6 @@ class TDataStd_Array1OfByte {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TDataStd_Array1OfByte();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TDataStd_Array1OfByte & Assign(const TDataStd_Array1OfByte &Other);
@@ -1869,6 +1876,11 @@ class TDataStd_Array1OfByte {
 		%feature("autodoc", "1");
 		Standard_Byte & operator()(const Standard_Integer Index);
 
+};
+%extend TDataStd_Array1OfByte {
+	~TDataStd_Array1OfByte() {
+	printf("Call custom destructor for instance of TDataStd_Array1OfByte\n");
+	}
 };
 
 %nodefaultctor TDataStd_Pattern;
@@ -2017,8 +2029,6 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringReal();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Real &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
@@ -2033,6 +2043,11 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend TDataStd_DataMapOfStringReal {
+	~TDataStd_DataMapOfStringReal() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringReal\n");
+	}
 };
 
 %nodefaultctor TDataStd_HDataMapOfStringHArray1OfInteger;
@@ -2211,8 +2226,6 @@ class TDataStd_Integer : public TDF_Attribute {
 class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringReal();
-		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringReal();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringReal(const TDataStd_DataMapOfStringReal &aMap);
@@ -2223,6 +2236,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMa
 		%feature("autodoc", "1");
 		const Standard_Real & Value() const;
 
+};
+%extend TDataStd_DataMapIteratorOfDataMapOfStringReal {
+	~TDataStd_DataMapIteratorOfDataMapOfStringReal() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringReal\n");
+	}
 };
 
 %nodefaultctor TDataStd_BooleanList;
@@ -2287,8 +2305,6 @@ class TDataStd_ListOfExtendedString {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDataStd_ListOfExtendedString();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TCollection_ExtendedString &I);
@@ -2319,6 +2335,11 @@ class TDataStd_ListOfExtendedString {
 		%feature("autodoc", "1");
 		void InsertAfter(TDataStd_ListOfExtendedString & Other, TDataStd_ListIteratorOfListOfExtendedString & It);
 
+};
+%extend TDataStd_ListOfExtendedString {
+	~TDataStd_ListOfExtendedString() {
+	printf("Call custom destructor for instance of TDataStd_ListOfExtendedString\n");
+	}
 };
 
 %nodefaultctor TDataStd_Relation;
@@ -2645,8 +2666,6 @@ class TDataStd_ListOfByte {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDataStd_ListOfByte();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Standard_Byte &I);
@@ -2677,6 +2696,11 @@ class TDataStd_ListOfByte {
 		%feature("autodoc", "1");
 		void InsertAfter(TDataStd_ListOfByte & Other, TDataStd_ListIteratorOfListOfByte & It);
 
+};
+%extend TDataStd_ListOfByte {
+	~TDataStd_ListOfByte() {
+	printf("Call custom destructor for instance of TDataStd_ListOfByte\n");
+	}
 };
 
 %nodefaultctor TDataStd_BooleanArray;
@@ -2851,8 +2875,6 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringString();
-		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringString();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringString(const TDataStd_DataMapOfStringString &aMap);
@@ -2863,6 +2885,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_Basic
 		%feature("autodoc", "1");
 		const TCollection_ExtendedString & Value() const;
 
+};
+%extend TDataStd_DataMapIteratorOfDataMapOfStringString {
+	~TDataStd_DataMapIteratorOfDataMapOfStringString() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringString\n");
+	}
 };
 
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal;
@@ -2920,8 +2947,6 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringByte();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Byte &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
@@ -2936,6 +2961,11 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Byte & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend TDataStd_DataMapOfStringByte {
+	~TDataStd_DataMapOfStringByte() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringByte\n");
+	}
 };
 
 %nodefaultctor TDataStd_ExtStringList;
@@ -3039,8 +3069,6 @@ class TDataStd_LabelArray1 {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TDataStd_LabelArray1();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TDataStd_LabelArray1 & Assign(const TDataStd_LabelArray1 &Other);
@@ -3061,6 +3089,11 @@ class TDataStd_LabelArray1 {
 		%feature("autodoc", "1");
 		TDF_Label & operator()(const Standard_Integer Index);
 
+};
+%extend TDataStd_LabelArray1 {
+	~TDataStd_LabelArray1() {
+	printf("Call custom destructor for instance of TDataStd_LabelArray1\n");
+	}
 };
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringByte;
@@ -3153,8 +3186,6 @@ class TDataStd_Point : public TDF_Attribute {
 class TDataStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringInteger();
-		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringInteger();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringInteger(const TDataStd_DataMapOfStringInteger &aMap);
@@ -3165,6 +3196,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_Basi
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend TDataStd_DataMapIteratorOfDataMapOfStringInteger {
+	~TDataStd_DataMapIteratorOfDataMapOfStringInteger() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringInteger\n");
+	}
 };
 
 %nodefaultctor TDataStd_HArray1OfTrsf;
@@ -3289,8 +3325,6 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 class TDataStd_ListIteratorOfListOfByte {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_ListIteratorOfListOfByte();
-		%feature("autodoc", "1");
 		TDataStd_ListIteratorOfListOfByte();
 		%feature("autodoc", "1");
 		TDataStd_ListIteratorOfListOfByte(const TDataStd_ListOfByte &L);
@@ -3303,6 +3337,11 @@ class TDataStd_ListIteratorOfListOfByte {
 		%feature("autodoc", "1");
 		Standard_Byte & Value() const;
 
+};
+%extend TDataStd_ListIteratorOfListOfByte {
+	~TDataStd_ListIteratorOfListOfByte() {
+	printf("Call custom destructor for instance of TDataStd_ListIteratorOfListOfByte\n");
+	}
 };
 
 %nodefaultctor TDataStd_ReferenceList;
@@ -3399,8 +3438,6 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringString();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const TCollection_ExtendedString &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
@@ -3415,6 +3452,11 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend TDataStd_DataMapOfStringString {
+	~TDataStd_DataMapOfStringString() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringString\n");
+	}
 };
 
 %nodefaultctor TDataStd_Plane;
@@ -3627,8 +3669,6 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 class TDataStd {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd();
-		%feature("autodoc", "1");
 		TDataStd();
 		%feature("autodoc", "1");
 		void IDList(TDF_IDList & anIDList);
@@ -3639,6 +3679,11 @@ class TDataStd {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(const TDataStd_ConstraintEnum CTR, Standard_OStream & S);
 
+};
+%extend TDataStd {
+	~TDataStd() {
+	printf("Call custom destructor for instance of TDataStd\n");
+	}
 };
 
 %nodefaultctor TDataStd_DataMapOfStringInteger;
@@ -3652,8 +3697,6 @@ class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -3669,6 +3712,11 @@ class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend TDataStd_DataMapOfStringInteger {
+	~TDataStd_DataMapOfStringInteger() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringInteger\n");
+	}
 };
 
 %nodefaultctor TDataStd_TreeNode;

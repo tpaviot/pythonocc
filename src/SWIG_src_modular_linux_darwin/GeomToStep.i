@@ -88,12 +88,15 @@ Standard_Real & function transformation
 class GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		~GeomToStep_Root();
-		%feature("autodoc", "1");
 		GeomToStep_Root();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
+};
+%extend GeomToStep_Root {
+	~GeomToStep_Root() {
+	printf("Call custom destructor for instance of GeomToStep_Root\n");
+	}
 };
 
 %nodefaultctor GeomToStep_MakeLine;

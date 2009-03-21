@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class TopTrans_CurveTransition {
 	public:
 		%feature("autodoc", "1");
-		~TopTrans_CurveTransition();
-		%feature("autodoc", "1");
 		TopTrans_CurveTransition();
 		%feature("autodoc", "1");
 		void Reset(const gp_Dir &Tgt, const gp_Dir &Norm, const Standard_Real Curv);
@@ -103,6 +101,11 @@ class TopTrans_CurveTransition {
 		TopAbs_State StateAfter() const;
 
 };
+%extend TopTrans_CurveTransition {
+	~TopTrans_CurveTransition() {
+	printf("Call custom destructor for instance of TopTrans_CurveTransition\n");
+	}
+};
 
 %nodefaultctor TopTrans_Array2OfOrientation;
 class TopTrans_Array2OfOrientation {
@@ -115,8 +118,6 @@ class TopTrans_Array2OfOrientation {
 		void Init(const TopAbs_Orientation &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopTrans_Array2OfOrientation();
 		%feature("autodoc", "1");
 		const TopTrans_Array2OfOrientation & Assign(const TopTrans_Array2OfOrientation &Other);
 		%feature("autodoc", "1");
@@ -143,12 +144,15 @@ class TopTrans_Array2OfOrientation {
 		TopAbs_Orientation & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TopTrans_Array2OfOrientation {
+	~TopTrans_Array2OfOrientation() {
+	printf("Call custom destructor for instance of TopTrans_Array2OfOrientation\n");
+	}
+};
 
 %nodefaultctor TopTrans_SurfaceTransition;
 class TopTrans_SurfaceTransition {
 	public:
-		%feature("autodoc", "1");
-		~TopTrans_SurfaceTransition();
 		%feature("autodoc", "1");
 		TopTrans_SurfaceTransition();
 		%feature("autodoc", "1");
@@ -168,4 +172,9 @@ class TopTrans_SurfaceTransition {
 		%feature("autodoc", "1");
 		TopAbs_State GetAfter(const TopAbs_Orientation Tran);
 
+};
+%extend TopTrans_SurfaceTransition {
+	~TopTrans_SurfaceTransition() {
+	printf("Call custom destructor for instance of TopTrans_SurfaceTransition\n");
+	}
 };

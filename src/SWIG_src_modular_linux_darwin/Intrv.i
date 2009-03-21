@@ -128,8 +128,6 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 class Intrv_Intervals {
 	public:
 		%feature("autodoc", "1");
-		~Intrv_Intervals();
-		%feature("autodoc", "1");
 		Intrv_Intervals();
 		%feature("autodoc", "1");
 		Intrv_Intervals(const Intrv_Interval &Int);
@@ -157,6 +155,11 @@ class Intrv_Intervals {
 		const Intrv_Interval & Value(const Standard_Integer Index) const;
 
 };
+%extend Intrv_Intervals {
+	~Intrv_Intervals() {
+	printf("Call custom destructor for instance of Intrv_Intervals\n");
+	}
+};
 
 %nodefaultctor Intrv_SequenceNodeOfSequenceOfInterval;
 class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {
@@ -183,8 +186,6 @@ class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {
 %nodefaultctor Intrv_Interval;
 class Intrv_Interval {
 	public:
-		%feature("autodoc", "1");
-		~Intrv_Interval();
 		%feature("autodoc", "1");
 		Intrv_Interval();
 		%feature("autodoc", "1");
@@ -245,6 +246,11 @@ class Intrv_Interval {
 		Standard_Boolean IsSimilar(const Intrv_Interval &Other) const;
 
 };
+%extend Intrv_Interval {
+	~Intrv_Interval() {
+	printf("Call custom destructor for instance of Intrv_Interval\n");
+	}
+};
 
 %nodefaultctor Intrv_SequenceOfInterval;
 class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
@@ -253,8 +259,6 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 		Intrv_SequenceOfInterval();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Intrv_SequenceOfInterval();
 		%feature("autodoc", "1");
 		const Intrv_SequenceOfInterval & Assign(const Intrv_SequenceOfInterval &Other);
 		%feature("autodoc", "1");
@@ -294,4 +298,9 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Intrv_SequenceOfInterval {
+	~Intrv_SequenceOfInterval() {
+	printf("Call custom destructor for instance of Intrv_SequenceOfInterval\n");
+	}
 };

@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BRepLProp_CurveTool {
 	public:
 		%feature("autodoc", "1");
-		~BRepLProp_CurveTool();
-		%feature("autodoc", "1");
 		BRepLProp_CurveTool();
 		%feature("autodoc", "1");
 		void Value(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P);
@@ -107,12 +105,15 @@ class BRepLProp_CurveTool {
 		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
 
 };
+%extend BRepLProp_CurveTool {
+	~BRepLProp_CurveTool() {
+	printf("Call custom destructor for instance of BRepLProp_CurveTool\n");
+	}
+};
 
 %nodefaultctor BRepLProp_CLProps;
 class BRepLProp_CLProps {
 	public:
-		%feature("autodoc", "1");
-		~BRepLProp_CLProps();
 		%feature("autodoc", "1");
 		BRepLProp_CLProps(const BRepAdaptor_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
@@ -143,12 +144,15 @@ class BRepLProp_CLProps {
 		void CentreOfCurvature(gp_Pnt & P);
 
 };
+%extend BRepLProp_CLProps {
+	~BRepLProp_CLProps() {
+	printf("Call custom destructor for instance of BRepLProp_CLProps\n");
+	}
+};
 
 %nodefaultctor BRepLProp_SLProps;
 class BRepLProp_SLProps {
 	public:
-		%feature("autodoc", "1");
-		~BRepLProp_SLProps();
 		%feature("autodoc", "1");
 		BRepLProp_SLProps(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
@@ -199,12 +203,15 @@ class BRepLProp_SLProps {
 		Standard_Real GaussianCurvature();
 
 };
+%extend BRepLProp_SLProps {
+	~BRepLProp_SLProps() {
+	printf("Call custom destructor for instance of BRepLProp_SLProps\n");
+	}
+};
 
 %nodefaultctor BRepLProp_SurfaceTool;
 class BRepLProp_SurfaceTool {
 	public:
-		%feature("autodoc", "1");
-		~BRepLProp_SurfaceTool();
 		%feature("autodoc", "1");
 		BRepLProp_SurfaceTool();
 		%feature("autodoc", "1");
@@ -221,12 +228,15 @@ class BRepLProp_SurfaceTool {
 		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%extend BRepLProp_SurfaceTool {
+	~BRepLProp_SurfaceTool() {
+	printf("Call custom destructor for instance of BRepLProp_SurfaceTool\n");
+	}
+};
 
 %nodefaultctor BRepLProp;
 class BRepLProp {
 	public:
-		%feature("autodoc", "1");
-		~BRepLProp();
 		%feature("autodoc", "1");
 		BRepLProp();
 		%feature("autodoc", "1");
@@ -234,4 +244,9 @@ class BRepLProp {
 		%feature("autodoc", "1");
 		GeomAbs_Shape Continuity(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2, const Standard_Real u1, const Standard_Real u2);
 
+};
+%extend BRepLProp {
+	~BRepLProp() {
+	printf("Call custom destructor for instance of BRepLProp\n");
+	}
 };

@@ -113,8 +113,6 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 class TopExp {
 	public:
 		%feature("autodoc", "1");
-		~TopExp();
-		%feature("autodoc", "1");
 		TopExp();
 		%feature("autodoc", "1");
 		void MapShapes(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_IndexedMapOfShape & M);
@@ -133,6 +131,11 @@ class TopExp {
 		%feature("autodoc", "1");
 		Standard_Boolean CommonVertex(const TopoDS_Edge &E1, const TopoDS_Edge &E2, TopoDS_Vertex & V);
 
+};
+%extend TopExp {
+	~TopExp() {
+	printf("Call custom destructor for instance of TopExp\n");
+	}
 };
 
 %nodefaultctor TopExp_StackNodeOfStackOfIterator;
@@ -177,10 +180,13 @@ class TopExp_StackOfIterator {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopExp_StackOfIterator();
-		%feature("autodoc", "1");
 		TopoDS_Iterator & ChangeTop();
 
+};
+%extend TopExp_StackOfIterator {
+	~TopExp_StackOfIterator() {
+	printf("Call custom destructor for instance of TopExp_StackOfIterator\n");
+	}
 };
 
 %nodefaultctor TopExp_Explorer;
@@ -206,16 +212,17 @@ class TopExp_Explorer {
 		void Clear();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopExp_Explorer();
 
+};
+%extend TopExp_Explorer {
+	~TopExp_Explorer() {
+	printf("Call custom destructor for instance of TopExp_Explorer\n");
+	}
 };
 
 %nodefaultctor TopExp_StackIteratorOfStackOfIterator;
 class TopExp_StackIteratorOfStackOfIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopExp_StackIteratorOfStackOfIterator();
 		%feature("autodoc", "1");
 		TopExp_StackIteratorOfStackOfIterator();
 		%feature("autodoc", "1");
@@ -229,4 +236,9 @@ class TopExp_StackIteratorOfStackOfIterator {
 		%feature("autodoc", "1");
 		const TopoDS_Iterator & Value() const;
 
+};
+%extend TopExp_StackIteratorOfStackOfIterator {
+	~TopExp_StackIteratorOfStackOfIterator() {
+	printf("Call custom destructor for instance of TopExp_StackIteratorOfStackOfIterator\n");
+	}
 };

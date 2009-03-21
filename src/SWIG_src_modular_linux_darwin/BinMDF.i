@@ -338,8 +338,6 @@ class BinMDF_ADriverTable : public MMgt_TShared {
 class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BinMDF_DataMapIteratorOfStringIdMap();
-		%feature("autodoc", "1");
 		BinMDF_DataMapIteratorOfStringIdMap();
 		%feature("autodoc", "1");
 		BinMDF_DataMapIteratorOfStringIdMap(const BinMDF_StringIdMap &aMap);
@@ -350,6 +348,11 @@ class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator 
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend BinMDF_DataMapIteratorOfStringIdMap {
+	~BinMDF_DataMapIteratorOfStringIdMap() {
+	printf("Call custom destructor for instance of BinMDF_DataMapIteratorOfStringIdMap\n");
+	}
 };
 
 %nodefaultctor BinMDF_DoubleMapNodeOfTypeIdMap;
@@ -390,8 +393,6 @@ class BinMDF_StringIdMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BinMDF_StringIdMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
@@ -406,6 +407,11 @@ class BinMDF_StringIdMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_AsciiString &K);
 
+};
+%extend BinMDF_StringIdMap {
+	~BinMDF_StringIdMap() {
+	printf("Call custom destructor for instance of BinMDF_StringIdMap\n");
+	}
 };
 
 %nodefaultctor BinMDF_DoubleMapIteratorOfTypeIdMap;
@@ -548,12 +554,15 @@ class BinMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 class BinMDF {
 	public:
 		%feature("autodoc", "1");
-		~BinMDF();
-		%feature("autodoc", "1");
 		BinMDF();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
+};
+%extend BinMDF {
+	~BinMDF() {
+	printf("Call custom destructor for instance of BinMDF\n");
+	}
 };
 
 %nodefaultctor BinMDF_DataMapNodeOfTypeADriverMap;

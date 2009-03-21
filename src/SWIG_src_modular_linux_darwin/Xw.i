@@ -1130,8 +1130,6 @@ class Xw_ListOfIndexs {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Xw_ListOfIndexs();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Xw_ListOfIndexs & Assign(const Xw_ListOfIndexs &Other);
@@ -1152,6 +1150,11 @@ class Xw_ListOfIndexs {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 
+};
+%extend Xw_ListOfIndexs {
+	~Xw_ListOfIndexs() {
+	printf("Call custom destructor for instance of Xw_ListOfIndexs\n");
+	}
 };
 
 %nodefaultctor Xw_GraphicDevice;
@@ -1280,12 +1283,15 @@ class Xw_MarkMap : public Standard_Transient {
 class Xw {
 	public:
 		%feature("autodoc", "1");
-		~Xw();
-		%feature("autodoc", "1");
 		Xw();
 		%feature("autodoc", "1");
 		void SetTrace(const Standard_Integer TraceLevel, const Standard_Integer ErrorLevel);
 
+};
+%extend Xw {
+	~Xw() {
+	printf("Call custom destructor for instance of Xw\n");
+	}
 };
 
 %nodefaultctor Xw_ListOfMFTSizes;
@@ -1299,8 +1305,6 @@ class Xw_ListOfMFTSizes {
 		void Init(const Standard_ShortReal &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Xw_ListOfMFTSizes();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1322,4 +1326,9 @@ class Xw_ListOfMFTSizes {
 		%feature("autodoc", "1");
 		Standard_ShortReal & operator()(const Standard_Integer Index);
 
+};
+%extend Xw_ListOfMFTSizes {
+	~Xw_ListOfMFTSizes() {
+	printf("Call custom destructor for instance of Xw_ListOfMFTSizes\n");
+	}
 };

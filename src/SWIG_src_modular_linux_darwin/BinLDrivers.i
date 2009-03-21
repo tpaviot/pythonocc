@@ -172,8 +172,6 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 class BinLDrivers_DocumentSection {
 	public:
 		%feature("autodoc", "1");
-		~BinLDrivers_DocumentSection();
-		%feature("autodoc", "1");
 		BinLDrivers_DocumentSection();
 		%feature("autodoc", "1");
 		BinLDrivers_DocumentSection(const TCollection_AsciiString &theName, const Standard_Boolean isPostRead);
@@ -196,6 +194,11 @@ class BinLDrivers_DocumentSection {
 		%feature("autodoc", "1");
 		void ReadTOC(BinLDrivers_DocumentSection & theSection, std::istream & theIS);
 
+};
+%extend BinLDrivers_DocumentSection {
+	~BinLDrivers_DocumentSection() {
+	printf("Call custom destructor for instance of BinLDrivers_DocumentSection\n");
+	}
 };
 
 %nodefaultctor BinLDrivers_DocumentRetrievalDriver;

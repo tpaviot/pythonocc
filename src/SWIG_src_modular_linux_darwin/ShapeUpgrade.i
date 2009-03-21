@@ -794,9 +794,12 @@ class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
 		ShapeUpgrade_ShapeDivideClosedEdges(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		void SetNbSplitPoints(const Standard_Integer num);
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideClosedEdges();
 
+};
+%extend ShapeUpgrade_ShapeDivideClosedEdges {
+	~ShapeUpgrade_ShapeDivideClosedEdges() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosedEdges\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_SplitSurface;
@@ -1079,8 +1082,6 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 class ShapeUpgrade {
 	public:
 		%feature("autodoc", "1");
-		~ShapeUpgrade();
-		%feature("autodoc", "1");
 		ShapeUpgrade();
 		%feature("autodoc", "1");
 		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom_BSplineCurve &BS, Handle_TColGeom_HSequenceOfBoundedCurve & seqBS);
@@ -1088,17 +1089,25 @@ class ShapeUpgrade {
 		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HSequenceOfBoundedCurve & seqBS);
 
 };
+%extend ShapeUpgrade {
+	~ShapeUpgrade() {
+	printf("Call custom destructor for instance of ShapeUpgrade\n");
+	}
+};
 
 %nodefaultctor ShapeUpgrade_ShellSewing;
 class ShapeUpgrade_ShellSewing {
 	public:
 		%feature("autodoc", "1");
-		~ShapeUpgrade_ShellSewing();
-		%feature("autodoc", "1");
 		ShapeUpgrade_ShellSewing();
 		%feature("autodoc", "1");
 		TopoDS_Shape ApplySewing(const TopoDS_Shape &shape, const Standard_Real tol=0.0);
 
+};
+%extend ShapeUpgrade_ShellSewing {
+	~ShapeUpgrade_ShellSewing() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShellSewing\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_FaceDivideArea;
@@ -1144,9 +1153,12 @@ class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 		void SetPCurveCriterion(const GeomAbs_Shape Criterion=GeomAbs_C1);
 		%feature("autodoc", "1");
 		void SetSurfaceCriterion(const GeomAbs_Shape Criterion=GeomAbs_C1);
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideContinuity();
 
+};
+%extend ShapeUpgrade_ShapeDivideContinuity {
+	~ShapeUpgrade_ShapeDivideContinuity() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideContinuity\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_FixSmallBezierCurves;
@@ -1262,9 +1274,12 @@ class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 		ShapeUpgrade_ShapeDivideArea(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		Standard_Real & MaxArea();
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideArea();
 
+};
+%extend ShapeUpgrade_ShapeDivideArea {
+	~ShapeUpgrade_ShapeDivideArea() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideArea\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_SplitSurfaceAngle;
@@ -1342,9 +1357,12 @@ class ShapeUpgrade_ShapeConvertToBezier : public ShapeUpgrade_ShapeDivide {
 		Standard_Boolean GetBSplineMode() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Perform(const Standard_Boolean newContext=1);
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeConvertToBezier();
 
+};
+%extend ShapeUpgrade_ShapeConvertToBezier {
+	~ShapeUpgrade_ShapeConvertToBezier() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeConvertToBezier\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_ClosedFaceDivide;
@@ -1442,9 +1460,12 @@ class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 		void SetMaxAngle(const Standard_Real MaxAngle);
 		%feature("autodoc", "1");
 		Standard_Real MaxAngle() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideAngle();
 
+};
+%extend ShapeUpgrade_ShapeDivideAngle {
+	~ShapeUpgrade_ShapeDivideAngle() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideAngle\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_ShapeDivideClosed;
@@ -1454,9 +1475,12 @@ class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 		ShapeUpgrade_ShapeDivideClosed(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		void SetNbSplitPoints(const Standard_Integer num);
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideClosed();
 
+};
+%extend ShapeUpgrade_ShapeDivideClosed {
+	~ShapeUpgrade_ShapeDivideClosed() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosed\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_RemoveInternalWires;

@@ -120,8 +120,6 @@ class TopBas_ListOfTestInterference {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopBas_ListOfTestInterference();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TopBas_TestInterference &I);
@@ -153,12 +151,15 @@ class TopBas_ListOfTestInterference {
 		void InsertAfter(TopBas_ListOfTestInterference & Other, TopBas_ListIteratorOfListOfTestInterference & It);
 
 };
+%extend TopBas_ListOfTestInterference {
+	~TopBas_ListOfTestInterference() {
+	printf("Call custom destructor for instance of TopBas_ListOfTestInterference\n");
+	}
+};
 
 %nodefaultctor TopBas_ListIteratorOfListOfTestInterference;
 class TopBas_ListIteratorOfListOfTestInterference {
 	public:
-		%feature("autodoc", "1");
-		~TopBas_ListIteratorOfListOfTestInterference();
 		%feature("autodoc", "1");
 		TopBas_ListIteratorOfListOfTestInterference();
 		%feature("autodoc", "1");
@@ -172,6 +173,11 @@ class TopBas_ListIteratorOfListOfTestInterference {
 		%feature("autodoc", "1");
 		TopBas_TestInterference & Value() const;
 
+};
+%extend TopBas_ListIteratorOfListOfTestInterference {
+	~TopBas_ListIteratorOfListOfTestInterference() {
+	printf("Call custom destructor for instance of TopBas_ListIteratorOfListOfTestInterference\n");
+	}
 };
 
 %nodefaultctor TopBas_ListNodeOfListOfTestInterference;
@@ -199,8 +205,6 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 %nodefaultctor TopBas_TestInterference;
 class TopBas_TestInterference {
 	public:
-		%feature("autodoc", "1");
-		~TopBas_TestInterference();
 		%feature("autodoc", "1");
 		TopBas_TestInterference();
 		%feature("autodoc", "1");
@@ -230,4 +234,9 @@ class TopBas_TestInterference {
 		%feature("autodoc", "1");
 		TopAbs_Orientation BoundaryTransition() const;
 
+};
+%extend TopBas_TestInterference {
+	~TopBas_TestInterference() {
+	printf("Call custom destructor for instance of TopBas_TestInterference\n");
+	}
 };

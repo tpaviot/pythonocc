@@ -136,8 +136,6 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~Plugin_DataMapIteratorOfMapOfFunctions();
-		%feature("autodoc", "1");
 		Plugin_DataMapIteratorOfMapOfFunctions();
 		%feature("autodoc", "1");
 		Plugin_DataMapIteratorOfMapOfFunctions(const Plugin_MapOfFunctions &aMap);
@@ -146,6 +144,11 @@ class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterat
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Key() const;
 
+};
+%extend Plugin_DataMapIteratorOfMapOfFunctions {
+	~Plugin_DataMapIteratorOfMapOfFunctions() {
+	printf("Call custom destructor for instance of Plugin_DataMapIteratorOfMapOfFunctions\n");
+	}
 };
 
 %nodefaultctor Plugin_DataMapNodeOfMapOfFunctions;
@@ -210,12 +213,15 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Plugin_MapOfFunctions();
-		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const TCollection_AsciiString &K);
 
+};
+%extend Plugin_MapOfFunctions {
+	~Plugin_MapOfFunctions() {
+	printf("Call custom destructor for instance of Plugin_MapOfFunctions\n");
+	}
 };
 
 %nodefaultctor Plugin;

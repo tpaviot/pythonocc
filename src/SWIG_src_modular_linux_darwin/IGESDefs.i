@@ -400,8 +400,6 @@ class Handle_IGESDefs_MacroDef : public Handle_IGESData_IGESEntity {
 class IGESDefs_ToolAssociativityDef {
 	public:
 		%feature("autodoc", "1");
-		~IGESDefs_ToolAssociativityDef();
-		%feature("autodoc", "1");
 		IGESDefs_ToolAssociativityDef();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDefs_AssociativityDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -418,6 +416,11 @@ class IGESDefs_ToolAssociativityDef {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDefs_AssociativityDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDefs_ToolAssociativityDef {
+	~IGESDefs_ToolAssociativityDef() {
+	printf("Call custom destructor for instance of IGESDefs_ToolAssociativityDef\n");
+	}
 };
 
 %nodefaultctor IGESDefs_ReadWriteModule;
@@ -538,8 +541,6 @@ class IGESDefs_GenericData : public IGESData_IGESEntity {
 class IGESDefs_ToolAttributeDef {
 	public:
 		%feature("autodoc", "1");
-		~IGESDefs_ToolAttributeDef();
-		%feature("autodoc", "1");
 		IGESDefs_ToolAttributeDef();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDefs_AttributeDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -557,12 +558,15 @@ class IGESDefs_ToolAttributeDef {
 		void OwnDump(const Handle_IGESDefs_AttributeDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDefs_ToolAttributeDef {
+	~IGESDefs_ToolAttributeDef() {
+	printf("Call custom destructor for instance of IGESDefs_ToolAttributeDef\n");
+	}
+};
 
 %nodefaultctor IGESDefs_ToolUnitsData;
 class IGESDefs_ToolUnitsData {
 	public:
-		%feature("autodoc", "1");
-		~IGESDefs_ToolUnitsData();
 		%feature("autodoc", "1");
 		IGESDefs_ToolUnitsData();
 		%feature("autodoc", "1");
@@ -581,12 +585,15 @@ class IGESDefs_ToolUnitsData {
 		void OwnDump(const Handle_IGESDefs_UnitsData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDefs_ToolUnitsData {
+	~IGESDefs_ToolUnitsData() {
+	printf("Call custom destructor for instance of IGESDefs_ToolUnitsData\n");
+	}
+};
 
 %nodefaultctor IGESDefs_ToolGenericData;
 class IGESDefs_ToolGenericData {
 	public:
-		%feature("autodoc", "1");
-		~IGESDefs_ToolGenericData();
 		%feature("autodoc", "1");
 		IGESDefs_ToolGenericData();
 		%feature("autodoc", "1");
@@ -604,6 +611,11 @@ class IGESDefs_ToolGenericData {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDefs_GenericData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDefs_ToolGenericData {
+	~IGESDefs_ToolGenericData() {
+	printf("Call custom destructor for instance of IGESDefs_ToolGenericData\n");
+	}
 };
 
 %nodefaultctor IGESDefs_GeneralModule;
@@ -642,8 +654,6 @@ class IGESDefs_GeneralModule : public IGESData_GeneralModule {
 class IGESDefs_ToolTabularData {
 	public:
 		%feature("autodoc", "1");
-		~IGESDefs_ToolTabularData();
-		%feature("autodoc", "1");
 		IGESDefs_ToolTabularData();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDefs_TabularData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -660,6 +670,11 @@ class IGESDefs_ToolTabularData {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDefs_TabularData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDefs_ToolTabularData {
+	~IGESDefs_ToolTabularData() {
+	printf("Call custom destructor for instance of IGESDefs_ToolTabularData\n");
+	}
 };
 
 %nodefaultctor IGESDefs_HArray1OfTabularData;
@@ -706,8 +721,6 @@ class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
 class IGESDefs_ToolAttributeTable {
 	public:
 		%feature("autodoc", "1");
-		~IGESDefs_ToolAttributeTable();
-		%feature("autodoc", "1");
 		IGESDefs_ToolAttributeTable();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDefs_AttributeTable &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -724,6 +737,11 @@ class IGESDefs_ToolAttributeTable {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDefs_AttributeTable &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDefs_ToolAttributeTable {
+	~IGESDefs_ToolAttributeTable() {
+	printf("Call custom destructor for instance of IGESDefs_ToolAttributeTable\n");
+	}
 };
 
 %nodefaultctor IGESDefs_AttributeDef;
@@ -885,8 +903,6 @@ class IGESDefs_UnitsData : public IGESData_IGESEntity {
 class IGESDefs_ToolMacroDef {
 	public:
 		%feature("autodoc", "1");
-		~IGESDefs_ToolMacroDef();
-		%feature("autodoc", "1");
 		IGESDefs_ToolMacroDef();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDefs_MacroDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -903,6 +919,11 @@ class IGESDefs_ToolMacroDef {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDefs_MacroDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDefs_ToolMacroDef {
+	~IGESDefs_ToolMacroDef() {
+	printf("Call custom destructor for instance of IGESDefs_ToolMacroDef\n");
+	}
 };
 
 %nodefaultctor IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
