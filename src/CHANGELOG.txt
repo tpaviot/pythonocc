@@ -1,3 +1,10 @@
+2009/3/21:
+	- custom destructor extended to all objects
+2009/3/15:
+	 - new samples set
+	 - new DisplayColoredShape in OCCViewer.py
+	 - Bugfixes in OCCViewer
+	 - SConstruct fixes
 2009/3/11:
 	- Segfaults/memory bugfix (added cursomtzed default destructor for Standard_Transcient objects)
 2009/3/4:
