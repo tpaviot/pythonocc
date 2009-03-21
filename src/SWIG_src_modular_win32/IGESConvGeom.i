@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class IGESConvGeom {
 	public:
 		%feature("autodoc", "1");
-		~IGESConvGeom();
-		%feature("autodoc", "1");
 		IGESConvGeom();
 		%feature("autodoc", "1");
 		Standard_Integer SplineCurveFromIGES(const Handle_IGESGeom_SplineCurve &igesent, const Standard_Real epscoef, const Standard_Real epsgeom, Handle_Geom_BSplineCurve & result);

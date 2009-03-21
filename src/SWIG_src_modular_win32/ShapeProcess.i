@@ -270,8 +270,6 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 class ShapeProcess_OperLibrary {
 	public:
 		%feature("autodoc", "1");
-		~ShapeProcess_OperLibrary();
-		%feature("autodoc", "1");
 		ShapeProcess_OperLibrary();
 		%feature("autodoc", "1");
 		void Init();
@@ -288,8 +286,6 @@ class ShapeProcess_OperLibrary {
 %nodefaultctor ShapeProcess;
 class ShapeProcess {
 	public:
-		%feature("autodoc", "1");
-		~ShapeProcess();
 		%feature("autodoc", "1");
 		ShapeProcess();
 		%feature("autodoc", "1");

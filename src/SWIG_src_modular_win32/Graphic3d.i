@@ -1628,8 +1628,6 @@ class Graphic3d_Array2OfVertexC {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic3d_Array2OfVertexC();
-		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertexC & Assign(const Graphic3d_Array2OfVertexC &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -1673,8 +1671,6 @@ class Graphic3d_Array2OfVertexN {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic3d_Array2OfVertexN();
-		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertexN & Assign(const Graphic3d_Array2OfVertexN &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -1717,8 +1713,6 @@ class Graphic3d_Array1OfVertexC {
 		void Init(const Graphic3d_VertexC &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Graphic3d_Array1OfVertexC();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1775,8 +1769,6 @@ class Graphic3d_WNTGraphicDevice : public WNT_GraphicDevice {
 class Graphic3d_Strips {
 	public:
 		%feature("autodoc", "1");
-		~Graphic3d_Strips();
-		%feature("autodoc", "1");
 		Graphic3d_Strips();
 		%feature("autodoc", "1");
 		void STRIPT_INIT(const Standard_Integer NBVERTICES, const TColStd_Array1OfInteger &TABTRIANGLES);
@@ -1801,8 +1793,6 @@ class Graphic3d_Strips {
 %nodefaultctor Graphic3d_Vertex;
 class Graphic3d_Vertex {
 	public:
-		%feature("autodoc", "1");
-		~Graphic3d_Vertex();
 		%feature("autodoc", "1");
 		Graphic3d_Vertex();
 		%feature("autodoc", "1");
@@ -2420,8 +2410,6 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 class Graphic3d_ListIteratorOfListOfShortReal {
 	public:
 		%feature("autodoc", "1");
-		~Graphic3d_ListIteratorOfListOfShortReal();
-		%feature("autodoc", "1");
 		Graphic3d_ListIteratorOfListOfShortReal();
 		%feature("autodoc", "1");
 		Graphic3d_ListIteratorOfListOfShortReal(const Graphic3d_ListOfShortReal &L);
@@ -2444,8 +2432,6 @@ class Graphic3d_ListIteratorOfListOfShortReal {
 %nodefaultctor Graphic3d_Vector;
 class Graphic3d_Vector {
 	public:
-		%feature("autodoc", "1");
-		~Graphic3d_Vector();
 		%feature("autodoc", "1");
 		Graphic3d_Vector();
 		%feature("autodoc", "1");
@@ -2624,8 +2610,6 @@ class Graphic3d_Array1OfVertexN {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic3d_Array1OfVertexN();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVertexN & Assign(const Graphic3d_Array1OfVertexN &Other);
@@ -2683,8 +2667,6 @@ class Graphic3d_MapOfStructure : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Graphic3d_MapOfStructure();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_Graphic3d_Structure &aKey);
 		%feature("autodoc", "1");
@@ -3411,8 +3393,6 @@ class Graphic3d_Array2OfVertex {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic3d_Array2OfVertex();
-		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertex & Assign(const Graphic3d_Array2OfVertex &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -3505,8 +3485,6 @@ class Graphic3d_Array1OfBytes {
 		void Init(const Standard_Byte &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Graphic3d_Array1OfBytes();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -3643,8 +3621,6 @@ class Graphic3d_SequenceOfAddress : public TCollection_BaseSequence {
 		Graphic3d_SequenceOfAddress();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Graphic3d_SequenceOfAddress();
 		%feature("autodoc", "1");
 		const Graphic3d_SequenceOfAddress & Assign(const Graphic3d_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
@@ -3812,8 +3788,6 @@ class Graphic3d_Array1OfVertex {
 		void Init(const Graphic3d_Vertex &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Graphic3d_Array1OfVertex();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -4044,8 +4018,6 @@ class Graphic3d_Array2OfVertexNT {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic3d_Array2OfVertexNT();
-		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertexNT & Assign(const Graphic3d_Array2OfVertexNT &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -4116,8 +4088,6 @@ class Graphic3d_Array2OfVertexNC {
 		void Init(const Graphic3d_VertexNC &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Graphic3d_Array2OfVertexNC();
 		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertexNC & Assign(const Graphic3d_Array2OfVertexNC &Other);
 		%feature("autodoc", "1");
@@ -4251,8 +4221,6 @@ class Graphic3d_ListOfPArray {
 class Graphic3d_VertexC : public Graphic3d_Vertex {
 	public:
 		%feature("autodoc", "1");
-		~Graphic3d_VertexC();
-		%feature("autodoc", "1");
 		Graphic3d_VertexC();
 		%feature("autodoc", "1");
 		Graphic3d_VertexC(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Quantity_Color &AColor);
@@ -4274,8 +4242,6 @@ class Graphic3d_VertexC : public Graphic3d_Vertex {
 class Graphic3d_VertexN : public Graphic3d_Vertex {
 	public:
 		%feature("autodoc", "1");
-		~Graphic3d_VertexN();
-		%feature("autodoc", "1");
 		Graphic3d_VertexN();
 		%feature("autodoc", "1");
 		Graphic3d_VertexN(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Standard_Real ANX, const Standard_Real ANY, const Standard_Real ANZ, const Standard_Boolean FlagNormalise=1);
@@ -4296,8 +4262,6 @@ class Graphic3d_VertexN : public Graphic3d_Vertex {
 %nodefaultctor Graphic3d_VertexNT;
 class Graphic3d_VertexNT : public Graphic3d_VertexN {
 	public:
-		%feature("autodoc", "1");
-		~Graphic3d_VertexNT();
 		%feature("autodoc", "1");
 		Graphic3d_VertexNT();
 		%feature("autodoc", "1");
@@ -4368,8 +4332,6 @@ class Graphic3d_Array1OfVertexNC {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic3d_Array1OfVertexNC();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVertexNC & Assign(const Graphic3d_Array1OfVertexNC &Other);
@@ -4409,8 +4371,6 @@ class Graphic3d_Array1OfVertexNT {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic3d_Array1OfVertexNT();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVertexNT & Assign(const Graphic3d_Array1OfVertexNT &Other);
@@ -4441,8 +4401,6 @@ class Graphic3d_Array1OfVertexNT {
 %nodefaultctor Graphic3d_SetOfGroup;
 class Graphic3d_SetOfGroup {
 	public:
-		%feature("autodoc", "1");
-		~Graphic3d_SetOfGroup();
 		%feature("autodoc", "1");
 		Graphic3d_SetOfGroup();
 		%feature("autodoc", "1");
@@ -4539,8 +4497,6 @@ class Graphic3d_ArrayOfSegments : public Graphic3d_ArrayOfPrimitives {
 %nodefaultctor Graphic3d_MaterialAspect;
 class Graphic3d_MaterialAspect {
 	public:
-		%feature("autodoc", "1");
-		~Graphic3d_MaterialAspect();
 		%feature("autodoc", "1");
 		Graphic3d_MaterialAspect();
 		%feature("autodoc", "1");
@@ -4665,8 +4621,6 @@ class Graphic3d_Array1OfVector {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic3d_Array1OfVector();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVector & Assign(const Graphic3d_Array1OfVector &Other);
@@ -4787,8 +4741,6 @@ class Graphic3d_HArray1OfBytes : public MMgt_TShared {
 class Graphic3d_VertexNC : public Graphic3d_VertexN {
 	public:
 		%feature("autodoc", "1");
-		~Graphic3d_VertexNC();
-		%feature("autodoc", "1");
 		Graphic3d_VertexNC();
 		%feature("autodoc", "1");
 		Graphic3d_VertexNC(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Standard_Real ANX, const Standard_Real ANY, const Standard_Real ANZ, const Quantity_Color &AColor, const Standard_Boolean FlagNormalise=1);
@@ -4817,8 +4769,6 @@ class Graphic3d_ListOfShortReal {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Graphic3d_ListOfShortReal();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");

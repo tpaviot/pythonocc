@@ -112,8 +112,6 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 class BRepClass3d_SClassifier {
 	public:
 		%feature("autodoc", "1");
-		~BRepClass3d_SClassifier();
-		%feature("autodoc", "1");
 		BRepClass3d_SClassifier();
 		%feature("autodoc", "1");
 		BRepClass3d_SClassifier(BRepClass3d_SolidExplorer & S, const gp_Pnt &P, const Standard_Real Tol);
@@ -149,8 +147,6 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepClass3d_MapOfInter();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Address &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -183,8 +179,6 @@ class BRepClass3d_SolidExplorer {
 		BRepClass3d_SolidExplorer(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~BRepClass3d_SolidExplorer();
 		%feature("autodoc", "1");
 		void InitShape(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
@@ -249,8 +243,6 @@ class BRepClass3d_SolidExplorer {
 class BRepClass3d_SolidPassiveClassifier {
 	public:
 		%feature("autodoc", "1");
-		~BRepClass3d_SolidPassiveClassifier();
-		%feature("autodoc", "1");
 		BRepClass3d_SolidPassiveClassifier();
 		%feature("autodoc", "1");
 		void Reset(const gp_Lin &L, const Standard_Real P, const Standard_Real Tol);
@@ -275,8 +267,6 @@ class BRepClass3d_SolidPassiveClassifier {
 %nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
 class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepClass3d_DataMapIteratorOfMapOfInter();
 		%feature("autodoc", "1");
 		BRepClass3d_DataMapIteratorOfMapOfInter();
 		%feature("autodoc", "1");
@@ -312,8 +302,6 @@ class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 		void PerformInfinitePoint(const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BRepClass3d_SolidClassifier();
 
 };
 %extend BRepClass3d_SolidClassifier {
@@ -349,8 +337,6 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 %nodefaultctor BRepClass3d_Intersector3d;
 class BRepClass3d_Intersector3d {
 	public:
-		%feature("autodoc", "1");
-		~BRepClass3d_Intersector3d();
 		%feature("autodoc", "1");
 		BRepClass3d_Intersector3d();
 		%feature("autodoc", "1");

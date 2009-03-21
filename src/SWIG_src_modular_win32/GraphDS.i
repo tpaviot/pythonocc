@@ -132,8 +132,6 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~GraphDS_EntityRoleMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Transient &K, const GraphDS_EntityRole &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;

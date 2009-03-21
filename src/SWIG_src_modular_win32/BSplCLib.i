@@ -99,8 +99,6 @@ enum BSplCLib_MultDistribution {
 class BSplCLib {
 	public:
 		%feature("autodoc", "1");
-		~BSplCLib();
-		%feature("autodoc", "1");
 		BSplCLib();
 		%feature("autodoc", "1");
 		void Hunt(const TColStd_Array1OfReal &XX, const Standard_Real X, Standard_Integer & Iloc);

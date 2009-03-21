@@ -219,8 +219,6 @@ class TopLoc_MapOfLocation : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopLoc_MapOfLocation();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const TopLoc_Location &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const TopLoc_Location &aKey) const;
@@ -245,8 +243,6 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopLoc_IndexedMapOfLocation();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopLoc_Location &K);
 		%feature("autodoc", "1");
@@ -273,8 +269,6 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopLoc_MapIteratorOfMapOfLocation();
-		%feature("autodoc", "1");
 		TopLoc_MapIteratorOfMapOfLocation();
 		%feature("autodoc", "1");
 		TopLoc_MapIteratorOfMapOfLocation(const TopLoc_MapOfLocation &aMap);
@@ -293,8 +287,6 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 %nodefaultctor TopLoc_MapLocationHasher;
 class TopLoc_MapLocationHasher {
 	public:
-		%feature("autodoc", "1");
-		~TopLoc_MapLocationHasher();
 		%feature("autodoc", "1");
 		TopLoc_MapLocationHasher();
 		%feature("autodoc", "1");
@@ -400,8 +392,6 @@ class TopLoc_SListOfItemLocation {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopLoc_SListOfItemLocation();
-		%feature("autodoc", "1");
 		const TopLoc_ItemLocation & Value() const;
 		%feature("autodoc", "1");
 		TopLoc_ItemLocation & ChangeValue();
@@ -444,8 +434,6 @@ class TopLoc_ItemLocation {
 		TopLoc_ItemLocation & Assign(const TopLoc_ItemLocation &anOther);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopLoc_ItemLocation();
 
 };
 %extend TopLoc_ItemLocation {

@@ -320,8 +320,6 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MFT_ListOfFontHandle();
-		%feature("autodoc", "1");
 		const MFT_ListOfFontHandle & Assign(const MFT_ListOfFontHandle &Other);
 		%feature("autodoc", "1");
 		void Append(const MFT_FileHandle &T);
@@ -375,8 +373,6 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MFT_ListOfFontName();
-		%feature("autodoc", "1");
 		const MFT_ListOfFontName & Assign(const MFT_ListOfFontName &Other);
 		%feature("autodoc", "1");
 		void Append(const TCollection_AsciiString &T);
@@ -429,8 +425,6 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 		MFT_ListOfFontReference();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MFT_ListOfFontReference();
 		%feature("autodoc", "1");
 		const MFT_ListOfFontReference & Assign(const MFT_ListOfFontReference &Other);
 		%feature("autodoc", "1");
@@ -734,8 +728,6 @@ class MFT_FontManager : public MMgt_TShared {
 %nodefaultctor MFT;
 class MFT {
 	public:
-		%feature("autodoc", "1");
-		~MFT();
 		%feature("autodoc", "1");
 		MFT();
 

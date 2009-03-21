@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BRepProj_Projection {
 	public:
 		%feature("autodoc", "1");
-		~BRepProj_Projection();
-		%feature("autodoc", "1");
 		BRepProj_Projection(const TopoDS_Shape &Lsh, const TopoDS_Shape &Ssh, const gp_Dir &D, const Standard_Boolean FaceBounds=1);
 		%feature("autodoc", "1");
 		BRepProj_Projection(const TopoDS_Shape &Lsh, const TopoDS_Shape &Ssh, const gp_Pnt &P, const Standard_Boolean FaceBounds=1);

@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepVisual_RWAreaInSet {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWAreaInSet();
-		%feature("autodoc", "1");
 		RWStepVisual_RWAreaInSet();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_AreaInSet &ent) const;
@@ -108,8 +106,6 @@ class RWStepVisual_RWAreaInSet {
 %nodefaultctor RWStepVisual_RWCompositeTextWithExtent;
 class RWStepVisual_RWCompositeTextWithExtent {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWCompositeTextWithExtent();
 		%feature("autodoc", "1");
 		RWStepVisual_RWCompositeTextWithExtent();
 		%feature("autodoc", "1");
@@ -130,8 +126,6 @@ class RWStepVisual_RWCompositeTextWithExtent {
 class RWStepVisual_RWCurveStyleFontPattern {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWCurveStyleFontPattern();
-		%feature("autodoc", "1");
 		RWStepVisual_RWCurveStyleFontPattern();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyleFontPattern &ent) const;
@@ -148,8 +142,6 @@ class RWStepVisual_RWCurveStyleFontPattern {
 %nodefaultctor RWStepVisual_RWBackgroundColour;
 class RWStepVisual_RWBackgroundColour {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWBackgroundColour();
 		%feature("autodoc", "1");
 		RWStepVisual_RWBackgroundColour();
 		%feature("autodoc", "1");
@@ -170,8 +162,6 @@ class RWStepVisual_RWBackgroundColour {
 class RWStepVisual_RWFillAreaStyle {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWFillAreaStyle();
-		%feature("autodoc", "1");
 		RWStepVisual_RWFillAreaStyle();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_FillAreaStyle &ent) const;
@@ -190,8 +180,6 @@ class RWStepVisual_RWFillAreaStyle {
 %nodefaultctor RWStepVisual_RWTemplate;
 class RWStepVisual_RWTemplate {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWTemplate();
 		%feature("autodoc", "1");
 		RWStepVisual_RWTemplate();
 		%feature("autodoc", "1");
@@ -212,8 +200,6 @@ class RWStepVisual_RWTemplate {
 class RWStepVisual_RWSurfaceStyleSilhouette {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWSurfaceStyleSilhouette();
-		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleSilhouette();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleSilhouette &ent) const;
@@ -232,8 +218,6 @@ class RWStepVisual_RWSurfaceStyleSilhouette {
 %nodefaultctor RWStepVisual_RWTextStyleWithBoxCharacteristics;
 class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWTextStyleWithBoxCharacteristics();
 		%feature("autodoc", "1");
 		RWStepVisual_RWTextStyleWithBoxCharacteristics();
 		%feature("autodoc", "1");
@@ -254,8 +238,6 @@ class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWSurfaceStyleSegmentationCurve();
-		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleSegmentationCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleSegmentationCurve &ent) const;
@@ -274,8 +256,6 @@ class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 %nodefaultctor RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation;
 class RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation();
 		%feature("autodoc", "1");
 		RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation();
 		%feature("autodoc", "1");
@@ -296,8 +276,6 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
 class RWStepVisual_RWPresentedItemRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentedItemRepresentation();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPresentedItemRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
@@ -316,8 +294,6 @@ class RWStepVisual_RWPresentedItemRepresentation {
 %nodefaultctor RWStepVisual_RWSurfaceStyleUsage;
 class RWStepVisual_RWSurfaceStyleUsage {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWSurfaceStyleUsage();
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleUsage();
 		%feature("autodoc", "1");
@@ -338,8 +314,6 @@ class RWStepVisual_RWSurfaceStyleUsage {
 class RWStepVisual_RWPreDefinedColour {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPreDefinedColour();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPreDefinedColour();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PreDefinedColour &ent) const;
@@ -356,8 +330,6 @@ class RWStepVisual_RWPreDefinedColour {
 %nodefaultctor RWStepVisual_RWContextDependentInvisibility;
 class RWStepVisual_RWContextDependentInvisibility {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWContextDependentInvisibility();
 		%feature("autodoc", "1");
 		RWStepVisual_RWContextDependentInvisibility();
 		%feature("autodoc", "1");
@@ -378,8 +350,6 @@ class RWStepVisual_RWContextDependentInvisibility {
 class RWStepVisual_RWPreDefinedCurveFont {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPreDefinedCurveFont();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPreDefinedCurveFont();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PreDefinedCurveFont &ent) const;
@@ -396,8 +366,6 @@ class RWStepVisual_RWPreDefinedCurveFont {
 %nodefaultctor RWStepVisual_RWMechanicalDesignGeometricPresentationArea;
 class RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWMechanicalDesignGeometricPresentationArea();
 		%feature("autodoc", "1");
 		RWStepVisual_RWMechanicalDesignGeometricPresentationArea();
 		%feature("autodoc", "1");
@@ -418,8 +386,6 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 class RWStepVisual_RWPresentationArea {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentationArea();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationArea();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationArea &ent) const;
@@ -438,8 +404,6 @@ class RWStepVisual_RWPresentationArea {
 %nodefaultctor RWStepVisual_RWPresentationView;
 class RWStepVisual_RWPresentationView {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentationView();
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationView();
 		%feature("autodoc", "1");
@@ -460,8 +424,6 @@ class RWStepVisual_RWPresentationView {
 class RWStepVisual_RWPresentationSize {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentationSize();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationSize();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationSize &ent) const;
@@ -480,8 +442,6 @@ class RWStepVisual_RWPresentationSize {
 %nodefaultctor RWStepVisual_RWPresentationStyleByContext;
 class RWStepVisual_RWPresentationStyleByContext {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentationStyleByContext();
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationStyleByContext();
 		%feature("autodoc", "1");
@@ -502,8 +462,6 @@ class RWStepVisual_RWPresentationStyleByContext {
 class RWStepVisual_RWColourRgb {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWColourRgb();
-		%feature("autodoc", "1");
 		RWStepVisual_RWColourRgb();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ColourRgb &ent) const;
@@ -521,8 +479,6 @@ class RWStepVisual_RWColourRgb {
 class RWStepVisual_RWPresentationSet {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentationSet();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationSet();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationSet &ent) const;
@@ -539,8 +495,6 @@ class RWStepVisual_RWPresentationSet {
 %nodefaultctor RWStepVisual_RWOverRidingStyledItem;
 class RWStepVisual_RWOverRidingStyledItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWOverRidingStyledItem();
 		%feature("autodoc", "1");
 		RWStepVisual_RWOverRidingStyledItem();
 		%feature("autodoc", "1");
@@ -561,8 +515,6 @@ class RWStepVisual_RWOverRidingStyledItem {
 class RWStepVisual_RWSurfaceSideStyle {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWSurfaceSideStyle();
-		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceSideStyle();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceSideStyle &ent) const;
@@ -581,8 +533,6 @@ class RWStepVisual_RWSurfaceSideStyle {
 %nodefaultctor RWStepVisual_RWTextStyle;
 class RWStepVisual_RWTextStyle {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWTextStyle();
 		%feature("autodoc", "1");
 		RWStepVisual_RWTextStyle();
 		%feature("autodoc", "1");
@@ -603,8 +553,6 @@ class RWStepVisual_RWTextStyle {
 class RWStepVisual_RWCameraImage {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWCameraImage();
-		%feature("autodoc", "1");
 		RWStepVisual_RWCameraImage();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraImage &ent) const;
@@ -623,8 +571,6 @@ class RWStepVisual_RWCameraImage {
 %nodefaultctor RWStepVisual_RWPresentationLayerAssignment;
 class RWStepVisual_RWPresentationLayerAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentationLayerAssignment();
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationLayerAssignment();
 		%feature("autodoc", "1");
@@ -645,8 +591,6 @@ class RWStepVisual_RWPresentationLayerAssignment {
 class RWStepVisual_RWTextLiteral {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWTextLiteral();
-		%feature("autodoc", "1");
 		RWStepVisual_RWTextLiteral();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TextLiteral &ent) const;
@@ -666,8 +610,6 @@ class RWStepVisual_RWTextLiteral {
 class RWStepVisual_RWPlanarExtent {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPlanarExtent();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPlanarExtent();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PlanarExtent &ent) const;
@@ -684,8 +626,6 @@ class RWStepVisual_RWPlanarExtent {
 %nodefaultctor RWStepVisual_RWSurfaceStyleControlGrid;
 class RWStepVisual_RWSurfaceStyleControlGrid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWSurfaceStyleControlGrid();
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleControlGrid();
 		%feature("autodoc", "1");
@@ -706,8 +646,6 @@ class RWStepVisual_RWSurfaceStyleControlGrid {
 class RWStepVisual_RWInvisibility {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWInvisibility();
-		%feature("autodoc", "1");
 		RWStepVisual_RWInvisibility();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_Invisibility &ent) const;
@@ -726,8 +664,6 @@ class RWStepVisual_RWInvisibility {
 %nodefaultctor RWStepVisual_RWSurfaceStyleBoundary;
 class RWStepVisual_RWSurfaceStyleBoundary {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWSurfaceStyleBoundary();
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleBoundary();
 		%feature("autodoc", "1");
@@ -748,8 +684,6 @@ class RWStepVisual_RWSurfaceStyleBoundary {
 class RWStepVisual_RWPreDefinedItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPreDefinedItem();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPreDefinedItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PreDefinedItem &ent) const;
@@ -767,8 +701,6 @@ class RWStepVisual_RWPreDefinedItem {
 class RWStepVisual_RWColourSpecification {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWColourSpecification();
-		%feature("autodoc", "1");
 		RWStepVisual_RWColourSpecification();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ColourSpecification &ent) const;
@@ -785,8 +717,6 @@ class RWStepVisual_RWColourSpecification {
 %nodefaultctor RWStepVisual_RWFillAreaStyleColour;
 class RWStepVisual_RWFillAreaStyleColour {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWFillAreaStyleColour();
 		%feature("autodoc", "1");
 		RWStepVisual_RWFillAreaStyleColour();
 		%feature("autodoc", "1");
@@ -807,8 +737,6 @@ class RWStepVisual_RWFillAreaStyleColour {
 class RWStepVisual_RWTemplateInstance {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWTemplateInstance();
-		%feature("autodoc", "1");
 		RWStepVisual_RWTemplateInstance();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TemplateInstance &ent) const;
@@ -827,8 +755,6 @@ class RWStepVisual_RWTemplateInstance {
 %nodefaultctor RWStepVisual_RWSurfaceStyleFillArea;
 class RWStepVisual_RWSurfaceStyleFillArea {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWSurfaceStyleFillArea();
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleFillArea();
 		%feature("autodoc", "1");
@@ -849,8 +775,6 @@ class RWStepVisual_RWSurfaceStyleFillArea {
 class RWStepVisual_RWViewVolume {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWViewVolume();
-		%feature("autodoc", "1");
 		RWStepVisual_RWViewVolume();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ViewVolume &ent) const;
@@ -869,8 +793,6 @@ class RWStepVisual_RWViewVolume {
 %nodefaultctor RWStepVisual_RWStyledItem;
 class RWStepVisual_RWStyledItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWStyledItem();
 		%feature("autodoc", "1");
 		RWStepVisual_RWStyledItem();
 		%feature("autodoc", "1");
@@ -891,8 +813,6 @@ class RWStepVisual_RWStyledItem {
 class RWStepVisual_RWCurveStyle {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWCurveStyle();
-		%feature("autodoc", "1");
 		RWStepVisual_RWCurveStyle();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyle &ent) const;
@@ -911,8 +831,6 @@ class RWStepVisual_RWCurveStyle {
 %nodefaultctor RWStepVisual_RWContextDependentOverRidingStyledItem;
 class RWStepVisual_RWContextDependentOverRidingStyledItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWContextDependentOverRidingStyledItem();
 		%feature("autodoc", "1");
 		RWStepVisual_RWContextDependentOverRidingStyledItem();
 		%feature("autodoc", "1");
@@ -933,8 +851,6 @@ class RWStepVisual_RWContextDependentOverRidingStyledItem {
 class RWStepVisual_RWPointStyle {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPointStyle();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPointStyle();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PointStyle &ent) const;
@@ -953,8 +869,6 @@ class RWStepVisual_RWPointStyle {
 %nodefaultctor RWStepVisual_RWCompositeText;
 class RWStepVisual_RWCompositeText {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWCompositeText();
 		%feature("autodoc", "1");
 		RWStepVisual_RWCompositeText();
 		%feature("autodoc", "1");
@@ -975,8 +889,6 @@ class RWStepVisual_RWCompositeText {
 class RWStepVisual_RWDraughtingModel {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWDraughtingModel();
-		%feature("autodoc", "1");
 		RWStepVisual_RWDraughtingModel();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_DraughtingModel &ent) const;
@@ -996,8 +908,6 @@ class RWStepVisual_RWDraughtingModel {
 class RWStepVisual_RWCameraModel {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWCameraModel();
-		%feature("autodoc", "1");
 		RWStepVisual_RWCameraModel();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraModel &ent) const;
@@ -1014,8 +924,6 @@ class RWStepVisual_RWCameraModel {
 %nodefaultctor RWStepVisual_RWCameraUsage;
 class RWStepVisual_RWCameraUsage {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWCameraUsage();
 		%feature("autodoc", "1");
 		RWStepVisual_RWCameraUsage();
 		%feature("autodoc", "1");
@@ -1036,8 +944,6 @@ class RWStepVisual_RWCameraUsage {
 class RWStepVisual_RWTextStyleForDefinedFont {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWTextStyleForDefinedFont();
-		%feature("autodoc", "1");
 		RWStepVisual_RWTextStyleForDefinedFont();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TextStyleForDefinedFont &ent) const;
@@ -1057,8 +963,6 @@ class RWStepVisual_RWTextStyleForDefinedFont {
 class RWStepVisual_RWColour {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWColour();
-		%feature("autodoc", "1");
 		RWStepVisual_RWColour();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_Colour &ent) const;
@@ -1075,8 +979,6 @@ class RWStepVisual_RWColour {
 %nodefaultctor RWStepVisual_RWPresentationRepresentation;
 class RWStepVisual_RWPresentationRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentationRepresentation();
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationRepresentation();
 		%feature("autodoc", "1");
@@ -1097,8 +999,6 @@ class RWStepVisual_RWPresentationRepresentation {
 class RWStepVisual_RWCurveStyleFont {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWCurveStyleFont();
-		%feature("autodoc", "1");
 		RWStepVisual_RWCurveStyleFont();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyleFont &ent) const;
@@ -1117,8 +1017,6 @@ class RWStepVisual_RWCurveStyleFont {
 %nodefaultctor RWStepVisual_RWPresentationLayerUsage;
 class RWStepVisual_RWPresentationLayerUsage {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentationLayerUsage();
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationLayerUsage();
 		%feature("autodoc", "1");
@@ -1139,8 +1037,6 @@ class RWStepVisual_RWPresentationLayerUsage {
 class RWStepVisual_RWExternallyDefinedCurveFont {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWExternallyDefinedCurveFont();
-		%feature("autodoc", "1");
 		RWStepVisual_RWExternallyDefinedCurveFont();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ExternallyDefinedCurveFont &ent) const;
@@ -1160,8 +1056,6 @@ class RWStepVisual_RWExternallyDefinedCurveFont {
 class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWDraughtingPreDefinedCurveFont();
-		%feature("autodoc", "1");
 		RWStepVisual_RWDraughtingPreDefinedCurveFont();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_DraughtingPreDefinedCurveFont &ent) const;
@@ -1178,8 +1072,6 @@ class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 %nodefaultctor RWStepVisual_RWPresentationStyleAssignment;
 class RWStepVisual_RWPresentationStyleAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWPresentationStyleAssignment();
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationStyleAssignment();
 		%feature("autodoc", "1");
@@ -1200,8 +1092,6 @@ class RWStepVisual_RWPresentationStyleAssignment {
 class RWStepVisual_RWPlanarBox {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWPlanarBox();
-		%feature("autodoc", "1");
 		RWStepVisual_RWPlanarBox();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PlanarBox &ent) const;
@@ -1220,8 +1110,6 @@ class RWStepVisual_RWPlanarBox {
 %nodefaultctor RWStepVisual_RWCameraModelD2;
 class RWStepVisual_RWCameraModelD2 {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWCameraModelD2();
 		%feature("autodoc", "1");
 		RWStepVisual_RWCameraModelD2();
 		%feature("autodoc", "1");
@@ -1242,8 +1130,6 @@ class RWStepVisual_RWCameraModelD2 {
 class RWStepVisual_RWCameraModelD3 {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWCameraModelD3();
-		%feature("autodoc", "1");
 		RWStepVisual_RWCameraModelD3();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraModelD3 &ent) const;
@@ -1263,8 +1149,6 @@ class RWStepVisual_RWCameraModelD3 {
 class RWStepVisual_RWDraughtingPreDefinedColour {
 	public:
 		%feature("autodoc", "1");
-		~RWStepVisual_RWDraughtingPreDefinedColour();
-		%feature("autodoc", "1");
 		RWStepVisual_RWDraughtingPreDefinedColour();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_DraughtingPreDefinedColour &ent) const;
@@ -1281,8 +1165,6 @@ class RWStepVisual_RWDraughtingPreDefinedColour {
 %nodefaultctor RWStepVisual_RWSurfaceStyleParameterLine;
 class RWStepVisual_RWSurfaceStyleParameterLine {
 	public:
-		%feature("autodoc", "1");
-		~RWStepVisual_RWSurfaceStyleParameterLine();
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleParameterLine();
 		%feature("autodoc", "1");

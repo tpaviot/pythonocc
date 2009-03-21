@@ -119,8 +119,6 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 class Voxel_DS {
 	public:
 		%feature("autodoc", "1");
-		~Voxel_DS();
-		%feature("autodoc", "1");
 		Voxel_DS();
 		%feature("autodoc", "1");
 		Voxel_DS(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
@@ -172,8 +170,6 @@ class Voxel_BoolDS : public Voxel_DS {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Voxel_BoolDS();
-		%feature("autodoc", "1");
 		void SetZero();
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Boolean data=1);
@@ -199,8 +195,6 @@ class Voxel_FloatDS : public Voxel_DS {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Voxel_FloatDS();
-		%feature("autodoc", "1");
 		void SetZero();
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_ShortReal data);
@@ -217,8 +211,6 @@ class Voxel_FloatDS : public Voxel_DS {
 %nodefaultctor Voxel_Selector;
 class Voxel_Selector {
 	public:
-		%feature("autodoc", "1");
-		~Voxel_Selector();
 		%feature("autodoc", "1");
 		Voxel_Selector();
 		%feature("autodoc", "1");
@@ -295,8 +287,6 @@ class Voxel_Prs : public AIS_InteractiveObject {
 class Voxel_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		~Voxel_BooleanOperation();
-		%feature("autodoc", "1");
 		Voxel_BooleanOperation();
 		%feature("autodoc", "1");
 		Standard_Boolean Fuse(Voxel_BoolDS & theVoxels1, const Voxel_BoolDS &theVoxels2) const;
@@ -331,8 +321,6 @@ class Voxel_FastConverter {
 		Standard_Boolean FillInVolume(const Standard_Byte inner, const Standard_Integer ithread=1);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Voxel_FastConverter();
 
 };
 %extend Voxel_FastConverter {
@@ -352,8 +340,6 @@ class Voxel_ColorDS : public Voxel_DS {
 		virtual		void Init(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Voxel_ColorDS();
 		%feature("autodoc", "1");
 		void SetZero();
 		%feature("autodoc", "1");
@@ -399,8 +385,6 @@ class Voxel_CollisionDetection {
 		const Voxel_BoolDS & GetCollisions() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Voxel_CollisionDetection();
 
 };
 %extend Voxel_CollisionDetection {

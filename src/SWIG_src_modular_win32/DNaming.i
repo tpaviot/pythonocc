@@ -112,8 +112,6 @@ class Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName : public Handle_TCollecti
 class DNaming {
 	public:
 		%feature("autodoc", "1");
-		~DNaming();
-		%feature("autodoc", "1");
 		DNaming();
 		%feature("autodoc", "1");
 		TopoDS_Shape CurrentShape(const char * ShapeEntry, const Handle_TDF_Data &Data);
@@ -144,8 +142,6 @@ class DNaming {
 %nodefaultctor DNaming_DataMapIteratorOfDataMapOfShapeOfName;
 class DNaming_DataMapIteratorOfDataMapOfShapeOfName : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~DNaming_DataMapIteratorOfDataMapOfShapeOfName();
 		%feature("autodoc", "1");
 		DNaming_DataMapIteratorOfDataMapOfShapeOfName();
 		%feature("autodoc", "1");
@@ -199,8 +195,6 @@ class DNaming_DataMapOfShapeOfName : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~DNaming_DataMapOfShapeOfName();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TCollection_AsciiString &I);
 		%feature("autodoc", "1");

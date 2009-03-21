@@ -600,8 +600,6 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public PStandard_ArrayNode
 class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
 	public:
 		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface();
-		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface(const Handle_PGeom_BezierSurface &aValue);
@@ -620,8 +618,6 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve();
 		%feature("autodoc", "1");
@@ -792,8 +788,6 @@ class PColPGeom_HArray1OfCurve : public Standard_Persistent {
 class PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface {
 	public:
 		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface();
-		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface(const Handle_PGeom_Surface &aValue);
@@ -924,8 +918,6 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public PStandard_Ar
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 	public:
 		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve();
-		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve(const Handle_PGeom_BoundedCurve &aValue);
@@ -1037,8 +1029,6 @@ class PColPGeom_FieldOfHArray2OfBoundedSurface : public DBC_BaseArray {
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
 	public:
-		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface();
 		%feature("autodoc", "1");
@@ -1356,8 +1346,6 @@ class PColPGeom_HArray2OfBoundedSurface : public Standard_Persistent {
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve {
 	public:
 		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve();
-		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve(const Handle_PGeom_Curve &aValue);
@@ -1578,8 +1566,6 @@ class PColPGeom_FieldOfHArray2OfBezierSurface : public DBC_BaseArray {
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
 	public:
 		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface();
-		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface(const Handle_PGeom_BoundedSurface &aValue);
@@ -1694,8 +1680,6 @@ class PColPGeom_HArray2OfBSplineSurface : public Standard_Persistent {
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface;
 class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface();
 		%feature("autodoc", "1");
@@ -1873,8 +1857,6 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public PStandard_ArrayNode
 class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface();
-		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface(const Handle_PGeom_BSplineSurface &aValue);
@@ -1922,8 +1904,6 @@ class PColPGeom_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
 	public:
-		%feature("autodoc", "1");
-		~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve();
 		%feature("autodoc", "1");
 		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve();
 		%feature("autodoc", "1");

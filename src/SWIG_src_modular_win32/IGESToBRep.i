@@ -516,8 +516,6 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESToBRep_BRepEntity();
-		%feature("autodoc", "1");
 		IGESToBRep_BRepEntity();
 		%feature("autodoc", "1");
 		IGESToBRep_BRepEntity(const IGESToBRep_CurveAndSurface &CS);
@@ -628,8 +626,6 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 %nodefaultctor IGESToBRep_TopoSurface;
 class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESToBRep_TopoSurface();
 		%feature("autodoc", "1");
 		IGESToBRep_TopoSurface();
 		%feature("autodoc", "1");

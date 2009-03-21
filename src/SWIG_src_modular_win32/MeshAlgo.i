@@ -113,8 +113,6 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 class MeshAlgo {
 	public:
 		%feature("autodoc", "1");
-		~MeshAlgo();
-		%feature("autodoc", "1");
 		MeshAlgo();
 		%feature("autodoc", "1");
 		void SetMesure(const Standard_Boolean val);
@@ -140,8 +138,6 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MeshAlgo_DataMapOfIntegerCirc();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const MeshAlgo_Circ &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -166,8 +162,6 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 %nodefaultctor MeshAlgo_CircleTool;
 class MeshAlgo_CircleTool {
 	public:
-		%feature("autodoc", "1");
-		~MeshAlgo_CircleTool();
 		%feature("autodoc", "1");
 		MeshAlgo_CircleTool(const MeshDS_BaseAllocator &theAlloc);
 		%feature("autodoc", "1");
@@ -204,8 +198,6 @@ class MeshAlgo_CircleTool {
 class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc();
-		%feature("autodoc", "1");
 		MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc();
 		%feature("autodoc", "1");
 		MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc(const MeshAlgo_DataMapOfIntegerCirc &aMap);
@@ -226,8 +218,6 @@ class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicM
 %nodefaultctor MeshAlgo_Circ;
 class MeshAlgo_Circ {
 	public:
-		%feature("autodoc", "1");
-		~MeshAlgo_Circ();
 		%feature("autodoc", "1");
 		MeshAlgo_Circ();
 		%feature("autodoc", "1");

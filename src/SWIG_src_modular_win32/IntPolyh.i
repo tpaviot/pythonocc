@@ -113,8 +113,6 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 class IntPolyh_StartPoint {
 	public:
 		%feature("autodoc", "1");
-		~IntPolyh_StartPoint();
-		%feature("autodoc", "1");
 		IntPolyh_StartPoint();
 		%feature("autodoc", "1");
 		IntPolyh_StartPoint(const Standard_Real xx, const Standard_Real yy, const Standard_Real zz, const Standard_Real uu1, const Standard_Real vv1, const Standard_Real uu2, const Standard_Real vv2, const Standard_Integer T1, const Standard_Integer E1, const Standard_Real LAM1, const Standard_Integer T2, const Standard_Integer E2, const Standard_Real LAM2, const Standard_Integer List);
@@ -190,8 +188,6 @@ class IntPolyh_StartPoint {
 class IntPolyh_Edge {
 	public:
 		%feature("autodoc", "1");
-		~IntPolyh_Edge();
-		%feature("autodoc", "1");
 		IntPolyh_Edge();
 		%feature("autodoc", "1");
 		IntPolyh_Edge(const Standard_Integer i1, const Standard_Integer i2, const Standard_Integer i3, const Standard_Integer i4);
@@ -250,8 +246,6 @@ class IntPolyh_ArrayOfCouples {
 		IntPolyh_Couple & operator[](const Standard_Integer nn);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfCouples();
 		%feature("autodoc", "1");
 		void Dump() const;
 
@@ -312,8 +306,6 @@ class IntPolyh_ArrayOfSectionLines {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfSectionLines();
-		%feature("autodoc", "1");
 		void Dump() const;
 
 };
@@ -351,8 +343,6 @@ class IntPolyh_SectionLine {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_SectionLine();
-		%feature("autodoc", "1");
 		void Dump() const;
 		%feature("autodoc", "1");
 		void Prepend(const IntPolyh_StartPoint &SP);
@@ -367,8 +357,6 @@ class IntPolyh_SectionLine {
 %nodefaultctor IntPolyh_Couple;
 class IntPolyh_Couple {
 	public:
-		%feature("autodoc", "1");
-		~IntPolyh_Couple();
 		%feature("autodoc", "1");
 		IntPolyh_Couple();
 		%feature("autodoc", "1");
@@ -427,8 +415,6 @@ class IntPolyh_ArrayOfEdges {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfEdges();
-		%feature("autodoc", "1");
 		void Dump() const;
 
 };
@@ -466,8 +452,6 @@ class IntPolyh_ArrayOfTangentZones {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfTangentZones();
-		%feature("autodoc", "1");
 		void Dump() const;
 
 };
@@ -480,8 +464,6 @@ class IntPolyh_ArrayOfTangentZones {
 %nodefaultctor IntPolyh_Point;
 class IntPolyh_Point {
 	public:
-		%feature("autodoc", "1");
-		~IntPolyh_Point();
 		%feature("autodoc", "1");
 		IntPolyh_Point();
 		%feature("autodoc", "1");
@@ -576,8 +558,6 @@ class IntPolyh_ArrayOfStartPoints {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfStartPoints();
-		%feature("autodoc", "1");
 		void Dump() const;
 
 };
@@ -590,8 +570,6 @@ class IntPolyh_ArrayOfStartPoints {
 %nodefaultctor IntPolyh_Intersection;
 class IntPolyh_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~IntPolyh_Intersection();
 		%feature("autodoc", "1");
 		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2);
 		%feature("autodoc", "1");
@@ -631,8 +609,6 @@ class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 		IntPolyh_SeqOfStartPoints();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntPolyh_SeqOfStartPoints();
 		%feature("autodoc", "1");
 		const IntPolyh_SeqOfStartPoints & Assign(const IntPolyh_SeqOfStartPoints &Other);
 		%feature("autodoc", "1");
@@ -709,8 +685,6 @@ class IntPolyh_ArrayOfPoints {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfPoints();
-		%feature("autodoc", "1");
 		void Dump() const;
 
 };
@@ -749,8 +723,6 @@ class IntPolyh_ArrayOfTriangles {
 		IntPolyh_ArrayOfTriangles & Copy(const IntPolyh_ArrayOfTriangles &Other);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntPolyh_ArrayOfTriangles();
 		%feature("autodoc", "1");
 		void Dump() const;
 		%feature("autodoc", "1");

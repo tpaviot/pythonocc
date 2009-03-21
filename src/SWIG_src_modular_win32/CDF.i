@@ -341,8 +341,6 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 class CDF {
 	public:
 		%feature("autodoc", "1");
-		~CDF();
-		%feature("autodoc", "1");
 		CDF();
 		%feature("autodoc", "1");
 		void GetLicense(const Standard_Integer anApplicationIdentifier);
@@ -413,8 +411,6 @@ class CDF_Application : public CDM_Application {
 %nodefaultctor CDF_Timer;
 class CDF_Timer {
 	public:
-		%feature("autodoc", "1");
-		~CDF_Timer();
 		%feature("autodoc", "1");
 		CDF_Timer();
 		%feature("autodoc", "1");
@@ -627,8 +623,6 @@ class CDF_DirectoryIterator {
 %nodefaultctor CDF_Store;
 class CDF_Store {
 	public:
-		%feature("autodoc", "1");
-		~CDF_Store();
 		%feature("autodoc", "1");
 		CDF_Store(const Handle_CDM_Document &aDocument);
 		%feature("autodoc", "1");

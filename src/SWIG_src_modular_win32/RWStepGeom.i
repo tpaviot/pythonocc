@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
-		%feature("autodoc", "1");
 		RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx &ent) const;
@@ -108,8 +106,6 @@ class RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
 %nodefaultctor RWStepGeom_RWCylindricalSurface;
 class RWStepGeom_RWCylindricalSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWCylindricalSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWCylindricalSurface();
 		%feature("autodoc", "1");
@@ -130,8 +126,6 @@ class RWStepGeom_RWCylindricalSurface {
 class RWStepGeom_RWBoundedCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWBoundedCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWBoundedCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BoundedCurve &ent) const;
@@ -148,8 +142,6 @@ class RWStepGeom_RWBoundedCurve {
 %nodefaultctor RWStepGeom_RWAxis1Placement;
 class RWStepGeom_RWAxis1Placement {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWAxis1Placement();
 		%feature("autodoc", "1");
 		RWStepGeom_RWAxis1Placement();
 		%feature("autodoc", "1");
@@ -170,8 +162,6 @@ class RWStepGeom_RWAxis1Placement {
 class RWStepGeom_RWPointReplica {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWPointReplica();
-		%feature("autodoc", "1");
 		RWStepGeom_RWPointReplica();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_PointReplica &ent) const;
@@ -190,8 +180,6 @@ class RWStepGeom_RWPointReplica {
 %nodefaultctor RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface;
 class RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -212,8 +200,6 @@ class RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface {
 class RWStepGeom_RWSurface {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWSurface();
-		%feature("autodoc", "1");
 		RWStepGeom_RWSurface();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Surface &ent) const;
@@ -230,8 +216,6 @@ class RWStepGeom_RWSurface {
 %nodefaultctor RWStepGeom_RWCompositeCurve;
 class RWStepGeom_RWCompositeCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWCompositeCurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWCompositeCurve();
 		%feature("autodoc", "1");
@@ -252,8 +236,6 @@ class RWStepGeom_RWCompositeCurve {
 class RWStepGeom_RWSweptSurface {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWSweptSurface();
-		%feature("autodoc", "1");
 		RWStepGeom_RWSweptSurface();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SweptSurface &ent) const;
@@ -273,8 +255,6 @@ class RWStepGeom_RWSweptSurface {
 class RWStepGeom_RWGeometricRepresentationContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWGeometricRepresentationContext();
-		%feature("autodoc", "1");
 		RWStepGeom_RWGeometricRepresentationContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationContext &ent) const;
@@ -291,8 +271,6 @@ class RWStepGeom_RWGeometricRepresentationContext {
 %nodefaultctor RWStepGeom_RWDegenerateToroidalSurface;
 class RWStepGeom_RWDegenerateToroidalSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWDegenerateToroidalSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWDegenerateToroidalSurface();
 		%feature("autodoc", "1");
@@ -313,8 +291,6 @@ class RWStepGeom_RWDegenerateToroidalSurface {
 class RWStepGeom_RWOffsetSurface {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWOffsetSurface();
-		%feature("autodoc", "1");
 		RWStepGeom_RWOffsetSurface();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_OffsetSurface &ent) const;
@@ -333,8 +309,6 @@ class RWStepGeom_RWOffsetSurface {
 %nodefaultctor RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext;
 class RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext();
 		%feature("autodoc", "1");
 		RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext();
 		%feature("autodoc", "1");
@@ -355,8 +329,6 @@ class RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationCont
 class RWStepGeom_RWQuasiUniformCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWQuasiUniformCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWQuasiUniformCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_QuasiUniformCurve &ent) const;
@@ -375,8 +347,6 @@ class RWStepGeom_RWQuasiUniformCurve {
 %nodefaultctor RWStepGeom_RWLine;
 class RWStepGeom_RWLine {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWLine();
 		%feature("autodoc", "1");
 		RWStepGeom_RWLine();
 		%feature("autodoc", "1");
@@ -397,8 +367,6 @@ class RWStepGeom_RWLine {
 class RWStepGeom_RWCartesianTransformationOperator3d {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWCartesianTransformationOperator3d();
-		%feature("autodoc", "1");
 		RWStepGeom_RWCartesianTransformationOperator3d();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CartesianTransformationOperator3d &ent) const;
@@ -417,8 +385,6 @@ class RWStepGeom_RWCartesianTransformationOperator3d {
 %nodefaultctor RWStepGeom_RWConicalSurface;
 class RWStepGeom_RWConicalSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWConicalSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWConicalSurface();
 		%feature("autodoc", "1");
@@ -439,8 +405,6 @@ class RWStepGeom_RWConicalSurface {
 class RWStepGeom_RWSurfaceCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWSurfaceCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceCurve &ent) const;
@@ -459,8 +423,6 @@ class RWStepGeom_RWSurfaceCurve {
 %nodefaultctor RWStepGeom_RWToroidalSurface;
 class RWStepGeom_RWToroidalSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWToroidalSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWToroidalSurface();
 		%feature("autodoc", "1");
@@ -483,8 +445,6 @@ class RWStepGeom_RWToroidalSurface {
 class RWStepGeom_RWBezierCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWBezierCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWBezierCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BezierCurve &ent) const;
@@ -503,8 +463,6 @@ class RWStepGeom_RWBezierCurve {
 %nodefaultctor RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface;
 class RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -525,8 +483,6 @@ class RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface {
 class RWStepGeom_RWTrimmedCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWTrimmedCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWTrimmedCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_TrimmedCurve &ent) const;
@@ -545,8 +501,6 @@ class RWStepGeom_RWTrimmedCurve {
 %nodefaultctor RWStepGeom_RWVector;
 class RWStepGeom_RWVector {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWVector();
 		%feature("autodoc", "1");
 		RWStepGeom_RWVector();
 		%feature("autodoc", "1");
@@ -569,8 +523,6 @@ class RWStepGeom_RWVector {
 class RWStepGeom_RWReparametrisedCompositeCurveSegment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWReparametrisedCompositeCurveSegment();
-		%feature("autodoc", "1");
 		RWStepGeom_RWReparametrisedCompositeCurveSegment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_ReparametrisedCompositeCurveSegment &ent) const;
@@ -590,8 +542,6 @@ class RWStepGeom_RWReparametrisedCompositeCurveSegment {
 class RWStepGeom_RWBoundaryCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWBoundaryCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWBoundaryCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BoundaryCurve &ent) const;
@@ -610,8 +560,6 @@ class RWStepGeom_RWBoundaryCurve {
 %nodefaultctor RWStepGeom_RWRationalBSplineSurface;
 class RWStepGeom_RWRationalBSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWRationalBSplineSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWRationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -634,8 +582,6 @@ class RWStepGeom_RWRationalBSplineSurface {
 class RWStepGeom_RWCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Curve &ent) const;
@@ -652,8 +598,6 @@ class RWStepGeom_RWCurve {
 %nodefaultctor RWStepGeom_RWSeamCurve;
 class RWStepGeom_RWSeamCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWSeamCurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWSeamCurve();
 		%feature("autodoc", "1");
@@ -674,8 +618,6 @@ class RWStepGeom_RWSeamCurve {
 class RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext();
-		%feature("autodoc", "1");
 		RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent) const;
@@ -694,8 +636,6 @@ class RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
 %nodefaultctor RWStepGeom_RWOuterBoundaryCurve;
 class RWStepGeom_RWOuterBoundaryCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWOuterBoundaryCurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWOuterBoundaryCurve();
 		%feature("autodoc", "1");
@@ -716,8 +656,6 @@ class RWStepGeom_RWOuterBoundaryCurve {
 class RWStepGeom_RWCompositeCurveOnSurface {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWCompositeCurveOnSurface();
-		%feature("autodoc", "1");
 		RWStepGeom_RWCompositeCurveOnSurface();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CompositeCurveOnSurface &ent) const;
@@ -736,8 +674,6 @@ class RWStepGeom_RWCompositeCurveOnSurface {
 %nodefaultctor RWStepGeom_RWRectangularTrimmedSurface;
 class RWStepGeom_RWRectangularTrimmedSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWRectangularTrimmedSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWRectangularTrimmedSurface();
 		%feature("autodoc", "1");
@@ -758,8 +694,6 @@ class RWStepGeom_RWRectangularTrimmedSurface {
 class RWStepGeom_RWSurfacePatch {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWSurfacePatch();
-		%feature("autodoc", "1");
 		RWStepGeom_RWSurfacePatch();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfacePatch &ent) const;
@@ -778,8 +712,6 @@ class RWStepGeom_RWSurfacePatch {
 %nodefaultctor RWStepGeom_RWCompositeCurveSegment;
 class RWStepGeom_RWCompositeCurveSegment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWCompositeCurveSegment();
 		%feature("autodoc", "1");
 		RWStepGeom_RWCompositeCurveSegment();
 		%feature("autodoc", "1");
@@ -800,8 +732,6 @@ class RWStepGeom_RWCompositeCurveSegment {
 class RWStepGeom_RWEvaluatedDegeneratePcurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWEvaluatedDegeneratePcurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWEvaluatedDegeneratePcurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_EvaluatedDegeneratePcurve &ent) const;
@@ -820,8 +750,6 @@ class RWStepGeom_RWEvaluatedDegeneratePcurve {
 %nodefaultctor RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve;
 class RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
@@ -842,8 +770,6 @@ class RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
 class RWStepGeom_RWUniformCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWUniformCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWUniformCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_UniformCurve &ent) const;
@@ -863,8 +789,6 @@ class RWStepGeom_RWUniformCurve {
 class RWStepGeom_RWGeometricRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWGeometricRepresentationItem();
-		%feature("autodoc", "1");
 		RWStepGeom_RWGeometricRepresentationItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationItem &ent) const;
@@ -881,8 +805,6 @@ class RWStepGeom_RWGeometricRepresentationItem {
 %nodefaultctor RWStepGeom_RWIntersectionCurve;
 class RWStepGeom_RWIntersectionCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWIntersectionCurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWIntersectionCurve();
 		%feature("autodoc", "1");
@@ -903,8 +825,6 @@ class RWStepGeom_RWIntersectionCurve {
 class RWStepGeom_RWCartesianPoint {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWCartesianPoint();
-		%feature("autodoc", "1");
 		RWStepGeom_RWCartesianPoint();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CartesianPoint &ent) const;
@@ -921,8 +841,6 @@ class RWStepGeom_RWCartesianPoint {
 %nodefaultctor RWStepGeom_RWElementarySurface;
 class RWStepGeom_RWElementarySurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWElementarySurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWElementarySurface();
 		%feature("autodoc", "1");
@@ -942,8 +860,6 @@ class RWStepGeom_RWElementarySurface {
 %nodefaultctor RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve;
 class RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve();
 		%feature("autodoc", "1");
@@ -966,8 +882,6 @@ class RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve {
 class RWStepGeom_RWBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWBSplineSurface();
-		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineSurface();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BSplineSurface &ent) const;
@@ -986,8 +900,6 @@ class RWStepGeom_RWBSplineSurface {
 %nodefaultctor RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface;
 class RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -1008,8 +920,6 @@ class RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface {
 class RWStepGeom_RWPlane {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWPlane();
-		%feature("autodoc", "1");
 		RWStepGeom_RWPlane();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Plane &ent) const;
@@ -1028,8 +938,6 @@ class RWStepGeom_RWPlane {
 %nodefaultctor RWStepGeom_RWPointOnCurve;
 class RWStepGeom_RWPointOnCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWPointOnCurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWPointOnCurve();
 		%feature("autodoc", "1");
@@ -1050,8 +958,6 @@ class RWStepGeom_RWPointOnCurve {
 class RWStepGeom_RWCurveBoundedSurface {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWCurveBoundedSurface();
-		%feature("autodoc", "1");
 		RWStepGeom_RWCurveBoundedSurface();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CurveBoundedSurface &ent) const;
@@ -1071,8 +977,6 @@ class RWStepGeom_RWCurveBoundedSurface {
 class RWStepGeom_RWPoint {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWPoint();
-		%feature("autodoc", "1");
 		RWStepGeom_RWPoint();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Point &ent) const;
@@ -1089,8 +993,6 @@ class RWStepGeom_RWPoint {
 %nodefaultctor RWStepGeom_RWOrientedSurface;
 class RWStepGeom_RWOrientedSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWOrientedSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWOrientedSurface();
 		%feature("autodoc", "1");
@@ -1111,8 +1013,6 @@ class RWStepGeom_RWOrientedSurface {
 class RWStepGeom_RWCurveReplica {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWCurveReplica();
-		%feature("autodoc", "1");
 		RWStepGeom_RWCurveReplica();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CurveReplica &ent) const;
@@ -1132,8 +1032,6 @@ class RWStepGeom_RWCurveReplica {
 class RWStepGeom_RWAxis2Placement2d {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWAxis2Placement2d();
-		%feature("autodoc", "1");
 		RWStepGeom_RWAxis2Placement2d();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Axis2Placement2d &ent) const;
@@ -1152,8 +1050,6 @@ class RWStepGeom_RWAxis2Placement2d {
 %nodefaultctor RWStepGeom_RWRationalBSplineCurve;
 class RWStepGeom_RWRationalBSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWRationalBSplineCurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWRationalBSplineCurve();
 		%feature("autodoc", "1");
@@ -1176,8 +1072,6 @@ class RWStepGeom_RWRationalBSplineCurve {
 class RWStepGeom_RWDirection {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWDirection();
-		%feature("autodoc", "1");
 		RWStepGeom_RWDirection();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Direction &ent) const;
@@ -1196,8 +1090,6 @@ class RWStepGeom_RWDirection {
 %nodefaultctor RWStepGeom_RWBSplineCurve;
 class RWStepGeom_RWBSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWBSplineCurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineCurve();
 		%feature("autodoc", "1");
@@ -1218,8 +1110,6 @@ class RWStepGeom_RWBSplineCurve {
 class RWStepGeom_RWAxis2Placement3d {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWAxis2Placement3d();
-		%feature("autodoc", "1");
 		RWStepGeom_RWAxis2Placement3d();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Axis2Placement3d &ent) const;
@@ -1238,8 +1128,6 @@ class RWStepGeom_RWAxis2Placement3d {
 %nodefaultctor RWStepGeom_RWDegeneratePcurve;
 class RWStepGeom_RWDegeneratePcurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWDegeneratePcurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWDegeneratePcurve();
 		%feature("autodoc", "1");
@@ -1260,8 +1148,6 @@ class RWStepGeom_RWDegeneratePcurve {
 class RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWUniformCurveAndRationalBSplineCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWUniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent) const;
@@ -1280,8 +1166,6 @@ class RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
 %nodefaultctor RWStepGeom_RWPointOnSurface;
 class RWStepGeom_RWPointOnSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWPointOnSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWPointOnSurface();
 		%feature("autodoc", "1");
@@ -1302,8 +1186,6 @@ class RWStepGeom_RWPointOnSurface {
 class RWStepGeom_RWBezierCurveAndRationalBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWBezierCurveAndRationalBSplineCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWBezierCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BezierCurveAndRationalBSplineCurve &ent) const;
@@ -1322,8 +1204,6 @@ class RWStepGeom_RWBezierCurveAndRationalBSplineCurve {
 %nodefaultctor RWStepGeom_RWCartesianTransformationOperator;
 class RWStepGeom_RWCartesianTransformationOperator {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWCartesianTransformationOperator();
 		%feature("autodoc", "1");
 		RWStepGeom_RWCartesianTransformationOperator();
 		%feature("autodoc", "1");
@@ -1344,8 +1224,6 @@ class RWStepGeom_RWCartesianTransformationOperator {
 class RWStepGeom_RWParabola {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWParabola();
-		%feature("autodoc", "1");
 		RWStepGeom_RWParabola();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Parabola &ent) const;
@@ -1364,8 +1242,6 @@ class RWStepGeom_RWParabola {
 %nodefaultctor RWStepGeom_RWPcurve;
 class RWStepGeom_RWPcurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWPcurve();
 		%feature("autodoc", "1");
 		RWStepGeom_RWPcurve();
 		%feature("autodoc", "1");
@@ -1386,8 +1262,6 @@ class RWStepGeom_RWPcurve {
 class RWStepGeom_RWSurfaceCurveAndBoundedCurve {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWSurfaceCurveAndBoundedCurve();
-		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceCurveAndBoundedCurve();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceCurveAndBoundedCurve &ent) const;
@@ -1406,8 +1280,6 @@ class RWStepGeom_RWSurfaceCurveAndBoundedCurve {
 %nodefaultctor RWStepGeom_RWEllipse;
 class RWStepGeom_RWEllipse {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWEllipse();
 		%feature("autodoc", "1");
 		RWStepGeom_RWEllipse();
 		%feature("autodoc", "1");
@@ -1430,8 +1302,6 @@ class RWStepGeom_RWEllipse {
 class RWStepGeom_RWSurfaceOfRevolution {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWSurfaceOfRevolution();
-		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceOfRevolution();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceOfRevolution &ent) const;
@@ -1451,8 +1321,6 @@ class RWStepGeom_RWSurfaceOfRevolution {
 class RWStepGeom_RWBoundedSurface {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWBoundedSurface();
-		%feature("autodoc", "1");
 		RWStepGeom_RWBoundedSurface();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BoundedSurface &ent) const;
@@ -1469,8 +1337,6 @@ class RWStepGeom_RWBoundedSurface {
 %nodefaultctor RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface;
 class RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface();
 		%feature("autodoc", "1");
@@ -1493,8 +1359,6 @@ class RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
 class RWStepGeom_RWSphericalSurface {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWSphericalSurface();
-		%feature("autodoc", "1");
 		RWStepGeom_RWSphericalSurface();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SphericalSurface &ent) const;
@@ -1513,8 +1377,6 @@ class RWStepGeom_RWSphericalSurface {
 %nodefaultctor RWStepGeom_RWUniformSurface;
 class RWStepGeom_RWUniformSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWUniformSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWUniformSurface();
 		%feature("autodoc", "1");
@@ -1535,8 +1397,6 @@ class RWStepGeom_RWUniformSurface {
 class RWStepGeom_RWSurfaceReplica {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWSurfaceReplica();
-		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceReplica();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceReplica &ent) const;
@@ -1555,8 +1415,6 @@ class RWStepGeom_RWSurfaceReplica {
 %nodefaultctor RWStepGeom_RWRectangularCompositeSurface;
 class RWStepGeom_RWRectangularCompositeSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWRectangularCompositeSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWRectangularCompositeSurface();
 		%feature("autodoc", "1");
@@ -1577,8 +1435,6 @@ class RWStepGeom_RWRectangularCompositeSurface {
 class RWStepGeom_RWCircle {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWCircle();
-		%feature("autodoc", "1");
 		RWStepGeom_RWCircle();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Circle &ent) const;
@@ -1597,8 +1453,6 @@ class RWStepGeom_RWCircle {
 %nodefaultctor RWStepGeom_RWPolyline;
 class RWStepGeom_RWPolyline {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWPolyline();
 		%feature("autodoc", "1");
 		RWStepGeom_RWPolyline();
 		%feature("autodoc", "1");
@@ -1619,8 +1473,6 @@ class RWStepGeom_RWPolyline {
 class RWStepGeom_RWBezierSurface {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWBezierSurface();
-		%feature("autodoc", "1");
 		RWStepGeom_RWBezierSurface();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BezierSurface &ent) const;
@@ -1640,8 +1492,6 @@ class RWStepGeom_RWBezierSurface {
 class RWStepGeom_RWConic {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWConic();
-		%feature("autodoc", "1");
 		RWStepGeom_RWConic();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Conic &ent) const;
@@ -1660,8 +1510,6 @@ class RWStepGeom_RWConic {
 %nodefaultctor RWStepGeom_RWBSplineCurveWithKnots;
 class RWStepGeom_RWBSplineCurveWithKnots {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWBSplineCurveWithKnots();
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineCurveWithKnots();
 		%feature("autodoc", "1");
@@ -1684,8 +1532,6 @@ class RWStepGeom_RWBSplineCurveWithKnots {
 class RWStepGeom_RWSurfaceOfLinearExtrusion {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWSurfaceOfLinearExtrusion();
-		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceOfLinearExtrusion &ent) const;
@@ -1704,8 +1550,6 @@ class RWStepGeom_RWSurfaceOfLinearExtrusion {
 %nodefaultctor RWStepGeom_RWPlacement;
 class RWStepGeom_RWPlacement {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWPlacement();
 		%feature("autodoc", "1");
 		RWStepGeom_RWPlacement();
 		%feature("autodoc", "1");
@@ -1726,8 +1570,6 @@ class RWStepGeom_RWPlacement {
 class RWStepGeom_RWOffsetCurve3d {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWOffsetCurve3d();
-		%feature("autodoc", "1");
 		RWStepGeom_RWOffsetCurve3d();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_OffsetCurve3d &ent) const;
@@ -1746,8 +1588,6 @@ class RWStepGeom_RWOffsetCurve3d {
 %nodefaultctor RWStepGeom_RWQuasiUniformSurface;
 class RWStepGeom_RWQuasiUniformSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWQuasiUniformSurface();
 		%feature("autodoc", "1");
 		RWStepGeom_RWQuasiUniformSurface();
 		%feature("autodoc", "1");
@@ -1768,8 +1608,6 @@ class RWStepGeom_RWQuasiUniformSurface {
 class RWStepGeom_RWHyperbola {
 	public:
 		%feature("autodoc", "1");
-		~RWStepGeom_RWHyperbola();
-		%feature("autodoc", "1");
 		RWStepGeom_RWHyperbola();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Hyperbola &ent) const;
@@ -1788,8 +1626,6 @@ class RWStepGeom_RWHyperbola {
 %nodefaultctor RWStepGeom_RWBSplineSurfaceWithKnots;
 class RWStepGeom_RWBSplineSurfaceWithKnots {
 	public:
-		%feature("autodoc", "1");
-		~RWStepGeom_RWBSplineSurfaceWithKnots();
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineSurfaceWithKnots();
 		%feature("autodoc", "1");

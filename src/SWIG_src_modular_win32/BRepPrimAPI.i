@@ -126,8 +126,6 @@ class BRepPrimAPI_MakeTorus : public BRepPrimAPI_MakeOneAxis {
 		BRepPrimAPI_MakeTorus(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle);
 		%feature("autodoc", "1");
 		BRepPrim_Torus & Torus();
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakeTorus();
 
 };
 %extend BRepPrimAPI_MakeTorus {
@@ -174,8 +172,6 @@ class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");
 		BRepPrim_Revolution & Revolution();
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakeRevolution();
 
 };
 %extend BRepPrimAPI_MakeRevolution {
@@ -199,8 +195,6 @@ class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");
 		BRepPrim_Cylinder & Cylinder();
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakeCylinder();
 
 };
 %extend BRepPrimAPI_MakeCylinder {
@@ -240,8 +234,6 @@ class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");
 		BRepPrim_Sphere & Sphere();
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakeSphere();
 
 };
 %extend BRepPrimAPI_MakeSphere {
@@ -269,8 +261,6 @@ class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Shell & Shell();
 		%feature("autodoc", "1");
 		const TopoDS_Solid & Solid();
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakeWedge();
 
 };
 %extend BRepPrimAPI_MakeWedge {
@@ -288,8 +278,6 @@ class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
 		BRepPrimAPI_MakeHalfSpace(const TopoDS_Shell &Shell, const gp_Pnt &RefPnt);
 		%feature("autodoc", "1");
 		const TopoDS_Solid & Solid() const;
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakeHalfSpace();
 
 };
 %extend BRepPrimAPI_MakeHalfSpace {
@@ -329,8 +317,6 @@ class BRepPrimAPI_MakeBox : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Face & RightFace();
 		%feature("autodoc", "1");
 		const TopoDS_Face & TopFace();
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakeBox();
 
 };
 %extend BRepPrimAPI_MakeBox {
@@ -364,8 +350,6 @@ class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 		Standard_Boolean HasDegenerated() const;
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Degenerated() const;
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakeRevol();
 
 };
 %extend BRepPrimAPI_MakeRevol {
@@ -389,8 +373,6 @@ class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");
 		BRepPrim_Cone & Cone();
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakeCone();
 
 };
 %extend BRepPrimAPI_MakeCone {
@@ -420,8 +402,6 @@ class BRepPrimAPI_MakePrism : public BRepPrimAPI_MakeSweep {
 		TopoDS_Shape FirstShape(const TopoDS_Shape &theShape);
 		%feature("autodoc", "1");
 		TopoDS_Shape LastShape(const TopoDS_Shape &theShape);
-		%feature("autodoc", "1");
-		virtual		~BRepPrimAPI_MakePrism();
 
 };
 %extend BRepPrimAPI_MakePrism {

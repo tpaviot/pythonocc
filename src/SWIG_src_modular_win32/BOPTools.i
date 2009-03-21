@@ -546,8 +546,6 @@ class Handle_BOPTools_ListNodeOfListOfPave : public Handle_TCollection_MapNode {
 class BOPTools_Interference {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_Interference();
-		%feature("autodoc", "1");
 		BOPTools_Interference();
 		%feature("autodoc", "1");
 		BOPTools_Interference(const Standard_Integer aWith, const BooleanOperations_KindOfInterference aType, const Standard_Integer anIndex);
@@ -574,8 +572,6 @@ class BOPTools_Interference {
 %nodefaultctor BOPTools_ShapeShapeInterference;
 class BOPTools_ShapeShapeInterference {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_ShapeShapeInterference();
 		%feature("autodoc", "1");
 		BOPTools_ShapeShapeInterference();
 		%feature("autodoc", "1");
@@ -608,8 +604,6 @@ class BOPTools_ShapeShapeInterference {
 class BOPTools_VSInterference : public BOPTools_ShapeShapeInterference {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_VSInterference();
-		%feature("autodoc", "1");
 		BOPTools_VSInterference();
 		%feature("autodoc", "1");
 		BOPTools_VSInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const Standard_Real U, const Standard_Real V);
@@ -634,8 +628,6 @@ class BOPTools_CArray1OfVEInterference {
 		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BOPTools_CArray1OfVEInterference();
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -698,8 +690,6 @@ class BOPTools_CArray1OfInterferenceLine {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTools_CArray1OfInterferenceLine();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -732,8 +722,6 @@ class BOPTools_CArray1OfInterferenceLine {
 %nodefaultctor BOPTools_Tools;
 class BOPTools_Tools {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_Tools();
 		%feature("autodoc", "1");
 		BOPTools_Tools();
 		%feature("autodoc", "1");
@@ -786,8 +774,6 @@ class BOPTools_CArray1OfESInterference {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTools_CArray1OfESInterference();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -824,8 +810,6 @@ class BOPTools_SequenceOfCurves : public TCollection_BaseSequence {
 		BOPTools_SequenceOfCurves();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTools_SequenceOfCurves();
 		%feature("autodoc", "1");
 		const BOPTools_SequenceOfCurves & Assign(const BOPTools_SequenceOfCurves &Other);
 		%feature("autodoc", "1");
@@ -876,8 +860,6 @@ class BOPTools_SequenceOfCurves : public TCollection_BaseSequence {
 class BOPTools_PointBetween {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_PointBetween();
-		%feature("autodoc", "1");
 		BOPTools_PointBetween();
 		%feature("autodoc", "1");
 		void SetParameter(const Standard_Real T);
@@ -925,8 +907,6 @@ class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
 class BOPTools_CommonBlock {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_CommonBlock();
-		%feature("autodoc", "1");
 		BOPTools_CommonBlock();
 		%feature("autodoc", "1");
 		BOPTools_CommonBlock(const BOPTools_PaveBlock &aPB1, const BOPTools_PaveBlock &aPB2);
@@ -960,8 +940,6 @@ class BOPTools_CommonBlock {
 class BOPTools_ESInterference : public BOPTools_ShapeShapeInterference {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_ESInterference();
-		%feature("autodoc", "1");
 		BOPTools_ESInterference();
 		%feature("autodoc", "1");
 		BOPTools_ESInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const IntTools_CommonPrt &aCPart);
@@ -978,8 +956,6 @@ class BOPTools_ESInterference : public BOPTools_ShapeShapeInterference {
 %nodefaultctor BOPTools_SSIntersectionAttribute;
 class BOPTools_SSIntersectionAttribute {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_SSIntersectionAttribute();
 		%feature("autodoc", "1");
 		BOPTools_SSIntersectionAttribute(const Standard_Boolean Aproximation=1, const Standard_Boolean PCurveOnS1=1, const Standard_Boolean PCurveOnS2=1);
 		%feature("autodoc", "1");
@@ -1013,8 +989,6 @@ class BOPTools_IndexedDataMapOfShapeWithState : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTools_IndexedDataMapOfShapeWithState();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const BooleanOperations_StateOfShape &I);
 		%feature("autodoc", "1");
@@ -1051,8 +1025,6 @@ class BOPTools_IndexedDataMapOfShapeWithState : public TCollection_BasicMap {
 class BOPTools_DEProcessor {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_DEProcessor();
-		%feature("autodoc", "1");
 		BOPTools_DEProcessor(const BOPTools_PaveFiller &aFiller, const Standard_Integer aDim=3);
 		%feature("autodoc", "1");
 		void Do();
@@ -1069,8 +1041,6 @@ class BOPTools_DEProcessor {
 %nodefaultctor BOPTools_VVInterference;
 class BOPTools_VVInterference : public BOPTools_ShapeShapeInterference {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_VVInterference();
 		%feature("autodoc", "1");
 		BOPTools_VVInterference();
 		%feature("autodoc", "1");
@@ -1094,8 +1064,6 @@ class BOPTools_IMapOfPaveBlock : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTools_IMapOfPaveBlock();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const BOPTools_PaveBlock &K);
 		%feature("autodoc", "1");
@@ -1129,8 +1097,6 @@ class BOPTools_Array1OfPave {
 		void Init(const BOPTools_Pave &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BOPTools_Array1OfPave();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1218,8 +1184,6 @@ class BOPTools_ListOfCoupleOfInteger {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTools_ListOfCoupleOfInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BOPTools_CoupleOfInteger &I);
@@ -1260,8 +1224,6 @@ class BOPTools_ListOfCoupleOfInteger {
 %nodefaultctor BOPTools_QuickSortPave;
 class BOPTools_QuickSortPave {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_QuickSortPave();
 		%feature("autodoc", "1");
 		BOPTools_QuickSortPave();
 		%feature("autodoc", "1");
@@ -1340,8 +1302,6 @@ class BOPTools_IDMapOfPaveBlockIMapOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTools_IDMapOfPaveBlockIMapOfInteger();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const BOPTools_PaveBlock &K, const TColStd_IndexedMapOfInteger &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const BOPTools_PaveBlock &K, const TColStd_IndexedMapOfInteger &T);
@@ -1382,8 +1342,6 @@ class BOPTools_CArray1OfEEInterference {
 		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BOPTools_CArray1OfEEInterference();
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1452,8 +1410,6 @@ class BOPTools_IteratorOfCoupleOfShape {
 %nodefaultctor BOPTools_Curve;
 class BOPTools_Curve {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_Curve();
 		%feature("autodoc", "1");
 		BOPTools_Curve();
 		%feature("autodoc", "1");
@@ -1560,8 +1516,6 @@ class BOPTools_CommonBlockPool {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTools_CommonBlockPool();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -1595,8 +1549,6 @@ class BOPTools_CommonBlockPool {
 class BOPTools_DEInfo {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_DEInfo();
-		%feature("autodoc", "1");
 		BOPTools_DEInfo();
 		%feature("autodoc", "1");
 		void SetVertex(const Standard_Integer nV);
@@ -1619,8 +1571,6 @@ class BOPTools_DEInfo {
 %nodefaultctor BOPTools_StateFiller;
 class BOPTools_StateFiller {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_StateFiller();
 		%feature("autodoc", "1");
 		BOPTools_StateFiller(const BOPTools_PaveFiller &aFiller);
 		%feature("autodoc", "1");
@@ -1701,8 +1651,6 @@ class BOPTools_PaveFiller {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BOPTools_PaveFiller();
-		%feature("autodoc", "1");
 		virtual		void Perform();
 		%feature("autodoc", "1");
 		virtual		void PartialPerform(const TColStd_SetOfInteger &anObjSubSet, const TColStd_SetOfInteger &aToolSubSet);
@@ -1780,8 +1728,6 @@ class BOPTools_Checker : public BOPTools_PaveFiller {
 		%feature("autodoc", "1");
 		BOPTools_Checker(const BOPTools_InterferencePool &aIP);
 		%feature("autodoc", "1");
-		virtual		~BOPTools_Checker();
-		%feature("autodoc", "1");
 		void SetPerformType(const Standard_Boolean StopOnFirstFaulty);
 		%feature("autodoc", "1");
 		void SetShape(const TopoDS_Shape &aS);
@@ -1803,8 +1749,6 @@ class BOPTools_Checker : public BOPTools_PaveFiller {
 class BOPTools_EEInterference : public BOPTools_ShapeShapeInterference {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_EEInterference();
-		%feature("autodoc", "1");
 		BOPTools_EEInterference();
 		%feature("autodoc", "1");
 		BOPTools_EEInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const IntTools_CommonPrt &aCPart);
@@ -1825,8 +1769,6 @@ class BOPTools_DSFiller {
 		BOPTools_DSFiller();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BOPTools_DSFiller();
 		%feature("autodoc", "1");
 		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2);
 		%feature("autodoc", "1");
@@ -1879,8 +1821,6 @@ class BOPTools_DSFiller {
 class BOPTools_WireStateFiller : public BOPTools_StateFiller {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_WireStateFiller();
-		%feature("autodoc", "1");
 		BOPTools_WireStateFiller(const BOPTools_PaveFiller &aFiller);
 		%feature("autodoc", "1");
 		virtual		void Do();
@@ -1895,8 +1835,6 @@ class BOPTools_WireStateFiller : public BOPTools_StateFiller {
 %nodefaultctor BOPTools_ListIteratorOfListOfCoupleOfInteger;
 class BOPTools_ListIteratorOfListOfCoupleOfInteger {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_ListIteratorOfListOfCoupleOfInteger();
 		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfCoupleOfInteger();
 		%feature("autodoc", "1");
@@ -1928,8 +1866,6 @@ class BOPTools_IDMapOfPaveBlockIMapOfPaveBlock : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTools_IDMapOfPaveBlockIMapOfPaveBlock();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const BOPTools_PaveBlock &K, const BOPTools_IMapOfPaveBlock &I);
 		%feature("autodoc", "1");
@@ -1972,8 +1908,6 @@ class BOPTools_CArray1OfVVInterference {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTools_CArray1OfVVInterference();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -2015,8 +1949,6 @@ class BOPTools_IndexedDataMapOfIntegerPaveSet : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTools_IndexedDataMapOfIntegerPaveSet();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Standard_Integer &K, const BOPTools_PaveSet &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Standard_Integer &K, const BOPTools_PaveSet &T);
@@ -2052,8 +1984,6 @@ class BOPTools_IndexedDataMapOfIntegerPaveSet : public TCollection_BasicMap {
 class BOPTools_ListIteratorOfListOfShapeEnum {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_ListIteratorOfListOfShapeEnum();
-		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfShapeEnum();
 		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfShapeEnum(const BOPTools_ListOfShapeEnum &L);
@@ -2076,8 +2006,6 @@ class BOPTools_ListIteratorOfListOfShapeEnum {
 %nodefaultctor BOPTools_ListIteratorOfListOfInterference;
 class BOPTools_ListIteratorOfListOfInterference {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_ListIteratorOfListOfInterference();
 		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfInterference();
 		%feature("autodoc", "1");
@@ -2109,8 +2037,6 @@ class BOPTools_ListOfShapeEnum {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTools_ListOfShapeEnum();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -2153,8 +2079,6 @@ class BOPTools_ListOfShapeEnum {
 class BOPTools_SolidStateFiller : public BOPTools_StateFiller {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_SolidStateFiller();
-		%feature("autodoc", "1");
 		BOPTools_SolidStateFiller(const BOPTools_PaveFiller &aFiller);
 		%feature("autodoc", "1");
 		virtual		void Do();
@@ -2173,8 +2097,6 @@ class BOPTools_SequenceOfPaveBlock : public TCollection_BaseSequence {
 		BOPTools_SequenceOfPaveBlock();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTools_SequenceOfPaveBlock();
 		%feature("autodoc", "1");
 		const BOPTools_SequenceOfPaveBlock & Assign(const BOPTools_SequenceOfPaveBlock &Other);
 		%feature("autodoc", "1");
@@ -2231,8 +2153,6 @@ class BOPTools_CArray1OfVSInterference {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTools_CArray1OfVSInterference();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -2271,8 +2191,6 @@ class BOPTools_SplitShapesPool {
 		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BOPTools_SplitShapesPool();
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2335,8 +2253,6 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public TColle
 class BOPTools_ListIteratorOfListOfCheckResults {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_ListIteratorOfListOfCheckResults();
-		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfCheckResults();
 		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfCheckResults(const BOPTools_ListOfCheckResults &L);
@@ -2368,8 +2284,6 @@ class BOPTools_IndexedMapOfCoupleOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTools_IndexedMapOfCoupleOfInteger();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const BOPTools_CoupleOfInteger &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const BOPTools_CoupleOfInteger &K);
@@ -2395,8 +2309,6 @@ class BOPTools_IndexedMapOfCoupleOfInteger : public TCollection_BasicMap {
 class BOPTools_PaveBlockIterator {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_PaveBlockIterator();
-		%feature("autodoc", "1");
 		BOPTools_PaveBlockIterator();
 		%feature("autodoc", "1");
 		BOPTools_PaveBlockIterator(const Standard_Integer aEdge, const BOPTools_PaveSet &aPaveSet);
@@ -2419,8 +2331,6 @@ class BOPTools_PaveBlockIterator {
 %nodefaultctor BOPTools_InterferenceLine;
 class BOPTools_InterferenceLine {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_InterferenceLine();
 		%feature("autodoc", "1");
 		BOPTools_InterferenceLine();
 		%feature("autodoc", "1");
@@ -2449,8 +2359,6 @@ class BOPTools_InterferenceLine {
 class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_VEInterference();
-		%feature("autodoc", "1");
 		BOPTools_VEInterference();
 		%feature("autodoc", "1");
 		BOPTools_VEInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const Standard_Real aT);
@@ -2469,8 +2377,6 @@ class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
 %nodefaultctor BOPTools_ListIteratorOfListOfCommonBlock;
 class BOPTools_ListIteratorOfListOfCommonBlock {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_ListIteratorOfListOfCommonBlock();
 		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfCommonBlock();
 		%feature("autodoc", "1");
@@ -2494,8 +2400,6 @@ class BOPTools_ListIteratorOfListOfCommonBlock {
 %nodefaultctor BOPTools_CoupleOfIntegerMapHasher;
 class BOPTools_CoupleOfIntegerMapHasher {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_CoupleOfIntegerMapHasher();
 		%feature("autodoc", "1");
 		BOPTools_CoupleOfIntegerMapHasher();
 		%feature("autodoc", "1");
@@ -2560,8 +2464,6 @@ class BOPTools_HArray2OfIntersectionStatus : public MMgt_TShared {
 class BOPTools_ListIteratorOfListOfPave {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_ListIteratorOfListOfPave();
-		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfPave();
 		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfPave(const BOPTools_ListOfPave &L);
@@ -2584,8 +2486,6 @@ class BOPTools_ListIteratorOfListOfPave {
 %nodefaultctor BOPTools_PaveBlock;
 class BOPTools_PaveBlock {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_PaveBlock();
 		%feature("autodoc", "1");
 		BOPTools_PaveBlock();
 		%feature("autodoc", "1");
@@ -2648,8 +2548,6 @@ class BOPTools_PaveBlock {
 class BOPTools_CommonBlockAPI {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_CommonBlockAPI();
-		%feature("autodoc", "1");
 		BOPTools_CommonBlockAPI(const BOPTools_ListOfCommonBlock &aList);
 		%feature("autodoc", "1");
 		const BOPTools_ListOfCommonBlock & List() const;
@@ -2696,8 +2594,6 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TColl
 %nodefaultctor BOPTools_InterferencePool;
 class BOPTools_InterferencePool {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_InterferencePool();
 		%feature("autodoc", "1");
 		BOPTools_InterferencePool();
 		%feature("autodoc", "1");
@@ -2786,8 +2682,6 @@ class BOPTools_ListOfPave {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTools_ListOfPave();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BOPTools_Pave &I);
@@ -2835,8 +2729,6 @@ class BOPTools_CArray1OfSSInterference {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTools_CArray1OfSSInterference();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -2870,8 +2762,6 @@ class BOPTools_CArray1OfSSInterference {
 class BOPTools_ComparePave {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_ComparePave();
-		%feature("autodoc", "1");
 		BOPTools_ComparePave();
 		%feature("autodoc", "1");
 		BOPTools_ComparePave(const Standard_Real aTol);
@@ -2892,8 +2782,6 @@ class BOPTools_ComparePave {
 %nodefaultctor BOPTools_CoupleOfInteger;
 class BOPTools_CoupleOfInteger {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_CoupleOfInteger();
 		%feature("autodoc", "1");
 		BOPTools_CoupleOfInteger();
 		%feature("autodoc", "1");
@@ -2954,8 +2842,6 @@ class BOPTools_PavePool {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTools_PavePool();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -2997,8 +2883,6 @@ class BOPTools_Array2OfIntersectionStatus {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTools_Array2OfIntersectionStatus();
-		%feature("autodoc", "1");
 		const BOPTools_Array2OfIntersectionStatus & Assign(const BOPTools_Array2OfIntersectionStatus &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -3033,8 +2917,6 @@ class BOPTools_Array2OfIntersectionStatus {
 %nodefaultctor BOPTools_Tools2D;
 class BOPTools_Tools2D {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_Tools2D();
 		%feature("autodoc", "1");
 		BOPTools_Tools2D();
 		%feature("autodoc", "1");
@@ -3092,8 +2974,6 @@ class BOPTools_Tools2D {
 %nodefaultctor BOPTools_Tools3D;
 class BOPTools_Tools3D {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_Tools3D();
 		%feature("autodoc", "1");
 		BOPTools_Tools3D();
 		%feature("autodoc", "1");
@@ -3202,8 +3082,6 @@ class BOPTools_CArray1OfPave {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTools_CArray1OfPave();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -3298,8 +3176,6 @@ class BOPTools_ListOfCheckResults {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTools_ListOfCheckResults();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BOPTools_CheckResult &I);
@@ -3349,8 +3225,6 @@ class BOPTools_ListOfPaveBlock {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTools_ListOfPaveBlock();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BOPTools_PaveBlock &I);
@@ -3391,8 +3265,6 @@ class BOPTools_ListOfPaveBlock {
 %nodefaultctor BOPTools_SSInterference;
 class BOPTools_SSInterference : public BOPTools_ShapeShapeInterference {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_SSInterference();
 		%feature("autodoc", "1");
 		BOPTools_SSInterference();
 		%feature("autodoc", "1");
@@ -3443,8 +3315,6 @@ class BOPTools_SSInterference : public BOPTools_ShapeShapeInterference {
 class BOPTools_PaveSet {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_PaveSet();
-		%feature("autodoc", "1");
 		BOPTools_PaveSet();
 		%feature("autodoc", "1");
 		BOPTools_ListOfPave & ChangeSet();
@@ -3465,8 +3335,6 @@ class BOPTools_PaveSet {
 %nodefaultctor BOPTools_PaveBlockMapHasher;
 class BOPTools_PaveBlockMapHasher {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_PaveBlockMapHasher();
 		%feature("autodoc", "1");
 		BOPTools_PaveBlockMapHasher();
 		%feature("autodoc", "1");
@@ -3492,8 +3360,6 @@ class BOPTools_ListOfInterference {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTools_ListOfInterference();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -3566,8 +3432,6 @@ class BOPTools_IndexedDataMapOfIntegerState : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTools_IndexedDataMapOfIntegerState();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Standard_Integer &K, const BooleanOperations_StateOfShape &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Standard_Integer &K, const BooleanOperations_StateOfShape &T);
@@ -3603,8 +3467,6 @@ class BOPTools_IndexedDataMapOfIntegerState : public TCollection_BasicMap {
 class BOPTools_PCurveMaker {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_PCurveMaker();
-		%feature("autodoc", "1");
 		BOPTools_PCurveMaker(const BOPTools_PaveFiller &aFiller);
 		%feature("autodoc", "1");
 		void Do();
@@ -3629,8 +3491,6 @@ class BOPTools_IndexedDataMapOfIntegerDEInfo : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTools_IndexedDataMapOfIntegerDEInfo();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const Standard_Integer &K, const BOPTools_DEInfo &I);
 		%feature("autodoc", "1");
@@ -3675,8 +3535,6 @@ class BOPTools_ListOfCommonBlock {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTools_ListOfCommonBlock();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BOPTools_CommonBlock &I);
@@ -3718,8 +3576,6 @@ class BOPTools_ListOfCommonBlock {
 class BOPTools_ListIteratorOfListOfPaveBlock {
 	public:
 		%feature("autodoc", "1");
-		~BOPTools_ListIteratorOfListOfPaveBlock();
-		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfPaveBlock();
 		%feature("autodoc", "1");
 		BOPTools_ListIteratorOfListOfPaveBlock(const BOPTools_ListOfPaveBlock &L);
@@ -3742,8 +3598,6 @@ class BOPTools_ListIteratorOfListOfPaveBlock {
 %nodefaultctor BOPTools_Pave;
 class BOPTools_Pave {
 	public:
-		%feature("autodoc", "1");
-		~BOPTools_Pave();
 		%feature("autodoc", "1");
 		BOPTools_Pave();
 		%feature("autodoc", "1");

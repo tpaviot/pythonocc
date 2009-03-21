@@ -112,8 +112,6 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 class GccAna_Lin2dTanObl {
 	public:
 		%feature("autodoc", "1");
-		~GccAna_Lin2dTanObl();
-		%feature("autodoc", "1");
 		GccAna_Lin2dTanObl(const gp_Pnt2d &ThePoint, const gp_Lin2d &TheLine, const Standard_Real TheAngle);
 		%feature("autodoc", "1");
 		GccAna_Lin2dTanObl(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d &TheLine, const Standard_Real TheAngle);
@@ -141,8 +139,6 @@ class GccAna_Lin2dTanObl {
 class GccAna_Lin2dBisec {
 	public:
 		%feature("autodoc", "1");
-		~GccAna_Lin2dBisec();
-		%feature("autodoc", "1");
 		GccAna_Lin2dBisec(const gp_Lin2d &Lin1, const gp_Lin2d &Lin2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -166,8 +162,6 @@ class GccAna_Lin2dBisec {
 class GccAna_Pnt2dBisec {
 	public:
 		%feature("autodoc", "1");
-		~GccAna_Pnt2dBisec();
-		%feature("autodoc", "1");
 		GccAna_Pnt2dBisec(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -186,8 +180,6 @@ class GccAna_Pnt2dBisec {
 %nodefaultctor GccAna_Circ2dTanOnRad;
 class GccAna_Circ2dTanOnRad {
 	public:
-		%feature("autodoc", "1");
-		~GccAna_Circ2dTanOnRad();
 		%feature("autodoc", "1");
 		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -226,8 +218,6 @@ class GccAna_Circ2dTanOnRad {
 class GccAna_Circ2dTanCen {
 	public:
 		%feature("autodoc", "1");
-		~GccAna_Circ2dTanCen();
-		%feature("autodoc", "1");
 		GccAna_Circ2dTanCen(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d &Pcenter, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		GccAna_Circ2dTanCen(const gp_Lin2d &Linetan, const gp_Pnt2d &Pcenter);
@@ -256,8 +246,6 @@ class GccAna_Circ2dTanCen {
 %nodefaultctor GccAna_Lin2dTanPer;
 class GccAna_Lin2dTanPer {
 	public:
-		%feature("autodoc", "1");
-		~GccAna_Lin2dTanPer();
 		%feature("autodoc", "1");
 		GccAna_Lin2dTanPer(const gp_Pnt2d &ThePnt, const gp_Lin2d &TheLin);
 		%feature("autodoc", "1");
@@ -335,8 +323,6 @@ class GccAna_NoSolution : public Standard_Failure {
 class GccAna_Circ2d2TanRad {
 	public:
 		%feature("autodoc", "1");
-		~GccAna_Circ2d2TanRad();
-		%feature("autodoc", "1");
 		GccAna_Circ2d2TanRad(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		GccAna_Circ2d2TanRad(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const Standard_Real Radius, const Standard_Real Tolerance);
@@ -375,8 +361,6 @@ class GccAna_Circ2d2TanRad {
 %nodefaultctor GccAna_Circ2d3Tan;
 class GccAna_Circ2d3Tan {
 	public:
-		%feature("autodoc", "1");
-		~GccAna_Circ2d3Tan();
 		%feature("autodoc", "1");
 		GccAna_Circ2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const GccEnt_QualifiedCirc &Qualified3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -448,8 +432,6 @@ class GccAna_CircLin2dBisec {
 class GccAna_Lin2dTanPar {
 	public:
 		%feature("autodoc", "1");
-		~GccAna_Lin2dTanPar();
-		%feature("autodoc", "1");
 		GccAna_Lin2dTanPar(const gp_Pnt2d &ThePoint, const gp_Lin2d &Lin1);
 		%feature("autodoc", "1");
 		GccAna_Lin2dTanPar(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d &Lin1);
@@ -513,8 +495,6 @@ class GccAna_Circ2dBisec {
 class GccAna_Circ2d2TanOn {
 	public:
 		%feature("autodoc", "1");
-		~GccAna_Circ2d2TanOn();
-		%feature("autodoc", "1");
 		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const gp_Lin2d &OnLine, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Lin2d &OnLine, const Standard_Real Tolerance);
@@ -567,8 +547,6 @@ class GccAna_Circ2d2TanOn {
 %nodefaultctor GccAna_Lin2d2Tan;
 class GccAna_Lin2d2Tan {
 	public:
-		%feature("autodoc", "1");
-		~GccAna_Lin2d2Tan();
 		%feature("autodoc", "1");
 		GccAna_Lin2d2Tan(const gp_Pnt2d &ThePoint1, const gp_Pnt2d &ThePoint2, const Standard_Real Tolerance);
 		%feature("autodoc", "1");

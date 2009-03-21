@@ -600,8 +600,6 @@ class EDL_StackOfBoolean {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~EDL_StackOfBoolean();
-		%feature("autodoc", "1");
 		Standard_Boolean & ChangeTop();
 
 };
@@ -647,8 +645,6 @@ class EDL_Library {
 		%feature("autodoc", "1");
 		void Destroy() const;
 		%feature("autodoc", "1");
-		~EDL_Library();
-		%feature("autodoc", "1");
 		Standard_CString GetName() const;
 		%feature("autodoc", "1");
 		Standard_CString GetStatus() const;
@@ -669,8 +665,6 @@ class EDL_Library {
 %nodefaultctor EDL_DataMapIteratorOfMapOfLibrary;
 class EDL_DataMapIteratorOfMapOfLibrary : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~EDL_DataMapIteratorOfMapOfLibrary();
 		%feature("autodoc", "1");
 		EDL_DataMapIteratorOfMapOfLibrary();
 		%feature("autodoc", "1");
@@ -760,8 +754,6 @@ class EDL_StackNodeOfStackOfBoolean : public TCollection_MapNode {
 class EDL_DataMapIteratorOfMapOfVariable : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~EDL_DataMapIteratorOfMapOfVariable();
-		%feature("autodoc", "1");
 		EDL_DataMapIteratorOfMapOfVariable();
 		%feature("autodoc", "1");
 		EDL_DataMapIteratorOfMapOfVariable(const EDL_MapOfVariable &aMap);
@@ -783,8 +775,6 @@ class EDL_DataMapIteratorOfMapOfVariable : public TCollection_BasicMapIterator {
 class EDL_DataMapIteratorOfMapOfTemplate : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~EDL_DataMapIteratorOfMapOfTemplate();
-		%feature("autodoc", "1");
 		EDL_DataMapIteratorOfMapOfTemplate();
 		%feature("autodoc", "1");
 		EDL_DataMapIteratorOfMapOfTemplate(const EDL_MapOfTemplate &aMap);
@@ -805,8 +795,6 @@ class EDL_DataMapIteratorOfMapOfTemplate : public TCollection_BasicMapIterator {
 %nodefaultctor EDL;
 class EDL {
 	public:
-		%feature("autodoc", "1");
-		~EDL();
 		%feature("autodoc", "1");
 		EDL();
 		%feature("autodoc", "1");
@@ -891,8 +879,6 @@ class EDL_SequenceOfVariable : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~EDL_SequenceOfVariable();
-		%feature("autodoc", "1");
 		const EDL_SequenceOfVariable & Assign(const EDL_SequenceOfVariable &Other);
 		%feature("autodoc", "1");
 		void Append(const EDL_Variable &T);
@@ -942,8 +928,6 @@ class EDL_SequenceOfVariable : public TCollection_BaseSequence {
 class EDL_StackIteratorOfStackOfBoolean {
 	public:
 		%feature("autodoc", "1");
-		~EDL_StackIteratorOfStackOfBoolean();
-		%feature("autodoc", "1");
 		EDL_StackIteratorOfStackOfBoolean();
 		%feature("autodoc", "1");
 		EDL_StackIteratorOfStackOfBoolean(const EDL_StackOfBoolean &S);
@@ -974,8 +958,6 @@ class EDL_MapOfVariable : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~EDL_MapOfVariable();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const EDL_Variable &I);
 		%feature("autodoc", "1");
@@ -1010,8 +992,6 @@ class EDL_MapOfTemplate : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~EDL_MapOfTemplate();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const EDL_Template &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
@@ -1036,8 +1016,6 @@ class EDL_MapOfTemplate : public TCollection_BasicMap {
 %nodefaultctor EDL_DataMapIteratorOfMapOfFile;
 class EDL_DataMapIteratorOfMapOfFile : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~EDL_DataMapIteratorOfMapOfFile();
 		%feature("autodoc", "1");
 		EDL_DataMapIteratorOfMapOfFile();
 		%feature("autodoc", "1");
@@ -1067,8 +1045,6 @@ class EDL_MapOfFile : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~EDL_MapOfFile();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const EDL_File &I);
 		%feature("autodoc", "1");
@@ -1103,8 +1079,6 @@ class EDL_File {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~EDL_File();
-		%feature("autodoc", "1");
 		Standard_CString GetName() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Open();
@@ -1137,8 +1111,6 @@ class EDL_Variable {
 		void Assign(const EDL_Variable &aVar);
 		%feature("autodoc", "1");
 		void Destroy() const;
-		%feature("autodoc", "1");
-		~EDL_Variable();
 		%feature("autodoc", "1");
 		Standard_CString GetName() const;
 		%feature("autodoc", "1");
@@ -1192,8 +1164,6 @@ class EDL_MapOfLibrary : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~EDL_MapOfLibrary();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const EDL_Library &I);
 		%feature("autodoc", "1");

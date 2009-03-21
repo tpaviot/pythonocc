@@ -2248,8 +2248,6 @@ class StepVisual_Array1OfStyleContextSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfStyleContextSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfStyleContextSelect & Assign(const StepVisual_Array1OfStyleContextSelect &Other);
@@ -2409,8 +2407,6 @@ class StepVisual_HArray1OfStyleContextSelect : public MMgt_TShared {
 %nodefaultctor StepVisual_BoxCharacteristicSelect;
 class StepVisual_BoxCharacteristicSelect {
 	public:
-		%feature("autodoc", "1");
-		~StepVisual_BoxCharacteristicSelect();
 		%feature("autodoc", "1");
 		StepVisual_BoxCharacteristicSelect();
 		%feature("autodoc", "1");
@@ -3406,8 +3402,6 @@ class StepVisual_Array1OfTextOrCharacter {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfTextOrCharacter();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfTextOrCharacter & Assign(const StepVisual_Array1OfTextOrCharacter &Other);
@@ -3659,8 +3653,6 @@ class StepVisual_Array1OfFillStyleSelect {
 		void Init(const StepVisual_FillStyleSelect &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepVisual_Array1OfFillStyleSelect();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -4001,8 +3993,6 @@ class StepVisual_Array1OfBoxCharacteristicSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfBoxCharacteristicSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfBoxCharacteristicSelect & Assign(const StepVisual_Array1OfBoxCharacteristicSelect &Other);
@@ -4320,8 +4310,6 @@ class StepVisual_Array1OfLayeredItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfLayeredItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfLayeredItem & Assign(const StepVisual_Array1OfLayeredItem &Other);
@@ -4392,8 +4380,6 @@ class StepVisual_DraughtingPreDefinedColour : public StepVisual_PreDefinedColour
 %nodefaultctor StepVisual_DirectionCountSelect;
 class StepVisual_DirectionCountSelect {
 	public:
-		%feature("autodoc", "1");
-		~StepVisual_DirectionCountSelect();
 		%feature("autodoc", "1");
 		StepVisual_DirectionCountSelect();
 		%feature("autodoc", "1");
@@ -4533,8 +4519,6 @@ class StepVisual_Array1OfPresentationStyleSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfPresentationStyleSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfPresentationStyleSelect & Assign(const StepVisual_Array1OfPresentationStyleSelect &Other);
@@ -4634,8 +4618,6 @@ class StepVisual_Array1OfDirectionCountSelect {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepVisual_Array1OfDirectionCountSelect();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfDirectionCountSelect & Assign(const StepVisual_Array1OfDirectionCountSelect &Other);
@@ -4674,8 +4656,6 @@ class StepVisual_Array1OfInvisibleItem {
 		void Init(const StepVisual_InvisibleItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepVisual_Array1OfInvisibleItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -4787,8 +4767,6 @@ class StepVisual_Array1OfSurfaceStyleElementSelect {
 		void Init(const StepVisual_SurfaceStyleElementSelect &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepVisual_Array1OfSurfaceStyleElementSelect();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");

@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class StlAPI {
 	public:
 		%feature("autodoc", "1");
-		~StlAPI();
-		%feature("autodoc", "1");
 		StlAPI();
 		%feature("autodoc", "1");
 		void Write(const TopoDS_Shape &aShape, const char * aFile, const Standard_Boolean aAsciiMode=1);
@@ -106,8 +104,6 @@ class StlAPI {
 %nodefaultctor StlAPI_Writer;
 class StlAPI_Writer {
 	public:
-		%feature("autodoc", "1");
-		~StlAPI_Writer();
 		%feature("autodoc", "1");
 		StlAPI_Writer();
 		%feature("autodoc", "1");
@@ -131,8 +127,6 @@ class StlAPI_Writer {
 %nodefaultctor StlAPI_Reader;
 class StlAPI_Reader {
 	public:
-		%feature("autodoc", "1");
-		~StlAPI_Reader();
 		%feature("autodoc", "1");
 		StlAPI_Reader();
 		%feature("autodoc", "1");

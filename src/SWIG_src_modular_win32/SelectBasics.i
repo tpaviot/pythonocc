@@ -232,8 +232,6 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 class SelectBasics_SortAlgo {
 	public:
 		%feature("autodoc", "1");
-		~SelectBasics_SortAlgo();
-		%feature("autodoc", "1");
 		SelectBasics_SortAlgo();
 		%feature("autodoc", "1");
 		SelectBasics_SortAlgo(const Bnd_Box2d &ClippingRectangle, const Standard_Real sizeOfSensitiveArea, const Handle_Bnd_HArray1OfBox2d &theRectangles);
@@ -260,8 +258,6 @@ class SelectBasics_SortAlgo {
 %nodefaultctor SelectBasics_ListIteratorOfListOfBox2d;
 class SelectBasics_ListIteratorOfListOfBox2d {
 	public:
-		%feature("autodoc", "1");
-		~SelectBasics_ListIteratorOfListOfBox2d();
 		%feature("autodoc", "1");
 		SelectBasics_ListIteratorOfListOfBox2d();
 		%feature("autodoc", "1");
@@ -432,8 +428,6 @@ class SelectBasics_ListIteratorOfListOfSensitive {
 class SelectBasics_BasicTool {
 	public:
 		%feature("autodoc", "1");
-		~SelectBasics_BasicTool();
-		%feature("autodoc", "1");
 		SelectBasics_BasicTool();
 		%feature("autodoc", "1");
 		Standard_Boolean MatchSegments(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3, const gp_Pnt2d &P4);
@@ -452,8 +446,6 @@ class SelectBasics_BasicTool {
 %nodefaultctor SelectBasics;
 class SelectBasics {
 	public:
-		%feature("autodoc", "1");
-		~SelectBasics();
 		%feature("autodoc", "1");
 		SelectBasics();
 		%feature("autodoc", "1");
@@ -497,8 +489,6 @@ class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 		SelectBasics_SequenceOfAddress();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectBasics_SequenceOfAddress();
 		%feature("autodoc", "1");
 		const SelectBasics_SequenceOfAddress & Assign(const SelectBasics_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
@@ -556,8 +546,6 @@ class SelectBasics_ListOfBox2d {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~SelectBasics_ListOfBox2d();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");

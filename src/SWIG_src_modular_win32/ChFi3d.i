@@ -94,8 +94,6 @@ enum ChFi3d_FilletShape {
 class ChFi3d {
 	public:
 		%feature("autodoc", "1");
-		~ChFi3d();
-		%feature("autodoc", "1");
 		ChFi3d();
 		%feature("autodoc", "1");
 		Standard_Integer ConcaveSide(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const TopoDS_Edge &E, TopAbs_Orientation & Or1, TopAbs_Orientation & Or2);
@@ -199,8 +197,6 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~ChFi3d_SearchSing();
 
 };
 %extend ChFi3d_SearchSing {

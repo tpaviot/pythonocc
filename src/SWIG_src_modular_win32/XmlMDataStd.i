@@ -1476,8 +1476,6 @@ class XmlMDataStd_UAttributeDriver : public XmlMDF_ADriver {
 class XmlMDataStd {
 	public:
 		%feature("autodoc", "1");
-		~XmlMDataStd();
-		%feature("autodoc", "1");
 		XmlMDataStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);

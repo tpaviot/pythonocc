@@ -934,8 +934,6 @@ class OSD_FileIterator {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~OSD_FileIterator();
-		%feature("autodoc", "1");
 		void Initialize(const OSD_Path &where, const TCollection_AsciiString &Mask);
 		%feature("autodoc", "1");
 		Standard_Boolean More();
@@ -968,8 +966,6 @@ class OSD_DirectoryIterator {
 		OSD_DirectoryIterator(const OSD_Path &where, const TCollection_AsciiString &Mask);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~OSD_DirectoryIterator();
 		%feature("autodoc", "1");
 		void Initialize(const OSD_Path &where, const TCollection_AsciiString &Mask);
 		%feature("autodoc", "1");
@@ -1047,8 +1043,6 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 %nodefaultctor OSD_Real2String;
 class OSD_Real2String {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Real2String();
 		%feature("autodoc", "1");
 		OSD_Real2String();
 		%feature("autodoc", "1");
@@ -1144,8 +1138,6 @@ class OSD_SIGKILL : public OSD_Signal {
 %nodefaultctor OSD_Host;
 class OSD_Host {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Host();
 		%feature("autodoc", "1");
 		OSD_Host();
 		%feature("autodoc", "1");
@@ -1266,8 +1258,6 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 class OSD_Printer {
 	public:
 		%feature("autodoc", "1");
-		~OSD_Printer();
-		%feature("autodoc", "1");
 		OSD_Printer(const TCollection_AsciiString &Name);
 		%feature("autodoc", "1");
 		void SetName(const TCollection_AsciiString &Name);
@@ -1296,8 +1286,6 @@ class OSD_EnvironmentIterator {
 		OSD_EnvironmentIterator();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~OSD_EnvironmentIterator();
 		%feature("autodoc", "1");
 		Standard_Boolean More();
 		%feature("autodoc", "1");
@@ -1436,8 +1424,6 @@ class OSD_OSDError : public Standard_Failure {
 class OSD_Disk {
 	public:
 		%feature("autodoc", "1");
-		~OSD_Disk();
-		%feature("autodoc", "1");
 		OSD_Disk();
 		%feature("autodoc", "1");
 		OSD_Disk(const OSD_Path &Name);
@@ -1479,8 +1465,6 @@ class OSD_Disk {
 class OSD_Error {
 	public:
 		%feature("autodoc", "1");
-		~OSD_Error();
-		%feature("autodoc", "1");
 		OSD_Error();
 		%feature("autodoc", "1");
 		void Perror();
@@ -1503,8 +1487,6 @@ class OSD_Error {
 %nodefaultctor OSD_SharedMemory;
 class OSD_SharedMemory {
 	public:
-		%feature("autodoc", "1");
-		~OSD_SharedMemory();
 		%feature("autodoc", "1");
 		OSD_SharedMemory();
 		%feature("autodoc", "1");
@@ -1574,8 +1556,6 @@ class OSD_Thread {
 		void Assign(const OSD_Thread &other);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~OSD_Thread();
 		%feature("autodoc", "1");
 		void SetPriority(const Standard_Integer thePriority);
 		%feature("autodoc", "1");
@@ -1658,8 +1638,6 @@ class OSD_SIGBUS : public OSD_Signal {
 class OSD_FileNode {
 	public:
 		%feature("autodoc", "1");
-		~OSD_FileNode();
-		%feature("autodoc", "1");
 		void Path(OSD_Path & Name) const;
 		%feature("autodoc", "1");
 		void SetPath(const OSD_Path &Name);
@@ -1702,8 +1680,6 @@ class OSD_FileNode {
 %nodefaultctor OSD_File;
 class OSD_File : public OSD_FileNode {
 	public:
-		%feature("autodoc", "1");
-		~OSD_File();
 		%feature("autodoc", "1");
 		OSD_File();
 		%feature("autodoc", "1");
@@ -1826,8 +1802,6 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 class OSD_Directory : public OSD_FileNode {
 	public:
 		%feature("autodoc", "1");
-		~OSD_Directory();
-		%feature("autodoc", "1");
 		OSD_Directory();
 		%feature("autodoc", "1");
 		OSD_Directory(const OSD_Path &Name);
@@ -1846,8 +1820,6 @@ class OSD_Directory : public OSD_FileNode {
 %nodefaultctor OSD_Environment;
 class OSD_Environment {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Environment();
 		%feature("autodoc", "1");
 		OSD_Environment();
 		%feature("autodoc", "1");
@@ -1913,8 +1885,6 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 %nodefaultctor OSD;
 class OSD {
 	public:
-		%feature("autodoc", "1");
-		~OSD();
 		%feature("autodoc", "1");
 		OSD();
 		%feature("autodoc", "1");
@@ -2069,8 +2039,6 @@ class OSD_Chronometer {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~OSD_Chronometer();
-		%feature("autodoc", "1");
 		virtual		void Reset();
 		%feature("autodoc", "1");
 		virtual		void Stop();
@@ -2123,8 +2091,6 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 %nodefaultctor OSD_Path;
 class OSD_Path {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Path();
 		%feature("autodoc", "1");
 		OSD_Path();
 		%feature("autodoc", "1");
@@ -2231,8 +2197,6 @@ class OSD_Timer : public OSD_Chronometer {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~OSD_Timer();
-		%feature("autodoc", "1");
 		virtual		void Reset();
 		%feature("autodoc", "1");
 		virtual		void Show();
@@ -2283,8 +2247,6 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 %nodefaultctor OSD_Protection;
 class OSD_Protection {
 	public:
-		%feature("autodoc", "1");
-		~OSD_Protection();
 		%feature("autodoc", "1");
 		OSD_Protection();
 		%feature("autodoc", "1");
@@ -2368,8 +2330,6 @@ class OSD_SharedLibrary {
 		Standard_CString DlError() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~OSD_SharedLibrary();
 
 };
 %extend OSD_SharedLibrary {

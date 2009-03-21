@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepBasic_RWActionAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWActionAssignment();
-		%feature("autodoc", "1");
 		RWStepBasic_RWActionAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ActionAssignment &ent) const;
@@ -108,8 +106,6 @@ class RWStepBasic_RWActionAssignment {
 %nodefaultctor RWStepBasic_RWMassMeasureWithUnit;
 class RWStepBasic_RWMassMeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWMassMeasureWithUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWMassMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -130,8 +126,6 @@ class RWStepBasic_RWMassMeasureWithUnit {
 class RWStepBasic_RWEffectivityAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWEffectivityAssignment();
-		%feature("autodoc", "1");
 		RWStepBasic_RWEffectivityAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_EffectivityAssignment &ent) const;
@@ -150,8 +144,6 @@ class RWStepBasic_RWEffectivityAssignment {
 %nodefaultctor RWStepBasic_RWPlaneAngleMeasureWithUnit;
 class RWStepBasic_RWPlaneAngleMeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWPlaneAngleMeasureWithUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWPlaneAngleMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -172,8 +164,6 @@ class RWStepBasic_RWPlaneAngleMeasureWithUnit {
 class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWConversionBasedUnitAndLengthUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWConversionBasedUnitAndLengthUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndLengthUnit &ent) const;
@@ -193,8 +183,6 @@ class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 class RWStepBasic_RWSecurityClassificationLevel {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSecurityClassificationLevel();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSecurityClassificationLevel();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SecurityClassificationLevel &ent) const;
@@ -211,8 +199,6 @@ class RWStepBasic_RWSecurityClassificationLevel {
 %nodefaultctor RWStepBasic_RWThermodynamicTemperatureUnit;
 class RWStepBasic_RWThermodynamicTemperatureUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWThermodynamicTemperatureUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWThermodynamicTemperatureUnit();
 		%feature("autodoc", "1");
@@ -233,8 +219,6 @@ class RWStepBasic_RWThermodynamicTemperatureUnit {
 class RWStepBasic_RWDerivedUnitElement {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDerivedUnitElement();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDerivedUnitElement();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DerivedUnitElement &ent) const;
@@ -254,8 +238,6 @@ class RWStepBasic_RWDerivedUnitElement {
 class RWStepBasic_RWExternalSource {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWExternalSource();
-		%feature("autodoc", "1");
 		RWStepBasic_RWExternalSource();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ExternalSource &ent) const;
@@ -274,8 +256,6 @@ class RWStepBasic_RWExternalSource {
 %nodefaultctor RWStepBasic_RWSiUnit;
 class RWStepBasic_RWSiUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnit();
 		%feature("autodoc", "1");
@@ -302,8 +282,6 @@ class RWStepBasic_RWSiUnit {
 class RWStepBasic_RWProductDefinitionContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWProductDefinitionContext();
-		%feature("autodoc", "1");
 		RWStepBasic_RWProductDefinitionContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionContext &ent) const;
@@ -322,8 +300,6 @@ class RWStepBasic_RWProductDefinitionContext {
 %nodefaultctor RWStepBasic_RWLengthUnit;
 class RWStepBasic_RWLengthUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWLengthUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWLengthUnit();
 		%feature("autodoc", "1");
@@ -344,8 +320,6 @@ class RWStepBasic_RWLengthUnit {
 class RWStepBasic_RWObjectRole {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWObjectRole();
-		%feature("autodoc", "1");
 		RWStepBasic_RWObjectRole();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ObjectRole &ent) const;
@@ -364,8 +338,6 @@ class RWStepBasic_RWObjectRole {
 %nodefaultctor RWStepBasic_RWApprovalRelationship;
 class RWStepBasic_RWApprovalRelationship {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWApprovalRelationship();
 		%feature("autodoc", "1");
 		RWStepBasic_RWApprovalRelationship();
 		%feature("autodoc", "1");
@@ -386,8 +358,6 @@ class RWStepBasic_RWApprovalRelationship {
 class RWStepBasic_RWProductDefinition {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWProductDefinition();
-		%feature("autodoc", "1");
 		RWStepBasic_RWProductDefinition();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinition &ent) const;
@@ -406,8 +376,6 @@ class RWStepBasic_RWProductDefinition {
 %nodefaultctor RWStepBasic_RWRoleAssociation;
 class RWStepBasic_RWRoleAssociation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWRoleAssociation();
 		%feature("autodoc", "1");
 		RWStepBasic_RWRoleAssociation();
 		%feature("autodoc", "1");
@@ -428,8 +396,6 @@ class RWStepBasic_RWRoleAssociation {
 class RWStepBasic_RWDocumentRepresentationType {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDocumentRepresentationType();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDocumentRepresentationType();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentRepresentationType &ent) const;
@@ -448,8 +414,6 @@ class RWStepBasic_RWDocumentRepresentationType {
 %nodefaultctor RWStepBasic_RWDocumentProductAssociation;
 class RWStepBasic_RWDocumentProductAssociation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWDocumentProductAssociation();
 		%feature("autodoc", "1");
 		RWStepBasic_RWDocumentProductAssociation();
 		%feature("autodoc", "1");
@@ -470,8 +434,6 @@ class RWStepBasic_RWDocumentProductAssociation {
 class RWStepBasic_RWCalendarDate {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWCalendarDate();
-		%feature("autodoc", "1");
 		RWStepBasic_RWCalendarDate();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_CalendarDate &ent) const;
@@ -488,8 +450,6 @@ class RWStepBasic_RWCalendarDate {
 %nodefaultctor RWStepBasic_RWVersionedActionRequest;
 class RWStepBasic_RWVersionedActionRequest {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWVersionedActionRequest();
 		%feature("autodoc", "1");
 		RWStepBasic_RWVersionedActionRequest();
 		%feature("autodoc", "1");
@@ -510,8 +470,6 @@ class RWStepBasic_RWVersionedActionRequest {
 class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource();
-		%feature("autodoc", "1");
 		RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &ent) const;
@@ -530,8 +488,6 @@ class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 %nodefaultctor RWStepBasic_RWSolidAngleUnit;
 class RWStepBasic_RWSolidAngleUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWSolidAngleUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWSolidAngleUnit();
 		%feature("autodoc", "1");
@@ -552,8 +508,6 @@ class RWStepBasic_RWSolidAngleUnit {
 class RWStepBasic_RWContractAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWContractAssignment();
-		%feature("autodoc", "1");
 		RWStepBasic_RWContractAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ContractAssignment &ent) const;
@@ -572,8 +526,6 @@ class RWStepBasic_RWContractAssignment {
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit;
 class RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit();
 		%feature("autodoc", "1");
@@ -594,8 +546,6 @@ class RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 class RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWConversionBasedUnitAndVolumeUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWConversionBasedUnitAndVolumeUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndVolumeUnit &ent) const;
@@ -614,8 +564,6 @@ class RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
 %nodefaultctor RWStepBasic_RWPersonAndOrganization;
 class RWStepBasic_RWPersonAndOrganization {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWPersonAndOrganization();
 		%feature("autodoc", "1");
 		RWStepBasic_RWPersonAndOrganization();
 		%feature("autodoc", "1");
@@ -636,8 +584,6 @@ class RWStepBasic_RWPersonAndOrganization {
 class RWStepBasic_RWOrganizationRole {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWOrganizationRole();
-		%feature("autodoc", "1");
 		RWStepBasic_RWOrganizationRole();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_OrganizationRole &ent) const;
@@ -654,8 +600,6 @@ class RWStepBasic_RWOrganizationRole {
 %nodefaultctor RWStepBasic_RWSolidAngleMeasureWithUnit;
 class RWStepBasic_RWSolidAngleMeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWSolidAngleMeasureWithUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWSolidAngleMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -676,8 +620,6 @@ class RWStepBasic_RWSolidAngleMeasureWithUnit {
 class RWStepBasic_RWSiUnitAndRatioUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnitAndRatioUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnitAndRatioUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
@@ -694,8 +636,6 @@ class RWStepBasic_RWSiUnitAndRatioUnit {
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndMassUnit;
 class RWStepBasic_RWConversionBasedUnitAndMassUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWConversionBasedUnitAndMassUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWConversionBasedUnitAndMassUnit();
 		%feature("autodoc", "1");
@@ -716,8 +656,6 @@ class RWStepBasic_RWConversionBasedUnitAndMassUnit {
 class RWStepBasic_RWEffectivity {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWEffectivity();
-		%feature("autodoc", "1");
 		RWStepBasic_RWEffectivity();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Effectivity &ent) const;
@@ -736,8 +674,6 @@ class RWStepBasic_RWEffectivity {
 %nodefaultctor RWStepBasic_RWNamedUnit;
 class RWStepBasic_RWNamedUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWNamedUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWNamedUnit();
 		%feature("autodoc", "1");
@@ -758,8 +694,6 @@ class RWStepBasic_RWNamedUnit {
 class RWStepBasic_RWApplicationContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWApplicationContext();
-		%feature("autodoc", "1");
 		RWStepBasic_RWApplicationContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApplicationContext &ent) const;
@@ -776,8 +710,6 @@ class RWStepBasic_RWApplicationContext {
 %nodefaultctor RWStepBasic_RWActionMethod;
 class RWStepBasic_RWActionMethod {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWActionMethod();
 		%feature("autodoc", "1");
 		RWStepBasic_RWActionMethod();
 		%feature("autodoc", "1");
@@ -798,8 +730,6 @@ class RWStepBasic_RWActionMethod {
 class RWStepBasic_RWLocalTime {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWLocalTime();
-		%feature("autodoc", "1");
 		RWStepBasic_RWLocalTime();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_LocalTime &ent) const;
@@ -818,8 +748,6 @@ class RWStepBasic_RWLocalTime {
 %nodefaultctor RWStepBasic_RWActionRequestAssignment;
 class RWStepBasic_RWActionRequestAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWActionRequestAssignment();
 		%feature("autodoc", "1");
 		RWStepBasic_RWActionRequestAssignment();
 		%feature("autodoc", "1");
@@ -840,8 +768,6 @@ class RWStepBasic_RWActionRequestAssignment {
 class RWStepBasic_RWConversionBasedUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWConversionBasedUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWConversionBasedUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnit &ent) const;
@@ -860,8 +786,6 @@ class RWStepBasic_RWConversionBasedUnit {
 %nodefaultctor RWStepBasic_RWOrganizationalAddress;
 class RWStepBasic_RWOrganizationalAddress {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWOrganizationalAddress();
 		%feature("autodoc", "1");
 		RWStepBasic_RWOrganizationalAddress();
 		%feature("autodoc", "1");
@@ -882,8 +806,6 @@ class RWStepBasic_RWOrganizationalAddress {
 class RWStepBasic_RWProductDefinitionFormationRelationship {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWProductDefinitionFormationRelationship();
-		%feature("autodoc", "1");
 		RWStepBasic_RWProductDefinitionFormationRelationship();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionFormationRelationship &ent) const;
@@ -902,8 +824,6 @@ class RWStepBasic_RWProductDefinitionFormationRelationship {
 %nodefaultctor RWStepBasic_RWIdentificationAssignment;
 class RWStepBasic_RWIdentificationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWIdentificationAssignment();
 		%feature("autodoc", "1");
 		RWStepBasic_RWIdentificationAssignment();
 		%feature("autodoc", "1");
@@ -924,8 +844,6 @@ class RWStepBasic_RWIdentificationAssignment {
 class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWConversionBasedUnitAndTimeUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWConversionBasedUnitAndTimeUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &ent) const;
@@ -944,8 +862,6 @@ class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndRatioUnit;
 class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWConversionBasedUnitAndRatioUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWConversionBasedUnitAndRatioUnit();
 		%feature("autodoc", "1");
@@ -966,8 +882,6 @@ class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
 class RWStepBasic_RWGroup {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWGroup();
-		%feature("autodoc", "1");
 		RWStepBasic_RWGroup();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Group &ent) const;
@@ -986,8 +900,6 @@ class RWStepBasic_RWGroup {
 %nodefaultctor RWStepBasic_RWDocumentRelationship;
 class RWStepBasic_RWDocumentRelationship {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWDocumentRelationship();
 		%feature("autodoc", "1");
 		RWStepBasic_RWDocumentRelationship();
 		%feature("autodoc", "1");
@@ -1008,8 +920,6 @@ class RWStepBasic_RWDocumentRelationship {
 class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit &ent) const;
@@ -1026,8 +936,6 @@ class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 %nodefaultctor RWStepBasic_RWDocumentFile;
 class RWStepBasic_RWDocumentFile {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWDocumentFile();
 		%feature("autodoc", "1");
 		RWStepBasic_RWDocumentFile();
 		%feature("autodoc", "1");
@@ -1048,8 +956,6 @@ class RWStepBasic_RWDocumentFile {
 class RWStepBasic_RWDateRole {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDateRole();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDateRole();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateRole &ent) const;
@@ -1066,8 +972,6 @@ class RWStepBasic_RWDateRole {
 %nodefaultctor RWStepBasic_RWProductDefinitionFormation;
 class RWStepBasic_RWProductDefinitionFormation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWProductDefinitionFormation();
 		%feature("autodoc", "1");
 		RWStepBasic_RWProductDefinitionFormation();
 		%feature("autodoc", "1");
@@ -1088,8 +992,6 @@ class RWStepBasic_RWProductDefinitionFormation {
 class RWStepBasic_RWDerivedUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDerivedUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDerivedUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DerivedUnit &ent) const;
@@ -1109,8 +1011,6 @@ class RWStepBasic_RWDerivedUnit {
 class RWStepBasic_RWSiUnitAndAreaUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnitAndAreaUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnitAndAreaUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
@@ -1127,8 +1027,6 @@ class RWStepBasic_RWSiUnitAndAreaUnit {
 %nodefaultctor RWStepBasic_RWAction;
 class RWStepBasic_RWAction {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWAction();
 		%feature("autodoc", "1");
 		RWStepBasic_RWAction();
 		%feature("autodoc", "1");
@@ -1149,8 +1047,6 @@ class RWStepBasic_RWAction {
 class RWStepBasic_RWAddress {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWAddress();
-		%feature("autodoc", "1");
 		RWStepBasic_RWAddress();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Address &ent) const;
@@ -1167,8 +1063,6 @@ class RWStepBasic_RWAddress {
 %nodefaultctor RWStepBasic_RWExternallyDefinedItem;
 class RWStepBasic_RWExternallyDefinedItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWExternallyDefinedItem();
 		%feature("autodoc", "1");
 		RWStepBasic_RWExternallyDefinedItem();
 		%feature("autodoc", "1");
@@ -1189,8 +1083,6 @@ class RWStepBasic_RWExternallyDefinedItem {
 class RWStepBasic_RWIdentificationRole {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWIdentificationRole();
-		%feature("autodoc", "1");
 		RWStepBasic_RWIdentificationRole();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_IdentificationRole &ent) const;
@@ -1210,8 +1102,6 @@ class RWStepBasic_RWIdentificationRole {
 class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnitAndPlaneAngleUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnitAndPlaneAngleUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
@@ -1228,8 +1118,6 @@ class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 %nodefaultctor RWStepBasic_RWExternalIdentificationAssignment;
 class RWStepBasic_RWExternalIdentificationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWExternalIdentificationAssignment();
 		%feature("autodoc", "1");
 		RWStepBasic_RWExternalIdentificationAssignment();
 		%feature("autodoc", "1");
@@ -1250,8 +1138,6 @@ class RWStepBasic_RWExternalIdentificationAssignment {
 class RWStepBasic_RWDateAndTime {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDateAndTime();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDateAndTime();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateAndTime &ent) const;
@@ -1271,8 +1157,6 @@ class RWStepBasic_RWDateAndTime {
 class RWStepBasic_RWSiUnitAndLengthUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnitAndLengthUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnitAndLengthUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndLengthUnit &ent) const;
@@ -1289,8 +1173,6 @@ class RWStepBasic_RWSiUnitAndLengthUnit {
 %nodefaultctor RWStepBasic_RWLengthMeasureWithUnit;
 class RWStepBasic_RWLengthMeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWLengthMeasureWithUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWLengthMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -1311,8 +1193,6 @@ class RWStepBasic_RWLengthMeasureWithUnit {
 class RWStepBasic_RWSiUnitAndVolumeUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnitAndVolumeUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnitAndVolumeUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndVolumeUnit &ent) const;
@@ -1329,8 +1209,6 @@ class RWStepBasic_RWSiUnitAndVolumeUnit {
 %nodefaultctor RWStepBasic_RWCertification;
 class RWStepBasic_RWCertification {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWCertification();
 		%feature("autodoc", "1");
 		RWStepBasic_RWCertification();
 		%feature("autodoc", "1");
@@ -1351,8 +1229,6 @@ class RWStepBasic_RWCertification {
 class RWStepBasic_RWContractType {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWContractType();
-		%feature("autodoc", "1");
 		RWStepBasic_RWContractType();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ContractType &ent) const;
@@ -1371,8 +1247,6 @@ class RWStepBasic_RWContractType {
 %nodefaultctor RWStepBasic_RWPlaneAngleUnit;
 class RWStepBasic_RWPlaneAngleUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWPlaneAngleUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWPlaneAngleUnit();
 		%feature("autodoc", "1");
@@ -1393,8 +1267,6 @@ class RWStepBasic_RWPlaneAngleUnit {
 class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &ent) const;
@@ -1413,8 +1285,6 @@ class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
 %nodefaultctor RWStepBasic_RWProductDefinitionWithAssociatedDocuments;
 class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWProductDefinitionWithAssociatedDocuments();
 		%feature("autodoc", "1");
 		RWStepBasic_RWProductDefinitionWithAssociatedDocuments();
 		%feature("autodoc", "1");
@@ -1435,8 +1305,6 @@ class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
 class RWStepBasic_RWApprovalPersonOrganization {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWApprovalPersonOrganization();
-		%feature("autodoc", "1");
 		RWStepBasic_RWApprovalPersonOrganization();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalPersonOrganization &ent) const;
@@ -1456,8 +1324,6 @@ class RWStepBasic_RWApprovalPersonOrganization {
 class RWStepBasic_RWApprovalRole {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWApprovalRole();
-		%feature("autodoc", "1");
 		RWStepBasic_RWApprovalRole();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalRole &ent) const;
@@ -1474,8 +1340,6 @@ class RWStepBasic_RWApprovalRole {
 %nodefaultctor RWStepBasic_RWCoordinatedUniversalTimeOffset;
 class RWStepBasic_RWCoordinatedUniversalTimeOffset {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWCoordinatedUniversalTimeOffset();
 		%feature("autodoc", "1");
 		RWStepBasic_RWCoordinatedUniversalTimeOffset();
 		%feature("autodoc", "1");
@@ -1494,8 +1358,6 @@ class RWStepBasic_RWCoordinatedUniversalTimeOffset {
 class RWStepBasic_RWApprovalStatus {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWApprovalStatus();
-		%feature("autodoc", "1");
 		RWStepBasic_RWApprovalStatus();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalStatus &ent) const;
@@ -1512,8 +1374,6 @@ class RWStepBasic_RWApprovalStatus {
 %nodefaultctor RWStepBasic_RWDocumentProductEquivalence;
 class RWStepBasic_RWDocumentProductEquivalence {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWDocumentProductEquivalence();
 		%feature("autodoc", "1");
 		RWStepBasic_RWDocumentProductEquivalence();
 		%feature("autodoc", "1");
@@ -1534,8 +1394,6 @@ class RWStepBasic_RWDocumentProductEquivalence {
 class RWStepBasic_RWCharacterizedObject {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWCharacterizedObject();
-		%feature("autodoc", "1");
 		RWStepBasic_RWCharacterizedObject();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_CharacterizedObject &ent) const;
@@ -1554,8 +1412,6 @@ class RWStepBasic_RWCharacterizedObject {
 %nodefaultctor RWStepBasic_RWGroupRelationship;
 class RWStepBasic_RWGroupRelationship {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWGroupRelationship();
 		%feature("autodoc", "1");
 		RWStepBasic_RWGroupRelationship();
 		%feature("autodoc", "1");
@@ -1576,8 +1432,6 @@ class RWStepBasic_RWGroupRelationship {
 class RWStepBasic_RWProductContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWProductContext();
-		%feature("autodoc", "1");
 		RWStepBasic_RWProductContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductContext &ent) const;
@@ -1597,8 +1451,6 @@ class RWStepBasic_RWProductContext {
 class RWStepBasic_RWOrdinalDate {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWOrdinalDate();
-		%feature("autodoc", "1");
 		RWStepBasic_RWOrdinalDate();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_OrdinalDate &ent) const;
@@ -1615,8 +1467,6 @@ class RWStepBasic_RWOrdinalDate {
 %nodefaultctor RWStepBasic_RWPersonalAddress;
 class RWStepBasic_RWPersonalAddress {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWPersonalAddress();
 		%feature("autodoc", "1");
 		RWStepBasic_RWPersonalAddress();
 		%feature("autodoc", "1");
@@ -1637,8 +1487,6 @@ class RWStepBasic_RWPersonalAddress {
 class RWStepBasic_RWMechanicalContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWMechanicalContext();
-		%feature("autodoc", "1");
 		RWStepBasic_RWMechanicalContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_MechanicalContext &ent) const;
@@ -1657,8 +1505,6 @@ class RWStepBasic_RWMechanicalContext {
 %nodefaultctor RWStepBasic_RWApproval;
 class RWStepBasic_RWApproval {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWApproval();
 		%feature("autodoc", "1");
 		RWStepBasic_RWApproval();
 		%feature("autodoc", "1");
@@ -1679,8 +1525,6 @@ class RWStepBasic_RWApproval {
 class RWStepBasic_RWProduct {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWProduct();
-		%feature("autodoc", "1");
 		RWStepBasic_RWProduct();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Product &ent) const;
@@ -1700,8 +1544,6 @@ class RWStepBasic_RWProduct {
 class RWStepBasic_RWDimensionalExponents {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDimensionalExponents();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDimensionalExponents();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DimensionalExponents &ent) const;
@@ -1718,8 +1560,6 @@ class RWStepBasic_RWDimensionalExponents {
 %nodefaultctor RWStepBasic_RWRatioMeasureWithUnit;
 class RWStepBasic_RWRatioMeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWRatioMeasureWithUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWRatioMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -1740,8 +1580,6 @@ class RWStepBasic_RWRatioMeasureWithUnit {
 class RWStepBasic_RWNameAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWNameAssignment();
-		%feature("autodoc", "1");
 		RWStepBasic_RWNameAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_NameAssignment &ent) const;
@@ -1760,8 +1598,6 @@ class RWStepBasic_RWNameAssignment {
 %nodefaultctor RWStepBasic_RWUncertaintyMeasureWithUnit;
 class RWStepBasic_RWUncertaintyMeasureWithUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWUncertaintyMeasureWithUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWUncertaintyMeasureWithUnit();
 		%feature("autodoc", "1");
@@ -1782,8 +1618,6 @@ class RWStepBasic_RWUncertaintyMeasureWithUnit {
 class RWStepBasic_RWDocumentType {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDocumentType();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDocumentType();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentType &ent) const;
@@ -1803,8 +1637,6 @@ class RWStepBasic_RWDocumentType {
 class RWStepBasic_RWOrganization {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWOrganization();
-		%feature("autodoc", "1");
 		RWStepBasic_RWOrganization();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Organization &ent) const;
@@ -1821,8 +1653,6 @@ class RWStepBasic_RWOrganization {
 %nodefaultctor RWStepBasic_RWSecurityClassification;
 class RWStepBasic_RWSecurityClassification {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWSecurityClassification();
 		%feature("autodoc", "1");
 		RWStepBasic_RWSecurityClassification();
 		%feature("autodoc", "1");
@@ -1843,8 +1673,6 @@ class RWStepBasic_RWSecurityClassification {
 class RWStepBasic_RWProductConceptContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWProductConceptContext();
-		%feature("autodoc", "1");
 		RWStepBasic_RWProductConceptContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductConceptContext &ent) const;
@@ -1863,8 +1691,6 @@ class RWStepBasic_RWProductConceptContext {
 %nodefaultctor RWStepBasic_RWProductDefinitionRelationship;
 class RWStepBasic_RWProductDefinitionRelationship {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWProductDefinitionRelationship();
 		%feature("autodoc", "1");
 		RWStepBasic_RWProductDefinitionRelationship();
 		%feature("autodoc", "1");
@@ -1885,8 +1711,6 @@ class RWStepBasic_RWProductDefinitionRelationship {
 class RWStepBasic_RWMeasureWithUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWMeasureWithUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWMeasureWithUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_MeasureWithUnit &ent) const;
@@ -1905,8 +1729,6 @@ class RWStepBasic_RWMeasureWithUnit {
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndAreaUnit;
 class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWConversionBasedUnitAndAreaUnit();
 		%feature("autodoc", "1");
 		RWStepBasic_RWConversionBasedUnitAndAreaUnit();
 		%feature("autodoc", "1");
@@ -1927,8 +1749,6 @@ class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
 class RWStepBasic_RWPersonAndOrganizationRole {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWPersonAndOrganizationRole();
-		%feature("autodoc", "1");
 		RWStepBasic_RWPersonAndOrganizationRole();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
@@ -1946,8 +1766,6 @@ class RWStepBasic_RWPersonAndOrganizationRole {
 class RWStepBasic_RWDateTimeRole {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDateTimeRole();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDateTimeRole();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateTimeRole &ent) const;
@@ -1964,8 +1782,6 @@ class RWStepBasic_RWDateTimeRole {
 %nodefaultctor RWStepBasic_RWProductType;
 class RWStepBasic_RWProductType {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWProductType();
 		%feature("autodoc", "1");
 		RWStepBasic_RWProductType();
 		%feature("autodoc", "1");
@@ -1986,8 +1802,6 @@ class RWStepBasic_RWProductType {
 class RWStepBasic_RWWeekOfYearAndDayDate {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWWeekOfYearAndDayDate();
-		%feature("autodoc", "1");
 		RWStepBasic_RWWeekOfYearAndDayDate();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_WeekOfYearAndDayDate &ent) const;
@@ -2005,8 +1819,6 @@ class RWStepBasic_RWWeekOfYearAndDayDate {
 class RWStepBasic_RWPerson {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWPerson();
-		%feature("autodoc", "1");
 		RWStepBasic_RWPerson();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Person &ent) const;
@@ -2023,8 +1835,6 @@ class RWStepBasic_RWPerson {
 %nodefaultctor RWStepBasic_RWApplicationProtocolDefinition;
 class RWStepBasic_RWApplicationProtocolDefinition {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWApplicationProtocolDefinition();
 		%feature("autodoc", "1");
 		RWStepBasic_RWApplicationProtocolDefinition();
 		%feature("autodoc", "1");
@@ -2045,8 +1855,6 @@ class RWStepBasic_RWApplicationProtocolDefinition {
 class RWStepBasic_RWProductDefinitionEffectivity {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWProductDefinitionEffectivity();
-		%feature("autodoc", "1");
 		RWStepBasic_RWProductDefinitionEffectivity();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionEffectivity &ent) const;
@@ -2066,8 +1874,6 @@ class RWStepBasic_RWProductDefinitionEffectivity {
 class RWStepBasic_RWDate {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDate();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDate();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Date &ent) const;
@@ -2084,8 +1890,6 @@ class RWStepBasic_RWDate {
 %nodefaultctor RWStepBasic_RWCertificationAssignment;
 class RWStepBasic_RWCertificationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWCertificationAssignment();
 		%feature("autodoc", "1");
 		RWStepBasic_RWCertificationAssignment();
 		%feature("autodoc", "1");
@@ -2106,8 +1910,6 @@ class RWStepBasic_RWCertificationAssignment {
 class RWStepBasic_RWContract {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWContract();
-		%feature("autodoc", "1");
 		RWStepBasic_RWContract();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Contract &ent) const;
@@ -2126,8 +1928,6 @@ class RWStepBasic_RWContract {
 %nodefaultctor RWStepBasic_RWApprovalDateTime;
 class RWStepBasic_RWApprovalDateTime {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWApprovalDateTime();
 		%feature("autodoc", "1");
 		RWStepBasic_RWApprovalDateTime();
 		%feature("autodoc", "1");
@@ -2148,8 +1948,6 @@ class RWStepBasic_RWApprovalDateTime {
 class RWStepBasic_RWSiUnitAndSolidAngleUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnitAndSolidAngleUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnitAndSolidAngleUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndSolidAngleUnit &ent) const;
@@ -2166,8 +1964,6 @@ class RWStepBasic_RWSiUnitAndSolidAngleUnit {
 %nodefaultctor RWStepBasic_RWProductRelatedProductCategory;
 class RWStepBasic_RWProductRelatedProductCategory {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWProductRelatedProductCategory();
 		%feature("autodoc", "1");
 		RWStepBasic_RWProductRelatedProductCategory();
 		%feature("autodoc", "1");
@@ -2188,8 +1984,6 @@ class RWStepBasic_RWProductRelatedProductCategory {
 class RWStepBasic_RWSiUnitAndMassUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnitAndMassUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnitAndMassUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndMassUnit &ent) const;
@@ -2206,8 +2000,6 @@ class RWStepBasic_RWSiUnitAndMassUnit {
 %nodefaultctor RWStepBasic_RWCertificationType;
 class RWStepBasic_RWCertificationType {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWCertificationType();
 		%feature("autodoc", "1");
 		RWStepBasic_RWCertificationType();
 		%feature("autodoc", "1");
@@ -2228,8 +2020,6 @@ class RWStepBasic_RWCertificationType {
 class RWStepBasic_RWDocument {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWDocument();
-		%feature("autodoc", "1");
 		RWStepBasic_RWDocument();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Document &ent) const;
@@ -2248,8 +2038,6 @@ class RWStepBasic_RWDocument {
 %nodefaultctor RWStepBasic_RWEulerAngles;
 class RWStepBasic_RWEulerAngles {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWEulerAngles();
 		%feature("autodoc", "1");
 		RWStepBasic_RWEulerAngles();
 		%feature("autodoc", "1");
@@ -2270,8 +2058,6 @@ class RWStepBasic_RWEulerAngles {
 class RWStepBasic_RWMassUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWMassUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWMassUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_MassUnit &ent) const;
@@ -2290,8 +2076,6 @@ class RWStepBasic_RWMassUnit {
 %nodefaultctor RWStepBasic_RWGeneralProperty;
 class RWStepBasic_RWGeneralProperty {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWGeneralProperty();
 		%feature("autodoc", "1");
 		RWStepBasic_RWGeneralProperty();
 		%feature("autodoc", "1");
@@ -2312,8 +2096,6 @@ class RWStepBasic_RWGeneralProperty {
 class RWStepBasic_RWApplicationContextElement {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWApplicationContextElement();
-		%feature("autodoc", "1");
 		RWStepBasic_RWApplicationContextElement();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApplicationContextElement &ent) const;
@@ -2333,8 +2115,6 @@ class RWStepBasic_RWApplicationContextElement {
 class RWStepBasic_RWSiUnitAndTimeUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWSiUnitAndTimeUnit();
-		%feature("autodoc", "1");
 		RWStepBasic_RWSiUnitAndTimeUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndTimeUnit &ent) const;
@@ -2352,8 +2132,6 @@ class RWStepBasic_RWSiUnitAndTimeUnit {
 class RWStepBasic_RWProductCategory {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWProductCategory();
-		%feature("autodoc", "1");
 		RWStepBasic_RWProductCategory();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductCategory &ent) const;
@@ -2370,8 +2148,6 @@ class RWStepBasic_RWProductCategory {
 %nodefaultctor RWStepBasic_RWProductCategoryRelationship;
 class RWStepBasic_RWProductCategoryRelationship {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWProductCategoryRelationship();
 		%feature("autodoc", "1");
 		RWStepBasic_RWProductCategoryRelationship();
 		%feature("autodoc", "1");
@@ -2392,8 +2168,6 @@ class RWStepBasic_RWProductCategoryRelationship {
 class RWStepBasic_RWGroupAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWGroupAssignment();
-		%feature("autodoc", "1");
 		RWStepBasic_RWGroupAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_GroupAssignment &ent) const;
@@ -2413,8 +2187,6 @@ class RWStepBasic_RWGroupAssignment {
 class RWStepBasic_RWActionRequestSolution {
 	public:
 		%feature("autodoc", "1");
-		~RWStepBasic_RWActionRequestSolution();
-		%feature("autodoc", "1");
 		RWStepBasic_RWActionRequestSolution();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ActionRequestSolution &ent) const;
@@ -2433,8 +2205,6 @@ class RWStepBasic_RWActionRequestSolution {
 %nodefaultctor RWStepBasic_RWDocumentUsageConstraint;
 class RWStepBasic_RWDocumentUsageConstraint {
 	public:
-		%feature("autodoc", "1");
-		~RWStepBasic_RWDocumentUsageConstraint();
 		%feature("autodoc", "1");
 		RWStepBasic_RWDocumentUsageConstraint();
 		%feature("autodoc", "1");

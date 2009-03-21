@@ -136,8 +136,6 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~Plugin_DataMapIteratorOfMapOfFunctions();
-		%feature("autodoc", "1");
 		Plugin_DataMapIteratorOfMapOfFunctions();
 		%feature("autodoc", "1");
 		Plugin_DataMapIteratorOfMapOfFunctions(const Plugin_MapOfFunctions &aMap);
@@ -214,8 +212,6 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Plugin_MapOfFunctions();
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
 		%feature("autodoc", "1");

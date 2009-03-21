@@ -138,8 +138,6 @@ class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
 		void Init(const TopoDS_Shape &S, const TopoDS_Shape &T);
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
-		%feature("autodoc", "1");
-		virtual		~BRepFeat_Builder();
 
 };
 %extend BRepFeat_Builder {
@@ -196,8 +194,6 @@ class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
 %nodefaultctor BRepFeat;
 class BRepFeat {
 	public:
-		%feature("autodoc", "1");
-		~BRepFeat();
 		%feature("autodoc", "1");
 		BRepFeat();
 		%feature("autodoc", "1");
@@ -356,8 +352,6 @@ class BRepFeat_LocalOperation : public BRepFeat_Builder {
 		void ActivatePart(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		void Build();
-		%feature("autodoc", "1");
-		virtual		~BRepFeat_LocalOperation();
 
 };
 %extend BRepFeat_LocalOperation {
@@ -391,8 +385,6 @@ class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &F);
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
-		%feature("autodoc", "1");
-		virtual		~BRepFeat_Gluer();
 
 };
 %extend BRepFeat_Gluer {
@@ -426,8 +418,6 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
-		%feature("autodoc", "1");
-		virtual		~BRepFeat_SplitShape();
 
 };
 %extend BRepFeat_SplitShape {
@@ -461,8 +451,6 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 		TopoDS_Face ChoiceOfFaces(TopTools_ListOfShape & faces, const Handle_Geom_Curve &cc, const Standard_Real par, const Standard_Real bnd, const Handle_Geom_Plane &Pln);
 		%feature("autodoc", "1");
 		BRepFeat_StatusError CurrentStatusError() const;
-		%feature("autodoc", "1");
-		virtual		~BRepFeat_RibSlot();
 
 };
 %extend BRepFeat_RibSlot {
@@ -486,8 +474,6 @@ class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 		void Perform();
 		%feature("autodoc", "1");
 		Standard_Boolean Propagate(TopTools_ListOfShape & L, const TopoDS_Face &F, const gp_Pnt &FPoint, const gp_Pnt &LPoint, Standard_Boolean & falseside);
-		%feature("autodoc", "1");
-		virtual		~BRepFeat_MakeLinearForm();
 
 };
 %extend BRepFeat_MakeLinearForm {
@@ -511,8 +497,6 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 		void Perform();
 		%feature("autodoc", "1");
 		Standard_Boolean Propagate(TopTools_ListOfShape & L, const TopoDS_Face &F, const gp_Pnt &FPoint, const gp_Pnt &LPoint, Standard_Boolean & falseside);
-		%feature("autodoc", "1");
-		virtual		~BRepFeat_MakeRevolutionForm();
 
 };
 %extend BRepFeat_MakeRevolutionForm {
@@ -548,8 +532,6 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 		BRepFeat_Status Status() const;
 		%feature("autodoc", "1");
 		virtual		void Build();
-		%feature("autodoc", "1");
-		virtual		~BRepFeat_MakeCylindricalHole();
 
 };
 %extend BRepFeat_MakeCylindricalHole {

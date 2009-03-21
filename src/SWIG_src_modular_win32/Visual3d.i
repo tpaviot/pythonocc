@@ -808,8 +808,6 @@ class Visual3d_SetIteratorOfSetOfLight {
 class Visual3d_ContextPick {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_ContextPick();
-		%feature("autodoc", "1");
 		Visual3d_ContextPick();
 		%feature("autodoc", "1");
 		Visual3d_ContextPick(const Standard_Real Aperture, const Standard_Integer Depth, const Visual3d_TypeOfOrder Order);
@@ -996,8 +994,6 @@ class Visual3d_DepthCueingDefinitionError : public Standard_OutOfRange {
 %nodefaultctor Visual3d_ViewMapping;
 class Visual3d_ViewMapping {
 	public:
-		%feature("autodoc", "1");
-		~Visual3d_ViewMapping();
 		%feature("autodoc", "1");
 		Visual3d_ViewMapping();
 		%feature("autodoc", "1");
@@ -1700,8 +1696,6 @@ class Visual3d_LightDefinitionError : public Standard_OutOfRange {
 class Visual3d_SetOfView {
 	public:
 		%feature("autodoc", "1");
-		~Visual3d_SetOfView();
-		%feature("autodoc", "1");
 		Visual3d_SetOfView();
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -2024,8 +2018,6 @@ class Visual3d_HSetOfClipPlane : public MMgt_TShared {
 %nodefaultctor Visual3d_SetOfLight;
 class Visual3d_SetOfLight {
 	public:
-		%feature("autodoc", "1");
-		~Visual3d_SetOfLight();
 		%feature("autodoc", "1");
 		Visual3d_SetOfLight();
 		%feature("autodoc", "1");
@@ -2393,8 +2385,6 @@ class Visual3d_SequenceOfPickPath : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Visual3d_SequenceOfPickPath();
-		%feature("autodoc", "1");
 		const Visual3d_SequenceOfPickPath & Assign(const Visual3d_SequenceOfPickPath &Other);
 		%feature("autodoc", "1");
 		void Append(const Visual3d_PickPath &T);
@@ -2471,8 +2461,6 @@ class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
 %nodefaultctor Visual3d_SetOfClipPlane;
 class Visual3d_SetOfClipPlane {
 	public:
-		%feature("autodoc", "1");
-		~Visual3d_SetOfClipPlane();
 		%feature("autodoc", "1");
 		Visual3d_SetOfClipPlane();
 		%feature("autodoc", "1");
@@ -2600,8 +2588,6 @@ class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
 %nodefaultctor Visual3d_ViewOrientation;
 class Visual3d_ViewOrientation {
 	public:
-		%feature("autodoc", "1");
-		~Visual3d_ViewOrientation();
 		%feature("autodoc", "1");
 		Visual3d_ViewOrientation();
 		%feature("autodoc", "1");

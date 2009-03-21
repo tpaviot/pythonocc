@@ -271,8 +271,6 @@ class AppParCurves_MultiCurve {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~AppParCurves_MultiCurve();
-		%feature("autodoc", "1");
 		void SetNbPoles(const Standard_Integer nbPoles);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const AppParCurves_MultiPoint &MPoint);
@@ -339,8 +337,6 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		const TColStd_Array1OfReal & Knots() const;
 		%feature("autodoc", "1");
 		const TColStd_Array1OfInteger & Multiplicities() const;
-		%feature("autodoc", "1");
-		virtual		~AppParCurves_MultiBSpCurve();
 
 };
 %extend AppParCurves_MultiBSpCurve {
@@ -360,8 +356,6 @@ class AppParCurves_Array1OfMultiCurve {
 		void Init(const AppParCurves_MultiCurve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~AppParCurves_Array1OfMultiCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -402,8 +396,6 @@ class AppParCurves_Array1OfMultiBSpCurve {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~AppParCurves_Array1OfMultiBSpCurve();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const AppParCurves_Array1OfMultiBSpCurve & Assign(const AppParCurves_Array1OfMultiBSpCurve &Other);
@@ -434,8 +426,6 @@ class AppParCurves_Array1OfMultiBSpCurve {
 %nodefaultctor AppParCurves_ConstraintCouple;
 class AppParCurves_ConstraintCouple {
 	public:
-		%feature("autodoc", "1");
-		~AppParCurves_ConstraintCouple();
 		%feature("autodoc", "1");
 		AppParCurves_ConstraintCouple();
 		%feature("autodoc", "1");
@@ -584,8 +574,6 @@ class AppParCurves_MultiPoint {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~AppParCurves_MultiPoint();
-		%feature("autodoc", "1");
 		void SetPoint(const Standard_Integer Index, const gp_Pnt &Point);
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const Standard_Integer Index) const;
@@ -625,8 +613,6 @@ class AppParCurves_Array1OfConstraintCouple {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~AppParCurves_Array1OfConstraintCouple();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const AppParCurves_Array1OfConstraintCouple & Assign(const AppParCurves_Array1OfConstraintCouple &Other);
@@ -661,8 +647,6 @@ class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 		AppParCurves_SequenceOfMultiBSpCurve();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AppParCurves_SequenceOfMultiBSpCurve();
 		%feature("autodoc", "1");
 		const AppParCurves_SequenceOfMultiBSpCurve & Assign(const AppParCurves_SequenceOfMultiBSpCurve &Other);
 		%feature("autodoc", "1");
@@ -716,8 +700,6 @@ class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 		AppParCurves_SequenceOfMultiCurve();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AppParCurves_SequenceOfMultiCurve();
 		%feature("autodoc", "1");
 		const AppParCurves_SequenceOfMultiCurve & Assign(const AppParCurves_SequenceOfMultiCurve &Other);
 		%feature("autodoc", "1");
@@ -797,8 +779,6 @@ class AppParCurves_Array1OfMultiPoint {
 		void Init(const AppParCurves_MultiPoint &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~AppParCurves_Array1OfMultiPoint();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -910,8 +890,6 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 %nodefaultctor AppParCurves;
 class AppParCurves {
 	public:
-		%feature("autodoc", "1");
-		~AppParCurves();
 		%feature("autodoc", "1");
 		AppParCurves();
 		%feature("autodoc", "1");

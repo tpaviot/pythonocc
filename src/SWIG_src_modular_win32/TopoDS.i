@@ -495,8 +495,6 @@ class TopoDS_Shape {
 class TopoDS_Compound : public TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
-		~TopoDS_Compound();
-		%feature("autodoc", "1");
 		TopoDS_Compound();
 
 };
@@ -531,8 +529,6 @@ class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 %nodefaultctor TopoDS_Vertex;
 class TopoDS_Vertex : public TopoDS_Shape {
 	public:
-		%feature("autodoc", "1");
-		~TopoDS_Vertex();
 		%feature("autodoc", "1");
 		TopoDS_Vertex();
 
@@ -625,8 +621,6 @@ class TopoDS_TShape : public MMgt_TShared {
 class TopoDS_Iterator {
 	public:
 		%feature("autodoc", "1");
-		~TopoDS_Iterator();
-		%feature("autodoc", "1");
 		TopoDS_Iterator();
 		%feature("autodoc", "1");
 		TopoDS_Iterator(const TopoDS_Shape &S, const Standard_Boolean cumOri=1, const Standard_Boolean cumLoc=1);
@@ -650,8 +644,6 @@ class TopoDS_Iterator {
 class TopoDS_Builder {
 	public:
 		%feature("autodoc", "1");
-		~TopoDS_Builder();
-		%feature("autodoc", "1");
 		void MakeWire(TopoDS_Wire & W) const;
 		%feature("autodoc", "1");
 		void MakeCompound(TopoDS_Compound & C) const;
@@ -670,8 +662,6 @@ class TopoDS_Builder {
 %nodefaultctor TopoDS_CompSolid;
 class TopoDS_CompSolid : public TopoDS_Shape {
 	public:
-		%feature("autodoc", "1");
-		~TopoDS_CompSolid();
 		%feature("autodoc", "1");
 		TopoDS_CompSolid();
 
@@ -693,8 +683,6 @@ class TopoDS_ListOfShape {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopoDS_ListOfShape();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -736,8 +724,6 @@ class TopoDS_ListOfShape {
 %nodefaultctor TopoDS;
 class TopoDS {
 	public:
-		%feature("autodoc", "1");
-		~TopoDS();
 		%feature("autodoc", "1");
 		TopoDS();
 		%feature("autodoc", "1");
@@ -808,8 +794,6 @@ class TopoDS_TWire : public TopoDS_TShape {
 class TopoDS_Edge : public TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
-		~TopoDS_Edge();
-		%feature("autodoc", "1");
 		TopoDS_Edge();
 
 };
@@ -823,8 +807,6 @@ class TopoDS_Edge : public TopoDS_Shape {
 class TopoDS_Shell : public TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
-		~TopoDS_Shell();
-		%feature("autodoc", "1");
 		TopoDS_Shell();
 
 };
@@ -837,8 +819,6 @@ class TopoDS_Shell : public TopoDS_Shape {
 %nodefaultctor TopoDS_ListIteratorOfListOfShape;
 class TopoDS_ListIteratorOfListOfShape {
 	public:
-		%feature("autodoc", "1");
-		~TopoDS_ListIteratorOfListOfShape();
 		%feature("autodoc", "1");
 		TopoDS_ListIteratorOfListOfShape();
 		%feature("autodoc", "1");
@@ -890,8 +870,6 @@ class TopoDS_HShape : public MMgt_TShared {
 %nodefaultctor TopoDS_Solid;
 class TopoDS_Solid : public TopoDS_Shape {
 	public:
-		%feature("autodoc", "1");
-		~TopoDS_Solid();
 		%feature("autodoc", "1");
 		TopoDS_Solid();
 
@@ -973,8 +951,6 @@ class TopoDS_TShell : public TopoDS_TShape {
 %nodefaultctor TopoDS_Builder3D;
 class TopoDS_Builder3D : public TopoDS_Builder {
 	public:
-		%feature("autodoc", "1");
-		~TopoDS_Builder3D();
 		%feature("autodoc", "1");
 		void MakeShell(TopoDS_Shell & S) const;
 		%feature("autodoc", "1");
@@ -1065,8 +1041,6 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 class TopoDS_Wire : public TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
-		~TopoDS_Wire();
-		%feature("autodoc", "1");
 		TopoDS_Wire();
 
 };
@@ -1103,8 +1077,6 @@ class TopoDS_TFace : public TopoDS_TShape {
 %nodefaultctor TopoDS_Face;
 class TopoDS_Face : public TopoDS_Shape {
 	public:
-		%feature("autodoc", "1");
-		~TopoDS_Face();
 		%feature("autodoc", "1");
 		TopoDS_Face();
 

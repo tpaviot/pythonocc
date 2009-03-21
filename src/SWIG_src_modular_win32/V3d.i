@@ -855,8 +855,6 @@ class V3d_SpotLight : public V3d_PositionLight {
 class V3d_ListOfTransient : public TColStd_ListOfTransient {
 	public:
 		%feature("autodoc", "1");
-		~V3d_ListOfTransient();
-		%feature("autodoc", "1");
 		V3d_ListOfTransient();
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Handle_Standard_Transient &aTransient) const;
@@ -873,8 +871,6 @@ class V3d_ListOfTransient : public TColStd_ListOfTransient {
 %nodefaultctor V3d;
 class V3d {
 	public:
-		%feature("autodoc", "1");
-		~V3d();
 		%feature("autodoc", "1");
 		V3d();
 		%feature("autodoc", "1");

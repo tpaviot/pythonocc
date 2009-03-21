@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class TopCnx_EdgeFaceTransition {
 	public:
 		%feature("autodoc", "1");
-		~TopCnx_EdgeFaceTransition();
-		%feature("autodoc", "1");
 		TopCnx_EdgeFaceTransition();
 		%feature("autodoc", "1");
 		void Reset(const gp_Dir &Tgt, const gp_Dir &Norm, const Standard_Real Curv);

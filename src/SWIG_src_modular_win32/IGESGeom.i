@@ -982,8 +982,6 @@ class IGESGeom_Direction : public IGESData_IGESEntity {
 class IGESGeom_ToolOffsetSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolOffsetSurface();
-		%feature("autodoc", "1");
 		IGESGeom_ToolOffsetSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_OffsetSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1083,8 +1081,6 @@ class IGESGeom_Flash : public IGESData_IGESEntity {
 class IGESGeom_ToolCopiousData {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolCopiousData();
-		%feature("autodoc", "1");
 		IGESGeom_ToolCopiousData();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_CopiousData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1143,8 +1139,6 @@ class IGESGeom_CurveOnSurface : public IGESData_IGESEntity {
 %nodefaultctor IGESGeom_ToolSplineCurve;
 class IGESGeom_ToolSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolSplineCurve();
 		%feature("autodoc", "1");
 		IGESGeom_ToolSplineCurve();
 		%feature("autodoc", "1");
@@ -1207,8 +1201,6 @@ class IGESGeom_RuledSurface : public IGESData_IGESEntity {
 class IGESGeom_ToolFlash {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolFlash();
-		%feature("autodoc", "1");
 		IGESGeom_ToolFlash();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_Flash &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1237,8 +1229,6 @@ class IGESGeom_ToolFlash {
 %nodefaultctor IGESGeom_ToolTransformationMatrix;
 class IGESGeom_ToolTransformationMatrix {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolTransformationMatrix();
 		%feature("autodoc", "1");
 		IGESGeom_ToolTransformationMatrix();
 		%feature("autodoc", "1");
@@ -1269,8 +1259,6 @@ class IGESGeom_ToolTransformationMatrix {
 class IGESGeom_ToolTabulatedCylinder {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolTabulatedCylinder();
-		%feature("autodoc", "1");
 		IGESGeom_ToolTabulatedCylinder();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_TabulatedCylinder &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1297,8 +1285,6 @@ class IGESGeom_ToolTabulatedCylinder {
 %nodefaultctor IGESGeom_ToolConicArc;
 class IGESGeom_ToolConicArc {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolConicArc();
 		%feature("autodoc", "1");
 		IGESGeom_ToolConicArc();
 		%feature("autodoc", "1");
@@ -1445,8 +1431,6 @@ class IGESGeom {
 class IGESGeom_ToolSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolSplineSurface();
-		%feature("autodoc", "1");
 		IGESGeom_ToolSplineSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_SplineSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1514,8 +1498,6 @@ class IGESGeom_HArray1OfBoundary : public MMgt_TShared {
 class IGESGeom_ToolCurveOnSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolCurveOnSurface();
-		%feature("autodoc", "1");
 		IGESGeom_ToolCurveOnSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_CurveOnSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1544,8 +1526,6 @@ class IGESGeom_ToolCurveOnSurface {
 %nodefaultctor IGESGeom_ToolRuledSurface;
 class IGESGeom_ToolRuledSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolRuledSurface();
 		%feature("autodoc", "1");
 		IGESGeom_ToolRuledSurface();
 		%feature("autodoc", "1");
@@ -1672,8 +1652,6 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 class IGESGeom_ToolOffsetCurve {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolOffsetCurve();
-		%feature("autodoc", "1");
 		IGESGeom_ToolOffsetCurve();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_OffsetCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1799,8 +1777,6 @@ class IGESGeom_SplineSurface : public IGESData_IGESEntity {
 class IGESGeom_ToolPlane {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolPlane();
-		%feature("autodoc", "1");
 		IGESGeom_ToolPlane();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_Plane &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1892,8 +1868,6 @@ class IGESGeom_Array1OfBoundary {
 %nodefaultctor IGESGeom_ToolLine;
 class IGESGeom_ToolLine {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolLine();
 		%feature("autodoc", "1");
 		IGESGeom_ToolLine();
 		%feature("autodoc", "1");
@@ -1990,8 +1964,6 @@ class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
 class IGESGeom_ToolCircularArc {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolCircularArc();
-		%feature("autodoc", "1");
 		IGESGeom_ToolCircularArc();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_CircularArc &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2084,8 +2056,6 @@ class IGESGeom_TrimmedSurface : public IGESData_IGESEntity {
 %nodefaultctor IGESGeom_ToolDirection;
 class IGESGeom_ToolDirection {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolDirection();
 		%feature("autodoc", "1");
 		IGESGeom_ToolDirection();
 		%feature("autodoc", "1");
@@ -2230,8 +2200,6 @@ class IGESGeom_CopiousData : public IGESData_IGESEntity {
 class IGESGeom_ToolBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolBSplineCurve();
-		%feature("autodoc", "1");
 		IGESGeom_ToolBSplineCurve();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_BSplineCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2258,8 +2226,6 @@ class IGESGeom_ToolBSplineCurve {
 %nodefaultctor IGESGeom_ToolBoundedSurface;
 class IGESGeom_ToolBoundedSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolBoundedSurface();
 		%feature("autodoc", "1");
 		IGESGeom_ToolBoundedSurface();
 		%feature("autodoc", "1");
@@ -2362,8 +2328,6 @@ class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 class IGESGeom_ToolCompositeCurve {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolCompositeCurve();
-		%feature("autodoc", "1");
 		IGESGeom_ToolCompositeCurve();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_CompositeCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2430,8 +2394,6 @@ class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
 %nodefaultctor IGESGeom_ToolPoint;
 class IGESGeom_ToolPoint {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolPoint();
 		%feature("autodoc", "1");
 		IGESGeom_ToolPoint();
 		%feature("autodoc", "1");
@@ -2545,8 +2507,6 @@ class IGESGeom_Array1OfTransformationMatrix {
 class IGESGeom_ToolBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolBSplineSurface();
-		%feature("autodoc", "1");
 		IGESGeom_ToolBSplineSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_BSplineSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2573,8 +2533,6 @@ class IGESGeom_ToolBSplineSurface {
 %nodefaultctor IGESGeom_ToolTrimmedSurface;
 class IGESGeom_ToolTrimmedSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolTrimmedSurface();
 		%feature("autodoc", "1");
 		IGESGeom_ToolTrimmedSurface();
 		%feature("autodoc", "1");
@@ -2603,8 +2561,6 @@ class IGESGeom_ToolTrimmedSurface {
 class IGESGeom_ToolSurfaceOfRevolution {
 	public:
 		%feature("autodoc", "1");
-		~IGESGeom_ToolSurfaceOfRevolution();
-		%feature("autodoc", "1");
 		IGESGeom_ToolSurfaceOfRevolution();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGeom_SurfaceOfRevolution &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2631,8 +2587,6 @@ class IGESGeom_ToolSurfaceOfRevolution {
 %nodefaultctor IGESGeom_ToolBoundary;
 class IGESGeom_ToolBoundary {
 	public:
-		%feature("autodoc", "1");
-		~IGESGeom_ToolBoundary();
 		%feature("autodoc", "1");
 		IGESGeom_ToolBoundary();
 		%feature("autodoc", "1");

@@ -192,8 +192,6 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepTopAdaptor_MapOfShapeTool();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepTopAdaptor_Tool &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -253,8 +251,6 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool();
-		%feature("autodoc", "1");
 		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool();
 		%feature("autodoc", "1");
 		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool(const BRepTopAdaptor_MapOfShapeTool &aMap);
@@ -283,8 +279,6 @@ class BRepTopAdaptor_FClass2d {
 		TopAbs_State Perform(const gp_Pnt2d &Puv, const Standard_Boolean RecadreOnPeriodic=1) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BRepTopAdaptor_FClass2d();
 		%feature("autodoc", "1");
 		const BRepTopAdaptor_FClass2d & Copy(const BRepTopAdaptor_FClass2d &Other) const;
 		%feature("autodoc", "1");
@@ -380,8 +374,6 @@ class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 		BRepTopAdaptor_SeqOfPtr();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepTopAdaptor_SeqOfPtr();
 		%feature("autodoc", "1");
 		const BRepTopAdaptor_SeqOfPtr & Assign(const BRepTopAdaptor_SeqOfPtr &Other);
 		%feature("autodoc", "1");

@@ -439,8 +439,6 @@ class TDocStd_Owner : public TDF_Attribute {
 class TDocStd_PathParser {
 	public:
 		%feature("autodoc", "1");
-		~TDocStd_PathParser();
-		%feature("autodoc", "1");
 		TDocStd_PathParser(const TCollection_ExtendedString &path);
 		%feature("autodoc", "1");
 		void Parse();
@@ -547,8 +545,6 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 %nodefaultctor TDocStd_DataMapIteratorOfLabelIDMapDataMap;
 class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDocStd_DataMapIteratorOfLabelIDMapDataMap();
 		%feature("autodoc", "1");
 		TDocStd_DataMapIteratorOfLabelIDMapDataMap();
 		%feature("autodoc", "1");
@@ -763,8 +759,6 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDocStd_LabelIDMapDataMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const TDF_IDMap &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TDF_Label &K) const;
@@ -790,8 +784,6 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 class TDocStd_XLinkIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDocStd_XLinkIterator();
-		%feature("autodoc", "1");
 		TDocStd_XLinkIterator();
 		%feature("autodoc", "1");
 		TDocStd_XLinkIterator(const Handle_TDocStd_Document &D);
@@ -814,8 +806,6 @@ class TDocStd_XLinkIterator {
 %nodefaultctor TDocStd;
 class TDocStd {
 	public:
-		%feature("autodoc", "1");
-		~TDocStd();
 		%feature("autodoc", "1");
 		TDocStd();
 		%feature("autodoc", "1");
@@ -1156,8 +1146,6 @@ class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
 %nodefaultctor TDocStd_Context;
 class TDocStd_Context {
 	public:
-		%feature("autodoc", "1");
-		~TDocStd_Context();
 		%feature("autodoc", "1");
 		TDocStd_Context();
 		%feature("autodoc", "1");

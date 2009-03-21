@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepDimTol_RWDatumFeature {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWDatumFeature();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWDatumFeature();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumFeature &ent) const;
@@ -108,8 +106,6 @@ class RWStepDimTol_RWDatumFeature {
 %nodefaultctor RWStepDimTol_RWPlacedDatumTargetFeature;
 class RWStepDimTol_RWPlacedDatumTargetFeature {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWPlacedDatumTargetFeature();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWPlacedDatumTargetFeature();
 		%feature("autodoc", "1");
@@ -130,8 +126,6 @@ class RWStepDimTol_RWPlacedDatumTargetFeature {
 class RWStepDimTol_RWRoundnessTolerance {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWRoundnessTolerance();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWRoundnessTolerance();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_RoundnessTolerance &ent) const;
@@ -150,8 +144,6 @@ class RWStepDimTol_RWRoundnessTolerance {
 %nodefaultctor RWStepDimTol_RWAngularityTolerance;
 class RWStepDimTol_RWAngularityTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWAngularityTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWAngularityTolerance();
 		%feature("autodoc", "1");
@@ -172,8 +164,6 @@ class RWStepDimTol_RWAngularityTolerance {
 class RWStepDimTol_RWCommonDatum {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWCommonDatum();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWCommonDatum();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_CommonDatum &ent) const;
@@ -192,8 +182,6 @@ class RWStepDimTol_RWCommonDatum {
 %nodefaultctor RWStepDimTol_RWGeometricTolerance;
 class RWStepDimTol_RWGeometricTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWGeometricTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeometricTolerance();
 		%feature("autodoc", "1");
@@ -214,8 +202,6 @@ class RWStepDimTol_RWGeometricTolerance {
 class RWStepDimTol_RWPerpendicularityTolerance {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWPerpendicularityTolerance();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWPerpendicularityTolerance();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PerpendicularityTolerance &ent) const;
@@ -234,8 +220,6 @@ class RWStepDimTol_RWPerpendicularityTolerance {
 %nodefaultctor RWStepDimTol_RWSymmetryTolerance;
 class RWStepDimTol_RWSymmetryTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWSymmetryTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWSymmetryTolerance();
 		%feature("autodoc", "1");
@@ -256,8 +240,6 @@ class RWStepDimTol_RWSymmetryTolerance {
 class RWStepDimTol_RWDatumReference {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWDatumReference();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWDatumReference();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumReference &ent) const;
@@ -276,8 +258,6 @@ class RWStepDimTol_RWDatumReference {
 %nodefaultctor RWStepDimTol_RWCircularRunoutTolerance;
 class RWStepDimTol_RWCircularRunoutTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWCircularRunoutTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWCircularRunoutTolerance();
 		%feature("autodoc", "1");
@@ -298,8 +278,6 @@ class RWStepDimTol_RWCircularRunoutTolerance {
 class RWStepDimTol_RWParallelismTolerance {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWParallelismTolerance();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWParallelismTolerance();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_ParallelismTolerance &ent) const;
@@ -318,8 +296,6 @@ class RWStepDimTol_RWParallelismTolerance {
 %nodefaultctor RWStepDimTol_RWPositionTolerance;
 class RWStepDimTol_RWPositionTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWPositionTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWPositionTolerance();
 		%feature("autodoc", "1");
@@ -340,8 +316,6 @@ class RWStepDimTol_RWPositionTolerance {
 class RWStepDimTol_RWSurfaceProfileTolerance {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWSurfaceProfileTolerance();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWSurfaceProfileTolerance();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
@@ -360,8 +334,6 @@ class RWStepDimTol_RWSurfaceProfileTolerance {
 %nodefaultctor RWStepDimTol_RWLineProfileTolerance;
 class RWStepDimTol_RWLineProfileTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWLineProfileTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWLineProfileTolerance();
 		%feature("autodoc", "1");
@@ -382,8 +354,6 @@ class RWStepDimTol_RWLineProfileTolerance {
 class RWStepDimTol_RWDatumTarget {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWDatumTarget();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWDatumTarget();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumTarget &ent) const;
@@ -402,8 +372,6 @@ class RWStepDimTol_RWDatumTarget {
 %nodefaultctor RWStepDimTol_RWFlatnessTolerance;
 class RWStepDimTol_RWFlatnessTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWFlatnessTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWFlatnessTolerance();
 		%feature("autodoc", "1");
@@ -424,8 +392,6 @@ class RWStepDimTol_RWFlatnessTolerance {
 class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol &ent) const;
@@ -444,8 +410,6 @@ class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 %nodefaultctor RWStepDimTol_RWStraightnessTolerance;
 class RWStepDimTol_RWStraightnessTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWStraightnessTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWStraightnessTolerance();
 		%feature("autodoc", "1");
@@ -466,8 +430,6 @@ class RWStepDimTol_RWStraightnessTolerance {
 class RWStepDimTol_RWCylindricityTolerance {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWCylindricityTolerance();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWCylindricityTolerance();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_CylindricityTolerance &ent) const;
@@ -486,8 +448,6 @@ class RWStepDimTol_RWCylindricityTolerance {
 %nodefaultctor RWStepDimTol_RWGeometricToleranceRelationship;
 class RWStepDimTol_RWGeometricToleranceRelationship {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWGeometricToleranceRelationship();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeometricToleranceRelationship();
 		%feature("autodoc", "1");
@@ -508,8 +468,6 @@ class RWStepDimTol_RWGeometricToleranceRelationship {
 class RWStepDimTol_RWCoaxialityTolerance {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWCoaxialityTolerance();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWCoaxialityTolerance();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_CoaxialityTolerance &ent) const;
@@ -528,8 +486,6 @@ class RWStepDimTol_RWCoaxialityTolerance {
 %nodefaultctor RWStepDimTol_RWTotalRunoutTolerance;
 class RWStepDimTol_RWTotalRunoutTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWTotalRunoutTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWTotalRunoutTolerance();
 		%feature("autodoc", "1");
@@ -550,8 +506,6 @@ class RWStepDimTol_RWTotalRunoutTolerance {
 class RWStepDimTol_RWModifiedGeometricTolerance {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWModifiedGeometricTolerance();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWModifiedGeometricTolerance();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_ModifiedGeometricTolerance &ent) const;
@@ -570,8 +524,6 @@ class RWStepDimTol_RWModifiedGeometricTolerance {
 %nodefaultctor RWStepDimTol_RWConcentricityTolerance;
 class RWStepDimTol_RWConcentricityTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWConcentricityTolerance();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWConcentricityTolerance();
 		%feature("autodoc", "1");
@@ -592,8 +544,6 @@ class RWStepDimTol_RWConcentricityTolerance {
 class RWStepDimTol_RWDatum {
 	public:
 		%feature("autodoc", "1");
-		~RWStepDimTol_RWDatum();
-		%feature("autodoc", "1");
 		RWStepDimTol_RWDatum();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_Datum &ent) const;
@@ -612,8 +562,6 @@ class RWStepDimTol_RWDatum {
 %nodefaultctor RWStepDimTol_RWGeometricToleranceWithDatumReference;
 class RWStepDimTol_RWGeometricToleranceWithDatumReference {
 	public:
-		%feature("autodoc", "1");
-		~RWStepDimTol_RWGeometricToleranceWithDatumReference();
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeometricToleranceWithDatumReference();
 		%feature("autodoc", "1");

@@ -136,8 +136,6 @@ class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
 class XmlMPrsStd {
 	public:
 		%feature("autodoc", "1");
-		~XmlMPrsStd();
-		%feature("autodoc", "1");
 		XmlMPrsStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);

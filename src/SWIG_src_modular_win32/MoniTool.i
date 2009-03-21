@@ -574,8 +574,6 @@ class MoniTool_HSequenceOfElement : public MMgt_TShared {
 class MoniTool_ElemHasher {
 	public:
 		%feature("autodoc", "1");
-		~MoniTool_ElemHasher();
-		%feature("autodoc", "1");
 		MoniTool_ElemHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_MoniTool_Element &K, const Standard_Integer Upper);
@@ -1047,8 +1045,6 @@ class MoniTool_DataInfo {
 class MoniTool_MTHasher {
 	public:
 		%feature("autodoc", "1");
-		~MoniTool_MTHasher();
-		%feature("autodoc", "1");
 		MoniTool_MTHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const char * Str, const Standard_Integer Upper);
@@ -1304,8 +1300,6 @@ class MoniTool_OptValue {
 %nodefaultctor MoniTool_Stat;
 class MoniTool_Stat {
 	public:
-		%feature("autodoc", "1");
-		~MoniTool_Stat();
 		%feature("autodoc", "1");
 		MoniTool_Stat(const char * title="");
 		%feature("autodoc", "1");

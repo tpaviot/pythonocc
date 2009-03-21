@@ -637,8 +637,6 @@ class ChFiDS_SecArray1 {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~ChFiDS_SecArray1();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const ChFiDS_SecArray1 & Assign(const ChFiDS_SecArray1 &Other);
@@ -807,8 +805,6 @@ class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
 class ChFiDS_Map {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_Map();
-		%feature("autodoc", "1");
 		ChFiDS_Map();
 		%feature("autodoc", "1");
 		void Fill(const TopoDS_Shape &S, const TopAbs_ShapeEnum T1, const TopAbs_ShapeEnum T2);
@@ -855,8 +851,6 @@ class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
 %nodefaultctor ChFiDS_CommonPoint;
 class ChFiDS_CommonPoint {
 	public:
-		%feature("autodoc", "1");
-		~ChFiDS_CommonPoint();
 		%feature("autodoc", "1");
 		ChFiDS_CommonPoint();
 		%feature("autodoc", "1");
@@ -1176,8 +1170,6 @@ class ChFiDS_SurfData : public MMgt_TShared {
 class ChFiDS_StripeMap {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_StripeMap();
-		%feature("autodoc", "1");
 		ChFiDS_StripeMap();
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Vertex &V, const Handle_ChFiDS_Stripe &F);
@@ -1292,8 +1284,6 @@ class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 %nodefaultctor ChFiDS_CircSection;
 class ChFiDS_CircSection {
 	public:
-		%feature("autodoc", "1");
-		~ChFiDS_CircSection();
 		%feature("autodoc", "1");
 		ChFiDS_CircSection();
 		%feature("autodoc", "1");
@@ -1576,8 +1566,6 @@ class ChFiDS_ListOfHElSpine {
 class ChFiDS_Regul {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_Regul();
-		%feature("autodoc", "1");
 		ChFiDS_Regul();
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Integer IC);
@@ -1757,8 +1745,6 @@ class ChFiDS_Stripe : public MMgt_TShared {
 class ChFiDS_ListIteratorOfRegularities {
 	public:
 		%feature("autodoc", "1");
-		~ChFiDS_ListIteratorOfRegularities();
-		%feature("autodoc", "1");
 		ChFiDS_ListIteratorOfRegularities();
 		%feature("autodoc", "1");
 		ChFiDS_ListIteratorOfRegularities(const ChFiDS_Regularities &L);
@@ -1812,8 +1798,6 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ChFiDS_IndexedDataMapOfVertexListOfStripe();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &T);
@@ -1856,8 +1840,6 @@ class ChFiDS_Regularities {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~ChFiDS_Regularities();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");

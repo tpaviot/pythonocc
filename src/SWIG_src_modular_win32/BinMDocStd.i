@@ -112,8 +112,6 @@ class Handle_BinMDocStd_XLinkDriver : public Handle_BinMDF_ADriver {
 class BinMDocStd {
 	public:
 		%feature("autodoc", "1");
-		~BinMDocStd();
-		%feature("autodoc", "1");
 		BinMDocStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);

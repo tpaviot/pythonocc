@@ -120,8 +120,6 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 class GccEnt {
 	public:
 		%feature("autodoc", "1");
-		~GccEnt();
-		%feature("autodoc", "1");
 		GccEnt();
 		%feature("autodoc", "1");
 		GccEnt_QualifiedLin Unqualified(const gp_Lin2d &Obj);
@@ -148,8 +146,6 @@ class GccEnt {
 %nodefaultctor GccEnt_QualifiedLin;
 class GccEnt_QualifiedLin {
 	public:
-		%feature("autodoc", "1");
-		~GccEnt_QualifiedLin();
 		%feature("autodoc", "1");
 		GccEnt_QualifiedLin(const gp_Lin2d &Qualified, const GccEnt_Position Qualifier);
 		%feature("autodoc", "1");
@@ -189,8 +185,6 @@ class GccEnt_Array1OfPosition {
 		void Init(const GccEnt_Position &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~GccEnt_Array1OfPosition();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -250,8 +244,6 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 %nodefaultctor GccEnt_QualifiedCirc;
 class GccEnt_QualifiedCirc {
 	public:
-		%feature("autodoc", "1");
-		~GccEnt_QualifiedCirc();
 		%feature("autodoc", "1");
 		GccEnt_QualifiedCirc(const gp_Circ2d &Qualified, const GccEnt_Position Qualifier);
 		%feature("autodoc", "1");

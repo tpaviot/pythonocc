@@ -353,8 +353,6 @@ class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Contap_TheSequenceOfPointOfContour();
-		%feature("autodoc", "1");
 		const Contap_TheSequenceOfPointOfContour & Assign(const Contap_TheSequenceOfPointOfContour &Other);
 		%feature("autodoc", "1");
 		void Append(const Contap_ThePointOfContour &T);
@@ -499,8 +497,6 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Contap_SequenceOfSegmentOfTheSearchOfContour();
-		%feature("autodoc", "1");
 		const Contap_SequenceOfSegmentOfTheSearchOfContour & Assign(const Contap_SequenceOfSegmentOfTheSearchOfContour &Other);
 		%feature("autodoc", "1");
 		void Append(const Contap_TheSegmentOfTheSearchOfContour &T);
@@ -577,8 +573,6 @@ class Contap_TheSegmentOfTheSearchOfContour {
 class Contap_TheSearchOfContour {
 	public:
 		%feature("autodoc", "1");
-		~Contap_TheSearchOfContour();
-		%feature("autodoc", "1");
 		Contap_TheSearchOfContour();
 		%feature("autodoc", "1");
 		void Perform(Contap_TheArcFunctionOfContour & F, const Handle_Adaptor3d_TopolTool &Domain, const Standard_Real TolBoundary, const Standard_Real TolTangency);
@@ -605,8 +599,6 @@ class Contap_TheSearchOfContour {
 %nodefaultctor Contap_TheSurfPropsOfContour;
 class Contap_TheSurfPropsOfContour {
 	public:
-		%feature("autodoc", "1");
-		~Contap_TheSurfPropsOfContour();
 		%feature("autodoc", "1");
 		Contap_TheSurfPropsOfContour();
 		%feature("autodoc", "1");
@@ -690,8 +682,6 @@ class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
 %nodefaultctor Contap_Contour;
 class Contap_Contour {
 	public:
-		%feature("autodoc", "1");
-		~Contap_Contour();
 		%feature("autodoc", "1");
 		Contap_Contour();
 		%feature("autodoc", "1");
@@ -796,8 +786,6 @@ class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSe
 		Contap_SequenceOfPathPointOfTheSearchOfContour();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Contap_SequenceOfPathPointOfTheSearchOfContour();
 		%feature("autodoc", "1");
 		const Contap_SequenceOfPathPointOfTheSearchOfContour & Assign(const Contap_SequenceOfPathPointOfTheSearchOfContour &Other);
 		%feature("autodoc", "1");
@@ -966,8 +954,6 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 class Contap_ContAna {
 	public:
 		%feature("autodoc", "1");
-		~Contap_ContAna();
-		%feature("autodoc", "1");
 		Contap_ContAna();
 		%feature("autodoc", "1");
 		void Perform(const gp_Sphere &S, const gp_Dir &D);
@@ -1008,8 +994,6 @@ class Contap_ContAna {
 %nodefaultctor Contap_HContTool;
 class Contap_HContTool {
 	public:
-		%feature("autodoc", "1");
-		~Contap_HContTool();
 		%feature("autodoc", "1");
 		Contap_HContTool();
 		%feature("autodoc", "1");
@@ -1146,8 +1130,6 @@ class Contap_ThePathPointOfTheSearchOfContour {
 class Contap_TheSearchInsideOfContour {
 	public:
 		%feature("autodoc", "1");
-		~Contap_TheSearchInsideOfContour();
-		%feature("autodoc", "1");
 		Contap_TheSearchInsideOfContour();
 		%feature("autodoc", "1");
 		Contap_TheSearchInsideOfContour(Contap_TheSurfFunctionOfContour & F, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &T, const Standard_Real Epsilon);
@@ -1176,8 +1158,6 @@ class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
 		Contap_TheSequenceOfLineOfContour();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Contap_TheSequenceOfLineOfContour();
 		%feature("autodoc", "1");
 		const Contap_TheSequenceOfLineOfContour & Assign(const Contap_TheSequenceOfLineOfContour &Other);
 		%feature("autodoc", "1");
@@ -1350,8 +1330,6 @@ class Contap_TheArcFunctionOfContour : public math_FunctionWithDerivative {
 		const gp_Pnt & Valpoint(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const IntSurf_Quadric & Quadric() const;
-		%feature("autodoc", "1");
-		virtual		~Contap_TheArcFunctionOfContour();
 
 };
 %extend Contap_TheArcFunctionOfContour {

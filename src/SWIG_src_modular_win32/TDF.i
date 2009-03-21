@@ -965,8 +965,6 @@ class TDF_AttributeDoubleMap : public TCollection_BasicMap {
 class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_DataMapIteratorOfLabelDataMap();
-		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelDataMap();
 		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelDataMap(const TDF_LabelDataMap &aMap);
@@ -987,8 +985,6 @@ class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 %nodefaultctor TDF_ComparisonTool;
 class TDF_ComparisonTool {
 	public:
-		%feature("autodoc", "1");
-		~TDF_ComparisonTool();
 		%feature("autodoc", "1");
 		TDF_ComparisonTool();
 		%feature("autodoc", "1");
@@ -1013,8 +1009,6 @@ class TDF_ComparisonTool {
 class TDF_ListIteratorOfIDList {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ListIteratorOfIDList();
-		%feature("autodoc", "1");
 		TDF_ListIteratorOfIDList();
 		%feature("autodoc", "1");
 		TDF_ListIteratorOfIDList(const TDF_IDList &L);
@@ -1037,8 +1031,6 @@ class TDF_ListIteratorOfIDList {
 %nodefaultctor TDF_ClosureTool;
 class TDF_ClosureTool {
 	public:
-		%feature("autodoc", "1");
-		~TDF_ClosureTool();
 		%feature("autodoc", "1");
 		TDF_ClosureTool();
 		%feature("autodoc", "1");
@@ -1149,8 +1141,6 @@ class TDF_Attribute : public MMgt_TShared {
 class TDF_LabelMapHasher {
 	public:
 		%feature("autodoc", "1");
-		~TDF_LabelMapHasher();
-		%feature("autodoc", "1");
 		TDF_LabelMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TDF_Label &aLab, const Standard_Integer Upper);
@@ -1223,8 +1213,6 @@ class TDF_LabelDataMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelDataMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const TDF_Label &I);
 		%feature("autodoc", "1");
@@ -1458,8 +1446,6 @@ class TDF_LabelDoubleMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_LabelDoubleMap();
-		%feature("autodoc", "1");
 		void Bind(const TDF_Label &K1, const TDF_Label &K2);
 		%feature("autodoc", "1");
 		Standard_Boolean AreBound(const TDF_Label &K1, const TDF_Label &K2) const;
@@ -1623,8 +1609,6 @@ class TDF_SequenceNodeOfAttributeSequence : public TCollection_SeqNode {
 class TDF_ChildIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ChildIterator();
-		%feature("autodoc", "1");
 		TDF_ChildIterator();
 		%feature("autodoc", "1");
 		TDF_ChildIterator(const TDF_Label &aLabel, const Standard_Boolean allLevels=0);
@@ -1713,8 +1697,6 @@ class TDF_DeltaOnForget : public TDF_AttributeDelta {
 %nodefaultctor TDF_DoubleMapIteratorOfLabelDoubleMap;
 class TDF_DoubleMapIteratorOfLabelDoubleMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDF_DoubleMapIteratorOfLabelDoubleMap();
 		%feature("autodoc", "1");
 		TDF_DoubleMapIteratorOfLabelDoubleMap();
 		%feature("autodoc", "1");
@@ -1897,8 +1879,6 @@ class TDF_DeltaOnModification : public TDF_AttributeDelta {
 class TDF_ListIteratorOfLabelList {
 	public:
 		%feature("autodoc", "1");
-		~TDF_ListIteratorOfLabelList();
-		%feature("autodoc", "1");
 		TDF_ListIteratorOfLabelList();
 		%feature("autodoc", "1");
 		TDF_ListIteratorOfLabelList(const TDF_LabelList &L);
@@ -1976,8 +1956,6 @@ class TDF_RelocationTable : public MMgt_TShared {
 class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_DoubleMapIteratorOfGUIDProgIDMap();
-		%feature("autodoc", "1");
 		TDF_DoubleMapIteratorOfGUIDProgIDMap();
 		%feature("autodoc", "1");
 		TDF_DoubleMapIteratorOfGUIDProgIDMap(const TDF_GUIDProgIDMap &aMap);
@@ -2006,8 +1984,6 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelLabelMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const TDF_Label &I);
 		%feature("autodoc", "1");
@@ -2041,8 +2017,6 @@ class TDF_LabelMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const TDF_Label &aKey);
 		%feature("autodoc", "1");
@@ -2162,8 +2136,6 @@ class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
 class TDF_DataMapIteratorOfLabelLabelMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_DataMapIteratorOfLabelLabelMap();
-		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelLabelMap();
 		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelLabelMap(const TDF_LabelLabelMap &aMap);
@@ -2192,8 +2164,6 @@ class TDF_IDList {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_IDList();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -2362,8 +2332,6 @@ class TDF_LabelSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_LabelSequence();
-		%feature("autodoc", "1");
 		const TDF_LabelSequence & Assign(const TDF_LabelSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const TDF_Label &T);
@@ -2447,8 +2415,6 @@ class TDF_LabelList {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_LabelList();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TDF_Label &I);
@@ -2489,8 +2455,6 @@ class TDF_LabelList {
 %nodefaultctor TDF_IDFilter;
 class TDF_IDFilter {
 	public:
-		%feature("autodoc", "1");
-		~TDF_IDFilter();
 		%feature("autodoc", "1");
 		TDF_IDFilter(const Standard_Boolean ignoreMode=1);
 		%feature("autodoc", "1");
@@ -2605,8 +2569,6 @@ class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
 %nodefaultctor TDF_CopyTool;
 class TDF_CopyTool {
 	public:
-		%feature("autodoc", "1");
-		~TDF_CopyTool();
 		%feature("autodoc", "1");
 		TDF_CopyTool();
 		%feature("autodoc", "1");
@@ -2830,8 +2792,6 @@ class TDF_IDMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_IDMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const Standard_GUID &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Standard_GUID &aKey) const;
@@ -2911,8 +2871,6 @@ class TDF_AttributeIndexedMap : public TCollection_BasicMap {
 class TDF {
 	public:
 		%feature("autodoc", "1");
-		~TDF();
-		%feature("autodoc", "1");
 		TDF();
 		%feature("autodoc", "1");
 		const Standard_GUID & LowestID();
@@ -2984,8 +2942,6 @@ class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
 class TDF_AttributeIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_AttributeIterator();
-		%feature("autodoc", "1");
 		TDF_AttributeIterator();
 		%feature("autodoc", "1");
 		TDF_AttributeIterator(const TDF_Label &aLabel, const Standard_Boolean withoutForgotten=1);
@@ -3037,8 +2993,6 @@ class TDF_AttributeMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_AttributeMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_TDF_Attribute &aKey);
 		%feature("autodoc", "1");
@@ -3097,8 +3051,6 @@ class TDF_HAttributeArray1 : public MMgt_TShared {
 class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_MapIteratorOfLabelMap();
-		%feature("autodoc", "1");
 		TDF_MapIteratorOfLabelMap();
 		%feature("autodoc", "1");
 		TDF_MapIteratorOfLabelMap(const TDF_LabelMap &aMap);
@@ -3139,8 +3091,6 @@ class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
 %nodefaultctor TDF_MapIteratorOfIDMap;
 class TDF_MapIteratorOfIDMap : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDF_MapIteratorOfIDMap();
 		%feature("autodoc", "1");
 		TDF_MapIteratorOfIDMap();
 		%feature("autodoc", "1");
@@ -3190,8 +3140,6 @@ class TDF_LabelIndexedMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelIndexedMap();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TDF_Label &K);
 		%feature("autodoc", "1");
@@ -3282,8 +3230,6 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 class TDF_Tool {
 	public:
 		%feature("autodoc", "1");
-		~TDF_Tool();
-		%feature("autodoc", "1");
 		TDF_Tool();
 		%feature("autodoc", "1");
 		Standard_Integer NbLabels(const TDF_Label &aLabel);
@@ -3341,8 +3287,6 @@ class TDF_Tool {
 class TDF_DataMapIteratorOfLabelIntegerMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDF_DataMapIteratorOfLabelIntegerMap();
-		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelIntegerMap();
 		%feature("autodoc", "1");
 		TDF_DataMapIteratorOfLabelIntegerMap(const TDF_LabelIntegerMap &aMap);
@@ -3372,8 +3316,6 @@ class TDF_GUIDProgIDMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDF_GUIDProgIDMap();
-		%feature("autodoc", "1");
 		void Bind(const Standard_GUID &K1, const TCollection_ExtendedString &K2);
 		%feature("autodoc", "1");
 		Standard_Boolean AreBound(const Standard_GUID &K1, const TCollection_ExtendedString &K2) const;
@@ -3400,8 +3342,6 @@ class TDF_GUIDProgIDMap : public TCollection_BasicMap {
 %nodefaultctor TDF_ClosureMode;
 class TDF_ClosureMode {
 	public:
-		%feature("autodoc", "1");
-		~TDF_ClosureMode();
 		%feature("autodoc", "1");
 		TDF_ClosureMode(const Standard_Boolean aMode=1);
 		%feature("autodoc", "1");
@@ -3454,8 +3394,6 @@ class TDF_LabelIntegerMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDF_LabelIntegerMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const Standard_Integer &I);
 		%feature("autodoc", "1");

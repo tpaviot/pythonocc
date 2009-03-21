@@ -400,8 +400,6 @@ class Blend_SequenceOfPoint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Blend_SequenceOfPoint();
-		%feature("autodoc", "1");
 		const Blend_SequenceOfPoint & Assign(const Blend_SequenceOfPoint &Other);
 		%feature("autodoc", "1");
 		void Append(const Blend_Point &T);
@@ -653,8 +651,6 @@ class Blend_SurfRstFunction : public Blend_AppFunction {
 %nodefaultctor Blend_Point;
 class Blend_Point {
 	public:
-		%feature("autodoc", "1");
-		~Blend_Point();
 		%feature("autodoc", "1");
 		Blend_Point();
 		%feature("autodoc", "1");

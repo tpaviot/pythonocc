@@ -290,8 +290,6 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 class V2d {
 	public:
 		%feature("autodoc", "1");
-		~V2d();
-		%feature("autodoc", "1");
 		V2d();
 		%feature("autodoc", "1");
 		void Draw(const Handle_V2d_Viewer &aViewer);

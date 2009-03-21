@@ -279,8 +279,6 @@ class Approx_CurvilinearParameter {
 class Approx_MyLeastSquareOfFitAndDivide {
 	public:
 		%feature("autodoc", "1");
-		~Approx_MyLeastSquareOfFitAndDivide();
-		%feature("autodoc", "1");
 		Approx_MyLeastSquareOfFitAndDivide(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -421,8 +419,6 @@ class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode 
 class Approx_MCurvesToBSpCurve {
 	public:
 		%feature("autodoc", "1");
-		~Approx_MCurvesToBSpCurve();
-		%feature("autodoc", "1");
 		Approx_MCurvesToBSpCurve();
 		%feature("autodoc", "1");
 		void Reset();
@@ -455,8 +451,6 @@ class Approx_Array1OfGTrsf2d {
 		void Init(const gp_GTrsf2d &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Approx_Array1OfGTrsf2d();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -581,8 +575,6 @@ class Approx_SweepFunction : public MMgt_TShared {
 class Approx_FitAndDivide {
 	public:
 		%feature("autodoc", "1");
-		~Approx_FitAndDivide();
-		%feature("autodoc", "1");
 		Approx_FitAndDivide(const AppCont_Function &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
 		Approx_FitAndDivide(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
@@ -704,8 +696,6 @@ class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode 
 %nodefaultctor Approx_FitAndDivide2d;
 class Approx_FitAndDivide2d {
 	public:
-		%feature("autodoc", "1");
-		~Approx_FitAndDivide2d();
 		%feature("autodoc", "1");
 		Approx_FitAndDivide2d(const AppCont_Function2d &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
@@ -860,8 +850,6 @@ class Approx_Array1OfAdHSurface {
 class Approx_MyLeastSquareOfFitAndDivide2d {
 	public:
 		%feature("autodoc", "1");
-		~Approx_MyLeastSquareOfFitAndDivide2d();
-		%feature("autodoc", "1");
 		Approx_MyLeastSquareOfFitAndDivide2d(const AppCont_Function2d &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -933,8 +921,6 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 %nodefaultctor Approx_SweepApproximation;
 class Approx_SweepApproximation {
 	public:
-		%feature("autodoc", "1");
-		~Approx_SweepApproximation();
 		%feature("autodoc", "1");
 		Approx_SweepApproximation(const Handle_Approx_SweepFunction &Func);
 		%feature("autodoc", "1");

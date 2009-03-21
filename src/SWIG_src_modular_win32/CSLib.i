@@ -110,8 +110,6 @@ enum CSLib_NormalStatus {
 class CSLib {
 	public:
 		%feature("autodoc", "1");
-		~CSLib();
-		%feature("autodoc", "1");
 		CSLib();
 		%feature("autodoc", "1");
 		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const Standard_Real SinTol, CSLib_DerivativeStatus & Status, gp_Dir & Normal);
@@ -152,8 +150,6 @@ class CSLib_Class2d {
 		const CSLib_Class2d & Copy(const CSLib_Class2d &Other) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~CSLib_Class2d();
 
 };
 %extend CSLib_Class2d {
@@ -173,8 +169,6 @@ class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~CSLib_NormalPolyDef();
 
 };
 %extend CSLib_NormalPolyDef {

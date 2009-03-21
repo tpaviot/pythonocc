@@ -267,8 +267,6 @@ class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
 class IntSurf {
 	public:
 		%feature("autodoc", "1");
-		~IntSurf();
-		%feature("autodoc", "1");
 		IntSurf();
 		%feature("autodoc", "1");
 		void MakeTransition(const gp_Vec &TgFirst, const gp_Vec &TgSecond, const gp_Dir &Normal, IntSurf_Transition & TFirst, IntSurf_Transition & TSecond);
@@ -283,8 +281,6 @@ class IntSurf {
 %nodefaultctor IntSurf_Transition;
 class IntSurf_Transition {
 	public:
-		%feature("autodoc", "1");
-		~IntSurf_Transition();
 		%feature("autodoc", "1");
 		IntSurf_Transition();
 		%feature("autodoc", "1");
@@ -338,8 +334,6 @@ class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
 %nodefaultctor IntSurf_Quadric;
 class IntSurf_Quadric {
 	public:
-		%feature("autodoc", "1");
-		~IntSurf_Quadric();
 		%feature("autodoc", "1");
 		IntSurf_Quadric();
 		%feature("autodoc", "1");
@@ -406,8 +400,6 @@ class IntSurf_ListOfPntOn2S {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntSurf_ListOfPntOn2S();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const IntSurf_PntOn2S &I);
@@ -449,8 +441,6 @@ class IntSurf_ListOfPntOn2S {
 class IntSurf_PntOn2S {
 	public:
 		%feature("autodoc", "1");
-		~IntSurf_PntOn2S();
-		%feature("autodoc", "1");
 		IntSurf_PntOn2S();
 		%feature("autodoc", "1");
 		void SetValue(const gp_Pnt &Pt);
@@ -485,8 +475,6 @@ class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
 		IntSurf_SequenceOfPathPoint();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntSurf_SequenceOfPathPoint();
 		%feature("autodoc", "1");
 		const IntSurf_SequenceOfPathPoint & Assign(const IntSurf_SequenceOfPathPoint &Other);
 		%feature("autodoc", "1");
@@ -536,8 +524,6 @@ class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
 %nodefaultctor IntSurf_PathPoint;
 class IntSurf_PathPoint {
 	public:
-		%feature("autodoc", "1");
-		~IntSurf_PathPoint();
 		%feature("autodoc", "1");
 		IntSurf_PathPoint();
 		%feature("autodoc", "1");
@@ -602,8 +588,6 @@ class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
 class IntSurf_Couple {
 	public:
 		%feature("autodoc", "1");
-		~IntSurf_Couple();
-		%feature("autodoc", "1");
 		IntSurf_Couple();
 		%feature("autodoc", "1");
 		IntSurf_Couple(const Standard_Integer Index1, const Standard_Integer Index2);
@@ -622,8 +606,6 @@ class IntSurf_Couple {
 %nodefaultctor IntSurf_PathPointTool;
 class IntSurf_PathPointTool {
 	public:
-		%feature("autodoc", "1");
-		~IntSurf_PathPointTool();
 		%feature("autodoc", "1");
 		IntSurf_PathPointTool();
 		%feature("autodoc", "1");
@@ -675,8 +657,6 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 %nodefaultctor IntSurf_InteriorPoint;
 class IntSurf_InteriorPoint {
 	public:
-		%feature("autodoc", "1");
-		~IntSurf_InteriorPoint();
 		%feature("autodoc", "1");
 		IntSurf_InteriorPoint();
 		%feature("autodoc", "1");
@@ -733,8 +713,6 @@ class IntSurf_SequenceOfCouple : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntSurf_SequenceOfCouple();
-		%feature("autodoc", "1");
 		const IntSurf_SequenceOfCouple & Assign(const IntSurf_SequenceOfCouple &Other);
 		%feature("autodoc", "1");
 		void Append(const IntSurf_Couple &T);
@@ -787,8 +765,6 @@ class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
 		IntSurf_SequenceOfPntOn2S();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntSurf_SequenceOfPntOn2S();
 		%feature("autodoc", "1");
 		const IntSurf_SequenceOfPntOn2S & Assign(const IntSurf_SequenceOfPntOn2S &Other);
 		%feature("autodoc", "1");
@@ -879,8 +855,6 @@ class IntSurf_LineOn2S : public MMgt_TShared {
 class IntSurf_InteriorPointTool {
 	public:
 		%feature("autodoc", "1");
-		~IntSurf_InteriorPointTool();
-		%feature("autodoc", "1");
 		IntSurf_InteriorPointTool();
 		%feature("autodoc", "1");
 		gp_Pnt Value3d(const IntSurf_InteriorPoint &PStart);
@@ -901,8 +875,6 @@ class IntSurf_InteriorPointTool {
 %nodefaultctor IntSurf_ListIteratorOfListOfPntOn2S;
 class IntSurf_ListIteratorOfListOfPntOn2S {
 	public:
-		%feature("autodoc", "1");
-		~IntSurf_ListIteratorOfListOfPntOn2S();
 		%feature("autodoc", "1");
 		IntSurf_ListIteratorOfListOfPntOn2S();
 		%feature("autodoc", "1");
@@ -926,8 +898,6 @@ class IntSurf_ListIteratorOfListOfPntOn2S {
 %nodefaultctor IntSurf_QuadricTool;
 class IntSurf_QuadricTool {
 	public:
-		%feature("autodoc", "1");
-		~IntSurf_QuadricTool();
 		%feature("autodoc", "1");
 		IntSurf_QuadricTool();
 		%feature("autodoc", "1");
@@ -953,8 +923,6 @@ class IntSurf_SequenceOfInteriorPoint : public TCollection_BaseSequence {
 		IntSurf_SequenceOfInteriorPoint();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntSurf_SequenceOfInteriorPoint();
 		%feature("autodoc", "1");
 		const IntSurf_SequenceOfInteriorPoint & Assign(const IntSurf_SequenceOfInteriorPoint &Other);
 		%feature("autodoc", "1");

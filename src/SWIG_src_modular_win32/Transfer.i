@@ -872,8 +872,6 @@ class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 class Transfer_TransferInput {
 	public:
 		%feature("autodoc", "1");
-		~Transfer_TransferInput();
-		%feature("autodoc", "1");
 		Transfer_TransferInput();
 		%feature("autodoc", "1");
 		Interface_EntityIterator Entities(Transfer_TransferIterator & list) const;
@@ -1490,8 +1488,6 @@ class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 %nodefaultctor Transfer_FindHasher;
 class Transfer_FindHasher {
 	public:
-		%feature("autodoc", "1");
-		~Transfer_FindHasher();
 		%feature("autodoc", "1");
 		Transfer_FindHasher();
 		%feature("autodoc", "1");

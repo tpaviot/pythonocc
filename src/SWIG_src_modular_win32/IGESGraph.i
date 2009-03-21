@@ -648,8 +648,6 @@ class IGESGraph_Pick : public IGESData_IGESEntity {
 class IGESGraph_ToolDrawingUnits {
 	public:
 		%feature("autodoc", "1");
-		~IGESGraph_ToolDrawingUnits();
-		%feature("autodoc", "1");
 		IGESGraph_ToolDrawingUnits();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGraph_DrawingUnits &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -786,8 +784,6 @@ class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
 class IGESGraph_ToolUniformRectGrid {
 	public:
 		%feature("autodoc", "1");
-		~IGESGraph_ToolUniformRectGrid();
-		%feature("autodoc", "1");
 		IGESGraph_ToolUniformRectGrid();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGraph_UniformRectGrid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -817,8 +813,6 @@ class IGESGraph_ToolUniformRectGrid {
 class IGESGraph_ToolIntercharacterSpacing {
 	public:
 		%feature("autodoc", "1");
-		~IGESGraph_ToolIntercharacterSpacing();
-		%feature("autodoc", "1");
 		IGESGraph_ToolIntercharacterSpacing();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGraph_IntercharacterSpacing &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -847,8 +841,6 @@ class IGESGraph_ToolIntercharacterSpacing {
 %nodefaultctor IGESGraph_ToolNominalSize;
 class IGESGraph_ToolNominalSize {
 	public:
-		%feature("autodoc", "1");
-		~IGESGraph_ToolNominalSize();
 		%feature("autodoc", "1");
 		IGESGraph_ToolNominalSize();
 		%feature("autodoc", "1");
@@ -919,8 +911,6 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 class IGESGraph_ToolDrawingSize {
 	public:
 		%feature("autodoc", "1");
-		~IGESGraph_ToolDrawingSize();
-		%feature("autodoc", "1");
 		IGESGraph_ToolDrawingSize();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGraph_DrawingSize &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -975,8 +965,6 @@ class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
 %nodefaultctor IGESGraph_ToolTextFontDef;
 class IGESGraph_ToolTextFontDef {
 	public:
-		%feature("autodoc", "1");
-		~IGESGraph_ToolTextFontDef();
 		%feature("autodoc", "1");
 		IGESGraph_ToolTextFontDef();
 		%feature("autodoc", "1");
@@ -1052,8 +1040,6 @@ class IGESGraph {
 class IGESGraph_ToolPick {
 	public:
 		%feature("autodoc", "1");
-		~IGESGraph_ToolPick();
-		%feature("autodoc", "1");
 		IGESGraph_ToolPick();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGraph_Pick &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1082,8 +1068,6 @@ class IGESGraph_ToolPick {
 %nodefaultctor IGESGraph_ToolColor;
 class IGESGraph_ToolColor {
 	public:
-		%feature("autodoc", "1");
-		~IGESGraph_ToolColor();
 		%feature("autodoc", "1");
 		IGESGraph_ToolColor();
 		%feature("autodoc", "1");
@@ -1144,8 +1128,6 @@ class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 class IGESGraph_ToolLineFontDefTemplate {
 	public:
 		%feature("autodoc", "1");
-		~IGESGraph_ToolLineFontDefTemplate();
-		%feature("autodoc", "1");
 		IGESGraph_ToolLineFontDefTemplate();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGraph_LineFontDefTemplate &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1204,8 +1186,6 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 %nodefaultctor IGESGraph_ToolDefinitionLevel;
 class IGESGraph_ToolDefinitionLevel {
 	public:
-		%feature("autodoc", "1");
-		~IGESGraph_ToolDefinitionLevel();
 		%feature("autodoc", "1");
 		IGESGraph_ToolDefinitionLevel();
 		%feature("autodoc", "1");
@@ -1399,8 +1379,6 @@ class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 class IGESGraph_ToolTextDisplayTemplate {
 	public:
 		%feature("autodoc", "1");
-		~IGESGraph_ToolTextDisplayTemplate();
-		%feature("autodoc", "1");
 		IGESGraph_ToolTextDisplayTemplate();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGraph_TextDisplayTemplate &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1459,8 +1437,6 @@ class IGESGraph_NominalSize : public IGESData_IGESEntity {
 %nodefaultctor IGESGraph_ToolLineFontDefPattern;
 class IGESGraph_ToolLineFontDefPattern {
 	public:
-		%feature("autodoc", "1");
-		~IGESGraph_ToolLineFontDefPattern();
 		%feature("autodoc", "1");
 		IGESGraph_ToolLineFontDefPattern();
 		%feature("autodoc", "1");
@@ -1589,8 +1565,6 @@ class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
 class IGESGraph_ToolHighLight {
 	public:
 		%feature("autodoc", "1");
-		~IGESGraph_ToolHighLight();
-		%feature("autodoc", "1");
 		IGESGraph_ToolHighLight();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESGraph_HighLight &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1619,8 +1593,6 @@ class IGESGraph_ToolHighLight {
 %nodefaultctor IGESGraph_ToolLineFontPredefined;
 class IGESGraph_ToolLineFontPredefined {
 	public:
-		%feature("autodoc", "1");
-		~IGESGraph_ToolLineFontPredefined();
 		%feature("autodoc", "1");
 		IGESGraph_ToolLineFontPredefined();
 		%feature("autodoc", "1");

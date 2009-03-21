@@ -1632,8 +1632,6 @@ class BinMDataStd_NamedDataDriver : public BinMDF_ADriver {
 class BinMDataStd {
 	public:
 		%feature("autodoc", "1");
-		~BinMDataStd();
-		%feature("autodoc", "1");
 		BinMDataStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);

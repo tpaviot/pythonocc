@@ -408,8 +408,6 @@ class HLRAlgo_Array1OfPHDat {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~HLRAlgo_Array1OfPHDat();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const HLRAlgo_Array1OfPHDat & Assign(const HLRAlgo_Array1OfPHDat &Other);
@@ -440,8 +438,6 @@ class HLRAlgo_Array1OfPHDat {
 %nodefaultctor HLRAlgo_ListIteratorOfInterferenceList;
 class HLRAlgo_ListIteratorOfInterferenceList {
 	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_ListIteratorOfInterferenceList();
 		%feature("autodoc", "1");
 		HLRAlgo_ListIteratorOfInterferenceList();
 		%feature("autodoc", "1");
@@ -569,8 +565,6 @@ class HLRAlgo_Array1OfPINod {
 class HLRAlgo_PolyHidingData {
 	public:
 		%feature("autodoc", "1");
-		~HLRAlgo_PolyHidingData();
-		%feature("autodoc", "1");
 		HLRAlgo_PolyHidingData();
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Index, const Standard_Integer Minim, const Standard_Integer Maxim, const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
@@ -589,8 +583,6 @@ class HLRAlgo_PolyHidingData {
 %nodefaultctor HLRAlgo_Projector;
 class HLRAlgo_Projector {
 	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_Projector();
 		%feature("autodoc", "1");
 		HLRAlgo_Projector();
 		%feature("autodoc", "1");
@@ -641,8 +633,6 @@ class HLRAlgo_Projector {
 class HLRAlgo_EdgeIterator {
 	public:
 		%feature("autodoc", "1");
-		~HLRAlgo_EdgeIterator();
-		%feature("autodoc", "1");
 		HLRAlgo_EdgeIterator();
 		%feature("autodoc", "1");
 		void InitHidden(const HLRAlgo_EdgeStatus &status);
@@ -671,8 +661,6 @@ class HLRAlgo_EdgeIterator {
 %nodefaultctor HLRAlgo_BiPoint;
 class HLRAlgo_BiPoint {
 	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_BiPoint();
 		%feature("autodoc", "1");
 		HLRAlgo_BiPoint();
 		%feature("autodoc", "1");
@@ -722,8 +710,6 @@ class HLRAlgo_BiPoint {
 %nodefaultctor HLRAlgo_PolyInternalSegment;
 class HLRAlgo_PolyInternalSegment {
 	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_PolyInternalSegment();
 		%feature("autodoc", "1");
 		HLRAlgo_PolyInternalSegment();
 		%feature("autodoc", "1");
@@ -819,8 +805,6 @@ class HLRAlgo_Array1OfTData {
 		void Init(const HLRAlgo_TriangleData &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~HLRAlgo_Array1OfTData();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -991,8 +975,6 @@ class HLRAlgo_Array1OfPISeg {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~HLRAlgo_Array1OfPISeg();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const HLRAlgo_Array1OfPISeg & Assign(const HLRAlgo_Array1OfPISeg &Other);
@@ -1068,8 +1050,6 @@ class HLRAlgo_PolyData : public MMgt_TShared {
 class HLRAlgo_ListIteratorOfListOfBPoint {
 	public:
 		%feature("autodoc", "1");
-		~HLRAlgo_ListIteratorOfListOfBPoint();
-		%feature("autodoc", "1");
 		HLRAlgo_ListIteratorOfListOfBPoint();
 		%feature("autodoc", "1");
 		HLRAlgo_ListIteratorOfListOfBPoint(const HLRAlgo_ListOfBPoint &L);
@@ -1092,8 +1072,6 @@ class HLRAlgo_ListIteratorOfListOfBPoint {
 %nodefaultctor HLRAlgo_Interference;
 class HLRAlgo_Interference {
 	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_Interference();
 		%feature("autodoc", "1");
 		HLRAlgo_Interference();
 		%feature("autodoc", "1");
@@ -1182,8 +1160,6 @@ class HLRAlgo_ListOfBPoint {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~HLRAlgo_ListOfBPoint();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const HLRAlgo_BiPoint &I);
@@ -1264,8 +1240,6 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 %nodefaultctor HLRAlgo_Intersection;
 class HLRAlgo_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~HLRAlgo_Intersection();
 		%feature("autodoc", "1");
 		HLRAlgo_Intersection();
 		%feature("autodoc", "1");
@@ -1370,8 +1344,6 @@ class HLRAlgo_PolyInternalData : public MMgt_TShared {
 class HLRAlgo_TriangleData {
 	public:
 		%feature("autodoc", "1");
-		~HLRAlgo_TriangleData();
-		%feature("autodoc", "1");
 		HLRAlgo_TriangleData();
 		%feature("autodoc", "1");
 		Standard_Address Indices() const;
@@ -1386,8 +1358,6 @@ class HLRAlgo_TriangleData {
 %nodefaultctor HLRAlgo;
 class HLRAlgo {
 	public:
-		%feature("autodoc", "1");
-		~HLRAlgo();
 		%feature("autodoc", "1");
 		HLRAlgo();
 		%feature("autodoc", "1");
@@ -1458,8 +1428,6 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 class HLRAlgo_EdgeStatus {
 	public:
 		%feature("autodoc", "1");
-		~HLRAlgo_EdgeStatus();
-		%feature("autodoc", "1");
 		HLRAlgo_EdgeStatus();
 		%feature("autodoc", "1");
 		HLRAlgo_EdgeStatus(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
@@ -1497,8 +1465,6 @@ class HLRAlgo_EdgeStatus {
 class HLRAlgo_Coincidence {
 	public:
 		%feature("autodoc", "1");
-		~HLRAlgo_Coincidence();
-		%feature("autodoc", "1");
 		HLRAlgo_Coincidence();
 		%feature("autodoc", "1");
 		void Set2D(const Standard_Integer FE, const Standard_Real Param);
@@ -1527,8 +1493,6 @@ class HLRAlgo_InterferenceList {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~HLRAlgo_InterferenceList();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");

@@ -138,8 +138,6 @@ class XmlMDocStd_XLinkDriver : public XmlMDF_ADriver {
 class XmlMDocStd {
 	public:
 		%feature("autodoc", "1");
-		~XmlMDocStd();
-		%feature("autodoc", "1");
 		XmlMDocStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);

@@ -192,8 +192,6 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTColStd_IndexedDataMapOfIntegerInteger();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Standard_Integer &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Standard_Integer &K, const Standard_Integer &T);
@@ -235,8 +233,6 @@ class BOPTColStd_CArray1OfShape {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTColStd_CArray1OfShape();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -277,8 +273,6 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const Standard_Integer &K, const TColStd_IndexedMapOfInteger &I);
 		%feature("autodoc", "1");
@@ -377,8 +371,6 @@ class BOPTColStd_CArray1OfPnt2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BOPTColStd_CArray1OfPnt2d();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -420,8 +412,6 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOPTColStd_IndexedDataMapOfSWRInteger();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const BOPTColStd_ShapeWithRank &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const BOPTColStd_ShapeWithRank &K, const Standard_Integer &T);
@@ -457,8 +447,6 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 class BOPTColStd_ListIteratorOfListOfListOfShape {
 	public:
 		%feature("autodoc", "1");
-		~BOPTColStd_ListIteratorOfListOfListOfShape();
-		%feature("autodoc", "1");
 		BOPTColStd_ListIteratorOfListOfListOfShape();
 		%feature("autodoc", "1");
 		BOPTColStd_ListIteratorOfListOfListOfShape(const BOPTColStd_ListOfListOfShape &L);
@@ -489,8 +477,6 @@ class BOPTColStd_ListOfListOfShape {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOPTColStd_ListOfListOfShape();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -538,8 +524,6 @@ class BOPTColStd_CArray1OfInteger {
 		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BOPTColStd_CArray1OfInteger();
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -596,8 +580,6 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 class BOPTColStd_Failure {
 	public:
 		%feature("autodoc", "1");
-		~BOPTColStd_Failure();
-		%feature("autodoc", "1");
 		BOPTColStd_Failure(const char * aMessage);
 		%feature("autodoc", "1");
 		Standard_CString Message() const;
@@ -641,8 +623,6 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 class BOPTColStd_ShapeWithRank {
 	public:
 		%feature("autodoc", "1");
-		~BOPTColStd_ShapeWithRank();
-		%feature("autodoc", "1");
 		BOPTColStd_ShapeWithRank();
 		%feature("autodoc", "1");
 		void SetShape(const TopoDS_Shape &aS);
@@ -668,8 +648,6 @@ class BOPTColStd_ShapeWithRank {
 class BOPTColStd_ShapeWithRankHasher {
 	public:
 		%feature("autodoc", "1");
-		~BOPTColStd_ShapeWithRankHasher();
-		%feature("autodoc", "1");
 		BOPTColStd_ShapeWithRankHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BOPTColStd_ShapeWithRank &SR, const Standard_Integer Upper);
@@ -686,8 +664,6 @@ class BOPTColStd_ShapeWithRankHasher {
 %nodefaultctor BOPTColStd_Dump;
 class BOPTColStd_Dump {
 	public:
-		%feature("autodoc", "1");
-		~BOPTColStd_Dump();
 		%feature("autodoc", "1");
 		BOPTColStd_Dump();
 		%feature("autodoc", "1");

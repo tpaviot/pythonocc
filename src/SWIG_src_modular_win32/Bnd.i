@@ -160,8 +160,6 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 class Bnd_B2d {
 	public:
 		%feature("autodoc", "1");
-		~Bnd_B2d();
-		%feature("autodoc", "1");
 		Bnd_B2d();
 		%feature("autodoc", "1");
 		Bnd_B2d(const gp_XY &theCenter, const gp_XY &theHSize);
@@ -218,8 +216,6 @@ class Bnd_B2d {
 %nodefaultctor Bnd_B2f;
 class Bnd_B2f {
 	public:
-		%feature("autodoc", "1");
-		~Bnd_B2f();
 		%feature("autodoc", "1");
 		Bnd_B2f();
 		%feature("autodoc", "1");
@@ -304,8 +300,6 @@ class Bnd_SeqOfBox : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Bnd_SeqOfBox();
-		%feature("autodoc", "1");
 		const Bnd_SeqOfBox & Assign(const Bnd_SeqOfBox &Other);
 		%feature("autodoc", "1");
 		void Append(const Bnd_Box &T);
@@ -354,8 +348,6 @@ class Bnd_SeqOfBox : public TCollection_BaseSequence {
 %nodefaultctor Bnd_Box;
 class Bnd_Box {
 	public:
-		%feature("autodoc", "1");
-		~Bnd_Box();
 		%feature("autodoc", "1");
 		Bnd_Box();
 		%feature("autodoc", "1");
@@ -456,8 +448,6 @@ class Bnd_Box {
 class Bnd_BoundSortBox2d {
 	public:
 		%feature("autodoc", "1");
-		~Bnd_BoundSortBox2d();
-		%feature("autodoc", "1");
 		Bnd_BoundSortBox2d();
 		%feature("autodoc", "1");
 		void Initialize(const Bnd_Box2d &CompleteBox, const Handle_Bnd_HArray1OfBox2d &SetOfBox);
@@ -482,8 +472,6 @@ class Bnd_BoundSortBox2d {
 %nodefaultctor Bnd_B3d;
 class Bnd_B3d {
 	public:
-		%feature("autodoc", "1");
-		~Bnd_B3d();
 		%feature("autodoc", "1");
 		Bnd_B3d();
 		%feature("autodoc", "1");
@@ -541,8 +529,6 @@ class Bnd_B3d {
 %nodefaultctor Bnd_B3f;
 class Bnd_B3f {
 	public:
-		%feature("autodoc", "1");
-		~Bnd_B3f();
 		%feature("autodoc", "1");
 		Bnd_B3f();
 		%feature("autodoc", "1");
@@ -698,8 +684,6 @@ class Bnd_BoundSortBox {
 		void Dump() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Bnd_BoundSortBox();
 
 };
 %extend Bnd_BoundSortBox {
@@ -711,8 +695,6 @@ class Bnd_BoundSortBox {
 %nodefaultctor Bnd_Box2d;
 class Bnd_Box2d {
 	public:
-		%feature("autodoc", "1");
-		~Bnd_Box2d();
 		%feature("autodoc", "1");
 		Bnd_Box2d();
 		%feature("autodoc", "1");
@@ -795,8 +777,6 @@ class Bnd_Array1OfBox2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Bnd_Array1OfBox2d();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Bnd_Array1OfBox2d & Assign(const Bnd_Array1OfBox2d &Other);
@@ -835,8 +815,6 @@ class Bnd_Array1OfBox {
 		void Init(const Bnd_Box &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Bnd_Array1OfBox();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");

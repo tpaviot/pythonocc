@@ -836,8 +836,6 @@ class StepData_FreeFormEntity : public MMgt_TShared {
 class StepData_StepDumper {
 	public:
 		%feature("autodoc", "1");
-		~StepData_StepDumper();
-		%feature("autodoc", "1");
 		StepData_StepDumper(const Handle_StepData_StepModel &amodel, const Handle_StepData_Protocol &protocol, const Standard_Integer mode=0);
 		%feature("autodoc", "1");
 		StepData_StepWriter & StepWriter();
@@ -1167,8 +1165,6 @@ class StepData_Field {
 %nodefaultctor StepData_EnumTool;
 class StepData_EnumTool {
 	public:
-		%feature("autodoc", "1");
-		~StepData_EnumTool();
 		%feature("autodoc", "1");
 		StepData_EnumTool(const char * e0="", const char * e1="", const char * e2="", const char * e3="", const char * e4="", const char * e5="", const char * e6="", const char * e7="", const char * e8="", const char * e9="", const char * e10="", const char * e11="", const char * e12="", const char * e13="", const char * e14="", const char * e15="", const char * e16="", const char * e17="", const char * e18="", const char * e19="", const char * e20="", const char * e21="", const char * e22="", const char * e23="", const char * e24="", const char * e25="", const char * e26="", const char * e27="", const char * e28="", const char * e29="", const char * e30="", const char * e31="", const char * e32="", const char * e33="", const char * e34="", const char * e35="", const char * e36="", const char * e37="", const char * e38="", const char * e39="");
 		%feature("autodoc", "1");
@@ -1533,8 +1529,6 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 class StepData_FieldList {
 	public:
 		%feature("autodoc", "1");
-		~StepData_FieldList();
-		%feature("autodoc", "1");
 		StepData_FieldList();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbFields() const;
@@ -1559,8 +1553,6 @@ class StepData_FieldList1 : public StepData_FieldList {
 		StepData_FieldList1();
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~StepData_FieldList1();
 
 };
 %extend StepData_FieldList1 {
@@ -1584,8 +1576,6 @@ class StepData_FieldListD : public StepData_FieldList {
 		virtual		StepData_Field & CField(const Standard_Integer num);
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~StepData_FieldListD();
 
 };
 %extend StepData_FieldListD {
@@ -1607,8 +1597,6 @@ class StepData_FieldListN : public StepData_FieldList {
 		virtual		StepData_Field & CField(const Standard_Integer num);
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~StepData_FieldListN();
 
 };
 %extend StepData_FieldListN {
@@ -1765,8 +1753,6 @@ class StepData_Array1OfField {
 		void Init(const StepData_Field &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepData_Array1OfField();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2332,8 +2318,6 @@ class StepData_StepReaderTool : public Interface_FileReaderTool {
 		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Handle_Standard_Transient &anent, Handle_Interface_Check & acheck);
 		%feature("autodoc", "1");
 		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		virtual		~StepData_StepReaderTool();
 
 };
 %extend StepData_StepReaderTool {

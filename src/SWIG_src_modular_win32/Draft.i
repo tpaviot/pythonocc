@@ -283,8 +283,6 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Draft_DataMapOfEdgeEdgeInfo();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Edge &K, const Draft_EdgeInfo &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Edge &K) const;
@@ -309,8 +307,6 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfFaceFaceInfo;
 class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Draft_DataMapIteratorOfDataMapOfFaceFaceInfo();
 		%feature("autodoc", "1");
 		Draft_DataMapIteratorOfDataMapOfFaceFaceInfo();
 		%feature("autodoc", "1");
@@ -409,8 +405,6 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 class Draft_DataMapIteratorOfDataMapOfVertexVertexInfo : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~Draft_DataMapIteratorOfDataMapOfVertexVertexInfo();
-		%feature("autodoc", "1");
 		Draft_DataMapIteratorOfDataMapOfVertexVertexInfo();
 		%feature("autodoc", "1");
 		Draft_DataMapIteratorOfDataMapOfVertexVertexInfo(const Draft_DataMapOfVertexVertexInfo &aMap);
@@ -431,8 +425,6 @@ class Draft_DataMapIteratorOfDataMapOfVertexVertexInfo : public TCollection_Basi
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo;
 class Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo();
 		%feature("autodoc", "1");
 		Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo();
 		%feature("autodoc", "1");
@@ -479,8 +471,6 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 class Draft_VertexInfo {
 	public:
 		%feature("autodoc", "1");
-		~Draft_VertexInfo();
-		%feature("autodoc", "1");
 		Draft_VertexInfo();
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Edge &E);
@@ -519,8 +509,6 @@ class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Draft_DataMapOfFaceFaceInfo();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Face &K, const Draft_FaceInfo &I);
 		%feature("autodoc", "1");
@@ -579,8 +567,6 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Draft_DataMapOfVertexVertexInfo();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Vertex &K, const Draft_VertexInfo &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Vertex &K) const;
@@ -605,8 +591,6 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 %nodefaultctor Draft;
 class Draft {
 	public:
-		%feature("autodoc", "1");
-		~Draft();
 		%feature("autodoc", "1");
 		Draft();
 		%feature("autodoc", "1");

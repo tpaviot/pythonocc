@@ -383,8 +383,6 @@ class MDocStd_MapIteratorOfPersistentMap : public TCollection_BasicMapIterator {
 class MDocStd_ListIteratorOfDocEntryList {
 	public:
 		%feature("autodoc", "1");
-		~MDocStd_ListIteratorOfDocEntryList();
-		%feature("autodoc", "1");
 		MDocStd_ListIteratorOfDocEntryList();
 		%feature("autodoc", "1");
 		MDocStd_ListIteratorOfDocEntryList(const MDocStd_DocEntryList &L);
@@ -415,8 +413,6 @@ class MDocStd_DocEntryList {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MDocStd_DocEntryList();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -494,8 +490,6 @@ class MDocStd_PersistentMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MDocStd_PersistentMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_Standard_Persistent &aKey);
 		%feature("autodoc", "1");

@@ -1048,8 +1048,6 @@ class TColgp_Array1OfDir2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array1OfDir2d();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColgp_Array1OfDir2d & Assign(const TColgp_Array1OfDir2d &Other);
@@ -1084,8 +1082,6 @@ class TColgp_SequenceOfPnt2d : public TCollection_BaseSequence {
 		TColgp_SequenceOfPnt2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColgp_SequenceOfPnt2d();
 		%feature("autodoc", "1");
 		const TColgp_SequenceOfPnt2d & Assign(const TColgp_SequenceOfPnt2d &Other);
 		%feature("autodoc", "1");
@@ -1318,8 +1314,6 @@ class TColgp_SequenceOfXY : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColgp_SequenceOfXY();
-		%feature("autodoc", "1");
 		const TColgp_SequenceOfXY & Assign(const TColgp_SequenceOfXY &Other);
 		%feature("autodoc", "1");
 		void Append(const gp_XY &T);
@@ -1372,8 +1366,6 @@ class TColgp_SequenceOfVec : public TCollection_BaseSequence {
 		TColgp_SequenceOfVec();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColgp_SequenceOfVec();
 		%feature("autodoc", "1");
 		const TColgp_SequenceOfVec & Assign(const TColgp_SequenceOfVec &Other);
 		%feature("autodoc", "1");
@@ -1546,8 +1538,6 @@ class TColgp_Array1OfLin2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array1OfLin2d();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColgp_Array1OfLin2d & Assign(const TColgp_Array1OfLin2d &Other);
@@ -1609,8 +1599,6 @@ class TColgp_Array2OfXY {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array2OfXY();
-		%feature("autodoc", "1");
 		const TColgp_Array2OfXY & Assign(const TColgp_Array2OfXY &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -1649,8 +1637,6 @@ class TColgp_SequenceOfDir2d : public TCollection_BaseSequence {
 		TColgp_SequenceOfDir2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColgp_SequenceOfDir2d();
 		%feature("autodoc", "1");
 		const TColgp_SequenceOfDir2d & Assign(const TColgp_SequenceOfDir2d &Other);
 		%feature("autodoc", "1");
@@ -1708,8 +1694,6 @@ class TColgp_Array1OfVec2d {
 		void Init(const gp_Vec2d &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColgp_Array1OfVec2d();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1787,8 +1771,6 @@ class TColgp_HArray2OfCirc2d : public MMgt_TShared {
 %nodefaultctor TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d;
 class TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d();
 		%feature("autodoc", "1");
 		TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d();
 		%feature("autodoc", "1");
@@ -1883,8 +1865,6 @@ class TColgp_Array1OfDir {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array1OfDir();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColgp_Array1OfDir & Assign(const TColgp_Array1OfDir &Other);
@@ -1969,8 +1949,6 @@ class TColgp_Array1OfXY {
 		void Init(const gp_XY &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColgp_Array1OfXY();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2131,8 +2109,6 @@ class TColgp_Array2OfPnt2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array2OfPnt2d();
-		%feature("autodoc", "1");
 		const TColgp_Array2OfPnt2d & Assign(const TColgp_Array2OfPnt2d &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -2216,8 +2192,6 @@ class TColgp_Array2OfVec {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array2OfVec();
-		%feature("autodoc", "1");
 		const TColgp_Array2OfVec & Assign(const TColgp_Array2OfVec &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -2256,8 +2230,6 @@ class TColgp_SequenceOfDir : public TCollection_BaseSequence {
 		TColgp_SequenceOfDir();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColgp_SequenceOfDir();
 		%feature("autodoc", "1");
 		const TColgp_SequenceOfDir & Assign(const TColgp_SequenceOfDir &Other);
 		%feature("autodoc", "1");
@@ -2333,8 +2305,6 @@ class TColgp_SequenceOfXYZ : public TCollection_BaseSequence {
 		TColgp_SequenceOfXYZ();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColgp_SequenceOfXYZ();
 		%feature("autodoc", "1");
 		const TColgp_SequenceOfXYZ & Assign(const TColgp_SequenceOfXYZ &Other);
 		%feature("autodoc", "1");
@@ -2513,8 +2483,6 @@ class TColgp_Array1OfPnt2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array1OfPnt2d();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColgp_Array1OfPnt2d & Assign(const TColgp_Array1OfPnt2d &Other);
@@ -2553,8 +2521,6 @@ class TColgp_Array2OfDir {
 		void Init(const gp_Dir &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColgp_Array2OfDir();
 		%feature("autodoc", "1");
 		const TColgp_Array2OfDir & Assign(const TColgp_Array2OfDir &Other);
 		%feature("autodoc", "1");
@@ -2835,8 +2801,6 @@ class TColgp_SequenceOfVec2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColgp_SequenceOfVec2d();
-		%feature("autodoc", "1");
 		const TColgp_SequenceOfVec2d & Assign(const TColgp_SequenceOfVec2d &Other);
 		%feature("autodoc", "1");
 		void Append(const gp_Vec2d &T);
@@ -2958,8 +2922,6 @@ class TColgp_Array1OfPnt {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array1OfPnt();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColgp_Array1OfPnt & Assign(const TColgp_Array1OfPnt &Other);
@@ -2999,8 +2961,6 @@ class TColgp_Array1OfVec {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array1OfVec();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColgp_Array1OfVec & Assign(const TColgp_Array1OfVec &Other);
@@ -3035,8 +2995,6 @@ class TColgp_SequenceOfPnt : public TCollection_BaseSequence {
 		TColgp_SequenceOfPnt();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColgp_SequenceOfPnt();
 		%feature("autodoc", "1");
 		const TColgp_SequenceOfPnt & Assign(const TColgp_SequenceOfPnt &Other);
 		%feature("autodoc", "1");
@@ -3116,8 +3074,6 @@ class TColgp_Array2OfCirc2d {
 		void Init(const gp_Circ2d &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColgp_Array2OfCirc2d();
 		%feature("autodoc", "1");
 		const TColgp_Array2OfCirc2d & Assign(const TColgp_Array2OfCirc2d &Other);
 		%feature("autodoc", "1");
@@ -3248,8 +3204,6 @@ class TColgp_Array2OfLin2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array2OfLin2d();
-		%feature("autodoc", "1");
 		const TColgp_Array2OfLin2d & Assign(const TColgp_Array2OfLin2d &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -3357,8 +3311,6 @@ class TColgp_Array2OfPnt {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array2OfPnt();
-		%feature("autodoc", "1");
 		const TColgp_Array2OfPnt & Assign(const TColgp_Array2OfPnt &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -3401,8 +3353,6 @@ class TColgp_Array1OfXYZ {
 		void Init(const gp_XYZ &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColgp_Array1OfXYZ();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -3465,8 +3415,6 @@ class TColgp_DataMapOfIntegerCirc2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColgp_DataMapOfIntegerCirc2d();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const gp_Circ2d &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -3499,8 +3447,6 @@ class TColgp_Array2OfDir2d {
 		void Init(const gp_Dir2d &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColgp_Array2OfDir2d();
 		%feature("autodoc", "1");
 		const TColgp_Array2OfDir2d & Assign(const TColgp_Array2OfDir2d &Other);
 		%feature("autodoc", "1");
@@ -3544,8 +3490,6 @@ class TColgp_Array2OfXYZ {
 		void Init(const gp_XYZ &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColgp_Array2OfXYZ();
 		%feature("autodoc", "1");
 		const TColgp_Array2OfXYZ & Assign(const TColgp_Array2OfXYZ &Other);
 		%feature("autodoc", "1");
@@ -3782,8 +3726,6 @@ class TColgp_Array1OfCirc2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColgp_Array1OfCirc2d();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColgp_Array1OfCirc2d & Assign(const TColgp_Array1OfCirc2d &Other);
@@ -3822,8 +3764,6 @@ class TColgp_Array2OfVec2d {
 		void Init(const gp_Vec2d &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColgp_Array2OfVec2d();
 		%feature("autodoc", "1");
 		const TColgp_Array2OfVec2d & Assign(const TColgp_Array2OfVec2d &Other);
 		%feature("autodoc", "1");

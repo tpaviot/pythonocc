@@ -891,8 +891,6 @@ class Standard_MMgrOpt : public Standard_MMgrRoot {
 		%feature("autodoc", "1");
 		Standard_MMgrOpt(const Standard_Boolean aClear=1, const Standard_Boolean aMMap=1, const Standard_Size aCellSize=200, const Standard_Integer aNbPages=10000, const Standard_Size aThreshold=40000, const Standard_Boolean isReentrant=0);
 		%feature("autodoc", "1");
-		virtual		~Standard_MMgrOpt();
-		%feature("autodoc", "1");
 		virtual		Standard_Address Allocate(const Standard_Size aSize);
 		%feature("autodoc", "1");
 		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
@@ -1063,8 +1061,6 @@ class Standard_ProgramError : public Standard_Failure {
 %nodefaultctor Standard;
 class Standard {
 	public:
-		%feature("autodoc", "1");
-		~Standard();
 		%feature("autodoc", "1");
 		Standard();
 		%feature("autodoc", "1");
@@ -1545,8 +1541,6 @@ class Standard_Storable {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~Standard_Storable();
-		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_Storable &Other) const;
@@ -1593,8 +1587,6 @@ class Standard_ImmutableObject : public Standard_DomainError {
 %nodefaultctor Standard_GUID;
 class Standard_GUID {
 	public:
-		%feature("autodoc", "1");
-		~Standard_GUID();
 		%feature("autodoc", "1");
 		Standard_GUID();
 		%feature("autodoc", "1");
@@ -1711,8 +1703,6 @@ class Standard_Mutex : public Standard_ErrorHandlerCallback {
 	public:
 		%feature("autodoc", "1");
 		Standard_Mutex();
-		%feature("autodoc", "1");
-		virtual		~Standard_Mutex();
 		%feature("autodoc", "1");
 		void Lock();
 		%feature("autodoc", "1");
@@ -1930,8 +1920,6 @@ class Standard_MMgrRaw : public Standard_MMgrRoot {
 		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
 		%feature("autodoc", "1");
 		virtual		void Free(Standard_Address & arg0);
-		%feature("autodoc", "1");
-		virtual		~Standard_MMgrRaw();
 
 };
 %extend Standard_MMgrRaw {

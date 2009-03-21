@@ -588,8 +588,6 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public TCollection_MapNode
 class STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape();
-		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape();
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape(const STEPCAFControl_DataMapOfLabelShape &aMap);
@@ -692,8 +690,6 @@ class STEPCAFControl_DataMapOfShapeLabel : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapOfShapeLabel();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TDF_Label &I);
 		%feature("autodoc", "1");
@@ -940,8 +936,6 @@ class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
 class STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel();
-		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel();
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel(const STEPCAFControl_DataMapOfShapeLabel &aMap);
@@ -994,8 +988,6 @@ class STEPCAFControl_DataMapOfLabelShape : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~STEPCAFControl_DataMapOfLabelShape();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");

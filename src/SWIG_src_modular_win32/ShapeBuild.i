@@ -191,8 +191,6 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 class ShapeBuild_Vertex {
 	public:
 		%feature("autodoc", "1");
-		~ShapeBuild_Vertex();
-		%feature("autodoc", "1");
 		ShapeBuild_Vertex();
 		%feature("autodoc", "1");
 		TopoDS_Vertex CombineVertex(const TopoDS_Vertex &V1, const TopoDS_Vertex &V2, const Standard_Real tolFactor=1.00009999999999998898658759571844711899757385254e+0) const;

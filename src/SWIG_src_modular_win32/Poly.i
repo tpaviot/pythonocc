@@ -303,8 +303,6 @@ class Poly_Array1OfTriangle {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Poly_Array1OfTriangle();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Poly_Array1OfTriangle & Assign(const Poly_Array1OfTriangle &Other);
@@ -392,8 +390,6 @@ class Poly_Triangulation : public MMgt_TShared {
 class Poly_CoherentNode : public gp_XYZ {
 	public:
 		%feature("autodoc", "1");
-		~Poly_CoherentNode();
-		%feature("autodoc", "1");
 		Poly_CoherentNode();
 		%feature("autodoc", "1");
 		Poly_CoherentNode(const gp_XYZ &thePnt);
@@ -435,8 +431,6 @@ class Poly_CoherentNode : public gp_XYZ {
 class Poly_CoherentTriangle {
 	public:
 		%feature("autodoc", "1");
-		~Poly_CoherentTriangle();
-		%feature("autodoc", "1");
 		Poly_CoherentTriangle();
 		%feature("autodoc", "1");
 		Poly_CoherentTriangle(const Standard_Integer iNode0, const Standard_Integer iNode1, const Standard_Integer iNode2);
@@ -473,8 +467,6 @@ class Poly_CoherentTriangle {
 %nodefaultctor Poly_Triangle;
 class Poly_Triangle {
 	public:
-		%feature("autodoc", "1");
-		~Poly_Triangle();
 		%feature("autodoc", "1");
 		Poly_Triangle();
 		%feature("autodoc", "1");
@@ -577,8 +569,6 @@ class Poly {
 %nodefaultctor Poly_CoherentLink;
 class Poly_CoherentLink {
 	public:
-		%feature("autodoc", "1");
-		~Poly_CoherentLink();
 		%feature("autodoc", "1");
 		Poly_CoherentLink();
 		%feature("autodoc", "1");

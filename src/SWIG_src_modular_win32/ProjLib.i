@@ -453,8 +453,6 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 		ProjLib_Cylinder(const gp_Cylinder &Cyl, const gp_Elips &E);
 		%feature("autodoc", "1");
 		void Init(const gp_Cylinder &Cyl);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Cylinder();
 
 };
 %extend ProjLib_Cylinder {
@@ -486,8 +484,6 @@ class ProjLib_Sphere : public ProjLib_Projector {
 		virtual		void Project(const gp_Hypr &H);
 		%feature("autodoc", "1");
 		void SetInBounds(const Standard_Real U);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Sphere();
 
 };
 %extend ProjLib_Sphere {
@@ -609,8 +605,6 @@ class ProjLib_Torus : public ProjLib_Projector {
 		virtual		void Project(const gp_Parab &P);
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Hypr &H);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Torus();
 
 };
 %extend ProjLib_Torus {
@@ -644,8 +638,6 @@ class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNod
 %nodefaultctor ProjLib;
 class ProjLib {
 	public:
-		%feature("autodoc", "1");
-		~ProjLib();
 		%feature("autodoc", "1");
 		ProjLib();
 		%feature("autodoc", "1");
@@ -743,8 +735,6 @@ class ProjLib_ComputeApproxOnPolarSurface {
 %nodefaultctor ProjLib_PrjResolve;
 class ProjLib_PrjResolve {
 	public:
-		%feature("autodoc", "1");
-		~ProjLib_PrjResolve();
 		%feature("autodoc", "1");
 		ProjLib_PrjResolve(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Integer Fix);
 		%feature("autodoc", "1");
@@ -871,8 +861,6 @@ class ProjLib_Plane : public ProjLib_Projector {
 		virtual		void Project(const gp_Parab &P);
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Hypr &H);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Plane();
 
 };
 %extend ProjLib_Plane {
@@ -926,8 +914,6 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		gp_Pnt2d Solution() const;
-		%feature("autodoc", "1");
-		virtual		~ProjLib_PrjFunc();
 
 };
 %extend ProjLib_PrjFunc {
@@ -959,8 +945,6 @@ class ProjLib_Cone : public ProjLib_Projector {
 		virtual		void Project(const gp_Parab &P);
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Hypr &H);
-		%feature("autodoc", "1");
-		virtual		~ProjLib_Cone();
 
 };
 %extend ProjLib_Cone {

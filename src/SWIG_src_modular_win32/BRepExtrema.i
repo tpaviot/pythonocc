@@ -146,8 +146,6 @@ class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepExtrema_SeqOfSolution();
-		%feature("autodoc", "1");
 		const BRepExtrema_SeqOfSolution & Assign(const BRepExtrema_SeqOfSolution &Other);
 		%feature("autodoc", "1");
 		void Append(const BRepExtrema_SolutionElem &T);
@@ -197,8 +195,6 @@ class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
 class BRepExtrema_Poly {
 	public:
 		%feature("autodoc", "1");
-		~BRepExtrema_Poly();
-		%feature("autodoc", "1");
 		BRepExtrema_Poly();
 		%feature("autodoc", "1");
 		Standard_Boolean Distance(const TopoDS_Shape &S1, const TopoDS_Shape &S2, gp_Pnt & P1, gp_Pnt & P2, Standard_Real &OutValue);
@@ -213,8 +209,6 @@ class BRepExtrema_Poly {
 %nodefaultctor BRepExtrema_ExtPF;
 class BRepExtrema_ExtPF {
 	public:
-		%feature("autodoc", "1");
-		~BRepExtrema_ExtPF();
 		%feature("autodoc", "1");
 		BRepExtrema_ExtPF();
 		%feature("autodoc", "1");
@@ -245,8 +239,6 @@ class BRepExtrema_ExtPF {
 class BRepExtrema_DistanceSS {
 	public:
 		%feature("autodoc", "1");
-		~BRepExtrema_DistanceSS();
-		%feature("autodoc", "1");
 		BRepExtrema_DistanceSS(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef);
 		%feature("autodoc", "1");
 		BRepExtrema_DistanceSS(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Standard_Real aDeflection);
@@ -269,8 +261,6 @@ class BRepExtrema_DistanceSS {
 %nodefaultctor BRepExtrema_ExtCC;
 class BRepExtrema_ExtCC {
 	public:
-		%feature("autodoc", "1");
-		~BRepExtrema_ExtCC();
 		%feature("autodoc", "1");
 		BRepExtrema_ExtCC();
 		%feature("autodoc", "1");
@@ -331,8 +321,6 @@ class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 class BRepExtrema_ExtCF {
 	public:
 		%feature("autodoc", "1");
-		~BRepExtrema_ExtCF();
-		%feature("autodoc", "1");
 		BRepExtrema_ExtCF();
 		%feature("autodoc", "1");
 		BRepExtrema_ExtCF(const TopoDS_Edge &V, const TopoDS_Face &E);
@@ -368,8 +356,6 @@ class BRepExtrema_ExtCF {
 class BRepExtrema_ExtFF {
 	public:
 		%feature("autodoc", "1");
-		~BRepExtrema_ExtFF();
-		%feature("autodoc", "1");
 		BRepExtrema_ExtFF();
 		%feature("autodoc", "1");
 		BRepExtrema_ExtFF(const TopoDS_Face &F1, const TopoDS_Face &F2);
@@ -404,8 +390,6 @@ class BRepExtrema_ExtFF {
 %nodefaultctor BRepExtrema_ExtPC;
 class BRepExtrema_ExtPC {
 	public:
-		%feature("autodoc", "1");
-		~BRepExtrema_ExtPC();
 		%feature("autodoc", "1");
 		BRepExtrema_ExtPC();
 		%feature("autodoc", "1");
@@ -468,8 +452,6 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 class BRepExtrema_DistShapeShape {
 	public:
 		%feature("autodoc", "1");
-		~BRepExtrema_DistShapeShape();
-		%feature("autodoc", "1");
 		BRepExtrema_DistShapeShape();
 		%feature("autodoc", "1");
 		BRepExtrema_DistShapeShape(const TopoDS_Shape &Shape1, const TopoDS_Shape &Shape2);
@@ -524,8 +506,6 @@ class BRepExtrema_DistShapeShape {
 %nodefaultctor BRepExtrema_SolutionElem;
 class BRepExtrema_SolutionElem {
 	public:
-		%feature("autodoc", "1");
-		~BRepExtrema_SolutionElem();
 		%feature("autodoc", "1");
 		BRepExtrema_SolutionElem();
 		%feature("autodoc", "1");

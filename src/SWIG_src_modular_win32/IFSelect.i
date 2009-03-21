@@ -2318,8 +2318,6 @@ class IFSelect_SelectDiff : public IFSelect_SelectControl {
 class IFSelect {
 	public:
 		%feature("autodoc", "1");
-		~IFSelect();
-		%feature("autodoc", "1");
 		IFSelect();
 		%feature("autodoc", "1");
 		Standard_Boolean SaveSession(const Handle_IFSelect_WorkSession &WS, const char * file);

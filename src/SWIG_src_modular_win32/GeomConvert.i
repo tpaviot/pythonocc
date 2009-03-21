@@ -134,8 +134,6 @@ class GeomConvert_ApproxSurface {
 class GeomConvert_BSplineSurfaceKnotSplitting {
 	public:
 		%feature("autodoc", "1");
-		~GeomConvert_BSplineSurfaceKnotSplitting();
-		%feature("autodoc", "1");
 		GeomConvert_BSplineSurfaceKnotSplitting(const Handle_Geom_BSplineSurface &BasisSurface, const Standard_Integer UContinuityRange, const Standard_Integer VContinuityRange);
 		%feature("autodoc", "1");
 		Standard_Integer NbUSplits() const;
@@ -158,8 +156,6 @@ class GeomConvert_BSplineSurfaceKnotSplitting {
 %nodefaultctor GeomConvert_BSplineCurveKnotSplitting;
 class GeomConvert_BSplineCurveKnotSplitting {
 	public:
-		%feature("autodoc", "1");
-		~GeomConvert_BSplineCurveKnotSplitting();
 		%feature("autodoc", "1");
 		GeomConvert_BSplineCurveKnotSplitting(const Handle_Geom_BSplineCurve &BasisCurve, const Standard_Integer ContinuityRange);
 		%feature("autodoc", "1");

@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BinTools_LocationSet {
 	public:
 		%feature("autodoc", "1");
-		~BinTools_LocationSet();
-		%feature("autodoc", "1");
 		BinTools_LocationSet();
 		%feature("autodoc", "1");
 		void Clear();
@@ -116,8 +114,6 @@ class BinTools_LocationSet {
 %nodefaultctor BinTools;
 class BinTools {
 	public:
-		%feature("autodoc", "1");
-		~BinTools();
 		%feature("autodoc", "1");
 		BinTools();
 		%feature("autodoc", "1");
@@ -151,8 +147,6 @@ class BinTools_ShapeSet {
 		BinTools_ShapeSet(const Standard_Boolean isWithTriangles=0);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~BinTools_ShapeSet();
 		%feature("autodoc", "1");
 		void SetFormatNb(const Standard_Integer theFormatNb);
 		%feature("autodoc", "1");

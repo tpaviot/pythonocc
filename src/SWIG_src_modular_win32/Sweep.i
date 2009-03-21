@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class Sweep_NumShape {
 	public:
 		%feature("autodoc", "1");
-		~Sweep_NumShape();
-		%feature("autodoc", "1");
 		Sweep_NumShape();
 		%feature("autodoc", "1");
 		Sweep_NumShape(const Standard_Integer Index, const TopAbs_ShapeEnum Type, const Standard_Boolean Closed=0, const Standard_Boolean BegInf=0, const Standard_Boolean EndInf=0);
@@ -118,8 +116,6 @@ class Sweep_NumShape {
 %nodefaultctor Sweep_NumShapeTool;
 class Sweep_NumShapeTool {
 	public:
-		%feature("autodoc", "1");
-		~Sweep_NumShapeTool();
 		%feature("autodoc", "1");
 		Sweep_NumShapeTool(const Sweep_NumShape &aShape);
 		%feature("autodoc", "1");
@@ -151,8 +147,6 @@ class Sweep_NumShapeTool {
 %nodefaultctor Sweep_NumShapeIterator;
 class Sweep_NumShapeIterator {
 	public:
-		%feature("autodoc", "1");
-		~Sweep_NumShapeIterator();
 		%feature("autodoc", "1");
 		Sweep_NumShapeIterator();
 		%feature("autodoc", "1");

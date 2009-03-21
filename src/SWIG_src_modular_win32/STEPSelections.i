@@ -541,8 +541,6 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 class STEPSelections_Counter {
 	public:
 		%feature("autodoc", "1");
-		~STEPSelections_Counter();
-		%feature("autodoc", "1");
 		STEPSelections_Counter();
 		%feature("autodoc", "1");
 		void Count(const Interface_Graph &graph, const Handle_Standard_Transient &start);

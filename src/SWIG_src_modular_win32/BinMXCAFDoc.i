@@ -540,8 +540,6 @@ class BinMXCAFDoc_ColorDriver : public BinMDF_ADriver {
 class BinMXCAFDoc {
 	public:
 		%feature("autodoc", "1");
-		~BinMXCAFDoc();
-		%feature("autodoc", "1");
 		BinMXCAFDoc();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMsgDrv);

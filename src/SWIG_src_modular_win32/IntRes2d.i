@@ -155,8 +155,6 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 class IntRes2d_Transition {
 	public:
 		%feature("autodoc", "1");
-		~IntRes2d_Transition();
-		%feature("autodoc", "1");
 		IntRes2d_Transition();
 		%feature("autodoc", "1");
 		IntRes2d_Transition(const Standard_Boolean Tangent, const IntRes2d_Position Pos, const IntRes2d_TypeTrans Type);
@@ -218,8 +216,6 @@ class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntRes2d_SequenceOfIntersectionPoint();
-		%feature("autodoc", "1");
 		const IntRes2d_SequenceOfIntersectionPoint & Assign(const IntRes2d_SequenceOfIntersectionPoint &Other);
 		%feature("autodoc", "1");
 		void Append(const IntRes2d_IntersectionPoint &T);
@@ -273,8 +269,6 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntRes2d_SequenceOfIntersectionSegment();
-		%feature("autodoc", "1");
 		const IntRes2d_SequenceOfIntersectionSegment & Assign(const IntRes2d_SequenceOfIntersectionSegment &Other);
 		%feature("autodoc", "1");
 		void Append(const IntRes2d_IntersectionSegment &T);
@@ -324,8 +318,6 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 class IntRes2d_IntersectionSegment {
 	public:
 		%feature("autodoc", "1");
-		~IntRes2d_IntersectionSegment();
-		%feature("autodoc", "1");
 		IntRes2d_IntersectionSegment();
 		%feature("autodoc", "1");
 		IntRes2d_IntersectionSegment(const IntRes2d_IntersectionPoint &P1, const IntRes2d_IntersectionPoint &P2, const Standard_Boolean Oppos, const Standard_Boolean ReverseFlag);
@@ -370,8 +362,6 @@ class IntRes2d_IntersectionSegment {
 %nodefaultctor IntRes2d_IntersectionPoint;
 class IntRes2d_IntersectionPoint {
 	public:
-		%feature("autodoc", "1");
-		~IntRes2d_IntersectionPoint();
 		%feature("autodoc", "1");
 		IntRes2d_IntersectionPoint();
 		%feature("autodoc", "1");
@@ -436,8 +426,6 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 class IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		~IntRes2d_Intersection();
-		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
@@ -462,8 +450,6 @@ class IntRes2d_Intersection {
 %nodefaultctor IntRes2d_Domain;
 class IntRes2d_Domain {
 	public:
-		%feature("autodoc", "1");
-		~IntRes2d_Domain();
 		%feature("autodoc", "1");
 		IntRes2d_Domain();
 		%feature("autodoc", "1");

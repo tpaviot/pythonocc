@@ -713,8 +713,6 @@ class Select3D_ListIteratorOfListOfSensitive {
 class Select3D_Pnt {
 	public:
 		%feature("autodoc", "1");
-		~Select3D_Pnt();
-		%feature("autodoc", "1");
 		Select3D_Pnt();
 
 };
@@ -955,8 +953,6 @@ class Select3D_ListIteratorOfListOfSensitiveTriangle {
 %nodefaultctor Select3D_Pnt2d;
 class Select3D_Pnt2d {
 	public:
-		%feature("autodoc", "1");
-		~Select3D_Pnt2d();
 		%feature("autodoc", "1");
 		Select3D_Pnt2d();
 
@@ -1307,8 +1303,6 @@ class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
 %nodefaultctor Select3D_Box2d;
 class Select3D_Box2d {
 	public:
-		%feature("autodoc", "1");
-		~Select3D_Box2d();
 		%feature("autodoc", "1");
 		Select3D_Box2d();
 		%feature("autodoc", "1");

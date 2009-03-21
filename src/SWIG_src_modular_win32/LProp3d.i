@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class LProp3d_SurfaceTool {
 	public:
 		%feature("autodoc", "1");
-		~LProp3d_SurfaceTool();
-		%feature("autodoc", "1");
 		LProp3d_SurfaceTool();
 		%feature("autodoc", "1");
 		void Value(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
@@ -114,8 +112,6 @@ class LProp3d_SurfaceTool {
 %nodefaultctor LProp3d_SLProps;
 class LProp3d_SLProps {
 	public:
-		%feature("autodoc", "1");
-		~LProp3d_SLProps();
 		%feature("autodoc", "1");
 		LProp3d_SLProps(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
@@ -176,8 +172,6 @@ class LProp3d_SLProps {
 class LProp3d_CurveTool {
 	public:
 		%feature("autodoc", "1");
-		~LProp3d_CurveTool();
-		%feature("autodoc", "1");
 		LProp3d_CurveTool();
 		%feature("autodoc", "1");
 		void Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
@@ -204,8 +198,6 @@ class LProp3d_CurveTool {
 %nodefaultctor LProp3d_CLProps;
 class LProp3d_CLProps {
 	public:
-		%feature("autodoc", "1");
-		~LProp3d_CLProps();
 		%feature("autodoc", "1");
 		LProp3d_CLProps(const Handle_Adaptor3d_HCurve &C, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");

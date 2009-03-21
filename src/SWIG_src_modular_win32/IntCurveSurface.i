@@ -175,8 +175,6 @@ class IntCurveSurface_ThePolyhedronToolOfHInter {
 class IntCurveSurface_Intersection {
 	public:
 		%feature("autodoc", "1");
-		~IntCurveSurface_Intersection();
-		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -203,8 +201,6 @@ class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
 		IntCurveSurface_SequenceOfPnt();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntCurveSurface_SequenceOfPnt();
 		%feature("autodoc", "1");
 		const IntCurveSurface_SequenceOfPnt & Assign(const IntCurveSurface_SequenceOfPnt &Other);
 		%feature("autodoc", "1");
@@ -255,8 +251,6 @@ class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
 class IntCurveSurface_IntersectionPoint {
 	public:
 		%feature("autodoc", "1");
-		~IntCurveSurface_IntersectionPoint();
-		%feature("autodoc", "1");
 		IntCurveSurface_IntersectionPoint();
 		%feature("autodoc", "1");
 		IntCurveSurface_IntersectionPoint(const gp_Pnt &P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
@@ -287,8 +281,6 @@ class IntCurveSurface_IntersectionPoint {
 %nodefaultctor IntCurveSurface_HInter;
 class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_HInter();
 		%feature("autodoc", "1");
 		IntCurveSurface_HInter();
 		%feature("autodoc", "1");
@@ -375,8 +367,6 @@ class IntCurveSurface_TheHCurveTool {
 %nodefaultctor IntCurveSurface_TheQuadCurvExactHInter;
 class IntCurveSurface_TheQuadCurvExactHInter {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_TheQuadCurvExactHInter();
 		%feature("autodoc", "1");
 		IntCurveSurface_TheQuadCurvExactHInter(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
@@ -496,8 +486,6 @@ class IntCurveSurface_TheHSurfaceTool {
 class IntCurveSurface_TheExactHInter {
 	public:
 		%feature("autodoc", "1");
-		~IntCurveSurface_TheExactHInter();
-		%feature("autodoc", "1");
 		IntCurveSurface_TheExactHInter(const Standard_Real U, const Standard_Real V, const Standard_Real W, const IntCurveSurface_TheCSFunctionOfHInter &F, const Standard_Real TolTangency, const Standard_Real MarginCoef=0.0);
 		%feature("autodoc", "1");
 		IntCurveSurface_TheExactHInter(const IntCurveSurface_TheCSFunctionOfHInter &F, const Standard_Real TolTangency);
@@ -534,8 +522,6 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter();
 
 };
 %extend IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter {
@@ -547,8 +533,6 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 %nodefaultctor IntCurveSurface_ThePolygonToolOfHInter;
 class IntCurveSurface_ThePolygonToolOfHInter {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_ThePolygonToolOfHInter();
 		%feature("autodoc", "1");
 		IntCurveSurface_ThePolygonToolOfHInter();
 		%feature("autodoc", "1");
@@ -576,8 +560,6 @@ class IntCurveSurface_ThePolygonToolOfHInter {
 %nodefaultctor IntCurveSurface_IntersectionSegment;
 class IntCurveSurface_IntersectionSegment {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_IntersectionSegment();
 		%feature("autodoc", "1");
 		IntCurveSurface_IntersectionSegment();
 		%feature("autodoc", "1");
@@ -607,8 +589,6 @@ class IntCurveSurface_IntersectionSegment {
 %nodefaultctor IntCurveSurface_ThePolygonOfHInter;
 class IntCurveSurface_ThePolygonOfHInter {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_ThePolygonOfHInter();
 		%feature("autodoc", "1");
 		IntCurveSurface_ThePolygonOfHInter(const Handle_Adaptor3d_HCurve &Curve, const Standard_Integer NbPnt);
 		%feature("autodoc", "1");
@@ -676,8 +656,6 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 		IntCurveSurface_SequenceOfSeg();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntCurveSurface_SequenceOfSeg();
 		%feature("autodoc", "1");
 		const IntCurveSurface_SequenceOfSeg & Assign(const IntCurveSurface_SequenceOfSeg &Other);
 		%feature("autodoc", "1");
@@ -758,8 +736,6 @@ class IntCurveSurface_TheCSFunctionOfHInter : public math_FunctionSetWithDerivat
 %nodefaultctor IntCurveSurface_TheInterferenceOfHInter;
 class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 	public:
-		%feature("autodoc", "1");
-		~IntCurveSurface_TheInterferenceOfHInter();
 		%feature("autodoc", "1");
 		IntCurveSurface_TheInterferenceOfHInter();
 		%feature("autodoc", "1");

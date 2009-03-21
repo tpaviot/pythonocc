@@ -517,8 +517,6 @@ class XSControl_Writer {
 class XSControl_Functions {
 	public:
 		%feature("autodoc", "1");
-		~XSControl_Functions();
-		%feature("autodoc", "1");
 		XSControl_Functions();
 		%feature("autodoc", "1");
 		void Init();
@@ -934,8 +932,6 @@ class XSControl {
 %nodefaultctor XSControl_FuncShape;
 class XSControl_FuncShape {
 	public:
-		%feature("autodoc", "1");
-		~XSControl_FuncShape();
 		%feature("autodoc", "1");
 		XSControl_FuncShape();
 		%feature("autodoc", "1");

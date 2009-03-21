@@ -232,8 +232,6 @@ class Handle_PShort_HArray1OfShortReal : public Handle_Standard_Persistent {
 class PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
 	public:
 		%feature("autodoc", "1");
-		~PShort_VArrayTNodeOfFieldOfHArray2OfShortReal();
-		%feature("autodoc", "1");
 		PShort_VArrayTNodeOfFieldOfHArray2OfShortReal();
 		%feature("autodoc", "1");
 		PShort_VArrayTNodeOfFieldOfHArray2OfShortReal(const Standard_ShortReal &aValue);
@@ -270,8 +268,6 @@ class PShort_FieldOfHArray1OfShortReal : public DBC_BaseArray {
 		Standard_ShortReal & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PShort_FieldOfHArray1OfShortReal();
 
 };
 %extend PShort_FieldOfHArray1OfShortReal {
@@ -421,8 +417,6 @@ class PShort_FieldOfHArray2OfShortReal : public DBC_BaseArray {
 		Standard_ShortReal & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PShort_FieldOfHArray2OfShortReal();
 
 };
 %extend PShort_FieldOfHArray2OfShortReal {
@@ -466,8 +460,6 @@ class PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public PStandard_ArrayNode 
 %nodefaultctor PShort_SeqExplorerOfHSequenceOfShortReal;
 class PShort_SeqExplorerOfHSequenceOfShortReal {
 	public:
-		%feature("autodoc", "1");
-		~PShort_SeqExplorerOfHSequenceOfShortReal();
 		%feature("autodoc", "1");
 		PShort_SeqExplorerOfHSequenceOfShortReal(const Handle_PShort_HSequenceOfShortReal &S);
 		%feature("autodoc", "1");
@@ -553,8 +545,6 @@ class PShort_HArray2OfShortReal : public Standard_Persistent {
 %nodefaultctor PShort_VArrayTNodeOfFieldOfHArray1OfShortReal;
 class PShort_VArrayTNodeOfFieldOfHArray1OfShortReal {
 	public:
-		%feature("autodoc", "1");
-		~PShort_VArrayTNodeOfFieldOfHArray1OfShortReal();
 		%feature("autodoc", "1");
 		PShort_VArrayTNodeOfFieldOfHArray1OfShortReal();
 		%feature("autodoc", "1");

@@ -273,8 +273,6 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 		void WritePolygonOnTriangulation(Standard_OStream & OS, const Standard_Boolean Compact=1) const;
 		%feature("autodoc", "1");
 		void DumpPolygonOnTriangulation(Standard_OStream & OS) const;
-		%feature("autodoc", "1");
-		virtual		~BRepTools_ShapeSet();
 
 };
 %extend BRepTools_ShapeSet {
@@ -286,8 +284,6 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 %nodefaultctor BRepTools_Quilt;
 class BRepTools_Quilt {
 	public:
-		%feature("autodoc", "1");
-		~BRepTools_Quilt();
 		%feature("autodoc", "1");
 		BRepTools_Quilt();
 		%feature("autodoc", "1");
@@ -352,8 +348,6 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepTools_MapOfVertexPnt2d();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TColgp_SequenceOfPnt2d &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -378,8 +372,6 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 %nodefaultctor BRepTools;
 class BRepTools {
 	public:
-		%feature("autodoc", "1");
-		~BRepTools();
 		%feature("autodoc", "1");
 		BRepTools();
 		%feature("autodoc", "1");
@@ -486,8 +478,6 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 class BRepTools_Modifier {
 	public:
 		%feature("autodoc", "1");
-		~BRepTools_Modifier();
-		%feature("autodoc", "1");
 		BRepTools_Modifier();
 		%feature("autodoc", "1");
 		BRepTools_Modifier(const TopoDS_Shape &S);
@@ -546,8 +536,6 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 %nodefaultctor BRepTools_WireExplorer;
 class BRepTools_WireExplorer {
 	public:
-		%feature("autodoc", "1");
-		~BRepTools_WireExplorer();
 		%feature("autodoc", "1");
 		BRepTools_WireExplorer();
 		%feature("autodoc", "1");
@@ -654,8 +642,6 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepTools_DataMapIteratorOfMapOfVertexPnt2d();
-		%feature("autodoc", "1");
 		BRepTools_DataMapIteratorOfMapOfVertexPnt2d();
 		%feature("autodoc", "1");
 		BRepTools_DataMapIteratorOfMapOfVertexPnt2d(const BRepTools_MapOfVertexPnt2d &aMap);
@@ -676,8 +662,6 @@ class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapI
 %nodefaultctor BRepTools_Substitution;
 class BRepTools_Substitution {
 	public:
-		%feature("autodoc", "1");
-		~BRepTools_Substitution();
 		%feature("autodoc", "1");
 		BRepTools_Substitution();
 		%feature("autodoc", "1");

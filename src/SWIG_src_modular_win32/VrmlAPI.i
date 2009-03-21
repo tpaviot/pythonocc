@@ -94,8 +94,6 @@ enum VrmlAPI_RepresentationOfShape {
 class VrmlAPI {
 	public:
 		%feature("autodoc", "1");
-		~VrmlAPI();
-		%feature("autodoc", "1");
 		VrmlAPI();
 		%feature("autodoc", "1");
 		void Write(const TopoDS_Shape &aShape, const char * aFileName);

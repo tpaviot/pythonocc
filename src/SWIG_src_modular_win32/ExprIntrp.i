@@ -495,8 +495,6 @@ class ExprIntrp_StackOfNames {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ExprIntrp_StackOfNames();
-		%feature("autodoc", "1");
 		TCollection_AsciiString & ChangeTop();
 
 };
@@ -560,8 +558,6 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_Seq
 class ExprIntrp_StackIteratorOfStackOfNames {
 	public:
 		%feature("autodoc", "1");
-		~ExprIntrp_StackIteratorOfStackOfNames();
-		%feature("autodoc", "1");
 		ExprIntrp_StackIteratorOfStackOfNames();
 		%feature("autodoc", "1");
 		ExprIntrp_StackIteratorOfStackOfNames(const ExprIntrp_StackOfNames &S);
@@ -584,8 +580,6 @@ class ExprIntrp_StackIteratorOfStackOfNames {
 %nodefaultctor ExprIntrp;
 class ExprIntrp {
 	public:
-		%feature("autodoc", "1");
-		~ExprIntrp();
 		%feature("autodoc", "1");
 		ExprIntrp();
 

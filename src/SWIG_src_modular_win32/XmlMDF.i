@@ -232,8 +232,6 @@ class Handle_XmlMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 class XmlMDF {
 	public:
 		%feature("autodoc", "1");
-		~XmlMDF();
-		%feature("autodoc", "1");
 		XmlMDF();
 		%feature("autodoc", "1");
 		void FromTo(const Handle_TDF_Data &aSource, XmlObjMgt_Element & aTarget, XmlObjMgt_SRelocationTable & aReloc, const Handle_XmlMDF_ADriverTable &aDrivers);

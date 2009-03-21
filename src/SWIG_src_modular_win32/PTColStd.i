@@ -205,8 +205,6 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 class PTColStd_MapPersistentHasher {
 	public:
 		%feature("autodoc", "1");
-		~PTColStd_MapPersistentHasher();
-		%feature("autodoc", "1");
 		PTColStd_MapPersistentHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_Standard_Persistent &K, const Standard_Integer Upper);

@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class TopTrans_CurveTransition {
 	public:
 		%feature("autodoc", "1");
-		~TopTrans_CurveTransition();
-		%feature("autodoc", "1");
 		TopTrans_CurveTransition();
 		%feature("autodoc", "1");
 		void Reset(const gp_Dir &Tgt, const gp_Dir &Norm, const Standard_Real Curv);
@@ -120,8 +118,6 @@ class TopTrans_Array2OfOrientation {
 		void Init(const TopAbs_Orientation &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopTrans_Array2OfOrientation();
 		%feature("autodoc", "1");
 		const TopTrans_Array2OfOrientation & Assign(const TopTrans_Array2OfOrientation &Other);
 		%feature("autodoc", "1");
@@ -157,8 +153,6 @@ class TopTrans_Array2OfOrientation {
 %nodefaultctor TopTrans_SurfaceTransition;
 class TopTrans_SurfaceTransition {
 	public:
-		%feature("autodoc", "1");
-		~TopTrans_SurfaceTransition();
 		%feature("autodoc", "1");
 		TopTrans_SurfaceTransition();
 		%feature("autodoc", "1");

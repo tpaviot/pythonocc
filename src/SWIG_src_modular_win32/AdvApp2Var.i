@@ -198,8 +198,6 @@ class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~AdvApp2Var_SequenceOfNode();
-		%feature("autodoc", "1");
 		const AdvApp2Var_SequenceOfNode & Assign(const AdvApp2Var_SequenceOfNode &Other);
 		%feature("autodoc", "1");
 		void Append(const AdvApp2Var_Node &T);
@@ -248,8 +246,6 @@ class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
 %nodefaultctor AdvApp2Var_Network;
 class AdvApp2Var_Network {
 	public:
-		%feature("autodoc", "1");
-		~AdvApp2Var_Network();
 		%feature("autodoc", "1");
 		AdvApp2Var_Network();
 		%feature("autodoc", "1");
@@ -424,8 +420,6 @@ class AdvApp2Var_Patch {
 class AdvApp2Var_Data {
 	public:
 		%feature("autodoc", "1");
-		~AdvApp2Var_Data();
-		%feature("autodoc", "1");
 		AdvApp2Var_Data();
 		%feature("autodoc", "1");
 		mdnombr_1_ & Getmdnombr();
@@ -464,8 +458,6 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 		AdvApp2Var_Strip();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AdvApp2Var_Strip();
 		%feature("autodoc", "1");
 		const AdvApp2Var_Strip & Assign(const AdvApp2Var_Strip &Other);
 		%feature("autodoc", "1");
@@ -592,8 +584,6 @@ class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
 		AdvApp2Var_SequenceOfPatch();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AdvApp2Var_SequenceOfPatch();
 		%feature("autodoc", "1");
 		const AdvApp2Var_SequenceOfPatch & Assign(const AdvApp2Var_SequenceOfPatch &Other);
 		%feature("autodoc", "1");
@@ -735,8 +725,6 @@ class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
 class AdvApp2Var_Node {
 	public:
 		%feature("autodoc", "1");
-		~AdvApp2Var_Node();
-		%feature("autodoc", "1");
 		AdvApp2Var_Node();
 		%feature("autodoc", "1");
 		AdvApp2Var_Node(const Standard_Integer iu, const Standard_Integer iv);
@@ -796,8 +784,6 @@ class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
 		AdvApp2Var_SequenceOfStrip();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AdvApp2Var_SequenceOfStrip();
 		%feature("autodoc", "1");
 		const AdvApp2Var_SequenceOfStrip & Assign(const AdvApp2Var_SequenceOfStrip &Other);
 		%feature("autodoc", "1");

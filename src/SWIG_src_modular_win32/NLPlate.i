@@ -328,8 +328,6 @@ class Handle_NLPlate_HPG0G3Constraint : public Handle_NLPlate_HPG0G2Constraint {
 class NLPlate_StackIteratorOfStackOfPlate {
 	public:
 		%feature("autodoc", "1");
-		~NLPlate_StackIteratorOfStackOfPlate();
-		%feature("autodoc", "1");
 		NLPlate_StackIteratorOfStackOfPlate();
 		%feature("autodoc", "1");
 		NLPlate_StackIteratorOfStackOfPlate(const NLPlate_StackOfPlate &S);
@@ -660,8 +658,6 @@ class NLPlate_NLPlate {
 		%feature("autodoc", "1");
 		void destroy();
 		%feature("autodoc", "1");
-		~NLPlate_NLPlate();
-		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		gp_XYZ Evaluate(const gp_XY &point2d) const;
@@ -724,8 +720,6 @@ class NLPlate_StackOfPlate {
 		void Pop();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~NLPlate_StackOfPlate();
 		%feature("autodoc", "1");
 		Plate_Plate & ChangeTop();
 

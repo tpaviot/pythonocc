@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BSplSLib {
 	public:
 		%feature("autodoc", "1");
-		~BSplSLib();
-		%feature("autodoc", "1");
 		BSplSLib();
 		%feature("autodoc", "1");
 		void RationalDerivative(const Standard_Integer UDeg, const Standard_Integer VDeg, const Standard_Integer N, const Standard_Integer M, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean All=1);

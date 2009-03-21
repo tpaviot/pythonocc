@@ -392,8 +392,6 @@ class TopOpeBRepBuild_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepBuild_DataMapOfShapeReal();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Real &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -426,8 +424,6 @@ class TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo : public TCollection_Basic
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const TopOpeBRepBuild_VertexInfo &I);
 		%feature("autodoc", "1");
@@ -463,8 +459,6 @@ class TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo : public TCollection_Basic
 %nodefaultctor TopOpeBRepBuild_BlockIterator;
 class TopOpeBRepBuild_BlockIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_BlockIterator();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_BlockIterator();
 		%feature("autodoc", "1");
@@ -596,8 +590,6 @@ class TopOpeBRepBuild_AreaBuilder {
 class TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape();
-		%feature("autodoc", "1");
 		TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape(const TopOpeBRepBuild_ListOfShapeListOfShape &L);
@@ -643,8 +635,6 @@ class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 		void ClosedVertices(const Standard_Boolean B);
 		%feature("autodoc", "1");
 		Standard_Real AdjustCase(const Standard_Real p1, const TopAbs_Orientation o, const Standard_Real first, const Standard_Real period, const Standard_Real tol, Standard_Integer & cas);
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_PaveClassifier();
 
 };
 %extend TopOpeBRepBuild_PaveClassifier {
@@ -656,8 +646,6 @@ class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 %nodefaultctor TopOpeBRepBuild_CorrectFace2d;
 class TopOpeBRepBuild_CorrectFace2d {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_CorrectFace2d();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_CorrectFace2d();
 		%feature("autodoc", "1");
@@ -734,8 +722,6 @@ class TopOpeBRepBuild_WireEdgeClassifier : public TopOpeBRepBuild_CompositeClass
 		virtual		void CompareElement(const TopoDS_Shape &E);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_WireEdgeClassifier();
 
 };
 %extend TopOpeBRepBuild_WireEdgeClassifier {
@@ -755,8 +741,6 @@ class TopOpeBRepBuild_ListOfListOfLoop {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_ListOfListOfLoop();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -856,8 +840,6 @@ class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopOpeBRepBuild_ListOfShapeListOfShape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -882,8 +864,6 @@ class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_
 %nodefaultctor TopOpeBRepBuild_GTool;
 class TopOpeBRepBuild_GTool {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_GTool();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GTool();
 		%feature("autodoc", "1");
@@ -923,8 +903,6 @@ class TopOpeBRepBuild_Area2dBuilder : public TopOpeBRepBuild_AreaBuilder {
 		TopOpeBRepBuild_Area2dBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
 		%feature("autodoc", "1");
 		virtual		void InitAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_Area2dBuilder();
 
 };
 %extend TopOpeBRepBuild_Area2dBuilder {
@@ -942,8 +920,6 @@ class TopOpeBRepBuild_FaceAreaBuilder : public TopOpeBRepBuild_Area2dBuilder {
 		TopOpeBRepBuild_FaceAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
 		%feature("autodoc", "1");
 		void InitFaceAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_FaceAreaBuilder();
 
 };
 %extend TopOpeBRepBuild_FaceAreaBuilder {
@@ -955,8 +931,6 @@ class TopOpeBRepBuild_FaceAreaBuilder : public TopOpeBRepBuild_Area2dBuilder {
 %nodefaultctor TopOpeBRepBuild_WireToFace;
 class TopOpeBRepBuild_WireToFace {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_WireToFace();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_WireToFace();
 		%feature("autodoc", "1");
@@ -982,8 +956,6 @@ class TopOpeBRepBuild_Area3dBuilder : public TopOpeBRepBuild_AreaBuilder {
 		TopOpeBRepBuild_Area3dBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
 		%feature("autodoc", "1");
 		virtual		void InitAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_Area3dBuilder();
 
 };
 %extend TopOpeBRepBuild_Area3dBuilder {
@@ -1001,8 +973,6 @@ class TopOpeBRepBuild_SolidAreaBuilder : public TopOpeBRepBuild_Area3dBuilder {
 		TopOpeBRepBuild_SolidAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
 		%feature("autodoc", "1");
 		void InitSolidAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_SolidAreaBuilder();
 
 };
 %extend TopOpeBRepBuild_SolidAreaBuilder {
@@ -1050,8 +1020,6 @@ class TopOpeBRepBuild_Area1dBuilder : public TopOpeBRepBuild_AreaBuilder {
 		virtual		void ADD_LISTOFLoop_TO_LISTOFLoop(TopOpeBRepBuild_ListOfLoop & LOL1, TopOpeBRepBuild_ListOfLoop & LOL2, const Standard_Address s=0, const Standard_Address s1=0, const Standard_Address s2=0) const;
 		%feature("autodoc", "1");
 		void DumpList(const TopOpeBRepBuild_ListOfLoop &L);
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_Area1dBuilder();
 
 };
 %extend TopOpeBRepBuild_Area1dBuilder {
@@ -1089,8 +1057,6 @@ class TopOpeBRepBuild_LoopSet {
 class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape();
-		%feature("autodoc", "1");
 		TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &aMap);
@@ -1111,8 +1077,6 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape : pu
 %nodefaultctor TopOpeBRepBuild_VertexInfo;
 class TopOpeBRepBuild_VertexInfo {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_VertexInfo();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_VertexInfo();
 		%feature("autodoc", "1");
@@ -1163,8 +1127,6 @@ class TopOpeBRepBuild_VertexInfo {
 class TopOpeBRepBuild_Tools2d {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepBuild_Tools2d();
-		%feature("autodoc", "1");
 		TopOpeBRepBuild_Tools2d();
 		%feature("autodoc", "1");
 		void MakeMapOfShapeVertexInfo(const TopoDS_Wire &aWire, TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo & aMap);
@@ -1183,8 +1145,6 @@ class TopOpeBRepBuild_Tools2d {
 %nodefaultctor TopOpeBRepBuild_ShellToSolid;
 class TopOpeBRepBuild_ShellToSolid {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_ShellToSolid();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_ShellToSolid();
 		%feature("autodoc", "1");
@@ -1614,8 +1574,6 @@ class TopOpeBRepBuild_Builder1 : public TopOpeBRepBuild_Builder {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_Builder1(const TopOpeBRepDS_BuildTool &BT);
 		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_Builder1();
-		%feature("autodoc", "1");
 		void GFillFaceNotSameDomSFS(const TopoDS_Shape &F1, const TopTools_ListOfShape &LSO2, const TopOpeBRepBuild_GTopo &G, TopOpeBRepBuild_ShellFaceSet & SFS);
 		%feature("autodoc", "1");
 		void GFillFaceNotSameDomWES(const TopoDS_Shape &F1, const TopTools_ListOfShape &LSO2, const TopOpeBRepBuild_GTopo &G, TopOpeBRepBuild_WireEdgeSet & WES);
@@ -1661,8 +1619,6 @@ class TopOpeBRepBuild_DataMapOfShapeInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepBuild_DataMapOfShapeInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -1687,8 +1643,6 @@ class TopOpeBRepBuild_DataMapOfShapeInteger : public TCollection_BasicMap {
 %nodefaultctor TopOpeBRepBuild_GTopo;
 class TopOpeBRepBuild_GTopo {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_GTopo();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GTopo();
 		%feature("autodoc", "1");
@@ -1891,8 +1845,6 @@ class TopOpeBRepBuild_ShellFaceClassifier : public TopOpeBRepBuild_CompositeClas
 		virtual		void CompareElement(const TopoDS_Shape &F);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_ShellFaceClassifier();
 
 };
 %extend TopOpeBRepBuild_ShellFaceClassifier {
@@ -1926,8 +1878,6 @@ class TopOpeBRepBuild_EdgeBuilder : public TopOpeBRepBuild_Area1dBuilder {
 		const TopoDS_Shape & Vertex() const;
 		%feature("autodoc", "1");
 		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_EdgeBuilder();
 
 };
 %extend TopOpeBRepBuild_EdgeBuilder {
@@ -1939,8 +1889,6 @@ class TopOpeBRepBuild_EdgeBuilder : public TopOpeBRepBuild_Area1dBuilder {
 %nodefaultctor TopOpeBRepBuild_ListIteratorOfListOfListOfLoop;
 class TopOpeBRepBuild_ListIteratorOfListOfListOfLoop {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_ListIteratorOfListOfListOfLoop();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_ListIteratorOfListOfListOfLoop();
 		%feature("autodoc", "1");
@@ -1964,8 +1912,6 @@ class TopOpeBRepBuild_ListIteratorOfListOfListOfLoop {
 %nodefaultctor TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger;
 class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger();
 		%feature("autodoc", "1");
@@ -2041,8 +1987,6 @@ class TopOpeBRepBuild_ShapeSet {
 		TopOpeBRepBuild_ShapeSet(const TopAbs_ShapeEnum SubShapeType, const Standard_Boolean checkshape=1);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_ShapeSet();
 		%feature("autodoc", "1");
 		virtual		void AddShape(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
@@ -2142,8 +2086,6 @@ class TopOpeBRepBuild_ShellFaceSet : public TopOpeBRepBuild_ShapeSet {
 		TopOpeBRepBuild_ShellFaceSet(const TopoDS_Shape &S, const Standard_Address Addr=0);
 		%feature("autodoc", "1");
 		const TopoDS_Solid & Solid() const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_ShellFaceSet();
 
 };
 %extend TopOpeBRepBuild_ShellFaceSet {
@@ -2179,8 +2121,6 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape : public
 %nodefaultctor TopOpeBRepBuild_GIter;
 class TopOpeBRepBuild_GIter {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_GIter();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GIter();
 		%feature("autodoc", "1");
@@ -2233,8 +2173,6 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNo
 class TopOpeBRepBuild_BuilderON {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepBuild_BuilderON();
-		%feature("autodoc", "1");
 		TopOpeBRepBuild_BuilderON();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_BuilderON(const TopOpeBRepBuild_PBuilder &PB, const TopoDS_Shape &F, const TopOpeBRepBuild_PGTopo &PG, const TopOpeBRepTool_Plos &PLSclass, const TopOpeBRepBuild_PWireEdgeSet &PWES);
@@ -2261,8 +2199,6 @@ class TopOpeBRepBuild_BuilderON {
 %nodefaultctor TopOpeBRepBuild_SolidBuilder;
 class TopOpeBRepBuild_SolidBuilder {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_SolidBuilder();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_SolidBuilder();
 		%feature("autodoc", "1");
@@ -2304,8 +2240,6 @@ class TopOpeBRepBuild_SolidBuilder {
 %nodefaultctor TopOpeBRepBuild_Tools;
 class TopOpeBRepBuild_Tools {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_Tools();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_Tools();
 		%feature("autodoc", "1");
@@ -2366,8 +2300,6 @@ class TopOpeBRepBuild_Tools {
 class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
 		TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal(const TopOpeBRepBuild_DataMapOfShapeReal &aMap);
@@ -2388,8 +2320,6 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal : public TCollection_B
 %nodefaultctor TopOpeBRepBuild_FaceBuilder;
 class TopOpeBRepBuild_FaceBuilder {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_FaceBuilder();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_FaceBuilder();
 		%feature("autodoc", "1");
@@ -2524,8 +2454,6 @@ class TopOpeBRepBuild_WireEdgeSet : public TopOpeBRepBuild_ShapeSet {
 		virtual		TCollection_AsciiString SNameori(const TopoDS_Shape &S, const TCollection_AsciiString &sb="", const TCollection_AsciiString &sa="") const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString SNameori(const TopTools_ListOfShape &S, const TCollection_AsciiString &sb="", const TCollection_AsciiString &sa="") const;
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRepBuild_WireEdgeSet();
 
 };
 %extend TopOpeBRepBuild_WireEdgeSet {
@@ -2537,8 +2465,6 @@ class TopOpeBRepBuild_WireEdgeSet : public TopOpeBRepBuild_ShapeSet {
 %nodefaultctor TopOpeBRepBuild_BlockBuilder;
 class TopOpeBRepBuild_BlockBuilder {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_BlockBuilder();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_BlockBuilder();
 		%feature("autodoc", "1");
@@ -2636,8 +2562,6 @@ class TopOpeBRepBuild_ListOfShapeListOfShape {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepBuild_ListOfShapeListOfShape();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TopOpeBRepBuild_ShapeListOfShape &I);
@@ -2678,8 +2602,6 @@ class TopOpeBRepBuild_ListOfShapeListOfShape {
 %nodefaultctor TopOpeBRepBuild_FuseFace;
 class TopOpeBRepBuild_FuseFace {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_FuseFace();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_FuseFace();
 		%feature("autodoc", "1");
@@ -2747,8 +2669,6 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public TCollection_Ma
 %nodefaultctor TopOpeBRepBuild_ShapeListOfShape;
 class TopOpeBRepBuild_ShapeListOfShape {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepBuild_ShapeListOfShape();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_ShapeListOfShape();
 		%feature("autodoc", "1");

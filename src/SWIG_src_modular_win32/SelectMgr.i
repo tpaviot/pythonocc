@@ -874,8 +874,6 @@ class SelectMgr_DataMapOfObjectSelectors : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectMgr_DataMapOfObjectSelectors();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_SelectMgr_SelectableObject &K, const SelectMgr_SequenceOfSelector &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_SelectMgr_SelectableObject &K) const;
@@ -1134,8 +1132,6 @@ class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNo
 %nodefaultctor SelectMgr_SortCriterion;
 class SelectMgr_SortCriterion {
 	public:
-		%feature("autodoc", "1");
-		~SelectMgr_SortCriterion();
 		%feature("autodoc", "1");
 		SelectMgr_SortCriterion();
 		%feature("autodoc", "1");
@@ -1638,8 +1634,6 @@ class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~SelectMgr_DataMapOfSelectionActivation();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_SelectMgr_Selection &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_SelectMgr_Selection &K) const;
@@ -1745,8 +1739,6 @@ class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 %nodefaultctor SelectMgr_CompareResults;
 class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
 	public:
-		%feature("autodoc", "1");
-		~SelectMgr_CompareResults();
 		%feature("autodoc", "1");
 		SelectMgr_CompareResults(const SelectMgr_IndexedDataMapOfOwnerCriterion &aMapOfCriterion);
 		%feature("autodoc", "1");

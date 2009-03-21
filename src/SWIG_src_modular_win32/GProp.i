@@ -134,8 +134,6 @@ class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 class GProp_GProps {
 	public:
 		%feature("autodoc", "1");
-		~GProp_GProps();
-		%feature("autodoc", "1");
 		GProp_GProps();
 		%feature("autodoc", "1");
 		GProp_GProps(const gp_Pnt &SystemLocation);
@@ -166,8 +164,6 @@ class GProp_GProps {
 %nodefaultctor GProp_PGProps;
 class GProp_PGProps : public GProp_GProps {
 	public:
-		%feature("autodoc", "1");
-		~GProp_PGProps();
 		%feature("autodoc", "1");
 		GProp_PGProps();
 		%feature("autodoc", "1");
@@ -201,8 +197,6 @@ class GProp_PGProps : public GProp_GProps {
 %nodefaultctor GProp_PrincipalProps;
 class GProp_PrincipalProps {
 	public:
-		%feature("autodoc", "1");
-		~GProp_PrincipalProps();
 		%feature("autodoc", "1");
 		GProp_PrincipalProps();
 		%feature("autodoc", "1");
@@ -263,8 +257,6 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 class GProp_SelGProps : public GProp_GProps {
 	public:
 		%feature("autodoc", "1");
-		~GProp_SelGProps();
-		%feature("autodoc", "1");
 		GProp_SelGProps();
 		%feature("autodoc", "1");
 		GProp_SelGProps(const gp_Cylinder &S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2, const gp_Pnt &SLocation);
@@ -296,8 +288,6 @@ class GProp_SelGProps : public GProp_GProps {
 class GProp_CelGProps : public GProp_GProps {
 	public:
 		%feature("autodoc", "1");
-		~GProp_CelGProps();
-		%feature("autodoc", "1");
 		GProp_CelGProps();
 		%feature("autodoc", "1");
 		GProp_CelGProps(const gp_Circ &C, const gp_Pnt &CLocation);
@@ -322,8 +312,6 @@ class GProp_CelGProps : public GProp_GProps {
 %nodefaultctor GProp_VelGProps;
 class GProp_VelGProps : public GProp_GProps {
 	public:
-		%feature("autodoc", "1");
-		~GProp_VelGProps();
 		%feature("autodoc", "1");
 		GProp_VelGProps();
 		%feature("autodoc", "1");
@@ -356,8 +344,6 @@ class GProp_VelGProps : public GProp_GProps {
 class GProp {
 	public:
 		%feature("autodoc", "1");
-		~GProp();
-		%feature("autodoc", "1");
 		GProp();
 		%feature("autodoc", "1");
 		void HOperator(const gp_Pnt &G, const gp_Pnt &Q, const Standard_Real Mass, gp_Mat & Operator);
@@ -372,8 +358,6 @@ class GProp {
 %nodefaultctor GProp_PEquation;
 class GProp_PEquation {
 	public:
-		%feature("autodoc", "1");
-		~GProp_PEquation();
 		%feature("autodoc", "1");
 		GProp_PEquation(const TColgp_Array1OfPnt &Pnts, const Standard_Real Tol);
 		%feature("autodoc", "1");

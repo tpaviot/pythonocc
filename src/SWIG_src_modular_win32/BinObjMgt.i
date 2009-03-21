@@ -244,8 +244,6 @@ class BinObjMgt_Persistent {
 		std::istream & Read(std::istream & theIS);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BinObjMgt_Persistent();
 
 };
 %extend BinObjMgt_Persistent {
@@ -285,8 +283,6 @@ class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 		BinObjMgt_SequenceOfAddress();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BinObjMgt_SequenceOfAddress();
 		%feature("autodoc", "1");
 		const BinObjMgt_SequenceOfAddress & Assign(const BinObjMgt_SequenceOfAddress &Other);
 		%feature("autodoc", "1");

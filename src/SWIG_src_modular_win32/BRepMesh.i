@@ -751,8 +751,6 @@ class BRepMesh_IndexedMapOfVertex : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_IndexedMapOfVertex();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const BRepMesh_Vertex &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const BRepMesh_Vertex &K);
@@ -799,8 +797,6 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid : public TCollection_B
 class BRepMesh_NodeHasherOfDataStructureOfDelaun {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_NodeHasherOfDataStructureOfDelaun();
-		%feature("autodoc", "1");
 		BRepMesh_NodeHasherOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BRepMesh_Vertex &K, const Standard_Integer Upper);
@@ -844,8 +840,6 @@ class BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : public TCo
 class BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY();
-		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY();
 		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY(const BRepMesh_DataMapOfIntegerListOfXY &aMap);
@@ -867,8 +861,6 @@ class BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY : public TCollection_Ba
 class BRepMesh_HeapSortIndexedVertexOfDelaun {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_HeapSortIndexedVertexOfDelaun();
-		%feature("autodoc", "1");
 		BRepMesh_HeapSortIndexedVertexOfDelaun();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const BRepMesh_ComparatorOfIndexedVertexOfDelaun &Comp);
@@ -883,8 +875,6 @@ class BRepMesh_HeapSortIndexedVertexOfDelaun {
 %nodefaultctor BRepMesh_BiPoint;
 class BRepMesh_BiPoint {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_BiPoint();
 		%feature("autodoc", "1");
 		BRepMesh_BiPoint();
 		%feature("autodoc", "1");
@@ -953,8 +943,6 @@ class BRepMesh_ListOfXY {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_ListOfXY();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const gp_XY &I);
@@ -996,8 +984,6 @@ class BRepMesh_ListOfXY {
 class BRepMesh {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh();
-		%feature("autodoc", "1");
 		BRepMesh();
 		%feature("autodoc", "1");
 		void Mesh(const TopoDS_Shape &S, const Standard_Real d);
@@ -1012,8 +998,6 @@ class BRepMesh {
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfVertexInteger;
 class BRepMesh_DataMapIteratorOfDataMapOfVertexInteger : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_DataMapIteratorOfDataMapOfVertexInteger();
 		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfVertexInteger();
 		%feature("autodoc", "1");
@@ -1043,8 +1027,6 @@ class BRepMesh_IMapOfElementOfDataStructureOfDelaun : public TCollection_BasicMa
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepMesh_IMapOfElementOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const BRepMesh_Triangle &K);
 		%feature("autodoc", "1");
@@ -1078,8 +1060,6 @@ class BRepMesh_Array1OfBiPoint {
 		void Init(const BRepMesh_BiPoint &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BRepMesh_Array1OfBiPoint();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1247,8 +1227,6 @@ class BRepMesh_DataMapOfIntegerFace : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapOfIntegerFace();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TopoDS_Face &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1303,8 +1281,6 @@ class BRepMesh_IDMapOfNodeOfDataStructureOfDelaun : public TCollection_BasicMap 
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepMesh_IDMapOfNodeOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const BRepMesh_Vertex &K, const MeshDS_ListOfInteger &I);
 		%feature("autodoc", "1");
@@ -1365,8 +1341,6 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 class BRepMesh_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfShapeReal(const BRepMesh_DataMapOfShapeReal &aMap);
@@ -1395,8 +1369,6 @@ class BRepMesh_Array1OfVertexOfDelaun {
 		void Init(const BRepMesh_Vertex &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BRepMesh_Array1OfVertexOfDelaun();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1456,8 +1428,6 @@ class BRepMesh_DiscretRoot {
 class BRepMesh_Vertex {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_Vertex();
-		%feature("autodoc", "1");
 		BRepMesh_Vertex();
 		%feature("autodoc", "1");
 		BRepMesh_Vertex(const gp_XY &UV, const Standard_Integer Dom, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
@@ -1493,8 +1463,6 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("autodoc", "1");
 		BRepMesh_IncrementalMesh();
 		%feature("autodoc", "1");
-		virtual		~BRepMesh_IncrementalMesh();
-		%feature("autodoc", "1");
 		BRepMesh_IncrementalMesh(const TopoDS_Shape &S, const Standard_Real D, const Standard_Boolean Relatif=0, const Standard_Real Ang=5.0e-1);
 		%feature("autodoc", "1");
 		void SetRelative(const Standard_Boolean theFlag);
@@ -1517,8 +1485,6 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 %nodefaultctor BRepMesh_ListIteratorOfListOfXY;
 class BRepMesh_ListIteratorOfListOfXY {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_ListIteratorOfListOfXY();
 		%feature("autodoc", "1");
 		BRepMesh_ListIteratorOfListOfXY();
 		%feature("autodoc", "1");
@@ -1564,8 +1530,6 @@ class BRepMesh_ListNodeOfListOfSurfaceGrid : public TCollection_MapNode {
 %nodefaultctor BRepMesh_ShapeTool;
 class BRepMesh_ShapeTool {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_ShapeTool();
 		%feature("autodoc", "1");
 		BRepMesh_ShapeTool();
 		%feature("autodoc", "1");
@@ -1708,8 +1672,6 @@ class BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public TCollection_MapNode {
 class BRepMesh_DataMapIteratorOfDataMapOfCouplePnt : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapIteratorOfDataMapOfCouplePnt();
-		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfCouplePnt();
 		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfCouplePnt(const BRepMesh_DataMapOfCouplePnt &aMap);
@@ -1767,8 +1729,6 @@ class BRepMesh_ListOfVertex {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_ListOfVertex();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BRepMesh_Vertex &I);
@@ -1821,8 +1781,6 @@ class BRepMesh_Classifier {
 		Standard_Boolean NaturalRestriction() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BRepMesh_Classifier();
 
 };
 %extend BRepMesh_Classifier {
@@ -1834,8 +1792,6 @@ class BRepMesh_Classifier {
 %nodefaultctor BRepMesh_ComparatorOfVertexOfDelaun;
 class BRepMesh_ComparatorOfVertexOfDelaun {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_ComparatorOfVertexOfDelaun();
 		%feature("autodoc", "1");
 		BRepMesh_ComparatorOfVertexOfDelaun(const gp_XY &theDir, const Standard_Real TheTol);
 		%feature("autodoc", "1");
@@ -1934,8 +1890,6 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 class BRepMesh_GeomTool {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_GeomTool();
-		%feature("autodoc", "1");
 		BRepMesh_GeomTool(BRepAdaptor_Curve & C, const Standard_Real Ufirst, const Standard_Real Ulast, const Standard_Real AngDefl, const Standard_Real Deflection, const Standard_Integer nbpointsmin=2);
 		%feature("autodoc", "1");
 		BRepMesh_GeomTool(const Handle_BRepAdaptor_HSurface &S, const Standard_Real ParamIso, const GeomAbs_IsoType Type, const Standard_Real Ufirst, const Standard_Real Ulast, const Standard_Real AngDefl, const Standard_Real Deflection, const Standard_Integer nbpointsmin=2);
@@ -1995,8 +1949,6 @@ class BRepMesh_DataMapOfVertexInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapOfVertexInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Vertex &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Vertex &K) const;
@@ -2042,8 +1994,6 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret : public TCollection_B
 %nodefaultctor BRepMesh_SelectorOfDataStructureOfDelaun;
 class BRepMesh_SelectorOfDataStructureOfDelaun {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_SelectorOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		BRepMesh_SelectorOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
@@ -2095,8 +2045,6 @@ class BRepMesh_DataMapOfShapeReal : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepMesh_DataMapOfShapeReal();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Real &I);
 		%feature("autodoc", "1");
@@ -2210,8 +2158,6 @@ class BRepMesh_DataMapOfMeshVertexInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapOfMeshVertexInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const BRepMesh_Vertex &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const BRepMesh_Vertex &K) const;
@@ -2236,8 +2182,6 @@ class BRepMesh_DataMapOfMeshVertexInteger : public TCollection_BasicMap {
 %nodefaultctor BRepMesh_HeapSortVertexOfDelaun;
 class BRepMesh_HeapSortVertexOfDelaun {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_HeapSortVertexOfDelaun();
 		%feature("autodoc", "1");
 		BRepMesh_HeapSortVertexOfDelaun();
 		%feature("autodoc", "1");
@@ -2276,8 +2220,6 @@ class BRepMesh_ListIteratorOfListOfSurfaceGrid {
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger;
 class BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger();
 		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger();
 		%feature("autodoc", "1");
@@ -2328,8 +2270,6 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public T
 class BRepMesh_LinkHasherOfDataStructureOfDelaun {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_LinkHasherOfDataStructureOfDelaun();
-		%feature("autodoc", "1");
 		BRepMesh_LinkHasherOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BRepMesh_Edge &K, const Standard_Integer Upper);
@@ -2354,8 +2294,6 @@ class BRepMesh_IDMapOfLinkOfDataStructureOfDelaun : public TCollection_BasicMap 
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepMesh_IDMapOfLinkOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const BRepMesh_Edge &K, const MeshDS_ListOfInteger &I);
 		%feature("autodoc", "1");
@@ -2400,8 +2338,6 @@ class BRepMesh_DataMapOfIntegerListOfXY : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapOfIntegerListOfXY();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const BRepMesh_ListOfXY &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -2427,8 +2363,6 @@ class BRepMesh_DataMapOfIntegerListOfXY : public TCollection_BasicMap {
 class BRepMesh_VertexHasher {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_VertexHasher();
-		%feature("autodoc", "1");
 		BRepMesh_VertexHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BRepMesh_Vertex &K, const Standard_Integer Upper);
@@ -2453,8 +2387,6 @@ class BRepMesh_DataMapOfCouplePnt : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepMesh_DataMapOfCouplePnt();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const MeshShape_Couple &K, const gp_Pnt &I);
 		%feature("autodoc", "1");
@@ -2504,8 +2436,6 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public TCollection_MapNo
 %nodefaultctor BRepMesh_MapIteratorOfMapOfAsciiString;
 class BRepMesh_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_MapIteratorOfMapOfAsciiString();
 		%feature("autodoc", "1");
 		BRepMesh_MapIteratorOfMapOfAsciiString();
 		%feature("autodoc", "1");
@@ -2605,8 +2535,6 @@ class BRepMesh_Delaun {
 class BRepMesh_DataMapIteratorOfDataMapOfIntegerFace : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_DataMapIteratorOfDataMapOfIntegerFace();
-		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfIntegerFace();
 		%feature("autodoc", "1");
 		BRepMesh_DataMapIteratorOfDataMapOfIntegerFace(const BRepMesh_DataMapOfIntegerFace &aMap);
@@ -2627,8 +2555,6 @@ class BRepMesh_DataMapIteratorOfDataMapOfIntegerFace : public TCollection_BasicM
 %nodefaultctor BRepMesh_ComparatorOfIndexedVertexOfDelaun;
 class BRepMesh_ComparatorOfIndexedVertexOfDelaun {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_ComparatorOfIndexedVertexOfDelaun();
 		%feature("autodoc", "1");
 		BRepMesh_ComparatorOfIndexedVertexOfDelaun(const gp_XY &theDir, const Standard_Real TheTol, const Handle_BRepMesh_DataStructureOfDelaun &HDS);
 		%feature("autodoc", "1");
@@ -2673,8 +2599,6 @@ class BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public TCollection_MapNode 
 class BRepMesh_Edge {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_Edge();
-		%feature("autodoc", "1");
 		BRepMesh_Edge(const Standard_Integer vDebut, const Standard_Integer vFin, const MeshDS_DegreeOfFreedom canMove, const Standard_Integer domain);
 		%feature("autodoc", "1");
 		Standard_Integer FirstNode() const;
@@ -2712,8 +2636,6 @@ class BRepMesh_MapOfAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMesh_MapOfAsciiString();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const TCollection_AsciiString &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const TCollection_AsciiString &aKey) const;
@@ -2730,8 +2652,6 @@ class BRepMesh_MapOfAsciiString : public TCollection_BasicMap {
 %nodefaultctor BRepMesh_Triangle;
 class BRepMesh_Triangle {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_Triangle();
 		%feature("autodoc", "1");
 		BRepMesh_Triangle();
 		%feature("autodoc", "1");
@@ -2762,8 +2682,6 @@ class BRepMesh_Triangle {
 class BRepMesh_ElemHasherOfDataStructureOfDelaun {
 	public:
 		%feature("autodoc", "1");
-		~BRepMesh_ElemHasherOfDataStructureOfDelaun();
-		%feature("autodoc", "1");
 		BRepMesh_ElemHasherOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BRepMesh_Triangle &K, const Standard_Integer Upper);
@@ -2780,8 +2698,6 @@ class BRepMesh_ElemHasherOfDataStructureOfDelaun {
 %nodefaultctor BRepMesh_ListIteratorOfListOfVertex;
 class BRepMesh_ListIteratorOfListOfVertex {
 	public:
-		%feature("autodoc", "1");
-		~BRepMesh_ListIteratorOfListOfVertex();
 		%feature("autodoc", "1");
 		BRepMesh_ListIteratorOfListOfVertex();
 		%feature("autodoc", "1");

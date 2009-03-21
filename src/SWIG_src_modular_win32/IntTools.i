@@ -449,8 +449,6 @@ class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TColle
 class IntTools_SurfaceRangeSampleMapHasher {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_SurfaceRangeSampleMapHasher();
-		%feature("autodoc", "1");
 		IntTools_SurfaceRangeSampleMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const IntTools_SurfaceRangeSample &K, const Standard_Integer Upper);
@@ -477,8 +475,6 @@ class IntTools_CArray1OfReal {
 		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntTools_CArray1OfReal();
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -563,8 +559,6 @@ class IntTools_FClass2d {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntTools_FClass2d();
-		%feature("autodoc", "1");
 		TopAbs_State TestOnRestriction(const gp_Pnt2d &Puv, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsHole() const;
@@ -645,8 +639,6 @@ class IntTools_IndexedDataMapOfTransientAddress : public TCollection_BasicMap {
 class IntTools_CommonPrt {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_CommonPrt();
-		%feature("autodoc", "1");
 		IntTools_CommonPrt();
 		%feature("autodoc", "1");
 		IntTools_CommonPrt(const IntTools_CommonPrt &aCPrt);
@@ -710,8 +702,6 @@ class IntTools_CommonPrt {
 class IntTools_BaseRangeSample {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_BaseRangeSample();
-		%feature("autodoc", "1");
 		IntTools_BaseRangeSample();
 		%feature("autodoc", "1");
 		IntTools_BaseRangeSample(const Standard_Integer theDepth);
@@ -753,8 +743,6 @@ class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
 class IntTools_CurveRangeSampleMapHasher {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_CurveRangeSampleMapHasher();
-		%feature("autodoc", "1");
 		IntTools_CurveRangeSampleMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const IntTools_CurveRangeSample &K, const Standard_Integer Upper);
@@ -771,8 +759,6 @@ class IntTools_CurveRangeSampleMapHasher {
 %nodefaultctor IntTools_BeanFaceIntersector;
 class IntTools_BeanFaceIntersector {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_BeanFaceIntersector();
 		%feature("autodoc", "1");
 		IntTools_BeanFaceIntersector();
 		%feature("autodoc", "1");
@@ -821,8 +807,6 @@ class IntTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_IndexedDataMapOfShapeAddress();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const Standard_Address &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const Standard_Address &T);
@@ -861,8 +845,6 @@ class IntTools_SequenceOfRoots : public TCollection_BaseSequence {
 		IntTools_SequenceOfRoots();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_SequenceOfRoots();
 		%feature("autodoc", "1");
 		const IntTools_SequenceOfRoots & Assign(const IntTools_SequenceOfRoots &Other);
 		%feature("autodoc", "1");
@@ -913,8 +895,6 @@ class IntTools_SequenceOfRoots : public TCollection_BaseSequence {
 class IntTools_Compare {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_Compare();
-		%feature("autodoc", "1");
 		IntTools_Compare();
 		%feature("autodoc", "1");
 		IntTools_Compare(const Standard_Real aTol);
@@ -939,8 +919,6 @@ class IntTools_SequenceOfCurves : public TCollection_BaseSequence {
 		IntTools_SequenceOfCurves();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_SequenceOfCurves();
 		%feature("autodoc", "1");
 		const IntTools_SequenceOfCurves & Assign(const IntTools_SequenceOfCurves &Other);
 		%feature("autodoc", "1");
@@ -999,8 +977,6 @@ class IntTools_ListOfSurfaceRangeSample {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_ListOfSurfaceRangeSample();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const IntTools_SurfaceRangeSample &I);
@@ -1050,8 +1026,6 @@ class IntTools_Array1OfRoots {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntTools_Array1OfRoots();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IntTools_Array1OfRoots & Assign(const IntTools_Array1OfRoots &Other);
@@ -1082,8 +1056,6 @@ class IntTools_Array1OfRoots {
 %nodefaultctor IntTools_EdgeEdge;
 class IntTools_EdgeEdge {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_EdgeEdge();
 		%feature("autodoc", "1");
 		IntTools_EdgeEdge();
 		%feature("autodoc", "1");
@@ -1136,8 +1108,6 @@ class IntTools_EdgeEdge {
 class IntTools_CompareRange {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_CompareRange();
-		%feature("autodoc", "1");
 		IntTools_CompareRange();
 		%feature("autodoc", "1");
 		IntTools_CompareRange(const Standard_Real aTol);
@@ -1159,8 +1129,6 @@ class IntTools_CompareRange {
 class IntTools_QuickSort {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_QuickSort();
-		%feature("autodoc", "1");
 		IntTools_QuickSort();
 		%feature("autodoc", "1");
 		void Sort(IntTools_Array1OfRoots & TheArray, const IntTools_Compare &Comp);
@@ -1175,8 +1143,6 @@ class IntTools_QuickSort {
 %nodefaultctor IntTools_LineConstructor;
 class IntTools_LineConstructor {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_LineConstructor();
 		%feature("autodoc", "1");
 		IntTools_LineConstructor();
 		%feature("autodoc", "1");
@@ -1209,8 +1175,6 @@ class IntTools_MapOfCurveSample : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_MapOfCurveSample();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const IntTools_CurveRangeSample &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const IntTools_CurveRangeSample &aKey) const;
@@ -1231,8 +1195,6 @@ class IntTools_SequenceOfCommonPrts : public TCollection_BaseSequence {
 		IntTools_SequenceOfCommonPrts();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_SequenceOfCommonPrts();
 		%feature("autodoc", "1");
 		const IntTools_SequenceOfCommonPrts & Assign(const IntTools_SequenceOfCommonPrts &Other);
 		%feature("autodoc", "1");
@@ -1283,8 +1245,6 @@ class IntTools_SequenceOfCommonPrts : public TCollection_BaseSequence {
 class IntTools_MarkedRangeSet {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_MarkedRangeSet();
-		%feature("autodoc", "1");
 		IntTools_MarkedRangeSet();
 		%feature("autodoc", "1");
 		IntTools_MarkedRangeSet(const Standard_Real theFirstBoundary, const Standard_Real theLastBoundary, const Standard_Integer theInitFlag);
@@ -1327,8 +1287,6 @@ class IntTools_MarkedRangeSet {
 %nodefaultctor IntTools_SurfaceRangeLocalizeData;
 class IntTools_SurfaceRangeLocalizeData {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_SurfaceRangeLocalizeData();
 		%feature("autodoc", "1");
 		IntTools_SurfaceRangeLocalizeData();
 		%feature("autodoc", "1");
@@ -1411,8 +1369,6 @@ class IntTools_SequenceOfPntOn2Faces : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_SequenceOfPntOn2Faces();
-		%feature("autodoc", "1");
 		const IntTools_SequenceOfPntOn2Faces & Assign(const IntTools_SequenceOfPntOn2Faces &Other);
 		%feature("autodoc", "1");
 		void Append(const IntTools_PntOn2Faces &T);
@@ -1492,8 +1448,6 @@ class IntTools_ListOfCurveRangeSample {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_ListOfCurveRangeSample();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const IntTools_CurveRangeSample &I);
@@ -1534,8 +1488,6 @@ class IntTools_ListOfCurveRangeSample {
 %nodefaultctor IntTools_Root;
 class IntTools_Root {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_Root();
 		%feature("autodoc", "1");
 		IntTools_Root();
 		%feature("autodoc", "1");
@@ -1585,8 +1537,6 @@ class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_DataMapOfCurveSampleBox();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const IntTools_CurveRangeSample &K, const Bnd_Box &I);
 		%feature("autodoc", "1");
@@ -1645,8 +1595,6 @@ class IntTools_CArray1OfInteger {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~IntTools_CArray1OfInteger();
-		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		void Append(const Standard_Integer &Value);
@@ -1673,8 +1621,6 @@ class IntTools_CArray1OfInteger {
 %nodefaultctor IntTools_ListIteratorOfListOfCurveRangeSample;
 class IntTools_ListIteratorOfListOfCurveRangeSample {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_ListIteratorOfListOfCurveRangeSample();
 		%feature("autodoc", "1");
 		IntTools_ListIteratorOfListOfCurveRangeSample();
 		%feature("autodoc", "1");
@@ -1767,8 +1713,6 @@ class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntTools_DataMapOfSurfaceSampleBox();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const IntTools_SurfaceRangeSample &K, const Bnd_Box &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const IntTools_SurfaceRangeSample &K) const;
@@ -1801,8 +1745,6 @@ class IntTools_MapOfSurfaceSample : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_MapOfSurfaceSample();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const IntTools_SurfaceRangeSample &aKey);
 		%feature("autodoc", "1");
@@ -1842,8 +1784,6 @@ class IntTools_StdMapNodeOfMapOfSurfaceSample : public TCollection_MapNode {
 %nodefaultctor IntTools_PntOnFace;
 class IntTools_PntOnFace {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_PntOnFace();
 		%feature("autodoc", "1");
 		IntTools_PntOnFace();
 		%feature("autodoc", "1");
@@ -1922,8 +1862,6 @@ class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNo
 class IntTools_PntOn2Faces {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_PntOn2Faces();
-		%feature("autodoc", "1");
 		IntTools_PntOn2Faces();
 		%feature("autodoc", "1");
 		IntTools_PntOn2Faces(const IntTools_PntOnFace &aP1, const IntTools_PntOnFace &aP2);
@@ -1950,8 +1888,6 @@ class IntTools_PntOn2Faces {
 %nodefaultctor IntTools_CurveRangeLocalizeData;
 class IntTools_CurveRangeLocalizeData {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_CurveRangeLocalizeData();
 		%feature("autodoc", "1");
 		IntTools_CurveRangeLocalizeData(const Standard_Integer theNbSample, const Standard_Real theMinRange);
 		%feature("autodoc", "1");
@@ -2007,8 +1943,6 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollec
 %nodefaultctor IntTools_SurfaceRangeSample;
 class IntTools_SurfaceRangeSample {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_SurfaceRangeSample();
 		%feature("autodoc", "1");
 		IntTools_SurfaceRangeSample();
 		%feature("autodoc", "1");
@@ -2097,8 +2031,6 @@ class IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public TCollection_SeqNode 
 class IntTools_Range {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_Range();
-		%feature("autodoc", "1");
 		IntTools_Range();
 		%feature("autodoc", "1");
 		IntTools_Range(const Standard_Real aFirst, const Standard_Real aLast);
@@ -2123,8 +2055,6 @@ class IntTools_Range {
 %nodefaultctor IntTools_BeanBeanIntersector;
 class IntTools_BeanBeanIntersector {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_BeanBeanIntersector();
 		%feature("autodoc", "1");
 		IntTools_BeanBeanIntersector();
 		%feature("autodoc", "1");
@@ -2161,8 +2091,6 @@ class IntTools_BeanBeanIntersector {
 class IntTools_DataMapIteratorOfDataMapOfCurveSampleBox : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_DataMapIteratorOfDataMapOfCurveSampleBox();
-		%feature("autodoc", "1");
 		IntTools_DataMapIteratorOfDataMapOfCurveSampleBox();
 		%feature("autodoc", "1");
 		IntTools_DataMapIteratorOfDataMapOfCurveSampleBox(const IntTools_DataMapOfCurveSampleBox &aMap);
@@ -2187,8 +2115,6 @@ class IntTools_Context {
 		IntTools_Context();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntTools_Context();
 		%feature("autodoc", "1");
 		IntTools_FClass2d & FClass2d(const TopoDS_Face &aF);
 		%feature("autodoc", "1");
@@ -2237,8 +2163,6 @@ class IntTools_Context {
 class IntTools_MapIteratorOfMapOfSurfaceSample : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_MapIteratorOfMapOfSurfaceSample();
-		%feature("autodoc", "1");
 		IntTools_MapIteratorOfMapOfSurfaceSample();
 		%feature("autodoc", "1");
 		IntTools_MapIteratorOfMapOfSurfaceSample(const IntTools_MapOfSurfaceSample &aMap);
@@ -2258,8 +2182,6 @@ class IntTools_MapIteratorOfMapOfSurfaceSample : public TCollection_BasicMapIter
 class IntTools_QuickSortRange {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_QuickSortRange();
-		%feature("autodoc", "1");
 		IntTools_QuickSortRange();
 		%feature("autodoc", "1");
 		void Sort(IntTools_Array1OfRange & TheArray, const IntTools_CompareRange &Comp);
@@ -2274,8 +2196,6 @@ class IntTools_QuickSortRange {
 %nodefaultctor IntTools_Tools;
 class IntTools_Tools {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_Tools();
 		%feature("autodoc", "1");
 		IntTools_Tools();
 		%feature("autodoc", "1");
@@ -2321,8 +2241,6 @@ class IntTools_Tools {
 %nodefaultctor IntTools_EdgeFace;
 class IntTools_EdgeFace {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_EdgeFace();
 		%feature("autodoc", "1");
 		IntTools_EdgeFace();
 		%feature("autodoc", "1");
@@ -2371,8 +2289,6 @@ class IntTools_EdgeFace {
 class IntTools_ListIteratorOfListOfSurfaceRangeSample {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_ListIteratorOfListOfSurfaceRangeSample();
-		%feature("autodoc", "1");
 		IntTools_ListIteratorOfListOfSurfaceRangeSample();
 		%feature("autodoc", "1");
 		IntTools_ListIteratorOfListOfSurfaceRangeSample(const IntTools_ListOfSurfaceRangeSample &L);
@@ -2396,8 +2312,6 @@ class IntTools_ListIteratorOfListOfSurfaceRangeSample {
 class IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox();
-		%feature("autodoc", "1");
 		IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox();
 		%feature("autodoc", "1");
 		IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox(const IntTools_DataMapOfSurfaceSampleBox &aMap);
@@ -2418,8 +2332,6 @@ class IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox : public TCollection_B
 %nodefaultctor IntTools_ShrunkRange;
 class IntTools_ShrunkRange {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_ShrunkRange();
 		%feature("autodoc", "1");
 		IntTools_ShrunkRange();
 		%feature("autodoc", "1");
@@ -2457,8 +2369,6 @@ class IntTools_ListOfBox {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_ListOfBox();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -2501,8 +2411,6 @@ class IntTools_ListOfBox {
 class IntTools_MapIteratorOfMapOfCurveSample : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_MapIteratorOfMapOfCurveSample();
-		%feature("autodoc", "1");
 		IntTools_MapIteratorOfMapOfCurveSample();
 		%feature("autodoc", "1");
 		IntTools_MapIteratorOfMapOfCurveSample(const IntTools_MapOfCurveSample &aMap);
@@ -2525,8 +2433,6 @@ class IntTools_SequenceOfRanges : public TCollection_BaseSequence {
 		IntTools_SequenceOfRanges();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntTools_SequenceOfRanges();
 		%feature("autodoc", "1");
 		const IntTools_SequenceOfRanges & Assign(const IntTools_SequenceOfRanges &Other);
 		%feature("autodoc", "1");
@@ -2584,8 +2490,6 @@ class IntTools_Array1OfRange {
 		void Init(const IntTools_Range &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntTools_Array1OfRange();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2670,8 +2574,6 @@ class IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public TCollection_MapNode
 class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
 	public:
 		%feature("autodoc", "1");
-		~IntTools_CurveRangeSample();
-		%feature("autodoc", "1");
 		IntTools_CurveRangeSample();
 		%feature("autodoc", "1");
 		IntTools_CurveRangeSample(const Standard_Integer theIndex);
@@ -2696,8 +2598,6 @@ class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
 %nodefaultctor IntTools_FaceFace;
 class IntTools_FaceFace {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_FaceFace();
 		%feature("autodoc", "1");
 		IntTools_FaceFace();
 		%feature("autodoc", "1");
@@ -2773,8 +2673,6 @@ class IntTools_Curve {
 class IntTools {
 	public:
 		%feature("autodoc", "1");
-		~IntTools();
-		%feature("autodoc", "1");
 		IntTools();
 		%feature("autodoc", "1");
 		Standard_Real Length(const TopoDS_Edge &E);
@@ -2801,8 +2699,6 @@ class IntTools {
 %nodefaultctor IntTools_ListIteratorOfListOfBox;
 class IntTools_ListIteratorOfListOfBox {
 	public:
-		%feature("autodoc", "1");
-		~IntTools_ListIteratorOfListOfBox();
 		%feature("autodoc", "1");
 		IntTools_ListIteratorOfListOfBox();
 		%feature("autodoc", "1");

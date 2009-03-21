@@ -448,8 +448,6 @@ class StdSelect_ShapeTypeFilter : public SelectMgr_Filter {
 class StdSelect {
 	public:
 		%feature("autodoc", "1");
-		~StdSelect();
-		%feature("autodoc", "1");
 		StdSelect();
 		%feature("autodoc", "1");
 		Select3D_Projector GetProjector(const Handle_V3d_View &aView);
@@ -466,8 +464,6 @@ class StdSelect {
 %nodefaultctor StdSelect_BRepSelectionTool;
 class StdSelect_BRepSelectionTool {
 	public:
-		%feature("autodoc", "1");
-		~StdSelect_BRepSelectionTool();
 		%feature("autodoc", "1");
 		StdSelect_BRepSelectionTool();
 		%feature("autodoc", "1");

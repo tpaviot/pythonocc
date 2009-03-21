@@ -1239,8 +1239,6 @@ class Interface_GraphContent : public Interface_EntityIterator {
 		void Begin();
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~Interface_GraphContent();
 
 };
 %extend Interface_GraphContent {
@@ -1560,8 +1558,6 @@ class Interface_Array1OfFileParameter {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Interface_Array1OfFileParameter();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Interface_Array1OfFileParameter & Assign(const Interface_Array1OfFileParameter &Other);
@@ -1679,8 +1675,6 @@ class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 %nodefaultctor Interface_FloatWriter;
 class Interface_FloatWriter {
 	public:
-		%feature("autodoc", "1");
-		~Interface_FloatWriter();
 		%feature("autodoc", "1");
 		Interface_FloatWriter(const Standard_Integer chars=0);
 		%feature("autodoc", "1");
@@ -2030,8 +2024,6 @@ class Interface_UndefinedContent : public MMgt_TShared {
 class Interface_IntList {
 	public:
 		%feature("autodoc", "1");
-		~Interface_IntList();
-		%feature("autodoc", "1");
 		Interface_IntList();
 		%feature("autodoc", "1");
 		Interface_IntList(const Standard_Integer nbe);
@@ -2102,8 +2094,6 @@ class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 %nodefaultctor Interface_BitMap;
 class Interface_BitMap {
 	public:
-		%feature("autodoc", "1");
-		~Interface_BitMap();
 		%feature("autodoc", "1");
 		Interface_BitMap(const Standard_Integer nbitems, const Standard_Integer resflags=0);
 		%feature("autodoc", "1");
@@ -2691,8 +2681,6 @@ class Interface_Protocol : public MMgt_TShared {
 class Interface_MapAsciiStringHasher {
 	public:
 		%feature("autodoc", "1");
-		~Interface_MapAsciiStringHasher();
-		%feature("autodoc", "1");
 		Interface_MapAsciiStringHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TCollection_AsciiString &K, const Standard_Integer Upper);
@@ -2819,8 +2807,6 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Interface_MSG();
-		%feature("autodoc", "1");
 		Standard_CString Value() const;
 		%feature("autodoc", "1");
 		Standard_Integer Read(std::istream & S);
@@ -2867,8 +2853,6 @@ class Interface_MSG {
 %nodefaultctor Interface_Category;
 class Interface_Category {
 	public:
-		%feature("autodoc", "1");
-		~Interface_Category();
 		%feature("autodoc", "1");
 		Interface_Category();
 		%feature("autodoc", "1");
@@ -2939,8 +2923,6 @@ class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Interface_IndexedMapOfAsciiString();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TCollection_AsciiString &K);
@@ -2973,8 +2955,6 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Interface_DataMapOfTransientInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -3396,8 +3376,6 @@ class Interface_FileParameter {
 		void Clear();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Interface_FileParameter();
 
 };
 %extend Interface_FileParameter {

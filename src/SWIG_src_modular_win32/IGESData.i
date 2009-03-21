@@ -1040,8 +1040,6 @@ class IGESData_ColorEntity : public IGESData_IGESEntity {
 class IGESData_IGESDumper {
 	public:
 		%feature("autodoc", "1");
-		~IGESData_IGESDumper();
-		%feature("autodoc", "1");
 		IGESData_IGESDumper(const Handle_IGESData_IGESModel &model, const Handle_IGESData_Protocol &protocol);
 		%feature("autodoc", "1");
 		void PrintDNum(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S) const;
@@ -1108,8 +1106,6 @@ class IGESData {
 class IGESData_IGESType {
 	public:
 		%feature("autodoc", "1");
-		~IGESData_IGESType();
-		%feature("autodoc", "1");
 		IGESData_IGESType();
 		%feature("autodoc", "1");
 		IGESData_IGESType(const Standard_Integer atype, const Standard_Integer aform);
@@ -1152,8 +1148,6 @@ class IGESData_TransfEntity : public IGESData_IGESEntity {
 %nodefaultctor IGESData_DirPart;
 class IGESData_DirPart {
 	public:
-		%feature("autodoc", "1");
-		~IGESData_DirPart();
 		%feature("autodoc", "1");
 		IGESData_DirPart();
 		%feature("autodoc", "1");
@@ -1290,8 +1284,6 @@ class IGESData_IGESReaderTool : public Interface_FileReaderTool {
 		void ReadProps(const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
 		void ReadAssocs(const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		virtual		~IGESData_IGESReaderTool();
 
 };
 %extend IGESData_IGESReaderTool {
@@ -1311,8 +1303,6 @@ class IGESData_Array1OfDirPart {
 		void Init(const IGESData_DirPart &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IGESData_Array1OfDirPart();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1924,8 +1914,6 @@ class IGESData_LevelListEntity : public IGESData_IGESEntity {
 class IGESData_ParamCursor {
 	public:
 		%feature("autodoc", "1");
-		~IGESData_ParamCursor();
-		%feature("autodoc", "1");
 		IGESData_ParamCursor(const Standard_Integer num);
 		%feature("autodoc", "1");
 		IGESData_ParamCursor(const Standard_Integer num, const Standard_Integer nb, const Standard_Integer size=1);
@@ -2084,8 +2072,6 @@ class IGESData_DefaultGeneral : public IGESData_GeneralModule {
 class IGESData_DirChecker {
 	public:
 		%feature("autodoc", "1");
-		~IGESData_DirChecker();
-		%feature("autodoc", "1");
 		IGESData_DirChecker();
 		%feature("autodoc", "1");
 		IGESData_DirChecker(const Standard_Integer atype);
@@ -2140,8 +2126,6 @@ class IGESData_DirChecker {
 %nodefaultctor IGESData_DefSwitch;
 class IGESData_DefSwitch {
 	public:
-		%feature("autodoc", "1");
-		~IGESData_DefSwitch();
 		%feature("autodoc", "1");
 		IGESData_DefSwitch();
 		%feature("autodoc", "1");

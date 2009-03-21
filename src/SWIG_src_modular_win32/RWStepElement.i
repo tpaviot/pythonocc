@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepElement_RWAnalysisItemWithinRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepElement_RWAnalysisItemWithinRepresentation();
-		%feature("autodoc", "1");
 		RWStepElement_RWAnalysisItemWithinRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_AnalysisItemWithinRepresentation &ent) const;
@@ -108,8 +106,6 @@ class RWStepElement_RWAnalysisItemWithinRepresentation {
 %nodefaultctor RWStepElement_RWSurfaceSectionField;
 class RWStepElement_RWSurfaceSectionField {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceSectionField();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceSectionField();
 		%feature("autodoc", "1");
@@ -130,8 +126,6 @@ class RWStepElement_RWSurfaceSectionField {
 class RWStepElement_RWCurveElementSectionDefinition {
 	public:
 		%feature("autodoc", "1");
-		~RWStepElement_RWCurveElementSectionDefinition();
-		%feature("autodoc", "1");
 		RWStepElement_RWCurveElementSectionDefinition();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_CurveElementSectionDefinition &ent) const;
@@ -150,8 +144,6 @@ class RWStepElement_RWCurveElementSectionDefinition {
 %nodefaultctor RWStepElement_RWCurve3dElementDescriptor;
 class RWStepElement_RWCurve3dElementDescriptor {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWCurve3dElementDescriptor();
 		%feature("autodoc", "1");
 		RWStepElement_RWCurve3dElementDescriptor();
 		%feature("autodoc", "1");
@@ -172,8 +164,6 @@ class RWStepElement_RWCurve3dElementDescriptor {
 class RWStepElement_RWSurfaceSectionFieldVarying {
 	public:
 		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceSectionFieldVarying();
-		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceSectionFieldVarying();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceSectionFieldVarying &ent) const;
@@ -192,8 +182,6 @@ class RWStepElement_RWSurfaceSectionFieldVarying {
 %nodefaultctor RWStepElement_RWCurveElementSectionDerivedDefinitions;
 class RWStepElement_RWCurveElementSectionDerivedDefinitions {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWCurveElementSectionDerivedDefinitions();
 		%feature("autodoc", "1");
 		RWStepElement_RWCurveElementSectionDerivedDefinitions();
 		%feature("autodoc", "1");
@@ -214,8 +202,6 @@ class RWStepElement_RWCurveElementSectionDerivedDefinitions {
 class RWStepElement_RWUniformSurfaceSection {
 	public:
 		%feature("autodoc", "1");
-		~RWStepElement_RWUniformSurfaceSection();
-		%feature("autodoc", "1");
 		RWStepElement_RWUniformSurfaceSection();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_UniformSurfaceSection &ent) const;
@@ -234,8 +220,6 @@ class RWStepElement_RWUniformSurfaceSection {
 %nodefaultctor RWStepElement_RWSurfaceSection;
 class RWStepElement_RWSurfaceSection {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceSection();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceSection();
 		%feature("autodoc", "1");
@@ -256,8 +240,6 @@ class RWStepElement_RWSurfaceSection {
 class RWStepElement_RWElementDescriptor {
 	public:
 		%feature("autodoc", "1");
-		~RWStepElement_RWElementDescriptor();
-		%feature("autodoc", "1");
 		RWStepElement_RWElementDescriptor();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_ElementDescriptor &ent) const;
@@ -276,8 +258,6 @@ class RWStepElement_RWElementDescriptor {
 %nodefaultctor RWStepElement_RWElementMaterial;
 class RWStepElement_RWElementMaterial {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWElementMaterial();
 		%feature("autodoc", "1");
 		RWStepElement_RWElementMaterial();
 		%feature("autodoc", "1");
@@ -298,8 +278,6 @@ class RWStepElement_RWElementMaterial {
 class RWStepElement_RWCurveElementEndReleasePacket {
 	public:
 		%feature("autodoc", "1");
-		~RWStepElement_RWCurveElementEndReleasePacket();
-		%feature("autodoc", "1");
 		RWStepElement_RWCurveElementEndReleasePacket();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_CurveElementEndReleasePacket &ent) const;
@@ -318,8 +296,6 @@ class RWStepElement_RWCurveElementEndReleasePacket {
 %nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
 class RWStepElement_RWSurface3dElementDescriptor {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurface3dElementDescriptor();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurface3dElementDescriptor();
 		%feature("autodoc", "1");
@@ -340,8 +316,6 @@ class RWStepElement_RWSurface3dElementDescriptor {
 class RWStepElement_RWVolume3dElementDescriptor {
 	public:
 		%feature("autodoc", "1");
-		~RWStepElement_RWVolume3dElementDescriptor();
-		%feature("autodoc", "1");
 		RWStepElement_RWVolume3dElementDescriptor();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_Volume3dElementDescriptor &ent) const;
@@ -361,8 +335,6 @@ class RWStepElement_RWVolume3dElementDescriptor {
 class RWStepElement_RWSurfaceElementProperty {
 	public:
 		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceElementProperty();
-		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceElementProperty();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceElementProperty &ent) const;
@@ -381,8 +353,6 @@ class RWStepElement_RWSurfaceElementProperty {
 %nodefaultctor RWStepElement_RWSurfaceSectionFieldConstant;
 class RWStepElement_RWSurfaceSectionFieldConstant {
 	public:
-		%feature("autodoc", "1");
-		~RWStepElement_RWSurfaceSectionFieldConstant();
 		%feature("autodoc", "1");
 		RWStepElement_RWSurfaceSectionFieldConstant();
 		%feature("autodoc", "1");

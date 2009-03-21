@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class XDEDRAW_Common {
 	public:
 		%feature("autodoc", "1");
-		~XDEDRAW_Common();
-		%feature("autodoc", "1");
 		XDEDRAW_Common();
 		%feature("autodoc", "1");
 		void InitCommands(Draw_Interpretor & theCommands);
@@ -105,8 +103,6 @@ class XDEDRAW_Common {
 class XDEDRAW_Layers {
 	public:
 		%feature("autodoc", "1");
-		~XDEDRAW_Layers();
-		%feature("autodoc", "1");
 		XDEDRAW_Layers();
 		%feature("autodoc", "1");
 		void InitCommands(Draw_Interpretor & theCommands);
@@ -121,8 +117,6 @@ class XDEDRAW_Layers {
 %nodefaultctor XDEDRAW;
 class XDEDRAW {
 	public:
-		%feature("autodoc", "1");
-		~XDEDRAW();
 		%feature("autodoc", "1");
 		XDEDRAW();
 		%feature("autodoc", "1");
@@ -141,8 +135,6 @@ class XDEDRAW {
 class XDEDRAW_Colors {
 	public:
 		%feature("autodoc", "1");
-		~XDEDRAW_Colors();
-		%feature("autodoc", "1");
 		XDEDRAW_Colors();
 		%feature("autodoc", "1");
 		void InitCommands(Draw_Interpretor & theCommands);
@@ -158,8 +150,6 @@ class XDEDRAW_Colors {
 class XDEDRAW_Shapes {
 	public:
 		%feature("autodoc", "1");
-		~XDEDRAW_Shapes();
-		%feature("autodoc", "1");
 		XDEDRAW_Shapes();
 		%feature("autodoc", "1");
 		void InitCommands(Draw_Interpretor & theCommands);
@@ -174,8 +164,6 @@ class XDEDRAW_Shapes {
 %nodefaultctor XDEDRAW_Props;
 class XDEDRAW_Props {
 	public:
-		%feature("autodoc", "1");
-		~XDEDRAW_Props();
 		%feature("autodoc", "1");
 		XDEDRAW_Props();
 		%feature("autodoc", "1");

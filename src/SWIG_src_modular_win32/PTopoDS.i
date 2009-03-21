@@ -1314,8 +1314,6 @@ class PTopoDS_TVertex1 : public PTopoDS_TShape1 {
 class PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
 	public:
 		%feature("autodoc", "1");
-		~PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape();
-		%feature("autodoc", "1");
 		PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape();
 		%feature("autodoc", "1");
 		PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape(const Handle_PTopoDS_HShape &aValue);
@@ -1407,8 +1405,6 @@ class PTopoDS_Vertex : public PTopoDS_HShape {
 %nodefaultctor PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1;
 class PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
 	public:
-		%feature("autodoc", "1");
-		~PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1();
 		%feature("autodoc", "1");
 		PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1();
 		%feature("autodoc", "1");
@@ -1590,8 +1586,6 @@ class PTopoDS_FieldOfHArray1OfShape1 : public DBC_BaseArray {
 		PTopoDS_Shape1 & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PTopoDS_FieldOfHArray1OfShape1();
 
 };
 %extend PTopoDS_FieldOfHArray1OfShape1 {

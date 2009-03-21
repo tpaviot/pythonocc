@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		~IntCurve_IntImpConicParConic();
-		%feature("autodoc", "1");
 		IntCurve_IntImpConicParConic();
 		%feature("autodoc", "1");
 		IntCurve_IntImpConicParConic(const IntCurve_IConicTool &ITool, const IntRes2d_Domain &Dom1, const IntCurve_PConic &PCurve, const IntRes2d_Domain &Dom2, const Standard_Real TolConf, const Standard_Real Tol);
@@ -120,8 +118,6 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~IntCurve_MyImpParToolOfIntImpConicParConic();
 
 };
 %extend IntCurve_MyImpParToolOfIntImpConicParConic {
@@ -133,8 +129,6 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 %nodefaultctor IntCurve_IConicTool;
 class IntCurve_IConicTool {
 	public:
-		%feature("autodoc", "1");
-		~IntCurve_IConicTool();
 		%feature("autodoc", "1");
 		IntCurve_IConicTool();
 		%feature("autodoc", "1");
@@ -172,8 +166,6 @@ class IntCurve_IConicTool {
 %nodefaultctor IntCurve_IntConicConic;
 class IntCurve_IntConicConic : public IntRes2d_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~IntCurve_IntConicConic();
 		%feature("autodoc", "1");
 		IntCurve_IntConicConic();
 		%feature("autodoc", "1");
@@ -248,8 +240,6 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 class IntCurve_ProjectOnPConicTool {
 	public:
 		%feature("autodoc", "1");
-		~IntCurve_ProjectOnPConicTool();
-		%feature("autodoc", "1");
 		IntCurve_ProjectOnPConicTool();
 		%feature("autodoc", "1");
 		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
@@ -266,8 +256,6 @@ class IntCurve_ProjectOnPConicTool {
 %nodefaultctor IntCurve_PConic;
 class IntCurve_PConic {
 	public:
-		%feature("autodoc", "1");
-		~IntCurve_PConic();
 		%feature("autodoc", "1");
 		IntCurve_PConic(const IntCurve_PConic &PC);
 		%feature("autodoc", "1");
@@ -307,8 +295,6 @@ class IntCurve_PConic {
 %nodefaultctor IntCurve_PConicTool;
 class IntCurve_PConicTool {
 	public:
-		%feature("autodoc", "1");
-		~IntCurve_PConicTool();
 		%feature("autodoc", "1");
 		IntCurve_PConicTool();
 		%feature("autodoc", "1");

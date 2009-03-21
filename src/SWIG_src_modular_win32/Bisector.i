@@ -184,8 +184,6 @@ class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 class Bisector_Inter : public IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		~Bisector_Inter();
-		%feature("autodoc", "1");
 		Bisector_Inter();
 		%feature("autodoc", "1");
 		Bisector_Inter(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
@@ -214,8 +212,6 @@ class Bisector_FunctionInter : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Bisector_FunctionInter();
 
 };
 %extend Bisector_FunctionInter {
@@ -494,8 +490,6 @@ class Bisector_BisecAna : public Bisector_Curve {
 class Bisector_PolyBis {
 	public:
 		%feature("autodoc", "1");
-		~Bisector_PolyBis();
-		%feature("autodoc", "1");
 		Bisector_PolyBis();
 		%feature("autodoc", "1");
 		void Append(const Bisector_PointOnBis &Point);
@@ -524,8 +518,6 @@ class Bisector_PolyBis {
 %nodefaultctor Bisector_PointOnBis;
 class Bisector_PointOnBis {
 	public:
-		%feature("autodoc", "1");
-		~Bisector_PointOnBis();
 		%feature("autodoc", "1");
 		Bisector_PointOnBis();
 		%feature("autodoc", "1");
@@ -593,8 +585,6 @@ class Bisector_Bisec {
 class Bisector {
 	public:
 		%feature("autodoc", "1");
-		~Bisector();
-		%feature("autodoc", "1");
 		Bisector();
 		%feature("autodoc", "1");
 		Standard_Boolean IsConvex(const Handle_Geom2d_Curve &Cu, const Standard_Real Sign);
@@ -617,8 +607,6 @@ class Bisector_FunctionH : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Bisector_FunctionH();
 
 };
 %extend Bisector_FunctionH {

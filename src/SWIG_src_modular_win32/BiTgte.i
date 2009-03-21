@@ -393,8 +393,6 @@ class BiTgte_Blend {
 class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BiTgte_DataMapIteratorOfDataMapOfShapeBox();
-		%feature("autodoc", "1");
 		BiTgte_DataMapIteratorOfDataMapOfShapeBox();
 		%feature("autodoc", "1");
 		BiTgte_DataMapIteratorOfDataMapOfShapeBox(const BiTgte_DataMapOfShapeBox &aMap);
@@ -496,8 +494,6 @@ class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BiTgte_DataMapOfShapeBox();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Bnd_Box &I);
 		%feature("autodoc", "1");

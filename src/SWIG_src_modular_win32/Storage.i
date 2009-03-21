@@ -840,8 +840,6 @@ class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~Storage_MapIteratorOfMapOfAsciiString();
-		%feature("autodoc", "1");
 		Storage_MapIteratorOfMapOfAsciiString();
 		%feature("autodoc", "1");
 		Storage_MapIteratorOfMapOfAsciiString(const Storage_MapOfAsciiString &aMap);
@@ -932,8 +930,6 @@ class Storage_HArrayOfCallBack : public MMgt_TShared {
 %nodefaultctor Storage;
 class Storage {
 	public:
-		%feature("autodoc", "1");
-		~Storage();
 		%feature("autodoc", "1");
 		Storage();
 		%feature("autodoc", "1");
@@ -1509,8 +1505,6 @@ class Storage_MapOfAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Storage_MapOfAsciiString();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const TCollection_AsciiString &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const TCollection_AsciiString &aKey) const;
@@ -1709,8 +1703,6 @@ class Storage_Schema : public MMgt_TShared {
 %nodefaultctor Storage_stCONSTclCOM;
 class Storage_stCONSTclCOM {
 	public:
-		%feature("autodoc", "1");
-		~Storage_stCONSTclCOM();
 		%feature("autodoc", "1");
 		Storage_stCONSTclCOM();
 
@@ -1917,8 +1909,6 @@ class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 %nodefaultctor Storage_MapPSDHasher;
 class Storage_MapPSDHasher {
 	public:
-		%feature("autodoc", "1");
-		~Storage_MapPSDHasher();
 		%feature("autodoc", "1");
 		Storage_MapPSDHasher();
 		%feature("autodoc", "1");
@@ -2475,8 +2465,6 @@ class Storage_PType : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Storage_PType();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TCollection_AsciiString &K, const Standard_Integer &I);
 		%feature("autodoc", "1");

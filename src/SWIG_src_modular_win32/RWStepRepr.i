@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepRepr_RWConfigurationDesign {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWConfigurationDesign();
-		%feature("autodoc", "1");
 		RWStepRepr_RWConfigurationDesign();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ConfigurationDesign &ent) const;
@@ -108,8 +106,6 @@ class RWStepRepr_RWConfigurationDesign {
 %nodefaultctor RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation;
 class RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
 		RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
@@ -130,8 +126,6 @@ class RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
 class RWStepRepr_RWMaterialPropertyRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWMaterialPropertyRepresentation();
-		%feature("autodoc", "1");
 		RWStepRepr_RWMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MaterialPropertyRepresentation &ent) const;
@@ -150,8 +144,6 @@ class RWStepRepr_RWMaterialPropertyRepresentation {
 %nodefaultctor RWStepRepr_RWShapeAspectRelationship;
 class RWStepRepr_RWShapeAspectRelationship {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWShapeAspectRelationship();
 		%feature("autodoc", "1");
 		RWStepRepr_RWShapeAspectRelationship();
 		%feature("autodoc", "1");
@@ -172,8 +164,6 @@ class RWStepRepr_RWShapeAspectRelationship {
 class RWStepRepr_RWAssemblyComponentUsage {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWAssemblyComponentUsage();
-		%feature("autodoc", "1");
 		RWStepRepr_RWAssemblyComponentUsage();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_AssemblyComponentUsage &ent) const;
@@ -192,8 +182,6 @@ class RWStepRepr_RWAssemblyComponentUsage {
 %nodefaultctor RWStepRepr_RWQuantifiedAssemblyComponentUsage;
 class RWStepRepr_RWQuantifiedAssemblyComponentUsage {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWQuantifiedAssemblyComponentUsage();
 		%feature("autodoc", "1");
 		RWStepRepr_RWQuantifiedAssemblyComponentUsage();
 		%feature("autodoc", "1");
@@ -214,8 +202,6 @@ class RWStepRepr_RWQuantifiedAssemblyComponentUsage {
 class RWStepRepr_RWCompoundRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWCompoundRepresentationItem();
-		%feature("autodoc", "1");
 		RWStepRepr_RWCompoundRepresentationItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_CompoundRepresentationItem &ent) const;
@@ -234,8 +220,6 @@ class RWStepRepr_RWCompoundRepresentationItem {
 %nodefaultctor RWStepRepr_RWDerivedShapeAspect;
 class RWStepRepr_RWDerivedShapeAspect {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWDerivedShapeAspect();
 		%feature("autodoc", "1");
 		RWStepRepr_RWDerivedShapeAspect();
 		%feature("autodoc", "1");
@@ -256,8 +240,6 @@ class RWStepRepr_RWDerivedShapeAspect {
 class RWStepRepr_RWCompositeShapeAspect {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWCompositeShapeAspect();
-		%feature("autodoc", "1");
 		RWStepRepr_RWCompositeShapeAspect();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_CompositeShapeAspect &ent) const;
@@ -276,8 +258,6 @@ class RWStepRepr_RWCompositeShapeAspect {
 %nodefaultctor RWStepRepr_RWExtension;
 class RWStepRepr_RWExtension {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWExtension();
 		%feature("autodoc", "1");
 		RWStepRepr_RWExtension();
 		%feature("autodoc", "1");
@@ -298,8 +278,6 @@ class RWStepRepr_RWExtension {
 class RWStepRepr_RWRepresentationRelationship {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWRepresentationRelationship();
-		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationRelationship();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_RepresentationRelationship &ent) const;
@@ -318,8 +296,6 @@ class RWStepRepr_RWRepresentationRelationship {
 %nodefaultctor RWStepRepr_RWConfigurationItem;
 class RWStepRepr_RWConfigurationItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWConfigurationItem();
 		%feature("autodoc", "1");
 		RWStepRepr_RWConfigurationItem();
 		%feature("autodoc", "1");
@@ -340,8 +316,6 @@ class RWStepRepr_RWConfigurationItem {
 class RWStepRepr_RWFunctionallyDefinedTransformation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWFunctionallyDefinedTransformation();
-		%feature("autodoc", "1");
 		RWStepRepr_RWFunctionallyDefinedTransformation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_FunctionallyDefinedTransformation &ent) const;
@@ -358,8 +332,6 @@ class RWStepRepr_RWFunctionallyDefinedTransformation {
 %nodefaultctor RWStepRepr_RWGlobalUnitAssignedContext;
 class RWStepRepr_RWGlobalUnitAssignedContext {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWGlobalUnitAssignedContext();
 		%feature("autodoc", "1");
 		RWStepRepr_RWGlobalUnitAssignedContext();
 		%feature("autodoc", "1");
@@ -380,8 +352,6 @@ class RWStepRepr_RWGlobalUnitAssignedContext {
 class RWStepRepr_RWSpecifiedHigherUsageOccurrence {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWSpecifiedHigherUsageOccurrence();
-		%feature("autodoc", "1");
 		RWStepRepr_RWSpecifiedHigherUsageOccurrence();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_SpecifiedHigherUsageOccurrence &ent) const;
@@ -400,8 +370,6 @@ class RWStepRepr_RWSpecifiedHigherUsageOccurrence {
 %nodefaultctor RWStepRepr_RWConfigurationEffectivity;
 class RWStepRepr_RWConfigurationEffectivity {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWConfigurationEffectivity();
 		%feature("autodoc", "1");
 		RWStepRepr_RWConfigurationEffectivity();
 		%feature("autodoc", "1");
@@ -422,8 +390,6 @@ class RWStepRepr_RWConfigurationEffectivity {
 class RWStepRepr_RWMakeFromUsageOption {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWMakeFromUsageOption();
-		%feature("autodoc", "1");
 		RWStepRepr_RWMakeFromUsageOption();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MakeFromUsageOption &ent) const;
@@ -443,8 +409,6 @@ class RWStepRepr_RWMakeFromUsageOption {
 class RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWReprItemAndLengthMeasureWithUnit();
-		%feature("autodoc", "1");
 		RWStepRepr_RWReprItemAndLengthMeasureWithUnit();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ReprItemAndLengthMeasureWithUnit &ent) const;
@@ -461,8 +425,6 @@ class RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
 %nodefaultctor RWStepRepr_RWMeasureRepresentationItem;
 class RWStepRepr_RWMeasureRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWMeasureRepresentationItem();
 		%feature("autodoc", "1");
 		RWStepRepr_RWMeasureRepresentationItem();
 		%feature("autodoc", "1");
@@ -483,8 +445,6 @@ class RWStepRepr_RWMeasureRepresentationItem {
 class RWStepRepr_RWStructuralResponseProperty {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWStructuralResponseProperty();
-		%feature("autodoc", "1");
 		RWStepRepr_RWStructuralResponseProperty();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_StructuralResponseProperty &ent) const;
@@ -503,8 +463,6 @@ class RWStepRepr_RWStructuralResponseProperty {
 %nodefaultctor RWStepRepr_RWMappedItem;
 class RWStepRepr_RWMappedItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWMappedItem();
 		%feature("autodoc", "1");
 		RWStepRepr_RWMappedItem();
 		%feature("autodoc", "1");
@@ -525,8 +483,6 @@ class RWStepRepr_RWMappedItem {
 class RWStepRepr_RWParametricRepresentationContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWParametricRepresentationContext();
-		%feature("autodoc", "1");
 		RWStepRepr_RWParametricRepresentationContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ParametricRepresentationContext &ent) const;
@@ -543,8 +499,6 @@ class RWStepRepr_RWParametricRepresentationContext {
 %nodefaultctor RWStepRepr_RWRepresentation;
 class RWStepRepr_RWRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWRepresentation();
 		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentation();
 		%feature("autodoc", "1");
@@ -565,8 +519,6 @@ class RWStepRepr_RWRepresentation {
 class RWStepRepr_RWMaterialDesignation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWMaterialDesignation();
-		%feature("autodoc", "1");
 		RWStepRepr_RWMaterialDesignation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MaterialDesignation &ent) const;
@@ -585,8 +537,6 @@ class RWStepRepr_RWMaterialDesignation {
 %nodefaultctor RWStepRepr_RWProductDefinitionShape;
 class RWStepRepr_RWProductDefinitionShape {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWProductDefinitionShape();
 		%feature("autodoc", "1");
 		RWStepRepr_RWProductDefinitionShape();
 		%feature("autodoc", "1");
@@ -607,8 +557,6 @@ class RWStepRepr_RWProductDefinitionShape {
 class RWStepRepr_RWDataEnvironment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWDataEnvironment();
-		%feature("autodoc", "1");
 		RWStepRepr_RWDataEnvironment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_DataEnvironment &ent) const;
@@ -627,8 +575,6 @@ class RWStepRepr_RWDataEnvironment {
 %nodefaultctor RWStepRepr_RWAssemblyComponentUsageSubstitute;
 class RWStepRepr_RWAssemblyComponentUsageSubstitute {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWAssemblyComponentUsageSubstitute();
 		%feature("autodoc", "1");
 		RWStepRepr_RWAssemblyComponentUsageSubstitute();
 		%feature("autodoc", "1");
@@ -649,8 +595,6 @@ class RWStepRepr_RWAssemblyComponentUsageSubstitute {
 class RWStepRepr_RWPropertyDefinition {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWPropertyDefinition();
-		%feature("autodoc", "1");
 		RWStepRepr_RWPropertyDefinition();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_PropertyDefinition &ent) const;
@@ -669,8 +613,6 @@ class RWStepRepr_RWPropertyDefinition {
 %nodefaultctor RWStepRepr_RWRepresentationMap;
 class RWStepRepr_RWRepresentationMap {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWRepresentationMap();
 		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationMap();
 		%feature("autodoc", "1");
@@ -691,8 +633,6 @@ class RWStepRepr_RWRepresentationMap {
 class RWStepRepr_RWMaterialProperty {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWMaterialProperty();
-		%feature("autodoc", "1");
 		RWStepRepr_RWMaterialProperty();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MaterialProperty &ent) const;
@@ -711,8 +651,6 @@ class RWStepRepr_RWMaterialProperty {
 %nodefaultctor RWStepRepr_RWShapeAspectDerivingRelationship;
 class RWStepRepr_RWShapeAspectDerivingRelationship {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWShapeAspectDerivingRelationship();
 		%feature("autodoc", "1");
 		RWStepRepr_RWShapeAspectDerivingRelationship();
 		%feature("autodoc", "1");
@@ -733,8 +671,6 @@ class RWStepRepr_RWShapeAspectDerivingRelationship {
 class RWStepRepr_RWDescriptiveRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWDescriptiveRepresentationItem();
-		%feature("autodoc", "1");
 		RWStepRepr_RWDescriptiveRepresentationItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_DescriptiveRepresentationItem &ent) const;
@@ -751,8 +687,6 @@ class RWStepRepr_RWDescriptiveRepresentationItem {
 %nodefaultctor RWStepRepr_RWShapeAspectTransition;
 class RWStepRepr_RWShapeAspectTransition {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWShapeAspectTransition();
 		%feature("autodoc", "1");
 		RWStepRepr_RWShapeAspectTransition();
 		%feature("autodoc", "1");
@@ -773,8 +707,6 @@ class RWStepRepr_RWShapeAspectTransition {
 class RWStepRepr_RWDefinitionalRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWDefinitionalRepresentation();
-		%feature("autodoc", "1");
 		RWStepRepr_RWDefinitionalRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_DefinitionalRepresentation &ent) const;
@@ -794,8 +726,6 @@ class RWStepRepr_RWDefinitionalRepresentation {
 class RWStepRepr_RWRepresentationContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWRepresentationContext();
-		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_RepresentationContext &ent) const;
@@ -812,8 +742,6 @@ class RWStepRepr_RWRepresentationContext {
 %nodefaultctor RWStepRepr_RWRepresentationRelationshipWithTransformation;
 class RWStepRepr_RWRepresentationRelationshipWithTransformation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWRepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
@@ -834,8 +762,6 @@ class RWStepRepr_RWRepresentationRelationshipWithTransformation {
 class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWGlobalUncertaintyAssignedContext();
-		%feature("autodoc", "1");
 		RWStepRepr_RWGlobalUncertaintyAssignedContext();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_GlobalUncertaintyAssignedContext &ent) const;
@@ -854,8 +780,6 @@ class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 %nodefaultctor RWStepRepr_RWShapeAspect;
 class RWStepRepr_RWShapeAspect {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWShapeAspect();
 		%feature("autodoc", "1");
 		RWStepRepr_RWShapeAspect();
 		%feature("autodoc", "1");
@@ -876,8 +800,6 @@ class RWStepRepr_RWShapeAspect {
 class RWStepRepr_RWPropertyDefinitionRelationship {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWPropertyDefinitionRelationship();
-		%feature("autodoc", "1");
 		RWStepRepr_RWPropertyDefinitionRelationship();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_PropertyDefinitionRelationship &ent) const;
@@ -896,8 +818,6 @@ class RWStepRepr_RWPropertyDefinitionRelationship {
 %nodefaultctor RWStepRepr_RWPropertyDefinitionRepresentation;
 class RWStepRepr_RWPropertyDefinitionRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWPropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
 		RWStepRepr_RWPropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
@@ -918,8 +838,6 @@ class RWStepRepr_RWPropertyDefinitionRepresentation {
 class RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWShapeRepresentationRelationshipWithTransformation();
-		%feature("autodoc", "1");
 		RWStepRepr_RWShapeRepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &ent) const;
@@ -939,8 +857,6 @@ class RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
 class RWStepRepr_RWRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepRepr_RWRepresentationItem();
-		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_RepresentationItem &ent) const;
@@ -957,8 +873,6 @@ class RWStepRepr_RWRepresentationItem {
 %nodefaultctor RWStepRepr_RWProductConcept;
 class RWStepRepr_RWProductConcept {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWProductConcept();
 		%feature("autodoc", "1");
 		RWStepRepr_RWProductConcept();
 		%feature("autodoc", "1");
@@ -978,8 +892,6 @@ class RWStepRepr_RWProductConcept {
 %nodefaultctor RWStepRepr_RWItemDefinedTransformation;
 class RWStepRepr_RWItemDefinedTransformation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepRepr_RWItemDefinedTransformation();
 		%feature("autodoc", "1");
 		RWStepRepr_RWItemDefinedTransformation();
 		%feature("autodoc", "1");

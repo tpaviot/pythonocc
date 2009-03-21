@@ -115,8 +115,6 @@ class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
 		FairCurve_DistributionOfSagging(const Standard_Integer BSplOrder, const Handle_TColStd_HArray1OfReal &FlatKnots, const Handle_TColgp_HArray1OfPnt2d &Poles, const Standard_Integer DerivativeOrder, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		~FairCurve_DistributionOfSagging();
 
 };
 %extend FairCurve_DistributionOfSagging {
@@ -134,8 +132,6 @@ class FairCurve_Newton : public math_NewtonMinimum {
 		FairCurve_Newton(math_MultipleVarFunctionWithHessian & F, const Standard_Real SpatialTolerance=9.99999999999999954748111825886258685613938723691e-8, const Standard_Real Tolerance=9.99999999999999954748111825886258685613938723691e-8, const Standard_Integer NbIterations=40, const Standard_Real Convexity=9.99999999999999954748111825886258685613938723691e-7, const Standard_Boolean WithSingularity=1);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConverged() const;
-		%feature("autodoc", "1");
-		virtual		~FairCurve_Newton();
 
 };
 %extend FairCurve_Newton {
@@ -211,8 +207,6 @@ class FairCurve_Batten {
 class FairCurve_BattenLaw : public math_Function {
 	public:
 		%feature("autodoc", "1");
-		~FairCurve_BattenLaw();
-		%feature("autodoc", "1");
 		FairCurve_BattenLaw(const Standard_Real Heigth, const Standard_Real Slope, const Standard_Real Sliding);
 		%feature("autodoc", "1");
 		void SetSliding(const Standard_Real Sliding);
@@ -237,8 +231,6 @@ class FairCurve_DistributionOfJerk : public FairCurve_DistributionOfEnergy {
 		FairCurve_DistributionOfJerk(const Standard_Integer BSplOrder, const Handle_TColStd_HArray1OfReal &FlatKnots, const Handle_TColgp_HArray1OfPnt2d &Poles, const Standard_Integer DerivativeOrder, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		~FairCurve_DistributionOfJerk();
 
 };
 %extend FairCurve_DistributionOfJerk {
@@ -268,8 +260,6 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 		Standard_Real GetPhysicalRatio() const;
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & o) const;
-		%feature("autodoc", "1");
-		virtual		~FairCurve_MinimalVariation();
 
 };
 %extend FairCurve_MinimalVariation {
@@ -312,8 +302,6 @@ class FairCurve_EnergyOfMVC : public FairCurve_Energy {
 		Standard_Real LengthSliding() const;
 		%feature("autodoc", "1");
 		FairCurve_AnalysisCode Status() const;
-		%feature("autodoc", "1");
-		virtual		~FairCurve_EnergyOfMVC();
 
 };
 %extend FairCurve_EnergyOfMVC {
@@ -331,8 +319,6 @@ class FairCurve_DistributionOfTension : public FairCurve_DistributionOfEnergy {
 		void SetLengthSliding(const Standard_Real LengthSliding);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		~FairCurve_DistributionOfTension();
 
 };
 %extend FairCurve_DistributionOfTension {
@@ -352,8 +338,6 @@ class FairCurve_EnergyOfBatten : public FairCurve_Energy {
 		FairCurve_AnalysisCode Status() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Variable(math_Vector & X) const;
-		%feature("autodoc", "1");
-		virtual		~FairCurve_EnergyOfBatten();
 
 };
 %extend FairCurve_EnergyOfBatten {

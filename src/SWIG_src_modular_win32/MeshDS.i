@@ -126,8 +126,6 @@ class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TC
 class MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger();
-		%feature("autodoc", "1");
 		MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger();
 		%feature("autodoc", "1");
 		MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger(const MeshDS_DataMapOfIntegerMapOfInteger &aMap);
@@ -180,8 +178,6 @@ class MeshDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MeshDS_DataMapOfIntegerMapOfInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TColStd_MapOfInteger &I);
 		%feature("autodoc", "1");

@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class CPnts_UniformDeflection {
 	public:
 		%feature("autodoc", "1");
-		~CPnts_UniformDeflection();
-		%feature("autodoc", "1");
 		CPnts_UniformDeflection();
 		%feature("autodoc", "1");
 		CPnts_UniformDeflection(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
@@ -129,8 +127,6 @@ class CPnts_UniformDeflection {
 class CPnts_MyGaussFunction : public math_Function {
 	public:
 		%feature("autodoc", "1");
-		~CPnts_MyGaussFunction();
-		%feature("autodoc", "1");
 		CPnts_MyGaussFunction();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
@@ -145,8 +141,6 @@ class CPnts_MyGaussFunction : public math_Function {
 %nodefaultctor CPnts_AbscissaPoint;
 class CPnts_AbscissaPoint {
 	public:
-		%feature("autodoc", "1");
-		~CPnts_AbscissaPoint();
 		%feature("autodoc", "1");
 		Standard_Real Length(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
@@ -224,8 +218,6 @@ class CPnts_MyRootFunction : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~CPnts_MyRootFunction();
 
 };
 %extend CPnts_MyRootFunction {

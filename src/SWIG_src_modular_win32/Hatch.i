@@ -146,8 +146,6 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Hatch_SequenceOfParameter();
-		%feature("autodoc", "1");
 		const Hatch_SequenceOfParameter & Assign(const Hatch_SequenceOfParameter &Other);
 		%feature("autodoc", "1");
 		void Append(const Hatch_Parameter &T);
@@ -219,8 +217,6 @@ class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 class Hatch_Hatcher {
 	public:
 		%feature("autodoc", "1");
-		~Hatch_Hatcher();
-		%feature("autodoc", "1");
 		Hatch_Hatcher(const Standard_Real Tol, const Standard_Boolean Oriented=1);
 		%feature("autodoc", "1");
 		void Tolerance(const Standard_Real Tol);
@@ -276,8 +272,6 @@ class Hatch_Hatcher {
 class Hatch_Line {
 	public:
 		%feature("autodoc", "1");
-		~Hatch_Line();
-		%feature("autodoc", "1");
 		Hatch_Line();
 		%feature("autodoc", "1");
 		Hatch_Line(const gp_Lin2d &L, const Hatch_LineForm T);
@@ -298,8 +292,6 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 		Hatch_SequenceOfLine();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Hatch_SequenceOfLine();
 		%feature("autodoc", "1");
 		const Hatch_SequenceOfLine & Assign(const Hatch_SequenceOfLine &Other);
 		%feature("autodoc", "1");
@@ -349,8 +341,6 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 %nodefaultctor Hatch_Parameter;
 class Hatch_Parameter {
 	public:
-		%feature("autodoc", "1");
-		~Hatch_Parameter();
 		%feature("autodoc", "1");
 		Hatch_Parameter();
 		%feature("autodoc", "1");

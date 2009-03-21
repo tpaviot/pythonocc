@@ -179,8 +179,6 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~HatchGen_PointsOnHatching();
-		%feature("autodoc", "1");
 		const HatchGen_PointsOnHatching & Assign(const HatchGen_PointsOnHatching &Other);
 		%feature("autodoc", "1");
 		void Append(const HatchGen_PointOnHatching &T);
@@ -233,8 +231,6 @@ class HatchGen_Domains : public TCollection_BaseSequence {
 		HatchGen_Domains();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~HatchGen_Domains();
 		%feature("autodoc", "1");
 		const HatchGen_Domains & Assign(const HatchGen_Domains &Other);
 		%feature("autodoc", "1");
@@ -334,8 +330,6 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~HatchGen_PointOnHatching();
-		%feature("autodoc", "1");
 		void AddPoint(const HatchGen_PointOnElement &Point, const Standard_Real Confusion);
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -362,8 +356,6 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 %nodefaultctor HatchGen_PointOnElement;
 class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 	public:
-		%feature("autodoc", "1");
-		~HatchGen_PointOnElement();
 		%feature("autodoc", "1");
 		HatchGen_PointOnElement();
 		%feature("autodoc", "1");
@@ -417,8 +409,6 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 		HatchGen_PointsOnElement();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~HatchGen_PointsOnElement();
 		%feature("autodoc", "1");
 		const HatchGen_PointsOnElement & Assign(const HatchGen_PointsOnElement &Other);
 		%feature("autodoc", "1");
@@ -490,8 +480,6 @@ class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 %nodefaultctor HatchGen_Domain;
 class HatchGen_Domain {
 	public:
-		%feature("autodoc", "1");
-		~HatchGen_Domain();
 		%feature("autodoc", "1");
 		HatchGen_Domain();
 		%feature("autodoc", "1");

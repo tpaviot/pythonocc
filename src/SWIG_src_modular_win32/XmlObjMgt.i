@@ -137,8 +137,6 @@ class XmlObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 class XmlObjMgt {
 	public:
 		%feature("autodoc", "1");
-		~XmlObjMgt();
-		%feature("autodoc", "1");
 		XmlObjMgt();
 		%feature("autodoc", "1");
 		const XmlObjMgt_DOMString & IdString();
@@ -200,8 +198,6 @@ class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 class XmlObjMgt_GP {
 	public:
 		%feature("autodoc", "1");
-		~XmlObjMgt_GP();
-		%feature("autodoc", "1");
 		XmlObjMgt_GP();
 		%feature("autodoc", "1");
 		XmlObjMgt_DOMString Translate(const gp_Trsf &aTrsf);
@@ -226,8 +222,6 @@ class XmlObjMgt_GP {
 %nodefaultctor XmlObjMgt_Persistent;
 class XmlObjMgt_Persistent {
 	public:
-		%feature("autodoc", "1");
-		~XmlObjMgt_Persistent();
 		%feature("autodoc", "1");
 		XmlObjMgt_Persistent();
 		%feature("autodoc", "1");

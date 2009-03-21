@@ -211,8 +211,6 @@ class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 class Intf_SectionPoint {
 	public:
 		%feature("autodoc", "1");
-		~Intf_SectionPoint();
-		%feature("autodoc", "1");
 		const gp_Pnt & Pnt() const;
 		%feature("autodoc", "1");
 		Standard_Real ParamOnFirst() const;
@@ -261,8 +259,6 @@ class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
 		Intf_SeqOfTangentZone();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Intf_SeqOfTangentZone();
 		%feature("autodoc", "1");
 		const Intf_SeqOfTangentZone & Assign(const Intf_SeqOfTangentZone &Other);
 		%feature("autodoc", "1");
@@ -317,8 +313,6 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Intf_SeqOfSectionLine();
-		%feature("autodoc", "1");
 		const Intf_SeqOfSectionLine & Assign(const Intf_SeqOfSectionLine &Other);
 		%feature("autodoc", "1");
 		void Append(const Intf_SectionLine &T);
@@ -367,8 +361,6 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 %nodefaultctor Intf_Interference;
 class Intf_Interference {
 	public:
-		%feature("autodoc", "1");
-		~Intf_Interference();
 		%feature("autodoc", "1");
 		Standard_Integer NbSectionPoints() const;
 		%feature("autodoc", "1");
@@ -429,8 +421,6 @@ class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Intf_SeqOfSectionPoint();
-		%feature("autodoc", "1");
 		const Intf_SeqOfSectionPoint & Assign(const Intf_SeqOfSectionPoint &Other);
 		%feature("autodoc", "1");
 		void Append(const Intf_SectionPoint &T);
@@ -488,8 +478,6 @@ class Intf_Array1OfLin {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Intf_Array1OfLin();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Intf_Array1OfLin & Assign(const Intf_Array1OfLin &Other);
@@ -520,8 +508,6 @@ class Intf_Array1OfLin {
 %nodefaultctor Intf_TangentZone;
 class Intf_TangentZone {
 	public:
-		%feature("autodoc", "1");
-		~Intf_TangentZone();
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfPoints() const;
 		%feature("autodoc", "1");
@@ -572,8 +558,6 @@ class Intf_TangentZone {
 class Intf_SectionLine {
 	public:
 		%feature("autodoc", "1");
-		~Intf_SectionLine();
-		%feature("autodoc", "1");
 		Standard_Integer NumberOfPoints() const;
 		%feature("autodoc", "1");
 		const Intf_SectionPoint & GetPoint(const Standard_Integer Index) const;
@@ -615,8 +599,6 @@ class Intf_SectionLine {
 class Intf_Tool {
 	public:
 		%feature("autodoc", "1");
-		~Intf_Tool();
-		%feature("autodoc", "1");
 		Intf_Tool();
 		%feature("autodoc", "1");
 		void Lin2dBox(const gp_Lin2d &theLin2d, const Bnd_Box2d &bounding, Bnd_Box2d & boxLin);
@@ -647,8 +629,6 @@ class Intf_Tool {
 %nodefaultctor Intf;
 class Intf {
 	public:
-		%feature("autodoc", "1");
-		~Intf();
 		%feature("autodoc", "1");
 		Intf();
 		%feature("autodoc", "1");

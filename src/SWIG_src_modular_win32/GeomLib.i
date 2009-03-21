@@ -96,8 +96,6 @@ enum GeomLib_InterpolationErrors {
 class GeomLib_LogSample : public math_FunctionSample {
 	public:
 		%feature("autodoc", "1");
-		~GeomLib_LogSample();
-		%feature("autodoc", "1");
 		GeomLib_LogSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
@@ -113,8 +111,6 @@ class GeomLib_LogSample : public math_FunctionSample {
 class GeomLib_DenominatorMultiplier {
 	public:
 		%feature("autodoc", "1");
-		~GeomLib_DenominatorMultiplier();
-		%feature("autodoc", "1");
 		GeomLib_DenominatorMultiplier(const Handle_Geom_BSplineSurface &Surface, const TColStd_Array1OfReal &KnotVector);
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Real UParameter, const Standard_Real VParameter) const;
@@ -129,8 +125,6 @@ class GeomLib_DenominatorMultiplier {
 %nodefaultctor GeomLib_Tool;
 class GeomLib_Tool {
 	public:
-		%feature("autodoc", "1");
-		~GeomLib_Tool();
 		%feature("autodoc", "1");
 		GeomLib_Tool();
 		%feature("autodoc", "1");
@@ -158,8 +152,6 @@ class GeomLib_Array1OfMat {
 		void Init(const gp_Mat &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~GeomLib_Array1OfMat();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -199,8 +191,6 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~GeomLib_PolyFunc();
 
 };
 %extend GeomLib_PolyFunc {
@@ -262,8 +252,6 @@ class GeomLib_MakeCurvefromApprox {
 %nodefaultctor GeomLib_IsPlanarSurface;
 class GeomLib_IsPlanarSurface {
 	public:
-		%feature("autodoc", "1");
-		~GeomLib_IsPlanarSurface();
 		%feature("autodoc", "1");
 		GeomLib_IsPlanarSurface(const Handle_Geom_Surface &S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
 		%feature("autodoc", "1");

@@ -479,8 +479,6 @@ class FEmTool_AssemblyTable {
 class FEmTool_Assembly {
 	public:
 		%feature("autodoc", "1");
-		~FEmTool_Assembly();
-		%feature("autodoc", "1");
 		FEmTool_Assembly(const TColStd_Array2OfInteger &Dependence, const Handle_FEmTool_HAssemblyTable &Table);
 		%feature("autodoc", "1");
 		void NullifyMatrix();
@@ -777,8 +775,6 @@ class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		~FEmTool_ElementsOfRefMatrix();
 
 };
 %extend FEmTool_ElementsOfRefMatrix {
@@ -794,8 +790,6 @@ class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
 		FEmTool_SeqOfLinConstr();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~FEmTool_SeqOfLinConstr();
 		%feature("autodoc", "1");
 		const FEmTool_SeqOfLinConstr & Assign(const FEmTool_SeqOfLinConstr &Other);
 		%feature("autodoc", "1");

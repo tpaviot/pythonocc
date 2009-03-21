@@ -167,8 +167,6 @@ class BooleanOperations_Explorer {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~BooleanOperations_Explorer();
-		%feature("autodoc", "1");
 		virtual		void Init(const Standard_Integer aShape, const TopAbs_ShapeEnum TargetToFind, const TopAbs_ShapeEnum TargetToAvoid=TopAbs_SHAPE);
 		%feature("autodoc", "1");
 		virtual		void Next();
@@ -197,8 +195,6 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BooleanOperations_IndexedDataMapOfShapeInteger();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -234,8 +230,6 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 %nodefaultctor BooleanOperations_ShapeAndInterferences;
 class BooleanOperations_ShapeAndInterferences {
 	public:
-		%feature("autodoc", "1");
-		~BooleanOperations_ShapeAndInterferences();
 		%feature("autodoc", "1");
 		BooleanOperations_ShapeAndInterferences();
 		%feature("autodoc", "1");
@@ -280,8 +274,6 @@ class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~BooleanOperations_OnceExplorer();
-		%feature("autodoc", "1");
 		virtual		void Init(const Standard_Integer aShape, const TopAbs_ShapeEnum TargetToFind, const TopAbs_ShapeEnum TargetToAvoid=TopAbs_SHAPE);
 		%feature("autodoc", "1");
 		virtual		void Next();
@@ -308,8 +300,6 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &I);
 		%feature("autodoc", "1");
@@ -347,8 +337,6 @@ class BooleanOperations_ShapesDataStructure {
 	public:
 		%feature("autodoc", "1");
 		BooleanOperations_ShapesDataStructure();
-		%feature("autodoc", "1");
-		virtual		~BooleanOperations_ShapesDataStructure();
 		%feature("autodoc", "1");
 		BooleanOperations_ShapesDataStructure(const TopoDS_Shape &Object, const TopoDS_Shape &Tool);
 		%feature("autodoc", "1");
@@ -433,8 +421,6 @@ class BooleanOperations_ShapesDataStructure {
 class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
 	public:
 		%feature("autodoc", "1");
-		~BooleanOperations_AncestorsSeqAndSuccessorsSeq();
-		%feature("autodoc", "1");
 		BooleanOperations_AncestorsSeqAndSuccessorsSeq();
 		%feature("autodoc", "1");
 		void Dump() const;
@@ -471,8 +457,6 @@ class BooleanOperations_AncestorsAndSuccessors {
 		BooleanOperations_AncestorsAndSuccessors(const BooleanOperations_AncestorsSeqAndSuccessorsSeq &AncSuccessors, const Standard_Integer shift);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BooleanOperations_AncestorsAndSuccessors();
 		%feature("autodoc", "1");
 		void Dump() const;
 		%feature("autodoc", "1");

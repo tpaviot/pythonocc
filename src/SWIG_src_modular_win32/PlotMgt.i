@@ -1355,8 +1355,6 @@ class PlotMgt_ListOfMFTSizes {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~PlotMgt_ListOfMFTSizes();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const PlotMgt_ListOfMFTSizes & Assign(const PlotMgt_ListOfMFTSizes &Other);

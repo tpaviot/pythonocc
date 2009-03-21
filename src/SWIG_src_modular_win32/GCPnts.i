@@ -101,8 +101,6 @@ enum GCPnts_DeflectionType {
 class GCPnts_TangentialDeflection {
 	public:
 		%feature("autodoc", "1");
-		~GCPnts_TangentialDeflection();
-		%feature("autodoc", "1");
 		GCPnts_TangentialDeflection();
 		%feature("autodoc", "1");
 		GCPnts_TangentialDeflection(const Adaptor3d_Curve &C, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints=2, const Standard_Real UTol=1.00000000000000006228159145777985641889706869279e-9);
@@ -137,8 +135,6 @@ class GCPnts_TangentialDeflection {
 %nodefaultctor GCPnts_UniformAbscissa;
 class GCPnts_UniformAbscissa {
 	public:
-		%feature("autodoc", "1");
-		~GCPnts_UniformAbscissa();
 		%feature("autodoc", "1");
 		GCPnts_UniformAbscissa();
 		%feature("autodoc", "1");
@@ -193,8 +189,6 @@ class GCPnts_UniformAbscissa {
 class GCPnts_UniformDeflection {
 	public:
 		%feature("autodoc", "1");
-		~GCPnts_UniformDeflection();
-		%feature("autodoc", "1");
 		GCPnts_UniformDeflection();
 		%feature("autodoc", "1");
 		GCPnts_UniformDeflection(Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Boolean WithControl=1);
@@ -233,8 +227,6 @@ class GCPnts_UniformDeflection {
 %nodefaultctor GCPnts_AbscissaPoint;
 class GCPnts_AbscissaPoint {
 	public:
-		%feature("autodoc", "1");
-		~GCPnts_AbscissaPoint();
 		%feature("autodoc", "1");
 		Standard_Real Length(Adaptor3d_Curve & C);
 		%feature("autodoc", "1");
@@ -285,8 +277,6 @@ class GCPnts_AbscissaPoint {
 class GCPnts_QuasiUniformAbscissa {
 	public:
 		%feature("autodoc", "1");
-		~GCPnts_QuasiUniformAbscissa();
-		%feature("autodoc", "1");
 		GCPnts_QuasiUniformAbscissa();
 		%feature("autodoc", "1");
 		GCPnts_QuasiUniformAbscissa(Adaptor3d_Curve & C, const Standard_Integer NbPoints);
@@ -321,8 +311,6 @@ class GCPnts_QuasiUniformAbscissa {
 %nodefaultctor GCPnts_QuasiUniformDeflection;
 class GCPnts_QuasiUniformDeflection {
 	public:
-		%feature("autodoc", "1");
-		~GCPnts_QuasiUniformDeflection();
 		%feature("autodoc", "1");
 		GCPnts_QuasiUniformDeflection();
 		%feature("autodoc", "1");

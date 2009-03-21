@@ -246,8 +246,6 @@ class PCollection_IsNullTree : public Standard_Failure {
 class PCollection_PrivCompareOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~PCollection_PrivCompareOfInteger();
-		%feature("autodoc", "1");
 		PCollection_PrivCompareOfInteger();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
@@ -547,8 +545,6 @@ class PCollection_HAsciiString : public Standard_Persistent {
 class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~PCollection_CompareOfInteger();
-		%feature("autodoc", "1");
 		PCollection_CompareOfInteger();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
@@ -565,8 +561,6 @@ class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 %nodefaultctor PCollection_PrivCompareOfReal;
 class PCollection_PrivCompareOfReal {
 	public:
-		%feature("autodoc", "1");
-		~PCollection_PrivCompareOfReal();
 		%feature("autodoc", "1");
 		PCollection_PrivCompareOfReal();
 		%feature("autodoc", "1");
@@ -586,8 +580,6 @@ class PCollection_PrivCompareOfReal {
 %nodefaultctor PCollection_CompareOfReal;
 class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {
 	public:
-		%feature("autodoc", "1");
-		~PCollection_CompareOfReal();
 		%feature("autodoc", "1");
 		PCollection_CompareOfReal();
 

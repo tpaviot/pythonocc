@@ -1641,8 +1641,6 @@ class TDataStd_ListOfExtendedString {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDataStd_ListOfExtendedString();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TCollection_ExtendedString &I);
@@ -1830,8 +1828,6 @@ class TDataStd_Array1OfTrsf {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TDataStd_Array1OfTrsf();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TDataStd_Array1OfTrsf & Assign(const TDataStd_Array1OfTrsf &Other);
@@ -1928,8 +1924,6 @@ class TDataStd_LabelArray1 {
 		void Init(const TDF_Label &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TDataStd_LabelArray1();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2118,8 +2112,6 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 class TDataStd {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd();
-		%feature("autodoc", "1");
 		TDataStd();
 		%feature("autodoc", "1");
 		void IDList(TDF_IDList & anIDList);
@@ -2268,8 +2260,6 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringReal();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Real &I);
 		%feature("autodoc", "1");
@@ -2846,8 +2836,6 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringString();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const TCollection_ExtendedString &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
@@ -3418,8 +3406,6 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringByte();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Byte &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
@@ -3508,8 +3494,6 @@ class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDataStd_DataMapOfStringInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -3862,8 +3846,6 @@ class TDataStd_Axis : public TDF_Attribute {
 class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringByte();
-		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringByte();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringByte(const TDataStd_DataMapOfStringByte &aMap);
@@ -3918,8 +3900,6 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 class TDataStd_ListIteratorOfListOfExtendedString {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_ListIteratorOfListOfExtendedString();
-		%feature("autodoc", "1");
 		TDataStd_ListIteratorOfListOfExtendedString();
 		%feature("autodoc", "1");
 		TDataStd_ListIteratorOfListOfExtendedString(const TDataStd_ListOfExtendedString &L);
@@ -3942,8 +3922,6 @@ class TDataStd_ListIteratorOfListOfExtendedString {
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringReal;
 class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringReal();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringReal();
 		%feature("autodoc", "1");
@@ -4064,8 +4042,6 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringString();
-		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringString();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringString(const TDataStd_DataMapOfStringString &aMap);
@@ -4094,8 +4070,6 @@ class TDataStd_ListOfByte {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TDataStd_ListOfByte();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -4223,8 +4197,6 @@ class TDataStd_HDataMapOfStringString : public MMgt_TShared {
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringInteger;
 class TDataStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TDataStd_DataMapIteratorOfDataMapOfStringInteger();
 		%feature("autodoc", "1");
 		TDataStd_DataMapIteratorOfDataMapOfStringInteger();
 		%feature("autodoc", "1");
@@ -4564,8 +4536,6 @@ class TDataStd_Array1OfByte {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TDataStd_Array1OfByte();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TDataStd_Array1OfByte & Assign(const TDataStd_Array1OfByte &Other);
@@ -4596,8 +4566,6 @@ class TDataStd_Array1OfByte {
 %nodefaultctor TDataStd_ListIteratorOfListOfByte;
 class TDataStd_ListIteratorOfListOfByte {
 	public:
-		%feature("autodoc", "1");
-		~TDataStd_ListIteratorOfListOfByte();
 		%feature("autodoc", "1");
 		TDataStd_ListIteratorOfListOfByte();
 		%feature("autodoc", "1");

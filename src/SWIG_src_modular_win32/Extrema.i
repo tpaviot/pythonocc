@@ -616,8 +616,6 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection
 class Extrema_POnCurv2d {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_POnCurv2d();
-		%feature("autodoc", "1");
 		Extrema_POnCurv2d();
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d(const Standard_Real U, const gp_Pnt2d &P);
@@ -648,8 +646,6 @@ class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
 		Extrema_SequenceOfBoolean();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SequenceOfBoolean();
 		%feature("autodoc", "1");
 		const Extrema_SequenceOfBoolean & Assign(const Extrema_SequenceOfBoolean &Other);
 		%feature("autodoc", "1");
@@ -722,8 +718,6 @@ class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 class Extrema_LocECC2dOfLocateExtCC2d {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_LocECC2dOfLocateExtCC2d();
-		%feature("autodoc", "1");
 		Extrema_LocECC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real U0, const Standard_Real V0, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -746,8 +740,6 @@ class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence 
 		Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC();
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC & Assign(const Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC &Other);
 		%feature("autodoc", "1");
@@ -798,8 +790,6 @@ class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence 
 class Extrema_ExtPC {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ExtPC();
-		%feature("autodoc", "1");
 		Extrema_ExtPC();
 		%feature("autodoc", "1");
 		Extrema_ExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
@@ -832,8 +822,6 @@ class Extrema_ExtPC {
 %nodefaultctor Extrema_ExtPS;
 class Extrema_ExtPS {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtPS();
 		%feature("autodoc", "1");
 		Extrema_ExtPS();
 		%feature("autodoc", "1");
@@ -869,8 +857,6 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequ
 		Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d & Assign(const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d &Other);
 		%feature("autodoc", "1");
@@ -920,8 +906,6 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequ
 %nodefaultctor Extrema_ExtSS;
 class Extrema_ExtSS {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtSS();
 		%feature("autodoc", "1");
 		Extrema_ExtSS();
 		%feature("autodoc", "1");
@@ -973,8 +957,6 @@ class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 		Standard_Real Value(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_CCFOfELCCOfLocateExtCC();
 
 };
 %extend Extrema_CCFOfELCCOfLocateExtCC {
@@ -986,8 +968,6 @@ class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 %nodefaultctor Extrema_ECC2dOfExtCC2d;
 class Extrema_ECC2dOfExtCC2d {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ECC2dOfExtCC2d();
 		%feature("autodoc", "1");
 		Extrema_ECC2dOfExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
@@ -1013,8 +993,6 @@ class Extrema_ECC2dOfExtCC2d {
 %nodefaultctor Extrema_ExtCC2d;
 class Extrema_ExtCC2d {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtCC2d();
 		%feature("autodoc", "1");
 		Extrema_ExtCC2d();
 		%feature("autodoc", "1");
@@ -1116,8 +1094,6 @@ class Extrema_Array1OfPOnSurf {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Extrema_Array1OfPOnSurf();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Extrema_Array1OfPOnSurf & Assign(const Extrema_Array1OfPOnSurf &Other);
@@ -1152,8 +1128,6 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequ
 		Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & Assign(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
 		%feature("autodoc", "1");
@@ -1203,8 +1177,6 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequ
 %nodefaultctor Extrema_ExtElCS;
 class Extrema_ExtElCS {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtElCS();
 		%feature("autodoc", "1");
 		Extrema_ExtElCS();
 		%feature("autodoc", "1");
@@ -1273,8 +1245,6 @@ class Extrema_ExtElCS {
 class Extrema_EPCOfELPCOfLocateExtPC {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_EPCOfELPCOfLocateExtPC();
-		%feature("autodoc", "1");
 		Extrema_EPCOfELPCOfLocateExtPC();
 		%feature("autodoc", "1");
 		Extrema_EPCOfELPCOfLocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Integer NbU, const Standard_Real TolU, const Standard_Real TolF);
@@ -1311,8 +1281,6 @@ class Extrema_EPCOfELPCOfLocateExtPC {
 %nodefaultctor Extrema_GenLocateExtSS;
 class Extrema_GenLocateExtSS {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_GenLocateExtSS();
 		%feature("autodoc", "1");
 		Extrema_GenLocateExtSS();
 		%feature("autodoc", "1");
@@ -1362,8 +1330,6 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_PCFOfEPCOfELPCOfLocateExtPC();
 
 };
 %extend Extrema_PCFOfEPCOfELPCOfLocateExtPC {
@@ -1462,8 +1428,6 @@ class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
 class Extrema_LocateExtCC {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_LocateExtCC();
-		%feature("autodoc", "1");
 		Extrema_LocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real U0, const Standard_Real V0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -1482,8 +1446,6 @@ class Extrema_LocateExtCC {
 %nodefaultctor Extrema_ExtElSS;
 class Extrema_ExtElSS {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtElSS();
 		%feature("autodoc", "1");
 		Extrema_ExtElSS();
 		%feature("autodoc", "1");
@@ -1531,8 +1493,6 @@ class Extrema_ExtElSS {
 %nodefaultctor Extrema_ExtElC2d;
 class Extrema_ExtElC2d {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtElC2d();
 		%feature("autodoc", "1");
 		Extrema_ExtElC2d();
 		%feature("autodoc", "1");
@@ -1694,8 +1654,6 @@ class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_PCFOfEPCOfExtPC2d();
 
 };
 %extend Extrema_PCFOfEPCOfExtPC2d {
@@ -1737,8 +1695,6 @@ class Extrema_Array2OfPOnCurv {
 		void Init(const Extrema_POnCurv &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Extrema_Array2OfPOnCurv();
 		%feature("autodoc", "1");
 		const Extrema_Array2OfPOnCurv & Assign(const Extrema_Array2OfPOnCurv &Other);
 		%feature("autodoc", "1");
@@ -1798,8 +1754,6 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_PCLocFOfLocEPCOfLocateExtPC();
 
 };
 %extend Extrema_PCLocFOfLocEPCOfLocateExtPC {
@@ -1815,8 +1769,6 @@ class Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_BaseSeque
 		Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & Assign(const Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d &Other);
 		%feature("autodoc", "1");
@@ -1870,8 +1822,6 @@ class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequ
 		Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC();
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & Assign(const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC &Other);
 		%feature("autodoc", "1");
@@ -1945,8 +1895,6 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_PCLocFOfLocEPCOfLocateExtPC2d();
 
 };
 %extend Extrema_PCLocFOfLocEPCOfLocateExtPC2d {
@@ -1984,8 +1932,6 @@ class Extrema_FuncExtSS : public math_FunctionSetWithDerivatives {
 		Extrema_POnSurf PointOnS1(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf PointOnS2(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_FuncExtSS();
 
 };
 %extend Extrema_FuncExtSS {
@@ -2044,8 +1990,6 @@ class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
 class Extrema_ELCC2dOfLocateExtCC2d {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ELCC2dOfLocateExtCC2d();
-		%feature("autodoc", "1");
 		Extrema_ELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Extrema_ELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
@@ -2078,8 +2022,6 @@ class Extrema_Array1OfPOnCurv {
 		void Init(const Extrema_POnCurv &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Extrema_Array1OfPOnCurv();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2135,8 +2077,6 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_PCFOfEPCOfELPCOfLocateExtPC2d();
 
 };
 %extend Extrema_PCFOfEPCOfELPCOfLocateExtPC2d {
@@ -2152,8 +2092,6 @@ class Extrema_SequenceOfPOnSurf : public TCollection_BaseSequence {
 		Extrema_SequenceOfPOnSurf();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SequenceOfPOnSurf();
 		%feature("autodoc", "1");
 		const Extrema_SequenceOfPOnSurf & Assign(const Extrema_SequenceOfPOnSurf &Other);
 		%feature("autodoc", "1");
@@ -2203,8 +2141,6 @@ class Extrema_SequenceOfPOnSurf : public TCollection_BaseSequence {
 %nodefaultctor Extrema_LocateExtPC2d;
 class Extrema_LocateExtPC2d {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_LocateExtPC2d();
 		%feature("autodoc", "1");
 		Extrema_LocateExtPC2d();
 		%feature("autodoc", "1");
@@ -2257,8 +2193,6 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TColle
 class Extrema_LocateExtPC {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_LocateExtPC();
-		%feature("autodoc", "1");
 		Extrema_LocateExtPC();
 		%feature("autodoc", "1");
 		Extrema_LocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real U0, const Standard_Real TolF);
@@ -2288,8 +2222,6 @@ class Extrema_LocateExtPC {
 class Extrema_GenLocateExtCS {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_GenLocateExtCS();
-		%feature("autodoc", "1");
 		Extrema_GenLocateExtCS();
 		%feature("autodoc", "1");
 		Extrema_GenLocateExtCS(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Real T, const Standard_Real U, const Standard_Real V, const Standard_Real Tol1, const Standard_Real Tol2);
@@ -2318,8 +2250,6 @@ class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
 		Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d();
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d & Assign(const Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d &Other);
 		%feature("autodoc", "1");
@@ -2369,8 +2299,6 @@ class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
 %nodefaultctor Extrema_ExtCC;
 class Extrema_ExtCC {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtCC();
 		%feature("autodoc", "1");
 		Extrema_ExtCC();
 		%feature("autodoc", "1");
@@ -2427,8 +2355,6 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_Se
 class Extrema_LocEPCOfLocateExtPC2d {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_LocEPCOfLocateExtPC2d();
-		%feature("autodoc", "1");
 		Extrema_LocEPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
 		Extrema_LocEPCOfLocateExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real TolU);
@@ -2457,8 +2383,6 @@ class Extrema_LocEPCOfLocateExtPC2d {
 %nodefaultctor Extrema_ExtPElC;
 class Extrema_ExtPElC {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtPElC();
 		%feature("autodoc", "1");
 		Extrema_ExtPElC();
 		%feature("autodoc", "1");
@@ -2502,8 +2426,6 @@ class Extrema_ExtPElC {
 %nodefaultctor Extrema_ExtPElS;
 class Extrema_ExtPElS {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtPElS();
 		%feature("autodoc", "1");
 		Extrema_ExtPElS();
 		%feature("autodoc", "1");
@@ -2568,8 +2490,6 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollec
 class Extrema_ExtElC {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ExtElC();
-		%feature("autodoc", "1");
 		Extrema_ExtElC();
 		%feature("autodoc", "1");
 		Extrema_ExtElC(const gp_Lin &C1, const gp_Lin &C2, const Standard_Real AngTol);
@@ -2626,8 +2546,6 @@ class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
 		Extrema_SeqPOnCOfCCFOfECCOfExtCC();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SeqPOnCOfCCFOfECCOfExtCC();
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCFOfECCOfExtCC & Assign(const Extrema_SeqPOnCOfCCFOfECCOfExtCC &Other);
 		%feature("autodoc", "1");
@@ -2697,8 +2615,6 @@ class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 		Standard_Real Value(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_CCFOfECC2dOfExtCC2d();
 
 };
 %extend Extrema_CCFOfECC2dOfExtCC2d {
@@ -2714,8 +2630,6 @@ class Extrema_SequenceOfPOnCurv2d : public TCollection_BaseSequence {
 		Extrema_SequenceOfPOnCurv2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SequenceOfPOnCurv2d();
 		%feature("autodoc", "1");
 		const Extrema_SequenceOfPOnCurv2d & Assign(const Extrema_SequenceOfPOnCurv2d &Other);
 		%feature("autodoc", "1");
@@ -2835,8 +2749,6 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_PCFOfEPCOfExtPC();
 
 };
 %extend Extrema_PCFOfEPCOfExtPC {
@@ -2848,8 +2760,6 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 %nodefaultctor Extrema_POnSurf;
 class Extrema_POnSurf {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_POnSurf();
 		%feature("autodoc", "1");
 		Extrema_POnSurf();
 		%feature("autodoc", "1");
@@ -2902,8 +2812,6 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TColle
 class Extrema_GenLocateExtPS {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_GenLocateExtPS();
-		%feature("autodoc", "1");
 		Extrema_GenLocateExtPS();
 		%feature("autodoc", "1");
 		Extrema_GenLocateExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Real U0, const Standard_Real V0, const Standard_Real TolU, const Standard_Real TolV);
@@ -2944,8 +2852,6 @@ class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivative
 		Standard_Real Value(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_CCFOfELCC2dOfLocateExtCC2d();
 
 };
 %extend Extrema_CCFOfELCC2dOfLocateExtCC2d {
@@ -2977,8 +2883,6 @@ class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivativ
 		Standard_Real Value(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_CCLocFOfLocECCOfLocateExtCC();
 
 };
 %extend Extrema_CCLocFOfLocECCOfLocateExtCC {
@@ -2998,8 +2902,6 @@ class Extrema_Array1OfPOnCurv2d {
 		void Init(const Extrema_POnCurv2d &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Extrema_Array1OfPOnCurv2d();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -3031,8 +2933,6 @@ class Extrema_Array1OfPOnCurv2d {
 %nodefaultctor Extrema_EPCOfExtPC;
 class Extrema_EPCOfExtPC {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_EPCOfExtPC();
 		%feature("autodoc", "1");
 		Extrema_EPCOfExtPC();
 		%feature("autodoc", "1");
@@ -3071,8 +2971,6 @@ class Extrema_EPCOfExtPC {
 class Extrema_GenExtCS {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_GenExtCS();
-		%feature("autodoc", "1");
 		Extrema_GenExtCS();
 		%feature("autodoc", "1");
 		Extrema_GenExtCS(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Integer NbT, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real Tol1, const Standard_Real Tol2);
@@ -3107,8 +3005,6 @@ class Extrema_GenExtCS {
 %nodefaultctor Extrema_LocEPCOfLocateExtPC;
 class Extrema_LocEPCOfLocateExtPC {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_LocEPCOfLocateExtPC();
 		%feature("autodoc", "1");
 		Extrema_LocEPCOfLocateExtPC();
 		%feature("autodoc", "1");
@@ -3147,8 +3043,6 @@ class Extrema_Array2OfPOnSurf {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Extrema_Array2OfPOnSurf();
-		%feature("autodoc", "1");
 		const Extrema_Array2OfPOnSurf & Assign(const Extrema_Array2OfPOnSurf &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -3184,8 +3078,6 @@ class Extrema_Array2OfPOnSurf {
 class Extrema_ExtPC2d {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ExtPC2d();
-		%feature("autodoc", "1");
 		Extrema_ExtPC2d();
 		%feature("autodoc", "1");
 		Extrema_ExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
@@ -3219,8 +3111,6 @@ class Extrema_ExtPC2d {
 class Extrema_ExtPExtS {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ExtPExtS();
-		%feature("autodoc", "1");
 		Extrema_ExtPExtS();
 		%feature("autodoc", "1");
 		Extrema_ExtPExtS(const gp_Pnt &P, const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
@@ -3250,8 +3140,6 @@ class Extrema_ExtPExtS {
 class Extrema_ExtPRevS {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ExtPRevS();
-		%feature("autodoc", "1");
 		Extrema_ExtPRevS();
 		%feature("autodoc", "1");
 		Extrema_ExtPRevS(const gp_Pnt &P, const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
@@ -3280,8 +3168,6 @@ class Extrema_ExtPRevS {
 %nodefaultctor Extrema_GenExtPS;
 class Extrema_GenExtPS {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_GenExtPS();
 		%feature("autodoc", "1");
 		Extrema_GenExtPS();
 		%feature("autodoc", "1");
@@ -3333,8 +3219,6 @@ class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDeriv
 		Standard_Real Value(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_CCLocFOfLocECC2dOfLocateExtCC2d();
 
 };
 %extend Extrema_CCLocFOfLocECC2dOfLocateExtCC2d {
@@ -3346,8 +3230,6 @@ class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDeriv
 %nodefaultctor Extrema_LocateExtCC2d;
 class Extrema_LocateExtCC2d {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_LocateExtCC2d();
 		%feature("autodoc", "1");
 		Extrema_LocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real U0, const Standard_Real V0);
 		%feature("autodoc", "1");
@@ -3367,8 +3249,6 @@ class Extrema_LocateExtCC2d {
 %nodefaultctor Extrema_GenExtSS;
 class Extrema_GenExtSS {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_GenExtSS();
 		%feature("autodoc", "1");
 		Extrema_GenExtSS();
 		%feature("autodoc", "1");
@@ -3472,8 +3352,6 @@ class Extrema_Curve2dTool {
 class Extrema_ECCOfExtCC {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ECCOfExtCC();
-		%feature("autodoc", "1");
 		Extrema_ECCOfExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Extrema_ECCOfExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
@@ -3498,8 +3376,6 @@ class Extrema_ECCOfExtCC {
 %nodefaultctor Extrema_EPCOfExtPC2d;
 class Extrema_EPCOfExtPC2d {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_EPCOfExtPC2d();
 		%feature("autodoc", "1");
 		Extrema_EPCOfExtPC2d();
 		%feature("autodoc", "1");
@@ -3578,8 +3454,6 @@ class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
 class Extrema_LocECCOfLocateExtCC {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_LocECCOfLocateExtCC();
-		%feature("autodoc", "1");
 		Extrema_LocECCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real U0, const Standard_Real V0, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -3624,8 +3498,6 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollection_BaseSequen
 		Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC();
 		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC & Assign(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC &Other);
 		%feature("autodoc", "1");
@@ -3680,8 +3552,6 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_BaseSequen
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC();
-		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC & Assign(const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
@@ -3735,8 +3605,6 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Extrema_SeqPCOfPCFOfEPCOfExtPC();
-		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCFOfEPCOfExtPC & Assign(const Extrema_SeqPCOfPCFOfEPCOfExtPC &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
@@ -3785,8 +3653,6 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
 %nodefaultctor Extrema_ELPCOfLocateExtPC;
 class Extrema_ELPCOfLocateExtPC {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ELPCOfLocateExtPC();
 		%feature("autodoc", "1");
 		Extrema_ELPCOfLocateExtPC();
 		%feature("autodoc", "1");
@@ -3843,8 +3709,6 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection
 class Extrema_ELCCOfLocateExtCC {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ELCCOfLocateExtCC();
-		%feature("autodoc", "1");
 		Extrema_ELCCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Extrema_ELCCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
@@ -3873,8 +3737,6 @@ class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
 		Extrema_SequenceOfPOnCurv();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SequenceOfPOnCurv();
 		%feature("autodoc", "1");
 		const Extrema_SequenceOfPOnCurv & Assign(const Extrema_SequenceOfPOnCurv &Other);
 		%feature("autodoc", "1");
@@ -3925,8 +3787,6 @@ class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
 class Extrema_ELPCOfLocateExtPC2d {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ELPCOfLocateExtPC2d();
-		%feature("autodoc", "1");
 		Extrema_ELPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
 		Extrema_ELPCOfLocateExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
@@ -3959,8 +3819,6 @@ class Extrema_ELPCOfLocateExtPC2d {
 %nodefaultctor Extrema_POnCurv;
 class Extrema_POnCurv {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_POnCurv();
 		%feature("autodoc", "1");
 		Extrema_POnCurv();
 		%feature("autodoc", "1");
@@ -4055,8 +3913,6 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollect
 class Extrema_ExtCS {
 	public:
 		%feature("autodoc", "1");
-		~Extrema_ExtCS();
-		%feature("autodoc", "1");
 		Extrema_ExtCS();
 		%feature("autodoc", "1");
 		Extrema_ExtCS(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Real TolC, const Standard_Real TolS);
@@ -4087,8 +3943,6 @@ class Extrema_ExtCS {
 %nodefaultctor Extrema_ExtPElC2d;
 class Extrema_ExtPElC2d {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_ExtPElC2d();
 		%feature("autodoc", "1");
 		Extrema_ExtPElC2d();
 		%feature("autodoc", "1");
@@ -4132,8 +3986,6 @@ class Extrema_ExtPElC2d {
 %nodefaultctor Extrema_EPCOfELPCOfLocateExtPC2d;
 class Extrema_EPCOfELPCOfLocateExtPC2d {
 	public:
-		%feature("autodoc", "1");
-		~Extrema_EPCOfELPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
 		Extrema_EPCOfELPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
@@ -4221,8 +4073,6 @@ class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasDegIso() const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_FuncExtPS();
 
 };
 %extend Extrema_FuncExtPS {
@@ -4260,8 +4110,6 @@ class Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_Base
 		Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d & Assign(const Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d &Other);
 		%feature("autodoc", "1");
@@ -4338,8 +4186,6 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Extrema_SeqPCOfPCFOfEPCOfExtPC2d();
-		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCFOfEPCOfExtPC2d & Assign(const Extrema_SeqPCOfPCFOfEPCOfExtPC2d &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv2d &T);
@@ -4414,8 +4260,6 @@ class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 		const Extrema_POnCurv & PointOnCurve(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		const Extrema_POnSurf & PointOnSurface(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_FuncExtCS();
 
 };
 %extend Extrema_FuncExtCS {
@@ -4435,8 +4279,6 @@ class Extrema_Array2OfPOnCurv2d {
 		void Init(const Extrema_POnCurv2d &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Extrema_Array2OfPOnCurv2d();
 		%feature("autodoc", "1");
 		const Extrema_Array2OfPOnCurv2d & Assign(const Extrema_Array2OfPOnCurv2d &Other);
 		%feature("autodoc", "1");
@@ -4492,8 +4334,6 @@ class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {
 		Standard_Real Value(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
-		%feature("autodoc", "1");
-		virtual		~Extrema_CCFOfECCOfExtCC();
 
 };
 %extend Extrema_CCFOfECCOfExtCC {

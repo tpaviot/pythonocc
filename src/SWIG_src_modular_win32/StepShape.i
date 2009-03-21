@@ -3526,8 +3526,6 @@ class StepShape_Array1OfValueQualifier {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfValueQualifier();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfValueQualifier & Assign(const StepShape_Array1OfValueQualifier &Other);
@@ -4328,8 +4326,6 @@ class StepShape_Array1OfShell {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepShape_Array1OfShell();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepShape_Array1OfShell & Assign(const StepShape_Array1OfShell &Other);
@@ -5077,8 +5073,6 @@ class StepShape_Array1OfGeometricSetSelect {
 		void Init(const StepShape_GeometricSetSelect &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepShape_Array1OfGeometricSetSelect();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");

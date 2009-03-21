@@ -145,8 +145,6 @@ class MMgt_StackManager {
 		void ShallowDump(Standard_OStream & S) const;
 		%feature("autodoc", "1");
 		void Destructor();
-		%feature("autodoc", "1");
-		~MMgt_StackManager();
 
 };
 %extend MMgt_StackManager {

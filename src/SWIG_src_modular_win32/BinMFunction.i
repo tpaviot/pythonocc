@@ -160,8 +160,6 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 class BinMFunction {
 	public:
 		%feature("autodoc", "1");
-		~BinMFunction();
-		%feature("autodoc", "1");
 		BinMFunction();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);

@@ -614,8 +614,6 @@ class CDM_MapOfDocument : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~CDM_MapOfDocument();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_CDM_Document &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Handle_CDM_Document &aKey) const;
@@ -640,8 +638,6 @@ class CDM_NamesDirectory : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~CDM_NamesDirectory();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -727,8 +723,6 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 %nodefaultctor CDM_DataMapIteratorOfNamesDirectory;
 class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~CDM_DataMapIteratorOfNamesDirectory();
 		%feature("autodoc", "1");
 		CDM_DataMapIteratorOfNamesDirectory();
 		%feature("autodoc", "1");
@@ -1018,8 +1012,6 @@ class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIter
 %nodefaultctor CDM_DocumentHasher;
 class CDM_DocumentHasher {
 	public:
-		%feature("autodoc", "1");
-		~CDM_DocumentHasher();
 		%feature("autodoc", "1");
 		CDM_DocumentHasher();
 		%feature("autodoc", "1");

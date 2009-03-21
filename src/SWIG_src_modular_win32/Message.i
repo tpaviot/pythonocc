@@ -604,8 +604,6 @@ class Message_ListOfMsg {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Message_ListOfMsg();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Message_Msg &I);
@@ -749,8 +747,6 @@ class Message_ProgressScale {
 class Message_MsgFile {
 	public:
 		%feature("autodoc", "1");
-		~Message_MsgFile();
-		%feature("autodoc", "1");
 		Message_MsgFile();
 		%feature("autodoc", "1");
 		Standard_Boolean Load(const char * theDirName, const char * theFileName);
@@ -823,8 +819,6 @@ class Message_SequenceOfProgressScale : public TCollection_BaseSequence {
 		Message_SequenceOfProgressScale();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Message_SequenceOfProgressScale();
 		%feature("autodoc", "1");
 		const Message_SequenceOfProgressScale & Assign(const Message_SequenceOfProgressScale &Other);
 		%feature("autodoc", "1");
@@ -915,8 +909,6 @@ class Message_PrinterOStream : public Message_Printer {
 class Message_ListIteratorOfListOfMsg {
 	public:
 		%feature("autodoc", "1");
-		~Message_ListIteratorOfListOfMsg();
-		%feature("autodoc", "1");
 		Message_ListIteratorOfListOfMsg();
 		%feature("autodoc", "1");
 		Message_ListIteratorOfListOfMsg(const Message_ListOfMsg &L);
@@ -946,8 +938,6 @@ class Message_ProgressSentry {
 		%feature("autodoc", "1");
 		void EndScope();
 		%feature("autodoc", "1");
-		~Message_ProgressSentry();
-		%feature("autodoc", "1");
 		void NextScope() const;
 		%feature("autodoc", "1");
 		void Next() const;
@@ -968,8 +958,6 @@ class Message_ProgressSentry {
 %nodefaultctor Message_Msg;
 class Message_Msg {
 	public:
-		%feature("autodoc", "1");
-		~Message_Msg();
 		%feature("autodoc", "1");
 		Message_Msg();
 		%feature("autodoc", "1");

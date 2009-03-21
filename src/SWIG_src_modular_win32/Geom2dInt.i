@@ -119,8 +119,6 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter();
 
 };
 %extend Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter {
@@ -156,8 +154,6 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		~Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter();
 
 };
 %extend Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
@@ -169,8 +165,6 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 %nodefaultctor Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter();
 		%feature("autodoc", "1");
 		Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Tol);
 		%feature("autodoc", "1");
@@ -194,8 +188,6 @@ class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 %nodefaultctor Geom2dInt_IntConicCurveOfGInter;
 class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dInt_IntConicCurveOfGInter();
 		%feature("autodoc", "1");
 		Geom2dInt_IntConicCurveOfGInter();
 		%feature("autodoc", "1");
@@ -230,8 +222,6 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter();
-		%feature("autodoc", "1");
 		Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter();
 
 };
@@ -244,8 +234,6 @@ class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 %nodefaultctor Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter();
 		%feature("autodoc", "1");
 		Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &Curve, const Standard_Integer NbPnt, const IntRes2d_Domain &Domain, const Standard_Real Tol);
 		%feature("autodoc", "1");
@@ -303,8 +291,6 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		~Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter();
 
 };
 %extend Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter {
@@ -316,8 +302,6 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 %nodefaultctor Geom2dInt_TheProjPCurOfGInter;
 class Geom2dInt_TheProjPCurOfGInter {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dInt_TheProjPCurOfGInter();
 		%feature("autodoc", "1");
 		Geom2dInt_TheProjPCurOfGInter();
 		%feature("autodoc", "1");
@@ -335,8 +319,6 @@ class Geom2dInt_TheProjPCurOfGInter {
 %nodefaultctor Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
 class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter();
 		%feature("autodoc", "1");
 		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter();
 		%feature("autodoc", "1");
@@ -366,8 +348,6 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 %nodefaultctor Geom2dInt_Geom2dCurveTool;
 class Geom2dInt_Geom2dCurveTool {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dInt_Geom2dCurveTool();
 		%feature("autodoc", "1");
 		Geom2dInt_Geom2dCurveTool();
 		%feature("autodoc", "1");
@@ -440,8 +420,6 @@ class Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter
 class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Interference {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter();
-		%feature("autodoc", "1");
 		Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter();
 		%feature("autodoc", "1");
 		Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje2);
@@ -464,8 +442,6 @@ class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Int
 %nodefaultctor Geom2dInt_GInter;
 class Geom2dInt_GInter : public IntRes2d_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dInt_GInter();
 		%feature("autodoc", "1");
 		Geom2dInt_GInter();
 		%feature("autodoc", "1");
@@ -509,8 +485,6 @@ class Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public TCol
 		Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter();
 		%feature("autodoc", "1");
 		const Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter & Assign(const Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter &Other);
 		%feature("autodoc", "1");
@@ -561,8 +535,6 @@ class Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public TCol
 class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dInt_TheIntConicCurveOfGInter();
-		%feature("autodoc", "1");
 		Geom2dInt_TheIntConicCurveOfGInter();
 		%feature("autodoc", "1");
 		Geom2dInt_TheIntConicCurveOfGInter(const gp_Lin2d &L, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
@@ -596,8 +568,6 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 class Geom2dInt_TheIntPCurvePCurveOfGInter : public IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dInt_TheIntPCurvePCurveOfGInter();
-		%feature("autodoc", "1");
 		Geom2dInt_TheIntPCurvePCurveOfGInter();
 		%feature("autodoc", "1");
 		void Perform(const Adaptor2d_Curve2d &Curve1, const IntRes2d_Domain &Domain1, const Adaptor2d_Curve2d &Curve2, const IntRes2d_Domain &Domain2, const Standard_Real TolConf, const Standard_Real Tol);
@@ -614,8 +584,6 @@ class Geom2dInt_TheIntPCurvePCurveOfGInter : public IntRes2d_Intersection {
 %nodefaultctor Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter();
 		%feature("autodoc", "1");
 		Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter();
 		%feature("autodoc", "1");
@@ -641,8 +609,6 @@ class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 %nodefaultctor Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
 class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Intersection {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter();
 		%feature("autodoc", "1");
 		Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter();
 		%feature("autodoc", "1");

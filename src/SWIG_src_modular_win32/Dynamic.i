@@ -1130,8 +1130,6 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 class Dynamic {
 	public:
 		%feature("autodoc", "1");
-		~Dynamic();
-		%feature("autodoc", "1");
 		Dynamic();
 		%feature("autodoc", "1");
 		Dynamic_ModeEnum Mode(const char * amode);

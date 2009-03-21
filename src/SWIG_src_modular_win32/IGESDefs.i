@@ -432,8 +432,6 @@ class IGESDefs_GeneralModule : public IGESData_GeneralModule {
 class IGESDefs_ToolAttributeDef {
 	public:
 		%feature("autodoc", "1");
-		~IGESDefs_ToolAttributeDef();
-		%feature("autodoc", "1");
 		IGESDefs_ToolAttributeDef();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDefs_AttributeDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -482,8 +480,6 @@ class IGESDefs_SpecificModule : public IGESData_SpecificModule {
 %nodefaultctor IGESDefs_ToolAssociativityDef;
 class IGESDefs_ToolAssociativityDef {
 	public:
-		%feature("autodoc", "1");
-		~IGESDefs_ToolAssociativityDef();
 		%feature("autodoc", "1");
 		IGESDefs_ToolAssociativityDef();
 		%feature("autodoc", "1");
@@ -639,8 +635,6 @@ class IGESDefs_AttributeTable : public IGESData_IGESEntity {
 class IGESDefs_ToolUnitsData {
 	public:
 		%feature("autodoc", "1");
-		~IGESDefs_ToolUnitsData();
-		%feature("autodoc", "1");
 		IGESDefs_ToolUnitsData();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDefs_UnitsData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -668,8 +662,6 @@ class IGESDefs_ToolUnitsData {
 class IGESDefs_ToolGenericData {
 	public:
 		%feature("autodoc", "1");
-		~IGESDefs_ToolGenericData();
-		%feature("autodoc", "1");
 		IGESDefs_ToolGenericData();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDefs_GenericData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -696,8 +688,6 @@ class IGESDefs_ToolGenericData {
 %nodefaultctor IGESDefs_ToolMacroDef;
 class IGESDefs_ToolMacroDef {
 	public:
-		%feature("autodoc", "1");
-		~IGESDefs_ToolMacroDef();
 		%feature("autodoc", "1");
 		IGESDefs_ToolMacroDef();
 		%feature("autodoc", "1");
@@ -808,8 +798,6 @@ class IGESDefs_GenericData : public IGESData_IGESEntity {
 class IGESDefs_ToolTabularData {
 	public:
 		%feature("autodoc", "1");
-		~IGESDefs_ToolTabularData();
-		%feature("autodoc", "1");
 		IGESDefs_ToolTabularData();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDefs_TabularData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -898,8 +886,6 @@ class IGESDefs_UnitsData : public IGESData_IGESEntity {
 %nodefaultctor IGESDefs_ToolAttributeTable;
 class IGESDefs_ToolAttributeTable {
 	public:
-		%feature("autodoc", "1");
-		~IGESDefs_ToolAttributeTable();
 		%feature("autodoc", "1");
 		IGESDefs_ToolAttributeTable();
 		%feature("autodoc", "1");

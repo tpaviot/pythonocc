@@ -212,8 +212,6 @@ class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 class MNaming {
 	public:
 		%feature("autodoc", "1");
-		~MNaming();
-		%feature("autodoc", "1");
 		MNaming();
 		%feature("autodoc", "1");
 		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);

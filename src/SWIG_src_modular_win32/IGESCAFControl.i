@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class IGESCAFControl {
 	public:
 		%feature("autodoc", "1");
-		~IGESCAFControl();
-		%feature("autodoc", "1");
 		IGESCAFControl();
 		%feature("autodoc", "1");
 		Quantity_Color DecodeColor(const Standard_Integer col);
@@ -106,8 +104,6 @@ class IGESCAFControl {
 %nodefaultctor IGESCAFControl_Writer;
 class IGESCAFControl_Writer : public IGESControl_Writer {
 	public:
-		%feature("autodoc", "1");
-		~IGESCAFControl_Writer();
 		%feature("autodoc", "1");
 		IGESCAFControl_Writer();
 		%feature("autodoc", "1");
@@ -163,8 +159,6 @@ class IGESCAFControl_Reader : public IGESControl_Reader {
 		void SetLayerMode(const Standard_Boolean layermode);
 		%feature("autodoc", "1");
 		Standard_Boolean GetLayerMode() const;
-		%feature("autodoc", "1");
-		virtual		~IGESCAFControl_Reader();
 
 };
 %extend IGESCAFControl_Reader {

@@ -865,8 +865,6 @@ class TopOpeBRepDS_InterferenceTool {
 class TopOpeBRepDS_TOOL {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_TOOL();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_TOOL();
 		%feature("autodoc", "1");
 		Standard_Integer EShareG(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopoDS_Edge &E, TopTools_ListOfShape & lEsd);
@@ -988,8 +986,6 @@ class TopOpeBRepDS_GapTool : public MMgt_TShared {
 class TopOpeBRepDS_Reducer {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_Reducer();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_Reducer(const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
 		void ProcessFaceInterferences(const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &M);
@@ -1007,8 +1003,6 @@ class TopOpeBRepDS_Reducer {
 class TopOpeBRepDS_FIR {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_FIR();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_FIR(const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
 		void ProcessFaceInterferences(const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &M);
@@ -1025,8 +1019,6 @@ class TopOpeBRepDS_FIR {
 %nodefaultctor TopOpeBRepDS;
 class TopOpeBRepDS {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS();
 		%feature("autodoc", "1");
 		TopOpeBRepDS();
 		%feature("autodoc", "1");
@@ -1072,8 +1064,6 @@ class TopOpeBRepDS {
 %nodefaultctor TopOpeBRepDS_Transition;
 class TopOpeBRepDS_Transition {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_Transition();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Transition();
 		%feature("autodoc", "1");
@@ -1144,8 +1134,6 @@ class TopOpeBRepDS_Transition {
 class TopOpeBRepDS_DataMapIteratorOfMapOfPoint : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfMapOfPoint();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfMapOfPoint();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfMapOfPoint(const TopOpeBRepDS_MapOfPoint &aMap);
@@ -1174,8 +1162,6 @@ class TopOpeBRepDS_DataMapOfShapeState : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapOfShapeState();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopAbs_State &I);
 		%feature("autodoc", "1");
@@ -1224,8 +1210,6 @@ class TopOpeBRepDS_ListNodeOfListOfInterference : public TCollection_MapNode {
 class TopOpeBRepDS_GeometryData {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_GeometryData();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_GeometryData();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_GeometryData(const TopOpeBRepDS_GeometryData &Other);
@@ -1272,8 +1256,6 @@ class TopOpeBRepDS_DataMapNodeOfMapOfPoint : public TCollection_MapNode {
 %nodefaultctor TopOpeBRepDS_PointIterator;
 class TopOpeBRepDS_PointIterator : public TopOpeBRepDS_InterferenceIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_PointIterator();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_PointIterator(const TopOpeBRepDS_ListOfInterference &L);
 		%feature("autodoc", "1");
@@ -1398,8 +1380,6 @@ class TopOpeBRepDS_MapOfPoint : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_MapOfPoint();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TopOpeBRepDS_PointData &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1424,8 +1404,6 @@ class TopOpeBRepDS_MapOfPoint : public TCollection_BasicMap {
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfMapOfSurface;
 class TopOpeBRepDS_DataMapIteratorOfMapOfSurface : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfMapOfSurface();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfMapOfSurface();
 		%feature("autodoc", "1");
@@ -1455,8 +1433,6 @@ class TopOpeBRepDS_DoubleMapOfIntegerShape : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_DoubleMapOfIntegerShape();
 		%feature("autodoc", "1");
 		void Bind(const Standard_Integer &K1, const TopoDS_Shape &K2);
 		%feature("autodoc", "1");
@@ -1507,8 +1483,6 @@ class TopOpeBRepDS_SolidSurfaceInterference : public TopOpeBRepDS_Interference {
 class TopOpeBRepDS_ShapeData {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_ShapeData();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_ShapeData();
 		%feature("autodoc", "1");
 		const TopOpeBRepDS_ListOfInterference & Interferences() const;
@@ -1529,8 +1503,6 @@ class TopOpeBRepDS_ShapeData {
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData;
 class TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData();
 		%feature("autodoc", "1");
@@ -1561,8 +1533,6 @@ class TopOpeBRepDS_DataMapOfInterferenceShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapOfInterferenceShape();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_TopOpeBRepDS_Interference &K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_TopOpeBRepDS_Interference &K) const;
@@ -1587,8 +1557,6 @@ class TopOpeBRepDS_DataMapOfInterferenceShape : public TCollection_BasicMap {
 %nodefaultctor TopOpeBRepDS_Explorer;
 class TopOpeBRepDS_Explorer {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_Explorer();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Explorer();
 		%feature("autodoc", "1");
@@ -1631,8 +1599,6 @@ class TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State : public TCollection_BasicM
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopOpeBRepDS_ListOfShapeOn1State &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -1657,8 +1623,6 @@ class TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State : public TCollection_BasicM
 %nodefaultctor TopOpeBRepDS_BuildTool;
 class TopOpeBRepDS_BuildTool {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_BuildTool();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_BuildTool();
 		%feature("autodoc", "1");
@@ -1785,8 +1749,6 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State : public TColl
 class TopOpeBRepDS_PointData : public TopOpeBRepDS_GeometryData {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_PointData();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_PointData();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_PointData(const TopOpeBRepDS_Point &P);
@@ -1807,8 +1769,6 @@ class TopOpeBRepDS_PointData : public TopOpeBRepDS_GeometryData {
 %nodefaultctor TopOpeBRepDS_Filter;
 class TopOpeBRepDS_Filter {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_Filter();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Filter(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopOpeBRepTool_PShapeClassifier &pClassif=0);
 		%feature("autodoc", "1");
@@ -1989,8 +1949,6 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference : public
 class TopOpeBRepDS_Point {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_Point();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_Point();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Point(const gp_Pnt &P, const Standard_Real T);
@@ -2029,8 +1987,6 @@ class TopOpeBRepDS_IndexedDataMapOfShapeWithState : public TCollection_BasicMap 
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_IndexedDataMapOfShapeWithState();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const TopOpeBRepDS_ShapeWithState &I);
 		%feature("autodoc", "1");
@@ -2145,8 +2101,6 @@ class TopOpeBRepDS_ShapeSurface : public TCollection_BasicMap {
 class TopOpeBRepDS_EdgeInterferenceTool {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_EdgeInterferenceTool();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_EdgeInterferenceTool();
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shape &E, const Handle_TopOpeBRepDS_Interference &I);
@@ -2175,8 +2129,6 @@ class TopOpeBRepDS_DataMapOfCheckStatus : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapOfCheckStatus();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TopOpeBRepDS_CheckStatus &I);
 		%feature("autodoc", "1");
@@ -2210,8 +2162,6 @@ class TopOpeBRepDS_IndexedDataMapOfVertexPoint : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_IndexedDataMapOfVertexPoint();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const TopOpeBRepDS_Point &I);
 		%feature("autodoc", "1");
@@ -2326,8 +2276,6 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference : public TCol
 class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState(const TopOpeBRepDS_DataMapOfShapeState &aMap);
@@ -2356,8 +2304,6 @@ class TopOpeBRepDS_MapOfIntegerShapeData : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_MapOfIntegerShapeData();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TopOpeBRepDS_ShapeData &I);
 		%feature("autodoc", "1");
@@ -2391,8 +2337,6 @@ class TopOpeBRepDS_MapOfShapeData : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_MapOfShapeData();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const TopOpeBRepDS_ShapeData &I);
 		%feature("autodoc", "1");
@@ -2507,8 +2451,6 @@ class TopOpeBRepDS_Surface {
 class TopOpeBRepDS_PointExplorer {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_PointExplorer();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_PointExplorer();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_PointExplorer(const TopOpeBRepDS_DataStructure &DS, const Standard_Boolean FindOnlyKeep=1);
@@ -2569,8 +2511,6 @@ class TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData : public TCollection_MapNo
 %nodefaultctor TopOpeBRepDS_CurveExplorer;
 class TopOpeBRepDS_CurveExplorer {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_CurveExplorer();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_CurveExplorer();
 		%feature("autodoc", "1");
@@ -2684,8 +2624,6 @@ class TopOpeBRepDS_DataMapNodeOfMapOfSurface : public TCollection_MapNode {
 %nodefaultctor TopOpeBRepDS_SurfaceIterator;
 class TopOpeBRepDS_SurfaceIterator : public TopOpeBRepDS_InterferenceIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_SurfaceIterator();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_SurfaceIterator(const TopOpeBRepDS_ListOfInterference &L);
 		%feature("autodoc", "1");
@@ -2933,8 +2871,6 @@ class TopOpeBRepDS_DataStructure {
 class TopOpeBRepDS_DataMapIteratorOfMapOfCurve : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfMapOfCurve();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfMapOfCurve();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfMapOfCurve(const TopOpeBRepDS_MapOfCurve &aMap);
@@ -3009,8 +2945,6 @@ class TopOpeBRepDS_MapOfCurve : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_MapOfCurve();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TopOpeBRepDS_CurveData &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -3035,8 +2969,6 @@ class TopOpeBRepDS_MapOfCurve : public TCollection_BasicMap {
 %nodefaultctor TopOpeBRepDS_GapFiller;
 class TopOpeBRepDS_GapFiller {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_GapFiller();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_GapFiller(const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
@@ -3075,8 +3007,6 @@ class TopOpeBRepDS_GapFiller {
 class TopOpeBRepDS_EIR {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_EIR();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_EIR(const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
 		void ProcessEdgeInterferences();
@@ -3093,8 +3023,6 @@ class TopOpeBRepDS_EIR {
 %nodefaultctor TopOpeBRepDS_ShapeWithState;
 class TopOpeBRepDS_ShapeWithState {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_ShapeWithState();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_ShapeWithState();
 		%feature("autodoc", "1");
@@ -3200,8 +3128,6 @@ class TopOpeBRepDS_Curve {
 class TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference(const TopOpeBRepDS_DataMapOfIntegerListOfInterference &aMap);
@@ -3222,8 +3148,6 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference : public 
 %nodefaultctor TopOpeBRepDS_CurveData;
 class TopOpeBRepDS_CurveData : public TopOpeBRepDS_GeometryData {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_CurveData();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_CurveData();
 		%feature("autodoc", "1");
@@ -3266,8 +3190,6 @@ class TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape : public TCollection_M
 class TopOpeBRepDS_SurfaceData : public TopOpeBRepDS_GeometryData {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_SurfaceData();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_SurfaceData();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_SurfaceData(const TopOpeBRepDS_Surface &S);
@@ -3290,8 +3212,6 @@ class TopOpeBRepDS_DataMapOfInterferenceListOfInterference : public TCollection_
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapOfInterferenceListOfInterference();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_TopOpeBRepDS_Interference &K, const TopOpeBRepDS_ListOfInterference &I);
 		%feature("autodoc", "1");
@@ -3317,8 +3237,6 @@ class TopOpeBRepDS_DataMapOfInterferenceListOfInterference : public TCollection_
 %nodefaultctor TopOpeBRepDS_SurfaceExplorer;
 class TopOpeBRepDS_SurfaceExplorer {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_SurfaceExplorer();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_SurfaceExplorer();
 		%feature("autodoc", "1");
@@ -3449,8 +3367,6 @@ class TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint : public TCol
 class TopOpeBRepDS_ListOfShapeOn1State {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_ListOfShapeOn1State();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_ListOfShapeOn1State();
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & ListOnState() const;
@@ -3473,8 +3389,6 @@ class TopOpeBRepDS_ListOfShapeOn1State {
 %nodefaultctor TopOpeBRepDS_TKI;
 class TopOpeBRepDS_TKI {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_TKI();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_TKI();
 		%feature("autodoc", "1");
@@ -3527,8 +3441,6 @@ class TopOpeBRepDS_TKI {
 class TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape(const TopOpeBRepDS_DoubleMapOfIntegerShape &aMap);
@@ -3549,8 +3461,6 @@ class TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape : public TCollecti
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State;
 class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State();
 		%feature("autodoc", "1");
@@ -3573,8 +3483,6 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State : public T
 class TopOpeBRepDS_Edge3dInterferenceTool {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_Edge3dInterferenceTool();
-		%feature("autodoc", "1");
 		TopOpeBRepDS_Edge3dInterferenceTool();
 		%feature("autodoc", "1");
 		void InitPointVertex(const Standard_Integer IsVertex, const TopoDS_Shape &VonOO);
@@ -3595,8 +3503,6 @@ class TopOpeBRepDS_Edge3dInterferenceTool {
 %nodefaultctor TopOpeBRepDS_FaceInterferenceTool;
 class TopOpeBRepDS_FaceInterferenceTool {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_FaceInterferenceTool();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_FaceInterferenceTool(const TopOpeBRepDS_PDataStructure &P);
 		%feature("autodoc", "1");
@@ -3632,8 +3538,6 @@ class TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference {
 		void Init(const TopOpeBRepDS_DataMapOfIntegerListOfInterference &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -3674,8 +3578,6 @@ class TopOpeBRepDS_MapOfSurface : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRepDS_MapOfSurface();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TopOpeBRepDS_SurfaceData &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -3700,8 +3602,6 @@ class TopOpeBRepDS_MapOfSurface : public TCollection_BasicMap {
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus;
 class TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus();
 		%feature("autodoc", "1");
@@ -3777,8 +3677,6 @@ class TopOpeBRepDS_DataMapOfIntegerListOfInterference : public TCollection_Basic
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRepDS_DataMapOfIntegerListOfInterference();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TopOpeBRepDS_ListOfInterference &I);
 		%feature("autodoc", "1");

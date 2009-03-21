@@ -90,8 +90,6 @@ class LDOMParser {
 		%feature("autodoc", "1");
 		LDOMParser();
 		%feature("autodoc", "1");
-		virtual		~LDOMParser();
-		%feature("autodoc", "1");
 		LDOM_Document getDocument();
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & GetError(TCollection_AsciiString & aData) const;

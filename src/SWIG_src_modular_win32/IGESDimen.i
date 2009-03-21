@@ -820,8 +820,6 @@ class IGESDimen_CenterLine : public IGESData_IGESEntity {
 class IGESDimen_ToolDimensionTolerance {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolDimensionTolerance();
-		%feature("autodoc", "1");
 		IGESDimen_ToolDimensionTolerance();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_DimensionTolerance &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1023,8 +1021,6 @@ class IGESDimen_DimensionedGeometry : public IGESData_IGESEntity {
 class IGESDimen_ToolSection {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolSection();
-		%feature("autodoc", "1");
 		IGESDimen_ToolSection();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_Section &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1119,8 +1115,6 @@ class IGESDimen_PointDimension : public IGESData_IGESEntity {
 %nodefaultctor IGESDimen_ToolGeneralNote;
 class IGESDimen_ToolGeneralNote {
 	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolGeneralNote();
 		%feature("autodoc", "1");
 		IGESDimen_ToolGeneralNote();
 		%feature("autodoc", "1");
@@ -1329,8 +1323,6 @@ class IGESDimen_NewGeneralNote : public IGESData_IGESEntity {
 class IGESDimen_ToolRadiusDimension {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolRadiusDimension();
-		%feature("autodoc", "1");
 		IGESDimen_ToolRadiusDimension();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_RadiusDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1382,8 +1374,6 @@ class IGESDimen_SpecificModule : public IGESData_SpecificModule {
 class IGESDimen_ToolBasicDimension {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolBasicDimension();
-		%feature("autodoc", "1");
 		IGESDimen_ToolBasicDimension();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_BasicDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1412,8 +1402,6 @@ class IGESDimen_ToolBasicDimension {
 %nodefaultctor IGESDimen_ToolCurveDimension;
 class IGESDimen_ToolCurveDimension {
 	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolCurveDimension();
 		%feature("autodoc", "1");
 		IGESDimen_ToolCurveDimension();
 		%feature("autodoc", "1");
@@ -1485,8 +1473,6 @@ class IGESDimen_SectionedArea : public IGESData_IGESEntity {
 %nodefaultctor IGESDimen_ToolGeneralLabel;
 class IGESDimen_ToolGeneralLabel {
 	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolGeneralLabel();
 		%feature("autodoc", "1");
 		IGESDimen_ToolGeneralLabel();
 		%feature("autodoc", "1");
@@ -1592,8 +1578,6 @@ class IGESDimen_DiameterDimension : public IGESData_IGESEntity {
 %nodefaultctor IGESDimen_ToolWitnessLine;
 class IGESDimen_ToolWitnessLine {
 	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolWitnessLine();
 		%feature("autodoc", "1");
 		IGESDimen_ToolWitnessLine();
 		%feature("autodoc", "1");
@@ -1776,8 +1760,6 @@ class IGESDimen_HArray1OfGeneralNote : public MMgt_TShared {
 class IGESDimen_ToolDiameterDimension {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolDiameterDimension();
-		%feature("autodoc", "1");
 		IGESDimen_ToolDiameterDimension();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_DiameterDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1897,8 +1879,6 @@ class IGESDimen_GeneralNote : public IGESData_IGESEntity {
 class IGESDimen_ToolCenterLine {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolCenterLine();
-		%feature("autodoc", "1");
 		IGESDimen_ToolCenterLine();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_CenterLine &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1970,8 +1950,6 @@ class IGESDimen_CurveDimension : public IGESData_IGESEntity {
 class IGESDimen_ToolFlagNote {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolFlagNote();
-		%feature("autodoc", "1");
 		IGESDimen_ToolFlagNote();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_FlagNote &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1998,8 +1976,6 @@ class IGESDimen_ToolFlagNote {
 %nodefaultctor IGESDimen_ToolNewDimensionedGeometry;
 class IGESDimen_ToolNewDimensionedGeometry {
 	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolNewDimensionedGeometry();
 		%feature("autodoc", "1");
 		IGESDimen_ToolNewDimensionedGeometry();
 		%feature("autodoc", "1");
@@ -2030,8 +2006,6 @@ class IGESDimen_ToolNewDimensionedGeometry {
 class IGESDimen_ToolDimensionUnits {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolDimensionUnits();
-		%feature("autodoc", "1");
 		IGESDimen_ToolDimensionUnits();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_DimensionUnits &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2061,8 +2035,6 @@ class IGESDimen_ToolDimensionUnits {
 class IGESDimen_ToolOrdinateDimension {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolOrdinateDimension();
-		%feature("autodoc", "1");
 		IGESDimen_ToolOrdinateDimension();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_OrdinateDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2089,8 +2061,6 @@ class IGESDimen_ToolOrdinateDimension {
 %nodefaultctor IGESDimen_ToolDimensionedGeometry;
 class IGESDimen_ToolDimensionedGeometry {
 	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolDimensionedGeometry();
 		%feature("autodoc", "1");
 		IGESDimen_ToolDimensionedGeometry();
 		%feature("autodoc", "1");
@@ -2121,8 +2091,6 @@ class IGESDimen_ToolDimensionedGeometry {
 class IGESDimen_ToolLinearDimension {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolLinearDimension();
-		%feature("autodoc", "1");
 		IGESDimen_ToolLinearDimension();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_LinearDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2149,8 +2117,6 @@ class IGESDimen_ToolLinearDimension {
 %nodefaultctor IGESDimen_ToolAngularDimension;
 class IGESDimen_ToolAngularDimension {
 	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolAngularDimension();
 		%feature("autodoc", "1");
 		IGESDimen_ToolAngularDimension();
 		%feature("autodoc", "1");
@@ -2270,8 +2236,6 @@ class IGESDimen_OrdinateDimension : public IGESData_IGESEntity {
 class IGESDimen_ToolSectionedArea {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolSectionedArea();
-		%feature("autodoc", "1");
 		IGESDimen_ToolSectionedArea();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_SectionedArea &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2359,8 +2323,6 @@ class IGESDimen_BasicDimension : public IGESData_IGESEntity {
 class IGESDimen_ToolLeaderArrow {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolLeaderArrow();
-		%feature("autodoc", "1");
 		IGESDimen_ToolLeaderArrow();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_LeaderArrow &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2428,8 +2390,6 @@ class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
 class IGESDimen_ToolGeneralSymbol {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolGeneralSymbol();
-		%feature("autodoc", "1");
 		IGESDimen_ToolGeneralSymbol();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_GeneralSymbol &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2457,8 +2417,6 @@ class IGESDimen_ToolGeneralSymbol {
 class IGESDimen_ToolPointDimension {
 	public:
 		%feature("autodoc", "1");
-		~IGESDimen_ToolPointDimension();
-		%feature("autodoc", "1");
 		IGESDimen_ToolPointDimension();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESDimen_PointDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2485,8 +2443,6 @@ class IGESDimen_ToolPointDimension {
 %nodefaultctor IGESDimen_ToolNewGeneralNote;
 class IGESDimen_ToolNewGeneralNote {
 	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolNewGeneralNote();
 		%feature("autodoc", "1");
 		IGESDimen_ToolNewGeneralNote();
 		%feature("autodoc", "1");
@@ -2550,8 +2506,6 @@ class IGESDimen_DimensionUnits : public IGESData_IGESEntity {
 %nodefaultctor IGESDimen_ToolDimensionDisplayData;
 class IGESDimen_ToolDimensionDisplayData {
 	public:
-		%feature("autodoc", "1");
-		~IGESDimen_ToolDimensionDisplayData();
 		%feature("autodoc", "1");
 		IGESDimen_ToolDimensionDisplayData();
 		%feature("autodoc", "1");

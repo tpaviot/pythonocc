@@ -416,8 +416,6 @@ class ShapeExtend_WireData : public MMgt_TShared {
 class ShapeExtend {
 	public:
 		%feature("autodoc", "1");
-		~ShapeExtend();
-		%feature("autodoc", "1");
 		ShapeExtend();
 		%feature("autodoc", "1");
 		void Init();
@@ -444,8 +442,6 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~ShapeExtend_DataMapOfShapeListOfMsg();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Message_ListOfMsg &I);
 		%feature("autodoc", "1");
@@ -695,8 +691,6 @@ class ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg : public TCollect
 class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg();
-		%feature("autodoc", "1");
 		ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg();
 		%feature("autodoc", "1");
 		ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapOfShapeListOfMsg &aMap);
@@ -776,8 +770,6 @@ class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~ShapeExtend_DataMapOfTransientListOfMsg();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Message_ListOfMsg &I);
 		%feature("autodoc", "1");

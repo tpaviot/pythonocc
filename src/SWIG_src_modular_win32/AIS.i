@@ -3492,8 +3492,6 @@ class AIS_Shape : public AIS_InteractiveObject {
 class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive();
-		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive();
 		%feature("autodoc", "1");
 		AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive(const AIS_DataMapofIntegerListOfinteractive &aMap);
@@ -4094,8 +4092,6 @@ class AIS_InteractiveContext : public MMgt_TShared {
 class AIS_GraphicTool {
 	public:
 		%feature("autodoc", "1");
-		~AIS_GraphicTool();
-		%feature("autodoc", "1");
 		AIS_GraphicTool();
 		%feature("autodoc", "1");
 		Quantity_NameOfColor GetLineColor(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
@@ -4154,8 +4150,6 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AIS_DataMapofIntegerListOfinteractive();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const AIS_ListOfInteractive &I);
 		%feature("autodoc", "1");
@@ -4363,8 +4357,6 @@ class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
 %nodefaultctor AIS;
 class AIS {
 	public:
-		%feature("autodoc", "1");
-		~AIS();
 		%feature("autodoc", "1");
 		AIS();
 		%feature("autodoc", "1");
@@ -5280,8 +5272,6 @@ class AIS_MapOfInteractive : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~AIS_MapOfInteractive();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_AIS_InteractiveObject &aKey);
 		%feature("autodoc", "1");

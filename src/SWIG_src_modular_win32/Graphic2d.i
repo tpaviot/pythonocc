@@ -1825,8 +1825,6 @@ class Graphic2d_Array1OfVertex {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Graphic2d_Array1OfVertex();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Graphic2d_Array1OfVertex & Assign(const Graphic2d_Array1OfVertex &Other);
@@ -2810,8 +2808,6 @@ class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Graphic2d_SequenceOfVertex();
-		%feature("autodoc", "1");
 		const Graphic2d_SequenceOfVertex & Assign(const Graphic2d_SequenceOfVertex &Other);
 		%feature("autodoc", "1");
 		void Append(const Graphic2d_Vertex &T);
@@ -2920,8 +2916,6 @@ class Graphic2d_Marker : public Graphic2d_Line {
 %nodefaultctor Graphic2d_Vertex;
 class Graphic2d_Vertex {
 	public:
-		%feature("autodoc", "1");
-		~Graphic2d_Vertex();
 		%feature("autodoc", "1");
 		Graphic2d_Vertex();
 		%feature("autodoc", "1");

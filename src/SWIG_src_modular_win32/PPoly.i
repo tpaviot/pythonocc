@@ -232,8 +232,6 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
 	public:
 		%feature("autodoc", "1");
-		~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle();
-		%feature("autodoc", "1");
 		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle();
 		%feature("autodoc", "1");
 		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle(const PPoly_Triangle &aValue);
@@ -528,8 +526,6 @@ class PPoly_FieldOfHArray1OfTriangle : public DBC_BaseArray {
 		PPoly_Triangle & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PPoly_FieldOfHArray1OfTriangle();
 
 };
 %extend PPoly_FieldOfHArray1OfTriangle {
@@ -571,8 +567,6 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 %nodefaultctor PPoly_Triangle;
 class PPoly_Triangle {
 	public:
-		%feature("autodoc", "1");
-		~PPoly_Triangle();
 		%feature("autodoc", "1");
 		PPoly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
 		%feature("autodoc", "1");

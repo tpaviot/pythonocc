@@ -194,8 +194,6 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("autodoc", "1");
 		BRepSweep_Translation(const TopoDS_Shape &S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Vec &V, const Standard_Boolean C, const Standard_Boolean Canonize=1);
 		%feature("autodoc", "1");
-		virtual		~BRepSweep_Translation();
-		%feature("autodoc", "1");
 		gp_Vec Vec() const;
 
 };
@@ -208,8 +206,6 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 %nodefaultctor BRepSweep_Iterator;
 class BRepSweep_Iterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepSweep_Iterator();
 		%feature("autodoc", "1");
 		BRepSweep_Iterator();
 		%feature("autodoc", "1");
@@ -237,8 +233,6 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 		BRepSweep_SequenceOfShapesOfNumLinearRegularSweep();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepSweep_SequenceOfShapesOfNumLinearRegularSweep();
 		%feature("autodoc", "1");
 		const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & Assign(const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep &Other);
 		%feature("autodoc", "1");
@@ -297,8 +291,6 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~BRepSweep_Array2OfShapesOfNumLinearRegularSweep();
-		%feature("autodoc", "1");
 		const BRepSweep_Array2OfShapesOfNumLinearRegularSweep & Assign(const BRepSweep_Array2OfShapesOfNumLinearRegularSweep &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -334,8 +326,6 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 class BRepSweep_Revol {
 	public:
 		%feature("autodoc", "1");
-		~BRepSweep_Revol();
-		%feature("autodoc", "1");
 		BRepSweep_Revol(const TopoDS_Shape &S, const gp_Ax1 &A, const Quantity_PlaneAngle D, const Standard_Boolean C=0);
 		%feature("autodoc", "1");
 		BRepSweep_Revol(const TopoDS_Shape &S, const gp_Ax1 &A, const Standard_Boolean C=0);
@@ -366,8 +356,6 @@ class BRepSweep_Revol {
 %nodefaultctor BRepSweep_Builder;
 class BRepSweep_Builder {
 	public:
-		%feature("autodoc", "1");
-		~BRepSweep_Builder();
 		%feature("autodoc", "1");
 		BRepSweep_Builder(const BRep_Builder &aBuilder);
 		%feature("autodoc", "1");
@@ -459,8 +447,6 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		gp_Ax1 Axe() const;
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle Angle() const;
-		%feature("autodoc", "1");
-		virtual		~BRepSweep_Rotation();
 
 };
 %extend BRepSweep_Rotation {
@@ -472,8 +458,6 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 %nodefaultctor BRepSweep_Tool;
 class BRepSweep_Tool {
 	public:
-		%feature("autodoc", "1");
-		~BRepSweep_Tool();
 		%feature("autodoc", "1");
 		BRepSweep_Tool(const TopoDS_Shape &aShape);
 		%feature("autodoc", "1");
@@ -499,8 +483,6 @@ class BRepSweep_Tool {
 %nodefaultctor BRepSweep_Prism;
 class BRepSweep_Prism {
 	public:
-		%feature("autodoc", "1");
-		~BRepSweep_Prism();
 		%feature("autodoc", "1");
 		BRepSweep_Prism(const TopoDS_Shape &S, const gp_Vec &V, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
 		%feature("autodoc", "1");

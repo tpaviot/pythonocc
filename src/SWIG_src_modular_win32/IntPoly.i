@@ -184,8 +184,6 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 class IntPoly_PlaneSection {
 	public:
 		%feature("autodoc", "1");
-		~IntPoly_PlaneSection();
-		%feature("autodoc", "1");
 		IntPoly_PlaneSection();
 		%feature("autodoc", "1");
 		IntPoly_PlaneSection(const TopoDS_Shape &S, const gp_Pln &P);
@@ -218,8 +216,6 @@ class IntPoly_PlaneSection {
 %nodefaultctor IntPoly_ShapeSection;
 class IntPoly_ShapeSection {
 	public:
-		%feature("autodoc", "1");
-		~IntPoly_ShapeSection();
 		%feature("autodoc", "1");
 		IntPoly_ShapeSection();
 		%feature("autodoc", "1");
@@ -262,8 +258,6 @@ class IntPoly_ShapeSection {
 class IntPoly_PntHasher {
 	public:
 		%feature("autodoc", "1");
-		~IntPoly_PntHasher();
-		%feature("autodoc", "1");
 		IntPoly_PntHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const gp_Pnt &Point, const Standard_Integer upper);
@@ -284,8 +278,6 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 		IntPoly_SequenceOfSequenceOfPnt();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntPoly_SequenceOfSequenceOfPnt();
 		%feature("autodoc", "1");
 		const IntPoly_SequenceOfSequenceOfPnt & Assign(const IntPoly_SequenceOfSequenceOfPnt &Other);
 		%feature("autodoc", "1");
@@ -362,8 +354,6 @@ class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntPoly_SequenceOfSequenceOfPnt2d();
-		%feature("autodoc", "1");
 		const IntPoly_SequenceOfSequenceOfPnt2d & Assign(const IntPoly_SequenceOfSequenceOfPnt2d &Other);
 		%feature("autodoc", "1");
 		void Append(const TColgp_SequenceOfPnt2d &T);
@@ -420,8 +410,6 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~IntPoly_IndexedMapOfPnt2d();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const gp_Pnt2d &K);
 		%feature("autodoc", "1");
@@ -504,8 +492,6 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntPoly_IndexedMapOfPnt();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const gp_Pnt &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const gp_Pnt &K);
@@ -556,8 +542,6 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 %nodefaultctor IntPoly_Pnt2dHasher;
 class IntPoly_Pnt2dHasher {
 	public:
-		%feature("autodoc", "1");
-		~IntPoly_Pnt2dHasher();
 		%feature("autodoc", "1");
 		IntPoly_Pnt2dHasher();
 		%feature("autodoc", "1");

@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepFEA_RWFeaParametricPoint {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaParametricPoint();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaParametricPoint();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaParametricPoint &ent) const;
@@ -108,8 +106,6 @@ class RWStepFEA_RWFeaParametricPoint {
 %nodefaultctor RWStepFEA_RWCurve3dElementRepresentation;
 class RWStepFEA_RWCurve3dElementRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWCurve3dElementRepresentation();
 		%feature("autodoc", "1");
 		RWStepFEA_RWCurve3dElementRepresentation();
 		%feature("autodoc", "1");
@@ -130,8 +126,6 @@ class RWStepFEA_RWCurve3dElementRepresentation {
 class RWStepFEA_RWCurve3dElementProperty {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWCurve3dElementProperty();
-		%feature("autodoc", "1");
 		RWStepFEA_RWCurve3dElementProperty();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_Curve3dElementProperty &ent) const;
@@ -150,8 +144,6 @@ class RWStepFEA_RWCurve3dElementProperty {
 %nodefaultctor RWStepFEA_RWFeaAreaDensity;
 class RWStepFEA_RWFeaAreaDensity {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaAreaDensity();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaAreaDensity();
 		%feature("autodoc", "1");
@@ -172,8 +164,6 @@ class RWStepFEA_RWFeaAreaDensity {
 class RWStepFEA_RWCurveElementInterval {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWCurveElementInterval();
-		%feature("autodoc", "1");
 		RWStepFEA_RWCurveElementInterval();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_CurveElementInterval &ent) const;
@@ -192,8 +182,6 @@ class RWStepFEA_RWCurveElementInterval {
 %nodefaultctor RWStepFEA_RWNodeRepresentation;
 class RWStepFEA_RWNodeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWNodeRepresentation();
 		%feature("autodoc", "1");
 		RWStepFEA_RWNodeRepresentation();
 		%feature("autodoc", "1");
@@ -214,8 +202,6 @@ class RWStepFEA_RWNodeRepresentation {
 class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem();
-		%feature("autodoc", "1");
 		RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem &ent) const;
@@ -234,8 +220,6 @@ class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 %nodefaultctor RWStepFEA_RWElementRepresentation;
 class RWStepFEA_RWElementRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWElementRepresentation();
 		%feature("autodoc", "1");
 		RWStepFEA_RWElementRepresentation();
 		%feature("autodoc", "1");
@@ -256,8 +240,6 @@ class RWStepFEA_RWElementRepresentation {
 class RWStepFEA_RWFeaMoistureAbsorption {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaMoistureAbsorption();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaMoistureAbsorption();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaMoistureAbsorption &ent) const;
@@ -276,8 +258,6 @@ class RWStepFEA_RWFeaMoistureAbsorption {
 %nodefaultctor RWStepFEA_RWCurveElementIntervalConstant;
 class RWStepFEA_RWCurveElementIntervalConstant {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWCurveElementIntervalConstant();
 		%feature("autodoc", "1");
 		RWStepFEA_RWCurveElementIntervalConstant();
 		%feature("autodoc", "1");
@@ -298,8 +278,6 @@ class RWStepFEA_RWCurveElementIntervalConstant {
 class RWStepFEA_RWNode {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWNode();
-		%feature("autodoc", "1");
 		RWStepFEA_RWNode();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_Node &ent) const;
@@ -318,8 +296,6 @@ class RWStepFEA_RWNode {
 %nodefaultctor RWStepFEA_RWFeaMassDensity;
 class RWStepFEA_RWFeaMassDensity {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaMassDensity();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaMassDensity();
 		%feature("autodoc", "1");
@@ -340,8 +316,6 @@ class RWStepFEA_RWFeaMassDensity {
 class RWStepFEA_RWFeaMaterialPropertyRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaMaterialPropertyRepresentation();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaMaterialPropertyRepresentation &ent) const;
@@ -360,8 +334,6 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentation {
 %nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateSystem;
 class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWParametricCurve3dElementCoordinateSystem();
 		%feature("autodoc", "1");
 		RWStepFEA_RWParametricCurve3dElementCoordinateSystem();
 		%feature("autodoc", "1");
@@ -382,8 +354,6 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 class RWStepFEA_RWFeaShellBendingStiffness {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaShellBendingStiffness();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaShellBendingStiffness();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaShellBendingStiffness &ent) const;
@@ -402,8 +372,6 @@ class RWStepFEA_RWFeaShellBendingStiffness {
 %nodefaultctor RWStepFEA_RWNodeGroup;
 class RWStepFEA_RWNodeGroup {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWNodeGroup();
 		%feature("autodoc", "1");
 		RWStepFEA_RWNodeGroup();
 		%feature("autodoc", "1");
@@ -424,8 +392,6 @@ class RWStepFEA_RWNodeGroup {
 class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWParametricSurface3dElementCoordinateSystem();
-		%feature("autodoc", "1");
 		RWStepFEA_RWParametricSurface3dElementCoordinateSystem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ParametricSurface3dElementCoordinateSystem &ent) const;
@@ -444,8 +410,6 @@ class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 %nodefaultctor RWStepFEA_RWAlignedCurve3dElementCoordinateSystem;
 class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWAlignedCurve3dElementCoordinateSystem();
 		%feature("autodoc", "1");
 		RWStepFEA_RWAlignedCurve3dElementCoordinateSystem();
 		%feature("autodoc", "1");
@@ -466,8 +430,6 @@ class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaSurfaceSectionGeometricRelationship();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaSurfaceSectionGeometricRelationship();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaSurfaceSectionGeometricRelationship &ent) const;
@@ -486,8 +448,6 @@ class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 %nodefaultctor RWStepFEA_RWDummyNode;
 class RWStepFEA_RWDummyNode {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWDummyNode();
 		%feature("autodoc", "1");
 		RWStepFEA_RWDummyNode();
 		%feature("autodoc", "1");
@@ -508,8 +468,6 @@ class RWStepFEA_RWDummyNode {
 class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWAlignedSurface3dElementCoordinateSystem();
-		%feature("autodoc", "1");
 		RWStepFEA_RWAlignedSurface3dElementCoordinateSystem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_AlignedSurface3dElementCoordinateSystem &ent) const;
@@ -528,8 +486,6 @@ class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 %nodefaultctor RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion;
 class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion();
 		%feature("autodoc", "1");
@@ -550,8 +506,6 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 class RWStepFEA_RWFeaAxis2Placement3d {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaAxis2Placement3d();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaAxis2Placement3d();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaAxis2Placement3d &ent) const;
@@ -570,8 +524,6 @@ class RWStepFEA_RWFeaAxis2Placement3d {
 %nodefaultctor RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion;
 class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion();
 		%feature("autodoc", "1");
@@ -592,8 +544,6 @@ class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 class RWStepFEA_RWGeometricNode {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWGeometricNode();
-		%feature("autodoc", "1");
 		RWStepFEA_RWGeometricNode();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_GeometricNode &ent) const;
@@ -612,8 +562,6 @@ class RWStepFEA_RWGeometricNode {
 %nodefaultctor RWStepFEA_RWFeaShellMembraneStiffness;
 class RWStepFEA_RWFeaShellMembraneStiffness {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaShellMembraneStiffness();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaShellMembraneStiffness();
 		%feature("autodoc", "1");
@@ -634,8 +582,6 @@ class RWStepFEA_RWFeaShellMembraneStiffness {
 class RWStepFEA_RWFreedomsList {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFreedomsList();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFreedomsList();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FreedomsList &ent) const;
@@ -654,8 +600,6 @@ class RWStepFEA_RWFreedomsList {
 %nodefaultctor RWStepFEA_RWFeaModelDefinition;
 class RWStepFEA_RWFeaModelDefinition {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaModelDefinition();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaModelDefinition();
 		%feature("autodoc", "1");
@@ -676,8 +620,6 @@ class RWStepFEA_RWFeaModelDefinition {
 class RWStepFEA_RWFeaShellShearStiffness {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaShellShearStiffness();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaShellShearStiffness();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaShellShearStiffness &ent) const;
@@ -696,8 +638,6 @@ class RWStepFEA_RWFeaShellShearStiffness {
 %nodefaultctor RWStepFEA_RWNodeSet;
 class RWStepFEA_RWNodeSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWNodeSet();
 		%feature("autodoc", "1");
 		RWStepFEA_RWNodeSet();
 		%feature("autodoc", "1");
@@ -718,8 +658,6 @@ class RWStepFEA_RWNodeSet {
 class RWStepFEA_RWFreedomAndCoefficient {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFreedomAndCoefficient();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFreedomAndCoefficient();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FreedomAndCoefficient &ent) const;
@@ -738,8 +676,6 @@ class RWStepFEA_RWFreedomAndCoefficient {
 %nodefaultctor RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness;
 class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness();
 		%feature("autodoc", "1");
@@ -760,8 +696,6 @@ class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 class RWStepFEA_RWSurface3dElementRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWSurface3dElementRepresentation();
-		%feature("autodoc", "1");
 		RWStepFEA_RWSurface3dElementRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_Surface3dElementRepresentation &ent) const;
@@ -780,8 +714,6 @@ class RWStepFEA_RWSurface3dElementRepresentation {
 %nodefaultctor RWStepFEA_RWElementGroup;
 class RWStepFEA_RWElementGroup {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWElementGroup();
 		%feature("autodoc", "1");
 		RWStepFEA_RWElementGroup();
 		%feature("autodoc", "1");
@@ -802,8 +734,6 @@ class RWStepFEA_RWElementGroup {
 class RWStepFEA_RWCurveElementEndOffset {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWCurveElementEndOffset();
-		%feature("autodoc", "1");
 		RWStepFEA_RWCurveElementEndOffset();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_CurveElementEndOffset &ent) const;
@@ -822,8 +752,6 @@ class RWStepFEA_RWCurveElementEndOffset {
 %nodefaultctor RWStepFEA_RWVolume3dElementRepresentation;
 class RWStepFEA_RWVolume3dElementRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWVolume3dElementRepresentation();
 		%feature("autodoc", "1");
 		RWStepFEA_RWVolume3dElementRepresentation();
 		%feature("autodoc", "1");
@@ -844,8 +772,6 @@ class RWStepFEA_RWVolume3dElementRepresentation {
 class RWStepFEA_RWFeaRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaRepresentationItem();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaRepresentationItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaRepresentationItem &ent) const;
@@ -864,8 +790,6 @@ class RWStepFEA_RWFeaRepresentationItem {
 %nodefaultctor RWStepFEA_RWFeaModel;
 class RWStepFEA_RWFeaModel {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaModel();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaModel();
 		%feature("autodoc", "1");
@@ -886,8 +810,6 @@ class RWStepFEA_RWFeaModel {
 class RWStepFEA_RWNodeDefinition {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWNodeDefinition();
-		%feature("autodoc", "1");
 		RWStepFEA_RWNodeDefinition();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeDefinition &ent) const;
@@ -906,8 +828,6 @@ class RWStepFEA_RWNodeDefinition {
 %nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateDirection;
 class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWParametricCurve3dElementCoordinateDirection();
 		%feature("autodoc", "1");
 		RWStepFEA_RWParametricCurve3dElementCoordinateDirection();
 		%feature("autodoc", "1");
@@ -928,8 +848,6 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 class RWStepFEA_RWFeaLinearElasticity {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaLinearElasticity();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaLinearElasticity();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaLinearElasticity &ent) const;
@@ -948,8 +866,6 @@ class RWStepFEA_RWFeaLinearElasticity {
 %nodefaultctor RWStepFEA_RWCurveElementLocation;
 class RWStepFEA_RWCurveElementLocation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWCurveElementLocation();
 		%feature("autodoc", "1");
 		RWStepFEA_RWCurveElementLocation();
 		%feature("autodoc", "1");
@@ -970,8 +886,6 @@ class RWStepFEA_RWCurveElementLocation {
 class RWStepFEA_RWElementGeometricRelationship {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWElementGeometricRelationship();
-		%feature("autodoc", "1");
 		RWStepFEA_RWElementGeometricRelationship();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ElementGeometricRelationship &ent) const;
@@ -990,8 +904,6 @@ class RWStepFEA_RWElementGeometricRelationship {
 %nodefaultctor RWStepFEA_RWFeaMaterialPropertyRepresentationItem;
 class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaMaterialPropertyRepresentationItem();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaMaterialPropertyRepresentationItem();
 		%feature("autodoc", "1");
@@ -1012,8 +924,6 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 class RWStepFEA_RWCurveElementEndRelease {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWCurveElementEndRelease();
-		%feature("autodoc", "1");
 		RWStepFEA_RWCurveElementEndRelease();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_CurveElementEndRelease &ent) const;
@@ -1032,8 +942,6 @@ class RWStepFEA_RWCurveElementEndRelease {
 %nodefaultctor RWStepFEA_RWCurveElementIntervalLinearlyVarying;
 class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWCurveElementIntervalLinearlyVarying();
 		%feature("autodoc", "1");
 		RWStepFEA_RWCurveElementIntervalLinearlyVarying();
 		%feature("autodoc", "1");
@@ -1054,8 +962,6 @@ class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWNodeWithSolutionCoordinateSystem();
-		%feature("autodoc", "1");
 		RWStepFEA_RWNodeWithSolutionCoordinateSystem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeWithSolutionCoordinateSystem &ent) const;
@@ -1074,8 +980,6 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 %nodefaultctor RWStepFEA_RWNodeWithVector;
 class RWStepFEA_RWNodeWithVector {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWNodeWithVector();
 		%feature("autodoc", "1");
 		RWStepFEA_RWNodeWithVector();
 		%feature("autodoc", "1");
@@ -1096,8 +1000,6 @@ class RWStepFEA_RWNodeWithVector {
 class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaCurveSectionGeometricRelationship();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaCurveSectionGeometricRelationship();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent) const;
@@ -1116,8 +1018,6 @@ class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 %nodefaultctor RWStepFEA_RWFeaGroup;
 class RWStepFEA_RWFeaGroup {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaGroup();
 		%feature("autodoc", "1");
 		RWStepFEA_RWFeaGroup();
 		%feature("autodoc", "1");
@@ -1138,8 +1038,6 @@ class RWStepFEA_RWFeaGroup {
 class RWStepFEA_RWFeaModel3d {
 	public:
 		%feature("autodoc", "1");
-		~RWStepFEA_RWFeaModel3d();
-		%feature("autodoc", "1");
 		RWStepFEA_RWFeaModel3d();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaModel3d &ent) const;
@@ -1158,8 +1056,6 @@ class RWStepFEA_RWFeaModel3d {
 %nodefaultctor RWStepFEA_RWConstantSurface3dElementCoordinateSystem;
 class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepFEA_RWConstantSurface3dElementCoordinateSystem();
 		%feature("autodoc", "1");
 		RWStepFEA_RWConstantSurface3dElementCoordinateSystem();
 		%feature("autodoc", "1");

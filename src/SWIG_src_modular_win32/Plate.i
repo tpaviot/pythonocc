@@ -214,8 +214,6 @@ class Plate_Plate {
 		%feature("autodoc", "1");
 		void destroy();
 		%feature("autodoc", "1");
-		~Plate_Plate();
-		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		gp_XYZ Evaluate(const gp_XY &point2d) const;
@@ -243,8 +241,6 @@ class Plate_Plate {
 class Plate_GlobalTranslationConstraint {
 	public:
 		%feature("autodoc", "1");
-		~Plate_GlobalTranslationConstraint();
-		%feature("autodoc", "1");
 		Plate_GlobalTranslationConstraint(const TColgp_SequenceOfXY &SOfXY);
 		%feature("autodoc", "1");
 		const Plate_LinearXYZConstraint & LXYZC() const;
@@ -259,8 +255,6 @@ class Plate_GlobalTranslationConstraint {
 %nodefaultctor Plate_PlaneConstraint;
 class Plate_PlaneConstraint {
 	public:
-		%feature("autodoc", "1");
-		~Plate_PlaneConstraint();
 		%feature("autodoc", "1");
 		Plate_PlaneConstraint(const gp_XY &point2d, const gp_Pln &pln, const Standard_Integer iu=0, const Standard_Integer iv=0);
 		%feature("autodoc", "1");
@@ -277,8 +271,6 @@ class Plate_PlaneConstraint {
 class Plate_SampledCurveConstraint {
 	public:
 		%feature("autodoc", "1");
-		~Plate_SampledCurveConstraint();
-		%feature("autodoc", "1");
 		Plate_SampledCurveConstraint(const Plate_SequenceOfPinpointConstraint &SOPPC, const Standard_Integer n);
 		%feature("autodoc", "1");
 		const Plate_LinearXYZConstraint & LXYZC() const;
@@ -293,8 +285,6 @@ class Plate_SampledCurveConstraint {
 %nodefaultctor Plate_LinearXYZConstraint;
 class Plate_LinearXYZConstraint {
 	public:
-		%feature("autodoc", "1");
-		~Plate_LinearXYZConstraint();
 		%feature("autodoc", "1");
 		Plate_LinearXYZConstraint();
 		%feature("autodoc", "1");
@@ -322,8 +312,6 @@ class Plate_LinearXYZConstraint {
 %nodefaultctor Plate_GtoCConstraint;
 class Plate_GtoCConstraint {
 	public:
-		%feature("autodoc", "1");
-		~Plate_GtoCConstraint();
 		%feature("autodoc", "1");
 		Plate_GtoCConstraint(const Plate_GtoCConstraint &ref);
 		%feature("autodoc", "1");
@@ -363,8 +351,6 @@ class Plate_Array1OfPinpointConstraint {
 		void Init(const Plate_PinpointConstraint &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Plate_Array1OfPinpointConstraint();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -419,8 +405,6 @@ class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqN
 class Plate_D2 {
 	public:
 		%feature("autodoc", "1");
-		~Plate_D2();
-		%feature("autodoc", "1");
 		Plate_D2(const gp_XYZ &duu, const gp_XYZ &duv, const gp_XYZ &dvv);
 		%feature("autodoc", "1");
 		Plate_D2(const Plate_D2 &ref);
@@ -435,8 +419,6 @@ class Plate_D2 {
 %nodefaultctor Plate_D3;
 class Plate_D3 {
 	public:
-		%feature("autodoc", "1");
-		~Plate_D3();
 		%feature("autodoc", "1");
 		Plate_D3(const gp_XYZ &duuu, const gp_XYZ &duuv, const gp_XYZ &duvv, const gp_XYZ &dvvv);
 		%feature("autodoc", "1");
@@ -456,8 +438,6 @@ class Plate_SequenceOfLinearXYZConstraint : public TCollection_BaseSequence {
 		Plate_SequenceOfLinearXYZConstraint();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Plate_SequenceOfLinearXYZConstraint();
 		%feature("autodoc", "1");
 		const Plate_SequenceOfLinearXYZConstraint & Assign(const Plate_SequenceOfLinearXYZConstraint &Other);
 		%feature("autodoc", "1");
@@ -508,8 +488,6 @@ class Plate_SequenceOfLinearXYZConstraint : public TCollection_BaseSequence {
 class Plate_D1 {
 	public:
 		%feature("autodoc", "1");
-		~Plate_D1();
-		%feature("autodoc", "1");
 		Plate_D1(const gp_XYZ &du, const gp_XYZ &dv);
 		%feature("autodoc", "1");
 		Plate_D1(const Plate_D1 &ref);
@@ -532,8 +510,6 @@ class Plate_SequenceOfPinpointConstraint : public TCollection_BaseSequence {
 		Plate_SequenceOfPinpointConstraint();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Plate_SequenceOfPinpointConstraint();
 		%feature("autodoc", "1");
 		const Plate_SequenceOfPinpointConstraint & Assign(const Plate_SequenceOfPinpointConstraint &Other);
 		%feature("autodoc", "1");
@@ -606,8 +582,6 @@ class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_
 class Plate_LinearScalarConstraint {
 	public:
 		%feature("autodoc", "1");
-		~Plate_LinearScalarConstraint();
-		%feature("autodoc", "1");
 		Plate_LinearScalarConstraint();
 		%feature("autodoc", "1");
 		Plate_LinearScalarConstraint(const Plate_PinpointConstraint &PPC1, const gp_XYZ &coeff);
@@ -677,8 +651,6 @@ class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
 class Plate_PinpointConstraint {
 	public:
 		%feature("autodoc", "1");
-		~Plate_PinpointConstraint();
-		%feature("autodoc", "1");
 		Plate_PinpointConstraint();
 		%feature("autodoc", "1");
 		Plate_PinpointConstraint(const gp_XY &point2d, const gp_XYZ &ImposedValue, const Standard_Integer iu=0, const Standard_Integer iv=0);
@@ -724,8 +696,6 @@ class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_Seq
 class Plate_FreeGtoCConstraint {
 	public:
 		%feature("autodoc", "1");
-		~Plate_FreeGtoCConstraint();
-		%feature("autodoc", "1");
 		Plate_FreeGtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Standard_Real IncrementalLoad=1.0e+0, const Standard_Integer orientation=0);
 		%feature("autodoc", "1");
 		Plate_FreeGtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const Standard_Real IncrementalLoad=1.0e+0, const Standard_Integer orientation=0);
@@ -751,8 +721,6 @@ class Plate_FreeGtoCConstraint {
 class Plate_LineConstraint {
 	public:
 		%feature("autodoc", "1");
-		~Plate_LineConstraint();
-		%feature("autodoc", "1");
 		Plate_LineConstraint(const gp_XY &point2d, const gp_Lin &lin, const Standard_Integer iu=0, const Standard_Integer iv=0);
 		%feature("autodoc", "1");
 		const Plate_LinearScalarConstraint & LSC() const;
@@ -771,8 +739,6 @@ class Plate_SequenceOfLinearScalarConstraint : public TCollection_BaseSequence {
 		Plate_SequenceOfLinearScalarConstraint();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Plate_SequenceOfLinearScalarConstraint();
 		%feature("autodoc", "1");
 		const Plate_SequenceOfLinearScalarConstraint & Assign(const Plate_SequenceOfLinearScalarConstraint &Other);
 		%feature("autodoc", "1");

@@ -339,8 +339,6 @@ class TopOpeBRep_DataMapOfShapeInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRep_DataMapOfShapeInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -453,8 +451,6 @@ class TopOpeBRep_DSFiller {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TopOpeBRep_DSFiller();
-		%feature("autodoc", "1");
 		TopOpeBRepTool_PShapeClassifier PShapeClassifier() const;
 		%feature("autodoc", "1");
 		void Insert(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Boolean orientFORWARD=1);
@@ -508,8 +504,6 @@ class TopOpeBRep_DSFiller {
 class TopOpeBRep_ShapeScanner {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_ShapeScanner();
-		%feature("autodoc", "1");
 		TopOpeBRep_ShapeScanner();
 		%feature("autodoc", "1");
 		void Clear();
@@ -545,8 +539,6 @@ class TopOpeBRep_ShapeScanner {
 class TopOpeBRep_FFTransitionTool {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_FFTransitionTool();
-		%feature("autodoc", "1");
 		TopOpeBRep_FFTransitionTool();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Transition ProcessLineTransition(const TopOpeBRep_VPointInter &P, const Standard_Integer Index, const TopAbs_Orientation EdgeOrientation);
@@ -569,8 +561,6 @@ class TopOpeBRep_FFTransitionTool {
 %nodefaultctor TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger;
 class TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger();
 		%feature("autodoc", "1");
 		TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger();
 		%feature("autodoc", "1");
@@ -633,8 +623,6 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 class TopOpeBRep_VPointInterIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_VPointInterIterator();
-		%feature("autodoc", "1");
 		TopOpeBRep_VPointInterIterator();
 		%feature("autodoc", "1");
 		TopOpeBRep_VPointInterIterator(const TopOpeBRep_LineInter &LI);
@@ -666,8 +654,6 @@ class TopOpeBRep_VPointInterIterator {
 class TopOpeBRep_VPointInterClassifier {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_VPointInterClassifier();
-		%feature("autodoc", "1");
 		TopOpeBRep_VPointInterClassifier();
 		%feature("autodoc", "1");
 		TopAbs_State VPointPosition(const TopoDS_Shape &F, TopOpeBRep_VPointInter & VP, const Standard_Integer ShapeIndex, TopOpeBRep_PointClassifier & PC, const Standard_Boolean AssumeINON, const Standard_Real Tol);
@@ -686,8 +672,6 @@ class TopOpeBRep_VPointInterClassifier {
 %nodefaultctor TopOpeBRep_PointGeomTool;
 class TopOpeBRep_PointGeomTool {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRep_PointGeomTool();
 		%feature("autodoc", "1");
 		TopOpeBRep_PointGeomTool();
 		%feature("autodoc", "1");
@@ -712,8 +696,6 @@ class TopOpeBRep_PointGeomTool {
 class TopOpeBRep_EdgesFiller {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_EdgesFiller();
-		%feature("autodoc", "1");
 		TopOpeBRep_EdgesFiller();
 		%feature("autodoc", "1");
 		void Insert(const TopoDS_Shape &E1, const TopoDS_Shape &E2, TopOpeBRep_EdgesIntersector & EI, const Handle_TopOpeBRepDS_HDataStructure &HDS);
@@ -732,8 +714,6 @@ class TopOpeBRep_EdgesFiller {
 %nodefaultctor TopOpeBRep_FaceEdgeFiller;
 class TopOpeBRep_FaceEdgeFiller {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRep_FaceEdgeFiller();
 		%feature("autodoc", "1");
 		TopOpeBRep_FaceEdgeFiller();
 		%feature("autodoc", "1");
@@ -773,8 +753,6 @@ class TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public TCollection_MapNode {
 %nodefaultctor TopOpeBRep_ShapeIntersector;
 class TopOpeBRep_ShapeIntersector {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRep_ShapeIntersector();
 		%feature("autodoc", "1");
 		TopOpeBRep_ShapeIntersector();
 		%feature("autodoc", "1");
@@ -822,8 +800,6 @@ class TopOpeBRep_Array1OfVPointInter {
 		void Init(const TopOpeBRep_VPointInter &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopOpeBRep_Array1OfVPointInter();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -965,8 +941,6 @@ class TopOpeBRep_FacesFiller {
 class TopOpeBRep_WPointInterIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_WPointInterIterator();
-		%feature("autodoc", "1");
 		TopOpeBRep_WPointInterIterator();
 		%feature("autodoc", "1");
 		TopOpeBRep_WPointInterIterator(const TopOpeBRep_LineInter &LI);
@@ -994,8 +968,6 @@ class TopOpeBRep_WPointInterIterator {
 class TopOpeBRep_ListIteratorOfListOfBipoint {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_ListIteratorOfListOfBipoint();
-		%feature("autodoc", "1");
 		TopOpeBRep_ListIteratorOfListOfBipoint();
 		%feature("autodoc", "1");
 		TopOpeBRep_ListIteratorOfListOfBipoint(const TopOpeBRep_ListOfBipoint &L);
@@ -1018,8 +990,6 @@ class TopOpeBRep_ListIteratorOfListOfBipoint {
 %nodefaultctor TopOpeBRep;
 class TopOpeBRep {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRep();
 		%feature("autodoc", "1");
 		TopOpeBRep();
 		%feature("autodoc", "1");
@@ -1058,8 +1028,6 @@ class TopOpeBRep_ListNodeOfListOfBipoint : public TCollection_MapNode {
 class TopOpeBRep_WPointInter {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_WPointInter();
-		%feature("autodoc", "1");
 		TopOpeBRep_WPointInter();
 		%feature("autodoc", "1");
 		void Set(const IntSurf_PntOn2S &P);
@@ -1088,8 +1056,6 @@ class TopOpeBRep_WPointInter {
 %nodefaultctor TopOpeBRep_FaceEdgeIntersector;
 class TopOpeBRep_FaceEdgeIntersector {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRep_FaceEdgeIntersector();
 		%feature("autodoc", "1");
 		TopOpeBRep_FaceEdgeIntersector();
 		%feature("autodoc", "1");
@@ -1138,8 +1104,6 @@ class TopOpeBRep_FaceEdgeIntersector {
 class TopOpeBRep_Bipoint {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_Bipoint();
-		%feature("autodoc", "1");
 		TopOpeBRep_Bipoint();
 		%feature("autodoc", "1");
 		TopOpeBRep_Bipoint(const Standard_Integer I1, const Standard_Integer I2);
@@ -1166,8 +1130,6 @@ class TopOpeBRep_Array1OfLineInter {
 		void Init(const TopOpeBRep_LineInter &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopOpeBRep_Array1OfLineInter();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1318,8 +1280,6 @@ class TopOpeBRep_ListOfBipoint {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopOpeBRep_ListOfBipoint();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TopOpeBRep_Bipoint &I);
@@ -1361,8 +1321,6 @@ class TopOpeBRep_ListOfBipoint {
 class TopOpeBRep_ShapeIntersector2d {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_ShapeIntersector2d();
-		%feature("autodoc", "1");
 		TopOpeBRep_ShapeIntersector2d();
 		%feature("autodoc", "1");
 		void InitIntersection(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
@@ -1391,8 +1349,6 @@ class TopOpeBRep_ShapeIntersector2d {
 %nodefaultctor TopOpeBRep_VPointInter;
 class TopOpeBRep_VPointInter {
 	public:
-		%feature("autodoc", "1");
-		~TopOpeBRep_VPointInter();
 		%feature("autodoc", "1");
 		TopOpeBRep_VPointInter();
 		%feature("autodoc", "1");
@@ -1499,8 +1455,6 @@ class TopOpeBRep_VPointInter {
 class TopOpeBRep_PointClassifier {
 	public:
 		%feature("autodoc", "1");
-		~TopOpeBRep_PointClassifier();
-		%feature("autodoc", "1");
 		TopOpeBRep_PointClassifier();
 		%feature("autodoc", "1");
 		void Init();
@@ -1525,8 +1479,6 @@ class TopOpeBRep_EdgesIntersector {
 		TopOpeBRep_EdgesIntersector();
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~TopOpeBRep_EdgesIntersector();
 		%feature("autodoc", "1");
 		void SetFaces(const TopoDS_Shape &F1, const TopoDS_Shape &F2);
 		%feature("autodoc", "1");
@@ -1659,8 +1611,6 @@ class TopOpeBRep_SequenceOfPoint2d : public TCollection_BaseSequence {
 		TopOpeBRep_SequenceOfPoint2d();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopOpeBRep_SequenceOfPoint2d();
 		%feature("autodoc", "1");
 		const TopOpeBRep_SequenceOfPoint2d & Assign(const TopOpeBRep_SequenceOfPoint2d &Other);
 		%feature("autodoc", "1");

@@ -109,8 +109,6 @@ class IFGraph_Compare : public Interface_GraphContent {
 		Interface_EntityIterator FirstOnly() const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator SecondOnly() const;
-		%feature("autodoc", "1");
-		virtual		~IFGraph_Compare();
 
 };
 %extend IFGraph_Compare {
@@ -187,8 +185,6 @@ class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 		IFGraph_StrongComponants(IFGraph_StrongComponants & arg0);
 		%feature("autodoc", "1");
 		IFGraph_StrongComponants(const Interface_Graph &agraph, const Standard_Boolean whole);
-		%feature("autodoc", "1");
-		virtual		~IFGraph_StrongComponants();
 
 };
 %extend IFGraph_StrongComponants {
@@ -206,8 +202,6 @@ class IFGraph_SCRoots : public IFGraph_StrongComponants {
 		IFGraph_SCRoots(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
 		IFGraph_SCRoots(IFGraph_StrongComponants & subparts);
-		%feature("autodoc", "1");
-		virtual		~IFGraph_SCRoots();
 
 };
 %extend IFGraph_SCRoots {
@@ -229,8 +223,6 @@ class IFGraph_AllConnected : public Interface_GraphContent {
 		void ResetData();
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_AllConnected();
 
 };
 %extend IFGraph_AllConnected {
@@ -248,8 +240,6 @@ class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 		IFGraph_ConnectedComponants(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_ConnectedComponants();
 
 };
 %extend IFGraph_ConnectedComponants {
@@ -273,8 +263,6 @@ class IFGraph_AllShared : public Interface_GraphContent {
 		void ResetData();
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_AllShared();
 
 };
 %extend IFGraph_AllShared {
@@ -296,8 +284,6 @@ class IFGraph_Articulations : public Interface_GraphContent {
 		void ResetData();
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_Articulations();
 
 };
 %extend IFGraph_Articulations {
@@ -321,8 +307,6 @@ class IFGraph_ExternalSources : public Interface_GraphContent {
 		virtual		void Evaluate();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_ExternalSources();
 
 };
 %extend IFGraph_ExternalSources {
@@ -354,8 +338,6 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 		Standard_Integer NbTimes(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Standard_Integer HighestNbTimes() const;
-		%feature("autodoc", "1");
-		virtual		~IFGraph_Cumulate();
 
 };
 %extend IFGraph_Cumulate {
@@ -375,8 +357,6 @@ class IFGraph_Cycles : public IFGraph_SubPartsIterator {
 		IFGraph_Cycles(IFGraph_StrongComponants & subparts);
 		%feature("autodoc", "1");
 		virtual		void Evaluate();
-		%feature("autodoc", "1");
-		virtual		~IFGraph_Cycles();
 
 };
 %extend IFGraph_Cycles {

@@ -384,8 +384,6 @@ class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TFunction_DoubleMapOfIntegerLabel();
-		%feature("autodoc", "1");
 		void Bind(const Standard_Integer &K1, const TDF_Label &K2);
 		%feature("autodoc", "1");
 		Standard_Boolean AreBound(const Standard_Integer &K1, const TDF_Label &K2) const;
@@ -561,8 +559,6 @@ class TFunction_Array1OfDataMapOfGUIDDriver {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TFunction_Array1OfDataMapOfGUIDDriver();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TFunction_Array1OfDataMapOfGUIDDriver & Assign(const TFunction_Array1OfDataMapOfGUIDDriver &Other);
@@ -642,8 +638,6 @@ class TFunction_Function : public TDF_Attribute {
 class TFunction_Iterator {
 	public:
 		%feature("autodoc", "1");
-		~TFunction_Iterator();
-		%feature("autodoc", "1");
 		TFunction_Iterator();
 		%feature("autodoc", "1");
 		TFunction_Iterator(const TDF_Label &Access);
@@ -686,8 +680,6 @@ class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TFunction_DataMapOfLabelListOfLabel();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TDF_Label &K, const TDF_LabelList &I);
 		%feature("autodoc", "1");
@@ -768,8 +760,6 @@ class TFunction_DriverTable : public MMgt_TShared {
 %nodefaultctor TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
 class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
 		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
@@ -938,8 +928,6 @@ class TFunction_Driver : public MMgt_TShared {
 class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel();
-		%feature("autodoc", "1");
 		TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel();
 		%feature("autodoc", "1");
 		TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel(const TFunction_DataMapOfLabelListOfLabel &aMap);
@@ -960,8 +948,6 @@ class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_
 %nodefaultctor TFunction_Logbook;
 class TFunction_Logbook {
 	public:
-		%feature("autodoc", "1");
-		~TFunction_Logbook();
 		%feature("autodoc", "1");
 		TFunction_Logbook();
 		%feature("autodoc", "1");

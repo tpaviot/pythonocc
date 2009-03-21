@@ -136,8 +136,6 @@ class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollec
 class Geom2dHatch_ElementOfHatcher {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dHatch_ElementOfHatcher();
-		%feature("autodoc", "1");
 		Geom2dHatch_ElementOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_ElementOfHatcher(const Geom2dHatch_ElementOfHatcher &Other);
@@ -162,8 +160,6 @@ class Geom2dHatch_ElementOfHatcher {
 %nodefaultctor Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher;
 class Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher();
 		%feature("autodoc", "1");
@@ -194,8 +190,6 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Geom2dHatch_MapOfElementsOfElementsOfHatcher();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -220,8 +214,6 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 %nodefaultctor Geom2dHatch_FClass2dOfClassifierOfHatcher;
 class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_FClass2dOfClassifierOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_FClass2dOfClassifierOfHatcher();
 		%feature("autodoc", "1");
@@ -249,8 +241,6 @@ class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 %nodefaultctor Geom2dHatch_ClassifierOfHatcher;
 class Geom2dHatch_ClassifierOfHatcher {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_ClassifierOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_ClassifierOfHatcher();
 		%feature("autodoc", "1");
@@ -280,8 +270,6 @@ class Geom2dHatch_ClassifierOfHatcher {
 %nodefaultctor Geom2dHatch_Intersector;
 class Geom2dHatch_Intersector : public Geom2dInt_GInter {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_Intersector();
 		%feature("autodoc", "1");
 		Geom2dHatch_Intersector(const Standard_Real Confusion, const Standard_Real Tangency);
 		%feature("autodoc", "1");
@@ -320,8 +308,6 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Geom2dHatch_HatchingsOfHatcher();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_HatchingOfHatcher &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -346,8 +332,6 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 %nodefaultctor Geom2dHatch_HatchingOfHatcher;
 class Geom2dHatch_HatchingOfHatcher {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_HatchingOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_HatchingOfHatcher();
 		%feature("autodoc", "1");
@@ -456,8 +440,6 @@ class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
 class Geom2dHatch_Hatcher {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dHatch_Hatcher();
-		%feature("autodoc", "1");
 		Geom2dHatch_Hatcher(const Geom2dHatch_Intersector &Intersector, const Standard_Real Confusion2d, const Standard_Real Confusion3d, const Standard_Boolean KeepPnt=0, const Standard_Boolean KeepSeg=0);
 		%feature("autodoc", "1");
 		void Intersector(const Geom2dHatch_Intersector &Intersector);
@@ -543,8 +525,6 @@ class Geom2dHatch_ElementsOfHatcher {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Geom2dHatch_ElementsOfHatcher();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -593,8 +573,6 @@ class Geom2dHatch_ElementsOfHatcher {
 %nodefaultctor Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher;
 class Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher();
 		%feature("autodoc", "1");
 		Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher();
 		%feature("autodoc", "1");

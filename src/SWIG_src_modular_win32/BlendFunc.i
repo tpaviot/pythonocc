@@ -95,8 +95,6 @@ enum BlendFunc_SectionShape {
 class BlendFunc {
 	public:
 		%feature("autodoc", "1");
-		~BlendFunc();
-		%feature("autodoc", "1");
 		BlendFunc();
 		%feature("autodoc", "1");
 		void GetShape(const BlendFunc_SectionShape SectShape, const Standard_Real MaxAng, Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree, Convert_ParameterisationType & TypeConv);
@@ -115,8 +113,6 @@ class BlendFunc {
 %nodefaultctor BlendFunc_Tensor;
 class BlendFunc_Tensor {
 	public:
-		%feature("autodoc", "1");
-		~BlendFunc_Tensor();
 		%feature("autodoc", "1");
 		BlendFunc_Tensor(const Standard_Integer NbRow, const Standard_Integer NbCol, const Standard_Integer NbMat);
 		%feature("autodoc", "1");

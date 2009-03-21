@@ -316,8 +316,6 @@ class BinMDF_ADriver : public MMgt_TShared {
 class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BinMDF_DataMapIteratorOfStringIdMap();
-		%feature("autodoc", "1");
 		BinMDF_DataMapIteratorOfStringIdMap();
 		%feature("autodoc", "1");
 		BinMDF_DataMapIteratorOfStringIdMap(const BinMDF_StringIdMap &aMap);
@@ -446,8 +444,6 @@ class BinMDF_StringIdMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BinMDF_StringIdMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -609,8 +605,6 @@ class BinMDF_TypeIdMap : public TCollection_BasicMap {
 %nodefaultctor BinMDF;
 class BinMDF {
 	public:
-		%feature("autodoc", "1");
-		~BinMDF();
 		%feature("autodoc", "1");
 		BinMDF();
 		%feature("autodoc", "1");

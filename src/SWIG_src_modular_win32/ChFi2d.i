@@ -104,8 +104,6 @@ enum ChFi2d_ConstructionError {
 class ChFi2d {
 	public:
 		%feature("autodoc", "1");
-		~ChFi2d();
-		%feature("autodoc", "1");
 		ChFi2d();
 
 };
@@ -118,8 +116,6 @@ class ChFi2d {
 %nodefaultctor ChFi2d_Builder;
 class ChFi2d_Builder {
 	public:
-		%feature("autodoc", "1");
-		~ChFi2d_Builder();
 		%feature("autodoc", "1");
 		ChFi2d_Builder();
 		%feature("autodoc", "1");

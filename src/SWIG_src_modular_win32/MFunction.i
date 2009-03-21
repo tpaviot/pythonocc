@@ -192,8 +192,6 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 class MFunction {
 	public:
 		%feature("autodoc", "1");
-		~MFunction();
-		%feature("autodoc", "1");
 		MFunction();
 		%feature("autodoc", "1");
 		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);

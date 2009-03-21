@@ -136,8 +136,6 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 class AppDef_MyLineTool {
 	public:
 		%feature("autodoc", "1");
-		~AppDef_MyLineTool();
-		%feature("autodoc", "1");
 		AppDef_MyLineTool();
 		%feature("autodoc", "1");
 		Standard_Integer FirstPoint(const AppDef_MultiLine &ML);
@@ -204,8 +202,6 @@ class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradi
 		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_ParFunctionOfTheGradient();
 
 };
 %extend AppDef_ParFunctionOfTheGradient {
@@ -261,8 +257,6 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 		Standard_Boolean IsCurvaturePoint() const;
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & o) const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_MultiPointConstraint();
 
 };
 %extend AppDef_MultiPointConstraint {
@@ -274,8 +268,6 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 %nodefaultctor AppDef_MultiLine;
 class AppDef_MultiLine {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_MultiLine();
 		%feature("autodoc", "1");
 		AppDef_MultiLine();
 		%feature("autodoc", "1");
@@ -307,8 +299,6 @@ class AppDef_MultiLine {
 %nodefaultctor AppDef_MyBSplGradientOfBSplineCompute;
 class AppDef_MyBSplGradientOfBSplineCompute {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_MyBSplGradientOfBSplineCompute();
 		%feature("autodoc", "1");
 		AppDef_MyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=1);
 		%feature("autodoc", "1");
@@ -410,8 +400,6 @@ class AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute : public math_Multip
 		void SetFirstLambda(const Standard_Real l1);
 		%feature("autodoc", "1");
 		void SetLastLambda(const Standard_Real l2);
-		%feature("autodoc", "1");
-		virtual		~AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute();
 
 };
 %extend AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute {
@@ -427,8 +415,6 @@ class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
 		AppDef_Gradient_BFGSOfMyGradientOfCompute(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_Gradient_BFGSOfMyGradientOfCompute();
 
 };
 %extend AppDef_Gradient_BFGSOfMyGradientOfCompute {
@@ -440,8 +426,6 @@ class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
 %nodefaultctor AppDef_TheLeastSquares;
 class AppDef_TheLeastSquares {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_TheLeastSquares();
 		%feature("autodoc", "1");
 		AppDef_TheLeastSquares(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
@@ -499,8 +483,6 @@ class AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute : public math_BFGS
 		AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute();
 
 };
 %extend AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute {
@@ -516,8 +498,6 @@ class AppDef_Gradient_BFGSOfTheGradient : public math_BFGS {
 		AppDef_Gradient_BFGSOfTheGradient(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_Gradient_BFGSOfTheGradient();
 
 };
 %extend AppDef_Gradient_BFGSOfTheGradient {
@@ -611,8 +591,6 @@ class AppDef_TheVariational {
 class AppDef_Compute {
 	public:
 		%feature("autodoc", "1");
-		~AppDef_Compute();
-		%feature("autodoc", "1");
 		AppDef_Compute(const AppDef_MultiLine &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
 		AppDef_Compute(const AppDef_MultiLine &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
@@ -683,8 +661,6 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_ParFunctionOfMyGradientbisOfBSplineCompute();
 
 };
 %extend AppDef_ParFunctionOfMyGradientbisOfBSplineCompute {
@@ -696,8 +672,6 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 %nodefaultctor AppDef_TheGradient;
 class AppDef_TheGradient {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_TheGradient();
 		%feature("autodoc", "1");
 		AppDef_TheGradient(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
@@ -723,8 +697,6 @@ class AppDef_TheGradient {
 %nodefaultctor AppDef_ParLeastSquareOfTheGradient;
 class AppDef_ParLeastSquareOfTheGradient {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_ParLeastSquareOfTheGradient();
 		%feature("autodoc", "1");
 		AppDef_ParLeastSquareOfTheGradient(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
@@ -831,8 +803,6 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 class AppDef_ParLeastSquareOfMyGradientOfCompute {
 	public:
 		%feature("autodoc", "1");
-		~AppDef_ParLeastSquareOfMyGradientOfCompute();
-		%feature("autodoc", "1");
 		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
 		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
@@ -886,8 +856,6 @@ class AppDef_ParLeastSquareOfMyGradientOfCompute {
 class AppDef_ResConstraintOfTheGradient {
 	public:
 		%feature("autodoc", "1");
-		~AppDef_ResConstraintOfTheGradient();
-		%feature("autodoc", "1");
 		AppDef_ResConstraintOfTheGradient(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -934,8 +902,6 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_TheFunction();
 
 };
 %extend AppDef_TheFunction {
@@ -947,8 +913,6 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 %nodefaultctor AppDef_MyGradientOfCompute;
 class AppDef_MyGradientOfCompute {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_MyGradientOfCompute();
 		%feature("autodoc", "1");
 		AppDef_MyGradientOfCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
@@ -974,8 +938,6 @@ class AppDef_MyGradientOfCompute {
 %nodefaultctor AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute;
 class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute();
 		%feature("autodoc", "1");
 		AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
@@ -1030,8 +992,6 @@ class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 class AppDef_MyGradientbisOfBSplineCompute {
 	public:
 		%feature("autodoc", "1");
-		~AppDef_MyGradientbisOfBSplineCompute();
-		%feature("autodoc", "1");
 		AppDef_MyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -1056,8 +1016,6 @@ class AppDef_MyGradientbisOfBSplineCompute {
 %nodefaultctor AppDef_BSplineCompute;
 class AppDef_BSplineCompute {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_BSplineCompute();
 		%feature("autodoc", "1");
 		AppDef_BSplineCompute(const AppDef_MultiLine &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
@@ -1109,8 +1067,6 @@ class AppDef_BSplineCompute {
 %nodefaultctor AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute;
 class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute();
 		%feature("autodoc", "1");
 		AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
@@ -1165,8 +1121,6 @@ class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 class AppDef_ResConstraintOfMyGradientOfCompute {
 	public:
 		%feature("autodoc", "1");
-		~AppDef_ResConstraintOfMyGradientOfCompute();
-		%feature("autodoc", "1");
 		AppDef_ResConstraintOfMyGradientOfCompute(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -1193,8 +1147,6 @@ class AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute : public math_BFGS {
 		AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute();
 
 };
 %extend AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute {
@@ -1214,8 +1166,6 @@ class AppDef_Array1OfMultiPointConstraint {
 		void Init(const AppDef_MultiPointConstraint &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~AppDef_Array1OfMultiPointConstraint();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1248,8 +1198,6 @@ class AppDef_Array1OfMultiPointConstraint {
 class AppDef_TheResol {
 	public:
 		%feature("autodoc", "1");
-		~AppDef_TheResol();
-		%feature("autodoc", "1");
 		AppDef_TheResol(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -1272,8 +1220,6 @@ class AppDef_TheResol {
 %nodefaultctor AppDef_ResConstraintOfMyGradientbisOfBSplineCompute;
 class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 	public:
-		%feature("autodoc", "1");
-		~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute();
 		%feature("autodoc", "1");
 		AppDef_ResConstraintOfMyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
@@ -1321,8 +1267,6 @@ class AppDef_ParFunctionOfMyGradientOfCompute : public math_MultipleVarFunctionW
 		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
-		%feature("autodoc", "1");
-		virtual		~AppDef_ParFunctionOfMyGradientOfCompute();
 
 };
 %extend AppDef_ParFunctionOfMyGradientOfCompute {

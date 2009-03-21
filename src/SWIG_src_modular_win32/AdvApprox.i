@@ -104,8 +104,6 @@ class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 	public:
 		%feature("autodoc", "1");
 		AdvApprox_DichoCutting();
-		%feature("autodoc", "1");
-		virtual		~AdvApprox_DichoCutting();
 
 };
 %extend AdvApprox_DichoCutting {
@@ -174,8 +172,6 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 		AdvApprox_PrefAndRec(const TColStd_Array1OfReal &RecomendedCut, const TColStd_Array1OfReal &PrefferedCut, const Standard_Real Weight=5);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~AdvApprox_PrefAndRec();
 
 };
 %extend AdvApprox_PrefAndRec {
@@ -191,8 +187,6 @@ class AdvApprox_PrefCutting : public AdvApprox_Cutting {
 		AdvApprox_PrefCutting(const TColStd_Array1OfReal &CutPnts);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~AdvApprox_PrefCutting();
 
 };
 %extend AdvApprox_PrefCutting {

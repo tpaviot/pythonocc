@@ -533,8 +533,6 @@ class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 class ShapeCustom {
 	public:
 		%feature("autodoc", "1");
-		~ShapeCustom();
-		%feature("autodoc", "1");
 		ShapeCustom();
 		%feature("autodoc", "1");
 		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & context, BRepTools_Modifier & MD);

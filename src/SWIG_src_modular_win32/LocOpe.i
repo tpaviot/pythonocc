@@ -314,8 +314,6 @@ class LocOpe_SequenceOfCirc : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~LocOpe_SequenceOfCirc();
-		%feature("autodoc", "1");
 		const LocOpe_SequenceOfCirc & Assign(const LocOpe_SequenceOfCirc &Other);
 		%feature("autodoc", "1");
 		void Append(const gp_Circ &T);
@@ -402,8 +400,6 @@ class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~LocOpe_DataMapOfShapePnt();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const gp_Pnt &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -428,8 +424,6 @@ class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
 %nodefaultctor LocOpe_Gluer;
 class LocOpe_Gluer {
 	public:
-		%feature("autodoc", "1");
-		~LocOpe_Gluer();
 		%feature("autodoc", "1");
 		LocOpe_Gluer();
 		%feature("autodoc", "1");
@@ -469,8 +463,6 @@ class LocOpe_Gluer {
 %nodefaultctor LocOpe_BuildWires;
 class LocOpe_BuildWires {
 	public:
-		%feature("autodoc", "1");
-		~LocOpe_BuildWires();
 		%feature("autodoc", "1");
 		LocOpe_BuildWires();
 		%feature("autodoc", "1");
@@ -638,8 +630,6 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 class LocOpe {
 	public:
 		%feature("autodoc", "1");
-		~LocOpe();
-		%feature("autodoc", "1");
 		LocOpe();
 		%feature("autodoc", "1");
 		Standard_Boolean Closed(const TopoDS_Wire &W, const TopoDS_Face &OnF);
@@ -798,8 +788,6 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~LocOpe_DataMapIteratorOfDataMapOfShapePnt();
-		%feature("autodoc", "1");
 		LocOpe_DataMapIteratorOfDataMapOfShapePnt();
 		%feature("autodoc", "1");
 		LocOpe_DataMapIteratorOfDataMapOfShapePnt(const LocOpe_DataMapOfShapePnt &aMap);
@@ -820,8 +808,6 @@ class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIte
 %nodefaultctor LocOpe_Generator;
 class LocOpe_Generator {
 	public:
-		%feature("autodoc", "1");
-		~LocOpe_Generator();
 		%feature("autodoc", "1");
 		LocOpe_Generator();
 		%feature("autodoc", "1");
@@ -877,8 +863,6 @@ class LocOpe_CSIntersector {
 		Standard_Boolean LocalizeBefore(const Standard_Integer I, const Standard_Integer FromInd, const Standard_Real Tol, TopAbs_Orientation & Or, Standard_Integer & IndFrom, Standard_Integer & IndTo) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~LocOpe_CSIntersector();
 
 };
 %extend LocOpe_CSIntersector {
@@ -890,8 +874,6 @@ class LocOpe_CSIntersector {
 %nodefaultctor LocOpe_CurveShapeIntersector;
 class LocOpe_CurveShapeIntersector {
 	public:
-		%feature("autodoc", "1");
-		~LocOpe_CurveShapeIntersector();
 		%feature("autodoc", "1");
 		LocOpe_CurveShapeIntersector();
 		%feature("autodoc", "1");
@@ -928,8 +910,6 @@ class LocOpe_CurveShapeIntersector {
 class LocOpe_Spliter {
 	public:
 		%feature("autodoc", "1");
-		~LocOpe_Spliter();
-		%feature("autodoc", "1");
 		LocOpe_Spliter();
 		%feature("autodoc", "1");
 		LocOpe_Spliter(const TopoDS_Shape &S);
@@ -960,8 +940,6 @@ class LocOpe_Spliter {
 %nodefaultctor LocOpe_PntFace;
 class LocOpe_PntFace {
 	public:
-		%feature("autodoc", "1");
-		~LocOpe_PntFace();
 		%feature("autodoc", "1");
 		LocOpe_PntFace();
 		%feature("autodoc", "1");
@@ -995,8 +973,6 @@ class LocOpe_SequenceOfLin : public TCollection_BaseSequence {
 		LocOpe_SequenceOfLin();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~LocOpe_SequenceOfLin();
 		%feature("autodoc", "1");
 		const LocOpe_SequenceOfLin & Assign(const LocOpe_SequenceOfLin &Other);
 		%feature("autodoc", "1");
@@ -1104,8 +1080,6 @@ class LocOpe_SequenceOfPntFace : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~LocOpe_SequenceOfPntFace();
-		%feature("autodoc", "1");
 		const LocOpe_SequenceOfPntFace & Assign(const LocOpe_SequenceOfPntFace &Other);
 		%feature("autodoc", "1");
 		void Append(const LocOpe_PntFace &T);
@@ -1155,8 +1129,6 @@ class LocOpe_SequenceOfPntFace : public TCollection_BaseSequence {
 class LocOpe_FindEdges {
 	public:
 		%feature("autodoc", "1");
-		~LocOpe_FindEdges();
-		%feature("autodoc", "1");
 		LocOpe_FindEdges();
 		%feature("autodoc", "1");
 		LocOpe_FindEdges(const TopoDS_Shape &FFrom, const TopoDS_Shape &FTo);
@@ -1184,8 +1156,6 @@ class LocOpe_FindEdges {
 class LocOpe_BuildShape {
 	public:
 		%feature("autodoc", "1");
-		~LocOpe_BuildShape();
-		%feature("autodoc", "1");
 		LocOpe_BuildShape();
 		%feature("autodoc", "1");
 		LocOpe_BuildShape(const TopTools_ListOfShape &L);
@@ -1204,8 +1174,6 @@ class LocOpe_BuildShape {
 %nodefaultctor LocOpe_SplitShape;
 class LocOpe_SplitShape {
 	public:
-		%feature("autodoc", "1");
-		~LocOpe_SplitShape();
 		%feature("autodoc", "1");
 		LocOpe_SplitShape();
 		%feature("autodoc", "1");
@@ -1236,8 +1204,6 @@ class LocOpe_SplitShape {
 class LocOpe_FindEdgesInFace {
 	public:
 		%feature("autodoc", "1");
-		~LocOpe_FindEdgesInFace();
-		%feature("autodoc", "1");
 		LocOpe_FindEdgesInFace();
 		%feature("autodoc", "1");
 		LocOpe_FindEdgesInFace(const TopoDS_Shape &S, const TopoDS_Face &F);
@@ -1262,8 +1228,6 @@ class LocOpe_FindEdgesInFace {
 %nodefaultctor LocOpe_SplitDrafts;
 class LocOpe_SplitDrafts {
 	public:
-		%feature("autodoc", "1");
-		~LocOpe_SplitDrafts();
 		%feature("autodoc", "1");
 		LocOpe_SplitDrafts();
 		%feature("autodoc", "1");
@@ -1293,8 +1257,6 @@ class LocOpe_SplitDrafts {
 %nodefaultctor LocOpe_LinearForm;
 class LocOpe_LinearForm {
 	public:
-		%feature("autodoc", "1");
-		~LocOpe_LinearForm();
 		%feature("autodoc", "1");
 		LocOpe_LinearForm();
 		%feature("autodoc", "1");

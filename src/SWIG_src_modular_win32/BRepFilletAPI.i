@@ -231,8 +231,6 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		ChFi2d_ConstructionError Status() const;
 		%feature("autodoc", "1");
 		virtual		void Build();
-		%feature("autodoc", "1");
-		virtual		~BRepFilletAPI_MakeFillet2d();
 
 };
 %extend BRepFilletAPI_MakeFillet2d {

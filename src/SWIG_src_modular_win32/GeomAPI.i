@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class GeomAPI_ExtremaSurfaceSurface {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_ExtremaSurfaceSurface();
-		%feature("autodoc", "1");
 		GeomAPI_ExtremaSurfaceSurface();
 		%feature("autodoc", "1");
 		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
@@ -183,8 +181,6 @@ class GeomAPI_Interpolate {
 class GeomAPI_ExtremaCurveCurve {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_ExtremaCurveCurve();
-		%feature("autodoc", "1");
 		GeomAPI_ExtremaCurveCurve();
 		%feature("autodoc", "1");
 		GeomAPI_ExtremaCurveCurve(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
@@ -228,8 +224,6 @@ class GeomAPI_ExtremaCurveCurve {
 class GeomAPI_ExtremaCurveSurface {
 	public:
 		%feature("autodoc", "1");
-		~GeomAPI_ExtremaCurveSurface();
-		%feature("autodoc", "1");
 		GeomAPI_ExtremaCurveSurface();
 		%feature("autodoc", "1");
 		GeomAPI_ExtremaCurveSurface(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface);
@@ -266,8 +260,6 @@ class GeomAPI_ExtremaCurveSurface {
 %nodefaultctor GeomAPI_ProjectPointOnCurve;
 class GeomAPI_ProjectPointOnCurve {
 	public:
-		%feature("autodoc", "1");
-		~GeomAPI_ProjectPointOnCurve();
 		%feature("autodoc", "1");
 		GeomAPI_ProjectPointOnCurve();
 		%feature("autodoc", "1");
@@ -334,8 +326,6 @@ class GeomAPI_PointsToBSpline {
 %nodefaultctor GeomAPI_ProjectPointOnSurf;
 class GeomAPI_ProjectPointOnSurf {
 	public:
-		%feature("autodoc", "1");
-		~GeomAPI_ProjectPointOnSurf();
 		%feature("autodoc", "1");
 		GeomAPI_ProjectPointOnSurf();
 		%feature("autodoc", "1");

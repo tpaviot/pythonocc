@@ -552,8 +552,6 @@ class TopTools_ListOfShape {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_ListOfShape();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TopoDS_Shape &I);
@@ -625,8 +623,6 @@ class TopTools_LocationSet {
 %nodefaultctor TopTools;
 class TopTools {
 	public:
-		%feature("autodoc", "1");
-		~TopTools();
 		%feature("autodoc", "1");
 		TopTools();
 		%feature("autodoc", "1");
@@ -701,8 +697,6 @@ class TopTools_IndexedDataMapOfShapeShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_IndexedDataMapOfShapeShape();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const TopoDS_Shape &T);
@@ -737,8 +731,6 @@ class TopTools_IndexedDataMapOfShapeShape : public TCollection_BasicMap {
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeListOfShape;
 class TopTools_DataMapIteratorOfDataMapOfShapeListOfShape : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopTools_DataMapIteratorOfDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
@@ -891,8 +883,6 @@ class TopTools_Array2OfShape {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TopTools_Array2OfShape();
-		%feature("autodoc", "1");
 		const TopTools_Array2OfShape & Assign(const TopTools_Array2OfShape &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -936,8 +926,6 @@ class TopTools_DataMapOfOrientedShapeInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_DataMapOfOrientedShapeInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -963,8 +951,6 @@ class TopTools_DataMapOfOrientedShapeInteger : public TCollection_BasicMap {
 class TopTools_ShapeMapHasher {
 	public:
 		%feature("autodoc", "1");
-		~TopTools_ShapeMapHasher();
-		%feature("autodoc", "1");
 		TopTools_ShapeMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TopoDS_Shape &S, const Standard_Integer Upper);
@@ -989,8 +975,6 @@ class TopTools_IndexedDataMapOfShapeListOfShape : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopTools_IndexedDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const TopTools_ListOfShape &I);
 		%feature("autodoc", "1");
@@ -1035,8 +1019,6 @@ class TopTools_DataMapOfShapeShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_DataMapOfShapeShape();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -1061,8 +1043,6 @@ class TopTools_DataMapOfShapeShape : public TCollection_BasicMap {
 %nodefaultctor TopTools_ListIteratorOfListOfShape;
 class TopTools_ListIteratorOfListOfShape {
 	public:
-		%feature("autodoc", "1");
-		~TopTools_ListIteratorOfListOfShape();
 		%feature("autodoc", "1");
 		TopTools_ListIteratorOfListOfShape();
 		%feature("autodoc", "1");
@@ -1222,8 +1202,6 @@ class TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public TCollection_M
 class TopTools_MapIteratorOfMapOfShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopTools_MapIteratorOfMapOfShape();
-		%feature("autodoc", "1");
 		TopTools_MapIteratorOfMapOfShape();
 		%feature("autodoc", "1");
 		TopTools_MapIteratorOfMapOfShape(const TopTools_MapOfShape &aMap);
@@ -1279,8 +1257,6 @@ class TopTools_Array1OfShape {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TopTools_Array1OfShape();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TopTools_Array1OfShape & Assign(const TopTools_Array1OfShape &Other);
@@ -1319,8 +1295,6 @@ class TopTools_DataMapOfIntegerListOfShape : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopTools_DataMapOfIntegerListOfShape();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TopTools_ListOfShape &I);
 		%feature("autodoc", "1");
@@ -1441,8 +1415,6 @@ class TopTools_IndexedMapOfShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_IndexedMapOfShape();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TopoDS_Shape &K);
@@ -1500,8 +1472,6 @@ class TopTools_Array1OfListOfShape {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TopTools_Array1OfListOfShape();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TopTools_Array1OfListOfShape & Assign(const TopTools_Array1OfListOfShape &Other);
@@ -1541,8 +1511,6 @@ class TopTools_DataMapOfIntegerShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_DataMapOfIntegerShape();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1567,8 +1535,6 @@ class TopTools_DataMapOfIntegerShape : public TCollection_BasicMap {
 %nodefaultctor TopTools_OrientedShapeMapHasher;
 class TopTools_OrientedShapeMapHasher {
 	public:
-		%feature("autodoc", "1");
-		~TopTools_OrientedShapeMapHasher();
 		%feature("autodoc", "1");
 		TopTools_OrientedShapeMapHasher();
 		%feature("autodoc", "1");
@@ -1595,8 +1561,6 @@ class TopTools_MapOfOrientedShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_MapOfOrientedShape();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const TopoDS_Shape &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const TopoDS_Shape &aKey) const;
@@ -1613,8 +1577,6 @@ class TopTools_MapOfOrientedShape : public TCollection_BasicMap {
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfIntegerShape;
 class TopTools_DataMapIteratorOfDataMapOfIntegerShape : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopTools_DataMapIteratorOfDataMapOfIntegerShape();
 		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfIntegerShape();
 		%feature("autodoc", "1");
@@ -1709,8 +1671,6 @@ class TopTools_DataMapOfShapeInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_DataMapOfShapeInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -1735,8 +1695,6 @@ class TopTools_DataMapOfShapeInteger : public TCollection_BasicMap {
 %nodefaultctor TopTools_MapIteratorOfMapOfOrientedShape;
 class TopTools_MapIteratorOfMapOfOrientedShape : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopTools_MapIteratorOfMapOfOrientedShape();
 		%feature("autodoc", "1");
 		TopTools_MapIteratorOfMapOfOrientedShape();
 		%feature("autodoc", "1");
@@ -1789,8 +1747,6 @@ class TopTools_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_DataMapOfShapeListOfInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TColStd_ListOfInteger &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -1824,8 +1780,6 @@ class TopTools_DataMapOfShapeListOfShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_DataMapOfShapeListOfShape();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopTools_ListOfShape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -1851,8 +1805,6 @@ class TopTools_DataMapOfShapeListOfShape : public TCollection_BasicMap {
 class TopTools_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopTools_DataMapIteratorOfDataMapOfShapeInteger();
-		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfShapeInteger();
 		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfShapeInteger(const TopTools_DataMapOfShapeInteger &aMap);
@@ -1874,8 +1826,6 @@ class TopTools_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Basic
 class TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger();
-		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger();
 		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger(const TopTools_DataMapOfShapeListOfInteger &aMap);
@@ -1896,8 +1846,6 @@ class TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape;
 class TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape();
 		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape();
 		%feature("autodoc", "1");
@@ -1941,8 +1889,6 @@ class TopTools_ListNodeOfListOfShape : public TCollection_MapNode {
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger;
 class TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger();
 		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger();
 		%feature("autodoc", "1");
@@ -2001,8 +1947,6 @@ class TopTools_IndexedMapOfOrientedShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopTools_IndexedMapOfOrientedShape();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TopoDS_Shape &K);
@@ -2050,8 +1994,6 @@ class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
 class TopTools_DataMapIteratorOfDataMapOfShapeShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopTools_DataMapIteratorOfDataMapOfShapeShape();
-		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfShapeShape();
 		%feature("autodoc", "1");
 		TopTools_DataMapIteratorOfDataMapOfShapeShape(const TopTools_DataMapOfShapeShape &aMap);
@@ -2076,8 +2018,6 @@ class TopTools_SequenceOfShape : public TCollection_BaseSequence {
 		TopTools_SequenceOfShape();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopTools_SequenceOfShape();
 		%feature("autodoc", "1");
 		const TopTools_SequenceOfShape & Assign(const TopTools_SequenceOfShape &Other);
 		%feature("autodoc", "1");
@@ -2135,8 +2075,6 @@ class TopTools_MapOfShape : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TopTools_MapOfShape();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const TopoDS_Shape &aKey);
 		%feature("autodoc", "1");

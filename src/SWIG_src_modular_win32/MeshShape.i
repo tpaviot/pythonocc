@@ -262,8 +262,6 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
 class MeshShape_ListIteratorOfPolygon {
 	public:
 		%feature("autodoc", "1");
-		~MeshShape_ListIteratorOfPolygon();
-		%feature("autodoc", "1");
 		MeshShape_ListIteratorOfPolygon();
 		%feature("autodoc", "1");
 		MeshShape_ListIteratorOfPolygon(const MeshShape_Polygon &L);
@@ -311,8 +309,6 @@ class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_
 class MeshShape_Couple {
 	public:
 		%feature("autodoc", "1");
-		~MeshShape_Couple();
-		%feature("autodoc", "1");
 		MeshShape_Couple();
 		%feature("autodoc", "1");
 		MeshShape_Couple(const Standard_Integer I1, const Standard_Integer I2);
@@ -340,8 +336,6 @@ class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MeshShape_DataMapOfIntegerPnt();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const gp_Pnt &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -367,8 +361,6 @@ class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
 class MeshShape {
 	public:
 		%feature("autodoc", "1");
-		~MeshShape();
-		%feature("autodoc", "1");
 		MeshShape();
 		%feature("autodoc", "1");
 		void SetMesure(const Standard_Boolean val);
@@ -385,8 +377,6 @@ class MeshShape {
 %nodefaultctor MeshShape_PolygonPoint;
 class MeshShape_PolygonPoint {
 	public:
-		%feature("autodoc", "1");
-		~MeshShape_PolygonPoint();
 		%feature("autodoc", "1");
 		MeshShape_PolygonPoint();
 		%feature("autodoc", "1");
@@ -406,8 +396,6 @@ class MeshShape_PolygonPoint {
 %nodefaultctor MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient;
 class MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient();
 		%feature("autodoc", "1");
 		MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient();
 		%feature("autodoc", "1");
@@ -429,8 +417,6 @@ class MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient : public TCollect
 %nodefaultctor MeshShape_CoupleHasher;
 class MeshShape_CoupleHasher {
 	public:
-		%feature("autodoc", "1");
-		~MeshShape_CoupleHasher();
 		%feature("autodoc", "1");
 		MeshShape_CoupleHasher();
 		%feature("autodoc", "1");
@@ -456,8 +442,6 @@ class MeshShape_ListOfSurfacePoint {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MeshShape_ListOfSurfacePoint();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -522,8 +506,6 @@ class MeshShape_ListNodeOfPolygon : public TCollection_MapNode {
 class MeshShape_DataMapIteratorOfDataMapOfIntegerPnt : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MeshShape_DataMapIteratorOfDataMapOfIntegerPnt();
-		%feature("autodoc", "1");
 		MeshShape_DataMapIteratorOfDataMapOfIntegerPnt();
 		%feature("autodoc", "1");
 		MeshShape_DataMapIteratorOfDataMapOfIntegerPnt(const MeshShape_DataMapOfIntegerPnt &aMap);
@@ -544,8 +526,6 @@ class MeshShape_DataMapIteratorOfDataMapOfIntegerPnt : public TCollection_BasicM
 %nodefaultctor MeshShape_MapIteratorOfMapOfCouple;
 class MeshShape_MapIteratorOfMapOfCouple : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MeshShape_MapIteratorOfMapOfCouple();
 		%feature("autodoc", "1");
 		MeshShape_MapIteratorOfMapOfCouple();
 		%feature("autodoc", "1");
@@ -596,8 +576,6 @@ class MeshShape_Polygon {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MeshShape_Polygon();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const MeshShape_PolygonPoint &I);
@@ -639,8 +617,6 @@ class MeshShape_Polygon {
 class MeshShape_DataMapIteratorOfDataMapOfIntegerXY : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MeshShape_DataMapIteratorOfDataMapOfIntegerXY();
-		%feature("autodoc", "1");
 		MeshShape_DataMapIteratorOfDataMapOfIntegerXY();
 		%feature("autodoc", "1");
 		MeshShape_DataMapIteratorOfDataMapOfIntegerXY(const MeshShape_DataMapOfIntegerXY &aMap);
@@ -670,8 +646,6 @@ class MeshShape_DataMapOfIntegerXY : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MeshShape_DataMapOfIntegerXY();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const gp_XY &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -697,8 +671,6 @@ class MeshShape_DataMapOfIntegerXY : public TCollection_BasicMap {
 class MeshShape_ListIteratorOfListOfSurfacePoint {
 	public:
 		%feature("autodoc", "1");
-		~MeshShape_ListIteratorOfListOfSurfacePoint();
-		%feature("autodoc", "1");
 		MeshShape_ListIteratorOfListOfSurfacePoint();
 		%feature("autodoc", "1");
 		MeshShape_ListIteratorOfListOfSurfacePoint(const MeshShape_ListOfSurfacePoint &L);
@@ -721,8 +693,6 @@ class MeshShape_ListIteratorOfListOfSurfacePoint {
 %nodefaultctor MeshShape_SurfacePoint;
 class MeshShape_SurfacePoint {
 	public:
-		%feature("autodoc", "1");
-		~MeshShape_SurfacePoint();
 		%feature("autodoc", "1");
 		MeshShape_SurfacePoint();
 		%feature("autodoc", "1");
@@ -754,8 +724,6 @@ class MeshShape_MapOfCouple : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MeshShape_MapOfCouple();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const MeshShape_Couple &aKey);
 		%feature("autodoc", "1");
@@ -805,8 +773,6 @@ class MeshShape_DataMapOfShapeListOfTransient : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MeshShape_DataMapOfShapeListOfTransient();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TColStd_ListOfTransient &I);
 		%feature("autodoc", "1");

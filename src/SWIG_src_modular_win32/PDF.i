@@ -473,8 +473,6 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 class PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
 	public:
 		%feature("autodoc", "1");
-		~PDF_VArrayTNodeOfFieldOfHAttributeArray1();
-		%feature("autodoc", "1");
 		PDF_VArrayTNodeOfFieldOfHAttributeArray1();
 		%feature("autodoc", "1");
 		PDF_VArrayTNodeOfFieldOfHAttributeArray1(const Handle_PDF_Attribute &aValue);

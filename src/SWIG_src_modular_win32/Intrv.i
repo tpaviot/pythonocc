@@ -128,8 +128,6 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 class Intrv_Intervals {
 	public:
 		%feature("autodoc", "1");
-		~Intrv_Intervals();
-		%feature("autodoc", "1");
 		Intrv_Intervals();
 		%feature("autodoc", "1");
 		Intrv_Intervals(const Intrv_Interval &Int);
@@ -166,8 +164,6 @@ class Intrv_Intervals {
 %nodefaultctor Intrv_Interval;
 class Intrv_Interval {
 	public:
-		%feature("autodoc", "1");
-		~Intrv_Interval();
 		%feature("autodoc", "1");
 		Intrv_Interval();
 		%feature("autodoc", "1");
@@ -241,8 +237,6 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 		Intrv_SequenceOfInterval();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Intrv_SequenceOfInterval();
 		%feature("autodoc", "1");
 		const Intrv_SequenceOfInterval & Assign(const Intrv_SequenceOfInterval &Other);
 		%feature("autodoc", "1");

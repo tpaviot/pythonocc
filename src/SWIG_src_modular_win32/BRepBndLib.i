@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BRepBndLib {
 	public:
 		%feature("autodoc", "1");
-		~BRepBndLib();
-		%feature("autodoc", "1");
 		BRepBndLib();
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Shape &S, Bnd_Box & B);

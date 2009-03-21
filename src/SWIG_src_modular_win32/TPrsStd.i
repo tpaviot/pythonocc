@@ -466,8 +466,6 @@ class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 class TPrsStd_ConstraintTools {
 	public:
 		%feature("autodoc", "1");
-		~TPrsStd_ConstraintTools();
-		%feature("autodoc", "1");
 		TPrsStd_ConstraintTools();
 		%feature("autodoc", "1");
 		void UpdateOnlyValue(const Handle_TDataStd_Constraint &aConst, const Handle_AIS_InteractiveObject &anAIS);

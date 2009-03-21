@@ -275,8 +275,6 @@ class BRepBlend_ChamfInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real Dist1, const Standard_Real Dist2, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ChamfInv();
 
 };
 %extend BRepBlend_ChamfInv {
@@ -364,8 +362,6 @@ class BRepBlend_ConstRad : public Blend_Function {
 		gp_Ax1 AxeRot(const Standard_Real Prm);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ConstRad();
 
 };
 %extend BRepBlend_ConstRad {
@@ -553,8 +549,6 @@ class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfRstConstRad();
 
 };
 %extend BRepBlend_SurfRstConstRad {
@@ -640,8 +634,6 @@ class BRepBlend_CSCircular : public Blend_CSFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_CSCircular();
 
 };
 %extend BRepBlend_CSCircular {
@@ -737,8 +729,6 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_RstRstEvolRad();
 
 };
 %extend BRepBlend_RstRstEvolRad {
@@ -770,8 +760,6 @@ class BRepBlend_EvolRadInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_EvolRadInv();
 
 };
 %extend BRepBlend_EvolRadInv {
@@ -857,8 +845,6 @@ class BRepBlend_ChAsym : public Blend_Function {
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ChAsym();
 
 };
 %extend BRepBlend_ChAsym {
@@ -918,8 +904,6 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_AppSurface();
 
 };
 %extend BRepBlend_AppSurface {
@@ -1052,8 +1036,6 @@ class BRepBlend_Chamfer : public Blend_Function {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_Chamfer();
 
 };
 %extend BRepBlend_Chamfer {
@@ -1085,8 +1067,6 @@ class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_CurvPointRadInv();
 
 };
 %extend BRepBlend_CurvPointRadInv {
@@ -1182,8 +1162,6 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_RstRstConstRad();
 
 };
 %extend BRepBlend_RstRstConstRad {
@@ -1263,8 +1241,6 @@ class BRepBlend_Ruled : public Blend_Function {
 		gp_Ax1 AxeRot(const Standard_Real Prm);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_Ruled();
 
 };
 %extend BRepBlend_Ruled {
@@ -1502,8 +1478,6 @@ class BRepBlend_CSConstRad : public Blend_CSFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_CSConstRad();
 
 };
 %extend BRepBlend_CSConstRad {
@@ -1559,8 +1533,6 @@ class BRepBlend_ConstRadInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real R, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ConstRadInv();
 
 };
 %extend BRepBlend_ConstRadInv {
@@ -1590,8 +1562,6 @@ class BRepBlend_RuledInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_RuledInv();
 
 };
 %extend BRepBlend_RuledInv {
@@ -1623,8 +1593,6 @@ class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfPointConstRadInv();
 
 };
 %extend BRepBlend_SurfPointConstRadInv {
@@ -1717,8 +1685,6 @@ class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfPointEvolRadInv();
 
 };
 %extend BRepBlend_SurfPointEvolRadInv {
@@ -1813,8 +1779,6 @@ class BRepBlend_ChAsymInv : public Blend_FuncInv {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_ChAsymInv();
 
 };
 %extend BRepBlend_ChAsymInv {
@@ -1826,8 +1790,6 @@ class BRepBlend_ChAsymInv : public Blend_FuncInv {
 %nodefaultctor BRepBlend_Corde;
 class BRepBlend_Corde {
 	public:
-		%feature("autodoc", "1");
-		~BRepBlend_Corde();
 		%feature("autodoc", "1");
 		BRepBlend_Corde(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &CGuide);
 		%feature("autodoc", "1");
@@ -1915,8 +1877,6 @@ class BRepBlend_AppSurf : public AppBlend_Approx {
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_AppSurf();
 
 };
 %extend BRepBlend_AppSurf {
@@ -2086,8 +2046,6 @@ class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfCurvEvolRadInv();
 
 };
 %extend BRepBlend_SurfCurvEvolRadInv {
@@ -2132,8 +2090,6 @@ class BRepBlend_SequenceOfPointOnRst : public TCollection_BaseSequence {
 		BRepBlend_SequenceOfPointOnRst();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepBlend_SequenceOfPointOnRst();
 		%feature("autodoc", "1");
 		const BRepBlend_SequenceOfPointOnRst & Assign(const BRepBlend_SequenceOfPointOnRst &Other);
 		%feature("autodoc", "1");
@@ -2362,8 +2318,6 @@ class BRepBlend_EvolRad : public Blend_Function {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_EvolRad();
 
 };
 %extend BRepBlend_EvolRad {
@@ -2455,8 +2409,6 @@ class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfRstEvolRad();
 
 };
 %extend BRepBlend_SurfRstEvolRad {
@@ -2488,8 +2440,6 @@ class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		~BRepBlend_SurfCurvConstRadInv();
 
 };
 %extend BRepBlend_SurfCurvConstRadInv {

@@ -122,8 +122,6 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BRepAlgoAPI_BooleanOperation();
-		%feature("autodoc", "1");
 		const TopTools_ListOfShape & SectionEdges();
 
 };
@@ -140,8 +138,6 @@ class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
 		BRepAlgoAPI_Fuse(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Fuse(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		~BRepAlgoAPI_Fuse();
 
 };
 %extend BRepAlgoAPI_Fuse {
@@ -208,8 +204,6 @@ class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
 		BRepAlgoAPI_Cut(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Cut(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF, const Standard_Boolean bFWD=1);
-		%feature("autodoc", "1");
-		virtual		~BRepAlgoAPI_Cut();
 
 };
 %extend BRepAlgoAPI_Cut {
@@ -225,8 +219,6 @@ class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
 		BRepAlgoAPI_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		~BRepAlgoAPI_Common();
 
 };
 %extend BRepAlgoAPI_Common {

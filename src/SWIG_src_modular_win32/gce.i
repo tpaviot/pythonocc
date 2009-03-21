@@ -105,8 +105,6 @@ enum gce_ErrorType {
 class gce_Root {
 	public:
 		%feature("autodoc", "1");
-		~gce_Root();
-		%feature("autodoc", "1");
 		gce_Root();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -123,8 +121,6 @@ class gce_Root {
 %nodefaultctor gce_MakeParab2d;
 class gce_MakeParab2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeParab2d();
 		%feature("autodoc", "1");
 		gce_MakeParab2d(const gp_Ax2d &MirrorAxis, const Standard_Real Focal, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
@@ -150,8 +146,6 @@ class gce_MakeParab2d : public gce_Root {
 %nodefaultctor gce_MakeLin2d;
 class gce_MakeLin2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeLin2d();
 		%feature("autodoc", "1");
 		gce_MakeLin2d(const gp_Ax2d &A);
 		%feature("autodoc", "1");
@@ -180,8 +174,6 @@ class gce_MakeLin2d : public gce_Root {
 class gce_MakeMirror2d {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeMirror2d();
-		%feature("autodoc", "1");
 		gce_MakeMirror2d(const gp_Pnt2d &Point);
 		%feature("autodoc", "1");
 		gce_MakeMirror2d(const gp_Ax2d &Axis);
@@ -205,8 +197,6 @@ class gce_MakeMirror2d {
 class gce_MakeRotation {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeRotation();
-		%feature("autodoc", "1");
 		gce_MakeRotation(const gp_Lin &Line, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		gce_MakeRotation(const gp_Ax1 &Axis, const Standard_Real Angle);
@@ -227,8 +217,6 @@ class gce_MakeRotation {
 %nodefaultctor gce_MakeCirc2d;
 class gce_MakeCirc2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeCirc2d();
 		%feature("autodoc", "1");
 		gce_MakeCirc2d(const gp_Ax2d &XAxis, const Standard_Real Radius, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
@@ -259,8 +247,6 @@ class gce_MakeCirc2d : public gce_Root {
 class gce_MakeHypr2d : public gce_Root {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeHypr2d();
-		%feature("autodoc", "1");
 		gce_MakeHypr2d(const gp_Pnt2d &S1, const gp_Pnt2d &S2, const gp_Pnt2d &Center);
 		%feature("autodoc", "1");
 		gce_MakeHypr2d(const gp_Ax2d &MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense);
@@ -282,8 +268,6 @@ class gce_MakeHypr2d : public gce_Root {
 class gce_MakeParab : public gce_Root {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeParab();
-		%feature("autodoc", "1");
 		gce_MakeParab(const gp_Ax2 &A2, const Standard_Real Focal);
 		%feature("autodoc", "1");
 		gce_MakeParab(const gp_Ax1 &D, const gp_Pnt &F);
@@ -302,8 +286,6 @@ class gce_MakeParab : public gce_Root {
 %nodefaultctor gce_MakeCylinder;
 class gce_MakeCylinder : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeCylinder();
 		%feature("autodoc", "1");
 		gce_MakeCylinder(const gp_Ax2 &A2, const Standard_Real Radius);
 		%feature("autodoc", "1");
@@ -332,8 +314,6 @@ class gce_MakeCylinder : public gce_Root {
 class gce_MakeElips2d : public gce_Root {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeElips2d();
-		%feature("autodoc", "1");
 		gce_MakeElips2d(const gp_Ax2d &MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
 		gce_MakeElips2d(const gp_Ax22d &A, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
@@ -354,8 +334,6 @@ class gce_MakeElips2d : public gce_Root {
 %nodefaultctor gce_MakeCirc;
 class gce_MakeCirc : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeCirc();
 		%feature("autodoc", "1");
 		gce_MakeCirc(const gp_Ax2 &A2, const Standard_Real Radius);
 		%feature("autodoc", "1");
@@ -388,8 +366,6 @@ class gce_MakeCirc : public gce_Root {
 class gce_MakeHypr : public gce_Root {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeHypr();
-		%feature("autodoc", "1");
 		gce_MakeHypr(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 		%feature("autodoc", "1");
 		gce_MakeHypr(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &Center);
@@ -409,8 +385,6 @@ class gce_MakeHypr : public gce_Root {
 class gce_MakeScale {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeScale();
-		%feature("autodoc", "1");
 		gce_MakeScale(const gp_Pnt &Point, const Standard_Real Scale);
 		%feature("autodoc", "1");
 		const gp_Trsf & Value() const;
@@ -427,8 +401,6 @@ class gce_MakeScale {
 %nodefaultctor gce_MakeElips;
 class gce_MakeElips : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeElips();
 		%feature("autodoc", "1");
 		gce_MakeElips(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 		%feature("autodoc", "1");
@@ -448,8 +420,6 @@ class gce_MakeElips : public gce_Root {
 %nodefaultctor gce_MakeDir;
 class gce_MakeDir : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeDir();
 		%feature("autodoc", "1");
 		gce_MakeDir(const gp_Vec &V);
 		%feature("autodoc", "1");
@@ -474,8 +444,6 @@ class gce_MakeDir : public gce_Root {
 class gce_MakeRotation2d {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeRotation2d();
-		%feature("autodoc", "1");
 		gce_MakeRotation2d(const gp_Pnt2d &Point, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		const gp_Trsf2d & Value() const;
@@ -492,8 +460,6 @@ class gce_MakeRotation2d {
 %nodefaultctor gce_MakeTranslation2d;
 class gce_MakeTranslation2d {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeTranslation2d();
 		%feature("autodoc", "1");
 		gce_MakeTranslation2d(const gp_Vec2d &Vect);
 		%feature("autodoc", "1");
@@ -513,8 +479,6 @@ class gce_MakeTranslation2d {
 %nodefaultctor gce_MakeDir2d;
 class gce_MakeDir2d : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeDir2d();
 		%feature("autodoc", "1");
 		gce_MakeDir2d(const gp_Vec2d &V);
 		%feature("autodoc", "1");
@@ -539,8 +503,6 @@ class gce_MakeDir2d : public gce_Root {
 class gce_MakeTranslation {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeTranslation();
-		%feature("autodoc", "1");
 		gce_MakeTranslation(const gp_Vec &Vect);
 		%feature("autodoc", "1");
 		gce_MakeTranslation(const gp_Pnt &Point1, const gp_Pnt &Point2);
@@ -560,8 +522,6 @@ class gce_MakeTranslation {
 class gce_MakeScale2d {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeScale2d();
-		%feature("autodoc", "1");
 		gce_MakeScale2d(const gp_Pnt2d &Point, const Standard_Real Scale);
 		%feature("autodoc", "1");
 		const gp_Trsf2d & Value() const;
@@ -578,8 +538,6 @@ class gce_MakeScale2d {
 %nodefaultctor gce_MakeMirror;
 class gce_MakeMirror {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeMirror();
 		%feature("autodoc", "1");
 		gce_MakeMirror(const gp_Pnt &Point);
 		%feature("autodoc", "1");
@@ -607,8 +565,6 @@ class gce_MakeMirror {
 %nodefaultctor gce_MakePln;
 class gce_MakePln : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakePln();
 		%feature("autodoc", "1");
 		gce_MakePln(const gp_Ax2 &A2);
 		%feature("autodoc", "1");
@@ -641,8 +597,6 @@ class gce_MakePln : public gce_Root {
 class gce_MakeLin : public gce_Root {
 	public:
 		%feature("autodoc", "1");
-		~gce_MakeLin();
-		%feature("autodoc", "1");
 		gce_MakeLin(const gp_Ax1 &A1);
 		%feature("autodoc", "1");
 		gce_MakeLin(const gp_Pnt &P, const gp_Dir &V);
@@ -665,8 +619,6 @@ class gce_MakeLin : public gce_Root {
 %nodefaultctor gce_MakeCone;
 class gce_MakeCone : public gce_Root {
 	public:
-		%feature("autodoc", "1");
-		~gce_MakeCone();
 		%feature("autodoc", "1");
 		gce_MakeCone(const gp_Ax2 &A2, const Standard_Real Ang, const Standard_Real Radius);
 		%feature("autodoc", "1");

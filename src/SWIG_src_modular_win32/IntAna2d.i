@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class IntAna2d_Conic {
 	public:
 		%feature("autodoc", "1");
-		~IntAna2d_Conic();
-		%feature("autodoc", "1");
 		IntAna2d_Conic(const gp_Circ2d &C);
 		%feature("autodoc", "1");
 		IntAna2d_Conic(const gp_Lin2d &C);
@@ -120,8 +118,6 @@ class IntAna2d_Conic {
 %nodefaultctor IntAna2d_AnaIntersection;
 class IntAna2d_AnaIntersection {
 	public:
-		%feature("autodoc", "1");
-		~IntAna2d_AnaIntersection();
 		%feature("autodoc", "1");
 		IntAna2d_AnaIntersection();
 		%feature("autodoc", "1");
@@ -179,8 +175,6 @@ class IntAna2d_AnaIntersection {
 %nodefaultctor IntAna2d_IntPoint;
 class IntAna2d_IntPoint {
 	public:
-		%feature("autodoc", "1");
-		~IntAna2d_IntPoint();
 		%feature("autodoc", "1");
 		IntAna2d_IntPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real U1, const Standard_Real U2);
 		%feature("autodoc", "1");

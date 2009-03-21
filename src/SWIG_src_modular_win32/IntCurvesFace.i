@@ -119,8 +119,6 @@ class IntCurvesFace_Intersector {
 		Bnd_Box Bounding() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntCurvesFace_Intersector();
 
 };
 %extend IntCurvesFace_Intersector {
@@ -164,8 +162,6 @@ class IntCurvesFace_ShapeIntersector {
 		void SortResult();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~IntCurvesFace_ShapeIntersector();
 
 };
 %extend IntCurvesFace_ShapeIntersector {

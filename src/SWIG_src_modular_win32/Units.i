@@ -696,8 +696,6 @@ class Units_Sentence {
 class Units_MathSentence : public Units_Sentence {
 	public:
 		%feature("autodoc", "1");
-		~Units_MathSentence();
-		%feature("autodoc", "1");
 		Units_MathSentence(const char * astring);
 
 };
@@ -1418,8 +1416,6 @@ class Units_UtsSequence : public TCollection_BaseSequence {
 class Units_Explorer {
 	public:
 		%feature("autodoc", "1");
-		~Units_Explorer();
-		%feature("autodoc", "1");
 		Units_Explorer();
 		%feature("autodoc", "1");
 		Units_Explorer(const Handle_Units_UnitsSystem &aunitssystem);
@@ -1567,8 +1563,6 @@ class Units_TokensSequence : public MMgt_TShared {
 %nodefaultctor Units_UnitSentence;
 class Units_UnitSentence : public Units_Sentence {
 	public:
-		%feature("autodoc", "1");
-		~Units_UnitSentence();
 		%feature("autodoc", "1");
 		Units_UnitSentence(const char * astring);
 		%feature("autodoc", "1");

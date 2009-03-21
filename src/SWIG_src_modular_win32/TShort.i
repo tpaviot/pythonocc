@@ -228,8 +228,6 @@ class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TShort_SequenceOfShortReal();
-		%feature("autodoc", "1");
 		const TShort_SequenceOfShortReal & Assign(const TShort_SequenceOfShortReal &Other);
 		%feature("autodoc", "1");
 		void Append(const Standard_ShortReal &T);
@@ -286,8 +284,6 @@ class TShort_Array1OfShortReal {
 		void Init(const Standard_ShortReal &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TShort_Array1OfShortReal();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -459,8 +455,6 @@ class TShort_Array2OfShortReal {
 		void Init(const Standard_ShortReal &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TShort_Array2OfShortReal();
 		%feature("autodoc", "1");
 		const TShort_Array2OfShortReal & Assign(const TShort_Array2OfShortReal &Other);
 		%feature("autodoc", "1");

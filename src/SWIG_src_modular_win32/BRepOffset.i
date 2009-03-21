@@ -246,8 +246,6 @@ class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepOffset_DataMapOfShapeMapOfShape();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TopTools_MapOfShape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -272,8 +270,6 @@ class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
 %nodefaultctor BRepOffset_Analyse;
 class BRepOffset_Analyse {
 	public:
-		%feature("autodoc", "1");
-		~BRepOffset_Analyse();
 		%feature("autodoc", "1");
 		BRepOffset_Analyse();
 		%feature("autodoc", "1");
@@ -316,8 +312,6 @@ class BRepOffset_Analyse {
 class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
 		BRepOffset_DataMapIteratorOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		BRepOffset_DataMapIteratorOfDataMapOfShapeReal(const BRepOffset_DataMapOfShapeReal &aMap);
@@ -338,8 +332,6 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicM
 %nodefaultctor BRepOffset_ListIteratorOfListOfInterval;
 class BRepOffset_ListIteratorOfListOfInterval {
 	public:
-		%feature("autodoc", "1");
-		~BRepOffset_ListIteratorOfListOfInterval();
 		%feature("autodoc", "1");
 		BRepOffset_ListIteratorOfListOfInterval();
 		%feature("autodoc", "1");
@@ -364,8 +356,6 @@ class BRepOffset_ListIteratorOfListOfInterval {
 class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepOffset_DataMapIteratorOfDataMapOfShapeOffset();
-		%feature("autodoc", "1");
 		BRepOffset_DataMapIteratorOfDataMapOfShapeOffset();
 		%feature("autodoc", "1");
 		BRepOffset_DataMapIteratorOfDataMapOfShapeOffset(const BRepOffset_DataMapOfShapeOffset &aMap);
@@ -386,8 +376,6 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_Basi
 %nodefaultctor BRepOffset_MakeOffset;
 class BRepOffset_MakeOffset {
 	public:
-		%feature("autodoc", "1");
-		~BRepOffset_MakeOffset();
 		%feature("autodoc", "1");
 		BRepOffset_MakeOffset();
 		%feature("autodoc", "1");
@@ -438,8 +426,6 @@ class BRepOffset_ListOfInterval {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepOffset_ListOfInterval();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BRepOffset_Interval &I);
@@ -489,8 +475,6 @@ class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepOffset_DataMapOfShapeReal();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Real &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -538,8 +522,6 @@ class BRepOffset_DataMapOfShapeListOfInterval : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepOffset_DataMapOfShapeListOfInterval();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepOffset_ListOfInterval &I);
 		%feature("autodoc", "1");
@@ -614,8 +596,6 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 class BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval();
-		%feature("autodoc", "1");
 		BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval();
 		%feature("autodoc", "1");
 		BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval(const BRepOffset_DataMapOfShapeListOfInterval &aMap);
@@ -636,8 +616,6 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval : public TCollect
 %nodefaultctor BRepOffset_Interval;
 class BRepOffset_Interval {
 	public:
-		%feature("autodoc", "1");
-		~BRepOffset_Interval();
 		%feature("autodoc", "1");
 		BRepOffset_Interval();
 		%feature("autodoc", "1");
@@ -696,8 +674,6 @@ class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepOffset_DataMapOfShapeOffset();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepOffset_Offset &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -723,8 +699,6 @@ class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
 class BRepOffset_MakeLoops {
 	public:
 		%feature("autodoc", "1");
-		~BRepOffset_MakeLoops();
-		%feature("autodoc", "1");
 		BRepOffset_MakeLoops();
 		%feature("autodoc", "1");
 		void Build(const TopTools_ListOfShape &LF, const Handle_BRepAlgo_AsDes &AsDes, BRepAlgo_Image & Image);
@@ -743,8 +717,6 @@ class BRepOffset_MakeLoops {
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape();
 		%feature("autodoc", "1");
 		BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape();
 		%feature("autodoc", "1");
@@ -790,8 +762,6 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode 
 %nodefaultctor BRepOffset_Tool;
 class BRepOffset_Tool {
 	public:
-		%feature("autodoc", "1");
-		~BRepOffset_Tool();
 		%feature("autodoc", "1");
 		BRepOffset_Tool();
 		%feature("autodoc", "1");
@@ -839,8 +809,6 @@ class BRepOffset_Tool {
 %nodefaultctor BRepOffset_Offset;
 class BRepOffset_Offset {
 	public:
-		%feature("autodoc", "1");
-		~BRepOffset_Offset();
 		%feature("autodoc", "1");
 		BRepOffset_Offset();
 		%feature("autodoc", "1");
@@ -908,8 +876,6 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapN
 %nodefaultctor BRepOffset_Inter2d;
 class BRepOffset_Inter2d {
 	public:
-		%feature("autodoc", "1");
-		~BRepOffset_Inter2d();
 		%feature("autodoc", "1");
 		BRepOffset_Inter2d();
 		%feature("autodoc", "1");

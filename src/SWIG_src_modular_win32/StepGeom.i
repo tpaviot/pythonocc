@@ -2417,8 +2417,6 @@ class StepGeom_Array1OfSurfaceBoundary {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepGeom_Array1OfSurfaceBoundary();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepGeom_Array1OfSurfaceBoundary & Assign(const StepGeom_Array1OfSurfaceBoundary &Other);
@@ -3242,8 +3240,6 @@ class StepGeom_Array1OfTrimmingSelect {
 		void Init(const StepGeom_TrimmingSelect &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepGeom_Array1OfTrimmingSelect();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -5886,8 +5882,6 @@ class StepGeom_Array1OfPcurveOrSurface {
 		void Init(const StepGeom_PcurveOrSurface &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepGeom_Array1OfPcurveOrSurface();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");

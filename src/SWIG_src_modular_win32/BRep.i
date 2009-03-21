@@ -1133,8 +1133,6 @@ class BRep_PolygonOnClosedTriangulation : public BRep_PolygonOnTriangulation {
 class BRep_Builder : public TopoDS_Builder3D {
 	public:
 		%feature("autodoc", "1");
-		~BRep_Builder();
-		%feature("autodoc", "1");
 		BRep_Builder();
 		%feature("autodoc", "1");
 		void MakeFace(TopoDS_Face & F) const;

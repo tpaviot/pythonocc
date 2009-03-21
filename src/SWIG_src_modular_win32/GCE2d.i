@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class GCE2d_Root {
 	public:
 		%feature("autodoc", "1");
-		~GCE2d_Root();
-		%feature("autodoc", "1");
 		GCE2d_Root();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;

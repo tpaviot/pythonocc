@@ -840,8 +840,6 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_Arra
 class PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_VArrayTNodeOfFieldOfHArray1OfReal();
-		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray1OfReal();
 		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray1OfReal(const Standard_Real &aValue);
@@ -919,8 +917,6 @@ class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
 class PColStd_SeqExplorerOfHSequenceOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_SeqExplorerOfHSequenceOfInteger();
-		%feature("autodoc", "1");
 		PColStd_SeqExplorerOfHSequenceOfInteger(const Handle_PColStd_HSequenceOfInteger &S);
 		%feature("autodoc", "1");
 		Standard_Integer Value(const Standard_Integer Index);
@@ -941,8 +937,6 @@ class PColStd_SeqExplorerOfHSequenceOfInteger {
 %nodefaultctor PColStd_HOfExtendedString;
 class PColStd_HOfExtendedString {
 	public:
-		%feature("autodoc", "1");
-		~PColStd_HOfExtendedString();
 		%feature("autodoc", "1");
 		PColStd_HOfExtendedString();
 		%feature("autodoc", "1");
@@ -978,8 +972,6 @@ class PColStd_FieldOfHArray2OfInteger : public DBC_BaseArray {
 		Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColStd_FieldOfHArray2OfInteger();
 
 };
 %extend PColStd_FieldOfHArray2OfInteger {
@@ -1021,8 +1013,6 @@ class PColStd_FieldOfHArray1OfExtendedString : public DBC_BaseArray {
 class PColStd_HOfReal {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_HOfReal();
-		%feature("autodoc", "1");
 		PColStd_HOfReal();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Real &MyKey, const Standard_Integer Upper) const;
@@ -1039,8 +1029,6 @@ class PColStd_HOfReal {
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfInteger;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
 	public:
-		%feature("autodoc", "1");
-		~PColStd_VArrayTNodeOfFieldOfHArray2OfInteger();
 		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray2OfInteger();
 		%feature("autodoc", "1");
@@ -1060,8 +1048,6 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
 	public:
-		%feature("autodoc", "1");
-		~PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent();
 		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent();
 		%feature("autodoc", "1");
@@ -1099,8 +1085,6 @@ class PColStd_FieldOfHArray2OfReal : public DBC_BaseArray {
 		Standard_Real & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColStd_FieldOfHArray2OfReal();
 
 };
 %extend PColStd_FieldOfHArray2OfReal {
@@ -1341,8 +1325,6 @@ class PColStd_SeqNodeOfHSequenceOfReal : public PMMgt_PManaged {
 class PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_VArrayTNodeOfFieldOfHArray1OfInteger();
-		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray1OfInteger();
 		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray1OfInteger(const Standard_Integer &aValue);
@@ -1562,8 +1544,6 @@ class PColStd_HSequenceOfHExtendedString : public Standard_Persistent {
 class PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent();
-		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent();
 		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent(const Handle_Standard_Persistent &aValue);
@@ -1729,8 +1709,6 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public PStandard_ArrayNod
 class PColStd_SeqExplorerOfHSequenceOfReal {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_SeqExplorerOfHSequenceOfReal();
-		%feature("autodoc", "1");
 		PColStd_SeqExplorerOfHSequenceOfReal(const Handle_PColStd_HSequenceOfReal &S);
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Integer Index);
@@ -1751,8 +1729,6 @@ class PColStd_SeqExplorerOfHSequenceOfReal {
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfReal;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
 	public:
-		%feature("autodoc", "1");
-		~PColStd_VArrayTNodeOfFieldOfHArray2OfReal();
 		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray2OfReal();
 		%feature("autodoc", "1");
@@ -1874,8 +1850,6 @@ class PColStd_SeqNodeOfHSequenceOfInteger : public PMMgt_PManaged {
 %nodefaultctor PColStd_HOfInteger;
 class PColStd_HOfInteger {
 	public:
-		%feature("autodoc", "1");
-		~PColStd_HOfInteger();
 		%feature("autodoc", "1");
 		PColStd_HOfInteger();
 		%feature("autodoc", "1");
@@ -2300,8 +2274,6 @@ class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
 		Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColStd_FieldOfHArray1OfInteger();
 
 };
 %extend PColStd_FieldOfHArray1OfInteger {
@@ -2352,8 +2324,6 @@ class PColStd_FieldOfHArray1OfReal : public DBC_BaseArray {
 		Standard_Real & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~PColStd_FieldOfHArray1OfReal();
 
 };
 %extend PColStd_FieldOfHArray1OfReal {
@@ -2504,8 +2474,6 @@ class PColStd_HSequenceOfPersistent : public Standard_Persistent {
 class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString();
-		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString();
 		%feature("autodoc", "1");
 		PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString(const Handle_PCollection_HExtendedString &aValue);
@@ -2575,8 +2543,6 @@ class PColStd_HArray1OfPersistent : public Standard_Persistent {
 class PColStd_HOfAsciiString {
 	public:
 		%feature("autodoc", "1");
-		~PColStd_HOfAsciiString();
-		%feature("autodoc", "1");
 		PColStd_HOfAsciiString();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Handle_PCollection_HAsciiString &MyKey, const Standard_Integer Upper) const;
@@ -2593,8 +2559,6 @@ class PColStd_HOfAsciiString {
 %nodefaultctor PColStd_HashAsciiString;
 class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
 	public:
-		%feature("autodoc", "1");
-		~PColStd_HashAsciiString();
 		%feature("autodoc", "1");
 		PColStd_HashAsciiString();
 
@@ -2897,8 +2861,6 @@ class PColStd_HArray2OfReal : public Standard_Persistent {
 %nodefaultctor PColStd_HashExtendedString;
 class PColStd_HashExtendedString : public PColStd_HOfExtendedString {
 	public:
-		%feature("autodoc", "1");
-		~PColStd_HashExtendedString();
 		%feature("autodoc", "1");
 		PColStd_HashExtendedString();
 		%feature("autodoc", "1");

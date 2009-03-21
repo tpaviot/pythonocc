@@ -448,8 +448,6 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public TCollection_Ma
 class MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d();
-		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d();
 		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d(const MAT2d_DataMapOfIntegerVec2d &aMap);
@@ -495,8 +493,6 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
 class MAT2d_BiInt {
 	public:
 		%feature("autodoc", "1");
-		~MAT2d_BiInt();
-		%feature("autodoc", "1");
 		MAT2d_BiInt(const Standard_Integer I1, const Standard_Integer I2);
 		%feature("autodoc", "1");
 		Standard_Integer FirstIndex() const;
@@ -519,8 +515,6 @@ class MAT2d_BiInt {
 %nodefaultctor MAT2d_MapBiIntHasher;
 class MAT2d_MapBiIntHasher {
 	public:
-		%feature("autodoc", "1");
-		~MAT2d_MapBiIntHasher();
 		%feature("autodoc", "1");
 		MAT2d_MapBiIntHasher();
 		%feature("autodoc", "1");
@@ -564,8 +558,6 @@ class MAT2d_SequenceOfSequenceOfGeometry : public TCollection_BaseSequence {
 		MAT2d_SequenceOfSequenceOfGeometry();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_SequenceOfSequenceOfGeometry();
 		%feature("autodoc", "1");
 		const MAT2d_SequenceOfSequenceOfGeometry & Assign(const MAT2d_SequenceOfSequenceOfGeometry &Other);
 		%feature("autodoc", "1");
@@ -638,8 +630,6 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqN
 class MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion();
-		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion();
 		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion(const MAT2d_DataMapOfIntegerSequenceOfConnexion &aMap);
@@ -702,8 +692,6 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_DataMapOfIntegerVec2d();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const gp_Vec2d &I);
 		%feature("autodoc", "1");
@@ -810,8 +798,6 @@ class MAT2d_SequenceOfSequenceOfCurve : public TCollection_BaseSequence {
 		MAT2d_SequenceOfSequenceOfCurve();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_SequenceOfSequenceOfCurve();
 		%feature("autodoc", "1");
 		const MAT2d_SequenceOfSequenceOfCurve & Assign(const MAT2d_SequenceOfSequenceOfCurve &Other);
 		%feature("autodoc", "1");
@@ -937,8 +923,6 @@ class MAT2d_DataMapOfIntegerPnt2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MAT2d_DataMapOfIntegerPnt2d();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const gp_Pnt2d &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -971,8 +955,6 @@ class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_DataMapOfBiIntSequenceOfInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const MAT2d_BiInt &K, const TColStd_SequenceOfInteger &I);
 		%feature("autodoc", "1");
@@ -1023,8 +1005,6 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d();
-		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d();
 		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d(const MAT2d_DataMapOfIntegerPnt2d &aMap);
@@ -1053,8 +1033,6 @@ class MAT2d_DataMapOfBiIntInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_DataMapOfBiIntInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const MAT2d_BiInt &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
@@ -1220,8 +1198,6 @@ class MAT2d_DataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MAT2d_DataMapOfIntegerSequenceOfConnexion();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const MAT2d_SequenceOfConnexion &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1254,8 +1230,6 @@ class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_DataMapOfIntegerBisec();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Bisector_Bisec &I);
 		%feature("autodoc", "1");
@@ -1315,8 +1289,6 @@ class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
 class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~MAT2d_DataMapIteratorOfDataMapOfBiIntInteger();
-		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfBiIntInteger();
 		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfBiIntInteger(const MAT2d_DataMapOfBiIntInteger &aMap);
@@ -1337,8 +1309,6 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMap
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger;
 class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger();
 		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger();
 		%feature("autodoc", "1");
@@ -1364,8 +1334,6 @@ class MAT2d_SequenceOfBoolean : public TCollection_BaseSequence {
 		MAT2d_SequenceOfBoolean();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MAT2d_SequenceOfBoolean();
 		%feature("autodoc", "1");
 		const MAT2d_SequenceOfBoolean & Assign(const MAT2d_SequenceOfBoolean &Other);
 		%feature("autodoc", "1");
@@ -1415,8 +1383,6 @@ class MAT2d_SequenceOfBoolean : public TCollection_BaseSequence {
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerBisec;
 class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~MAT2d_DataMapIteratorOfDataMapOfIntegerBisec();
 		%feature("autodoc", "1");
 		MAT2d_DataMapIteratorOfDataMapOfIntegerBisec();
 		%feature("autodoc", "1");

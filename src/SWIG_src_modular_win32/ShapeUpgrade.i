@@ -956,8 +956,6 @@ class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 		void SetPCurveCriterion(const GeomAbs_Shape Criterion=GeomAbs_C1);
 		%feature("autodoc", "1");
 		void SetSurfaceCriterion(const GeomAbs_Shape Criterion=GeomAbs_C1);
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideContinuity();
 
 };
 %extend ShapeUpgrade_ShapeDivideContinuity {
@@ -1062,8 +1060,6 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 class ShapeUpgrade {
 	public:
 		%feature("autodoc", "1");
-		~ShapeUpgrade();
-		%feature("autodoc", "1");
 		ShapeUpgrade();
 		%feature("autodoc", "1");
 		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom_BSplineCurve &BS, Handle_TColGeom_HSequenceOfBoundedCurve & seqBS);
@@ -1080,8 +1076,6 @@ class ShapeUpgrade {
 %nodefaultctor ShapeUpgrade_ShellSewing;
 class ShapeUpgrade_ShellSewing {
 	public:
-		%feature("autodoc", "1");
-		~ShapeUpgrade_ShellSewing();
 		%feature("autodoc", "1");
 		ShapeUpgrade_ShellSewing();
 		%feature("autodoc", "1");
@@ -1187,8 +1181,6 @@ class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
 		ShapeUpgrade_ShapeDivideClosedEdges(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		void SetNbSplitPoints(const Standard_Integer num);
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideClosedEdges();
 
 };
 %extend ShapeUpgrade_ShapeDivideClosedEdges {
@@ -1348,8 +1340,6 @@ class ShapeUpgrade_ShapeConvertToBezier : public ShapeUpgrade_ShapeDivide {
 		Standard_Boolean GetBSplineMode() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Perform(const Standard_Boolean newContext=1);
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeConvertToBezier();
 
 };
 %extend ShapeUpgrade_ShapeConvertToBezier {
@@ -1455,8 +1445,6 @@ class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 		void SetMaxAngle(const Standard_Real MaxAngle);
 		%feature("autodoc", "1");
 		Standard_Real MaxAngle() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideAngle();
 
 };
 %extend ShapeUpgrade_ShapeDivideAngle {
@@ -1542,8 +1530,6 @@ class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 		ShapeUpgrade_ShapeDivideArea(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		Standard_Real & MaxArea();
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideArea();
 
 };
 %extend ShapeUpgrade_ShapeDivideArea {
@@ -1559,8 +1545,6 @@ class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 		ShapeUpgrade_ShapeDivideClosed(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		void SetNbSplitPoints(const Standard_Integer num);
-		%feature("autodoc", "1");
-		virtual		~ShapeUpgrade_ShapeDivideClosed();
 
 };
 %extend ShapeUpgrade_ShapeDivideClosed {

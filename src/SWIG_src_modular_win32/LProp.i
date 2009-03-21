@@ -199,8 +199,6 @@ class LProp_SequenceOfCIType : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~LProp_SequenceOfCIType();
-		%feature("autodoc", "1");
 		const LProp_SequenceOfCIType & Assign(const LProp_SequenceOfCIType &Other);
 		%feature("autodoc", "1");
 		void Append(const LProp_CIType &T);
@@ -250,8 +248,6 @@ class LProp_SequenceOfCIType : public TCollection_BaseSequence {
 class LProp_AnalyticCurInf {
 	public:
 		%feature("autodoc", "1");
-		~LProp_AnalyticCurInf();
-		%feature("autodoc", "1");
 		LProp_AnalyticCurInf();
 		%feature("autodoc", "1");
 		void Perform(const GeomAbs_CurveType T, const Standard_Real UFirst, const Standard_Real ULast, LProp_CurAndInf & Result);
@@ -266,8 +262,6 @@ class LProp_AnalyticCurInf {
 %nodefaultctor LProp_CurAndInf;
 class LProp_CurAndInf {
 	public:
-		%feature("autodoc", "1");
-		~LProp_CurAndInf();
 		%feature("autodoc", "1");
 		LProp_CurAndInf();
 		%feature("autodoc", "1");

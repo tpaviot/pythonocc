@@ -184,8 +184,6 @@ class TColQuantity_Array1OfLength {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColQuantity_Array1OfLength();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColQuantity_Array1OfLength & Assign(const TColQuantity_Array1OfLength &Other);
@@ -270,8 +268,6 @@ class TColQuantity_Array2OfLength {
 		void Init(const Quantity_Length &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColQuantity_Array2OfLength();
 		%feature("autodoc", "1");
 		const TColQuantity_Array2OfLength & Assign(const TColQuantity_Array2OfLength &Other);
 		%feature("autodoc", "1");

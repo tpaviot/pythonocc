@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepShape_RWFacetedBrep {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWFacetedBrep();
-		%feature("autodoc", "1");
 		RWStepShape_RWFacetedBrep();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_FacetedBrep &ent) const;
@@ -108,8 +106,6 @@ class RWStepShape_RWFacetedBrep {
 %nodefaultctor RWStepShape_RWAngularSize;
 class RWStepShape_RWAngularSize {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWAngularSize();
 		%feature("autodoc", "1");
 		RWStepShape_RWAngularSize();
 		%feature("autodoc", "1");
@@ -130,8 +126,6 @@ class RWStepShape_RWAngularSize {
 class RWStepShape_RWVertexPoint {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWVertexPoint();
-		%feature("autodoc", "1");
 		RWStepShape_RWVertexPoint();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_VertexPoint &ent) const;
@@ -150,8 +144,6 @@ class RWStepShape_RWVertexPoint {
 %nodefaultctor RWStepShape_RWPath;
 class RWStepShape_RWPath {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWPath();
 		%feature("autodoc", "1");
 		RWStepShape_RWPath();
 		%feature("autodoc", "1");
@@ -172,8 +164,6 @@ class RWStepShape_RWPath {
 class RWStepShape_RWDimensionalSizeWithPath {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalSizeWithPath();
-		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalSizeWithPath();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_DimensionalSizeWithPath &ent) const;
@@ -192,8 +182,6 @@ class RWStepShape_RWDimensionalSizeWithPath {
 %nodefaultctor RWStepShape_RWConnectedFaceSet;
 class RWStepShape_RWConnectedFaceSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWConnectedFaceSet();
 		%feature("autodoc", "1");
 		RWStepShape_RWConnectedFaceSet();
 		%feature("autodoc", "1");
@@ -214,8 +202,6 @@ class RWStepShape_RWConnectedFaceSet {
 class RWStepShape_RWTransitionalShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWTransitionalShapeRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWTransitionalShapeRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_TransitionalShapeRepresentation &ent) const;
@@ -234,8 +220,6 @@ class RWStepShape_RWTransitionalShapeRepresentation {
 %nodefaultctor RWStepShape_RWBoxedHalfSpace;
 class RWStepShape_RWBoxedHalfSpace {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWBoxedHalfSpace();
 		%feature("autodoc", "1");
 		RWStepShape_RWBoxedHalfSpace();
 		%feature("autodoc", "1");
@@ -256,8 +240,6 @@ class RWStepShape_RWBoxedHalfSpace {
 class RWStepShape_RWSolidReplica {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWSolidReplica();
-		%feature("autodoc", "1");
 		RWStepShape_RWSolidReplica();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SolidReplica &ent) const;
@@ -276,8 +258,6 @@ class RWStepShape_RWSolidReplica {
 %nodefaultctor RWStepShape_RWDimensionalCharacteristicRepresentation;
 class RWStepShape_RWDimensionalCharacteristicRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalCharacteristicRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalCharacteristicRepresentation();
 		%feature("autodoc", "1");
@@ -298,8 +278,6 @@ class RWStepShape_RWDimensionalCharacteristicRepresentation {
 class RWStepShape_RWPolyLoop {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWPolyLoop();
-		%feature("autodoc", "1");
 		RWStepShape_RWPolyLoop();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_PolyLoop &ent) const;
@@ -318,8 +296,6 @@ class RWStepShape_RWPolyLoop {
 %nodefaultctor RWStepShape_RWManifoldSolidBrep;
 class RWStepShape_RWManifoldSolidBrep {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWManifoldSolidBrep();
 		%feature("autodoc", "1");
 		RWStepShape_RWManifoldSolidBrep();
 		%feature("autodoc", "1");
@@ -340,8 +316,6 @@ class RWStepShape_RWManifoldSolidBrep {
 class RWStepShape_RWRevolvedFaceSolid {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWRevolvedFaceSolid();
-		%feature("autodoc", "1");
 		RWStepShape_RWRevolvedFaceSolid();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_RevolvedFaceSolid &ent) const;
@@ -360,8 +334,6 @@ class RWStepShape_RWRevolvedFaceSolid {
 %nodefaultctor RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation;
 class RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation();
 		%feature("autodoc", "1");
@@ -382,8 +354,6 @@ class RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
 class RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWEdgeBasedWireframeShapeRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWEdgeBasedWireframeShapeRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_EdgeBasedWireframeShapeRepresentation &ent) const;
@@ -402,8 +372,6 @@ class RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
 %nodefaultctor RWStepShape_RWGeometricSet;
 class RWStepShape_RWGeometricSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWGeometricSet();
 		%feature("autodoc", "1");
 		RWStepShape_RWGeometricSet();
 		%feature("autodoc", "1");
@@ -424,8 +392,6 @@ class RWStepShape_RWGeometricSet {
 class RWStepShape_RWLoop {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWLoop();
-		%feature("autodoc", "1");
 		RWStepShape_RWLoop();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Loop &ent) const;
@@ -442,8 +408,6 @@ class RWStepShape_RWLoop {
 %nodefaultctor RWStepShape_RWEdgeBasedWireframeModel;
 class RWStepShape_RWEdgeBasedWireframeModel {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWEdgeBasedWireframeModel();
 		%feature("autodoc", "1");
 		RWStepShape_RWEdgeBasedWireframeModel();
 		%feature("autodoc", "1");
@@ -464,8 +428,6 @@ class RWStepShape_RWEdgeBasedWireframeModel {
 class RWStepShape_RWGeometricCurveSet {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWGeometricCurveSet();
-		%feature("autodoc", "1");
 		RWStepShape_RWGeometricCurveSet();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_GeometricCurveSet &ent) const;
@@ -484,8 +446,6 @@ class RWStepShape_RWGeometricCurveSet {
 %nodefaultctor RWStepShape_RWExtrudedAreaSolid;
 class RWStepShape_RWExtrudedAreaSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWExtrudedAreaSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWExtrudedAreaSolid();
 		%feature("autodoc", "1");
@@ -506,8 +466,6 @@ class RWStepShape_RWExtrudedAreaSolid {
 class RWStepShape_RWSweptFaceSolid {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWSweptFaceSolid();
-		%feature("autodoc", "1");
 		RWStepShape_RWSweptFaceSolid();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SweptFaceSolid &ent) const;
@@ -526,8 +484,6 @@ class RWStepShape_RWSweptFaceSolid {
 %nodefaultctor RWStepShape_RWSubedge;
 class RWStepShape_RWSubedge {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSubedge();
 		%feature("autodoc", "1");
 		RWStepShape_RWSubedge();
 		%feature("autodoc", "1");
@@ -548,8 +504,6 @@ class RWStepShape_RWSubedge {
 class RWStepShape_RWMeasureQualification {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWMeasureQualification();
-		%feature("autodoc", "1");
 		RWStepShape_RWMeasureQualification();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_MeasureQualification &ent) const;
@@ -568,8 +522,6 @@ class RWStepShape_RWMeasureQualification {
 %nodefaultctor RWStepShape_RWBlock;
 class RWStepShape_RWBlock {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWBlock();
 		%feature("autodoc", "1");
 		RWStepShape_RWBlock();
 		%feature("autodoc", "1");
@@ -590,8 +542,6 @@ class RWStepShape_RWBlock {
 class RWStepShape_RWAdvancedBrepShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWAdvancedBrepShapeRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWAdvancedBrepShapeRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_AdvancedBrepShapeRepresentation &ent) const;
@@ -610,8 +560,6 @@ class RWStepShape_RWAdvancedBrepShapeRepresentation {
 %nodefaultctor RWStepShape_RWShellBasedSurfaceModel;
 class RWStepShape_RWShellBasedSurfaceModel {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWShellBasedSurfaceModel();
 		%feature("autodoc", "1");
 		RWStepShape_RWShellBasedSurfaceModel();
 		%feature("autodoc", "1");
@@ -632,8 +580,6 @@ class RWStepShape_RWShellBasedSurfaceModel {
 class RWStepShape_RWShapeDimensionRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWShapeDimensionRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWShapeDimensionRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ShapeDimensionRepresentation &ent) const;
@@ -652,8 +598,6 @@ class RWStepShape_RWShapeDimensionRepresentation {
 %nodefaultctor RWStepShape_RWToleranceValue;
 class RWStepShape_RWToleranceValue {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWToleranceValue();
 		%feature("autodoc", "1");
 		RWStepShape_RWToleranceValue();
 		%feature("autodoc", "1");
@@ -674,8 +618,6 @@ class RWStepShape_RWToleranceValue {
 class RWStepShape_RWPointRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWPointRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWPointRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_PointRepresentation &ent) const;
@@ -694,8 +636,6 @@ class RWStepShape_RWPointRepresentation {
 %nodefaultctor RWStepShape_RWContextDependentShapeRepresentation;
 class RWStepShape_RWContextDependentShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWContextDependentShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWContextDependentShapeRepresentation();
 		%feature("autodoc", "1");
@@ -716,8 +656,6 @@ class RWStepShape_RWContextDependentShapeRepresentation {
 class RWStepShape_RWFace {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWFace();
-		%feature("autodoc", "1");
 		RWStepShape_RWFace();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Face &ent) const;
@@ -736,8 +674,6 @@ class RWStepShape_RWFace {
 %nodefaultctor RWStepShape_RWOrientedClosedShell;
 class RWStepShape_RWOrientedClosedShell {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedClosedShell();
 		%feature("autodoc", "1");
 		RWStepShape_RWOrientedClosedShell();
 		%feature("autodoc", "1");
@@ -758,8 +694,6 @@ class RWStepShape_RWOrientedClosedShell {
 class RWStepShape_RWCsgSolid {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWCsgSolid();
-		%feature("autodoc", "1");
 		RWStepShape_RWCsgSolid();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_CsgSolid &ent) const;
@@ -778,8 +712,6 @@ class RWStepShape_RWCsgSolid {
 %nodefaultctor RWStepShape_RWConnectedFaceSubSet;
 class RWStepShape_RWConnectedFaceSubSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWConnectedFaceSubSet();
 		%feature("autodoc", "1");
 		RWStepShape_RWConnectedFaceSubSet();
 		%feature("autodoc", "1");
@@ -800,8 +732,6 @@ class RWStepShape_RWConnectedFaceSubSet {
 class RWStepShape_RWCompoundShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWCompoundShapeRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWCompoundShapeRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_CompoundShapeRepresentation &ent) const;
@@ -820,8 +750,6 @@ class RWStepShape_RWCompoundShapeRepresentation {
 %nodefaultctor RWStepShape_RWFacetedBrepAndBrepWithVoids;
 class RWStepShape_RWFacetedBrepAndBrepWithVoids {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFacetedBrepAndBrepWithVoids();
 		%feature("autodoc", "1");
 		RWStepShape_RWFacetedBrepAndBrepWithVoids();
 		%feature("autodoc", "1");
@@ -842,8 +770,6 @@ class RWStepShape_RWFacetedBrepAndBrepWithVoids {
 class RWStepShape_RWOrientedEdge {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedEdge();
-		%feature("autodoc", "1");
 		RWStepShape_RWOrientedEdge();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_OrientedEdge &ent) const;
@@ -862,8 +788,6 @@ class RWStepShape_RWOrientedEdge {
 %nodefaultctor RWStepShape_RWSweptAreaSolid;
 class RWStepShape_RWSweptAreaSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSweptAreaSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWSweptAreaSolid();
 		%feature("autodoc", "1");
@@ -884,8 +808,6 @@ class RWStepShape_RWSweptAreaSolid {
 class RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem();
-		%feature("autodoc", "1");
 		RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem &ent) const;
@@ -904,8 +826,6 @@ class RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
 %nodefaultctor RWStepShape_RWPlusMinusTolerance;
 class RWStepShape_RWPlusMinusTolerance {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWPlusMinusTolerance();
 		%feature("autodoc", "1");
 		RWStepShape_RWPlusMinusTolerance();
 		%feature("autodoc", "1");
@@ -926,8 +846,6 @@ class RWStepShape_RWPlusMinusTolerance {
 class RWStepShape_RWClosedShell {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWClosedShell();
-		%feature("autodoc", "1");
 		RWStepShape_RWClosedShell();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ClosedShell &ent) const;
@@ -946,8 +864,6 @@ class RWStepShape_RWClosedShell {
 %nodefaultctor RWStepShape_RWConnectedEdgeSet;
 class RWStepShape_RWConnectedEdgeSet {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWConnectedEdgeSet();
 		%feature("autodoc", "1");
 		RWStepShape_RWConnectedEdgeSet();
 		%feature("autodoc", "1");
@@ -968,8 +884,6 @@ class RWStepShape_RWConnectedEdgeSet {
 class RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWNonManifoldSurfaceShapeRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWNonManifoldSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_NonManifoldSurfaceShapeRepresentation &ent) const;
@@ -988,8 +902,6 @@ class RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
 %nodefaultctor RWStepShape_RWFaceBasedSurfaceModel;
 class RWStepShape_RWFaceBasedSurfaceModel {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFaceBasedSurfaceModel();
 		%feature("autodoc", "1");
 		RWStepShape_RWFaceBasedSurfaceModel();
 		%feature("autodoc", "1");
@@ -1010,8 +922,6 @@ class RWStepShape_RWFaceBasedSurfaceModel {
 class RWStepShape_RWQualifiedRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWQualifiedRepresentationItem();
-		%feature("autodoc", "1");
 		RWStepShape_RWQualifiedRepresentationItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_QualifiedRepresentationItem &ent) const;
@@ -1030,8 +940,6 @@ class RWStepShape_RWQualifiedRepresentationItem {
 %nodefaultctor RWStepShape_RWOpenShell;
 class RWStepShape_RWOpenShell {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOpenShell();
 		%feature("autodoc", "1");
 		RWStepShape_RWOpenShell();
 		%feature("autodoc", "1");
@@ -1052,8 +960,6 @@ class RWStepShape_RWOpenShell {
 class RWStepShape_RWVertexLoop {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWVertexLoop();
-		%feature("autodoc", "1");
 		RWStepShape_RWVertexLoop();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_VertexLoop &ent) const;
@@ -1072,8 +978,6 @@ class RWStepShape_RWVertexLoop {
 %nodefaultctor RWStepShape_RWFaceSurface;
 class RWStepShape_RWFaceSurface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFaceSurface();
 		%feature("autodoc", "1");
 		RWStepShape_RWFaceSurface();
 		%feature("autodoc", "1");
@@ -1094,8 +998,6 @@ class RWStepShape_RWFaceSurface {
 class RWStepShape_RWConnectedFaceShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWConnectedFaceShapeRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWConnectedFaceShapeRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ConnectedFaceShapeRepresentation &ent) const;
@@ -1115,8 +1017,6 @@ class RWStepShape_RWConnectedFaceShapeRepresentation {
 class RWStepShape_RWVertex {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWVertex();
-		%feature("autodoc", "1");
 		RWStepShape_RWVertex();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Vertex &ent) const;
@@ -1133,8 +1033,6 @@ class RWStepShape_RWVertex {
 %nodefaultctor RWStepShape_RWSphere;
 class RWStepShape_RWSphere {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSphere();
 		%feature("autodoc", "1");
 		RWStepShape_RWSphere();
 		%feature("autodoc", "1");
@@ -1155,8 +1053,6 @@ class RWStepShape_RWSphere {
 class RWStepShape_RWExtrudedFaceSolid {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWExtrudedFaceSolid();
-		%feature("autodoc", "1");
 		RWStepShape_RWExtrudedFaceSolid();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ExtrudedFaceSolid &ent) const;
@@ -1175,8 +1071,6 @@ class RWStepShape_RWExtrudedFaceSolid {
 %nodefaultctor RWStepShape_RWCsgShapeRepresentation;
 class RWStepShape_RWCsgShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWCsgShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWCsgShapeRepresentation();
 		%feature("autodoc", "1");
@@ -1197,8 +1091,6 @@ class RWStepShape_RWCsgShapeRepresentation {
 class RWStepShape_RWAngularLocation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWAngularLocation();
-		%feature("autodoc", "1");
 		RWStepShape_RWAngularLocation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_AngularLocation &ent) const;
@@ -1217,8 +1109,6 @@ class RWStepShape_RWAngularLocation {
 %nodefaultctor RWStepShape_RWOrientedPath;
 class RWStepShape_RWOrientedPath {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedPath();
 		%feature("autodoc", "1");
 		RWStepShape_RWOrientedPath();
 		%feature("autodoc", "1");
@@ -1239,8 +1129,6 @@ class RWStepShape_RWOrientedPath {
 class RWStepShape_RWLoopAndPath {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWLoopAndPath();
-		%feature("autodoc", "1");
 		RWStepShape_RWLoopAndPath();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_LoopAndPath &ent) const;
@@ -1259,8 +1147,6 @@ class RWStepShape_RWLoopAndPath {
 %nodefaultctor RWStepShape_RWShapeDefinitionRepresentation;
 class RWStepShape_RWShapeDefinitionRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWShapeDefinitionRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWShapeDefinitionRepresentation();
 		%feature("autodoc", "1");
@@ -1281,8 +1167,6 @@ class RWStepShape_RWShapeDefinitionRepresentation {
 class RWStepShape_RWDimensionalLocation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalLocation();
-		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalLocation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_DimensionalLocation &ent) const;
@@ -1301,8 +1185,6 @@ class RWStepShape_RWDimensionalLocation {
 %nodefaultctor RWStepShape_RWHalfSpaceSolid;
 class RWStepShape_RWHalfSpaceSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWHalfSpaceSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWHalfSpaceSolid();
 		%feature("autodoc", "1");
@@ -1323,8 +1205,6 @@ class RWStepShape_RWHalfSpaceSolid {
 class RWStepShape_RWTopologicalRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWTopologicalRepresentationItem();
-		%feature("autodoc", "1");
 		RWStepShape_RWTopologicalRepresentationItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_TopologicalRepresentationItem &ent) const;
@@ -1341,8 +1221,6 @@ class RWStepShape_RWTopologicalRepresentationItem {
 %nodefaultctor RWStepShape_RWFaceOuterBound;
 class RWStepShape_RWFaceOuterBound {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFaceOuterBound();
 		%feature("autodoc", "1");
 		RWStepShape_RWFaceOuterBound();
 		%feature("autodoc", "1");
@@ -1363,8 +1241,6 @@ class RWStepShape_RWFaceOuterBound {
 class RWStepShape_RWRightAngularWedge {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWRightAngularWedge();
-		%feature("autodoc", "1");
 		RWStepShape_RWRightAngularWedge();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_RightAngularWedge &ent) const;
@@ -1384,8 +1260,6 @@ class RWStepShape_RWRightAngularWedge {
 class RWStepShape_RWSolidModel {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWSolidModel();
-		%feature("autodoc", "1");
 		RWStepShape_RWSolidModel();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SolidModel &ent) const;
@@ -1402,8 +1276,6 @@ class RWStepShape_RWSolidModel {
 %nodefaultctor RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation;
 class RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
@@ -1423,8 +1295,6 @@ class RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation {
 %nodefaultctor RWStepShape_RWEdgeLoop;
 class RWStepShape_RWEdgeLoop {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWEdgeLoop();
 		%feature("autodoc", "1");
 		RWStepShape_RWEdgeLoop();
 		%feature("autodoc", "1");
@@ -1447,8 +1317,6 @@ class RWStepShape_RWEdgeLoop {
 class RWStepShape_RWTypeQualifier {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWTypeQualifier();
-		%feature("autodoc", "1");
 		RWStepShape_RWTypeQualifier();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_TypeQualifier &ent) const;
@@ -1465,8 +1333,6 @@ class RWStepShape_RWTypeQualifier {
 %nodefaultctor RWStepShape_RWShapeRepresentation;
 class RWStepShape_RWShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWShapeRepresentation();
 		%feature("autodoc", "1");
@@ -1487,8 +1353,6 @@ class RWStepShape_RWShapeRepresentation {
 class RWStepShape_RWFacetedBrepShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWFacetedBrepShapeRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWFacetedBrepShapeRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_FacetedBrepShapeRepresentation &ent) const;
@@ -1507,8 +1371,6 @@ class RWStepShape_RWFacetedBrepShapeRepresentation {
 %nodefaultctor RWStepShape_RWSubface;
 class RWStepShape_RWSubface {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWSubface();
 		%feature("autodoc", "1");
 		RWStepShape_RWSubface();
 		%feature("autodoc", "1");
@@ -1529,8 +1391,6 @@ class RWStepShape_RWSubface {
 class RWStepShape_RWLimitsAndFits {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWLimitsAndFits();
-		%feature("autodoc", "1");
 		RWStepShape_RWLimitsAndFits();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_LimitsAndFits &ent) const;
@@ -1547,8 +1407,6 @@ class RWStepShape_RWLimitsAndFits {
 %nodefaultctor RWStepShape_RWDimensionalLocationWithPath;
 class RWStepShape_RWDimensionalLocationWithPath {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalLocationWithPath();
 		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalLocationWithPath();
 		%feature("autodoc", "1");
@@ -1568,8 +1426,6 @@ class RWStepShape_RWDimensionalLocationWithPath {
 %nodefaultctor RWStepShape_RWEdgeCurve;
 class RWStepShape_RWEdgeCurve {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWEdgeCurve();
 		%feature("autodoc", "1");
 		RWStepShape_RWEdgeCurve();
 		%feature("autodoc", "1");
@@ -1592,8 +1448,6 @@ class RWStepShape_RWEdgeCurve {
 class RWStepShape_RWSeamEdge {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWSeamEdge();
-		%feature("autodoc", "1");
 		RWStepShape_RWSeamEdge();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SeamEdge &ent) const;
@@ -1612,8 +1466,6 @@ class RWStepShape_RWSeamEdge {
 %nodefaultctor RWStepShape_RWEdge;
 class RWStepShape_RWEdge {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWEdge();
 		%feature("autodoc", "1");
 		RWStepShape_RWEdge();
 		%feature("autodoc", "1");
@@ -1634,8 +1486,6 @@ class RWStepShape_RWEdge {
 class RWStepShape_RWBoxDomain {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWBoxDomain();
-		%feature("autodoc", "1");
 		RWStepShape_RWBoxDomain();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_BoxDomain &ent) const;
@@ -1654,8 +1504,6 @@ class RWStepShape_RWBoxDomain {
 %nodefaultctor RWStepShape_RWRightCircularCone;
 class RWStepShape_RWRightCircularCone {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWRightCircularCone();
 		%feature("autodoc", "1");
 		RWStepShape_RWRightCircularCone();
 		%feature("autodoc", "1");
@@ -1676,8 +1524,6 @@ class RWStepShape_RWRightCircularCone {
 class RWStepShape_RWBooleanResult {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWBooleanResult();
-		%feature("autodoc", "1");
 		RWStepShape_RWBooleanResult();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_BooleanResult &ent) const;
@@ -1696,8 +1542,6 @@ class RWStepShape_RWBooleanResult {
 %nodefaultctor RWStepShape_RWRevolvedAreaSolid;
 class RWStepShape_RWRevolvedAreaSolid {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWRevolvedAreaSolid();
 		%feature("autodoc", "1");
 		RWStepShape_RWRevolvedAreaSolid();
 		%feature("autodoc", "1");
@@ -1718,8 +1562,6 @@ class RWStepShape_RWRevolvedAreaSolid {
 class RWStepShape_RWDimensionalSize {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWDimensionalSize();
-		%feature("autodoc", "1");
 		RWStepShape_RWDimensionalSize();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_DimensionalSize &ent) const;
@@ -1738,8 +1580,6 @@ class RWStepShape_RWDimensionalSize {
 %nodefaultctor RWStepShape_RWFaceBound;
 class RWStepShape_RWFaceBound {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWFaceBound();
 		%feature("autodoc", "1");
 		RWStepShape_RWFaceBound();
 		%feature("autodoc", "1");
@@ -1762,8 +1602,6 @@ class RWStepShape_RWFaceBound {
 class RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation();
-		%feature("autodoc", "1");
 		RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation &ent) const;
@@ -1782,8 +1620,6 @@ class RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
 %nodefaultctor RWStepShape_RWManifoldSurfaceShapeRepresentation;
 class RWStepShape_RWManifoldSurfaceShapeRepresentation {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWManifoldSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
 		RWStepShape_RWManifoldSurfaceShapeRepresentation();
 		%feature("autodoc", "1");
@@ -1804,8 +1640,6 @@ class RWStepShape_RWManifoldSurfaceShapeRepresentation {
 class RWStepShape_RWAdvancedFace {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWAdvancedFace();
-		%feature("autodoc", "1");
 		RWStepShape_RWAdvancedFace();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_AdvancedFace &ent) const;
@@ -1824,8 +1658,6 @@ class RWStepShape_RWAdvancedFace {
 %nodefaultctor RWStepShape_RWTorus;
 class RWStepShape_RWTorus {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWTorus();
 		%feature("autodoc", "1");
 		RWStepShape_RWTorus();
 		%feature("autodoc", "1");
@@ -1846,8 +1678,6 @@ class RWStepShape_RWTorus {
 class RWStepShape_RWPrecisionQualifier {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWPrecisionQualifier();
-		%feature("autodoc", "1");
 		RWStepShape_RWPrecisionQualifier();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_PrecisionQualifier &ent) const;
@@ -1864,8 +1694,6 @@ class RWStepShape_RWPrecisionQualifier {
 %nodefaultctor RWStepShape_RWOrientedFace;
 class RWStepShape_RWOrientedFace {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedFace();
 		%feature("autodoc", "1");
 		RWStepShape_RWOrientedFace();
 		%feature("autodoc", "1");
@@ -1885,8 +1713,6 @@ class RWStepShape_RWOrientedFace {
 %nodefaultctor RWStepShape_RWBrepWithVoids;
 class RWStepShape_RWBrepWithVoids {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWBrepWithVoids();
 		%feature("autodoc", "1");
 		RWStepShape_RWBrepWithVoids();
 		%feature("autodoc", "1");
@@ -1909,8 +1735,6 @@ class RWStepShape_RWBrepWithVoids {
 class RWStepShape_RWOrientedOpenShell {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWOrientedOpenShell();
-		%feature("autodoc", "1");
 		RWStepShape_RWOrientedOpenShell();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_OrientedOpenShell &ent) const;
@@ -1930,8 +1754,6 @@ class RWStepShape_RWOrientedOpenShell {
 class RWStepShape_RWShapeRepresentationWithParameters {
 	public:
 		%feature("autodoc", "1");
-		~RWStepShape_RWShapeRepresentationWithParameters();
-		%feature("autodoc", "1");
 		RWStepShape_RWShapeRepresentationWithParameters();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ShapeRepresentationWithParameters &ent) const;
@@ -1950,8 +1772,6 @@ class RWStepShape_RWShapeRepresentationWithParameters {
 %nodefaultctor RWStepShape_RWRightCircularCylinder;
 class RWStepShape_RWRightCircularCylinder {
 	public:
-		%feature("autodoc", "1");
-		~RWStepShape_RWRightCircularCylinder();
 		%feature("autodoc", "1");
 		RWStepShape_RWRightCircularCylinder();
 		%feature("autodoc", "1");

@@ -209,8 +209,6 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_DataMapIteratorOfPointEdgeMap();
-		%feature("autodoc", "1");
 		StepToTopoDS_DataMapIteratorOfPointEdgeMap();
 		%feature("autodoc", "1");
 		StepToTopoDS_DataMapIteratorOfPointEdgeMap(const StepToTopoDS_PointEdgeMap &aMap);
@@ -301,8 +299,6 @@ class StepToTopoDS_Tool {
 class StepToTopoDS_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_Root();
-		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Real Precision() const;
@@ -349,8 +345,6 @@ class StepToTopoDS_TranslateEdge : public StepToTopoDS_Root {
 class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateShell();
-		%feature("autodoc", "1");
 		StepToTopoDS_TranslateShell();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateShell(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T);
@@ -393,8 +387,6 @@ class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMap
 class StepToTopoDS_CartesianPointHasher {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_CartesianPointHasher();
-		%feature("autodoc", "1");
 		StepToTopoDS_CartesianPointHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_StepGeom_CartesianPoint &K, const Standard_Integer Upper);
@@ -432,8 +424,6 @@ class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIt
 %nodefaultctor StepToTopoDS_PointPairHasher;
 class StepToTopoDS_PointPairHasher {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_PointPairHasher();
 		%feature("autodoc", "1");
 		StepToTopoDS_PointPairHasher();
 		%feature("autodoc", "1");
@@ -484,8 +474,6 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepToTopoDS_DataMapOfTRI();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_StepShape_TopologicalRepresentationItem &K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_StepShape_TopologicalRepresentationItem &K) const;
@@ -511,8 +499,6 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 class StepToTopoDS_TranslateFace : public StepToTopoDS_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateFace();
-		%feature("autodoc", "1");
 		StepToTopoDS_TranslateFace();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateFace(const Handle_StepShape_FaceSurface &FS, StepToTopoDS_Tool & T);
@@ -534,8 +520,6 @@ class StepToTopoDS_TranslateFace : public StepToTopoDS_Root {
 class StepToTopoDS_TranslatePolyLoop : public StepToTopoDS_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_TranslatePolyLoop();
-		%feature("autodoc", "1");
 		StepToTopoDS_TranslatePolyLoop();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslatePolyLoop(const Handle_StepShape_PolyLoop &PL, StepToTopoDS_Tool & T, const Handle_Geom_Surface &S, const TopoDS_Face &F);
@@ -556,8 +540,6 @@ class StepToTopoDS_TranslatePolyLoop : public StepToTopoDS_Root {
 %nodefaultctor StepToTopoDS_TranslateCompositeCurve;
 class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateCompositeCurve();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateCompositeCurve();
 		%feature("autodoc", "1");
@@ -590,8 +572,6 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~StepToTopoDS_PointVertexMap();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_StepGeom_CartesianPoint &K, const TopoDS_Vertex &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_StepGeom_CartesianPoint &K) const;
@@ -617,8 +597,6 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 class StepToTopoDS_PointPair {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_PointPair();
-		%feature("autodoc", "1");
 		StepToTopoDS_PointPair(const Handle_StepGeom_CartesianPoint &P1, const Handle_StepGeom_CartesianPoint &P2);
 
 };
@@ -639,8 +617,6 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~StepToTopoDS_PointEdgeMap();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const StepToTopoDS_PointPair &K, const TopoDS_Edge &I);
 		%feature("autodoc", "1");
@@ -667,8 +643,6 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_MakeTransformed();
-		%feature("autodoc", "1");
 		StepToTopoDS_MakeTransformed();
 		%feature("autodoc", "1");
 		Standard_Boolean Compute(const Handle_StepGeom_Axis2Placement3d &Origin, const Handle_StepGeom_Axis2Placement3d &Target);
@@ -692,8 +666,6 @@ class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
 class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateCurveBoundedSurface();
-		%feature("autodoc", "1");
 		StepToTopoDS_TranslateCurveBoundedSurface();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateCurveBoundedSurface(const Handle_StepGeom_CurveBoundedSurface &CBS, const Handle_Transfer_TransientProcess &TP);
@@ -712,8 +684,6 @@ class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 %nodefaultctor StepToTopoDS_GeometricTool;
 class StepToTopoDS_GeometricTool {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_GeometricTool();
 		%feature("autodoc", "1");
 		StepToTopoDS_GeometricTool();
 		%feature("autodoc", "1");
@@ -735,8 +705,6 @@ class StepToTopoDS_GeometricTool {
 %nodefaultctor StepToTopoDS_TranslateVertex;
 class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateVertex();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateVertex();
 		%feature("autodoc", "1");
@@ -812,8 +780,6 @@ class StepToTopoDS {
 class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateEdgeLoop();
-		%feature("autodoc", "1");
 		StepToTopoDS_TranslateEdgeLoop();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateEdgeLoop(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
@@ -858,8 +824,6 @@ class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
 %nodefaultctor StepToTopoDS_TranslateVertexLoop;
 class StepToTopoDS_TranslateVertexLoop : public StepToTopoDS_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToTopoDS_TranslateVertexLoop();
 		%feature("autodoc", "1");
 		StepToTopoDS_TranslateVertexLoop();
 		%feature("autodoc", "1");

@@ -323,8 +323,6 @@ class PNaming_NamedShape : public PDF_Attribute {
 class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 	public:
 		%feature("autodoc", "1");
-		~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape();
-		%feature("autodoc", "1");
 		PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape();
 		%feature("autodoc", "1");
 		PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape(const Handle_PNaming_NamedShape &aValue);

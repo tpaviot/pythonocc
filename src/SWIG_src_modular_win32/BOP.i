@@ -502,8 +502,6 @@ class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapN
 class BOP_ListIteratorOfListOfCheckResult {
 	public:
 		%feature("autodoc", "1");
-		~BOP_ListIteratorOfListOfCheckResult();
-		%feature("autodoc", "1");
 		BOP_ListIteratorOfListOfCheckResult();
 		%feature("autodoc", "1");
 		BOP_ListIteratorOfListOfCheckResult(const BOP_ListOfCheckResult &L);
@@ -672,8 +670,6 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 class BOP_EdgeInfo {
 	public:
 		%feature("autodoc", "1");
-		~BOP_EdgeInfo();
-		%feature("autodoc", "1");
 		BOP_EdgeInfo();
 		%feature("autodoc", "1");
 		void SetEdge(const TopoDS_Edge &aE);
@@ -734,8 +730,6 @@ class BOP_WireShape : public BOP_Builder {
 		void AddSplitPartsON();
 		%feature("autodoc", "1");
 		void MakeResult();
-		%feature("autodoc", "1");
-		virtual		~BOP_WireShape();
 
 };
 %extend BOP_WireShape {
@@ -756,8 +750,6 @@ class BOP_WireSolid : public BOP_WireShape {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BOP_WireSolid();
-		%feature("autodoc", "1");
 		virtual		void BuildResult();
 		%feature("autodoc", "1");
 		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
@@ -774,8 +766,6 @@ class BOP_WireSolid : public BOP_WireShape {
 %nodefaultctor BOP_ListIteratorOfListOfFaceInfo;
 class BOP_ListIteratorOfListOfFaceInfo {
 	public:
-		%feature("autodoc", "1");
-		~BOP_ListIteratorOfListOfFaceInfo();
 		%feature("autodoc", "1");
 		BOP_ListIteratorOfListOfFaceInfo();
 		%feature("autodoc", "1");
@@ -799,8 +789,6 @@ class BOP_ListIteratorOfListOfFaceInfo {
 %nodefaultctor BOP_ListIteratorOfListOfEdgeInfo;
 class BOP_ListIteratorOfListOfEdgeInfo {
 	public:
-		%feature("autodoc", "1");
-		~BOP_ListIteratorOfListOfEdgeInfo();
 		%feature("autodoc", "1");
 		BOP_ListIteratorOfListOfEdgeInfo();
 		%feature("autodoc", "1");
@@ -869,8 +857,6 @@ class BOP_Area3dBuilder : public BOP_AreaBuilder {
 		BOP_Area3dBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
 		%feature("autodoc", "1");
 		virtual		void InitAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass);
-		%feature("autodoc", "1");
-		virtual		~BOP_Area3dBuilder();
 
 };
 %extend BOP_Area3dBuilder {
@@ -910,8 +896,6 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollect
 %nodefaultctor BOP_Draw;
 class BOP_Draw {
 	public:
-		%feature("autodoc", "1");
-		~BOP_Draw();
 		%feature("autodoc", "1");
 		BOP_Draw();
 		%feature("autodoc", "1");
@@ -993,8 +977,6 @@ class BOP_EmptyBuilder : public BOP_Builder {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BOP_EmptyBuilder();
-		%feature("autodoc", "1");
 		virtual		void BuildResult();
 
 };
@@ -1007,8 +989,6 @@ class BOP_EmptyBuilder : public BOP_Builder {
 %nodefaultctor BOP_BlockIterator;
 class BOP_BlockIterator {
 	public:
-		%feature("autodoc", "1");
-		~BOP_BlockIterator();
 		%feature("autodoc", "1");
 		BOP_BlockIterator();
 		%feature("autodoc", "1");
@@ -1034,8 +1014,6 @@ class BOP_BlockIterator {
 %nodefaultctor BOP_WESCorrector;
 class BOP_WESCorrector {
 	public:
-		%feature("autodoc", "1");
-		~BOP_WESCorrector();
 		%feature("autodoc", "1");
 		BOP_WESCorrector();
 		%feature("autodoc", "1");
@@ -1067,8 +1045,6 @@ class BOP_Area2dBuilder : public BOP_AreaBuilder {
 		BOP_Area2dBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
 		%feature("autodoc", "1");
 		virtual		void InitAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
-		%feature("autodoc", "1");
-		virtual		~BOP_Area2dBuilder();
 
 };
 %extend BOP_Area2dBuilder {
@@ -1086,8 +1062,6 @@ class BOP_FaceAreaBuilder : public BOP_Area2dBuilder {
 		BOP_FaceAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
 		%feature("autodoc", "1");
 		void InitFaceAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
-		%feature("autodoc", "1");
-		virtual		~BOP_FaceAreaBuilder();
 
 };
 %extend BOP_FaceAreaBuilder {
@@ -1193,8 +1167,6 @@ class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
 		TopoDS_Shape LoopToShape(const Handle_BOP_Loop &L);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &W);
-		%feature("autodoc", "1");
-		virtual		~BOP_WireEdgeClassifier();
 
 };
 %extend BOP_WireEdgeClassifier {
@@ -1206,8 +1178,6 @@ class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
 %nodefaultctor BOP_ConnexityBlock;
 class BOP_ConnexityBlock {
 	public:
-		%feature("autodoc", "1");
-		~BOP_ConnexityBlock();
 		%feature("autodoc", "1");
 		BOP_ConnexityBlock();
 		%feature("autodoc", "1");
@@ -1254,8 +1224,6 @@ class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
 class BOP_BuilderTools {
 	public:
 		%feature("autodoc", "1");
-		~BOP_BuilderTools();
-		%feature("autodoc", "1");
 		BOP_BuilderTools();
 		%feature("autodoc", "1");
 		BooleanOperations_StateOfShape StateToCompare(const Standard_Integer iRank, const BOP_Operation anOp);
@@ -1290,8 +1258,6 @@ class BOP_ShapeSet {
 		BOP_ShapeSet(const TopAbs_ShapeEnum SubShapeType);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~BOP_ShapeSet();
 		%feature("autodoc", "1");
 		virtual		void AddShape(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
@@ -1351,8 +1317,6 @@ class BOP_ShellFaceSet : public BOP_ShapeSet {
 		BOP_ShellFaceSet(const TopoDS_Solid &theSolid);
 		%feature("autodoc", "1");
 		const TopoDS_Solid & Solid() const;
-		%feature("autodoc", "1");
-		virtual		~BOP_ShellFaceSet();
 
 };
 %extend BOP_ShellFaceSet {
@@ -1364,8 +1328,6 @@ class BOP_ShellFaceSet : public BOP_ShapeSet {
 %nodefaultctor BOP_SolidBuilder;
 class BOP_SolidBuilder {
 	public:
-		%feature("autodoc", "1");
-		~BOP_SolidBuilder();
 		%feature("autodoc", "1");
 		BOP_SolidBuilder();
 		%feature("autodoc", "1");
@@ -1423,8 +1385,6 @@ class BOP_SolidClassifier {
 		TopAbs_State State() const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~BOP_SolidClassifier();
 
 };
 %extend BOP_SolidClassifier {
@@ -1444,8 +1404,6 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOP_IndexedDataMapOfEdgeListFaceInfo();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const BOP_ListOfFaceInfo &I);
 		%feature("autodoc", "1");
@@ -1546,8 +1504,6 @@ class BOP_ListOfConnexityBlock {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOP_ListOfConnexityBlock();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BOP_ConnexityBlock &I);
@@ -1611,8 +1567,6 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 class BOP_ShellSplitter {
 	public:
 		%feature("autodoc", "1");
-		~BOP_ShellSplitter();
-		%feature("autodoc", "1");
 		BOP_ShellSplitter();
 		%feature("autodoc", "1");
 		void DoWithListOfEdges(const TopTools_ListOfShape &aLE);
@@ -1639,8 +1593,6 @@ class BOP_ShellSplitter {
 %nodefaultctor BOP_CheckResult;
 class BOP_CheckResult {
 	public:
-		%feature("autodoc", "1");
-		~BOP_CheckResult();
 		%feature("autodoc", "1");
 		BOP_CheckResult();
 		%feature("autodoc", "1");
@@ -1690,8 +1642,6 @@ class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
 		virtual		void CompareElement(const TopoDS_Shape &E);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
-		%feature("autodoc", "1");
-		virtual		~BOP_ShellFaceClassifier();
 
 };
 %extend BOP_ShellFaceClassifier {
@@ -1734,8 +1684,6 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOP_IndexedDataMapOfVertexListEdgeInfo();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const BOP_ListOfEdgeInfo &I);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BOP_ListOfEdgeInfo &T);
@@ -1771,8 +1719,6 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 class BOP_ListIteratorOfListOfListOfLoop {
 	public:
 		%feature("autodoc", "1");
-		~BOP_ListIteratorOfListOfListOfLoop();
-		%feature("autodoc", "1");
 		BOP_ListIteratorOfListOfListOfLoop();
 		%feature("autodoc", "1");
 		BOP_ListIteratorOfListOfListOfLoop(const BOP_ListOfListOfLoop &L);
@@ -1804,8 +1750,6 @@ class BOP_ShellSolid : public BOP_Builder {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BOP_ShellSolid();
-		%feature("autodoc", "1");
 		virtual		void BuildResult();
 		%feature("autodoc", "1");
 		virtual		void DoNewFaces();
@@ -1832,8 +1776,6 @@ class BOP_ShellShell : public BOP_ShellSolid {
 	public:
 		%feature("autodoc", "1");
 		BOP_ShellShell();
-		%feature("autodoc", "1");
-		virtual		~BOP_ShellShell();
 
 };
 %extend BOP_ShellShell {
@@ -1856,8 +1798,6 @@ class BOP_Section : public BOP_Builder {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BOP_Section();
-		%feature("autodoc", "1");
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
 };
@@ -1878,8 +1818,6 @@ class BOP_ListOfCheckResult {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOP_ListOfCheckResult();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -1930,8 +1868,6 @@ class BOP_ListOfFaceInfo {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOP_ListOfFaceInfo();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BOP_FaceInfo &I);
@@ -1972,8 +1908,6 @@ class BOP_ListOfFaceInfo {
 %nodefaultctor BOP_FaceBuilder;
 class BOP_FaceBuilder {
 	public:
-		%feature("autodoc", "1");
-		~BOP_FaceBuilder();
 		%feature("autodoc", "1");
 		BOP_FaceBuilder();
 		%feature("autodoc", "1");
@@ -2042,8 +1976,6 @@ class BOP_ListOfListOfLoop {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOP_ListOfListOfLoop();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BOP_ListOfLoop &I);
@@ -2107,8 +2039,6 @@ class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 class BOP_BlockBuilder {
 	public:
 		%feature("autodoc", "1");
-		~BOP_BlockBuilder();
-		%feature("autodoc", "1");
 		BOP_BlockBuilder();
 		%feature("autodoc", "1");
 		BOP_BlockBuilder(BOP_ShapeSet & SS);
@@ -2152,8 +2082,6 @@ class BOP_BlockBuilder {
 class BOP_CorrectTolerances {
 	public:
 		%feature("autodoc", "1");
-		~BOP_CorrectTolerances();
-		%feature("autodoc", "1");
 		BOP_CorrectTolerances();
 		%feature("autodoc", "1");
 		void CorrectTolerances(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
@@ -2179,8 +2107,6 @@ class BOP_SolidSolid : public BOP_ShellSolid {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BOP_SolidSolid();
-		%feature("autodoc", "1");
 		virtual		void DoNewFaces();
 		%feature("autodoc", "1");
 		virtual		void BuildResult();
@@ -2197,8 +2123,6 @@ class BOP_SolidSolid : public BOP_ShellSolid {
 %nodefaultctor BOP_ListIteratorOfListOfConnexityBlock;
 class BOP_ListIteratorOfListOfConnexityBlock {
 	public:
-		%feature("autodoc", "1");
-		~BOP_ListIteratorOfListOfConnexityBlock();
 		%feature("autodoc", "1");
 		BOP_ListIteratorOfListOfConnexityBlock();
 		%feature("autodoc", "1");
@@ -2222,8 +2146,6 @@ class BOP_ListIteratorOfListOfConnexityBlock {
 %nodefaultctor BOP_SFSCorrector;
 class BOP_SFSCorrector {
 	public:
-		%feature("autodoc", "1");
-		~BOP_SFSCorrector();
 		%feature("autodoc", "1");
 		BOP_SFSCorrector();
 		%feature("autodoc", "1");
@@ -2253,8 +2175,6 @@ class BOP_SeqOfSeqOfShape : public TCollection_BaseSequence {
 		BOP_SeqOfSeqOfShape();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOP_SeqOfSeqOfShape();
 		%feature("autodoc", "1");
 		const BOP_SeqOfSeqOfShape & Assign(const BOP_SeqOfSeqOfShape &Other);
 		%feature("autodoc", "1");
@@ -2355,8 +2275,6 @@ class BOP_WireEdgeSet : public BOP_ShapeSet {
 		void RemoveEdgeFromWES(const TopoDS_Edge &aE);
 		%feature("autodoc", "1");
 		Standard_Boolean KeptTwice(const TopoDS_Edge &aE) const;
-		%feature("autodoc", "1");
-		virtual		~BOP_WireEdgeSet();
 
 };
 %extend BOP_WireEdgeSet {
@@ -2376,8 +2294,6 @@ class BOP_WireWire : public BOP_WireShape {
 		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
 		%feature("autodoc", "1");
 		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~BOP_WireWire();
 		%feature("autodoc", "1");
 		virtual		void BuildResult();
 
@@ -2424,8 +2340,6 @@ class BOP_WireShell : public BOP_WireShape {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		~BOP_WireShell();
-		%feature("autodoc", "1");
 		virtual		void BuildResult();
 		%feature("autodoc", "1");
 		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
@@ -2448,8 +2362,6 @@ class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BOP_IndexedDataMapOfSolidClassifier();
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopoDS_Shape &K, const BOP_PSoClassif &I);
 		%feature("autodoc", "1");
@@ -2491,8 +2403,6 @@ class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
 		BOP_SolidAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClassFlag=0);
 		%feature("autodoc", "1");
 		void InitSolidAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClassFlag);
-		%feature("autodoc", "1");
-		virtual		~BOP_SolidAreaBuilder();
 
 };
 %extend BOP_SolidAreaBuilder {
@@ -2528,8 +2438,6 @@ class BOP_ListIteratorOfListOfLoop {
 class BOP_WireSplitter {
 	public:
 		%feature("autodoc", "1");
-		~BOP_WireSplitter();
-		%feature("autodoc", "1");
 		BOP_WireSplitter();
 		%feature("autodoc", "1");
 		void SetFace(const TopoDS_Face &aF);
@@ -2556,8 +2464,6 @@ class BOP_WireSplitter {
 %nodefaultctor BOP_FaceInfo;
 class BOP_FaceInfo {
 	public:
-		%feature("autodoc", "1");
-		~BOP_FaceInfo();
 		%feature("autodoc", "1");
 		BOP_FaceInfo();
 		%feature("autodoc", "1");
@@ -2599,8 +2505,6 @@ class BOP_FaceInfo {
 %nodefaultctor BOP_SDFWESFiller;
 class BOP_SDFWESFiller {
 	public:
-		%feature("autodoc", "1");
-		~BOP_SDFWESFiller();
 		%feature("autodoc", "1");
 		BOP_SDFWESFiller();
 		%feature("autodoc", "1");
@@ -2665,8 +2569,6 @@ class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 class BOP_ArgumentAnalyzer {
 	public:
 		%feature("autodoc", "1");
-		~BOP_ArgumentAnalyzer();
-		%feature("autodoc", "1");
 		BOP_ArgumentAnalyzer();
 		%feature("autodoc", "1");
 		void SetShape1(const TopoDS_Shape &TheShape);
@@ -2720,8 +2622,6 @@ class BOP_ListOfEdgeInfo {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BOP_ListOfEdgeInfo();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const BOP_EdgeInfo &I);
@@ -2762,8 +2662,6 @@ class BOP_ListOfEdgeInfo {
 %nodefaultctor BOP_Refiner;
 class BOP_Refiner {
 	public:
-		%feature("autodoc", "1");
-		~BOP_Refiner();
 		%feature("autodoc", "1");
 		BOP_Refiner();
 		%feature("autodoc", "1");

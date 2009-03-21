@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class GeomLProp_SLProps {
 	public:
 		%feature("autodoc", "1");
-		~GeomLProp_SLProps();
-		%feature("autodoc", "1");
 		GeomLProp_SLProps(const Handle_Geom_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
 		GeomLProp_SLProps(const Handle_Geom_Surface &S, const Standard_Integer N, const Standard_Real Resolution);
@@ -149,8 +147,6 @@ class GeomLProp_SLProps {
 class GeomLProp_CLProps {
 	public:
 		%feature("autodoc", "1");
-		~GeomLProp_CLProps();
-		%feature("autodoc", "1");
 		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
 		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
@@ -190,8 +186,6 @@ class GeomLProp_CLProps {
 class GeomLProp {
 	public:
 		%feature("autodoc", "1");
-		~GeomLProp();
-		%feature("autodoc", "1");
 		GeomLProp();
 		%feature("autodoc", "1");
 		GeomAbs_Shape Continuity(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Standard_Real u1, const Standard_Real u2, const Standard_Boolean r1, const Standard_Boolean r2, const Standard_Real tl, const Standard_Real ta);
@@ -208,8 +202,6 @@ class GeomLProp {
 %nodefaultctor GeomLProp_SurfaceTool;
 class GeomLProp_SurfaceTool {
 	public:
-		%feature("autodoc", "1");
-		~GeomLProp_SurfaceTool();
 		%feature("autodoc", "1");
 		GeomLProp_SurfaceTool();
 		%feature("autodoc", "1");
@@ -235,8 +227,6 @@ class GeomLProp_SurfaceTool {
 %nodefaultctor GeomLProp_CurveTool;
 class GeomLProp_CurveTool {
 	public:
-		%feature("autodoc", "1");
-		~GeomLProp_CurveTool();
 		%feature("autodoc", "1");
 		GeomLProp_CurveTool();
 		%feature("autodoc", "1");

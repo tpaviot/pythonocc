@@ -144,8 +144,6 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 class math_GaussLeastSquare {
 	public:
 		%feature("autodoc", "1");
-		~math_GaussLeastSquare();
-		%feature("autodoc", "1");
 		math_GaussLeastSquare(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -184,8 +182,6 @@ class math_DoubleTabOfReal {
 		Standard_Real & operator()(const Standard_Integer RowIndex, const Standard_Integer ColIndex) const;
 		%feature("autodoc", "1");
 		void Free();
-		%feature("autodoc", "1");
-		~math_DoubleTabOfReal();
 
 };
 %extend math_DoubleTabOfReal {
@@ -226,8 +222,6 @@ class math_SingularMatrix : public Standard_Failure {
 class math_TrigonometricFunctionRoots {
 	public:
 		%feature("autodoc", "1");
-		~math_TrigonometricFunctionRoots();
-		%feature("autodoc", "1");
 		math_TrigonometricFunctionRoots(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Standard_Real E, const Standard_Real InfBound, const Standard_Real SupBound);
 		%feature("autodoc", "1");
 		math_TrigonometricFunctionRoots(const Standard_Real D, const Standard_Real E, const Standard_Real InfBound, const Standard_Real SupBound);
@@ -254,8 +248,6 @@ class math_TrigonometricFunctionRoots {
 %nodefaultctor math_BissecNewton;
 class math_BissecNewton {
 	public:
-		%feature("autodoc", "1");
-		~math_BissecNewton();
 		%feature("autodoc", "1");
 		math_BissecNewton(math_FunctionWithDerivative & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real TolX, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
@@ -335,8 +327,6 @@ class math_BFGS {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~math_BFGS();
-		%feature("autodoc", "1");
 		void Perform(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
@@ -368,8 +358,6 @@ class math_BFGS {
 class math_DirectPolynomialRoots {
 	public:
 		%feature("autodoc", "1");
-		~math_DirectPolynomialRoots();
-		%feature("autodoc", "1");
 		math_DirectPolynomialRoots(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Standard_Real E);
 		%feature("autodoc", "1");
 		math_DirectPolynomialRoots(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
@@ -399,8 +387,6 @@ class math_DirectPolynomialRoots {
 class math_IntegerRandom {
 	public:
 		%feature("autodoc", "1");
-		~math_IntegerRandom();
-		%feature("autodoc", "1");
 		math_IntegerRandom(const Standard_Integer Lower, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		void Reset();
@@ -417,8 +403,6 @@ class math_IntegerRandom {
 %nodefaultctor math_Jacobi;
 class math_Jacobi {
 	public:
-		%feature("autodoc", "1");
-		~math_Jacobi();
 		%feature("autodoc", "1");
 		math_Jacobi(const math_Matrix &A);
 		%feature("autodoc", "1");
@@ -444,8 +428,6 @@ class math_Jacobi {
 %nodefaultctor math;
 class math {
 	public:
-		%feature("autodoc", "1");
-		~math();
 		%feature("autodoc", "1");
 		math();
 		%feature("autodoc", "1");
@@ -478,8 +460,6 @@ class math_Powell {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~math_Powell();
-		%feature("autodoc", "1");
 		void Perform(math_MultipleVarFunction & F, const math_Vector &StartingPoint, const math_Matrix &StartingDirections);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunction & F);
@@ -506,8 +486,6 @@ class math_Powell {
 %nodefaultctor math_FunctionRoot;
 class math_FunctionRoot {
 	public:
-		%feature("autodoc", "1");
-		~math_FunctionRoot();
 		%feature("autodoc", "1");
 		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
@@ -544,8 +522,6 @@ class math_Array1OfValueAndWeight {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~math_Array1OfValueAndWeight();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const math_Array1OfValueAndWeight & Assign(const math_Array1OfValueAndWeight &Other);
@@ -577,8 +553,6 @@ class math_Array1OfValueAndWeight {
 class math_Householder {
 	public:
 		%feature("autodoc", "1");
-		~math_Householder();
-		%feature("autodoc", "1");
 		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
 		%feature("autodoc", "1");
 		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Integer lowerArow, const Standard_Integer upperArow, const Standard_Integer lowerAcol, const Standard_Integer upperAcol, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
@@ -603,8 +577,6 @@ class math_Householder {
 %nodefaultctor math_FunctionAllRoots;
 class math_FunctionAllRoots {
 	public:
-		%feature("autodoc", "1");
-		~math_FunctionAllRoots();
 		%feature("autodoc", "1");
 		math_FunctionAllRoots(math_FunctionWithDerivative & F, const math_FunctionSample &S, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Real EpsNul);
 		%feature("autodoc", "1");
@@ -635,8 +607,6 @@ class math_FunctionAllRoots {
 class math_EigenValuesSearcher {
 	public:
 		%feature("autodoc", "1");
-		~math_EigenValuesSearcher();
-		%feature("autodoc", "1");
 		math_EigenValuesSearcher(const TColStd_Array1OfReal &Diagonal, const TColStd_Array1OfReal &Subdiagonal);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -658,8 +628,6 @@ class math_EigenValuesSearcher {
 class math_QuickSortOfValueAndWeight {
 	public:
 		%feature("autodoc", "1");
-		~math_QuickSortOfValueAndWeight();
-		%feature("autodoc", "1");
 		math_QuickSortOfValueAndWeight();
 		%feature("autodoc", "1");
 		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
@@ -674,8 +642,6 @@ class math_QuickSortOfValueAndWeight {
 %nodefaultctor math_ComputeGaussPointsAndWeights;
 class math_ComputeGaussPointsAndWeights {
 	public:
-		%feature("autodoc", "1");
-		~math_ComputeGaussPointsAndWeights();
 		%feature("autodoc", "1");
 		math_ComputeGaussPointsAndWeights(const Standard_Integer Number);
 		%feature("autodoc", "1");
@@ -732,8 +698,6 @@ class math_FunctionSetWithDerivatives : public math_FunctionSet {
 class math_GaussSingleIntegration {
 	public:
 		%feature("autodoc", "1");
-		~math_GaussSingleIntegration();
-		%feature("autodoc", "1");
 		math_GaussSingleIntegration();
 		%feature("autodoc", "1");
 		math_GaussSingleIntegration(math_Function & F, const Standard_Real Lower, const Standard_Real Upper, const Standard_Integer Order);
@@ -756,8 +720,6 @@ class math_GaussSingleIntegration {
 %nodefaultctor math_Matrix;
 class math_Matrix {
 	public:
-		%feature("autodoc", "1");
-		~math_Matrix();
 		%feature("autodoc", "1");
 		math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
 		%feature("autodoc", "1");
@@ -888,8 +850,6 @@ class math_Matrix {
 class math_Gauss {
 	public:
 		%feature("autodoc", "1");
-		~math_Gauss();
-		%feature("autodoc", "1");
 		math_Gauss(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -930,8 +890,6 @@ class math_Function {
 class math_GaussSetIntegration {
 	public:
 		%feature("autodoc", "1");
-		~math_GaussSetIntegration();
-		%feature("autodoc", "1");
 		math_GaussSetIntegration(math_FunctionSet & F, const math_Vector &Lower, const math_Vector &Upper, const math_IntegerVector &Order);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -950,8 +908,6 @@ class math_GaussSetIntegration {
 %nodefaultctor math_Vector;
 class math_Vector {
 	public:
-		%feature("autodoc", "1");
-		~math_Vector();
 		%feature("autodoc", "1");
 		math_Vector(const Standard_Integer Lower, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -1068,8 +1024,6 @@ class math_Vector {
 class math_Crout {
 	public:
 		%feature("autodoc", "1");
-		~math_Crout();
-		%feature("autodoc", "1");
 		math_Crout(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -1095,8 +1049,6 @@ class math_Crout {
 class math_SVD {
 	public:
 		%feature("autodoc", "1");
-		~math_SVD();
-		%feature("autodoc", "1");
 		math_SVD(const math_Matrix &A);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -1117,8 +1069,6 @@ class math_SVD {
 %nodefaultctor math_BracketedRoot;
 class math_BracketedRoot {
 	public:
-		%feature("autodoc", "1");
-		~math_BracketedRoot();
 		%feature("autodoc", "1");
 		math_BracketedRoot(math_Function & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real Tolerance, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
 		%feature("autodoc", "1");
@@ -1142,8 +1092,6 @@ class math_BracketedRoot {
 %nodefaultctor math_GaussMultipleIntegration;
 class math_GaussMultipleIntegration {
 	public:
-		%feature("autodoc", "1");
-		~math_GaussMultipleIntegration();
 		%feature("autodoc", "1");
 		math_GaussMultipleIntegration(math_MultipleVarFunction & F, const math_Vector &Lower, const math_Vector &Upper, const math_IntegerVector &Order);
 		%feature("autodoc", "1");
@@ -1192,8 +1140,6 @@ class math_NotSquare : public Standard_DimensionError {
 class math_ComputeKronrodPointsAndWeights {
 	public:
 		%feature("autodoc", "1");
-		~math_ComputeKronrodPointsAndWeights();
-		%feature("autodoc", "1");
 		math_ComputeKronrodPointsAndWeights(const Standard_Integer Number);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -1212,8 +1158,6 @@ class math_ComputeKronrodPointsAndWeights {
 %nodefaultctor math_BrentMinimum;
 class math_BrentMinimum {
 	public:
-		%feature("autodoc", "1");
-		~math_BrentMinimum();
 		%feature("autodoc", "1");
 		math_BrentMinimum(const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
 		%feature("autodoc", "1");
@@ -1256,8 +1200,6 @@ class math_FunctionSetRoot {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~math_FunctionSetRoot();
-		%feature("autodoc", "1");
 		void SetTolerance(const math_Vector &Tolerance);
 		%feature("autodoc", "1");
 		void Perform(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &infBound, const math_Vector &supBound);
@@ -1294,8 +1236,6 @@ class math_FunctionSetRoot {
 %nodefaultctor math_IntegerVector;
 class math_IntegerVector {
 	public:
-		%feature("autodoc", "1");
-		~math_IntegerVector();
 		%feature("autodoc", "1");
 		math_IntegerVector(const Standard_Integer First, const Standard_Integer Last);
 		%feature("autodoc", "1");
@@ -1388,8 +1328,6 @@ class math_IntegerVector {
 class math_BracketMinimum {
 	public:
 		%feature("autodoc", "1");
-		~math_BracketMinimum();
-		%feature("autodoc", "1");
 		math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B);
 		%feature("autodoc", "1");
 		math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B, const Standard_Real FA);
@@ -1432,8 +1370,6 @@ class math_SingleTabOfReal {
 		Standard_Real & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Free();
-		%feature("autodoc", "1");
-		~math_SingleTabOfReal();
 
 };
 %extend math_SingleTabOfReal {
@@ -1445,8 +1381,6 @@ class math_SingleTabOfReal {
 %nodefaultctor math_ValueAndWeight;
 class math_ValueAndWeight {
 	public:
-		%feature("autodoc", "1");
-		~math_ValueAndWeight();
 		%feature("autodoc", "1");
 		math_ValueAndWeight();
 		%feature("autodoc", "1");
@@ -1466,8 +1400,6 @@ class math_ValueAndWeight {
 %nodefaultctor math_CompareOfValueAndWeight;
 class math_CompareOfValueAndWeight {
 	public:
-		%feature("autodoc", "1");
-		~math_CompareOfValueAndWeight();
 		%feature("autodoc", "1");
 		math_CompareOfValueAndWeight();
 		%feature("autodoc", "1");
@@ -1507,8 +1439,6 @@ class math_FunctionWithDerivative : public math_Function {
 class math_FunctionRoots {
 	public:
 		%feature("autodoc", "1");
-		~math_FunctionRoots();
-		%feature("autodoc", "1");
 		math_FunctionRoots(math_FunctionWithDerivative & F, const Standard_Real A, const Standard_Real B, const Standard_Integer NbSample, const Standard_Real EpsX=0.0, const Standard_Real EpsF=0.0, const Standard_Real EpsNull=0.0, const Standard_Real K=0.0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -1533,8 +1463,6 @@ class math_FunctionRoots {
 %nodefaultctor math_KronrodSingleIntegration;
 class math_KronrodSingleIntegration {
 	public:
-		%feature("autodoc", "1");
-		~math_KronrodSingleIntegration();
 		%feature("autodoc", "1");
 		math_KronrodSingleIntegration();
 		%feature("autodoc", "1");
@@ -1570,8 +1498,6 @@ class math_KronrodSingleIntegration {
 %nodefaultctor math_Uzawa;
 class math_Uzawa {
 	public:
-		%feature("autodoc", "1");
-		~math_Uzawa();
 		%feature("autodoc", "1");
 		math_Uzawa(const math_Matrix &Cont, const math_Vector &Secont, const math_Vector &StartingPoint, const Standard_Real EpsLix=9.99999999999999954748111825886258685613938723691e-7, const Standard_Real EpsLic=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=500);
 		%feature("autodoc", "1");
@@ -1610,8 +1536,6 @@ class math_FRPR {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~math_FRPR();
-		%feature("autodoc", "1");
 		void Perform(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F);
@@ -1643,8 +1567,6 @@ class math_FRPR {
 class math_FunctionSample {
 	public:
 		%feature("autodoc", "1");
-		~math_FunctionSample();
-		%feature("autodoc", "1");
 		math_FunctionSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
 		%feature("autodoc", "1");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -1663,8 +1585,6 @@ class math_FunctionSample {
 %nodefaultctor math_NewtonFunctionRoot;
 class math_NewtonFunctionRoot {
 	public:
-		%feature("autodoc", "1");
-		~math_NewtonFunctionRoot();
 		%feature("autodoc", "1");
 		math_NewtonFunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
@@ -1696,8 +1616,6 @@ class math_NewtonFunctionRoot {
 %nodefaultctor math_RealRandom;
 class math_RealRandom {
 	public:
-		%feature("autodoc", "1");
-		~math_RealRandom();
 		%feature("autodoc", "1");
 		math_RealRandom(const Standard_Real Lower, const Standard_Real Upper);
 		%feature("autodoc", "1");
@@ -1733,8 +1651,6 @@ class math_SingleTabOfInteger {
 		Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Free();
-		%feature("autodoc", "1");
-		~math_SingleTabOfInteger();
 
 };
 %extend math_SingleTabOfInteger {

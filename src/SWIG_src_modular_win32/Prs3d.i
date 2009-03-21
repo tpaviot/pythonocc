@@ -545,8 +545,6 @@ class Prs3d_Root {
 class Prs3d_Text : public Prs3d_Root {
 	public:
 		%feature("autodoc", "1");
-		~Prs3d_Text();
-		%feature("autodoc", "1");
 		Prs3d_Text();
 		%feature("autodoc", "1");
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
@@ -625,8 +623,6 @@ class Prs3d_Presentation : public Graphic3d_Structure {
 %nodefaultctor Prs3d_AnglePresentation;
 class Prs3d_AnglePresentation : public Prs3d_Root {
 	public:
-		%feature("autodoc", "1");
-		~Prs3d_AnglePresentation();
 		%feature("autodoc", "1");
 		Prs3d_AnglePresentation();
 		%feature("autodoc", "1");
@@ -733,8 +729,6 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 class Prs3d_LengthPresentation : public Prs3d_Root {
 	public:
 		%feature("autodoc", "1");
-		~Prs3d_LengthPresentation();
-		%feature("autodoc", "1");
 		Prs3d_LengthPresentation();
 		%feature("autodoc", "1");
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &OffsetPoint);
@@ -827,8 +821,6 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 %nodefaultctor Prs3d;
 class Prs3d {
 	public:
-		%feature("autodoc", "1");
-		~Prs3d();
 		%feature("autodoc", "1");
 		Prs3d();
 		%feature("autodoc", "1");
@@ -1347,8 +1339,6 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 %nodefaultctor Prs3d_Arrow;
 class Prs3d_Arrow : public Prs3d_Root {
 	public:
-		%feature("autodoc", "1");
-		~Prs3d_Arrow();
 		%feature("autodoc", "1");
 		Prs3d_Arrow();
 		%feature("autodoc", "1");

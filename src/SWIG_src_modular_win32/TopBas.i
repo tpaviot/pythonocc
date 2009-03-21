@@ -120,8 +120,6 @@ class TopBas_ListOfTestInterference {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopBas_ListOfTestInterference();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TopBas_TestInterference &I);
@@ -185,8 +183,6 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 class TopBas_ListIteratorOfListOfTestInterference {
 	public:
 		%feature("autodoc", "1");
-		~TopBas_ListIteratorOfListOfTestInterference();
-		%feature("autodoc", "1");
 		TopBas_ListIteratorOfListOfTestInterference();
 		%feature("autodoc", "1");
 		TopBas_ListIteratorOfListOfTestInterference(const TopBas_ListOfTestInterference &L);
@@ -209,8 +205,6 @@ class TopBas_ListIteratorOfListOfTestInterference {
 %nodefaultctor TopBas_TestInterference;
 class TopBas_TestInterference {
 	public:
-		%feature("autodoc", "1");
-		~TopBas_TestInterference();
 		%feature("autodoc", "1");
 		TopBas_TestInterference();
 		%feature("autodoc", "1");

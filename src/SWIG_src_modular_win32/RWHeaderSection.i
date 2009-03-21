@@ -136,8 +136,6 @@ class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModul
 class RWHeaderSection_RWFileSchema {
 	public:
 		%feature("autodoc", "1");
-		~RWHeaderSection_RWFileSchema();
-		%feature("autodoc", "1");
 		RWHeaderSection_RWFileSchema();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_HeaderSection_FileSchema &ent) const;
@@ -155,8 +153,6 @@ class RWHeaderSection_RWFileSchema {
 class RWHeaderSection_RWFileDescription {
 	public:
 		%feature("autodoc", "1");
-		~RWHeaderSection_RWFileDescription();
-		%feature("autodoc", "1");
 		RWHeaderSection_RWFileDescription();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_HeaderSection_FileDescription &ent) const;
@@ -173,8 +169,6 @@ class RWHeaderSection_RWFileDescription {
 %nodefaultctor RWHeaderSection_RWFileName;
 class RWHeaderSection_RWFileName {
 	public:
-		%feature("autodoc", "1");
-		~RWHeaderSection_RWFileName();
 		%feature("autodoc", "1");
 		RWHeaderSection_RWFileName();
 		%feature("autodoc", "1");
@@ -224,8 +218,6 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 %nodefaultctor RWHeaderSection;
 class RWHeaderSection {
 	public:
-		%feature("autodoc", "1");
-		~RWHeaderSection();
 		%feature("autodoc", "1");
 		RWHeaderSection();
 		%feature("autodoc", "1");

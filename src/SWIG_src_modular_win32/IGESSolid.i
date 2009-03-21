@@ -968,8 +968,6 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 class IGESSolid_ToolToroidalSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolToroidalSurface();
-		%feature("autodoc", "1");
 		IGESSolid_ToolToroidalSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_ToroidalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1032,8 +1030,6 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 %nodefaultctor IGESSolid_ToolSolidOfRevolution;
 class IGESSolid_ToolSolidOfRevolution {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolSolidOfRevolution();
 		%feature("autodoc", "1");
 		IGESSolid_ToolSolidOfRevolution();
 		%feature("autodoc", "1");
@@ -1223,8 +1219,6 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 class IGESSolid_ToolTorus {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolTorus();
-		%feature("autodoc", "1");
 		IGESSolid_ToolTorus();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1251,8 +1245,6 @@ class IGESSolid_ToolTorus {
 %nodefaultctor IGESSolid_ToolConeFrustum;
 class IGESSolid_ToolConeFrustum {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolConeFrustum();
 		%feature("autodoc", "1");
 		IGESSolid_ToolConeFrustum();
 		%feature("autodoc", "1");
@@ -1450,8 +1442,6 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 class IGESSolid_ToolSelectedComponent {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolSelectedComponent();
-		%feature("autodoc", "1");
 		IGESSolid_ToolSelectedComponent();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_SelectedComponent &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1478,8 +1468,6 @@ class IGESSolid_ToolSelectedComponent {
 %nodefaultctor IGESSolid_ToolFace;
 class IGESSolid_ToolFace {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolFace();
 		%feature("autodoc", "1");
 		IGESSolid_ToolFace();
 		%feature("autodoc", "1");
@@ -1508,8 +1496,6 @@ class IGESSolid_ToolFace {
 class IGESSolid_ToolLoop {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolLoop();
-		%feature("autodoc", "1");
 		IGESSolid_ToolLoop();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_Loop &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1537,8 +1523,6 @@ class IGESSolid_ToolLoop {
 class IGESSolid_ToolEllipsoid {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolEllipsoid();
-		%feature("autodoc", "1");
 		IGESSolid_ToolEllipsoid();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_Ellipsoid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1565,8 +1549,6 @@ class IGESSolid_ToolEllipsoid {
 %nodefaultctor IGESSolid_ToolEdgeList;
 class IGESSolid_ToolEdgeList {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolEdgeList();
 		%feature("autodoc", "1");
 		IGESSolid_ToolEdgeList();
 		%feature("autodoc", "1");
@@ -1622,8 +1604,6 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 %nodefaultctor IGESSolid_ToolBlock;
 class IGESSolid_ToolBlock {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolBlock();
 		%feature("autodoc", "1");
 		IGESSolid_ToolBlock();
 		%feature("autodoc", "1");
@@ -1686,8 +1666,6 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 class IGESSolid_ToolSphericalSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolSphericalSurface();
-		%feature("autodoc", "1");
 		IGESSolid_ToolSphericalSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_SphericalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1715,8 +1693,6 @@ class IGESSolid_ToolSphericalSurface {
 class IGESSolid_ToolBooleanTree {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolBooleanTree();
-		%feature("autodoc", "1");
 		IGESSolid_ToolBooleanTree();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_BooleanTree &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1743,8 +1719,6 @@ class IGESSolid_ToolBooleanTree {
 %nodefaultctor IGESSolid_ToolVertexList;
 class IGESSolid_ToolVertexList {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolVertexList();
 		%feature("autodoc", "1");
 		IGESSolid_ToolVertexList();
 		%feature("autodoc", "1");
@@ -1820,8 +1794,6 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 %nodefaultctor IGESSolid_ToolManifoldSolid;
 class IGESSolid_ToolManifoldSolid {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolManifoldSolid();
 		%feature("autodoc", "1");
 		IGESSolid_ToolManifoldSolid();
 		%feature("autodoc", "1");
@@ -1901,8 +1873,6 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 %nodefaultctor IGESSolid_ToolConicalSurface;
 class IGESSolid_ToolConicalSurface {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolConicalSurface();
 		%feature("autodoc", "1");
 		IGESSolid_ToolConicalSurface();
 		%feature("autodoc", "1");
@@ -2062,8 +2032,6 @@ class IGESSolid {
 %nodefaultctor IGESSolid_ToolSphere;
 class IGESSolid_ToolSphere {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolSphere();
 		%feature("autodoc", "1");
 		IGESSolid_ToolSphere();
 		%feature("autodoc", "1");
@@ -2271,8 +2239,6 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 class IGESSolid_ToolRightAngularWedge {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolRightAngularWedge();
-		%feature("autodoc", "1");
 		IGESSolid_ToolRightAngularWedge();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_RightAngularWedge &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2382,8 +2348,6 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 class IGESSolid_ToolCylindricalSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolCylindricalSurface();
-		%feature("autodoc", "1");
 		IGESSolid_ToolCylindricalSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_CylindricalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2444,8 +2408,6 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 %nodefaultctor IGESSolid_ToolSolidInstance;
 class IGESSolid_ToolSolidInstance {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolSolidInstance();
 		%feature("autodoc", "1");
 		IGESSolid_ToolSolidInstance();
 		%feature("autodoc", "1");
@@ -2528,8 +2490,6 @@ class IGESSolid_SpecificModule : public IGESData_SpecificModule {
 class IGESSolid_ToolPlaneSurface {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolPlaneSurface();
-		%feature("autodoc", "1");
 		IGESSolid_ToolPlaneSurface();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_PlaneSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2556,8 +2516,6 @@ class IGESSolid_ToolPlaneSurface {
 %nodefaultctor IGESSolid_ToolSolidAssembly;
 class IGESSolid_ToolSolidAssembly {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolSolidAssembly();
 		%feature("autodoc", "1");
 		IGESSolid_ToolSolidAssembly();
 		%feature("autodoc", "1");
@@ -2620,8 +2578,6 @@ class IGESSolid_EdgeList : public IGESData_IGESEntity {
 class IGESSolid_ToolSolidOfLinearExtrusion {
 	public:
 		%feature("autodoc", "1");
-		~IGESSolid_ToolSolidOfLinearExtrusion();
-		%feature("autodoc", "1");
 		IGESSolid_ToolSolidOfLinearExtrusion();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESSolid_SolidOfLinearExtrusion &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2648,8 +2604,6 @@ class IGESSolid_ToolSolidOfLinearExtrusion {
 %nodefaultctor IGESSolid_ToolCylinder;
 class IGESSolid_ToolCylinder {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolCylinder();
 		%feature("autodoc", "1");
 		IGESSolid_ToolCylinder();
 		%feature("autodoc", "1");
@@ -2816,8 +2770,6 @@ class IGESSolid_TopoBuilder {
 %nodefaultctor IGESSolid_ToolShell;
 class IGESSolid_ToolShell {
 	public:
-		%feature("autodoc", "1");
-		~IGESSolid_ToolShell();
 		%feature("autodoc", "1");
 		IGESSolid_ToolShell();
 		%feature("autodoc", "1");

@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_Root();
-		%feature("autodoc", "1");
 		StepToGeom_Root();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -645,8 +643,6 @@ class StepToGeom_MakeCurve : public StepToGeom_Root {
 class StepToGeom_MakeTransformation2d : public StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		~StepToGeom_MakeTransformation2d();
-		%feature("autodoc", "1");
 		StepToGeom_MakeTransformation2d(const Handle_StepGeom_CartesianTransformationOperator2d &CTO);
 		%feature("autodoc", "1");
 		const gp_Trsf2d & Value() const;
@@ -661,8 +657,6 @@ class StepToGeom_MakeTransformation2d : public StepToGeom_Root {
 %nodefaultctor StepToGeom_MakeTransformation3d;
 class StepToGeom_MakeTransformation3d : public StepToGeom_Root {
 	public:
-		%feature("autodoc", "1");
-		~StepToGeom_MakeTransformation3d();
 		%feature("autodoc", "1");
 		StepToGeom_MakeTransformation3d(const Handle_StepGeom_CartesianTransformationOperator3d &CTO);
 		%feature("autodoc", "1");

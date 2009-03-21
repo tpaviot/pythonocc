@@ -172,8 +172,6 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 class BinLDrivers_DocumentSection {
 	public:
 		%feature("autodoc", "1");
-		~BinLDrivers_DocumentSection();
-		%feature("autodoc", "1");
 		BinLDrivers_DocumentSection();
 		%feature("autodoc", "1");
 		BinLDrivers_DocumentSection(const TCollection_AsciiString &theName, const Standard_Boolean isPostRead);

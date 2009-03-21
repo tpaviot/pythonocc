@@ -179,8 +179,6 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~ShapeConstruct_CompBezierCurvesToBSplineCurve();
-		%feature("autodoc", "1");
 		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
 		void AddCurve(const TColgp_Array1OfPnt &Poles);
@@ -242,8 +240,6 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 		virtual		void Build();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		virtual		~ShapeConstruct_MakeTriangulation();
 
 };
 %extend ShapeConstruct_MakeTriangulation {
@@ -255,8 +251,6 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 %nodefaultctor ShapeConstruct_CompBezierCurves2dToBSplineCurve2d;
 class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
 	public:
-		%feature("autodoc", "1");
-		~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d();
 		%feature("autodoc", "1");
 		ShapeConstruct_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");

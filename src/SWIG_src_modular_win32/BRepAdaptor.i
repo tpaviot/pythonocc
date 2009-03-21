@@ -287,8 +287,6 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 		const TopoDS_Edge & Edge() const;
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		virtual		~BRepAdaptor_Curve2d();
 
 };
 %extend BRepAdaptor_Curve2d {
@@ -308,8 +306,6 @@ class BRepAdaptor_Array1OfCurve {
 		void Init(const BRepAdaptor_Curve &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~BRepAdaptor_Array1OfCurve();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");

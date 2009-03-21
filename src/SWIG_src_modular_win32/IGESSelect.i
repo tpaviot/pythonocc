@@ -1860,8 +1860,6 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 class IGESSelect {
 	public:
 		%feature("autodoc", "1");
-		~IGESSelect();
-		%feature("autodoc", "1");
 		IGESSelect();
 		%feature("autodoc", "1");
 		void Run();

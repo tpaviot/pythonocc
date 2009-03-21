@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BRepClass_Edge {
 	public:
 		%feature("autodoc", "1");
-		~BRepClass_Edge();
-		%feature("autodoc", "1");
 		BRepClass_Edge();
 		%feature("autodoc", "1");
 		BRepClass_Edge(const TopoDS_Edge &E, const TopoDS_Face &F);
@@ -113,8 +111,6 @@ class BRepClass_Edge {
 class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 	public:
 		%feature("autodoc", "1");
-		~BRepClass_Intersector();
-		%feature("autodoc", "1");
 		BRepClass_Intersector();
 		%feature("autodoc", "1");
 		void Perform(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol, const BRepClass_Edge &E);
@@ -131,8 +127,6 @@ class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 %nodefaultctor BRepClass_FClass2dOfFClassifier;
 class BRepClass_FClass2dOfFClassifier {
 	public:
-		%feature("autodoc", "1");
-		~BRepClass_FClass2dOfFClassifier();
 		%feature("autodoc", "1");
 		BRepClass_FClass2dOfFClassifier();
 		%feature("autodoc", "1");
@@ -160,8 +154,6 @@ class BRepClass_FClass2dOfFClassifier {
 %nodefaultctor BRepClass_FClassifier;
 class BRepClass_FClassifier {
 	public:
-		%feature("autodoc", "1");
-		~BRepClass_FClassifier();
 		%feature("autodoc", "1");
 		BRepClass_FClassifier();
 		%feature("autodoc", "1");
@@ -192,8 +184,6 @@ class BRepClass_FClassifier {
 class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 	public:
 		%feature("autodoc", "1");
-		~BRepClass_FaceClassifier();
-		%feature("autodoc", "1");
 		void Perform(const TopoDS_Face &F, const gp_Pnt2d &P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void Perform(const TopoDS_Face &F, const gp_Pnt &P, const Standard_Real Tol);
@@ -208,8 +198,6 @@ class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 %nodefaultctor BRepClass_FaceExplorer;
 class BRepClass_FaceExplorer {
 	public:
-		%feature("autodoc", "1");
-		~BRepClass_FaceExplorer();
 		%feature("autodoc", "1");
 		BRepClass_FaceExplorer(const TopoDS_Face &F);
 		%feature("autodoc", "1");
@@ -247,8 +235,6 @@ class BRepClass_FaceExplorer {
 %nodefaultctor BRepClass_FacePassiveClassifier;
 class BRepClass_FacePassiveClassifier {
 	public:
-		%feature("autodoc", "1");
-		~BRepClass_FacePassiveClassifier();
 		%feature("autodoc", "1");
 		BRepClass_FacePassiveClassifier();
 		%feature("autodoc", "1");

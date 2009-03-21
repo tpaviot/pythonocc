@@ -239,8 +239,6 @@ class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 class BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt();
-		%feature("autodoc", "1");
 		BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt();
 		%feature("autodoc", "1");
 		BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt(const BRepMAT2d_DataMapOfShapeSequenceOfBasicElt &aMap);
@@ -323,8 +321,6 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepMAT2d_SequenceOfBasicElt &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -402,8 +398,6 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~BRepMAT2d_DataMapOfBasicEltShape();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_MAT_BasicElt &K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");

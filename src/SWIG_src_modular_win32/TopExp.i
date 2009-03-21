@@ -135,8 +135,6 @@ class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 class TopExp_StackIteratorOfStackOfIterator {
 	public:
 		%feature("autodoc", "1");
-		~TopExp_StackIteratorOfStackOfIterator();
-		%feature("autodoc", "1");
 		TopExp_StackIteratorOfStackOfIterator();
 		%feature("autodoc", "1");
 		TopExp_StackIteratorOfStackOfIterator(const TopExp_StackOfIterator &S);
@@ -176,8 +174,6 @@ class TopExp_StackOfIterator {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TopExp_StackOfIterator();
-		%feature("autodoc", "1");
 		TopoDS_Iterator & ChangeTop();
 
 };
@@ -210,8 +206,6 @@ class TopExp_Explorer {
 		void Clear();
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TopExp_Explorer();
 
 };
 %extend TopExp_Explorer {
@@ -223,8 +217,6 @@ class TopExp_Explorer {
 %nodefaultctor TopExp;
 class TopExp {
 	public:
-		%feature("autodoc", "1");
-		~TopExp();
 		%feature("autodoc", "1");
 		TopExp();
 		%feature("autodoc", "1");

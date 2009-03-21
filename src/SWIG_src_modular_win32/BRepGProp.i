@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BRepGProp_Sinert : public GProp_GProps {
 	public:
 		%feature("autodoc", "1");
-		~BRepGProp_Sinert();
-		%feature("autodoc", "1");
 		BRepGProp_Sinert();
 		%feature("autodoc", "1");
 		BRepGProp_Sinert(const BRepGProp_Face &S, const gp_Pnt &SLocation);
@@ -123,8 +121,6 @@ class BRepGProp_Sinert : public GProp_GProps {
 class BRepGProp {
 	public:
 		%feature("autodoc", "1");
-		~BRepGProp();
-		%feature("autodoc", "1");
 		BRepGProp();
 		%feature("autodoc", "1");
 		void LinearProperties(const TopoDS_Shape &S, GProp_GProps & LProps);
@@ -151,8 +147,6 @@ class BRepGProp {
 %nodefaultctor BRepGProp_Vinert;
 class BRepGProp_Vinert : public GProp_GProps {
 	public:
-		%feature("autodoc", "1");
-		~BRepGProp_Vinert();
 		%feature("autodoc", "1");
 		BRepGProp_Vinert();
 		%feature("autodoc", "1");
@@ -219,8 +213,6 @@ class BRepGProp_Vinert : public GProp_GProps {
 class BRepGProp_EdgeTool {
 	public:
 		%feature("autodoc", "1");
-		~BRepGProp_EdgeTool();
-		%feature("autodoc", "1");
 		BRepGProp_EdgeTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
@@ -248,8 +240,6 @@ class BRepGProp_EdgeTool {
 class BRepGProp_UFunctionOfVinertGK : public math_Function {
 	public:
 		%feature("autodoc", "1");
-		~BRepGProp_UFunctionOfVinertGK();
-		%feature("autodoc", "1");
 		BRepGProp_UFunctionOfVinertGK(const BRepGProp_Face &theSurface, const gp_Pnt &theVertex, const Standard_Boolean IsByPoint, const Standard_Address theCoeffs);
 		%feature("autodoc", "1");
 		void SetValueType(const GProp_ValueType theType);
@@ -269,8 +259,6 @@ class BRepGProp_UFunctionOfVinertGK : public math_Function {
 class BRepGProp_Cinert : public GProp_GProps {
 	public:
 		%feature("autodoc", "1");
-		~BRepGProp_Cinert();
-		%feature("autodoc", "1");
 		BRepGProp_Cinert();
 		%feature("autodoc", "1");
 		BRepGProp_Cinert(const BRepAdaptor_Curve &C, const gp_Pnt &CLocation);
@@ -289,8 +277,6 @@ class BRepGProp_Cinert : public GProp_GProps {
 %nodefaultctor BRepGProp_Domain;
 class BRepGProp_Domain {
 	public:
-		%feature("autodoc", "1");
-		~BRepGProp_Domain();
 		%feature("autodoc", "1");
 		BRepGProp_Domain();
 		%feature("autodoc", "1");
@@ -316,8 +302,6 @@ class BRepGProp_Domain {
 %nodefaultctor BRepGProp_TFunctionOfVinertGK;
 class BRepGProp_TFunctionOfVinertGK : public math_Function {
 	public:
-		%feature("autodoc", "1");
-		~BRepGProp_TFunctionOfVinertGK();
 		%feature("autodoc", "1");
 		BRepGProp_TFunctionOfVinertGK(const BRepGProp_Face &theSurface, const gp_Pnt &theVertex, const Standard_Boolean IsByPoint, const Standard_Address theCoeffs, const Standard_Real theUMin, const Standard_Real theTolerance);
 		%feature("autodoc", "1");
@@ -347,8 +331,6 @@ class BRepGProp_TFunctionOfVinertGK : public math_Function {
 %nodefaultctor BRepGProp_Face;
 class BRepGProp_Face {
 	public:
-		%feature("autodoc", "1");
-		~BRepGProp_Face();
 		%feature("autodoc", "1");
 		BRepGProp_Face(const Standard_Boolean IsUseSpan=0);
 		%feature("autodoc", "1");

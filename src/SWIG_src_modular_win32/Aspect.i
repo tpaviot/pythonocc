@@ -1776,8 +1776,6 @@ class Aspect_Pixel {
 class Aspect_ColorPixel : public Aspect_Pixel {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_ColorPixel();
-		%feature("autodoc", "1");
 		Aspect_ColorPixel();
 		%feature("autodoc", "1");
 		Aspect_ColorPixel(const Quantity_Color &aColor);
@@ -2035,8 +2033,6 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 class Aspect_IndexPixel : public Aspect_Pixel {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_IndexPixel();
-		%feature("autodoc", "1");
 		Aspect_IndexPixel();
 		%feature("autodoc", "1");
 		Aspect_IndexPixel(const Standard_Integer anIndex);
@@ -2086,8 +2082,6 @@ class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
 		Aspect_SequenceOfMarkMapEntry();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Aspect_SequenceOfMarkMapEntry();
 		%feature("autodoc", "1");
 		const Aspect_SequenceOfMarkMapEntry & Assign(const Aspect_SequenceOfMarkMapEntry &Other);
 		%feature("autodoc", "1");
@@ -2145,8 +2139,6 @@ class Aspect_Array1OfEdge {
 		void Init(const Aspect_Edge &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Aspect_Array1OfEdge();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2210,8 +2202,6 @@ class Aspect_SequenceOfTypeMapEntry : public TCollection_BaseSequence {
 		Aspect_SequenceOfTypeMapEntry();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Aspect_SequenceOfTypeMapEntry();
 		%feature("autodoc", "1");
 		const Aspect_SequenceOfTypeMapEntry & Assign(const Aspect_SequenceOfTypeMapEntry &Other);
 		%feature("autodoc", "1");
@@ -2552,8 +2542,6 @@ class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 class Aspect_FontMapEntry {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_FontMapEntry();
-		%feature("autodoc", "1");
 		Aspect_FontMapEntry();
 		%feature("autodoc", "1");
 		Aspect_FontMapEntry(const Standard_Integer index, const Aspect_FontStyle &style);
@@ -2614,8 +2602,6 @@ class Aspect_SequenceOfColor : public TCollection_BaseSequence {
 		Aspect_SequenceOfColor();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Aspect_SequenceOfColor();
 		%feature("autodoc", "1");
 		const Aspect_SequenceOfColor & Assign(const Aspect_SequenceOfColor &Other);
 		%feature("autodoc", "1");
@@ -2850,8 +2836,6 @@ class Aspect_FontStyleDefinitionError : public Standard_OutOfRange {
 class Aspect_FontStyle {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_FontStyle();
-		%feature("autodoc", "1");
 		Aspect_FontStyle();
 		%feature("autodoc", "1");
 		Aspect_FontStyle(const Aspect_TypeOfFont Type, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
@@ -2938,8 +2922,6 @@ class Aspect_FontStyle {
 %nodefaultctor Aspect_MarkMapEntry;
 class Aspect_MarkMapEntry {
 	public:
-		%feature("autodoc", "1");
-		~Aspect_MarkMapEntry();
 		%feature("autodoc", "1");
 		Aspect_MarkMapEntry();
 		%feature("autodoc", "1");
@@ -3098,8 +3080,6 @@ class Aspect_Window : public MMgt_TShared {
 class Aspect_GenId {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_GenId();
-		%feature("autodoc", "1");
 		Aspect_GenId();
 		%feature("autodoc", "1");
 		Aspect_GenId(const Standard_Integer Low, const Standard_Integer Up);
@@ -3154,8 +3134,6 @@ class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
 %nodefaultctor Aspect;
 class Aspect {
 	public:
-		%feature("autodoc", "1");
-		~Aspect();
 		%feature("autodoc", "1");
 		Aspect();
 		%feature("autodoc", "1");
@@ -3430,8 +3408,6 @@ class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode 
 class Aspect_ColorMapEntry {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_ColorMapEntry();
-		%feature("autodoc", "1");
 		Aspect_ColorMapEntry();
 		%feature("autodoc", "1");
 		Aspect_ColorMapEntry(const Standard_Integer index, const Quantity_Color &rgb);
@@ -3571,8 +3547,6 @@ class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Aspect_SequenceOfColorMapEntry();
-		%feature("autodoc", "1");
 		const Aspect_SequenceOfColorMapEntry & Assign(const Aspect_SequenceOfColorMapEntry &Other);
 		%feature("autodoc", "1");
 		void Append(const Aspect_ColorMapEntry &T);
@@ -3654,8 +3628,6 @@ class Aspect_FontMap : public MMgt_TShared {
 class Aspect_LineStyle {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_LineStyle();
-		%feature("autodoc", "1");
 		Aspect_LineStyle();
 		%feature("autodoc", "1");
 		Aspect_LineStyle(const Aspect_TypeOfLine Type);
@@ -3690,8 +3662,6 @@ class Aspect_LineStyle {
 %nodefaultctor Aspect_MarkerStyle;
 class Aspect_MarkerStyle {
 	public:
-		%feature("autodoc", "1");
-		~Aspect_MarkerStyle();
 		%feature("autodoc", "1");
 		Aspect_MarkerStyle();
 		%feature("autodoc", "1");
@@ -3788,8 +3758,6 @@ class Aspect_IdentDefinitionError : public Standard_OutOfRange {
 class Aspect_Background {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_Background();
-		%feature("autodoc", "1");
 		Aspect_Background();
 		%feature("autodoc", "1");
 		Aspect_Background(const Quantity_Color &AColor);
@@ -3808,8 +3776,6 @@ class Aspect_Background {
 %nodefaultctor Aspect_WidthMapEntry;
 class Aspect_WidthMapEntry {
 	public:
-		%feature("autodoc", "1");
-		~Aspect_WidthMapEntry();
 		%feature("autodoc", "1");
 		Aspect_WidthMapEntry();
 		%feature("autodoc", "1");
@@ -3876,8 +3842,6 @@ class Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public TCollection_SeqNode 
 class Aspect_Edge {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_Edge();
-		%feature("autodoc", "1");
 		Aspect_Edge();
 		%feature("autodoc", "1");
 		Aspect_Edge(const Standard_Integer AIndex1, const Standard_Integer AIndex2, const Aspect_TypeOfEdge AType);
@@ -3931,8 +3895,6 @@ class Aspect_WindowDefinitionError : public Standard_OutOfRange {
 class Aspect_TypeMapEntry {
 	public:
 		%feature("autodoc", "1");
-		~Aspect_TypeMapEntry();
-		%feature("autodoc", "1");
 		Aspect_TypeMapEntry();
 		%feature("autodoc", "1");
 		Aspect_TypeMapEntry(const Standard_Integer index, const Aspect_LineStyle &style);
@@ -3971,8 +3933,6 @@ class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
 		Aspect_SequenceOfFontMapEntry();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Aspect_SequenceOfFontMapEntry();
 		%feature("autodoc", "1");
 		const Aspect_SequenceOfFontMapEntry & Assign(const Aspect_SequenceOfFontMapEntry &Other);
 		%feature("autodoc", "1");
@@ -4026,8 +3986,6 @@ class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 		Aspect_SequenceOfWidthMapEntry();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~Aspect_SequenceOfWidthMapEntry();
 		%feature("autodoc", "1");
 		const Aspect_SequenceOfWidthMapEntry & Assign(const Aspect_SequenceOfWidthMapEntry &Other);
 		%feature("autodoc", "1");

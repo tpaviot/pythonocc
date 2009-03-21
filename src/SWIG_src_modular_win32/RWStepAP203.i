@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class RWStepAP203_RWChangeRequest {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP203_RWChangeRequest();
-		%feature("autodoc", "1");
 		RWStepAP203_RWChangeRequest();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_ChangeRequest &ent) const;
@@ -108,8 +106,6 @@ class RWStepAP203_RWChangeRequest {
 %nodefaultctor RWStepAP203_RWCcDesignSecurityClassification;
 class RWStepAP203_RWCcDesignSecurityClassification {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP203_RWCcDesignSecurityClassification();
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignSecurityClassification();
 		%feature("autodoc", "1");
@@ -130,8 +126,6 @@ class RWStepAP203_RWCcDesignSecurityClassification {
 class RWStepAP203_RWStartRequest {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP203_RWStartRequest();
-		%feature("autodoc", "1");
 		RWStepAP203_RWStartRequest();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_StartRequest &ent) const;
@@ -150,8 +144,6 @@ class RWStepAP203_RWStartRequest {
 %nodefaultctor RWStepAP203_RWStartWork;
 class RWStepAP203_RWStartWork {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP203_RWStartWork();
 		%feature("autodoc", "1");
 		RWStepAP203_RWStartWork();
 		%feature("autodoc", "1");
@@ -172,8 +164,6 @@ class RWStepAP203_RWStartWork {
 class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP203_RWCcDesignDateAndTimeAssignment();
-		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignDateAndTimeAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent) const;
@@ -192,8 +182,6 @@ class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 %nodefaultctor RWStepAP203_RWChange;
 class RWStepAP203_RWChange {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP203_RWChange();
 		%feature("autodoc", "1");
 		RWStepAP203_RWChange();
 		%feature("autodoc", "1");
@@ -214,8 +202,6 @@ class RWStepAP203_RWChange {
 class RWStepAP203_RWCcDesignCertification {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP203_RWCcDesignCertification();
-		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignCertification();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignCertification &ent) const;
@@ -234,8 +220,6 @@ class RWStepAP203_RWCcDesignCertification {
 %nodefaultctor RWStepAP203_RWCcDesignPersonAndOrganizationAssignment;
 class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP203_RWCcDesignPersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignPersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
@@ -256,8 +240,6 @@ class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 class RWStepAP203_RWCcDesignApproval {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP203_RWCcDesignApproval();
-		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignApproval();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignApproval &ent) const;
@@ -277,8 +259,6 @@ class RWStepAP203_RWCcDesignApproval {
 class RWStepAP203_RWCcDesignSpecificationReference {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP203_RWCcDesignSpecificationReference();
-		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignSpecificationReference();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignSpecificationReference &ent) const;
@@ -297,8 +277,6 @@ class RWStepAP203_RWCcDesignSpecificationReference {
 %nodefaultctor RWStepAP203_RWCcDesignContract;
 class RWStepAP203_RWCcDesignContract {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP203_RWCcDesignContract();
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignContract();
 		%feature("autodoc", "1");

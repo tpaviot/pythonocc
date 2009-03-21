@@ -867,8 +867,6 @@ class Quantity_Array2OfColor {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Quantity_Array2OfColor();
-		%feature("autodoc", "1");
 		const Quantity_Array2OfColor & Assign(const Quantity_Array2OfColor &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -912,8 +910,6 @@ class Quantity_Array1OfCoefficient {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Quantity_Array1OfCoefficient();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Quantity_Array1OfCoefficient & Assign(const Quantity_Array1OfCoefficient &Other);
@@ -944,8 +940,6 @@ class Quantity_Array1OfCoefficient {
 %nodefaultctor Quantity_Period;
 class Quantity_Period {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Period();
 		%feature("autodoc", "1");
 		Quantity_Period(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
@@ -1066,8 +1060,6 @@ class Quantity_Array1OfColor {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Quantity_Array1OfColor();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Quantity_Array1OfColor & Assign(const Quantity_Array1OfColor &Other);
@@ -1098,8 +1090,6 @@ class Quantity_Array1OfColor {
 %nodefaultctor Quantity_Color;
 class Quantity_Color {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Color();
 		%feature("autodoc", "1");
 		Quantity_Color();
 		%feature("autodoc", "1");
@@ -1181,8 +1171,6 @@ class Quantity_Color {
 %nodefaultctor Quantity_Date;
 class Quantity_Date {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Date();
 		%feature("autodoc", "1");
 		Quantity_Date();
 		%feature("autodoc", "1");
@@ -1318,8 +1306,6 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 %nodefaultctor Quantity_Convert;
 class Quantity_Convert {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Convert();
 		%feature("autodoc", "1");
 		Quantity_Convert();
 		%feature("autodoc", "1");

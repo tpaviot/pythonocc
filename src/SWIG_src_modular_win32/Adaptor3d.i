@@ -640,8 +640,6 @@ class Adaptor3d_InterFunc : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Adaptor3d_InterFunc();
 
 };
 %extend Adaptor3d_InterFunc {

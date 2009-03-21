@@ -124,8 +124,6 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 class gp_Cone {
 	public:
 		%feature("autodoc", "1");
-		~gp_Cone();
-		%feature("autodoc", "1");
 		gp_Cone();
 		%feature("autodoc", "1");
 		gp_Cone(const gp_Ax3 &A3, const Standard_Real Ang, const Standard_Real Radius);
@@ -216,8 +214,6 @@ class gp_Cone {
 %nodefaultctor gp_Hypr2d;
 class gp_Hypr2d {
 	public:
-		%feature("autodoc", "1");
-		~gp_Hypr2d();
 		%feature("autodoc", "1");
 		gp_Hypr2d();
 		%feature("autodoc", "1");
@@ -330,8 +326,6 @@ class gp_Hypr2d {
 class gp_Dir2d {
 	public:
 		%feature("autodoc", "1");
-		~gp_Dir2d();
-		%feature("autodoc", "1");
 		gp_Dir2d();
 		%feature("autodoc", "1");
 		gp_Dir2d(const gp_Vec2d &V);
@@ -412,8 +406,6 @@ class gp_Dir2d {
 %nodefaultctor gp_Parab2d;
 class gp_Parab2d {
 	public:
-		%feature("autodoc", "1");
-		~gp_Parab2d();
 		%feature("autodoc", "1");
 		gp_Parab2d();
 		%feature("autodoc", "1");
@@ -499,8 +491,6 @@ class gp_Parab2d {
 %nodefaultctor gp_Mat2d;
 class gp_Mat2d {
 	public:
-		%feature("autodoc", "1");
-		~gp_Mat2d();
 		%feature("autodoc", "1");
 		gp_Mat2d();
 		%feature("autodoc", "1");
@@ -635,8 +625,6 @@ class gp_VectorWithNullMagnitude : public Standard_DomainError {
 class gp_Ax22d {
 	public:
 		%feature("autodoc", "1");
-		~gp_Ax22d();
-		%feature("autodoc", "1");
 		gp_Ax22d();
 		%feature("autodoc", "1");
 		gp_Ax22d(const gp_Pnt2d &P, const gp_Dir2d &Vx, const gp_Dir2d &Vy);
@@ -711,8 +699,6 @@ class gp_Ax22d {
 %nodefaultctor gp_Trsf2d;
 class gp_Trsf2d {
 	public:
-		%feature("autodoc", "1");
-		~gp_Trsf2d();
 		%feature("autodoc", "1");
 		gp_Trsf2d();
 		%feature("autodoc", "1");
@@ -798,8 +784,6 @@ class gp_Trsf2d {
 %nodefaultctor gp_Pnt;
 class gp_Pnt {
 	public:
-		%feature("autodoc", "1");
-		~gp_Pnt();
 		%feature("autodoc", "1");
 		gp_Pnt();
 		%feature("autodoc", "1");
@@ -887,8 +871,6 @@ class gp_Pnt {
 %nodefaultctor gp_Vec;
 class gp_Vec {
 	public:
-		%feature("autodoc", "1");
-		~gp_Vec();
 		%feature("autodoc", "1");
 		gp_Vec();
 		%feature("autodoc", "1");
@@ -1053,8 +1035,6 @@ class gp_Vec {
 class gp_Trsf {
 	public:
 		%feature("autodoc", "1");
-		~gp_Trsf();
-		%feature("autodoc", "1");
 		gp_Trsf();
 		%feature("autodoc", "1");
 		gp_Trsf(const gp_Trsf2d &T);
@@ -1146,8 +1126,6 @@ class gp_Trsf {
 class gp_Cylinder {
 	public:
 		%feature("autodoc", "1");
-		~gp_Cylinder();
-		%feature("autodoc", "1");
 		gp_Cylinder();
 		%feature("autodoc", "1");
 		gp_Cylinder(const gp_Ax3 &A3, const Standard_Real Radius);
@@ -1228,8 +1206,6 @@ class gp_Cylinder {
 %nodefaultctor gp_Torus;
 class gp_Torus {
 	public:
-		%feature("autodoc", "1");
-		~gp_Torus();
 		%feature("autodoc", "1");
 		gp_Torus();
 		%feature("autodoc", "1");
@@ -1323,8 +1299,6 @@ class gp_Torus {
 %nodefaultctor gp_Dir;
 class gp_Dir {
 	public:
-		%feature("autodoc", "1");
-		~gp_Dir();
 		%feature("autodoc", "1");
 		gp_Dir();
 		%feature("autodoc", "1");
@@ -1427,8 +1401,6 @@ class gp_Dir {
 class gp_Circ2d {
 	public:
 		%feature("autodoc", "1");
-		~gp_Circ2d();
-		%feature("autodoc", "1");
 		gp_Circ2d();
 		%feature("autodoc", "1");
 		gp_Circ2d(const gp_Ax2d &XAxis, const Standard_Real Radius, const Standard_Boolean Sense=1);
@@ -1519,8 +1491,6 @@ class gp_Circ2d {
 %nodefaultctor gp_XY;
 class gp_XY {
 	public:
-		%feature("autodoc", "1");
-		~gp_XY();
 		%feature("autodoc", "1");
 		gp_XY();
 		%feature("autodoc", "1");
@@ -1643,8 +1613,6 @@ class gp_XY {
 class gp_Lin2d {
 	public:
 		%feature("autodoc", "1");
-		~gp_Lin2d();
-		%feature("autodoc", "1");
 		gp_Lin2d();
 		%feature("autodoc", "1");
 		gp_Lin2d(const gp_Ax2d &A);
@@ -1725,8 +1693,6 @@ class gp_Lin2d {
 %nodefaultctor gp_Elips2d;
 class gp_Elips2d {
 	public:
-		%feature("autodoc", "1");
-		~gp_Elips2d();
 		%feature("autodoc", "1");
 		gp_Elips2d();
 		%feature("autodoc", "1");
@@ -1830,8 +1796,6 @@ class gp_Elips2d {
 %nodefaultctor gp_Vec2d;
 class gp_Vec2d {
 	public:
-		%feature("autodoc", "1");
-		~gp_Vec2d();
 		%feature("autodoc", "1");
 		gp_Vec2d();
 		%feature("autodoc", "1");
@@ -1972,8 +1936,6 @@ class gp_Vec2d {
 class gp_Pnt2d {
 	public:
 		%feature("autodoc", "1");
-		~gp_Pnt2d();
-		%feature("autodoc", "1");
 		gp_Pnt2d();
 		%feature("autodoc", "1");
 		gp_Pnt2d(const gp_XY &Coordinates);
@@ -2050,8 +2012,6 @@ class gp_Pnt2d {
 %nodefaultctor gp_Parab;
 class gp_Parab {
 	public:
-		%feature("autodoc", "1");
-		~gp_Parab();
 		%feature("autodoc", "1");
 		gp_Parab();
 		%feature("autodoc", "1");
@@ -2134,8 +2094,6 @@ class gp_Parab {
 class gp_Lin {
 	public:
 		%feature("autodoc", "1");
-		~gp_Lin();
-		%feature("autodoc", "1");
 		gp_Lin();
 		%feature("autodoc", "1");
 		gp_Lin(const gp_Ax1 &A1);
@@ -2217,8 +2175,6 @@ class gp_Lin {
 class gp_Ax1 {
 	public:
 		%feature("autodoc", "1");
-		~gp_Ax1();
-		%feature("autodoc", "1");
 		gp_Ax1();
 		%feature("autodoc", "1");
 		gp_Ax1(const gp_Pnt &P, const gp_Dir &V);
@@ -2291,8 +2247,6 @@ class gp_Ax1 {
 %nodefaultctor gp_Ax2;
 class gp_Ax2 {
 	public:
-		%feature("autodoc", "1");
-		~gp_Ax2();
 		%feature("autodoc", "1");
 		gp_Ax2();
 		%feature("autodoc", "1");
@@ -2374,8 +2328,6 @@ class gp_Ax2 {
 %nodefaultctor gp_Ax3;
 class gp_Ax3 {
 	public:
-		%feature("autodoc", "1");
-		~gp_Ax3();
 		%feature("autodoc", "1");
 		gp_Ax3();
 		%feature("autodoc", "1");
@@ -2470,8 +2422,6 @@ class gp_Ax3 {
 class gp_Sphere {
 	public:
 		%feature("autodoc", "1");
-		~gp_Sphere();
-		%feature("autodoc", "1");
 		gp_Sphere();
 		%feature("autodoc", "1");
 		gp_Sphere(const gp_Ax3 &A3, const Standard_Real Radius);
@@ -2553,8 +2503,6 @@ class gp_Sphere {
 class gp_GTrsf {
 	public:
 		%feature("autodoc", "1");
-		~gp_GTrsf();
-		%feature("autodoc", "1");
 		gp_GTrsf();
 		%feature("autodoc", "1");
 		gp_GTrsf(const gp_Trsf &T);
@@ -2631,8 +2579,6 @@ class gp_GTrsf {
 %nodefaultctor gp_Pln;
 class gp_Pln {
 	public:
-		%feature("autodoc", "1");
-		~gp_Pln();
 		%feature("autodoc", "1");
 		gp_Pln();
 		%feature("autodoc", "1");
@@ -2726,8 +2672,6 @@ class gp_Pln {
 %nodefaultctor gp_Hypr;
 class gp_Hypr {
 	public:
-		%feature("autodoc", "1");
-		~gp_Hypr();
 		%feature("autodoc", "1");
 		gp_Hypr();
 		%feature("autodoc", "1");
@@ -2834,8 +2778,6 @@ class gp_Hypr {
 class gp_Circ {
 	public:
 		%feature("autodoc", "1");
-		~gp_Circ();
-		%feature("autodoc", "1");
 		gp_Circ();
 		%feature("autodoc", "1");
 		gp_Circ(const gp_Ax2 &A2, const Standard_Real R);
@@ -2918,8 +2860,6 @@ class gp_Circ {
 %nodefaultctor gp_XYZ;
 class gp_XYZ {
 	public:
-		%feature("autodoc", "1");
-		~gp_XYZ();
 		%feature("autodoc", "1");
 		gp_XYZ();
 		%feature("autodoc", "1");
@@ -3062,8 +3002,6 @@ class gp_XYZ {
 class gp_Mat {
 	public:
 		%feature("autodoc", "1");
-		~gp_Mat();
-		%feature("autodoc", "1");
 		gp_Mat();
 		%feature("autodoc", "1");
 		gp_Mat(const Standard_Real a11, const Standard_Real a12, const Standard_Real a13, const Standard_Real a21, const Standard_Real a22, const Standard_Real a23, const Standard_Real a31, const Standard_Real a32, const Standard_Real a33);
@@ -3177,8 +3115,6 @@ class gp_Mat {
 class gp_Elips {
 	public:
 		%feature("autodoc", "1");
-		~gp_Elips();
-		%feature("autodoc", "1");
 		gp_Elips();
 		%feature("autodoc", "1");
 		gp_Elips(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
@@ -3276,8 +3212,6 @@ class gp_Elips {
 class gp_Ax2d {
 	public:
 		%feature("autodoc", "1");
-		~gp_Ax2d();
-		%feature("autodoc", "1");
 		gp_Ax2d();
 		%feature("autodoc", "1");
 		gp_Ax2d(const gp_Pnt2d &P, const gp_Dir2d &V);
@@ -3346,8 +3280,6 @@ class gp_Ax2d {
 %nodefaultctor gp_GTrsf2d;
 class gp_GTrsf2d {
 	public:
-		%feature("autodoc", "1");
-		~gp_GTrsf2d();
 		%feature("autodoc", "1");
 		gp_GTrsf2d();
 		%feature("autodoc", "1");
@@ -3427,8 +3359,6 @@ class gp_GTrsf2d {
 %nodefaultctor gp;
 class gp {
 	public:
-		%feature("autodoc", "1");
-		~gp();
 		%feature("autodoc", "1");
 		gp();
 		%feature("autodoc", "1");

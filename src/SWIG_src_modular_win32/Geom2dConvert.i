@@ -119,8 +119,6 @@ class Geom2dConvert {
 class Geom2dConvert_BSplineCurveKnotSplitting {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dConvert_BSplineCurveKnotSplitting();
-		%feature("autodoc", "1");
 		Geom2dConvert_BSplineCurveKnotSplitting(const Handle_Geom2d_BSplineCurve &BasisCurve, const Standard_Integer ContinuityRange);
 		%feature("autodoc", "1");
 		Standard_Integer NbSplits() const;

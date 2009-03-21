@@ -354,8 +354,6 @@ class ShapeAnalysis_ShapeTolerance {
 class ShapeAnalysis_FreeBounds {
 	public:
 		%feature("autodoc", "1");
-		~ShapeAnalysis_FreeBounds();
-		%feature("autodoc", "1");
 		ShapeAnalysis_FreeBounds();
 		%feature("autodoc", "1");
 		ShapeAnalysis_FreeBounds(const TopoDS_Shape &shape, const Standard_Real toler, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=1);
@@ -386,8 +384,6 @@ class ShapeAnalysis_FreeBounds {
 %nodefaultctor ShapeAnalysis;
 class ShapeAnalysis {
 	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis();
 		%feature("autodoc", "1");
 		ShapeAnalysis();
 		%feature("autodoc", "1");
@@ -561,8 +557,6 @@ class ShapeAnalysis_ShapeContents {
 class ShapeAnalysis_Curve {
 	public:
 		%feature("autodoc", "1");
-		~ShapeAnalysis_Curve();
-		%feature("autodoc", "1");
 		ShapeAnalysis_Curve();
 		%feature("autodoc", "1");
 		Standard_Real Project(const Handle_Geom_Curve &C3D, const gp_Pnt &P3D, const Standard_Real preci, gp_Pnt & proj, Standard_Real &OutValue, const Standard_Boolean AdjustToEnds=1) const;
@@ -607,8 +601,6 @@ class ShapeAnalysis_Curve {
 %nodefaultctor ShapeAnalysis_Edge;
 class ShapeAnalysis_Edge {
 	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis_Edge();
 		%feature("autodoc", "1");
 		ShapeAnalysis_Edge();
 		%feature("autodoc", "1");
@@ -681,8 +673,6 @@ class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ShapeAnalysis_DataMapOfShapeReal();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Real &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -731,8 +721,6 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_M
 %nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal;
 class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
 		ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
@@ -883,8 +871,6 @@ class ShapeAnalysis_DataMapOfShapeListOfReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ShapeAnalysis_DataMapOfShapeListOfReal();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const TColStd_ListOfReal &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -909,8 +895,6 @@ class ShapeAnalysis_DataMapOfShapeListOfReal : public TCollection_BasicMap {
 %nodefaultctor ShapeAnalysis_CheckSmallFace;
 class ShapeAnalysis_CheckSmallFace {
 	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis_CheckSmallFace();
 		%feature("autodoc", "1");
 		ShapeAnalysis_CheckSmallFace();
 		%feature("autodoc", "1");
@@ -1043,8 +1027,6 @@ class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
 %nodefaultctor ShapeAnalysis_WireOrder;
 class ShapeAnalysis_WireOrder {
 	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis_WireOrder();
 		%feature("autodoc", "1");
 		ShapeAnalysis_WireOrder();
 		%feature("autodoc", "1");
@@ -1362,8 +1344,6 @@ class ShapeAnalysis_WireVertex {
 class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal();
-		%feature("autodoc", "1");
 		ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal();
 		%feature("autodoc", "1");
 		ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal(const ShapeAnalysis_DataMapOfShapeListOfReal &aMap);
@@ -1384,8 +1364,6 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollecti
 %nodefaultctor ShapeAnalysis_Geom;
 class ShapeAnalysis_Geom {
 	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis_Geom();
 		%feature("autodoc", "1");
 		ShapeAnalysis_Geom();
 		%feature("autodoc", "1");
@@ -1487,8 +1465,6 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 %nodefaultctor ShapeAnalysis_Shell;
 class ShapeAnalysis_Shell {
 	public:
-		%feature("autodoc", "1");
-		~ShapeAnalysis_Shell();
 		%feature("autodoc", "1");
 		ShapeAnalysis_Shell();
 		%feature("autodoc", "1");

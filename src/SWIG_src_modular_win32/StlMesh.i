@@ -375,8 +375,6 @@ class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 class StlMesh_MeshExplorer {
 	public:
 		%feature("autodoc", "1");
-		~StlMesh_MeshExplorer();
-		%feature("autodoc", "1");
 		StlMesh_MeshExplorer(const Handle_StlMesh_Mesh &M);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;

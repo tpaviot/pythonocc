@@ -185,8 +185,6 @@ class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 class DBC_VArrayTNodeOfVArrayOfCharacter {
 	public:
 		%feature("autodoc", "1");
-		~DBC_VArrayTNodeOfVArrayOfCharacter();
-		%feature("autodoc", "1");
 		DBC_VArrayTNodeOfVArrayOfCharacter();
 		%feature("autodoc", "1");
 		DBC_VArrayTNodeOfVArrayOfCharacter(const Standard_Character &aValue);
@@ -238,8 +236,6 @@ class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
 class DBC_VArrayTNodeOfVArrayOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~DBC_VArrayTNodeOfVArrayOfInteger();
-		%feature("autodoc", "1");
 		DBC_VArrayTNodeOfVArrayOfInteger();
 		%feature("autodoc", "1");
 		DBC_VArrayTNodeOfVArrayOfInteger(const Standard_Integer &aValue);
@@ -266,8 +262,6 @@ class DBC_BaseArray {
 		DBC_BaseArray(const DBC_BaseArray &BaseArray);
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		~DBC_BaseArray();
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -297,8 +291,6 @@ class DBC_BaseArray {
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfExtCharacter;
 class DBC_VArrayTNodeOfVArrayOfExtCharacter {
 	public:
-		%feature("autodoc", "1");
-		~DBC_VArrayTNodeOfVArrayOfExtCharacter();
 		%feature("autodoc", "1");
 		DBC_VArrayTNodeOfVArrayOfExtCharacter();
 		%feature("autodoc", "1");
@@ -336,8 +328,6 @@ class DBC_VArrayOfReal : public DBC_BaseArray {
 		Standard_Real & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~DBC_VArrayOfReal();
 
 };
 %extend DBC_VArrayOfReal {
@@ -367,8 +357,6 @@ class DBC_VArrayOfCharacter : public DBC_BaseArray {
 		Standard_Character & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~DBC_VArrayOfCharacter();
 
 };
 %extend DBC_VArrayOfCharacter {
@@ -430,8 +418,6 @@ class DBC_VArrayOfInteger : public DBC_BaseArray {
 		Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~DBC_VArrayOfInteger();
 
 };
 %extend DBC_VArrayOfInteger {
@@ -476,8 +462,6 @@ class DBC_VArrayNodeOfVArrayOfReal : public PStandard_ArrayNode {
 class DBC_VArrayTNodeOfVArrayOfReal {
 	public:
 		%feature("autodoc", "1");
-		~DBC_VArrayTNodeOfVArrayOfReal();
-		%feature("autodoc", "1");
 		DBC_VArrayTNodeOfVArrayOfReal();
 		%feature("autodoc", "1");
 		DBC_VArrayTNodeOfVArrayOfReal(const Standard_Real &aValue);
@@ -514,8 +498,6 @@ class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
 		Standard_ExtCharacter & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		virtual		~DBC_VArrayOfExtCharacter();
 
 };
 %extend DBC_VArrayOfExtCharacter {

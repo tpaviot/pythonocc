@@ -168,8 +168,6 @@ class BRepBuilderAPI_Command {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_Command();
-		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		void Check() const;
@@ -184,8 +182,6 @@ class BRepBuilderAPI_Command {
 %nodefaultctor BRepBuilderAPI_MakeShape;
 class BRepBuilderAPI_MakeShape : public BRepBuilderAPI_Command {
 	public:
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_MakeShape();
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
@@ -211,8 +207,6 @@ class BRepBuilderAPI_MakeVertex : public BRepBuilderAPI_MakeShape {
 		BRepBuilderAPI_MakeVertex(const gp_Pnt &P);
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_MakeVertex();
 
 };
 %extend BRepBuilderAPI_MakeVertex {
@@ -228,8 +222,6 @@ class BRepBuilderAPI_ModifyShape : public BRepBuilderAPI_MakeShape {
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		const TopoDS_Shape & ModifiedShape(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_ModifyShape();
 
 };
 %extend BRepBuilderAPI_ModifyShape {
@@ -247,8 +239,6 @@ class BRepBuilderAPI_Copy : public BRepBuilderAPI_ModifyShape {
 		BRepBuilderAPI_Copy(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		void Perform(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_Copy();
 
 };
 %extend BRepBuilderAPI_Copy {
@@ -274,8 +264,6 @@ class BRepBuilderAPI_MakeShell : public BRepBuilderAPI_MakeShape {
 		BRepBuilderAPI_ShellError Error() const;
 		%feature("autodoc", "1");
 		const TopoDS_Shell & Shell() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_MakeShell();
 
 };
 %extend BRepBuilderAPI_MakeShell {
@@ -317,8 +305,6 @@ class BRepBuilderAPI_MakeWire : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Edge & Edge() const;
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_MakeWire();
 
 };
 %extend BRepBuilderAPI_MakeWire {
@@ -434,8 +420,6 @@ class BRepBuilderAPI_MakeEdge : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Vertex & Vertex1() const;
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex2() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_MakeEdge();
 
 };
 %extend BRepBuilderAPI_MakeEdge {
@@ -648,8 +632,6 @@ class BRepBuilderAPI_MakeEdge2d : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Vertex & Vertex1() const;
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex2() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_MakeEdge2d();
 
 };
 %extend BRepBuilderAPI_MakeEdge2d {
@@ -671,8 +653,6 @@ class BRepBuilderAPI_Transform : public BRepBuilderAPI_ModifyShape {
 		virtual		const TopoDS_Shape & ModifiedShape(const TopoDS_Shape &S) const;
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_Transform();
 
 };
 %extend BRepBuilderAPI_Transform {
@@ -690,8 +670,6 @@ class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
 		BRepBuilderAPI_NurbsConvert(const TopoDS_Shape &S, const Standard_Boolean Copy=0);
 		%feature("autodoc", "1");
 		void Perform(const TopoDS_Shape &S, const Standard_Boolean Copy=0);
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_NurbsConvert();
 
 };
 %extend BRepBuilderAPI_NurbsConvert {
@@ -734,8 +712,6 @@ class BRepBuilderAPI_GTransform : public BRepBuilderAPI_ModifyShape {
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		const TopoDS_Shape & ModifiedShape(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_GTransform();
 
 };
 %extend BRepBuilderAPI_GTransform {
@@ -779,8 +755,6 @@ class BRepBuilderAPI_MakePolygon : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Edge & Edge() const;
 		%feature("autodoc", "1");
 		const TopoDS_Wire & Wire() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_MakePolygon();
 
 };
 %extend BRepBuilderAPI_MakePolygon {
@@ -814,8 +788,6 @@ class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Solid & Solid() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_MakeSolid();
 
 };
 %extend BRepBuilderAPI_MakeSolid {
@@ -827,8 +799,6 @@ class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
 %nodefaultctor BRepBuilderAPI_Collect;
 class BRepBuilderAPI_Collect {
 	public:
-		%feature("autodoc", "1");
-		~BRepBuilderAPI_Collect();
 		%feature("autodoc", "1");
 		BRepBuilderAPI_Collect();
 		%feature("autodoc", "1");
@@ -912,8 +882,6 @@ class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
 		BRepBuilderAPI_FaceError Error() const;
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		virtual		~BRepBuilderAPI_MakeFace();
 
 };
 %extend BRepBuilderAPI_MakeFace {

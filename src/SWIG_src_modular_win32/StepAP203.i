@@ -640,8 +640,6 @@ class StepAP203_Array1OfClassifiedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfClassifiedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfClassifiedItem & Assign(const StepAP203_Array1OfClassifiedItem &Other);
@@ -799,8 +797,6 @@ class StepAP203_Array1OfWorkItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfWorkItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfWorkItem & Assign(const StepAP203_Array1OfWorkItem &Other);
@@ -925,8 +921,6 @@ class StepAP203_Array1OfContractedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfContractedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfContractedItem & Assign(const StepAP203_Array1OfContractedItem &Other);
@@ -965,8 +959,6 @@ class StepAP203_Array1OfPersonOrganizationItem {
 		void Init(const StepAP203_PersonOrganizationItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepAP203_Array1OfPersonOrganizationItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1046,8 +1038,6 @@ class StepAP203_Array1OfChangeRequestItem {
 		void Init(const StepAP203_ChangeRequestItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepAP203_Array1OfChangeRequestItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1436,8 +1426,6 @@ class StepAP203_Array1OfStartRequestItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfStartRequestItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfStartRequestItem & Assign(const StepAP203_Array1OfStartRequestItem &Other);
@@ -1608,8 +1596,6 @@ class StepAP203_Array1OfApprovedItem {
 		void Init(const StepAP203_ApprovedItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepAP203_Array1OfApprovedItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1801,8 +1787,6 @@ class StepAP203_Array1OfDateTimeItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfDateTimeItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfDateTimeItem & Assign(const StepAP203_Array1OfDateTimeItem &Other);
@@ -1842,8 +1826,6 @@ class StepAP203_Array1OfCertifiedItem {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepAP203_Array1OfCertifiedItem();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP203_Array1OfCertifiedItem & Assign(const StepAP203_Array1OfCertifiedItem &Other);
@@ -1882,8 +1864,6 @@ class StepAP203_Array1OfSpecifiedItem {
 		void Init(const StepAP203_SpecifiedItem &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepAP203_Array1OfSpecifiedItem();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");

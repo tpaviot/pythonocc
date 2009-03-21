@@ -1382,8 +1382,6 @@ class TColStd_StdMapNodeOfMapOfInteger : public TCollection_MapNode {
 class TColStd_StackIteratorOfStackOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_StackIteratorOfStackOfInteger();
-		%feature("autodoc", "1");
 		TColStd_StackIteratorOfStackOfInteger();
 		%feature("autodoc", "1");
 		TColStd_StackIteratorOfStackOfInteger(const TColStd_StackOfInteger &S);
@@ -1619,8 +1617,6 @@ class TColStd_DataMapOfIntegerReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_DataMapOfIntegerReal();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Standard_Real &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -1646,8 +1642,6 @@ class TColStd_DataMapOfIntegerReal : public TCollection_BasicMap {
 class TColStd_MapRealHasher {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_MapRealHasher();
-		%feature("autodoc", "1");
 		TColStd_MapRealHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Real &K, const Standard_Integer Upper);
@@ -1672,8 +1666,6 @@ class TColStd_Array2OfInteger {
 		void Init(const Standard_Integer &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColStd_Array2OfInteger();
 		%feature("autodoc", "1");
 		const TColStd_Array2OfInteger & Assign(const TColStd_Array2OfInteger &Other);
 		%feature("autodoc", "1");
@@ -1709,8 +1701,6 @@ class TColStd_Array2OfInteger {
 %nodefaultctor TColStd_SetIteratorOfSetOfInteger;
 class TColStd_SetIteratorOfSetOfInteger {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_SetIteratorOfSetOfInteger();
 		%feature("autodoc", "1");
 		TColStd_SetIteratorOfSetOfInteger();
 		%feature("autodoc", "1");
@@ -1763,8 +1753,6 @@ class TColStd_StackOfTransient {
 %nodefaultctor TColStd_ListIteratorOfSetListOfSetOfReal;
 class TColStd_ListIteratorOfSetListOfSetOfReal {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_ListIteratorOfSetListOfSetOfReal();
 		%feature("autodoc", "1");
 		TColStd_ListIteratorOfSetListOfSetOfReal();
 		%feature("autodoc", "1");
@@ -2064,8 +2052,6 @@ class TColStd_SetListOfSetOfTransient {
 class TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger();
-		%feature("autodoc", "1");
 		TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger();
 		%feature("autodoc", "1");
 		TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger(const TColStd_DataMapOfIntegerListOfInteger &aMap);
@@ -2135,8 +2121,6 @@ class TColStd_MapOfReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_MapOfReal();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const Standard_Real &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Standard_Real &aKey) const;
@@ -2157,8 +2141,6 @@ class TColStd_SequenceOfReal : public TCollection_BaseSequence {
 		TColStd_SequenceOfReal();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_SequenceOfReal();
 		%feature("autodoc", "1");
 		const TColStd_SequenceOfReal & Assign(const TColStd_SequenceOfReal &Other);
 		%feature("autodoc", "1");
@@ -2303,8 +2285,6 @@ class TColStd_Array1OfBoolean {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColStd_Array1OfBoolean();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColStd_Array1OfBoolean & Assign(const TColStd_Array1OfBoolean &Other);
@@ -2442,8 +2422,6 @@ class TColStd_SequenceOfInteger : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_SequenceOfInteger();
-		%feature("autodoc", "1");
 		const TColStd_SequenceOfInteger & Assign(const TColStd_SequenceOfInteger &Other);
 		%feature("autodoc", "1");
 		void Append(const Standard_Integer &T);
@@ -2516,8 +2494,6 @@ class TColStd_SetIteratorOfSetOfTransient {
 class TColStd_SetIteratorOfSetOfReal {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_SetIteratorOfSetOfReal();
-		%feature("autodoc", "1");
 		TColStd_SetIteratorOfSetOfReal();
 		%feature("autodoc", "1");
 		TColStd_SetIteratorOfSetOfReal(const TColStd_SetOfReal &S);
@@ -2548,8 +2524,6 @@ class TColStd_Array1OfInteger {
 		void Init(const Standard_Integer &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColStd_Array1OfInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2743,8 +2717,6 @@ class TColStd_IndexedMapOfReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_IndexedMapOfReal();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Standard_Real &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Standard_Real &K);
@@ -2847,8 +2819,6 @@ class TColStd_ListOfReal {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_ListOfReal();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const Standard_Real &I);
@@ -2915,8 +2885,6 @@ class TColStd_SequenceOfAsciiString : public TCollection_BaseSequence {
 		TColStd_SequenceOfAsciiString();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_SequenceOfAsciiString();
 		%feature("autodoc", "1");
 		const TColStd_SequenceOfAsciiString & Assign(const TColStd_SequenceOfAsciiString &Other);
 		%feature("autodoc", "1");
@@ -3005,8 +2973,6 @@ class TColStd_QueueOfInteger {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_QueueOfInteger();
-		%feature("autodoc", "1");
 		void Push(const Standard_Integer &T);
 		%feature("autodoc", "1");
 		void Pop();
@@ -3045,8 +3011,6 @@ class TColStd_ListNodeOfListOfReal : public TCollection_MapNode {
 %nodefaultctor TColStd_SetOfTransient;
 class TColStd_SetOfTransient {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_SetOfTransient();
 		%feature("autodoc", "1");
 		TColStd_SetOfTransient();
 		%feature("autodoc", "1");
@@ -3090,8 +3054,6 @@ class TColStd_Array1OfReal {
 		void Init(const Standard_Real &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColStd_Array1OfReal();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -3231,8 +3193,6 @@ class TColStd_HSequenceOfTransient : public MMgt_TShared {
 class TColStd_SetOfReal {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_SetOfReal();
-		%feature("autodoc", "1");
 		TColStd_SetOfReal();
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
@@ -3273,8 +3233,6 @@ class TColStd_PackedMapOfInteger : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_PackedMapOfInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const Standard_Integer aKey);
 		%feature("autodoc", "1");
@@ -3403,8 +3361,6 @@ class TColStd_Array1OfListOfInteger {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColStd_Array1OfListOfInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColStd_Array1OfListOfInteger & Assign(const TColStd_Array1OfListOfInteger &Other);
@@ -3436,8 +3392,6 @@ class TColStd_Array1OfListOfInteger {
 class TColStd_MapIteratorOfMapOfReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_MapIteratorOfMapOfReal();
-		%feature("autodoc", "1");
 		TColStd_MapIteratorOfMapOfReal();
 		%feature("autodoc", "1");
 		TColStd_MapIteratorOfMapOfReal(const TColStd_MapOfReal &aMap);
@@ -3464,8 +3418,6 @@ class TColStd_Array2OfCharacter {
 		void Init(const Standard_Character &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColStd_Array2OfCharacter();
 		%feature("autodoc", "1");
 		const TColStd_Array2OfCharacter & Assign(const TColStd_Array2OfCharacter &Other);
 		%feature("autodoc", "1");
@@ -3524,8 +3476,6 @@ class TColStd_ListIteratorOfListOfTransient {
 %nodefaultctor TColStd_MapTransientHasher;
 class TColStd_MapTransientHasher {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_MapTransientHasher();
 		%feature("autodoc", "1");
 		TColStd_MapTransientHasher();
 		%feature("autodoc", "1");
@@ -3592,8 +3542,6 @@ class TColStd_MapOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_MapOfInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Add(const Standard_Integer &aKey);
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Standard_Integer &aKey) const;
@@ -3614,8 +3562,6 @@ class TColStd_SequenceOfExtendedString : public TCollection_BaseSequence {
 		TColStd_SequenceOfExtendedString();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_SequenceOfExtendedString();
 		%feature("autodoc", "1");
 		const TColStd_SequenceOfExtendedString & Assign(const TColStd_SequenceOfExtendedString &Other);
 		%feature("autodoc", "1");
@@ -3800,8 +3746,6 @@ class TColStd_Array2OfBoolean {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColStd_Array2OfBoolean();
-		%feature("autodoc", "1");
 		const TColStd_Array2OfBoolean & Assign(const TColStd_Array2OfBoolean &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -3844,8 +3788,6 @@ class TColStd_MapOfTransient : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_MapOfTransient();
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const Handle_Standard_Transient &aKey);
 		%feature("autodoc", "1");
@@ -3905,8 +3847,6 @@ class TColStd_Array1OfCharacter {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColStd_Array1OfCharacter();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColStd_Array1OfCharacter & Assign(const TColStd_Array1OfCharacter &Other);
@@ -3960,8 +3900,6 @@ class TColStd_QueueNodeOfQueueOfInteger : public TCollection_MapNode {
 class TColStd_ListIteratorOfSetListOfSetOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_ListIteratorOfSetListOfSetOfInteger();
-		%feature("autodoc", "1");
 		TColStd_ListIteratorOfSetListOfSetOfInteger();
 		%feature("autodoc", "1");
 		TColStd_ListIteratorOfSetListOfSetOfInteger(const TColStd_SetListOfSetOfInteger &L);
@@ -3992,8 +3930,6 @@ class TColStd_SetListOfSetOfReal {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_SetListOfSetOfReal();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -4043,8 +3979,6 @@ class TColStd_SetListOfSetOfInteger {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_SetListOfSetOfInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
@@ -4266,8 +4200,6 @@ class TColStd_IndexedMapOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_IndexedMapOfInteger();
-		%feature("autodoc", "1");
 		Standard_Integer Add(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		void Substitute(const Standard_Integer I, const Standard_Integer &K);
@@ -4292,8 +4224,6 @@ class TColStd_IndexedMapOfInteger : public TCollection_BasicMap {
 %nodefaultctor TColStd_ListIteratorOfListOfReal;
 class TColStd_ListIteratorOfListOfReal {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_ListIteratorOfListOfReal();
 		%feature("autodoc", "1");
 		TColStd_ListIteratorOfListOfReal();
 		%feature("autodoc", "1");
@@ -4339,8 +4269,6 @@ class TColStd_SequenceNodeOfSequenceOfAsciiString : public TCollection_SeqNode {
 %nodefaultctor TColStd_ListIteratorOfListOfInteger;
 class TColStd_ListIteratorOfListOfInteger {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_ListIteratorOfListOfInteger();
 		%feature("autodoc", "1");
 		TColStd_ListIteratorOfListOfInteger();
 		%feature("autodoc", "1");
@@ -4514,8 +4442,6 @@ class TColStd_SequenceNodeOfSequenceOfExtendedString : public TCollection_SeqNod
 class TColStd_DataMapIteratorOfDataMapOfIntegerReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_DataMapIteratorOfDataMapOfIntegerReal();
-		%feature("autodoc", "1");
 		TColStd_DataMapIteratorOfDataMapOfIntegerReal();
 		%feature("autodoc", "1");
 		TColStd_DataMapIteratorOfDataMapOfIntegerReal(const TColStd_DataMapOfIntegerReal &aMap);
@@ -4608,8 +4534,6 @@ class TColStd_ListOfTransient {
 class TColStd_MapIteratorOfMapOfInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_MapIteratorOfMapOfInteger();
-		%feature("autodoc", "1");
 		TColStd_MapIteratorOfMapOfInteger();
 		%feature("autodoc", "1");
 		TColStd_MapIteratorOfMapOfInteger(const TColStd_MapOfInteger &aMap);
@@ -4690,8 +4614,6 @@ class TColStd_DataMapOfIntegerListOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_DataMapOfIntegerListOfInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const TColStd_ListOfInteger &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -4716,8 +4638,6 @@ class TColStd_DataMapOfIntegerListOfInteger : public TCollection_BasicMap {
 %nodefaultctor TColStd_SetOfInteger;
 class TColStd_SetOfInteger {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_SetOfInteger();
 		%feature("autodoc", "1");
 		TColStd_SetOfInteger();
 		%feature("autodoc", "1");
@@ -4770,8 +4690,6 @@ class TColStd_StackOfInteger {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_StackOfInteger();
-		%feature("autodoc", "1");
 		Standard_Integer & ChangeTop();
 
 };
@@ -4801,8 +4719,6 @@ class TColStd_StackOfReal {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_StackOfReal();
-		%feature("autodoc", "1");
 		Standard_Real & ChangeTop();
 
 };
@@ -4815,8 +4731,6 @@ class TColStd_StackOfReal {
 %nodefaultctor TColStd_StackIteratorOfStackOfReal;
 class TColStd_StackIteratorOfStackOfReal {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_StackIteratorOfStackOfReal();
 		%feature("autodoc", "1");
 		TColStd_StackIteratorOfStackOfReal();
 		%feature("autodoc", "1");
@@ -4959,8 +4873,6 @@ class TColStd_Array1OfAsciiString {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColStd_Array1OfAsciiString();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColStd_Array1OfAsciiString & Assign(const TColStd_Array1OfAsciiString &Other);
@@ -5021,8 +4933,6 @@ class TColStd_Array1OfExtendedString {
 		void Init(const TCollection_ExtendedString &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~TColStd_Array1OfExtendedString();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -5087,8 +4997,6 @@ class TColStd_DataMapOfIntegerInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~TColStd_DataMapOfIntegerInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Standard_Integer &K, const Standard_Integer &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
@@ -5135,8 +5043,6 @@ class TColStd_SequenceNodeOfSequenceOfInteger : public TCollection_SeqNode {
 %nodefaultctor TColStd_DataMapIteratorOfDataMapOfIntegerInteger;
 class TColStd_DataMapIteratorOfDataMapOfIntegerInteger : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~TColStd_DataMapIteratorOfDataMapOfIntegerInteger();
 		%feature("autodoc", "1");
 		TColStd_DataMapIteratorOfDataMapOfIntegerInteger();
 		%feature("autodoc", "1");
@@ -5211,8 +5117,6 @@ class TColStd_Array2OfReal {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~TColStd_Array2OfReal();
-		%feature("autodoc", "1");
 		const TColStd_Array2OfReal & Assign(const TColStd_Array2OfReal &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
@@ -5248,8 +5152,6 @@ class TColStd_Array2OfReal {
 class TColStd_MapIntegerHasher {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_MapIntegerHasher();
-		%feature("autodoc", "1");
 		TColStd_MapIntegerHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Integer &K, const Standard_Integer Upper);
@@ -5278,8 +5180,6 @@ class TColStd_QueueOfReal {
 		const Standard_Real & Front() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_QueueOfReal();
 		%feature("autodoc", "1");
 		void Push(const Standard_Real &T);
 		%feature("autodoc", "1");
@@ -5488,8 +5388,6 @@ class TColStd_HSetOfTransient : public MMgt_TShared {
 class TColStd_MapIteratorOfPackedMapOfInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~TColStd_MapIteratorOfPackedMapOfInteger();
-		%feature("autodoc", "1");
 		TColStd_MapIteratorOfPackedMapOfInteger();
 		%feature("autodoc", "1");
 		void Reset();
@@ -5516,8 +5414,6 @@ class TColStd_ListOfInteger {
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~TColStd_ListOfInteger();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");

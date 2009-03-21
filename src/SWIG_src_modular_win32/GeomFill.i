@@ -1340,8 +1340,6 @@ class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 		Standard_Boolean DerivTX(const gp_Vec &dN, const Standard_Real teta, math_Matrix & D);
 		%feature("autodoc", "1");
 		Standard_Boolean Deriv2X(const math_Vector &X, GeomFill_Tensor & T);
-		%feature("autodoc", "1");
-		virtual		~GeomFill_FunctionDraft();
 
 };
 %extend GeomFill_FunctionDraft {
@@ -1447,8 +1445,6 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 %nodefaultctor GeomFill_Filling;
 class GeomFill_Filling {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_Filling();
 		%feature("autodoc", "1");
 		GeomFill_Filling();
 		%feature("autodoc", "1");
@@ -1564,8 +1560,6 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
 		%feature("autodoc", "1");
 		virtual		GeomAbs_CurveType GetType() const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_SnglrFunc();
 
 };
 %extend GeomFill_SnglrFunc {
@@ -1577,8 +1571,6 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 %nodefaultctor GeomFill_PolynomialConvertor;
 class GeomFill_PolynomialConvertor {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_PolynomialConvertor();
 		%feature("autodoc", "1");
 		GeomFill_PolynomialConvertor();
 		%feature("autodoc", "1");
@@ -1960,8 +1952,6 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 class GeomFill_LocFunction {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_LocFunction();
-		%feature("autodoc", "1");
 		GeomFill_LocFunction(const Handle_GeomFill_LocationLaw &Law);
 		%feature("autodoc", "1");
 		Standard_Boolean D0(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
@@ -1986,8 +1976,6 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 		GeomFill_SequenceOfTrsf();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~GeomFill_SequenceOfTrsf();
 		%feature("autodoc", "1");
 		const GeomFill_SequenceOfTrsf & Assign(const GeomFill_SequenceOfTrsf &Other);
 		%feature("autodoc", "1");
@@ -2053,8 +2041,6 @@ class GeomFill_SectionGenerator : public GeomFill_Profiler {
 		void Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths) const;
 		%feature("autodoc", "1");
 		Standard_Real Parameter(const Standard_Integer P) const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_SectionGenerator();
 
 };
 %extend GeomFill_SectionGenerator {
@@ -2164,8 +2150,6 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_AppSurf();
 
 };
 %extend GeomFill_AppSurf {
@@ -2177,8 +2161,6 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 %nodefaultctor GeomFill_Tensor;
 class GeomFill_Tensor {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_Tensor();
 		%feature("autodoc", "1");
 		GeomFill_Tensor(const Standard_Integer NbRow, const Standard_Integer NbCol, const Standard_Integer NbMat);
 		%feature("autodoc", "1");
@@ -2324,8 +2306,6 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 class GeomFill_Stretch : public GeomFill_Filling {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_Stretch();
-		%feature("autodoc", "1");
 		GeomFill_Stretch();
 		%feature("autodoc", "1");
 		GeomFill_Stretch(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
@@ -2360,8 +2340,6 @@ class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 		void DEDT(const Standard_Real X, const gp_Vec &DP, const gp_Vec &DV, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void D2E(const Standard_Real X, const gp_Vec &DP, const gp_Vec &D2P, const gp_Vec &DV, const gp_Vec &D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~GeomFill_PlanFunc();
 
 };
 %extend GeomFill_PlanFunc {
@@ -2431,8 +2409,6 @@ class GeomFill_BSplineCurves {
 class GeomFill_CornerState {
 	public:
 		%feature("autodoc", "1");
-		~GeomFill_CornerState();
-		%feature("autodoc", "1");
 		GeomFill_CornerState();
 		%feature("autodoc", "1");
 		Standard_Real Gap() const;
@@ -2465,8 +2441,6 @@ class GeomFill_CornerState {
 %nodefaultctor GeomFill_QuasiAngularConvertor;
 class GeomFill_QuasiAngularConvertor {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_QuasiAngularConvertor();
 		%feature("autodoc", "1");
 		GeomFill_QuasiAngularConvertor();
 		%feature("autodoc", "1");
@@ -2661,8 +2635,6 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		~GeomFill_AppSweep();
 
 };
 %extend GeomFill_AppSweep {
@@ -2776,8 +2748,6 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 %nodefaultctor GeomFill_Coons;
 class GeomFill_Coons : public GeomFill_Filling {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_Coons();
 		%feature("autodoc", "1");
 		GeomFill_Coons();
 		%feature("autodoc", "1");
@@ -2991,8 +2961,6 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 %nodefaultctor GeomFill_Curved;
 class GeomFill_Curved : public GeomFill_Filling {
 	public:
-		%feature("autodoc", "1");
-		~GeomFill_Curved();
 		%feature("autodoc", "1");
 		GeomFill_Curved();
 		%feature("autodoc", "1");

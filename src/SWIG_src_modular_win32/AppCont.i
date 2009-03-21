@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class AppCont_FitFunction {
 	public:
 		%feature("autodoc", "1");
-		~AppCont_FitFunction();
-		%feature("autodoc", "1");
 		AppCont_FitFunction(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -108,8 +106,6 @@ class AppCont_FitFunction {
 %nodefaultctor AppCont_FunctionTool2d;
 class AppCont_FunctionTool2d {
 	public:
-		%feature("autodoc", "1");
-		~AppCont_FunctionTool2d();
 		%feature("autodoc", "1");
 		AppCont_FunctionTool2d();
 		%feature("autodoc", "1");
@@ -186,8 +182,6 @@ class AppCont_Function2d {
 class AppCont_FunctionTool {
 	public:
 		%feature("autodoc", "1");
-		~AppCont_FunctionTool();
-		%feature("autodoc", "1");
 		AppCont_FunctionTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const AppCont_Function &C);
@@ -220,8 +214,6 @@ class AppCont_FunctionTool {
 %nodefaultctor AppCont_FitFunction2d;
 class AppCont_FitFunction2d {
 	public:
-		%feature("autodoc", "1");
-		~AppCont_FitFunction2d();
 		%feature("autodoc", "1");
 		AppCont_FitFunction2d(const AppCont_Function2d &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
 		%feature("autodoc", "1");

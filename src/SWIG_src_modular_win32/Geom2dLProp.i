@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dLProp_CurAndInf2d();
-		%feature("autodoc", "1");
 		Geom2dLProp_CurAndInf2d();
 		%feature("autodoc", "1");
 		void Perform(const Handle_Geom2d_Curve &C);
@@ -120,8 +118,6 @@ class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative 
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsMinKC(const Standard_Real Param) const;
-		%feature("autodoc", "1");
-		virtual		~Geom2dLProp_FCurExtOfNumericCurInf2d();
 
 };
 %extend Geom2dLProp_FCurExtOfNumericCurInf2d {
@@ -133,8 +129,6 @@ class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative 
 %nodefaultctor Geom2dLProp_Curve2dTool;
 class Geom2dLProp_Curve2dTool {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dLProp_Curve2dTool();
 		%feature("autodoc", "1");
 		Geom2dLProp_Curve2dTool();
 		%feature("autodoc", "1");
@@ -162,8 +156,6 @@ class Geom2dLProp_Curve2dTool {
 %nodefaultctor Geom2dLProp_CLProps2d;
 class Geom2dLProp_CLProps2d {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dLProp_CLProps2d();
 		%feature("autodoc", "1");
 		Geom2dLProp_CLProps2d(const Handle_Geom2d_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
@@ -211,8 +203,6 @@ class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative 
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Geom2dLProp_FCurNulOfNumericCurInf2d();
 
 };
 %extend Geom2dLProp_FCurNulOfNumericCurInf2d {
@@ -224,8 +214,6 @@ class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative 
 %nodefaultctor Geom2dLProp_NumericCurInf2d;
 class Geom2dLProp_NumericCurInf2d {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dLProp_NumericCurInf2d();
 		%feature("autodoc", "1");
 		Geom2dLProp_NumericCurInf2d();
 		%feature("autodoc", "1");

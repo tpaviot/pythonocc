@@ -125,8 +125,6 @@ enum TopoDSToStep_FacetedError {
 class TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		~TopoDSToStep_Root();
-		%feature("autodoc", "1");
 		Standard_Real & Tolerance();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -438,8 +436,6 @@ class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 %nodefaultctor TopoDSToStep_FacetedTool;
 class TopoDSToStep_FacetedTool {
 	public:
-		%feature("autodoc", "1");
-		~TopoDSToStep_FacetedTool();
 		%feature("autodoc", "1");
 		TopoDSToStep_FacetedTool();
 		%feature("autodoc", "1");

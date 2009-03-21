@@ -168,8 +168,6 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 class XmlMNaming_Array1OfShape1 {
 	public:
 		%feature("autodoc", "1");
-		~XmlMNaming_Array1OfShape1();
-		%feature("autodoc", "1");
 		XmlMNaming_Array1OfShape1(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
 		XmlMNaming_Array1OfShape1(const XmlObjMgt_Element &theParent, const XmlObjMgt_DOMString &theName);
@@ -198,8 +196,6 @@ class XmlMNaming_Array1OfShape1 {
 %nodefaultctor XmlMNaming_Shape1;
 class XmlMNaming_Shape1 {
 	public:
-		%feature("autodoc", "1");
-		~XmlMNaming_Shape1();
 		%feature("autodoc", "1");
 		XmlMNaming_Shape1(XmlObjMgt_Document & Doc);
 		%feature("autodoc", "1");
@@ -273,8 +269,6 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 %nodefaultctor XmlMNaming;
 class XmlMNaming {
 	public:
-		%feature("autodoc", "1");
-		~XmlMNaming();
 		%feature("autodoc", "1");
 		XmlMNaming();
 		%feature("autodoc", "1");

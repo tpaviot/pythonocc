@@ -168,8 +168,6 @@ class GraphTools_ListOfSequenceOfInteger {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~GraphTools_ListOfSequenceOfInteger();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const TColStd_SequenceOfInteger &I);
@@ -289,8 +287,6 @@ class GraphTools_SCList {
 class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 	public:
 		%feature("autodoc", "1");
-		~GraphTools_ListIteratorOfListOfSequenceOfInteger();
-		%feature("autodoc", "1");
 		GraphTools_ListIteratorOfListOfSequenceOfInteger();
 		%feature("autodoc", "1");
 		GraphTools_ListIteratorOfListOfSequenceOfInteger(const GraphTools_ListOfSequenceOfInteger &L);
@@ -313,8 +309,6 @@ class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 %nodefaultctor GraphTools_TSNode;
 class GraphTools_TSNode {
 	public:
-		%feature("autodoc", "1");
-		~GraphTools_TSNode();
 		%feature("autodoc", "1");
 		GraphTools_TSNode();
 		%feature("autodoc", "1");

@@ -136,8 +136,6 @@ class Handle_RWStepAP214_GeneralModule : public Handle_StepData_GeneralModule {
 class RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment &ent) const;
@@ -156,8 +154,6 @@ class RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment {
 %nodefaultctor RWStepAP214_RWAppliedDateAssignment;
 class RWStepAP214_RWAppliedDateAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedDateAssignment();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedDateAssignment();
 		%feature("autodoc", "1");
@@ -178,8 +174,6 @@ class RWStepAP214_RWAppliedDateAssignment {
 class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignDateAndPersonAssignment();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignDateAndPersonAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent) const;
@@ -198,8 +192,6 @@ class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 %nodefaultctor RWStepAP214_RWAppliedExternalIdentificationAssignment;
 class RWStepAP214_RWAppliedExternalIdentificationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedExternalIdentificationAssignment();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedExternalIdentificationAssignment();
 		%feature("autodoc", "1");
@@ -220,8 +212,6 @@ class RWStepAP214_RWAppliedExternalIdentificationAssignment {
 class RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedPersonAndOrganizationAssignment();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedPersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &ent) const;
@@ -240,8 +230,6 @@ class RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
 %nodefaultctor RWStepAP214_RWAutoDesignOrganizationAssignment;
 class RWStepAP214_RWAutoDesignOrganizationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignOrganizationAssignment();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignOrganizationAssignment();
 		%feature("autodoc", "1");
@@ -262,8 +250,6 @@ class RWStepAP214_RWAutoDesignOrganizationAssignment {
 class RWStepAP214_RWAppliedDateAndTimeAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedDateAndTimeAssignment();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedDateAndTimeAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedDateAndTimeAssignment &ent) const;
@@ -282,8 +268,6 @@ class RWStepAP214_RWAppliedDateAndTimeAssignment {
 %nodefaultctor RWStepAP214_RWAppliedGroupAssignment;
 class RWStepAP214_RWAppliedGroupAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedGroupAssignment();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedGroupAssignment();
 		%feature("autodoc", "1");
@@ -304,8 +288,6 @@ class RWStepAP214_RWAppliedGroupAssignment {
 class RWStepAP214_RWAppliedSecurityClassificationAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedSecurityClassificationAssignment();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedSecurityClassificationAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent) const;
@@ -325,8 +307,6 @@ class RWStepAP214_RWAppliedSecurityClassificationAssignment {
 class RWStepAP214_RWClass {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWClass();
-		%feature("autodoc", "1");
 		RWStepAP214_RWClass();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_Class &ent) const;
@@ -345,8 +325,6 @@ class RWStepAP214_RWClass {
 %nodefaultctor RWStepAP214_RWAutoDesignApprovalAssignment;
 class RWStepAP214_RWAutoDesignApprovalAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignApprovalAssignment();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignApprovalAssignment();
 		%feature("autodoc", "1");
@@ -399,8 +377,6 @@ class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 class RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent) const;
@@ -419,8 +395,6 @@ class RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
 %nodefaultctor RWStepAP214_RWAutoDesignNominalDateAssignment;
 class RWStepAP214_RWAutoDesignNominalDateAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignNominalDateAssignment();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignNominalDateAssignment();
 		%feature("autodoc", "1");
@@ -441,8 +415,6 @@ class RWStepAP214_RWAutoDesignNominalDateAssignment {
 class RWStepAP214_RWAppliedPresentedItem {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedPresentedItem();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedPresentedItem();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedPresentedItem &ent) const;
@@ -461,8 +433,6 @@ class RWStepAP214_RWAppliedPresentedItem {
 %nodefaultctor RWStepAP214_RWAutoDesignGroupAssignment;
 class RWStepAP214_RWAutoDesignGroupAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignGroupAssignment();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignGroupAssignment();
 		%feature("autodoc", "1");
@@ -483,8 +453,6 @@ class RWStepAP214_RWAutoDesignGroupAssignment {
 class RWStepAP214_RWAppliedApprovalAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedApprovalAssignment();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedApprovalAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedApprovalAssignment &ent) const;
@@ -503,8 +471,6 @@ class RWStepAP214_RWAppliedApprovalAssignment {
 %nodefaultctor RWStepAP214_RWAutoDesignPresentedItem;
 class RWStepAP214_RWAutoDesignPresentedItem {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignPresentedItem();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignPresentedItem();
 		%feature("autodoc", "1");
@@ -525,8 +491,6 @@ class RWStepAP214_RWAutoDesignPresentedItem {
 class RWStepAP214 {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214();
-		%feature("autodoc", "1");
 		RWStepAP214();
 		%feature("autodoc", "1");
 		void Init();
@@ -541,8 +505,6 @@ class RWStepAP214 {
 %nodefaultctor RWStepAP214_RWRepItemGroup;
 class RWStepAP214_RWRepItemGroup {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWRepItemGroup();
 		%feature("autodoc", "1");
 		RWStepAP214_RWRepItemGroup();
 		%feature("autodoc", "1");
@@ -563,8 +525,6 @@ class RWStepAP214_RWRepItemGroup {
 class RWStepAP214_RWAutoDesignActualDateAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignActualDateAssignment();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignActualDateAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
@@ -583,8 +543,6 @@ class RWStepAP214_RWAutoDesignActualDateAssignment {
 %nodefaultctor RWStepAP214_RWAutoDesignActualDateAndTimeAssignment;
 class RWStepAP214_RWAutoDesignActualDateAndTimeAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignActualDateAndTimeAssignment();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignActualDateAndTimeAssignment();
 		%feature("autodoc", "1");
@@ -605,8 +563,6 @@ class RWStepAP214_RWAutoDesignActualDateAndTimeAssignment {
 class RWStepAP214_RWAppliedDocumentReference {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedDocumentReference();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedDocumentReference();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedDocumentReference &ent) const;
@@ -625,8 +581,6 @@ class RWStepAP214_RWAppliedDocumentReference {
 %nodefaultctor RWStepAP214_RWAutoDesignDocumentReference;
 class RWStepAP214_RWAutoDesignDocumentReference {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignDocumentReference();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignDocumentReference();
 		%feature("autodoc", "1");
@@ -647,8 +601,6 @@ class RWStepAP214_RWAutoDesignDocumentReference {
 class RWStepAP214_RWExternallyDefinedGeneralProperty {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWExternallyDefinedGeneralProperty();
-		%feature("autodoc", "1");
 		RWStepAP214_RWExternallyDefinedGeneralProperty();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
@@ -667,8 +619,6 @@ class RWStepAP214_RWExternallyDefinedGeneralProperty {
 %nodefaultctor RWStepAP214_RWAutoDesignSecurityClassificationAssignment;
 class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWAutoDesignSecurityClassificationAssignment();
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignSecurityClassificationAssignment();
 		%feature("autodoc", "1");
@@ -689,8 +639,6 @@ class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
 class RWStepAP214_RWAppliedOrganizationAssignment {
 	public:
 		%feature("autodoc", "1");
-		~RWStepAP214_RWAppliedOrganizationAssignment();
-		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedOrganizationAssignment();
 		%feature("autodoc", "1");
 		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
@@ -709,8 +657,6 @@ class RWStepAP214_RWAppliedOrganizationAssignment {
 %nodefaultctor RWStepAP214_RWExternallyDefinedClass;
 class RWStepAP214_RWExternallyDefinedClass {
 	public:
-		%feature("autodoc", "1");
-		~RWStepAP214_RWExternallyDefinedClass();
 		%feature("autodoc", "1");
 		RWStepAP214_RWExternallyDefinedClass();
 		%feature("autodoc", "1");

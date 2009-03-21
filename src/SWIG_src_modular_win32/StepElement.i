@@ -2428,8 +2428,6 @@ class StepElement_Array1OfVolumeElementPurpose {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~StepElement_Array1OfVolumeElementPurpose();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfVolumeElementPurpose & Assign(const StepElement_Array1OfVolumeElementPurpose &Other);
@@ -2551,8 +2549,6 @@ class StepElement_Array1OfMeasureOrUnspecifiedValue {
 		void Init(const StepElement_MeasureOrUnspecifiedValue &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepElement_Array1OfMeasureOrUnspecifiedValue();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -2967,8 +2963,6 @@ class StepElement_Array2OfSurfaceElementPurpose {
 		void Init(const StepElement_SurfaceElementPurpose &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~StepElement_Array2OfSurfaceElementPurpose();
 		%feature("autodoc", "1");
 		const StepElement_Array2OfSurfaceElementPurpose & Assign(const StepElement_Array2OfSurfaceElementPurpose &Other);
 		%feature("autodoc", "1");

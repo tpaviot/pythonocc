@@ -476,8 +476,6 @@ class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
 class PCDM_Reference {
 	public:
 		%feature("autodoc", "1");
-		~PCDM_Reference();
-		%feature("autodoc", "1");
 		PCDM_Reference();
 		%feature("autodoc", "1");
 		PCDM_Reference(const Standard_Integer aReferenceIdentifier, const TCollection_ExtendedString &aFileName, const Standard_Integer aDocumentVersion);
@@ -572,8 +570,6 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 		PCDM_SequenceOfReference();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~PCDM_SequenceOfReference();
 		%feature("autodoc", "1");
 		const PCDM_SequenceOfReference & Assign(const PCDM_SequenceOfReference &Other);
 		%feature("autodoc", "1");

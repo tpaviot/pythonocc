@@ -904,8 +904,6 @@ class IGESAppli_FlowLineSpec : public IGESData_IGESEntity {
 class IGESAppli_ToolNodalConstraint {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolNodalConstraint();
-		%feature("autodoc", "1");
 		IGESAppli_ToolNodalConstraint();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_NodalConstraint &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1006,8 +1004,6 @@ class IGESAppli_Array1OfNode {
 class IGESAppli_ToolLevelToPWBLayerMap {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolLevelToPWBLayerMap();
-		%feature("autodoc", "1");
 		IGESAppli_ToolLevelToPWBLayerMap();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_LevelToPWBLayerMap &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1092,8 +1088,6 @@ class IGESAppli {
 class IGESAppli_ToolFiniteElement {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolFiniteElement();
-		%feature("autodoc", "1");
 		IGESAppli_ToolFiniteElement();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_FiniteElement &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1121,8 +1115,6 @@ class IGESAppli_ToolFiniteElement {
 class IGESAppli_ToolNodalDisplAndRot {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolNodalDisplAndRot();
-		%feature("autodoc", "1");
 		IGESAppli_ToolNodalDisplAndRot();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_NodalDisplAndRot &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1149,8 +1141,6 @@ class IGESAppli_ToolNodalDisplAndRot {
 %nodefaultctor IGESAppli_ToolReferenceDesignator;
 class IGESAppli_ToolReferenceDesignator {
 	public:
-		%feature("autodoc", "1");
-		~IGESAppli_ToolReferenceDesignator();
 		%feature("autodoc", "1");
 		IGESAppli_ToolReferenceDesignator();
 		%feature("autodoc", "1");
@@ -1291,8 +1281,6 @@ class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
 class IGESAppli_ToolRegionRestriction {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolRegionRestriction();
-		%feature("autodoc", "1");
 		IGESAppli_ToolRegionRestriction();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_RegionRestriction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1355,8 +1343,6 @@ class IGESAppli_DrilledHole : public IGESData_IGESEntity {
 %nodefaultctor IGESAppli_ToolNode;
 class IGESAppli_ToolNode {
 	public:
-		%feature("autodoc", "1");
-		~IGESAppli_ToolNode();
 		%feature("autodoc", "1");
 		IGESAppli_ToolNode();
 		%feature("autodoc", "1");
@@ -1534,8 +1520,6 @@ class IGESAppli_Array1OfFiniteElement {
 class IGESAppli_ToolNodalResults {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolNodalResults();
-		%feature("autodoc", "1");
 		IGESAppli_ToolNodalResults();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_NodalResults &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1562,8 +1546,6 @@ class IGESAppli_ToolNodalResults {
 %nodefaultctor IGESAppli_ToolFlowLineSpec;
 class IGESAppli_ToolFlowLineSpec {
 	public:
-		%feature("autodoc", "1");
-		~IGESAppli_ToolFlowLineSpec();
 		%feature("autodoc", "1");
 		IGESAppli_ToolFlowLineSpec();
 		%feature("autodoc", "1");
@@ -1617,8 +1599,6 @@ class IGESAppli_ReadWriteModule : public IGESData_ReadWriteModule {
 %nodefaultctor IGESAppli_ToolDrilledHole;
 class IGESAppli_ToolDrilledHole {
 	public:
-		%feature("autodoc", "1");
-		~IGESAppli_ToolDrilledHole();
 		%feature("autodoc", "1");
 		IGESAppli_ToolDrilledHole();
 		%feature("autodoc", "1");
@@ -1745,8 +1725,6 @@ class IGESAppli_NodalDisplAndRot : public IGESData_IGESEntity {
 class IGESAppli_ToolPWBArtworkStackup {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolPWBArtworkStackup();
-		%feature("autodoc", "1");
 		IGESAppli_ToolPWBArtworkStackup();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_PWBArtworkStackup &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1799,8 +1777,6 @@ class IGESAppli_PinNumber : public IGESData_IGESEntity {
 %nodefaultctor IGESAppli_ToolElementResults;
 class IGESAppli_ToolElementResults {
 	public:
-		%feature("autodoc", "1");
-		~IGESAppli_ToolElementResults();
 		%feature("autodoc", "1");
 		IGESAppli_ToolElementResults();
 		%feature("autodoc", "1");
@@ -1942,8 +1918,6 @@ class IGESAppli_LineWidening : public IGESData_IGESEntity {
 class IGESAppli_ToolLevelFunction {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolLevelFunction();
-		%feature("autodoc", "1");
 		IGESAppli_ToolLevelFunction();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_LevelFunction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1972,8 +1946,6 @@ class IGESAppli_ToolLevelFunction {
 %nodefaultctor IGESAppli_ToolPinNumber;
 class IGESAppli_ToolPinNumber {
 	public:
-		%feature("autodoc", "1");
-		~IGESAppli_ToolPinNumber();
 		%feature("autodoc", "1");
 		IGESAppli_ToolPinNumber();
 		%feature("autodoc", "1");
@@ -2066,8 +2038,6 @@ class IGESAppli_GeneralModule : public IGESData_GeneralModule {
 class IGESAppli_ToolPWBDrilledHole {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolPWBDrilledHole();
-		%feature("autodoc", "1");
 		IGESAppli_ToolPWBDrilledHole();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_PWBDrilledHole &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2097,8 +2067,6 @@ class IGESAppli_ToolPWBDrilledHole {
 class IGESAppli_ToolLineWidening {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolLineWidening();
-		%feature("autodoc", "1");
 		IGESAppli_ToolLineWidening();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_LineWidening &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2127,8 +2095,6 @@ class IGESAppli_ToolLineWidening {
 %nodefaultctor IGESAppli_ToolPipingFlow;
 class IGESAppli_ToolPipingFlow {
 	public:
-		%feature("autodoc", "1");
-		~IGESAppli_ToolPipingFlow();
 		%feature("autodoc", "1");
 		IGESAppli_ToolPipingFlow();
 		%feature("autodoc", "1");
@@ -2221,8 +2187,6 @@ class IGESAppli_PartNumber : public IGESData_IGESEntity {
 class IGESAppli_ToolFlow {
 	public:
 		%feature("autodoc", "1");
-		~IGESAppli_ToolFlow();
-		%feature("autodoc", "1");
 		IGESAppli_ToolFlow();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESAppli_Flow &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2251,8 +2215,6 @@ class IGESAppli_ToolFlow {
 %nodefaultctor IGESAppli_ToolPartNumber;
 class IGESAppli_ToolPartNumber {
 	public:
-		%feature("autodoc", "1");
-		~IGESAppli_ToolPartNumber();
 		%feature("autodoc", "1");
 		IGESAppli_ToolPartNumber();
 		%feature("autodoc", "1");

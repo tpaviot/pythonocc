@@ -554,8 +554,6 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		~ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d();
-		%feature("autodoc", "1");
 		ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d();
 		%feature("autodoc", "1");
 		ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d(const ShapeFix_DataMapOfShapeBox2d &aMap);
@@ -576,8 +574,6 @@ class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMa
 %nodefaultctor ShapeFix_FreeBounds;
 class ShapeFix_FreeBounds {
 	public:
-		%feature("autodoc", "1");
-		~ShapeFix_FreeBounds();
 		%feature("autodoc", "1");
 		ShapeFix_FreeBounds();
 		%feature("autodoc", "1");
@@ -944,8 +940,6 @@ class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ShapeFix_SequenceOfWireSegment();
-		%feature("autodoc", "1");
 		const ShapeFix_SequenceOfWireSegment & Assign(const ShapeFix_SequenceOfWireSegment &Other);
 		%feature("autodoc", "1");
 		void Append(const ShapeFix_WireSegment &T);
@@ -1053,8 +1047,6 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~ShapeFix_DataMapOfShapeBox2d();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TopoDS_Shape &K, const Bnd_Box2d &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
@@ -1150,8 +1142,6 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 class ShapeFix {
 	public:
 		%feature("autodoc", "1");
-		~ShapeFix();
-		%feature("autodoc", "1");
 		ShapeFix();
 		%feature("autodoc", "1");
 		Standard_Boolean SameParameter(const TopoDS_Shape &shape, const Standard_Boolean enforce, const Standard_Real preci=0.0);
@@ -1195,8 +1185,6 @@ class ShapeFix_IntersectionTool {
 %nodefaultctor ShapeFix_EdgeConnect;
 class ShapeFix_EdgeConnect {
 	public:
-		%feature("autodoc", "1");
-		~ShapeFix_EdgeConnect();
 		%feature("autodoc", "1");
 		ShapeFix_EdgeConnect();
 		%feature("autodoc", "1");
@@ -1273,8 +1261,6 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 class ShapeFix_ShapeTolerance {
 	public:
 		%feature("autodoc", "1");
-		~ShapeFix_ShapeTolerance();
-		%feature("autodoc", "1");
 		ShapeFix_ShapeTolerance();
 		%feature("autodoc", "1");
 		Standard_Boolean LimitTolerance(const TopoDS_Shape &shape, const Standard_Real tmin, const Standard_Real tmax=0.0, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
@@ -1291,8 +1277,6 @@ class ShapeFix_ShapeTolerance {
 %nodefaultctor ShapeFix_SplitTool;
 class ShapeFix_SplitTool {
 	public:
-		%feature("autodoc", "1");
-		~ShapeFix_SplitTool();
 		%feature("autodoc", "1");
 		ShapeFix_SplitTool();
 		%feature("autodoc", "1");
@@ -1455,8 +1439,6 @@ class ShapeFix_Shape : public ShapeFix_Root {
 %nodefaultctor ShapeFix_FaceConnect;
 class ShapeFix_FaceConnect {
 	public:
-		%feature("autodoc", "1");
-		~ShapeFix_FaceConnect();
 		%feature("autodoc", "1");
 		ShapeFix_FaceConnect();
 		%feature("autodoc", "1");

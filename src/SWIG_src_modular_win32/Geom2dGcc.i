@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class Geom2dGcc_Circ2d2TanOn {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dGcc_Circ2d2TanOn();
-		%feature("autodoc", "1");
 		Geom2dGcc_Circ2d2TanOn(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Geom2dAdaptor_Curve &OnCurve, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real ParamOn);
 		%feature("autodoc", "1");
 		Geom2dGcc_Circ2d2TanOn(const Geom2dGcc_QualifiedCurve &Qualified1, const Handle_Geom2d_Point &Point, const Geom2dAdaptor_Curve &OnCurve, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real ParamOn);
@@ -129,8 +127,6 @@ class Geom2dGcc_Circ2d2TanOn {
 class Geom2dGcc_MyL2dTanObl {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dGcc_MyL2dTanObl();
-		%feature("autodoc", "1");
 		Geom2dGcc_MyL2dTanObl(const Geom2dGcc_MyQCurve &Qualified1, const gp_Lin2d &TheLin, const Standard_Real Param1, const Standard_Real TolAng, const Standard_Real Angle=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -163,8 +159,6 @@ class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Geom2dGcc_FuncTOblOfMyL2dTanObl();
 
 };
 %extend Geom2dGcc_FuncTOblOfMyL2dTanObl {
@@ -212,8 +206,6 @@ class Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn : public math_FunctionSetWithDerivati
 		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		~Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn();
 
 };
 %extend Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn {
@@ -225,8 +217,6 @@ class Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn : public math_FunctionSetWithDerivati
 %nodefaultctor Geom2dGcc_QualifiedCurve;
 class Geom2dGcc_QualifiedCurve {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_QualifiedCurve();
 		%feature("autodoc", "1");
 		Geom2dGcc_QualifiedCurve(const Geom2dAdaptor_Curve &Curve, const GccEnt_Position Qualifier);
 		%feature("autodoc", "1");
@@ -252,8 +242,6 @@ class Geom2dGcc_QualifiedCurve {
 %nodefaultctor Geom2dGcc_MyCirc2dTanCen;
 class Geom2dGcc_MyCirc2dTanCen {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyCirc2dTanCen();
 		%feature("autodoc", "1");
 		Geom2dGcc_MyCirc2dTanCen(const Geom2dGcc_MyQCurve &Qualified1, const gp_Pnt2d &Pcenter, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -285,8 +273,6 @@ class Geom2dGcc_FuncTCirCuOfMyL2d2Tan : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Geom2dGcc_FuncTCirCuOfMyL2d2Tan();
 
 };
 %extend Geom2dGcc_FuncTCirCuOfMyL2d2Tan {
@@ -298,8 +284,6 @@ class Geom2dGcc_FuncTCirCuOfMyL2d2Tan : public math_FunctionWithDerivative {
 %nodefaultctor Geom2dGcc_MyQCurve;
 class Geom2dGcc_MyQCurve {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyQCurve();
 		%feature("autodoc", "1");
 		Geom2dGcc_MyQCurve(const Geom2dAdaptor_Curve &Curve, const GccEnt_Position Qualifier);
 		%feature("autodoc", "1");
@@ -325,8 +309,6 @@ class Geom2dGcc_MyQCurve {
 %nodefaultctor Geom2dGcc_Circ2d3Tan;
 class Geom2dGcc_Circ2d3Tan {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_Circ2d3Tan();
 		%feature("autodoc", "1");
 		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Geom2dGcc_QualifiedCurve &Qualified3, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3);
 		%feature("autodoc", "1");
@@ -376,8 +358,6 @@ class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		~Geom2dGcc_FuncTCuPtOfMyL2d2Tan();
 
 };
 %extend Geom2dGcc_FuncTCuPtOfMyL2d2Tan {
@@ -389,8 +369,6 @@ class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 %nodefaultctor Geom2dGcc_MyCurveTool;
 class Geom2dGcc_MyCurveTool {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyCurveTool();
 		%feature("autodoc", "1");
 		Geom2dGcc_MyCurveTool();
 		%feature("autodoc", "1");
@@ -439,8 +417,6 @@ class Geom2dGcc_MyCurveTool {
 class Geom2dGcc_Lin2d2Tan {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dGcc_Lin2d2Tan();
-		%feature("autodoc", "1");
 		Geom2dGcc_Lin2d2Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Standard_Real Tolang);
 		%feature("autodoc", "1");
 		Geom2dGcc_Lin2d2Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const gp_Pnt2d &ThePoint, const Standard_Real Tolang);
@@ -471,8 +447,6 @@ class Geom2dGcc_Lin2d2Tan {
 %nodefaultctor Geom2dGcc_MyCirc2d2TanRad;
 class Geom2dGcc_MyCirc2d2TanRad {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyCirc2d2TanRad();
 		%feature("autodoc", "1");
 		Geom2dGcc_MyCirc2d2TanRad(const GccEnt_QualifiedCirc &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -508,8 +482,6 @@ class Geom2dGcc_MyCirc2d2TanRad {
 %nodefaultctor Geom2dGcc_MyCirc2d2TanOn;
 class Geom2dGcc_MyCirc2d2TanOn {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyCirc2d2TanOn();
 		%feature("autodoc", "1");
 		Geom2dGcc_MyCirc2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const Geom2dAdaptor_Curve &OnCurv, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -552,8 +524,6 @@ class Geom2dGcc_MyCirc2d2TanOn {
 class Geom2dGcc_Circ2dTanCen {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dGcc_Circ2dTanCen();
-		%feature("autodoc", "1");
 		Geom2dGcc_Circ2dTanCen(const Geom2dGcc_QualifiedCurve &Qualified1, const Handle_Geom2d_Point &Pcenter, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -594,8 +564,6 @@ class Geom2dGcc_FuncTCuCuOfMyL2d2Tan : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & Deriv);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & Deriv);
-		%feature("autodoc", "1");
-		virtual		~Geom2dGcc_FuncTCuCuOfMyL2d2Tan();
 
 };
 %extend Geom2dGcc_FuncTCuCuOfMyL2d2Tan {
@@ -607,8 +575,6 @@ class Geom2dGcc_FuncTCuCuOfMyL2d2Tan : public math_FunctionSetWithDerivatives {
 %nodefaultctor Geom2dGcc_MyC2d3Tan;
 class Geom2dGcc_MyC2d3Tan {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyC2d3Tan();
 		%feature("autodoc", "1");
 		Geom2dGcc_MyC2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const Geom2dGcc_MyQCurve &Qualified3, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -658,8 +624,6 @@ class Geom2dGcc_MyC2d3Tan {
 %nodefaultctor Geom2dGcc_MyC2d2TanOn;
 class Geom2dGcc_MyC2d2TanOn {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyC2d2TanOn();
 		%feature("autodoc", "1");
 		Geom2dGcc_MyC2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const gp_Lin2d &OnLine, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -712,8 +676,6 @@ class Geom2dGcc_MyC2d2TanOn {
 class Geom2dGcc_MyL2d2Tan {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dGcc_MyL2d2Tan();
-		%feature("autodoc", "1");
 		Geom2dGcc_MyL2d2Tan(const Geom2dGcc_MyQCurve &Qualified1, const gp_Pnt2d &ThePoint, const Standard_Real Param1, const Standard_Real Tolang);
 		%feature("autodoc", "1");
 		Geom2dGcc_MyL2d2Tan(const GccEnt_QualifiedCirc &Qualified1, const Geom2dGcc_MyQCurve &Qualified2, const Standard_Real Param2, const Standard_Real Tolang);
@@ -740,8 +702,6 @@ class Geom2dGcc_MyL2d2Tan {
 %nodefaultctor Geom2dGcc_MyCirc2dTanOnRad;
 class Geom2dGcc_MyCirc2dTanOnRad {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_MyCirc2dTanOnRad();
 		%feature("autodoc", "1");
 		Geom2dGcc_MyCirc2dTanOnRad(const Geom2dGcc_MyQCurve &Qualified1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -780,8 +740,6 @@ class Geom2dGcc_MyCirc2dTanOnRad {
 class Geom2dGcc_Circ2d2TanRad {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dGcc_Circ2d2TanRad();
-		%feature("autodoc", "1");
 		Geom2dGcc_Circ2d2TanRad(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		Geom2dGcc_Circ2d2TanRad(const Geom2dGcc_QualifiedCurve &Qualified1, const Handle_Geom2d_Point &Point, const Standard_Real Radius, const Standard_Real Tolerance);
@@ -819,8 +777,6 @@ class Geom2dGcc_Circ2d2TanRad {
 class Geom2dGcc_Lin2dTanObl {
 	public:
 		%feature("autodoc", "1");
-		~Geom2dGcc_Lin2dTanObl();
-		%feature("autodoc", "1");
 		Geom2dGcc_Lin2dTanObl(const Geom2dGcc_QualifiedCurve &Qualified1, const gp_Lin2d &TheLin, const Standard_Real TolAng, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		Geom2dGcc_Lin2dTanObl(const Geom2dGcc_QualifiedCurve &Qualified1, const gp_Lin2d &TheLin, const Standard_Real TolAng, const Standard_Real Param1, const Standard_Real Angle);
@@ -847,8 +803,6 @@ class Geom2dGcc_Lin2dTanObl {
 %nodefaultctor Geom2dGcc_CurveTool;
 class Geom2dGcc_CurveTool {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_CurveTool();
 		%feature("autodoc", "1");
 		Geom2dGcc_CurveTool();
 		%feature("autodoc", "1");
@@ -878,8 +832,6 @@ class Geom2dGcc_CurveTool {
 %nodefaultctor Geom2dGcc_Circ2dTanOnRad;
 class Geom2dGcc_Circ2dTanOnRad {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc_Circ2dTanOnRad();
 		%feature("autodoc", "1");
 		Geom2dGcc_Circ2dTanOnRad(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dAdaptor_Curve &OnCurv, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
@@ -913,8 +865,6 @@ class Geom2dGcc_Circ2dTanOnRad {
 %nodefaultctor Geom2dGcc;
 class Geom2dGcc {
 	public:
-		%feature("autodoc", "1");
-		~Geom2dGcc();
 		%feature("autodoc", "1");
 		Geom2dGcc();
 		%feature("autodoc", "1");

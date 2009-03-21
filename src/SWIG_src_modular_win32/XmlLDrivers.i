@@ -222,8 +222,6 @@ class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~XmlLDrivers_SequenceOfNamespaceDef();
-		%feature("autodoc", "1");
 		const XmlLDrivers_SequenceOfNamespaceDef & Assign(const XmlLDrivers_SequenceOfNamespaceDef &Other);
 		%feature("autodoc", "1");
 		void Append(const XmlLDrivers_NamespaceDef &T);
@@ -315,8 +313,6 @@ class XmlLDrivers {
 %nodefaultctor XmlLDrivers_NamespaceDef;
 class XmlLDrivers_NamespaceDef {
 	public:
-		%feature("autodoc", "1");
-		~XmlLDrivers_NamespaceDef();
 		%feature("autodoc", "1");
 		XmlLDrivers_NamespaceDef();
 		%feature("autodoc", "1");

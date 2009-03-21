@@ -736,8 +736,6 @@ class Handle_IGESBasic_ExternalRefFile : public Handle_IGESData_IGESEntity {
 class IGESBasic_ToolAssocGroupType {
 	public:
 		%feature("autodoc", "1");
-		~IGESBasic_ToolAssocGroupType();
-		%feature("autodoc", "1");
 		IGESBasic_ToolAssocGroupType();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESBasic_AssocGroupType &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -949,8 +947,6 @@ class IGESBasic_SpecificModule : public IGESData_SpecificModule {
 %nodefaultctor IGESBasic_ToolSingularSubfigure;
 class IGESBasic_ToolSingularSubfigure {
 	public:
-		%feature("autodoc", "1");
-		~IGESBasic_ToolSingularSubfigure();
 		%feature("autodoc", "1");
 		IGESBasic_ToolSingularSubfigure();
 		%feature("autodoc", "1");
@@ -1177,8 +1173,6 @@ class IGESBasic_SubfigureDef : public IGESData_IGESEntity {
 class IGESBasic_ToolExternalRefName {
 	public:
 		%feature("autodoc", "1");
-		~IGESBasic_ToolExternalRefName();
-		%feature("autodoc", "1");
 		IGESBasic_ToolExternalRefName();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESBasic_ExternalRefName &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1205,8 +1199,6 @@ class IGESBasic_ToolExternalRefName {
 %nodefaultctor IGESBasic_ToolGroupWithoutBackP;
 class IGESBasic_ToolGroupWithoutBackP {
 	public:
-		%feature("autodoc", "1");
-		~IGESBasic_ToolGroupWithoutBackP();
 		%feature("autodoc", "1");
 		IGESBasic_ToolGroupWithoutBackP();
 		%feature("autodoc", "1");
@@ -1237,8 +1229,6 @@ class IGESBasic_ToolGroupWithoutBackP {
 class IGESBasic_ToolSubfigureDef {
 	public:
 		%feature("autodoc", "1");
-		~IGESBasic_ToolSubfigureDef();
-		%feature("autodoc", "1");
 		IGESBasic_ToolSubfigureDef();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESBasic_SubfigureDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1265,8 +1255,6 @@ class IGESBasic_ToolSubfigureDef {
 %nodefaultctor IGESBasic_ToolOrderedGroup;
 class IGESBasic_ToolOrderedGroup {
 	public:
-		%feature("autodoc", "1");
-		~IGESBasic_ToolOrderedGroup();
 		%feature("autodoc", "1");
 		IGESBasic_ToolOrderedGroup();
 		%feature("autodoc", "1");
@@ -1327,8 +1315,6 @@ class IGESBasic_HArray1OfHArray1OfInteger : public MMgt_TShared {
 class IGESBasic_ToolOrderedGroupWithoutBackP {
 	public:
 		%feature("autodoc", "1");
-		~IGESBasic_ToolOrderedGroupWithoutBackP();
-		%feature("autodoc", "1");
 		IGESBasic_ToolOrderedGroupWithoutBackP();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESBasic_OrderedGroupWithoutBackP &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1358,8 +1344,6 @@ class IGESBasic_ToolOrderedGroupWithoutBackP {
 class IGESBasic_ToolGroup {
 	public:
 		%feature("autodoc", "1");
-		~IGESBasic_ToolGroup();
-		%feature("autodoc", "1");
 		IGESBasic_ToolGroup();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESBasic_Group &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1388,8 +1372,6 @@ class IGESBasic_ToolGroup {
 %nodefaultctor IGESBasic_ToolHierarchy;
 class IGESBasic_ToolHierarchy {
 	public:
-		%feature("autodoc", "1");
-		~IGESBasic_ToolHierarchy();
 		%feature("autodoc", "1");
 		IGESBasic_ToolHierarchy();
 		%feature("autodoc", "1");
@@ -1490,8 +1472,6 @@ class IGESBasic_Array1OfLineFontEntity {
 %nodefaultctor IGESBasic_ToolExternalRefLibName;
 class IGESBasic_ToolExternalRefLibName {
 	public:
-		%feature("autodoc", "1");
-		~IGESBasic_ToolExternalRefLibName();
 		%feature("autodoc", "1");
 		IGESBasic_ToolExternalRefLibName();
 		%feature("autodoc", "1");
@@ -1674,8 +1654,6 @@ class IGESBasic_Hierarchy : public IGESData_IGESEntity {
 class IGESBasic_ToolExternalRefFileIndex {
 	public:
 		%feature("autodoc", "1");
-		~IGESBasic_ToolExternalRefFileIndex();
-		%feature("autodoc", "1");
 		IGESBasic_ToolExternalRefFileIndex();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESBasic_ExternalRefFileIndex &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1804,8 +1782,6 @@ class IGESBasic_SingleParent : public IGESData_SingleParentEntity {
 class IGESBasic_ToolExternalRefFile {
 	public:
 		%feature("autodoc", "1");
-		~IGESBasic_ToolExternalRefFile();
-		%feature("autodoc", "1");
 		IGESBasic_ToolExternalRefFile();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESBasic_ExternalRefFile &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -1832,8 +1808,6 @@ class IGESBasic_ToolExternalRefFile {
 %nodefaultctor IGESBasic_ToolExternalRefFileName;
 class IGESBasic_ToolExternalRefFileName {
 	public:
-		%feature("autodoc", "1");
-		~IGESBasic_ToolExternalRefFileName();
 		%feature("autodoc", "1");
 		IGESBasic_ToolExternalRefFileName();
 		%feature("autodoc", "1");
@@ -1958,8 +1932,6 @@ class IGESBasic_HArray1OfHArray1OfXY : public MMgt_TShared {
 class IGESBasic_ToolSingleParent {
 	public:
 		%feature("autodoc", "1");
-		~IGESBasic_ToolSingleParent();
-		%feature("autodoc", "1");
 		IGESBasic_ToolSingleParent();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESBasic_SingleParent &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2015,8 +1987,6 @@ class IGESBasic_ExternalRefLibName : public IGESData_IGESEntity {
 class IGESBasic_ToolExternalReferenceFile {
 	public:
 		%feature("autodoc", "1");
-		~IGESBasic_ToolExternalReferenceFile();
-		%feature("autodoc", "1");
 		IGESBasic_ToolExternalReferenceFile();
 		%feature("autodoc", "1");
 		void ReadOwnParams(const Handle_IGESBasic_ExternalReferenceFile &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
@@ -2043,8 +2013,6 @@ class IGESBasic_ToolExternalReferenceFile {
 %nodefaultctor IGESBasic_ToolName;
 class IGESBasic_ToolName {
 	public:
-		%feature("autodoc", "1");
-		~IGESBasic_ToolName();
 		%feature("autodoc", "1");
 		IGESBasic_ToolName();
 		%feature("autodoc", "1");

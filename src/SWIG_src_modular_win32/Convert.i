@@ -147,8 +147,6 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 class Convert_CompPolynomialToPoles {
 	public:
 		%feature("autodoc", "1");
-		~Convert_CompPolynomialToPoles();
-		%feature("autodoc", "1");
 		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Continuity, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Handle_TColStd_HArray1OfInteger &NumCoeffPerCurve, const Handle_TColStd_HArray1OfReal &Coefficients, const Handle_TColStd_HArray2OfReal &PolynomialIntervals, const Handle_TColStd_HArray1OfReal &TrueIntervals);
 		%feature("autodoc", "1");
 		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const TColStd_Array1OfInteger &Continuity, const TColStd_Array1OfInteger &NumCoeffPerCurve, const TColStd_Array1OfReal &Coefficients, const TColStd_Array2OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
@@ -180,8 +178,6 @@ class Convert_CompPolynomialToPoles {
 class Convert_ConicToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~Convert_ConicToBSplineCurve();
-		%feature("autodoc", "1");
 		Standard_Integer Degree() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoles() const;
@@ -212,8 +208,6 @@ class Convert_ConicToBSplineCurve {
 %nodefaultctor Convert_ElementarySurfaceToBSplineSurface;
 class Convert_ElementarySurfaceToBSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Convert_ElementarySurfaceToBSplineSurface();
 		%feature("autodoc", "1");
 		Standard_Integer UDegree() const;
 		%feature("autodoc", "1");
@@ -254,8 +248,6 @@ class Convert_ElementarySurfaceToBSplineSurface {
 class Convert_ConeToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		~Convert_ConeToBSplineSurface();
-		%feature("autodoc", "1");
 		Convert_ConeToBSplineSurface(const gp_Cone &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
 		%feature("autodoc", "1");
 		Convert_ConeToBSplineSurface(const gp_Cone &C, const Standard_Real V1, const Standard_Real V2);
@@ -271,8 +263,6 @@ class Convert_ConeToBSplineSurface : public Convert_ElementarySurfaceToBSplineSu
 class Convert_ParabolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~Convert_ParabolaToBSplineCurve();
-		%feature("autodoc", "1");
 		Convert_ParabolaToBSplineCurve(const gp_Parab2d &Prb, const Standard_Real U1, const Standard_Real U2);
 
 };
@@ -285,8 +275,6 @@ class Convert_ParabolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 %nodefaultctor Convert_TorusToBSplineSurface;
 class Convert_TorusToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
-		%feature("autodoc", "1");
-		~Convert_TorusToBSplineSurface();
 		%feature("autodoc", "1");
 		Convert_TorusToBSplineSurface(const gp_Torus &T, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
 		%feature("autodoc", "1");
@@ -305,8 +293,6 @@ class Convert_TorusToBSplineSurface : public Convert_ElementarySurfaceToBSplineS
 class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~Convert_CircleToBSplineCurve();
-		%feature("autodoc", "1");
 		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 		%feature("autodoc", "1");
 		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
@@ -321,8 +307,6 @@ class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
 %nodefaultctor Convert_HyperbolaToBSplineCurve;
 class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Convert_HyperbolaToBSplineCurve();
 		%feature("autodoc", "1");
 		Convert_HyperbolaToBSplineCurve(const gp_Hypr2d &H, const Standard_Real U1, const Standard_Real U2);
 
@@ -431,8 +415,6 @@ class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
 class Convert_SphereToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		~Convert_SphereToBSplineSurface();
-		%feature("autodoc", "1");
 		Convert_SphereToBSplineSurface(const gp_Sphere &Sph, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
 		%feature("autodoc", "1");
 		Convert_SphereToBSplineSurface(const gp_Sphere &Sph, const Standard_Real Param1, const Standard_Real Param2, const Standard_Boolean UTrim=1);
@@ -449,8 +431,6 @@ class Convert_SphereToBSplineSurface : public Convert_ElementarySurfaceToBSpline
 %nodefaultctor Convert_CompBezierCurvesToBSplineCurve;
 class Convert_CompBezierCurvesToBSplineCurve {
 	public:
-		%feature("autodoc", "1");
-		~Convert_CompBezierCurvesToBSplineCurve();
 		%feature("autodoc", "1");
 		Convert_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
@@ -532,8 +512,6 @@ class Convert_SequenceOfArray1OfPoles : public TCollection_BaseSequence {
 class Convert_CylinderToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		~Convert_CylinderToBSplineSurface();
-		%feature("autodoc", "1");
 		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
 		%feature("autodoc", "1");
 		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real V1, const Standard_Real V2);
@@ -571,8 +549,6 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode
 class Convert_EllipseToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		~Convert_EllipseToBSplineCurve();
-		%feature("autodoc", "1");
 		Convert_EllipseToBSplineCurve(const gp_Elips2d &E, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 		%feature("autodoc", "1");
 		Convert_EllipseToBSplineCurve(const gp_Elips2d &E, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
@@ -587,8 +563,6 @@ class Convert_EllipseToBSplineCurve : public Convert_ConicToBSplineCurve {
 %nodefaultctor Convert_CompBezierCurves2dToBSplineCurve2d;
 class Convert_CompBezierCurves2dToBSplineCurve2d {
 	public:
-		%feature("autodoc", "1");
-		~Convert_CompBezierCurves2dToBSplineCurve2d();
 		%feature("autodoc", "1");
 		Convert_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");

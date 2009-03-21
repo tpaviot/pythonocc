@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		~GeomToStep_Root();
-		%feature("autodoc", "1");
 		GeomToStep_Root();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;

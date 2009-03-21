@@ -732,8 +732,6 @@ class MDF_DriverListOfARDriverTable {
 class MDF {
 	public:
 		%feature("autodoc", "1");
-		~MDF();
-		%feature("autodoc", "1");
 		MDF();
 		%feature("autodoc", "1");
 		void FromTo(const Handle_TDF_Data &aSource, Handle_PDF_Data & aTarget, const Handle_MDF_ASDriverTable &aDriverTable, const Handle_MDF_SRelocationTable &aReloc, const Standard_Integer aVersion=0);
@@ -1148,8 +1146,6 @@ class MDF_TypeDriverListMapOfARDriverTable : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~MDF_TypeDriverListMapOfARDriverTable();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Type &K, const MDF_DriverListOfARDriverTable &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_Standard_Type &K) const;
@@ -1308,8 +1304,6 @@ class MDF_ASDriverHSequence : public MMgt_TShared {
 class MDF_Tool {
 	public:
 		%feature("autodoc", "1");
-		~MDF_Tool();
-		%feature("autodoc", "1");
 		MDF_Tool();
 		%feature("autodoc", "1");
 		void WriteLabels(const Handle_TDF_Data &aSource, const Handle_PDF_Data &aTarget, const MDF_TypeASDriverMap &aDriverMap, const Handle_MDF_SRelocationTable &aReloc);
@@ -1370,8 +1364,6 @@ class MDF_TypeDriverListMapOfASDriverTable : public TCollection_BasicMap {
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		~MDF_TypeDriverListMapOfASDriverTable();
 		%feature("autodoc", "1");
 		Standard_Boolean Bind(const Handle_Standard_Type &K, const MDF_DriverListOfASDriverTable &I);
 		%feature("autodoc", "1");

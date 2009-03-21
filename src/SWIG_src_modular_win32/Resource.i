@@ -199,8 +199,6 @@ class Resource_Array1OfAsciiString {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		~Resource_Array1OfAsciiString();
-		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Resource_Array1OfAsciiString & Assign(const Resource_Array1OfAsciiString &Other);
@@ -240,8 +238,6 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Resource_DataMapOfAsciiStringAsciiString();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const TCollection_AsciiString &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
@@ -266,8 +262,6 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
 class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString();
 		%feature("autodoc", "1");
 		Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString();
 		%feature("autodoc", "1");
@@ -356,8 +350,6 @@ class Resource_Manager : public MMgt_TShared {
 class Resource_QuickSortOfArray1 {
 	public:
 		%feature("autodoc", "1");
-		~Resource_QuickSortOfArray1();
-		%feature("autodoc", "1");
 		Resource_QuickSortOfArray1();
 		%feature("autodoc", "1");
 		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
@@ -372,8 +364,6 @@ class Resource_QuickSortOfArray1 {
 %nodefaultctor Resource_LexicalCompare;
 class Resource_LexicalCompare {
 	public:
-		%feature("autodoc", "1");
-		~Resource_LexicalCompare();
 		%feature("autodoc", "1");
 		Resource_LexicalCompare();
 		%feature("autodoc", "1");
@@ -426,8 +416,6 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~Resource_DataMapOfAsciiStringExtendedString();
-		%feature("autodoc", "1");
 		Standard_Boolean Bind(const TCollection_AsciiString &K, const TCollection_ExtendedString &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
@@ -452,8 +440,6 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 %nodefaultctor Resource_Unicode;
 class Resource_Unicode {
 	public:
-		%feature("autodoc", "1");
-		~Resource_Unicode();
 		%feature("autodoc", "1");
 		Resource_Unicode();
 		%feature("autodoc", "1");
@@ -517,8 +503,6 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString;
 class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollection_BasicMapIterator {
 	public:
-		%feature("autodoc", "1");
-		~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");
 		Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");

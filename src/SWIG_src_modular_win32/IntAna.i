@@ -125,8 +125,6 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 class IntAna_Quadric {
 	public:
 		%feature("autodoc", "1");
-		~IntAna_Quadric();
-		%feature("autodoc", "1");
 		IntAna_Quadric();
 		%feature("autodoc", "1");
 		IntAna_Quadric(const gp_Pln &P);
@@ -159,8 +157,6 @@ class IntAna_Quadric {
 %nodefaultctor IntAna_QuadQuadGeo;
 class IntAna_QuadQuadGeo {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_QuadQuadGeo();
 		%feature("autodoc", "1");
 		IntAna_QuadQuadGeo();
 		%feature("autodoc", "1");
@@ -259,8 +255,6 @@ class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 class IntAna_IntQuadQuad {
 	public:
 		%feature("autodoc", "1");
-		~IntAna_IntQuadQuad();
-		%feature("autodoc", "1");
 		IntAna_IntQuadQuad();
 		%feature("autodoc", "1");
 		IntAna_IntQuadQuad(const gp_Cylinder &C, const IntAna_Quadric &Q, const Standard_Real Tol);
@@ -303,8 +297,6 @@ class IntAna_IntQuadQuad {
 %nodefaultctor IntAna_IntConicQuad;
 class IntAna_IntConicQuad {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_IntConicQuad();
 		%feature("autodoc", "1");
 		IntAna_IntConicQuad();
 		%feature("autodoc", "1");
@@ -379,8 +371,6 @@ class IntAna_ListOfCurve {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		~IntAna_ListOfCurve();
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Prepend(const IntAna_Curve &I);
@@ -422,8 +412,6 @@ class IntAna_ListOfCurve {
 class IntAna_ListIteratorOfListOfCurve {
 	public:
 		%feature("autodoc", "1");
-		~IntAna_ListIteratorOfListOfCurve();
-		%feature("autodoc", "1");
 		IntAna_ListIteratorOfListOfCurve();
 		%feature("autodoc", "1");
 		IntAna_ListIteratorOfListOfCurve(const IntAna_ListOfCurve &L);
@@ -447,8 +435,6 @@ class IntAna_ListIteratorOfListOfCurve {
 class IntAna_Int3Pln {
 	public:
 		%feature("autodoc", "1");
-		~IntAna_Int3Pln();
-		%feature("autodoc", "1");
 		IntAna_Int3Pln();
 		%feature("autodoc", "1");
 		IntAna_Int3Pln(const gp_Pln &P1, const gp_Pln &P2, const gp_Pln &P3);
@@ -471,8 +457,6 @@ class IntAna_Int3Pln {
 %nodefaultctor IntAna_Curve;
 class IntAna_Curve {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_Curve();
 		%feature("autodoc", "1");
 		IntAna_Curve();
 		%feature("autodoc", "1");
@@ -514,8 +498,6 @@ class IntAna_Curve {
 %nodefaultctor IntAna_IntLinTorus;
 class IntAna_IntLinTorus {
 	public:
-		%feature("autodoc", "1");
-		~IntAna_IntLinTorus();
 		%feature("autodoc", "1");
 		IntAna_IntLinTorus();
 		%feature("autodoc", "1");

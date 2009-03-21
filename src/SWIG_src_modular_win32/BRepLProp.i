@@ -88,8 +88,6 @@ Standard_Real & function transformation
 class BRepLProp_SurfaceTool {
 	public:
 		%feature("autodoc", "1");
-		~BRepLProp_SurfaceTool();
-		%feature("autodoc", "1");
 		BRepLProp_SurfaceTool();
 		%feature("autodoc", "1");
 		void Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
@@ -114,8 +112,6 @@ class BRepLProp_SurfaceTool {
 %nodefaultctor BRepLProp_SLProps;
 class BRepLProp_SLProps {
 	public:
-		%feature("autodoc", "1");
-		~BRepLProp_SLProps();
 		%feature("autodoc", "1");
 		BRepLProp_SLProps(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
@@ -176,8 +172,6 @@ class BRepLProp_SLProps {
 class BRepLProp_CurveTool {
 	public:
 		%feature("autodoc", "1");
-		~BRepLProp_CurveTool();
-		%feature("autodoc", "1");
 		BRepLProp_CurveTool();
 		%feature("autodoc", "1");
 		void Value(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P);
@@ -204,8 +198,6 @@ class BRepLProp_CurveTool {
 %nodefaultctor BRepLProp_CLProps;
 class BRepLProp_CLProps {
 	public:
-		%feature("autodoc", "1");
-		~BRepLProp_CLProps();
 		%feature("autodoc", "1");
 		BRepLProp_CLProps(const BRepAdaptor_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
@@ -245,8 +237,6 @@ class BRepLProp_CLProps {
 %nodefaultctor BRepLProp;
 class BRepLProp {
 	public:
-		%feature("autodoc", "1");
-		~BRepLProp();
 		%feature("autodoc", "1");
 		BRepLProp();
 		%feature("autodoc", "1");
