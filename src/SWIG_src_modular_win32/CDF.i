@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module CDF
@@ -350,6 +350,11 @@ class CDF {
 		Standard_Boolean IsAvailable(const Standard_Integer anApplicationIdentifier);
 
 };
+%extend CDF {
+	~CDF() {
+	printf("Call custom destructor for instance of CDF\n");
+	}
+};
 
 %nodefaultctor CDF_Application;
 class CDF_Application : public CDM_Application {
@@ -419,6 +424,11 @@ class CDF_Timer {
 		%feature("autodoc", "1");
 		Standard_Boolean MustShow();
 
+};
+%extend CDF_Timer {
+	~CDF_Timer() {
+	printf("Call custom destructor for instance of CDF_Timer\n");
+	}
 };
 
 %nodefaultctor CDF_StoreList;
@@ -690,4 +700,9 @@ class CDF_Store {
 		%feature("autodoc", "1");
 		Standard_Boolean SetFolder(const Standard_ExtString aFolder);
 
+};
+%extend CDF_Store {
+	~CDF_Store() {
+	printf("Call custom destructor for instance of CDF_Store\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BinLDrivers
@@ -196,6 +196,11 @@ class BinLDrivers_DocumentSection {
 		%feature("autodoc", "1");
 		void ReadTOC(BinLDrivers_DocumentSection & theSection, std::istream & theIS);
 
+};
+%extend BinLDrivers_DocumentSection {
+	~BinLDrivers_DocumentSection() {
+	printf("Call custom destructor for instance of BinLDrivers_DocumentSection\n");
+	}
 };
 
 %nodefaultctor BinLDrivers_DocumentRetrievalDriver;

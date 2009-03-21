@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepTopAdaptor
@@ -209,6 +209,11 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 		BRepTopAdaptor_Tool & operator()(const TopoDS_Shape &K);
 
 };
+%extend BRepTopAdaptor_MapOfShapeTool {
+	~BRepTopAdaptor_MapOfShapeTool() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_MapOfShapeTool\n");
+	}
+};
 
 %nodefaultctor BRepTopAdaptor_HVertex;
 class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
@@ -261,6 +266,11 @@ class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicM
 		const BRepTopAdaptor_Tool & Value() const;
 
 };
+%extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
+	~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool\n");
+	}
+};
 
 %nodefaultctor BRepTopAdaptor_FClass2d;
 class BRepTopAdaptor_FClass2d {
@@ -280,6 +290,11 @@ class BRepTopAdaptor_FClass2d {
 		%feature("autodoc", "1");
 		TopAbs_State TestOnRestriction(const gp_Pnt2d &Puv, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1) const;
 
+};
+%extend BRepTopAdaptor_FClass2d {
+	~BRepTopAdaptor_FClass2d() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_FClass2d\n");
+	}
 };
 
 %nodefaultctor BRepTopAdaptor_TopolTool;
@@ -406,6 +421,11 @@ class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend BRepTopAdaptor_SeqOfPtr {
+	~BRepTopAdaptor_SeqOfPtr() {
+	printf("Call custom destructor for instance of BRepTopAdaptor_SeqOfPtr\n");
+	}
 };
 
 %nodefaultctor BRepTopAdaptor_Tool;

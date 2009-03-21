@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Plate
@@ -233,6 +233,11 @@ class Plate_Plate {
 		void UVConstraints(TColgp_SequenceOfXY & Seq) const;
 
 };
+%extend Plate_Plate {
+	~Plate_Plate() {
+	printf("Call custom destructor for instance of Plate_Plate\n");
+	}
+};
 
 %nodefaultctor Plate_GlobalTranslationConstraint;
 class Plate_GlobalTranslationConstraint {
@@ -244,6 +249,11 @@ class Plate_GlobalTranslationConstraint {
 		%feature("autodoc", "1");
 		const Plate_LinearXYZConstraint & LXYZC() const;
 
+};
+%extend Plate_GlobalTranslationConstraint {
+	~Plate_GlobalTranslationConstraint() {
+	printf("Call custom destructor for instance of Plate_GlobalTranslationConstraint\n");
+	}
 };
 
 %nodefaultctor Plate_PlaneConstraint;
@@ -257,6 +267,11 @@ class Plate_PlaneConstraint {
 		const Plate_LinearScalarConstraint & LSC() const;
 
 };
+%extend Plate_PlaneConstraint {
+	~Plate_PlaneConstraint() {
+	printf("Call custom destructor for instance of Plate_PlaneConstraint\n");
+	}
+};
 
 %nodefaultctor Plate_SampledCurveConstraint;
 class Plate_SampledCurveConstraint {
@@ -268,6 +283,11 @@ class Plate_SampledCurveConstraint {
 		%feature("autodoc", "1");
 		const Plate_LinearXYZConstraint & LXYZC() const;
 
+};
+%extend Plate_SampledCurveConstraint {
+	~Plate_SampledCurveConstraint() {
+	printf("Call custom destructor for instance of Plate_SampledCurveConstraint\n");
+	}
 };
 
 %nodefaultctor Plate_LinearXYZConstraint;
@@ -292,6 +312,11 @@ class Plate_LinearXYZConstraint {
 		%feature("autodoc", "1");
 		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real Value);
 
+};
+%extend Plate_LinearXYZConstraint {
+	~Plate_LinearXYZConstraint() {
+	printf("Call custom destructor for instance of Plate_LinearXYZConstraint\n");
+	}
 };
 
 %nodefaultctor Plate_GtoCConstraint;
@@ -320,6 +345,11 @@ class Plate_GtoCConstraint {
 		%feature("autodoc", "1");
 		const Plate_D1 & D1SurfInit() const;
 
+};
+%extend Plate_GtoCConstraint {
+	~Plate_GtoCConstraint() {
+	printf("Call custom destructor for instance of Plate_GtoCConstraint\n");
+	}
 };
 
 %nodefaultctor Plate_Array1OfPinpointConstraint;
@@ -357,6 +387,11 @@ class Plate_Array1OfPinpointConstraint {
 		Plate_PinpointConstraint & operator()(const Standard_Integer Index);
 
 };
+%extend Plate_Array1OfPinpointConstraint {
+	~Plate_Array1OfPinpointConstraint() {
+	printf("Call custom destructor for instance of Plate_Array1OfPinpointConstraint\n");
+	}
+};
 
 %nodefaultctor Plate_SequenceNodeOfSequenceOfPinpointConstraint;
 class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqNode {
@@ -391,6 +426,11 @@ class Plate_D2 {
 		Plate_D2(const Plate_D2 &ref);
 
 };
+%extend Plate_D2 {
+	~Plate_D2() {
+	printf("Call custom destructor for instance of Plate_D2\n");
+	}
+};
 
 %nodefaultctor Plate_D3;
 class Plate_D3 {
@@ -402,6 +442,11 @@ class Plate_D3 {
 		%feature("autodoc", "1");
 		Plate_D3(const Plate_D3 &ref);
 
+};
+%extend Plate_D3 {
+	~Plate_D3() {
+	printf("Call custom destructor for instance of Plate_D3\n");
+	}
 };
 
 %nodefaultctor Plate_SequenceOfLinearXYZConstraint;
@@ -453,6 +498,11 @@ class Plate_SequenceOfLinearXYZConstraint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Plate_SequenceOfLinearXYZConstraint {
+	~Plate_SequenceOfLinearXYZConstraint() {
+	printf("Call custom destructor for instance of Plate_SequenceOfLinearXYZConstraint\n");
+	}
+};
 
 %nodefaultctor Plate_D1;
 class Plate_D1 {
@@ -468,6 +518,11 @@ class Plate_D1 {
 		%feature("autodoc", "1");
 		const gp_XYZ & DV() const;
 
+};
+%extend Plate_D1 {
+	~Plate_D1() {
+	printf("Call custom destructor for instance of Plate_D1\n");
+	}
 };
 
 %nodefaultctor Plate_SequenceOfPinpointConstraint;
@@ -519,6 +574,11 @@ class Plate_SequenceOfPinpointConstraint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Plate_SequenceOfPinpointConstraint {
+	~Plate_SequenceOfPinpointConstraint() {
+	printf("Call custom destructor for instance of Plate_SequenceOfPinpointConstraint\n");
+	}
+};
 
 %nodefaultctor Plate_SequenceNodeOfSequenceOfLinearScalarConstraint;
 class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_SeqNode {
@@ -566,6 +626,11 @@ class Plate_LinearScalarConstraint {
 		%feature("autodoc", "1");
 		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const gp_XYZ &Value);
 
+};
+%extend Plate_LinearScalarConstraint {
+	~Plate_LinearScalarConstraint() {
+	printf("Call custom destructor for instance of Plate_LinearScalarConstraint\n");
+	}
 };
 
 %nodefaultctor Plate_HArray1OfPinpointConstraint;
@@ -627,6 +692,11 @@ class Plate_PinpointConstraint {
 		const gp_XYZ & Value() const;
 
 };
+%extend Plate_PinpointConstraint {
+	~Plate_PinpointConstraint() {
+	printf("Call custom destructor for instance of Plate_PinpointConstraint\n");
+	}
+};
 
 %nodefaultctor Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
 class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_SeqNode {
@@ -671,6 +741,11 @@ class Plate_FreeGtoCConstraint {
 		const Plate_LinearScalarConstraint & LSC(const Standard_Integer Index) const;
 
 };
+%extend Plate_FreeGtoCConstraint {
+	~Plate_FreeGtoCConstraint() {
+	printf("Call custom destructor for instance of Plate_FreeGtoCConstraint\n");
+	}
+};
 
 %nodefaultctor Plate_LineConstraint;
 class Plate_LineConstraint {
@@ -682,6 +757,11 @@ class Plate_LineConstraint {
 		%feature("autodoc", "1");
 		const Plate_LinearScalarConstraint & LSC() const;
 
+};
+%extend Plate_LineConstraint {
+	~Plate_LineConstraint() {
+	printf("Call custom destructor for instance of Plate_LineConstraint\n");
+	}
 };
 
 %nodefaultctor Plate_SequenceOfLinearScalarConstraint;
@@ -732,4 +812,9 @@ class Plate_SequenceOfLinearScalarConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Plate_SequenceOfLinearScalarConstraint {
+	~Plate_SequenceOfLinearScalarConstraint() {
+	printf("Call custom destructor for instance of Plate_SequenceOfLinearScalarConstraint\n");
+	}
 };

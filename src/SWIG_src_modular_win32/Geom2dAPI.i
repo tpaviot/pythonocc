@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Geom2dAPI
@@ -113,6 +113,11 @@ class Geom2dAPI_InterCurveCurve {
 		const Geom2dInt_GInter & Intersector() const;
 
 };
+%extend Geom2dAPI_InterCurveCurve {
+	~Geom2dAPI_InterCurveCurve() {
+	printf("Call custom destructor for instance of Geom2dAPI_InterCurveCurve\n");
+	}
+};
 
 %nodefaultctor Geom2dAPI_PointsToBSpline;
 class Geom2dAPI_PointsToBSpline {
@@ -197,6 +202,11 @@ class Geom2dAPI_ProjectPointOnCurve {
 		const Extrema_ExtPC2d & Extrema() const;
 
 };
+%extend Geom2dAPI_ProjectPointOnCurve {
+	~Geom2dAPI_ProjectPointOnCurve() {
+	printf("Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");
+	}
+};
 
 %nodefaultctor Geom2dAPI_ExtremaCurveCurve;
 class Geom2dAPI_ExtremaCurveCurve {
@@ -222,4 +232,9 @@ class Geom2dAPI_ExtremaCurveCurve {
 		%feature("autodoc", "1");
 		const Extrema_ExtCC2d & Extrema() const;
 
+};
+%extend Geom2dAPI_ExtremaCurveCurve {
+	~Geom2dAPI_ExtremaCurveCurve() {
+	printf("Call custom destructor for instance of Geom2dAPI_ExtremaCurveCurve\n");
+	}
 };

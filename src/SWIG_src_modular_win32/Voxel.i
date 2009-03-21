@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Voxel
@@ -156,6 +156,11 @@ class Voxel_DS {
 		Standard_Boolean GetVoxelZ(const Standard_Real z, Standard_Integer & iz) const;
 
 };
+%extend Voxel_DS {
+	~Voxel_DS() {
+	printf("Call custom destructor for instance of Voxel_DS\n");
+	}
+};
 
 %nodefaultctor Voxel_BoolDS;
 class Voxel_BoolDS : public Voxel_DS {
@@ -175,6 +180,11 @@ class Voxel_BoolDS : public Voxel_DS {
 		%feature("autodoc", "1");
 		Standard_Boolean Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
 
+};
+%extend Voxel_BoolDS {
+	~Voxel_BoolDS() {
+	printf("Call custom destructor for instance of Voxel_BoolDS\n");
+	}
 };
 
 %nodefaultctor Voxel_FloatDS;
@@ -198,6 +208,11 @@ class Voxel_FloatDS : public Voxel_DS {
 		Standard_ShortReal Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
 
 };
+%extend Voxel_FloatDS {
+	~Voxel_FloatDS() {
+	printf("Call custom destructor for instance of Voxel_FloatDS\n");
+	}
+};
 
 %nodefaultctor Voxel_Selector;
 class Voxel_Selector {
@@ -217,6 +232,11 @@ class Voxel_Selector {
 		%feature("autodoc", "1");
 		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer & ix, Standard_Integer & iy, Standard_Integer & iz);
 
+};
+%extend Voxel_Selector {
+	~Voxel_Selector() {
+	printf("Call custom destructor for instance of Voxel_Selector\n");
+	}
 };
 
 %nodefaultctor Voxel_Prs;
@@ -292,6 +312,11 @@ class Voxel_BooleanOperation {
 		Standard_Boolean Cut(Voxel_FloatDS & theVoxels1, const Voxel_FloatDS &theVoxels2) const;
 
 };
+%extend Voxel_BooleanOperation {
+	~Voxel_BooleanOperation() {
+	printf("Call custom destructor for instance of Voxel_BooleanOperation\n");
+	}
+};
 
 %nodefaultctor Voxel_FastConverter;
 class Voxel_FastConverter {
@@ -309,6 +334,11 @@ class Voxel_FastConverter {
 		%feature("autodoc", "1");
 		~Voxel_FastConverter();
 
+};
+%extend Voxel_FastConverter {
+	~Voxel_FastConverter() {
+	printf("Call custom destructor for instance of Voxel_FastConverter\n");
+	}
 };
 
 %nodefaultctor Voxel_ColorDS;
@@ -331,6 +361,11 @@ class Voxel_ColorDS : public Voxel_DS {
 		%feature("autodoc", "1");
 		Standard_Byte Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
 
+};
+%extend Voxel_ColorDS {
+	~Voxel_ColorDS() {
+	printf("Call custom destructor for instance of Voxel_ColorDS\n");
+	}
 };
 
 %nodefaultctor Voxel_CollisionDetection;
@@ -367,4 +402,9 @@ class Voxel_CollisionDetection {
 		%feature("autodoc", "1");
 		~Voxel_CollisionDetection();
 
+};
+%extend Voxel_CollisionDetection {
+	~Voxel_CollisionDetection() {
+	printf("Call custom destructor for instance of Voxel_CollisionDetection\n");
+	}
 };

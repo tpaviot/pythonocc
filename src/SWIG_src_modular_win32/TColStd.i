@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TColStd
@@ -1397,6 +1397,11 @@ class TColStd_StackIteratorOfStackOfInteger {
 		const Standard_Integer & Value() const;
 
 };
+%extend TColStd_StackIteratorOfStackOfInteger {
+	~TColStd_StackIteratorOfStackOfInteger() {
+	printf("Call custom destructor for instance of TColStd_StackIteratorOfStackOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_SequenceOfHAsciiString;
 class TColStd_SequenceOfHAsciiString : public TCollection_BaseSequence {
@@ -1631,6 +1636,11 @@ class TColStd_DataMapOfIntegerReal : public TCollection_BasicMap {
 		Standard_Real & operator()(const Standard_Integer &K);
 
 };
+%extend TColStd_DataMapOfIntegerReal {
+	~TColStd_DataMapOfIntegerReal() {
+	printf("Call custom destructor for instance of TColStd_DataMapOfIntegerReal\n");
+	}
+};
 
 %nodefaultctor TColStd_MapRealHasher;
 class TColStd_MapRealHasher {
@@ -1644,6 +1654,11 @@ class TColStd_MapRealHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_Real &K1, const Standard_Real &K2);
 
+};
+%extend TColStd_MapRealHasher {
+	~TColStd_MapRealHasher() {
+	printf("Call custom destructor for instance of TColStd_MapRealHasher\n");
+	}
 };
 
 %nodefaultctor TColStd_Array2OfInteger;
@@ -1685,6 +1700,11 @@ class TColStd_Array2OfInteger {
 		Standard_Integer & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColStd_Array2OfInteger {
+	~TColStd_Array2OfInteger() {
+	printf("Call custom destructor for instance of TColStd_Array2OfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_SetIteratorOfSetOfInteger;
 class TColStd_SetIteratorOfSetOfInteger {
@@ -1704,6 +1724,11 @@ class TColStd_SetIteratorOfSetOfInteger {
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend TColStd_SetIteratorOfSetOfInteger {
+	~TColStd_SetIteratorOfSetOfInteger() {
+	printf("Call custom destructor for instance of TColStd_SetIteratorOfSetOfInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_StackOfTransient;
@@ -1753,6 +1778,11 @@ class TColStd_ListIteratorOfSetListOfSetOfReal {
 		%feature("autodoc", "1");
 		Standard_Real & Value() const;
 
+};
+%extend TColStd_ListIteratorOfSetListOfSetOfReal {
+	~TColStd_ListIteratorOfSetListOfSetOfReal() {
+	printf("Call custom destructor for instance of TColStd_ListIteratorOfSetListOfSetOfReal\n");
+	}
 };
 
 %nodefaultctor TColStd_HArray2OfReal;
@@ -2047,6 +2077,11 @@ class TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger : public TCollectio
 		const TColStd_ListOfInteger & Value() const;
 
 };
+%extend TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger {
+	~TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger() {
+	printf("Call custom destructor for instance of TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_HArray1OfAsciiString;
 class TColStd_HArray1OfAsciiString : public MMgt_TShared {
@@ -2109,6 +2144,11 @@ class TColStd_MapOfReal : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Standard_Real &aKey);
 
 };
+%extend TColStd_MapOfReal {
+	~TColStd_MapOfReal() {
+	printf("Call custom destructor for instance of TColStd_MapOfReal\n");
+	}
+};
 
 %nodefaultctor TColStd_SequenceOfReal;
 class TColStd_SequenceOfReal : public TCollection_BaseSequence {
@@ -2158,6 +2198,11 @@ class TColStd_SequenceOfReal : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColStd_SequenceOfReal {
+	~TColStd_SequenceOfReal() {
+	printf("Call custom destructor for instance of TColStd_SequenceOfReal\n");
+	}
 };
 
 %nodefaultctor TColStd_ListNodeOfSetListOfSetOfReal;
@@ -2280,6 +2325,11 @@ class TColStd_Array1OfBoolean {
 		%feature("autodoc", "1");
 		Standard_Boolean & operator()(const Standard_Integer Index);
 
+};
+%extend TColStd_Array1OfBoolean {
+	~TColStd_Array1OfBoolean() {
+	printf("Call custom destructor for instance of TColStd_Array1OfBoolean\n");
+	}
 };
 
 %nodefaultctor TColStd_HArray1OfBoolean;
@@ -2433,6 +2483,11 @@ class TColStd_SequenceOfInteger : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TColStd_SequenceOfInteger {
+	~TColStd_SequenceOfInteger() {
+	printf("Call custom destructor for instance of TColStd_SequenceOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_SetIteratorOfSetOfTransient;
 class TColStd_SetIteratorOfSetOfTransient {
@@ -2476,6 +2531,11 @@ class TColStd_SetIteratorOfSetOfReal {
 		const Standard_Real & Value() const;
 
 };
+%extend TColStd_SetIteratorOfSetOfReal {
+	~TColStd_SetIteratorOfSetOfReal() {
+	printf("Call custom destructor for instance of TColStd_SetIteratorOfSetOfReal\n");
+	}
+};
 
 %nodefaultctor TColStd_Array1OfInteger;
 class TColStd_Array1OfInteger {
@@ -2511,6 +2571,11 @@ class TColStd_Array1OfInteger {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 
+};
+%extend TColStd_Array1OfInteger {
+	~TColStd_Array1OfInteger() {
+	printf("Call custom destructor for instance of TColStd_Array1OfInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_HSequenceOfReal;
@@ -2695,6 +2760,11 @@ class TColStd_IndexedMapOfReal : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const Standard_Real &K) const;
 
 };
+%extend TColStd_IndexedMapOfReal {
+	~TColStd_IndexedMapOfReal() {
+	printf("Call custom destructor for instance of TColStd_IndexedMapOfReal\n");
+	}
+};
 
 %nodefaultctor TColStd_ListIteratorOfSetListOfSetOfTransient;
 class TColStd_ListIteratorOfSetListOfSetOfTransient {
@@ -2810,6 +2880,11 @@ class TColStd_ListOfReal {
 		void InsertAfter(TColStd_ListOfReal & Other, TColStd_ListIteratorOfListOfReal & It);
 
 };
+%extend TColStd_ListOfReal {
+	~TColStd_ListOfReal() {
+	printf("Call custom destructor for instance of TColStd_ListOfReal\n");
+	}
+};
 
 %nodefaultctor TColStd_StdMapNodeOfMapOfTransient;
 class TColStd_StdMapNodeOfMapOfTransient : public TCollection_MapNode {
@@ -2882,6 +2957,11 @@ class TColStd_SequenceOfAsciiString : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TColStd_SequenceOfAsciiString {
+	~TColStd_SequenceOfAsciiString() {
+	printf("Call custom destructor for instance of TColStd_SequenceOfAsciiString\n");
+	}
+};
 
 %nodefaultctor TColStd_IndexedMapNodeOfIndexedMapOfReal;
 class TColStd_IndexedMapNodeOfIndexedMapOfReal : public TCollection_MapNode {
@@ -2933,6 +3013,11 @@ class TColStd_QueueOfInteger {
 		%feature("autodoc", "1");
 		Standard_Integer & ChangeFront();
 
+};
+%extend TColStd_QueueOfInteger {
+	~TColStd_QueueOfInteger() {
+	printf("Call custom destructor for instance of TColStd_QueueOfInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_ListNodeOfListOfReal;
@@ -2988,6 +3073,11 @@ class TColStd_SetOfTransient {
 		Standard_Boolean IsAProperSubset(const TColStd_SetOfTransient &S) const;
 
 };
+%extend TColStd_SetOfTransient {
+	~TColStd_SetOfTransient() {
+	printf("Call custom destructor for instance of TColStd_SetOfTransient\n");
+	}
+};
 
 %nodefaultctor TColStd_Array1OfReal;
 class TColStd_Array1OfReal {
@@ -3023,6 +3113,11 @@ class TColStd_Array1OfReal {
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Index);
 
+};
+%extend TColStd_Array1OfReal {
+	~TColStd_Array1OfReal() {
+	printf("Call custom destructor for instance of TColStd_Array1OfReal\n");
+	}
 };
 
 %nodefaultctor TColStd_IndexedDataMapOfTransientTransient;
@@ -3163,6 +3258,11 @@ class TColStd_SetOfReal {
 		Standard_Boolean IsAProperSubset(const TColStd_SetOfReal &S) const;
 
 };
+%extend TColStd_SetOfReal {
+	~TColStd_SetOfReal() {
+	printf("Call custom destructor for instance of TColStd_SetOfReal\n");
+	}
+};
 
 %nodefaultctor TColStd_PackedMapOfInteger;
 class TColStd_PackedMapOfInteger : public TCollection_BasicMap {
@@ -3218,6 +3318,11 @@ class TColStd_PackedMapOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean HasIntersection(const TColStd_PackedMapOfInteger &arg0) const;
 
+};
+%extend TColStd_PackedMapOfInteger {
+	~TColStd_PackedMapOfInteger() {
+	printf("Call custom destructor for instance of TColStd_PackedMapOfInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_HArray1OfExtendedString;
@@ -3321,6 +3426,11 @@ class TColStd_Array1OfListOfInteger {
 		TColStd_ListOfInteger & operator()(const Standard_Integer Index);
 
 };
+%extend TColStd_Array1OfListOfInteger {
+	~TColStd_Array1OfListOfInteger() {
+	printf("Call custom destructor for instance of TColStd_Array1OfListOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_MapIteratorOfMapOfReal;
 class TColStd_MapIteratorOfMapOfReal : public TCollection_BasicMapIterator {
@@ -3336,6 +3446,11 @@ class TColStd_MapIteratorOfMapOfReal : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const Standard_Real & Key() const;
 
+};
+%extend TColStd_MapIteratorOfMapOfReal {
+	~TColStd_MapIteratorOfMapOfReal() {
+	printf("Call custom destructor for instance of TColStd_MapIteratorOfMapOfReal\n");
+	}
 };
 
 %nodefaultctor TColStd_Array2OfCharacter;
@@ -3377,6 +3492,11 @@ class TColStd_Array2OfCharacter {
 		Standard_Character & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColStd_Array2OfCharacter {
+	~TColStd_Array2OfCharacter() {
+	printf("Call custom destructor for instance of TColStd_Array2OfCharacter\n");
+	}
+};
 
 %nodefaultctor TColStd_ListIteratorOfListOfTransient;
 class TColStd_ListIteratorOfListOfTransient {
@@ -3413,6 +3533,11 @@ class TColStd_MapTransientHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_Standard_Transient &K1, const Handle_Standard_Transient &K2);
 
+};
+%extend TColStd_MapTransientHasher {
+	~TColStd_MapTransientHasher() {
+	printf("Call custom destructor for instance of TColStd_MapTransientHasher\n");
+	}
 };
 
 %nodefaultctor TColStd_HArray1OfCharacter;
@@ -3476,6 +3601,11 @@ class TColStd_MapOfInteger : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Standard_Integer &aKey);
 
 };
+%extend TColStd_MapOfInteger {
+	~TColStd_MapOfInteger() {
+	printf("Call custom destructor for instance of TColStd_MapOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_SequenceOfExtendedString;
 class TColStd_SequenceOfExtendedString : public TCollection_BaseSequence {
@@ -3525,6 +3655,11 @@ class TColStd_SequenceOfExtendedString : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColStd_SequenceOfExtendedString {
+	~TColStd_SequenceOfExtendedString() {
+	printf("Call custom destructor for instance of TColStd_SequenceOfExtendedString\n");
+	}
 };
 
 %nodefaultctor TColStd_QueueNodeOfQueueOfReal;
@@ -3692,6 +3827,11 @@ class TColStd_Array2OfBoolean {
 		Standard_Boolean & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColStd_Array2OfBoolean {
+	~TColStd_Array2OfBoolean() {
+	printf("Call custom destructor for instance of TColStd_Array2OfBoolean\n");
+	}
+};
 
 %nodefaultctor TColStd_MapOfTransient;
 class TColStd_MapOfTransient : public TCollection_BasicMap {
@@ -3713,6 +3853,11 @@ class TColStd_MapOfTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_Standard_Transient &aKey);
 
+};
+%extend TColStd_MapOfTransient {
+	~TColStd_MapOfTransient() {
+	printf("Call custom destructor for instance of TColStd_MapOfTransient\n");
+	}
 };
 
 %nodefaultctor TColStd_IndexedMapOfTransient;
@@ -3783,6 +3928,11 @@ class TColStd_Array1OfCharacter {
 		Standard_Character & operator()(const Standard_Integer Index);
 
 };
+%extend TColStd_Array1OfCharacter {
+	~TColStd_Array1OfCharacter() {
+	printf("Call custom destructor for instance of TColStd_Array1OfCharacter\n");
+	}
+};
 
 %nodefaultctor TColStd_QueueNodeOfQueueOfInteger;
 class TColStd_QueueNodeOfQueueOfInteger : public TCollection_MapNode {
@@ -3824,6 +3974,11 @@ class TColStd_ListIteratorOfSetListOfSetOfInteger {
 		%feature("autodoc", "1");
 		Standard_Integer & Value() const;
 
+};
+%extend TColStd_ListIteratorOfSetListOfSetOfInteger {
+	~TColStd_ListIteratorOfSetListOfSetOfInteger() {
+	printf("Call custom destructor for instance of TColStd_ListIteratorOfSetListOfSetOfInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_SetListOfSetOfReal;
@@ -3871,6 +4026,11 @@ class TColStd_SetListOfSetOfReal {
 		void InsertAfter(TColStd_SetListOfSetOfReal & Other, TColStd_ListIteratorOfSetListOfSetOfReal & It);
 
 };
+%extend TColStd_SetListOfSetOfReal {
+	~TColStd_SetListOfSetOfReal() {
+	printf("Call custom destructor for instance of TColStd_SetListOfSetOfReal\n");
+	}
+};
 
 %nodefaultctor TColStd_SetListOfSetOfInteger;
 class TColStd_SetListOfSetOfInteger {
@@ -3916,6 +4076,11 @@ class TColStd_SetListOfSetOfInteger {
 		%feature("autodoc", "1");
 		void InsertAfter(TColStd_SetListOfSetOfInteger & Other, TColStd_ListIteratorOfSetListOfSetOfInteger & It);
 
+};
+%extend TColStd_SetListOfSetOfInteger {
+	~TColStd_SetListOfSetOfInteger() {
+	printf("Call custom destructor for instance of TColStd_SetListOfSetOfInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_HArray1OfReal;
@@ -4118,6 +4283,11 @@ class TColStd_IndexedMapOfInteger : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const Standard_Integer &K) const;
 
 };
+%extend TColStd_IndexedMapOfInteger {
+	~TColStd_IndexedMapOfInteger() {
+	printf("Call custom destructor for instance of TColStd_IndexedMapOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_ListIteratorOfListOfReal;
 class TColStd_ListIteratorOfListOfReal {
@@ -4137,6 +4307,11 @@ class TColStd_ListIteratorOfListOfReal {
 		%feature("autodoc", "1");
 		Standard_Real & Value() const;
 
+};
+%extend TColStd_ListIteratorOfListOfReal {
+	~TColStd_ListIteratorOfListOfReal() {
+	printf("Call custom destructor for instance of TColStd_ListIteratorOfListOfReal\n");
+	}
 };
 
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfAsciiString;
@@ -4179,6 +4354,11 @@ class TColStd_ListIteratorOfListOfInteger {
 		%feature("autodoc", "1");
 		Standard_Integer & Value() const;
 
+};
+%extend TColStd_ListIteratorOfListOfInteger {
+	~TColStd_ListIteratorOfListOfInteger() {
+	printf("Call custom destructor for instance of TColStd_ListIteratorOfListOfInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_Array2OfTransient;
@@ -4347,6 +4527,11 @@ class TColStd_DataMapIteratorOfDataMapOfIntegerReal : public TCollection_BasicMa
 		const Standard_Real & Value() const;
 
 };
+%extend TColStd_DataMapIteratorOfDataMapOfIntegerReal {
+	~TColStd_DataMapIteratorOfDataMapOfIntegerReal() {
+	printf("Call custom destructor for instance of TColStd_DataMapIteratorOfDataMapOfIntegerReal\n");
+	}
+};
 
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfTransient;
 class TColStd_SequenceNodeOfSequenceOfTransient : public TCollection_SeqNode {
@@ -4434,6 +4619,11 @@ class TColStd_MapIteratorOfMapOfInteger : public TCollection_BasicMapIterator {
 		const Standard_Integer & Key() const;
 
 };
+%extend TColStd_MapIteratorOfMapOfInteger {
+	~TColStd_MapIteratorOfMapOfInteger() {
+	printf("Call custom destructor for instance of TColStd_MapIteratorOfMapOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_SequenceOfHExtendedString;
 class TColStd_SequenceOfHExtendedString : public TCollection_BaseSequence {
@@ -4517,6 +4707,11 @@ class TColStd_DataMapOfIntegerListOfInteger : public TCollection_BasicMap {
 		TColStd_ListOfInteger & operator()(const Standard_Integer &K);
 
 };
+%extend TColStd_DataMapOfIntegerListOfInteger {
+	~TColStd_DataMapOfIntegerListOfInteger() {
+	printf("Call custom destructor for instance of TColStd_DataMapOfIntegerListOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_SetOfInteger;
 class TColStd_SetOfInteger {
@@ -4549,6 +4744,11 @@ class TColStd_SetOfInteger {
 		Standard_Boolean IsAProperSubset(const TColStd_SetOfInteger &S) const;
 
 };
+%extend TColStd_SetOfInteger {
+	~TColStd_SetOfInteger() {
+	printf("Call custom destructor for instance of TColStd_SetOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_StackOfInteger;
 class TColStd_StackOfInteger {
@@ -4574,6 +4774,11 @@ class TColStd_StackOfInteger {
 		%feature("autodoc", "1");
 		Standard_Integer & ChangeTop();
 
+};
+%extend TColStd_StackOfInteger {
+	~TColStd_StackOfInteger() {
+	printf("Call custom destructor for instance of TColStd_StackOfInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_StackOfReal;
@@ -4601,6 +4806,11 @@ class TColStd_StackOfReal {
 		Standard_Real & ChangeTop();
 
 };
+%extend TColStd_StackOfReal {
+	~TColStd_StackOfReal() {
+	printf("Call custom destructor for instance of TColStd_StackOfReal\n");
+	}
+};
 
 %nodefaultctor TColStd_StackIteratorOfStackOfReal;
 class TColStd_StackIteratorOfStackOfReal {
@@ -4620,6 +4830,11 @@ class TColStd_StackIteratorOfStackOfReal {
 		%feature("autodoc", "1");
 		const Standard_Real & Value() const;
 
+};
+%extend TColStd_StackIteratorOfStackOfReal {
+	~TColStd_StackIteratorOfStackOfReal() {
+	printf("Call custom destructor for instance of TColStd_StackIteratorOfStackOfReal\n");
+	}
 };
 
 %nodefaultctor TColStd_HSequenceOfExtendedString;
@@ -4767,6 +4982,11 @@ class TColStd_Array1OfAsciiString {
 		TCollection_AsciiString & operator()(const Standard_Integer Index);
 
 };
+%extend TColStd_Array1OfAsciiString {
+	~TColStd_Array1OfAsciiString() {
+	printf("Call custom destructor for instance of TColStd_Array1OfAsciiString\n");
+	}
+};
 
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfReal;
 class TColStd_SequenceNodeOfSequenceOfReal : public TCollection_SeqNode {
@@ -4825,6 +5045,11 @@ class TColStd_Array1OfExtendedString {
 		TCollection_ExtendedString & operator()(const Standard_Integer Index);
 
 };
+%extend TColStd_Array1OfExtendedString {
+	~TColStd_Array1OfExtendedString() {
+	printf("Call custom destructor for instance of TColStd_Array1OfExtendedString\n");
+	}
+};
 
 %nodefaultctor TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger;
 class TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public TCollection_MapNode {
@@ -4879,6 +5104,11 @@ class TColStd_DataMapOfIntegerInteger : public TCollection_BasicMap {
 		Standard_Integer & operator()(const Standard_Integer &K);
 
 };
+%extend TColStd_DataMapOfIntegerInteger {
+	~TColStd_DataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of TColStd_DataMapOfIntegerInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfInteger;
 class TColStd_SequenceNodeOfSequenceOfInteger : public TCollection_SeqNode {
@@ -4918,6 +5148,11 @@ class TColStd_DataMapIteratorOfDataMapOfIntegerInteger : public TCollection_Basi
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend TColStd_DataMapIteratorOfDataMapOfIntegerInteger {
+	~TColStd_DataMapIteratorOfDataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of TColStd_DataMapIteratorOfDataMapOfIntegerInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfHAsciiString;
@@ -5003,6 +5238,11 @@ class TColStd_Array2OfReal {
 		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColStd_Array2OfReal {
+	~TColStd_Array2OfReal() {
+	printf("Call custom destructor for instance of TColStd_Array2OfReal\n");
+	}
+};
 
 %nodefaultctor TColStd_MapIntegerHasher;
 class TColStd_MapIntegerHasher {
@@ -5016,6 +5256,11 @@ class TColStd_MapIntegerHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_Integer &K1, const Standard_Integer &K2);
 
+};
+%extend TColStd_MapIntegerHasher {
+	~TColStd_MapIntegerHasher() {
+	printf("Call custom destructor for instance of TColStd_MapIntegerHasher\n");
+	}
 };
 
 %nodefaultctor TColStd_QueueOfReal;
@@ -5042,6 +5287,11 @@ class TColStd_QueueOfReal {
 		%feature("autodoc", "1");
 		Standard_Real & ChangeFront();
 
+};
+%extend TColStd_QueueOfReal {
+	~TColStd_QueueOfReal() {
+	printf("Call custom destructor for instance of TColStd_QueueOfReal\n");
+	}
 };
 
 %nodefaultctor TColStd_HArray2OfInteger;
@@ -5249,6 +5499,11 @@ class TColStd_MapIteratorOfPackedMapOfInteger : public TCollection_BasicMapItera
 		void Next();
 
 };
+%extend TColStd_MapIteratorOfPackedMapOfInteger {
+	~TColStd_MapIteratorOfPackedMapOfInteger() {
+	printf("Call custom destructor for instance of TColStd_MapIteratorOfPackedMapOfInteger\n");
+	}
+};
 
 %nodefaultctor TColStd_ListOfInteger;
 class TColStd_ListOfInteger {
@@ -5294,6 +5549,11 @@ class TColStd_ListOfInteger {
 		%feature("autodoc", "1");
 		void InsertAfter(TColStd_ListOfInteger & Other, TColStd_ListIteratorOfListOfInteger & It);
 
+};
+%extend TColStd_ListOfInteger {
+	~TColStd_ListOfInteger() {
+	printf("Call custom destructor for instance of TColStd_ListOfInteger\n");
+	}
 };
 
 %nodefaultctor TColStd_HArray2OfTransient;

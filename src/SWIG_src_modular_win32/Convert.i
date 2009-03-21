@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Convert
@@ -170,6 +170,11 @@ class Convert_CompPolynomialToPoles {
 		Standard_Boolean IsDone() const;
 
 };
+%extend Convert_CompPolynomialToPoles {
+	~Convert_CompPolynomialToPoles() {
+	printf("Call custom destructor for instance of Convert_CompPolynomialToPoles\n");
+	}
+};
 
 %nodefaultctor Convert_ConicToBSplineCurve;
 class Convert_ConicToBSplineCurve {
@@ -197,6 +202,11 @@ class Convert_ConicToBSplineCurve {
 		%feature("autodoc", "1");
 		void BuildCosAndSin(const Convert_ParameterisationType Parametrisation, const Standard_Real UFirst, const Standard_Real ULast, Handle_TColStd_HArray1OfReal & CosNumerator, Handle_TColStd_HArray1OfReal & SinNumerator, Handle_TColStd_HArray1OfReal & Denominator, Standard_Integer & Degree, Handle_TColStd_HArray1OfReal & Knots, Handle_TColStd_HArray1OfInteger & Mults) const;
 
+};
+%extend Convert_ConicToBSplineCurve {
+	~Convert_ConicToBSplineCurve() {
+	printf("Call custom destructor for instance of Convert_ConicToBSplineCurve\n");
+	}
 };
 
 %nodefaultctor Convert_ElementarySurfaceToBSplineSurface;
@@ -234,6 +244,11 @@ class Convert_ElementarySurfaceToBSplineSurface {
 		Standard_Integer VMultiplicity(const Standard_Integer VIndex) const;
 
 };
+%extend Convert_ElementarySurfaceToBSplineSurface {
+	~Convert_ElementarySurfaceToBSplineSurface() {
+	printf("Call custom destructor for instance of Convert_ElementarySurfaceToBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Convert_ConeToBSplineSurface;
 class Convert_ConeToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
@@ -246,6 +261,11 @@ class Convert_ConeToBSplineSurface : public Convert_ElementarySurfaceToBSplineSu
 		Convert_ConeToBSplineSurface(const gp_Cone &C, const Standard_Real V1, const Standard_Real V2);
 
 };
+%extend Convert_ConeToBSplineSurface {
+	~Convert_ConeToBSplineSurface() {
+	printf("Call custom destructor for instance of Convert_ConeToBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Convert_ParabolaToBSplineCurve;
 class Convert_ParabolaToBSplineCurve : public Convert_ConicToBSplineCurve {
@@ -255,6 +275,11 @@ class Convert_ParabolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 		%feature("autodoc", "1");
 		Convert_ParabolaToBSplineCurve(const gp_Parab2d &Prb, const Standard_Real U1, const Standard_Real U2);
 
+};
+%extend Convert_ParabolaToBSplineCurve {
+	~Convert_ParabolaToBSplineCurve() {
+	printf("Call custom destructor for instance of Convert_ParabolaToBSplineCurve\n");
+	}
 };
 
 %nodefaultctor Convert_TorusToBSplineSurface;
@@ -270,6 +295,11 @@ class Convert_TorusToBSplineSurface : public Convert_ElementarySurfaceToBSplineS
 		Convert_TorusToBSplineSurface(const gp_Torus &T);
 
 };
+%extend Convert_TorusToBSplineSurface {
+	~Convert_TorusToBSplineSurface() {
+	printf("Call custom destructor for instance of Convert_TorusToBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Convert_CircleToBSplineCurve;
 class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
@@ -282,6 +312,11 @@ class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
 		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 
 };
+%extend Convert_CircleToBSplineCurve {
+	~Convert_CircleToBSplineCurve() {
+	printf("Call custom destructor for instance of Convert_CircleToBSplineCurve\n");
+	}
+};
 
 %nodefaultctor Convert_HyperbolaToBSplineCurve;
 class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
@@ -291,6 +326,11 @@ class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 		%feature("autodoc", "1");
 		Convert_HyperbolaToBSplineCurve(const gp_Hypr2d &H, const Standard_Real U1, const Standard_Real U2);
 
+};
+%extend Convert_HyperbolaToBSplineCurve {
+	~Convert_HyperbolaToBSplineCurve() {
+	printf("Call custom destructor for instance of Convert_HyperbolaToBSplineCurve\n");
+	}
 };
 
 %nodefaultctor Convert_GridPolynomialToPoles;
@@ -400,6 +440,11 @@ class Convert_SphereToBSplineSurface : public Convert_ElementarySurfaceToBSpline
 		Convert_SphereToBSplineSurface(const gp_Sphere &Sph);
 
 };
+%extend Convert_SphereToBSplineSurface {
+	~Convert_SphereToBSplineSurface() {
+	printf("Call custom destructor for instance of Convert_SphereToBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Convert_CompBezierCurvesToBSplineCurve;
 class Convert_CompBezierCurvesToBSplineCurve {
@@ -423,6 +468,11 @@ class Convert_CompBezierCurvesToBSplineCurve {
 		%feature("autodoc", "1");
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
+};
+%extend Convert_CompBezierCurvesToBSplineCurve {
+	~Convert_CompBezierCurvesToBSplineCurve() {
+	printf("Call custom destructor for instance of Convert_CompBezierCurvesToBSplineCurve\n");
+	}
 };
 
 %nodefaultctor Convert_SequenceOfArray1OfPoles;
@@ -489,6 +539,11 @@ class Convert_CylinderToBSplineSurface : public Convert_ElementarySurfaceToBSpli
 		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real V1, const Standard_Real V2);
 
 };
+%extend Convert_CylinderToBSplineSurface {
+	~Convert_CylinderToBSplineSurface() {
+	printf("Call custom destructor for instance of Convert_CylinderToBSplineSurface\n");
+	}
+};
 
 %nodefaultctor Convert_SequenceNodeOfSequenceOfArray1OfPoles;
 class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode {
@@ -523,6 +578,11 @@ class Convert_EllipseToBSplineCurve : public Convert_ConicToBSplineCurve {
 		Convert_EllipseToBSplineCurve(const gp_Elips2d &E, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 
 };
+%extend Convert_EllipseToBSplineCurve {
+	~Convert_EllipseToBSplineCurve() {
+	printf("Call custom destructor for instance of Convert_EllipseToBSplineCurve\n");
+	}
+};
 
 %nodefaultctor Convert_CompBezierCurves2dToBSplineCurve2d;
 class Convert_CompBezierCurves2dToBSplineCurve2d {
@@ -546,6 +606,11 @@ class Convert_CompBezierCurves2dToBSplineCurve2d {
 		%feature("autodoc", "1");
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
+};
+%extend Convert_CompBezierCurves2dToBSplineCurve2d {
+	~Convert_CompBezierCurves2dToBSplineCurve2d() {
+	printf("Call custom destructor for instance of Convert_CompBezierCurves2dToBSplineCurve2d\n");
+	}
 };
 
 %nodefaultctor Convert_SequenceNodeOfSequenceOfArray1OfPoles2d;

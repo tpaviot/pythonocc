@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GccAna
@@ -131,6 +131,11 @@ class GccAna_Lin2dTanObl {
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%extend GccAna_Lin2dTanObl {
+	~GccAna_Lin2dTanObl() {
+	printf("Call custom destructor for instance of GccAna_Lin2dTanObl\n");
+	}
+};
 
 %nodefaultctor GccAna_Lin2dBisec;
 class GccAna_Lin2dBisec {
@@ -151,6 +156,11 @@ class GccAna_Lin2dBisec {
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%extend GccAna_Lin2dBisec {
+	~GccAna_Lin2dBisec() {
+	printf("Call custom destructor for instance of GccAna_Lin2dBisec\n");
+	}
+};
 
 %nodefaultctor GccAna_Pnt2dBisec;
 class GccAna_Pnt2dBisec {
@@ -166,6 +176,11 @@ class GccAna_Pnt2dBisec {
 		%feature("autodoc", "1");
 		gp_Lin2d ThisSolution() const;
 
+};
+%extend GccAna_Pnt2dBisec {
+	~GccAna_Pnt2dBisec() {
+	printf("Call custom destructor for instance of GccAna_Pnt2dBisec\n");
+	}
 };
 
 %nodefaultctor GccAna_Circ2dTanOnRad;
@@ -201,6 +216,11 @@ class GccAna_Circ2dTanOnRad {
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
+%extend GccAna_Circ2dTanOnRad {
+	~GccAna_Circ2dTanOnRad() {
+	printf("Call custom destructor for instance of GccAna_Circ2dTanOnRad\n");
+	}
+};
 
 %nodefaultctor GccAna_Circ2dTanCen;
 class GccAna_Circ2dTanCen {
@@ -226,6 +246,11 @@ class GccAna_Circ2dTanCen {
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
+};
+%extend GccAna_Circ2dTanCen {
+	~GccAna_Circ2dTanCen() {
+	printf("Call custom destructor for instance of GccAna_Circ2dTanCen\n");
+	}
 };
 
 %nodefaultctor GccAna_Lin2dTanPer;
@@ -254,6 +279,11 @@ class GccAna_Lin2dTanPer {
 		%feature("autodoc", "1");
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
+};
+%extend GccAna_Lin2dTanPer {
+	~GccAna_Lin2dTanPer() {
+	printf("Call custom destructor for instance of GccAna_Lin2dTanPer\n");
+	}
 };
 
 %nodefaultctor GccAna_LinPnt2dBisec;
@@ -336,6 +366,11 @@ class GccAna_Circ2d2TanRad {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%extend GccAna_Circ2d2TanRad {
+	~GccAna_Circ2d2TanRad() {
+	printf("Call custom destructor for instance of GccAna_Circ2d2TanRad\n");
+	}
+};
 
 %nodefaultctor GccAna_Circ2d3Tan;
 class GccAna_Circ2d3Tan {
@@ -384,6 +419,11 @@ class GccAna_Circ2d3Tan {
 		Standard_Boolean IsTheSame3(const Standard_Integer Index) const;
 
 };
+%extend GccAna_Circ2d3Tan {
+	~GccAna_Circ2d3Tan() {
+	printf("Call custom destructor for instance of GccAna_Circ2d3Tan\n");
+	}
+};
 
 %nodefaultctor GccAna_CircLin2dBisec;
 class GccAna_CircLin2dBisec {
@@ -424,6 +464,11 @@ class GccAna_Lin2dTanPar {
 		%feature("autodoc", "1");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & Pnt) const;
 
+};
+%extend GccAna_Lin2dTanPar {
+	~GccAna_Lin2dTanPar() {
+	printf("Call custom destructor for instance of GccAna_Lin2dTanPar\n");
+	}
 };
 
 %nodefaultctor GccAna_CircPnt2dBisec;
@@ -513,6 +558,11 @@ class GccAna_Circ2d2TanOn {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%extend GccAna_Circ2d2TanOn {
+	~GccAna_Circ2d2TanOn() {
+	printf("Call custom destructor for instance of GccAna_Circ2d2TanOn\n");
+	}
+};
 
 %nodefaultctor GccAna_Lin2d2Tan;
 class GccAna_Lin2d2Tan {
@@ -538,4 +588,9 @@ class GccAna_Lin2d2Tan {
 		%feature("autodoc", "1");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
+};
+%extend GccAna_Lin2d2Tan {
+	~GccAna_Lin2d2Tan() {
+	printf("Call custom destructor for instance of GccAna_Lin2d2Tan\n");
+	}
 };

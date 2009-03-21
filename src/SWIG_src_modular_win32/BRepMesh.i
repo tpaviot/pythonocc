@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepMesh
@@ -768,6 +768,11 @@ class BRepMesh_IndexedMapOfVertex : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const BRepMesh_Vertex &K) const;
 
 };
+%extend BRepMesh_IndexedMapOfVertex {
+	~BRepMesh_IndexedMapOfVertex() {
+	printf("Call custom destructor for instance of BRepMesh_IndexedMapOfVertex\n");
+	}
+};
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid;
 class BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid : public TCollection_BasicMapIterator {
@@ -802,6 +807,11 @@ class BRepMesh_NodeHasherOfDataStructureOfDelaun {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Vertex &K1, const BRepMesh_Vertex &K2);
 
+};
+%extend BRepMesh_NodeHasherOfDataStructureOfDelaun {
+	~BRepMesh_NodeHasherOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_NodeHasherOfDataStructureOfDelaun\n");
+	}
 };
 
 %nodefaultctor BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun;
@@ -847,6 +857,11 @@ class BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY : public TCollection_Ba
 		const BRepMesh_ListOfXY & Value() const;
 
 };
+%extend BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY {
+	~BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY\n");
+	}
+};
 
 %nodefaultctor BRepMesh_HeapSortIndexedVertexOfDelaun;
 class BRepMesh_HeapSortIndexedVertexOfDelaun {
@@ -858,6 +873,11 @@ class BRepMesh_HeapSortIndexedVertexOfDelaun {
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const BRepMesh_ComparatorOfIndexedVertexOfDelaun &Comp);
 
+};
+%extend BRepMesh_HeapSortIndexedVertexOfDelaun {
+	~BRepMesh_HeapSortIndexedVertexOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_HeapSortIndexedVertexOfDelaun\n");
+	}
 };
 
 %nodefaultctor BRepMesh_BiPoint;
@@ -874,6 +894,11 @@ class BRepMesh_BiPoint {
 		%feature("autodoc", "1");
 		Standard_Address Coordinates() const;
 
+};
+%extend BRepMesh_BiPoint {
+	~BRepMesh_BiPoint() {
+	printf("Call custom destructor for instance of BRepMesh_BiPoint\n");
+	}
 };
 
 %nodefaultctor BRepMesh_HArray1OfVertexOfDelaun;
@@ -961,6 +986,11 @@ class BRepMesh_ListOfXY {
 		void InsertAfter(BRepMesh_ListOfXY & Other, BRepMesh_ListIteratorOfListOfXY & It);
 
 };
+%extend BRepMesh_ListOfXY {
+	~BRepMesh_ListOfXY() {
+	printf("Call custom destructor for instance of BRepMesh_ListOfXY\n");
+	}
+};
 
 %nodefaultctor BRepMesh;
 class BRepMesh {
@@ -972,6 +1002,11 @@ class BRepMesh {
 		%feature("autodoc", "1");
 		void Mesh(const TopoDS_Shape &S, const Standard_Real d);
 
+};
+%extend BRepMesh {
+	~BRepMesh() {
+	printf("Call custom destructor for instance of BRepMesh\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfVertexInteger;
@@ -990,6 +1025,11 @@ class BRepMesh_DataMapIteratorOfDataMapOfVertexInteger : public TCollection_Basi
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend BRepMesh_DataMapIteratorOfDataMapOfVertexInteger {
+	~BRepMesh_DataMapIteratorOfDataMapOfVertexInteger() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfVertexInteger\n");
+	}
 };
 
 %nodefaultctor BRepMesh_IMapOfElementOfDataStructureOfDelaun;
@@ -1020,6 +1060,11 @@ class BRepMesh_IMapOfElementOfDataStructureOfDelaun : public TCollection_BasicMa
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const BRepMesh_Triangle &K) const;
 
+};
+%extend BRepMesh_IMapOfElementOfDataStructureOfDelaun {
+	~BRepMesh_IMapOfElementOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_IMapOfElementOfDataStructureOfDelaun\n");
+	}
 };
 
 %nodefaultctor BRepMesh_Array1OfBiPoint;
@@ -1056,6 +1101,11 @@ class BRepMesh_Array1OfBiPoint {
 		%feature("autodoc", "1");
 		BRepMesh_BiPoint & operator()(const Standard_Integer Index);
 
+};
+%extend BRepMesh_Array1OfBiPoint {
+	~BRepMesh_Array1OfBiPoint() {
+	printf("Call custom destructor for instance of BRepMesh_Array1OfBiPoint\n");
+	}
 };
 
 %nodefaultctor BRepMesh_EdgeDiscret;
@@ -1214,6 +1264,11 @@ class BRepMesh_DataMapOfIntegerFace : public TCollection_BasicMap {
 		TopoDS_Face & operator()(const Standard_Integer &K);
 
 };
+%extend BRepMesh_DataMapOfIntegerFace {
+	~BRepMesh_DataMapOfIntegerFace() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapOfIntegerFace\n");
+	}
+};
 
 %nodefaultctor BRepMesh_ListNodeOfListOfVertex;
 class BRepMesh_ListNodeOfListOfVertex : public TCollection_MapNode {
@@ -1276,6 +1331,11 @@ class BRepMesh_IDMapOfNodeOfDataStructureOfDelaun : public TCollection_BasicMap 
 		MeshDS_ListOfInteger & ChangeFromKey(const BRepMesh_Vertex &K);
 
 };
+%extend BRepMesh_IDMapOfNodeOfDataStructureOfDelaun {
+	~BRepMesh_IDMapOfNodeOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_IDMapOfNodeOfDataStructureOfDelaun\n");
+	}
+};
 
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfShapeReal;
 class BRepMesh_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
@@ -1318,6 +1378,11 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMap
 		const Standard_Real & Value() const;
 
 };
+%extend BRepMesh_DataMapIteratorOfDataMapOfShapeReal {
+	~BRepMesh_DataMapIteratorOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfShapeReal\n");
+	}
+};
 
 %nodefaultctor BRepMesh_Array1OfVertexOfDelaun;
 class BRepMesh_Array1OfVertexOfDelaun {
@@ -1354,6 +1419,11 @@ class BRepMesh_Array1OfVertexOfDelaun {
 		BRepMesh_Vertex & operator()(const Standard_Integer Index);
 
 };
+%extend BRepMesh_Array1OfVertexOfDelaun {
+	~BRepMesh_Array1OfVertexOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_Array1OfVertexOfDelaun\n");
+	}
+};
 
 %nodefaultctor BRepMesh_DiscretRoot;
 class BRepMesh_DiscretRoot {
@@ -1375,6 +1445,11 @@ class BRepMesh_DiscretRoot {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
+};
+%extend BRepMesh_DiscretRoot {
+	~BRepMesh_DiscretRoot() {
+	printf("Call custom destructor for instance of BRepMesh_DiscretRoot\n");
+	}
 };
 
 %nodefaultctor BRepMesh_Vertex;
@@ -1406,6 +1481,11 @@ class BRepMesh_Vertex {
 		Standard_Boolean IsEqual(const BRepMesh_Vertex &Other) const;
 
 };
+%extend BRepMesh_Vertex {
+	~BRepMesh_Vertex() {
+	printf("Call custom destructor for instance of BRepMesh_Vertex\n");
+	}
+};
 
 %nodefaultctor BRepMesh_IncrementalMesh;
 class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
@@ -1428,6 +1508,11 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		Standard_Boolean IsModified() const;
 
 };
+%extend BRepMesh_IncrementalMesh {
+	~BRepMesh_IncrementalMesh() {
+	printf("Call custom destructor for instance of BRepMesh_IncrementalMesh\n");
+	}
+};
 
 %nodefaultctor BRepMesh_ListIteratorOfListOfXY;
 class BRepMesh_ListIteratorOfListOfXY {
@@ -1447,6 +1532,11 @@ class BRepMesh_ListIteratorOfListOfXY {
 		%feature("autodoc", "1");
 		gp_XY & Value() const;
 
+};
+%extend BRepMesh_ListIteratorOfListOfXY {
+	~BRepMesh_ListIteratorOfListOfXY() {
+	printf("Call custom destructor for instance of BRepMesh_ListIteratorOfListOfXY\n");
+	}
 };
 
 %nodefaultctor BRepMesh_ListNodeOfListOfSurfaceGrid;
@@ -1535,6 +1625,11 @@ class BRepMesh_ShapeTool {
 		%feature("autodoc", "1");
 		void AddInFace(const TopoDS_Face &F, Handle_Poly_Triangulation & T);
 
+};
+%extend BRepMesh_ShapeTool {
+	~BRepMesh_ShapeTool() {
+	printf("Call custom destructor for instance of BRepMesh_ShapeTool\n");
+	}
 };
 
 %nodefaultctor BRepMesh_ListNodeOfListOfXY;
@@ -1626,6 +1721,11 @@ class BRepMesh_DataMapIteratorOfDataMapOfCouplePnt : public TCollection_BasicMap
 		const gp_Pnt & Value() const;
 
 };
+%extend BRepMesh_DataMapIteratorOfDataMapOfCouplePnt {
+	~BRepMesh_DataMapIteratorOfDataMapOfCouplePnt() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfCouplePnt\n");
+	}
+};
 
 %nodefaultctor BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun;
 class BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public TCollection_MapNode {
@@ -1700,6 +1800,11 @@ class BRepMesh_ListOfVertex {
 		void InsertAfter(BRepMesh_ListOfVertex & Other, BRepMesh_ListIteratorOfListOfVertex & It);
 
 };
+%extend BRepMesh_ListOfVertex {
+	~BRepMesh_ListOfVertex() {
+	printf("Call custom destructor for instance of BRepMesh_ListOfVertex\n");
+	}
+};
 
 %nodefaultctor BRepMesh_Classifier;
 class BRepMesh_Classifier {
@@ -1720,6 +1825,11 @@ class BRepMesh_Classifier {
 		~BRepMesh_Classifier();
 
 };
+%extend BRepMesh_Classifier {
+	~BRepMesh_Classifier() {
+	printf("Call custom destructor for instance of BRepMesh_Classifier\n");
+	}
+};
 
 %nodefaultctor BRepMesh_ComparatorOfVertexOfDelaun;
 class BRepMesh_ComparatorOfVertexOfDelaun {
@@ -1735,6 +1845,11 @@ class BRepMesh_ComparatorOfVertexOfDelaun {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Vertex &Left, const BRepMesh_Vertex &Right) const;
 
+};
+%extend BRepMesh_ComparatorOfVertexOfDelaun {
+	~BRepMesh_ComparatorOfVertexOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_ComparatorOfVertexOfDelaun\n");
+	}
 };
 
 %nodefaultctor BRepMesh_FastDiscret;
@@ -1838,6 +1953,11 @@ class BRepMesh_GeomTool {
 		MeshShape_CurvatureType CurvatureComplexity(const Handle_BRepAdaptor_HSurface &SF);
 
 };
+%extend BRepMesh_GeomTool {
+	~BRepMesh_GeomTool() {
+	printf("Call custom destructor for instance of BRepMesh_GeomTool\n");
+	}
+};
 
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfIntegerFace;
 class BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public TCollection_MapNode {
@@ -1891,6 +2011,11 @@ class BRepMesh_DataMapOfVertexInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TopoDS_Vertex &K);
 
+};
+%extend BRepMesh_DataMapOfVertexInteger {
+	~BRepMesh_DataMapOfVertexInteger() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapOfVertexInteger\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret;
@@ -1953,6 +2078,11 @@ class BRepMesh_SelectorOfDataStructureOfDelaun {
 		const MeshDS_MapOfInteger & FrontierLinks() const;
 
 };
+%extend BRepMesh_SelectorOfDataStructureOfDelaun {
+	~BRepMesh_SelectorOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_SelectorOfDataStructureOfDelaun\n");
+	}
+};
 
 %nodefaultctor BRepMesh_DataMapOfShapeReal;
 class BRepMesh_DataMapOfShapeReal : public TCollection_BasicMap {
@@ -1982,6 +2112,11 @@ class BRepMesh_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepMesh_DataMapOfShapeReal {
+	~BRepMesh_DataMapOfShapeReal() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapOfShapeReal\n");
+	}
 };
 
 %nodefaultctor BRepMesh_SurfaceGrid;
@@ -2092,6 +2227,11 @@ class BRepMesh_DataMapOfMeshVertexInteger : public TCollection_BasicMap {
 		Standard_Integer & operator()(const BRepMesh_Vertex &K);
 
 };
+%extend BRepMesh_DataMapOfMeshVertexInteger {
+	~BRepMesh_DataMapOfMeshVertexInteger() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapOfMeshVertexInteger\n");
+	}
+};
 
 %nodefaultctor BRepMesh_HeapSortVertexOfDelaun;
 class BRepMesh_HeapSortVertexOfDelaun {
@@ -2103,6 +2243,11 @@ class BRepMesh_HeapSortVertexOfDelaun {
 		%feature("autodoc", "1");
 		void Sort(BRepMesh_Array1OfVertexOfDelaun & TheArray, const BRepMesh_ComparatorOfVertexOfDelaun &Comp);
 
+};
+%extend BRepMesh_HeapSortVertexOfDelaun {
+	~BRepMesh_HeapSortVertexOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_HeapSortVertexOfDelaun\n");
+	}
 };
 
 %nodefaultctor BRepMesh_ListIteratorOfListOfSurfaceGrid;
@@ -2144,6 +2289,11 @@ class BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger : public TCollection_
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger {
+	~BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger\n");
+	}
 };
 
 %nodefaultctor BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun;
@@ -2187,6 +2337,11 @@ class BRepMesh_LinkHasherOfDataStructureOfDelaun {
 		Standard_Boolean IsEqual(const BRepMesh_Edge &K1, const BRepMesh_Edge &K2);
 
 };
+%extend BRepMesh_LinkHasherOfDataStructureOfDelaun {
+	~BRepMesh_LinkHasherOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_LinkHasherOfDataStructureOfDelaun\n");
+	}
+};
 
 %nodefaultctor BRepMesh_IDMapOfLinkOfDataStructureOfDelaun;
 class BRepMesh_IDMapOfLinkOfDataStructureOfDelaun : public TCollection_BasicMap {
@@ -2227,6 +2382,11 @@ class BRepMesh_IDMapOfLinkOfDataStructureOfDelaun : public TCollection_BasicMap 
 		MeshDS_ListOfInteger & ChangeFromKey(const BRepMesh_Edge &K);
 
 };
+%extend BRepMesh_IDMapOfLinkOfDataStructureOfDelaun {
+	~BRepMesh_IDMapOfLinkOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_IDMapOfLinkOfDataStructureOfDelaun\n");
+	}
+};
 
 %nodefaultctor BRepMesh_DataMapOfIntegerListOfXY;
 class BRepMesh_DataMapOfIntegerListOfXY : public TCollection_BasicMap {
@@ -2257,6 +2417,11 @@ class BRepMesh_DataMapOfIntegerListOfXY : public TCollection_BasicMap {
 		BRepMesh_ListOfXY & operator()(const Standard_Integer &K);
 
 };
+%extend BRepMesh_DataMapOfIntegerListOfXY {
+	~BRepMesh_DataMapOfIntegerListOfXY() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapOfIntegerListOfXY\n");
+	}
+};
 
 %nodefaultctor BRepMesh_VertexHasher;
 class BRepMesh_VertexHasher {
@@ -2270,6 +2435,11 @@ class BRepMesh_VertexHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Vertex &K1, const BRepMesh_Vertex &K2);
 
+};
+%extend BRepMesh_VertexHasher {
+	~BRepMesh_VertexHasher() {
+	printf("Call custom destructor for instance of BRepMesh_VertexHasher\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapOfCouplePnt;
@@ -2300,6 +2470,11 @@ class BRepMesh_DataMapOfCouplePnt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		gp_Pnt & operator()(const MeshShape_Couple &K);
 
+};
+%extend BRepMesh_DataMapOfCouplePnt {
+	~BRepMesh_DataMapOfCouplePnt() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapOfCouplePnt\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret;
@@ -2340,6 +2515,11 @@ class BRepMesh_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterat
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Key() const;
 
+};
+%extend BRepMesh_MapIteratorOfMapOfAsciiString {
+	~BRepMesh_MapIteratorOfMapOfAsciiString() {
+	printf("Call custom destructor for instance of BRepMesh_MapIteratorOfMapOfAsciiString\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger;
@@ -2438,6 +2618,11 @@ class BRepMesh_DataMapIteratorOfDataMapOfIntegerFace : public TCollection_BasicM
 		const TopoDS_Face & Value() const;
 
 };
+%extend BRepMesh_DataMapIteratorOfDataMapOfIntegerFace {
+	~BRepMesh_DataMapIteratorOfDataMapOfIntegerFace() {
+	printf("Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfIntegerFace\n");
+	}
+};
 
 %nodefaultctor BRepMesh_ComparatorOfIndexedVertexOfDelaun;
 class BRepMesh_ComparatorOfIndexedVertexOfDelaun {
@@ -2453,6 +2638,11 @@ class BRepMesh_ComparatorOfIndexedVertexOfDelaun {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_Integer Left, const Standard_Integer Right) const;
 
+};
+%extend BRepMesh_ComparatorOfIndexedVertexOfDelaun {
+	~BRepMesh_ComparatorOfIndexedVertexOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_ComparatorOfIndexedVertexOfDelaun\n");
+	}
 };
 
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfVertexInteger;
@@ -2504,6 +2694,11 @@ class BRepMesh_Edge {
 		Standard_Boolean IsEqual(const BRepMesh_Edge &Other) const;
 
 };
+%extend BRepMesh_Edge {
+	~BRepMesh_Edge() {
+	printf("Call custom destructor for instance of BRepMesh_Edge\n");
+	}
+};
 
 %nodefaultctor BRepMesh_MapOfAsciiString;
 class BRepMesh_MapOfAsciiString : public TCollection_BasicMap {
@@ -2525,6 +2720,11 @@ class BRepMesh_MapOfAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const TCollection_AsciiString &aKey);
 
+};
+%extend BRepMesh_MapOfAsciiString {
+	~BRepMesh_MapOfAsciiString() {
+	printf("Call custom destructor for instance of BRepMesh_MapOfAsciiString\n");
+	}
 };
 
 %nodefaultctor BRepMesh_Triangle;
@@ -2552,6 +2752,11 @@ class BRepMesh_Triangle {
 		Standard_Boolean IsEqual(const BRepMesh_Triangle &Other) const;
 
 };
+%extend BRepMesh_Triangle {
+	~BRepMesh_Triangle() {
+	printf("Call custom destructor for instance of BRepMesh_Triangle\n");
+	}
+};
 
 %nodefaultctor BRepMesh_ElemHasherOfDataStructureOfDelaun;
 class BRepMesh_ElemHasherOfDataStructureOfDelaun {
@@ -2565,6 +2770,11 @@ class BRepMesh_ElemHasherOfDataStructureOfDelaun {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Triangle &K1, const BRepMesh_Triangle &K2);
 
+};
+%extend BRepMesh_ElemHasherOfDataStructureOfDelaun {
+	~BRepMesh_ElemHasherOfDataStructureOfDelaun() {
+	printf("Call custom destructor for instance of BRepMesh_ElemHasherOfDataStructureOfDelaun\n");
+	}
 };
 
 %nodefaultctor BRepMesh_ListIteratorOfListOfVertex;
@@ -2585,4 +2795,9 @@ class BRepMesh_ListIteratorOfListOfVertex {
 		%feature("autodoc", "1");
 		BRepMesh_Vertex & Value() const;
 
+};
+%extend BRepMesh_ListIteratorOfListOfVertex {
+	~BRepMesh_ListIteratorOfListOfVertex() {
+	printf("Call custom destructor for instance of BRepMesh_ListIteratorOfListOfVertex\n");
+	}
 };

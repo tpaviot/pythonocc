@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BOPTColStd
@@ -219,6 +219,11 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 		Standard_Integer & ChangeFromKey(const Standard_Integer &K);
 
 };
+%extend BOPTColStd_IndexedDataMapOfIntegerInteger {
+	~BOPTColStd_IndexedDataMapOfIntegerInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerInteger\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_CArray1OfShape;
 class BOPTColStd_CArray1OfShape {
@@ -254,6 +259,11 @@ class BOPTColStd_CArray1OfShape {
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
 
+};
+%extend BOPTColStd_CArray1OfShape {
+	~BOPTColStd_CArray1OfShape() {
+	printf("Call custom destructor for instance of BOPTColStd_CArray1OfShape\n");
+	}
 };
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -294,6 +304,11 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 		%feature("autodoc", "1");
 		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
 
+};
+%extend BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger {
+	~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger\n");
+	}
 };
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
@@ -387,6 +402,11 @@ class BOPTColStd_CArray1OfPnt2d {
 		Standard_Integer BlockLength() const;
 
 };
+%extend BOPTColStd_CArray1OfPnt2d {
+	~BOPTColStd_CArray1OfPnt2d() {
+	printf("Call custom destructor for instance of BOPTColStd_CArray1OfPnt2d\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfSWRInteger;
 class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
@@ -427,6 +447,11 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 		Standard_Integer & ChangeFromKey(const BOPTColStd_ShapeWithRank &K);
 
 };
+%extend BOPTColStd_IndexedDataMapOfSWRInteger {
+	~BOPTColStd_IndexedDataMapOfSWRInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_IndexedDataMapOfSWRInteger\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_ListIteratorOfListOfListOfShape;
 class BOPTColStd_ListIteratorOfListOfListOfShape {
@@ -446,6 +471,11 @@ class BOPTColStd_ListIteratorOfListOfListOfShape {
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & Value() const;
 
+};
+%extend BOPTColStd_ListIteratorOfListOfListOfShape {
+	~BOPTColStd_ListIteratorOfListOfListOfShape() {
+	printf("Call custom destructor for instance of BOPTColStd_ListIteratorOfListOfListOfShape\n");
+	}
 };
 
 %nodefaultctor BOPTColStd_ListOfListOfShape;
@@ -493,6 +523,11 @@ class BOPTColStd_ListOfListOfShape {
 		void InsertAfter(BOPTColStd_ListOfListOfShape & Other, BOPTColStd_ListIteratorOfListOfListOfShape & It);
 
 };
+%extend BOPTColStd_ListOfListOfShape {
+	~BOPTColStd_ListOfListOfShape() {
+	printf("Call custom destructor for instance of BOPTColStd_ListOfListOfShape\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_CArray1OfInteger;
 class BOPTColStd_CArray1OfInteger {
@@ -529,6 +564,11 @@ class BOPTColStd_CArray1OfInteger {
 		Standard_Integer BlockLength() const;
 
 };
+%extend BOPTColStd_CArray1OfInteger {
+	~BOPTColStd_CArray1OfInteger() {
+	printf("Call custom destructor for instance of BOPTColStd_CArray1OfInteger\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_ListNodeOfListOfListOfShape;
 class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
@@ -562,6 +602,11 @@ class BOPTColStd_Failure {
 		%feature("autodoc", "1");
 		Standard_CString Message() const;
 
+};
+%extend BOPTColStd_Failure {
+	~BOPTColStd_Failure() {
+	printf("Call custom destructor for instance of BOPTColStd_Failure\n");
+	}
 };
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -613,6 +658,11 @@ class BOPTColStd_ShapeWithRank {
 		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &Other) const;
 
 };
+%extend BOPTColStd_ShapeWithRank {
+	~BOPTColStd_ShapeWithRank() {
+	printf("Call custom destructor for instance of BOPTColStd_ShapeWithRank\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_ShapeWithRankHasher;
 class BOPTColStd_ShapeWithRankHasher {
@@ -627,6 +677,11 @@ class BOPTColStd_ShapeWithRankHasher {
 		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &SR1, const BOPTColStd_ShapeWithRank &SR2);
 
 };
+%extend BOPTColStd_ShapeWithRankHasher {
+	~BOPTColStd_ShapeWithRankHasher() {
+	printf("Call custom destructor for instance of BOPTColStd_ShapeWithRankHasher\n");
+	}
+};
 
 %nodefaultctor BOPTColStd_Dump;
 class BOPTColStd_Dump {
@@ -640,4 +695,9 @@ class BOPTColStd_Dump {
 		%feature("autodoc", "1");
 		void PrintMessage(const char * aMessage);
 
+};
+%extend BOPTColStd_Dump {
+	~BOPTColStd_Dump() {
+	printf("Call custom destructor for instance of BOPTColStd_Dump\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Prs3d
@@ -554,6 +554,11 @@ class Prs3d_Text : public Prs3d_Root {
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
 
 };
+%extend Prs3d_Text {
+	~Prs3d_Text() {
+	printf("Call custom destructor for instance of Prs3d_Text\n");
+	}
+};
 
 %nodefaultctor Prs3d_Presentation;
 class Prs3d_Presentation : public Graphic3d_Structure {
@@ -627,6 +632,11 @@ class Prs3d_AnglePresentation : public Prs3d_Root {
 		%feature("autodoc", "1");
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &AttachmentPoint3, const gp_Pnt &OffsetPoint);
 
+};
+%extend Prs3d_AnglePresentation {
+	~Prs3d_AnglePresentation() {
+	printf("Call custom destructor for instance of Prs3d_AnglePresentation\n");
+	}
 };
 
 %nodefaultctor Prs3d_CompositeAspect;
@@ -730,6 +740,11 @@ class Prs3d_LengthPresentation : public Prs3d_Root {
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &OffsetPoint);
 
 };
+%extend Prs3d_LengthPresentation {
+	~Prs3d_LengthPresentation() {
+	printf("Call custom destructor for instance of Prs3d_LengthPresentation\n");
+	}
+};
 
 %nodefaultctor Prs3d_DatumAspect;
 class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
@@ -819,6 +834,11 @@ class Prs3d {
 		%feature("autodoc", "1");
 		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Quantity_Length & dist);
 
+};
+%extend Prs3d {
+	~Prs3d() {
+	printf("Call custom destructor for instance of Prs3d\n");
+	}
 };
 
 %nodefaultctor Prs3d_ShadingAspect;
@@ -1336,6 +1356,11 @@ class Prs3d_Arrow : public Prs3d_Root {
 		%feature("autodoc", "1");
 		void Fill(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
 
+};
+%extend Prs3d_Arrow {
+	~Prs3d_Arrow() {
+	printf("Call custom destructor for instance of Prs3d_Arrow\n");
+	}
 };
 
 %nodefaultctor Prs3d_PlaneAspect;

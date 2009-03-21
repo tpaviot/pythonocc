@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GraphTools
@@ -201,6 +201,11 @@ class GraphTools_ListOfSequenceOfInteger {
 		void InsertAfter(GraphTools_ListOfSequenceOfInteger & Other, GraphTools_ListIteratorOfListOfSequenceOfInteger & It);
 
 };
+%extend GraphTools_ListOfSequenceOfInteger {
+	~GraphTools_ListOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of GraphTools_ListOfSequenceOfInteger\n");
+	}
+};
 
 %nodefaultctor GraphTools_RGNode;
 class GraphTools_RGNode {
@@ -299,6 +304,11 @@ class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 		TColStd_SequenceOfInteger & Value() const;
 
 };
+%extend GraphTools_ListIteratorOfListOfSequenceOfInteger {
+	~GraphTools_ListIteratorOfListOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of GraphTools_ListIteratorOfListOfSequenceOfInteger\n");
+	}
+};
 
 %nodefaultctor GraphTools_TSNode;
 class GraphTools_TSNode {
@@ -322,6 +332,11 @@ class GraphTools_TSNode {
 		%feature("autodoc", "1");
 		Standard_Integer GetSuccessor(const Standard_Integer index) const;
 
+};
+%extend GraphTools_TSNode {
+	~GraphTools_TSNode() {
+	printf("Call custom destructor for instance of GraphTools_TSNode\n");
+	}
 };
 
 %nodefaultctor GraphTools_ListNodeOfSCList;

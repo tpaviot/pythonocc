@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BooleanOperations
@@ -180,6 +180,11 @@ class BooleanOperations_Explorer {
 		virtual		void Dump(Standard_OStream & S) const;
 
 };
+%extend BooleanOperations_Explorer {
+	~BooleanOperations_Explorer() {
+	printf("Call custom destructor for instance of BooleanOperations_Explorer\n");
+	}
+};
 
 %nodefaultctor BooleanOperations_IndexedDataMapOfShapeInteger;
 class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicMap {
@@ -220,6 +225,11 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 		Standard_Integer & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend BooleanOperations_IndexedDataMapOfShapeInteger {
+	~BooleanOperations_IndexedDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of BooleanOperations_IndexedDataMapOfShapeInteger\n");
+	}
+};
 
 %nodefaultctor BooleanOperations_ShapeAndInterferences;
 class BooleanOperations_ShapeAndInterferences {
@@ -256,6 +266,11 @@ class BooleanOperations_ShapeAndInterferences {
 		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer & OrientationsSize) const;
 
 };
+%extend BooleanOperations_ShapeAndInterferences {
+	~BooleanOperations_ShapeAndInterferences() {
+	printf("Call custom destructor for instance of BooleanOperations_ShapeAndInterferences\n");
+	}
+};
 
 %nodefaultctor BooleanOperations_OnceExplorer;
 class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
@@ -275,6 +290,11 @@ class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S) const;
 
+};
+%extend BooleanOperations_OnceExplorer {
+	~BooleanOperations_OnceExplorer() {
+	printf("Call custom destructor for instance of BooleanOperations_OnceExplorer\n");
+	}
 };
 
 %nodefaultctor BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors;
@@ -315,6 +335,11 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 		%feature("autodoc", "1");
 		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromKey(const TopoDS_Shape &K);
 
+};
+%extend BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors {
+	~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors() {
+	printf("Call custom destructor for instance of BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors\n");
+	}
 };
 
 %nodefaultctor BooleanOperations_ShapesDataStructure;
@@ -398,6 +423,11 @@ class BooleanOperations_ShapesDataStructure {
 		void GetOrientations(const Standard_Integer index, Standard_Address & theArrayOfOrientations, Standard_Integer & OrientationsSize) const;
 
 };
+%extend BooleanOperations_ShapesDataStructure {
+	~BooleanOperations_ShapesDataStructure() {
+	printf("Call custom destructor for instance of BooleanOperations_ShapesDataStructure\n");
+	}
+};
 
 %nodefaultctor BooleanOperations_AncestorsSeqAndSuccessorsSeq;
 class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
@@ -425,6 +455,11 @@ class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
 		%feature("autodoc", "1");
 		void SetNewOrientation(const TopAbs_Orientation OrientationNumber);
 
+};
+%extend BooleanOperations_AncestorsSeqAndSuccessorsSeq {
+	~BooleanOperations_AncestorsSeqAndSuccessorsSeq() {
+	printf("Call custom destructor for instance of BooleanOperations_AncestorsSeqAndSuccessorsSeq\n");
+	}
 };
 
 %nodefaultctor BooleanOperations_AncestorsAndSuccessors;
@@ -463,6 +498,11 @@ class BooleanOperations_AncestorsAndSuccessors {
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfSuccessors() const;
 
+};
+%extend BooleanOperations_AncestorsAndSuccessors {
+	~BooleanOperations_AncestorsAndSuccessors() {
+	printf("Call custom destructor for instance of BooleanOperations_AncestorsAndSuccessors\n");
+	}
 };
 
 %nodefaultctor BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors;

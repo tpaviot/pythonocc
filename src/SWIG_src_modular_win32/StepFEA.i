@@ -2995,6 +2995,11 @@ class StepFEA_Array1OfDegreeOfFreedom {
 		StepFEA_DegreeOfFreedom & operator()(const Standard_Integer Index);
 
 };
+%extend StepFEA_Array1OfDegreeOfFreedom {
+	~StepFEA_Array1OfDegreeOfFreedom() {
+	printf("Call custom destructor for instance of StepFEA_Array1OfDegreeOfFreedom\n");
+	}
+};
 
 %nodefaultctor StepFEA_Surface3dElementRepresentation;
 class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentation {

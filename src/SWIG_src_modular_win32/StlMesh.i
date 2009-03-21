@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module StlMesh
@@ -391,6 +391,11 @@ class StlMesh_MeshExplorer {
 		%feature("autodoc", "1");
 		void TriangleOrientation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend StlMesh_MeshExplorer {
+	~StlMesh_MeshExplorer() {
+	printf("Call custom destructor for instance of StlMesh_MeshExplorer\n");
+	}
 };
 
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMeshTriangle;

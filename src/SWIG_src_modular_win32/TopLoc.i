@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopLoc
@@ -228,6 +228,11 @@ class TopLoc_MapOfLocation : public TCollection_BasicMap {
 		Standard_Boolean Remove(const TopLoc_Location &aKey);
 
 };
+%extend TopLoc_MapOfLocation {
+	~TopLoc_MapOfLocation() {
+	printf("Call custom destructor for instance of TopLoc_MapOfLocation\n");
+	}
+};
 
 %nodefaultctor TopLoc_IndexedMapOfLocation;
 class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
@@ -258,6 +263,11 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TopLoc_Location &K) const;
 
 };
+%extend TopLoc_IndexedMapOfLocation {
+	~TopLoc_IndexedMapOfLocation() {
+	printf("Call custom destructor for instance of TopLoc_IndexedMapOfLocation\n");
+	}
+};
 
 %nodefaultctor TopLoc_MapIteratorOfMapOfLocation;
 class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
@@ -274,6 +284,11 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 		const TopLoc_Location & Key() const;
 
 };
+%extend TopLoc_MapIteratorOfMapOfLocation {
+	~TopLoc_MapIteratorOfMapOfLocation() {
+	printf("Call custom destructor for instance of TopLoc_MapIteratorOfMapOfLocation\n");
+	}
+};
 
 %nodefaultctor TopLoc_MapLocationHasher;
 class TopLoc_MapLocationHasher {
@@ -287,6 +302,11 @@ class TopLoc_MapLocationHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
 
+};
+%extend TopLoc_MapLocationHasher {
+	~TopLoc_MapLocationHasher() {
+	printf("Call custom destructor for instance of TopLoc_MapLocationHasher\n");
+	}
 };
 
 %nodefaultctor TopLoc_Location;
@@ -407,6 +427,11 @@ class TopLoc_SListOfItemLocation {
 		void Next();
 
 };
+%extend TopLoc_SListOfItemLocation {
+	~TopLoc_SListOfItemLocation() {
+	printf("Call custom destructor for instance of TopLoc_SListOfItemLocation\n");
+	}
+};
 
 %nodefaultctor TopLoc_ItemLocation;
 class TopLoc_ItemLocation {
@@ -422,6 +447,11 @@ class TopLoc_ItemLocation {
 		%feature("autodoc", "1");
 		~TopLoc_ItemLocation();
 
+};
+%extend TopLoc_ItemLocation {
+	~TopLoc_ItemLocation() {
+	printf("Call custom destructor for instance of TopLoc_ItemLocation\n");
+	}
 };
 
 %nodefaultctor TopLoc_Datum3D;

@@ -145,6 +145,11 @@ class RWHeaderSection_RWFileSchema {
 		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileSchema &ent) const;
 
 };
+%extend RWHeaderSection_RWFileSchema {
+	~RWHeaderSection_RWFileSchema() {
+	printf("Call custom destructor for instance of RWHeaderSection_RWFileSchema\n");
+	}
+};
 
 %nodefaultctor RWHeaderSection_RWFileDescription;
 class RWHeaderSection_RWFileDescription {
@@ -159,6 +164,11 @@ class RWHeaderSection_RWFileDescription {
 		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileDescription &ent) const;
 
 };
+%extend RWHeaderSection_RWFileDescription {
+	~RWHeaderSection_RWFileDescription() {
+	printf("Call custom destructor for instance of RWHeaderSection_RWFileDescription\n");
+	}
+};
 
 %nodefaultctor RWHeaderSection_RWFileName;
 class RWHeaderSection_RWFileName {
@@ -172,6 +182,11 @@ class RWHeaderSection_RWFileName {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileName &ent) const;
 
+};
+%extend RWHeaderSection_RWFileName {
+	~RWHeaderSection_RWFileName() {
+	printf("Call custom destructor for instance of RWHeaderSection_RWFileName\n");
+	}
 };
 
 %nodefaultctor RWHeaderSection_ReadWriteModule;
@@ -216,6 +231,11 @@ class RWHeaderSection {
 		%feature("autodoc", "1");
 		void Init();
 
+};
+%extend RWHeaderSection {
+	~RWHeaderSection() {
+	printf("Call custom destructor for instance of RWHeaderSection\n");
+	}
 };
 
 %nodefaultctor RWHeaderSection_GeneralModule;

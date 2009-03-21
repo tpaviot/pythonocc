@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Poly
@@ -326,6 +326,11 @@ class Poly_Array1OfTriangle {
 		Poly_Triangle & operator()(const Standard_Integer Index);
 
 };
+%extend Poly_Array1OfTriangle {
+	~Poly_Array1OfTriangle() {
+	printf("Call custom destructor for instance of Poly_Array1OfTriangle\n");
+	}
+};
 
 %nodefaultctor Poly_Triangulation;
 class Poly_Triangulation : public MMgt_TShared {
@@ -420,6 +425,11 @@ class Poly_CoherentNode : public gp_XYZ {
 		void Dump(Standard_OStream & theStream) const;
 
 };
+%extend Poly_CoherentNode {
+	~Poly_CoherentNode() {
+	printf("Call custom destructor for instance of Poly_CoherentNode\n");
+	}
+};
 
 %nodefaultctor Poly_CoherentTriangle;
 class Poly_CoherentTriangle {
@@ -454,6 +464,11 @@ class Poly_CoherentTriangle {
 		Standard_Integer FindConnection(const Poly_CoherentTriangle &arg0) const;
 
 };
+%extend Poly_CoherentTriangle {
+	~Poly_CoherentTriangle() {
+	printf("Call custom destructor for instance of Poly_CoherentTriangle\n");
+	}
+};
 
 %nodefaultctor Poly_Triangle;
 class Poly_Triangle {
@@ -479,6 +494,11 @@ class Poly_Triangle {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 
+};
+%extend Poly_Triangle {
+	~Poly_Triangle() {
+	printf("Call custom destructor for instance of Poly_Triangle\n");
+	}
 };
 
 %nodefaultctor Poly_HArray1OfTriangle;
@@ -578,6 +598,11 @@ class Poly_CoherentLink {
 		%feature("autodoc", "1");
 		void Nullify();
 
+};
+%extend Poly_CoherentLink {
+	~Poly_CoherentLink() {
+	printf("Call custom destructor for instance of Poly_CoherentLink\n");
+	}
 };
 
 %nodefaultctor Poly_Polygon2D;

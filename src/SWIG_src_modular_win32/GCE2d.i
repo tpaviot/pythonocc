@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GCE2d
@@ -96,6 +96,11 @@ class GCE2d_Root {
 		%feature("autodoc", "1");
 		gce_ErrorType Status() const;
 
+};
+%extend GCE2d_Root {
+	~GCE2d_Root() {
+	printf("Call custom destructor for instance of GCE2d_Root\n");
+	}
 };
 
 %nodefaultctor GCE2d_MakeLine;

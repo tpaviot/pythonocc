@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Resource
@@ -222,6 +222,11 @@ class Resource_Array1OfAsciiString {
 		TCollection_AsciiString & operator()(const Standard_Integer Index);
 
 };
+%extend Resource_Array1OfAsciiString {
+	~Resource_Array1OfAsciiString() {
+	printf("Call custom destructor for instance of Resource_Array1OfAsciiString\n");
+	}
+};
 
 %nodefaultctor Resource_DataMapOfAsciiStringAsciiString;
 class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
@@ -252,6 +257,11 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 		TCollection_AsciiString & operator()(const TCollection_AsciiString &K);
 
 };
+%extend Resource_DataMapOfAsciiStringAsciiString {
+	~Resource_DataMapOfAsciiStringAsciiString() {
+	printf("Call custom destructor for instance of Resource_DataMapOfAsciiStringAsciiString\n");
+	}
+};
 
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
 class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCollection_BasicMapIterator {
@@ -269,6 +279,11 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCol
 		%feature("autodoc", "1");
 		const TCollection_ExtendedString & Value() const;
 
+};
+%extend Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString {
+	~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString() {
+	printf("Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString\n");
+	}
 };
 
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
@@ -348,6 +363,11 @@ class Resource_QuickSortOfArray1 {
 		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
 
 };
+%extend Resource_QuickSortOfArray1 {
+	~Resource_QuickSortOfArray1() {
+	printf("Call custom destructor for instance of Resource_QuickSortOfArray1\n");
+	}
+};
 
 %nodefaultctor Resource_LexicalCompare;
 class Resource_LexicalCompare {
@@ -359,6 +379,11 @@ class Resource_LexicalCompare {
 		%feature("autodoc", "1");
 		Standard_Boolean IsLower(const TCollection_AsciiString &Left, const TCollection_AsciiString &Right) const;
 
+};
+%extend Resource_LexicalCompare {
+	~Resource_LexicalCompare() {
+	printf("Call custom destructor for instance of Resource_LexicalCompare\n");
+	}
 };
 
 %nodefaultctor Resource_NoSuchResource;
@@ -418,6 +443,11 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 		TCollection_ExtendedString & operator()(const TCollection_AsciiString &K);
 
 };
+%extend Resource_DataMapOfAsciiStringExtendedString {
+	~Resource_DataMapOfAsciiStringExtendedString() {
+	printf("Call custom destructor for instance of Resource_DataMapOfAsciiStringExtendedString\n");
+	}
+};
 
 %nodefaultctor Resource_Unicode;
 class Resource_Unicode {
@@ -453,6 +483,11 @@ class Resource_Unicode {
 		%feature("autodoc", "1");
 		Standard_Boolean ConvertUnicodeToFormat(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
 
+};
+%extend Resource_Unicode {
+	~Resource_Unicode() {
+	printf("Call custom destructor for instance of Resource_Unicode\n");
+	}
 };
 
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString;
@@ -495,4 +530,9 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollec
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Value() const;
 
+};
+%extend Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString {
+	~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString() {
+	printf("Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString\n");
+	}
 };

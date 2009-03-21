@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TNaming
@@ -410,6 +410,11 @@ class TNaming_NamedShapeHasher {
 		Standard_Boolean IsEqual(const Handle_TNaming_NamedShape &K1, const Handle_TNaming_NamedShape &K2);
 
 };
+%extend TNaming_NamedShapeHasher {
+	~TNaming_NamedShapeHasher() {
+	printf("Call custom destructor for instance of TNaming_NamedShapeHasher\n");
+	}
+};
 
 %nodefaultctor TNaming_Tool;
 class TNaming_Tool {
@@ -508,6 +513,11 @@ class TNaming_NamingTool {
 		void BuildDescendants(const Handle_TNaming_NamedShape &NS, TDF_LabelMap & Labels);
 
 };
+%extend TNaming_NamingTool {
+	~TNaming_NamingTool() {
+	printf("Call custom destructor for instance of TNaming_NamingTool\n");
+	}
+};
 
 %nodefaultctor TNaming_TranslateTool;
 class TNaming_TranslateTool : public MMgt_TShared {
@@ -576,6 +586,11 @@ class TNaming_MapOfNamedShape : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Handle_TNaming_NamedShape &aKey);
 
 };
+%extend TNaming_MapOfNamedShape {
+	~TNaming_MapOfNamedShape() {
+	printf("Call custom destructor for instance of TNaming_MapOfNamedShape\n");
+	}
+};
 
 %nodefaultctor TNaming_IteratorOnShapesSet;
 class TNaming_IteratorOnShapesSet {
@@ -595,6 +610,11 @@ class TNaming_IteratorOnShapesSet {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Value() const;
 
+};
+%extend TNaming_IteratorOnShapesSet {
+	~TNaming_IteratorOnShapesSet() {
+	printf("Call custom destructor for instance of TNaming_IteratorOnShapesSet\n");
+	}
 };
 
 %nodefaultctor TNaming_StdMapNodeOfMapOfNamedShape;
@@ -664,6 +684,11 @@ class TNaming_ListOfIndexedDataMapOfShapeListOfShape {
 		void InsertAfter(TNaming_ListOfIndexedDataMapOfShapeListOfShape & Other, TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape & It);
 
 };
+%extend TNaming_ListOfIndexedDataMapOfShapeListOfShape {
+	~TNaming_ListOfIndexedDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TNaming_ListOfIndexedDataMapOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor TNaming_Translator;
 class TNaming_Translator {
@@ -686,6 +711,11 @@ class TNaming_Translator {
 		void DumpMap(const Standard_Boolean isWrite=0) const;
 
 };
+%extend TNaming_Translator {
+	~TNaming_Translator() {
+	printf("Call custom destructor for instance of TNaming_Translator\n");
+	}
+};
 
 %nodefaultctor TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape;
 class TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
@@ -705,6 +735,11 @@ class TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
 		%feature("autodoc", "1");
 		TopTools_IndexedDataMapOfShapeListOfShape & Value() const;
 
+};
+%extend TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
+	~TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape\n");
+	}
 };
 
 %nodefaultctor TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape;
@@ -840,6 +875,11 @@ class TNaming_Scope {
 		TopoDS_Shape CurrentShape(const Handle_TNaming_NamedShape &NS) const;
 
 };
+%extend TNaming_Scope {
+	~TNaming_Scope() {
+	printf("Call custom destructor for instance of TNaming_Scope\n");
+	}
+};
 
 %nodefaultctor TNaming_DeltaOnRemoval;
 class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
@@ -888,6 +928,11 @@ class TNaming_Iterator {
 		TNaming_Evolution Evolution() const;
 
 };
+%extend TNaming_Iterator {
+	~TNaming_Iterator() {
+	printf("Call custom destructor for instance of TNaming_Iterator\n");
+	}
+};
 
 %nodefaultctor TNaming_SameShapeIterator;
 class TNaming_SameShapeIterator {
@@ -903,6 +948,11 @@ class TNaming_SameShapeIterator {
 		%feature("autodoc", "1");
 		TDF_Label Label() const;
 
+};
+%extend TNaming_SameShapeIterator {
+	~TNaming_SameShapeIterator() {
+	printf("Call custom destructor for instance of TNaming_SameShapeIterator\n");
+	}
 };
 
 %nodefaultctor TNaming_Builder;
@@ -947,6 +997,11 @@ class TNaming_CopyShape {
 		TopLoc_Location Translate(const TopLoc_Location &L, TColStd_IndexedDataMapOfTransientTransient & aMap);
 
 };
+%extend TNaming_CopyShape {
+	~TNaming_CopyShape() {
+	printf("Call custom destructor for instance of TNaming_CopyShape\n");
+	}
+};
 
 %nodefaultctor TNaming_DataMapNodeOfDataMapOfShapeShapesSet;
 class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode {
@@ -988,6 +1043,11 @@ class TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape : public TCollection_Ba
 		%feature("autodoc", "1");
 		const TNaming_PtrRefShape & Value() const;
 
+};
+%extend TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape {
+	~TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape() {
+	printf("Call custom destructor for instance of TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape\n");
+	}
 };
 
 %nodefaultctor TNaming_DeltaOnModification;
@@ -1126,6 +1186,11 @@ class TNaming_ListOfMapOfShape {
 		void InsertAfter(TNaming_ListOfMapOfShape & Other, TNaming_ListIteratorOfListOfMapOfShape & It);
 
 };
+%extend TNaming_ListOfMapOfShape {
+	~TNaming_ListOfMapOfShape() {
+	printf("Call custom destructor for instance of TNaming_ListOfMapOfShape\n");
+	}
+};
 
 %nodefaultctor TNaming_MapIteratorOfMapOfNamedShape;
 class TNaming_MapIteratorOfMapOfNamedShape : public TCollection_BasicMapIterator {
@@ -1187,6 +1252,11 @@ class TNaming_ListIteratorOfListOfMapOfShape {
 		%feature("autodoc", "1");
 		TopTools_MapOfShape & Value() const;
 
+};
+%extend TNaming_ListIteratorOfListOfMapOfShape {
+	~TNaming_ListIteratorOfListOfMapOfShape() {
+	printf("Call custom destructor for instance of TNaming_ListIteratorOfListOfMapOfShape\n");
+	}
 };
 
 %nodefaultctor TNaming_OldShapeIterator;
@@ -1365,6 +1435,11 @@ class TNaming_DataMapIteratorOfDataMapOfShapeShapesSet : public TCollection_Basi
 		const TNaming_ShapesSet & Value() const;
 
 };
+%extend TNaming_DataMapIteratorOfDataMapOfShapeShapesSet {
+	~TNaming_DataMapIteratorOfDataMapOfShapeShapesSet() {
+	printf("Call custom destructor for instance of TNaming_DataMapIteratorOfDataMapOfShapeShapesSet\n");
+	}
+};
 
 %nodefaultctor TNaming_Localizer;
 class TNaming_Localizer {
@@ -1395,6 +1470,11 @@ class TNaming_Localizer {
 		void FindShapeContext(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape &theS, TopoDS_Shape & theSC);
 
 };
+%extend TNaming_Localizer {
+	~TNaming_Localizer() {
+	printf("Call custom destructor for instance of TNaming_Localizer\n");
+	}
+};
 
 %nodefaultctor TNaming_DataMapOfShapePtrRefShape;
 class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
@@ -1424,6 +1504,11 @@ class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TNaming_PtrRefShape & operator()(const TopoDS_Shape &K);
 
+};
+%extend TNaming_DataMapOfShapePtrRefShape {
+	~TNaming_DataMapOfShapePtrRefShape() {
+	printf("Call custom destructor for instance of TNaming_DataMapOfShapePtrRefShape\n");
+	}
 };
 
 %nodefaultctor TNaming_NewShapeIterator;
@@ -1538,6 +1623,11 @@ class TNaming {
 		Standard_OStream & Print(const TDF_Label &ACCESS, Standard_OStream & S);
 
 };
+%extend TNaming {
+	~TNaming() {
+	printf("Call custom destructor for instance of TNaming\n");
+	}
+};
 
 %nodefaultctor TNaming_DataMapOfShapeShapesSet;
 class TNaming_DataMapOfShapeShapesSet : public TCollection_BasicMap {
@@ -1567,6 +1657,11 @@ class TNaming_DataMapOfShapeShapesSet : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TNaming_ShapesSet & operator()(const TopoDS_Shape &K);
 
+};
+%extend TNaming_DataMapOfShapeShapesSet {
+	~TNaming_DataMapOfShapeShapesSet() {
+	printf("Call custom destructor for instance of TNaming_DataMapOfShapeShapesSet\n");
+	}
 };
 
 %nodefaultctor TNaming_ShapesSet;
@@ -1601,4 +1696,9 @@ class TNaming_ShapesSet {
 		%feature("autodoc", "1");
 		const TopTools_MapOfShape & Map() const;
 
+};
+%extend TNaming_ShapesSet {
+	~TNaming_ShapesSet() {
+	printf("Call custom destructor for instance of TNaming_ShapesSet\n");
+	}
 };

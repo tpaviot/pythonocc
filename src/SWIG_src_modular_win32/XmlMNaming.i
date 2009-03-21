@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module XmlMNaming
@@ -189,6 +189,11 @@ class XmlMNaming_Array1OfShape1 {
 		XmlObjMgt_Element Value(const Standard_Integer Index) const;
 
 };
+%extend XmlMNaming_Array1OfShape1 {
+	~XmlMNaming_Array1OfShape1() {
+	printf("Call custom destructor for instance of XmlMNaming_Array1OfShape1\n");
+	}
+};
 
 %nodefaultctor XmlMNaming_Shape1;
 class XmlMNaming_Shape1 {
@@ -233,6 +238,11 @@ class XmlMNaming_Shape1 {
 		void _CSFDB_SetXmlMNaming_Shape1myOrientation(const TopAbs_Orientation p);
 
 };
+%extend XmlMNaming_Shape1 {
+	~XmlMNaming_Shape1() {
+	printf("Call custom destructor for instance of XmlMNaming_Shape1\n");
+	}
+};
 
 %nodefaultctor XmlMNaming_NamingDriver;
 class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
@@ -270,4 +280,9 @@ class XmlMNaming {
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMessageDriver);
 
+};
+%extend XmlMNaming {
+	~XmlMNaming() {
+	printf("Call custom destructor for instance of XmlMNaming\n");
+	}
 };

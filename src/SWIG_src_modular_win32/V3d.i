@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module V3d
@@ -864,6 +864,11 @@ class V3d_ListOfTransient : public TColStd_ListOfTransient {
 		void Remove(const Handle_Standard_Transient &aTransient);
 
 };
+%extend V3d_ListOfTransient {
+	~V3d_ListOfTransient() {
+	printf("Call custom destructor for instance of V3d_ListOfTransient\n");
+	}
+};
 
 %nodefaultctor V3d;
 class V3d {
@@ -887,6 +892,11 @@ class V3d {
 		%feature("autodoc", "1");
 		void SetPlane(const Handle_V3d_Viewer &aViewer, const Quantity_Length x1, const Quantity_Length y1, const Quantity_Length z1, const Quantity_Length x2, const Quantity_Length y2, const Quantity_Length z2);
 
+};
+%extend V3d {
+	~V3d() {
+	printf("Call custom destructor for instance of V3d\n");
+	}
 };
 
 %nodefaultctor V3d_Viewer;

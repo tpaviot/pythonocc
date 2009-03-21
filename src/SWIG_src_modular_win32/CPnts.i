@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module CPnts
@@ -119,6 +119,11 @@ class CPnts_UniformDeflection {
 		gp_Pnt Point() const;
 
 };
+%extend CPnts_UniformDeflection {
+	~CPnts_UniformDeflection() {
+	printf("Call custom destructor for instance of CPnts_UniformDeflection\n");
+	}
+};
 
 %nodefaultctor CPnts_MyGaussFunction;
 class CPnts_MyGaussFunction : public math_Function {
@@ -130,6 +135,11 @@ class CPnts_MyGaussFunction : public math_Function {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
+};
+%extend CPnts_MyGaussFunction {
+	~CPnts_MyGaussFunction() {
+	printf("Call custom destructor for instance of CPnts_MyGaussFunction\n");
+	}
 };
 
 %nodefaultctor CPnts_AbscissaPoint;
@@ -193,6 +203,11 @@ class CPnts_AbscissaPoint {
 		void SetParameter(const Standard_Real P);
 
 };
+%extend CPnts_AbscissaPoint {
+	~CPnts_AbscissaPoint() {
+	printf("Call custom destructor for instance of CPnts_AbscissaPoint\n");
+	}
+};
 
 %nodefaultctor CPnts_MyRootFunction;
 class CPnts_MyRootFunction : public math_FunctionWithDerivative {
@@ -212,4 +227,9 @@ class CPnts_MyRootFunction : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~CPnts_MyRootFunction();
 
+};
+%extend CPnts_MyRootFunction {
+	~CPnts_MyRootFunction() {
+	printf("Call custom destructor for instance of CPnts_MyRootFunction\n");
+	}
 };

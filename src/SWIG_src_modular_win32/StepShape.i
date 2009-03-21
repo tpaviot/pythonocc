@@ -3549,6 +3549,11 @@ class StepShape_Array1OfValueQualifier {
 		StepShape_ValueQualifier & operator()(const Standard_Integer Index);
 
 };
+%extend StepShape_Array1OfValueQualifier {
+	~StepShape_Array1OfValueQualifier() {
+	printf("Call custom destructor for instance of StepShape_Array1OfValueQualifier\n");
+	}
+};
 
 %nodefaultctor StepShape_Face;
 class StepShape_Face : public StepShape_TopologicalRepresentationItem {
@@ -4346,6 +4351,11 @@ class StepShape_Array1OfShell {
 		StepShape_Shell & operator()(const Standard_Integer Index);
 
 };
+%extend StepShape_Array1OfShell {
+	~StepShape_Array1OfShell() {
+	printf("Call custom destructor for instance of StepShape_Array1OfShell\n");
+	}
+};
 
 %nodefaultctor StepShape_ConnectedFaceSubSet;
 class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
@@ -5090,6 +5100,11 @@ class StepShape_Array1OfGeometricSetSelect {
 		%feature("autodoc", "1");
 		StepShape_GeometricSetSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepShape_Array1OfGeometricSetSelect {
+	~StepShape_Array1OfGeometricSetSelect() {
+	printf("Call custom destructor for instance of StepShape_Array1OfGeometricSetSelect\n");
+	}
 };
 
 %nodefaultctor StepShape_Array1OfFaceBound;

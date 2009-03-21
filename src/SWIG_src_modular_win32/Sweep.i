@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Sweep
@@ -109,6 +109,11 @@ class Sweep_NumShape {
 		TopAbs_Orientation Orientation() const;
 
 };
+%extend Sweep_NumShape {
+	~Sweep_NumShape() {
+	printf("Call custom destructor for instance of Sweep_NumShape\n");
+	}
+};
 
 %nodefaultctor Sweep_NumShapeTool;
 class Sweep_NumShapeTool {
@@ -137,6 +142,11 @@ class Sweep_NumShapeTool {
 		Sweep_NumShape LastVertex() const;
 
 };
+%extend Sweep_NumShapeTool {
+	~Sweep_NumShapeTool() {
+	printf("Call custom destructor for instance of Sweep_NumShapeTool\n");
+	}
+};
 
 %nodefaultctor Sweep_NumShapeIterator;
 class Sweep_NumShapeIterator {
@@ -156,4 +166,9 @@ class Sweep_NumShapeIterator {
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation() const;
 
+};
+%extend Sweep_NumShapeIterator {
+	~Sweep_NumShapeIterator() {
+	printf("Call custom destructor for instance of Sweep_NumShapeIterator\n");
+	}
 };

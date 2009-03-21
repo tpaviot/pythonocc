@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ShapeAnalysis
@@ -377,6 +377,11 @@ class ShapeAnalysis_FreeBounds {
 		void DispatchWires(const Handle_TopTools_HSequenceOfShape &wires, TopoDS_Compound & closed, TopoDS_Compound & open);
 
 };
+%extend ShapeAnalysis_FreeBounds {
+	~ShapeAnalysis_FreeBounds() {
+	printf("Call custom destructor for instance of ShapeAnalysis_FreeBounds\n");
+	}
+};
 
 %nodefaultctor ShapeAnalysis;
 class ShapeAnalysis {
@@ -402,6 +407,11 @@ class ShapeAnalysis {
 		%feature("autodoc", "1");
 		void GetFaceUVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
+};
+%extend ShapeAnalysis {
+	~ShapeAnalysis() {
+	printf("Call custom destructor for instance of ShapeAnalysis\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_TransferParameters;
@@ -588,6 +598,11 @@ class ShapeAnalysis_Curve {
 		Standard_Boolean IsPeriodic(const Handle_Geom2d_Curve &curve);
 
 };
+%extend ShapeAnalysis_Curve {
+	~ShapeAnalysis_Curve() {
+	printf("Call custom destructor for instance of ShapeAnalysis_Curve\n");
+	}
+};
 
 %nodefaultctor ShapeAnalysis_Edge;
 class ShapeAnalysis_Edge {
@@ -648,6 +663,11 @@ class ShapeAnalysis_Edge {
 		Standard_Boolean CheckOverlapping(const TopoDS_Edge &theEdge1, const TopoDS_Edge &theEdge2, Standard_Real &OutValue, const Standard_Real theDomainDist=0.0);
 
 };
+%extend ShapeAnalysis_Edge {
+	~ShapeAnalysis_Edge() {
+	printf("Call custom destructor for instance of ShapeAnalysis_Edge\n");
+	}
+};
 
 %nodefaultctor ShapeAnalysis_DataMapOfShapeReal;
 class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
@@ -677,6 +697,11 @@ class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TopoDS_Shape &K);
 
+};
+%extend ShapeAnalysis_DataMapOfShapeReal {
+	~ShapeAnalysis_DataMapOfShapeReal() {
+	printf("Call custom destructor for instance of ShapeAnalysis_DataMapOfShapeReal\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal;
@@ -719,6 +744,11 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal : public TCollection_Bas
 		%feature("autodoc", "1");
 		const Standard_Real & Value() const;
 
+};
+%extend ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal {
+	~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_FreeBoundData;
@@ -870,6 +900,11 @@ class ShapeAnalysis_DataMapOfShapeListOfReal : public TCollection_BasicMap {
 		TColStd_ListOfReal & operator()(const TopoDS_Shape &K);
 
 };
+%extend ShapeAnalysis_DataMapOfShapeListOfReal {
+	~ShapeAnalysis_DataMapOfShapeListOfReal() {
+	printf("Call custom destructor for instance of ShapeAnalysis_DataMapOfShapeListOfReal\n");
+	}
+};
 
 %nodefaultctor ShapeAnalysis_CheckSmallFace;
 class ShapeAnalysis_CheckSmallFace {
@@ -923,6 +958,11 @@ class ShapeAnalysis_CheckSmallFace {
 		%feature("autodoc", "1");
 		Standard_Boolean StatusPinEdges(const ShapeExtend_Status status) const;
 
+};
+%extend ShapeAnalysis_CheckSmallFace {
+	~ShapeAnalysis_CheckSmallFace() {
+	printf("Call custom destructor for instance of ShapeAnalysis_CheckSmallFace\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds;
@@ -1050,6 +1090,11 @@ class ShapeAnalysis_WireOrder {
 		%feature("autodoc", "1");
 		void Couple(const Standard_Integer num, Standard_Integer & n1, Standard_Integer & n2) const;
 
+};
+%extend ShapeAnalysis_WireOrder {
+	~ShapeAnalysis_WireOrder() {
+	printf("Call custom destructor for instance of ShapeAnalysis_WireOrder\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_TransferParametersProj;
@@ -1330,6 +1375,11 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollecti
 		const TColStd_ListOfReal & Value() const;
 
 };
+%extend ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal {
+	~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal() {
+	printf("Call custom destructor for instance of ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal\n");
+	}
+};
 
 %nodefaultctor ShapeAnalysis_Geom;
 class ShapeAnalysis_Geom {
@@ -1343,6 +1393,11 @@ class ShapeAnalysis_Geom {
 		%feature("autodoc", "1");
 		Standard_Boolean PositionTrsf(const Handle_TColStd_HArray2OfReal &coefs, gp_Trsf & trsf, const Standard_Real unit, const Standard_Real prec);
 
+};
+%extend ShapeAnalysis_Geom {
+	~ShapeAnalysis_Geom() {
+	printf("Call custom destructor for instance of ShapeAnalysis_Geom\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_Surface;
@@ -1459,6 +1514,11 @@ class ShapeAnalysis_Shell {
 		%feature("autodoc", "1");
 		Standard_Boolean HasConnectedEdges() const;
 
+};
+%extend ShapeAnalysis_Shell {
+	~ShapeAnalysis_Shell() {
+	printf("Call custom destructor for instance of ShapeAnalysis_Shell\n");
+	}
 };
 
 %nodefaultctor ShapeAnalysis_FreeBoundsProperties;

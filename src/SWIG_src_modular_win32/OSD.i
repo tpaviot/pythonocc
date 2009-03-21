@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module OSD
@@ -953,6 +953,11 @@ class OSD_FileIterator {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_FileIterator {
+	~OSD_FileIterator() {
+	printf("Call custom destructor for instance of OSD_FileIterator\n");
+	}
+};
 
 %nodefaultctor OSD_DirectoryIterator;
 class OSD_DirectoryIterator {
@@ -982,6 +987,11 @@ class OSD_DirectoryIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Error() const;
 
+};
+%extend OSD_DirectoryIterator {
+	~OSD_DirectoryIterator() {
+	printf("Call custom destructor for instance of OSD_DirectoryIterator\n");
+	}
 };
 
 %nodefaultctor OSD_Exception;
@@ -1046,6 +1056,11 @@ class OSD_Real2String {
 		%feature("autodoc", "1");
 		Standard_Boolean CStringToReal(const char * aString, Standard_Real &OutValue);
 
+};
+%extend OSD_Real2String {
+	~OSD_Real2String() {
+	printf("Call custom destructor for instance of OSD_Real2String\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_INVALID_DISPOSITION;
@@ -1157,6 +1172,11 @@ class OSD_Host {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_Host {
+	~OSD_Host() {
+	printf("Call custom destructor for instance of OSD_Host\n");
+	}
+};
 
 %nodefaultctor OSD_Exception_FLT_INEXACT_RESULT;
 class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
@@ -1263,6 +1283,11 @@ class OSD_Printer {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_Printer {
+	~OSD_Printer() {
+	printf("Call custom destructor for instance of OSD_Printer\n");
+	}
+};
 
 %nodefaultctor OSD_EnvironmentIterator;
 class OSD_EnvironmentIterator {
@@ -1288,6 +1313,11 @@ class OSD_EnvironmentIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Error() const;
 
+};
+%extend OSD_EnvironmentIterator {
+	~OSD_EnvironmentIterator() {
+	printf("Call custom destructor for instance of OSD_EnvironmentIterator\n");
+	}
 };
 
 %nodefaultctor OSD_SIGSYS;
@@ -1439,6 +1469,11 @@ class OSD_Disk {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_Disk {
+	~OSD_Disk() {
+	printf("Call custom destructor for instance of OSD_Disk\n");
+	}
+};
 
 %nodefaultctor OSD_Error;
 class OSD_Error {
@@ -1458,6 +1493,11 @@ class OSD_Error {
 		%feature("autodoc", "1");
 		void Reset();
 
+};
+%extend OSD_Error {
+	~OSD_Error() {
+	printf("Call custom destructor for instance of OSD_Error\n");
+	}
 };
 
 %nodefaultctor OSD_SharedMemory;
@@ -1486,6 +1526,11 @@ class OSD_SharedMemory {
 		%feature("autodoc", "1");
 		Standard_Integer Error() const;
 
+};
+%extend OSD_SharedMemory {
+	~OSD_SharedMemory() {
+	printf("Call custom destructor for instance of OSD_SharedMemory\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
@@ -1546,6 +1591,11 @@ class OSD_Thread {
 		%feature("autodoc", "1");
 		Standard_ThreadId Current();
 
+};
+%extend OSD_Thread {
+	~OSD_Thread() {
+	printf("Call custom destructor for instance of OSD_Thread\n");
+	}
 };
 
 %nodefaultctor OSD_SIGQUIT;
@@ -1643,6 +1693,11 @@ class OSD_FileNode {
 		Standard_Integer Error() const;
 
 };
+%extend OSD_FileNode {
+	~OSD_FileNode() {
+	printf("Call custom destructor for instance of OSD_FileNode\n");
+	}
+};
 
 %nodefaultctor OSD_File;
 class OSD_File : public OSD_FileNode {
@@ -1704,6 +1759,11 @@ class OSD_File : public OSD_FileNode {
 		%feature("autodoc", "1");
 		Standard_Boolean Edit();
 
+};
+%extend OSD_File {
+	~OSD_File() {
+	printf("Call custom destructor for instance of OSD_File\n");
+	}
 };
 
 %nodefaultctor OSD_SIGSEGV;
@@ -1777,6 +1837,11 @@ class OSD_Directory : public OSD_FileNode {
 		OSD_Directory BuildTemporary();
 
 };
+%extend OSD_Directory {
+	~OSD_Directory() {
+	printf("Call custom destructor for instance of OSD_Directory\n");
+	}
+};
 
 %nodefaultctor OSD_Environment;
 class OSD_Environment {
@@ -1810,6 +1875,11 @@ class OSD_Environment {
 		%feature("autodoc", "1");
 		Standard_Integer Error() const;
 
+};
+%extend OSD_Environment {
+	~OSD_Environment() {
+	printf("Call custom destructor for instance of OSD_Environment\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_ACCESS_VIOLATION;
@@ -1872,6 +1942,11 @@ class OSD {
 		%feature("autodoc", "1");
 		Standard_Boolean UseSETranslator();
 
+};
+%extend OSD {
+	~OSD() {
+	printf("Call custom destructor for instance of OSD\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_ILLEGAL_INSTRUCTION;
@@ -2011,6 +2086,11 @@ class OSD_Chronometer {
 		void Show(Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%extend OSD_Chronometer {
+	~OSD_Chronometer() {
+	printf("Call custom destructor for instance of OSD_Chronometer\n");
+	}
+};
 
 %nodefaultctor OSD_Exception_INT_OVERFLOW;
 class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
@@ -2109,6 +2189,11 @@ class OSD_Path {
 		TCollection_AsciiString AbsolutePath(const TCollection_AsciiString &DirPath, const TCollection_AsciiString &RelFilePath);
 
 };
+%extend OSD_Path {
+	~OSD_Path() {
+	printf("Call custom destructor for instance of OSD_Path\n");
+	}
+};
 
 %nodefaultctor OSD_SIGHUP;
 class OSD_SIGHUP : public OSD_Signal {
@@ -2160,6 +2245,11 @@ class OSD_Timer : public OSD_Chronometer {
 		%feature("autodoc", "1");
 		virtual		void Start();
 
+};
+%extend OSD_Timer {
+	~OSD_Timer() {
+	printf("Call custom destructor for instance of OSD_Timer\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_STATUS_NO_MEMORY;
@@ -2225,6 +2315,11 @@ class OSD_Protection {
 		void Sub(OSD_SingleProtection & aProt, const OSD_SingleProtection aRight);
 
 };
+%extend OSD_Protection {
+	~OSD_Protection() {
+	printf("Call custom destructor for instance of OSD_Protection\n");
+	}
+};
 
 %nodefaultctor OSD_SIGILL;
 class OSD_SIGILL : public OSD_Signal {
@@ -2276,6 +2371,11 @@ class OSD_SharedLibrary {
 		%feature("autodoc", "1");
 		~OSD_SharedLibrary();
 
+};
+%extend OSD_SharedLibrary {
+	~OSD_SharedLibrary() {
+	printf("Call custom destructor for instance of OSD_SharedLibrary\n");
+	}
 };
 
 %nodefaultctor OSD_Exception_FLT_DENORMAL_OPERAND;

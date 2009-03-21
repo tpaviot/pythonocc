@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module CSLib
@@ -129,6 +129,11 @@ class CSLib {
 		gp_Vec DNNormal(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerNUV, const Standard_Integer Iduref=0, const Standard_Integer Idvref=0);
 
 };
+%extend CSLib {
+	~CSLib() {
+	printf("Call custom destructor for instance of CSLib\n");
+	}
+};
 
 %nodefaultctor CSLib_Class2d;
 class CSLib_Class2d {
@@ -151,6 +156,11 @@ class CSLib_Class2d {
 		~CSLib_Class2d();
 
 };
+%extend CSLib_Class2d {
+	~CSLib_Class2d() {
+	printf("Call custom destructor for instance of CSLib_Class2d\n");
+	}
+};
 
 %nodefaultctor CSLib_NormalPolyDef;
 class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
@@ -166,4 +176,9 @@ class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~CSLib_NormalPolyDef();
 
+};
+%extend CSLib_NormalPolyDef {
+	~CSLib_NormalPolyDef() {
+	printf("Call custom destructor for instance of CSLib_NormalPolyDef\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module MMgt
@@ -148,4 +148,9 @@ class MMgt_StackManager {
 		%feature("autodoc", "1");
 		~MMgt_StackManager();
 
+};
+%extend MMgt_StackManager {
+	~MMgt_StackManager() {
+	printf("Call custom destructor for instance of MMgt_StackManager\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Transfer
@@ -887,6 +887,11 @@ class Transfer_TransferInput {
 		void FillModel(const Handle_Transfer_FinderProcess &proc, const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &proto, const Standard_Boolean roots=1) const;
 
 };
+%extend Transfer_TransferInput {
+	~Transfer_TransferInput() {
+	printf("Call custom destructor for instance of Transfer_TransferInput\n");
+	}
+};
 
 %nodefaultctor Transfer_DispatchControl;
 class Transfer_DispatchControl : public Interface_CopyControl {
@@ -1494,6 +1499,11 @@ class Transfer_FindHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_Transfer_Finder &K1, const Handle_Transfer_Finder &K2);
 
+};
+%extend Transfer_FindHasher {
+	~Transfer_FindHasher() {
+	printf("Call custom destructor for instance of Transfer_FindHasher\n");
+	}
 };
 
 %nodefaultctor Transfer_ActorOfProcessForTransient;

@@ -1869,6 +1869,11 @@ class IGESSelect {
 		Standard_Integer WhatIges(const Handle_IGESData_IGESEntity &ent, const Interface_Graph &G, Handle_IGESData_IGESEntity & sup, Standard_Integer & index);
 
 };
+%extend IGESSelect {
+	~IGESSelect() {
+	printf("Call custom destructor for instance of IGESSelect\n");
+	}
+};
 
 %nodefaultctor IGESSelect_AutoCorrect;
 class IGESSelect_AutoCorrect : public IGESSelect_ModelModifier {

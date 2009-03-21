@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopAbs
@@ -130,4 +130,9 @@ class TopAbs {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(const TopAbs_State St, Standard_OStream & S);
 
+};
+%extend TopAbs {
+	~TopAbs() {
+	printf("Call custom destructor for instance of TopAbs\n");
+	}
 };

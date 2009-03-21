@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Visual3d
@@ -827,6 +827,11 @@ class Visual3d_ContextPick {
 		Visual3d_TypeOfOrder Order() const;
 
 };
+%extend Visual3d_ContextPick {
+	~Visual3d_ContextPick() {
+	printf("Call custom destructor for instance of Visual3d_ContextPick\n");
+	}
+};
 
 %nodefaultctor Visual3d_SetListOfSetOfView;
 class Visual3d_SetListOfSetOfView {
@@ -1026,6 +1031,11 @@ class Visual3d_ViewMapping {
 		%feature("autodoc", "1");
 		Standard_Boolean IsCustomMatrix() const;
 
+};
+%extend Visual3d_ViewMapping {
+	~Visual3d_ViewMapping() {
+	printf("Call custom destructor for instance of Visual3d_ViewMapping\n");
+	}
 };
 
 %nodefaultctor Visual3d_TransientDefinitionError;
@@ -1717,6 +1727,11 @@ class Visual3d_SetOfView {
 		Standard_Boolean IsAProperSubset(const Visual3d_SetOfView &S) const;
 
 };
+%extend Visual3d_SetOfView {
+	~Visual3d_SetOfView() {
+	printf("Call custom destructor for instance of Visual3d_SetOfView\n");
+	}
+};
 
 %nodefaultctor Visual3d_Layer;
 class Visual3d_Layer : public MMgt_TShared {
@@ -2036,6 +2051,11 @@ class Visual3d_SetOfLight {
 		%feature("autodoc", "1");
 		Standard_Boolean IsAProperSubset(const Visual3d_SetOfLight &S) const;
 
+};
+%extend Visual3d_SetOfLight {
+	~Visual3d_SetOfLight() {
+	printf("Call custom destructor for instance of Visual3d_SetOfLight\n");
+	}
 };
 
 %nodefaultctor Visual3d_SetIteratorOfSetOfView;
@@ -2414,6 +2434,11 @@ class Visual3d_SequenceOfPickPath : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Visual3d_SequenceOfPickPath {
+	~Visual3d_SequenceOfPickPath() {
+	printf("Call custom destructor for instance of Visual3d_SequenceOfPickPath\n");
+	}
+};
 
 %nodefaultctor Visual3d_ViewMappingDefinitionError;
 class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
@@ -2473,6 +2498,11 @@ class Visual3d_SetOfClipPlane {
 		%feature("autodoc", "1");
 		Standard_Boolean IsAProperSubset(const Visual3d_SetOfClipPlane &S) const;
 
+};
+%extend Visual3d_SetOfClipPlane {
+	~Visual3d_SetOfClipPlane() {
+	printf("Call custom destructor for instance of Visual3d_SetOfClipPlane\n");
+	}
 };
 
 %nodefaultctor Visual3d_ContextPickDefinitionError;
@@ -2603,4 +2633,9 @@ class Visual3d_ViewOrientation {
 		%feature("autodoc", "1");
 		Standard_Boolean IsCustomMatrix() const;
 
+};
+%extend Visual3d_ViewOrientation {
+	~Visual3d_ViewOrientation() {
+	printf("Call custom destructor for instance of Visual3d_ViewOrientation\n");
+	}
 };

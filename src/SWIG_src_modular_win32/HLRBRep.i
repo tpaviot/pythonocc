@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module HLRBRep
@@ -408,6 +408,11 @@ class HLRBRep_CInter : public IntRes2d_Intersection {
 		IntRes2d_Domain ComputeDomain(const Standard_Address &C1, const Standard_Real TolDomain) const;
 
 };
+%extend HLRBRep_CInter {
+	~HLRBRep_CInter() {
+	printf("Call custom destructor for instance of HLRBRep_CInter\n");
+	}
+};
 
 %nodefaultctor HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter;
 class HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter : public Intf_Interference {
@@ -427,6 +432,11 @@ class HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter : public Intf_Inter
 		%feature("autodoc", "1");
 		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
 
+};
+%extend HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter {
+	~HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter\n");
+	}
 };
 
 %nodefaultctor HLRBRep_ListOfBPoint;
@@ -473,6 +483,11 @@ class HLRBRep_ListOfBPoint {
 		%feature("autodoc", "1");
 		void InsertAfter(HLRBRep_ListOfBPoint & Other, HLRBRep_ListIteratorOfListOfBPoint & It);
 
+};
+%extend HLRBRep_ListOfBPoint {
+	~HLRBRep_ListOfBPoint() {
+	printf("Call custom destructor for instance of HLRBRep_ListOfBPoint\n");
+	}
 };
 
 %nodefaultctor HLRBRep_SLProps;
@@ -530,6 +545,11 @@ class HLRBRep_SLProps {
 		Standard_Real GaussianCurvature();
 
 };
+%extend HLRBRep_SLProps {
+	~HLRBRep_SLProps() {
+	printf("Call custom destructor for instance of HLRBRep_SLProps\n");
+	}
+};
 
 %nodefaultctor HLRBRep_TheIntPCurvePCurveOfCInter;
 class HLRBRep_TheIntPCurvePCurveOfCInter : public IntRes2d_Intersection {
@@ -543,6 +563,11 @@ class HLRBRep_TheIntPCurvePCurveOfCInter : public IntRes2d_Intersection {
 		%feature("autodoc", "1");
 		void Perform(const Standard_Address &Curve1, const IntRes2d_Domain &Domain1, const Standard_Real TolConf, const Standard_Real Tol);
 
+};
+%extend HLRBRep_TheIntPCurvePCurveOfCInter {
+	~HLRBRep_TheIntPCurvePCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_TheIntPCurvePCurveOfCInter\n");
+	}
 };
 
 %nodefaultctor HLRBRep_TheIntConicCurveOfCInter;
@@ -573,6 +598,11 @@ class HLRBRep_TheIntConicCurveOfCInter : public IntRes2d_Intersection {
 		%feature("autodoc", "1");
 		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
+};
+%extend HLRBRep_TheIntConicCurveOfCInter {
+	~HLRBRep_TheIntConicCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_TheIntConicCurveOfCInter\n");
+	}
 };
 
 %nodefaultctor HLRBRep_AreaLimit;
@@ -752,6 +782,11 @@ class HLRBRep_SeqOfShapeBounds : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend HLRBRep_SeqOfShapeBounds {
+	~HLRBRep_SeqOfShapeBounds() {
+	printf("Call custom destructor for instance of HLRBRep_SeqOfShapeBounds\n");
+	}
+};
 
 %nodefaultctor HLRBRep_TheProjPCurOfCInter;
 class HLRBRep_TheProjPCurOfCInter {
@@ -765,6 +800,11 @@ class HLRBRep_TheProjPCurOfCInter {
 		%feature("autodoc", "1");
 		Standard_Real FindParameter(const Standard_Address &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 
+};
+%extend HLRBRep_TheProjPCurOfCInter {
+	~HLRBRep_TheProjPCurOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_TheProjPCurOfCInter\n");
+	}
 };
 
 %nodefaultctor HLRBRep_BSurfaceTool;
@@ -903,6 +943,11 @@ class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
 		Extrema_POnCurv2d Point() const;
 
 };
+%extend HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
+	~HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter\n");
+	}
+};
 
 %nodefaultctor HLRBRep_EdgeData;
 class HLRBRep_EdgeData {
@@ -993,6 +1038,11 @@ class HLRBRep_EdgeData {
 		Standard_ShortReal Tolerance() const;
 
 };
+%extend HLRBRep_EdgeData {
+	~HLRBRep_EdgeData() {
+	printf("Call custom destructor for instance of HLRBRep_EdgeData\n");
+	}
+};
 
 %nodefaultctor HLRBRep_CLProps;
 class HLRBRep_CLProps {
@@ -1028,6 +1078,11 @@ class HLRBRep_CLProps {
 		%feature("autodoc", "1");
 		void CentreOfCurvature(gp_Pnt2d & P);
 
+};
+%extend HLRBRep_CLProps {
+	~HLRBRep_CLProps() {
+	printf("Call custom destructor for instance of HLRBRep_CLProps\n");
+	}
 };
 
 %nodefaultctor HLRBRep_InternalAlgo;
@@ -1125,6 +1180,11 @@ class HLRBRep_InterCSurf : public IntCurveSurface_Intersection {
 		void Perform(const gp_Lin &Curve, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
 
 };
+%extend HLRBRep_InterCSurf {
+	~HLRBRep_InterCSurf() {
+	printf("Call custom destructor for instance of HLRBRep_InterCSurf\n");
+	}
+};
 
 %nodefaultctor HLRBRep_EdgeInterferenceTool;
 class HLRBRep_EdgeInterferenceTool {
@@ -1160,6 +1220,11 @@ class HLRBRep_EdgeInterferenceTool {
 		%feature("autodoc", "1");
 		void InterferenceBoundaryGeometry(const HLRAlgo_Interference &I, gp_Dir & Tang, gp_Dir & Norm, Standard_Real &OutValue) const;
 
+};
+%extend HLRBRep_EdgeInterferenceTool {
+	~HLRBRep_EdgeInterferenceTool() {
+	printf("Call custom destructor for instance of HLRBRep_EdgeInterferenceTool\n");
+	}
 };
 
 %nodefaultctor HLRBRep_LineTool;
@@ -1232,6 +1297,11 @@ class HLRBRep {
 		%feature("autodoc", "1");
 		void PolyHLRAngleAndDeflection(const Standard_Real InAngl, Standard_Real &OutValue, Standard_Real &OutValue);
 
+};
+%extend HLRBRep {
+	~HLRBRep() {
+	printf("Call custom destructor for instance of HLRBRep\n");
+	}
 };
 
 %nodefaultctor HLRBRep_FaceIterator;
@@ -1318,6 +1388,11 @@ class HLRBRep_ThePolygonToolOfInterCSurf {
 		void Dump(const HLRBRep_ThePolygonOfInterCSurf &thePolygon);
 
 };
+%extend HLRBRep_ThePolygonToolOfInterCSurf {
+	~HLRBRep_ThePolygonToolOfInterCSurf() {
+	printf("Call custom destructor for instance of HLRBRep_ThePolygonToolOfInterCSurf\n");
+	}
+};
 
 %nodefaultctor HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter;
 class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
@@ -1340,6 +1415,11 @@ class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
 		const gp_Pnt2d & EndOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
 
 };
+%extend HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
+	~HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter\n");
+	}
+};
 
 %nodefaultctor HLRBRep_ListIteratorOfListOfBPoint;
 class HLRBRep_ListIteratorOfListOfBPoint {
@@ -1359,6 +1439,11 @@ class HLRBRep_ListIteratorOfListOfBPoint {
 		%feature("autodoc", "1");
 		HLRBRep_BiPoint & Value() const;
 
+};
+%extend HLRBRep_ListIteratorOfListOfBPoint {
+	~HLRBRep_ListIteratorOfListOfBPoint() {
+	printf("Call custom destructor for instance of HLRBRep_ListIteratorOfListOfBPoint\n");
+	}
 };
 
 %nodefaultctor HLRBRep_BiPnt2D;
@@ -1395,6 +1480,11 @@ class HLRBRep_BiPnt2D {
 		%feature("autodoc", "1");
 		void IntLine(const Standard_Boolean B);
 
+};
+%extend HLRBRep_BiPnt2D {
+	~HLRBRep_BiPnt2D() {
+	printf("Call custom destructor for instance of HLRBRep_BiPnt2D\n");
+	}
 };
 
 %nodefaultctor HLRBRep_Curve;
@@ -1488,6 +1578,11 @@ class HLRBRep_Curve {
 		void Multiplicities(TColStd_Array1OfInteger & mu) const;
 
 };
+%extend HLRBRep_Curve {
+	~HLRBRep_Curve() {
+	printf("Call custom destructor for instance of HLRBRep_Curve\n");
+	}
+};
 
 %nodefaultctor HLRBRep_Intersector;
 class HLRBRep_Intersector {
@@ -1524,6 +1619,11 @@ class HLRBRep_Intersector {
 		~HLRBRep_Intersector();
 
 };
+%extend HLRBRep_Intersector {
+	~HLRBRep_Intersector() {
+	printf("Call custom destructor for instance of HLRBRep_Intersector\n");
+	}
+};
 
 %nodefaultctor HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf;
 class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_FunctionWithDerivative {
@@ -1539,6 +1639,11 @@ class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_Function
 		%feature("autodoc", "1");
 		virtual		~HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf();
 
+};
+%extend HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf {
+	~HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf() {
+	printf("Call custom destructor for instance of HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf\n");
+	}
 };
 
 %nodefaultctor HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
@@ -1559,6 +1664,11 @@ class HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter : public IntRes2d_Interse
 		%feature("autodoc", "1");
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer & NbResultats, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
+};
+%extend HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter {
+	~HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter\n");
+	}
 };
 
 %nodefaultctor HLRBRep_Array1OfFData;
@@ -1596,6 +1706,11 @@ class HLRBRep_Array1OfFData {
 		HLRBRep_FaceData & operator()(const Standard_Integer Index);
 
 };
+%extend HLRBRep_Array1OfFData {
+	~HLRBRep_Array1OfFData() {
+	printf("Call custom destructor for instance of HLRBRep_Array1OfFData\n");
+	}
+};
 
 %nodefaultctor HLRBRep_IntConicCurveOfCInter;
 class HLRBRep_IntConicCurveOfCInter : public IntRes2d_Intersection {
@@ -1625,6 +1740,11 @@ class HLRBRep_IntConicCurveOfCInter : public IntRes2d_Intersection {
 		%feature("autodoc", "1");
 		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
+};
+%extend HLRBRep_IntConicCurveOfCInter {
+	~HLRBRep_IntConicCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_IntConicCurveOfCInter\n");
+	}
 };
 
 %nodefaultctor HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
@@ -1667,6 +1787,11 @@ class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
+	~HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter\n");
+	}
 };
 
 %nodefaultctor HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
@@ -1718,6 +1843,11 @@ class HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public TColle
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
+	~HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");
+	}
+};
 
 %nodefaultctor HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter;
 class HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
@@ -1727,6 +1857,11 @@ class HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
 		%feature("autodoc", "1");
 		HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter();
 
+};
+%extend HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
+	~HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter\n");
+	}
 };
 
 %nodefaultctor HLRBRep_PolyHLRToShape;
@@ -1776,6 +1911,11 @@ class HLRBRep_PolyHLRToShape {
 		TopoDS_Shape OutLineHCompound(const TopoDS_Shape &S);
 
 };
+%extend HLRBRep_PolyHLRToShape {
+	~HLRBRep_PolyHLRToShape() {
+	printf("Call custom destructor for instance of HLRBRep_PolyHLRToShape\n");
+	}
+};
 
 %nodefaultctor HLRBRep_ListOfBPnt2D;
 class HLRBRep_ListOfBPnt2D {
@@ -1822,6 +1962,11 @@ class HLRBRep_ListOfBPnt2D {
 		void InsertAfter(HLRBRep_ListOfBPnt2D & Other, HLRBRep_ListIteratorOfListOfBPnt2D & It);
 
 };
+%extend HLRBRep_ListOfBPnt2D {
+	~HLRBRep_ListOfBPnt2D() {
+	printf("Call custom destructor for instance of HLRBRep_ListOfBPnt2D\n");
+	}
+};
 
 %nodefaultctor HLRBRep_ListIteratorOfListOfBPnt2D;
 class HLRBRep_ListIteratorOfListOfBPnt2D {
@@ -1841,6 +1986,11 @@ class HLRBRep_ListIteratorOfListOfBPnt2D {
 		%feature("autodoc", "1");
 		HLRBRep_BiPnt2D & Value() const;
 
+};
+%extend HLRBRep_ListIteratorOfListOfBPnt2D {
+	~HLRBRep_ListIteratorOfListOfBPnt2D() {
+	printf("Call custom destructor for instance of HLRBRep_ListIteratorOfListOfBPnt2D\n");
+	}
 };
 
 %nodefaultctor HLRBRep_Array1OfEData;
@@ -1878,6 +2028,11 @@ class HLRBRep_Array1OfEData {
 		HLRBRep_EdgeData & operator()(const Standard_Integer Index);
 
 };
+%extend HLRBRep_Array1OfEData {
+	~HLRBRep_Array1OfEData() {
+	printf("Call custom destructor for instance of HLRBRep_Array1OfEData\n");
+	}
+};
 
 %nodefaultctor HLRBRep_CLPropsATool;
 class HLRBRep_CLPropsATool {
@@ -1901,6 +2056,11 @@ class HLRBRep_CLPropsATool {
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const Standard_Address A);
 
+};
+%extend HLRBRep_CLPropsATool {
+	~HLRBRep_CLPropsATool() {
+	printf("Call custom destructor for instance of HLRBRep_CLPropsATool\n");
+	}
 };
 
 %nodefaultctor HLRBRep_HLRToShape;
@@ -1952,6 +2112,11 @@ class HLRBRep_HLRToShape {
 		TopoDS_Shape IsoLineHCompound(const TopoDS_Shape &S);
 
 };
+%extend HLRBRep_HLRToShape {
+	~HLRBRep_HLRToShape() {
+	printf("Call custom destructor for instance of HLRBRep_HLRToShape\n");
+	}
+};
 
 %nodefaultctor HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter;
 class HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
@@ -1972,6 +2137,11 @@ class HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
 		Standard_Boolean AnErrorOccurred() const;
 
 };
+%extend HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
+	~HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter\n");
+	}
+};
 
 %nodefaultctor HLRBRep_EdgeFaceTool;
 class HLRBRep_EdgeFaceTool {
@@ -1985,6 +2155,11 @@ class HLRBRep_EdgeFaceTool {
 		%feature("autodoc", "1");
 		Standard_Boolean UVPoint(const Standard_Real Par, const Standard_Address E, const Standard_Address F, Standard_Real &OutValue, Standard_Real &OutValue);
 
+};
+%extend HLRBRep_EdgeFaceTool {
+	~HLRBRep_EdgeFaceTool() {
+	printf("Call custom destructor for instance of HLRBRep_EdgeFaceTool\n");
+	}
 };
 
 %nodefaultctor HLRBRep_ThePolygonOfInterCSurf;
@@ -2023,6 +2198,11 @@ class HLRBRep_ThePolygonOfInterCSurf {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend HLRBRep_ThePolygonOfInterCSurf {
+	~HLRBRep_ThePolygonOfInterCSurf() {
+	printf("Call custom destructor for instance of HLRBRep_ThePolygonOfInterCSurf\n");
+	}
 };
 
 %nodefaultctor HLRBRep_Algo;
@@ -2079,6 +2259,11 @@ class HLRBRep_TheExactInterCSurf {
 		%feature("autodoc", "1");
 		HLRBRep_TheCSFunctionOfInterCSurf & Function();
 
+};
+%extend HLRBRep_TheExactInterCSurf {
+	~HLRBRep_TheExactInterCSurf() {
+	printf("Call custom destructor for instance of HLRBRep_TheExactInterCSurf\n");
+	}
 };
 
 %nodefaultctor HLRBRep_ThePolyhedronToolOfInterCSurf;
@@ -2156,6 +2341,11 @@ class HLRBRep_SLPropsATool {
 		%feature("autodoc", "1");
 		void Bounds(const Standard_Address arg0, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
+};
+%extend HLRBRep_SLPropsATool {
+	~HLRBRep_SLPropsATool() {
+	printf("Call custom destructor for instance of HLRBRep_SLPropsATool\n");
+	}
 };
 
 %nodefaultctor HLRBRep_ShapeBounds;
@@ -2268,6 +2458,11 @@ class HLRBRep_VertexList {
 		TopAbs_Orientation BoundaryTransition() const;
 
 };
+%extend HLRBRep_VertexList {
+	~HLRBRep_VertexList() {
+	printf("Call custom destructor for instance of HLRBRep_VertexList\n");
+	}
+};
 
 %nodefaultctor HLRBRep_TheQuadCurvExactInterCSurf;
 class HLRBRep_TheQuadCurvExactInterCSurf {
@@ -2287,6 +2482,11 @@ class HLRBRep_TheQuadCurvExactInterCSurf {
 		%feature("autodoc", "1");
 		void Intervals(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend HLRBRep_TheQuadCurvExactInterCSurf {
+	~HLRBRep_TheQuadCurvExactInterCSurf() {
+	printf("Call custom destructor for instance of HLRBRep_TheQuadCurvExactInterCSurf\n");
+	}
 };
 
 %nodefaultctor HLRBRep_CurveTool;
@@ -2385,6 +2585,11 @@ class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives
 		virtual		~HLRBRep_TheCSFunctionOfInterCSurf();
 
 };
+%extend HLRBRep_TheCSFunctionOfInterCSurf {
+	~HLRBRep_TheCSFunctionOfInterCSurf() {
+	printf("Call custom destructor for instance of HLRBRep_TheCSFunctionOfInterCSurf\n");
+	}
+};
 
 %nodefaultctor HLRBRep_TheInterferenceOfInterCSurf;
 class HLRBRep_TheInterferenceOfInterCSurf : public Intf_Interference {
@@ -2423,6 +2628,11 @@ class HLRBRep_TheInterferenceOfInterCSurf : public Intf_Interference {
 		void Interference(const HLRBRep_ThePolygonOfInterCSurf &thePolyg, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 
 };
+%extend HLRBRep_TheInterferenceOfInterCSurf {
+	~HLRBRep_TheInterferenceOfInterCSurf() {
+	printf("Call custom destructor for instance of HLRBRep_TheInterferenceOfInterCSurf\n");
+	}
+};
 
 %nodefaultctor HLRBRep_Hider;
 class HLRBRep_Hider {
@@ -2436,6 +2646,11 @@ class HLRBRep_Hider {
 		%feature("autodoc", "1");
 		void Hide(const Standard_Integer FI, BRepTopAdaptor_MapOfShapeTool & MST);
 
+};
+%extend HLRBRep_Hider {
+	~HLRBRep_Hider() {
+	printf("Call custom destructor for instance of HLRBRep_Hider\n");
+	}
 };
 
 %nodefaultctor HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter;
@@ -2456,6 +2671,11 @@ class HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter : public math_Fu
 		%feature("autodoc", "1");
 		virtual		~HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter();
 
+};
+%extend HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter {
+	~HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter\n");
+	}
 };
 
 %nodefaultctor HLRBRep_BiPoint;
@@ -2492,6 +2712,11 @@ class HLRBRep_BiPoint {
 		%feature("autodoc", "1");
 		void IntLine(const Standard_Boolean B);
 
+};
+%extend HLRBRep_BiPoint {
+	~HLRBRep_BiPoint() {
+	printf("Call custom destructor for instance of HLRBRep_BiPoint\n");
+	}
 };
 
 %nodefaultctor HLRBRep_FaceData;
@@ -2594,6 +2819,11 @@ class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public ma
 		virtual		~HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter();
 
 };
+%extend HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter {
+	~HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter\n");
+	}
+};
 
 %nodefaultctor HLRBRep_Surface;
 class HLRBRep_Surface {
@@ -2679,6 +2909,11 @@ class HLRBRep_Surface {
 		%feature("autodoc", "1");
 		gp_Ax1 Axis() const;
 
+};
+%extend HLRBRep_Surface {
+	~HLRBRep_Surface() {
+	printf("Call custom destructor for instance of HLRBRep_Surface\n");
+	}
 };
 
 %nodefaultctor HLRBRep_SurfaceTool;
@@ -2788,6 +3023,11 @@ class HLRBRep_EdgeIList {
 		%feature("autodoc", "1");
 		void ProcessComplex(HLRAlgo_InterferenceList & IL, const HLRBRep_EdgeInterferenceTool &T);
 
+};
+%extend HLRBRep_EdgeIList {
+	~HLRBRep_EdgeIList() {
+	printf("Call custom destructor for instance of HLRBRep_EdgeIList\n");
+	}
 };
 
 %nodefaultctor HLRBRep_EdgeBuilder;
@@ -2955,4 +3195,9 @@ class HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public math_Function
 		%feature("autodoc", "1");
 		virtual		~HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
 
+};
+%extend HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
+	~HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter() {
+	printf("Call custom destructor for instance of HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");
+	}
 };

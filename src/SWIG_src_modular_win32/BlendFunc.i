@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BlendFunc
@@ -106,6 +106,11 @@ class BlendFunc {
 		GeomAbs_Shape NextShape(const GeomAbs_Shape S);
 
 };
+%extend BlendFunc {
+	~BlendFunc() {
+	printf("Call custom destructor for instance of BlendFunc\n");
+	}
+};
 
 %nodefaultctor BlendFunc_Tensor;
 class BlendFunc_Tensor {
@@ -127,4 +132,9 @@ class BlendFunc_Tensor {
 		%feature("autodoc", "1");
 		void Multiply(const math_Vector &Right, math_Matrix & Product) const;
 
+};
+%extend BlendFunc_Tensor {
+	~BlendFunc_Tensor() {
+	printf("Call custom destructor for instance of BlendFunc_Tensor\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module PColPGeom2d
@@ -291,6 +291,11 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
 		Standard_Address Value() const;
 
 };
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
+	~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve() {
+	printf("Call custom destructor for instance of PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve\n");
+	}
+};
 
 %nodefaultctor PColPGeom2d_HArray1OfBoundedCurve;
 class PColPGeom2d_HArray1OfBoundedCurve : public Standard_Persistent {
@@ -357,6 +362,11 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
 		Standard_Address Value() const;
 
 };
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
+	~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve() {
+	printf("Call custom destructor for instance of PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve\n");
+	}
+};
 
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfCurve;
 class PColPGeom2d_FieldOfHArray1OfCurve : public DBC_BaseArray {
@@ -401,6 +411,11 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
+	~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve() {
+	printf("Call custom destructor for instance of PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve\n");
+	}
 };
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
@@ -589,6 +604,11 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
+	~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve() {
+	printf("Call custom destructor for instance of PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve\n");
+	}
 };
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve;

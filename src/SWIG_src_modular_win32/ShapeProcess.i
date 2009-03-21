@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ShapeProcess
@@ -279,6 +279,11 @@ class ShapeProcess_OperLibrary {
 		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
 
 };
+%extend ShapeProcess_OperLibrary {
+	~ShapeProcess_OperLibrary() {
+	printf("Call custom destructor for instance of ShapeProcess_OperLibrary\n");
+	}
+};
 
 %nodefaultctor ShapeProcess;
 class ShapeProcess {
@@ -294,6 +299,11 @@ class ShapeProcess {
 		%feature("autodoc", "1");
 		Standard_Boolean Perform(const Handle_ShapeProcess_Context &context, const char * seq);
 
+};
+%extend ShapeProcess {
+	~ShapeProcess() {
+	printf("Call custom destructor for instance of ShapeProcess\n");
+	}
 };
 
 %nodefaultctor ShapeProcess_DictionaryOfOperator;

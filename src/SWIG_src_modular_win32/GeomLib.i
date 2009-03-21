@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GeomLib
@@ -103,6 +103,11 @@ class GeomLib_LogSample : public math_FunctionSample {
 		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
 
 };
+%extend GeomLib_LogSample {
+	~GeomLib_LogSample() {
+	printf("Call custom destructor for instance of GeomLib_LogSample\n");
+	}
+};
 
 %nodefaultctor GeomLib_DenominatorMultiplier;
 class GeomLib_DenominatorMultiplier {
@@ -114,6 +119,11 @@ class GeomLib_DenominatorMultiplier {
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Real UParameter, const Standard_Real VParameter) const;
 
+};
+%extend GeomLib_DenominatorMultiplier {
+	~GeomLib_DenominatorMultiplier() {
+	printf("Call custom destructor for instance of GeomLib_DenominatorMultiplier\n");
+	}
 };
 
 %nodefaultctor GeomLib_Tool;
@@ -130,6 +140,11 @@ class GeomLib_Tool {
 		%feature("autodoc", "1");
 		Standard_Boolean Parameter(const Handle_Geom2d_Curve &Curve, const gp_Pnt2d &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
 
+};
+%extend GeomLib_Tool {
+	~GeomLib_Tool() {
+	printf("Call custom destructor for instance of GeomLib_Tool\n");
+	}
 };
 
 %nodefaultctor GeomLib_Array1OfMat;
@@ -167,6 +182,11 @@ class GeomLib_Array1OfMat {
 		gp_Mat & operator()(const Standard_Integer Index);
 
 };
+%extend GeomLib_Array1OfMat {
+	~GeomLib_Array1OfMat() {
+	printf("Call custom destructor for instance of GeomLib_Array1OfMat\n");
+	}
+};
 
 %nodefaultctor GeomLib_PolyFunc;
 class GeomLib_PolyFunc : public math_FunctionWithDerivative {
@@ -182,6 +202,11 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~GeomLib_PolyFunc();
 
+};
+%extend GeomLib_PolyFunc {
+	~GeomLib_PolyFunc() {
+	printf("Call custom destructor for instance of GeomLib_PolyFunc\n");
+	}
 };
 
 %nodefaultctor GeomLib_Interpolate;
@@ -246,6 +271,11 @@ class GeomLib_IsPlanarSurface {
 		%feature("autodoc", "1");
 		const gp_Pln & Plan() const;
 
+};
+%extend GeomLib_IsPlanarSurface {
+	~GeomLib_IsPlanarSurface() {
+	printf("Call custom destructor for instance of GeomLib_IsPlanarSurface\n");
+	}
 };
 
 %nodefaultctor GeomLib_Check2dBSplineCurve;

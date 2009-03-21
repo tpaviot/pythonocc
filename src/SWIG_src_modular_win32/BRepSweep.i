@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepSweep
@@ -165,6 +165,11 @@ class BRepSweep_NumLinearRegularSweep {
 		Standard_Boolean Closed() const;
 
 };
+%extend BRepSweep_NumLinearRegularSweep {
+	~BRepSweep_NumLinearRegularSweep() {
+	printf("Call custom destructor for instance of BRepSweep_NumLinearRegularSweep\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Trsf;
 class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
@@ -177,6 +182,11 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		virtual		Standard_Boolean IsInvariant(const TopoDS_Shape &aGenS) const;
 
 };
+%extend BRepSweep_Trsf {
+	~BRepSweep_Trsf() {
+	printf("Call custom destructor for instance of BRepSweep_Trsf\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Translation;
 class BRepSweep_Translation : public BRepSweep_Trsf {
@@ -188,6 +198,11 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("autodoc", "1");
 		gp_Vec Vec() const;
 
+};
+%extend BRepSweep_Translation {
+	~BRepSweep_Translation() {
+	printf("Call custom destructor for instance of BRepSweep_Translation\n");
+	}
 };
 
 %nodefaultctor BRepSweep_Iterator;
@@ -208,6 +223,11 @@ class BRepSweep_Iterator {
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation() const;
 
+};
+%extend BRepSweep_Iterator {
+	~BRepSweep_Iterator() {
+	printf("Call custom destructor for instance of BRepSweep_Iterator\n");
+	}
 };
 
 %nodefaultctor BRepSweep_SequenceOfShapesOfNumLinearRegularSweep;
@@ -259,6 +279,11 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend BRepSweep_SequenceOfShapesOfNumLinearRegularSweep {
+	~BRepSweep_SequenceOfShapesOfNumLinearRegularSweep() {
+	printf("Call custom destructor for instance of BRepSweep_SequenceOfShapesOfNumLinearRegularSweep\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Array2OfShapesOfNumLinearRegularSweep;
 class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
@@ -299,6 +324,11 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 		TopoDS_Shape & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
+	~BRepSweep_Array2OfShapesOfNumLinearRegularSweep() {
+	printf("Call custom destructor for instance of BRepSweep_Array2OfShapesOfNumLinearRegularSweep\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Revol;
 class BRepSweep_Revol {
@@ -327,6 +357,11 @@ class BRepSweep_Revol {
 		Quantity_PlaneAngle Angle() const;
 
 };
+%extend BRepSweep_Revol {
+	~BRepSweep_Revol() {
+	printf("Call custom destructor for instance of BRepSweep_Revol\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Builder;
 class BRepSweep_Builder {
@@ -352,6 +387,11 @@ class BRepSweep_Builder {
 		%feature("autodoc", "1");
 		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape &aShape2) const;
 
+};
+%extend BRepSweep_Builder {
+	~BRepSweep_Builder() {
+	printf("Call custom destructor for instance of BRepSweep_Builder\n");
+	}
 };
 
 %nodefaultctor BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep;
@@ -423,6 +463,11 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		virtual		~BRepSweep_Rotation();
 
 };
+%extend BRepSweep_Rotation {
+	~BRepSweep_Rotation() {
+	printf("Call custom destructor for instance of BRepSweep_Rotation\n");
+	}
+};
 
 %nodefaultctor BRepSweep_Tool;
 class BRepSweep_Tool {
@@ -444,6 +489,11 @@ class BRepSweep_Tool {
 		%feature("autodoc", "1");
 		void SetOrientation(TopoDS_Shape & aShape, const TopAbs_Orientation Or) const;
 
+};
+%extend BRepSweep_Tool {
+	~BRepSweep_Tool() {
+	printf("Call custom destructor for instance of BRepSweep_Tool\n");
+	}
 };
 
 %nodefaultctor BRepSweep_Prism;
@@ -470,4 +520,9 @@ class BRepSweep_Prism {
 		%feature("autodoc", "1");
 		gp_Vec Vec() const;
 
+};
+%extend BRepSweep_Prism {
+	~BRepSweep_Prism() {
+	printf("Call custom destructor for instance of BRepSweep_Prism\n");
+	}
 };

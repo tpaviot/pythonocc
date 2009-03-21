@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GccEnt
@@ -139,6 +139,11 @@ class GccEnt {
 		GccEnt_QualifiedCirc Outside(const gp_Circ2d &Obj);
 
 };
+%extend GccEnt {
+	~GccEnt() {
+	printf("Call custom destructor for instance of GccEnt\n");
+	}
+};
 
 %nodefaultctor GccEnt_QualifiedLin;
 class GccEnt_QualifiedLin {
@@ -166,6 +171,11 @@ class GccEnt_QualifiedLin {
 		%feature("autodoc", "1");
 		const gp_Lin2d & _CSFDB_GetGccEnt_QualifiedLinTheQualified() const;
 
+};
+%extend GccEnt_QualifiedLin {
+	~GccEnt_QualifiedLin() {
+	printf("Call custom destructor for instance of GccEnt_QualifiedLin\n");
+	}
 };
 
 %nodefaultctor GccEnt_Array1OfPosition;
@@ -202,6 +212,11 @@ class GccEnt_Array1OfPosition {
 		%feature("autodoc", "1");
 		GccEnt_Position & operator()(const Standard_Integer Index);
 
+};
+%extend GccEnt_Array1OfPosition {
+	~GccEnt_Array1OfPosition() {
+	printf("Call custom destructor for instance of GccEnt_Array1OfPosition\n");
+	}
 };
 
 %nodefaultctor GccEnt_BadQualifier;
@@ -260,4 +275,9 @@ class GccEnt_QualifiedCirc {
 		%feature("autodoc", "1");
 		void _CSFDB_SetGccEnt_QualifiedCircTheQualifier(const GccEnt_Position p);
 
+};
+%extend GccEnt_QualifiedCirc {
+	~GccEnt_QualifiedCirc() {
+	printf("Call custom destructor for instance of GccEnt_QualifiedCirc\n");
+	}
 };

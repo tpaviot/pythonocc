@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module MeshShape
@@ -277,6 +277,11 @@ class MeshShape_ListIteratorOfPolygon {
 		MeshShape_PolygonPoint & Value() const;
 
 };
+%extend MeshShape_ListIteratorOfPolygon {
+	~MeshShape_ListIteratorOfPolygon() {
+	printf("Call custom destructor for instance of MeshShape_ListIteratorOfPolygon\n");
+	}
+};
 
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient;
 class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_MapNode {
@@ -317,6 +322,11 @@ class MeshShape_Couple {
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 
 };
+%extend MeshShape_Couple {
+	~MeshShape_Couple() {
+	printf("Call custom destructor for instance of MeshShape_Couple\n");
+	}
+};
 
 %nodefaultctor MeshShape_DataMapOfIntegerPnt;
 class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
@@ -347,6 +357,11 @@ class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
 		gp_Pnt & operator()(const Standard_Integer &K);
 
 };
+%extend MeshShape_DataMapOfIntegerPnt {
+	~MeshShape_DataMapOfIntegerPnt() {
+	printf("Call custom destructor for instance of MeshShape_DataMapOfIntegerPnt\n");
+	}
+};
 
 %nodefaultctor MeshShape;
 class MeshShape {
@@ -360,6 +375,11 @@ class MeshShape {
 		%feature("autodoc", "1");
 		void SetTrace(const Standard_Integer val);
 
+};
+%extend MeshShape {
+	~MeshShape() {
+	printf("Call custom destructor for instance of MeshShape\n");
+	}
 };
 
 %nodefaultctor MeshShape_PolygonPoint;
@@ -376,6 +396,11 @@ class MeshShape_PolygonPoint {
 		%feature("autodoc", "1");
 		Standard_Integer Location3d() const;
 
+};
+%extend MeshShape_PolygonPoint {
+	~MeshShape_PolygonPoint() {
+	printf("Call custom destructor for instance of MeshShape_PolygonPoint\n");
+	}
 };
 
 %nodefaultctor MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient;
@@ -395,6 +420,11 @@ class MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient : public TCollect
 		const TColStd_ListOfTransient & Value() const;
 
 };
+%extend MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient {
+	~MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient() {
+	printf("Call custom destructor for instance of MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient\n");
+	}
+};
 
 %nodefaultctor MeshShape_CoupleHasher;
 class MeshShape_CoupleHasher {
@@ -408,6 +438,11 @@ class MeshShape_CoupleHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const MeshShape_Couple &S1, const MeshShape_Couple &S2);
 
+};
+%extend MeshShape_CoupleHasher {
+	~MeshShape_CoupleHasher() {
+	printf("Call custom destructor for instance of MeshShape_CoupleHasher\n");
+	}
 };
 
 %nodefaultctor MeshShape_ListOfSurfacePoint;
@@ -455,6 +490,11 @@ class MeshShape_ListOfSurfacePoint {
 		void InsertAfter(MeshShape_ListOfSurfacePoint & Other, MeshShape_ListIteratorOfListOfSurfacePoint & It);
 
 };
+%extend MeshShape_ListOfSurfacePoint {
+	~MeshShape_ListOfSurfacePoint() {
+	printf("Call custom destructor for instance of MeshShape_ListOfSurfacePoint\n");
+	}
+};
 
 %nodefaultctor MeshShape_ListNodeOfPolygon;
 class MeshShape_ListNodeOfPolygon : public TCollection_MapNode {
@@ -495,6 +535,11 @@ class MeshShape_DataMapIteratorOfDataMapOfIntegerPnt : public TCollection_BasicM
 		const gp_Pnt & Value() const;
 
 };
+%extend MeshShape_DataMapIteratorOfDataMapOfIntegerPnt {
+	~MeshShape_DataMapIteratorOfDataMapOfIntegerPnt() {
+	printf("Call custom destructor for instance of MeshShape_DataMapIteratorOfDataMapOfIntegerPnt\n");
+	}
+};
 
 %nodefaultctor MeshShape_MapIteratorOfMapOfCouple;
 class MeshShape_MapIteratorOfMapOfCouple : public TCollection_BasicMapIterator {
@@ -510,6 +555,11 @@ class MeshShape_MapIteratorOfMapOfCouple : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const MeshShape_Couple & Key() const;
 
+};
+%extend MeshShape_MapIteratorOfMapOfCouple {
+	~MeshShape_MapIteratorOfMapOfCouple() {
+	printf("Call custom destructor for instance of MeshShape_MapIteratorOfMapOfCouple\n");
+	}
 };
 
 %nodefaultctor MeshShape_StdMapNodeOfMapOfCouple;
@@ -579,6 +629,11 @@ class MeshShape_Polygon {
 		void InsertAfter(MeshShape_Polygon & Other, MeshShape_ListIteratorOfPolygon & It);
 
 };
+%extend MeshShape_Polygon {
+	~MeshShape_Polygon() {
+	printf("Call custom destructor for instance of MeshShape_Polygon\n");
+	}
+};
 
 %nodefaultctor MeshShape_DataMapIteratorOfDataMapOfIntegerXY;
 class MeshShape_DataMapIteratorOfDataMapOfIntegerXY : public TCollection_BasicMapIterator {
@@ -596,6 +651,11 @@ class MeshShape_DataMapIteratorOfDataMapOfIntegerXY : public TCollection_BasicMa
 		%feature("autodoc", "1");
 		const gp_XY & Value() const;
 
+};
+%extend MeshShape_DataMapIteratorOfDataMapOfIntegerXY {
+	~MeshShape_DataMapIteratorOfDataMapOfIntegerXY() {
+	printf("Call custom destructor for instance of MeshShape_DataMapIteratorOfDataMapOfIntegerXY\n");
+	}
 };
 
 %nodefaultctor MeshShape_DataMapOfIntegerXY;
@@ -627,6 +687,11 @@ class MeshShape_DataMapOfIntegerXY : public TCollection_BasicMap {
 		gp_XY & operator()(const Standard_Integer &K);
 
 };
+%extend MeshShape_DataMapOfIntegerXY {
+	~MeshShape_DataMapOfIntegerXY() {
+	printf("Call custom destructor for instance of MeshShape_DataMapOfIntegerXY\n");
+	}
+};
 
 %nodefaultctor MeshShape_ListIteratorOfListOfSurfacePoint;
 class MeshShape_ListIteratorOfListOfSurfacePoint {
@@ -647,6 +712,11 @@ class MeshShape_ListIteratorOfListOfSurfacePoint {
 		MeshShape_SurfacePoint & Value() const;
 
 };
+%extend MeshShape_ListIteratorOfListOfSurfacePoint {
+	~MeshShape_ListIteratorOfListOfSurfacePoint() {
+	printf("Call custom destructor for instance of MeshShape_ListIteratorOfListOfSurfacePoint\n");
+	}
+};
 
 %nodefaultctor MeshShape_SurfacePoint;
 class MeshShape_SurfacePoint {
@@ -666,6 +736,11 @@ class MeshShape_SurfacePoint {
 		%feature("autodoc", "1");
 		const gp_XYZ & Coord() const;
 
+};
+%extend MeshShape_SurfacePoint {
+	~MeshShape_SurfacePoint() {
+	printf("Call custom destructor for instance of MeshShape_SurfacePoint\n");
+	}
 };
 
 %nodefaultctor MeshShape_MapOfCouple;
@@ -688,6 +763,11 @@ class MeshShape_MapOfCouple : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const MeshShape_Couple &aKey);
 
+};
+%extend MeshShape_MapOfCouple {
+	~MeshShape_MapOfCouple() {
+	printf("Call custom destructor for instance of MeshShape_MapOfCouple\n");
+	}
 };
 
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfIntegerXY;
@@ -742,6 +822,11 @@ class MeshShape_DataMapOfShapeListOfTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TColStd_ListOfTransient & operator()(const TopoDS_Shape &K);
 
+};
+%extend MeshShape_DataMapOfShapeListOfTransient {
+	~MeshShape_DataMapOfShapeListOfTransient() {
+	printf("Call custom destructor for instance of MeshShape_DataMapOfShapeListOfTransient\n");
+	}
 };
 
 %nodefaultctor MeshShape_ListNodeOfListOfSurfacePoint;

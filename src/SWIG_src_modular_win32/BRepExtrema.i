@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepExtrema
@@ -187,6 +187,11 @@ class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend BRepExtrema_SeqOfSolution {
+	~BRepExtrema_SeqOfSolution() {
+	printf("Call custom destructor for instance of BRepExtrema_SeqOfSolution\n");
+	}
+};
 
 %nodefaultctor BRepExtrema_Poly;
 class BRepExtrema_Poly {
@@ -198,6 +203,11 @@ class BRepExtrema_Poly {
 		%feature("autodoc", "1");
 		Standard_Boolean Distance(const TopoDS_Shape &S1, const TopoDS_Shape &S2, gp_Pnt & P1, gp_Pnt & P2, Standard_Real &OutValue);
 
+};
+%extend BRepExtrema_Poly {
+	~BRepExtrema_Poly() {
+	printf("Call custom destructor for instance of BRepExtrema_Poly\n");
+	}
 };
 
 %nodefaultctor BRepExtrema_ExtPF;
@@ -225,6 +235,11 @@ class BRepExtrema_ExtPF {
 		gp_Pnt Point(const Standard_Integer N) const;
 
 };
+%extend BRepExtrema_ExtPF {
+	~BRepExtrema_ExtPF() {
+	printf("Call custom destructor for instance of BRepExtrema_ExtPF\n");
+	}
+};
 
 %nodefaultctor BRepExtrema_DistanceSS;
 class BRepExtrema_DistanceSS {
@@ -244,6 +259,11 @@ class BRepExtrema_DistanceSS {
 		%feature("autodoc", "1");
 		const BRepExtrema_SeqOfSolution & Seq2Value() const;
 
+};
+%extend BRepExtrema_DistanceSS {
+	~BRepExtrema_DistanceSS() {
+	printf("Call custom destructor for instance of BRepExtrema_DistanceSS\n");
+	}
 };
 
 %nodefaultctor BRepExtrema_ExtCC;
@@ -278,6 +298,11 @@ class BRepExtrema_ExtCC {
 		%feature("autodoc", "1");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
 
+};
+%extend BRepExtrema_ExtCC {
+	~BRepExtrema_ExtCC() {
+	printf("Call custom destructor for instance of BRepExtrema_ExtCC\n");
+	}
 };
 
 %nodefaultctor BRepExtrema_SequenceNodeOfSeqOfSolution;
@@ -333,6 +358,11 @@ class BRepExtrema_ExtCF {
 		gp_Pnt PointOnFace(const Standard_Integer N) const;
 
 };
+%extend BRepExtrema_ExtCF {
+	~BRepExtrema_ExtCF() {
+	printf("Call custom destructor for instance of BRepExtrema_ExtCF\n");
+	}
+};
 
 %nodefaultctor BRepExtrema_ExtFF;
 class BRepExtrema_ExtFF {
@@ -365,6 +395,11 @@ class BRepExtrema_ExtFF {
 		gp_Pnt PointOnFace2(const Standard_Integer N) const;
 
 };
+%extend BRepExtrema_ExtFF {
+	~BRepExtrema_ExtFF() {
+	printf("Call custom destructor for instance of BRepExtrema_ExtFF\n");
+	}
+};
 
 %nodefaultctor BRepExtrema_ExtPC;
 class BRepExtrema_ExtPC {
@@ -394,6 +429,11 @@ class BRepExtrema_ExtPC {
 		%feature("autodoc", "1");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & pnt1, gp_Pnt & pnt2) const;
 
+};
+%extend BRepExtrema_ExtPC {
+	~BRepExtrema_ExtPC() {
+	printf("Call custom destructor for instance of BRepExtrema_ExtPC\n");
+	}
 };
 
 %nodefaultctor BRepExtrema_UnCompatibleShape;
@@ -475,6 +515,11 @@ class BRepExtrema_DistShapeShape {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend BRepExtrema_DistShapeShape {
+	~BRepExtrema_DistShapeShape() {
+	printf("Call custom destructor for instance of BRepExtrema_DistShapeShape\n");
+	}
+};
 
 %nodefaultctor BRepExtrema_SolutionElem;
 class BRepExtrema_SolutionElem {
@@ -506,4 +551,9 @@ class BRepExtrema_SolutionElem {
 		%feature("autodoc", "1");
 		void FaceParameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend BRepExtrema_SolutionElem {
+	~BRepExtrema_SolutionElem() {
+	printf("Call custom destructor for instance of BRepExtrema_SolutionElem\n");
+	}
 };

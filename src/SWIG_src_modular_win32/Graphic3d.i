@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Graphic3d
@@ -1554,6 +1554,11 @@ class Graphic3d_CBitFields20 {
 		Graphic3d_CBitFields20();
 
 };
+%extend Graphic3d_CBitFields20 {
+	~Graphic3d_CBitFields20() {
+	printf("Call custom destructor for instance of Graphic3d_CBitFields20\n");
+	}
+};
 
 %nodefaultctor Graphic3d_GroupDefinitionError;
 class Graphic3d_GroupDefinitionError : public Standard_OutOfRange {
@@ -1650,6 +1655,11 @@ class Graphic3d_Array2OfVertexC {
 		Graphic3d_VertexC & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend Graphic3d_Array2OfVertexC {
+	~Graphic3d_Array2OfVertexC() {
+	printf("Call custom destructor for instance of Graphic3d_Array2OfVertexC\n");
+	}
+};
 
 %nodefaultctor Graphic3d_Array2OfVertexN;
 class Graphic3d_Array2OfVertexN {
@@ -1690,6 +1700,11 @@ class Graphic3d_Array2OfVertexN {
 		Graphic3d_VertexN & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend Graphic3d_Array2OfVertexN {
+	~Graphic3d_Array2OfVertexN() {
+	printf("Call custom destructor for instance of Graphic3d_Array2OfVertexN\n");
+	}
+};
 
 %nodefaultctor Graphic3d_Array1OfVertexC;
 class Graphic3d_Array1OfVertexC {
@@ -1725,6 +1740,11 @@ class Graphic3d_Array1OfVertexC {
 		%feature("autodoc", "1");
 		Graphic3d_VertexC & operator()(const Standard_Integer Index);
 
+};
+%extend Graphic3d_Array1OfVertexC {
+	~Graphic3d_Array1OfVertexC() {
+	printf("Call custom destructor for instance of Graphic3d_Array1OfVertexC\n");
+	}
 };
 
 %nodefaultctor Graphic3d_WNTGraphicDevice;
@@ -1772,6 +1792,11 @@ class Graphic3d_Strips {
 		void STRIPQ_GET_NEXT(Standard_Integer & VERTEX1, Standard_Integer & VERTEX2, Standard_Integer & QUADRANGLE);
 
 };
+%extend Graphic3d_Strips {
+	~Graphic3d_Strips() {
+	printf("Call custom destructor for instance of Graphic3d_Strips\n");
+	}
+};
 
 %nodefaultctor Graphic3d_Vertex;
 class Graphic3d_Vertex {
@@ -1803,6 +1828,11 @@ class Graphic3d_Vertex {
 		%feature("autodoc", "1");
 		Standard_Real Distance(const Graphic3d_Vertex &AV1, const Graphic3d_Vertex &AV2);
 
+};
+%extend Graphic3d_Vertex {
+	~Graphic3d_Vertex() {
+	printf("Call custom destructor for instance of Graphic3d_Vertex\n");
+	}
 };
 
 %nodefaultctor Graphic3d_SequenceOfGroup;
@@ -2405,6 +2435,11 @@ class Graphic3d_ListIteratorOfListOfShortReal {
 		Standard_ShortReal & Value() const;
 
 };
+%extend Graphic3d_ListIteratorOfListOfShortReal {
+	~Graphic3d_ListIteratorOfListOfShortReal() {
+	printf("Call custom destructor for instance of Graphic3d_ListIteratorOfListOfShortReal\n");
+	}
+};
 
 %nodefaultctor Graphic3d_Vector;
 class Graphic3d_Vector {
@@ -2446,6 +2481,11 @@ class Graphic3d_Vector {
 		%feature("autodoc", "1");
 		Standard_Real NormeOf(const Graphic3d_Vector &AVector);
 
+};
+%extend Graphic3d_Vector {
+	~Graphic3d_Vector() {
+	printf("Call custom destructor for instance of Graphic3d_Vector\n");
+	}
 };
 
 %nodefaultctor Graphic3d_AspectLine3d;
@@ -2553,6 +2593,11 @@ class Graphic3d_CBitFields16 {
 		Graphic3d_CBitFields16();
 
 };
+%extend Graphic3d_CBitFields16 {
+	~Graphic3d_CBitFields16() {
+	printf("Call custom destructor for instance of Graphic3d_CBitFields16\n");
+	}
+};
 
 %nodefaultctor Graphic3d_CBitFields8;
 class Graphic3d_CBitFields8 {
@@ -2560,6 +2605,11 @@ class Graphic3d_CBitFields8 {
 		%feature("autodoc", "1");
 		Graphic3d_CBitFields8();
 
+};
+%extend Graphic3d_CBitFields8 {
+	~Graphic3d_CBitFields8() {
+	printf("Call custom destructor for instance of Graphic3d_CBitFields8\n");
+	}
 };
 
 %nodefaultctor Graphic3d_Array1OfVertexN;
@@ -2596,6 +2646,11 @@ class Graphic3d_Array1OfVertexN {
 		%feature("autodoc", "1");
 		Graphic3d_VertexN & operator()(const Standard_Integer Index);
 
+};
+%extend Graphic3d_Array1OfVertexN {
+	~Graphic3d_Array1OfVertexN() {
+	printf("Call custom destructor for instance of Graphic3d_Array1OfVertexN\n");
+	}
 };
 
 %nodefaultctor Graphic3d_MapIteratorOfMapOfStructure;
@@ -2637,6 +2692,11 @@ class Graphic3d_MapOfStructure : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_Graphic3d_Structure &aKey);
 
+};
+%extend Graphic3d_MapOfStructure {
+	~Graphic3d_MapOfStructure() {
+	printf("Call custom destructor for instance of Graphic3d_MapOfStructure\n");
+	}
 };
 
 %nodefaultctor Graphic3d_SequenceNodeOfSequenceOfStructure;
@@ -3378,6 +3438,11 @@ class Graphic3d_Array2OfVertex {
 		Graphic3d_Vertex & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend Graphic3d_Array2OfVertex {
+	~Graphic3d_Array2OfVertex() {
+	printf("Call custom destructor for instance of Graphic3d_Array2OfVertex\n");
+	}
+};
 
 %nodefaultctor Graphic3d_InitialisationError;
 class Graphic3d_InitialisationError : public Standard_OutOfRange {
@@ -3463,6 +3528,11 @@ class Graphic3d_Array1OfBytes {
 		%feature("autodoc", "1");
 		Standard_Byte & operator()(const Standard_Integer Index);
 
+};
+%extend Graphic3d_Array1OfBytes {
+	~Graphic3d_Array1OfBytes() {
+	printf("Call custom destructor for instance of Graphic3d_Array1OfBytes\n");
+	}
 };
 
 %nodefaultctor Graphic3d_PickIdDefinitionError;
@@ -3615,6 +3685,11 @@ class Graphic3d_SequenceOfAddress : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Graphic3d_SequenceOfAddress {
+	~Graphic3d_SequenceOfAddress() {
+	printf("Call custom destructor for instance of Graphic3d_SequenceOfAddress\n");
+	}
+};
 
 %nodefaultctor Graphic3d_HSequenceOfStructure;
 class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
@@ -3760,6 +3835,11 @@ class Graphic3d_Array1OfVertex {
 		%feature("autodoc", "1");
 		Graphic3d_Vertex & operator()(const Standard_Integer Index);
 
+};
+%extend Graphic3d_Array1OfVertex {
+	~Graphic3d_Array1OfVertex() {
+	printf("Call custom destructor for instance of Graphic3d_Array1OfVertex\n");
+	}
 };
 
 %nodefaultctor Graphic3d_Structure;
@@ -3991,6 +4071,11 @@ class Graphic3d_Array2OfVertexNT {
 		Graphic3d_VertexNT & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend Graphic3d_Array2OfVertexNT {
+	~Graphic3d_Array2OfVertexNT() {
+	printf("Call custom destructor for instance of Graphic3d_Array2OfVertexNT\n");
+	}
+};
 
 %nodefaultctor Graphic3d_VectorError;
 class Graphic3d_VectorError : public Standard_OutOfRange {
@@ -4058,6 +4143,11 @@ class Graphic3d_Array2OfVertexNC {
 		%feature("autodoc", "1");
 		Graphic3d_VertexNC & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend Graphic3d_Array2OfVertexNC {
+	~Graphic3d_Array2OfVertexNC() {
+	printf("Call custom destructor for instance of Graphic3d_Array2OfVertexNC\n");
+	}
 };
 
 %nodefaultctor Graphic3d_ArrayOfTriangleFans;
@@ -4174,6 +4264,11 @@ class Graphic3d_VertexC : public Graphic3d_Vertex {
 		Quantity_Color Color() const;
 
 };
+%extend Graphic3d_VertexC {
+	~Graphic3d_VertexC() {
+	printf("Call custom destructor for instance of Graphic3d_VertexC\n");
+	}
+};
 
 %nodefaultctor Graphic3d_VertexN;
 class Graphic3d_VertexN : public Graphic3d_Vertex {
@@ -4192,6 +4287,11 @@ class Graphic3d_VertexN : public Graphic3d_Vertex {
 		void Normal(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%extend Graphic3d_VertexN {
+	~Graphic3d_VertexN() {
+	printf("Call custom destructor for instance of Graphic3d_VertexN\n");
+	}
+};
 
 %nodefaultctor Graphic3d_VertexNT;
 class Graphic3d_VertexNT : public Graphic3d_VertexN {
@@ -4209,6 +4309,11 @@ class Graphic3d_VertexNT : public Graphic3d_VertexN {
 		%feature("autodoc", "1");
 		void TextureCoordinate(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend Graphic3d_VertexNT {
+	~Graphic3d_VertexNT() {
+	printf("Call custom destructor for instance of Graphic3d_VertexNT\n");
+	}
 };
 
 %nodefaultctor Graphic3d_ArrayOfTriangleStrips;
@@ -4286,6 +4391,11 @@ class Graphic3d_Array1OfVertexNC {
 		Graphic3d_VertexNC & operator()(const Standard_Integer Index);
 
 };
+%extend Graphic3d_Array1OfVertexNC {
+	~Graphic3d_Array1OfVertexNC() {
+	printf("Call custom destructor for instance of Graphic3d_Array1OfVertexNC\n");
+	}
+};
 
 %nodefaultctor Graphic3d_Array1OfVertexNT;
 class Graphic3d_Array1OfVertexNT {
@@ -4322,6 +4432,11 @@ class Graphic3d_Array1OfVertexNT {
 		Graphic3d_VertexNT & operator()(const Standard_Integer Index);
 
 };
+%extend Graphic3d_Array1OfVertexNT {
+	~Graphic3d_Array1OfVertexNT() {
+	printf("Call custom destructor for instance of Graphic3d_Array1OfVertexNT\n");
+	}
+};
 
 %nodefaultctor Graphic3d_SetOfGroup;
 class Graphic3d_SetOfGroup {
@@ -4353,6 +4468,11 @@ class Graphic3d_SetOfGroup {
 		%feature("autodoc", "1");
 		Standard_Boolean IsAProperSubset(const Graphic3d_SetOfGroup &S) const;
 
+};
+%extend Graphic3d_SetOfGroup {
+	~Graphic3d_SetOfGroup() {
+	printf("Call custom destructor for instance of Graphic3d_SetOfGroup\n");
+	}
 };
 
 %nodefaultctor Graphic3d_MaterialDefinitionError;
@@ -4389,6 +4509,11 @@ class Graphic3d_CBitFields4 {
 		%feature("autodoc", "1");
 		Graphic3d_CBitFields4();
 
+};
+%extend Graphic3d_CBitFields4 {
+	~Graphic3d_CBitFields4() {
+	printf("Call custom destructor for instance of Graphic3d_CBitFields4\n");
+	}
 };
 
 %nodefaultctor Graphic3d_ArrayOfSegments;
@@ -4502,6 +4627,11 @@ class Graphic3d_MaterialAspect {
 		Graphic3d_TypeOfMaterial MaterialType(const Standard_Integer aRank);
 
 };
+%extend Graphic3d_MaterialAspect {
+	~Graphic3d_MaterialAspect() {
+	printf("Call custom destructor for instance of Graphic3d_MaterialAspect\n");
+	}
+};
 
 %nodefaultctor Graphic3d_ArrayOfQuadrangleStrips;
 class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
@@ -4557,6 +4687,11 @@ class Graphic3d_Array1OfVector {
 		%feature("autodoc", "1");
 		Graphic3d_Vector & operator()(const Standard_Integer Index);
 
+};
+%extend Graphic3d_Array1OfVector {
+	~Graphic3d_Array1OfVector() {
+	printf("Call custom destructor for instance of Graphic3d_Array1OfVector\n");
+	}
 };
 
 %nodefaultctor Graphic3d_SetListOfSetOfGroup;
@@ -4665,6 +4800,11 @@ class Graphic3d_VertexNC : public Graphic3d_VertexN {
 		Quantity_Color Color() const;
 
 };
+%extend Graphic3d_VertexNC {
+	~Graphic3d_VertexNC() {
+	printf("Call custom destructor for instance of Graphic3d_VertexNC\n");
+	}
+};
 
 %nodefaultctor Graphic3d_ListOfShortReal;
 class Graphic3d_ListOfShortReal {
@@ -4710,6 +4850,11 @@ class Graphic3d_ListOfShortReal {
 		%feature("autodoc", "1");
 		void InsertAfter(Graphic3d_ListOfShortReal & Other, Graphic3d_ListIteratorOfListOfShortReal & It);
 
+};
+%extend Graphic3d_ListOfShortReal {
+	~Graphic3d_ListOfShortReal() {
+	printf("Call custom destructor for instance of Graphic3d_ListOfShortReal\n");
+	}
 };
 
 %nodefaultctor Graphic3d_Texture1Dsegment;

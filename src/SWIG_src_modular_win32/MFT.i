@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module MFT
@@ -361,6 +361,11 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MFT_ListOfFontHandle {
+	~MFT_ListOfFontHandle() {
+	printf("Call custom destructor for instance of MFT_ListOfFontHandle\n");
+	}
+};
 
 %nodefaultctor MFT_ListOfFontName;
 class MFT_ListOfFontName : public TCollection_BaseSequence {
@@ -411,6 +416,11 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MFT_ListOfFontName {
+	~MFT_ListOfFontName() {
+	printf("Call custom destructor for instance of MFT_ListOfFontName\n");
+	}
+};
 
 %nodefaultctor MFT_ListOfFontReference;
 class MFT_ListOfFontReference : public TCollection_BaseSequence {
@@ -460,6 +470,11 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend MFT_ListOfFontReference {
+	~MFT_ListOfFontReference() {
+	printf("Call custom destructor for instance of MFT_ListOfFontReference\n");
+	}
 };
 
 %nodefaultctor MFT_SequenceNodeOfListOfFontName;
@@ -724,4 +739,9 @@ class MFT {
 		%feature("autodoc", "1");
 		MFT();
 
+};
+%extend MFT {
+	~MFT() {
+	printf("Call custom destructor for instance of MFT\n");
+	}
 };

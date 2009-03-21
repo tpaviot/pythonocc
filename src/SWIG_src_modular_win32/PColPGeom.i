@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module PColPGeom
@@ -611,6 +611,11 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
 		Standard_Address Value() const;
 
 };
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface\n");
+	}
+};
 
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
@@ -626,6 +631,11 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve\n");
+	}
 };
 
 %nodefaultctor PColPGeom_HArray1OfBSplineCurve;
@@ -793,6 +803,11 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface {
 		Standard_Address Value() const;
 
 };
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface\n");
+	}
+};
 
 %nodefaultctor PColPGeom_FieldOfHArray1OfBoundedSurface;
 class PColPGeom_FieldOfHArray1OfBoundedSurface : public DBC_BaseArray {
@@ -920,6 +935,11 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 		Standard_Address Value() const;
 
 };
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve\n");
+	}
+};
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve;
 class PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode {
@@ -1028,6 +1048,11 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface\n");
+	}
 };
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve;
@@ -1342,6 +1367,11 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve {
 		Standard_Address Value() const;
 
 };
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve\n");
+	}
+};
 
 %nodefaultctor PColPGeom_HArray1OfBoundedCurve;
 class PColPGeom_HArray1OfBoundedCurve : public Standard_Persistent {
@@ -1559,6 +1589,11 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
 		Standard_Address Value() const;
 
 };
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface\n");
+	}
+};
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface;
 class PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public PStandard_ArrayNode {
@@ -1670,6 +1705,11 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface\n");
+	}
 };
 
 %nodefaultctor PColPGeom_HArray2OfSurface;
@@ -1844,6 +1884,11 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface {
 		Standard_Address Value() const;
 
 };
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface\n");
+	}
+};
 
 %nodefaultctor PColPGeom_FieldOfHArray1OfBezierCurve;
 class PColPGeom_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
@@ -1888,4 +1933,9 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve() {
+	printf("Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepFeat
@@ -142,6 +142,11 @@ class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
 		virtual		~BRepFeat_Builder();
 
 };
+%extend BRepFeat_Builder {
+	~BRepFeat_Builder() {
+	printf("Call custom destructor for instance of BRepFeat_Builder\n");
+	}
+};
 
 %nodefaultctor BRepFeat_Form;
 class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
@@ -212,6 +217,11 @@ class BRepFeat {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(const BRepFeat_StatusError SE, Standard_OStream & S);
 
+};
+%extend BRepFeat {
+	~BRepFeat() {
+	printf("Call custom destructor for instance of BRepFeat\n");
+	}
 };
 
 %nodefaultctor BRepFeat_MakePipe;
@@ -350,6 +360,11 @@ class BRepFeat_LocalOperation : public BRepFeat_Builder {
 		virtual		~BRepFeat_LocalOperation();
 
 };
+%extend BRepFeat_LocalOperation {
+	~BRepFeat_LocalOperation() {
+	printf("Call custom destructor for instance of BRepFeat_LocalOperation\n");
+	}
+};
 
 %nodefaultctor BRepFeat_Gluer;
 class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
@@ -379,6 +394,11 @@ class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepFeat_Gluer();
 
+};
+%extend BRepFeat_Gluer {
+	~BRepFeat_Gluer() {
+	printf("Call custom destructor for instance of BRepFeat_Gluer\n");
+	}
 };
 
 %nodefaultctor BRepFeat_SplitShape;
@@ -410,6 +430,11 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 		virtual		~BRepFeat_SplitShape();
 
 };
+%extend BRepFeat_SplitShape {
+	~BRepFeat_SplitShape() {
+	printf("Call custom destructor for instance of BRepFeat_SplitShape\n");
+	}
+};
 
 %nodefaultctor BRepFeat_RibSlot;
 class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
@@ -440,6 +465,11 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 		virtual		~BRepFeat_RibSlot();
 
 };
+%extend BRepFeat_RibSlot {
+	~BRepFeat_RibSlot() {
+	printf("Call custom destructor for instance of BRepFeat_RibSlot\n");
+	}
+};
 
 %nodefaultctor BRepFeat_MakeLinearForm;
 class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
@@ -460,6 +490,11 @@ class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 		virtual		~BRepFeat_MakeLinearForm();
 
 };
+%extend BRepFeat_MakeLinearForm {
+	~BRepFeat_MakeLinearForm() {
+	printf("Call custom destructor for instance of BRepFeat_MakeLinearForm\n");
+	}
+};
 
 %nodefaultctor BRepFeat_MakeRevolutionForm;
 class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
@@ -479,6 +514,11 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 		%feature("autodoc", "1");
 		virtual		~BRepFeat_MakeRevolutionForm();
 
+};
+%extend BRepFeat_MakeRevolutionForm {
+	~BRepFeat_MakeRevolutionForm() {
+	printf("Call custom destructor for instance of BRepFeat_MakeRevolutionForm\n");
+	}
 };
 
 %nodefaultctor BRepFeat_MakeCylindricalHole;
@@ -511,6 +551,11 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 		%feature("autodoc", "1");
 		virtual		~BRepFeat_MakeCylindricalHole();
 
+};
+%extend BRepFeat_MakeCylindricalHole {
+	~BRepFeat_MakeCylindricalHole() {
+	printf("Call custom destructor for instance of BRepFeat_MakeCylindricalHole\n");
+	}
 };
 
 %nodefaultctor BRepFeat_MakeRevol;

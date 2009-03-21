@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TCollection
@@ -419,6 +419,11 @@ class TCollection_AsciiString {
 		Standard_Boolean ISSIMILAR(const TCollection_AsciiString &string1, const TCollection_AsciiString &string2);
 
 };
+%extend TCollection_AsciiString {
+	~TCollection_AsciiString() {
+	printf("Call custom destructor for instance of TCollection_AsciiString\n");
+	}
+};
 
 %nodefaultctor TCollection;
 class TCollection {
@@ -430,6 +435,11 @@ class TCollection {
 		%feature("autodoc", "1");
 		Standard_Integer NextPrimeForMap(const Standard_Integer I);
 
+};
+%extend TCollection {
+	~TCollection() {
+	printf("Call custom destructor for instance of TCollection\n");
+	}
 };
 
 %nodefaultctor TCollection_MapNode;
@@ -468,6 +478,11 @@ class TCollection_PrivCompareOfInteger {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
+};
+%extend TCollection_PrivCompareOfInteger {
+	~TCollection_PrivCompareOfInteger() {
+	printf("Call custom destructor for instance of TCollection_PrivCompareOfInteger\n");
+	}
 };
 
 %nodefaultctor TCollection_AVLBaseNode;
@@ -517,6 +532,11 @@ class TCollection_BasicMapIterator {
 		void Next();
 
 };
+%extend TCollection_BasicMapIterator {
+	~TCollection_BasicMapIterator() {
+	printf("Call custom destructor for instance of TCollection_BasicMapIterator\n");
+	}
+};
 
 %nodefaultctor TCollection_PrivCompareOfReal;
 class TCollection_PrivCompareOfReal {
@@ -533,6 +553,11 @@ class TCollection_PrivCompareOfReal {
 		virtual		Standard_Boolean IsEqual(const Standard_Real &Left, const Standard_Real &Right) const;
 
 };
+%extend TCollection_PrivCompareOfReal {
+	~TCollection_PrivCompareOfReal() {
+	printf("Call custom destructor for instance of TCollection_PrivCompareOfReal\n");
+	}
+};
 
 %nodefaultctor TCollection_CompareOfReal;
 class TCollection_CompareOfReal : public TCollection_PrivCompareOfReal {
@@ -542,6 +567,11 @@ class TCollection_CompareOfReal : public TCollection_PrivCompareOfReal {
 		%feature("autodoc", "1");
 		TCollection_CompareOfReal();
 
+};
+%extend TCollection_CompareOfReal {
+	~TCollection_CompareOfReal() {
+	printf("Call custom destructor for instance of TCollection_CompareOfReal\n");
+	}
 };
 
 %nodefaultctor TCollection_ExtendedString;
@@ -655,6 +685,11 @@ class TCollection_ExtendedString {
 		Standard_Integer LengthOfCString() const;
 
 };
+%extend TCollection_ExtendedString {
+	~TCollection_ExtendedString() {
+	printf("Call custom destructor for instance of TCollection_ExtendedString\n");
+	}
+};
 
 %nodefaultctor TCollection_Array2Descriptor;
 class TCollection_Array2Descriptor {
@@ -672,6 +707,11 @@ class TCollection_Array2Descriptor {
 		%feature("autodoc", "1");
 		Standard_Address Address() const;
 
+};
+%extend TCollection_Array2Descriptor {
+	~TCollection_Array2Descriptor() {
+	printf("Call custom destructor for instance of TCollection_Array2Descriptor\n");
+	}
 };
 
 %nodefaultctor TCollection_HExtendedString;
@@ -777,6 +817,11 @@ class TCollection_BaseSequence {
 		void Exchange(const Standard_Integer I, const Standard_Integer J);
 
 };
+%extend TCollection_BaseSequence {
+	~TCollection_BaseSequence() {
+	printf("Call custom destructor for instance of TCollection_BaseSequence\n");
+	}
+};
 
 %nodefaultctor TCollection_SeqNode;
 class TCollection_SeqNode : public MMgt_TShared {
@@ -815,6 +860,11 @@ class TCollection_CompareOfInteger : public TCollection_PrivCompareOfInteger {
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
 };
+%extend TCollection_CompareOfInteger {
+	~TCollection_CompareOfInteger() {
+	printf("Call custom destructor for instance of TCollection_CompareOfInteger\n");
+	}
+};
 
 %nodefaultctor TCollection_Array1Descriptor;
 class TCollection_Array1Descriptor {
@@ -828,6 +878,11 @@ class TCollection_Array1Descriptor {
 		%feature("autodoc", "1");
 		Standard_Address Address() const;
 
+};
+%extend TCollection_Array1Descriptor {
+	~TCollection_Array1Descriptor() {
+	printf("Call custom destructor for instance of TCollection_Array1Descriptor\n");
+	}
 };
 
 %nodefaultctor TCollection_BasicMap;
@@ -844,6 +899,11 @@ class TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Statistics(Standard_OStream & S) const;
 
+};
+%extend TCollection_BasicMap {
+	~TCollection_BasicMap() {
+	printf("Call custom destructor for instance of TCollection_BasicMap\n");
+	}
 };
 
 %nodefaultctor TCollection_HAsciiString;

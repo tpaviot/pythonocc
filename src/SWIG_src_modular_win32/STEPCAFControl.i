@@ -601,6 +601,11 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape : public TCollection_B
 		const TopoDS_Shape & Value() const;
 
 };
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape {
+	~STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_ActorWrite;
 class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
@@ -704,6 +709,11 @@ class STEPCAFControl_DataMapOfShapeLabel : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_Label & operator()(const TopoDS_Shape &K);
 
+};
+%extend STEPCAFControl_DataMapOfShapeLabel {
+	~STEPCAFControl_DataMapOfShapeLabel() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapOfShapeLabel\n");
+	}
 };
 
 %nodefaultctor STEPCAFControl_StackItemOfDictionaryOfExternFile;
@@ -943,6 +953,11 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_B
 		const TDF_Label & Value() const;
 
 };
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel {
+	~STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel\n");
+	}
+};
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile;
 class STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public TCollection_MapNode {
@@ -996,6 +1011,11 @@ class STEPCAFControl_DataMapOfLabelShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopoDS_Shape & operator()(const TDF_Label &K);
 
+};
+%extend STEPCAFControl_DataMapOfLabelShape {
+	~STEPCAFControl_DataMapOfLabelShape() {
+	printf("Call custom destructor for instance of STEPCAFControl_DataMapOfLabelShape\n");
+	}
 };
 
 %nodefaultctor STEPCAFControl_DictionaryOfExternFile;

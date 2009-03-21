@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module MoniTool
@@ -583,6 +583,11 @@ class MoniTool_ElemHasher {
 		Standard_Boolean IsEqual(const Handle_MoniTool_Element &K1, const Handle_MoniTool_Element &K2);
 
 };
+%extend MoniTool_ElemHasher {
+	~MoniTool_ElemHasher() {
+	printf("Call custom destructor for instance of MoniTool_ElemHasher\n");
+	}
+};
 
 %nodefaultctor MoniTool_Timer;
 class MoniTool_Timer : public MMgt_TShared {
@@ -1051,6 +1056,11 @@ class MoniTool_MTHasher {
 		Standard_Boolean IsEqual(const char * Str1, const char * Str2);
 
 };
+%extend MoniTool_MTHasher {
+	~MoniTool_MTHasher() {
+	printf("Call custom destructor for instance of MoniTool_MTHasher\n");
+	}
+};
 
 %nodefaultctor MoniTool_TransientElem;
 class MoniTool_TransientElem : public MoniTool_Element {
@@ -1319,6 +1329,11 @@ class MoniTool_Stat {
 		%feature("autodoc", "1");
 		Standard_Real Percent(const Standard_Integer fromlev=0) const;
 
+};
+%extend MoniTool_Stat {
+	~MoniTool_Stat() {
+	printf("Call custom destructor for instance of MoniTool_Stat\n");
+	}
 };
 
 %nodefaultctor MoniTool_IndexedDataMapOfShapeTransient;

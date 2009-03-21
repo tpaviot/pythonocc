@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module SelectMgr
@@ -891,6 +891,11 @@ class SelectMgr_DataMapOfObjectSelectors : public TCollection_BasicMap {
 		SelectMgr_SequenceOfSelector & operator()(const Handle_SelectMgr_SelectableObject &K);
 
 };
+%extend SelectMgr_DataMapOfObjectSelectors {
+	~SelectMgr_DataMapOfObjectSelectors() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapOfObjectSelectors\n");
+	}
+};
 
 %nodefaultctor SelectMgr_SelectionManager;
 class SelectMgr_SelectionManager : public MMgt_TShared {
@@ -1160,6 +1165,11 @@ class SelectMgr_SortCriterion {
 		%feature("autodoc", "1");
 		Standard_Boolean operator<(const SelectMgr_SortCriterion &anOtherCriterion) const;
 
+};
+%extend SelectMgr_SortCriterion {
+	~SelectMgr_SortCriterion() {
+	printf("Call custom destructor for instance of SelectMgr_SortCriterion\n");
+	}
 };
 
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation;
@@ -1645,6 +1655,11 @@ class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
 		Standard_Integer & operator()(const Handle_SelectMgr_Selection &K);
 
 };
+%extend SelectMgr_DataMapOfSelectionActivation {
+	~SelectMgr_DataMapOfSelectionActivation() {
+	printf("Call custom destructor for instance of SelectMgr_DataMapOfSelectionActivation\n");
+	}
+};
 
 %nodefaultctor SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
 class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
@@ -1739,6 +1754,11 @@ class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
+};
+%extend SelectMgr_CompareResults {
+	~SelectMgr_CompareResults() {
+	printf("Call custom destructor for instance of SelectMgr_CompareResults\n");
+	}
 };
 
 %nodefaultctor SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion;

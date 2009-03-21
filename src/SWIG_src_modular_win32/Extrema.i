@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Extrema
@@ -635,6 +635,11 @@ class Extrema_POnCurv2d {
 		const gp_Pnt2d & _CSFDB_GetExtrema_POnCurv2dmyP() const;
 
 };
+%extend Extrema_POnCurv2d {
+	~Extrema_POnCurv2d() {
+	printf("Call custom destructor for instance of Extrema_POnCurv2d\n");
+	}
+};
 
 %nodefaultctor Extrema_SequenceOfBoolean;
 class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
@@ -685,6 +690,11 @@ class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SequenceOfBoolean {
+	~Extrema_SequenceOfBoolean() {
+	printf("Call custom destructor for instance of Extrema_SequenceOfBoolean\n");
+	}
+};
 
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfBoolean;
 class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
@@ -722,6 +732,11 @@ class Extrema_LocECC2dOfLocateExtCC2d {
 		%feature("autodoc", "1");
 		void Point(Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
+};
+%extend Extrema_LocECC2dOfLocateExtCC2d {
+	~Extrema_LocECC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_LocECC2dOfLocateExtCC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC;
@@ -773,6 +788,11 @@ class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence 
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC {
+	~Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtPC;
 class Extrema_ExtPC {
@@ -803,6 +823,11 @@ class Extrema_ExtPC {
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
 
 };
+%extend Extrema_ExtPC {
+	~Extrema_ExtPC() {
+	printf("Call custom destructor for instance of Extrema_ExtPC\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtPS;
 class Extrema_ExtPS {
@@ -830,6 +855,11 @@ class Extrema_ExtPS {
 		%feature("autodoc", "1");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & PUfVf, gp_Pnt & PUfVl, gp_Pnt & PUlVf, gp_Pnt & PUlVl) const;
 
+};
+%extend Extrema_ExtPS {
+	~Extrema_ExtPS() {
+	printf("Call custom destructor for instance of Extrema_ExtPS\n");
+	}
 };
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
@@ -881,6 +911,11 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequ
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtSS;
 class Extrema_ExtSS {
@@ -908,6 +943,11 @@ class Extrema_ExtSS {
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnSurf & P1, Extrema_POnSurf & P2) const;
 
+};
+%extend Extrema_ExtSS {
+	~Extrema_ExtSS() {
+	printf("Call custom destructor for instance of Extrema_ExtSS\n");
+	}
 };
 
 %nodefaultctor Extrema_CCFOfELCCOfLocateExtCC;
@@ -937,6 +977,11 @@ class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 		virtual		~Extrema_CCFOfELCCOfLocateExtCC();
 
 };
+%extend Extrema_CCFOfELCCOfLocateExtCC {
+	~Extrema_CCFOfELCCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Extrema_CCFOfELCCOfLocateExtCC\n");
+	}
+};
 
 %nodefaultctor Extrema_ECC2dOfExtCC2d;
 class Extrema_ECC2dOfExtCC2d {
@@ -958,6 +1003,11 @@ class Extrema_ECC2dOfExtCC2d {
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
+};
+%extend Extrema_ECC2dOfExtCC2d {
+	~Extrema_ECC2dOfExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_ECC2dOfExtCC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_ExtCC2d;
@@ -988,6 +1038,11 @@ class Extrema_ExtCC2d {
 		%feature("autodoc", "1");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P11, gp_Pnt2d & P12, gp_Pnt2d & P21, gp_Pnt2d & P22) const;
 
+};
+%extend Extrema_ExtCC2d {
+	~Extrema_ExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_ExtCC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_CurveTool;
@@ -1084,6 +1139,11 @@ class Extrema_Array1OfPOnSurf {
 		Extrema_POnSurf & operator()(const Standard_Integer Index);
 
 };
+%extend Extrema_Array1OfPOnSurf {
+	~Extrema_Array1OfPOnSurf() {
+	printf("Call custom destructor for instance of Extrema_Array1OfPOnSurf\n");
+	}
+};
 
 %nodefaultctor Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
 class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequence {
@@ -1133,6 +1193,11 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequ
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
+	~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_ExtElCS;
@@ -1198,6 +1263,11 @@ class Extrema_ExtElCS {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnSurf & P2) const;
 
 };
+%extend Extrema_ExtElCS {
+	~Extrema_ExtElCS() {
+	printf("Call custom destructor for instance of Extrema_ExtElCS\n");
+	}
+};
 
 %nodefaultctor Extrema_EPCOfELPCOfLocateExtPC;
 class Extrema_EPCOfELPCOfLocateExtPC {
@@ -1232,6 +1302,11 @@ class Extrema_EPCOfELPCOfLocateExtPC {
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 
 };
+%extend Extrema_EPCOfELPCOfLocateExtPC {
+	~Extrema_EPCOfELPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_EPCOfELPCOfLocateExtPC\n");
+	}
+};
 
 %nodefaultctor Extrema_GenLocateExtSS;
 class Extrema_GenLocateExtSS {
@@ -1253,6 +1328,11 @@ class Extrema_GenLocateExtSS {
 		%feature("autodoc", "1");
 		const Extrema_POnSurf & PointOnS2() const;
 
+};
+%extend Extrema_GenLocateExtSS {
+	~Extrema_GenLocateExtSS() {
+	printf("Call custom destructor for instance of Extrema_GenLocateExtSS\n");
+	}
 };
 
 %nodefaultctor Extrema_PCFOfEPCOfELPCOfLocateExtPC;
@@ -1285,6 +1365,11 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~Extrema_PCFOfEPCOfELPCOfLocateExtPC();
 
+};
+%extend Extrema_PCFOfEPCOfELPCOfLocateExtPC {
+	~Extrema_PCFOfEPCOfELPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC\n");
+	}
 };
 
 %nodefaultctor Extrema_HArray2OfPOnCurv2d;
@@ -1388,6 +1473,11 @@ class Extrema_LocateExtCC {
 		void Point(Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%extend Extrema_LocateExtCC {
+	~Extrema_LocateExtCC() {
+	printf("Call custom destructor for instance of Extrema_LocateExtCC\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtElSS;
 class Extrema_ExtElSS {
@@ -1431,6 +1521,11 @@ class Extrema_ExtElSS {
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnSurf & P1, Extrema_POnSurf & P2) const;
 
+};
+%extend Extrema_ExtElSS {
+	~Extrema_ExtElSS() {
+	printf("Call custom destructor for instance of Extrema_ExtElSS\n");
+	}
 };
 
 %nodefaultctor Extrema_ExtElC2d;
@@ -1481,6 +1576,11 @@ class Extrema_ExtElC2d {
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
+};
+%extend Extrema_ExtElC2d {
+	~Extrema_ExtElC2d() {
+	printf("Call custom destructor for instance of Extrema_ExtElC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_HArray1OfPOnCurv;
@@ -1598,6 +1698,11 @@ class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 		virtual		~Extrema_PCFOfEPCOfExtPC2d();
 
 };
+%extend Extrema_PCFOfEPCOfExtPC2d {
+	~Extrema_PCFOfEPCOfExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv;
 class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
@@ -1660,6 +1765,11 @@ class Extrema_Array2OfPOnCurv {
 		Extrema_POnCurv & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend Extrema_Array2OfPOnCurv {
+	~Extrema_Array2OfPOnCurv() {
+	printf("Call custom destructor for instance of Extrema_Array2OfPOnCurv\n");
+	}
+};
 
 %nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC;
 class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
@@ -1691,6 +1801,11 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~Extrema_PCLocFOfLocEPCOfLocateExtPC();
 
+};
+%extend Extrema_PCLocFOfLocEPCOfLocateExtPC {
+	~Extrema_PCLocFOfLocEPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC\n");
+	}
 };
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
@@ -1742,6 +1857,11 @@ class Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_BaseSeque
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	~Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
 class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequence {
@@ -1792,6 +1912,11 @@ class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequ
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	~Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");
+	}
+};
 
 %nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC2d;
 class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative {
@@ -1823,6 +1948,11 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		%feature("autodoc", "1");
 		virtual		~Extrema_PCLocFOfLocEPCOfLocateExtPC2d();
 
+};
+%extend Extrema_PCLocFOfLocEPCOfLocateExtPC2d {
+	~Extrema_PCLocFOfLocEPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_FuncExtSS;
@@ -1857,6 +1987,11 @@ class Extrema_FuncExtSS : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		~Extrema_FuncExtSS();
 
+};
+%extend Extrema_FuncExtSS {
+	~Extrema_FuncExtSS() {
+	printf("Call custom destructor for instance of Extrema_FuncExtSS\n");
+	}
 };
 
 %nodefaultctor Extrema_HArray2OfPOnSurf;
@@ -1926,6 +2061,11 @@ class Extrema_ELCC2dOfLocateExtCC2d {
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
+%extend Extrema_ELCC2dOfLocateExtCC2d {
+	~Extrema_ELCC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_ELCC2dOfLocateExtCC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_Array1OfPOnCurv;
 class Extrema_Array1OfPOnCurv {
@@ -1962,6 +2102,11 @@ class Extrema_Array1OfPOnCurv {
 		Extrema_POnCurv & operator()(const Standard_Integer Index);
 
 };
+%extend Extrema_Array1OfPOnCurv {
+	~Extrema_Array1OfPOnCurv() {
+	printf("Call custom destructor for instance of Extrema_Array1OfPOnCurv\n");
+	}
+};
 
 %nodefaultctor Extrema_PCFOfEPCOfELPCOfLocateExtPC2d;
 class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative {
@@ -1993,6 +2138,11 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		%feature("autodoc", "1");
 		virtual		~Extrema_PCFOfEPCOfELPCOfLocateExtPC2d();
 
+};
+%extend Extrema_PCFOfEPCOfELPCOfLocateExtPC2d {
+	~Extrema_PCFOfEPCOfELPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceOfPOnSurf;
@@ -2044,6 +2194,11 @@ class Extrema_SequenceOfPOnSurf : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SequenceOfPOnSurf {
+	~Extrema_SequenceOfPOnSurf() {
+	printf("Call custom destructor for instance of Extrema_SequenceOfPOnSurf\n");
+	}
+};
 
 %nodefaultctor Extrema_LocateExtPC2d;
 class Extrema_LocateExtPC2d {
@@ -2069,6 +2224,11 @@ class Extrema_LocateExtPC2d {
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point() const;
 
+};
+%extend Extrema_LocateExtPC2d {
+	~Extrema_LocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_LocateExtPC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
@@ -2118,6 +2278,11 @@ class Extrema_LocateExtPC {
 		Extrema_POnCurv Point() const;
 
 };
+%extend Extrema_LocateExtPC {
+	~Extrema_LocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_LocateExtPC\n");
+	}
+};
 
 %nodefaultctor Extrema_GenLocateExtCS;
 class Extrema_GenLocateExtCS {
@@ -2139,6 +2304,11 @@ class Extrema_GenLocateExtCS {
 		%feature("autodoc", "1");
 		const Extrema_POnSurf & PointOnSurface() const;
 
+};
+%extend Extrema_GenLocateExtCS {
+	~Extrema_GenLocateExtCS() {
+	printf("Call custom destructor for instance of Extrema_GenLocateExtCS\n");
+	}
 };
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d;
@@ -2190,6 +2360,11 @@ class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d {
+	~Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtCC;
 class Extrema_ExtCC {
@@ -2219,6 +2394,11 @@ class Extrema_ExtCC {
 		%feature("autodoc", "1");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
 
+};
+%extend Extrema_ExtCC {
+	~Extrema_ExtCC() {
+	printf("Call custom destructor for instance of Extrema_ExtCC\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d;
@@ -2268,6 +2448,11 @@ class Extrema_LocEPCOfLocateExtPC2d {
 		Extrema_POnCurv2d Point() const;
 
 };
+%extend Extrema_LocEPCOfLocateExtPC2d {
+	~Extrema_LocEPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtPElC;
 class Extrema_ExtPElC {
@@ -2308,6 +2493,11 @@ class Extrema_ExtPElC {
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 
 };
+%extend Extrema_ExtPElC {
+	~Extrema_ExtPElC() {
+	printf("Call custom destructor for instance of Extrema_ExtPElC\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtPElS;
 class Extrema_ExtPElS {
@@ -2345,6 +2535,11 @@ class Extrema_ExtPElS {
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
+};
+%extend Extrema_ExtPElS {
+	~Extrema_ExtPElS() {
+	printf("Call custom destructor for instance of Extrema_ExtPElS\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
@@ -2418,6 +2613,11 @@ class Extrema_ExtElC {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%extend Extrema_ExtElC {
+	~Extrema_ExtElC() {
+	printf("Call custom destructor for instance of Extrema_ExtElC\n");
+	}
+};
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfECCOfExtCC;
 class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
@@ -2468,6 +2668,11 @@ class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPOnCOfCCFOfECCOfExtCC {
+	~Extrema_SeqPOnCOfCCFOfECCOfExtCC() {
+	printf("Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECCOfExtCC\n");
+	}
+};
 
 %nodefaultctor Extrema_CCFOfECC2dOfExtCC2d;
 class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
@@ -2495,6 +2700,11 @@ class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		~Extrema_CCFOfECC2dOfExtCC2d();
 
+};
+%extend Extrema_CCFOfECC2dOfExtCC2d {
+	~Extrema_CCFOfECC2dOfExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_CCFOfECC2dOfExtCC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceOfPOnCurv2d;
@@ -2545,6 +2755,11 @@ class Extrema_SequenceOfPOnCurv2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Extrema_SequenceOfPOnCurv2d {
+	~Extrema_SequenceOfPOnCurv2d() {
+	printf("Call custom destructor for instance of Extrema_SequenceOfPOnCurv2d\n");
+	}
 };
 
 %nodefaultctor Extrema_HArray2OfPOnCurv;
@@ -2624,6 +2839,11 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 		virtual		~Extrema_PCFOfEPCOfExtPC();
 
 };
+%extend Extrema_PCFOfEPCOfExtPC {
+	~Extrema_PCFOfEPCOfExtPC() {
+	printf("Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC\n");
+	}
+};
 
 %nodefaultctor Extrema_POnSurf;
 class Extrema_POnSurf {
@@ -2649,6 +2869,11 @@ class Extrema_POnSurf {
 		%feature("autodoc", "1");
 		const gp_Pnt & _CSFDB_GetExtrema_POnSurfmyP() const;
 
+};
+%extend Extrema_POnSurf {
+	~Extrema_POnSurf() {
+	printf("Call custom destructor for instance of Extrema_POnSurf\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
@@ -2690,6 +2915,11 @@ class Extrema_GenLocateExtPS {
 		Extrema_POnSurf Point() const;
 
 };
+%extend Extrema_GenLocateExtPS {
+	~Extrema_GenLocateExtPS() {
+	printf("Call custom destructor for instance of Extrema_GenLocateExtPS\n");
+	}
+};
 
 %nodefaultctor Extrema_CCFOfELCC2dOfLocateExtCC2d;
 class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
@@ -2718,6 +2948,11 @@ class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivative
 		virtual		~Extrema_CCFOfELCC2dOfLocateExtCC2d();
 
 };
+%extend Extrema_CCFOfELCC2dOfLocateExtCC2d {
+	~Extrema_CCFOfELCC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_CCFOfELCC2dOfLocateExtCC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_CCLocFOfLocECCOfLocateExtCC;
 class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivatives {
@@ -2745,6 +2980,11 @@ class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivativ
 		%feature("autodoc", "1");
 		virtual		~Extrema_CCLocFOfLocECCOfLocateExtCC();
 
+};
+%extend Extrema_CCLocFOfLocECCOfLocateExtCC {
+	~Extrema_CCLocFOfLocECCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Extrema_CCLocFOfLocECCOfLocateExtCC\n");
+	}
 };
 
 %nodefaultctor Extrema_Array1OfPOnCurv2d;
@@ -2782,6 +3022,11 @@ class Extrema_Array1OfPOnCurv2d {
 		Extrema_POnCurv2d & operator()(const Standard_Integer Index);
 
 };
+%extend Extrema_Array1OfPOnCurv2d {
+	~Extrema_Array1OfPOnCurv2d() {
+	printf("Call custom destructor for instance of Extrema_Array1OfPOnCurv2d\n");
+	}
+};
 
 %nodefaultctor Extrema_EPCOfExtPC;
 class Extrema_EPCOfExtPC {
@@ -2816,6 +3061,11 @@ class Extrema_EPCOfExtPC {
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 
 };
+%extend Extrema_EPCOfExtPC {
+	~Extrema_EPCOfExtPC() {
+	printf("Call custom destructor for instance of Extrema_EPCOfExtPC\n");
+	}
+};
 
 %nodefaultctor Extrema_GenExtCS;
 class Extrema_GenExtCS {
@@ -2848,6 +3098,11 @@ class Extrema_GenExtCS {
 		const Extrema_POnSurf & PointOnSurface(const Standard_Integer N) const;
 
 };
+%extend Extrema_GenExtCS {
+	~Extrema_GenExtCS() {
+	printf("Call custom destructor for instance of Extrema_GenExtCS\n");
+	}
+};
 
 %nodefaultctor Extrema_LocEPCOfLocateExtPC;
 class Extrema_LocEPCOfLocateExtPC {
@@ -2873,6 +3128,11 @@ class Extrema_LocEPCOfLocateExtPC {
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point() const;
 
+};
+%extend Extrema_LocEPCOfLocateExtPC {
+	~Extrema_LocEPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC\n");
+	}
 };
 
 %nodefaultctor Extrema_Array2OfPOnSurf;
@@ -2914,6 +3174,11 @@ class Extrema_Array2OfPOnSurf {
 		Extrema_POnSurf & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend Extrema_Array2OfPOnSurf {
+	~Extrema_Array2OfPOnSurf() {
+	printf("Call custom destructor for instance of Extrema_Array2OfPOnSurf\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtPC2d;
 class Extrema_ExtPC2d {
@@ -2944,6 +3209,11 @@ class Extrema_ExtPC2d {
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 
 };
+%extend Extrema_ExtPC2d {
+	~Extrema_ExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_ExtPC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtPExtS;
 class Extrema_ExtPExtS {
@@ -2970,6 +3240,11 @@ class Extrema_ExtPExtS {
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
 };
+%extend Extrema_ExtPExtS {
+	~Extrema_ExtPExtS() {
+	printf("Call custom destructor for instance of Extrema_ExtPExtS\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtPRevS;
 class Extrema_ExtPRevS {
@@ -2995,6 +3270,11 @@ class Extrema_ExtPRevS {
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
+};
+%extend Extrema_ExtPRevS {
+	~Extrema_ExtPRevS() {
+	printf("Call custom destructor for instance of Extrema_ExtPRevS\n");
+	}
 };
 
 %nodefaultctor Extrema_GenExtPS;
@@ -3024,6 +3304,11 @@ class Extrema_GenExtPS {
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
 };
+%extend Extrema_GenExtPS {
+	~Extrema_GenExtPS() {
+	printf("Call custom destructor for instance of Extrema_GenExtPS\n");
+	}
+};
 
 %nodefaultctor Extrema_CCLocFOfLocECC2dOfLocateExtCC2d;
 class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
@@ -3052,6 +3337,11 @@ class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDeriv
 		virtual		~Extrema_CCLocFOfLocECC2dOfLocateExtCC2d();
 
 };
+%extend Extrema_CCLocFOfLocECC2dOfLocateExtCC2d {
+	~Extrema_CCLocFOfLocECC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_CCLocFOfLocECC2dOfLocateExtCC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_LocateExtCC2d;
 class Extrema_LocateExtCC2d {
@@ -3067,6 +3357,11 @@ class Extrema_LocateExtCC2d {
 		%feature("autodoc", "1");
 		void Point(Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
+};
+%extend Extrema_LocateExtCC2d {
+	~Extrema_LocateExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_LocateExtCC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_GenExtSS;
@@ -3099,6 +3394,11 @@ class Extrema_GenExtSS {
 		%feature("autodoc", "1");
 		Extrema_POnSurf PointOnS2(const Standard_Integer N) const;
 
+};
+%extend Extrema_GenExtSS {
+	~Extrema_GenExtSS() {
+	printf("Call custom destructor for instance of Extrema_GenExtSS\n");
+	}
 };
 
 %nodefaultctor Extrema_Curve2dTool;
@@ -3189,6 +3489,11 @@ class Extrema_ECCOfExtCC {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%extend Extrema_ECCOfExtCC {
+	~Extrema_ECCOfExtCC() {
+	printf("Call custom destructor for instance of Extrema_ECCOfExtCC\n");
+	}
+};
 
 %nodefaultctor Extrema_EPCOfExtPC2d;
 class Extrema_EPCOfExtPC2d {
@@ -3222,6 +3527,11 @@ class Extrema_EPCOfExtPC2d {
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
+};
+%extend Extrema_EPCOfExtPC2d {
+	~Extrema_EPCOfExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_EPCOfExtPC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_HArray1OfPOnCurv2d;
@@ -3278,6 +3588,11 @@ class Extrema_LocECCOfLocateExtCC {
 		%feature("autodoc", "1");
 		void Point(Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
+};
+%extend Extrema_LocECCOfLocateExtCC {
+	~Extrema_LocECCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Extrema_LocECCOfLocateExtCC\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
@@ -3351,6 +3666,11 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollection_BaseSequen
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC {
+	~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");
+	}
+};
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC;
 class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_BaseSequence {
@@ -3400,6 +3720,11 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_BaseSequen
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
+	~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");
+	}
 };
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfExtPC;
@@ -3451,6 +3776,11 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPCOfPCFOfEPCOfExtPC {
+	~Extrema_SeqPCOfPCFOfEPCOfExtPC() {
+	printf("Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfExtPC\n");
+	}
+};
 
 %nodefaultctor Extrema_ELPCOfLocateExtPC;
 class Extrema_ELPCOfLocateExtPC {
@@ -3480,6 +3810,11 @@ class Extrema_ELPCOfLocateExtPC {
 		%feature("autodoc", "1");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
 
+};
+%extend Extrema_ELPCOfLocateExtPC {
+	~Extrema_ELPCOfLocateExtPC() {
+	printf("Call custom destructor for instance of Extrema_ELPCOfLocateExtPC\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC;
@@ -3524,6 +3859,11 @@ class Extrema_ELCCOfLocateExtCC {
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
+};
+%extend Extrema_ELCCOfLocateExtCC {
+	~Extrema_ELCCOfLocateExtCC() {
+	printf("Call custom destructor for instance of Extrema_ELCCOfLocateExtCC\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceOfPOnCurv;
@@ -3575,6 +3915,11 @@ class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SequenceOfPOnCurv {
+	~Extrema_SequenceOfPOnCurv() {
+	printf("Call custom destructor for instance of Extrema_SequenceOfPOnCurv\n");
+	}
+};
 
 %nodefaultctor Extrema_ELPCOfLocateExtPC2d;
 class Extrema_ELPCOfLocateExtPC2d {
@@ -3605,6 +3950,11 @@ class Extrema_ELPCOfLocateExtPC2d {
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 
 };
+%extend Extrema_ELPCOfLocateExtPC2d {
+	~Extrema_ELPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_ELPCOfLocateExtPC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_POnCurv;
 class Extrema_POnCurv {
@@ -3628,6 +3978,11 @@ class Extrema_POnCurv {
 		%feature("autodoc", "1");
 		const gp_Pnt & _CSFDB_GetExtrema_POnCurvmyP() const;
 
+};
+%extend Extrema_POnCurv {
+	~Extrema_POnCurv() {
+	printf("Call custom destructor for instance of Extrema_POnCurv\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC;
@@ -3723,6 +4078,11 @@ class Extrema_ExtCS {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnSurf & P2) const;
 
 };
+%extend Extrema_ExtCS {
+	~Extrema_ExtCS() {
+	printf("Call custom destructor for instance of Extrema_ExtCS\n");
+	}
+};
 
 %nodefaultctor Extrema_ExtPElC2d;
 class Extrema_ExtPElC2d {
@@ -3763,6 +4123,11 @@ class Extrema_ExtPElC2d {
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
+%extend Extrema_ExtPElC2d {
+	~Extrema_ExtPElC2d() {
+	printf("Call custom destructor for instance of Extrema_ExtPElC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_EPCOfELPCOfLocateExtPC2d;
 class Extrema_EPCOfELPCOfLocateExtPC2d {
@@ -3796,6 +4161,11 @@ class Extrema_EPCOfELPCOfLocateExtPC2d {
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
+};
+%extend Extrema_EPCOfELPCOfLocateExtPC2d {
+	~Extrema_EPCOfELPCOfLocateExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_EPCOfELPCOfLocateExtPC2d\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnSurf;
@@ -3854,6 +4224,11 @@ class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		~Extrema_FuncExtPS();
 
+};
+%extend Extrema_FuncExtPS {
+	~Extrema_FuncExtPS() {
+	printf("Call custom destructor for instance of Extrema_FuncExtPS\n");
+	}
 };
 
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
@@ -3927,6 +4302,11 @@ class Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_Base
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	~Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
+	printf("Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
 class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNode {
@@ -3999,6 +4379,11 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Extrema_SeqPCOfPCFOfEPCOfExtPC2d {
+	~Extrema_SeqPCOfPCFOfEPCOfExtPC2d() {
+	printf("Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfExtPC2d\n");
+	}
+};
 
 %nodefaultctor Extrema_FuncExtCS;
 class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
@@ -4032,6 +4417,11 @@ class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		~Extrema_FuncExtCS();
 
+};
+%extend Extrema_FuncExtCS {
+	~Extrema_FuncExtCS() {
+	printf("Call custom destructor for instance of Extrema_FuncExtCS\n");
+	}
 };
 
 %nodefaultctor Extrema_Array2OfPOnCurv2d;
@@ -4073,6 +4463,11 @@ class Extrema_Array2OfPOnCurv2d {
 		Extrema_POnCurv2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend Extrema_Array2OfPOnCurv2d {
+	~Extrema_Array2OfPOnCurv2d() {
+	printf("Call custom destructor for instance of Extrema_Array2OfPOnCurv2d\n");
+	}
+};
 
 %nodefaultctor Extrema_CCFOfECCOfExtCC;
 class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {
@@ -4100,4 +4495,9 @@ class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		~Extrema_CCFOfECCOfExtCC();
 
+};
+%extend Extrema_CCFOfECCOfExtCC {
+	~Extrema_CCFOfECCOfExtCC() {
+	printf("Call custom destructor for instance of Extrema_CCFOfECCOfExtCC\n");
+	}
 };

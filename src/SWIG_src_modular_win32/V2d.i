@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module V2d
@@ -296,6 +296,11 @@ class V2d {
 		%feature("autodoc", "1");
 		void Draw(const Handle_V2d_Viewer &aViewer);
 
+};
+%extend V2d {
+	~V2d() {
+	printf("Call custom destructor for instance of V2d\n");
+	}
 };
 
 %nodefaultctor V2d_CircularGrid;

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module LProp3d
@@ -105,6 +105,11 @@ class LProp3d_SurfaceTool {
 		void Bounds(const Handle_Adaptor3d_HSurface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%extend LProp3d_SurfaceTool {
+	~LProp3d_SurfaceTool() {
+	printf("Call custom destructor for instance of LProp3d_SurfaceTool\n");
+	}
+};
 
 %nodefaultctor LProp3d_SLProps;
 class LProp3d_SLProps {
@@ -161,6 +166,11 @@ class LProp3d_SLProps {
 		Standard_Real GaussianCurvature();
 
 };
+%extend LProp3d_SLProps {
+	~LProp3d_SLProps() {
+	printf("Call custom destructor for instance of LProp3d_SLProps\n");
+	}
+};
 
 %nodefaultctor LProp3d_CurveTool;
 class LProp3d_CurveTool {
@@ -184,6 +194,11 @@ class LProp3d_CurveTool {
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
 
+};
+%extend LProp3d_CurveTool {
+	~LProp3d_CurveTool() {
+	printf("Call custom destructor for instance of LProp3d_CurveTool\n");
+	}
 };
 
 %nodefaultctor LProp3d_CLProps;
@@ -220,4 +235,9 @@ class LProp3d_CLProps {
 		%feature("autodoc", "1");
 		void CentreOfCurvature(gp_Pnt & P);
 
+};
+%extend LProp3d_CLProps {
+	~LProp3d_CLProps() {
+	printf("Call custom destructor for instance of LProp3d_CLProps\n");
+	}
 };

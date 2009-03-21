@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module PTColStd
@@ -213,6 +213,11 @@ class PTColStd_MapPersistentHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_Standard_Persistent &K1, const Handle_Standard_Persistent &K2);
 
+};
+%extend PTColStd_MapPersistentHasher {
+	~PTColStd_MapPersistentHasher() {
+	printf("Call custom destructor for instance of PTColStd_MapPersistentHasher\n");
+	}
 };
 
 %nodefaultctor PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent;

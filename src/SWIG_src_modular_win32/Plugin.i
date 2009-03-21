@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Plugin
@@ -147,6 +147,11 @@ class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterat
 		const TCollection_AsciiString & Key() const;
 
 };
+%extend Plugin_DataMapIteratorOfMapOfFunctions {
+	~Plugin_DataMapIteratorOfMapOfFunctions() {
+	printf("Call custom destructor for instance of Plugin_DataMapIteratorOfMapOfFunctions\n");
+	}
+};
 
 %nodefaultctor Plugin_DataMapNodeOfMapOfFunctions;
 class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
@@ -216,6 +221,11 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const TCollection_AsciiString &K);
 
+};
+%extend Plugin_MapOfFunctions {
+	~Plugin_MapOfFunctions() {
+	printf("Call custom destructor for instance of Plugin_MapOfFunctions\n");
+	}
 };
 
 %nodefaultctor Plugin;

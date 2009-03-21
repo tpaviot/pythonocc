@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Standard
@@ -879,6 +879,11 @@ class Standard_MMgrRoot {
 		virtual		void SetReentrant(Standard_Boolean );
 
 };
+%extend Standard_MMgrRoot {
+	~Standard_MMgrRoot() {
+	printf("Call custom destructor for instance of Standard_MMgrRoot\n");
+	}
+};
 
 %nodefaultctor Standard_MMgrOpt;
 class Standard_MMgrOpt : public Standard_MMgrRoot {
@@ -894,6 +899,11 @@ class Standard_MMgrOpt : public Standard_MMgrRoot {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Purge(Standard_Boolean );
 
+};
+%extend Standard_MMgrOpt {
+	~Standard_MMgrOpt() {
+	printf("Call custom destructor for instance of Standard_MMgrOpt\n");
+	}
 };
 
 %nodefaultctor Standard_Transient;
@@ -1071,6 +1081,11 @@ class Standard {
 		void SetReentrant(const Standard_Boolean isReentrant);
 
 };
+%extend Standard {
+	~Standard() {
+	printf("Call custom destructor for instance of Standard\n");
+	}
+};
 
 %nodefaultctor Standard_DomainError;
 class Standard_DomainError : public Standard_Failure {
@@ -1216,6 +1231,11 @@ class Standard_ErrorHandlerCallback {
 		%feature("autodoc", "1");
 		virtual		void DestroyCallback();
 
+};
+%extend Standard_ErrorHandlerCallback {
+	~Standard_ErrorHandlerCallback() {
+	printf("Call custom destructor for instance of Standard_ErrorHandlerCallback\n");
+	}
 };
 
 %nodefaultctor Standard_AncestorIterator;
@@ -1536,6 +1556,11 @@ class Standard_Storable {
 		virtual		void ShallowDump(Standard_OStream & S) const;
 
 };
+%extend Standard_Storable {
+	~Standard_Storable() {
+	printf("Call custom destructor for instance of Standard_Storable\n");
+	}
+};
 
 %nodefaultctor Standard_ImmutableObject;
 class Standard_ImmutableObject : public Standard_DomainError {
@@ -1650,6 +1675,11 @@ class Standard_GUID {
 		void _CSFDB_SetStandard_GUIDmy8b6(const Standard_Byte p);
 
 };
+%extend Standard_GUID {
+	~Standard_GUID() {
+	printf("Call custom destructor for instance of Standard_GUID\n");
+	}
+};
 
 %nodefaultctor Standard_ErrorHandler;
 class Standard_ErrorHandler {
@@ -1690,6 +1720,11 @@ class Standard_Mutex : public Standard_ErrorHandlerCallback {
 		%feature("autodoc", "1");
 		void Unlock();
 
+};
+%extend Standard_Mutex {
+	~Standard_Mutex() {
+	printf("Call custom destructor for instance of Standard_Mutex\n");
+	}
 };
 
 %nodefaultctor Standard_TooManyUsers;
@@ -1898,6 +1933,11 @@ class Standard_MMgrRaw : public Standard_MMgrRoot {
 		%feature("autodoc", "1");
 		virtual		~Standard_MMgrRaw();
 
+};
+%extend Standard_MMgrRaw {
+	~Standard_MMgrRaw() {
+	printf("Call custom destructor for instance of Standard_MMgrRaw\n");
+	}
 };
 
 %nodefaultctor Standard_OutOfMemory;

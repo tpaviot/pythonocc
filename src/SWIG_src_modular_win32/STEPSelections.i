@@ -570,6 +570,11 @@ class STEPSelections_Counter {
 		Standard_Integer NbSourceWires() const;
 
 };
+%extend STEPSelections_Counter {
+	~STEPSelections_Counter() {
+	printf("Call custom destructor for instance of STEPSelections_Counter\n");
+	}
+};
 
 %nodefaultctor STEPSelections_SelectDerived;
 class STEPSelections_SelectDerived : public StepSelect_StepType {

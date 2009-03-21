@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TFunction
@@ -403,6 +403,11 @@ class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const TDF_Label &K);
 
 };
+%extend TFunction_DoubleMapOfIntegerLabel {
+	~TFunction_DoubleMapOfIntegerLabel() {
+	printf("Call custom destructor for instance of TFunction_DoubleMapOfIntegerLabel\n");
+	}
+};
 
 %nodefaultctor TFunction_Scope;
 class TFunction_Scope : public TDF_Attribute {
@@ -579,6 +584,11 @@ class TFunction_Array1OfDataMapOfGUIDDriver {
 		TFunction_DataMapOfGUIDDriver & operator()(const Standard_Integer Index);
 
 };
+%extend TFunction_Array1OfDataMapOfGUIDDriver {
+	~TFunction_Array1OfDataMapOfGUIDDriver() {
+	printf("Call custom destructor for instance of TFunction_Array1OfDataMapOfGUIDDriver\n");
+	}
+};
 
 %nodefaultctor TFunction_Function;
 class TFunction_Function : public TDF_Attribute {
@@ -659,6 +669,11 @@ class TFunction_Iterator {
 		Standard_OStream & Dump(Standard_OStream & OS) const;
 
 };
+%extend TFunction_Iterator {
+	~TFunction_Iterator() {
+	printf("Call custom destructor for instance of TFunction_Iterator\n");
+	}
+};
 
 %nodefaultctor TFunction_DataMapOfLabelListOfLabel;
 class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
@@ -688,6 +703,11 @@ class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_LabelList & operator()(const TDF_Label &K);
 
+};
+%extend TFunction_DataMapOfLabelListOfLabel {
+	~TFunction_DataMapOfLabelListOfLabel() {
+	printf("Call custom destructor for instance of TFunction_DataMapOfLabelListOfLabel\n");
+	}
 };
 
 %nodefaultctor TFunction_DataMapIteratorOfDataMapOfGUIDDriver;
@@ -761,6 +781,11 @@ class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_
 		%feature("autodoc", "1");
 		const TDF_Label & Key2() const;
 
+};
+%extend TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel {
+	~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel() {
+	printf("Call custom destructor for instance of TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel\n");
+	}
 };
 
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfGUIDDriver;
@@ -926,6 +951,11 @@ class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_
 		const TDF_LabelList & Value() const;
 
 };
+%extend TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel {
+	~TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel() {
+	printf("Call custom destructor for instance of TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel\n");
+	}
+};
 
 %nodefaultctor TFunction_Logbook;
 class TFunction_Logbook {
@@ -961,4 +991,9 @@ class TFunction_Logbook {
 		%feature("autodoc", "1");
 		Standard_OStream & Dump(Standard_OStream & stream) const;
 
+};
+%extend TFunction_Logbook {
+	~TFunction_Logbook() {
+	printf("Call custom destructor for instance of TFunction_Logbook\n");
+	}
 };

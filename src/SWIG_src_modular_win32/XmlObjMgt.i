@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module XmlObjMgt
@@ -166,6 +166,11 @@ class XmlObjMgt {
 		Standard_Boolean GetReal(const XmlObjMgt_DOMString &theString, Standard_Real &OutValue);
 
 };
+%extend XmlObjMgt {
+	~XmlObjMgt() {
+	printf("Call custom destructor for instance of XmlObjMgt\n");
+	}
+};
 
 %nodefaultctor XmlObjMgt_DataMapNodeOfRRelocationTable;
 class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
@@ -212,6 +217,11 @@ class XmlObjMgt_GP {
 		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_XYZ & T);
 
 };
+%extend XmlObjMgt_GP {
+	~XmlObjMgt_GP() {
+	printf("Call custom destructor for instance of XmlObjMgt_GP\n");
+	}
+};
 
 %nodefaultctor XmlObjMgt_Persistent;
 class XmlObjMgt_Persistent {
@@ -235,6 +245,11 @@ class XmlObjMgt_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer Id() const;
 
+};
+%extend XmlObjMgt_Persistent {
+	~XmlObjMgt_Persistent() {
+	printf("Call custom destructor for instance of XmlObjMgt_Persistent\n");
+	}
 };
 
 %nodefaultctor XmlObjMgt_RRelocationTable;

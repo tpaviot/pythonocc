@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module PColStd
@@ -851,6 +851,11 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
 		Standard_Address Value() const;
 
 };
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
+	~PColStd_VArrayTNodeOfFieldOfHArray1OfReal() {
+	printf("Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfReal\n");
+	}
+};
 
 %nodefaultctor PColStd_HDoubleListOfInteger;
 class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
@@ -927,6 +932,11 @@ class PColStd_SeqExplorerOfHSequenceOfInteger {
 		Standard_Integer Location(const Standard_Integer N, const Standard_Integer &T);
 
 };
+%extend PColStd_SeqExplorerOfHSequenceOfInteger {
+	~PColStd_SeqExplorerOfHSequenceOfInteger() {
+	printf("Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfInteger\n");
+	}
+};
 
 %nodefaultctor PColStd_HOfExtendedString;
 class PColStd_HOfExtendedString {
@@ -940,6 +950,11 @@ class PColStd_HOfExtendedString {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HExtendedString &One, const Handle_PCollection_HExtendedString &Two) const;
 
+};
+%extend PColStd_HOfExtendedString {
+	~PColStd_HOfExtendedString() {
+	printf("Call custom destructor for instance of PColStd_HOfExtendedString\n");
+	}
 };
 
 %nodefaultctor PColStd_FieldOfHArray2OfInteger;
@@ -966,6 +981,11 @@ class PColStd_FieldOfHArray2OfInteger : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		virtual		~PColStd_FieldOfHArray2OfInteger();
 
+};
+%extend PColStd_FieldOfHArray2OfInteger {
+	~PColStd_FieldOfHArray2OfInteger() {
+	printf("Call custom destructor for instance of PColStd_FieldOfHArray2OfInteger\n");
+	}
 };
 
 %nodefaultctor PColStd_FieldOfHArray1OfExtendedString;
@@ -1010,6 +1030,11 @@ class PColStd_HOfReal {
 		virtual		Standard_Boolean Compare(const Standard_Real &One, const Standard_Real &Two) const;
 
 };
+%extend PColStd_HOfReal {
+	~PColStd_HOfReal() {
+	printf("Call custom destructor for instance of PColStd_HOfReal\n");
+	}
+};
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfInteger;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
@@ -1026,6 +1051,11 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
 		Standard_Address Value() const;
 
 };
+%extend PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
+	~PColStd_VArrayTNodeOfFieldOfHArray2OfInteger() {
+	printf("Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfInteger\n");
+	}
+};
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
@@ -1041,6 +1071,11 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
+	~PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent() {
+	printf("Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent\n");
+	}
 };
 
 %nodefaultctor PColStd_FieldOfHArray2OfReal;
@@ -1067,6 +1102,11 @@ class PColStd_FieldOfHArray2OfReal : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		virtual		~PColStd_FieldOfHArray2OfReal();
 
+};
+%extend PColStd_FieldOfHArray2OfReal {
+	~PColStd_FieldOfHArray2OfReal() {
+	printf("Call custom destructor for instance of PColStd_FieldOfHArray2OfReal\n");
+	}
 };
 
 %nodefaultctor PColStd_HSequenceOfHAsciiString;
@@ -1312,6 +1352,11 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
 		Standard_Address Value() const;
 
 };
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
+	~PColStd_VArrayTNodeOfFieldOfHArray1OfInteger() {
+	printf("Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfInteger\n");
+	}
+};
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfInteger;
 class PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public PStandard_ArrayNode {
@@ -1528,6 +1573,11 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
 		Standard_Address Value() const;
 
 };
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
+	~PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent() {
+	printf("Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent\n");
+	}
+};
 
 %nodefaultctor PColStd_HArray1OfReal;
 class PColStd_HArray1OfReal : public Standard_Persistent {
@@ -1692,6 +1742,11 @@ class PColStd_SeqExplorerOfHSequenceOfReal {
 		Standard_Integer Location(const Standard_Integer N, const Standard_Real &T);
 
 };
+%extend PColStd_SeqExplorerOfHSequenceOfReal {
+	~PColStd_SeqExplorerOfHSequenceOfReal() {
+	printf("Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfReal\n");
+	}
+};
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfReal;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
@@ -1707,6 +1762,11 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
+	~PColStd_VArrayTNodeOfFieldOfHArray2OfReal() {
+	printf("Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfReal\n");
+	}
 };
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfHExtendedString;
@@ -1823,6 +1883,11 @@ class PColStd_HOfInteger {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Compare(const Standard_Integer &One, const Standard_Integer &Two) const;
 
+};
+%extend PColStd_HOfInteger {
+	~PColStd_HOfInteger() {
+	printf("Call custom destructor for instance of PColStd_HOfInteger\n");
+	}
 };
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfHAsciiString;
@@ -2239,6 +2304,11 @@ class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
 		virtual		~PColStd_FieldOfHArray1OfInteger();
 
 };
+%extend PColStd_FieldOfHArray1OfInteger {
+	~PColStd_FieldOfHArray1OfInteger() {
+	printf("Call custom destructor for instance of PColStd_FieldOfHArray1OfInteger\n");
+	}
+};
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfPersistent;
 class PColStd_SeqExplorerOfHSequenceOfPersistent {
@@ -2285,6 +2355,11 @@ class PColStd_FieldOfHArray1OfReal : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		virtual		~PColStd_FieldOfHArray1OfReal();
 
+};
+%extend PColStd_FieldOfHArray1OfReal {
+	~PColStd_FieldOfHArray1OfReal() {
+	printf("Call custom destructor for instance of PColStd_FieldOfHArray1OfReal\n");
+	}
 };
 
 %nodefaultctor PColStd_HArray1OfInteger;
@@ -2440,6 +2515,11 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
 		Standard_Address Value() const;
 
 };
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
+	~PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString() {
+	printf("Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString\n");
+	}
+};
 
 %nodefaultctor PColStd_HArray1OfPersistent;
 class PColStd_HArray1OfPersistent : public Standard_Persistent {
@@ -2504,6 +2584,11 @@ class PColStd_HOfAsciiString {
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HAsciiString &One, const Handle_PCollection_HAsciiString &Two) const;
 
 };
+%extend PColStd_HOfAsciiString {
+	~PColStd_HOfAsciiString() {
+	printf("Call custom destructor for instance of PColStd_HOfAsciiString\n");
+	}
+};
 
 %nodefaultctor PColStd_HashAsciiString;
 class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
@@ -2513,6 +2598,11 @@ class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
 		%feature("autodoc", "1");
 		PColStd_HashAsciiString();
 
+};
+%extend PColStd_HashAsciiString {
+	~PColStd_HashAsciiString() {
+	printf("Call custom destructor for instance of PColStd_HashAsciiString\n");
+	}
 };
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfInteger;
@@ -2816,6 +2906,11 @@ class PColStd_HashExtendedString : public PColStd_HOfExtendedString {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HExtendedString &One, const Handle_PCollection_HExtendedString &Two) const;
 
+};
+%extend PColStd_HashExtendedString {
+	~PColStd_HashExtendedString() {
+	printf("Call custom destructor for instance of PColStd_HashExtendedString\n");
+	}
 };
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfPersistent;

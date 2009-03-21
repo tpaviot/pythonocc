@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepAdaptor
@@ -291,6 +291,11 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 		virtual		~BRepAdaptor_Curve2d();
 
 };
+%extend BRepAdaptor_Curve2d {
+	~BRepAdaptor_Curve2d() {
+	printf("Call custom destructor for instance of BRepAdaptor_Curve2d\n");
+	}
+};
 
 %nodefaultctor BRepAdaptor_Array1OfCurve;
 class BRepAdaptor_Array1OfCurve {
@@ -326,6 +331,11 @@ class BRepAdaptor_Array1OfCurve {
 		%feature("autodoc", "1");
 		BRepAdaptor_Curve & operator()(const Standard_Integer Index);
 
+};
+%extend BRepAdaptor_Array1OfCurve {
+	~BRepAdaptor_Array1OfCurve() {
+	printf("Call custom destructor for instance of BRepAdaptor_Array1OfCurve\n");
+	}
 };
 
 %nodefaultctor BRepAdaptor_Surface;

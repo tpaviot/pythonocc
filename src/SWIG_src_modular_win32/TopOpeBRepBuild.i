@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopOpeBRepBuild
@@ -409,6 +409,11 @@ class TopOpeBRepBuild_DataMapOfShapeReal : public TCollection_BasicMap {
 		Standard_Real & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepBuild_DataMapOfShapeReal {
+	~TopOpeBRepBuild_DataMapOfShapeReal() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_DataMapOfShapeReal\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo;
 class TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo : public TCollection_BasicMap {
@@ -449,6 +454,11 @@ class TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo : public TCollection_Basic
 		TopOpeBRepBuild_VertexInfo & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo {
+	~TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_BlockIterator;
 class TopOpeBRepBuild_BlockIterator {
@@ -470,6 +480,11 @@ class TopOpeBRepBuild_BlockIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 
+};
+%extend TopOpeBRepBuild_BlockIterator {
+	~TopOpeBRepBuild_BlockIterator() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_BlockIterator\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_Loop;
@@ -596,6 +611,11 @@ class TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape {
 		TopOpeBRepBuild_ShapeListOfShape & Value() const;
 
 };
+%extend TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape {
+	~TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_LoopClassifier;
 class TopOpeBRepBuild_LoopClassifier {
@@ -605,6 +625,11 @@ class TopOpeBRepBuild_LoopClassifier {
 		%feature("autodoc", "1");
 		virtual		TopAbs_State Compare(const Handle_TopOpeBRepBuild_Loop &L1, const Handle_TopOpeBRepBuild_Loop &L2);
 
+};
+%extend TopOpeBRepBuild_LoopClassifier {
+	~TopOpeBRepBuild_LoopClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_LoopClassifier\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_PaveClassifier;
@@ -621,6 +646,11 @@ class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 		%feature("autodoc", "1");
 		virtual		~TopOpeBRepBuild_PaveClassifier();
 
+};
+%extend TopOpeBRepBuild_PaveClassifier {
+	~TopOpeBRepBuild_PaveClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_PaveClassifier\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_CorrectFace2d;
@@ -652,6 +682,11 @@ class TopOpeBRepBuild_CorrectFace2d {
 		void CheckList(const TopoDS_Face &aFace, TopTools_ListOfShape & aHeadList);
 
 };
+%extend TopOpeBRepBuild_CorrectFace2d {
+	~TopOpeBRepBuild_CorrectFace2d() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_CorrectFace2d\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_CompositeClassifier;
 class TopOpeBRepBuild_CompositeClassifier : public TopOpeBRepBuild_LoopClassifier {
@@ -671,6 +706,11 @@ class TopOpeBRepBuild_CompositeClassifier : public TopOpeBRepBuild_LoopClassifie
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
 
+};
+%extend TopOpeBRepBuild_CompositeClassifier {
+	~TopOpeBRepBuild_CompositeClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_CompositeClassifier\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_WireEdgeClassifier;
@@ -697,6 +737,11 @@ class TopOpeBRepBuild_WireEdgeClassifier : public TopOpeBRepBuild_CompositeClass
 		%feature("autodoc", "1");
 		virtual		~TopOpeBRepBuild_WireEdgeClassifier();
 
+};
+%extend TopOpeBRepBuild_WireEdgeClassifier {
+	~TopOpeBRepBuild_WireEdgeClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_WireEdgeClassifier\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_ListOfListOfLoop;
@@ -743,6 +788,11 @@ class TopOpeBRepBuild_ListOfListOfLoop {
 		%feature("autodoc", "1");
 		void InsertAfter(TopOpeBRepBuild_ListOfListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
 
+};
+%extend TopOpeBRepBuild_ListOfListOfLoop {
+	~TopOpeBRepBuild_ListOfListOfLoop() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ListOfListOfLoop\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_ListOfLoop;
@@ -823,6 +873,11 @@ class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_
 		TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape {
+	~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_GTool;
 class TopOpeBRepBuild_GTool {
@@ -853,6 +908,11 @@ class TopOpeBRepBuild_GTool {
 		void Dump(Standard_OStream & OS);
 
 };
+%extend TopOpeBRepBuild_GTool {
+	~TopOpeBRepBuild_GTool() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_GTool\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_Area2dBuilder;
 class TopOpeBRepBuild_Area2dBuilder : public TopOpeBRepBuild_AreaBuilder {
@@ -867,6 +927,11 @@ class TopOpeBRepBuild_Area2dBuilder : public TopOpeBRepBuild_AreaBuilder {
 		virtual		~TopOpeBRepBuild_Area2dBuilder();
 
 };
+%extend TopOpeBRepBuild_Area2dBuilder {
+	~TopOpeBRepBuild_Area2dBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_Area2dBuilder\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_FaceAreaBuilder;
 class TopOpeBRepBuild_FaceAreaBuilder : public TopOpeBRepBuild_Area2dBuilder {
@@ -880,6 +945,11 @@ class TopOpeBRepBuild_FaceAreaBuilder : public TopOpeBRepBuild_Area2dBuilder {
 		%feature("autodoc", "1");
 		virtual		~TopOpeBRepBuild_FaceAreaBuilder();
 
+};
+%extend TopOpeBRepBuild_FaceAreaBuilder {
+	~TopOpeBRepBuild_FaceAreaBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_FaceAreaBuilder\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_WireToFace;
@@ -897,6 +967,11 @@ class TopOpeBRepBuild_WireToFace {
 		void MakeFaces(const TopoDS_Face &F, TopTools_ListOfShape & LF);
 
 };
+%extend TopOpeBRepBuild_WireToFace {
+	~TopOpeBRepBuild_WireToFace() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_WireToFace\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_Area3dBuilder;
 class TopOpeBRepBuild_Area3dBuilder : public TopOpeBRepBuild_AreaBuilder {
@@ -911,6 +986,11 @@ class TopOpeBRepBuild_Area3dBuilder : public TopOpeBRepBuild_AreaBuilder {
 		virtual		~TopOpeBRepBuild_Area3dBuilder();
 
 };
+%extend TopOpeBRepBuild_Area3dBuilder {
+	~TopOpeBRepBuild_Area3dBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_Area3dBuilder\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_SolidAreaBuilder;
 class TopOpeBRepBuild_SolidAreaBuilder : public TopOpeBRepBuild_Area3dBuilder {
@@ -924,6 +1004,11 @@ class TopOpeBRepBuild_SolidAreaBuilder : public TopOpeBRepBuild_Area3dBuilder {
 		%feature("autodoc", "1");
 		virtual		~TopOpeBRepBuild_SolidAreaBuilder();
 
+};
+%extend TopOpeBRepBuild_SolidAreaBuilder {
+	~TopOpeBRepBuild_SolidAreaBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_SolidAreaBuilder\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_ListNodeOfListOfListOfLoop;
@@ -969,6 +1054,11 @@ class TopOpeBRepBuild_Area1dBuilder : public TopOpeBRepBuild_AreaBuilder {
 		virtual		~TopOpeBRepBuild_Area1dBuilder();
 
 };
+%extend TopOpeBRepBuild_Area1dBuilder {
+	~TopOpeBRepBuild_Area1dBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_Area1dBuilder\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_LoopSet;
 class TopOpeBRepBuild_LoopSet {
@@ -1011,6 +1101,11 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape : pu
 		%feature("autodoc", "1");
 		const TopOpeBRepBuild_ListOfShapeListOfShape & Value() const;
 
+};
+%extend TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape {
+	~TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_VertexInfo;
@@ -1058,6 +1153,11 @@ class TopOpeBRepBuild_VertexInfo {
 		void Prepare(const TopTools_ListOfShape &aL);
 
 };
+%extend TopOpeBRepBuild_VertexInfo {
+	~TopOpeBRepBuild_VertexInfo() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_VertexInfo\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_Tools2d;
 class TopOpeBRepBuild_Tools2d {
@@ -1074,6 +1174,11 @@ class TopOpeBRepBuild_Tools2d {
 		void Path(const TopoDS_Wire &aWire, TopTools_ListOfShape & aResList);
 
 };
+%extend TopOpeBRepBuild_Tools2d {
+	~TopOpeBRepBuild_Tools2d() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_Tools2d\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_ShellToSolid;
 class TopOpeBRepBuild_ShellToSolid {
@@ -1089,6 +1194,11 @@ class TopOpeBRepBuild_ShellToSolid {
 		%feature("autodoc", "1");
 		void MakeSolids(const TopoDS_Solid &So, TopTools_ListOfShape & LSo);
 
+};
+%extend TopOpeBRepBuild_ShellToSolid {
+	~TopOpeBRepBuild_ShellToSolid() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ShellToSolid\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_ListNodeOfListOfPave;
@@ -1533,6 +1643,11 @@ class TopOpeBRepBuild_Builder1 : public TopOpeBRepBuild_Builder {
 		Standard_Integer CorrectResult2d(TopoDS_Shape & aResult);
 
 };
+%extend TopOpeBRepBuild_Builder1 {
+	~TopOpeBRepBuild_Builder1() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_Builder1\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_DataMapOfShapeInteger;
 class TopOpeBRepBuild_DataMapOfShapeInteger : public TCollection_BasicMap {
@@ -1562,6 +1677,11 @@ class TopOpeBRepBuild_DataMapOfShapeInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepBuild_DataMapOfShapeInteger {
+	~TopOpeBRepBuild_DataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_DataMapOfShapeInteger\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_GTopo;
@@ -1624,6 +1744,11 @@ class TopOpeBRepBuild_GTopo {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GTopo CopyPermuted() const;
 
+};
+%extend TopOpeBRepBuild_GTopo {
+	~TopOpeBRepBuild_GTopo() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_GTopo\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_HBuilder;
@@ -1770,6 +1895,11 @@ class TopOpeBRepBuild_ShellFaceClassifier : public TopOpeBRepBuild_CompositeClas
 		virtual		~TopOpeBRepBuild_ShellFaceClassifier();
 
 };
+%extend TopOpeBRepBuild_ShellFaceClassifier {
+	~TopOpeBRepBuild_ShellFaceClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ShellFaceClassifier\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_EdgeBuilder;
 class TopOpeBRepBuild_EdgeBuilder : public TopOpeBRepBuild_Area1dBuilder {
@@ -1800,6 +1930,11 @@ class TopOpeBRepBuild_EdgeBuilder : public TopOpeBRepBuild_Area1dBuilder {
 		virtual		~TopOpeBRepBuild_EdgeBuilder();
 
 };
+%extend TopOpeBRepBuild_EdgeBuilder {
+	~TopOpeBRepBuild_EdgeBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_EdgeBuilder\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_ListIteratorOfListOfListOfLoop;
 class TopOpeBRepBuild_ListIteratorOfListOfListOfLoop {
@@ -1820,6 +1955,11 @@ class TopOpeBRepBuild_ListIteratorOfListOfListOfLoop {
 		TopOpeBRepBuild_ListOfLoop & Value() const;
 
 };
+%extend TopOpeBRepBuild_ListIteratorOfListOfListOfLoop {
+	~TopOpeBRepBuild_ListIteratorOfListOfListOfLoop() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ListIteratorOfListOfListOfLoop\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger;
 class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
@@ -1837,6 +1977,11 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger : public TCollectio
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger {
+	~TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo;
@@ -1982,6 +2127,11 @@ class TopOpeBRepBuild_ShapeSet {
 		virtual		TCollection_AsciiString SNameori(const TopTools_ListOfShape &S, const TCollection_AsciiString &sb="", const TCollection_AsciiString &sa="") const;
 
 };
+%extend TopOpeBRepBuild_ShapeSet {
+	~TopOpeBRepBuild_ShapeSet() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ShapeSet\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_ShellFaceSet;
 class TopOpeBRepBuild_ShellFaceSet : public TopOpeBRepBuild_ShapeSet {
@@ -1995,6 +2145,11 @@ class TopOpeBRepBuild_ShellFaceSet : public TopOpeBRepBuild_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		~TopOpeBRepBuild_ShellFaceSet();
 
+};
+%extend TopOpeBRepBuild_ShellFaceSet {
+	~TopOpeBRepBuild_ShellFaceSet() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ShellFaceSet\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape;
@@ -2044,6 +2199,11 @@ class TopOpeBRepBuild_GIter {
 		void Dump(Standard_OStream & OS) const;
 
 };
+%extend TopOpeBRepBuild_GIter {
+	~TopOpeBRepBuild_GIter() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_GIter\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal;
 class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
@@ -2092,6 +2252,11 @@ class TopOpeBRepBuild_BuilderON {
 		void GFillONParts2dWES2(const Handle_TopOpeBRepDS_Interference &I, const TopoDS_Shape &EspON);
 
 };
+%extend TopOpeBRepBuild_BuilderON {
+	~TopOpeBRepBuild_BuilderON() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_BuilderON\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_SolidBuilder;
 class TopOpeBRepBuild_SolidBuilder {
@@ -2129,6 +2294,11 @@ class TopOpeBRepBuild_SolidBuilder {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Face() const;
 
+};
+%extend TopOpeBRepBuild_SolidBuilder {
+	~TopOpeBRepBuild_SolidBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_SolidBuilder\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_Tools;
@@ -2186,6 +2356,11 @@ class TopOpeBRepBuild_Tools {
 		Standard_Boolean CheckFaceClosed2d(const TopoDS_Face &theFace);
 
 };
+%extend TopOpeBRepBuild_Tools {
+	~TopOpeBRepBuild_Tools() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_Tools\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal;
 class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
@@ -2203,6 +2378,11 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal : public TCollection_B
 		%feature("autodoc", "1");
 		const Standard_Real & Value() const;
 
+};
+%extend TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal {
+	~TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_FaceBuilder;
@@ -2255,6 +2435,11 @@ class TopOpeBRepBuild_FaceBuilder {
 		%feature("autodoc", "1");
 		Standard_Integer AddEdgeWire(const TopoDS_Shape &E, TopoDS_Shape & W) const;
 
+};
+%extend TopOpeBRepBuild_FaceBuilder {
+	~TopOpeBRepBuild_FaceBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_FaceBuilder\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_ListOfPave;
@@ -2343,6 +2528,11 @@ class TopOpeBRepBuild_WireEdgeSet : public TopOpeBRepBuild_ShapeSet {
 		virtual		~TopOpeBRepBuild_WireEdgeSet();
 
 };
+%extend TopOpeBRepBuild_WireEdgeSet {
+	~TopOpeBRepBuild_WireEdgeSet() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_WireEdgeSet\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_BlockBuilder;
 class TopOpeBRepBuild_BlockBuilder {
@@ -2382,6 +2572,11 @@ class TopOpeBRepBuild_BlockBuilder {
 		%feature("autodoc", "1");
 		Standard_Boolean CurrentBlockIsRegular();
 
+};
+%extend TopOpeBRepBuild_BlockBuilder {
+	~TopOpeBRepBuild_BlockBuilder() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_BlockBuilder\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_ListIteratorOfListOfPave;
@@ -2474,6 +2669,11 @@ class TopOpeBRepBuild_ListOfShapeListOfShape {
 		void InsertAfter(TopOpeBRepBuild_ListOfShapeListOfShape & Other, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
 
 };
+%extend TopOpeBRepBuild_ListOfShapeListOfShape {
+	~TopOpeBRepBuild_ListOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ListOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepBuild_FuseFace;
 class TopOpeBRepBuild_FuseFace {
@@ -2513,6 +2713,11 @@ class TopOpeBRepBuild_FuseFace {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & LModifVertex() const;
 
+};
+%extend TopOpeBRepBuild_FuseFace {
+	~TopOpeBRepBuild_FuseFace() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_FuseFace\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger;
@@ -2559,4 +2764,9 @@ class TopOpeBRepBuild_ShapeListOfShape {
 		%feature("autodoc", "1");
 		TopoDS_Shape & ChangeShape();
 
+};
+%extend TopOpeBRepBuild_ShapeListOfShape {
+	~TopOpeBRepBuild_ShapeListOfShape() {
+	printf("Call custom destructor for instance of TopOpeBRepBuild_ShapeListOfShape\n");
+	}
 };

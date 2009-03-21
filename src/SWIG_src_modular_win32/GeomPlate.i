@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GeomPlate
@@ -858,6 +858,11 @@ class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
 		virtual		~GeomPlate_PlateG0Criterion();
 
 };
+%extend GeomPlate_PlateG0Criterion {
+	~GeomPlate_PlateG0Criterion() {
+	printf("Call custom destructor for instance of GeomPlate_PlateG0Criterion\n");
+	}
+};
 
 %nodefaultctor GeomPlate_SequenceOfPointConstraint;
 class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
@@ -1013,6 +1018,11 @@ class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend GeomPlate_SequenceOfAij {
+	~GeomPlate_SequenceOfAij() {
+	printf("Call custom destructor for instance of GeomPlate_SequenceOfAij\n");
+	}
+};
 
 %nodefaultctor GeomPlate_BuildPlateSurface;
 class GeomPlate_BuildPlateSurface {
@@ -1086,6 +1096,11 @@ class GeomPlate_Aij {
 		GeomPlate_Aij(const Standard_Integer anInd1, const Standard_Integer anInd2, const gp_Vec &aVec);
 
 };
+%extend GeomPlate_Aij {
+	~GeomPlate_Aij() {
+	printf("Call custom destructor for instance of GeomPlate_Aij\n");
+	}
+};
 
 %nodefaultctor GeomPlate_PlateG1Criterion;
 class GeomPlate_PlateG1Criterion : public AdvApp2Var_Criterion {
@@ -1099,6 +1114,11 @@ class GeomPlate_PlateG1Criterion : public AdvApp2Var_Criterion {
 		%feature("autodoc", "1");
 		virtual		~GeomPlate_PlateG1Criterion();
 
+};
+%extend GeomPlate_PlateG1Criterion {
+	~GeomPlate_PlateG1Criterion() {
+	printf("Call custom destructor for instance of GeomPlate_PlateG1Criterion\n");
+	}
 };
 
 %nodefaultctor GeomPlate_Array1OfSequenceOfReal;
@@ -1135,6 +1155,11 @@ class GeomPlate_Array1OfSequenceOfReal {
 		%feature("autodoc", "1");
 		TColStd_SequenceOfReal & operator()(const Standard_Integer Index);
 
+};
+%extend GeomPlate_Array1OfSequenceOfReal {
+	~GeomPlate_Array1OfSequenceOfReal() {
+	printf("Call custom destructor for instance of GeomPlate_Array1OfSequenceOfReal\n");
+	}
 };
 
 %nodefaultctor GeomPlate_Array1OfHCurveOnSurface;

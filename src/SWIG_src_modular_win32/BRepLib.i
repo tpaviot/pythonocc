@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepLib
@@ -138,6 +138,11 @@ class BRepLib_Command {
 		void Check() const;
 
 };
+%extend BRepLib_Command {
+	~BRepLib_Command() {
+	printf("Call custom destructor for instance of BRepLib_Command\n");
+	}
+};
 
 %nodefaultctor BRepLib_MakeShape;
 class BRepLib_MakeShape : public BRepLib_Command {
@@ -162,6 +167,11 @@ class BRepLib_MakeShape : public BRepLib_Command {
 		virtual		~BRepLib_MakeShape();
 
 };
+%extend BRepLib_MakeShape {
+	~BRepLib_MakeShape() {
+	printf("Call custom destructor for instance of BRepLib_MakeShape\n");
+	}
+};
 
 %nodefaultctor BRepLib_MakeVertex;
 class BRepLib_MakeVertex : public BRepLib_MakeShape {
@@ -173,6 +183,11 @@ class BRepLib_MakeVertex : public BRepLib_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepLib_MakeVertex();
 
+};
+%extend BRepLib_MakeVertex {
+	~BRepLib_MakeVertex() {
+	printf("Call custom destructor for instance of BRepLib_MakeVertex\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeEdge;
@@ -284,6 +299,11 @@ class BRepLib_MakeEdge : public BRepLib_MakeShape {
 		virtual		~BRepLib_MakeEdge();
 
 };
+%extend BRepLib_MakeEdge {
+	~BRepLib_MakeEdge() {
+	printf("Call custom destructor for instance of BRepLib_MakeEdge\n");
+	}
+};
 
 %nodefaultctor BRepLib_MakeEdge2d;
 class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
@@ -368,6 +388,11 @@ class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
 		virtual		~BRepLib_MakeEdge2d();
 
 };
+%extend BRepLib_MakeEdge2d {
+	~BRepLib_MakeEdge2d() {
+	printf("Call custom destructor for instance of BRepLib_MakeEdge2d\n");
+	}
+};
 
 %nodefaultctor BRepLib_MakeShell;
 class BRepLib_MakeShell : public BRepLib_MakeShape {
@@ -387,6 +412,11 @@ class BRepLib_MakeShell : public BRepLib_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepLib_MakeShell();
 
+};
+%extend BRepLib_MakeShell {
+	~BRepLib_MakeShell() {
+	printf("Call custom destructor for instance of BRepLib_MakeShell\n");
+	}
 };
 
 %nodefaultctor BRepLib;
@@ -465,6 +495,11 @@ class BRepLib_FuseEdges {
 		void Perform();
 
 };
+%extend BRepLib_FuseEdges {
+	~BRepLib_FuseEdges() {
+	printf("Call custom destructor for instance of BRepLib_FuseEdges\n");
+	}
+};
 
 %nodefaultctor BRepLib_MakePolygon;
 class BRepLib_MakePolygon : public BRepLib_MakeShape {
@@ -502,6 +537,11 @@ class BRepLib_MakePolygon : public BRepLib_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepLib_MakePolygon();
 
+};
+%extend BRepLib_MakePolygon {
+	~BRepLib_MakePolygon() {
+	printf("Call custom destructor for instance of BRepLib_MakePolygon\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeFace;
@@ -567,6 +607,11 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 		virtual		~BRepLib_MakeFace();
 
 };
+%extend BRepLib_MakeFace {
+	~BRepLib_MakeFace() {
+	printf("Call custom destructor for instance of BRepLib_MakeFace\n");
+	}
+};
 
 %nodefaultctor BRepLib_MakeSolid;
 class BRepLib_MakeSolid : public BRepLib_MakeShape {
@@ -594,6 +639,11 @@ class BRepLib_MakeSolid : public BRepLib_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepLib_MakeSolid();
 
+};
+%extend BRepLib_MakeSolid {
+	~BRepLib_MakeSolid() {
+	printf("Call custom destructor for instance of BRepLib_MakeSolid\n");
+	}
 };
 
 %nodefaultctor BRepLib_MakeWire;
@@ -630,6 +680,11 @@ class BRepLib_MakeWire : public BRepLib_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepLib_MakeWire();
 
+};
+%extend BRepLib_MakeWire {
+	~BRepLib_MakeWire() {
+	printf("Call custom destructor for instance of BRepLib_MakeWire\n");
+	}
 };
 
 %nodefaultctor BRepLib_FindSurface;

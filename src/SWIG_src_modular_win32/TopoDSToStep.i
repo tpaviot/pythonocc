@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopoDSToStep
@@ -131,6 +131,11 @@ class TopoDSToStep_Root {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
+};
+%extend TopoDSToStep_Root {
+	~TopoDSToStep_Root() {
+	printf("Call custom destructor for instance of TopoDSToStep_Root\n");
+	}
 };
 
 %nodefaultctor TopoDSToStep_WireframeBuilder;
@@ -440,6 +445,11 @@ class TopoDSToStep_FacetedTool {
 		%feature("autodoc", "1");
 		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
 
+};
+%extend TopoDSToStep_FacetedTool {
+	~TopoDSToStep_FacetedTool() {
+	printf("Call custom destructor for instance of TopoDSToStep_FacetedTool\n");
+	}
 };
 
 %nodefaultctor TopoDSToStep_MakeGeometricCurveSet;

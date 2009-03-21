@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TShort
@@ -269,6 +269,11 @@ class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TShort_SequenceOfShortReal {
+	~TShort_SequenceOfShortReal() {
+	printf("Call custom destructor for instance of TShort_SequenceOfShortReal\n");
+	}
+};
 
 %nodefaultctor TShort_Array1OfShortReal;
 class TShort_Array1OfShortReal {
@@ -304,6 +309,11 @@ class TShort_Array1OfShortReal {
 		%feature("autodoc", "1");
 		Standard_ShortReal & operator()(const Standard_Integer Index);
 
+};
+%extend TShort_Array1OfShortReal {
+	~TShort_Array1OfShortReal() {
+	printf("Call custom destructor for instance of TShort_Array1OfShortReal\n");
+	}
 };
 
 %nodefaultctor TShort_SequenceNodeOfSequenceOfShortReal;
@@ -476,4 +486,9 @@ class TShort_Array2OfShortReal {
 		%feature("autodoc", "1");
 		Standard_ShortReal & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TShort_Array2OfShortReal {
+	~TShort_Array2OfShortReal() {
+	printf("Call custom destructor for instance of TShort_Array2OfShortReal\n");
+	}
 };

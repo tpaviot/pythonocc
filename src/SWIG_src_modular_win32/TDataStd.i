@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TDataStd
@@ -1674,6 +1674,11 @@ class TDataStd_ListOfExtendedString {
 		void InsertAfter(TDataStd_ListOfExtendedString & Other, TDataStd_ListIteratorOfListOfExtendedString & It);
 
 };
+%extend TDataStd_ListOfExtendedString {
+	~TDataStd_ListOfExtendedString() {
+	printf("Call custom destructor for instance of TDataStd_ListOfExtendedString\n");
+	}
+};
 
 %nodefaultctor TDataStd_BooleanList;
 class TDataStd_BooleanList : public TDF_Attribute {
@@ -1848,6 +1853,11 @@ class TDataStd_Array1OfTrsf {
 		gp_Trsf & operator()(const Standard_Integer Index);
 
 };
+%extend TDataStd_Array1OfTrsf {
+	~TDataStd_Array1OfTrsf() {
+	printf("Call custom destructor for instance of TDataStd_Array1OfTrsf\n");
+	}
+};
 
 %nodefaultctor TDataStd_ExtStringArray;
 class TDataStd_ExtStringArray : public TDF_Attribute {
@@ -1941,6 +1951,11 @@ class TDataStd_LabelArray1 {
 		%feature("autodoc", "1");
 		TDF_Label & operator()(const Standard_Integer Index);
 
+};
+%extend TDataStd_LabelArray1 {
+	~TDataStd_LabelArray1() {
+	printf("Call custom destructor for instance of TDataStd_LabelArray1\n");
+	}
 };
 
 %nodefaultctor TDataStd_NoteBook;
@@ -2116,6 +2131,11 @@ class TDataStd {
 		Standard_OStream & Print(const TDataStd_ConstraintEnum CTR, Standard_OStream & S);
 
 };
+%extend TDataStd {
+	~TDataStd() {
+	printf("Call custom destructor for instance of TDataStd\n");
+	}
+};
 
 %nodefaultctor TDataStd_Directory;
 class TDataStd_Directory : public TDF_Attribute {
@@ -2265,6 +2285,11 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend TDataStd_DataMapOfStringReal {
+	~TDataStd_DataMapOfStringReal() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringReal\n");
+	}
 };
 
 %nodefaultctor TDataStd_TreeNode;
@@ -2838,6 +2863,11 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 		TCollection_ExtendedString & operator()(const TCollection_ExtendedString &K);
 
 };
+%extend TDataStd_DataMapOfStringString {
+	~TDataStd_DataMapOfStringString() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringString\n");
+	}
+};
 
 %nodefaultctor TDataStd_Integer;
 class TDataStd_Integer : public TDF_Attribute {
@@ -3405,6 +3435,11 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 		Standard_Byte & operator()(const TCollection_ExtendedString &K);
 
 };
+%extend TDataStd_DataMapOfStringByte {
+	~TDataStd_DataMapOfStringByte() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringByte\n");
+	}
+};
 
 %nodefaultctor TDataStd_ExtStringList;
 class TDataStd_ExtStringList : public TDF_Attribute {
@@ -3490,6 +3525,11 @@ class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend TDataStd_DataMapOfStringInteger {
+	~TDataStd_DataMapOfStringInteger() {
+	printf("Call custom destructor for instance of TDataStd_DataMapOfStringInteger\n");
+	}
 };
 
 %nodefaultctor TDataStd_HArray1OfTrsf;
@@ -3835,6 +3875,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMa
 		const Standard_Byte & Value() const;
 
 };
+%extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
+	~TDataStd_DataMapIteratorOfDataMapOfStringByte() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringByte\n");
+	}
+};
 
 %nodefaultctor TDataStd_DataMapOfStringHArray1OfReal;
 class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
@@ -3888,6 +3933,11 @@ class TDataStd_ListIteratorOfListOfExtendedString {
 		TCollection_ExtendedString & Value() const;
 
 };
+%extend TDataStd_ListIteratorOfListOfExtendedString {
+	~TDataStd_ListIteratorOfListOfExtendedString() {
+	printf("Call custom destructor for instance of TDataStd_ListIteratorOfListOfExtendedString\n");
+	}
+};
 
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringReal;
 class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMapIterator {
@@ -3905,6 +3955,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMa
 		%feature("autodoc", "1");
 		const Standard_Real & Value() const;
 
+};
+%extend TDataStd_DataMapIteratorOfDataMapOfStringReal {
+	~TDataStd_DataMapIteratorOfDataMapOfStringReal() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringReal\n");
+	}
 };
 
 %nodefaultctor TDataStd_AsciiString;
@@ -4022,6 +4077,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_Basic
 		const TCollection_ExtendedString & Value() const;
 
 };
+%extend TDataStd_DataMapIteratorOfDataMapOfStringString {
+	~TDataStd_DataMapIteratorOfDataMapOfStringString() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringString\n");
+	}
+};
 
 %nodefaultctor TDataStd_ListOfByte;
 class TDataStd_ListOfByte {
@@ -4067,6 +4127,11 @@ class TDataStd_ListOfByte {
 		%feature("autodoc", "1");
 		void InsertAfter(TDataStd_ListOfByte & Other, TDataStd_ListIteratorOfListOfByte & It);
 
+};
+%extend TDataStd_ListOfByte {
+	~TDataStd_ListOfByte() {
+	printf("Call custom destructor for instance of TDataStd_ListOfByte\n");
+	}
 };
 
 %nodefaultctor TDataStd_Name;
@@ -4171,6 +4236,11 @@ class TDataStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_Basi
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend TDataStd_DataMapIteratorOfDataMapOfStringInteger {
+	~TDataStd_DataMapIteratorOfDataMapOfStringInteger() {
+	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringInteger\n");
+	}
 };
 
 %nodefaultctor TDataStd_Tick;
@@ -4517,6 +4587,11 @@ class TDataStd_Array1OfByte {
 		Standard_Byte & operator()(const Standard_Integer Index);
 
 };
+%extend TDataStd_Array1OfByte {
+	~TDataStd_Array1OfByte() {
+	printf("Call custom destructor for instance of TDataStd_Array1OfByte\n");
+	}
+};
 
 %nodefaultctor TDataStd_ListIteratorOfListOfByte;
 class TDataStd_ListIteratorOfListOfByte {
@@ -4536,6 +4611,11 @@ class TDataStd_ListIteratorOfListOfByte {
 		%feature("autodoc", "1");
 		Standard_Byte & Value() const;
 
+};
+%extend TDataStd_ListIteratorOfListOfByte {
+	~TDataStd_ListIteratorOfListOfByte() {
+	printf("Call custom destructor for instance of TDataStd_ListIteratorOfListOfByte\n");
+	}
 };
 
 %nodefaultctor TDataStd_HDataMapOfStringHArray1OfReal;

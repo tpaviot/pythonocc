@@ -2451,6 +2451,11 @@ class StepElement_Array1OfVolumeElementPurpose {
 		StepElement_VolumeElementPurpose & operator()(const Standard_Integer Index);
 
 };
+%extend StepElement_Array1OfVolumeElementPurpose {
+	~StepElement_Array1OfVolumeElementPurpose() {
+	printf("Call custom destructor for instance of StepElement_Array1OfVolumeElementPurpose\n");
+	}
+};
 
 %nodefaultctor StepElement_VolumeElementPurposeMember;
 class StepElement_VolumeElementPurposeMember : public StepData_SelectNamed {
@@ -2569,6 +2574,11 @@ class StepElement_Array1OfMeasureOrUnspecifiedValue {
 		%feature("autodoc", "1");
 		StepElement_MeasureOrUnspecifiedValue & operator()(const Standard_Integer Index);
 
+};
+%extend StepElement_Array1OfMeasureOrUnspecifiedValue {
+	~StepElement_Array1OfMeasureOrUnspecifiedValue() {
+	printf("Call custom destructor for instance of StepElement_Array1OfMeasureOrUnspecifiedValue\n");
+	}
 };
 
 %nodefaultctor StepElement_CurveElementSectionDerivedDefinitions;
@@ -2984,6 +2994,11 @@ class StepElement_Array2OfSurfaceElementPurpose {
 		%feature("autodoc", "1");
 		StepElement_SurfaceElementPurpose & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend StepElement_Array2OfSurfaceElementPurpose {
+	~StepElement_Array2OfSurfaceElementPurpose() {
+	printf("Call custom destructor for instance of StepElement_Array2OfSurfaceElementPurpose\n");
+	}
 };
 
 %nodefaultctor StepElement_Array1OfVolumeElementPurposeMember;

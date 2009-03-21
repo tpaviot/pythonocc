@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Select3D
@@ -718,6 +718,11 @@ class Select3D_Pnt {
 		Select3D_Pnt();
 
 };
+%extend Select3D_Pnt {
+	~Select3D_Pnt() {
+	printf("Call custom destructor for instance of Select3D_Pnt\n");
+	}
+};
 
 %nodefaultctor Select3D_SensitiveGroup;
 class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
@@ -955,6 +960,11 @@ class Select3D_Pnt2d {
 		%feature("autodoc", "1");
 		Select3D_Pnt2d();
 
+};
+%extend Select3D_Pnt2d {
+	~Select3D_Pnt2d() {
+	printf("Call custom destructor for instance of Select3D_Pnt2d\n");
+	}
 };
 
 %nodefaultctor Select3D_ListNodeOfListOfSensitiveTriangle;
@@ -1310,4 +1320,9 @@ class Select3D_Box2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsVoid() const;
 
+};
+%extend Select3D_Box2d {
+	~Select3D_Box2d() {
+	printf("Call custom destructor for instance of Select3D_Box2d\n");
+	}
 };

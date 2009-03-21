@@ -2440,6 +2440,11 @@ class StepGeom_Array1OfSurfaceBoundary {
 		StepGeom_SurfaceBoundary & operator()(const Standard_Integer Index);
 
 };
+%extend StepGeom_Array1OfSurfaceBoundary {
+	~StepGeom_Array1OfSurfaceBoundary() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfSurfaceBoundary\n");
+	}
+};
 
 %nodefaultctor StepGeom_GeometricRepresentationItem;
 class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem {
@@ -3260,6 +3265,11 @@ class StepGeom_Array1OfTrimmingSelect {
 		%feature("autodoc", "1");
 		StepGeom_TrimmingSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepGeom_Array1OfTrimmingSelect {
+	~StepGeom_Array1OfTrimmingSelect() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfTrimmingSelect\n");
+	}
 };
 
 %nodefaultctor StepGeom_PcurveOrSurface;
@@ -5899,6 +5909,11 @@ class StepGeom_Array1OfPcurveOrSurface {
 		%feature("autodoc", "1");
 		StepGeom_PcurveOrSurface & operator()(const Standard_Integer Index);
 
+};
+%extend StepGeom_Array1OfPcurveOrSurface {
+	~StepGeom_Array1OfPcurveOrSurface() {
+	printf("Call custom destructor for instance of StepGeom_Array1OfPcurveOrSurface\n");
+	}
 };
 
 %nodefaultctor StepGeom_OffsetSurface;

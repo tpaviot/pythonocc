@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Aspect
@@ -1725,6 +1725,11 @@ class Aspect_GraphicCallbackStruct {
 		Aspect_GraphicCallbackStruct();
 
 };
+%extend Aspect_GraphicCallbackStruct {
+	~Aspect_GraphicCallbackStruct() {
+	printf("Call custom destructor for instance of Aspect_GraphicCallbackStruct\n");
+	}
+};
 
 %nodefaultctor Aspect_AspectFillAreaDefinitionError;
 class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
@@ -1761,6 +1766,11 @@ class Aspect_Pixel {
 		virtual		void Print(Standard_OStream & s) const;
 
 };
+%extend Aspect_Pixel {
+	~Aspect_Pixel() {
+	printf("Call custom destructor for instance of Aspect_Pixel\n");
+	}
+};
 
 %nodefaultctor Aspect_ColorPixel;
 class Aspect_ColorPixel : public Aspect_Pixel {
@@ -1786,6 +1796,11 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 		%feature("autodoc", "1");
 		const Quantity_Color & _CSFDB_GetAspect_ColorPixelmyColor() const;
 
+};
+%extend Aspect_ColorPixel {
+	~Aspect_ColorPixel() {
+	printf("Call custom destructor for instance of Aspect_ColorPixel\n");
+	}
 };
 
 %nodefaultctor Aspect_Grid;
@@ -2045,6 +2060,11 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 		void _CSFDB_SetAspect_IndexPixelmyIndex(const Standard_Integer p);
 
 };
+%extend Aspect_IndexPixel {
+	~Aspect_IndexPixel() {
+	printf("Call custom destructor for instance of Aspect_IndexPixel\n");
+	}
+};
 
 %nodefaultctor Aspect_RGBPixel;
 class Aspect_RGBPixel {
@@ -2052,6 +2072,11 @@ class Aspect_RGBPixel {
 		%feature("autodoc", "1");
 		Aspect_RGBPixel();
 
+};
+%extend Aspect_RGBPixel {
+	~Aspect_RGBPixel() {
+	printf("Call custom destructor for instance of Aspect_RGBPixel\n");
+	}
 };
 
 %nodefaultctor Aspect_SequenceOfMarkMapEntry;
@@ -2103,6 +2128,11 @@ class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Aspect_SequenceOfMarkMapEntry {
+	~Aspect_SequenceOfMarkMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfMarkMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_Array1OfEdge;
 class Aspect_Array1OfEdge {
@@ -2138,6 +2168,11 @@ class Aspect_Array1OfEdge {
 		%feature("autodoc", "1");
 		Aspect_Edge & operator()(const Standard_Integer Index);
 
+};
+%extend Aspect_Array1OfEdge {
+	~Aspect_Array1OfEdge() {
+	printf("Call custom destructor for instance of Aspect_Array1OfEdge\n");
+	}
 };
 
 %nodefaultctor Aspect_PixmapError;
@@ -2216,6 +2251,11 @@ class Aspect_SequenceOfTypeMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Aspect_SequenceOfTypeMapEntry {
+	~Aspect_SequenceOfTypeMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfTypeMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_PixmapDefinitionError;
@@ -2539,6 +2579,11 @@ class Aspect_FontMapEntry {
 		void Dump() const;
 
 };
+%extend Aspect_FontMapEntry {
+	~Aspect_FontMapEntry() {
+	printf("Call custom destructor for instance of Aspect_FontMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
 class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
@@ -2610,6 +2655,11 @@ class Aspect_SequenceOfColor : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Aspect_SequenceOfColor {
+	~Aspect_SequenceOfColor() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfColor\n");
+	}
 };
 
 %nodefaultctor Aspect_WidthMap;
@@ -2879,6 +2929,11 @@ class Aspect_FontStyle {
 		Standard_Boolean operator!=(const Aspect_FontStyle &Other) const;
 
 };
+%extend Aspect_FontStyle {
+	~Aspect_FontStyle() {
+	printf("Call custom destructor for instance of Aspect_FontStyle\n");
+	}
+};
 
 %nodefaultctor Aspect_MarkMapEntry;
 class Aspect_MarkMapEntry {
@@ -2910,6 +2965,11 @@ class Aspect_MarkMapEntry {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend Aspect_MarkMapEntry {
+	~Aspect_MarkMapEntry() {
+	printf("Call custom destructor for instance of Aspect_MarkMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_TypeMapDefinitionError;
@@ -3057,6 +3117,11 @@ class Aspect_GenId {
 		Standard_Integer Upper() const;
 
 };
+%extend Aspect_GenId {
+	~Aspect_GenId() {
+	printf("Call custom destructor for instance of Aspect_GenId\n");
+	}
+};
 
 %nodefaultctor Aspect_PolyStyleDefinitionError;
 class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
@@ -3100,6 +3165,11 @@ class Aspect {
 		%feature("autodoc", "1");
 		Standard_Boolean Inverse(const TColStd_Array2OfReal &aMat, TColStd_Array2OfReal & Inv);
 
+};
+%extend Aspect {
+	~Aspect() {
+	printf("Call custom destructor for instance of Aspect\n");
+	}
 };
 
 %nodefaultctor Aspect_MarkerStyleDefinitionError;
@@ -3405,6 +3475,11 @@ class Aspect_ColorMapEntry {
 		void _CSFDB_SetAspect_ColorMapEntrymyIndexIsDef(const Standard_Boolean p);
 
 };
+%extend Aspect_ColorMapEntry {
+	~Aspect_ColorMapEntry() {
+	printf("Call custom destructor for instance of Aspect_ColorMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_AspectLine;
 class Aspect_AspectLine : public MMgt_TShared {
@@ -3537,6 +3612,11 @@ class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Aspect_SequenceOfColorMapEntry {
+	~Aspect_SequenceOfColorMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfColorMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_FontMap;
 class Aspect_FontMap : public MMgt_TShared {
@@ -3601,6 +3681,11 @@ class Aspect_LineStyle {
 		Standard_Boolean operator!=(const Aspect_LineStyle &Other) const;
 
 };
+%extend Aspect_LineStyle {
+	~Aspect_LineStyle() {
+	printf("Call custom destructor for instance of Aspect_LineStyle\n");
+	}
+};
 
 %nodefaultctor Aspect_MarkerStyle;
 class Aspect_MarkerStyle {
@@ -3636,6 +3721,11 @@ class Aspect_MarkerStyle {
 		%feature("autodoc", "1");
 		Standard_Boolean operator!=(const Aspect_MarkerStyle &Other) const;
 
+};
+%extend Aspect_MarkerStyle {
+	~Aspect_MarkerStyle() {
+	printf("Call custom destructor for instance of Aspect_MarkerStyle\n");
+	}
 };
 
 %nodefaultctor Aspect_LineStyleDefinitionError;
@@ -3709,6 +3799,11 @@ class Aspect_Background {
 		Quantity_Color Color() const;
 
 };
+%extend Aspect_Background {
+	~Aspect_Background() {
+	printf("Call custom destructor for instance of Aspect_Background\n");
+	}
+};
 
 %nodefaultctor Aspect_WidthMapEntry;
 class Aspect_WidthMapEntry {
@@ -3748,6 +3843,11 @@ class Aspect_WidthMapEntry {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend Aspect_WidthMapEntry {
+	~Aspect_WidthMapEntry() {
+	printf("Call custom destructor for instance of Aspect_WidthMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfWidthMapEntry;
@@ -3792,6 +3892,11 @@ class Aspect_Edge {
 		%feature("autodoc", "1");
 		Aspect_TypeOfEdge Type() const;
 
+};
+%extend Aspect_Edge {
+	~Aspect_Edge() {
+	printf("Call custom destructor for instance of Aspect_Edge\n");
+	}
 };
 
 %nodefaultctor Aspect_WindowDefinitionError;
@@ -3853,6 +3958,11 @@ class Aspect_TypeMapEntry {
 		void Dump() const;
 
 };
+%extend Aspect_TypeMapEntry {
+	~Aspect_TypeMapEntry() {
+	printf("Call custom destructor for instance of Aspect_TypeMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_SequenceOfFontMapEntry;
 class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
@@ -3903,6 +4013,11 @@ class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Aspect_SequenceOfFontMapEntry {
+	~Aspect_SequenceOfFontMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfFontMapEntry\n");
+	}
+};
 
 %nodefaultctor Aspect_SequenceOfWidthMapEntry;
 class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
@@ -3952,6 +4067,11 @@ class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Aspect_SequenceOfWidthMapEntry {
+	~Aspect_SequenceOfWidthMapEntry() {
+	printf("Call custom destructor for instance of Aspect_SequenceOfWidthMapEntry\n");
+	}
 };
 
 %nodefaultctor Aspect_GraphicDriver;

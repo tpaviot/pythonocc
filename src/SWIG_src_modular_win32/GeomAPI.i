@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GeomAPI
@@ -117,6 +117,11 @@ class GeomAPI_ExtremaSurfaceSurface {
 		const Extrema_ExtSS & Extrema() const;
 
 };
+%extend GeomAPI_ExtremaSurfaceSurface {
+	~GeomAPI_ExtremaSurfaceSurface() {
+	printf("Call custom destructor for instance of GeomAPI_ExtremaSurfaceSurface\n");
+	}
+};
 
 %nodefaultctor GeomAPI_IntCS;
 class GeomAPI_IntCS {
@@ -213,6 +218,11 @@ class GeomAPI_ExtremaCurveCurve {
 		Quantity_Length TotalLowerDistance();
 
 };
+%extend GeomAPI_ExtremaCurveCurve {
+	~GeomAPI_ExtremaCurveCurve() {
+	printf("Call custom destructor for instance of GeomAPI_ExtremaCurveCurve\n");
+	}
+};
 
 %nodefaultctor GeomAPI_ExtremaCurveSurface;
 class GeomAPI_ExtremaCurveSurface {
@@ -246,6 +256,11 @@ class GeomAPI_ExtremaCurveSurface {
 		%feature("autodoc", "1");
 		const Extrema_ExtCS & Extrema() const;
 
+};
+%extend GeomAPI_ExtremaCurveSurface {
+	~GeomAPI_ExtremaCurveSurface() {
+	printf("Call custom destructor for instance of GeomAPI_ExtremaCurveSurface\n");
+	}
 };
 
 %nodefaultctor GeomAPI_ProjectPointOnCurve;
@@ -286,6 +301,11 @@ class GeomAPI_ProjectPointOnCurve {
 		%feature("autodoc", "1");
 		const Extrema_ExtPC & Extrema() const;
 
+};
+%extend GeomAPI_ProjectPointOnCurve {
+	~GeomAPI_ProjectPointOnCurve() {
+	printf("Call custom destructor for instance of GeomAPI_ProjectPointOnCurve\n");
+	}
 };
 
 %nodefaultctor GeomAPI_PointsToBSpline;
@@ -359,6 +379,11 @@ class GeomAPI_ProjectPointOnSurf {
 		%feature("autodoc", "1");
 		const Extrema_ExtPS & Extrema() const;
 
+};
+%extend GeomAPI_ProjectPointOnSurf {
+	~GeomAPI_ProjectPointOnSurf() {
+	printf("Call custom destructor for instance of GeomAPI_ProjectPointOnSurf\n");
+	}
 };
 
 %nodefaultctor GeomAPI_PointsToBSplineSurface;

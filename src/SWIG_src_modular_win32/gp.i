@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module gp
@@ -207,6 +207,11 @@ class gp_Cone {
 		void _CSFDB_Setgp_ConesemiAngle(const Standard_Real p);
 
 };
+%extend gp_Cone {
+	~gp_Cone() {
+	printf("Call custom destructor for instance of gp_Cone\n");
+	}
+};
 
 %nodefaultctor gp_Hypr2d;
 class gp_Hypr2d {
@@ -315,6 +320,11 @@ class gp_Hypr2d {
 		void _CSFDB_Setgp_Hypr2dminorRadius(const Standard_Real p);
 
 };
+%extend gp_Hypr2d {
+	~gp_Hypr2d() {
+	printf("Call custom destructor for instance of gp_Hypr2d\n");
+	}
+};
 
 %nodefaultctor gp_Dir2d;
 class gp_Dir2d {
@@ -392,6 +402,11 @@ class gp_Dir2d {
 		%feature("autodoc", "1");
 		const gp_XY & _CSFDB_Getgp_Dir2dcoord() const;
 
+};
+%extend gp_Dir2d {
+	~gp_Dir2d() {
+	printf("Call custom destructor for instance of gp_Dir2d\n");
+	}
 };
 
 %nodefaultctor gp_Parab2d;
@@ -474,6 +489,11 @@ class gp_Parab2d {
 		%feature("autodoc", "1");
 		void _CSFDB_Setgp_Parab2dfocalLength(const Standard_Real p);
 
+};
+%extend gp_Parab2d {
+	~gp_Parab2d() {
+	printf("Call custom destructor for instance of gp_Parab2d\n");
+	}
 };
 
 %nodefaultctor gp_Mat2d;
@@ -577,6 +597,11 @@ class gp_Mat2d {
 		Standard_Real & _CSFDB_Getgp_Mat2dmatrix(const Standard_Integer i1, const Standard_Integer i2);
 
 };
+%extend gp_Mat2d {
+	~gp_Mat2d() {
+	printf("Call custom destructor for instance of gp_Mat2d\n");
+	}
+};
 
 %nodefaultctor gp_VectorWithNullMagnitude;
 class gp_VectorWithNullMagnitude : public Standard_DomainError {
@@ -677,6 +702,11 @@ class gp_Ax22d {
 		const gp_Dir2d & _CSFDB_Getgp_Ax22dvxdir() const;
 
 };
+%extend gp_Ax22d {
+	~gp_Ax22d() {
+	printf("Call custom destructor for instance of gp_Ax22d\n");
+	}
+};
 
 %nodefaultctor gp_Trsf2d;
 class gp_Trsf2d {
@@ -758,6 +788,11 @@ class gp_Trsf2d {
 		%feature("autodoc", "1");
 		const gp_XY & _CSFDB_Getgp_Trsf2dloc() const;
 
+};
+%extend gp_Trsf2d {
+	~gp_Trsf2d() {
+	printf("Call custom destructor for instance of gp_Trsf2d\n");
+	}
 };
 
 %nodefaultctor gp_Pnt;
@@ -842,6 +877,11 @@ class gp_Pnt {
 		%feature("autodoc", "1");
 		const gp_XYZ & _CSFDB_Getgp_Pntcoord() const;
 
+};
+%extend gp_Pnt {
+	~gp_Pnt() {
+	printf("Call custom destructor for instance of gp_Pnt\n");
+	}
 };
 
 %nodefaultctor gp_Vec;
@@ -1003,6 +1043,11 @@ class gp_Vec {
 		const gp_XYZ & _CSFDB_Getgp_Veccoord() const;
 
 };
+%extend gp_Vec {
+	~gp_Vec() {
+	printf("Call custom destructor for instance of gp_Vec\n");
+	}
+};
 
 %nodefaultctor gp_Trsf;
 class gp_Trsf {
@@ -1091,6 +1136,11 @@ class gp_Trsf {
 		const gp_XYZ & _CSFDB_Getgp_Trsfloc() const;
 
 };
+%extend gp_Trsf {
+	~gp_Trsf() {
+	printf("Call custom destructor for instance of gp_Trsf\n");
+	}
+};
 
 %nodefaultctor gp_Cylinder;
 class gp_Cylinder {
@@ -1168,6 +1218,11 @@ class gp_Cylinder {
 		%feature("autodoc", "1");
 		void _CSFDB_Setgp_Cylinderradius(const Standard_Real p);
 
+};
+%extend gp_Cylinder {
+	~gp_Cylinder() {
+	printf("Call custom destructor for instance of gp_Cylinder\n");
+	}
 };
 
 %nodefaultctor gp_Torus;
@@ -1258,6 +1313,11 @@ class gp_Torus {
 		%feature("autodoc", "1");
 		void _CSFDB_Setgp_TorusminorRadius(const Standard_Real p);
 
+};
+%extend gp_Torus {
+	~gp_Torus() {
+	printf("Call custom destructor for instance of gp_Torus\n");
+	}
 };
 
 %nodefaultctor gp_Dir;
@@ -1357,6 +1417,11 @@ class gp_Dir {
 		const gp_XYZ & _CSFDB_Getgp_Dircoord() const;
 
 };
+%extend gp_Dir {
+	~gp_Dir() {
+	printf("Call custom destructor for instance of gp_Dir\n");
+	}
+};
 
 %nodefaultctor gp_Circ2d;
 class gp_Circ2d {
@@ -1444,6 +1509,11 @@ class gp_Circ2d {
 		%feature("autodoc", "1");
 		void _CSFDB_Setgp_Circ2dradius(const Standard_Real p);
 
+};
+%extend gp_Circ2d {
+	~gp_Circ2d() {
+	printf("Call custom destructor for instance of gp_Circ2d\n");
+	}
 };
 
 %nodefaultctor gp_XY;
@@ -1563,6 +1633,11 @@ class gp_XY {
 		void _CSFDB_Setgp_XYy(const Standard_Real p);
 
 };
+%extend gp_XY {
+	~gp_XY() {
+	printf("Call custom destructor for instance of gp_XY\n");
+	}
+};
 
 %nodefaultctor gp_Lin2d;
 class gp_Lin2d {
@@ -1640,6 +1715,11 @@ class gp_Lin2d {
 		%feature("autodoc", "1");
 		const gp_Ax2d & _CSFDB_Getgp_Lin2dpos() const;
 
+};
+%extend gp_Lin2d {
+	~gp_Lin2d() {
+	printf("Call custom destructor for instance of gp_Lin2d\n");
+	}
 };
 
 %nodefaultctor gp_Elips2d;
@@ -1740,6 +1820,11 @@ class gp_Elips2d {
 		%feature("autodoc", "1");
 		void _CSFDB_Setgp_Elips2dminorRadius(const Standard_Real p);
 
+};
+%extend gp_Elips2d {
+	~gp_Elips2d() {
+	printf("Call custom destructor for instance of gp_Elips2d\n");
+	}
 };
 
 %nodefaultctor gp_Vec2d;
@@ -1877,6 +1962,11 @@ class gp_Vec2d {
 		const gp_XY & _CSFDB_Getgp_Vec2dcoord() const;
 
 };
+%extend gp_Vec2d {
+	~gp_Vec2d() {
+	printf("Call custom destructor for instance of gp_Vec2d\n");
+	}
+};
 
 %nodefaultctor gp_Pnt2d;
 class gp_Pnt2d {
@@ -1950,6 +2040,11 @@ class gp_Pnt2d {
 		%feature("autodoc", "1");
 		const gp_XY & _CSFDB_Getgp_Pnt2dcoord() const;
 
+};
+%extend gp_Pnt2d {
+	~gp_Pnt2d() {
+	printf("Call custom destructor for instance of gp_Pnt2d\n");
+	}
 };
 
 %nodefaultctor gp_Parab;
@@ -2029,6 +2124,11 @@ class gp_Parab {
 		void _CSFDB_Setgp_ParabfocalLength(const Standard_Real p);
 
 };
+%extend gp_Parab {
+	~gp_Parab() {
+	printf("Call custom destructor for instance of gp_Parab\n");
+	}
+};
 
 %nodefaultctor gp_Lin;
 class gp_Lin {
@@ -2107,6 +2207,11 @@ class gp_Lin {
 		const gp_Ax1 & _CSFDB_Getgp_Linpos() const;
 
 };
+%extend gp_Lin {
+	~gp_Lin() {
+	printf("Call custom destructor for instance of gp_Lin\n");
+	}
+};
 
 %nodefaultctor gp_Ax1;
 class gp_Ax1 {
@@ -2176,6 +2281,11 @@ class gp_Ax1 {
 		%feature("autodoc", "1");
 		const gp_Dir & _CSFDB_Getgp_Ax1vdir() const;
 
+};
+%extend gp_Ax1 {
+	~gp_Ax1() {
+	printf("Call custom destructor for instance of gp_Ax1\n");
+	}
 };
 
 %nodefaultctor gp_Ax2;
@@ -2254,6 +2364,11 @@ class gp_Ax2 {
 		%feature("autodoc", "1");
 		const gp_Dir & _CSFDB_Getgp_Ax2vxdir() const;
 
+};
+%extend gp_Ax2 {
+	~gp_Ax2() {
+	printf("Call custom destructor for instance of gp_Ax2\n");
+	}
 };
 
 %nodefaultctor gp_Ax3;
@@ -2345,6 +2460,11 @@ class gp_Ax3 {
 		const gp_Dir & _CSFDB_Getgp_Ax3vxdir() const;
 
 };
+%extend gp_Ax3 {
+	~gp_Ax3() {
+	printf("Call custom destructor for instance of gp_Ax3\n");
+	}
+};
 
 %nodefaultctor gp_Sphere;
 class gp_Sphere {
@@ -2423,6 +2543,11 @@ class gp_Sphere {
 		void _CSFDB_Setgp_Sphereradius(const Standard_Real p);
 
 };
+%extend gp_Sphere {
+	~gp_Sphere() {
+	printf("Call custom destructor for instance of gp_Sphere\n");
+	}
+};
 
 %nodefaultctor gp_GTrsf;
 class gp_GTrsf {
@@ -2496,6 +2621,11 @@ class gp_GTrsf {
 		%feature("autodoc", "1");
 		void _CSFDB_Setgp_GTrsfscale(const Standard_Real p);
 
+};
+%extend gp_GTrsf {
+	~gp_GTrsf() {
+	printf("Call custom destructor for instance of gp_GTrsf\n");
+	}
 };
 
 %nodefaultctor gp_Pln;
@@ -2586,6 +2716,11 @@ class gp_Pln {
 		%feature("autodoc", "1");
 		const gp_Ax3 & _CSFDB_Getgp_Plnpos() const;
 
+};
+%extend gp_Pln {
+	~gp_Pln() {
+	printf("Call custom destructor for instance of gp_Pln\n");
+	}
 };
 
 %nodefaultctor gp_Hypr;
@@ -2689,6 +2824,11 @@ class gp_Hypr {
 		void _CSFDB_Setgp_HyprminorRadius(const Standard_Real p);
 
 };
+%extend gp_Hypr {
+	~gp_Hypr() {
+	printf("Call custom destructor for instance of gp_Hypr\n");
+	}
+};
 
 %nodefaultctor gp_Circ;
 class gp_Circ {
@@ -2768,6 +2908,11 @@ class gp_Circ {
 		%feature("autodoc", "1");
 		void _CSFDB_Setgp_Circradius(const Standard_Real p);
 
+};
+%extend gp_Circ {
+	~gp_Circ() {
+	printf("Call custom destructor for instance of gp_Circ\n");
+	}
 };
 
 %nodefaultctor gp_XYZ;
@@ -2907,6 +3052,11 @@ class gp_XYZ {
 		void _CSFDB_Setgp_XYZz(const Standard_Real p);
 
 };
+%extend gp_XYZ {
+	~gp_XYZ() {
+	printf("Call custom destructor for instance of gp_XYZ\n");
+	}
+};
 
 %nodefaultctor gp_Mat;
 class gp_Mat {
@@ -3017,6 +3167,11 @@ class gp_Mat {
 		Standard_Real & _CSFDB_Getgp_Matmatrix(const Standard_Integer i1, const Standard_Integer i2);
 
 };
+%extend gp_Mat {
+	~gp_Mat() {
+	printf("Call custom destructor for instance of gp_Mat\n");
+	}
+};
 
 %nodefaultctor gp_Elips;
 class gp_Elips {
@@ -3111,6 +3266,11 @@ class gp_Elips {
 		void _CSFDB_Setgp_ElipsminorRadius(const Standard_Real p);
 
 };
+%extend gp_Elips {
+	~gp_Elips() {
+	printf("Call custom destructor for instance of gp_Elips\n");
+	}
+};
 
 %nodefaultctor gp_Ax2d;
 class gp_Ax2d {
@@ -3176,6 +3336,11 @@ class gp_Ax2d {
 		%feature("autodoc", "1");
 		const gp_Dir2d & _CSFDB_Getgp_Ax2dvdir() const;
 
+};
+%extend gp_Ax2d {
+	~gp_Ax2d() {
+	printf("Call custom destructor for instance of gp_Ax2d\n");
+	}
 };
 
 %nodefaultctor gp_GTrsf2d;
@@ -3253,6 +3418,11 @@ class gp_GTrsf2d {
 		void _CSFDB_Setgp_GTrsf2dscale(const Standard_Real p);
 
 };
+%extend gp_GTrsf2d {
+	~gp_GTrsf2d() {
+	printf("Call custom destructor for instance of gp_GTrsf2d\n");
+	}
+};
 
 %nodefaultctor gp;
 class gp {
@@ -3294,4 +3464,9 @@ class gp {
 		%feature("autodoc", "1");
 		const gp_Ax2d & OY2d();
 
+};
+%extend gp {
+	~gp() {
+	printf("Call custom destructor for instance of gp\n");
+	}
 };

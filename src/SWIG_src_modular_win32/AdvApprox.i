@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module AdvApprox
@@ -93,6 +93,11 @@ class AdvApprox_Cutting {
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
+%extend AdvApprox_Cutting {
+	~AdvApprox_Cutting() {
+	printf("Call custom destructor for instance of AdvApprox_Cutting\n");
+	}
+};
 
 %nodefaultctor AdvApprox_DichoCutting;
 class AdvApprox_DichoCutting : public AdvApprox_Cutting {
@@ -102,6 +107,11 @@ class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 		%feature("autodoc", "1");
 		virtual		~AdvApprox_DichoCutting();
 
+};
+%extend AdvApprox_DichoCutting {
+	~AdvApprox_DichoCutting() {
+	printf("Call custom destructor for instance of AdvApprox_DichoCutting\n");
+	}
 };
 
 %nodefaultctor AdvApprox_ApproxAFunction;
@@ -168,6 +178,11 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 		virtual		~AdvApprox_PrefAndRec();
 
 };
+%extend AdvApprox_PrefAndRec {
+	~AdvApprox_PrefAndRec() {
+	printf("Call custom destructor for instance of AdvApprox_PrefAndRec\n");
+	}
+};
 
 %nodefaultctor AdvApprox_PrefCutting;
 class AdvApprox_PrefCutting : public AdvApprox_Cutting {
@@ -179,6 +194,11 @@ class AdvApprox_PrefCutting : public AdvApprox_Cutting {
 		%feature("autodoc", "1");
 		virtual		~AdvApprox_PrefCutting();
 
+};
+%extend AdvApprox_PrefCutting {
+	~AdvApprox_PrefCutting() {
+	printf("Call custom destructor for instance of AdvApprox_PrefCutting\n");
+	}
 };
 
 %nodefaultctor AdvApprox_SimpleApprox;

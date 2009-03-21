@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module AppBlend
@@ -154,6 +154,11 @@ class AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 
+};
+%extend AppBlend_Approx {
+	~AppBlend_Approx() {
+	printf("Call custom destructor for instance of AppBlend_Approx\n");
+	}
 };
 
 %nodefaultctor AppBlend_SequenceOfArray1OfPnt2d;

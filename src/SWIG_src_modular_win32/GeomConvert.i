@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GeomConvert
@@ -149,6 +149,11 @@ class GeomConvert_BSplineSurfaceKnotSplitting {
 		Standard_Integer VSplitValue(const Standard_Integer VIndex) const;
 
 };
+%extend GeomConvert_BSplineSurfaceKnotSplitting {
+	~GeomConvert_BSplineSurfaceKnotSplitting() {
+	printf("Call custom destructor for instance of GeomConvert_BSplineSurfaceKnotSplitting\n");
+	}
+};
 
 %nodefaultctor GeomConvert_BSplineCurveKnotSplitting;
 class GeomConvert_BSplineCurveKnotSplitting {
@@ -164,6 +169,11 @@ class GeomConvert_BSplineCurveKnotSplitting {
 		%feature("autodoc", "1");
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
+};
+%extend GeomConvert_BSplineCurveKnotSplitting {
+	~GeomConvert_BSplineCurveKnotSplitting() {
+	printf("Call custom destructor for instance of GeomConvert_BSplineCurveKnotSplitting\n");
+	}
 };
 
 %nodefaultctor GeomConvert;

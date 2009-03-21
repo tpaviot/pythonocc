@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GProp
@@ -157,6 +157,11 @@ class GProp_GProps {
 		Standard_Real RadiusOfGyration(const gp_Ax1 &A) const;
 
 };
+%extend GProp_GProps {
+	~GProp_GProps() {
+	printf("Call custom destructor for instance of GProp_GProps\n");
+	}
+};
 
 %nodefaultctor GProp_PGProps;
 class GProp_PGProps : public GProp_GProps {
@@ -187,6 +192,11 @@ class GProp_PGProps : public GProp_GProps {
 		void Barycentre(const TColgp_Array2OfPnt &Pnts, const TColStd_Array2OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
 
 };
+%extend GProp_PGProps {
+	~GProp_PGProps() {
+	printf("Call custom destructor for instance of GProp_PGProps\n");
+	}
+};
 
 %nodefaultctor GProp_PrincipalProps;
 class GProp_PrincipalProps {
@@ -214,6 +224,11 @@ class GProp_PrincipalProps {
 		%feature("autodoc", "1");
 		void RadiusOfGyration(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend GProp_PrincipalProps {
+	~GProp_PrincipalProps() {
+	printf("Call custom destructor for instance of GProp_PrincipalProps\n");
+	}
 };
 
 %nodefaultctor GProp_UndefinedAxis;
@@ -271,6 +286,11 @@ class GProp_SelGProps : public GProp_GProps {
 		void Perform(const gp_Torus &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
 
 };
+%extend GProp_SelGProps {
+	~GProp_SelGProps() {
+	printf("Call custom destructor for instance of GProp_SelGProps\n");
+	}
+};
 
 %nodefaultctor GProp_CelGProps;
 class GProp_CelGProps : public GProp_GProps {
@@ -292,6 +312,11 @@ class GProp_CelGProps : public GProp_GProps {
 		%feature("autodoc", "1");
 		void Perform(const gp_Lin &C, const Standard_Real U1, const Standard_Real U2);
 
+};
+%extend GProp_CelGProps {
+	~GProp_CelGProps() {
+	printf("Call custom destructor for instance of GProp_CelGProps\n");
+	}
 };
 
 %nodefaultctor GProp_VelGProps;
@@ -321,6 +346,11 @@ class GProp_VelGProps : public GProp_GProps {
 		void Perform(const gp_Torus &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
 
 };
+%extend GProp_VelGProps {
+	~GProp_VelGProps() {
+	printf("Call custom destructor for instance of GProp_VelGProps\n");
+	}
+};
 
 %nodefaultctor GProp;
 class GProp {
@@ -332,6 +362,11 @@ class GProp {
 		%feature("autodoc", "1");
 		void HOperator(const gp_Pnt &G, const gp_Pnt &Q, const Standard_Real Mass, gp_Mat & Operator);
 
+};
+%extend GProp {
+	~GProp() {
+	printf("Call custom destructor for instance of GProp\n");
+	}
 };
 
 %nodefaultctor GProp_PEquation;
@@ -358,4 +393,9 @@ class GProp_PEquation {
 		%feature("autodoc", "1");
 		void Box(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
 
+};
+%extend GProp_PEquation {
+	~GProp_PEquation() {
+	printf("Call custom destructor for instance of GProp_PEquation\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module MDF
@@ -745,6 +745,11 @@ class MDF {
 		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
+%extend MDF {
+	~MDF() {
+	printf("Call custom destructor for instance of MDF\n");
+	}
+};
 
 %nodefaultctor MDF_DataMapIteratorOfTypeARDriverMap;
 class MDF_DataMapIteratorOfTypeARDriverMap : public TCollection_BasicMapIterator {
@@ -1160,6 +1165,11 @@ class MDF_TypeDriverListMapOfARDriverTable : public TCollection_BasicMap {
 		MDF_DriverListOfARDriverTable & operator()(const Handle_Standard_Type &K);
 
 };
+%extend MDF_TypeDriverListMapOfARDriverTable {
+	~MDF_TypeDriverListMapOfARDriverTable() {
+	printf("Call custom destructor for instance of MDF_TypeDriverListMapOfARDriverTable\n");
+	}
+};
 
 %nodefaultctor MDF_ListIteratorOfDriverListOfARDriverTable;
 class MDF_ListIteratorOfDriverListOfARDriverTable {
@@ -1315,6 +1325,11 @@ class MDF_Tool {
 		void ReadAttributes(const MDF_TypeARDriverMap &aDriverMap, const Handle_MDF_RRelocationTable &aReloc);
 
 };
+%extend MDF_Tool {
+	~MDF_Tool() {
+	printf("Call custom destructor for instance of MDF_Tool\n");
+	}
+};
 
 %nodefaultctor MDF_ReferenceRetrievalDriver;
 class MDF_ReferenceRetrievalDriver : public MDF_ARDriver {
@@ -1372,6 +1387,11 @@ class MDF_TypeDriverListMapOfASDriverTable : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		MDF_DriverListOfASDriverTable & operator()(const Handle_Standard_Type &K);
 
+};
+%extend MDF_TypeDriverListMapOfASDriverTable {
+	~MDF_TypeDriverListMapOfASDriverTable() {
+	printf("Call custom destructor for instance of MDF_TypeDriverListMapOfASDriverTable\n");
+	}
 };
 
 %nodefaultctor MDF_ASDriverSequence;

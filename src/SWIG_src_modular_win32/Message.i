@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Message
@@ -637,6 +637,11 @@ class Message_ListOfMsg {
 		void InsertAfter(Message_ListOfMsg & Other, Message_ListIteratorOfListOfMsg & It);
 
 };
+%extend Message_ListOfMsg {
+	~Message_ListOfMsg() {
+	printf("Call custom destructor for instance of Message_ListOfMsg\n");
+	}
+};
 
 %nodefaultctor Message_SequenceOfPrinters;
 class Message_SequenceOfPrinters : public TCollection_BaseSequence {
@@ -761,6 +766,11 @@ class Message_MsgFile {
 		const TCollection_ExtendedString & Msg(const TCollection_AsciiString &key);
 
 };
+%extend Message_MsgFile {
+	~Message_MsgFile() {
+	printf("Call custom destructor for instance of Message_MsgFile\n");
+	}
+};
 
 %nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
 class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
@@ -855,6 +865,11 @@ class Message_SequenceOfProgressScale : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Message_SequenceOfProgressScale {
+	~Message_SequenceOfProgressScale() {
+	printf("Call custom destructor for instance of Message_SequenceOfProgressScale\n");
+	}
+};
 
 %nodefaultctor Message_PrinterOStream;
 class Message_PrinterOStream : public Message_Printer {
@@ -915,6 +930,11 @@ class Message_ListIteratorOfListOfMsg {
 		Message_Msg & Value() const;
 
 };
+%extend Message_ListIteratorOfListOfMsg {
+	~Message_ListIteratorOfListOfMsg() {
+	printf("Call custom destructor for instance of Message_ListIteratorOfListOfMsg\n");
+	}
+};
 
 %nodefaultctor Message_ProgressSentry;
 class Message_ProgressSentry {
@@ -938,6 +958,11 @@ class Message_ProgressSentry {
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 
+};
+%extend Message_ProgressSentry {
+	~Message_ProgressSentry() {
+	printf("Call custom destructor for instance of Message_ProgressSentry\n");
+	}
 };
 
 %nodefaultctor Message_Msg;
@@ -980,4 +1005,9 @@ class Message_Msg {
 		%feature("autodoc", "1");
 		const TCollection_ExtendedString & Get();
 
+};
+%extend Message_Msg {
+	~Message_Msg() {
+	printf("Call custom destructor for instance of Message_Msg\n");
+	}
 };

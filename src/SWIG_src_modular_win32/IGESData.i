@@ -1053,6 +1053,11 @@ class IGESData_IGESDumper {
 		void OwnDump(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESData_IGESDumper {
+	~IGESData_IGESDumper() {
+	printf("Call custom destructor for instance of IGESData_IGESDumper\n");
+	}
+};
 
 %nodefaultctor IGESData_NodeOfWriterLib;
 class IGESData_NodeOfWriterLib : public MMgt_TShared {
@@ -1118,6 +1123,11 @@ class IGESData_IGESType {
 		void Nullify();
 
 };
+%extend IGESData_IGESType {
+	~IGESData_IGESType() {
+	printf("Call custom destructor for instance of IGESData_IGESType\n");
+	}
+};
 
 %nodefaultctor IGESData_TransfEntity;
 class IGESData_TransfEntity : public IGESData_IGESEntity {
@@ -1163,6 +1173,11 @@ class IGESData_DirPart {
 		%feature("autodoc", "1");
 		Standard_Character & _CSFDB_GetIGESData_DirPartthesubs(const Standard_Integer i1);
 
+};
+%extend IGESData_DirPart {
+	~IGESData_DirPart() {
+	printf("Call custom destructor for instance of IGESData_DirPart\n");
+	}
 };
 
 %nodefaultctor IGESData_Array1OfIGESEntity;
@@ -1279,6 +1294,11 @@ class IGESData_IGESReaderTool : public Interface_FileReaderTool {
 		virtual		~IGESData_IGESReaderTool();
 
 };
+%extend IGESData_IGESReaderTool {
+	~IGESData_IGESReaderTool() {
+	printf("Call custom destructor for instance of IGESData_IGESReaderTool\n");
+	}
+};
 
 %nodefaultctor IGESData_Array1OfDirPart;
 class IGESData_Array1OfDirPart {
@@ -1314,6 +1334,11 @@ class IGESData_Array1OfDirPart {
 		%feature("autodoc", "1");
 		IGESData_DirPart & operator()(const Standard_Integer Index);
 
+};
+%extend IGESData_Array1OfDirPart {
+	~IGESData_Array1OfDirPart() {
+	printf("Call custom destructor for instance of IGESData_Array1OfDirPart\n");
+	}
 };
 
 %nodefaultctor IGESData_HArray1OfIGESEntity;
@@ -1930,6 +1955,11 @@ class IGESData_ParamCursor {
 		Standard_Boolean Advance() const;
 
 };
+%extend IGESData_ParamCursor {
+	~IGESData_ParamCursor() {
+	printf("Call custom destructor for instance of IGESData_ParamCursor\n");
+	}
+};
 
 %nodefaultctor IGESData_ViewKindEntity;
 class IGESData_ViewKindEntity : public IGESData_IGESEntity {
@@ -2101,6 +2131,11 @@ class IGESData_DirChecker {
 		Standard_Boolean Correct(const Handle_IGESData_IGESEntity &ent) const;
 
 };
+%extend IGESData_DirChecker {
+	~IGESData_DirChecker() {
+	printf("Call custom destructor for instance of IGESData_DirChecker\n");
+	}
+};
 
 %nodefaultctor IGESData_DefSwitch;
 class IGESData_DefSwitch {
@@ -2124,6 +2159,11 @@ class IGESData_DefSwitch {
 		%feature("autodoc", "1");
 		void _CSFDB_SetIGESData_DefSwitchtheval(const Standard_Integer p);
 
+};
+%extend IGESData_DefSwitch {
+	~IGESData_DefSwitch() {
+	printf("Call custom destructor for instance of IGESData_DefSwitch\n");
+	}
 };
 
 %nodefaultctor IGESData_LineFontEntity;

@@ -847,6 +847,11 @@ class StepData_StepDumper {
 		Standard_Boolean Dump(const Handle_Message_Messenger &S, const Standard_Integer num, const Standard_Integer level);
 
 };
+%extend StepData_StepDumper {
+	~StepData_StepDumper() {
+	printf("Call custom destructor for instance of StepData_StepDumper\n");
+	}
+};
 
 %nodefaultctor StepData_SelectMember;
 class StepData_SelectMember : public MMgt_TShared {
@@ -1183,6 +1188,11 @@ class StepData_EnumTool {
 		%feature("autodoc", "1");
 		Standard_Integer Value(const TCollection_AsciiString &txt) const;
 
+};
+%extend StepData_EnumTool {
+	~StepData_EnumTool() {
+	printf("Call custom destructor for instance of StepData_EnumTool\n");
+	}
 };
 
 %nodefaultctor StepData_PDescr;
@@ -1536,6 +1546,11 @@ class StepData_FieldList {
 		void FillShared(Interface_EntityIterator & iter) const;
 
 };
+%extend StepData_FieldList {
+	~StepData_FieldList() {
+	printf("Call custom destructor for instance of StepData_FieldList\n");
+	}
+};
 
 %nodefaultctor StepData_FieldList1;
 class StepData_FieldList1 : public StepData_FieldList {
@@ -1547,6 +1562,11 @@ class StepData_FieldList1 : public StepData_FieldList {
 		%feature("autodoc", "1");
 		virtual		~StepData_FieldList1();
 
+};
+%extend StepData_FieldList1 {
+	~StepData_FieldList1() {
+	printf("Call custom destructor for instance of StepData_FieldList1\n");
+	}
 };
 
 %nodefaultctor StepData_FieldListD;
@@ -1568,6 +1588,11 @@ class StepData_FieldListD : public StepData_FieldList {
 		virtual		~StepData_FieldListD();
 
 };
+%extend StepData_FieldListD {
+	~StepData_FieldListD() {
+	printf("Call custom destructor for instance of StepData_FieldListD\n");
+	}
+};
 
 %nodefaultctor StepData_FieldListN;
 class StepData_FieldListN : public StepData_FieldList {
@@ -1585,6 +1610,11 @@ class StepData_FieldListN : public StepData_FieldList {
 		%feature("autodoc", "1");
 		virtual		~StepData_FieldListN();
 
+};
+%extend StepData_FieldListN {
+	~StepData_FieldListN() {
+	printf("Call custom destructor for instance of StepData_FieldListN\n");
+	}
 };
 
 %nodefaultctor StepData_SelectNamed;
@@ -1758,6 +1788,11 @@ class StepData_Array1OfField {
 		%feature("autodoc", "1");
 		StepData_Field & operator()(const Standard_Integer Index);
 
+};
+%extend StepData_Array1OfField {
+	~StepData_Array1OfField() {
+	printf("Call custom destructor for instance of StepData_Array1OfField\n");
+	}
 };
 
 %nodefaultctor StepData_SelectArrReal;
@@ -2300,6 +2335,11 @@ class StepData_StepReaderTool : public Interface_FileReaderTool {
 		%feature("autodoc", "1");
 		virtual		~StepData_StepReaderTool();
 
+};
+%extend StepData_StepReaderTool {
+	~StepData_StepReaderTool() {
+	printf("Call custom destructor for instance of StepData_StepReaderTool\n");
+	}
 };
 
 %nodefaultctor StepData_DefaultGeneral;

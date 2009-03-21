@@ -99,6 +99,11 @@ class RWStepRepr_RWConfigurationDesign {
 		void Share(const Handle_StepRepr_ConfigurationDesign &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWConfigurationDesign {
+	~RWStepRepr_RWConfigurationDesign() {
+	printf("Call custom destructor for instance of RWStepRepr_RWConfigurationDesign\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation;
 class RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
@@ -114,6 +119,11 @@ class RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
+	~RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWMaterialPropertyRepresentation;
@@ -131,6 +141,11 @@ class RWStepRepr_RWMaterialPropertyRepresentation {
 		void Share(const Handle_StepRepr_MaterialPropertyRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWMaterialPropertyRepresentation {
+	~RWStepRepr_RWMaterialPropertyRepresentation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWMaterialPropertyRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWShapeAspectRelationship;
 class RWStepRepr_RWShapeAspectRelationship {
@@ -146,6 +161,11 @@ class RWStepRepr_RWShapeAspectRelationship {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_ShapeAspectRelationship &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWShapeAspectRelationship {
+	~RWStepRepr_RWShapeAspectRelationship() {
+	printf("Call custom destructor for instance of RWStepRepr_RWShapeAspectRelationship\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWAssemblyComponentUsage;
@@ -163,6 +183,11 @@ class RWStepRepr_RWAssemblyComponentUsage {
 		void Share(const Handle_StepRepr_AssemblyComponentUsage &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWAssemblyComponentUsage {
+	~RWStepRepr_RWAssemblyComponentUsage() {
+	printf("Call custom destructor for instance of RWStepRepr_RWAssemblyComponentUsage\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWQuantifiedAssemblyComponentUsage;
 class RWStepRepr_RWQuantifiedAssemblyComponentUsage {
@@ -178,6 +203,11 @@ class RWStepRepr_RWQuantifiedAssemblyComponentUsage {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_QuantifiedAssemblyComponentUsage &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWQuantifiedAssemblyComponentUsage {
+	~RWStepRepr_RWQuantifiedAssemblyComponentUsage() {
+	printf("Call custom destructor for instance of RWStepRepr_RWQuantifiedAssemblyComponentUsage\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWCompoundRepresentationItem;
@@ -195,6 +225,11 @@ class RWStepRepr_RWCompoundRepresentationItem {
 		void Share(const Handle_StepRepr_CompoundRepresentationItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWCompoundRepresentationItem {
+	~RWStepRepr_RWCompoundRepresentationItem() {
+	printf("Call custom destructor for instance of RWStepRepr_RWCompoundRepresentationItem\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWDerivedShapeAspect;
 class RWStepRepr_RWDerivedShapeAspect {
@@ -210,6 +245,11 @@ class RWStepRepr_RWDerivedShapeAspect {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_DerivedShapeAspect &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWDerivedShapeAspect {
+	~RWStepRepr_RWDerivedShapeAspect() {
+	printf("Call custom destructor for instance of RWStepRepr_RWDerivedShapeAspect\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWCompositeShapeAspect;
@@ -227,6 +267,11 @@ class RWStepRepr_RWCompositeShapeAspect {
 		void Share(const Handle_StepRepr_CompositeShapeAspect &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWCompositeShapeAspect {
+	~RWStepRepr_RWCompositeShapeAspect() {
+	printf("Call custom destructor for instance of RWStepRepr_RWCompositeShapeAspect\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWExtension;
 class RWStepRepr_RWExtension {
@@ -242,6 +287,11 @@ class RWStepRepr_RWExtension {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_Extension &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWExtension {
+	~RWStepRepr_RWExtension() {
+	printf("Call custom destructor for instance of RWStepRepr_RWExtension\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWRepresentationRelationship;
@@ -259,6 +309,11 @@ class RWStepRepr_RWRepresentationRelationship {
 		void Share(const Handle_StepRepr_RepresentationRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWRepresentationRelationship {
+	~RWStepRepr_RWRepresentationRelationship() {
+	printf("Call custom destructor for instance of RWStepRepr_RWRepresentationRelationship\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWConfigurationItem;
 class RWStepRepr_RWConfigurationItem {
@@ -275,6 +330,11 @@ class RWStepRepr_RWConfigurationItem {
 		void Share(const Handle_StepRepr_ConfigurationItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWConfigurationItem {
+	~RWStepRepr_RWConfigurationItem() {
+	printf("Call custom destructor for instance of RWStepRepr_RWConfigurationItem\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWFunctionallyDefinedTransformation;
 class RWStepRepr_RWFunctionallyDefinedTransformation {
@@ -288,6 +348,11 @@ class RWStepRepr_RWFunctionallyDefinedTransformation {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_FunctionallyDefinedTransformation &ent) const;
 
+};
+%extend RWStepRepr_RWFunctionallyDefinedTransformation {
+	~RWStepRepr_RWFunctionallyDefinedTransformation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWFunctionallyDefinedTransformation\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWGlobalUnitAssignedContext;
@@ -305,6 +370,11 @@ class RWStepRepr_RWGlobalUnitAssignedContext {
 		void Share(const Handle_StepRepr_GlobalUnitAssignedContext &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWGlobalUnitAssignedContext {
+	~RWStepRepr_RWGlobalUnitAssignedContext() {
+	printf("Call custom destructor for instance of RWStepRepr_RWGlobalUnitAssignedContext\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWSpecifiedHigherUsageOccurrence;
 class RWStepRepr_RWSpecifiedHigherUsageOccurrence {
@@ -320,6 +390,11 @@ class RWStepRepr_RWSpecifiedHigherUsageOccurrence {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_SpecifiedHigherUsageOccurrence &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWSpecifiedHigherUsageOccurrence {
+	~RWStepRepr_RWSpecifiedHigherUsageOccurrence() {
+	printf("Call custom destructor for instance of RWStepRepr_RWSpecifiedHigherUsageOccurrence\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWConfigurationEffectivity;
@@ -337,6 +412,11 @@ class RWStepRepr_RWConfigurationEffectivity {
 		void Share(const Handle_StepRepr_ConfigurationEffectivity &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWConfigurationEffectivity {
+	~RWStepRepr_RWConfigurationEffectivity() {
+	printf("Call custom destructor for instance of RWStepRepr_RWConfigurationEffectivity\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWMakeFromUsageOption;
 class RWStepRepr_RWMakeFromUsageOption {
@@ -353,6 +433,11 @@ class RWStepRepr_RWMakeFromUsageOption {
 		void Share(const Handle_StepRepr_MakeFromUsageOption &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWMakeFromUsageOption {
+	~RWStepRepr_RWMakeFromUsageOption() {
+	printf("Call custom destructor for instance of RWStepRepr_RWMakeFromUsageOption\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWReprItemAndLengthMeasureWithUnit;
 class RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
@@ -366,6 +451,11 @@ class RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ReprItemAndLengthMeasureWithUnit &ent) const;
 
+};
+%extend RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
+	~RWStepRepr_RWReprItemAndLengthMeasureWithUnit() {
+	printf("Call custom destructor for instance of RWStepRepr_RWReprItemAndLengthMeasureWithUnit\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWMeasureRepresentationItem;
@@ -383,6 +473,11 @@ class RWStepRepr_RWMeasureRepresentationItem {
 		void Share(const Handle_StepRepr_MeasureRepresentationItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWMeasureRepresentationItem {
+	~RWStepRepr_RWMeasureRepresentationItem() {
+	printf("Call custom destructor for instance of RWStepRepr_RWMeasureRepresentationItem\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWStructuralResponseProperty;
 class RWStepRepr_RWStructuralResponseProperty {
@@ -398,6 +493,11 @@ class RWStepRepr_RWStructuralResponseProperty {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_StructuralResponseProperty &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWStructuralResponseProperty {
+	~RWStepRepr_RWStructuralResponseProperty() {
+	printf("Call custom destructor for instance of RWStepRepr_RWStructuralResponseProperty\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWMappedItem;
@@ -415,6 +515,11 @@ class RWStepRepr_RWMappedItem {
 		void Share(const Handle_StepRepr_MappedItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWMappedItem {
+	~RWStepRepr_RWMappedItem() {
+	printf("Call custom destructor for instance of RWStepRepr_RWMappedItem\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWParametricRepresentationContext;
 class RWStepRepr_RWParametricRepresentationContext {
@@ -428,6 +533,11 @@ class RWStepRepr_RWParametricRepresentationContext {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ParametricRepresentationContext &ent) const;
 
+};
+%extend RWStepRepr_RWParametricRepresentationContext {
+	~RWStepRepr_RWParametricRepresentationContext() {
+	printf("Call custom destructor for instance of RWStepRepr_RWParametricRepresentationContext\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWRepresentation;
@@ -445,6 +555,11 @@ class RWStepRepr_RWRepresentation {
 		void Share(const Handle_StepRepr_Representation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWRepresentation {
+	~RWStepRepr_RWRepresentation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWMaterialDesignation;
 class RWStepRepr_RWMaterialDesignation {
@@ -460,6 +575,11 @@ class RWStepRepr_RWMaterialDesignation {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_MaterialDesignation &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWMaterialDesignation {
+	~RWStepRepr_RWMaterialDesignation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWMaterialDesignation\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWProductDefinitionShape;
@@ -477,6 +597,11 @@ class RWStepRepr_RWProductDefinitionShape {
 		void Share(const Handle_StepRepr_ProductDefinitionShape &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWProductDefinitionShape {
+	~RWStepRepr_RWProductDefinitionShape() {
+	printf("Call custom destructor for instance of RWStepRepr_RWProductDefinitionShape\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWDataEnvironment;
 class RWStepRepr_RWDataEnvironment {
@@ -492,6 +617,11 @@ class RWStepRepr_RWDataEnvironment {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_DataEnvironment &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWDataEnvironment {
+	~RWStepRepr_RWDataEnvironment() {
+	printf("Call custom destructor for instance of RWStepRepr_RWDataEnvironment\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWAssemblyComponentUsageSubstitute;
@@ -509,6 +639,11 @@ class RWStepRepr_RWAssemblyComponentUsageSubstitute {
 		void Share(const Handle_StepRepr_AssemblyComponentUsageSubstitute &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWAssemblyComponentUsageSubstitute {
+	~RWStepRepr_RWAssemblyComponentUsageSubstitute() {
+	printf("Call custom destructor for instance of RWStepRepr_RWAssemblyComponentUsageSubstitute\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWPropertyDefinition;
 class RWStepRepr_RWPropertyDefinition {
@@ -524,6 +659,11 @@ class RWStepRepr_RWPropertyDefinition {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_PropertyDefinition &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWPropertyDefinition {
+	~RWStepRepr_RWPropertyDefinition() {
+	printf("Call custom destructor for instance of RWStepRepr_RWPropertyDefinition\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWRepresentationMap;
@@ -541,6 +681,11 @@ class RWStepRepr_RWRepresentationMap {
 		void Share(const Handle_StepRepr_RepresentationMap &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWRepresentationMap {
+	~RWStepRepr_RWRepresentationMap() {
+	printf("Call custom destructor for instance of RWStepRepr_RWRepresentationMap\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWMaterialProperty;
 class RWStepRepr_RWMaterialProperty {
@@ -556,6 +701,11 @@ class RWStepRepr_RWMaterialProperty {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_MaterialProperty &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWMaterialProperty {
+	~RWStepRepr_RWMaterialProperty() {
+	printf("Call custom destructor for instance of RWStepRepr_RWMaterialProperty\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWShapeAspectDerivingRelationship;
@@ -573,6 +723,11 @@ class RWStepRepr_RWShapeAspectDerivingRelationship {
 		void Share(const Handle_StepRepr_ShapeAspectDerivingRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWShapeAspectDerivingRelationship {
+	~RWStepRepr_RWShapeAspectDerivingRelationship() {
+	printf("Call custom destructor for instance of RWStepRepr_RWShapeAspectDerivingRelationship\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWDescriptiveRepresentationItem;
 class RWStepRepr_RWDescriptiveRepresentationItem {
@@ -586,6 +741,11 @@ class RWStepRepr_RWDescriptiveRepresentationItem {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_DescriptiveRepresentationItem &ent) const;
 
+};
+%extend RWStepRepr_RWDescriptiveRepresentationItem {
+	~RWStepRepr_RWDescriptiveRepresentationItem() {
+	printf("Call custom destructor for instance of RWStepRepr_RWDescriptiveRepresentationItem\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWShapeAspectTransition;
@@ -603,6 +763,11 @@ class RWStepRepr_RWShapeAspectTransition {
 		void Share(const Handle_StepRepr_ShapeAspectTransition &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWShapeAspectTransition {
+	~RWStepRepr_RWShapeAspectTransition() {
+	printf("Call custom destructor for instance of RWStepRepr_RWShapeAspectTransition\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWDefinitionalRepresentation;
 class RWStepRepr_RWDefinitionalRepresentation {
@@ -619,6 +784,11 @@ class RWStepRepr_RWDefinitionalRepresentation {
 		void Share(const Handle_StepRepr_DefinitionalRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWDefinitionalRepresentation {
+	~RWStepRepr_RWDefinitionalRepresentation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWDefinitionalRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWRepresentationContext;
 class RWStepRepr_RWRepresentationContext {
@@ -632,6 +802,11 @@ class RWStepRepr_RWRepresentationContext {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_RepresentationContext &ent) const;
 
+};
+%extend RWStepRepr_RWRepresentationContext {
+	~RWStepRepr_RWRepresentationContext() {
+	printf("Call custom destructor for instance of RWStepRepr_RWRepresentationContext\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWRepresentationRelationshipWithTransformation;
@@ -649,6 +824,11 @@ class RWStepRepr_RWRepresentationRelationshipWithTransformation {
 		void Share(const Handle_StepRepr_RepresentationRelationshipWithTransformation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWRepresentationRelationshipWithTransformation {
+	~RWStepRepr_RWRepresentationRelationshipWithTransformation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWRepresentationRelationshipWithTransformation\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWGlobalUncertaintyAssignedContext;
 class RWStepRepr_RWGlobalUncertaintyAssignedContext {
@@ -664,6 +844,11 @@ class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_GlobalUncertaintyAssignedContext &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWGlobalUncertaintyAssignedContext {
+	~RWStepRepr_RWGlobalUncertaintyAssignedContext() {
+	printf("Call custom destructor for instance of RWStepRepr_RWGlobalUncertaintyAssignedContext\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWShapeAspect;
@@ -681,6 +866,11 @@ class RWStepRepr_RWShapeAspect {
 		void Share(const Handle_StepRepr_ShapeAspect &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWShapeAspect {
+	~RWStepRepr_RWShapeAspect() {
+	printf("Call custom destructor for instance of RWStepRepr_RWShapeAspect\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWPropertyDefinitionRelationship;
 class RWStepRepr_RWPropertyDefinitionRelationship {
@@ -696,6 +886,11 @@ class RWStepRepr_RWPropertyDefinitionRelationship {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_PropertyDefinitionRelationship &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWPropertyDefinitionRelationship {
+	~RWStepRepr_RWPropertyDefinitionRelationship() {
+	printf("Call custom destructor for instance of RWStepRepr_RWPropertyDefinitionRelationship\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWPropertyDefinitionRepresentation;
@@ -713,6 +908,11 @@ class RWStepRepr_RWPropertyDefinitionRepresentation {
 		void Share(const Handle_StepRepr_PropertyDefinitionRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWPropertyDefinitionRepresentation {
+	~RWStepRepr_RWPropertyDefinitionRepresentation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWPropertyDefinitionRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWShapeRepresentationRelationshipWithTransformation;
 class RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
@@ -729,6 +929,11 @@ class RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
 		void Share(const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
+	~RWStepRepr_RWShapeRepresentationRelationshipWithTransformation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWShapeRepresentationRelationshipWithTransformation\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWRepresentationItem;
 class RWStepRepr_RWRepresentationItem {
@@ -742,6 +947,11 @@ class RWStepRepr_RWRepresentationItem {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_RepresentationItem &ent) const;
 
+};
+%extend RWStepRepr_RWRepresentationItem {
+	~RWStepRepr_RWRepresentationItem() {
+	printf("Call custom destructor for instance of RWStepRepr_RWRepresentationItem\n");
+	}
 };
 
 %nodefaultctor RWStepRepr_RWProductConcept;
@@ -759,6 +969,11 @@ class RWStepRepr_RWProductConcept {
 		void Share(const Handle_StepRepr_ProductConcept &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepRepr_RWProductConcept {
+	~RWStepRepr_RWProductConcept() {
+	printf("Call custom destructor for instance of RWStepRepr_RWProductConcept\n");
+	}
+};
 
 %nodefaultctor RWStepRepr_RWItemDefinedTransformation;
 class RWStepRepr_RWItemDefinedTransformation {
@@ -774,4 +989,9 @@ class RWStepRepr_RWItemDefinedTransformation {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepRepr_ItemDefinedTransformation &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepRepr_RWItemDefinedTransformation {
+	~RWStepRepr_RWItemDefinedTransformation() {
+	printf("Call custom destructor for instance of RWStepRepr_RWItemDefinedTransformation\n");
+	}
 };

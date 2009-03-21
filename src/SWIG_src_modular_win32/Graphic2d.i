@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Graphic2d
@@ -1848,6 +1848,11 @@ class Graphic2d_Array1OfVertex {
 		Graphic2d_Vertex & operator()(const Standard_Integer Index);
 
 };
+%extend Graphic2d_Array1OfVertex {
+	~Graphic2d_Array1OfVertex() {
+	printf("Call custom destructor for instance of Graphic2d_Array1OfVertex\n");
+	}
+};
 
 %nodefaultctor Graphic2d_SegmentDefinitionError;
 class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
@@ -2013,6 +2018,11 @@ class Graphic2d_CBitFields8 {
 		%feature("autodoc", "1");
 		Graphic2d_CBitFields8();
 
+};
+%extend Graphic2d_CBitFields8 {
+	~Graphic2d_CBitFields8() {
+	printf("Call custom destructor for instance of Graphic2d_CBitFields8\n");
+	}
 };
 
 %nodefaultctor Graphic2d_SetOfSegments;
@@ -2841,6 +2851,11 @@ class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Graphic2d_SequenceOfVertex {
+	~Graphic2d_SequenceOfVertex() {
+	printf("Call custom destructor for instance of Graphic2d_SequenceOfVertex\n");
+	}
+};
 
 %nodefaultctor Graphic2d_TransientDefinitionError;
 class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
@@ -2930,6 +2945,11 @@ class Graphic2d_Vertex {
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Graphic2d_Vertex &AV1, const Graphic2d_Vertex &AV2);
 
+};
+%extend Graphic2d_Vertex {
+	~Graphic2d_Vertex() {
+	printf("Call custom destructor for instance of Graphic2d_Vertex\n");
+	}
 };
 
 %nodefaultctor Graphic2d_DrawerDefinitionError;

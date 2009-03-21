@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Draft
@@ -300,6 +300,11 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 		Draft_EdgeInfo & operator()(const TopoDS_Edge &K);
 
 };
+%extend Draft_DataMapOfEdgeEdgeInfo {
+	~Draft_DataMapOfEdgeEdgeInfo() {
+	printf("Call custom destructor for instance of Draft_DataMapOfEdgeEdgeInfo\n");
+	}
+};
 
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfFaceFaceInfo;
 class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMapIterator {
@@ -317,6 +322,11 @@ class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		const Draft_FaceInfo & Value() const;
 
+};
+%extend Draft_DataMapIteratorOfDataMapOfFaceFaceInfo {
+	~Draft_DataMapIteratorOfDataMapOfFaceFaceInfo() {
+	printf("Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfFaceFaceInfo\n");
+	}
 };
 
 %nodefaultctor Draft_Modification;
@@ -412,6 +422,11 @@ class Draft_DataMapIteratorOfDataMapOfVertexVertexInfo : public TCollection_Basi
 		const Draft_VertexInfo & Value() const;
 
 };
+%extend Draft_DataMapIteratorOfDataMapOfVertexVertexInfo {
+	~Draft_DataMapIteratorOfDataMapOfVertexVertexInfo() {
+	printf("Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfVertexVertexInfo\n");
+	}
+};
 
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo;
 class Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo : public TCollection_BasicMapIterator {
@@ -429,6 +444,11 @@ class Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		const Draft_EdgeInfo & Value() const;
 
+};
+%extend Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo {
+	~Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo() {
+	printf("Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo\n");
+	}
 };
 
 %nodefaultctor Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo;
@@ -482,6 +502,11 @@ class Draft_VertexInfo {
 		Standard_Real & ChangeParameter(const TopoDS_Edge &E);
 
 };
+%extend Draft_VertexInfo {
+	~Draft_VertexInfo() {
+	printf("Call custom destructor for instance of Draft_VertexInfo\n");
+	}
+};
 
 %nodefaultctor Draft_DataMapOfFaceFaceInfo;
 class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
@@ -511,6 +536,11 @@ class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Draft_FaceInfo & operator()(const TopoDS_Face &K);
 
+};
+%extend Draft_DataMapOfFaceFaceInfo {
+	~Draft_DataMapOfFaceFaceInfo() {
+	printf("Call custom destructor for instance of Draft_DataMapOfFaceFaceInfo\n");
+	}
 };
 
 %nodefaultctor Draft_DataMapNodeOfDataMapOfFaceFaceInfo;
@@ -566,6 +596,11 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 		Draft_VertexInfo & operator()(const TopoDS_Vertex &K);
 
 };
+%extend Draft_DataMapOfVertexVertexInfo {
+	~Draft_DataMapOfVertexVertexInfo() {
+	printf("Call custom destructor for instance of Draft_DataMapOfVertexVertexInfo\n");
+	}
+};
 
 %nodefaultctor Draft;
 class Draft {
@@ -577,4 +612,9 @@ class Draft {
 		%feature("autodoc", "1");
 		Standard_Real Angle(const TopoDS_Face &F, const gp_Dir &Direction);
 
+};
+%extend Draft {
+	~Draft() {
+	printf("Call custom destructor for instance of Draft\n");
+	}
 };

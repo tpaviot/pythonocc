@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ShapeCustom
@@ -543,6 +543,11 @@ class ShapeCustom {
 		%feature("autodoc", "1");
 		TopoDS_Shape ScaleShape(const TopoDS_Shape &S, const Standard_Real scale);
 
+};
+%extend ShapeCustom {
+	~ShapeCustom() {
+	printf("Call custom destructor for instance of ShapeCustom\n");
+	}
 };
 
 %nodefaultctor ShapeCustom_DirectModification;

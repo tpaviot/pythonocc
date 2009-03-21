@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module AppParCurves
@@ -314,6 +314,11 @@ class AppParCurves_MultiCurve {
 		virtual		void Dump(Standard_OStream & o) const;
 
 };
+%extend AppParCurves_MultiCurve {
+	~AppParCurves_MultiCurve() {
+	printf("Call custom destructor for instance of AppParCurves_MultiCurve\n");
+	}
+};
 
 %nodefaultctor AppParCurves_MultiBSpCurve;
 class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
@@ -337,6 +342,11 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("autodoc", "1");
 		virtual		~AppParCurves_MultiBSpCurve();
 
+};
+%extend AppParCurves_MultiBSpCurve {
+	~AppParCurves_MultiBSpCurve() {
+	printf("Call custom destructor for instance of AppParCurves_MultiBSpCurve\n");
+	}
 };
 
 %nodefaultctor AppParCurves_Array1OfMultiCurve;
@@ -374,6 +384,11 @@ class AppParCurves_Array1OfMultiCurve {
 		AppParCurves_MultiCurve & operator()(const Standard_Integer Index);
 
 };
+%extend AppParCurves_Array1OfMultiCurve {
+	~AppParCurves_Array1OfMultiCurve() {
+	printf("Call custom destructor for instance of AppParCurves_Array1OfMultiCurve\n");
+	}
+};
 
 %nodefaultctor AppParCurves_Array1OfMultiBSpCurve;
 class AppParCurves_Array1OfMultiBSpCurve {
@@ -410,6 +425,11 @@ class AppParCurves_Array1OfMultiBSpCurve {
 		AppParCurves_MultiBSpCurve & operator()(const Standard_Integer Index);
 
 };
+%extend AppParCurves_Array1OfMultiBSpCurve {
+	~AppParCurves_Array1OfMultiBSpCurve() {
+	printf("Call custom destructor for instance of AppParCurves_Array1OfMultiBSpCurve\n");
+	}
+};
 
 %nodefaultctor AppParCurves_ConstraintCouple;
 class AppParCurves_ConstraintCouple {
@@ -429,6 +449,11 @@ class AppParCurves_ConstraintCouple {
 		%feature("autodoc", "1");
 		void SetConstraint(const AppParCurves_Constraint Cons);
 
+};
+%extend AppParCurves_ConstraintCouple {
+	~AppParCurves_ConstraintCouple() {
+	printf("Call custom destructor for instance of AppParCurves_ConstraintCouple\n");
+	}
 };
 
 %nodefaultctor AppParCurves_SequenceNodeOfSequenceOfMultiCurve;
@@ -582,6 +607,11 @@ class AppParCurves_MultiPoint {
 		virtual		void Dump(Standard_OStream & o) const;
 
 };
+%extend AppParCurves_MultiPoint {
+	~AppParCurves_MultiPoint() {
+	printf("Call custom destructor for instance of AppParCurves_MultiPoint\n");
+	}
+};
 
 %nodefaultctor AppParCurves_Array1OfConstraintCouple;
 class AppParCurves_Array1OfConstraintCouple {
@@ -617,6 +647,11 @@ class AppParCurves_Array1OfConstraintCouple {
 		%feature("autodoc", "1");
 		AppParCurves_ConstraintCouple & operator()(const Standard_Integer Index);
 
+};
+%extend AppParCurves_Array1OfConstraintCouple {
+	~AppParCurves_Array1OfConstraintCouple() {
+	printf("Call custom destructor for instance of AppParCurves_Array1OfConstraintCouple\n");
+	}
 };
 
 %nodefaultctor AppParCurves_SequenceOfMultiBSpCurve;
@@ -668,6 +703,11 @@ class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AppParCurves_SequenceOfMultiBSpCurve {
+	~AppParCurves_SequenceOfMultiBSpCurve() {
+	printf("Call custom destructor for instance of AppParCurves_SequenceOfMultiBSpCurve\n");
+	}
+};
 
 %nodefaultctor AppParCurves_SequenceOfMultiCurve;
 class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
@@ -717,6 +757,11 @@ class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend AppParCurves_SequenceOfMultiCurve {
+	~AppParCurves_SequenceOfMultiCurve() {
+	printf("Call custom destructor for instance of AppParCurves_SequenceOfMultiCurve\n");
+	}
 };
 
 %nodefaultctor AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve;
@@ -775,6 +820,11 @@ class AppParCurves_Array1OfMultiPoint {
 		%feature("autodoc", "1");
 		AppParCurves_MultiPoint & operator()(const Standard_Integer Index);
 
+};
+%extend AppParCurves_Array1OfMultiPoint {
+	~AppParCurves_Array1OfMultiPoint() {
+	printf("Call custom destructor for instance of AppParCurves_Array1OfMultiPoint\n");
+	}
 };
 
 %nodefaultctor AppParCurves_HArray1OfConstraintCouple;
@@ -873,6 +923,11 @@ class AppParCurves {
 		%feature("autodoc", "1");
 		void SplineFunction(const Standard_Integer NbPoles, const Standard_Integer Degree, const math_Vector &Parameters, const math_Vector &FlatKnots, math_Matrix & A, math_Matrix & DA, math_IntegerVector & Index);
 
+};
+%extend AppParCurves {
+	~AppParCurves() {
+	printf("Call custom destructor for instance of AppParCurves\n");
+	}
 };
 
 %nodefaultctor AppParCurves_HArray1OfMultiBSpCurve;

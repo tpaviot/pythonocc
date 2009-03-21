@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module DNaming
@@ -135,6 +135,11 @@ class DNaming {
 		void SelectionCommands(Draw_Interpretor & DI);
 
 };
+%extend DNaming {
+	~DNaming() {
+	printf("Call custom destructor for instance of DNaming\n");
+	}
+};
 
 %nodefaultctor DNaming_DataMapIteratorOfDataMapOfShapeOfName;
 class DNaming_DataMapIteratorOfDataMapOfShapeOfName : public TCollection_BasicMapIterator {
@@ -152,6 +157,11 @@ class DNaming_DataMapIteratorOfDataMapOfShapeOfName : public TCollection_BasicMa
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Value() const;
 
+};
+%extend DNaming_DataMapIteratorOfDataMapOfShapeOfName {
+	~DNaming_DataMapIteratorOfDataMapOfShapeOfName() {
+	printf("Call custom destructor for instance of DNaming_DataMapIteratorOfDataMapOfShapeOfName\n");
+	}
 };
 
 %nodefaultctor DNaming_DataMapNodeOfDataMapOfShapeOfName;
@@ -206,4 +216,9 @@ class DNaming_DataMapOfShapeOfName : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TCollection_AsciiString & operator()(const TopoDS_Shape &K);
 
+};
+%extend DNaming_DataMapOfShapeOfName {
+	~DNaming_DataMapOfShapeOfName() {
+	printf("Call custom destructor for instance of DNaming_DataMapOfShapeOfName\n");
+	}
 };

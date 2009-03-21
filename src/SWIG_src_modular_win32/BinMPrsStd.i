@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BinMPrsStd
@@ -142,6 +142,11 @@ class BinMPrsStd {
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
+};
+%extend BinMPrsStd {
+	~BinMPrsStd() {
+	printf("Call custom destructor for instance of BinMPrsStd\n");
+	}
 };
 
 %nodefaultctor BinMPrsStd_AISPresentationDriver;

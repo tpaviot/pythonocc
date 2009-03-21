@@ -663,6 +663,11 @@ class StepAP203_Array1OfClassifiedItem {
 		StepAP203_ClassifiedItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP203_Array1OfClassifiedItem {
+	~StepAP203_Array1OfClassifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfClassifiedItem\n");
+	}
+};
 
 %nodefaultctor StepAP203_HArray1OfChangeRequestItem;
 class StepAP203_HArray1OfChangeRequestItem : public MMgt_TShared {
@@ -817,6 +822,11 @@ class StepAP203_Array1OfWorkItem {
 		StepAP203_WorkItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP203_Array1OfWorkItem {
+	~StepAP203_Array1OfWorkItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfWorkItem\n");
+	}
+};
 
 %nodefaultctor StepAP203_CcDesignContract;
 class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
@@ -938,6 +948,11 @@ class StepAP203_Array1OfContractedItem {
 		StepAP203_ContractedItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP203_Array1OfContractedItem {
+	~StepAP203_Array1OfContractedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfContractedItem\n");
+	}
+};
 
 %nodefaultctor StepAP203_Array1OfPersonOrganizationItem;
 class StepAP203_Array1OfPersonOrganizationItem {
@@ -973,6 +988,11 @@ class StepAP203_Array1OfPersonOrganizationItem {
 		%feature("autodoc", "1");
 		StepAP203_PersonOrganizationItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfPersonOrganizationItem {
+	~StepAP203_Array1OfPersonOrganizationItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfPersonOrganizationItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_HArray1OfClassifiedItem;
@@ -1049,6 +1069,11 @@ class StepAP203_Array1OfChangeRequestItem {
 		%feature("autodoc", "1");
 		StepAP203_ChangeRequestItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfChangeRequestItem {
+	~StepAP203_Array1OfChangeRequestItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfChangeRequestItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_HArray1OfWorkItem;
@@ -1434,6 +1459,11 @@ class StepAP203_Array1OfStartRequestItem {
 		StepAP203_StartRequestItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP203_Array1OfStartRequestItem {
+	~StepAP203_Array1OfStartRequestItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfStartRequestItem\n");
+	}
+};
 
 %nodefaultctor StepAP203_HArray1OfDateTimeItem;
 class StepAP203_HArray1OfDateTimeItem : public MMgt_TShared {
@@ -1601,6 +1631,11 @@ class StepAP203_Array1OfApprovedItem {
 		%feature("autodoc", "1");
 		StepAP203_ApprovedItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfApprovedItem {
+	~StepAP203_Array1OfApprovedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfApprovedItem\n");
+	}
 };
 
 %nodefaultctor StepAP203_ApprovedItem;
@@ -1789,6 +1824,11 @@ class StepAP203_Array1OfDateTimeItem {
 		StepAP203_DateTimeItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP203_Array1OfDateTimeItem {
+	~StepAP203_Array1OfDateTimeItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfDateTimeItem\n");
+	}
+};
 
 %nodefaultctor StepAP203_Array1OfCertifiedItem;
 class StepAP203_Array1OfCertifiedItem {
@@ -1825,6 +1865,11 @@ class StepAP203_Array1OfCertifiedItem {
 		StepAP203_CertifiedItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepAP203_Array1OfCertifiedItem {
+	~StepAP203_Array1OfCertifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfCertifiedItem\n");
+	}
+};
 
 %nodefaultctor StepAP203_Array1OfSpecifiedItem;
 class StepAP203_Array1OfSpecifiedItem {
@@ -1860,4 +1905,9 @@ class StepAP203_Array1OfSpecifiedItem {
 		%feature("autodoc", "1");
 		StepAP203_SpecifiedItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepAP203_Array1OfSpecifiedItem {
+	~StepAP203_Array1OfSpecifiedItem() {
+	printf("Call custom destructor for instance of StepAP203_Array1OfSpecifiedItem\n");
+	}
 };

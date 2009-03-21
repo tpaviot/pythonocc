@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopOpeBRep
@@ -356,6 +356,11 @@ class TopOpeBRep_DataMapOfShapeInteger : public TCollection_BasicMap {
 		Standard_Integer & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopOpeBRep_DataMapOfShapeInteger {
+	~TopOpeBRep_DataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of TopOpeBRep_DataMapOfShapeInteger\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_SequenceNodeOfSequenceOfPoint2d;
 class TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public TCollection_SeqNode {
@@ -493,6 +498,11 @@ class TopOpeBRep_DSFiller {
 		void CompleteDS2d(const Handle_TopOpeBRepDS_HDataStructure &HDS) const;
 
 };
+%extend TopOpeBRep_DSFiller {
+	~TopOpeBRep_DSFiller() {
+	printf("Call custom destructor for instance of TopOpeBRep_DSFiller\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_ShapeScanner;
 class TopOpeBRep_ShapeScanner {
@@ -525,6 +535,11 @@ class TopOpeBRep_ShapeScanner {
 		Standard_OStream & DumpCurrent(Standard_OStream & OS) const;
 
 };
+%extend TopOpeBRep_ShapeScanner {
+	~TopOpeBRep_ShapeScanner() {
+	printf("Call custom destructor for instance of TopOpeBRep_ShapeScanner\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_FFTransitionTool;
 class TopOpeBRep_FFTransitionTool {
@@ -545,6 +560,11 @@ class TopOpeBRep_FFTransitionTool {
 		TopOpeBRepDS_Transition ProcessEdgeONTransition(const TopOpeBRep_VPointInter &VP, const Standard_Integer Index, const TopoDS_Shape &R, const TopoDS_Shape &E, const TopoDS_Shape &F);
 
 };
+%extend TopOpeBRep_FFTransitionTool {
+	~TopOpeBRep_FFTransitionTool() {
+	printf("Call custom destructor for instance of TopOpeBRep_FFTransitionTool\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger;
 class TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
@@ -562,6 +582,11 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Bas
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger {
+	~TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_Hctxff2d;
@@ -631,6 +656,11 @@ class TopOpeBRep_VPointInterIterator {
 		TopOpeBRep_PLineInter PLineInterDummy() const;
 
 };
+%extend TopOpeBRep_VPointInterIterator {
+	~TopOpeBRep_VPointInterIterator() {
+	printf("Call custom destructor for instance of TopOpeBRep_VPointInterIterator\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_VPointInterClassifier;
 class TopOpeBRep_VPointInterClassifier {
@@ -646,6 +676,11 @@ class TopOpeBRep_VPointInterClassifier {
 		%feature("autodoc", "1");
 		Standard_Real EdgeParameter() const;
 
+};
+%extend TopOpeBRep_VPointInterClassifier {
+	~TopOpeBRep_VPointInterClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRep_VPointInterClassifier\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_PointGeomTool;
@@ -667,6 +702,11 @@ class TopOpeBRep_PointGeomTool {
 		Standard_Boolean IsEqual(const TopOpeBRepDS_Point &DSP1, const TopOpeBRepDS_Point &DSP2);
 
 };
+%extend TopOpeBRep_PointGeomTool {
+	~TopOpeBRep_PointGeomTool() {
+	printf("Call custom destructor for instance of TopOpeBRep_PointGeomTool\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_EdgesFiller;
 class TopOpeBRep_EdgesFiller {
@@ -683,6 +723,11 @@ class TopOpeBRep_EdgesFiller {
 		const TopoDS_Shape & Face(const Standard_Integer I) const;
 
 };
+%extend TopOpeBRep_EdgesFiller {
+	~TopOpeBRep_EdgesFiller() {
+	printf("Call custom destructor for instance of TopOpeBRep_EdgesFiller\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_FaceEdgeFiller;
 class TopOpeBRep_FaceEdgeFiller {
@@ -694,6 +739,11 @@ class TopOpeBRep_FaceEdgeFiller {
 		%feature("autodoc", "1");
 		void Insert(const TopoDS_Shape &F, const TopoDS_Shape &E, TopOpeBRep_FaceEdgeIntersector & FEINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
 
+};
+%extend TopOpeBRep_FaceEdgeFiller {
+	~TopOpeBRep_FaceEdgeFiller() {
+	printf("Call custom destructor for instance of TopOpeBRep_FaceEdgeFiller\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_DataMapNodeOfDataMapOfTopolTool;
@@ -755,6 +805,11 @@ class TopOpeBRep_ShapeIntersector {
 		void RejectedFaces(const TopoDS_Shape &anObj, const TopoDS_Shape &aReference, TopTools_ListOfShape & aListOfShape);
 
 };
+%extend TopOpeBRep_ShapeIntersector {
+	~TopOpeBRep_ShapeIntersector() {
+	printf("Call custom destructor for instance of TopOpeBRep_ShapeIntersector\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_Array1OfVPointInter;
 class TopOpeBRep_Array1OfVPointInter {
@@ -790,6 +845,11 @@ class TopOpeBRep_Array1OfVPointInter {
 		%feature("autodoc", "1");
 		TopOpeBRep_VPointInter & operator()(const Standard_Integer Index);
 
+};
+%extend TopOpeBRep_Array1OfVPointInter {
+	~TopOpeBRep_Array1OfVPointInter() {
+	printf("Call custom destructor for instance of TopOpeBRep_Array1OfVPointInter\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_FacesFiller;
@@ -924,6 +984,11 @@ class TopOpeBRep_WPointInterIterator {
 		TopOpeBRep_PLineInter PLineInterDummy() const;
 
 };
+%extend TopOpeBRep_WPointInterIterator {
+	~TopOpeBRep_WPointInterIterator() {
+	printf("Call custom destructor for instance of TopOpeBRep_WPointInterIterator\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_ListIteratorOfListOfBipoint;
 class TopOpeBRep_ListIteratorOfListOfBipoint {
@@ -944,6 +1009,11 @@ class TopOpeBRep_ListIteratorOfListOfBipoint {
 		TopOpeBRep_Bipoint & Value() const;
 
 };
+%extend TopOpeBRep_ListIteratorOfListOfBipoint {
+	~TopOpeBRep_ListIteratorOfListOfBipoint() {
+	printf("Call custom destructor for instance of TopOpeBRep_ListIteratorOfListOfBipoint\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep;
 class TopOpeBRep {
@@ -955,6 +1025,11 @@ class TopOpeBRep {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(const TopOpeBRep_TypeLineCurve TLC, Standard_OStream & OS);
 
+};
+%extend TopOpeBRep {
+	~TopOpeBRep() {
+	printf("Call custom destructor for instance of TopOpeBRep\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_ListNodeOfListOfBipoint;
@@ -1004,6 +1079,11 @@ class TopOpeBRep_WPointInter {
 		TopOpeBRep_PPntOn2S PPntOn2SDummy() const;
 
 };
+%extend TopOpeBRep_WPointInter {
+	~TopOpeBRep_WPointInter() {
+	printf("Call custom destructor for instance of TopOpeBRep_WPointInter\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_FaceEdgeIntersector;
 class TopOpeBRep_FaceEdgeIntersector {
@@ -1048,6 +1128,11 @@ class TopOpeBRep_FaceEdgeIntersector {
 		Standard_Integer Index() const;
 
 };
+%extend TopOpeBRep_FaceEdgeIntersector {
+	~TopOpeBRep_FaceEdgeIntersector() {
+	printf("Call custom destructor for instance of TopOpeBRep_FaceEdgeIntersector\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_Bipoint;
 class TopOpeBRep_Bipoint {
@@ -1063,6 +1148,11 @@ class TopOpeBRep_Bipoint {
 		%feature("autodoc", "1");
 		Standard_Integer I2() const;
 
+};
+%extend TopOpeBRep_Bipoint {
+	~TopOpeBRep_Bipoint() {
+	printf("Call custom destructor for instance of TopOpeBRep_Bipoint\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_Array1OfLineInter;
@@ -1099,6 +1189,11 @@ class TopOpeBRep_Array1OfLineInter {
 		%feature("autodoc", "1");
 		TopOpeBRep_LineInter & operator()(const Standard_Integer Index);
 
+};
+%extend TopOpeBRep_Array1OfLineInter {
+	~TopOpeBRep_Array1OfLineInter() {
+	printf("Call custom destructor for instance of TopOpeBRep_Array1OfLineInter\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_FacesIntersector;
@@ -1256,6 +1351,11 @@ class TopOpeBRep_ListOfBipoint {
 		void InsertAfter(TopOpeBRep_ListOfBipoint & Other, TopOpeBRep_ListIteratorOfListOfBipoint & It);
 
 };
+%extend TopOpeBRep_ListOfBipoint {
+	~TopOpeBRep_ListOfBipoint() {
+	printf("Call custom destructor for instance of TopOpeBRep_ListOfBipoint\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_ShapeIntersector2d;
 class TopOpeBRep_ShapeIntersector2d {
@@ -1281,6 +1381,11 @@ class TopOpeBRep_ShapeIntersector2d {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const Standard_Integer K) const;
 
+};
+%extend TopOpeBRep_ShapeIntersector2d {
+	~TopOpeBRep_ShapeIntersector2d() {
+	printf("Call custom destructor for instance of TopOpeBRep_ShapeIntersector2d\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_VPointInter;
@@ -1384,6 +1489,11 @@ class TopOpeBRep_VPointInter {
 		TopOpeBRep_PThePointOfIntersection PThePointOfIntersectionDummy() const;
 
 };
+%extend TopOpeBRep_VPointInter {
+	~TopOpeBRep_VPointInter() {
+	printf("Call custom destructor for instance of TopOpeBRep_VPointInter\n");
+	}
+};
 
 %nodefaultctor TopOpeBRep_PointClassifier;
 class TopOpeBRep_PointClassifier {
@@ -1401,6 +1511,11 @@ class TopOpeBRep_PointClassifier {
 		%feature("autodoc", "1");
 		TopAbs_State State() const;
 
+};
+%extend TopOpeBRep_PointClassifier {
+	~TopOpeBRep_PointClassifier() {
+	printf("Call custom destructor for instance of TopOpeBRep_PointClassifier\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_EdgesIntersector;
@@ -1469,6 +1584,11 @@ class TopOpeBRep_EdgesIntersector {
 		%feature("autodoc", "1");
 		TopOpeBRep_P2Dstatus Status1() const;
 
+};
+%extend TopOpeBRep_EdgesIntersector {
+	~TopOpeBRep_EdgesIntersector() {
+	printf("Call custom destructor for instance of TopOpeBRep_EdgesIntersector\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_DataMapOfTopolTool;
@@ -1580,6 +1700,11 @@ class TopOpeBRep_SequenceOfPoint2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TopOpeBRep_SequenceOfPoint2d {
+	~TopOpeBRep_SequenceOfPoint2d() {
+	printf("Call custom destructor for instance of TopOpeBRep_SequenceOfPoint2d\n");
+	}
 };
 
 %nodefaultctor TopOpeBRep_Point2d;

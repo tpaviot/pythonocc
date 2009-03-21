@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ShapeConstruct
@@ -198,6 +198,11 @@ class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
 };
+%extend ShapeConstruct_CompBezierCurvesToBSplineCurve {
+	~ShapeConstruct_CompBezierCurvesToBSplineCurve() {
+	printf("Call custom destructor for instance of ShapeConstruct_CompBezierCurvesToBSplineCurve\n");
+	}
+};
 
 %nodefaultctor ShapeConstruct_Curve;
 class ShapeConstruct_Curve {
@@ -241,6 +246,11 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 		virtual		~ShapeConstruct_MakeTriangulation();
 
 };
+%extend ShapeConstruct_MakeTriangulation {
+	~ShapeConstruct_MakeTriangulation() {
+	printf("Call custom destructor for instance of ShapeConstruct_MakeTriangulation\n");
+	}
+};
 
 %nodefaultctor ShapeConstruct_CompBezierCurves2dToBSplineCurve2d;
 class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
@@ -264,4 +274,9 @@ class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
 		%feature("autodoc", "1");
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
+};
+%extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+	~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d() {
+	printf("Call custom destructor for instance of ShapeConstruct_CompBezierCurves2dToBSplineCurve2d\n");
+	}
 };

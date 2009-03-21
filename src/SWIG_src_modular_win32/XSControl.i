@@ -524,6 +524,11 @@ class XSControl_Functions {
 		void Init();
 
 };
+%extend XSControl_Functions {
+	~XSControl_Functions() {
+	printf("Call custom destructor for instance of XSControl_Functions\n");
+	}
+};
 
 %nodefaultctor XSControl_Reader;
 class XSControl_Reader {
@@ -940,4 +945,9 @@ class XSControl_FuncShape {
 		%feature("autodoc", "1");
 		Standard_Boolean FileAndVar(const Handle_XSControl_WorkSession &session, const char * file, const char * var, const char * def, TCollection_AsciiString & resfile, TCollection_AsciiString & resvar);
 
+};
+%extend XSControl_FuncShape {
+	~XSControl_FuncShape() {
+	printf("Call custom destructor for instance of XSControl_FuncShape\n");
+	}
 };

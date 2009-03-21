@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TDocStd
@@ -456,6 +456,11 @@ class TDocStd_PathParser {
 		Standard_Integer Length() const;
 
 };
+%extend TDocStd_PathParser {
+	~TDocStd_PathParser() {
+	printf("Call custom destructor for instance of TDocStd_PathParser\n");
+	}
+};
 
 %nodefaultctor TDocStd_CompoundDelta;
 class TDocStd_CompoundDelta : public TDF_Delta {
@@ -555,6 +560,11 @@ class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIt
 		%feature("autodoc", "1");
 		const TDF_IDMap & Value() const;
 
+};
+%extend TDocStd_DataMapIteratorOfLabelIDMapDataMap {
+	~TDocStd_DataMapIteratorOfLabelIDMapDataMap() {
+	printf("Call custom destructor for instance of TDocStd_DataMapIteratorOfLabelIDMapDataMap\n");
+	}
 };
 
 %nodefaultctor TDocStd_XLinkTool;
@@ -770,6 +780,11 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 		TDF_IDMap & operator()(const TDF_Label &K);
 
 };
+%extend TDocStd_LabelIDMapDataMap {
+	~TDocStd_LabelIDMapDataMap() {
+	printf("Call custom destructor for instance of TDocStd_LabelIDMapDataMap\n");
+	}
+};
 
 %nodefaultctor TDocStd_XLinkIterator;
 class TDocStd_XLinkIterator {
@@ -790,6 +805,11 @@ class TDocStd_XLinkIterator {
 		TDocStd_XLink * Value() const;
 
 };
+%extend TDocStd_XLinkIterator {
+	~TDocStd_XLinkIterator() {
+	printf("Call custom destructor for instance of TDocStd_XLinkIterator\n");
+	}
+};
 
 %nodefaultctor TDocStd;
 class TDocStd {
@@ -801,6 +821,11 @@ class TDocStd {
 		%feature("autodoc", "1");
 		void IDList(TDF_IDList & anIDList);
 
+};
+%extend TDocStd {
+	~TDocStd() {
+	printf("Call custom destructor for instance of TDocStd\n");
+	}
 };
 
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
@@ -1140,4 +1165,9 @@ class TDocStd_Context {
 		%feature("autodoc", "1");
 		Standard_Boolean ModifiedReferences() const;
 
+};
+%extend TDocStd_Context {
+	~TDocStd_Context() {
+	printf("Call custom destructor for instance of TDocStd_Context\n");
+	}
 };

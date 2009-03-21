@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module XmlLDrivers
@@ -263,6 +263,11 @@ class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend XmlLDrivers_SequenceOfNamespaceDef {
+	~XmlLDrivers_SequenceOfNamespaceDef() {
+	printf("Call custom destructor for instance of XmlLDrivers_SequenceOfNamespaceDef\n");
+	}
+};
 
 %nodefaultctor XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
 class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqNode {
@@ -321,4 +326,9 @@ class XmlLDrivers_NamespaceDef {
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & URI() const;
 
+};
+%extend XmlLDrivers_NamespaceDef {
+	~XmlLDrivers_NamespaceDef() {
+	printf("Call custom destructor for instance of XmlLDrivers_NamespaceDef\n");
+	}
 };

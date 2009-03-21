@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GeomToStep
@@ -94,6 +94,11 @@ class GeomToStep_Root {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
+};
+%extend GeomToStep_Root {
+	~GeomToStep_Root() {
+	printf("Call custom destructor for instance of GeomToStep_Root\n");
+	}
 };
 
 %nodefaultctor GeomToStep_MakeLine;

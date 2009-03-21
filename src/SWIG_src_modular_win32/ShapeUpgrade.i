@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ShapeUpgrade
@@ -960,6 +960,11 @@ class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 		virtual		~ShapeUpgrade_ShapeDivideContinuity();
 
 };
+%extend ShapeUpgrade_ShapeDivideContinuity {
+	~ShapeUpgrade_ShapeDivideContinuity() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideContinuity\n");
+	}
+};
 
 %nodefaultctor ShapeUpgrade_FixSmallCurves;
 class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
@@ -1066,6 +1071,11 @@ class ShapeUpgrade {
 		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HSequenceOfBoundedCurve & seqBS);
 
 };
+%extend ShapeUpgrade {
+	~ShapeUpgrade() {
+	printf("Call custom destructor for instance of ShapeUpgrade\n");
+	}
+};
 
 %nodefaultctor ShapeUpgrade_ShellSewing;
 class ShapeUpgrade_ShellSewing {
@@ -1077,6 +1087,11 @@ class ShapeUpgrade_ShellSewing {
 		%feature("autodoc", "1");
 		TopoDS_Shape ApplySewing(const TopoDS_Shape &shape, const Standard_Real tol=0.0);
 
+};
+%extend ShapeUpgrade_ShellSewing {
+	~ShapeUpgrade_ShellSewing() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShellSewing\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_FaceDivide;
@@ -1175,6 +1190,11 @@ class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
 		%feature("autodoc", "1");
 		virtual		~ShapeUpgrade_ShapeDivideClosedEdges();
 
+};
+%extend ShapeUpgrade_ShapeDivideClosedEdges {
+	~ShapeUpgrade_ShapeDivideClosedEdges() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosedEdges\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_SplitSurfaceArea;
@@ -1332,6 +1352,11 @@ class ShapeUpgrade_ShapeConvertToBezier : public ShapeUpgrade_ShapeDivide {
 		virtual		~ShapeUpgrade_ShapeConvertToBezier();
 
 };
+%extend ShapeUpgrade_ShapeConvertToBezier {
+	~ShapeUpgrade_ShapeConvertToBezier() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeConvertToBezier\n");
+	}
+};
 
 %nodefaultctor ShapeUpgrade_SplitSurfaceContinuity;
 class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
@@ -1434,6 +1459,11 @@ class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 		virtual		~ShapeUpgrade_ShapeDivideAngle();
 
 };
+%extend ShapeUpgrade_ShapeDivideAngle {
+	~ShapeUpgrade_ShapeDivideAngle() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideAngle\n");
+	}
+};
 
 %nodefaultctor ShapeUpgrade_SplitCurve2dContinuity;
 class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
@@ -1516,6 +1546,11 @@ class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 		virtual		~ShapeUpgrade_ShapeDivideArea();
 
 };
+%extend ShapeUpgrade_ShapeDivideArea {
+	~ShapeUpgrade_ShapeDivideArea() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideArea\n");
+	}
+};
 
 %nodefaultctor ShapeUpgrade_ShapeDivideClosed;
 class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
@@ -1527,6 +1562,11 @@ class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 		%feature("autodoc", "1");
 		virtual		~ShapeUpgrade_ShapeDivideClosed();
 
+};
+%extend ShapeUpgrade_ShapeDivideClosed {
+	~ShapeUpgrade_ShapeDivideClosed() {
+	printf("Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosed\n");
+	}
 };
 
 %nodefaultctor ShapeUpgrade_RemoveLocations;

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ChFiDS
@@ -660,6 +660,11 @@ class ChFiDS_SecArray1 {
 		ChFiDS_CircSection & operator()(const Standard_Integer Index);
 
 };
+%extend ChFiDS_SecArray1 {
+	~ChFiDS_SecArray1() {
+	printf("Call custom destructor for instance of ChFiDS_SecArray1\n");
+	}
+};
 
 %nodefaultctor ChFiDS_FaceInterference;
 class ChFiDS_FaceInterference {
@@ -819,6 +824,11 @@ class ChFiDS_Map {
 		const TopTools_ListOfShape & operator()(const Standard_Integer I) const;
 
 };
+%extend ChFiDS_Map {
+	~ChFiDS_Map() {
+	printf("Call custom destructor for instance of ChFiDS_Map\n");
+	}
+};
 
 %nodefaultctor ChFiDS_ListNodeOfRegularities;
 class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
@@ -886,6 +896,11 @@ class ChFiDS_CommonPoint {
 		%feature("autodoc", "1");
 		const gp_Vec & Vector() const;
 
+};
+%extend ChFiDS_CommonPoint {
+	~ChFiDS_CommonPoint() {
+	printf("Call custom destructor for instance of ChFiDS_CommonPoint\n");
+	}
 };
 
 %nodefaultctor ChFiDS_FilSpine;
@@ -1182,6 +1197,11 @@ class ChFiDS_StripeMap {
 		void Clear();
 
 };
+%extend ChFiDS_StripeMap {
+	~ChFiDS_StripeMap() {
+	printf("Call custom destructor for instance of ChFiDS_StripeMap\n");
+	}
+};
 
 %nodefaultctor ChFiDS_HData;
 class ChFiDS_HData : public MMgt_TShared {
@@ -1285,6 +1305,11 @@ class ChFiDS_CircSection {
 		%feature("autodoc", "1");
 		void Get(gp_Lin & C, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend ChFiDS_CircSection {
+	~ChFiDS_CircSection() {
+	printf("Call custom destructor for instance of ChFiDS_CircSection\n");
+	}
 };
 
 %nodefaultctor ChFiDS_ListIteratorOfListOfStripe;
@@ -1572,6 +1597,11 @@ class ChFiDS_Regul {
 		Standard_Integer S2() const;
 
 };
+%extend ChFiDS_Regul {
+	~ChFiDS_Regul() {
+	printf("Call custom destructor for instance of ChFiDS_Regul\n");
+	}
+};
 
 %nodefaultctor ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
 class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCollection_MapNode {
@@ -1742,6 +1772,11 @@ class ChFiDS_ListIteratorOfRegularities {
 		ChFiDS_Regul & Value() const;
 
 };
+%extend ChFiDS_ListIteratorOfRegularities {
+	~ChFiDS_ListIteratorOfRegularities() {
+	printf("Call custom destructor for instance of ChFiDS_ListIteratorOfRegularities\n");
+	}
+};
 
 %nodefaultctor ChFiDS_ListNodeOfListOfHElSpine;
 class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
@@ -1804,6 +1839,11 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 		ChFiDS_ListOfStripe & ChangeFromKey(const TopoDS_Vertex &K);
 
 };
+%extend ChFiDS_IndexedDataMapOfVertexListOfStripe {
+	~ChFiDS_IndexedDataMapOfVertexListOfStripe() {
+	printf("Call custom destructor for instance of ChFiDS_IndexedDataMapOfVertexListOfStripe\n");
+	}
+};
 
 %nodefaultctor ChFiDS_Regularities;
 class ChFiDS_Regularities {
@@ -1849,6 +1889,11 @@ class ChFiDS_Regularities {
 		%feature("autodoc", "1");
 		void InsertAfter(ChFiDS_Regularities & Other, ChFiDS_ListIteratorOfRegularities & It);
 
+};
+%extend ChFiDS_Regularities {
+	~ChFiDS_Regularities() {
+	printf("Call custom destructor for instance of ChFiDS_Regularities\n");
+	}
 };
 
 %nodefaultctor ChFiDS_SecHArray1;

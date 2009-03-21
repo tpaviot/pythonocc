@@ -97,6 +97,11 @@ class IGESCAFControl {
 		Standard_Integer EncodeColor(const Quantity_Color &col);
 
 };
+%extend IGESCAFControl {
+	~IGESCAFControl() {
+	printf("Call custom destructor for instance of IGESCAFControl\n");
+	}
+};
 
 %nodefaultctor IGESCAFControl_Writer;
 class IGESCAFControl_Writer : public IGESControl_Writer {
@@ -127,6 +132,11 @@ class IGESCAFControl_Writer : public IGESControl_Writer {
 		Standard_Boolean GetLayerMode() const;
 
 };
+%extend IGESCAFControl_Writer {
+	~IGESCAFControl_Writer() {
+	printf("Call custom destructor for instance of IGESCAFControl_Writer\n");
+	}
+};
 
 %nodefaultctor IGESCAFControl_Reader;
 class IGESCAFControl_Reader : public IGESControl_Reader {
@@ -156,4 +166,9 @@ class IGESCAFControl_Reader : public IGESControl_Reader {
 		%feature("autodoc", "1");
 		virtual		~IGESCAFControl_Reader();
 
+};
+%extend IGESCAFControl_Reader {
+	~IGESCAFControl_Reader() {
+	printf("Call custom destructor for instance of IGESCAFControl_Reader\n");
+	}
 };

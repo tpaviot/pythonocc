@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module MAT2d
@@ -461,6 +461,11 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d : public TCollection_BasicMap
 		const gp_Vec2d & Value() const;
 
 };
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d {
+	~MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d() {
+	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d\n");
+	}
+};
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerBisec;
 class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
@@ -505,6 +510,11 @@ class MAT2d_BiInt {
 		Standard_Boolean IsEqual(const MAT2d_BiInt &B) const;
 
 };
+%extend MAT2d_BiInt {
+	~MAT2d_BiInt() {
+	printf("Call custom destructor for instance of MAT2d_BiInt\n");
+	}
+};
 
 %nodefaultctor MAT2d_MapBiIntHasher;
 class MAT2d_MapBiIntHasher {
@@ -518,6 +528,11 @@ class MAT2d_MapBiIntHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const MAT2d_BiInt &Key1, const MAT2d_BiInt &Key2);
 
+};
+%extend MAT2d_MapBiIntHasher {
+	~MAT2d_MapBiIntHasher() {
+	printf("Call custom destructor for instance of MAT2d_MapBiIntHasher\n");
+	}
 };
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfConnexion;
@@ -591,6 +606,11 @@ class MAT2d_SequenceOfSequenceOfGeometry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MAT2d_SequenceOfSequenceOfGeometry {
+	~MAT2d_SequenceOfSequenceOfGeometry() {
+	printf("Call custom destructor for instance of MAT2d_SequenceOfSequenceOfGeometry\n");
+	}
+};
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
 class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqNode {
@@ -630,6 +650,11 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion : public TColle
 		%feature("autodoc", "1");
 		const MAT2d_SequenceOfConnexion & Value() const;
 
+};
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion {
+	~MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion() {
+	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion\n");
+	}
 };
 
 %nodefaultctor MAT2d_Circuit;
@@ -694,6 +719,11 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		gp_Vec2d & operator()(const Standard_Integer &K);
 
+};
+%extend MAT2d_DataMapOfIntegerVec2d {
+	~MAT2d_DataMapOfIntegerVec2d() {
+	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerVec2d\n");
+	}
 };
 
 %nodefaultctor MAT2d_Tool2d;
@@ -822,6 +852,11 @@ class MAT2d_SequenceOfSequenceOfCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MAT2d_SequenceOfSequenceOfCurve {
+	~MAT2d_SequenceOfSequenceOfCurve() {
+	printf("Call custom destructor for instance of MAT2d_SequenceOfSequenceOfCurve\n");
+	}
+};
 
 %nodefaultctor MAT2d_Array2OfConnexion;
 class MAT2d_Array2OfConnexion {
@@ -919,6 +954,11 @@ class MAT2d_DataMapOfIntegerPnt2d : public TCollection_BasicMap {
 		gp_Pnt2d & operator()(const Standard_Integer &K);
 
 };
+%extend MAT2d_DataMapOfIntegerPnt2d {
+	~MAT2d_DataMapOfIntegerPnt2d() {
+	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerPnt2d\n");
+	}
+};
 
 %nodefaultctor MAT2d_DataMapOfBiIntSequenceOfInteger;
 class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
@@ -948,6 +988,11 @@ class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TColStd_SequenceOfInteger & operator()(const MAT2d_BiInt &K);
 
+};
+%extend MAT2d_DataMapOfBiIntSequenceOfInteger {
+	~MAT2d_DataMapOfBiIntSequenceOfInteger() {
+	printf("Call custom destructor for instance of MAT2d_DataMapOfBiIntSequenceOfInteger\n");
+	}
 };
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerVec2d;
@@ -991,6 +1036,11 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMap
 		const gp_Pnt2d & Value() const;
 
 };
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d {
+	~MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d() {
+	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d\n");
+	}
+};
 
 %nodefaultctor MAT2d_DataMapOfBiIntInteger;
 class MAT2d_DataMapOfBiIntInteger : public TCollection_BasicMap {
@@ -1020,6 +1070,11 @@ class MAT2d_DataMapOfBiIntInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const MAT2d_BiInt &K);
 
+};
+%extend MAT2d_DataMapOfBiIntInteger {
+	~MAT2d_DataMapOfBiIntInteger() {
+	printf("Call custom destructor for instance of MAT2d_DataMapOfBiIntInteger\n");
+	}
 };
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerConnexion;
@@ -1182,6 +1237,11 @@ class MAT2d_DataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMap {
 		MAT2d_SequenceOfConnexion & operator()(const Standard_Integer &K);
 
 };
+%extend MAT2d_DataMapOfIntegerSequenceOfConnexion {
+	~MAT2d_DataMapOfIntegerSequenceOfConnexion() {
+	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerSequenceOfConnexion\n");
+	}
+};
 
 %nodefaultctor MAT2d_DataMapOfIntegerBisec;
 class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
@@ -1211,6 +1271,11 @@ class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Bisector_Bisec & operator()(const Standard_Integer &K);
 
+};
+%extend MAT2d_DataMapOfIntegerBisec {
+	~MAT2d_DataMapOfIntegerBisec() {
+	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerBisec\n");
+	}
 };
 
 %nodefaultctor MAT2d_DataMapOfIntegerConnexion;
@@ -1263,6 +1328,11 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMap
 		const Standard_Integer & Value() const;
 
 };
+%extend MAT2d_DataMapIteratorOfDataMapOfBiIntInteger {
+	~MAT2d_DataMapIteratorOfDataMapOfBiIntInteger() {
+	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfBiIntInteger\n");
+	}
+};
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger;
 class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollection_BasicMapIterator {
@@ -1280,6 +1350,11 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollectio
 		%feature("autodoc", "1");
 		const TColStd_SequenceOfInteger & Value() const;
 
+};
+%extend MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger {
+	~MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger() {
+	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger\n");
+	}
 };
 
 %nodefaultctor MAT2d_SequenceOfBoolean;
@@ -1331,6 +1406,11 @@ class MAT2d_SequenceOfBoolean : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend MAT2d_SequenceOfBoolean {
+	~MAT2d_SequenceOfBoolean() {
+	printf("Call custom destructor for instance of MAT2d_SequenceOfBoolean\n");
+	}
+};
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerBisec;
 class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMapIterator {
@@ -1348,6 +1428,11 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		const Bisector_Bisec & Value() const;
 
+};
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerBisec {
+	~MAT2d_DataMapIteratorOfDataMapOfIntegerBisec() {
+	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerBisec\n");
+	}
 };
 
 %nodefaultctor MAT2d_MiniPath;

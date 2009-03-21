@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BinTools
@@ -107,6 +107,11 @@ class BinTools_LocationSet {
 		void Read(std::istream & IS);
 
 };
+%extend BinTools_LocationSet {
+	~BinTools_LocationSet() {
+	printf("Call custom destructor for instance of BinTools_LocationSet\n");
+	}
+};
 
 %nodefaultctor BinTools;
 class BinTools {
@@ -132,6 +137,11 @@ class BinTools {
 		%feature("autodoc", "1");
 		std::istream & GetExtChar(std::istream & IS, Standard_ExtCharacter & theValue);
 
+};
+%extend BinTools {
+	~BinTools() {
+	printf("Call custom destructor for instance of BinTools\n");
+	}
 };
 
 %nodefaultctor BinTools_ShapeSet;
@@ -194,6 +204,11 @@ class BinTools_ShapeSet {
 		%feature("autodoc", "1");
 		void WritePolygonOnTriangulation(Standard_OStream & OS) const;
 
+};
+%extend BinTools_ShapeSet {
+	~BinTools_ShapeSet() {
+	printf("Call custom destructor for instance of BinTools_ShapeSet\n");
+	}
 };
 
 %nodefaultctor BinTools_Curve2dSet;

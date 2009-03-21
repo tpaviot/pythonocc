@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BOP
@@ -517,6 +517,11 @@ class BOP_ListIteratorOfListOfCheckResult {
 		BOP_CheckResult & Value() const;
 
 };
+%extend BOP_ListIteratorOfListOfCheckResult {
+	~BOP_ListIteratorOfListOfCheckResult() {
+	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfCheckResult\n");
+	}
+};
 
 %nodefaultctor BOP_ListNodeOfListOfListOfLoop;
 class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
@@ -688,6 +693,11 @@ class BOP_EdgeInfo {
 		Standard_Boolean IsIn() const;
 
 };
+%extend BOP_EdgeInfo {
+	~BOP_EdgeInfo() {
+	printf("Call custom destructor for instance of BOP_EdgeInfo\n");
+	}
+};
 
 %nodefaultctor BOP_SolidSolidHistoryCollector;
 class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
@@ -728,6 +738,11 @@ class BOP_WireShape : public BOP_Builder {
 		virtual		~BOP_WireShape();
 
 };
+%extend BOP_WireShape {
+	~BOP_WireShape() {
+	printf("Call custom destructor for instance of BOP_WireShape\n");
+	}
+};
 
 %nodefaultctor BOP_WireSolid;
 class BOP_WireSolid : public BOP_WireShape {
@@ -750,6 +765,11 @@ class BOP_WireSolid : public BOP_WireShape {
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
 };
+%extend BOP_WireSolid {
+	~BOP_WireSolid() {
+	printf("Call custom destructor for instance of BOP_WireSolid\n");
+	}
+};
 
 %nodefaultctor BOP_ListIteratorOfListOfFaceInfo;
 class BOP_ListIteratorOfListOfFaceInfo {
@@ -770,6 +790,11 @@ class BOP_ListIteratorOfListOfFaceInfo {
 		BOP_FaceInfo & Value() const;
 
 };
+%extend BOP_ListIteratorOfListOfFaceInfo {
+	~BOP_ListIteratorOfListOfFaceInfo() {
+	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfFaceInfo\n");
+	}
+};
 
 %nodefaultctor BOP_ListIteratorOfListOfEdgeInfo;
 class BOP_ListIteratorOfListOfEdgeInfo {
@@ -789,6 +814,11 @@ class BOP_ListIteratorOfListOfEdgeInfo {
 		%feature("autodoc", "1");
 		BOP_EdgeInfo & Value() const;
 
+};
+%extend BOP_ListIteratorOfListOfEdgeInfo {
+	~BOP_ListIteratorOfListOfEdgeInfo() {
+	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfEdgeInfo\n");
+	}
 };
 
 %nodefaultctor BOP_AreaBuilder;
@@ -843,6 +873,11 @@ class BOP_Area3dBuilder : public BOP_AreaBuilder {
 		virtual		~BOP_Area3dBuilder();
 
 };
+%extend BOP_Area3dBuilder {
+	~BOP_Area3dBuilder() {
+	printf("Call custom destructor for instance of BOP_Area3dBuilder\n");
+	}
+};
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
 class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollection_MapNode {
@@ -890,6 +925,11 @@ class BOP_Draw {
 		%feature("autodoc", "1");
 		void Wait();
 
+};
+%extend BOP_Draw {
+	~BOP_Draw() {
+	printf("Call custom destructor for instance of BOP_Draw\n");
+	}
 };
 
 %nodefaultctor BOP_ListOfLoop;
@@ -958,6 +998,11 @@ class BOP_EmptyBuilder : public BOP_Builder {
 		virtual		void BuildResult();
 
 };
+%extend BOP_EmptyBuilder {
+	~BOP_EmptyBuilder() {
+	printf("Call custom destructor for instance of BOP_EmptyBuilder\n");
+	}
+};
 
 %nodefaultctor BOP_BlockIterator;
 class BOP_BlockIterator {
@@ -979,6 +1024,11 @@ class BOP_BlockIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 
+};
+%extend BOP_BlockIterator {
+	~BOP_BlockIterator() {
+	printf("Call custom destructor for instance of BOP_BlockIterator\n");
+	}
 };
 
 %nodefaultctor BOP_WESCorrector;
@@ -1002,6 +1052,11 @@ class BOP_WESCorrector {
 		BOP_WireEdgeSet & NewWES();
 
 };
+%extend BOP_WESCorrector {
+	~BOP_WESCorrector() {
+	printf("Call custom destructor for instance of BOP_WESCorrector\n");
+	}
+};
 
 %nodefaultctor BOP_Area2dBuilder;
 class BOP_Area2dBuilder : public BOP_AreaBuilder {
@@ -1016,6 +1071,11 @@ class BOP_Area2dBuilder : public BOP_AreaBuilder {
 		virtual		~BOP_Area2dBuilder();
 
 };
+%extend BOP_Area2dBuilder {
+	~BOP_Area2dBuilder() {
+	printf("Call custom destructor for instance of BOP_Area2dBuilder\n");
+	}
+};
 
 %nodefaultctor BOP_FaceAreaBuilder;
 class BOP_FaceAreaBuilder : public BOP_Area2dBuilder {
@@ -1029,6 +1089,11 @@ class BOP_FaceAreaBuilder : public BOP_Area2dBuilder {
 		%feature("autodoc", "1");
 		virtual		~BOP_FaceAreaBuilder();
 
+};
+%extend BOP_FaceAreaBuilder {
+	~BOP_FaceAreaBuilder() {
+	printf("Call custom destructor for instance of BOP_FaceAreaBuilder\n");
+	}
 };
 
 %nodefaultctor BOP_ListNodeOfListOfFaceInfo;
@@ -1090,6 +1155,11 @@ class BOP_LoopClassifier {
 		virtual		TopAbs_State Compare(const Handle_BOP_Loop &L1, const Handle_BOP_Loop &L2);
 
 };
+%extend BOP_LoopClassifier {
+	~BOP_LoopClassifier() {
+	printf("Call custom destructor for instance of BOP_LoopClassifier\n");
+	}
+};
 
 %nodefaultctor BOP_CompositeClassifier;
 class BOP_CompositeClassifier : public BOP_LoopClassifier {
@@ -1108,6 +1178,11 @@ class BOP_CompositeClassifier : public BOP_LoopClassifier {
 		virtual		TopAbs_State State();
 
 };
+%extend BOP_CompositeClassifier {
+	~BOP_CompositeClassifier() {
+	printf("Call custom destructor for instance of BOP_CompositeClassifier\n");
+	}
+};
 
 %nodefaultctor BOP_WireEdgeClassifier;
 class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
@@ -1121,6 +1196,11 @@ class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
 		%feature("autodoc", "1");
 		virtual		~BOP_WireEdgeClassifier();
 
+};
+%extend BOP_WireEdgeClassifier {
+	~BOP_WireEdgeClassifier() {
+	printf("Call custom destructor for instance of BOP_WireEdgeClassifier\n");
+	}
 };
 
 %nodefaultctor BOP_ConnexityBlock;
@@ -1141,6 +1221,11 @@ class BOP_ConnexityBlock {
 		%feature("autodoc", "1");
 		Standard_Boolean IsRegular() const;
 
+};
+%extend BOP_ConnexityBlock {
+	~BOP_ConnexityBlock() {
+	printf("Call custom destructor for instance of BOP_ConnexityBlock\n");
+	}
 };
 
 %nodefaultctor BOP_ListNodeOfListOfEdgeInfo;
@@ -1191,6 +1276,11 @@ class BOP_BuilderTools {
 		%feature("autodoc", "1");
 		void MakeConnexityBlocks(const TopTools_ListOfShape &aLE, const TopAbs_ShapeEnum aType, BOP_ListOfConnexityBlock & aLConBlks);
 
+};
+%extend BOP_BuilderTools {
+	~BOP_BuilderTools() {
+	printf("Call custom destructor for instance of BOP_BuilderTools\n");
+	}
 };
 
 %nodefaultctor BOP_ShapeSet;
@@ -1246,6 +1336,11 @@ class BOP_ShapeSet {
 		void ClearContents();
 
 };
+%extend BOP_ShapeSet {
+	~BOP_ShapeSet() {
+	printf("Call custom destructor for instance of BOP_ShapeSet\n");
+	}
+};
 
 %nodefaultctor BOP_ShellFaceSet;
 class BOP_ShellFaceSet : public BOP_ShapeSet {
@@ -1259,6 +1354,11 @@ class BOP_ShellFaceSet : public BOP_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		~BOP_ShellFaceSet();
 
+};
+%extend BOP_ShellFaceSet {
+	~BOP_ShellFaceSet() {
+	printf("Call custom destructor for instance of BOP_ShellFaceSet\n");
+	}
 };
 
 %nodefaultctor BOP_SolidBuilder;
@@ -1298,6 +1398,11 @@ class BOP_SolidBuilder {
 		const TopoDS_Face & Face() const;
 
 };
+%extend BOP_SolidBuilder {
+	~BOP_SolidBuilder() {
+	printf("Call custom destructor for instance of BOP_SolidBuilder\n");
+	}
+};
 
 %nodefaultctor BOP_SolidClassifier;
 class BOP_SolidClassifier {
@@ -1321,6 +1426,11 @@ class BOP_SolidClassifier {
 		%feature("autodoc", "1");
 		virtual		~BOP_SolidClassifier();
 
+};
+%extend BOP_SolidClassifier {
+	~BOP_SolidClassifier() {
+	printf("Call custom destructor for instance of BOP_SolidClassifier\n");
+	}
 };
 
 %nodefaultctor BOP_IndexedDataMapOfEdgeListFaceInfo;
@@ -1361,6 +1471,11 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BOP_ListOfFaceInfo & ChangeFromKey(const TopoDS_Shape &K);
 
+};
+%extend BOP_IndexedDataMapOfEdgeListFaceInfo {
+	~BOP_IndexedDataMapOfEdgeListFaceInfo() {
+	printf("Call custom destructor for instance of BOP_IndexedDataMapOfEdgeListFaceInfo\n");
+	}
 };
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
@@ -1464,6 +1579,11 @@ class BOP_ListOfConnexityBlock {
 		void InsertAfter(BOP_ListOfConnexityBlock & Other, BOP_ListIteratorOfListOfConnexityBlock & It);
 
 };
+%extend BOP_ListOfConnexityBlock {
+	~BOP_ListOfConnexityBlock() {
+	printf("Call custom destructor for instance of BOP_ListOfConnexityBlock\n");
+	}
+};
 
 %nodefaultctor BOP_ListNodeOfListOfCheckResult;
 class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
@@ -1510,6 +1630,11 @@ class BOP_ShellSplitter {
 		const BOPTColStd_ListOfListOfShape & Shapes() const;
 
 };
+%extend BOP_ShellSplitter {
+	~BOP_ShellSplitter() {
+	printf("Call custom destructor for instance of BOP_ShellSplitter\n");
+	}
+};
 
 %nodefaultctor BOP_CheckResult;
 class BOP_CheckResult {
@@ -1540,6 +1665,11 @@ class BOP_CheckResult {
 		BOP_CheckStatus GetCheckStatus() const;
 
 };
+%extend BOP_CheckResult {
+	~BOP_CheckResult() {
+	printf("Call custom destructor for instance of BOP_CheckResult\n");
+	}
+};
 
 %nodefaultctor BOP_ShellFaceClassifier;
 class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
@@ -1563,6 +1693,11 @@ class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
 		%feature("autodoc", "1");
 		virtual		~BOP_ShellFaceClassifier();
 
+};
+%extend BOP_ShellFaceClassifier {
+	~BOP_ShellFaceClassifier() {
+	printf("Call custom destructor for instance of BOP_ShellFaceClassifier\n");
+	}
 };
 
 %nodefaultctor BOP_SequenceNodeOfSeqOfSeqOfShape;
@@ -1626,6 +1761,11 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 		BOP_ListOfEdgeInfo & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend BOP_IndexedDataMapOfVertexListEdgeInfo {
+	~BOP_IndexedDataMapOfVertexListEdgeInfo() {
+	printf("Call custom destructor for instance of BOP_IndexedDataMapOfVertexListEdgeInfo\n");
+	}
+};
 
 %nodefaultctor BOP_ListIteratorOfListOfListOfLoop;
 class BOP_ListIteratorOfListOfListOfLoop {
@@ -1645,6 +1785,11 @@ class BOP_ListIteratorOfListOfListOfLoop {
 		%feature("autodoc", "1");
 		BOP_ListOfLoop & Value() const;
 
+};
+%extend BOP_ListIteratorOfListOfListOfLoop {
+	~BOP_ListIteratorOfListOfListOfLoop() {
+	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfListOfLoop\n");
+	}
 };
 
 %nodefaultctor BOP_ShellSolid;
@@ -1676,6 +1821,11 @@ class BOP_ShellSolid : public BOP_Builder {
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
 };
+%extend BOP_ShellSolid {
+	~BOP_ShellSolid() {
+	printf("Call custom destructor for instance of BOP_ShellSolid\n");
+	}
+};
 
 %nodefaultctor BOP_ShellShell;
 class BOP_ShellShell : public BOP_ShellSolid {
@@ -1685,6 +1835,11 @@ class BOP_ShellShell : public BOP_ShellSolid {
 		%feature("autodoc", "1");
 		virtual		~BOP_ShellShell();
 
+};
+%extend BOP_ShellShell {
+	~BOP_ShellShell() {
+	printf("Call custom destructor for instance of BOP_ShellShell\n");
+	}
 };
 
 %nodefaultctor BOP_Section;
@@ -1705,6 +1860,11 @@ class BOP_Section : public BOP_Builder {
 		%feature("autodoc", "1");
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
+};
+%extend BOP_Section {
+	~BOP_Section() {
+	printf("Call custom destructor for instance of BOP_Section\n");
+	}
 };
 
 %nodefaultctor BOP_ListOfCheckResult;
@@ -1752,6 +1912,11 @@ class BOP_ListOfCheckResult {
 		void InsertAfter(BOP_ListOfCheckResult & Other, BOP_ListIteratorOfListOfCheckResult & It);
 
 };
+%extend BOP_ListOfCheckResult {
+	~BOP_ListOfCheckResult() {
+	printf("Call custom destructor for instance of BOP_ListOfCheckResult\n");
+	}
+};
 
 %nodefaultctor BOP_ListOfFaceInfo;
 class BOP_ListOfFaceInfo {
@@ -1797,6 +1962,11 @@ class BOP_ListOfFaceInfo {
 		%feature("autodoc", "1");
 		void InsertAfter(BOP_ListOfFaceInfo & Other, BOP_ListIteratorOfListOfFaceInfo & It);
 
+};
+%extend BOP_ListOfFaceInfo {
+	~BOP_ListOfFaceInfo() {
+	printf("Call custom destructor for instance of BOP_ListOfFaceInfo\n");
+	}
 };
 
 %nodefaultctor BOP_FaceBuilder;
@@ -1854,6 +2024,11 @@ class BOP_FaceBuilder {
 		const TopoDS_Edge & Edge() const;
 
 };
+%extend BOP_FaceBuilder {
+	~BOP_FaceBuilder() {
+	printf("Call custom destructor for instance of BOP_FaceBuilder\n");
+	}
+};
 
 %nodefaultctor BOP_ListOfListOfLoop;
 class BOP_ListOfListOfLoop {
@@ -1899,6 +2074,11 @@ class BOP_ListOfListOfLoop {
 		%feature("autodoc", "1");
 		void InsertAfter(BOP_ListOfListOfLoop & Other, BOP_ListIteratorOfListOfListOfLoop & It);
 
+};
+%extend BOP_ListOfListOfLoop {
+	~BOP_ListOfListOfLoop() {
+	printf("Call custom destructor for instance of BOP_ListOfListOfLoop\n");
+	}
 };
 
 %nodefaultctor BOP_ListNodeOfListOfLoop;
@@ -1962,6 +2142,11 @@ class BOP_BlockBuilder {
 		Standard_Boolean CurrentBlockIsRegular();
 
 };
+%extend BOP_BlockBuilder {
+	~BOP_BlockBuilder() {
+	printf("Call custom destructor for instance of BOP_BlockBuilder\n");
+	}
+};
 
 %nodefaultctor BOP_CorrectTolerances;
 class BOP_CorrectTolerances {
@@ -1977,6 +2162,11 @@ class BOP_CorrectTolerances {
 		%feature("autodoc", "1");
 		void CorrectPointOnCurve(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
 
+};
+%extend BOP_CorrectTolerances {
+	~BOP_CorrectTolerances() {
+	printf("Call custom destructor for instance of BOP_CorrectTolerances\n");
+	}
 };
 
 %nodefaultctor BOP_SolidSolid;
@@ -1998,6 +2188,11 @@ class BOP_SolidSolid : public BOP_ShellSolid {
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
 };
+%extend BOP_SolidSolid {
+	~BOP_SolidSolid() {
+	printf("Call custom destructor for instance of BOP_SolidSolid\n");
+	}
+};
 
 %nodefaultctor BOP_ListIteratorOfListOfConnexityBlock;
 class BOP_ListIteratorOfListOfConnexityBlock {
@@ -2017,6 +2212,11 @@ class BOP_ListIteratorOfListOfConnexityBlock {
 		%feature("autodoc", "1");
 		BOP_ConnexityBlock & Value() const;
 
+};
+%extend BOP_ListIteratorOfListOfConnexityBlock {
+	~BOP_ListIteratorOfListOfConnexityBlock() {
+	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfConnexityBlock\n");
+	}
 };
 
 %nodefaultctor BOP_SFSCorrector;
@@ -2039,6 +2239,11 @@ class BOP_SFSCorrector {
 		%feature("autodoc", "1");
 		BOP_ShellFaceSet & NewSFS();
 
+};
+%extend BOP_SFSCorrector {
+	~BOP_SFSCorrector() {
+	printf("Call custom destructor for instance of BOP_SFSCorrector\n");
+	}
 };
 
 %nodefaultctor BOP_SeqOfSeqOfShape;
@@ -2089,6 +2294,11 @@ class BOP_SeqOfSeqOfShape : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend BOP_SeqOfSeqOfShape {
+	~BOP_SeqOfSeqOfShape() {
+	printf("Call custom destructor for instance of BOP_SeqOfSeqOfShape\n");
+	}
 };
 
 %nodefaultctor BOP_LoopSet;
@@ -2149,6 +2359,11 @@ class BOP_WireEdgeSet : public BOP_ShapeSet {
 		virtual		~BOP_WireEdgeSet();
 
 };
+%extend BOP_WireEdgeSet {
+	~BOP_WireEdgeSet() {
+	printf("Call custom destructor for instance of BOP_WireEdgeSet\n");
+	}
+};
 
 %nodefaultctor BOP_WireWire;
 class BOP_WireWire : public BOP_WireShape {
@@ -2166,6 +2381,11 @@ class BOP_WireWire : public BOP_WireShape {
 		%feature("autodoc", "1");
 		virtual		void BuildResult();
 
+};
+%extend BOP_WireWire {
+	~BOP_WireWire() {
+	printf("Call custom destructor for instance of BOP_WireWire\n");
+	}
 };
 
 %nodefaultctor BOP_ShellSolidHistoryCollector;
@@ -2211,6 +2431,11 @@ class BOP_WireShell : public BOP_WireShape {
 		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
 
 };
+%extend BOP_WireShell {
+	~BOP_WireShell() {
+	printf("Call custom destructor for instance of BOP_WireShell\n");
+	}
+};
 
 %nodefaultctor BOP_IndexedDataMapOfSolidClassifier;
 class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
@@ -2251,6 +2476,11 @@ class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
 		BOP_PSoClassif & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend BOP_IndexedDataMapOfSolidClassifier {
+	~BOP_IndexedDataMapOfSolidClassifier() {
+	printf("Call custom destructor for instance of BOP_IndexedDataMapOfSolidClassifier\n");
+	}
+};
 
 %nodefaultctor BOP_SolidAreaBuilder;
 class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
@@ -2264,6 +2494,11 @@ class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
 		%feature("autodoc", "1");
 		virtual		~BOP_SolidAreaBuilder();
 
+};
+%extend BOP_SolidAreaBuilder {
+	~BOP_SolidAreaBuilder() {
+	printf("Call custom destructor for instance of BOP_SolidAreaBuilder\n");
+	}
 };
 
 %nodefaultctor BOP_ListIteratorOfListOfLoop;
@@ -2312,6 +2547,11 @@ class BOP_WireSplitter {
 		const BOPTColStd_ListOfListOfShape & Shapes() const;
 
 };
+%extend BOP_WireSplitter {
+	~BOP_WireSplitter() {
+	printf("Call custom destructor for instance of BOP_WireSplitter\n");
+	}
+};
 
 %nodefaultctor BOP_FaceInfo;
 class BOP_FaceInfo {
@@ -2350,6 +2590,11 @@ class BOP_FaceInfo {
 		Standard_Real Angle() const;
 
 };
+%extend BOP_FaceInfo {
+	~BOP_FaceInfo() {
+	printf("Call custom destructor for instance of BOP_FaceInfo\n");
+	}
+};
 
 %nodefaultctor BOP_SDFWESFiller;
 class BOP_SDFWESFiller {
@@ -2387,6 +2632,11 @@ class BOP_SDFWESFiller {
 		%feature("autodoc", "1");
 		void UpdateDEStates3D();
 
+};
+%extend BOP_SDFWESFiller {
+	~BOP_SDFWESFiller() {
+	printf("Call custom destructor for instance of BOP_SDFWESFiller\n");
+	}
 };
 
 %nodefaultctor BOP_ListNodeOfListOfConnexityBlock;
@@ -2452,6 +2702,11 @@ class BOP_ArgumentAnalyzer {
 		const BOP_ListOfCheckResult & GetCheckResult() const;
 
 };
+%extend BOP_ArgumentAnalyzer {
+	~BOP_ArgumentAnalyzer() {
+	printf("Call custom destructor for instance of BOP_ArgumentAnalyzer\n");
+	}
+};
 
 %nodefaultctor BOP_ListOfEdgeInfo;
 class BOP_ListOfEdgeInfo {
@@ -2498,6 +2753,11 @@ class BOP_ListOfEdgeInfo {
 		void InsertAfter(BOP_ListOfEdgeInfo & Other, BOP_ListIteratorOfListOfEdgeInfo & It);
 
 };
+%extend BOP_ListOfEdgeInfo {
+	~BOP_ListOfEdgeInfo() {
+	printf("Call custom destructor for instance of BOP_ListOfEdgeInfo\n");
+	}
+};
 
 %nodefaultctor BOP_Refiner;
 class BOP_Refiner {
@@ -2525,4 +2785,9 @@ class BOP_Refiner {
 		%feature("autodoc", "1");
 		Standard_Integer NbRemovedEdges() const;
 
+};
+%extend BOP_Refiner {
+	~BOP_Refiner() {
+	printf("Call custom destructor for instance of BOP_Refiner\n");
+	}
 };

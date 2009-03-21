@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BiTgte
@@ -406,6 +406,11 @@ class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIte
 		const Bnd_Box & Value() const;
 
 };
+%extend BiTgte_DataMapIteratorOfDataMapOfShapeBox {
+	~BiTgte_DataMapIteratorOfDataMapOfShapeBox() {
+	printf("Call custom destructor for instance of BiTgte_DataMapIteratorOfDataMapOfShapeBox\n");
+	}
+};
 
 %nodefaultctor BiTgte_CurveOnEdge;
 class BiTgte_CurveOnEdge : public Adaptor3d_Curve {
@@ -508,4 +513,9 @@ class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Bnd_Box & operator()(const TopoDS_Shape &K);
 
+};
+%extend BiTgte_DataMapOfShapeBox {
+	~BiTgte_DataMapOfShapeBox() {
+	printf("Call custom destructor for instance of BiTgte_DataMapOfShapeBox\n");
+	}
 };

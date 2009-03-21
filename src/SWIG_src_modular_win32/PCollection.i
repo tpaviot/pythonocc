@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module PCollection
@@ -256,6 +256,11 @@ class PCollection_PrivCompareOfInteger {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
+};
+%extend PCollection_PrivCompareOfInteger {
+	~PCollection_PrivCompareOfInteger() {
+	printf("Call custom destructor for instance of PCollection_PrivCompareOfInteger\n");
+	}
 };
 
 %nodefaultctor PCollection_IsNotRoot;
@@ -551,6 +556,11 @@ class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
 };
+%extend PCollection_CompareOfInteger {
+	~PCollection_CompareOfInteger() {
+	printf("Call custom destructor for instance of PCollection_CompareOfInteger\n");
+	}
+};
 
 %nodefaultctor PCollection_PrivCompareOfReal;
 class PCollection_PrivCompareOfReal {
@@ -567,6 +577,11 @@ class PCollection_PrivCompareOfReal {
 		Standard_Boolean IsEqual(const Standard_Real &Left, const Standard_Real &Right) const;
 
 };
+%extend PCollection_PrivCompareOfReal {
+	~PCollection_PrivCompareOfReal() {
+	printf("Call custom destructor for instance of PCollection_PrivCompareOfReal\n");
+	}
+};
 
 %nodefaultctor PCollection_CompareOfReal;
 class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {
@@ -576,4 +591,9 @@ class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {
 		%feature("autodoc", "1");
 		PCollection_CompareOfReal();
 
+};
+%extend PCollection_CompareOfReal {
+	~PCollection_CompareOfReal() {
+	printf("Call custom destructor for instance of PCollection_CompareOfReal\n");
+	}
 };

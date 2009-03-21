@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module SortTools
@@ -95,6 +95,11 @@ class SortTools_QuickSortOfReal {
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
+%extend SortTools_QuickSortOfReal {
+	~SortTools_QuickSortOfReal() {
+	printf("Call custom destructor for instance of SortTools_QuickSortOfReal\n");
+	}
+};
 
 %nodefaultctor SortTools_HeapSortOfInteger;
 class SortTools_HeapSortOfInteger {
@@ -106,6 +111,11 @@ class SortTools_HeapSortOfInteger {
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
+};
+%extend SortTools_HeapSortOfInteger {
+	~SortTools_HeapSortOfInteger() {
+	printf("Call custom destructor for instance of SortTools_HeapSortOfInteger\n");
+	}
 };
 
 %nodefaultctor SortTools_StraightInsertionSortOfInteger;
@@ -119,6 +129,11 @@ class SortTools_StraightInsertionSortOfInteger {
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
+%extend SortTools_StraightInsertionSortOfInteger {
+	~SortTools_StraightInsertionSortOfInteger() {
+	printf("Call custom destructor for instance of SortTools_StraightInsertionSortOfInteger\n");
+	}
+};
 
 %nodefaultctor SortTools_HeapSortOfReal;
 class SortTools_HeapSortOfReal {
@@ -130,6 +145,11 @@ class SortTools_HeapSortOfReal {
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
+};
+%extend SortTools_HeapSortOfReal {
+	~SortTools_HeapSortOfReal() {
+	printf("Call custom destructor for instance of SortTools_HeapSortOfReal\n");
+	}
 };
 
 %nodefaultctor SortTools_StraightInsertionSortOfReal;
@@ -143,6 +163,11 @@ class SortTools_StraightInsertionSortOfReal {
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
+%extend SortTools_StraightInsertionSortOfReal {
+	~SortTools_StraightInsertionSortOfReal() {
+	printf("Call custom destructor for instance of SortTools_StraightInsertionSortOfReal\n");
+	}
+};
 
 %nodefaultctor SortTools_QuickSortOfInteger;
 class SortTools_QuickSortOfInteger {
@@ -154,6 +179,11 @@ class SortTools_QuickSortOfInteger {
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
+};
+%extend SortTools_QuickSortOfInteger {
+	~SortTools_QuickSortOfInteger() {
+	printf("Call custom destructor for instance of SortTools_QuickSortOfInteger\n");
+	}
 };
 
 %nodefaultctor SortTools_ShellSortOfReal;
@@ -167,6 +197,11 @@ class SortTools_ShellSortOfReal {
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
+%extend SortTools_ShellSortOfReal {
+	~SortTools_ShellSortOfReal() {
+	printf("Call custom destructor for instance of SortTools_ShellSortOfReal\n");
+	}
+};
 
 %nodefaultctor SortTools_ShellSortOfInteger;
 class SortTools_ShellSortOfInteger {
@@ -178,4 +213,9 @@ class SortTools_ShellSortOfInteger {
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
+};
+%extend SortTools_ShellSortOfInteger {
+	~SortTools_ShellSortOfInteger() {
+	printf("Call custom destructor for instance of SortTools_ShellSortOfInteger\n");
+	}
 };

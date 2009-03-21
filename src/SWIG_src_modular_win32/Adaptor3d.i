@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Adaptor3d
@@ -643,6 +643,11 @@ class Adaptor3d_InterFunc : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~Adaptor3d_InterFunc();
 
+};
+%extend Adaptor3d_InterFunc {
+	~Adaptor3d_InterFunc() {
+	printf("Call custom destructor for instance of Adaptor3d_InterFunc\n");
+	}
 };
 
 %nodefaultctor Adaptor3d_Surface;

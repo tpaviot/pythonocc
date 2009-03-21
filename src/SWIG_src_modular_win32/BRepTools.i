@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepTools
@@ -277,6 +277,11 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 		virtual		~BRepTools_ShapeSet();
 
 };
+%extend BRepTools_ShapeSet {
+	~BRepTools_ShapeSet() {
+	printf("Call custom destructor for instance of BRepTools_ShapeSet\n");
+	}
+};
 
 %nodefaultctor BRepTools_Quilt;
 class BRepTools_Quilt {
@@ -298,6 +303,11 @@ class BRepTools_Quilt {
 		%feature("autodoc", "1");
 		TopoDS_Shape Shells() const;
 
+};
+%extend BRepTools_Quilt {
+	~BRepTools_Quilt() {
+	printf("Call custom destructor for instance of BRepTools_Quilt\n");
+	}
 };
 
 %nodefaultctor BRepTools_Modification;
@@ -358,6 +368,11 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepTools_MapOfVertexPnt2d {
+	~BRepTools_MapOfVertexPnt2d() {
+	printf("Call custom destructor for instance of BRepTools_MapOfVertexPnt2d\n");
+	}
 };
 
 %nodefaultctor BRepTools;
@@ -427,6 +442,11 @@ class BRepTools {
 		Standard_Boolean Read(TopoDS_Shape & Sh, const char * File, const BRep_Builder &B, const Handle_Message_ProgressIndicator &PR=0);
 
 };
+%extend BRepTools {
+	~BRepTools() {
+	printf("Call custom destructor for instance of BRepTools\n");
+	}
+};
 
 %nodefaultctor BRepTools_GTrsfModification;
 class BRepTools_GTrsfModification : public BRepTools_Modification {
@@ -482,6 +502,11 @@ class BRepTools_Modifier {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & ModifiedShape(const TopoDS_Shape &S) const;
 
+};
+%extend BRepTools_Modifier {
+	~BRepTools_Modifier() {
+	printf("Call custom destructor for instance of BRepTools_Modifier\n");
+	}
 };
 
 %nodefaultctor BRepTools_TrsfModification;
@@ -546,6 +571,11 @@ class BRepTools_WireExplorer {
 		%feature("autodoc", "1");
 		void Clear();
 
+};
+%extend BRepTools_WireExplorer {
+	~BRepTools_WireExplorer() {
+	printf("Call custom destructor for instance of BRepTools_WireExplorer\n");
+	}
 };
 
 %nodefaultctor BRepTools_ReShape;
@@ -637,6 +667,11 @@ class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapI
 		const TColgp_SequenceOfPnt2d & Value() const;
 
 };
+%extend BRepTools_DataMapIteratorOfMapOfVertexPnt2d {
+	~BRepTools_DataMapIteratorOfMapOfVertexPnt2d() {
+	printf("Call custom destructor for instance of BRepTools_DataMapIteratorOfMapOfVertexPnt2d\n");
+	}
+};
 
 %nodefaultctor BRepTools_Substitution;
 class BRepTools_Substitution {
@@ -656,6 +691,11 @@ class BRepTools_Substitution {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Copy(const TopoDS_Shape &S) const;
 
+};
+%extend BRepTools_Substitution {
+	~BRepTools_Substitution() {
+	printf("Call custom destructor for instance of BRepTools_Substitution\n");
+	}
 };
 
 %nodefaultctor BRepTools_DataMapNodeOfMapOfVertexPnt2d;

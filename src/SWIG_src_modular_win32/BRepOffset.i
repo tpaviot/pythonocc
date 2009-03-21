@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepOffset
@@ -263,6 +263,11 @@ class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
 		TopTools_MapOfShape & operator()(const TopoDS_Shape &K);
 
 };
+%extend BRepOffset_DataMapOfShapeMapOfShape {
+	~BRepOffset_DataMapOfShapeMapOfShape() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapOfShapeMapOfShape\n");
+	}
+};
 
 %nodefaultctor BRepOffset_Analyse;
 class BRepOffset_Analyse {
@@ -301,6 +306,11 @@ class BRepOffset_Analyse {
 		void AddFaces(const TopoDS_Face &Face, TopoDS_Compound & Co, TopTools_MapOfShape & Map, const BRepOffset_Type Type1, const BRepOffset_Type Type2) const;
 
 };
+%extend BRepOffset_Analyse {
+	~BRepOffset_Analyse() {
+	printf("Call custom destructor for instance of BRepOffset_Analyse\n");
+	}
+};
 
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeReal;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
@@ -318,6 +328,11 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicM
 		%feature("autodoc", "1");
 		const Standard_Real & Value() const;
 
+};
+%extend BRepOffset_DataMapIteratorOfDataMapOfShapeReal {
+	~BRepOffset_DataMapIteratorOfDataMapOfShapeReal() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeReal\n");
+	}
 };
 
 %nodefaultctor BRepOffset_ListIteratorOfListOfInterval;
@@ -339,6 +354,11 @@ class BRepOffset_ListIteratorOfListOfInterval {
 		BRepOffset_Interval & Value() const;
 
 };
+%extend BRepOffset_ListIteratorOfListOfInterval {
+	~BRepOffset_ListIteratorOfListOfInterval() {
+	printf("Call custom destructor for instance of BRepOffset_ListIteratorOfListOfInterval\n");
+	}
+};
 
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeOffset;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_BasicMapIterator {
@@ -356,6 +376,11 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_Basi
 		%feature("autodoc", "1");
 		const BRepOffset_Offset & Value() const;
 
+};
+%extend BRepOffset_DataMapIteratorOfDataMapOfShapeOffset {
+	~BRepOffset_DataMapIteratorOfDataMapOfShapeOffset() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeOffset\n");
+	}
 };
 
 %nodefaultctor BRepOffset_MakeOffset;
@@ -394,6 +419,11 @@ class BRepOffset_MakeOffset {
 		%feature("autodoc", "1");
 		const TopTools_MapOfShape & ClosingFaces() const;
 
+};
+%extend BRepOffset_MakeOffset {
+	~BRepOffset_MakeOffset() {
+	printf("Call custom destructor for instance of BRepOffset_MakeOffset\n");
+	}
 };
 
 %nodefaultctor BRepOffset_ListOfInterval;
@@ -441,6 +471,11 @@ class BRepOffset_ListOfInterval {
 		void InsertAfter(BRepOffset_ListOfInterval & Other, BRepOffset_ListIteratorOfListOfInterval & It);
 
 };
+%extend BRepOffset_ListOfInterval {
+	~BRepOffset_ListOfInterval() {
+	printf("Call custom destructor for instance of BRepOffset_ListOfInterval\n");
+	}
+};
 
 %nodefaultctor BRepOffset_DataMapOfShapeReal;
 class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
@@ -470,6 +505,11 @@ class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepOffset_DataMapOfShapeReal {
+	~BRepOffset_DataMapOfShapeReal() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapOfShapeReal\n");
+	}
 };
 
 %nodefaultctor BRepOffset;
@@ -515,6 +555,11 @@ class BRepOffset_DataMapOfShapeListOfInterval : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BRepOffset_ListOfInterval & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepOffset_DataMapOfShapeListOfInterval {
+	~BRepOffset_DataMapOfShapeListOfInterval() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapOfShapeListOfInterval\n");
+	}
 };
 
 %nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval;
@@ -582,6 +627,11 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval : public TCollect
 		const BRepOffset_ListOfInterval & Value() const;
 
 };
+%extend BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval {
+	~BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval\n");
+	}
+};
 
 %nodefaultctor BRepOffset_Interval;
 class BRepOffset_Interval {
@@ -605,6 +655,11 @@ class BRepOffset_Interval {
 		%feature("autodoc", "1");
 		BRepOffset_Type Type() const;
 
+};
+%extend BRepOffset_Interval {
+	~BRepOffset_Interval() {
+	printf("Call custom destructor for instance of BRepOffset_Interval\n");
+	}
 };
 
 %nodefaultctor BRepOffset_ListNodeOfListOfInterval;
@@ -658,6 +713,11 @@ class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
 		BRepOffset_Offset & operator()(const TopoDS_Shape &K);
 
 };
+%extend BRepOffset_DataMapOfShapeOffset {
+	~BRepOffset_DataMapOfShapeOffset() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapOfShapeOffset\n");
+	}
+};
 
 %nodefaultctor BRepOffset_MakeLoops;
 class BRepOffset_MakeLoops {
@@ -673,6 +733,11 @@ class BRepOffset_MakeLoops {
 		%feature("autodoc", "1");
 		void BuildFaces(const TopTools_ListOfShape &LF, const Handle_BRepAlgo_AsDes &AsDes, BRepAlgo_Image & Image);
 
+};
+%extend BRepOffset_MakeLoops {
+	~BRepOffset_MakeLoops() {
+	printf("Call custom destructor for instance of BRepOffset_MakeLoops\n");
+	}
 };
 
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape;
@@ -691,6 +756,11 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_
 		%feature("autodoc", "1");
 		const TopTools_MapOfShape & Value() const;
 
+};
+%extend BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape {
+	~BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape() {
+	printf("Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape\n");
+	}
 };
 
 %nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeOffset;
@@ -760,6 +830,11 @@ class BRepOffset_Tool {
 		Standard_Real Gabarit(const Handle_Geom_Curve &aCurve);
 
 };
+%extend BRepOffset_Tool {
+	~BRepOffset_Tool() {
+	printf("Call custom destructor for instance of BRepOffset_Tool\n");
+	}
+};
 
 %nodefaultctor BRepOffset_Offset;
 class BRepOffset_Offset {
@@ -800,6 +875,11 @@ class BRepOffset_Offset {
 		BRepOffset_Status Status() const;
 
 };
+%extend BRepOffset_Offset {
+	~BRepOffset_Offset() {
+	printf("Call custom destructor for instance of BRepOffset_Offset\n");
+	}
+};
 
 %nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
 class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapNode {
@@ -837,6 +917,11 @@ class BRepOffset_Inter2d {
 		%feature("autodoc", "1");
 		void ConnexIntByInt(const TopoDS_Face &FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape &Build, const Handle_BRepAlgo_AsDes &AsDes, const Standard_Real Offset, const Standard_Real Tol);
 
+};
+%extend BRepOffset_Inter2d {
+	~BRepOffset_Inter2d() {
+	printf("Call custom destructor for instance of BRepOffset_Inter2d\n");
+	}
 };
 
 %nodefaultctor BRepOffset_Inter3d;

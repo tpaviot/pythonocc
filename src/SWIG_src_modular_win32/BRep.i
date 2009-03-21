@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRep
@@ -1239,6 +1239,11 @@ class BRep_Builder : public TopoDS_Builder3D {
 		%feature("autodoc", "1");
 		void Transfert(const TopoDS_Edge &Ein, const TopoDS_Edge &Eout, const TopoDS_Vertex &Vin, const TopoDS_Vertex &Vout) const;
 
+};
+%extend BRep_Builder {
+	~BRep_Builder() {
+	printf("Call custom destructor for instance of BRep_Builder\n");
+	}
 };
 
 %nodefaultctor BRep_PointOnCurve;

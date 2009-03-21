@@ -99,6 +99,11 @@ class RWStepAP203_RWChangeRequest {
 		void Share(const Handle_StepAP203_ChangeRequest &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepAP203_RWChangeRequest {
+	~RWStepAP203_RWChangeRequest() {
+	printf("Call custom destructor for instance of RWStepAP203_RWChangeRequest\n");
+	}
+};
 
 %nodefaultctor RWStepAP203_RWCcDesignSecurityClassification;
 class RWStepAP203_RWCcDesignSecurityClassification {
@@ -114,6 +119,11 @@ class RWStepAP203_RWCcDesignSecurityClassification {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepAP203_CcDesignSecurityClassification &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepAP203_RWCcDesignSecurityClassification {
+	~RWStepAP203_RWCcDesignSecurityClassification() {
+	printf("Call custom destructor for instance of RWStepAP203_RWCcDesignSecurityClassification\n");
+	}
 };
 
 %nodefaultctor RWStepAP203_RWStartRequest;
@@ -131,6 +141,11 @@ class RWStepAP203_RWStartRequest {
 		void Share(const Handle_StepAP203_StartRequest &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepAP203_RWStartRequest {
+	~RWStepAP203_RWStartRequest() {
+	printf("Call custom destructor for instance of RWStepAP203_RWStartRequest\n");
+	}
+};
 
 %nodefaultctor RWStepAP203_RWStartWork;
 class RWStepAP203_RWStartWork {
@@ -146,6 +161,11 @@ class RWStepAP203_RWStartWork {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepAP203_StartWork &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepAP203_RWStartWork {
+	~RWStepAP203_RWStartWork() {
+	printf("Call custom destructor for instance of RWStepAP203_RWStartWork\n");
+	}
 };
 
 %nodefaultctor RWStepAP203_RWCcDesignDateAndTimeAssignment;
@@ -163,6 +183,11 @@ class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 		void Share(const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepAP203_RWCcDesignDateAndTimeAssignment {
+	~RWStepAP203_RWCcDesignDateAndTimeAssignment() {
+	printf("Call custom destructor for instance of RWStepAP203_RWCcDesignDateAndTimeAssignment\n");
+	}
+};
 
 %nodefaultctor RWStepAP203_RWChange;
 class RWStepAP203_RWChange {
@@ -178,6 +203,11 @@ class RWStepAP203_RWChange {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepAP203_Change &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepAP203_RWChange {
+	~RWStepAP203_RWChange() {
+	printf("Call custom destructor for instance of RWStepAP203_RWChange\n");
+	}
 };
 
 %nodefaultctor RWStepAP203_RWCcDesignCertification;
@@ -195,6 +225,11 @@ class RWStepAP203_RWCcDesignCertification {
 		void Share(const Handle_StepAP203_CcDesignCertification &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepAP203_RWCcDesignCertification {
+	~RWStepAP203_RWCcDesignCertification() {
+	printf("Call custom destructor for instance of RWStepAP203_RWCcDesignCertification\n");
+	}
+};
 
 %nodefaultctor RWStepAP203_RWCcDesignPersonAndOrganizationAssignment;
 class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
@@ -210,6 +245,11 @@ class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepAP203_CcDesignPersonAndOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
+	~RWStepAP203_RWCcDesignPersonAndOrganizationAssignment() {
+	printf("Call custom destructor for instance of RWStepAP203_RWCcDesignPersonAndOrganizationAssignment\n");
+	}
 };
 
 %nodefaultctor RWStepAP203_RWCcDesignApproval;
@@ -227,6 +267,11 @@ class RWStepAP203_RWCcDesignApproval {
 		void Share(const Handle_StepAP203_CcDesignApproval &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepAP203_RWCcDesignApproval {
+	~RWStepAP203_RWCcDesignApproval() {
+	printf("Call custom destructor for instance of RWStepAP203_RWCcDesignApproval\n");
+	}
+};
 
 %nodefaultctor RWStepAP203_RWCcDesignSpecificationReference;
 class RWStepAP203_RWCcDesignSpecificationReference {
@@ -243,6 +288,11 @@ class RWStepAP203_RWCcDesignSpecificationReference {
 		void Share(const Handle_StepAP203_CcDesignSpecificationReference &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepAP203_RWCcDesignSpecificationReference {
+	~RWStepAP203_RWCcDesignSpecificationReference() {
+	printf("Call custom destructor for instance of RWStepAP203_RWCcDesignSpecificationReference\n");
+	}
+};
 
 %nodefaultctor RWStepAP203_RWCcDesignContract;
 class RWStepAP203_RWCcDesignContract {
@@ -258,4 +308,9 @@ class RWStepAP203_RWCcDesignContract {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepAP203_CcDesignContract &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepAP203_RWCcDesignContract {
+	~RWStepAP203_RWCcDesignContract() {
+	printf("Call custom destructor for instance of RWStepAP203_RWCcDesignContract\n");
+	}
 };

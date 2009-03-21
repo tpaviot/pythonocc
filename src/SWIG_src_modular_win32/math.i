@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module math
@@ -155,6 +155,11 @@ class math_GaussLeastSquare {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_GaussLeastSquare {
+	~math_GaussLeastSquare() {
+	printf("Call custom destructor for instance of math_GaussLeastSquare\n");
+	}
+};
 
 %nodefaultctor math_DoubleTabOfReal;
 class math_DoubleTabOfReal {
@@ -182,6 +187,11 @@ class math_DoubleTabOfReal {
 		%feature("autodoc", "1");
 		~math_DoubleTabOfReal();
 
+};
+%extend math_DoubleTabOfReal {
+	~math_DoubleTabOfReal() {
+	printf("Call custom destructor for instance of math_DoubleTabOfReal\n");
+	}
 };
 
 %nodefaultctor math_SingularMatrix;
@@ -235,6 +245,11 @@ class math_TrigonometricFunctionRoots {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_TrigonometricFunctionRoots {
+	~math_TrigonometricFunctionRoots() {
+	printf("Call custom destructor for instance of math_TrigonometricFunctionRoots\n");
+	}
+};
 
 %nodefaultctor math_BissecNewton;
 class math_BissecNewton {
@@ -257,6 +272,11 @@ class math_BissecNewton {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_BissecNewton {
+	~math_BissecNewton() {
+	printf("Call custom destructor for instance of math_BissecNewton\n");
+	}
+};
 
 %nodefaultctor math_MultipleVarFunction;
 class math_MultipleVarFunction {
@@ -268,6 +288,11 @@ class math_MultipleVarFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
 
+};
+%extend math_MultipleVarFunction {
+	~math_MultipleVarFunction() {
+	printf("Call custom destructor for instance of math_MultipleVarFunction\n");
+	}
 };
 
 %nodefaultctor math_MultipleVarFunctionWithGradient;
@@ -281,6 +306,11 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 
 };
+%extend math_MultipleVarFunctionWithGradient {
+	~math_MultipleVarFunctionWithGradient() {
+	printf("Call custom destructor for instance of math_MultipleVarFunctionWithGradient\n");
+	}
+};
 
 %nodefaultctor math_MultipleVarFunctionWithHessian;
 class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithGradient {
@@ -288,6 +318,11 @@ class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithG
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G, math_Matrix & H);
 
+};
+%extend math_MultipleVarFunctionWithHessian {
+	~math_MultipleVarFunctionWithHessian() {
+	printf("Call custom destructor for instance of math_MultipleVarFunctionWithHessian\n");
+	}
 };
 
 %nodefaultctor math_BFGS;
@@ -323,6 +358,11 @@ class math_BFGS {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_BFGS {
+	~math_BFGS() {
+	printf("Call custom destructor for instance of math_BFGS\n");
+	}
+};
 
 %nodefaultctor math_DirectPolynomialRoots;
 class math_DirectPolynomialRoots {
@@ -349,6 +389,11 @@ class math_DirectPolynomialRoots {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_DirectPolynomialRoots {
+	~math_DirectPolynomialRoots() {
+	printf("Call custom destructor for instance of math_DirectPolynomialRoots\n");
+	}
+};
 
 %nodefaultctor math_IntegerRandom;
 class math_IntegerRandom {
@@ -362,6 +407,11 @@ class math_IntegerRandom {
 		%feature("autodoc", "1");
 		Standard_Integer Next();
 
+};
+%extend math_IntegerRandom {
+	~math_IntegerRandom() {
+	printf("Call custom destructor for instance of math_IntegerRandom\n");
+	}
 };
 
 %nodefaultctor math_Jacobi;
@@ -385,6 +435,11 @@ class math_Jacobi {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_Jacobi {
+	~math_Jacobi() {
+	printf("Call custom destructor for instance of math_Jacobi\n");
+	}
+};
 
 %nodefaultctor math;
 class math {
@@ -406,6 +461,11 @@ class math {
 		%feature("autodoc", "1");
 		Standard_Boolean KronrodPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
 
+};
+%extend math {
+	~math() {
+	printf("Call custom destructor for instance of math\n");
+	}
 };
 
 %nodefaultctor math_Powell;
@@ -437,6 +497,11 @@ class math_Powell {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_Powell {
+	~math_Powell() {
+	printf("Call custom destructor for instance of math_Powell\n");
+	}
+};
 
 %nodefaultctor math_FunctionRoot;
 class math_FunctionRoot {
@@ -460,6 +525,11 @@ class math_FunctionRoot {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_FunctionRoot {
+	~math_FunctionRoot() {
+	printf("Call custom destructor for instance of math_FunctionRoot\n");
+	}
 };
 
 %nodefaultctor math_Array1OfValueAndWeight;
@@ -497,6 +567,11 @@ class math_Array1OfValueAndWeight {
 		math_ValueAndWeight & operator()(const Standard_Integer Index);
 
 };
+%extend math_Array1OfValueAndWeight {
+	~math_Array1OfValueAndWeight() {
+	printf("Call custom destructor for instance of math_Array1OfValueAndWeight\n");
+	}
+};
 
 %nodefaultctor math_Householder;
 class math_Householder {
@@ -518,6 +593,11 @@ class math_Householder {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_Householder {
+	~math_Householder() {
+	printf("Call custom destructor for instance of math_Householder\n");
+	}
 };
 
 %nodefaultctor math_FunctionAllRoots;
@@ -545,6 +625,11 @@ class math_FunctionAllRoots {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_FunctionAllRoots {
+	~math_FunctionAllRoots() {
+	printf("Call custom destructor for instance of math_FunctionAllRoots\n");
+	}
+};
 
 %nodefaultctor math_EigenValuesSearcher;
 class math_EigenValuesSearcher {
@@ -563,6 +648,11 @@ class math_EigenValuesSearcher {
 		math_Vector EigenVector(const Standard_Integer Index) const;
 
 };
+%extend math_EigenValuesSearcher {
+	~math_EigenValuesSearcher() {
+	printf("Call custom destructor for instance of math_EigenValuesSearcher\n");
+	}
+};
 
 %nodefaultctor math_QuickSortOfValueAndWeight;
 class math_QuickSortOfValueAndWeight {
@@ -574,6 +664,11 @@ class math_QuickSortOfValueAndWeight {
 		%feature("autodoc", "1");
 		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
 
+};
+%extend math_QuickSortOfValueAndWeight {
+	~math_QuickSortOfValueAndWeight() {
+	printf("Call custom destructor for instance of math_QuickSortOfValueAndWeight\n");
+	}
 };
 
 %nodefaultctor math_ComputeGaussPointsAndWeights;
@@ -591,6 +686,11 @@ class math_ComputeGaussPointsAndWeights {
 		math_Vector Weights() const;
 
 };
+%extend math_ComputeGaussPointsAndWeights {
+	~math_ComputeGaussPointsAndWeights() {
+	printf("Call custom destructor for instance of math_ComputeGaussPointsAndWeights\n");
+	}
+};
 
 %nodefaultctor math_FunctionSet;
 class math_FunctionSet {
@@ -607,6 +707,11 @@ class math_FunctionSet {
 		virtual		Standard_Integer GetStateNumber();
 
 };
+%extend math_FunctionSet {
+	~math_FunctionSet() {
+	printf("Call custom destructor for instance of math_FunctionSet\n");
+	}
+};
 
 %nodefaultctor math_FunctionSetWithDerivatives;
 class math_FunctionSetWithDerivatives : public math_FunctionSet {
@@ -616,6 +721,11 @@ class math_FunctionSetWithDerivatives : public math_FunctionSet {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 
+};
+%extend math_FunctionSetWithDerivatives {
+	~math_FunctionSetWithDerivatives() {
+	printf("Call custom destructor for instance of math_FunctionSetWithDerivatives\n");
+	}
 };
 
 %nodefaultctor math_GaussSingleIntegration;
@@ -636,6 +746,11 @@ class math_GaussSingleIntegration {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_GaussSingleIntegration {
+	~math_GaussSingleIntegration() {
+	printf("Call custom destructor for instance of math_GaussSingleIntegration\n");
+	}
 };
 
 %nodefaultctor math_Matrix;
@@ -763,6 +878,11 @@ class math_Matrix {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_Matrix {
+	~math_Matrix() {
+	printf("Call custom destructor for instance of math_Matrix\n");
+	}
+};
 
 %nodefaultctor math_Gauss;
 class math_Gauss {
@@ -785,6 +905,11 @@ class math_Gauss {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_Gauss {
+	~math_Gauss() {
+	printf("Call custom destructor for instance of math_Gauss\n");
+	}
+};
 
 %nodefaultctor math_Function;
 class math_Function {
@@ -794,6 +919,11 @@ class math_Function {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
 
+};
+%extend math_Function {
+	~math_Function() {
+	printf("Call custom destructor for instance of math_Function\n");
+	}
 };
 
 %nodefaultctor math_GaussSetIntegration;
@@ -810,6 +940,11 @@ class math_GaussSetIntegration {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_GaussSetIntegration {
+	~math_GaussSetIntegration() {
+	printf("Call custom destructor for instance of math_GaussSetIntegration\n");
+	}
 };
 
 %nodefaultctor math_Vector;
@@ -923,6 +1058,11 @@ class math_Vector {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_Vector {
+	~math_Vector() {
+	printf("Call custom destructor for instance of math_Vector\n");
+	}
+};
 
 %nodefaultctor math_Crout;
 class math_Crout {
@@ -945,6 +1085,11 @@ class math_Crout {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_Crout {
+	~math_Crout() {
+	printf("Call custom destructor for instance of math_Crout\n");
+	}
+};
 
 %nodefaultctor math_SVD;
 class math_SVD {
@@ -962,6 +1107,11 @@ class math_SVD {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_SVD {
+	~math_SVD() {
+	printf("Call custom destructor for instance of math_SVD\n");
+	}
 };
 
 %nodefaultctor math_BracketedRoot;
@@ -983,6 +1133,11 @@ class math_BracketedRoot {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_BracketedRoot {
+	~math_BracketedRoot() {
+	printf("Call custom destructor for instance of math_BracketedRoot\n");
+	}
+};
 
 %nodefaultctor math_GaussMultipleIntegration;
 class math_GaussMultipleIntegration {
@@ -998,6 +1153,11 @@ class math_GaussMultipleIntegration {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_GaussMultipleIntegration {
+	~math_GaussMultipleIntegration() {
+	printf("Call custom destructor for instance of math_GaussMultipleIntegration\n");
+	}
 };
 
 %nodefaultctor math_NotSquare;
@@ -1043,6 +1203,11 @@ class math_ComputeKronrodPointsAndWeights {
 		math_Vector Weights() const;
 
 };
+%extend math_ComputeKronrodPointsAndWeights {
+	~math_ComputeKronrodPointsAndWeights() {
+	printf("Call custom destructor for instance of math_ComputeKronrodPointsAndWeights\n");
+	}
+};
 
 %nodefaultctor math_BrentMinimum;
 class math_BrentMinimum {
@@ -1070,6 +1235,11 @@ class math_BrentMinimum {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_BrentMinimum {
+	~math_BrentMinimum() {
+	printf("Call custom destructor for instance of math_BrentMinimum\n");
+	}
 };
 
 %nodefaultctor math_FunctionSetRoot;
@@ -1114,6 +1284,11 @@ class math_FunctionSetRoot {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_FunctionSetRoot {
+	~math_FunctionSetRoot() {
+	printf("Call custom destructor for instance of math_FunctionSetRoot\n");
+	}
 };
 
 %nodefaultctor math_IntegerVector;
@@ -1203,6 +1378,11 @@ class math_IntegerVector {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_IntegerVector {
+	~math_IntegerVector() {
+	printf("Call custom destructor for instance of math_IntegerVector\n");
+	}
+};
 
 %nodefaultctor math_BracketMinimum;
 class math_BracketMinimum {
@@ -1224,6 +1404,11 @@ class math_BracketMinimum {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_BracketMinimum {
+	~math_BracketMinimum() {
+	printf("Call custom destructor for instance of math_BracketMinimum\n");
+	}
 };
 
 %nodefaultctor math_SingleTabOfReal;
@@ -1251,6 +1436,11 @@ class math_SingleTabOfReal {
 		~math_SingleTabOfReal();
 
 };
+%extend math_SingleTabOfReal {
+	~math_SingleTabOfReal() {
+	printf("Call custom destructor for instance of math_SingleTabOfReal\n");
+	}
+};
 
 %nodefaultctor math_ValueAndWeight;
 class math_ValueAndWeight {
@@ -1266,6 +1456,11 @@ class math_ValueAndWeight {
 		%feature("autodoc", "1");
 		Standard_Real Weight() const;
 
+};
+%extend math_ValueAndWeight {
+	~math_ValueAndWeight() {
+	printf("Call custom destructor for instance of math_ValueAndWeight\n");
+	}
 };
 
 %nodefaultctor math_CompareOfValueAndWeight;
@@ -1283,6 +1478,11 @@ class math_CompareOfValueAndWeight {
 		Standard_Boolean IsEqual(const math_ValueAndWeight &Left, const math_ValueAndWeight &Right) const;
 
 };
+%extend math_CompareOfValueAndWeight {
+	~math_CompareOfValueAndWeight() {
+	printf("Call custom destructor for instance of math_CompareOfValueAndWeight\n");
+	}
+};
 
 %nodefaultctor math_FunctionWithDerivative;
 class math_FunctionWithDerivative : public math_Function {
@@ -1296,6 +1496,11 @@ class math_FunctionWithDerivative : public math_Function {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
+};
+%extend math_FunctionWithDerivative {
+	~math_FunctionWithDerivative() {
+	printf("Call custom destructor for instance of math_FunctionWithDerivative\n");
+	}
 };
 
 %nodefaultctor math_FunctionRoots;
@@ -1318,6 +1523,11 @@ class math_FunctionRoots {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_FunctionRoots {
+	~math_FunctionRoots() {
+	printf("Call custom destructor for instance of math_FunctionRoots\n");
+	}
 };
 
 %nodefaultctor math_KronrodSingleIntegration;
@@ -1351,6 +1561,11 @@ class math_KronrodSingleIntegration {
 		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%extend math_KronrodSingleIntegration {
+	~math_KronrodSingleIntegration() {
+	printf("Call custom destructor for instance of math_KronrodSingleIntegration\n");
+	}
+};
 
 %nodefaultctor math_Uzawa;
 class math_Uzawa {
@@ -1378,6 +1593,11 @@ class math_Uzawa {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend math_Uzawa {
+	~math_Uzawa() {
+	printf("Call custom destructor for instance of math_Uzawa\n");
+	}
 };
 
 %nodefaultctor math_FRPR;
@@ -1413,6 +1633,11 @@ class math_FRPR {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_FRPR {
+	~math_FRPR() {
+	printf("Call custom destructor for instance of math_FRPR\n");
+	}
+};
 
 %nodefaultctor math_FunctionSample;
 class math_FunctionSample {
@@ -1428,6 +1653,11 @@ class math_FunctionSample {
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
 
+};
+%extend math_FunctionSample {
+	~math_FunctionSample() {
+	printf("Call custom destructor for instance of math_FunctionSample\n");
+	}
 };
 
 %nodefaultctor math_NewtonFunctionRoot;
@@ -1457,6 +1687,11 @@ class math_NewtonFunctionRoot {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend math_NewtonFunctionRoot {
+	~math_NewtonFunctionRoot() {
+	printf("Call custom destructor for instance of math_NewtonFunctionRoot\n");
+	}
+};
 
 %nodefaultctor math_RealRandom;
 class math_RealRandom {
@@ -1470,6 +1705,11 @@ class math_RealRandom {
 		%feature("autodoc", "1");
 		Standard_Real Next();
 
+};
+%extend math_RealRandom {
+	~math_RealRandom() {
+	printf("Call custom destructor for instance of math_RealRandom\n");
+	}
 };
 
 %nodefaultctor math_SingleTabOfInteger;
@@ -1496,4 +1736,9 @@ class math_SingleTabOfInteger {
 		%feature("autodoc", "1");
 		~math_SingleTabOfInteger();
 
+};
+%extend math_SingleTabOfInteger {
+	~math_SingleTabOfInteger() {
+	printf("Call custom destructor for instance of math_SingleTabOfInteger\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepPrimAPI
@@ -99,6 +99,11 @@ class BRepPrimAPI_MakeOneAxis : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Solid & Solid();
 
 };
+%extend BRepPrimAPI_MakeOneAxis {
+	~BRepPrimAPI_MakeOneAxis() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeOneAxis\n");
+	}
+};
 
 %nodefaultctor BRepPrimAPI_MakeTorus;
 class BRepPrimAPI_MakeTorus : public BRepPrimAPI_MakeOneAxis {
@@ -125,6 +130,11 @@ class BRepPrimAPI_MakeTorus : public BRepPrimAPI_MakeOneAxis {
 		virtual		~BRepPrimAPI_MakeTorus();
 
 };
+%extend BRepPrimAPI_MakeTorus {
+	~BRepPrimAPI_MakeTorus() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeTorus\n");
+	}
+};
 
 %nodefaultctor BRepPrimAPI_MakeSweep;
 class BRepPrimAPI_MakeSweep : public BRepBuilderAPI_MakeShape {
@@ -134,6 +144,11 @@ class BRepPrimAPI_MakeSweep : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		TopoDS_Shape LastShape();
 
+};
+%extend BRepPrimAPI_MakeSweep {
+	~BRepPrimAPI_MakeSweep() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeSweep\n");
+	}
 };
 
 %nodefaultctor BRepPrimAPI_MakeRevolution;
@@ -163,6 +178,11 @@ class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
 		virtual		~BRepPrimAPI_MakeRevolution();
 
 };
+%extend BRepPrimAPI_MakeRevolution {
+	~BRepPrimAPI_MakeRevolution() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeRevolution\n");
+	}
+};
 
 %nodefaultctor BRepPrimAPI_MakeCylinder;
 class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
@@ -182,6 +202,11 @@ class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
 		%feature("autodoc", "1");
 		virtual		~BRepPrimAPI_MakeCylinder();
 
+};
+%extend BRepPrimAPI_MakeCylinder {
+	~BRepPrimAPI_MakeCylinder() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeCylinder\n");
+	}
 };
 
 %nodefaultctor BRepPrimAPI_MakeSphere;
@@ -219,6 +244,11 @@ class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
 		virtual		~BRepPrimAPI_MakeSphere();
 
 };
+%extend BRepPrimAPI_MakeSphere {
+	~BRepPrimAPI_MakeSphere() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeSphere\n");
+	}
+};
 
 %nodefaultctor BRepPrimAPI_MakeWedge;
 class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
@@ -243,6 +273,11 @@ class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
 		virtual		~BRepPrimAPI_MakeWedge();
 
 };
+%extend BRepPrimAPI_MakeWedge {
+	~BRepPrimAPI_MakeWedge() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeWedge\n");
+	}
+};
 
 %nodefaultctor BRepPrimAPI_MakeHalfSpace;
 class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
@@ -256,6 +291,11 @@ class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepPrimAPI_MakeHalfSpace();
 
+};
+%extend BRepPrimAPI_MakeHalfSpace {
+	~BRepPrimAPI_MakeHalfSpace() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeHalfSpace\n");
+	}
 };
 
 %nodefaultctor BRepPrimAPI_MakeBox;
@@ -293,6 +333,11 @@ class BRepPrimAPI_MakeBox : public BRepBuilderAPI_MakeShape {
 		virtual		~BRepPrimAPI_MakeBox();
 
 };
+%extend BRepPrimAPI_MakeBox {
+	~BRepPrimAPI_MakeBox() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeBox\n");
+	}
+};
 
 %nodefaultctor BRepPrimAPI_MakeRevol;
 class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
@@ -323,6 +368,11 @@ class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 		virtual		~BRepPrimAPI_MakeRevol();
 
 };
+%extend BRepPrimAPI_MakeRevol {
+	~BRepPrimAPI_MakeRevol() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeRevol\n");
+	}
+};
 
 %nodefaultctor BRepPrimAPI_MakeCone;
 class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
@@ -342,6 +392,11 @@ class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
 		%feature("autodoc", "1");
 		virtual		~BRepPrimAPI_MakeCone();
 
+};
+%extend BRepPrimAPI_MakeCone {
+	~BRepPrimAPI_MakeCone() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakeCone\n");
+	}
 };
 
 %nodefaultctor BRepPrimAPI_MakePrism;
@@ -368,4 +423,9 @@ class BRepPrimAPI_MakePrism : public BRepPrimAPI_MakeSweep {
 		%feature("autodoc", "1");
 		virtual		~BRepPrimAPI_MakePrism();
 
+};
+%extend BRepPrimAPI_MakePrism {
+	~BRepPrimAPI_MakePrism() {
+	printf("Call custom destructor for instance of BRepPrimAPI_MakePrism\n");
+	}
 };

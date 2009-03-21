@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Dico
@@ -339,6 +339,11 @@ class Dico_IteratorOfDictionaryOfInteger {
 		%feature("autodoc", "1");
 		TCollection_AsciiString Name() const;
 
+};
+%extend Dico_IteratorOfDictionaryOfInteger {
+	~Dico_IteratorOfDictionaryOfInteger() {
+	printf("Call custom destructor for instance of Dico_IteratorOfDictionaryOfInteger\n");
+	}
 };
 
 %nodefaultctor Dico_DictionaryOfTransient;

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Approx
@@ -290,6 +290,11 @@ class Approx_MyLeastSquareOfFitAndDivide {
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%extend Approx_MyLeastSquareOfFitAndDivide {
+	~Approx_MyLeastSquareOfFitAndDivide() {
+	printf("Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide\n");
+	}
+};
 
 %nodefaultctor Approx_SequenceOfHArray1OfReal;
 class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
@@ -433,6 +438,11 @@ class Approx_MCurvesToBSpCurve {
 		const AppParCurves_MultiBSpCurve & ChangeValue();
 
 };
+%extend Approx_MCurvesToBSpCurve {
+	~Approx_MCurvesToBSpCurve() {
+	printf("Call custom destructor for instance of Approx_MCurvesToBSpCurve\n");
+	}
+};
 
 %nodefaultctor Approx_Array1OfGTrsf2d;
 class Approx_Array1OfGTrsf2d {
@@ -468,6 +478,11 @@ class Approx_Array1OfGTrsf2d {
 		%feature("autodoc", "1");
 		gp_GTrsf2d & operator()(const Standard_Integer Index);
 
+};
+%extend Approx_Array1OfGTrsf2d {
+	~Approx_Array1OfGTrsf2d() {
+	printf("Call custom destructor for instance of Approx_Array1OfGTrsf2d\n");
+	}
 };
 
 %nodefaultctor Approx_HArray1OfAdHSurface;
@@ -593,6 +608,11 @@ class Approx_FitAndDivide {
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%extend Approx_FitAndDivide {
+	~Approx_FitAndDivide() {
+	printf("Call custom destructor for instance of Approx_FitAndDivide\n");
+	}
+};
 
 %nodefaultctor Approx_HArray1OfGTrsf2d;
 class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
@@ -711,6 +731,11 @@ class Approx_FitAndDivide2d {
 		%feature("autodoc", "1");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend Approx_FitAndDivide2d {
+	~Approx_FitAndDivide2d() {
+	printf("Call custom destructor for instance of Approx_FitAndDivide2d\n");
+	}
 };
 
 %nodefaultctor Approx_CurveOnSurface;
@@ -846,6 +871,11 @@ class Approx_MyLeastSquareOfFitAndDivide2d {
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%extend Approx_MyLeastSquareOfFitAndDivide2d {
+	~Approx_MyLeastSquareOfFitAndDivide2d() {
+	printf("Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide2d\n");
+	}
+};
 
 %nodefaultctor Approx_SequenceOfArray1OfPnt2d;
 class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
@@ -960,4 +990,9 @@ class Approx_SweepApproximation {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & o) const;
 
+};
+%extend Approx_SweepApproximation {
+	~Approx_SweepApproximation() {
+	printf("Call custom destructor for instance of Approx_SweepApproximation\n");
+	}
 };

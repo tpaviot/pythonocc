@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Units
@@ -700,6 +700,11 @@ class Units_MathSentence : public Units_Sentence {
 		%feature("autodoc", "1");
 		Units_MathSentence(const char * astring);
 
+};
+%extend Units_MathSentence {
+	~Units_MathSentence() {
+	printf("Call custom destructor for instance of Units_MathSentence\n");
+	}
 };
 
 %nodefaultctor Units_TksSequence;
@@ -1448,6 +1453,11 @@ class Units_Explorer {
 		Standard_Boolean IsActive() const;
 
 };
+%extend Units_Explorer {
+	~Units_Explorer() {
+	printf("Call custom destructor for instance of Units_Explorer\n");
+	}
+};
 
 %nodefaultctor Units;
 class Units {
@@ -1568,6 +1578,11 @@ class Units_UnitSentence : public Units_Sentence {
 		%feature("autodoc", "1");
 		void SetUnits(const Handle_Units_QuantitiesSequence &aquantitiessequence);
 
+};
+%extend Units_UnitSentence {
+	~Units_UnitSentence() {
+	printf("Call custom destructor for instance of Units_UnitSentence\n");
+	}
 };
 
 %nodefaultctor Units_QtsSequence;

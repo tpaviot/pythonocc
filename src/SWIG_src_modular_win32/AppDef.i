@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module AppDef
@@ -171,6 +171,11 @@ class AppDef_MyLineTool {
 		AppDef_MultiLine & MakeMLBetween(const AppDef_MultiLine &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
 
 };
+%extend AppDef_MyLineTool {
+	~AppDef_MyLineTool() {
+	printf("Call custom destructor for instance of AppDef_MyLineTool\n");
+	}
+};
 
 %nodefaultctor AppDef_ParFunctionOfTheGradient;
 class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradient {
@@ -202,6 +207,11 @@ class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradi
 		%feature("autodoc", "1");
 		virtual		~AppDef_ParFunctionOfTheGradient();
 
+};
+%extend AppDef_ParFunctionOfTheGradient {
+	~AppDef_ParFunctionOfTheGradient() {
+	printf("Call custom destructor for instance of AppDef_ParFunctionOfTheGradient\n");
+	}
 };
 
 %nodefaultctor AppDef_MultiPointConstraint;
@@ -255,6 +265,11 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 		virtual		~AppDef_MultiPointConstraint();
 
 };
+%extend AppDef_MultiPointConstraint {
+	~AppDef_MultiPointConstraint() {
+	printf("Call custom destructor for instance of AppDef_MultiPointConstraint\n");
+	}
+};
 
 %nodefaultctor AppDef_MultiLine;
 class AppDef_MultiLine {
@@ -283,6 +298,11 @@ class AppDef_MultiLine {
 		void Dump(Standard_OStream & o) const;
 
 };
+%extend AppDef_MultiLine {
+	~AppDef_MultiLine() {
+	printf("Call custom destructor for instance of AppDef_MultiLine\n");
+	}
+};
 
 %nodefaultctor AppDef_MyBSplGradientOfBSplineCompute;
 class AppDef_MyBSplGradientOfBSplineCompute {
@@ -306,6 +326,11 @@ class AppDef_MyBSplGradientOfBSplineCompute {
 		%feature("autodoc", "1");
 		Standard_Real AverageError() const;
 
+};
+%extend AppDef_MyBSplGradientOfBSplineCompute {
+	~AppDef_MyBSplGradientOfBSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_MyBSplGradientOfBSplineCompute\n");
+	}
 };
 
 %nodefaultctor AppDef_HArray1OfMultiPointConstraint;
@@ -389,6 +414,11 @@ class AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute : public math_Multip
 		virtual		~AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute();
 
 };
+%extend AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute {
+	~AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute\n");
+	}
+};
 
 %nodefaultctor AppDef_Gradient_BFGSOfMyGradientOfCompute;
 class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
@@ -400,6 +430,11 @@ class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
 		%feature("autodoc", "1");
 		virtual		~AppDef_Gradient_BFGSOfMyGradientOfCompute();
 
+};
+%extend AppDef_Gradient_BFGSOfMyGradientOfCompute {
+	~AppDef_Gradient_BFGSOfMyGradientOfCompute() {
+	printf("Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientOfCompute\n");
+	}
 };
 
 %nodefaultctor AppDef_TheLeastSquares;
@@ -451,6 +486,11 @@ class AppDef_TheLeastSquares {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend AppDef_TheLeastSquares {
+	~AppDef_TheLeastSquares() {
+	printf("Call custom destructor for instance of AppDef_TheLeastSquares\n");
+	}
+};
 
 %nodefaultctor AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute;
 class AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute : public math_BFGS {
@@ -463,6 +503,11 @@ class AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute : public math_BFGS
 		virtual		~AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute();
 
 };
+%extend AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute {
+	~AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute\n");
+	}
+};
 
 %nodefaultctor AppDef_Gradient_BFGSOfTheGradient;
 class AppDef_Gradient_BFGSOfTheGradient : public math_BFGS {
@@ -474,6 +519,11 @@ class AppDef_Gradient_BFGSOfTheGradient : public math_BFGS {
 		%feature("autodoc", "1");
 		virtual		~AppDef_Gradient_BFGSOfTheGradient();
 
+};
+%extend AppDef_Gradient_BFGSOfTheGradient {
+	~AppDef_Gradient_BFGSOfTheGradient() {
+	printf("Call custom destructor for instance of AppDef_Gradient_BFGSOfTheGradient\n");
+	}
 };
 
 %nodefaultctor AppDef_TheVariational;
@@ -600,6 +650,11 @@ class AppDef_Compute {
 		const TColStd_Array1OfReal & Parameters(const Standard_Integer Index=1) const;
 
 };
+%extend AppDef_Compute {
+	~AppDef_Compute() {
+	printf("Call custom destructor for instance of AppDef_Compute\n");
+	}
+};
 
 %nodefaultctor AppDef_ParFunctionOfMyGradientbisOfBSplineCompute;
 class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVarFunctionWithGradient {
@@ -632,6 +687,11 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 		virtual		~AppDef_ParFunctionOfMyGradientbisOfBSplineCompute();
 
 };
+%extend AppDef_ParFunctionOfMyGradientbisOfBSplineCompute {
+	~AppDef_ParFunctionOfMyGradientbisOfBSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_ParFunctionOfMyGradientbisOfBSplineCompute\n");
+	}
+};
 
 %nodefaultctor AppDef_TheGradient;
 class AppDef_TheGradient {
@@ -653,6 +713,11 @@ class AppDef_TheGradient {
 		%feature("autodoc", "1");
 		Standard_Real AverageError() const;
 
+};
+%extend AppDef_TheGradient {
+	~AppDef_TheGradient() {
+	printf("Call custom destructor for instance of AppDef_TheGradient\n");
+	}
 };
 
 %nodefaultctor AppDef_ParLeastSquareOfTheGradient;
@@ -703,6 +768,11 @@ class AppDef_ParLeastSquareOfTheGradient {
 		%feature("autodoc", "1");
 		const math_IntegerVector & KIndex() const;
 
+};
+%extend AppDef_ParLeastSquareOfTheGradient {
+	~AppDef_ParLeastSquareOfTheGradient() {
+	printf("Call custom destructor for instance of AppDef_ParLeastSquareOfTheGradient\n");
+	}
 };
 
 %nodefaultctor AppDef_MyCriterionOfTheVariational;
@@ -806,6 +876,11 @@ class AppDef_ParLeastSquareOfMyGradientOfCompute {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend AppDef_ParLeastSquareOfMyGradientOfCompute {
+	~AppDef_ParLeastSquareOfMyGradientOfCompute() {
+	printf("Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientOfCompute\n");
+	}
+};
 
 %nodefaultctor AppDef_ResConstraintOfTheGradient;
 class AppDef_ResConstraintOfTheGradient {
@@ -825,6 +900,11 @@ class AppDef_ResConstraintOfTheGradient {
 		%feature("autodoc", "1");
 		const math_Matrix & InverseMatrix() const;
 
+};
+%extend AppDef_ResConstraintOfTheGradient {
+	~AppDef_ResConstraintOfTheGradient() {
+	printf("Call custom destructor for instance of AppDef_ResConstraintOfTheGradient\n");
+	}
 };
 
 %nodefaultctor AppDef_TheFunction;
@@ -858,6 +938,11 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 		virtual		~AppDef_TheFunction();
 
 };
+%extend AppDef_TheFunction {
+	~AppDef_TheFunction() {
+	printf("Call custom destructor for instance of AppDef_TheFunction\n");
+	}
+};
 
 %nodefaultctor AppDef_MyGradientOfCompute;
 class AppDef_MyGradientOfCompute {
@@ -879,6 +964,11 @@ class AppDef_MyGradientOfCompute {
 		%feature("autodoc", "1");
 		Standard_Real AverageError() const;
 
+};
+%extend AppDef_MyGradientOfCompute {
+	~AppDef_MyGradientOfCompute() {
+	printf("Call custom destructor for instance of AppDef_MyGradientOfCompute\n");
+	}
 };
 
 %nodefaultctor AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute;
@@ -930,6 +1020,11 @@ class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
+	~AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute\n");
+	}
+};
 
 %nodefaultctor AppDef_MyGradientbisOfBSplineCompute;
 class AppDef_MyGradientbisOfBSplineCompute {
@@ -951,6 +1046,11 @@ class AppDef_MyGradientbisOfBSplineCompute {
 		%feature("autodoc", "1");
 		Standard_Real AverageError() const;
 
+};
+%extend AppDef_MyGradientbisOfBSplineCompute {
+	~AppDef_MyGradientbisOfBSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_MyGradientbisOfBSplineCompute\n");
+	}
 };
 
 %nodefaultctor AppDef_BSplineCompute;
@@ -999,6 +1099,11 @@ class AppDef_BSplineCompute {
 		%feature("autodoc", "1");
 		const TColStd_Array1OfReal & Parameters() const;
 
+};
+%extend AppDef_BSplineCompute {
+	~AppDef_BSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_BSplineCompute\n");
+	}
 };
 
 %nodefaultctor AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute;
@@ -1050,6 +1155,11 @@ class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
+	~AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute\n");
+	}
+};
 
 %nodefaultctor AppDef_ResConstraintOfMyGradientOfCompute;
 class AppDef_ResConstraintOfMyGradientOfCompute {
@@ -1070,6 +1180,11 @@ class AppDef_ResConstraintOfMyGradientOfCompute {
 		const math_Matrix & InverseMatrix() const;
 
 };
+%extend AppDef_ResConstraintOfMyGradientOfCompute {
+	~AppDef_ResConstraintOfMyGradientOfCompute() {
+	printf("Call custom destructor for instance of AppDef_ResConstraintOfMyGradientOfCompute\n");
+	}
+};
 
 %nodefaultctor AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute;
 class AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute : public math_BFGS {
@@ -1081,6 +1196,11 @@ class AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute : public math_BFGS {
 		%feature("autodoc", "1");
 		virtual		~AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute();
 
+};
+%extend AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute {
+	~AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute\n");
+	}
 };
 
 %nodefaultctor AppDef_Array1OfMultiPointConstraint;
@@ -1118,6 +1238,11 @@ class AppDef_Array1OfMultiPointConstraint {
 		AppDef_MultiPointConstraint & operator()(const Standard_Integer Index);
 
 };
+%extend AppDef_Array1OfMultiPointConstraint {
+	~AppDef_Array1OfMultiPointConstraint() {
+	printf("Call custom destructor for instance of AppDef_Array1OfMultiPointConstraint\n");
+	}
+};
 
 %nodefaultctor AppDef_TheResol;
 class AppDef_TheResol {
@@ -1138,6 +1263,11 @@ class AppDef_TheResol {
 		const math_Matrix & InverseMatrix() const;
 
 };
+%extend AppDef_TheResol {
+	~AppDef_TheResol() {
+	printf("Call custom destructor for instance of AppDef_TheResol\n");
+	}
+};
 
 %nodefaultctor AppDef_ResConstraintOfMyGradientbisOfBSplineCompute;
 class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
@@ -1157,6 +1287,11 @@ class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 		%feature("autodoc", "1");
 		const math_Matrix & InverseMatrix() const;
 
+};
+%extend AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
+	~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute() {
+	printf("Call custom destructor for instance of AppDef_ResConstraintOfMyGradientbisOfBSplineCompute\n");
+	}
 };
 
 %nodefaultctor AppDef_ParFunctionOfMyGradientOfCompute;
@@ -1189,4 +1324,9 @@ class AppDef_ParFunctionOfMyGradientOfCompute : public math_MultipleVarFunctionW
 		%feature("autodoc", "1");
 		virtual		~AppDef_ParFunctionOfMyGradientOfCompute();
 
+};
+%extend AppDef_ParFunctionOfMyGradientOfCompute {
+	~AppDef_ParFunctionOfMyGradientOfCompute() {
+	printf("Call custom destructor for instance of AppDef_ParFunctionOfMyGradientOfCompute\n");
+	}
 };

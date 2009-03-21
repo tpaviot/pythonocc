@@ -95,6 +95,11 @@ class StepToGeom_Root {
 		Standard_Boolean IsDone() const;
 
 };
+%extend StepToGeom_Root {
+	~StepToGeom_Root() {
+	printf("Call custom destructor for instance of StepToGeom_Root\n");
+	}
+};
 
 %nodefaultctor StepToGeom_MakeEllipse2d;
 class StepToGeom_MakeEllipse2d : public StepToGeom_Root {
@@ -647,6 +652,11 @@ class StepToGeom_MakeTransformation2d : public StepToGeom_Root {
 		const gp_Trsf2d & Value() const;
 
 };
+%extend StepToGeom_MakeTransformation2d {
+	~StepToGeom_MakeTransformation2d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeTransformation2d\n");
+	}
+};
 
 %nodefaultctor StepToGeom_MakeTransformation3d;
 class StepToGeom_MakeTransformation3d : public StepToGeom_Root {
@@ -658,6 +668,11 @@ class StepToGeom_MakeTransformation3d : public StepToGeom_Root {
 		%feature("autodoc", "1");
 		const gp_Trsf & Value() const;
 
+};
+%extend StepToGeom_MakeTransformation3d {
+	~StepToGeom_MakeTransformation3d() {
+	printf("Call custom destructor for instance of StepToGeom_MakeTransformation3d\n");
+	}
 };
 
 %nodefaultctor StepToGeom_MakeBSplineCurve;

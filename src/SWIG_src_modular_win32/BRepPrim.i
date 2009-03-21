@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepPrim
@@ -191,6 +191,11 @@ class BRepPrim_OneAxis {
 		const TopoDS_Vertex & BottomEndVertex();
 
 };
+%extend BRepPrim_OneAxis {
+	~BRepPrim_OneAxis() {
+	printf("Call custom destructor for instance of BRepPrim_OneAxis\n");
+	}
+};
 
 %nodefaultctor BRepPrim_Revolution;
 class BRepPrim_Revolution : public BRepPrim_OneAxis {
@@ -200,6 +205,11 @@ class BRepPrim_Revolution : public BRepPrim_OneAxis {
 		%feature("autodoc", "1");
 		virtual		~BRepPrim_Revolution();
 
+};
+%extend BRepPrim_Revolution {
+	~BRepPrim_Revolution() {
+	printf("Call custom destructor for instance of BRepPrim_Revolution\n");
+	}
 };
 
 %nodefaultctor BRepPrim_Sphere;
@@ -214,6 +224,11 @@ class BRepPrim_Sphere : public BRepPrim_Revolution {
 		%feature("autodoc", "1");
 		virtual		~BRepPrim_Sphere();
 
+};
+%extend BRepPrim_Sphere {
+	~BRepPrim_Sphere() {
+	printf("Call custom destructor for instance of BRepPrim_Sphere\n");
+	}
 };
 
 %nodefaultctor BRepPrim_FaceBuilder;
@@ -238,6 +253,11 @@ class BRepPrim_FaceBuilder {
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex(const Standard_Integer I) const;
 
+};
+%extend BRepPrim_FaceBuilder {
+	~BRepPrim_FaceBuilder() {
+	printf("Call custom destructor for instance of BRepPrim_FaceBuilder\n");
+	}
 };
 
 %nodefaultctor BRepPrim_GWedge;
@@ -305,6 +325,11 @@ class BRepPrim_GWedge {
 		gp_Pnt Point(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3);
 
 };
+%extend BRepPrim_GWedge {
+	~BRepPrim_GWedge() {
+	printf("Call custom destructor for instance of BRepPrim_GWedge\n");
+	}
+};
 
 %nodefaultctor BRepPrim_Wedge;
 class BRepPrim_Wedge : public BRepPrim_GWedge {
@@ -318,6 +343,11 @@ class BRepPrim_Wedge : public BRepPrim_GWedge {
 		%feature("autodoc", "1");
 		BRepPrim_Wedge(const gp_Ax2 &Axes, const Standard_Real xmin, const Standard_Real ymin, const Standard_Real zmin, const Standard_Real z2min, const Standard_Real x2min, const Standard_Real xmax, const Standard_Real ymax, const Standard_Real zmax, const Standard_Real z2max, const Standard_Real x2max);
 
+};
+%extend BRepPrim_Wedge {
+	~BRepPrim_Wedge() {
+	printf("Call custom destructor for instance of BRepPrim_Wedge\n");
+	}
 };
 
 %nodefaultctor BRepPrim_Builder;
@@ -375,6 +405,11 @@ class BRepPrim_Builder {
 		void CompleteShell(TopoDS_Shell & S) const;
 
 };
+%extend BRepPrim_Builder {
+	~BRepPrim_Builder() {
+	printf("Call custom destructor for instance of BRepPrim_Builder\n");
+	}
+};
 
 %nodefaultctor BRepPrim_Cone;
 class BRepPrim_Cone : public BRepPrim_Revolution {
@@ -399,6 +434,11 @@ class BRepPrim_Cone : public BRepPrim_Revolution {
 		virtual		~BRepPrim_Cone();
 
 };
+%extend BRepPrim_Cone {
+	~BRepPrim_Cone() {
+	printf("Call custom destructor for instance of BRepPrim_Cone\n");
+	}
+};
 
 %nodefaultctor BRepPrim_Cylinder;
 class BRepPrim_Cylinder : public BRepPrim_Revolution {
@@ -421,6 +461,11 @@ class BRepPrim_Cylinder : public BRepPrim_Revolution {
 		virtual		~BRepPrim_Cylinder();
 
 };
+%extend BRepPrim_Cylinder {
+	~BRepPrim_Cylinder() {
+	printf("Call custom destructor for instance of BRepPrim_Cylinder\n");
+	}
+};
 
 %nodefaultctor BRepPrim_Torus;
 class BRepPrim_Torus : public BRepPrim_Revolution {
@@ -436,4 +481,9 @@ class BRepPrim_Torus : public BRepPrim_Revolution {
 		%feature("autodoc", "1");
 		virtual		~BRepPrim_Torus();
 
+};
+%extend BRepPrim_Torus {
+	~BRepPrim_Torus() {
+	printf("Call custom destructor for instance of BRepPrim_Torus\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopoDS
@@ -500,6 +500,11 @@ class TopoDS_Compound : public TopoDS_Shape {
 		TopoDS_Compound();
 
 };
+%extend TopoDS_Compound {
+	~TopoDS_Compound() {
+	printf("Call custom destructor for instance of TopoDS_Compound\n");
+	}
+};
 
 %nodefaultctor TopoDS_ListNodeOfListOfShape;
 class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
@@ -531,6 +536,11 @@ class TopoDS_Vertex : public TopoDS_Shape {
 		%feature("autodoc", "1");
 		TopoDS_Vertex();
 
+};
+%extend TopoDS_Vertex {
+	~TopoDS_Vertex() {
+	printf("Call custom destructor for instance of TopoDS_Vertex\n");
+	}
 };
 
 %nodefaultctor TopoDS_FrozenShape;
@@ -630,6 +640,11 @@ class TopoDS_Iterator {
 		const TopoDS_Shape & Value() const;
 
 };
+%extend TopoDS_Iterator {
+	~TopoDS_Iterator() {
+	printf("Call custom destructor for instance of TopoDS_Iterator\n");
+	}
+};
 
 %nodefaultctor TopoDS_Builder;
 class TopoDS_Builder {
@@ -646,6 +661,11 @@ class TopoDS_Builder {
 		void Remove(TopoDS_Shape & S, const TopoDS_Shape &C) const;
 
 };
+%extend TopoDS_Builder {
+	~TopoDS_Builder() {
+	printf("Call custom destructor for instance of TopoDS_Builder\n");
+	}
+};
 
 %nodefaultctor TopoDS_CompSolid;
 class TopoDS_CompSolid : public TopoDS_Shape {
@@ -655,6 +675,11 @@ class TopoDS_CompSolid : public TopoDS_Shape {
 		%feature("autodoc", "1");
 		TopoDS_CompSolid();
 
+};
+%extend TopoDS_CompSolid {
+	~TopoDS_CompSolid() {
+	printf("Call custom destructor for instance of TopoDS_CompSolid\n");
+	}
 };
 
 %nodefaultctor TopoDS_ListOfShape;
@@ -702,6 +727,11 @@ class TopoDS_ListOfShape {
 		void InsertAfter(TopoDS_ListOfShape & Other, TopoDS_ListIteratorOfListOfShape & It);
 
 };
+%extend TopoDS_ListOfShape {
+	~TopoDS_ListOfShape() {
+	printf("Call custom destructor for instance of TopoDS_ListOfShape\n");
+	}
+};
 
 %nodefaultctor TopoDS;
 class TopoDS {
@@ -744,6 +774,11 @@ class TopoDS {
 		TopoDS_Compound & Compound(TopoDS_Shape & S);
 
 };
+%extend TopoDS {
+	~TopoDS() {
+	printf("Call custom destructor for instance of TopoDS\n");
+	}
+};
 
 %nodefaultctor TopoDS_TWire;
 class TopoDS_TWire : public TopoDS_TShape {
@@ -778,6 +813,11 @@ class TopoDS_Edge : public TopoDS_Shape {
 		TopoDS_Edge();
 
 };
+%extend TopoDS_Edge {
+	~TopoDS_Edge() {
+	printf("Call custom destructor for instance of TopoDS_Edge\n");
+	}
+};
 
 %nodefaultctor TopoDS_Shell;
 class TopoDS_Shell : public TopoDS_Shape {
@@ -787,6 +827,11 @@ class TopoDS_Shell : public TopoDS_Shape {
 		%feature("autodoc", "1");
 		TopoDS_Shell();
 
+};
+%extend TopoDS_Shell {
+	~TopoDS_Shell() {
+	printf("Call custom destructor for instance of TopoDS_Shell\n");
+	}
 };
 
 %nodefaultctor TopoDS_ListIteratorOfListOfShape;
@@ -807,6 +852,11 @@ class TopoDS_ListIteratorOfListOfShape {
 		%feature("autodoc", "1");
 		TopoDS_Shape & Value() const;
 
+};
+%extend TopoDS_ListIteratorOfListOfShape {
+	~TopoDS_ListIteratorOfListOfShape() {
+	printf("Call custom destructor for instance of TopoDS_ListIteratorOfListOfShape\n");
+	}
 };
 
 %nodefaultctor TopoDS_HShape;
@@ -845,6 +895,11 @@ class TopoDS_Solid : public TopoDS_Shape {
 		%feature("autodoc", "1");
 		TopoDS_Solid();
 
+};
+%extend TopoDS_Solid {
+	~TopoDS_Solid() {
+	printf("Call custom destructor for instance of TopoDS_Solid\n");
+	}
 };
 
 %nodefaultctor TopoDS_TCompound;
@@ -928,6 +983,11 @@ class TopoDS_Builder3D : public TopoDS_Builder {
 		void MakeCompSolid(TopoDS_CompSolid & C) const;
 
 };
+%extend TopoDS_Builder3D {
+	~TopoDS_Builder3D() {
+	printf("Call custom destructor for instance of TopoDS_Builder3D\n");
+	}
+};
 
 %nodefaultctor TopoDS_UnCompatibleShapes;
 class TopoDS_UnCompatibleShapes : public Standard_DomainError {
@@ -1010,6 +1070,11 @@ class TopoDS_Wire : public TopoDS_Shape {
 		TopoDS_Wire();
 
 };
+%extend TopoDS_Wire {
+	~TopoDS_Wire() {
+	printf("Call custom destructor for instance of TopoDS_Wire\n");
+	}
+};
 
 %nodefaultctor TopoDS_TFace;
 class TopoDS_TFace : public TopoDS_TShape {
@@ -1043,6 +1108,11 @@ class TopoDS_Face : public TopoDS_Shape {
 		%feature("autodoc", "1");
 		TopoDS_Face();
 
+};
+%extend TopoDS_Face {
+	~TopoDS_Face() {
+	printf("Call custom destructor for instance of TopoDS_Face\n");
+	}
 };
 
 %nodefaultctor TopoDS_TSolid;

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepClass3d
@@ -131,6 +131,11 @@ class BRepClass3d_SClassifier {
 		TopoDS_Face Face() const;
 
 };
+%extend BRepClass3d_SClassifier {
+	~BRepClass3d_SClassifier() {
+	printf("Call custom destructor for instance of BRepClass3d_SClassifier\n");
+	}
+};
 
 %nodefaultctor BRepClass3d_MapOfInter;
 class BRepClass3d_MapOfInter : public TCollection_BasicMap {
@@ -160,6 +165,11 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Address & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepClass3d_MapOfInter {
+	~BRepClass3d_MapOfInter() {
+	printf("Call custom destructor for instance of BRepClass3d_MapOfInter\n");
+	}
 };
 
 %nodefaultctor BRepClass3d_SolidExplorer;
@@ -229,6 +239,11 @@ class BRepClass3d_SolidExplorer {
 		void Destroy();
 
 };
+%extend BRepClass3d_SolidExplorer {
+	~BRepClass3d_SolidExplorer() {
+	printf("Call custom destructor for instance of BRepClass3d_SolidExplorer\n");
+	}
+};
 
 %nodefaultctor BRepClass3d_SolidPassiveClassifier;
 class BRepClass3d_SolidPassiveClassifier {
@@ -251,6 +266,11 @@ class BRepClass3d_SolidPassiveClassifier {
 		TopAbs_State State() const;
 
 };
+%extend BRepClass3d_SolidPassiveClassifier {
+	~BRepClass3d_SolidPassiveClassifier() {
+	printf("Call custom destructor for instance of BRepClass3d_SolidPassiveClassifier\n");
+	}
+};
 
 %nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
 class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
@@ -268,6 +288,11 @@ class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapItera
 		%feature("autodoc", "1");
 		const Standard_Address & Value() const;
 
+};
+%extend BRepClass3d_DataMapIteratorOfMapOfInter {
+	~BRepClass3d_DataMapIteratorOfMapOfInter() {
+	printf("Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");
+	}
 };
 
 %nodefaultctor BRepClass3d_SolidClassifier;
@@ -290,6 +315,11 @@ class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 		%feature("autodoc", "1");
 		~BRepClass3d_SolidClassifier();
 
+};
+%extend BRepClass3d_SolidClassifier {
+	~BRepClass3d_SolidClassifier() {
+	printf("Call custom destructor for instance of BRepClass3d_SolidClassifier\n");
+	}
 };
 
 %nodefaultctor BRepClass3d_DataMapNodeOfMapOfInter;
@@ -344,4 +374,9 @@ class BRepClass3d_Intersector3d {
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
 
+};
+%extend BRepClass3d_Intersector3d {
+	~BRepClass3d_Intersector3d() {
+	printf("Call custom destructor for instance of BRepClass3d_Intersector3d\n");
+	}
 };

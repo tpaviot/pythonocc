@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module LocOpe
@@ -355,6 +355,11 @@ class LocOpe_SequenceOfCirc : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend LocOpe_SequenceOfCirc {
+	~LocOpe_SequenceOfCirc() {
+	printf("Call custom destructor for instance of LocOpe_SequenceOfCirc\n");
+	}
+};
 
 %nodefaultctor LocOpe_Pipe;
 class LocOpe_Pipe {
@@ -414,6 +419,11 @@ class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
 		gp_Pnt & operator()(const TopoDS_Shape &K);
 
 };
+%extend LocOpe_DataMapOfShapePnt {
+	~LocOpe_DataMapOfShapePnt() {
+	printf("Call custom destructor for instance of LocOpe_DataMapOfShapePnt\n");
+	}
+};
 
 %nodefaultctor LocOpe_Gluer;
 class LocOpe_Gluer {
@@ -450,6 +460,11 @@ class LocOpe_Gluer {
 		const TopTools_ListOfShape & TgtEdges() const;
 
 };
+%extend LocOpe_Gluer {
+	~LocOpe_Gluer() {
+	printf("Call custom destructor for instance of LocOpe_Gluer\n");
+	}
+};
 
 %nodefaultctor LocOpe_BuildWires;
 class LocOpe_BuildWires {
@@ -467,6 +482,11 @@ class LocOpe_BuildWires {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Result() const;
 
+};
+%extend LocOpe_BuildWires {
+	~LocOpe_BuildWires() {
+	printf("Call custom destructor for instance of LocOpe_BuildWires\n");
+	}
 };
 
 %nodefaultctor LocOpe_GeneratedShape;
@@ -631,6 +651,11 @@ class LocOpe {
 		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
 
 };
+%extend LocOpe {
+	~LocOpe() {
+	printf("Call custom destructor for instance of LocOpe\n");
+	}
+};
 
 %nodefaultctor LocOpe_GluedShape;
 class LocOpe_GluedShape : public LocOpe_GeneratedShape {
@@ -786,6 +811,11 @@ class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIte
 		const gp_Pnt & Value() const;
 
 };
+%extend LocOpe_DataMapIteratorOfDataMapOfShapePnt {
+	~LocOpe_DataMapIteratorOfDataMapOfShapePnt() {
+	printf("Call custom destructor for instance of LocOpe_DataMapIteratorOfDataMapOfShapePnt\n");
+	}
+};
 
 %nodefaultctor LocOpe_Generator;
 class LocOpe_Generator {
@@ -809,6 +839,11 @@ class LocOpe_Generator {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & DescendantFace(const TopoDS_Face &F);
 
+};
+%extend LocOpe_Generator {
+	~LocOpe_Generator() {
+	printf("Call custom destructor for instance of LocOpe_Generator\n");
+	}
 };
 
 %nodefaultctor LocOpe_CSIntersector;
@@ -846,6 +881,11 @@ class LocOpe_CSIntersector {
 		~LocOpe_CSIntersector();
 
 };
+%extend LocOpe_CSIntersector {
+	~LocOpe_CSIntersector() {
+	printf("Call custom destructor for instance of LocOpe_CSIntersector\n");
+	}
+};
 
 %nodefaultctor LocOpe_CurveShapeIntersector;
 class LocOpe_CurveShapeIntersector {
@@ -878,6 +918,11 @@ class LocOpe_CurveShapeIntersector {
 		Standard_Boolean LocalizeBefore(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer & IndFrom, Standard_Integer & IndTo) const;
 
 };
+%extend LocOpe_CurveShapeIntersector {
+	~LocOpe_CurveShapeIntersector() {
+	printf("Call custom destructor for instance of LocOpe_CurveShapeIntersector\n");
+	}
+};
 
 %nodefaultctor LocOpe_Spliter;
 class LocOpe_Spliter {
@@ -906,6 +951,11 @@ class LocOpe_Spliter {
 		const TopTools_ListOfShape & DescendantShapes(const TopoDS_Shape &S);
 
 };
+%extend LocOpe_Spliter {
+	~LocOpe_Spliter() {
+	printf("Call custom destructor for instance of LocOpe_Spliter\n");
+	}
+};
 
 %nodefaultctor LocOpe_PntFace;
 class LocOpe_PntFace {
@@ -931,6 +981,11 @@ class LocOpe_PntFace {
 		%feature("autodoc", "1");
 		Standard_Real VParameter() const;
 
+};
+%extend LocOpe_PntFace {
+	~LocOpe_PntFace() {
+	printf("Call custom destructor for instance of LocOpe_PntFace\n");
+	}
 };
 
 %nodefaultctor LocOpe_SequenceOfLin;
@@ -981,6 +1036,11 @@ class LocOpe_SequenceOfLin : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend LocOpe_SequenceOfLin {
+	~LocOpe_SequenceOfLin() {
+	printf("Call custom destructor for instance of LocOpe_SequenceOfLin\n");
+	}
 };
 
 %nodefaultctor LocOpe_Builder;
@@ -1085,6 +1145,11 @@ class LocOpe_SequenceOfPntFace : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend LocOpe_SequenceOfPntFace {
+	~LocOpe_SequenceOfPntFace() {
+	printf("Call custom destructor for instance of LocOpe_SequenceOfPntFace\n");
+	}
+};
 
 %nodefaultctor LocOpe_FindEdges;
 class LocOpe_FindEdges {
@@ -1109,6 +1174,11 @@ class LocOpe_FindEdges {
 		void Next();
 
 };
+%extend LocOpe_FindEdges {
+	~LocOpe_FindEdges() {
+	printf("Call custom destructor for instance of LocOpe_FindEdges\n");
+	}
+};
 
 %nodefaultctor LocOpe_BuildShape;
 class LocOpe_BuildShape {
@@ -1124,6 +1194,11 @@ class LocOpe_BuildShape {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Shape() const;
 
+};
+%extend LocOpe_BuildShape {
+	~LocOpe_BuildShape() {
+	printf("Call custom destructor for instance of LocOpe_BuildShape\n");
+	}
 };
 
 %nodefaultctor LocOpe_SplitShape;
@@ -1151,6 +1226,11 @@ class LocOpe_SplitShape {
 		const TopTools_ListOfShape & LeftOf(const TopoDS_Wire &W, const TopoDS_Face &F);
 
 };
+%extend LocOpe_SplitShape {
+	~LocOpe_SplitShape() {
+	printf("Call custom destructor for instance of LocOpe_SplitShape\n");
+	}
+};
 
 %nodefaultctor LocOpe_FindEdgesInFace;
 class LocOpe_FindEdgesInFace {
@@ -1172,6 +1252,11 @@ class LocOpe_FindEdgesInFace {
 		%feature("autodoc", "1");
 		void Next();
 
+};
+%extend LocOpe_FindEdgesInFace {
+	~LocOpe_FindEdgesInFace() {
+	printf("Call custom destructor for instance of LocOpe_FindEdgesInFace\n");
+	}
 };
 
 %nodefaultctor LocOpe_SplitDrafts;
@@ -1199,6 +1284,11 @@ class LocOpe_SplitDrafts {
 		const TopTools_ListOfShape & ShapesFromShape(const TopoDS_Shape &S) const;
 
 };
+%extend LocOpe_SplitDrafts {
+	~LocOpe_SplitDrafts() {
+	printf("Call custom destructor for instance of LocOpe_SplitDrafts\n");
+	}
+};
 
 %nodefaultctor LocOpe_LinearForm;
 class LocOpe_LinearForm {
@@ -1224,6 +1314,11 @@ class LocOpe_LinearForm {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Shapes(const TopoDS_Shape &S) const;
 
+};
+%extend LocOpe_LinearForm {
+	~LocOpe_LinearForm() {
+	printf("Call custom destructor for instance of LocOpe_LinearForm\n");
+	}
 };
 
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfPntFace;

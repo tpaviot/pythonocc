@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepClass
@@ -103,6 +103,11 @@ class BRepClass_Edge {
 		const TopoDS_Face & Face() const;
 
 };
+%extend BRepClass_Edge {
+	~BRepClass_Edge() {
+	printf("Call custom destructor for instance of BRepClass_Edge\n");
+	}
+};
 
 %nodefaultctor BRepClass_Intersector;
 class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
@@ -116,6 +121,11 @@ class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 		%feature("autodoc", "1");
 		void LocalGeometry(const BRepClass_Edge &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
 
+};
+%extend BRepClass_Intersector {
+	~BRepClass_Intersector() {
+	printf("Call custom destructor for instance of BRepClass_Intersector\n");
+	}
 };
 
 %nodefaultctor BRepClass_FClass2dOfFClassifier;
@@ -140,6 +150,11 @@ class BRepClass_FClass2dOfFClassifier {
 		%feature("autodoc", "1");
 		Standard_Boolean IsHeadOrEnd() const;
 
+};
+%extend BRepClass_FClass2dOfFClassifier {
+	~BRepClass_FClass2dOfFClassifier() {
+	printf("Call custom destructor for instance of BRepClass_FClass2dOfFClassifier\n");
+	}
 };
 
 %nodefaultctor BRepClass_FClassifier;
@@ -167,6 +182,11 @@ class BRepClass_FClassifier {
 		IntRes2d_Position Position() const;
 
 };
+%extend BRepClass_FClassifier {
+	~BRepClass_FClassifier() {
+	printf("Call custom destructor for instance of BRepClass_FClassifier\n");
+	}
+};
 
 %nodefaultctor BRepClass_FaceClassifier;
 class BRepClass_FaceClassifier : public BRepClass_FClassifier {
@@ -178,6 +198,11 @@ class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 		%feature("autodoc", "1");
 		void Perform(const TopoDS_Face &F, const gp_Pnt &P, const Standard_Real Tol);
 
+};
+%extend BRepClass_FaceClassifier {
+	~BRepClass_FaceClassifier() {
+	printf("Call custom destructor for instance of BRepClass_FaceClassifier\n");
+	}
 };
 
 %nodefaultctor BRepClass_FaceExplorer;
@@ -213,6 +238,11 @@ class BRepClass_FaceExplorer {
 		void CurrentEdge(BRepClass_Edge & E, TopAbs_Orientation & Or) const;
 
 };
+%extend BRepClass_FaceExplorer {
+	~BRepClass_FaceExplorer() {
+	printf("Call custom destructor for instance of BRepClass_FaceExplorer\n");
+	}
+};
 
 %nodefaultctor BRepClass_FacePassiveClassifier;
 class BRepClass_FacePassiveClassifier {
@@ -236,4 +266,9 @@ class BRepClass_FacePassiveClassifier {
 		%feature("autodoc", "1");
 		Standard_Boolean IsHeadOrEnd() const;
 
+};
+%extend BRepClass_FacePassiveClassifier {
+	~BRepClass_FacePassiveClassifier() {
+	printf("Call custom destructor for instance of BRepClass_FacePassiveClassifier\n");
+	}
 };

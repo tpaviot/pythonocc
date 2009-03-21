@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module CDM
@@ -623,6 +623,11 @@ class CDM_MapOfDocument : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Handle_CDM_Document &aKey);
 
 };
+%extend CDM_MapOfDocument {
+	~CDM_MapOfDocument() {
+	printf("Call custom destructor for instance of CDM_MapOfDocument\n");
+	}
+};
 
 %nodefaultctor CDM_NamesDirectory;
 class CDM_NamesDirectory : public TCollection_BasicMap {
@@ -652,6 +657,11 @@ class CDM_NamesDirectory : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_ExtendedString &K);
 
+};
+%extend CDM_NamesDirectory {
+	~CDM_NamesDirectory() {
+	printf("Call custom destructor for instance of CDM_NamesDirectory\n");
+	}
 };
 
 %nodefaultctor CDM_StackNodeOfStackOfDocument;
@@ -730,6 +740,11 @@ class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator 
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend CDM_DataMapIteratorOfNamesDirectory {
+	~CDM_DataMapIteratorOfNamesDirectory() {
+	printf("Call custom destructor for instance of CDM_DataMapIteratorOfNamesDirectory\n");
+	}
 };
 
 %nodefaultctor CDM_ListIteratorOfListOfDocument;
@@ -1012,6 +1027,11 @@ class CDM_DocumentHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_CDM_Document &K1, const Handle_CDM_Document &K2);
 
+};
+%extend CDM_DocumentHasher {
+	~CDM_DocumentHasher() {
+	printf("Call custom destructor for instance of CDM_DocumentHasher\n");
+	}
 };
 
 %nodefaultctor CDM_COutMessageDriver;

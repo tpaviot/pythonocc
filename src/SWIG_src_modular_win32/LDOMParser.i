@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module LDOMParser
@@ -96,4 +96,9 @@ class LDOMParser {
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & GetError(TCollection_AsciiString & aData) const;
 
+};
+%extend LDOMParser {
+	~LDOMParser() {
+	printf("Call custom destructor for instance of LDOMParser\n");
+	}
 };

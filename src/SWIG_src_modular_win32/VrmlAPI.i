@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module VrmlAPI
@@ -100,6 +100,11 @@ class VrmlAPI {
 		%feature("autodoc", "1");
 		void Write(const TopoDS_Shape &aShape, const char * aFileName);
 
+};
+%extend VrmlAPI {
+	~VrmlAPI() {
+	printf("Call custom destructor for instance of VrmlAPI\n");
+	}
 };
 
 %nodefaultctor VrmlAPI_Writer;

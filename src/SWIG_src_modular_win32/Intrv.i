@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Intrv
@@ -157,6 +157,11 @@ class Intrv_Intervals {
 		const Intrv_Interval & Value(const Standard_Integer Index) const;
 
 };
+%extend Intrv_Intervals {
+	~Intrv_Intervals() {
+	printf("Call custom destructor for instance of Intrv_Intervals\n");
+	}
+};
 
 %nodefaultctor Intrv_Interval;
 class Intrv_Interval {
@@ -223,6 +228,11 @@ class Intrv_Interval {
 		Standard_Boolean IsSimilar(const Intrv_Interval &Other) const;
 
 };
+%extend Intrv_Interval {
+	~Intrv_Interval() {
+	printf("Call custom destructor for instance of Intrv_Interval\n");
+	}
+};
 
 %nodefaultctor Intrv_SequenceOfInterval;
 class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
@@ -272,6 +282,11 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Intrv_SequenceOfInterval {
+	~Intrv_SequenceOfInterval() {
+	printf("Call custom destructor for instance of Intrv_SequenceOfInterval\n");
+	}
 };
 
 %nodefaultctor Intrv_SequenceNodeOfSequenceOfInterval;

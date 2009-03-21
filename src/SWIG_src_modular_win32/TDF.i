@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TDF
@@ -978,6 +978,11 @@ class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 		const TDF_Label & Value() const;
 
 };
+%extend TDF_DataMapIteratorOfLabelDataMap {
+	~TDF_DataMapIteratorOfLabelDataMap() {
+	printf("Call custom destructor for instance of TDF_DataMapIteratorOfLabelDataMap\n");
+	}
+};
 
 %nodefaultctor TDF_ComparisonTool;
 class TDF_ComparisonTool {
@@ -997,6 +1002,11 @@ class TDF_ComparisonTool {
 		%feature("autodoc", "1");
 		Standard_Boolean IsSelfContained(const TDF_Label &aLabel, const Handle_TDF_DataSet &aDataSet);
 
+};
+%extend TDF_ComparisonTool {
+	~TDF_ComparisonTool() {
+	printf("Call custom destructor for instance of TDF_ComparisonTool\n");
+	}
 };
 
 %nodefaultctor TDF_ListIteratorOfIDList;
@@ -1018,6 +1028,11 @@ class TDF_ListIteratorOfIDList {
 		Standard_GUID & Value() const;
 
 };
+%extend TDF_ListIteratorOfIDList {
+	~TDF_ListIteratorOfIDList() {
+	printf("Call custom destructor for instance of TDF_ListIteratorOfIDList\n");
+	}
+};
 
 %nodefaultctor TDF_ClosureTool;
 class TDF_ClosureTool {
@@ -1033,6 +1048,11 @@ class TDF_ClosureTool {
 		%feature("autodoc", "1");
 		void Closure(const TDF_Label &aLabel, TDF_LabelMap & aLabMap, TDF_AttributeMap & anAttMap, const TDF_IDFilter &aFilter, const TDF_ClosureMode &aMode);
 
+};
+%extend TDF_ClosureTool {
+	~TDF_ClosureTool() {
+	printf("Call custom destructor for instance of TDF_ClosureTool\n");
+	}
 };
 
 %nodefaultctor TDF_Attribute;
@@ -1138,6 +1158,11 @@ class TDF_LabelMapHasher {
 		Standard_Boolean IsEqual(const TDF_Label &aLab1, const TDF_Label &aLab2);
 
 };
+%extend TDF_LabelMapHasher {
+	~TDF_LabelMapHasher() {
+	printf("Call custom destructor for instance of TDF_LabelMapHasher\n");
+	}
+};
 
 %nodefaultctor TDF_ListNodeOfDeltaList;
 class TDF_ListNodeOfDeltaList : public TCollection_MapNode {
@@ -1215,6 +1240,11 @@ class TDF_LabelDataMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_Label & operator()(const TDF_Label &K);
 
+};
+%extend TDF_LabelDataMap {
+	~TDF_LabelDataMap() {
+	printf("Call custom destructor for instance of TDF_LabelDataMap\n");
+	}
 };
 
 %nodefaultctor TDF_AttributeDelta;
@@ -1447,6 +1477,11 @@ class TDF_LabelDoubleMap : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const TDF_Label &K);
 
 };
+%extend TDF_LabelDoubleMap {
+	~TDF_LabelDoubleMap() {
+	printf("Call custom destructor for instance of TDF_LabelDoubleMap\n");
+	}
+};
 
 %nodefaultctor TDF_DataMapNodeOfLabelDataMap;
 class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
@@ -1605,6 +1640,11 @@ class TDF_ChildIterator {
 		TDF_Label const Value() const;
 
 };
+%extend TDF_ChildIterator {
+	~TDF_ChildIterator() {
+	printf("Call custom destructor for instance of TDF_ChildIterator\n");
+	}
+};
 
 %nodefaultctor TDF_TagSource;
 class TDF_TagSource : public TDF_Attribute {
@@ -1686,6 +1726,11 @@ class TDF_DoubleMapIteratorOfLabelDoubleMap : public TCollection_BasicMapIterato
 		%feature("autodoc", "1");
 		const TDF_Label & Key2() const;
 
+};
+%extend TDF_DoubleMapIteratorOfLabelDoubleMap {
+	~TDF_DoubleMapIteratorOfLabelDoubleMap() {
+	printf("Call custom destructor for instance of TDF_DoubleMapIteratorOfLabelDoubleMap\n");
+	}
 };
 
 %nodefaultctor TDF_AttributeDeltaList;
@@ -1867,6 +1912,11 @@ class TDF_ListIteratorOfLabelList {
 		TDF_Label & Value() const;
 
 };
+%extend TDF_ListIteratorOfLabelList {
+	~TDF_ListIteratorOfLabelList() {
+	printf("Call custom destructor for instance of TDF_ListIteratorOfLabelList\n");
+	}
+};
 
 %nodefaultctor TDF_RelocationTable;
 class TDF_RelocationTable : public MMgt_TShared {
@@ -1939,6 +1989,11 @@ class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator
 		const TCollection_ExtendedString & Key2() const;
 
 };
+%extend TDF_DoubleMapIteratorOfGUIDProgIDMap {
+	~TDF_DoubleMapIteratorOfGUIDProgIDMap() {
+	printf("Call custom destructor for instance of TDF_DoubleMapIteratorOfGUIDProgIDMap\n");
+	}
+};
 
 %nodefaultctor TDF_LabelLabelMap;
 class TDF_LabelLabelMap : public TCollection_BasicMap {
@@ -1969,6 +2024,11 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 		TDF_Label & operator()(const TDF_Label &K);
 
 };
+%extend TDF_LabelLabelMap {
+	~TDF_LabelLabelMap() {
+	printf("Call custom destructor for instance of TDF_LabelLabelMap\n");
+	}
+};
 
 %nodefaultctor TDF_LabelMap;
 class TDF_LabelMap : public TCollection_BasicMap {
@@ -1990,6 +2050,11 @@ class TDF_LabelMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const TDF_Label &aKey);
 
+};
+%extend TDF_LabelMap {
+	~TDF_LabelMap() {
+	printf("Call custom destructor for instance of TDF_LabelMap\n");
+	}
 };
 
 %nodefaultctor TDF_Transaction;
@@ -2110,6 +2175,11 @@ class TDF_DataMapIteratorOfLabelLabelMap : public TCollection_BasicMapIterator {
 		const TDF_Label & Value() const;
 
 };
+%extend TDF_DataMapIteratorOfLabelLabelMap {
+	~TDF_DataMapIteratorOfLabelLabelMap() {
+	printf("Call custom destructor for instance of TDF_DataMapIteratorOfLabelLabelMap\n");
+	}
+};
 
 %nodefaultctor TDF_IDList;
 class TDF_IDList {
@@ -2155,6 +2225,11 @@ class TDF_IDList {
 		%feature("autodoc", "1");
 		void InsertAfter(TDF_IDList & Other, TDF_ListIteratorOfIDList & It);
 
+};
+%extend TDF_IDList {
+	~TDF_IDList() {
+	printf("Call custom destructor for instance of TDF_IDList\n");
+	}
 };
 
 %nodefaultctor TDF_AttributeDataMap;
@@ -2328,6 +2403,11 @@ class TDF_LabelSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TDF_LabelSequence {
+	~TDF_LabelSequence() {
+	printf("Call custom destructor for instance of TDF_LabelSequence\n");
+	}
+};
 
 %nodefaultctor TDF_DoubleMapNodeOfAttributeDoubleMap;
 class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
@@ -2400,6 +2480,11 @@ class TDF_LabelList {
 		void InsertAfter(TDF_LabelList & Other, TDF_ListIteratorOfLabelList & It);
 
 };
+%extend TDF_LabelList {
+	~TDF_LabelList() {
+	printf("Call custom destructor for instance of TDF_LabelList\n");
+	}
+};
 
 %nodefaultctor TDF_IDFilter;
 class TDF_IDFilter {
@@ -2435,6 +2520,11 @@ class TDF_IDFilter {
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & anOS) const;
 
+};
+%extend TDF_IDFilter {
+	~TDF_IDFilter() {
+	printf("Call custom destructor for instance of TDF_IDFilter\n");
+	}
 };
 
 %nodefaultctor TDF_AttributeSequence;
@@ -2526,6 +2616,11 @@ class TDF_CopyTool {
 		%feature("autodoc", "1");
 		void Copy(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_RelocationTable &aRelocationTable, const TDF_IDFilter &aPrivilegeFilter, const TDF_IDFilter &aRefFilter, const Standard_Boolean setSelfContained);
 
+};
+%extend TDF_CopyTool {
+	~TDF_CopyTool() {
+	printf("Call custom destructor for instance of TDF_CopyTool\n");
+	}
 };
 
 %nodefaultctor TDF_Data;
@@ -2744,6 +2839,11 @@ class TDF_IDMap : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Standard_GUID &aKey);
 
 };
+%extend TDF_IDMap {
+	~TDF_IDMap() {
+	printf("Call custom destructor for instance of TDF_IDMap\n");
+	}
+};
 
 %nodefaultctor TDF_CopyLabel;
 class TDF_CopyLabel {
@@ -2826,6 +2926,11 @@ class TDF {
 		Standard_Boolean ProgIDFromGUID(const Standard_GUID &ID, TCollection_ExtendedString & ProgID);
 
 };
+%extend TDF {
+	~TDF() {
+	printf("Call custom destructor for instance of TDF\n");
+	}
+};
 
 %nodefaultctor TDF_DeltaOnAddition;
 class TDF_DeltaOnAddition : public TDF_AttributeDelta {
@@ -2896,6 +3001,11 @@ class TDF_AttributeIterator {
 		TDF_Attribute * Value() const;
 
 };
+%extend TDF_AttributeIterator {
+	~TDF_AttributeIterator() {
+	printf("Call custom destructor for instance of TDF_AttributeIterator\n");
+	}
+};
 
 %nodefaultctor TDF_MapIteratorOfAttributeMap;
 class TDF_MapIteratorOfAttributeMap : public TCollection_BasicMapIterator {
@@ -2936,6 +3046,11 @@ class TDF_AttributeMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_TDF_Attribute &aKey);
 
+};
+%extend TDF_AttributeMap {
+	~TDF_AttributeMap() {
+	printf("Call custom destructor for instance of TDF_AttributeMap\n");
+	}
 };
 
 %nodefaultctor TDF_HAttributeArray1;
@@ -2993,6 +3108,11 @@ class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 		const TDF_Label & Key() const;
 
 };
+%extend TDF_MapIteratorOfLabelMap {
+	~TDF_MapIteratorOfLabelMap() {
+	printf("Call custom destructor for instance of TDF_MapIteratorOfLabelMap\n");
+	}
+};
 
 %nodefaultctor TDF_StdMapNodeOfLabelMap;
 class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
@@ -3030,6 +3150,11 @@ class TDF_MapIteratorOfIDMap : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const Standard_GUID & Key() const;
 
+};
+%extend TDF_MapIteratorOfIDMap {
+	~TDF_MapIteratorOfIDMap() {
+	printf("Call custom destructor for instance of TDF_MapIteratorOfIDMap\n");
+	}
 };
 
 %nodefaultctor TDF_DefaultDeltaOnModification;
@@ -3082,6 +3207,11 @@ class TDF_LabelIndexedMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const TDF_Label &K) const;
 
+};
+%extend TDF_LabelIndexedMap {
+	~TDF_LabelIndexedMap() {
+	printf("Call custom destructor for instance of TDF_LabelIndexedMap\n");
+	}
 };
 
 %nodefaultctor TDF_Delta;
@@ -3201,6 +3331,11 @@ class TDF_Tool {
 		void ExtendedDeepDump(Standard_OStream & anOS, const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
 
 };
+%extend TDF_Tool {
+	~TDF_Tool() {
+	printf("Call custom destructor for instance of TDF_Tool\n");
+	}
+};
 
 %nodefaultctor TDF_DataMapIteratorOfLabelIntegerMap;
 class TDF_DataMapIteratorOfLabelIntegerMap : public TCollection_BasicMapIterator {
@@ -3218,6 +3353,11 @@ class TDF_DataMapIteratorOfLabelIntegerMap : public TCollection_BasicMapIterator
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend TDF_DataMapIteratorOfLabelIntegerMap {
+	~TDF_DataMapIteratorOfLabelIntegerMap() {
+	printf("Call custom destructor for instance of TDF_DataMapIteratorOfLabelIntegerMap\n");
+	}
 };
 
 %nodefaultctor TDF_GUIDProgIDMap;
@@ -3251,6 +3391,11 @@ class TDF_GUIDProgIDMap : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const TCollection_ExtendedString &K);
 
 };
+%extend TDF_GUIDProgIDMap {
+	~TDF_GUIDProgIDMap() {
+	printf("Call custom destructor for instance of TDF_GUIDProgIDMap\n");
+	}
+};
 
 %nodefaultctor TDF_ClosureMode;
 class TDF_ClosureMode {
@@ -3268,6 +3413,11 @@ class TDF_ClosureMode {
 		%feature("autodoc", "1");
 		Standard_Boolean References() const;
 
+};
+%extend TDF_ClosureMode {
+	~TDF_ClosureMode() {
+	printf("Call custom destructor for instance of TDF_ClosureMode\n");
+	}
 };
 
 %nodefaultctor TDF_ListIteratorOfAttributeList;
@@ -3321,6 +3471,11 @@ class TDF_LabelIntegerMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TDF_Label &K);
 
+};
+%extend TDF_LabelIntegerMap {
+	~TDF_LabelIntegerMap() {
+	printf("Call custom destructor for instance of TDF_LabelIntegerMap\n");
+	}
 };
 
 %nodefaultctor TDF_AttributeArray1;

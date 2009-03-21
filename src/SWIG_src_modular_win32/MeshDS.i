@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module MeshDS
@@ -139,6 +139,11 @@ class MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_
 		const TColStd_MapOfInteger & Value() const;
 
 };
+%extend MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger {
+	~MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger() {
+	printf("Call custom destructor for instance of MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger\n");
+	}
+};
 
 %nodefaultctor MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
 class MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapNode {
@@ -192,4 +197,9 @@ class MeshDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TColStd_MapOfInteger & operator()(const Standard_Integer &K);
 
+};
+%extend MeshDS_DataMapOfIntegerMapOfInteger {
+	~MeshDS_DataMapOfIntegerMapOfInteger() {
+	printf("Call custom destructor for instance of MeshDS_DataMapOfIntegerMapOfInteger\n");
+	}
 };

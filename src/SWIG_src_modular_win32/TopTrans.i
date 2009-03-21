@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopTrans
@@ -103,6 +103,11 @@ class TopTrans_CurveTransition {
 		TopAbs_State StateAfter() const;
 
 };
+%extend TopTrans_CurveTransition {
+	~TopTrans_CurveTransition() {
+	printf("Call custom destructor for instance of TopTrans_CurveTransition\n");
+	}
+};
 
 %nodefaultctor TopTrans_Array2OfOrientation;
 class TopTrans_Array2OfOrientation {
@@ -143,6 +148,11 @@ class TopTrans_Array2OfOrientation {
 		TopAbs_Orientation & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TopTrans_Array2OfOrientation {
+	~TopTrans_Array2OfOrientation() {
+	printf("Call custom destructor for instance of TopTrans_Array2OfOrientation\n");
+	}
+};
 
 %nodefaultctor TopTrans_SurfaceTransition;
 class TopTrans_SurfaceTransition {
@@ -168,4 +178,9 @@ class TopTrans_SurfaceTransition {
 		%feature("autodoc", "1");
 		TopAbs_State GetAfter(const TopAbs_Orientation Tran);
 
+};
+%extend TopTrans_SurfaceTransition {
+	~TopTrans_SurfaceTransition() {
+	printf("Call custom destructor for instance of TopTrans_SurfaceTransition\n");
+	}
 };

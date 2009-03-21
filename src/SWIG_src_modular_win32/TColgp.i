@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TColgp
@@ -1071,6 +1071,11 @@ class TColgp_Array1OfDir2d {
 		gp_Dir2d & operator()(const Standard_Integer Index);
 
 };
+%extend TColgp_Array1OfDir2d {
+	~TColgp_Array1OfDir2d() {
+	printf("Call custom destructor for instance of TColgp_Array1OfDir2d\n");
+	}
+};
 
 %nodefaultctor TColgp_SequenceOfPnt2d;
 class TColgp_SequenceOfPnt2d : public TCollection_BaseSequence {
@@ -1120,6 +1125,11 @@ class TColgp_SequenceOfPnt2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColgp_SequenceOfPnt2d {
+	~TColgp_SequenceOfPnt2d() {
+	printf("Call custom destructor for instance of TColgp_SequenceOfPnt2d\n");
+	}
 };
 
 %nodefaultctor TColgp_HArray1OfDir;
@@ -1349,6 +1359,11 @@ class TColgp_SequenceOfXY : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TColgp_SequenceOfXY {
+	~TColgp_SequenceOfXY() {
+	printf("Call custom destructor for instance of TColgp_SequenceOfXY\n");
+	}
+};
 
 %nodefaultctor TColgp_SequenceOfVec;
 class TColgp_SequenceOfVec : public TCollection_BaseSequence {
@@ -1398,6 +1413,11 @@ class TColgp_SequenceOfVec : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColgp_SequenceOfVec {
+	~TColgp_SequenceOfVec() {
+	printf("Call custom destructor for instance of TColgp_SequenceOfVec\n");
+	}
 };
 
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfVec;
@@ -1549,6 +1569,11 @@ class TColgp_Array1OfLin2d {
 		gp_Lin2d & operator()(const Standard_Integer Index);
 
 };
+%extend TColgp_Array1OfLin2d {
+	~TColgp_Array1OfLin2d() {
+	printf("Call custom destructor for instance of TColgp_Array1OfLin2d\n");
+	}
+};
 
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfXY;
 class TColgp_SequenceNodeOfSequenceOfXY : public TCollection_SeqNode {
@@ -1611,6 +1636,11 @@ class TColgp_Array2OfXY {
 		gp_XY & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColgp_Array2OfXY {
+	~TColgp_Array2OfXY() {
+	printf("Call custom destructor for instance of TColgp_Array2OfXY\n");
+	}
+};
 
 %nodefaultctor TColgp_SequenceOfDir2d;
 class TColgp_SequenceOfDir2d : public TCollection_BaseSequence {
@@ -1661,6 +1691,11 @@ class TColgp_SequenceOfDir2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TColgp_SequenceOfDir2d {
+	~TColgp_SequenceOfDir2d() {
+	printf("Call custom destructor for instance of TColgp_SequenceOfDir2d\n");
+	}
+};
 
 %nodefaultctor TColgp_Array1OfVec2d;
 class TColgp_Array1OfVec2d {
@@ -1696,6 +1731,11 @@ class TColgp_Array1OfVec2d {
 		%feature("autodoc", "1");
 		gp_Vec2d & operator()(const Standard_Integer Index);
 
+};
+%extend TColgp_Array1OfVec2d {
+	~TColgp_Array1OfVec2d() {
+	printf("Call custom destructor for instance of TColgp_Array1OfVec2d\n");
+	}
 };
 
 %nodefaultctor TColgp_HArray2OfCirc2d;
@@ -1760,6 +1800,11 @@ class TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d : public TCollection_BasicM
 		%feature("autodoc", "1");
 		const gp_Circ2d & Value() const;
 
+};
+%extend TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d {
+	~TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d() {
+	printf("Call custom destructor for instance of TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d\n");
+	}
 };
 
 %nodefaultctor TColgp_HSequenceOfPnt2d;
@@ -1861,6 +1906,11 @@ class TColgp_Array1OfDir {
 		gp_Dir & operator()(const Standard_Integer Index);
 
 };
+%extend TColgp_Array1OfDir {
+	~TColgp_Array1OfDir() {
+	printf("Call custom destructor for instance of TColgp_Array1OfDir\n");
+	}
+};
 
 %nodefaultctor TColgp_HArray2OfVec2d;
 class TColgp_HArray2OfVec2d : public MMgt_TShared {
@@ -1942,6 +1992,11 @@ class TColgp_Array1OfXY {
 		%feature("autodoc", "1");
 		gp_XY & operator()(const Standard_Integer Index);
 
+};
+%extend TColgp_Array1OfXY {
+	~TColgp_Array1OfXY() {
+	printf("Call custom destructor for instance of TColgp_Array1OfXY\n");
+	}
 };
 
 %nodefaultctor TColgp_HArray1OfLin2d;
@@ -2103,6 +2158,11 @@ class TColgp_Array2OfPnt2d {
 		gp_Pnt2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColgp_Array2OfPnt2d {
+	~TColgp_Array2OfPnt2d() {
+	printf("Call custom destructor for instance of TColgp_Array2OfPnt2d\n");
+	}
+};
 
 %nodefaultctor TColgp_HArray1OfPnt;
 class TColgp_HArray1OfPnt : public MMgt_TShared {
@@ -2183,6 +2243,11 @@ class TColgp_Array2OfVec {
 		gp_Vec & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColgp_Array2OfVec {
+	~TColgp_Array2OfVec() {
+	printf("Call custom destructor for instance of TColgp_Array2OfVec\n");
+	}
+};
 
 %nodefaultctor TColgp_SequenceOfDir;
 class TColgp_SequenceOfDir : public TCollection_BaseSequence {
@@ -2232,6 +2297,11 @@ class TColgp_SequenceOfDir : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColgp_SequenceOfDir {
+	~TColgp_SequenceOfDir() {
+	printf("Call custom destructor for instance of TColgp_SequenceOfDir\n");
+	}
 };
 
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfDir;
@@ -2304,6 +2374,11 @@ class TColgp_SequenceOfXYZ : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColgp_SequenceOfXYZ {
+	~TColgp_SequenceOfXYZ() {
+	printf("Call custom destructor for instance of TColgp_SequenceOfXYZ\n");
+	}
 };
 
 %nodefaultctor TColgp_HArray1OfVec2d;
@@ -2461,6 +2536,11 @@ class TColgp_Array1OfPnt2d {
 		gp_Pnt2d & operator()(const Standard_Integer Index);
 
 };
+%extend TColgp_Array1OfPnt2d {
+	~TColgp_Array1OfPnt2d() {
+	printf("Call custom destructor for instance of TColgp_Array1OfPnt2d\n");
+	}
+};
 
 %nodefaultctor TColgp_Array2OfDir;
 class TColgp_Array2OfDir {
@@ -2500,6 +2580,11 @@ class TColgp_Array2OfDir {
 		%feature("autodoc", "1");
 		gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TColgp_Array2OfDir {
+	~TColgp_Array2OfDir() {
+	printf("Call custom destructor for instance of TColgp_Array2OfDir\n");
+	}
 };
 
 %nodefaultctor TColgp_HSequenceOfVec;
@@ -2791,6 +2876,11 @@ class TColgp_SequenceOfVec2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TColgp_SequenceOfVec2d {
+	~TColgp_SequenceOfVec2d() {
+	printf("Call custom destructor for instance of TColgp_SequenceOfVec2d\n");
+	}
+};
 
 %nodefaultctor TColgp_HSequenceOfDir;
 class TColgp_HSequenceOfDir : public MMgt_TShared {
@@ -2891,6 +2981,11 @@ class TColgp_Array1OfPnt {
 		gp_Pnt & operator()(const Standard_Integer Index);
 
 };
+%extend TColgp_Array1OfPnt {
+	~TColgp_Array1OfPnt() {
+	printf("Call custom destructor for instance of TColgp_Array1OfPnt\n");
+	}
+};
 
 %nodefaultctor TColgp_Array1OfVec;
 class TColgp_Array1OfVec {
@@ -2926,6 +3021,11 @@ class TColgp_Array1OfVec {
 		%feature("autodoc", "1");
 		gp_Vec & operator()(const Standard_Integer Index);
 
+};
+%extend TColgp_Array1OfVec {
+	~TColgp_Array1OfVec() {
+	printf("Call custom destructor for instance of TColgp_Array1OfVec\n");
+	}
 };
 
 %nodefaultctor TColgp_SequenceOfPnt;
@@ -2976,6 +3076,11 @@ class TColgp_SequenceOfPnt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend TColgp_SequenceOfPnt {
+	~TColgp_SequenceOfPnt() {
+	printf("Call custom destructor for instance of TColgp_SequenceOfPnt\n");
+	}
 };
 
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfPnt;
@@ -3038,6 +3143,11 @@ class TColgp_Array2OfCirc2d {
 		%feature("autodoc", "1");
 		gp_Circ2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TColgp_Array2OfCirc2d {
+	~TColgp_Array2OfCirc2d() {
+	printf("Call custom destructor for instance of TColgp_Array2OfCirc2d\n");
+	}
 };
 
 %nodefaultctor TColgp_DataMapNodeOfDataMapOfIntegerCirc2d;
@@ -3165,6 +3275,11 @@ class TColgp_Array2OfLin2d {
 		gp_Lin2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColgp_Array2OfLin2d {
+	~TColgp_Array2OfLin2d() {
+	printf("Call custom destructor for instance of TColgp_Array2OfLin2d\n");
+	}
+};
 
 %nodefaultctor TColgp_HSequenceOfDir2d;
 class TColgp_HSequenceOfDir2d : public MMgt_TShared {
@@ -3269,6 +3384,11 @@ class TColgp_Array2OfPnt {
 		gp_Pnt & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColgp_Array2OfPnt {
+	~TColgp_Array2OfPnt() {
+	printf("Call custom destructor for instance of TColgp_Array2OfPnt\n");
+	}
+};
 
 %nodefaultctor TColgp_Array1OfXYZ;
 class TColgp_Array1OfXYZ {
@@ -3304,6 +3424,11 @@ class TColgp_Array1OfXYZ {
 		%feature("autodoc", "1");
 		gp_XYZ & operator()(const Standard_Integer Index);
 
+};
+%extend TColgp_Array1OfXYZ {
+	~TColgp_Array1OfXYZ() {
+	printf("Call custom destructor for instance of TColgp_Array1OfXYZ\n");
+	}
 };
 
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfXYZ;
@@ -3357,6 +3482,11 @@ class TColgp_DataMapOfIntegerCirc2d : public TCollection_BasicMap {
 		gp_Circ2d & operator()(const Standard_Integer &K);
 
 };
+%extend TColgp_DataMapOfIntegerCirc2d {
+	~TColgp_DataMapOfIntegerCirc2d() {
+	printf("Call custom destructor for instance of TColgp_DataMapOfIntegerCirc2d\n");
+	}
+};
 
 %nodefaultctor TColgp_Array2OfDir2d;
 class TColgp_Array2OfDir2d {
@@ -3397,6 +3527,11 @@ class TColgp_Array2OfDir2d {
 		gp_Dir2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TColgp_Array2OfDir2d {
+	~TColgp_Array2OfDir2d() {
+	printf("Call custom destructor for instance of TColgp_Array2OfDir2d\n");
+	}
+};
 
 %nodefaultctor TColgp_Array2OfXYZ;
 class TColgp_Array2OfXYZ {
@@ -3436,6 +3571,11 @@ class TColgp_Array2OfXYZ {
 		%feature("autodoc", "1");
 		gp_XYZ & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TColgp_Array2OfXYZ {
+	~TColgp_Array2OfXYZ() {
+	printf("Call custom destructor for instance of TColgp_Array2OfXYZ\n");
+	}
 };
 
 %nodefaultctor TColgp_HSequenceOfXY;
@@ -3665,6 +3805,11 @@ class TColgp_Array1OfCirc2d {
 		gp_Circ2d & operator()(const Standard_Integer Index);
 
 };
+%extend TColgp_Array1OfCirc2d {
+	~TColgp_Array1OfCirc2d() {
+	printf("Call custom destructor for instance of TColgp_Array1OfCirc2d\n");
+	}
+};
 
 %nodefaultctor TColgp_Array2OfVec2d;
 class TColgp_Array2OfVec2d {
@@ -3704,6 +3849,11 @@ class TColgp_Array2OfVec2d {
 		%feature("autodoc", "1");
 		gp_Vec2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TColgp_Array2OfVec2d {
+	~TColgp_Array2OfVec2d() {
+	printf("Call custom destructor for instance of TColgp_Array2OfVec2d\n");
+	}
 };
 
 %nodefaultctor TColgp_HArray2OfXY;

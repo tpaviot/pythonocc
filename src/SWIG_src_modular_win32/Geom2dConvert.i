@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Geom2dConvert
@@ -129,6 +129,11 @@ class Geom2dConvert_BSplineCurveKnotSplitting {
 		%feature("autodoc", "1");
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
+};
+%extend Geom2dConvert_BSplineCurveKnotSplitting {
+	~Geom2dConvert_BSplineCurveKnotSplitting() {
+	printf("Call custom destructor for instance of Geom2dConvert_BSplineCurveKnotSplitting\n");
+	}
 };
 
 %nodefaultctor Geom2dConvert_BSplineCurveToBezierCurve;

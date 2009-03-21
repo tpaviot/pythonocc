@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module IntAna
@@ -150,6 +150,11 @@ class IntAna_Quadric {
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax3 &Axis) const;
 
 };
+%extend IntAna_Quadric {
+	~IntAna_Quadric() {
+	printf("Call custom destructor for instance of IntAna_Quadric\n");
+	}
+};
 
 %nodefaultctor IntAna_QuadQuadGeo;
 class IntAna_QuadQuadGeo {
@@ -222,6 +227,11 @@ class IntAna_QuadQuadGeo {
 		const gp_Pnt & PChar() const;
 
 };
+%extend IntAna_QuadQuadGeo {
+	~IntAna_QuadQuadGeo() {
+	printf("Call custom destructor for instance of IntAna_QuadQuadGeo\n");
+	}
+};
 
 %nodefaultctor IntAna_ListNodeOfListOfCurve;
 class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
@@ -283,6 +293,11 @@ class IntAna_IntQuadQuad {
 		%feature("autodoc", "1");
 		Standard_Integer PreviousCurve(const Standard_Integer I, Standard_Boolean & Opposite) const;
 
+};
+%extend IntAna_IntQuadQuad {
+	~IntAna_IntQuadQuad() {
+	printf("Call custom destructor for instance of IntAna_IntQuadQuad\n");
+	}
 };
 
 %nodefaultctor IntAna_IntConicQuad;
@@ -346,6 +361,11 @@ class IntAna_IntConicQuad {
 		Standard_Real ParamOnConic(const Standard_Integer i) const;
 
 };
+%extend IntAna_IntConicQuad {
+	~IntAna_IntConicQuad() {
+	printf("Call custom destructor for instance of IntAna_IntConicQuad\n");
+	}
+};
 
 %nodefaultctor IntAna_ListOfCurve;
 class IntAna_ListOfCurve {
@@ -392,6 +412,11 @@ class IntAna_ListOfCurve {
 		void InsertAfter(IntAna_ListOfCurve & Other, IntAna_ListIteratorOfListOfCurve & It);
 
 };
+%extend IntAna_ListOfCurve {
+	~IntAna_ListOfCurve() {
+	printf("Call custom destructor for instance of IntAna_ListOfCurve\n");
+	}
+};
 
 %nodefaultctor IntAna_ListIteratorOfListOfCurve;
 class IntAna_ListIteratorOfListOfCurve {
@@ -412,6 +437,11 @@ class IntAna_ListIteratorOfListOfCurve {
 		IntAna_Curve & Value() const;
 
 };
+%extend IntAna_ListIteratorOfListOfCurve {
+	~IntAna_ListIteratorOfListOfCurve() {
+	printf("Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");
+	}
+};
 
 %nodefaultctor IntAna_Int3Pln;
 class IntAna_Int3Pln {
@@ -431,6 +461,11 @@ class IntAna_Int3Pln {
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
 
+};
+%extend IntAna_Int3Pln {
+	~IntAna_Int3Pln() {
+	printf("Call custom destructor for instance of IntAna_Int3Pln\n");
+	}
 };
 
 %nodefaultctor IntAna_Curve;
@@ -470,6 +505,11 @@ class IntAna_Curve {
 		void SetDomain(const Standard_Real Theta1, const Standard_Real Theta2);
 
 };
+%extend IntAna_Curve {
+	~IntAna_Curve() {
+	printf("Call custom destructor for instance of IntAna_Curve\n");
+	}
+};
 
 %nodefaultctor IntAna_IntLinTorus;
 class IntAna_IntLinTorus {
@@ -493,4 +533,9 @@ class IntAna_IntLinTorus {
 		%feature("autodoc", "1");
 		void ParamOnTorus(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntAna_IntLinTorus {
+	~IntAna_IntLinTorus() {
+	printf("Call custom destructor for instance of IntAna_IntLinTorus\n");
+	}
 };

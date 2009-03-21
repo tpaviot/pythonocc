@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BinMDF
@@ -329,6 +329,11 @@ class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator 
 		const Standard_Integer & Value() const;
 
 };
+%extend BinMDF_DataMapIteratorOfStringIdMap {
+	~BinMDF_DataMapIteratorOfStringIdMap() {
+	printf("Call custom destructor for instance of BinMDF_DataMapIteratorOfStringIdMap\n");
+	}
+};
 
 %nodefaultctor BinMDF_DataMapNodeOfTypeADriverMap;
 class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
@@ -458,6 +463,11 @@ class BinMDF_StringIdMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_AsciiString &K);
 
+};
+%extend BinMDF_StringIdMap {
+	~BinMDF_StringIdMap() {
+	printf("Call custom destructor for instance of BinMDF_StringIdMap\n");
+	}
 };
 
 %nodefaultctor BinMDF_DoubleMapIteratorOfTypeIdMap;
@@ -606,4 +616,9 @@ class BinMDF {
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
+};
+%extend BinMDF {
+	~BinMDF() {
+	printf("Call custom destructor for instance of BinMDF\n");
+	}
 };

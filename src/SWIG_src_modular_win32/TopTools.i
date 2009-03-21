@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopTools
@@ -585,6 +585,11 @@ class TopTools_ListOfShape {
 		void InsertAfter(TopTools_ListOfShape & Other, TopTools_ListIteratorOfListOfShape & It);
 
 };
+%extend TopTools_ListOfShape {
+	~TopTools_ListOfShape() {
+	printf("Call custom destructor for instance of TopTools_ListOfShape\n");
+	}
+};
 
 %nodefaultctor TopTools_LocationSet;
 class TopTools_LocationSet {
@@ -629,6 +634,11 @@ class TopTools {
 		%feature("autodoc", "1");
 		void Dummy(const Standard_Integer I);
 
+};
+%extend TopTools {
+	~TopTools() {
+	printf("Call custom destructor for instance of TopTools\n");
+	}
 };
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeListOfInteger;
@@ -718,6 +728,11 @@ class TopTools_IndexedDataMapOfShapeShape : public TCollection_BasicMap {
 		TopoDS_Shape & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend TopTools_IndexedDataMapOfShapeShape {
+	~TopTools_IndexedDataMapOfShapeShape() {
+	printf("Call custom destructor for instance of TopTools_IndexedDataMapOfShapeShape\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeListOfShape;
 class TopTools_DataMapIteratorOfDataMapOfShapeListOfShape : public TCollection_BasicMapIterator {
@@ -735,6 +750,11 @@ class TopTools_DataMapIteratorOfDataMapOfShapeListOfShape : public TCollection_B
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Value() const;
 
+};
+%extend TopTools_DataMapIteratorOfDataMapOfShapeListOfShape {
+	~TopTools_DataMapIteratorOfDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeListOfShape\n");
+	}
 };
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeInteger;
@@ -898,6 +918,11 @@ class TopTools_Array2OfShape {
 		TopoDS_Shape & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend TopTools_Array2OfShape {
+	~TopTools_Array2OfShape() {
+	printf("Call custom destructor for instance of TopTools_Array2OfShape\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapOfOrientedShapeInteger;
 class TopTools_DataMapOfOrientedShapeInteger : public TCollection_BasicMap {
@@ -928,6 +953,11 @@ class TopTools_DataMapOfOrientedShapeInteger : public TCollection_BasicMap {
 		Standard_Integer & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopTools_DataMapOfOrientedShapeInteger {
+	~TopTools_DataMapOfOrientedShapeInteger() {
+	printf("Call custom destructor for instance of TopTools_DataMapOfOrientedShapeInteger\n");
+	}
+};
 
 %nodefaultctor TopTools_ShapeMapHasher;
 class TopTools_ShapeMapHasher {
@@ -941,6 +971,11 @@ class TopTools_ShapeMapHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 
+};
+%extend TopTools_ShapeMapHasher {
+	~TopTools_ShapeMapHasher() {
+	printf("Call custom destructor for instance of TopTools_ShapeMapHasher\n");
+	}
 };
 
 %nodefaultctor TopTools_IndexedDataMapOfShapeListOfShape;
@@ -982,6 +1017,11 @@ class TopTools_IndexedDataMapOfShapeListOfShape : public TCollection_BasicMap {
 		TopTools_ListOfShape & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%extend TopTools_IndexedDataMapOfShapeListOfShape {
+	~TopTools_IndexedDataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopTools_IndexedDataMapOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapOfShapeShape;
 class TopTools_DataMapOfShapeShape : public TCollection_BasicMap {
@@ -1012,6 +1052,11 @@ class TopTools_DataMapOfShapeShape : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopTools_DataMapOfShapeShape {
+	~TopTools_DataMapOfShapeShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapOfShapeShape\n");
+	}
+};
 
 %nodefaultctor TopTools_ListIteratorOfListOfShape;
 class TopTools_ListIteratorOfListOfShape {
@@ -1031,6 +1076,11 @@ class TopTools_ListIteratorOfListOfShape {
 		%feature("autodoc", "1");
 		TopoDS_Shape & Value() const;
 
+};
+%extend TopTools_ListIteratorOfListOfShape {
+	~TopTools_ListIteratorOfListOfShape() {
+	printf("Call custom destructor for instance of TopTools_ListIteratorOfListOfShape\n");
+	}
 };
 
 %nodefaultctor TopTools_HArray1OfShape;
@@ -1183,6 +1233,11 @@ class TopTools_MapIteratorOfMapOfShape : public TCollection_BasicMapIterator {
 		const TopoDS_Shape & Key() const;
 
 };
+%extend TopTools_MapIteratorOfMapOfShape {
+	~TopTools_MapIteratorOfMapOfShape() {
+	printf("Call custom destructor for instance of TopTools_MapIteratorOfMapOfShape\n");
+	}
+};
 
 %nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape;
 class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public TCollection_MapNode {
@@ -1247,6 +1302,11 @@ class TopTools_Array1OfShape {
 		TopoDS_Shape & operator()(const Standard_Integer Index);
 
 };
+%extend TopTools_Array1OfShape {
+	~TopTools_Array1OfShape() {
+	printf("Call custom destructor for instance of TopTools_Array1OfShape\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapOfIntegerListOfShape;
 class TopTools_DataMapOfIntegerListOfShape : public TCollection_BasicMap {
@@ -1276,6 +1336,11 @@ class TopTools_DataMapOfIntegerListOfShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & operator()(const Standard_Integer &K);
 
+};
+%extend TopTools_DataMapOfIntegerListOfShape {
+	~TopTools_DataMapOfIntegerListOfShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapOfIntegerListOfShape\n");
+	}
 };
 
 %nodefaultctor TopTools_HArray1OfListOfShape;
@@ -1393,6 +1458,11 @@ class TopTools_IndexedMapOfShape : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
 
 };
+%extend TopTools_IndexedMapOfShape {
+	~TopTools_IndexedMapOfShape() {
+	printf("Call custom destructor for instance of TopTools_IndexedMapOfShape\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfIntegerShape;
 class TopTools_DataMapNodeOfDataMapOfIntegerShape : public TCollection_MapNode {
@@ -1453,6 +1523,11 @@ class TopTools_Array1OfListOfShape {
 		TopTools_ListOfShape & operator()(const Standard_Integer Index);
 
 };
+%extend TopTools_Array1OfListOfShape {
+	~TopTools_Array1OfListOfShape() {
+	printf("Call custom destructor for instance of TopTools_Array1OfListOfShape\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapOfIntegerShape;
 class TopTools_DataMapOfIntegerShape : public TCollection_BasicMap {
@@ -1483,6 +1558,11 @@ class TopTools_DataMapOfIntegerShape : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const Standard_Integer &K);
 
 };
+%extend TopTools_DataMapOfIntegerShape {
+	~TopTools_DataMapOfIntegerShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapOfIntegerShape\n");
+	}
+};
 
 %nodefaultctor TopTools_OrientedShapeMapHasher;
 class TopTools_OrientedShapeMapHasher {
@@ -1496,6 +1576,11 @@ class TopTools_OrientedShapeMapHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 
+};
+%extend TopTools_OrientedShapeMapHasher {
+	~TopTools_OrientedShapeMapHasher() {
+	printf("Call custom destructor for instance of TopTools_OrientedShapeMapHasher\n");
+	}
 };
 
 %nodefaultctor TopTools_MapOfOrientedShape;
@@ -1519,6 +1604,11 @@ class TopTools_MapOfOrientedShape : public TCollection_BasicMap {
 		Standard_Boolean Remove(const TopoDS_Shape &aKey);
 
 };
+%extend TopTools_MapOfOrientedShape {
+	~TopTools_MapOfOrientedShape() {
+	printf("Call custom destructor for instance of TopTools_MapOfOrientedShape\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfIntegerShape;
 class TopTools_DataMapIteratorOfDataMapOfIntegerShape : public TCollection_BasicMapIterator {
@@ -1536,6 +1626,11 @@ class TopTools_DataMapIteratorOfDataMapOfIntegerShape : public TCollection_Basic
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Value() const;
 
+};
+%extend TopTools_DataMapIteratorOfDataMapOfIntegerShape {
+	~TopTools_DataMapIteratorOfDataMapOfIntegerShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfIntegerShape\n");
+	}
 };
 
 %nodefaultctor TopTools_HSequenceOfShape;
@@ -1631,6 +1726,11 @@ class TopTools_DataMapOfShapeInteger : public TCollection_BasicMap {
 		Standard_Integer & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopTools_DataMapOfShapeInteger {
+	~TopTools_DataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of TopTools_DataMapOfShapeInteger\n");
+	}
+};
 
 %nodefaultctor TopTools_MapIteratorOfMapOfOrientedShape;
 class TopTools_MapIteratorOfMapOfOrientedShape : public TCollection_BasicMapIterator {
@@ -1646,6 +1746,11 @@ class TopTools_MapIteratorOfMapOfOrientedShape : public TCollection_BasicMapIter
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Key() const;
 
+};
+%extend TopTools_MapIteratorOfMapOfOrientedShape {
+	~TopTools_MapIteratorOfMapOfOrientedShape() {
+	printf("Call custom destructor for instance of TopTools_MapIteratorOfMapOfOrientedShape\n");
+	}
 };
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeShape;
@@ -1701,6 +1806,11 @@ class TopTools_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 		TColStd_ListOfInteger & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopTools_DataMapOfShapeListOfInteger {
+	~TopTools_DataMapOfShapeListOfInteger() {
+	printf("Call custom destructor for instance of TopTools_DataMapOfShapeListOfInteger\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapOfShapeListOfShape;
 class TopTools_DataMapOfShapeListOfShape : public TCollection_BasicMap {
@@ -1731,6 +1841,11 @@ class TopTools_DataMapOfShapeListOfShape : public TCollection_BasicMap {
 		TopTools_ListOfShape & operator()(const TopoDS_Shape &K);
 
 };
+%extend TopTools_DataMapOfShapeListOfShape {
+	~TopTools_DataMapOfShapeListOfShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapOfShapeListOfShape\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeInteger;
 class TopTools_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
@@ -1748,6 +1863,11 @@ class TopTools_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Basic
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend TopTools_DataMapIteratorOfDataMapOfShapeInteger {
+	~TopTools_DataMapIteratorOfDataMapOfShapeInteger() {
+	printf("Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeInteger\n");
+	}
 };
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger;
@@ -1767,6 +1887,11 @@ class TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection
 		const TColStd_ListOfInteger & Value() const;
 
 };
+%extend TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger {
+	~TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger() {
+	printf("Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger\n");
+	}
+};
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape;
 class TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape : public TCollection_BasicMapIterator {
@@ -1784,6 +1909,11 @@ class TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape : public TCollection
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Value() const;
 
+};
+%extend TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape {
+	~TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape\n");
+	}
 };
 
 %nodefaultctor TopTools_ListNodeOfListOfShape;
@@ -1824,6 +1954,11 @@ class TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger : public TCollecti
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
+};
+%extend TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger {
+	~TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger() {
+	printf("Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger\n");
+	}
 };
 
 %nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape;
@@ -1883,6 +2018,11 @@ class TopTools_IndexedMapOfOrientedShape : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
 
 };
+%extend TopTools_IndexedMapOfOrientedShape {
+	~TopTools_IndexedMapOfOrientedShape() {
+	printf("Call custom destructor for instance of TopTools_IndexedMapOfOrientedShape\n");
+	}
+};
 
 %nodefaultctor TopTools_SequenceNodeOfSequenceOfShape;
 class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
@@ -1922,6 +2062,11 @@ class TopTools_DataMapIteratorOfDataMapOfShapeShape : public TCollection_BasicMa
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Value() const;
 
+};
+%extend TopTools_DataMapIteratorOfDataMapOfShapeShape {
+	~TopTools_DataMapIteratorOfDataMapOfShapeShape() {
+	printf("Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeShape\n");
+	}
 };
 
 %nodefaultctor TopTools_SequenceOfShape;
@@ -1973,6 +2118,11 @@ class TopTools_SequenceOfShape : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend TopTools_SequenceOfShape {
+	~TopTools_SequenceOfShape() {
+	printf("Call custom destructor for instance of TopTools_SequenceOfShape\n");
+	}
+};
 
 %nodefaultctor TopTools_MapOfShape;
 class TopTools_MapOfShape : public TCollection_BasicMap {
@@ -1994,6 +2144,11 @@ class TopTools_MapOfShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const TopoDS_Shape &aKey);
 
+};
+%extend TopTools_MapOfShape {
+	~TopTools_MapOfShape() {
+	printf("Call custom destructor for instance of TopTools_MapOfShape\n");
+	}
 };
 
 %nodefaultctor TopTools_StdMapNodeOfMapOfShape;

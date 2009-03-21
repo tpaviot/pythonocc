@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ChFi2d
@@ -109,6 +109,11 @@ class ChFi2d {
 		ChFi2d();
 
 };
+%extend ChFi2d {
+	~ChFi2d() {
+	printf("Call custom destructor for instance of ChFi2d\n");
+	}
+};
 
 %nodefaultctor ChFi2d_Builder;
 class ChFi2d_Builder {
@@ -160,4 +165,9 @@ class ChFi2d_Builder {
 		%feature("autodoc", "1");
 		ChFi2d_ConstructionError Status() const;
 
+};
+%extend ChFi2d_Builder {
+	~ChFi2d_Builder() {
+	printf("Call custom destructor for instance of ChFi2d_Builder\n");
+	}
 };

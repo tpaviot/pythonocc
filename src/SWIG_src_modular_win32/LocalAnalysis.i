@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module LocalAnalysis
@@ -145,6 +145,11 @@ class LocalAnalysis_SurfaceContinuity {
 		Standard_Boolean IsG2() const;
 
 };
+%extend LocalAnalysis_SurfaceContinuity {
+	~LocalAnalysis_SurfaceContinuity() {
+	printf("Call custom destructor for instance of LocalAnalysis_SurfaceContinuity\n");
+	}
+};
 
 %nodefaultctor LocalAnalysis;
 class LocalAnalysis {
@@ -158,6 +163,11 @@ class LocalAnalysis {
 		%feature("autodoc", "1");
 		void Dump(const LocalAnalysis_CurveContinuity &curvconti, Standard_OStream & o);
 
+};
+%extend LocalAnalysis {
+	~LocalAnalysis() {
+	printf("Call custom destructor for instance of LocalAnalysis\n");
+	}
 };
 
 %nodefaultctor LocalAnalysis_CurveContinuity;
@@ -200,4 +210,9 @@ class LocalAnalysis_CurveContinuity {
 		%feature("autodoc", "1");
 		Standard_Boolean IsG2() const;
 
+};
+%extend LocalAnalysis_CurveContinuity {
+	~LocalAnalysis_CurveContinuity() {
+	printf("Call custom destructor for instance of LocalAnalysis_CurveContinuity\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module FEmTool
@@ -506,6 +506,11 @@ class FEmTool_Assembly {
 		void GetAssemblyTable(Handle_FEmTool_HAssemblyTable & AssTable) const;
 
 };
+%extend FEmTool_Assembly {
+	~FEmTool_Assembly() {
+	printf("Call custom destructor for instance of FEmTool_Assembly\n");
+	}
+};
 
 %nodefaultctor FEmTool_LinearTension;
 class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
@@ -776,6 +781,11 @@ class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
 		virtual		~FEmTool_ElementsOfRefMatrix();
 
 };
+%extend FEmTool_ElementsOfRefMatrix {
+	~FEmTool_ElementsOfRefMatrix() {
+	printf("Call custom destructor for instance of FEmTool_ElementsOfRefMatrix\n");
+	}
+};
 
 %nodefaultctor FEmTool_SeqOfLinConstr;
 class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
@@ -825,6 +835,11 @@ class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend FEmTool_SeqOfLinConstr {
+	~FEmTool_SeqOfLinConstr() {
+	printf("Call custom destructor for instance of FEmTool_SeqOfLinConstr\n");
+	}
 };
 
 %nodefaultctor FEmTool_SequenceNodeOfSeqOfLinConstr;

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module HLRAlgo
@@ -431,6 +431,11 @@ class HLRAlgo_Array1OfPHDat {
 		HLRAlgo_PolyHidingData & operator()(const Standard_Integer Index);
 
 };
+%extend HLRAlgo_Array1OfPHDat {
+	~HLRAlgo_Array1OfPHDat() {
+	printf("Call custom destructor for instance of HLRAlgo_Array1OfPHDat\n");
+	}
+};
 
 %nodefaultctor HLRAlgo_ListIteratorOfInterferenceList;
 class HLRAlgo_ListIteratorOfInterferenceList {
@@ -450,6 +455,11 @@ class HLRAlgo_ListIteratorOfInterferenceList {
 		%feature("autodoc", "1");
 		HLRAlgo_Interference & Value() const;
 
+};
+%extend HLRAlgo_ListIteratorOfInterferenceList {
+	~HLRAlgo_ListIteratorOfInterferenceList() {
+	printf("Call custom destructor for instance of HLRAlgo_ListIteratorOfInterferenceList\n");
+	}
 };
 
 %nodefaultctor HLRAlgo_HArray1OfPISeg;
@@ -570,6 +580,11 @@ class HLRAlgo_PolyHidingData {
 		Standard_Address Plan() const;
 
 };
+%extend HLRAlgo_PolyHidingData {
+	~HLRAlgo_PolyHidingData() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyHidingData\n");
+	}
+};
 
 %nodefaultctor HLRAlgo_Projector;
 class HLRAlgo_Projector {
@@ -616,6 +631,11 @@ class HLRAlgo_Projector {
 		gp_Lin Shoot(const Standard_Real X, const Standard_Real Y) const;
 
 };
+%extend HLRAlgo_Projector {
+	~HLRAlgo_Projector() {
+	printf("Call custom destructor for instance of HLRAlgo_Projector\n");
+	}
+};
 
 %nodefaultctor HLRAlgo_EdgeIterator;
 class HLRAlgo_EdgeIterator {
@@ -641,6 +661,11 @@ class HLRAlgo_EdgeIterator {
 		%feature("autodoc", "1");
 		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
 
+};
+%extend HLRAlgo_EdgeIterator {
+	~HLRAlgo_EdgeIterator() {
+	printf("Call custom destructor for instance of HLRAlgo_EdgeIterator\n");
+	}
 };
 
 %nodefaultctor HLRAlgo_BiPoint;
@@ -688,6 +713,11 @@ class HLRAlgo_BiPoint {
 		Standard_Address Coordinates() const;
 
 };
+%extend HLRAlgo_BiPoint {
+	~HLRAlgo_BiPoint() {
+	printf("Call custom destructor for instance of HLRAlgo_BiPoint\n");
+	}
+};
 
 %nodefaultctor HLRAlgo_PolyInternalSegment;
 class HLRAlgo_PolyInternalSegment {
@@ -699,6 +729,11 @@ class HLRAlgo_PolyInternalSegment {
 		%feature("autodoc", "1");
 		Standard_Address Indices() const;
 
+};
+%extend HLRAlgo_PolyInternalSegment {
+	~HLRAlgo_PolyInternalSegment() {
+	printf("Call custom destructor for instance of HLRAlgo_PolyInternalSegment\n");
+	}
 };
 
 %nodefaultctor HLRAlgo_EdgesBlock;
@@ -807,6 +842,11 @@ class HLRAlgo_Array1OfTData {
 		%feature("autodoc", "1");
 		HLRAlgo_TriangleData & operator()(const Standard_Integer Index);
 
+};
+%extend HLRAlgo_Array1OfTData {
+	~HLRAlgo_Array1OfTData() {
+	printf("Call custom destructor for instance of HLRAlgo_Array1OfTData\n");
+	}
 };
 
 %nodefaultctor HLRAlgo_ListNodeOfInterferenceList;
@@ -974,6 +1014,11 @@ class HLRAlgo_Array1OfPISeg {
 		HLRAlgo_PolyInternalSegment & operator()(const Standard_Integer Index);
 
 };
+%extend HLRAlgo_Array1OfPISeg {
+	~HLRAlgo_Array1OfPISeg() {
+	printf("Call custom destructor for instance of HLRAlgo_Array1OfPISeg\n");
+	}
+};
 
 %nodefaultctor HLRAlgo_PolyData;
 class HLRAlgo_PolyData : public MMgt_TShared {
@@ -1038,6 +1083,11 @@ class HLRAlgo_ListIteratorOfListOfBPoint {
 		HLRAlgo_BiPoint & Value() const;
 
 };
+%extend HLRAlgo_ListIteratorOfListOfBPoint {
+	~HLRAlgo_ListIteratorOfListOfBPoint() {
+	printf("Call custom destructor for instance of HLRAlgo_ListIteratorOfListOfBPoint\n");
+	}
+};
 
 %nodefaultctor HLRAlgo_Interference;
 class HLRAlgo_Interference {
@@ -1073,6 +1123,11 @@ class HLRAlgo_Interference {
 		%feature("autodoc", "1");
 		TopAbs_Orientation BoundaryTransition() const;
 
+};
+%extend HLRAlgo_Interference {
+	~HLRAlgo_Interference() {
+	printf("Call custom destructor for instance of HLRAlgo_Interference\n");
+	}
 };
 
 %nodefaultctor HLRAlgo_HArray1OfPHDat;
@@ -1160,6 +1215,11 @@ class HLRAlgo_ListOfBPoint {
 		void InsertAfter(HLRAlgo_ListOfBPoint & Other, HLRAlgo_ListIteratorOfListOfBPoint & It);
 
 };
+%extend HLRAlgo_ListOfBPoint {
+	~HLRAlgo_ListOfBPoint() {
+	printf("Call custom destructor for instance of HLRAlgo_ListOfBPoint\n");
+	}
+};
 
 %nodefaultctor HLRAlgo_HArray1OfPINod;
 class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
@@ -1240,6 +1300,11 @@ class HLRAlgo_Intersection {
 		TopAbs_State State() const;
 
 };
+%extend HLRAlgo_Intersection {
+	~HLRAlgo_Intersection() {
+	printf("Call custom destructor for instance of HLRAlgo_Intersection\n");
+	}
+};
 
 %nodefaultctor HLRAlgo_PolyInternalData;
 class HLRAlgo_PolyInternalData : public MMgt_TShared {
@@ -1312,6 +1377,11 @@ class HLRAlgo_TriangleData {
 		Standard_Address Indices() const;
 
 };
+%extend HLRAlgo_TriangleData {
+	~HLRAlgo_TriangleData() {
+	printf("Call custom destructor for instance of HLRAlgo_TriangleData\n");
+	}
+};
 
 %nodefaultctor HLRAlgo;
 class HLRAlgo {
@@ -1337,6 +1407,11 @@ class HLRAlgo {
 		%feature("autodoc", "1");
 		void AddMinMax(const Standard_Address IMin, const Standard_Address IMax, const Standard_Address OMin, const Standard_Address OMax);
 
+};
+%extend HLRAlgo {
+	~HLRAlgo() {
+	printf("Call custom destructor for instance of HLRAlgo\n");
+	}
 };
 
 %nodefaultctor HLRAlgo_HArray1OfTData;
@@ -1412,6 +1487,11 @@ class HLRAlgo_EdgeStatus {
 		void AllVisible(const Standard_Boolean B);
 
 };
+%extend HLRAlgo_EdgeStatus {
+	~HLRAlgo_EdgeStatus() {
+	printf("Call custom destructor for instance of HLRAlgo_EdgeStatus\n");
+	}
+};
 
 %nodefaultctor HLRAlgo_Coincidence;
 class HLRAlgo_Coincidence {
@@ -1429,6 +1509,11 @@ class HLRAlgo_Coincidence {
 		%feature("autodoc", "1");
 		void State3D(TopAbs_State & stbef, TopAbs_State & staft) const;
 
+};
+%extend HLRAlgo_Coincidence {
+	~HLRAlgo_Coincidence() {
+	printf("Call custom destructor for instance of HLRAlgo_Coincidence\n");
+	}
 };
 
 %nodefaultctor HLRAlgo_InterferenceList;
@@ -1475,4 +1560,9 @@ class HLRAlgo_InterferenceList {
 		%feature("autodoc", "1");
 		void InsertAfter(HLRAlgo_InterferenceList & Other, HLRAlgo_ListIteratorOfInterferenceList & It);
 
+};
+%extend HLRAlgo_InterferenceList {
+	~HLRAlgo_InterferenceList() {
+	printf("Call custom destructor for instance of HLRAlgo_InterferenceList\n");
+	}
 };

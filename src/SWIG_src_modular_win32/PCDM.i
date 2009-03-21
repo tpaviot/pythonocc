@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module PCDM
@@ -489,6 +489,11 @@ class PCDM_Reference {
 		Standard_Integer DocumentVersion() const;
 
 };
+%extend PCDM_Reference {
+	~PCDM_Reference() {
+	printf("Call custom destructor for instance of PCDM_Reference\n");
+	}
+};
 
 %nodefaultctor PCDM;
 class PCDM {
@@ -608,6 +613,11 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend PCDM_SequenceOfReference {
+	~PCDM_SequenceOfReference() {
+	printf("Call custom destructor for instance of PCDM_SequenceOfReference\n");
+	}
 };
 
 %nodefaultctor PCDM_ReferenceIterator;

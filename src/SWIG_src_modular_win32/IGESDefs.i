@@ -451,6 +451,11 @@ class IGESDefs_ToolAttributeDef {
 		void OwnDump(const Handle_IGESDefs_AttributeDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDefs_ToolAttributeDef {
+	~IGESDefs_ToolAttributeDef() {
+	printf("Call custom destructor for instance of IGESDefs_ToolAttributeDef\n");
+	}
+};
 
 %nodefaultctor IGESDefs_SpecificModule;
 class IGESDefs_SpecificModule : public IGESData_SpecificModule {
@@ -496,6 +501,11 @@ class IGESDefs_ToolAssociativityDef {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDefs_AssociativityDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDefs_ToolAssociativityDef {
+	~IGESDefs_ToolAssociativityDef() {
+	printf("Call custom destructor for instance of IGESDefs_ToolAssociativityDef\n");
+	}
 };
 
 %nodefaultctor IGESDefs_ReadWriteModule;
@@ -648,6 +658,11 @@ class IGESDefs_ToolUnitsData {
 		void OwnDump(const Handle_IGESDefs_UnitsData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDefs_ToolUnitsData {
+	~IGESDefs_ToolUnitsData() {
+	printf("Call custom destructor for instance of IGESDefs_ToolUnitsData\n");
+	}
+};
 
 %nodefaultctor IGESDefs_ToolGenericData;
 class IGESDefs_ToolGenericData {
@@ -672,6 +687,11 @@ class IGESDefs_ToolGenericData {
 		void OwnDump(const Handle_IGESDefs_GenericData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDefs_ToolGenericData {
+	~IGESDefs_ToolGenericData() {
+	printf("Call custom destructor for instance of IGESDefs_ToolGenericData\n");
+	}
+};
 
 %nodefaultctor IGESDefs_ToolMacroDef;
 class IGESDefs_ToolMacroDef {
@@ -695,6 +715,11 @@ class IGESDefs_ToolMacroDef {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDefs_MacroDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDefs_ToolMacroDef {
+	~IGESDefs_ToolMacroDef() {
+	printf("Call custom destructor for instance of IGESDefs_ToolMacroDef\n");
+	}
 };
 
 %nodefaultctor IGESDefs_HArray1OfTabularData;
@@ -802,6 +827,11 @@ class IGESDefs_ToolTabularData {
 		void OwnDump(const Handle_IGESDefs_TabularData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDefs_ToolTabularData {
+	~IGESDefs_ToolTabularData() {
+	printf("Call custom destructor for instance of IGESDefs_ToolTabularData\n");
+	}
+};
 
 %nodefaultctor IGESDefs_MacroDef;
 class IGESDefs_MacroDef : public IGESData_IGESEntity {
@@ -887,6 +917,11 @@ class IGESDefs_ToolAttributeTable {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDefs_AttributeTable &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDefs_ToolAttributeTable {
+	~IGESDefs_ToolAttributeTable() {
+	printf("Call custom destructor for instance of IGESDefs_ToolAttributeTable\n");
+	}
 };
 
 %nodefaultctor IGESDefs_AttributeDef;

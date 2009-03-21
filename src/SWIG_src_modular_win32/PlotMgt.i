@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module PlotMgt
@@ -1377,4 +1377,9 @@ class PlotMgt_ListOfMFTSizes {
 		%feature("autodoc", "1");
 		Standard_ShortReal & operator()(const Standard_Integer Index);
 
+};
+%extend PlotMgt_ListOfMFTSizes {
+	~PlotMgt_ListOfMFTSizes() {
+	printf("Call custom destructor for instance of PlotMgt_ListOfMFTSizes\n");
+	}
 };

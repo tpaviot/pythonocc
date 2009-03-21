@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepIntCurveSurface
@@ -116,4 +116,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
 
+};
+%extend BRepIntCurveSurface_Inter {
+	~BRepIntCurveSurface_Inter() {
+	printf("Call custom destructor for instance of BRepIntCurveSurface_Inter\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module PPoly
@@ -242,6 +242,11 @@ class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
+	~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle() {
+	printf("Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");
+	}
 };
 
 %nodefaultctor PPoly_PolygonOnTriangulation;
@@ -527,6 +532,11 @@ class PPoly_FieldOfHArray1OfTriangle : public DBC_BaseArray {
 		virtual		~PPoly_FieldOfHArray1OfTriangle();
 
 };
+%extend PPoly_FieldOfHArray1OfTriangle {
+	~PPoly_FieldOfHArray1OfTriangle() {
+	printf("Call custom destructor for instance of PPoly_FieldOfHArray1OfTriangle\n");
+	}
+};
 
 %nodefaultctor PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;
 class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
@@ -574,4 +584,9 @@ class PPoly_Triangle {
 		%feature("autodoc", "1");
 		Standard_Integer & _CSFDB_GetPPoly_TrianglemyNodes(const Standard_Integer i1);
 
+};
+%extend PPoly_Triangle {
+	~PPoly_Triangle() {
+	printf("Call custom destructor for instance of PPoly_Triangle\n");
+	}
 };

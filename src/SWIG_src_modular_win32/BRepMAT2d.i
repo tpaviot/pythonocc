@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepMAT2d
@@ -252,6 +252,11 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt : public TColl
 		const BRepMAT2d_SequenceOfBasicElt & Value() const;
 
 };
+%extend BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt {
+	~BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt() {
+	printf("Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt\n");
+	}
+};
 
 %nodefaultctor BRepMAT2d_SequenceOfBasicElt;
 class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
@@ -335,6 +340,11 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 		BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape &K);
 
 };
+%extend BRepMAT2d_DataMapOfShapeSequenceOfBasicElt {
+	~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt() {
+	printf("Call custom destructor for instance of BRepMAT2d_DataMapOfShapeSequenceOfBasicElt\n");
+	}
+};
 
 %nodefaultctor BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape;
 class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_BasicMapIterator {
@@ -409,6 +419,11 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopoDS_Shape & operator()(const Handle_MAT_BasicElt &K);
 
+};
+%extend BRepMAT2d_DataMapOfBasicEltShape {
+	~BRepMAT2d_DataMapOfBasicEltShape() {
+	printf("Call custom destructor for instance of BRepMAT2d_DataMapOfBasicEltShape\n");
+	}
 };
 
 %nodefaultctor BRepMAT2d_LinkTopoBilo;

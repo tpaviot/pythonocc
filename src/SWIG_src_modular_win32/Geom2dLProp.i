@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Geom2dLProp
@@ -101,6 +101,11 @@ class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 		Standard_Boolean IsDone() const;
 
 };
+%extend Geom2dLProp_CurAndInf2d {
+	~Geom2dLProp_CurAndInf2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_CurAndInf2d\n");
+	}
+};
 
 %nodefaultctor Geom2dLProp_FCurExtOfNumericCurInf2d;
 class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative {
@@ -118,6 +123,11 @@ class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative 
 		%feature("autodoc", "1");
 		virtual		~Geom2dLProp_FCurExtOfNumericCurInf2d();
 
+};
+%extend Geom2dLProp_FCurExtOfNumericCurInf2d {
+	~Geom2dLProp_FCurExtOfNumericCurInf2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_FCurExtOfNumericCurInf2d\n");
+	}
 };
 
 %nodefaultctor Geom2dLProp_Curve2dTool;
@@ -142,6 +152,11 @@ class Geom2dLProp_Curve2dTool {
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const Handle_Geom2d_Curve &C);
 
+};
+%extend Geom2dLProp_Curve2dTool {
+	~Geom2dLProp_Curve2dTool() {
+	printf("Call custom destructor for instance of Geom2dLProp_Curve2dTool\n");
+	}
 };
 
 %nodefaultctor Geom2dLProp_CLProps2d;
@@ -179,6 +194,11 @@ class Geom2dLProp_CLProps2d {
 		void CentreOfCurvature(gp_Pnt2d & P);
 
 };
+%extend Geom2dLProp_CLProps2d {
+	~Geom2dLProp_CLProps2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_CLProps2d\n");
+	}
+};
 
 %nodefaultctor Geom2dLProp_FCurNulOfNumericCurInf2d;
 class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative {
@@ -194,6 +214,11 @@ class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative 
 		%feature("autodoc", "1");
 		virtual		~Geom2dLProp_FCurNulOfNumericCurInf2d();
 
+};
+%extend Geom2dLProp_FCurNulOfNumericCurInf2d {
+	~Geom2dLProp_FCurNulOfNumericCurInf2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_FCurNulOfNumericCurInf2d\n");
+	}
 };
 
 %nodefaultctor Geom2dLProp_NumericCurInf2d;
@@ -214,4 +239,9 @@ class Geom2dLProp_NumericCurInf2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
+};
+%extend Geom2dLProp_NumericCurInf2d {
+	~Geom2dLProp_NumericCurInf2d() {
+	printf("Call custom destructor for instance of Geom2dLProp_NumericCurInf2d\n");
+	}
 };

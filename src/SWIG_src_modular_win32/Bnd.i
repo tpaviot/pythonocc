@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Bnd
@@ -209,6 +209,11 @@ class Bnd_B2d {
 		void SetHSize(const gp_XY &theHSize);
 
 };
+%extend Bnd_B2d {
+	~Bnd_B2d() {
+	printf("Call custom destructor for instance of Bnd_B2d\n");
+	}
+};
 
 %nodefaultctor Bnd_B2f;
 class Bnd_B2f {
@@ -262,6 +267,11 @@ class Bnd_B2f {
 		%feature("autodoc", "1");
 		void SetHSize(const gp_XY &theHSize);
 
+};
+%extend Bnd_B2f {
+	~Bnd_B2f() {
+	printf("Call custom destructor for instance of Bnd_B2f\n");
+	}
 };
 
 %nodefaultctor Bnd_SequenceNodeOfSeqOfBox;
@@ -334,6 +344,11 @@ class Bnd_SeqOfBox : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Bnd_SeqOfBox {
+	~Bnd_SeqOfBox() {
+	printf("Call custom destructor for instance of Bnd_SeqOfBox\n");
+	}
 };
 
 %nodefaultctor Bnd_Box;
@@ -431,6 +446,11 @@ class Bnd_Box {
 		Standard_Real SquareExtent() const;
 
 };
+%extend Bnd_Box {
+	~Bnd_Box() {
+	printf("Call custom destructor for instance of Bnd_Box\n");
+	}
+};
 
 %nodefaultctor Bnd_BoundSortBox2d;
 class Bnd_BoundSortBox2d {
@@ -452,6 +472,11 @@ class Bnd_BoundSortBox2d {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend Bnd_BoundSortBox2d {
+	~Bnd_BoundSortBox2d() {
+	printf("Call custom destructor for instance of Bnd_BoundSortBox2d\n");
+	}
 };
 
 %nodefaultctor Bnd_B3d;
@@ -507,6 +532,11 @@ class Bnd_B3d {
 		void SetHSize(const gp_XYZ &theHSize);
 
 };
+%extend Bnd_B3d {
+	~Bnd_B3d() {
+	printf("Call custom destructor for instance of Bnd_B3d\n");
+	}
+};
 
 %nodefaultctor Bnd_B3f;
 class Bnd_B3f {
@@ -560,6 +590,11 @@ class Bnd_B3f {
 		%feature("autodoc", "1");
 		void SetHSize(const gp_XYZ &theHSize);
 
+};
+%extend Bnd_B3f {
+	~Bnd_B3f() {
+	printf("Call custom destructor for instance of Bnd_B3f\n");
+	}
 };
 
 %nodefaultctor Bnd_HArray1OfBox2d;
@@ -667,6 +702,11 @@ class Bnd_BoundSortBox {
 		~Bnd_BoundSortBox();
 
 };
+%extend Bnd_BoundSortBox {
+	~Bnd_BoundSortBox() {
+	printf("Call custom destructor for instance of Bnd_BoundSortBox\n");
+	}
+};
 
 %nodefaultctor Bnd_Box2d;
 class Bnd_Box2d {
@@ -737,6 +777,11 @@ class Bnd_Box2d {
 		void Dump() const;
 
 };
+%extend Bnd_Box2d {
+	~Bnd_Box2d() {
+	printf("Call custom destructor for instance of Bnd_Box2d\n");
+	}
+};
 
 %nodefaultctor Bnd_Array1OfBox2d;
 class Bnd_Array1OfBox2d {
@@ -773,6 +818,11 @@ class Bnd_Array1OfBox2d {
 		Bnd_Box2d & operator()(const Standard_Integer Index);
 
 };
+%extend Bnd_Array1OfBox2d {
+	~Bnd_Array1OfBox2d() {
+	printf("Call custom destructor for instance of Bnd_Array1OfBox2d\n");
+	}
+};
 
 %nodefaultctor Bnd_Array1OfBox;
 class Bnd_Array1OfBox {
@@ -808,4 +858,9 @@ class Bnd_Array1OfBox {
 		%feature("autodoc", "1");
 		Bnd_Box & operator()(const Standard_Integer Index);
 
+};
+%extend Bnd_Array1OfBox {
+	~Bnd_Array1OfBox() {
+	printf("Call custom destructor for instance of Bnd_Array1OfBox\n");
+	}
 };

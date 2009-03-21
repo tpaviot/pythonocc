@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GeomInt
@@ -129,6 +129,11 @@ class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 		Standard_Real AverageError() const;
 
 };
+%extend GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
+	~GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox;
 class GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox : public math_BFGS {
@@ -140,6 +145,11 @@ class GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox : publi
 		%feature("autodoc", "1");
 		virtual		~GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox();
 
+};
+%extend GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox {
+	~GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox\n");
+	}
 };
 
 %nodefaultctor GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox;
@@ -164,6 +174,11 @@ class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
 		%feature("autodoc", "1");
 		Standard_Real AverageError() const;
 
+};
+%extend GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
+	~GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox\n");
+	}
 };
 
 %nodefaultctor GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
@@ -256,6 +271,11 @@ class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public 
 		virtual		~GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox();
 
 };
+%extend GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox {
+	~GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox;
 class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public math_MultipleVarFunctionWithGradient {
@@ -287,6 +307,11 @@ class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public m
 		%feature("autodoc", "1");
 		virtual		~GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox();
 
+};
+%extend GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox {
+	~GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox\n");
+	}
 };
 
 %nodefaultctor GeomInt_SequenceOfParameterAndOrientation;
@@ -338,6 +363,11 @@ class GeomInt_SequenceOfParameterAndOrientation : public TCollection_BaseSequenc
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend GeomInt_SequenceOfParameterAndOrientation {
+	~GeomInt_SequenceOfParameterAndOrientation() {
+	printf("Call custom destructor for instance of GeomInt_SequenceOfParameterAndOrientation\n");
+	}
+};
 
 %nodefaultctor GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
 class GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
@@ -388,6 +418,11 @@ class GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
+	~GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_TheMultiLineOfWLApprox;
 class GeomInt_TheMultiLineOfWLApprox {
@@ -424,6 +459,11 @@ class GeomInt_TheMultiLineOfWLApprox {
 		GeomInt_TheMultiLineOfWLApprox MakeMLBetween(const Standard_Integer Low, const Standard_Integer High, const Standard_Integer NbPointsToInsert) const;
 
 };
+%extend GeomInt_TheMultiLineOfWLApprox {
+	~GeomInt_TheMultiLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_TheMultiLineOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
 class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
@@ -444,6 +484,11 @@ class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 		virtual		~GeomInt_ThePrmPrmSvSurfacesOfWLApprox();
 
 };
+%extend GeomInt_ThePrmPrmSvSurfacesOfWLApprox {
+	~GeomInt_ThePrmPrmSvSurfacesOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_ThePrmPrmSvSurfacesOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox;
 class GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox : public math_BFGS {
@@ -455,6 +500,11 @@ class GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox : public ma
 		%feature("autodoc", "1");
 		virtual		~GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox();
 
+};
+%extend GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox {
+	~GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox\n");
+	}
 };
 
 %nodefaultctor GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox;
@@ -487,6 +537,11 @@ class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math
 		%feature("autodoc", "1");
 		virtual		~GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox();
 
+};
+%extend GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox {
+	~GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox\n");
+	}
 };
 
 %nodefaultctor GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
@@ -575,6 +630,11 @@ class GeomInt_TheComputeLineBezierOfWLApprox {
 		const TColStd_Array1OfReal & Parameters(const Standard_Integer Index=1) const;
 
 };
+%extend GeomInt_TheComputeLineBezierOfWLApprox {
+	~GeomInt_TheComputeLineBezierOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_TheComputeLineBezierOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
 class GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
@@ -625,6 +685,11 @@ class GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
+	~GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation;
 class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollection_SeqNode {
@@ -665,6 +730,11 @@ class GeomInt_LineTool {
 		Standard_Real LastParameter(const Handle_IntPatch_Line &L);
 
 };
+%extend GeomInt_LineTool {
+	~GeomInt_LineTool() {
+	printf("Call custom destructor for instance of GeomInt_LineTool\n");
+	}
+};
 
 %nodefaultctor GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox;
 class GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox : public math_BFGS {
@@ -676,6 +746,11 @@ class GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox : public
 		%feature("autodoc", "1");
 		virtual		~GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox();
 
+};
+%extend GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox {
+	~GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox\n");
+	}
 };
 
 %nodefaultctor GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
@@ -698,6 +773,11 @@ class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 		%feature("autodoc", "1");
 		Standard_Real AverageError() const;
 
+};
+%extend GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
+	~GeomInt_MyGradientbisOfTheComputeLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_MyGradientbisOfTheComputeLineOfWLApprox\n");
+	}
 };
 
 %nodefaultctor GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
@@ -749,6 +829,11 @@ class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 		const math_IntegerVector & KIndex() const;
 
 };
+%extend GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
+	~GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_TheComputeLineOfWLApprox;
 class GeomInt_TheComputeLineOfWLApprox {
@@ -797,6 +882,11 @@ class GeomInt_TheComputeLineOfWLApprox {
 		const TColStd_Array1OfReal & Parameters() const;
 
 };
+%extend GeomInt_TheComputeLineOfWLApprox {
+	~GeomInt_TheComputeLineOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_TheComputeLineOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_ParameterAndOrientation;
 class GeomInt_ParameterAndOrientation {
@@ -818,6 +908,11 @@ class GeomInt_ParameterAndOrientation {
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation2() const;
 
+};
+%extend GeomInt_ParameterAndOrientation {
+	~GeomInt_ParameterAndOrientation() {
+	printf("Call custom destructor for instance of GeomInt_ParameterAndOrientation\n");
+	}
 };
 
 %nodefaultctor GeomInt_TheMultiLineToolOfWLApprox;
@@ -859,6 +954,11 @@ class GeomInt_TheMultiLineToolOfWLApprox {
 		Approx_Status WhatStatus(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
 
 };
+%extend GeomInt_TheMultiLineToolOfWLApprox {
+	~GeomInt_TheMultiLineToolOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_TheMultiLineToolOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_LineConstructor;
 class GeomInt_LineConstructor {
@@ -878,6 +978,11 @@ class GeomInt_LineConstructor {
 		%feature("autodoc", "1");
 		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend GeomInt_LineConstructor {
+	~GeomInt_LineConstructor() {
+	printf("Call custom destructor for instance of GeomInt_LineConstructor\n");
+	}
 };
 
 %nodefaultctor GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
@@ -913,6 +1018,11 @@ class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 		GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox & Function();
 
 };
+%extend GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
+	~GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox\n");
+	}
+};
 
 %nodefaultctor GeomInt_TheImpPrmSvSurfacesOfWLApprox;
 class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
@@ -934,4 +1044,9 @@ class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 		%feature("autodoc", "1");
 		virtual		~GeomInt_TheImpPrmSvSurfacesOfWLApprox();
 
+};
+%extend GeomInt_TheImpPrmSvSurfacesOfWLApprox {
+	~GeomInt_TheImpPrmSvSurfacesOfWLApprox() {
+	printf("Call custom destructor for instance of GeomInt_TheImpPrmSvSurfacesOfWLApprox\n");
+	}
 };

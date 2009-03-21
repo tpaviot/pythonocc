@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GeomLProp
@@ -139,6 +139,11 @@ class GeomLProp_SLProps {
 		Standard_Real GaussianCurvature();
 
 };
+%extend GeomLProp_SLProps {
+	~GeomLProp_SLProps() {
+	printf("Call custom destructor for instance of GeomLProp_SLProps\n");
+	}
+};
 
 %nodefaultctor GeomLProp_CLProps;
 class GeomLProp_CLProps {
@@ -175,6 +180,11 @@ class GeomLProp_CLProps {
 		void CentreOfCurvature(gp_Pnt & P);
 
 };
+%extend GeomLProp_CLProps {
+	~GeomLProp_CLProps() {
+	printf("Call custom destructor for instance of GeomLProp_CLProps\n");
+	}
+};
 
 %nodefaultctor GeomLProp;
 class GeomLProp {
@@ -188,6 +198,11 @@ class GeomLProp {
 		%feature("autodoc", "1");
 		GeomAbs_Shape Continuity(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Standard_Real u1, const Standard_Real u2, const Standard_Boolean r1, const Standard_Boolean r2);
 
+};
+%extend GeomLProp {
+	~GeomLProp() {
+	printf("Call custom destructor for instance of GeomLProp\n");
+	}
 };
 
 %nodefaultctor GeomLProp_SurfaceTool;
@@ -210,6 +225,11 @@ class GeomLProp_SurfaceTool {
 		%feature("autodoc", "1");
 		void Bounds(const Handle_Geom_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
+};
+%extend GeomLProp_SurfaceTool {
+	~GeomLProp_SurfaceTool() {
+	printf("Call custom destructor for instance of GeomLProp_SurfaceTool\n");
+	}
 };
 
 %nodefaultctor GeomLProp_CurveTool;
@@ -234,4 +254,9 @@ class GeomLProp_CurveTool {
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const Handle_Geom_Curve &C);
 
+};
+%extend GeomLProp_CurveTool {
+	~GeomLProp_CurveTool() {
+	printf("Call custom destructor for instance of GeomLProp_CurveTool\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module EDL
@@ -605,6 +605,11 @@ class EDL_StackOfBoolean {
 		Standard_Boolean & ChangeTop();
 
 };
+%extend EDL_StackOfBoolean {
+	~EDL_StackOfBoolean() {
+	printf("Call custom destructor for instance of EDL_StackOfBoolean\n");
+	}
+};
 
 %nodefaultctor EDL_DataMapNodeOfMapOfTemplate;
 class EDL_DataMapNodeOfMapOfTemplate : public TCollection_MapNode {
@@ -655,6 +660,11 @@ class EDL_Library {
 		Standard_Boolean IsEqual(const EDL_Library &alib1, const EDL_Library &alib2);
 
 };
+%extend EDL_Library {
+	~EDL_Library() {
+	printf("Call custom destructor for instance of EDL_Library\n");
+	}
+};
 
 %nodefaultctor EDL_DataMapIteratorOfMapOfLibrary;
 class EDL_DataMapIteratorOfMapOfLibrary : public TCollection_BasicMapIterator {
@@ -672,6 +682,11 @@ class EDL_DataMapIteratorOfMapOfLibrary : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const EDL_Library & Value() const;
 
+};
+%extend EDL_DataMapIteratorOfMapOfLibrary {
+	~EDL_DataMapIteratorOfMapOfLibrary() {
+	printf("Call custom destructor for instance of EDL_DataMapIteratorOfMapOfLibrary\n");
+	}
 };
 
 %nodefaultctor EDL_Template;
@@ -758,6 +773,11 @@ class EDL_DataMapIteratorOfMapOfVariable : public TCollection_BasicMapIterator {
 		const EDL_Variable & Value() const;
 
 };
+%extend EDL_DataMapIteratorOfMapOfVariable {
+	~EDL_DataMapIteratorOfMapOfVariable() {
+	printf("Call custom destructor for instance of EDL_DataMapIteratorOfMapOfVariable\n");
+	}
+};
 
 %nodefaultctor EDL_DataMapIteratorOfMapOfTemplate;
 class EDL_DataMapIteratorOfMapOfTemplate : public TCollection_BasicMapIterator {
@@ -776,6 +796,11 @@ class EDL_DataMapIteratorOfMapOfTemplate : public TCollection_BasicMapIterator {
 		const EDL_Template & Value() const;
 
 };
+%extend EDL_DataMapIteratorOfMapOfTemplate {
+	~EDL_DataMapIteratorOfMapOfTemplate() {
+	printf("Call custom destructor for instance of EDL_DataMapIteratorOfMapOfTemplate\n");
+	}
+};
 
 %nodefaultctor EDL;
 class EDL {
@@ -787,6 +812,11 @@ class EDL {
 		%feature("autodoc", "1");
 		void PrintError(const EDL_Error anError, const char * anArg);
 
+};
+%extend EDL {
+	~EDL() {
+	printf("Call custom destructor for instance of EDL\n");
+	}
 };
 
 %nodefaultctor EDL_HSequenceOfVariable;
@@ -902,6 +932,11 @@ class EDL_SequenceOfVariable : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend EDL_SequenceOfVariable {
+	~EDL_SequenceOfVariable() {
+	printf("Call custom destructor for instance of EDL_SequenceOfVariable\n");
+	}
+};
 
 %nodefaultctor EDL_StackIteratorOfStackOfBoolean;
 class EDL_StackIteratorOfStackOfBoolean {
@@ -921,6 +956,11 @@ class EDL_StackIteratorOfStackOfBoolean {
 		%feature("autodoc", "1");
 		const Standard_Boolean & Value() const;
 
+};
+%extend EDL_StackIteratorOfStackOfBoolean {
+	~EDL_StackIteratorOfStackOfBoolean() {
+	printf("Call custom destructor for instance of EDL_StackIteratorOfStackOfBoolean\n");
+	}
 };
 
 %nodefaultctor EDL_MapOfVariable;
@@ -952,6 +992,11 @@ class EDL_MapOfVariable : public TCollection_BasicMap {
 		EDL_Variable & operator()(const TCollection_AsciiString &K);
 
 };
+%extend EDL_MapOfVariable {
+	~EDL_MapOfVariable() {
+	printf("Call custom destructor for instance of EDL_MapOfVariable\n");
+	}
+};
 
 %nodefaultctor EDL_MapOfTemplate;
 class EDL_MapOfTemplate : public TCollection_BasicMap {
@@ -982,6 +1027,11 @@ class EDL_MapOfTemplate : public TCollection_BasicMap {
 		EDL_Template & operator()(const TCollection_AsciiString &K);
 
 };
+%extend EDL_MapOfTemplate {
+	~EDL_MapOfTemplate() {
+	printf("Call custom destructor for instance of EDL_MapOfTemplate\n");
+	}
+};
 
 %nodefaultctor EDL_DataMapIteratorOfMapOfFile;
 class EDL_DataMapIteratorOfMapOfFile : public TCollection_BasicMapIterator {
@@ -999,6 +1049,11 @@ class EDL_DataMapIteratorOfMapOfFile : public TCollection_BasicMapIterator {
 		%feature("autodoc", "1");
 		const EDL_File & Value() const;
 
+};
+%extend EDL_DataMapIteratorOfMapOfFile {
+	~EDL_DataMapIteratorOfMapOfFile() {
+	printf("Call custom destructor for instance of EDL_DataMapIteratorOfMapOfFile\n");
+	}
 };
 
 %nodefaultctor EDL_MapOfFile;
@@ -1030,6 +1085,11 @@ class EDL_MapOfFile : public TCollection_BasicMap {
 		EDL_File & operator()(const TCollection_AsciiString &K);
 
 };
+%extend EDL_MapOfFile {
+	~EDL_MapOfFile() {
+	printf("Call custom destructor for instance of EDL_MapOfFile\n");
+	}
+};
 
 %nodefaultctor EDL_File;
 class EDL_File {
@@ -1058,6 +1118,11 @@ class EDL_File {
 		Standard_Address GetFile() const;
 
 };
+%extend EDL_File {
+	~EDL_File() {
+	printf("Call custom destructor for instance of EDL_File\n");
+	}
+};
 
 %nodefaultctor EDL_Variable;
 class EDL_Variable {
@@ -1085,6 +1150,11 @@ class EDL_Variable {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const EDL_Variable &aVar1, const EDL_Variable &aVar2);
 
+};
+%extend EDL_Variable {
+	~EDL_Variable() {
+	printf("Call custom destructor for instance of EDL_Variable\n");
+	}
 };
 
 %nodefaultctor EDL_DataMapNodeOfMapOfVariable;
@@ -1139,4 +1209,9 @@ class EDL_MapOfLibrary : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		EDL_Library & operator()(const TCollection_AsciiString &K);
 
+};
+%extend EDL_MapOfLibrary {
+	~EDL_MapOfLibrary() {
+	printf("Call custom destructor for instance of EDL_MapOfLibrary\n");
+	}
 };

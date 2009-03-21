@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module IntRes2d
@@ -204,6 +204,11 @@ class IntRes2d_Transition {
 		void _CSFDB_SetIntRes2d_Transitionoppos(const Standard_Boolean p);
 
 };
+%extend IntRes2d_Transition {
+	~IntRes2d_Transition() {
+	printf("Call custom destructor for instance of IntRes2d_Transition\n");
+	}
+};
 
 %nodefaultctor IntRes2d_SequenceOfIntersectionPoint;
 class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
@@ -253,6 +258,11 @@ class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IntRes2d_SequenceOfIntersectionPoint {
+	~IntRes2d_SequenceOfIntersectionPoint() {
+	printf("Call custom destructor for instance of IntRes2d_SequenceOfIntersectionPoint\n");
+	}
 };
 
 %nodefaultctor IntRes2d_SequenceOfIntersectionSegment;
@@ -304,6 +314,11 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntRes2d_SequenceOfIntersectionSegment {
+	~IntRes2d_SequenceOfIntersectionSegment() {
+	printf("Call custom destructor for instance of IntRes2d_SequenceOfIntersectionSegment\n");
+	}
+};
 
 %nodefaultctor IntRes2d_IntersectionSegment;
 class IntRes2d_IntersectionSegment {
@@ -346,6 +361,11 @@ class IntRes2d_IntersectionSegment {
 		const IntRes2d_IntersectionPoint & _CSFDB_GetIntRes2d_IntersectionSegmentptlast() const;
 
 };
+%extend IntRes2d_IntersectionSegment {
+	~IntRes2d_IntersectionSegment() {
+	printf("Call custom destructor for instance of IntRes2d_IntersectionSegment\n");
+	}
+};
 
 %nodefaultctor IntRes2d_IntersectionPoint;
 class IntRes2d_IntersectionPoint {
@@ -383,6 +403,11 @@ class IntRes2d_IntersectionPoint {
 		%feature("autodoc", "1");
 		const IntRes2d_Transition & _CSFDB_GetIntRes2d_IntersectionPointtrans2() const;
 
+};
+%extend IntRes2d_IntersectionPoint {
+	~IntRes2d_IntersectionPoint() {
+	printf("Call custom destructor for instance of IntRes2d_IntersectionPoint\n");
+	}
 };
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
@@ -428,6 +453,11 @@ class IntRes2d_Intersection {
 		void SetReversedParameters(const Standard_Boolean flag);
 
 };
+%extend IntRes2d_Intersection {
+	~IntRes2d_Intersection() {
+	printf("Call custom destructor for instance of IntRes2d_Intersection\n");
+	}
+};
 
 %nodefaultctor IntRes2d_Domain;
 class IntRes2d_Domain {
@@ -469,6 +499,11 @@ class IntRes2d_Domain {
 		%feature("autodoc", "1");
 		void EquivalentParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntRes2d_Domain {
+	~IntRes2d_Domain() {
+	printf("Call custom destructor for instance of IntRes2d_Domain\n");
+	}
 };
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GraphDS
@@ -148,6 +148,11 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		GraphDS_EntityRole & operator()(const Handle_Standard_Transient &K);
 
+};
+%extend GraphDS_EntityRoleMap {
+	~GraphDS_EntityRoleMap() {
+	printf("Call custom destructor for instance of GraphDS_EntityRoleMap\n");
+	}
 };
 
 %nodefaultctor GraphDS_DataMapNodeOfEntityRoleMap;

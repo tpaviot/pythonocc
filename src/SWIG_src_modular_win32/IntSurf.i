@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module IntSurf
@@ -274,6 +274,11 @@ class IntSurf {
 		void MakeTransition(const gp_Vec &TgFirst, const gp_Vec &TgSecond, const gp_Dir &Normal, IntSurf_Transition & TFirst, IntSurf_Transition & TSecond);
 
 };
+%extend IntSurf {
+	~IntSurf() {
+	printf("Call custom destructor for instance of IntSurf\n");
+	}
+};
 
 %nodefaultctor IntSurf_Transition;
 class IntSurf_Transition {
@@ -301,6 +306,11 @@ class IntSurf_Transition {
 		%feature("autodoc", "1");
 		Standard_Boolean IsOpposite() const;
 
+};
+%extend IntSurf_Transition {
+	~IntSurf_Transition() {
+	printf("Call custom destructor for instance of IntSurf_Transition\n");
+	}
 };
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
@@ -378,6 +388,11 @@ class IntSurf_Quadric {
 		gp_Vec Normale(const gp_Pnt &P) const;
 
 };
+%extend IntSurf_Quadric {
+	~IntSurf_Quadric() {
+	printf("Call custom destructor for instance of IntSurf_Quadric\n");
+	}
+};
 
 %nodefaultctor IntSurf_ListOfPntOn2S;
 class IntSurf_ListOfPntOn2S {
@@ -424,6 +439,11 @@ class IntSurf_ListOfPntOn2S {
 		void InsertAfter(IntSurf_ListOfPntOn2S & Other, IntSurf_ListIteratorOfListOfPntOn2S & It);
 
 };
+%extend IntSurf_ListOfPntOn2S {
+	~IntSurf_ListOfPntOn2S() {
+	printf("Call custom destructor for instance of IntSurf_ListOfPntOn2S\n");
+	}
+};
 
 %nodefaultctor IntSurf_PntOn2S;
 class IntSurf_PntOn2S {
@@ -451,6 +471,11 @@ class IntSurf_PntOn2S {
 		%feature("autodoc", "1");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntSurf_PntOn2S {
+	~IntSurf_PntOn2S() {
+	printf("Call custom destructor for instance of IntSurf_PntOn2S\n");
+	}
 };
 
 %nodefaultctor IntSurf_SequenceOfPathPoint;
@@ -502,6 +527,11 @@ class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntSurf_SequenceOfPathPoint {
+	~IntSurf_SequenceOfPathPoint() {
+	printf("Call custom destructor for instance of IntSurf_SequenceOfPathPoint\n");
+	}
+};
 
 %nodefaultctor IntSurf_PathPoint;
 class IntSurf_PathPoint {
@@ -539,6 +569,11 @@ class IntSurf_PathPoint {
 		%feature("autodoc", "1");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntSurf_PathPoint {
+	~IntSurf_PathPoint() {
+	printf("Call custom destructor for instance of IntSurf_PathPoint\n");
+	}
 };
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfCouple;
@@ -578,6 +613,11 @@ class IntSurf_Couple {
 		Standard_Integer Second() const;
 
 };
+%extend IntSurf_Couple {
+	~IntSurf_Couple() {
+	printf("Call custom destructor for instance of IntSurf_Couple\n");
+	}
+};
 
 %nodefaultctor IntSurf_PathPointTool;
 class IntSurf_PathPointTool {
@@ -603,6 +643,11 @@ class IntSurf_PathPointTool {
 		%feature("autodoc", "1");
 		void Parameters(const IntSurf_PathPoint &PStart, const Standard_Integer Mult, Standard_Real &OutValue, Standard_Real &OutValue);
 
+};
+%extend IntSurf_PathPointTool {
+	~IntSurf_PathPointTool() {
+	printf("Call custom destructor for instance of IntSurf_PathPointTool\n");
+	}
 };
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfPathPoint;
@@ -651,6 +696,11 @@ class IntSurf_InteriorPoint {
 		%feature("autodoc", "1");
 		const gp_Vec2d & Direction2d() const;
 
+};
+%extend IntSurf_InteriorPoint {
+	~IntSurf_InteriorPoint() {
+	printf("Call custom destructor for instance of IntSurf_InteriorPoint\n");
+	}
 };
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfInteriorPoint;
@@ -724,6 +774,11 @@ class IntSurf_SequenceOfCouple : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntSurf_SequenceOfCouple {
+	~IntSurf_SequenceOfCouple() {
+	printf("Call custom destructor for instance of IntSurf_SequenceOfCouple\n");
+	}
+};
 
 %nodefaultctor IntSurf_SequenceOfPntOn2S;
 class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
@@ -773,6 +828,11 @@ class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IntSurf_SequenceOfPntOn2S {
+	~IntSurf_SequenceOfPntOn2S() {
+	printf("Call custom destructor for instance of IntSurf_SequenceOfPntOn2S\n");
+	}
 };
 
 %nodefaultctor IntSurf_LineOn2S;
@@ -832,6 +892,11 @@ class IntSurf_InteriorPointTool {
 		gp_Dir2d Direction2d(const IntSurf_InteriorPoint &PStart);
 
 };
+%extend IntSurf_InteriorPointTool {
+	~IntSurf_InteriorPointTool() {
+	printf("Call custom destructor for instance of IntSurf_InteriorPointTool\n");
+	}
+};
 
 %nodefaultctor IntSurf_ListIteratorOfListOfPntOn2S;
 class IntSurf_ListIteratorOfListOfPntOn2S {
@@ -852,6 +917,11 @@ class IntSurf_ListIteratorOfListOfPntOn2S {
 		IntSurf_PntOn2S & Value() const;
 
 };
+%extend IntSurf_ListIteratorOfListOfPntOn2S {
+	~IntSurf_ListIteratorOfListOfPntOn2S() {
+	printf("Call custom destructor for instance of IntSurf_ListIteratorOfListOfPntOn2S\n");
+	}
+};
 
 %nodefaultctor IntSurf_QuadricTool;
 class IntSurf_QuadricTool {
@@ -869,6 +939,11 @@ class IntSurf_QuadricTool {
 		%feature("autodoc", "1");
 		Standard_Real Tolerance(const IntSurf_Quadric &Quad);
 
+};
+%extend IntSurf_QuadricTool {
+	~IntSurf_QuadricTool() {
+	printf("Call custom destructor for instance of IntSurf_QuadricTool\n");
+	}
 };
 
 %nodefaultctor IntSurf_SequenceOfInteriorPoint;
@@ -919,4 +994,9 @@ class IntSurf_SequenceOfInteriorPoint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IntSurf_SequenceOfInteriorPoint {
+	~IntSurf_SequenceOfInteriorPoint() {
+	printf("Call custom destructor for instance of IntSurf_SequenceOfInteriorPoint\n");
+	}
 };

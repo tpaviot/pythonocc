@@ -669,6 +669,11 @@ class IGESGraph_ToolDrawingUnits {
 		void OwnDump(const Handle_IGESGraph_DrawingUnits &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGraph_ToolDrawingUnits {
+	~IGESGraph_ToolDrawingUnits() {
+	printf("Call custom destructor for instance of IGESGraph_ToolDrawingUnits\n");
+	}
+};
 
 %nodefaultctor IGESGraph_DrawingUnits;
 class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
@@ -802,6 +807,11 @@ class IGESGraph_ToolUniformRectGrid {
 		void OwnDump(const Handle_IGESGraph_UniformRectGrid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGraph_ToolUniformRectGrid {
+	~IGESGraph_ToolUniformRectGrid() {
+	printf("Call custom destructor for instance of IGESGraph_ToolUniformRectGrid\n");
+	}
+};
 
 %nodefaultctor IGESGraph_ToolIntercharacterSpacing;
 class IGESGraph_ToolIntercharacterSpacing {
@@ -828,6 +838,11 @@ class IGESGraph_ToolIntercharacterSpacing {
 		void OwnDump(const Handle_IGESGraph_IntercharacterSpacing &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGraph_ToolIntercharacterSpacing {
+	~IGESGraph_ToolIntercharacterSpacing() {
+	printf("Call custom destructor for instance of IGESGraph_ToolIntercharacterSpacing\n");
+	}
+};
 
 %nodefaultctor IGESGraph_ToolNominalSize;
 class IGESGraph_ToolNominalSize {
@@ -853,6 +868,11 @@ class IGESGraph_ToolNominalSize {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGraph_NominalSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGraph_ToolNominalSize {
+	~IGESGraph_ToolNominalSize() {
+	printf("Call custom destructor for instance of IGESGraph_ToolNominalSize\n");
+	}
 };
 
 %nodefaultctor IGESGraph_HArray1OfTextDisplayTemplate;
@@ -920,6 +940,11 @@ class IGESGraph_ToolDrawingSize {
 		void OwnDump(const Handle_IGESGraph_DrawingSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGraph_ToolDrawingSize {
+	~IGESGraph_ToolDrawingSize() {
+	printf("Call custom destructor for instance of IGESGraph_ToolDrawingSize\n");
+	}
+};
 
 %nodefaultctor IGESGraph_IntercharacterSpacing;
 class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
@@ -969,6 +994,11 @@ class IGESGraph_ToolTextFontDef {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGraph_TextFontDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGraph_ToolTextFontDef {
+	~IGESGraph_ToolTextFontDef() {
+	printf("Call custom destructor for instance of IGESGraph_ToolTextFontDef\n");
+	}
 };
 
 %nodefaultctor IGESGraph_LineFontDefTemplate;
@@ -1043,6 +1073,11 @@ class IGESGraph_ToolPick {
 		void OwnDump(const Handle_IGESGraph_Pick &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGraph_ToolPick {
+	~IGESGraph_ToolPick() {
+	printf("Call custom destructor for instance of IGESGraph_ToolPick\n");
+	}
+};
 
 %nodefaultctor IGESGraph_ToolColor;
 class IGESGraph_ToolColor {
@@ -1066,6 +1101,11 @@ class IGESGraph_ToolColor {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGraph_Color &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGraph_ToolColor {
+	~IGESGraph_ToolColor() {
+	printf("Call custom destructor for instance of IGESGraph_ToolColor\n");
+	}
 };
 
 %nodefaultctor IGESGraph_GeneralModule;
@@ -1123,6 +1163,11 @@ class IGESGraph_ToolLineFontDefTemplate {
 		void OwnDump(const Handle_IGESGraph_LineFontDefTemplate &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGraph_ToolLineFontDefTemplate {
+	~IGESGraph_ToolLineFontDefTemplate() {
+	printf("Call custom destructor for instance of IGESGraph_ToolLineFontDefTemplate\n");
+	}
+};
 
 %nodefaultctor IGESGraph_Color;
 class IGESGraph_Color : public IGESData_ColorEntity {
@@ -1178,6 +1223,11 @@ class IGESGraph_ToolDefinitionLevel {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGraph_DefinitionLevel &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGraph_ToolDefinitionLevel {
+	~IGESGraph_ToolDefinitionLevel() {
+	printf("Call custom destructor for instance of IGESGraph_ToolDefinitionLevel\n");
+	}
 };
 
 %nodefaultctor IGESGraph_TextDisplayTemplate;
@@ -1368,6 +1418,11 @@ class IGESGraph_ToolTextDisplayTemplate {
 		void OwnDump(const Handle_IGESGraph_TextDisplayTemplate &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGraph_ToolTextDisplayTemplate {
+	~IGESGraph_ToolTextDisplayTemplate() {
+	printf("Call custom destructor for instance of IGESGraph_ToolTextDisplayTemplate\n");
+	}
+};
 
 %nodefaultctor IGESGraph_NominalSize;
 class IGESGraph_NominalSize : public IGESData_IGESEntity {
@@ -1423,6 +1478,11 @@ class IGESGraph_ToolLineFontDefPattern {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGraph_LineFontDefPattern &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGraph_ToolLineFontDefPattern {
+	~IGESGraph_ToolLineFontDefPattern() {
+	printf("Call custom destructor for instance of IGESGraph_ToolLineFontDefPattern\n");
+	}
 };
 
 %nodefaultctor IGESGraph_DrawingSize;
@@ -1550,6 +1610,11 @@ class IGESGraph_ToolHighLight {
 		void OwnDump(const Handle_IGESGraph_HighLight &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESGraph_ToolHighLight {
+	~IGESGraph_ToolHighLight() {
+	printf("Call custom destructor for instance of IGESGraph_ToolHighLight\n");
+	}
+};
 
 %nodefaultctor IGESGraph_ToolLineFontPredefined;
 class IGESGraph_ToolLineFontPredefined {
@@ -1575,6 +1640,11 @@ class IGESGraph_ToolLineFontPredefined {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESGraph_LineFontPredefined &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESGraph_ToolLineFontPredefined {
+	~IGESGraph_ToolLineFontPredefined() {
+	printf("Call custom destructor for instance of IGESGraph_ToolLineFontPredefined\n");
+	}
 };
 
 %nodefaultctor IGESGraph_Array1OfColor;

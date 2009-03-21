@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepOffsetAPI
@@ -178,6 +178,11 @@ class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
 		virtual		~BRepOffsetAPI_MakeOffsetShape();
 
 };
+%extend BRepOffsetAPI_MakeOffsetShape {
+	~BRepOffsetAPI_MakeOffsetShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeOffsetShape\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_MakeFilling;
 class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
@@ -222,6 +227,11 @@ class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 		virtual		~BRepOffsetAPI_MakeFilling();
 
 };
+%extend BRepOffsetAPI_MakeFilling {
+	~BRepOffsetAPI_MakeFilling() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeFilling\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_DraftAngle;
 class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
@@ -260,6 +270,11 @@ class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
 		virtual		~BRepOffsetAPI_DraftAngle();
 
 };
+%extend BRepOffsetAPI_DraftAngle {
+	~BRepOffsetAPI_DraftAngle() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_DraftAngle\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_MakeEvolved;
 class BRepOffsetAPI_MakeEvolved : public BRepBuilderAPI_MakeShape {
@@ -283,6 +298,11 @@ class BRepOffsetAPI_MakeEvolved : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepOffsetAPI_MakeEvolved();
 
+};
+%extend BRepOffsetAPI_MakeEvolved {
+	~BRepOffsetAPI_MakeEvolved() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeEvolved\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape;
@@ -356,6 +376,11 @@ class BRepOffsetAPI_SequenceOfSequenceOfReal : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend BRepOffsetAPI_SequenceOfSequenceOfReal {
+	~BRepOffsetAPI_SequenceOfSequenceOfReal() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfReal\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_ThruSections;
 class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
@@ -381,6 +406,11 @@ class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepOffsetAPI_ThruSections();
 
+};
+%extend BRepOffsetAPI_ThruSections {
+	~BRepOffsetAPI_ThruSections() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_ThruSections\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal;
@@ -454,6 +484,11 @@ class BRepOffsetAPI_SequenceOfSequenceOfShape : public TCollection_BaseSequence 
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend BRepOffsetAPI_SequenceOfSequenceOfShape {
+	~BRepOffsetAPI_SequenceOfSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfShape\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_DataMapOfShapeSequenceOfShape;
 class BRepOffsetAPI_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap {
@@ -484,6 +519,11 @@ class BRepOffsetAPI_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap 
 		TopTools_SequenceOfShape & operator()(const TopoDS_Shape &K);
 
 };
+%extend BRepOffsetAPI_DataMapOfShapeSequenceOfShape {
+	~BRepOffsetAPI_DataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_DataMapOfShapeSequenceOfShape\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_MakeThickSolid;
 class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
@@ -499,6 +539,11 @@ class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
 		%feature("autodoc", "1");
 		virtual		~BRepOffsetAPI_MakeThickSolid();
 
+};
+%extend BRepOffsetAPI_MakeThickSolid {
+	~BRepOffsetAPI_MakeThickSolid() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeThickSolid\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape;
@@ -541,6 +586,11 @@ class BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCol
 		%feature("autodoc", "1");
 		const TopTools_SequenceOfShape & Value() const;
 
+};
+%extend BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape {
+	~BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_MakePipeShell;
@@ -592,6 +642,11 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 		virtual		~BRepOffsetAPI_MakePipeShell();
 
 };
+%extend BRepOffsetAPI_MakePipeShell {
+	~BRepOffsetAPI_MakePipeShell() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakePipeShell\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_MakeOffset;
 class BRepOffsetAPI_MakeOffset : public BRepBuilderAPI_MakeShape {
@@ -618,6 +673,11 @@ class BRepOffsetAPI_MakeOffset : public BRepBuilderAPI_MakeShape {
 		virtual		~BRepOffsetAPI_MakeOffset();
 
 };
+%extend BRepOffsetAPI_MakeOffset {
+	~BRepOffsetAPI_MakeOffset() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeOffset\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_MakeDraft;
 class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
@@ -641,6 +701,11 @@ class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		~BRepOffsetAPI_MakeDraft();
 
+};
+%extend BRepOffsetAPI_MakeDraft {
+	~BRepOffsetAPI_MakeDraft() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakeDraft\n");
+	}
 };
 
 %nodefaultctor BRepOffsetAPI_NormalProjection;
@@ -680,6 +745,11 @@ class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
 		virtual		~BRepOffsetAPI_NormalProjection();
 
 };
+%extend BRepOffsetAPI_NormalProjection {
+	~BRepOffsetAPI_NormalProjection() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_NormalProjection\n");
+	}
+};
 
 %nodefaultctor BRepOffsetAPI_MakePipe;
 class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
@@ -699,4 +769,9 @@ class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
 		%feature("autodoc", "1");
 		virtual		~BRepOffsetAPI_MakePipe();
 
+};
+%extend BRepOffsetAPI_MakePipe {
+	~BRepOffsetAPI_MakePipe() {
+	printf("Call custom destructor for instance of BRepOffsetAPI_MakePipe\n");
+	}
 };

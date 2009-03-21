@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Interface
@@ -1243,6 +1243,11 @@ class Interface_GraphContent : public Interface_EntityIterator {
 		virtual		~Interface_GraphContent();
 
 };
+%extend Interface_GraphContent {
+	~Interface_GraphContent() {
+	printf("Call custom destructor for instance of Interface_GraphContent\n");
+	}
+};
 
 %nodefaultctor Interface_ParamList;
 class Interface_ParamList : public MMgt_TShared {
@@ -1578,6 +1583,11 @@ class Interface_Array1OfFileParameter {
 		Interface_FileParameter & operator()(const Standard_Integer Index);
 
 };
+%extend Interface_Array1OfFileParameter {
+	~Interface_Array1OfFileParameter() {
+	printf("Call custom destructor for instance of Interface_Array1OfFileParameter\n");
+	}
+};
 
 %nodefaultctor Interface_IndexedMapNodeOfIndexedMapOfAsciiString;
 class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_MapNode {
@@ -1692,6 +1702,11 @@ class Interface_FloatWriter {
 		%feature("autodoc", "1");
 		Standard_Integer Convert(const Standard_Real val, const char * text, const Standard_Boolean zerosup, const Standard_Real Range1, const Standard_Real Range2, const char * mainform, const char * rangeform);
 
+};
+%extend Interface_FloatWriter {
+	~Interface_FloatWriter() {
+	printf("Call custom destructor for instance of Interface_FloatWriter\n");
+	}
 };
 
 %nodefaultctor Interface_GeneralLib;
@@ -2056,6 +2071,11 @@ class Interface_IntList {
 		void AdjustSize(const Standard_Integer margin=0);
 
 };
+%extend Interface_IntList {
+	~Interface_IntList() {
+	printf("Call custom destructor for instance of Interface_IntList\n");
+	}
+};
 
 %nodefaultctor Interface_SequenceNodeOfSequenceOfCheck;
 class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
@@ -2125,6 +2145,11 @@ class Interface_BitMap {
 		%feature("autodoc", "1");
 		void Init(const Standard_Boolean val, const Standard_Integer flag=0) const;
 
+};
+%extend Interface_BitMap {
+	~Interface_BitMap() {
+	printf("Call custom destructor for instance of Interface_BitMap\n");
+	}
 };
 
 %nodefaultctor Interface_HGraph;
@@ -2675,6 +2700,11 @@ class Interface_MapAsciiStringHasher {
 		Standard_Boolean IsEqual(const TCollection_AsciiString &K1, const TCollection_AsciiString &K2);
 
 };
+%extend Interface_MapAsciiStringHasher {
+	~Interface_MapAsciiStringHasher() {
+	printf("Call custom destructor for instance of Interface_MapAsciiStringHasher\n");
+	}
+};
 
 %nodefaultctor Interface_SequenceOfCheck;
 class Interface_SequenceOfCheck : public TCollection_BaseSequence {
@@ -2828,6 +2858,11 @@ class Interface_MSG {
 		void Print(Standard_OStream & S, const char * val, const Standard_Integer max, const Standard_Integer just=-0x000000001);
 
 };
+%extend Interface_MSG {
+	~Interface_MSG() {
+	printf("Call custom destructor for instance of Interface_MSG\n");
+	}
+};
 
 %nodefaultctor Interface_Category;
 class Interface_Category {
@@ -2861,6 +2896,11 @@ class Interface_Category {
 		%feature("autodoc", "1");
 		void Init();
 
+};
+%extend Interface_Category {
+	~Interface_Category() {
+	printf("Call custom destructor for instance of Interface_Category\n");
+	}
 };
 
 %nodefaultctor Interface_SignType;
@@ -2916,6 +2956,11 @@ class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TCollection_AsciiString &K) const;
 
 };
+%extend Interface_IndexedMapOfAsciiString {
+	~Interface_IndexedMapOfAsciiString() {
+	printf("Call custom destructor for instance of Interface_IndexedMapOfAsciiString\n");
+	}
+};
 
 %nodefaultctor Interface_DataMapOfTransientInteger;
 class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
@@ -2945,6 +2990,11 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Handle_Standard_Transient &K);
 
+};
+%extend Interface_DataMapOfTransientInteger {
+	~Interface_DataMapOfTransientInteger() {
+	printf("Call custom destructor for instance of Interface_DataMapOfTransientInteger\n");
+	}
 };
 
 %nodefaultctor Interface_CheckFailure;
@@ -3349,4 +3399,9 @@ class Interface_FileParameter {
 		%feature("autodoc", "1");
 		~Interface_FileParameter();
 
+};
+%extend Interface_FileParameter {
+	~Interface_FileParameter() {
+	printf("Call custom destructor for instance of Interface_FileParameter\n");
+	}
 };

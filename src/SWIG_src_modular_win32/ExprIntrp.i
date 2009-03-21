@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ExprIntrp
@@ -500,6 +500,11 @@ class ExprIntrp_StackOfNames {
 		TCollection_AsciiString & ChangeTop();
 
 };
+%extend ExprIntrp_StackOfNames {
+	~ExprIntrp_StackOfNames() {
+	printf("Call custom destructor for instance of ExprIntrp_StackOfNames\n");
+	}
+};
 
 %nodefaultctor ExprIntrp_SyntaxError;
 class ExprIntrp_SyntaxError : public Standard_Failure {
@@ -570,6 +575,11 @@ class ExprIntrp_StackIteratorOfStackOfNames {
 		const TCollection_AsciiString & Value() const;
 
 };
+%extend ExprIntrp_StackIteratorOfStackOfNames {
+	~ExprIntrp_StackIteratorOfStackOfNames() {
+	printf("Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfNames\n");
+	}
+};
 
 %nodefaultctor ExprIntrp;
 class ExprIntrp {
@@ -579,6 +589,11 @@ class ExprIntrp {
 		%feature("autodoc", "1");
 		ExprIntrp();
 
+};
+%extend ExprIntrp {
+	~ExprIntrp() {
+	printf("Call custom destructor for instance of ExprIntrp\n");
+	}
 };
 
 %nodefaultctor ExprIntrp_GenRel;

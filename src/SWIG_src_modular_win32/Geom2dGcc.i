@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Geom2dGcc
@@ -119,6 +119,11 @@ class Geom2dGcc_Circ2d2TanOn {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%extend Geom2dGcc_Circ2d2TanOn {
+	~Geom2dGcc_Circ2d2TanOn() {
+	printf("Call custom destructor for instance of Geom2dGcc_Circ2d2TanOn\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_MyL2dTanObl;
 class Geom2dGcc_MyL2dTanObl {
@@ -141,6 +146,11 @@ class Geom2dGcc_MyL2dTanObl {
 		Standard_Boolean IsParallel2() const;
 
 };
+%extend Geom2dGcc_MyL2dTanObl {
+	~Geom2dGcc_MyL2dTanObl() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyL2dTanObl\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_FuncTOblOfMyL2dTanObl;
 class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
@@ -156,6 +166,11 @@ class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~Geom2dGcc_FuncTOblOfMyL2dTanObl();
 
+};
+%extend Geom2dGcc_FuncTOblOfMyL2dTanObl {
+	~Geom2dGcc_FuncTOblOfMyL2dTanObl() {
+	printf("Call custom destructor for instance of Geom2dGcc_FuncTOblOfMyL2dTanObl\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn;
@@ -201,6 +216,11 @@ class Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn : public math_FunctionSetWithDerivati
 		virtual		~Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn();
 
 };
+%extend Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn {
+	~Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn() {
+	printf("Call custom destructor for instance of Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_QualifiedCurve;
 class Geom2dGcc_QualifiedCurve {
@@ -223,6 +243,11 @@ class Geom2dGcc_QualifiedCurve {
 		Standard_Boolean IsOutside() const;
 
 };
+%extend Geom2dGcc_QualifiedCurve {
+	~Geom2dGcc_QualifiedCurve() {
+	printf("Call custom destructor for instance of Geom2dGcc_QualifiedCurve\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_MyCirc2dTanCen;
 class Geom2dGcc_MyCirc2dTanCen {
@@ -243,6 +268,11 @@ class Geom2dGcc_MyCirc2dTanCen {
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%extend Geom2dGcc_MyCirc2dTanCen {
+	~Geom2dGcc_MyCirc2dTanCen() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyCirc2dTanCen\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_FuncTCirCuOfMyL2d2Tan;
 class Geom2dGcc_FuncTCirCuOfMyL2d2Tan : public math_FunctionWithDerivative {
@@ -258,6 +288,11 @@ class Geom2dGcc_FuncTCirCuOfMyL2d2Tan : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~Geom2dGcc_FuncTCirCuOfMyL2d2Tan();
 
+};
+%extend Geom2dGcc_FuncTCirCuOfMyL2d2Tan {
+	~Geom2dGcc_FuncTCirCuOfMyL2d2Tan() {
+	printf("Call custom destructor for instance of Geom2dGcc_FuncTCirCuOfMyL2d2Tan\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_MyQCurve;
@@ -280,6 +315,11 @@ class Geom2dGcc_MyQCurve {
 		%feature("autodoc", "1");
 		Standard_Boolean IsOutside() const;
 
+};
+%extend Geom2dGcc_MyQCurve {
+	~Geom2dGcc_MyQCurve() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyQCurve\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_Circ2d3Tan;
@@ -319,6 +359,11 @@ class Geom2dGcc_Circ2d3Tan {
 		Standard_Boolean IsTheSame3(const Standard_Integer Index) const;
 
 };
+%extend Geom2dGcc_Circ2d3Tan {
+	~Geom2dGcc_Circ2d3Tan() {
+	printf("Call custom destructor for instance of Geom2dGcc_Circ2d3Tan\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_FuncTCuPtOfMyL2d2Tan;
 class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
@@ -334,6 +379,11 @@ class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~Geom2dGcc_FuncTCuPtOfMyL2d2Tan();
 
+};
+%extend Geom2dGcc_FuncTCuPtOfMyL2d2Tan {
+	~Geom2dGcc_FuncTCuPtOfMyL2d2Tan() {
+	printf("Call custom destructor for instance of Geom2dGcc_FuncTCuPtOfMyL2d2Tan\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_MyCurveTool;
@@ -379,6 +429,11 @@ class Geom2dGcc_MyCurveTool {
 		void SetCurrentInterval(Adaptor3d_OffsetCurve & C, const Standard_Integer Index);
 
 };
+%extend Geom2dGcc_MyCurveTool {
+	~Geom2dGcc_MyCurveTool() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyCurveTool\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_Lin2d2Tan;
 class Geom2dGcc_Lin2d2Tan {
@@ -406,6 +461,11 @@ class Geom2dGcc_Lin2d2Tan {
 		%feature("autodoc", "1");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
+};
+%extend Geom2dGcc_Lin2d2Tan {
+	~Geom2dGcc_Lin2d2Tan() {
+	printf("Call custom destructor for instance of Geom2dGcc_Lin2d2Tan\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_MyCirc2d2TanRad;
@@ -438,6 +498,11 @@ class Geom2dGcc_MyCirc2d2TanRad {
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
+};
+%extend Geom2dGcc_MyCirc2d2TanRad {
+	~Geom2dGcc_MyCirc2d2TanRad() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanRad\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_MyCirc2d2TanOn;
@@ -477,6 +542,11 @@ class Geom2dGcc_MyCirc2d2TanOn {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%extend Geom2dGcc_MyCirc2d2TanOn {
+	~Geom2dGcc_MyCirc2d2TanOn() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanOn\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_Circ2dTanCen;
 class Geom2dGcc_Circ2dTanCen {
@@ -498,6 +568,11 @@ class Geom2dGcc_Circ2dTanCen {
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
+};
+%extend Geom2dGcc_Circ2dTanCen {
+	~Geom2dGcc_Circ2dTanCen() {
+	printf("Call custom destructor for instance of Geom2dGcc_Circ2dTanCen\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_FuncTCuCuOfMyL2d2Tan;
@@ -522,6 +597,11 @@ class Geom2dGcc_FuncTCuCuOfMyL2d2Tan : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		~Geom2dGcc_FuncTCuCuOfMyL2d2Tan();
 
+};
+%extend Geom2dGcc_FuncTCuCuOfMyL2d2Tan {
+	~Geom2dGcc_FuncTCuCuOfMyL2d2Tan() {
+	printf("Call custom destructor for instance of Geom2dGcc_FuncTCuCuOfMyL2d2Tan\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_MyC2d3Tan;
@@ -568,6 +648,11 @@ class Geom2dGcc_MyC2d3Tan {
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame3() const;
 
+};
+%extend Geom2dGcc_MyC2d3Tan {
+	~Geom2dGcc_MyC2d3Tan() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyC2d3Tan\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_MyC2d2TanOn;
@@ -617,6 +702,11 @@ class Geom2dGcc_MyC2d2TanOn {
 		Standard_Boolean IsTheSame2() const;
 
 };
+%extend Geom2dGcc_MyC2d2TanOn {
+	~Geom2dGcc_MyC2d2TanOn() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyC2d2TanOn\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_MyL2d2Tan;
 class Geom2dGcc_MyL2d2Tan {
@@ -640,6 +730,11 @@ class Geom2dGcc_MyL2d2Tan {
 		%feature("autodoc", "1");
 		void Tangency2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
+};
+%extend Geom2dGcc_MyL2d2Tan {
+	~Geom2dGcc_MyL2d2Tan() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyL2d2Tan\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_MyCirc2dTanOnRad;
@@ -675,6 +770,11 @@ class Geom2dGcc_MyCirc2dTanOnRad {
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
+%extend Geom2dGcc_MyCirc2dTanOnRad {
+	~Geom2dGcc_MyCirc2dTanOnRad() {
+	printf("Call custom destructor for instance of Geom2dGcc_MyCirc2dTanOnRad\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_Circ2d2TanRad;
 class Geom2dGcc_Circ2d2TanRad {
@@ -709,6 +809,11 @@ class Geom2dGcc_Circ2d2TanRad {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%extend Geom2dGcc_Circ2d2TanRad {
+	~Geom2dGcc_Circ2d2TanRad() {
+	printf("Call custom destructor for instance of Geom2dGcc_Circ2d2TanRad\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc_Lin2dTanObl;
 class Geom2dGcc_Lin2dTanObl {
@@ -732,6 +837,11 @@ class Geom2dGcc_Lin2dTanObl {
 		%feature("autodoc", "1");
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
+};
+%extend Geom2dGcc_Lin2dTanObl {
+	~Geom2dGcc_Lin2dTanObl() {
+	printf("Call custom destructor for instance of Geom2dGcc_Lin2dTanObl\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_CurveTool;
@@ -758,6 +868,11 @@ class Geom2dGcc_CurveTool {
 		%feature("autodoc", "1");
 		void D3(const Geom2dAdaptor_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N, gp_Vec2d & dN);
 
+};
+%extend Geom2dGcc_CurveTool {
+	~Geom2dGcc_CurveTool() {
+	printf("Call custom destructor for instance of Geom2dGcc_CurveTool\n");
+	}
 };
 
 %nodefaultctor Geom2dGcc_Circ2dTanOnRad;
@@ -789,6 +904,11 @@ class Geom2dGcc_Circ2dTanOnRad {
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
+%extend Geom2dGcc_Circ2dTanOnRad {
+	~Geom2dGcc_Circ2dTanOnRad() {
+	printf("Call custom destructor for instance of Geom2dGcc_Circ2dTanOnRad\n");
+	}
+};
 
 %nodefaultctor Geom2dGcc;
 class Geom2dGcc {
@@ -806,4 +926,9 @@ class Geom2dGcc {
 		%feature("autodoc", "1");
 		Geom2dGcc_QualifiedCurve Outside(const Geom2dAdaptor_Curve &Obj);
 
+};
+%extend Geom2dGcc {
+	~Geom2dGcc() {
+	printf("Call custom destructor for instance of Geom2dGcc\n");
+	}
 };

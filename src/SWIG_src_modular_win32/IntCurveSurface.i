@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module IntCurveSurface
@@ -190,6 +190,11 @@ class IntCurveSurface_Intersection {
 		void Dump() const;
 
 };
+%extend IntCurveSurface_Intersection {
+	~IntCurveSurface_Intersection() {
+	printf("Call custom destructor for instance of IntCurveSurface_Intersection\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_SequenceOfPnt;
 class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
@@ -240,6 +245,11 @@ class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntCurveSurface_SequenceOfPnt {
+	~IntCurveSurface_SequenceOfPnt() {
+	printf("Call custom destructor for instance of IntCurveSurface_SequenceOfPnt\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_IntersectionPoint;
 class IntCurveSurface_IntersectionPoint {
@@ -268,6 +278,11 @@ class IntCurveSurface_IntersectionPoint {
 		void Dump() const;
 
 };
+%extend IntCurveSurface_IntersectionPoint {
+	~IntCurveSurface_IntersectionPoint() {
+	printf("Call custom destructor for instance of IntCurveSurface_IntersectionPoint\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_HInter;
 class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
@@ -287,6 +302,11 @@ class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 		%feature("autodoc", "1");
 		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
 
+};
+%extend IntCurveSurface_HInter {
+	~IntCurveSurface_HInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_HInter\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_TheHCurveTool;
@@ -370,6 +390,11 @@ class IntCurveSurface_TheQuadCurvExactHInter {
 		%feature("autodoc", "1");
 		void Intervals(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
+};
+%extend IntCurveSurface_TheQuadCurvExactHInter {
+	~IntCurveSurface_TheQuadCurvExactHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_TheQuadCurvExactHInter\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_TheHSurfaceTool;
@@ -492,6 +517,11 @@ class IntCurveSurface_TheExactHInter {
 		IntCurveSurface_TheCSFunctionOfHInter & Function();
 
 };
+%extend IntCurveSurface_TheExactHInter {
+	~IntCurveSurface_TheExactHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_TheExactHInter\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
 class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_FunctionWithDerivative {
@@ -507,6 +537,11 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 		%feature("autodoc", "1");
 		virtual		~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter();
 
+};
+%extend IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter {
+	~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_ThePolygonToolOfHInter;
@@ -531,6 +566,11 @@ class IntCurveSurface_ThePolygonToolOfHInter {
 		%feature("autodoc", "1");
 		void Dump(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
 
+};
+%extend IntCurveSurface_ThePolygonToolOfHInter {
+	~IntCurveSurface_ThePolygonToolOfHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_ThePolygonToolOfHInter\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_IntersectionSegment;
@@ -557,6 +597,11 @@ class IntCurveSurface_IntersectionSegment {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend IntCurveSurface_IntersectionSegment {
+	~IntCurveSurface_IntersectionSegment() {
+	printf("Call custom destructor for instance of IntCurveSurface_IntersectionSegment\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_ThePolygonOfHInter;
@@ -595,6 +640,11 @@ class IntCurveSurface_ThePolygonOfHInter {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend IntCurveSurface_ThePolygonOfHInter {
+	~IntCurveSurface_ThePolygonOfHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_ThePolygonOfHInter\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfSeg;
@@ -668,6 +718,11 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntCurveSurface_SequenceOfSeg {
+	~IntCurveSurface_SequenceOfSeg() {
+	printf("Call custom destructor for instance of IntCurveSurface_SequenceOfSeg\n");
+	}
+};
 
 %nodefaultctor IntCurveSurface_TheCSFunctionOfHInter;
 class IntCurveSurface_TheCSFunctionOfHInter : public math_FunctionSetWithDerivatives {
@@ -736,6 +791,11 @@ class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 		%feature("autodoc", "1");
 		void Interference(const IntCurveSurface_ThePolygonOfHInter &thePolyg, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 
+};
+%extend IntCurveSurface_TheInterferenceOfHInter {
+	~IntCurveSurface_TheInterferenceOfHInter() {
+	printf("Call custom destructor for instance of IntCurveSurface_TheInterferenceOfHInter\n");
+	}
 };
 
 %nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfPnt;

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module NLPlate
@@ -342,6 +342,11 @@ class NLPlate_StackIteratorOfStackOfPlate {
 		%feature("autodoc", "1");
 		const Plate_Plate & Value() const;
 
+};
+%extend NLPlate_StackIteratorOfStackOfPlate {
+	~NLPlate_StackIteratorOfStackOfPlate() {
+	printf("Call custom destructor for instance of NLPlate_StackIteratorOfStackOfPlate\n");
+	}
 };
 
 %nodefaultctor NLPlate_SequenceOfHGPPConstraint;
@@ -670,6 +675,11 @@ class NLPlate_NLPlate {
 		Standard_Integer MaxActiveConstraintOrder() const;
 
 };
+%extend NLPlate_NLPlate {
+	~NLPlate_NLPlate() {
+	printf("Call custom destructor for instance of NLPlate_NLPlate\n");
+	}
+};
 
 %nodefaultctor NLPlate_HPG0G3Constraint;
 class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
@@ -719,4 +729,9 @@ class NLPlate_StackOfPlate {
 		%feature("autodoc", "1");
 		Plate_Plate & ChangeTop();
 
+};
+%extend NLPlate_StackOfPlate {
+	~NLPlate_StackOfPlate() {
+	printf("Call custom destructor for instance of NLPlate_StackOfPlate\n");
+	}
 };

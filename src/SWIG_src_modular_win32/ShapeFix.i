@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ShapeFix
@@ -567,6 +567,11 @@ class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMa
 		const Bnd_Box2d & Value() const;
 
 };
+%extend ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d {
+	~ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d() {
+	printf("Call custom destructor for instance of ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d\n");
+	}
+};
 
 %nodefaultctor ShapeFix_FreeBounds;
 class ShapeFix_FreeBounds {
@@ -586,6 +591,11 @@ class ShapeFix_FreeBounds {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & GetShape() const;
 
+};
+%extend ShapeFix_FreeBounds {
+	~ShapeFix_FreeBounds() {
+	printf("Call custom destructor for instance of ShapeFix_FreeBounds\n");
+	}
 };
 
 %nodefaultctor ShapeFix_Face;
@@ -975,6 +985,11 @@ class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend ShapeFix_SequenceOfWireSegment {
+	~ShapeFix_SequenceOfWireSegment() {
+	printf("Call custom destructor for instance of ShapeFix_SequenceOfWireSegment\n");
+	}
+};
 
 %nodefaultctor ShapeFix_Edge;
 class ShapeFix_Edge : public MMgt_TShared {
@@ -1054,6 +1069,11 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Bnd_Box2d & operator()(const TopoDS_Shape &K);
 
+};
+%extend ShapeFix_DataMapOfShapeBox2d {
+	~ShapeFix_DataMapOfShapeBox2d() {
+	printf("Call custom destructor for instance of ShapeFix_DataMapOfShapeBox2d\n");
+	}
 };
 
 %nodefaultctor ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
@@ -1143,6 +1163,11 @@ class ShapeFix {
 		Standard_Boolean FixVertexPosition(TopoDS_Shape & theshape, const Standard_Real theTolerance, const Handle_ShapeBuild_ReShape &thecontext);
 
 };
+%extend ShapeFix {
+	~ShapeFix() {
+	printf("Call custom destructor for instance of ShapeFix\n");
+	}
+};
 
 %nodefaultctor ShapeFix_IntersectionTool;
 class ShapeFix_IntersectionTool {
@@ -1183,6 +1208,11 @@ class ShapeFix_EdgeConnect {
 		%feature("autodoc", "1");
 		void Clear();
 
+};
+%extend ShapeFix_EdgeConnect {
+	~ShapeFix_EdgeConnect() {
+	printf("Call custom destructor for instance of ShapeFix_EdgeConnect\n");
+	}
 };
 
 %nodefaultctor ShapeFix_FixSmallFace;
@@ -1252,6 +1282,11 @@ class ShapeFix_ShapeTolerance {
 		void SetTolerance(const TopoDS_Shape &shape, const Standard_Real preci, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
 
 };
+%extend ShapeFix_ShapeTolerance {
+	~ShapeFix_ShapeTolerance() {
+	printf("Call custom destructor for instance of ShapeFix_ShapeTolerance\n");
+	}
+};
 
 %nodefaultctor ShapeFix_SplitTool;
 class ShapeFix_SplitTool {
@@ -1269,6 +1304,11 @@ class ShapeFix_SplitTool {
 		%feature("autodoc", "1");
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer & aNum, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
 
+};
+%extend ShapeFix_SplitTool {
+	~ShapeFix_SplitTool() {
+	printf("Call custom destructor for instance of ShapeFix_SplitTool\n");
+	}
 };
 
 %nodefaultctor ShapeFix_WireVertex;
@@ -1426,6 +1466,11 @@ class ShapeFix_FaceConnect {
 		%feature("autodoc", "1");
 		void Clear();
 
+};
+%extend ShapeFix_FaceConnect {
+	~ShapeFix_FaceConnect() {
+	printf("Call custom destructor for instance of ShapeFix_FaceConnect\n");
+	}
 };
 
 %nodefaultctor ShapeFix_SplitCommonVertex;

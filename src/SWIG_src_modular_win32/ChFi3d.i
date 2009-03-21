@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ChFi3d
@@ -107,6 +107,11 @@ class ChFi3d {
 		Standard_Boolean SameSide(const TopAbs_Orientation Or, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const TopAbs_Orientation OrFace1, const TopAbs_Orientation OrFace2);
 
 };
+%extend ChFi3d {
+	~ChFi3d() {
+	printf("Call custom destructor for instance of ChFi3d\n");
+	}
+};
 
 %nodefaultctor ChFi3d_Builder;
 class ChFi3d_Builder {
@@ -197,6 +202,11 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~ChFi3d_SearchSing();
 
+};
+%extend ChFi3d_SearchSing {
+	~ChFi3d_SearchSing() {
+	printf("Call custom destructor for instance of ChFi3d_SearchSing\n");
+	}
 };
 
 %nodefaultctor ChFi3d_ChBuilder;

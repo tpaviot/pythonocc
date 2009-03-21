@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepAlgoAPI
@@ -127,6 +127,11 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		const TopTools_ListOfShape & SectionEdges();
 
 };
+%extend BRepAlgoAPI_BooleanOperation {
+	~BRepAlgoAPI_BooleanOperation() {
+	printf("Call custom destructor for instance of BRepAlgoAPI_BooleanOperation\n");
+	}
+};
 
 %nodefaultctor BRepAlgoAPI_Fuse;
 class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
@@ -138,6 +143,11 @@ class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
 		%feature("autodoc", "1");
 		virtual		~BRepAlgoAPI_Fuse();
 
+};
+%extend BRepAlgoAPI_Fuse {
+	~BRepAlgoAPI_Fuse() {
+	printf("Call custom destructor for instance of BRepAlgoAPI_Fuse\n");
+	}
 };
 
 %nodefaultctor BRepAlgoAPI_Section;
@@ -202,6 +212,11 @@ class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
 		virtual		~BRepAlgoAPI_Cut();
 
 };
+%extend BRepAlgoAPI_Cut {
+	~BRepAlgoAPI_Cut() {
+	printf("Call custom destructor for instance of BRepAlgoAPI_Cut\n");
+	}
+};
 
 %nodefaultctor BRepAlgoAPI_Common;
 class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
@@ -213,4 +228,9 @@ class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
 		%feature("autodoc", "1");
 		virtual		~BRepAlgoAPI_Common();
 
+};
+%extend BRepAlgoAPI_Common {
+	~BRepAlgoAPI_Common() {
+	printf("Call custom destructor for instance of BRepAlgoAPI_Common\n");
+	}
 };

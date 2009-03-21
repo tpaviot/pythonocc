@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TColQuantity
@@ -207,6 +207,11 @@ class TColQuantity_Array1OfLength {
 		Quantity_Length & operator()(const Standard_Integer Index);
 
 };
+%extend TColQuantity_Array1OfLength {
+	~TColQuantity_Array1OfLength() {
+	printf("Call custom destructor for instance of TColQuantity_Array1OfLength\n");
+	}
+};
 
 %nodefaultctor TColQuantity_HArray2OfLength;
 class TColQuantity_HArray2OfLength : public MMgt_TShared {
@@ -292,4 +297,9 @@ class TColQuantity_Array2OfLength {
 		%feature("autodoc", "1");
 		Quantity_Length & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
+};
+%extend TColQuantity_Array2OfLength {
+	~TColQuantity_Array2OfLength() {
+	printf("Call custom destructor for instance of TColQuantity_Array2OfLength\n");
+	}
 };

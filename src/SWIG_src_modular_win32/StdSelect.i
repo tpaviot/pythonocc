@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module StdSelect
@@ -457,6 +457,11 @@ class StdSelect {
 		void SetDrawerForBRepOwner(const Handle_SelectMgr_Selection &aSelection, const Handle_Prs3d_Drawer &aDrawer);
 
 };
+%extend StdSelect {
+	~StdSelect() {
+	printf("Call custom destructor for instance of StdSelect\n");
+	}
+};
 
 %nodefaultctor StdSelect_BRepSelectionTool;
 class StdSelect_BRepSelectionTool {
@@ -476,6 +481,11 @@ class StdSelect_BRepSelectionTool {
 		%feature("autodoc", "1");
 		Standard_Boolean GetSensitiveForFace(const TopoDS_Face &aFace, const Handle_StdSelect_BRepOwner &anOwner, Select3D_ListOfSensitive & OutList, const Standard_Boolean AutoTriangulation=1, const Standard_Integer NbPOnEdge=9, const Standard_Real MaxiParam=500, const Standard_Boolean InteriorFlag=1);
 
+};
+%extend StdSelect_BRepSelectionTool {
+	~StdSelect_BRepSelectionTool() {
+	printf("Call custom destructor for instance of StdSelect_BRepSelectionTool\n");
+	}
 };
 
 %nodefaultctor StdSelect_FaceFilter;

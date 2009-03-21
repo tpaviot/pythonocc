@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Quantity
@@ -894,6 +894,11 @@ class Quantity_Array2OfColor {
 		Quantity_Color & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%extend Quantity_Array2OfColor {
+	~Quantity_Array2OfColor() {
+	printf("Call custom destructor for instance of Quantity_Array2OfColor\n");
+	}
+};
 
 %nodefaultctor Quantity_Array1OfCoefficient;
 class Quantity_Array1OfCoefficient {
@@ -929,6 +934,11 @@ class Quantity_Array1OfCoefficient {
 		%feature("autodoc", "1");
 		Quantity_Coefficient & operator()(const Standard_Integer Index);
 
+};
+%extend Quantity_Array1OfCoefficient {
+	~Quantity_Array1OfCoefficient() {
+	printf("Call custom destructor for instance of Quantity_Array1OfCoefficient\n");
+	}
 };
 
 %nodefaultctor Quantity_Period;
@@ -981,6 +991,11 @@ class Quantity_Period {
 		%feature("autodoc", "1");
 		void _CSFDB_SetQuantity_PeriodmyUSec(const Standard_Integer p);
 
+};
+%extend Quantity_Period {
+	~Quantity_Period() {
+	printf("Call custom destructor for instance of Quantity_Period\n");
+	}
 };
 
 %nodefaultctor Quantity_ColorDefinitionError;
@@ -1074,6 +1089,11 @@ class Quantity_Array1OfColor {
 		Quantity_Color & operator()(const Standard_Integer Index);
 
 };
+%extend Quantity_Array1OfColor {
+	~Quantity_Array1OfColor() {
+	printf("Call custom destructor for instance of Quantity_Array1OfColor\n");
+	}
+};
 
 %nodefaultctor Quantity_Color;
 class Quantity_Color {
@@ -1152,6 +1172,11 @@ class Quantity_Color {
 		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
 
 };
+%extend Quantity_Color {
+	~Quantity_Color() {
+	printf("Call custom destructor for instance of Quantity_Color\n");
+	}
+};
 
 %nodefaultctor Quantity_Date;
 class Quantity_Date {
@@ -1215,6 +1240,11 @@ class Quantity_Date {
 		%feature("autodoc", "1");
 		void _CSFDB_SetQuantity_DatemyUSec(const Standard_Integer p);
 
+};
+%extend Quantity_Date {
+	~Quantity_Date() {
+	printf("Call custom destructor for instance of Quantity_Date\n");
+	}
 };
 
 %nodefaultctor Quantity_DateDefinitionError;
@@ -1301,4 +1331,9 @@ class Quantity_Convert {
 		%feature("autodoc", "1");
 		Standard_Boolean IsPhysicalQuantity(const TCollection_AsciiString &aTypeName, TCollection_AsciiString & anEnum);
 
+};
+%extend Quantity_Convert {
+	~Quantity_Convert() {
+	printf("Call custom destructor for instance of Quantity_Convert\n");
+	}
 };

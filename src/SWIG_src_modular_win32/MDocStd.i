@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module MDocStd
@@ -398,6 +398,11 @@ class MDocStd_ListIteratorOfDocEntryList {
 		TCollection_AsciiString & Value() const;
 
 };
+%extend MDocStd_ListIteratorOfDocEntryList {
+	~MDocStd_ListIteratorOfDocEntryList() {
+	printf("Call custom destructor for instance of MDocStd_ListIteratorOfDocEntryList\n");
+	}
+};
 
 %nodefaultctor MDocStd_DocEntryList;
 class MDocStd_DocEntryList {
@@ -443,6 +448,11 @@ class MDocStd_DocEntryList {
 		%feature("autodoc", "1");
 		void InsertAfter(MDocStd_DocEntryList & Other, MDocStd_ListIteratorOfDocEntryList & It);
 
+};
+%extend MDocStd_DocEntryList {
+	~MDocStd_DocEntryList() {
+	printf("Call custom destructor for instance of MDocStd_DocEntryList\n");
+	}
 };
 
 %nodefaultctor MDocStd_XLinkStorageDriver;
@@ -493,6 +503,11 @@ class MDocStd_PersistentMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_Standard_Persistent &aKey);
 
+};
+%extend MDocStd_PersistentMap {
+	~MDocStd_PersistentMap() {
+	printf("Call custom destructor for instance of MDocStd_PersistentMap\n");
+	}
 };
 
 %nodefaultctor MDocStd;

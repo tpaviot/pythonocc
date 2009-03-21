@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopExp
@@ -150,6 +150,11 @@ class TopExp_StackIteratorOfStackOfIterator {
 		const TopoDS_Iterator & Value() const;
 
 };
+%extend TopExp_StackIteratorOfStackOfIterator {
+	~TopExp_StackIteratorOfStackOfIterator() {
+	printf("Call custom destructor for instance of TopExp_StackIteratorOfStackOfIterator\n");
+	}
+};
 
 %nodefaultctor TopExp_StackOfIterator;
 class TopExp_StackOfIterator {
@@ -175,6 +180,11 @@ class TopExp_StackOfIterator {
 		%feature("autodoc", "1");
 		TopoDS_Iterator & ChangeTop();
 
+};
+%extend TopExp_StackOfIterator {
+	~TopExp_StackOfIterator() {
+	printf("Call custom destructor for instance of TopExp_StackOfIterator\n");
+	}
 };
 
 %nodefaultctor TopExp_Explorer;
@@ -204,6 +214,11 @@ class TopExp_Explorer {
 		~TopExp_Explorer();
 
 };
+%extend TopExp_Explorer {
+	~TopExp_Explorer() {
+	printf("Call custom destructor for instance of TopExp_Explorer\n");
+	}
+};
 
 %nodefaultctor TopExp;
 class TopExp {
@@ -229,4 +244,9 @@ class TopExp {
 		%feature("autodoc", "1");
 		Standard_Boolean CommonVertex(const TopoDS_Edge &E1, const TopoDS_Edge &E2, TopoDS_Vertex & V);
 
+};
+%extend TopExp {
+	~TopExp() {
+	printf("Call custom destructor for instance of TopExp\n");
+	}
 };

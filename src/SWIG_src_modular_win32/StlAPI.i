@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module StlAPI
@@ -97,6 +97,11 @@ class StlAPI {
 		void Read(TopoDS_Shape & aShape, const char * aFile);
 
 };
+%extend StlAPI {
+	~StlAPI() {
+	printf("Call custom destructor for instance of StlAPI\n");
+	}
+};
 
 %nodefaultctor StlAPI_Writer;
 class StlAPI_Writer {
@@ -117,6 +122,11 @@ class StlAPI_Writer {
 		void Write(const TopoDS_Shape &aShape, const char * aFileName);
 
 };
+%extend StlAPI_Writer {
+	~StlAPI_Writer() {
+	printf("Call custom destructor for instance of StlAPI_Writer\n");
+	}
+};
 
 %nodefaultctor StlAPI_Reader;
 class StlAPI_Reader {
@@ -128,4 +138,9 @@ class StlAPI_Reader {
 		%feature("autodoc", "1");
 		void Read(TopoDS_Shape & aShape, const char * aFileName);
 
+};
+%extend StlAPI_Reader {
+	~StlAPI_Reader() {
+	printf("Call custom destructor for instance of StlAPI_Reader\n");
+	}
 };

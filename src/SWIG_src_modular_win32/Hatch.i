@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Hatch
@@ -187,6 +187,11 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Hatch_SequenceOfParameter {
+	~Hatch_SequenceOfParameter() {
+	printf("Call custom destructor for instance of Hatch_SequenceOfParameter\n");
+	}
+};
 
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfLine;
 class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
@@ -261,6 +266,11 @@ class Hatch_Hatcher {
 		void EndIndex(const Standard_Integer I, const Standard_Integer J, Standard_Integer & Index, Standard_Real &OutValue) const;
 
 };
+%extend Hatch_Hatcher {
+	~Hatch_Hatcher() {
+	printf("Call custom destructor for instance of Hatch_Hatcher\n");
+	}
+};
 
 %nodefaultctor Hatch_Line;
 class Hatch_Line {
@@ -274,6 +284,11 @@ class Hatch_Line {
 		%feature("autodoc", "1");
 		void AddIntersection(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index, const Standard_Real Par2, const Standard_Real theToler);
 
+};
+%extend Hatch_Line {
+	~Hatch_Line() {
+	printf("Call custom destructor for instance of Hatch_Line\n");
+	}
 };
 
 %nodefaultctor Hatch_SequenceOfLine;
@@ -325,6 +340,11 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Hatch_SequenceOfLine {
+	~Hatch_SequenceOfLine() {
+	printf("Call custom destructor for instance of Hatch_SequenceOfLine\n");
+	}
+};
 
 %nodefaultctor Hatch_Parameter;
 class Hatch_Parameter {
@@ -336,6 +356,11 @@ class Hatch_Parameter {
 		%feature("autodoc", "1");
 		Hatch_Parameter(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index=0, const Standard_Real Par2=0);
 
+};
+%extend Hatch_Parameter {
+	~Hatch_Parameter() {
+	printf("Call custom destructor for instance of Hatch_Parameter\n");
+	}
 };
 
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfParameter;

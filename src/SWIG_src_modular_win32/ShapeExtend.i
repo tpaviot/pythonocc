@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ShapeExtend
@@ -427,6 +427,11 @@ class ShapeExtend {
 		Standard_Boolean DecodeStatus(const Standard_Integer flag, const ShapeExtend_Status status);
 
 };
+%extend ShapeExtend {
+	~ShapeExtend() {
+	printf("Call custom destructor for instance of ShapeExtend\n");
+	}
+};
 
 %nodefaultctor ShapeExtend_DataMapOfShapeListOfMsg;
 class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
@@ -456,6 +461,11 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Message_ListOfMsg & operator()(const TopoDS_Shape &K);
 
+};
+%extend ShapeExtend_DataMapOfShapeListOfMsg {
+	~ShapeExtend_DataMapOfShapeListOfMsg() {
+	printf("Call custom destructor for instance of ShapeExtend_DataMapOfShapeListOfMsg\n");
+	}
 };
 
 %nodefaultctor ShapeExtend_BasicMsgRegistrator;
@@ -698,6 +708,11 @@ class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_
 		const Message_ListOfMsg & Value() const;
 
 };
+%extend ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg {
+	~ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg() {
+	printf("Call custom destructor for instance of ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg\n");
+	}
+};
 
 %nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
 class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapNode {
@@ -778,4 +793,9 @@ class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Message_ListOfMsg & operator()(const Handle_Standard_Transient &K);
 
+};
+%extend ShapeExtend_DataMapOfTransientListOfMsg {
+	~ShapeExtend_DataMapOfTransientListOfMsg() {
+	printf("Call custom destructor for instance of ShapeExtend_DataMapOfTransientListOfMsg\n");
+	}
 };

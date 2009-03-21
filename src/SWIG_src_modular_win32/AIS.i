@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module AIS
@@ -3505,6 +3505,11 @@ class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollectio
 		const AIS_ListOfInteractive & Value() const;
 
 };
+%extend AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive {
+	~AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive() {
+	printf("Call custom destructor for instance of AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive\n");
+	}
+};
 
 %nodefaultctor AIS_MidPointRelation;
 class AIS_MidPointRelation : public AIS_Relation {
@@ -4110,6 +4115,11 @@ class AIS_GraphicTool {
 		Graphic3d_MaterialAspect GetMaterial(const Handle_Prs3d_Drawer &aDrawer);
 
 };
+%extend AIS_GraphicTool {
+	~AIS_GraphicTool() {
+	printf("Call custom destructor for instance of AIS_GraphicTool\n");
+	}
+};
 
 %nodefaultctor AIS_TypeFilter;
 class AIS_TypeFilter : public SelectMgr_Filter {
@@ -4161,6 +4171,11 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		AIS_ListOfInteractive & operator()(const Standard_Integer &K);
 
+};
+%extend AIS_DataMapofIntegerListOfinteractive {
+	~AIS_DataMapofIntegerListOfinteractive() {
+	printf("Call custom destructor for instance of AIS_DataMapofIntegerListOfinteractive\n");
+	}
 };
 
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfIOStatus;
@@ -4397,6 +4412,11 @@ class AIS {
 		%feature("autodoc", "1");
 		void ComputeProjVertexPresentation(const Handle_Prs3d_Presentation &aPres, const Handle_AIS_Drawer &aDrawer, const TopoDS_Vertex &aVertex, const gp_Pnt &ProjPoint, const Quantity_NameOfColor aColor=Quantity_NOC_PURPLE, const Standard_Real aWidth=2, const Aspect_TypeOfMarker aProjTOM=Aspect_TOM_PLUS, const Aspect_TypeOfLine aCallTOL=Aspect_TOL_DOT);
 
+};
+%extend AIS {
+	~AIS() {
+	printf("Call custom destructor for instance of AIS\n");
+	}
 };
 
 %nodefaultctor AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
@@ -5269,4 +5289,9 @@ class AIS_MapOfInteractive : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Handle_AIS_InteractiveObject &aKey);
 
+};
+%extend AIS_MapOfInteractive {
+	~AIS_MapOfInteractive() {
+	printf("Call custom destructor for instance of AIS_MapOfInteractive\n");
+	}
 };

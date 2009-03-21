@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module FairCurve
@@ -102,6 +102,11 @@ class FairCurve_DistributionOfEnergy : public math_FunctionSet {
 		void SetDerivativeOrder(const Standard_Integer DerivativeOrder);
 
 };
+%extend FairCurve_DistributionOfEnergy {
+	~FairCurve_DistributionOfEnergy() {
+	printf("Call custom destructor for instance of FairCurve_DistributionOfEnergy\n");
+	}
+};
 
 %nodefaultctor FairCurve_DistributionOfSagging;
 class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
@@ -113,6 +118,11 @@ class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
 		%feature("autodoc", "1");
 		virtual		~FairCurve_DistributionOfSagging();
 
+};
+%extend FairCurve_DistributionOfSagging {
+	~FairCurve_DistributionOfSagging() {
+	printf("Call custom destructor for instance of FairCurve_DistributionOfSagging\n");
+	}
 };
 
 %nodefaultctor FairCurve_Newton;
@@ -127,6 +137,11 @@ class FairCurve_Newton : public math_NewtonMinimum {
 		%feature("autodoc", "1");
 		virtual		~FairCurve_Newton();
 
+};
+%extend FairCurve_Newton {
+	~FairCurve_Newton() {
+	printf("Call custom destructor for instance of FairCurve_Newton\n");
+	}
 };
 
 %nodefaultctor FairCurve_Batten;
@@ -209,6 +224,11 @@ class FairCurve_BattenLaw : public math_Function {
 		virtual		Standard_Boolean Value(const Standard_Real T, Standard_Real &OutValue);
 
 };
+%extend FairCurve_BattenLaw {
+	~FairCurve_BattenLaw() {
+	printf("Call custom destructor for instance of FairCurve_BattenLaw\n");
+	}
+};
 
 %nodefaultctor FairCurve_DistributionOfJerk;
 class FairCurve_DistributionOfJerk : public FairCurve_DistributionOfEnergy {
@@ -220,6 +240,11 @@ class FairCurve_DistributionOfJerk : public FairCurve_DistributionOfEnergy {
 		%feature("autodoc", "1");
 		virtual		~FairCurve_DistributionOfJerk();
 
+};
+%extend FairCurve_DistributionOfJerk {
+	~FairCurve_DistributionOfJerk() {
+	printf("Call custom destructor for instance of FairCurve_DistributionOfJerk\n");
+	}
 };
 
 %nodefaultctor FairCurve_MinimalVariation;
@@ -246,6 +271,11 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 		%feature("autodoc", "1");
 		virtual		~FairCurve_MinimalVariation();
 
+};
+%extend FairCurve_MinimalVariation {
+	~FairCurve_MinimalVariation() {
+	printf("Call custom destructor for instance of FairCurve_MinimalVariation\n");
+	}
 };
 
 %nodefaultctor FairCurve_Energy;
@@ -286,6 +316,11 @@ class FairCurve_EnergyOfMVC : public FairCurve_Energy {
 		virtual		~FairCurve_EnergyOfMVC();
 
 };
+%extend FairCurve_EnergyOfMVC {
+	~FairCurve_EnergyOfMVC() {
+	printf("Call custom destructor for instance of FairCurve_EnergyOfMVC\n");
+	}
+};
 
 %nodefaultctor FairCurve_DistributionOfTension;
 class FairCurve_DistributionOfTension : public FairCurve_DistributionOfEnergy {
@@ -299,6 +334,11 @@ class FairCurve_DistributionOfTension : public FairCurve_DistributionOfEnergy {
 		%feature("autodoc", "1");
 		virtual		~FairCurve_DistributionOfTension();
 
+};
+%extend FairCurve_DistributionOfTension {
+	~FairCurve_DistributionOfTension() {
+	printf("Call custom destructor for instance of FairCurve_DistributionOfTension\n");
+	}
 };
 
 %nodefaultctor FairCurve_EnergyOfBatten;
@@ -315,4 +355,9 @@ class FairCurve_EnergyOfBatten : public FairCurve_Energy {
 		%feature("autodoc", "1");
 		virtual		~FairCurve_EnergyOfBatten();
 
+};
+%extend FairCurve_EnergyOfBatten {
+	~FairCurve_EnergyOfBatten() {
+	printf("Call custom destructor for instance of FairCurve_EnergyOfBatten\n");
+	}
 };

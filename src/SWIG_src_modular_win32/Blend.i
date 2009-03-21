@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Blend
@@ -149,6 +149,11 @@ class Blend_SurfCurvFuncInv : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
 };
+%extend Blend_SurfCurvFuncInv {
+	~Blend_SurfCurvFuncInv() {
+	printf("Call custom destructor for instance of Blend_SurfCurvFuncInv\n");
+	}
+};
 
 %nodefaultctor Blend_SurfPointFuncInv;
 class Blend_SurfPointFuncInv : public math_FunctionSetWithDerivatives {
@@ -172,6 +177,11 @@ class Blend_SurfPointFuncInv : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
+};
+%extend Blend_SurfPointFuncInv {
+	~Blend_SurfPointFuncInv() {
+	printf("Call custom destructor for instance of Blend_SurfPointFuncInv\n");
+	}
 };
 
 %nodefaultctor Blend_AppFunction;
@@ -233,6 +243,11 @@ class Blend_AppFunction : public math_FunctionSetWithDerivatives {
 		Standard_Real Parameter(const Blend_Point &P) const;
 
 };
+%extend Blend_AppFunction {
+	~Blend_AppFunction() {
+	printf("Call custom destructor for instance of Blend_AppFunction\n");
+	}
+};
 
 %nodefaultctor Blend_CSFunction;
 class Blend_CSFunction : public Blend_AppFunction {
@@ -256,6 +271,11 @@ class Blend_CSFunction : public Blend_AppFunction {
 		%feature("autodoc", "1");
 		virtual		void Tangent(const Standard_Real U, const Standard_Real V, gp_Vec & TgS, gp_Vec & NormS) const;
 
+};
+%extend Blend_CSFunction {
+	~Blend_CSFunction() {
+	printf("Call custom destructor for instance of Blend_CSFunction\n");
+	}
 };
 
 %nodefaultctor Blend_RstRstFunction;
@@ -337,6 +357,11 @@ class Blend_RstRstFunction : public Blend_AppFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
 };
+%extend Blend_RstRstFunction {
+	~Blend_RstRstFunction() {
+	printf("Call custom destructor for instance of Blend_RstRstFunction\n");
+	}
+};
 
 %nodefaultctor Blend_CurvPointFuncInv;
 class Blend_CurvPointFuncInv : public math_FunctionSetWithDerivatives {
@@ -360,6 +385,11 @@ class Blend_CurvPointFuncInv : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
+};
+%extend Blend_CurvPointFuncInv {
+	~Blend_CurvPointFuncInv() {
+	printf("Call custom destructor for instance of Blend_CurvPointFuncInv\n");
+	}
 };
 
 %nodefaultctor Blend_SequenceOfPoint;
@@ -411,6 +441,11 @@ class Blend_SequenceOfPoint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Blend_SequenceOfPoint {
+	~Blend_SequenceOfPoint() {
+	printf("Call custom destructor for instance of Blend_SequenceOfPoint\n");
+	}
+};
 
 %nodefaultctor Blend_FuncInv;
 class Blend_FuncInv : public math_FunctionSetWithDerivatives {
@@ -434,6 +469,11 @@ class Blend_FuncInv : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
+};
+%extend Blend_FuncInv {
+	~Blend_FuncInv() {
+	printf("Call custom destructor for instance of Blend_FuncInv\n");
+	}
 };
 
 %nodefaultctor Blend_SequenceNodeOfSequenceOfPoint;
@@ -521,6 +561,11 @@ class Blend_Function : public Blend_AppFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
 };
+%extend Blend_Function {
+	~Blend_Function() {
+	printf("Call custom destructor for instance of Blend_Function\n");
+	}
+};
 
 %nodefaultctor Blend_SurfRstFunction;
 class Blend_SurfRstFunction : public Blend_AppFunction {
@@ -598,6 +643,11 @@ class Blend_SurfRstFunction : public Blend_AppFunction {
 		%feature("autodoc", "1");
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 
+};
+%extend Blend_SurfRstFunction {
+	~Blend_SurfRstFunction() {
+	printf("Call custom destructor for instance of Blend_SurfRstFunction\n");
+	}
 };
 
 %nodefaultctor Blend_Point;
@@ -688,4 +738,9 @@ class Blend_Point {
 		%feature("autodoc", "1");
 		const gp_Vec & TangentOnC2() const;
 
+};
+%extend Blend_Point {
+	~Blend_Point() {
+	printf("Call custom destructor for instance of Blend_Point\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module IntAna2d
@@ -111,6 +111,11 @@ class IntAna2d_Conic {
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax2d &Axis) const;
 
 };
+%extend IntAna2d_Conic {
+	~IntAna2d_Conic() {
+	printf("Call custom destructor for instance of IntAna2d_Conic\n");
+	}
+};
 
 %nodefaultctor IntAna2d_AnaIntersection;
 class IntAna2d_AnaIntersection {
@@ -165,6 +170,11 @@ class IntAna2d_AnaIntersection {
 		const IntAna2d_IntPoint & Point(const Standard_Integer N) const;
 
 };
+%extend IntAna2d_AnaIntersection {
+	~IntAna2d_AnaIntersection() {
+	printf("Call custom destructor for instance of IntAna2d_AnaIntersection\n");
+	}
+};
 
 %nodefaultctor IntAna2d_IntPoint;
 class IntAna2d_IntPoint {
@@ -204,4 +214,9 @@ class IntAna2d_IntPoint {
 		%feature("autodoc", "1");
 		void _CSFDB_SetIntAna2d_IntPointmyimplicit(const Standard_Boolean p);
 
+};
+%extend IntAna2d_IntPoint {
+	~IntAna2d_IntPoint() {
+	printf("Call custom destructor for instance of IntAna2d_IntPoint\n");
+	}
 };

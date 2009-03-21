@@ -99,6 +99,11 @@ class RWStepBasic_RWActionAssignment {
 		void Share(const Handle_StepBasic_ActionAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWActionAssignment {
+	~RWStepBasic_RWActionAssignment() {
+	printf("Call custom destructor for instance of RWStepBasic_RWActionAssignment\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWMassMeasureWithUnit;
 class RWStepBasic_RWMassMeasureWithUnit {
@@ -114,6 +119,11 @@ class RWStepBasic_RWMassMeasureWithUnit {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_MassMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWMassMeasureWithUnit {
+	~RWStepBasic_RWMassMeasureWithUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWMassMeasureWithUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWEffectivityAssignment;
@@ -131,6 +141,11 @@ class RWStepBasic_RWEffectivityAssignment {
 		void Share(const Handle_StepBasic_EffectivityAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWEffectivityAssignment {
+	~RWStepBasic_RWEffectivityAssignment() {
+	printf("Call custom destructor for instance of RWStepBasic_RWEffectivityAssignment\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWPlaneAngleMeasureWithUnit;
 class RWStepBasic_RWPlaneAngleMeasureWithUnit {
@@ -146,6 +161,11 @@ class RWStepBasic_RWPlaneAngleMeasureWithUnit {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWPlaneAngleMeasureWithUnit {
+	~RWStepBasic_RWPlaneAngleMeasureWithUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWPlaneAngleMeasureWithUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndLengthUnit;
@@ -163,6 +183,11 @@ class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndLengthUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWConversionBasedUnitAndLengthUnit {
+	~RWStepBasic_RWConversionBasedUnitAndLengthUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndLengthUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSecurityClassificationLevel;
 class RWStepBasic_RWSecurityClassificationLevel {
@@ -176,6 +201,11 @@ class RWStepBasic_RWSecurityClassificationLevel {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SecurityClassificationLevel &ent) const;
 
+};
+%extend RWStepBasic_RWSecurityClassificationLevel {
+	~RWStepBasic_RWSecurityClassificationLevel() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSecurityClassificationLevel\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWThermodynamicTemperatureUnit;
@@ -193,6 +223,11 @@ class RWStepBasic_RWThermodynamicTemperatureUnit {
 		void Share(const Handle_StepBasic_ThermodynamicTemperatureUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWThermodynamicTemperatureUnit {
+	~RWStepBasic_RWThermodynamicTemperatureUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWThermodynamicTemperatureUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDerivedUnitElement;
 class RWStepBasic_RWDerivedUnitElement {
@@ -209,6 +244,11 @@ class RWStepBasic_RWDerivedUnitElement {
 		void Share(const Handle_StepBasic_DerivedUnitElement &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWDerivedUnitElement {
+	~RWStepBasic_RWDerivedUnitElement() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDerivedUnitElement\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWExternalSource;
 class RWStepBasic_RWExternalSource {
@@ -224,6 +264,11 @@ class RWStepBasic_RWExternalSource {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ExternalSource &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWExternalSource {
+	~RWStepBasic_RWExternalSource() {
+	printf("Call custom destructor for instance of RWStepBasic_RWExternalSource\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWSiUnit;
@@ -247,6 +292,11 @@ class RWStepBasic_RWSiUnit {
 		TCollection_AsciiString EncodeName(const StepBasic_SiUnitName aName) const;
 
 };
+%extend RWStepBasic_RWSiUnit {
+	~RWStepBasic_RWSiUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWProductDefinitionContext;
 class RWStepBasic_RWProductDefinitionContext {
@@ -262,6 +312,11 @@ class RWStepBasic_RWProductDefinitionContext {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ProductDefinitionContext &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWProductDefinitionContext {
+	~RWStepBasic_RWProductDefinitionContext() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductDefinitionContext\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWLengthUnit;
@@ -279,6 +334,11 @@ class RWStepBasic_RWLengthUnit {
 		void Share(const Handle_StepBasic_LengthUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWLengthUnit {
+	~RWStepBasic_RWLengthUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWLengthUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWObjectRole;
 class RWStepBasic_RWObjectRole {
@@ -294,6 +354,11 @@ class RWStepBasic_RWObjectRole {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ObjectRole &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWObjectRole {
+	~RWStepBasic_RWObjectRole() {
+	printf("Call custom destructor for instance of RWStepBasic_RWObjectRole\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWApprovalRelationship;
@@ -311,6 +376,11 @@ class RWStepBasic_RWApprovalRelationship {
 		void Share(const Handle_StepBasic_ApprovalRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWApprovalRelationship {
+	~RWStepBasic_RWApprovalRelationship() {
+	printf("Call custom destructor for instance of RWStepBasic_RWApprovalRelationship\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWProductDefinition;
 class RWStepBasic_RWProductDefinition {
@@ -326,6 +396,11 @@ class RWStepBasic_RWProductDefinition {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ProductDefinition &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWProductDefinition {
+	~RWStepBasic_RWProductDefinition() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductDefinition\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWRoleAssociation;
@@ -343,6 +418,11 @@ class RWStepBasic_RWRoleAssociation {
 		void Share(const Handle_StepBasic_RoleAssociation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWRoleAssociation {
+	~RWStepBasic_RWRoleAssociation() {
+	printf("Call custom destructor for instance of RWStepBasic_RWRoleAssociation\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDocumentRepresentationType;
 class RWStepBasic_RWDocumentRepresentationType {
@@ -358,6 +438,11 @@ class RWStepBasic_RWDocumentRepresentationType {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_DocumentRepresentationType &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWDocumentRepresentationType {
+	~RWStepBasic_RWDocumentRepresentationType() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDocumentRepresentationType\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWDocumentProductAssociation;
@@ -375,6 +460,11 @@ class RWStepBasic_RWDocumentProductAssociation {
 		void Share(const Handle_StepBasic_DocumentProductAssociation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWDocumentProductAssociation {
+	~RWStepBasic_RWDocumentProductAssociation() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDocumentProductAssociation\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWCalendarDate;
 class RWStepBasic_RWCalendarDate {
@@ -388,6 +478,11 @@ class RWStepBasic_RWCalendarDate {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_CalendarDate &ent) const;
 
+};
+%extend RWStepBasic_RWCalendarDate {
+	~RWStepBasic_RWCalendarDate() {
+	printf("Call custom destructor for instance of RWStepBasic_RWCalendarDate\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWVersionedActionRequest;
@@ -405,6 +500,11 @@ class RWStepBasic_RWVersionedActionRequest {
 		void Share(const Handle_StepBasic_VersionedActionRequest &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWVersionedActionRequest {
+	~RWStepBasic_RWVersionedActionRequest() {
+	printf("Call custom destructor for instance of RWStepBasic_RWVersionedActionRequest\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource;
 class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
@@ -420,6 +520,11 @@ class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
+	~RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWSolidAngleUnit;
@@ -437,6 +542,11 @@ class RWStepBasic_RWSolidAngleUnit {
 		void Share(const Handle_StepBasic_SolidAngleUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWSolidAngleUnit {
+	~RWStepBasic_RWSolidAngleUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSolidAngleUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWContractAssignment;
 class RWStepBasic_RWContractAssignment {
@@ -452,6 +562,11 @@ class RWStepBasic_RWContractAssignment {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ContractAssignment &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWContractAssignment {
+	~RWStepBasic_RWContractAssignment() {
+	printf("Call custom destructor for instance of RWStepBasic_RWContractAssignment\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit;
@@ -469,6 +584,11 @@ class RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
+	~RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndVolumeUnit;
 class RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
@@ -484,6 +604,11 @@ class RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndVolumeUnit &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
+	~RWStepBasic_RWConversionBasedUnitAndVolumeUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndVolumeUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWPersonAndOrganization;
@@ -501,6 +626,11 @@ class RWStepBasic_RWPersonAndOrganization {
 		void Share(const Handle_StepBasic_PersonAndOrganization &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWPersonAndOrganization {
+	~RWStepBasic_RWPersonAndOrganization() {
+	printf("Call custom destructor for instance of RWStepBasic_RWPersonAndOrganization\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWOrganizationRole;
 class RWStepBasic_RWOrganizationRole {
@@ -514,6 +644,11 @@ class RWStepBasic_RWOrganizationRole {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_OrganizationRole &ent) const;
 
+};
+%extend RWStepBasic_RWOrganizationRole {
+	~RWStepBasic_RWOrganizationRole() {
+	printf("Call custom destructor for instance of RWStepBasic_RWOrganizationRole\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWSolidAngleMeasureWithUnit;
@@ -531,6 +666,11 @@ class RWStepBasic_RWSolidAngleMeasureWithUnit {
 		void Share(const Handle_StepBasic_SolidAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWSolidAngleMeasureWithUnit {
+	~RWStepBasic_RWSolidAngleMeasureWithUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSolidAngleMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSiUnitAndRatioUnit;
 class RWStepBasic_RWSiUnitAndRatioUnit {
@@ -544,6 +684,11 @@ class RWStepBasic_RWSiUnitAndRatioUnit {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
 
+};
+%extend RWStepBasic_RWSiUnitAndRatioUnit {
+	~RWStepBasic_RWSiUnitAndRatioUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnitAndRatioUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndMassUnit;
@@ -561,6 +706,11 @@ class RWStepBasic_RWConversionBasedUnitAndMassUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndMassUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWConversionBasedUnitAndMassUnit {
+	~RWStepBasic_RWConversionBasedUnitAndMassUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndMassUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWEffectivity;
 class RWStepBasic_RWEffectivity {
@@ -576,6 +726,11 @@ class RWStepBasic_RWEffectivity {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_Effectivity &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWEffectivity {
+	~RWStepBasic_RWEffectivity() {
+	printf("Call custom destructor for instance of RWStepBasic_RWEffectivity\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWNamedUnit;
@@ -593,6 +748,11 @@ class RWStepBasic_RWNamedUnit {
 		void Share(const Handle_StepBasic_NamedUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWNamedUnit {
+	~RWStepBasic_RWNamedUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWNamedUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWApplicationContext;
 class RWStepBasic_RWApplicationContext {
@@ -606,6 +766,11 @@ class RWStepBasic_RWApplicationContext {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApplicationContext &ent) const;
 
+};
+%extend RWStepBasic_RWApplicationContext {
+	~RWStepBasic_RWApplicationContext() {
+	printf("Call custom destructor for instance of RWStepBasic_RWApplicationContext\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWActionMethod;
@@ -623,6 +788,11 @@ class RWStepBasic_RWActionMethod {
 		void Share(const Handle_StepBasic_ActionMethod &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWActionMethod {
+	~RWStepBasic_RWActionMethod() {
+	printf("Call custom destructor for instance of RWStepBasic_RWActionMethod\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWLocalTime;
 class RWStepBasic_RWLocalTime {
@@ -638,6 +808,11 @@ class RWStepBasic_RWLocalTime {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_LocalTime &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWLocalTime {
+	~RWStepBasic_RWLocalTime() {
+	printf("Call custom destructor for instance of RWStepBasic_RWLocalTime\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWActionRequestAssignment;
@@ -655,6 +830,11 @@ class RWStepBasic_RWActionRequestAssignment {
 		void Share(const Handle_StepBasic_ActionRequestAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWActionRequestAssignment {
+	~RWStepBasic_RWActionRequestAssignment() {
+	printf("Call custom destructor for instance of RWStepBasic_RWActionRequestAssignment\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnit;
 class RWStepBasic_RWConversionBasedUnit {
@@ -670,6 +850,11 @@ class RWStepBasic_RWConversionBasedUnit {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ConversionBasedUnit &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWConversionBasedUnit {
+	~RWStepBasic_RWConversionBasedUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWConversionBasedUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWOrganizationalAddress;
@@ -687,6 +872,11 @@ class RWStepBasic_RWOrganizationalAddress {
 		void Share(const Handle_StepBasic_OrganizationalAddress &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWOrganizationalAddress {
+	~RWStepBasic_RWOrganizationalAddress() {
+	printf("Call custom destructor for instance of RWStepBasic_RWOrganizationalAddress\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWProductDefinitionFormationRelationship;
 class RWStepBasic_RWProductDefinitionFormationRelationship {
@@ -702,6 +892,11 @@ class RWStepBasic_RWProductDefinitionFormationRelationship {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ProductDefinitionFormationRelationship &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWProductDefinitionFormationRelationship {
+	~RWStepBasic_RWProductDefinitionFormationRelationship() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationRelationship\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWIdentificationAssignment;
@@ -719,6 +914,11 @@ class RWStepBasic_RWIdentificationAssignment {
 		void Share(const Handle_StepBasic_IdentificationAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWIdentificationAssignment {
+	~RWStepBasic_RWIdentificationAssignment() {
+	printf("Call custom destructor for instance of RWStepBasic_RWIdentificationAssignment\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndTimeUnit;
 class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
@@ -734,6 +934,11 @@ class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWConversionBasedUnitAndTimeUnit {
+	~RWStepBasic_RWConversionBasedUnitAndTimeUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndTimeUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndRatioUnit;
@@ -751,6 +956,11 @@ class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndRatioUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWConversionBasedUnitAndRatioUnit {
+	~RWStepBasic_RWConversionBasedUnitAndRatioUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndRatioUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWGroup;
 class RWStepBasic_RWGroup {
@@ -766,6 +976,11 @@ class RWStepBasic_RWGroup {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_Group &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWGroup {
+	~RWStepBasic_RWGroup() {
+	printf("Call custom destructor for instance of RWStepBasic_RWGroup\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWDocumentRelationship;
@@ -783,6 +998,11 @@ class RWStepBasic_RWDocumentRelationship {
 		void Share(const Handle_StepBasic_DocumentRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWDocumentRelationship {
+	~RWStepBasic_RWDocumentRelationship() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDocumentRelationship\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit;
 class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
@@ -796,6 +1016,11 @@ class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit &ent) const;
 
+};
+%extend RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
+	~RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWDocumentFile;
@@ -813,6 +1038,11 @@ class RWStepBasic_RWDocumentFile {
 		void Share(const Handle_StepBasic_DocumentFile &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWDocumentFile {
+	~RWStepBasic_RWDocumentFile() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDocumentFile\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDateRole;
 class RWStepBasic_RWDateRole {
@@ -826,6 +1056,11 @@ class RWStepBasic_RWDateRole {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateRole &ent) const;
 
+};
+%extend RWStepBasic_RWDateRole {
+	~RWStepBasic_RWDateRole() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDateRole\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWProductDefinitionFormation;
@@ -843,6 +1078,11 @@ class RWStepBasic_RWProductDefinitionFormation {
 		void Share(const Handle_StepBasic_ProductDefinitionFormation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWProductDefinitionFormation {
+	~RWStepBasic_RWProductDefinitionFormation() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormation\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDerivedUnit;
 class RWStepBasic_RWDerivedUnit {
@@ -859,6 +1099,11 @@ class RWStepBasic_RWDerivedUnit {
 		void Share(const Handle_StepBasic_DerivedUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWDerivedUnit {
+	~RWStepBasic_RWDerivedUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDerivedUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSiUnitAndAreaUnit;
 class RWStepBasic_RWSiUnitAndAreaUnit {
@@ -872,6 +1117,11 @@ class RWStepBasic_RWSiUnitAndAreaUnit {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
 
+};
+%extend RWStepBasic_RWSiUnitAndAreaUnit {
+	~RWStepBasic_RWSiUnitAndAreaUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnitAndAreaUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWAction;
@@ -889,6 +1139,11 @@ class RWStepBasic_RWAction {
 		void Share(const Handle_StepBasic_Action &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWAction {
+	~RWStepBasic_RWAction() {
+	printf("Call custom destructor for instance of RWStepBasic_RWAction\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWAddress;
 class RWStepBasic_RWAddress {
@@ -902,6 +1157,11 @@ class RWStepBasic_RWAddress {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Address &ent) const;
 
+};
+%extend RWStepBasic_RWAddress {
+	~RWStepBasic_RWAddress() {
+	printf("Call custom destructor for instance of RWStepBasic_RWAddress\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWExternallyDefinedItem;
@@ -919,6 +1179,11 @@ class RWStepBasic_RWExternallyDefinedItem {
 		void Share(const Handle_StepBasic_ExternallyDefinedItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWExternallyDefinedItem {
+	~RWStepBasic_RWExternallyDefinedItem() {
+	printf("Call custom destructor for instance of RWStepBasic_RWExternallyDefinedItem\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWIdentificationRole;
 class RWStepBasic_RWIdentificationRole {
@@ -935,6 +1200,11 @@ class RWStepBasic_RWIdentificationRole {
 		void Share(const Handle_StepBasic_IdentificationRole &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWIdentificationRole {
+	~RWStepBasic_RWIdentificationRole() {
+	printf("Call custom destructor for instance of RWStepBasic_RWIdentificationRole\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSiUnitAndPlaneAngleUnit;
 class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
@@ -948,6 +1218,11 @@ class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
 
+};
+%extend RWStepBasic_RWSiUnitAndPlaneAngleUnit {
+	~RWStepBasic_RWSiUnitAndPlaneAngleUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnitAndPlaneAngleUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWExternalIdentificationAssignment;
@@ -965,6 +1240,11 @@ class RWStepBasic_RWExternalIdentificationAssignment {
 		void Share(const Handle_StepBasic_ExternalIdentificationAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWExternalIdentificationAssignment {
+	~RWStepBasic_RWExternalIdentificationAssignment() {
+	printf("Call custom destructor for instance of RWStepBasic_RWExternalIdentificationAssignment\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDateAndTime;
 class RWStepBasic_RWDateAndTime {
@@ -981,6 +1261,11 @@ class RWStepBasic_RWDateAndTime {
 		void Share(const Handle_StepBasic_DateAndTime &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWDateAndTime {
+	~RWStepBasic_RWDateAndTime() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDateAndTime\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSiUnitAndLengthUnit;
 class RWStepBasic_RWSiUnitAndLengthUnit {
@@ -994,6 +1279,11 @@ class RWStepBasic_RWSiUnitAndLengthUnit {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndLengthUnit &ent) const;
 
+};
+%extend RWStepBasic_RWSiUnitAndLengthUnit {
+	~RWStepBasic_RWSiUnitAndLengthUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnitAndLengthUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWLengthMeasureWithUnit;
@@ -1011,6 +1301,11 @@ class RWStepBasic_RWLengthMeasureWithUnit {
 		void Share(const Handle_StepBasic_LengthMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWLengthMeasureWithUnit {
+	~RWStepBasic_RWLengthMeasureWithUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWLengthMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSiUnitAndVolumeUnit;
 class RWStepBasic_RWSiUnitAndVolumeUnit {
@@ -1024,6 +1319,11 @@ class RWStepBasic_RWSiUnitAndVolumeUnit {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndVolumeUnit &ent) const;
 
+};
+%extend RWStepBasic_RWSiUnitAndVolumeUnit {
+	~RWStepBasic_RWSiUnitAndVolumeUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnitAndVolumeUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWCertification;
@@ -1041,6 +1341,11 @@ class RWStepBasic_RWCertification {
 		void Share(const Handle_StepBasic_Certification &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWCertification {
+	~RWStepBasic_RWCertification() {
+	printf("Call custom destructor for instance of RWStepBasic_RWCertification\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWContractType;
 class RWStepBasic_RWContractType {
@@ -1056,6 +1361,11 @@ class RWStepBasic_RWContractType {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ContractType &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWContractType {
+	~RWStepBasic_RWContractType() {
+	printf("Call custom destructor for instance of RWStepBasic_RWContractType\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWPlaneAngleUnit;
@@ -1073,6 +1383,11 @@ class RWStepBasic_RWPlaneAngleUnit {
 		void Share(const Handle_StepBasic_PlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWPlaneAngleUnit {
+	~RWStepBasic_RWPlaneAngleUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWPlaneAngleUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit;
 class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
@@ -1088,6 +1403,11 @@ class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
+	~RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWProductDefinitionWithAssociatedDocuments;
@@ -1105,6 +1425,11 @@ class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
 		void Share(const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
+	~RWStepBasic_RWProductDefinitionWithAssociatedDocuments() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductDefinitionWithAssociatedDocuments\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWApprovalPersonOrganization;
 class RWStepBasic_RWApprovalPersonOrganization {
@@ -1121,6 +1446,11 @@ class RWStepBasic_RWApprovalPersonOrganization {
 		void Share(const Handle_StepBasic_ApprovalPersonOrganization &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWApprovalPersonOrganization {
+	~RWStepBasic_RWApprovalPersonOrganization() {
+	printf("Call custom destructor for instance of RWStepBasic_RWApprovalPersonOrganization\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWApprovalRole;
 class RWStepBasic_RWApprovalRole {
@@ -1134,6 +1464,11 @@ class RWStepBasic_RWApprovalRole {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalRole &ent) const;
 
+};
+%extend RWStepBasic_RWApprovalRole {
+	~RWStepBasic_RWApprovalRole() {
+	printf("Call custom destructor for instance of RWStepBasic_RWApprovalRole\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWCoordinatedUniversalTimeOffset;
@@ -1149,6 +1484,11 @@ class RWStepBasic_RWCoordinatedUniversalTimeOffset {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_CoordinatedUniversalTimeOffset &ent) const;
 
 };
+%extend RWStepBasic_RWCoordinatedUniversalTimeOffset {
+	~RWStepBasic_RWCoordinatedUniversalTimeOffset() {
+	printf("Call custom destructor for instance of RWStepBasic_RWCoordinatedUniversalTimeOffset\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWApprovalStatus;
 class RWStepBasic_RWApprovalStatus {
@@ -1162,6 +1502,11 @@ class RWStepBasic_RWApprovalStatus {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalStatus &ent) const;
 
+};
+%extend RWStepBasic_RWApprovalStatus {
+	~RWStepBasic_RWApprovalStatus() {
+	printf("Call custom destructor for instance of RWStepBasic_RWApprovalStatus\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWDocumentProductEquivalence;
@@ -1179,6 +1524,11 @@ class RWStepBasic_RWDocumentProductEquivalence {
 		void Share(const Handle_StepBasic_DocumentProductEquivalence &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWDocumentProductEquivalence {
+	~RWStepBasic_RWDocumentProductEquivalence() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDocumentProductEquivalence\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWCharacterizedObject;
 class RWStepBasic_RWCharacterizedObject {
@@ -1194,6 +1544,11 @@ class RWStepBasic_RWCharacterizedObject {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_CharacterizedObject &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWCharacterizedObject {
+	~RWStepBasic_RWCharacterizedObject() {
+	printf("Call custom destructor for instance of RWStepBasic_RWCharacterizedObject\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWGroupRelationship;
@@ -1211,6 +1566,11 @@ class RWStepBasic_RWGroupRelationship {
 		void Share(const Handle_StepBasic_GroupRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWGroupRelationship {
+	~RWStepBasic_RWGroupRelationship() {
+	printf("Call custom destructor for instance of RWStepBasic_RWGroupRelationship\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWProductContext;
 class RWStepBasic_RWProductContext {
@@ -1227,6 +1587,11 @@ class RWStepBasic_RWProductContext {
 		void Share(const Handle_StepBasic_ProductContext &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWProductContext {
+	~RWStepBasic_RWProductContext() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductContext\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWOrdinalDate;
 class RWStepBasic_RWOrdinalDate {
@@ -1240,6 +1605,11 @@ class RWStepBasic_RWOrdinalDate {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_OrdinalDate &ent) const;
 
+};
+%extend RWStepBasic_RWOrdinalDate {
+	~RWStepBasic_RWOrdinalDate() {
+	printf("Call custom destructor for instance of RWStepBasic_RWOrdinalDate\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWPersonalAddress;
@@ -1257,6 +1627,11 @@ class RWStepBasic_RWPersonalAddress {
 		void Share(const Handle_StepBasic_PersonalAddress &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWPersonalAddress {
+	~RWStepBasic_RWPersonalAddress() {
+	printf("Call custom destructor for instance of RWStepBasic_RWPersonalAddress\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWMechanicalContext;
 class RWStepBasic_RWMechanicalContext {
@@ -1272,6 +1647,11 @@ class RWStepBasic_RWMechanicalContext {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_MechanicalContext &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWMechanicalContext {
+	~RWStepBasic_RWMechanicalContext() {
+	printf("Call custom destructor for instance of RWStepBasic_RWMechanicalContext\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWApproval;
@@ -1289,6 +1669,11 @@ class RWStepBasic_RWApproval {
 		void Share(const Handle_StepBasic_Approval &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWApproval {
+	~RWStepBasic_RWApproval() {
+	printf("Call custom destructor for instance of RWStepBasic_RWApproval\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWProduct;
 class RWStepBasic_RWProduct {
@@ -1305,6 +1690,11 @@ class RWStepBasic_RWProduct {
 		void Share(const Handle_StepBasic_Product &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWProduct {
+	~RWStepBasic_RWProduct() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProduct\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDimensionalExponents;
 class RWStepBasic_RWDimensionalExponents {
@@ -1318,6 +1708,11 @@ class RWStepBasic_RWDimensionalExponents {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DimensionalExponents &ent) const;
 
+};
+%extend RWStepBasic_RWDimensionalExponents {
+	~RWStepBasic_RWDimensionalExponents() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDimensionalExponents\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWRatioMeasureWithUnit;
@@ -1335,6 +1730,11 @@ class RWStepBasic_RWRatioMeasureWithUnit {
 		void Share(const Handle_StepBasic_RatioMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWRatioMeasureWithUnit {
+	~RWStepBasic_RWRatioMeasureWithUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWRatioMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWNameAssignment;
 class RWStepBasic_RWNameAssignment {
@@ -1350,6 +1750,11 @@ class RWStepBasic_RWNameAssignment {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_NameAssignment &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWNameAssignment {
+	~RWStepBasic_RWNameAssignment() {
+	printf("Call custom destructor for instance of RWStepBasic_RWNameAssignment\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWUncertaintyMeasureWithUnit;
@@ -1367,6 +1772,11 @@ class RWStepBasic_RWUncertaintyMeasureWithUnit {
 		void Share(const Handle_StepBasic_UncertaintyMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWUncertaintyMeasureWithUnit {
+	~RWStepBasic_RWUncertaintyMeasureWithUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWUncertaintyMeasureWithUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDocumentType;
 class RWStepBasic_RWDocumentType {
@@ -1383,6 +1793,11 @@ class RWStepBasic_RWDocumentType {
 		void Share(const Handle_StepBasic_DocumentType &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWDocumentType {
+	~RWStepBasic_RWDocumentType() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDocumentType\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWOrganization;
 class RWStepBasic_RWOrganization {
@@ -1396,6 +1811,11 @@ class RWStepBasic_RWOrganization {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Organization &ent) const;
 
+};
+%extend RWStepBasic_RWOrganization {
+	~RWStepBasic_RWOrganization() {
+	printf("Call custom destructor for instance of RWStepBasic_RWOrganization\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWSecurityClassification;
@@ -1413,6 +1833,11 @@ class RWStepBasic_RWSecurityClassification {
 		void Share(const Handle_StepBasic_SecurityClassification &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWSecurityClassification {
+	~RWStepBasic_RWSecurityClassification() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSecurityClassification\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWProductConceptContext;
 class RWStepBasic_RWProductConceptContext {
@@ -1428,6 +1853,11 @@ class RWStepBasic_RWProductConceptContext {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_ProductConceptContext &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWProductConceptContext {
+	~RWStepBasic_RWProductConceptContext() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductConceptContext\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWProductDefinitionRelationship;
@@ -1445,6 +1875,11 @@ class RWStepBasic_RWProductDefinitionRelationship {
 		void Share(const Handle_StepBasic_ProductDefinitionRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWProductDefinitionRelationship {
+	~RWStepBasic_RWProductDefinitionRelationship() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductDefinitionRelationship\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWMeasureWithUnit;
 class RWStepBasic_RWMeasureWithUnit {
@@ -1460,6 +1895,11 @@ class RWStepBasic_RWMeasureWithUnit {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_MeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWMeasureWithUnit {
+	~RWStepBasic_RWMeasureWithUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWMeasureWithUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndAreaUnit;
@@ -1477,6 +1917,11 @@ class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWConversionBasedUnitAndAreaUnit {
+	~RWStepBasic_RWConversionBasedUnitAndAreaUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndAreaUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWPersonAndOrganizationRole;
 class RWStepBasic_RWPersonAndOrganizationRole {
@@ -1491,6 +1936,11 @@ class RWStepBasic_RWPersonAndOrganizationRole {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
 
 };
+%extend RWStepBasic_RWPersonAndOrganizationRole {
+	~RWStepBasic_RWPersonAndOrganizationRole() {
+	printf("Call custom destructor for instance of RWStepBasic_RWPersonAndOrganizationRole\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDateTimeRole;
 class RWStepBasic_RWDateTimeRole {
@@ -1504,6 +1954,11 @@ class RWStepBasic_RWDateTimeRole {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateTimeRole &ent) const;
 
+};
+%extend RWStepBasic_RWDateTimeRole {
+	~RWStepBasic_RWDateTimeRole() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDateTimeRole\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWProductType;
@@ -1521,6 +1976,11 @@ class RWStepBasic_RWProductType {
 		void Share(const Handle_StepBasic_ProductType &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWProductType {
+	~RWStepBasic_RWProductType() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductType\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWWeekOfYearAndDayDate;
 class RWStepBasic_RWWeekOfYearAndDayDate {
@@ -1535,6 +1995,11 @@ class RWStepBasic_RWWeekOfYearAndDayDate {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_WeekOfYearAndDayDate &ent) const;
 
 };
+%extend RWStepBasic_RWWeekOfYearAndDayDate {
+	~RWStepBasic_RWWeekOfYearAndDayDate() {
+	printf("Call custom destructor for instance of RWStepBasic_RWWeekOfYearAndDayDate\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWPerson;
 class RWStepBasic_RWPerson {
@@ -1548,6 +2013,11 @@ class RWStepBasic_RWPerson {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Person &ent) const;
 
+};
+%extend RWStepBasic_RWPerson {
+	~RWStepBasic_RWPerson() {
+	printf("Call custom destructor for instance of RWStepBasic_RWPerson\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWApplicationProtocolDefinition;
@@ -1565,6 +2035,11 @@ class RWStepBasic_RWApplicationProtocolDefinition {
 		void Share(const Handle_StepBasic_ApplicationProtocolDefinition &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWApplicationProtocolDefinition {
+	~RWStepBasic_RWApplicationProtocolDefinition() {
+	printf("Call custom destructor for instance of RWStepBasic_RWApplicationProtocolDefinition\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWProductDefinitionEffectivity;
 class RWStepBasic_RWProductDefinitionEffectivity {
@@ -1581,6 +2056,11 @@ class RWStepBasic_RWProductDefinitionEffectivity {
 		void Share(const Handle_StepBasic_ProductDefinitionEffectivity &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWProductDefinitionEffectivity {
+	~RWStepBasic_RWProductDefinitionEffectivity() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductDefinitionEffectivity\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDate;
 class RWStepBasic_RWDate {
@@ -1594,6 +2074,11 @@ class RWStepBasic_RWDate {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Date &ent) const;
 
+};
+%extend RWStepBasic_RWDate {
+	~RWStepBasic_RWDate() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDate\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWCertificationAssignment;
@@ -1611,6 +2096,11 @@ class RWStepBasic_RWCertificationAssignment {
 		void Share(const Handle_StepBasic_CertificationAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWCertificationAssignment {
+	~RWStepBasic_RWCertificationAssignment() {
+	printf("Call custom destructor for instance of RWStepBasic_RWCertificationAssignment\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWContract;
 class RWStepBasic_RWContract {
@@ -1626,6 +2116,11 @@ class RWStepBasic_RWContract {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_Contract &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWContract {
+	~RWStepBasic_RWContract() {
+	printf("Call custom destructor for instance of RWStepBasic_RWContract\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWApprovalDateTime;
@@ -1643,6 +2138,11 @@ class RWStepBasic_RWApprovalDateTime {
 		void Share(const Handle_StepBasic_ApprovalDateTime &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWApprovalDateTime {
+	~RWStepBasic_RWApprovalDateTime() {
+	printf("Call custom destructor for instance of RWStepBasic_RWApprovalDateTime\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSiUnitAndSolidAngleUnit;
 class RWStepBasic_RWSiUnitAndSolidAngleUnit {
@@ -1656,6 +2156,11 @@ class RWStepBasic_RWSiUnitAndSolidAngleUnit {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndSolidAngleUnit &ent) const;
 
+};
+%extend RWStepBasic_RWSiUnitAndSolidAngleUnit {
+	~RWStepBasic_RWSiUnitAndSolidAngleUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnitAndSolidAngleUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWProductRelatedProductCategory;
@@ -1673,6 +2178,11 @@ class RWStepBasic_RWProductRelatedProductCategory {
 		void Share(const Handle_StepBasic_ProductRelatedProductCategory &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWProductRelatedProductCategory {
+	~RWStepBasic_RWProductRelatedProductCategory() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductRelatedProductCategory\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSiUnitAndMassUnit;
 class RWStepBasic_RWSiUnitAndMassUnit {
@@ -1686,6 +2196,11 @@ class RWStepBasic_RWSiUnitAndMassUnit {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndMassUnit &ent) const;
 
+};
+%extend RWStepBasic_RWSiUnitAndMassUnit {
+	~RWStepBasic_RWSiUnitAndMassUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnitAndMassUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWCertificationType;
@@ -1703,6 +2218,11 @@ class RWStepBasic_RWCertificationType {
 		void Share(const Handle_StepBasic_CertificationType &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWCertificationType {
+	~RWStepBasic_RWCertificationType() {
+	printf("Call custom destructor for instance of RWStepBasic_RWCertificationType\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDocument;
 class RWStepBasic_RWDocument {
@@ -1718,6 +2238,11 @@ class RWStepBasic_RWDocument {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_Document &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWDocument {
+	~RWStepBasic_RWDocument() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDocument\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWEulerAngles;
@@ -1735,6 +2260,11 @@ class RWStepBasic_RWEulerAngles {
 		void Share(const Handle_StepBasic_EulerAngles &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWEulerAngles {
+	~RWStepBasic_RWEulerAngles() {
+	printf("Call custom destructor for instance of RWStepBasic_RWEulerAngles\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWMassUnit;
 class RWStepBasic_RWMassUnit {
@@ -1750,6 +2280,11 @@ class RWStepBasic_RWMassUnit {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_MassUnit &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWMassUnit {
+	~RWStepBasic_RWMassUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWMassUnit\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWGeneralProperty;
@@ -1767,6 +2302,11 @@ class RWStepBasic_RWGeneralProperty {
 		void Share(const Handle_StepBasic_GeneralProperty &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWGeneralProperty {
+	~RWStepBasic_RWGeneralProperty() {
+	printf("Call custom destructor for instance of RWStepBasic_RWGeneralProperty\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWApplicationContextElement;
 class RWStepBasic_RWApplicationContextElement {
@@ -1783,6 +2323,11 @@ class RWStepBasic_RWApplicationContextElement {
 		void Share(const Handle_StepBasic_ApplicationContextElement &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWApplicationContextElement {
+	~RWStepBasic_RWApplicationContextElement() {
+	printf("Call custom destructor for instance of RWStepBasic_RWApplicationContextElement\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWSiUnitAndTimeUnit;
 class RWStepBasic_RWSiUnitAndTimeUnit {
@@ -1797,6 +2342,11 @@ class RWStepBasic_RWSiUnitAndTimeUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndTimeUnit &ent) const;
 
 };
+%extend RWStepBasic_RWSiUnitAndTimeUnit {
+	~RWStepBasic_RWSiUnitAndTimeUnit() {
+	printf("Call custom destructor for instance of RWStepBasic_RWSiUnitAndTimeUnit\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWProductCategory;
 class RWStepBasic_RWProductCategory {
@@ -1810,6 +2360,11 @@ class RWStepBasic_RWProductCategory {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductCategory &ent) const;
 
+};
+%extend RWStepBasic_RWProductCategory {
+	~RWStepBasic_RWProductCategory() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductCategory\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWProductCategoryRelationship;
@@ -1827,6 +2382,11 @@ class RWStepBasic_RWProductCategoryRelationship {
 		void Share(const Handle_StepBasic_ProductCategoryRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWProductCategoryRelationship {
+	~RWStepBasic_RWProductCategoryRelationship() {
+	printf("Call custom destructor for instance of RWStepBasic_RWProductCategoryRelationship\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWGroupAssignment;
 class RWStepBasic_RWGroupAssignment {
@@ -1842,6 +2402,11 @@ class RWStepBasic_RWGroupAssignment {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_GroupAssignment &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWGroupAssignment {
+	~RWStepBasic_RWGroupAssignment() {
+	printf("Call custom destructor for instance of RWStepBasic_RWGroupAssignment\n");
+	}
 };
 
 %nodefaultctor RWStepBasic_RWActionRequestSolution;
@@ -1859,6 +2424,11 @@ class RWStepBasic_RWActionRequestSolution {
 		void Share(const Handle_StepBasic_ActionRequestSolution &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepBasic_RWActionRequestSolution {
+	~RWStepBasic_RWActionRequestSolution() {
+	printf("Call custom destructor for instance of RWStepBasic_RWActionRequestSolution\n");
+	}
+};
 
 %nodefaultctor RWStepBasic_RWDocumentUsageConstraint;
 class RWStepBasic_RWDocumentUsageConstraint {
@@ -1874,4 +2444,9 @@ class RWStepBasic_RWDocumentUsageConstraint {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepBasic_DocumentUsageConstraint &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepBasic_RWDocumentUsageConstraint {
+	~RWStepBasic_RWDocumentUsageConstraint() {
+	printf("Call custom destructor for instance of RWStepBasic_RWDocumentUsageConstraint\n");
+	}
 };

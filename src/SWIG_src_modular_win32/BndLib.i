@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BndLib
@@ -97,6 +97,11 @@ class BndLib_AddSurface {
 		void Add(const Adaptor3d_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 
 };
+%extend BndLib_AddSurface {
+	~BndLib_AddSurface() {
+	printf("Call custom destructor for instance of BndLib_AddSurface\n");
+	}
+};
 
 %nodefaultctor BndLib_Add3dCurve;
 class BndLib_Add3dCurve {
@@ -110,6 +115,11 @@ class BndLib_Add3dCurve {
 		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Curve &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box & B);
 
+};
+%extend BndLib_Add3dCurve {
+	~BndLib_Add3dCurve() {
+	printf("Call custom destructor for instance of BndLib_Add3dCurve\n");
+	}
 };
 
 %nodefaultctor BndLib;
@@ -165,6 +175,11 @@ class BndLib {
 		void Add(const gp_Torus &P, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 
 };
+%extend BndLib {
+	~BndLib() {
+	printf("Call custom destructor for instance of BndLib\n");
+	}
+};
 
 %nodefaultctor BndLib_Add2dCurve;
 class BndLib_Add2dCurve {
@@ -178,4 +193,9 @@ class BndLib_Add2dCurve {
 		%feature("autodoc", "1");
 		void Add(const Adaptor2d_Curve2d &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box2d & B);
 
+};
+%extend BndLib_Add2dCurve {
+	~BndLib_Add2dCurve() {
+	printf("Call custom destructor for instance of BndLib_Add2dCurve\n");
+	}
 };

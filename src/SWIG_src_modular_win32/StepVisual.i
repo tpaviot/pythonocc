@@ -2271,6 +2271,11 @@ class StepVisual_Array1OfStyleContextSelect {
 		StepVisual_StyleContextSelect & operator()(const Standard_Integer Index);
 
 };
+%extend StepVisual_Array1OfStyleContextSelect {
+	~StepVisual_Array1OfStyleContextSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfStyleContextSelect\n");
+	}
+};
 
 %nodefaultctor StepVisual_HArray1OfCurveStyleFontPattern;
 class StepVisual_HArray1OfCurveStyleFontPattern : public MMgt_TShared {
@@ -2417,6 +2422,11 @@ class StepVisual_BoxCharacteristicSelect {
 		%feature("autodoc", "1");
 		void SetRealValue(const Standard_Real aValue);
 
+};
+%extend StepVisual_BoxCharacteristicSelect {
+	~StepVisual_BoxCharacteristicSelect() {
+	printf("Call custom destructor for instance of StepVisual_BoxCharacteristicSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_HArray1OfPresentationStyleSelect;
@@ -3419,6 +3429,11 @@ class StepVisual_Array1OfTextOrCharacter {
 		StepVisual_TextOrCharacter & operator()(const Standard_Integer Index);
 
 };
+%extend StepVisual_Array1OfTextOrCharacter {
+	~StepVisual_Array1OfTextOrCharacter() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfTextOrCharacter\n");
+	}
+};
 
 %nodefaultctor StepVisual_PresentationLayerAssignment;
 class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
@@ -3667,6 +3682,11 @@ class StepVisual_Array1OfFillStyleSelect {
 		%feature("autodoc", "1");
 		StepVisual_FillStyleSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfFillStyleSelect {
+	~StepVisual_Array1OfFillStyleSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfFillStyleSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_TextStyleForDefinedFont;
@@ -4004,6 +4024,11 @@ class StepVisual_Array1OfBoxCharacteristicSelect {
 		StepVisual_BoxCharacteristicSelect & operator()(const Standard_Integer Index);
 
 };
+%extend StepVisual_Array1OfBoxCharacteristicSelect {
+	~StepVisual_Array1OfBoxCharacteristicSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfBoxCharacteristicSelect\n");
+	}
+};
 
 %nodefaultctor StepVisual_StyleContextSelect;
 class StepVisual_StyleContextSelect : public StepData_SelectType {
@@ -4318,6 +4343,11 @@ class StepVisual_Array1OfLayeredItem {
 		StepVisual_LayeredItem & operator()(const Standard_Integer Index);
 
 };
+%extend StepVisual_Array1OfLayeredItem {
+	~StepVisual_Array1OfLayeredItem() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfLayeredItem\n");
+	}
+};
 
 %nodefaultctor StepVisual_MechanicalDesignGeometricPresentationRepresentation;
 class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public StepVisual_PresentationRepresentation {
@@ -4379,6 +4409,11 @@ class StepVisual_DirectionCountSelect {
 		%feature("autodoc", "1");
 		void SetVDirectionCount(const Standard_Integer aUDirectionCount);
 
+};
+%extend StepVisual_DirectionCountSelect {
+	~StepVisual_DirectionCountSelect() {
+	printf("Call custom destructor for instance of StepVisual_DirectionCountSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_TemplateInstance;
@@ -4521,6 +4556,11 @@ class StepVisual_Array1OfPresentationStyleSelect {
 		StepVisual_PresentationStyleSelect & operator()(const Standard_Integer Index);
 
 };
+%extend StepVisual_Array1OfPresentationStyleSelect {
+	~StepVisual_Array1OfPresentationStyleSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfPresentationStyleSelect\n");
+	}
+};
 
 %nodefaultctor StepVisual_HArray1OfInvisibleItem;
 class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
@@ -4617,6 +4657,11 @@ class StepVisual_Array1OfDirectionCountSelect {
 		StepVisual_DirectionCountSelect & operator()(const Standard_Integer Index);
 
 };
+%extend StepVisual_Array1OfDirectionCountSelect {
+	~StepVisual_Array1OfDirectionCountSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfDirectionCountSelect\n");
+	}
+};
 
 %nodefaultctor StepVisual_Array1OfInvisibleItem;
 class StepVisual_Array1OfInvisibleItem {
@@ -4652,6 +4697,11 @@ class StepVisual_Array1OfInvisibleItem {
 		%feature("autodoc", "1");
 		StepVisual_InvisibleItem & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfInvisibleItem {
+	~StepVisual_Array1OfInvisibleItem() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfInvisibleItem\n");
+	}
 };
 
 %nodefaultctor StepVisual_AnnotationTextOccurrence;
@@ -4760,6 +4810,11 @@ class StepVisual_Array1OfSurfaceStyleElementSelect {
 		%feature("autodoc", "1");
 		StepVisual_SurfaceStyleElementSelect & operator()(const Standard_Integer Index);
 
+};
+%extend StepVisual_Array1OfSurfaceStyleElementSelect {
+	~StepVisual_Array1OfSurfaceStyleElementSelect() {
+	printf("Call custom destructor for instance of StepVisual_Array1OfSurfaceStyleElementSelect\n");
+	}
 };
 
 %nodefaultctor StepVisual_SurfaceStyleControlGrid;

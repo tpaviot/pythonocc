@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module HatchGen
@@ -220,6 +220,11 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend HatchGen_PointsOnHatching {
+	~HatchGen_PointsOnHatching() {
+	printf("Call custom destructor for instance of HatchGen_PointsOnHatching\n");
+	}
+};
 
 %nodefaultctor HatchGen_Domains;
 class HatchGen_Domains : public TCollection_BaseSequence {
@@ -270,6 +275,11 @@ class HatchGen_Domains : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend HatchGen_Domains {
+	~HatchGen_Domains() {
+	printf("Call custom destructor for instance of HatchGen_Domains\n");
+	}
+};
 
 %nodefaultctor HatchGen_IntersectionPoint;
 class HatchGen_IntersectionPoint {
@@ -306,6 +316,11 @@ class HatchGen_IntersectionPoint {
 		virtual		void Dump(const Standard_Integer Index=0) const;
 
 };
+%extend HatchGen_IntersectionPoint {
+	~HatchGen_IntersectionPoint() {
+	printf("Call custom destructor for instance of HatchGen_IntersectionPoint\n");
+	}
+};
 
 %nodefaultctor HatchGen_PointOnHatching;
 class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
@@ -338,6 +353,11 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		Standard_Boolean IsGreater(const HatchGen_PointOnHatching &Point, const Standard_Real Confusion) const;
 
 };
+%extend HatchGen_PointOnHatching {
+	~HatchGen_PointOnHatching() {
+	printf("Call custom destructor for instance of HatchGen_PointOnHatching\n");
+	}
+};
 
 %nodefaultctor HatchGen_PointOnElement;
 class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
@@ -361,6 +381,11 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		%feature("autodoc", "1");
 		virtual		void Dump(const Standard_Integer Index=0) const;
 
+};
+%extend HatchGen_PointOnElement {
+	~HatchGen_PointOnElement() {
+	printf("Call custom destructor for instance of HatchGen_PointOnElement\n");
+	}
 };
 
 %nodefaultctor HatchGen_SequenceNodeOfPointsOnElement;
@@ -434,6 +459,11 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend HatchGen_PointsOnElement {
+	~HatchGen_PointsOnElement() {
+	printf("Call custom destructor for instance of HatchGen_PointsOnElement\n");
+	}
+};
 
 %nodefaultctor HatchGen_SequenceNodeOfDomains;
 class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
@@ -491,6 +521,11 @@ class HatchGen_Domain {
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer Index=0) const;
 
+};
+%extend HatchGen_Domain {
+	~HatchGen_Domain() {
+	printf("Call custom destructor for instance of HatchGen_Domain\n");
+	}
 };
 
 %nodefaultctor HatchGen_SequenceNodeOfPointsOnHatching;

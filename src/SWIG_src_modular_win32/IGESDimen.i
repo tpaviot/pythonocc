@@ -841,6 +841,11 @@ class IGESDimen_ToolDimensionTolerance {
 		void OwnDump(const Handle_IGESDimen_DimensionTolerance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolDimensionTolerance {
+	~IGESDimen_ToolDimensionTolerance() {
+	printf("Call custom destructor for instance of IGESDimen_ToolDimensionTolerance\n");
+	}
+};
 
 %nodefaultctor IGESDimen_HArray1OfLeaderArrow;
 class IGESDimen_HArray1OfLeaderArrow : public MMgt_TShared {
@@ -1039,6 +1044,11 @@ class IGESDimen_ToolSection {
 		void OwnDump(const Handle_IGESDimen_Section &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolSection {
+	~IGESDimen_ToolSection() {
+	printf("Call custom destructor for instance of IGESDimen_ToolSection\n");
+	}
+};
 
 %nodefaultctor IGESDimen_WitnessLine;
 class IGESDimen_WitnessLine : public IGESData_IGESEntity {
@@ -1128,6 +1138,11 @@ class IGESDimen_ToolGeneralNote {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_GeneralNote &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDimen_ToolGeneralNote {
+	~IGESDimen_ToolGeneralNote() {
+	printf("Call custom destructor for instance of IGESDimen_ToolGeneralNote\n");
+	}
 };
 
 %nodefaultctor IGESDimen_DimensionDisplayData;
@@ -1333,6 +1348,11 @@ class IGESDimen_ToolRadiusDimension {
 		void OwnDump(const Handle_IGESDimen_RadiusDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolRadiusDimension {
+	~IGESDimen_ToolRadiusDimension() {
+	printf("Call custom destructor for instance of IGESDimen_ToolRadiusDimension\n");
+	}
+};
 
 %nodefaultctor IGESDimen_SpecificModule;
 class IGESDimen_SpecificModule : public IGESData_SpecificModule {
@@ -1383,6 +1403,11 @@ class IGESDimen_ToolBasicDimension {
 		void OwnDump(const Handle_IGESDimen_BasicDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolBasicDimension {
+	~IGESDimen_ToolBasicDimension() {
+	printf("Call custom destructor for instance of IGESDimen_ToolBasicDimension\n");
+	}
+};
 
 %nodefaultctor IGESDimen_ToolCurveDimension;
 class IGESDimen_ToolCurveDimension {
@@ -1406,6 +1431,11 @@ class IGESDimen_ToolCurveDimension {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_CurveDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDimen_ToolCurveDimension {
+	~IGESDimen_ToolCurveDimension() {
+	printf("Call custom destructor for instance of IGESDimen_ToolCurveDimension\n");
+	}
 };
 
 %nodefaultctor IGESDimen_SectionedArea;
@@ -1474,6 +1504,11 @@ class IGESDimen_ToolGeneralLabel {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_GeneralLabel &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDimen_ToolGeneralLabel {
+	~IGESDimen_ToolGeneralLabel() {
+	printf("Call custom destructor for instance of IGESDimen_ToolGeneralLabel\n");
+	}
 };
 
 %nodefaultctor IGESDimen_FlagNote;
@@ -1578,6 +1613,11 @@ class IGESDimen_ToolWitnessLine {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_WitnessLine &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDimen_ToolWitnessLine {
+	~IGESDimen_ToolWitnessLine() {
+	printf("Call custom destructor for instance of IGESDimen_ToolWitnessLine\n");
+	}
 };
 
 %nodefaultctor IGESDimen_Array1OfLeaderArrow;
@@ -1755,6 +1795,11 @@ class IGESDimen_ToolDiameterDimension {
 		void OwnDump(const Handle_IGESDimen_DiameterDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolDiameterDimension {
+	~IGESDimen_ToolDiameterDimension() {
+	printf("Call custom destructor for instance of IGESDimen_ToolDiameterDimension\n");
+	}
+};
 
 %nodefaultctor IGESDimen_LinearDimension;
 class IGESDimen_LinearDimension : public IGESData_IGESEntity {
@@ -1873,6 +1918,11 @@ class IGESDimen_ToolCenterLine {
 		void OwnDump(const Handle_IGESDimen_CenterLine &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolCenterLine {
+	~IGESDimen_ToolCenterLine() {
+	printf("Call custom destructor for instance of IGESDimen_ToolCenterLine\n");
+	}
+};
 
 %nodefaultctor IGESDimen_CurveDimension;
 class IGESDimen_CurveDimension : public IGESData_IGESEntity {
@@ -1939,6 +1989,11 @@ class IGESDimen_ToolFlagNote {
 		void OwnDump(const Handle_IGESDimen_FlagNote &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolFlagNote {
+	~IGESDimen_ToolFlagNote() {
+	printf("Call custom destructor for instance of IGESDimen_ToolFlagNote\n");
+	}
+};
 
 %nodefaultctor IGESDimen_ToolNewDimensionedGeometry;
 class IGESDimen_ToolNewDimensionedGeometry {
@@ -1964,6 +2019,11 @@ class IGESDimen_ToolNewDimensionedGeometry {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_NewDimensionedGeometry &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDimen_ToolNewDimensionedGeometry {
+	~IGESDimen_ToolNewDimensionedGeometry() {
+	printf("Call custom destructor for instance of IGESDimen_ToolNewDimensionedGeometry\n");
+	}
 };
 
 %nodefaultctor IGESDimen_ToolDimensionUnits;
@@ -1991,6 +2051,11 @@ class IGESDimen_ToolDimensionUnits {
 		void OwnDump(const Handle_IGESDimen_DimensionUnits &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolDimensionUnits {
+	~IGESDimen_ToolDimensionUnits() {
+	printf("Call custom destructor for instance of IGESDimen_ToolDimensionUnits\n");
+	}
+};
 
 %nodefaultctor IGESDimen_ToolOrdinateDimension;
 class IGESDimen_ToolOrdinateDimension {
@@ -2014,6 +2079,11 @@ class IGESDimen_ToolOrdinateDimension {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_OrdinateDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDimen_ToolOrdinateDimension {
+	~IGESDimen_ToolOrdinateDimension() {
+	printf("Call custom destructor for instance of IGESDimen_ToolOrdinateDimension\n");
+	}
 };
 
 %nodefaultctor IGESDimen_ToolDimensionedGeometry;
@@ -2041,6 +2111,11 @@ class IGESDimen_ToolDimensionedGeometry {
 		void OwnDump(const Handle_IGESDimen_DimensionedGeometry &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolDimensionedGeometry {
+	~IGESDimen_ToolDimensionedGeometry() {
+	printf("Call custom destructor for instance of IGESDimen_ToolDimensionedGeometry\n");
+	}
+};
 
 %nodefaultctor IGESDimen_ToolLinearDimension;
 class IGESDimen_ToolLinearDimension {
@@ -2065,6 +2140,11 @@ class IGESDimen_ToolLinearDimension {
 		void OwnDump(const Handle_IGESDimen_LinearDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolLinearDimension {
+	~IGESDimen_ToolLinearDimension() {
+	printf("Call custom destructor for instance of IGESDimen_ToolLinearDimension\n");
+	}
+};
 
 %nodefaultctor IGESDimen_ToolAngularDimension;
 class IGESDimen_ToolAngularDimension {
@@ -2088,6 +2168,11 @@ class IGESDimen_ToolAngularDimension {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_AngularDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDimen_ToolAngularDimension {
+	~IGESDimen_ToolAngularDimension() {
+	printf("Call custom destructor for instance of IGESDimen_ToolAngularDimension\n");
+	}
 };
 
 %nodefaultctor IGESDimen;
@@ -2204,6 +2289,11 @@ class IGESDimen_ToolSectionedArea {
 		void OwnDump(const Handle_IGESDimen_SectionedArea &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolSectionedArea {
+	~IGESDimen_ToolSectionedArea() {
+	printf("Call custom destructor for instance of IGESDimen_ToolSectionedArea\n");
+	}
+};
 
 %nodefaultctor IGESDimen_GeneralLabel;
 class IGESDimen_GeneralLabel : public IGESData_IGESEntity {
@@ -2288,6 +2378,11 @@ class IGESDimen_ToolLeaderArrow {
 		void OwnDump(const Handle_IGESDimen_LeaderArrow &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolLeaderArrow {
+	~IGESDimen_ToolLeaderArrow() {
+	printf("Call custom destructor for instance of IGESDimen_ToolLeaderArrow\n");
+	}
+};
 
 %nodefaultctor IGESDimen_DimensionTolerance;
 class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
@@ -2352,6 +2447,11 @@ class IGESDimen_ToolGeneralSymbol {
 		void OwnDump(const Handle_IGESDimen_GeneralSymbol &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolGeneralSymbol {
+	~IGESDimen_ToolGeneralSymbol() {
+	printf("Call custom destructor for instance of IGESDimen_ToolGeneralSymbol\n");
+	}
+};
 
 %nodefaultctor IGESDimen_ToolPointDimension;
 class IGESDimen_ToolPointDimension {
@@ -2376,6 +2476,11 @@ class IGESDimen_ToolPointDimension {
 		void OwnDump(const Handle_IGESDimen_PointDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESDimen_ToolPointDimension {
+	~IGESDimen_ToolPointDimension() {
+	printf("Call custom destructor for instance of IGESDimen_ToolPointDimension\n");
+	}
+};
 
 %nodefaultctor IGESDimen_ToolNewGeneralNote;
 class IGESDimen_ToolNewGeneralNote {
@@ -2399,6 +2504,11 @@ class IGESDimen_ToolNewGeneralNote {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_NewGeneralNote &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDimen_ToolNewGeneralNote {
+	~IGESDimen_ToolNewGeneralNote() {
+	printf("Call custom destructor for instance of IGESDimen_ToolNewGeneralNote\n");
+	}
 };
 
 %nodefaultctor IGESDimen_DimensionUnits;
@@ -2461,6 +2571,11 @@ class IGESDimen_ToolDimensionDisplayData {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESDimen_DimensionDisplayData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESDimen_ToolDimensionDisplayData {
+	~IGESDimen_ToolDimensionDisplayData() {
+	printf("Call custom destructor for instance of IGESDimen_ToolDimensionDisplayData\n");
+	}
 };
 
 %nodefaultctor IGESDimen_RadiusDimension;

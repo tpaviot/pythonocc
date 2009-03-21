@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ApproxInt
@@ -100,4 +100,9 @@ class ApproxInt_SvSurfaces {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 
+};
+%extend ApproxInt_SvSurfaces {
+	~ApproxInt_SvSurfaces() {
+	printf("Call custom destructor for instance of ApproxInt_SvSurfaces\n");
+	}
 };

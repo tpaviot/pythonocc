@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Bisector
@@ -193,6 +193,11 @@ class Bisector_Inter : public IntRes2d_Intersection {
 		void Perform(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
 
 };
+%extend Bisector_Inter {
+	~Bisector_Inter() {
+	printf("Call custom destructor for instance of Bisector_Inter\n");
+	}
+};
 
 %nodefaultctor Bisector_FunctionInter;
 class Bisector_FunctionInter : public math_FunctionWithDerivative {
@@ -212,6 +217,11 @@ class Bisector_FunctionInter : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~Bisector_FunctionInter();
 
+};
+%extend Bisector_FunctionInter {
+	~Bisector_FunctionInter() {
+	printf("Call custom destructor for instance of Bisector_FunctionInter\n");
+	}
 };
 
 %nodefaultctor Bisector_Curve;
@@ -505,6 +515,11 @@ class Bisector_PolyBis {
 		void Transform(const gp_Trsf2d &T);
 
 };
+%extend Bisector_PolyBis {
+	~Bisector_PolyBis() {
+	printf("Call custom destructor for instance of Bisector_PolyBis\n");
+	}
+};
 
 %nodefaultctor Bisector_PointOnBis;
 class Bisector_PointOnBis {
@@ -543,6 +558,11 @@ class Bisector_PointOnBis {
 		void Dump() const;
 
 };
+%extend Bisector_PointOnBis {
+	~Bisector_PointOnBis() {
+	printf("Call custom destructor for instance of Bisector_PointOnBis\n");
+	}
+};
 
 %nodefaultctor Bisector_Bisec;
 class Bisector_Bisec {
@@ -580,6 +600,11 @@ class Bisector {
 		Standard_Boolean IsConvex(const Handle_Geom2d_Curve &Cu, const Standard_Real Sign);
 
 };
+%extend Bisector {
+	~Bisector() {
+	printf("Call custom destructor for instance of Bisector\n");
+	}
+};
 
 %nodefaultctor Bisector_FunctionH;
 class Bisector_FunctionH : public math_FunctionWithDerivative {
@@ -595,4 +620,9 @@ class Bisector_FunctionH : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		virtual		~Bisector_FunctionH();
 
+};
+%extend Bisector_FunctionH {
+	~Bisector_FunctionH() {
+	printf("Call custom destructor for instance of Bisector_FunctionH\n");
+	}
 };

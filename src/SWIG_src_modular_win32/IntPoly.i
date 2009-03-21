@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module IntPoly
@@ -209,6 +209,11 @@ class IntPoly_PlaneSection {
 		TopoDS_Edge Edge(const Standard_Integer Index);
 
 };
+%extend IntPoly_PlaneSection {
+	~IntPoly_PlaneSection() {
+	printf("Call custom destructor for instance of IntPoly_PlaneSection\n");
+	}
+};
 
 %nodefaultctor IntPoly_ShapeSection;
 class IntPoly_ShapeSection {
@@ -247,6 +252,11 @@ class IntPoly_ShapeSection {
 		TopoDS_Edge Edge(const Standard_Integer Index);
 
 };
+%extend IntPoly_ShapeSection {
+	~IntPoly_ShapeSection() {
+	printf("Call custom destructor for instance of IntPoly_ShapeSection\n");
+	}
+};
 
 %nodefaultctor IntPoly_PntHasher;
 class IntPoly_PntHasher {
@@ -260,6 +270,11 @@ class IntPoly_PntHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
 
+};
+%extend IntPoly_PntHasher {
+	~IntPoly_PntHasher() {
+	printf("Call custom destructor for instance of IntPoly_PntHasher\n");
+	}
 };
 
 %nodefaultctor IntPoly_SequenceOfSequenceOfPnt;
@@ -310,6 +325,11 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend IntPoly_SequenceOfSequenceOfPnt {
+	~IntPoly_SequenceOfSequenceOfPnt() {
+	printf("Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt\n");
+	}
 };
 
 %nodefaultctor IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
@@ -383,6 +403,11 @@ class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend IntPoly_SequenceOfSequenceOfPnt2d {
+	~IntPoly_SequenceOfSequenceOfPnt2d() {
+	printf("Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt2d\n");
+	}
+};
 
 %nodefaultctor IntPoly_IndexedMapOfPnt2d;
 class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
@@ -412,6 +437,11 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const gp_Pnt2d &K) const;
 
+};
+%extend IntPoly_IndexedMapOfPnt2d {
+	~IntPoly_IndexedMapOfPnt2d() {
+	printf("Call custom destructor for instance of IntPoly_IndexedMapOfPnt2d\n");
+	}
 };
 
 %nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
@@ -491,6 +521,11 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const gp_Pnt &K) const;
 
 };
+%extend IntPoly_IndexedMapOfPnt {
+	~IntPoly_IndexedMapOfPnt() {
+	printf("Call custom destructor for instance of IntPoly_IndexedMapOfPnt\n");
+	}
+};
 
 %nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt;
 class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
@@ -530,4 +565,9 @@ class IntPoly_Pnt2dHasher {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
 
+};
+%extend IntPoly_Pnt2dHasher {
+	~IntPoly_Pnt2dHasher() {
+	printf("Call custom destructor for instance of IntPoly_Pnt2dHasher\n");
+	}
 };

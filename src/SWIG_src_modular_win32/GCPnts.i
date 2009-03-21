@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module GCPnts
@@ -128,6 +128,11 @@ class GCPnts_TangentialDeflection {
 		gp_Pnt Value(const Standard_Integer I) const;
 
 };
+%extend GCPnts_TangentialDeflection {
+	~GCPnts_TangentialDeflection() {
+	printf("Call custom destructor for instance of GCPnts_TangentialDeflection\n");
+	}
+};
 
 %nodefaultctor GCPnts_UniformAbscissa;
 class GCPnts_UniformAbscissa {
@@ -178,6 +183,11 @@ class GCPnts_UniformAbscissa {
 		Standard_Real Abscissa() const;
 
 };
+%extend GCPnts_UniformAbscissa {
+	~GCPnts_UniformAbscissa() {
+	printf("Call custom destructor for instance of GCPnts_UniformAbscissa\n");
+	}
+};
 
 %nodefaultctor GCPnts_UniformDeflection;
 class GCPnts_UniformDeflection {
@@ -213,6 +223,11 @@ class GCPnts_UniformDeflection {
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 
+};
+%extend GCPnts_UniformDeflection {
+	~GCPnts_UniformDeflection() {
+	printf("Call custom destructor for instance of GCPnts_UniformDeflection\n");
+	}
 };
 
 %nodefaultctor GCPnts_AbscissaPoint;
@@ -260,6 +275,11 @@ class GCPnts_AbscissaPoint {
 		Standard_Real Parameter() const;
 
 };
+%extend GCPnts_AbscissaPoint {
+	~GCPnts_AbscissaPoint() {
+	printf("Call custom destructor for instance of GCPnts_AbscissaPoint\n");
+	}
+};
 
 %nodefaultctor GCPnts_QuasiUniformAbscissa;
 class GCPnts_QuasiUniformAbscissa {
@@ -291,6 +311,11 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("autodoc", "1");
 		Standard_Real Parameter(const Standard_Integer Index) const;
 
+};
+%extend GCPnts_QuasiUniformAbscissa {
+	~GCPnts_QuasiUniformAbscissa() {
+	printf("Call custom destructor for instance of GCPnts_QuasiUniformAbscissa\n");
+	}
 };
 
 %nodefaultctor GCPnts_QuasiUniformDeflection;
@@ -327,4 +352,9 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 
+};
+%extend GCPnts_QuasiUniformDeflection {
+	~GCPnts_QuasiUniformDeflection() {
+	printf("Call custom destructor for instance of GCPnts_QuasiUniformDeflection\n");
+	}
 };

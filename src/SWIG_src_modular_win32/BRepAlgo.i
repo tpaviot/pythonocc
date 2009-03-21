@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepAlgo
@@ -244,6 +244,11 @@ class BRepAlgo_Tool {
 		TopoDS_Shape Deboucle3D(const TopoDS_Shape &S, const TopTools_MapOfShape &Boundary);
 
 };
+%extend BRepAlgo_Tool {
+	~BRepAlgo_Tool() {
+	printf("Call custom destructor for instance of BRepAlgo_Tool\n");
+	}
+};
 
 %nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger;
 class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_MapNode {
@@ -301,6 +306,11 @@ class BRepAlgo_Loop {
 		%feature("autodoc", "1");
 		void VerticesForSubstitute(TopTools_DataMapOfShapeShape & VerVerMap);
 
+};
+%extend BRepAlgo_Loop {
+	~BRepAlgo_Loop() {
+	printf("Call custom destructor for instance of BRepAlgo_Loop\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_DSAccess;
@@ -445,6 +455,11 @@ class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
 		virtual		~BRepAlgo_Fuse();
 
 };
+%extend BRepAlgo_Fuse {
+	~BRepAlgo_Fuse() {
+	printf("Call custom destructor for instance of BRepAlgo_Fuse\n");
+	}
+};
 
 %nodefaultctor BRepAlgo_DataMapOfShapeBoolean;
 class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
@@ -474,6 +489,11 @@ class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean & operator()(const TopoDS_Shape &K);
 
+};
+%extend BRepAlgo_DataMapOfShapeBoolean {
+	~BRepAlgo_DataMapOfShapeBoolean() {
+	printf("Call custom destructor for instance of BRepAlgo_DataMapOfShapeBoolean\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_NormalProjection;
@@ -516,6 +536,11 @@ class BRepAlgo_NormalProjection {
 		%feature("autodoc", "1");
 		Standard_Boolean BuildWire(TopTools_ListOfShape & Liste) const;
 
+};
+%extend BRepAlgo_NormalProjection {
+	~BRepAlgo_NormalProjection() {
+	printf("Call custom destructor for instance of BRepAlgo_NormalProjection\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_AsDes;
@@ -706,6 +731,11 @@ class BRepAlgo_Image {
 		void Filter(const TopoDS_Shape &S, const TopAbs_ShapeEnum ShapeType);
 
 };
+%extend BRepAlgo_Image {
+	~BRepAlgo_Image() {
+	printf("Call custom destructor for instance of BRepAlgo_Image\n");
+	}
+};
 
 %nodefaultctor BRepAlgo_FaceRestrictor;
 class BRepAlgo_FaceRestrictor {
@@ -731,6 +761,11 @@ class BRepAlgo_FaceRestrictor {
 		%feature("autodoc", "1");
 		TopoDS_Face Current() const;
 
+};
+%extend BRepAlgo_FaceRestrictor {
+	~BRepAlgo_FaceRestrictor() {
+	printf("Call custom destructor for instance of BRepAlgo_FaceRestrictor\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_BooleanOperations;
@@ -838,6 +873,11 @@ class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
 		virtual		~BRepAlgo_Common();
 
 };
+%extend BRepAlgo_Common {
+	~BRepAlgo_Common() {
+	printf("Call custom destructor for instance of BRepAlgo_Common\n");
+	}
+};
 
 %nodefaultctor BRepAlgo_DataMapOfShapeInterference;
 class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
@@ -921,6 +961,11 @@ class BRepAlgo_SequenceOfSequenceOfInteger : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend BRepAlgo_SequenceOfSequenceOfInteger {
+	~BRepAlgo_SequenceOfSequenceOfInteger() {
+	printf("Call custom destructor for instance of BRepAlgo_SequenceOfSequenceOfInteger\n");
+	}
+};
 
 %nodefaultctor BRepAlgo_DataMapOfShapeListOfInteger;
 class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
@@ -951,6 +996,11 @@ class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 		TColStd_ListOfInteger & operator()(const TopoDS_Shape &K);
 
 };
+%extend BRepAlgo_DataMapOfShapeListOfInteger {
+	~BRepAlgo_DataMapOfShapeListOfInteger() {
+	printf("Call custom destructor for instance of BRepAlgo_DataMapOfShapeListOfInteger\n");
+	}
+};
 
 %nodefaultctor BRepAlgo;
 class BRepAlgo {
@@ -969,6 +1019,11 @@ class BRepAlgo {
 		Standard_Boolean IsTopologicallyValid(const TopoDS_Shape &S);
 
 };
+%extend BRepAlgo {
+	~BRepAlgo() {
+	printf("Call custom destructor for instance of BRepAlgo\n");
+	}
+};
 
 %nodefaultctor BRepAlgo_Cut;
 class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
@@ -978,6 +1033,11 @@ class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 		%feature("autodoc", "1");
 		virtual		~BRepAlgo_Cut();
 
+};
+%extend BRepAlgo_Cut {
+	~BRepAlgo_Cut() {
+	printf("Call custom destructor for instance of BRepAlgo_Cut\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean;
@@ -997,6 +1057,11 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_Basic
 		const Standard_Boolean & Value() const;
 
 };
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean {
+	~BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean() {
+	printf("Call custom destructor for instance of BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean\n");
+	}
+};
 
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger;
 class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection_BasicMapIterator {
@@ -1014,6 +1079,11 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection
 		%feature("autodoc", "1");
 		const TColStd_ListOfInteger & Value() const;
 
+};
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger {
+	~BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger() {
+	printf("Call custom destructor for instance of BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger\n");
+	}
 };
 
 %nodefaultctor BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;

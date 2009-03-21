@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module MeshAlgo
@@ -122,6 +122,11 @@ class MeshAlgo {
 		void SetTrace(const Standard_Integer val);
 
 };
+%extend MeshAlgo {
+	~MeshAlgo() {
+	printf("Call custom destructor for instance of MeshAlgo\n");
+	}
+};
 
 %nodefaultctor MeshAlgo_DataMapOfIntegerCirc;
 class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
@@ -151,6 +156,11 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		MeshAlgo_Circ & operator()(const Standard_Integer &K);
 
+};
+%extend MeshAlgo_DataMapOfIntegerCirc {
+	~MeshAlgo_DataMapOfIntegerCirc() {
+	printf("Call custom destructor for instance of MeshAlgo_DataMapOfIntegerCirc\n");
+	}
 };
 
 %nodefaultctor MeshAlgo_CircleTool;
@@ -184,6 +194,11 @@ class MeshAlgo_CircleTool {
 		Standard_Integer & GetNbPoints();
 
 };
+%extend MeshAlgo_CircleTool {
+	~MeshAlgo_CircleTool() {
+	printf("Call custom destructor for instance of MeshAlgo_CircleTool\n");
+	}
+};
 
 %nodefaultctor MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc;
 class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicMapIterator {
@@ -201,6 +216,11 @@ class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicM
 		%feature("autodoc", "1");
 		const MeshAlgo_Circ & Value() const;
 
+};
+%extend MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc {
+	~MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc() {
+	printf("Call custom destructor for instance of MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc\n");
+	}
 };
 
 %nodefaultctor MeshAlgo_Circ;
@@ -221,6 +241,11 @@ class MeshAlgo_Circ {
 		%feature("autodoc", "1");
 		const Standard_Real & Radius() const;
 
+};
+%extend MeshAlgo_Circ {
+	~MeshAlgo_Circ() {
+	printf("Call custom destructor for instance of MeshAlgo_Circ\n");
+	}
 };
 
 %nodefaultctor MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc;

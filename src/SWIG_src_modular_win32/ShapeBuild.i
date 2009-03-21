@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module ShapeBuild
@@ -199,6 +199,11 @@ class ShapeBuild_Vertex {
 		%feature("autodoc", "1");
 		TopoDS_Vertex CombineVertex(const gp_Pnt &pnt1, const gp_Pnt &pnt2, const Standard_Real tol1, const Standard_Real tol2, const Standard_Real tolFactor=1.00009999999999998898658759571844711899757385254e+0) const;
 
+};
+%extend ShapeBuild_Vertex {
+	~ShapeBuild_Vertex() {
+	printf("Call custom destructor for instance of ShapeBuild_Vertex\n");
+	}
 };
 
 %nodefaultctor ShapeBuild;

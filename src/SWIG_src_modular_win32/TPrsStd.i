@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TPrsStd
@@ -516,6 +516,11 @@ class TPrsStd_ConstraintTools {
 		%feature("autodoc", "1");
 		void ComputeAngleForOneFace(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 
+};
+%extend TPrsStd_ConstraintTools {
+	~TPrsStd_ConstraintTools() {
+	printf("Call custom destructor for instance of TPrsStd_ConstraintTools\n");
+	}
 };
 
 %nodefaultctor TPrsStd_AISPresentation;

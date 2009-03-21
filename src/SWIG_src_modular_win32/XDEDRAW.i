@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module XDEDRAW
@@ -95,6 +95,11 @@ class XDEDRAW_Common {
 		void InitCommands(Draw_Interpretor & theCommands);
 
 };
+%extend XDEDRAW_Common {
+	~XDEDRAW_Common() {
+	printf("Call custom destructor for instance of XDEDRAW_Common\n");
+	}
+};
 
 %nodefaultctor XDEDRAW_Layers;
 class XDEDRAW_Layers {
@@ -106,6 +111,11 @@ class XDEDRAW_Layers {
 		%feature("autodoc", "1");
 		void InitCommands(Draw_Interpretor & theCommands);
 
+};
+%extend XDEDRAW_Layers {
+	~XDEDRAW_Layers() {
+	printf("Call custom destructor for instance of XDEDRAW_Layers\n");
+	}
 };
 
 %nodefaultctor XDEDRAW;
@@ -121,6 +131,11 @@ class XDEDRAW {
 		void Factory(Draw_Interpretor & theDI);
 
 };
+%extend XDEDRAW {
+	~XDEDRAW() {
+	printf("Call custom destructor for instance of XDEDRAW\n");
+	}
+};
 
 %nodefaultctor XDEDRAW_Colors;
 class XDEDRAW_Colors {
@@ -132,6 +147,11 @@ class XDEDRAW_Colors {
 		%feature("autodoc", "1");
 		void InitCommands(Draw_Interpretor & theCommands);
 
+};
+%extend XDEDRAW_Colors {
+	~XDEDRAW_Colors() {
+	printf("Call custom destructor for instance of XDEDRAW_Colors\n");
+	}
 };
 
 %nodefaultctor XDEDRAW_Shapes;
@@ -145,6 +165,11 @@ class XDEDRAW_Shapes {
 		void InitCommands(Draw_Interpretor & theCommands);
 
 };
+%extend XDEDRAW_Shapes {
+	~XDEDRAW_Shapes() {
+	printf("Call custom destructor for instance of XDEDRAW_Shapes\n");
+	}
+};
 
 %nodefaultctor XDEDRAW_Props;
 class XDEDRAW_Props {
@@ -156,4 +181,9 @@ class XDEDRAW_Props {
 		%feature("autodoc", "1");
 		void InitCommands(Draw_Interpretor & theCommands);
 
+};
+%extend XDEDRAW_Props {
+	~XDEDRAW_Props() {
+	printf("Call custom destructor for instance of XDEDRAW_Props\n");
+	}
 };

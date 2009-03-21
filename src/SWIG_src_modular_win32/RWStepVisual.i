@@ -99,6 +99,11 @@ class RWStepVisual_RWAreaInSet {
 		void Share(const Handle_StepVisual_AreaInSet &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWAreaInSet {
+	~RWStepVisual_RWAreaInSet() {
+	printf("Call custom destructor for instance of RWStepVisual_RWAreaInSet\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWCompositeTextWithExtent;
 class RWStepVisual_RWCompositeTextWithExtent {
@@ -115,6 +120,11 @@ class RWStepVisual_RWCompositeTextWithExtent {
 		void Share(const Handle_StepVisual_CompositeTextWithExtent &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWCompositeTextWithExtent {
+	~RWStepVisual_RWCompositeTextWithExtent() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCompositeTextWithExtent\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWCurveStyleFontPattern;
 class RWStepVisual_RWCurveStyleFontPattern {
@@ -128,6 +138,11 @@ class RWStepVisual_RWCurveStyleFontPattern {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CurveStyleFontPattern &ent) const;
 
+};
+%extend RWStepVisual_RWCurveStyleFontPattern {
+	~RWStepVisual_RWCurveStyleFontPattern() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCurveStyleFontPattern\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWBackgroundColour;
@@ -145,6 +160,11 @@ class RWStepVisual_RWBackgroundColour {
 		void Share(const Handle_StepVisual_BackgroundColour &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWBackgroundColour {
+	~RWStepVisual_RWBackgroundColour() {
+	printf("Call custom destructor for instance of RWStepVisual_RWBackgroundColour\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWFillAreaStyle;
 class RWStepVisual_RWFillAreaStyle {
@@ -160,6 +180,11 @@ class RWStepVisual_RWFillAreaStyle {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_FillAreaStyle &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWFillAreaStyle {
+	~RWStepVisual_RWFillAreaStyle() {
+	printf("Call custom destructor for instance of RWStepVisual_RWFillAreaStyle\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWTemplate;
@@ -177,6 +202,11 @@ class RWStepVisual_RWTemplate {
 		void Share(const Handle_StepVisual_Template &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWTemplate {
+	~RWStepVisual_RWTemplate() {
+	printf("Call custom destructor for instance of RWStepVisual_RWTemplate\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleSilhouette;
 class RWStepVisual_RWSurfaceStyleSilhouette {
@@ -192,6 +222,11 @@ class RWStepVisual_RWSurfaceStyleSilhouette {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_SurfaceStyleSilhouette &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWSurfaceStyleSilhouette {
+	~RWStepVisual_RWSurfaceStyleSilhouette() {
+	printf("Call custom destructor for instance of RWStepVisual_RWSurfaceStyleSilhouette\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWTextStyleWithBoxCharacteristics;
@@ -209,6 +244,11 @@ class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 		void Share(const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWTextStyleWithBoxCharacteristics {
+	~RWStepVisual_RWTextStyleWithBoxCharacteristics() {
+	printf("Call custom destructor for instance of RWStepVisual_RWTextStyleWithBoxCharacteristics\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleSegmentationCurve;
 class RWStepVisual_RWSurfaceStyleSegmentationCurve {
@@ -224,6 +264,11 @@ class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_SurfaceStyleSegmentationCurve &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWSurfaceStyleSegmentationCurve {
+	~RWStepVisual_RWSurfaceStyleSegmentationCurve() {
+	printf("Call custom destructor for instance of RWStepVisual_RWSurfaceStyleSegmentationCurve\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation;
@@ -241,6 +286,11 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
 		void Share(const Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
+	~RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation() {
+	printf("Call custom destructor for instance of RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPresentedItemRepresentation;
 class RWStepVisual_RWPresentedItemRepresentation {
@@ -256,6 +306,11 @@ class RWStepVisual_RWPresentedItemRepresentation {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_PresentedItemRepresentation &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWPresentedItemRepresentation {
+	~RWStepVisual_RWPresentedItemRepresentation() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentedItemRepresentation\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleUsage;
@@ -273,6 +328,11 @@ class RWStepVisual_RWSurfaceStyleUsage {
 		void Share(const Handle_StepVisual_SurfaceStyleUsage &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWSurfaceStyleUsage {
+	~RWStepVisual_RWSurfaceStyleUsage() {
+	printf("Call custom destructor for instance of RWStepVisual_RWSurfaceStyleUsage\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPreDefinedColour;
 class RWStepVisual_RWPreDefinedColour {
@@ -286,6 +346,11 @@ class RWStepVisual_RWPreDefinedColour {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedColour &ent) const;
 
+};
+%extend RWStepVisual_RWPreDefinedColour {
+	~RWStepVisual_RWPreDefinedColour() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPreDefinedColour\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWContextDependentInvisibility;
@@ -303,6 +368,11 @@ class RWStepVisual_RWContextDependentInvisibility {
 		void Share(const Handle_StepVisual_ContextDependentInvisibility &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWContextDependentInvisibility {
+	~RWStepVisual_RWContextDependentInvisibility() {
+	printf("Call custom destructor for instance of RWStepVisual_RWContextDependentInvisibility\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPreDefinedCurveFont;
 class RWStepVisual_RWPreDefinedCurveFont {
@@ -316,6 +386,11 @@ class RWStepVisual_RWPreDefinedCurveFont {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedCurveFont &ent) const;
 
+};
+%extend RWStepVisual_RWPreDefinedCurveFont {
+	~RWStepVisual_RWPreDefinedCurveFont() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPreDefinedCurveFont\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWMechanicalDesignGeometricPresentationArea;
@@ -333,6 +408,11 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 		void Share(const Handle_StepVisual_MechanicalDesignGeometricPresentationArea &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
+	~RWStepVisual_RWMechanicalDesignGeometricPresentationArea() {
+	printf("Call custom destructor for instance of RWStepVisual_RWMechanicalDesignGeometricPresentationArea\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPresentationArea;
 class RWStepVisual_RWPresentationArea {
@@ -348,6 +428,11 @@ class RWStepVisual_RWPresentationArea {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_PresentationArea &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWPresentationArea {
+	~RWStepVisual_RWPresentationArea() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentationArea\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWPresentationView;
@@ -365,6 +450,11 @@ class RWStepVisual_RWPresentationView {
 		void Share(const Handle_StepVisual_PresentationView &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWPresentationView {
+	~RWStepVisual_RWPresentationView() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentationView\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPresentationSize;
 class RWStepVisual_RWPresentationSize {
@@ -380,6 +470,11 @@ class RWStepVisual_RWPresentationSize {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_PresentationSize &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWPresentationSize {
+	~RWStepVisual_RWPresentationSize() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentationSize\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWPresentationStyleByContext;
@@ -397,6 +492,11 @@ class RWStepVisual_RWPresentationStyleByContext {
 		void Share(const Handle_StepVisual_PresentationStyleByContext &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWPresentationStyleByContext {
+	~RWStepVisual_RWPresentationStyleByContext() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentationStyleByContext\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWColourRgb;
 class RWStepVisual_RWColourRgb {
@@ -411,6 +511,11 @@ class RWStepVisual_RWColourRgb {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ColourRgb &ent) const;
 
 };
+%extend RWStepVisual_RWColourRgb {
+	~RWStepVisual_RWColourRgb() {
+	printf("Call custom destructor for instance of RWStepVisual_RWColourRgb\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPresentationSet;
 class RWStepVisual_RWPresentationSet {
@@ -424,6 +529,11 @@ class RWStepVisual_RWPresentationSet {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationSet &ent) const;
 
+};
+%extend RWStepVisual_RWPresentationSet {
+	~RWStepVisual_RWPresentationSet() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentationSet\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWOverRidingStyledItem;
@@ -441,6 +551,11 @@ class RWStepVisual_RWOverRidingStyledItem {
 		void Share(const Handle_StepVisual_OverRidingStyledItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWOverRidingStyledItem {
+	~RWStepVisual_RWOverRidingStyledItem() {
+	printf("Call custom destructor for instance of RWStepVisual_RWOverRidingStyledItem\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWSurfaceSideStyle;
 class RWStepVisual_RWSurfaceSideStyle {
@@ -456,6 +571,11 @@ class RWStepVisual_RWSurfaceSideStyle {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_SurfaceSideStyle &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWSurfaceSideStyle {
+	~RWStepVisual_RWSurfaceSideStyle() {
+	printf("Call custom destructor for instance of RWStepVisual_RWSurfaceSideStyle\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWTextStyle;
@@ -473,6 +593,11 @@ class RWStepVisual_RWTextStyle {
 		void Share(const Handle_StepVisual_TextStyle &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWTextStyle {
+	~RWStepVisual_RWTextStyle() {
+	printf("Call custom destructor for instance of RWStepVisual_RWTextStyle\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWCameraImage;
 class RWStepVisual_RWCameraImage {
@@ -488,6 +613,11 @@ class RWStepVisual_RWCameraImage {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_CameraImage &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWCameraImage {
+	~RWStepVisual_RWCameraImage() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCameraImage\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWPresentationLayerAssignment;
@@ -505,6 +635,11 @@ class RWStepVisual_RWPresentationLayerAssignment {
 		void Share(const Handle_StepVisual_PresentationLayerAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWPresentationLayerAssignment {
+	~RWStepVisual_RWPresentationLayerAssignment() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentationLayerAssignment\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWTextLiteral;
 class RWStepVisual_RWTextLiteral {
@@ -521,6 +656,11 @@ class RWStepVisual_RWTextLiteral {
 		void Share(const Handle_StepVisual_TextLiteral &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWTextLiteral {
+	~RWStepVisual_RWTextLiteral() {
+	printf("Call custom destructor for instance of RWStepVisual_RWTextLiteral\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPlanarExtent;
 class RWStepVisual_RWPlanarExtent {
@@ -534,6 +674,11 @@ class RWStepVisual_RWPlanarExtent {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PlanarExtent &ent) const;
 
+};
+%extend RWStepVisual_RWPlanarExtent {
+	~RWStepVisual_RWPlanarExtent() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPlanarExtent\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleControlGrid;
@@ -551,6 +696,11 @@ class RWStepVisual_RWSurfaceStyleControlGrid {
 		void Share(const Handle_StepVisual_SurfaceStyleControlGrid &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWSurfaceStyleControlGrid {
+	~RWStepVisual_RWSurfaceStyleControlGrid() {
+	printf("Call custom destructor for instance of RWStepVisual_RWSurfaceStyleControlGrid\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWInvisibility;
 class RWStepVisual_RWInvisibility {
@@ -566,6 +716,11 @@ class RWStepVisual_RWInvisibility {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_Invisibility &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWInvisibility {
+	~RWStepVisual_RWInvisibility() {
+	printf("Call custom destructor for instance of RWStepVisual_RWInvisibility\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleBoundary;
@@ -583,6 +738,11 @@ class RWStepVisual_RWSurfaceStyleBoundary {
 		void Share(const Handle_StepVisual_SurfaceStyleBoundary &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWSurfaceStyleBoundary {
+	~RWStepVisual_RWSurfaceStyleBoundary() {
+	printf("Call custom destructor for instance of RWStepVisual_RWSurfaceStyleBoundary\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPreDefinedItem;
 class RWStepVisual_RWPreDefinedItem {
@@ -597,6 +757,11 @@ class RWStepVisual_RWPreDefinedItem {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedItem &ent) const;
 
 };
+%extend RWStepVisual_RWPreDefinedItem {
+	~RWStepVisual_RWPreDefinedItem() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPreDefinedItem\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWColourSpecification;
 class RWStepVisual_RWColourSpecification {
@@ -610,6 +775,11 @@ class RWStepVisual_RWColourSpecification {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ColourSpecification &ent) const;
 
+};
+%extend RWStepVisual_RWColourSpecification {
+	~RWStepVisual_RWColourSpecification() {
+	printf("Call custom destructor for instance of RWStepVisual_RWColourSpecification\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWFillAreaStyleColour;
@@ -627,6 +797,11 @@ class RWStepVisual_RWFillAreaStyleColour {
 		void Share(const Handle_StepVisual_FillAreaStyleColour &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWFillAreaStyleColour {
+	~RWStepVisual_RWFillAreaStyleColour() {
+	printf("Call custom destructor for instance of RWStepVisual_RWFillAreaStyleColour\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWTemplateInstance;
 class RWStepVisual_RWTemplateInstance {
@@ -642,6 +817,11 @@ class RWStepVisual_RWTemplateInstance {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_TemplateInstance &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWTemplateInstance {
+	~RWStepVisual_RWTemplateInstance() {
+	printf("Call custom destructor for instance of RWStepVisual_RWTemplateInstance\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleFillArea;
@@ -659,6 +839,11 @@ class RWStepVisual_RWSurfaceStyleFillArea {
 		void Share(const Handle_StepVisual_SurfaceStyleFillArea &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWSurfaceStyleFillArea {
+	~RWStepVisual_RWSurfaceStyleFillArea() {
+	printf("Call custom destructor for instance of RWStepVisual_RWSurfaceStyleFillArea\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWViewVolume;
 class RWStepVisual_RWViewVolume {
@@ -674,6 +859,11 @@ class RWStepVisual_RWViewVolume {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_ViewVolume &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWViewVolume {
+	~RWStepVisual_RWViewVolume() {
+	printf("Call custom destructor for instance of RWStepVisual_RWViewVolume\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWStyledItem;
@@ -691,6 +881,11 @@ class RWStepVisual_RWStyledItem {
 		void Share(const Handle_StepVisual_StyledItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWStyledItem {
+	~RWStepVisual_RWStyledItem() {
+	printf("Call custom destructor for instance of RWStepVisual_RWStyledItem\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWCurveStyle;
 class RWStepVisual_RWCurveStyle {
@@ -706,6 +901,11 @@ class RWStepVisual_RWCurveStyle {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_CurveStyle &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWCurveStyle {
+	~RWStepVisual_RWCurveStyle() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCurveStyle\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWContextDependentOverRidingStyledItem;
@@ -723,6 +923,11 @@ class RWStepVisual_RWContextDependentOverRidingStyledItem {
 		void Share(const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWContextDependentOverRidingStyledItem {
+	~RWStepVisual_RWContextDependentOverRidingStyledItem() {
+	printf("Call custom destructor for instance of RWStepVisual_RWContextDependentOverRidingStyledItem\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPointStyle;
 class RWStepVisual_RWPointStyle {
@@ -738,6 +943,11 @@ class RWStepVisual_RWPointStyle {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_PointStyle &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWPointStyle {
+	~RWStepVisual_RWPointStyle() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPointStyle\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWCompositeText;
@@ -755,6 +965,11 @@ class RWStepVisual_RWCompositeText {
 		void Share(const Handle_StepVisual_CompositeText &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWCompositeText {
+	~RWStepVisual_RWCompositeText() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCompositeText\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWDraughtingModel;
 class RWStepVisual_RWDraughtingModel {
@@ -771,6 +986,11 @@ class RWStepVisual_RWDraughtingModel {
 		void Share(const Handle_StepVisual_DraughtingModel &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWDraughtingModel {
+	~RWStepVisual_RWDraughtingModel() {
+	printf("Call custom destructor for instance of RWStepVisual_RWDraughtingModel\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWCameraModel;
 class RWStepVisual_RWCameraModel {
@@ -784,6 +1004,11 @@ class RWStepVisual_RWCameraModel {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraModel &ent) const;
 
+};
+%extend RWStepVisual_RWCameraModel {
+	~RWStepVisual_RWCameraModel() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCameraModel\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWCameraUsage;
@@ -801,6 +1026,11 @@ class RWStepVisual_RWCameraUsage {
 		void Share(const Handle_StepVisual_CameraUsage &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWCameraUsage {
+	~RWStepVisual_RWCameraUsage() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCameraUsage\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWTextStyleForDefinedFont;
 class RWStepVisual_RWTextStyleForDefinedFont {
@@ -817,6 +1047,11 @@ class RWStepVisual_RWTextStyleForDefinedFont {
 		void Share(const Handle_StepVisual_TextStyleForDefinedFont &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWTextStyleForDefinedFont {
+	~RWStepVisual_RWTextStyleForDefinedFont() {
+	printf("Call custom destructor for instance of RWStepVisual_RWTextStyleForDefinedFont\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWColour;
 class RWStepVisual_RWColour {
@@ -830,6 +1065,11 @@ class RWStepVisual_RWColour {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_Colour &ent) const;
 
+};
+%extend RWStepVisual_RWColour {
+	~RWStepVisual_RWColour() {
+	printf("Call custom destructor for instance of RWStepVisual_RWColour\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWPresentationRepresentation;
@@ -847,6 +1087,11 @@ class RWStepVisual_RWPresentationRepresentation {
 		void Share(const Handle_StepVisual_PresentationRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWPresentationRepresentation {
+	~RWStepVisual_RWPresentationRepresentation() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentationRepresentation\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWCurveStyleFont;
 class RWStepVisual_RWCurveStyleFont {
@@ -862,6 +1107,11 @@ class RWStepVisual_RWCurveStyleFont {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_CurveStyleFont &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWCurveStyleFont {
+	~RWStepVisual_RWCurveStyleFont() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCurveStyleFont\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWPresentationLayerUsage;
@@ -879,6 +1129,11 @@ class RWStepVisual_RWPresentationLayerUsage {
 		void Share(const Handle_StepVisual_PresentationLayerUsage &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWPresentationLayerUsage {
+	~RWStepVisual_RWPresentationLayerUsage() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentationLayerUsage\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWExternallyDefinedCurveFont;
 class RWStepVisual_RWExternallyDefinedCurveFont {
@@ -895,6 +1150,11 @@ class RWStepVisual_RWExternallyDefinedCurveFont {
 		void Share(const Handle_StepVisual_ExternallyDefinedCurveFont &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWExternallyDefinedCurveFont {
+	~RWStepVisual_RWExternallyDefinedCurveFont() {
+	printf("Call custom destructor for instance of RWStepVisual_RWExternallyDefinedCurveFont\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWDraughtingPreDefinedCurveFont;
 class RWStepVisual_RWDraughtingPreDefinedCurveFont {
@@ -908,6 +1168,11 @@ class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_DraughtingPreDefinedCurveFont &ent) const;
 
+};
+%extend RWStepVisual_RWDraughtingPreDefinedCurveFont {
+	~RWStepVisual_RWDraughtingPreDefinedCurveFont() {
+	printf("Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedCurveFont\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWPresentationStyleAssignment;
@@ -925,6 +1190,11 @@ class RWStepVisual_RWPresentationStyleAssignment {
 		void Share(const Handle_StepVisual_PresentationStyleAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWPresentationStyleAssignment {
+	~RWStepVisual_RWPresentationStyleAssignment() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPresentationStyleAssignment\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWPlanarBox;
 class RWStepVisual_RWPlanarBox {
@@ -940,6 +1210,11 @@ class RWStepVisual_RWPlanarBox {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_PlanarBox &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWPlanarBox {
+	~RWStepVisual_RWPlanarBox() {
+	printf("Call custom destructor for instance of RWStepVisual_RWPlanarBox\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWCameraModelD2;
@@ -957,6 +1232,11 @@ class RWStepVisual_RWCameraModelD2 {
 		void Share(const Handle_StepVisual_CameraModelD2 &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWCameraModelD2 {
+	~RWStepVisual_RWCameraModelD2() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCameraModelD2\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWCameraModelD3;
 class RWStepVisual_RWCameraModelD3 {
@@ -973,6 +1253,11 @@ class RWStepVisual_RWCameraModelD3 {
 		void Share(const Handle_StepVisual_CameraModelD3 &ent, Interface_EntityIterator & iter) const;
 
 };
+%extend RWStepVisual_RWCameraModelD3 {
+	~RWStepVisual_RWCameraModelD3() {
+	printf("Call custom destructor for instance of RWStepVisual_RWCameraModelD3\n");
+	}
+};
 
 %nodefaultctor RWStepVisual_RWDraughtingPreDefinedColour;
 class RWStepVisual_RWDraughtingPreDefinedColour {
@@ -986,6 +1271,11 @@ class RWStepVisual_RWDraughtingPreDefinedColour {
 		%feature("autodoc", "1");
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_DraughtingPreDefinedColour &ent) const;
 
+};
+%extend RWStepVisual_RWDraughtingPreDefinedColour {
+	~RWStepVisual_RWDraughtingPreDefinedColour() {
+	printf("Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedColour\n");
+	}
 };
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleParameterLine;
@@ -1002,4 +1292,9 @@ class RWStepVisual_RWSurfaceStyleParameterLine {
 		%feature("autodoc", "1");
 		void Share(const Handle_StepVisual_SurfaceStyleParameterLine &ent, Interface_EntityIterator & iter) const;
 
+};
+%extend RWStepVisual_RWSurfaceStyleParameterLine {
+	~RWStepVisual_RWSurfaceStyleParameterLine() {
+	printf("Call custom destructor for instance of RWStepVisual_RWSurfaceStyleParameterLine\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module SelectBasics
@@ -251,6 +251,11 @@ class SelectBasics_SortAlgo {
 		Standard_Integer Value() const;
 
 };
+%extend SelectBasics_SortAlgo {
+	~SelectBasics_SortAlgo() {
+	printf("Call custom destructor for instance of SelectBasics_SortAlgo\n");
+	}
+};
 
 %nodefaultctor SelectBasics_ListIteratorOfListOfBox2d;
 class SelectBasics_ListIteratorOfListOfBox2d {
@@ -270,6 +275,11 @@ class SelectBasics_ListIteratorOfListOfBox2d {
 		%feature("autodoc", "1");
 		Bnd_Box2d & Value() const;
 
+};
+%extend SelectBasics_ListIteratorOfListOfBox2d {
+	~SelectBasics_ListIteratorOfListOfBox2d() {
+	printf("Call custom destructor for instance of SelectBasics_ListIteratorOfListOfBox2d\n");
+	}
 };
 
 %nodefaultctor SelectBasics_EntityOwner;
@@ -433,6 +443,11 @@ class SelectBasics_BasicTool {
 		Standard_Boolean MatchPolyg2d(const TColgp_Array1OfPnt2d &tabpoint, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue, Standard_Integer & Rank);
 
 };
+%extend SelectBasics_BasicTool {
+	~SelectBasics_BasicTool() {
+	printf("Call custom destructor for instance of SelectBasics_BasicTool\n");
+	}
+};
 
 %nodefaultctor SelectBasics;
 class SelectBasics {
@@ -446,6 +461,11 @@ class SelectBasics {
 		%feature("autodoc", "1");
 		Standard_Integer MinOwnerPriority();
 
+};
+%extend SelectBasics {
+	~SelectBasics() {
+	printf("Call custom destructor for instance of SelectBasics\n");
+	}
 };
 
 %nodefaultctor SelectBasics_SequenceNodeOfSequenceOfOwner;
@@ -519,6 +539,11 @@ class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend SelectBasics_SequenceOfAddress {
+	~SelectBasics_SequenceOfAddress() {
+	printf("Call custom destructor for instance of SelectBasics_SequenceOfAddress\n");
+	}
+};
 
 %nodefaultctor SelectBasics_ListOfBox2d;
 class SelectBasics_ListOfBox2d {
@@ -564,6 +589,11 @@ class SelectBasics_ListOfBox2d {
 		%feature("autodoc", "1");
 		void InsertAfter(SelectBasics_ListOfBox2d & Other, SelectBasics_ListIteratorOfListOfBox2d & It);
 
+};
+%extend SelectBasics_ListOfBox2d {
+	~SelectBasics_ListOfBox2d() {
+	printf("Call custom destructor for instance of SelectBasics_ListOfBox2d\n");
+	}
 };
 
 %nodefaultctor SelectBasics_SensitiveEntity;

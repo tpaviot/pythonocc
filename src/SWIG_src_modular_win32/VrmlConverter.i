@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module VrmlConverter
@@ -252,6 +252,11 @@ class VrmlConverter_WFDeflectionShape {
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
+%extend VrmlConverter_WFDeflectionShape {
+	~VrmlConverter_WFDeflectionShape() {
+	printf("Call custom destructor for instance of VrmlConverter_WFDeflectionShape\n");
+	}
+};
 
 %nodefaultctor VrmlConverter_WFDeflectionRestrictedFace;
 class VrmlConverter_WFDeflectionRestrictedFace {
@@ -269,6 +274,11 @@ class VrmlConverter_WFDeflectionRestrictedFace {
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
 
+};
+%extend VrmlConverter_WFDeflectionRestrictedFace {
+	~VrmlConverter_WFDeflectionRestrictedFace() {
+	printf("Call custom destructor for instance of VrmlConverter_WFDeflectionRestrictedFace\n");
+	}
 };
 
 %nodefaultctor VrmlConverter_WFRestrictedFace;
@@ -288,6 +298,11 @@ class VrmlConverter_WFRestrictedFace {
 		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
+%extend VrmlConverter_WFRestrictedFace {
+	~VrmlConverter_WFRestrictedFace() {
+	printf("Call custom destructor for instance of VrmlConverter_WFRestrictedFace\n");
+	}
+};
 
 %nodefaultctor VrmlConverter_ShadedShape;
 class VrmlConverter_ShadedShape {
@@ -301,6 +316,11 @@ class VrmlConverter_ShadedShape {
 		%feature("autodoc", "1");
 		void ComputeNormal(const TopoDS_Face &aFace, Poly_Connect & pc, TColgp_Array1OfDir & Nor);
 
+};
+%extend VrmlConverter_ShadedShape {
+	~VrmlConverter_ShadedShape() {
+	printf("Call custom destructor for instance of VrmlConverter_ShadedShape\n");
+	}
 };
 
 %nodefaultctor VrmlConverter_Drawer;
@@ -424,6 +444,11 @@ class VrmlConverter_DeflectionCurve {
 		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real aDeflection);
 
 };
+%extend VrmlConverter_DeflectionCurve {
+	~VrmlConverter_DeflectionCurve() {
+	printf("Call custom destructor for instance of VrmlConverter_DeflectionCurve\n");
+	}
+};
 
 %nodefaultctor VrmlConverter_ShadingAspect;
 class VrmlConverter_ShadingAspect : public MMgt_TShared {
@@ -508,6 +533,11 @@ class VrmlConverter_Curve {
 		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, Standard_OStream & anOStream, const Standard_Integer aNbPoints);
 
 };
+%extend VrmlConverter_Curve {
+	~VrmlConverter_Curve() {
+	printf("Call custom destructor for instance of VrmlConverter_Curve\n");
+	}
+};
 
 %nodefaultctor VrmlConverter_HLRShape;
 class VrmlConverter_HLRShape {
@@ -519,6 +549,11 @@ class VrmlConverter_HLRShape {
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
 
+};
+%extend VrmlConverter_HLRShape {
+	~VrmlConverter_HLRShape() {
+	printf("Call custom destructor for instance of VrmlConverter_HLRShape\n");
+	}
 };
 
 %nodefaultctor VrmlConverter_LineAspect;
@@ -615,4 +650,9 @@ class VrmlConverter_WFShape {
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
+};
+%extend VrmlConverter_WFShape {
+	~VrmlConverter_WFShape() {
+	printf("Call custom destructor for instance of VrmlConverter_WFShape\n");
+	}
 };

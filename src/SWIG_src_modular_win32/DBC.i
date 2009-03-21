@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module DBC
@@ -196,6 +196,11 @@ class DBC_VArrayTNodeOfVArrayOfCharacter {
 		Standard_Address Value() const;
 
 };
+%extend DBC_VArrayTNodeOfVArrayOfCharacter {
+	~DBC_VArrayTNodeOfVArrayOfCharacter() {
+	printf("Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfCharacter\n");
+	}
+};
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfExtCharacter;
 class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
@@ -244,6 +249,11 @@ class DBC_VArrayTNodeOfVArrayOfInteger {
 		Standard_Address Value() const;
 
 };
+%extend DBC_VArrayTNodeOfVArrayOfInteger {
+	~DBC_VArrayTNodeOfVArrayOfInteger() {
+	printf("Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfInteger\n");
+	}
+};
 
 %nodefaultctor DBC_BaseArray;
 class DBC_BaseArray {
@@ -278,6 +288,11 @@ class DBC_BaseArray {
 		void _CSFDB_SetDBC_BaseArraymyData(const DBC_DBVArray p);
 
 };
+%extend DBC_BaseArray {
+	~DBC_BaseArray() {
+	printf("Call custom destructor for instance of DBC_BaseArray\n");
+	}
+};
 
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfExtCharacter;
 class DBC_VArrayTNodeOfVArrayOfExtCharacter {
@@ -293,6 +308,11 @@ class DBC_VArrayTNodeOfVArrayOfExtCharacter {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend DBC_VArrayTNodeOfVArrayOfExtCharacter {
+	~DBC_VArrayTNodeOfVArrayOfExtCharacter() {
+	printf("Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfExtCharacter\n");
+	}
 };
 
 %nodefaultctor DBC_VArrayOfReal;
@@ -320,6 +340,11 @@ class DBC_VArrayOfReal : public DBC_BaseArray {
 		virtual		~DBC_VArrayOfReal();
 
 };
+%extend DBC_VArrayOfReal {
+	~DBC_VArrayOfReal() {
+	printf("Call custom destructor for instance of DBC_VArrayOfReal\n");
+	}
+};
 
 %nodefaultctor DBC_VArrayOfCharacter;
 class DBC_VArrayOfCharacter : public DBC_BaseArray {
@@ -345,6 +370,11 @@ class DBC_VArrayOfCharacter : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		virtual		~DBC_VArrayOfCharacter();
 
+};
+%extend DBC_VArrayOfCharacter {
+	~DBC_VArrayOfCharacter() {
+	printf("Call custom destructor for instance of DBC_VArrayOfCharacter\n");
+	}
 };
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfCharacter;
@@ -404,6 +434,11 @@ class DBC_VArrayOfInteger : public DBC_BaseArray {
 		virtual		~DBC_VArrayOfInteger();
 
 };
+%extend DBC_VArrayOfInteger {
+	~DBC_VArrayOfInteger() {
+	printf("Call custom destructor for instance of DBC_VArrayOfInteger\n");
+	}
+};
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfReal;
 class DBC_VArrayNodeOfVArrayOfReal : public PStandard_ArrayNode {
@@ -452,6 +487,11 @@ class DBC_VArrayTNodeOfVArrayOfReal {
 		Standard_Address Value() const;
 
 };
+%extend DBC_VArrayTNodeOfVArrayOfReal {
+	~DBC_VArrayTNodeOfVArrayOfReal() {
+	printf("Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfReal\n");
+	}
+};
 
 %nodefaultctor DBC_VArrayOfExtCharacter;
 class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
@@ -477,6 +517,11 @@ class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		virtual		~DBC_VArrayOfExtCharacter();
 
+};
+%extend DBC_VArrayOfExtCharacter {
+	~DBC_VArrayOfExtCharacter() {
+	printf("Call custom destructor for instance of DBC_VArrayOfExtCharacter\n");
+	}
 };
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfInteger;

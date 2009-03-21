@@ -923,6 +923,11 @@ class IGESAppli_ToolNodalConstraint {
 		void OwnDump(const Handle_IGESAppli_NodalConstraint &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolNodalConstraint {
+	~IGESAppli_ToolNodalConstraint() {
+	printf("Call custom destructor for instance of IGESAppli_ToolNodalConstraint\n");
+	}
+};
 
 %nodefaultctor IGESAppli_LevelToPWBLayerMap;
 class IGESAppli_LevelToPWBLayerMap : public IGESData_IGESEntity {
@@ -1020,6 +1025,11 @@ class IGESAppli_ToolLevelToPWBLayerMap {
 		void OwnDump(const Handle_IGESAppli_LevelToPWBLayerMap &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolLevelToPWBLayerMap {
+	~IGESAppli_ToolLevelToPWBLayerMap() {
+	printf("Call custom destructor for instance of IGESAppli_ToolLevelToPWBLayerMap\n");
+	}
+};
 
 %nodefaultctor IGESAppli_HArray1OfNode;
 class IGESAppli_HArray1OfNode : public MMgt_TShared {
@@ -1101,6 +1111,11 @@ class IGESAppli_ToolFiniteElement {
 		void OwnDump(const Handle_IGESAppli_FiniteElement &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolFiniteElement {
+	~IGESAppli_ToolFiniteElement() {
+	printf("Call custom destructor for instance of IGESAppli_ToolFiniteElement\n");
+	}
+};
 
 %nodefaultctor IGESAppli_ToolNodalDisplAndRot;
 class IGESAppli_ToolNodalDisplAndRot {
@@ -1124,6 +1139,11 @@ class IGESAppli_ToolNodalDisplAndRot {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_NodalDisplAndRot &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESAppli_ToolNodalDisplAndRot {
+	~IGESAppli_ToolNodalDisplAndRot() {
+	printf("Call custom destructor for instance of IGESAppli_ToolNodalDisplAndRot\n");
+	}
 };
 
 %nodefaultctor IGESAppli_ToolReferenceDesignator;
@@ -1150,6 +1170,11 @@ class IGESAppli_ToolReferenceDesignator {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_ReferenceDesignator &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESAppli_ToolReferenceDesignator {
+	~IGESAppli_ToolReferenceDesignator() {
+	printf("Call custom destructor for instance of IGESAppli_ToolReferenceDesignator\n");
+	}
 };
 
 %nodefaultctor IGESAppli_ElementResults;
@@ -1287,6 +1312,11 @@ class IGESAppli_ToolRegionRestriction {
 		void OwnDump(const Handle_IGESAppli_RegionRestriction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolRegionRestriction {
+	~IGESAppli_ToolRegionRestriction() {
+	printf("Call custom destructor for instance of IGESAppli_ToolRegionRestriction\n");
+	}
+};
 
 %nodefaultctor IGESAppli_DrilledHole;
 class IGESAppli_DrilledHole : public IGESData_IGESEntity {
@@ -1344,6 +1374,11 @@ class IGESAppli_ToolNode {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_Node &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESAppli_ToolNode {
+	~IGESAppli_ToolNode() {
+	printf("Call custom destructor for instance of IGESAppli_ToolNode\n");
+	}
 };
 
 %nodefaultctor IGESAppli_LevelFunction;
@@ -1518,6 +1553,11 @@ class IGESAppli_ToolNodalResults {
 		void OwnDump(const Handle_IGESAppli_NodalResults &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolNodalResults {
+	~IGESAppli_ToolNodalResults() {
+	printf("Call custom destructor for instance of IGESAppli_ToolNodalResults\n");
+	}
+};
 
 %nodefaultctor IGESAppli_ToolFlowLineSpec;
 class IGESAppli_ToolFlowLineSpec {
@@ -1541,6 +1581,11 @@ class IGESAppli_ToolFlowLineSpec {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_FlowLineSpec &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESAppli_ToolFlowLineSpec {
+	~IGESAppli_ToolFlowLineSpec() {
+	printf("Call custom destructor for instance of IGESAppli_ToolFlowLineSpec\n");
+	}
 };
 
 %nodefaultctor IGESAppli_ReadWriteModule;
@@ -1593,6 +1638,11 @@ class IGESAppli_ToolDrilledHole {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_DrilledHole &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESAppli_ToolDrilledHole {
+	~IGESAppli_ToolDrilledHole() {
+	printf("Call custom destructor for instance of IGESAppli_ToolDrilledHole\n");
+	}
 };
 
 %nodefaultctor IGESAppli_NodalConstraint;
@@ -1714,6 +1764,11 @@ class IGESAppli_ToolPWBArtworkStackup {
 		void OwnDump(const Handle_IGESAppli_PWBArtworkStackup &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolPWBArtworkStackup {
+	~IGESAppli_ToolPWBArtworkStackup() {
+	printf("Call custom destructor for instance of IGESAppli_ToolPWBArtworkStackup\n");
+	}
+};
 
 %nodefaultctor IGESAppli_PinNumber;
 class IGESAppli_PinNumber : public IGESData_IGESEntity {
@@ -1763,6 +1818,11 @@ class IGESAppli_ToolElementResults {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_ElementResults &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESAppli_ToolElementResults {
+	~IGESAppli_ToolElementResults() {
+	printf("Call custom destructor for instance of IGESAppli_ToolElementResults\n");
+	}
 };
 
 %nodefaultctor IGESAppli_Array1OfFlow;
@@ -1903,6 +1963,11 @@ class IGESAppli_ToolLevelFunction {
 		void OwnDump(const Handle_IGESAppli_LevelFunction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolLevelFunction {
+	~IGESAppli_ToolLevelFunction() {
+	printf("Call custom destructor for instance of IGESAppli_ToolLevelFunction\n");
+	}
+};
 
 %nodefaultctor IGESAppli_ToolPinNumber;
 class IGESAppli_ToolPinNumber {
@@ -1928,6 +1993,11 @@ class IGESAppli_ToolPinNumber {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_PinNumber &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESAppli_ToolPinNumber {
+	~IGESAppli_ToolPinNumber() {
+	printf("Call custom destructor for instance of IGESAppli_ToolPinNumber\n");
+	}
 };
 
 %nodefaultctor IGESAppli_PWBDrilledHole;
@@ -2017,6 +2087,11 @@ class IGESAppli_ToolPWBDrilledHole {
 		void OwnDump(const Handle_IGESAppli_PWBDrilledHole &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolPWBDrilledHole {
+	~IGESAppli_ToolPWBDrilledHole() {
+	printf("Call custom destructor for instance of IGESAppli_ToolPWBDrilledHole\n");
+	}
+};
 
 %nodefaultctor IGESAppli_ToolLineWidening;
 class IGESAppli_ToolLineWidening {
@@ -2043,6 +2118,11 @@ class IGESAppli_ToolLineWidening {
 		void OwnDump(const Handle_IGESAppli_LineWidening &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolLineWidening {
+	~IGESAppli_ToolLineWidening() {
+	printf("Call custom destructor for instance of IGESAppli_ToolLineWidening\n");
+	}
+};
 
 %nodefaultctor IGESAppli_ToolPipingFlow;
 class IGESAppli_ToolPipingFlow {
@@ -2068,6 +2148,11 @@ class IGESAppli_ToolPipingFlow {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_PipingFlow &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESAppli_ToolPipingFlow {
+	~IGESAppli_ToolPipingFlow() {
+	printf("Call custom destructor for instance of IGESAppli_ToolPipingFlow\n");
+	}
 };
 
 %nodefaultctor IGESAppli_Node;
@@ -2157,6 +2242,11 @@ class IGESAppli_ToolFlow {
 		void OwnDump(const Handle_IGESAppli_Flow &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%extend IGESAppli_ToolFlow {
+	~IGESAppli_ToolFlow() {
+	printf("Call custom destructor for instance of IGESAppli_ToolFlow\n");
+	}
+};
 
 %nodefaultctor IGESAppli_ToolPartNumber;
 class IGESAppli_ToolPartNumber {
@@ -2182,4 +2272,9 @@ class IGESAppli_ToolPartNumber {
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESAppli_PartNumber &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
+};
+%extend IGESAppli_ToolPartNumber {
+	~IGESAppli_ToolPartNumber() {
+	printf("Call custom destructor for instance of IGESAppli_ToolPartNumber\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepLProp
@@ -105,6 +105,11 @@ class BRepLProp_SurfaceTool {
 		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%extend BRepLProp_SurfaceTool {
+	~BRepLProp_SurfaceTool() {
+	printf("Call custom destructor for instance of BRepLProp_SurfaceTool\n");
+	}
+};
 
 %nodefaultctor BRepLProp_SLProps;
 class BRepLProp_SLProps {
@@ -161,6 +166,11 @@ class BRepLProp_SLProps {
 		Standard_Real GaussianCurvature();
 
 };
+%extend BRepLProp_SLProps {
+	~BRepLProp_SLProps() {
+	printf("Call custom destructor for instance of BRepLProp_SLProps\n");
+	}
+};
 
 %nodefaultctor BRepLProp_CurveTool;
 class BRepLProp_CurveTool {
@@ -184,6 +194,11 @@ class BRepLProp_CurveTool {
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
 
+};
+%extend BRepLProp_CurveTool {
+	~BRepLProp_CurveTool() {
+	printf("Call custom destructor for instance of BRepLProp_CurveTool\n");
+	}
 };
 
 %nodefaultctor BRepLProp_CLProps;
@@ -221,6 +236,11 @@ class BRepLProp_CLProps {
 		void CentreOfCurvature(gp_Pnt & P);
 
 };
+%extend BRepLProp_CLProps {
+	~BRepLProp_CLProps() {
+	printf("Call custom destructor for instance of BRepLProp_CLProps\n");
+	}
+};
 
 %nodefaultctor BRepLProp;
 class BRepLProp {
@@ -234,4 +254,9 @@ class BRepLProp {
 		%feature("autodoc", "1");
 		GeomAbs_Shape Continuity(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2, const Standard_Real u1, const Standard_Real u2);
 
+};
+%extend BRepLProp {
+	~BRepLProp() {
+	printf("Call custom destructor for instance of BRepLProp\n");
+	}
 };

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module BRepCheck
@@ -388,6 +388,11 @@ class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
 		BRepCheck_ListOfStatus & operator()(const TopoDS_Shape &K);
 
 };
+%extend BRepCheck_DataMapOfShapeListOfStatus {
+	~BRepCheck_DataMapOfShapeListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_DataMapOfShapeListOfStatus\n");
+	}
+};
 
 %nodefaultctor BRepCheck_Result;
 class BRepCheck_Result : public MMgt_TShared {
@@ -563,6 +568,11 @@ class BRepCheck {
 		Standard_Boolean SelfIntersection(const TopoDS_Wire &W, const TopoDS_Face &F, TopoDS_Edge & E1, TopoDS_Edge & E2);
 
 };
+%extend BRepCheck {
+	~BRepCheck() {
+	printf("Call custom destructor for instance of BRepCheck\n");
+	}
+};
 
 %nodefaultctor BRepCheck_Wire;
 class BRepCheck_Wire : public BRepCheck_Result {
@@ -736,6 +746,11 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection
 		const BRepCheck_ListOfStatus & Value() const;
 
 };
+%extend BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus {
+	~BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus\n");
+	}
+};
 
 %nodefaultctor BRepCheck_ListOfStatus;
 class BRepCheck_ListOfStatus {
@@ -782,6 +797,11 @@ class BRepCheck_ListOfStatus {
 		void InsertAfter(BRepCheck_ListOfStatus & Other, BRepCheck_ListIteratorOfListOfStatus & It);
 
 };
+%extend BRepCheck_ListOfStatus {
+	~BRepCheck_ListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_ListOfStatus\n");
+	}
+};
 
 %nodefaultctor BRepCheck_ListIteratorOfListOfStatus;
 class BRepCheck_ListIteratorOfListOfStatus {
@@ -801,6 +821,11 @@ class BRepCheck_ListIteratorOfListOfStatus {
 		%feature("autodoc", "1");
 		BRepCheck_Status & Value() const;
 
+};
+%extend BRepCheck_ListIteratorOfListOfStatus {
+	~BRepCheck_ListIteratorOfListOfStatus() {
+	printf("Call custom destructor for instance of BRepCheck_ListIteratorOfListOfStatus\n");
+	}
 };
 
 %nodefaultctor BRepCheck_Analyzer;

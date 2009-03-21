@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Vrml
@@ -407,6 +407,11 @@ class Vrml_WWWInline {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_WWWInline {
+	~Vrml_WWWInline() {
+	printf("Call custom destructor for instance of Vrml_WWWInline\n");
+	}
+};
 
 %nodefaultctor Vrml_Switch;
 class Vrml_Switch {
@@ -422,6 +427,11 @@ class Vrml_Switch {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_Switch {
+	~Vrml_Switch() {
+	printf("Call custom destructor for instance of Vrml_Switch\n");
+	}
 };
 
 %nodefaultctor Vrml_MaterialBinding;
@@ -441,6 +451,11 @@ class Vrml_MaterialBinding {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_MaterialBinding {
+	~Vrml_MaterialBinding() {
+	printf("Call custom destructor for instance of Vrml_MaterialBinding\n");
+	}
+};
 
 %nodefaultctor Vrml_TransformSeparator;
 class Vrml_TransformSeparator {
@@ -452,6 +467,11 @@ class Vrml_TransformSeparator {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream);
 
+};
+%extend Vrml_TransformSeparator {
+	~Vrml_TransformSeparator() {
+	printf("Call custom destructor for instance of Vrml_TransformSeparator\n");
+	}
 };
 
 %nodefaultctor Vrml_FontStyle;
@@ -476,6 +496,11 @@ class Vrml_FontStyle {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_FontStyle {
+	~Vrml_FontStyle() {
+	printf("Call custom destructor for instance of Vrml_FontStyle\n");
+	}
 };
 
 %nodefaultctor Vrml_PointLight;
@@ -507,6 +532,11 @@ class Vrml_PointLight {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_PointLight {
+	~Vrml_PointLight() {
+	printf("Call custom destructor for instance of Vrml_PointLight\n");
+	}
+};
 
 %nodefaultctor Vrml_Instancing;
 class Vrml_Instancing {
@@ -520,6 +550,11 @@ class Vrml_Instancing {
 		%feature("autodoc", "1");
 		Standard_OStream & USE(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_Instancing {
+	~Vrml_Instancing() {
+	printf("Call custom destructor for instance of Vrml_Instancing\n");
+	}
 };
 
 %nodefaultctor Vrml_Sphere;
@@ -536,6 +571,11 @@ class Vrml_Sphere {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_Sphere {
+	~Vrml_Sphere() {
+	printf("Call custom destructor for instance of Vrml_Sphere\n");
+	}
 };
 
 %nodefaultctor Vrml_SpotLight;
@@ -578,6 +618,11 @@ class Vrml_SpotLight {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_SpotLight {
+	~Vrml_SpotLight() {
+	printf("Call custom destructor for instance of Vrml_SpotLight\n");
+	}
 };
 
 %nodefaultctor Vrml_AsciiText;
@@ -762,6 +807,11 @@ class Vrml_PerspectiveCamera {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_PerspectiveCamera {
+	~Vrml_PerspectiveCamera() {
+	printf("Call custom destructor for instance of Vrml_PerspectiveCamera\n");
+	}
+};
 
 %nodefaultctor Vrml_Rotation;
 class Vrml_Rotation {
@@ -780,6 +830,11 @@ class Vrml_Rotation {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Rotation {
+	~Vrml_Rotation() {
+	printf("Call custom destructor for instance of Vrml_Rotation\n");
+	}
+};
 
 %nodefaultctor Vrml_NormalBinding;
 class Vrml_NormalBinding {
@@ -797,6 +852,11 @@ class Vrml_NormalBinding {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_NormalBinding {
+	~Vrml_NormalBinding() {
+	printf("Call custom destructor for instance of Vrml_NormalBinding\n");
+	}
 };
 
 %nodefaultctor Vrml_Normal;
@@ -856,6 +916,11 @@ class Vrml_Texture2Transform {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Texture2Transform {
+	~Vrml_Texture2Transform() {
+	printf("Call custom destructor for instance of Vrml_Texture2Transform\n");
+	}
+};
 
 %nodefaultctor Vrml_Transform;
 class Vrml_Transform {
@@ -889,6 +954,11 @@ class Vrml_Transform {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_Transform {
+	~Vrml_Transform() {
+	printf("Call custom destructor for instance of Vrml_Transform\n");
+	}
 };
 
 %nodefaultctor Vrml_Coordinate3;
@@ -942,6 +1012,11 @@ class Vrml_Cylinder {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Cylinder {
+	~Vrml_Cylinder() {
+	printf("Call custom destructor for instance of Vrml_Cylinder\n");
+	}
+};
 
 %nodefaultctor Vrml_OrthographicCamera;
 class Vrml_OrthographicCamera {
@@ -971,6 +1046,11 @@ class Vrml_OrthographicCamera {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_OrthographicCamera {
+	~Vrml_OrthographicCamera() {
+	printf("Call custom destructor for instance of Vrml_OrthographicCamera\n");
+	}
 };
 
 %nodefaultctor Vrml_LOD;
@@ -1028,6 +1108,11 @@ class Vrml_Cone {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Cone {
+	~Vrml_Cone() {
+	printf("Call custom destructor for instance of Vrml_Cone\n");
+	}
+};
 
 %nodefaultctor Vrml;
 class Vrml {
@@ -1041,6 +1126,11 @@ class Vrml {
 		%feature("autodoc", "1");
 		Standard_OStream & CommentWriter(const char * aComment, Standard_OStream & anOStream);
 
+};
+%extend Vrml {
+	~Vrml() {
+	printf("Call custom destructor for instance of Vrml\n");
+	}
 };
 
 %nodefaultctor Vrml_Info;
@@ -1057,6 +1147,11 @@ class Vrml_Info {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_Info {
+	~Vrml_Info() {
+	printf("Call custom destructor for instance of Vrml_Info\n");
+	}
 };
 
 %nodefaultctor Vrml_Cube;
@@ -1082,6 +1177,11 @@ class Vrml_Cube {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_Cube {
+	~Vrml_Cube() {
+	printf("Call custom destructor for instance of Vrml_Cube\n");
+	}
+};
 
 %nodefaultctor Vrml_MatrixTransform;
 class Vrml_MatrixTransform {
@@ -1099,6 +1199,11 @@ class Vrml_MatrixTransform {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_MatrixTransform {
+	~Vrml_MatrixTransform() {
+	printf("Call custom destructor for instance of Vrml_MatrixTransform\n");
+	}
 };
 
 %nodefaultctor Vrml_DirectionalLight;
@@ -1130,6 +1235,11 @@ class Vrml_DirectionalLight {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_DirectionalLight {
+	~Vrml_DirectionalLight() {
+	printf("Call custom destructor for instance of Vrml_DirectionalLight\n");
+	}
+};
 
 %nodefaultctor Vrml_WWWAnchor;
 class Vrml_WWWAnchor {
@@ -1153,6 +1263,11 @@ class Vrml_WWWAnchor {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_WWWAnchor {
+	~Vrml_WWWAnchor() {
+	printf("Call custom destructor for instance of Vrml_WWWAnchor\n");
+	}
 };
 
 %nodefaultctor Vrml_Material;
@@ -1230,6 +1345,11 @@ class Vrml_ShapeHints {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_ShapeHints {
+	~Vrml_ShapeHints() {
+	printf("Call custom destructor for instance of Vrml_ShapeHints\n");
+	}
+};
 
 %nodefaultctor Vrml_Scale;
 class Vrml_Scale {
@@ -1247,6 +1367,11 @@ class Vrml_Scale {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_Scale {
+	~Vrml_Scale() {
+	printf("Call custom destructor for instance of Vrml_Scale\n");
+	}
 };
 
 %nodefaultctor Vrml_PointSet;
@@ -1268,6 +1393,11 @@ class Vrml_PointSet {
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
 };
+%extend Vrml_PointSet {
+	~Vrml_PointSet() {
+	printf("Call custom destructor for instance of Vrml_PointSet\n");
+	}
+};
 
 %nodefaultctor Vrml_Separator;
 class Vrml_Separator {
@@ -1286,6 +1416,11 @@ class Vrml_Separator {
 		Standard_OStream & Print(Standard_OStream & anOStream);
 
 };
+%extend Vrml_Separator {
+	~Vrml_Separator() {
+	printf("Call custom destructor for instance of Vrml_Separator\n");
+	}
+};
 
 %nodefaultctor Vrml_Translation;
 class Vrml_Translation {
@@ -1303,6 +1438,11 @@ class Vrml_Translation {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream) const;
 
+};
+%extend Vrml_Translation {
+	~Vrml_Translation() {
+	printf("Call custom destructor for instance of Vrml_Translation\n");
+	}
 };
 
 %nodefaultctor Vrml_SFRotation;
@@ -1332,6 +1472,11 @@ class Vrml_SFRotation {
 		Standard_Real Angle() const;
 
 };
+%extend Vrml_SFRotation {
+	~Vrml_SFRotation() {
+	printf("Call custom destructor for instance of Vrml_SFRotation\n");
+	}
+};
 
 %nodefaultctor Vrml_Group;
 class Vrml_Group {
@@ -1343,6 +1488,11 @@ class Vrml_Group {
 		%feature("autodoc", "1");
 		Standard_OStream & Print(Standard_OStream & anOStream);
 
+};
+%extend Vrml_Group {
+	~Vrml_Group() {
+	printf("Call custom destructor for instance of Vrml_Group\n");
+	}
 };
 
 %nodefaultctor Vrml_TextureCoordinate2;

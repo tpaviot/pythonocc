@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Intf
@@ -248,6 +248,11 @@ class Intf_SectionPoint {
 		void Dump(const Standard_Integer Indent) const;
 
 };
+%extend Intf_SectionPoint {
+	~Intf_SectionPoint() {
+	printf("Call custom destructor for instance of Intf_SectionPoint\n");
+	}
+};
 
 %nodefaultctor Intf_SeqOfTangentZone;
 class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
@@ -297,6 +302,11 @@ class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend Intf_SeqOfTangentZone {
+	~Intf_SeqOfTangentZone() {
+	printf("Call custom destructor for instance of Intf_SeqOfTangentZone\n");
+	}
 };
 
 %nodefaultctor Intf_SeqOfSectionLine;
@@ -348,6 +358,11 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Intf_SeqOfSectionLine {
+	~Intf_SeqOfSectionLine() {
+	printf("Call custom destructor for instance of Intf_SeqOfSectionLine\n");
+	}
+};
 
 %nodefaultctor Intf_Interference;
 class Intf_Interference {
@@ -377,6 +392,11 @@ class Intf_Interference {
 		%feature("autodoc", "1");
 		void Dump() const;
 
+};
+%extend Intf_Interference {
+	~Intf_Interference() {
+	printf("Call custom destructor for instance of Intf_Interference\n");
+	}
 };
 
 %nodefaultctor Intf_SequenceNodeOfSeqOfTangentZone;
@@ -450,6 +470,11 @@ class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend Intf_SeqOfSectionPoint {
+	~Intf_SeqOfSectionPoint() {
+	printf("Call custom destructor for instance of Intf_SeqOfSectionPoint\n");
+	}
+};
 
 %nodefaultctor Intf_Array1OfLin;
 class Intf_Array1OfLin {
@@ -485,6 +510,11 @@ class Intf_Array1OfLin {
 		%feature("autodoc", "1");
 		gp_Lin & operator()(const Standard_Integer Index);
 
+};
+%extend Intf_Array1OfLin {
+	~Intf_Array1OfLin() {
+	printf("Call custom destructor for instance of Intf_Array1OfLin\n");
+	}
 };
 
 %nodefaultctor Intf_TangentZone;
@@ -532,6 +562,11 @@ class Intf_TangentZone {
 		void Dump(const Standard_Integer Indent) const;
 
 };
+%extend Intf_TangentZone {
+	~Intf_TangentZone() {
+	printf("Call custom destructor for instance of Intf_TangentZone\n");
+	}
+};
 
 %nodefaultctor Intf_SectionLine;
 class Intf_SectionLine {
@@ -570,6 +605,11 @@ class Intf_SectionLine {
 		void Dump(const Standard_Integer Indent) const;
 
 };
+%extend Intf_SectionLine {
+	~Intf_SectionLine() {
+	printf("Call custom destructor for instance of Intf_SectionLine\n");
+	}
+};
 
 %nodefaultctor Intf_Tool;
 class Intf_Tool {
@@ -598,6 +638,11 @@ class Intf_Tool {
 		Standard_Real EndParam(const Standard_Integer SegmentNum) const;
 
 };
+%extend Intf_Tool {
+	~Intf_Tool() {
+	printf("Call custom destructor for instance of Intf_Tool\n");
+	}
+};
 
 %nodefaultctor Intf;
 class Intf {
@@ -611,4 +656,9 @@ class Intf {
 		%feature("autodoc", "1");
 		Standard_Boolean Contain(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &ThePnt);
 
+};
+%extend Intf {
+	~Intf() {
+	printf("Call custom destructor for instance of Intf\n");
+	}
 };

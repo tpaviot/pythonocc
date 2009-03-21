@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module AdvApp2Var
@@ -239,6 +239,11 @@ class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AdvApp2Var_SequenceOfNode {
+	~AdvApp2Var_SequenceOfNode() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceOfNode\n");
+	}
+};
 
 %nodefaultctor AdvApp2Var_Network;
 class AdvApp2Var_Network {
@@ -276,6 +281,11 @@ class AdvApp2Var_Network {
 		%feature("autodoc", "1");
 		const AdvApp2Var_Patch & operator()(const Standard_Integer UIndex, const Standard_Integer VIndex) const;
 
+};
+%extend AdvApp2Var_Network {
+	~AdvApp2Var_Network() {
+	printf("Call custom destructor for instance of AdvApp2Var_Network\n");
+	}
 };
 
 %nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfNode;
@@ -441,6 +451,11 @@ class AdvApp2Var_Data {
 		mmapgs2_1_ & Getmmapgs2();
 
 };
+%extend AdvApp2Var_Data {
+	~AdvApp2Var_Data() {
+	printf("Call custom destructor for instance of AdvApp2Var_Data\n");
+	}
+};
 
 %nodefaultctor AdvApp2Var_Strip;
 class AdvApp2Var_Strip : public TCollection_BaseSequence {
@@ -490,6 +505,11 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend AdvApp2Var_Strip {
+	~AdvApp2Var_Strip() {
+	printf("Call custom destructor for instance of AdvApp2Var_Strip\n");
+	}
 };
 
 %nodefaultctor AdvApp2Var_Context;
@@ -614,6 +634,11 @@ class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%extend AdvApp2Var_SequenceOfPatch {
+	~AdvApp2Var_SequenceOfPatch() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceOfPatch\n");
+	}
+};
 
 %nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfPatch;
 class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
@@ -735,6 +760,11 @@ class AdvApp2Var_Node {
 		Standard_Real Error(const Standard_Integer iu, const Standard_Integer iv) const;
 
 };
+%extend AdvApp2Var_Node {
+	~AdvApp2Var_Node() {
+	printf("Call custom destructor for instance of AdvApp2Var_Node\n");
+	}
+};
 
 %nodefaultctor AdvApp2Var_Criterion;
 class AdvApp2Var_Criterion {
@@ -752,6 +782,11 @@ class AdvApp2Var_Criterion {
 		%feature("autodoc", "1");
 		AdvApp2Var_CriterionRepartition Repartition() const;
 
+};
+%extend AdvApp2Var_Criterion {
+	~AdvApp2Var_Criterion() {
+	printf("Call custom destructor for instance of AdvApp2Var_Criterion\n");
+	}
 };
 
 %nodefaultctor AdvApp2Var_SequenceOfStrip;
@@ -802,4 +837,9 @@ class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
+};
+%extend AdvApp2Var_SequenceOfStrip {
+	~AdvApp2Var_SequenceOfStrip() {
+	printf("Call custom destructor for instance of AdvApp2Var_SequenceOfStrip\n");
+	}
 };

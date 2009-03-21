@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module PTopoDS
@@ -1325,6 +1325,11 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
 		Standard_Address Value() const;
 
 };
+%extend PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
+	~PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape() {
+	printf("Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape\n");
+	}
+};
 
 %nodefaultctor PTopoDS_Solid;
 class PTopoDS_Solid : public PTopoDS_HShape {
@@ -1413,6 +1418,11 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
+};
+%extend PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
+	~PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1() {
+	printf("Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1\n");
+	}
 };
 
 %nodefaultctor PTopoDS_Face;
@@ -1583,6 +1593,11 @@ class PTopoDS_FieldOfHArray1OfShape1 : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		virtual		~PTopoDS_FieldOfHArray1OfShape1();
 
+};
+%extend PTopoDS_FieldOfHArray1OfShape1 {
+	~PTopoDS_FieldOfHArray1OfShape1() {
+	printf("Call custom destructor for instance of PTopoDS_FieldOfHArray1OfShape1\n");
+	}
 };
 
 %nodefaultctor PTopoDS_CompSolid;

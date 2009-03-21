@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module TopOpeBRepDS
@@ -880,6 +880,11 @@ class TopOpeBRepDS_TOOL {
 		Standard_Boolean GetConfig(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &MEspON, const Standard_Integer ie, const Standard_Integer iesd, Standard_Integer & conf);
 
 };
+%extend TopOpeBRepDS_TOOL {
+	~TopOpeBRepDS_TOOL() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_TOOL\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_InterferenceIterator;
 class TopOpeBRepDS_InterferenceIterator {
@@ -992,6 +997,11 @@ class TopOpeBRepDS_Reducer {
 		void ProcessEdgeInterferences();
 
 };
+%extend TopOpeBRepDS_Reducer {
+	~TopOpeBRepDS_Reducer() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_Reducer\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_FIR;
 class TopOpeBRepDS_FIR {
@@ -1005,6 +1015,11 @@ class TopOpeBRepDS_FIR {
 		%feature("autodoc", "1");
 		void ProcessFaceInterferences(const Standard_Integer I, const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &M);
 
+};
+%extend TopOpeBRepDS_FIR {
+	~TopOpeBRepDS_FIR() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_FIR\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS;
@@ -1047,6 +1062,11 @@ class TopOpeBRepDS {
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Kind ShapeToKind(const TopAbs_ShapeEnum S);
 
+};
+%extend TopOpeBRepDS {
+	~TopOpeBRepDS() {
+	printf("Call custom destructor for instance of TopOpeBRepDS\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_Transition;
@@ -1114,6 +1134,11 @@ class TopOpeBRepDS_Transition {
 		Standard_OStream & Dump(Standard_OStream & OS) const;
 
 };
+%extend TopOpeBRepDS_Transition {
+	~TopOpeBRepDS_Transition() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_Transition\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfMapOfPoint;
 class TopOpeBRepDS_DataMapIteratorOfMapOfPoint : public TCollection_BasicMapIterator {
@@ -1131,6 +1156,11 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfPoint : public TCollection_BasicMapIter
 		%feature("autodoc", "1");
 		const TopOpeBRepDS_PointData & Value() const;
 
+};
+%extend TopOpeBRepDS_DataMapIteratorOfMapOfPoint {
+	~TopOpeBRepDS_DataMapIteratorOfMapOfPoint() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfPoint\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapOfShapeState;
@@ -1161,6 +1191,11 @@ class TopOpeBRepDS_DataMapOfShapeState : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopAbs_State & operator()(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepDS_DataMapOfShapeState {
+	~TopOpeBRepDS_DataMapOfShapeState() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapOfShapeState\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_ListNodeOfListOfInterference;
@@ -1203,6 +1238,11 @@ class TopOpeBRepDS_GeometryData {
 		%feature("autodoc", "1");
 		void AddInterference(const Handle_TopOpeBRepDS_Interference &I);
 
+};
+%extend TopOpeBRepDS_GeometryData {
+	~TopOpeBRepDS_GeometryData() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_GeometryData\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapNodeOfMapOfPoint;
@@ -1255,6 +1295,11 @@ class TopOpeBRepDS_PointIterator : public TopOpeBRepDS_InterferenceIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Support() const;
 
+};
+%extend TopOpeBRepDS_PointIterator {
+	~TopOpeBRepDS_PointIterator() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_PointIterator\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_Interference;
@@ -1370,6 +1415,11 @@ class TopOpeBRepDS_MapOfPoint : public TCollection_BasicMap {
 		TopOpeBRepDS_PointData & operator()(const Standard_Integer &K);
 
 };
+%extend TopOpeBRepDS_MapOfPoint {
+	~TopOpeBRepDS_MapOfPoint() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_MapOfPoint\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfMapOfSurface;
 class TopOpeBRepDS_DataMapIteratorOfMapOfSurface : public TCollection_BasicMapIterator {
@@ -1387,6 +1437,11 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfSurface : public TCollection_BasicMapIt
 		%feature("autodoc", "1");
 		const TopOpeBRepDS_SurfaceData & Value() const;
 
+};
+%extend TopOpeBRepDS_DataMapIteratorOfMapOfSurface {
+	~TopOpeBRepDS_DataMapIteratorOfMapOfSurface() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfSurface\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DoubleMapOfIntegerShape;
@@ -1419,6 +1474,11 @@ class TopOpeBRepDS_DoubleMapOfIntegerShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind2(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepDS_DoubleMapOfIntegerShape {
+	~TopOpeBRepDS_DoubleMapOfIntegerShape() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DoubleMapOfIntegerShape\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_SolidSurfaceInterference;
@@ -1460,6 +1520,11 @@ class TopOpeBRepDS_ShapeData {
 		void ChangeKeep(const Standard_Boolean B);
 
 };
+%extend TopOpeBRepDS_ShapeData {
+	~TopOpeBRepDS_ShapeData() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_ShapeData\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData;
 class TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData : public TCollection_BasicMapIterator {
@@ -1477,6 +1542,11 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData : public TCollection_B
 		%feature("autodoc", "1");
 		const TopOpeBRepDS_ShapeData & Value() const;
 
+};
+%extend TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData {
+	~TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapOfInterferenceShape;
@@ -1508,6 +1578,11 @@ class TopOpeBRepDS_DataMapOfInterferenceShape : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const Handle_TopOpeBRepDS_Interference &K);
 
 };
+%extend TopOpeBRepDS_DataMapOfInterferenceShape {
+	~TopOpeBRepDS_DataMapOfInterferenceShape() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapOfInterferenceShape\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_Explorer;
 class TopOpeBRepDS_Explorer {
@@ -1538,6 +1613,11 @@ class TopOpeBRepDS_Explorer {
 		const TopoDS_Vertex & Vertex() const;
 
 };
+%extend TopOpeBRepDS_Explorer {
+	~TopOpeBRepDS_Explorer() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_Explorer\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State;
 class TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State : public TCollection_BasicMap {
@@ -1567,6 +1647,11 @@ class TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State : public TCollection_BasicM
 		%feature("autodoc", "1");
 		TopOpeBRepDS_ListOfShapeOn1State & operator()(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State {
+	~TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_BuildTool;
@@ -1666,6 +1751,11 @@ class TopOpeBRepDS_BuildTool {
 		void Translate(const Standard_Boolean T);
 
 };
+%extend TopOpeBRepDS_BuildTool {
+	~TopOpeBRepDS_BuildTool() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_BuildTool\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State;
 class TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State : public TCollection_MapNode {
@@ -1708,6 +1798,11 @@ class TopOpeBRepDS_PointData : public TopOpeBRepDS_GeometryData {
 		void GetShapes(Standard_Integer & I1, Standard_Integer & I2) const;
 
 };
+%extend TopOpeBRepDS_PointData {
+	~TopOpeBRepDS_PointData() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_PointData\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_Filter;
 class TopOpeBRepDS_Filter {
@@ -1731,6 +1826,11 @@ class TopOpeBRepDS_Filter {
 		%feature("autodoc", "1");
 		void ProcessCurveInterferences(const Standard_Integer I);
 
+};
+%extend TopOpeBRepDS_Filter {
+	~TopOpeBRepDS_Filter() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_Filter\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_ShapeShapeInterference;
@@ -1912,6 +2012,11 @@ class TopOpeBRepDS_Point {
 		void ChangeKeep(const Standard_Boolean B);
 
 };
+%extend TopOpeBRepDS_Point {
+	~TopOpeBRepDS_Point() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_Point\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_IndexedDataMapOfShapeWithState;
 class TopOpeBRepDS_IndexedDataMapOfShapeWithState : public TCollection_BasicMap {
@@ -1951,6 +2056,11 @@ class TopOpeBRepDS_IndexedDataMapOfShapeWithState : public TCollection_BasicMap 
 		%feature("autodoc", "1");
 		TopOpeBRepDS_ShapeWithState & ChangeFromKey(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepDS_IndexedDataMapOfShapeWithState {
+	~TopOpeBRepDS_IndexedDataMapOfShapeWithState() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapOfShapeWithState\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState;
@@ -2048,6 +2158,11 @@ class TopOpeBRepDS_EdgeInterferenceTool {
 		void Transition(const Handle_TopOpeBRepDS_Interference &I) const;
 
 };
+%extend TopOpeBRepDS_EdgeInterferenceTool {
+	~TopOpeBRepDS_EdgeInterferenceTool() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_EdgeInterferenceTool\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapOfCheckStatus;
 class TopOpeBRepDS_DataMapOfCheckStatus : public TCollection_BasicMap {
@@ -2077,6 +2192,11 @@ class TopOpeBRepDS_DataMapOfCheckStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopOpeBRepDS_CheckStatus & operator()(const Standard_Integer &K);
 
+};
+%extend TopOpeBRepDS_DataMapOfCheckStatus {
+	~TopOpeBRepDS_DataMapOfCheckStatus() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapOfCheckStatus\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_IndexedDataMapOfVertexPoint;
@@ -2117,6 +2237,11 @@ class TopOpeBRepDS_IndexedDataMapOfVertexPoint : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Point & ChangeFromKey(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepDS_IndexedDataMapOfVertexPoint {
+	~TopOpeBRepDS_IndexedDataMapOfVertexPoint() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapOfVertexPoint\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_Marker;
@@ -2214,6 +2339,11 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState : public TCollection_Bas
 		const TopAbs_State & Value() const;
 
 };
+%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState {
+	~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_MapOfIntegerShapeData;
 class TopOpeBRepDS_MapOfIntegerShapeData : public TCollection_BasicMap {
@@ -2243,6 +2373,11 @@ class TopOpeBRepDS_MapOfIntegerShapeData : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopOpeBRepDS_ShapeData & operator()(const Standard_Integer &K);
 
+};
+%extend TopOpeBRepDS_MapOfIntegerShapeData {
+	~TopOpeBRepDS_MapOfIntegerShapeData() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_MapOfIntegerShapeData\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_MapOfShapeData;
@@ -2283,6 +2418,11 @@ class TopOpeBRepDS_MapOfShapeData : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopOpeBRepDS_ShapeData & ChangeFromKey(const TopoDS_Shape &K);
 
+};
+%extend TopOpeBRepDS_MapOfShapeData {
+	~TopOpeBRepDS_MapOfShapeData() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_MapOfShapeData\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_ListOfInterference;
@@ -2392,6 +2532,11 @@ class TopOpeBRepDS_PointExplorer {
 		Standard_Integer Index() const;
 
 };
+%extend TopOpeBRepDS_PointExplorer {
+	~TopOpeBRepDS_PointExplorer() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_PointExplorer\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData;
 class TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData : public TCollection_MapNode {
@@ -2449,6 +2594,11 @@ class TopOpeBRepDS_CurveExplorer {
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
 
+};
+%extend TopOpeBRepDS_CurveExplorer {
+	~TopOpeBRepDS_CurveExplorer() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_CurveExplorer\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape;
@@ -2543,6 +2693,11 @@ class TopOpeBRepDS_SurfaceIterator : public TopOpeBRepDS_InterferenceIterator {
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation(const TopAbs_State S) const;
 
+};
+%extend TopOpeBRepDS_SurfaceIterator {
+	~TopOpeBRepDS_SurfaceIterator() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_SurfaceIterator\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapNodeOfMapOfCurve;
@@ -2791,6 +2946,11 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfCurve : public TCollection_BasicMapIter
 		const TopOpeBRepDS_CurveData & Value() const;
 
 };
+%extend TopOpeBRepDS_DataMapIteratorOfMapOfCurve {
+	~TopOpeBRepDS_DataMapIteratorOfMapOfCurve() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfCurve\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference;
 class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference : public TCollection_BasicMapIterator {
@@ -2866,6 +3026,11 @@ class TopOpeBRepDS_MapOfCurve : public TCollection_BasicMap {
 		TopOpeBRepDS_CurveData & operator()(const Standard_Integer &K);
 
 };
+%extend TopOpeBRepDS_MapOfCurve {
+	~TopOpeBRepDS_MapOfCurve() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_MapOfCurve\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_GapFiller;
 class TopOpeBRepDS_GapFiller {
@@ -2900,6 +3065,11 @@ class TopOpeBRepDS_GapFiller {
 		void ReBuildGeom(const Handle_TopOpeBRepDS_Interference &I1, TColStd_MapOfInteger & Done);
 
 };
+%extend TopOpeBRepDS_GapFiller {
+	~TopOpeBRepDS_GapFiller() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_GapFiller\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_EIR;
 class TopOpeBRepDS_EIR {
@@ -2913,6 +3083,11 @@ class TopOpeBRepDS_EIR {
 		%feature("autodoc", "1");
 		void ProcessEdgeInterferences(const Standard_Integer I);
 
+};
+%extend TopOpeBRepDS_EIR {
+	~TopOpeBRepDS_EIR() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_EIR\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_ShapeWithState;
@@ -2937,6 +3112,11 @@ class TopOpeBRepDS_ShapeWithState {
 		%feature("autodoc", "1");
 		Standard_Boolean IsSplitted() const;
 
+};
+%extend TopOpeBRepDS_ShapeWithState {
+	~TopOpeBRepDS_ShapeWithState() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_ShapeWithState\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_Curve;
@@ -3033,6 +3213,11 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference : public 
 		const TopOpeBRepDS_ListOfInterference & Value() const;
 
 };
+%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference {
+	~TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_CurveData;
 class TopOpeBRepDS_CurveData : public TopOpeBRepDS_GeometryData {
@@ -3044,6 +3229,11 @@ class TopOpeBRepDS_CurveData : public TopOpeBRepDS_GeometryData {
 		%feature("autodoc", "1");
 		TopOpeBRepDS_CurveData(const TopOpeBRepDS_Curve &C);
 
+};
+%extend TopOpeBRepDS_CurveData {
+	~TopOpeBRepDS_CurveData() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_CurveData\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape;
@@ -3083,6 +3273,11 @@ class TopOpeBRepDS_SurfaceData : public TopOpeBRepDS_GeometryData {
 		TopOpeBRepDS_SurfaceData(const TopOpeBRepDS_Surface &S);
 
 };
+%extend TopOpeBRepDS_SurfaceData {
+	~TopOpeBRepDS_SurfaceData() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_SurfaceData\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapOfInterferenceListOfInterference;
 class TopOpeBRepDS_DataMapOfInterferenceListOfInterference : public TCollection_BasicMap {
@@ -3113,6 +3308,11 @@ class TopOpeBRepDS_DataMapOfInterferenceListOfInterference : public TCollection_
 		TopOpeBRepDS_ListOfInterference & operator()(const Handle_TopOpeBRepDS_Interference &K);
 
 };
+%extend TopOpeBRepDS_DataMapOfInterferenceListOfInterference {
+	~TopOpeBRepDS_DataMapOfInterferenceListOfInterference() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapOfInterferenceListOfInterference\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_SurfaceExplorer;
 class TopOpeBRepDS_SurfaceExplorer {
@@ -3142,6 +3342,11 @@ class TopOpeBRepDS_SurfaceExplorer {
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
 
+};
+%extend TopOpeBRepDS_SurfaceExplorer {
+	~TopOpeBRepDS_SurfaceExplorer() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_SurfaceExplorer\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState;
@@ -3259,6 +3464,11 @@ class TopOpeBRepDS_ListOfShapeOn1State {
 		void Clear();
 
 };
+%extend TopOpeBRepDS_ListOfShapeOn1State {
+	~TopOpeBRepDS_ListOfShapeOn1State() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_ListOfShapeOn1State\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_TKI;
 class TopOpeBRepDS_TKI {
@@ -3307,6 +3517,11 @@ class TopOpeBRepDS_TKI {
 		TopOpeBRepDS_ListOfInterference & ChangeValue(TopOpeBRepDS_Kind & K, Standard_Integer & G);
 
 };
+%extend TopOpeBRepDS_TKI {
+	~TopOpeBRepDS_TKI() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_TKI\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape;
 class TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape : public TCollection_BasicMapIterator {
@@ -3324,6 +3539,11 @@ class TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape : public TCollecti
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Key2() const;
 
+};
+%extend TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape {
+	~TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State;
@@ -3343,6 +3563,11 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State : public T
 		const TopOpeBRepDS_ListOfShapeOn1State & Value() const;
 
 };
+%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State {
+	~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_Edge3dInterferenceTool;
 class TopOpeBRepDS_Edge3dInterferenceTool {
@@ -3360,6 +3585,11 @@ class TopOpeBRepDS_Edge3dInterferenceTool {
 		%feature("autodoc", "1");
 		void Transition(const Handle_TopOpeBRepDS_Interference &I) const;
 
+};
+%extend TopOpeBRepDS_Edge3dInterferenceTool {
+	~TopOpeBRepDS_Edge3dInterferenceTool() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_Edge3dInterferenceTool\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_FaceInterferenceTool;
@@ -3384,6 +3614,11 @@ class TopOpeBRepDS_FaceInterferenceTool {
 		%feature("autodoc", "1");
 		void Transition(const Handle_TopOpeBRepDS_Interference &I) const;
 
+};
+%extend TopOpeBRepDS_FaceInterferenceTool {
+	~TopOpeBRepDS_FaceInterferenceTool() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_FaceInterferenceTool\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference;
@@ -3421,6 +3656,11 @@ class TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference {
 		TopOpeBRepDS_DataMapOfIntegerListOfInterference & operator()(const Standard_Integer Index);
 
 };
+%extend TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference {
+	~TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_MapOfSurface;
 class TopOpeBRepDS_MapOfSurface : public TCollection_BasicMap {
@@ -3451,6 +3691,11 @@ class TopOpeBRepDS_MapOfSurface : public TCollection_BasicMap {
 		TopOpeBRepDS_SurfaceData & operator()(const Standard_Integer &K);
 
 };
+%extend TopOpeBRepDS_MapOfSurface {
+	~TopOpeBRepDS_MapOfSurface() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_MapOfSurface\n");
+	}
+};
 
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus;
 class TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus : public TCollection_BasicMapIterator {
@@ -3468,6 +3713,11 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus : public TCollection_Ba
 		%feature("autodoc", "1");
 		const TopOpeBRepDS_CheckStatus & Value() const;
 
+};
+%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus {
+	~TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_FaceEdgeInterference;
@@ -3544,6 +3794,11 @@ class TopOpeBRepDS_DataMapOfIntegerListOfInterference : public TCollection_Basic
 		%feature("autodoc", "1");
 		TopOpeBRepDS_ListOfInterference & operator()(const Standard_Integer &K);
 
+};
+%extend TopOpeBRepDS_DataMapOfIntegerListOfInterference {
+	~TopOpeBRepDS_DataMapOfIntegerListOfInterference() {
+	printf("Call custom destructor for instance of TopOpeBRepDS_DataMapOfIntegerListOfInterference\n");
+	}
 };
 
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfShapeSurface;
