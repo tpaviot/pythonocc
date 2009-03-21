@@ -596,12 +596,12 @@ class ModularBuilder(object):
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\t%s GetHandle() {\n"%handle_class_name)
             self.fp.write("\treturn *(%s*) &$self;\n\t}\n};"%handle_class_name)
-        if NEED_CUSTOMIZED_DESTRUCTOR:
-            # Customize destructor
-            self.fp.write('\n%')
-            self.fp.write('extend %s {\n'%class_name)
-            self.fp.write('\t~%s() {\n\tprintf("Call custom destructor for instance of %s\\n");'%(class_name,class_name))
-            self.fp.write('\n\t}\n};')
+#        if NEED_CUSTOMIZED_DESTRUCTOR: TEST: ALL OBJECTS NEED A CUSTOM DESTRUCTOR
+        # Customize destructor
+        self.fp.write('\n%')
+        self.fp.write('extend %s {\n'%class_name)
+        self.fp.write('\t~%s() {\n\tprintf("Call custom destructor for instance of %s\\n");'%(class_name,class_name))
+        self.fp.write('\n\t}\n};')
         #
         # On l'ajoute a la liste des classes deja exposees
         #
