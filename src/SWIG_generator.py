@@ -554,10 +554,12 @@ class ModularBuilder(object):
         for mem_fun in class_declaration.public_members:#member_functions():
             # Member functions to exclude
             function_name = mem_fun.name
-            if (function_name.startswith('~') and NEED_CUSTOMIZED_DESTRUCTOR):#class_name.startswith('Handle_')):#DESTRUCTOR
-                print "Destructor found for a Handle_* class: ignored."
-            elif (function_name.startswith('~') and (('Handle_%s'%class_name) in self.ALREADY_EXPOSED)):
-                print "Destructor found for a smart pointer managed class."
+#            if (function_name.startswith('~') and NEED_CUSTOMIZED_DESTRUCTOR):#class_name.startswith('Handle_')):#DESTRUCTOR
+#                print "Destructor found for a Handle_* class: ignored."
+#            elif (function_name.startswith('~') and (('Handle_%s'%class_name) in self.ALREADY_EXPOSED)):
+#                print "Destructor found for a smart pointer managed class."
+            if (function_name.startswith('~')):#ignore destructor
+                pass
             elif not self.MEMBER_FUNCTIONS_TO_EXCLUDE.has_key(class_name):
                 self.write_function(mem_fun,CURRENT_CLASS_IS_ABSTRACT)
             elif function_name not in self.MEMBER_FUNCTIONS_TO_EXCLUDE[class_name]:
