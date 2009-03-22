@@ -1,9 +1,27 @@
+##Copyright 2009 Thomas Paviot (thomas.paviot@free.fr)
+##
+##This file is part of pythonOCC.
+##
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
+##
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU General Public License for more details.
+##
+##You should have received a copy of the GNU General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
 from OCC.Geom import *
 from OCC.GeomAPI import *
 from OCC.GeomAbs import *
 from OCC.TColgp import *
+from OCC.Geom2d import *
 import math
 
 P1 = gp_Pnt()
@@ -31,9 +49,8 @@ array.SetValue(3,1,P3);
 array.SetValue(1,2,P4); 	
 array.SetValue(2,2,P5); 	
 array.SetValue(3,2,P6);	
-curve = GeomAPI_PointsToBSplineSurface(array,3,8,GeomAbs_C2,0.001)
-curve_s = curve.Surface()
-RedFace = BRepBuilderAPI_MakeFace(curve_s)
+curve = GeomAPI_PointsToBSplineSurface(array,3,8,GeomAbs_C2,0.001).Surface()
+RedFace = BRepBuilderAPI_MakeFace(curve)
 
 #The brown face	
 
@@ -69,26 +86,23 @@ BSplineSurf = GeomAPI_PointsToBSplineSurface(array2,3,8,GeomAbs_C2,0.001)
 aFace = BRepBuilderAPI_MakeFace(BSplineSurf.Surface())	
 ##
 ##//2d lines	
-##gp_Pnt2d P12d(0.9,0.1);	
-##gp_Pnt2d P22d(0.2,0.7);	
-##gp_Pnt2d P32d(0.02,0.1);	
+P12d = gp_Pnt2d(0.9,0.1)
+P22d = gp_Pnt2d(0.2,0.7)
+P32d = gp_Pnt2d(0.02,0.1)
 ##
-##Handle (Geom2d_Line) line1=		
-##	new Geom2d_Line(P12d,gp_Dir2d((0.2-0.9),(0.7-0.1)));	
-##Handle (Geom2d_Line) line2=		
-##	new Geom2d_Line(P22d,gp_Dir2d((0.02-0.2),(0.1-0.7)));   
-##Handle (Geom2d_Line) line3=		
-##	new Geom2d_Line(P32d,gp_Dir2d((0.9-0.02),(0.1-0.1)));	
+line1 = Geom2d_Line(P12d,gp_Dir2d((0.2-0.9),(0.7-0.1)))
+line2 = Geom2d_Line(P22d,gp_Dir2d((0.02-0.2),(0.1-0.7)))
+line3 = Geom2d_Line(P32d,gp_Dir2d((0.9-0.02),(0.1-0.1)))
 ##		
 ##//Edges are on the BSpline surface	
-##Edge1 = BRepBuilderAPI_MakeEdge(line1,BSplineSurf,0,P12d.Distance(P22d));	
-##Edge2 = BRepBuilderAPI_MakeEdge(line2,BSplineSurf,0,P22d.Distance(P32d));	
-##Edge3 = BRepBuilderAPI_MakeEdge(line3,BSplineSurf,0,P32d.Distance(P12d));	
+Edge1 = BRepBuilderAPI_MakeEdge(line1.GetHandle(),BSplineSurf,0,P12d.Distance(P22d)).Edge()
+Edge2 = BRepBuilderAPI_MakeEdge(line2,BSplineSurf,0,P22d.Distance(P32d)).Edge()
+Edge3 = BRepBuilderAPI_MakeEdge(line3,BSplineSurf,0,P32d.Distance(P12d)).Edge()
 ##
-##Wire1 = BRepBuilderAPI_MakeWire(Edge1,Edge2,Edge3);	
-##Wire1.Reverse();	
-##PinkFace = BRepBuilderAPI_MakeFace(aFace,Wire1);	
-##BRepLib::BuildCurves3d(PinkFace);	
+Wire1 = BRepBuilderAPI_MakeWire(Edge1,Edge2,Edge3).Wire()
+Wire1.Reverse()
+PinkFace = BRepBuilderAPI_MakeFace(aFace,Wire1)
+BRepLib().BuildCurves3d(PinkFace)
 
 
 
