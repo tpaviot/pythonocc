@@ -518,6 +518,7 @@ else:
                     ('AIS',['OSD','MFT','Xw','Graphic3d','TopoDS_Vertex','Aspect','SelectBasics','PrsMgr',],[],{"AIS_LocalContext":["Reactivate"]}),
                     ('Voxel',['OSD','MFT','Xw','Quantity','gp','Graphic3d','Aspect',\
                               'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics'],[]),
+                    ('Visual3d',['OSD','MFT','Xw'],[]),
                     ])
     MODULES.extend([
                     ('Image',[],[]), #bug on Windows
