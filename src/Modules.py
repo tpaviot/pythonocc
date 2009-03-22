@@ -412,6 +412,9 @@ MODULES = [
             ('PXCAFDoc',['DBC'],[]),
             #('MS',[],[]), GCCXMLERROR
             ('XmlObjMgt',['TCollection'],[],{'XmlObjMgt':['GetInteger']}),
+            ('TopOpeBRepBuild',['TopOpeBRepDS'],[],{'TopOpeBRepBuild_Builder1':['GFillSplitsPVS']}),
+            ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
+                                'BRepFeat_MakeLinearForm':['TransformShapeFU']}),
 ########################
 ##### IGES #############
 ########################
@@ -493,15 +496,12 @@ if sys.platform=='win32':
              ('Voxel',['Quantity','gp','Graphic3d','Aspect',\
                       'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics'],[]),
              ('Visual3d',[],[]),
+             ('TPrsStd',['Aspect',],[]),
              #('WNT',[],[]), gccxml error
              ])
     MODULES.extend([
                ('XDEDRAW',[],[]),
-               ('TopOpeBRepBuild',['TopOpeBRepDS'],[],{'TopOpeBRepBuild_Builder1':['GFillSplitsPVS']}),
                ('LocOpe',['TopOpeBRepDS','TopOpeBRepTool'],['LocOpe_Revol','LocOpe_RevolutionForm']),
-               ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
-                                'BRepFeat_MakeLinearForm':['TransformShapeFU']}),
-               ('TPrsStd',['Aspect',],[]),
                ('EDL',[],[]),
                ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
                ('DNaming',[],[]),
@@ -519,6 +519,7 @@ else:
                     ('Voxel',['OSD','MFT','Xw','Quantity','gp','Graphic3d','Aspect',\
                               'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics'],[]),
                     ('Visual3d',['OSD','MFT','Xw'],[]),
+                    ('TPrsStd',['OSD','MFT','Xw','Aspect',],[]),
                     ])
     MODULES.extend([
                     ('Image',[],[]), #bug on Windows
