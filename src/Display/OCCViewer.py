@@ -120,6 +120,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
         BaseDriver.__init__(self,window_handle)
         OCC.Visualization.Display3d.__init__(self)
+        self.selected_shape = None
           
     def OnResize(self):
         self.View.MustBeResized()
@@ -182,9 +183,6 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         point: a gp_Pnt instance
         text_to_write: a string
         """
-        import OCC.BRepBuilderAPI
-        import OCC.Prs3d
-        import OCC.Graphic3d
         V1 = OCC.BRepBuilderAPI.BRepBuilderAPI_MakeVertex(point)
         aisShape = OCC.AIS.AIS_Shape(V1.Vertex())
         aDrawer = aisShape.Attributes()
@@ -217,7 +215,8 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         dict_color = {'WHITE':OCC.Quantity.Quantity_NOC_WHITE,\
                       'BLUE':OCC.Quantity.Quantity_NOC_BLUE1,\
                       'RED':OCC.Quantity.Quantity_NOC_RED,\
-                      'GREEN':OCC.Quantity.Quantity_NOC_GREEN}
+                      'GREEN':OCC.Quantity.Quantity_NOC_GREEN,\
+                      'YELLOW':OCC.Quantity.Quantity_NOC_YELLOW}
         shape_to_display = OCC.AIS.AIS_Shape(shape)
         self.Context.SetColor(shape_to_display.GetHandle(),dict_color[color],0)
         self.Context.Display(shape_to_display.GetHandle())
@@ -274,7 +273,13 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     
     def SetSelectionModeNeutral(self):
         self.Context.CloseAllContexts()
-        
+    
+    def GetSelectedShape(self):
+        """
+        Returns the current selected shape
+        """
+        return self.selected_shape
+    
     def Select(self,X,Y):
         self.Context.Select()
         self.Context.InitSelected()
@@ -282,11 +287,11 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         if self.Context.MoreSelected():
             if self.Context.HasSelectedShape():
                 print "Something selected"
-                selected_shape = self.Context.SelectedShape()
-                print selected_shape
+                self.selected_shape = self.Context.SelectedShape()
+                print self.selected_shape
         else:
             print "Nothing selected"
-            selected_shape = None
+            self.selected_shape = None
         
     def Rotation(self,X,Y):
         self.View.Rotation(X,Y)
