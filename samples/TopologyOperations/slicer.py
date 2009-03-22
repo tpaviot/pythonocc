@@ -21,7 +21,8 @@ from OCC.BRepAlgoAPI import *
 from OCC.TopOpeBRepTool import *
 from OCC.BRepBuilderAPI import *
 from OCC.Geom import *
-
+from OCC.TopoDS import *
+import time
 #
 # Param
 #
@@ -29,18 +30,29 @@ Zmin = -100
 Zmax = 100
 deltaZ = 5
 #
-# Create the shape to slice
+# Note: the shape can also come from a shape selected from InteractiveViewer
 #
-shape = BRepPrimAPI_MakeSphere (60.).Shape()
-#shape = BRepPrimAPI_MakeBox(200.,200.,Zmax).Shape()
+if 'display' in dir():
+    shape = display.GetSelectedShape()
+else:
+    #
+    # Create the shape to slice
+    #
+    shape = BRepPrimAPI_MakeSphere (60.).Shape()
+    #shape = BRepPrimAPI_MakeBox(100.,100.,100.).Shape()
+    #...    
 #
-# Define
+# Define the direction
 #
 D = gp_Dir(0.,0.,1.) # the z direction
+#
+# Perform slice
+#
 sections = []
+init_time = time.time() # for total time computation
 for z in range(Zmin,Zmax,deltaZ):
     #
-    # Create Plane
+    # Create Plane defined by a point and the perpendicular direction
     #
     P = gp_Pnt(0,0,z)
     Pln = gp_Pln(P,D)
@@ -51,7 +63,8 @@ for z in range(Zmin,Zmax,deltaZ):
     section = BRepAlgoAPI_Section(shape,face)
     if section.IsDone():
         sections.append(section)
-    
+total_time = time.time() - init_time
+print "%s necessary to perform slice."%total_time
 
 if 'display' in dir():
     display.EraseAll()
