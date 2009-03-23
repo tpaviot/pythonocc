@@ -16,6 +16,7 @@
 ##
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 import os
 import sys
 import wx
@@ -139,8 +140,6 @@ class wxViewer3d(wxBaseViewer):
         self._drawbox = False
         self._zoom_area = False
         self._select_area = False
-        
-        #self._3dDisplay = None
         self._inited = False
         self._leftisdown = False
         self._middleisdown = False
@@ -158,8 +157,6 @@ class wxViewer3d(wxBaseViewer):
         self._display.SetModeShaded()
         self._inited = True
         print "Inited!!"
-        #print dir(self._3dDisplay)
-
 
     def OnKeyDown(self,evt):
         key_code = evt.GetKeyCode()
