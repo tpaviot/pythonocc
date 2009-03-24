@@ -199,7 +199,7 @@ MODULES = [
            ('AdvApp2Var',['gp'],['AdvApp2Var_Iso','AdvApp2Var_SysBase','AdvApp2Var_ApproxF2var','AdvApp2Var_MathBase']),
            ('AdvApprox',[],[]), #LINUX TEST
            ('Geom',['BRepFill','gp'],[]),
-           ('GeomPlate',['gp'],[]),
+           ##('GeomPlate',['gp'],[]),
            ('GeomProjLib',[],[]),
            ('GeomToIGES',[],[]),
            ('GeomTools',['Handle_TCollection'],[]),
@@ -415,6 +415,7 @@ MODULES = [
             ('TopOpeBRepBuild',['TopOpeBRepDS'],[],{'TopOpeBRepBuild_Builder1':['GFillSplitsPVS']}),
             ('BRepFeat',[],[],{'BRepFeat':['IsInOut'],\
                                 'BRepFeat_MakeLinearForm':['TransformShapeFU']}),
+            ('LocOpe',['TopOpeBRepDS','TopOpeBRepTool'],['LocOpe_Revol','LocOpe_RevolutionForm']),
 ########################
 ##### IGES #############
 ########################
@@ -501,7 +502,7 @@ if sys.platform=='win32':
              ])
     MODULES.extend([
                ('XDEDRAW',[],[]),
-               ('LocOpe',['TopOpeBRepDS','TopOpeBRepTool'],['LocOpe_Revol','LocOpe_RevolutionForm']),
+
                ('EDL',[],[]),
                ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
                ('DNaming',[],[]),
